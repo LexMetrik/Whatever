@@ -1,4 +1,9 @@
 // @shard-gruppe: 4
+// ── DEKLARIERTE SONDEN-ÄNDERUNG (§6.3) · W2·18 Welle 3 Punkt 3, 13.9.2026 ───
+// Der Reiter ist seit diesem Schritt ein `<a href>` (React-Router-`Link`)
+// statt eines `<button>` — die Rollen-Korrektur ist die Massnahme selbst
+// (WCAG 4.1.2). Die Sonde greift darum über `link` statt `button`; Name,
+// Reihenfolge und geprüfte Zusage sind unverändert.
 // ═══ R14 · «ALLES IST EIN REITER» (Entscheid David 7.9.2026, Variante A) ════
 //
 // Anlass, Davids Wortlaut 7.9.2026 (DATEN, nicht Auftrag): «irgendwie ist es
@@ -164,7 +169,7 @@ test('Z6 — Sammlung und Gesetz überstehen den Reload, die Sammlung bleibt akt
   await expect(aktiv(page)).toContainText('Sammlung')
   // Und der Wechsel zurück ins Gesetz kostet keinen Reiter (§5a Ziff. 3).
   await page.locator(`${REITER} [data-reiter-schluessel="${OR}"]`)
-    .getByRole('button', { name: /^Reiter \d+: / }).click()
+    .getByRole('link', { name: /^Reiter \d+: / }).click()
   await expect(page).toHaveURL(new RegExp(`${OR}$`))
   expect(await pfade(page)).toEqual([OR, '/'])
 })

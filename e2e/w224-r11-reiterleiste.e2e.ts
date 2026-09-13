@@ -253,7 +253,10 @@ test.describe('M4 — Kontextmenü auf einem Reiter', () => {
 
   test('ohne Maus: Shift+F10 auf dem Reiter öffnet dasselbe Menü (WCAG 2.1.1)', async ({ page }) => {
     await seed(page, [OR, BGE])
-    await page.locator(`${STREIFEN} [data-reiter-schluessel="${BGE}"] button`).first().focus()
+    // DEKLARIERTE SONDEN-ÄNDERUNG (§6.3), W2·18 Welle 3 Punkt 3: der Reiter
+    // ist ein `<a href>`; `button` träfe seit dem Rollenwechsel die Griffe
+    // ⧉/✕ daneben. Gemeint war immer der Reiter selbst.
+    await page.locator(`${STREIFEN} [data-reiter-schluessel="${BGE}"] a`).first().focus()
     await page.keyboard.press('Shift+F10')
     await expect(page.getByRole('menu')).toBeVisible()
     // Pfeiltasten sind das Versprechen von `role=menu` — es wird eingelöst.

@@ -342,7 +342,11 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const knopfVon = (k: string): HTMLElement | null => {
     const kasten = Array.from(streifenRef.current?.querySelectorAll<HTMLElement>('[data-reiter-schluessel]') ?? [])
       .find((x) => x.getAttribute('data-reiter-schluessel') === k);
-    return kasten?.querySelector<HTMLElement>('button') ?? null;
+    // W2·18 Welle 3 Punkt 3: der Reiter selbst ist ein `<a>`; `button` trifft
+    // seit dem Rollenwechsel nur noch die Griffe ⧉/✕ daneben. `a, button` in
+    // Dokumentreihenfolge liefert wieder den Reiter — und bliebe richtig,
+    // wenn der Reiter je wieder ein Knopf würde.
+    return kasten?.querySelector<HTMLElement>('a, button') ?? null;
   };
 
   /** Wohin der Fokus nach dem NÄCHSTEN Render gehört (Delete: der Reiter, der
@@ -897,7 +901,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
                 aktiv={k === aktivSchluessel} manifeste={manifeste} paneSchluessel={paneSchluessel}
                 zieht={zieht} ueber={ueber} gezogenRef={gezogen}
                 kannOeffnen={kannOeffnen} istOffen={istOffen} onDaneben={oeffneDaneben}
-                onNavigate={navigate} onSchliessen={schliessen}
+                onSchliessen={schliessen}
                 onZieht={setZieht} onUeber={setUeber} onMenue={oeffneMenue}
                 onUmordnen={ordneTabsUm} />
             );

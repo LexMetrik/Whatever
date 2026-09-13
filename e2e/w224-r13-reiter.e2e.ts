@@ -347,9 +347,9 @@ test.describe('R13-7/R13-8 — Tastatur', () => {
     await seed(page, FUENFZEHN.slice(0, 4), '/gesetze/bund/OR')
     const dritter = page.locator('[data-reiter-schluessel="/gesetze/bund/ZPO"]')
     await expect(dritter).toHaveAttribute('title', /Alt\+3/)
-    await expect(dritter.locator('button').first()).toHaveAttribute('aria-keyshortcuts', 'Alt+3')
+    await expect(dritter.locator('a').first()).toHaveAttribute('aria-keyshortcuts', 'Alt+3')
     const letzter = page.locator('[data-reiter-schluessel="/gesetze/bund/STGB"]')
-    await expect(letzter.locator('button').first()).toHaveAttribute('aria-keyshortcuts', /Alt\+9/)
+    await expect(letzter.locator('a').first()).toHaveAttribute('aria-keyshortcuts', /Alt\+9/)
   })
 
   test('Alt+9 springt auf den LETZTEN Reiter, Alt+Bild↓/↑ blättert zyklisch', async ({ page }) => {
@@ -489,7 +489,7 @@ test.describe('W2·18 Welle 2 Punkt 6 — kein Reiter-Kopf als blosses «…»',
           // Der Kopf ist der Span mit dem 9-rem-Deckel (`Reiter.tsx`); der
           // Kern daneben trägt 15 rem und ist nicht gemeint. Ein Reiter ohne
           // Kopf (Gesetz, Rechner) hat den Span gar nicht.
-          const kopf = k.querySelector<HTMLElement>('button > span[class*="max-w-[9rem]"]')
+          const kopf = k.querySelector<HTMLElement>('a > span[class*="max-w-[9rem]"]')
           if (!kopf?.textContent) continue
           const st = getComputedStyle(kopf)
           kan.font = `${st.fontWeight} ${st.fontSize} ${st.fontFamily}`
@@ -603,7 +603,60 @@ test.describe('W2·18 Welle 3 Punkt 1 — der Reiter läuft auch am Anschlag nic
   test('@1440: derselbe Reiter trägt seinen Kopf «OGer AG» unverändert', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await seed(page, [LANGER_KOPF], LANGER_KOPF)
-    const kopf = await page.textContent('[data-reiter-streifen] button > span[class*="max-w-[9rem]"]')
+    const kopf = await page.textContent('[data-reiter-streifen] a > span[class*="max-w-[9rem]"]')
     expect(kopf?.trim(), 'am breiten Fenster steht der Kopf').toBe('OGer AG')
+  })
+})
+
+// ═══ W2·18 WELLE 3 PUNKT 3 · DER REITER IST EIN LINK ════════════════════════
+//
+// GEMESSEN am Vorstand (13.9.2026): der Reiter war ein `<button>` — Screenreader
+// meldeten «Schaltfläche», es gab keine Adresse zum Kopieren, «In neuem Fenster
+// öffnen» fehlte im Browser-Menü, und Strg/⌘-Klick tat nichts. Das ist für ein
+// Navigations-Element die falsche Rolle (WCAG 4.1.2, ARIA APG): wer zu einer
+// Adresse führt, ist ein Link.
+// GEBAUT: React-Router-`Link` statt Knopf. Der Tastatur-Ring (roving tabindex,
+// Welle 2 Punkt 1) bleibt am Link, das Ziehen bleibt an der Hülle (D15-Ghost),
+// und der einfache Klick bleibt eine Navigation OHNE Neuladen.
+test.describe('W2·18 Welle 3 Punkt 3 — der Reiter ist ein Link', () => {
+  test('Rolle «Link» mit echter Adresse — und der Klick lädt die Seite nicht neu', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    const VIER = FUENFZEHN.slice(0, 4)
+    await seed(page, VIER, VIER[0])
+
+    const zweiter = page.locator(`${STREIFEN} [data-reiter-schluessel="${VIER[1]}"]`)
+    const link = zweiter.getByRole('link', { name: /^Reiter 2: / })
+    await expect(link, 'der Reiter meldet sich als Link').toHaveCount(1)
+    await expect(link).toHaveAttribute('href', new RegExp(`${VIER[1]}$`))
+
+    // Eine Marke, die ein VOLLES Neuladen nicht überlebt: bleibt sie stehen,
+    // war der Klick eine Navigation innerhalb der Anwendung.
+    await page.evaluate(() => { (window as unknown as { lmMarke?: string }).lmMarke = 'da' })
+    await link.click()
+    await expect(page).toHaveURL(new RegExp(`${VIER[1]}$`))
+    expect(await page.evaluate(() => (window as unknown as { lmMarke?: string }).lmMarke),
+      'ein voller Seitenwechsel hätte die Marke gelöscht').toBe('da')
+    await expect(zweiter).toHaveAttribute('data-reiter-aktiv', 'true')
+  })
+
+  // ── DIE AUSNAHME, DIE BLEIBT ──────────────────────────────────────────────
+  // Der Fahrplan wollte «Mittelklick/Strg-Klick öffnen wie überall in der App».
+  // Für den Strg-/⌘-Klick löst der `href` das von selbst. Der MITTELKLICK
+  // gehört hier aber dem stärkeren Idiom: in jedem Browser SCHLIESST er einen
+  // Reiter, und genau dafür ist er in dieser Leiste seit R11 gebaut (Entscheid
+  // David: «analog browser»). Ein Reiterband, in dem der Mittelklick einen
+  // zweiten Browser-Tab öffnet statt den Reiter zu schliessen, wäre eine
+  // Zusage weniger, nicht eine mehr.
+  test('Mittelklick schliesst den Reiter — und öffnet kein zweites Fenster', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    const VIER = FUENFZEHN.slice(0, 4)
+    await seed(page, VIER, VIER[0])
+    const vorher = page.context().pages().length
+
+    await page.locator(`${STREIFEN} [data-reiter-schluessel="${VIER[1]}"]`)
+      .getByRole('link', { name: /^Reiter 2: / }).click({ button: 'middle' })
+
+    await expect.poll(() => gespeichert(page)).toEqual([VIER[0], VIER[2], VIER[3]])
+    expect(page.context().pages().length, 'kein zweiter Browser-Tab').toBe(vorher)
   })
 })

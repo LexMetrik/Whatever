@@ -426,6 +426,24 @@ Rot-Beweis; Rot-Beweise auf DIESEM Stand fahren, nie übernehmen.
    auf dem Link, `dragstart` verhindert Navigations-Drag). Bestehende e2e-Selektoren (`getByRole('button',
    {name:/Reiter/})`) werden NICHT umgeschrieben, sondern die Sonden prüfen, ob sie über `nav[aria-label]`
    + Text zugreifen — Änderungen an bestehenden Sonden im Commit deklarieren (§6.3).
+   — **Korrektur 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: zwei Annahmen haben dem
+   Ist-Code nicht standgehalten.** (a) MITTELKLICK. Der Fahrplan wollte «Mittelklick/Strg-Klick
+   öffnen wie überall in der App». In der Leiste SCHLIESST der Mittelklick seit R11 den Reiter
+   (Entscheid David «analog browser») — das stärkere Idiom, und «in einem neuen Reiter öffnen» wäre
+   hier ein stiller Leerlauf, weil der Reiter schon offen ist. GEMESSEN nach dem Rollenwechsel
+   (gebautes dist/, Chromium, vier Reiter): die app-weite Geste in `TabTracker.tsx` fing den
+   Mittelklick auf JEDEM `a[href]` in der Capture-Phase ab (`preventDefault` + `stopPropagation`)
+   und endete in `merkeTab` auf einen bereits offenen Pfad — der Reiter blieb stehen statt zu
+   schliessen, und der `onAuxClick` des Reiters war tot. GEBAUT: die Geste lässt Anker innerhalb
+   von `[data-reiter-streifen]` aus; Mittelklick schliesst wieder, Strg/⌘-Klick fällt an den
+   Browser (zweites Browser-Fenster, dieselbe Reiterliste aus demselben localStorage).
+   (b) `draggable`. Statt `draggable` AM Link steht dort `draggable={false}`: damit beginnt der Zug
+   wie bisher an der ziehbaren Hülle, und der D15-Ghost (`setDragImage` auf den ganzen Reiter)
+   bleibt wortgleich. Mit `draggable` am Link wäre der Link die Quelle, Chromium legte
+   `text/uri-list` dazu, und der Ghost wäre der Schriftzug.
+   (c) SONDEN. Die Rollen-Korrektur IST die Massnahme — `getByRole('button', …)` kann sie nicht
+   überleben. Umgestellt auf `link` bzw. `a` sind sechs Stellen in vier Dateien, jede im Commit
+   und am Ort deklariert (§6.3); Namen, Reihenfolge und geprüfte Zusagen unverändert.
 4. **Hover-Karte.** Statt des zusammengeklebten `title` eine strukturierte Karte nach 600 ms Hover oder
    bei Fokus: Volltitel · Kürzel/Kategorie · Stand (bei Erlassen) · Lesestellung (Art.) · Fenster (◧/◨).
    Kein Layout-Shift, Escape schliesst, verschwindet beim Verlassen; `prefers-reduced-motion` ohne

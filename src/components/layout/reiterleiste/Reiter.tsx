@@ -1,4 +1,5 @@
 import type { RefObject } from 'react';
+import { Link } from 'react-router-dom';
 import { tabSchluessel, reiterKurzformTeile, reiterKurzformText, reiterTitel, type TabEintrag } from '../../../lib/tabs';
 import type { VerlaufManifeste } from '../../../lib/verlaufLabel';
 import { registerVonPfad, REG_FLAECHE, REG_TON } from '../bereiche';
@@ -52,7 +53,6 @@ export interface ReiterProps {
   kannOeffnen: boolean;
   istOffen: (path: string) => boolean;
   onDaneben: (path: string) => void;
-  onNavigate: (path: string) => void;
   onSchliessen: (path: string) => void;
   onZieht: (path: string | null) => void;
   onUeber: (u: { path: string; davor: boolean } | null) => void;
@@ -63,7 +63,7 @@ export interface ReiterProps {
 
 export function Reiter({
   t, nr, aktiv, letzter, imRing, ohneKopf, manifeste, paneSchluessel, zieht, ueber, gezogenRef,
-  kannOeffnen, istOffen, onDaneben, onNavigate, onSchliessen,
+  kannOeffnen, istOffen, onDaneben, onSchliessen,
   onZieht, onUeber, onMenue, onUmordnen,
 }: ReiterProps) {
   const schluessel = tabSchluessel(t.path);
@@ -259,16 +259,39 @@ export function Reiter({
         aktiv
           ? (reg ? REG_FLAECHE[reg] : 'bg-ink-900')
           : `${reg ? REG_FLAECHE[reg] : 'bg-ink-400'} opacity-60 group-hover/reiter:opacity-100`}`} />
-      <button type="button" aria-current={aktiv ? 'page' : undefined}
+      {/* ── W2·18 WELLE 3 PUNKT 3 · WER ZU EINER ADRESSE FÜHRT, IST EIN LINK ─
+          Hier stand ein `<button type="button">` mit `onClick={navigate}`.
+          GEMESSEN am Vorstand (13.9.2026): Screenreader meldeten
+          «Schaltfläche», es gab keine Adresse zum Kopieren, «In neuem Fenster
+          öffnen» fehlte im Browser-Kontextmenü, und Strg/⌘-Klick tat nichts —
+          für ein Navigations-Element die falsche Rolle (WCAG 4.1.2, ARIA APG).
+          Der React-Router-`Link` löst das ohne eine Zeile eigener Logik: der
+          einfache Klick bleibt eine Navigation OHNE Neuladen, die Tastatur
+          bleibt bei Enter, und der `href` trägt alles, was der Browser von
+          sich aus daraus macht.
+          `draggable={false}` AM LINK, nicht `draggable` — die Absicht des
+          Fahrplans («`dragstart` verhindert den Navigations-Drag») wird hier
+          eine Stufe früher erreicht: ein nicht-ziehbares Kind lässt den Zug
+          an der ziehbaren HÜLLE beginnen, und damit bleibt der D15-Ghost
+          (`setDragImage` auf den ganzen Reiter) wortgleich der von vorher.
+          Mit `draggable` am Link wäre der Link selbst die Quelle, Chromium
+          legte `text/uri-list` dazu, und der Ghost wäre der Schriftzug statt
+          des Reiters. */}
+      <Link to={t.path} aria-current={aktiv ? 'page' : undefined}
+        draggable={false}
         aria-keyshortcuts={kuerzel || undefined}
         // W2·18 Welle 2 Punkt 1 · roving tabindex (Herleitung bei `imRing`).
         // AUSGESCHRIEBENE 0 statt weggelassenem Attribut: der Ring-Platz soll
         // im Markup ABLESBAR sein — die Sonde zählt ihn
         // (`src/tests/reiter-tastaturring.test.tsx`).
         tabIndex={imRing ? 0 : -1}
-        onClick={() => onNavigate(t.path)}
+        // ── DIE EINE AUSNAHME VOM LINK-IDIOM (W2·18 Welle 3 Punkt 3) ────────
+        // Mittelklick schliesst — das Browser-Idiom, das David meint («analog
+        // browser»). Auf einem gewöhnlichen Link öffnete er einen zweiten
+        // Browser-Tab; auf einem REITER schliesst er ihn, in jedem Browser.
+        // Das stärkere Idiom gewinnt, und `preventDefault` hält den Browser
+        // davon ab, daneben noch sein eigenes zu tun.
         onAuxClick={(ev) => {
-          // Mittelklick schliesst — das Browser-Idiom, das David meint.
           if (ev.button === 1) { ev.preventDefault(); onSchliessen(t.path); }
         }}
         // M4 · DASSELBE MENÜ OHNE MAUS: Shift+F10 und die Menü-Taste sind
@@ -302,7 +325,9 @@ export function Reiter({
         // zweiter Stelle (`flex min-w-0 items-baseline`, die alte, von
         // `reiter-beschriftung.test.tsx` bewachte Reihenfolge), sondern nach
         // `items-baseline`, damit dieselbe Textprobe unverändert grün bleibt.
-        className={`flex items-baseline min-w-0 gap-1 py-1.5 pl-2.5 pr-1 text-body-s ${
+        // `no-underline`: die Rolle ändert sich, das Bild nicht — ein Reiter
+        // ist eine Fläche, kein Fliesstext-Verweis (D13/Design-Reglement).
+        className={`flex items-baseline min-w-0 gap-1 py-1.5 pl-2.5 pr-1 text-body-s no-underline ${
           aktiv ? 'font-medium text-ink-900' : 'text-ink-600 hover:text-ink-900'}`}>
         <span className="sr-only">{`Reiter ${nr}: `}</span>
         {/* F6 · DIE GESCHÄFTSNUMMER WIRD NIE GEKÜRZT. Gekürzt wird der Kopf
@@ -398,7 +423,7 @@ export function Reiter({
         {instanz && ' '}
         {instanz && <span className="shrink-0 num">{instanz}</span>}
         {paneWort && <span className="sr-only">{` (Fenster ${paneWort})`}</span>}
-      </button>
+      </Link>
       {/* Fenster-Marke: zeigt, welcher Reiter links bzw. rechts steht. */}
       {paneWort && (
         <span aria-hidden title={`Fenster ${paneWort}`}
