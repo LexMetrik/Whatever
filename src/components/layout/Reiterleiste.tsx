@@ -22,6 +22,9 @@ import {
   // frisch aus der einen Quelle — ein Intervall-Rückruf sähe sonst für immer
   // die Ordnung des Renders, in dem er entstanden ist (§5).
   ladeTabs,
+  // W2·25 · Anheften: die Mechanik wohnt ganz in `lib/tabs` (§3) — hier stehen
+  // nur die beiden Menüzeilen und die Frage, ob ein Zug angenommen würde.
+  hefteAn, loeseAb, festeZone, zugErlaubt,
 } from '../../lib/tabs';
 import { verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { manifestBedarf } from '../../lib/tabGruppen';
@@ -170,8 +173,10 @@ export function Reiterleiste({ paneSchluessel = [] }: {
    *  lesen müssen (ein State-Wert wäre im selben Ereignis noch der alte). */
   const [zieht, setZieht] = useState<string | null>(null);
   /** Wo die Einfügemarke steht: an welchem Reiter, und auf welcher Seite.
-   *  Die Seite kommt aus dem Zeiger-X über der Ziel-Hälfte (D15). */
-  const [ueber, setUeber] = useState<{ path: string; davor: boolean } | null>(null);
+   *  Die Seite kommt aus dem Zeiger-X über der Ziel-Hälfte (D15).
+   *  `gesperrt` = der Zug ginge über die Zonengrenze der angehefteten Reiter
+   *  und wird abgelehnt (W2·25; die Marke sagt es, bevor losgelassen wird). */
+  const [ueber, setUeber] = useState<{ path: string; davor: boolean; gesperrt?: boolean } | null>(null);
   // ── W2·18 WELLE 3 PUNKT 2 · DER RAND-SCHUB ───────────────────────────────
   // Was hier NICHT steht, ist Auto-Scroll: der Streifen scrollt GEMESSEN nie
   // (Herleitung und Messreihe in `reiterleiste/randschub.ts`). Am Rand schiebt
@@ -437,7 +442,10 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // gehen mit (M1) — sonst zeigte ein Pane weiter ein Dokument, das die Leiste
   // nicht mehr führt.
   const alleSchliessen = () => {
-    for (const x of ordnung) schliessePane(x.path);
+    // W2·25: die angehefteten bleiben — also bleibt auch ihr zweites Fenster
+    // stehen. Ein Pane, dessen Reiter die Leiste weiterführt, gehört nicht zu
+    // (M1 gilt in beide Richtungen).
+    for (const x of ordnung) if (!x.fest) schliessePane(x.path);
     leereTabs();
     // R14: «alle» heisst alle Dokumente — übrig bleibt die Sammlung, wie im
     // Browser das letzte Fenster mit der Neuer-Tab-Seite.
@@ -515,6 +523,9 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         const ziel = ordnung[idx + (links ? -1 : 1)];
         if (!ziel) { e.preventDefault(); return; }
         e.preventDefault();
+        // W2·25: über die Zonengrenze meldet `ordneTabsUm` `false` und
+        // schreibt nichts — die Taste steht dort still, genau wie am Rand der
+        // Leiste. Dieselbe Wahl wie dort: kein Umlauf, keine Ausweichstelle.
         ordneTabsUm(ordnung[idx].path, ziel.path, links);
         return;
       }
@@ -694,7 +705,18 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // Zusage, die nicht gilt (§8).
   const menueEintraege = (t: TabEintrag): ReiterMenueEintrag[] => {
     const idx = ordnung.findIndex((x) => tabSchluessel(x.path) === tabSchluessel(t.path));
-    const rechts = idx >= 0 ? ordnung.slice(idx + 1) : [];
+    // W2·25: was «rechts davon» wirklich schliesst, sind die FREIEN Reiter
+    // rechts davon — angeheftete überleben die Geste (`lib/tabs`). Der Zähler
+    // am Menüeintrag zählt darum dasselbe, was die Geste tut (§8).
+    const rechts = idx >= 0 ? ordnung.slice(idx + 1).filter((x) => !x.fest) : [];
+    // ── W2·25 · DIE ZONE, IN DER DIESER REITER SICH BEWEGEN DARF ───────────
+    // Angeheftete Reiter bewegen sich innerhalb der festen Zone, freie
+    // innerhalb der freien. Gezeigt wird nur, was auch WIRKT — dieselbe Regel,
+    // nach der am ersten Reiter «Nach links» fehlt (§8); sie bekommt mit dem
+    // Anheften bloss eine zweite Grenze.
+    const zone = festeZone(ordnung);
+    const vonIdx = t.fest ? 0 : zone;
+    const bisIdx = (t.fest ? zone : ordnung.length) - 1;
     const wieder = letzterGeschlossener();
     const e: ReiterMenueEintrag[] = [];
     if (kannOeffnen && !istOffen(t.path)) {
@@ -733,25 +755,39 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     // links» (§8 — ein Eintrag, der nichts tut, ist eine Zusage, die nicht
     // gilt). Die Kürzel stehen daneben, weil das Menü der Ort ist, an dem man
     // sie lernt (R13-7).
-    if (idx > 0) {
+    if (idx > vonIdx) {
       e.push({ id: 'links-um', label: 'Nach links', rechts: 'Alt+⇧+←',
         onKlick: () => ordneTabsUm(t.path, ordnung[idx - 1].path, true) });
     }
-    if (idx >= 0 && idx < ordnung.length - 1) {
+    if (idx >= 0 && idx < bisIdx) {
       e.push({ id: 'rechts-um', label: 'Nach rechts', rechts: 'Alt+⇧+→',
         onKlick: () => ordneTabsUm(t.path, ordnung[idx + 1].path, false) });
     }
-    if (idx > 0) {
+    if (idx > vonIdx) {
+      // W2·25: «An den Anfang» heisst den Anfang der EIGENEN Zone — für einen
+      // freien Reiter also hinter die angehefteten, nicht vor sie. Der Eintrag
+      // rückt damit nie über eine Grenze, die das Ziehen daneben ablehnt.
       e.push({ id: 'anfang', label: 'An den Anfang',
-        onKlick: () => ordneTabsUm(t.path, ordnung[0].path, true) });
+        onKlick: () => ordneTabsUm(t.path, ordnung[vonIdx].path, true) });
     }
-    if (idx >= 0 && idx < ordnung.length - 1) {
+    if (idx >= 0 && idx < bisIdx) {
       e.push({ id: 'ende', label: 'Ans Ende',
-        onKlick: () => ordneTabsUm(t.path, ordnung[ordnung.length - 1].path, false) });
+        onKlick: () => ordneTabsUm(t.path, ordnung[bisIdx].path, false) });
     }
-    if (ordnung.length > 1) {
+    // ── W2·25 · ANHEFTEN / LÖSEN (Spec §7 Teil 1, §5a Ziff. 5) ─────────────
+    // Der einzige Weg zu beiden — und für einen angehefteten Reiter zugleich
+    // der einzige Weg zum Schliessen (sein ✕ ist bewusst weg,
+    // `reiterleiste/Reiter.tsx`). Darum steht «Lösen» VOR den Schliess-Zeilen:
+    // wer einen festen Reiter loswerden will, will ihn meist nur befreien.
+    e.push(t.fest
+      ? { id: 'loesen', label: 'Lösen', onKlick: () => loeseAb(t.path) }
+      : { id: 'anheften', label: 'Anheften', onKlick: () => hefteAn(t.path) });
+    // W2·25: «alle anderen» schliesst nur die FREIEN anderen — gibt es keine,
+    // täte der Eintrag nichts und erscheint darum nicht (§8, dieselbe Regel
+    // wie an den Rändern oben).
+    if (ordnung.some((x) => !x.fest && tabSchluessel(x.path) !== tabSchluessel(t.path))) {
       e.push({ id: 'andere', label: 'Alle anderen schliessen', onKlick: () => {
-        for (const x of ordnung) if (tabSchluessel(x.path) !== tabSchluessel(t.path)) schliessePane(x.path);
+        for (const x of ordnung) if (!x.fest && tabSchluessel(x.path) !== tabSchluessel(t.path)) schliessePane(x.path);
         schliesseAndere(t.path);
         navigate(t.path);
       } });
@@ -763,7 +799,9 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         if (rechts.some((x) => tabSchluessel(x.path) === aktivSchluessel)) navigate(t.path);
       } });
     }
-    if (ordnung.length > 1) {
+    // W2·25: sind ALLE offenen Reiter angeheftet, schlösse «Alle schliessen»
+    // nichts — kein toter Eintrag (§8).
+    if (ordnung.some((x) => !x.fest)) {
       e.push({ id: 'alle', label: 'Alle schliessen', onKlick: alleSchliessen });
     }
     // KEINE ✕-Marke: das Schliess-Glyph kommt in dieser App aus genau EINEM
@@ -801,7 +839,9 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       e.push({ id: 'wieder', label: `Wieder öffnen: ${reiterKurzformText(wieder, manifeste)}`,
         rechts: 'Alt+⇧+T', onKlick: stelleWiederHer });
     }
-    if (tabs.length > 0) e.push({ id: 'alle', label: 'Alle schliessen', onKlick: alleSchliessen });
+    // W2·25: dieselbe Bedingung wie im Reiter-Menü — angeheftete Reiter
+    // schliesst die Geste nicht, also zählt nur der freie Bestand.
+    if (tabs.some((t) => !t.fest)) e.push({ id: 'alle', label: 'Alle schliessen', onKlick: alleSchliessen });
     return e;
   };
 
@@ -947,7 +987,10 @@ export function Reiterleiste({ paneSchluessel = [] }: {
                 kannOeffnen={kannOeffnen} istOffen={istOffen} onDaneben={oeffneDaneben}
                 onSchliessen={schliessen}
                 onZieht={setZieht} onUeber={setUeber} onMenue={oeffneMenue} onKarte={setKarte}
-                onUmordnen={ordneTabsUm} />
+                onUmordnen={ordneTabsUm}
+                // W2·25: die Ordnung hält die Leiste, die Regel `lib/tabs` —
+                // der Reiter fragt nur, was er unter dem Zeiger zeichnen soll.
+                pruefeZug={(von, nach, davor) => zugErlaubt(ordnung, von, nach, davor)} />
             );
           })}
         </div>
@@ -1005,10 +1048,19 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           title="Alle offenen Reiter"
           onClick={() => setBlatt((z) => (z.offen ? BLATT_ZU : { offen: true, suche: '' }))}
           onDragOver={(ev) => {
-            if (!gezogen.current) return;
+            const von = gezogen.current;
+            if (!von) return;
             ev.preventDefault();
             stoppSchub();
-            if (!ueberAblage) setUeberAblage(true);
+            // W2·25: ein ANGEHEFTETER Reiter kann nicht ans Ende abgelegt
+            // werden — dort beginnt die freie Zone. Der Rahmen erscheint dann
+            // gar nicht erst, und der Zeiger trägt das «kein Zutritt» des
+            // Browsers (dieselbe Auskunft wie an der Marke, nur hier).
+            const letzte = ordnung[ordnung.length - 1];
+            const geht = !!letzte && tabSchluessel(letzte.path) !== tabSchluessel(von)
+              && zugErlaubt(ordnung, von, letzte.path, false);
+            ev.dataTransfer.dropEffect = geht ? 'move' : 'none';
+            if (ueberAblage !== geht) setUeberAblage(geht);
           }}
           onDragLeave={() => setUeberAblage(false)}
           onDrop={(ev) => {

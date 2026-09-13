@@ -400,3 +400,183 @@ test.describe('W2·18 Welle 3 Punkt 5 — Reihenfolge ändern ohne Maus', () => 
     await ctx.close()
   })
 })
+
+// ═══ W2·25 · ANHEFTEN, OHNE D16 ZURÜCKZUHOLEN ═══════════════════════════════
+//
+// Die Spec (`fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md` §7) macht das Anheften
+// ausdrücklich davon abhängig, dass es KEINE zweite Anzeige-Ordnung wird: der
+// flache Speicher sortiert um (feste zuerst), und der Zug über die Zonengrenze
+// wird ABGELEHNT statt stillschweigend korrigiert. Genau das misst dieser
+// Block — in derselben Datei wie der D16-Befund, weil es dieselbe Frage ist.
+//
+// ROT ZU BEKOMMEN (§6.7, so gefahren 13.9.2026 gegen `43a5459ff`: es gab weder
+// `fest` noch `hefteAn`, alle Fälle unten scheiterten):
+//   · `lib/tabs.zugErgebnis`: die `zonenTreu`-Prüfung streichen ⇒ der freie
+//     Reiter landet vor dem festen, die Marke zeigt keine Sperre;
+//   · `lib/tabs.leereTabs`: den `fest`-Filter streichen ⇒ «Alle schliessen»
+//     nimmt den angehefteten Reiter mit.
+test.describe('W2·25 — Anheften sortiert den Speicher, die Zonengrenze lehnt ab', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+  })
+
+  /** Wie `setzeReiter`, nur mit ausdrücklicher Anheftung je Eintrag. */
+  async function setzeMitFest(page: Page, eintraege: { path: string; fest?: boolean }[]): Promise<void> {
+    await page.goto(START)
+    await page.evaluate((e) => localStorage.setItem('lexmetrik-tabs', JSON.stringify(e)), eintraege)
+    await page.goto(eintraege[eintraege.length - 1]?.path ?? '/')
+    await expect(page.locator('[data-reiter-streifen] [data-reiter-schluessel]').first())
+      .toBeVisible({ timeout: 20_000 })
+  }
+
+  /** Ein Zug, der VOR dem Loslassen anhält: liefert, was die Leiste unter dem
+   *  Zeiger zeigt (Marke, Sperre, `dropEffect`). Danach wird losgelassen.
+   *
+   *  ZWEI `evaluate`-Schritte, nicht einer: die Marke ist REACT-ZUSTAND, und
+   *  der steht erst nach dem nächsten Render im DOM — synchron hinter dem
+   *  `dragover` gelesen, war sie GEMESSEN immer `null` (erster Lauf dieser
+   *  Sonde, 13.9.2026). Derselbe `DataTransfer` muss dabei über beide
+   *  Schritte hinweg derselbe bleiben (so tut es der Browser auch), darum
+   *  liegt er zwischendurch am `window`. */
+  async function ziehePruefe(page: Page, von: string, nach: string, davor: boolean) {
+    await page.evaluate(([vonK, nachK, links]) => {
+      const el = (k: string) => document.querySelector<HTMLElement>(
+        `[data-reiter-streifen] [data-reiter-schluessel="${k}"]`)!
+      const q = el(vonK); const z = el(nachK)
+      const r = z.getBoundingClientRect()
+      const x = Math.round(links ? r.left + r.width * 0.25 : r.left + r.width * 0.75)
+      const y = Math.round(r.top + r.height / 2)
+      const dt = new DataTransfer()
+      ;(window as unknown as { __lmZug?: unknown }).__lmZug = { dt, x, y, vonK, nachK }
+      const feuer = (ziel: HTMLElement, typ: string) => ziel.dispatchEvent(
+        new DragEvent(typ, { bubbles: true, cancelable: true, dataTransfer: dt, clientX: x, clientY: y }))
+      feuer(q, 'dragstart')
+      feuer(z, 'dragenter')
+      feuer(z, 'dragover')
+    }, [schluessel(von), schluessel(nach), davor] as [string, string, boolean])
+
+    const marke = page.locator(
+      `[data-reiter-streifen] [data-reiter-schluessel="${schluessel(nach)}"] [data-reiter-marke]`)
+    await expect(marke, 'die Einfügemarke steht unter dem Zeiger').toHaveCount(1)
+    const sicht = {
+      marke: await marke.getAttribute('data-reiter-marke'),
+      sperre: await marke.getAttribute('data-reiter-sperre'),
+      dropEffect: await page.evaluate(() =>
+        ((window as unknown as { __lmZug: { dt: DataTransfer } }).__lmZug).dt.dropEffect),
+    }
+
+    await page.evaluate(() => {
+      const z = (window as unknown as {
+        __lmZug: { dt: DataTransfer; x: number; y: number; vonK: string; nachK: string }
+      }).__lmZug
+      const el = (k: string) => document.querySelector<HTMLElement>(
+        `[data-reiter-streifen] [data-reiter-schluessel="${k}"]`)!
+      const feuer = (ziel: HTMLElement, typ: string) => ziel.dispatchEvent(new DragEvent(typ, {
+        bubbles: true, cancelable: true, dataTransfer: z.dt, clientX: z.x, clientY: z.y }))
+      feuer(el(z.nachK), 'drop')
+      feuer(el(z.vonK), 'dragend')
+    })
+    await page.waitForTimeout(150)
+    return sicht
+  }
+
+  test('der angeheftete Reiter steht vorn — auch wenn er hinten gespeichert war', async ({ page }) => {
+    await setzeMitFest(page, [{ path: R1 }, { path: E1 }, { path: G1, fest: true }])
+    expect(await sichtbareOrdnung(page)).toEqual([schluessel(G1), schluessel(R1), schluessel(E1)])
+    expect(await gespeicherteOrdnung(page), 'die Umsortierung ist die des SPEICHERS (D16)')
+      .toEqual([schluessel(G1), schluessel(R1), schluessel(E1)])
+    await expect(page.locator('[data-reiter-streifen] [data-reiter-fest="true"]')).toHaveCount(1)
+  })
+
+  test('ein freier Reiter vor einen festen: sichtbar abgelehnt, Ordnung unverändert', async ({ page }) => {
+    await setzeMitFest(page, [{ path: G1, fest: true }, { path: E1 }, { path: R1 }])
+    const vorher = await sichtbareOrdnung(page)
+
+    const sicht = await ziehePruefe(page, R1, G1, true)
+    // Die Marke bleibt STEHEN — «hier landet nichts» ist eine Auskunft, ein
+    // fehlendes Zeichen wäre keine (§8) —, aber sie trägt die Sperre.
+    expect(sicht.marke, 'die Einfügemarke steht auf der Zeigerseite').toBe('davor')
+    expect(sicht.sperre, 'und sie ist als gesperrt ausgewiesen').toBe('fest')
+
+    expect(await sichtbareOrdnung(page), 'nichts wurde verschoben').toEqual(vorher)
+    expect(await gespeicherteOrdnung(page), 'und auch nichts «korrigiert»').toEqual(vorher)
+  })
+
+  test('ein fester Reiter hinter einen freien: ebenfalls abgelehnt', async ({ page }) => {
+    await setzeMitFest(page, [{ path: G1, fest: true }, { path: E1 }, { path: R1 }])
+    const vorher = await sichtbareOrdnung(page)
+    const sicht = await ziehePruefe(page, G1, R1, false)
+    expect(sicht.sperre).toBe('fest')
+    expect(await gespeicherteOrdnung(page)).toEqual(vorher)
+  })
+
+  test('INNERHALB der freien Zone zieht es weiter wie vor W2·25 (D16 unberührt)', async ({ page }) => {
+    await setzeMitFest(page, [{ path: G1, fest: true }, { path: E1 }, { path: R1 }, { path: V1 }])
+    const sicht = await ziehePruefe(page, V1, E1, true)
+    expect(sicht.sperre, 'kein Zeichen einer Sperre').toBeNull()
+    expect(await gespeicherteOrdnung(page))
+      .toEqual([schluessel(G1), schluessel(V1), schluessel(E1), schluessel(R1)])
+  })
+
+  test('das Kontextmenü heftet an und löst wieder — Position 0 und zurück', async ({ page }) => {
+    await setzeReiter(page, [G1, E1, R1])
+    const menueAuf = async (pfad: string) => {
+      await page.locator(`[data-reiter-streifen] [data-reiter-schluessel="${schluessel(pfad)}"]`)
+        .click({ button: 'right' })
+      await expect(page.locator('[role=menu]')).toBeVisible()
+    }
+    await menueAuf(R1)
+    await page.locator('[data-reiter-menue="anheften"]').click()
+    await expect.poll(() => gespeicherteOrdnung(page))
+      .toEqual([schluessel(R1), schluessel(G1), schluessel(E1)])
+
+    // Am angehefteten Reiter steht «Lösen» statt «Anheften» — und kein ✕.
+    await menueAuf(R1)
+    await expect(page.locator('[data-reiter-menue="anheften"]')).toHaveCount(0)
+    await page.locator('[data-reiter-menue="loesen"]').click()
+    await expect.poll(() => gespeicherteOrdnung(page))
+      .toEqual([schluessel(R1), schluessel(G1), schluessel(E1)])
+    await expect(page.locator('[data-reiter-streifen] [data-reiter-fest="true"]')).toHaveCount(0)
+  })
+
+  test('«Alle schliessen» lässt den angehefteten Reiter stehen — und er überlebt den Neustart', async ({ page }) => {
+    await setzeMitFest(page, [{ path: G1, fest: true }, { path: E1 }, { path: R1 }])
+    await page.locator(`[data-reiter-streifen] [data-reiter-schluessel="${schluessel(E1)}"]`)
+      .click({ button: 'right' })
+    await expect(page.locator('[role=menu]')).toBeVisible()
+    await page.locator('[data-reiter-menue="alle"]').click()
+    // Übrig: der angeheftete Reiter und die Sammlung (R14 — die Leiste steht
+    // nie leer; «alle» heisst alle Dokumente).
+    await expect.poll(() => gespeicherteOrdnung(page)).toEqual([schluessel(G1), '/'])
+
+    await page.reload()
+    await expect(page.locator('[data-reiter-streifen] [data-reiter-fest="true"]')).toHaveCount(1)
+    expect(await gespeicherteOrdnung(page), 'Persistenz über das Neuladen')
+      .toEqual([schluessel(G1), '/'])
+  })
+
+  test('der angeheftete Reiter trägt kein ✕ und ist schmaler als derselbe Reiter frei', async ({ page }) => {
+    const breite = async (pfad: string) => page.locator(
+      `[data-reiter-streifen] [data-reiter-schluessel="${schluessel(pfad)}"]`)
+      .evaluate((el) => el.getBoundingClientRect().width)
+    const schliessKnoepfe = (pfad: string) => page.locator(
+      `[data-reiter-streifen] [data-reiter-schluessel="${schluessel(pfad)}"] button[aria-label*="schliessen"]`)
+
+    await setzeMitFest(page, [{ path: G1 }, { path: E1 }])
+    await page.waitForTimeout(1200)
+    const frei = await breite(G1)
+    await expect(schliessKnoepfe(G1)).toHaveCount(1)
+
+    await setzeMitFest(page, [{ path: G1, fest: true }, { path: E1 }])
+    await page.waitForTimeout(1200)
+    const fest = await breite(G1)
+    await expect(schliessKnoepfe(G1), 'kein ✕ am angehefteten Reiter').toHaveCount(0)
+
+    // GEMESSEN 13.9.2026 (gebautes dist/, Chromium @1440, `/gesetze/bund/OR#art-336_c`):
+    // frei 179.09 px, angeheftet 39.05 px — ein Fünftel der Breite für dieselbe
+    // Auskunft «hier steht das OR». Geprüft wird die RICHTUNG, nicht die Zahl:
+    // die Reiterbreite hängt an Schrift und Manifest, und eine festgeschriebene
+    // Zahl wäre bei der nächsten Aufschrift falsch-rot (§6.7).
+    expect(fest, `angeheftet ${fest} px gegen frei ${frei} px`).toBeLessThan(frei)
+  })
+})

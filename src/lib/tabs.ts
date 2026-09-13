@@ -42,6 +42,28 @@ export interface TabEintrag {
    *  nachaktualisiert wird, verlöre sonst seinen Artikel, bis der Leser das
    *  erste Mal gescrollt hat. Er wird nie aus der Lesestellung nachgezogen. */
   wahl?: string;
+  /** ── W2·25 (Spec `FAHRPLAN-DESIGN-IDENTITAET.md` §7) · ANGEHEFTET ────────
+   *  Ein angehefteter Reiter steht schmal ganz links, trägt kein ✕ und
+   *  überlebt «Alle schliessen» wie den Neustart (§5a Ziff. 5).
+   *
+   *  DIE D16-AUFLAGE STECKT IM WORT «FLACH»: Anheften ist KEINE zweite
+   *  Anzeige-Ordnung, sondern eine Eigenschaft des Eintrags, die den EINEN
+   *  Speicher umsortiert (feste zuerst, `hefteAn`). Fixer 1c hat jede
+   *  Anzeige-Gruppierung entfernt, weil sie das Ziehen einsammelte («es geht
+   *  nur wenn nur gesetze offen sind — bug», `e2e/w224-reiter-umordnen-d16`);
+   *  eine Gruppierung, die das Anheften nachbaut, wäre derselbe Defekt unter
+   *  neuem Namen. Was die Leiste zeigt, ist weiterhin `tabs` in
+   *  Speicherreihenfolge — nur dass die festen darin vorn stehen.
+   *
+   *  DER PREIS DAFÜR IST EINE ZONENGRENZE, und die wird ABGELEHNT, nicht
+   *  still korrigiert: ein Zug, der einen freien Reiter vor einen festen
+   *  brächte, schreibt gar nichts (`ordneTabsUm` meldet `false`, und die
+   *  Leiste zeigt die Sperre schon unter dem Zeiger). Ein still zurechtgerückter
+   *  Zug wäre genau das D16-Bild — man zieht, und es geschieht etwas anderes.
+   *
+   *  DIE EIGENSCHAFT GEHÖRT DEM PLATZ, NICHT DEM DOKUMENT (Browser-Norm): eine
+   *  Navigation IM angehefteten Reiter (`ersetzeTab`) lässt ihn angeheftet. */
+  fest?: boolean;
 }
 
 // ─── D7 (David 6.9.2026: «achte darauf dass der reiter bei gesetz mitzählt») ─
@@ -509,6 +531,95 @@ export const TABS_EVENT = 'lexmetrik:tabs';
  *  über Pane/Ctrl-Klick möglich), bleibt der ERSTE stehen — die Reihenfolge
  *  ist die des Speichers, und zwei Reiter mit identischem Schlüssel wären für
  *  jede Aktion mehrdeutig (`tabSchluessel` ist die Identität, §5). */
+// ═══ W2·25 · DIE FESTE ZONE (Spec §7 Teil 1, D16-Auflage) ══════════════════
+//
+// Es gibt genau EINE Ordnung (den flachen Speicher) und darin genau EINE
+// Grenze: alles vor `festeZone` ist angeheftet, alles danach frei. Drei
+// Funktionen halten sie — die Zählung, die Prüfung, der Zug. Jede andere
+// Stelle der App fragt diese drei, statt selbst zu rechnen (§5).
+
+/** Wie viele Reiter am KOPF der Ordnung angeheftet sind = Ende der festen
+ *  Zone und zugleich die erste freie Position. Zählt nur den ZUSAMMENHÄNGENDEN
+ *  Kopf: ein fester Reiter hinter einem freien wäre ein gebrochener Speicher,
+ *  und den heilt `ladeTabs`, statt ihn hier mitzuzählen. */
+export function festeZone(tabs: readonly TabEintrag[]): number {
+  let n = 0;
+  while (n < tabs.length && tabs[n].fest) n += 1;
+  return n;
+}
+
+/** Steht die Ordnung richtig — erst alle festen, dann alle freien? Die eine
+ *  Regel, gegen die jeder Zug geprüft wird (statt Indizes zweimal zu rechnen). */
+function zonenTreu(tabs: readonly TabEintrag[]): boolean {
+  return festeZone(tabs) === tabs.filter((t) => t.fest).length;
+}
+
+/** Den Zug ausrechnen, ohne ihn zu schreiben — `null` heisst «gibt es nicht»
+ *  oder «über die Zonengrenze». EINE Quelle für beide Aufrufer: `ordneTabsUm`
+ *  schreibt das Ergebnis, die Leiste fragt über `zugErlaubt` schon beim
+ *  Überfahren, um die Sperre unter dem Zeiger zu zeigen (§8: die Ablehnung
+ *  kommt vor dem Loslassen, nicht als stille Korrektur danach). */
+function zugErgebnis(
+  tabs: readonly TabEintrag[], vonPath: string, nachPath: string, davor?: boolean,
+): TabEintrag[] | null {
+  const von = tabs.findIndex((t) => tabSchluessel(t.path) === tabSchluessel(vonPath));
+  const nach = tabs.findIndex((t) => tabSchluessel(t.path) === tabSchluessel(nachPath));
+  if (von === -1 || nach === -1 || von === nach) return null;
+  const seite = davor ?? von > nach;
+  const naechste = [...tabs];
+  const [bewegt] = naechste.splice(von, 1);
+  const nachNeu = naechste.findIndex((t) => tabSchluessel(t.path) === tabSchluessel(nachPath));
+  naechste.splice(seite ? nachNeu : nachNeu + 1, 0, bewegt);
+  return zonenTreu(naechste) ? naechste : null;
+}
+
+/** Darf dieser Zug stattfinden? Für die Einfügemarke und den `dropEffect` —
+ *  die Leiste zeichnet die Sperre, sie erfindet sie nicht. */
+export function zugErlaubt(
+  tabs: readonly TabEintrag[], vonPath: string, nachPath: string, davor?: boolean,
+): boolean {
+  return zugErgebnis(tabs, vonPath, nachPath, davor) !== null;
+}
+
+/** Ist dieser Reiter angeheftet? (Kontextmenü: «Anheften» oder «Lösen».) */
+export function istFest(path: string): boolean {
+  const teil = tabSchluessel(path);
+  return ladeTabs().some((t) => tabSchluessel(t.path) === teil && t.fest === true);
+}
+
+/** Anheften: setzt die Eigenschaft UND sortiert den flachen Speicher um — der
+ *  Reiter wandert ans ENDE der festen Zone (bei der ersten Anheftung also auf
+ *  Position 0). Ans Ende, nicht nach vorn: wer einen zweiten Reiter anheftet,
+ *  soll den ersten nicht verschoben vorfinden (dieselbe Ruhe wie beim
+ *  Anhängen neuer Reiter hinten). Nichts geht verloren, also kein Ring. */
+export function hefteAn(path: string): void {
+  const teil = tabSchluessel(path);
+  const bisher = ladeTabs();
+  const i = bisher.findIndex((t) => tabSchluessel(t.path) === teil);
+  if (i === -1 || bisher[i].fest) return;
+  const naechste = bisher.filter((_, j) => j !== i);
+  naechste.splice(festeZone(naechste), 0, { ...bisher[i], fest: true });
+  schreibe(naechste);
+}
+
+/** Lösen: der Reiter verliert die Eigenschaft und steht danach als ERSTER
+ *  freier — er bleibt damit dort, wo er eben noch stand, statt ans Ende der
+ *  Leiste zu springen (ein gelöster Reiter ist nicht ein neu geöffneter). */
+export function loeseAb(path: string): void {
+  const teil = tabSchluessel(path);
+  const bisher = ladeTabs();
+  const i = bisher.findIndex((t) => tabSchluessel(t.path) === teil);
+  if (i === -1 || !bisher[i].fest) return;
+  // Das Feld wird ENTFERNT, nicht auf `false` gesetzt: ein `fest: false` im
+  // Speicher wäre eine zweite Schreibweise für dasselbe (§5) und stünde in
+  // jedem exportierten Eintrag (Mappen-Adresse) ohne Aussage herum.
+  const frei: TabEintrag = { ...bisher[i] };
+  delete frei.fest;
+  const naechste = bisher.filter((_, j) => j !== i);
+  naechste.splice(festeZone(naechste), 0, frei);
+  schreibe(naechste);
+}
+
 export function ladeTabs(): TabEintrag[] {
   try {
     const roh = localStorage.getItem(KEY);
@@ -520,10 +631,11 @@ export function ladeTabs(): TabEintrag[] {
         e && typeof e.path === 'string' &&
         (e.label === undefined || typeof e.label === 'string') &&
         (e.wahl === undefined || typeof e.wahl === 'string'))
-      .map(({ path, label, wahl }): TabEintrag => ({
+      .map(({ path, label, wahl, fest }): TabEintrag => ({
         path,
         ...(label ? { label } : {}),
         ...(wahl ? { wahl } : {}),
+        ...(fest === true ? { fest: true } : {}),
       }))
       .filter((e) => {
         const k = tabSchluessel(e.path);
@@ -539,7 +651,25 @@ export function ladeTabs(): TabEintrag[] {
       // dieser Stelle — Lesen ist keine Handlung, und `ladeTabs` läuft bei
       // jedem Ereignis (`useTabs`): ein Schreibzugriff im Lesepfad legte
       // denselben Eintrag bei jedem Lauf erneut in den Ring.
-      .slice(-MAX);
+      // W2·25: die Kappe steht VOR der Partition, nicht danach — `slice(-MAX)`
+      // schneidet vorn ab, und vorn stehen nach der Partition gerade die
+      // ANGEHEFTETEN. Andersherum verlöre ein übervoller Speicher beim blossen
+      // LESEN genau die Reiter, die der Nutzer festgehalten hat.
+      .slice(-MAX)
+      // ── W2·25 · DIE PARTITION IST TEIL DES LESENS, NICHT DES ZEICHNENS ──
+      // Feste zuerst, innerhalb jeder Zone in gespeicherter Reihenfolge
+      // (STABIL — `sort` wäre hier falsch, die Reihenfolge IST die Ordnung).
+      // Sie steht HIER und nicht in der Leiste, weil die Leiste sonst eine
+      // zweite Anzeige-Ordnung führte — genau der D16-Rückfall, den die
+      // Spec ausschliesst. Geheilt wird damit auch, was von aussen kommt:
+      // ein zweites Browserfenster mit älterem Stand, ein von Hand
+      // geschriebener Speicher, eine Sitzung von vor diesem Schritt.
+      // Rein deterministisch (§2), kein Zeitstempel, kein Schreibzugriff im
+      // Lesepfad (`ladeTabs` läuft bei jedem Ereignis, s. `useTabs`).
+      .reduce<TabEintrag[]>((acc, e) => {
+        if (e.fest) acc.splice(festeZone(acc), 0, e); else acc.push(e);
+        return acc;
+      }, []);
   } catch {
     return [];
   }
@@ -573,11 +703,19 @@ function eintragAus(path: string, label?: string, alt?: TabEintrag): TabEintrag 
     path: neuPath,
     ...(neuLabel ? { label: neuLabel } : {}),
     ...(neuWahl ? { wahl: neuWahl } : {}),
+    // W2·25: die Anheftung gehört dem PLATZ, nicht dem Dokument (Browser-Norm)
+    // — wer im angehefteten Reiter weiternavigiert, findet ihn angeheftet vor.
+    // Ohne diese Zeile löste jede Navigation die Anheftung still, und die
+    // Zonen-Partition in `ladeTabs` schöbe den Reiter obendrein weg.
+    ...(alt?.fest ? { fest: true as const } : {}),
   };
 }
 
 const gleich = (a: TabEintrag, b: TabEintrag): boolean =>
-  a.path === b.path && a.label === b.label && a.wahl === b.wahl;
+  // W2·25: `fest` gehört in den Vergleich — sonst sähe `tabsGleich` das
+  // Anheften nicht, und die Leiste zeichnete den Reiter erst beim nächsten
+  // fremden Ereignis um (`useTabs` hält an der alten Array-Identität fest).
+  a.path === b.path && a.label === b.label && a.wahl === b.wahl && !!a.fest === !!b.fest;
 
 /** ── W2·18 Punkt 2 · STRUKTURELLE GLEICHHEIT ZWEIER REITERLISTEN ───────────
  *  `ladeTabs()` baut bei JEDEM Aufruf ein neues Array aus dem `localStorage` —
@@ -635,7 +773,12 @@ function kappeMitRing(tabs: TabEintrag[], geschuetzt?: TabEintrag): TabEintrag[]
   const weg: GeschlossenerReiter[] = [];
   let zuViel = tabs.length - MAX;
   tabs.forEach((eintrag, index) => {
-    if (zuViel > 0 && eintrag !== geschuetzt) { weg.push({ eintrag, index }); zuViel -= 1; }
+    // W2·25: ein ANGEHEFTETER Reiter ist nie das Opfer der Kappe. Wer einen
+    // Erlass festhält, hält ihn gegen das Weglaufen der Leiste fest — genau
+    // dagegen. Weichen muss dann der älteste freie; gibt es keinen mehr,
+    // bleibt die Liste über MAX (50 angeheftete Reiter sind eine Ansage, kein
+    // Versehen, und stilles Wegwerfen wäre die schlechtere Antwort, §8).
+    if (zuViel > 0 && eintrag !== geschuetzt && !eintrag.fest) { weg.push({ eintrag, index }); zuViel -= 1; }
     else bleibt.push(eintrag);
   });
   merkeGeschlossen(weg);
@@ -701,18 +844,22 @@ export function ersetzeTab(altPath: string | null | undefined, neuPath: string, 
  *  die kein Zeiger-X haben — sie bleiben unangetastet (§6.3).
  *
  *  Der Zielindex wird NACH dem Herausnehmen neu bestimmt: sonst verschiebt der
- *  entnommene Reiter das Ziel um eins, und «davor» landete dahinter. */
-export function ordneTabsUm(vonPath: string, nachPath: string, davor?: boolean): void {
-  const bisher = ladeTabs();
-  const von = bisher.findIndex((t) => tabSchluessel(t.path) === tabSchluessel(vonPath));
-  const nach = bisher.findIndex((t) => tabSchluessel(t.path) === tabSchluessel(nachPath));
-  if (von === -1 || nach === -1 || von === nach) return;
-  const seite = davor ?? von > nach;
-  const naechste = [...bisher];
-  const [bewegt] = naechste.splice(von, 1);
-  const nachNeu = naechste.findIndex((t) => tabSchluessel(t.path) === tabSchluessel(nachPath));
-  naechste.splice(seite ? nachNeu : nachNeu + 1, 0, bewegt);
+ *  entnommene Reiter das Ziel um eins, und «davor» landete dahinter.
+ *
+ *  ── W2·25 · DIE ZONENGRENZE WIRD ABGELEHNT, NICHT KORRIGIERT ─────────────
+ *  Seit dem Anheften gibt es eine Grenze in derselben flachen Ordnung. Ein
+ *  Zug darüber hinweg schreibt NICHTS und meldet `false`; der Aufrufer zeigt
+ *  die Sperre (die Leiste tut es schon beim Überfahren, `zugErlaubt`). Der
+ *  Rückgabewert ist neu — alle Bestands-Aufrufer ignorieren ihn und verhalten
+ *  sich wortgleich wie vorher (`void`-Semantik bleibt gültig).
+ *  @returns true, wenn umgeordnet wurde; false bei unbekanntem Pfad, gleicher
+ *           Position ODER abgelehnter Zonengrenze.
+ */
+export function ordneTabsUm(vonPath: string, nachPath: string, davor?: boolean): boolean {
+  const naechste = zugErgebnis(ladeTabs(), vonPath, nachPath, davor);
+  if (!naechste) return false;
   schreibe(naechste);
+  return true;
 }
 
 /** ── W2·18 Punkt 3 · WER NACH DEM SCHLIESSEN AKTIV WIRD ────────────────────
@@ -753,8 +900,14 @@ export function leereTabs(): void {
   // (dort die Herleitung): eine Geste legt absteigend nach Position ab, der
   // Stapel gibt sie aufsteigend zurück. Hier steht darum nur noch, WAS
   // hineinkommt — alles, mit seiner Position.
-  merkeGeschlossen(ladeTabs().map((eintrag, index) => ({ eintrag, index })));
-  schreibe([]);
+  // ── W2·25 · «ALLE» HEISST ALLE FREIEN ────────────────────────────────────
+  // Angeheftete überleben die Geste (§5a Ziff. 5) — genau dafür heftet man an.
+  // Sie gehen darum auch NICHT in den Ring: dort steht, was zurückgeholt
+  // werden kann, und ein Reiter, der gar nicht weg ist, wäre dort eine tote
+  // Zeile («Wieder öffnen: OR», während OR links steht).
+  const bisher = ladeTabs();
+  merkeGeschlossen(bisher.map((eintrag, index) => ({ eintrag, index })).filter(({ eintrag }) => !eintrag.fest));
+  schreibe(bisher.filter((t) => t.fest));
 }
 
 /** ── M4 · «ALLE ANDEREN SCHLIESSEN» (Prüfbefund R11 #35) ────────────────────
@@ -765,11 +918,14 @@ export function schliesseAndere(path: string): void {
   const teil = tabSchluessel(path);
   const bisher = ladeTabs();
   if (!bisher.some((t) => tabSchluessel(t.path) === teil)) return;
+  // W2·25: «alle anderen» lässt die angehefteten stehen — dieselbe Zusage wie
+  // bei «Alle schliessen», und dieselbe wie im Browser.
+  const bleibt = (t: TabEintrag) => tabSchluessel(t.path) === teil || !!t.fest;
   const weg = bisher.map((eintrag, index) => ({ eintrag, index }))
-    .filter(({ eintrag }) => tabSchluessel(eintrag.path) !== teil);
+    .filter(({ eintrag }) => !bleibt(eintrag));
   if (weg.length === 0) return;
   merkeGeschlossen(weg);
-  schreibe(bisher.filter((t) => tabSchluessel(t.path) === teil));
+  schreibe(bisher.filter(bleibt));
 }
 
 /** ── M4 · «RECHTS DAVON SCHLIESSEN» ────────────────────────────────────────
@@ -781,8 +937,14 @@ export function schliesseRechtsVon(path: string): void {
   const bisher = ladeTabs();
   const idx = bisher.findIndex((t) => tabSchluessel(t.path) === teil);
   if (idx === -1 || idx === bisher.length - 1) return;
-  merkeGeschlossen(bisher.slice(idx + 1).map((eintrag, i) => ({ eintrag, index: idx + 1 + i })));
-  schreibe(bisher.slice(0, idx + 1));
+  // W2·25: rechts von einem ANGEHEFTETEN Reiter stehen die übrigen
+  // angehefteten — auch sie bleiben (§5a Ziff. 5). Von einem freien Reiter aus
+  // ändert das nichts: die feste Zone liegt immer links.
+  const weg = bisher.slice(idx + 1).map((eintrag, i) => ({ eintrag, index: idx + 1 + i }))
+    .filter(({ eintrag }) => !eintrag.fest);
+  if (weg.length === 0) return;
+  merkeGeschlossen(weg);
+  schreibe(bisher.filter((t, i) => i <= idx || !!t.fest));
 }
 
 // ─── M3 (Prüfbefund R11 #37, 6.9.2026) · «ZULETZT GESCHLOSSEN» ──────────────
@@ -897,7 +1059,14 @@ export function stelleLetztenWiederHer(): TabEintrag | null {
   const teil = tabSchluessel(letzter.eintrag.path);
   if (bisher.some((t) => tabSchluessel(t.path) === teil)) return letzter.eintrag;
   const naechste = [...bisher];
-  naechste.splice(Math.min(letzter.index, naechste.length), 0, letzter.eintrag);
+  // W2·25: die alte Position gilt, SOWEIT sie die Zonengrenze achtet. Ein
+  // freier Reiter, dessen Platz inzwischen in der festen Zone läge (jemand hat
+  // in der Zwischenzeit angeheftet), landet als erster freier statt mitten
+  // zwischen den angehefteten — sonst wäre die Rückfahrkarte die eine Stelle,
+  // die den Speicher bricht, den `ladeTabs` gleich darauf wieder umsortiert.
+  const zone = festeZone(naechste);
+  const roh = Math.min(letzter.index, naechste.length);
+  naechste.splice(letzter.eintrag.fest ? Math.min(roh, zone) : Math.max(roh, zone), 0, letzter.eintrag);
   // W2·18 Punkt 4: dieselbe Richtung und derselbe Ring wie beim Öffnen — hier
   // stand `.slice(0, MAX)` und warf am vollen Speicher den JÜNGSTEN Reiter weg,
   // um den wiederhergestellten aufzunehmen.

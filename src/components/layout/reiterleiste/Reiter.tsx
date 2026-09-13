@@ -48,14 +48,19 @@ export interface ReiterProps {
   manifeste: VerlaufManifeste;
   paneSchluessel: string[];
   zieht: string | null;
-  ueber: { path: string; davor: boolean } | null;
+  /** ── W2·25 · DIE EINFÜGEMARKE KENNT JETZT AUCH DIE ABLEHNUNG ────────────
+   *  `gesperrt` heisst: dieser Zug ginge über die Zonengrenze der
+   *  angehefteten Reiter und wird NICHT ausgeführt (D16-Auflage — abgelehnt,
+   *  nicht stillschweigend korrigiert). Die Marke sagt es, bevor losgelassen
+   *  wird; der `dropEffect` sagt es zusätzlich dem Zeiger. */
+  ueber: { path: string; davor: boolean; gesperrt?: boolean } | null;
   gezogenRef: RefObject<string | null>;
   kannOeffnen: boolean;
   istOffen: (path: string) => boolean;
   onDaneben: (path: string) => void;
   onSchliessen: (path: string) => void;
   onZieht: (path: string | null) => void;
-  onUeber: (u: { path: string; davor: boolean } | null) => void;
+  onUeber: (u: { path: string; davor: boolean; gesperrt?: boolean } | null) => void;
   onMenue: (m: { path: string; x: number; y: number }) => void;
   /** ── W2·18 Welle 3 Punkt 4 · DIE HOVER-KARTE ───────────────────────────
    *  Gemeldet wird nur «zeige die Karte dieses Reiters hier» bzw. `null`.
@@ -66,11 +71,16 @@ export interface ReiterProps {
   onKarte: (k: { path: string; x: number; y: number } | null) => void;
   /** Umordnen: gezogener Pfad, Ziel, davor/dahinter (`lib/tabs.ordneTabsUm`). */
   onUmordnen: (von: string, nach: string, davor: boolean) => void;
+  /** ── W2·25 · WÜRDE DIESER ZUG ANGENOMMEN? ───────────────────────────────
+   *  Gerechnet wird er in `lib/tabs.zugErlaubt` (§3), gefragt wird die Leiste
+   *  (sie hält die Ordnung, §5). Der Reiter weiss nur, was er unter dem
+   *  Zeiger zeichnen soll. */
+  pruefeZug: (von: string, nach: string, davor: boolean) => boolean;
 }
 
 export function Reiter({
   t, nr, aktiv, letzter, imRing, ohneKopf, manifeste, paneSchluessel, zieht, ueber, gezogenRef,
-  kannOeffnen, istOffen, onDaneben, onSchliessen,
+  kannOeffnen, istOffen, onDaneben, onSchliessen, pruefeZug,
   onZieht, onUeber, onMenue, onKarte, onUmordnen,
 }: ReiterProps) {
   // ── W2·18 WELLE 3 PUNKT 4 · 600 ms SIND DIE ABSICHT ────────────────────────
@@ -175,8 +185,27 @@ export function Reiter({
   // Boden ist sein voller, ungebrochene Text — und den kennt nur die
   // automatische (Schlüsselwort-)Rechnung, die `.rl-reiter` in `index.css`
   // für genau diesen Fall trägt.
-  const stelleReserviert = stelle !== null && (stelle !== '' || liest);
-  const reiterBoden = kopf ? undefined
+  // ── W2·25 · DER ANGEHEFTETE REITER IST EINE ANDERE FORM ──────────────────
+  //
+  // «schmaler Reiter nur mit Kürzel, ganz links, ohne ✕» (Spec §7 Teil 1,
+  // §5a Ziff. 5). Konkret fällt WEG: der Kopf (das Gericht), die Lesestellung
+  // (sie wandert beim Scrollen und wäre gerade hier der breiteste Teil), das
+  // ✕ und das ⧉. Übrig bleibt der KERN — das Kürzel, an dem man den Erlass
+  // erkennt. Die Instanz-Nummer bleibt: zwei angeheftete «OR» wären sonst ein
+  // Bild (W2·18 Punkt 5, dieselbe Begründung wie dort).
+  //
+  // DER GEWINN IST MESSBAR UND GEWOLLT: ohne Stelle (60 px) und ohne die
+  // beiden 24-px-Griffe trägt derselbe Reiter dieselbe Auskunft auf rund einem
+  // Drittel der Breite — das ist der ganze Sinn des Anheftens, wenn OR, ZGB
+  // und ZPO dauerhaft offen bleiben sollen.
+  //
+  // OHNE ✕ HEISST NICHT OHNE AUSWEG (§8): Schliessen und Lösen stehen im
+  // Kontextmenü (Rechtsklick, Shift+F10, Langdruck), Alt+W schliesst weiterhin
+  // den aktiven Reiter, und der Mittelklick bleibt — das Browser-Idiom, das
+  // ohnehin keine Fläche kostet.
+  const fest = !!t.fest;
+  const stelleReserviert = !fest && stelle !== null && (stelle !== '' || liest);
+  const reiterBoden = fest || kopf ? undefined
     : `calc(6ch + 1.75rem + 0.875rem${stelleReserviert ? ' + var(--app-reiter-stelle-b) + 0.25rem' : ''})`;
   return (
     <div
@@ -185,6 +214,10 @@ export function Reiter({
       // Die Beschriftung taugt dafür nicht — sie hängt an lazy geladenen
       // Manifesten und ist genau das, was hier NICHT gemessen werden soll.
       data-reiter-schluessel={schluessel}
+      // W2·25 · Mess-Anker der festen Zone: die Sonden zählen sie im DOM,
+      // statt sie aus Breiten zu erraten (dieselbe Wahl wie bei
+      // `data-reiter-fenster`).
+      data-reiter-fest={fest ? 'true' : undefined}
       draggable
       onDragStart={(ev) => {
         // W2·18 Welle 3 Punkt 4: während eines Zugs ist die Karte nur Nebel.
@@ -215,13 +248,27 @@ export function Reiter({
         // letzten gibt es kein weiteres Ziel.
         const kasten = ev.currentTarget.getBoundingClientRect();
         const davor = ev.clientX < kasten.left + kasten.width / 2;
-        if (ueber?.path !== t.path || ueber.davor !== davor) onUeber({ path: t.path, davor });
+        // ── W2·25 · DIE ABLEHNUNG KOMMT VOR DEM LOSLASSEN ──────────────────
+        // `dropEffect = 'none'` ist die Auskunft, die JEDER Browser von sich
+        // aus in den Zeiger zeichnet (das «kein Zutritt»-Symbol) — die App
+        // muss dafür kein eigenes Bild erfinden. Daneben trägt die Marke
+        // `data-reiter-sperre` und wird stumpf statt registerfarbig. Was hier
+        // NICHT passiert: den Zug auf die nächste erlaubte Stelle rücken —
+        // das wäre die stille Korrektur, die D16 ausschliesst.
+        const gesperrt = !pruefeZug(von, t.path, davor);
+        ev.dataTransfer.dropEffect = gesperrt ? 'none' : 'move';
+        if (ueber?.path !== t.path || ueber.davor !== davor || !!ueber.gesperrt !== gesperrt) {
+          onUeber({ path: t.path, davor, ...(gesperrt ? { gesperrt: true } : {}) });
+        }
       }}
       onDrop={(ev) => {
         ev.preventDefault();
         const von = gezogenRef.current ?? ev.dataTransfer.getData(REITER_MIME);
         if (von && von !== t.path) {
           const kasten = ev.currentTarget.getBoundingClientRect();
+          // Über die Zonengrenze wird gar nicht erst gerufen — und `ordneTabsUm`
+          // wiese den Zug auch dann ab, wenn es hier jemand doch täte (§5: die
+          // Regel wohnt in `lib/tabs`, hier steht nur ihr Bild).
           onUmordnen(von, t.path, ev.clientX < kasten.left + kasten.width / 2);
         }
         gezogenRef.current = null; onZieht(null); onUeber(null);
@@ -243,7 +290,14 @@ export function Reiter({
       // `gekapptMitTitle`). Solange der Zeiger aber HIER steht, ist die Karte
       // zuständig: Chromium zeigte sonst ~400 ms nach ihr noch seinen eigenen,
       // einzeiligen Tooltip darüber.
-      title={zeigerHier ? undefined : (kuerzel ? `${titel} — ${kuerzel.replace(' ', ' · ')}` : titel)}
+      // W2·25: der angeheftete Reiter zeigt nur sein Kürzel — der volle Titel
+      // bleibt hier (und in der Hover-Karte) erreichbar, dazu das Wort, das
+      // seine Form erklärt. Verloren geht das Bild, nie die Auskunft (§8).
+      title={zeigerHier ? undefined : [
+        titel,
+        fest ? 'angeheftet' : null,
+        kuerzel ? kuerzel.replace(' ', ' · ') : null,
+      ].filter(Boolean).join(' — ')}
       onPointerEnter={(ev) => {
         // Auf Touch gibt es kein «darüberfahren» — dort käme die Karte als
         // Fleck, den man nicht wieder loswird (Fahrplan §4.R3 Punkt 4).
@@ -350,8 +404,14 @@ export function Reiter({
           Ende der Leiste kam man mit ihm gar nicht. */}
       {ueber?.path === t.path && (
         <span aria-hidden data-reiter-marke={ueber.davor ? 'davor' : 'dahinter'}
+          // W2·25: dieselbe Marke, zwei Bedeutungen — an der Zonengrenze steht
+          // sie STUMPF (kein Registerton, halbe Deckkraft) und trägt
+          // `data-reiter-sperre`. Sie verschwindet nicht: «hier landet nichts»
+          // ist eine Auskunft, «nichts zu sehen» wäre keine (§8).
+          data-reiter-sperre={ueber.gesperrt ? 'fest' : undefined}
           className={`pointer-events-none absolute inset-y-0 w-0.5 ${ueber.davor ? '-left-px' : '-right-px'} ${
-            zieht && registerVonPfad(zieht) ? REG_FLAECHE[registerVonPfad(zieht)!] : 'bg-ink-900'}`} />
+            ueber.gesperrt ? 'bg-ink-400 opacity-50'
+              : zieht && registerVonPfad(zieht) ? REG_FLAECHE[registerVonPfad(zieht)!] : 'bg-ink-900'}`} />
       )}
       {/* ── R1 (Prüfbefund R11, 6.9.2026) · DIE LEISTE IST NICHT TRIST ─────
           GEMESSEN: alle inaktiven Reiter trugen `bg-ink-400 opacity-30` —
@@ -449,7 +509,12 @@ export function Reiter({
         // ist eine Fläche, kein Fliesstext-Verweis (D13/Design-Reglement).
         className={`flex items-baseline min-w-0 gap-1 py-1.5 pl-2.5 pr-1 text-body-s no-underline ${
           aktiv ? 'font-medium text-ink-900' : 'text-ink-600 hover:text-ink-900'}`}>
-        <span className="sr-only">{`Reiter ${nr}: `}</span>
+        {/* W2·25: «angeheftet» steht im Accessible Name, nicht als Glyphe im
+            Reiter — eine Nadel neben dem Kürzel kostete genau die Breite, die
+            das Anheften gewinnt, und sagt einer Sprachausgabe nichts. Für den
+            Zeiger trägt es der `title` (unten), für die Maus die Form selbst
+            (schmal, ganz links, kein ✕). */}
+        <span className="sr-only">{fest ? `Angehefteter Reiter ${nr}: ` : `Reiter ${nr}: `}</span>
         {/* F6 · DIE GESCHÄFTSNUMMER WIRD NIE GEKÜRZT. Gekürzt wird der Kopf
             (das Gericht, ohnehin schon abgekürzt); der Kern trägt die Nummer
             und steht `shrink-0`. Der Deckel sitzt darum AM KOPF, nicht am
@@ -482,8 +547,10 @@ export function Reiter({
             die jederzeit aus Gestaltungsgründen wechselt (9 rem → 10 rem), und
             jede Sonde wäre danach blind, ohne rot zu werden. Der Anker sagt,
             WAS der Span ist, nicht wie breit er sein darf. */}
-        {kopf && <span data-reiter-teil="kopf" className="min-w-0 truncate max-w-[9rem]">{kopf}</span>}
-        {kopf && ' '}
+        {/* W2·25: der angeheftete Reiter trägt weder Kopf noch Lesestellung —
+            er ist auf sein Kürzel zusammengezogen (Herleitung bei `fest`). */}
+        {!fest && kopf && <span data-reiter-teil="kopf" className="min-w-0 truncate max-w-[9rem]">{kopf}</span>}
+        {!fest && kopf && ' '}
         {/* ── D27 (David 6.9.2026) · DIE LESESTELLUNG STEHT IM REITER ──────
             «diese funktion, dass es anzeigt in welchem artikel wir sind,
             soll der tab bekommen.» Die Stelle wandert beim Scrollen (aus
@@ -520,9 +587,9 @@ export function Reiter({
             Befund und bleibt so (Sonde `w224-r13-reiter.e2e.ts` R13-4).
             `aria-hidden` und kein Textknoten: der Accessible Name bleibt Wort
             für Wort derselbe wie ohne Reserve. */}
-        {stelle ? <span className="rl-stelle num">{stelle}</span>
+        {fest ? null : stelle ? <span className="rl-stelle num">{stelle}</span>
           : stelle === '' && liest ? <span aria-hidden className="rl-stelle-frei" /> : null}
-        {stelle ? ' ' : null}
+        {!fest && stelle ? ' ' : null}
         {/* ── W2·18 Punkt 5 · SECHS ZEICHEN BLEIBEN STEHEN ─────────────────
             `min-w-[6ch]` statt `min-w-0`: der Name ist das, woran man einen
             Reiter erkennt — er darf kürzen, aber nicht verschwinden. Sechs
@@ -538,8 +605,13 @@ export function Reiter({
             nebeneinander zu quetschen.
             Mit Kopf bleibt der Kern wie bisher `shrink-0` (F6: die
             Geschäftsnummer wird nie gekürzt). */}
+        {/* W2·25: angeheftet steht hier das Kürzel allein — `max-w-[7rem]`
+            statt 15 rem, damit auch ein langer Vorlagen-/Rechnername die
+            schmale Form hält, und `min-w-[3ch]`, weil ohne Kopf und Stelle
+            drei Zeichen den Reiter noch unterscheidbar machen. */}
         <span data-reiter-teil="kern"
-          className={kopf ? 'shrink-0' : 'min-w-[6ch] truncate max-w-[15rem]'}>{kern}</span>
+          className={fest ? 'min-w-[3ch] truncate max-w-[7rem]'
+            : kopf ? 'shrink-0' : 'min-w-[6ch] truncate max-w-[15rem]'}>{kern}</span>
         {/* ── W2·18 Punkt 5 · DIE INSTANZ-NUMMER WIRD NIE GEKÜRZT ──────────
             Sie hing bis hierher hinten am Kern und fiel darum als erstes weg:
             GEMESSEN 13.9.2026 standen «ZPO-Fristen (2)» und «(3)» beide als
@@ -577,7 +649,7 @@ export function Reiter({
           zieht. Der Zuwachs von 4 px je Reiter fällt nur ab `lg` an (darunter
           ist der Griff gar nicht da) und dort, wo Platz ist; die Leiste rückt
           ihn wie jede andere Breite ins Fenster ein (R13-2). */}
-      {kannOeffnen && !istOffen(t.path) && (
+      {!fest && kannOeffnen && !istOffen(t.path) && (
         <button type="button" onClick={() => onDaneben(t.path)}
           aria-label={`«${name}» daneben öffnen`} title="Daneben öffnen"
           tabIndex={imRing ? undefined : -1}
@@ -595,9 +667,16 @@ export function Reiter({
           NACHGEMESSEN 13.9.2026 (W2·18 Welle 2 Punkt 7): dieses ✕ misst
           24 × 24 und hält sie wirklich — der ⧉-Nachbar tat es nicht (20 × 24)
           und trägt seine Mindestbox jetzt selbst (Herleitung dort). */}
-      <SchliessKnopf name={`Reiter «${name}» schliessen`} ton="destruktiv" komfort={false}
-        tabIndex={imRing ? undefined : -1}
-        onClick={() => onSchliessen(t.path)} klasse={`h-6 w-6 mr-1 shrink-0 ${griffSicht}`} />
+      {/* W2·25 · KEIN ✕ AM ANGEHEFTETEN REITER (Spec §7 Teil 1). Der Grund ist
+          nicht die Fläche, sondern die Absicht: wer anheftet, sagt «der bleibt
+          offen» — ein ✕ direkt daneben stellte genau das jedem Fehlklick
+          anheim. Schliessen und Lösen bleiben im Kontextmenü erreichbar (eine
+          Geste mehr, und das ist hier die Zusage, nicht der Preis). */}
+      {!fest && (
+        <SchliessKnopf name={`Reiter «${name}» schliessen`} ton="destruktiv" komfort={false}
+          tabIndex={imRing ? undefined : -1}
+          onClick={() => onSchliessen(t.path)} klasse={`h-6 w-6 mr-1 shrink-0 ${griffSicht}`} />
+      )}
     </div>
   );
 }
