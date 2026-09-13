@@ -348,8 +348,20 @@ function instanzNr(path: string): number {
   return Number.isFinite(n) && n > 1 ? n : 1;
 }
 
-/** Die drei Teile einer Reiter-Kurzform. `stelle` s. `basisKurzform` (D27). */
-export interface KurzformTeile { kopf: string; kern: string; stelle: string | null }
+/** Die Teile einer Reiter-Kurzform. `stelle` s. `basisKurzform` (D27). */
+export interface KurzformTeile {
+  kopf: string; kern: string; stelle: string | null;
+  /** ── W2·18 Punkt 5 · DIE INSTANZ-NUMMER IST EIN EIGENER TEIL ─────────────
+   *  «(2)», «(3)» … ab der zweiten Instanz; bei der ersten fehlt das Feld.
+   *  Bis W2·18 hing die Nummer HINTEN am Kern («ZPO-Fristen (2)»), und weil
+   *  der Kern der kürzbare Teil ist, fiel sie als erstes weg: GEMESSEN
+   *  13.9.2026 @1024 mit sieben Reitern standen «ZPO-Fristen (2)» und
+   *  «(3)» beide als «ZPO-…» da — zwei Reiter, ein Bild. Als eigener Teil
+   *  kann die Leiste sie ungekürzt setzen. Der Einzeiler (`reiterKurzformText`)
+   *  bleibt Zeichen für Zeichen derselbe: er fügt sie an derselben Stelle
+   *  wieder an. */
+  instanz?: string;
+}
 
 /** Kanonische Kurzform eines Reiters (§5a Ziff. 2), zerlegt in kürzbaren Kopf
  *  und ungekürzten Kern — die Arbeitsleiste braucht die Trennung, die
@@ -363,7 +375,7 @@ export interface KurzformTeile { kopf: string; kern: string; stelle: string | nu
 export function reiterKurzformTeile(t: TabEintrag, m: VerlaufManifeste): KurzformTeile {
   const { kopf, kern, stelle } = basisKurzform(t, m);
   const nr = instanzNr(t.path);
-  return { kopf, kern: nr > 1 ? `${kern} (${nr})` : kern, stelle };
+  return { kopf, kern, stelle, ...(nr > 1 ? { instanz: `(${nr})` } : {}) };
 }
 
 /** Einzeiler für Suchfeld, Accessible Names und Titel. Reihenfolge = die
@@ -371,8 +383,8 @@ export function reiterKurzformTeile(t: TabEintrag, m: VerlaufManifeste): Kurzfor
  *  43a») · Kern (Kürzel/Nummer). Leere Teile fallen weg — der Text ist damit
  *  vor und nach der D27-Trennung derselbe. */
 export function reiterKurzformText(t: TabEintrag, m: VerlaufManifeste): string {
-  const { kopf, kern, stelle } = reiterKurzformTeile(t, m);
-  return [kopf, stelle, kern].filter((x) => !!x).join(' ');
+  const { kopf, kern, stelle, instanz } = reiterKurzformTeile(t, m);
+  return [kopf, stelle, kern, instanz].filter((x) => !!x).join(' ');
 }
 
 /** ── R8 (Prüfbefund R11, 6.9.2026) · WAS DER `title` EINES REITERS SAGT ─────

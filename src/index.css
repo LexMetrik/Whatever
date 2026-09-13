@@ -425,7 +425,10 @@
        Kürzel-Breite (ZGB misst 93 px), drängt also keinem kurzen Reiter Leerraum
        auf — ab 6rem wuchs der ZGB-Reiter auf 96/104/112 px, gegen R13-4, und
        @390 standen nur noch zwei statt drei Reiter im Bild. */
-    --app-reiter-min-b:5rem;
+    /* AUFGEHOBEN 13.9.2026 (W2·18 Punkt 5): die feste Zahl ist durch
+       `min-content` an `.rl-reiter` ersetzt — der Boden kommt jetzt aus dem
+       Inhalt des einzelnen Reiters. Herleitung dort; die Messreihe darüber
+       bleibt als Beleg ihres Standes stehen (§2b). */
     --app-kopf-h:calc(var(--app-krone-h) + var(--app-reiter-h));
     --z-base:0; --z-sticky:10; --z-entscheid-sticky:15;
     --z-reader-scrim:16; --z-reader-kopf:17; --z-inhalt-kopf:19;
@@ -2684,7 +2687,25 @@
      2022»), misst @320 mehr Inhalt (217 px) als der Streifen breit ist (171) —
      mit und ohne diesen Boden gleichermassen, gemessen über alle fünf Werte
      der Reihe. Das ist die F6-Spannung, nicht die des Bodens. */
-  .rl-reiter { min-width: var(--app-reiter-min-b); }
+  /* ── W2·18 Punkt 5 (13.9.2026) · DER BODEN IST DER INHALT, NICHT EINE ZAHL
+     Hier stand `min-width: var(--app-reiter-min-b)` = 5rem (Herleitung oben,
+     unverändert gültig für den Stand, an dem sie gemessen wurde). GEMESSEN
+     13.9.2026 (Chromium, @1024, sieben Reiter, davon drei Instanzen desselben
+     Rechners): die feste Zahl kennt den Inhalt nicht. 80 px tragen ✕ 24 +
+     Abstand 4 + Polster 14 = 42 unkürzbare Pixel; steht daneben noch der
+     60-px-Slot der Lesestellung (`.rl-stelle`) und ein ⧉, bleibt für die
+     Aufschrift NICHTS — «StGB» und «ZPO» standen auf Breite 0, «ZPO-Fristen»
+     als «ZP…», und die beiden Instanzen «(2)»/«(3)» waren nicht mehr
+     auseinanderzuhalten.
+     `min-content` rechnet denselben Boden pro Reiter aus seinem eigenen
+     Inhalt: die Aufschrift trägt ihn jetzt selbst (`min-w-[6ch]` in
+     `Reiter.tsx`), der Kopf darf weiter ganz weichen, die Lesestellung und die
+     Geschäftsnummer bleiben unkürzbar. Was dann nicht mehr nebeneinander
+     passt, findet `ersterUeberlauf` — und es zieht ins «+N»-Blatt, statt
+     gequetscht zu werden. Die Sorge von FB (Boden statt `min-w-0`, oben)
+     bleibt damit erfüllt: der Kasten trägt seinen Inhalt, die Messung ist
+     nicht blind. */
+  .rl-reiter { min-width: min-content; }
   .rl-stelle { display: inline-block; min-width: var(--app-reiter-stelle-b); flex-shrink: 0; }
   /* ── R13-4 (Prüfbefund 7.9.2026) · KEINE RESERVE OHNE INHALT ──────────────
      GEMESSEN am Stand `0ba97c5d6` (@1440, gebautes dist/): ein Gesetzes-Reiter

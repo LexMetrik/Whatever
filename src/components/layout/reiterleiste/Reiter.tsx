@@ -44,7 +44,7 @@ export function Reiter({
   onZieht, onUeber, onMenue, onUmordnen,
 }: ReiterProps) {
   const schluessel = tabSchluessel(t.path);
-  const { kopf, kern, stelle } = reiterKurzformTeile(t, manifeste);
+  const { kopf, kern, stelle, instanz } = reiterKurzformTeile(t, manifeste);
   const name = reiterKurzformText(t, manifeste);
   // R8 · Volltitel, Stand/Datum/Kurzbeschreibung und Lesestellung stehen in
   // EINER Ableitung (`lib/tabs.reiterTitel`) — Herleitung dort.
@@ -163,10 +163,13 @@ export function Reiter({
         //    `0/8/8`, «+N» erschien nie — und der Streifen mass `scrollWidth
         //    256`, weil der letzte Kasten (22 px) 38 px Inhalt trug
         //    (218 + 38). Alle acht Beschriftungen standen auf Breite 0.
-        //    `.rl-reiter` (index.css) setzt an dieselbe Stelle einen Boden als
-        //    MASS (`--app-reiter-min-b`, 5rem): schrumpfen ja, aber nur bis
-        //    dorthin, wo der Inhalt noch ganz im Kasten steht. Der Rest zieht
-        //    ins «+N»-Blatt. Herleitung der Zahl und die Messreihe: index.css.
+        //    `.rl-reiter` (index.css) setzt an dieselbe Stelle einen Boden:
+        //    schrumpfen ja, aber nur bis dorthin, wo der Inhalt noch ganz im
+        //    Kasten steht. Der Rest zieht ins «+N»-Blatt.
+        //    W2·18 (13.9.2026): dieser Boden war bis dahin die feste Zahl
+        //    `--app-reiter-min-b` (5rem) und kannte den Inhalt nicht; er ist
+        //    jetzt `min-content` und kommt aus den Teilen unten (Herleitung
+        //    und Messreihe: index.css bei `.rl-reiter`).
         className={`group/reiter rl-reiter relative flex cursor-grab items-center border-r border-rule-soft active:cursor-grabbing ${
         zieht === t.path ? 'opacity-40' : ''
       } ${aktiv ? (reg ? REG_TON[reg] : 'bg-paper-raised') : ''}`}>
@@ -216,7 +219,16 @@ export function Reiter({
           const k = ev.currentTarget.getBoundingClientRect();
           onMenue({ path: t.path, x: k.left, y: k.bottom });
         }}
-        className={`flex min-w-0 items-baseline gap-1 py-1.5 pl-2.5 pr-1 text-body-s ${
+        // ── W2·18 Punkt 5 · HIER STAND `min-w-0` ──────────────────────────
+        // «Dieser Knopf darf 0 px breit sein» — und genau das wurde er:
+        // GEMESSEN 13.9.2026 @1024 mit sieben Reitern trugen «StGB» und «ZPO»
+        // eine Aufschrift der Breite 0 (der 60-px-Slot der Lesestellung hatte
+        // das ganze Polster aufgezehrt), «ZPO-Fristen» stand als «ZP…».
+        // Der Boden wohnt jetzt an den Aufschriften selbst (`min-w-[6ch]`
+        // unten); dieser Knopf gibt ihn nach oben weiter, statt ihn zu
+        // verschlucken. Schrumpfen kann der Reiter weiterhin — über den Kopf
+        // (`min-w-0`, er darf ganz weichen) und bis an den Boden des Kerns.
+        className={`flex items-baseline gap-1 py-1.5 pl-2.5 pr-1 text-body-s ${
           aktiv ? 'font-medium text-ink-900' : 'text-ink-600 hover:text-ink-900'}`}>
         <span className="sr-only">{`Reiter ${nr}: `}</span>
         {/* F6 · DIE GESCHÄFTSNUMMER WIRD NIE GEKÜRZT. Gekürzt wird der Kopf
@@ -286,7 +298,28 @@ export function Reiter({
         {stelle ? <span className="rl-stelle num">{stelle}</span>
           : stelle === '' && liest ? <span aria-hidden className="rl-stelle-frei" /> : null}
         {stelle ? ' ' : null}
-        <span className={kopf ? 'shrink-0' : 'min-w-0 truncate max-w-[15rem]'}>{kern}</span>
+        {/* ── W2·18 Punkt 5 · SECHS ZEICHEN BLEIBEN STEHEN ─────────────────
+            `min-w-[6ch]` statt `min-w-0`: der Name ist das, woran man einen
+            Reiter erkennt — er darf kürzen, aber nicht verschwinden. Sechs
+            Zeichen tragen jedes Erlass-Kürzel ganz («StGB», «SchKG») und von
+            einem längeren Namen genug, um ihn zu unterscheiden. Die Zahl ist
+            der Boden des ganzen Reiters: sie geht über den Knopf (oben, ohne
+            `min-w-0`) und die Hülle (`.rl-reiter { min-width: min-content }`,
+            index.css) bis in die Fenster-Messung, die daraufhin FRÜHER einen
+            Überlauf findet und den Rest ins «+N»-Blatt schickt — statt sieben
+            unlesbare Reiter nebeneinander zu quetschen.
+            Mit Kopf bleibt der Kern wie bisher `shrink-0` (F6: die
+            Geschäftsnummer wird nie gekürzt). */}
+        <span className={kopf ? 'shrink-0' : 'min-w-[6ch] truncate max-w-[15rem]'}>{kern}</span>
+        {/* ── W2·18 Punkt 5 · DIE INSTANZ-NUMMER WIRD NIE GEKÜRZT ──────────
+            Sie hing bis hierher hinten am Kern und fiel darum als erstes weg:
+            GEMESSEN 13.9.2026 standen «ZPO-Fristen (2)» und «(3)» beide als
+            «ZPO-…» — zwei Reiter, ein Bild. Als eigener `shrink-0`-Teil steht
+            sie immer. Das Leerzeichen ist ein echter Textknoten, nicht `gap`
+            (sonst läse sich der Accessible Name «ZPO-Fristen(2)», WCAG 4.1.2 —
+            dieselbe Fuge wie oben). */}
+        {instanz && ' '}
+        {instanz && <span className="shrink-0 num">{instanz}</span>}
         {paneWort && <span className="sr-only">{` (Fenster ${paneWort})`}</span>}
       </button>
       {/* Fenster-Marke: zeigt, welcher Reiter links bzw. rechts steht. */}
