@@ -484,6 +484,12 @@ Rot-Beweis; Rot-Beweise auf DIESEM Stand fahren, nie übernehmen.
 6. **`data-`-Anker für Kopf- und Kern-Span** (`data-reiter-teil="kopf|kern|nummer"`), damit Sonden
    nicht an Tailwind-Deckeln hängen; bestehende Sonden auf die Anker umstellen (rein mechanisch, §6.3
    deklariert, Verhalten identisch).
+   — **Ergänzung 13.9.2026 (Zeilen darüber unverändert, §2b):** gebaut wie beschrieben. Umgestellt
+   sind drei Sonden — zwei in `e2e/w224-r13-reiter.e2e.ts` (hingen an
+   `span[class*="max-w-[9rem]"]`) und eine in `src/tests/reiter-beschriftung.test.tsx` (pinnte den
+   Markup-Schnipsel der Nummer). Neuer Wächter: `e2e/w224-r13-reiter.e2e.ts` «W2·18 Welle 3
+   Punkt 6» — Entscheid (Kopf + Kern), Rechner in zweiter Instanz (Kern + Nummer), Gesetz (nur
+   Kern, KEIN leerer Kopf-Anker).
 
 ## §5 — `QS-CODE-PROP` · Eigenschafts-Tests (property-based) für die Rechen-Engines
 

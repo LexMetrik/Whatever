@@ -476,7 +476,13 @@ export function Reiter({
             und stellt her, was der Kommentar oben schon beschreibt («der Kopf
             kuerzt sich weg, die Geschaeftsnummer bleibt»). Die max-w-Deckel
             bleiben, sie begrenzen nach OBEN. */}
-        {kopf && <span className="min-w-0 truncate max-w-[9rem]">{kopf}</span>}
+        {/* ── W2·18 WELLE 3 PUNKT 6 · DIE TEILE TRAGEN NAMEN ──────────────
+            `data-reiter-teil` statt Tailwind-Deckel: die Sonden griffen den
+            Kopf bis hierher über `span[class*="max-w-[9rem]"]` — eine Klasse,
+            die jederzeit aus Gestaltungsgründen wechselt (9 rem → 10 rem), und
+            jede Sonde wäre danach blind, ohne rot zu werden. Der Anker sagt,
+            WAS der Span ist, nicht wie breit er sein darf. */}
+        {kopf && <span data-reiter-teil="kopf" className="min-w-0 truncate max-w-[9rem]">{kopf}</span>}
         {kopf && ' '}
         {/* ── D27 (David 6.9.2026) · DIE LESESTELLUNG STEHT IM REITER ──────
             «diese funktion, dass es anzeigt in welchem artikel wir sind,
@@ -532,7 +538,8 @@ export function Reiter({
             nebeneinander zu quetschen.
             Mit Kopf bleibt der Kern wie bisher `shrink-0` (F6: die
             Geschäftsnummer wird nie gekürzt). */}
-        <span className={kopf ? 'shrink-0' : 'min-w-[6ch] truncate max-w-[15rem]'}>{kern}</span>
+        <span data-reiter-teil="kern"
+          className={kopf ? 'shrink-0' : 'min-w-[6ch] truncate max-w-[15rem]'}>{kern}</span>
         {/* ── W2·18 Punkt 5 · DIE INSTANZ-NUMMER WIRD NIE GEKÜRZT ──────────
             Sie hing bis hierher hinten am Kern und fiel darum als erstes weg:
             GEMESSEN 13.9.2026 standen «ZPO-Fristen (2)» und «(3)» beide als
@@ -541,7 +548,7 @@ export function Reiter({
             (sonst läse sich der Accessible Name «ZPO-Fristen(2)», WCAG 4.1.2 —
             dieselbe Fuge wie oben). */}
         {instanz && ' '}
-        {instanz && <span className="shrink-0 num">{instanz}</span>}
+        {instanz && <span data-reiter-teil="nummer" className="shrink-0 num">{instanz}</span>}
         {paneWort && <span className="sr-only">{` (Fenster ${paneWort})`}</span>}
       </Link>
       {/* Fenster-Marke: zeigt, welcher Reiter links bzw. rechts steht. */}

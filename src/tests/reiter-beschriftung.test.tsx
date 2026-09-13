@@ -66,8 +66,13 @@ describe('Reiter-Beschriftung — nichts Unterscheidendes fällt weg (W2·18 Pun
 
   it('zwei Instanzen tragen im Markup zwei verschiedene, unkürzbare Nummern', () => {
     const m = html(['/rechner/zpo-fristen', '/rechner/zpo-fristen?r=2', '/rechner/zpo-fristen?r=3']);
-    expect(m).toContain('<span class="shrink-0 num">(2)</span>');
-    expect(m).toContain('<span class="shrink-0 num">(3)</span>');
+    // DEKLARIERTE SONDEN-ÄNDERUNG (§6.3), W2·18 Welle 3 Punkt 6, 13.9.2026:
+    // die Nummer trägt seit diesem Schritt ihren Anker `data-reiter-teil`
+    // (Sonden sollen nicht an Tailwind-Deckeln hängen). Rein mechanisch —
+    // dieselbe Zusage, dasselbe Element, nur der Markup-Schnipsel wächst um
+    // das Attribut.
+    expect(m).toContain('<span data-reiter-teil="nummer" class="shrink-0 num">(2)</span>');
+    expect(m).toContain('<span data-reiter-teil="nummer" class="shrink-0 num">(3)</span>');
     // Der Accessible Name (Schliess-Knopf) trägt sie unverändert mit.
     expect(m).toContain('Reiter «ZPO-Fristen (2)» schliessen');
     expect(m).toContain('Reiter «ZPO-Fristen (3)» schliessen');

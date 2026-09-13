@@ -489,7 +489,10 @@ test.describe('W2·18 Welle 2 Punkt 6 — kein Reiter-Kopf als blosses «…»',
           // Der Kopf ist der Span mit dem 9-rem-Deckel (`Reiter.tsx`); der
           // Kern daneben trägt 15 rem und ist nicht gemeint. Ein Reiter ohne
           // Kopf (Gesetz, Rechner) hat den Span gar nicht.
-          const kopf = k.querySelector<HTMLElement>('a > span[class*="max-w-[9rem]"]')
+          // DEKLARIERTE SONDEN-ÄNDERUNG (§6.3), W2·18 Welle 3 Punkt 6: der
+          // Kopf hing am Tailwind-Deckel `max-w-[9rem]`; er trägt jetzt seinen
+          // eigenen Anker. Rein mechanisch — dasselbe Element, derselbe Test.
+          const kopf = k.querySelector<HTMLElement>('[data-reiter-teil="kopf"]')
           if (!kopf?.textContent) continue
           const st = getComputedStyle(kopf)
           kan.font = `${st.fontWeight} ${st.fontSize} ${st.fontFamily}`
@@ -603,7 +606,7 @@ test.describe('W2·18 Welle 3 Punkt 1 — der Reiter läuft auch am Anschlag nic
   test('@1440: derselbe Reiter trägt seinen Kopf «OGer AG» unverändert', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 })
     await seed(page, [LANGER_KOPF], LANGER_KOPF)
-    const kopf = await page.textContent('[data-reiter-streifen] a > span[class*="max-w-[9rem]"]')
+    const kopf = await page.textContent('[data-reiter-streifen] [data-reiter-teil="kopf"]')
     expect(kopf?.trim(), 'am breiten Fenster steht der Kopf').toBe('OGer AG')
   })
 })
@@ -658,5 +661,36 @@ test.describe('W2·18 Welle 3 Punkt 3 — der Reiter ist ein Link', () => {
 
     await expect.poll(() => gespeichert(page)).toEqual([VIER[0], VIER[2], VIER[3]])
     expect(page.context().pages().length, 'kein zweiter Browser-Tab').toBe(vorher)
+  })
+})
+
+// ═══ W2·18 WELLE 3 PUNKT 6 · ANKER STATT TAILWIND-DECKEL ════════════════════
+//
+// GEMESSEN am Vorstand (13.9.2026): die Sonden dieser Datei griffen den
+// Reiter-Kopf über `span[class*="max-w-[9rem]"]` — also über einen
+// TAILWIND-DECKEL. Das ist eine Klasse, die jederzeit aus Gestaltungsgründen
+// wechselt (9 rem → 10 rem, und jede Sonde ist blind, ohne rot zu werden).
+// Die Teile eines Reiters tragen darum jetzt eigene Anker:
+// `data-reiter-teil="kopf|kern|nummer"`.
+test.describe('W2·18 Welle 3 Punkt 6 — jeder Reiter-Teil trägt seinen Anker', () => {
+  test('Kopf, Kern und Nummer sind benannt — und tragen, was sie sollen', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    // Ein Entscheid (Kopf + Kern), ein Rechner in zweiter Instanz (Kern +
+    // Nummer) und ein Gesetz (nur Kern) — alle drei Bauformen auf einmal.
+    await seed(page, ['/rechtsprechung/ag_gerichte_HOR_2024_19', '/rechner/zpo-fristen?r=2',
+      '/gesetze/bund/ZGB'], '/gesetze/bund/ZGB')
+
+    const teil = (schluessel: string, was: string) => page.locator(
+      `${STREIFEN} [data-reiter-schluessel="${schluessel}"] [data-reiter-teil="${was}"]`)
+
+    await expect(teil('/rechtsprechung/ag_gerichte_HOR_2024_19', 'kopf')).toHaveText('OGer AG')
+    await expect(teil('/rechtsprechung/ag_gerichte_HOR_2024_19', 'kern')).toHaveText('HOR.2024.19')
+    // Ein Gesetz hat keinen Kopf — der Anker steht nicht «leer» da (§8).
+    await expect(teil('/gesetze/bund/ZGB', 'kopf')).toHaveCount(0)
+    await expect(teil('/gesetze/bund/ZGB', 'kern')).toHaveText('ZGB')
+    // Die Instanz-Nummer ist ein eigener Teil (W2·18 Punkt 5), also auch ein
+    // eigener Anker.
+    await expect(teil('/rechner/zpo-fristen?r=2', 'nummer')).toHaveText('(2)')
+    await expect(teil('/rechner/zpo-fristen?r=2', 'kern')).toHaveText('ZPO-Fristen')
   })
 })
