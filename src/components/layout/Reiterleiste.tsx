@@ -19,6 +19,7 @@ import { Reiter } from './reiterleiste/Reiter';
 import { ReiterBlatt } from './reiterleiste/ReiterBlatt';
 import { useReiterFenster } from './reiterleiste/useReiterFenster';
 import { istBuchstabenTaste, zifferTaste } from './reiterleiste/tasten';
+import { BLATT_ZU, type BlattZustand } from './reiterleiste/blatt';
 import { useDialogFokus } from './useDialogFokus';
 import { useKopieren } from '../useKopieren';
 import { usePaneSteuerung } from './usePaneLayout';
@@ -68,9 +69,17 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const navigate = useNavigate();
   const { oeffneDaneben, kannOeffnen, istOffen, schliessePane } = usePaneSteuerung();
   const [manifeste, setManifeste] = useState<VerlaufManifeste>({});
-  const [blattOffen, setBlattOffen] = useState(false);
+  // ── W2·18 Punkt 6 · EIN ZUSTAND FÜR BLATT UND FILTER ─────────────────────
+  // Hier standen ZWEI Zustände: `blattOffen` und daneben `suche`. Das Blatt
+  // ging zu (acht Wege: ✕, Esc, Klick daneben, Navigation, «daneben öffnen»,
+  // «Neuer Reiter», «Wieder öffnen», «Alle schliessen»), der Filter blieb
+  // stehen — beim nächsten Öffnen «fehlten» Reiter, ohne dass man sähe, warum.
+  // Zwei Zustände heisst: jeder Schliess-Weg muss an den zweiten DENKEN. Einer
+  // heisst: zu ist zu, und zu ist immer ohne Filter (`BLATT_ZU`).
+  const [blatt, setBlatt] = useState<BlattZustand>(BLATT_ZU);
+  const { offen: blattOffen, suche } = blatt;
+  const schliesseBlatt = () => setBlatt(BLATT_ZU);
   const { kopieren } = useKopieren();
-  const [suche, setSuche] = useState('');
   const triggerRef = useRef<HTMLButtonElement>(null);
   const blattRef = useRef<HTMLDivElement>(null);
   const leisteRef = useRef<HTMLDivElement>(null);
@@ -404,12 +413,12 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     const zu = (e: MouseEvent) => {
       const ziel = e.target as Node;
       if (triggerRef.current?.contains(ziel) || blattRef.current?.contains(ziel)) return;
-      setBlattOffen(false);
+      schliesseBlatt();
     };
     document.addEventListener('mousedown', zu);
     return () => document.removeEventListener('mousedown', zu);
   }, [blattOffen]);
-  useDialogFokus(blattOffen, blattRef, () => setBlattOffen(false));
+  useDialogFokus(blattOffen, blattRef, schliesseBlatt);
 
   // ── R10-BEFUND (Nullprobe 6.9.2026) · DIE HÖHE STEHT VOR DEN REITERN ──────
   //
@@ -703,7 +712,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           aria-haspopup="dialog" aria-expanded={blattOffen}
           aria-label={`Alle ${tabs.length} offenen Reiter`}
           title="Alle offenen Reiter"
-          onClick={() => setBlattOffen((v) => !v)}
+          onClick={() => setBlatt((z) => (z.offen ? BLATT_ZU : { offen: true, suche: '' }))}
           className="shrink-0 self-center ml-2 w-[4.5rem] overflow-hidden whitespace-nowrap border border-rule-soft px-1 py-1 text-center text-body-s text-ink-600 hover:text-ink-900">
           <span className="num">{blattTitel}</span>
         </button>
@@ -733,15 +742,16 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       {blattOffen && (
         <ReiterBlatt
           blattRef={blattRef} tabs={tabs} gefiltert={gefiltert} manifeste={manifeste}
-          aktivSchluessel={aktivSchluessel} suche={suche} onSuche={setSuche}
-          onNavigate={(p) => { navigate(p); setBlattOffen(false); }}
+          aktivSchluessel={aktivSchluessel} suche={suche}
+          onSuche={(neu) => setBlatt((z) => ({ ...z, suche: neu }))}
+          onNavigate={(p) => { navigate(p); schliesseBlatt(); }}
           onSchliessen={schliessen}
-          onDaneben={kannOeffnen ? (p) => { oeffneDaneben(p); setBlattOffen(false); } : undefined}
+          onDaneben={kannOeffnen ? (p) => { oeffneDaneben(p); schliesseBlatt(); } : undefined}
           paneOffen={istOffen}
-          onNeu={() => { neuerReiter(); setBlattOffen(false); }}
-          onWieder={() => { stelleWiederHer(); setBlattOffen(false); }}
-          onAlle={() => { alleSchliessen(); setBlattOffen(false); }}
-          onZu={() => setBlattOffen(false)} />
+          onNeu={() => { neuerReiter(); schliesseBlatt(); }}
+          onWieder={() => { stelleWiederHer(); schliesseBlatt(); }}
+          onAlle={() => { alleSchliessen(); schliesseBlatt(); }}
+          onZu={schliesseBlatt} />
       )}
     </nav>
   );
