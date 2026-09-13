@@ -706,3 +706,148 @@ test.describe('W2·18 Welle 3 Punkt 4 — die Hover-Karte', () => {
     await ctx.close()
   })
 })
+
+// ═══ W2·25 TEIL 2 · DIE ARBEITSMAPPE (Spec §7, §5a Ziff. 9) ═════════════════
+//
+// Die beiden Wächter der Spec, wörtlich: «Mappe speichern → alle Reiter
+// schliessen → Mappe öffnen ⇒ dieselbe Reiterfolge inkl. Lesestellung» und
+// «Adresse öffnen in frischem Kontext ⇒ dieselbe Folge». Dazu die Zusage aus
+// Teil 1, die beim Öffnen gilt: angeheftete Reiter bleiben stehen.
+//
+// ROT ZU BEKOMMEN (§6.7, so gefahren 13.9.2026 gegen `22968fa0f`: es gab
+// weder `lib/mappen` noch einen Menüeintrag — alle vier Fälle scheiterten):
+//   · `lib/tabs.uebernehmeMappe`: den `offenFest`-Zweig streichen ⇒ der
+//     angeheftete Reiter verschwindet beim Öffnen;
+//   · `components/TabTracker.tsx`: den `mappeAusSuche`-Effekt streichen ⇒ die
+//     geteilte Adresse öffnet nur ihre eigene Seite, ohne die Reiterfolge;
+//   · `lib/mappen.kodiereMappe`: den Anker roh stehen lassen (`#` statt
+//     `%23`) ⇒ die Lesestellung fällt aus der Adresse, «Art. 336c» fehlt.
+test.describe('W2·25 — die Arbeitsmappe: speichern, öffnen, teilen', () => {
+  const MENUE = '[role=menu]'
+
+  /** Speicher seeden — wie `seed`, nur mit ausdrücklicher Anheftung. */
+  async function seedMitFest(page: Page, eintraege: { path: string; fest?: boolean }[]): Promise<void> {
+    await page.goto(START)
+    await page.evaluate((e) => {
+      localStorage.setItem('lexmetrik-tabs', JSON.stringify(e))
+      localStorage.removeItem('lexmetrik-mappen')
+    }, eintraege)
+    await page.goto(eintraege[eintraege.length - 1]?.path ?? '/')
+    await expect(page.locator(`${STREIFEN} [data-reiter-schluessel]`).first())
+      .toBeVisible({ timeout: 20_000 })
+  }
+
+  /** Das Menü des Leerraums — dieselbe Fläche, die «Neuer Reiter» und
+   *  «Alle schliessen» trägt. Erreichbar über den «+N»-Knopf, der auch dann
+   *  da ist, wenn der Streifen keinen freien Platz mehr hat. */
+  async function leerraumMenue(page: Page): Promise<void> {
+    await page.locator(`${REITER} button[aria-label^="Alle "]`).click({ button: 'right' })
+    await expect(page.locator(MENUE)).toBeVisible()
+  }
+
+  async function speichereAls(page: Page, name: string): Promise<void> {
+    await leerraumMenue(page)
+    await page.locator('[data-reiter-menue="mappe-speichern"]').click()
+    await expect(page.locator('[data-mappen-dialog="speichern"]')).toBeVisible()
+    await page.locator('[data-mappen-feld="name"]').fill(name)
+    await page.locator('[data-mappen-aktion="speichern"]').click()
+    await expect(page.locator('[data-mappen-dialog]')).toHaveCount(0)
+  }
+
+  test('speichern → alle schliessen → öffnen: dieselbe Folge, dieselbe Lesestellung', async ({ page }) => {
+    await seedMitFest(page, [{ path: OR }, { path: BGE }, { path: RECHNER }])
+    await speichereAls(page, 'Kündigung Meier')
+
+    // Alle schliessen — danach steht nur die Sammlung da (R14).
+    await leerraumMenue(page)
+    await page.locator('[data-reiter-menue="alle"]').click()
+    await expect.poll(() => gespeichert(page)).toEqual(['/'])
+
+    await leerraumMenue(page)
+    await page.locator('[data-reiter-menue="mappe-auf:Kündigung Meier"]').click()
+    await expect(page.locator('[data-mappen-dialog="oeffnen"]')).toBeVisible()
+    await page.locator('[data-mappen-aktion="oeffnen"]').click()
+
+    // Der Anker IST die Lesestellung (§5a Ziff. 6) — er muss mitkommen.
+    await expect.poll(() => gespeichert(page)).toEqual([OR, BGE, RECHNER])
+    await expect.poll(() => schluessel(page))
+      .toEqual([OR.split('#')[0], BGE, RECHNER])
+  })
+
+  test('ein angehefteter Reiter überlebt das Öffnen einer Mappe', async ({ page }) => {
+    await seedMitFest(page, [{ path: OR }, { path: BGE }])
+    await speichereAls(page, 'Recherche')
+
+    await seedMitFest(page, [{ path: VORLAGE, fest: true }, { path: RECHNER }])
+    // Der zweite Seed hat den Mappen-Speicher geleert — also erneut ablegen.
+    await speichereAls(page, 'Andere')
+    await page.evaluate(([o, b]) => localStorage.setItem('lexmetrik-mappen', JSON.stringify(
+      [{ name: 'Recherche', reiter: [{ path: o }, { path: b }] }])), [OR, BGE] as [string, string])
+
+    await leerraumMenue(page)
+    await page.locator('[data-reiter-menue="mappe-auf:Recherche"]').click()
+    await page.locator('[data-mappen-aktion="oeffnen"]').click()
+
+    await expect.poll(() => gespeichert(page)).toEqual([VORLAGE, OR, BGE])
+    await expect(page.locator(`${STREIFEN} [data-reiter-fest="true"]`)).toHaveCount(1)
+  })
+
+  test('die Adresse trägt die Reiterfolge — in einem frischen Kontext dieselbe Folge', async ({ browser }) => {
+    const geber = await browser.newContext()
+    const s1 = await geber.newPage()
+    await s1.setViewportSize({ width: 1440, height: 900 })
+    await s1.goto(START)
+    await s1.evaluate((e) => localStorage.setItem('lexmetrik-tabs', JSON.stringify(e)),
+      [{ path: OR, fest: true }, { path: BGE }, { path: RECHNER }])
+    await s1.goto(RECHNER)
+    await expect(s1.locator(`${STREIFEN} [data-reiter-schluessel]`).first()).toBeVisible({ timeout: 20_000 })
+
+    // Die Adresse wird ohne Zwischenablage gebaut — gemessen wird die
+    // KODIERUNG (`lib/mappen`), nicht die Berechtigung des Browsers.
+    const adresse = await s1.evaluate(() => {
+      const tabs = JSON.parse(localStorage.getItem('lexmetrik-tabs') ?? '[]') as
+        { path: string; fest?: boolean }[]
+      const teil = (p: string) => encodeURIComponent(p).replace(/%2F/g, '/')
+      return `${location.pathname}?mappe=${tabs.map((t) => (t.fest ? '*' : '') + teil(t.path)).join(',')}`
+    })
+    expect(adresse, 'die Adresse nennt die Erlasse im Klartext').toContain('/gesetze/bund/OR')
+    expect(adresse, 'und die Lesestellung als kodierten Anker').toContain('%23art-336_c')
+    await geber.close()
+
+    // FRISCHER KONTEXT: eigener localStorage, kein gemeinsamer Zustand.
+    const nehmer = await browser.newContext()
+    const s2 = await nehmer.newPage()
+    await s2.setViewportSize({ width: 1440, height: 900 })
+    await s2.goto(adresse)
+    await expect(s2.locator(`${STREIFEN} [data-reiter-schluessel]`).first()).toBeVisible({ timeout: 20_000 })
+
+    await expect.poll(() => gespeichert(s2)).toEqual([OR, BGE, RECHNER])
+    await expect(s2.locator(`${STREIFEN} [data-reiter-fest="true"]`),
+      'die Anheftung reist mit').toHaveCount(1)
+    // Der Parameter verlässt die Adresszeile, sobald er übernommen ist —
+    // sonst zwänge jedes Neuladen dieselbe fremde Mappe erneut auf (dieselbe
+    // Regel wie bei `?p=`, `usePaneLayout`).
+    expect(await s2.evaluate(() => location.search)).not.toContain('mappe=')
+    // …und kein Reiter trägt den Parameter in seinem Pfad mit sich herum.
+    expect((await gespeichert(s2)).some((p) => p.includes('mappe='))).toBe(false)
+    await nehmer.close()
+  })
+
+  test('«Mappen verwalten» löscht — danach bietet das Menü sie nicht mehr an', async ({ page }) => {
+    await seedMitFest(page, [{ path: OR }, { path: BGE }])
+    await speichereAls(page, 'Wegwerf')
+
+    await leerraumMenue(page)
+    await expect(page.locator('[data-reiter-menue="mappe-auf:Wegwerf"]')).toHaveCount(1)
+    await page.locator('[data-reiter-menue="mappe-verwalten"]').click()
+    await expect(page.locator('[data-mappen-dialog="verwalten"]')).toBeVisible()
+    await page.locator('[data-mappen-zeile="Wegwerf"] button[aria-label*="löschen"]').click()
+    await expect(page.locator('[data-mappen-zeile="Wegwerf"]')).toHaveCount(0)
+    await page.keyboard.press('Escape')
+
+    await leerraumMenue(page)
+    await expect(page.locator('[data-reiter-menue="mappe-auf:Wegwerf"]')).toHaveCount(0)
+    await expect(page.locator('[data-reiter-menue="mappe-verwalten"]'),
+      'ohne Mappe kein Verwalten-Eintrag (§8)').toHaveCount(0)
+  })
+})

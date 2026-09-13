@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useLocation, useNavigationType } from 'react-router-dom';
-import { ersetzeTab, merkeTab } from '../lib/tabs';
+import { ersetzeTab, merkeTab, uebernehmeMappe } from '../lib/tabs';
+import { mappeAusSuche, ohneMappe } from '../lib/mappen';
 import { labelAusMeta } from '../lib/verlaufLabel';
 import { kanonisierePfad } from '../lib/normtext/erlassAdresse';
 
@@ -70,6 +71,36 @@ export function TabTracker() {
   // `null` beim Kaltstart: dort wird nichts ersetzt, sondern der bestehende
   // Reiter aktualisiert bzw. angehängt — die Persistenz bleibt unberührt.
   const aktiv = useRef<string | null>(null);
+
+  // ── W2·25 TEIL 2 · EINE GETEILTE MAPPE WIRD BEIM ANKOMMEN ÜBERNOMMEN ──────
+  //
+  // «…und als Adresse teilbar» (Spec §7). Wer einen `?mappe=`-Link öffnet,
+  // bekommt die Reiterfolge des Absenders — angeheftete bleiben, der Rest
+  // weicht in den Schliess-Ring (`lib/tabs.uebernehmeMappe`, dort die Regel).
+  //
+  // VOR DEM TRACKER-EFFEKT, und genau EINMAL: Effekte laufen in der
+  // Reihenfolge ihrer Deklaration, also steht die Mappe, bevor die laufende
+  // Adresse ihren Reiter anlegt oder ersetzt. Danach kommt der Parameter aus
+  // der Adresszeile (`replaceState`, wie `usePaneLayout` es für `?p=` tut):
+  // ein Neuladen soll den lokalen Stand nutzen, nicht dieselbe Mappe erneut
+  // aufzwingen — sonst wäre ein geteilter Link ein Dauerzustand statt einer
+  // Übergabe.
+  //
+  // OHNE RÜCKFRAGE, anders als beim Dialog: wer einen Mappen-Link ANKLICKT,
+  // hat die Geste schon gemacht (dieselbe Wahl wie bei `?p=`); und was weicht,
+  // holt Alt+⇧+T zurück. Eine Rückfrage auf einer Seite, die gerade erst lädt,
+  // wäre ein Vorhang vor dem Dokument, das der Absender zeigen wollte.
+  const mappeGesehen = useRef(false);
+  useEffect(() => {
+    if (mappeGesehen.current || typeof window === 'undefined') return;
+    mappeGesehen.current = true;
+    const reiter = mappeAusSuche(window.location.search);
+    if (!reiter) return;
+    uebernehmeMappe(reiter);
+    const u = new URL(window.location.href);
+    window.history.replaceState(window.history.state, '', u.pathname + ohneMappe(u.search) + u.hash);
+  }, []);
+
   useEffect(() => {
     // R14b: hier stand der Meta-Zweig (`aktiv.current = null`). Er ist
     // ersatzlos weg — jede Route läuft jetzt denselben Weg.
@@ -84,7 +115,11 @@ export function TabTracker() {
     // ── #hash SEIT DEM R2-NACHZUG DABEI (F5): der GEWÄHLTE Artikel steht in der
     // Adresse und beschriftet den Reiter («Art. 336c OR», §5a Ziff. 2). Die
     // laufende Lesestellung schreibt weiterhin allein `aktualisiereTabArtikel`.
-    const ziel = kanonisierePfad(pathname) + search + hash;
+    // W2·25: OHNE den Mappen-Parameter. Der Router sieht `search` weiter mit
+    // ihm (ein `replaceState` meldet ihm nichts), und ein Reiter, der
+    // `?mappe=…` in seinem Pfad trägt, schleppte die ganze fremde Reiterfolge
+    // durch jeden Speicher, jede Kopier-Adresse und jede spätere Mappe mit.
+    const ziel = kanonisierePfad(pathname) + ohneMappe(search) + hash;
     const label = labelAusMeta(pathname) ?? undefined;
     // R14: die Sammlung wird AKTIVIERT oder ANGELEGT, nie an die Stelle eines
     // anderen Reiters gesetzt — dieselbe Semantik wie `merkeTab` sie ohnehin

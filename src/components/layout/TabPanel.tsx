@@ -41,8 +41,27 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
   const gezogenRef = useRef<string | null>(null);
   const [ueberPath, setUeberPath] = useState<string | null>(null);
 
+  // ── W2·25 · DIE ANGEHEFTETEN SIND IM BLATT EINE EIGENE ZONE ──────────────
+  //
+  // In der LEISTE stehen sie vorn, weil der Speicher sie vorn führt (D16: eine
+  // Ordnung). Im Blatt ordnet ohnehin schon die Art, und dort ist «angeheftet»
+  // die stärkere Auskunft: es sind die Reiter, die keine Schliess-Geste
+  // erwischt. Sie stehen darum als erste Gruppe und NICHT zusätzlich unter
+  // ihrer Art — sonst führte dasselbe Verzeichnis denselben Reiter zweimal.
+  // Nebeneffekt, der kein Zufall ist: ▲/▼ und das Ziehen bewegen einen Reiter
+  // nur INNERHALB seiner Blatt-Liste — die Zonengrenze aus `lib/tabs` wird
+  // hier damit gar nicht erst berührt, statt bewacht zu werden.
+  const festeItems = tabs.filter((t) => t.fest);
+  const freie = tabs.filter((t) => !t.fest);
+  const FEST_ID = 'zone:fest';
+  /** Ziehen nur innerhalb derselben Zone (zusätzlich zum Same-Group-Guard):
+   *  `lib/tabs.ordneTabsUm` wiese den Zug ohnehin ab — hier bleibt schon die
+   *  Einfügemarke aus, statt eine Landung zu versprechen (§8). */
+  const zoneVon = (p: string) => !!tabs.find((t) => tabSchluessel(t.path) === tabSchluessel(p))?.fest;
+  const gleicheZone = (a: string, b: string) => zoneVon(a) === zoneVon(b);
+
   const gruppen = KAT_ORDER
-    .map((kat) => ({ kat, items: tabs.filter((t) => reiterKategorie(t.path) === kat) }))
+    .map((kat) => ({ kat, items: freie.filter((t) => reiterKategorie(t.path) === kat) }))
     .filter((g) => g.items.length > 0);
 
   // Verwaiste Klapp-Zustände beim Render abgleichen (React «adjust state when
@@ -50,6 +69,7 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
   // deren ID weg → ihr eingeklappt-Zustand wird verworfen, damit ein später neu
   // geöffneter Reiter wieder im Default «offen» erscheint statt im alten «zu».
   const aktiveIds = new Set<string>();
+  if (festeItems.length > 0) aktiveIds.add(FEST_ID);
   for (const { kat, items } of gruppen) {
     aktiveIds.add(`kat:${kat}`);
     if (kat === 'gesetze') for (const t of items) {
@@ -68,7 +88,7 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
     });
   }
 
-  if (gruppen.length === 0) return null;
+  if (gruppen.length === 0 && festeItems.length === 0) return null;
 
   // Eine Reiter-Zeile: dreispaltig (Icon · Name · Artikel) + Schliessen-Knopf.
   // `liste`/`idx` sind die Blatt-Liste dieser Zeile und ihre Position darin —
@@ -95,7 +115,10 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
         onDragOver={(ev) => {
           const von = gezogenRef.current;
           // Drop nur innerhalb derselben Blatt-Liste zulassen (Same-Group-Guard).
-          if (von && von !== t.path && gleicheReiterGruppe(von, t.path, manifeste)) {
+          // W2·25: zusätzlich zur Blatt-Gruppe zählt die ZONE — angeheftet
+          // oder frei. Beides zusammen ist genau die Liste, die diese Zeile
+          // gerade führt.
+          if (von && von !== t.path && gleicheZone(von, t.path) && gleicheReiterGruppe(von, t.path, manifeste)) {
             ev.preventDefault();
             if (ueberPath !== t.path) setUeberPath(t.path);
           }
@@ -103,7 +126,7 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
         onDrop={(ev) => {
           ev.preventDefault();
           const von = gezogenRef.current ?? ev.dataTransfer.getData('text/plain');
-          if (von && von !== t.path && gleicheReiterGruppe(von, t.path, manifeste)) ordneTabsUm(von, t.path);
+          if (von && von !== t.path && gleicheZone(von, t.path) && gleicheReiterGruppe(von, t.path, manifeste)) ordneTabsUm(von, t.path);
           gezogenRef.current = null;
           setUeberPath(null);
         }}
@@ -194,6 +217,20 @@ export function TabPanel({ tabs, manifeste, aktivSchluessel, onNavigate, onSchli
 
   return (
     <div className="space-y-2">
+      {/* W2·25 · die feste Zone zuerst — dieselbe Reihenfolge wie in der
+          Leiste, damit Blatt und Streifen nicht widersprechen (§5). Das
+          Gesetzes-Format der Zeile (Herkunfts-Strich + Artikel-Spalte) hängt
+          an der ART des einzelnen Reiters, nicht an der Gruppe. */}
+      {festeItems.length > 0 && (
+        <div>
+          {kopf(FEST_ID, 'Angeheftet', festeItems.length, false)}
+          {offen(FEST_ID) && (
+            <ul className="mt-0.5 space-y-0.5 pl-2">
+              {festeItems.map((t, i) => zeile(t, reiterKategorie(t.path) === 'gesetze', festeItems, i))}
+            </ul>
+          )}
+        </div>
+      )}
       {gruppen.map(({ kat, items }) => {
         const katId = `kat:${kat}`;
         return (
