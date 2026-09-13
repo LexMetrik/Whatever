@@ -293,6 +293,17 @@ mit Rot-Beweis.
    gemessen: erster Rechtsklick zeigte nichts, zweiter das Menü). Fix: `import()` beim ersten
    `pointerenter` auf die Leiste bzw. beim `contextmenu` sofort anstossen und das Menü nach dem Laden
    öffnen, nicht verwerfen. Start-Chunk-Budget (60 KB gzip, `check:perf-budget`) darf nicht wachsen.
+   — **Korrektur 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: der vorgeschlagene Fix hat die
+   Ursache nur zur Hälfte getroffen.** Nachgemessen IN der Seite (MutationObserver von `contextmenu`
+   bis `[role=menu]` im DOM; gebautes dist/ hinter `vite preview`, Chromium, vier Reiter): 1.
+   Rechtsklick 320 ms · 2. 10 ms · 3. 8 ms. Das Menü wurde also nie verworfen, es kam zu spät — und
+   MIT vorgeladenem Chunk blieben es 316 ms (gegen 322 ohne). Die zweite, grössere Ursache ist
+   `React.lazy`/`Suspense`: der erste Render ruft den Loader, bekommt ein bereits erfülltes
+   Versprechen und suspendiert trotzdem; der Inhalt kommt erst im Nachlauf nach dem Fallback.
+   GEBAUT ist darum beides — Vorlauf beim Betreten der Leiste (Zeiger ODER Fokus, sonst hätte
+   Shift+F10 keinen) UND der dynamische Import von Hand statt `lazy`/`Suspense`, so dass das Menü im
+   selben Commit wie der Rechtsklick rendert. Danach: 1. Rechtsklick 17 ms · 2. 9 ms · 3. 9 ms.
+   Entry-Chunk unverändert 54.9 KB gzip (Budget 60.0), der Menü-Chunk bleibt ein eigener (923 B gzip).
 6. **Reiter-Kopf nie als blosses «…».** Der gekürzte Gerichts-/Erlass-Kopf darf weichen (F6), aber
    ein alleinstehendes Auslassungszeichen wird nicht gezeigt — dann ganz ausblenden.
 7. **Trefferflächen ⧉/✕ gegen WCAG 2.5.8 prüfen.** `komfort={false}` ist begründet (A3-1: das

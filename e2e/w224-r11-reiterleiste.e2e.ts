@@ -575,3 +575,57 @@ test.describe('W2·18 Welle 2 Punkt 3 — prefers-reduced-motion', () => {
     expect(befund.scroll).toBe('auto')
   })
 })
+
+// ═══ W2·18 WELLE 2 PUNKT 5 · DAS MENÜ IST DA, BEVOR MAN KLICKT ══════════════
+//
+// GEMESSEN 13.9.2026 in der Seite (MutationObserver ab `contextmenu` bis
+// `[role=menu]` im DOM), gebautes dist/ hinter `vite preview`:
+//     Vorstand `83331af1d`   1. Rechtsklick 320 ms · 2. 10 ms · 3. 8 ms
+//     danach                 1. Rechtsklick  17 ms · 2.  9 ms · 3. 9 ms
+// Die 320 ms waren NICHT das Netz (mit vorgeladenem Chunk blieben es 316) —
+// sie waren Reacts Nachlauf nach einem `Suspense`-Fallback. Darum zwei
+// Massnahmen: Vorlauf beim Betreten der Leiste UND der dynamische Import von
+// Hand statt `lazy`/`Suspense`.
+//
+// ROT ZU BEKOMMEN (§6.7, so gefahren — die Datei `Reiterleiste.tsx` des
+// Vorstands eingespielt): «Vorlauf» findet keine Chunk-Anfrage nach dem Hover,
+// «öffnet sofort» misst statt ≤150 ms die 320 ms des Nachlaufs.
+test.describe('W2·18 Welle 2 Punkt 5 — Kontextmenü ohne Wartezeit', () => {
+  test('der Zeiger auf der Leiste holt den Chunk; der Rechtsklick öffnet sofort', async ({ page }) => {
+    // Mitgeschrieben wird am NETZ, nicht über `performance.getEntriesByType`:
+    // dessen Puffer fasst 250 Einträge und ist am Dev-Server (ein Modul = eine
+    // Anfrage) längst voll, bevor die Leiste steht — die Sonde hätte dort
+    // nichts gesehen und wäre falsch-rot geworden.
+    const chunkAnfragen: string[] = []
+    page.on('request', (r) => { if (/ReiterMenue/i.test(r.url())) chunkAnfragen.push(r.url()) })
+
+    await seed(page, [OR, RECHNER, VORLAGE])
+    // Vor der Berührung ist er NICHT geladen — sonst läge er im Start-Chunk
+    // (§15: das war die Ausgangslage, die ihn überhaupt lazy gemacht hat).
+    expect(chunkAnfragen).toHaveLength(0)
+
+    await page.locator(`${REITER} [data-reiter-schluessel]`).first().hover()
+    await expect.poll(() => chunkAnfragen.length, { timeout: 15_000 }).toBeGreaterThan(0)
+    // Die Verweildauer eines Menschen zwischen Ankunft und Klick — genau die
+    // Zeit, die der Vorlauf nutzt (am Dev-Server transformiert vite das Modul
+    // dabei erst noch, gemessen ~700 ms; im gebauten dist/ sind es ~6 ms).
+    await page.waitForTimeout(1500)
+
+    // Jetzt der Rechtsklick — gemessen IN der Seite, ohne Playwright-Rundreise.
+    const ms = await page.evaluate(() => new Promise<number>((fertig) => {
+      const el = document.querySelector('[data-reiter-schluessel]')!
+      const t0 = performance.now()
+      const wache = new MutationObserver(() => {
+        if (document.querySelector('[role=menu]')) { wache.disconnect(); fertig(Math.round(performance.now() - t0)) }
+      })
+      wache.observe(document.body, { childList: true, subtree: true })
+      el.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, cancelable: true, clientX: 300, clientY: 40 }))
+      setTimeout(() => { wache.disconnect(); fertig(-1) }, 8000)
+    }))
+    expect(ms, 'Vorstand mass 320 ms — Reacts Nachlauf nach dem Suspense-Fallback')
+      .toBeGreaterThanOrEqual(0)
+    expect(ms).toBeLessThanOrEqual(150)
+    // Und es ist das ECHTE Menü, nicht eine leere Hülle.
+    await expect(page.locator('[role=menu] [role=menuitem]').first()).toBeVisible()
+  })
+})

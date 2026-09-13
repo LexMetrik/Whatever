@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState, type KeyboardEvent as ReactTaste } from 'react';
+import { useEffect, useRef, useState, type KeyboardEvent as ReactTaste } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTabs } from './useTabs';
 import {
@@ -37,7 +37,40 @@ import { usePaneSteuerung } from './usePaneLayout';
 // LOGIKVERLUST-BEWERTUNG (§15): keiner — dieselbe Komponente, dieselben
 // Aktionen, nur später geladen. Die Reiter-Mechanik selbst (`lib/tabs`) bleibt
 // im Entry, wo sie hingehört.
-const ReiterMenue = lazy(() => import('./ReiterMenue').then((m) => ({ default: m.ReiterMenue })));
+// ── W2·18 WELLE 2 PUNKT 5 · «EINEN WIMPERNSCHLAG SPÄTER» WAR EINE DRITTEL-
+//    SEKUNDE, JEDES MAL AM ERSTEN RECHTSKLICK ────────────────────────────────
+//
+// GEMESSEN 13.9.2026, in der Seite (MutationObserver ab `contextmenu` bis
+// `[role=menu]` im DOM; Chromium, vier Reiter):
+//     gebautes dist/ (vite preview)   1. Rechtsklick 320 ms · 2. 10 ms · 3. 8 ms
+//     Dev-Server                      1. Rechtsklick 728 ms · 2. 76 ms
+// Das Menü ging also nicht verloren, es kam ZU SPÄT — und wer nach einer
+// Drittelsekunde nichts sieht, klickt ein zweites Mal oder gibt auf.
+//
+// ZWEI URSACHEN, und die zweite ist die grössere:
+//  (1) der Chunk wurde erst beim Klick angefordert (über eine echte Leitung
+//      kostet das eine Rundreise, lokal nur ~6 ms);
+//  (2) `React.lazy` + `Suspense` SUSPENDIERT auch dann, wenn das Modul längst
+//      geladen ist: der erste Render ruft den Loader, bekommt ein — bereits
+//      erfülltes — Versprechen und wirft es trotzdem; der Inhalt kommt erst im
+//      Nachlauf. GEMESSEN blieb der erste Rechtsklick darum auch MIT
+//      vorgeladenem Chunk bei 316 ms (gegen 322 ohne), während der zweite
+//      10 ms brauchte. Die Differenz ist Reacts Nachlauf, nicht das Netz.
+//
+// DIE ANTWORT: kein `lazy`/`Suspense` mehr für diese eine Fläche, sondern der
+// dynamische Import von Hand — das Ergebnis liegt im Zustand, und das Menü
+// rendert im SELBEN Commit wie der Rechtsklick. Angefordert wird es, sobald
+// jemand die Leiste betritt (Zeiger oder Fokus): zwischen Ankunft und Klick
+// liegen beim Menschen Hunderte von Millisekunden.
+// DAS START-BUDGET BLEIBT UNBERÜHRT (§15, Herleitung oben): der Chunk bleibt
+// ein eigener (gemessen 923 B gzip), er wird nur früher angefordert; der
+// Entry-Chunk misst weiterhin 54.9 KB gzip gegen 60.0 KB Budget.
+// KOMMT DER RECHTSKLICK DOCH ZUERST (Touch, Shift+F10 ohne Vorlauf), bleibt
+// `menue` gesetzt und das Menü öffnet, sobald das Modul da ist — es wird nicht
+// verworfen.
+let menueVorlauf: Promise<typeof import('./ReiterMenue')> | null = null;
+/** Den Menü-Chunk anfordern (höchstens einmal je Seitenleben). */
+const ladeMenue = (): Promise<typeof import('./ReiterMenue')> => (menueVorlauf ??= import('./ReiterMenue'));
 import type { ReiterMenueEintrag } from './ReiterMenue';
 
 // ─── Arbeitsleiste: die offenen Reiter, sichtbar (W2·24 §5a, Wunsch David) ───
@@ -91,6 +124,19 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const streifenRef = useRef<HTMLDivElement>(null);
   /** Offenes Reiter-Kontextmenü (M4): welcher Reiter, an welcher Stelle. */
   const [menue, setMenue] = useState<{ path: string | null; x: number; y: number } | null>(null);
+  // W2·18 Welle 2 Punkt 5 · die Menü-Fläche selbst, sobald ihr Chunk da ist
+  // (Herleitung oben am Import). Bis dahin `null` — dann gibt es schlicht kein
+  // Menü, keinen Platzhalter unter dem Zeiger.
+  const [MenueFlaeche, setMenueFlaeche] =
+    useState<typeof import('./ReiterMenue')['ReiterMenue'] | null>(null);
+  const holeMenue = () => { void ladeMenue().then((m) => setMenueFlaeche(() => m.ReiterMenue)); };
+  /** Ein Menü öffnen — und dabei IMMER auch seinen Chunk anstossen. Der
+   *  Vorlauf am `nav` (Zeiger/Fokus) deckt den Alltag ab, aber nicht jeden
+   *  Fall: ein Zeiger, der beim Laden schon über der Leiste RUHT, löst kein
+   *  `pointerenter` aus. Ohne diese Zeile bliebe das Menü dann für immer aus —
+   *  ein Rechtsklick, der nichts tut (§8). Mit ihr öffnet es, sobald das Modul
+   *  da ist: `menue` bleibt gesetzt, es wird nicht verworfen. */
+  const oeffneMenue = (m: { path: string | null; x: number; y: number }) => { holeMenue(); setMenue(m); };
   const gezogen = useRef<string | null>(null);
   /** Gezogener Reiter als STATE (nicht nur Ref): der Reiter unter dem Zeiger
    *  soll sich während des Zugs sichtbar zurücknehmen — dafür braucht es ein
@@ -719,6 +765,14 @@ export function Reiterleiste({ paneSchluessel = [] }: {
 
   return (
     <nav aria-label="Offene Reiter" ref={leisteRef}
+      // W2·18 Welle 2 Punkt 5 · Vorlauf für das Kontextmenü (Herleitung oben).
+      // ZWEI Wege hinein, beide zählen als Absicht: der Zeiger betritt die
+      // Leiste (`pointerenter` — einmal, nicht bei jedem Reiterwechsel, weil
+      // er am `nav` hängt und nicht am Reiter) und der Fokus kommt herein
+      // (`focus` steigt hier als `focusin` an; ohne ihn hätte der
+      // Tastaturweg Shift+F10 keinen Vorlauf).
+      onPointerEnter={holeMenue}
+      onFocus={holeMenue}
       // W2·24-R4: die Arbeitsleiste KLEBT jetzt — unter der Titelblatt-Zeile
       // (`--app-krone-h`) und mit ihrer eigenen, festen Höhe (`--app-reiter-h`).
       // Beide Zahlen stehen in `src/index.css`; dieselbe Summe (`--app-kopf-h`)
@@ -780,7 +834,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           onContextMenu={(ev) => {
             if (ev.target !== ev.currentTarget) return;
             ev.preventDefault();
-            setMenue({ path: null, x: ev.clientX, y: ev.clientY });
+            oeffneMenue({ path: null, x: ev.clientX, y: ev.clientY });
           }}
           className="relative flex min-w-0 flex-1 items-stretch overflow-x-auto lc-reiter-scroll border-l border-rule-soft">
           {sichtbar.map((t) => {
@@ -793,7 +847,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
                 zieht={zieht} ueber={ueber} gezogenRef={gezogen}
                 kannOeffnen={kannOeffnen} istOffen={istOffen} onDaneben={oeffneDaneben}
                 onNavigate={navigate} onSchliessen={schliessen}
-                onZieht={setZieht} onUeber={setUeber} onMenue={setMenue}
+                onZieht={setZieht} onUeber={setUeber} onMenue={oeffneMenue}
                 onUmordnen={ordneTabsUm} />
             );
           })}
@@ -849,21 +903,17 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       {/* M4 · das Kontextmenü des angeklickten Reiters. Ein Menü zur Zeit —
           `menue` hält den Reiter, nicht der Reiter das Menü (sonst stünden bei
           zwölf Reitern zwölf Portale bereit). */}
-      {menue && menue.path === null && (
-        <Suspense fallback={null}>
-          <ReiterMenue x={menue.x} y={menue.y} name="Offene Reiter"
-            eintraege={leerraumEintraege()} onSchliessen={() => setMenue(null)} />
-        </Suspense>
+      {menue && MenueFlaeche && menue.path === null && (
+        <MenueFlaeche x={menue.x} y={menue.y} name="Offene Reiter"
+          eintraege={leerraumEintraege()} onSchliessen={() => setMenue(null)} />
       )}
-      {menue && menue.path !== null && (() => {
+      {menue && MenueFlaeche && menue.path !== null && (() => {
         const pfad = menue.path;
         const t = tabs.find((x) => tabSchluessel(x.path) === tabSchluessel(pfad));
         if (!t) return null;
         return (
-          <Suspense fallback={null}>
-            <ReiterMenue x={menue.x} y={menue.y} name={reiterKurzformText(t, manifeste)}
-              eintraege={menueEintraege(t)} onSchliessen={() => setMenue(null)} />
-          </Suspense>
+          <MenueFlaeche x={menue.x} y={menue.y} name={reiterKurzformText(t, manifeste)}
+            eintraege={menueEintraege(t)} onSchliessen={() => setMenue(null)} />
         );
       })()}
 
