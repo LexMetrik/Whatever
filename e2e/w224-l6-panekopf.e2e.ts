@@ -92,7 +92,7 @@ async function lies(page: Page): Promise<{ koepfe: KopfBefund[]; reiter: string[
     // Reiter-Beschriftung OHNE die sr-only-Fensterangabe («(Fenster links)»):
     // verglichen wird der sichtbare Text, den der Anwalt liest.
     const reiter = [...document.querySelectorAll('[data-reiter-schluessel]')].map((e) => {
-      const klon = e.querySelector('button')?.cloneNode(true) as HTMLElement | undefined
+      const klon = e.querySelector('a')?.cloneNode(true) as HTMLElement | undefined
       klon?.querySelectorAll('.sr-only').forEach((s) => s.remove())
       return norm(klon?.textContent)
     })
