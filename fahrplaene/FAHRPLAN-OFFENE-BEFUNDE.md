@@ -194,6 +194,51 @@ Die Liste steht wörtlich so, wie sie am 29.8.2026 in ROADMAP.md stand:
 
   **Nachtrag 8.9.2026 (Messung Orchestrator, drei Wächter-Läufe im eigenen PR #779):** die Browser-Suite flackert breit — 6 verschiedene Specs nur im Retry grün, je Lauf andere: `leser-r1-r2.e2e.ts`, `w224-reiterverhalten.e2e.ts`, `leser-v3-blatt.e2e.ts`, `leser-v3-suche-ohne-gliederung.e2e.ts`, `w224-r11-reiterleiste.e2e.ts`, `leser-v3-panel-zaehler.e2e.ts`. Ein harter Wächter mit Ausnahmeliste kann so nicht landen, ohne dass die Liste jeden Lauf wächst. **Entscheid (abweichend von «sofort rot», offengelegt):** Melde-Modus über `e2e/flake-modus.json` — bis dahin nur `::warning`/Exit 0, danach hart wie oben. **Stichtag hart 22.9.2026.** Auftrag: Wurzel je Spec messen (Race/Timing), nicht Ausnahmen sammeln.
 
+### §4.R — Reiterleiste: sechs stille Fehler (13.9.2026)
+
+Anlass: Sichtprüfung im Dev-Server (7 Reiter, Handy-Breite, Kontextmenü, Überlauf-Blatt) plus
+read-only Code-Zweitblick (Opus) am 13.9.2026; Auftrag David «bau 1 bis 6». Alles Darstellungs-
+schicht (`src/components/layout/Reiterleiste.tsx`, `reiterleiste/*`, `useTabs.ts`, `src/lib/tabs.ts`),
+kein Risikopfad. Reihenfolge = Priorität; je Punkt ein eigener Commit mit Rot-Beweis (§6.7), wo ein
+Test die Eigenschaft pinnen kann.
+
+1. **Alt-Kürzel am Mac.** `Reiterleiste.tsx` (Tastatur-Effekt, ~Z. 280–332) prüft `e.key === 't'`,
+   `'w'`, `/^[1-9]$/`. macOS liefert bei Option+Buchstabe/Ziffer das Sonderzeichen («†», «¡» …) als
+   `key`, nicht den Buchstaben ⇒ Alt+T / Alt+W / Alt+1…9 tot am Mac, CI (Linux) grün. Fix: auf
+   `e.code` (`KeyT`, `KeyW`, `Digit1`…`Digit9`) prüfen, `e.key` als Fallback für exotische Layouts
+   behalten. Test: `KeyboardEvent` mit `{ altKey:true, key:'†', code:'KeyT' }` muss neuen Reiter
+   öffnen (vorher rot). Beworbene Kürzel-Liste im Blatt (`ReiterBlatt.tsx`) unverändert.
+2. **Render-Kaskade beim Scrollen.** Scroll-Spy schreibt alle 200 ms die Lesestellung nach
+   `localStorage` (`src/pages/gesetz-leser/inhalt-hooks.tsx` ~Z. 384); `useTabs.ts` (Z. 12–14) setzt
+   danach IMMER ein neues Array, der Manifest-Effekt in `Reiterleiste.tsx` (~Z. 100–125) hängt an
+   `[tabs]` und setzt IMMER ein neues Objekt ⇒ Leiste samt Fenster-Vermessung rendert ~5×/s.
+   Fix: strukturelle Gleichheit in `useTabs` (gleiche Schlüssel + gleiche Titel/Anker ⇒ altes Array
+   behalten); Manifest-Effekt an eine stabile Kennung (z. B. verkettete Pfad-Schlüssel) statt an
+   `tabs`. Beleg: Render-Zähler-Test oder gemessene Renders vor/nach im PR-Text.
+3. **Nach dem Schliessen rechten Nachbarn aktivieren** (Chrome/Firefox-Norm), heute links
+   (`Reiterleiste.tsx` ~Z. 189, `schliessen`). Ist kein rechter Nachbar da, der linke. Test pinnt
+   beides.
+4. **Stille Kappungs-Verluste** (`src/lib/tabs.ts`): `ladeTabs` `.slice(0, MAX)` (~Z. 475) und
+   `stelleLetztenWiederHer` (~Z. 739) behalten die ERSTEN 50, `merkeTab` `.slice(-MAX)` (~Z. 536)
+   die LETZTEN 50 — zwei Richtungen; Gekapptes fällt ohne Ring-Eintrag weg. `leereTabs` legt alle in
+   den Ring, `schreibeGeschlossene` kappt auf `ZU_MAX = 10` (~Z. 677, 699–701) ⇒ «Alle schliessen»
+   mit >10 Reitern nur zu 10 umkehrbar. Fix: EINE Richtung (die ältesten fallen, wie bei `merkeTab`),
+   Gekapptes in den Ring; `ZU_MAX` so, dass «Alle schliessen» vollständig umkehrbar ist (Ring-Kappe
+   ≥ Reiter-Kappe, oder «Alle schliessen» legt einen Sammel-Eintrag ab). Tests je Kappe rot→grün.
+5. **Gestutzte Beschriftungen ab 7 Reitern.** Gemessen 13.9.2026 bei 1024 px: Reiter zeigen «St…»,
+   «ZP…», «Sa…»; Duplikate «ZPO-Fristen (2)» und «(3)» sind visuell identisch, weil die Nummer hinten
+   abgeschnitten wird. Fix (a) Mindestbreite je Reiter so, dass ≥ 6–8 Zeichen sichtbar bleiben, und
+   früher ins «+N»-Blatt (Fenster-Messung `useReiterFenster.ts`); (b) Instanz-Nummer bei Duplikaten
+   vorne oder als nicht-kürzbares Suffix (`reiterKurzformText` in `src/lib/tabs.ts`). Sichtbeleg
+   (Screenshot 7 Reiter bei 1024 px) im PR.
+6. **Blatt-Filter beim Schliessen leeren.** Das Suchfeld des «+N»-Blatts behält seinen Wert
+   (`Reiterleiste.tsx` ~Z. 71, 419, 727); beim nächsten Öffnen «fehlen» Reiter. Fix: Filter auf
+   Schliessen zurücksetzen. Test pinnt es.
+
+Nicht Teil dieses Schritts (eigener Roadmap-Schritt, Vorschläge 7–9 vom 13.9.2026): Umordnen über die
+Fenstergrenze hinaus, Reiter als Links, Umordnen auf Touch. Bereits geplant: Anheften/Arbeitsmappe
+(`W2·25-ARBEITSMAPPE`).
+
 ## §5 — `QS-CODE-PROP` · Eigenschafts-Tests (property-based) für die Rechen-Engines
 
 Entscheid David 7.8.2026: je Engine ein Invarianten-Katalog («eine Frist endet nie vor ihrem
