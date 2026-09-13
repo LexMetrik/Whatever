@@ -389,3 +389,48 @@ test.describe('R13-7/R13-8 — Tastatur', () => {
     await expect(blatt.getByText('Ctrl+Tab')).toHaveCount(0)
   })
 })
+
+// ═══ W2·18 WELLE 2 (13.9.2026) · §4.R2 ══════════════════════════════════════
+//
+// ROT ZU BEKOMMEN (§6.7 — je Massnahme einmal gegen den Vorstand `2a331dcdd`
+// gefahren):
+//   Punkt 1  `reiterleiste/Reiter.tsx`: `tabIndex={imRing ? 0 : -1}` entfernen
+//            ⇒ 0 Reiter mit `tabindex=0`, und ←/→ bewegen nichts (der Zuhörer
+//            `onKeyDown` am Streifen in `Reiterleiste.tsx` fehlt dann ebenso).
+test.describe('W2·18 Welle 2 Punkt 1 — Pfeiltasten bewegen den FOKUS', () => {
+  /** Identität des Reiters, in dem der Fokus gerade steht. */
+  const fokusReiter = (page: Page) => page.evaluate(() =>
+    document.activeElement?.closest('[data-reiter-schluessel]')
+      ?.getAttribute('data-reiter-schluessel') ?? null)
+
+  test('←/→/Home/End wandern, die Auswahl bleibt — und Delete schliesst', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    const VIER = FUENFZEHN.slice(0, 4)
+    await seed(page, VIER, VIER[0])
+    // Genau EIN Reiter im Tabulator-Ring (APG), und zwar der aktive.
+    await expect(page.locator(`${STREIFEN} [data-reiter-schluessel] [tabindex="0"]`)).toHaveCount(1)
+    await page.locator(`${STREIFEN} [data-reiter-schluessel] [tabindex="0"]`).focus()
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[0])
+
+    await page.keyboard.press('ArrowRight')
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[1])
+    // DIE AUSWAHL BLEIBT: der Fokus wandert, navigiert wird erst mit Enter.
+    await expect(page.locator(`${STREIFEN} [data-reiter-aktiv="true"]`))
+      .toHaveAttribute('data-reiter-schluessel', VIER[0])
+
+    await page.keyboard.press('End')
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[3])
+    await page.keyboard.press('ArrowRight')  // kein Umlauf am Rand
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[3])
+    await page.keyboard.press('Home')
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[0])
+    await page.keyboard.press('ArrowLeft')   // kein Umlauf, andere Seite
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[0])
+
+    // Delete schliesst den fokussierten Reiter; der Fokus rückt mit.
+    await page.keyboard.press('ArrowRight')
+    await page.keyboard.press('Delete')
+    await expect.poll(() => gespeichert(page)).toEqual([VIER[0], VIER[2], VIER[3]])
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[2])
+  })
+})

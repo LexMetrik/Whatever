@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState, type KeyboardEvent as ReactTaste } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTabs } from './useTabs';
 import {
@@ -207,6 +207,90 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       schliesseTab(path);
       if (nachbar) navigate(nachbar.path); else zurSammlung();
     } else schliesseTab(path);
+  };
+
+  // ═══ W2·18 WELLE 2 PUNKT 1 · DER STREIFEN IST EINE GRUPPE, KEINE KETTE ════
+  //
+  // GEMESSEN 13.9.2026 (SSR-Markup, Vorstand `2a331dcdd`): 0 × `tabindex` in
+  // der ganzen Leiste. Jeder Reiterknopf und jedes ✕ stand im Tabulator-Ring —
+  // sechs Reiter kosteten zwölf Anschläge bis zum Dokument, fünfzig hundert.
+  // WAI-ARIA APG (Tabs/Toolbar) kennt dafür das «roving tabindex»: EIN Element
+  // der Gruppe trägt `tabindex=0`, alle übrigen −1, und bewegt wird INNERHALB
+  // der Gruppe mit den Pfeiltasten.
+  //
+  // WELCHER Reiter den Platz hat: der zuletzt fokussierte, solange er im
+  // Fenster steht; sonst der aktive; sonst der erste. So findet die
+  // Tabulator-Taste immer DEN Reiter, an dem man zuletzt war — und nach einem
+  // Seitenwechsel den, den man gerade liest.
+  //
+  // KEIN `role=tablist` (Entscheid §4.R2): die Leiste ist Navigation, kein
+  // Panel-Umschalter; `nav` bleibt. Die Rolle würde Auswahl-Semantik
+  // versprechen (`aria-selected`, «Pfeiltaste wählt aus»), die hier gerade
+  // NICHT gilt — Pfeil bewegt den FOKUS, aktiviert wird mit Enter/Space
+  // (das tut der Knopf von sich aus, darum steht dazu unten nichts).
+  const [fokusWunsch, setFokusWunsch] = useState<string | null>(null);
+  const sichtbareSchluessel = sichtbar.map((t) => tabSchluessel(t.path));
+  const ringSchluessel = fokusWunsch && sichtbareSchluessel.includes(fokusWunsch)
+    ? fokusWunsch
+    : sichtbareSchluessel.includes(aktivSchluessel)
+      ? aktivSchluessel
+      : sichtbareSchluessel[0] ?? null;
+
+  /** Der Reiterknopf zu einer Identität — über das Mess-Attribut, nicht über
+   *  einen CSS-Selektor: Reiterpfade tragen `/`, `?` und `=`, und `CSS.escape`
+   *  ist nicht überall zu haben. */
+  const knopfVon = (k: string): HTMLElement | null => {
+    const kasten = Array.from(streifenRef.current?.querySelectorAll<HTMLElement>('[data-reiter-schluessel]') ?? [])
+      .find((x) => x.getAttribute('data-reiter-schluessel') === k);
+    return kasten?.querySelector<HTMLElement>('button') ?? null;
+  };
+
+  /** Wohin der Fokus nach dem NÄCHSTEN Render gehört (Delete: der Reiter, der
+   *  den Platz des geschlossenen einnimmt). Erst danach steht sein Knopf im
+   *  DOM — vorher zu fokussieren hiesse, ein Element zu greifen, das gleich
+   *  verschwindet. */
+  const fokusNach = useRef<string | null>(null);
+  useEffect(() => {
+    const k = fokusNach.current;
+    if (!k) return;
+    fokusNach.current = null;
+    knopfVon(k)?.focus();
+  });
+
+  const zumReiter = (k: string) => { setFokusWunsch(k); knopfVon(k)?.focus(); };
+
+  // ←/→ bewegen den Fokus auf den Nachbarn, Home/End auf den ersten/letzten
+  // SICHTBAREN, Delete schliesst den fokussierten Reiter (Browser-Idiom für
+  // «weg damit», ohne die Hand zur Maus).
+  // KEIN UMLAUF am Rand — dieselbe Wahl wie beim Umordnen (Alt+⇧+←/→, s.
+  // unten): wer am Ende ankommt, soll es merken, statt vorn wieder
+  // herauszukommen. Zyklisch blättert Alt+Bild↑/↓, und das WECHSELT die
+  // Auswahl; hier wandert nur der Fokus.
+  // MIT MODIFIKATOR NICHTS: Alt+⇧+←/→ ordnet um, Alt+←/→ gehört dem Browser
+  // (Verlauf) — beides wird hier nicht abgefangen.
+  const onStreifenTaste = (ev: ReactTaste<HTMLDivElement>) => {
+    if (ev.altKey || ev.ctrlKey || ev.metaKey || ev.shiftKey) return;
+    const hier = (ev.target as HTMLElement).closest?.('[data-reiter-schluessel]')
+      ?.getAttribute('data-reiter-schluessel');
+    if (!hier) return;
+    const i = sichtbareSchluessel.indexOf(hier);
+    if (i === -1) return;
+    if (ev.key === 'Delete') {
+      const naechster = sichtbareSchluessel[i + 1] ?? sichtbareSchluessel[i - 1] ?? null;
+      ev.preventDefault();
+      fokusNach.current = naechster;
+      if (naechster) setFokusWunsch(naechster);
+      schliessen(sichtbar[i].path);
+      return;
+    }
+    const ziel = ev.key === 'ArrowRight' ? Math.min(i + 1, sichtbareSchluessel.length - 1)
+      : ev.key === 'ArrowLeft' ? Math.max(i - 1, 0)
+      : ev.key === 'Home' ? 0
+      : ev.key === 'End' ? sichtbareSchluessel.length - 1
+      : -1;
+    if (ziel < 0) return;
+    ev.preventDefault();
+    zumReiter(sichtbareSchluessel[ziel]);
   };
 
   // ── D19 (David 6.9.2026: «mit plus einen neuen reiter erzeugen können»),
@@ -647,6 +731,10 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           // ausgerechnet hat — im DOM nachlesbar, statt aus Breiten erraten.
           data-reiter-fenster={`${start}/${anzahl}/${ordnung.length}`}
           onDoubleClick={(ev) => { if (ev.target === ev.currentTarget) neuerReiter(); }}
+          // W2·18 Welle 2 Punkt 1 · Pfeiltasten/Home/End/Delete. AM STREIFEN,
+          // nicht am einzelnen Reiter: welcher der Nachbar ist, weiss nur die
+          // Leiste (§3) — und ein Zuhörer statt N spart N−1 Verdrahtungen.
+          onKeyDown={onStreifenTaste}
           // R13-5 · Rechtsklick NUR auf der freien Fläche (dieselbe Bedingung
           // wie beim Doppelklick daneben): über einem Reiter gilt dessen
           // eigenes Menü, über allem anderen bleibt das Browser-Menü.
@@ -661,6 +749,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             const nr = ordnung.findIndex((x) => tabSchluessel(x.path) === k) + 1;
             return (
               <Reiter key={k} t={t} nr={nr} letzter={nr === ordnung.length}
+                imRing={k === ringSchluessel}
                 aktiv={k === aktivSchluessel} manifeste={manifeste} paneSchluessel={paneSchluessel}
                 zieht={zieht} ueber={ueber} gezogenRef={gezogen}
                 kannOeffnen={kannOeffnen} istOffen={istOffen} onDaneben={oeffneDaneben}

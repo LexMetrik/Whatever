@@ -21,6 +21,18 @@ export interface ReiterProps {
   aktiv: boolean;
   /** Ist dies der LETZTE Reiter der Speicherordnung? (Alt+9, R13-8) */
   letzter: boolean;
+  /** ── W2·18 Welle 2 Punkt 1 · DER EINE PLATZ IM TAB-RING ─────────────────
+   *  WAI-ARIA APG (Tabs/Toolbar): von einer Gruppe gleichartiger Bedien-
+   *  elemente steht genau EINES im Tabulator-Ring; bewegt wird INNERHALB der
+   *  Gruppe mit den Pfeiltasten (die Leiste hört auf sie, s. dort). GEMESSEN
+   *  13.9.2026 am Vorstand `2a331dcdd`: die Leiste trug 0 × `tabindex` — jeder
+   *  Reiterknopf und jedes ✕ lag im Ring, sechs Reiter kosteten zwölf
+   *  Tabulator-Anschläge bis zum Dokument, fünfzig hundert.
+   *  Wer NICHT im Ring steht, nimmt auch seine Griffe (⧉/✕) mit heraus:
+   *  sonst bliebe die Wüste, nur halb so lang. Der Reiter IM Ring behält sie
+   *  ganz gewöhnlich — von ihm aus erreicht man sie mit der Tabulator-Taste,
+   *  wie vorher. */
+  imRing: boolean;
   manifeste: VerlaufManifeste;
   paneSchluessel: string[];
   zieht: string | null;
@@ -39,7 +51,7 @@ export interface ReiterProps {
 }
 
 export function Reiter({
-  t, nr, aktiv, letzter, manifeste, paneSchluessel, zieht, ueber, gezogenRef,
+  t, nr, aktiv, letzter, imRing, manifeste, paneSchluessel, zieht, ueber, gezogenRef,
   kannOeffnen, istOffen, onDaneben, onNavigate, onSchliessen,
   onZieht, onUeber, onMenue, onUmordnen,
 }: ReiterProps) {
@@ -234,6 +246,11 @@ export function Reiter({
           : `${reg ? REG_FLAECHE[reg] : 'bg-ink-400'} opacity-60 group-hover/reiter:opacity-100`}`} />
       <button type="button" aria-current={aktiv ? 'page' : undefined}
         aria-keyshortcuts={kuerzel || undefined}
+        // W2·18 Welle 2 Punkt 1 · roving tabindex (Herleitung bei `imRing`).
+        // AUSGESCHRIEBENE 0 statt weggelassenem Attribut: der Ring-Platz soll
+        // im Markup ABLESBAR sein — die Sonde zählt ihn
+        // (`src/tests/reiter-tastaturring.test.tsx`).
+        tabIndex={imRing ? 0 : -1}
         onClick={() => onNavigate(t.path)}
         onAuxClick={(ev) => {
           // Mittelklick schliesst — das Browser-Idiom, das David meint.
@@ -379,6 +396,7 @@ export function Reiter({
       {kannOeffnen && !istOffen(t.path) && (
         <button type="button" onClick={() => onDaneben(t.path)}
           aria-label={`«${name}» daneben öffnen`} title="Daneben öffnen"
+          tabIndex={imRing ? undefined : -1}
           className={`hidden lg:inline-flex h-6 w-5 shrink-0 items-center justify-center text-ink-400 hover:text-ink-900 ${griffSicht}`}>
           <span aria-hidden className="lc-griff-glyph">⧉</span>
         </button>
@@ -391,6 +409,7 @@ export function Reiter({
           Reiter — dieselbe begründete Ausnahme wie dort; die AA-Untergrenze
           (24 px, WCAG 2.5.8) hält die Grundklasse. */}
       <SchliessKnopf name={`Reiter «${name}» schliessen`} ton="destruktiv" komfort={false}
+        tabIndex={imRing ? undefined : -1}
         onClick={() => onSchliessen(t.path)} klasse={`h-6 w-6 mr-1 shrink-0 ${griffSicht}`} />
     </div>
   );
