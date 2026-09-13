@@ -471,6 +471,16 @@ Rot-Beweis; Rot-Beweise auf DIESEM Stand fahren, nie übernehmen.
    Anfang», «Ans Ende»; damit ist die Reihenfolge auf Touch und per Tastatur änderbar, ohne
    HTML5-Drag. Test: Menü-Eintrag verschiebt korrekt; Langdruck öffnet das Menü (Playwright
    `hasTouch`).
+   — **Ergänzung 13.9.2026 (Zeilen darüber unverändert, §2b):** gebaut wie beschrieben, mit zwei
+   Präzisierungen aus dem Bau. (a) Die vier Einträge erscheinen nur, WO sie wirken — am ersten
+   Reiter gibt es kein «Nach links»/«An den Anfang» (§8); Kürzel Alt+⇧+←/→ stehen daneben, weil das
+   Menü der Ort ist, an dem man sie lernt (R13-7). (b) Der Langdruck gilt nur für Finger und Stift
+   (`pointerType !== 'mouse'`): unter der gedrückten MAUSTASTE nähme ein aufgehendes Menü dem Ziehen
+   den Anfang, und die Maus hat den Rechtsklick. Der `click`, der dem Loslassen folgt, wird
+   unterdrückt — sonst navigierte der Langdruck zusätzlich (Chromium schickt ihn nach `pointerup`).
+   GEMESSEN: Menü im DOM 516 · 505 · 507 ms nach `pointerdown` (Vorgabe 500 ms), Bewegungstoleranz
+   10 px. Wächter: `e2e/w224-reiter-umordnen-d16.e2e.ts` «W2·18 Welle 3 Punkt 5» (drei Fälle,
+   darunter `hasTouch`).
 6. **`data-`-Anker für Kopf- und Kern-Span** (`data-reiter-teil="kopf|kern|nummer"`), damit Sonden
    nicht an Tailwind-Deckeln hängen; bestehende Sonden auf die Anker umstellen (rein mechanisch, §6.3
    deklariert, Verhalten identisch).

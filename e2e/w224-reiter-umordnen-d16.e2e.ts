@@ -319,3 +319,84 @@ test.describe('W2·18 Welle 3 Punkt 2 — der gezogene Reiter kommt über die Fe
     expect(ordnung.length, 'abgelegt heisst umgeordnet, nicht geschlossen').toBe(15)
   })
 })
+
+// ═══ W2·18 WELLE 3 PUNKT 5 · UMORDNEN OHNE MAUS ═════════════════════════════
+//
+// GEMESSEN am Vorstand (13.9.2026): das Umordnen der Leiste hing an HTML5-Drag
+// (Zeiger) und an Alt+⇧+←/→ (Tastatur mit Alt-Taste). Auf einem Tablet gab es
+// KEINEN Weg — HTML5-Drag kennt der Finger nicht, und das Kontextmenü war nur
+// per Rechtsklick erreichbar. Die günstige Variante (Fahrplan §4.R3 Punkt 5):
+// dasselbe Menü, ergänzt um vier Verschiebe-Einträge, und ein Langdruck (500 ms
+// ohne Bewegung) als zweiter Weg dorthin.
+test.describe('W2·18 Welle 3 Punkt 5 — Reihenfolge ändern ohne Maus', () => {
+  const MENUE = '[role=menu]'
+
+  test('das Menü verschiebt: nach links, nach rechts, an den Anfang, ans Ende', async ({ page }) => {
+    const tabs = [G1, E1, R1]
+    await setzeReiter(page, tabs)
+    const k = tabs.map(schluessel)
+
+    const menueAuf = async (pfad: string) => {
+      await page.locator(`[data-reiter-streifen] [data-reiter-schluessel="${schluessel(pfad)}"]`)
+        .click({ button: 'right' })
+      await expect(page.locator(MENUE)).toBeVisible()
+    }
+
+    // «Ans Ende» am ERSTEN Reiter.
+    await menueAuf(G1)
+    await page.locator('[data-reiter-menue="ende"]').click()
+    await expect.poll(() => gespeicherteOrdnung(page)).toEqual([k[1], k[2], k[0]])
+
+    // «An den Anfang» bringt ihn zurück.
+    await menueAuf(G1)
+    await page.locator('[data-reiter-menue="anfang"]').click()
+    await expect.poll(() => gespeicherteOrdnung(page)).toEqual([k[0], k[1], k[2]])
+
+    // «Nach rechts» ist EIN Platz, nicht ans Ende.
+    await menueAuf(G1)
+    await page.locator('[data-reiter-menue="rechts-um"]').click()
+    await expect.poll(() => gespeicherteOrdnung(page)).toEqual([k[1], k[0], k[2]])
+
+    // «Nach links» bringt ihn wieder vor.
+    await menueAuf(G1)
+    await page.locator('[data-reiter-menue="links-um"]').click()
+    await expect.poll(() => gespeicherteOrdnung(page)).toEqual([k[0], k[1], k[2]])
+  })
+
+  test('am Rand fehlen die Einträge, die nichts täten', async ({ page }) => {
+    await setzeReiter(page, [G1, E1, R1])
+    await page.locator(`[data-reiter-streifen] [data-reiter-schluessel="${schluessel(G1)}"]`)
+      .click({ button: 'right' })
+    await expect(page.locator(MENUE)).toBeVisible()
+    // Der ERSTE Reiter kann nicht nach links und nicht an den Anfang — ein
+    // Eintrag, der nichts tut, ist eine Zusage, die nicht gilt (§8).
+    await expect(page.locator('[data-reiter-menue="links-um"]')).toHaveCount(0)
+    await expect(page.locator('[data-reiter-menue="anfang"]')).toHaveCount(0)
+    await expect(page.locator('[data-reiter-menue="rechts-um"]')).toHaveCount(1)
+    await expect(page.locator('[data-reiter-menue="ende"]')).toHaveCount(1)
+  })
+
+  test('Langdruck öffnet dasselbe Menü — und öffnet dabei keinen Reiter', async ({ browser }) => {
+    const ctx = await browser.newContext({ hasTouch: true, isMobile: true, viewport: { width: 390, height: 844 } })
+    const seite = await ctx.newPage()
+    await seite.goto(START)
+    await seite.evaluate(([a, b, c]) => localStorage.setItem('lexmetrik-tabs',
+      JSON.stringify([a, b, c].map((path) => ({ path })))), [G1, E1, R1] as [string, string, string])
+    await seite.goto(R1)
+    await expect(seite.locator('[data-reiter-streifen] [data-reiter-schluessel]').first())
+      .toBeVisible({ timeout: 20_000 })
+    await seite.waitForTimeout(1200)
+    const vorherUrl = seite.url()
+
+    const reiter = seite.locator(`[data-reiter-streifen] [data-reiter-schluessel="${schluessel(R1)}"]`)
+    // Ein Finger, der liegen bleibt: `pointerdown` mit `pointerType: touch`,
+    // 500 ms ohne Bewegung. Playwrights `tap()` kann nur tippen.
+    await reiter.dispatchEvent('pointerdown', { pointerType: 'touch', bubbles: true, clientX: 60, clientY: 40 })
+    await expect(seite.locator(MENUE)).toBeVisible({ timeout: 5_000 })
+    await reiter.dispatchEvent('pointerup', { pointerType: 'touch', bubbles: true })
+
+    // Der Langdruck darf nicht ZUSÄTZLICH als Tippen zählen und navigieren.
+    expect(seite.url(), 'der Langdruck hat navigiert').toBe(vorherUrl)
+    await ctx.close()
+  })
+})

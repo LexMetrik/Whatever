@@ -722,6 +722,33 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       e.push({ id: 'adresse', label: 'Adresse kopieren',
         onKlick: () => kopieren(new URL(t.path, window.location.origin).href) });
     }
+    // ── W2·18 WELLE 3 PUNKT 5 · UMORDNEN OHNE MAUS ──────────────────────────
+    // GEMESSEN am Vorstand (13.9.2026): die Reihenfolge liess sich NUR per
+    // HTML5-Drag (Zeiger) oder Alt+⇧+←/→ (Tastatur mit Alt-Taste) ändern. Auf
+    // einem Tablet gab es gar keinen Weg — der Finger kennt kein HTML5-Drag.
+    // Vier Einträge in dem Menü, das ohnehin da ist, lösen das ohne eine
+    // einzige neue Geste; erreichbar per Rechtsklick, Shift+F10 UND Langdruck
+    // (`reiterleiste/Reiter.tsx`).
+    // Gezeigt wird nur, was auch WIRKT: am ersten Reiter gibt es kein «nach
+    // links» (§8 — ein Eintrag, der nichts tut, ist eine Zusage, die nicht
+    // gilt). Die Kürzel stehen daneben, weil das Menü der Ort ist, an dem man
+    // sie lernt (R13-7).
+    if (idx > 0) {
+      e.push({ id: 'links-um', label: 'Nach links', rechts: 'Alt+⇧+←',
+        onKlick: () => ordneTabsUm(t.path, ordnung[idx - 1].path, true) });
+    }
+    if (idx >= 0 && idx < ordnung.length - 1) {
+      e.push({ id: 'rechts-um', label: 'Nach rechts', rechts: 'Alt+⇧+→',
+        onKlick: () => ordneTabsUm(t.path, ordnung[idx + 1].path, false) });
+    }
+    if (idx > 0) {
+      e.push({ id: 'anfang', label: 'An den Anfang',
+        onKlick: () => ordneTabsUm(t.path, ordnung[0].path, true) });
+    }
+    if (idx >= 0 && idx < ordnung.length - 1) {
+      e.push({ id: 'ende', label: 'Ans Ende',
+        onKlick: () => ordneTabsUm(t.path, ordnung[ordnung.length - 1].path, false) });
+    }
     if (ordnung.length > 1) {
       e.push({ id: 'andere', label: 'Alle anderen schliessen', onKlick: () => {
         for (const x of ordnung) if (tabSchluessel(x.path) !== tabSchluessel(t.path)) schliessePane(x.path);

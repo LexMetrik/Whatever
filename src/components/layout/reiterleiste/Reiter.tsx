@@ -92,9 +92,26 @@ export function Reiter({
     const k = el.getBoundingClientRect();
     onKarte({ path: t.path, x: k.left, y: k.bottom });
   };
-  // Ein Zeitgeber, der den Reiter überlebt, öffnete eine Karte zu einem
-  // Reiter, den es nicht mehr gibt.
-  useEffect(() => stoppKarte, []);
+  // ── W2·18 WELLE 3 PUNKT 5 · DER LANGDRUCK ──────────────────────────────────
+  // 500 ms liegender Finger öffnen dasselbe Menü, das der Rechtsklick öffnet —
+  // der zweite Weg zu den Verschiebe-Einträgen (`Reiterleiste.menueEintraege`)
+  // und damit der einzige, den ein Tablet hat: HTML5-Drag kennt der Finger
+  // nicht. 500 ms ist die Spanne, die iOS und Android für ihre eigenen
+  // Langdrücke verwenden; 10 px Toleranz, weil ein Finger nie still liegt.
+  const LANGDRUCK_MS = 500;
+  const LANGDRUCK_PX = 10;
+  const langdruck = useRef<{ zeit: number; x: number; y: number } | null>(null);
+  /** Hat der Langdruck gerade das Menü geöffnet? Dann ist der `click`, der dem
+   *  Loslassen folgt, KEIN Tippen — er dürfte sonst zusätzlich navigieren. */
+  const langdruckGriff = useRef(false);
+  const stoppLangdruck = () => {
+    if (!langdruck.current) return;
+    window.clearTimeout(langdruck.current.zeit);
+    langdruck.current = null;
+  };
+  // Zeitgeber, die den Reiter überleben, öffneten eine Karte bzw. ein Menü zu
+  // einem Reiter, den es nicht mehr gibt.
+  useEffect(() => () => { stoppKarte(); stoppLangdruck(); }, []);
   const schluessel = tabSchluessel(t.path);
   const { kopf: kopfRoh, kern, stelle, instanz } = reiterKurzformTeile(t, manifeste);
   // W2·18 Welle 3 Punkt 1 (Herleitung bei `ohneKopf`): am Anschlag weicht der
@@ -236,7 +253,32 @@ export function Reiter({
         stoppKarte();
         karteZeit.current = window.setTimeout(() => meldeKarte(el), KARTE_MS);
       }}
-      onPointerLeave={() => { setZeigerHier(false); stoppKarte(); onKarte(null); }}
+      onPointerLeave={() => { setZeigerHier(false); stoppKarte(); onKarte(null); stoppLangdruck(); }}
+      // W2·18 Welle 3 Punkt 5 · Langdruck (Herleitung oben). NUR für Finger
+      // und Stift: die Maus hat den Rechtsklick, und ein Menü, das unter der
+      // gedrückten Maustaste aufgeht, nähme dem Ziehen den Anfang.
+      onPointerDown={(ev) => {
+        langdruckGriff.current = false;
+        if (ev.pointerType === 'mouse') return;
+        const { clientX: x, clientY: y } = ev;
+        stoppLangdruck();
+        langdruck.current = {
+          x, y,
+          zeit: window.setTimeout(() => {
+            langdruck.current = null;
+            langdruckGriff.current = true;
+            onMenue({ path: t.path, x, y });
+          }, LANGDRUCK_MS),
+        };
+      }}
+      onPointerMove={(ev) => {
+        const l = langdruck.current;
+        if (!l) return;
+        // Wer scrollt oder zieht, drückt nicht lange.
+        if (Math.abs(ev.clientX - l.x) > LANGDRUCK_PX || Math.abs(ev.clientY - l.y) > LANGDRUCK_PX) stoppLangdruck();
+      }}
+      onPointerUp={stoppLangdruck}
+      onPointerCancel={stoppLangdruck}
       // Fokus zeigt SOFORT: wer mit der Tastatur hier ankommt, hat die 600 ms
       // Zögern schon mit dem Weg hierher bezahlt.
       // ABER NUR BEI SICHTBAREM FOKUS (`:focus-visible`). GEMESSEN 13.9.2026
@@ -355,6 +397,14 @@ export function Reiter({
         // im Markup ABLESBAR sein — die Sonde zählt ihn
         // (`src/tests/reiter-tastaturring.test.tsx`).
         tabIndex={imRing ? 0 : -1}
+        // W2·18 Welle 3 Punkt 5: der `click`, der auf einen Langdruck folgt,
+        // ist kein Tippen — er würde sonst navigieren, während das Menü
+        // aufgeht (GEMESSEN: Chromium schickt nach `pointerup` den Klick).
+        onClick={(ev) => {
+          if (!langdruckGriff.current) return;
+          langdruckGriff.current = false;
+          ev.preventDefault();
+        }}
         // ── DIE EINE AUSNAHME VOM LINK-IDIOM (W2·18 Welle 3 Punkt 3) ────────
         // Mittelklick schliesst — das Browser-Idiom, das David meint («analog
         // browser»). Auf einem gewöhnlichen Link öffnete er einen zweiten
