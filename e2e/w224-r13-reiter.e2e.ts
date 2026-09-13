@@ -250,7 +250,18 @@ test('R13-4 — ein Gesetzes-Reiter ohne Lesestellung reserviert keinen Platz', 
     }
   })
   expect(m.stelleBreite, 'kein leerer Platzhalter (Vorstand: 60 px)').toBe(0)
-  expect(m.reiterBreite, 'der Reiter misst seinen Inhalt (Vorstand: 137 px)').toBeLessThan(110)
+  // ── DEKLARIERTE TEST-ÄNDERUNG (§6.3) · W2·18 Punkt 5, 13.9.2026 ───────────
+  // Die Schranke stand auf 110 und stammt aus der Zeit, als der Boden eines
+  // Reiters die feste Zahl `--app-reiter-min-b` (5rem = 80 px) war. W2·18
+  // Punkt 5 gibt der Aufschrift einen eigenen Boden von sechs Zeichen
+  // (`min-w-[6ch]`, `Reiter.tsx`) — sonst stand sie bei sieben Reitern @1024
+  // auf Breite 0 («StGB», «ZPO») bzw. als «ZPO-Fr…». Der ZGB-Reiter misst
+  // damit 111 statt 104 px (gemessen 13.9.2026, @1440, Dev-Server).
+  // Die GEPRÜFTE ZUSAGE ist unverändert und bleibt scharf: kein leerer
+  // 60-px-Platzhalter (Zeile darüber), und der Reiter bleibt weit unter dem
+  // Vorstand von 137 px. Nachgeführt ist allein die Zahl, um die der Boden
+  // gewachsen ist; 120 lässt die 60 px des Platzhalters weiterhin auffliegen.
+  expect(m.reiterBreite, 'der Reiter misst seinen Inhalt (Vorstand: 137 px)').toBeLessThan(120)
 })
 
 // ═══ R13-5 · DIE RÜCKFAHRKARTE LIEGT DA, WO MAN SIE SUCHT ═══════════════════
