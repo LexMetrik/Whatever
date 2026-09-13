@@ -249,6 +249,48 @@ Nicht Teil dieses Schritts (eigener Roadmap-Schritt, Vorschläge 7–9 vom 13.9.
 Fenstergrenze hinaus, Reiter als Links, Umordnen auf Touch. Bereits geplant: Anheften/Arbeitsmappe
 (`W2·25-ARBEITSMAPPE`).
 
+### §4.R2 — Reiterleiste Welle 2: Tastatur, Pendeln, Bewegung, Ring-Ordnung (13.9.2026)
+
+Anlass: Auftrag David 13.9.2026 «recherchiere, was eine perfekte Tabliste ausmacht, und setz das um»
++ «bau insgesamt weiter an der Tabliste bis ich stop sage». Grundlage: Recherche-Datei
+`scratchpad/reiter-recherche-2026-09-13.md` (14 Quellen; Lücke 2 «Andere schliessen fehlt» ist
+widerlegt, `schliesseAndere` existiert) und Nachfunde aus Welle 1 (§4.R). Baut auf Welle 1 auf
+(Branch `feat/w2-18-reiterleiste-teil2`). Darstellungsschicht, kein Risikopfad. Je Punkt ein Commit
+mit Rot-Beweis.
+
+1. **Pfeiltasten im Reiterstreifen (roving tabindex, WAI-ARIA APG Tabs/Toolbar).** Liegt der Fokus
+   auf einem Reiter, wechseln ←/→ den Fokus (nicht die Auswahl) auf den Nachbarreiter, Home/End auf
+   den ersten/letzten sichtbaren; Enter/Space aktivieren; Delete schliesst den fokussierten Reiter.
+   Nur EIN Reiter im Tab-Ring (`tabindex=0`, übrige −1). ⇧+←/→ (Umordnen) bleibt unverändert.
+   `nav`-Semantik bleibt (kein `role=tablist`, weil Navigation, nicht Panel-Umschaltung).
+2. **Pendeln zwischen den zwei zuletzt aktiven Reitern (MRU).** Ein Kürzel springt zum vorher aktiven
+   Reiter und zurück (Chrome «Ctrl+Tab in MRU» / VS Code «Ctrl+Tab»). Tastenwahl: `Alt+Tab` fängt das
+   OS auf Windows/Linux, `Ctrl+Tab` der Browser ⇒ `Alt+Q` (frei in Chrome/Firefox/Safari auf allen
+   drei Systemen; vor dem Bau prüfen, dass `Alt+Q` auf macOS nicht «œ»-Konflikt hat — `e.code` löst
+   das). MRU-Liste in `lib/tabs.ts` (persistiert, max. 10), Aktualisierung beim Aktiv-Wechsel.
+   Kürzel in die Liste des «+N»-Blatts aufnehmen.
+3. **`prefers-reduced-motion`.** Ziehen/Einfügemarke/Blatt-Öffnen/Reiter-Übergänge ohne Bewegung,
+   wenn das System es verlangt (`@media (prefers-reduced-motion: reduce)` in `index.css` bzw.
+   Tailwind `motion-reduce:`). Test: Playwright `emulateMedia({ reducedMotion: 'reduce' })`,
+   gemessene `transition-duration` 0s.
+4. **Ring-Ordnung nach «Alle schliessen».** `stelleLetztenWiederHer` setzt verschachtelt ein (r49,
+   r48 … statt r0, r1 …; Nachtrag §4.R Welle 1). Fix in `lib/tabs.ts`: Position beim Ablegen so
+   merken, dass das Wiederherstellen in Ur-Reihenfolge landet; Kommentar an `leereTabs` berichtigen.
+   Test: 3 Reiter → Alle schliessen → 3× Wiederherstellen ⇒ Ur-Reihenfolge.
+5. **Kontextmenü vorladen.** Der lazy Chunk `ReiterMenue` lädt erst beim ersten Rechtsklick (13.9.2026
+   gemessen: erster Rechtsklick zeigte nichts, zweiter das Menü). Fix: `import()` beim ersten
+   `pointerenter` auf die Leiste bzw. beim `contextmenu` sofort anstossen und das Menü nach dem Laden
+   öffnen, nicht verwerfen. Start-Chunk-Budget (60 KB gzip, `check:perf-budget`) darf nicht wachsen.
+6. **Reiter-Kopf nie als blosses «…».** Der gekürzte Gerichts-/Erlass-Kopf darf weichen (F6), aber
+   ein alleinstehendes Auslassungszeichen wird nicht gezeigt — dann ganz ausblenden.
+7. **Trefferflächen ⧉/✕ gegen WCAG 2.5.8 prüfen.** `komfort={false}` ist begründet (A3-1: das
+   Pseudo-Element nähme Nachbarn die Klicks). Prüfen, ob 24×24 CSS-px OHNE Pseudo-Element erreichbar
+   ist (Padding innerhalb des Reiters); wenn ja, bauen; wenn nein, Ausnahme mit Abstand-Regel
+   (2.5.8 «spacing») im Kommentar dokumentieren, nicht still kippen (§0.2 UI-Befunde).
+
+Welle 3 (nach dieser): Umordnen über die Fenstergrenze hinaus (Auto-Scroll am Rand, Ziehen ins/aus
+dem Blatt), Reiter als Links, Hover-Karte mit Volltitel + Stand, Touch-Umordnen.
+
 ## §5 — `QS-CODE-PROP` · Eigenschafts-Tests (property-based) für die Rechen-Engines
 
 Entscheid David 7.8.2026: je Engine ein Invarianten-Katalog («eine Frist endet nie vor ihrem
