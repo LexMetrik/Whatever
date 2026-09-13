@@ -347,9 +347,9 @@ test.describe('R13-7/R13-8 — Tastatur', () => {
     await seed(page, FUENFZEHN.slice(0, 4), '/gesetze/bund/OR')
     const dritter = page.locator('[data-reiter-schluessel="/gesetze/bund/ZPO"]')
     await expect(dritter).toHaveAttribute('title', /Alt\+3/)
-    await expect(dritter.locator('button').first()).toHaveAttribute('aria-keyshortcuts', 'Alt+3')
+    await expect(dritter.locator('a').first()).toHaveAttribute('aria-keyshortcuts', 'Alt+3')
     const letzter = page.locator('[data-reiter-schluessel="/gesetze/bund/STGB"]')
-    await expect(letzter.locator('button').first()).toHaveAttribute('aria-keyshortcuts', /Alt\+9/)
+    await expect(letzter.locator('a').first()).toHaveAttribute('aria-keyshortcuts', /Alt\+9/)
   })
 
   test('Alt+9 springt auf den LETZTEN Reiter, Alt+Bild↓/↑ blättert zyklisch', async ({ page }) => {
@@ -489,7 +489,10 @@ test.describe('W2·18 Welle 2 Punkt 6 — kein Reiter-Kopf als blosses «…»',
           // Der Kopf ist der Span mit dem 9-rem-Deckel (`Reiter.tsx`); der
           // Kern daneben trägt 15 rem und ist nicht gemeint. Ein Reiter ohne
           // Kopf (Gesetz, Rechner) hat den Span gar nicht.
-          const kopf = k.querySelector<HTMLElement>('button > span[class*="max-w-[9rem]"]')
+          // DEKLARIERTE SONDEN-ÄNDERUNG (§6.3), W2·18 Welle 3 Punkt 6: der
+          // Kopf hing am Tailwind-Deckel `max-w-[9rem]`; er trägt jetzt seinen
+          // eigenen Anker. Rein mechanisch — dasselbe Element, derselbe Test.
+          const kopf = k.querySelector<HTMLElement>('[data-reiter-teil="kopf"]')
           if (!kopf?.textContent) continue
           const st = getComputedStyle(kopf)
           kan.font = `${st.fontWeight} ${st.fontSize} ${st.fontFamily}`
@@ -505,7 +508,25 @@ test.describe('W2·18 Welle 2 Punkt 6 — kein Reiter-Kopf als blosses «…»',
         return raus
       })
 
-      expect(koepfe.length, 'die Sonde muss überhaupt Köpfe gefunden haben').toBeGreaterThan(0)
+      // ── DEKLARIERTE TESTÄNDERUNG (§6.3) · W2·18 Welle 3 Punkt 1, 13.9.2026
+      //    Hier stand unbedingt `expect(koepfe.length).toBeGreaterThan(0)` —
+      //    «die Sonde muss überhaupt Köpfe gefunden haben». Das war richtig,
+      //    SOLANGE der Kopf nie weichen durfte. Welle 3 Punkt 1 baut die
+      //    F6-Reihenfolge wirklich: steht das Fenster an seinem Boden (EIN
+      //    Reiter) und läuft der Streifen trotzdem über, weicht der Kopf ganz
+      //    (GEMESSEN @320 an `/rechtsprechung/ag_gerichte_HOR_2024_19`:
+      //    `scrollWidth 192` gegen `clientWidth 171`). @320 zeigt diese Leiste
+      //    genau EINEN Reiter — die alte Zusicherung verlangte dort also
+      //    genau das, was der Fix abstellt. Das ist eine FACHLICHE Änderung,
+      //    kein Nachziehen: die neue Zusage lautet «wo Platz ist, steht der
+      //    Kopf; wo keiner steht, darf der Streifen nicht überlaufen».
+      const m = await masse(page)
+      if (w >= 1024) {
+        expect(koepfe.length, `@${w} ist Platz — die Sonde muss Köpfe finden`).toBeGreaterThan(0)
+      } else if (koepfe.length === 0) {
+        expect(m.scrollW, `@${w} steht kein Kopf — dann muss der Streifen passen`)
+          .toBeLessThanOrEqual(m.clientW + 1)
+      }
       for (const k of koepfe) {
         expect(k.breite, `Kopf «${k.text}» an ${k.reiter}: ${k.breite} px, nötig ${k.mindest} px`)
           .toBeGreaterThanOrEqual(k.mindest)
@@ -549,4 +570,153 @@ test.describe('W2·18 Welle 2 Punkt 7 — Trefferflächen der Reiter-Griffe (WCA
       expect(luecke, 'ohne Lücke gilt nur die 24-px-Regel, nicht «spacing»').toBe(0)
     })
   }
+})
+
+// ═══ W2·18 WELLE 3 PUNKT 1 · AM ANSCHLAG WEICHT DER KOPF ════════════════════
+//
+// GEMESSEN 13.9.2026 (gebautes dist/, Chromium @320, EIN Reiter
+// `/rechtsprechung/ag_gerichte_HOR_2024_19`): der Streifen mass `scrollWidth
+// 192` gegen `clientWidth 171`, Fenster `0/1/1` — das Fenster war am Anschlag
+// (weniger als einen Reiter kann es nicht zeigen) und der Reiter lief trotzdem
+// über. Der Scrollbalken ist per CSS unsichtbar (`.lc-reiter-scroll`), der
+// Überlauf also stumm: Kategorie `a-ueberlauf-ohne-scroller` (R8-Sweep).
+// Die Teile: Kopf «OGer AG» 58 px, Kern «HOR.2024.19» 87 px.
+//
+// F6 SAGT, WER WEICHT: erst der Kopf (das ohnehin abgekürzte Gericht), dann
+// der Kern (die Geschäftsnummer). Genau das baut Welle 3 Punkt 1 — nicht als
+// Breiten-Regel, sondern als Zustand des Fensters: am Anschlag UND immer noch
+// über der Kante ⇒ der Kopf des betroffenen Reiters weicht ganz
+// (`useReiterFenster`, Epochen-Riegel gegen das Pendeln).
+test.describe('W2·18 Welle 3 Punkt 1 — der Reiter läuft auch am Anschlag nicht über', () => {
+  const LANGER_KOPF = '/rechtsprechung/ag_gerichte_HOR_2024_19'
+
+  test('@320: ein einzelner Entscheid-Reiter mit langem Gerichtskopf passt', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 844 })
+    await seed(page, [LANGER_KOPF], LANGER_KOPF)
+    const m = await masse(page)
+    expect(m.fenster, 'das Fenster steht am Anschlag — genau ein Reiter').toBe('0/1/1')
+    expect(m.scrollW, '@320 darf nicht überlaufen (Vorstand: 192 > 171)')
+      .toBeLessThanOrEqual(m.clientW + 1)
+    expect(m.letzteKante, 'der Reiter wird nicht angeschnitten').toBeLessThanOrEqual(m.clientW + 1)
+  })
+
+  // ── DAS ZWEITE GESICHT VON «PASST NICHT» (Nachtrag 13.9.2026) ───────────
+  // Der Fall oben läuft über den STREIFEN über. GEMESSEN am R8-Sweep desselben
+  // Tages fand sich der andere: der Reiterkasten PASST, sein Inhalt blutet
+  // heraus. `/rechtsprechung/bger_1B_278_2022` @390 — Kasten 240/240, der Link
+  // darin trug 217 px Inhalt in einem 212-px-Kasten, und der Kopf «BGer» stand
+  // auf Breite 0 (sein `scrollWidth` mass 34). Der Sweep meldete dazu
+  // «[a-ueberlauf-ohne-scroller] a.flex … scrollWidth=217 clientWidth=212» und
+  // «[f-reiter-mitten-im-wort] … Schnitt nach «Reiter 1: BGer 1B_278/2022 vo»».
+  // Ursache ist die F6-Bauform selbst: der Kern steht `shrink-0`, der Kopf
+  // kürzt — reicht das nicht, bleibt nur, ihn ganz wegzunehmen.
+  const LANGER_KERN = '/rechtsprechung/bger_1B_278_2022'
+  for (const [w, h] of [[320, 844], [390, 844]] as const) {
+    test(`@${w}: der Inhalt eines Entscheid-Reiters bleibt in seinem Kasten`, async ({ page }) => {
+      await page.setViewportSize({ width: w, height: h })
+      await seed(page, [LANGER_KERN], LANGER_KERN)
+      const masz = await page.evaluate(() => {
+        const d = document.querySelector<HTMLElement>('[data-reiter-streifen] [data-reiter-schluessel]')!
+        const a = d.querySelector<HTMLElement>('a')!
+        return { kasten: [d.scrollWidth, d.clientWidth], inhalt: [a.scrollWidth, a.clientWidth] }
+      })
+      expect(masz.inhalt[0], `der Link trug ${masz.inhalt[0]} px in ${masz.inhalt[1]} px (Vorstand @390: 217 > 212)`)
+        .toBeLessThanOrEqual(masz.inhalt[1] + 1)
+      expect(masz.kasten[0], 'und der Kasten selbst passt auch').toBeLessThanOrEqual(masz.kasten[1] + 1)
+    })
+  }
+
+  // Die GEGENPROBE: der Kopf weicht nur, wo er weichen MUSS. Derselbe Reiter
+  // @1440 trägt sein Gericht ganz — sonst wäre aus der Ausnahme eine Regel
+  // geworden (und die Leiste verlöre überall die Auskunft, WELCHES Gericht).
+  test('@1440: derselbe Reiter trägt seinen Kopf «OGer AG» unverändert', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await seed(page, [LANGER_KOPF], LANGER_KOPF)
+    const kopf = await page.textContent('[data-reiter-streifen] [data-reiter-teil="kopf"]')
+    expect(kopf?.trim(), 'am breiten Fenster steht der Kopf').toBe('OGer AG')
+  })
+})
+
+// ═══ W2·18 WELLE 3 PUNKT 3 · DER REITER IST EIN LINK ════════════════════════
+//
+// GEMESSEN am Vorstand (13.9.2026): der Reiter war ein `<button>` — Screenreader
+// meldeten «Schaltfläche», es gab keine Adresse zum Kopieren, «In neuem Fenster
+// öffnen» fehlte im Browser-Menü, und Strg/⌘-Klick tat nichts. Das ist für ein
+// Navigations-Element die falsche Rolle (WCAG 4.1.2, ARIA APG): wer zu einer
+// Adresse führt, ist ein Link.
+// GEBAUT: React-Router-`Link` statt Knopf. Der Tastatur-Ring (roving tabindex,
+// Welle 2 Punkt 1) bleibt am Link, das Ziehen bleibt an der Hülle (D15-Ghost),
+// und der einfache Klick bleibt eine Navigation OHNE Neuladen.
+test.describe('W2·18 Welle 3 Punkt 3 — der Reiter ist ein Link', () => {
+  test('Rolle «Link» mit echter Adresse — und der Klick lädt die Seite nicht neu', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    const VIER = FUENFZEHN.slice(0, 4)
+    await seed(page, VIER, VIER[0])
+
+    const zweiter = page.locator(`${STREIFEN} [data-reiter-schluessel="${VIER[1]}"]`)
+    const link = zweiter.getByRole('link', { name: /^Reiter 2: / })
+    await expect(link, 'der Reiter meldet sich als Link').toHaveCount(1)
+    await expect(link).toHaveAttribute('href', new RegExp(`${VIER[1]}$`))
+
+    // Eine Marke, die ein VOLLES Neuladen nicht überlebt: bleibt sie stehen,
+    // war der Klick eine Navigation innerhalb der Anwendung.
+    await page.evaluate(() => { (window as unknown as { lmMarke?: string }).lmMarke = 'da' })
+    await link.click()
+    await expect(page).toHaveURL(new RegExp(`${VIER[1]}$`))
+    expect(await page.evaluate(() => (window as unknown as { lmMarke?: string }).lmMarke),
+      'ein voller Seitenwechsel hätte die Marke gelöscht').toBe('da')
+    await expect(zweiter).toHaveAttribute('data-reiter-aktiv', 'true')
+  })
+
+  // ── DIE AUSNAHME, DIE BLEIBT ──────────────────────────────────────────────
+  // Der Fahrplan wollte «Mittelklick/Strg-Klick öffnen wie überall in der App».
+  // Für den Strg-/⌘-Klick löst der `href` das von selbst. Der MITTELKLICK
+  // gehört hier aber dem stärkeren Idiom: in jedem Browser SCHLIESST er einen
+  // Reiter, und genau dafür ist er in dieser Leiste seit R11 gebaut (Entscheid
+  // David: «analog browser»). Ein Reiterband, in dem der Mittelklick einen
+  // zweiten Browser-Tab öffnet statt den Reiter zu schliessen, wäre eine
+  // Zusage weniger, nicht eine mehr.
+  test('Mittelklick schliesst den Reiter — und öffnet kein zweites Fenster', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    const VIER = FUENFZEHN.slice(0, 4)
+    await seed(page, VIER, VIER[0])
+    const vorher = page.context().pages().length
+
+    await page.locator(`${STREIFEN} [data-reiter-schluessel="${VIER[1]}"]`)
+      .getByRole('link', { name: /^Reiter 2: / }).click({ button: 'middle' })
+
+    await expect.poll(() => gespeichert(page)).toEqual([VIER[0], VIER[2], VIER[3]])
+    expect(page.context().pages().length, 'kein zweiter Browser-Tab').toBe(vorher)
+  })
+})
+
+// ═══ W2·18 WELLE 3 PUNKT 6 · ANKER STATT TAILWIND-DECKEL ════════════════════
+//
+// GEMESSEN am Vorstand (13.9.2026): die Sonden dieser Datei griffen den
+// Reiter-Kopf über `span[class*="max-w-[9rem]"]` — also über einen
+// TAILWIND-DECKEL. Das ist eine Klasse, die jederzeit aus Gestaltungsgründen
+// wechselt (9 rem → 10 rem, und jede Sonde ist blind, ohne rot zu werden).
+// Die Teile eines Reiters tragen darum jetzt eigene Anker:
+// `data-reiter-teil="kopf|kern|nummer"`.
+test.describe('W2·18 Welle 3 Punkt 6 — jeder Reiter-Teil trägt seinen Anker', () => {
+  test('Kopf, Kern und Nummer sind benannt — und tragen, was sie sollen', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    // Ein Entscheid (Kopf + Kern), ein Rechner in zweiter Instanz (Kern +
+    // Nummer) und ein Gesetz (nur Kern) — alle drei Bauformen auf einmal.
+    await seed(page, ['/rechtsprechung/ag_gerichte_HOR_2024_19', '/rechner/zpo-fristen?r=2',
+      '/gesetze/bund/ZGB'], '/gesetze/bund/ZGB')
+
+    const teil = (schluessel: string, was: string) => page.locator(
+      `${STREIFEN} [data-reiter-schluessel="${schluessel}"] [data-reiter-teil="${was}"]`)
+
+    await expect(teil('/rechtsprechung/ag_gerichte_HOR_2024_19', 'kopf')).toHaveText('OGer AG')
+    await expect(teil('/rechtsprechung/ag_gerichte_HOR_2024_19', 'kern')).toHaveText('HOR.2024.19')
+    // Ein Gesetz hat keinen Kopf — der Anker steht nicht «leer» da (§8).
+    await expect(teil('/gesetze/bund/ZGB', 'kopf')).toHaveCount(0)
+    await expect(teil('/gesetze/bund/ZGB', 'kern')).toHaveText('ZGB')
+    // Die Instanz-Nummer ist ein eigener Teil (W2·18 Punkt 5), also auch ein
+    // eigener Anker.
+    await expect(teil('/rechner/zpo-fristen?r=2', 'nummer')).toHaveText('(2)')
+    await expect(teil('/rechner/zpo-fristen?r=2', 'kern')).toHaveText('ZPO-Fristen')
+  })
 })

@@ -97,7 +97,16 @@ const STATISCHE_ROUTEN = prerenderRouten().filter((r) => !KATALOG.has(r))
 // (grep über e2e/*.e2e.ts, 6.9.2026) — diese Slugs existieren.
 const GESETZ_BUND = ['/gesetze/bund/OR', '/gesetze/bund/ZGB']
 const GESETZ_KANTON = ['/gesetze/kanton/ZH-211.11', '/gesetze/kanton/BS-154.125']
-const ENTSCHEID = ['/rechtsprechung/bge_152_V_52', '/rechtsprechung/bger_1B_278_2022']
+// ── DRITTER ENTSCHEID-VERTRETER (W2·18 Welle 3 Punkt 1, 13.9.2026) ──────────
+// Die beiden Vertreter oben tragen KURZE Gerichtsköpfe («BGE», «BGer») und
+// passen @320 in den 171 px breiten Reiterstreifen — der Sweep meldete darum
+// 0 Funde, während ein Entscheid mit langem Kopf dort GEMESSEN stumm überlief
+// (`ag_gerichte_HOR_2024_19`, Kopf «OGer AG» 58 px: `scrollWidth 192` gegen
+// `clientWidth 171`, Kategorie `a-ueberlauf-ohne-scroller`). Gefunden hat ihn
+// eine Handmessung, nicht der Sweep. Damit die KLASSE künftig von selbst
+// auffällt, steht der lange Kopf jetzt in der Routenliste.
+const ENTSCHEID = ['/rechtsprechung/bge_152_V_52', '/rechtsprechung/bger_1B_278_2022',
+  '/rechtsprechung/ag_gerichte_HOR_2024_19']
 const MATERIALIE = ['/materialien/ESTV-KS-DBG-49', '/materialien/SECO-WL-ARG-ART-3A']
 const RECHNER = ['/rechner/tagerechner', '/rechner/zustaendigkeit']
 const VORLAGE = ['/vorlagen/arbeitsvertrag', '/vorlagen/nda']

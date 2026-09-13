@@ -128,6 +128,20 @@ function useNeuerReiterGeste(): void {
       if (!mittel && !modifiziert) return;
       const a = (e.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
       if (!a || a.target === '_blank' || a.hasAttribute('download')) return;
+      // ── W2·18 WELLE 3 PUNKT 3 · DAS REITERBAND IST KEIN INHALT ────────────
+      // Seit dem Rollenwechsel ist jeder Reiter der Arbeitsleiste selbst ein
+      // `<a href>` — und lief damit in diese Geste hinein. GEMESSEN 13.9.2026
+      // (gebautes dist/, Chromium, vier Reiter): der Mittelklick auf Reiter 2
+      // kam hier an, wurde mit `preventDefault`/`stopPropagation` beansprucht
+      // und endete in `merkeTab` auf einen bereits offenen Pfad — der Reiter
+      // blieb stehen, statt zu schliessen.
+      // Für die Leiste gilt das REITERBAND-Idiom, nicht das Link-Idiom:
+      // Mittelklick schliesst (`reiterleiste/Reiter.tsx`), und «in einem neuen
+      // Reiter öffnen» wäre hier ohnehin ein stiller Leerlauf — der Reiter ist
+      // ja schon offen. Strg/⌘-Klick fällt damit an den Browser zurück und
+      // öffnet dieselbe Adresse in einem zweiten Browser-Fenster; die Reiter
+      // liegen im localStorage derselben Herkunft, die Liste ist dort dieselbe.
+      if (a.closest('[data-reiter-streifen]')) return;
       const href = a.getAttribute('href') ?? '';
       // Nur app-eigene, absolute Pfade — kein http(s), kein mailto, kein #-Sprung.
       if (!href.startsWith('/')) return;

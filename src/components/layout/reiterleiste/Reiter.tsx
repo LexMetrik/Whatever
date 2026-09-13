@@ -1,4 +1,5 @@
-import type { RefObject } from 'react';
+import { useEffect, useRef, useState, type RefObject } from 'react';
+import { Link } from 'react-router-dom';
 import { tabSchluessel, reiterKurzformTeile, reiterKurzformText, reiterTitel, type TabEintrag } from '../../../lib/tabs';
 import type { VerlaufManifeste } from '../../../lib/verlaufLabel';
 import { registerVonPfad, REG_FLAECHE, REG_TON } from '../bereiche';
@@ -33,6 +34,17 @@ export interface ReiterProps {
    *  ganz gewöhnlich — von ihm aus erreicht man sie mit der Tabulator-Taste,
    *  wie vorher. */
   imRing: boolean;
+  /** ── W2·18 Welle 3 Punkt 1 · DER KOPF WEICHT, WEIL DAS FENSTER NICHT MEHR
+   *  KANN ──────────────────────────────────────────────────────────────────
+   *  Gesetzt, wenn das Fenster an seinem Boden steht (EIN Reiter) und der
+   *  Streifen trotzdem überläuft — die Rechnung dazu und der Epochen-Riegel
+   *  stehen in `useReiterFenster` (`Fenster.ohneKopf`). Hier ist es nur noch
+   *  die Anweisung: den Kopf gar nicht erst rendern. F6-Reihenfolge — erst
+   *  weicht das (ohnehin abgekürzte) Gericht, dann kürzt der Kern.
+   *  Der VOLLE Name bleibt überall dort, wo er nicht am Platz spart: im
+   *  `title`, im Namen des ✕ und in der Hover-Karte (Punkt 4). Verloren geht
+   *  nur das Bild, nie die Auskunft (§8). */
+  ohneKopf?: boolean;
   manifeste: VerlaufManifeste;
   paneSchluessel: string[];
   zieht: string | null;
@@ -41,22 +53,71 @@ export interface ReiterProps {
   kannOeffnen: boolean;
   istOffen: (path: string) => boolean;
   onDaneben: (path: string) => void;
-  onNavigate: (path: string) => void;
   onSchliessen: (path: string) => void;
   onZieht: (path: string | null) => void;
   onUeber: (u: { path: string; davor: boolean } | null) => void;
   onMenue: (m: { path: string; x: number; y: number }) => void;
+  /** ── W2·18 Welle 3 Punkt 4 · DIE HOVER-KARTE ───────────────────────────
+   *  Gemeldet wird nur «zeige die Karte dieses Reiters hier» bzw. `null`.
+   *  WAS auf der Karte steht, weiss `lib/tabs.reiterKarteTeile`, und WO sie
+   *  hängt, entscheidet die Leiste — ein Reiter, der sein eigenes Portal
+   *  mitbrächte, stünde bei fünfzehn Reitern fünfzehnmal bereit (§3, dieselbe
+   *  Aufteilung wie beim Kontextmenü). */
+  onKarte: (k: { path: string; x: number; y: number } | null) => void;
   /** Umordnen: gezogener Pfad, Ziel, davor/dahinter (`lib/tabs.ordneTabsUm`). */
   onUmordnen: (von: string, nach: string, davor: boolean) => void;
 }
 
 export function Reiter({
-  t, nr, aktiv, letzter, imRing, manifeste, paneSchluessel, zieht, ueber, gezogenRef,
-  kannOeffnen, istOffen, onDaneben, onNavigate, onSchliessen,
-  onZieht, onUeber, onMenue, onUmordnen,
+  t, nr, aktiv, letzter, imRing, ohneKopf, manifeste, paneSchluessel, zieht, ueber, gezogenRef,
+  kannOeffnen, istOffen, onDaneben, onSchliessen,
+  onZieht, onUeber, onMenue, onKarte, onUmordnen,
 }: ReiterProps) {
+  // ── W2·18 WELLE 3 PUNKT 4 · 600 ms SIND DIE ABSICHT ────────────────────────
+  // Kürzer, und die Karte springt jedem Zeiger nach, der die Leiste nur
+  // überquert; länger, und man hält sie für kaputt. 600 ms ist die Spanne, die
+  // der Fahrplan nennt und die Browser für ihre eigenen Reiter-Tooltips
+  // verwenden.
+  const KARTE_MS = 600;
+  const karteZeit = useRef<number | null>(null);
+  /** Steht der Zeiger auf diesem Reiter? Nur dafür da, den NATIVEN Tooltip
+   *  wegzunehmen, solange die Karte zuständig ist (s. beim `title` unten). */
+  const [zeigerHier, setZeigerHier] = useState(false);
+  const stoppKarte = () => {
+    if (karteZeit.current === null) return;
+    window.clearTimeout(karteZeit.current);
+    karteZeit.current = null;
+  };
+  const meldeKarte = (el: HTMLElement) => {
+    const k = el.getBoundingClientRect();
+    onKarte({ path: t.path, x: k.left, y: k.bottom });
+  };
+  // ── W2·18 WELLE 3 PUNKT 5 · DER LANGDRUCK ──────────────────────────────────
+  // 500 ms liegender Finger öffnen dasselbe Menü, das der Rechtsklick öffnet —
+  // der zweite Weg zu den Verschiebe-Einträgen (`Reiterleiste.menueEintraege`)
+  // und damit der einzige, den ein Tablet hat: HTML5-Drag kennt der Finger
+  // nicht. 500 ms ist die Spanne, die iOS und Android für ihre eigenen
+  // Langdrücke verwenden; 10 px Toleranz, weil ein Finger nie still liegt.
+  const LANGDRUCK_MS = 500;
+  const LANGDRUCK_PX = 10;
+  const langdruck = useRef<{ zeit: number; x: number; y: number } | null>(null);
+  /** Hat der Langdruck gerade das Menü geöffnet? Dann ist der `click`, der dem
+   *  Loslassen folgt, KEIN Tippen — er dürfte sonst zusätzlich navigieren. */
+  const langdruckGriff = useRef(false);
+  const stoppLangdruck = () => {
+    if (!langdruck.current) return;
+    window.clearTimeout(langdruck.current.zeit);
+    langdruck.current = null;
+  };
+  // Zeitgeber, die den Reiter überleben, öffneten eine Karte bzw. ein Menü zu
+  // einem Reiter, den es nicht mehr gibt.
+  useEffect(() => () => { stoppKarte(); stoppLangdruck(); }, []);
   const schluessel = tabSchluessel(t.path);
-  const { kopf, kern, stelle, instanz } = reiterKurzformTeile(t, manifeste);
+  const { kopf: kopfRoh, kern, stelle, instanz } = reiterKurzformTeile(t, manifeste);
+  // W2·18 Welle 3 Punkt 1 (Herleitung bei `ohneKopf`): am Anschlag weicht der
+  // Kopf GANZ — und damit fällt der Reiter in genau die Form, die ein Reiter
+  // ohne Kopf ohnehin hat (Kern kürzbar, eigener Boden `reiterBoden` unten).
+  const kopf = ohneKopf ? null : kopfRoh;
   const name = reiterKurzformText(t, manifeste);
   // R8 · Volltitel, Stand/Datum/Kurzbeschreibung und Lesestellung stehen in
   // EINER Ableitung (`lib/tabs.reiterTitel`) — Herleitung dort.
@@ -126,6 +187,9 @@ export function Reiter({
       data-reiter-schluessel={schluessel}
       draggable
       onDragStart={(ev) => {
+        // W2·18 Welle 3 Punkt 4: während eines Zugs ist die Karte nur Nebel.
+        stoppKarte();
+        onKarte(null);
         gezogenRef.current = t.path;
         onZieht(t.path);
         ev.dataTransfer.setData('text/plain', t.path);
@@ -171,7 +235,70 @@ export function Reiter({
         ev.preventDefault();
         onMenue({ path: t.path, x: ev.clientX, y: ev.clientY });
       }}
-      title={kuerzel ? `${titel} — ${kuerzel.replace(' ', ' · ')}` : titel}
+      // ── W2·18 WELLE 3 PUNKT 4 · ZWEI TOOLTIPS WÄREN EINER ZU VIEL ────────
+      // Der `title` BLEIBT — er ist die Auskunft für Touch (dort gibt es keine
+      // Karte), und der R8-Sweep zählt eine per Ellipse gekappte Stelle nur
+      // dann nicht als Fund, wenn der volle Text über einen `title` am
+      // Vorfahren erreichbar ist (`e2e/helpers/abschnittMessung.ts`,
+      // `gekapptMitTitle`). Solange der Zeiger aber HIER steht, ist die Karte
+      // zuständig: Chromium zeigte sonst ~400 ms nach ihr noch seinen eigenen,
+      // einzeiligen Tooltip darüber.
+      title={zeigerHier ? undefined : (kuerzel ? `${titel} — ${kuerzel.replace(' ', ' · ')}` : titel)}
+      onPointerEnter={(ev) => {
+        // Auf Touch gibt es kein «darüberfahren» — dort käme die Karte als
+        // Fleck, den man nicht wieder loswird (Fahrplan §4.R3 Punkt 4).
+        if (ev.pointerType === 'touch') return;
+        setZeigerHier(true);
+        const el = ev.currentTarget;
+        stoppKarte();
+        karteZeit.current = window.setTimeout(() => meldeKarte(el), KARTE_MS);
+      }}
+      onPointerLeave={() => { setZeigerHier(false); stoppKarte(); onKarte(null); stoppLangdruck(); }}
+      // W2·18 Welle 3 Punkt 5 · Langdruck (Herleitung oben). NUR für Finger
+      // und Stift: die Maus hat den Rechtsklick, und ein Menü, das unter der
+      // gedrückten Maustaste aufgeht, nähme dem Ziehen den Anfang.
+      onPointerDown={(ev) => {
+        langdruckGriff.current = false;
+        if (ev.pointerType === 'mouse') return;
+        const { clientX: x, clientY: y } = ev;
+        stoppLangdruck();
+        langdruck.current = {
+          x, y,
+          zeit: window.setTimeout(() => {
+            langdruck.current = null;
+            langdruckGriff.current = true;
+            onMenue({ path: t.path, x, y });
+          }, LANGDRUCK_MS),
+        };
+      }}
+      onPointerMove={(ev) => {
+        const l = langdruck.current;
+        if (!l) return;
+        // Wer scrollt oder zieht, drückt nicht lange.
+        if (Math.abs(ev.clientX - l.x) > LANGDRUCK_PX || Math.abs(ev.clientY - l.y) > LANGDRUCK_PX) stoppLangdruck();
+      }}
+      onPointerUp={stoppLangdruck}
+      onPointerCancel={stoppLangdruck}
+      // Fokus zeigt SOFORT: wer mit der Tastatur hier ankommt, hat die 600 ms
+      // Zögern schon mit dem Weg hierher bezahlt.
+      // ABER NUR BEI SICHTBAREM FOKUS (`:focus-visible`). GEMESSEN 13.9.2026
+      // (Playwright `hasTouch`, @390): ein ANTIPPEN fokussiert den Link und
+      // öffnete darüber doch noch die Karte — auf Touch stand sie dann als
+      // Fleck, den man nicht mehr los wird. `:focus-visible` ist genau die
+      // Unterscheidung, die der Browser dafür schon trifft: gesetzt bei
+      // Tastatur, nicht bei Zeiger oder Finger.
+      onFocus={(ev) => {
+        stoppKarte();
+        const ziel = ev.target as HTMLElement;
+        if (typeof ziel.matches === 'function' && !ziel.matches(':focus-visible')) return;
+        meldeKarte(ev.currentTarget);
+      }}
+      onBlur={(ev) => {
+        // Der Sprung vom Link zum ✕ desselben Reiters ist kein Verlassen.
+        if (ev.currentTarget.contains(ev.relatedTarget as Node | null)) return;
+        stoppKarte();
+        onKarte(null);
+      }}
       // F9 · DER AKTIVE REITER IST EINE FLÄCHE, KEIN 4-EINHEITEN-UNTERSCHIED.
       // GEMESSEN 6.9.2026: aktiv `paper-raised` (255) gegen inaktiv `paper`
       // (251) — der Unterschied trug allein der 2-px-Strich. Jetzt trägt der
@@ -244,16 +371,47 @@ export function Reiter({
         aktiv
           ? (reg ? REG_FLAECHE[reg] : 'bg-ink-900')
           : `${reg ? REG_FLAECHE[reg] : 'bg-ink-400'} opacity-60 group-hover/reiter:opacity-100`}`} />
-      <button type="button" aria-current={aktiv ? 'page' : undefined}
+      {/* ── W2·18 WELLE 3 PUNKT 3 · WER ZU EINER ADRESSE FÜHRT, IST EIN LINK ─
+          Hier stand ein `<button type="button">` mit `onClick={navigate}`.
+          GEMESSEN am Vorstand (13.9.2026): Screenreader meldeten
+          «Schaltfläche», es gab keine Adresse zum Kopieren, «In neuem Fenster
+          öffnen» fehlte im Browser-Kontextmenü, und Strg/⌘-Klick tat nichts —
+          für ein Navigations-Element die falsche Rolle (WCAG 4.1.2, ARIA APG).
+          Der React-Router-`Link` löst das ohne eine Zeile eigener Logik: der
+          einfache Klick bleibt eine Navigation OHNE Neuladen, die Tastatur
+          bleibt bei Enter, und der `href` trägt alles, was der Browser von
+          sich aus daraus macht.
+          `draggable={false}` AM LINK, nicht `draggable` — die Absicht des
+          Fahrplans («`dragstart` verhindert den Navigations-Drag») wird hier
+          eine Stufe früher erreicht: ein nicht-ziehbares Kind lässt den Zug
+          an der ziehbaren HÜLLE beginnen, und damit bleibt der D15-Ghost
+          (`setDragImage` auf den ganzen Reiter) wortgleich der von vorher.
+          Mit `draggable` am Link wäre der Link selbst die Quelle, Chromium
+          legte `text/uri-list` dazu, und der Ghost wäre der Schriftzug statt
+          des Reiters. */}
+      <Link to={t.path} aria-current={aktiv ? 'page' : undefined}
+        draggable={false}
         aria-keyshortcuts={kuerzel || undefined}
         // W2·18 Welle 2 Punkt 1 · roving tabindex (Herleitung bei `imRing`).
         // AUSGESCHRIEBENE 0 statt weggelassenem Attribut: der Ring-Platz soll
         // im Markup ABLESBAR sein — die Sonde zählt ihn
         // (`src/tests/reiter-tastaturring.test.tsx`).
         tabIndex={imRing ? 0 : -1}
-        onClick={() => onNavigate(t.path)}
+        // W2·18 Welle 3 Punkt 5: der `click`, der auf einen Langdruck folgt,
+        // ist kein Tippen — er würde sonst navigieren, während das Menü
+        // aufgeht (GEMESSEN: Chromium schickt nach `pointerup` den Klick).
+        onClick={(ev) => {
+          if (!langdruckGriff.current) return;
+          langdruckGriff.current = false;
+          ev.preventDefault();
+        }}
+        // ── DIE EINE AUSNAHME VOM LINK-IDIOM (W2·18 Welle 3 Punkt 3) ────────
+        // Mittelklick schliesst — das Browser-Idiom, das David meint («analog
+        // browser»). Auf einem gewöhnlichen Link öffnete er einen zweiten
+        // Browser-Tab; auf einem REITER schliesst er ihn, in jedem Browser.
+        // Das stärkere Idiom gewinnt, und `preventDefault` hält den Browser
+        // davon ab, daneben noch sein eigenes zu tun.
         onAuxClick={(ev) => {
-          // Mittelklick schliesst — das Browser-Idiom, das David meint.
           if (ev.button === 1) { ev.preventDefault(); onSchliessen(t.path); }
         }}
         // M4 · DASSELBE MENÜ OHNE MAUS: Shift+F10 und die Menü-Taste sind
@@ -287,7 +445,9 @@ export function Reiter({
         // zweiter Stelle (`flex min-w-0 items-baseline`, die alte, von
         // `reiter-beschriftung.test.tsx` bewachte Reihenfolge), sondern nach
         // `items-baseline`, damit dieselbe Textprobe unverändert grün bleibt.
-        className={`flex items-baseline min-w-0 gap-1 py-1.5 pl-2.5 pr-1 text-body-s ${
+        // `no-underline`: die Rolle ändert sich, das Bild nicht — ein Reiter
+        // ist eine Fläche, kein Fliesstext-Verweis (D13/Design-Reglement).
+        className={`flex items-baseline min-w-0 gap-1 py-1.5 pl-2.5 pr-1 text-body-s no-underline ${
           aktiv ? 'font-medium text-ink-900' : 'text-ink-600 hover:text-ink-900'}`}>
         <span className="sr-only">{`Reiter ${nr}: `}</span>
         {/* F6 · DIE GESCHÄFTSNUMMER WIRD NIE GEKÜRZT. Gekürzt wird der Kopf
@@ -316,7 +476,13 @@ export function Reiter({
             und stellt her, was der Kommentar oben schon beschreibt («der Kopf
             kuerzt sich weg, die Geschaeftsnummer bleibt»). Die max-w-Deckel
             bleiben, sie begrenzen nach OBEN. */}
-        {kopf && <span className="min-w-0 truncate max-w-[9rem]">{kopf}</span>}
+        {/* ── W2·18 WELLE 3 PUNKT 6 · DIE TEILE TRAGEN NAMEN ──────────────
+            `data-reiter-teil` statt Tailwind-Deckel: die Sonden griffen den
+            Kopf bis hierher über `span[class*="max-w-[9rem]"]` — eine Klasse,
+            die jederzeit aus Gestaltungsgründen wechselt (9 rem → 10 rem), und
+            jede Sonde wäre danach blind, ohne rot zu werden. Der Anker sagt,
+            WAS der Span ist, nicht wie breit er sein darf. */}
+        {kopf && <span data-reiter-teil="kopf" className="min-w-0 truncate max-w-[9rem]">{kopf}</span>}
         {kopf && ' '}
         {/* ── D27 (David 6.9.2026) · DIE LESESTELLUNG STEHT IM REITER ──────
             «diese funktion, dass es anzeigt in welchem artikel wir sind,
@@ -372,7 +538,8 @@ export function Reiter({
             nebeneinander zu quetschen.
             Mit Kopf bleibt der Kern wie bisher `shrink-0` (F6: die
             Geschäftsnummer wird nie gekürzt). */}
-        <span className={kopf ? 'shrink-0' : 'min-w-[6ch] truncate max-w-[15rem]'}>{kern}</span>
+        <span data-reiter-teil="kern"
+          className={kopf ? 'shrink-0' : 'min-w-[6ch] truncate max-w-[15rem]'}>{kern}</span>
         {/* ── W2·18 Punkt 5 · DIE INSTANZ-NUMMER WIRD NIE GEKÜRZT ──────────
             Sie hing bis hierher hinten am Kern und fiel darum als erstes weg:
             GEMESSEN 13.9.2026 standen «ZPO-Fristen (2)» und «(3)» beide als
@@ -381,9 +548,9 @@ export function Reiter({
             (sonst läse sich der Accessible Name «ZPO-Fristen(2)», WCAG 4.1.2 —
             dieselbe Fuge wie oben). */}
         {instanz && ' '}
-        {instanz && <span className="shrink-0 num">{instanz}</span>}
+        {instanz && <span data-reiter-teil="nummer" className="shrink-0 num">{instanz}</span>}
         {paneWort && <span className="sr-only">{` (Fenster ${paneWort})`}</span>}
-      </button>
+      </Link>
       {/* Fenster-Marke: zeigt, welcher Reiter links bzw. rechts steht. */}
       {paneWort && (
         <span aria-hidden title={`Fenster ${paneWort}`}

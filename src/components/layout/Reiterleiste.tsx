@@ -15,6 +15,13 @@ import {
   // und trug darum den Volltitel, wo die Leiste die Kurzform zeigte. Jetzt
   // stehen sie in `lib/tabs` und beide Flächen lesen dieselbe Quelle.
   reiterKurzformText,
+  // W2·18 Welle 3 Punkt 4 · die Auskunft der Hover-Karte, zerlegt — dieselbe
+  // Quelle, aus der sich der `title`-Einzeiler zusammensetzt (§5).
+  reiterKarteTeile,
+  // W2·18 Welle 3 Punkt 2 · der Rand-Schub liest die Ordnung bei JEDEM Takt
+  // frisch aus der einen Quelle — ein Intervall-Rückruf sähe sonst für immer
+  // die Ordnung des Renders, in dem er entstanden ist (§5).
+  ladeTabs,
 } from '../../lib/tabs';
 import { verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { manifestBedarf } from '../../lib/tabGruppen';
@@ -22,6 +29,8 @@ import { Reiter } from './reiterleiste/Reiter';
 import { ReiterBlatt } from './reiterleiste/ReiterBlatt';
 import { useReiterFenster } from './reiterleiste/useReiterFenster';
 import { istBuchstabenTaste, zifferTaste } from './reiterleiste/tasten';
+import { randSeite, schubZiel, SCHUB_MS } from './reiterleiste/randschub';
+import { REITER_MIME } from './reiterleiste/ueberlauf';
 import { BLATT_ZU, type BlattZustand } from './reiterleiste/blatt';
 import { useDialogFokus } from './useDialogFokus';
 import { useKopieren } from '../useKopieren';
@@ -73,6 +82,15 @@ let menueVorlauf: Promise<typeof import('./ReiterMenue')> | null = null;
 const ladeMenue = (): Promise<typeof import('./ReiterMenue')> => (menueVorlauf ??= import('./ReiterMenue'));
 import type { ReiterMenueEintrag } from './ReiterMenue';
 
+// ── W2·18 WELLE 3 PUNKT 4 · DIE HOVER-KARTE KOMMT DENSELBEN WEG ────────────
+// Wortgleiche Bauart wie beim Menü darüber, aus denselben zwei Gründen: der
+// Chunk gehört nicht in den Start (§15), und `lazy`/`Suspense` käme einen
+// Nachlauf zu spät. Angefordert wird auch sie beim Betreten der Leiste — die
+// 600 ms, die die Karte ohnehin wartet, reichen dafür dreifach.
+let karteVorlauf: Promise<typeof import('./reiterleiste/ReiterKarte')> | null = null;
+const ladeKarte = (): Promise<typeof import('./reiterleiste/ReiterKarte')> =>
+  (karteVorlauf ??= import('./reiterleiste/ReiterKarte'));
+
 // ─── Arbeitsleiste: die offenen Reiter, sichtbar (W2·24 §5a, Wunsch David) ───
 //
 // «analog zum browser die offenen tabs oben anstatt mit dem drei linien drop
@@ -93,7 +111,10 @@ import type { ReiterMenueEintrag } from './ReiterMenue';
 /** Der MIME-Typ des Reiter-Zugs wohnt seit R13 bei der Überlauf-Rechnung
  *  (`reiterleiste/ueberlauf`) — hier steht nur noch die Durchreiche, damit
  *  `Shell.tsx` seinen bisherigen Import behält (§5: eine Quelle). */
-export { REITER_MIME } from './reiterleiste/ueberlauf';
+// Seit W2·18 Welle 3 Punkt 2 wird die Konstante hier auch SELBST gebraucht
+// (Ablage am «+N»-Knopf) — darum importiert und weitergereicht statt nur
+// durchgereicht; der Re-Export für die Panes bleibt wortgleich (§5).
+export { REITER_MIME };
 
 export function Reiterleiste({ paneSchluessel = [] }: {
   /** Reiter-Schlüssel der offenen Panes in Fenster-Ordnung (0 = links/Haupt).
@@ -130,6 +151,11 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const [MenueFlaeche, setMenueFlaeche] =
     useState<typeof import('./ReiterMenue')['ReiterMenue'] | null>(null);
   const holeMenue = () => { void ladeMenue().then((m) => setMenueFlaeche(() => m.ReiterMenue)); };
+  /** W2·18 Welle 3 Punkt 4 — die Hover-Karte: WELCHER Reiter, und wo er steht. */
+  const [karte, setKarte] = useState<{ path: string; x: number; y: number } | null>(null);
+  const [KarteFlaeche, setKarteFlaeche] =
+    useState<typeof import('./reiterleiste/ReiterKarte')['ReiterKarte'] | null>(null);
+  const holeKarte = () => { void ladeKarte().then((m) => setKarteFlaeche(() => m.ReiterKarte)); };
   /** Ein Menü öffnen — und dabei IMMER auch seinen Chunk anstossen. Der
    *  Vorlauf am `nav` (Zeiger/Fokus) deckt den Alltag ab, aber nicht jeden
    *  Fall: ein Zeiger, der beim Laden schon über der Leiste RUHT, löst kein
@@ -146,6 +172,41 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   /** Wo die Einfügemarke steht: an welchem Reiter, und auf welcher Seite.
    *  Die Seite kommt aus dem Zeiger-X über der Ziel-Hälfte (D15). */
   const [ueber, setUeber] = useState<{ path: string; davor: boolean } | null>(null);
+  // ── W2·18 WELLE 3 PUNKT 2 · DER RAND-SCHUB ───────────────────────────────
+  // Was hier NICHT steht, ist Auto-Scroll: der Streifen scrollt GEMESSEN nie
+  // (Herleitung und Messreihe in `reiterleiste/randschub.ts`). Am Rand schiebt
+  // sich der gezogene Reiter stattdessen selbst durch die Speicherordnung,
+  // einen Platz je Takt — so kommt er über die Fenstergrenze hinaus.
+  const schub = useRef<{ seite: 'links' | 'rechts'; takt: number } | null>(null);
+  /** Schwebt gerade ein Reiter über dem «+N»-Knopf? (Ablage, s. dort.) */
+  const [ueberAblage, setUeberAblage] = useState(false);
+  const stoppSchub = () => {
+    if (!schub.current) return;
+    window.clearInterval(schub.current.takt);
+    schub.current = null;
+  };
+  const schubTakt = (links: boolean) => {
+    const von = gezogen.current;
+    if (!von) { stoppSchub(); return; }
+    // FRISCH aus `lib/tabs`, nicht aus der Render-Ordnung: dieser Rückruf lebt
+    // über viele Schübe hinweg und sähe sonst immer die erste Ordnung.
+    const pfade = ladeTabs().map((t) => tabSchluessel(t.path));
+    const ziel = schubZiel(pfade, tabSchluessel(von), links);
+    // `null` = Anschlag. Der Takt läuft weiter (der Zeiger steht ja noch am
+    // Rand), tut aber nichts — kein Umlauf ans andere Ende.
+    if (ziel) ordneTabsUm(von, ziel.ziel, ziel.davor);
+  };
+  const beiRandZug = (ev: { clientX: number; currentTarget: HTMLElement }) => {
+    if (!gezogen.current) return;
+    const seite = randSeite(ev.clientX, ev.currentTarget.getBoundingClientRect());
+    if (!seite) { stoppSchub(); return; }
+    if (schub.current?.seite === seite) return;
+    stoppSchub();
+    const links = seite === 'links';
+    schub.current = { seite, takt: window.setInterval(() => schubTakt(links), SCHUB_MS) };
+  };
+  // Ein Intervall, das einen Zug überlebt, ordnete später ohne Zutun um.
+  useEffect(() => stoppSchub, []);
 
   // Reader-Labels (Gesetz/Entscheid) aus den ohnehin lazy ladbaren Manifesten —
   // Muster und Bedingung wörtlich aus der abgelösten `ReiterUebersicht`.
@@ -235,7 +296,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // Speicherordnung — verschoben genau so weit, dass der aktive Reiter darin
   // liegt. Alles ausserhalb steht im «+N»-Blatt, nichts wird angeschnitten.
   const aktivIdx = ordnung.findIndex((t) => tabSchluessel(t.path) === aktivSchluessel);
-  const { start, anzahl } = useReiterFenster(streifenRef, ordnung.length, aktivIdx);
+  const { start, anzahl, ohneKopf } = useReiterFenster(streifenRef, ordnung.length, aktivIdx);
   const sichtbar = ordnung.slice(start, start + anzahl);
   const versteckt = [...ordnung.slice(0, start), ...ordnung.slice(start + anzahl)];
 
@@ -298,7 +359,11 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const knopfVon = (k: string): HTMLElement | null => {
     const kasten = Array.from(streifenRef.current?.querySelectorAll<HTMLElement>('[data-reiter-schluessel]') ?? [])
       .find((x) => x.getAttribute('data-reiter-schluessel') === k);
-    return kasten?.querySelector<HTMLElement>('button') ?? null;
+    // W2·18 Welle 3 Punkt 3: der Reiter selbst ist ein `<a>`; `button` trifft
+    // seit dem Rollenwechsel nur noch die Griffe ⧉/✕ daneben. `a, button` in
+    // Dokumentreihenfolge liefert wieder den Reiter — und bliebe richtig,
+    // wenn der Reiter je wieder ein Knopf würde.
+    return kasten?.querySelector<HTMLElement>('a, button') ?? null;
   };
 
   /** Wohin der Fokus nach dem NÄCHSTEN Render gehört (Delete: der Reiter, der
@@ -657,6 +722,33 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       e.push({ id: 'adresse', label: 'Adresse kopieren',
         onKlick: () => kopieren(new URL(t.path, window.location.origin).href) });
     }
+    // ── W2·18 WELLE 3 PUNKT 5 · UMORDNEN OHNE MAUS ──────────────────────────
+    // GEMESSEN am Vorstand (13.9.2026): die Reihenfolge liess sich NUR per
+    // HTML5-Drag (Zeiger) oder Alt+⇧+←/→ (Tastatur mit Alt-Taste) ändern. Auf
+    // einem Tablet gab es gar keinen Weg — der Finger kennt kein HTML5-Drag.
+    // Vier Einträge in dem Menü, das ohnehin da ist, lösen das ohne eine
+    // einzige neue Geste; erreichbar per Rechtsklick, Shift+F10 UND Langdruck
+    // (`reiterleiste/Reiter.tsx`).
+    // Gezeigt wird nur, was auch WIRKT: am ersten Reiter gibt es kein «nach
+    // links» (§8 — ein Eintrag, der nichts tut, ist eine Zusage, die nicht
+    // gilt). Die Kürzel stehen daneben, weil das Menü der Ort ist, an dem man
+    // sie lernt (R13-7).
+    if (idx > 0) {
+      e.push({ id: 'links-um', label: 'Nach links', rechts: 'Alt+⇧+←',
+        onKlick: () => ordneTabsUm(t.path, ordnung[idx - 1].path, true) });
+    }
+    if (idx >= 0 && idx < ordnung.length - 1) {
+      e.push({ id: 'rechts-um', label: 'Nach rechts', rechts: 'Alt+⇧+→',
+        onKlick: () => ordneTabsUm(t.path, ordnung[idx + 1].path, false) });
+    }
+    if (idx > 0) {
+      e.push({ id: 'anfang', label: 'An den Anfang',
+        onKlick: () => ordneTabsUm(t.path, ordnung[0].path, true) });
+    }
+    if (idx >= 0 && idx < ordnung.length - 1) {
+      e.push({ id: 'ende', label: 'Ans Ende',
+        onKlick: () => ordneTabsUm(t.path, ordnung[ordnung.length - 1].path, false) });
+    }
     if (ordnung.length > 1) {
       e.push({ id: 'andere', label: 'Alle anderen schliessen', onKlick: () => {
         for (const x of ordnung) if (tabSchluessel(x.path) !== tabSchluessel(t.path)) schliessePane(x.path);
@@ -771,8 +863,8 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // er am `nav` hängt und nicht am Reiter) und der Fokus kommt herein
       // (`focus` steigt hier als `focusin` an; ohne ihn hätte der
       // Tastaturweg Shift+F10 keinen Vorlauf).
-      onPointerEnter={holeMenue}
-      onFocus={holeMenue}
+      onPointerEnter={() => { holeMenue(); holeKarte(); }}
+      onFocus={() => { holeMenue(); holeKarte(); }}
       // W2·24-R4: die Arbeitsleiste KLEBT jetzt — unter der Titelblatt-Zeile
       // (`--app-krone-h`) und mit ihrer eigenen, festen Höhe (`--app-reiter-h`).
       // Beide Zahlen stehen in `src/index.css`; dieselbe Summe (`--app-kopf-h`)
@@ -828,6 +920,13 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           // nicht am einzelnen Reiter: welcher der Nachbar ist, weiss nur die
           // Leiste (§3) — und ein Zuhörer statt N spart N−1 Verdrahtungen.
           onKeyDown={onStreifenTaste}
+          // W2·18 Welle 3 Punkt 2: der Schub hört AM STREIFEN zu, nicht am
+          // einzelnen Reiter — die Randzone gehört dem Streifen, und während
+          // des Schubs wechselt der Reiter unter dem Zeiger ohnehin.
+          onDragOver={beiRandZug}
+          onDrop={stoppSchub}
+          onDragEnd={stoppSchub}
+          onDragLeave={(ev) => { if (ev.target === ev.currentTarget) stoppSchub(); }}
           // R13-5 · Rechtsklick NUR auf der freien Fläche (dieselbe Bedingung
           // wie beim Doppelklick daneben): über einem Reiter gilt dessen
           // eigenes Menü, über allem anderen bleibt das Browser-Menü.
@@ -842,12 +941,12 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             const nr = ordnung.findIndex((x) => tabSchluessel(x.path) === k) + 1;
             return (
               <Reiter key={k} t={t} nr={nr} letzter={nr === ordnung.length}
-                imRing={k === ringSchluessel}
+                imRing={k === ringSchluessel} ohneKopf={ohneKopf}
                 aktiv={k === aktivSchluessel} manifeste={manifeste} paneSchluessel={paneSchluessel}
                 zieht={zieht} ueber={ueber} gezogenRef={gezogen}
                 kannOeffnen={kannOeffnen} istOffen={istOffen} onDaneben={oeffneDaneben}
-                onNavigate={navigate} onSchliessen={schliessen}
-                onZieht={setZieht} onUeber={setUeber} onMenue={oeffneMenue}
+                onSchliessen={schliessen}
+                onZieht={setZieht} onUeber={setUeber} onMenue={oeffneMenue} onKarte={setKarte}
                 onUmordnen={ordneTabsUm} />
             );
           })}
@@ -890,12 +989,41 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             (`invisible` + `aria-hidden` + `disabled` + `tabIndex={-1}`) — was
             R2 wollte («kein Knopf über dem Nichts»), ohne dass die Geometrie
             der Leiste davon abhängt. */}
+        {/* ── W2·18 WELLE 3 PUNKT 2 · DER KNOPF IST AUCH EINE ABLAGE ────────
+            «+N» ist der sichtbare Ort des Restes. Wer einen Reiter darauf
+            fallen lässt, meint «den brauche ich jetzt nicht im Bild» — also
+            ans ENDE der Ordnung, womit er als erster ins Blatt rutscht.
+            Umgeordnet, nicht geschlossen: der Reiter bleibt offen, nur nicht
+            mehr vorn (ein Drop, der etwas wegwirft, wäre eine destruktive
+            Geste ohne Rückfrage, A3-1).
+            Der Rahmen zeigt die Ablage an, solange etwas darüber schwebt —
+            ohne diese Rückmeldung wäre es eine Funktion, die man nur findet,
+            wenn man sie schon kennt (D15). */}
         <button ref={triggerRef} type="button"
           aria-haspopup="dialog" aria-expanded={blattOffen}
           aria-label={`Alle ${tabs.length} offenen Reiter`}
           title="Alle offenen Reiter"
           onClick={() => setBlatt((z) => (z.offen ? BLATT_ZU : { offen: true, suche: '' }))}
-          className="shrink-0 self-center ml-2 w-[4.5rem] overflow-hidden whitespace-nowrap border border-rule-soft px-1 py-1 text-center text-body-s text-ink-600 hover:text-ink-900">
+          onDragOver={(ev) => {
+            if (!gezogen.current) return;
+            ev.preventDefault();
+            stoppSchub();
+            if (!ueberAblage) setUeberAblage(true);
+          }}
+          onDragLeave={() => setUeberAblage(false)}
+          onDrop={(ev) => {
+            ev.preventDefault();
+            setUeberAblage(false);
+            const von = gezogen.current ?? ev.dataTransfer.getData(REITER_MIME);
+            const letzte = ordnung[ordnung.length - 1];
+            if (von && letzte && tabSchluessel(letzte.path) !== tabSchluessel(von)) {
+              ordneTabsUm(von, letzte.path, false);
+            }
+            gezogen.current = null; setZieht(null); setUeber(null);
+          }}
+          data-reiter-ablage={ueberAblage ? 'aktiv' : undefined}
+          className={`shrink-0 self-center ml-2 w-[4.5rem] overflow-hidden whitespace-nowrap border px-1 py-1 text-center text-body-s hover:text-ink-900 ${
+            ueberAblage ? 'border-ink-900 text-ink-900' : 'border-rule-soft text-ink-600'}`}>
           <span className="num">{blattTitel}</span>
         </button>
       </div>
@@ -914,6 +1042,19 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         return (
           <MenueFlaeche x={menue.x} y={menue.y} name={reiterKurzformText(t, manifeste)}
             eintraege={menueEintraege(t)} onSchliessen={() => setMenue(null)} />
+        );
+      })()}
+
+      {/* W2·18 Welle 3 Punkt 4 · die Hover-Karte des gezeigten Reiters. EINE
+          zur Zeit, aus denselben Gründen wie beim Menü. */}
+      {karte && KarteFlaeche && (() => {
+        const t = tabs.find((x) => tabSchluessel(x.path) === tabSchluessel(karte.path));
+        if (!t) return null;
+        const idx = paneSchluessel.length > 1 ? paneSchluessel.indexOf(tabSchluessel(t.path)) : -1;
+        return (
+          <KarteFlaeche x={karte.x} y={karte.y} teile={reiterKarteTeile(t, manifeste)}
+            fenster={idx === 0 ? 'links' : idx > 0 ? 'rechts' : null}
+            onSchliessen={() => setKarte(null)} />
         );
       })()}
 

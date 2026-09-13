@@ -1,4 +1,9 @@
 // @shard-gruppe: 4
+// ── DEKLARIERTE SONDEN-ÄNDERUNG (§6.3) · W2·18 Welle 3 Punkt 3, 13.9.2026 ───
+// Der Reiter ist seit diesem Schritt ein `<a href>` (React-Router-`Link`)
+// statt eines `<button>` — die Rollen-Korrektur ist die Massnahme selbst
+// (WCAG 4.1.2). Die Sonde greift darum über `link` statt `button`; Name,
+// Reihenfolge und geprüfte Zusage sind unverändert.
 // ═══ W2·24 §5a Ziff. 3 + Befund F5 · WIE VIELE REITER EINE NAVIGATION KOSTET ═
 //
 // GEMESSENER ANLASS (6.9.2026, Preview 4335, gebautes dist/): drei Klicks über
@@ -58,7 +63,10 @@ const identitaeten = async (page: Page) => (await pfade(page)).map((p) => p.spli
 // SICHTBARE Beschriftung.
 const beschriftungen = (page: Page) => page.evaluate(() =>
   [...document.querySelectorAll('nav[aria-label="Offene Reiter"] [data-reiter-aktiv]')]
-    .map((d) => [...(d.querySelector('button')?.querySelectorAll('span:not(.sr-only)') ?? [])]
+    // DEKLARIERTE SONDEN-ÄNDERUNG (§6.3), W2·18 Welle 3 Punkt 3: der Reiter
+    // ist seit diesem Schritt ein `<a href>` statt eines `<button>`; gemessen
+    // wird unverändert die sichtbare Beschriftung.
+    .map((d) => [...(d.querySelector('a')?.querySelectorAll('span:not(.sr-only)') ?? [])]
       .map((s) => s.textContent?.trim()).filter(Boolean).join(' ')))
 
 async function leserBereit(page: Page): Promise<void> {
@@ -206,7 +214,7 @@ test.describe('Arbeitsleiste — eine Navigation, ein Reiter', () => {
     // Der Reiter wird deshalb BENANNT statt gezählt; die geprüfte Zusage
     // («ein Klick in der Leiste kostet keinen Reiter») ist unverändert.
     await page.locator(`${REITER} [data-reiter-schluessel="/gesetze/bund/OR"]`)
-      .getByRole('button', { name: /^Reiter \d+: / }).click()
+      .getByRole('link', { name: /^Reiter \d+: / }).click()
     await leserBereit(page)
     expect((await pfade(page)).length, 'ein Klick in der Leiste kostete einen Reiter').toBe(2)
   })

@@ -711,7 +711,20 @@ export function KontextPanel({ typ, normKeys, zusatzGruppen, ohneNormen = false,
                   vertikal scrollenden 256-px-TOC-Spalte. */}
               <ul className={seitenleiste
                 ? 'flex flex-wrap gap-2'
-                : 'flex gap-2 overflow-x-auto pb-1 -mb-1 sm:flex-wrap sm:overflow-visible sm:pb-0 sm:mb-0 [scrollbar-width:thin]'}>
+                // ── W2·18 Welle 3 Punkt 1, NEBENFUND (R8-Sweep 13.9.2026) ·
+                //    DIE AFFORDANZ IST DIE GETEILTE, NICHT DER DÜNNE BALKEN ──
+                // Der dritte Entscheid-Vertreter des Sweeps (`ag_gerichte_
+                // HOR_2024_19`) hat diese Zeile zum ersten Mal in die Messung
+                // gebracht: GEMESSEN @320 und @390 `scrollWidth 435` gegen
+                // `clientWidth 280` bzw. `350` — Kategorie
+                // `a-ueberlauf-ohne-scroller`. Gescrollt hat sie schon vorher
+                // (`overflow-x: auto` + `[scrollbar-width:thin]`), aber ohne
+                // die geteilte Affordanz `lc-scrollrand-x` (B8, 31.8.2026:
+                // JEDER Scroller trägt sie) — und der Detektor verlangt genau
+                // sie, weil ein dünner Balken auf Touch gar nicht erscheint.
+                // `sm:bg-none`: ab `sm` steht `overflow-visible`, dort gäbe
+                // der Verlauf eine Fortsetzung vor, die es nicht gibt (§8).
+                : 'lc-scrollrand-x sm:bg-none flex gap-2 overflow-x-auto pb-1 -mb-1 sm:flex-wrap sm:overflow-visible sm:pb-0 sm:mb-0 [scrollbar-width:thin]'}>
                 {werkzeuge.map((w) => (
                   <li key={w.id} className={seitenleiste ? 'inline-flex items-center' : 'shrink-0 inline-flex items-center'}>
                     {/* LM-152: dieselbe Umbruch-Ausnahme wie oben (Werkzeuge zu

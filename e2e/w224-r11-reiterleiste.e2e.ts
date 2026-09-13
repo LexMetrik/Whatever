@@ -253,7 +253,10 @@ test.describe('M4 — Kontextmenü auf einem Reiter', () => {
 
   test('ohne Maus: Shift+F10 auf dem Reiter öffnet dasselbe Menü (WCAG 2.1.1)', async ({ page }) => {
     await seed(page, [OR, BGE])
-    await page.locator(`${STREIFEN} [data-reiter-schluessel="${BGE}"] button`).first().focus()
+    // DEKLARIERTE SONDEN-ÄNDERUNG (§6.3), W2·18 Welle 3 Punkt 3: der Reiter
+    // ist ein `<a href>`; `button` träfe seit dem Rollenwechsel die Griffe
+    // ⧉/✕ daneben. Gemeint war immer der Reiter selbst.
+    await page.locator(`${STREIFEN} [data-reiter-schluessel="${BGE}"] a`).first().focus()
     await page.keyboard.press('Shift+F10')
     await expect(page.getByRole('menu')).toBeVisible()
     // Pfeiltasten sind das Versprechen von `role=menu` — es wird eingelöst.
@@ -627,5 +630,79 @@ test.describe('W2·18 Welle 2 Punkt 5 — Kontextmenü ohne Wartezeit', () => {
     expect(ms).toBeLessThanOrEqual(150)
     // Und es ist das ECHTE Menü, nicht eine leere Hülle.
     await expect(page.locator('[role=menu] [role=menuitem]').first()).toBeVisible()
+  })
+})
+
+// ═══ W2·18 WELLE 3 PUNKT 4 · DIE HOVER-KARTE ════════════════════════════════
+//
+// GEMESSEN am Vorstand (13.9.2026): die ganze Auskunft eines Reiters stand in
+// EINEM `title` — «OR — Stand 02.09.2026 — gelesen bis Art. 336c». Der native
+// Tooltip kann nur eine Zeile ohne Struktur: was Stand ist und was
+// Lesestellung, muss man aus den «—»-Fugen erraten.
+// GEBAUT: nach 600 ms Zeigen (oder sofort bei Fokus) erscheint eine
+// beschriftete Karte aus DERSELBEN Quelle wie der Einzeiler
+// (`lib/tabs.reiterKarteTeile`, §5). Sie nimmt keine Klicks, verschiebt nichts,
+// verschwindet beim Verlassen und auf Escape — und auf Touch erscheint sie gar
+// nicht.
+test.describe('W2·18 Welle 3 Punkt 4 — die Hover-Karte', () => {
+  const KARTE = '[data-reiter-karte]'
+
+  test('nach dem Zeigen steht die Karte — beschriftet, ohne die Leiste zu verschieben', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await seed(page, [OR, RECHNER])
+    const reiter = page.locator(`${STREIFEN} [data-reiter-schluessel="/gesetze/bund/OR"]`)
+    // Die Beschriftungen kommen aus lazy geladenen Manifesten nach.
+    await page.waitForTimeout(1500)
+    const vorher = await reiter.boundingBox()
+
+    await expect(page.locator(KARTE), 'vor dem Zeigen steht keine Karte').toHaveCount(0)
+    await reiter.hover()
+    await expect(page.locator(KARTE)).toBeVisible({ timeout: 10_000 })
+
+    // INHALT: Volltitel und die beschrifteten Zeilen — die Auskunft, die der
+    // Einzeiler zusammenklebt.
+    const karte = page.locator(KARTE)
+    // Der ausgeschriebene Erlasstitel — genau das, was «OR» im Reiter nicht
+    // sagt (aus dem Manifest: «Bundesgesetz betreffend die Ergänzung des ZGB
+    // (Obligationenrecht)»).
+    await expect(karte).toContainText('Obligationenrecht')
+    await expect(karte).toContainText('Stand')
+    await expect(karte).toContainText('Gelesen bis')
+    await expect(karte).toContainText('Art. 336c')
+    await expect(karte).toHaveAttribute('role', 'tooltip')
+
+    // KEIN LAYOUT-SHIFT: der Reiter darunter steht, wo er stand.
+    expect(await reiter.boundingBox()).toEqual(vorher)
+    // Und die Karte nimmt keine Klicks weg.
+    expect(await karte.evaluate((el) => getComputedStyle(el).pointerEvents)).toBe('none')
+
+    // ESCAPE SCHLIESST (WCAG 1.4.13 «Dismissible»).
+    await page.keyboard.press('Escape')
+    await expect(page.locator(KARTE)).toHaveCount(0)
+  })
+
+  test('beim Verlassen verschwindet sie wieder', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await seed(page, [OR, RECHNER])
+    await page.waitForTimeout(1500)
+    await page.locator(`${STREIFEN} [data-reiter-schluessel="${RECHNER}"]`).hover()
+    await expect(page.locator(KARTE)).toBeVisible({ timeout: 10_000 })
+    await page.mouse.move(700, 500)
+    await expect(page.locator(KARTE)).toHaveCount(0)
+  })
+
+  test('auf Touch erscheint sie nicht — dort gibt es kein Darüberfahren', async ({ browser }) => {
+    const ctx = await browser.newContext({ hasTouch: true, isMobile: true, viewport: { width: 390, height: 844 } })
+    const seite = await ctx.newPage()
+    await seite.goto(START)
+    await seite.evaluate(([a, b]) => localStorage.setItem('lexmetrik-tabs',
+      JSON.stringify([a, b].map((path) => ({ path })))), [OR, RECHNER] as [string, string])
+    await seite.goto(RECHNER)
+    await expect(seite.locator(`${STREIFEN} [data-reiter-schluessel]`).first()).toBeVisible({ timeout: 20_000 })
+    await seite.waitForTimeout(1200)
+    await seite.locator(`${STREIFEN} [data-reiter-schluessel="${RECHNER}"]`).tap()
+    await seite.waitForTimeout(1200)
+    await expect(seite.locator(KARTE), 'kein Hover-Fenster auf dem Finger').toHaveCount(0)
+    await ctx.close()
   })
 })

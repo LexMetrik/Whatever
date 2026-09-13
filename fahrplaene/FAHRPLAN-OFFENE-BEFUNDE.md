@@ -188,6 +188,7 @@ Die Liste steht wörtlich so, wie sie am 29.8.2026 in ROADMAP.md stand:
 - [ ] **Flake-Sammlung 5.9.2026 (je 1 failed, Retry grün):** `gesetze-ia-v2-walks:65` (#691/#711), `split-erwaegungssprung.e2e.ts:47` ⧉-Pane auf Erwägung, `tastatur.e2e.ts:81` Skip-Link (#715), `leser-v3-blatt:105` ⌘K-Split — alle Hydration-/Timing-Klasse; nach der 60-s-Härtung Rate neu messen (`zaehleFlakySpecs` in der Selbstopt-Zeitreihe).
 - [x] **OR-Leser-e2e auf 60-s-Budget härten** — `gesetze-ia-v2-walks.e2e.ts:72` 10-s-Timeout auf `#art-336_c` (2-vCPU); #682 härtete nur `norm-sprung`/`leser-suche`; alle `gesetze/bund/OR`-Specs als Infrastruktur. — ✅ erledigt 12.9.2026, PR #837 (`8a7336e5a`): Wurzel gemessen (CDP-CPU-Drossel 10x: 10-s-Default 8/8 rot, 60 s 0/8), zentraler Helfer `e2e/helpers/orLeser.ts` (`OR_LESER_FRIST`/`warteOrGeladen()`), bare 10-s-Defaults in 6 Specs ersetzt.
 - [ ] **⌘K-Vorlauf im Split** (CI #711, `leser-v3-blatt.e2e.ts:105` flaky) — Verdacht Nebenwirkung von #682 (vor Hydration löst der Vorlauf in der Kopf-Suche aus, nicht im fokussierten Pane); bei Wiederholung `fruehesSuchKuerzel.ts`: Vorlauf nur einlösen, wenn kein Pane-Fokus.
+- [ ] **Flacker-Fall leser-v3-blatt (c), gemessen 13.9.2026** — CI-Rot Shard 1/4 (Lauf 34783413401) auf PR #844, «(c) im Split trifft das Kürzel nie das fremde Pane»: 1× rot, Retry grün («Fokus stand im Pane «sekundaer», ⌘K landete woanders»). Nullprobe: isoliert (`--repeat-each=6`, 5 Worker, `dist`) auf Branch `feat/w2-18-reiterleiste-teil3` (c020885a5) 6/6 grün, auf `origin/main` (ae63949d3) ebenfalls 6/6 grün — Fall lässt sich isoliert nicht reproduzieren, weder mit noch ohne Welle-2/3-Code. Deckt sich mit der bereits offenen Zeile «⌘K-Vorlauf im Split» oben (dieselbe Spec/Zeile, seit CI #711) — Klasse Last-/Parallel-bedingt (4 Shards gleichzeitig in CI), kein Beleg für eine Welle-2/3-Ursache. Nicht gefixt; Wurzel bleibt bei der bestehenden Zeile offen.
 - [ ] **`check:e2e-shards` deckelt Laufzeit je Shard** — Balance über mehrere CI-Läufe mitteln (Streuung ≈ verschobener Betrag).
 
 - [ ] **Flackernde Browser-Tests, Wurzel messen** *(Fund des neuen Flacker-Wächters, Lauf 34231123731, 8.9.2026; Ausnahmen in `e2e/flake-ausnahmen.json` bis 8.10.2026)* — `leser-r1-r2.e2e.ts` «Ohne aktive Suche kein Zähler …» und `w224-reiterverhalten.e2e.ts` «(d) ⌘/Ctrl+Enter öffnet neuen Reiter» wurden nur im Wiederholungsversuch grün. Wurzel je Spec messen (Timing/Race, nicht «retry»), dann Ausnahme streichen; verfällt die Ausnahme ungemessen, wird der Wächter rot. Klasse wie «E2E-Flake Shard 2/8 — Wurzel messen statt neu starten».
@@ -384,6 +385,132 @@ mit Rot-Beweis.
 
 Welle 3 (nach dieser): Umordnen über die Fenstergrenze hinaus (Auto-Scroll am Rand, Ziehen ins/aus
 dem Blatt), Reiter als Links, Hover-Karte mit Volltitel + Stand, Touch-Umordnen.
+
+### §4.R3 — Reiterleiste Welle 3: Umordnen, Links, Hover-Karte, Touch, Kopf-Überlauf (13.9.2026)
+
+Anlass: Auftrag David 13.9.2026 «bau insgesamt weiter an der Tabliste bis ich stop sage». Grundlage:
+Vorschläge 7–9 der Sichtprüfung, Recherche-Datei (Hover-Karte, Tastaturäquivalenz) und der Nebenfund
+aus dem Welle-2-Abgleich (§4.R2 Punkt 6, Nachtrag). Baut auf Welle 2 auf (Branch
+`feat/w2-18-reiterleiste-teil3`). Darstellungsschicht, kein Risikopfad. Je Punkt ein Commit mit
+Rot-Beweis; Rot-Beweise auf DIESEM Stand fahren, nie übernehmen.
+
+1. **Einzelner Entscheid-Reiter läuft @320 über** (Welle-2-Abgleich, gemessen
+   `/rechtsprechung/ag_gerichte_HOR_2024_19`: Streifen scrollWidth 192 gegen clientWidth 171; Kopf
+   «OGer AG» 58 px). Regel F6 «erst weicht der Kopf, dann wird der Kern gekürzt» wirklich umsetzen:
+   ist das Fenster am Anschlag und der Streifen überläuft trotzdem, weicht der Kopf des betroffenen
+   Reiters ganz (Epochen-Riegel gegen Pendeln in `useReiterFenster.ts`). Der Wächter «kein Kopf als
+   blosses …» (Welle 2) erwartet @320 `koepfe.length > 0` — diese Erwartung ist eine fachliche
+   Änderung und wird im Commit deklariert (§6.3): @320 darf der Kopf fehlen, wenn der Streifen sonst
+   überliefe. Zusätzlich den R8-Sweep (`e2e/kein-abschnitt.e2e.ts`) um einen Entscheid-Vertreter mit
+   langem Gerichtskopf ergänzen (dritter Vertreter), damit die Klasse künftig selbst gefunden wird.
+   — **Nachtrag 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: der R8-Sweep hat am Schluss
+   des Auftrags ein ZWEITES Gesicht desselben Befundes gezeigt.** Der Fall oben läuft über den
+   STREIFEN über; hier PASST der Reiterkasten, und sein Inhalt blutet heraus. GEMESSEN
+   `/rechtsprechung/bger_1B_278_2022` @390: Kasten 240/240, der Link darin trug 217 px Inhalt in
+   einem 212-px-Kasten, Kopf «BGer» auf Breite 0 (scrollWidth 34) — Sweep-Meldungen
+   «[a-ueberlauf-ohne-scroller] a.flex … scrollWidth=217 clientWidth=212» und
+   «[f-reiter-mitten-im-wort] … Schnitt nach «Reiter 1: BGer 1B_278/2022 vo»». Der Befund ist ÄLTER
+   als dieser Auftrag und NICHT vom Rollenwechsel (Punkt 3) verursacht: A/B in derselben Seite
+   (derselbe Knoten einmal als `<a>`, einmal als `<button>`) ergibt zweimal 217/212. Sichtbar wurde
+   er erst, weil die Reiter-Sonde des Detektors auf `nav[aria-label="Offene Reiter"] a` greift — und
+   Reiter waren bis Punkt 3 keine Links; dass der erste Sweep-Lauf dieses Auftrags trotzdem grün
+   war, liegt an der lazy geladenen Beschriftung (GEMESSEN: ~0 ms «Entscheid öffnen» 120/120, ab
+   ~200 ms «BGer 1B_278/2022 vom 20. Juni 2022» 217/212 — der Lauf mass davor; die Messung ist also
+   zeitabhängig, nicht der Defekt). GEBAUT: `useReiterFenster` prüft am Anschlag BEIDE Gesichter —
+   Streifen-Überlauf ODER blutender Inhalt (`inhalt.scrollWidth > clientWidth + TOLERANZ_PX`);
+   Epochen-Riegel unverändert. NACHGEMESSEN: @320 171/171, Link 142/142 · @390 240/240, Link
+   212/212 (Kern gekürzt, Kopf weg); @1440 unverändert MIT Kopf. Wächter:
+   `e2e/w224-r13-reiter.e2e.ts` «der Inhalt eines Entscheid-Reiters bleibt in seinem Kasten» (@320
+   und @390), rot gefahren gegen die entschärfte Blutungs-Prüfung: «der Link trug 217 px in 212 px
+   … Expected: <= 213, Received: 217».
+2. **Umordnen über die Fenstergrenze hinaus.** Beim Ziehen an den linken/rechten Rand des Streifens
+   scrollt der Streifen automatisch (Auto-Scroll, ~8 px je Frame, reduced-motion: sofort); Ablegen auf
+   dem «+N»-Knopf hängt den Reiter ans Ende der Ordnung (und damit ins Blatt); im Blatt bleibt das
+   Umordnen per ▲▼ (bestehend). Test: 15 Reiter @1024, Reiter 12 per Drag nach vorn ⇒ Position 1.
+   — **Korrektur 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: die Auto-Scroll-Prämisse ist
+   durch Messung widerlegt.** GEMESSEN vor dem Bau (gebautes dist/, Chromium, 15 Reiter, aktiv
+   Nr. 12): der Streifen scrollt NIE — @1024 `scrollWidth 859 == clientWidth 859` (Fenster 4/8/15),
+   @1440 `1275 == 1275` (0/12/15), @390 `241 == 241` (11/1/15). Seit R13-2 ist der Überlauf kein
+   Scrollbalken mehr, sondern ein FENSTER über die Speicherordnung; was nicht nebeneinander passt,
+   steht im «+N»-Blatt. Ein Auto-Scroll («~8 px je Frame») wäre damit eine Mechanik, die nicht
+   feuern kann (§6.7, §17-Gegengewicht) — und die `reduced-motion`-Zusage hätte nichts zu beruhigen.
+   GEBAUT ist darum dasselbe Ziel mit dem Mittel, das diese Leiste wirklich hat: am Rand
+   (`randSeite`, 32-px-Zone) schiebt sich der GEZOGENE Reiter selbst durch die Speicherordnung,
+   einen Platz je 250 ms (`schubZiel`, kein Umlauf an den Enden) — er wandert also über die
+   Fenstergrenze hinaus, und das Fenster folgt ihm (R13-3). NACHGEMESSEN: Reiter 12 → Platz 1 in
+   2'826 ms (11 Schübe), Fenster 4/8/15 → 0/8/15. Ablegen auf «+N» ist wie beschrieben gebaut
+   (umordnen ans Ende, nicht schliessen). Wächter: `e2e/w224-reiter-umordnen-d16.e2e.ts` «W2·18
+   Welle 3 Punkt 2» (drei Fälle) und `src/tests/reiter-randschub.test.ts` (9 Fälle).
+3. **Reiter als Links.** Der Reiter-Knopf wird ein `<a href>` (React-Router `Link`), Screenreader
+   melden «Link», Mittelklick/Ctrl-Klick öffnen wie überall in der App (heute Sonderbehandlung in
+   `Reiter.tsx`); Tastatur-Ring aus Welle 2 (roving tabindex) bleibt; Drag-Verhalten bleibt (`draggable`
+   auf dem Link, `dragstart` verhindert Navigations-Drag). Bestehende e2e-Selektoren (`getByRole('button',
+   {name:/Reiter/})`) werden NICHT umgeschrieben, sondern die Sonden prüfen, ob sie über `nav[aria-label]`
+   + Text zugreifen — Änderungen an bestehenden Sonden im Commit deklarieren (§6.3).
+   — **Korrektur 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: zwei Annahmen haben dem
+   Ist-Code nicht standgehalten.** (a) MITTELKLICK. Der Fahrplan wollte «Mittelklick/Strg-Klick
+   öffnen wie überall in der App». In der Leiste SCHLIESST der Mittelklick seit R11 den Reiter
+   (Entscheid David «analog browser») — das stärkere Idiom, und «in einem neuen Reiter öffnen» wäre
+   hier ein stiller Leerlauf, weil der Reiter schon offen ist. GEMESSEN nach dem Rollenwechsel
+   (gebautes dist/, Chromium, vier Reiter): die app-weite Geste in `TabTracker.tsx` fing den
+   Mittelklick auf JEDEM `a[href]` in der Capture-Phase ab (`preventDefault` + `stopPropagation`)
+   und endete in `merkeTab` auf einen bereits offenen Pfad — der Reiter blieb stehen statt zu
+   schliessen, und der `onAuxClick` des Reiters war tot. GEBAUT: die Geste lässt Anker innerhalb
+   von `[data-reiter-streifen]` aus; Mittelklick schliesst wieder, Strg/⌘-Klick fällt an den
+   Browser (zweites Browser-Fenster, dieselbe Reiterliste aus demselben localStorage).
+   (b) `draggable`. Statt `draggable` AM Link steht dort `draggable={false}`: damit beginnt der Zug
+   wie bisher an der ziehbaren Hülle, und der D15-Ghost (`setDragImage` auf den ganzen Reiter)
+   bleibt wortgleich. Mit `draggable` am Link wäre der Link die Quelle, Chromium legte
+   `text/uri-list` dazu, und der Ghost wäre der Schriftzug.
+   (c) SONDEN. Die Rollen-Korrektur IST die Massnahme — `getByRole('button', …)` kann sie nicht
+   überleben. Umgestellt auf `link` bzw. `a` sind sechs Stellen in vier Dateien, jede im Commit
+   und am Ort deklariert (§6.3); Namen, Reihenfolge und geprüfte Zusagen unverändert.
+4. **Hover-Karte.** Statt des zusammengeklebten `title` eine strukturierte Karte nach 600 ms Hover oder
+   bei Fokus: Volltitel · Kürzel/Kategorie · Stand (bei Erlassen) · Lesestellung (Art.) · Fenster (◧/◨).
+   Kein Layout-Shift, Escape schliesst, verschwindet beim Verlassen; `prefers-reduced-motion` ohne
+   Einblendung; auf Touch keine Hover-Karte. Kein neuer Chunk im Start-Bundle über Budget (60 KB);
+   die Karte lazy laden wie das Kontextmenü (Vorlauf bei `pointerenter`).
+   — **Ergänzung 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: drei Stellen, an denen der
+   Ist-Code die Vorgabe präzisiert hat.** (a) DER `title` BLEIBT. «Statt des zusammengeklebten
+   `title`» hätte ihn gestrichen — er ist aber die einzige Auskunft auf Touch (dort gibt es keine
+   Karte) UND die Bedingung, unter der der R8-Sweep eine per Ellipse gekappte Stelle nicht als Fund
+   zählt (`gekapptMitTitle` in `e2e/helpers/abschnittMessung.ts`). GEBAUT ist darum: der `title`
+   steht, und nur solange der Zeiger auf DIESEM Reiter ist, weicht er (sonst legte Chromium ~400 ms
+   nach der Karte noch seinen einzeiligen Tooltip darüber). (b) FOKUS NUR SICHTBAR. «bei Fokus»
+   allein öffnete die Karte auch beim ANTIPPEN — GEMESSEN (Playwright `hasTouch`, @390): der Tap
+   fokussiert den Link, die Karte stand als Fleck. Der Fokus-Weg hängt darum an `:focus-visible`,
+   der Unterscheidung, die der Browser ohnehin trifft. (c) VOLLTITEL. Bei einem Erlass ist der
+   Verlaufstitel selbst schon das Kürzel («OR»); die Karte zeigt darum zusätzlich den
+   ausgeschriebenen Manifest-Titel (`ReiterKarteTeile.langtitel`) — der `title`-Einzeiler rührt ihn
+   nicht an und bleibt Zeichen für Zeichen derselbe (bewacht: `src/tests/reiter-karte.test.ts`).
+   GEMESSEN nach dem Bau: Karte im DOM 606 · 605 · 604 ms nach `pointerenter` (Vorgabe 600 ms, der
+   Vorlauf beim Betreten der Leiste kostet also nichts); eigener Chunk `ReiterKarte` 1'910 B roh /
+   0.95 KB gzip; Entry 55.9 KB gzip gegen 60.0 KB Budget. Wächter:
+   `e2e/w224-r11-reiterleiste.e2e.ts` «W2·18 Welle 3 Punkt 4» (drei Fälle, darunter Touch).
+5. **Touch-Umordnen — günstige Variante.** Kontextmenü (bestehend, auch per Langdruck erreichbar
+   machen: 500 ms `pointerdown` ohne Bewegung öffnet es) bekommt «Nach links», «Nach rechts», «An den
+   Anfang», «Ans Ende»; damit ist die Reihenfolge auf Touch und per Tastatur änderbar, ohne
+   HTML5-Drag. Test: Menü-Eintrag verschiebt korrekt; Langdruck öffnet das Menü (Playwright
+   `hasTouch`).
+   — **Ergänzung 13.9.2026 (Zeilen darüber unverändert, §2b):** gebaut wie beschrieben, mit zwei
+   Präzisierungen aus dem Bau. (a) Die vier Einträge erscheinen nur, WO sie wirken — am ersten
+   Reiter gibt es kein «Nach links»/«An den Anfang» (§8); Kürzel Alt+⇧+←/→ stehen daneben, weil das
+   Menü der Ort ist, an dem man sie lernt (R13-7). (b) Der Langdruck gilt nur für Finger und Stift
+   (`pointerType !== 'mouse'`): unter der gedrückten MAUSTASTE nähme ein aufgehendes Menü dem Ziehen
+   den Anfang, und die Maus hat den Rechtsklick. Der `click`, der dem Loslassen folgt, wird
+   unterdrückt — sonst navigierte der Langdruck zusätzlich (Chromium schickt ihn nach `pointerup`).
+   GEMESSEN: Menü im DOM 516 · 505 · 507 ms nach `pointerdown` (Vorgabe 500 ms), Bewegungstoleranz
+   10 px. Wächter: `e2e/w224-reiter-umordnen-d16.e2e.ts` «W2·18 Welle 3 Punkt 5» (drei Fälle,
+   darunter `hasTouch`).
+6. **`data-`-Anker für Kopf- und Kern-Span** (`data-reiter-teil="kopf|kern|nummer"`), damit Sonden
+   nicht an Tailwind-Deckeln hängen; bestehende Sonden auf die Anker umstellen (rein mechanisch, §6.3
+   deklariert, Verhalten identisch).
+   — **Ergänzung 13.9.2026 (Zeilen darüber unverändert, §2b):** gebaut wie beschrieben. Umgestellt
+   sind drei Sonden — zwei in `e2e/w224-r13-reiter.e2e.ts` (hingen an
+   `span[class*="max-w-[9rem]"]`) und eine in `src/tests/reiter-beschriftung.test.tsx` (pinnte den
+   Markup-Schnipsel der Nummer). Neuer Wächter: `e2e/w224-r13-reiter.e2e.ts` «W2·18 Welle 3
+   Punkt 6» — Entscheid (Kopf + Kern), Rechner in zweiter Instanz (Kern + Nummer), Gesetz (nur
+   Kern, KEIN leerer Kopf-Anker).
 
 ## §5 — `QS-CODE-PROP` · Eigenschafts-Tests (property-based) für die Rechen-Engines
 

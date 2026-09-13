@@ -3,7 +3,7 @@ import {
   labelAusMeta,
   type VerlaufManifeste,
 } from './verlaufLabel';
-import { reiterKategorie, artikelLabelVonPfad } from './tabGruppen';
+import { reiterKategorie, artikelLabelVonPfad, KAT_META } from './tabGruppen';
 import { metaFuerPfad } from './seo';
 
 // ─── Offene In-App-Reiter (Tab-Streifen, Auftrag David) ─────────────────────
@@ -403,34 +403,81 @@ export function reiterKurzformText(t: TabEintrag, m: VerlaufManifeste): string {
  *  bleibt der Teil weg. Kein Platzhalter, keine Schätzung. Ein Entscheid mit
  *  `datumUnbekannt` (Quelle ohne Entscheiddatum) bekommt darum kein Datum.
  */
-export function reiterTitel(t: TabEintrag, m: VerlaufManifeste): string {
-  const voll = verlaufLabel(t.path, m);
-  const teile: (string | null)[] = [voll];
+export interface ReiterKarteTeile {
+  /** Volltitel, wie ihn der Verlauf führt («Obergericht AG HOR.2024.19 vom …»). */
+  volltitel: string;
+  /** Der AUSGESCHRIEBENE Erlasstitel aus dem Manifest («Bundesgesetz betreffend
+   *  die Ergänzung des Schweizerischen Zivilgesetzbuches …»), sonst `null`.
+   *  Nur die Karte zeigt ihn: bei einem Gesetz ist `volltitel` das Kürzel
+   *  («OR»), und genau dieses Kürzel will die Karte auflösen. Der Einzeiler
+   *  (`reiterTitel`) rührt ihn NICHT an — er bliebe sonst nicht derselbe. */
+  langtitel: string | null;
+  /** Kurzform, wie sie im Reiter steht — die Karte sagt, wofür sie steht. */
+  kurzform: string;
+  /** Sammel-Label der Art («Gesetze», «Rechtsprechung», …) plus Piktogramm. */
+  kategorie: { label: string; pikto: string };
+  /** Konsolidierungsstand eines Erlasses, `TT.MM.JJJJ`; sonst `null`. */
+  stand: string | null;
+  /** Entscheiddatum, `TT.MM.JJJJ` — nur, wenn die Zitierung es nicht schon trägt. */
+  datum: string | null;
+  /** Kurzbeschreibung aus dem Katalog (SSoT §5). */
+  beschreibung: string | null;
+  /** Lesestellung («Art. 336c»), nur bei Gesetzen. */
+  gelesen: string | null;
+}
+
+/** ── W2·18 Welle 3 Punkt 4 · DIESELBE AUSKUNFT, EINMAL ZERLEGT ─────────────
+ *
+ *  `reiterTitel` (unten) klebt seit R8 aus denselben Feldern EINEN Satz mit
+ *  «—»-Fugen; die Hover-Karte will sie einzeln, mit Beschriftung. Zwei
+ *  Ableitungen wären zwei Wahrheiten (§5): darum wohnt die Herleitung HIER,
+ *  und der Einzeiler setzt sich daraus zusammen — Zeichen für Zeichen wie
+ *  vorher (bewacht von `src/tests/reiter-karte.test.ts`).
+ *
+ *  AUS DER QUELLE, SONST GAR NICHT (§7): Stand und Urteilsdatum kommen aus den
+ *  Manifesten, die Kurzbeschreibung aus dem Katalog. Fehlt ein Feld — oder ist
+ *  das Manifest noch nicht geladen —, bleibt es `null`. Kein Platzhalter. */
+export function reiterKarteTeile(t: TabEintrag, m: VerlaufManifeste): ReiterKarteTeile {
+  const volltitel = verlaufLabel(t.path, m);
 
   const erlass = erlassVonPfad(t.path, m);
   const roh = erlass?.stand ?? null;
   const iso = roh ? /^(\d{4})-(\d{2})-(\d{2})/.exec(roh) : null;
-  if (roh) teile.push(`Stand ${iso ? `${iso[3]}.${iso[2]}.${iso[1]}` : roh}`);
+  const stand = roh ? (iso ? `${iso[3]}.${iso[2]}.${iso[1]}` : roh) : null;
 
   const ent = entscheidPfad(t.path);
+  let datum: string | null = null;
   if (ent) {
     const e = m.entscheide?.entscheide.find((x) => x.key === ent.key);
     const d = e && !e.datumUnbekannt ? /^(\d{4})-(\d{2})-(\d{2})/.exec(e.datum) : null;
     // Nur, wenn die Zitierung das Datum nicht ohnehin schon trägt («… vom …»).
-    if (d && !/\svom\s\d/.test(voll)) teile.push(`vom ${d[3]}.${d[2]}.${d[1]}`);
+    if (d && !/\svom\s\d/.test(volltitel)) datum = `${d[3]}.${d[2]}.${d[1]}`;
   }
 
-  const beschreibung = metaFuerPfad(pfadTeil(t.path))?.karte?.description ?? null;
-  if (beschreibung) teile.push(beschreibung);
+  return {
+    volltitel,
+    langtitel: erlass?.titel && erlass.titel !== volltitel ? erlass.titel : null,
+    kurzform: reiterKurzformText(t, m),
+    kategorie: KAT_META[reiterKategorie(t.path)],
+    stand,
+    datum,
+    beschreibung: metaFuerPfad(pfadTeil(t.path))?.karte?.description ?? null,
+    // Die LESESTELLUNG. Seit D27 steht sie AUCH in der Beschriftung; hier
+    // bleibt sie, weil Tooltip und Karte die einzigen Stellen sind, die sie
+    // AUSSPRECHEN («gelesen bis Art. 336c») statt sie nur zu nennen.
+    gelesen: reiterKategorie(t.path) === 'gesetze' ? artikelLabelVonPfad(t.path) : null,
+  };
+}
 
-  // Die LESESTELLUNG. Seit D27 steht sie AUCH in der Beschriftung; hier bleibt
-  // sie, weil der Tooltip die einzige Stelle ist, die sie ausspricht («gelesen
-  // bis Art. 336c») statt sie nur zu nennen — und weil Kurzform und Tooltip aus
-  // DERSELBEN Quelle kommen müssen (§5), sonst driften sie auseinander.
-  const gelesen = reiterKategorie(t.path) === 'gesetze' ? artikelLabelVonPfad(t.path) : null;
-  if (gelesen) teile.push(`gelesen bis ${gelesen}`);
-
-  return teile.filter(Boolean).join(' — ');
+export function reiterTitel(t: TabEintrag, m: VerlaufManifeste): string {
+  const k = reiterKarteTeile(t, m);
+  return [
+    k.volltitel,
+    k.stand ? `Stand ${k.stand}` : null,
+    k.datum ? `vom ${k.datum}` : null,
+    k.beschreibung,
+    k.gelesen ? `gelesen bis ${k.gelesen}` : null,
+  ].filter(Boolean).join(' — ');
 }
 
 const KEY = 'lexmetrik-tabs';

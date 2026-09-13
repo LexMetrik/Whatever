@@ -205,3 +205,198 @@ test.describe('D16 · Reiter lassen sich über ALLE Arten hinweg umordnen', () =
       .toEqual([schluessel(G1), schluessel(R1), schluessel(E1)])
   })
 })
+
+// ═══ W2·18 WELLE 3 PUNKT 2 · UMORDNEN ÜBER DIE FENSTERGRENZE HINAUS ═════════
+//
+// SPEC-KORREKTUR VORWEG (Fahrplan §4.R3 Punkt 2, datiert 13.9.2026): der
+// Fahrplan verlangte «beim Ziehen an den Rand scrollt der Streifen automatisch
+// (~8 px je Frame)». GEMESSEN auf DIESEM Stand (gebautes dist/, Chromium,
+// 15 Reiter, aktiv Nr. 12): der Streifen SCROLLT NIE —
+//   @1024  scrollWidth 859 == clientWidth 859, Fenster 4/8/15
+//   @1440  scrollWidth 1275 == clientWidth 1275, Fenster 0/12/15
+//   @390   scrollWidth 241 == clientWidth 241, Fenster 11/1/15
+// Seit R13-2 ist der Überlauf kein Scrollen mehr, sondern ein FENSTER: was
+// nicht nebeneinander passt, steht im «+N»-Blatt. Ein Auto-Scroll wäre damit
+// eine Mechanik, die nicht feuern kann (§6.7, §17-Gegengewicht).
+// GEBAUT ist darum das, was an dieser Stelle dieselbe Aufgabe löst: am Rand
+// SCHIEBT der gezogene Reiter sich selbst durch die Speicherordnung, einen
+// Platz je Takt — er wandert also über die Fenstergrenze hinaus, und das
+// Fenster folgt ihm (R13-3). Ohne Bewegung, ohne Animation; `reduced motion`
+// hat hier nichts zu beruhigen.
+test.describe('W2·18 Welle 3 Punkt 2 — der gezogene Reiter kommt über die Fenstergrenze', () => {
+  const FUENFZEHN = ['/gesetze/bund/OR', '/gesetze/bund/ZGB', '/gesetze/bund/ZPO',
+    '/gesetze/bund/STGB', '/gesetze/bund/SCHKG', '/gesetze/bund/BV', '/gesetze/bund/DSG',
+    '/gesetze/bund/ARG', '/gesetze/bund/URG', '/gesetze/bund/STPO', '/gesetze/bund/BGG',
+    '/gesetze/bund/VWVG', '/gesetze/bund/IPRG', '/gesetze/bund/KKG', '/gesetze/bund/KVG']
+
+  /** Ziehen beginnen und am linken bzw. rechten Rand des Streifens STEHEN
+   *  BLEIBEN — kein Drop. Der Takt läuft danach von selbst weiter, genau wie
+   *  beim ruhenden Zeiger im Browser. */
+  async function haltAmRand(page: Page, von: string, links: boolean): Promise<void> {
+    await page.evaluate(([vonK, l]) => {
+      const s = document.querySelector<HTMLElement>('[data-reiter-streifen]')!
+      const q = document.querySelector<HTMLElement>(
+        `[data-reiter-streifen] [data-reiter-schluessel="${vonK}"]`)!
+      const r = s.getBoundingClientRect()
+      const x = Math.round(l ? r.left + 4 : r.right - 4)
+      const y = Math.round(r.top + r.height / 2)
+      const dt = new DataTransfer()
+      const feuer = (ziel: HTMLElement, typ: string) => ziel.dispatchEvent(
+        new DragEvent(typ, { bubbles: true, cancelable: true, dataTransfer: dt, clientX: x, clientY: y }))
+      feuer(q, 'dragstart')
+      feuer(s, 'dragover')
+    }, [schluessel(von), links] as [string, boolean])
+  }
+
+  test('@1024: Reiter 12 wandert am linken Rand bis auf Platz 1', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 800 })
+    await setzeReiter(page, FUENFZEHN)
+    await page.goto(FUENFZEHN[11])
+    await expect(page.locator(`[data-reiter-schluessel="${FUENFZEHN[11]}"][data-reiter-aktiv="true"]`))
+      .toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(1200)
+    // Ausgangslage: Reiter 12 steht NICHT am Anfang, und der erste Reiter ist
+    // gar nicht im Bild — genau die Fenstergrenze, um die es geht.
+    expect((await gespeicherteOrdnung(page)).indexOf(FUENFZEHN[11])).toBe(11)
+    expect(await sichtbareOrdnung(page)).not.toContain(FUENFZEHN[0])
+
+    await haltAmRand(page, FUENFZEHN[11], true)
+    await expect.poll(async () => (await gespeicherteOrdnung(page)).indexOf(FUENFZEHN[11]),
+      { timeout: 15_000, message: 'der gezogene Reiter muss bis auf Platz 1 wandern' }).toBe(0)
+
+    // Die übrigen vierzehn behalten ihre Reihenfolge — geschoben wird EINER.
+    const rest = (await gespeicherteOrdnung(page)).slice(1)
+    expect(rest).toEqual(FUENFZEHN.filter((p) => p !== FUENFZEHN[11]))
+  })
+
+  test('@1024: am rechten Rand wandert er ans Ende — und der Takt hält am Anschlag', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 800 })
+    await setzeReiter(page, FUENFZEHN)
+    await page.goto(FUENFZEHN[11])
+    await expect(page.locator(`[data-reiter-schluessel="${FUENFZEHN[11]}"][data-reiter-aktiv="true"]`))
+      .toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(1200)
+
+    await haltAmRand(page, FUENFZEHN[11], false)
+    await expect.poll(async () => (await gespeicherteOrdnung(page)).indexOf(FUENFZEHN[11]),
+      { timeout: 15_000, message: 'der gezogene Reiter muss ans Ende wandern' }).toBe(14)
+    // Am Anschlag steht der Takt still statt zu rotieren (kein Umlauf — der
+    // Reiter fiele sonst unbemerkt ans andere Ende, dieselbe Regel wie bei
+    // Alt+Shift+←/→ oben).
+    await page.waitForTimeout(1500)
+    expect((await gespeicherteOrdnung(page)).indexOf(FUENFZEHN[11])).toBe(14)
+  })
+
+  // ── ABLEGEN AUF DEM «+N»-KNOPF ────────────────────────────────────────────
+  // Der Knopf ist der sichtbare Ort des Restes; ihn als Ablage zu nehmen, ist
+  // der kurze Weg für «diesen Reiter brauche ich jetzt nicht im Bild».
+  test('@1024: Ablegen auf «+N» hängt den Reiter ans Ende der Ordnung', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 800 })
+    await setzeReiter(page, FUENFZEHN)
+    await page.goto(FUENFZEHN[11])
+    await expect(page.locator(`[data-reiter-schluessel="${FUENFZEHN[11]}"][data-reiter-aktiv="true"]`))
+      .toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(1200)
+
+    await page.evaluate((vonK) => {
+      const q = document.querySelector<HTMLElement>(
+        `[data-reiter-streifen] [data-reiter-schluessel="${vonK}"]`)!
+      const knopf = [...document.querySelectorAll<HTMLElement>('nav[aria-label="Offene Reiter"] button')]
+        .find((b) => /Alle \d+ offenen Reiter/.test(b.getAttribute('aria-label') ?? ''))!
+      const r = knopf.getBoundingClientRect()
+      const dt = new DataTransfer()
+      const feuer = (ziel: HTMLElement, typ: string) => ziel.dispatchEvent(new DragEvent(typ, {
+        bubbles: true, cancelable: true, dataTransfer: dt,
+        clientX: Math.round(r.left + r.width / 2), clientY: Math.round(r.top + r.height / 2),
+      }))
+      feuer(q, 'dragstart'); feuer(knopf, 'dragenter'); feuer(knopf, 'dragover')
+      feuer(knopf, 'drop'); feuer(q, 'dragend')
+    }, schluessel(FUENFZEHN[11]))
+    await page.waitForTimeout(250)
+
+    const ordnung = await gespeicherteOrdnung(page)
+    expect(ordnung[ordnung.length - 1], 'der abgelegte Reiter steht zuhinterst').toBe(FUENFZEHN[11])
+    expect(ordnung.length, 'abgelegt heisst umgeordnet, nicht geschlossen').toBe(15)
+  })
+})
+
+// ═══ W2·18 WELLE 3 PUNKT 5 · UMORDNEN OHNE MAUS ═════════════════════════════
+//
+// GEMESSEN am Vorstand (13.9.2026): das Umordnen der Leiste hing an HTML5-Drag
+// (Zeiger) und an Alt+⇧+←/→ (Tastatur mit Alt-Taste). Auf einem Tablet gab es
+// KEINEN Weg — HTML5-Drag kennt der Finger nicht, und das Kontextmenü war nur
+// per Rechtsklick erreichbar. Die günstige Variante (Fahrplan §4.R3 Punkt 5):
+// dasselbe Menü, ergänzt um vier Verschiebe-Einträge, und ein Langdruck (500 ms
+// ohne Bewegung) als zweiter Weg dorthin.
+test.describe('W2·18 Welle 3 Punkt 5 — Reihenfolge ändern ohne Maus', () => {
+  const MENUE = '[role=menu]'
+
+  test('das Menü verschiebt: nach links, nach rechts, an den Anfang, ans Ende', async ({ page }) => {
+    const tabs = [G1, E1, R1]
+    await setzeReiter(page, tabs)
+    const k = tabs.map(schluessel)
+
+    const menueAuf = async (pfad: string) => {
+      await page.locator(`[data-reiter-streifen] [data-reiter-schluessel="${schluessel(pfad)}"]`)
+        .click({ button: 'right' })
+      await expect(page.locator(MENUE)).toBeVisible()
+    }
+
+    // «Ans Ende» am ERSTEN Reiter.
+    await menueAuf(G1)
+    await page.locator('[data-reiter-menue="ende"]').click()
+    await expect.poll(() => gespeicherteOrdnung(page)).toEqual([k[1], k[2], k[0]])
+
+    // «An den Anfang» bringt ihn zurück.
+    await menueAuf(G1)
+    await page.locator('[data-reiter-menue="anfang"]').click()
+    await expect.poll(() => gespeicherteOrdnung(page)).toEqual([k[0], k[1], k[2]])
+
+    // «Nach rechts» ist EIN Platz, nicht ans Ende.
+    await menueAuf(G1)
+    await page.locator('[data-reiter-menue="rechts-um"]').click()
+    await expect.poll(() => gespeicherteOrdnung(page)).toEqual([k[1], k[0], k[2]])
+
+    // «Nach links» bringt ihn wieder vor.
+    await menueAuf(G1)
+    await page.locator('[data-reiter-menue="links-um"]').click()
+    await expect.poll(() => gespeicherteOrdnung(page)).toEqual([k[0], k[1], k[2]])
+  })
+
+  test('am Rand fehlen die Einträge, die nichts täten', async ({ page }) => {
+    await setzeReiter(page, [G1, E1, R1])
+    await page.locator(`[data-reiter-streifen] [data-reiter-schluessel="${schluessel(G1)}"]`)
+      .click({ button: 'right' })
+    await expect(page.locator(MENUE)).toBeVisible()
+    // Der ERSTE Reiter kann nicht nach links und nicht an den Anfang — ein
+    // Eintrag, der nichts tut, ist eine Zusage, die nicht gilt (§8).
+    await expect(page.locator('[data-reiter-menue="links-um"]')).toHaveCount(0)
+    await expect(page.locator('[data-reiter-menue="anfang"]')).toHaveCount(0)
+    await expect(page.locator('[data-reiter-menue="rechts-um"]')).toHaveCount(1)
+    await expect(page.locator('[data-reiter-menue="ende"]')).toHaveCount(1)
+  })
+
+  test('Langdruck öffnet dasselbe Menü — und öffnet dabei keinen Reiter', async ({ browser }) => {
+    const ctx = await browser.newContext({ hasTouch: true, isMobile: true, viewport: { width: 390, height: 844 } })
+    const seite = await ctx.newPage()
+    await seite.goto(START)
+    await seite.evaluate(([a, b, c]) => localStorage.setItem('lexmetrik-tabs',
+      JSON.stringify([a, b, c].map((path) => ({ path })))), [G1, E1, R1] as [string, string, string])
+    await seite.goto(R1)
+    await expect(seite.locator('[data-reiter-streifen] [data-reiter-schluessel]').first())
+      .toBeVisible({ timeout: 20_000 })
+    await seite.waitForTimeout(1200)
+    const vorherUrl = seite.url()
+
+    const reiter = seite.locator(`[data-reiter-streifen] [data-reiter-schluessel="${schluessel(R1)}"]`)
+    // Ein Finger, der liegen bleibt: `pointerdown` mit `pointerType: touch`,
+    // 500 ms ohne Bewegung. Playwrights `tap()` kann nur tippen.
+    await reiter.dispatchEvent('pointerdown', { pointerType: 'touch', bubbles: true, clientX: 60, clientY: 40 })
+    await expect(seite.locator(MENUE)).toBeVisible({ timeout: 5_000 })
+    await reiter.dispatchEvent('pointerup', { pointerType: 'touch', bubbles: true })
+
+    // Der Langdruck darf nicht ZUSÄTZLICH als Tippen zählen und navigieren.
+    expect(seite.url(), 'der Langdruck hat navigiert').toBe(vorherUrl)
+    await ctx.close()
+  })
+})
