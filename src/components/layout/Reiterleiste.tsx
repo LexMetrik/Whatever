@@ -17,6 +17,7 @@ import { reiterKategorie } from '../../lib/tabGruppen';
 import { Reiter } from './reiterleiste/Reiter';
 import { ReiterBlatt } from './reiterleiste/ReiterBlatt';
 import { useReiterFenster } from './reiterleiste/useReiterFenster';
+import { istBuchstabenTaste, zifferTaste } from './reiterleiste/tasten';
 import { useDialogFokus } from './useDialogFokus';
 import { useKopieren } from '../useKopieren';
 import { usePaneSteuerung } from './usePaneLayout';
@@ -239,6 +240,15 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // kann, wäre eine Zusage, die nicht gilt (§8). §5a Ziff. 7 sieht genau diesen
   // Rückfall vor. Kein Eingriff, solange der Fokus in einem Eingabefeld steht.
   //
+  // ── W2·18 Punkt 1 · WELCHE TASTE, NICHT WELCHES ZEICHEN ───────────────────
+  // Hier stand `e.key === 't' / 'w' / /^[1-9]$/`. macOS legt auf Option+Taste
+  // ein Sonderzeichen («†», «∑», «¡»): am Mac war damit KEIN einziges dieser
+  // Kürzel erreichbar, während Linux/CI grün blieb. Gelesen wird jetzt die
+  // physische Taste (`reiterleiste/tasten`, dort die Herleitung); `e.key`
+  // bleibt als zweiter Weg für fremde Belegungen. Die Kürzel, die Pfeile,
+  // Bild↑/↓ und Tab betrifft das nicht — die tragen unter Option denselben
+  // `key`.
+
   // ── D15 · UMORDNEN OHNE MAUS: Alt+Shift+←/→ ───────────────────────────────
   // Ziehen ist eine Zeigergeste; sie allein zu bauen hiesse, das Umordnen für
   // Tastatur und Screenreader gar nicht anzubieten (WCAG 2.1.1). Alt+Shift ist
@@ -291,7 +301,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // Browser-Idiom (dort Ctrl/⌘+Shift+T); Ctrl/⌘ fängt der Browser selbst
       // ab und stellt SEINEN Tab wieder her — dieselbe Lage wie bei Alt+W und
       // Alt+T, darum dieselbe Antwort: Alt statt Ctrl/⌘.
-      if (e.shiftKey && e.key.toLowerCase() === 't') {
+      if (e.shiftKey && istBuchstabenTaste(e, 't')) {
         e.preventDefault();
         stelleWiederHer();
         return;
@@ -301,15 +311,15 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // Browser-Norm (Chrome, Firefox, Safari): die 9 springt ans ENDE. Vorher
       // war sie schlicht der neunte — bei 15 Reitern war #10 und alles dahinter
       // per Tastatur unerreichbar (GEMESSEN 7.9.2026).
-      if (/^[1-9]$/.test(e.key)) {
-        const n = Number(e.key);
+      const n = zifferTaste(e);
+      if (n !== null) {
         const ziel = n === 9 ? ordnung[ordnung.length - 1] : ordnung[n - 1];
         if (!ziel) return;
         e.preventDefault();
         navigate(ziel.path);
         return;
       }
-      if (e.key.toLowerCase() === 'w') {
+      if (istBuchstabenTaste(e, 'w')) {
         const aktiv = ordnung.find((t) => tabSchluessel(t.path) === aktivSchluessel);
         if (!aktiv) return;
         e.preventDefault();
@@ -320,7 +330,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // Ctrl/⌘+T wäre die Browser-Erwartung, aber der Browser fängt sie selbst
       // ab und öffnet sein EIGENES Fenster (dieselbe Lage wie beim Schliessen,
       // Alt+W statt Ctrl/⌘+W oben) — eine Zusage, die man nicht bekommen kann.
-      if (e.key.toLowerCase() === 't') {
+      if (istBuchstabenTaste(e, 't')) {
         e.preventDefault();
         neuerReiter();
       }
