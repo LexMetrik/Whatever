@@ -15,6 +15,10 @@ import {
   // und trug darum den Volltitel, wo die Leiste die Kurzform zeigte. Jetzt
   // stehen sie in `lib/tabs` und beide Flächen lesen dieselbe Quelle.
   reiterKurzformText,
+  // W2·18 Welle 3 Punkt 2 · der Rand-Schub liest die Ordnung bei JEDEM Takt
+  // frisch aus der einen Quelle — ein Intervall-Rückruf sähe sonst für immer
+  // die Ordnung des Renders, in dem er entstanden ist (§5).
+  ladeTabs,
 } from '../../lib/tabs';
 import { verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { manifestBedarf } from '../../lib/tabGruppen';
@@ -22,6 +26,8 @@ import { Reiter } from './reiterleiste/Reiter';
 import { ReiterBlatt } from './reiterleiste/ReiterBlatt';
 import { useReiterFenster } from './reiterleiste/useReiterFenster';
 import { istBuchstabenTaste, zifferTaste } from './reiterleiste/tasten';
+import { randSeite, schubZiel, SCHUB_MS } from './reiterleiste/randschub';
+import { REITER_MIME } from './reiterleiste/ueberlauf';
 import { BLATT_ZU, type BlattZustand } from './reiterleiste/blatt';
 import { useDialogFokus } from './useDialogFokus';
 import { useKopieren } from '../useKopieren';
@@ -93,7 +99,10 @@ import type { ReiterMenueEintrag } from './ReiterMenue';
 /** Der MIME-Typ des Reiter-Zugs wohnt seit R13 bei der Überlauf-Rechnung
  *  (`reiterleiste/ueberlauf`) — hier steht nur noch die Durchreiche, damit
  *  `Shell.tsx` seinen bisherigen Import behält (§5: eine Quelle). */
-export { REITER_MIME } from './reiterleiste/ueberlauf';
+// Seit W2·18 Welle 3 Punkt 2 wird die Konstante hier auch SELBST gebraucht
+// (Ablage am «+N»-Knopf) — darum importiert und weitergereicht statt nur
+// durchgereicht; der Re-Export für die Panes bleibt wortgleich (§5).
+export { REITER_MIME };
 
 export function Reiterleiste({ paneSchluessel = [] }: {
   /** Reiter-Schlüssel der offenen Panes in Fenster-Ordnung (0 = links/Haupt).
@@ -146,6 +155,41 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   /** Wo die Einfügemarke steht: an welchem Reiter, und auf welcher Seite.
    *  Die Seite kommt aus dem Zeiger-X über der Ziel-Hälfte (D15). */
   const [ueber, setUeber] = useState<{ path: string; davor: boolean } | null>(null);
+  // ── W2·18 WELLE 3 PUNKT 2 · DER RAND-SCHUB ───────────────────────────────
+  // Was hier NICHT steht, ist Auto-Scroll: der Streifen scrollt GEMESSEN nie
+  // (Herleitung und Messreihe in `reiterleiste/randschub.ts`). Am Rand schiebt
+  // sich der gezogene Reiter stattdessen selbst durch die Speicherordnung,
+  // einen Platz je Takt — so kommt er über die Fenstergrenze hinaus.
+  const schub = useRef<{ seite: 'links' | 'rechts'; takt: number } | null>(null);
+  /** Schwebt gerade ein Reiter über dem «+N»-Knopf? (Ablage, s. dort.) */
+  const [ueberAblage, setUeberAblage] = useState(false);
+  const stoppSchub = () => {
+    if (!schub.current) return;
+    window.clearInterval(schub.current.takt);
+    schub.current = null;
+  };
+  const schubTakt = (links: boolean) => {
+    const von = gezogen.current;
+    if (!von) { stoppSchub(); return; }
+    // FRISCH aus `lib/tabs`, nicht aus der Render-Ordnung: dieser Rückruf lebt
+    // über viele Schübe hinweg und sähe sonst immer die erste Ordnung.
+    const pfade = ladeTabs().map((t) => tabSchluessel(t.path));
+    const ziel = schubZiel(pfade, tabSchluessel(von), links);
+    // `null` = Anschlag. Der Takt läuft weiter (der Zeiger steht ja noch am
+    // Rand), tut aber nichts — kein Umlauf ans andere Ende.
+    if (ziel) ordneTabsUm(von, ziel.ziel, ziel.davor);
+  };
+  const beiRandZug = (ev: { clientX: number; currentTarget: HTMLElement }) => {
+    if (!gezogen.current) return;
+    const seite = randSeite(ev.clientX, ev.currentTarget.getBoundingClientRect());
+    if (!seite) { stoppSchub(); return; }
+    if (schub.current?.seite === seite) return;
+    stoppSchub();
+    const links = seite === 'links';
+    schub.current = { seite, takt: window.setInterval(() => schubTakt(links), SCHUB_MS) };
+  };
+  // Ein Intervall, das einen Zug überlebt, ordnete später ohne Zutun um.
+  useEffect(() => stoppSchub, []);
 
   // Reader-Labels (Gesetz/Entscheid) aus den ohnehin lazy ladbaren Manifesten —
   // Muster und Bedingung wörtlich aus der abgelösten `ReiterUebersicht`.
@@ -828,6 +872,13 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           // nicht am einzelnen Reiter: welcher der Nachbar ist, weiss nur die
           // Leiste (§3) — und ein Zuhörer statt N spart N−1 Verdrahtungen.
           onKeyDown={onStreifenTaste}
+          // W2·18 Welle 3 Punkt 2: der Schub hört AM STREIFEN zu, nicht am
+          // einzelnen Reiter — die Randzone gehört dem Streifen, und während
+          // des Schubs wechselt der Reiter unter dem Zeiger ohnehin.
+          onDragOver={beiRandZug}
+          onDrop={stoppSchub}
+          onDragEnd={stoppSchub}
+          onDragLeave={(ev) => { if (ev.target === ev.currentTarget) stoppSchub(); }}
           // R13-5 · Rechtsklick NUR auf der freien Fläche (dieselbe Bedingung
           // wie beim Doppelklick daneben): über einem Reiter gilt dessen
           // eigenes Menü, über allem anderen bleibt das Browser-Menü.
@@ -890,12 +941,41 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             (`invisible` + `aria-hidden` + `disabled` + `tabIndex={-1}`) — was
             R2 wollte («kein Knopf über dem Nichts»), ohne dass die Geometrie
             der Leiste davon abhängt. */}
+        {/* ── W2·18 WELLE 3 PUNKT 2 · DER KNOPF IST AUCH EINE ABLAGE ────────
+            «+N» ist der sichtbare Ort des Restes. Wer einen Reiter darauf
+            fallen lässt, meint «den brauche ich jetzt nicht im Bild» — also
+            ans ENDE der Ordnung, womit er als erster ins Blatt rutscht.
+            Umgeordnet, nicht geschlossen: der Reiter bleibt offen, nur nicht
+            mehr vorn (ein Drop, der etwas wegwirft, wäre eine destruktive
+            Geste ohne Rückfrage, A3-1).
+            Der Rahmen zeigt die Ablage an, solange etwas darüber schwebt —
+            ohne diese Rückmeldung wäre es eine Funktion, die man nur findet,
+            wenn man sie schon kennt (D15). */}
         <button ref={triggerRef} type="button"
           aria-haspopup="dialog" aria-expanded={blattOffen}
           aria-label={`Alle ${tabs.length} offenen Reiter`}
           title="Alle offenen Reiter"
           onClick={() => setBlatt((z) => (z.offen ? BLATT_ZU : { offen: true, suche: '' }))}
-          className="shrink-0 self-center ml-2 w-[4.5rem] overflow-hidden whitespace-nowrap border border-rule-soft px-1 py-1 text-center text-body-s text-ink-600 hover:text-ink-900">
+          onDragOver={(ev) => {
+            if (!gezogen.current) return;
+            ev.preventDefault();
+            stoppSchub();
+            if (!ueberAblage) setUeberAblage(true);
+          }}
+          onDragLeave={() => setUeberAblage(false)}
+          onDrop={(ev) => {
+            ev.preventDefault();
+            setUeberAblage(false);
+            const von = gezogen.current ?? ev.dataTransfer.getData(REITER_MIME);
+            const letzte = ordnung[ordnung.length - 1];
+            if (von && letzte && tabSchluessel(letzte.path) !== tabSchluessel(von)) {
+              ordneTabsUm(von, letzte.path, false);
+            }
+            gezogen.current = null; setZieht(null); setUeber(null);
+          }}
+          data-reiter-ablage={ueberAblage ? 'aktiv' : undefined}
+          className={`shrink-0 self-center ml-2 w-[4.5rem] overflow-hidden whitespace-nowrap border px-1 py-1 text-center text-body-s hover:text-ink-900 ${
+            ueberAblage ? 'border-ink-900 text-ink-900' : 'border-rule-soft text-ink-600'}`}>
           <span className="num">{blattTitel}</span>
         </button>
       </div>

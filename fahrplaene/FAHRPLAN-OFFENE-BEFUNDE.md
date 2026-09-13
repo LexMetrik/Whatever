@@ -406,6 +406,20 @@ Rot-Beweis; Rot-Beweise auf DIESEM Stand fahren, nie übernehmen.
    scrollt der Streifen automatisch (Auto-Scroll, ~8 px je Frame, reduced-motion: sofort); Ablegen auf
    dem «+N»-Knopf hängt den Reiter ans Ende der Ordnung (und damit ins Blatt); im Blatt bleibt das
    Umordnen per ▲▼ (bestehend). Test: 15 Reiter @1024, Reiter 12 per Drag nach vorn ⇒ Position 1.
+   — **Korrektur 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: die Auto-Scroll-Prämisse ist
+   durch Messung widerlegt.** GEMESSEN vor dem Bau (gebautes dist/, Chromium, 15 Reiter, aktiv
+   Nr. 12): der Streifen scrollt NIE — @1024 `scrollWidth 859 == clientWidth 859` (Fenster 4/8/15),
+   @1440 `1275 == 1275` (0/12/15), @390 `241 == 241` (11/1/15). Seit R13-2 ist der Überlauf kein
+   Scrollbalken mehr, sondern ein FENSTER über die Speicherordnung; was nicht nebeneinander passt,
+   steht im «+N»-Blatt. Ein Auto-Scroll («~8 px je Frame») wäre damit eine Mechanik, die nicht
+   feuern kann (§6.7, §17-Gegengewicht) — und die `reduced-motion`-Zusage hätte nichts zu beruhigen.
+   GEBAUT ist darum dasselbe Ziel mit dem Mittel, das diese Leiste wirklich hat: am Rand
+   (`randSeite`, 32-px-Zone) schiebt sich der GEZOGENE Reiter selbst durch die Speicherordnung,
+   einen Platz je 250 ms (`schubZiel`, kein Umlauf an den Enden) — er wandert also über die
+   Fenstergrenze hinaus, und das Fenster folgt ihm (R13-3). NACHGEMESSEN: Reiter 12 → Platz 1 in
+   2'826 ms (11 Schübe), Fenster 4/8/15 → 0/8/15. Ablegen auf «+N» ist wie beschrieben gebaut
+   (umordnen ans Ende, nicht schliessen). Wächter: `e2e/w224-reiter-umordnen-d16.e2e.ts` «W2·18
+   Welle 3 Punkt 2» (drei Fälle) und `src/tests/reiter-randschub.test.ts` (9 Fälle).
 3. **Reiter als Links.** Der Reiter-Knopf wird ein `<a href>` (React-Router `Link`), Screenreader
    melden «Link», Mittelklick/Ctrl-Klick öffnen wie überall in der App (heute Sonderbehandlung in
    `Reiter.tsx`); Tastatur-Ring aus Welle 2 (roving tabindex) bleibt; Drag-Verhalten bleibt (`draggable`

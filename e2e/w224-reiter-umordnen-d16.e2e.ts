@@ -205,3 +205,117 @@ test.describe('D16 · Reiter lassen sich über ALLE Arten hinweg umordnen', () =
       .toEqual([schluessel(G1), schluessel(R1), schluessel(E1)])
   })
 })
+
+// ═══ W2·18 WELLE 3 PUNKT 2 · UMORDNEN ÜBER DIE FENSTERGRENZE HINAUS ═════════
+//
+// SPEC-KORREKTUR VORWEG (Fahrplan §4.R3 Punkt 2, datiert 13.9.2026): der
+// Fahrplan verlangte «beim Ziehen an den Rand scrollt der Streifen automatisch
+// (~8 px je Frame)». GEMESSEN auf DIESEM Stand (gebautes dist/, Chromium,
+// 15 Reiter, aktiv Nr. 12): der Streifen SCROLLT NIE —
+//   @1024  scrollWidth 859 == clientWidth 859, Fenster 4/8/15
+//   @1440  scrollWidth 1275 == clientWidth 1275, Fenster 0/12/15
+//   @390   scrollWidth 241 == clientWidth 241, Fenster 11/1/15
+// Seit R13-2 ist der Überlauf kein Scrollen mehr, sondern ein FENSTER: was
+// nicht nebeneinander passt, steht im «+N»-Blatt. Ein Auto-Scroll wäre damit
+// eine Mechanik, die nicht feuern kann (§6.7, §17-Gegengewicht).
+// GEBAUT ist darum das, was an dieser Stelle dieselbe Aufgabe löst: am Rand
+// SCHIEBT der gezogene Reiter sich selbst durch die Speicherordnung, einen
+// Platz je Takt — er wandert also über die Fenstergrenze hinaus, und das
+// Fenster folgt ihm (R13-3). Ohne Bewegung, ohne Animation; `reduced motion`
+// hat hier nichts zu beruhigen.
+test.describe('W2·18 Welle 3 Punkt 2 — der gezogene Reiter kommt über die Fenstergrenze', () => {
+  const FUENFZEHN = ['/gesetze/bund/OR', '/gesetze/bund/ZGB', '/gesetze/bund/ZPO',
+    '/gesetze/bund/STGB', '/gesetze/bund/SCHKG', '/gesetze/bund/BV', '/gesetze/bund/DSG',
+    '/gesetze/bund/ARG', '/gesetze/bund/URG', '/gesetze/bund/STPO', '/gesetze/bund/BGG',
+    '/gesetze/bund/VWVG', '/gesetze/bund/IPRG', '/gesetze/bund/KKG', '/gesetze/bund/KVG']
+
+  /** Ziehen beginnen und am linken bzw. rechten Rand des Streifens STEHEN
+   *  BLEIBEN — kein Drop. Der Takt läuft danach von selbst weiter, genau wie
+   *  beim ruhenden Zeiger im Browser. */
+  async function haltAmRand(page: Page, von: string, links: boolean): Promise<void> {
+    await page.evaluate(([vonK, l]) => {
+      const s = document.querySelector<HTMLElement>('[data-reiter-streifen]')!
+      const q = document.querySelector<HTMLElement>(
+        `[data-reiter-streifen] [data-reiter-schluessel="${vonK}"]`)!
+      const r = s.getBoundingClientRect()
+      const x = Math.round(l ? r.left + 4 : r.right - 4)
+      const y = Math.round(r.top + r.height / 2)
+      const dt = new DataTransfer()
+      const feuer = (ziel: HTMLElement, typ: string) => ziel.dispatchEvent(
+        new DragEvent(typ, { bubbles: true, cancelable: true, dataTransfer: dt, clientX: x, clientY: y }))
+      feuer(q, 'dragstart')
+      feuer(s, 'dragover')
+    }, [schluessel(von), links] as [string, boolean])
+  }
+
+  test('@1024: Reiter 12 wandert am linken Rand bis auf Platz 1', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 800 })
+    await setzeReiter(page, FUENFZEHN)
+    await page.goto(FUENFZEHN[11])
+    await expect(page.locator(`[data-reiter-schluessel="${FUENFZEHN[11]}"][data-reiter-aktiv="true"]`))
+      .toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(1200)
+    // Ausgangslage: Reiter 12 steht NICHT am Anfang, und der erste Reiter ist
+    // gar nicht im Bild — genau die Fenstergrenze, um die es geht.
+    expect((await gespeicherteOrdnung(page)).indexOf(FUENFZEHN[11])).toBe(11)
+    expect(await sichtbareOrdnung(page)).not.toContain(FUENFZEHN[0])
+
+    await haltAmRand(page, FUENFZEHN[11], true)
+    await expect.poll(async () => (await gespeicherteOrdnung(page)).indexOf(FUENFZEHN[11]),
+      { timeout: 15_000, message: 'der gezogene Reiter muss bis auf Platz 1 wandern' }).toBe(0)
+
+    // Die übrigen vierzehn behalten ihre Reihenfolge — geschoben wird EINER.
+    const rest = (await gespeicherteOrdnung(page)).slice(1)
+    expect(rest).toEqual(FUENFZEHN.filter((p) => p !== FUENFZEHN[11]))
+  })
+
+  test('@1024: am rechten Rand wandert er ans Ende — und der Takt hält am Anschlag', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 800 })
+    await setzeReiter(page, FUENFZEHN)
+    await page.goto(FUENFZEHN[11])
+    await expect(page.locator(`[data-reiter-schluessel="${FUENFZEHN[11]}"][data-reiter-aktiv="true"]`))
+      .toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(1200)
+
+    await haltAmRand(page, FUENFZEHN[11], false)
+    await expect.poll(async () => (await gespeicherteOrdnung(page)).indexOf(FUENFZEHN[11]),
+      { timeout: 15_000, message: 'der gezogene Reiter muss ans Ende wandern' }).toBe(14)
+    // Am Anschlag steht der Takt still statt zu rotieren (kein Umlauf — der
+    // Reiter fiele sonst unbemerkt ans andere Ende, dieselbe Regel wie bei
+    // Alt+Shift+←/→ oben).
+    await page.waitForTimeout(1500)
+    expect((await gespeicherteOrdnung(page)).indexOf(FUENFZEHN[11])).toBe(14)
+  })
+
+  // ── ABLEGEN AUF DEM «+N»-KNOPF ────────────────────────────────────────────
+  // Der Knopf ist der sichtbare Ort des Restes; ihn als Ablage zu nehmen, ist
+  // der kurze Weg für «diesen Reiter brauche ich jetzt nicht im Bild».
+  test('@1024: Ablegen auf «+N» hängt den Reiter ans Ende der Ordnung', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 800 })
+    await setzeReiter(page, FUENFZEHN)
+    await page.goto(FUENFZEHN[11])
+    await expect(page.locator(`[data-reiter-schluessel="${FUENFZEHN[11]}"][data-reiter-aktiv="true"]`))
+      .toBeVisible({ timeout: 20_000 })
+    await page.waitForTimeout(1200)
+
+    await page.evaluate((vonK) => {
+      const q = document.querySelector<HTMLElement>(
+        `[data-reiter-streifen] [data-reiter-schluessel="${vonK}"]`)!
+      const knopf = [...document.querySelectorAll<HTMLElement>('nav[aria-label="Offene Reiter"] button')]
+        .find((b) => /Alle \d+ offenen Reiter/.test(b.getAttribute('aria-label') ?? ''))!
+      const r = knopf.getBoundingClientRect()
+      const dt = new DataTransfer()
+      const feuer = (ziel: HTMLElement, typ: string) => ziel.dispatchEvent(new DragEvent(typ, {
+        bubbles: true, cancelable: true, dataTransfer: dt,
+        clientX: Math.round(r.left + r.width / 2), clientY: Math.round(r.top + r.height / 2),
+      }))
+      feuer(q, 'dragstart'); feuer(knopf, 'dragenter'); feuer(knopf, 'dragover')
+      feuer(knopf, 'drop'); feuer(q, 'dragend')
+    }, schluessel(FUENFZEHN[11]))
+    await page.waitForTimeout(250)
+
+    const ordnung = await gespeicherteOrdnung(page)
+    expect(ordnung[ordnung.length - 1], 'der abgelegte Reiter steht zuhinterst').toBe(FUENFZEHN[11])
+    expect(ordnung.length, 'abgelegt heisst umgeordnet, nicht geschlossen').toBe(15)
+  })
+})

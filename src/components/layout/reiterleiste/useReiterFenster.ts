@@ -129,7 +129,6 @@ export function useReiterFenster(
       let neustart = false;
       // eslint-disable-next-line react-hooks/set-state-in-effect -- s. Herleitung oben
       if (ohneKopf) { setOhneKopf(false); neustart = true; }
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- s. Herleitung oben
       if (anzahl !== gesamt) { setAnzahl(gesamt); neustart = true; }
       if (neustart) return;
     }
