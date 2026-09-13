@@ -574,8 +574,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **B15 · Umschalter, Tabs, Akkordeons (K-06)** — 9 Befunde. §16. · **B16 · Seitengerüst/Inhaltsbreite (K-13)** — 8 Befunde. §17.
   - [ ] **B17 · Schaltflächen (K-09a)** — 8 Befunde. §18. · **B18 · Listen/Suche/Relevanz (K-19b)** — 8 Befunde. §19. · **B19 · Felder Detail (K-08b)** — 7 Befunde. §20.
 
-- [ ] **Davids Alltags-Fehlerfunde** *(`W2·18-FEHLERBUCH`, stehender Sammel-Schritt, Entscheid David 8.8.2026)*
-  <!-- @meta id: W2·18-FEHLERBUCH · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
+- [~] **Davids Alltags-Fehlerfunde** *(`W2·18-FEHLERBUCH`, stehender Sammel-Schritt, Entscheid David 8.8.2026)*
+  <!-- @meta id: W2·18-FEHLERBUCH · status: wip · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
   David sammelt Fehler aus der täglichen Nutzung formlos; Fix-Batch-Sessions arbeiten mehrere
   Positionen sortenrein ab. **Risikopfad-Funde gehören NICHT hierher**, sondern in den passenden
   Risiko-Dach-Schritt. Der Schritt bleibt stehen (nie `done`).
@@ -585,6 +585,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **OR-Leser-e2e-Timeouts app-weit härten · Shard-Laufzeit-Deckel** *(CI 5.9.2026)* — Fahrplan §4.
   - [ ] **rectifies-Wächter blind für Fedlex-Berichtigungen ohne HTML** *(Gegenprüfung #834, 12.9.2026)* — 7 von 25 geprüften `rectifies`-Kanten sind nicht abrufbar, weil Fedlex die Berichtigung nur als doc/pdf-a führt, nicht als HTML; lesbar via `textutil -convert txt` (macOS) bzw. PyMuPDF. Tor um die doc-Manifestation erweitern, damit die Klasse «nicht abrufbar» auf 0 sinkt.
   - [ ] **Bund-Pfad löst «Art. 9 BMV» auf die aufgehobene Fassung auf** *(Gegenprüfung #833, 12.9.2026)* — `src/lib/fedlex/tabelle.ts` löst das Kürzel weiterhin auf die per 1.3.2026 aufgehobene Fassung `cc/2009/423` auf, obwohl `aufhebungen.ts` die Nachfolge kennt. Die in #823 gebaute Fassungs-Reihe (`normKeyFuerAbk` mit Datum) auch im Verweis-Resolver nutzen bzw. auf die geltende Fassung mit Datumskontext auflösen.
+  - [ ] **Reiterleiste: sechs stille Fehler** *(Sichtprüfung + Code-Zweitblick 13.9.2026, Auftrag David «bau 1 bis 6»)* — Alt-Kürzel am Mac (`e.key` statt `e.code`), Render-Kaskade beim Scrollen, Kappungs-Verluste ohne Ring, gestutzte Beschriftungen ab 7 Reitern, Nachbar-Wahl nach Schliessen, stehender Blatt-Filter. Spec: Fahrplan §4.R «Reiterleiste 13.9.2026».
 
 - [ ] **Oberflächen-Qualität app-weit** *(`QS-UI`, reines UI/Design §13, kontinuierlich)*
   <!-- @meta id: QS-UI · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->

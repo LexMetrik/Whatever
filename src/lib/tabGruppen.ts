@@ -3,7 +3,7 @@
 // (ReiterUebersicht/TabPanel, Auftrag David 26.6.2026). Reine, deterministische
 // Funktionen (§2/§3): aus Pfad bzw. aufgelöstem Erlass; kein DOM, kein Register.
 
-import { pfadTeil, erlassVonPfad, type VerlaufManifeste } from './verlaufLabel';
+import { pfadTeil, erlassVonPfad, materialPfad, type VerlaufManifeste } from './verlaufLabel';
 import { routenEbene } from './normtext/erlassAdresse';
 
 export type TabKat = 'gesetze' | 'rechtsprechung' | 'materialien' | 'vorlagen' | 'rechner' | 'sonstiges';
@@ -105,4 +105,27 @@ export function artikelLabelVonPfad(path: string): string | null {
   }
   const tok = roh.replace(/_/g, '');
   return tok ? `Art. ${tok}` : null;
+}
+
+/** Welche der drei Manifeste eine Reiterliste ÜBERHAUPT braucht (W2·18 Punkt 2).
+ *
+ *  Die Arbeitsleiste lädt Gesetzes-, Entscheid- und Material-Manifest nur, wenn
+ *  ein Reiter sie wirklich braucht (§15 — das Material-Register allein wiegt
+ *  1,4 MB). Bis hierher hing der ladende Effekt am ARRAY der Reiter und lief
+ *  darum bei jedem Scroll-Spy-Schritt neu, obwohl sich am Bedarf nichts ändert:
+ *  ein wandernder `#art-…`-Anker macht aus einem Gesetzes-Reiter keinen anderen
+ *  Bedarf. Diese Ableitung ist der stabile Teil — drei Wahrheitswerte, die sich
+ *  nur ändern, wenn ein Reiter einer ANDEREN Art dazukommt oder wegfällt.
+ *
+ *  Materialien hängen an `materialPfad` und nicht an der Kategorie: die
+ *  Übersicht und `/materialien/deckung` sind Material-ROUTEN ohne
+ *  Register-Bedarf (Messung 12.9.2026, Sonde `e2e/deckung-seite`). */
+export function manifestBedarf(tabs: readonly { path: string }[]): {
+  gesetze: boolean; rechtsprechung: boolean; materialien: boolean;
+} {
+  return {
+    gesetze: tabs.some((t) => reiterKategorie(t.path) === 'gesetze'),
+    rechtsprechung: tabs.some((t) => reiterKategorie(t.path) === 'rechtsprechung'),
+    materialien: tabs.some((t) => materialPfad(t.path) !== null),
+  };
 }

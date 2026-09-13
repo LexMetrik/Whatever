@@ -348,8 +348,20 @@ function instanzNr(path: string): number {
   return Number.isFinite(n) && n > 1 ? n : 1;
 }
 
-/** Die drei Teile einer Reiter-Kurzform. `stelle` s. `basisKurzform` (D27). */
-export interface KurzformTeile { kopf: string; kern: string; stelle: string | null }
+/** Die Teile einer Reiter-Kurzform. `stelle` s. `basisKurzform` (D27). */
+export interface KurzformTeile {
+  kopf: string; kern: string; stelle: string | null;
+  /** ── W2·18 Punkt 5 · DIE INSTANZ-NUMMER IST EIN EIGENER TEIL ─────────────
+   *  «(2)», «(3)» … ab der zweiten Instanz; bei der ersten fehlt das Feld.
+   *  Bis W2·18 hing die Nummer HINTEN am Kern («ZPO-Fristen (2)»), und weil
+   *  der Kern der kürzbare Teil ist, fiel sie als erstes weg: GEMESSEN
+   *  13.9.2026 @1024 mit sieben Reitern standen «ZPO-Fristen (2)» und
+   *  «(3)» beide als «ZPO-…» da — zwei Reiter, ein Bild. Als eigener Teil
+   *  kann die Leiste sie ungekürzt setzen. Der Einzeiler (`reiterKurzformText`)
+   *  bleibt Zeichen für Zeichen derselbe: er fügt sie an derselben Stelle
+   *  wieder an. */
+  instanz?: string;
+}
 
 /** Kanonische Kurzform eines Reiters (§5a Ziff. 2), zerlegt in kürzbaren Kopf
  *  und ungekürzten Kern — die Arbeitsleiste braucht die Trennung, die
@@ -363,7 +375,7 @@ export interface KurzformTeile { kopf: string; kern: string; stelle: string | nu
 export function reiterKurzformTeile(t: TabEintrag, m: VerlaufManifeste): KurzformTeile {
   const { kopf, kern, stelle } = basisKurzform(t, m);
   const nr = instanzNr(t.path);
-  return { kopf, kern: nr > 1 ? `${kern} (${nr})` : kern, stelle };
+  return { kopf, kern, stelle, ...(nr > 1 ? { instanz: `(${nr})` } : {}) };
 }
 
 /** Einzeiler für Suchfeld, Accessible Names und Titel. Reihenfolge = die
@@ -371,8 +383,8 @@ export function reiterKurzformTeile(t: TabEintrag, m: VerlaufManifeste): Kurzfor
  *  43a») · Kern (Kürzel/Nummer). Leere Teile fallen weg — der Text ist damit
  *  vor und nach der D27-Trennung derselbe. */
 export function reiterKurzformText(t: TabEintrag, m: VerlaufManifeste): string {
-  const { kopf, kern, stelle } = reiterKurzformTeile(t, m);
-  return [kopf, stelle, kern].filter((x) => !!x).join(' ');
+  const { kopf, kern, stelle, instanz } = reiterKurzformTeile(t, m);
+  return [kopf, stelle, kern, instanz].filter((x) => !!x).join(' ');
 }
 
 /** ── R8 (Prüfbefund R11, 6.9.2026) · WAS DER `title` EINES REITERS SAGT ─────
@@ -472,7 +484,15 @@ export function ladeTabs(): TabEintrag[] {
         gesehen.add(k);
         return true;
       })
-      .slice(0, MAX);
+      // W2·18 Punkt 4 · EINE RICHTUNG: die ÄLTESTEN fallen. Hier stand
+      // `.slice(0, MAX)` — beim Lesen fielen also die JÜNGSTEN 50 weg, während
+      // `merkeTab` beim Schreiben die ältesten kappt. Zwei Richtungen an
+      // derselben Grenze heisst: welche Reiter ein voller Speicher verliert,
+      // hing davon ab, wer ihn zuletzt angefasst hat. Kein Ring-Eintrag an
+      // dieser Stelle — Lesen ist keine Handlung, und `ladeTabs` läuft bei
+      // jedem Ereignis (`useTabs`): ein Schreibzugriff im Lesepfad legte
+      // denselben Eintrag bei jedem Lauf erneut in den Ring.
+      .slice(-MAX);
   } catch {
     return [];
   }
@@ -512,6 +532,18 @@ function eintragAus(path: string, label?: string, alt?: TabEintrag): TabEintrag 
 const gleich = (a: TabEintrag, b: TabEintrag): boolean =>
   a.path === b.path && a.label === b.label && a.wahl === b.wahl;
 
+/** ── W2·18 Punkt 2 · STRUKTURELLE GLEICHHEIT ZWEIER REITERLISTEN ───────────
+ *  `ladeTabs()` baut bei JEDEM Aufruf ein neues Array aus dem `localStorage` —
+ *  identischer Inhalt, neue Identität. Wer daraus React-State macht, rendert
+ *  auch dann neu, wenn sich nichts geändert hat (die gemessene Kaskade beim
+ *  Scrollen, s. `useTabs`). Diese Funktion sagt, ob zwei Listen dasselbe
+ *  BEDEUTEN: gleiche Länge, gleiche Reihenfolge, je Eintrag gleicher Pfad
+ *  (inkl. Anker), gleiches Label, gleiche Wahl — dieselben drei Felder, die
+ *  `gleich` schon für den Einzeleintrag prüft (§5, eine Regel). */
+export function tabsGleich(a: readonly TabEintrag[], b: readonly TabEintrag[]): boolean {
+  return a === b || (a.length === b.length && a.every((x, i) => gleich(x, b[i])));
+}
+
 /** Öffnet/aktualisiert einen Reiter und hängt einen NEUEN hinten an (gekappt auf
  *  die jüngsten MAX). Dublette (per `tabSchluessel`) behält ihre Position
  *  (stabile Reihenfolge) und übernimmt nur ein neu aufgelöstes Label.
@@ -533,7 +565,33 @@ export function merkeTab(path: string, label?: string): void {
     schreibe(naechste);
     return;
   }
-  schreibe([...bisher, eintragAus(path, label)].slice(-MAX));
+  schreibe(kappeMitRing([...bisher, eintragAus(path, label)]));
+}
+
+/** ── W2·18 Punkt 4 · WAS DIE KAPPE FRISST, LIEGT IM RING ───────────────────
+ *  Die Grenze `MAX` selbst bleibt (50 Reiter, Auftrag David). Bis W2·18 fiel
+ *  der gekappte Reiter aber STILL weg: kein Ring-Eintrag, also keine
+ *  Rückfahrkarte — ein geöffnetes Dokument verschwand, ohne dass jemand es
+ *  geschlossen hätte, und Alt+⇧+T brachte es nicht zurück. Gekappt wird
+ *  einheitlich vorne (die ältesten), und genau die gehen in den Ring.
+ *  Reihenfolge wie in `leereTabs`: der vorderste zuerst, damit das
+ *  Wiederherstellen (vom Ende her) Position um Position zurückholt.
+ *
+ *  `geschuetzt` ist der Eintrag, der GERADE hereinkommt: beim Wiederherstellen
+ *  am vollen Speicher darf nicht der eben zurückgeholte Reiter das Opfer der
+ *  Kappe sein — sonst sähe die Geste aus, als hätte sie gar nichts getan.
+ *  Weichen muss dann der älteste ANDERE; er geht seinerseits in den Ring. */
+function kappeMitRing(tabs: TabEintrag[], geschuetzt?: TabEintrag): TabEintrag[] {
+  if (tabs.length <= MAX) return tabs;
+  const bleibt: TabEintrag[] = [];
+  const weg: GeschlossenerReiter[] = [];
+  let zuViel = tabs.length - MAX;
+  tabs.forEach((eintrag, index) => {
+    if (zuViel > 0 && eintrag !== geschuetzt) { weg.push({ eintrag, index }); zuViel -= 1; }
+    else bleibt.push(eintrag);
+  });
+  merkeGeschlossen(weg);
+  return bleibt;
 }
 
 /** ── §5a Ziff. 3 · EINE NAVIGATION ERSETZT DEN AKTIVEN REITER ───────────────
@@ -609,6 +667,25 @@ export function ordneTabsUm(vonPath: string, nachPath: string, davor?: boolean):
   schreibe(naechste);
 }
 
+/** ── W2·18 Punkt 3 · WER NACH DEM SCHLIESSEN AKTIV WIRD ────────────────────
+ *  Browser-Norm (Chrome, Firefox, Safari): der RECHTE Nachbar rückt nach; gibt
+ *  es keinen — der geschlossene Reiter war der letzte —, ist es der linke.
+ *  Bis W2·18 war es umgekehrt (links zuerst). Der Unterschied ist nicht
+ *  kosmetisch: wer eine Reihe von links nach rechts abarbeitet und jeden
+ *  erledigten Reiter schliesst, wurde bei jedem ✕ an den ANFANG zurückgeworfen
+ *  statt einen Schritt weitergetragen.
+ *
+ *  @param ordnung Die Reiter in Speicherreihenfolge.
+ *  @param idx     Stelle des geschlossenen Reiters; `-1`, wenn er nicht in der
+ *                 Liste steht (dann gibt es keinen Nachfolger).
+ *  @returns Der Reiter, der aktiv wird, oder `undefined` — dann war es der
+ *           letzte, und der Aufrufer entscheidet (die Leiste geht zur
+ *           Sammlung, R14). */
+export function nachfolgerReiter(ordnung: readonly TabEintrag[], idx: number): TabEintrag | undefined {
+  if (idx < 0) return undefined;
+  return ordnung[idx + 1] ?? ordnung[idx - 1];
+}
+
 export function schliesseTab(path: string): void {
   const teil = tabSchluessel(path);
   const bisher = ladeTabs();
@@ -674,7 +751,16 @@ export function schliesseRechtsVon(path: string): void {
 // aufgenommen werden Formularinhalte, und nie ein Zeitstempel (§2: kein
 // Date.now() in src/lib) — die Reihenfolge im Array IST die Reihenfolge.
 const ZU_KEY = 'lexmetrik-tabs-zu';
-const ZU_MAX = 10;
+// ── W2·18 Punkt 4 · DIE RÜCKFAHRKARTE MUSS EINE GANZE LEISTE TRAGEN ────────
+// Hier stand 10. `leereTabs` («Alle schliessen») legt ALLE offenen Reiter in
+// den Ring — mit 10 als Kappe war die Geste ab dem elften Reiter nur noch zu
+// zehn Zehnteln umkehrbar, und was darüber lag, fiel still weg. Die Kappe ist
+// darum die der Reiterliste selbst: mehr als `MAX` Reiter kann niemand
+// schliessen, also trägt ein Ring dieser Grösse jede Schliess-Geste
+// vollständig. An der BERUFSGEHEIMNIS-Grenze ändert das nichts Qualitatives
+// (oben): dieselben Felder, dieselbe Herkunft, dieselbe Lebensdauer, und nie
+// mehr Einträge, als die Reiterliste daneben ohnehin führen darf.
+const ZU_MAX = MAX;
 
 /** Ein geschlossener Reiter mit der Position, an der er stand. Die Position ist
  *  der ganze Unterschied zu einem Verlauf: wiederhergestellt wird DORT, wo der
@@ -736,7 +822,10 @@ export function stelleLetztenWiederHer(): TabEintrag | null {
   if (bisher.some((t) => tabSchluessel(t.path) === teil)) return letzter.eintrag;
   const naechste = [...bisher];
   naechste.splice(Math.min(letzter.index, naechste.length), 0, letzter.eintrag);
-  schreibe(naechste.slice(0, MAX));
+  // W2·18 Punkt 4: dieselbe Richtung und derselbe Ring wie beim Öffnen — hier
+  // stand `.slice(0, MAX)` und warf am vollen Speicher den JÜNGSTEN Reiter weg,
+  // um den wiederhergestellten aufzunehmen.
+  schreibe(kappeMitRing(naechste, letzter.eintrag));
   return letzter.eintrag;
 }
 

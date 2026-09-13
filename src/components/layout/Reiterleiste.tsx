@@ -5,6 +5,7 @@ import {
   schliesseTab, leereTabs, ordneTabsUm, tabSchluessel, type TabEintrag,
   schliesseAndere, schliesseRechtsVon,
   stelleLetztenWiederHer, letzterGeschlossener, naechsteInstanz, merkeTab,
+  nachfolgerReiter,
   // ── R3 (Prüfbefund R11, 6.9.2026) · EINE KURZFORM, EIN TITEL (§5) ────────
   // Beide Ableitungen wohnten bis hierher IN dieser Datei — das Überlauf-Blatt
   // (`TabPanel`) baute daneben seine eigene Beschriftung aus `verlaufLabel`
@@ -12,11 +13,13 @@ import {
   // stehen sie in `lib/tabs` und beide Flächen lesen dieselbe Quelle.
   reiterKurzformText,
 } from '../../lib/tabs';
-import { verlaufLabel, materialPfad, type VerlaufManifeste } from '../../lib/verlaufLabel';
-import { reiterKategorie } from '../../lib/tabGruppen';
+import { verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
+import { manifestBedarf } from '../../lib/tabGruppen';
 import { Reiter } from './reiterleiste/Reiter';
 import { ReiterBlatt } from './reiterleiste/ReiterBlatt';
 import { useReiterFenster } from './reiterleiste/useReiterFenster';
+import { istBuchstabenTaste, zifferTaste } from './reiterleiste/tasten';
+import { BLATT_ZU, type BlattZustand } from './reiterleiste/blatt';
 import { useDialogFokus } from './useDialogFokus';
 import { useKopieren } from '../useKopieren';
 import { usePaneSteuerung } from './usePaneLayout';
@@ -66,9 +69,17 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const navigate = useNavigate();
   const { oeffneDaneben, kannOeffnen, istOffen, schliessePane } = usePaneSteuerung();
   const [manifeste, setManifeste] = useState<VerlaufManifeste>({});
-  const [blattOffen, setBlattOffen] = useState(false);
+  // ── W2·18 Punkt 6 · EIN ZUSTAND FÜR BLATT UND FILTER ─────────────────────
+  // Hier standen ZWEI Zustände: `blattOffen` und daneben `suche`. Das Blatt
+  // ging zu (acht Wege: ✕, Esc, Klick daneben, Navigation, «daneben öffnen»,
+  // «Neuer Reiter», «Wieder öffnen», «Alle schliessen»), der Filter blieb
+  // stehen — beim nächsten Öffnen «fehlten» Reiter, ohne dass man sähe, warum.
+  // Zwei Zustände heisst: jeder Schliess-Weg muss an den zweiten DENKEN. Einer
+  // heisst: zu ist zu, und zu ist immer ohne Filter (`BLATT_ZU`).
+  const [blatt, setBlatt] = useState<BlattZustand>(BLATT_ZU);
+  const { offen: blattOffen, suche } = blatt;
+  const schliesseBlatt = () => setBlatt(BLATT_ZU);
   const { kopieren } = useKopieren();
-  const [suche, setSuche] = useState('');
   const triggerRef = useRef<HTMLButtonElement>(null);
   const blattRef = useRef<HTMLDivElement>(null);
   const leisteRef = useRef<HTMLDivElement>(null);
@@ -97,16 +108,20 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // `/materialien/register.json` wird NUR geladen, wenn wirklich ein
   // Material-Reiter offen ist — kein dritter Download in der Kopfzone auf
   // Vorrat (§15; `check:perf-budget` misst es).
+  //
+  // ── W2·18 Punkt 2 · DER EFFEKT HÄNGT AM BEDARF, NICHT AN DER LISTE ────────
+  // Die `brauchtX`-Ableitung stand IM Effekt, und der Effekt hing an `[tabs]`.
+  // Weil `useTabs` bei jedem Ereignis ein neues Array lieferte, lief er
+  // dauernd — und legte bei jedem Lauf ein NEUES `manifeste`-Objekt ab, also
+  // einen zweiten Render obendrauf und neue Prop-Identität für jeden Reiter.
+  // GEMESSEN 13.9.2026 (20 Rad-Schritte auf /gesetze/bund/OR): 11 Läufe.
+  // Der Bedarf selbst ändert sich dabei nie: ein wandernder `#art-…`-Anker
+  // macht aus einem Gesetzes-Reiter keinen anderen Bedarf. Die Ableitung wohnt
+  // darum jetzt in `lib/tabGruppen.manifestBedarf` (§3, dort auch die
+  // §15-Herleitung der Material-Regel), und die Abhängigkeit sind die drei
+  // Wahrheitswerte — stabile Primitive statt einer Array-Identität.
+  const { gesetze: brauchtG, rechtsprechung: brauchtE, materialien: brauchtM } = manifestBedarf(tabs);
   useEffect(() => {
-    const brauchtG = tabs.some((t) => reiterKategorie(t.path) === 'gesetze');
-    const brauchtE = tabs.some((t) => reiterKategorie(t.path) === 'rechtsprechung');
-    // §15-Nachzug (12.9.2026): die Eintrittskarte allein an der KATEGORIE zog
-    // das 1,4-MB-Register auch für Materialien-Routen, die es nie brauchen —
-    // die Übersicht (die es ohnehin selbst lädt) und seit heute
-    // /materialien/deckung. Gebraucht wird es genau für DETAIL-Reiter, und das
-    // sagt `materialPfad` — dieselbe Funktion, die die Aufschrift auflöst.
-    // Rot-Beweis: Sonde e2e/deckung-seite (a) sah vorher genau diesen Abruf.
-    const brauchtM = tabs.some((t) => materialPfad(t.path) !== null);
     if (!brauchtG && !brauchtE && !brauchtM) return;
     let lebt = true;
     void (async () => {
@@ -122,7 +137,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       }));
     })();
     return () => { lebt = false; };
-  }, [tabs]);
+  }, [brauchtG, brauchtE, brauchtM]);
 
   const aktivSchluessel = tabSchluessel(pathname + search);
 
@@ -185,8 +200,10 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     schliessePane(path);
     const teil = tabSchluessel(path);
     if (aktivSchluessel === teil) {
+      // W2·18 Punkt 3: WELCHER Nachbar nachrückt, rechnet `lib/tabs`
+      // (Browser-Norm: rechts, ersatzweise links) — hier steht nur die Folge.
       const idx = ordnung.findIndex((t) => tabSchluessel(t.path) === teil);
-      const nachbar = ordnung[idx - 1] ?? ordnung[idx + 1];
+      const nachbar = nachfolgerReiter(ordnung, idx);
       schliesseTab(path);
       if (nachbar) navigate(nachbar.path); else zurSammlung();
     } else schliesseTab(path);
@@ -239,6 +256,15 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // kann, wäre eine Zusage, die nicht gilt (§8). §5a Ziff. 7 sieht genau diesen
   // Rückfall vor. Kein Eingriff, solange der Fokus in einem Eingabefeld steht.
   //
+  // ── W2·18 Punkt 1 · WELCHE TASTE, NICHT WELCHES ZEICHEN ───────────────────
+  // Hier stand `e.key === 't' / 'w' / /^[1-9]$/`. macOS legt auf Option+Taste
+  // ein Sonderzeichen («†», «∑», «¡»): am Mac war damit KEIN einziges dieser
+  // Kürzel erreichbar, während Linux/CI grün blieb. Gelesen wird jetzt die
+  // physische Taste (`reiterleiste/tasten`, dort die Herleitung); `e.key`
+  // bleibt als zweiter Weg für fremde Belegungen. Die Kürzel, die Pfeile,
+  // Bild↑/↓ und Tab betrifft das nicht — die tragen unter Option denselben
+  // `key`.
+
   // ── D15 · UMORDNEN OHNE MAUS: Alt+Shift+←/→ ───────────────────────────────
   // Ziehen ist eine Zeigergeste; sie allein zu bauen hiesse, das Umordnen für
   // Tastatur und Screenreader gar nicht anzubieten (WCAG 2.1.1). Alt+Shift ist
@@ -291,7 +317,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // Browser-Idiom (dort Ctrl/⌘+Shift+T); Ctrl/⌘ fängt der Browser selbst
       // ab und stellt SEINEN Tab wieder her — dieselbe Lage wie bei Alt+W und
       // Alt+T, darum dieselbe Antwort: Alt statt Ctrl/⌘.
-      if (e.shiftKey && e.key.toLowerCase() === 't') {
+      if (e.shiftKey && istBuchstabenTaste(e, 't')) {
         e.preventDefault();
         stelleWiederHer();
         return;
@@ -301,15 +327,15 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // Browser-Norm (Chrome, Firefox, Safari): die 9 springt ans ENDE. Vorher
       // war sie schlicht der neunte — bei 15 Reitern war #10 und alles dahinter
       // per Tastatur unerreichbar (GEMESSEN 7.9.2026).
-      if (/^[1-9]$/.test(e.key)) {
-        const n = Number(e.key);
+      const n = zifferTaste(e);
+      if (n !== null) {
         const ziel = n === 9 ? ordnung[ordnung.length - 1] : ordnung[n - 1];
         if (!ziel) return;
         e.preventDefault();
         navigate(ziel.path);
         return;
       }
-      if (e.key.toLowerCase() === 'w') {
+      if (istBuchstabenTaste(e, 'w')) {
         const aktiv = ordnung.find((t) => tabSchluessel(t.path) === aktivSchluessel);
         if (!aktiv) return;
         e.preventDefault();
@@ -320,7 +346,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // Ctrl/⌘+T wäre die Browser-Erwartung, aber der Browser fängt sie selbst
       // ab und öffnet sein EIGENES Fenster (dieselbe Lage wie beim Schliessen,
       // Alt+W statt Ctrl/⌘+W oben) — eine Zusage, die man nicht bekommen kann.
-      if (e.key.toLowerCase() === 't') {
+      if (istBuchstabenTaste(e, 't')) {
         e.preventDefault();
         neuerReiter();
       }
@@ -387,12 +413,12 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     const zu = (e: MouseEvent) => {
       const ziel = e.target as Node;
       if (triggerRef.current?.contains(ziel) || blattRef.current?.contains(ziel)) return;
-      setBlattOffen(false);
+      schliesseBlatt();
     };
     document.addEventListener('mousedown', zu);
     return () => document.removeEventListener('mousedown', zu);
   }, [blattOffen]);
-  useDialogFokus(blattOffen, blattRef, () => setBlattOffen(false));
+  useDialogFokus(blattOffen, blattRef, schliesseBlatt);
 
   // ── R10-BEFUND (Nullprobe 6.9.2026) · DIE HÖHE STEHT VOR DEN REITERN ──────
   //
@@ -686,7 +712,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           aria-haspopup="dialog" aria-expanded={blattOffen}
           aria-label={`Alle ${tabs.length} offenen Reiter`}
           title="Alle offenen Reiter"
-          onClick={() => setBlattOffen((v) => !v)}
+          onClick={() => setBlatt((z) => (z.offen ? BLATT_ZU : { offen: true, suche: '' }))}
           className="shrink-0 self-center ml-2 w-[4.5rem] overflow-hidden whitespace-nowrap border border-rule-soft px-1 py-1 text-center text-body-s text-ink-600 hover:text-ink-900">
           <span className="num">{blattTitel}</span>
         </button>
@@ -716,15 +742,16 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       {blattOffen && (
         <ReiterBlatt
           blattRef={blattRef} tabs={tabs} gefiltert={gefiltert} manifeste={manifeste}
-          aktivSchluessel={aktivSchluessel} suche={suche} onSuche={setSuche}
-          onNavigate={(p) => { navigate(p); setBlattOffen(false); }}
+          aktivSchluessel={aktivSchluessel} suche={suche}
+          onSuche={(neu) => setBlatt((z) => ({ ...z, suche: neu }))}
+          onNavigate={(p) => { navigate(p); schliesseBlatt(); }}
           onSchliessen={schliessen}
-          onDaneben={kannOeffnen ? (p) => { oeffneDaneben(p); setBlattOffen(false); } : undefined}
+          onDaneben={kannOeffnen ? (p) => { oeffneDaneben(p); schliesseBlatt(); } : undefined}
           paneOffen={istOffen}
-          onNeu={() => { neuerReiter(); setBlattOffen(false); }}
-          onWieder={() => { stelleWiederHer(); setBlattOffen(false); }}
-          onAlle={() => { alleSchliessen(); setBlattOffen(false); }}
-          onZu={() => setBlattOffen(false)} />
+          onNeu={() => { neuerReiter(); schliesseBlatt(); }}
+          onWieder={() => { stelleWiederHer(); schliesseBlatt(); }}
+          onAlle={() => { alleSchliessen(); schliesseBlatt(); }}
+          onZu={schliesseBlatt} />
       )}
     </nav>
   );

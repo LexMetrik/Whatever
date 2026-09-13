@@ -492,4 +492,34 @@ test.describe('R3/R4 — das Überlauf-Blatt', () => {
     expect(titel.length, 'Vorbedingung: das Blatt zeigt Zeilen').toBeGreaterThan(0)
     for (const t of titel) expect(t, `Zeile ohne title (${titel.join(' | ')})`).toMatch(/\S/)
   })
+  // ── W2·18 Punkt 6 (13.9.2026) · DER FILTER ÜBERLEBT DAS SCHLIESSEN NICHT ──
+  //
+  // GEMESSEN am Vorstand `6f7eb49c0` (Chromium, Dev-Server @390): «zpo» ins
+  // Suchfeld, Blatt zu, Blatt wieder auf — das Feld trug weiter «zpo», die
+  // Liste zeigte eine von drei Zeilen, und im Bild stand kein Grund dafür.
+  // Ursache war die FORM: «offen?» und «Filter» lagen als zwei Zustände
+  // nebeneinander, und das Blatt hat acht Schliess-Wege. Seit W2·18 ist es
+  // EIN Zustand (`reiterleiste/blatt.BLATT_ZU`), zu heisst ohne Filter.
+  //
+  // ROT ZU BEKOMMEN (§6.7, so gefahren): in `Reiterleiste.tsx` Blatt und
+  // Filter wieder trennen (`useState(false)` + `useState('')`, Schliessen nur
+  // `setBlattOffen(false)`).
+  test('W2·18 — der Filter ist beim nächsten Öffnen leer', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await seed(page, [OR, RECHNER, VORLAGE])
+    const auf = () => page.locator(`${REITER} button[aria-label*="offenen Reiter"]`).click()
+    await auf()
+    const blatt = page.getByRole('dialog', { name: 'Alle geöffneten Reiter' })
+    await expect(blatt.locator('li button:not([aria-label])').first()).toBeVisible({ timeout: 15_000 })
+    const feld = blatt.getByRole('searchbox')
+    await feld.fill('zpo')
+    // Vorbedingung: der Filter wirkt überhaupt.
+    await expect(blatt.locator('li')).toHaveCount(1)
+    await page.keyboard.press('Escape')
+    await expect(blatt).toHaveCount(0)
+    await auf()
+    const wieder = page.getByRole('dialog', { name: 'Alle geöffneten Reiter' })
+    await expect(wieder.getByRole('searchbox')).toHaveValue('')
+    await expect(wieder.locator('li')).toHaveCount(3)
+  })
 })
