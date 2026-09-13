@@ -25,7 +25,13 @@ import {
   // W2·25 · Anheften: die Mechanik wohnt ganz in `lib/tabs` (§3) — hier stehen
   // nur die beiden Menüzeilen und die Frage, ob ein Zug angenommen würde.
   hefteAn, loeseAb, festeZone, zugErlaubt,
+  // W2·25 Teil 2 · die Übernahme einer Mappe rechnet `lib/tabs` (welche Reiter
+  // bleiben, was in den Ring geht) — hier stehen nur Menü, Rückfrage und Ziel.
+  uebernehmeMappe,
 } from '../../lib/tabs';
+import {
+  ladeMappen, speichereMappe, loescheMappe, mappenAdresse, type Mappe,
+} from '../../lib/mappen';
 import { verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
 import { manifestBedarf } from '../../lib/tabGruppen';
 import { Reiter } from './reiterleiste/Reiter';
@@ -94,6 +100,21 @@ let karteVorlauf: Promise<typeof import('./reiterleiste/ReiterKarte')> | null = 
 const ladeKarte = (): Promise<typeof import('./reiterleiste/ReiterKarte')> =>
   (karteVorlauf ??= import('./reiterleiste/ReiterKarte'));
 
+// ── W2·25 · DER MAPPEN-DIALOG KOMMT DENSELBEN WEG (§15) ────────────────────
+// Dieselbe Bauart wie Menü und Karte darüber, aus demselben Grund: die Fläche
+// gehört nicht in den Start-Chunk (`check:perf-budget`, Entry-Deckel 60 KB
+// gzip), und `lazy`/`Suspense` käme einen React-Nachlauf zu spät. Angefordert
+// wird sie beim Betreten der Leiste — zwischen Ankunft und Rechtsklick liegen
+// beim Menschen Hunderte von Millisekunden.
+// LOGIKVERLUST-BEWERTUNG (§15): keiner — dieselbe Komponente, dieselben
+// Aktionen, nur später geladen. Die Mappen-MECHANIK (`lib/mappen`, wenige
+// hundert Byte reiner Zeichenketten-Arbeit) bleibt im Entry: das Kontextmenü
+// muss die Namen der gespeicherten Mappen kennen, BEVOR es sich öffnet.
+let mappenVorlauf: Promise<typeof import('./reiterleiste/MappenDialog')> | null = null;
+const ladeMappenDialog = (): Promise<typeof import('./reiterleiste/MappenDialog')> =>
+  (mappenVorlauf ??= import('./reiterleiste/MappenDialog'));
+import type { MappenAbsicht } from './reiterleiste/MappenDialog';
+
 // ─── Arbeitsleiste: die offenen Reiter, sichtbar (W2·24 §5a, Wunsch David) ───
 //
 // «analog zum browser die offenen tabs oben anstatt mit dem drei linien drop
@@ -159,6 +180,15 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const [KarteFlaeche, setKarteFlaeche] =
     useState<typeof import('./reiterleiste/ReiterKarte')['ReiterKarte'] | null>(null);
   const holeKarte = () => { void ladeKarte().then((m) => setKarteFlaeche(() => m.ReiterKarte)); };
+  /** W2·25 Teil 2 — welcher Mappen-Dialog offen ist (`null` = keiner). */
+  const [mappenAbsicht, setMappenAbsicht] = useState<MappenAbsicht | null>(null);
+  const [MappenFlaeche, setMappenFlaeche] =
+    useState<typeof import('./reiterleiste/MappenDialog')['MappenDialog'] | null>(null);
+  const holeMappen = () => { void ladeMappenDialog().then((m) => setMappenFlaeche(() => m.MappenDialog)); };
+  /** Einen Mappen-Dialog öffnen — und dabei IMMER auch seinen Chunk anstossen
+   *  (dieselbe Vorsicht wie bei `oeffneMenue`: ein Zeiger, der beim Laden schon
+   *  über der Leiste ruht, löst kein `pointerenter` aus). */
+  const oeffneMappen = (a: MappenAbsicht) => { holeMappen(); setMappenAbsicht(a); };
   /** Ein Menü öffnen — und dabei IMMER auch seinen Chunk anstossen. Der
    *  Vorlauf am `nav` (Zeiger/Fokus) deckt den Alltag ab, aber nicht jeden
    *  Fall: ein Zeiger, der beim Laden schon über der Leiste RUHT, löst kein
@@ -842,7 +872,63 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     // W2·25: dieselbe Bedingung wie im Reiter-Menü — angeheftete Reiter
     // schliesst die Geste nicht, also zählt nur der freie Bestand.
     if (tabs.some((t) => !t.fest)) e.push({ id: 'alle', label: 'Alle schliessen', onKlick: alleSchliessen });
+    for (const m of mappenEintraege()) e.push(m);
     return e;
+  };
+
+  // ── W2·25 TEIL 2 · DIE ARBEITSMAPPE IM MENÜ (Spec §7, §5a Ziff. 9) ────────
+  //
+  // WARUM AM LEERRAUM UND AM «+N»-BLATT und nicht am einzelnen Reiter: eine
+  // Mappe ist die GANZE Leiste, kein einzelnes Dokument. Der Leerraum daneben
+  // ist die Fläche, die für «alles hier» steht — dieselbe Stelle, an der schon
+  // «Alle schliessen» und «Neuer Reiter» stehen (R13-5).
+  //
+  // JEDE MAPPE EINE EIGENE ZEILE statt eines Untermenüs «Mappe öffnen ▸»: ein
+  // Untermenü wäre ein zweites Menü-Muster in einer App, die genau eines hat
+  // (`ReiterMenue` = flache Liste mit Zustandswort) — und bei höchstens zwölf
+  // Mappen (`MAPPEN_MAX`) trägt die Liste sie. Der Wortlaut «Mappe öffnen: X»
+  // folgt der Zeile, die daneben schon steht («Wieder öffnen: ZGB», Ä118).
+  // Gezeigt werden die ersten fünf; alles Weitere führt «Mappen verwalten…»,
+  // das ohnehin für Löschen und Adresse gebraucht wird.
+  const MAPPEN_IM_MENUE = 5;
+  const mappenEintraege = (): ReiterMenueEintrag[] => {
+    const mappen = ladeMappen();
+    const e: ReiterMenueEintrag[] = [];
+    // Ohne offenen Reiter gäbe es nichts zu speichern (§8).
+    if (tabs.length > 0) {
+      e.push({ id: 'mappe-speichern', label: 'Als Mappe speichern…',
+        onKlick: () => oeffneMappen({ art: 'speichern' }) });
+    }
+    for (const m of mappen.slice(0, MAPPEN_IM_MENUE)) {
+      e.push({ id: `mappe-auf:${m.name}`, label: `Mappe öffnen: ${m.name}`,
+        rechts: String(m.reiter.length),
+        onKlick: () => oeffneMappen({ art: 'oeffnen', name: m.name }) });
+    }
+    if (mappen.length > 0) {
+      e.push({ id: 'mappe-verwalten', label: 'Mappen verwalten…',
+        rechts: mappen.length > MAPPEN_IM_MENUE ? String(mappen.length) : undefined,
+        onKlick: () => oeffneMappen({ art: 'verwalten' }) });
+    }
+    // Die Adresse der GERADE offenen Leiste — dieselbe Kopier-Mechanik wie bei
+    // «Adresse kopieren» am Reiter (R4-D: `useKopieren` quittiert erst nach
+    // erfolgreichem Schreiben), und derselbe Vorbehalt: der Eintrag erscheint
+    // nur, wo die Zwischenablage überhaupt zu haben ist.
+    if (tabs.length > 0 && typeof navigator !== 'undefined' && navigator.clipboard) {
+      e.push({ id: 'mappe-adresse', label: 'Adresse der Mappe kopieren',
+        onKlick: () => kopieren(mappenAdresse(tabs)) });
+    }
+    return e;
+  };
+
+  /** Eine Mappe übernehmen und dorthin gehen, wo sie zeigt. Beides gehört
+   *  zusammen: wer eine Mappe öffnet, will ihren ersten Reiter sehen, nicht
+   *  bloss eine neue Leiste über dem alten Dokument. */
+  const oeffneMappe = (m: Mappe) => {
+    for (const x of ordnung) if (!x.fest) schliessePane(x.path);
+    const neu = uebernehmeMappe(m.reiter);
+    setMappenAbsicht(null);
+    const ziel = neu.find((t) => m.reiter.some((r) => tabSchluessel(r.path) === tabSchluessel(t.path)));
+    if (ziel) navigate(ziel.path);
   };
 
   /** ── R14b (Nachzug 7.9.2026) · DEN 0-REITER-ZUSTAND GIBT ES NICHT MEHR ────
@@ -1047,6 +1133,15 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           aria-label={`Alle ${tabs.length} offenen Reiter`}
           title="Alle offenen Reiter"
           onClick={() => setBlatt((z) => (z.offen ? BLATT_ZU : { offen: true, suche: '' }))}
+          // ── W2·25 Teil 2 · DAS ZWEITE TOR ZUR MAPPE ──────────────────────
+          // Derselbe Leerraum-Menüsatz wie beim Rechtsklick neben die Reiter —
+          // aber erreichbar, wenn KEIN Leerraum da ist: @390 und bei vollem
+          // Streifen ist dieser Knopf die einzige freie Fläche der Leiste. Die
+          // Einträge sind dieselben (§5, eine Quelle: `leerraumEintraege`).
+          onContextMenu={(ev) => {
+            ev.preventDefault();
+            oeffneMenue({ path: null, x: ev.clientX, y: ev.clientY });
+          }}
           onDragOver={(ev) => {
             const von = gezogen.current;
             if (!von) return;
@@ -1109,6 +1204,19 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             onSchliessen={() => setKarte(null)} />
         );
       })()}
+
+      {/* W2·25 Teil 2 · der Mappen-Dialog. Ein Zustand für alle drei Absichten
+          (speichern · öffnen · verwalten), dieselbe Bauart wie Menü und Karte:
+          die Fläche kommt aus einem eigenen Chunk und wird erst gezeigt, wenn
+          sie da ist — kein Platzhalter unter dem Zeiger. */}
+      {mappenAbsicht && MappenFlaeche && (
+        <MappenFlaeche absicht={mappenAbsicht} offeneReiter={tabs}
+          onSpeichern={(name) => { speichereMappe(name, tabs); setMappenAbsicht(null); }}
+          onOeffnen={oeffneMappe}
+          onLoeschen={(name) => { loescheMappe(name); setMappenAbsicht({ art: 'verwalten' }); }}
+          onAdresse={(reiter) => kopieren(mappenAdresse(reiter))}
+          onSchliessen={() => setMappenAbsicht(null)} />
+      )}
 
       {blattOffen && (
         <ReiterBlatt

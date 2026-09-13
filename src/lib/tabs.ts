@@ -910,6 +910,50 @@ export function leereTabs(): void {
   schreibe(bisher.filter((t) => t.fest));
 }
 
+/** ── W2·25 TEIL 2 · EINE MAPPE ÜBERNEHMEN (Spec §7, §5a Ziff. 9) ───────────
+ *
+ *  «Öffnen ersetzt die offenen Reiter nach sichtbarer Rückfrage, feste Reiter
+ *  bleiben.» Die RÜCKFRAGE ist Sache der Oberfläche; hier steht, was danach
+ *  geschieht — und zwar an EINER Stelle, weil dieselbe Übernahme aus zwei
+ *  Richtungen kommt (Dialog und geteilte Adresse, §5).
+ *
+ *  DREI ZUSAGEN:
+ *   1. Angeheftete Reiter bleiben, mit ihrem Platz vorn. Wer OR und ZGB
+ *      festgehalten hat, verliert sie nicht, weil er eine Mappe öffnet — das
+ *      ist derselbe Satz wie bei «Alle schliessen».
+ *   2. Die verdrängten FREIEN Reiter gehen in den Schliess-Ring. Öffnen ist
+ *      die grösste Schliess-Geste der App; ohne Rückfahrkarte wäre sie die
+ *      einzige ohne (Alt+⇧+T holt sie Stück für Stück zurück).
+ *   3. Die Ordnung bleibt zonentreu: erst die angehefteten (die offenen zuerst,
+ *      dann die, die die Mappe mitbringt), dann die freien der Mappe.
+ *
+ *  Eine LEERE Mappe übernimmt gar nichts — sie schlösse sonst alles, ohne dass
+ *  danach etwas dastünde (§8: eine Geste, die nur wegnimmt, ist keine).
+ *
+ *  @returns die neue Reiterfolge; der Aufrufer navigiert auf ihren ersten
+ *           Eintrag aus der Mappe (er ist es, den die Mappe zeigen will).
+ */
+export function uebernehmeMappe(mappe: readonly TabEintrag[]): TabEintrag[] {
+  if (mappe.length === 0) return ladeTabs();
+  const bisher = ladeTabs();
+  const offenFest = bisher.filter((t) => t.fest);
+  const schonDa = new Set(offenFest.map((t) => tabSchluessel(t.path)));
+  const ausMappe = mappe.filter((t) => !schonDa.has(tabSchluessel(t.path)));
+  const naechste = [
+    ...offenFest,
+    ...ausMappe.filter((t) => t.fest),
+    ...ausMappe.filter((t) => !t.fest),
+  ];
+  // Was verdrängt wird, ist das, was nachher nicht mehr dasteht — mit seiner
+  // alten Position, damit Alt+⇧+T es dorthin zurücklegt.
+  const bleibt = new Set(naechste.map((t) => tabSchluessel(t.path)));
+  merkeGeschlossen(bisher.map((eintrag, index) => ({ eintrag, index }))
+    .filter(({ eintrag }) => !bleibt.has(tabSchluessel(eintrag.path))));
+  const gekappt = kappeMitRing(naechste);
+  schreibe(gekappt);
+  return gekappt;
+}
+
 /** ── M4 · «ALLE ANDEREN SCHLIESSEN» (Prüfbefund R11 #35) ────────────────────
  *  Reiner Array-Filter, deterministisch (§2), Identität über `tabSchluessel`.
  *  Kein Sonderfall für den leeren «+»-Reiter: er ist ein Reiter wie jeder
