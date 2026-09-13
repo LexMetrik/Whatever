@@ -460,3 +460,56 @@ test.describe('W2·18 Welle 2 Punkt 2 — Alt+Q pendelt (zuletzt benutzt)', () =
     await expect(blatt.getByText('Alt+Q', { exact: true })).toBeVisible()
   })
 })
+
+//   Punkt 6  `src/index.css`: `.rl-reiter { min-width: min-content }` durch die
+//            Zahl VOR Welle 1 ersetzen (`min-width: 5rem`) ⇒ @1024 schrumpft
+//            der Kopf «BGE» auf 10 px, schmaler als das Auslassungszeichen
+//            selbst (12 px) — ein Reiter, dessen Kopf nur noch ein gestutztes
+//            «…» ist (so gefahren 13.9.2026, gebautes dist/).
+test.describe('W2·18 Welle 2 Punkt 6 — kein Reiter-Kopf als blosses «…»', () => {
+  /** Sechs Reiter mit Kopf UND ohne: die Kopf-Zerlegung greift nur bei
+   *  Entscheiden («AppGer BS» + «VD.2021.223»), Gesetze tragen keinen. */
+  const MIT_KOPF = ['/rechtsprechung/ag_gerichte_HOR_2024_19',
+    '/rechtsprechung/bs_appellationsgericht_VD.2021.223',
+    '/rechtsprechung/bs_appellationsgericht_BEZ.2022.42',
+    '/rechtsprechung/bge_146_III_1', '/gesetze/bund/OR', '/gesetze/bund/ZGB']
+
+  for (const [w, h] of [[1440, 900], [1024, 800], [390, 844], [320, 844]] as const) {
+    test(`@${w}: jeder gezeigte Kopf trägt mindestens ein Zeichen`, async ({ page }) => {
+      await page.setViewportSize({ width: w, height: h })
+      await seed(page, MIT_KOPF, MIT_KOPF[0])
+
+      // GEMESSEN WIRD IN DER SEITE, mit derselben Schrift wie der Reiter: ob
+      // noch etwas LESBARES dasteht, hängt an der Glyphenbreite, nicht an
+      // einer Pixelzahl, die wir hier hinschreiben könnten.
+      const koepfe = await page.evaluate(() => {
+        const kan = document.createElement('canvas').getContext('2d')!
+        const raus: { reiter: string; text: string; breite: number; mindest: number }[] = []
+        for (const k of document.querySelectorAll<HTMLElement>('[data-reiter-streifen] [data-reiter-schluessel]')) {
+          // Der Kopf ist der Span mit dem 9-rem-Deckel (`Reiter.tsx`); der
+          // Kern daneben trägt 15 rem und ist nicht gemeint. Ein Reiter ohne
+          // Kopf (Gesetz, Rechner) hat den Span gar nicht.
+          const kopf = k.querySelector<HTMLElement>('button > span[class*="max-w-[9rem]"]')
+          if (!kopf?.textContent) continue
+          const st = getComputedStyle(kopf)
+          kan.font = `${st.fontWeight} ${st.fontSize} ${st.fontFamily}`
+          raus.push({
+            reiter: k.getAttribute('data-reiter-schluessel')!,
+            text: kopf.textContent,
+            breite: Math.round(kopf.getBoundingClientRect().width),
+            // Ein Zeichen plus Auslassung — weniger ist keine Auskunft mehr,
+            // sondern ein Fleck (§8).
+            mindest: Math.round(kan.measureText(`${kopf.textContent[0]}…`).width),
+          })
+        }
+        return raus
+      })
+
+      expect(koepfe.length, 'die Sonde muss überhaupt Köpfe gefunden haben').toBeGreaterThan(0)
+      for (const k of koepfe) {
+        expect(k.breite, `Kopf «${k.text}» an ${k.reiter}: ${k.breite} px, nötig ${k.mindest} px`)
+          .toBeGreaterThanOrEqual(k.mindest)
+      }
+    })
+  }
+})

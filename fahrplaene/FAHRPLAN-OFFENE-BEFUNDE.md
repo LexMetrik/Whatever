@@ -306,6 +306,25 @@ mit Rot-Beweis.
    Entry-Chunk unverändert 54.9 KB gzip (Budget 60.0), der Menü-Chunk bleibt ein eigener (923 B gzip).
 6. **Reiter-Kopf nie als blosses «…».** Der gekürzte Gerichts-/Erlass-Kopf darf weichen (F6), aber
    ein alleinstehendes Auslassungszeichen wird nicht gezeigt — dann ganz ausblenden.
+   — **Korrektur 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: der Befund ist auf diesem
+   Stand nicht mehr reproduzierbar, und sein Verschwinden hat einen Preis, den ein anderer gerade
+   bezahlt.** GEMESSEN (gebautes dist/, Chromium, sechs Reiter, davon vier mit Kopf, bei 1440 · 1024
+   · 390 · 360 · 320 · 300 · 280 · 260 · 240 · 200 px): JEDER gezeigte Kopf steht in voller Breite —
+   «OGer AG» 58/58 px, «AppGer BS» 71/71 px, «BGE» 30/30 px. Die Hülle schrumpft seit Welle 1 gar
+   nicht mehr unter ihren Inhalt (`.rl-reiter { min-width: min-content }`, Commit `6f7eb49c0`):
+   statt zu quetschen, schickt das Fenster die überzähligen Reiter ins «+N»-Blatt. Mit dem BODEN VOR
+   Welle 1 (`min-width: 5rem`) ist der Befund dagegen sofort da — @1024 schrumpft «BGE» auf 10 px,
+   schmaler als das Auslassungszeichen selbst (12 px).
+   ZWEI FOLGEN: (a) eine neue Regel wäre ein Fix ohne gesehenen Fehlschlag (§0.2) — GEBAUT ist
+   darum nur der WÄCHTER `e2e/w224-r13-reiter.e2e.ts` «W2·18 Welle 2 Punkt 6», der über vier
+   Breiten misst, dass jeder gezeigte Kopf mindestens ein Zeichen plus Auslassung trägt (rot
+   gefahren am 5-rem-Boden: «Kopf «BGE» … 8 px, nötig 24 px»). (b) Genau diese `min-content`-Regel
+   ist zugleich die Ursache des R8-Sweep-Befundes (`a-ueberlauf-ohne-scroller`, 18 Funde bei 320/390
+   px), an dem parallel gearbeitet wird: wer den Boden wieder schrumpfbar macht, HOLT DEN
+   KOPF-BEFUND ZURÜCK und wird von diesem Wächter rot gestellt. Das «dann ganz ausblenden» gehört
+   folglich in DIESEN Fix — die Schwelle hängt am neuen Boden und lässt sich vorher nicht wählen.
+   Ein `min-width` am Kopf wäre hier ausdrücklich der falsche Weg: er hebt die `min-content`-Breite
+   des Reiters und verschärft damit den Überlauf, den der andere Fix gerade abstellt.
 7. **Trefferflächen ⧉/✕ gegen WCAG 2.5.8 prüfen.** `komfort={false}` ist begründet (A3-1: das
    Pseudo-Element nähme Nachbarn die Klicks). Prüfen, ob 24×24 CSS-px OHNE Pseudo-Element erreichbar
    ist (Padding innerhalb des Reiters); wenn ja, bauen; wenn nein, Ausnahme mit Abstand-Regel
