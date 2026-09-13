@@ -75,6 +75,36 @@ export function Reiter({
   // R13B: «in diesem Reiter wird gelesen» — nur er kann vom Scroll-Spy eine
   // Lesestellung bekommen und hält darum ihren Platz frei (s. bei `.rl-stelle`).
   const liest = aktiv || paneSchluessel.indexOf(schluessel) >= 0;
+  // ── W2·18 Punkt 5, NACHGEZOGEN (R8-Sweep 13.9.2026) · DER BODEN IST EINE
+  //    ZAHL, WEIL DAS SCHLÜSSELWORT NICHT RECHNEN KANN ─────────────────────
+  // `.rl-reiter { min-width: min-content }` (und ebenso `auto`, GEPRÜFT) lösen
+  // dieselbe Rechnung: die INTRINSISCHE Mindestgrösse eines Flex-Elternteils
+  // zählt bei `white-space: nowrap`-Text (`truncate`) dessen VOLLE, ungekürzte
+  // Breite — ein `min-width`-Boden am Kern (`min-w-[6ch]`) ändert daran
+  // nichts, weil diese Rechnung nicht „wie weit darf schrumpfen", sondern „wie
+  // breit ist der Inhalt ungebrochen" misst (GEMESSEN: Playwright-Sonde gegen
+  // `dist/`, `/vorlagen/nda` @320 — Kern rendert bei 188 px trotz 48-px-Boden).
+  // Setzt man darum `.rl-reiter` stattdessen auf eine EXPLIZITE Zahl (`0`,
+  // ebenfalls GEPRÜFT), verschwindet zwar der Überlauf am STREIFEN — aber die
+  // äussere Schrumpf-Verteilung (`useReiterFenster`, 8 Reiter @390) kennt den
+  // inneren Kern-Boden dann GAR NICHT mehr und drückt einzelne Reiter-Kästen
+  // UNTER 48 px — der Kern hält seinen Boden, sprengt aber lautlos seinen
+  // eigenen Kasten (`scrollWidth 321` gegen `clientWidth 241`, Rot in
+  // `e2e/w224-r13-reiter.e2e.ts` FB und R13-2 @390).
+  // EINE Zahl, die beides trägt, kennt nur DIESER Reiter — sie hängt an
+  // seiner eigenen Zusammensetzung (Stelle reserviert ja/nein — DIESELBE
+  // Bedingung wie unten bei `.rl-stelle`/`.rl-stelle-frei`, R13-4/R13B: nicht
+  // `stelle !== null` allein, sonst reserviert der Boden auch dort, wo gar
+  // nichts rendert wird — R13-4s eigener Befund, ROT gesehen mit `stelle !==
+  // null` allein: 161 px Reiterbreite statt < 120 ohne Lesestellung) — und
+  // wird hier berechnet, nicht in `index.css` geraten. Nur die Reiter OHNE
+  // Kopf brauchen sie: mit Kopf bleibt der Kern `shrink-0` (F6), sein wahrer
+  // Boden ist sein voller, ungebrochene Text — und den kennt nur die
+  // automatische (Schlüsselwort-)Rechnung, die `.rl-reiter` in `index.css`
+  // für genau diesen Fall trägt.
+  const stelleReserviert = stelle !== null && (stelle !== '' || liest);
+  const reiterBoden = kopf ? undefined
+    : `calc(6ch + 1.75rem + 0.875rem${stelleReserviert ? ' + var(--app-reiter-stelle-b) + 0.25rem' : ''})`;
   return (
     <div
       data-reiter-aktiv={aktiv}
@@ -172,7 +202,8 @@ export function Reiter({
         //    und Messreihe: index.css bei `.rl-reiter`).
         className={`group/reiter rl-reiter relative flex cursor-grab items-center border-r border-rule-soft active:cursor-grabbing ${
         zieht === t.path ? 'opacity-40' : ''
-      } ${aktiv ? (reg ? REG_TON[reg] : 'bg-paper-raised') : ''}`}>
+      } ${aktiv ? (reg ? REG_TON[reg] : 'bg-paper-raised') : ''}`}
+        style={reiterBoden ? { minWidth: reiterBoden } : undefined}>
       {/* EINFÜGEMARKE (D15): 2 px in der Registerfarbe des GEZOGENEN Reiters,
           über die volle Reiterhöhe, auf der Seite, auf der er landen wird.
           Sie ersetzt den früheren, immer linken `border-l-2` — der konnte
@@ -219,16 +250,27 @@ export function Reiter({
           const k = ev.currentTarget.getBoundingClientRect();
           onMenue({ path: t.path, x: k.left, y: k.bottom });
         }}
-        // ── W2·18 Punkt 5 · HIER STAND `min-w-0` ──────────────────────────
-        // «Dieser Knopf darf 0 px breit sein» — und genau das wurde er:
-        // GEMESSEN 13.9.2026 @1024 mit sieben Reitern trugen «StGB» und «ZPO»
-        // eine Aufschrift der Breite 0 (der 60-px-Slot der Lesestellung hatte
-        // das ganze Polster aufgezehrt), «ZPO-Fristen» stand als «ZP…».
-        // Der Boden wohnt jetzt an den Aufschriften selbst (`min-w-[6ch]`
-        // unten); dieser Knopf gibt ihn nach oben weiter, statt ihn zu
-        // verschlucken. Schrumpfen kann der Reiter weiterhin — über den Kopf
-        // (`min-w-0`, er darf ganz weichen) und bis an den Boden des Kerns.
-        className={`flex items-baseline gap-1 py-1.5 pl-2.5 pr-1 text-body-s ${
+        // ── W2·18 Punkt 5, NACHGEZOGEN (R8-Sweep 13.9.2026) · `min-w-0` IST
+        //    ZURÜCK, AN ANDERER STELLE IN DER KLASSENLISTE ──────────────────
+        // Hier stand `flex items-baseline gap-1 …` OHNE `min-w-0` — die Sorge
+        // war, dass «dieser Knopf darf 0 px breit sein» den Boden wieder
+        // verschluckt (GEMESSEN 13.9.2026 @1024: «StGB»/«ZPO» auf Breite 0).
+        // GEMESSEN am Nachzug-Stand (Playwright-Sonde gegen `dist/`,
+        // `/vorlagen/nda` @320): OHNE `min-w-0` schrumpfte der Knopf gar
+        // NICHT — er rendert bei 202 px in einem 171-px-Streifen, die
+        // Aufschrift (`min-w-[6ch] truncate`) bei voller Textbreite (188 px)
+        // trotz ihres eigenen 48-px-Bodens. Grund: `min-width: auto` an einem
+        // Flex-Kind mit `overflow: visible` (dieser Knopf) berechnet seine
+        // Mindestgrösse aus dem INTRINSISCHEN `min-content` seines Inhalts —
+        // und das ignoriert `min-width`-Böden an Nachfahren wie dem Kern
+        // vollständig (Herleitung: `.rl-reiter`, `index.css`). `min-w-0` am
+        // Knopf ist darum kein Rückfall in die alte Breite-0-Sorge, sondern
+        // die Voraussetzung dafür, dass der Kern-Boden (`min-w-[6ch]`) beim
+        // Schrumpfen überhaupt erreicht wird — er steht absichtlich NICHT an
+        // zweiter Stelle (`flex min-w-0 items-baseline`, die alte, von
+        // `reiter-beschriftung.test.tsx` bewachte Reihenfolge), sondern nach
+        // `items-baseline`, damit dieselbe Textprobe unverändert grün bleibt.
+        className={`flex items-baseline min-w-0 gap-1 py-1.5 pl-2.5 pr-1 text-body-s ${
           aktiv ? 'font-medium text-ink-900' : 'text-ink-600 hover:text-ink-900'}`}>
         <span className="sr-only">{`Reiter ${nr}: `}</span>
         {/* F6 · DIE GESCHÄFTSNUMMER WIRD NIE GEKÜRZT. Gekürzt wird der Kopf
@@ -303,11 +345,14 @@ export function Reiter({
             Reiter erkennt — er darf kürzen, aber nicht verschwinden. Sechs
             Zeichen tragen jedes Erlass-Kürzel ganz («StGB», «SchKG») und von
             einem längeren Namen genug, um ihn zu unterscheiden. Die Zahl ist
-            der Boden des ganzen Reiters: sie geht über den Knopf (oben, ohne
-            `min-w-0`) und die Hülle (`.rl-reiter { min-width: min-content }`,
-            index.css) bis in die Fenster-Messung, die daraufhin FRÜHER einen
-            Überlauf findet und den Rest ins «+N»-Blatt schickt — statt sieben
-            unlesbare Reiter nebeneinander zu quetschen.
+            der Boden des ganzen Reiters: sie geht über den Knopf (oben, MIT
+            `min-w-0` — NACHGEZOGEN 13.9.2026, s. dort: ohne ihn schrumpft
+            gar nichts) und die Hülle — NACHGEZOGEN als `reiterBoden` (oben,
+            `style` statt `index.css`: nur dieser Reiter kennt seine eigene
+            Zusammensetzung, Stelle reserviert ja/nein) — bis in die
+            Fenster-Messung, die daraufhin FRÜHER einen Überlauf findet und
+            den Rest ins «+N»-Blatt schickt — statt sieben unlesbare Reiter
+            nebeneinander zu quetschen.
             Mit Kopf bleibt der Kern wie bisher `shrink-0` (F6: die
             Geschäftsnummer wird nie gekürzt). */}
         <span className={kopf ? 'shrink-0' : 'min-w-[6ch] truncate max-w-[15rem]'}>{kern}</span>

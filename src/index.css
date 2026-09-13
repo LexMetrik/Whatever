@@ -2705,7 +2705,48 @@
      gequetscht zu werden. Die Sorge von FB (Boden statt `min-w-0`, oben)
      bleibt damit erfüllt: der Kasten trägt seinen Inhalt, die Messung ist
      nicht blind. */
-  .rl-reiter { min-width: min-content; }
+  /* NACHGEZOGEN (R8-Sweep 13.9.2026, kein-abschnitt.e2e.ts): `min-content` war
+     falsch, UND ZWEI weitere Anläufe an dieser einen Zeile waren es auch —
+     alle drei GEPRÜFT, alle drei mit Playwright-Sonden gegen das gebaute
+     `dist/` belegt, nicht nur behauptet:
+       1) `min-width: auto` (derselbe Fehlton wie `min-content`, bytegleiches
+          Rot): die INTRINSISCHE Mindestgrösse, die ein VORFAHRE (Knopf,
+          `.rl-reiter`) aus seinem Inhalt berechnet, zählt bei
+          `white-space: nowrap`-Text (`truncate`) dessen VOLLE, ungebrochene
+          Breite — ein `min-width`-Boden am Kern (`min-w-[6ch]`) ändert daran
+          nichts, weil diese Rechnung nicht „wie weit darf schrumpfen",
+          sondern „wie breit ist der Inhalt ungebrochen" misst. GEMESSEN
+          `/vorlagen/nda` @320: Kern rendert bei 188 px trotz 48-px-Boden.
+       2) `min-width: 0` (löst den Streifen-Überlauf, reisst einen NEUEN
+          auf): ohne eigenen Boden verteilt der ÄUSSERE Streifen die
+          Schrumpfung blind über alle Reiter — bei 8 Reitern @390 drückt er
+          einzelne Kästen UNTER ihren inneren 48-px-Kern-Boden. Der Kern hält
+          seinen Boden (er darf per `min-width` nicht darunter), aber SPRENGT
+          jetzt lautlos seinen eigenen Kasten: `scrollWidth 321` gegen
+          `clientWidth 241`, Rot in `e2e/w224-r13-reiter.e2e.ts` (FB, R13-2).
+       3) Eine feste Zahl HIER (z. B. wieder `--app-reiter-min-b`) trägt
+          dieselbe AUFGEHOBEN-Sorge von oben unverändert weiter: eine Zahl,
+          die für «kein Kopf, keine Stelle» passt, ist für «kein Kopf, MIT
+          Stelle» zu klein (60 px Stelle + 42 px Griffe allein übersteigen
+          jeden Wert, der für den Fall ohne Stelle noch stimmt) — SIE WAR NIE
+          der Fehler von Punkt 5, nur die falsche Reparatur dafür.
+     WURZEL: das CSS kennt keine Rechenregel, die „Summe der EXPLIZITEN Böden
+     meiner Nachfahren, ohne deren ungebrochenen Text" ausdrückt — weder als
+     Schlüsselwort (1) noch als eine einzelne Zahl, die JEDE Zusammensetzung
+     (Stelle ja/nein) gleichzeitig träfe (3). Die Zusammensetzung kennt aber
+     `Reiter.tsx` bereits — sie steht dort in `stelle`/`kopf` — und berechnet
+     dort den Boden als `calc()`-Zahl, inline pro Reiter (`reiterBoden`,
+     `style={{ minWidth: … }}`), NUR für den Fall ohne Kopf (der Fall, in dem
+     der Kern selbst schrumpft, `min-w-[6ch]`). MIT Kopf bleibt es bei DIESER
+     Regel hier (`auto`): dort ist Kern `shrink-0` (F6, nie gekürzt), sein
+     wahrer Boden ist sein voller Text, und ein `shrink-0`-Kind trägt seine
+     volle Breite unbestritten zur automatischen Mindestgrösse bei — genau
+     der Fall, in dem `auto` korrekt rechnet (kein Kern-Boden, den es
+     ignorieren könnte). Am Knopf (`Reiter.tsx`) bleibt `min-w-0` aus
+     demselben Grund wie Fall (2): ohne ihn schrumpft der Knopf selbst nicht,
+     unabhängig davon, was `.rl-reiter` vorgibt.
+     Rot-/Grün-Beweis: PR-Beschreibung / Commit-Body. */
+  .rl-reiter { min-width: auto; }
   .rl-stelle { display: inline-block; min-width: var(--app-reiter-stelle-b); flex-shrink: 0; }
   /* ── R13-4 (Prüfbefund 7.9.2026) · KEINE RESERVE OHNE INHALT ──────────────
      GEMESSEN am Stand `0ba97c5d6` (@1440, gebautes dist/): ein Gesetzes-Reiter
