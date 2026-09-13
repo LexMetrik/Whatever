@@ -621,6 +621,25 @@ export function ordneTabsUm(vonPath: string, nachPath: string, davor?: boolean):
   schreibe(naechste);
 }
 
+/** ── W2·18 Punkt 3 · WER NACH DEM SCHLIESSEN AKTIV WIRD ────────────────────
+ *  Browser-Norm (Chrome, Firefox, Safari): der RECHTE Nachbar rückt nach; gibt
+ *  es keinen — der geschlossene Reiter war der letzte —, ist es der linke.
+ *  Bis W2·18 war es umgekehrt (links zuerst). Der Unterschied ist nicht
+ *  kosmetisch: wer eine Reihe von links nach rechts abarbeitet und jeden
+ *  erledigten Reiter schliesst, wurde bei jedem ✕ an den ANFANG zurückgeworfen
+ *  statt einen Schritt weitergetragen.
+ *
+ *  @param ordnung Die Reiter in Speicherreihenfolge.
+ *  @param idx     Stelle des geschlossenen Reiters; `-1`, wenn er nicht in der
+ *                 Liste steht (dann gibt es keinen Nachfolger).
+ *  @returns Der Reiter, der aktiv wird, oder `undefined` — dann war es der
+ *           letzte, und der Aufrufer entscheidet (die Leiste geht zur
+ *           Sammlung, R14). */
+export function nachfolgerReiter(ordnung: readonly TabEintrag[], idx: number): TabEintrag | undefined {
+  if (idx < 0) return undefined;
+  return ordnung[idx + 1] ?? ordnung[idx - 1];
+}
+
 export function schliesseTab(path: string): void {
   const teil = tabSchluessel(path);
   const bisher = ladeTabs();

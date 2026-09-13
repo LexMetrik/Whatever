@@ -5,6 +5,7 @@ import {
   schliesseTab, leereTabs, ordneTabsUm, tabSchluessel, type TabEintrag,
   schliesseAndere, schliesseRechtsVon,
   stelleLetztenWiederHer, letzterGeschlossener, naechsteInstanz, merkeTab,
+  nachfolgerReiter,
   // ── R3 (Prüfbefund R11, 6.9.2026) · EINE KURZFORM, EIN TITEL (§5) ────────
   // Beide Ableitungen wohnten bis hierher IN dieser Datei — das Überlauf-Blatt
   // (`TabPanel`) baute daneben seine eigene Beschriftung aus `verlaufLabel`
@@ -190,8 +191,10 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     schliessePane(path);
     const teil = tabSchluessel(path);
     if (aktivSchluessel === teil) {
+      // W2·18 Punkt 3: WELCHER Nachbar nachrückt, rechnet `lib/tabs`
+      // (Browser-Norm: rechts, ersatzweise links) — hier steht nur die Folge.
       const idx = ordnung.findIndex((t) => tabSchluessel(t.path) === teil);
-      const nachbar = ordnung[idx - 1] ?? ordnung[idx + 1];
+      const nachbar = nachfolgerReiter(ordnung, idx);
       schliesseTab(path);
       if (nachbar) navigate(nachbar.path); else zurSammlung();
     } else schliesseTab(path);
