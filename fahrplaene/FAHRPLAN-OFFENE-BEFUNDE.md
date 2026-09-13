@@ -449,6 +449,23 @@ Rot-Beweis; Rot-Beweise auf DIESEM Stand fahren, nie übernehmen.
    Kein Layout-Shift, Escape schliesst, verschwindet beim Verlassen; `prefers-reduced-motion` ohne
    Einblendung; auf Touch keine Hover-Karte. Kein neuer Chunk im Start-Bundle über Budget (60 KB);
    die Karte lazy laden wie das Kontextmenü (Vorlauf bei `pointerenter`).
+   — **Ergänzung 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: drei Stellen, an denen der
+   Ist-Code die Vorgabe präzisiert hat.** (a) DER `title` BLEIBT. «Statt des zusammengeklebten
+   `title`» hätte ihn gestrichen — er ist aber die einzige Auskunft auf Touch (dort gibt es keine
+   Karte) UND die Bedingung, unter der der R8-Sweep eine per Ellipse gekappte Stelle nicht als Fund
+   zählt (`gekapptMitTitle` in `e2e/helpers/abschnittMessung.ts`). GEBAUT ist darum: der `title`
+   steht, und nur solange der Zeiger auf DIESEM Reiter ist, weicht er (sonst legte Chromium ~400 ms
+   nach der Karte noch seinen einzeiligen Tooltip darüber). (b) FOKUS NUR SICHTBAR. «bei Fokus»
+   allein öffnete die Karte auch beim ANTIPPEN — GEMESSEN (Playwright `hasTouch`, @390): der Tap
+   fokussiert den Link, die Karte stand als Fleck. Der Fokus-Weg hängt darum an `:focus-visible`,
+   der Unterscheidung, die der Browser ohnehin trifft. (c) VOLLTITEL. Bei einem Erlass ist der
+   Verlaufstitel selbst schon das Kürzel («OR»); die Karte zeigt darum zusätzlich den
+   ausgeschriebenen Manifest-Titel (`ReiterKarteTeile.langtitel`) — der `title`-Einzeiler rührt ihn
+   nicht an und bleibt Zeichen für Zeichen derselbe (bewacht: `src/tests/reiter-karte.test.ts`).
+   GEMESSEN nach dem Bau: Karte im DOM 606 · 605 · 604 ms nach `pointerenter` (Vorgabe 600 ms, der
+   Vorlauf beim Betreten der Leiste kostet also nichts); eigener Chunk `ReiterKarte` 1'910 B roh /
+   0.95 KB gzip; Entry 55.9 KB gzip gegen 60.0 KB Budget. Wächter:
+   `e2e/w224-r11-reiterleiste.e2e.ts` «W2·18 Welle 3 Punkt 4» (drei Fälle, darunter Touch).
 5. **Touch-Umordnen — günstige Variante.** Kontextmenü (bestehend, auch per Langdruck erreichbar
    machen: 500 ms `pointerdown` ohne Bewegung öffnet es) bekommt «Nach links», «Nach rechts», «An den
    Anfang», «Ans Ende»; damit ist die Reihenfolge auf Touch und per Tastatur änderbar, ohne

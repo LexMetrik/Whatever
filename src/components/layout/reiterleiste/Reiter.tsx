@@ -1,4 +1,4 @@
-import type { RefObject } from 'react';
+import { useEffect, useRef, useState, type RefObject } from 'react';
 import { Link } from 'react-router-dom';
 import { tabSchluessel, reiterKurzformTeile, reiterKurzformText, reiterTitel, type TabEintrag } from '../../../lib/tabs';
 import type { VerlaufManifeste } from '../../../lib/verlaufLabel';
@@ -57,6 +57,13 @@ export interface ReiterProps {
   onZieht: (path: string | null) => void;
   onUeber: (u: { path: string; davor: boolean } | null) => void;
   onMenue: (m: { path: string; x: number; y: number }) => void;
+  /** ── W2·18 Welle 3 Punkt 4 · DIE HOVER-KARTE ───────────────────────────
+   *  Gemeldet wird nur «zeige die Karte dieses Reiters hier» bzw. `null`.
+   *  WAS auf der Karte steht, weiss `lib/tabs.reiterKarteTeile`, und WO sie
+   *  hängt, entscheidet die Leiste — ein Reiter, der sein eigenes Portal
+   *  mitbrächte, stünde bei fünfzehn Reitern fünfzehnmal bereit (§3, dieselbe
+   *  Aufteilung wie beim Kontextmenü). */
+  onKarte: (k: { path: string; x: number; y: number } | null) => void;
   /** Umordnen: gezogener Pfad, Ziel, davor/dahinter (`lib/tabs.ordneTabsUm`). */
   onUmordnen: (von: string, nach: string, davor: boolean) => void;
 }
@@ -64,8 +71,30 @@ export interface ReiterProps {
 export function Reiter({
   t, nr, aktiv, letzter, imRing, ohneKopf, manifeste, paneSchluessel, zieht, ueber, gezogenRef,
   kannOeffnen, istOffen, onDaneben, onSchliessen,
-  onZieht, onUeber, onMenue, onUmordnen,
+  onZieht, onUeber, onMenue, onKarte, onUmordnen,
 }: ReiterProps) {
+  // ── W2·18 WELLE 3 PUNKT 4 · 600 ms SIND DIE ABSICHT ────────────────────────
+  // Kürzer, und die Karte springt jedem Zeiger nach, der die Leiste nur
+  // überquert; länger, und man hält sie für kaputt. 600 ms ist die Spanne, die
+  // der Fahrplan nennt und die Browser für ihre eigenen Reiter-Tooltips
+  // verwenden.
+  const KARTE_MS = 600;
+  const karteZeit = useRef<number | null>(null);
+  /** Steht der Zeiger auf diesem Reiter? Nur dafür da, den NATIVEN Tooltip
+   *  wegzunehmen, solange die Karte zuständig ist (s. beim `title` unten). */
+  const [zeigerHier, setZeigerHier] = useState(false);
+  const stoppKarte = () => {
+    if (karteZeit.current === null) return;
+    window.clearTimeout(karteZeit.current);
+    karteZeit.current = null;
+  };
+  const meldeKarte = (el: HTMLElement) => {
+    const k = el.getBoundingClientRect();
+    onKarte({ path: t.path, x: k.left, y: k.bottom });
+  };
+  // Ein Zeitgeber, der den Reiter überlebt, öffnete eine Karte zu einem
+  // Reiter, den es nicht mehr gibt.
+  useEffect(() => stoppKarte, []);
   const schluessel = tabSchluessel(t.path);
   const { kopf: kopfRoh, kern, stelle, instanz } = reiterKurzformTeile(t, manifeste);
   // W2·18 Welle 3 Punkt 1 (Herleitung bei `ohneKopf`): am Anschlag weicht der
@@ -141,6 +170,9 @@ export function Reiter({
       data-reiter-schluessel={schluessel}
       draggable
       onDragStart={(ev) => {
+        // W2·18 Welle 3 Punkt 4: während eines Zugs ist die Karte nur Nebel.
+        stoppKarte();
+        onKarte(null);
         gezogenRef.current = t.path;
         onZieht(t.path);
         ev.dataTransfer.setData('text/plain', t.path);
@@ -186,7 +218,45 @@ export function Reiter({
         ev.preventDefault();
         onMenue({ path: t.path, x: ev.clientX, y: ev.clientY });
       }}
-      title={kuerzel ? `${titel} — ${kuerzel.replace(' ', ' · ')}` : titel}
+      // ── W2·18 WELLE 3 PUNKT 4 · ZWEI TOOLTIPS WÄREN EINER ZU VIEL ────────
+      // Der `title` BLEIBT — er ist die Auskunft für Touch (dort gibt es keine
+      // Karte), und der R8-Sweep zählt eine per Ellipse gekappte Stelle nur
+      // dann nicht als Fund, wenn der volle Text über einen `title` am
+      // Vorfahren erreichbar ist (`e2e/helpers/abschnittMessung.ts`,
+      // `gekapptMitTitle`). Solange der Zeiger aber HIER steht, ist die Karte
+      // zuständig: Chromium zeigte sonst ~400 ms nach ihr noch seinen eigenen,
+      // einzeiligen Tooltip darüber.
+      title={zeigerHier ? undefined : (kuerzel ? `${titel} — ${kuerzel.replace(' ', ' · ')}` : titel)}
+      onPointerEnter={(ev) => {
+        // Auf Touch gibt es kein «darüberfahren» — dort käme die Karte als
+        // Fleck, den man nicht wieder loswird (Fahrplan §4.R3 Punkt 4).
+        if (ev.pointerType === 'touch') return;
+        setZeigerHier(true);
+        const el = ev.currentTarget;
+        stoppKarte();
+        karteZeit.current = window.setTimeout(() => meldeKarte(el), KARTE_MS);
+      }}
+      onPointerLeave={() => { setZeigerHier(false); stoppKarte(); onKarte(null); }}
+      // Fokus zeigt SOFORT: wer mit der Tastatur hier ankommt, hat die 600 ms
+      // Zögern schon mit dem Weg hierher bezahlt.
+      // ABER NUR BEI SICHTBAREM FOKUS (`:focus-visible`). GEMESSEN 13.9.2026
+      // (Playwright `hasTouch`, @390): ein ANTIPPEN fokussiert den Link und
+      // öffnete darüber doch noch die Karte — auf Touch stand sie dann als
+      // Fleck, den man nicht mehr los wird. `:focus-visible` ist genau die
+      // Unterscheidung, die der Browser dafür schon trifft: gesetzt bei
+      // Tastatur, nicht bei Zeiger oder Finger.
+      onFocus={(ev) => {
+        stoppKarte();
+        const ziel = ev.target as HTMLElement;
+        if (typeof ziel.matches === 'function' && !ziel.matches(':focus-visible')) return;
+        meldeKarte(ev.currentTarget);
+      }}
+      onBlur={(ev) => {
+        // Der Sprung vom Link zum ✕ desselben Reiters ist kein Verlassen.
+        if (ev.currentTarget.contains(ev.relatedTarget as Node | null)) return;
+        stoppKarte();
+        onKarte(null);
+      }}
       // F9 · DER AKTIVE REITER IST EINE FLÄCHE, KEIN 4-EINHEITEN-UNTERSCHIED.
       // GEMESSEN 6.9.2026: aktiv `paper-raised` (255) gegen inaktiv `paper`
       // (251) — der Unterschied trug allein der 2-px-Strich. Jetzt trägt der

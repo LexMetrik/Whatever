@@ -15,6 +15,9 @@ import {
   // und trug darum den Volltitel, wo die Leiste die Kurzform zeigte. Jetzt
   // stehen sie in `lib/tabs` und beide Flächen lesen dieselbe Quelle.
   reiterKurzformText,
+  // W2·18 Welle 3 Punkt 4 · die Auskunft der Hover-Karte, zerlegt — dieselbe
+  // Quelle, aus der sich der `title`-Einzeiler zusammensetzt (§5).
+  reiterKarteTeile,
   // W2·18 Welle 3 Punkt 2 · der Rand-Schub liest die Ordnung bei JEDEM Takt
   // frisch aus der einen Quelle — ein Intervall-Rückruf sähe sonst für immer
   // die Ordnung des Renders, in dem er entstanden ist (§5).
@@ -79,6 +82,15 @@ let menueVorlauf: Promise<typeof import('./ReiterMenue')> | null = null;
 const ladeMenue = (): Promise<typeof import('./ReiterMenue')> => (menueVorlauf ??= import('./ReiterMenue'));
 import type { ReiterMenueEintrag } from './ReiterMenue';
 
+// ── W2·18 WELLE 3 PUNKT 4 · DIE HOVER-KARTE KOMMT DENSELBEN WEG ────────────
+// Wortgleiche Bauart wie beim Menü darüber, aus denselben zwei Gründen: der
+// Chunk gehört nicht in den Start (§15), und `lazy`/`Suspense` käme einen
+// Nachlauf zu spät. Angefordert wird auch sie beim Betreten der Leiste — die
+// 600 ms, die die Karte ohnehin wartet, reichen dafür dreifach.
+let karteVorlauf: Promise<typeof import('./reiterleiste/ReiterKarte')> | null = null;
+const ladeKarte = (): Promise<typeof import('./reiterleiste/ReiterKarte')> =>
+  (karteVorlauf ??= import('./reiterleiste/ReiterKarte'));
+
 // ─── Arbeitsleiste: die offenen Reiter, sichtbar (W2·24 §5a, Wunsch David) ───
 //
 // «analog zum browser die offenen tabs oben anstatt mit dem drei linien drop
@@ -139,6 +151,11 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const [MenueFlaeche, setMenueFlaeche] =
     useState<typeof import('./ReiterMenue')['ReiterMenue'] | null>(null);
   const holeMenue = () => { void ladeMenue().then((m) => setMenueFlaeche(() => m.ReiterMenue)); };
+  /** W2·18 Welle 3 Punkt 4 — die Hover-Karte: WELCHER Reiter, und wo er steht. */
+  const [karte, setKarte] = useState<{ path: string; x: number; y: number } | null>(null);
+  const [KarteFlaeche, setKarteFlaeche] =
+    useState<typeof import('./reiterleiste/ReiterKarte')['ReiterKarte'] | null>(null);
+  const holeKarte = () => { void ladeKarte().then((m) => setKarteFlaeche(() => m.ReiterKarte)); };
   /** Ein Menü öffnen — und dabei IMMER auch seinen Chunk anstossen. Der
    *  Vorlauf am `nav` (Zeiger/Fokus) deckt den Alltag ab, aber nicht jeden
    *  Fall: ein Zeiger, der beim Laden schon über der Leiste RUHT, löst kein
@@ -819,8 +836,8 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       // er am `nav` hängt und nicht am Reiter) und der Fokus kommt herein
       // (`focus` steigt hier als `focusin` an; ohne ihn hätte der
       // Tastaturweg Shift+F10 keinen Vorlauf).
-      onPointerEnter={holeMenue}
-      onFocus={holeMenue}
+      onPointerEnter={() => { holeMenue(); holeKarte(); }}
+      onFocus={() => { holeMenue(); holeKarte(); }}
       // W2·24-R4: die Arbeitsleiste KLEBT jetzt — unter der Titelblatt-Zeile
       // (`--app-krone-h`) und mit ihrer eigenen, festen Höhe (`--app-reiter-h`).
       // Beide Zahlen stehen in `src/index.css`; dieselbe Summe (`--app-kopf-h`)
@@ -902,7 +919,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
                 zieht={zieht} ueber={ueber} gezogenRef={gezogen}
                 kannOeffnen={kannOeffnen} istOffen={istOffen} onDaneben={oeffneDaneben}
                 onSchliessen={schliessen}
-                onZieht={setZieht} onUeber={setUeber} onMenue={oeffneMenue}
+                onZieht={setZieht} onUeber={setUeber} onMenue={oeffneMenue} onKarte={setKarte}
                 onUmordnen={ordneTabsUm} />
             );
           })}
@@ -998,6 +1015,19 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         return (
           <MenueFlaeche x={menue.x} y={menue.y} name={reiterKurzformText(t, manifeste)}
             eintraege={menueEintraege(t)} onSchliessen={() => setMenue(null)} />
+        );
+      })()}
+
+      {/* W2·18 Welle 3 Punkt 4 · die Hover-Karte des gezeigten Reiters. EINE
+          zur Zeit, aus denselben Gründen wie beim Menü. */}
+      {karte && KarteFlaeche && (() => {
+        const t = tabs.find((x) => tabSchluessel(x.path) === tabSchluessel(karte.path));
+        if (!t) return null;
+        const idx = paneSchluessel.length > 1 ? paneSchluessel.indexOf(tabSchluessel(t.path)) : -1;
+        return (
+          <KarteFlaeche x={karte.x} y={karte.y} teile={reiterKarteTeile(t, manifeste)}
+            fenster={idx === 0 ? 'links' : idx > 0 ? 'rechts' : null}
+            onSchliessen={() => setKarte(null)} />
         );
       })()}
 
