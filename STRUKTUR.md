@@ -33,6 +33,29 @@ falsch — korrigiert 30.8.2026). Karten abgeschlossener Sessions (älter als
 werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
+## Session 13.9.2026 — Reiterleiste-Ausbau: drei Wellen `W2·18` + `W2·25` gelandet (4 PRs)
+
+**Gelandet:** #842 (Welle 1, sechs stille Fehler + Nachzug R8-Sweep mobil), #843 (Welle 2:
+roving tabindex, Alt+Q-MRU, Ring-Ordnung, Menü-Vorlauf 320→17 ms, 24-px-Griffe), #844 (Welle 3:
+Kopf weicht am Anschlag, Rand-Schub beim Ziehen, Reiter als Links, Hover-Karte, Touch-Umordnen),
+#845 (`W2·25-ARBEITSMAPPE`: Anheften mit D16-Nachweis, benannte Mappen, `?mappe=`-Adresse).
+Specs: FAHRPLAN-OFFENE-BEFUNDE §4.R/§4.R2/§4.R3, FAHRPLAN-DESIGN-IDENTITAET §7. Entry-Chunk
+54.4 → 58.0 KB gzip (Budget 60). Recherche-Grundlage (14 Quellen) im Session-Scratchpad,
+Lückenkatalog abgearbeitet bis auf Peek-Tabs/«Geändert»-Punkt (bewusst nicht gebaut).
+
+**Zwei CI-Rot-Runden, beide Bau-Lücken:** (1) Welle 1 setzte `.rl-reiter` auf `min-content`
+→ 18 R8-Funde @320/390, vom Bau-Agenten nicht gesehen, weil der R8-Sweep nicht in seiner
+Prüfliste stand; (2) Welle 3 machte den Reiter zum Link, eine Sonde in Shard 1
+(`w224-l6-panekopf`) las weiter `button`. **§17-Lehre verankert** (Dispatch-§0 `lex-bau.md`
+Ziff. 3b): Rollen-/Selektor-Wechsel wirkt repo-weit — alle Sonden greppen, R8-Sweep bei
+geteilten Rahmen Pflicht.
+
+**Prozessfund (§17, Fehlerbuch-Zeile):** Plan-Buchungs-Commit wirft wartende Auto-Merge-PRs
+bei `strict` auf BEHIND — ein Rebase + CI-Lauf je Landung; Wurzel-Fix-Vorschlag im Fehlerbuch.
+
+**Wartet auf David:** Meta-Routen mit Reiter (R14b bestätigen/kippen); Option+T / Option+Q am
+Mac einmal selbst prüfen (Playwright bildet die Option-Belegung nicht ab).
+
 ## Session 12.9.2026 (7) — Abschluss: #838 gelandet, #840 in Landung, Session-Bilanz
 
 **Gelandet:** #838 (Kopf `87db8a514`) `QS-KORPUS-SCOPE` — 23 scope/decl-Sektionen in 12

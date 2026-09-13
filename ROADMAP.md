@@ -567,12 +567,12 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-UI-BEFUNDE.md](fahrplaene/FAHRPLAN-UI-BEFUNDE.md) §24.
   - [x] **Erledigt:** B6-N1 · B6-N2 · B7-N1 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
   - [ ] **B8 · Menüinhalt, Zustandsanzeige, Scrollbereiche (K-03 + K-07)** — 10 Befunde (Blocker 1 · Hoch 3). §9. · **Blocker LM-061 vorgemessen 30.8.2026, wartet auf David:** News-Reihe verbirgt 2'588 px ohne Affordanz — der Bau würde den Entscheid D11 («angeschnittene Karte IST die Affordanz») revidieren. Messung + Bauform-Vorschlag im Fahrplan.
-  - [ ] **B9 · Textsatz und Umbruch (K-12)** — 12 Befunde (Blocker 1 · Hoch 2). §10.
-  - [ ] **B10 · Aktions-Anker, Symbolknöpfe, Trefferflächen (K-09b)** — 7 Befunde (Blocker 1 · Hoch 1). §11.
-  - [ ] **B11 · Karten (K-04)** — 13 Befunde. §12. · **B12 · Eingabe-/Auswahlfelder (K-08a)** — 11 Befunde. §13.
-  - [ ] **B13 · Zahlen-, Datums-, Zählformate (K-11)** — 12 Befunde. §14. · **B14 · Brotkrume/Kopfzeilen (K-19a)** — 8 Befunde. §15.
-  - [ ] **B15 · Umschalter, Tabs, Akkordeons (K-06)** — 9 Befunde. §16. · **B16 · Seitengerüst/Inhaltsbreite (K-13)** — 8 Befunde. §17.
-  - [ ] **B17 · Schaltflächen (K-09a)** — 8 Befunde. §18. · **B18 · Listen/Suche/Relevanz (K-19b)** — 8 Befunde. §19. · **B19 · Felder Detail (K-08b)** — 7 Befunde. §20.
+  - [x] **B9 · Textsatz und Umbruch (K-12)** — 12/12 geschlossen (Fahrplan §10, Nachzug Häkchen 13.9.2026).
+  - [x] **B10 · Aktions-Anker, Symbolknöpfe, Trefferflächen (K-09b)** — 7/7 geschlossen 4.9.2026 (Fahrplan §11, Nachzug Häkchen 13.9.2026).
+  - [ ] **B11 · Karten (K-04)** — 12/13, Rest LM-032 zurückgestellt. §12. · **B12 · Eingabe-/Auswahlfelder (K-08a)** — 9/11, Reste LM-066/LM-075 zurückgestellt (dokumentierte Entscheide). §13. *(Stand 13.9.2026)*
+  - [ ] **B13 · Zahlen-, Datums-, Zählformate (K-11)** — 8/12, Reste LM-109/110/114/117 zurückgestellt. §14. · **B14 · Brotkrume/Kopfzeilen (K-19a)** — 4/8, Reste LM-183/184/197/198 zurückgestellt. §15. *(Stand 13.9.2026)*
+  - [x] **B15 · Umschalter, Tabs, Akkordeons (K-06)** — 9/9. §16. · **B16 · Seitengerüst/Inhaltsbreite (K-13)** — 8/8. §17. *(Nachzug Häkchen 13.9.2026)*
+  - [ ] **B17 · Schaltflächen (K-09a)** — 7/8, Rest LM-087 an Gate-Verschärfung gebunden. §18. · **B18 · Listen/Suche/Relevanz (K-19b)** — 8/8 ✅. §19. · **B19 · Felder Detail (K-08b)** — 6/7, Rest LM-083 zurückgestellt. §20. *(Stand 13.9.2026)*
 
 - [ ] **Davids Alltags-Fehlerfunde** *(`W2·18-FEHLERBUCH`, stehender Sammel-Schritt, Entscheid David 8.8.2026)*
   <!-- @meta id: W2·18-FEHLERBUCH · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
@@ -585,7 +585,10 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **OR-Leser-e2e-Timeouts app-weit härten · Shard-Laufzeit-Deckel** *(CI 5.9.2026)* — Fahrplan §4.
   - [ ] **rectifies-Wächter blind für Fedlex-Berichtigungen ohne HTML** *(Gegenprüfung #834, 12.9.2026)* — 7 von 25 geprüften `rectifies`-Kanten sind nicht abrufbar, weil Fedlex die Berichtigung nur als doc/pdf-a führt, nicht als HTML; lesbar via `textutil -convert txt` (macOS) bzw. PyMuPDF. Tor um die doc-Manifestation erweitern, damit die Klasse «nicht abrufbar» auf 0 sinkt.
   - [ ] **Bund-Pfad löst «Art. 9 BMV» auf die aufgehobene Fassung auf** *(Gegenprüfung #833, 12.9.2026)* — `src/lib/fedlex/tabelle.ts` löst das Kürzel weiterhin auf die per 1.3.2026 aufgehobene Fassung `cc/2009/423` auf, obwohl `aufhebungen.ts` die Nachfolge kennt. Die in #823 gebaute Fassungs-Reihe (`normKeyFuerAbk` mit Datum) auch im Verweis-Resolver nutzen bzw. auf die geltende Fassung mit Datumskontext auflösen.
-  - [ ] **Reiterleiste: sechs stille Fehler** *(Sichtprüfung + Code-Zweitblick 13.9.2026, Auftrag David «bau 1 bis 6»)* — Alt-Kürzel am Mac (`e.key` statt `e.code`), Render-Kaskade beim Scrollen, Kappungs-Verluste ohne Ring, gestutzte Beschriftungen ab 7 Reitern, Nachbar-Wahl nach Schliessen, stehender Blatt-Filter. Spec: Fahrplan §4.R «Reiterleiste 13.9.2026».
+  - [ ] **Plan-Buchungs-Commit wirft wartende Auto-Merge-PRs auf BEHIND** *(§17-Prozessfund 13.9.2026, PR #843)* — `plan-buchung.yml` schreibt nach jedem Merge einen `[skip ci]`-Commit auf main; bei `strict`-Schutz fällt jeder offene Auto-Merge-PR auf BEHIND und kostet Rebase + vollen CI-Lauf (~25 min). Wurzel-Fix: der Buchungs-Workflow aktualisiert danach alle offenen PRs mit aktivem Auto-Merge (`gh pr update-branch`), oder Merge-Queue (David-Handgriff, offen). Bis dahin: nach jeder Landung sofort rebasen.
+  - [ ] **Flacker-Fall `leser-v3-blatt` (c) ⌘K im Split** *(CI #844, 13.9.2026; isoliert 6/6 grün auf Branch und main)* — last-/parallelbedingt, deckt sich mit «⌘K-Vorlauf im Split» (CI #711); Fahrplan §4.
+  - [ ] **WARTET AUF DAVID:** Sollen die Meta-Routen (/ueber, /methodik, /einstellungen, /kontakt) einen Reiter tragen? Seit R14b (`istReiterPfad` gestrichen) ist jede Route Reiterinhalt — Orchestrator-Entscheid, Bestätigung offen (FAHRPLAN-DESIGN-IDENTITAET §7, Korrektur 13.9.2026).
+  - [x] **Reiterleiste: sechs stille Fehler** — ✅ 13.9.2026, PR #842 (+ Nachzug R8-Sweep mobil), dazu Welle 2 #843 (Tastatur-Ring, Alt+Q, Ring-Ordnung, Menü-Vorlauf, 24-px-Griffe) und Welle 3 #844 (Kopf weicht am Anschlag, Rand-Schub, Reiter als Links, Hover-Karte, Touch-Umordnen); Specs Fahrplan §4.R/§4.R2/§4.R3. *(Sichtprüfung + Code-Zweitblick 13.9.2026, Auftrag David «bau 1 bis 6»)* — Alt-Kürzel am Mac (`e.key` statt `e.code`), Render-Kaskade beim Scrollen, Kappungs-Verluste ohne Ring, gestutzte Beschriftungen ab 7 Reitern, Nachbar-Wahl nach Schliessen, stehender Blatt-Filter. Spec: Fahrplan §4.R «Reiterleiste 13.9.2026».
 
 - [ ] **Oberflächen-Qualität app-weit** *(`QS-UI`, reines UI/Design §13, kontinuierlich)*
   <!-- @meta id: QS-UI · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
