@@ -6,6 +6,9 @@ import {
   schliesseAndere, schliesseRechtsVon,
   stelleLetztenWiederHer, letzterGeschlossener, naechsteInstanz, merkeTab,
   nachfolgerReiter,
+  // W2·18 Welle 2 Punkt 2 · Pendeln zwischen den zwei zuletzt benutzten
+  // Reitern — die Buchführung steht in `lib/tabs` (§3), hier nur die Taste.
+  merkeAktivenReiter, vorherigerReiter,
   // ── R3 (Prüfbefund R11, 6.9.2026) · EINE KURZFORM, EIN TITEL (§5) ────────
   // Beide Ableitungen wohnten bis hierher IN dieser Datei — das Überlauf-Blatt
   // (`TabPanel`) baute daneben seine eigene Beschriftung aus `verlaufLabel`
@@ -140,6 +143,13 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   }, [brauchtG, brauchtE, brauchtM]);
 
   const aktivSchluessel = tabSchluessel(pathname + search);
+
+  // ── W2·18 Welle 2 Punkt 2 · WER ZULETZT DRAN WAR ──────────────────────────
+  // Die einzige Stelle, an der ein Aktiv-Wechsel sicher durchkommt: die Leiste
+  // sieht jede Navigation (sie hängt an `useLocation`), egal ob sie aus einem
+  // Klick, einem Kürzel oder dem Zurück-Knopf des Browsers kam. Ein Schreiber
+  // am Reiter-Klick allein hätte die halbe App verpasst.
+  useEffect(() => { merkeAktivenReiter(aktivSchluessel); }, [aktivSchluessel]);
 
   // ── D16 (David 6.9.2026) · DIE LEISTE ZEIGT DEN SPEICHER, SONST NICHTS ────
   //
@@ -407,6 +417,35 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         return;
       }
       if (e.shiftKey) return;
+      // ── W2·18 WELLE 2 PUNKT 2 · ALT+Q PENDELT (zuletzt benutzt) ─────────
+      //
+      // WARUM Q, GEMESSEN/BELEGT 13.9.2026:
+      //  · `Ctrl+Tab` wäre das Browser-Idiom — der Browser fängt es für seine
+      //    EIGENEN Reiter ab (gemessen 7.9.2026, wirkungslos; der Griff steht
+      //    oben trotzdem, angeboten wird er nicht, §8).
+      //  · `Alt+Tab` gehört auf Windows/Linux dem Fenstermanager, `Cmd+Tab`
+      //    auf macOS dem Dock — die Seite sieht sie gar nicht.
+      //  · `Alt+Q` ist frei: in der App belegt Alt sonst nur T, W, 1…9, ⇧+T,
+      //    ⇧+←/→ und Bild↑/↓ (Vollerhebung `altKey` über `src/`, 13.9.2026 —
+      //    ausser der Leiste liest nur `HeaderSuche` Alt, und zwar am KLICK),
+      //    und die Alt-Belegungen der Browser (←/→ Verlauf, Home, D, F/E)
+      //    lassen Q aus. GEMESSEN (Chromium, `keydown`-Mitschrift): Alt+Q
+      //    kommt als `code: 'KeyQ'`, `altKey: true`, `defaultPrevented: false`
+      //    an der Seite an — kein Browser-Griff liegt davor.
+      //  · macOS legt auf Option+Buchstabe ein SONDERZEICHEN (Option+Q = «œ»,
+      //    dieselbe Klasse wie die gemessenen †/∑/¡ aus Welle 1). Gelesen wird
+      //    darum die PHYSISCHE Taste — `istBuchstabenTaste` prüft `e.code`
+      //    zuerst (`reiterleiste/tasten.ts`, dort die Herleitung). Der
+      //    «œ»-Konflikt ist damit konstruktiv ausgeschlossen, nicht gehofft.
+      if (istBuchstabenTaste(e, 'q')) {
+        const ziel = vorherigerReiter(ordnung, aktivSchluessel);
+        // Kein Ziel = frischer Start oder alles Gemerkte geschlossen: dann tut
+        // die Taste NICHTS, statt irgendwohin zu springen (§8).
+        if (!ziel) return;
+        e.preventDefault();
+        navigate(ziel.path);
+        return;
+      }
       // ── R13-8 · ALT+9 IST DER LETZTE REITER, NICHT DER NEUNTE ───────────
       // Browser-Norm (Chrome, Firefox, Safari): die 9 springt ans ENDE. Vorher
       // war sie schlicht der neunte — bei 15 Reitern war #10 und alles dahinter

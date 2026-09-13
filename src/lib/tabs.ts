@@ -829,6 +829,63 @@ export function stelleLetztenWiederHer(): TabEintrag | null {
   return letzter.eintrag;
 }
 
+// ═══ W2·18 WELLE 2 PUNKT 2 · ZULETZT BENUTZT (MRU) ══════════════════════════
+//
+// GEMESSENER ANLASS (13.9.2026, Stand `f0ed8859c`): die Leiste kannte nur die
+// POSITION — Alt+1…9 und Alt+Bild↑/↓. Wer zwischen zwei Reitern hin- und
+// herarbeitet (der Alltag beim Abgleich zweier Erlasse), musste ihre Stellen
+// kennen und zählen, und ab Reiter 10 gab es überhaupt kein Kürzel mehr
+// (Alt+9 ist der LETZTE, R13-8). Chrome («Ctrl+Tab in MRU») und VS Code
+// («Ctrl+Tab») lösen genau das über die zuletzt-benutzt-Reihenfolge.
+//
+// WAS HIER STEHT, IST NUR DIE BUCHFÜHRUNG (§3): eine Liste von Reiter-
+// IDENTITÄTEN, jüngste zuletzt, ohne Dubletten, gekappt auf `MRU_MAX`. Kein
+// Zeitstempel (§2: kein `Date.now()` in `src/lib`) — die Reihenfolge im Array
+// IST die Reihenfolge. Welche Taste sie auslöst, entscheidet die Leiste.
+//
+// ZEHN statt `MAX`: anders als der Schliess-Ring ist das keine Rückfahrkarte
+// für Verlorenes, sondern ein Kurzzeit-Gedächtnis für das Pendeln. Was zehn
+// Reiter zurückliegt, findet man über das «+N»-Blatt, nicht über ein Kürzel.
+const MRU_KEY = 'lexmetrik-tabs-mru';
+const MRU_MAX = 10;
+
+function ladeMru(): string[] {
+  try {
+    const roh = localStorage.getItem(MRU_KEY);
+    const arr = roh ? JSON.parse(roh) : [];
+    return Array.isArray(arr) ? arr.filter((x): x is string => typeof x === 'string').slice(-MRU_MAX) : [];
+  } catch {
+    return [];
+  }
+}
+
+/** Schreibt fort, WELCHER Reiter gerade aktiv geworden ist. Aufrufer ist die
+ *  Leiste bei jedem Aktiv-Wechsel; mehrfaches Melden derselben Identität ändert
+ *  nichts (sie steht dann einmal, am jüngsten Ende). */
+export function merkeAktivenReiter(path: string): void {
+  const teil = tabSchluessel(path);
+  const ohne = ladeMru().filter((k) => k !== teil);
+  try { localStorage.setItem(MRU_KEY, JSON.stringify([...ohne, teil].slice(-MRU_MAX))); }
+  catch { /* privater Modus — das Pendeln ist Komfort, kein Datenbestand */ }
+}
+
+/** Der zuletzt benutzte Reiter, der NICHT der aktive ist und noch offen steht —
+ *  das Ziel des Pendel-Kürzels. `null` = es gibt keinen (frischer Start, oder
+ *  alles Gemerkte ist inzwischen geschlossen); dann tut die Taste nichts, statt
+ *  irgendwohin zu springen (§8).
+ *
+ *  @param offen Die offenen Reiter (Speicherordnung, die die Leiste ohnehin hält).
+ *  @param aktiv Identität des aktiven Reiters (`tabSchluessel`). */
+export function vorherigerReiter(offen: readonly TabEintrag[], aktiv: string): TabEintrag | null {
+  const mru = ladeMru();
+  for (let i = mru.length - 1; i >= 0; i -= 1) {
+    if (mru[i] === aktiv) continue;
+    const t = offen.find((x) => tabSchluessel(x.path) === mru[i]);
+    if (t) return t;
+  }
+  return null;
+}
+
 /** Pfad für eine NEUE Instanz desselben Erlasses/Items (Auftrag David: dasselbe
  *  Gesetz mehrfach offen). Hängt den nächsten freien `?r=<n>` an den aktuellen
  *  Pfad (Artikel-Anker bleibt erhalten). Die erste Instanz trägt kein `?r`

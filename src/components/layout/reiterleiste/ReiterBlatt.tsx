@@ -109,6 +109,9 @@ export function ReiterBlatt({
             ['Alt+1…8', 'zu Reiter 1…8'],
             ['Alt+9', 'zum letzten Reiter'],
             ['Alt+Bild↑/↓', 'einen Reiter zurück/vor'],
+            // W2·18 Welle 2 Punkt 2: das Pendeln steht MIT in der Liste — ein
+            // Kürzel, das niemand lernt, ist keines (R13-7).
+            ['Alt+Q', 'zum zuletzt benutzten Reiter'],
             ['Alt+⇧+←/→', 'Reiter verschieben'],
             ['Alt+⇧+T', 'zuletzt geschlossenen zurück'],
           ] as const).map(([k, was]) => (

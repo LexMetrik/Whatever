@@ -434,3 +434,29 @@ test.describe('W2·18 Welle 2 Punkt 1 — Pfeiltasten bewegen den FOKUS', () => 
     await expect.poll(() => fokusReiter(page)).toBe(VIER[2])
   })
 })
+
+//   Punkt 2  `Reiterleiste.tsx`: den `istBuchstabenTaste(e, 'q')`-Zweig
+//            entfernen ⇒ Alt+Q bewegt nichts, der aktive Reiter bleibt stehen.
+test.describe('W2·18 Welle 2 Punkt 2 — Alt+Q pendelt (zuletzt benutzt)', () => {
+  test('Alt+Q führt zum zuletzt benutzten Reiter, nicht zum Nachbarn — und zurück', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    const VIER = FUENFZEHN.slice(0, 4)
+    await seed(page, VIER, VIER[0])
+    const aktiv = async () => (await page.locator(`${STREIFEN} [data-reiter-aktiv="true"]`)
+      .getAttribute('data-reiter-schluessel'))?.toLowerCase()
+
+    await page.keyboard.press('Alt+3')
+    await expect.poll(aktiv).toBe(VIER[2].toLowerCase())
+    // Der Nachbar wäre Reiter 2; zuletzt BENUTZT war Reiter 1.
+    await page.keyboard.press('Alt+q')
+    await expect.poll(aktiv).toBe(VIER[0].toLowerCase())
+    // Und zurück — das ist das Pendeln (Chrome/VS Code «Ctrl+Tab»).
+    await page.keyboard.press('Alt+q')
+    await expect.poll(aktiv).toBe(VIER[2].toLowerCase())
+
+    // Das Kürzel steht auch in der Liste des «+N»-Blatts — sonst lernt es niemand.
+    await page.getByRole('button', { name: 'Alle 4 offenen Reiter' }).click()
+    const blatt = page.getByRole('dialog', { name: 'Alle geöffneten Reiter' })
+    await expect(blatt.getByText('Alt+Q', { exact: true })).toBeVisible()
+  })
+})
