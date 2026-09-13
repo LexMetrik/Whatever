@@ -574,8 +574,9 @@ export function merkeTab(path: string, label?: string): void {
  *  Rückfahrkarte — ein geöffnetes Dokument verschwand, ohne dass jemand es
  *  geschlossen hätte, und Alt+⇧+T brachte es nicht zurück. Gekappt wird
  *  einheitlich vorne (die ältesten), und genau die gehen in den Ring.
- *  Reihenfolge wie in `leereTabs`: der vorderste zuerst, damit das
- *  Wiederherstellen (vom Ende her) Position um Position zurückholt.
+ *  Die Ablage-REIHENFOLGE entscheidet `merkeGeschlossen` (W2·18 Welle 2
+ *  Punkt 4): absteigend nach Position, damit das Wiederherstellen Position um
+ *  Position von vorn zurückholt. Hier steht nur, WER weichen muss.
  *
  *  `geschuetzt` ist der Eintrag, der GERADE hereinkommt: beim Wiederherstellen
  *  am vollen Speicher darf nicht der eben zurückgeholte Reiter das Opfer der
@@ -696,9 +697,15 @@ export function schliesseTab(path: string): void {
 }
 
 export function leereTabs(): void {
-  // Reihenfolge: der ERSTE Reiter zuerst in den Ring, damit die
+  // ── W2·18 WELLE 2 PUNKT 4 · BERICHTIGTER KOMMENTAR ──────────────────────
+  // Hier stand: «der ERSTE Reiter zuerst in den Ring, damit die
   // Wiederherstellung (vom Ende her) von hinten nach vorn zurückholt und
-  // Position um Position stimmt.
+  // Position um Position stimmt.» Das war die Absicht, aber nicht die
+  // Wirkung — GEMESSEN 13.9.2026 kam [a, b, c] als [a, c, b] zurück. Die
+  // Ablage-Richtung entscheidet NICHT diese Stelle, sondern `merkeGeschlossen`
+  // (dort die Herleitung): eine Geste legt absteigend nach Position ab, der
+  // Stapel gibt sie aufsteigend zurück. Hier steht darum nur noch, WAS
+  // hineinkommt — alles, mit seiner Position.
   merkeGeschlossen(ladeTabs().map((eintrag, index) => ({ eintrag, index })));
   schreibe([]);
 }
@@ -795,7 +802,29 @@ function schreibeGeschlossene(ring: GeschlossenerReiter[]): void {
 function merkeGeschlossen(neue: GeschlossenerReiter[]): void {
   const echte = neue.filter(({ eintrag }) => pfadTeil(eintrag.path) !== '/');
   if (echte.length === 0) return;
-  schreibeGeschlossene([...ladeGeschlossene(), ...echte]);
+  // ── W2·18 WELLE 2 PUNKT 4 · EINE GANZE LEISTE LIEGT VERKEHRT HERUM AB ────
+  //
+  // GEMESSEN 13.9.2026: «Alle schliessen» mit [a, b, c] und dreimal
+  // Wiederherstellen ergab [a, c, b]; mit zehn Reitern [r0, r9, r1, r8, r2,
+  // r7, r3, r6, r4, r5] — die Leiste kam zurück, aber verschachtelt. Dasselbe
+  // bei «Rechts davon schliessen» ([a, b, d, c] statt [a, b, c, d]).
+  //
+  // URSACHE: der Ring ist ein STAPEL — `stelleLetztenWiederHer` nimmt hinten.
+  // Wer eine ganze Leiste in Ur-Reihenfolge hineinlegt, bekommt sie also von
+  // HINTEN zurück: der hinterste Reiter kommt zuerst, findet eine leere Liste
+  // vor, landet mangels Nachbarn vorn (`Math.min(index, length)`) — und jeder
+  // weitere schiebt sich davor.
+  //
+  // DIE ANTWORT steht hier und nur hier (§5): eine Geste legt ihre Reiter
+  // ABSTEIGEND nach Position ab, damit der Stapel sie AUFSTEIGEND zurückgibt.
+  // Dann trifft jeder wiederhergestellte Reiter auf eine Liste, die vor ihm
+  // schon alles Vordere trägt, und `splice(index)` landet auf den Punkt.
+  // Gilt für alle vier Aufrufer mit mehr als einem Eintrag (`leereTabs`,
+  // `schliesseAndere`, `schliesseRechtsVon`, `kappeMitRing`); die
+  // Einzelschliessung merkt davon nichts, und die REIHENFOLGE ZWISCHEN zwei
+  // Gesten bleibt unberührt (jüngere Geste zuerst zurück).
+  const geordnet = [...echte].sort((a, b) => b.index - a.index);
+  schreibeGeschlossene([...ladeGeschlossene(), ...geordnet]);
 }
 
 /** Der zuletzt geschlossene Reiter — für die Beschriftung der Aktion
