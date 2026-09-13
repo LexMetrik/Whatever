@@ -574,8 +574,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **B15 · Umschalter, Tabs, Akkordeons (K-06)** — 9 Befunde. §16. · **B16 · Seitengerüst/Inhaltsbreite (K-13)** — 8 Befunde. §17.
   - [ ] **B17 · Schaltflächen (K-09a)** — 8 Befunde. §18. · **B18 · Listen/Suche/Relevanz (K-19b)** — 8 Befunde. §19. · **B19 · Felder Detail (K-08b)** — 7 Befunde. §20.
 
-- [~] **Davids Alltags-Fehlerfunde** *(`W2·18-FEHLERBUCH`, stehender Sammel-Schritt, Entscheid David 8.8.2026)*
-  <!-- @meta id: W2·18-FEHLERBUCH · status: wip · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
+- [ ] **Davids Alltags-Fehlerfunde** *(`W2·18-FEHLERBUCH`, stehender Sammel-Schritt, Entscheid David 8.8.2026)*
+  <!-- @meta id: W2·18-FEHLERBUCH · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
   David sammelt Fehler aus der täglichen Nutzung formlos; Fix-Batch-Sessions arbeiten mehrere
   Positionen sortenrein ab. **Risikopfad-Funde gehören NICHT hierher**, sondern in den passenden
   Risiko-Dach-Schritt. Der Schritt bleibt stehen (nie `done`).
