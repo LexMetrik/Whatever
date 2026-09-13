@@ -402,6 +402,26 @@ Rot-Beweis; Rot-Beweise auf DIESEM Stand fahren, nie übernehmen.
    Änderung und wird im Commit deklariert (§6.3): @320 darf der Kopf fehlen, wenn der Streifen sonst
    überliefe. Zusätzlich den R8-Sweep (`e2e/kein-abschnitt.e2e.ts`) um einen Entscheid-Vertreter mit
    langem Gerichtskopf ergänzen (dritter Vertreter), damit die Klasse künftig selbst gefunden wird.
+   — **Nachtrag 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: der R8-Sweep hat am Schluss
+   des Auftrags ein ZWEITES Gesicht desselben Befundes gezeigt.** Der Fall oben läuft über den
+   STREIFEN über; hier PASST der Reiterkasten, und sein Inhalt blutet heraus. GEMESSEN
+   `/rechtsprechung/bger_1B_278_2022` @390: Kasten 240/240, der Link darin trug 217 px Inhalt in
+   einem 212-px-Kasten, Kopf «BGer» auf Breite 0 (scrollWidth 34) — Sweep-Meldungen
+   «[a-ueberlauf-ohne-scroller] a.flex … scrollWidth=217 clientWidth=212» und
+   «[f-reiter-mitten-im-wort] … Schnitt nach «Reiter 1: BGer 1B_278/2022 vo»». Der Befund ist ÄLTER
+   als dieser Auftrag und NICHT vom Rollenwechsel (Punkt 3) verursacht: A/B in derselben Seite
+   (derselbe Knoten einmal als `<a>`, einmal als `<button>`) ergibt zweimal 217/212. Sichtbar wurde
+   er erst, weil die Reiter-Sonde des Detektors auf `nav[aria-label="Offene Reiter"] a` greift — und
+   Reiter waren bis Punkt 3 keine Links; dass der erste Sweep-Lauf dieses Auftrags trotzdem grün
+   war, liegt an der lazy geladenen Beschriftung (GEMESSEN: ~0 ms «Entscheid öffnen» 120/120, ab
+   ~200 ms «BGer 1B_278/2022 vom 20. Juni 2022» 217/212 — der Lauf mass davor; die Messung ist also
+   zeitabhängig, nicht der Defekt). GEBAUT: `useReiterFenster` prüft am Anschlag BEIDE Gesichter —
+   Streifen-Überlauf ODER blutender Inhalt (`inhalt.scrollWidth > clientWidth + TOLERANZ_PX`);
+   Epochen-Riegel unverändert. NACHGEMESSEN: @320 171/171, Link 142/142 · @390 240/240, Link
+   212/212 (Kern gekürzt, Kopf weg); @1440 unverändert MIT Kopf. Wächter:
+   `e2e/w224-r13-reiter.e2e.ts` «der Inhalt eines Entscheid-Reiters bleibt in seinem Kasten» (@320
+   und @390), rot gefahren gegen die entschärfte Blutungs-Prüfung: «der Link trug 217 px in 212 px
+   … Expected: <= 213, Received: 217».
 2. **Umordnen über die Fenstergrenze hinaus.** Beim Ziehen an den linken/rechten Rand des Streifens
    scrollt der Streifen automatisch (Auto-Scroll, ~8 px je Frame, reduced-motion: sofort); Ablegen auf
    dem «+N»-Knopf hängt den Reiter ans Ende der Ordnung (und damit ins Blatt); im Blatt bleibt das

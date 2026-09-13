@@ -600,6 +600,32 @@ test.describe('W2·18 Welle 3 Punkt 1 — der Reiter läuft auch am Anschlag nic
     expect(m.letzteKante, 'der Reiter wird nicht angeschnitten').toBeLessThanOrEqual(m.clientW + 1)
   })
 
+  // ── DAS ZWEITE GESICHT VON «PASST NICHT» (Nachtrag 13.9.2026) ───────────
+  // Der Fall oben läuft über den STREIFEN über. GEMESSEN am R8-Sweep desselben
+  // Tages fand sich der andere: der Reiterkasten PASST, sein Inhalt blutet
+  // heraus. `/rechtsprechung/bger_1B_278_2022` @390 — Kasten 240/240, der Link
+  // darin trug 217 px Inhalt in einem 212-px-Kasten, und der Kopf «BGer» stand
+  // auf Breite 0 (sein `scrollWidth` mass 34). Der Sweep meldete dazu
+  // «[a-ueberlauf-ohne-scroller] a.flex … scrollWidth=217 clientWidth=212» und
+  // «[f-reiter-mitten-im-wort] … Schnitt nach «Reiter 1: BGer 1B_278/2022 vo»».
+  // Ursache ist die F6-Bauform selbst: der Kern steht `shrink-0`, der Kopf
+  // kürzt — reicht das nicht, bleibt nur, ihn ganz wegzunehmen.
+  const LANGER_KERN = '/rechtsprechung/bger_1B_278_2022'
+  for (const [w, h] of [[320, 844], [390, 844]] as const) {
+    test(`@${w}: der Inhalt eines Entscheid-Reiters bleibt in seinem Kasten`, async ({ page }) => {
+      await page.setViewportSize({ width: w, height: h })
+      await seed(page, [LANGER_KERN], LANGER_KERN)
+      const masz = await page.evaluate(() => {
+        const d = document.querySelector<HTMLElement>('[data-reiter-streifen] [data-reiter-schluessel]')!
+        const a = d.querySelector<HTMLElement>('a')!
+        return { kasten: [d.scrollWidth, d.clientWidth], inhalt: [a.scrollWidth, a.clientWidth] }
+      })
+      expect(masz.inhalt[0], `der Link trug ${masz.inhalt[0]} px in ${masz.inhalt[1]} px (Vorstand @390: 217 > 212)`)
+        .toBeLessThanOrEqual(masz.inhalt[1] + 1)
+      expect(masz.kasten[0], 'und der Kasten selbst passt auch').toBeLessThanOrEqual(masz.kasten[1] + 1)
+    })
+  }
+
   // Die GEGENPROBE: der Kopf weicht nur, wo er weichen MUSS. Derselbe Reiter
   // @1440 trägt sein Gericht ganz — sonst wäre aus der Ausnahme eine Regel
   // geworden (und die Leiste verlöre überall die Auskunft, WELCHES Gericht).

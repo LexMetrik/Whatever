@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState, type RefObject } from 'react';
-import { ersterUeberlauf, fensterStart } from './ueberlauf';
+import { ersterUeberlauf, fensterStart, TOLERANZ_PX } from './ueberlauf';
 
 // ═══ R13-1/R13-2 · DIE LEISTE MISST SICH SELBST ═════════════════════════════
 //
@@ -146,17 +146,35 @@ export function useReiterFenster(
         zuViel.current = Math.min(zuViel.current, kinder.length);
         const neu = Math.max(1, Math.min(ueber, kinder.length - 1));
         if (neu !== anzahl) { laeufe.current += 1; setAnzahl(neu); return; }
-        // ── W2·18 Welle 3 Punkt 1 · DAS FENSTER IST AM ANSCHLAG ────────────
-        // `neu === anzahl` an dieser Stelle heisst: kleiner geht nicht mehr
-        // (der Boden des Fensters ist EIN Reiter), und es läuft trotzdem
-        // über. Jetzt — und nur jetzt — greift F6: der Kopf weicht ganz.
-        if (!kopfRiegel.current) {
+      }
+      // ── W2·18 Welle 3 Punkt 1 · DAS FENSTER IST AM ANSCHLAG ──────────────
+      // Steht nur noch EIN Reiter im Streifen, kann das Fenster nicht weiter
+      // schrumpfen. Passt es dann immer noch nicht, greift F6: der Kopf
+      // weicht ganz. «Passt nicht» hat dabei ZWEI Gesichter — beide gemessen
+      // 13.9.2026 am gebauten dist/:
+      //   (a) der Streifen läuft über: `/rechtsprechung/ag_gerichte_HOR_2024_19`
+      //       @320 `scrollWidth 192` gegen `clientWidth 171`;
+      //   (b) der KASTEN passt, sein INHALT blutet heraus:
+      //       `/rechtsprechung/bger_1B_278_2022` @390 — Reiterkasten 240/240,
+      //       aber der Link darin trug 217 px Inhalt in 212 px Kasten, und der
+      //       Kopf «BGer» stand auf Breite 0 (scrollWidth 34). Ursache ist die
+      //       F6-Bauform selbst: der Kern steht `shrink-0` (die
+      //       Geschäftsnummer wird nie gekürzt), der Kopf kürzt — und wenn
+      //       das nicht reicht, bleibt nur noch, ihn ganz wegzunehmen.
+      //       (b) ist der FB-Fall «der Kasten trägt seinen Inhalt», eine Ebene
+      //       tiefer: die Kanten-Rechnung oben misst den KASTEN, hier wird
+      //       gemessen, was darin steht.
+      if (!kopfRiegel.current && kinder.length === 1) {
+        const inhalt = kinder[0].querySelector<HTMLElement>('a');
+        const blutet = !!inhalt && inhalt.scrollWidth > inhalt.clientWidth + TOLERANZ_PX;
+        if (ueber >= 0 || blutet) {
           kopfRiegel.current = true;
           laeufe.current += 1;
           setOhneKopf(true);
           return;
         }
-      } else if (anzahl < gesamt && anzahl + 1 < zuViel.current) {
+      }
+      if (ueber < 0 && anzahl < gesamt && anzahl + 1 < zuViel.current) {
         laeufe.current += 1;
         setAnzahl(anzahl + 1);
         return;
