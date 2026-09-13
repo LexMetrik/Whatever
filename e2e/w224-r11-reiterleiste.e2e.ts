@@ -523,3 +523,109 @@ test.describe('R3/R4 — das Überlauf-Blatt', () => {
     await expect(wieder.locator('li')).toHaveCount(3)
   })
 })
+
+// ═══ W2·18 WELLE 2 PUNKT 3 · WER KEINE BEWEGUNG WILL, BEKOMMT KEINE ═════════
+//
+// Fahrplan §4.R2 Punkt 3. GEMESSEN 13.9.2026 (Chromium, Dev-Server, vier
+// Reiter + offenes Blatt, `reducedMotion: 'reduce'` gegen `'no-preference'`):
+// die Zusage wird schon eingelöst — `src/index.css` killt unter `reduce`
+// global jede `transition-duration`/`animation-duration` (.001ms = gemessene
+// `1e-06s`, gegen 0.15s ohne die Präferenz), und die Leiste kennt daneben
+// keine JS-Bewegung: das Rad setzt `scrollLeft` hart, `scroll-behavior` steht
+// auf `auto`, Einfügemarke und Blatt erscheinen ohne Übergang (gemessen 0s in
+// BEIDEN Zuständen).
+// EINE ZWEITE REITER-EIGENE REGEL WÄRE DIE ZWEITE WAHRHEIT (§5) — was fehlte,
+// war nicht die Regel, sondern ihr Wächter. Der steht hier.
+//
+// ROT ZU BEKOMMEN (§6.7, so gefahren): in `src/index.css` den Block
+// `@media (prefers-reduced-motion: reduce) { *, *::before, *::after … }`
+// auskommentieren ⇒ Griffe und «+» messen 0.15 s statt 1e-06 s.
+test.describe('W2·18 Welle 2 Punkt 3 — prefers-reduced-motion', () => {
+  test('unter «reduce» bewegt sich in Leiste und Blatt nichts', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await seed(page, [OR, RECHNER, VORLAGE])
+    await page.locator(`${REITER} button[aria-label*="offenen Reiter"]`).click()
+    await expect(page.getByRole('dialog', { name: 'Alle geöffneten Reiter' })).toBeVisible()
+
+    const befund = await page.evaluate(() => {
+      const sek = (roh: string) => Math.max(0, ...roh.split(',').map((s) => {
+        const z = parseFloat(s)
+        return Number.isFinite(z) ? (s.trim().endsWith('ms') ? z / 1000 : z) : 0
+      }))
+      const flaechen = [
+        ...document.querySelectorAll<HTMLElement>('nav[aria-label="Offene Reiter"] *'),
+        ...document.querySelectorAll<HTMLElement>('[role="dialog"][aria-label="Alle geöffneten Reiter"] *'),
+      ]
+      let schlimmster = { was: '—', dauer: 0 }
+      for (const el of flaechen) {
+        const c = getComputedStyle(el)
+        const d = Math.max(sek(c.transitionDuration), sek(c.animationDuration))
+        if (d > schlimmster.dauer) schlimmster = { was: `${el.tagName}.${el.className}`.slice(0, 80), dauer: d }
+      }
+      const streifen = document.querySelector('[data-reiter-streifen]')!
+      return { ...schlimmster, zahl: flaechen.length, scroll: getComputedStyle(streifen).scrollBehavior }
+    })
+
+    expect(befund.zahl, 'die Sonde muss überhaupt Flächen gefunden haben').toBeGreaterThan(10)
+    // .001ms ist Absicht (so feuert `transitionend` weiter) — alles darüber ist
+    // sichtbare Bewegung. 10 ms als Schwelle: eine Grössenordnung unter dem
+    // schnellsten Haus-Übergang (--dur-fast 120 ms).
+    expect(befund.dauer, `längster Übergang: ${befund.was}`).toBeLessThanOrEqual(0.01)
+    // Und kein weiches Scrollen im Streifen — das killt die Regel oben nicht.
+    expect(befund.scroll).toBe('auto')
+  })
+})
+
+// ═══ W2·18 WELLE 2 PUNKT 5 · DAS MENÜ IST DA, BEVOR MAN KLICKT ══════════════
+//
+// GEMESSEN 13.9.2026 in der Seite (MutationObserver ab `contextmenu` bis
+// `[role=menu]` im DOM), gebautes dist/ hinter `vite preview`:
+//     Vorstand `83331af1d`   1. Rechtsklick 320 ms · 2. 10 ms · 3. 8 ms
+//     danach                 1. Rechtsklick  17 ms · 2.  9 ms · 3. 9 ms
+// Die 320 ms waren NICHT das Netz (mit vorgeladenem Chunk blieben es 316) —
+// sie waren Reacts Nachlauf nach einem `Suspense`-Fallback. Darum zwei
+// Massnahmen: Vorlauf beim Betreten der Leiste UND der dynamische Import von
+// Hand statt `lazy`/`Suspense`.
+//
+// ROT ZU BEKOMMEN (§6.7, so gefahren — die Datei `Reiterleiste.tsx` des
+// Vorstands eingespielt): «Vorlauf» findet keine Chunk-Anfrage nach dem Hover,
+// «öffnet sofort» misst statt ≤150 ms die 320 ms des Nachlaufs.
+test.describe('W2·18 Welle 2 Punkt 5 — Kontextmenü ohne Wartezeit', () => {
+  test('der Zeiger auf der Leiste holt den Chunk; der Rechtsklick öffnet sofort', async ({ page }) => {
+    // Mitgeschrieben wird am NETZ, nicht über `performance.getEntriesByType`:
+    // dessen Puffer fasst 250 Einträge und ist am Dev-Server (ein Modul = eine
+    // Anfrage) längst voll, bevor die Leiste steht — die Sonde hätte dort
+    // nichts gesehen und wäre falsch-rot geworden.
+    const chunkAnfragen: string[] = []
+    page.on('request', (r) => { if (/ReiterMenue/i.test(r.url())) chunkAnfragen.push(r.url()) })
+
+    await seed(page, [OR, RECHNER, VORLAGE])
+    // Vor der Berührung ist er NICHT geladen — sonst läge er im Start-Chunk
+    // (§15: das war die Ausgangslage, die ihn überhaupt lazy gemacht hat).
+    expect(chunkAnfragen).toHaveLength(0)
+
+    await page.locator(`${REITER} [data-reiter-schluessel]`).first().hover()
+    await expect.poll(() => chunkAnfragen.length, { timeout: 15_000 }).toBeGreaterThan(0)
+    // Die Verweildauer eines Menschen zwischen Ankunft und Klick — genau die
+    // Zeit, die der Vorlauf nutzt (am Dev-Server transformiert vite das Modul
+    // dabei erst noch, gemessen ~700 ms; im gebauten dist/ sind es ~6 ms).
+    await page.waitForTimeout(1500)
+
+    // Jetzt der Rechtsklick — gemessen IN der Seite, ohne Playwright-Rundreise.
+    const ms = await page.evaluate(() => new Promise<number>((fertig) => {
+      const el = document.querySelector('[data-reiter-schluessel]')!
+      const t0 = performance.now()
+      const wache = new MutationObserver(() => {
+        if (document.querySelector('[role=menu]')) { wache.disconnect(); fertig(Math.round(performance.now() - t0)) }
+      })
+      wache.observe(document.body, { childList: true, subtree: true })
+      el.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, cancelable: true, clientX: 300, clientY: 40 }))
+      setTimeout(() => { wache.disconnect(); fertig(-1) }, 8000)
+    }))
+    expect(ms, 'Vorstand mass 320 ms — Reacts Nachlauf nach dem Suspense-Fallback')
+      .toBeGreaterThanOrEqual(0)
+    expect(ms).toBeLessThanOrEqual(150)
+    // Und es ist das ECHTE Menü, nicht eine leere Hülle.
+    await expect(page.locator('[role=menu] [role=menuitem]').first()).toBeVisible()
+  })
+})

@@ -574,8 +574,9 @@ export function merkeTab(path: string, label?: string): void {
  *  Rückfahrkarte — ein geöffnetes Dokument verschwand, ohne dass jemand es
  *  geschlossen hätte, und Alt+⇧+T brachte es nicht zurück. Gekappt wird
  *  einheitlich vorne (die ältesten), und genau die gehen in den Ring.
- *  Reihenfolge wie in `leereTabs`: der vorderste zuerst, damit das
- *  Wiederherstellen (vom Ende her) Position um Position zurückholt.
+ *  Die Ablage-REIHENFOLGE entscheidet `merkeGeschlossen` (W2·18 Welle 2
+ *  Punkt 4): absteigend nach Position, damit das Wiederherstellen Position um
+ *  Position von vorn zurückholt. Hier steht nur, WER weichen muss.
  *
  *  `geschuetzt` ist der Eintrag, der GERADE hereinkommt: beim Wiederherstellen
  *  am vollen Speicher darf nicht der eben zurückgeholte Reiter das Opfer der
@@ -696,9 +697,15 @@ export function schliesseTab(path: string): void {
 }
 
 export function leereTabs(): void {
-  // Reihenfolge: der ERSTE Reiter zuerst in den Ring, damit die
+  // ── W2·18 WELLE 2 PUNKT 4 · BERICHTIGTER KOMMENTAR ──────────────────────
+  // Hier stand: «der ERSTE Reiter zuerst in den Ring, damit die
   // Wiederherstellung (vom Ende her) von hinten nach vorn zurückholt und
-  // Position um Position stimmt.
+  // Position um Position stimmt.» Das war die Absicht, aber nicht die
+  // Wirkung — GEMESSEN 13.9.2026 kam [a, b, c] als [a, c, b] zurück. Die
+  // Ablage-Richtung entscheidet NICHT diese Stelle, sondern `merkeGeschlossen`
+  // (dort die Herleitung): eine Geste legt absteigend nach Position ab, der
+  // Stapel gibt sie aufsteigend zurück. Hier steht darum nur noch, WAS
+  // hineinkommt — alles, mit seiner Position.
   merkeGeschlossen(ladeTabs().map((eintrag, index) => ({ eintrag, index })));
   schreibe([]);
 }
@@ -795,7 +802,29 @@ function schreibeGeschlossene(ring: GeschlossenerReiter[]): void {
 function merkeGeschlossen(neue: GeschlossenerReiter[]): void {
   const echte = neue.filter(({ eintrag }) => pfadTeil(eintrag.path) !== '/');
   if (echte.length === 0) return;
-  schreibeGeschlossene([...ladeGeschlossene(), ...echte]);
+  // ── W2·18 WELLE 2 PUNKT 4 · EINE GANZE LEISTE LIEGT VERKEHRT HERUM AB ────
+  //
+  // GEMESSEN 13.9.2026: «Alle schliessen» mit [a, b, c] und dreimal
+  // Wiederherstellen ergab [a, c, b]; mit zehn Reitern [r0, r9, r1, r8, r2,
+  // r7, r3, r6, r4, r5] — die Leiste kam zurück, aber verschachtelt. Dasselbe
+  // bei «Rechts davon schliessen» ([a, b, d, c] statt [a, b, c, d]).
+  //
+  // URSACHE: der Ring ist ein STAPEL — `stelleLetztenWiederHer` nimmt hinten.
+  // Wer eine ganze Leiste in Ur-Reihenfolge hineinlegt, bekommt sie also von
+  // HINTEN zurück: der hinterste Reiter kommt zuerst, findet eine leere Liste
+  // vor, landet mangels Nachbarn vorn (`Math.min(index, length)`) — und jeder
+  // weitere schiebt sich davor.
+  //
+  // DIE ANTWORT steht hier und nur hier (§5): eine Geste legt ihre Reiter
+  // ABSTEIGEND nach Position ab, damit der Stapel sie AUFSTEIGEND zurückgibt.
+  // Dann trifft jeder wiederhergestellte Reiter auf eine Liste, die vor ihm
+  // schon alles Vordere trägt, und `splice(index)` landet auf den Punkt.
+  // Gilt für alle vier Aufrufer mit mehr als einem Eintrag (`leereTabs`,
+  // `schliesseAndere`, `schliesseRechtsVon`, `kappeMitRing`); die
+  // Einzelschliessung merkt davon nichts, und die REIHENFOLGE ZWISCHEN zwei
+  // Gesten bleibt unberührt (jüngere Geste zuerst zurück).
+  const geordnet = [...echte].sort((a, b) => b.index - a.index);
+  schreibeGeschlossene([...ladeGeschlossene(), ...geordnet]);
 }
 
 /** Der zuletzt geschlossene Reiter — für die Beschriftung der Aktion
@@ -827,6 +856,63 @@ export function stelleLetztenWiederHer(): TabEintrag | null {
   // um den wiederhergestellten aufzunehmen.
   schreibe(kappeMitRing(naechste, letzter.eintrag));
   return letzter.eintrag;
+}
+
+// ═══ W2·18 WELLE 2 PUNKT 2 · ZULETZT BENUTZT (MRU) ══════════════════════════
+//
+// GEMESSENER ANLASS (13.9.2026, Stand `f0ed8859c`): die Leiste kannte nur die
+// POSITION — Alt+1…9 und Alt+Bild↑/↓. Wer zwischen zwei Reitern hin- und
+// herarbeitet (der Alltag beim Abgleich zweier Erlasse), musste ihre Stellen
+// kennen und zählen, und ab Reiter 10 gab es überhaupt kein Kürzel mehr
+// (Alt+9 ist der LETZTE, R13-8). Chrome («Ctrl+Tab in MRU») und VS Code
+// («Ctrl+Tab») lösen genau das über die zuletzt-benutzt-Reihenfolge.
+//
+// WAS HIER STEHT, IST NUR DIE BUCHFÜHRUNG (§3): eine Liste von Reiter-
+// IDENTITÄTEN, jüngste zuletzt, ohne Dubletten, gekappt auf `MRU_MAX`. Kein
+// Zeitstempel (§2: kein `Date.now()` in `src/lib`) — die Reihenfolge im Array
+// IST die Reihenfolge. Welche Taste sie auslöst, entscheidet die Leiste.
+//
+// ZEHN statt `MAX`: anders als der Schliess-Ring ist das keine Rückfahrkarte
+// für Verlorenes, sondern ein Kurzzeit-Gedächtnis für das Pendeln. Was zehn
+// Reiter zurückliegt, findet man über das «+N»-Blatt, nicht über ein Kürzel.
+const MRU_KEY = 'lexmetrik-tabs-mru';
+const MRU_MAX = 10;
+
+function ladeMru(): string[] {
+  try {
+    const roh = localStorage.getItem(MRU_KEY);
+    const arr = roh ? JSON.parse(roh) : [];
+    return Array.isArray(arr) ? arr.filter((x): x is string => typeof x === 'string').slice(-MRU_MAX) : [];
+  } catch {
+    return [];
+  }
+}
+
+/** Schreibt fort, WELCHER Reiter gerade aktiv geworden ist. Aufrufer ist die
+ *  Leiste bei jedem Aktiv-Wechsel; mehrfaches Melden derselben Identität ändert
+ *  nichts (sie steht dann einmal, am jüngsten Ende). */
+export function merkeAktivenReiter(path: string): void {
+  const teil = tabSchluessel(path);
+  const ohne = ladeMru().filter((k) => k !== teil);
+  try { localStorage.setItem(MRU_KEY, JSON.stringify([...ohne, teil].slice(-MRU_MAX))); }
+  catch { /* privater Modus — das Pendeln ist Komfort, kein Datenbestand */ }
+}
+
+/** Der zuletzt benutzte Reiter, der NICHT der aktive ist und noch offen steht —
+ *  das Ziel des Pendel-Kürzels. `null` = es gibt keinen (frischer Start, oder
+ *  alles Gemerkte ist inzwischen geschlossen); dann tut die Taste nichts, statt
+ *  irgendwohin zu springen (§8).
+ *
+ *  @param offen Die offenen Reiter (Speicherordnung, die die Leiste ohnehin hält).
+ *  @param aktiv Identität des aktiven Reiters (`tabSchluessel`). */
+export function vorherigerReiter(offen: readonly TabEintrag[], aktiv: string): TabEintrag | null {
+  const mru = ladeMru();
+  for (let i = mru.length - 1; i >= 0; i -= 1) {
+    if (mru[i] === aktiv) continue;
+    const t = offen.find((x) => tabSchluessel(x.path) === mru[i]);
+    if (t) return t;
+  }
+  return null;
 }
 
 /** Pfad für eine NEUE Instanz desselben Erlasses/Items (Auftrag David: dasselbe

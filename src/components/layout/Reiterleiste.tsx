@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type KeyboardEvent as ReactTaste } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTabs } from './useTabs';
 import {
@@ -6,6 +6,9 @@ import {
   schliesseAndere, schliesseRechtsVon,
   stelleLetztenWiederHer, letzterGeschlossener, naechsteInstanz, merkeTab,
   nachfolgerReiter,
+  // W2·18 Welle 2 Punkt 2 · Pendeln zwischen den zwei zuletzt benutzten
+  // Reitern — die Buchführung steht in `lib/tabs` (§3), hier nur die Taste.
+  merkeAktivenReiter, vorherigerReiter,
   // ── R3 (Prüfbefund R11, 6.9.2026) · EINE KURZFORM, EIN TITEL (§5) ────────
   // Beide Ableitungen wohnten bis hierher IN dieser Datei — das Überlauf-Blatt
   // (`TabPanel`) baute daneben seine eigene Beschriftung aus `verlaufLabel`
@@ -34,7 +37,40 @@ import { usePaneSteuerung } from './usePaneLayout';
 // LOGIKVERLUST-BEWERTUNG (§15): keiner — dieselbe Komponente, dieselben
 // Aktionen, nur später geladen. Die Reiter-Mechanik selbst (`lib/tabs`) bleibt
 // im Entry, wo sie hingehört.
-const ReiterMenue = lazy(() => import('./ReiterMenue').then((m) => ({ default: m.ReiterMenue })));
+// ── W2·18 WELLE 2 PUNKT 5 · «EINEN WIMPERNSCHLAG SPÄTER» WAR EINE DRITTEL-
+//    SEKUNDE, JEDES MAL AM ERSTEN RECHTSKLICK ────────────────────────────────
+//
+// GEMESSEN 13.9.2026, in der Seite (MutationObserver ab `contextmenu` bis
+// `[role=menu]` im DOM; Chromium, vier Reiter):
+//     gebautes dist/ (vite preview)   1. Rechtsklick 320 ms · 2. 10 ms · 3. 8 ms
+//     Dev-Server                      1. Rechtsklick 728 ms · 2. 76 ms
+// Das Menü ging also nicht verloren, es kam ZU SPÄT — und wer nach einer
+// Drittelsekunde nichts sieht, klickt ein zweites Mal oder gibt auf.
+//
+// ZWEI URSACHEN, und die zweite ist die grössere:
+//  (1) der Chunk wurde erst beim Klick angefordert (über eine echte Leitung
+//      kostet das eine Rundreise, lokal nur ~6 ms);
+//  (2) `React.lazy` + `Suspense` SUSPENDIERT auch dann, wenn das Modul längst
+//      geladen ist: der erste Render ruft den Loader, bekommt ein — bereits
+//      erfülltes — Versprechen und wirft es trotzdem; der Inhalt kommt erst im
+//      Nachlauf. GEMESSEN blieb der erste Rechtsklick darum auch MIT
+//      vorgeladenem Chunk bei 316 ms (gegen 322 ohne), während der zweite
+//      10 ms brauchte. Die Differenz ist Reacts Nachlauf, nicht das Netz.
+//
+// DIE ANTWORT: kein `lazy`/`Suspense` mehr für diese eine Fläche, sondern der
+// dynamische Import von Hand — das Ergebnis liegt im Zustand, und das Menü
+// rendert im SELBEN Commit wie der Rechtsklick. Angefordert wird es, sobald
+// jemand die Leiste betritt (Zeiger oder Fokus): zwischen Ankunft und Klick
+// liegen beim Menschen Hunderte von Millisekunden.
+// DAS START-BUDGET BLEIBT UNBERÜHRT (§15, Herleitung oben): der Chunk bleibt
+// ein eigener (gemessen 923 B gzip), er wird nur früher angefordert; der
+// Entry-Chunk misst weiterhin 54.9 KB gzip gegen 60.0 KB Budget.
+// KOMMT DER RECHTSKLICK DOCH ZUERST (Touch, Shift+F10 ohne Vorlauf), bleibt
+// `menue` gesetzt und das Menü öffnet, sobald das Modul da ist — es wird nicht
+// verworfen.
+let menueVorlauf: Promise<typeof import('./ReiterMenue')> | null = null;
+/** Den Menü-Chunk anfordern (höchstens einmal je Seitenleben). */
+const ladeMenue = (): Promise<typeof import('./ReiterMenue')> => (menueVorlauf ??= import('./ReiterMenue'));
 import type { ReiterMenueEintrag } from './ReiterMenue';
 
 // ─── Arbeitsleiste: die offenen Reiter, sichtbar (W2·24 §5a, Wunsch David) ───
@@ -88,6 +124,19 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   const streifenRef = useRef<HTMLDivElement>(null);
   /** Offenes Reiter-Kontextmenü (M4): welcher Reiter, an welcher Stelle. */
   const [menue, setMenue] = useState<{ path: string | null; x: number; y: number } | null>(null);
+  // W2·18 Welle 2 Punkt 5 · die Menü-Fläche selbst, sobald ihr Chunk da ist
+  // (Herleitung oben am Import). Bis dahin `null` — dann gibt es schlicht kein
+  // Menü, keinen Platzhalter unter dem Zeiger.
+  const [MenueFlaeche, setMenueFlaeche] =
+    useState<typeof import('./ReiterMenue')['ReiterMenue'] | null>(null);
+  const holeMenue = () => { void ladeMenue().then((m) => setMenueFlaeche(() => m.ReiterMenue)); };
+  /** Ein Menü öffnen — und dabei IMMER auch seinen Chunk anstossen. Der
+   *  Vorlauf am `nav` (Zeiger/Fokus) deckt den Alltag ab, aber nicht jeden
+   *  Fall: ein Zeiger, der beim Laden schon über der Leiste RUHT, löst kein
+   *  `pointerenter` aus. Ohne diese Zeile bliebe das Menü dann für immer aus —
+   *  ein Rechtsklick, der nichts tut (§8). Mit ihr öffnet es, sobald das Modul
+   *  da ist: `menue` bleibt gesetzt, es wird nicht verworfen. */
+  const oeffneMenue = (m: { path: string | null; x: number; y: number }) => { holeMenue(); setMenue(m); };
   const gezogen = useRef<string | null>(null);
   /** Gezogener Reiter als STATE (nicht nur Ref): der Reiter unter dem Zeiger
    *  soll sich während des Zugs sichtbar zurücknehmen — dafür braucht es ein
@@ -140,6 +189,13 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   }, [brauchtG, brauchtE, brauchtM]);
 
   const aktivSchluessel = tabSchluessel(pathname + search);
+
+  // ── W2·18 Welle 2 Punkt 2 · WER ZULETZT DRAN WAR ──────────────────────────
+  // Die einzige Stelle, an der ein Aktiv-Wechsel sicher durchkommt: die Leiste
+  // sieht jede Navigation (sie hängt an `useLocation`), egal ob sie aus einem
+  // Klick, einem Kürzel oder dem Zurück-Knopf des Browsers kam. Ein Schreiber
+  // am Reiter-Klick allein hätte die halbe App verpasst.
+  useEffect(() => { merkeAktivenReiter(aktivSchluessel); }, [aktivSchluessel]);
 
   // ── D16 (David 6.9.2026) · DIE LEISTE ZEIGT DEN SPEICHER, SONST NICHTS ────
   //
@@ -207,6 +263,90 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       schliesseTab(path);
       if (nachbar) navigate(nachbar.path); else zurSammlung();
     } else schliesseTab(path);
+  };
+
+  // ═══ W2·18 WELLE 2 PUNKT 1 · DER STREIFEN IST EINE GRUPPE, KEINE KETTE ════
+  //
+  // GEMESSEN 13.9.2026 (SSR-Markup, Vorstand `2a331dcdd`): 0 × `tabindex` in
+  // der ganzen Leiste. Jeder Reiterknopf und jedes ✕ stand im Tabulator-Ring —
+  // sechs Reiter kosteten zwölf Anschläge bis zum Dokument, fünfzig hundert.
+  // WAI-ARIA APG (Tabs/Toolbar) kennt dafür das «roving tabindex»: EIN Element
+  // der Gruppe trägt `tabindex=0`, alle übrigen −1, und bewegt wird INNERHALB
+  // der Gruppe mit den Pfeiltasten.
+  //
+  // WELCHER Reiter den Platz hat: der zuletzt fokussierte, solange er im
+  // Fenster steht; sonst der aktive; sonst der erste. So findet die
+  // Tabulator-Taste immer DEN Reiter, an dem man zuletzt war — und nach einem
+  // Seitenwechsel den, den man gerade liest.
+  //
+  // KEIN `role=tablist` (Entscheid §4.R2): die Leiste ist Navigation, kein
+  // Panel-Umschalter; `nav` bleibt. Die Rolle würde Auswahl-Semantik
+  // versprechen (`aria-selected`, «Pfeiltaste wählt aus»), die hier gerade
+  // NICHT gilt — Pfeil bewegt den FOKUS, aktiviert wird mit Enter/Space
+  // (das tut der Knopf von sich aus, darum steht dazu unten nichts).
+  const [fokusWunsch, setFokusWunsch] = useState<string | null>(null);
+  const sichtbareSchluessel = sichtbar.map((t) => tabSchluessel(t.path));
+  const ringSchluessel = fokusWunsch && sichtbareSchluessel.includes(fokusWunsch)
+    ? fokusWunsch
+    : sichtbareSchluessel.includes(aktivSchluessel)
+      ? aktivSchluessel
+      : sichtbareSchluessel[0] ?? null;
+
+  /** Der Reiterknopf zu einer Identität — über das Mess-Attribut, nicht über
+   *  einen CSS-Selektor: Reiterpfade tragen `/`, `?` und `=`, und `CSS.escape`
+   *  ist nicht überall zu haben. */
+  const knopfVon = (k: string): HTMLElement | null => {
+    const kasten = Array.from(streifenRef.current?.querySelectorAll<HTMLElement>('[data-reiter-schluessel]') ?? [])
+      .find((x) => x.getAttribute('data-reiter-schluessel') === k);
+    return kasten?.querySelector<HTMLElement>('button') ?? null;
+  };
+
+  /** Wohin der Fokus nach dem NÄCHSTEN Render gehört (Delete: der Reiter, der
+   *  den Platz des geschlossenen einnimmt). Erst danach steht sein Knopf im
+   *  DOM — vorher zu fokussieren hiesse, ein Element zu greifen, das gleich
+   *  verschwindet. */
+  const fokusNach = useRef<string | null>(null);
+  useEffect(() => {
+    const k = fokusNach.current;
+    if (!k) return;
+    fokusNach.current = null;
+    knopfVon(k)?.focus();
+  });
+
+  const zumReiter = (k: string) => { setFokusWunsch(k); knopfVon(k)?.focus(); };
+
+  // ←/→ bewegen den Fokus auf den Nachbarn, Home/End auf den ersten/letzten
+  // SICHTBAREN, Delete schliesst den fokussierten Reiter (Browser-Idiom für
+  // «weg damit», ohne die Hand zur Maus).
+  // KEIN UMLAUF am Rand — dieselbe Wahl wie beim Umordnen (Alt+⇧+←/→, s.
+  // unten): wer am Ende ankommt, soll es merken, statt vorn wieder
+  // herauszukommen. Zyklisch blättert Alt+Bild↑/↓, und das WECHSELT die
+  // Auswahl; hier wandert nur der Fokus.
+  // MIT MODIFIKATOR NICHTS: Alt+⇧+←/→ ordnet um, Alt+←/→ gehört dem Browser
+  // (Verlauf) — beides wird hier nicht abgefangen.
+  const onStreifenTaste = (ev: ReactTaste<HTMLDivElement>) => {
+    if (ev.altKey || ev.ctrlKey || ev.metaKey || ev.shiftKey) return;
+    const hier = (ev.target as HTMLElement).closest?.('[data-reiter-schluessel]')
+      ?.getAttribute('data-reiter-schluessel');
+    if (!hier) return;
+    const i = sichtbareSchluessel.indexOf(hier);
+    if (i === -1) return;
+    if (ev.key === 'Delete') {
+      const naechster = sichtbareSchluessel[i + 1] ?? sichtbareSchluessel[i - 1] ?? null;
+      ev.preventDefault();
+      fokusNach.current = naechster;
+      if (naechster) setFokusWunsch(naechster);
+      schliessen(sichtbar[i].path);
+      return;
+    }
+    const ziel = ev.key === 'ArrowRight' ? Math.min(i + 1, sichtbareSchluessel.length - 1)
+      : ev.key === 'ArrowLeft' ? Math.max(i - 1, 0)
+      : ev.key === 'Home' ? 0
+      : ev.key === 'End' ? sichtbareSchluessel.length - 1
+      : -1;
+    if (ziel < 0) return;
+    ev.preventDefault();
+    zumReiter(sichtbareSchluessel[ziel]);
   };
 
   // ── D19 (David 6.9.2026: «mit plus einen neuen reiter erzeugen können»),
@@ -323,6 +463,35 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         return;
       }
       if (e.shiftKey) return;
+      // ── W2·18 WELLE 2 PUNKT 2 · ALT+Q PENDELT (zuletzt benutzt) ─────────
+      //
+      // WARUM Q, GEMESSEN/BELEGT 13.9.2026:
+      //  · `Ctrl+Tab` wäre das Browser-Idiom — der Browser fängt es für seine
+      //    EIGENEN Reiter ab (gemessen 7.9.2026, wirkungslos; der Griff steht
+      //    oben trotzdem, angeboten wird er nicht, §8).
+      //  · `Alt+Tab` gehört auf Windows/Linux dem Fenstermanager, `Cmd+Tab`
+      //    auf macOS dem Dock — die Seite sieht sie gar nicht.
+      //  · `Alt+Q` ist frei: in der App belegt Alt sonst nur T, W, 1…9, ⇧+T,
+      //    ⇧+←/→ und Bild↑/↓ (Vollerhebung `altKey` über `src/`, 13.9.2026 —
+      //    ausser der Leiste liest nur `HeaderSuche` Alt, und zwar am KLICK),
+      //    und die Alt-Belegungen der Browser (←/→ Verlauf, Home, D, F/E)
+      //    lassen Q aus. GEMESSEN (Chromium, `keydown`-Mitschrift): Alt+Q
+      //    kommt als `code: 'KeyQ'`, `altKey: true`, `defaultPrevented: false`
+      //    an der Seite an — kein Browser-Griff liegt davor.
+      //  · macOS legt auf Option+Buchstabe ein SONDERZEICHEN (Option+Q = «œ»,
+      //    dieselbe Klasse wie die gemessenen †/∑/¡ aus Welle 1). Gelesen wird
+      //    darum die PHYSISCHE Taste — `istBuchstabenTaste` prüft `e.code`
+      //    zuerst (`reiterleiste/tasten.ts`, dort die Herleitung). Der
+      //    «œ»-Konflikt ist damit konstruktiv ausgeschlossen, nicht gehofft.
+      if (istBuchstabenTaste(e, 'q')) {
+        const ziel = vorherigerReiter(ordnung, aktivSchluessel);
+        // Kein Ziel = frischer Start oder alles Gemerkte geschlossen: dann tut
+        // die Taste NICHTS, statt irgendwohin zu springen (§8).
+        if (!ziel) return;
+        e.preventDefault();
+        navigate(ziel.path);
+        return;
+      }
       // ── R13-8 · ALT+9 IST DER LETZTE REITER, NICHT DER NEUNTE ───────────
       // Browser-Norm (Chrome, Firefox, Safari): die 9 springt ans ENDE. Vorher
       // war sie schlicht der neunte — bei 15 Reitern war #10 und alles dahinter
@@ -596,6 +765,14 @@ export function Reiterleiste({ paneSchluessel = [] }: {
 
   return (
     <nav aria-label="Offene Reiter" ref={leisteRef}
+      // W2·18 Welle 2 Punkt 5 · Vorlauf für das Kontextmenü (Herleitung oben).
+      // ZWEI Wege hinein, beide zählen als Absicht: der Zeiger betritt die
+      // Leiste (`pointerenter` — einmal, nicht bei jedem Reiterwechsel, weil
+      // er am `nav` hängt und nicht am Reiter) und der Fokus kommt herein
+      // (`focus` steigt hier als `focusin` an; ohne ihn hätte der
+      // Tastaturweg Shift+F10 keinen Vorlauf).
+      onPointerEnter={holeMenue}
+      onFocus={holeMenue}
       // W2·24-R4: die Arbeitsleiste KLEBT jetzt — unter der Titelblatt-Zeile
       // (`--app-krone-h`) und mit ihrer eigenen, festen Höhe (`--app-reiter-h`).
       // Beide Zahlen stehen in `src/index.css`; dieselbe Summe (`--app-kopf-h`)
@@ -647,13 +824,17 @@ export function Reiterleiste({ paneSchluessel = [] }: {
           // ausgerechnet hat — im DOM nachlesbar, statt aus Breiten erraten.
           data-reiter-fenster={`${start}/${anzahl}/${ordnung.length}`}
           onDoubleClick={(ev) => { if (ev.target === ev.currentTarget) neuerReiter(); }}
+          // W2·18 Welle 2 Punkt 1 · Pfeiltasten/Home/End/Delete. AM STREIFEN,
+          // nicht am einzelnen Reiter: welcher der Nachbar ist, weiss nur die
+          // Leiste (§3) — und ein Zuhörer statt N spart N−1 Verdrahtungen.
+          onKeyDown={onStreifenTaste}
           // R13-5 · Rechtsklick NUR auf der freien Fläche (dieselbe Bedingung
           // wie beim Doppelklick daneben): über einem Reiter gilt dessen
           // eigenes Menü, über allem anderen bleibt das Browser-Menü.
           onContextMenu={(ev) => {
             if (ev.target !== ev.currentTarget) return;
             ev.preventDefault();
-            setMenue({ path: null, x: ev.clientX, y: ev.clientY });
+            oeffneMenue({ path: null, x: ev.clientX, y: ev.clientY });
           }}
           className="relative flex min-w-0 flex-1 items-stretch overflow-x-auto lc-reiter-scroll border-l border-rule-soft">
           {sichtbar.map((t) => {
@@ -661,11 +842,12 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             const nr = ordnung.findIndex((x) => tabSchluessel(x.path) === k) + 1;
             return (
               <Reiter key={k} t={t} nr={nr} letzter={nr === ordnung.length}
+                imRing={k === ringSchluessel}
                 aktiv={k === aktivSchluessel} manifeste={manifeste} paneSchluessel={paneSchluessel}
                 zieht={zieht} ueber={ueber} gezogenRef={gezogen}
                 kannOeffnen={kannOeffnen} istOffen={istOffen} onDaneben={oeffneDaneben}
                 onNavigate={navigate} onSchliessen={schliessen}
-                onZieht={setZieht} onUeber={setUeber} onMenue={setMenue}
+                onZieht={setZieht} onUeber={setUeber} onMenue={oeffneMenue}
                 onUmordnen={ordneTabsUm} />
             );
           })}
@@ -721,21 +903,17 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       {/* M4 · das Kontextmenü des angeklickten Reiters. Ein Menü zur Zeit —
           `menue` hält den Reiter, nicht der Reiter das Menü (sonst stünden bei
           zwölf Reitern zwölf Portale bereit). */}
-      {menue && menue.path === null && (
-        <Suspense fallback={null}>
-          <ReiterMenue x={menue.x} y={menue.y} name="Offene Reiter"
-            eintraege={leerraumEintraege()} onSchliessen={() => setMenue(null)} />
-        </Suspense>
+      {menue && MenueFlaeche && menue.path === null && (
+        <MenueFlaeche x={menue.x} y={menue.y} name="Offene Reiter"
+          eintraege={leerraumEintraege()} onSchliessen={() => setMenue(null)} />
       )}
-      {menue && menue.path !== null && (() => {
+      {menue && MenueFlaeche && menue.path !== null && (() => {
         const pfad = menue.path;
         const t = tabs.find((x) => tabSchluessel(x.path) === tabSchluessel(pfad));
         if (!t) return null;
         return (
-          <Suspense fallback={null}>
-            <ReiterMenue x={menue.x} y={menue.y} name={reiterKurzformText(t, manifeste)}
-              eintraege={menueEintraege(t)} onSchliessen={() => setMenue(null)} />
-          </Suspense>
+          <MenueFlaeche x={menue.x} y={menue.y} name={reiterKurzformText(t, manifeste)}
+            eintraege={menueEintraege(t)} onSchliessen={() => setMenue(null)} />
         );
       })()}
 

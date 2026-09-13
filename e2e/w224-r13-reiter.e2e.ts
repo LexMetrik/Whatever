@@ -389,3 +389,164 @@ test.describe('R13-7/R13-8 — Tastatur', () => {
     await expect(blatt.getByText('Ctrl+Tab')).toHaveCount(0)
   })
 })
+
+// ═══ W2·18 WELLE 2 (13.9.2026) · §4.R2 ══════════════════════════════════════
+//
+// ROT ZU BEKOMMEN (§6.7 — je Massnahme einmal gegen den Vorstand `2a331dcdd`
+// gefahren):
+//   Punkt 1  `reiterleiste/Reiter.tsx`: `tabIndex={imRing ? 0 : -1}` entfernen
+//            ⇒ 0 Reiter mit `tabindex=0`, und ←/→ bewegen nichts (der Zuhörer
+//            `onKeyDown` am Streifen in `Reiterleiste.tsx` fehlt dann ebenso).
+test.describe('W2·18 Welle 2 Punkt 1 — Pfeiltasten bewegen den FOKUS', () => {
+  /** Identität des Reiters, in dem der Fokus gerade steht. */
+  const fokusReiter = (page: Page) => page.evaluate(() =>
+    document.activeElement?.closest('[data-reiter-schluessel]')
+      ?.getAttribute('data-reiter-schluessel') ?? null)
+
+  test('←/→/Home/End wandern, die Auswahl bleibt — und Delete schliesst', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    const VIER = FUENFZEHN.slice(0, 4)
+    await seed(page, VIER, VIER[0])
+    // Genau EIN Reiter im Tabulator-Ring (APG), und zwar der aktive.
+    await expect(page.locator(`${STREIFEN} [data-reiter-schluessel] [tabindex="0"]`)).toHaveCount(1)
+    await page.locator(`${STREIFEN} [data-reiter-schluessel] [tabindex="0"]`).focus()
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[0])
+
+    await page.keyboard.press('ArrowRight')
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[1])
+    // DIE AUSWAHL BLEIBT: der Fokus wandert, navigiert wird erst mit Enter.
+    await expect(page.locator(`${STREIFEN} [data-reiter-aktiv="true"]`))
+      .toHaveAttribute('data-reiter-schluessel', VIER[0])
+
+    await page.keyboard.press('End')
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[3])
+    await page.keyboard.press('ArrowRight')  // kein Umlauf am Rand
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[3])
+    await page.keyboard.press('Home')
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[0])
+    await page.keyboard.press('ArrowLeft')   // kein Umlauf, andere Seite
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[0])
+
+    // Delete schliesst den fokussierten Reiter; der Fokus rückt mit.
+    await page.keyboard.press('ArrowRight')
+    await page.keyboard.press('Delete')
+    await expect.poll(() => gespeichert(page)).toEqual([VIER[0], VIER[2], VIER[3]])
+    await expect.poll(() => fokusReiter(page)).toBe(VIER[2])
+  })
+})
+
+//   Punkt 2  `Reiterleiste.tsx`: den `istBuchstabenTaste(e, 'q')`-Zweig
+//            entfernen ⇒ Alt+Q bewegt nichts, der aktive Reiter bleibt stehen.
+test.describe('W2·18 Welle 2 Punkt 2 — Alt+Q pendelt (zuletzt benutzt)', () => {
+  test('Alt+Q führt zum zuletzt benutzten Reiter, nicht zum Nachbarn — und zurück', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    const VIER = FUENFZEHN.slice(0, 4)
+    await seed(page, VIER, VIER[0])
+    const aktiv = async () => (await page.locator(`${STREIFEN} [data-reiter-aktiv="true"]`)
+      .getAttribute('data-reiter-schluessel'))?.toLowerCase()
+
+    await page.keyboard.press('Alt+3')
+    await expect.poll(aktiv).toBe(VIER[2].toLowerCase())
+    // Der Nachbar wäre Reiter 2; zuletzt BENUTZT war Reiter 1.
+    await page.keyboard.press('Alt+q')
+    await expect.poll(aktiv).toBe(VIER[0].toLowerCase())
+    // Und zurück — das ist das Pendeln (Chrome/VS Code «Ctrl+Tab»).
+    await page.keyboard.press('Alt+q')
+    await expect.poll(aktiv).toBe(VIER[2].toLowerCase())
+
+    // Das Kürzel steht auch in der Liste des «+N»-Blatts — sonst lernt es niemand.
+    await page.getByRole('button', { name: 'Alle 4 offenen Reiter' }).click()
+    const blatt = page.getByRole('dialog', { name: 'Alle geöffneten Reiter' })
+    await expect(blatt.getByText('Alt+Q', { exact: true })).toBeVisible()
+  })
+})
+
+//   Punkt 6  `src/index.css`: `.rl-reiter { min-width: min-content }` durch die
+//            Zahl VOR Welle 1 ersetzen (`min-width: 5rem`) ⇒ @1024 schrumpft
+//            der Kopf «BGE» auf 10 px, schmaler als das Auslassungszeichen
+//            selbst (12 px) — ein Reiter, dessen Kopf nur noch ein gestutztes
+//            «…» ist (so gefahren 13.9.2026, gebautes dist/).
+test.describe('W2·18 Welle 2 Punkt 6 — kein Reiter-Kopf als blosses «…»', () => {
+  /** Sechs Reiter mit Kopf UND ohne: die Kopf-Zerlegung greift nur bei
+   *  Entscheiden («AppGer BS» + «VD.2021.223»), Gesetze tragen keinen. */
+  const MIT_KOPF = ['/rechtsprechung/ag_gerichte_HOR_2024_19',
+    '/rechtsprechung/bs_appellationsgericht_VD.2021.223',
+    '/rechtsprechung/bs_appellationsgericht_BEZ.2022.42',
+    '/rechtsprechung/bge_146_III_1', '/gesetze/bund/OR', '/gesetze/bund/ZGB']
+
+  for (const [w, h] of [[1440, 900], [1024, 800], [390, 844], [320, 844]] as const) {
+    test(`@${w}: jeder gezeigte Kopf trägt mindestens ein Zeichen`, async ({ page }) => {
+      await page.setViewportSize({ width: w, height: h })
+      await seed(page, MIT_KOPF, MIT_KOPF[0])
+
+      // GEMESSEN WIRD IN DER SEITE, mit derselben Schrift wie der Reiter: ob
+      // noch etwas LESBARES dasteht, hängt an der Glyphenbreite, nicht an
+      // einer Pixelzahl, die wir hier hinschreiben könnten.
+      const koepfe = await page.evaluate(() => {
+        const kan = document.createElement('canvas').getContext('2d')!
+        const raus: { reiter: string; text: string; breite: number; mindest: number }[] = []
+        for (const k of document.querySelectorAll<HTMLElement>('[data-reiter-streifen] [data-reiter-schluessel]')) {
+          // Der Kopf ist der Span mit dem 9-rem-Deckel (`Reiter.tsx`); der
+          // Kern daneben trägt 15 rem und ist nicht gemeint. Ein Reiter ohne
+          // Kopf (Gesetz, Rechner) hat den Span gar nicht.
+          const kopf = k.querySelector<HTMLElement>('button > span[class*="max-w-[9rem]"]')
+          if (!kopf?.textContent) continue
+          const st = getComputedStyle(kopf)
+          kan.font = `${st.fontWeight} ${st.fontSize} ${st.fontFamily}`
+          raus.push({
+            reiter: k.getAttribute('data-reiter-schluessel')!,
+            text: kopf.textContent,
+            breite: Math.round(kopf.getBoundingClientRect().width),
+            // Ein Zeichen plus Auslassung — weniger ist keine Auskunft mehr,
+            // sondern ein Fleck (§8).
+            mindest: Math.round(kan.measureText(`${kopf.textContent[0]}…`).width),
+          })
+        }
+        return raus
+      })
+
+      expect(koepfe.length, 'die Sonde muss überhaupt Köpfe gefunden haben').toBeGreaterThan(0)
+      for (const k of koepfe) {
+        expect(k.breite, `Kopf «${k.text}» an ${k.reiter}: ${k.breite} px, nötig ${k.mindest} px`)
+          .toBeGreaterThanOrEqual(k.mindest)
+      }
+    })
+  }
+})
+
+//   Punkt 7  `reiterleiste/Reiter.tsx`: am ⧉ die Mindestbox
+//            (`min-h/min-w-[var(--tap-ziel)]`) durch `h-6 w-5` ersetzen ⇒
+//            20 × 24 statt 24 × 24, vier Pixel unter WCAG 2.5.8 AA.
+test.describe('W2·18 Welle 2 Punkt 7 — Trefferflächen der Reiter-Griffe (WCAG 2.5.8)', () => {
+  for (const [w, h] of [[1440, 900], [1024, 800]] as const) {
+    test(`@${w}: jeder Griff im Reiter misst mindestens 24 × 24 CSS-px`, async ({ page }) => {
+      await page.setViewportSize({ width: w, height: h })
+      await seed(page, [OR, '/gesetze/bund/ZGB', RECHNER], OR)
+
+      const griffe = await page.evaluate(() => [...document
+        .querySelectorAll<HTMLElement>('[data-reiter-streifen] [data-reiter-schluessel] button[aria-label]')]
+        .map((el) => {
+          const k = el.getBoundingClientRect()
+          return { name: el.getAttribute('aria-label')!, b: Math.round(k.width * 10) / 10, h: Math.round(k.height * 10) / 10 }
+        }))
+
+      // Beide Griffe müssen wirklich dastehen, sonst misst die Sonde nichts:
+      // das ⧉ gibt es erst ab `lg` (darunter ist es gar nicht gerendert).
+      expect(griffe.some((g) => /daneben öffnen/.test(g.name)), 'das ⧉ muss ab lg da sein').toBe(true)
+      expect(griffe.some((g) => /schliessen/.test(g.name)), 'das ✕ muss da sein').toBe(true)
+      for (const g of griffe) {
+        expect(g.b, `«${g.name}» misst ${g.b} × ${g.h}`).toBeGreaterThanOrEqual(24)
+        expect(g.h, `«${g.name}» misst ${g.b} × ${g.h}`).toBeGreaterThanOrEqual(24)
+      }
+      // WARUM 24 UND NICHT DIE «spacing»-AUSNAHME VON 2.5.8: die beiden Griffe
+      // stossen GEMESSEN ohne Lücke aneinander (0 px), ihre 24-px-Kreise
+      // überschneiden sich also. Die Ausnahme trägt hier nicht.
+      const luecke = await page.evaluate(() => {
+        const k = document.querySelector('[data-reiter-streifen] [data-reiter-schluessel]:nth-child(2)')
+        const g = [...(k?.querySelectorAll<HTMLElement>('button[aria-label]') ?? [])].map((e) => e.getBoundingClientRect())
+        return g.length > 1 ? Math.round(g[1].left - g[0].right) : null
+      })
+      expect(luecke, 'ohne Lücke gilt nur die 24-px-Regel, nicht «spacing»').toBe(0)
+    })
+  }
+})

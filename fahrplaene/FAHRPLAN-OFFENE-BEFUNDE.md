@@ -249,6 +249,142 @@ Nicht Teil dieses Schritts (eigener Roadmap-Schritt, Vorschläge 7–9 vom 13.9.
 Fenstergrenze hinaus, Reiter als Links, Umordnen auf Touch. Bereits geplant: Anheften/Arbeitsmappe
 (`W2·25-ARBEITSMAPPE`).
 
+### §4.R2 — Reiterleiste Welle 2: Tastatur, Pendeln, Bewegung, Ring-Ordnung (13.9.2026)
+
+Anlass: Auftrag David 13.9.2026 «recherchiere, was eine perfekte Tabliste ausmacht, und setz das um»
++ «bau insgesamt weiter an der Tabliste bis ich stop sage». Grundlage: Recherche-Datei
+`scratchpad/reiter-recherche-2026-09-13.md` (14 Quellen; Lücke 2 «Andere schliessen fehlt» ist
+widerlegt, `schliesseAndere` existiert) und Nachfunde aus Welle 1 (§4.R). Baut auf Welle 1 auf
+(Branch `feat/w2-18-reiterleiste-teil2`). Darstellungsschicht, kein Risikopfad. Je Punkt ein Commit
+mit Rot-Beweis.
+
+1. **Pfeiltasten im Reiterstreifen (roving tabindex, WAI-ARIA APG Tabs/Toolbar).** Liegt der Fokus
+   auf einem Reiter, wechseln ←/→ den Fokus (nicht die Auswahl) auf den Nachbarreiter, Home/End auf
+   den ersten/letzten sichtbaren; Enter/Space aktivieren; Delete schliesst den fokussierten Reiter.
+   Nur EIN Reiter im Tab-Ring (`tabindex=0`, übrige −1). ⇧+←/→ (Umordnen) bleibt unverändert.
+   `nav`-Semantik bleibt (kein `role=tablist`, weil Navigation, nicht Panel-Umschaltung).
+2. **Pendeln zwischen den zwei zuletzt aktiven Reitern (MRU).** Ein Kürzel springt zum vorher aktiven
+   Reiter und zurück (Chrome «Ctrl+Tab in MRU» / VS Code «Ctrl+Tab»). Tastenwahl: `Alt+Tab` fängt das
+   OS auf Windows/Linux, `Ctrl+Tab` der Browser ⇒ `Alt+Q` (frei in Chrome/Firefox/Safari auf allen
+   drei Systemen; vor dem Bau prüfen, dass `Alt+Q` auf macOS nicht «œ»-Konflikt hat — `e.code` löst
+   das). MRU-Liste in `lib/tabs.ts` (persistiert, max. 10), Aktualisierung beim Aktiv-Wechsel.
+   Kürzel in die Liste des «+N»-Blatts aufnehmen.
+3. **`prefers-reduced-motion`.** Ziehen/Einfügemarke/Blatt-Öffnen/Reiter-Übergänge ohne Bewegung,
+   wenn das System es verlangt (`@media (prefers-reduced-motion: reduce)` in `index.css` bzw.
+   Tailwind `motion-reduce:`). Test: Playwright `emulateMedia({ reducedMotion: 'reduce' })`,
+   gemessene `transition-duration` 0s.
+   — **Korrektur 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: Ist-Messung vor dem Bau.**
+   Die Zusage wird bereits eingelöst, und zwar GLOBAL: `src/index.css` setzt unter `reduce` für
+   `*, *::before, *::after` `animation-duration`/`transition-duration` auf `.001ms !important`.
+   GEMESSEN (Chromium, Dev-Server 5182, vier Reiter + offenes Blatt, `reduce` gegen
+   `no-preference`): Griffe und «+» 0.15 s → `1e-06s`; Reiterhülle, Einfügemarke, Blatt und Scrim
+   messen in BEIDEN Zuständen 0 s, `scroll-behavior` des Streifens ist `auto` (das Rad setzt
+   `scrollLeft` hart). Die erwarteten «0s» sind also `1e-06s` — und das mit Absicht, damit
+   `transitionend` weiter feuert. ZU BAUEN war darum keine zweite, reiter-eigene Regel (das wäre
+   die zweite Wahrheit, §5), sondern der fehlende WÄCHTER: `e2e/w224-r11-reiterleiste.e2e.ts`
+   «W2·18 Welle 2 Punkt 3» misst die Zusage über alle Flächen von Leiste und Blatt; rot, sobald
+   die globale Regel fällt (einmal gefahren: «längster Übergang: BUTTON.rl-plus rl-plus-solo,
+   0.15 > 0.01»).
+4. **Ring-Ordnung nach «Alle schliessen».** `stelleLetztenWiederHer` setzt verschachtelt ein (r49,
+   r48 … statt r0, r1 …; Nachtrag §4.R Welle 1). Fix in `lib/tabs.ts`: Position beim Ablegen so
+   merken, dass das Wiederherstellen in Ur-Reihenfolge landet; Kommentar an `leereTabs` berichtigen.
+   Test: 3 Reiter → Alle schliessen → 3× Wiederherstellen ⇒ Ur-Reihenfolge.
+5. **Kontextmenü vorladen.** Der lazy Chunk `ReiterMenue` lädt erst beim ersten Rechtsklick (13.9.2026
+   gemessen: erster Rechtsklick zeigte nichts, zweiter das Menü). Fix: `import()` beim ersten
+   `pointerenter` auf die Leiste bzw. beim `contextmenu` sofort anstossen und das Menü nach dem Laden
+   öffnen, nicht verwerfen. Start-Chunk-Budget (60 KB gzip, `check:perf-budget`) darf nicht wachsen.
+   — **Korrektur 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: der vorgeschlagene Fix hat die
+   Ursache nur zur Hälfte getroffen.** Nachgemessen IN der Seite (MutationObserver von `contextmenu`
+   bis `[role=menu]` im DOM; gebautes dist/ hinter `vite preview`, Chromium, vier Reiter): 1.
+   Rechtsklick 320 ms · 2. 10 ms · 3. 8 ms. Das Menü wurde also nie verworfen, es kam zu spät — und
+   MIT vorgeladenem Chunk blieben es 316 ms (gegen 322 ohne). Die zweite, grössere Ursache ist
+   `React.lazy`/`Suspense`: der erste Render ruft den Loader, bekommt ein bereits erfülltes
+   Versprechen und suspendiert trotzdem; der Inhalt kommt erst im Nachlauf nach dem Fallback.
+   GEBAUT ist darum beides — Vorlauf beim Betreten der Leiste (Zeiger ODER Fokus, sonst hätte
+   Shift+F10 keinen) UND der dynamische Import von Hand statt `lazy`/`Suspense`, so dass das Menü im
+   selben Commit wie der Rechtsklick rendert. Danach: 1. Rechtsklick 17 ms · 2. 9 ms · 3. 9 ms.
+   Entry-Chunk unverändert 54.9 KB gzip (Budget 60.0), der Menü-Chunk bleibt ein eigener (923 B gzip).
+6. **Reiter-Kopf nie als blosses «…».** Der gekürzte Gerichts-/Erlass-Kopf darf weichen (F6), aber
+   ein alleinstehendes Auslassungszeichen wird nicht gezeigt — dann ganz ausblenden.
+   — **Korrektur 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: der Befund ist auf diesem
+   Stand nicht mehr reproduzierbar, und sein Verschwinden hat einen Preis, den ein anderer gerade
+   bezahlt.** GEMESSEN (gebautes dist/, Chromium, sechs Reiter, davon vier mit Kopf, bei 1440 · 1024
+   · 390 · 360 · 320 · 300 · 280 · 260 · 240 · 200 px): JEDER gezeigte Kopf steht in voller Breite —
+   «OGer AG» 58/58 px, «AppGer BS» 71/71 px, «BGE» 30/30 px. Die Hülle schrumpft seit Welle 1 gar
+   nicht mehr unter ihren Inhalt (`.rl-reiter { min-width: min-content }`, Commit `6f7eb49c0`):
+   statt zu quetschen, schickt das Fenster die überzähligen Reiter ins «+N»-Blatt. Mit dem BODEN VOR
+   Welle 1 (`min-width: 5rem`) ist der Befund dagegen sofort da — @1024 schrumpft «BGE» auf 10 px,
+   schmaler als das Auslassungszeichen selbst (12 px).
+   ZWEI FOLGEN: (a) eine neue Regel wäre ein Fix ohne gesehenen Fehlschlag (§0.2) — GEBAUT ist
+   darum nur der WÄCHTER `e2e/w224-r13-reiter.e2e.ts` «W2·18 Welle 2 Punkt 6», der über vier
+   Breiten misst, dass jeder gezeigte Kopf mindestens ein Zeichen plus Auslassung trägt (rot
+   gefahren am 5-rem-Boden: «Kopf «BGE» … 8 px, nötig 24 px»). (b) Genau diese `min-content`-Regel
+   ist zugleich die Ursache des R8-Sweep-Befundes (`a-ueberlauf-ohne-scroller`, 18 Funde bei 320/390
+   px), an dem parallel gearbeitet wird: wer den Boden wieder schrumpfbar macht, HOLT DEN
+   KOPF-BEFUND ZURÜCK und wird von diesem Wächter rot gestellt. Das «dann ganz ausblenden» gehört
+   folglich in DIESEN Fix — die Schwelle hängt am neuen Boden und lässt sich vorher nicht wählen.
+   Ein `min-width` am Kopf wäre hier ausdrücklich der falsche Weg: er hebt die `min-content`-Breite
+   des Reiters und verschärft damit den Überlauf, den der andere Fix gerade abstellt.
+   — **Nachtrag 13.9.2026 nach dem Abgleich mit Welle 1 (Zeilen darüber unverändert, §2b), Anlass:
+   der erwartete Rot-Umschlag ist AUSGEBLIEBEN — und zwar aus einem Grund, der die Bedingung des
+   Fixes aufhebt.** Die Erwartung war: Welle 1 macht den Reiter wieder schrumpfbar, der Wächter
+   stellt daraufhin den Kopf-Befund rot, und «dann ganz ausblenden» wird in DIESEM Zug gebaut.
+   Welle 1 hat den Boden aber nur für die Reiter OHNE Kopf schrumpfbar gemacht (`reiterBoden`,
+   eine `calc()`-Zahl in `Reiter.tsx`); die Reiter MIT Kopf blieben ausdrücklich bei
+   `.rl-reiter { min-width: auto }` — dort ist der Kern `shrink-0`, und die automatische Rechnung
+   zählt Kern UND Kopf in voller Breite (Commit `736f1a9ff`, Abschnitt «Reiter MIT Kopf»).
+   GEMESSEN auf dem abgeglichenen Stand (gebautes dist/, Chromium, die sechs Reiter des Wächters,
+   @1440 · 1024 · 390 · 320): JEDER gezeigte Kopf steht in voller Breite, `breite == scrollWidth` —
+   «OGer AG» 58/58 px, «AppGer BS» 71/71 px, «BGE» 30/30 px. Gequetscht wird kein Kopf; statt zu
+   quetschen schickt das Fenster die überzähligen Reiter ins «+N»-Blatt
+   (`data-reiter-fenster` 0/6/6 · 0/4/6 · 0/1/6 · 0/1/6). Der Befund ist also auch nach Welle 1
+   nicht reproduzierbar, und eine Ausblend-Regel wäre WEITERHIN ein Fix ohne gesehenen Fehlschlag
+   (§0.2) — und dazu eine Regel, die nicht feuern kann (§17-Gegengewicht, §6.7). GEBAUT ist darum
+   erneut nichts; der Wächter bleibt allein.
+   DASS DER WÄCHTER LEBT, IST AUF DIESEM STAND NACHGEWIESEN (§6.7, nicht bloss aus der Vorrunde
+   übernommen): `.rl-reiter { min-width: auto }` → `5rem`, neu gebaut, Wächter gefahren ⇒ 3 von 4
+   Breiten rot — «Kopf «BGE» an /rechtsprechung/bge_146_III_1: 7 px, nötig 22 px» (@1024),
+   «Kopf «OGer AG» an /rechtsprechung/ag_gerichte_HOR_2024_19: 0 px, nötig 23 px» (@390 und @320);
+   @1440 blieb grün. Mutation danach zurückgenommen, neu gebaut.
+   NEUER BEFUND AUS DERSELBEN MESSUNG (nicht in diesem Zug gebaut, weil er die Zusage «Wächter
+   unverändert grün» bricht — s. u.): @320 läuft ein EINZELNER Entscheid-Reiter über den Streifen,
+   GEMESSEN `/rechtsprechung/ag_gerichte_HOR_2024_19` (Kopf «OGer AG», Kern «HOR.2024.19»):
+   Streifen `scrollWidth 192` gegen `clientWidth 171`. Der Streifen ist `overflow-x: auto`, trägt
+   aber `.lc-reiter-scroll` — und die Klasse blendet den Scrollbalken aus
+   (`scrollbar-width: none`, `::-webkit-scrollbar { display: none }`, `index.css`). Das ist
+   Kategorie `a-ueberlauf-ohne-scroller`, dieselbe, die Welle 1 für die Reiter OHNE Kopf gerade
+   abgestellt hat: der Detektor verlangt neben `overflow-x: auto` die Affordanz-Klasse
+   `lc-scrollrand-x` (`e2e/helpers/abschnittMessung.ts`). Der R8-Sweep sieht ihn NICHT, weil seine
+   beiden Entscheid-Vertreter (`bge_152_V_52`, `bger_1B_278_2022`) kurze Köpfe tragen und in 171 px
+   passen — der Sweep meldet auf diesem Stand 0 Funde.
+   HIER, UND NUR HIER, HÄTTE «der Kopf weicht ganz» eine Aufgabe: fiele «OGer AG» (58 px) weg,
+   bliebe der Reiter bei ~130 px und passte — genau die F6-Reihenfolge (erst der Kopf, dann der
+   Kern). Der Auslöser wäre aber nicht «der Kopf wäre nur noch ein «…»» (das ist er nie), sondern
+   «das Fenster kann nicht weiter schrumpfen und läuft immer noch über» — eine ANDERE Regel an
+   einer anderen Stelle (`useReiterFenster`, mit Epochen-Riegel gegen das Pendeln «Kopf weg →
+   passt → Kopf da → passt nicht»). Und sie stellt den Wächter oben rot: @320 zeigt der Streifen
+   genau EINEN Reiter, dessen Kopf dann verschwindet, worauf dessen Sonde 0 Köpfe findet und an
+   `expect(koepfe.length).toBeGreaterThan(0)` scheitert. Diese Zusicherung müsste im selben,
+   ERKLÄRTEN Schritt nachgezogen werden (§6.3: Teständerung = fachliche Änderung) — z. B. «bei
+   1440/1024 müssen Köpfe da sein; wo keiner steht, darf der Streifen nicht überlaufen». Das ist
+   ein eigener Bauschritt, kein Nebenprodukt eines Abgleichs.**
+7. **Trefferflächen ⧉/✕ gegen WCAG 2.5.8 prüfen.** `komfort={false}` ist begründet (A3-1: das
+   Pseudo-Element nähme Nachbarn die Klicks). Prüfen, ob 24×24 CSS-px OHNE Pseudo-Element erreichbar
+   ist (Padding innerhalb des Reiters); wenn ja, bauen; wenn nein, Ausnahme mit Abstand-Regel
+   (2.5.8 «spacing») im Kommentar dokumentieren, nicht still kippen (§0.2 UI-Befunde).
+   — **Ergebnis 13.9.2026 (Zeilen darüber unverändert, §2b):** GEMESSEN (gebautes dist/, Chromium,
+   @1440 und @1024, drei Reiter) — ✕ 24 × 24 (bringt `.lc-schliessknopf` über `--tap-ziel` mit), ⧉
+   20 × 24, also vier Pixel unter der AA-Untergrenze; Lücke zwischen den beiden Griffen 0 px, die
+   «spacing»-Ausnahme trägt damit NICHT. 24 px sind ohne Pseudo-Element erreichbar — GEBAUT als
+   echte Mindestbox am ⧉ (`min-h/min-w: var(--tap-ziel)`, die Zahl bleibt im Token, §5/D2), danach
+   beide Griffe 24 × 24. Die A3-1-Begründung für `komfort={false}` bleibt unberührt: das
+   Pseudo-Element hätte den Nachbarn die Klicks genommen, die Mindestbox tut das nicht. Wächter:
+   `e2e/w224-r13-reiter.e2e.ts` «W2·18 Welle 2 Punkt 7». Breiten-Nebenwirkung: +4 px je Reiter, nur
+   ab `lg` (darunter ist der Griff nicht gerendert) — die Sweep-Breiten 320/390 px sind unberührt.
+
+Welle 3 (nach dieser): Umordnen über die Fenstergrenze hinaus (Auto-Scroll am Rand, Ziehen ins/aus
+dem Blatt), Reiter als Links, Hover-Karte mit Volltitel + Stand, Touch-Umordnen.
+
 ## §5 — `QS-CODE-PROP` · Eigenschafts-Tests (property-based) für die Rechen-Engines
 
 Entscheid David 7.8.2026: je Engine ein Invarianten-Katalog («eine Frist endet nie vor ihrem

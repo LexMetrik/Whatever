@@ -359,13 +359,24 @@ describe('tabs.ts — offene Reiter', () => {
       expect(letzterGeschlossener()).toBeNull();
     });
 
-    it('«Alle schliessen» füllt den Ring; Wiederherstellen holt von hinten nach vorn zurück', () => {
+    // ── DEKLARIERTE TEST-ÄNDERUNG (§6.3) · W2·18 Welle 2 Punkt 4 ──────────
+    // Der Titel hiess «holt von hinten nach vorn zurück» und die zwei
+    // Erwartungen standen in dieser Richtung (erst ZGB, dann OR). Genau das
+    // WAR der Defekt: bei ZWEI Reitern fiel er nicht auf (das Endergebnis
+    // stimmte zufällig), ab DREI ergab er [a, c, b] und bei zehn
+    // [r0, r9, r1, r8, …]. Seit Punkt 4 legt eine Geste ihre Reiter
+    // absteigend nach Position ab, der Stapel gibt sie aufsteigend zurück —
+    // der VORDERSTE kommt zuerst. Die geprüfte Zusage ist unverändert und
+    // schärfer: die Leiste steht am Ende wieder in Ur-Reihenfolge (die
+    // letzte Zeile, unberührt). Der Reihenfolge-Beweis über drei und zehn
+    // Reiter steht in `src/tests/reiter-ring-ordnung.test.ts`.
+    it('«Alle schliessen» füllt den Ring; Wiederherstellen holt von vorn nach hinten zurück', () => {
       merkeTab('/gesetze/bund/OR');
       merkeTab('/gesetze/bund/ZGB');
       leereTabs();
       expect(ladeTabs()).toEqual([]);
-      expect(stelleLetztenWiederHer()?.path).toBe('/gesetze/bund/ZGB');
       expect(stelleLetztenWiederHer()?.path).toBe('/gesetze/bund/OR');
+      expect(stelleLetztenWiederHer()?.path).toBe('/gesetze/bund/ZGB');
       expect(ladeTabs().map((t) => t.path)).toEqual(['/gesetze/bund/OR', '/gesetze/bund/ZGB']);
     });
 
@@ -403,12 +414,23 @@ describe('tabs.ts — offene Reiter', () => {
       expect(letzterGeschlossener()).toBeNull();
     });
 
+    // ── DEKLARIERTE TEST-ÄNDERUNG (§6.3) · W2·18 Welle 2 Punkt 4 ──────────
+    // Geprüft war, WELCHER der drei zuerst zurückkommt: der hinterste
+    // (`/vorlagen/arbeitsvertrag`). Seit Punkt 4 ist es der VORDERSTE — nur so
+    // landet eine ganze Geste wieder in Ur-Reihenfolge. Die Zusage des Falles
+    // («genau einer bleibt, die drei anderen sind wiederherstellbar») ist
+    // unverändert und wird hier stärker geprüft als vorher: jetzt kommen ALLE
+    // DREI zurück, und zwar an ihre alten Plätze.
     it('alle anderen: genau einer bleibt, die drei anderen sind wiederherstellbar', () => {
       schliesseAndere('/rechner/zpo-fristen');
       expect(ladeTabs().map((t) => t.path)).toEqual(['/rechner/zpo-fristen']);
-      expect(letzterGeschlossener()?.path).toBe('/vorlagen/arbeitsvertrag');
-      expect(stelleLetztenWiederHer()?.path).toBe('/vorlagen/arbeitsvertrag');
-      expect(ladeTabs().map((t) => t.path)).toEqual(['/rechner/zpo-fristen', '/vorlagen/arbeitsvertrag']);
+      expect(letzterGeschlossener()?.path).toBe('/gesetze/bund/OR');
+      expect(stelleLetztenWiederHer()?.path).toBe('/gesetze/bund/OR');
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/gesetze/bund/OR', '/rechner/zpo-fristen']);
+      stelleLetztenWiederHer();
+      stelleLetztenWiederHer();
+      expect(ladeTabs().map((t) => t.path)).toEqual(['/gesetze/bund/OR',
+        '/rechtsprechung/bge_146_III_1', '/rechner/zpo-fristen', '/vorlagen/arbeitsvertrag']);
     });
 
     it('ein unbekannter Pfad lässt beide Listen unangetastet (nie stilles Schliessen)', () => {

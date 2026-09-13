@@ -21,6 +21,18 @@ export interface ReiterProps {
   aktiv: boolean;
   /** Ist dies der LETZTE Reiter der Speicherordnung? (Alt+9, R13-8) */
   letzter: boolean;
+  /** ── W2·18 Welle 2 Punkt 1 · DER EINE PLATZ IM TAB-RING ─────────────────
+   *  WAI-ARIA APG (Tabs/Toolbar): von einer Gruppe gleichartiger Bedien-
+   *  elemente steht genau EINES im Tabulator-Ring; bewegt wird INNERHALB der
+   *  Gruppe mit den Pfeiltasten (die Leiste hört auf sie, s. dort). GEMESSEN
+   *  13.9.2026 am Vorstand `2a331dcdd`: die Leiste trug 0 × `tabindex` — jeder
+   *  Reiterknopf und jedes ✕ lag im Ring, sechs Reiter kosteten zwölf
+   *  Tabulator-Anschläge bis zum Dokument, fünfzig hundert.
+   *  Wer NICHT im Ring steht, nimmt auch seine Griffe (⧉/✕) mit heraus:
+   *  sonst bliebe die Wüste, nur halb so lang. Der Reiter IM Ring behält sie
+   *  ganz gewöhnlich — von ihm aus erreicht man sie mit der Tabulator-Taste,
+   *  wie vorher. */
+  imRing: boolean;
   manifeste: VerlaufManifeste;
   paneSchluessel: string[];
   zieht: string | null;
@@ -39,7 +51,7 @@ export interface ReiterProps {
 }
 
 export function Reiter({
-  t, nr, aktiv, letzter, manifeste, paneSchluessel, zieht, ueber, gezogenRef,
+  t, nr, aktiv, letzter, imRing, manifeste, paneSchluessel, zieht, ueber, gezogenRef,
   kannOeffnen, istOffen, onDaneben, onNavigate, onSchliessen,
   onZieht, onUeber, onMenue, onUmordnen,
 }: ReiterProps) {
@@ -234,6 +246,11 @@ export function Reiter({
           : `${reg ? REG_FLAECHE[reg] : 'bg-ink-400'} opacity-60 group-hover/reiter:opacity-100`}`} />
       <button type="button" aria-current={aktiv ? 'page' : undefined}
         aria-keyshortcuts={kuerzel || undefined}
+        // W2·18 Welle 2 Punkt 1 · roving tabindex (Herleitung bei `imRing`).
+        // AUSGESCHRIEBENE 0 statt weggelassenem Attribut: der Ring-Platz soll
+        // im Markup ABLESBAR sein — die Sonde zählt ihn
+        // (`src/tests/reiter-tastaturring.test.tsx`).
+        tabIndex={imRing ? 0 : -1}
         onClick={() => onNavigate(t.path)}
         onAuxClick={(ev) => {
           // Mittelklick schliesst — das Browser-Idiom, das David meint.
@@ -375,11 +392,29 @@ export function Reiter({
         </span>
       )}
       {/* «daneben öffnen» — der Klick-Weg zu dem, was das Ziehen ins zweite
-          Fenster tut (§5a Ziff. 4); nur ab lg und mit freier Kapazität. */}
+          Fenster tut (§5a Ziff. 4); nur ab lg und mit freier Kapazität.
+          ── W2·18 Welle 2 Punkt 7 · DIE TREFFERFLÄCHE IST 24 × 24 ──────────
+          GEMESSEN 13.9.2026 (gebautes dist/, Chromium, @1440 und @1024): das
+          ✕ mass 24 × 24 (das bringt `.lc-schliessknopf` über `--tap-ziel`
+          mit), dieses ⧉ daneben 20 × 24 — vier Pixel unter der AA-Untergrenze
+          von WCAG 2.5.8 (24 × 24 CSS-px). Auf die Ausnahme «spacing» konnte
+          es sich nicht berufen: der Abstand zum ✕ ist GEMESSEN 0 px, die
+          24-px-Kreise der beiden Ziele überschneiden sich also.
+          Der Fahrplan fragte, ob 24 px OHNE Pseudo-Element erreichbar sind —
+          sie sind es: hier steht eine echte Mindestbox, kein `::after` wie
+          bei `.lc-schliessknopf-komfort`. Damit bleibt die A3-1-Begründung
+          für `komfort={false}` am ✕ unberührt (das Pseudo-Element nähme dem
+          Nachbarn die Klicks); die 24 px trägt beides ohne es.
+          DIE ZAHL STEHT NICHT HIER (§5/D2): `--tap-ziel` ist der eine Ort,
+          an dem 24 px definiert sind — dieselbe Quelle, aus der das ✕ sie
+          zieht. Der Zuwachs von 4 px je Reiter fällt nur ab `lg` an (darunter
+          ist der Griff gar nicht da) und dort, wo Platz ist; die Leiste rückt
+          ihn wie jede andere Breite ins Fenster ein (R13-2). */}
       {kannOeffnen && !istOffen(t.path) && (
         <button type="button" onClick={() => onDaneben(t.path)}
           aria-label={`«${name}» daneben öffnen`} title="Daneben öffnen"
-          className={`hidden lg:inline-flex h-6 w-5 shrink-0 items-center justify-center text-ink-400 hover:text-ink-900 ${griffSicht}`}>
+          tabIndex={imRing ? undefined : -1}
+          className={`hidden lg:inline-flex min-h-[var(--tap-ziel)] min-w-[var(--tap-ziel)] shrink-0 items-center justify-center text-ink-400 hover:text-ink-900 ${griffSicht}`}>
           <span aria-hidden className="lc-griff-glyph">⧉</span>
         </button>
       )}
@@ -389,8 +424,12 @@ export function Reiter({
           `komfort={false}`: die 44-px-Trefferfläche des Bausteins läge in
           einer 28-px-Reiterzeile über dem ⧉-Nachbarn UND über dem nächsten
           Reiter — dieselbe begründete Ausnahme wie dort; die AA-Untergrenze
-          (24 px, WCAG 2.5.8) hält die Grundklasse. */}
+          (24 px, WCAG 2.5.8) hält die Grundklasse.
+          NACHGEMESSEN 13.9.2026 (W2·18 Welle 2 Punkt 7): dieses ✕ misst
+          24 × 24 und hält sie wirklich — der ⧉-Nachbar tat es nicht (20 × 24)
+          und trägt seine Mindestbox jetzt selbst (Herleitung dort). */}
       <SchliessKnopf name={`Reiter «${name}» schliessen`} ton="destruktiv" komfort={false}
+        tabIndex={imRing ? undefined : -1}
         onClick={() => onSchliessen(t.path)} klasse={`h-6 w-6 mr-1 shrink-0 ${griffSicht}`} />
     </div>
   );
