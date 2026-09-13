@@ -505,7 +505,25 @@ test.describe('W2·18 Welle 2 Punkt 6 — kein Reiter-Kopf als blosses «…»',
         return raus
       })
 
-      expect(koepfe.length, 'die Sonde muss überhaupt Köpfe gefunden haben').toBeGreaterThan(0)
+      // ── DEKLARIERTE TESTÄNDERUNG (§6.3) · W2·18 Welle 3 Punkt 1, 13.9.2026
+      //    Hier stand unbedingt `expect(koepfe.length).toBeGreaterThan(0)` —
+      //    «die Sonde muss überhaupt Köpfe gefunden haben». Das war richtig,
+      //    SOLANGE der Kopf nie weichen durfte. Welle 3 Punkt 1 baut die
+      //    F6-Reihenfolge wirklich: steht das Fenster an seinem Boden (EIN
+      //    Reiter) und läuft der Streifen trotzdem über, weicht der Kopf ganz
+      //    (GEMESSEN @320 an `/rechtsprechung/ag_gerichte_HOR_2024_19`:
+      //    `scrollWidth 192` gegen `clientWidth 171`). @320 zeigt diese Leiste
+      //    genau EINEN Reiter — die alte Zusicherung verlangte dort also
+      //    genau das, was der Fix abstellt. Das ist eine FACHLICHE Änderung,
+      //    kein Nachziehen: die neue Zusage lautet «wo Platz ist, steht der
+      //    Kopf; wo keiner steht, darf der Streifen nicht überlaufen».
+      const m = await masse(page)
+      if (w >= 1024) {
+        expect(koepfe.length, `@${w} ist Platz — die Sonde muss Köpfe finden`).toBeGreaterThan(0)
+      } else if (koepfe.length === 0) {
+        expect(m.scrollW, `@${w} steht kein Kopf — dann muss der Streifen passen`)
+          .toBeLessThanOrEqual(m.clientW + 1)
+      }
       for (const k of koepfe) {
         expect(k.breite, `Kopf «${k.text}» an ${k.reiter}: ${k.breite} px, nötig ${k.mindest} px`)
           .toBeGreaterThanOrEqual(k.mindest)
@@ -549,4 +567,43 @@ test.describe('W2·18 Welle 2 Punkt 7 — Trefferflächen der Reiter-Griffe (WCA
       expect(luecke, 'ohne Lücke gilt nur die 24-px-Regel, nicht «spacing»').toBe(0)
     })
   }
+})
+
+// ═══ W2·18 WELLE 3 PUNKT 1 · AM ANSCHLAG WEICHT DER KOPF ════════════════════
+//
+// GEMESSEN 13.9.2026 (gebautes dist/, Chromium @320, EIN Reiter
+// `/rechtsprechung/ag_gerichte_HOR_2024_19`): der Streifen mass `scrollWidth
+// 192` gegen `clientWidth 171`, Fenster `0/1/1` — das Fenster war am Anschlag
+// (weniger als einen Reiter kann es nicht zeigen) und der Reiter lief trotzdem
+// über. Der Scrollbalken ist per CSS unsichtbar (`.lc-reiter-scroll`), der
+// Überlauf also stumm: Kategorie `a-ueberlauf-ohne-scroller` (R8-Sweep).
+// Die Teile: Kopf «OGer AG» 58 px, Kern «HOR.2024.19» 87 px.
+//
+// F6 SAGT, WER WEICHT: erst der Kopf (das ohnehin abgekürzte Gericht), dann
+// der Kern (die Geschäftsnummer). Genau das baut Welle 3 Punkt 1 — nicht als
+// Breiten-Regel, sondern als Zustand des Fensters: am Anschlag UND immer noch
+// über der Kante ⇒ der Kopf des betroffenen Reiters weicht ganz
+// (`useReiterFenster`, Epochen-Riegel gegen das Pendeln).
+test.describe('W2·18 Welle 3 Punkt 1 — der Reiter läuft auch am Anschlag nicht über', () => {
+  const LANGER_KOPF = '/rechtsprechung/ag_gerichte_HOR_2024_19'
+
+  test('@320: ein einzelner Entscheid-Reiter mit langem Gerichtskopf passt', async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 844 })
+    await seed(page, [LANGER_KOPF], LANGER_KOPF)
+    const m = await masse(page)
+    expect(m.fenster, 'das Fenster steht am Anschlag — genau ein Reiter').toBe('0/1/1')
+    expect(m.scrollW, '@320 darf nicht überlaufen (Vorstand: 192 > 171)')
+      .toBeLessThanOrEqual(m.clientW + 1)
+    expect(m.letzteKante, 'der Reiter wird nicht angeschnitten').toBeLessThanOrEqual(m.clientW + 1)
+  })
+
+  // Die GEGENPROBE: der Kopf weicht nur, wo er weichen MUSS. Derselbe Reiter
+  // @1440 trägt sein Gericht ganz — sonst wäre aus der Ausnahme eine Regel
+  // geworden (und die Leiste verlöre überall die Auskunft, WELCHES Gericht).
+  test('@1440: derselbe Reiter trägt seinen Kopf «OGer AG» unverändert', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await seed(page, [LANGER_KOPF], LANGER_KOPF)
+    const kopf = await page.textContent('[data-reiter-streifen] button > span[class*="max-w-[9rem]"]')
+    expect(kopf?.trim(), 'am breiten Fenster steht der Kopf').toBe('OGer AG')
+  })
 })

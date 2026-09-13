@@ -235,7 +235,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // Speicherordnung — verschoben genau so weit, dass der aktive Reiter darin
   // liegt. Alles ausserhalb steht im «+N»-Blatt, nichts wird angeschnitten.
   const aktivIdx = ordnung.findIndex((t) => tabSchluessel(t.path) === aktivSchluessel);
-  const { start, anzahl } = useReiterFenster(streifenRef, ordnung.length, aktivIdx);
+  const { start, anzahl, ohneKopf } = useReiterFenster(streifenRef, ordnung.length, aktivIdx);
   const sichtbar = ordnung.slice(start, start + anzahl);
   const versteckt = [...ordnung.slice(0, start), ...ordnung.slice(start + anzahl)];
 
@@ -842,7 +842,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             const nr = ordnung.findIndex((x) => tabSchluessel(x.path) === k) + 1;
             return (
               <Reiter key={k} t={t} nr={nr} letzter={nr === ordnung.length}
-                imRing={k === ringSchluessel}
+                imRing={k === ringSchluessel} ohneKopf={ohneKopf}
                 aktiv={k === aktivSchluessel} manifeste={manifeste} paneSchluessel={paneSchluessel}
                 zieht={zieht} ueber={ueber} gezogenRef={gezogen}
                 kannOeffnen={kannOeffnen} istOffen={istOffen} onDaneben={oeffneDaneben}

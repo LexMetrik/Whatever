@@ -33,6 +33,17 @@ export interface ReiterProps {
    *  ganz gewöhnlich — von ihm aus erreicht man sie mit der Tabulator-Taste,
    *  wie vorher. */
   imRing: boolean;
+  /** ── W2·18 Welle 3 Punkt 1 · DER KOPF WEICHT, WEIL DAS FENSTER NICHT MEHR
+   *  KANN ──────────────────────────────────────────────────────────────────
+   *  Gesetzt, wenn das Fenster an seinem Boden steht (EIN Reiter) und der
+   *  Streifen trotzdem überläuft — die Rechnung dazu und der Epochen-Riegel
+   *  stehen in `useReiterFenster` (`Fenster.ohneKopf`). Hier ist es nur noch
+   *  die Anweisung: den Kopf gar nicht erst rendern. F6-Reihenfolge — erst
+   *  weicht das (ohnehin abgekürzte) Gericht, dann kürzt der Kern.
+   *  Der VOLLE Name bleibt überall dort, wo er nicht am Platz spart: im
+   *  `title`, im Namen des ✕ und in der Hover-Karte (Punkt 4). Verloren geht
+   *  nur das Bild, nie die Auskunft (§8). */
+  ohneKopf?: boolean;
   manifeste: VerlaufManifeste;
   paneSchluessel: string[];
   zieht: string | null;
@@ -51,12 +62,16 @@ export interface ReiterProps {
 }
 
 export function Reiter({
-  t, nr, aktiv, letzter, imRing, manifeste, paneSchluessel, zieht, ueber, gezogenRef,
+  t, nr, aktiv, letzter, imRing, ohneKopf, manifeste, paneSchluessel, zieht, ueber, gezogenRef,
   kannOeffnen, istOffen, onDaneben, onNavigate, onSchliessen,
   onZieht, onUeber, onMenue, onUmordnen,
 }: ReiterProps) {
   const schluessel = tabSchluessel(t.path);
-  const { kopf, kern, stelle, instanz } = reiterKurzformTeile(t, manifeste);
+  const { kopf: kopfRoh, kern, stelle, instanz } = reiterKurzformTeile(t, manifeste);
+  // W2·18 Welle 3 Punkt 1 (Herleitung bei `ohneKopf`): am Anschlag weicht der
+  // Kopf GANZ — und damit fällt der Reiter in genau die Form, die ein Reiter
+  // ohne Kopf ohnehin hat (Kern kürzbar, eigener Boden `reiterBoden` unten).
+  const kopf = ohneKopf ? null : kopfRoh;
   const name = reiterKurzformText(t, manifeste);
   // R8 · Volltitel, Stand/Datum/Kurzbeschreibung und Lesestellung stehen in
   // EINER Ableitung (`lib/tabs.reiterTitel`) — Herleitung dort.

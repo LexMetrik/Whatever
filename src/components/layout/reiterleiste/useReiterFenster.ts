@@ -44,6 +44,26 @@ export interface Fenster {
   start: number;
   /** Wie viele Reiter nebeneinander stehen. */
   anzahl: number;
+  /** ── W2·18 Welle 3 Punkt 1 · F6 AM ANSCHLAG ──────────────────────────────
+   *  Das Fenster ist das erste Mittel gegen den Überlauf: was nicht passt,
+   *  zieht ins «+N»-Blatt. Es hat aber einen Boden — EINEN Reiter zeigt die
+   *  Leiste immer. Ist dieser eine Reiter selbst breiter als der Streifen,
+   *  war der Überlauf bis hierher stumm (der Scrollbalken ist per CSS
+   *  unsichtbar, `.lc-reiter-scroll`): GEMESSEN 13.9.2026 @320 an
+   *  `/rechtsprechung/ag_gerichte_HOR_2024_19` — `scrollWidth 192` gegen
+   *  `clientWidth 171`, Fenster `0/1/1`, Kopf «OGer AG» 58 px, Kern
+   *  «HOR.2024.19» 87 px.
+   *  F6 sagt, WER dann weicht: erst der Kopf (das ohnehin abgekürzte
+   *  Gericht), dann der Kern (die Geschäftsnummer). `ohneKopf` ist genau
+   *  dieses Signal — kein Breiten-Deckel am Kopf (der höbe die
+   *  `min-content`-Breite des Reiters und verschärfte den Überlauf, den er
+   *  abstellen soll — Herleitung §4.R2 Punkt 6), sondern der ZUSTAND «am
+   *  Anschlag und immer noch drüber».
+   *  EPOCHEN-RIEGEL gegen das Pendeln «Kopf weg → passt → Kopf da → passt
+   *  nicht»: gesetzt wird höchstens einmal je Breiten-/Bestands-Epoche,
+   *  zurückgenommen nur beim Epochenwechsel (dann misst die Leiste mit Kopf
+   *  neu — sonst bliebe ein einmal gewichener Kopf für immer weg). */
+  ohneKopf: boolean;
 }
 
 export function useReiterFenster(
@@ -54,6 +74,9 @@ export function useReiterFenster(
   const [anzahl, setAnzahl] = useState(gesamt);
   const [start, setStart] = useState(0);
   const [, setTakt] = useState(0);
+  /** W2·18 Welle 3 Punkt 1 — s. `Fenster.ohneKopf`. */
+  const [ohneKopf, setOhneKopf] = useState(false);
+  const kopfRiegel = useRef(false);
   const zuViel = useRef(Number.POSITIVE_INFINITY);
   const breite = useRef(-1);
   const bestand = useRef(gesamt);
@@ -99,8 +122,16 @@ export function useReiterFenster(
       bestand.current = gesamt;
       zuViel.current = Number.POSITIVE_INFINITY;
       laeufe.current = 0;
+      // W2·18 Welle 3 Punkt 1: neue Epoche = neue Lage. Der gewichene Kopf
+      // kommt zurück und wird neu gemessen; nur so kann er bei mehr Platz
+      // wieder erscheinen (der Riegel gilt INNERHALB der Epoche, nicht ewig).
+      kopfRiegel.current = false;
+      let neustart = false;
       // eslint-disable-next-line react-hooks/set-state-in-effect -- s. Herleitung oben
-      if (anzahl !== gesamt) { setAnzahl(gesamt); return; }
+      if (ohneKopf) { setOhneKopf(false); neustart = true; }
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- s. Herleitung oben
+      if (anzahl !== gesamt) { setAnzahl(gesamt); neustart = true; }
+      if (neustart) return;
     }
     const kinder = Array.from(el.querySelectorAll<HTMLElement>('[data-reiter-schluessel]'));
     const letzterReiter = kinder[kinder.length - 1];
@@ -116,6 +147,16 @@ export function useReiterFenster(
         zuViel.current = Math.min(zuViel.current, kinder.length);
         const neu = Math.max(1, Math.min(ueber, kinder.length - 1));
         if (neu !== anzahl) { laeufe.current += 1; setAnzahl(neu); return; }
+        // ── W2·18 Welle 3 Punkt 1 · DAS FENSTER IST AM ANSCHLAG ────────────
+        // `neu === anzahl` an dieser Stelle heisst: kleiner geht nicht mehr
+        // (der Boden des Fensters ist EIN Reiter), und es läuft trotzdem
+        // über. Jetzt — und nur jetzt — greift F6: der Kopf weicht ganz.
+        if (!kopfRiegel.current) {
+          kopfRiegel.current = true;
+          laeufe.current += 1;
+          setOhneKopf(true);
+          return;
+        }
       } else if (anzahl < gesamt && anzahl + 1 < zuViel.current) {
         laeufe.current += 1;
         setAnzahl(anzahl + 1);
@@ -130,5 +171,5 @@ export function useReiterFenster(
   // zieht ihn nur für den nächsten nach, wenn sich Länge oder Fensterbreite
   // ändern. Sonst zeigte die Leiste einen Frame lang das alte Fenster.
   const anzahlEff = Math.max(1, Math.min(anzahl, gesamt));
-  return { start: fensterStart(gesamt, aktivIdx, anzahlEff, start), anzahl: anzahlEff };
+  return { start: fensterStart(gesamt, aktivIdx, anzahlEff, start), anzahl: anzahlEff, ohneKopf };
 }
