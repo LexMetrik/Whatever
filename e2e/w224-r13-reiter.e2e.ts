@@ -513,3 +513,40 @@ test.describe('W2·18 Welle 2 Punkt 6 — kein Reiter-Kopf als blosses «…»',
     })
   }
 })
+
+//   Punkt 7  `reiterleiste/Reiter.tsx`: am ⧉ die Mindestbox
+//            (`min-h/min-w-[var(--tap-ziel)]`) durch `h-6 w-5` ersetzen ⇒
+//            20 × 24 statt 24 × 24, vier Pixel unter WCAG 2.5.8 AA.
+test.describe('W2·18 Welle 2 Punkt 7 — Trefferflächen der Reiter-Griffe (WCAG 2.5.8)', () => {
+  for (const [w, h] of [[1440, 900], [1024, 800]] as const) {
+    test(`@${w}: jeder Griff im Reiter misst mindestens 24 × 24 CSS-px`, async ({ page }) => {
+      await page.setViewportSize({ width: w, height: h })
+      await seed(page, [OR, '/gesetze/bund/ZGB', RECHNER], OR)
+
+      const griffe = await page.evaluate(() => [...document
+        .querySelectorAll<HTMLElement>('[data-reiter-streifen] [data-reiter-schluessel] button[aria-label]')]
+        .map((el) => {
+          const k = el.getBoundingClientRect()
+          return { name: el.getAttribute('aria-label')!, b: Math.round(k.width * 10) / 10, h: Math.round(k.height * 10) / 10 }
+        }))
+
+      // Beide Griffe müssen wirklich dastehen, sonst misst die Sonde nichts:
+      // das ⧉ gibt es erst ab `lg` (darunter ist es gar nicht gerendert).
+      expect(griffe.some((g) => /daneben öffnen/.test(g.name)), 'das ⧉ muss ab lg da sein').toBe(true)
+      expect(griffe.some((g) => /schliessen/.test(g.name)), 'das ✕ muss da sein').toBe(true)
+      for (const g of griffe) {
+        expect(g.b, `«${g.name}» misst ${g.b} × ${g.h}`).toBeGreaterThanOrEqual(24)
+        expect(g.h, `«${g.name}» misst ${g.b} × ${g.h}`).toBeGreaterThanOrEqual(24)
+      }
+      // WARUM 24 UND NICHT DIE «spacing»-AUSNAHME VON 2.5.8: die beiden Griffe
+      // stossen GEMESSEN ohne Lücke aneinander (0 px), ihre 24-px-Kreise
+      // überschneiden sich also. Die Ausnahme trägt hier nicht.
+      const luecke = await page.evaluate(() => {
+        const k = document.querySelector('[data-reiter-streifen] [data-reiter-schluessel]:nth-child(2)')
+        const g = [...(k?.querySelectorAll<HTMLElement>('button[aria-label]') ?? [])].map((e) => e.getBoundingClientRect())
+        return g.length > 1 ? Math.round(g[1].left - g[0].right) : null
+      })
+      expect(luecke, 'ohne Lücke gilt nur die 24-px-Regel, nicht «spacing»').toBe(0)
+    })
+  }
+})

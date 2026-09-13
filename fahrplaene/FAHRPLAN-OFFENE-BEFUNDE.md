@@ -329,6 +329,15 @@ mit Rot-Beweis.
    Pseudo-Element nähme Nachbarn die Klicks). Prüfen, ob 24×24 CSS-px OHNE Pseudo-Element erreichbar
    ist (Padding innerhalb des Reiters); wenn ja, bauen; wenn nein, Ausnahme mit Abstand-Regel
    (2.5.8 «spacing») im Kommentar dokumentieren, nicht still kippen (§0.2 UI-Befunde).
+   — **Ergebnis 13.9.2026 (Zeilen darüber unverändert, §2b):** GEMESSEN (gebautes dist/, Chromium,
+   @1440 und @1024, drei Reiter) — ✕ 24 × 24 (bringt `.lc-schliessknopf` über `--tap-ziel` mit), ⧉
+   20 × 24, also vier Pixel unter der AA-Untergrenze; Lücke zwischen den beiden Griffen 0 px, die
+   «spacing»-Ausnahme trägt damit NICHT. 24 px sind ohne Pseudo-Element erreichbar — GEBAUT als
+   echte Mindestbox am ⧉ (`min-h/min-w: var(--tap-ziel)`, die Zahl bleibt im Token, §5/D2), danach
+   beide Griffe 24 × 24. Die A3-1-Begründung für `komfort={false}` bleibt unberührt: das
+   Pseudo-Element hätte den Nachbarn die Klicks genommen, die Mindestbox tut das nicht. Wächter:
+   `e2e/w224-r13-reiter.e2e.ts` «W2·18 Welle 2 Punkt 7». Breiten-Nebenwirkung: +4 px je Reiter, nur
+   ab `lg` (darunter ist der Griff nicht gerendert) — die Sweep-Breiten 320/390 px sind unberührt.
 
 Welle 3 (nach dieser): Umordnen über die Fenstergrenze hinaus (Auto-Scroll am Rand, Ziehen ins/aus
 dem Blatt), Reiter als Links, Hover-Karte mit Volltitel + Stand, Touch-Umordnen.
