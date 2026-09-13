@@ -385,6 +385,47 @@ mit Rot-Beweis.
 Welle 3 (nach dieser): Umordnen über die Fenstergrenze hinaus (Auto-Scroll am Rand, Ziehen ins/aus
 dem Blatt), Reiter als Links, Hover-Karte mit Volltitel + Stand, Touch-Umordnen.
 
+### §4.R3 — Reiterleiste Welle 3: Umordnen, Links, Hover-Karte, Touch, Kopf-Überlauf (13.9.2026)
+
+Anlass: Auftrag David 13.9.2026 «bau insgesamt weiter an der Tabliste bis ich stop sage». Grundlage:
+Vorschläge 7–9 der Sichtprüfung, Recherche-Datei (Hover-Karte, Tastaturäquivalenz) und der Nebenfund
+aus dem Welle-2-Abgleich (§4.R2 Punkt 6, Nachtrag). Baut auf Welle 2 auf (Branch
+`feat/w2-18-reiterleiste-teil3`). Darstellungsschicht, kein Risikopfad. Je Punkt ein Commit mit
+Rot-Beweis; Rot-Beweise auf DIESEM Stand fahren, nie übernehmen.
+
+1. **Einzelner Entscheid-Reiter läuft @320 über** (Welle-2-Abgleich, gemessen
+   `/rechtsprechung/ag_gerichte_HOR_2024_19`: Streifen scrollWidth 192 gegen clientWidth 171; Kopf
+   «OGer AG» 58 px). Regel F6 «erst weicht der Kopf, dann wird der Kern gekürzt» wirklich umsetzen:
+   ist das Fenster am Anschlag und der Streifen überläuft trotzdem, weicht der Kopf des betroffenen
+   Reiters ganz (Epochen-Riegel gegen Pendeln in `useReiterFenster.ts`). Der Wächter «kein Kopf als
+   blosses …» (Welle 2) erwartet @320 `koepfe.length > 0` — diese Erwartung ist eine fachliche
+   Änderung und wird im Commit deklariert (§6.3): @320 darf der Kopf fehlen, wenn der Streifen sonst
+   überliefe. Zusätzlich den R8-Sweep (`e2e/kein-abschnitt.e2e.ts`) um einen Entscheid-Vertreter mit
+   langem Gerichtskopf ergänzen (dritter Vertreter), damit die Klasse künftig selbst gefunden wird.
+2. **Umordnen über die Fenstergrenze hinaus.** Beim Ziehen an den linken/rechten Rand des Streifens
+   scrollt der Streifen automatisch (Auto-Scroll, ~8 px je Frame, reduced-motion: sofort); Ablegen auf
+   dem «+N»-Knopf hängt den Reiter ans Ende der Ordnung (und damit ins Blatt); im Blatt bleibt das
+   Umordnen per ▲▼ (bestehend). Test: 15 Reiter @1024, Reiter 12 per Drag nach vorn ⇒ Position 1.
+3. **Reiter als Links.** Der Reiter-Knopf wird ein `<a href>` (React-Router `Link`), Screenreader
+   melden «Link», Mittelklick/Ctrl-Klick öffnen wie überall in der App (heute Sonderbehandlung in
+   `Reiter.tsx`); Tastatur-Ring aus Welle 2 (roving tabindex) bleibt; Drag-Verhalten bleibt (`draggable`
+   auf dem Link, `dragstart` verhindert Navigations-Drag). Bestehende e2e-Selektoren (`getByRole('button',
+   {name:/Reiter/})`) werden NICHT umgeschrieben, sondern die Sonden prüfen, ob sie über `nav[aria-label]`
+   + Text zugreifen — Änderungen an bestehenden Sonden im Commit deklarieren (§6.3).
+4. **Hover-Karte.** Statt des zusammengeklebten `title` eine strukturierte Karte nach 600 ms Hover oder
+   bei Fokus: Volltitel · Kürzel/Kategorie · Stand (bei Erlassen) · Lesestellung (Art.) · Fenster (◧/◨).
+   Kein Layout-Shift, Escape schliesst, verschwindet beim Verlassen; `prefers-reduced-motion` ohne
+   Einblendung; auf Touch keine Hover-Karte. Kein neuer Chunk im Start-Bundle über Budget (60 KB);
+   die Karte lazy laden wie das Kontextmenü (Vorlauf bei `pointerenter`).
+5. **Touch-Umordnen — günstige Variante.** Kontextmenü (bestehend, auch per Langdruck erreichbar
+   machen: 500 ms `pointerdown` ohne Bewegung öffnet es) bekommt «Nach links», «Nach rechts», «An den
+   Anfang», «Ans Ende»; damit ist die Reihenfolge auf Touch und per Tastatur änderbar, ohne
+   HTML5-Drag. Test: Menü-Eintrag verschiebt korrekt; Langdruck öffnet das Menü (Playwright
+   `hasTouch`).
+6. **`data-`-Anker für Kopf- und Kern-Span** (`data-reiter-teil="kopf|kern|nummer"`), damit Sonden
+   nicht an Tailwind-Deckeln hängen; bestehende Sonden auf die Anker umstellen (rein mechanisch, §6.3
+   deklariert, Verhalten identisch).
+
 ## §5 — `QS-CODE-PROP` · Eigenschafts-Tests (property-based) für die Rechen-Engines
 
 Entscheid David 7.8.2026: je Engine ein Invarianten-Katalog («eine Frist endet nie vor ihrem
