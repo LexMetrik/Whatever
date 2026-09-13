@@ -472,7 +472,15 @@ export function ladeTabs(): TabEintrag[] {
         gesehen.add(k);
         return true;
       })
-      .slice(0, MAX);
+      // W2·18 Punkt 4 · EINE RICHTUNG: die ÄLTESTEN fallen. Hier stand
+      // `.slice(0, MAX)` — beim Lesen fielen also die JÜNGSTEN 50 weg, während
+      // `merkeTab` beim Schreiben die ältesten kappt. Zwei Richtungen an
+      // derselben Grenze heisst: welche Reiter ein voller Speicher verliert,
+      // hing davon ab, wer ihn zuletzt angefasst hat. Kein Ring-Eintrag an
+      // dieser Stelle — Lesen ist keine Handlung, und `ladeTabs` läuft bei
+      // jedem Ereignis (`useTabs`): ein Schreibzugriff im Lesepfad legte
+      // denselben Eintrag bei jedem Lauf erneut in den Ring.
+      .slice(-MAX);
   } catch {
     return [];
   }
@@ -545,7 +553,33 @@ export function merkeTab(path: string, label?: string): void {
     schreibe(naechste);
     return;
   }
-  schreibe([...bisher, eintragAus(path, label)].slice(-MAX));
+  schreibe(kappeMitRing([...bisher, eintragAus(path, label)]));
+}
+
+/** ── W2·18 Punkt 4 · WAS DIE KAPPE FRISST, LIEGT IM RING ───────────────────
+ *  Die Grenze `MAX` selbst bleibt (50 Reiter, Auftrag David). Bis W2·18 fiel
+ *  der gekappte Reiter aber STILL weg: kein Ring-Eintrag, also keine
+ *  Rückfahrkarte — ein geöffnetes Dokument verschwand, ohne dass jemand es
+ *  geschlossen hätte, und Alt+⇧+T brachte es nicht zurück. Gekappt wird
+ *  einheitlich vorne (die ältesten), und genau die gehen in den Ring.
+ *  Reihenfolge wie in `leereTabs`: der vorderste zuerst, damit das
+ *  Wiederherstellen (vom Ende her) Position um Position zurückholt.
+ *
+ *  `geschuetzt` ist der Eintrag, der GERADE hereinkommt: beim Wiederherstellen
+ *  am vollen Speicher darf nicht der eben zurückgeholte Reiter das Opfer der
+ *  Kappe sein — sonst sähe die Geste aus, als hätte sie gar nichts getan.
+ *  Weichen muss dann der älteste ANDERE; er geht seinerseits in den Ring. */
+function kappeMitRing(tabs: TabEintrag[], geschuetzt?: TabEintrag): TabEintrag[] {
+  if (tabs.length <= MAX) return tabs;
+  const bleibt: TabEintrag[] = [];
+  const weg: GeschlossenerReiter[] = [];
+  let zuViel = tabs.length - MAX;
+  tabs.forEach((eintrag, index) => {
+    if (zuViel > 0 && eintrag !== geschuetzt) { weg.push({ eintrag, index }); zuViel -= 1; }
+    else bleibt.push(eintrag);
+  });
+  merkeGeschlossen(weg);
+  return bleibt;
 }
 
 /** ── §5a Ziff. 3 · EINE NAVIGATION ERSETZT DEN AKTIVEN REITER ───────────────
@@ -705,7 +739,16 @@ export function schliesseRechtsVon(path: string): void {
 // aufgenommen werden Formularinhalte, und nie ein Zeitstempel (§2: kein
 // Date.now() in src/lib) — die Reihenfolge im Array IST die Reihenfolge.
 const ZU_KEY = 'lexmetrik-tabs-zu';
-const ZU_MAX = 10;
+// ── W2·18 Punkt 4 · DIE RÜCKFAHRKARTE MUSS EINE GANZE LEISTE TRAGEN ────────
+// Hier stand 10. `leereTabs` («Alle schliessen») legt ALLE offenen Reiter in
+// den Ring — mit 10 als Kappe war die Geste ab dem elften Reiter nur noch zu
+// zehn Zehnteln umkehrbar, und was darüber lag, fiel still weg. Die Kappe ist
+// darum die der Reiterliste selbst: mehr als `MAX` Reiter kann niemand
+// schliessen, also trägt ein Ring dieser Grösse jede Schliess-Geste
+// vollständig. An der BERUFSGEHEIMNIS-Grenze ändert das nichts Qualitatives
+// (oben): dieselben Felder, dieselbe Herkunft, dieselbe Lebensdauer, und nie
+// mehr Einträge, als die Reiterliste daneben ohnehin führen darf.
+const ZU_MAX = MAX;
 
 /** Ein geschlossener Reiter mit der Position, an der er stand. Die Position ist
  *  der ganze Unterschied zu einem Verlauf: wiederhergestellt wird DORT, wo der
@@ -767,7 +810,10 @@ export function stelleLetztenWiederHer(): TabEintrag | null {
   if (bisher.some((t) => tabSchluessel(t.path) === teil)) return letzter.eintrag;
   const naechste = [...bisher];
   naechste.splice(Math.min(letzter.index, naechste.length), 0, letzter.eintrag);
-  schreibe(naechste.slice(0, MAX));
+  // W2·18 Punkt 4: dieselbe Richtung und derselbe Ring wie beim Öffnen — hier
+  // stand `.slice(0, MAX)` und warf am vollen Speicher den JÜNGSTEN Reiter weg,
+  // um den wiederhergestellten aufzunehmen.
+  schreibe(kappeMitRing(naechste, letzter.eintrag));
   return letzter.eintrag;
 }
 

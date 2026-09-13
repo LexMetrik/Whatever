@@ -225,6 +225,16 @@ Test die Eigenschaft pinnen kann.
    mit >10 Reitern nur zu 10 umkehrbar. Fix: EINE Richtung (die ältesten fallen, wie bei `merkeTab`),
    Gekapptes in den Ring; `ZU_MAX` so, dass «Alle schliessen» vollständig umkehrbar ist (Ring-Kappe
    ≥ Reiter-Kappe, oder «Alle schliessen» legt einen Sammel-Eintrag ab). Tests je Kappe rot→grün.
+
+   **Nachtrag 13.9.2026 (beim Bau gemessen, Zeilen oben unverändert):** gebaut wie oben — eine
+   Richtung (`slice(-MAX)` überall), Gekapptes in den Ring, `ZU_MAX = MAX`. Dabei ist ein ZWEITER,
+   ÄLTERER Defekt aufgefallen, der NICHT Teil dieses Schritts ist: `stelleLetztenWiederHer` setzt
+   nach einem «Alle schliessen» verschachtelt ein (r49, r48 … statt r0, r1 …). Ursache ist die
+   Positions-Regel selbst — `leereTabs` legt die Reiter mit ihren Indizes 0…n in den Ring, die
+   Wiederherstellung zieht sie vom ENDE und setzt auf `min(index, länge)`, was nur aufgeht, solange
+   die übrigen Reiter noch stehen. Reproduzierbar schon bei drei Reitern; der Kommentar an
+   `leereTabs` («Position um Position stimmt») ist insoweit falsch. Der W2·18-Test prüft darum
+   Vollständigkeit (50 von 50 zurück statt 10 von 50), nicht die Reihenfolge. Eigener Folgeschritt.
 5. **Gestutzte Beschriftungen ab 7 Reitern.** Gemessen 13.9.2026 bei 1024 px: Reiter zeigen «St…»,
    «ZP…», «Sa…»; Duplikate «ZPO-Fristen (2)» und «(3)» sind visuell identisch, weil die Nummer hinten
    abgeschnitten wird. Fix (a) Mindestbreite je Reiter so, dass ≥ 6–8 Zeichen sichtbar bleiben, und
