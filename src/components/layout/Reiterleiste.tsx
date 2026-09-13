@@ -12,8 +12,8 @@ import {
   // stehen sie in `lib/tabs` und beide Flächen lesen dieselbe Quelle.
   reiterKurzformText,
 } from '../../lib/tabs';
-import { verlaufLabel, materialPfad, type VerlaufManifeste } from '../../lib/verlaufLabel';
-import { reiterKategorie } from '../../lib/tabGruppen';
+import { verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
+import { manifestBedarf } from '../../lib/tabGruppen';
 import { Reiter } from './reiterleiste/Reiter';
 import { ReiterBlatt } from './reiterleiste/ReiterBlatt';
 import { useReiterFenster } from './reiterleiste/useReiterFenster';
@@ -98,16 +98,20 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // `/materialien/register.json` wird NUR geladen, wenn wirklich ein
   // Material-Reiter offen ist — kein dritter Download in der Kopfzone auf
   // Vorrat (§15; `check:perf-budget` misst es).
+  //
+  // ── W2·18 Punkt 2 · DER EFFEKT HÄNGT AM BEDARF, NICHT AN DER LISTE ────────
+  // Die `brauchtX`-Ableitung stand IM Effekt, und der Effekt hing an `[tabs]`.
+  // Weil `useTabs` bei jedem Ereignis ein neues Array lieferte, lief er
+  // dauernd — und legte bei jedem Lauf ein NEUES `manifeste`-Objekt ab, also
+  // einen zweiten Render obendrauf und neue Prop-Identität für jeden Reiter.
+  // GEMESSEN 13.9.2026 (20 Rad-Schritte auf /gesetze/bund/OR): 11 Läufe.
+  // Der Bedarf selbst ändert sich dabei nie: ein wandernder `#art-…`-Anker
+  // macht aus einem Gesetzes-Reiter keinen anderen Bedarf. Die Ableitung wohnt
+  // darum jetzt in `lib/tabGruppen.manifestBedarf` (§3, dort auch die
+  // §15-Herleitung der Material-Regel), und die Abhängigkeit sind die drei
+  // Wahrheitswerte — stabile Primitive statt einer Array-Identität.
+  const { gesetze: brauchtG, rechtsprechung: brauchtE, materialien: brauchtM } = manifestBedarf(tabs);
   useEffect(() => {
-    const brauchtG = tabs.some((t) => reiterKategorie(t.path) === 'gesetze');
-    const brauchtE = tabs.some((t) => reiterKategorie(t.path) === 'rechtsprechung');
-    // §15-Nachzug (12.9.2026): die Eintrittskarte allein an der KATEGORIE zog
-    // das 1,4-MB-Register auch für Materialien-Routen, die es nie brauchen —
-    // die Übersicht (die es ohnehin selbst lädt) und seit heute
-    // /materialien/deckung. Gebraucht wird es genau für DETAIL-Reiter, und das
-    // sagt `materialPfad` — dieselbe Funktion, die die Aufschrift auflöst.
-    // Rot-Beweis: Sonde e2e/deckung-seite (a) sah vorher genau diesen Abruf.
-    const brauchtM = tabs.some((t) => materialPfad(t.path) !== null);
     if (!brauchtG && !brauchtE && !brauchtM) return;
     let lebt = true;
     void (async () => {
@@ -123,7 +127,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
       }));
     })();
     return () => { lebt = false; };
-  }, [tabs]);
+  }, [brauchtG, brauchtE, brauchtM]);
 
   const aktivSchluessel = tabSchluessel(pathname + search);
 

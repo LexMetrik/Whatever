@@ -512,6 +512,18 @@ function eintragAus(path: string, label?: string, alt?: TabEintrag): TabEintrag 
 const gleich = (a: TabEintrag, b: TabEintrag): boolean =>
   a.path === b.path && a.label === b.label && a.wahl === b.wahl;
 
+/** ── W2·18 Punkt 2 · STRUKTURELLE GLEICHHEIT ZWEIER REITERLISTEN ───────────
+ *  `ladeTabs()` baut bei JEDEM Aufruf ein neues Array aus dem `localStorage` —
+ *  identischer Inhalt, neue Identität. Wer daraus React-State macht, rendert
+ *  auch dann neu, wenn sich nichts geändert hat (die gemessene Kaskade beim
+ *  Scrollen, s. `useTabs`). Diese Funktion sagt, ob zwei Listen dasselbe
+ *  BEDEUTEN: gleiche Länge, gleiche Reihenfolge, je Eintrag gleicher Pfad
+ *  (inkl. Anker), gleiches Label, gleiche Wahl — dieselben drei Felder, die
+ *  `gleich` schon für den Einzeleintrag prüft (§5, eine Regel). */
+export function tabsGleich(a: readonly TabEintrag[], b: readonly TabEintrag[]): boolean {
+  return a === b || (a.length === b.length && a.every((x, i) => gleich(x, b[i])));
+}
+
 /** Öffnet/aktualisiert einen Reiter und hängt einen NEUEN hinten an (gekappt auf
  *  die jüngsten MAX). Dublette (per `tabSchluessel`) behält ihre Position
  *  (stabile Reihenfolge) und übernimmt nur ein neu aufgelöstes Label.
