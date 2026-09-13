@@ -273,6 +273,18 @@ mit Rot-Beweis.
    wenn das System es verlangt (`@media (prefers-reduced-motion: reduce)` in `index.css` bzw.
    Tailwind `motion-reduce:`). Test: Playwright `emulateMedia({ reducedMotion: 'reduce' })`,
    gemessene `transition-duration` 0s.
+   — **Korrektur 13.9.2026 (Zeilen darüber unverändert, §2b), Anlass: Ist-Messung vor dem Bau.**
+   Die Zusage wird bereits eingelöst, und zwar GLOBAL: `src/index.css` setzt unter `reduce` für
+   `*, *::before, *::after` `animation-duration`/`transition-duration` auf `.001ms !important`.
+   GEMESSEN (Chromium, Dev-Server 5182, vier Reiter + offenes Blatt, `reduce` gegen
+   `no-preference`): Griffe und «+» 0.15 s → `1e-06s`; Reiterhülle, Einfügemarke, Blatt und Scrim
+   messen in BEIDEN Zuständen 0 s, `scroll-behavior` des Streifens ist `auto` (das Rad setzt
+   `scrollLeft` hart). Die erwarteten «0s» sind also `1e-06s` — und das mit Absicht, damit
+   `transitionend` weiter feuert. ZU BAUEN war darum keine zweite, reiter-eigene Regel (das wäre
+   die zweite Wahrheit, §5), sondern der fehlende WÄCHTER: `e2e/w224-r11-reiterleiste.e2e.ts`
+   «W2·18 Welle 2 Punkt 3» misst die Zusage über alle Flächen von Leiste und Blatt; rot, sobald
+   die globale Regel fällt (einmal gefahren: «längster Übergang: BUTTON.rl-plus rl-plus-solo,
+   0.15 > 0.01»).
 4. **Ring-Ordnung nach «Alle schliessen».** `stelleLetztenWiederHer` setzt verschachtelt ein (r49,
    r48 … statt r0, r1 …; Nachtrag §4.R Welle 1). Fix in `lib/tabs.ts`: Position beim Ablegen so
    merken, dass das Wiederherstellen in Ur-Reihenfolge landet; Kommentar an `leereTabs` berichtigen.

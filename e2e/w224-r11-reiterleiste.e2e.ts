@@ -523,3 +523,55 @@ test.describe('R3/R4 — das Überlauf-Blatt', () => {
     await expect(wieder.locator('li')).toHaveCount(3)
   })
 })
+
+// ═══ W2·18 WELLE 2 PUNKT 3 · WER KEINE BEWEGUNG WILL, BEKOMMT KEINE ═════════
+//
+// Fahrplan §4.R2 Punkt 3. GEMESSEN 13.9.2026 (Chromium, Dev-Server, vier
+// Reiter + offenes Blatt, `reducedMotion: 'reduce'` gegen `'no-preference'`):
+// die Zusage wird schon eingelöst — `src/index.css` killt unter `reduce`
+// global jede `transition-duration`/`animation-duration` (.001ms = gemessene
+// `1e-06s`, gegen 0.15s ohne die Präferenz), und die Leiste kennt daneben
+// keine JS-Bewegung: das Rad setzt `scrollLeft` hart, `scroll-behavior` steht
+// auf `auto`, Einfügemarke und Blatt erscheinen ohne Übergang (gemessen 0s in
+// BEIDEN Zuständen).
+// EINE ZWEITE REITER-EIGENE REGEL WÄRE DIE ZWEITE WAHRHEIT (§5) — was fehlte,
+// war nicht die Regel, sondern ihr Wächter. Der steht hier.
+//
+// ROT ZU BEKOMMEN (§6.7, so gefahren): in `src/index.css` den Block
+// `@media (prefers-reduced-motion: reduce) { *, *::before, *::after … }`
+// auskommentieren ⇒ Griffe und «+» messen 0.15 s statt 1e-06 s.
+test.describe('W2·18 Welle 2 Punkt 3 — prefers-reduced-motion', () => {
+  test('unter «reduce» bewegt sich in Leiste und Blatt nichts', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await seed(page, [OR, RECHNER, VORLAGE])
+    await page.locator(`${REITER} button[aria-label*="offenen Reiter"]`).click()
+    await expect(page.getByRole('dialog', { name: 'Alle geöffneten Reiter' })).toBeVisible()
+
+    const befund = await page.evaluate(() => {
+      const sek = (roh: string) => Math.max(0, ...roh.split(',').map((s) => {
+        const z = parseFloat(s)
+        return Number.isFinite(z) ? (s.trim().endsWith('ms') ? z / 1000 : z) : 0
+      }))
+      const flaechen = [
+        ...document.querySelectorAll<HTMLElement>('nav[aria-label="Offene Reiter"] *'),
+        ...document.querySelectorAll<HTMLElement>('[role="dialog"][aria-label="Alle geöffneten Reiter"] *'),
+      ]
+      let schlimmster = { was: '—', dauer: 0 }
+      for (const el of flaechen) {
+        const c = getComputedStyle(el)
+        const d = Math.max(sek(c.transitionDuration), sek(c.animationDuration))
+        if (d > schlimmster.dauer) schlimmster = { was: `${el.tagName}.${el.className}`.slice(0, 80), dauer: d }
+      }
+      const streifen = document.querySelector('[data-reiter-streifen]')!
+      return { ...schlimmster, zahl: flaechen.length, scroll: getComputedStyle(streifen).scrollBehavior }
+    })
+
+    expect(befund.zahl, 'die Sonde muss überhaupt Flächen gefunden haben').toBeGreaterThan(10)
+    // .001ms ist Absicht (so feuert `transitionend` weiter) — alles darüber ist
+    // sichtbare Bewegung. 10 ms als Schwelle: eine Grössenordnung unter dem
+    // schnellsten Haus-Übergang (--dur-fast 120 ms).
+    expect(befund.dauer, `längster Übergang: ${befund.was}`).toBeLessThanOrEqual(0.01)
+    // Und kein weiches Scrollen im Streifen — das killt die Regel oben nicht.
+    expect(befund.scroll).toBe('auto')
+  })
+})
