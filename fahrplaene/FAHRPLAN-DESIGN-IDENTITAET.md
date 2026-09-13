@@ -417,6 +417,70 @@ gibt es keinen leeren Streifen mehr, dort steht der Sammlungs-Reiter. Neu offen 
 David: ob auch die Meta-Routen (/ueber, /methodik, /einstellungen, /kontakt) einen Reiter tragen
 sollen — heute bleiben sie bewusst reiterlos (`R14-REITER-MODELL.md`, §Offengelegte Grenze).
 
+### Korrektur 13.9.2026 — Anlass: Ist-Abgleich beim Bau von `W2·25`
+
+Zwei Stellen dieses §7 beschreiben einen Stand, den der Code nicht mehr trägt. Die Absätze darüber
+bleiben unverändert als **datierte Belege** stehen (§0 Ziff. 2b: Belege altern nicht, sie werden
+ergänzt); hier steht, was heute gilt.
+
+1. **Der letzte Absatz ist überholt, nicht falsch.** Er galt bis `8d398874e`. Der **Nachzug R14b**
+   (7.9.2026, `abnahme/design-identitaet/R14-REITER-MODELL.md` §«Nachzug R14b») hat die Grenze
+   geschlossen: `lib/tabs.istReiterPfad` ist ersatzlos gestrichen, **jede Route ist Reiterinhalt**,
+   auch die vier Meta-Routen. Gemessen am Ist-Code (13.9.2026): `istReiterPfad` kommt in `src/`
+   nicht mehr vor, `components/TabTracker.tsx` legt auf jeder Adresse einen Reiter an.
+   **Der Entscheid selbst bleibt offen und wird hier NICHT getroffen:** R14b nennt ihn einen
+   Orchestrator-Entscheid, dessen **Bestätigung durch David aussteht**. `W2·25` hat ihn nicht
+   berührt und baut nichts darauf.
+2. **Die R13-Regel «höchstens EINE Neuer-Reiter-Seite» ist erfüllt** und braucht in `W2·25` keine
+   eigene Stelle: `merkeTab` erkennt die offene Sammlung an ihrer Identität (R14, Rückbau).
+
+### Stand 13.9.2026 — gebaut, mit Rot-Probe
+
+Beide Teile stehen auf `feat/w2-25-arbeitsmappe`. Kein Merge, kein Deploy (eigener Auftrag).
+
+**Teil 1 · Anheften.** `TabEintrag.fest` + `hefteAn`/`loeseAb`/`festeZone`/`zugErlaubt`/`istFest`
+in `src/lib/tabs.ts`; schmale Reiterform ohne ✕/⧉/Lesestellung in
+`components/layout/reiterleiste/Reiter.tsx`; «Anheften»/«Lösen» im Kontextmenü; Zone «Angeheftet»
+im Überlauf-Blatt (`TabPanel.tsx`).
+Die **D16-Auflage ist wörtlich eingelöst**: keine zweite Anzeige-Ordnung — `ladeTabs` partitioniert
+den EINEN flachen Speicher (feste zuerst, stabil), die Leiste zeichnet weiter `ordnung = tabs`.
+Ein Zug über die Zonengrenze wird **abgelehnt, nicht korrigiert**: `ordneTabsUm` meldet `false`
+und schreibt nichts, die Einfügemarke trägt `data-reiter-sperre="fest"` und wird stumpf
+(`bg-ink-400 opacity-50`), `dropEffect` geht auf `'none'`. Dieselbe Grenze binden die Menüzeilen
+(«Nach links»/«An den Anfang» meinen die EIGENE Zone) und Alt+⇧+←/→.
+GEMESSEN (gebautes `dist/`, Chromium @1440, `/gesetze/bund/OR#art-336_c`): angeheftet **39.05 px**
+gegen frei **179.09 px**.
+
+**Teil 2 · Arbeitsmappe.** `src/lib/mappen.ts` (`localStorage`-Schlüssel `lexmetrik-mappen`,
+höchstens 12 Mappen, alphabetisch, ohne Zeitstempel) · `lib/tabs.uebernehmeMappe` (feste bleiben,
+verdrängte freie gehen in den Schliess-Ring) · `reiterleiste/MappenDialog.tsx` (lazy, 1.97 KB gzip)
+· Menüzeilen am Leerraum UND am «+N»-Knopf.
+**Adress-Format** — `?mappe=` mit `,` als Trenner, `*` als Anheftungs-Marke, Pfade
+`encodeURIComponent`-kodiert mit wieder eingesetztem `/` (der Schrägstrich ist im Query-Teil
+erlaubt, RFC 3986 `pchar`), Beispiel:
+`https://lexmetrik.ch/rechner/zpo-fristen?mappe=*/gesetze/bund/OR%23art-336_c,*/gesetze/bund/ZGB,/vorlagen/arbeitsvertrag`
+Gelesen wird der ROHE Query-Wert, nicht `URLSearchParams.get` — der dekodierte sonst ein `%2C` aus
+einem Rechner-Pfad zu einem Trenner, den es nicht gibt. Der Parameter verlässt die Adresszeile
+nach dem Übernehmen (`replaceState`, wie `?p=` in `usePaneLayout`) und steht in keinem Reiterpfad.
+
+**Offengelegt (§8), kein Mangel, aber eine Eigenschaft der Sache:** eine geteilte Mappe trägt die
+Reiter-Adressen — und Rechner-Eingaben stehen schon heute IN der Adresse (gemessen
+13.9.2026: `/rechner/zpo-fristen?e=2025-01-15&u=tage&l=30&v=ordentlich&k=ZH&…`). Wer eine Mappe
+weitergibt, gibt sie mit. Der Speichern-Dialog sagt es im Klartext, statt es wegzuglätten;
+dieselbe Offenheit wie bei «Adresse kopieren» am Reiter (R13-9).
+
+**Nebenbefund beim Sichten (kein Defekt):** der Rand-Schub (W2·18 Welle 3 Punkt 2) schiebt einen
+gezogenen Reiter auch dann durch die Ordnung, wenn der Zeiger über einem ANGEHEFTETEN Reiter steht
+— er hält dabei an der Zonengrenze, wie er am Ende des Streifens am Anschlag hält. Richtig so,
+aber es machte eine Sonde zeitabhängig: sie zieht darum jetzt den ersten freien Reiter
+(Herleitung im Kopf des Falls, `e2e/w224-reiter-umordnen-d16.e2e.ts`), und ein eigener Fall misst
+den Schub an der Grenze.
+
+**Wächter.** Unit: `src/tests/reiter-anheften.test.ts` (15) · `src/tests/reiter-fest-form.test.tsx`
+(4) · `src/tests/mappen.test.ts` (18). E2E: `e2e/w224-reiter-umordnen-d16.e2e.ts`
+(«W2·25 — Anheften …», 8 Fälle) · `e2e/w224-r11-reiterleiste.e2e.ts` («W2·25 — die Arbeitsmappe …»,
+4 Fälle). Rot-Probe je Datei gefahren und im jeweiligen Commit mit dem gemessenen Ist-Wert belegt.
+
 ## §8 · Folgeschritte nach der Landung (Stand 7.9.2026)
 
 Gebucht in `ROADMAP.md` unter `W2·24-DESIGN-IDENTITAET` als eigene Zeilen; hier steht das Detail.

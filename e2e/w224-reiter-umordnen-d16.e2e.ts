@@ -437,7 +437,14 @@ test.describe('W2·25 — Anheften sortiert den Speicher, die Zonengrenze lehnt 
    *  `dragover` gelesen, war sie GEMESSEN immer `null` (erster Lauf dieser
    *  Sonde, 13.9.2026). Derselbe `DataTransfer` muss dabei über beide
    *  Schritte hinweg derselbe bleiben (so tut es der Browser auch), darum
-   *  liegt er zwischendurch am `window`. */
+   *  liegt er zwischendurch am `window`.
+   *
+   *  NICHT GEMESSEN WIRD `dataTransfer.dropEffect`: die Leiste SETZT ihn
+   *  (`'none'` an der Zonengrenze, das «kein Zutritt» des Browsers), aber ein
+   *  von Hand gebauter `DataTransfer` trägt ihn nicht zurück — GEMESSEN
+   *  13.9.2026 stand er auch im erlaubten Fall auf `'none'`, also auf seinem
+   *  Anfangswert. Eine Zusage, die die Sonde nicht unterscheiden kann, wird
+   *  hier nicht behauptet (§6.7); gemessen wird das Attribut im DOM. */
   async function ziehePruefe(page: Page, von: string, nach: string, davor: boolean) {
     await page.evaluate(([vonK, nachK, links]) => {
       const el = (k: string) => document.querySelector<HTMLElement>(
@@ -461,8 +468,6 @@ test.describe('W2·25 — Anheften sortiert den Speicher, die Zonengrenze lehnt 
     const sicht = {
       marke: await marke.getAttribute('data-reiter-marke'),
       sperre: await marke.getAttribute('data-reiter-sperre'),
-      dropEffect: await page.evaluate(() =>
-        ((window as unknown as { __lmZug: { dt: DataTransfer } }).__lmZug).dt.dropEffect),
     }
 
     await page.evaluate(() => {
@@ -488,11 +493,24 @@ test.describe('W2·25 — Anheften sortiert den Speicher, die Zonengrenze lehnt 
     await expect(page.locator('[data-reiter-streifen] [data-reiter-fest="true"]')).toHaveCount(1)
   })
 
+  // ── WARUM HIER DER ERSTE FREIE REITER GEZOGEN WIRD, UND NICHT DER LETZTE ──
+  // GEMESSEN 13.9.2026 in der Seite (gebautes dist/, Preview 5186, @1440):
+  // ein `dragover` über dem LINKEN Reiter liegt zugleich in der Randzone des
+  // Streifens (`randschub.RAND_PX` 32) und startet den Rand-Schub — der
+  // schiebt den gezogenen Reiter im Viertelsekundentakt durch die Ordnung, bis
+  // er an der festen Zone stehen bleibt. Beobachtet: aus
+  // [OR*, ZGB*, BGE, ZPO, Arbeitsvertrag] wurde während des Haltens
+  // [OR*, ZGB*, Arbeitsvertrag, BGE, ZPO] — richtig (der Schub bewegt IN der
+  // freien Zone und hält an der Grenze), aber für eine Sonde, die «Ordnung
+  // unverändert» misst, ein Zeitrennen. Gezogen wird darum der ERSTE freie
+  // Reiter: für ihn hat der Schub nach links kein Ziel mehr, das Ergebnis
+  // hängt an der Regel statt an der Dauer der Zwischenschritte (§0 Ziff. 3 —
+  // keine Messung ohne Bedingung).
   test('ein freier Reiter vor einen festen: sichtbar abgelehnt, Ordnung unverändert', async ({ page }) => {
     await setzeMitFest(page, [{ path: G1, fest: true }, { path: E1 }, { path: R1 }])
     const vorher = await sichtbareOrdnung(page)
 
-    const sicht = await ziehePruefe(page, R1, G1, true)
+    const sicht = await ziehePruefe(page, E1, G1, true)
     // Die Marke bleibt STEHEN — «hier landet nichts» ist eine Auskunft, ein
     // fehlendes Zeichen wäre keine (§8) —, aber sie trägt die Sperre.
     expect(sicht.marke, 'die Einfügemarke steht auf der Zeigerseite').toBe('davor')
@@ -510,10 +528,46 @@ test.describe('W2·25 — Anheften sortiert den Speicher, die Zonengrenze lehnt 
     expect(await gespeicherteOrdnung(page)).toEqual(vorher)
   })
 
+  // Ziel ist der LETZTE Reiter, rechte Hälfte: @1440 liegt dieser Punkt weder
+  // in der linken noch in der rechten Randzone des Streifens — derselbe Grund
+  // wie oben, der Rand-Schub bleibt aus dem Spiel.
   test('INNERHALB der freien Zone zieht es weiter wie vor W2·25 (D16 unberührt)', async ({ page }) => {
     await setzeMitFest(page, [{ path: G1, fest: true }, { path: E1 }, { path: R1 }, { path: V1 }])
-    const sicht = await ziehePruefe(page, V1, E1, true)
+    const sicht = await ziehePruefe(page, E1, V1, false)
     expect(sicht.sperre, 'kein Zeichen einer Sperre').toBeNull()
+    expect(await gespeicherteOrdnung(page))
+      .toEqual([schluessel(G1), schluessel(R1), schluessel(V1), schluessel(E1)])
+  })
+
+  // ── DER RAND-SCHUB HÄLT AN DER ZONENGRENZE (W2·18 Welle 3 Punkt 2 + W2·25) ─
+  // Der Schub ist der zweite Weg, auf dem ein Reiter durch die Ordnung wandert
+  // (er schiebt am Rand des Streifens weiter, wenn das Fenster zu Ende ist).
+  // Er ruft dieselbe Regel auf — also hält auch er an der festen Zone, statt
+  // sich daran vorbeizuschieben. GEMESSEN in der Seite, s. Herleitung oben.
+  test('der Rand-Schub schiebt bis an die feste Zone — und keinen Platz weiter', async ({ page }) => {
+    await setzeMitFest(page, [{ path: G1, fest: true }, { path: E1 }, { path: R1 }, { path: V1 }])
+    await page.evaluate((vonK) => {
+      const el = (k: string) => document.querySelector<HTMLElement>(
+        `[data-reiter-streifen] [data-reiter-schluessel="${k}"]`)!
+      const streifen = document.querySelector<HTMLElement>('[data-reiter-streifen]')!
+      const s = streifen.getBoundingClientRect()
+      const dt = new DataTransfer()
+      const feuer = (ziel: HTMLElement, typ: string) => ziel.dispatchEvent(new DragEvent(typ, {
+        bubbles: true, cancelable: true, dataTransfer: dt,
+        clientX: Math.round(s.left + 4), clientY: Math.round(s.top + s.height / 2) }))
+      feuer(el(vonK), 'dragstart')
+      feuer(streifen, 'dragover')
+      ;(window as unknown as { __lmSchub?: unknown }).__lmSchub = { dt, vonK }
+    }, schluessel(V1))
+    // Vier Takte à 250 ms reichen für mehr Schübe, als es Plätze gibt.
+    await page.waitForTimeout(1400)
+    await page.evaluate(() => {
+      const z = (window as unknown as { __lmSchub: { dt: DataTransfer; vonK: string } }).__lmSchub
+      const streifen = document.querySelector<HTMLElement>('[data-reiter-streifen]')!
+      streifen.dispatchEvent(new DragEvent('dragend', {
+        bubbles: true, cancelable: true, dataTransfer: z.dt }))
+    })
+    // Erster FREIER Platz, nicht Platz 0: der angeheftete Reiter bleibt vorn.
     expect(await gespeicherteOrdnung(page))
       .toEqual([schluessel(G1), schluessel(V1), schluessel(E1), schluessel(R1)])
   })
