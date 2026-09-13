@@ -325,6 +325,49 @@ mit Rot-Beweis.
    folglich in DIESEN Fix — die Schwelle hängt am neuen Boden und lässt sich vorher nicht wählen.
    Ein `min-width` am Kopf wäre hier ausdrücklich der falsche Weg: er hebt die `min-content`-Breite
    des Reiters und verschärft damit den Überlauf, den der andere Fix gerade abstellt.
+   — **Nachtrag 13.9.2026 nach dem Abgleich mit Welle 1 (Zeilen darüber unverändert, §2b), Anlass:
+   der erwartete Rot-Umschlag ist AUSGEBLIEBEN — und zwar aus einem Grund, der die Bedingung des
+   Fixes aufhebt.** Die Erwartung war: Welle 1 macht den Reiter wieder schrumpfbar, der Wächter
+   stellt daraufhin den Kopf-Befund rot, und «dann ganz ausblenden» wird in DIESEM Zug gebaut.
+   Welle 1 hat den Boden aber nur für die Reiter OHNE Kopf schrumpfbar gemacht (`reiterBoden`,
+   eine `calc()`-Zahl in `Reiter.tsx`); die Reiter MIT Kopf blieben ausdrücklich bei
+   `.rl-reiter { min-width: auto }` — dort ist der Kern `shrink-0`, und die automatische Rechnung
+   zählt Kern UND Kopf in voller Breite (Commit `736f1a9ff`, Abschnitt «Reiter MIT Kopf»).
+   GEMESSEN auf dem abgeglichenen Stand (gebautes dist/, Chromium, die sechs Reiter des Wächters,
+   @1440 · 1024 · 390 · 320): JEDER gezeigte Kopf steht in voller Breite, `breite == scrollWidth` —
+   «OGer AG» 58/58 px, «AppGer BS» 71/71 px, «BGE» 30/30 px. Gequetscht wird kein Kopf; statt zu
+   quetschen schickt das Fenster die überzähligen Reiter ins «+N»-Blatt
+   (`data-reiter-fenster` 0/6/6 · 0/4/6 · 0/1/6 · 0/1/6). Der Befund ist also auch nach Welle 1
+   nicht reproduzierbar, und eine Ausblend-Regel wäre WEITERHIN ein Fix ohne gesehenen Fehlschlag
+   (§0.2) — und dazu eine Regel, die nicht feuern kann (§17-Gegengewicht, §6.7). GEBAUT ist darum
+   erneut nichts; der Wächter bleibt allein.
+   DASS DER WÄCHTER LEBT, IST AUF DIESEM STAND NACHGEWIESEN (§6.7, nicht bloss aus der Vorrunde
+   übernommen): `.rl-reiter { min-width: auto }` → `5rem`, neu gebaut, Wächter gefahren ⇒ 3 von 4
+   Breiten rot — «Kopf «BGE» an /rechtsprechung/bge_146_III_1: 7 px, nötig 22 px» (@1024),
+   «Kopf «OGer AG» an /rechtsprechung/ag_gerichte_HOR_2024_19: 0 px, nötig 23 px» (@390 und @320);
+   @1440 blieb grün. Mutation danach zurückgenommen, neu gebaut.
+   NEUER BEFUND AUS DERSELBEN MESSUNG (nicht in diesem Zug gebaut, weil er die Zusage «Wächter
+   unverändert grün» bricht — s. u.): @320 läuft ein EINZELNER Entscheid-Reiter über den Streifen,
+   GEMESSEN `/rechtsprechung/ag_gerichte_HOR_2024_19` (Kopf «OGer AG», Kern «HOR.2024.19»):
+   Streifen `scrollWidth 192` gegen `clientWidth 171`. Der Streifen ist `overflow-x: auto`, trägt
+   aber `.lc-reiter-scroll` — und die Klasse blendet den Scrollbalken aus
+   (`scrollbar-width: none`, `::-webkit-scrollbar { display: none }`, `index.css`). Das ist
+   Kategorie `a-ueberlauf-ohne-scroller`, dieselbe, die Welle 1 für die Reiter OHNE Kopf gerade
+   abgestellt hat: der Detektor verlangt neben `overflow-x: auto` die Affordanz-Klasse
+   `lc-scrollrand-x` (`e2e/helpers/abschnittMessung.ts`). Der R8-Sweep sieht ihn NICHT, weil seine
+   beiden Entscheid-Vertreter (`bge_152_V_52`, `bger_1B_278_2022`) kurze Köpfe tragen und in 171 px
+   passen — der Sweep meldet auf diesem Stand 0 Funde.
+   HIER, UND NUR HIER, HÄTTE «der Kopf weicht ganz» eine Aufgabe: fiele «OGer AG» (58 px) weg,
+   bliebe der Reiter bei ~130 px und passte — genau die F6-Reihenfolge (erst der Kopf, dann der
+   Kern). Der Auslöser wäre aber nicht «der Kopf wäre nur noch ein «…»» (das ist er nie), sondern
+   «das Fenster kann nicht weiter schrumpfen und läuft immer noch über» — eine ANDERE Regel an
+   einer anderen Stelle (`useReiterFenster`, mit Epochen-Riegel gegen das Pendeln «Kopf weg →
+   passt → Kopf da → passt nicht»). Und sie stellt den Wächter oben rot: @320 zeigt der Streifen
+   genau EINEN Reiter, dessen Kopf dann verschwindet, worauf dessen Sonde 0 Köpfe findet und an
+   `expect(koepfe.length).toBeGreaterThan(0)` scheitert. Diese Zusicherung müsste im selben,
+   ERKLÄRTEN Schritt nachgezogen werden (§6.3: Teständerung = fachliche Änderung) — z. B. «bei
+   1440/1024 müssen Köpfe da sein; wo keiner steht, darf der Streifen nicht überlaufen». Das ist
+   ein eigener Bauschritt, kein Nebenprodukt eines Abgleichs.**
 7. **Trefferflächen ⧉/✕ gegen WCAG 2.5.8 prüfen.** `komfort={false}` ist begründet (A3-1: das
    Pseudo-Element nähme Nachbarn die Klicks). Prüfen, ob 24×24 CSS-px OHNE Pseudo-Element erreichbar
    ist (Padding innerhalb des Reiters); wenn ja, bauen; wenn nein, Ausnahme mit Abstand-Regel
