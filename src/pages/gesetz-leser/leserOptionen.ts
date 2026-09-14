@@ -731,6 +731,19 @@ function getAnsichtSnapshot(): LeserModus {
 }
 
 /**
+ * Die gemerkte Lesart NICHT-reaktiv lesen — dieselbe Bauform und derselbe
+ * Grund wie `holeBezugKlassen()` oben: während der Hydration liefert
+ * `useSyncExternalStore` bewusst den Server-Snapshot, der Modulwert steht da
+ * schon richtig. Gebraucht wird der Getter ausserhalb des Renders (Effekte)
+ * und von der Sonde `src/tests/leser-einzelmodus-speicher.test.ts`, die den
+ * Bestands-Speicher prüft — den Fall, der im Browser nicht mehr nachstellbar
+ * ist, sobald er einmal überschrieben wurde.
+ */
+export function holeLeserAnsicht(): LeserModus {
+  return aktuellAnsicht;
+}
+
+/**
  * DER SERVER-SNAPSHOT IST IMMER DIE VORGABE — und das ist kein Detail.
  *
  * Die Leser-Seiten sind prerendert und werden hydriert. Lieferte dieser Getter
