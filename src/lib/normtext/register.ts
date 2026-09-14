@@ -397,6 +397,19 @@ export const ERLASS_REGISTER: ReadonlyArray<ErlassRegistereintrag> = ([
   ...INTERNATIONAL_EXTERN,
   // ── pdf-embed: amtliches PDF in-app (kein extrahierbarer Volltext-HTML),
   //    z.B. EMRK, New Yorker Schiedsspruch-Übk. (§7/§8). ──
+  // ── QS-KORPUS · Kernerlasse-Luecken Bund geschlossen (14.9.2026) ─────────────
+  //    Bestandsmessung 1.9.2026: EMRK nur pdf-embed, EOEBV und AVG fehlten ganz.
+  //    ELI + geltende Konsolidierung je Fedlex-SPARQL, html-N kanonisch via
+  //    isExemplifiedBy; Pins und §7-Beleg: scripts/fedlex-cache.sh +
+  //    bibliothek/register/fedlex-kernerlasse-2026-09-14.md.
+  //    EMRK wandert von status 'pdf-embed' auf 'snapshot' (rang 89 unveraendert):
+  //    Fedlex fuehrt den Konsolidierungstext 20220916 vollstaendig als HTML
+  //    (Praeambel, Art. 1-59 lueckenlos, Unterschriften, Geltungsbereich). Die
+  //    pdf-embed-Begruendung vom 25.6.2026 bleibt fuer ihren damaligen Pin
+  //    (Kons. 20050323, pdf-a war die EINZIGE deutsche Manifestation) richtig.
+  bund('EMRK', 'EMRK', 'Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten (EMRK)', '0.101', 'international', 89),
+  bund('EOEBV', 'EÖBV', 'Verordnung vom 8. Dezember 2017 über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen (EÖBV)', '211.435.1', 'privat', 30),
+  bund('AVG', 'AVG', 'Bundesgesetz vom 6. Oktober 1989 über die Arbeitsvermittlung und den Personalverleih (Arbeitsvermittlungsgesetz, AVG)', '823.11', 'oeffentlich', 127),
   ...PDF_EMBED,
 ] as ErlassRegistereintrag[]).map(mitGrundart).map(mitAufhebung);
 

@@ -64,7 +64,8 @@ import { fehlerSammeln } from './helpers/fehlerSammeln'
 //    den Rücksprung «‹ Gesetze»;
 //  · in `src/pages/gesetz-leser/v3/LeserRahmenV3.tsx` den Aufruf
 //    `useKopfAnspruch(...)` durch `useKopfAnspruch(false)` ersetzen ⇒ (i) findet
-//    auf EMRK/DSGVO/Fehlseite wieder KEINE Krume und KEIN ✕;
+//    auf NYÜ/DSGVO/Fehlseite wieder KEINE Krume und KEIN ✕ (bis 14.9.2026
+//    stand hier EMRK — Ziel-Wechsel s. u. bei (i));
 //  · in `src/components/layout/PaneKopf.tsx` `nurSteuerung` ignorieren ⇒ (d)
 //    findet die Ortsangabe wieder in der Pane-Titelleiste.
 
@@ -617,8 +618,19 @@ test.describe('A-2 — unter ?leser=v3 trägt der Leser die eine Kopfzeile', () 
   // Geprüft wird das SICHTBARE Ergebnis (Krume + Schliessen), nicht die Meldung:
   // eine Sonde auf `kopfzeileSelbst` bliebe grün, wenn die Leiste aus einem
   // anderen Grund verschwände.
+  // ZIEL-WECHSEL 14.9.2026 (QS-KORPUS, deklarierte Test-Änderung nach §6.3): die
+  // pdf-embed-Sonde lief bis hierhin auf EMRK. Die EMRK ist seit PR #860 ein
+  // regulärer Volltext-Snapshot (Fedlex registriert für die geltende
+  // Konsolidierung 20220916 eine deutsche HTML-Manifestation) — sie rendert
+  // darum einen V3-Kopf, und die Positiv-Sonde «hier steht KEIN V3-Kopf» kippte
+  // zu Recht rot. Das VERHALTEN ist bewusst geändert, nicht der Test gebogen:
+  // die Assertionen sind wörtlich dieselben, nur das Ziel ist der verbliebene
+  // pdf-embed-Erlass NYÜ (SR 0.277.12, `PDF_EMBED_QUELLEN` in
+  // `src/lib/normtext/pdf-embed.ts` — seit 14.9.2026 der einzige Eintrag).
+  // Fällt auch NYÜ einmal auf Volltext, trägt diese Zeile keinen Fall mehr;
+  // dann als «(i)-entfällt» mit Datum begründen, nicht stillschweigend löschen.
   for (const [name, pfad] of [
-    ['pdf-embed (EMRK)', '/gesetze/international/EMRK'],
+    ['pdf-embed (NYÜ)', '/gesetze/international/NYUE'],
     ['nur-live-link (DSGVO)', '/gesetze/international/DSGVO'],
     ['Fehlseite', '/gesetze/bund/GIBTSNICHT'],
   ] as const) {

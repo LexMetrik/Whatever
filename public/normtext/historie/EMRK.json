@@ -1,0 +1,620 @@
+{
+ "erlass": "EMRK",
+ "abdeckung": {
+  "fussnoten": 33,
+  "ereignis": 30,
+  "referenz": 3,
+  "unparsed": 0
+ },
+ "artikel": {
+  "19": {
+   "giltSeit": "1998-11-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "1998-11-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2993 2992",
+       "url": ""
+      },
+      {
+       "label": "BBl 1995 I 999",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/1_999_987_835"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "21": {
+   "giltSeit": null,
+   "ereignisse": [
+    {
+     "typ": "bereinigt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 461",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/461"
+      },
+      {
+       "label": "BBl 2015 2347",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/479"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "22": {
+   "giltSeit": null,
+   "ereignisse": [
+    {
+     "typ": "aufgehoben",
+     "datum": "2010-06-01",
+     "wirkung": true,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ],
+   "aufgehobenSeit": "2010-06-01"
+  },
+  "23": {
+   "giltSeit": null,
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "bereinigt",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 461",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/461"
+      },
+      {
+       "label": "BBl 2015 2347",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/479"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "24": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "urspruenglich",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "25": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "urspruenglich",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": "f"
+    }
+   ]
+  },
+  "26": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "urspruenglich",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "27": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "28": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "29": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "aufgehoben",
+     "datum": "2010-06-01",
+     "wirkung": true,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ],
+   "aufgehobenSeit": "2010-06-01"
+  },
+  "30": {
+   "giltSeit": null,
+   "ereignisse": [
+    {
+     "typ": "aufgehoben",
+     "datum": null,
+     "wirkung": true,
+     "quellen": [
+      {
+       "label": "AS 2021 461",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/461"
+      },
+      {
+       "label": "BBl 2015 2347",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/479"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "31": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": "b"
+    },
+    {
+     "typ": "urspruenglich",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [],
+     "absatz": null,
+     "item": "c"
+    }
+   ]
+  },
+  "32": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "bereinigt",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "35": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "ausdruck",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2021 461",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/461"
+      },
+      {
+       "label": "BBl 2015 2347",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/479"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "fassung",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": "b"
+    },
+    {
+     "typ": "aufgehoben",
+     "datum": null,
+     "wirkung": true,
+     "quellen": [
+      {
+       "label": "AS 2021 461",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/461"
+      },
+      {
+       "label": "BBl 2015 2347",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/479"
+      }
+     ],
+     "absatz": null,
+     "item": "b"
+    }
+   ]
+  },
+  "36": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "38": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "39": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "46": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "52": {
+   "giltSeit": "1998-11-01",
+   "ereignisse": [
+    {
+     "typ": "urspruenglich",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "bereinigt",
+     "datum": "1998-11-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 1998 2993 2992",
+       "url": ""
+      },
+      {
+       "label": "BBl 1995 I 999",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/1_999_987_835"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  },
+  "59": {
+   "giltSeit": "2010-06-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2010-06-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2009 3067 3065",
+       "url": ""
+      },
+      {
+       "label": "BBl 2005 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "urspruenglich",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "urspruenglich",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [],
+     "absatz": null,
+     "item": null
+    },
+    {
+     "typ": "urspruenglich",
+     "datum": null,
+     "wirkung": false,
+     "quellen": [],
+     "absatz": null,
+     "item": null
+    }
+   ]
+  }
+ },
+ "residuum": []
+}

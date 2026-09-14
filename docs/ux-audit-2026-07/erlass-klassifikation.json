@@ -1,8 +1,9 @@
 {
   "erzeugt": "2026-07-03",
+  "teilNachtragErzeugt": "2026-09-14",
   "quelle": "public/normtext/register.json + struktur/** + bund|kanton/**",
   "methode": "Datengetriebene Signal-Extraktion je Erlass, Grundart-Zuordnung per Prioritäts-Kaskade (Trägerformat → Systematik → Bund-Struktur).",
-  "gesamtErlasse": 1470,
+  "gesamtErlasse": 1472,
   "grundarten": [
     {
       "id": "KANTON",
@@ -16,14 +17,14 @@
       "name": "Erlass mit Anhängen",
       "merkmale": "Volltext plus ein oder mehrere amtliche Anhänge (annex_*), meist mit Tabellen (mehrspaltig) und teils Bildern/Formeln. Anhang-Rendering + Tabellen-Layout sind das UX-Kernthema.",
       "referenzErlass": "VZV",
-      "anzahl": 85
+      "anzahl": 86
     },
     {
       "id": "STANDARD_ERLASS",
       "name": "Strukturierter Erlass ohne Anhang",
       "merkmale": "Klassisches Gesetz/Verordnung mit Randtiteln und moderater Gliederung (Tiefe 2–3), ohne Anhang. Der «Normalfall» des Bundes-Volltexts.",
       "referenzErlass": "BV",
-      "anzahl": 68
+      "anzahl": 69
     },
     {
       "id": "FLACHER_KURZERLASS",
@@ -37,7 +38,7 @@
       "name": "Staatsvertrag (International, SR 0.*)",
       "merkmale": "Völkerrechtlicher Vertrag: Präambel-getrieben, teils Protokolle/Zusatzabkommen und Anhänge; Rechtsgebiet «international». Eigene Kopf-/Präambel-Darstellung.",
       "referenzErlass": "LugÜ",
-      "anzahl": 18
+      "anzahl": 28
     },
     {
       "id": "KODIFIKATION",
@@ -58,7 +59,7 @@
       "name": "PDF-Embed (kein Volltext-HTML)",
       "merkmale": "Kein extrahierbarer Volltext — amtliches PDF wird in-app eingebettet (pdfPfad). Reine Viewer-Darstellung.",
       "referenzErlass": "EMRK",
-      "anzahl": 2
+      "anzahl": 1
     }
   ],
   "grenzfaelle": [
@@ -88,6 +89,11 @@
     "HAdoptÜ: STAATSVERTRAG mit Anhang (annex_*) — kombiniert Präambel- und Anhang-Rendering.",
     "ICAO-Übk.: STAATSVERTRAG mit Anhang (annex_*) — kombiniert Präambel- und Anhang-Rendering.",
     "Staatenlose: STAATSVERTRAG mit Anhang (annex_*) — kombiniert Präambel- und Anhang-Rendering.",
+    "HKsÜ: STAATSVERTRAG mit Anhang (annex_*) — kombiniert Präambel- und Anhang-Rendering.",
+    "CMR: STAATSVERTRAG mit Anhang (annex_*) — kombiniert Präambel- und Anhang-Rendering.",
+    "RBÜ: STAATSVERTRAG mit Anhang (annex_*) — kombiniert Präambel- und Anhang-Rendering.",
+    "Istanbul-Konv.: STAATSVERTRAG mit Anhang (annex_*) — kombiniert Präambel- und Anhang-Rendering.",
+    "Apostille-Übk.: STAATSVERTRAG mit Anhang (annex_*) — kombiniert Präambel- und Anhang-Rendering.",
     "KANTON-Untervariante: 774 Erlasse mit §-Zählung vs 457 mit Art.-Zählung — gleiche Grundart, aber unterschiedliche Bestimmungs-Etikette (Signal paragrafZaehlung)."
   ],
   "zuordnung": [
@@ -810,6 +816,31 @@
         "hierarchieTiefe": 1,
         "fussnotenDichte": 1.3,
         "hatAnhang": false,
+        "hatSchlusstitel": false,
+        "hatTabelle": false,
+        "hatBild": false,
+        "paragrafZaehlung": false
+      }
+    },
+    {
+      "key": "EOEBV",
+      "kuerzel": "EÖBV",
+      "titel": "Verordnung vom 8. Dezember 2017 über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen (EÖBV)",
+      "ebene": "bund",
+      "kanton": null,
+      "sr": "211.435.1",
+      "rechtsgebiet": "privat",
+      "status": "snapshot",
+      "grundart": "ERLASS_MIT_ANHANG",
+      "signale": {
+        "ebene": "bund",
+        "status": "snapshot",
+        "rechtsgebiet": "privat",
+        "artikelAnzahl": 29,
+        "marginalieDeckung": 0.828,
+        "hierarchieTiefe": 1,
+        "fussnotenDichte": 0.41,
+        "hatAnhang": true,
         "hatSchlusstitel": false,
         "hatTabelle": false,
         "hatBild": false,
@@ -4017,6 +4048,31 @@
       }
     },
     {
+      "key": "AVG",
+      "kuerzel": "AVG",
+      "titel": "Bundesgesetz vom 6. Oktober 1989 über die Arbeitsvermittlung und den Personalverleih (Arbeitsvermittlungsgesetz, AVG)",
+      "ebene": "bund",
+      "kanton": null,
+      "sr": "823.11",
+      "rechtsgebiet": "oeffentlich",
+      "status": "snapshot",
+      "grundart": "STANDARD_ERLASS",
+      "signale": {
+        "ebene": "bund",
+        "status": "snapshot",
+        "rechtsgebiet": "oeffentlich",
+        "artikelAnzahl": 49,
+        "marginalieDeckung": 0.837,
+        "hierarchieTiefe": 2,
+        "fussnotenDichte": 1.37,
+        "hatAnhang": false,
+        "hatSchlusstitel": false,
+        "hatTabelle": false,
+        "hatBild": false,
+        "paragrafZaehlung": false
+      }
+    },
+    {
       "key": "KVG",
       "kuerzel": "KVG",
       "titel": "Bundesgesetz über die Krankenversicherung",
@@ -5149,19 +5205,19 @@
       "kanton": null,
       "sr": "0.101",
       "rechtsgebiet": "international",
-      "status": "pdf-embed",
-      "grundart": "PDF_EMBED",
+      "status": "snapshot",
+      "grundart": "STAATSVERTRAG",
       "signale": {
         "ebene": "bund",
-        "status": "pdf-embed",
+        "status": "snapshot",
         "rechtsgebiet": "international",
-        "artikelAnzahl": 0,
-        "marginalieDeckung": null,
-        "hierarchieTiefe": 0,
-        "fussnotenDichte": null,
+        "artikelAnzahl": 60,
+        "marginalieDeckung": 0.983,
+        "hierarchieTiefe": 1,
+        "fussnotenDichte": 0.55,
         "hatAnhang": false,
         "hatSchlusstitel": false,
-        "hatTabelle": false,
+        "hatTabelle": true,
         "hatBild": false,
         "paragrafZaehlung": false
       }
@@ -36841,5 +36897,6 @@
         "paragrafZaehlung": false
       }
     }
-  ]
+  ],
+  "hinweisQsKorpus": "Teil-Nachtrag 14.9.2026 (QS-KORPUS): nur EMRK/EOEBV/AVG aus einem Neulauf von klassifiziere-erlasse.mjs uebernommen. Ein VOLLER Neulauf aendert zusaetzlich die grundart von 29 Bestands-Erlassen (meist STANDARD_ERLASS/FLACHER_KURZERLASS -> ERLASS_MIT_ANHANG) und ergaenzt 108 seit 3.7.2026 zugewachsene Kantons-Erlasse. Diese Drift ist VORBESTAND und gehoert in einen eigenen, deklarierten Schritt (Grundart steuert das Rendering) -- sie wurde hier bewusst NICHT mitgeliefert. | Nachzug 14.9.2026 (Gegenpruefungs-Auflage PR #860): (a) 'teilNachtragErzeugt' ergaenzt -- 'erzeugt' bleibt das Datum des BASISLAUFS 3.7.2026, aus dem der Bestand stammt, nicht nachgefuehrt. (b) Reihenfolge auf die GENERATOR-Reihenfolge zurueckgesetzt (register.erlasse, Rang-Ordnung: ZGB, OR, VVG, ...). Der Zwischenstand war alphabetisch nach key sortiert -- das erzeugt klassifiziere-erlasse.mjs nicht, der naechste Volllauf haette den 26'661-Zeilen-Diff zurueckgedreht. (c) 'grundarten' und 'grenzfaelle' aus 'zuordnung' neu berechnet (Code verbatim aus klassifiziere-erlasse.mjs Z. 166-206). Sie waren SCHON AUF main stale: dort STAATSVERTRAG 18 deklariert vs. 27 tatsaechlich, Summe 1461 vs. gesamtErlasse 1470 -- gehandpflegte zuordnung ohne Aggregat-Neuberechnung. Jetzt konsistent: Summe == gesamtErlasse == len(zuordnung)."
 }

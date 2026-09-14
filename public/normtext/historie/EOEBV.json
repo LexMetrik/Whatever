@@ -1,0 +1,72 @@
+{
+ "erlass": "EOEBV",
+ "abdeckung": {
+  "fussnoten": 12,
+  "ereignis": 3,
+  "referenz": 8,
+  "unparsed": 1
+ },
+ "artikel": {
+  "1": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "fassung",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 529",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/529"
+      }
+     ],
+     "absatz": "1",
+     "item": null
+    }
+   ]
+  },
+  "2": {
+   "giltSeit": "2024-01-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2024-01-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 529",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/529"
+      }
+     ],
+     "absatz": null,
+     "item": "4"
+    }
+   ]
+  },
+  "10": {
+   "giltSeit": "2023-10-01",
+   "ereignisse": [
+    {
+     "typ": "eingefuegt",
+     "datum": "2023-10-01",
+     "wirkung": false,
+     "quellen": [
+      {
+       "label": "AS 2023 479",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/479"
+      }
+     ],
+     "absatz": "2bis",
+     "item": null
+    }
+   ]
+  }
+ },
+ "residuum": [
+  {
+   "token": "18",
+   "nr": "13",
+   "roh": "Das Programm oder die Programmbestandteile können beim Bundesamt für Justiz unter www.openegov.admin.ch > Open eGov Produkte > Signieren bezogen werden."
+  }
+ ]
+}

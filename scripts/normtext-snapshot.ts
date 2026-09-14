@@ -75,7 +75,7 @@ function leseDatum(): string {
 
 // ── Erlass-Abkürzungs-Map ─────────────────────────────────────────────────────
 const ERLASS_MAP: Record<string, string> = {
-  or: 'OR',
+  emrk: 'EMRK', eoebv: 'EÖBV', avg: 'AVG', or: 'OR', // +3 QS-KORPUS 14.9.2026 (zeilen-neutral, §6.6-Deckel erschoepft)
   zgb: 'ZGB',
   zpo: 'ZPO',
   schkg: 'SchKG',
