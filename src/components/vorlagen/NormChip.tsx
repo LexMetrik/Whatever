@@ -99,14 +99,21 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
   // Bis hierher entstand der Artikel-Anker allein aus Kürzel + Nummer. Gemessen
   // 14.9.2026 (V-1-Tor, `messwerte/verweis-inventar.json` → `toteFremdanker`):
   // 36 von 9 675 prüfbaren Fremd-Ankern zeigen auf eine Bestimmung, die es im
-  // Snapshot des Zielerlasses nicht gibt — StGB 91a (im JStG viermal zitiert),
-  // OR 341bis (ArG), ZGB 882 (ZH-230) … Der Sprung landet ins Leere.
+  // Snapshot des Zielerlasses nicht gibt — Art. 91a StGB (im JStG viermal
+  // zitiert), Art. 341bis OR (ArG), Art. 882 ZGB (ZH-230) … Der Sprung landet
+  // ins Leere. NACHGEMESSEN am selben Tag, nachdem auch die kantonale
+  // V-3-Weiche in die Messung kam (Gegenprüfungs-Befund C): 39 von 10 254.
+  // Die 36/9 675 bleiben als Stand des Bund-Zweigs stehen, sie sind nicht
+  // falsch geworden — die Grundmenge ist gewachsen.
   //
-  // Die Beispiele stehen bewusst als «ERLASS Nummer», nicht in Zitierform:
-  // `check:ui-normzitate` liest UI-Dateien und verlangt, dass jedes ZITAT darin
-  // im Korpus auflöst — und genau das tun diese drei nicht; sie sind der Anlass
-  // dieser Zeilen. Vollständige Liste mit Zitierform, Fundstelle und amtlichem
-  // Beleg: `messwerte/verweis-inventar.json` und der Unit-Test.
+  // Die drei Beispiele stehen in korrekter Zitierform, obwohl genau sie im
+  // Korpus nicht auflösen. Bis zum 14.9.2026 standen sie hier als «ERLASS
+  // Nummer» geschrieben, um `check:ui-normzitate` auszuweichen — eine verbogene
+  // Notation, damit ein Tor schweigt. Das Tor ist jetzt an der Wurzel repariert
+  // (es blendet Kommentare aus und prüft, was ausgeliefert wird); Prosa über
+  // eine aufgehobene Bestimmung darf sie darum beim Namen nennen.
+  // Vollständige Liste mit Fundstelle und amtlichem Beleg:
+  // `messwerte/verweis-inventar.json` und der Unit-Test.
   //
   // Amtlich gegengeprüft am 14.9.2026 (Fedlex-SPARQL + AKN-XML, alle 26
   // verschiedenen Ziele): KEINES existiert in der geltenden Fassung als eigener

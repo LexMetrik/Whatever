@@ -97,10 +97,79 @@ function zeileFuerOffset(text: string, offset: number): number {
   return z;
 }
 
+// ── Kommentare ausblenden (WURZELFIX 14.9.2026, Gegenprüfungs-Befund D) ─────
+//
+// ANLASS. Das Tor las den ROHEN Quelltext, also auch Kommentare. Ein Kommentar,
+// der ÜBER tote Anker schreibt, muss aber genau die Zitate nennen, die nicht
+// auflösen — er wurde damit zwangsläufig rot. In PR #856 hat ein Bau-Agent das
+// umgangen, indem er die Beispiele in NormChip.tsx als «StGB 91a» statt «Art.
+// 91a StGB» schrieb, die Zitierform also verbog, damit der Parser sie nicht
+// findet. Das ist die schlechteste aller Lagen: das Tor ist zufrieden, die
+// Wahrheit steht in einer Notation, die im Repo sonst nirgends gilt, und der
+// nächste Leser hält sie für einen Tippfehler.
+//
+// FIX AN DER WURZEL, nicht am Symptom: das Tor heisst «UI-Normzitate» und
+// schützt AUSGELIEFERTEN Text — die ~1'100 hart kodierten Zitate, die der
+// Nutzer liest. Ein Kommentar wird nicht ausgeliefert; er ist Prosa ÜBER den
+// Code, und Prosa über eine aufgehobene Bestimmung muss sie nennen dürfen.
+// Kommentare werden darum vor dem Parser ausgeblendet (durch Leerzeichen
+// ersetzt, nie gelöscht — die Offsets bleiben, damit Zeilennummern in den
+// Befunden stimmen).
+//
+// WAS DAS KOSTET (§8, offen): ein veraltetes Zitat in einem Kommentar fällt
+// nicht mehr auf. Das ist ein Doku-Mangel, kein Nutzer-Fehler, und der Preis
+// dafür, dass die Gegenrichtung — Notations-Tricks im ausgelieferten Code —
+// nicht mehr belohnt wird. Der Zähler unten weist die übersprungene Menge
+// AUSDRÜCKLICH aus, damit die Grenze sichtbar bleibt statt still zu wirken.
+//
+// Der Automat kennt Zeilen-/Blockkommentare und die drei String-Formen; ein
+// `//` INNERHALB eines Strings bleibt darum Code (sonst verschwände der Rest
+// der Zeile). Regex-Literale werden nicht eigens verfolgt — sie enthalten kein
+// unescaptes `//` (das wäre ein leeres Regex und syntaktisch unmöglich).
+function ohneKommentare(text: string): { code: string; kommentarZeichen: number } {
+  const out = text.split('');
+  let zustand: 'code' | 'zeile' | 'block' | "'" | '"' | '`' = 'code';
+  let kommentarZeichen = 0;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i], n = text[i + 1];
+    if (zustand === 'code') {
+      if (c === '/' && n === '/') { zustand = 'zeile'; }
+      else if (c === '/' && n === '*') { zustand = 'block'; }
+      else if (c === "'" || c === '"' || c === '`') { zustand = c; }
+      else continue;
+      if (zustand === 'zeile' || zustand === 'block') { out[i] = ' '; kommentarZeichen += 1; }
+      continue;
+    }
+    if (zustand === 'zeile') {
+      if (c === '\n') { zustand = 'code'; continue; }   // Zeilenumbruch behalten
+      out[i] = ' '; kommentarZeichen += 1;
+      continue;
+    }
+    if (zustand === 'block') {
+      if (c !== '\n') { out[i] = ' '; kommentarZeichen += 1; }
+      if (c === '*' && n === '/') { out[i + 1] = ' '; kommentarZeichen += 1; i += 1; zustand = 'code'; }
+      continue;
+    }
+    // In einem String: Escape überspringen, sonst auf das schliessende Zeichen warten.
+    if (c === '\\') { i += 1; continue; }
+    if (c === zustand) zustand = 'code';
+  }
+  return { code: out.join(''), kommentarZeichen };
+}
+
 // ── Kern: eine Quelldatei prüfen ────────────────────────────────────────────
 
-function pruefeText(text: string, datei: string, zaehler: { geprueft: number; nichtPruefbar: number }): Befund[] {
+function pruefeText(
+  roh: string, datei: string,
+  zaehler: { geprueft: number; nichtPruefbar: number; imKommentar: number },
+): Befund[] {
   const befunde: Befund[] = [];
+  // Zeilennummern werden gegen den ROHEN Text gerechnet (gleiche Offsets, weil
+  // `ohneKommentare` nur ersetzt, nie löscht) — ein Befund zeigt also auf die
+  // echte Zeile der Datei.
+  const { code } = ohneKommentare(roh);
+  zaehler.imKommentar += normVerweiseImText(roh).length - normVerweiseImText(code).length;
+  const text = code;
   for (const span of normVerweiseImText(text)) {
     const kuerzel = erkenneFedlexGesetz(span.artikel);
     if (!kuerzel) { zaehler.nichtPruefbar += 1; continue; }
@@ -121,11 +190,29 @@ function pruefeText(text: string, datei: string, zaehler: { geprueft: number; ni
 
 function selbsttest(): void {
   const synthetisch = "const hinweis = 'Massgeblich ist Art. 9999 OR für diesen Fall.';";
-  const z = { geprueft: 0, nichtPruefbar: 0 };
+  const z = { geprueft: 0, nichtPruefbar: 0, imKommentar: 0 };
   const befunde = pruefeText(synthetisch, '<selbsttest>', z);
   if (befunde.length !== 1 || befunde[0].artikel !== '9999') {
     console.error('check:ui-normzitate ROT (Selbsttest): das synthetische Falsch-Zitat «Art. 9999 OR» wurde NICHT erkannt — das Tor kann nicht scheitern (§6.7).');
     process.exit(1);
+  }
+  // Kommentar-Ausblendung (Befund D, 14.9.2026) — BEIDE Richtungen, sonst wäre
+  // sie eine stille Abschaltung: dasselbe Falsch-Zitat muss im Kommentar
+  // durchgehen UND in einer echten Code-Zeile derselben Datei rot bleiben.
+  const kommentarProben = [
+    `// Beispiel: Art. 9999 OR ist aufgehoben.\n${synthetisch}`,
+    `/* Blockform: Art. 9999 OR */\n${synthetisch}`,
+    `const s = 'ein // im String hebt die Prüfung nicht auf';\n${synthetisch}`,
+  ];
+  for (const probe of kommentarProben) {
+    const zk = { geprueft: 0, nichtPruefbar: 0, imKommentar: 0 };
+    const b = pruefeText(probe, '<selbsttest-kommentar>', zk);
+    if (b.length !== 1) {
+      console.error(
+        `check:ui-normzitate ROT (Selbsttest): Kommentar-Ausblendung falsch — erwartet GENAU 1 Befund `
+        + `(die Code-Zeile), gefunden ${b.length}. Probe: ${JSON.stringify(probe.split('\n')[0])}`);
+      process.exit(1);
+    }
   }
   // Regressions-Anker Gegenprüfung 4.8.2026 (Suffix-Falle): die Nummern-
   // Normalisierung muss lateinische Suffixe ganz erhalten, nie abschneiden.
@@ -147,7 +234,7 @@ const schreiben = process.argv.includes('--schreiben');
 selbsttest();
 
 const dateien = [...dateienUnter(join(WURZEL, 'src', 'pages')), ...dateienUnter(join(WURZEL, 'src', 'components'))];
-const zaehler = { geprueft: 0, nichtPruefbar: 0 };
+const zaehler = { geprueft: 0, nichtPruefbar: 0, imKommentar: 0 };
 const alle: Befund[] = [];
 for (const pfad of dateien) {
   const rel = relative(WURZEL, pfad);
@@ -183,7 +270,9 @@ const abgebaut = basislinie.eintraege.filter((e) => !aktuelleSchluessel.has(e));
 
 console.log(
   `check:ui-normzitate — ${dateien.length} UI-Dateien · ${zaehler.geprueft} Zitate gegen den Korpus geprüft · `
-  + `${zaehler.nichtPruefbar} nicht prüfbar (kein Bund-Snapshot/kein Parser-Treffer) · Basislinie ${basislinie.eintraege.length}`,
+  + `${zaehler.nichtPruefbar} nicht prüfbar (kein Bund-Snapshot/kein Parser-Treffer) · `
+  + `${zaehler.imKommentar} in Kommentaren übersprungen (Prosa über Normen, nicht ausgeliefert) · `
+  + `Basislinie ${basislinie.eintraege.length}`,
 );
 
 if (abgebaut.length > 0) {
