@@ -106,9 +106,20 @@ export function artikelImErlass(quelle: string, token: string): boolean | null {
  * unter `art_275_bis_275_ter`, AHVG 50e unter `art_50_d_50_g`, BetmG 28b unter
  * `art_28_b_28_l` — zählt diese Funktion NICHT mit; ihre Zerlegung hinge an der
  * Nummern-Grammatik, die parallel umgebaut wird (Z6a). Gemessen 14.9.2026
- * gegen Fedlex: von 26 VERSCHIEDENEN toten Zielen liegen amtlich 19 in einem
- * Sammel-Anker; diese Funktion erkennt davon 13 (= 20 der 36 Fundstellen, Feld
- * `fremdZiele.sammelblock` im Inventar). Die Untererfassung ist bekannt und
+ * gegen Fedlex: von 26 VERSCHIEDENEN toten Zielen des Bund-Zweigs liegen
+ * amtlich 19 in einem Sammel-Anker; diese Funktion erkennt davon 15 (= 20 der
+ * 36 Bund-Fundstellen, Feld `fremdZiele.sammelblock` im Inventar).
+ *
+ * BERICHTIGT 14.9.2026 (Gegenprüfungs-Befund E): hier stand «13». Nachgezählt
+ * aus dem Artefakt, Ziele statt Fundstellen —
+ *   node -e "const t=require('./messwerte/verweis-inventar.json').toteFremdanker;
+ *     console.log(new Set(t.filter(e=>e.sammelblock).map(e=>e.quelle+'|'+e.token)).size)"
+ *   → 15
+ * (ARGV1 55 · BBG 71 · JSTG 39 · KVG 11 · KVG 12 · KVV 14 · KVV 86 · PARTG 6 ·
+ * STGB 39 · STGB 202 · VAG 55 · VZV 126 · ZGB 139 · ZGB 620 · ZGB 882). Die
+ * Fundstellen-Zahl 20 war richtig — verwechselt worden waren Ziele und Stellen.
+ *
+ * Die Untererfassung gegenüber den 19 amtlichen Sammel-Ankern ist bekannt und
  * wirkt sich NICHT auf die Auflösung aus — beide Lagen bekommen denselben
  * Erlass-Fallback; sie färbt allein die Aufschlüsselung.
  */

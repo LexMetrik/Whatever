@@ -37,10 +37,37 @@
 // generierten Datei, sonst identischer Baum):
 //   entry index-*.js      57.97 → 57.95 KB gzip  (unverändert, Budget 60.0 KB)
 //   NormText-*.js (lazy)  12.44 → 27.10 KB gzip  (+14.66 KB)
-// Die Last liegt damit VOLLSTÄNDIG im faul geladenen Normtext-Chunk — wer
-// keinen Normtext rendert, lädt kein Byte davon; Entry-Chunk und sein Budget
-// sind unberührt. Logikverlust: keiner — die Prüfung ist rein additiv und nimmt
-// einem Link höchstens den Anker, nie das Ziel.
+// Die Last liegt damit VOLLSTÄNDIG im faul geladenen Normtext-Chunk;
+// Entry-Chunk und sein Budget sind unberührt. Logikverlust: keiner — die
+// Prüfung ist rein additiv und nimmt einem Link höchstens den Anker, nie das
+// Ziel.
+//
+// BERICHTIGUNG 14.9.2026 (Gegenprüfungs-Befund C). Hier stand «wer keinen
+// Normtext rendert, lädt kein Byte davon». Das ist FALSCH, und zwar messbar.
+// Gemessen mit Playwright gegen `vite preview` des gebauten `dist/` (Requests
+// je Seite, Fingerabdruck «1-29,annex_u1» = ADOV-Bestand im Chunk):
+//
+//   /                          Projektion geladen: JA  · Fremd-Artikel-Anker im DOM:   0
+//   /einstellungen             Projektion geladen: JA  · Fremd-Artikel-Anker im DOM:   0
+//   /vorlagen/fristerstreckung Projektion geladen: JA  · Fremd-Artikel-Anker im DOM:  10
+//   /vorlagen/arbeitsvertrag   Projektion geladen: JA  · Fremd-Artikel-Anker im DOM:  41
+//   /gesetze/bund/OR           Projektion geladen: JA  · Fremd-Artikel-Anker im DOM: 345
+//
+// URSACHE, nachverfolgt bis zur Quelle: `src/leserPrefetch.ts` wärmt nach dem
+// Erstpaint per `requestIdleCallback` die schweren Leser-Chunks vor
+// (`prefetchLeser()` → GesetzLeser + EntscheidLeser). Beide importieren
+// NormText statisch, NormText importiert NormChip, NormChip importiert diese
+// Projektion — sie fährt darum auf JEDER Seite mit, auch auf Seiten ohne einen
+// einzigen Fremd-Anker. Was stimmt: es ist ein Idle-Prefetch NACH dem
+// Erstpaint, kein kritischer Pfad, und der Entry ist unberührt (oben gemessen).
+// Was nicht stimmt, ist der Satz «lädt kein Byte davon»: 14.66 KB gzip
+// Transfervolumen fallen überall an.
+//
+// Der Fix gehört NICHT hierher: die Projektion vom vorgewärmten Leser-Chunk zu
+// trennen, ohne die Synchronität zu verlieren, heisst den Ladepfad des Lesers
+// anfassen (der Chip müsste den Bestand als Wert bekommen, wie `kantonKuerzel`)
+// — das ist derselbe Folge-Schritt wie der kantonale Fallback. Bis dahin steht
+// die Zahl hier, statt dass ein falscher Satz sie verdeckt (§8).
 //
 // ERZEUGEN / PRÜFEN:
 //   npm run gen:artikel-bestand

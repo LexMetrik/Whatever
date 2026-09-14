@@ -126,10 +126,23 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
   // also keinem Nutzer einen funktionierenden Sprung weg.
   //
   // Also: Ziel-Token vorhanden ⇒ alles wie bisher. Ziel-Token fehlt ⇒ Rückfall
-  // auf den ERLASS-Link (Fedlex-Erlassseite bzw. Lesesicht des Erlasses), ohne
-  // Anker-Fragment und ohne Popover — kein geratener «nächster» Artikel (§1),
-  // keine falsche Ansage (§8). Ist der Zielerlass nicht im Korpus, ist die
-  // Frage nicht entscheidbar (`null`) und es bleibt beim bisherigen Verhalten.
+  // auf die FEDLEX-ERLASSSEITE (`FEDLEX[gesetz]`), ohne Anker-Fragment und ohne
+  // Popover — kein geratener «nächster» Artikel (§1), keine falsche Ansage (§8).
+  // Ist der Zielerlass nicht im Korpus, ist die Frage nicht entscheidbar
+  // (`null`) und es bleibt beim bisherigen Verhalten.
+  //
+  // AUSDRÜCKLICH NICHT die eigene Lesesicht des Erlasses (Berichtigung
+  // 14.9.2026, Gegenprüfungs-Befund F — diese Zeilen versprachen sie zuvor als
+  // Alternative, der Code lieferte sie nie): `ref = null` unten schaltet den
+  // internen Reader-Pfad (V4) mit ab, der Fallback zeigt darum IMMER nach
+  // Fedlex. Das ist kein Versehen und wird hier auch nicht nachgeholt: den
+  // korpus-internen Bundes-Fremdzielen eine interne Adresse zu geben, ist der
+  // eigene Folge-Schritt V-4 aus FAHRPLAN-VERWEIS-SCHAERFE §1, weil daran 16
+  // Wächter-Zusicherungen hängen, die «kein Self-Link» an der ANKER-Schreibweise
+  // festmachen (`#art_52` ja, `#art-52` nein, s. `zielIntern` oben). Sie müssen
+  // in einer deklarierten Runde auf «Ziel-Erlass» umgestellt werden — nebenbei
+  // mitgezogen könnten sie den echten Self-Link-Bug nicht mehr von der
+  // Normallage unterscheiden (§6.7).
   //
   // Die Prüfung läuft SYNCHRON aus einer generierten Projektion der Snapshots
   // (`artikel-bestand.generated.ts`) — darum entscheidet der Prerender genauso
