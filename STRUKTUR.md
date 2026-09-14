@@ -47,7 +47,7 @@ Lückenkatalog abgearbeitet bis auf Peek-Tabs/«Geändert»-Punkt (bewusst nicht
 → 18 R8-Funde @320/390, vom Bau-Agenten nicht gesehen, weil der R8-Sweep nicht in seiner
 Prüfliste stand; (2) Welle 3 machte den Reiter zum Link, eine Sonde in Shard 1
 (`w224-l6-panekopf`) las weiter `button`. **§17-Lehre verankert** (Dispatch-§0 `lex-bau.md`
-Ziff. 3b): Rollen-/Selektor-Wechsel wirkt repo-weit — alle Sonden greppen, R8-Sweep bei
+Ziff. 4b): Rollen-/Selektor-Wechsel wirkt repo-weit — alle Sonden greppen, R8-Sweep bei
 geteilten Rahmen Pflicht.
 
 **Prozessfund (§17, Fehlerbuch-Zeile):** Plan-Buchungs-Commit wirft wartende Auto-Merge-PRs

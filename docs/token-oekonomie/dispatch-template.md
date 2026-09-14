@@ -77,6 +77,14 @@ zusammengestellt.
   Typpruefung im Bau IMMER mit `npx tsc -b` (= npm run build), nie mit
   `tsc --noEmit -p tsconfig.json`: der Root-tsconfig prueft nicht dasselbe
   (Beleg 16.8.2026: --noEmit gruen, tsc -b rot an ungenutztem Parameter).
+4b ROLLEN-/SELEKTOR-WECHSEL WIRKT REPO-WEIT. Wer Rolle, Tag oder zugaenglichen
+  Namen eines Bedienelements aendert (button→a, aria-label, Klassen-Anker),
+  grept VOR dem Push alle Sonden (e2e/**, src/tests/**) auf den alten
+  Selektor und faehrt die Treffer-Specs gegen dist — nicht nur die Specs der
+  eigenen Flaeche. Layout-Aenderungen an geteilten Rahmen (Reiterleiste,
+  Kopfzeilen, Chipzeilen) schliessen den R8-Sweep e2e/kein-abschnitt.e2e.ts
+  ein. Beleg 13.9.2026: #842 (18 R8-Funde @320/390, Sweep nicht in der
+  Pruefliste) und #844 (w224-l6-panekopf las «✕» statt Reitertext).
 5 KOLLISION. Vor Baubeginn DREI Sonden gegen die geplanten Zieldateien:
   (a) gh pr list --state open --json files, (b) git ls-remote --heads origin
   auf fremde feat-/worktree-Branches der Bau-Flaeche, (c) git worktree list.
