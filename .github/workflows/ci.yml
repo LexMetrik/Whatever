@@ -614,20 +614,16 @@ jobs:
           if [ -n "$ausserhalb" ]; then
             echo "Fremd-PR-Tor ROT — Jules-Branch ändert Dateien ausserhalb src/**:"; echo "$ausserhalb"; exit 1
           fi
-          # Regel 3 (Beleg PR #662, 4.9.2026): Kommentar-Bilanz — Jules erreichte die
-          # Zeilen-Grenze durch Löschen von 197 Kommentarzeilen (datierte Belege, Rot-
-          # Beweis-Verweise). Verschieben ist erlaubt (Summe bleibt), Löschen nicht.
-          vorher=0; nachher=0
-          for f in $(git diff --name-only --diff-filter=DM "$basis"..HEAD -- 'src/*.ts' 'src/*.tsx'); do
-            vorher=$((vorher + $(git show "$basis:$f" | grep -cE '^\s*(//|/\*|\*)' || true)))
-          done
-          for f in $(git diff --name-only --diff-filter=AM "$basis"..HEAD -- 'src/*.ts' 'src/*.tsx'); do
-            nachher=$((nachher + $(git show "HEAD:$f" | grep -cE '^\s*(//|/\*|\*)' || true)))
-          done
-          if [ "$nachher" -lt "$vorher" ]; then
-            echo "Fremd-PR-Tor ROT — Kommentar-Bilanz sinkt ($vorher → $nachher Kommentarzeilen): Kommentare sind Inhalt, verschieben ja, löschen nie."; exit 1
-          fi
-          echo "Kommentar-Bilanz ok ($vorher → $nachher)"
+          # Regel 3 + Regel 3b (Kommentar-Bilanz): ausgelagert nach
+          # scripts/analyse/kommentar-bilanz.ts (14.9.2026, Lehre PR #855/#857)
+          # — Logik gehört in ein testbares Skript, YAML ruft nur auf
+          # (Steuerungs-Deckel, §17-Gegengewicht). Regel 3 (Beleg PR #662,
+          # 4.9.2026): Summen-Bilanz — Jules erreichte die Zeilen-Grenze durch
+          # Löschen von 197 Kommentarzeilen. Regel 3b (Beleg PR #855/#857,
+          # 14.9.2026): eine gleichbleibende Summe verdeckte vier verfälschte
+          # Kommentarzeilen («hing»→«hung» u. a.) — Multimengen-Vergleich der
+          # getrimmten Kommentarzeilen deckt das auf. Details im Skriptkopf.
+          npx vite-node scripts/analyse/kommentar-bilanz.ts "$basis" HEAD 'src/*.ts' 'src/*.tsx'
           echo "Fremd-PR-Tor grün ($HEAD_REF, Basis ${basis:0:8})"
       - name: Plan-Inventar-Konsistenz (Node-only, günstig — darum vor tsc/Build)
         run: npm run check:plan
