@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import { LeserAnsichtV3 } from './LeserAnsichtV3';
+import type { LeserModus } from './einzelModus';
 import { zeigeVolltitel, type BestimmungsWort } from './erlassAnsicht';
 import { kopfElemente, type KopfStufe } from './kopfStufen';
 
@@ -88,7 +89,7 @@ import { kopfElemente, type KopfStufe } from './kopfStufen';
 // je Kopfzeile» in `./kopfStufen` ist unberührt.
 
 export function LeserKopf({
-  erlass, fussnotenAnzahl, hatAenderungsvermerke, bestimmungsWort, stufe, gliederungKnopf,
+  erlass, fussnotenAnzahl, hatAenderungsvermerke, bestimmungsWort, stufe, gliederungKnopf, modus, onModusWahl,
   panelOeffner, suchZone, suchInZeile, tocOffen, onGliederungZu,
 }: {
   erlass: BrowseErlass;
@@ -104,6 +105,10 @@ export function LeserKopf({
   /** D35-F2 · durchgereicht ans Ansicht-Menü (Kopf der Rubriken-Gruppe). Der
    *  Kopf leitet nichts ab — er ist die Leitung, nicht der Ort (§5/B8). */
   bestimmungsWort: BestimmungsWort;
+  /** W2·5m · durchgereicht an `./LeserAnsichtV3` — die Lesart-Gruppe des
+   *  Ansicht-Menüs (Kap. 15.3). Der Kopf wertet sie nicht aus (§3). */
+  modus?: LeserModus;
+  onModusWahl?: (m: LeserModus) => void;
   stufe: KopfStufe;
   /** ☰-Öffner der Gliederung — der Rahmen baut ihn, wenn die Seitenleiste
    *  gerade NICHT als Spalte steht. `undefined` = die Gliederung ist sichtbar,
@@ -301,7 +306,7 @@ export function LeserKopf({
           {gliederungKnopf}
           <LeserAnsichtV3 kompakt={stufe === 'mini'} fussnotenAnzahl={fussnotenAnzahl}
             hatAenderungsvermerke={hatAenderungsvermerke}
-            bestimmungsWort={bestimmungsWort} />
+            bestimmungsWort={bestimmungsWort} modus={modus} onModusWahl={onModusWahl} />
         </div>
       </div>
       {/* Ä19: die Such-Zone als zweite Zeile DESSELBEN klebenden Blocks — nicht

@@ -493,10 +493,13 @@ Worktrees); im Zweifel wartet der andere Schritt.
 
 ## 15 · Einzelartikel-Ansicht (Ansichtsoption) — Konzept 14.9.2026
 
-> **Status: KONZEPT, nicht freigegeben.** Dieses Kapitel wird gebaut, wenn David die drei Fragen
-> in §15.8 beantwortet hat — vorher kein Produkt-Code. Roadmap-Zeiger: `W2·5m-LESER-V3`.
+> **Status: E1+E2 GEBAUT (PR #869, 14.9.2026).** David hat die drei Fragen aus §15.8 am
+> 14.9.2026 beantwortet — «ja zu allen drei, bau etappe 1 und 2 zusammen» (Buchung in §15.8).
+> E3 (Druck, Export, Handy-Feinschliff) ist offen. Roadmap-Zeiger: `W2·5m-LESER-V3`.
 > Alle Code-Angaben unten sind am Stand `origin/main` @ `d61193dbe` (14.9.2026) verifiziert;
-> ungeprüfte Annahmen sind als solche gekennzeichnet.
+> ungeprüfte Annahmen sind als solche gekennzeichnet. **Wo der Bau vom Konzept abweicht, steht
+> die Korrektur direkt am betroffenen Punkt — datiert, den ursprünglichen Text ergänzend und
+> nicht ersetzend (§0 Ziff. 2b); die Sammelstelle ist §15.9.**
 
 ### 15.1 · Zweck und Entscheide
 
@@ -562,9 +565,9 @@ Etappe, die eine davon verfehlt, ist nicht abnahmefähig.
 
 | # | Szenario (aus dem Korpus gewählt, Werte verifiziert) | Weg im Einzelmodus | Auf Fedlex |
 |---|---|---|---|
-| **N1** | **OR 336c** (Kündigung zur Unzeit) — «seit wann gilt Abs. 1 **lit. a** in der heutigen Fassung, und mit welcher Vorlage kam die Änderung?» | Block **Historie** aufklappen → Ereignis `1.10.1996`, absatz 1, lit. a, `AS 1996 1445` / `BBl 1994 III 1609`. **1 Klick.** | Fussnotenzeile am Artikel; die Zuordnung «welche Fussnote gilt welchem Buchstaben» muss der Leser selbst herstellen, die BBl-Fundstelle separat suchen. |
+| **N1** | **OR 336c** (Kündigung zur Unzeit) — «seit wann gilt Abs. 1 **lit. a** in der heutigen Fassung, und mit welcher Vorlage kam die Änderung?» | Block **Historie** aufklappen → Ereignis `1.10.1996`, absatz 1, lit. a, `AS 1996 1445` / `BBl 1994 III 1609`. **1 Klick.** *(GEMESSEN im Bau 14.9.2026: **0 Klicks** — die Fassung startet als erster Block offen, B6. Sonde `e2e/leser-einzelmodus.e2e.ts`.)* | Fussnotenzeile am Artikel; die Zuordnung «welche Fussnote gilt welchem Buchstaben» muss der Leser selbst herstellen, die BBl-Fundstelle separat suchen. |
 | **N2** | **OR 336c** — «welche Bundesgerichtsentscheide gibt es zu diesem Artikel?» | Block **Rechtsprechung** aufklappen → **11** Entscheide, u. a. BGE 152 III 23, BGE 150 III 78, BGE 148 III 126. **1 Klick.** | Gar nicht — Fedlex führt keine Rechtsprechung. |
-| **N3** | **OR 127** (Verjährung) — «welches Werkzeug rechnet mir die Frist aus?» | Block **Passende Werkzeuge** aufklappen → Verjährungs-Rechner, Kante mit Norm-Beleg. **1 Klick.** | Gar nicht. |
+| **N3** | **OR 127** (Verjährung) — «welches Werkzeug rechnet mir die Frist aus?» | Block **Passende Werkzeuge** aufklappen → Verjährungs-Rechner, Kante mit Norm-Beleg. **1 Klick.** *(GEMESSEN im Bau 14.9.2026: **1 Klick**, wie veranschlagt.)* | Gar nicht. |
 
 *Warum diese drei:* N1 prüft die Tiefe der eigenen Daten (Absatz-/Litera-Schärfe), N2 die Breite
 (fremder Korpus, den die Amtsquelle nicht hat), N3 den Sprung von der Norm in die Anwendung — die
@@ -674,13 +677,37 @@ vorher/nachher ausgewiesen, nicht behauptet (Präzedenz: Panel-Nachladen H3, Kap
 `W2·5g-ZEIT`/`W2·5l-NORMTEXT-B2` M16, Kern und Extraktion — Kap. 14 «Bewusst NICHT Teil von V3») ·
 keine Legaldefinitions-Hervorhebung · keine Zweisprachigkeit.
 
-### 15.8 · Offene Fragen an David
+### 15.8 · Die drei Fragen — **entschieden 14.9.2026: ja / ja / ja**
 
-| # | Frage | Empfehlung |
-|---|---|---|
-| **F-E1** | **Stimmt die Block-Reihenfolge?** Vorschlag: Historie/Fassung · Verweise · Rechtsprechung · Materialien · Passende Werkzeuge (· Nachbarn). | **Ja** — sie folgt der juristischen Prüffolge. Umstellen ist später billig, es ist nur eine Liste. |
-| **F-E2** | **Nachbarn-Vorschau (Block 6) bauen?** Zeigt Nummer und Randtitel des Vor-/Folgeartikels, bevor man klickt. | **Ja, aber erst in E2** — sie kostet keinen Request, verdoppelt aber die Pfeile; am fertigen Bild besser zu beurteilen als am Text. |
-| **F-E3** | **Bleibt «Ganzer Erlass» der Standard** für alle, die nichts umstellen? | **Ja.** Wer einen Link auf ein Gesetz öffnet, erwartet das Gesetz. Der Einzelmodus ist die bewusste Wahl — und wird ab der ersten Wahl gemerkt. |
+> **David, wörtlich (14.9.2026):** «ja zu allen drei, bau etappe 1 und 2 zusammen.»
+
+| # | Frage | Empfehlung | Entscheid |
+|---|---|---|---|
+| **F-E1** | **Stimmt die Block-Reihenfolge?** Vorschlag: Historie/Fassung · Verweise · Rechtsprechung · Materialien · Passende Werkzeuge (· Nachbarn). | **Ja** — sie folgt der juristischen Prüffolge. Umstellen ist später billig, es ist nur eine Liste. | **Ja** (14.9.2026). Gebaut als `BLOCK_ORDNUNG` in `parts/ArtikelDossier.tsx`; der Rechtsprechungs-Block steht in der Reihenfolge, wird aber nach M3 nicht ausgeliefert. |
+| **F-E2** | **Nachbarn-Vorschau (Block 6) bauen?** Zeigt Nummer und Randtitel des Vor-/Folgeartikels, bevor man klickt. | **Ja, aber erst in E2** — sie kostet keinen Request, verdoppelt aber die Pfeile; am fertigen Bild besser zu beurteilen als am Text. | **Ja** (14.9.2026), in E2 gebaut. Die Sorge «verdoppelt die Pfeile» hat sich am Bild BESTÄTIGT und ist behoben — s. Korrektur (c) in §15.9. |
+| **F-E3** | **Bleibt «Ganzer Erlass» der Standard** für alle, die nichts umstellen? | **Ja.** Wer einen Link auf ein Gesetz öffnet, erwartet das Gesetz. Der Einzelmodus ist die bewusste Wahl — und wird ab der ersten Wahl gemerkt. | **Ja** (14.9.2026). `MODUS_VORGABE = 'erlass'` (`v3/leserModus.ts`); `?ansicht=erlass` wird nie in die Adresse geschrieben. |
+
+### 15.9 · Was der Bau anders gemacht hat (E1+E2, 14.9.2026)
+
+Sechs Abweichungen vom Konzept, jede mit ihrem Grund. Der ursprüngliche Text oben bleibt
+unverändert stehen — er beschreibt den Planungsstand, nicht den Bau (§0 Ziff. 2b).
+
+| # | Konzept sagte | Gebaut ist | Grund |
+|---|---|---|---|
+| **(a)** | §15.7-Risiken: «einen pauschalen 420-Zeilen-Deckel auf `v3/**` gibt es **nicht** — nur diesen einen auf `erlassAnsicht.ts`» | Den Deckel GIBT es pauschal für alle `v3/`-Dateien. | Gemessen an `src/tests/leser-v3-fundament.test.ts:502` (`MAX_ZEILEN = 420`, Schleife über `ALLE_DATEIEN`) plus der zweiten Regel «`leserV3Modell.ts` ist die grösste Datei» (419 Z.) — effektiv also 418 für jede andere. `LeserRahmenV3.tsx` lief beim Bau auf 443 und musste zurück auf 418. Die Konzept-Zeile war falsch; der Deckel-Wurzelfix (PR #868) bleibt davon unberührt richtig. |
+| **(b)** | §15.3: «Blöcke darunter — Handy **eine** Spalte, Desktop **zwei**» | EINE Spalte auf jeder Breite. | Die Blöcke sind ein Akkordeon (B6, genau einer offen). Im Zweispalter bekäme der offene Inhalt entweder die halbe Lesebreite — die Entscheid-Liste mit Regesten wird dort unlesbar — oder er bräche über beide Spalten, also ein Layout-Sprung bei jedem Klick. |
+| **(c)** | §15.5 Zeile 6: Nachbarn-Vorschau zeigt «Nummer + Marginalie» | Nummer + **spezifischste Gliederungsstufe** des Nachbarn, und nur, wenn sie von der eigenen abweicht; sonst entfällt die Karte. | GEMESSEN am ausgelieferten OR-Snapshot: `margAnzeige` führt für **0 von 1686** Artikeln einen Randtitel — die Marginalien sind zu Gliederungsstufen promotet (Auftrag 6b), stehen also im Baum. Mit blossen Nummern wäre die Vorschau exakt die Pfeil-Dopplung, die diese Zeile befürchtet, und fiele nach **M1**. Mit der Stufe sagt sie, worum es beim Nachbarn geht («Art. 336d › b. durch den Arbeitnehmer», «Art. 128 › 2. Fünf Jahre»). |
+| **(d)** | §15.5: je Block ein Klartext-Leerzustand | Leerzustand nur bei **Verweise** und **Rechner**; die shard-abhängigen Rubriken (Fassung, Entscheide, Materialien) erscheinen weiterhin erst mit ihrer Zahl. | B5 («kein Block ohne Inhalt») und B7 («Leerzustand in Klartext») gehen nur zusammen, wenn man unterscheidet, woraus die Null kommt. `g`/`w` stehen aus der Struktur des Artikels sofort fest — dort heisst 0 gesichert «es gibt keine». `f`/`r`/`m` hängen an Shards; vor deren Eintreffen hiesse ein Leerzustands-Satz «ich behaupte etwas über Daten, die noch unterwegs sind» (§8). |
+| **(e)** | §15.3 erwähnt die Erlass-Kopf-Zone nicht | Der **Ingress** (Eingangsspruch des Erlasses) wird im Einzelmodus nicht gerendert; der Erlass-**Kopf** (Titel, Kennung, Stand, amtliche Quelle) bleibt. | Sichtprüfung 14.9.2026: der Vorspann stand samt Ingress VOR der Bestimmung und füllte @390 den ersten Bildschirm. Der Ingress ist eine Auskunft über den ERLASS; im Einzelmodus ist der Gegenstand die eine Bestimmung (D-E3). Der Kopf bleibt, weil er der §7-Ausweis der gelesenen Fassung ist. |
+| **(f)** | §15.3: Menü-Beschriftung «Einzelner Artikel» | «Einzelne **Bestimmung**». | An einem §-Erlass (ZH-211.11, BS-640.100) wäre «Artikel» falsch, und die Fundament-Sonde verbietet ein Zähl-Substantiv im `v3/`-Code ausserhalb von `erlassAnsicht.ts` (B8/C1); die Ableitung dorthin zu holen hiesse, jene Datei über ihren Deckel zu heben. «Bestimmung» ist der erlassneutrale Oberbegriff, den das Haus ohnehin führt. |
+
+**Zwei Befunde, die der Bau nebenbei gehoben hat.** (1) Das KOPF-Pfeilpaar rendete zunächst
+weiter einen In-Page-Anker `#art-…`; ein solcher feuert kein `popstate`, react-router bemerkt
+ihn nicht — die Karte wäre stehen geblieben. Gefangen von `e2e/leser-nachbar-rohdaten`.
+(2) Die Fassungs-Zeitleiste trug ihre AS-/BBl-Fundstellen auf `ink-400` = **3.3:1** im
+Dunkelmodus (WCAG 1.4.3 verlangt 4.5:1). VORBESTAND — Nullprobe in der Gesamtansicht mit von
+Hand aufgeklappter Rubrik «Fassung» zählte 14 Knoten; sichtbar wurde er erst, weil der
+Fassungs-Block im Einzelmodus offen startet (B6). Behoben auf `ink-500`.
 
 ---
 

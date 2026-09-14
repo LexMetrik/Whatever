@@ -3850,6 +3850,135 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
 .lr7-bez-block[data-reg="g"] { border-left-color: var(--reg-g); }
 .lr7-bez-block[data-reg="w"] { border-left-color: var(--reg-w); }
 
+/* ═══ W2·5m · DIE EINZELARTIKEL-ANSICHT (FAHRPLAN-LESER-V3 Kap. 15) ═════════
+   Auftrag David 14.9.2026, D-E5 wörtlich: «achte darauf dass wir eine gute und
+   intuitive darstellung haben». Die Regeln dieses Blocks sind darum durchweg
+   Abstände und Linien — KEINE neue Farbe, KEIN neuer Token, kein Kasten.
+   Registerstriche, Tintenstufen und die Lesebreite kommen unverändert von den
+   Stellen, die sie schon führen (§5).
+
+   DER NORMTEXT BLEIBT UNBERÜHRT (B8/PX-Tor): keine Regel hier greift in
+   `.nt-art-cv` oder in den Satzspiegel hinein. Der Einzelmodus ordnet das
+   BEIWERK neu an; der Wortlaut steht Pixel für Pixel, wo er stand. */
+.lr7-einzel { display: grid; gap: 1.25rem; }
+
+/* GLIEDERUNGSPFAD (B4) · Er ist der Rückweg und steht darum, wo in der
+   Gesamtansicht der Erlass-Kopf steht — gleiche Höhe, gleicher linker Rand, in
+   beiden Modi an derselben Stelle. Feinschrift wie jede andere Ortsangabe des
+   Lesers; die Glieder brechen um statt zu kappen (§8: eine amtliche
+   Gliederungsstufe ist die Auskunft, kein Etikett). */
+.lr7-einzel-pfad {
+  display: flex; flex-wrap: wrap; align-items: baseline;
+  gap: 0 0.375rem;
+}
+.lr7-einzel-pfad-glied { color: inherit; text-decoration: none; }
+a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
+.lr7-einzel-pfad-trenner { margin-right: 0.375rem; color: var(--ink-400); }
+
+/* DIE KARTE · Eine Linie oben, kein Rahmen und keine Fläche (F0.6 «Linien statt
+   Flächen»). Sie trennt die Bestimmung vom Pfad darüber, ohne sie in einen
+   Kasten zu sperren — der Wortlaut soll aussehen wie der Wortlaut in der
+   Gesamtansicht, nicht wie eine Karteikarte. */
+.lr7-einzel-karte { padding-top: 1rem; border-top: 1px solid var(--rule-artikel); }
+
+/* DIE FUSSZEILE DER KARTE (Kap. 15.3) · «Zitat · Link · Amtliche Fassung ↗»
+   stehen hier DAUERHAFT, nicht erst bei Hover: der Artikel ist im Einzelmodus
+   der Gegenstand der Seite und nicht einer von 1686 (Herleitung in
+   `parts/ArtikelLeser.bezuegeFuss.tsx`). */
+.lr7-einzel-fuss {
+  display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+/* B1/B9 · DAS FUSS-PFEILPAAR · Es steht an fester Stelle, unabhängig von der
+   Artikellänge, und auf dem Handy ist es die Hauptbedienung: volle Tap-Höhe
+   (`--tap-ziel-komfort`, 44 px) statt der Mini-Höhe des Kopf-Paares. Die beiden
+   Pfeile stehen an den AUSSENKANTEN der Lesespalte — links zurück, rechts vor,
+   wie in jedem Blätterwerk. */
+.lr7-einzel-blaettern {
+  display: grid; gap: 0.5rem;
+  padding-top: 0.875rem; border-top: 1px solid var(--rule-soft);
+}
+.lr7-einzel-blaettern [data-nachbar] { min-height: var(--tap-ziel-komfort); align-items: center; }
+
+/* B2 · DER TASTATUR-HINWEIS · Genau EINE ruhige Zeile, nicht je Block
+   wiederholt und nicht in einem Hilfe-Dialog versteckt. Auf Geräten ohne
+   Tastatur ist er stumm — `(hover: none)` trifft Telefon und Tablet, und dort
+   nennt er eine Bedienung, die es nicht gibt (§8). */
+.lr7-einzel-tastatur { text-align: center; }
+.lr7-einzel-tastatur kbd {
+  font-family: inherit; padding: 0 0.25rem;
+  border: 1px solid var(--rule-soft); border-radius: 0.25rem;
+}
+@media (hover: none) {
+  .lr7-einzel-tastatur { display: none; }
+}
+
+/* F-E2 · DIE NACHBARN-VORSCHAU · Zwei Ziele nebeneinander, links das vorige,
+   rechts das nächste — auf dem Handy untereinander. Sie zeigt, WOHIN der Pfeil
+   führt, bevor man ihn drückt; darum trägt sie den Randtitel und nicht nur die
+   Nummer. Linie oben wie an jeder anderen Beiwerk-Zone, keine Fläche. */
+.lr7-einzel-vorschau {
+  display: grid; gap: 0.75rem;
+  padding-top: 0.875rem; border-top: 1px solid var(--rule-soft);
+}
+@media (min-width: 30rem) {
+  .lr7-einzel-vorschau { grid-template-columns: 1fr 1fr; }
+  .lr7-einzel-vorschau [data-vorschau="nach"] { text-align: right; }
+}
+.lr7-einzel-vorschau-karte {
+  display: grid; gap: 0.125rem; min-height: var(--tap-ziel-komfort);
+  align-content: center; text-decoration: none;
+}
+.lr7-einzel-vorschau-num { color: var(--ink-700); }
+.lr7-einzel-vorschau-karte:hover .lr7-einzel-vorschau-num { color: var(--brass-700); }
+/* Der Randtitel ist die eigentliche Auskunft — `ink-500` ist die Feinschrift-
+   Stufe des Hauses und misst hell wie dunkel über 4.5:1 (F3/C5-Messung,
+   `parts/ArtikelNachbarn.tsx`); `ink-400` wäre die Stufe, die die a11y-Sonde
+   am 14.9.2026 an genau dieser Zeile gerissen hat. */
+.lr7-einzel-vorschau-marg { color: var(--ink-500); }
+
+/* ═══ W2·5m · DIE DOSSIER-BLÖCKE (Kap. 15.5) ═══════════════════════════════
+   Dieselben Rubriken wie in der Funktionszeile, nur gestapelt statt als
+   Chip-Leiste. Der aufgeklappte Inhalt benutzt darum WÖRTLICH dieselbe Regel
+   wie dort (`.lr7-bez-block[data-reg]`, oben) — eine Rubrik, eine
+   Registerfarbe, eine Linie (§5). Neu sind hier nur die Titelzeilen. */
+.lr7-dossier {
+  display: grid; gap: 0.25rem;
+  padding-top: 0.875rem; border-top: 1px solid var(--rule-soft);
+}
+.lr7-dossier-titel { margin: 0; font-size: inherit; font-weight: inherit; }
+/* Der Griff IST ein `.lc-btn-mini` (B-K1: derselbe Baustein wie die
+   Rubrik-Griffe der Zeile, §5/§10) — hier bekommt er die Anordnung einer
+   Titelzeile: volle Breite, linksbündig, Komfort-Tap-Höhe statt der 24 px des
+   Chips (B9: auf dem Handy ist das Dossier Bedienfläche, nicht Beiwerk).
+   Die Registerfarbe trägt die linke Kante, wie an der Marke in der Zeile. */
+.lr7-dossier-griff {
+  justify-content: flex-start; width: 100%;
+  min-height: var(--tap-ziel-komfort); padding: 0 0.5rem;
+  border-left-width: 3px; border-left-color: var(--rule-soft);
+  color: var(--ink-700); text-align: left;
+}
+.lr7-dossier-griff[data-reg="f"], .lr7-dossier-griff[data-reg="g"] { border-left-color: var(--reg-g); }
+.lr7-dossier-griff[data-reg="r"] { border-left-color: var(--reg-r); }
+.lr7-dossier-griff[data-reg="m"] { border-left-color: var(--reg-m); }
+.lr7-dossier-griff[data-reg="w"] { border-left-color: var(--reg-w); }
+.lr7-dossier-griff[aria-expanded="true"] { color: var(--ink-900); }
+.lr7-dossier-griff:hover { color: var(--brass-700); }
+/* Das Dreieck ist das ZEICHEN des Zustands neben `aria-expanded` — Zeichen UND
+   Wort, nie Farbe allein (DESIGN-REGLEMENT B3). Feste Breite, damit die Titel
+   auf einer Kante fluchten, offen wie zu. */
+.lr7-dossier-pfeil {
+  display: inline-flex; justify-content: center; width: 0.75rem;
+  color: var(--ink-500);
+}
+/* Der Stand der Fassung als ruhiger Beisatz — eine Stufe leiser als der Titel,
+   weil er ihn ergänzt und nicht mit ihm konkurriert. */
+.lr7-dossier-beisatz { color: var(--ink-500); }
+/* Die Registerfarbe wandert an die Titelzeile, sobald sie offen ist: der Griff
+   und sein Block sind dann sichtbar dasselbe Ding. */
+.lr7-dossier-block .lr7-bez-block { margin: 0 0 0.5rem 0.75rem; }
+
 /* D30 · Ein Entscheid-Eintrag der aufgeklappten Liste: Zitierung (Chip) und
    darunter die amtliche Kurzregeste. Der Chip bleibt, was er ist — die Regeste
    hängt an ihm, nicht neben ihm, darum `display: grid` mit `justify-items:

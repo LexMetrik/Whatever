@@ -49,6 +49,11 @@ import { useSyncExternalStore } from 'react';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import { DEFAULT_KLASSEN, normalisiereKantone, normalisiereKlassen } from './bezugAuswahl';
 import { migriereZeitraum, normalisiereBereich } from './bezugZeit';
+// NUR die Konstanten-Datei, nie `./v3/einzelModus` — dieser Store liegt im
+// Entry-Chunk (`main.tsx` ruft `wendeLeserOptionenAn` vor dem ersten Paint),
+// und der breitere Import riss `check:perf-budget` (Herleitung in
+// `./v3/leserModus.ts`).
+import { MODUS_VORGABE, type LeserModus } from './v3/leserModus';
 import { heuteIso } from '../../lib/format';
 
 /**
@@ -328,6 +333,7 @@ const KEINE_KANTONE: readonly string[] = [];
 interface GeladenerZustand {
   opt: LeserOptionen;
   schrift: LeserSchrift;
+  ansicht: LeserModus;
   bezugKlassen: readonly BezugStatus[];
   bezugKantone: readonly string[];
   bezugVon: string;
@@ -339,7 +345,7 @@ interface GeladenerZustand {
 
 function lade(): GeladenerZustand {
   const grund = {
-    opt: { ...DEFAULT }, schrift: DEFAULT_SCHRIFT,
+    opt: { ...DEFAULT }, schrift: DEFAULT_SCHRIFT, ansicht: MODUS_VORGABE,
     bezugKlassen: DEFAULT_BEZUG_KLASSEN, bezugKantone: KEINE_KANTONE,
     bezugVon: '', bezugBis: '', migriert: false,
   };
@@ -387,7 +393,12 @@ function lade(): GeladenerZustand {
       // (§0 Ziff. 2b), und ein Bestands-Speicher mit 'aus' existiert weiterhin.
       : (o.leitfaelle === 'aus' ? [] : DEFAULT_BEZUG_KLASSEN);
     const bezugKantone = Array.isArray(o.bezugKantone) ? normalisiereKantone(o.bezugKantone) : KEINE_KANTONE;
-    return { opt, schrift, bezugKlassen, bezugKantone, bezugVon: bereich.von, bezugBis: bereich.bis, migriert };
+    // W2·5m · die gemerkte Lesart (Kap. 15.6). Dieselbe Whitelist-Sicherung wie
+    // bei Schriftstufe und `vermerke`: ein fremder Wert fällt auf die Vorgabe
+    // «Ganzer Erlass» — und ein FEHLENDES Feld ebenso, das ist die Migration
+    // jedes Bestands-Speichers (F-E3, entschieden David 14.9.2026).
+    const ansicht: LeserModus = o.ansicht === 'artikel' ? 'artikel' : MODUS_VORGABE;
+    return { opt, schrift, ansicht, bezugKlassen, bezugKantone, bezugVon: bereich.von, bezugBis: bereich.bis, migriert };
   } catch {
     // localStorage gesperrt (privater Modus) ODER kaputtes JSON → Default.
     return grund;
@@ -398,13 +409,14 @@ function lade(): GeladenerZustand {
 // `aktuell`/`aktuellVon`/`aktuellBis` werden nur bei echten Änderungen ersetzt.
 const start = typeof window === 'undefined'
   ? {
-      opt: { ...DEFAULT }, schrift: DEFAULT_SCHRIFT,
+      opt: { ...DEFAULT }, schrift: DEFAULT_SCHRIFT, ansicht: MODUS_VORGABE,
       bezugKlassen: DEFAULT_BEZUG_KLASSEN, bezugKantone: KEINE_KANTONE,
       bezugVon: '', bezugBis: '', migriert: false,
     }
   : lade();
 let aktuell: LeserOptionen = start.opt;
 let aktuellSchrift: LeserSchrift = start.schrift;
+let aktuellAnsicht: LeserModus = start.ansicht;
 let aktuellKlassen: readonly BezugStatus[] = start.bezugKlassen;
 let aktuellKantone: readonly string[] = start.bezugKantone;
 let aktuellVon: string = start.bezugVon;
@@ -416,6 +428,7 @@ function speichere(): void {
     // stehen bewusst NICHT im Objekt — Begründung im Datei-Kopf.
     localStorage.setItem(KEY, JSON.stringify({
       ...aktuell, [STAND_KEY]: OPT_STAND, schrift: aktuellSchrift,
+      ansicht: aktuellAnsicht,
       bezugKlassen: aktuellKlassen, bezugKantone: aktuellKantone,
       bezugVon: aktuellVon, bezugBis: aktuellBis,
     }));
@@ -446,6 +459,12 @@ export function wendeLeserOptionenAn(): void {
   const g = lade();
   aktuell = g.opt;
   aktuellSchrift = g.schrift;
+  // W2·5m: JS-konsumiert wie die Bezugs-Facetten, KEIN data-*-Attribut — der
+  // Modus entscheidet, WELCHE Komponenten überhaupt rendern (ein Artikel statt
+  // des ganzen Erlasses). Das kann CSS nicht, und es darf es auch nicht: der
+  // Prerender liefert die Gesamtansicht, ein CSS-Verstecken liesse den ganzen
+  // Erlass im DOM stehen (§15) und die Hülle behauptete «ein Artikel».
+  aktuellAnsicht = g.ansicht;
   // B4: JS-konsumiert (kein data-*-Attribut) — die Weiche «welcher Shard» und
   // die Gruppierung der Kanten sind React-Zustand, nicht CSS.
   aktuellKlassen = g.bezugKlassen;
@@ -691,4 +710,61 @@ function getKantoneServerSnapshot(): readonly string[] {
 }
 export function useBezugKantone(): readonly string[] {
   return useSyncExternalStore(abonniere, getKantoneSnapshot, getKantoneServerSnapshot);
+}
+
+/**
+ * W2·5m · die Lesart setzen («Ganzer Erlass» / «Einzelner Artikel»).
+ *
+ * Anders als `setzeVermerke` und `setzeFussRubriken` schreibt dieser Setzer
+ * KEIN Attribut ans <html>: der Modus ist eine React-Frage (welche Komponenten
+ * rendern), keine CSS-Frage. Die Zahl der Abonnenten bleibt trotzdem klein —
+ * es abonniert der Rahmen, nicht der Artikel (`v3/LeserRahmenV3.tsx`).
+ *
+ * Idempotent: dieselbe Lesart noch einmal zu wählen ist ein No-op — das
+ * Verhalten, das eine Radiogruppe zusagt.
+ */
+export function setzeLeserAnsicht(m: LeserModus): void {
+  if (m === aktuellAnsicht) return;
+  aktuellAnsicht = m;
+  speichere();
+  hoerer.forEach((f) => f());
+}
+
+function getAnsichtSnapshot(): LeserModus {
+  return aktuellAnsicht;
+}
+
+/**
+ * Die gemerkte Lesart NICHT-reaktiv lesen — dieselbe Bauform und derselbe
+ * Grund wie `holeBezugKlassen()` oben: während der Hydration liefert
+ * `useSyncExternalStore` bewusst den Server-Snapshot, der Modulwert steht da
+ * schon richtig. Gebraucht wird der Getter ausserhalb des Renders (Effekte)
+ * und von der Sonde `src/tests/leser-einzelmodus-speicher.test.ts`, die den
+ * Bestands-Speicher prüft — den Fall, der im Browser nicht mehr nachstellbar
+ * ist, sobald er einmal überschrieben wurde.
+ */
+export function holeLeserAnsicht(): LeserModus {
+  return aktuellAnsicht;
+}
+
+/**
+ * DER SERVER-SNAPSHOT IST IMMER DIE VORGABE — und das ist kein Detail.
+ *
+ * Die Leser-Seiten sind prerendert und werden hydriert. Lieferte dieser Getter
+ * die gemerkte Wahl, rendete der Client beim ERSTEN Durchgang etwas anderes als
+ * im ausgelieferten HTML steht (ein Artikel statt des Erlasses) — ein
+ * Hydration-Mismatch, der React den ganzen Baum verwerfen lässt.
+ * `useSyncExternalStore` ist genau dafür gebaut: es nimmt beim Hydrieren diesen
+ * Wert und rendert unmittelbar danach mit dem echten nach. Der Prerender bleibt
+ * damit Gesamtansicht (Kap. 15.6, SEO-Punkt), ohne dass die Präferenz verloren
+ * geht.
+ */
+function getAnsichtServerSnapshot(): LeserModus {
+  return MODUS_VORGABE;
+}
+
+/** Primitiv-Selektor auf die gemerkte Lesart — ein String, also rendern die
+ *  Abonnenten bei fremden Toggles nicht neu (Object.is, §15). */
+export function useLeserAnsicht(): LeserModus {
+  return useSyncExternalStore(abonniere, getAnsichtSnapshot, getAnsichtServerSnapshot);
 }

@@ -63,7 +63,11 @@ test.describe('Ansicht-Menü — D1/B3', () => {
     // Historie-Shard. Die Wahl steht vollzählig, dazu die eine Checkbox.
     await oeffne('/gesetze/bund/STPO')
     await expect(panel.getByRole(WAHL_ROLLE, { name: VERMERKE_SCHALTER_NAME })).toHaveCount(1)
-    await expect(panel.getByRole(WAHL_ROLLE)).toHaveCount(3)
+    // W2·5m (14.9.2026): in der EIGENEN Gruppe gezählt. Seit der Lesart-Wahl
+    // (Kap. 15.3) trägt das Menü ZWEI Radiogruppen; eine Zählung über das ganze
+    // Panel sprang damit auf 5, ohne dass an dieser Wahl etwas anders wäre.
+    // Schärfung, kein Nachgeben — die Zeile misst jetzt, was sie behauptet.
+    await expect(panel.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE)).toHaveCount(3)
     // §6.3-DEKLARATION (D40, 7.9.2026): SECHS Rubriken-Schalter — «Fassung» ist
     // dazugekommen (David: «und wieso ist fassung nicht auch unten am
     // artikel?»). Die Aussage bleibt: die Wahl steht vollzählig.
@@ -83,7 +87,8 @@ test.describe('Ansicht-Menü — D1/B3', () => {
     // die Wahl erscheint genau dort, wo sie etwas bewirkt.
     await oeffne('/gesetze/kanton/BS-640.100')
     await expect(panel.getByRole(WAHL_ROLLE, { name: VERMERKE_SCHALTER_NAME })).toHaveCount(1)
-    await expect(panel.getByRole(WAHL_ROLLE)).toHaveCount(3)
+    // W2·5m: in der eigenen Gruppe gezählt (s. oben, Zeile 66).
+    await expect(panel.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE)).toHaveCount(3)
     await expect(panel.getByRole(SCHALTER_ROLLE)).toHaveCount(6)
     // §8: es gibt hier wirklich keine Fassungs-Zeile — die Wahl trägt an diesem
     // Erlass allein über den Apparat, und der folgt ihr vollständig.
@@ -102,7 +107,11 @@ test.describe('Ansicht-Menü — D1/B3', () => {
     await expect(page.locator('.lc-leser article').first()).toBeVisible({ timeout: 20_000 })
     await page.locator('[data-v3-ansicht]').click()
     await expect(panel).toBeVisible()
-    await expect(panel.getByRole(WAHL_ROLLE)).toHaveCount(0)
+    // W2·5m: die Aussage ist «die ÄNDERUNGS-Wahl wird hier nicht angeboten» —
+    // gemessen an ihrer Gruppe. Die Lesart-Wahl (Kap. 15.3) steht unabhängig
+    // davon immer, sie hängt an keinem Erlass-Merkmal; über das ganze Panel
+    // gezählt läse die Zeile sonst «keine Radiogruppe», was nie gemeint war.
+    await expect(panel.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE)).toHaveCount(0)
     await expect(panel.getByRole(SCHALTER_ROLLE)).toHaveCount(6)
 
     expect(fehler, fehler.join('\n')).toEqual([])

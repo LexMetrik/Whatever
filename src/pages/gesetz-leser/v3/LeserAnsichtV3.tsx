@@ -6,6 +6,8 @@ import { kopfGriffKlassen } from './kopfStufen';
 import { useLeserOptionen } from '../leserOptionen';
 import { LeserAenderungsWahl } from './LeserAenderungsWahl';
 import { LeserRubrikenWahl } from './LeserRubrikenWahl';
+import { LeserModusWahl } from './LeserModusWahl';
+import type { LeserModus } from './einzelModus';
 import type { BestimmungsWort } from './erlassAnsicht';
 import { SchriftgroessenRegler } from '../../../components/ui/SchriftgroessenRegler';
 import { MenueRegler, MenueTitel } from '../../../components/ui/Menue';
@@ -64,7 +66,7 @@ import { MenueRegler, MenueTitel } from '../../../components/ui/Menue';
 // Gruppen bauen ihre Zeilen in eigenen Dateien (`./LeserAenderungsWahl`,
 // `./LeserRubrikenWahl`) und ziehen `MenueSchalter` dort direkt.
 
-export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke, bestimmungsWort }: {
+export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke, bestimmungsWort, modus, onModusWahl }: {
   /** `true` = Handy-Zuschnitt: der Öffner zeigt «···» statt «Ansicht ▾»
    *  (Fahrplan Kap. 4a). Reine Beschriftung — der Accessible-Name bleibt in
    *  beiden Zuschnitten «Ansicht», und die Elemente des Panels sind identisch. */
@@ -85,6 +87,12 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
    *  Durchgereicht aus `./erlassAnsicht.bestimmungsWort` — die EINE Ableitung
    *  (B8/C1); hier steht keine zweite. */
   bestimmungsWort: BestimmungsWort;
+  /** W2·5m · die geltende Lesart (Adresse vor Präferenz, `./useEinzelModus`).
+   *  `undefined` = der Aufrufer bietet den Umschalter nicht an (sekundäres
+   *  Pane, Kap. 15.6) — dann steht die Gruppe gar nicht erst da (§8: kein
+   *  Schalter, der nichts tut). */
+  modus?: LeserModus;
+  onModusWahl?: (m: LeserModus) => void;
   /**
    * ── D35-F2 (7.9.2026) · HIER STAND `onPanelOeffnen` ───────────────────────
    * Die Prop reichte den Menü-Eintrag «Entscheide & Kontext …» herein (A2,
@@ -226,6 +234,15 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
               das Rezept (Trennlinie zur nächsten Gruppe, Spaltenfluss); die
               Rolle und der Name bleiben Wort für Wort, wo sie standen. */}
           <div id={panelId} role="menu" aria-label="Ansicht" data-v3-ansicht-menue className="lc-menu-gruppe">
+          {/* ── W2·5m (D-E3, David 14.9.2026) · DIE LESART ZUOBERST ──────────
+              «man kann im ansichtsmenu wählen ob man das ganze gesetz sieht
+              oder nur den jeweils einzelnen artikel». Sie steht vor den beiden
+              anderen Gruppen, weil sie deren Rahmen ist: im Einzelmodus werden
+              aus den Rubriken der Zeile die Blöcke unter dem Artikel
+              (`./LeserModusWahl`, Kap. 15.3/15.5). */}
+          {modus && onModusWahl && (
+            <LeserModusWahl wahl={modus} onWahl={onModusWahl} />
+          )}
           {/* ── D35-F3 (Entscheid David 7.9.2026) · EINE WAHL STATT ZWEIER SCHALTER
               Hier standen «Fussnoten» (amtlicher Apparat samt Markern, alle
               Klassen — Ä68) und «Fassung» (nur der abgeleitete Slot «Gilt seit …»

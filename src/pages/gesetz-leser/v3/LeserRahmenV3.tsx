@@ -16,6 +16,7 @@ import { LeserLesespalte } from './LeserLesespalte';
 import { LeserLeseZeile } from './LeserLeseZeile';
 import { LeserErlassKopfZone } from './LeserErlassKopfZone';
 import { LeserPanelZone } from './LeserPanelZone';
+import { useEinzelModus } from './useEinzelModus';
 import { ErlassGriff } from './LeserPanelOeffner';
 import { normZitat, panelBezug, usePanelBezuege, usePanelZustand } from './panelModell';
 import { SuchSprungFeld } from './SuchSprungFeld';
@@ -134,6 +135,9 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
   // ROHE Feldwert: wer nach dem Wegschalten weitertippt, bekommt sie sofort
   // zurück, nicht erst nach der Entprellung.
   const trefferSicht = useTrefferSicht(m.suche.trim());
+  // W2·5m · die Lesart (Kap. 15.3/15.6), vor den frühen Rückgaben; die Regeln stehen rein in `./einzelModus.ts`.
+  const einzel = useEinzelModus(m, !umgebung.istSekundaer);
+  const imEinzel = einzel.modus === 'artikel';
 
   // Frühe Ansichten (Fehlseite · Currency-Pin · pdf-embed · nur-live-link) und
   // der Ladezustand — dieselben Bausteine wie die Ist-Hülle (§5).
@@ -293,7 +297,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
 
       {/* D27: kein `aktArtikel` mehr — Herleitung in `./LeserKopf`. */}
       <LeserKopf erlass={erlass} fussnotenAnzahl={m.fussnotenAnzahl}
-        hatAenderungsvermerke={m.hatAenderungsvermerke}
+        hatAenderungsvermerke={m.hatAenderungsvermerke}  modus={einzel.modus} onModusWahl={einzel.waehleModus}
         bestimmungsWort={bestimmungsWort} stufe={stufe} gliederungKnopf={gliederungKnopf}
         suchInZeile={suchInZeile} tocOffen={m.tocOffen}
         onGliederungZu={zweiSpalten ? () => setzeTocOffen(false) : undefined}
@@ -328,11 +332,13 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
               `./LeserErlassKopfZone` (H3-Auslagerung, §6.6). */}
           <LeserErlassKopfZone m={m} erlass={erlass} artikelAnzahl={eintraege.length}
             bestimmungsWort={bestimmungsWort} />
-          {m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
-          {/* D38: der Text bleibt IMMER gerendert, die Trefferliste legt sich
-              darüber (`trefferSpalte` unten) — Warum: `./LeserTrefferSpalte`. */}
+          {/* W2·5m · der Ingress entfällt im Einzelmodus (`./LeserEinzelAnsicht.tsx`). */}
+          {!imEinzel && m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
+          {/* D38: der Text bleibt IMMER gerendert, die Trefferliste legt sich darüber (`./LeserTrefferSpalte`). */}
+          {/* W2·5m · im Einzelmodus EINE Bestimmung, dieselbe Prop-Kette (§5). */}
           <LeserLesespalte m={m} bezuege={bezuege} weckeBezuege={rohPanel.weckeDaten}
-            oeffneBlatt={rohPanel.oeffneEntscheide} bezuegeGeweckt={rohPanel.jeGeoeffnet} />
+            oeffneBlatt={rohPanel.oeffneEntscheide} bezuegeGeweckt={rohPanel.jeGeoeffnet}
+            einzelToken={imEinzel ? einzel.token : null} search={einzel.search} />
         </>}
         // D38 · Trefferliste über der Lesespalte — `absolute`, ohne Platz im
         // Fluss; der Rahmen sagt nur, OB sie da ist (`./LeserTrefferSpalte`).
@@ -350,7 +356,9 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
         // H3 · Panel/Lasche. EIN Aufrufpunkt für beide Modi: im Spalten-Modus
         // füllt die Zone die dritte Grid-Spur, im Blatt-Modus hat sie keine Box
         // und liegt ausserhalb des Flusses.
-        panelZone={(
+        // W2·5m (D-E4) · «panel im einzelmodus weg» — NICHT GEMOUNTET, nicht versteckt:
+        // sonst blieben Reiter im Fokusbaum, ←/→ belegt und Shards geladen (§17: die Datei bleibt).
+        panelZone={imEinzel ? null : (
             <LeserPanelZone form={bild.blattForm} panelId={panelId}
               paneZiel={overlayZiel} paneRolle={paneRolle}
               zustand={panel} bezuege={bezuege} erlassKey={erlass.key} quelleUrl={erlass.quelleUrl}
@@ -399,8 +407,11 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
             Zuständigkeitsprüfung: er beansprucht den Tastendruck nur, wenn der
             Fokus in SEINEM Pane steht — dieselbe Regel wie bei ⌘K, aus derselben
             Quelle (`../panePrioritaet`). */}
+        {/* W2·5m · ←/→ nur im Einzelmodus — erst das fehlende Panel gibt sie frei (Kap. 15.6); `j`/`k` unverändert. */}
         <LeserTastatur tokens={m.artTokens} aktivToken={m.aktivToken} onSprung={m.springeZuArtikel}
-          onPanel={() => panel.oeffne('entscheide')} imSekundaerenPane={umgebung.istSekundaer} />
+          onPanel={imEinzel ? undefined : () => panel.oeffne('entscheide')}
+          onBlaettern={imEinzel ? einzel.blaettere : undefined}
+          imSekundaerenPane={umgebung.istSekundaer} />
       </div>
     </div>
   );

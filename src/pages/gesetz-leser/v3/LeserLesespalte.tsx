@@ -4,7 +4,7 @@ import type { Sektion } from '../../../lib/normtext/browse';
 import { verifizierLinkSektion } from '../../../lib/normtext/verifikationslink';
 import { ArtikelLeser, SektionKopf } from '../parts';
 import { istAnhangToken } from '../berechnungen';
-import { erlassPfad } from './erlassAnsicht';
+import { bestimmungsWort, erlassPfad } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
 import { usePaneSteuerung } from '../../../components/layout/usePaneLayout';
 import { randNotizZiel } from '../randNotizOeffnen';
@@ -12,6 +12,9 @@ import { useBezuegeZaehler } from '../bezuegeZaehler';
 import { useArtikelMaterialien } from '../artikelMaterialienLaden';
 import type { PanelBezuege } from './panelModell';
 import { baueNachbarn } from './nachbarArtikel';
+import { LeserEinzelAnsicht } from './LeserEinzelAnsicht';
+import { einzelAdresse } from './einzelModus';
+import { labelMitBereich } from '../../../lib/normtext/darstellung';
 
 // ─── Die Lesespalte (FAHRPLAN-LESER-V3 Kap. 1.3 «Kern-Grenze») ──────────────
 //
@@ -53,8 +56,16 @@ import { baueNachbarn } from './nachbarArtikel';
 // von `./LeserLeseZeile`). Genau das ist der Unterschied zum gestrichenen Prop:
 // die Liste steht nicht IM Fluss des Lesekörpers, sondern `absolute` darüber,
 // verschiebt also keinen Pixel und lässt die PX-Region hier unangetastet.
-export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuegeGeweckt = false }: {
+export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuegeGeweckt = false, einzelToken, search = '' }: {
   m: LeserV3Modell;
+  /** W2·5m (Kap. 15.3) · Im Einzelmodus der Token der EINEN Bestimmung.
+   *  DIE SPALTE BLEIBT DIE SPALTE: die Artikel-Props werden weiter an genau
+   *  einer Stelle gebaut (`artikel()` unten) — eine eigene Einzel-Spalte wäre
+   *  dieselbe Kette ein zweites Mal (§5). Was der Modus ändert, ist die
+   *  Anordnung, und die steht in `./LeserEinzelAnsicht.tsx`. */
+  einzelToken?: string | null;
+  /** Query-Teil der Adresse — beim Blättern mitgeführt (`./einzelModus`). */
+  search?: string;
   /** D30 · der Apparat des Panels — DIESELBE `useBezuege`-Instanz, kein zweiter
    *  Lader (§5). `undefined` in der Ist-Hülle und in Tests, die die Spalte ohne
    *  Rahmen mounten; dann verhält sich die Zeile wie vor D30. */
@@ -123,7 +134,7 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
   // vom Öffnen des Panels: exakt das, was `leser-v3-kontext-cls` verbietet. Der
   // Zähler je Artikel gehört in die höhenfeste Beiwerk-Zone von **S2** — dort ist
   // der Platz reserviert, bevor die Zahl kommt.
-  const artikel = (e: (typeof eintraege)[number]) => (
+  const artikel = (e: (typeof eintraege)[number], einzel = false) => (
     <ArtikelLeser key={e.id} e={e} erlass={erlass} basisPfad={basisPfad} fussnoten={fn(e.artikel)}
       intern={m.internRefs} marg={m.margAnzeige.get(e.artikel)?.teile} margBasis={m.margAnzeige.get(e.artikel)?.ab}
       revision={m.revisionFuer(e.artikel)} historie={m.historieFuer(e.artikel)}
@@ -154,12 +165,30 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
       // `geladen` (nicht die Kanten) unterscheidet «unterwegs» von «leer» — die
       // A1-Lehre aus `panelModell.ts`, hier dieselbe Quelle (§5).
       bezuegeLaedt={bezuegeGeweckt && bezuege != null && !bezuege.geladen}
-      // W2·5m: Vorgänger/Nachfolger in amtlicher Reihenfolge. `.get()` liefert
-      // je Token DASSELBE Objekt, solange `eintraege` dieselbe Liste ist — die
-      // `memo`-Schranke des Kerns bleibt damit stehen (§15).
-      nachbarn={nachbarn.get(e.artikel)}
+      // ── W2·5m · DIE PFEILE STEHEN NUR NOCH IM EINZELMODUS (D-E1) ────────
+      // David 14.9.2026, wörtlich: «das bringt aber nur etwas wenn man einzeln
+      // einen artikel hat. wenn man einfach scrollen kann dann bringt das ja
+      // nichts». RÜCKBAU aus #854, keine Abschaltung: Komponente, Selektoren
+      // (`data-artikel-nachbarn`, `data-nachbar`) und `./nachbarArtikel.ts`
+      // bleiben unverändert — sie tragen jetzt den Modus, für den sie gebaut
+      // wurden (Kap. 15.3). `.get()` liefert je Token DASSELBE Objekt (§15,
+      // `memo`-Schranke); im Erlass-Modus ist der Wert konstant `undefined`.
+      nachbarn={einzel ? nachbarn.get(e.artikel) : undefined}
+      // Beide Pfeil-Paare tragen DIESELBE Adresse (B1) — s. die Prop selbst.
+      nachbarnAdresse={einzel ? (t) => einzelAdresse(basisPfad, search, t, 'artikel') : undefined}
+      // Kap. 15.5 · aus den Rubriken der Zeile werden gestapelte Blöcke —
+      // DIESELBEN Marken, ein anderes Bild (`parts/ArtikelDossier.tsx`).
+      fussForm={einzel ? 'dossier' : undefined}
       istAnhang={istAnhangToken(e.artikel)} />
   );
+
+  // ── W2·5m · DER EINZELMODUS (Kap. 15.3) ───────────────────────────────────
+  // Er ersetzt den Lesekörper, nicht die Spalte: Wurzelelement, Lesemass,
+  // Satzspiegel und die Randnotiz-Split-Regel (`onClickCapture` unten) gelten
+  // unverändert weiter — sie sind Eigenschaften der LESEFLÄCHE, nicht der Menge
+  // der gezeigten Artikel. Gliederungspfad, Vorschau und Fuss stehen in
+  // `./LeserEinzelAnsicht.tsx`; von hier kommt die fertige KARTE (§5).
+  const einzelEintrag = einzelToken ? eintraege.find((e) => e.artikel === einzelToken) : undefined;
 
   const renderSektion = (s: Sektion, defOpen: boolean, randTiefe = 0): ReactNode => {
     const auf = istOffen(s.id, defOpen);
@@ -249,7 +278,7 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
     let lauf: typeof ohneGliederung = [];
     const spuele = () => {
       if (lauf.length === 0) return;
-      bloecke.push(<div key={`frei-${lauf[0].artikel}`} className="space-y-5 mb-6">{lauf.map(artikel)}</div>);
+      bloecke.push(<div key={`frei-${lauf[0].artikel}`} className="space-y-5 mb-6">{lauf.map((e) => artikel(e))}</div>);
       lauf = [];
     };
     for (const p of posten) {
@@ -320,9 +349,14 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
         ev.preventDefault();
         oeffneDaneben(ziel.getAttribute('href') as string);
       }}>
-      <div className="space-y-2">
-        {dokumentLinear()}
-      </div>
+      {einzelEintrag
+        ? (
+          <LeserEinzelAnsicht m={m} karte={artikel(einzelEintrag, true)} search={search}
+            token={einzelEintrag.artikel} label={labelMitBereich(einzelEintrag.artikelLabel, einzelEintrag.artikel)}
+            nachbarn={nachbarn.get(einzelEintrag.artikel)}
+            bestimmungsWort={bestimmungsWort(erlass.key)} />
+        )
+        : <div className="space-y-2">{dokumentLinear()}</div>}
 
       {/* ── B9 (Klick-Test) → B6 (H4-Nachzug 18.8.2026) · DIE SEITE LÄUFT QUER ─
           GEMELDET war «ZH-211.11 § 4: Tabelle 81 px Seiten-Überlauf @390 trotz

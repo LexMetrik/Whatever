@@ -138,7 +138,11 @@ test('Options-Leiste: die Änderungs-Wahl + sechs Rubriken-Schalter — «Linien
   for (const name of [/^Fussnoten/, VERMERKE_SCHALTER_NAME, AUS_WAHL_NAME]) {
     await expect(gruppe.getByRole(WAHL_ROLLE, { name })).toHaveCount(1);
   }
-  await expect(gruppe.getByRole(WAHL_ROLLE)).toHaveCount(3);
+  // W2·5m (14.9.2026): in der EIGENEN Gruppe gezählt — seit der Lesart-Wahl
+  // (Kap. 15.3) trägt das Menü zwei Radiogruppen, und `gruppe` ist hier das
+  // ganze Panel. Schärfung, kein Nachgeben: die Zeile misst jetzt die Wahl,
+  // über die sie spricht.
+  await expect(gruppe.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE)).toHaveCount(3);
   await expect(gruppe.getByRole(SCHALTER_ROLLE, { name: 'Linien' })).toHaveCount(0);
   // Negativ-Sonde gegen die Rückkehr: eine entfernte Steuerung, die niemand
   // vermisst, schleicht sich beim nächsten Merge sonst wieder ein.

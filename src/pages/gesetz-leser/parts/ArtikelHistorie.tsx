@@ -80,7 +80,20 @@ function Quellen({ quellen }: { quellen: HistorieEreignis['quellen'] }) {
   const eindeutig = quellen.filter((q) => (gesehen.has(q.label) ? false : (gesehen.add(q.label), true)));
   if (eindeutig.length === 0) return null;
   return (
-    <span className="text-ink-400">
+    // ── KONTRAST (a11y-Sonde 14.9.2026, W2·5m) · ink-500 STATT ink-400 ───────
+    // GEMESSEN im Dunkelmodus an OR 336c: «AS 1996 1445 · BBl 1994 III 1609»
+    // auf `ink-400` = 3.3:1 (#6f6b63 auf #1b1917, 12 px) — unter den 4.5:1 der
+    // WCAG 1.4.3. Die AS-/BBl-Fundstelle ist ESSENTIELLE Auskunft und kein
+    // beiläufiger Text: sie ist die Quelle, mit der ein Jurist die Änderung
+    // nachschlägt. Dieselbe Lehre wie an den Nachbar-Pfeilen
+    // (`./ArtikelNachbarn.tsx`) und an der Zeile «· aufgehoben»
+    // (`./ArtikelLeser.tsx`) — beide sind aus demselben Grund auf ink-500.
+    //
+    // VORBESTAND, nicht durch W2·5m entstanden: NULLPROBE am selben Stand
+    // (Gesamtansicht, Rubrik «Fassung» von Hand aufgeklappt, dunkel) zählte
+    // 14 Knoten mit `text-ink-400`. Sichtbar wurde der Mangel erst dadurch,
+    // dass der Fassungs-Block im Einzelmodus offen startet (B6).
+    <span className="text-ink-500">
       {eindeutig.map((q, i) => (
         <span key={q.label + i}>
           {i > 0 && <span aria-hidden> · </span>}
@@ -172,7 +185,10 @@ export const ArtikelHistorieZeile = memo(function ArtikelHistorieZeile({ histori
             return (
               <li key={i} className="relative">
                 <span className="font-semibold text-ink-700">{TYP_LABEL[e.typ]}</span>
-                {sk && <span className="text-ink-400"> · {sk}</span>}
+                {/* ink-500 wie die Quellen darunter (s. `Quellen`): «Abs. 1,
+                    lit. a» sagt, WELCHEN Teil des Artikels die Änderung traf —
+                    die Angabe, wegen der die Liste absatzscharf ist (M1/N1). */}
+                {sk && <span className="text-ink-500"> · {sk}</span>}
                 {e.datum && (
                   <span> · {e.wirkung ? 'mit Wirkung seit' : 'in Kraft seit'} <span className="num text-ink-600">{formatiereDatum(e.datum)}</span></span>
                 )}
