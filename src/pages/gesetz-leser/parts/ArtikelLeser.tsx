@@ -29,7 +29,7 @@ import type { ArtikelNachbarn as NachbarnAmArtikel } from '../v3/nachbarArtikel'
 // gegenüber dem Vorartikel GEÄNDERTEN Stufen, `marg`), rechts der Serif-
 // Bestimmungstext. Ersetzt den früheren fliegenden Standort-Tracker. Reine Darstellung.
 
-export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, bezuegeImFuss, materialien, onBezuegeOeffnen, onImBlatt, bezuegeLaedt, revision, historie, zaehler, nachbarn, fussForm, istAnhang = false }: {
+export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, bezuegeImFuss, materialien, onBezuegeOeffnen, onImBlatt, bezuegeLaedt, revision, historie, zaehler, nachbarn, nachbarnAdresse, fussForm, istAnhang = false }: {
   e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: InternRefs;
   marg?: string[];
   /** G-HIST-UI: Fassungshistorie dieses Artikels aus dem erlass-lokalen Shard
@@ -59,6 +59,19 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
    *  über alle 1686 Artikel des OR auf (§15). `undefined` = die Hülle setzt
    *  keine Nachbarschaft (Test-Render, Einzel-Ausspielung) ⇒ keine Zeile. */
   nachbarn?: NachbarnAmArtikel;
+  /**
+   * W2·5m · Adress-Bauer der Nachbar-Pfeile (`../v3/einzelModus.einzelAdresse`).
+   *
+   * Im Einzelmodus ist der Nachbar die nächste SEITE und keine Stelle im selben
+   * Dokument: ein blosser `#art-…`-Anker feuert kein `popstate`, react-router
+   * bemerkt ihn nicht, und die Karte bliebe stehen. Gemessen am gebauten Stand
+   * (14.9.2026, `e2e/leser-nachbar-rohdaten`): das KOPF-Paar rendete noch den
+   * alten Anker, weil die Prop nur am Fuss-Paar hing — beide Paare müssen
+   * dieselbe Adresse tragen, sonst blättert nur eines (B1).
+   *
+   * Ungesetzt bleibt alles wie bisher (Gesamtansicht, Golden byte-gleich).
+   */
+  nachbarnAdresse?: (token: string) => string;
   /**
    * W2·5m (Kap. 15.5) · die GESTALT der Rubriken am Artikelende. `undefined`
    * bzw. `'zeile'` ist die Funktionszeile der Gesamtansicht (unverändert),
@@ -407,7 +420,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 durch die Trefferliste ersetzt, `#art-…` zeigte ins Leere. Die
                 Artikelnummer daneben trägt in diesem Modus aus demselben Grund
                 schon einen `<button>` statt eines Ankers. */}
-            {!imTreffer && nachbarn && <ArtikelNachbarn nachbarn={nachbarn} />}
+            {!imTreffer && nachbarn && <ArtikelNachbarn nachbarn={nachbarn} adresse={nachbarnAdresse} />}
             {/* ── W2·24-D35-F1 (David 7.9.2026) · HIER STANDEN DIE AKTIONEN ──
                 «Zitat · Link · Amtliche Fassung ↗» sassen rechtsbündig in
                 dieser Kopfzeile — und trugen `opacity-0` bis Hover, Fokus oder

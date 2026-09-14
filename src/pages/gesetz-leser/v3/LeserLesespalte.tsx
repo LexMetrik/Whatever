@@ -13,6 +13,7 @@ import { useArtikelMaterialien } from '../artikelMaterialienLaden';
 import type { PanelBezuege } from './panelModell';
 import { baueNachbarn } from './nachbarArtikel';
 import { LeserEinzelAnsicht } from './LeserEinzelAnsicht';
+import { einzelAdresse } from './einzelModus';
 import { labelMitBereich } from '../../../lib/normtext/darstellung';
 
 // ─── Die Lesespalte (FAHRPLAN-LESER-V3 Kap. 1.3 «Kern-Grenze») ──────────────
@@ -173,6 +174,8 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
       // wurden (Kap. 15.3). `.get()` liefert je Token DASSELBE Objekt (§15,
       // `memo`-Schranke); im Erlass-Modus ist der Wert konstant `undefined`.
       nachbarn={einzel ? nachbarn.get(e.artikel) : undefined}
+      // Beide Pfeil-Paare tragen DIESELBE Adresse (B1) — s. die Prop selbst.
+      nachbarnAdresse={einzel ? (t) => einzelAdresse(basisPfad, search, t, 'artikel') : undefined}
       // Kap. 15.5 · aus den Rubriken der Zeile werden gestapelte Blöcke —
       // DIESELBEN Marken, ein anderes Bild (`parts/ArtikelDossier.tsx`).
       fussForm={einzel ? 'dossier' : undefined}
