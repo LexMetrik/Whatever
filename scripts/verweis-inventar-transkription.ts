@@ -349,15 +349,44 @@ export interface Stelle {
   selbstmarker: boolean;
   /** Selbstmarker, aber die genannte Bestimmung gibt es im Erlass nicht. */
   totesZiel: boolean;
+  /** Z6c (W2·22): der Zitat-Text, den die PRODUKTION an dieser Weiche in einen
+   *  FREMD-Anker auflöst — genau das `artikel`-Prop, das NormText dem NormChip
+   *  übergibt (bzw. `span.artikel` beim voll zitierten Anker). Nur an
+   *  FREMD-Entscheiden gesetzt; das Tor schlägt daraus über `bundSnapshotRef`
+   *  Ziel-Erlass und Ziel-Token nach (Sonderliste `toteFremdAnker`). Kein
+   *  zweiter Erkenner: der String ist die Produktions-Eingabe, nicht ein
+   *  Nachbau ihrer Bedeutung (§5). */
+  ziel?: string;
+  /** Z6c-KANTON (Nachzug 14.9.2026, Gegenprüfungs-Befund C): die V-3-Weiche
+   *  `paragraf-kanton-kuerzel` baut ihren Fremd-Anker NICHT über NormChip und
+   *  `bundSnapshotRef`, sondern direkt als `<a href={kantonZiel}#art-${token}>`
+   *  (NormText.tsx). Ein Zitat-String wie «Art. 5 OR», den ein Resolver zerlegen
+   *  könnte, entsteht dort gar nicht — darum trägt diese Weiche Ziel-Erlass und
+   *  Anker-Token AUSDRÜCKLICH. Beide Werte stammen aus derselben transkribierten
+   *  Weiche wie der gerenderte Link (§5): `quelle` aus `kantonZielAmZitat`,
+   *  `token` aus `parsePassus` — genau die zwei Funktionen, aus denen die
+   *  Produktion den href zusammensetzt.
+   *
+   *  ABWEICHUNG ZUR PRODUKTION, bewusst: dort liefert die Kürzel-Karte die
+   *  Lese-ADRESSE (`/gesetze/kanton/BS-154.100`, `erlassPfad`), hier den
+   *  REGISTER-KEY (`BS-154.100`, `kartenJeKanton`). Das letzte Pfadsegment IST
+   *  der Key — dieselbe Gleichung, auf die sich `eigenesKuerzel` in der Messung
+   *  schon stützt. Der Key ist das, womit der Snapshot-Nachschlag arbeitet. */
+  kantonZiel?: { quelle: string; token: string; zitat: string };
 }
 
-const stelle = (klasse: string, nummer: string | null, ctx: Ctx, selbstmarker = false): Stelle => ({
+const stelle = (
+  klasse: string, nummer: string | null, ctx: Ctx, selbstmarker = false, ziel?: string,
+  kantonZiel?: { quelle: string; token: string; zitat: string },
+): Stelle => ({
   klasse,
   nummer,
   selbstmarker,
   totesZiel:
     selbstmarker && !ctx.fremdKuerzel && ctx.tokenMap.size > 0 && nummer != null
     && !ctx.tokenMap.has(normRef(nummer)),
+  ...(ziel != null ? { ziel } : {}),
+  ...(kantonZiel != null ? { kantonZiel } : {}),
 });
 
 /** Transkription von `restMitIntern` — zählt statt zu rendern. */
@@ -384,9 +413,11 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
     const fremdEffektiv = r.fremd && kuerzelKanon(r.fremd) !== ctx.eigenesKuerzel ? r.fremd : null;
     for (const g of r.glieder) {
       if (fremdEffektiv) {
-        linkSpans.push({ start: g.start, end: g.end, s: stelle('plural-glied-fremd', g.roh, ctx) });
+        // Z6c: NormText.tsx:431 — <NormChip artikel={`Art. ${g.roh} ${fremdEffektiv}`} …>
+        linkSpans.push({ start: g.start, end: g.end, s: stelle('plural-glied-fremd', g.roh, ctx, false, `Art. ${g.roh} ${fremdEffektiv}`) });
       } else if (ctx.fremdKuerzel) {
-        linkSpans.push({ start: g.start, end: g.end, s: stelle('plural-glied-chapeau', g.roh, ctx) });
+        // Z6c: NormText.tsx:437 — M6-D-Chapeau.
+        linkSpans.push({ start: g.start, end: g.end, s: stelle('plural-glied-chapeau', g.roh, ctx, false, `Art. ${g.roh} ${ctx.fremdKuerzel}`) });
       } else {
         if (paragrafErlass) { textStellen.push(stelle('plural-glied-f41', g.roh, ctx)); continue; }
         const token = ctx.tokenMap.get(normRef(g.roh));
@@ -406,8 +437,18 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
       // Steht wie in der Produktion VOR den Fremd-Guards und NACH dem
       // Selbst-Signal; ohne Anker-Token fällt es in die Guards zurück.
       const kantonZiel = sm ? null : kantonZielAmZitat(nach, ctx);
-      if (kantonZiel && parsePassus(m[0])?.artikelToken) {
-        linkSpans.push({ start, end, s: stelle('paragraf-kanton-kuerzel', m[1], ctx, sm) });
+      const kantonToken = kantonZiel ? parsePassus(m[0])?.artikelToken : undefined;
+      if (kantonZiel && kantonToken) {
+        // Z6c-Kanton (Befund C, 14.9.2026): bis hierher zählte die Weiche nur
+        // ihre Stellen — das Ziel blieb ungemessen, und «0 ausgelieferte tote
+        // Anker» war darum eine Aussage über den Bund, nicht über den Korpus.
+        // Ziel-Erlass und Token reisen jetzt mit; der Nachschlag im Snapshot
+        // des Ziels passiert in der Messung, wie beim Bund-Zweig.
+        linkSpans.push({
+          start, end,
+          s: stelle('paragraf-kanton-kuerzel', m[1], ctx, sm, undefined,
+            { quelle: kantonZiel, token: kantonToken, zitat: m[0] }),
+        });
         continue;
       }
       const rest = nach.replace(PARAGRAF_ANHANG, '');
@@ -447,7 +488,8 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
       // V-7: Klasse nach Erkennungs-Signal (Klammer / Genitiv-Kurztitel / Volltitel).
       const klasse = routing.signal === 'klammer' ? 'n2b-glied' : routing.signal === 'genitiv' ? 'n2b-genitiv' : 'n2b-titel';
       for (const g of routing.glieder) {
-        out.push(stelle(g.linkbar ? klasse : 'n2b-glied-text', g.roh, ctx));
+        // Z6c: NormText.tsx:551 — <NormChip artikel={g.artikel} …>.
+        out.push(stelle(g.linkbar ? klasse : 'n2b-glied-text', g.roh, ctx, false, g.linkbar ? g.artikel : undefined));
       }
       last = start + m[0].length + routing.regionEnd;
       continue;
@@ -472,7 +514,8 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
       out.push(stelle('art-m12-kuerzel', m[1], ctx, sm)); continue;
     }
     if (ctx.fremdKuerzel) {
-      out.push(stelle('art-chapeau-fremd', m[1], ctx, sm));
+      // Z6c: NormText.tsx:647 — <NormChip artikel={`Art. ${m[1]} ${intern.fremdKuerzel}`} …>.
+      out.push(stelle('art-chapeau-fremd', m[1], ctx, sm, `Art. ${m[1]} ${ctx.fremdKuerzel}`));
       last = start + m[0].length;
       continue;
     }
@@ -534,9 +577,13 @@ export function stellenImText(text: string, ctx: Ctx | null, paragrafFuerM6: boo
     out.push(
       selbstSpanSprung(s, ctx)
         ? stelle('anker-self', null, ctx ?? leer)
+        // Z6c: NormText.tsx:769 — <NormChip artikel={s.artikel} …>. Der blosse
+        // Erlass-Verweis (Z1) trägt gar keine Artikelnummer und ist damit per
+        // Bauart die Fallback-Form selbst — kein Ziel-Token nachzuschlagen.
         : stelle(s.erlass ? 'anker-erlass'
           : s.ausgeschrieben ? 'anker-ausgeschrieben'
-          : s.propagiert ? 'anker-kette' : 'anker-fedlex', null, ctx ?? leer),
+          : s.propagiert ? 'anker-kette' : 'anker-fedlex', null, ctx ?? leer, false,
+        s.erlass ? undefined : s.artikel),
     );
     zuletzt = s.end;
   }
