@@ -132,6 +132,8 @@
     "gen:pdf-quellen": "vite-node scripts/normtext/pdf-quellen-generieren.ts --",
     "gen:inkrafttreten": "vite-node scripts/normtext/inkrafttreten-generieren.ts --",
     "gen:abk-aliase": "vite-node scripts/normtext/abk-aliase-generieren.ts --",
+    "gen:artikel-bestand": "vite-node scripts/normtext/artikel-bestand-generieren.ts",
+    "check:artikel-bestand": "vite-node scripts/normtext/artikel-bestand-generieren.ts -- --check",
     "check:fedlex-abk-netz": "vite-node scripts/normtext/abk-aliase-generieren.ts -- --check",
     "be-sprengel:generieren": "vite-node scripts/zustaendigkeit/be-sprengel-generieren.ts",
     "check:be-sprengel": "vite-node scripts/zustaendigkeit/check-be-sprengel.ts",
