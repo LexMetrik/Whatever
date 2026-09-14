@@ -84,13 +84,65 @@ export function standDriftBefund(snap: VersionsMarke, stru: VersionsMarke): stri
   return `Snapshot-Version (stand=${snap.stand}, fassungsToken=${snap.fassungsToken}) ≠ Sidecar-Version (stand=${stru.stand}, fassungsToken=${stru.fassungsToken})`;
 }
 
+/**
+ * W2·27 — «Fünf-Artefakte-Klammer», Bund-Ast (Fahrplan BUND-FERTIG §1.1).
+ *
+ * Ein Gesetz liegt bei uns in mehreren Dateien, die GETRENNT altern (Snapshot ·
+ * Struktur-Sidecar · Historie-Shard · Revisionen · globale Register). Die
+ * Zusammengehörigkeit wird nicht durch Zusammenlegen hergestellt (das kostet
+ * Ladezeit, QS-PERF), sondern durch eine KLAMMER: jedes Artefakt trägt die
+ * Fassung, aus der es stammt, und dieses Tor erzwingt Gleichheit.
+ *
+ * `standDriftBefund` (oben) war dafür der additive erste Schritt: er schlug nur
+ * an, wenn BEIDE Seiten die Felder tragen — am 14.9.2026 trafen darum 216 von 228
+ * Bund-Sidecars auf gar keine Prüfung («Randtitel und Fussnoten altern unbemerkt»,
+ * Fahrplan §2/Nebenfunde). Ein Tor, das für 95 % des Bestands nicht scheitern
+ * kann, ist gefährlicher als keines (§6.7). Nach dem Nachzug aller 228 Sidecars
+ * (`npm run normtext:struktur -- --datum=…`) gilt die Pflicht-Fassung hier:
+ * FEHLT die Marke, ist das der Befund — nicht länger ein stiller Freibrief.
+ *
+ * Gilt nur für den BUND. Der Kanton-Ast bleibt beim additiven `standDriftBefund`
+ * (eigener Generator, eigener Rollout — Phase 2).
+ */
+export function versionsKlammerBefund(snap: VersionsMarke, stru: VersionsMarke): string | null {
+  if (!snap) return 'Snapshot ohne stand/fassungsToken — die Fassung des Erlasses ist nicht deklariert (§7).';
+  if (!stru)
+    return (
+      `Struktur-Sidecar ohne stand/fassungsToken (Snapshot: stand=${snap.stand}, ` +
+      `fassungsToken=${snap.fassungsToken}) — Gliederung/Randtitel/Fussnoten altern ungeprüft.`
+    );
+  return standDriftBefund(snap, stru);
+}
+
+/**
+ * W2·27 — die Fassung muss INNERHALB eines Snapshots einheitlich sein: der
+ * Generator stempelt sie je Eintrag, die Klammer liest sie aber am ersten Eintrag
+ * (`versionVonSnapshot`). Wäre sie uneinheitlich, prüfte die Klammer eine Fassung,
+ * die für den Rest der Datei nicht gilt — ein Tor, das am eigenen Messpunkt
+ * vorbeisieht. Messung 14.9.2026: 0 von 228 Bund-Dateien uneinheitlich.
+ */
+export function uneinheitlicheSnapshotVersion(
+  eintraege: ReadonlyArray<{ stand?: string; fassungsToken?: string }>,
+): string | null {
+  const marken = new Set(eintraege.map((e) => `${e.stand ?? '—'}|${e.fassungsToken ?? '—'}`));
+  if (marken.size <= 1) return null;
+  return `Snapshot trägt ${marken.size} verschiedene Fassungen (${[...marken].slice(0, 4).join(' · ')}) — die Klammer hat keinen eindeutigen Messpunkt.`;
+}
+
+function eintraegeVonSnapshot(pfad: string): Array<{ stand?: string; fassungsToken?: string }> {
+  const datei = JSON.parse(readFileSync(pfad, 'utf8')) as {
+    eintraege?: Array<{ stand?: string; fassungsToken?: string }>;
+  };
+  return datei.eintraege ?? [];
+}
+
 function main(): void {
   let exitCode = 0;
 
   // ── Bund ────────────────────────────────────────────────────────────────────
   console.log('\n── Tor: Struktur-Konsistenz (Sidecar ↔ Snapshot, Bund) ───────────────────');
   let bundGeprueft = 0;
-  let bundDoppelIdHinweise = 0;
+  let bundMitKlammer = 0;
 
   for (const f of readdirSync(BUND_SNAP_DIR).filter((f) => f.endsWith('.json'))) {
     const gesetz = f.replace(/\.json$/, '');
@@ -123,23 +175,42 @@ function main(): void {
       exitCode = 1;
     }
     if (r.fehlendDoppelId.length > 0) {
-      // Dokumentierte Doppelartikel-Grenze (2. Vorkommen einer art_id) — kein Fehler.
-      bundDoppelIdHinweise += r.fehlendDoppelId.length;
+      // W2·27 (RÜCKBAU der Toleranz): «__N»-Token (2. Vorkommen einer doppelten
+      // Fedlex-art_id) galten hier als dokumentierte Grenze und wurden nur gezählt.
+      // Seit der Struktur-Extraktor denselben Synthese-Suffix vergibt wie der
+      // Snapshot-Generator (struktur-extrahiere.ts, W2·27), gibt es diese Grenze
+      // nicht mehr: ein fehlender «__N»-Schlüssel heisst, dass ein Artikel den
+      // Randtitel/die Gliederung seines Namensvetters trägt — genau der KKV-Befund
+      // (Art. 126z zeigte die Marginalie von Art. 126z^tredecies). Darum FEHLER.
+      console.error(
+        `  FEHLER ${gesetz}: ${r.fehlendDoppelId.length} Doppelartikel-Token OHNE Struktur ` +
+          `(${r.fehlendDoppelId.slice(0, 10).join(', ')}) — der Sidecar keyt zwei <article> mit ` +
+          `gleicher Fedlex-id auf EINEN Schlüssel; das zweite überschreibt das erste.`,
+      );
+      exitCode = 1;
     }
 
-    // §6.7-Ast (Gegenprüfung #808 B4): gleiche Artikel-Keys reichen nicht — der
-    // Sidecar kann trotzdem aus einer älteren Snapshot-Version stammen.
-    const drift = standDriftBefund(versionVonSnapshot(snapPfad), versionVonStruktur(struPfad));
-    if (drift) {
-      console.error(`  FEHLER ${gesetz}: ${drift} — Sidecar veraltet trotz gleicher Artikel-Keys.`);
+    // §6.7-Ast (Gegenprüfung #808 B4) + W2·27-Klammer: gleiche Artikel-Keys reichen
+    // nicht — der Sidecar kann aus einer älteren Snapshot-Version stammen ODER die
+    // Fassungs-Marke ganz vermissen lassen (216/228 am 14.9.2026).
+    const uneinheitlich = uneinheitlicheSnapshotVersion(eintraegeVonSnapshot(snapPfad));
+    if (uneinheitlich) {
+      console.error(`  FEHLER ${gesetz}: ${uneinheitlich}`);
       exitCode = 1;
+    }
+    const drift = versionsKlammerBefund(versionVonSnapshot(snapPfad), versionVonStruktur(struPfad));
+    if (drift) {
+      console.error(`  FEHLER ${gesetz}: ${drift}`);
+      exitCode = 1;
+    } else {
+      bundMitKlammer++;
     }
   }
 
   if (exitCode === 0) {
     console.log(
-      `  ok: ${bundGeprueft} Bund-Gesetze — Struktur ↔ Snapshot konsistent` +
-        (bundDoppelIdHinweise > 0 ? ` (${bundDoppelIdHinweise} dokumentierte Doppelartikel-__N ohne Struktur, bekannt)` : ''),
+      `  ok: ${bundGeprueft} Bund-Gesetze — Struktur ↔ Snapshot konsistent · ` +
+        `${bundMitKlammer}/${bundGeprueft} mit geschlossener Fassungs-Klammer (stand + fassungsToken beidseitig gleich)`,
     );
   }
 

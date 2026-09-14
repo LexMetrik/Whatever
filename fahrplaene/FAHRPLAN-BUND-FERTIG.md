@@ -90,6 +90,38 @@ die **Klammer**: (a) jedes Artefakt trägt `stand` + `fassungsToken` des Erlasse
 prüft, dass alle fünf denselben Wert tragen und dieselbe Artikelmenge kennen. Damit wird «ein
 Gesetz» als Einheit prüfbar, ohne das Speichermodell zu ändern.
 
+**Umsetzung 14.9.2026 (ergänzt, ersetzt die Messung oben nicht).** (a) und (b) sind für das Paar
+Snapshot ↔ Struktur-Sidecar eingelöst:
+
+- **Sidecar-Marke, 216 nachgezogen.** `struktur-run.ts` stempelte `stand`/`fassungsToken` schon
+  seit #808 B4, aber nur in neu geschriebene Dateien. Ein Generator-Lauf
+  (`npm run normtext:struktur -- --datum=2026-09-14`, 228/228, 215 geschrieben) zog den Rest nach.
+  **Beleg, dass die Marke reproduziert und nicht behauptet ist:** 215 der 216 geänderten Dateien
+  sind ausserhalb von `erzeugt`/`stand`/`fassungsToken` byte-gleich zum Vorzustand — die
+  Sidecar-Substanz folgt unverändert aus denselben gepinnten Fedlex-Caches wie die Snapshots.
+- **Tor scharf.** `check:struktur-konsistenz` verlangt die Marke im Bund-Ast neu als Pflicht
+  (`versionsKlammerBefund`); der bisherige `standDriftBefund` schlug nur an, wenn **beide** Seiten
+  sie tragen, und konnte für 216/228 gar nicht rot werden (§6.7). Der Kanton-Ast bleibt bewusst
+  additiv (eigener Generator, Phase 2). Neue Ausgabe: «228/228 mit geschlossener Fassungs-Klammer».
+- **Historie-Shard und Revisionen** brauchten keine eigene Marke: der Shard wird von
+  `historie-generieren.ts` aus dem Sidecar erzeugt, und `check:historie` erzwingt Byte-Gleichheit
+  gegen eine frische Ableitung — die Klammer trägt dort schon ein anderes Tor (§17 Gegengewicht:
+  nicht zweimal dieselbe Sorge bewachen).
+
+**KKV-Token `126_z__2` — Quell-Effekt, kein Generationslauf-Versatz.** Das Fedlex-HTML der KKV
+vergibt die id `art_126_z` **zweimal**: für Art. 126z «Anlagebeschränkungen und Anlagetechniken»
+und für Art. 126z^tredecies «Wesentliche Mängel», dessen Ordinal-Suffix Fedlex nicht in die eId
+schreibt. Der Snapshot-Generator löst das seit M9/G7 mit dem Synthese-Suffix `__2`; der
+Struktur-Extraktor tat es nicht und liess das zweite `<article>` das erste überschreiben. Der
+Befund war damit **schwerer als gemessen**: nicht ein Artikel ohne Struktur, sondern ein Artikel
+mit **fremder** Marginalie und Gliederung (§1/§7). Fix an der Pipeline-Quelle; korpusweiter
+Blast-Radius gemessen: 1 Datei, 1 Token.
+
+**Offen und ausgewiesen (§8):** Der Snapshot führt `126_z__2` mit `artikelLabel: "Art. 126z"` —
+amtlich richtig wäre «Art. 126ztredecies». Die Ursache liegt in der Fedlex-eId, die Korrektur
+beträfe den Snapshot (Golden) und gehört in einen eigenen, deklarierten Schritt; hier bewusst
+**nicht** mitgemacht. Zwei Artikel des Erlasses tragen darum im Leser dasselbe Label.
+
 ### §1.2 · Struktur-Befund: das Randtitel-Doppelmodell
 
 Randtitel haben **zwei Modellfelder**: `NormSnapshot.titel` (`typen.ts:16-22`) — im Bund
@@ -158,7 +190,16 @@ nie in der Projektion (§5), golden byte-gleich bzw. deklarierter Re-Bless.
 
 ---
 
-## §4 · Offene Punkte für David (nicht blockierend)
+## §4 · Offene Punkte für David — entschieden 14.9.2026
+
+> **Entscheid David 14.9.2026 (Chat, wörtlich): «fr/it später, zukunftsfassungen phase 1, randtitel
+> wie empfohlen».** Gebucht: **(a) = (ii)** — FR/IT nach Phase 1, als eigener Zug mit `W2·5g-ZEIT`
+> (Phase 3); **(b) = gestaffelt** — der Hinweis im Leserkopf («ab <Datum> gilt eine neue Fassung» +
+> amtlicher Link) ist Phase-1-Posten unter `W2·27-BUND-FERTIG`, Umschalter/Diff bleiben Phase 3;
+> **(c) = (i)** — `struktur.marginalie` wird die eine Quelle, `NormSnapshot.titel` wird Projektion
+> oder entfällt, Kanton migriert in Phase 2; Auflage Sidecar-Drift-Riegel zuerst (PR #851).
+> Die Optionen darunter bleiben als Entscheidungsgrundlage stehen.
+
 
 **(a) FR/IT-Fassungen — Phase 1 oder später?**
 Optionen: **(i)** in Phase 1, weil «vollständig» bei einem mehrsprachigen Bundesrecht auch die

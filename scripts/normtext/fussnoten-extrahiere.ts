@@ -125,8 +125,17 @@ export function extrahiereFussnoten(html: string): Record<string, Fussnote[]> {
   // «id="art_…"» verfehlte die disp-IDs → deren Fussnoten-Marker fielen ganz weg
   // (17 VZG-Noten). ID-Schema + Token-Bildung IDENTISCH zu struktur-extrahiere.ts
   // (ankerZuToken), damit der Join in struktur-run.ts greift.
+  // W2·27 (Doppel-id): identisch zu extrahiereStruktur — ein WIEDERHOLTER Anker
+  // (Fedlex-Quellfehler, belegt an KKV `id="art_126_z"` zweimal) erhält den
+  // Synthese-Suffix «__2»/«__3» wie im Snapshot-Generator. Ohne ihn kollidierten
+  // beide Vorkommen auf einem Schlüssel und der Fussnoten-Apparat des zweiten
+  // Artikels landete am ersten (§1/§7). Heute folgenlos (KKV Art. 126z trägt keine
+  // Fussnoten), aber der Join in struktur-run.ts setzt Schlüsselgleichheit voraus.
+  const ankerAnzahl = new Map<string, number>();
   for (const am of html.matchAll(/<article[^>]*\bid="((?:disp_u?\d+\/)?art_[^"]+)"[^>]*>([\s\S]*?)<\/article>/gi)) {
-    const token = ankerZuToken(am[1]);
+    const n = (ankerAnzahl.get(am[1]) ?? 0) + 1;
+    ankerAnzahl.set(am[1], n);
+    const token = ankerZuToken(n === 1 ? am[1] : `${am[1]}__${n}`);
     const body = am[2];
     // fn-id → Absatznummer (erstes Vorkommen). Absatz-<p> UND <dl>-Aufzählungen
     // in DOKUMENTREIHENFOLGE durchgehen (gleiche Logik wie der Snapshot-Extraktor,
