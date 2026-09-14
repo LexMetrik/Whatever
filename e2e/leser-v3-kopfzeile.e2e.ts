@@ -64,7 +64,8 @@ import { fehlerSammeln } from './helpers/fehlerSammeln'
 //    den Rücksprung «‹ Gesetze»;
 //  · in `src/pages/gesetz-leser/v3/LeserRahmenV3.tsx` den Aufruf
 //    `useKopfAnspruch(...)` durch `useKopfAnspruch(false)` ersetzen ⇒ (i) findet
-//    auf EMRK/DSGVO/Fehlseite wieder KEINE Krume und KEIN ✕;
+//    auf NYÜ/DSGVO/Fehlseite wieder KEINE Krume und KEIN ✕ (bis 14.9.2026
+//    stand hier EMRK — Ziel-Wechsel s. u. bei (i));
 //  · in `src/components/layout/PaneKopf.tsx` `nurSteuerung` ignorieren ⇒ (d)
 //    findet die Ortsangabe wieder in der Pane-Titelleiste.
 

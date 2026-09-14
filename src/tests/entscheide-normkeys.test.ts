@@ -98,7 +98,7 @@ describe('Alias-Ebene — amtliche FR/IT-Kürzel zeigen auf den Register-key', (
     expect(normKeyFuerAbk('LEF')).toBe('SCHKG');     // it «LEF»
     expect(normKeyFuerAbk('LDIP')).toBe('IPRG');
     expect(normKeyFuerAbk('LIFD')).toBe('DBG');
-    expect(normKeyFuerAbk('CEDH')).toBe('EMRK');     // pdf-embed-Erlass, SR 0.101
+    expect(normKeyFuerAbk('CEDH')).toBe('EMRK');     // SR 0.101 (bis 14.9.2026 pdf-embed, seit PR #860 Volltext-Snapshot)
     expect(normKeyFuerAbk('CEDU')).toBe('EMRK');
   });
   it('greift im FLIESSTEXT eines französischsprachigen Entscheids (End-to-End)', () => {
