@@ -241,7 +241,7 @@ export function LeserAnsichtV3({ kompakt, fussnotenAnzahl, hatAenderungsvermerke
               aus den Rubriken der Zeile die Blöcke unter dem Artikel
               (`./LeserModusWahl`, Kap. 15.3/15.5). */}
           {modus && onModusWahl && (
-            <LeserModusWahl wahl={modus} bestimmungsWort={bestimmungsWort} onWahl={onModusWahl} />
+            <LeserModusWahl wahl={modus} onWahl={onModusWahl} />
           )}
           {/* ── D35-F3 (Entscheid David 7.9.2026) · EINE WAHL STATT ZWEIER SCHALTER
               Hier standen «Fussnoten» (amtlicher Apparat samt Markern, alle

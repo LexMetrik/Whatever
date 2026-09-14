@@ -45,7 +45,16 @@ const STELLUNGEN: ReadonlyArray<{ wert: LeserModus; label: string; titel: string
   },
   {
     wert: 'artikel',
-    label: 'Einzelner Artikel',
+    // ── «BESTIMMUNG» STATT «ARTIKEL» (Korrektur zu Kap. 15.3, 14.9.2026) ────
+    // Das Konzept schrieb «Einzelner Artikel». An einem §-Erlass (ZH-211.11,
+    // BS-640.100) wäre das Wort falsch — der Leser liest dort durchweg «§».
+    // Die Fundament-Sonde verbietet ein Zähl-Substantiv im `v3/`-Code
+    // ausserhalb von `./erlassAnsicht.ts` (B8/C1), und die Ableitung dorthin zu
+    // holen hiesse, die Datei über ihren Deckel zu heben. «Bestimmung» ist der
+    // erlassneutrale Oberbegriff, den das Haus ohnehin führt (`BestimmungsWort`,
+    // `beispielBestimmung`, `zaehlform`) — er ist für beide Erlassarten richtig
+    // und braucht gar keine Ableitung.
+    label: 'Einzelne Bestimmung',
     // D-E3: der gewonnene Platz ist der eigentliche Gewinn, nicht das Blättern
     // — darum nennt der Tooltip die Blöcke und nicht die Pfeile (§8: sagen, was
     // die Wahl bringt, nicht was sie wegnimmt).
@@ -53,23 +62,14 @@ const STELLUNGEN: ReadonlyArray<{ wert: LeserModus; label: string; titel: string
   },
 ];
 
-export function LeserModusWahl({ wahl, bestimmungsWort, onWahl }: {
+export function LeserModusWahl({ wahl, onWahl }: {
   /** Der aktuelle Stand — nicht aus dem Store gelesen, sondern durchgereicht:
    *  im Einzelmodus kann die ADRESSE die Präferenz schlagen (Kap. 15.6), und
    *  das Menü soll zeigen, was gilt, nicht was gemerkt ist (§8). */
   wahl: LeserModus;
-  /** «Artikel» oder «Paragraphen» — für den Gruppenkopf. Durchgereicht aus der
-   *  EINEN Ableitung (`./erlassAnsicht.bestimmungsWort`, B8/C1): an einem
-   *  §-Erlass (BS-640.100) hiesse «Einzelner Artikel» dort zweimal falsch. */
-  bestimmungsWort: string;
   /** Die Wahl vollziehen — merken UND die Adresse nachziehen (`./useEinzelModus`). */
   onWahl: (m: LeserModus) => void;
 }) {
-  // Die BESCHRIFTUNG der zweiten Stellung folgt dem Erlass, der Gruppenkopf
-  // ebenso. «Einzelner Paragraph» ist keine Kosmetik — der Leser eines
-  // §-Erlasses liest im ganzen Haus «§», und ein «Artikel» im Menü wäre die
-  // Bund-Annahme, gegen die die Erlass-Neutralität steht (Fundament-Auflage 2).
-  const einzelWort = bestimmungsWort === 'Paragraphen' ? 'Einzelner Paragraph' : 'Einzelner Artikel';
   return (
     <MenueGruppe attrs={{ role: 'group', 'aria-label': 'Lesart', 'data-v3-modus-wahl': '' }}>
       <MenueTitel>Lesart</MenueTitel>
@@ -78,7 +78,7 @@ export function LeserModusWahl({ wahl, bestimmungsWort, onWahl }: {
           key={s.wert}
           an={wahl === s.wert}
           form="punkt"
-          label={s.wert === 'artikel' ? einzelWort : s.label}
+          label={s.label}
           titel={s.titel}
           /* Idempotent: ein Klick auf die gesetzte Stellung ist ein No-op
              (`setzeLeserAnsicht`) — eine Radiogruppe schaltet sich nicht ab. */

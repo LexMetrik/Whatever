@@ -101,8 +101,13 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
           <ArtikelNachbarn nachbarn={nachbarn} adresse={adresse}
             klassen="inline-flex w-full items-baseline justify-between gap-4" />
         )}
+        {/* B8/C1 · KEIN Zähl-Substantiv im Code (Fundament-Sonde): «vor und
+            zurück» ist erlassneutral und an einem §-Erlass genauso richtig wie
+            am OR. Wo die Bestimmungsart wirklich nötig ist (der Name der
+            Vorschau-Navigation unten), kommt sie als Wert aus der EINEN
+            Ableitung `./erlassAnsicht.bestimmungsWort` herein. */}
         <p className="lr7-einzel-tastatur text-micro text-ink-500" data-einzel-tastaturhinweis>
-          <kbd>←</kbd> <kbd>→</kbd> blättert zum vorigen oder nächsten {bestimmungsWort === 'Paragraphen' ? 'Paragraphen' : 'Artikel'}
+          <kbd>←</kbd> <kbd>→</kbd> blättert vor und zurück
         </p>
       </div>
 
@@ -138,7 +143,7 @@ function VorschauKarte({ ziel, richtung, adresse, eigen }: {
   return (
     <Link to={adresse(ziel.token)} data-vorschau={richtung}
       className="lr7-einzel-vorschau-karte"
-      aria-label={`${richtung === 'vor' ? 'Vor' : 'Nach'} ${eigen}: ${ziel.label}${ziel.marginalie ? ` — ${ziel.marginalie}` : ''}${ziel.aufgehoben ? ' (aufgehoben)' : ''}`}>
+      aria-label={`${richtung === 'vor' ? 'Davor' : 'Danach'} — ${eigen} zu ${ziel.label}${ziel.marginalie ? `: ${ziel.marginalie}` : ''}${ziel.aufgehoben ? ' (aufgehoben)' : ''}`}>
       <span className="lr7-einzel-vorschau-num num text-body-s">
         {richtung === 'vor' && <span aria-hidden>‹ </span>}
         {ziel.label}

@@ -3948,11 +3948,22 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
   padding-top: 0.875rem; border-top: 1px solid var(--rule-soft);
 }
 .lr7-dossier-titel { margin: 0; font-size: inherit; font-weight: inherit; }
+/* Der Griff IST ein `.lc-btn-mini` (B-K1: derselbe Baustein wie die
+   Rubrik-Griffe der Zeile, §5/§10) — hier bekommt er die Anordnung einer
+   Titelzeile: volle Breite, linksbündig, Komfort-Tap-Höhe statt der 24 px des
+   Chips (B9: auf dem Handy ist das Dossier Bedienfläche, nicht Beiwerk).
+   Die Registerfarbe trägt die linke Kante, wie an der Marke in der Zeile. */
 .lr7-dossier-griff {
-  display: flex; align-items: baseline; gap: 0.5rem; width: 100%;
-  min-height: var(--tap-ziel-komfort);
+  justify-content: flex-start; width: 100%;
+  min-height: var(--tap-ziel-komfort); padding: 0 0.5rem;
+  border-left-width: 3px; border-left-color: var(--rule-soft);
   color: var(--ink-700); text-align: left;
 }
+.lr7-dossier-griff[data-reg="f"], .lr7-dossier-griff[data-reg="g"] { border-left-color: var(--reg-g); }
+.lr7-dossier-griff[data-reg="r"] { border-left-color: var(--reg-r); }
+.lr7-dossier-griff[data-reg="m"] { border-left-color: var(--reg-m); }
+.lr7-dossier-griff[data-reg="w"] { border-left-color: var(--reg-w); }
+.lr7-dossier-griff[aria-expanded="true"] { color: var(--ink-900); }
 .lr7-dossier-griff:hover { color: var(--brass-700); }
 /* Das Dreieck ist das ZEICHEN des Zustands neben `aria-expanded` — Zeichen UND
    Wort, nie Farbe allein (DESIGN-REGLEMENT B3). Feste Breite, damit die Titel

@@ -158,7 +158,12 @@ export function ArtikelDossier({ marken, zitat, onOeffnen, laedt = false }: {
                 und anspringen können. `h3`, weil der Artikel-Titel darüber die
                 zweite Stufe ist. */}
             <h3 className="lr7-dossier-titel">
-              <button type="button" className="lr7-dossier-griff text-body-s" data-reg={m.reg}
+              {/* B-K1/§5/§10 · DERSELBE KNOPF-BAUSTEIN wie die Rubrik-Griffe
+                  der Funktionszeile (`lc-btn-mini`): es ist dieselbe Rolle —
+                  ein Griff, der eine Rubrik dieses Artikels aufklappt. Nur die
+                  Anordnung ist eine andere (volle Breite statt Chip), und die
+                  steht in `.lr7-dossier-griff` (src/index.css). */}
+              <button type="button" className="lc-btn-mini lr7-dossier-griff text-body-s" data-reg={m.reg}
                 aria-expanded={auf} aria-controls={auf ? `${blockId}-${m.reg}` : undefined}
                 /* WCAG 4.1.2 · der Name nennt Rubrik UND Bestimmung — «3
                    Fassungen» allein ist in der Knopfliste nicht auffindbar.
