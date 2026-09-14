@@ -11,7 +11,8 @@
 // 20.7.2026 · NACHTRAG · Tor stand fälschlich auf der eigenen Allowlist (rekursiv unsichtbar) — behoben, läuft seither in ci.yml.
 // 15.8.2026 · SCHÄRFUNG (#425) · Wächter-Deckung wurde fälschlich als PR-Deckung gezählt (226 Snapshots passierten PR-CI grün) — ab hier zählt nur pull_request-Trigger als PR-Deckung.
 // 5.9.2026 · SCHÄRFUNG (#712) · check:testtreue lief in ci.yml, nirgends lokal — Gegenrichtung ergänzt (s. Zweck oben).
-import { readFileSync, readdirSync } from 'node:fs';
+// 14.9.2026 · SCHÄRFUNG (Gegenprüfungs-Befund B, PR #856) · `check:artikel-bestand` stand in package.json, lief aber in KEINEM Lauf — weder seriell noch in einem Workflow. Beide bisherigen Richtungen konnten das strukturell nicht sehen: Regel (1) prüft nur, was in check:seriell steht, Regel (4) nur, was ci.yml aufruft. Ein Tor, das in keiner der beiden Listen steht, war unsichtbar — genau der Zustand, den §6.7 «ein Tor, das nicht scheitern kann» meint. Regel (6) schliesst die Lücke an der Grundmenge: JEDES `check:*`-Skript in package.json.
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
 
 const pkg = JSON.parse(readFileSync('package.json', 'utf8')) as {
   scripts: Record<string, string>;
@@ -167,6 +168,21 @@ const ALLOWLIST_NUR_CI: Record<string, string> = {
     'braucht `dist/` (Build-Artefakt) und eine echte Chrome/Lighthouse-Messung über mehrere Läufe für den Median (mehrere Minuten) — ungeeignet für einen Gate-Lauf bei jedem WIP-Commit. Arbiter bleibt ci.yml (Job Perf, PR-Pfad).',
 };
 
+/**
+ * REGEL (6) · GRUNDMENGE (SCHÄRFUNG 14.9.2026, s. Kopf): Tore, die in KEINEM
+ * Lauf stehen — weder in `check:seriell`, noch in einer Kette, noch in einem
+ * Workflow oder in `gate.sh`. Jeder Eintrag braucht einen wahren Grund, warum
+ * das richtig ist; «wird noch verdrahtet» ist keiner (dann verdrahten).
+ */
+const ALLOWLIST_UNVERDRAHTET: Record<string, string> = {
+  'check:zitatgraph':
+    'BEWUSST KEIN TOR: die Hülle scripts/report-zitatgraph-warnungen.ts endet stets mit Exit 0 (so im Kopf deklariert) — ein erheblicher Teil der gemessenen Differenz ist bauartbedingtes Rauschen (Fussnoten-Citations, Erlass-Verweise ohne Artikelnummer). Ein Lauf daraus wäre ein Tor, das aus richtigem Verhalten Rot macht (§6.7 lit. a). Bericht auf Abruf: npm run check:zitatgraph.',
+  'check:be-sprengel':
+    'reine Kommandozeilen-Hülle um pruefeBeSprengel(); DIESELBE Prüfung läuft merge-blockierend als src/tests/beSprengel.test.ts über die Vitest-Suite (und damit in check:seriell und im PR-CI). Ein zweiter Lauf desselben Prädikats prüft nichts Zusätzliches — er verdoppelt nur die Laufzeit (§17-Gegengewicht).',
+  'check:suchindex':
+    'Drift-Tor des Suchindex-Generators — aber `npm run build` beginnt mit `gen:suchindex` und erzeugt den Index vor JEDEM Build neu (package.json, Skript "build"). Eine Drift kann die Auslieferung darum strukturell nicht erreichen: was gebaut wird, ist immer frisch generiert. Das Tor bleibt als Diagnose für den Zwischenstand im Arbeitsbaum.',
+};
+
 const seriell = seriellTore();
 const { deckung, ohneOn } = ciTore();
 const prGedeckt = (t: string): string[] => deckung.get(t)?.pr ?? [];
@@ -257,9 +273,80 @@ for (const [t, grund] of Object.entries(ALLOWLIST_NUR_CI)) {
   }
 }
 
+// ── (6) GRUNDMENGE (SCHÄRFUNG 14.9.2026, Befund B): jedes `check:*`-Skript ──
+//     läuft IRGENDWO — in check:seriell, in einer Kette, in einem Workflow oder
+//     in gate.sh — oder steht begründet auf ALLOWLIST_UNVERDRAHTET.
+//
+//     Warum eine eigene Deckungs-Rechnung und nicht `seriell ∪ alleCiPrTore`:
+//     Tore erreichen einen Lauf auch INDIREKT, und beides kommt im Repo vor —
+//     (a) über eine Kette in package.json (`check:netz:kette` reiht 16 Netz-
+//     Tore), (b) über einen Runner, der eine Kette AUSLIEST statt sie
+//     aufzurufen (`run-netz-alle.ts` liest 'check:netz:kette', `run-parallel.ts`
+//     liest 'check:seriell'). Beide Wege sind echte Läufe; wer sie nicht
+//     mitrechnet, erzeugt 16 falsche Rote und damit Druck, die Allowlist zu
+//     fluten — das Gegenteil eines scharfen Tors. Der Fixpunkt unten folgt
+//     darum beiden Kanten, bis nichts Neues mehr dazukommt.
+const alleCheckSkripte = Object.keys(pkg.scripts)
+  .filter((n) => n.startsWith('check:') || n === 'check')
+  // `check` und `check:seriell` SIND die Läufe, nicht Tore in einem Lauf.
+  .filter((n) => n !== 'check' && n !== 'check:seriell');
+
+const torZuPfad = new Map([...pfadZuTor()].map(([p, t]) => [t, p] as const));
+const irgendwoGedeckt = new Set<string>([...seriell, ...deckung.keys(), ...gateSh]);
+for (let geaendert = true; geaendert;) {
+  geaendert = false;
+  for (const t of [...irgendwoGedeckt]) {
+    // (a) Kette in package.json: `npm run check:x && npm run check:y`.
+    for (const m of (pkg.scripts[t] ?? '').matchAll(/npm run (check:[a-z0-9:-]+)/g)) {
+      if (!irgendwoGedeckt.has(m[1])) { irgendwoGedeckt.add(m[1]); geaendert = true; }
+    }
+    // (b) Runner, der eine KETTE ausliest statt sie aufzurufen.
+    //
+    //     Eng gefasst, und zwar aus Schaden: ein Literal zählt nur, wenn das
+    //     genannte Skript SELBST eine Kette ist (`npm run check:…` in seinem
+    //     Kommando). Sonst deckt jede blosse Nennung — und dieses Tor nennt in
+    //     ALLOWLIST_UNVERDRAHTET zwangsläufig genau die Namen, die es melden
+    //     soll: es hätte sich seine eigenen drei Befunde weggedeckt (gesehen
+    //     14.9.2026 beim Bau). Dieselbe Rekursions-Falle wie 20.7.2026, als das
+    //     Tor auf der eigenen Allowlist stand. Der eigene Quelltext ist darum
+    //     zusätzlich ausgeschlossen — eine Deckungsquelle, die sich selbst
+    //     befragt, ist keine.
+    const pfad = torZuPfad.get(t);
+    if (!pfad || !existsSync(pfad) || pfad === 'scripts/check-tor-paritaet.ts') continue;
+    for (const m of readFileSync(pfad, 'utf8').matchAll(/['"`](check:[a-z0-9:-]+)['"`]/g)) {
+      const istKette = /npm run check:/.test(pkg.scripts[m[1]] ?? '');
+      if (istKette && !irgendwoGedeckt.has(m[1])) { irgendwoGedeckt.add(m[1]); geaendert = true; }
+    }
+  }
+}
+
+for (const t of alleCheckSkripte) {
+  if (irgendwoGedeckt.has(t) || t in ALLOWLIST_UNVERDRAHTET) continue;
+  fehler.push(
+    `  ${t}: steht in package.json, läuft aber in KEINEM Lauf — nicht in\n` +
+    `      check:seriell, in keiner Kette, in keinem Workflow, nicht in gate.sh.\n` +
+    `      Ein Tor, das nie läuft, kann nicht scheitern (§6.7); es sieht nach\n` +
+    `      Deckung aus und ist keine (Befund B, PR #856: check:artikel-bestand).\n` +
+    `      → in check:seriell + ci.yml verdrahten, oder mit GRUND in\n` +
+    `        ALLOWLIST_UNVERDRAHTET (scripts/check-tor-paritaet.ts) eintragen.`);
+}
+
+// (7) Verrottete ALLOWLIST_UNVERDRAHTET: ein Eintrag, dessen Tor inzwischen
+//     doch irgendwo läuft (oder das es gar nicht mehr gibt), ist tote Regel.
+for (const [t, grund] of Object.entries(ALLOWLIST_UNVERDRAHTET)) {
+  if (!(t in pkg.scripts)) {
+    fehler.push(`  ${t}: steht auf ALLOWLIST_UNVERDRAHTET, existiert aber nicht (mehr) in package.json — Eintrag streichen.`);
+  } else if (irgendwoGedeckt.has(t)) {
+    fehler.push(
+      `  ${t}: läuft inzwischen in einem Lauf — ALLOWLIST_UNVERDRAHTET-Eintrag ist überholt, streichen.\n` +
+      `      (alter Grund: ${grund})`);
+  }
+}
+
 const imPrPfad = seriell.filter((t) => prGedeckt(t).length);
 const nurWaechter = seriell.filter((t) => !prGedeckt(t).length && waechterGedeckt(t).length);
 const nurCi = alleCiPrTore.filter((t) => !lokalGedeckt(t) && t in ALLOWLIST_NUR_CI);
+const unverdrahtet = alleCheckSkripte.filter((t) => !irgendwoGedeckt.has(t));
 
 if (fehler.length) {
   console.log(`check:tor-paritaet ROT — ${fehler.length} Abweichung(en):\n${fehler.join('\n')}`);
@@ -275,4 +362,8 @@ console.log(
   `Gegenrichtung: ${alleCiPrTore.length} Tore ruft ci.yml im PR-Pfad auf, ` +
   `${alleCiPrTore.length - nurCi.length} davon laufen auch lokal ` +
   `(check:seriell/gate.sh), ${nurCi.length} begründet auf ALLOWLIST_NUR_CI. ` +
-  `Kein Tor nur-CI ohne Eintrag.`);
+  `Kein Tor nur-CI ohne Eintrag. ` +
+  `Grundmenge: ${alleCheckSkripte.length} check:*-Skripte in package.json, ` +
+  `${alleCheckSkripte.length - unverdrahtet.length} laufen irgendwo ` +
+  `(Kette/Workflow/gate.sh), ${unverdrahtet.length} begründet auf ` +
+  `ALLOWLIST_UNVERDRAHTET. Kein Tor ohne Lauf.`);

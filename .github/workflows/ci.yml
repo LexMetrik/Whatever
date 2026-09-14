@@ -781,6 +781,19 @@ jobs:
       - name: Verweis-Inventar (Basislinie)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:verweis-inventar
+      # Artikel-Bestand (Z6c, W2·22, 14.9.2026): Drift-Tor der generierten
+      # Projektion `src/lib/normtext/artikel-bestand.generated.ts` gegen die
+      # Bund-Snapshots, aus denen sie entsteht (§5). Sie entscheidet in der
+      # Auslieferung, ob ein Fremd-Verweis einen Artikel-Anker bekommt oder auf
+      # den Erlass-Link zurückfällt — driftet sie, wird aus einem lebenden Ziel
+      # still ein totes (oder umgekehrt). Offline, liest nur Committetes.
+      # Verdrahtet als Nachzug zum Gegenprüfungs-Befund B: das Tor EXISTIERTE,
+      # lief aber in keinem einzigen Lauf (§6.7 — ein Tor, das nicht scheitern
+      # kann, ist gefährlicher als keines). Seither bindet Regel (6) von
+      # check:tor-paritaet jedes check:*-Skript maschinell an einen Lauf.
+      - name: Artikel-Bestand (Projektion gegen Snapshots)
+        if: needs.diff.outputs.art != 'doku'
+        run: npm run check:artikel-bestand
       - name: Import-Zyklen
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:zyklen
