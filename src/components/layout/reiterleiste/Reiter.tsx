@@ -265,11 +265,32 @@ export function Reiter({
         ev.preventDefault();
         const von = gezogenRef.current ?? ev.dataTransfer.getData(REITER_MIME);
         if (von && von !== t.path) {
+          // ── W2·26 · DAS LOSLASSEN VOLLZIEHT, WAS DIE MARKE ANGESAGT HAT ───
+          // GEMESSEN 14.9.2026 (Wurzel der 3/3 roten CI-Läufe in #859 und der
+          // 2/2 in #855; Messreihe in `e2e/w224-reiter-umordnen-d16.e2e.ts`
+          // beim Fall «was die Einfügemarke ansagt»): die Beschriftung eines
+          // Reiters kommt aus einem NACHLADENDEN Manifest — der Entscheid-
+          // Reiter wächst von «Entscheid öffnen» (171 px) auf «AppGer BS
+          // BEZ.2022.42» (225 px), und alles rechts davon rückt um 54 px. Fällt
+          // dieses Nachladen zwischen das letzte `dragover` und das `drop`,
+          // liegt ein Zeiger, der in der RECHTEN Hälfte des Ziels stand, ohne
+          // jede Bewegung in dessen linker: die Marke sagte «dahinter», das
+          // frisch gerechnete `drop` fügte «davor» ein.
+          //
+          // Die Marke ist die ZUSAGE (§8) — sie steht im Bild, der Zeiger nicht.
+          // Darum vollzieht das Loslassen die angesagte Seite und rechnet nicht
+          // neu. Nur wenn die Marke gar nicht an diesem Reiter steht (kein
+          // `dragover` angekommen, etwa weil Zeigerbewegung und Loslassen in
+          // EINEN Tick fielen — so tun es die synthetischen Züge der Sonden),
+          // bleibt die Geometrie der einzige Anhaltspunkt.
           const kasten = ev.currentTarget.getBoundingClientRect();
+          const davor = ueber?.path === t.path
+            ? ueber.davor
+            : ev.clientX < kasten.left + kasten.width / 2;
           // Über die Zonengrenze wird gar nicht erst gerufen — und `ordneTabsUm`
           // wiese den Zug auch dann ab, wenn es hier jemand doch täte (§5: die
           // Regel wohnt in `lib/tabs`, hier steht nur ihr Bild).
-          onUmordnen(von, t.path, ev.clientX < kasten.left + kasten.width / 2);
+          onUmordnen(von, t.path, davor);
         }
         gezogenRef.current = null; onZieht(null); onUeber(null);
       }}
