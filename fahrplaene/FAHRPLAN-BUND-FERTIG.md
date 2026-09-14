@@ -190,7 +190,16 @@ nie in der Projektion (§5), golden byte-gleich bzw. deklarierter Re-Bless.
 
 ---
 
-## §4 · Offene Punkte für David (nicht blockierend)
+## §4 · Offene Punkte für David — entschieden 14.9.2026
+
+> **Entscheid David 14.9.2026 (Chat, wörtlich): «fr/it später, zukunftsfassungen phase 1, randtitel
+> wie empfohlen».** Gebucht: **(a) = (ii)** — FR/IT nach Phase 1, als eigener Zug mit `W2·5g-ZEIT`
+> (Phase 3); **(b) = gestaffelt** — der Hinweis im Leserkopf («ab <Datum> gilt eine neue Fassung» +
+> amtlicher Link) ist Phase-1-Posten unter `W2·27-BUND-FERTIG`, Umschalter/Diff bleiben Phase 3;
+> **(c) = (i)** — `struktur.marginalie` wird die eine Quelle, `NormSnapshot.titel` wird Projektion
+> oder entfällt, Kanton migriert in Phase 2; Auflage Sidecar-Drift-Riegel zuerst (PR #851).
+> Die Optionen darunter bleiben als Entscheidungsgrundlage stehen.
+
 
 **(a) FR/IT-Fassungen — Phase 1 oder später?**
 Optionen: **(i)** in Phase 1, weil «vollständig» bei einem mehrsprachigen Bundesrecht auch die
