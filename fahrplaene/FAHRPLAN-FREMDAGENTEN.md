@@ -109,6 +109,23 @@ kommen, nicht aus dem Text. Rot-/Grün-Beweise (Wegwerf-Branch
 `package.json` berührt ⇒ Exit 1, sauberer Test-Split (Datei verschoben) ⇒
 Exit 0, Nicht-Jules-Branch ⇒ «nicht zuständig» Exit 0.
 
+**Regel 3b Kommentar-Multimenge — gebaut 14.9.2026, Anlass PR #855/#857.**
+Regel 3 (Summen-Bilanz, PR #662) prüfte nur die ZAHL der Kommentarzeilen: PR
+#855 baute die Summe nach einer Ablehnung exakt auf den Ausgangswert zurück
+(580 → 580) und verfälschte dabei trotzdem vier Zeileninhalte («hing» →
+«hung», «plötzlich» → «suddenly», «einziges» → «einziger», «ein» → «eins») —
+erst PR #857 (98 gelöschte Zeilen, Summe sichtbar gesunken) fing das Tor.
+Wurzel-Fix: Logik aus dem Inline-Step nach `scripts/analyse/kommentar-
+bilanz.ts` extrahiert (mit Unit-Test `kommentar-bilanz.test.ts`), Regel 3
+unverändert mitgezogen, dazu Regel 3b — MULTIMENGE der getrimmten
+Kommentarzeilen über Basis (merge-base) und Head, je Datei sortiert/gezählt
+(`sort | uniq -c`-Äquivalent): jede Zeile, deren Häufigkeit im Head sinkt,
+ist ein Befund (bis zu 20 gemeldet, mit Datei-Hinweis der Basis); Verschieben
+zwischen Dateien bleibt erlaubt, Zuwachs auch, Leerkommentare (blosse Marker
+ohne Text) sind ausgenommen. Ad-hoc-Lauf gegen den abgelehnten Kopf
+`ed381895` (Basis `27e255f2`) meldet exakt die vier Stellen in
+`Reiterleiste.tsx`, Regel 3 bleibt dabei (irreführend) grün — Beleg im PR.
+
 ### Phase 2 — Diskrepanz-Finder in der Korpus-Werkstatt (1 Session)
 
 Eingabe: amtliche Fassung zuerst (Fedlex-Filestore-HTML, gepinnt über
