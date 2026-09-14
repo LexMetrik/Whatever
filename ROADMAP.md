@@ -158,8 +158,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 > Beleg mit Norm + Link + Stand (§7), Korrektur nie in der Projektion, immer in der Pipeline-Quelle
 > (§5), golden byte-gleich bzw. deklarierter Re-Bless.
 
-- [ ] **Amtlicher Fedlex-Zitatgraph: Erlass-Verweise ohne Artikelnummer + Warn-Bericht + «zitiert von» (Bund)** *(`W2·22-VERWEIS-FEDLEX`, Fremdquellen-Sichtung 2.9.2026)*
-  <!-- @meta id: W2·22-VERWEIS-FEDLEX · status: ready · blocker: null · dep: [] · feld: korpus -->
+- [~] **Amtlicher Fedlex-Zitatgraph: Erlass-Verweise ohne Artikelnummer + Warn-Bericht + «zitiert von» (Bund)** *(`W2·22-VERWEIS-FEDLEX`, Fremdquellen-Sichtung 2.9.2026)*
+  <!-- @meta id: W2·22-VERWEIS-FEDLEX · status: wip · blocker: null · dep: [] · feld: korpus -->
   *dep auf W2·20 gelöst 14.9.2026: die V-1-Basislinie (`check:verweis-inventar`) besteht seit PR #599; der Rest von W2·20 (V-7-Bund-Rest, V-5) ist keine Vorbedingung des Zitatgraphen.*
   Quelle: [fremdquellen-sichtung-2026-09-02.md](bibliothek/recherche/fremdquellen-sichtung-2026-09-02.md)
   §1 (Rangliste #1/#2) + Abschnitt «jolux:Citation» im Dossier (OR: 2 315 Citations = 2 315
@@ -171,12 +171,14 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
     `src/lib/fedlex/nummer.ts`; alle vier Konsumenten lesen sie. 13 Fundstellen in 9 Bundes-
     erlassen lösen neu auf (41 unterdrückte Aufzählungs-Glieder → 50 Links, +2 Selbstsprünge),
     0 kantonale Stellen, 0 neue tote Anker; (b) ✅ erledigt (Wortlaut: Chronik, Umschichtung 6.9.2026);
-    (c) **Artikel-Anker gegen den Ziel-Snapshot prüfen, Fallback Erlass-Link** — ein Fremd-Anker
-    entsteht heute allein aus Kürzel + Nummer, ohne dass die Zielbestimmung im Snapshot des
-    Zielerlasses nachgeschlagen wird. Gemessen 2.9.2026: 16 tote Artikel-Anker aus Z5 (StGB
-    `art_91_a` ×4, StGB `art_340` …); dieselbe Mechanik trägt auch die ALTEN Anker-Pfade, der
-    Bestand ist also mitzumessen. Zielbild: existiert das Ziel-Token nicht, auf den Erlass-Link
-    zurückfallen statt auf einen toten Sprung (§8). Risikopfad — Gegenprüfung Pflicht.
+    (c) **Artikel-Anker gegen den Ziel-Snapshot prüfen, Fallback Erlass-Link** —
+    ✅ **gebaut 14.9.2026**: **39 tote Fremd-Anker** von 10 254 prüfbaren, 28 Ziele (36 Bund /
+    3 Kanton), Wächter `check:verweis-inventar`; amtlich gegengeprüft, keine Extraktionslücke.
+  - [ ] **Z6c-Folgen** — **(1)** Sammel-Anker auflösen (19 Ziele, `sammelblockFuer()` erkennt 15);
+    **(2)** Umnummerierungen ZGB 89bis→89a (7 Ziele, Alias ≠ Block-Sprung); **(3)** kantonaler
+    Fallback (V-3-Weiche, 579 Stellen, 3 tote) + Projektion vom Leser-Prefetch lösen (14.66 KB
+    gzip auf jeder Seite); **(4)** V-4 intern adressieren statt immer Fedlex.
+    *Alle Risikopfad ⇒ Gegenprüfung. Herleitung und Wortlaut: Chronik, Umschichtung 14.9.2026 (3).*
   - [ ] **Z4 Leser-Schicht «zitiert von»** (Erlassebene, nur Bund) — erst nach Z1–Z3 und Abnahme.
 
 - [ ] **Norm-Zeitmaschine + Fassungs-Diff** *(`W2·5g-ZEIT`, Ideen-Intake 20.7.2026; Phase 3 — FR/IT-Datenanteil gehört hierher, Entscheid David 14.9.2026 «fr/it später», FAHRPLAN-BUND-FERTIG §4 a)*
