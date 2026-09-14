@@ -1,7 +1,7 @@
 {
   "erlassKey": "VRV",
   "sr": "741.11",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -10,6 +10,19 @@
       "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.11",
       "sha": "a3d631890ee43b27a05a0e677634c97bba7e7516567699e86b9f30d6b4f480a9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/452",
+      "dateDocument": "2026-08-19",
+      "roFundstelle": "AS 2026 452",
+      "titelDe": "Verkehrsregelnverordnung (VRV)",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/452/de",
+      "sha": "f05c5f936c7a912c801deec6b333706fa23a5d7490f011a732fb32883fa3c2be"
     },
     {
       "art": "aenderung",
@@ -510,5 +523,5 @@
       "sha": "690535022420f04ff65640d4e65b94b86fce14998941f49a43be44e8f7fda6be"
     }
   ],
-  "sha": "811340a0d8d24cf72c637403d032f57873520ba591b59e104996ad758a76a51d"
+  "sha": "8b743a22a236607c8ea8dabe2e0106e45047544e60692d6a2d3001b00ab52f41"
 }

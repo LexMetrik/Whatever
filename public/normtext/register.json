@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-12",
+  "erzeugt": "2026-09-14",
   "erlasse": [
     {
       "key": "ZGB",
@@ -609,6 +609,25 @@
       "pdfUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1977/1931_1931_1931/20230123/de/pdf-a/fedlex-data-admin-ch-eli-cc-1977-1931_1931_1931-20230123-de-pdf-a.pdf",
       "pdfStand": "2023-01-23",
       "inkraftSeit": "1978-01-01"
+    },
+    {
+      "key": "EOEBV",
+      "ebene": "bund",
+      "kanton": null,
+      "kuerzel": "EÖBV",
+      "titel": "Verordnung vom 8. Dezember 2017 über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen (EÖBV)",
+      "sr": "211.435.1",
+      "rechtsgebiet": "privat",
+      "sprache": "de",
+      "rang": 30,
+      "status": "snapshot",
+      "datei": "bund/EOEBV.json",
+      "artikelAnzahl": 29,
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de",
+      "fassungsToken": "20240101",
+      "pdfPfad": null,
+      "inkraftSeit": "2018-02-01"
     },
     {
       "key": "PRHG",
@@ -3452,6 +3471,25 @@
       }
     },
     {
+      "key": "AVG",
+      "ebene": "bund",
+      "kanton": null,
+      "kuerzel": "AVG",
+      "titel": "Bundesgesetz vom 6. Oktober 1989 über die Arbeitsvermittlung und den Personalverleih (Arbeitsvermittlungsgesetz, AVG)",
+      "sr": "823.11",
+      "rechtsgebiet": "oeffentlich",
+      "sprache": "de",
+      "rang": 127,
+      "status": "snapshot",
+      "datei": "bund/AVG.json",
+      "artikelAnzahl": 49,
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de",
+      "fassungsToken": "20260101",
+      "pdfPfad": null,
+      "inkraftSeit": "1991-07-01"
+    },
+    {
       "key": "MWSTG",
       "ebene": "bund",
       "kanton": null,
@@ -4259,13 +4297,14 @@
       "rechtsgebiet": "international",
       "sprache": "de",
       "rang": 89,
-      "status": "pdf-embed",
-      "datei": null,
-      "artikelAnzahl": 0,
+      "status": "snapshot",
+      "datei": "bund/EMRK.json",
+      "artikelAnzahl": 60,
       "stand": "2022-09-16",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1974/2151_2151_2151/de",
-      "fassungsToken": "",
-      "pdfPfad": "pdf/EMRK.pdf"
+      "fassungsToken": "20220916",
+      "pdfPfad": null,
+      "inkraftSeit": "1974-11-28"
     },
     {
       "key": "DSGVO",

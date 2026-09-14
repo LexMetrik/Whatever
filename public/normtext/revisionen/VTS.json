@@ -1,7 +1,7 @@
 {
   "erlassKey": "VTS",
   "sr": "741.41",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -10,6 +10,26 @@
       "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
       "sha": "2d518667d63cc31e3400ecc607806f91907355fa2e9db9ad226066cda02a254b"
+    },
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2028-02-01",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
+      "sha": "2a0144392216e1ce42edf4a4338fec81339b84cf3e8ec2bbb81d331233cac585"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/454",
+      "dateDocument": "2026-08-19",
+      "roFundstelle": "AS 2026 454",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/454/de",
+      "sha": "929852b156738530353173d0e7311bb231eba94488ff79ffa16e8404a556aae9"
     },
     {
       "art": "sammelerlass-marker",
@@ -744,5 +764,5 @@
       "sha": "c3ea467df9b0ba720d3d121add5906f26c71599d2e7fad9394693f16a15a1009"
     }
   ],
-  "sha": "de1cb7120ab11c58e1b53405976538cdfe74d22ce181764f6326ec86c6945590"
+  "sha": "b39ad50565f403d3f1b46d90b8064666d9a61ad122752f866425b7fd5d3e020c"
 }

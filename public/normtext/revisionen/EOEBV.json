@@ -1,0 +1,51 @@
+{
+  "erlassKey": "EOEBV",
+  "sr": "211.435.1",
+  "abgerufen": "2026-09-14",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "revisionen": [
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.435.1",
+      "sha": "0948e0548b1938c9458fab84b1861f47961d8e1034d7ad53bab91e37b0b9b5d6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/479",
+      "dateDocument": "2023-08-23",
+      "roFundstelle": "AS 2023 479",
+      "titelDe": "Verordnung über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen (EÖBV)",
+      "titelFr": "Ordonnance sur l’établissement d’actes authentiques électroniques et la légalisation électronique (OAAE)",
+      "titelIt": "Ordinanza sulla realizzazione di atti pubblici e autenticazioni in forma elettronica (OAPuE)",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/479/de",
+      "sha": "baceea10340b52ac042da7e73c8b751268ffffca57f97085a0e205ecb84d869b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/29",
+      "dateDocument": "2017-12-08",
+      "roFundstelle": "AS 2018 89",
+      "titelDe": "Verordnung über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen (EÖBV)",
+      "titelFr": "Ordonnance sur l'établissement d'actes authentiques électroniques et la légalisation électronique (OAAE)",
+      "titelIt": "Ordinanza sulla realizzazione di atti pubblici e autenticazioni in forma elettronica (OAPuE)",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/29/de",
+      "sha": "ae9cfce42dca4e2d1b91275493dea2b3df6902b701fba7be185f5df3bb8f218c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1892-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/12/369_337_369",
+      "dateDocument": "1891-06-25",
+      "roFundstelle": "AS 12 369",
+      "titelDe": "Bundesgesetz vom 25. Juni 1891 betreffend die zivilrechtlichen Verhältnisse der Niedergelassenen und Aufenthalter",
+      "titelFr": "Loi fédérale du 25 juin 1891 sur les rapports de droit civil des citoyens établis ou en séjour",
+      "titelIt": "Legge federale del 25 giugno 1891 sui rapporti di diritto civile dei domiciliati e dei dimoranti",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/12/369_337_369/de",
+      "sha": "31621c6bf7224af073cca7effea27fc822c0e8781cf212c00af50d05c44f8622"
+    }
+  ],
+  "sha": "e7658537101110deb19867cfc27222ac45646912ba620a518a796c2108fafe5e"
+}

@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-11",
+  "erzeugt": "2026-09-14",
   "erlasse": {
     "ADOV": {
       "quote": 0,
@@ -108,6 +108,12 @@
       "ocFussnoten": 10,
       "ocGetroffen": 2,
       "datum": "2026-09-11"
+    },
+    "AVG": {
+      "quote": 0.0588,
+      "ocFussnoten": 17,
+      "ocGetroffen": 1,
+      "datum": "2026-09-14"
     },
     "AVIG": {
       "quote": 0.1803,
@@ -361,6 +367,12 @@
       "ocGetroffen": 13,
       "datum": "2026-09-11"
     },
+    "EMRK": {
+      "quote": 0,
+      "ocFussnoten": 1,
+      "ocGetroffen": 0,
+      "datum": "2026-09-14"
+    },
     "ENG": {
       "quote": 0.6364,
       "ocFussnoten": 11,
@@ -378,6 +390,12 @@
       "ocFussnoten": 7,
       "ocGetroffen": 2,
       "datum": "2026-09-11"
+    },
+    "EOEBV": {
+      "quote": 0.5,
+      "ocFussnoten": 2,
+      "ocGetroffen": 1,
+      "datum": "2026-09-14"
     },
     "EOG": {
       "quote": 0.3125,

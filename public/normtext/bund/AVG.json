@@ -1,0 +1,1862 @@
+{
+  "erzeugt": "2026-09-14",
+  "eintraege": [
+    {
+      "id": "bund/AVG/art_1",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "1",
+      "artikelLabel": "Art. 1",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Dieses Gesetz bezweckt:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Regelung der privaten Arbeitsvermittlung und des Personalverleihs;"
+            },
+            {
+              "marke": "b",
+              "text": "die Einrichtung einer öffentlichen Arbeitsvermittlung, die zur Schaffung und Erhaltung eines ausgeglichenen Arbeitsmarktes beiträgt;"
+            },
+            {
+              "marke": "c",
+              "text": "den Schutz der Arbeitnehmer, welche die private oder die öffentliche Arbeitsvermittlung oder den Personalverleih in Anspruch nehmen."
+            }
+          ]
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_1",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "ad42870a730369405878fa2ba0053253f7f183259bd19b56fbddc30c4cf1f8bb"
+    },
+    {
+      "id": "bund/AVG/art_2",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "2",
+      "artikelLabel": "Art. 2",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Wer regelmässig und gegen Entgelt im Inland Arbeit vermittelt, indem er Stellensuchende und Arbeitgeber zum Abschluss von Arbeitsverträgen zusammenführt (Vermittler), benötigt eine Betriebsbewilligung des kantonalen Arbeitsamtes."
+        },
+        {
+          "absatz": "2",
+          "text": "Eine Betriebsbewilligung benötigt auch, wer Personen für künstlerische und ähnliche Darbietungen vermittelt."
+        },
+        {
+          "absatz": "3",
+          "text": "Wer regelmässig Arbeit ins oder aus dem Ausland vermittelt (Auslandsvermittlung), benötigt zusätzlich zur kantonalen Betriebsbewilligung eine Bewilligung des Staatssekretariats für Wirtschaft (SECO)."
+        },
+        {
+          "absatz": "4",
+          "text": "Als Vermittlung aus dem Ausland gilt ebenfalls die Vermittlung eines Ausländers, der sich in der Schweiz aufhält, aber noch nicht zur Erwerbstätigkeit berechtigt ist."
+        },
+        {
+          "absatz": "5",
+          "text": "Zweigniederlassungen, die in einem anderen Kanton liegen als der Hauptsitz, benötigen eine Betriebsbewilligung; liegen sie im gleichen Kanton, so müssen sie dem kantonalen Arbeitsamt gemeldet werden."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_2",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "2d449f46d8901bee844089e517b1724832172312cbe8937c03a670acc051b2bd"
+    },
+    {
+      "id": "bund/AVG/art_3",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "3",
+      "artikelLabel": "Art. 3",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Bewilligung wird erteilt, wenn der Betrieb:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "im Schweizerischen Handelsregister eingetragen ist;"
+            },
+            {
+              "marke": "b",
+              "text": "über ein zweckmässiges Geschäftslokal verfügt;"
+            },
+            {
+              "marke": "c",
+              "text": "kein anderes Gewerbe betreibt, welches die Interessen von Stellensuchenden oder von Arbeitgebern gefährden könnte."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die für die Leitung verantwortlichen Personen müssen:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Schweizer Bürger oder Ausländer mit Niederlassungsbewilligung sein;"
+            },
+            {
+              "marke": "b",
+              "text": "für eine fachgerechte Vermittlung Gewähr bieten;"
+            },
+            {
+              "marke": "c",
+              "text": "einen guten Leumund geniessen."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Die Bewilligung zur Auslandsvermittlung wird nur erteilt, wenn die für die Leitung verantwortlichen Personen ausserdem sicherstellen, dass im Betrieb ausreichende Kenntnisse der Verhältnisse in den entsprechenden Staaten vorhanden sind."
+        },
+        {
+          "absatz": "4",
+          "text": "Die Bewilligung für Arbeitsvermittlungsstellen beruflicher und gemeinnütziger Institutionen wird erteilt, wenn die Voraussetzungen der Absätze 1 Buchstabe c, 2 und 3 erfüllt sind."
+        },
+        {
+          "absatz": "5",
+          "text": "Der Bundesrat regelt die Einzelheiten."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_3",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "106c419e8bc9ae627a8cf0a1eefb8ec96a25129c54d4d292bc10854a66b1f1dd"
+    },
+    {
+      "id": "bund/AVG/art_4",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "4",
+      "artikelLabel": "Art. 4",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Bewilligung wird unbefristet erteilt und berechtigt zur Vermittlung in der ganzen Schweiz."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Bewilligung zur Auslandsvermittlung wird auf bestimmte Staaten begrenzt."
+        },
+        {
+          "absatz": "3",
+          "text": "Die für die Leitung verantwortlichen Personen werden in der Bewilligung namentlich aufgeführt."
+        },
+        {
+          "absatz": "4",
+          "text": "Der Bundesrat regelt die Bewilligungsgebühren."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_4",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "c03cabedf3351c3e809040073bf117f9d880781992c5bf510dcc876fa9007df8"
+    },
+    {
+      "id": "bund/AVG/art_5",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "5",
+      "artikelLabel": "Art. 5",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Bewilligung wird entzogen, wenn der Vermittler:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Bewilligung durch unrichtige oder irreführende Angaben oder durch Verschweigen wesentlicher Tatsachen erwirkt hat;"
+            },
+            {
+              "marke": "b",
+              "text": "wiederholt oder in schwerwiegender Weise gegen dieses Gesetz oder die Ausführungsvorschriften oder insbesondere gegen die ausländerrechtlichen Zulassungsvorschriften des Bundes oder der Kantone verstösst;"
+            },
+            {
+              "marke": "c",
+              "text": "die Bewilligungsvoraussetzungen nicht mehr erfüllt."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Erfüllt der Vermittler einzelne Bewilligungsvoraussetzungen nicht mehr, so hat ihm die Bewilligungsbehörde vor dem Entzug der Bewilligung eine Frist zur Wiederherstellung des rechtmässigen Zustandes zu setzen."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_5",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "b8c8d964efce20ab8411cec0266e8d24babf7fc8846c08b8626f0e5bdd3f8a57"
+    },
+    {
+      "id": "bund/AVG/art_6",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "6",
+      "artikelLabel": "Art. 6",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Der Vermittler muss der Bewilligungsbehörde auf Verlangen alle erforderlichen Auskünfte erteilen und die nötigen Unterlagen vorlegen."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_6",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "eabeb683c2e7386104cf3c4f9233970e7d30701678730c048c7049b92548b897"
+    },
+    {
+      "id": "bund/AVG/art_7",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "7",
+      "artikelLabel": "Art. 7",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Bei der öffentlichen Ausschreibung von Arbeitsangeboten und Stellengesuchen muss der Vermittler seinen Namen und seine genaue Adresse angeben. Die Ausschreibungen müssen den tatsächlichen Verhältnissen entsprechen."
+        },
+        {
+          "absatz": "2",
+          "text": "Zur Beobachtung des Arbeitsmarktes kann die Bewilligungsbehörde den Vermittler verpflichten, ihr anonymisierte statistische Angaben über seine Tätigkeit zu liefern."
+        },
+        {
+          "absatz": "3",
+          "text": "Der Vermittler darf Daten über Stellensuchende und offene Stellen nur bearbeiten, soweit und solange sie für die Vermittlung erforderlich sind. Er hat diese Daten geheim zu halten."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_7",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "65180365cd44f7b2ed5b0c6bae427c9deb44c0c0b9a5b4b3e490369a9478ee07"
+    },
+    {
+      "id": "bund/AVG/art_8",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "8",
+      "artikelLabel": "Art. 8",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Bei entgeltlicher Vermittlung muss der Vermittler den Vertrag mit dem Stellensuchenden schriftlich abschliessen. Er muss darin seine Leistungen und die dafür geschuldete Vergütung angeben."
+        },
+        {
+          "absatz": "2",
+          "text": "Nichtig sind Vereinbarungen, die den Stellensuchenden:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "hindern, sich an einen anderen Vermittler zu wenden;"
+            },
+            {
+              "marke": "b",
+              "text": "verpflichten, die Vermittlungsgebühr erneut zu entrichten, wenn er ohne die Hilfe des Vermittlers weitere Arbeitsverträge mit demselben Arbeitgeber abschliesst."
+            }
+          ]
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_8",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "cfb53033c5fd09afa3ecb2310b76392610f60896258e93e88d84434cf6a8641f"
+    },
+    {
+      "id": "bund/AVG/art_9",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "9",
+      "artikelLabel": "Art. 9",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Vermittler darf vom Stellensuchenden eine Einschreibegebühr und eine Vermittlungsprovision verlangen. Für Dienstleistungen, die besonders vereinbart werden, kann der Vermittler eine zusätzliche Entschädigung verlangen."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Stellensuchende schuldet die Provision erst, wenn die Vermittlung zum Abschluss eines Arbeitsvertrages geführt hat."
+        },
+        {
+          "absatz": "3",
+          "text": "Bei der Auslandsvermittlung schuldet der Stellensuchende die Provision erst, wenn er von den Behörden des Landes, in das er vermittelt wird, die Bewilligung zur Erwerbstätigkeit erhalten hat. Der Vermittler darf jedoch eine angemessene Entschädigung für die tatsächlichen Auslagen und Aufwendungen verlangen, sobald der Arbeitsvertrag zustande gekommen ist."
+        },
+        {
+          "absatz": "4",
+          "text": "Der Bundesrat setzt die Einschreibegebühren und die Vermittlungsprovisionen fest."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_9",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "19c25f3a58aae7fb72594f235e6958d63ad870f44b0846d6fa50132c7d16db71"
+    },
+    {
+      "id": "bund/AVG/art_10",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "10",
+      "artikelLabel": "Art. 10",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "…"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_10",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
+    },
+    {
+      "id": "bund/AVG/art_11",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "11",
+      "artikelLabel": "Art. 11",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Bund kann ausnahmsweise Finanzhilfen gewähren:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "den paritätischen Arbeitsvermittlungsstellen von Arbeitgeber- und Arbeitnehmerverbänden gesamtschweizerischen Charakters, wenn sie im Auftrag des SECO in der Arbeitsvermittlung tätig sind;"
+            },
+            {
+              "marke": "b",
+              "text": "den Arbeitsvermittlungsstellen schweizerischer Verbände im Ausland, die nach ausländischem Recht unentgeltlich arbeiten müssen;"
+            },
+            {
+              "marke": "c",
+              "text": "den Institutionen, die bei der Durchführung zwischenstaatlicher Vereinbarungen, insbesondere der Vereinbarungen über den Austausch von Stagiaires, mitwirken."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die Finanzhilfen betragen in der Regel höchstens 30 Prozent der anrechenbaren Betriebskosten; sie dürfen das Betriebsdefizit nicht übersteigen."
+        },
+        {
+          "absatz": "3",
+          "text": "Der Bundesrat regelt die Einzelheiten; er setzt insbesondere die anrechenbaren Betriebskosten fest und bezeichnet die beitragsberechtigten Institutionen."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_11",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "7f8cc86352a8acfcb0022e9d81c5690aea5b45601d54c6934a3a568b97afbaf6"
+    },
+    {
+      "id": "bund/AVG/art_12",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "12",
+      "artikelLabel": "Art. 12",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Arbeitgeber (Verleiher), die Dritten (Einsatzbetrieben) gewerbsmässig Arbeitnehmer überlassen, benötigen eine Betriebsbewilligung des kantonalen Arbeitsamtes."
+        },
+        {
+          "absatz": "2",
+          "text": "Für den Personalverleih ins Ausland ist neben der kantonalen Bewilligung zusätzlich eine Betriebsbewilligung des SECO nötig. Der Personalverleih vom Ausland in die Schweiz ist nicht gestattet."
+        },
+        {
+          "absatz": "3",
+          "text": "Zweigniederlassungen, die in einem anderen Kanton liegen als der Hauptsitz, benötigen eine Betriebsbewilligung; liegen sie im gleichen Kanton, so müssen sie dem kantonalen Arbeitsamt gemeldet werden."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_12",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "d5cf34978206a67b24a31dd47b08f5071938fb22c6742a2c6f4cbddd3dd58c79"
+    },
+    {
+      "id": "bund/AVG/art_13",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "13",
+      "artikelLabel": "Art. 13",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Bewilligung wird erteilt, wenn der Betrieb:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "im Schweizerischen Handelsregister eingetragen ist;"
+            },
+            {
+              "marke": "b",
+              "text": "über ein zweckmässiges Geschäftslokal verfügt;"
+            },
+            {
+              "marke": "c",
+              "text": "kein anderes Gewerbe betreibt, welches die Interessen von Arbeitnehmern oder von Einsatzbetrieben gefährden könnte."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die für die Leitung verantwortlichen Personen müssen:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Schweizer Bürger oder Ausländer mit Niederlassungsbewilligung sein;"
+            },
+            {
+              "marke": "b",
+              "text": "für eine fachgerechte Verleihtätigkeit Gewähr bieten;"
+            },
+            {
+              "marke": "c",
+              "text": "einen guten Leumund geniessen."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Die Bewilligung zum Personalverleih ins Ausland wird nur erteilt, wenn die für die Leitung verantwortlichen Personen ausserdem sicherstellen, dass im Betrieb ausreichende Kenntnisse der Verhältnisse in den entsprechenden Staaten vorhanden sind."
+        },
+        {
+          "absatz": "4",
+          "text": "Der Bundesrat regelt die Einzelheiten."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_13",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "75ef616ae2e912e29c606b354b4cccf23a9d1e629d541789c56a0253534d4b56"
+    },
+    {
+      "id": "bund/AVG/art_14",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "14",
+      "artikelLabel": "Art. 14",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Verleiher muss zur Sicherung von Lohnansprüchen aus dem Personalverleih eine Kaution leisten."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Kaution bemisst sich nach dem Geschäftsumfang. Der Bundesrat setzt den Mindest- und den Höchstbetrag fest und regelt die Einzelheiten."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_14",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "cd12e1cbaf0152778fbd5243a18e8732885f433afe8da2024a809f615c00ca9a"
+    },
+    {
+      "id": "bund/AVG/art_15",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "15",
+      "artikelLabel": "Art. 15",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Bewilligung wird unbefristet erteilt und berechtigt zum Personalverleih in der ganzen Schweiz."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Bewilligung zum Personalverleih ins Ausland wird auf bestimmte Staaten begrenzt."
+        },
+        {
+          "absatz": "3",
+          "text": "Die für die Leitung verantwortlichen Personen werden in der Bewilligung namentlich aufgeführt."
+        },
+        {
+          "absatz": "4",
+          "text": "Der Bundesrat regelt die Bewilligungsgebühren."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_15",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "b3be26d11306c091aacaaabce13ce864cbf661f412669e6e0d9714d013eed808"
+    },
+    {
+      "id": "bund/AVG/art_16",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "16",
+      "artikelLabel": "Art. 16",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Bewilligung wird entzogen, wenn der Verleiher:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Bewilligung durch unrichtige oder irreführende Angaben oder durch Verschweigen wesentlicher Tatsachen erwirkt hat;"
+            },
+            {
+              "marke": "b",
+              "text": "wiederholt oder in schwerwiegender Weise gegen zwingende Vorschriften des Arbeitnehmerschutzes, gegen dieses Gesetz oder die Ausführungsvorschriften oder insbesondere die ausländerrechtlichen Zulassungsvorschriften des Bundes oder der Kantone verstösst;"
+            },
+            {
+              "marke": "c",
+              "text": "die Bewilligungsvoraussetzungen nicht mehr erfüllt."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Erfüllt der Verleiher einzelne der Bewilligungsvoraussetzungen nicht mehr, so hat ihm die Bewilligungsbehörde vor dem Entzug der Bewilligung eine Frist zur Wiederherstellung des rechtmässigen Zustandes zu setzen."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_16",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "c495daf106e51f32d68b147958adaf50cf20d9b26f7f0fae3b50f5b7ae00cf7e"
+    },
+    {
+      "id": "bund/AVG/art_17",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "17",
+      "artikelLabel": "Art. 17",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Verleiher muss der Bewilligungsbehörde auf Verlangen alle erforderlichen Auskünfte erteilen und die nötigen Unterlagen vorlegen."
+        },
+        {
+          "absatz": "2",
+          "text": "Besteht der begründete Verdacht, dass jemand ohne Bewilligung gewerbsmässig Arbeitnehmer an Dritte verleiht, so kann die Bewilligungsbehörde von allen Beteiligten Auskünfte verlangen."
+        },
+        {
+          "absatz": "3",
+          "text": "Der Verleiher muss in den Bereichen mit einem allgemein verbindlichen Gesamtarbeitsvertrag dem zuständigen paritätischen Organ alle erforderlichen Unterlagen zur Kontrolle der Einhaltung der ortsüblichen Arbeitsbedingungen vorlegen. In Bereichen ohne allgemein verbindlichen Gesamtarbeitsvertrag gilt die Auskunftspflicht gegenüber der zuständigen kantonalen tripartiten Kommission."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_17",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "f9218cd5750143ff7f3650065fbb13be504d2b7fba39e45e3e570a110b14f7ec"
+    },
+    {
+      "id": "bund/AVG/art_18",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "18",
+      "artikelLabel": "Art. 18",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Bei der öffentlichen Ausschreibung von Arbeitsangeboten muss der Verleiher seinen Namen und seine genaue Adresse angeben. Er muss in der Ausschreibung klar darauf hinweisen, dass der Arbeitnehmer für den Personalverleih angestellt wird."
+        },
+        {
+          "absatz": "2",
+          "text": "Zur Beobachtung des Arbeitsmarktes kann die Bewilligungsbehörde den Verleiher verpflichten, ihr anonymisierte statistische Angaben über seine Tätigkeit zu liefern."
+        },
+        {
+          "absatz": "3",
+          "text": "Der Verleiher darf Daten über den Arbeitnehmer nur bearbeiten und an Einsatzbetriebe weitergeben, soweit und solange sie für die Verleihung erforderlich sind. Jede darüber hinausgehende Bearbeitung oder Weitergabe dieser Daten bedarf der ausdrücklichen Zustimmung des Arbeitnehmers."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_18",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "c74e51f71a8aa641e7fb9f0f633869e02e3f30ec3bed003b195b5d41a0dba802"
+    },
+    {
+      "id": "bund/AVG/art_19",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "19",
+      "artikelLabel": "Art. 19",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Verleiher muss den Vertrag mit dem Arbeitnehmer in der Regel schriftlich abschliessen. Der Bundesrat regelt die Ausnahmen."
+        },
+        {
+          "absatz": "2",
+          "text": "Im Vertrag sind die folgenden Punkte zu regeln:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Art der zu leistenden Arbeit;"
+            },
+            {
+              "marke": "b",
+              "text": "der Arbeitsort sowie der Beginn des Einsatzes;"
+            },
+            {
+              "marke": "c",
+              "text": "die Dauer des Einsatzes oder die Kündigungsfrist;"
+            },
+            {
+              "marke": "d",
+              "text": "die Arbeitszeiten;"
+            },
+            {
+              "marke": "e",
+              "text": "der Lohn, allfällige Spesen und Zulagen sowie die Abzüge für die Sozialversicherung;"
+            },
+            {
+              "marke": "f",
+              "text": "die Leistungen bei Überstunden, Krankheit, Mutterschaft, Unfall, Militärdienst und Ferien;"
+            },
+            {
+              "marke": "g",
+              "text": "die Termine für die Auszahlung des Lohnes, der Zulagen und übrigen Leistungen."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Werden die Erfordernisse hinsichtlich Form oder Inhalt nicht erfüllt, so gelten die orts- und berufsüblichen Arbeitsbedingungen oder die gesetzlichen Vorschriften, ausser es seien für den Arbeitnehmer günstigere Arbeitsbedingungen mündlich vereinbart worden."
+        },
+        {
+          "absatz": "4",
+          "text": "Bei unbefristeten Einsätzen kann das Arbeitsverhältnis während der ersten sechs Monate von den Vertragsparteien wie folgt gekündigt werden:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "während der ersten drei Monate der ununterbrochenen Anstellung mit einer Frist von mindestens zwei Tagen;"
+            },
+            {
+              "marke": "b",
+              "text": "in der Zeit vom vierten bis und mit dem sechsten Monat der ununterbrochenen Anstellung mit einer Frist von mindestens sieben Tagen;"
+            }
+          ]
+        },
+        {
+          "absatz": "5",
+          "text": "Nichtig sind Vereinbarungen, die",
+          "items": [
+            {
+              "marke": "a",
+              "text": "vom Arbeitnehmer Gebühren, finanzielle Vorleistungen oder Lohnrückbehalte verlangen;"
+            },
+            {
+              "marke": "b",
+              "text": "es dem Arbeitnehmer verunmöglichen oder erschweren, nach Ablauf des Arbeitsvertrags in den Einsatzbetrieb überzutreten."
+            }
+          ]
+        },
+        {
+          "absatz": "6",
+          "text": "Verfügt der Verleiher nicht über die erforderliche Bewilligung, so ist sein Arbeitsvertrag mit dem Arbeitnehmer ungültig. In diesem Fall ist Artikel 320 Absatz 3 des Obligationenrechts über die Folgen des ungültigen Arbeitsvertrags anwendbar."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_19",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "9698d84cf4db3df2f7990d8570d21c64fa53fe7b99dee6919f7ee66fa7df2204"
+    },
+    {
+      "id": "bund/AVG/art_20",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "20",
+      "artikelLabel": "Art. 20",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Untersteht ein Einsatzbetrieb einem allgemein verbindlich erklärten Gesamtarbeitsvertrag, so muss der Verleiher gegenüber dem Arbeitnehmer die Lohn- und Arbeitszeitbestimmungen des Gesamtarbeitsvertrages einhalten. Sieht ein allgemein verbindlich erklärter Gesamtarbeitsvertrag einen obligatorischen Beitrag an Weiterbildungs- und Vollzugskosten vor, so gelten die entsprechenden Bestimmungen auch für den Verleiher, wobei die Beiträge anteilsmässig nach Massgabe der Dauer des Einsatzes zu leisten sind. Der Bundesrat regelt die Einzelheiten."
+        },
+        {
+          "absatz": "2",
+          "text": "Das im allgemein verbindlich erklärten Gesamtarbeitsvertrag zur Kontrolle vorgesehene paritätische Organ ist zur Kontrolle des Verleihers berechtigt. Bei nicht geringfügigen Verstössen muss es dem kantonalen Arbeitsamt Meldung erstatten und kann dem fehlbaren Verleiher:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "nach Massgabe des Gesamtarbeitsvertrages eine Konventionalstrafe auferlegen;"
+            },
+            {
+              "marke": "b",
+              "text": "die Kontrollkosten ganz oder teilweise auferlegen."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Untersteht ein Einsatzbetrieb einem allgemein verbindlich erklärten Gesamtarbeitsvertrag, der den flexiblen Altersrücktritt regelt, so muss der Verleiher gegenüber dem Arbeitnehmer diese Regelung ebenfalls einhalten. Der Bundesrat kann Vorschriften darüber erlassen, ab welcher Mindestanstellungsdauer der Arbeitnehmer einer solchen Regelung zu unterstellen ist."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_20",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "02aba8888b6a7dac546576e7343a2db414653468e6249eda3d9bf38f31fe0147"
+    },
+    {
+      "id": "bund/AVG/art_21",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "21",
+      "artikelLabel": "Art. 21",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Verleiher darf in der Schweiz nur Ausländer anstellen, die zur Erwerbstätigkeit zugelassen und zum Stellenwechsel berechtigt sind."
+        },
+        {
+          "absatz": "2",
+          "text": "Ausnahmen sind möglich, wenn besondere wirtschaftliche Gründe dies rechtfertigen."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_21",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "098e28e8aca66d3e9f64c0d90ab7705595efcfd48b1a708eb1c6e0b3352985c3"
+    },
+    {
+      "id": "bund/AVG/art_22",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "22",
+      "artikelLabel": "Art. 22",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Verleiher muss den Vertrag mit dem Einsatzbetrieb schriftlich abschliessen. Er muss darin angeben:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Adresse des Verleihers und der Bewilligungsbehörde;"
+            },
+            {
+              "marke": "b",
+              "text": "die beruflichen Qualifikationen des Arbeitnehmers und die Art der Arbeit;"
+            },
+            {
+              "marke": "c",
+              "text": "den Arbeitsort und den Beginn des Einsatzes;"
+            },
+            {
+              "marke": "d",
+              "text": "die Dauer des Einsatzes oder die Kündigungsfristen;"
+            },
+            {
+              "marke": "e",
+              "text": "die für den Arbeitnehmer geltenden Arbeitszeiten;"
+            },
+            {
+              "marke": "f",
+              "text": "die Kosten des Verleihs, einschliesslich aller Sozialleistungen, Zulagen, Spesen und Nebenleistungen."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Vereinbarungen, die es dem Einsatzbetrieb erschweren oder verunmöglichen, nach Ende des Einsatzes mit dem Arbeitnehmer einen Arbeitsvertrag abzuschliessen, sind nichtig."
+        },
+        {
+          "absatz": "3",
+          "text": "Zulässig sind jedoch Vereinbarungen, wonach der Verleiher vom Einsatzbetrieb eine Entschädigung verlangen kann, wenn der Einsatz weniger als drei Monate gedauert hat und der Arbeitnehmer weniger als drei Monate nach Ende dieses Einsatzes in den Einsatzbetrieb übertritt."
+        },
+        {
+          "absatz": "4",
+          "text": "Die Entschädigung darf nicht höher sein als der Betrag, den der Einsatzbetrieb dem Verleiher bei einem dreimonatigen Einsatz für Verwaltungsaufwand und Gewinn zu bezahlen hätte. Das bereits geleistete Entgelt für Verwaltungsaufwand und Gewinn muss der Verleiher anrechnen."
+        },
+        {
+          "absatz": "5",
+          "text": "Verfügt der Verleiher nicht über die erforderliche Bewilligung, so ist der Verleihvertrag nichtig. In diesem Fall sind die Bestimmungen des Obligationenrechts über unerlaubte Handlungen und ungerechtfertigte Bereicherung anwendbar."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_22",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "31d393803f5a5d87c6c50827f2a1c4d2ce2adacfafb36d8289b8fba13dde534b"
+    },
+    {
+      "id": "bund/AVG/art_23",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "23",
+      "artikelLabel": "Art. 23",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "…"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_23",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
+    },
+    {
+      "id": "bund/AVG/art_24",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "24",
+      "artikelLabel": "Art. 24",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Arbeitsämter in den Kantonen erfassen die sich meldenden Stellensuchenden und die gemeldeten offenen Stellen. Sie beraten Stellensuchende und Arbeitgeber bei der Wahl oder der Besetzung eines Arbeitsplatzes und bemühen sich, die geeigneten Stellen und Arbeitskräfte zu vermitteln."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie berücksichtigen bei der Vermittlung die persönlichen Wünsche, Eigenschaften und beruflichen Fähigkeiten der Stellensuchenden sowie die Bedürfnisse und betrieblichen Verhältnisse der Arbeitgeber sowie die allgemeine Arbeitsmarktlage."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_24",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "5bf2402447fa291dd3cb5803659c386fe8671370a4a3216dad867e77420496ed"
+    },
+    {
+      "id": "bund/AVG/art_25",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "25",
+      "artikelLabel": "Art. 25",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Konsularische Direktion des Eidgenössischen Departements für auswärtige Angelegenheiten (EDA) unterhält einen Beratungsdienst, der ohne Gewähr Informationen über Einreise, Arbeitsmöglichkeiten und Lebensbedingungen in ausländischen Staaten beschafft und an Personen weitergibt, die im Ausland eine Erwerbstätigkeit ausüben wollen."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Ausgleichsstelle der Arbeitslosenversicherung unterstützt die rückwanderungswilligen Schweizer Staatsangehörigen bei ihrer Arbeitssuche und koordiniert die Bemühungen der Arbeitsämter bei deren Vermittlung."
+        },
+        {
+          "absatz": "2bis",
+          "text": "Der Bund kann die Suche nach Auslandstellen mit weiteren Massnahmen unterstützen."
+        },
+        {
+          "absatz": "3",
+          "text": "…"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_25",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "cb87a880c71fa0f630bce27e7c4e1c54b88ae5336b88e6b99e7039e1ab8bdafc"
+    },
+    {
+      "id": "bund/AVG/art_26",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "26",
+      "artikelLabel": "Art. 26",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Arbeitsämter stellen ihre Dienste allen schweizerischen Stellensuchenden und den in der Schweiz domizilierten Arbeitgebern unparteiisch zur Verfügung."
+        },
+        {
+          "absatz": "2",
+          "text": "Ebenso vermitteln und beraten sie ausländische Stellensuchende, die sich in der Schweiz aufhalten und zur Erwerbstätigkeit sowie zum Stellen- und Berufswechsel berechtigt sind."
+        },
+        {
+          "absatz": "3",
+          "text": "Die Arbeitsämter dürfen an der Arbeitsvermittlung nicht mitwirken, wenn der Arbeitgeber:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die orts- und berufsüblichen Lohn- und Arbeitsbedingungen erheblich unterschreitet;"
+            },
+            {
+              "marke": "b",
+              "text": "mehrfach oder schwer gegen Arbeitnehmerschutzbestimmungen verstossen hat."
+            }
+          ]
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_26",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "5239c7e5cdcc3a0f9c1b085c293f63b59baacec7e910515a4097e0e7e416683d"
+    },
+    {
+      "id": "bund/AVG/art_27",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "27",
+      "artikelLabel": "Art. 27",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die öffentliche Arbeitsvermittlung ist unentgeltlich. Den Benützern dürfen nur Auslagen in Rechnung gestellt werden, die mit ihrem Einverständnis durch besonderen Aufwand entstanden sind."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_27",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "eda849ee8bf77014ba4d74f392cf31005b937f62a4bd50117e6ef525f5f4e74e"
+    },
+    {
+      "id": "bund/AVG/art_28",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "28",
+      "artikelLabel": "Art. 28",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Arbeitsämter helfen Stellensuchenden, deren Vermittlung unmöglich oder stark erschwert ist, bei der Wahl einer geeigneten Umschulung oder Weiterbildung."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Kantone können für Arbeitslose, deren Vermittlung unmöglich oder stark erschwert ist, Kurse zur Umschulung, Weiterbildung und Eingliederung organisieren."
+        },
+        {
+          "absatz": "3",
+          "text": "Sie können durch Beschäftigungsmassnahmen nach Artikel 64a des Arbeitslosenversicherungsgesetzes vom 25. Juni 1982 (AVIG) für die vorübergehende Beschäftigung von Arbeitslosen sorgen."
+        },
+        {
+          "absatz": "4",
+          "text": "Die Arbeitsämter setzen ihre Bemühungen um Arbeitsvermittlung in geeigneter Weise fort, auch wenn die arbeitslose Person im Rahmen der Massnahmen nach den Artikeln 59–71d AVIG einen Kurs besucht oder einer vorübergehenden Beschäftigung nachgeht."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_28",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "ab41914667e3e78136010de50eb0c2ae352e29263cd3807c8307315e45e11cfc"
+    },
+    {
+      "id": "bund/AVG/art_29",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "29",
+      "artikelLabel": "Art. 29",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Entlassungen einer grösseren Anzahl von Arbeitnehmern sowie Betriebsschliessungen muss der Arbeitgeber dem zuständigen Arbeitsamt möglichst frühzeitig melden, spätestens aber zum Zeitpunkt, in dem er die Kündigungen ausspricht."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Bundesrat bestimmt die Ausnahmen von der Meldepflicht."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_29",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "c7aad0949c3c9b1a21f6fae6be683f1b15357e9890ff1bb00505fc30253d0ee4"
+    },
+    {
+      "id": "bund/AVG/art_30",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "30",
+      "artikelLabel": "Art. 30",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Öffentliche Ankündigungen oder Veranstaltungen oder andere Vorkehren, die bestimmt oder geeignet sind, auswanderungswillige Erwerbstätige über die Arbeits- und Lebensbedingungen in ausländischen Staaten irrezuführen, sind verboten."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_30",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "acb4cff5c5b2b7531bc7a320bfbea4852106996629e2edde20805f5493626a0a"
+    },
+    {
+      "id": "bund/AVG/art_31",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "31",
+      "artikelLabel": "Art. 31",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Eidgenössische Arbeitsmarktbehörde ist das SECO."
+        },
+        {
+          "absatz": "2",
+          "text": "Es beaufsichtigt den Vollzug dieses Gesetzes durch die Kantone und fördert die Koordination der öffentlichen Arbeitsvermittlung unter den Kantonen."
+        },
+        {
+          "absatz": "3",
+          "text": "Es beaufsichtigt die private Auslandsvermittlung und den Personalverleih ins Ausland."
+        },
+        {
+          "absatz": "4",
+          "text": "Es kann in Zusammenarbeit mit den Kantonen Kurse für die Aus- und Weiterbildung des Personals der Arbeitsmarktbehörden durchführen."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_31",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "adf947bf6b7f101e83f334f25494427e8d0fafa182eecd4b012c4a0efaea4bc9"
+    },
+    {
+      "id": "bund/AVG/art_32",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "32",
+      "artikelLabel": "Art. 32",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Kantone regeln die Aufsicht über die öffentliche und private Arbeitsvermittlung sowie über den Personalverleih."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie unterhalten mindestens ein kantonales Arbeitsamt."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_32",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "eca3fb1de548babe928b09a63c36eee90b44993c8c25def2ed3dabce742512bd"
+    },
+    {
+      "id": "bund/AVG/art_33",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "33",
+      "artikelLabel": "Art. 33",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Arbeitsmarktbehörden von Bund und Kantonen streben durch Zusammenarbeit einen gesamtschweizerisch ausgeglichenen Arbeitsmarkt an. In den einzelnen Wirtschaftsregionen arbeiten die Arbeitsmarktbehörden der betroffenen Kantone direkt zusammen."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Arbeitsämter bemühen sich bei der Durchführung von Massnahmen auf dem Gebiet der Arbeitsvermittlung um eine wirksame Zusammenarbeit mit den Arbeitgeber- und Arbeitnehmerverbänden sowie mit anderen Organisationen, die auf dem Gebiet der Arbeitsvermittlung tätig sind."
+        },
+        {
+          "absatz": "3",
+          "text": "Der Bundesrat regelt die Zuständigkeit der Arbeitsmarktbehörden und der Institutionen der Invalidenversicherung für die Vermittlung von Invaliden und Behinderten."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_33",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "d5e2ddb43bd916e753e07e1ef4f92556600186bf154a322effbc8acf190af9d4"
+    },
+    {
+      "id": "bund/AVG/art_33_a",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "33_a",
+      "artikelLabel": "Art. 33a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die mit der Durchführung oder mit der Kontrolle oder Beaufsichtigung der Durchführung dieses Gesetzes betrauten Organe sind befugt, Personendaten zu bearbeiten oder bearbeiten zu lassen, die sie benötigen, um die ihnen nach diesem Gesetz übertragenen Aufgaben zu erfüllen, namentlich um:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Stellensuchende zu erfassen, zu vermitteln und zu beraten;"
+            },
+            {
+              "marke": "b",
+              "text": "offene Stellen zu erfassen, bekannt zu geben und zuzuweisen;"
+            },
+            {
+              "marke": "c",
+              "text": "Entlassungen und Betriebsschliessungen zu erfassen;"
+            },
+            {
+              "marke": "d",
+              "text": "arbeitsmarktliche Massnahmen durchzuführen;"
+            },
+            {
+              "marke": "e",
+              "text": "die Aufsicht über die Durchführung dieses Gesetzes durchzuführen;"
+            },
+            {
+              "marke": "f",
+              "text": "Statistiken zu führen."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Besonders schützenswerte Personendaten dürfen bearbeitet werden:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "über die Gesundheit und die Religionszugehörigkeit der Stellensuchenden, wenn diese Daten für die Vermittlung erforderlich sind;"
+            },
+            {
+              "marke": "b",
+              "text": "über Massnahmen, die im Rahmen des Vollzugs dieses Gesetzes und des AVIG verfügt werden oder vorgesehen sind, wenn diese Daten eine direkte Auswirkung auf die Leistung der Arbeitslosenversicherung haben."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Ausserdem dürfen die mit der Durchführung oder mit der Kontrolle oder Beaufsichtigung der Durchführung dieses Gesetzes betrauten Organe Personendaten, die die Beurteilung der persönlichen und der wirtschaftlichen Situation der Empfänger von Beratungsleistungen nach diesem Gesetz erlauben, bearbeiten oder bearbeiten lassen."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_33_a",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "62ed7b351ac472ab05920156406ad27360fde4ded0e525d4fcbc695daff11002"
+    },
+    {
+      "id": "bund/AVG/art_34",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "34",
+      "artikelLabel": "Art. 34",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Personen, die an der Durchführung, der Kontrolle oder an der Beaufsichtigung der öffentlichen Arbeitsvermittlung beteiligt sind, müssen die Angaben über Stellensuchende, Arbeitgeber und offene Stellen gegenüber Dritten geheim halten."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_34",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "29bdf902537e26b4cdde24d98e36de02c99b5b5325c27ba3fc941daf1aba717a"
+    },
+    {
+      "id": "bund/AVG/art_34_a",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "34_a",
+      "artikelLabel": "Art. 34a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Sofern kein überwiegendes Privatinteresse entgegensteht, dürfen Daten im Einzelfall und auf schriftliches und begründetes Gesuch hin bekannt gegeben werden an:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Organe der Invalidenversicherung, wenn sich eine Pflicht zur Bekanntgabe aus dem Bundesgesetz vom 19. Juni 1959 über die Invalidenversicherung ergibt;"
+            },
+            {
+              "marke": "b",
+              "text": "Sozialhilfebehörden, wenn sie für die Festsetzung, Änderung oder Rückforderung von Leistungen beziehungsweise für die Verhinderung ungerechtfertigter Bezüge erforderlich sind;"
+            },
+            {
+              "marke": "c",
+              "text": "Zivilgerichte, wenn sie für die Beurteilung eines familien- oder erbrechtlichen Streitfalles erforderlich sind;"
+            },
+            {
+              "marke": "d",
+              "text": "Strafgerichte und Strafuntersuchungsbehörden, wenn sie für die Abklärung eines Verbrechens oder eines Vergehens erforderlich sind;"
+            },
+            {
+              "marke": "e",
+              "text": "die Kindes- und Erwachsenenschutzbehörden nach Artikel 448 Absatz 4 des Zivilgesetzbuchs."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Sofern kein überwiegendes Privatinteresse entgegensteht, dürfen Daten bekanntgegeben werden an:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "andere mit der Durchführung sowie der Kontrolle oder der Beaufsichtigung der Durchführung dieses Gesetzes betrauten Organe, wenn sie für die Erfüllung der ihnen nach diesem Gesetz übertragenen Aufgaben erforderlich sind;"
+            },
+            {
+              "marke": "b",
+              "text": "Organe einer Sozialversicherung, wenn sich eine Pflicht zur Bekanntgabe aus einem Bundesgesetz ergibt;"
+            },
+            {
+              "marke": "c",
+              "text": "Organe der Bundesstatistik, nach dem Bundesstatistikgesetz vom 9. Oktober 1992;"
+            },
+            {
+              "marke": "d",
+              "text": "Strafuntersuchungsbehörden, wenn es die Anzeige oder die Abwendung eines Verbrechens erfordert."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Daten, die von allgemeinem Interesse sind und sich auf die Anwendung dieses Gesetzes beziehen, dürfen veröffentlicht werden. Die Anonymität der Stellensuchenden und der Arbeitgeber muss gewahrt bleiben."
+        },
+        {
+          "absatz": "4",
+          "text": "In den übrigen Fällen dürfen Daten an Dritte wie folgt bekannt gegeben werden:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "nicht personenbezogene Daten, sofern die Bekanntgabe einem überwiegenden Interesse entspricht;"
+            },
+            {
+              "marke": "b",
+              "text": "Personendaten, sofern die betroffene Person im Einzelfall schriftlich eingewilligt hat oder, wenn das Einholen der Einwilligung nicht möglich ist, diese nach den Umständen als im Interesse des Stellensuchenden vorausgesetzt werden darf."
+            }
+          ]
+        },
+        {
+          "absatz": "5",
+          "text": "Es dürfen nur die Daten bekannt gegeben werden, welche für den in Frage stehenden Zweck erforderlich sind."
+        },
+        {
+          "absatz": "6",
+          "text": "Der Bundesrat regelt die Modalitäten der Bekanntgabe und die Information der betroffenen Person."
+        },
+        {
+          "absatz": "7",
+          "text": "Die Datenbekanntgabe erfolgt in der Regel schriftlich und kostenlos. Der Bundesrat kann die Erhebung einer Gebühr vorsehen, wenn besonders aufwendige Arbeiten erforderlich sind."
+        },
+        {
+          "absatz": "8",
+          "text": "Die Datenbekanntgabe kann auf elektronischem Weg erfolgen."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_34_a",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "dfc63cbab3e155b3ec26cccff9296e606c8203ecaffe2fae77ed1c71e4efc34f"
+    },
+    {
+      "id": "bund/AVG/art_34_b",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "34_b",
+      "artikelLabel": "Art. 34b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Sofern überwiegende Privatinteressen gewahrt bleiben, steht die Akteneinsicht zu:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "den Stellensuchenden und den Arbeitgebern, für die sie betreffenden Daten;"
+            },
+            {
+              "marke": "b",
+              "text": "Personen, die einen Anspruch oder eine Verpflichtung nach diesem Gesetz haben, für diejenigen Daten, die für die Wahrung des Anspruchs oder die Erfüllung der Verpflichtung erforderlich sind;"
+            },
+            {
+              "marke": "c",
+              "text": "Personen und Institutionen, denen ein Rechtsmittel gegen eine auf Grund dieses Gesetzes erlassene Verfügung zusteht, für die zur Ausübung dieses Rechts erforderlichen Daten;"
+            },
+            {
+              "marke": "d",
+              "text": "Behörden, die zuständig sind für Beschwerden gegen auf Grund dieses Gesetzes erlassene Verfügungen, für die zur Erfüllung dieser Aufgaben erforderlichen Daten."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Handelt es sich um Gesundheitsdaten, deren Bekanntgabe sich für die zur Einsicht berechtigte Person gesundheitlich nachteilig auswirken könnte, so kann von ihr verlangt werden, dass sie eine Ärztin oder einen Arzt bezeichnet, die oder der ihr diese Daten bekannt gibt."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_34_b",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "80e0c05e9b98a8241832436725fdbdffc58c4b26e98193f3a0b54939808be330"
+    },
+    {
+      "id": "bund/AVG/art_35",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "35",
+      "artikelLabel": "Art. 35",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Ausgleichsstelle der Arbeitslosenversicherung (Art. 83 Abs. 3 AVIG) betreibt Informationssysteme für Dienstleistungen:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "der öffentlichen Arbeitsvermittlung (Art. 83 Abs. 1bis Bst. b AVIG), um:"
+            },
+            {
+              "marke": "1",
+              "text": "die Arbeitsvermittlung zu erleichtern,",
+              "tiefe": 1
+            },
+            {
+              "marke": "2",
+              "text": "den Vollzug des AVIG zu gewährleisten,",
+              "tiefe": 1
+            },
+            {
+              "marke": "3",
+              "text": "den Arbeitsmarkt zu beobachten,",
+              "tiefe": 1
+            },
+            {
+              "marke": "4",
+              "text": "die Zusammenarbeit zwischen den Organen der Arbeitsvermittlung, Arbeitslosenversicherung und der Invalidenversicherung zu erleichtern,",
+              "tiefe": 1
+            },
+            {
+              "marke": "5",
+              "text": "die Zusammenarbeit zwischen den Organen der Arbeitslosenversicherung, der öffentlichen und privaten Arbeitsvermittlung und den Arbeitgebern zu erleichtern;",
+              "tiefe": 1
+            },
+            {
+              "marke": "b",
+              "text": "auf der Plattform der öffentlichen Arbeitsvermittlung (Art. 83 Abs. 1bis Bst. e AVIG), um:"
+            },
+            {
+              "marke": "1",
+              "text": "Einsicht in die offenen Stellen zu haben,",
+              "tiefe": 1
+            },
+            {
+              "marke": "2",
+              "text": "Einsicht in die meldepflichtigen Stellen zu haben,",
+              "tiefe": 1
+            },
+            {
+              "marke": "3",
+              "text": "offene Stellen zu melden,",
+              "tiefe": 1
+            },
+            {
+              "marke": "4",
+              "text": "Stellensuchende zu kontaktieren,",
+              "tiefe": 1
+            },
+            {
+              "marke": "5",
+              "text": "die offenen Stellen zu bewirtschaften.",
+              "tiefe": 1
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Im Informationssystem nach Absatz 1 Buchstabe a dürfen Personendaten, einschliesslich besonders schützenswerter Personendaten nach Artikel 33a Absatz 2, bearbeitet werden."
+        },
+        {
+          "absatz": "3",
+          "text": "Die Durchführungsorgane nach Artikel 76 Absatz 1 Buchstaben a und c AVIG haben Zugriff auf die Informationssysteme nach Artikel 83 Absatz 1bis AVIG, soweit dies zur Erfüllung ihrer Aufgaben nach den Artikeln 81 und 85 AVIG erforderlich ist."
+        },
+        {
+          "absatz": "3bis",
+          "text": "Soweit es für den Vollzug dieses Gesetzes und des AVIG notwendig ist, dürfen Personendaten, einschliesslich besonders schützenswerter Personendaten, zwischen den Informationssystemen der öffentlichen Arbeitsvermittlung und den Informationssystemen der Arbeitslosenversicherung ausgetauscht werden."
+        },
+        {
+          "absatz": "3ter",
+          "text": "Folgende Personen und Stellen haben einen gesicherten Zugriff auf die Plattform der öffentlichen Arbeitsvermittlung:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die bei einem RAV erfassten Stellensuchenden für den Zugriff auf die gemeldeten Stelleninformationen;"
+            },
+            {
+              "marke": "b",
+              "text": "die Arbeitgeber, zur Meldung von offenen Stellen und zur Kontaktaufnahme mit Stellensuchenden;"
+            },
+            {
+              "marke": "c",
+              "text": "die privaten Arbeitsvermittler, die eine Vermittlungsbewilligung haben, zur Einsichtnahme in nicht anonymisierte Profile von Stellensuchenden;"
+            },
+            {
+              "marke": "d",
+              "text": "…"
+            },
+            {
+              "marke": "e",
+              "text": "die konsularische Direktion des EDA für die Erfüllung ihrer Aufgaben nach Artikel 25 Absatz 1;"
+            },
+            {
+              "marke": "f",
+              "text": "die Organisatoren von arbeitsmarktlichen Massnahmen, zum Hochladen von Teilnahmebescheinigungen der versicherten Personen (Art. 59b und 59cbis Abs. 3 AVIG)."
+            }
+          ]
+        },
+        {
+          "absatz": "3quater",
+          "text": "Folgende Organe haben für Zugriff auf das Informationssystem der öffentlichen Arbeitsvermittlung und können Daten bearbeiten:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Organe der Invalidenversicherung: im Hinblick auf die berufliche Wiedereingliederung von Personen im Rahmen der interinstitutionellen Zusammenarbeit nach Artikel 35a;"
+            },
+            {
+              "marke": "b",
+              "text": "die Organe der Sozialhilfe: im Hinblick auf die berufliche Wiedereingliederung von Personen im Rahmen der interinstitutionellen Zusammenarbeit nach Artikel 35a."
+            }
+          ]
+        },
+        {
+          "absatz": "4",
+          "text": "Der Bund beteiligt sich an den Kosten, soweit diese durch Bundesaufgaben bedingt sind."
+        },
+        {
+          "absatz": "5",
+          "text": "Der Bundesrat regelt:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Verantwortung für den Datenschutz;"
+            },
+            {
+              "marke": "b",
+              "text": "die zu erfassenden Daten;"
+            },
+            {
+              "marke": "c",
+              "text": "die Aufbewahrungsfrist;"
+            },
+            {
+              "marke": "d",
+              "text": "den Umfang der Zugriffs- und Bearbeitungsrechte für Personendaten, einschliesslich besonders schützenswerter Personendaten, der genannten Personen, Stellen und Organe nach den Absätzen 3 und 3ter;"
+            },
+            {
+              "marke": "e",
+              "text": "die Organisation und den Betrieb des Informationssystems;"
+            },
+            {
+              "marke": "f",
+              "text": "die Zusammenarbeit zwischen den beteiligten Behörden;"
+            },
+            {
+              "marke": "g",
+              "text": "die Datensicherheit."
+            }
+          ]
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_35",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "4c1c2f90b92c83a72333289021f735281d65c9c67a6f5952b9cc81bcb1e772eb"
+    },
+    {
+      "id": "bund/AVG/art_35_a",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "35_a",
+      "artikelLabel": "Art. 35a",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Zum Zwecke der interinstitutionellen Zusammenarbeit nach Artikel 85f AVIG kann den Berufsberatungsstellen, den Sozialdiensten der Kantone und Gemeinden, den Durchführungsorganen der kantonalen Arbeitslosenhilfegesetze, der Invaliden- und Krankenversicherung und der Asylgesetzgebung, den kantonalen Berufsbildungsbehörden, der Schweizerischen Unfallversicherungsanstalt sowie anderen für die Eingliederung von versicherten Personen wichtigen privaten und öffentlichen Institutionen im Einzelfall Zugriff auf die erforderlichen Daten aus dem Informationssystem gewährt werden, sofern:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die betroffene Person Leistungen von einer dieser Stellen bezieht und der Gewährung des Zugriffs zustimmt; und"
+            },
+            {
+              "marke": "b",
+              "text": "die genannten Stellen den Durchführungsorganen der Arbeitslosenversicherung Gegenrecht gewähren."
+            }
+          ]
+        },
+        {
+          "absatz": "1bis",
+          "text": "Die Durchführungsorgane der Arbeitslosenversicherung und die Invalidenversicherungsstellen sind bei der interinstitutionellen Zusammenarbeit gegenseitig von der Schweigepflicht entbunden, sofern:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "kein überwiegendes Privatinteresse entgegensteht; und"
+            },
+            {
+              "marke": "b",
+              "text": "die Auskünfte und Unterlagen dazu dienen, in Fällen, in denen die zuständige Kostenträgerin noch nicht klar bestimmbar ist:"
+            },
+            {
+              "marke": "1",
+              "text": "die für die betroffene Person geeigneten Eingliederungsmassnahmen zu ermitteln, und",
+              "tiefe": 1
+            },
+            {
+              "marke": "2",
+              "text": "die Ansprüche der betroffenen Person gegenüber der Arbeitslosenversicherung und der Invalidenversicherung zu klären.",
+              "tiefe": 1
+            }
+          ]
+        },
+        {
+          "absatz": "1ter",
+          "text": "Der Datenaustausch nach Absatz 1bis darf auch ohne Zustimmung der betroffenen Person und im Einzelfall auch mündlich erfolgen. Die betroffene Person ist anschliessend über den erfolgten Datenaustausch und dessen Inhalt zu informieren."
+        },
+        {
+          "absatz": "2",
+          "text": "Den privaten Arbeitsvermittlern, die eine Vermittlungsbewilligung besitzen, dürfen Daten über Stellensuchende aus dem Informationssystem in einem geeigneten Abrufverfahren zur Verfügung gestellt werden. Die Daten müssen hierfür anonymisiert sein. Die Pflicht zur Anonymität entfällt nur dann, wenn der oder die Stellensuchende schriftlich eingewilligt hat."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_35_a",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "5067f43e705723b1ffe17aff11fda8e87154fbda598955cf364da7b6f944d5f8"
+    },
+    {
+      "id": "bund/AVG/art_35_b",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "35_b",
+      "artikelLabel": "Art. 35b",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das SECO führt mit Hilfe der zuständigen kantonalen Behörden auf einem geeigneten Informationssystem ein Verzeichnis über die bewilligten, privaten Vermittlungs- und Verleihbetriebe und ihre verantwortlichen Leiter und Leiterinnen."
+        },
+        {
+          "absatz": "2",
+          "text": "Das Verzeichnis kann besonders schützenswerte Daten über den Entzug, die Aufhebung oder die Nichterteilung einer Bewilligung enthalten."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_35_b",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "68ed95353c41427336d0422b57f4ddb4cf6986844987f7cacd217db98565c406"
+    },
+    {
+      "id": "bund/AVG/art_36",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "36",
+      "artikelLabel": "Art. 36",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Bundesrat ordnet die zur Arbeitsmarktbeobachtung erforderlichen Erhebungen an."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Arbeitsämter beobachten die Lage und Entwicklung des Arbeitsmarktes in ihren Kantonen. Sie erstatten dem SECO Bericht über die Arbeitsmarktlage sowie über die öffentliche und private Arbeitsvermittlung und den Personalverleih."
+        },
+        {
+          "absatz": "3",
+          "text": "Die Ergebnisse werden so bekannt gegeben, dass keine Rückschlüsse auf betroffene Personen möglich sind."
+        },
+        {
+          "absatz": "4",
+          "text": "Die zur Arbeitsmarktbeobachtung erhobenen Daten dürfen nur für statistische Zwecke verwendet werden."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_36",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "a3f8eb69ae56577cb1c2b1f44d9b5b1ba9370471998dfe336e57def1f398465e"
+    },
+    {
+      "id": "bund/AVG/art_37",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "37",
+      "artikelLabel": "Art. 37",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Der Bundesrat bestellt eine Kommission für Wirtschaftspolitik. Bund, Kantone, Wissenschaft, Arbeitgeber und Arbeitnehmer sind in der Kommission vertreten."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_37",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "48de47877d47e9ea05903f89a2d2297adfa050665b45c18d7241814f5eb02f0e"
+    },
+    {
+      "id": "bund/AVG/art_38",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "38",
+      "artikelLabel": "Art. 38",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Gegen Verfügungen nach diesem Gesetz kann Beschwerde geführt werden."
+        },
+        {
+          "absatz": "2",
+          "text": "Beschwerdeinstanzen sind:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "mindestens eine kantonale Behörde für die Verfügungen der Arbeitsämter;"
+            },
+            {
+              "marke": "b",
+              "text": "das Bundesverwaltungsgericht für die erstinstanzlichen Verfügungen von Bundesbehörden;"
+            },
+            {
+              "marke": "c",
+              "text": "das Bundesgericht nach Massgabe des Bundesgerichtsgesetzes vom 17. Juni 2005;"
+            },
+            {
+              "marke": "d",
+              "text": "…"
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Das Verfahren vor den kantonalen Behörden richtet sich nach dem kantonalen Verfahrensrecht, soweit das Bundesrecht nichts anderes bestimmt. Für das Verfahren vor den Bundesbehörden gelten die allgemeinen Bestimmungen über die Bundesrechtspflege."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_38",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "ece1ed06016aea8d4f439c125c1a4fb66a743849b9429e1997ef0e90671b889e"
+    },
+    {
+      "id": "bund/AVG/art_39",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "39",
+      "artikelLabel": "Art. 39",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Mit Busse bis zu 100 000 Franken wird bestraft, wer vorsätzlich:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "ohne die erforderliche Bewilligung Arbeit vermittelt oder Personal verleiht;"
+            },
+            {
+              "marke": "b",
+              "text": "als Vermittler oder Verleiher Ausländer entgegen den ausländerrechtlichen Vorschriften vermittelt oder als Arbeitnehmer anstellt. Vorbehalten bleibt eine zusätzliche Bestrafung nach Artikel 23 des Bundesgesetzes vom 26. März 1931 über Aufenthalt und Niederlassung der Ausländer."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Mit Busse bis zu 40 000 Franken wird bestraft, wer vorsätzlich:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "als Arbeitgeber die Dienste eines Vermittlers oder Verleihers beansprucht, von dem er weiss, dass er die erforderliche Bewilligung nicht besitzt;"
+            },
+            {
+              "marke": "b",
+              "text": "die Melde- und Auskunftspflicht (Art. 6, 7, 17, 18 und 29) verletzt;"
+            },
+            {
+              "marke": "c",
+              "text": "als Verleiher den wesentlichen Vertragsinhalt nicht schriftlich oder nicht vollständig mitteilt oder eine unzulässige Vereinbarung trifft (Art. 19 und 22);"
+            },
+            {
+              "marke": "d",
+              "text": "als Vermittler gegen die Bestimmungen über die Vermittlungsprovision verstösst (Art. 9) oder als Verleiher vom Arbeitnehmer Gebühren oder finanzielle Vorleistungen verlangt (Art. 19 Abs. 5);"
+            },
+            {
+              "marke": "e",
+              "text": "irreführende Auswanderungspropaganda für Erwerbstätige betreibt (Art. 30);"
+            },
+            {
+              "marke": "f",
+              "text": "seine Schweigepflicht verletzt (Art. 7, 18 und 34)."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Mit Busse bis zu 20 000 Franken wird bestraft, wer fahrlässig eine strafbare Handlung nach Absatz 1 oder Absatz 2 Buchstaben b–f begeht. In leichten Fällen kann von einer Bestrafung Umgang genommen werden."
+        },
+        {
+          "absatz": "4",
+          "text": "Mit Freiheitsstrafe bis zu drei Jahren oder Geldstrafe wird bestraft, wer durch unrichtige oder irreführende Angaben oder durch Verschweigen wesentlicher Tatsachen eine Bewilligung erwirkt."
+        },
+        {
+          "absatz": "5",
+          "text": "Auf Widerhandlungen in Geschäftsbetrieben sind die Artikel 6 und 7 des Bundesgesetzes vom 22. März 1974 über das Verwaltungsstrafrecht anwendbar."
+        },
+        {
+          "absatz": "6",
+          "text": "Die Strafverfolgung ist Sache der Kantone."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_39",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "b9a3992fa3e19bd7d394b29d448b6aa26a65d5edf046fe59f87664123a8810b2"
+    },
+    {
+      "id": "bund/AVG/art_40",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "40",
+      "artikelLabel": "Art. 40",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Kantone vollziehen dieses Gesetz, soweit der Vollzug nicht dem Bund übertragen ist."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_40",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "caf41590e8e091fb799bbc883356cfd76fb8e8c6069b6822941fcbcb80c2387e"
+    },
+    {
+      "id": "bund/AVG/art_41",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "41",
+      "artikelLabel": "Art. 41",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Bundesrat erlässt nach Anhören der Kantone und der beteiligten Organisationen die Ausführungsbestimmungen."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Kantone erlassen die Ausführungsbestimmungen für ihren Bereich."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_41",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "ed7f17ef9796c76930c6caffa501365037663fea77d01d3e4667bd139bdd7630"
+    },
+    {
+      "id": "bund/AVG/art_42",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "42",
+      "artikelLabel": "Art. 42",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "…"
+        },
+        {
+          "absatz": "2",
+          "text": "Es werden aufgehoben:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "das Bundesgesetz vom 22. Juni 1951 über die Arbeitsvermittlung;"
+            },
+            {
+              "marke": "b",
+              "text": "das Bundesgesetz vom 22. März 1888 betreffend den Geschäftsbetrieb von Auswanderungsagenturen."
+            }
+          ]
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_42",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "aa4a6b93556d698e7c8a024af3d9b756e14e17728f2237da5b201771d0313803"
+    },
+    {
+      "id": "bund/AVG/art_43",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "43",
+      "artikelLabel": "Art. 43",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "…"
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_43",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
+    },
+    {
+      "id": "bund/AVG/art_44",
+      "ebene": "bund",
+      "quelle": "AVG",
+      "erlass": "AVG",
+      "artikel": "44",
+      "artikelLabel": "Art. 44",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Dieses Gesetz untersteht dem fakultativen Referendum."
+        },
+        {
+          "absatz": "2",
+          "text": "Der Bundesrat bestimmt das Inkrafttreten."
+        }
+      ],
+      "stand": "2026-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de#art_44",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20260101",
+      "sha": "917f2b9dc0ea8d81aa43538af7c6943f35d4219aa1a845ffaf8965b1017bf238"
+    }
+  ]
+}

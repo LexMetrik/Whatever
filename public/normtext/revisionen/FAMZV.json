@@ -1,9 +1,16 @@
 {
   "erlassKey": "FAMZV",
   "sr": "836.21",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2027-07-01",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/836.21",
+      "sha": "a8a70e0b2687d28ef9aa74df9ef932d275e8de27dc938e473b1a5da053b3d4c2"
+    },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2025-01-01",
@@ -125,5 +132,5 @@
       "sha": "ce41ad8aaf77367160eb178414d2e17e8ab762f8ea573d1b03b6beac4243a473"
     }
   ],
-  "sha": "1e6bb36eb933236ac8a083fc99b5dee328c40c4ea8b8373deba40e75e07e7023"
+  "sha": "fce0382672bcf7445014ab15ee90409234e40997e96c790d835cd781614d0eec"
 }
