@@ -539,6 +539,82 @@ test.describe('W2·25 — Anheften sortiert den Speicher, die Zonengrenze lehnt 
       .toEqual([schluessel(G1), schluessel(R1), schluessel(V1), schluessel(E1)])
   })
 
+  // ── W2·26 · WAS DIE MARKE ANSAGT, GESCHIEHT AUCH ───────────────────────────
+  //
+  // GEMESSEN 14.9.2026 (Wurzel der 3/3 roten CI-Läufe in PR #859, Shard 2/4,
+  // und der 2/2 roten in #855; lokal 4/10 rot, warmer `vite preview`,
+  // `--workers=1`, @1440): die Reiter-Beschriftung kommt aus einem NACHLADENDEN
+  // Manifest. Der Entscheid-Reiter trägt bis dahin den Platzhalter «Entscheid
+  // öffnen» (171 px) und danach «AppGer BS BEZ.2022.42» (225 px) — er wächst um
+  // 54 px, und jeder Reiter rechts von ihm rückt um 54 px nach rechts
+  // (gemessen: `/vorlagen/arbeitsvertrag` von left 429 auf 483).
+  //
+  // Fällt dieses Nachladen zwischen das letzte `dragover` und das `drop`, dann
+  // liegt ein Zeiger, der eben noch in der RECHTEN Hälfte des Ziels stand, in
+  // dessen linker (gemessen: x 529, Ziel-Mitte vorher 495.5, nachher 549.5).
+  // `Reiter.onDrop` rechnete die Seite aus der Geometrie NEU — und fügte
+  // «davor» ein, während die Einfügemarke unverändert «dahinter» anzeigte. Eine
+  // Zusage, die im Moment des Loslassens bricht (§8), und für den Nutzer nicht
+  // einmal erklärbar: er hat den Zeiger nicht bewegt.
+  //
+  // Diese Sonde hängt NICHT am Ladezeitpunkt (§0 Ziff. 3 — keine Messung ohne
+  // Bedingung): sie erzwingt die Verschiebung mit der Hand, nachdem die Marke
+  // steht. Damit ist sie ohne den Fix IMMER rot, nicht nur manchmal.
+  //
+  // ROT ZU BEKOMMEN (§6.7, so gefahren 14.9.2026): in
+  // `reiterleiste/Reiter.tsx` das `onDrop` wieder aus `ev.clientX` und dem
+  // frischen `getBoundingClientRect()` rechnen lassen ⇒ hier steht danach
+  // [G1, R1, E1, V1] statt [G1, R1, V1, E1].
+  test('was die Einfügemarke ansagt, gilt auch dann, wenn die Leiste danach rückt', async ({ page }) => {
+    await setzeMitFest(page, [{ path: G1, fest: true }, { path: E1 }, { path: R1 }, { path: V1 }])
+    await page.evaluate(([vonK, nachK]) => {
+      const el = (k: string) => document.querySelector<HTMLElement>(
+        `[data-reiter-streifen] [data-reiter-schluessel="${k}"]`)!
+      const q = el(vonK); const z = el(nachK)
+      const r = z.getBoundingClientRect()
+      // Rechte Hälfte, aber nur knapp: derselbe Abstand zur Mitte, den das
+      // nachladende Manifest im gemessenen Fall überbrückt hat.
+      const x = Math.round(r.left + r.width * 0.75)
+      const y = Math.round(r.top + r.height / 2)
+      const dt = new DataTransfer()
+      ;(window as unknown as { __lmRuck?: unknown }).__lmRuck = { dt, x, y, vonK, nachK }
+      const feuer = (ziel: HTMLElement, typ: string) => ziel.dispatchEvent(new DragEvent(typ, {
+        bubbles: true, cancelable: true, dataTransfer: dt, clientX: x, clientY: y }))
+      feuer(q, 'dragstart'); feuer(z, 'dragenter'); feuer(z, 'dragover')
+    }, [schluessel(E1), schluessel(V1)] as [string, string])
+
+    const marke = page.locator(
+      `[data-reiter-streifen] [data-reiter-schluessel="${schluessel(V1)}"] [data-reiter-marke]`)
+    await expect(marke, 'die Marke sagt «dahinter» an').toHaveAttribute('data-reiter-marke', 'dahinter')
+
+    // Der Ruck: ein Reiter LINKS des Ziels wird breiter — genau das, was das
+    // nachgeladene Manifest tut. Der Zeiger bleibt, wo er war.
+    const geruckt = await page.evaluate((nachK) => {
+      const z = document.querySelector<HTMLElement>(
+        `[data-reiter-streifen] [data-reiter-schluessel="${nachK}"]`)!
+      const vorher = z.getBoundingClientRect().left
+      const links = z.previousElementSibling as HTMLElement | null
+      if (links) links.style.paddingRight = '80px'
+      return Math.round(z.getBoundingClientRect().left - vorher)
+    }, schluessel(V1))
+    expect(geruckt, 'das Ziel ist unter dem ruhenden Zeiger nach rechts gerückt')
+      .toBeGreaterThan(0)
+
+    await page.evaluate(() => {
+      const z = (window as unknown as {
+        __lmRuck: { dt: DataTransfer; x: number; y: number; vonK: string; nachK: string }
+      }).__lmRuck
+      const el = (k: string) => document.querySelector<HTMLElement>(
+        `[data-reiter-streifen] [data-reiter-schluessel="${k}"]`)!
+      const feuer = (ziel: HTMLElement, typ: string) => ziel.dispatchEvent(new DragEvent(typ, {
+        bubbles: true, cancelable: true, dataTransfer: z.dt, clientX: z.x, clientY: z.y }))
+      feuer(el(z.nachK), 'drop'); feuer(el(z.vonK), 'dragend')
+    })
+    await page.waitForTimeout(150)
+    expect(await gespeicherteOrdnung(page), 'der Reiter landet, wo die Marke stand')
+      .toEqual([schluessel(G1), schluessel(R1), schluessel(V1), schluessel(E1)])
+  })
+
   // ── DER RAND-SCHUB HÄLT AN DER ZONENGRENZE (W2·18 Welle 3 Punkt 2 + W2·25) ─
   // Der Schub ist der zweite Weg, auf dem ein Reiter durch die Ordnung wandert
   // (er schiebt am Rand des Streifens weiter, wenn das Fenster zu Ende ist).
