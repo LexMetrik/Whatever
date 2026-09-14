@@ -131,9 +131,12 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 - [ ] **Verweis-Schärfe: Binnenverweise, Aussen-Anzeige, Inventar** *(`W2·20-VERWEIS-SCHAERFE`, Auftrag David 31.8.2026)*
   <!-- @meta id: W2·20-VERWEIS-SCHAERFE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERWEIS-SCHAERFE.md -->
   «Art. xx dieses Gesetzes» springt im Gesetz; Verweise nach ausserhalb sind als solche
-  erkennbar; Inventar-Schärfe messbar statt Kommentar-Zahlen. Einheiten V-1 (Mess-Tor) →
-  V-2 (Selbstmarker-Weiche) → V-3 (Kanton-Kürzel-Resolver) → V-4 (Aussen-Anzeige);
-  V-5 (Zeit-Kante) offen, Konzept an W2·5g-ZEIT. Leitplanke: kein Link besser als falscher (§1).
+  erkennbar; Inventar-Schärfe messbar statt Kommentar-Zahlen. **Stand 14.9.2026 (Prosa
+  nachgezogen):** V-1 (Mess-Tor `check:verweis-inventar`) · V-2 · V-3 · V-4 · V-6 gebaut 1.9.2026
+  (PR #599), V-7/V-8 Bund-Stufe 1.9.2026. **Offen (Phase 1):** V-7-Bund-Rest — Trägergesetz-Kontext
+  «des Gesetzes» (169 Stellen) und Kurztitel ohne Fedlex-Ziel (28) als kuratierte Positivliste
+  (prüfbare Liste im PR, nie heuristisch). **Phase 2:** V-7 kantonale Namensliste (916 Stellen).
+  **Phase 3:** V-5 (Zeit-Kante), Konzept an W2·5g-ZEIT. Leitplanke: kein Link besser als falscher (§1).
   **Detail:** [FAHRPLAN-VERWEIS-SCHAERFE.md](fahrplaene/FAHRPLAN-VERWEIS-SCHAERFE.md) §1.
 
 - [ ] **Verzahnung sichtbar machen** *(`W2·7-VZUI`, David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)*
@@ -157,7 +160,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 > (§5), golden byte-gleich bzw. deklarierter Re-Bless.
 
 - [ ] **Amtlicher Fedlex-Zitatgraph: Erlass-Verweise ohne Artikelnummer + Warn-Bericht + «zitiert von» (Bund)** *(`W2·22-VERWEIS-FEDLEX`, Fremdquellen-Sichtung 2.9.2026)*
-  <!-- @meta id: W2·22-VERWEIS-FEDLEX · status: ready · blocker: null · dep: [W2·20-VERWEIS-SCHAERFE] · feld: korpus -->
+  <!-- @meta id: W2·22-VERWEIS-FEDLEX · status: ready · blocker: null · dep: [] · feld: korpus -->
+  *dep auf W2·20 gelöst 14.9.2026: die V-1-Basislinie (`check:verweis-inventar`) besteht seit PR #599; der Rest von W2·20 (V-7-Bund-Rest, V-5) ist keine Vorbedingung des Zitatgraphen.*
   Quelle: [fremdquellen-sichtung-2026-09-02.md](bibliothek/recherche/fremdquellen-sichtung-2026-09-02.md)
   §1 (Rangliste #1/#2) + Abschnitt «jolux:Citation» im Dossier (OR: 2 315 Citations = 2 315
   AKN-Fussnoten-refs; kein `citationToReference`). Risikopfad — Gegenprüfung Pflicht.
@@ -176,7 +180,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
     zurückfallen statt auf einen toten Sprung (§8). Risikopfad — Gegenprüfung Pflicht.
   - [ ] **Z4 Leser-Schicht «zitiert von»** (Erlassebene, nur Bund) — erst nach Z1–Z3 und Abnahme.
 
-- [ ] **Norm-Zeitmaschine + Fassungs-Diff** *(`W2·5g-ZEIT`, Ideen-Intake 20.7.2026; Phase 3 — FR/IT-Datenanteil ist David-Frage, s. FAHRPLAN-BUND-FERTIG §4 a)*
+- [ ] **Norm-Zeitmaschine + Fassungs-Diff** *(`W2·5g-ZEIT`, Ideen-Intake 20.7.2026; Phase 3 — FR/IT-Datenanteil gehört hierher, Entscheid David 14.9.2026 «fr/it später», FAHRPLAN-BUND-FERTIG §4 a)*
   <!-- @meta id: W2·5g-ZEIT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md -->
   «Art. X, wie er am Tag Y galt» + visueller Diff zweier Konsolidierungen; harte Bau-Reihenfolge
   (a) POC → (b) AKN-XML Phase 1 + `G-HIST` → (c) Bau.
