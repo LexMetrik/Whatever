@@ -117,7 +117,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **S4 · Kantons-Probe** — Kantonserlasse rendern unverändert (Fokus Bund, nichts bricht); der H2-Kontaktbogen deckt nur Bund ab. Kap. 7.
   - [x] **Tor-Konflikt `erlassAnsicht.ts`-Deckel** *(§17-Wurzel-Fix)* — ✅ **erledigt 14.9.2026, PR #868**: Datei in zwei Schwestern geschnitten (`erlassAnsicht.ts` 419→198, neu `erlassWortlaut.ts` 267), Deckel unverändert 420, Tor aufs Paar gezogen. Vermerkt offen: `leserV3Modell.ts` 420/420 (Schnitt dort dokumentiert gescheitert).
   - [x] **Erledigt:** Nachbar-Artikel-Pfeile · Rohdaten-Link je Erlass — ✅ #854 (`7b0338916`). Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (4).
-  - [ ] **Einzelartikel-Ansicht** *(Ansichtsoption, Auftrag David 14.9.2026; Konzept Kap. 15, Etappen E1–E3)* — im Ansicht-Menü «Ganzer Erlass | Einzelner Artikel», Blöcke unter dem Artikel, Panel dort aus; Pfeile nur noch dort.
+  - [ ] **Einzelartikel-Ansicht** *(Ansichtsoption, Auftrag David 14.9.2026; Konzept Kap. 15, Etappen E1–E3)* — im Ansicht-Menü «Ganzer Erlass | Einzelner Artikel», Blöcke unter dem Artikel, Panel dort aus; Pfeile nur noch dort. **E1+E2 gebaut, PR #869** (Rechtsprechungs-Block hinter M3/`QS-KORPUS`; E3 Druck/Export offen).
   - [ ] **Fassungs-Diff-Tab** — UI-Anteil zu `W2·5l-NORMTEXT-B2` M16 (Fassungs-Zeitleiste), erst danach; einziges Vorbild mit echtem Diff: Légifrance «Comparer les versions». Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §3 #9.
 
 - [ ] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`; Phase 2, Entscheid 14.9.2026)*
