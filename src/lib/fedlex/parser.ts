@@ -19,9 +19,8 @@ import {
   KUERZEL_TOKENS,
   TITEL_FRAGMENTE_ESC,
 } from './erkennung';
-import {
-  datumPasst, historischeFassung, traegergesetzFuerErlass, type FremdEbene,
-} from './positivliste';
+import { datumPasst, historischeFassung, type FremdEbene } from './positivliste';
+import { traegergesetzFuerErlass } from './traegergesetz';
 
 // ─── Bund-Normverweise im Fliesstext finden (Inline-Auto-Linker) ───────────
 //
