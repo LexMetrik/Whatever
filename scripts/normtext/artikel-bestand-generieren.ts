@@ -31,8 +31,16 @@
 // → 44.0 KiB (gzip 13.8 KiB) für alle 228 Bund-Snapshots mit 25 463 Artikeln.
 // Der Konsument (`artikel-bestand.ts`) expandiert NICHTS: er prüft
 // Ganzzahl-Token gegen die Läufe und nur die Sonderformen gegen eine faule
-// Menge je Erlass. Logikverlust: keiner — die Prüfung ist rein additiv und
-// nimmt einem Link nur den Anker, nie das Ziel.
+// Menge je Erlass.
+//
+// A/B AM GEBAUTEN BUNDLE (14.9.2026, `npx vite build` mit und ohne Inhalt der
+// generierten Datei, sonst identischer Baum):
+//   entry index-*.js      57.97 → 57.95 KB gzip  (unverändert, Budget 60.0 KB)
+//   NormText-*.js (lazy)  12.44 → 27.10 KB gzip  (+14.66 KB)
+// Die Last liegt damit VOLLSTÄNDIG im faul geladenen Normtext-Chunk — wer
+// keinen Normtext rendert, lädt kein Byte davon; Entry-Chunk und sein Budget
+// sind unberührt. Logikverlust: keiner — die Prüfung ist rein additiv und nimmt
+// einem Link höchstens den Anker, nie das Ziel.
 //
 // ERZEUGEN / PRÜFEN:
 //   npm run gen:artikel-bestand
