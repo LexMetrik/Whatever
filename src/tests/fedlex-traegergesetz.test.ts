@@ -22,13 +22,18 @@
 // erfundener Eintrag Fall 2/3 reisst.
 
 import { describe, expect, it } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   TRAEGER_EINTRAEGE, artikelToken, fremdRoutingFormB, artikelnPluralVerweise,
-  traegergesetzFuerErlass, SUFFIX_ALT, type FedlexGesetz,
+  traegergesetzFuerErlass, erkenneGenitivGesetz, erkenneTitelGesetz,
+  SUFFIX_ALT, type FedlexGesetz,
 } from '../lib/fedlex';
 import { ERLASSDATUM } from '../lib/fedlex/positivliste';
+// §5: keine zweite Nachbildung der Guard-Kette — geprüft wird gegen die
+// Transkription, die das V-1-Tor fährt und die der Guard-Wächter
+// (`verweis-inventar-guards.test.ts`) zeichengleich an NormText.tsx hält.
+import { stellenImText, type Ctx } from '../../scripts/verweis-inventar-transkription';
 
 interface RegisterErlass { key: string; ebene: string; titel?: string; datei?: string; status?: string }
 const WURZEL = process.cwd();
@@ -57,10 +62,24 @@ function ingressVon(key: string): string {
   return ingress.replace(/­/g, '');
 }
 
-/** Alle Klammern des Ingresses, die die Kurzform «Gesetz» definieren. */
+/** Alle Klammern des Ingresses, die die Kurzform «Gesetz» definieren.
+ *
+ *  Vier belegte Schreibweisen im Bund-Korpus (Sweep 14.9.2026 über alle
+ *  Bund-Struktur-Sidecars): «(Gesetz)» · «(Gesetz, ArG)» · «(Gesetz/UVG)» ·
+ *  «(nachstehend «Gesetz»)». Die erste Fassung dieses Filters kannte nur die
+ *  ersten drei — sie zerlegte an `[,/;]` und verglich auf `=== 'Gesetz'`,
+ *  wodurch ARGV3 und ARGV4 unsichtbar blieben (Gegenprüfungs-Befund B1).
+ *  Darum wird zusätzlich das Einführungswort («nachstehend», «nachfolgend»,
+ *  «im Folgenden», «hiernach») und die Anführung ringsum abgestreift, bevor
+ *  auf IDENTITÄT verglichen wird — nie auf Enthaltensein (§7): «(Gesetzes-
+ *  sammlung)» oder «(KAG)» dürfen nicht treffen. */
 const GESETZ_KLAMMERN = /\(([^()]*)\)/g;
+const EINFUEHRUNG = /^(?:nachstehend|nachfolgend|im Folgenden|hiernach|hienach)\s*:?\s*/i;
+const ANFUEHRUNG = /^[«»"„“'\u2019]+|[«»"„“'\u2019]+$/g;
 const definiertGesetz = (inhalt: string): boolean =>
-  inhalt.split(/[,/;]/).map((s) => s.trim()).includes('Gesetz');
+  inhalt.split(/[,/;]/)
+    .map((s) => s.trim().replace(EINFUEHRUNG, '').replace(ANFUEHRUNG, '').trim())
+    .includes('Gesetz');
 
 describe('V-7c — Trägergesetz ist im Ingress legaldefiniert', () => {
   it.each(TRAEGER_EINTRAEGE.map((e) => [e.verordnung, e.gesetz, e.beleg] as const))(
@@ -87,6 +106,95 @@ describe('V-7c — Trägergesetz ist im Ingress legaldefiniert', () => {
     const keys = TRAEGER_EINTRAEGE.map((e) => kanon(e.verordnung));
     expect(new Set(keys).size).toBe(keys.length);
   });
+});
+
+// ─── Vollständigkeit: der Sweep IST der Massstab, nicht die Tabelle ──────────
+//
+// Befund B1 der Gegenprüfung zu #864: die Tabelle BEHAUPTETE Vollständigkeit,
+// bewiesen war sie nicht. Ein Handsweep hatte 7 Erlasse gefunden; ARGV3 und
+// ARGV4 blieben liegen, weil ihre Klammer «(nachstehend «Gesetz»)» lautet.
+// Folge: 9 Stellen der ArGV 4 zeigten auf ARGV4 statt aufs ArG.
+//
+// Konsequenz (§17: Wurzel-Fix, nicht Einzelkorrektur): der Wächter fährt den
+// Sweep bei JEDEM Lauf selbst, über ALLE Bund-Struktur-Sidecars, und verlangt
+// Mengen-GLEICHHEIT in beide Richtungen. Ein künftiger Erlass mit
+// «Gesetz»-Legaldefinition kann darum nicht mehr still danebenliegen — und ein
+// Eintrag ohne Ingress-Deckung auch nicht.
+function ingressRoh(datei: string | undefined): string {
+  if (!datei) return '';
+  const pfad = join(WURZEL, 'public', 'normtext', 'struktur', datei);
+  if (!existsSync(pfad)) return '';
+  const sidecar = JSON.parse(readFileSync(pfad, 'utf8')) as
+    { kopf?: { praeambel?: { rolle?: string; text?: string }[] } };
+  return (sidecar.kopf?.praeambel ?? []).filter((p) => p.rolle === 'ingress')
+    .map((p) => p.text ?? '').join(' ').replace(/\u00ad/g, '');
+}
+
+describe('V-7c — Vollständigkeit: Tabelle == Ingress-Sweep über alle Bund-Erlasse', () => {
+  const bund = register.erlasse.filter((e) => e.ebene === 'bund' && e.datei);
+
+  it('der Sweep sieht jedes Bund-Sidecar (sonst misst er Ruhe über nichts)', () => {
+    // §6.7 lit. b: ein Sweep, dessen Grundmenge schrumpfen kann, ohne dass es
+    // auffällt, ist kein Wächter. 228 Bund-Erlasse mit Sidecar (14.9.2026).
+    expect(bund.length).toBeGreaterThan(200);
+    expect(bund.filter((e) => ingressRoh(e.datei) === '').length,
+      'Bund-Erlasse ohne lesbaren Ingress — der Sweep hat blinde Flecken').toBeLessThan(bund.length / 2);
+  });
+
+  it('genau die Erlasse mit «Gesetz»-Legaldefinition stehen in der Tabelle', () => {
+    const sweep = bund
+      .filter((e) => [...ingressRoh(e.datei).matchAll(GESETZ_KLAMMERN)].some((m) => definiertGesetz(m[1])))
+      .map((e) => kanon(e.key)).sort();
+    const tabelle = TRAEGER_EINTRAEGE.map((e) => kanon(e.verordnung)).sort();
+    // Beide Richtungen einzeln, damit die Meldung sagt, WAS fehlt.
+    expect(sweep.filter((k) => !tabelle.includes(k)),
+      'Ingress definiert «Gesetz», Erlass fehlt aber in TRAEGER_EINTRAEGE').toEqual([]);
+    expect(tabelle.filter((k) => !sweep.includes(k)),
+      'Eintrag in TRAEGER_EINTRAEGE ohne «Gesetz»-Legaldefinition im Ingress').toEqual([]);
+    expect(sweep).toEqual(tabelle);
+    expect(sweep.length, 'Sweep leer — der Filter trifft nichts mehr').toBeGreaterThan(0);
+  });
+});
+
+// ─── B3: Erlass-IDENTITÄT, nicht nur Erlassdatum ────────────────────────────
+//
+// Befund B3: das Erlassdatum allein trägt die Zuordnung nicht — 15 Datumswerte
+// teilen sich mindestens zwei Erlasse (UVG und IRSG sind beide vom 20.3.1981,
+// AVIG/BVG vom 25.6.1982, DBG/STHG vom 14.12.1990 …). Ein falsches Kürzel mit
+// gleichem Erlassdatum ginge durch die Datumsprüfung.
+//
+// Zweiter, unabhängiger Pfad: der NAME, den der Ingress vor der Klammer nennt,
+// muss über DIESELBE kuratierte Positivliste auf dasselbe Ziel auflösen, die
+// auch die Produktion nutzt (§5) — keine zweite Namensliste, keine Heuristik.
+const ZITIERTER_ERLASS =
+  /\b(?:des|der|das|die|dem|den)\s+((?:[A-ZÄÖÜ][\wäöüß-]*)?[Gg]esetz(?:es)?)\s+vom\s+\d{1,2}\.\s*[A-Za-zÄÖÜäöü]+\s+\d{4}(?:\s+(über\s+[^()]*?))?\s*$/;
+
+/** Kopf + Fragment des zitierten Erlassnamens → Fedlex-Kürzel, über die
+ *  bestehenden Erkenner. `Bundesgesetz(es)` ist unspezifisch und braucht das
+ *  «über …»-Fragment; jeder andere Kurztitel läuft über den Genitiv-Erkenner
+ *  (Nominativ wird dafür in den Genitiv gesetzt: «Arbeitsgesetz» → «…gesetzes»). */
+function zielAusIngress(name: string, ueber: string | undefined): FedlexGesetz | null {
+  if (/^Bundesgesetz(?:es)?$/.test(name)) {
+    return ueber ? erkenneTitelGesetz('Bundesgesetzes', ueber.trim()) : null;
+  }
+  return erkenneGenitivGesetz(/es$/.test(name) ? name : `${name}es`);
+}
+
+describe('V-7c — der zitierte NAME bestätigt das Ziel (Datums-Kollisionen)', () => {
+  it.each(TRAEGER_EINTRAEGE.map((e) => [e.verordnung, e.gesetz] as const))(
+    '%s → %s: der Ingress-Name löst auf dasselbe Ziel auf',
+    (verordnung, gesetz) => {
+      const ingress = ingressVon(verordnung);
+      const treffer = [...ingress.matchAll(GESETZ_KLAMMERN)].filter((m) => definiertGesetz(m[1]));
+      expect(treffer.length, `${verordnung}: ${treffer.length} «Gesetz»-Klammern`).toBe(1);
+      const davor = ingress.slice(0, treffer[0].index);
+      const m = ZITIERTER_ERLASS.exec(davor);
+      expect(m, `${verordnung}: kein zitierter Erlassname vor der Klammer in «${davor}»`).not.toBeNull();
+      expect(zielAusIngress(m![1], m![2]),
+        `${verordnung}: Ingress nennt «${m![1]}${m![2] ? ` … ${m![2]}` : ''}», Tabelle sagt ${gesetz}`)
+        .toBe(gesetz);
+    },
+  );
 });
 
 // ─── Bestandsprüfung: kein Link auf einen Artikel, den es nicht gibt ─────────
@@ -161,6 +269,31 @@ describe('V-7c — was NICHT auflöst (§1)', () => {
   it('ein Zitat-Datum, das dem Trägergesetz widerspricht, sperrt den Link (Zeit-Kante)', () => {
     expect(fremdRoutingFormB(' des Gesetzes vom 1. Januar 1900 ', '15', undefined, 'bund', 'ARGV1')).toBeNull();
     expect(fremdRoutingFormB(' des Gesetzes vom 13. März 1964 ', '15', undefined, 'bund', 'ARGV1')?.gesetz).toBe('ArG');
+  });
+
+  it('KKV: «des Gesetzes» ohne Legaldefinition wird Text, nie Self (Restklasse V-7d)', () => {
+    // Der KKV-Ingress definiert nur «(KAG)». Gemeint ist in art_128 das KAG —
+    // aber ohne Legaldefinition ist der Beleg nicht da, also KEIN Link (§1).
+    // Entscheidend: auch kein SELBST-Link. Bis 14.9.2026 sprang der Leser auf
+    // KKV Art. 124 bzw. 120, zwei ganz andere Bestimmungen; seither hält der
+    // Guard `GESETZES_GENITIV` (NormText.tsx) die Stelle als Text fest.
+    expect(traegergesetzFuerErlass('KKV')).toBeNull();
+    expect(fremdRoutingFormB(' Absatz 2 des Gesetzes, insbesondere', '124', undefined, 'bund', 'KKV')).toBeNull();
+    // Amtlicher Wortlaut beider Stellen, KKV art_128 (SR 951.311, Stand 2025-11-25).
+    // Die tokenMap FÜHRT 124 und 120 — ein Self-Link wäre also möglich und war
+    // bis 14.9.2026 auch da. Genau das darf nicht mehr passieren.
+    const kkv: Ctx = {
+      tokenMap: new Map([['124', '124'], ['120', '120']]),
+      eigenesKuerzel: 'KKV', registerKuerzel: 'KKV',
+      paragrafDesigniert: false, ebene: 'bund', erlassKey: 'KKV',
+    };
+    for (const [text, nummer] of [
+      ['des Vertreters im Sinne von Artikel 124 Absatz 2 des Gesetzes, insbesondere seine Melde-,', '124'],
+      ['Informationsaustausch nach Artikel 120 Absatz 2 Buchstabe e des Gesetzes abgeschlossen hat.', '120'],
+    ] as const) {
+      const treffer = stellenImText(text, kkv, false).filter((st) => st.nummer === nummer);
+      expect(treffer.map((st) => st.klasse), `KKV Art. ${nummer}: ${text}`).toEqual(['gesetzes-genitiv']);
+    }
   });
 
   it('«dieses Gesetzes» bleibt ein Selbstverweis, nicht das Trägergesetz', () => {

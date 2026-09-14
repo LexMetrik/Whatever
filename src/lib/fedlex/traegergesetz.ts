@@ -28,13 +28,29 @@ import { type FedlexGesetz } from './tabelle';
 // Wendung bekommt den Link erst, wenn er hier steht. Der Wächter
 // `src/tests/fedlex-traegergesetz.test.ts` prüft JEDEN Eintrag gegen den
 // Ingress (genau eine «(… Gesetz …)»-Klammer; das davor zitierte Erlassdatum
-// ist das Erlassdatum des Ziels) — ein erfundener Eintrag reisst das Tor.
+// ist das Erlassdatum des Ziels; der davor zitierte NAME löst über die
+// bestehende Positivliste auf dasselbe Ziel auf) — ein erfundener Eintrag
+// reisst das Tor.
 //
-// NICHT aufgenommen (gemessene Gegenprobe, bleiben Text):
+// VOLLSTÄNDIGKEIT ist seit 14.9.2026 bewiesen, nicht behauptet (Gegenprüfung
+// zu #864, Befund B1): der Wächter SWEEPT alle Bund-Struktur-Sidecars nach
+// Ingress-Klammern, die die Kurzform «Gesetz» definieren, und verlangt
+// Mengen-GLEICHHEIT in beide Richtungen mit dieser Tabelle. Die erste Fassung
+// listete 7 von 9 Erlassen: ARGV3 und ARGV4 fehlten, weil ihre Klammer nicht
+// «(Gesetz)» lautet, sondern «(nachstehend «Gesetz»)» — eine Form, die der
+// damalige Handsweep nicht sah. Der Sweep kennt alle vier belegten Formen
+// («Gesetz», «Gesetz, ArG», «Gesetz/UVG», «nachstehend «Gesetz»»).
+//
+// NICHT aufgenommen (gemessene Gegenprobe, bleiben Text — kein Ingress dieser
+// Erlasse definiert die Kurzform «Gesetz», darum sind sie auch im Sweep nicht):
 //   · bund/BANKG art_16 und bund/GSCHG art_83 — Gesetze ohne solche
 //     Legaldefinition im Ingress;
-//   · bund/LUGUE annex_I (2 Stellen) — «des Gesetzes zur Lösung von
-//     Gesetzeskollisionen …» ist ein AUSLÄNDISCHES Gesetz, kein Trägergesetz.
+//   · bund/LUGUE annex_I (3 Stellen) — «des Gesetzes zur Lösung von
+//     Gesetzeskollisionen …» ist ein AUSLÄNDISCHES Gesetz, kein Trägergesetz;
+//   · bund/KKV art_128 (2 Stellen) — der KKV-Ingress definiert nur «(KAG)».
+//     Gemeint ist das KAG; ein Sprung auf KKV Art. 124/120 wäre falsch. Diese
+//     Restklasse hält seit 14.9.2026 der Guard `GESETZES_GENITIV`
+//     (NormText.tsx, V-7d) als Text fest — vorher war sie ein Self-Link.
 export interface TraegerEintrag {
   /** Register-Key der Verordnung (= letztes Segment des Lese-Basispfads). */
   verordnung: string;
@@ -51,6 +67,23 @@ export const TRAEGER_EINTRAEGE: ReadonlyArray<TraegerEintrag> = [
   {
     verordnung: 'ARGV2', gesetz: 'ArG',
     beleg: 'gestützt auf Artikel 27 des Arbeitsgesetzes vom 13. März 1964 (Gesetz),',
+  },
+  // ARGV3/ARGV4 (Nachzug 14.9.2026, Befund B1): Klammerform «(nachstehend
+  // «Gesetz»)». Amtlich selbst geöffnet — SPARQL-Fassungsfenster + AKN-XML aus
+  // dem Fedlex-Filestore (Content-Type application/xml, kein Casemates-Shell):
+  //   ArGV 3, SR 822.113, ELI cc/1993/2553_2553_2553, Fassung 2024-09-01
+  //   ArGV 4, SR 822.114, ELI cc/1993/2564_2564_2564, Fassung 2015-05-01
+  // Ziel ist beide Male das ArG (SR 822.11, Stand 1.9.2023).
+  {
+    verordnung: 'ARGV3', gesetz: 'ArG',
+    beleg: 'gestützt auf die Artikel 6 Absatz 4 und 40 des Arbeitsgesetzes vom 13. März 1964 (nachstehend «Gesetz»),',
+  },
+  {
+    // ArGV 4 zitiert im Ingress zusätzlich das UVG — ohne Kurzform-Klammer.
+    // Die Legaldefinition hängt allein am Arbeitsgesetz, der Sweep zählt
+    // darum weiterhin genau eine «Gesetz»-Klammer.
+    verordnung: 'ARGV4', gesetz: 'ArG',
+    beleg: 'gestützt auf die Artikel 8 und 40 des Arbeitsgesetzes vom 13. März 1964 (nachstehend «Gesetz»)',
   },
   {
     verordnung: 'UVV', gesetz: 'UVG',

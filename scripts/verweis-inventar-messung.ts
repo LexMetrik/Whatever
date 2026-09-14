@@ -339,12 +339,23 @@ export function selbsttest(): void {
     // ── V-7c (Trägergesetz-Kontext «des Gesetzes») ─────────────────────────
     // Vollzugsverordnung MIT Legaldefinition im Ingress ⇒ Link aufs Trägergesetz.
     ['Die Pause nach Artikel 15 des Gesetzes ist zu gewähren.', argv1, 'n2b-traeger', false],
-    // … derselbe Satz in einem Erlass OHNE Trägergesetz-Eintrag bleibt Text.
-    ['Die Pause nach Artikel 15 des Gesetzes ist zu gewähren.', ssv, 'art-desder-guard', false],
+    // … derselbe Satz in einem Erlass OHNE Trägergesetz-Eintrag bleibt Text —
+    // seit V-7d über die enge «des Gesetzes»-Weiche statt über den des/der-Guard.
+    // Der ENTSCHEID ist in beiden Klassen TEXT, nur die Klasse ist genauer.
+    ['Die Pause nach Artikel 15 des Gesetzes ist zu gewähren.', ssv, 'gesetzes-genitiv', false],
     // «dieses Gesetzes» bleibt der Selbstmarker — die V-7c-Weiche darf ihn nicht fassen.
     ['Die Frist nach Art. 5 dieses Gesetzes beginnt.', argv1self, 'art-self', true],
     // Zitiertes Datum, das dem Trägergesetz WIDERSPRICHT ⇒ kein Link (Zeit-Kante).
-    ['Die Pause nach Artikel 15 des Gesetzes vom 1. Januar 1900 ist zu gewähren.', argv1, 'art-desder-guard', false],
+    ['Die Pause nach Artikel 15 des Gesetzes vom 1. Januar 1900 ist zu gewähren.', argv1, 'gesetzes-genitiv', false],
+    // ── V-7d (14.9.2026): «des Gesetzes» HINTER einem Passus ───────────────
+    // Der des/der-Guard sieht bewusst nur den ROHEN Rest (V-6) und griff
+    // darum nicht, wenn «Absatz 2» dazwischensteht — die Stelle wurde ein
+    // SELBST-Link auf eine ganz andere Bestimmung (KKV art_128, Befund B1 der
+    // Gegenprüfung zu #864). Die enge Weiche fängt genau das ab.
+    ['Der Vertreter im Sinne von Artikel 5 Absatz 2 des Gesetzes meldet.', ssv, 'gesetzes-genitiv', false],
+    // … und sie bleibt eng: ein anderes Wort hinter «des» ist weiter Sache des
+    // des/der-Guards, die Weiche darf ihn nicht verdrängen.
+    ['Der Vertreter im Sinne von Artikel 5 des Vertrages meldet.', ssv, 'art-desder-guard', false],
     // V-7a Kurztitel mit Geltung «bund»: im Bund Link, im Kanton Text (AR-146.1 heisst gleich).
     ['Es gilt Art. 7 des Datenschutzgesetzes.', ssv, 'n2b-genitiv', false],
     ['Es gilt Art. 7 des Datenschutzgesetzes.', kantonArt, 'art-desder-guard', false],
