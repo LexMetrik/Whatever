@@ -198,7 +198,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [x] **Sollbild + Messung 14.9.2026** (dieser PR) — elf Bausteine mit Soll/Ist-Bund/Leser/Zuständigkeit, Fünf-Artefakte-Befund, Randtitel-Doppelmodell, zehn Lücken (Fahrplan §1/§2).
   - [ ] **Randtitel-Doppelmodell auflösen** — `NormSnapshot.titel` (Bund 0/25 463) und `struktur.marginalie` (22 223 Artikel) sind zwei Heimaten derselben amtlichen Sache (§5). **Entschieden David 14.9.2026 (Fahrplan §4 c, Option i):** `struktur.marginalie` wird die eine Quelle, `NormSnapshot.titel` Projektion oder entfällt; Kanton migriert Phase 2. Vorbedingung Sidecar-Drift-Riegel: PR #851. *Risikopfad ⇒ Gegenprüfung.*
   - [ ] **Zukunftsfassungen-Hinweis im Leserkopf** *(Entscheid David 14.9.2026, Fahrplan §4 b)* — «ab <Datum> gilt eine neue Fassung» + amtlicher Link aus `naechsteFassungAb`/Inkrafttreten-Register (62 Erlasse, 93 künftige Inkrafttreten liegen als Daten vor); reiner Hinweis, kein Umschalter (Phase 3). Hülle, kein Risikopfad.
-  - [ ] **`aufgehoben` strukturell statt Text-Heuristik** — 1 389 Bund-Artikel in 177 Dateien gelten nur deshalb als aufgehoben, weil ihr Body leer oder «…» ist; ein Extraktionsfehler sähe identisch aus (§7/§8). *Risikopfad ⇒ Gegenprüfung.*
+  - [x] **`aufgehoben` strukturell statt Text-Heuristik** — Artikel galten nur deshalb als aufgehoben, weil ihr Body leer oder «…» ist; ein Extraktionsfehler sähe identisch aus (§7/§8). Erledigt 14.9.2026: amtliches Signal = Aufhebungs-Vermerk der Fedlex-Fussnote; `aufgehoben` 0 → **1 277/25 463**, Golden byte-gleich. Neuer Wächter `check:leerstellen` deckelt die 98 ungeklärten Bund-Leerstellen. Zahlen, Restklassen und ein Historie-Nebenbefund: Fahrplan §1 (Nachtrag 14.9.). *Risikopfad ⇒ Gegenprüfung.*
+  - [ ] **§8-Anzeige der ungeklärten Leerstellen** *(Auflage Gegenprüfung #859)* — der Leser zeigt 98 Bund- und 481 Kanton-Leerstellen ohne Aufhebungsvermerk weiter als «aufgehoben», darunter geltende Änderungsartikel (AVIG 115, BGFA 35, AIG 126f, StGB 108); Ziel: neutraler Hinweis «kein Text im Snapshot» statt «aufgehoben» (deklarierter Re-Bless, `darstellung.ts:307-315`, trifft auch Kanton). Dazu Anhänge/`<section>` ins Aufhebungs-Signal (KKV Anh. 1–3 tragen den Vermerk).
   - [x] **Sidecar-Drift-Riegel 216/228** — der Struktur-Sidecar trug in 216 von 228 Dateien keinen eigenen `stand`/`fassungsToken`; Randtitel und Fussnoten alterten unbemerkt (passt zu «Golden-Token blind für Randtitel», `sha-bloecke.ts:50`). Erledigt 14.9.2026: Generator-Lauf zog alle 228 nach (215 davon substanz-byte-gleich = die Marke ist reproduziert, nicht behauptet), `check:struktur-konsistenz` verlangt sie im Bund-Ast neu als Pflicht statt additiv. *Risikopfad ⇒ Gegenprüfung.*
   - [ ] **`confidence.json`-Neulauf** — das Artefakt stammt vom 23.6.2026 (150 Erlasse), der Korpus umfasst heute ~1 566; das ausgewiesene Qualitätsbild ist veraltet (§8).
   - [x] **KKV-Token `126_z__2`** — ein Artikel existierte im Snapshot, nicht im Struktur-Sidecar (25 463 vs. 25 462). Geklärt 14.9.2026: **Quell-Effekt** — Fedlex vergibt die id `art_126_z` zweimal (Art. 126z und Art. 126z^tredecies, dessen Ordinal-Suffix fehlt in der eId); unser Struktur-Extraktor kannte den Synthese-Suffix `__2` des Snapshot-Generators nicht und liess das zweite `<article>` das erste überschreiben. Es fehlte also nicht nur ein Eintrag, Art. 126z trug **fremde** Marginalie und Gliederung. Fix an der Pipeline-Quelle, Tor meldet den Fall neu als Fehler. *Risikopfad ⇒ Gegenprüfung.*
@@ -801,18 +802,10 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Nicht merklich langsamer, ohne Logikverlust (§15). Der **Erst-Render des OR braucht 8,4–17,2 s
   bis zur Bedienbarkeit** (vermessen 17.8.2026, Nullprobe auf `main` 6/6 rot) — das ist die Wurzel
   des Shard-7-Rots und der Fix gehört hierher, nicht in eine Spec-Anpassung.
-  **Ergänzt 1.9.2026 (Leser-Tempo gebaut, A/B n=5, alte Zahl bleibt stehen — §0/2b):** Das
-  753-KB-`rechtsprechung/register.json` lädt nicht mehr auf Gesetzes-Leserseiten, und der Prerender
-  lädt Register/Struktur im Kopf vor → OR **10 368 → 7 899 ms @4×+4G (−23,8 %)**,
-  **38 296 → 27 432 ms @6×+3G (−28,4 %)**; ungedrosselt misst derselbe Basis-Stand **780 ms**, die
-  17.8.-Zahl ist dort also nicht mehr reproduzierbar. **Bestands-Defekt dabei gefunden UND gefixt:**
-  `InhaltsKopf` montierte die Sprung-Rückmeldungen beim Wechsel auf `kopfzeileSelbst` um → die
-  Deep-Link-Ansage «Springe zur verlinkten Stelle …» blinkte (Aus-Flanke auf die Millisekunde mit
-  dem Zweigwechsel, 3/3); jetzt EIN Träger mit zwei Zuständen, Markup byte-gleich, R7 50/50 grün,
-  volle e2e 722/722. **Offen:** der Snapshot-Preload (+3–10 %) hängt an einer ZWEITEN
-  Reihenfolge-Stelle im Spy-Effekt (`inhalt-hooks.tsx`, 20 Specs, nicht untersucht) ·
-  K3-Chunk-Kaskade · Reader-Kopf-Reflow (Design-Entscheid §13) · `hydrateRoot` (eigener PR unter
-  `QS-BASIS`).
+  Leser-Tempo gebaut 1.9.2026 (A/B n=5): OR **10 368 → 7 899 ms @4×+4G**, **38 296 → 27 432 ms @6×+3G**,
+  ungedrosselt 780 ms — Wortlaut samt Bestands-Fix `InhaltsKopf`: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (3).
+  **Offen (Phase 1):** Snapshot-Preload (zweite Reihenfolge-Stelle im Spy-Effekt, `inhalt-hooks.tsx`) ·
+  K3-Chunk-Kaskade · Reader-Kopf-Reflow (§13) · `hydrateRoot` (eigener PR unter `QS-BASIS`) · Register-Schnitt (Vorbedingung `W2·5n-BUND-VOLL`).
   **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1 (dort seit 29.8.2026
   auch die vollständige Messreihe und der Reader-Kopf-Reflow-Befund, wörtlich aus der ROADMAP; §1-N3
   trägt die A/B-Reihe vom 1.9.2026) und
@@ -847,8 +840,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 
 - [ ] **Prüfstrasse sparsamer ohne Prüftiefe-Verlust** *(`QS-CI-MINUTEN`, Auftrag David 8.9.2026)*
   <!-- @meta id: QS-CI-MINUTEN · status: ready · blocker: null · dep: [] · feld: betrieb -->
-  ✅ M2 (#767) · M1/M3/M4/M5 (#773) · Flacker-Wächter (#779, Melde-Modus bis 22.9.2026, dann hart) · Ergebnis-Job (#780) · Playwright-Install-Retry dpkg-Sperre (#785); Regeln: Skill `landung` §«Prüfstrasse seit 8.9.2026». **Nachmessung 8.10.2026.** Offen: Merge Queue (Gate) · Wurzel der 6 flackernden Specs (Fehlerbuch §4, bis 22.9.).
-  **Entscheide David 8.9.2026:** Weg **A** (Repo bleibt öffentlich, Sparplan bauen; privat nur zusammen mit VPS/Self-hosted Runner) · **M2 freigegeben und gelandet** (Dependabot monatlich, `rebase-strategy: disabled`).
+  Gebaut 8.9.2026: M1–M5, Flacker-Wächter (Melde-Modus bis 22.9.2026, dann hart), Ergebnis-Job, Playwright-Install-Retry — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (3); Regeln: Skill `landung` §«Prüfstrasse seit 8.9.2026». **Nachmessung 8.10.2026.** Offen: Merge Queue (Gate) · Wurzel der 6 flackernden Specs (Fehlerbuch §4, bis 22.9.). Entscheide David 8.9.2026 (Weg A, M2) ebenfalls in der Chronik.
   Ziel: CI-Minuten senken, kein Tor entfällt, `check:e2e-shards` bleibt.
   **Detail:** [ci-minuten-sparplan-2026-09-08.md](bibliothek/betrieb/ci-minuten-sparplan-2026-09-08.md)
   — 61'381 min/Monat, `ci.yml` 97,5 %, Sparplan −24'300 ohne Prüftiefe-Verlust.

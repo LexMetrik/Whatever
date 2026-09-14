@@ -74,6 +74,42 @@ teilweise / fehlt.
 | **Bestand** | Jeder Erlass, den ein Schweizer Jurist aufschlägt, ist da. | 228 Snapshots / 239 Register-Einträge; 9 `nur-live-link`, 2 `pdf-embed`. Ziel ~5 100–5 500 SR ⇒ **4,4 %**. Fehlend: EMRK (nur PDF), EÖBV, AVG. | `Gesetze.tsx`, `kernerlasse.ts` | `QS-KORPUS` (Kernerlasse) · `W2·5n-BUND-VOLL` (Breite) | teilweise |
 | **Leser-Tempo** | Das Kernwerkzeug ist auf einem Kanzlei-Notebook im Zug benutzbar. | Zitiert (1.9.2026, nicht nachgemessen): OR **7 899 ms @4×+4G**, **27 432 ms @6×+3G**; ungedrosselt 780 ms. | — | `QS-PERF` (Erst-Render + Register-Schnitt) | teilweise |
 
+**Nachtrag 14.9.2026 zur Zeile «Aufgehoben / Historie» (ERGÄNZUNG, keine Korrektur —
+die Messung oben bleibt stehen).** Beim Bau der Checklisten-Zeile «`aufgehoben` strukturell
+statt Text-Heuristik» ergab die Nachmessung am selben Korpus **1 375 Heuristik-Treffer in
+153 Dateien** statt der oben ausgewiesenen 1 389 in 177. Kommando und Ausgabe stehen im PR;
+die Differenz ist nicht aufgelöst (plausibel: andere Zählweise der Anhang-/Schlussteil-Token
+bzw. Messung vor dem Sidecar-Lauf #851). Beide Zahlen gelten für ihr Datum.
+
+**Was 14.9.2026 eingelöst wurde.** Das amtliche Signal ist der Aufhebungs-Vermerk der
+Fedlex-Fussnote — am Kopf-Marker des `<article>` (leerer Body, OR Art. 48) oder am Marker
+jedes «…»-Absatzes (ASYLG Art. 52); Sonderform: der amtliche Wortlaut IST «Aufgehoben»
+(ASYLV2 Art. 19). Regel und Belege: `scripts/normtext/aufhebung-signal.ts`.
+Ergebnis: `aufgehoben` **0 → 1 277 / 25 463** in 145 von 228 Dateien.
+
+**Was NICHT markiert wurde und warum (§7/§8).** 98 Bund-Leerstellen bleiben ungeklärt,
+in vier Klassen — und drei davon sind Artikel, die heute FÄLSCHLICH als «aufgehoben»
+angezeigt werden:
+1. **Änderungs-Artikel** — «…» + Fussnote «Die Änderung kann unter AS … konsultiert
+   werden» (AVIG Art. 115, BGFA Art. 35, VGG Art. 50–52). Die Bestimmung gilt.
+2. **Noch nicht in Kraft / befristet** — «Tritt zu einem späteren Zeitpunkt in Kraft»
+   (AIG Art. 126f), «in Kraft vom … bis zum …» (EPV Art. 64a–64j).
+3. **Amtliche Vermerke ausserhalb der Fussnoten-Grammatik** — «Gegenstandslos»
+   (StGB Art. 67f), «Dieser Art. bleibt aus gesetzestechnischen Gründen leer»
+   (StGB Art. 108, gilt nicht als aufgehoben), «Diese aufgehobenen Art. werden …
+   ersetzt durch» (StGB Art. 201–212), amtlicher Tippfehler «Aufgehobn durch» (BKV Art. 8).
+4. **Anhänge** (`annex_*`) — eigenes `<section>`-Schema, vom Artikel-Signal noch nicht
+   erfasst (AKKBV Anhang 3, EPV Anhang 1/2, EBG Anhang).
+Klasse 1 und 2 sind ein eigener §8-Posten (die Anzeige lügt heute), Klasse 3 und 4 sind
+Erweiterungen des Signals. Gedeckelt und sichtbar über `npm run check:leerstellen`.
+
+**Nebenbefund für die Zeile «Aufgehoben / Historie» (nicht in diesem Bau behoben):** die
+Artikel-Historie führt `aufgehobenSeit` auf Artikelebene aus Fussnoten mit `absatz == null`.
+Gemessen 14.9.2026: 1 300 Artikel tragen `aufgehobenSeit`, **82 davon haben einen lebenden
+Wortlaut** (AHVG Art. 58/87/88, AIG Art. 103a, ARG Art. 12 u. a.) — dort ist nur ein ABSATZ
+aufgehoben, die Zuordnung fällt mangels Absatz-Skopus auf den ganzen Artikel. Darum ist
+`historie.aufgehobenSeit` NICHT als Quelle für `NormSnapshot.aufgehoben` verwendet worden.
+
 ### §1.1 · Struktur-Befund: ein Gesetz besteht heute aus fünf Artefakten
 
 Es gibt **kein einzelnes Objekt «Erlass»**. Je Erlass-Key existieren: Snapshot
