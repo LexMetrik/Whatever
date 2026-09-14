@@ -5,6 +5,7 @@
 // Kette ohne Zyklus: tabelle ← url ← erkennung ← parser.
 
 import { FEDLEX, type FedlexGesetz } from './tabelle';
+import { SUFFIX_ALT } from './nummer';
 
 // Anker '#art_<nummer>'. Buchstaben-Artikel nutzen das Fedlex-Unterstrich-
 // Format: 335c → #art_335_c, 334bis → #art_334_bis (empirisch gegen die
@@ -13,7 +14,12 @@ import { FEDLEX, type FedlexGesetz } from './tabelle';
 // Spannen-/Folgeverweise (–, f., ff.) verlinken den führenden Artikel.
 // Audit 5.6.2026: auch Kombi-Anker Buchstabe+lat. Suffix abgedeckt —
 // im OR real: 329gbis/663bbis/697hbis → art_329_g_bis (Form n_b_suffix).
-const SUFFIX = /^(\d+)([a-z])?(bis|ter|quater|quinquies|sexies)?$/;
+// Z6 a (14.9.2026): die Suffix-Reihe kommt aus `nummer.ts` (§5) und reicht bis
+// `duodecies` — vorher endete sie hier bei `sexies`, und «29septies» blieb als
+// «29septies» stehen statt «29_septies» zu werden. Empirisch belegt am
+// Snapshot-Anker: AHVG führt `artikel: "29_septies"`, StGB `"179_octies"`,
+// IRSG `"80_d_duodecies"` — genau die Form, die diese Zerlegung erzeugt.
+const SUFFIX = new RegExp(`^(\\d+)([a-z])?(${SUFFIX_ALT})?$`);
 
 // Artikelnummer → Fedlex-Anker-Token («335c»→«335_c», «334bis»→«334_bis»,
 // «49abis»→«49_a_bis», «329gbis»→«329_g_bis»). EINE Ableitung (§5), von fedlexUrl

@@ -19,7 +19,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   normVerweiseImText, fremdgesetzNachArtikel, fremdRoutingFormB,
-  artikelnPluralVerweise, erkenneFedlexGesetz, type FremdEbene,
+  artikelnPluralVerweise, erkenneFedlexGesetz, SUFFIX_ALT, type FremdEbene,
 } from '../src/lib/fedlex';
 // V-3: dieselbe Token-Ableitung wie die Produktion (§5) — der Link entsteht
 // nur, wenn `parsePassus` einen Anker liefert.
@@ -50,11 +50,23 @@ export interface GuardQuelle {
   stringLiteral?: true;
 }
 
+/** Wortlaut, mit dem NormText.tsx die geteilte Suffix-Reihe einsetzt. */
+const SUFFIX_PLATZHALTER = '${SUFFIX_ALT}';
+/** Platzhalter → Reihe. Nur für den Regex-Bau; der Wächter vergleicht roh. */
+const suffixeEinsetzen = (muster: string) => muster.split(SUFFIX_PLATZHALTER).join(SUFFIX_ALT);
+
 export const G = {
+  // Z6 a (14.9.2026): ART_INTERN setzt die GETEILTE Suffix-Reihe ein und steht
+  // in NormText.tsx darum als Template-String mit `${SUFFIX_ALT}`. Genau diese
+  // Schreibweise trägt die Transkription — sonst suchte der Drift-Wächter ein
+  // Muster, das in der Quelle nirgends steht, und meldete Ruhe über nichts
+  // (§6.7). Eingesetzt wird die Reihe erst beim Regex-Bau, aus DERSELBEN
+  // Konstante, die die Produktion liest (§5): die Suffix-Liste kann hier
+  // gar nicht mehr abdriften, nur noch der Rahmen darum.
   ART_INTERN: {
     zweck: 'ART_INTERN — bare «Art./Artikel N»',
     datei: 'NormText.tsx',
-    literal: String.raw`/\bArt(?:\.|ikel)\s+(\d+(?:[a-z])?(?:bis|ter|quater|quinquies|sexies)?)(?![0-9a-z])/g`,
+    literal: String.raw`/\bArt(?:\.|ikel)\s+(\d+(?:[a-z])?` + SUFFIX_PLATZHALTER + String.raw`?)(?![0-9a-z])/g`,
   },
   PARAGRAF_INTERN: {
     zweck: 'PARAGRAF_INTERN — «§ N» (F40)',
@@ -178,7 +190,7 @@ export const G = {
 export function re(literal: string): RegExp {
   const m = /^\/(.*)\/([a-z]*)$/s.exec(literal);
   if (!m) throw new Error(`Kein RegExp-Literal: ${literal}`);
-  return new RegExp(m[1], m[2]);
+  return new RegExp(suffixeEinsetzen(m[1]), m[2]);
 }
 
 /**

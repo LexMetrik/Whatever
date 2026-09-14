@@ -2,7 +2,7 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "0fdc2dbebce57363b9bc1da7c4137711a249f6072cbfa415f1cdeab098a7b9b7",
+    "normTextSha256": "0221aa5b09f98d9506c9d47b9f751a6906bff172773490cefa6275069772bf01",
     "guards": 23
   },
   "korpus": {
@@ -11,23 +11,23 @@
     "texte": 214664
   },
   "gesamt": {
-    "stellen": 36161,
-    "self": 19728,
-    "fremd": 11360,
-    "text": 5073,
+    "stellen": 36173,
+    "self": 19750,
+    "fremd": 11390,
+    "text": 5033,
     "selbstmarker": 925
   },
   "fremdZiele": {
-    "geprueft": 10254,
+    "geprueft": 10276,
     "tot": 39,
     "sammelblock": 20,
-    "ohneSnapshot": 9
+    "ohneSnapshot": 19
   },
   "klassen": [
     {
       "klasse": "anker-ausgeschrieben",
       "entscheid": "FREMD",
-      "stellen": 4151,
+      "stellen": 4152,
       "erlasse": 253,
       "selbstmarker": 0,
       "was": "Ausgeschriebener Artikelverweis «Artikel N … KÜRZEL» → Fremd-Artikel (Z5, W2·22)"
@@ -35,7 +35,7 @@
     {
       "klasse": "anker-erlass",
       "entscheid": "FREMD",
-      "stellen": 1097,
+      "stellen": 1095,
       "erlasse": 363,
       "selbstmarker": 0,
       "was": "Blosser Erlass-Verweis OHNE Artikelnummer → Erlass-Seite (Z1, W2·22)"
@@ -91,7 +91,7 @@
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 958,
+      "stellen": 959,
       "erlasse": 219,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
@@ -115,7 +115,7 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12961,
+      "stellen": 12963,
       "erlasse": 472,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
@@ -147,7 +147,7 @@
     {
       "klasse": "n2b-glied",
       "entscheid": "FREMD",
-      "stellen": 341,
+      "stellen": 342,
       "erlasse": 148,
       "selbstmarker": 0,
       "was": "Glied der Form B «Artikel N … des <Name> (KÜRZEL)» — Klammer-Kürzel"
@@ -227,7 +227,7 @@
     {
       "klasse": "plural-glied-fremd",
       "entscheid": "FREMD",
-      "stellen": 1454,
+      "stellen": 1484,
       "erlasse": 153,
       "selbstmarker": 0,
       "was": "A10-Glied mit aufgelöstem Fremdgesetz-Signal"
@@ -243,7 +243,7 @@
     {
       "klasse": "plural-glied-self",
       "entscheid": "SELF",
-      "stellen": 3470,
+      "stellen": 3490,
       "erlasse": 204,
       "selbstmarker": 0,
       "was": "A10-Glied → Sprung im eigenen Erlass"
@@ -251,8 +251,8 @@
     {
       "klasse": "plural-region-unterdrueckt",
       "entscheid": "TEXT",
-      "stellen": 574,
-      "erlasse": 97,
+      "stellen": 533,
+      "erlasse": 96,
       "selbstmarker": 0,
       "was": "A10-Region mit unauflösbarem Fremdnamen — ganz unterdrückt"
     }
