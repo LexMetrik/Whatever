@@ -332,9 +332,9 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
               `./LeserErlassKopfZone` (H3-Auslagerung, §6.6). */}
           <LeserErlassKopfZone m={m} erlass={erlass} artikelAnzahl={eintraege.length}
             bestimmungsWort={bestimmungsWort} />
-          {m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
-          {/* D38: der Text bleibt IMMER gerendert, die Trefferliste legt sich
-              darüber (`trefferSpalte` unten) — Warum: `./LeserTrefferSpalte`. */}
+          {/* W2·5m · der Ingress entfällt im Einzelmodus (`./LeserEinzelAnsicht.tsx`). */}
+          {!imEinzel && m.kopf && <ErlassKopfBlock kopf={m.kopf} intern={m.internRefs} />}
+          {/* D38: der Text bleibt IMMER gerendert, die Trefferliste legt sich darüber (`./LeserTrefferSpalte`). */}
           {/* W2·5m · im Einzelmodus EINE Bestimmung, dieselbe Prop-Kette (§5). */}
           <LeserLesespalte m={m} bezuege={bezuege} weckeBezuege={rohPanel.weckeDaten}
             oeffneBlatt={rohPanel.oeffneEntscheide} bezuegeGeweckt={rohPanel.jeGeoeffnet}

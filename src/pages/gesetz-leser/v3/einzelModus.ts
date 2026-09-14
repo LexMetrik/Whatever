@@ -218,6 +218,36 @@ export interface VorschauZiel {
 }
 
 /**
+ * F-E2 · WORUM ES BEIM NACHBARN GEHT — die Auskunft der Vorschau.
+ *
+ * GEMESSEN 14.9.2026 am ausgelieferten OR-Snapshot: `margAnzeige` liefert für
+ * KEINEN Artikel einen Randtitel (0 von 1686). Das ist kein Datenfehler,
+ * sondern die Bauart des Korpus — die Marginalien sind zu Gliederungsstufen
+ * PROMOTET (Auftrag 6b, `baueGliederungsbaum`) und stehen darum im Baum, nicht
+ * am Eintrag. Der erste Wurf der Vorschau zeigte deshalb nur Nummern und war
+ * damit exakt das, was Kap. 15.5 Zeile 6 befürchtet: eine Verdopplung der
+ * Pfeile ohne eigene Auskunft — nach M1 fiele sie.
+ *
+ * Die Auskunft ist trotzdem da, nur woanders: die SPEZIFISCHSTE Stufe des
+ * Gliederungspfads IST die Marginalie. Gemessen an OR 336c: «a. durch den
+ * Arbeitgeber»; OR 127: «1. Zehn Jahre»; OR 18: «D. Auslegung der Verträge,
+ * Simulation». Genau das gehört in die Vorschau.
+ *
+ * `eigenStufe` verhindert die dritte Dopplung: steht der Nachbar unter DERSELBEN
+ * Stufe wie der gelesene Artikel, sagt sie nichts Neues — dieselbe Regel, nach
+ * der die Randtitel-Anzeige im Leser nur die GEÄNDERTEN Stufen zeigt (§5).
+ * Dann `null`, und die Karte entfällt (§8/M1: keine Zeile ohne Auskunft).
+ */
+export function vorschauMarginalie(
+  sektionen: Sektion[],
+  token: string,
+  eigenStufe: string | null,
+): string | null {
+  const stufe = gliederungsPfad(sektionen, token).at(-1)?.label ?? null;
+  return stufe && stufe !== eigenStufe ? stufe : null;
+}
+
+/**
  * F-E2 (entschieden David 14.9.2026: «ja, aber erst in E2») · die Vorschau auf
  * den Nachbarn.
  *

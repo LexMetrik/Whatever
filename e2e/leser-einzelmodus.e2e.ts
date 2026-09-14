@@ -153,6 +153,24 @@ test.describe('W2·5m/E1 — der Umschalter und das Blättern', () => {
     await expect(page.locator('[data-artikel-nachbarn]')).toHaveCount(0)
   })
 
+  test('der Erlass-Ingress steht nicht vor der Bestimmung, der Erlass-Kopf schon', async ({ page }) => {
+    // Gemessen bei der Sichtprüfung 14.9.2026: der Vorspann füllte @390 den
+    // ersten Bildschirm, bevor der Artikel begann. Der Kopf (Titel, Stand,
+    // amtliche Quelle) bleibt — er ist der §7-Ausweis der gelesenen Fassung.
+    await page.goto(OR)
+    await rahmenBereit(page)
+    await expect(page.locator('section[aria-label="Ingress"]').first())
+      .toBeVisible({ timeout: 20_000 })
+    await page.goto(einzel(OR, '336_c'))
+    await rahmenBereit(page)
+    await expect(page.locator('[data-einzel-artikel]')).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('section[aria-label="Ingress"]')).toHaveCount(0)
+    // Die Erlass-Identität bleibt: die klebende Kopfzeile trägt sie auf jeder
+    // Breite, und der Gliederungspfad sagt, wo im Erlass man steht.
+    await expect(page.locator('[data-v3-kopf]').first()).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[data-einzel-pfad]')).toBeVisible({ timeout: 20_000 })
+  })
+
   test('S4-Probe: der Kantonserlass kennt denselben Modus, ohne Sonderweg', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.goto(KANTON)
@@ -220,6 +238,21 @@ test.describe('W2·5m/E2 — die Dossier-Blöcke', () => {
     // Die Zahl steht im Titel — «3 Fassungen», nicht «Fassungen».
     const titel = await dossier.locator('[aria-expanded]').first().innerText()
     expect(titel).toMatch(/\d+\s/)
+  })
+
+  test('F-E2/M1 · die Nachbarn-Vorschau sagt, WORUM es dort geht — nicht nur die Nummer', async ({ page }) => {
+    // GEMESSEN 14.9.2026: `margAnzeige` führt im OR für keinen einzigen Artikel
+    // einen Randtitel (die Marginalien sind zu Gliederungsstufen promotet,
+    // Auftrag 6b). Die Vorschau nimmt darum die spezifischste Stufe des
+    // Nachbarn — sonst wäre sie die Pfeil-Dopplung, die Kap. 15.5 befürchtet,
+    // und fiele nach M1.
+    await page.goto(einzel(OR, '336_c'))
+    await rahmenBereit(page)
+    const vorschau = page.locator('[data-einzel-vorschau]')
+    await expect(vorschau).toBeVisible({ timeout: 20_000 })
+    await expect(vorschau.locator('[data-vorschau="nach"]')).toContainText('Art. 336d')
+    await expect(vorschau.locator('[data-vorschau="nach"]')).toContainText('durch den Arbeitnehmer')
+    await expect(vorschau.locator('[data-vorschau="vor"]')).toContainText('Art. 336b')
   })
 
   test('§15 · ein zugeklappter Block lädt nichts (on demand)', async ({ page }) => {
