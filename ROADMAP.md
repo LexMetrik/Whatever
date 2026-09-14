@@ -117,6 +117,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **S4 · Kantons-Probe** — Kantonserlasse rendern unverändert (Fokus Bund, nichts bricht); der H2-Kontaktbogen deckt nur Bund ab. Kap. 7.
   - [x] **Tor-Konflikt `erlassAnsicht.ts`-Deckel** *(§17-Wurzel-Fix)* — ✅ erledigt 14.9.2026, PR #868 (`892a6f0fb`). Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
   - [ ] **`leserV3Modell.ts` 420/420 und `uebersichtAngaben.ts` 418/420 schneiden** *(§17, offen nach #868)* — der v3-Deckel hat null Kopfraum; der Zukunftsfassungen-Hook (#863) musste deshalb nach `useZukunftsfassung.ts` ausweichen. Der Schnitt am Adapter ist laut Tor-Kommentar (16.8.2026) **verhaltenstragend** (Hook-Reihenfolge) ⇒ **eigener deklarierter Schritt** mit Rot-Beweis, kein Struktur-Umbau (§6.3). Dazu: der Satz «inzwischen in Kraft» gehört nach `src/lib/normtext/erlassKopfText.ts` (§5, heute zweite Heimat), `seo-detail.ts:354` trägt ihn unverlinkt.
+  - [ ] **`NormText.tsx` 795/800 Zeilen** *(Messung 14.9.2026, `check:schlankheit`)* — fünf Zeilen Kopfraum: die nächste Änderung an der Datei lässt das Tor anschlagen. Erst schneiden (§6.6), dann ändern — kein Deckel-Anheben (§17). *(Nebenbefund der Jules-Suggestions-Sichtung 14.9.2026.)*
   - [x] **Erledigt:** Nachbar-Artikel-Pfeile · Rohdaten-Link je Erlass — ✅ #854 (`7b0338916`). Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (4).
   - [~] **Einzelartikel-Ansicht E1 + E2** *(Ansichtsoption, Auftrag David 14.9.2026; Konzept Kap. 15)* — **gebaut und tor-grün, Landung am 14.9.2026 noch offen: PR #869** (Merge-SHA nachtragen, sobald gelandet): Umschalter «Ganzer Erlass | Einzelner Artikel», Blättern, Dossier-Blöcke Historie/Verweise/Materialien/Werkzeuge; die Nachbar-Pfeile aus #854 erscheinen nur noch hier (Davids Befund «das bringt aber nur etwas wenn man einzeln einen artikel hat»). *Warum offen: der Doku-PR #870 hat dieselbe ROADMAP-Zeile umgeschrieben und ist zuerst gelandet — #869 steht seither auf DIRTY und braucht einen Rebase durch die bauende Session (§12: fremder Worktree, nicht von hier anfassen).*
   - [ ] **Einzelartikel-Ansicht E3** *(Rest des Konzepts Kap. 15)* — offen (Druck/Export). Ebenfalls offen: der **Rechtsprechung-Block im Artikel-Dossier**, bewusst hinter M3 / `QS-KORPUS` gestellt (Formulierung aus PR #869).
@@ -327,29 +328,6 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Alt-Block als §7-Zitat mit Deckel 8 MB / 2 MB je Erlass; Vor-Messung E5.0 vor dem Bau. Etappen E5.0, E5, E6.
   **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.
 
-- [x] **Entstehung am Artikel — Synopse alt/neu in der Änderungskarte** *(`W2·6c-ENTSTEHUNG-SYNOPSE-LESER`, §14-Intake 11.9.2026)*
-  <!-- @meta id: W2·6c-ENTSTEHUNG-SYNOPSE-LESER · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-SYNOPSE, W2·6c-ENTSTEHUNG-LESER] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
-  Ziel: in der Änderungskarte (E3, `EntstehungsBlock.tsx`) je Fassungspunkt den alten Wortlaut aus
-  `public/materialien/synopse/<KEY>.json` gegen den geltenden zeigen, nachgeladen erst beim Klick,
-  Zustände ehrlich (`ohne_ereignis`-Blöcke als «ohne Fussnoten-Ereignis» gekennzeichnet), §7-Merkmale
-  sichtbar (Stand, Quelle, Live-Link), Entwurf↔Beschluss aus `synopse-entwurf/` wo vorhanden. Grenzen:
-  kein Prerender-Markup, CLS 0, Deckel unverändert. **Bau erst nach Merge von** `W2·6c-ENTSTEHUNG-SYNOPSE`
-  **(PR #794, Stand 11.9.2026: offen).**
-  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.5.
-
-- [x] **Entstehung am Artikel — Quelllücken in einzelnen Fedlex-Ständen ehrlich zeigen** *(`W2·6c-ENTSTEHUNG-QUELLLUECKE`, Auflage A6 Gegenprüfung PR #798, 12.9.2026)*
-  <!-- @meta id: W2·6c-ENTSTEHUNG-QUELLLUECKE · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-SYNOPSE] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
-  Erkennt der Generator, dass eine eId in GENAU EINEM Stand fehlt und danach unverändert
-  zurückkehrt (Beleg CHEMRRV `cc/2005/478` @2022-05-01: Art. 4–24 stehen als
-  `<mod>`/`<quotedStructure>` eines Anhangs statt als `<article>`, 22 Blöcke darum fälschlich
-  «entfallen»/«neu»), bucht er «Quelle unvollständig» statt «entfallen»/«neu»; Karte
-  (`SynopseKarte.tsx`) zeigt den Zustand. Lineage-Regel in `neuNach()` über die ganze
-  Stände-Kette statt des nächsten Token-Treffers (zweite, andersartige Ursache in derselben
-  Ausnahmeliste: AVIV 57b @2021-07-01, echte Token-Kontinuität — bleibt dort, keine
-  Quelllücke). Löst die 11 befristeten Ausnahmen in
-  `bibliothek/register/entstehung-leerdiff-ausnahmen.json` ab — **fällig vor deren Verfall
-  2026-10-12**. **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.10.
-
 - [ ] **Entstehung am Paragraph — Basel-Stadt (vor Zürich)** *(`R12a-ENTSTEHUNG-BS`, Vormessung
   lex-recherche 12.9.2026)*
   <!-- @meta id: R12a-ENTSTEHUNG-BS · status: blocked · blocker: david-bs-lizenz-schluessel · dep: [W2·6c-ENTSTEHUNG-SYNOPSE] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
@@ -555,7 +533,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **«OR» dreimal untereinander @1440** *(L6-Nebenbefund)* — Reiter · Pane-Titel · Leser-Kennung; der V3-Leser sollte sein Kürzel im Pane abgeben.
   - [ ] **Leser-Mount auf langsamem Netz messen** — Nachlauf zu #743/L2 (grosser Erlass: Ankersprung erst nach der zweiten Ladung, Anker-Oberkante 433 px statt 193 px).
   - [ ] **Budget-Entscheid Entry 99,5 %** (59.7 / 60.0 KB) — der nächste Kopf-Bau reisst das Budget: Lazy-Laden oder Budget-Hebung (§15). **Wartet auf David.**
-  - [ ] **Jules-Kandidaten** (grüne Spur, nach Landung W2·24): toter CSS-Rückbau `[data-lr-spiegel]`/`.lr-notiz*`/alte Druckregeln in `index.css` · Typ-Härtungen `lib/tabs.ts`/`tabGruppen.ts` · Allowlist-Pflege `e2e/kein-abschnitt.allow.json`. Datei-Splits erledigt (ArtikelLeser R6F; `Reiterleiste.tsx` 7.9. gemessen 650 Z.).
+  - [ ] **Jules-Kandidaten** (grüne Spur, nach Landung W2·24): toter CSS-Rückbau `[data-lr-spiegel]`/`.lr-notiz*`/alte Druckregeln in `index.css` · Typ-Härtungen `lib/tabs.ts`/`tabGruppen.ts` · Allowlist-Pflege `e2e/kein-abschnitt.allow.json`. Datei-Splits erledigt (ArtikelLeser R6F; `Reiterleiste.tsx` 7.9. gemessen 650 Z.). *(Der proaktive Jules-Kanal «Suggestions» ist seit 14.9.2026 abgeschaltet — diese Kandidaten laufen unverändert als auftragsgebundene Tickets weiter; Entscheid D8: `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §6.)*
 
 - [x] **Funktionszeile am Artikelende überarbeiten** *(`W2·26-FUNKTIONSZEILE`, Mandat David 11.9.2026)*
   <!-- @meta id: W2·26-FUNKTIONSZEILE · status: done · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
@@ -563,21 +541,6 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   «Gilt seit …», Akkordeon je Artikel, Fussnoten-Option blendet auch SR-Nummer-Fussnoten aus,
   Aktionen nur bei Hover/Fokus/offener Rubrik, D45-Split, Umbenennung `BezuegeKopf` →
   `Funktionszeile`. **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §9.
-
-- [x] **Bezüge-Zähler in den Erlass-Payload** *(`W2·26-FUNKTIONSZEILE-ZAEHLER`, D34-Nachfix)*
-  <!-- @meta id: W2·26-FUNKTIONSZEILE-ZAEHLER · status: done · blocker: null · dep: [W2·26-FUNKTIONSZEILE] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
-  Bezüge-Zähler (Entscheide/Materialien/Verweise/Rechner) in den Erlass-Payload statt eigenem
-  Fetch — heute entstehen die Fuss-Zeilen erst in der zweiten Render-Runde. Korpus/Generator ⇒
-  **Gegenprüfung Pflicht**, Golden byte-gleich bzw. deklarierter Re-Bless.
-  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §9.
-
-- [x] **Reiter anheften und Arbeitsmappe** *(`W2·25-ARBEITSMAPPE`, §5a Ziff. 5/9 · R11-M5)*
-  <!-- @meta id: W2·25-ARBEITSMAPPE · status: done · blocker: null · dep: [W2·24-DESIGN-IDENTITAET] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
-  Angeheftete Kürzel-Reiter (OR/ZGB/ZPO, links, ohne ✕, überleben «Alle schliessen») und die
-  benannte Arbeitsmappe (offene Reiter lokal speichern/öffnen, als Adresse teilbar,
-  deterministisch ohne Konto). **Risiko D16:** Anheften darf keine zweite Anzeige-Ordnung sein,
-  sondern muss den flachen Speicher umsortieren — sonst Rückfall in den behobenen Zieh-Bug.
-  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §7.
 
 - [ ] **Perf-Rest Leser: `fremdRoutingFormB` / `artikelnPluralVerweise`** *(`W2·24-PERF-REST`)*
   <!-- @meta id: W2·24-PERF-REST · status: ready · blocker: null · dep: [W2·24-DESIGN-IDENTITAET] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
@@ -699,6 +662,16 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **`scripts/materialien/check-botschaften-netz.ts` nutzt literales U+0001 als Join-Trenner** *(Befund 11.9.2026, W2·6c-ENTSTEHUNG-DATEN)* — Steuerzeichen im String-Join
     statt einer benannten Konstante/eines strukturierten Schlüssels; ersetzen.
 
+- [ ] **Grenzwert-Test Lohnfortzahlung + zwei überholte Code-Kommentare** *(`QS-CODE-LFZ-GRENZE`, Ertrag der Jules-Suggestions-Sichtung 14.9.2026)*
+  <!-- @meta id: QS-CODE-LFZ-GRENZE · status: ready · blocker: null · dep: [] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-FREMDAGENTEN.md -->
+  Die drei belastbaren Funde aus 76 proaktiven Jules-Vorschlägen (~4 % Ausbeute) als EINE
+  sortenreine Bau-Einheit. Ziel: die Drei-Monats-Grenze von Art. 324a OR direkt prüfen und zwei
+  Kommentare, die Erledigtes als offen ausgeben, auf ihren Beleg zeigen lassen. Grenzen: keine
+  Verhaltensänderung, bestehende Tests bleiben unverändert (§6.3).
+  **S-Grösse ⇒ mit der nächsten `feld: werkzeuge`-Einheit bündeln, nicht allein fahren.**
+  **Detail (Fundstellen, Belege, Rauschen-Muster):** [FAHRPLAN-FREMDAGENTEN.md](fahrplaene/FAHRPLAN-FREMDAGENTEN.md) §5.
+  - [ ] **Gegenprüfung nicht erforderlich — gemessen, nicht geraten** *(14.9.2026)*: `istRisikoPfad()` ist für alle vier Dateien **false**. **Offener Punkt daraus:** `src/lib/datumsUtils.ts` trägt die 324a-Grenze, fällt aber aus dem Klassifikator (`RECHNEN_RE` trifft den Dateinamen nicht) — mit Rot-Beweis (§6.7) entscheiden, **bevor** dort jemand Rechenlogik ändert.
+
 - [x] **Tarif-Stammdaten: Stand maschinenlesbar + Drift-Tor** *(`W3-TARIF-STAND`, Rules-as-Code-Sichtung 5.9.2026, Entscheid David 5.9.2026)*
   <!-- @meta id: W3-TARIF-STAND · status: done · blocker: null · dep: [] · feld: werkzeuge -->
   ✅ gelandet 6.9.2026 (#734) — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026. Die offenen
@@ -742,6 +715,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-EFFIZIENZ-CHECKLISTE.md](fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md) §1 —
   die Checkliste liegt seit 29.8.2026 dort statt hier (sie war eine Merge-Konflikt-Falle: 6 Konflikte
   in EINER Zeile bei 15 PRs).
+  - [ ] **ROADMAP-Deckel bleibt knapp — nächste Umschichtung braucht einen `dep`-Umbau** *(Messung 14.9.2026)* — `main` stand bei 122 875 von 122 880 Bytes (fünf Bytes Luft); vier erledigte Schritte sind in die Chronik überführt (Umschichtung 14.9.2026 (7)), vier weitere `done`-Schritte **können nicht** wandern, weil lebende Schritte `dep` auf sie halten (`W2·6c-ENTSTEHUNG-DATEN`/`-LESER`/`-SYNOPSE`, `W2·26-FUNKTIONSZEILE`). Wurzel-Kandidat: `dep` auf erledigte Schritte auflösen oder `check:plan` erledigte `dep`-Ziele aus der Chronik akzeptieren lassen.
   - [ ] **Steuerdeckel-Entscheid — wartet auf David:** Streichkandidat unter `scripts/check-*.ts` (5.9.2026 Prosa-Diät statt Deckel-Hebung; Hooks ~0 B Luft) *(sechs erledigte Nebenpunkte 5.9.2026 umgeschichtet: ROADMAP-CHRONIK.md, Umschichtung 6.9.2026).*
 
 - [ ] **Fremde Agenten im Bau — Jules, Antigravity, Gemini** *(`QS-FREMDAGENTEN`, Freigabe David 3.9.2026)*
@@ -754,6 +728,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [x] **Erledigt:** Phase 0 · Pilot Jules · Diskrepanz-Finder — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
   - [x] **Fremd-PR-Tor vergleicht die Kommentar-MULTIMENGE** — ✅ erledigt 14.9.2026, PR #862 (`d61193dbe`): Regel 3b prüft die getrimmten Kommentarzeilen zeichengleich (`comm -23` leer), nicht mehr nur die Summe. Anlass: #855 baute die Summe nach einer Ablehnung exakt zurück (580 → 580) und verfälschte dabei trotzdem vier Zeilen.
   - [ ] **Jules-Bilanz 14.9.2026 — drei Tickets, drei Ablehnungen** *(Messreihe: FAHRPLAN-FREMDAGENTEN §5)* — Tickets #849/#850/#858 (Reiterleiste.tsx-/tabs.ts-Split), PRs #855, #857 und #861 **alle abgelehnt**. Muster: **Jules generiert, statt zu verschieben** (Kommentar-Paraphrasen, gelöschte Kommentarzeilen, in #855 zusätzlich eine geänderte Hook-Reihenfolge). **Ticket #858 war mein eigener Fehler** — der Body enthielt nur die EN-Summary-Zeile, die Detailregeln fehlten (Vorfall und Regel: Fahrplan §5). Die Rückbau-Schwelle §3 ist damit zu prüfen; die Neuanlauf-Tickets (Reiterleiste, `tabs.ts`-Split dritter Anlauf mit gemeinsamer Typen-Datei) gehören in die **nächste Session**, nicht in diese.
+  - [x] **Proaktiver Kanal «Suggestions» abgeschaltet** *(Entscheid David 14.9.2026 — Wortlaut, Zahlen und Begründung: Fahrplan §6 D8, Messwerte §5)* — 76 unaufgeforderte Vorschläge, am Code geprüft: 3 belastbar (~4 %), 0 gestartet; die drei Funde als Schritt `QS-CODE-LFZ-GRENZE` eingeordnet. Jules bleibt für auftragsgebundene Tickets verbunden.
   - [ ] Zweitblick-Messung — erster Durchgang eingetragen (#658, VZV/AMBV: 1 echt vorbestehend, 7 Schein, 0 verpasst; 1/5, Schwelle §3 noch nicht erreicht), weitere vier im Alltag. §2/§3.
   - [ ] Phase 4 Skalierung läuft — Landungsquote 83 % (n=6), Median 30 min ⇒ Ticketzahl 3–5 offen; Jules-API mit Plan-Gegenlesen (D4) noch offen; Antigravity-Claude als Bauarbeiter (D7) **geparkt** (Bauleiter/David-Chat 4.9.2026, kein Zwischenmarkt zu Jules — Wiedervorlage nur bei Kontingent-Engpass). §2.
   - [ ] **Wiedervorlage «Google-Ökosystem-Sichtung»** *(Dach QS-FREMDAGENTEN, Phase 4)* — alle 3 Monate, erste Fälligkeit **Dezember 2026**: Gemini-Recherche (agy, `read_url(*)`) «neue Google-KI-Produkte/Modelle, Jules-/Antigravity-Changelog seit \<Datum\>», Bewertung ~30 min, Eintrag in Fahrplan §7. Maschinischer Anstoss: `retro:17` Regel (h) ab 30 Tagen seit `bibliothek/register/antigravity-stand.json`. §7.
