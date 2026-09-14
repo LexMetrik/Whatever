@@ -550,6 +550,24 @@ Snapshot vor dieser Session, 04.9.2026T18:41Z), nicht handgerechnet:
 | Fremd-PR-Tor | 5× scharf grün; 1× Eigen-Fehlalarm (#656, Muster zu breit → korrigiert durch #656/#649). |
 | E2E-Shard 2/8 | flackert wiederkehrend (Artikel-Anker OR 336c/257d, Richter-Facette; #650, #658 je Rerun grün) — s. ROADMAP-Kleinbefund «E2E-Flake Shard 2/8». |
 
+**Phase 4 — Messreihe 14.9.2026 (Reiterleiste/`tabs.ts`): drei Tickets, drei Ablehnungen.**
+
+| Teil | Befund |
+|---|---|
+| Tickets | #849 (`Reiterleiste.tsx`-Split), #850 (`tabs.ts`-Split), #858 (`tabs.ts`-Split, Neuanlauf). |
+| #855 (zu #849) | **abgelehnt** — Kommentar-Zeilenzahl 696 → 600 (96 gelöscht) und vier Kommentar-Paraphrasen («hing» → «hung», eingefügtes «suddenly»); zusätzlich geänderte Hook-Reihenfolge ⇒ D16-e2e rot. *Attribution 14.9.2026 korrigiert:* die D16-Spec flackerte unabhängig vom Split (3/3 rot auch in #859, einem reinen Daten-PR) — die Ablehnung stützt sich damit auf die vier Kommentar-Verfälschungen, **nicht** auf «Verhaltensänderung». |
+| #857 (zu #850) | **abgelehnt** — dieselben Kommentar-Paraphrasen; die Kommentar-Summe war nach der ersten Ablehnung exakt zurückgebaut (580 → 580), die Zeilen aber verfälscht. Daraus Regel 3b des Fremd-PR-Tors (Multimengen-Vergleich, PR #862). |
+| #861 (zu #858) | **abgelehnt** in der Substanz (`ZU_MAX` statt `MAX` exportiert, `hashVon` dupliziert). Die **Form-Abweichung geht teilweise auf mich**: Ticket #858 trug nur die EN-Summary-Zeile (s. Regel unten), Jules konnte die Detailregeln — max. 2 Dateien, Namensschema, Export-Verbot — gar nicht lesen. |
+| Muster | **Jules generiert, statt zu verschieben.** Bei Split-Aufträgen an gewachsenen Dateien schreibt er Kommentare neu, statt sie mitzunehmen. Die Rückbau-Schwelle §3 ist an dieser Serie zu prüfen. |
+| Folge-Ticket (nächste Session) | `tabs.ts`-Split, dritter Anlauf: geteilte Konstanten/Helfer/Typen (`MAX`, `hashVon`, `GeschlossenerReiter`) **wörtlich** in eine Typen-Datei, beide Hälften importieren daraus; `export` nur bei echtem Import. Fremd-PR-Tor zusätzlich um Duplikat-Erkennung ergänzen (`comm -13` auf identische Code-Zeilen). Folge zu #862. |
+
+**Regel (14.9.2026, Vorfall Ticket #858): Ticket-Body nach `gh issue create` zurücklesen.**
+Beim Ableiten aus `docs/token-oekonomie/jules-ticket-vorlage.md` scheiterte das `sed`-Kommando an
+Sonderzeichen, die Body-Datei blieb leer, `gh issue create` nahm sie trotzdem an, und ein
+nachgeschobenes `gh issue edit` setzte nur die eine Summary-Zeile. **Kein Jules-Start, bevor**
+`gh issue view <N> --json body -q .body | wc -l` mindestens die Zeilenzahl der Vorlage meldet.
+Dieselbe Regel steht in `.claude/skills/landung/referenz-jules.md` und in der Ticket-Vorlage.
+
 **Diskrepanz-Finder-Läufe (Phase 2)** — Werte aus §2 Phase 2 übernommen:
 
 | Datum | Erlass | Artikel mit Diff | an Gemini | echt | Schein | Tokens |

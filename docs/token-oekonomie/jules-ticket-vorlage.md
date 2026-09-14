@@ -15,6 +15,11 @@ tragen das Label `probe` und zählen nicht in die Landungsquote (Konvention QS-F
 Schliessen das Label `entwurf-antwort` und zählt ebenso weder als Landung noch als Ablehnung
 (Klasse `entwurf-antwort`, QS-EFFIZIENZ 5.9.2026).
 
+**Pflicht nach dem Anlegen (Regel 14.9.2026, Beleg #858):** den erzeugten Body zurücklesen —
+`gh issue view <N> --json body -q .body | wc -l` muss mindestens die Zeilenzahl dieser Vorlage
+melden; sonst ist das Ticket defekt (leerer Body wird von `gh` klaglos angenommen) und Jules darf
+nicht gestartet werden.
+
 ---
 
 **Summary (EN):** Split the oversized React component file `src/components/normtext/ArtikelBody.tsx` (926 lines) into at most three files by moving whole sub-components/helpers verbatim into sibling files. No behaviour change, no test change. Read `AGENTS.md` first.
