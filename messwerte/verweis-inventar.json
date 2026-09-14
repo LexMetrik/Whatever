@@ -18,8 +18,8 @@
     "selbstmarker": 925
   },
   "fremdZiele": {
-    "geprueft": 9675,
-    "tot": 36,
+    "geprueft": 10254,
+    "tot": 39,
     "sammelblock": 20,
     "ohneSnapshot": 9
   },
@@ -469,6 +469,13 @@
       "klasse": "n2b-genitiv"
     },
     {
+      "quelle": "BS-154.100",
+      "fundstelle": "kanton/BS/154.200/art_20",
+      "ziel": "§ 56h",
+      "token": "56_h",
+      "klasse": "paragraf-kanton-kuerzel"
+    },
+    {
       "quelle": "STGB",
       "fundstelle": "kanton/BS/258.600/art_2",
       "ziel": "Art. 39 StGB",
@@ -505,6 +512,20 @@
       "token": "86",
       "klasse": "n2b-glied",
       "sammelblock": "86_88"
+    },
+    {
+      "quelle": "BS-140.500",
+      "fundstelle": "kanton/BS/861.520/art_28",
+      "ziel": "§ 16b",
+      "token": "16_b",
+      "klasse": "paragraf-kanton-kuerzel"
+    },
+    {
+      "quelle": "BS-140.500",
+      "fundstelle": "kanton/BS/861.520/art_29",
+      "ziel": "§ 16b",
+      "token": "16_b",
+      "klasse": "paragraf-kanton-kuerzel"
     },
     {
       "quelle": "ZGB",

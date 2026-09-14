@@ -335,6 +335,31 @@ export function berechne(): Artefakt {
                 }
               }
             }
+            // ── Z6c-KANTON · Nachschlag der V-3-Weiche (Befund C, 14.9.2026) ──
+            // Der kantonale Fremd-Anker entsteht ohne NormChip und ohne
+            // `bundSnapshotRef` (NormText baut `<a href={pfad}#art-${token}>`
+            // selbst) — bis 14.9.2026 fiel er darum durch JEDE Messung, und die
+            // 579 Stellen dieser Klasse standen ungeprüft in der Auslieferung.
+            // Der Nachschlag ist derselbe wie oben: Token-Menge des Ziel-
+            // Snapshots über den Register-Key. `sammelblockFuer` bleibt weg —
+            // es liest die BUND-Projektion (`ARTIKEL_BESTAND`) und hätte für
+            // einen kantonalen Key nichts als `null` zu sagen (§8: lieber kein
+            // Feld als ein irreführendes).
+            if (st.kantonZiel) {
+              const menge = zielTokens(st.kantonZiel.quelle);
+              if (!menge) {
+                fremdOhneSnapshot += 1;
+              } else {
+                fremdGeprueft += 1;
+                if (!menge.has(normRef(st.kantonZiel.token))) {
+                  toteFremdanker.push({
+                    quelle: st.kantonZiel.quelle, fundstelle: eintrag.id,
+                    ziel: st.kantonZiel.zitat, token: st.kantonZiel.token,
+                    klasse: st.klasse,
+                  });
+                }
+              }
+            }
           }
         }
       }

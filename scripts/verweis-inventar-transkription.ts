@@ -345,10 +345,27 @@ export interface Stelle {
    *  zweiter Erkenner: der String ist die Produktions-Eingabe, nicht ein
    *  Nachbau ihrer Bedeutung (§5). */
   ziel?: string;
+  /** Z6c-KANTON (Nachzug 14.9.2026, Gegenprüfungs-Befund C): die V-3-Weiche
+   *  `paragraf-kanton-kuerzel` baut ihren Fremd-Anker NICHT über NormChip und
+   *  `bundSnapshotRef`, sondern direkt als `<a href={kantonZiel}#art-${token}>`
+   *  (NormText.tsx). Ein Zitat-String wie «Art. 5 OR», den ein Resolver zerlegen
+   *  könnte, entsteht dort gar nicht — darum trägt diese Weiche Ziel-Erlass und
+   *  Anker-Token AUSDRÜCKLICH. Beide Werte stammen aus derselben transkribierten
+   *  Weiche wie der gerenderte Link (§5): `quelle` aus `kantonZielAmZitat`,
+   *  `token` aus `parsePassus` — genau die zwei Funktionen, aus denen die
+   *  Produktion den href zusammensetzt.
+   *
+   *  ABWEICHUNG ZUR PRODUKTION, bewusst: dort liefert die Kürzel-Karte die
+   *  Lese-ADRESSE (`/gesetze/kanton/BS-154.100`, `erlassPfad`), hier den
+   *  REGISTER-KEY (`BS-154.100`, `kartenJeKanton`). Das letzte Pfadsegment IST
+   *  der Key — dieselbe Gleichung, auf die sich `eigenesKuerzel` in der Messung
+   *  schon stützt. Der Key ist das, womit der Snapshot-Nachschlag arbeitet. */
+  kantonZiel?: { quelle: string; token: string; zitat: string };
 }
 
 const stelle = (
   klasse: string, nummer: string | null, ctx: Ctx, selbstmarker = false, ziel?: string,
+  kantonZiel?: { quelle: string; token: string; zitat: string },
 ): Stelle => ({
   klasse,
   nummer,
@@ -357,6 +374,7 @@ const stelle = (
     selbstmarker && !ctx.fremdKuerzel && ctx.tokenMap.size > 0 && nummer != null
     && !ctx.tokenMap.has(normRef(nummer)),
   ...(ziel != null ? { ziel } : {}),
+  ...(kantonZiel != null ? { kantonZiel } : {}),
 });
 
 /** Transkription von `restMitIntern` — zählt statt zu rendern. */
@@ -407,8 +425,18 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
       // Steht wie in der Produktion VOR den Fremd-Guards und NACH dem
       // Selbst-Signal; ohne Anker-Token fällt es in die Guards zurück.
       const kantonZiel = sm ? null : kantonZielAmZitat(nach, ctx);
-      if (kantonZiel && parsePassus(m[0])?.artikelToken) {
-        linkSpans.push({ start, end, s: stelle('paragraf-kanton-kuerzel', m[1], ctx, sm) });
+      const kantonToken = kantonZiel ? parsePassus(m[0])?.artikelToken : undefined;
+      if (kantonZiel && kantonToken) {
+        // Z6c-Kanton (Befund C, 14.9.2026): bis hierher zählte die Weiche nur
+        // ihre Stellen — das Ziel blieb ungemessen, und «0 ausgelieferte tote
+        // Anker» war darum eine Aussage über den Bund, nicht über den Korpus.
+        // Ziel-Erlass und Token reisen jetzt mit; der Nachschlag im Snapshot
+        // des Ziels passiert in der Messung, wie beim Bund-Zweig.
+        linkSpans.push({
+          start, end,
+          s: stelle('paragraf-kanton-kuerzel', m[1], ctx, sm, undefined,
+            { quelle: kantonZiel, token: kantonToken, zitat: m[0] }),
+        });
         continue;
       }
       const rest = nach.replace(PARAGRAF_ANHANG, '');
