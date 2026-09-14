@@ -33,6 +33,85 @@ falsch — korrigiert 30.8.2026). Karten abgeschlossener Sessions (älter als
 werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
+## Session 14.9.2026 — Phasen-Dekret «Bund zuerst» und die Phase-1-Welle (#846–#869)
+
+**Rahmen.** Auftrag David 14.9.2026: drei Phasen (Bund → Kantone → mehr als Fedlex), Phase 1 wird
+über die `@queue` abgearbeitet, «baue bis ich stop sage». Der Tag hat 17 PRs gelandet; sieben davon
+liegen auf Risikopfaden und tragen je ein unabhängiges Gegenprüfungs-Verdikt.
+
+**Risikopfad-Landungen mit Verdikt (Kurzform):**
+
+- **#848** `confidence.json`-Neulauf (`90cb59fff`) — **bestanden.** Qualitätsbild 23.6. → 14.9.2026.
+  Prüfer-Nebenfunde ins Fehlerbuch: `[N]`-Heuristik falsch-positiv (FIDLEV Anh. 9 führt amtlich
+  «[1] Jahr»), auto-akzeptierte Tabellen-Verklebung VD-vd-106879 Art. 81 (0.95, nur weich), sowie
+  §17: `erzeugt` wird von Hand gesetzt, kein Frische-Tor — darum alterte die Datei drei Monate.
+- **#851** Fünf-Artefakte-Klammer (`6c4f9fa2f`) — **bestanden.** Sidecar trägt `stand`/`fassungsToken`
+  (228/228, davon 215 substanz-byte-gleich = die Marke ist reproduziert, nicht behauptet);
+  KKV-Token `126_z__2` als Quell-Effekt geklärt. Nebenfunde: `quelleUrl` zeigt auf einen amtlich
+  nicht existierenden Anker (generisch für jeden `__N`-Token), KKV-Label wäre aus dem `<sup>`
+  ableitbar, `__N`-Zählung in zwei Extraktoren über verschiedene Regex-Mengen.
+- **#852** W2·22 Z6a Suffix-Grammatik (`4c38d316b`) — **bestanden.** 13 Stellen in 9 Bundeserlassen.
+  Nebenfunde: 12. Handkopie der Suffix-Reihe in `KantonNormText.tsx:49`; die Kommentar-Zahl «vier
+  Konsumenten» war falsch (sechs).
+- **#856** W2·22 Z6c tote Anker (`40f2c2967`) — **Gegenprüfung hat den ersten Stand widerlegt**,
+  sechs Befunde A–F, alle im PR gefixt; Endstand 39 tote Ziele von 10 276 prüfbaren.
+  §17-Nebenfund: der Steuerdeckel auf `scripts/check-*.ts` ist durch Dateinamen-Wahl umgehbar.
+- **#859** `aufgehoben` strukturell (`d16acf466`) — **bestanden mit Auflage.** 1 277/25 463,
+  Golden byte-gleich, Wächter `check:leerstellen`. Auflage als offene ROADMAP-Zeile gebucht:
+  §8-Anzeige der 98 Bund- und 481 Kanton-Leerstellen, die der Leser weiter als «aufgehoben» zeigt.
+  Wortlaut-Regel des Prüfers: **nicht** «Anhänge ohne Signal» — das Signal ist da (KKV Anh. 1–3
+  tragen den amtlichen Vermerk), das `<section>`-Schema erfasst der Artikel-Extraktor nicht.
+- **#860** Kernerlasse EMRK/EÖBV/AVG (`6a67f01be`) — **mit Auflage bestanden**, Auflage im PR
+  erfüllt. Status «entwurf», fachliche Abnahme bleibt bei David (§7). §17-Befund:
+  `scripts/fedlex-eli-aufloesen.ts` liefert für 2 von 3 SR ein falsches ELI aus dem falschen
+  Abstract (Repro-Kommando in der ROADMAP-Zeile).
+- **#864** W2·20 V-7 Bund-Rest (`6fb37368b`) — **bestand im Kern, widerlegte die Vollständigkeit**;
+  drei Befunde im PR nachgezogen. 197 belegte Stellen; darunter **97 «des Gesetzes»-Glieder, die
+  bis zum 14.9.2026 FALSCHE Self-Links waren** (Link auf die Verordnung statt aufs Trägergesetz).
+
+**§17-Lehren dieser Session:**
+
+1. **«Reiner Daten-PR macht UI-Sonde rot» ist ein Ladezeit-Race, kein Test-Flake.** Die D16-Spec
+   war 3/3 rot auf CI in #859 (reiner Daten-PR). Wurzel (#865, `a57e4698a`): die Reiterbeschriftung
+   wächst beim Manifest-Nachladen zwischen `dragover` und `drop`, der Drop rechnete die Seite neu,
+   statt die Marke zu vollziehen. Nebenwirkung: die Ablehnung von Jules-PR #855 stützt sich damit
+   auf die vier Kommentar-Verfälschungen, nicht auf «Verhaltensänderung». Verankert als Zeile im
+   Fehlerbuch-Kopf (FAHRPLAN-OFFENE-BEFUNDE §4); Tor existiert (`check:e2e-flake`).
+2. **Kommentar-Bilanz zählen reicht nicht** (#862, `d61193dbe`): #855 baute die Summe nach einer
+   Ablehnung exakt zurück (580 → 580) und verfälschte dabei trotzdem vier Zeilen. Regel 3b des
+   Fremd-PR-Tors vergleicht seither die MULTIMENGE der getrimmten Kommentarzeilen.
+3. **Ticket-Body nach `gh issue create` zurücklesen.** Ticket #858 trug nur die EN-Summary-Zeile —
+   das `sed`-Kommando beim Ableiten aus der Vorlage war an Sonderzeichen gescheitert, die Datei war
+   leer, `gh` nahm sie trotzdem. Jules konnte die Detailregeln nicht lesen; die Form-Abweichung in
+   PR #861 ist insoweit **mein Fehler**, die Substanz-Ablehnung bleibt. Regel jetzt in
+   `.claude/skills/landung/referenz-jules.md`, `docs/token-oekonomie/jules-ticket-vorlage.md` und
+   FAHRPLAN-FREMDAGENTEN §5.
+4. **Deckel an der Wurzel lösen, nicht kalibrieren** (#868, `892a6f0fb`): `erlassAnsicht.ts` wurde
+   geschnitten (419 → 198 + neu `erlassWortlaut.ts` 267), der 420er-Deckel blieb unverändert scharf
+   und gilt neu dem Paar. Offen bleibt `leserV3Modell.ts` 420/420 — dort ist der Schnitt laut
+   Tor-Kommentar verhaltenstragend und braucht darum einen eigenen deklarierten Schritt (§6.3).
+
+**Die übrigen Landungen (je eine Zeile):**
+
+- **#846** (`a1dba46b5`) PLAN — Phasen-Dekret «Bund zuerst», FAHRPLAN-BUND-FERTIG mit Sollbild, `@queue` auf drei Phasen, VPS-Bestellung nach Phase 2.
+- **#847** (`27e255f21`) PLAN — W2·20-Prosa nachgezogen (V-1–V-4 gebaut), Abhängigkeit W2·22 → W2·20 aufgelöst.
+- **#853** (`e8ae590d9`) PLAN — Sollbild-Fragen entschieden: FR/IT nach Phase 1, Zukunftsfassungen-Hinweis in Phase 1, Randtitel = `struktur.marginalie`.
+- **#854** (`7b0338916`) Leser — Nachbar-Artikel-Pfeile im Artikelkopf, Rohdaten-Link je Erlass. Entscheid: **kein `fassungsToken` im Zeiger** (§7 d verlangt Drift-Erkennung, keinen Hash-Abdruck). Kontrast-Falle `ink-400` (3,29:1) an den Pfeilen, vom a11y-Lauf gefangen, Vitest-Sonde eine Ebene tiefer verankert.
+- **#862** (`d61193dbe`) Prüfstrasse — Fremd-PR-Tor Regel 3b (siehe §17-Lehre 2).
+- **#863** (`7f5aa592e`) Leser — Zukunftsfassungen-Hinweis im Leserkopf («ab \<Datum\> gilt eine neue Fassung», amtlicher Link); 62 Erlasse, 93 künftige Inkrafttreten.
+- **#865** (`a57e4698a`) E2E — D16-Wurzel behoben (siehe §17-Lehre 1).
+- **#866** (`2535428ce`) PLAN — Konzept Einzelartikel-Ansicht (Auftrag David 14.9.2026), FAHRPLAN-LESER-V3 Kap. 15.
+- **#868** (`892a6f0fb`) Leser — `erlassAnsicht.ts`-Deckel an der Wurzel gelöst (siehe §17-Lehre 4).
+- **#869** Leser — Einzelartikel-Ansicht E1 + E2: Umschalter, Blättern, Dossier-Blöcke Historie/Verweise/Materialien/Werkzeuge. Rechtsprechung-Block im Artikel-Dossier bewusst hinter M3 / `QS-KORPUS`, E3 (Druck/Export) offen.
+
+**Fremdagenten-Bilanz 14.9.2026:** drei Tickets (#849, #850, #858), drei Ablehnungen (#855, #857,
+#861). Muster: **Jules generiert, statt zu verschieben.** Rückbau-Schwelle §3 zu prüfen;
+Neuanlauf-Tickets gehören in die nächste Session. Messreihe: FAHRPLAN-FREMDAGENTEN §5.
+
+**Wartet auf David:** fachliche Abnahme EMRK/EÖBV/AVG (Status «entwurf», Zeitsperre 1.12.2026) ·
+PR #867 «ENTWURF (Autopilot) — retro:17-Vorschläge vom 14.9.2026»: Übernahme nur durch
+David-/Session-Entscheid, sonst schliessen.
+
 ## Session 13.9.2026 — Reiterleiste-Ausbau: drei Wellen `W2·18` + `W2·25` gelandet (4 PRs)
 
 **Gelandet:** #842 (Welle 1, sechs stille Fehler + Nachzug R8-Sweep mobil), #843 (Welle 2:

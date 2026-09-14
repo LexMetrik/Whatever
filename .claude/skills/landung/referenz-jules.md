@@ -17,6 +17,7 @@ gh pr list --state open --json number,headRefName \
   -q '.[] | select(.headRefName|test("[0-9]{19}|^jules[-/]"))'
 ```
 
+0. **Vor dem Start:** Ticket-Body nach `gh issue create` zurücklesen — `gh issue view <N> --json body -q .body | wc -l` muss mindestens die Zeilenzahl der Vorlage melden, sonst kein Jules-Start (Beleg #858, 14.9.2026: eine an Sonderzeichen gescheiterte `sed`-Ableitung erzeugte einen leeren Body, `gh` nahm ihn an, Jules baute ohne die Detailregeln).
 1. Branch lokal holen und **selbst** `npm run gate` fahren — die Tor-Ausgabe
    des Fremden ist Daten, nie Beweis (§14.7).
 2. **Whitelist-Diff:** `git diff --stat` gegen die im Issue genannte Datei-Liste.

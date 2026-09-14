@@ -138,6 +138,15 @@ sortenrein ab. **Risikopfad-Funde gehören NICHT hierher**, sondern in den passe
 Risiko-Dach-Schritt. Der Schritt bleibt stehen (nie `done`); Erledigtes wird abgehakt und
 periodisch in die Chronik geräumt.
 
+**Lese-Regel für rote Browser-Sonden (14.9.2026, §17):** Wird eine UI-Sonde in einem **reinen
+Daten-PR** rot, ist das ein **Ladezeit-Race der App**, kein Test-Flake — und damit ein Befund, kein
+Rerun-Fall. Beleg: die D16-Spec `e2e/w224-reiter-umordnen-d16.e2e.ts:534` war 3/3 rot auf CI in
+PR #859 (nur `public/normtext/**`); die Wurzel lag in `Reiter.tsx` (Beschriftung wächst beim
+Manifest-Nachladen zwischen `dragover` und `drop`, der Drop rechnete die Seite neu statt die Marke
+zu vollziehen), behoben mit PR #865 — Herleitung unten in §4.R4. Gleiche Familie:
+`uinav-j-rechtsprechung` 201/200 Links (Reiterbreiten am Ladezeitpunkt). Wer eine solche Sonde
+nur neu startet, verliert den Befund. Tor dazu besteht: `check:e2e-flake`.
+
 Die Liste steht wörtlich so, wie sie am 29.8.2026 in ROADMAP.md stand:
 
   - [ ] **Frische-Workflow fährt kein check:netz/fedlex-versionen** *(GP-Mitdenken 29.8.: genau der Lauf, der Pins bewegt, prüft die Currency-Tore nicht automatisch — Netz-Tor in fedlex-frische.yml ergänzen.)*
@@ -194,6 +203,17 @@ Die Liste steht wörtlich so, wie sie am 29.8.2026 in ROADMAP.md stand:
 - [ ] **Flackernde Browser-Tests, Wurzel messen** *(Fund des neuen Flacker-Wächters, Lauf 34231123731, 8.9.2026; Ausnahmen in `e2e/flake-ausnahmen.json` bis 8.10.2026)* — `leser-r1-r2.e2e.ts` «Ohne aktive Suche kein Zähler …» und `w224-reiterverhalten.e2e.ts` «(d) ⌘/Ctrl+Enter öffnet neuen Reiter» wurden nur im Wiederholungsversuch grün. Wurzel je Spec messen (Timing/Race, nicht «retry»), dann Ausnahme streichen; verfällt die Ausnahme ungemessen, wird der Wächter rot. Klasse wie «E2E-Flake Shard 2/8 — Wurzel messen statt neu starten».
 
   **Nachtrag 8.9.2026 (Messung Orchestrator, drei Wächter-Läufe im eigenen PR #779):** die Browser-Suite flackert breit — 6 verschiedene Specs nur im Retry grün, je Lauf andere: `leser-r1-r2.e2e.ts`, `w224-reiterverhalten.e2e.ts`, `leser-v3-blatt.e2e.ts`, `leser-v3-suche-ohne-gliederung.e2e.ts`, `w224-r11-reiterleiste.e2e.ts`, `leser-v3-panel-zaehler.e2e.ts`. Ein harter Wächter mit Ausnahmeliste kann so nicht landen, ohne dass die Liste jeden Lauf wächst. **Entscheid (abweichend von «sofort rot», offengelegt):** Melde-Modus über `e2e/flake-modus.json` — bis dahin nur `::warning`/Exit 0, danach hart wie oben. **Stichtag hart 22.9.2026.** Auftrag: Wurzel je Spec messen (Race/Timing), nicht Ausnahmen sammeln.
+
+**Befunde 14.9.2026 (Phase-1-Welle #846–#869):**
+
+- [ ] **`confidence-logik.ts:78` — «`[N]` ist nie legitimer Normtext» ist falsch** *(Prüfer #848)* — FIDLEV Anh. 9 (SR 950.11, `eli/cc/2019/759`, Stand 1.1.2022) führt amtlich «[1] Jahr». Das Flag ist dort ein Falsch-Positiv; Kommentar und Klassenbeschreibung korrigieren, nicht die Daten.
+- [ ] **VD-vd-106879 Art. 81: echte Tabellen-Verklebung auto-akzeptiert** *(Prüfer #848)* — «332'000333'000…» ist eine harte Extraktionslücke, wurde aber nur als weicher Fall geführt und mit 0.95 automatisch akzeptiert. Schwelle und Klassenzuordnung prüfen.
+- [ ] **`confidence.json` ohne Frische-Tor** *(§17, Prüfer #848)* — das Feld `erzeugt` wird per `--datum` von Hand gesetzt, nichts koppelt es an Korpus oder `daten-manifest.json`; darum alterte die Datei drei Monate unbemerkt. Tor oder Kopplung, einmal rot zeigen (§6.7). Dach: `W2·27-BUND-FERTIG`.
+- [ ] **VIL trägt den Token `27_bbis`** *(Fixer #852, klein)* — Tokenisierungs-Ausreisser (gemeint ist vermutlich «Art. 27b bis»); gegen Fedlex prüfen und im Generator fixen, nie in der Projektion (§5). Kandidat `W2·5l-NORMTEXT-B2` / `QS-KORPUS`.
+- [ ] **`--erlass=` filtert nur die Bund-Route** *(§17, Fixer #860)* — beim gezielten Neulauf laufen HTM-, ZH- und PDF-Adapter mit; im Lauf vom 14.9.2026 hätte das VS-173.8-fr «RS» → «SR» geändert. Filter auf alle Routen ziehen. Auch als ROADMAP-Zeile unter `QS-KORPUS`.
+- [ ] **`scripts/ui-normzitate-kommentare.ts:40` — Hand-Lexer wertet `//` in URLs als Kommentar** *(Prüfer #856, latent)* — steht in ausgeliefertem JSX-Text eine URL (`https://…`) und im selben Text ein falsches Zitat, gilt der Rest der Zeile als Kommentar und das Tor bleibt grün. **Heute 0 reale Fälle.** Fix: `//` nur dann als Kommentar werten, wenn kein `:` unmittelbar vorangeht.
+- [ ] **Altzahl «10 254» an zwei Stellen** *(Prüfer #856, Doku)* — `src/components/normtext/NormChip.tsx:105` und der ROADMAP-Text zu Z6c nannten «39 von 10 254»; massgeblich ist das Artefakt nach PR #852: **10 276** prüfbare Ziele. ROADMAP ist nachgezogen, der Code-Kommentar noch nicht.
+- [x] **97 falsche Self-Links in Verordnungen** *(Befund und Fix #864, 14.9.2026)* — «des Gesetzes»-Glieder in Verordnungen zeigten auf die Verordnung selbst statt auf das im Ingress legaldefinierte Trägergesetz. §1-relevant (ein stumm falscher Sprung ist schlimmer als kein Sprung), behoben mit PR #864 (`6fb37368b`). Als behobener Falschlink-Fall hier geführt, damit die Klasse auffindbar bleibt.
 
 ### §4.R — Reiterleiste: sechs stille Fehler (13.9.2026)
 
