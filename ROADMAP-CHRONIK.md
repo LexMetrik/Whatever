@@ -111,6 +111,17 @@ der Suffix-Reihe (`spannen.ts:502`) zu tief gezählt — es sind sechs.
 
 > - [ ] **`scripts/plan/selbstoptKern.ts` über der Schlankheits-Schwelle, unregistriert gefunden** *(Nebenfund Abschluss-Session 4.9.2026)* — 1094 Z. (Schwelle 800), vermutlich durch #666 gewachsen, ohne dass jemand `npm run schlankheit:update` fuhr; diese Session hat die Datei nur ins Baseline-Register aufgenommen (kein Split, Doku-Auftrag), Split bleibt offen. `src/tests/plan-selbstopt.test.ts` (1087 Z., ebenfalls jetzt registriert statt gesplittet) — *seit PR #699 (Jules 8, 5.9.2026) gesplittet: 500/236/382 Z., Baseline-Eintrag entfernt* hängt dran — beide teilen sich denselben Wächter-Blick.
 
+**QS-CI-MINUTEN — BEHIND-Zeile (Dublette zu QS-BASIS), Wortlaut bis 14.9.2026:**
+
+> - [ ] **Plan-Buchungs-Commit macht jede wartende PR BEHIND** *(Befund 11.9.2026, #791/#793)* — der automatische `docs(plan): … [skip ci]`-Commit nach jedem Merge zieht jeden offenen
+> Branch hinter `origin/main` zurück ⇒ ein zusätzlicher CI-Lauf je Landung, bevor gemergt
+> werden kann. Wurzel-Optionen: GitHub Merge Queue (Repo-Setting, David) oder die Buchung
+> im PR selbst statt danach.
+
+**QS-VERWENDEN — V7-Messdetail, Wortlaut bis 14.9.2026:**
+
+> `src/tests/feiertage-gegenprobe.test.ts`, 26 Kantone × 2024–2027; 45 Rohabweichungen, 43 über eine kommentierte Ausnahmeliste (Norm/Kommentar-Beleg je Eintrag) als gewollt erklärt, 1 offen:
+
 **`W2·5m-LESER-V3` — Wortlaut Deckel-Fix bis 14.9.2026 (#868):**
 
 >   - [x] **Tor-Konflikt `erlassAnsicht.ts`-Deckel** *(§17-Wurzel-Fix)* — ✅ **erledigt 14.9.2026, PR #868**: Datei in zwei Schwestern geschnitten (`erlassAnsicht.ts` 419→198, neu `erlassWortlaut.ts` 267), Deckel unverändert 420, Tor aufs Paar gezogen. Vermerkt offen: `leserV3Modell.ts` 420/420 (Schnitt dort dokumentiert gescheitert).
