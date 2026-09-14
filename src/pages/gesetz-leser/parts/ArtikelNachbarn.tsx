@@ -48,8 +48,22 @@ function Pfeil({ ziel, richtung }: { ziel: NachbarZiel; richtung: 'vor' | 'nach'
       // Zeichen. Der Aufhebungs-Zustand steht darin, weil er vor dem Sprung
       // bekannt sein muss (§8) — im Bild sagt ihn der Artikel selbst an.
       aria-label={`${wort}: ${ziel.label}${ziel.aufgehoben ? ' (aufgehoben)' : ''}`}
-      className={`num inline-flex items-baseline gap-1 whitespace-nowrap text-micro no-underline hover:text-brass-700 ${
-        ziel.aufgehoben ? 'text-ink-400' : 'text-ink-500'}`}>
+      // ── KEIN `text-ink-400` FÜR DEN AUFGEHOBENEN NACHBARN ──────────────────
+      // Der erste Wurf dämpfte ihn auf `ink-400`. Die a11y-Sonde hat das am
+      // 14.9.2026 gefangen (`e2e/a11y.e2e.ts`, Reader BS-640.100, hell UND
+      // dunkel): «color-contrast (serious) … 3.29 (#8d887e auf #faf7f2, 11 px)»
+      // an `[href$="#art-241_bis"][data-nachbar="nach"]`. Dieselbe Lehre steht
+      // wörtlich eine Datei weiter an der Zeile «· aufgehoben»
+      // (`./ArtikelLeser.tsx`): ink-500 statt ink-400, weil das ESSENTIELLER
+      // Link-Text ist und kein beiläufiger — ink-400 misst 3.2–3.6:1 und reisst
+      // die 4.5:1 der WCAG 1.4.3. Ich habe den Fehler eine Datei daneben neu
+      // gemacht; die bestehende Sonde hat ihn gehalten.
+      //
+      // DER ZUSTAND GEHT DAMIT NICHT VERLOREN — er war nie an der Farbe: er
+      // steht im zugänglichen Namen («… (aufgehoben)»), und am Ziel selbst
+      // sagt ihn der Artikel im Klartext. Farbe allein hätte ihn ohnehin nicht
+      // tragen dürfen (DESIGN-REGLEMENT B3: Zeichen UND Wort, nie Farbe allein).
+      className="num inline-flex items-baseline gap-1 whitespace-nowrap text-micro text-ink-500 no-underline hover:text-brass-700">
       {richtung === 'vor' && <span aria-hidden>‹</span>}
       <span aria-hidden>{ziel.label}</span>
       {richtung === 'nach' && <span aria-hidden>›</span>}

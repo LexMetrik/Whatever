@@ -130,6 +130,21 @@ describe('W2·5m (b) · wie die Pfeile im Artikelkopf stehen', () => {
     expect(out).toContain('aria-label="Nächster Artikel: Art. 91 (aufgehoben)"');
   });
 
+  it('der aufgehobene Nachbar wird NICHT auf ink-400 gedämpft (WCAG 1.4.3)', () => {
+    // GEFANGEN VON `e2e/a11y.e2e.ts` am 14.9.2026 (Reader BS-640.100, hell und
+    // dunkel): der erste Wurf setzte `text-ink-400` und riss mit 3.29 die
+    // 4.5:1. Dieselbe Lehre steht wörtlich an der Zeile «· aufgehoben» in
+    // `parts/ArtikelLeser.tsx` — ink-400 ist für essentiellen Link-Text zu
+    // schwach. Diese Sonde bindet sie eine Ebene tiefer und billiger als axe:
+    // sie braucht keinen Browser und läuft in jedem `npm test`.
+    // ROT: in `parts/ArtikelNachbarn.tsx` `text-ink-500` → `text-ink-400`.
+    const out = rendere('90a');
+    const zeile = out.slice(out.indexOf('data-artikel-nachbarn'));
+    const bis = zeile.slice(0, zeile.indexOf('</span></div>'));
+    expect(bis).not.toContain('text-ink-400');
+    expect(bis.match(/text-ink-500/g) ?? [], 'beide Pfeile tragen dieselbe Tinte').toHaveLength(2);
+  });
+
   it('die Zeile trägt `data-such-meta` — sonst malt die Suche Treffer auf Bedienung (B1)', () => {
     const out = rendere('90a');
     // Der Such-Walker verwirft den ganzen Teilbaum unter diesem Attribut
