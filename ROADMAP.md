@@ -171,26 +171,14 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
     kennt die GETEILTE Nummern-Grammatik nicht — `ART_INTERN`, `N2_ARTNR`, `artikelToken`(SUFFIX)
     und `fedlexLinkFuerArtikel` müssen gemeinsam erweitert werden, sonst entsteht ein falscher
     Anker; (b) ✅ erledigt (Wortlaut: Chronik, Umschichtung 6.9.2026);
-    (c) **Artikel-Anker gegen den Ziel-Snapshot prüfen, Fallback Erlass-Link** — ein Fremd-Anker
-    entsteht heute allein aus Kürzel + Nummer, ohne dass die Zielbestimmung im Snapshot des
-    Zielerlasses nachgeschlagen wird. Gemessen 2.9.2026: 16 tote Artikel-Anker aus Z5 (StGB
-    `art_91_a` ×4, StGB `art_340` …); dieselbe Mechanik trägt auch die ALTEN Anker-Pfade, der
-    Bestand ist also mitzumessen. Zielbild: existiert das Ziel-Token nicht, auf den Erlass-Link
-    zurückfallen statt auf einen toten Sprung (§8). Risikopfad — Gegenprüfung Pflicht.
-    ✅ **gebaut 14.9.2026** — korpusweit über ALLE Anker-Pfade nachgemessen, nicht nur Z5:
-    **36 tote Fremd-Anker** von 9 675 prüfbaren, 26 verschiedene Ziele, 25 Bund / 11 Kanton.
-    Wächter: `check:verweis-inventar` → `toteFremdanker` + `fremdZiele`. Amtlich gegengeprüft
-    (Fedlex-SPARQL + AKN-XML, 26/26): keines existiert in der geltenden Fassung — **keine**
-    Extraktionslücke, und auch Fedlex trägt keinen `id="art_<token>"`, der Anker war dort
-    ebenso tot.
-  - [ ] **Z6c-Folge · Sammel-Anker auflösen statt nur zurückfallen** — von den 26 toten Zielen
-    führt Fedlex **19** als aufgehobene Nummer in einem SAMMEL-Anker («Art. 876–883 Aufgehoben»,
-    `id="art_876_883"`); heute fallen auch sie auf den Erlass-Link zurück. Den Block anzuspringen
-    ist mehr als ein Anker-Wechsel — Popover-Inhalt, Sachtitel und Passus-Markierung zeigen dann
-    eine ANDERE Bestimmung — und braucht darum einen eigenen deklarierten Schritt. Vorarbeit
-    liegt: `sammelblockFuer()` in `src/lib/normtext/artikel-bestand.ts` misst die Lage (erkennt
-    13 der 19 — rein numerische Blöcke; suffixbehaftete wie `art_275_bis_275_ter` erst nach Z6a).
-    *Risikopfad ⇒ Gegenprüfung.*
+    (c) **Artikel-Anker gegen den Ziel-Snapshot prüfen, Fallback Erlass-Link** —
+    ✅ **gebaut 14.9.2026**: **39 tote Fremd-Anker** von 10 254 prüfbaren, 28 Ziele (36 Bund /
+    3 Kanton), Wächter `check:verweis-inventar`; amtlich gegengeprüft, keine Extraktionslücke.
+  - [ ] **Z6c-Folgen** — **(1)** Sammel-Anker auflösen (19 Ziele, `sammelblockFuer()` erkennt 15);
+    **(2)** Umnummerierungen ZGB 89bis→89a (7 Ziele, Alias ≠ Block-Sprung); **(3)** kantonaler
+    Fallback (V-3-Weiche, 579 Stellen, 3 tote) + Projektion vom Leser-Prefetch lösen (14.66 KB
+    gzip auf jeder Seite); **(4)** V-4 intern adressieren statt immer Fedlex.
+    *Alle Risikopfad ⇒ Gegenprüfung. Herleitung und Wortlaut: Chronik, Umschichtung 14.9.2026 (3).*
   - [ ] **Z4 Leser-Schicht «zitiert von»** (Erlassebene, nur Bund) — erst nach Z1–Z3 und Abnahme.
 
 - [ ] **Norm-Zeitmaschine + Fassungs-Diff** *(`W2·5g-ZEIT`, Ideen-Intake 20.7.2026; Phase 3 — FR/IT-Datenanteil gehört hierher, Entscheid David 14.9.2026 «fr/it später», FAHRPLAN-BUND-FERTIG §4 a)*
