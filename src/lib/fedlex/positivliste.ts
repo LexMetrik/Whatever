@@ -175,6 +175,11 @@ export const GENITIV_EINTRAEGE: ReadonlyArray<GenitivEintrag> = [
   { name: 'Handelsregisterverordnung', gesetz: 'HRegV', geltung: 'bund', beleg: 'Handelsregisterverordnung' }, // 1
   { name: 'Abfallverordnung', gesetz: 'VVEA', geltung: 'bund', beleg: 'Abfallverordnung' }, // 1
   { name: 'Bankenverordnung', gesetz: 'BankV', geltung: 'bund', beleg: 'Bankenverordnung' }, // 1
+  // 1 Stelle: CHEMRRV annex_1_17 «… die unter die Medizinprodukteverordnung
+  // vom 1. Juli 2020 fällt» — das ist die geltende MepV (SR 812.213). Die
+  // übrigen 11 Korpus-Stellen nennen die AUFGEHOBENE MepV «vom 17. Oktober
+  // 2001» (bzw. einmal «2011»); dort sperrt die Zeit-Kante `datumPasst` den
+  // Link. Nachgemessen 14.9.2026 (Gegenprüfung zu #864, Nebenfund).
   { name: 'Medizinprodukteverordnung', gesetz: 'MepV', geltung: 'bund', beleg: 'Medizinprodukteverordnung' }, // 1
   { name: 'Finanzmarktinfrastrukturverordnung', gesetz: 'FinfraV', geltung: 'bund', beleg: 'Finanzmarktinfrastrukturverordnung' }, // 1
   { name: 'Verkehrszulassungsverordnung', gesetz: 'VZV', geltung: 'bund', beleg: 'Verkehrszulassungsverordnung' }, // 1

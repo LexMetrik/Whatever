@@ -9,10 +9,24 @@ import { type FedlexGesetz } from './tabelle';
 
 // ─── V-7c · Trägergesetz-Kontext «Artikel N des Gesetzes» ────────────────────
 //
-// PROBLEM (gemessen 14.9.2026 über alle Bund-Snapshots): 35 Bund-Stellen
-// zitieren «Artikel N des Gesetzes» — ohne Namen. Der des/der-Guard macht
-// daraus Text. Der Verweis ist aber nicht unbestimmt: in einer Vollzugs-
-// verordnung meint «das Gesetz» das Gesetz, auf das sie sich stützt.
+// PROBLEM: Bund-Stellen zitieren «Artikel N des Gesetzes» — ohne Namen. Der
+// des/der-Guard macht daraus Text. Der Verweis ist aber nicht unbestimmt: in
+// einer Vollzugsverordnung meint «das Gesetz» das Gesetz, auf das sie sich
+// stützt.
+//
+// MESSDEFINITION (die Zahl hängt daran, darum steht sie hier — Befund B2 der
+// Gegenprüfung: «35» ohne Definition klang nach dem ganzen Problem und war
+// nur dessen engster Ausschnitt). Gemessen 14.9.2026 über alle Bund-Snapshots
+// (`public/normtext/bund/*.json`, Blocktexte und Items):
+//   · ENG, Artikelnummer direkt vor der Wendung — /Art(?:\.|ikel)n? \d+[a-z]? des Gesetzes/
+//       35 Stellen in 10 Erlassen
+//   · MIT PASSUS dazwischen («Artikel 5 Absatz 2 Buchstabe a des Gesetzes»),
+//     bis 60 Zeichen — /Art(?:\.|ikel)n? \d[^,;.]{0,60}? des Gesetzes/
+//       189 Stellen in 16 Erlassen
+//   · die blosse Wendung «des Gesetzes» ohne «dieses»
+//       315 Stellen in 49 Erlassen (darunter viel Prosa ohne Artikelbezug)
+// Die Tabelle bedient die MITTLERE Menge: sie löst heute 179 Glieder auf
+// (Klasse `n2b-traeger` im Verweis-Inventar).
 //
 // AMTLICHER BELEG, nicht Vermutung (§1/§7): der Gesetzgeber DEFINIERT die
 // Kurzform selbst im Ingress, in der Klammer hinter dem zitierten Erlass —
