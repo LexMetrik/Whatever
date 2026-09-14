@@ -127,29 +127,6 @@ export interface UebersichtLink {
   zeichen: '↗' | '⬇';
 }
 
-/** W2·5m · der Weg zu den ROHDATEN dieses Erlasses (§7-Transparenz, Muster
- *  legislation.gov.uk «Print Options» / «View as XML»).
- *
- *  Eigenes Feld und kein weiterer `UebersichtLink`, aus zwei Gründen:
- *  (1) FACHLICH — die Link-Zeile darüber führt zu AMTLICHEN Zielen (Fedlex-
- *      Fassung, amtliches PDF). Der JSON-Schnappschuss ist das Gegenteil: er
- *      ist UNSER Artefakt, die Kopie. Beides in einer Zeile nebeneinander
- *      liesse offen, welcher Link die massgebliche Fassung trägt — genau die
- *      Verwechslung, die §7/§8 an dieser Stelle verbieten.
- *  (2) MECHANISCH — `links` ist ein zugesagter Vertrag mit einer Sonde, die
- *      seine Ids Stück für Stück festhält (`leser-v3-uebersicht.test.ts`,
- *      «quelle, pdf»). Ein dritter Eintrag darin hiesse, einen bestehenden
- *      Wächter umzuschreiben, um Platz zu machen (§6.3). */
-export interface RohdatenZeiger {
-  /** App-eigene Adresse des Snapshots, z. B. `/normtext/bund/OR.json`. */
-  href: string;
-  /** Der Stand, den dieses Artefakt trägt — DERSELBE Wert wie die Zeile
-   *  «Stand» (§5), in derselben Schreibung. Er steht hier ein zweites Mal,
-   *  weil die Aussage eine andere ist: oben «so alt ist der Text», hier «das
-   *  ist die Fassung, die in dieser Datei liegt». */
-  stand: string | null;
-}
-
 export interface UebersichtsAngaben {
   /** Die EINE Zeile im Ruhezustand — «SR 312.0 · 480 Artikel». */
   ruhe: string;
@@ -169,20 +146,6 @@ export interface UebersichtsAngaben {
    *  vermelden; dann entfällt der Block, statt «keine Einschränkungen» zu
    *  behaupten (das wäre eine Aussage, die wir nicht belegen können). */
   hinweise: string[];
-  /** W2·5m · Rohdaten-Zeiger, oder `null` bei einem Erlass ohne Snapshot
-   *  (nur-live-link, pdf-embed) — dort gibt es keine Datei, und ein Link auf
-   *  eine nicht vorhandene Adresse wäre ein totes Versprechen (§8, dieselbe
-   *  Regel wie beim fehlenden `quelleUrl`).
-   *
-   *  OPTIONAL und nicht pflichtig: die Hüllen-Sonden in
-   *  `leser-v3-bauteile.test.tsx` bauen ihre `UebersichtsAngaben` als Literal,
-   *  um EINE Darstellungsfrage je Fall zu stellen (Warnung, Vorbehalt,
-   *  Link-Zeichen). Ein Pflichtfeld zwänge sieben dieser Sonden zu einer
-   *  Änderung, die mit ihrer Frage nichts zu tun hat — und §6.3 verlangt,
-   *  bestehende Sonden in Ruhe zu lassen. `uebersichtsAngaben` setzt das Feld
-   *  immer (`null` oder Zeiger); wer es weglässt, sagt damit «diese Sonde
-   *  interessiert sich nicht dafür». */
-  rohdaten?: RohdatenZeiger | null;
 }
 
 export interface UebersichtsEingabe {
@@ -442,32 +405,6 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
     hinweise.push('Für diesen Erlass ist keine amtliche Gliederung erfasst — die Leiste listet die Bestimmungen.');
   }
 
-  // ── W2·5m · DER WEG ZU DEN ROHDATEN (§7-Transparenz) ──────────────────────
-  // «Woher kommt dieser Text und wie ist er gebaut» ist die Frage, die diese Box
-  // beantwortet (Ä81/Ä97 haben die Grenze zum Kopf genau so gezogen). Der
-  // Schnappschuss, aus dem der Leser rendert, ist die vollständigste Antwort
-  // darauf, die wir geben können: er trägt Fassungs-Token, Quelle, Stand und
-  // jeden Block im Wortlaut — nachprüfbar, ohne uns glauben zu müssen.
-  //
-  // `erlass.datei` ist der Pfad relativ zu `public/normtext` (`bund/OR.json`);
-  // die ausgelieferte Adresse ist derselbe Pfad unter `/normtext/` (§5 — die
-  // Datei wird nicht ein zweites Mal benannt, nur ihr Präfix ergänzt). Fehlt
-  // sie, gibt es keinen Snapshot und damit nichts zu verlinken.
-  //
-  // ── WAS HIER BEWUSST NICHT STEHT: DER FASSUNGS-TOKEN IM KLARTEXT ──────────
-  // Der Auftrag zu dieser Zeile verlangte ihn ausdrücklich sichtbar. Ä71
-  // (18.8.2026) hat ihn aus dieser Box entfernt und das belegt: in seiner
-  // Datumsform ist er der Stand in anderer Notation (§5-Dopplung), in seiner
-  // Hash-Form — 1231 von 1469 Erlassen — ist er Maschinen-Provenienz, und
-  // CLAUDE.md §7 Bst. d verlangt die Drift-ERKENNUNG, nicht den Abdruck des
-  // Hashes. Die Sonde dazu steht unverändert in `leser-v3-uebersicht.test.ts`.
-  // Der Token bleibt darum, wo er hingehört: IN der verlinkten Datei, einen
-  // Klick entfernt, zusammen mit allem anderen, wogegen man uns prüfen kann.
-  // Abweichung offengelegt statt still übergangen (§7, letzter Absatz).
-  const rohdaten: RohdatenZeiger | null = erlass.datei
-    ? { href: `/normtext/${erlass.datei}`, stand: erlass.stand ? formatiereDatum(erlass.stand) : null }
-    : null;
-
   return {
     ruhe: ruheZeile(erlass, e.anzahl, e.bestimmungsWort, e.kennzahlen),
     zeilen,
@@ -476,6 +413,5 @@ export function uebersichtsAngaben(e: UebersichtsEingabe): UebersichtsAngaben {
     vorbehalt: lebt && e.currency?.naechsteFassungAb
       ? naechsteFassungSatz(e.currency.naechsteFassungAb) : null,
     hinweise,
-    rohdaten,
   };
 }

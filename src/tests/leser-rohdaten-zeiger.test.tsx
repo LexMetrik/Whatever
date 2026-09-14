@@ -11,8 +11,11 @@
  *      bekommen keinen Rohdaten-Zeiger — dieselbe §8-Regel, nach der ein
  *      fehlendes `quelleUrl` gar keinen Link erzeugt statt eines toten.
  *  (2) Die amtliche Link-Zeile bleibt unberührt. `links` trägt weiter genau
- *      «quelle» und «pdf»; der Rohdaten-Zeiger steht daneben, nicht darin —
- *      sonst stünde unsere Kopie in einer Reihe mit der massgeblichen Fassung.
+ *      «quelle» und «pdf»; der Rohdaten-Zeiger ist ein EIGENES Bauteil
+ *      (`v3/rohdatenZeiger.ts`) und eine eigene Prop der Box — sonst stünde
+ *      unsere Kopie in einer Reihe mit der massgeblichen Fassung. Er hält
+ *      `uebersichtAngaben.ts` zugleich unter dem 420er-Deckel aus
+ *      `leser-v3-fundament.test.ts` (dort steht die volle Herleitung).
  *
  * ── GRENZE ZU Ä71 (18.8.2026), ausdrücklich, nicht stillschweigend ──────────
  * Ä71 hat den Fassungs-Token aus der Box entfernt und das belegt (Datumsform =
@@ -25,15 +28,16 @@
  *
  * ROT GEFAHREN (§6.7), 14.9.2026:
  *  · `href: `/normtext/${erlass.datei}`` → `erlass.quelleUrl`: «der Zeiger
- *    führt auf UNSEREN Snapshot» wird rot.
- *  · `erlass.datei ? … : null` → immer ein Objekt: «kein Snapshot, kein
- *    Zeiger» wird rot.
+ *    führt auf UNSEREN Snapshot» wird rot (4 Sonden).
+ *  · `if (!erlass.datei) return null` gestrichen: «kein Snapshot, kein
+ *    Zeiger» wird rot (2 Sonden).
  *  · `{rohdaten && (…)}` in `UebersichtBox.tsx` gestrichen: «die Box zeigt den
  *    Zeiger» wird rot.
  */
 import { describe, expect, it } from 'vitest';
 import { renderToString } from 'react-dom/server';
 import { uebersichtsAngaben, type UebersichtsEingabe } from '../pages/gesetz-leser/v3/uebersichtAngaben';
+import { rohdatenZeiger } from '../pages/gesetz-leser/v3/rohdatenZeiger';
 import { UebersichtBox } from '../pages/gesetz-leser/v3/UebersichtBox';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 
@@ -58,37 +62,35 @@ function eingabe(p: Partial<UebersichtsEingabe> & { erlass: BrowseErlass }): Ueb
   };
 }
 
-describe('W2·5m · Rohdaten-Zeiger (rein, `v3/uebersichtAngaben`)', () => {
+describe('W2·5m · Rohdaten-Zeiger (rein, `v3/rohdatenZeiger`)', () => {
   it('der Zeiger führt auf UNSEREN Snapshot unter `/normtext/…`, nicht auf die amtliche Quelle', () => {
-    const a = uebersichtsAngaben(eingabe({ erlass: erlassBauen({}) }));
-    expect(a.rohdaten?.href).toBe('/normtext/bund/OR.json');
+    expect(rohdatenZeiger(erlassBauen({}))?.href).toBe('/normtext/bund/OR.json');
   });
 
   it('der Kantons-Snapshot liegt unter demselben Präfix — kein `if (bund)` (Ä70)', () => {
-    const a = uebersichtsAngaben(eingabe({
-      erlass: erlassBauen({ key: 'BS-132.100', ebene: 'kanton', kanton: 'BS', sr: null, datei: 'kanton/BS-132.100.json' }),
+    const z = rohdatenZeiger(erlassBauen({
+      key: 'BS-132.100', ebene: 'kanton', kanton: 'BS', sr: null, datei: 'kanton/BS-132.100.json',
     }));
-    expect(a.rohdaten?.href).toBe('/normtext/kanton/BS-132.100.json');
+    expect(z?.href).toBe('/normtext/kanton/BS-132.100.json');
   });
 
   it('der Zeiger nennt den Stand, den die Datei trägt (§7 Bst. a — kein Artefakt ohne Datum)', () => {
-    const a = uebersichtsAngaben(eingabe({ erlass: erlassBauen({ stand: '2025-04-01' }) }));
-    expect(a.rohdaten?.stand).toBe('01.04.2025');
-    // Derselbe Wert wie die Zeile «Stand», in derselben Schreibung (§5).
-    expect(a.zeilen.find((z) => z.id === 'stand')?.wert).toBe('01.04.2025');
+    const erlass = erlassBauen({ stand: '2025-04-01' });
+    expect(rohdatenZeiger(erlass)?.stand).toBe('01.04.2025');
+    // Derselbe Wert wie die Zeile «Stand» der Box, in derselben Schreibung (§5).
+    expect(uebersichtsAngaben(eingabe({ erlass })).zeilen.find((z) => z.id === 'stand')?.wert)
+      .toBe('01.04.2025');
   });
 
   it('kein Snapshot (nur-live-link/pdf-embed) ⇒ kein Zeiger statt eines toten Links (§8)', () => {
-    const a = uebersichtsAngaben(eingabe({
-      erlass: erlassBauen({ status: 'nur-live-link', datei: null, artikelAnzahl: 0 }),
-    }));
-    expect(a.rohdaten).toBeNull();
+    expect(rohdatenZeiger(erlassBauen({ status: 'nur-live-link', datei: null, artikelAnzahl: 0 })))
+      .toBeNull();
   });
 
   it('Erlass ohne Stand (2 von 1469, VD): Datei ja, Datum nein — keine leere Präposition (B8)', () => {
-    const a = uebersichtsAngaben(eingabe({ erlass: erlassBauen({ stand: '' }) }));
-    expect(a.rohdaten?.href).toBe('/normtext/bund/OR.json');
-    expect(a.rohdaten?.stand).toBeNull();
+    const z = rohdatenZeiger(erlassBauen({ stand: '' }));
+    expect(z?.href).toBe('/normtext/bund/OR.json');
+    expect(z?.stand).toBeNull();
   });
 
   it('die AMTLICHE Link-Zeile bleibt unberührt — unsere Kopie steht nicht in ihrer Reihe', () => {
@@ -101,16 +103,18 @@ describe('W2·5m · Rohdaten-Zeiger (rein, `v3/uebersichtAngaben`)', () => {
     // Der Auftrag zu W2·5m wollte ihn sichtbar; Ä71 hat das 18.8.2026 mit
     // Messung verworfen, und §7 Bst. d verlangt die Drift-ERKENNUNG, nicht den
     // Abdruck des Hashes. Abweichung offengelegt (§7), Entscheid bei David.
-    const a = uebersichtsAngaben(eingabe({ erlass: erlassBauen({ fassungsToken: 'a3f9c0deadbeef' }) }));
+    const erlass = erlassBauen({ fassungsToken: 'a3f9c0deadbeef' });
+    const a = uebersichtsAngaben(eingabe({ erlass }));
     const sichtbar = [...a.zeilen.map((z) => z.wert), ...a.links.map((l) => l.label),
-      a.rohdaten?.stand ?? ''].join(' ');
+      rohdatenZeiger(erlass)?.stand ?? '', rohdatenZeiger(erlass)?.href ?? ''].join(' ');
     expect(sichtbar).not.toContain('a3f9c0');
   });
 });
 
 describe('W2·5m · Rohdaten-Zeiger (Darstellung, `v3/UebersichtBox`)', () => {
-  const box = (erlass: BrowseErlass) =>
-    renderToString(<UebersichtBox angaben={uebersichtsAngaben(eingabe({ erlass }))} />);
+  const box = (erlass: BrowseErlass) => renderToString(
+    <UebersichtBox angaben={uebersichtsAngaben(eingabe({ erlass }))} rohdaten={rohdatenZeiger(erlass)} />,
+  );
 
   it('die Box zeigt den Zeiger als echten Link mit Stand', () => {
     const out = box(erlassBauen({ stand: '2025-04-01' }));
@@ -128,6 +132,13 @@ describe('W2·5m · Rohdaten-Zeiger (Darstellung, `v3/UebersichtBox`)', () => {
 
   it('ohne Snapshot bleibt die Zeile ganz weg (§8)', () => {
     const out = box(erlassBauen({ status: 'nur-live-link', datei: null, artikelAnzahl: 0 }));
+    expect(out).not.toContain('data-v3-uebersicht-rohdaten');
+  });
+
+  it('ohne die Prop bleibt die Box, was sie war (Hüllen-Sonden, Druck)', () => {
+    const out = renderToString(
+      <UebersichtBox angaben={uebersichtsAngaben(eingabe({ erlass: erlassBauen({}) }))} />,
+    );
     expect(out).not.toContain('data-v3-uebersicht-rohdaten');
   });
 });

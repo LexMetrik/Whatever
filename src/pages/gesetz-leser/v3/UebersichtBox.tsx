@@ -1,4 +1,5 @@
 import type { UebersichtsAngaben } from './uebersichtAngaben';
+import type { RohdatenZeiger } from './rohdatenZeiger';
 
 // ─── Übersichtsbox der Seitenleiste (FAHRPLAN-LESER-V3 Kap. 4b, Pos. 10) ─────
 //
@@ -78,10 +79,19 @@ import type { UebersichtsAngaben } from './uebersichtAngaben';
 //    rechtsbündig mit ausgefranstem linken Rand — in einer schmalen Spalte
 //    schlechter lesbar als linksbündig.
 
-export function UebersichtBox({ angaben }: { angaben: UebersichtsAngaben }) {
+export function UebersichtBox({ angaben, rohdaten }: {
+  angaben: UebersichtsAngaben;
+  /** W2·5m · Zeiger auf UNSEREN JSON-Schnappschuss (`./rohdatenZeiger.ts`).
+   *  EIGENE Prop und kein Feld von `angaben`: dort stehen die Angaben ÜBER den
+   *  Erlass, hier der Weg zu unserem Artefakt davon — und die Trennung hält
+   *  `uebersichtAngaben.ts` unter dem 420er-Deckel, den `leser-v3-fundament`
+   *  setzt (Herleitung in `./rohdatenZeiger.ts`). Fehlt sie, bleibt die Box,
+   *  was sie war (Hüllen-Sonden, Druck). */
+  rohdaten?: RohdatenZeiger | null;
+}) {
   // Ä97: `warnung` und `vorbehalt` werden hier BEWUSST nicht entnommen — beide
   // Aussagen gehören dem Erlass-Kopf (Herleitung unten an ihrer alten Stelle).
-  const { ruhe, zeilen, links, hinweise, rohdaten } = angaben;
+  const { ruhe, zeilen, links, hinweise } = angaben;
   return (
     // ── Ä5 (H2b) · WEISSRAUM, DANN LINIE — KEIN KASTEN ────────────────────────
     // Bis H2 war die Box ein gerahmter, getönter Kasten (`border border-line
@@ -231,7 +241,7 @@ export function UebersichtBox({ angaben }: { angaben: UebersichtsAngaben }) {
             offen, welcher Link das Gesetz ist — genau die Verwechslung, die §7
             und §8 hier verbieten. Die Herleitung im Ganzen (samt der Begründung,
             warum der Fassungs-Token NICHT danebensteht) in
-            `./uebersichtAngaben.ts`.
+            `./rohdatenZeiger.ts`.
             «⬇» geht dem Ziel voran: das Zeichen sagt «holt her», die Regel dafür
             steht bei den Links darüber (Ä110-Rest). Kein `target="_blank"` —
             die Datei liegt auf DIESER Seite, und ein neuer Reiter wäre die Geste
