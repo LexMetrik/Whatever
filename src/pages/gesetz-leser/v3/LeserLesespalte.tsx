@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useMemo, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import type { Sektion } from '../../../lib/normtext/browse';
 import { verifizierLinkSektion } from '../../../lib/normtext/verifikationslink';
@@ -11,6 +11,7 @@ import { randNotizZiel } from '../randNotizOeffnen';
 import { useBezuegeZaehler } from '../bezuegeZaehler';
 import { useArtikelMaterialien } from '../artikelMaterialienLaden';
 import type { PanelBezuege } from './panelModell';
+import { baueNachbarn } from './nachbarArtikel';
 
 // ─── Die Lesespalte (FAHRPLAN-LESER-V3 Kap. 1.3 «Kern-Grenze») ──────────────
 //
@@ -84,6 +85,15 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
   // Split-Regel der Randnotiz (s. `onClickCapture` unten): EIN Abo je Spalte.
   // VOR dem Lade-Guard, weil Hooks nicht bedingt laufen dürfen.
   const { oeffneDaneben, kannOeffnen, istOffen: paneOffen } = usePaneSteuerung();
+  // ── W2·5m · NACHBAR-ARTIKEL, EINMAL JE ERLASS ─────────────────────────────
+  // Die Map wohnt HIER und nicht im Modell — dieselbe Begründung wie bei
+  // `useBezuegeZaehler` oben: die Lesespalte ist der einzige Konsument, und das
+  // Modell hält damit seine §6.6-Schwelle (`leser-v3-fundament`).
+  // `useMemo` ist kein Tempo-Schmuck, sondern die Bedingung der `memo`-Schranke
+  // von `parts/ArtikelLeser`: die Werte müssen über Scroll-Spy-Takte hinweg
+  // DIESELBEN Objekte bleiben (§15, Herleitung in `./nachbarArtikel.ts`).
+  // VOR dem Lade-Guard, weil Hooks nicht bedingt laufen dürfen.
+  const nachbarn = useMemo(() => baueNachbarn(eintraege), [eintraege]);
   if (!erlass || !eintraege) return null;
   const fn = (tok: string) => struktur?.[tok]?.fussnoten;
   const istOffen = (id: string, defOpen: boolean) => m.offen[id] ?? defOpen;
@@ -144,6 +154,10 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
       // `geladen` (nicht die Kanten) unterscheidet «unterwegs» von «leer» — die
       // A1-Lehre aus `panelModell.ts`, hier dieselbe Quelle (§5).
       bezuegeLaedt={bezuegeGeweckt && bezuege != null && !bezuege.geladen}
+      // W2·5m: Vorgänger/Nachfolger in amtlicher Reihenfolge. `.get()` liefert
+      // je Token DASSELBE Objekt, solange `eintraege` dieselbe Liste ist — die
+      // `memo`-Schranke des Kerns bleibt damit stehen (§15).
+      nachbarn={nachbarn.get(e.artikel)}
       istAnhang={istAnhangToken(e.artikel)} />
   );
 
