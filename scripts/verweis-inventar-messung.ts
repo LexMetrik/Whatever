@@ -24,6 +24,8 @@ import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { chapeauZielFremdgesetz } from '../src/lib/fedlex';
+import { bundSnapshotRef } from '../src/lib/normtext/bundRef';
+import { sammelblockFuer } from '../src/lib/normtext/artikel-bestand';
 import { GRUNDART_SEED } from '../src/lib/normtext/grundart.generated';
 import {
   G, KLASSEN, NORMTEXT_PFAD, ZEIT_ALTRECHT, ZEIT_TITEL, etabliertFremdgesetz,
@@ -91,14 +93,30 @@ interface KlassenZeile {
   selbstmarker: number; was: string;
 }
 export interface TotesZiel { erlass: string; fundstelle: string; bestimmung: string }
+/** Z6c (W2·22): ein FREMD-Anker, dessen Ziel-Bestimmung es im Snapshot des
+ *  ZIELERLASSES nicht gibt — der Sprung landet ins Leere (§8). Abgegrenzt von
+ *  «Ziel-Erlass nicht im Korpus» (dort ist der Token nicht prüfbar, kein Fall
+ *  für Z6c): diese Liste enthält nur Ziele MIT Bund-Snapshot. */
+export interface TotesFremdziel {
+  quelle: string; fundstelle: string; ziel: string; token: string; klasse: string;
+  /** Token des SAMMELBLOCKS «Art. a–b», der die zitierte Bestimmung enthält
+   *  (meist ein Aufhebungs-Block), falls es einen gibt. Fehlt das Feld, gibt es
+   *  die Bestimmung im Zielerlass gar nicht. Beide Fälle bekommen denselben
+   *  Erlass-Fallback; getrennt geführt, weil es rechtlich zwei verschiedene
+   *  Lagen sind (§1) und nur die zweite je auflösbar wird. */
+  sammelblock?: string;
+}
 export interface Artefakt {
   _zweck: string;
   _regenerieren: string;
   _quellen: { normTextSha256: string; guards: number };
   korpus: { erlasse: number; eintraege: number; texte: number };
   gesamt: { stellen: number; self: number; fremd: number; text: number; selbstmarker: number };
+  /** Z6c: Nachschlag-Bilanz der FREMD-Anker (Ziele MIT Snapshot / ohne). */
+  fremdZiele: { geprueft: number; tot: number; sammelblock: number; ohneSnapshot: number };
   klassen: KlassenZeile[];
   toteSelbstziele: TotesZiel[];
+  toteFremdanker: TotesFremdziel[];
   zeitKanten: { stellen: number; erlasse: number; uebergangsTitel: number; altrechtBlock: number };
 }
 
@@ -116,10 +134,31 @@ export function berechne(): Artefakt {
   // Schleife über das Register).
   const kantonKarten = kartenJeKanton(register.erlasse);
 
+  // Z6c: Token-Mengen der BUND-Snapshots, faul je Zielerlass gelesen — der
+  // Nachschlag «gibt es die zitierte Bestimmung dort?» braucht die Artikel-
+  // Menge des ZIELS, nicht die des gelesenen Erlasses. Schlüssel ist der
+  // Register-Key, genau der Wert, den `bundSnapshotRef().quelle` liefert (§5).
+  const dateiJeKey = new Map(
+    register.erlasse.filter((e) => e.datei).map((e) => [e.key, e.datei!] as const),
+  );
+  const tokenIndex = new Map<string, ReadonlySet<string> | null>();
+  const zielTokens = (quelle: string): ReadonlySet<string> | null => {
+    if (tokenIndex.has(quelle)) return tokenIndex.get(quelle)!;
+    const datei = dateiJeKey.get(quelle);
+    const pfad = datei ? join(SNAPSHOT_WURZEL, datei) : null;
+    if (!pfad || !existsSync(pfad)) { tokenIndex.set(quelle, null); return null; }
+    const snap = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege: SnapshotEintrag[] };
+    const menge = new Set(snap.eintraege.map((x) => normRef(x.artikel)));
+    tokenIndex.set(quelle, menge);
+    return menge;
+  };
+
   const stellenJeKlasse = new Map<string, number>();
   const selbstJeKlasse = new Map<string, number>();
   const erlasseJeKlasse = new Map<string, Set<string>>();
   const toteSelbstziele: TotesZiel[] = [];
+  const toteFremdanker: TotesFremdziel[] = [];
+  let fremdGeprueft = 0, fremdOhneSnapshot = 0;
   const zeitErlasse = new Set<string>();
   let zeitStellen = 0, zeitTitel = 0, zeitAltrecht = 0;
   let eintraegeGesamt = 0, texteGesamt = 0;
@@ -182,6 +221,28 @@ export function berechne(): Artefakt {
             if (st.totesZiel && st.nummer) {
               toteSelbstziele.push({ erlass: e.key, fundstelle: eintrag.id, bestimmung: st.nummer });
             }
+            // ── Z6c · Nachschlag des FREMD-Ankers im Ziel-Snapshot ──────────
+            // `bundSnapshotRef` ist DER Resolver der Produktion (NormChip ruft
+            // ihn mit demselben String) — Ziel-Erlass und Ziel-Token kommen
+            // also aus derselben Quelle wie der gerenderte Link, nicht aus
+            // einem Nachbau (§5).
+            if (st.ziel) {
+              const ref = bundSnapshotRef(st.ziel);
+              const menge = ref ? zielTokens(ref.quelle) : null;
+              if (!ref || !menge) {
+                fremdOhneSnapshot += 1;           // Ziel ausserhalb des Korpus ⇒ nicht prüfbar
+              } else {
+                fremdGeprueft += 1;
+                if (!menge.has(normRef(ref.token))) {
+                  const block = sammelblockFuer(ref.quelle, ref.token);
+                  toteFremdanker.push({
+                    quelle: ref.quelle, fundstelle: eintrag.id, ziel: st.ziel,
+                    token: ref.token, klasse: st.klasse,
+                    ...(block ? { sammelblock: block } : {}),
+                  });
+                }
+              }
+            }
           }
         }
       }
@@ -214,7 +275,16 @@ export function berechne(): Artefakt {
       text: summe((z) => z.entscheid === 'TEXT'),
       selbstmarker: klassen.reduce((a, z) => a + z.selbstmarker, 0),
     },
+    fremdZiele: {
+      geprueft: fremdGeprueft, tot: toteFremdanker.length,
+      sammelblock: toteFremdanker.filter((t) => t.sammelblock).length,
+      ohneSnapshot: fremdOhneSnapshot,
+    },
     klassen,
+    toteFremdanker: toteFremdanker.sort((a, b) => {
+      const k = (t: TotesFremdziel) => `${t.fundstelle}|${t.quelle}|${t.token}|${t.ziel}`;
+      return k(a) < k(b) ? -1 : k(a) > k(b) ? 1 : 0;
+    }),
     toteSelbstziele: toteSelbstziele.sort((a, b) =>
       `${a.fundstelle}|${a.bestimmung}` < `${b.fundstelle}|${b.bestimmung}` ? -1
         : `${a.fundstelle}|${a.bestimmung}` > `${b.fundstelle}|${b.bestimmung}` ? 1 : 0),

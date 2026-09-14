@@ -12,10 +12,24 @@
 // WAS GEMESSEN WIRD. Je Formklasse (= eine Stelle im Entscheidbaum, an der
 // über Link/kein-Link entschieden wird): Zahl der Stellen, Zahl der Erlasse,
 // der Entscheid (SELF / FREMD / TEXT) und die Zahl der Stellen mit explizitem
-// SELBSTMARKER («dieses Gesetzes», «des vorliegenden Gesetzes» …). Dazu zwei
+// SELBSTMARKER («dieses Gesetzes», «des vorliegenden Gesetzes» …). Dazu DREI
 // Sonderlisten: tote Selbstziele (Selbstmarker-Verweis auf eine Bestimmung,
-// die es im Erlass nicht gibt) und Zeit-Kanten-Stellen (Selbstmarker in
-// Übergangs-/Altrecht-Kontext; nur Zählung, siehe V-5).
+// die es im Erlass nicht gibt), tote FREMD-Anker (Z6c, W2·22 — Verweis in
+// einen ANDEREN Erlass, dessen Snapshot die zitierte Bestimmung nicht kennt)
+// und Zeit-Kanten-Stellen (Selbstmarker in Übergangs-/Altrecht-Kontext; nur
+// Zählung, siehe V-5).
+//
+// Z6c-NACHSCHLAG (14.9.2026). Der Ziel-Erlass und der Ziel-Token kommen aus
+// `bundSnapshotRef` — DEM Resolver, den auch NormChip mit demselben Zitat-Text
+// ruft; nachgeschlagen wird in der Token-Menge des Ziel-SNAPSHOTS. Drei Lagen,
+// bewusst getrennt (§1/§8):
+//   · Ziel-Token vorhanden            → Artikel-Anker, unverändert.
+//   · Ziel-Token fehlt ganz           → toter Anker ⇒ Erlass-Link (Fallback).
+//   · Ziel liegt in einem SAMMELBLOCK → toter Anker; die Bestimmung EXISTIERT,
+//     aber der Snapshot führt sie unter «Art. a–b» (meist Aufhebungs-Block).
+//     Auch hier Erlass-Link — den Block anzuspringen hiesse, «Art. 882 ZGB» auf
+//     «Art. 876–883» zu biegen; das ist ein eigener, deklarierter Schritt wert.
+//   · Ziel-Erlass ohne Snapshot       → NICHT prüfbar, nichts ändert sich.
 //
 // ─── TRANSKRIPTION (§8-Offenlegung, bindend lesen) ──────────────────────────
 //
@@ -85,7 +99,8 @@ import { waechterGuards } from './verweis-inventar-transkription';
 // in `verweis-inventar-messung.ts` — hier lebt nur das Tor: CLI, Wächter,
 // Basislinien-Vergleich, Bericht (§6.6-Trennung, 31.8.2026).
 import {
-  ARTEFAKT_PFAD, WURZEL, berechne, selbsttest, type Artefakt, type TotesZiel,
+  ARTEFAKT_PFAD, WURZEL, berechne, selbsttest,
+  type Artefakt, type TotesZiel, type TotesFremdziel,
 } from './verweis-inventar-messung';
 
 // ─── 7 · Lauf ───────────────────────────────────────────────────────────────
@@ -133,6 +148,11 @@ console.log(
   + `TEXT ${ist.gesamt.text}) · Selbstmarker ${ist.gesamt.selbstmarker} · `
   + `tote Selbstziele ${ist.toteSelbstziele.length} · Zeit-Kanten ${ist.zeitKanten.stellen}`,
 );
+console.log(
+  `  Z6c Fremd-Anker: ${ist.fremdZiele.geprueft} prüfbar (Ziel im Korpus) · `
+  + `${ist.fremdZiele.tot} tot, davon ${ist.fremdZiele.sammelblock} in einem Sammelblock · `
+  + `${ist.fremdZiele.ohneSnapshot} ohne Snapshot (nicht prüfbar).`,
+);
 
 const abweichungen: string[] = [];
 if (soll._quellen?.normTextSha256 !== ist._quellen.normTextSha256) {
@@ -170,6 +190,31 @@ const sollTot = new Set((soll.toteSelbstziele ?? []).map(schluessel));
 const istTot = new Set(ist.toteSelbstziele.map(schluessel));
 for (const t of ist.toteSelbstziele) if (!sollTot.has(schluessel(t))) abweichungen.push(`Totes Selbstziel NEU: ${schluessel(t)}`);
 for (const k of sollTot) if (!istTot.has(k)) abweichungen.push(`Totes Selbstziel BEHOBEN: ${k} (Basislinie nachziehen)`);
+
+// ─── Z6c (W2·22) · tote FREMD-Anker ─────────────────────────────────────────
+// Dieselbe Basislinien-Mechanik wie oben, eine Ebene weiter: hier ist das Ziel
+// ein ANDERER Erlass. Jeder Zuwachs ist rot — ein neuer Erkenner-Pfad, der
+// mehr Stellen verlinkt, darf keine neue Anker-Leiche erzeugen (§1). Ein
+// BEHOBENER Eintrag ist ebenfalls rot: er heisst entweder «der Zielerlass hat
+// die Bestimmung bekommen» (schön, Basislinie nachziehen) oder «der Erkenner
+// erkennt die Stelle nicht mehr» (stiller Link-Verlust) — beides gehört
+// angesehen, nicht weggerechnet.
+const fSchluessel = (t: TotesFremdziel) => `${t.fundstelle}|${t.quelle}/${t.token}`;
+const sollFremd = new Map((soll.toteFremdanker ?? []).map((t) => [fSchluessel(t), t]));
+const istFremd = new Set(ist.toteFremdanker.map(fSchluessel));
+for (const t of ist.toteFremdanker) {
+  const s = sollFremd.get(fSchluessel(t));
+  if (!s) { abweichungen.push(`Toter Fremd-Anker NEU: ${fSchluessel(t)} («${t.ziel}», ${t.klasse})`); continue; }
+  if ((s.sammelblock ?? null) !== (t.sammelblock ?? null)) {
+    abweichungen.push(`Toter Fremd-Anker ${fSchluessel(t)}: Sammelblock ${s.sammelblock ?? '—'} → ${t.sammelblock ?? '—'}`);
+  }
+}
+for (const k of sollFremd.keys()) if (!istFremd.has(k)) abweichungen.push(`Toter Fremd-Anker BEHOBEN: ${k} (Basislinie nachziehen)`);
+for (const feld of ['geprueft', 'tot', 'sammelblock', 'ohneSnapshot'] as const) {
+  if (soll.fremdZiele?.[feld] !== ist.fremdZiele[feld]) {
+    abweichungen.push(`fremdZiele.${feld}: ${soll.fremdZiele?.[feld]} → ${ist.fremdZiele[feld]}`);
+  }
+}
 for (const feld of ['stellen', 'erlasse', 'uebergangsTitel', 'altrechtBlock'] as const) {
   if (soll.zeitKanten?.[feld] !== ist.zeitKanten[feld]) {
     abweichungen.push(`zeitKanten.${feld}: ${soll.zeitKanten?.[feld]} → ${ist.zeitKanten[feld]}`);
