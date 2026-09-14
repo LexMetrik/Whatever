@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { setzeLeserAnsicht, useLeserAnsicht } from '../leserOptionen';
 import {
@@ -14,14 +14,17 @@ import type { LeserV3Modell } from './leserV3Modell';
 // Modus gilt, wie die Adresse aussieht und welcher Artikel der nächste ist,
 // steht dort und ist ohne Browser geprüft.
 //
-// ── DIE ADRESSE FÜHRT, NICHT EIN ZWEITER ZUSTAND ───────────────────────────
-// Im Einzelmodus IST `#art-…` die Auskunft «welcher Artikel steht hier». Ein
-// zweiter React-Zustand daneben wäre genau die zweite Wahrheit, die §5
-// verbietet — und sie liefe beim ersten «Zurück» auseinander. Der lokale State
-// unten ist darum kein Gegenspieler der Adresse, sondern ihr Abbild: er wird
-// von ihr gesetzt (Effekt) und setzt sie (Blättern), und im SEKUNDÄREN Pane
-// trägt er sie allein, weil das Pane nicht die adressierte Seite ist (dieselbe
-// Grenze, die `leserV3Modell.springeZuArtikel` mit `!istSekundaer` zieht).
+// ── DIE ADRESSE FÜHRT, UND SONST NICHTS ────────────────────────────────────
+// Im Einzelmodus IST `#art-…` die Auskunft «welcher Artikel steht hier». Der
+// gezeigte Artikel ist darum eine reine ABLEITUNG aus der Adresse, kein
+// React-Zustand daneben: ein zweiter Zustand wäre die zweite Wahrheit, die §5
+// verbietet, und er liefe beim ersten «Zurück» auseinander.
+//
+// Der erste Wurf hatte ihn (`useState` + zwei Effekte, die ihn aus dem Hash
+// nachzogen). Die Lint-Regel `react-hooks/set-state-in-effect` hat das am
+// 14.9.2026 gefangen — zu Recht: jeder dieser Effekte war ein zusätzlicher
+// Render-Durchgang für eine Auskunft, die schon dasteht. Ohne ihn ist «Zurück»
+// kein Sonderfall mehr, sondern derselbe Weg wie jeder andere Adress-Wechsel.
 //
 // ── `pushState` BEIM BLÄTTERN — DIE REGEL WIRD PRÄZISIERT, NICHT GEBROCHEN ──
 // Im Leser gilt «`replaceState`, nie `pushState`» (`./leserV3Modell.ts`
@@ -93,35 +96,17 @@ export function useEinzelModus(
   // adressierte Seite (`leserV3Modell.springeZuArtikel`, `!istSekundaer`).
   const modus = fuehrtAdresse ? modusEntscheid(modusAusSuche(location.search), gemerkt) : 'erlass';
 
-  // Der angezeigte Artikel. Anfangswert in dieser Reihenfolge: die Adresse (ein
-  // geteilter Tieflink), dann die Lesestellung, dann der erste Artikel. Der
-  // letzte Fall ist der Leser, der den Modus ohne Anker betritt — dort ist der
-  // Anfang des Erlasses die einzige Stelle, die niemanden überrascht.
-  const [token, setToken] = useState<string | null>(
-    () => tokenAusHash(location.hash) ?? aktivToken ?? artTokens[0] ?? null,
-  );
-
-  // DIE ADRESSE ZIEHT DEN ZUSTAND NACH — das ist der «Zurück»-Knopf (Kap. 15.6).
-  // Er schreibt keinen State, er ändert die Adresse; ohne diesen Effekt bliebe
-  // die Karte stehen und der Browser zeigte einen Artikel, der nicht da ist.
-  useEffect(() => {
-    const t = tokenAusHash(location.hash);
-    if (t) setToken(t);
-  }, [location.hash]);
-
-  // Steht der Erlass erst später (Shard noch unterwegs), gibt es beim ersten
-  // Lauf keinen Token. Sobald die Liste da ist, bekommt der Modus seinen
-  // Anfang — aber nur, wenn keiner gesetzt ist: ein späterer Lauf darf eine
-  // getroffene Wahl nicht überschreiben.
-  useEffect(() => {
-    setToken((t) => t ?? aktivToken ?? artTokens[0] ?? null);
-  }, [artTokens, aktivToken]);
+  // Der angezeigte Artikel, in dieser Reihenfolge: die Adresse (ein geteilter
+  // Tieflink), dann die Lesestellung des Scroll-Spy (der Wechsel ist dadurch
+  // verlustfrei), dann der erste Artikel. Der letzte Fall ist der Leser, der
+  // den Modus ohne Anker betritt — dort ist der Anfang des Erlasses die
+  // einzige Stelle, die niemanden überrascht. Steht der Erlass noch nicht
+  // (Shard unterwegs), ist das Ergebnis `null` und die Ansicht wartet.
+  const token = tokenAusHash(location.hash) ?? aktivToken ?? artTokens[0] ?? null;
 
   const gehZu = useCallback((ziel: string) => {
-    setToken(ziel);
-    // Im sekundären Pane bleibt die Adresse unberührt (s. Datei-Kopf) — dort
-    // trägt der lokale Zustand allein, und der Verlauf des Fensters gehört der
-    // primären Seite.
+    // `pushState` (react-router `navigate` ohne `replace`) — die Begründung
+    // steht im Datei-Kopf. Der gezeigte Artikel folgt der Adresse von selbst.
     if (fuehrtAdresse) {
       navigate(einzelAdresse(basisPfad, location.search, ziel, 'artikel'));
     }
@@ -134,12 +119,12 @@ export function useEinzelModus(
     // Artikels, an dem der Leser steht. Nach «Ganzer Erlass» springt die
     // Gesamtansicht damit an genau diese Stelle, nach «Einzelner Artikel»
     // erscheint genau diese Bestimmung.
-    const ziel = tokenAusHash(location.hash) ?? aktivToken ?? token;
+    const ziel = token;
     const adresse = ziel
       ? einzelAdresse(basisPfad, location.search, ziel, m)
       : `${basisPfad}${sucheMitModus(location.search, m)}`;
     navigate(adresse, { replace: true });
-  }, [aktivToken, basisPfad, fuehrtAdresse, location.hash, location.search, navigate, token]);
+  }, [basisPfad, fuehrtAdresse, location.search, navigate, token]);
 
   const vor = nachbarToken(artTokens, token, -1);
   const nach = nachbarToken(artTokens, token, 1);

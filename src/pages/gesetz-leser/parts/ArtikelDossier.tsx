@@ -94,8 +94,11 @@ function blockTitel(m: BezugsMarke): string {
   // B5 · DIE ZAHL STEHT IM TITEL, auch bei der Fassung — dort zeigt die Zeile
   // am Artikelende zugeklappt das Etikett («Gilt seit 1.1.2023»), im Dossier
   // steht beides: die Zahl sagt, wie lang die Liste ist, das Etikett den Stand.
-  // ` `: Zahl und Wort dürfen nicht umbrechen.
-  return `${m.anzahl} ${name}`;
+  // `\u00A0` (geschütztes Leerzeichen) als ESCAPE, nicht als Zeichen: ein rohes
+  // U+00A0 im Quelltext ist unsichtbar und von `no-irregular-whitespace` zu
+  // Recht verboten — dieselbe Schreibweise wie in `./Funktionszeile.tsx`.
+  // «11» und «Entscheide» dürfen nicht umbrechen.
+  return `${m.anzahl}\u00A0${name}`;
 }
 
 /** Welche Marken überhaupt einen Block bekommen — in der Prüf-Reihenfolge. */

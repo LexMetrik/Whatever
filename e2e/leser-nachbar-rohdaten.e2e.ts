@@ -25,39 +25,69 @@
 //  (c) In `v3/rohdatenZeiger.ts` `/normtext/` durch `/rohdaten/` ersetzen ⇒ das
 //      Ziel antwortet 404.
 // Alle drei so gemessen (14.9.2026, chromium, Projekt `leser-v3`).
+//
+// ── ERGÄNZUNG 14.9.2026 (W2·5m E1/E2) · DER ORT DER PFEILE HAT GEWECHSELT ───
+// Die Sätze oben bleiben Wort für Wort stehen: sie beschreiben ihren Stand, und
+// ein datierter Beleg wird ergänzt, nicht nachgeführt (§0 Ziff. 2b). Was sich
+// geändert hat, ist eine FACHLICHE Entscheidung Davids vom selben Tag (D-E1,
+// wörtlich): «das bringt aber nur etwas wenn man einzeln einen artikel hat.
+// wenn man einfach scrollen kann dann bringt das ja nichts.»
+//
+// Die Pfeile stehen seither NUR im Einzelmodus (`?ansicht=artikel`). Diese Spec
+// misst darum dort weiter, was sie vorher in der Gesamtansicht mass — Sache,
+// Nachbarschaft und Anker-Integrität sind unverändert, nur die Adresse ist eine
+// andere. Das ist keine Anpassung eines Tests an den Code (§6.3), sondern der
+// deklarierte Nachvollzug einer Verhaltens-Änderung: dass in der Gesamtansicht
+// KEIN Pfeil mehr steht, ist eigens gesondert bewacht
+// (`e2e/leser-einzelmodus.e2e.ts`, Fall «D-E1 · Rückbau #854»).
+//
+// Der zweite Block dieser Datei (Rohdaten-Link) ist unberührt: er hängt an der
+// Übersichtsbox des Erlasses, nicht am Artikel.
 import { test, expect } from '@playwright/test'
 import { fehlerSammeln } from './helpers/fehlerSammeln'
 
 const OR = '/gesetze/bund/OR'
 /** S4-Probe: ein Kantonserlass muss unverändert rendern (Fokus Bund, nichts bricht). */
 const KANTON = '/gesetze/kanton/BS-640.100'
+/** W2·5m · die Pfeile leben seit D-E1 im Einzelmodus (s. Kopf). Die Adresse
+ *  trägt ihn; der Anker `#art-…` ist unverändert derselbe wie zuvor. */
+const einzel = (pfad: string, token: string) => `${pfad}?ansicht=artikel#art-${token}`
 
 test.describe('W2·5m — Nachbar-Artikel-Pfeile', () => {
   test('OR Art. 337c: der Vorgänger ist 337b, der Nachfolger 337d', async ({ page }) => {
     const fehler = fehlerSammeln(page)
-    await page.goto(`${OR}#art-337_c`)
+    await page.goto(einzel(OR, '337_c'))
     await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 30_000 })
     const kopf = page.locator('#art-337_c [data-artikel-nachbarn]').first()
     await expect(kopf).toBeVisible({ timeout: 20_000 })
 
     // Die Buchstaben-Kette 337a/b/c/d ist der Fall, an dem eine nummern-
-    // vergleichende Sortierung auseinanderfiele. Gemessen wird der ANKER, nicht
-    // die Beschriftung: er ist das, was der Klick benutzt.
-    await expect(kopf.locator('[data-nachbar="vor"]')).toHaveAttribute('href', '#art-337_b')
-    await expect(kopf.locator('[data-nachbar="nach"]')).toHaveAttribute('href', '#art-337_d')
+    // vergleichende Sortierung auseinanderfiele. Gemessen wird die ADRESSE,
+    // nicht die Beschriftung: sie ist das, was der Klick benutzt.
+    //
+    // W2·5m: sie ist seit D-E1 die VOLLE Adresse und kein blosser In-Page-Anker
+    // — im Einzelmodus ist der Nachbar die nächste Seite, nicht eine Stelle im
+    // selben Dokument, und die Lesart muss mitwandern. Der Anker `#art-…`
+    // darin ist unverändert derselbe wie zuvor (§5, `v3/einzelModus.ts`).
+    await expect(kopf.locator('[data-nachbar="vor"]'))
+      .toHaveAttribute('href', `${OR}?ansicht=artikel#art-337_b`)
+    await expect(kopf.locator('[data-nachbar="nach"]'))
+      .toHaveAttribute('href', `${OR}?ansicht=artikel#art-337_d`)
     expect(fehler, fehler.join('\n')).toEqual([])
   })
 
   test('der Klick springt wirklich zum Nachbarn (echter Anker, keine Attrappe)', async ({ page }) => {
-    await page.goto(`${OR}#art-337_c`)
+    await page.goto(einzel(OR, '337_c'))
     await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 30_000 })
     await expect(page.locator('#art-337_c [data-artikel-nachbarn]').first()).toBeVisible({ timeout: 20_000 })
 
     await page.locator('#art-337_c [data-nachbar="nach"]').first().click()
     await expect.poll(() => page.evaluate(() => location.hash), { timeout: 10_000 })
       .toBe('#art-337_d')
-    // Und der Zielartikel steht danach im Bild — der Anker wirkt, er steht nicht
-    // nur in der Adresse.
+    // Und der Zielartikel steht danach im Bild — die Adresse wirkt, sie steht
+    // nicht nur im Browserfeld. Im Einzelmodus heisst das: er ist der EINE
+    // gezeigte Artikel (vorher: er war an die richtige Stelle gescrollt).
+    await expect(page.locator('[data-einzel-artikel="337_d"]')).toBeVisible({ timeout: 20_000 })
     const sichtbar = await page.evaluate(() => {
       const el = document.getElementById('art-337_d')
       if (!el) return null
@@ -68,7 +98,7 @@ test.describe('W2·5m — Nachbar-Artikel-Pfeile', () => {
   })
 
   test('der erste Artikel des Erlasses trägt keinen Vorgänger-Pfeil (§8, kein totes Ziel)', async ({ page }) => {
-    await page.goto(`${OR}#art-1`)
+    await page.goto(einzel(OR, '1'))
     await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 30_000 })
     const kopf = page.locator('#art-1 [data-artikel-nachbarn]').first()
     await expect(kopf).toBeVisible({ timeout: 20_000 })
@@ -77,21 +107,27 @@ test.describe('W2·5m — Nachbar-Artikel-Pfeile', () => {
   })
 
   test('kein Pfeil zeigt auf ein Ziel, das die Seite nicht hat (Anker-Integrität)', async ({ page }) => {
-    await page.goto(`${OR}#art-337_c`)
+    await page.goto(einzel(OR, '337_c'))
     await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 30_000 })
     await expect(page.locator('#art-337_c [data-artikel-nachbarn]').first()).toBeVisible({ timeout: 20_000 })
-    // Über alle im DOM stehenden Pfeile: jedes `#art-…` muss ein Element mit
-    // dieser id finden. `content-visibility` versteckt Artikel optisch, aber
-    // nicht aus dem DOM — die Prüfung ist darum vollständig für das, was da ist.
+    // ── W2·5m · DIE INTEGRITÄTS-FRAGE HAT SICH VERSCHOBEN ──────────────────
+    // Vorher zeigten die Pfeile in DASSELBE Dokument, und «tot» hiess: keine
+    // Element-id dazu. Im Einzelmodus steht nur EIN Artikel im DOM, der Pfeil
+    // führt auf eine andere Seite — die id-Prüfung könnte dort gar nicht mehr
+    // gelten. Tot heisst jetzt: eine Adresse, die keinen Artikel benennt (leerer
+    // Token, verlorener Modus, falscher Erlass). DASS das Ziel den Artikel
+    // wirklich führt, prüft `nachbarToken` an der amtlichen Reihung
+    // (`src/tests/leser-einzelmodus.test.ts`) und der Blätter-Fall in
+    // `e2e/leser-einzelmodus.e2e.ts` am echten Korpus.
     const tot = await page.evaluate(() => [...document.querySelectorAll('[data-nachbar]')]
       .map((a) => (a as HTMLAnchorElement).getAttribute('href') ?? '')
-      .filter((h) => !document.getElementById(decodeURIComponent(h.slice(1)))))
+      .filter((h) => !/\?ansicht=artikel#art-.+$/.test(h)))
     expect(tot).toEqual([])
   })
 
   test('S4-Probe: der Kantonserlass rendert mit denselben Pfeilen, ohne Sonderweg', async ({ page }) => {
     const fehler = fehlerSammeln(page)
-    await page.goto(KANTON)
+    await page.goto(`${KANTON}?ansicht=artikel`)
     await expect(page.locator('[data-leser-v3="rahmen"]')).toBeVisible({ timeout: 30_000 })
     await expect(page.locator('[data-artikel-nachbarn]').first()).toBeVisible({ timeout: 20_000 })
     const anzahl = await page.locator('[data-nachbar]').count()
