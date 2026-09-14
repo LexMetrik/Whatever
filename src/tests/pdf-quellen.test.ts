@@ -86,12 +86,10 @@ describe('pruefeOffline — Bindung an die Pin-Überwachung', () => {
   };
   const pins = [{ eli: 'cc/24/233_245_233', kons: '2026-07-01' }];
   const quellen = { ZGB: { url: URL_1, stand: '2026-07-01', quelle: 'fedlex' as const } };
-  // 200 Bund-Floor: mit einem Eintrag würde der Floor-Befund erscheinen; wir prüfen
-  // gezielt, dass KEIN pin-/projektions-Befund auftritt (Floor separat betrachtet).
-  const ohneFloor = (b: string[]) => b.filter((x) => !x.includes('Coverage'));
-
+  // Seit dem §6.7-Wurzelfix (14.9.2026) gibt es keinen unscharfen Coverage-Floor
+  // mehr, der hier hineinredete: ein Bund-Snapshot MIT Eintrag ist schlicht grün.
   it('grün bei URL == Pin-Konsolidierung + Projektion konsistent', () => {
-    expect(ohneFloor(pruefeOffline(quellen, [erlass], pins))).toEqual([]);
+    expect(pruefeOffline(quellen, [erlass], pins)).toEqual([]);
   });
 
   it('ROT wenn URL-Konsolidierung ≠ Pin (Re-Pin ohne Regen)', () => {
@@ -153,5 +151,53 @@ describe('raeumeVerwaisteSidecarEintraege — löscht nur Waisen des gefahrenen 
     const { map: bereinigt, entfernt } = raeumeVerwaisteSidecarEintraege(map, vollstaendig, new Set(['GL', 'BE']));
     expect(entfernt).toEqual([]);
     expect(bereinigt).toEqual(map);
+  });
+});
+
+// §6.7-Wurzelfix (Gegenprüfungs-Auflage PR #860, 14.9.2026): das Tor prüfte bis
+// dahin NUR die vorhandenen Sidecar-Einträge («228 Bund») und konnte bei
+// FEHLENDEN Einträgen gar nicht scheitern — drei Kernerlasse (EMRK, EÖBV, AVG)
+// kamen so ohne amtlichen PDF-Zugang durch. Diese Tests binden das Gegenteil fest.
+describe('pruefeOffline — Vollständigkeit gegen die Snapshot-Menge', () => {
+  const bundOhne = {
+    key: 'EMRK', ebene: 'bund', status: 'snapshot',
+    quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/1974/2151_2151_2151/de',
+    stand: '2022-09-16',
+  };
+  const bundMit = {
+    key: 'ZGB', ebene: 'bund', status: 'snapshot',
+    quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de',
+    stand: '2026-07-01', pdfUrl: URL_1, pdfStand: '2026-07-01',
+  };
+  const pins = [{ eli: 'cc/24/233_245_233', kons: '2026-07-01' }];
+  const quellen = { ZGB: { url: URL_1, stand: '2026-07-01', quelle: 'fedlex' as const } };
+
+  it('ROT bei einem Bund-Snapshot ohne pdf-quellen-Eintrag (der reale #860-Fall)', () => {
+    const b = pruefeOffline(quellen, [bundMit, bundOhne], pins);
+    expect(b.some((x) => x.includes('Bund-Snapshot(s) ohne pdf-quellen-Eintrag'))).toBe(true);
+    expect(b.some((x) => x.includes('EMRK'))).toBe(true);
+  });
+
+  it('grün, sobald der fehlende Eintrag nachgezogen ist', () => {
+    const url = 'https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/cc/1974/2151_2151_2151/20220916/de/pdf-a/fedlex-data-admin-ch-eli-cc-1974-2151_2151_2151-20220916-de-pdf-a-2.pdf';
+    const b = pruefeOffline(
+      { ...quellen, EMRK: { url, stand: '2022-09-16', quelle: 'fedlex' as const } },
+      [bundMit, { ...bundOhne, pdfUrl: url, pdfStand: '2022-09-16' }],
+      [...pins, { eli: 'cc/1974/2151_2151_2151', kons: '2022-09-16' }],
+    );
+    expect(b).toEqual([]);
+  });
+
+  it('nicht-snapshot-Status (nur-live-link, pdf-embed) verlangt keinen Eintrag', () => {
+    const live = { key: 'XYZ', ebene: 'bund', status: 'nur-live-link', quelleUrl: 'https://www.fedlex.admin.ch/eli/cc/1/1/de', stand: '2026-01-01' };
+    expect(pruefeOffline(quellen, [bundMit, live], pins)).toEqual([]);
+  });
+
+  it('Kanton bleibt unter der Basislinie stumm (152 LexWork-Lücken sind Ist-Stand)', () => {
+    const kantonOhne = Array.from({ length: 20 }, (_, i) => ({
+      key: `ZH-${i}`, ebene: 'kanton', status: 'snapshot',
+      quelleUrl: `https://www.zh.ch/app/de/texts_of_law/${i}`, stand: '2024-01-01',
+    }));
+    expect(pruefeOffline(quellen, [bundMit, ...kantonOhne], pins)).toEqual([]);
   });
 });
