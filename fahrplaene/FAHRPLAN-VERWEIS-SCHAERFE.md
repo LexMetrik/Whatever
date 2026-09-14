@@ -46,9 +46,17 @@ Leitplanke überall: **kein Link ist besser als ein falscher Link** (§1); nur v
   Verordnung [vom Datum] über …» (Register-Titel wörtlich), Klammer-Nachprüfung; Wächter
   `fedlex-positivliste.test.ts` belegt jeden Eintrag am Bund-Register. Bilanz im V-1-Tor:
   FREMD 4 900→6 048, 198 falsche Self-Links entfernt (Dossier
-  `bibliothek/normtext/verweis-positivliste-messung-2026-09-01.md`). **Offen:** kantonale
-  Namensliste («§ N des Personalgesetzes», 916 Stellen), Trägergesetz-Kontext («des
-  Gesetzes» 169), Kurztitel ohne FEDLEX-Ziel (Gaststaatgesetz 28 …), historische Titel.
+  `bibliothek/normtext/verweis-positivliste-messung-2026-09-01.md`).
+  **Bund-Rest gebaut 14.9.2026** — V-7c Trägergesetz-Kontext: «des Gesetzes» meint das Gesetz,
+  das der Ingress der Vollzugsverordnung LEGALDEFINIERT («… des Arbeitsgesetzes vom 13. März 1964
+  (Gesetz, ArG)»). Kuratierte Tabelle `src/lib/fedlex/traegergesetz.ts` (ARGV1, ARGV2, UVV, MVV,
+  LSV, LRV, VKL → ArG/UVG/MVG/USG/KVG), Wächter `src/tests/fedlex-traegergesetz.test.ts` prüft je
+  Eintrag Ingress-Wortlaut, Eindeutigkeit der «Gesetz»-Klammer und Datums-Gleichheit; 169 Glieder,
+  davon 97 vorher FALSCHE Self-Links. Dazu 15 amtliche Kurztitel mit Korpus-Ziel (28 Glieder).
+  Dossier `bibliothek/normtext/verweis-traegergesetz-messung-2026-09-14.md`.
+  **Offen:** kantonale Namensliste («§ N des Personalgesetzes», 916 Stellen), Kurztitel OHNE
+  Korpus-Erlass (Gaststaat-, Revisionsaufsichts-, Subventions-, Zollgesetz … ~146 Stellen — hängt
+  am Korpus, s. Dossier §Kernbefund 3), historische Titel.
 - **V-8 · Amtliche Kürzel-Schreibweisen** *(S; gebaut 1.9.2026)* — 601 «Art. N KÜRZEL»-
   Stellen trugen die amtliche Mischschreibung (BankG, AsylG, FinfraG, GSchG …), die
   FEDLEX-Tabelle den Grossbuchstaben-Key: unbekanntes Kürzel ⇒ Text. Tabelle
