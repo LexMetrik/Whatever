@@ -1,6 +1,7 @@
 import { grundartMeta } from '../helpers';
 import { UebersichtBox } from './UebersichtBox';
 import { uebersichtsAngaben } from './uebersichtAngaben';
+import { rohdatenZeiger } from './rohdatenZeiger';
 import type { BestimmungsWort } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
 
@@ -75,6 +76,10 @@ export function LeserUebersicht({ m, bestimmungsWort }: {
       kantonErlassAnzahl: m.kantonErlassAnzahl,
       nichtKonsolidiert: m.nichtKonsolidiert,
       nichtKonsolidiertSeit: m.nichtKonsolidiertSeit,
-    })} />
+    })}
+      // W2·5m · der Weg zu UNSEREM Schnappschuss (§7-Transparenz). Auch das ist
+      // nur Verdrahtung: die Entscheidung, OB und WOHIN, trifft die reine
+      // Funktion (`./rohdatenZeiger.ts`) — hier wird nichts gerechnet.
+      rohdaten={rohdatenZeiger(erlass)} />
   );
 }
