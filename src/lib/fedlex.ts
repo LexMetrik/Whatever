@@ -18,6 +18,7 @@ export { FEDLEX } from './fedlex/tabelle';
 export type { FedlexGesetz } from './fedlex/tabelle';
 
 export { artikelToken, fedlexUrl } from './fedlex/url';
+export { ART_SUFFIXE, SUFFIX_ALT } from './fedlex/nummer';
 
 export {
   erkenneFedlexGesetz,

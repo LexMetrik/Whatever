@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import {
   normVerweiseImText, fremdgesetzNachArtikel, fremdRoutingFormB,
-  artikelnPluralVerweise, erkenneFedlexGesetz,
+  artikelnPluralVerweise, erkenneFedlexGesetz, SUFFIX_ALT,
   type NormVerweisSpan, type FremdEbene,
 } from '../lib/fedlex';
 import { NormChip } from './vorlagen/NormChip';
@@ -198,7 +198,13 @@ const kuerzelKanon = (s: string) => s.toUpperCase().replace(/[^A-Z0-9]/g, '');
 // Fremd-/Verordnungs-Unterdrückung (bare «des/der …» ohne Klammer-Kürzel) läuft
 // jetzt im Schleifenkörper NACH der N2b-Routing-Prüfung (identisches Ergebnis für
 // die bare-«des»-Fälle, aber die «(KÜRZEL)»-Form wird nicht mehr verschluckt).
-const ART_INTERN = /\bArt(?:\.|ikel)\s+(\d+(?:[a-z])?(?:bis|ter|quater|quinquies|sexies)?)(?![0-9a-z])/g;
+// Z6 a (14.9.2026): die Suffix-Alternation kommt aus der GETEILTEN Reihe
+// (`lib/fedlex/nummer.ts`, §5) statt als sechste Handkopie hier zu stehen —
+// sonst erkennt der Linker «Artikel 179octies» gar nicht, oder (schlimmer, wenn
+// man ihn hier allein weitete) er erzeugte den Anker «#art-179octies», den kein
+// Snapshot führt. `artikelToken` und `fedlexLinkFuerArtikel` lesen dieselbe
+// Reihe, darum bleiben Erkennung und Anker-Form zwingend deckungsgleich.
+const ART_INTERN = new RegExp(String.raw`\bArt(?:\.|ikel)\s+(\d+(?:[a-z])?${SUFFIX_ALT}?)(?![0-9a-z])`, 'g');
 
 // ─── F40 · «§ N»-Selbstverweise in §-designierten Erlassen ───────────────────
 // Vorbild ist `RE_PARAGRAF` (KantonNormText.tsx), aber mit der Zerlegung von
