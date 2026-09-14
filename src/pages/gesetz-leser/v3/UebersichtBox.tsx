@@ -81,7 +81,7 @@ import type { UebersichtsAngaben } from './uebersichtAngaben';
 export function UebersichtBox({ angaben }: { angaben: UebersichtsAngaben }) {
   // Ä97: `warnung` und `vorbehalt` werden hier BEWUSST nicht entnommen — beide
   // Aussagen gehören dem Erlass-Kopf (Herleitung unten an ihrer alten Stelle).
-  const { ruhe, zeilen, links, hinweise } = angaben;
+  const { ruhe, zeilen, links, hinweise, rohdaten } = angaben;
   return (
     // ── Ä5 (H2b) · WEISSRAUM, DANN LINIE — KEIN KASTEN ────────────────────────
     // Bis H2 war die Box ein gerahmter, getönter Kasten (`border border-line
@@ -221,6 +221,29 @@ export function UebersichtBox({ angaben }: { angaben: UebersichtsAngaben }) {
                   : <><span aria-hidden>{l.zeichen}</span> {l.label}</>}
               </a>
             ))}
+          </p>
+        )}
+
+        {/* ── W2·5m · ROHDATEN (§7-Transparenz) ────────────────────────────
+            EIGENE Zeile UNTER den amtlichen Zielen, nicht zwischen ihnen: die
+            Zeile darüber führt zur massgeblichen Fassung, diese zu UNSERER
+            Kopie davon. Stünden beide nebeneinander, wäre für einen Moment
+            offen, welcher Link das Gesetz ist — genau die Verwechslung, die §7
+            und §8 hier verbieten. Die Herleitung im Ganzen (samt der Begründung,
+            warum der Fassungs-Token NICHT danebensteht) in
+            `./uebersichtAngaben.ts`.
+            «⬇» geht dem Ziel voran: das Zeichen sagt «holt her», die Regel dafür
+            steht bei den Links darüber (Ä110-Rest). Kein `target="_blank"` —
+            die Datei liegt auf DIESER Seite, und ein neuer Reiter wäre die Geste
+            für «verlässt uns». */}
+        {rohdaten && (
+          <p data-v3-uebersicht-rohdaten className="mt-1 text-xs leading-snug text-ink-500">
+            <a href={rohdaten.href} className="text-brass-700" download>
+              <span aria-hidden>⬇</span> Rohdaten (JSON)
+            </a>
+            {/* Der Stand SAGT, welche Fassung in der Datei liegt — ohne ihn wäre
+                der Download ein Artefakt ohne Datum (§7 Bst. a). */}
+            {rohdaten.stand && <> — <span className="lc-ziffern">{`Fassung ${rohdaten.stand}`}</span></>}
           </p>
         )}
 
