@@ -50,6 +50,8 @@ export interface EinzelModus {
   nach: string | null;
   /** Die Lesart wechseln: merken UND die Adresse nachziehen. */
   waehleModus: (m: LeserModus) => void;
+  /** Der Query-Teil der aktuellen Adresse — beim Blättern mitgeführt. */
+  search: string;
 }
 
 export function useEinzelModus({ basisPfad, artTokens, aktivToken, istSekundaer }: {
@@ -66,7 +68,15 @@ export function useEinzelModus({ basisPfad, artTokens, aktivToken, istSekundaer 
   const location = useLocation();
   const navigate = useNavigate();
   const gemerkt = useLeserAnsicht();
-  const modus = modusEntscheid(modusAusSuche(location.search), gemerkt);
+  // ── DER EINZELMODUS GILT NUR IN DER PRIMÄREN ANSICHT ──────────────────────
+  // Im sekundären Pane bleibt es bei der Gesamtansicht, und das ist kein
+  // Rückstand, sondern die Grenze aus Kap. 15.6 («Split-View unverändert»):
+  // das zweite Fenster ist die VERGLEICHSFLÄCHE — man stellt einen Artikel
+  // neben den Erlass, in dem man liest. Wäre dort ebenfalls nur eine
+  // Bestimmung zu sehen, ginge genau der Kontext verloren, für den man das
+  // Fenster geöffnet hat. Dazu kommt die Adress-Grenze: das Pane ist nicht die
+  // adressierte Seite (`leserV3Modell.springeZuArtikel`, `!istSekundaer`).
+  const modus = istSekundaer ? 'erlass' : modusEntscheid(modusAusSuche(location.search), gemerkt);
 
   // Der angezeigte Artikel. Anfangswert in dieser Reihenfolge: die Adresse (ein
   // geteilter Tieflink), dann die Lesestellung, dann der erste Artikel. Der
@@ -123,5 +133,6 @@ export function useEinzelModus({ basisPfad, artTokens, aktivToken, istSekundaer 
     vor: nachbarToken(artTokens, token, -1),
     nach: nachbarToken(artTokens, token, 1),
     waehleModus,
+    search: location.search,
   };
 }

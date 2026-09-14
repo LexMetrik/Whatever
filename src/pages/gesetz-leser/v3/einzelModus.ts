@@ -121,10 +121,37 @@ export function tokenAusHash(hash: string): string | null {
 
 /** Eine Stufe des Gliederungspfads über dem Artikel. */
 export interface PfadStufe {
-  /** Sektions-Id (`sek-N`) — Sprungziel in der Gesamtansicht. */
+  /** Sektions-Id (`sek-N`) — die Marke der Stufe im Gliederungsbaum. */
   id: string;
   /** Amtliche Beschriftung der Stufe («Zweiter Titel: Die Entstehung …»). */
   label: string;
+  /**
+   * Der ERSTE Artikel dieser Stufe — das Sprungziel des Rückwegs (B4).
+   *
+   * WARUM EIN ARTIKEL-ANKER UND KEIN SEKTIONS-SPRUNG: der Rückweg wechselt
+   * zugleich den Modus. Ein Sektions-Sprung müsste nach dem Moduswechsel
+   * ausgeführt werden, also in einem zweiten Takt — und ein Sprung, der auf
+   * einen Render wartet, ist die Bauart, an der schon der Tieflink-Zweig einmal
+   * gescheitert ist. `#art-…` dagegen löst der bestehende, erprobte Weg auf
+   * (`./tiefLinkZweig.ts`): er klappt die Sektionen des Ziels auf und scrollt
+   * hin — genau der Rückweg, den B4 verlangt, ohne eine zweite Mechanik (§5).
+   *
+   * `null` an einer Stufe, die selbst keinen Artikel führt (reiner Buch-Knoten
+   * ohne eigene Bestimmungen) — dann ist das Glied Text, kein Griff (§8: kein
+   * Bedienelement ohne Ziel).
+   */
+  ersterArtikel: string | null;
+}
+
+/** Der erste Artikel-Token im Teilbaum einer Sektion — dokumentlinear, ohne
+ *  Sortierung: die amtliche Reihung steht im Snapshot (§5, `./nachbarArtikel`). */
+function ersterArtikelIn(s: Sektion): string | null {
+  if (s.artikel.length > 0) return s.artikel[0].artikel;
+  for (const k of s.kinder) {
+    const t = ersterArtikelIn(k);
+    if (t) return t;
+  }
+  return null;
 }
 
 /**
@@ -148,7 +175,7 @@ export function gliederungsPfad(sektionen: Sektion[], token: string): PfadStufe[
   for (const id of ids) {
     const treffer = ebene.find((s) => s.id === id);
     if (!treffer) break;
-    stufen.push({ id: treffer.id, label: treffer.label });
+    stufen.push({ id: treffer.id, label: treffer.label, ersterArtikel: ersterArtikelIn(treffer) });
     ebene = treffer.kinder;
   }
   return stufen;
@@ -178,4 +205,37 @@ export function nachbarToken(
   if (i < 0) return null;
   const ziel = i + richtung;
   return ziel >= 0 && ziel < tokens.length ? tokens[ziel] : null;
+}
+
+/** Ein Vorschau-Ziel: Nummer, Randtitel, Zustand — alles aus dem geladenen
+ *  Snapshot, kein zusätzlicher Abruf (Kap. 15.5, Zeile 6). */
+export interface VorschauZiel {
+  token: string;
+  label: string;
+  /** Der Randtitel, soweit der Eintrag einen trägt — sonst `null`. */
+  marginalie: string | null;
+  aufgehoben: boolean;
+}
+
+/**
+ * F-E2 (entschieden David 14.9.2026: «ja, aber erst in E2») · die Vorschau auf
+ * den Nachbarn.
+ *
+ * `marginalieVon` kommt als Funktion herein und wird hier nicht gesucht: die
+ * Randtitel-Anzeige ist eine Ableitung des Modells (`margAnzeige`), und diese
+ * Datei bleibt frei von DOM, Speicher und Modell (§2/§3). Trägt der Nachbar
+ * keinen Randtitel, steht in der Vorschau nichts — keine aus dem Wortlaut
+ * gebastelte Kurzfassung (§8).
+ */
+export function vorschauZiel(
+  ziel: { token: string; label: string; aufgehoben: boolean } | null | undefined,
+  marginalieVon: (token: string) => string | null,
+): VorschauZiel | null {
+  if (!ziel) return null;
+  return {
+    token: ziel.token,
+    label: ziel.label,
+    marginalie: marginalieVon(ziel.token),
+    aufgehoben: ziel.aufgehoben,
+  };
 }

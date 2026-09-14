@@ -158,7 +158,7 @@ export function ArtikelDossier({ marken, zitat, onOeffnen, laedt = false }: {
                 und anspringen können. `h3`, weil der Artikel-Titel darüber die
                 zweite Stufe ist. */}
             <h3 className="lr7-dossier-titel">
-              <button type="button" className="lr7-dossier-griff" data-reg={m.reg}
+              <button type="button" className="lr7-dossier-griff text-body-s" data-reg={m.reg}
                 aria-expanded={auf} aria-controls={auf ? `${blockId}-${m.reg}` : undefined}
                 /* WCAG 4.1.2 · der Name nennt Rubrik UND Bestimmung — «3
                    Fassungen» allein ist in der Knopfliste nicht auffindbar.
@@ -172,7 +172,7 @@ export function ArtikelDossier({ marken, zitat, onOeffnen, laedt = false }: {
                 {/* Der Stand der Fassung als ruhiger Beisatz — dieselbe
                     Zeichenkette wie an der Marke der Zeile (`../fassungsEtikett`,
                     §5), nicht eine zweite Formulierung desselben Datums. */}
-                {m.etikett && <span className="lr7-dossier-beisatz">{m.etikett}</span>}
+                {m.etikett && <span className="lr7-dossier-beisatz text-micro">{m.etikett}</span>}
               </button>
             </h3>
             {auf && (

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useDialogFokus } from '../../../components/layout/useDialogFokus';
 import { tastendruckGehoertPane } from '../panePrioritaet';
-import { NAVIGATION, belegung } from './leserTastaturBelegung';
+import { BLAETTERN, NAVIGATION, belegung } from './leserTastaturBelegung';
 
 // ─── W2·10-UI-NAV/R8 · Tastatur-Navigation j/k + «?»-Overlay ──────────────────
 //
@@ -47,7 +47,7 @@ function istEingabe(ziel: EventTarget | null): boolean {
   return /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) || el.isContentEditable === true;
 }
 
-export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, imSekundaerenPane = false }: {
+export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, onBlaettern, imSekundaerenPane = false }: {
   /** Artikel-Tokens in DOKUMENT-Reihenfolge (Reader: aus `eintraege`). j/k gehen
    *  auf dieser Liste einen Schritt — nie auf einer DOM-Abfrage: die wäre bei
    *  `content-visibility:auto` von der Renderreihenfolge abhängig. */
@@ -73,6 +73,22 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, imSekunda
    * zweite (F8).
    */
   onPanel?: () => void;
+  /**
+   * W2·5m (Kap. 15.6) · ←/→ blättern im Einzelmodus, `-1` zurück, `1` vor.
+   *
+   * DIESELBE BAUART WIE «r» DARÜBER: ungesetzt ⇒ die Tasten sind unbelegt, es
+   * gibt kein `preventDefault`, und ein blankes ←/→ bleibt die Scroll-Geste des
+   * Browsers. Das ist hier Bedingung und nicht Vorsicht — in der GESAMTANSICHT
+   * gehören die beiden Tasten dem Reiter-Wechsel des Panels
+   * (`../v3/LeserPanel.tsx`), und zwei Zuständige für eine Taste wären eine
+   * zweite Wahrheit (§5). Frei werden sie erst dadurch, dass das Panel im
+   * Einzelmodus gar nicht gemountet ist (D-E4).
+   *
+   * `j`/`k` bleiben unverändert: sie bedeuten im Einzelmodus dasselbe wie die
+   * Pfeile, weil «nächster Artikel» dort das Blättern IST (Kap. 15.6) — und
+   * laufen weiter über `onSprung`.
+   */
+  onBlaettern?: (richtung: -1 | 1) => void;
   /**
    * LESER-V3 H3-NACHZUG A2 · In WELCHEM Pane steckt dieser Leser?
    *
@@ -109,6 +125,9 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, imSekunda
   // Render des Rahmens ab- und neu registriert wird.
   const panelRef = useRef(onPanel);
   useEffect(() => { panelRef.current = onPanel; }, [onPanel]);
+  // W2·5m · wie `panelRef`: über eine Ref, damit der eine Listener stehen bleibt.
+  const blaetternRef = useRef(onBlaettern);
+  useEffect(() => { blaetternRef.current = onBlaettern; }, [onBlaettern]);
   // A2: wie `sprungRef` über eine Ref — der Effekt unten hat bewusst KEINE
   // Abhängigkeiten (ein Listener je Leser, für die ganze Lebensdauer).
   const paneRolleRef = useRef(imSekundaerenPane);
@@ -153,6 +172,20 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, imSekunda
         return;
       }
       if (!NAVIGATION.has(e.key)) return;
+      // ── W2·5m · ←/→ BLÄTTERN IM EINZELMODUS (Kap. 15.6) ─────────────────
+      // Dieselbe Bauart wie «r» eine Zeile weiter unten: ohne Wirkung KEIN
+      // `preventDefault`, damit ein blankes ←/→ bleibt, was es war (die
+      // Scroll-Geste des Browsers). In der Gesamtansicht gehören die Tasten dem
+      // Panel-Reiter-Wechsel; im Einzelmodus ist das Panel nicht gemountet
+      // (D-E4), erst dadurch sind sie hier frei.
+      const richtung = BLAETTERN.get(e.key);
+      if (richtung !== undefined) {
+        const blaettere = blaetternRef.current;
+        if (!blaettere) return;
+        e.preventDefault();
+        blaettere(richtung);
+        return;
+      }
       if (e.key === 'r') {
         // Ohne Panel ist die Taste unbelegt — und zwar wirklich: kein
         // `preventDefault`, damit ein blankes «r» dort bleibt, was es war.
@@ -219,7 +252,7 @@ export function LeserTastatur({ tokens, aktivToken, onSprung, onPanel, imSekunda
         className="lc-card w-full max-w-sm space-y-3 p-4">
         <h2 className="text-body-l font-semibold">Tastatur-Kurzbefehle</h2>
         <dl className="space-y-2">
-          {belegung(onPanel != null).map((b) => (
+          {belegung(onPanel != null, onBlaettern != null).map((b) => (
             <div key={b.taste} className="flex items-baseline gap-3">
               <dt className="lc-chip shrink-0 justify-center px-2">{b.taste}</dt>
               <dd className="text-body-s text-ink-700">{b.wirkung}</dd>
