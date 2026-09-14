@@ -20,9 +20,15 @@ export interface NormSnapshot {
    */
   titel?: string;
   /**
-   * G-AUFH-ART (W2·5j) — ARTIKEL-genau aufgehoben (nicht zu verwechseln mit
-   * `ErlassAufhebung`/register-typen.ts, das den GANZEN Erlass betrifft). Vom
-   * LexWork-Adapter NUR gesetzt, wenn das Artikel-Segment nach vollständiger
+   * G-AUFH-ART (W2·5j/W2·27) — ARTIKEL-genau aufgehoben (nicht zu verwechseln mit
+   * `ErlassAufhebung`/register-typen.ts, das den GANZEN Erlass betrifft).
+   *
+   * BUND (W2·27, seit 14.9.2026): gesetzt aus dem AMTLICHEN Aufhebungs-Vermerk
+   * der Fedlex-Fussnote — Kopf-Marker des Artikels oder Marker jedes «…»-Absatzes
+   * bzw. der amtliche Wortlaut «Aufgehoben» selbst. Regel, Belege und die drei
+   * bewusst NICHT markierten Klassen: `scripts/normtext/aufhebung-signal.ts`.
+   *
+   * KANTON: vom LexWork-Adapter NUR gesetzt, wenn das Artikel-Segment nach vollständiger
    * Extraktion buchstäblich KEINEN Body-Block liefert (kein paragraph, keine
    * enumeration_item/enumeration_tabular, kein paragraph_post-Inhalt) — ein rein
    * STRUKTURELLES Signal aus der Quelle (Numerierungs-Slot ohne jeden Wortlaut),
@@ -33,7 +39,8 @@ export interface NormSnapshot {
    * Fehlt das Feld, ist NICHTS über den Aufhebungsstatus bekannt (§7: nichts
    * fabrizieren) — die Lesesicht fällt dann auf die ältere Text-Heuristik
    * (`artikelGanzAufgehoben`) zurück, die aus dem historischen Bund-Bestand ohne
-   * dieses Feld entstand.
+   * dieses Feld entstand. Diese Restmenge ist seit W2·27 gezählt und gedeckelt:
+   * `npm run check:leerstellen` (Basislinie 14.9.2026: Bund 98, Kanton 481).
    */
   aufgehoben?: true;
   /**
