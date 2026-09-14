@@ -25,6 +25,7 @@ angefasst**, neu gebaut wird nur das Drumherum — und zwar **neben** dem Alten:
 | S1 | den Schalter «Änderungsvermerke» wirkt endlich vollständig: bei «aus» bleibt keine Spur mehr im Lesetext. |
 | S2 | den Gesetzestext in neuer Schriftgrösse und neuem Zeilenmass — und gleichmässige Abstände zwischen Artikeln, egal was ein-/ausgeblendet ist. |
 | S3 | einen aufgeräumten Erlass-Kopf: Fakten, Stand, Warnung, Aktionen sauber getrennt und in verständlicher Sprache. |
+| **E1–E3** *(NEU, Konzept 14.9.2026 — Kap. 15, **wartet auf deine Freigabe**)* | eine **Ansichtsoption**: entweder das ganze Gesetz wie bisher, oder **nur den einzelnen Artikel** — dann mit Blätter-Pfeilen und mehr Informationen in Blöcken darunter. Drei Fragen dazu stehen in Kap. 15.8. |
 
 **Reihenfolge und erster Anblick.** V-0 (Prototyp) → H1 → H2 → H3 → H4 (Umstellung) → H5
 (Löschung); die kleinen S-Etappen laufen dazwischen, sobald du die zugehörige Frage beantwortet
@@ -487,6 +488,199 @@ stillschweigend doppelt gebaut (§17-Gegengewicht, Kollisionsregel).
 jedem dieser Schritte gilt die Drei-Sonden-Prüfung (offene PRs · fremde Remote-Branches ·
 Worktrees); im Zweifel wartet der andere Schritt.
 
+
+---
+
+## 15 · Einzelartikel-Ansicht (Ansichtsoption) — Konzept 14.9.2026
+
+> **Status: KONZEPT, nicht freigegeben.** Dieses Kapitel wird gebaut, wenn David die drei Fragen
+> in §15.8 beantwortet hat — vorher kein Produkt-Code. Roadmap-Zeiger: `W2·5m-LESER-V3`.
+> Alle Code-Angaben unten sind am Stand `origin/main` @ `d61193dbe` (14.9.2026) verifiziert;
+> ungeprüfte Annahmen sind als solche gekennzeichnet.
+
+### 15.1 · Zweck und Entscheide
+
+Anlass ist PR #854 (Nachbar-Artikel-Pfeile im Artikelkopf). David dazu im Chat 14.9.2026, wörtlich:
+
+| # | Wortlaut David (14.9.2026) | Was daraus folgt |
+|---|---|---|
+| D-E1 | «das bringt aber nur etwas wenn man einzeln einen artikel hat. wenn man einfach scrollen kann dann bringt das ja nichts» | Die Pfeile aus #854 sind in der Scroll-Ansicht **funktionslos** — dort ist Blättern schon durch Scrollen erledigt. Sie gehören in einen Modus, der wirklich nur einen Artikel zeigt. |
+| D-E2 | «können wir als ansichtsoption bauen wo man nur den einzelnen artikel sieht und so sich weiterklicken kann?» | Kein neuer Leser, sondern eine **Option** neben der bestehenden Gesamtansicht. |
+| D-E3 | «das wird ein grösserer umbau der gut geplant sein muss. man kann im ansichtsmenu wählen ob man das ganze gesetz sieht oder nur den jeweils einzelnen artikel. wenn man aber nur einen einzelnen artikel haben dann können wir mehr informationen anzeigen» | Umschalter sitzt im **Ansicht-Menü** (F7 = A, Kap. 9). Der gewonnene Platz wird für **mehr Kontext je Artikel** genutzt — das ist der eigentliche Gewinn, nicht das Blättern. |
+| D-E4 | «blöcke unter dem artikel, panel im einzelmodus weg» | Der Kontext steht **unter** dem Artikel in Blöcken, nicht seitlich. Das Panel (`LeserPanelZone`) ist im Einzelmodus ausgeblendet. |
+| D-E5 | «achte darauf dass wir eine gute und intuitive darstellung haben» | Eigener Abschnitt §15.4 mit prüfbaren Kriterien, nicht als Vorsatz. |
+| D-E6 | «ich weiss nicht wie ich es anders sagen soll aber achte wirklich darauf, dass es ein mehrwert ist» | **Leitprinzip 2**, §15.2: jeder Block braucht einen belegten Mehrwert-Satz, sonst fällt er; E1 geht nicht allein live. |
+
+**Zielbild-Bezug.** Phase 1 «Bund zuerst» (Mandat 14.9.2026); Dach-Schritt `W2·5m-LESER-V3`;
+Anspruch aus Kap. 1 Ziff. 1 — bestes Gesetzes-Leseprodukt. Der Einzelmodus zahlt auf drei der acht
+HIG-Begriffe ein: **Focus** (nur eine Norm im Blick), **Flexibility** (der Nutzer wählt die
+Lesart), **Simplicity** (das Beiwerk verschwindet aus dem Lesefluss in benannte Blöcke).
+
+**Grenze Hülle/Kern (Kap. 1 Ziff. 3) gilt unverändert.** `ArtikelBody.tsx` und die Datenlade-Logik
+werden **nicht** angefasst; der Einzelmodus rendert denselben Artikel-Körper, nur in einer anderen
+Umgebung. Golden byte-gleich ist Tor, nicht Zusage.
+
+### 15.2 · Mehrwert-Test (Leitprinzip 2) — hartes Kriterium, kein Vorsatz
+
+> **David 14.9.2026, wörtlich:** «ich weiss nicht wie ich es anders sagen soll aber achte wirklich
+> darauf, dass es ein mehrwert ist».
+
+Der Einzelmodus allein ist **kein** Mehrwert: einen Artikel einzeln lesen kann man auf Fedlex
+auch, durch Scrollen. Der Mehrwert entsteht erst durch das, was **unter** dem Artikel steht
+(D-E3: «wenn man aber nur einen einzelnen artikel haben dann können wir mehr informationen
+anzeigen»). Darum gilt für dieses Kapitel eine Regel, die über den üblichen Toren steht.
+
+**M1 · Jeder Block braucht einen belegten Mehrwert-Satz. Blöcke ohne einen fliegen raus** — es
+gibt keine Platzhalter-Blöcke und kein «kommt später mit Inhalt».
+
+| # | Block | Was bekommt ein Jurist hier, das Fedlex nicht bietet? | Beleg an den Daten (geprüft 14.9.2026) |
+|---|---|---|---|
+| 1 | **Historie / Fassung** | Die Änderungsereignisse des Artikels als **strukturierte Liste bis auf Absatz und Buchstabe**, jedes mit AS- und BBl-Quelle — statt einer Fussnotenzeile, aus der man die Zuordnung selbst erschliessen muss. | `public/normtext/historie/OR.json`, Eintrag `336_c`: `giltSeit: 2024-01-01`; Ereignis `1996-10-01` mit `absatz: "1"`, `item: "a"`, Quellen `AS 1996 1445` + `BBl 1994 III 1609` (beide mit Fedlex-ELI-Link). 209 Erlass-Shards. |
+| 2 | **Verweise** | Die Verweise als **begehbare Kanten in beide Richtungen** — und zwar **korpusweit**, über den Erlass hinaus. | ausgehend heute: `src/components/NormText.tsx`. **Rückrichtung «zitiert von» fehlt noch** (`W2·22-VERWEIS-FEDLEX` Z4) — s. M2. |
+| 3 | **Rechtsprechung** | Die **Leitentscheide zu genau diesem Artikel**, vorsortiert. Fedlex verlinkt keine Rechtsprechung. | `public/rechtsprechung/bezuege/OR.json`, `proArtikel`: `336c` → **11** Entscheide (u. a. BGE 152 III 23, BGE 150 III 78, BGE 148 III 126); zum Vergleich `41` → **51**, `18` → 35, `104` → 29. 469 OR-Artikel tragen Bezüge. |
+| 4 | **Materialien / Entstehung** | Botschaft und Entstehungsgeschichte **je Artikel** statt je Erlass — die Stelle, an der man sonst eine BBl-Nummer im Volltext sucht. | `artikelMaterialienLaden.ts`; Deckung unvollständig und als solche ausgewiesen (`W2·6c`). |
+| 5 | **Passende Werkzeuge** | Der **Rechner oder die Vorlage, die an genau dieser Norm hängt** — der Schritt von «was gilt» zu «was rechne ich». Das hat kein Gesetzesportal. | `src/lib/normtext/werkzeuge.ts:73-93`: artikel-scharfe Norm↔Werkzeug-Kanten, jede mit fachlichem Norm-Beleg (§7), Zweifelsfälle bewusst ausgelassen (§8). Beispiel im Dateikopf: «Art. 127 OR → Verjährung». |
+| 6 | **Nachbarn-Vorschau** | **Kein eigener Mehrwert** — reine Navigation. Darum offene Frage F-E2 und nicht gesetzt. | — |
+
+**M2 · Freigabe-Regel: Etappe 1 geht NICHT allein live.** Der Modus samt Blättern wird erst
+zusammen mit den **ersten beiden Blöcken** ausgeliefert — Vorschlag **Historie + Verweise**, weil
+beide ohne Vorbedingung verfügbar sind. Bis dahin bleibt E1 hinter dem Umschalter unveröffentlicht
+bzw. ungemergt. *Begründung:* E1 allein liefert «ein Artikel statt vieler» — gegenüber
+Fedlex-Scrollen ist das kein Gewinn, sondern nur eine andere Bedienung. Der Mehrwert beginnt bei
+Block 1.
+
+**M3 · Rechtsprechung erst nach dem Phantom-Filter.** Block 3 wird nicht ausgeliefert, solange die
+Phantom-Kanten offen sind (ROADMAP:374, Fix-Tiefe unter `QS-KORPUS`). Ein prominenter Block mit
+einem erheblichen Anteil falscher Kanten ist **negativer** Mehrwert: er kostet den Juristen die
+Prüfung jeder einzelnen Fundstelle und beschädigt das Versprechen aus §1/§8 stärker, als ein
+fehlender Block es je könnte.
+
+**M4 · Messbarer Nutzen als Fertig-Kriterium.** Diese drei Fragen müssen im Einzelmodus in
+**höchstens zwei Klicks** beantwortbar sein und auf Fedlex nicht. Sie werden im Abnahme-PR
+**durchgeklickt und mit Klickzahl protokolliert** (Anschluss an die NM-Regel, Kap. 7) — eine
+Etappe, die eine davon verfehlt, ist nicht abnahmefähig.
+
+| # | Szenario (aus dem Korpus gewählt, Werte verifiziert) | Weg im Einzelmodus | Auf Fedlex |
+|---|---|---|---|
+| **N1** | **OR 336c** (Kündigung zur Unzeit) — «seit wann gilt Abs. 1 **lit. a** in der heutigen Fassung, und mit welcher Vorlage kam die Änderung?» | Block **Historie** aufklappen → Ereignis `1.10.1996`, absatz 1, lit. a, `AS 1996 1445` / `BBl 1994 III 1609`. **1 Klick.** | Fussnotenzeile am Artikel; die Zuordnung «welche Fussnote gilt welchem Buchstaben» muss der Leser selbst herstellen, die BBl-Fundstelle separat suchen. |
+| **N2** | **OR 336c** — «welche Bundesgerichtsentscheide gibt es zu diesem Artikel?» | Block **Rechtsprechung** aufklappen → **11** Entscheide, u. a. BGE 152 III 23, BGE 150 III 78, BGE 148 III 126. **1 Klick.** | Gar nicht — Fedlex führt keine Rechtsprechung. |
+| **N3** | **OR 127** (Verjährung) — «welches Werkzeug rechnet mir die Frist aus?» | Block **Passende Werkzeuge** aufklappen → Verjährungs-Rechner, Kante mit Norm-Beleg. **1 Klick.** | Gar nicht. |
+
+*Warum diese drei:* N1 prüft die Tiefe der eigenen Daten (Absatz-/Litera-Schärfe), N2 die Breite
+(fremder Korpus, den die Amtsquelle nicht hat), N3 den Sprung von der Norm in die Anwendung — die
+drei Richtungen, in die dieses Haus über ein Gesetzesportal hinausgeht. Alle drei Zahlen sind am
+Repo-Stand `d61193dbe` geprüft, nicht geschätzt; wo der Bau sie anders vorfindet, gilt die Messung
+und nicht dieser Text (§7).
+
+### 15.3 · Bildschirmaufteilung
+
+| Zone | Inhalt | Herkunft / Bauart |
+|---|---|---|
+| **Funktionszeile oben** | Umschalter **«Ganzer Erlass \| Einzelner Artikel»** im bestehenden Menü «Ansicht ▾» — **kein neues Chrome**, keine zusätzliche Leiste. | `v3/LeserRubrikenWahl.tsx` ist der Präzedenzfall für eine Wahl in diesem Menü; der Modus kommt als eigene Gruppe darüber. |
+| **Gliederungspfad** | Buch › Titel › Abschnitt › Art. N — zugleich der Rückweg: ein Klick auf ein Glied springt in die **Gesamtansicht** an diese Stelle. | Die Krumen-Quelle existiert seit H2b (Ä1, eine Scroll-Spy-Quelle); im Einzelmodus ist sie **trivial wahr**, weil genau ein Artikel sichtbar ist — der §7-Wahrheitsfall aus Ä1 entfällt hier. |
+| **Artikel-Karte · Kopf** | Artikelnummer, Marginalie/Randtitel, Blätter-Pfeile links/rechts. | `parts/ArtikelNachbarn.tsx:75` — **wiederverwenden**, nicht neu bauen. |
+| **Artikel-Karte · Text** | Der amtliche Wortlaut, unverändert. | `normtext/ArtikelBody.tsx` — **Kern, TABU**. Kein Prop, kein Wrapper-Eingriff, keine neue Klasse am Textkörper (PX-Tor, Kap. 7). |
+| **Artikel-Karte · Fusszeile** | «Gilt seit …» · Fedlex-Link (amtlich ↗) · Rohdaten-Link · Tastatur-Hinweis. | Die ersten drei sind die Aktionen aus `parts/ArtikelAktionen.tsx` (Zitat :95, Link :98, Amtlich :104) plus der Rohdaten-Link aus #854. |
+| **Blöcke darunter** | §15.5 — Handy **eine** Spalte, Desktop **zwei**. | Aus den bestehenden Rubriken der Funktionszeile, s. u. |
+| **Kontext-Panel** | **Im Einzelmodus ausgeblendet** (D-E4). In der Gesamtansicht unverändert. | `v3/LeserPanelZone.tsx` (407 Z.) wird nicht gelöscht, nur nicht gemountet. |
+
+**Der Rückbau aus #854 (D-E1).** Die Pfeile werden in der Gesamtansicht entfernt und erscheinen
+**nur** im Einzelmodus. Betroffen ist genau eine Zeile — `parts/ArtikelLeser.tsx:399`
+(`{!imTreffer && nachbarn && <ArtikelNachbarn nachbarn={nachbarn} />}`); die Bedingung bekommt den
+Modus dazu. Die Komponente selbst, ihre Selektoren (`data-artikel-nachbarn`,
+`data-nachbar="vor"|"nach"`) und `v3/nachbarArtikel.ts` (`baueNachbarn`, Z. 74–84) bleiben
+unverändert. **§4b-Pflicht:** vor dem Push alle Sonden auf `data-artikel-nachbarn` und
+`data-nachbar` grepen und die Treffer-Specs gegen `dist` fahren — die Pfeile verschwinden aus einer
+Fläche, die heute getestet wird.
+
+### 15.4 · Darstellung und Bedienbarkeit (Auftrag David 14.9.2026, D-E5)
+
+| # | Regel | Prüfbar woran |
+|---|---|---|
+| B1 | **Pfeile an festem Ort, klar sichtbar** — im **Kopf** und in der **Fusszeile** der Artikel-Karte, beide Male an derselben Stelle, unabhängig von der Artikellänge. Nie nur bei Hover. | Sichtprüfung + e2e: beide Pfeil-Paare vorhanden, bei langem (OR 336c) und kurzem Artikel an gleicher X-Position. |
+| B2 | **Tastatur-Hinweis einmal sichtbar**, nicht in einem Hilfe-Dialog versteckt: eine ruhige Zeile in der Fusszeile («← → blättert»). Nicht je Block wiederholen. | Sichtprüfung; genau **ein** Vorkommen im DOM je Artikel. |
+| B3 | **Umschalter klar beschriftet und im Zustand erkennbar** — «Ganzer Erlass» / «Einzelner Artikel» ausgeschrieben, aktiver Zustand sichtbar **und** per `aria-checked`/`aria-current` ausgezeichnet; nicht allein über Farbe. | axe (`e2e/a11y.e2e.ts`) + Sichtprüfung hell/dunkel; Kontrast ≥ 4.5. |
+| B4 | **Gliederungspfad ist der Rückweg** — der Sprung zurück in die Gesamtansicht liegt in **beiden** Modi an derselben Stelle, damit der Nutzer ihn nicht sucht. | Sichtprüfung Desktop/Handy in beiden Modi. |
+| B5 | **Blöcke mit sprechendem Titel und Zahl im Titel** («3 Entscheide», «2 Fassungen»). Ein Block ohne Inhalt erscheint **nicht** als leere Karte. | e2e: Block mit 0 Treffern ist nicht im DOM; Titel enthält die Zahl. |
+| B6 | **Standardmässig eingeklappt bis auf den ersten** (Vorschlag: Historie/Fassung — die Angabe, die jeder Jurist zuerst braucht). Öffnen lädt nach (§15.5). | e2e: beim Laden genau ein `aria-expanded="true"`. |
+| B7 | **Leerzustände in Klartext** — §8-ehrlich, s. §15.5 (Spalte «Leerzustand»). Nie «0» ohne Satz. | Wortlaut-Test je Block. |
+| B8 | **Ruhige Typografie nach DESIGN-REGLEMENT**, Normtext-Körper **unverändert** (S2-Satzspiegel 17 px / lh 1.55). Block-Titel und Block-Inhalt liegen typografisch **unter** dem Normtext, nie darüber. | PX-Tor (Kap. 7): Textkörper-Region pixelgleich; `check:linien-kanon` Teil A. |
+| B9 | **Handy: eine Spalte, Pfeile daumen-erreichbar unten** — das Fuss-Pfeilpaar ist auf ≤ 390 px die Hauptbedienung, das Kopf-Paar die Orientierung. | Sichtprüfung @390; e2e-Tap-Ziel ≥ 44 px. |
+| **PRÜFWEISE** | **Sichtprüfung hell UND dunkel, Desktop UND Handy ist Fertig-Kriterium von E1 und E2** — nicht Nacharbeit. **Screenshots liegen im PR.** Dazu der Ästhetik-Prüfer der Drei-Prüfer-Regel (Kap. 7), der die Fläche nicht gebaut hat. | Vier Bilder je Etappe (hell/dunkel × Desktop/Handy) im PR-Text. |
+
+### 15.5 · Die Blöcke (Reihenfolge = Vorschlag, David entscheidet — F-E1)
+
+**Architektur-Befund, der den Umfang halbiert.** Die Blöcke existieren bereits — als **Rubriken der
+Funktionszeile am Artikelende** (`parts/Funktionszeile.tsx`, ex `BezuegeKopf`; Rubriken-Kennungen
+`f` Fassung · `r` Entscheide · `m` Materialien · `g` Verweise · `w` Rechner, definiert in
+`leserOptionen.ts:122-124` als `FussRubrik`). Sie sind seit `W2·26-FUNKTIONSZEILE` (#788) bereits
+**Akkordeon, beim Laden zu, on demand** (FAHRPLAN-DESIGN-IDENTITAET §9 Z2–Z4). Der Einzelmodus
+**entfaltet dieselben Rubriken grosszügiger**, er erfindet sie nicht neu. **§5: kein zweites
+Modul, keine Kopie** — wer im Bau eine `EinzelBlockEntscheide.tsx` anlegt, hat den Schritt verfehlt.
+
+| # | Block | Datenquelle (verifiziert) | Heutiger Ort | Laden | Leerzustand (§8, Klartext) |
+|---|---|---|---|---|---|
+| 1 | **Historie / Fassung** | `public/normtext/historie/` (209 Shards, Stand 14.9.2026); Anzeige `parts/ArtikelHistorie.tsx` | Rubrik `f`; Panel-Reiter «Änderungen» (`v3/PanelAenderungen.tsx`, 140 Z.) | beim Aufklappen | «Für diesen Artikel ist keine Änderung erfasst.» — **nicht** «nie geändert» |
+| 2 | **Verweise** — zitiert / zitiert von | ausgehend: `src/components/NormText.tsx` (782 Z.) | Rubrik `g` | beim Aufklappen | «Dieser Artikel verweist auf keine andere Bestimmung.» |
+| | ⚠️ **«zitiert von» ist heute NICHT vorhanden** — im Code keine Rückrichtung gefunden. Sie ist ein eigener Schritt: `W2·22-VERWEIS-FEDLEX` **Z4** (ROADMAP:180, «Leser-Schicht ‹zitiert von›, Erlassebene, nur Bund — erst nach Z1–Z3 und Abnahme»). **Bis dahin zeigt der Block nur die ausgehende Richtung**, und zwar benannt («Verweist auf»), damit kein Nutzer die Rückrichtung für leer hält statt für fehlend. |
+| 3 | **Rechtsprechung** | `bezuegeLaden.ts` (Kommentar Z. 8–14: «ON DEMAND, NIE EAGER») | Rubrik `r`; Panel-Reiter «Entscheide» (`v3/PanelEntscheide.tsx`, 272 Z.) | beim Aufklappen | «Zu diesem Artikel sind in unserem Korpus keine Entscheide erfasst.» — **nie** «es gibt keine Rechtsprechung» |
+| | ⚠️ **Vorbedingung: Phantom-Kanten.** Der Bezüge-Korpus trägt Phantom-Zitate (ROADMAP:374, Befund Split-Bau 30.8.2026/PR #582; Fix-Tiefe geführt unter `QS-KORPUS`, ROADMAP:451). Im Panel sind sie eine Zeile unter vielen; als **eigener Block unter dem Artikel** bekommen sie Gewicht. **E2 wird für diesen Block nicht abgenommen, solange der Phantom-Filter offen ist** — sonst macht die Hülle einen Datenfehler prominent. |
+| 4 | **Materialien / Entstehung** (Bund) | `artikelMaterialienLaden.ts` (Kommentar Z. 25–28: «ERST AUF WUNSCH») | Rubrik `m`; Panel-Reiter «Materialien» (`v3/PanelMaterialien.tsx`, 138 Z.) | beim Aufklappen | «Für diesen Artikel sind keine Materialien erfasst.» Deckung ist unvollständig (`W2·6c`) — der Satz sagt «erfasst», nicht «vorhanden» |
+| 5 | **Passende Werkzeuge** | `kontextSoftLaw` / `v3/PanelAnwendung.tsx` (195 Z.), Panel-Reiter «Anwendung» | Rubrik `w` | beim Aufklappen | Block **entfällt** (B5: keine leere Karte) |
+| 6 | **Nachbarn-Vorschau** — Nummer + Marginalie des Vor-/Folgeartikels als Vorschau-Zeile | `v3/nachbarArtikel.ts` (bereits geladen, **kein** neuer Request) | neu | — | entfällt am ersten/letzten Artikel | 
+
+*Zur Reihenfolge:* 1–4 folgen der juristischen Lesefolge (Was gilt seit wann · Was hängt daran ·
+Wie wurde es angewendet · Warum steht es so da); 5–6 sind Navigation, darum zuletzt. **Frage F-E2:
+Block 6 ja oder nein** — er ist billig, aber er verdoppelt die Pfeil-Funktion.
+
+**Perf (§15).** Alle Blöcke laden **nur aufgeklappt**. Da B6 genau einen Block offen startet, ist
+die Startlast des Einzelmodus **höchstens ein Shard über** der heutigen Artikelansicht — und
+deutlich darunter, wo heute die ganze Erlassseite rendert. Die Zahl wird aus `check:perf-budget`
+vorher/nachher ausgewiesen, nicht behauptet (Präzedenz: Panel-Nachladen H3, Kap. 7).
+
+### 15.6 · Verhalten
+
+| Thema | Regel | Begründung / Beleg |
+|---|---|---|
+| **Adresse** | `?ansicht=artikel` zusätzlich zu `#art-…`, damit ein Link den Modus mitträgt. `?ansicht=erlass` ist der Vorgabewert und wird **nicht** geschrieben. | Im gesamten `gesetz-leser/`-Baum kommt heute **kein** `searchParams.get` vor (geprüft 14.9.2026) — dies wäre der erste Query-Parameter des Lesers. Darum eine einzige Lesestelle, typisiert, keine verstreuten Abfragen. |
+| **Prerender/SEO** | Die prerenderten Seiten bleiben **Gesamtansicht**. Der Einzelmodus ist eine Client-Option, kein zweiter SEO-Zustand. | Sonst entstünde je Artikel eine zweite indexierbare Fassung desselben Wortlauts (Duplicate Content) — und `scripts/prerender.ts` müsste die Hülle kennen, was Kap. 7 «SEO-Prüfpunkt» ausdrücklich verbietet. |
+| **Browser-Verlauf** | **`pushState` je geblättertem Artikel — nur im Einzelmodus.** «Zurück» blättert einen Artikel zurück. In der Gesamtansicht bleibt es **strikt bei `replaceState`**. | Heute gilt im Leser die Regel «`replaceState`, nie `pushState`» (`v3/leserV3Modell.ts:317`, Kommentar Z. 287–288) — richtig, weil dort der **Scroll-Spy** die Adresse führt und `pushState` pro gescrolltem Artikel einen History-Eintrag erzeugen würde (der Zurück-Knopf wäre unbrauchbar). Im Einzelmodus gibt es keinen Scroll-Spy: die Adresse ändert sich **nur** auf eine ausdrückliche Nutzer-Geste. Genau dann ist `pushState` das erwartete Verhalten. **Die Regel wird also nicht gebrochen, sondern an ihrer Bedingung präzisiert** — und der Kommentar an `leserV3Modell.ts:287` wird im selben PR ergänzt (§2b: die alte Begründung bleibt stehen, sie wird nur um den Modus erweitert). |
+| **Tastatur** | **← → blättern** (Konflikt geprüft: frei, sobald das Panel im Einzelmodus nicht gemountet ist). **`j`/`k` bleiben unverändert** und brauchen **keine neue Belegung**. | `parts/LeserTastatur.tsx:195` belegt `j`/`k` bereits mit «nächster/voriger Artikel» — im Einzelmodus bedeutet das dasselbe wie die Pfeile, die Semantik trägt also schon. `←`/`→` sind heute der Reiter-Wechsel im Panel (`v3/LeserPanel.tsx:92-93`); da das Panel im Einzelmodus weg ist (D-E4), ist die Taste dort frei. **Belegt bleiben** `?` (Z. 140/150), `r` (Z. 156), `t` (Z. 165) — nicht anfassen. |
+| **Präferenz** | Der gewählte Modus wird lokal gemerkt, als neues Feld in `leserOptionen.ts` (Key `lm.leser.optionen`, heute `vermerke` + `fussRubriken`). Migration alter Werte wie bei S1: fehlendes Feld ⇒ Vorgabe «Ganzer Erlass». | Eine Ansichtswahl, die jeder Seitenaufruf vergisst, ist keine Option. |
+| **Vorrang** | Ein `?ansicht=`-Parameter in der Adresse **schlägt** die gemerkte Präferenz (ein geteilter Link zeigt, was der Absender meinte). | Sonst bricht das Teilen. |
+| **Aufgehobene Artikel** | werden beim Blättern **nicht übersprungen**. | Bereits so gebaut und begründet: `v3/nachbarArtikel.ts` Z. 23–30 (§8) — ein übersprungener Artikel liesse den Nutzer glauben, es gäbe ihn nie. **Kein Bauaufwand, nur nicht kaputtmachen.** |
+| **Suche / Treffer / Split-View** | unverändert. Ein Treffer-Klick führt in die **Gesamtansicht** (dort ist der Kontext der Trefferliste). | Der Einzelmodus ist eine Lese-, keine Such-Ansicht; `!imTreffer` steht schon heute an `ArtikelLeser.tsx:399`. |
+| **Kantone** | identisch — kein Sonderpfad. | Kap. 1 Ziff. 4; der Architektur-Prüfer der Drei-Prüfer-Regel prüft genau das. |
+| **Druck / Export** | Etappe 3. Der Einzelmodus ist die naheliegende Druckvorlage («ein Artikel mit seinem Kontext»), aber nicht Teil von E1/E2. | Platz reservieren ist billig (Kap. 14). |
+
+### 15.7 · Etappen, Fertig-Kriterien, Tore
+
+| E | Inhalt | Fertig, wenn | Tore |
+|---|---|---|---|
+| **E1 · Hülle** | Umschalter im Ansicht-Menü · Einzelmodus rendert **einen** Artikel · Blättern per Pfeil und Taste · Adresse `?ansicht=artikel` + `pushState` · Präferenz lokal · **Pfeile-Rückbau aus der Gesamtansicht** (#854). **Noch keine Blöcke.** | Der Umschalter wechselt verlustfrei hin und zurück, die Adresse ist teilbar, «Zurück» blättert einen Artikel zurück, und in der Gesamtansicht steht **kein** Pfeil mehr. **M2: E1 wird NICHT allein ausgeliefert** — der Merge nach `main` erfolgt erst zusammen mit den ersten zwei Blöcken aus E2 (Historie + Verweise); bis dahin ist E1 gebaut und geprüft, aber nicht live. Sichtprüfung B1–B4/B8/B9 hell+dunkel × Desktop+Handy, Bilder im PR. | `golden` **byte-gleich** · `check:perf-budget` · `check:linien-kanon` A · `check:schlankheit` · PX-Tor (Textkörper pixelgleich) · CLS 0 · axe (`e2e/a11y.e2e.ts`), Kontrast ≥ 4.5 · **neue e2e**: Blättern OR Art. 337b → 337d (deckt eine Suffix-Strecke ab, W2·22 Z6a) · §4b-Sonden-Sweep auf `data-artikel-nachbarn`/`data-nachbar` · R8-Sweep `e2e/kein-abschnitt.e2e.ts` @320/390 (die Funktionszeile ist ein geteilter Rahmen) |
+| **E2 · Dossier-Blöcke** | Blöcke 1–5 aus den **bestehenden** Rubriken/Panel-Modulen, Akkordeon, on demand, Leerzustände, Zahl im Titel, erster Block offen. | Jeder Block zeigt dieselben Daten wie heute im Panel bzw. in der Funktionszeile — und **kein neues Datenmodul existiert**. Leerzustände im Wortlaut geprüft. Sichtprüfung wie E1. | **§5-Wächter: ein Test, der fehlschlägt, wenn ein Block seine Daten nicht aus dem bestehenden Modul zieht** (Rot-Beweis zeigen, §6.7) · `check:perf-budget` mit Vorher/Nachher-Zahl · übrige Tore wie E1 · **M3: Block 3 (Rechtsprechung) wird nicht ausgeliefert, solange der Phantom-Filter offen ist** · **M4: die drei Szenarien N1–N3 (§15.2) durchgeklickt, Klickzahl im PR protokolliert** · **M1: jeder gebaute Block trägt seinen belegten Mehrwert-Satz** |
+| **E3 · Druck, Export, Handy-Feinschliff** | Druckbild des Einzelartikels · Zitat-/PDF-Anschluss · letzte Handy-Politur. | Ein gedruckter Einzelartikel trägt Wortlaut, Stand und Quelle vollständig. | wie E1; zusätzlich Druck-Sichtprüfung |
+
+**Risiken.**
+
+| Risiko | Gegenmittel |
+|---|---|
+| **Datei-Deckel.** Der Leser hat einen realen Tor-Konflikt: `leser-v3-fundament` deckelt `erlassAnsicht.ts` bei 420 Zeilen, die Datei steht bei 421 — offener ROADMAP-Punkt «Tor-Konflikt `erlassAnsicht.ts`-Deckel». Der Modus ist eine `.ebene`-nahe Ableitung und landet genau dort. | **Den Deckel-Punkt VOR E1 erledigen** (er ist ohnehin als §17-Wurzel-Fix gebucht), nicht umschiffen. Projektweit gilt zusätzlich `check:schlankheit` (800 Z., `scripts/check-schlankheit.ts:42`). *Korrektur zur Auftragsannahme: einen pauschalen 420-Zeilen-Deckel auf `v3/**` gibt es **nicht** — nur diesen einen auf `erlassAnsicht.ts`.* |
+| **Prefetch-Kosten.** `src/leserPrefetch.ts` wärmt idle die Leser-Chunks. | Der Einzelmodus bekommt **keinen** eigenen Chunk-Prefetch; die Blöcke laden erst beim Aufklappen (B6). |
+| **Phantom-Kanten** (s. Block 3). | E2-Abnahme gesperrt, bis `QS-KORPUS` geliefert hat. |
+| **Zwei Wahrheiten Panel/Blöcke.** | §5-Wächter in E2; das Panel wird **nicht** kopiert, nur nicht gemountet. |
+
+**Nicht-Ziele.** Keine neue Rechtsregel · keine neuen Daten · **kein Fassungs-Diff** (das ist
+`W2·5g-ZEIT`/`W2·5l-NORMTEXT-B2` M16, Kern und Extraktion — Kap. 14 «Bewusst NICHT Teil von V3») ·
+keine Legaldefinitions-Hervorhebung · keine Zweisprachigkeit.
+
+### 15.8 · Offene Fragen an David
+
+| # | Frage | Empfehlung |
+|---|---|---|
+| **F-E1** | **Stimmt die Block-Reihenfolge?** Vorschlag: Historie/Fassung · Verweise · Rechtsprechung · Materialien · Passende Werkzeuge (· Nachbarn). | **Ja** — sie folgt der juristischen Prüffolge. Umstellen ist später billig, es ist nur eine Liste. |
+| **F-E2** | **Nachbarn-Vorschau (Block 6) bauen?** Zeigt Nummer und Randtitel des Vor-/Folgeartikels, bevor man klickt. | **Ja, aber erst in E2** — sie kostet keinen Request, verdoppelt aber die Pfeile; am fertigen Bild besser zu beurteilen als am Text. |
+| **F-E3** | **Bleibt «Ganzer Erlass» der Standard** für alle, die nichts umstellen? | **Ja.** Wer einen Link auf ein Gesetz öffnet, erwartet das Gesetz. Der Einzelmodus ist die bewusste Wahl — und wird ab der ersten Wahl gemerkt. |
 
 ---
 

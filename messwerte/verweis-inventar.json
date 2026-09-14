@@ -17,6 +17,12 @@
     "text": 4940,
     "selbstmarker": 925
   },
+  "fremdZiele": {
+    "geprueft": 10276,
+    "tot": 39,
+    "sammelblock": 20,
+    "ohneSnapshot": 19
+  },
   "klassen": [
     {
       "klasse": "anker-ausgeschrieben",
@@ -265,6 +271,301 @@
       "erlasse": 94,
       "selbstmarker": 0,
       "was": "A10-Region mit unauflösbarem Fremdnamen — ganz unterdrückt"
+    }
+  ],
+  "toteFremdanker": [
+    {
+      "quelle": "PARTG",
+      "fundstelle": "bund/AIG/art_109_c",
+      "ziel": "Art. 6 PARTG",
+      "token": "6",
+      "klasse": "n2b-genitiv",
+      "sammelblock": "5_8"
+    },
+    {
+      "quelle": "OR",
+      "fundstelle": "bund/ARG/art_73",
+      "ziel": "Art. 341bis OR",
+      "token": "341_bis",
+      "klasse": "n2b-genitiv"
+    },
+    {
+      "quelle": "OR",
+      "fundstelle": "bund/ARG/art_73",
+      "ziel": "Art. 341bis OR",
+      "token": "341_bis",
+      "klasse": "n2b-genitiv"
+    },
+    {
+      "quelle": "KVV",
+      "fundstelle": "bund/AVO/art_216",
+      "ziel": "Art. 14 KVV",
+      "token": "14",
+      "klasse": "n2b-titel",
+      "sammelblock": "12_15"
+    },
+    {
+      "quelle": "BBG",
+      "fundstelle": "bund/BMV/art_33",
+      "ziel": "Art. 71 BBG",
+      "token": "71",
+      "klasse": "anker-ausgeschrieben",
+      "sammelblock": "69_71"
+    },
+    {
+      "quelle": "STGB",
+      "fundstelle": "bund/BUEV/art_30",
+      "ziel": "Art. 275bis StGB",
+      "token": "275_bis",
+      "klasse": "n2b-glied"
+    },
+    {
+      "quelle": "STGB",
+      "fundstelle": "bund/BUEV/art_30",
+      "ziel": "Art. 275ter StGB",
+      "token": "275_ter",
+      "klasse": "n2b-glied"
+    },
+    {
+      "quelle": "STGB",
+      "fundstelle": "bund/EAUE/decl_u2",
+      "ziel": "Art. 202 StGB",
+      "token": "202",
+      "klasse": "n2b-genitiv",
+      "sammelblock": "201_212"
+    },
+    {
+      "quelle": "MSTG",
+      "fundstelle": "bund/IRSG/art_110",
+      "ziel": "Art. 56bis MStG",
+      "token": "56_bis",
+      "klasse": "n2b-genitiv"
+    },
+    {
+      "quelle": "STGB",
+      "fundstelle": "bund/IRSG/art_110",
+      "ziel": "Art. 75bis StGB",
+      "token": "75_bis",
+      "klasse": "n2b-genitiv"
+    },
+    {
+      "quelle": "KVG",
+      "fundstelle": "bund/IVG/art_3_b",
+      "ziel": "Art. 12 KVG",
+      "token": "12",
+      "klasse": "n2b-glied",
+      "sammelblock": "11_15"
+    },
+    {
+      "quelle": "STGB",
+      "fundstelle": "bund/JSTG/art_19_c",
+      "ziel": "Art. 91a StGB",
+      "token": "91_a",
+      "klasse": "anker-ausgeschrieben"
+    },
+    {
+      "quelle": "STGB",
+      "fundstelle": "bund/JSTG/art_19",
+      "ziel": "Art. 91a StGB",
+      "token": "91_a",
+      "klasse": "anker-ausgeschrieben"
+    },
+    {
+      "quelle": "STGB",
+      "fundstelle": "bund/JSTG/art_27_a",
+      "ziel": "Art. 91a StGB",
+      "token": "91_a",
+      "klasse": "anker-ausgeschrieben"
+    },
+    {
+      "quelle": "STGB",
+      "fundstelle": "bund/JSTG/art_28",
+      "ziel": "Art. 91a StGB",
+      "token": "91_a",
+      "klasse": "anker-ausgeschrieben"
+    },
+    {
+      "quelle": "KVG",
+      "fundstelle": "bund/KVV/art_132",
+      "ziel": "Art. 11 KVG",
+      "token": "11",
+      "klasse": "anker-ausgeschrieben",
+      "sammelblock": "11_15"
+    },
+    {
+      "quelle": "KVG",
+      "fundstelle": "bund/KVV/art_6_a",
+      "ziel": "Art. 12 KVG",
+      "token": "12",
+      "klasse": "anker-ausgeschrieben",
+      "sammelblock": "11_15"
+    },
+    {
+      "quelle": "KVG",
+      "fundstelle": "bund/KVV/art_7",
+      "ziel": "Art. 11 KVG",
+      "token": "11",
+      "klasse": "anker-ausgeschrieben",
+      "sammelblock": "11_15"
+    },
+    {
+      "quelle": "ZGB",
+      "fundstelle": "bund/MWSTV/art_97",
+      "ziel": "Art. 89bis ZGB",
+      "token": "89_bis",
+      "klasse": "plural-glied-fremd"
+    },
+    {
+      "quelle": "ZGB",
+      "fundstelle": "bund/STPO/art_173",
+      "ziel": "Art. 139 ZGB",
+      "token": "139",
+      "klasse": "n2b-genitiv",
+      "sammelblock": "135_149"
+    },
+    {
+      "quelle": "VAG",
+      "fundstelle": "bund/VVG/art_37",
+      "ziel": "Art. 55 VAG",
+      "token": "55",
+      "klasse": "anker-ausgeschrieben",
+      "sammelblock": "55_56"
+    },
+    {
+      "quelle": "VZV",
+      "fundstelle": "bund/VVV/art_49_d",
+      "ziel": "Art. 126 VZV",
+      "token": "126",
+      "klasse": "anker-ausgeschrieben",
+      "sammelblock": "125_126"
+    },
+    {
+      "quelle": "PARTG",
+      "fundstelle": "bund/ZEMIS_V/art_10",
+      "ziel": "Art. 6 PARTG",
+      "token": "6",
+      "klasse": "n2b-genitiv",
+      "sammelblock": "5_8"
+    },
+    {
+      "quelle": "PARTG",
+      "fundstelle": "bund/ZEMIS_V/art_9",
+      "ziel": "Art. 6 PARTG",
+      "token": "6",
+      "klasse": "n2b-genitiv",
+      "sammelblock": "5_8"
+    },
+    {
+      "quelle": "STGB",
+      "fundstelle": "bund/ZENTV/art_9",
+      "ziel": "Art. 340bis StGB",
+      "token": "340_bis",
+      "klasse": "anker-ausgeschrieben"
+    },
+    {
+      "quelle": "JSTG",
+      "fundstelle": "kanton/AR/145.31/art_55",
+      "ziel": "Art. 39 JSTG",
+      "token": "39",
+      "klasse": "n2b-genitiv",
+      "sammelblock": "39_43"
+    },
+    {
+      "quelle": "ZGB",
+      "fundstelle": "kanton/AR/211.1/art_35_a",
+      "ziel": "Art. 89bis Abs. 6 ZGB",
+      "token": "89_bis",
+      "klasse": "anker-fedlex"
+    },
+    {
+      "quelle": "OR",
+      "fundstelle": "kanton/AR/222.215/art_4",
+      "ziel": "Art. 323ter OR",
+      "token": "323_ter",
+      "klasse": "n2b-genitiv"
+    },
+    {
+      "quelle": "BS-154.100",
+      "fundstelle": "kanton/BS/154.200/art_20",
+      "ziel": "§ 56h",
+      "token": "56_h",
+      "klasse": "paragraf-kanton-kuerzel"
+    },
+    {
+      "quelle": "STGB",
+      "fundstelle": "kanton/BS/258.600/art_2",
+      "ziel": "Art. 39 StGB",
+      "token": "39",
+      "klasse": "anker-fedlex",
+      "sammelblock": "37_39"
+    },
+    {
+      "quelle": "BETMG",
+      "fundstelle": "kanton/BS/340.500/art_1",
+      "ziel": "Art. 28b BetmG",
+      "token": "28_b",
+      "klasse": "anker-fedlex"
+    },
+    {
+      "quelle": "AHVG",
+      "fundstelle": "kanton/BS/419.900/art_12_ter",
+      "ziel": "Art. 50e AHVG",
+      "token": "50_e",
+      "klasse": "n2b-titel"
+    },
+    {
+      "quelle": "ARGV1",
+      "fundstelle": "kanton/BS/420.200/art_10",
+      "ziel": "Art. 55 ArGV 1",
+      "token": "55",
+      "klasse": "n2b-glied",
+      "sammelblock": "47_59"
+    },
+    {
+      "quelle": "KVV",
+      "fundstelle": "kanton/BS/834.410/art_11_a",
+      "ziel": "Art. 86 KVV",
+      "token": "86",
+      "klasse": "n2b-glied",
+      "sammelblock": "86_88"
+    },
+    {
+      "quelle": "BS-140.500",
+      "fundstelle": "kanton/BS/861.520/art_28",
+      "ziel": "§ 16b",
+      "token": "16_b",
+      "klasse": "paragraf-kanton-kuerzel"
+    },
+    {
+      "quelle": "BS-140.500",
+      "fundstelle": "kanton/BS/861.520/art_29",
+      "ziel": "§ 16b",
+      "token": "16_b",
+      "klasse": "paragraf-kanton-kuerzel"
+    },
+    {
+      "quelle": "ZGB",
+      "fundstelle": "kanton/LU/645/art_7",
+      "ziel": "Art. 620 ZGB",
+      "token": "620",
+      "klasse": "anker-ausgeschrieben",
+      "sammelblock": "620_625"
+    },
+    {
+      "quelle": "ZGB",
+      "fundstelle": "kanton/SG/3849/art_84",
+      "ziel": "Art. 882 Abs. 2 ZGB",
+      "token": "882",
+      "klasse": "anker-fedlex",
+      "sammelblock": "876_883"
+    },
+    {
+      "quelle": "ZGB",
+      "fundstelle": "kanton/ZH/230/art_44",
+      "ziel": "Art. 882 ZGB",
+      "token": "882",
+      "klasse": "anker-fedlex",
+      "sammelblock": "876_883"
     }
   ],
   "toteSelbstziele": [

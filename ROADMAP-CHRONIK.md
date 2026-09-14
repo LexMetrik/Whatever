@@ -1,5 +1,18 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Umschichtung 14.9.2026 (4) — W2·5m Pfeile/Rohdaten-Link (Wortlaut) + Platz für das Einzelartikel-Konzept
+
+**Begründung.** Beide Punkte sind mit PR #854 (`7b0338916`, 13.9.2026) gebaut, standen in der ROADMAP aber weiter als offen — das Abhaken war beim Landen unterblieben (§14). Gleichzeitig fügt das Konzept «Einzelartikel-Ansicht» (Auftrag David 14.9.2026) dem Schritt `W2·5m-LESER-V3` eine Zeile hinzu; ROADMAP.md stand danach bei 119,9 KB von 120 KB Budget, also rund 80 Bytes Luft. Der Wortlaut beider erledigter Punkte wandert darum hierher, die ROADMAP behält die Erledigt-Zeile mit PR-Zeiger. Inhaltlich unverändert.
+
+**`W2·5m-LESER-V3` — Wortlaut bis 14.9.2026:**
+
+>   - [ ] **Nachbar-Artikel-Pfeile** (← Art. 89 · Art. 90a →) im Artikelkopf; Muster gesetze-im-internet/dejure/buzer. Reine Hülle, Kern unangetastet. Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §3 #1.
+>   - [ ] **Rohdaten-Link je Erlass** (JSON-Snapshot/AKN-Quelle, Stand, Fassungs-Token) im Leser-Kopf — §7-Transparenz, Muster legislation.gov.uk «Print Options». Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §3 #11.
+
+**Einordnung.** Die Pfeile bleiben gebaut, wechseln aber mit dem Konzept Kap. 15 (E1) den Ort: sie verschwinden aus der Scroll-Ansicht und erscheinen nur noch im Einzelmodus — Anlass ist Davids Befund vom 14.9.2026, «das bringt aber nur etwas wenn man einzeln einen artikel hat». Das ist kein Rückbau des Nutzens, sondern seine Verlagerung dorthin, wo er wirkt; der Wortlaut oben bleibt als Beleg des Ist-Standes vom 13.9.2026 stehen (§2b).
+
+---
+
 ## Umschichtung 14.9.2026 (3) — QS-CI-MINUTEN Erledigt-Prosa und Entscheide 8.9.2026 (Wortlaut)
 
 **Begründung.** PR #859 fügt W2·27 die Auflage-Zeile «§8-Anzeige der ungeklärten Leerstellen» hinzu; ROADMAP.md stand danach bei 120,4 KB (Budget 120 KB). Die Erledigt-Prosa von QS-CI-MINUTEN wandert wörtlich hierher; die ROADMAP behält Nachmessung, offene Posten und Zeiger. Inhaltlich unverändert.
@@ -24,6 +37,56 @@
 > ✅ M2 (#767) · M1/M3/M4/M5 (#773) · Flacker-Wächter (#779, Melde-Modus bis 22.9.2026, dann hart) · Ergebnis-Job (#780) · Playwright-Install-Retry dpkg-Sperre (#785); Regeln: Skill `landung` §«Prüfstrasse seit 8.9.2026». **Nachmessung 8.10.2026.** Offen: Merge Queue (Gate) · Wurzel der 6 flackernden Specs (Fehlerbuch §4, bis 22.9.).
 >
 > **Entscheide David 8.9.2026:** Weg **A** (Repo bleibt öffentlich, Sparplan bauen; privat nur zusammen mit VPS/Self-hosted Runner) · **M2 freigegeben und gelandet** (Dependabot monatlich, `rebase-strategy: disabled`).
+## Umschichtung 14.9.2026 (3) — W2·22 Z6c Bau-Befund und Sammel-Anker-Vorarbeit (Wortlaut)
+
+**Begründung.** Der Z6c-Nachzug zu PR #856 (Gegenprüfungs-Befunde A–F) trägt +18 ROADMAP-Zeilen
+ein und bringt ROADMAP.md auf 120,8 KB (Budget 120 KB, `struktur-rotieren --check` rot im PR;
+Nullprobe: origin/main misst 119,6 KB und ist grün — das Delta ist eigenes). Die beiden
+Befund-Prosen wandern darum wörtlich hierher; die ROADMAP behält je Zeile Ziel, Zahl und Zeiger.
+Inhaltlich unverändert, nichts neu erledigt.
+
+**Z6c (c) — Zielbild und Vor-Messung, Wortlaut bis 14.9.2026:**
+
+> **Artikel-Anker gegen den Ziel-Snapshot prüfen, Fallback Erlass-Link** — ein Fremd-Anker
+> entsteht heute allein aus Kürzel + Nummer, ohne dass die Zielbestimmung im Snapshot des
+> Zielerlasses nachgeschlagen wird. Gemessen 2.9.2026: 16 tote Artikel-Anker aus Z5 (StGB
+> `art_91_a` ×4, StGB `art_340` …); dieselbe Mechanik trägt auch die ALTEN Anker-Pfade, der
+> Bestand ist also mitzumessen. Zielbild: existiert das Ziel-Token nicht, auf den Erlass-Link
+> zurückfallen statt auf einen toten Sprung (§8). Risikopfad — Gegenprüfung Pflicht.
+
+**Z6c — Bau-Befund, Wortlaut vom 14.9.2026:**
+
+> ✅ **gebaut 14.9.2026** — korpusweit über ALLE Anker-Pfade nachgemessen, nicht nur Z5:
+> **36 tote Fremd-Anker** von 9 675 prüfbaren, 26 verschiedene Ziele, 25 Bund / 11 Kanton.
+> Wächter: `check:verweis-inventar` → `toteFremdanker` + `fremdZiele`. Amtlich gegengeprüft
+> (Fedlex-SPARQL + AKN-XML, 26/26): keines existiert in der geltenden Fassung — **keine**
+> Extraktionslücke, und auch Fedlex trägt keinen `id="art_<token>"`, der Anker war dort
+> ebenso tot.
+
+**Nachtrag zu diesem Wortlaut (Gegenprüfung, 14.9.2026 — Ergänzung, keine Korrektur):** die
+Messung «36 von 9 675» galt dem Bund-Zweig. Die kantonale V-3-Weiche `paragraf-kanton-kuerzel`
+(579 ausgelieferte Stellen) baut ihren Anker in NormText.tsx selbst, ohne NormChip und ohne
+`bundSnapshotRef`, und war darum in keiner Messung. Seit Befund C misst das Inventar sie mit:
+**39 tote Fremd-Anker von 10 254 prüfbaren, 28 verschiedene Ziele** (36 Bund / 3 Kanton). Die
+drei kantonalen sind BS-154.200 §20 → GOG BS-154.100 §56h sowie BS-861.520 §28 und §29 → BRG
+BS-140.500 §16b; der Prüfer hat sie an der LexWork-API belegt, die Messung reproduziert sie
+unabhängig aus den Snapshots.
+
+**Z6c-Folge Sammel-Anker — Wortlaut vom 14.9.2026:**
+
+> von den 26 toten Zielen führt Fedlex **19** als aufgehobene Nummer in einem SAMMEL-Anker
+> («Art. 876–883 Aufgehoben», `id="art_876_883"`); heute fallen auch sie auf den Erlass-Link
+> zurück. Den Block anzuspringen ist mehr als ein Anker-Wechsel — Popover-Inhalt, Sachtitel und
+> Passus-Markierung zeigen dann eine ANDERE Bestimmung — und braucht darum einen eigenen
+> deklarierten Schritt. Vorarbeit liegt: `sammelblockFuer()` in
+> `src/lib/normtext/artikel-bestand.ts` misst die Lage (erkennt 13 der 19 — rein numerische
+> Blöcke; suffixbehaftete wie `art_275_bis_275_ter` erst nach Z6a).
+
+**Nachtrag (Befund E, 14.9.2026):** «13 der 19» war falsch gezählt — verwechselt worden waren
+Ziele und Fundstellen. `sammelblockFuer()` erkennt **15** der 19 Ziele (= 20 der 36
+Bund-Fundstellen). Nachzählen:
+`node -e "const t=require('./messwerte/verweis-inventar.json').toteFremdanker; console.log(new Set(t.filter(e=>e.sammelblock).map(e=>e.quelle+'|'+e.token)).size)"`
+
 
 ## Umschichtung 14.9.2026 (2) — W2·7-VZUI Fertig-Kriterium und QS-KORPUS adapter-lexwork (Wortlaut)
 
