@@ -1420,14 +1420,8 @@ async function main(): Promise<void> {
         // beide Artikel zeigen ihre echte Basis-Bezeichnung («Art. 126z»); der
         // Inhalt unterscheidet sie. Anker/id behalten den Suffix (eindeutig).
         artikelLabel: artikelLabel(token.replace(/__\d+$/, '')),
-        // G-AUFH-ART (W2·27): amtlich aufgehobener Artikel — Signal aus der
-        // Fedlex-Fussnote, nicht aus «Body ist leer» (scripts/normtext/aufhebung-signal.ts).
-        // Artikel-level wie titel/grundlage → NICHT im Block-sha (golden-neutral).
-        // Reihenfolge titel→aufgehoben→grundlage hält die DB-Projektion byte-gleich
-        // (scripts/datenhaltung/erlass-rows.ts, projiziereErlass).
+        // Artikel-Metadaten: `aufgehoben` (W2·27 G-AUFH-ART, normtext/aufhebung-signal.ts) und `grundlage` (G23/M8, Delegationsnorm «(Art. N ArG)») — wie `titel` NICHT im Block-sha, also golden-neutral; Reihenfolge titel→aufgehoben→grundlage hält die DB-Projektion byte-gleich.
         ...(extrakt.aufgehoben ? { aufgehoben: true as const } : {}),
-        // G23 (M8): Delegationsnorm-Grundlage «(Art. N ArG)», falls vorhanden.
-        // Artikel-level wie titel → NICHT im Block-sha (golden-neutral).
         ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}),
         bloecke: extrakt.bloecke,
         stand,
@@ -1465,9 +1459,7 @@ async function main(): Promise<void> {
         erlass,
         artikel: token,
         artikelLabel: artikelLabel(schlussteilLabelSuffix(anker)),
-        // G-AUFH-ART (W2·27), s. Haupttext-Pfad oben.
-        ...(extrakt.aufgehoben ? { aufgehoben: true as const } : {}),
-        ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}),
+        ...(extrakt.aufgehoben ? { aufgehoben: true as const } : {}), ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}), // W2·27 + G23, s. Haupttext-Pfad
         bloecke: extrakt.bloecke,
         stand,
         // Roher Anker (mit «/», ohne Synthese-Suffix) als Live-Sprungziel.

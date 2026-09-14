@@ -160,3 +160,27 @@ export function artikelAmtlichAufgehoben(
     return eigen || kopfHebtAuf;
   });
 }
+
+/**
+ * Rückgabe-Shape von `extrahiereArtikelAusAnker`: `bloecke` plus die optionalen
+ * Artikel-Metadaten. Der Helfer lebt HIER und nicht im Extraktor, weil
+ * `extrahiere-fedlex.ts` unter dem §6.6-Zeilendeckel steht (Baseline 1496,
+ * erlaubt bis 1645) — die Regel gehört ohnehin zu diesem Modul.
+ *
+ * SCHLÜSSEL-REIHENFOLGE: `aufgehoben` steht VOR `grundlage`. Die DB-Projektion
+ * emittiert id…artikelLabel, [titel], [aufgehoben], [grundlage], bloecke…
+ * (scripts/datenhaltung/erlass-rows.ts, `projiziereErlass`); eine andere
+ * Reihenfolge im Generator kippt die Byte-Parität zwischen DB und Snapshot.
+ * `aufgehoben` fliesst NICHT in `sha256Bloecke` — Artikel-Metadatum wie `titel`
+ * und `grundlage`, darum golden-neutral.
+ */
+export function artikelTextMitAufhebung<
+  B extends SignalBlock,
+  T extends { bloecke: B[]; quellen: (string | null)[]; grundlage?: string },
+>(articleInner: string, r: T): { aufgehoben?: true; grundlage?: string; bloecke: B[] } {
+  return {
+    ...(artikelAmtlichAufgehoben(articleInner, r.bloecke, r.quellen) ? { aufgehoben: true as const } : {}),
+    ...(r.grundlage != null ? { grundlage: r.grundlage } : {}),
+    bloecke: r.bloecke,
+  };
+}
