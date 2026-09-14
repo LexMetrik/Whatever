@@ -102,7 +102,7 @@ liegen auf Risikopfaden und tragen je ein unabhängiges Gegenprüfungs-Verdikt.
 - **#865** (`a57e4698a`) E2E — D16-Wurzel behoben (siehe §17-Lehre 1).
 - **#866** (`2535428ce`) PLAN — Konzept Einzelartikel-Ansicht (Auftrag David 14.9.2026), FAHRPLAN-LESER-V3 Kap. 15.
 - **#868** (`892a6f0fb`) Leser — `erlassAnsicht.ts`-Deckel an der Wurzel gelöst (siehe §17-Lehre 4).
-- **#869** Leser — Einzelartikel-Ansicht E1 + E2: Umschalter, Blättern, Dossier-Blöcke Historie/Verweise/Materialien/Werkzeuge. Rechtsprechung-Block bewusst hinter `QS-CI-MINUTEN` M3, E3 offen.
+- **#869** Leser — Einzelartikel-Ansicht E1 + E2: Umschalter, Blättern, Dossier-Blöcke Historie/Verweise/Materialien/Werkzeuge. Rechtsprechung-Block im Artikel-Dossier bewusst hinter M3 / `QS-KORPUS`, E3 (Druck/Export) offen.
 
 **Fremdagenten-Bilanz 14.9.2026:** drei Tickets (#849, #850, #858), drei Ablehnungen (#855, #857,
 #861). Muster: **Jules generiert, statt zu verschieben.** Rückbau-Schwelle §3 zu prüfen;
