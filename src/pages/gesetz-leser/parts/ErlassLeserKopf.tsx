@@ -4,7 +4,7 @@ import type { CurrencyEintrag, KantonLueckeEintrag } from '../../../lib/normtext
 import type { BrowseErlass } from '../../../lib/normtext/browse-typen';
 import {
   GELTUNG_UNGEPRUEFT_SATZ, STAND_UNBEKANNT,
-  naechsteFassungSatz, nichtKonsolidiertSatz, standausweisSatz, zaehlWort,
+  nichtKonsolidiertSatz, standausweisSatz, zaehlWort,
 } from '../../../lib/normtext/erlassKopfText';
 import { MASSGEBLICH_HALBSATZ } from '../../../lib/benennung';
 import { Datum } from '../../../components/ui/Datum';
@@ -13,6 +13,7 @@ import { SeitenTitel } from '../../../components/ui/SeitenTitel';
 import { LeserKopfGeruest } from '../../../components/layout/LeserKopfGeruest';
 import { erlassKeyVonEli, erlassPfadVonKey } from '../../../lib/normtext/erlassAdresse';
 import { kennungEtikett, titelOhneKlammerSuffix } from '../helpers';
+import { zukunftsHinweis, type ZukunftsHinweis } from '../zukunftsfassungen';
 
 // W2·5d G2b — EINE Leser-Kopf-Komponente für ALLE Grundarten (Kopf-Zusammen-
 // führung, §3.3): Ersetzt die zwei früher duplizierten <header>-Blöcke (Snapshot
@@ -48,7 +49,7 @@ import { kennungEtikett, titelOhneKlammerSuffix } from '../helpers';
 export function ErlassLeserKopf({
   erlass, overline, artikelAnzahl, bestimmungsWort = 'Artikel', kennzahlen = null,
   aktionen, hinweis, currency, nichtKonsolidiert = false, nichtKonsolidiertSeit = null,
-  kennung = null, luecken,
+  kennung = null, luecken, zukunft,
 }: {
   erlass: BrowseErlass;
   /** §8-Nachzug (PR #614-Auflage): vom §-Parser bewusst ausgelassene Teile
@@ -56,6 +57,15 @@ export function ErlassLeserKopf({
    *  `undefined` = keine ausgewiesene Lücke (Bund trägt nie einen Eintrag,
    *  §15) → kein Hinweis (§8: Schweigen ist hier korrekt, nicht verschwiegen). */
   luecken?: KantonLueckeEintrag;
+  /** ── W2·27 (BUND-FERTIG §4 b) · der Zukunftsfassungs-Hinweis ───────────────
+   *  Fertig ausgerechnet vom Aufrufer (`v3/useZukunftsfassung`), weil zur Zahl
+   *  der weiteren Fassungen ein Sidecar gehört und dieser Kopf reine Darstellung
+   *  ist (§3). `undefined` = der Aufrufer rechnet nicht mit; dann leitet der Kopf
+   *  den Hinweis selbst aus `currency` ab — ohne die Zahl, aber mit Satz und
+   *  Link. So bleibt jeder bestehende Aufrufer wortgleich bedient (§6.3), und
+   *  «kein Aufrufer-Wissen» heisst nie «kein Hinweis».
+   *  `null` = ausgerechnet und: es gibt keinen. */
+  zukunft?: ZukunftsHinweis | null;
   /** ── Ä-(d) aus S3 (LESER-V3 H2b) · Kennung VOR dem Titel ──────────────────
    *  `null` (Vorgabe) = die S3-Zitierform «Volltitel (Kürzel)» bleibt Zeichen für
    *  Zeichen, wie sie ist — die Ist-Hülle setzt die Prop nicht und ist damit
@@ -193,6 +203,11 @@ export function ErlassLeserKopf({
   // Aussage, genau wie beim Standausweis eine Zeile darüber.
   const geltungUngeprueft = lebt && erlass.ebene === 'kanton' && !currency?.geprueftAm;
 
+  // §3: der Kopf RECHNET den Hinweis nicht, er nimmt ihn. Nur wenn kein
+  // Aufrufer mitrechnet (`undefined`), leitet er die sidecar-freie Fassung
+  // selbst ab — Satz und Link stehen bereits im Currency-Eintrag, den er hat.
+  const hinweisZukunft = zukunft !== undefined ? zukunft : zukunftsHinweis(erlass, currency);
+
   const stand = [
     // K-2d/F27-Rest: leerer `stand` (VD-vd-106879, VD-vd-128150) liess das
     // Segment bis 31.8.2026 STILL weg. Eine verschwiegene Lücke ist die
@@ -210,8 +225,39 @@ export function ErlassLeserKopf({
     // dieselbe Frage beantwortet («wie belastbar ist dieser Stand?»). Beide
     // zugleich kann es nicht geben: die Weiche oben verlangt `!geprueftAm`.
     geltungUngeprueft ? GELTUNG_UNGEPRUEFT_SATZ : null,
-    currency?.naechsteFassungAb
-      ? <span className="text-warn-700">{naechsteFassungSatz(currency.naechsteFassungAb)}</span>
+    // ── W2·27 (BUND-FERTIG §4 b) · «ab <Datum> gilt eine neue Fassung» ───────
+    // Bis hierher stand an dieser Stelle das blosse Wort «nächste Fassung ab
+    // TT.MM.JJJJ» — ein Datum ohne Weg dorthin, ohne die Mehrzahl und ohne
+    // Antwort auf den Fall, dass die angekündigte Fassung inzwischen GILT. Der
+    // Satz ist unverändert derselbe (`erlassKopfText.naechsteFassungSatz`, über
+    // `../zukunftsfassungen`, §5); dazugekommen sind der amtliche Link auf die
+    // datierte Fedlex-Manifestation, die Zahl der weiteren Fassungen und die
+    // ehrliche zweite Lesart. KEIN Umschalter, KEIN Diff — die gehören nach
+    // Phase 3 (Entscheid David 14.9.2026, FAHRPLAN-BUND-FERTIG §4 b).
+    //
+    // Der Link trägt die WARN-Farbe der Zeile weiter statt der Brass-Linkfarbe:
+    // er ist Teil dieser einen Aussage, nicht ein zweiter Weg neben ihr. Den
+    // Strich (also die Erkennbarkeit als Link ohne Farbe, WCAG 1.4.1) bringt
+    // `.lc-link` mit — dieselbe Opt-in-Klasse wie überall sonst (B-L1).
+    // `text-warn-700` hat kein `…-800`-Geschwister in der Farbwelt; der Hover
+    // arbeitet darum über den Strich, nicht über einen zweiten Ton.
+    hinweisZukunft
+      ? (
+        <span className="text-warn-700">
+          {hinweisZukunft.link
+            ? (
+              <QuellLink href={hinweisZukunft.link} className="lc-link text-warn-700">
+                {hinweisZukunft.satz}
+              </QuellLink>
+            )
+            : hinweisZukunft.satz}
+          {/* «(+2 weitere)» statt einer zweiten Datumsliste: der Kopf sagt, DASS
+              mehr bevorsteht; WELCHE Änderungen es sind, steht vollständig im
+              Reiter «Änderungen» daneben. Ein zweiter Ruf an derselben Falz
+              machte die Auskunft beiläufiger, nicht dringlicher (Ä81/Ä97). */}
+          {hinweisZukunft.weitere > 0 ? ` (+${hinweisZukunft.weitere} weitere)` : ''}
+        </span>
+      )
       : null,
   ].filter(Boolean) as ReactNode[];
 
