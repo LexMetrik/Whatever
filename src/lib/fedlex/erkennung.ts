@@ -6,6 +6,7 @@
 
 import { FEDLEX, type FedlexGesetz } from './tabelle';
 import { fedlexUrl } from './url';
+import { SUFFIX_ALT } from './nummer';
 import {
   GENITIV_EINTRAEGE, KUERZEL_SCHREIBWEISEN, TITEL_EINTRAEGE, titelGeltung,
   type FremdEbene, type GenitivEintrag, type TitelEintrag,
@@ -185,6 +186,7 @@ export function chapeauZielFremdgesetz(chapeau: string, eigenesKuerzel?: string)
 // - Schlusstitel (SchlT): eigener Nummernkreis, Anker nicht deterministisch →
 //   Gesetzes-Seite ohne Anker.
 // - Unbekanntes Gesetz → null (kein Link).
+const ANKER_ARTNR = new RegExp(`^Art\\.\\s*(\\d+[a-z]?${SUFFIX_ALT}?)\\b`);
 export function fedlexLinkFuerArtikel(text: string): string | null {
   const gesetz = erkenneFedlexGesetz(text);
   if (!gesetz) return null;
@@ -192,6 +194,7 @@ export function fedlexLinkFuerArtikel(text: string): string | null {
   // Bug-Check 10.6.2026 (NIEDRIG): Buchstabe UND lat. Suffix kombinierbar
   // (329gbis/663bbis/697hbis) — vorher matchte der Extraktor solche Artikel
   // gar nicht und lieferte die Gesetzes-URL ohne Anker.
-  const m = text.match(/^Art\.\s*(\d+[a-z]?(?:bis|ter|quater|quinquies|sexies)?)\b/);
+  // Z6 a (14.9.2026): Suffix-Reihe aus `nummer.ts` (§5) — bis `duodecies`.
+  const m = text.match(ANKER_ARTNR);
   return m ? fedlexUrl(gesetz, m[1]) : FEDLEX[gesetz];
 }

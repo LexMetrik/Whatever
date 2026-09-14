@@ -10,6 +10,7 @@
 
 import { type FedlexGesetz } from './tabelle';
 import { artikelToken } from './url';
+import { SUFFIX_ALT } from './nummer';
 import {
   erkenneFedlexGesetz,
   erkenneGenitivGesetz,
@@ -44,8 +45,8 @@ export const NORM_NAMEN: ReadonlyArray<string> = (['GebV SchKG', ...KUERZEL_TOKE
 export const NORM_NAMEN_ESC = NORM_NAMEN.map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
 
 export const NORM_IM_TEXT = new RegExp(
-  'Art\\.\\s*\\d+[a-z]?(?:bis|ter|quater|quinquies|sexies)?' +
-    '(?:\\s+(?:Abs\\.|lit\\.|Bst\\.|Ziff\\.|Ziffer|Satz)\\s*(?:\\d+[a-z]?(?:bis|ter|quater|quinquies|sexies)?|[a-z]))*' +
+  'Art\\.\\s*\\d+[a-z]?' + SUFFIX_ALT + '?' +
+    '(?:\\s+(?:Abs\\.|lit\\.|Bst\\.|Ziff\\.|Ziffer|Satz)\\s*(?:\\d+[a-z]?' + SUFFIX_ALT + '?|[a-z]))*' +
     '\\s+(?:' + NORM_NAMEN_ESC.join('|') + ')\\b',
   'g',
 );
@@ -74,7 +75,8 @@ export const NORM_IM_TEXT = new RegExp(
 // Backtracking-Falle; ein `(?![0-9a-z])`-Anker wie in ART_INTERN würde sie zwar
 // heilen, die alternationsbasierte Form ist aber auch ohne Anker korrekt und wird
 // hier global gescannt).
-export const N2_ARTNR = '\\d+(?:bis|ter|quater|quinquies|sexies|[a-z](?:bis|ter|quater|quinquies|sexies)?)?';
+// Z6 a (14.9.2026): die Suffix-Reihe steht in `nummer.ts` (§5, bis `duodecies`).
+export const N2_ARTNR = '\\d+(?:' + SUFFIX_ALT + '|[a-z]' + SUFFIX_ALT + '?)?';
 export const N2_PASSUS = '(?:Abs(?:atz|ätze|\\.)|Buchstaben?|Bst\\.|lit\\.|Ziff(?:ern?|\\.)|Satz|Sätze)';
 export const N2_WERT = '(?:' + N2_ARTNR + '|[a-z]|[ivxl]+)';
 export const N2_KONN = '(?:[–-]|und|oder|bis|,|sowie)';
@@ -345,7 +347,7 @@ const PLURAL_OEFFNER = /\b(Artikeln|(?:die|der)\s+Artikel)\s+(?=\d)/g;
 // Glied-Nummer mit Wort-Ende-Anker: ein Suffix ausserhalb der bekannten Liste
 // («42octies») darf NICHT als «42o» an-gematcht werden — dann lieber gar kein
 // Glied (die Region wird unten §1-unterdrückt), nie ein falsches Ziel.
-const P_ARTNR_RE = /^\d+(?:bis|ter|quater|quinquies|sexies|[a-z](?:bis|ter|quater|quinquies|sexies)?)?(?![0-9a-zäöü])/;
+const P_ARTNR_RE = new RegExp(`^${N2_ARTNR}(?![0-9a-zäöü])`);
 // Passus-Schlüsselwörter, getrennt nach Wert-Typ (Zahl vs. Buchstabe) UND nach
 // Numerus: die SINGULAR-Form («Absatz 2») nimmt nach amtlicher Drafting-Konvention
 // genau EINEN Wert — eine folgende Zahl ist der nächste Glied-Kopf («… 31 Absatz 2,
@@ -360,8 +362,8 @@ const P_KW_ANY = '(?:Abs(?:atz|ätze|\\.)|Ziff(?:ern?|\\.)|Sätze|Satz|Buchstabe
 // Werte MIT Wort-Ende-Anker: ohne ihn degradiert «38» im Backtracking zu «3»
 // (der (?!\s+KW)-Guard weist «38 Absatz» ab, die Engine kürzt dann den \d+-Match) —
 // ein voll geankertes «38» kann nicht partiell matchen, der Guard bricht sauber ab.
-const P_NUM = '\\d+(?:bis|ter|quater|quinquies|sexies)?(?![0-9a-zäöü])';
-const P_LET = '[a-z](?:bis|ter|quater|quinquies|sexies)?(?![0-9a-zäöü])';
+const P_NUM = '\\d+' + SUFFIX_ALT + '?(?![0-9a-zäöü])';
+const P_LET = '[a-z]' + SUFFIX_ALT + '?(?![0-9a-zäöü])';
 const P_KONN = '(?:,|und|oder|sowie|bis|[–-])';
 const PASSUS_GRUPPE_RE = new RegExp(
   '^\\s+(?:' +
