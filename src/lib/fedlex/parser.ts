@@ -20,6 +20,7 @@ import {
   TITEL_FRAGMENTE_ESC,
 } from './erkennung';
 import { datumPasst, historischeFassung, type FremdEbene } from './positivliste';
+import { traegergesetzFuerErlass } from './traegergesetz';
 
 // ─── Bund-Normverweise im Fliesstext finden (Inline-Auto-Linker) ───────────
 //
@@ -153,6 +154,13 @@ const FREMD_FORM_B = new RegExp(
       //    D. Monat JJJJ] über …» — Kopfwort + kuratiertes Titel-Fragment; ein
       //    Datums-Einschub ist Zitier-Konvention, kein Inhalt.
       '|(Bundesgesetzes|Verordnung)(?:\\s+vom\\s+' + N2_DATUM + ')?\\s+(' + TITEL_FRAGMENTE_ESC.join('|') + ')\\b' +
+      // 7 (V-7c, W2·20): die NAMENLOSE Kurzform «des Gesetzes». Sie löst nur
+      //    auf, wenn der gelesene Erlass ein Trägergesetz hat — also wenn sein
+      //    Ingress «Gesetz» legaldefiniert (`TRAEGER_EINTRAEGE`). Ohne
+      //    Trägergesetz bleibt die Stelle Text wie bisher (§1).
+      //    Die Präposition ist hier immer «des»; «der/über/vom Gesetzes» ist
+      //    keine deutsche Form und kommt im Korpus nicht vor.
+      '|(Gesetzes)\\b' +
     ')',
 );
 const N2_ARTNR_RE = new RegExp(N2_ARTNR, 'g');
@@ -199,7 +207,7 @@ export const TITEL_FORTSETZUNG = new RegExp(
 export const DATUM_IN_EINHEIT = new RegExp('\\bvom\\s+(' + N2_DATUM + ')');
 export const DATUM_NACH_NAME = new RegExp('^\\s*vom\\s+(' + N2_DATUM + ')');
 /** Woran das Fremdgesetz erkannt wurde (Mess-Klassen im V-1-Tor). */
-export type FremdSignal = 'klammer' | 'genitiv' | 'titel';
+export type FremdSignal = 'klammer' | 'genitiv' | 'titel' | 'traeger';
 
 /** Ein auf ein Fremdgesetz geroutetes Aufzählungs-Glied. */
 export interface FremdRoutingGlied {
@@ -233,6 +241,9 @@ export interface FremdRoutingGlied {
  *        nur ebenenübergreifend eindeutige Namen auf (`positivliste.ts`).
  *        Default `bund` = das Verhalten der Bund-Leser; kantonale Aufrufer
  *        (NormText, Inventar-Tor) reichen `kanton` durch.
+ * @param erlassKey Register-Key des GELESENEN Erlasses (V-7c): nur damit löst
+ *        die namenlose Kurzform «des Gesetzes» auf das Trägergesetz auf
+ *        (`TRAEGER_EINTRAEGE`). Fehlt er, bleibt die Stelle Text (§1).
  * @returns {gesetz, glieder, regionEnd, signal} oder null (kein Signal).
  *          `regionEnd` = Offset in `rest` hinter dem «(KÜRZEL)» bzw. hinter dem
  *          Namen/Titel (Aufrufer setzt den Cursor hinter die ganze Einheit).
@@ -242,14 +253,18 @@ export function fremdRoutingFormB(
   ersteNummer: string,
   zielTokenExistiert?: (gesetz: FedlexGesetz, token: string) => boolean,
   ebene: FremdEbene = 'bund',
+  erlassKey?: string,
 ): { gesetz: FedlexGesetz; glieder: FremdRoutingGlied[]; regionEnd: number; signal: FremdSignal } | null {
   const m = FREMD_FORM_B.exec(rest);
   if (!m) return null;
   // m[3] = Klammer-Kürzel (∈ FEDLEX), m[4] = kuratierter Genitiv-Kurztitel,
-  // m[5]+m[6] = Kopfwort + amtliches Titel-Fragment (V-7b).
-  const signal: FremdSignal = m[3] ? 'klammer' : m[4] ? 'genitiv' : 'titel';
+  // m[5]+m[6] = Kopfwort + amtliches Titel-Fragment (V-7b), m[7] = namenlose
+  // Kurzform «des Gesetzes» (V-7c — Ziel ist das Trägergesetz des LESENDEN
+  // Erlasses, darum hängt sie an `erlassKey`, nicht am Zitat-Text).
+  const signal: FremdSignal = m[3] ? 'klammer' : m[4] ? 'genitiv' : m[7] ? 'traeger' : 'titel';
   const gesetz = m[3] ? erkenneFedlexGesetz(m[3])
     : m[4] ? erkenneGenitivGesetz(m[4], ebene)
+    : m[7] ? traegergesetzFuerErlass(erlassKey)
     : erkenneTitelGesetz(m[5], m[6], ebene);
   if (!gesetz) return null; // Kein auflösbares Signal → kein Link (§1)
   // Fix-Runde 1 (a): der Name endet hier — folgt ein weiteres Titelwort, meint
@@ -386,6 +401,9 @@ const P_SIGNAL_RE = new RegExp(
     '|(?:des|der|über|vom)\\s+(' + NORM_NAMEN_ESC.join('|') + ')\\b' +
     '|(' + NORM_NAMEN_ESC.join('|') + ')\\b' +
     '|(?:des|der)\\s+(Bundesgesetzes|Verordnung)(?:\\s+vom\\s+' + N2_DATUM + ')?\\s+(' + TITEL_FRAGMENTE_ESC.join('|') + ')\\b' +
+    // g7 (V-7c): namenlose Kurzform «des Gesetzes» am Aufzählungs-Ende — löst
+    // nur über das Trägergesetz des GELESENEN Erlasses auf (s. Singular-Pfad).
+    '|(?:des)\\s+(Gesetzes)\\b' +
   ')',
 );
 // Unauflösbarer Fremdname am Aufzählungs-Ende («des Bundesgesetzes über …», «der
@@ -423,7 +441,9 @@ function konsumierePassusKette(text: string, pos: number): { pos: number; plural
  * Alle Plural-Aufzählungs-Regionen eines Fliesstexts (A10). Rein/deterministisch
  * (§2). Regionen sind nach `start` sortiert und überschneidungsfrei.
  */
-export function artikelnPluralVerweise(text: string, ebene: FremdEbene = 'bund'): PluralRegion[] {
+export function artikelnPluralVerweise(
+  text: string, ebene: FremdEbene = 'bund', erlassKey?: string,
+): PluralRegion[] {
   const regionen: PluralRegion[] = [];
   let grenze = -1; // Ende der zuletzt akzeptierten Region (Überschneidungs-Schutz)
   for (const oeff of text.matchAll(PLURAL_OEFFNER)) {
@@ -469,7 +489,8 @@ export function artikelnPluralVerweise(text: string, ebene: FremdEbene = 'bund')
       const kuerzel = sm[1] ?? sm[3] ?? sm[4];
       fremd = sm[2] ? erkenneGenitivGesetz(sm[2], ebene)
         : kuerzel ? erkenneFedlexGesetz(kuerzel)
-        : sm[5] ? erkenneTitelGesetz(sm[5], sm[6], ebene) : null;
+        : sm[5] ? erkenneTitelGesetz(sm[5], sm[6], ebene)
+        : sm[7] ? traegergesetzFuerErlass(erlassKey) : null;
       // V-7: Klammer nach Name/Titel (auch hinter einem Datum) muss DASSELBE
       // Gesetz nennen — sonst ist der Name nicht das gefundene Bundesgesetz (§1).
       const nachSignal = rest.slice(sm[0].length);

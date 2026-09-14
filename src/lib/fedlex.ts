@@ -31,6 +31,8 @@ export {
   GENITIV_EINTRAEGE, TITEL_EINTRAEGE, KUERZEL_SCHREIBWEISEN, titelGeltung,
 } from './fedlex/positivliste';
 export type { FremdEbene, Geltung, GenitivEintrag, TitelEintrag, TitelKopf } from './fedlex/positivliste';
+export { TRAEGER_EINTRAEGE, traegergesetzFuerErlass } from './fedlex/traegergesetz';
+export type { TraegerEintrag } from './fedlex/traegergesetz';
 
 export {
   NORM_IM_TEXT,

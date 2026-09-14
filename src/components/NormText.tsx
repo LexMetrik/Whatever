@@ -304,6 +304,14 @@ const SELBST_MARKER = /^\s*(?:(?:des|der)\s+vorliegenden|dies(?:es|er))\s+(?!Tit
 // Einheiten nicht ⇒ jeder Sprung wäre geraten. Aktiver Unterdrücker in BEIDEN
 // Pfaden, nicht nur Ausschluss im Selbstmarker (§1: kein Link statt falscher).
 const GLIEDERUNGS_GENITIV = /^\s*dies(?:es|er)\s+(?:Titels|Abschnitts|Kapitels|Anhangs|Teils|Buches|Hauptst\w*)\b/;
+// V-7d (14.9.2026): «des Gesetzes» ist NIE ein Selbstverweis — der eigene
+// Erlass heisst «dieses Gesetzes»/«dieser Verordnung» (SELBST_MARKER oben).
+// Die belegten Fälle löst die Trägergesetz-Tabelle VOR dieser Weiche auf; hier
+// bleibt nur die unbelegte Restklasse, und die wird Text (§1). Enge Gegenprobe
+// zum des/der-Guard, der bewusst am ROHEN Rest steht und «Artikel 124 Absatz 2
+// des Gesetzes» darum nicht sieht. Herleitung, Messung und der belegte Anlass
+// (KKV art_128) stehen bei TRAEGER_EINTRAEGE in `lib/fedlex/traegergesetz.ts`.
+const GESETZES_GENITIV = /^\s*des\s+Gesetzes\b/;
 /** Nennt der Text direkt hinter dem Zitat exakt das Kürzel DIESES Erlasses? */
 function nenntEigenesKuerzel(rest: string, kuerzel?: string): boolean {
   const k = (kuerzel ?? '').trim();
@@ -399,7 +407,10 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
   // der FEDLEX-Key «-» (FinfraV-FINMA) — ohne Normalisierung würde ein Gesetz mit
   // getrenntem Kürzel den eigenen Self-Verweis fälschlich unterdrücken (QS-GP-Fund
   // 1.7.: FinfraV-FINMA art_50a, betrifft alle 6 getrennt-benannten Kind-Erlasse).
-  const eigenesKuerzel = kuerzelKanon(intern.basisPfad.split('/').pop() ?? '');
+  // V-7c (W2·20): der ROHE Register-Key des gelesenen Erlasses — Schlüssel der
+  // Trägergesetz-Tabelle («des Gesetzes» in einer Vollzugsverordnung).
+  const erlassKey = intern.basisPfad.split('/').pop() ?? '';
+  const eigenesKuerzel = kuerzelKanon(erlassKey);
   // A10 (Plural-Linker, David 5.7.2026): «in den Artikeln 31 …, 35 … und 45 …» —
   // jedes Glied EINZELN verlinken. Die Regionen werden VOR dem Singular-Lauf
   // erhoben; ART_INTERN-Treffer, die in eine Region fallen (der Öffner «die
@@ -416,7 +427,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
   // V-7 (W2·20): Ebene des gelesenen Erlasses — in kantonalen Erlassen lösen
   // nur ebenenübergreifend eindeutige Bund-Namen auf (`positivliste.ts`).
   const ebene: FremdEbene = ebeneFuer(intern.basisPfad);
-  const pluralRegionen = artikelnPluralVerweise(s, ebene);
+  const pluralRegionen = artikelnPluralVerweise(s, ebene, erlassKey);
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
   const out: React.ReactNode[] = [];
@@ -543,7 +554,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // Darstellung, wie NORM_IM_TEXT-Treffer); die Existenz gegen den Ziel-Erlass
     // prüft das Popover beim Öffnen. Läuft VOR der Self-Link-Logik, damit «Artikel
     // 49a … (MStG)» nie fälschlich auf den eigenen Erlass (AIG art_49_a) zeigt.
-    const routing = fremdRoutingFormB(rest, m[1], undefined, ebene);
+    const routing = fremdRoutingFormB(rest, m[1], undefined, ebene, erlassKey);
     // V-7: nennt der Volltitel den GELESENEN Erlass, ist es kein Fremdverweis —
     // dann kein Fremd-Chip auf sich selbst; der Rest läuft durch die Self-Weichen.
     if (routing && kuerzelKanon(routing.gesetz) !== eigenesKuerzel) {
@@ -583,6 +594,8 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     const nachPassus = intern.fremdKuerzel ? rest : rest.replace(PARAGRAF_ANHANG, '');
     // Härtung 31.8.: Gliederungs-Genitiv ⇒ Text (Herleitung an GLIEDERUNGS_GENITIV).
     if (!selbst && GLIEDERUNGS_GENITIV.test(rest.replace(PARAGRAF_ANHANG, ''))) continue;
+    // V-7d: «… des Gesetzes» hinter dem Passus ⇒ Text (an GESETZES_GENITIV).
+    if (!selbst && GESETZES_GENITIV.test(nachPassus)) continue;
     // Der des/der-Guard bleibt bewusst am ROHEN Rest (V-6): «des/der/über» ist
     // ein WEICHES Signal, und hinter einem Passus steht dort oft gewöhnliche
     // Prosa. Gemessen 31.8.2026 über alle 1458 Snapshots: der Umbau verschöbe

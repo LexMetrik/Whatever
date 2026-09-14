@@ -153,6 +153,38 @@ export const GENITIV_EINTRAEGE: ReadonlyArray<GenitivEintrag> = [
   { name: 'Familienzulagengesetzes', gesetz: 'FAMZG', geltung: 'bund', beleg: 'Familienzulagengesetz' },
   { name: 'Publikationsgesetzes', gesetz: 'PUBLG', geltung: 'bund', beleg: 'Publikationsgesetz' },
   { name: 'Waldgesetzes', gesetz: 'WAG', geltung: 'bund', beleg: 'Waldgesetz' },
+  // ── V-7-Bund-Rest (14.9.2026): amtliche Kurztitel aus der Titel-KLAMMER des
+  //    Ziels, deren Erlass im Korpus liegt. Gemessen als unaufgelöste Form-B-
+  //    Köpfe (Sonde über alle Bund-Snapshots, 14.9.2026; Stellenzahl in
+  //    Klammern). Geltung durchgehend `bund`: es sind Verordnungs-Kurztitel,
+  //    die ein Kanton gleich benennen kann («Datenschutzverordnung»,
+  //    «Raumplanungsverordnung», «Abfallverordnung») — alle gemessenen Stellen
+  //    stehen ohnehin in Bundeserlassen, die Einschränkung kostet nichts (§1).
+  //    Kandidaten OHNE Korpus-Erlass (Revisionsaufsichts-, Subventions-,
+  //    Zoll-, Strafregister-, Post-, Gaststaat-, Medizinalberufegesetz …)
+  //    bleiben bewusst draussen: der Wächter verlangt ein Erlassdatum aus dem
+  //    Struktur-Sidecar, das es ohne Snapshot nicht gibt (Begründung im
+  //    Dossier `bibliothek/normtext/verweis-traegergesetz-messung-2026-09-14.md`).
+  { name: 'Arzneimittelverordnung', gesetz: 'VAM', geltung: 'bund', beleg: 'Arzneimittelverordnung' }, // 3
+  { name: 'Datenschutzverordnung', gesetz: 'DSV', geltung: 'bund', beleg: 'Datenschutzverordnung' }, // 2
+  { name: 'Raumplanungsverordnung', gesetz: 'RPV', geltung: 'bund', beleg: 'Raumplanungsverordnung' }, // 2
+  { name: 'Bundespersonalverordnung', gesetz: 'BPV', geltung: 'bund', beleg: 'Bundespersonalverordnung' }, // 2
+  { name: 'Chemikalienverordnung', gesetz: 'ChemV', geltung: 'bund', beleg: 'Chemikalienverordnung' }, // 2
+  { name: 'Lärmschutz-Verordnung', gesetz: 'LSV', geltung: 'bund', beleg: 'Lärmschutz-Verordnung' }, // 2
+  { name: 'Erwerbsersatzverordnung', gesetz: 'EOV', geltung: 'bund', beleg: 'Erwerbsersatzverordnung' }, // 2
+  { name: 'Handelsregisterverordnung', gesetz: 'HRegV', geltung: 'bund', beleg: 'Handelsregisterverordnung' }, // 1
+  { name: 'Abfallverordnung', gesetz: 'VVEA', geltung: 'bund', beleg: 'Abfallverordnung' }, // 1
+  { name: 'Bankenverordnung', gesetz: 'BankV', geltung: 'bund', beleg: 'Bankenverordnung' }, // 1
+  // 1 Stelle: CHEMRRV annex_1_17 «… die unter die Medizinprodukteverordnung
+  // vom 1. Juli 2020 fällt» — das ist die geltende MepV (SR 812.213). Die
+  // übrigen 11 Korpus-Stellen nennen die AUFGEHOBENE MepV «vom 17. Oktober
+  // 2001» (bzw. einmal «2011»); dort sperrt die Zeit-Kante `datumPasst` den
+  // Link. Nachgemessen 14.9.2026 (Gegenprüfung zu #864, Nebenfund).
+  { name: 'Medizinprodukteverordnung', gesetz: 'MepV', geltung: 'bund', beleg: 'Medizinprodukteverordnung' }, // 1
+  { name: 'Finanzmarktinfrastrukturverordnung', gesetz: 'FinfraV', geltung: 'bund', beleg: 'Finanzmarktinfrastrukturverordnung' }, // 1
+  { name: 'Verkehrszulassungsverordnung', gesetz: 'VZV', geltung: 'bund', beleg: 'Verkehrszulassungsverordnung' }, // 1
+  { name: 'Freizügigkeitsverordnung', gesetz: 'FZV', geltung: 'bund', beleg: 'Freizügigkeitsverordnung' }, // 1
+  { name: 'Adoptionsverordnung', gesetz: 'AdoV', geltung: 'bund', beleg: 'Adoptionsverordnung' }, // 1
 ];
 
 // ─── V-7b · Amtliche Volltitel «Bundesgesetzes/Verordnung [vom Datum] über …» ──
@@ -386,6 +418,7 @@ export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
   'BOEB': '2019-06-21',
   'BPG': '2000-03-24',
   'BPR': '1976-12-17',
+  'BPV': '2001-07-03',
   'BUEG': '2014-06-20',
   'BV': '1999-04-18',
   'BVG': '1982-06-25',
@@ -408,6 +441,7 @@ export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
   'ENTG': '1930-06-20',
   'ENTSG': '1999-10-08',
   'EOG': '1952-09-25',
+  'EOV': '2004-11-24',
   'ERV': '2012-06-01',
   'EnG': '2016-09-30',
   'EpG': '2012-09-28',
@@ -431,6 +465,7 @@ export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
   'GSCHG': '1991-01-24',
   'GWG': '1997-10-10',
   'HMG': '2000-12-15',
+  'HRegV': '2007-10-17',
   'IPRG': '1987-12-18',
   'IRSG': '1981-03-20',
   'IVG': '1959-06-19',
@@ -446,6 +481,7 @@ export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
   'KVV': '1995-06-27',
   'LFG': '1948-12-21',
   'LMG': '2014-06-20',
+  'LSV': '1986-12-15',
   'MG': '1995-02-03',
   'MSchG': '1992-08-28',
   'MSchV': '1992-12-23',
@@ -454,6 +490,7 @@ export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
   'MVG': '1992-06-19',
   'MVV': '1993-11-10',
   'MWSTG': '2009-06-12',
+  'MepV': '2020-07-01',
   'NBV': '2004-03-18',
   'NHG': '1966-07-01',
   'NHV': '1991-01-16',
@@ -469,6 +506,7 @@ export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
   'PatV': '1977-10-19',
   'RDV': '2012-11-14',
   'RPG': '1979-06-22',
+  'RPV': '2000-06-28',
   'RVOG': '1997-03-21',
   'STBOG': '2010-03-19',
   'STHG': '1990-12-14',
