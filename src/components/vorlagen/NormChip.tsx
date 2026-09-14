@@ -1,8 +1,9 @@
 import { useEffect, useLayoutEffect, useRef, useState, type RefObject } from 'react';
 import { createPortal } from 'react-dom';
-import { fedlexLinkFuerArtikel } from '../../lib/fedlex';
+import { FEDLEX, erkenneFedlexGesetz, fedlexLinkFuerArtikel } from '../../lib/fedlex';
 import { useLocale, fedlexLokalisiert } from '../locale';
 import { bundSnapshotRef } from '../../lib/normtext/bundRef';
+import { artikelImErlass } from '../../lib/normtext/artikel-bestand';
 import { ladeSnapshot } from '../../lib/normtext/laden';
 import { ladeStruktur } from '../../lib/normtext/browse';
 import { artikelSachtitel } from '../../lib/normtext/darstellung';
@@ -92,9 +93,46 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
 }) {
   const { locale } = useLocale();
   const inhalt = anzeige ?? artikel;
+
+  // ── Z6c (W2·22): trägt der Zielerlass die zitierte Bestimmung überhaupt? ───
+  //
+  // Bis hierher entstand der Artikel-Anker allein aus Kürzel + Nummer. Gemessen
+  // 14.9.2026 (V-1-Tor, `messwerte/verweis-inventar.json` → `toteFremdanker`):
+  // 36 von 9 675 prüfbaren Fremd-Ankern zeigen auf eine Bestimmung, die es im
+  // Snapshot des Zielerlasses nicht gibt — «Artikel 91a StGB» (JStG Art. 19,
+  // 19c, 27a, 28), «Art. 341bis OR» (ArG Art. 73), «Art. 882 ZGB» (ZH-230
+  // § 44) … Der Sprung landet ins Leere.
+  //
+  // Amtlich gegengeprüft am 14.9.2026 (Fedlex-SPARQL + AKN-XML, alle 26
+  // verschiedenen Ziele): KEINES existiert in der geltenden Fassung als eigener
+  // Artikel — der Snapshot hat recht, es ist keine Extraktionslücke. 19 davon
+  // führt Fedlex als aufgehobene Nummer in einem SAMMEL-Anker («Art. 11–15
+  // Aufgehoben», `id="art_11_15"`), 7 gibt es gar nicht (ZGB 89bis ist die
+  // historische Bezeichnung des heutigen Art. 89a). Entscheidend für den
+  // Rückfall: auch FEDLEX trägt in keinem der Fälle einen `id="art_<token>"` —
+  // der Deep-Link ist dort ebenso tot wie bei uns. Der Anker wegzulassen nimmt
+  // also keinem Nutzer einen funktionierenden Sprung weg.
+  //
+  // Also: Ziel-Token vorhanden ⇒ alles wie bisher. Ziel-Token fehlt ⇒ Rückfall
+  // auf den ERLASS-Link (Fedlex-Erlassseite bzw. Lesesicht des Erlasses), ohne
+  // Anker-Fragment und ohne Popover — kein geratener «nächster» Artikel (§1),
+  // keine falsche Ansage (§8). Ist der Zielerlass nicht im Korpus, ist die
+  // Frage nicht entscheidbar (`null`) und es bleibt beim bisherigen Verhalten.
+  //
+  // Die Prüfung läuft SYNCHRON aus einer generierten Projektion der Snapshots
+  // (`artikel-bestand.generated.ts`) — darum entscheidet der Prerender genauso
+  // wie der Browser, und der href flackert nach der Hydration nicht.
+  const refRoh = bundSnapshotRef(artikel);
+  const zielLebt = refRoh ? artikelImErlass(refRoh.quelle, refRoh.token) !== false : true;
+
   // Fallback-URL: explizite Override hat Vorrang, sonst aus dem Artikel
-  // ableiten (wie das heutige NormLink).
-  const roh = hrefOverride ? null : fedlexLinkFuerArtikel(artikel);
+  // ableiten (wie das heutige NormLink). Z6c: bei totem Ziel die ERLASS-URL
+  // statt des Artikel-Deep-Links — `hrefOverride` bleibt unangetastet, ein
+  // Aufrufer, der eine URL ausdrücklich mitgibt, wird nicht überstimmt.
+  const gesetz = hrefOverride ? null : erkenneFedlexGesetz(artikel);
+  const roh = hrefOverride ? null
+    : zielLebt ? fedlexLinkFuerArtikel(artikel)
+    : gesetz ? FEDLEX[gesetz] : null;
   const url = hrefOverride ?? (roh ? fedlexLokalisiert(roh, locale) : null);
 
   const triggerRef = useRef<HTMLAnchorElement>(null);
@@ -122,7 +160,11 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
   // Keine Fallback-URL → exakt das heutige Verhalten (reiner span-Chip).
   if (!url) return <span className="lc-chip" title={title}>{inhalt}</span>;
 
-  const ref = bundSnapshotRef(artikel);
+  // Z6c: totes Ziel ⇒ wie «kein Snapshot-Bezug». Damit entfallen in EINEM Zug
+  // der interne Artikel-Anker, das Popover (das ohnehin nur «Volltext nicht
+  // verfügbar» zeigen könnte) und der preventDefault-Klickpfad; übrig bleibt
+  // der ruhige Erlass-Link in derselben Chip-/Verweis-Klasse wie bisher.
+  const ref = zielLebt ? refRoh : null;
 
   // ── V4 (W2·10-UI-NAV): `href` intern, wo ein Snapshot existiert ────────────
   // Der Klick öffnete schon bisher per preventDefault das interne Popover — der
