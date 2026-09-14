@@ -14,7 +14,8 @@ import path from 'node:path';
 // eine der sechs `inhalt-*`-Nahtdateien; irgendeine Datei importiert die
 // Ist-Hülle; `imPane`/`istSekundaer` taucht ausserhalb der Wurzel-Dateien
 // im CODE auf; `.ebene`/`.rechtsgebiet` wird ausserhalb `erlassAnsicht.ts`
-// gelesen; eine Datei überschreitet 400 Zeilen.
+// gelesen; ein Bestimmungswort («Artikel»/«Paragraphen») steht ausserhalb
+// `erlassWortlaut.ts`; eine Datei überschreitet 420 Zeilen.
 
 const V3_DIR = 'src/pages/gesetz-leser/v3';
 const LIES = (name: string) => readFileSync(`${V3_DIR}/${name}`, 'utf8');
@@ -38,6 +39,9 @@ describe('Positiv-Sonde: v3/ enthält überhaupt Dateien', () => {
     expect(ALLE_DATEIEN.length).toBeGreaterThan(5);
     expect(ALLE_DATEIEN).toContain('leserV3Modell.ts');
     expect(ALLE_DATEIEN).toContain('erlassAnsicht.ts');
+    // Schnitt 14.9.2026: die Ableitungsschicht ist ein PAAR. Ohne diese Zeile
+    // liefe die halbe Zusage unten gegen eine Datei, die es nicht mehr gibt.
+    expect(ALLE_DATEIEN).toContain('erlassWortlaut.ts');
   });
 });
 
@@ -366,7 +370,24 @@ describe('Kein `if (bund)`: erlass.ebene / erlass.rechtsgebiet nur in erlassAnsi
 });
 
 describe('B8 · Das Zähl-Substantiv hat EINE Quelle (Architektur-Nachzug 17.8.2026)', () => {
-  const QUELLE_DER_WAHRHEIT = 'erlassAnsicht.ts';
+  // -- DIE QUELLE IST SEIT 14.9.2026 DIE SCHWESTERDATEI ----------------------
+  // Bis dahin stand sie in `erlassAnsicht.ts`. Das war kein Zufall, sondern eine
+  // Haeufung: DIESELBE Datei musste jede `.ebene`-Ableitung tragen (Sonde oben),
+  // jedes Bestimmungswort (diese Sonde), unter 420 Zeilen bleiben UND unter dem
+  // Adapter `leserV3Modell.ts`, der selbst bei 420 steht. Gemessen 14.9.2026:
+  // 419 Zeilen -- null nutzbarer Kopfraum, weil die 420. Zeile den Gleichstand
+  // erzeugt haette, an dem die Sonde «groesster Baustein ist der Adapter» kippt.
+  // Zwei Bau-Auftraege sind dem ausgewichen (PR #854, #863), ein dritter (E1,
+  // Einzelartikel-Ansicht) waere daran haengen geblieben.
+  //
+  // DER SCHNITT NIMMT KEINER SONDE IHRE SCHAERFE, er verteilt sie auf zwei
+  // Dateien mit je EINER Zusage: `erlassAnsicht.ts` = «wo steht der Erlass»
+  // (`.ebene`/`.rechtsgebiet`), `erlassWortlaut.ts` = «wie heisst, was man
+  // liest» (Bestimmungswort, Feldbeschriftung, Titel/Kennung). Jede der beiden
+  // Zusagen gilt weiterhin fuer GENAU EINE Datei -- die Ausnahmemenge ist nicht
+  // gewachsen, sie ist nur woanders. Die Gegenprobe steht als eigener Test
+  // unten («keine der beiden Schwestern traegt die Zusage der anderen»).
+  const QUELLE_DER_WAHRHEIT = 'erlassWortlaut.ts';
 
   // BEFUND, der diese Sonde nötig gemacht hat: das Literal `'Paragraphen'` lag an
   // FÜNF Stellen in `v3/` (SuchZone · LeserGliederung · LeserUebersicht ·
@@ -432,6 +453,26 @@ describe('B8 · Das Zähl-Substantiv hat EINE Quelle (Architektur-Nachzug 17.8.2
       expect(traegt(quelle, /bestimmungsEtikett\s*===/),
         `${datei} leitet das Bestimmungswort selbst ab — das tut bestimmungsWort()`).toBe(false);
     }
+  });
+
+  // -- DER SCHNITT DARF NICHT STILL ZURUECKWACHSEN (14.9.2026) ---------------
+  // Ohne diese zwei Sonden waere der Schnitt eine Verschiebung, die man
+  // rueckgaengig machen kann, ohne dass etwas rot wird (§6.7). Die erste haelt
+  // die Fassade: Aufrufer importieren weiter aus `erlassAnsicht`, und genau das
+  // ist der Grund, warum der Schnitt verhaltensneutral war. Die zweite haelt die
+  // Arbeitsteilung -- jede Schwester traegt IHRE Zusage und nicht die andere.
+  it('die Fassade steht: erlassAnsicht.ts re-exportiert die Schwesterdatei', () => {
+    expect(traegt(ohneKommentare(LIES('erlassAnsicht.ts')), /export \* from '\.\/erlassWortlaut'/),
+      'der Re-Export fehlt — jeder bisherige Import aus erlassAnsicht bricht').toBe(true);
+  });
+
+  it('die zwei Schwestern tauschen ihre Zusagen nicht', () => {
+    const wortlaut = ohneKommentare(LIES('erlassWortlaut.ts'));
+    const ansicht = ohneKommentare(LIES('erlassAnsicht.ts'));
+    expect(traegt(wortlaut, /\.ebene\b/), 'erlassWortlaut.ts liest .ebene').toBe(false);
+    expect(traegt(wortlaut, /\.rechtsgebiet\b/), 'erlassWortlaut.ts liest .rechtsgebiet').toBe(false);
+    expect(traegt(ansicht, /\bArtikel\b|Paragraphen/),
+      'erlassAnsicht.ts trägt wieder ein Bestimmungswort im Code').toBe(false);
   });
 });
 
@@ -499,6 +540,29 @@ describe('Dateigrösse: v3/ bleibt schlank', () => {
   // die Zahl war zu knapp gesetzt. Sie wandert darum um 20 Zeilen und keinen
   // Schritt weiter; die eigentliche Schlankheits-Zusage tragen ohnehin die
   // beiden Regeln daneben, nicht diese Obergrenze.
+  //
+  // -- 14.9.2026 · DIE GRENZE BLEIBT 420, DIE DATEI IST GEWICHEN -------------
+  // Anlass: `erlassAnsicht.ts` stand bei 419 von 420 Zeilen und hatte damit
+  // NULL nutzbaren Kopfraum -- nicht eine Zeile, denn die 420. haette den
+  // Gleichstand mit dem Adapter erzeugt, an dem die Sonde direkt darunter
+  // kippt (`Object.entries` liefert Lesereihenfolge, `erlassAnsicht.ts` steht
+  // vor `leserV3Modell.ts`, die Sortierung ist stabil). Zugleich zwingt die
+  // Sonde «`.ebene` nur in erlassAnsicht.ts» jede neue Ableitung genau dorthin.
+  // Das ist eine Klemme, kein Einzelfall: zwei Bau-Auftraege sind ihr am
+  // 14.9.2026 ausgewichen (PR #854, #863), indem sie eigene Dateien anlegten.
+  //
+  // BEHOBEN WORDEN IST DIE KLEMME, NICHT DIE ZAHL (§17, Wurzel statt
+  // Umschiffen): die Datei ist in zwei Schwestern geschnitten
+  // (`erlassAnsicht.ts` 198 / `erlassWortlaut.ts` 267 Zeilen), jede mit EINER
+  // Zusage und mehr als 150 Zeilen Luft. Die Grenze steht unveraendert bei 420
+  // -- wer sie kuenftig verschiebt, tut das wieder als eigener, sichtbarer Diff.
+  //
+  // BEWUSST OFFEN GEBLIEBEN: `leserV3Modell.ts` steht bei 420/420 und
+  // `uebersichtAngaben.ts` bei 418/420. Fuer den Adapter ist der Schnitt oben
+  // im Block dokumentiert GESCHEITERT (drei andere Sonden weisen ihn zurueck)
+  // und seine Hook-Reihenfolge ist verhaltenstragend -- ein Schnitt dort waere
+  // keine Struktur-, sondern eine Verhaltensaenderung und braucht einen eigenen
+  // deklarierten Schritt. Vermerkt statt stillschweigend mitgenommen.
   const MAX_ZEILEN = 420;
 
   it(`keine Datei in v3/ überschreitet ${MAX_ZEILEN} Zeilen`, () => {
