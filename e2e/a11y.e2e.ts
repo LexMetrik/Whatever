@@ -408,6 +408,21 @@ const DUNKEL_PUNKTE: Array<{
   },
   { titel: 'Gesetze — Kanton BS (eingeklappt)', punkt: 'gesetze-kanton-BS', url: '/gesetze?ebene=kanton&kt=BS' },
   { titel: 'Gesetze — Reader Bund (GebV-HReg)', punkt: 'gesetze-leser-bund', url: '/gesetze/bund/GEBV_HREG' },
+  // W2·5m (Kap. 15.4/B3) · die EINZELARTIKEL-Ansicht ist eine eigene Fläche mit
+  // eigenen Bedienelementen (Gliederungspfad, zwei Pfeil-Paare, Dossier-Griffe,
+  // Vorschau-Karten) — und sie wird im DUNKELN gemessen, weil genau dort die
+  // Tintenstufe der Feinschrift kippt. Die Lehre steht an der Zeile, die sie
+  // ausgelöst hat: `parts/ArtikelNachbarn.tsx` («ink-400 misst 3.29:1»,
+  // a11y-Sonde 14.9.2026). Ohne diesen Punkt wäre die neue Fläche unbewacht.
+  {
+    titel: 'Gesetze — Einzelartikel-Ansicht (OR 336c)', punkt: 'gesetze-leser-einzel',
+    url: '/gesetze/bund/OR?ansicht=artikel#art-336_c',
+    herstellen: async (page) => {
+      await expect(page.locator('[data-einzel-artikel]')).toBeVisible({ timeout: 30_000 })
+      await expect(page.locator('[data-artikel-dossier]')).toBeVisible({ timeout: 30_000 })
+    },
+    budget: 120_000,
+  },
   // Budget wie beim Hell-Zwilling (Z. 195 ff.): der gedrosselte CI-Runner
   // braucht für axe.analyze auf der Übersicht mehr als die 60-s-Voreinstellung.
   { titel: 'Rechtsprechung — Übersicht', punkt: 'rechtsprechung-uebersicht', url: '/rechtsprechung', budget: 120_000 },
