@@ -276,7 +276,11 @@ describe('Ä111/Ä112: zwei Griffe derselben Glyphe, zwei verschiedene Namen', (
   });
 
   it('das Leser-Suchfeld nennt seinen Erlass — im NAMEN, nicht im Platzhalter', () => {
-    const ansicht = ohneKommentare(LIES('v3/erlassAnsicht.ts'));
+    // 14.9.2026: die Feldbeschriftung ist mit dem Schnitt von `erlassAnsicht.ts`
+    // in die Schwesterdatei `erlassWortlaut.ts` gewandert (Deckel-Wurzelfix,
+    // s. `leser-v3-fundament.test.ts`). NUR DER PFAD folgt dem Umzug — jede
+    // Zusage darunter steht Zeichen für Zeichen unverändert (§6.3).
+    const ansicht = ohneKommentare(LIES('v3/erlassWortlaut.ts'));
     // ── Ä126 (18.8.2026) · DIE SIGNATUR IST DIE ZUSAGE ────────────────────
     // Bis hierher stand hier das Gegenteil: der Platzhalter MUSSTE das Kürzel
     // entgegennehmen. Gemessen an ZH-211.11 @390 waren das 465 px in einem

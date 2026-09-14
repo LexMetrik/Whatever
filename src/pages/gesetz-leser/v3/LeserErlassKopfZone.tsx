@@ -6,6 +6,7 @@ import { AmtlichesPdf } from '../parts/AmtlichesPdf';
 import { ReiterAktion } from './ReiterAktion';
 import { overlineGebiet, titelKennung, type BestimmungsWort } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
+import { useZukunftsfassung } from './useZukunftsfassung';
 
 // ─── Der Erlass-Kopf der V3-Zelle (Kap. 4e) ──────────────────────────────────
 //
@@ -36,9 +37,14 @@ export function LeserErlassKopfZone({ m, erlass, artikelAnzahl, bestimmungsWort 
   bestimmungsWort: BestimmungsWort;
 }) {
   const meta = grundartMeta(erlass.key);
+  // W2·27 (§4 b): «ab <Datum> gilt eine neue Fassung» + amtlicher Link. Die
+  // Ableitung sitzt hier und nicht im Kopf, weil sie ein Sidecar anfasst und der
+  // Kopf reine Darstellung ist (§3) — Herleitung in `./useZukunftsfassung`.
+  const zukunft = useZukunftsfassung(erlass, m.currency?.[erlass.key]);
   return (
     <ErlassLeserKopf erlass={erlass} artikelAnzahl={artikelAnzahl} bestimmungsWort={bestimmungsWort}
       currency={m.currency?.[erlass.key]} nichtKonsolidiert={m.nichtKonsolidiert}
+      zukunft={zukunft}
       luecken={m.kantonLuecken[erlass.key]}
       kennzahlen={m.gliederung.kennzahlen} nichtKonsolidiertSeit={m.nichtKonsolidiertSeit}
       // Ä-(d) aus S3: bei sehr langen Titeln steht die Kennung VOR dem Titel

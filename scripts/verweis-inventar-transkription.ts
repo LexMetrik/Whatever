@@ -133,6 +133,11 @@ export const G = {
     datei: 'NormText.tsx',
     literal: String.raw`/^\s*dies(?:es|er)\s+(?:Titels|Abschnitts|Kapitels|Anhangs|Teils|Buches|Hauptst\w*)\b/`,
   },
+  GESETZES_GENITIV: {
+    zweck: 'GESETZES_GENITIV — «des Gesetzes» hinter dem Passus ist nie ein Selbstverweis; die belegten Fälle löst V-7c davor auf (V-7d, 14.9.2026)',
+    datei: 'NormText.tsx',
+    literal: String.raw`/^\s*des\s+Gesetzes\b/`,
+  },
   SELBST_KUERZEL_TRIM: {
     zweck: 'nenntEigenesKuerzel — führender Trenner vor dem Kürzel',
     datei: 'NormText.tsx',
@@ -245,6 +250,7 @@ export const glaetteInterpunktion = (s: string): string => s.replace(/ +([.,])/g
 // exakt die Stellen, an denen die V-2-Weiche greift.
 const SELBST_MARKER = re(G.SELBST_MARKER.literal);
 const GLIEDERUNGS_GENITIV = re(G.GLIEDERUNGS_GENITIV.literal);
+const GESETZES_GENITIV = re(G.GESETZES_GENITIV.literal);
 
 /** Transkription von `nenntEigenesKuerzel` (NormText.tsx, V-2 Ziel 2). */
 function nenntEigenesKuerzel(rest: string, kuerzel?: string): boolean {
@@ -299,6 +305,7 @@ export const KLASSEN: Record<string, { entscheid: Entscheid; was: string }> = {
   'anker-self': { entscheid: 'SELF', was: 'Voll zitierter Anker auf den GELESENEN Erlass → Sprung statt Fedlex-Chip (V-2 Ziel 3)' },
   'art-chapeau-fremd': { entscheid: 'FREMD', was: 'bare «Art. N» unter Fremdgesetz-Chapeau → Zielgesetz (M6-D)' },
   'gliederungs-genitiv': { entscheid: 'TEXT', was: '«Art./§ N dieses Titels/Abschnitts …» — Gliederungseinheit, nie der Erlass (Härtung 31.8.2026)' },
+  'gesetzes-genitiv': { entscheid: 'TEXT', was: '«Art. N [Passus] des Gesetzes» ohne Trägergesetz-Beleg — nie Selbstverweis, kein Link (V-7d, 14.9.2026)' },
   'art-desder-guard': { entscheid: 'TEXT', was: '«Art. N des/der/über/vom …» ohne Klammer-Kürzel' },
   'art-f41': { entscheid: 'TEXT', was: 'bare «Art. N» im §-designierten Erlass — Self-Sperre (F41)' },
   'art-kein-token': { entscheid: 'TEXT', was: 'bare «Art. N» — Bestimmung existiert im Erlass nicht' },
@@ -309,6 +316,7 @@ export const KLASSEN: Record<string, { entscheid: Entscheid; was: string }> = {
   'n2b-glied': { entscheid: 'FREMD', was: 'Glied der Form B «Artikel N … des <Name> (KÜRZEL)» — Klammer-Kürzel' },
   'n2b-genitiv': { entscheid: 'FREMD', was: 'Form-B-Glied über kuratierten Kurztitel-Genitiv ohne Klammer («des Bankengesetzes», V-7a; Geltung je Ebene)' },
   'n2b-titel': { entscheid: 'FREMD', was: 'Form-B-Glied über amtlichen Volltitel «Bundesgesetzes/Verordnung [vom Datum] über …» (V-7b)' },
+  'n2b-traeger': { entscheid: 'FREMD', was: 'Form-B-Glied über die namenlose Kurzform «des Gesetzes» → Trägergesetz des gelesenen Erlasses (V-7c)' },
   'n2b-glied-text': { entscheid: 'TEXT', was: 'Form-B-Glied ohne Ziel-Token (heute strukturell 0 — NormText übergibt kein Prädikat)' },
   'paragraf-fremd-grosswort': { entscheid: 'TEXT', was: '«§ N <Grosswort>» — Fremd-Indiz, kein Link' },
   'paragraf-kanton-kuerzel': { entscheid: 'FREMD', was: '«§ N KÜRZEL» — im Kanton EINDEUTIGES Kürzel eines anderen Erlasses → Link auf dessen Lesesicht (V-3)' },
@@ -341,6 +349,11 @@ export interface Ctx {
    *  ab (`/gesetze/kanton/…` ⇒ kanton, sonst bund); Kurznamen mit Geltung
    *  `bund` lösen in kantonalen Erlassen nicht auf (`positivliste.ts`). */
   ebene?: FremdEbene;
+  /** V-7c: ROHER Register-Key des gelesenen Erlasses — NormText leitet ihn aus
+   *  dem letzten Segment des Basispfads ab und reicht ihn an
+   *  `fremdRoutingFormB` durch; er entscheidet, ob «des Gesetzes» auf das
+   *  Trägergesetz auflöst (`TRAEGER_EINTRAEGE`). */
+  erlassKey?: string;
 }
 
 export interface Stelle {
@@ -395,7 +408,7 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
   const out: Stelle[] = [];
   const paragrafErlass = ctx.paragrafDesigniert;
   const ebene: FremdEbene = ctx.ebene ?? 'bund';
-  const pluralRegionen = artikelnPluralVerweise(s, ebene);
+  const pluralRegionen = artikelnPluralVerweise(s, ebene, ctx.erlassKey);
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
 
@@ -482,11 +495,13 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
     emitPluralBis(m.index);
     const start = m.index;
     const rest = s.slice(start + m[0].length);
-    const routing = fremdRoutingFormB(rest, m[1], undefined, ebene);
+    const routing = fremdRoutingFormB(rest, m[1], undefined, ebene, ctx.erlassKey);
     // V-7: Volltitel des GELESENEN Erlasses ist kein Fremdverweis (wie Original).
     if (routing && kuerzelKanon(routing.gesetz) !== ctx.eigenesKuerzel) {
       // V-7: Klasse nach Erkennungs-Signal (Klammer / Genitiv-Kurztitel / Volltitel).
-      const klasse = routing.signal === 'klammer' ? 'n2b-glied' : routing.signal === 'genitiv' ? 'n2b-genitiv' : 'n2b-titel';
+      const klasse = routing.signal === 'klammer' ? 'n2b-glied'
+        : routing.signal === 'genitiv' ? 'n2b-genitiv'
+        : routing.signal === 'traeger' ? 'n2b-traeger' : 'n2b-titel';
       for (const g of routing.glieder) {
         // Z6c: NormText.tsx:551 — <NormChip artikel={g.artikel} …>.
         out.push(stelle(g.linkbar ? klasse : 'n2b-glied-text', g.roh, ctx, false, g.linkbar ? g.artikel : undefined));
@@ -501,6 +516,7 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
     const nachPassus = ctx.fremdKuerzel ? rest : rest.replace(PARAGRAF_ANHANG, '');
     // Härtung 31.8.: Gliederungs-Genitiv ⇒ Text (Reihenfolge exakt wie Original).
     if (!sm && GLIEDERUNGS_GENITIV.test(rest.replace(PARAGRAF_ANHANG, ''))) { out.push(stelle('gliederungs-genitiv', m[1], ctx, sm)); continue; }
+    if (!sm && GESETZES_GENITIV.test(nachPassus)) { out.push(stelle('gesetzes-genitiv', m[1], ctx, sm)); continue; }
     if (!sm && DES_DER_GUARD.test(rest)) { out.push(stelle('art-desder-guard', m[1], ctx, sm)); continue; }
     const fremd = sm ? null : fremdgesetzNachArtikel(rest);
     if (fremd && kuerzelKanon(fremd) !== ctx.eigenesKuerzel) { out.push(stelle('art-n2-fremdkuerzel', m[1], ctx, sm)); continue; }
