@@ -2,7 +2,7 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "d5b4ca17348c9fb5cb58622b7a8c008ff1d83b00f0249ddc84f4e4b5e9a0583d",
+    "normTextSha256": "ef7a647a94c74fccb46955608be35695699e892e02c1579dac341c18e9d6d850",
     "guards": 24
   },
   "korpus": {

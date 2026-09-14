@@ -304,21 +304,13 @@ const SELBST_MARKER = /^\s*(?:(?:des|der)\s+vorliegenden|dies(?:es|er))\s+(?!Tit
 // Einheiten nicht ⇒ jeder Sprung wäre geraten. Aktiver Unterdrücker in BEIDEN
 // Pfaden, nicht nur Ausschluss im Selbstmarker (§1: kein Link statt falscher).
 const GLIEDERUNGS_GENITIV = /^\s*dies(?:es|er)\s+(?:Titels|Abschnitts|Kapitels|Anhangs|Teils|Buches|Hauptst\w*)\b/;
-// V-7d (14.9.2026, Nachzug zur Gegenprüfung von #864): «des Gesetzes» ist NIE
-// ein Selbstverweis. Der Gesetzgeber bezeichnet den eigenen Erlass mit
-// «dieses Gesetzes»/«dieser Verordnung» (SELBST_MARKER oben); der BESTIMMTE
-// Artikel ohne «dies-» setzt einen ANDEREN, zuvor bestimmten Erlass voraus.
-// Wo dieser andere Erlass amtlich belegt ist, hat ihn die Trägergesetz-Tabelle
-// schon VOR dieser Weiche aufgelöst (V-7c, `fremdRoutingFormB`); was hier
-// ankommt, ist die Restklasse OHNE Beleg — und die bleibt Text.
-// Belegter Anlass: KKV art_128 zitiert «Artikel 124 Absatz 2 des Gesetzes» und
-// «Artikel 120 Absatz 2 Buchstabe e des Gesetzes»; der KKV-Ingress definiert
-// nur «(KAG)», keine Kurzform «Gesetz». Gemeint ist das KAG — der Leser sprang
-// aber auf KKV Art. 124/120, zwei ganz andere Bestimmungen. Der des/der-Guard
-// greift dort nicht, weil er bewusst am ROHEN Rest steht (V-6) und «Absatz 2»
-// dazwischensteht. Diese Weiche ist die enge Gegenprobe dazu: nur das eine
-// Wort «Gesetzes», dafür hinter dem Passus. §1: kein Link ist besser als ein
-// falscher.
+// V-7d (14.9.2026): «des Gesetzes» ist NIE ein Selbstverweis — der eigene
+// Erlass heisst «dieses Gesetzes»/«dieser Verordnung» (SELBST_MARKER oben).
+// Die belegten Fälle löst die Trägergesetz-Tabelle VOR dieser Weiche auf; hier
+// bleibt nur die unbelegte Restklasse, und die wird Text (§1). Enge Gegenprobe
+// zum des/der-Guard, der bewusst am ROHEN Rest steht und «Artikel 124 Absatz 2
+// des Gesetzes» darum nicht sieht. Herleitung, Messung und der belegte Anlass
+// (KKV art_128) stehen bei TRAEGER_EINTRAEGE in `lib/fedlex/traegergesetz.ts`.
 const GESETZES_GENITIV = /^\s*des\s+Gesetzes\b/;
 /** Nennt der Text direkt hinter dem Zitat exakt das Kürzel DIESES Erlasses? */
 function nenntEigenesKuerzel(rest: string, kuerzel?: string): boolean {
@@ -602,9 +594,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     const nachPassus = intern.fremdKuerzel ? rest : rest.replace(PARAGRAF_ANHANG, '');
     // Härtung 31.8.: Gliederungs-Genitiv ⇒ Text (Herleitung an GLIEDERUNGS_GENITIV).
     if (!selbst && GLIEDERUNGS_GENITIV.test(rest.replace(PARAGRAF_ANHANG, ''))) continue;
-    // V-7d: «… des Gesetzes» hinter dem Passus ⇒ Text (Herleitung an GESETZES_GENITIV).
-    // Steht NACH der Trägergesetz-Auflösung: ein belegtes «des Gesetzes» ist
-    // oben schon ein Link, hier landet nur die unbelegte Restklasse.
+    // V-7d: «… des Gesetzes» hinter dem Passus ⇒ Text (an GESETZES_GENITIV).
     if (!selbst && GESETZES_GENITIV.test(nachPassus)) continue;
     // Der des/der-Guard bleibt bewusst am ROHEN Rest (V-6): «des/der/über» ist
     // ein WEICHES Signal, und hinter einem Passus steht dort oft gewöhnliche
