@@ -44,8 +44,16 @@ interface Bestand {
  * Nummern-Grammatik wird parallel erweitert (Z6a, `src/lib/fedlex/nummer.ts`,
  * PR #852); wächst sie um einen Suffix, trägt dieses Modul ihn ohne Änderung
  * mit — es kennt ihn gar nicht.
+ *
+ * EXPORTIERT allein für den Gleichheits-Wächter
+ * `src/tests/z6c-normalisierer-gleichheit.test.ts` (Nebenfund §5 der
+ * Gegenprüfung, 14.9.2026): dieselbe Definition liegt zeichengleich auch in
+ * NormText.tsx und in der Transkription des V-1-Tors. Die drei werden NICHT
+ * zusammengeführt — die Transkription MUSS eine eigene Kopie haben, sonst
+ * prüft sie sich selbst (§6.7) — sondern aneinander gebunden. Kein
+ * Produktions-Code ausserhalb dieses Moduls ruft sie.
  */
-const norm = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+export const norm = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 
 const zwischenspeicher = new Map<string, Bestand>();
 
