@@ -1,5 +1,6 @@
 import type { Sektion } from '../../../lib/normtext/browse';
 import { pfadZu } from '../helpers';
+import { MODUS_PARAM, MODUS_VORGABE, type LeserModus } from './leserModus';
 
 // ═══ W2·5m · DIE EINZELARTIKEL-ANSICHT — DIE REINE SEITE ════════════════════
 //
@@ -20,21 +21,11 @@ import { pfadZu } from '../helpers';
 // Wahrheit, gegen die §5 steht: eine Stelle liest, eine Stelle schreibt, beide
 // stehen hier nebeneinander und sind gegeneinander getestet (Hin- und Rückweg).
 
-/** Die zwei Lesarten des Erlasses (D-E2: eine OPTION, kein zweiter Leser). */
-export type LeserModus = 'erlass' | 'artikel';
-
-/** Der Query-Schlüssel. Ein Wort, kleingeschrieben, wie die Adressen des Hauses. */
-export const MODUS_PARAM = 'ansicht';
-
-/**
- * F-E3 (entschieden David 14.9.2026: «ja») · «Ganzer Erlass» bleibt der
- * Vorgabewert für alle, die nichts umstellen — wer einen Link auf ein Gesetz
- * öffnet, erwartet das Gesetz. Der Wert wird darum NIE in die Adresse
- * geschrieben (`?ansicht=erlass` gibt es nicht): eine Adresse, die den
- * Grundzustand ausschreibt, macht aus jedem geteilten Link zwei Schreibweisen
- * für dieselbe Seite.
- */
-export const MODUS_VORGABE: LeserModus = 'erlass';
+// Typ und Vorgabe stehen in `./leserModus.ts` — eine winzige Datei ohne eigene
+// Importe, weil der Options-Store im ENTRY-Chunk liegt und sonst diese ganze
+// Datei mitzöge (Herleitung und Messung dort). Hier re-exportiert, damit die
+// Aufrufer EINE Adresse haben (§5).
+export { MODUS_PARAM, MODUS_VORGABE, type LeserModus } from './leserModus';
 
 /**
  * Was die Adresse über den Modus sagt — `null`, wenn sie nichts dazu sagt.

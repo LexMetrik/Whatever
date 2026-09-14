@@ -49,7 +49,11 @@ import { useSyncExternalStore } from 'react';
 import type { BezugStatus } from '../../lib/verzahnung/facetten';
 import { DEFAULT_KLASSEN, normalisiereKantone, normalisiereKlassen } from './bezugAuswahl';
 import { migriereZeitraum, normalisiereBereich } from './bezugZeit';
-import { MODUS_VORGABE, type LeserModus } from './v3/einzelModus';
+// NUR die Konstanten-Datei, nie `./v3/einzelModus` — dieser Store liegt im
+// Entry-Chunk (`main.tsx` ruft `wendeLeserOptionenAn` vor dem ersten Paint),
+// und der breitere Import riss `check:perf-budget` (Herleitung in
+// `./v3/leserModus.ts`).
+import { MODUS_VORGABE, type LeserModus } from './v3/leserModus';
 import { heuteIso } from '../../lib/format';
 
 /**
