@@ -42,7 +42,7 @@ test('Deutscher Lesefluss: Kern-Register ja, FR/IT-Titel und Provenienz nein', a
 test('Kontext-Panel auf Französisch: FR/IT-Titel werden nachgeladen, Provenienz nie', async ({ page }) => {
   const fehler = fehlerSammeln(page)
   await page.addInitScript(() => { localStorage.setItem('lexmetrik.locale', 'fr') })
-  const abrufe = await zaehleRegisterAbrufe(page, '/gesetze/international/EMRK')
+  const abrufe = await zaehleRegisterAbrufe(page, '/gesetze/international/NYUE')
   // Das Kontext-Panel dieser Seite fragt Botschaften/Vernehmlassungen an; erst dieser
   // Weg zieht die Übersetzungen — eine Datei mehr, nicht der alte Monolith zurück.
   await expect.poll(() => abrufe.filter((u) => u.includes('register-i18n')).length,
@@ -58,9 +58,20 @@ test('Kontext-Panel auf Französisch: FR/IT-Titel werden nachgeladen, Provenienz
 // ── Auflage der Gegenprüfung #802: der Rückfall ist sichtbar ─────────────────
 //
 // Das Kontext-Panel mit Botschaften hängt an Bestandsdaten, die sich ändern dürfen;
-// die Sonde stellt sie deshalb selbst — ein Eintrag, an EMRK gebunden, wie die
+// die Sonde stellt sie deshalb selbst — ein Eintrag, an NYÜ gebunden (bis 14.9.2026 an EMRK), wie die
 // Unit-Tests ihn stellen. Geprüft wird die FLÄCHE, nicht die Bibliothek: steht der
 // Hinweis da, und trägt der deutsche Titel `lang="de"`.
+// ZIEL-WECHSEL 14.9.2026 (QS-KORPUS, deklarierte Test-Änderung nach §6.3): die drei
+// FR-Fälle liefen bis hierhin auf `/gesetze/international/EMRK`. Das `KontextPanel`
+// (mit Botschaften/Vernehmlassungen — der einzige Weg, der `register-i18n.json` zieht)
+// hängt an `pages/gesetz-leser/inhalt-ansichten.tsx` und rendert NUR in den Ansichten
+// `pdf-embed` und `nur-live-link`; der V3-Leser hat seine eigene Kontext-Fläche und
+// darf `KontextPanel` gar nicht berühren (`src/tests/leser-v3-fundament.test.ts`,
+// VERBOTEN-Liste). Seit PR #860 ist die EMRK ein Volltext-Snapshot, also V3-Leser —
+// die Sonde traf schlicht die falsche Ansicht (0 `register-i18n`-Abrufe, kein
+// Botschaften-Titel). KEINE Regression der Fläche: geprüft wird weiterhin dasselbe
+// Verhalten, nur auf dem verbliebenen pdf-embed-Erlass NYÜ (SR 0.277.12). Die
+// Assertionen sind wörtlich unverändert.
 const REGISTER_MIT_BOTSCHAFT = {
   erzeugt: '2026-09-12',
   materialien: [{
@@ -69,7 +80,7 @@ const REGISTER_MIT_BOTSCHAFT = {
     titel: 'Botschaft zur Sonde', nummer: '25.999', rechtsgebiet: 'international',
     sprache: 'de', status: 'nur-live-link',
     quelleUrl: 'https://www.fedlex.admin.ch/eli/fga/2025/999/de',
-    stand: '2025-01-01', rang: 1, normKeys: ['EMRK'], hinweis: null,
+    stand: '2025-01-01', rang: 1, normKeys: ['NYUE'], hinweis: null,
   }],
 }
 
@@ -85,7 +96,7 @@ async function stelleRegister(page: import('@playwright/test').Page, i18nOk: boo
 
 test('FR + Übersetzungen nicht erreichbar: sichtbarer Hinweis, Titel als deutsch ausgezeichnet', async ({ page }) => {
   await stelleRegister(page, false)
-  await page.goto('/gesetze/international/EMRK')
+  await page.goto('/gesetze/international/NYUE')
   const titel = page.getByText('Botschaft zur Sonde')
   await expect(titel).toBeVisible()
   // Der amtliche deutsche Titel bleibt stehen (§8) — aber als deutsch ausgezeichnet,
@@ -99,7 +110,7 @@ test('FR + Übersetzungen nicht erreichbar: sichtbarer Hinweis, Titel als deutsc
 
 test('FR + Übersetzungen erreichbar: übersetzter Titel, kein Hinweis, kein lang-Attribut', async ({ page }) => {
   await stelleRegister(page, true)
-  await page.goto('/gesetze/international/EMRK')
+  await page.goto('/gesetze/international/NYUE')
   const titel = page.getByText('Message de la sonde')
   await expect(titel).toBeVisible()
   await expect(titel).not.toHaveAttribute('lang', 'de')
