@@ -168,10 +168,10 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [x] **Erledigt:** Z1 · Z2 · Z3 · Z5 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
   - [ ] **Z6 Gemessene Rest-Kanten der Verweis-Erkennung** (Nebenfunde aus Z5 und seiner
     Gegenprüfung, 2.9.2026):
-    (a) Artikelnummern mit Suffix jenseits `bis…sexies` («Artikel 29septies AHVG», 5 Korpus-Stellen)
-    kennt die GETEILTE Nummern-Grammatik nicht — `ART_INTERN`, `N2_ARTNR`, `artikelToken`(SUFFIX)
-    und `fedlexLinkFuerArtikel` müssen gemeinsam erweitert werden, sonst entsteht ein falscher
-    Anker; (b) ✅ erledigt (Wortlaut: Chronik, Umschichtung 6.9.2026);
+    (a) ✅ erledigt 14.9.2026 — die Suffix-Reihe (bis…duodecies) steht jetzt EINMAL in
+    `src/lib/fedlex/nummer.ts`; alle vier Konsumenten lesen sie. 13 Fundstellen in 9 Bundes-
+    erlassen lösen neu auf (41 unterdrückte Aufzählungs-Glieder → 50 Links, +2 Selbstsprünge),
+    0 kantonale Stellen, 0 neue tote Anker; (b) ✅ erledigt (Wortlaut: Chronik, Umschichtung 6.9.2026);
     (c) **Artikel-Anker gegen den Ziel-Snapshot prüfen, Fallback Erlass-Link** — ein Fremd-Anker
     entsteht heute allein aus Kürzel + Nummer, ohne dass die Zielbestimmung im Snapshot des
     Zielerlasses nachgeschlagen wird. Gemessen 2.9.2026: 16 tote Artikel-Anker aus Z5 (StGB

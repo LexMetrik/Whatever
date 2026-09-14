@@ -110,9 +110,18 @@ describe('ausgeschriebeneVerweiseImText — Negativfälle (§1: kein Link statt 
     expect(treffer(t, 'VZV')).toEqual([['Artikel 221', 'Art. 221 VTS']]);
   });
 
-  it('N6 IVG art_11a: «Artikel 29septies AHVG» — Suffix ausserhalb der geteilten Nummern-Grammatik', () => {
+  // Z6 a (W2·22, 14.9.2026, deklarierte fachliche Änderung): der Fall STAND
+  // hier als Negativfall, und das war zu seiner Zeit richtig — «septies» lag
+  // ausserhalb der Nummern-Grammatik, und ein erzwungener Treffer hätte den
+  // falschen Anker «#art_29septies» ergeben. Mit der geteilten Reihe
+  // (`lib/fedlex/nummer.ts`) kennen Erkennung UND Anker-Bau «septies», der
+  // Verweis löst auf das echte Ziel auf: AHVG führt `artikel: "29_septies"`
+  // (Snapshot 2026-01-01). Damit ist es kein Negativfall mehr, sondern der
+  // Beleg des Fixes — der Erwartungswert wechselt, die Regel «kein Link ist
+  // besser als ein falscher» bleibt unberührt.
+  it('N6 IVG art_11a: «Artikel 29septies AHVG» routet auf AHVG (Z6 a)', () => {
     const t = 'der Familienangehörigen, für die ihnen ein Anspruch auf Anrechnung einer Betreuungsgutschrift nach Artikel 29septies AHVG zusteht.';
-    expect(treffer(t, 'IVG')).toEqual([]);
+    expect(treffer(t, 'IVG')).toEqual([['Artikel 29septies', 'Art. 29septies AHVG']]);
   });
 
   it('N7 Self-Ausschluss: «Artikel 39 KVG» im KVG selbst', () => {

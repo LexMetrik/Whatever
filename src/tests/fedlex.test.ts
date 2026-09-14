@@ -409,8 +409,28 @@ describe('artikelnPluralVerweise — Plural-Aufzählungs-Regionen (A10)', () => 
     expect(rs[0].unterdruecken).toBe(true);
   });
 
-  it('Negativ (§1): unbekanntes lat. Suffix («42octies») bricht sauber ab ⇒ unterdrückt', () => {
+  // Z6 a (W2·22, 14.9.2026, deklarierte fachliche Änderung): «octies» WAR bis
+  // hierher ein unbekanntes Suffix — die Reihe endete an allen elf Kopien bei
+  // `sexies`, und die Region brach darum ab. Der damalige Befund bleibt wahr
+  // (er beschreibt den Stand vor der geteilten Reihe); seit `nummer.ts` ist
+  // «octies» amtlich bekannt (Korpus 14.9.2026: 17 Artikel-Token), also LÖST
+  // die Region jetzt auf. Der INVARIANT des Tests — ein Suffix ausserhalb der
+  // Reihe bricht sauber ab statt halb zu matchen — steht unverändert darunter,
+  // nur mit einem Suffix, das der Korpus wirklich nicht führt.
+  it('Z6 a: bekanntes lat. Suffix («42octies») löst als Glied auf', () => {
     const rs = artikelnPluralVerweise('gemäss den Artikeln 42quater–42octies IVG sinngemäss');
+    expect(rs).toHaveLength(1);
+    expect(rs[0].unterdruecken).toBe(false);
+    expect(rs[0].fremd).toBe('IVG');
+    expect(rs[0].glieder.map((g) => g.roh)).toEqual(['42quater', '42octies']);
+  });
+
+  it('Negativ (§1): unbekanntes lat. Suffix («42terdecies») bricht sauber ab ⇒ unterdrückt', () => {
+    // «terdecies» kommt im ganzen Snapshot-Korpus 0-mal vor (Messung 14.9.2026)
+    // und steht darum bewusst NICHT in ART_SUFFIXE. Entscheidend ist, dass die
+    // Nummer nicht als «42t» halb an-gematcht wird: lieber kein Glied als ein
+    // falsches Ziel.
+    const rs = artikelnPluralVerweise('gemäss den Artikeln 42quater–42terdecies IVG sinngemäss');
     expect(rs).toHaveLength(1);
     expect(rs[0].unterdruecken).toBe(true);
   });

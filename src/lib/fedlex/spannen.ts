@@ -15,6 +15,7 @@
 // über die Zitier-Grammatik (§5).
 
 import { type FedlexGesetz } from './tabelle';
+import { SUFFIX_ALT } from './nummer';
 import {
   erkenneFedlexGesetz,
   erkenneGenitivGesetz,
@@ -96,9 +97,9 @@ export interface NormVerweisSpan {
 }
 
 // Ketten-Glied (bare «Art. N [Abs./lit./Ziff./Satz …] [f./ff.]») OHNE Kürzel.
-const KETTE_ART = 'Art\\.\\s*\\d+[a-z]?(?:bis|ter|quater|quinquies|sexies)?';
+const KETTE_ART = 'Art\\.\\s*\\d+[a-z]?' + SUFFIX_ALT + '?';
 const KETTE_PASSUS =
-  '(?:\\s+(?:Abs\\.|lit\\.|Bst\\.|Ziff\\.|Ziffer|Satz)\\s*(?:\\d+[a-z]?(?:bis|ter|quater|quinquies|sexies)?|[a-z]))*';
+  '(?:\\s+(?:Abs\\.|lit\\.|Bst\\.|Ziff\\.|Ziffer|Satz)\\s*(?:\\d+[a-z]?' + SUFFIX_ALT + '?|[a-z]))*';
 const KETTE_FOLGE = '(?:\\s+ff?\\.)?';
 const KETTE_GLIED = `${KETTE_ART}${KETTE_PASSUS}${KETTE_FOLGE}`;
 // Ketten-Konnektoren (NICHT Semikolon — der bricht die Kette bewusst).
@@ -497,6 +498,12 @@ export function erlassVerweiseImText(text: string, eigenesKuerzel?: string): Nor
 //     5 Stellen mit septies/octies-Nummer, davon EINE in Z5-Form. Der Wurzel-Fix
 //     ist ein eigener Schritt an der Nummern-Grammatik, kein Sonderweg hier
 //     (§17: Workaround nur mit hinterlegtem Wurzel-Fix).
+//     ERLEDIGT 14.9.2026 (Z6 a): der Wurzel-Fix ist gebaut — die Reihe steht
+//     jetzt EINMAL in `nummer.ts` (bis/…/duodecies) und wird von allen vier
+//     Konsumenten gelesen; KETTE_ART hier eingeschlossen. Der Befund oben
+//     beschreibt den Stand VOR dem Fix und bleibt als solcher stehen. Die
+//     Grenze ist damit nicht weg, nur verschoben: was der Korpus nicht führt
+//     (terdecies …), bleibt unverlinkt — gemessen, nicht geraten (§7).
 //   · Keine Ketten-Propagierung: «Art. 5 i.V.m. Artikel 6 OR» verlinkt das
 //     ausgeschriebene Glied, nicht das vorangehende bare. Die Ketten-Regel
 //     hängt an NORM_IM_TEXT und bleibt unberührt (rein additiv, §6).
