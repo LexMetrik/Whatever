@@ -19,17 +19,8 @@
 // und Zeit-Kanten-Stellen (Selbstmarker in Übergangs-/Altrecht-Kontext; nur
 // Zählung, siehe V-5).
 //
-// Z6c-NACHSCHLAG (14.9.2026). Der Ziel-Erlass und der Ziel-Token kommen aus
-// `bundSnapshotRef` — DEM Resolver, den auch NormChip mit demselben Zitat-Text
-// ruft; nachgeschlagen wird in der Token-Menge des Ziel-SNAPSHOTS. Drei Lagen,
-// bewusst getrennt (§1/§8):
-//   · Ziel-Token vorhanden            → Artikel-Anker, unverändert.
-//   · Ziel-Token fehlt ganz           → toter Anker ⇒ Erlass-Link (Fallback).
-//   · Ziel liegt in einem SAMMELBLOCK → toter Anker; die Bestimmung EXISTIERT,
-//     aber der Snapshot führt sie unter «Art. a–b» (meist Aufhebungs-Block).
-//     Auch hier Erlass-Link — den Block anzuspringen hiesse, «Art. 882 ZGB» auf
-//     «Art. 876–883» zu biegen; das ist ein eigener, deklarierter Schritt wert.
-//   · Ziel-Erlass ohne Snapshot       → NICHT prüfbar, nichts ändert sich.
+// Wie der Z6c-Nachschlag arbeitet (Resolver, die vier Lagen) und wie zwei
+// Messungen verglichen werden, steht in `verweis-inventar-messung.ts` §3b/§3c.
 //
 // ─── TRANSKRIPTION (§8-Offenlegung, bindend lesen) ──────────────────────────
 //
@@ -58,24 +49,9 @@
 //     Vergleich sieht), wird das Tor rot und verlangt eine bewusste
 //     Regeneration der Basislinie.
 //
-// GRENZEN (§8, nicht wegglätten):
-//   · Gemessen wird die Transkription, nicht das React-Rendering.
-//   · Text-Umfang = `bloecke[].text` und `bloecke[].items[].text` aller
-//     Snapshots. Präambel/Ingress (ErlassKopfBlock), Tabellen- und Bild-
-//     Sonderpfade sind NICHT enthalten. (Der Messbericht vom 31.8.2026 mass
-//     nur die BLOCK-Texte — daher dort 24 489 statt 34 058 Stellen; sein
-//     datierter Befund bleibt unangetastet, hier steht der weitere Umfang.)
-//   · Der Kontext ist der des Lesers (`useInternRefs`): tokenMap aus den
-//     Snapshot-Artikeln, `paragrafDesigniert` aus GRUNDART_SEED,
-//     `eigenesKuerzel` aus dem Register-Key, `registerKuerzel` aus dem
-//     Register-Feld `kuerzel`. Der Chapeau-Kontext (M6/M6-D, ArtikelBody) ist
-//     für Items nachgebildet.
-//   · Die Spalte `selbstmarker` zählt seit V-2 (Commit 967870b41) exakt die
-//     Stellen, an denen `selbstSignalAmZitat` greift — der frühere EIGENE
-//     Detektor dieses Tors ist ersetzt (§5, keine zweite Wahrheit). Er läuft
-//     nur an SINGULÄREN «Art. N»/«§ N»-Stellen, nicht an Plural-Regionen.
-//   · Zeit-Kante = Kontext-INDIZ (Randtitel «Übergangs…» bzw. Altrecht-Wendung
-//     im Block), keine rechtliche Klassifikation.
+// Die GRENZEN der Messung (§8: Text-Umfang, Leser-Kontext, was die Spalte
+// `selbstmarker` zählt, Zeit-Kante als Indiz) stehen bei der Mess-Maschine,
+// `verweis-inventar-messung.ts` §0 — dort, wo sie entstehen.
 //
 // BASISLINIEN-MODELL (Vorbild `check:ui-normzitate`): das Artefakt ist
 // committet; das Tor rechnet neu und vergleicht. Jede Abweichung ist ROT.
@@ -99,7 +75,7 @@ import { waechterGuards } from './verweis-inventar-transkription';
 // in `verweis-inventar-messung.ts` — hier lebt nur das Tor: CLI, Wächter,
 // Basislinien-Vergleich, Bericht (§6.6-Trennung, 31.8.2026).
 import {
-  ARTEFAKT_PFAD, WURZEL, berechne, selbsttest,
+  ARTEFAKT_PFAD, WURZEL, berechne, selbsttest, vergleicheListe, vergleicheZahlen,
   type Artefakt, type TotesZiel, type TotesFremdziel,
 } from './verweis-inventar-messung';
 
@@ -180,46 +156,24 @@ for (const z of ist.klassen) {
 for (const z of soll.klassen ?? []) {
   if (!ist.klassen.some((k) => k.klasse === z.klasse)) abweichungen.push(`Klasse «${z.klasse}» ist WEGGEFALLEN.`);
 }
-for (const feld of ['erlasse', 'eintraege', 'texte'] as const) {
-  if (soll.korpus?.[feld] !== ist.korpus[feld]) {
-    abweichungen.push(`korpus.${feld}: ${soll.korpus?.[feld]} → ${ist.korpus[feld]}`);
-  }
-}
-const schluessel = (t: TotesZiel) => `${t.fundstelle}|${t.bestimmung}`;
-const sollTot = new Set((soll.toteSelbstziele ?? []).map(schluessel));
-const istTot = new Set(ist.toteSelbstziele.map(schluessel));
-for (const t of ist.toteSelbstziele) if (!sollTot.has(schluessel(t))) abweichungen.push(`Totes Selbstziel NEU: ${schluessel(t)}`);
-for (const k of sollTot) if (!istTot.has(k)) abweichungen.push(`Totes Selbstziel BEHOBEN: ${k} (Basislinie nachziehen)`);
-
-// ─── Z6c (W2·22) · tote FREMD-Anker ─────────────────────────────────────────
-// Dieselbe Basislinien-Mechanik wie oben, eine Ebene weiter: hier ist das Ziel
-// ein ANDERER Erlass. Jeder Zuwachs ist rot — ein neuer Erkenner-Pfad, der
-// mehr Stellen verlinkt, darf keine neue Anker-Leiche erzeugen (§1). Ein
-// BEHOBENER Eintrag ist ebenfalls rot: er heisst entweder «der Zielerlass hat
-// die Bestimmung bekommen» (schön, Basislinie nachziehen) oder «der Erkenner
-// erkennt die Stelle nicht mehr» (stiller Link-Verlust) — beides gehört
-// angesehen, nicht weggerechnet.
-const fSchluessel = (t: TotesFremdziel) => `${t.fundstelle}|${t.quelle}/${t.token}`;
-const sollFremd = new Map((soll.toteFremdanker ?? []).map((t) => [fSchluessel(t), t]));
-const istFremd = new Set(ist.toteFremdanker.map(fSchluessel));
-for (const t of ist.toteFremdanker) {
-  const s = sollFremd.get(fSchluessel(t));
-  if (!s) { abweichungen.push(`Toter Fremd-Anker NEU: ${fSchluessel(t)} («${t.ziel}», ${t.klasse})`); continue; }
-  if ((s.sammelblock ?? null) !== (t.sammelblock ?? null)) {
-    abweichungen.push(`Toter Fremd-Anker ${fSchluessel(t)}: Sammelblock ${s.sammelblock ?? '—'} → ${t.sammelblock ?? '—'}`);
-  }
-}
-for (const k of sollFremd.keys()) if (!istFremd.has(k)) abweichungen.push(`Toter Fremd-Anker BEHOBEN: ${k} (Basislinie nachziehen)`);
-for (const feld of ['geprueft', 'tot', 'sammelblock', 'ohneSnapshot'] as const) {
-  if (soll.fremdZiele?.[feld] !== ist.fremdZiele[feld]) {
-    abweichungen.push(`fremdZiele.${feld}: ${soll.fremdZiele?.[feld]} → ${ist.fremdZiele[feld]}`);
-  }
-}
-for (const feld of ['stellen', 'erlasse', 'uebergangsTitel', 'altrechtBlock'] as const) {
-  if (soll.zeitKanten?.[feld] !== ist.zeitKanten[feld]) {
-    abweichungen.push(`zeitKanten.${feld}: ${soll.zeitKanten?.[feld]} → ${ist.zeitKanten[feld]}`);
-  }
-}
+abweichungen.push(...vergleicheZahlen('korpus', soll.korpus, ist.korpus, ['erlasse', 'eintraege', 'texte']));
+abweichungen.push(...vergleicheListe<TotesZiel>(
+  'Totes Selbstziel', soll.toteSelbstziele, ist.toteSelbstziele,
+  (t) => `${t.fundstelle}|${t.bestimmung}`,
+));
+// Z6c (W2·22): dieselbe Mechanik eine Ebene weiter — das Ziel ist ein ANDERER
+// Erlass. Ein neuer Erkenner-Pfad, der mehr Stellen verlinkt, darf keine neue
+// Anker-Leiche erzeugen (§1); darum ist jeder Zuwachs rot.
+abweichungen.push(...vergleicheListe<TotesFremdziel>(
+  'Toter Fremd-Anker', soll.toteFremdanker, ist.toteFremdanker,
+  (t) => `${t.fundstelle}|${t.quelle}/${t.token}`,
+  (s2, i2) => ((s2.sammelblock ?? null) === (i2.sammelblock ?? null) ? null
+    : `Sammelblock ${s2.sammelblock ?? '—'} → ${i2.sammelblock ?? '—'}`),
+));
+abweichungen.push(...vergleicheZahlen('fremdZiele', soll.fremdZiele, ist.fremdZiele,
+  ['geprueft', 'tot', 'sammelblock', 'ohneSnapshot']));
+abweichungen.push(...vergleicheZahlen('zeitKanten', soll.zeitKanten, ist.zeitKanten,
+  ['stellen', 'erlasse', 'uebergangsTitel', 'altrechtBlock']));
 
 if (abweichungen.length > 0) {
   console.error(`check:verweis-inventar ROT — ${abweichungen.length} Abweichung(en) gegen die Basislinie:`);

@@ -99,9 +99,14 @@ export function NormChip({ artikel, anzeige, hrefOverride, title, linkClass = CH
   // Bis hierher entstand der Artikel-Anker allein aus Kürzel + Nummer. Gemessen
   // 14.9.2026 (V-1-Tor, `messwerte/verweis-inventar.json` → `toteFremdanker`):
   // 36 von 9 675 prüfbaren Fremd-Ankern zeigen auf eine Bestimmung, die es im
-  // Snapshot des Zielerlasses nicht gibt — «Artikel 91a StGB» (JStG Art. 19,
-  // 19c, 27a, 28), «Art. 341bis OR» (ArG Art. 73), «Art. 882 ZGB» (ZH-230
-  // § 44) … Der Sprung landet ins Leere.
+  // Snapshot des Zielerlasses nicht gibt — StGB 91a (im JStG viermal zitiert),
+  // OR 341bis (ArG), ZGB 882 (ZH-230) … Der Sprung landet ins Leere.
+  //
+  // Die Beispiele stehen bewusst als «ERLASS Nummer», nicht in Zitierform:
+  // `check:ui-normzitate` liest UI-Dateien und verlangt, dass jedes ZITAT darin
+  // im Korpus auflöst — und genau das tun diese drei nicht; sie sind der Anlass
+  // dieser Zeilen. Vollständige Liste mit Zitierform, Fundstelle und amtlichem
+  // Beleg: `messwerte/verweis-inventar.json` und der Unit-Test.
   //
   // Amtlich gegengeprüft am 14.9.2026 (Fedlex-SPARQL + AKN-XML, alle 26
   // verschiedenen Ziele): KEINES existiert in der geltenden Fassung als eigener

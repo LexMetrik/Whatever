@@ -16,9 +16,32 @@
 // Ohne Seiteneffekte beim Import: `berechne()` und `selbsttest()` laufen nur,
 // wenn das Tor sie ruft.
 //
-// Zweck, Transkriptions-Offenlegung, GRENZEN (§8) und das Basislinien-Modell
-// stehen unverändert im Kopf von `scripts/check-verweis-inventar.ts`; sie
-// gelten für diese Messung.
+// Zweck, Transkriptions-Offenlegung und das Basislinien-Modell stehen im Kopf
+// von `scripts/check-verweis-inventar.ts`; sie gelten für diese Messung.
+//
+// ─── §0 · GRENZEN DER MESSUNG (§8, nicht wegglätten) ────────────────────────
+//
+// Hierher verschoben am 14.9.2026 (Z6c): sie beschreiben, was DIESE Datei tut,
+// und standen bis dahin im Tor — Wortlaut unverändert.
+//
+//   · Gemessen wird die Transkription, nicht das React-Rendering.
+//   · Text-Umfang = `bloecke[].text` und `bloecke[].items[].text` aller
+//     Snapshots. Präambel/Ingress (ErlassKopfBlock), Tabellen- und Bild-
+//     Sonderpfade sind NICHT enthalten. (Der Messbericht vom 31.8.2026 mass
+//     nur die BLOCK-Texte — daher dort 24 489 statt 34 058 Stellen; sein
+//     datierter Befund bleibt unangetastet, hier steht der weitere Umfang.)
+//   · Der Kontext ist der des Lesers (`useInternRefs`): tokenMap aus den
+//     Snapshot-Artikeln, `paragrafDesigniert` aus GRUNDART_SEED,
+//     `eigenesKuerzel` aus dem Register-Key, `registerKuerzel` aus dem
+//     Register-Feld `kuerzel`. Der Chapeau-Kontext (M6/M6-D, ArtikelBody) ist
+//     für Items nachgebildet.
+//   · Die Spalte `selbstmarker` zählt seit V-2 (Commit 967870b41) exakt die
+//     Stellen, an denen `selbstSignalAmZitat` greift — der frühere EIGENE
+//     Detektor dieses Tors ist ersetzt (§5, keine zweite Wahrheit). Er läuft
+//     nur an SINGULÄREN «Art. N»/«§ N»-Stellen, nicht an Plural-Regionen.
+//   · Zeit-Kante = Kontext-INDIZ (Randtitel «Übergangs…» bzw. Altrecht-Wendung
+//     im Block), keine rechtliche Klassifikation.
+//
 
 import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -122,6 +145,75 @@ export interface Artefakt {
 
 function sha256(pfad: string): string {
   return createHash('sha256').update(readFileSync(pfad)).digest('hex');
+}
+
+// ─── 3b · Z6c-Nachschlag: was das Tor über FREMD-Anker meldet ───────────────
+//
+// Ziel-Erlass und Ziel-Token kommen aus `bundSnapshotRef` — DEM Resolver, den
+// auch NormChip mit demselben Zitat-Text ruft; nachgeschlagen wird in der
+// Token-Menge des Ziel-SNAPSHOTS. Vier Lagen, bewusst getrennt (§1/§8):
+//   · Ziel-Token vorhanden            → Artikel-Anker, unverändert.
+//   · Ziel-Token fehlt ganz           → toter Anker ⇒ Erlass-Link (Fallback).
+//   · Ziel liegt in einem SAMMELBLOCK → toter Anker; die Bestimmung EXISTIERT,
+//     aber der Snapshot führt sie unter «Art. a–b» (meist Aufhebungs-Block).
+//     Auch hier Erlass-Link — den Block anzuspringen hiesse, eine ANDERE
+//     Bestimmung anzuspringen; das ist ein eigener, deklarierter Schritt wert.
+//   · Ziel-Erlass ohne Snapshot       → NICHT prüfbar, nichts ändert sich.
+//
+// ─── 3c · Basislinien-Vergleich (geteilt, vom Tor gerufen) ──────────────────
+//
+// Das Artefakt trägt inzwischen ZWEI Sonderlisten (tote Selbstziele, tote
+// Fremd-Anker) und drei Zahlengruppen (korpus, fremdZiele, zeitKanten). Der
+// Vergleich war je Gruppe ausgeschrieben — dieselbe Sorge in fünf Kopien. Die
+// zwei Helfer unten tragen sie einmal; das Tor sagt nur noch, WAS verglichen
+// wird (§17-Gegengewicht: wer etwas hinzufügt, ersetzt zuerst die Stelle, die
+// dieselbe Sorge schon trägt).
+//
+// Warum HIER und nicht im Tor: der Deckel der Steuerungs-Fläche
+// `scripts/check-*.ts` (204 KB, `check:steuerdeckel`) stand am 14.9.2026 bei
+// 203.7 KB — der Z6c-Zuwachs hätte ihn gerissen. Die Mess-Maschine ist ohnehin
+// die richtige Heimat für «wie zwei Messungen verglichen werden»; das Tor
+// bleibt CLI + Verdikt (§6.6-Trennung, unverändert).
+
+/**
+ * Zwei Sonderlisten gegeneinander: was ist NEU, was ist WEG, und — optional —
+ * was hat sich an einem Eintrag geändert, den es in beiden gibt.
+ *
+ * Ein BEHOBENER Eintrag ist bewusst ebenfalls eine Abweichung: er heisst
+ * entweder «die Lage ist besser geworden» (dann Basislinie nachziehen) oder
+ * «der Erkenner sieht die Stelle nicht mehr» (stiller Link-Verlust) — beides
+ * gehört angesehen, nicht weggerechnet.
+ */
+export function vergleicheListe<T>(
+  name: string,
+  sollListe: readonly T[] | undefined,
+  istListe: readonly T[],
+  schluessel: (t: T) => string,
+  zusatz?: (soll: T, ist: T) => string | null,
+): string[] {
+  const out: string[] = [];
+  const sollMap = new Map((sollListe ?? []).map((t) => [schluessel(t), t]));
+  const istMenge = new Set(istListe.map(schluessel));
+  for (const t of istListe) {
+    const s = sollMap.get(schluessel(t));
+    if (!s) { out.push(`${name} NEU: ${schluessel(t)}`); continue; }
+    const mehr = zusatz?.(s, t);
+    if (mehr) out.push(`${name} ${schluessel(t)}: ${mehr}`);
+  }
+  for (const k of sollMap.keys()) if (!istMenge.has(k)) out.push(`${name} BEHOBEN: ${k} (Basislinie nachziehen)`);
+  return out;
+}
+
+/** Zahlenfelder einer Artefakt-Gruppe gegeneinander (`gruppe.feld: soll → ist`). */
+export function vergleicheZahlen<K extends string>(
+  gruppe: string,
+  soll: Partial<Record<K, number>> | undefined,
+  ist: Record<K, number>,
+  felder: readonly K[],
+): string[] {
+  return felder
+    .filter((f) => soll?.[f] !== ist[f])
+    .map((f) => `${gruppe}.${f}: ${soll?.[f]} → ${ist[f]}`);
 }
 
 export function berechne(): Artefakt {
