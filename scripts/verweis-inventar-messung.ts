@@ -144,6 +144,9 @@ export function berechne(): Artefakt {
       kantonKuerzel: karteFuerErlass(kantonKarten, e),
       // V-7: NormText leitet die Ebene aus dem Basispfad ab (`/gesetze/kanton/…`).
       ebene: e.ebene === 'kanton' ? 'kanton' : 'bund',
+      // V-7c: NormText reicht das letzte Pfadsegment (= Register-Key) roh an
+      // `fremdRoutingFormB` durch — Schlüssel der Trägergesetz-Tabelle.
+      erlassKey: e.key,
     };
 
     for (const eintrag of snap.eintraege) {
@@ -257,6 +260,13 @@ export function selbsttest(): void {
     tokenMap: new Map([['7', '7']]),
     eigenesKuerzel: 'AR1461', registerKuerzel: 'DSG AR', paragrafDesigniert: false, ebene: 'kanton',
   };
+  // V-7c: Vollzugsverordnung mit Trägergesetz-Eintrag (ARGV1 → ArG).
+  const argv1: Ctx = {
+    tokenMap: new Map([['18', '18']]),
+    eigenesKuerzel: 'ARGV1', registerKuerzel: 'ArGV 1', paragrafDesigniert: false, erlassKey: 'ARGV1',
+  };
+  // … derselbe Erlass für die Selbstmarker-Gegenprobe (Art. 5 existiert dort).
+  const argv1self: Ctx = { ...argv1, tokenMap: new Map([['5', '5']]) };
   const proben: [string, Ctx | null, string, boolean][] = [
     // Text, Kontext, erwartete Klasse der ERSTEN Stelle, erwarteter Selbstmarker
     ['Massgeblich ist Art. 336c OR für diesen Fall.', artErlass, 'anker-fedlex', false],
@@ -326,6 +336,15 @@ export function selbsttest(): void {
     // … Kopf «Verordnung» nur im Bund; im Kanton bleibt es der des/der-Guard.
     ['Es gilt Art. 7 der Verordnung über die Krankenversicherung.', ssv, 'n2b-titel', false],
     ['Es gilt Art. 7 der Verordnung über die Krankenversicherung.', kantonArt, 'art-desder-guard', false],
+    // ── V-7c (Trägergesetz-Kontext «des Gesetzes») ─────────────────────────
+    // Vollzugsverordnung MIT Legaldefinition im Ingress ⇒ Link aufs Trägergesetz.
+    ['Die Pause nach Artikel 15 des Gesetzes ist zu gewähren.', argv1, 'n2b-traeger', false],
+    // … derselbe Satz in einem Erlass OHNE Trägergesetz-Eintrag bleibt Text.
+    ['Die Pause nach Artikel 15 des Gesetzes ist zu gewähren.', ssv, 'art-desder-guard', false],
+    // «dieses Gesetzes» bleibt der Selbstmarker — die V-7c-Weiche darf ihn nicht fassen.
+    ['Die Frist nach Art. 5 dieses Gesetzes beginnt.', argv1self, 'art-self', true],
+    // Zitiertes Datum, das dem Trägergesetz WIDERSPRICHT ⇒ kein Link (Zeit-Kante).
+    ['Die Pause nach Artikel 15 des Gesetzes vom 1. Januar 1900 ist zu gewähren.', argv1, 'art-desder-guard', false],
     // V-7a Kurztitel mit Geltung «bund»: im Bund Link, im Kanton Text (AR-146.1 heisst gleich).
     ['Es gilt Art. 7 des Datenschutzgesetzes.', ssv, 'n2b-genitiv', false],
     ['Es gilt Art. 7 des Datenschutzgesetzes.', kantonArt, 'art-desder-guard', false],

@@ -309,6 +309,7 @@ export const KLASSEN: Record<string, { entscheid: Entscheid; was: string }> = {
   'n2b-glied': { entscheid: 'FREMD', was: 'Glied der Form B «Artikel N … des <Name> (KÜRZEL)» — Klammer-Kürzel' },
   'n2b-genitiv': { entscheid: 'FREMD', was: 'Form-B-Glied über kuratierten Kurztitel-Genitiv ohne Klammer («des Bankengesetzes», V-7a; Geltung je Ebene)' },
   'n2b-titel': { entscheid: 'FREMD', was: 'Form-B-Glied über amtlichen Volltitel «Bundesgesetzes/Verordnung [vom Datum] über …» (V-7b)' },
+  'n2b-traeger': { entscheid: 'FREMD', was: 'Form-B-Glied über die namenlose Kurzform «des Gesetzes» → Trägergesetz des gelesenen Erlasses (V-7c)' },
   'n2b-glied-text': { entscheid: 'TEXT', was: 'Form-B-Glied ohne Ziel-Token (heute strukturell 0 — NormText übergibt kein Prädikat)' },
   'paragraf-fremd-grosswort': { entscheid: 'TEXT', was: '«§ N <Grosswort>» — Fremd-Indiz, kein Link' },
   'paragraf-kanton-kuerzel': { entscheid: 'FREMD', was: '«§ N KÜRZEL» — im Kanton EINDEUTIGES Kürzel eines anderen Erlasses → Link auf dessen Lesesicht (V-3)' },
@@ -341,6 +342,11 @@ export interface Ctx {
    *  ab (`/gesetze/kanton/…` ⇒ kanton, sonst bund); Kurznamen mit Geltung
    *  `bund` lösen in kantonalen Erlassen nicht auf (`positivliste.ts`). */
   ebene?: FremdEbene;
+  /** V-7c: ROHER Register-Key des gelesenen Erlasses — NormText leitet ihn aus
+   *  dem letzten Segment des Basispfads ab und reicht ihn an
+   *  `fremdRoutingFormB` durch; er entscheidet, ob «des Gesetzes» auf das
+   *  Trägergesetz auflöst (`TRAEGER_EINTRAEGE`). */
+  erlassKey?: string;
 }
 
 export interface Stelle {
@@ -366,7 +372,7 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
   const out: Stelle[] = [];
   const paragrafErlass = ctx.paragrafDesigniert;
   const ebene: FremdEbene = ctx.ebene ?? 'bund';
-  const pluralRegionen = artikelnPluralVerweise(s, ebene);
+  const pluralRegionen = artikelnPluralVerweise(s, ebene, ctx.erlassKey);
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
 
@@ -441,11 +447,13 @@ function restStellen(s: string, ctx: Ctx): Stelle[] {
     emitPluralBis(m.index);
     const start = m.index;
     const rest = s.slice(start + m[0].length);
-    const routing = fremdRoutingFormB(rest, m[1], undefined, ebene);
+    const routing = fremdRoutingFormB(rest, m[1], undefined, ebene, ctx.erlassKey);
     // V-7: Volltitel des GELESENEN Erlasses ist kein Fremdverweis (wie Original).
     if (routing && kuerzelKanon(routing.gesetz) !== ctx.eigenesKuerzel) {
       // V-7: Klasse nach Erkennungs-Signal (Klammer / Genitiv-Kurztitel / Volltitel).
-      const klasse = routing.signal === 'klammer' ? 'n2b-glied' : routing.signal === 'genitiv' ? 'n2b-genitiv' : 'n2b-titel';
+      const klasse = routing.signal === 'klammer' ? 'n2b-glied'
+        : routing.signal === 'genitiv' ? 'n2b-genitiv'
+        : routing.signal === 'traeger' ? 'n2b-traeger' : 'n2b-titel';
       for (const g of routing.glieder) {
         out.push(stelle(g.linkbar ? klasse : 'n2b-glied-text', g.roh, ctx));
       }

@@ -153,6 +153,33 @@ export const GENITIV_EINTRAEGE: ReadonlyArray<GenitivEintrag> = [
   { name: 'Familienzulagengesetzes', gesetz: 'FAMZG', geltung: 'bund', beleg: 'Familienzulagengesetz' },
   { name: 'Publikationsgesetzes', gesetz: 'PUBLG', geltung: 'bund', beleg: 'Publikationsgesetz' },
   { name: 'Waldgesetzes', gesetz: 'WAG', geltung: 'bund', beleg: 'Waldgesetz' },
+  // ── V-7-Bund-Rest (14.9.2026): amtliche Kurztitel aus der Titel-KLAMMER des
+  //    Ziels, deren Erlass im Korpus liegt. Gemessen als unaufgelöste Form-B-
+  //    Köpfe (Sonde über alle Bund-Snapshots, 14.9.2026; Stellenzahl in
+  //    Klammern). Geltung durchgehend `bund`: es sind Verordnungs-Kurztitel,
+  //    die ein Kanton gleich benennen kann («Datenschutzverordnung»,
+  //    «Raumplanungsverordnung», «Abfallverordnung») — alle gemessenen Stellen
+  //    stehen ohnehin in Bundeserlassen, die Einschränkung kostet nichts (§1).
+  //    Kandidaten OHNE Korpus-Erlass (Revisionsaufsichts-, Subventions-,
+  //    Zoll-, Strafregister-, Post-, Gaststaat-, Medizinalberufegesetz …)
+  //    bleiben bewusst draussen: der Wächter verlangt ein Erlassdatum aus dem
+  //    Struktur-Sidecar, das es ohne Snapshot nicht gibt (Begründung im
+  //    Dossier `bibliothek/normtext/verweis-traegergesetz-messung-2026-09-14.md`).
+  { name: 'Arzneimittelverordnung', gesetz: 'VAM', geltung: 'bund', beleg: 'Arzneimittelverordnung' }, // 3
+  { name: 'Datenschutzverordnung', gesetz: 'DSV', geltung: 'bund', beleg: 'Datenschutzverordnung' }, // 2
+  { name: 'Raumplanungsverordnung', gesetz: 'RPV', geltung: 'bund', beleg: 'Raumplanungsverordnung' }, // 2
+  { name: 'Bundespersonalverordnung', gesetz: 'BPV', geltung: 'bund', beleg: 'Bundespersonalverordnung' }, // 2
+  { name: 'Chemikalienverordnung', gesetz: 'ChemV', geltung: 'bund', beleg: 'Chemikalienverordnung' }, // 2
+  { name: 'Lärmschutz-Verordnung', gesetz: 'LSV', geltung: 'bund', beleg: 'Lärmschutz-Verordnung' }, // 2
+  { name: 'Erwerbsersatzverordnung', gesetz: 'EOV', geltung: 'bund', beleg: 'Erwerbsersatzverordnung' }, // 2
+  { name: 'Handelsregisterverordnung', gesetz: 'HRegV', geltung: 'bund', beleg: 'Handelsregisterverordnung' }, // 1
+  { name: 'Abfallverordnung', gesetz: 'VVEA', geltung: 'bund', beleg: 'Abfallverordnung' }, // 1
+  { name: 'Bankenverordnung', gesetz: 'BankV', geltung: 'bund', beleg: 'Bankenverordnung' }, // 1
+  { name: 'Medizinprodukteverordnung', gesetz: 'MepV', geltung: 'bund', beleg: 'Medizinprodukteverordnung' }, // 1
+  { name: 'Finanzmarktinfrastrukturverordnung', gesetz: 'FinfraV', geltung: 'bund', beleg: 'Finanzmarktinfrastrukturverordnung' }, // 1
+  { name: 'Verkehrszulassungsverordnung', gesetz: 'VZV', geltung: 'bund', beleg: 'Verkehrszulassungsverordnung' }, // 1
+  { name: 'Freizügigkeitsverordnung', gesetz: 'FZV', geltung: 'bund', beleg: 'Freizügigkeitsverordnung' }, // 1
+  { name: 'Adoptionsverordnung', gesetz: 'AdoV', geltung: 'bund', beleg: 'Adoptionsverordnung' }, // 1
 ];
 
 // ─── V-7b · Amtliche Volltitel «Bundesgesetzes/Verordnung [vom Datum] über …» ──
@@ -332,6 +359,88 @@ export function schreibweiseZuKey(schreibweise: string): FedlexGesetz | null {
   return KUERZEL_SCHREIBWEISEN.find(([s]) => s === schreibweise)?.[1] ?? null;
 }
 
+// ─── V-7c · Trägergesetz-Kontext «Artikel N des Gesetzes» ────────────────────
+//
+// PROBLEM (gemessen 14.9.2026 über alle Bund-Snapshots): 35 Bund-Stellen
+// zitieren «Artikel N des Gesetzes» — ohne Namen. Der des/der-Guard macht
+// daraus Text. Der Verweis ist aber nicht unbestimmt: in einer Vollzugs-
+// verordnung meint «das Gesetz» das Gesetz, auf das sie sich stützt.
+//
+// AMTLICHER BELEG, nicht Vermutung (§1/§7): der Gesetzgeber DEFINIERT die
+// Kurzform selbst im Ingress, in der Klammer hinter dem zitierten Erlass —
+// «gestützt auf Artikel 27 des Arbeitsgesetzes vom 13. März 1964 (Gesetz),».
+// Ein Ingress mit mehreren zitierten Erlassen bleibt eindeutig, weil die
+// Legaldefinition an genau einem davon hängt (ARGV1 nennt ArG, UVG und DSG —
+// «(Gesetz, ArG)» steht nur beim Arbeitsgesetz).
+//
+// QUELLE (§5): `kopf.praeambel[rolle='ingress']` des Struktur-Sidecars
+// `public/normtext/struktur/bund/<KEY>.json`, aus der amtlichen Fedlex-Fassung
+// übernommen; das Register führt `quelleUrl`/`stand`. Diese Tabelle ist eine
+// KURATIERTE Auswahl daraus, keine Ableitung: ein neuer Erlass mit derselben
+// Wendung bekommt den Link erst, wenn er hier steht. Der Wächter
+// `src/tests/fedlex-traegergesetz.test.ts` prüft JEDEN Eintrag gegen den
+// Ingress (genau eine «(… Gesetz …)»-Klammer; das davor zitierte Erlassdatum
+// ist das Erlassdatum des Ziels) — ein erfundener Eintrag reisst das Tor.
+//
+// NICHT aufgenommen (gemessene Gegenprobe, bleiben Text):
+//   · bund/BANKG art_16 und bund/GSCHG art_83 — Gesetze ohne solche
+//     Legaldefinition im Ingress;
+//   · bund/LUGUE annex_I (2 Stellen) — «des Gesetzes zur Lösung von
+//     Gesetzeskollisionen …» ist ein AUSLÄNDISCHES Gesetz, kein Trägergesetz.
+export interface TraegerEintrag {
+  /** Register-Key der Verordnung (= letztes Segment des Lese-Basispfads). */
+  verordnung: string;
+  /** Das im Ingress als «Gesetz» legaldefinierte Trägergesetz. */
+  gesetz: FedlexGesetz;
+  /** Beleg: der Ingress-Wortlaut mit der Legaldefinition, wörtlich. */
+  beleg: string;
+}
+export const TRAEGER_EINTRAEGE: ReadonlyArray<TraegerEintrag> = [
+  {
+    verordnung: 'ARGV1', gesetz: 'ArG',
+    beleg: 'gestützt auf Artikel 40 des Arbeitsgesetzes vom 13. März 1964 (Gesetz, ArG)',
+  },
+  {
+    verordnung: 'ARGV2', gesetz: 'ArG',
+    beleg: 'gestützt auf Artikel 27 des Arbeitsgesetzes vom 13. März 1964 (Gesetz),',
+  },
+  {
+    verordnung: 'UVV', gesetz: 'UVG',
+    beleg: 'auf das Bundesgesetz vom 20. März 1981 über die Unfallversicherung (Gesetz/UVG)',
+  },
+  {
+    verordnung: 'MVV', gesetz: 'MVG',
+    beleg: 'des Bundesgesetzes vom 19. Juni 1992 über die Militärversicherung (Gesetz),',
+  },
+  {
+    verordnung: 'LSV', gesetz: 'USG',
+    beleg: 'des Umweltschutzgesetzes vom 7. Oktober 1983 (Gesetz),',
+  },
+  {
+    verordnung: 'LRV', gesetz: 'USG',
+    beleg: 'des Bundesgesetzes vom 7. Oktober 1983 über den Umweltschutz (Gesetz),',
+  },
+  {
+    verordnung: 'VKL', gesetz: 'KVG',
+    beleg: 'gestützt auf Artikel 96 des Bundesgesetzes vom 18. März 1994 über die Krankenversicherung (Gesetz),',
+  },
+];
+
+const TRAEGER_BY_KEY = new Map<string, FedlexGesetz>(
+  TRAEGER_EINTRAEGE.map((e) => [e.verordnung.toUpperCase(), e.gesetz]),
+);
+
+/**
+ * Trägergesetz des GELESENEN Erlasses — das Gesetz, das sein Ingress als
+ * «Gesetz» legaldefiniert. Ohne Eintrag null (⇒ «des Gesetzes» bleibt Text).
+ *
+ * @param erlassKey Register-Key des gelesenen Erlasses (letztes Segment des
+ *        Lese-Basispfads, z. B. `ARGV1`).
+ */
+export function traegergesetzFuerErlass(erlassKey: string | undefined): FedlexGesetz | null {
+  return erlassKey ? TRAEGER_BY_KEY.get(erlassKey.toUpperCase()) ?? null : null;
+}
+
 // ─── V-5 · Erlassdatum je Ziel-Erlass (Zeit-Kante, Fix-Runde 1 zu W2·20) ──────
 //
 // PROBLEM (Gegenprüfung 1.9.2026, Blocker 2): Die Zitier-Konvention nennt den
@@ -386,6 +495,7 @@ export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
   'BOEB': '2019-06-21',
   'BPG': '2000-03-24',
   'BPR': '1976-12-17',
+  'BPV': '2001-07-03',
   'BUEG': '2014-06-20',
   'BV': '1999-04-18',
   'BVG': '1982-06-25',
@@ -408,6 +518,7 @@ export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
   'ENTG': '1930-06-20',
   'ENTSG': '1999-10-08',
   'EOG': '1952-09-25',
+  'EOV': '2004-11-24',
   'ERV': '2012-06-01',
   'EnG': '2016-09-30',
   'EpG': '2012-09-28',
@@ -431,6 +542,7 @@ export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
   'GSCHG': '1991-01-24',
   'GWG': '1997-10-10',
   'HMG': '2000-12-15',
+  'HRegV': '2007-10-17',
   'IPRG': '1987-12-18',
   'IRSG': '1981-03-20',
   'IVG': '1959-06-19',
@@ -446,6 +558,7 @@ export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
   'KVV': '1995-06-27',
   'LFG': '1948-12-21',
   'LMG': '2014-06-20',
+  'LSV': '1986-12-15',
   'MG': '1995-02-03',
   'MSchG': '1992-08-28',
   'MSchV': '1992-12-23',
@@ -454,6 +567,7 @@ export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
   'MVG': '1992-06-19',
   'MVV': '1993-11-10',
   'MWSTG': '2009-06-12',
+  'MepV': '2020-07-01',
   'NBV': '2004-03-18',
   'NHG': '1966-07-01',
   'NHV': '1991-01-16',
@@ -469,6 +583,7 @@ export const ERLASSDATUM: Partial<Record<FedlexGesetz, string>> = {
   'PatV': '1977-10-19',
   'RDV': '2012-11-14',
   'RPG': '1979-06-22',
+  'RPV': '2000-06-28',
   'RVOG': '1997-03-21',
   'STBOG': '2010-03-19',
   'STHG': '1990-12-14',

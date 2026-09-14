@@ -28,9 +28,12 @@ export {
   fedlexLinkFuerArtikel,
 } from './fedlex/erkennung';
 export {
-  GENITIV_EINTRAEGE, TITEL_EINTRAEGE, KUERZEL_SCHREIBWEISEN, titelGeltung,
+  GENITIV_EINTRAEGE, TITEL_EINTRAEGE, KUERZEL_SCHREIBWEISEN, TRAEGER_EINTRAEGE,
+  titelGeltung, traegergesetzFuerErlass,
 } from './fedlex/positivliste';
-export type { FremdEbene, Geltung, GenitivEintrag, TitelEintrag, TitelKopf } from './fedlex/positivliste';
+export type {
+  FremdEbene, Geltung, GenitivEintrag, TitelEintrag, TitelKopf, TraegerEintrag,
+} from './fedlex/positivliste';
 
 export {
   NORM_IM_TEXT,

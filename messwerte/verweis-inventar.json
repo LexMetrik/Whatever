@@ -2,7 +2,7 @@
   "_zweck": "Verweis-Inventar des Normtext-Korpus (V-1, W2·20-VERWEIS-SCHAERFE). Basislinie: jede Abweichung Artefakt ↔ Neuberechnung ist ROT. Erzeugung und Grenzen: scripts/check-verweis-inventar.ts (Kopf).",
   "_regenerieren": "npm run check:verweis-inventar -- --schreiben",
   "_quellen": {
-    "normTextSha256": "0221aa5b09f98d9506c9d47b9f751a6906bff172773490cefa6275069772bf01",
+    "normTextSha256": "be998c22ab56add6708fee6a05200982c61212194d5981f29fc4ad0d1fe358f2",
     "guards": 23
   },
   "korpus": {
@@ -11,10 +11,10 @@
     "texte": 214664
   },
   "gesamt": {
-    "stellen": 36173,
-    "self": 19750,
-    "fremd": 11390,
-    "text": 5033,
+    "stellen": 36187,
+    "self": 19653,
+    "fremd": 11616,
+    "text": 4918,
     "selbstmarker": 925
   },
   "klassen": [
@@ -29,8 +29,8 @@
     {
       "klasse": "anker-erlass",
       "entscheid": "FREMD",
-      "stellen": 1095,
-      "erlasse": 363,
+      "stellen": 1108,
+      "erlasse": 368,
       "selbstmarker": 0,
       "was": "Blosser Erlass-Verweis OHNE Artikelnummer → Erlass-Seite (Z1, W2·22)"
     },
@@ -69,8 +69,8 @@
     {
       "klasse": "art-desder-guard",
       "entscheid": "TEXT",
-      "stellen": 921,
-      "erlasse": 333,
+      "stellen": 869,
+      "erlasse": 327,
       "selbstmarker": 0,
       "was": "«Art. N des/der/über/vom …» ohne Klammer-Kürzel"
     },
@@ -85,8 +85,8 @@
     {
       "klasse": "art-kein-token",
       "entscheid": "TEXT",
-      "stellen": 959,
-      "erlasse": 219,
+      "stellen": 917,
+      "erlasse": 218,
       "selbstmarker": 3,
       "was": "bare «Art. N» — Bestimmung existiert im Erlass nicht"
     },
@@ -109,7 +109,7 @@
     {
       "klasse": "art-self",
       "entscheid": "SELF",
-      "stellen": 12963,
+      "stellen": 12866,
       "erlasse": 472,
       "selbstmarker": 606,
       "was": "bare «Art. N» → Sprung im eigenen Erlass"
@@ -133,16 +133,16 @@
     {
       "klasse": "n2b-genitiv",
       "entscheid": "FREMD",
-      "stellen": 672,
-      "erlasse": 213,
+      "stellen": 695,
+      "erlasse": 218,
       "selbstmarker": 0,
       "was": "Form-B-Glied über kuratierten Kurztitel-Genitiv ohne Klammer («des Bankengesetzes», V-7a; Geltung je Ebene)"
     },
     {
       "klasse": "n2b-glied",
       "entscheid": "FREMD",
-      "stellen": 342,
-      "erlasse": 148,
+      "stellen": 344,
+      "erlasse": 149,
       "selbstmarker": 0,
       "was": "Glied der Form B «Artikel N … des <Name> (KÜRZEL)» — Klammer-Kürzel"
     },
@@ -161,6 +161,14 @@
       "erlasse": 162,
       "selbstmarker": 0,
       "was": "Form-B-Glied über amtlichen Volltitel «Bundesgesetzes/Verordnung [vom Datum] über …» (V-7b)"
+    },
+    {
+      "klasse": "n2b-traeger",
+      "entscheid": "FREMD",
+      "stellen": 167,
+      "erlasse": 7,
+      "selbstmarker": 0,
+      "was": "Form-B-Glied über die namenlose Kurzform «des Gesetzes» → Trägergesetz des gelesenen Erlasses (V-7c)"
     },
     {
       "klasse": "paragraf-fremd-grosswort",
@@ -221,8 +229,8 @@
     {
       "klasse": "plural-glied-fremd",
       "entscheid": "FREMD",
-      "stellen": 1484,
-      "erlasse": 153,
+      "stellen": 1505,
+      "erlasse": 156,
       "selbstmarker": 0,
       "was": "A10-Glied mit aufgelöstem Fremdgesetz-Signal"
     },
@@ -245,8 +253,8 @@
     {
       "klasse": "plural-region-unterdrueckt",
       "entscheid": "TEXT",
-      "stellen": 533,
-      "erlasse": 96,
+      "stellen": 512,
+      "erlasse": 95,
       "selbstmarker": 0,
       "was": "A10-Region mit unauflösbarem Fremdnamen — ganz unterdrückt"
     }

@@ -399,7 +399,10 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
   // der FEDLEX-Key «-» (FinfraV-FINMA) — ohne Normalisierung würde ein Gesetz mit
   // getrenntem Kürzel den eigenen Self-Verweis fälschlich unterdrücken (QS-GP-Fund
   // 1.7.: FinfraV-FINMA art_50a, betrifft alle 6 getrennt-benannten Kind-Erlasse).
-  const eigenesKuerzel = kuerzelKanon(intern.basisPfad.split('/').pop() ?? '');
+  // V-7c (W2·20): der ROHE Register-Key des gelesenen Erlasses — Schlüssel der
+  // Trägergesetz-Tabelle («des Gesetzes» in einer Vollzugsverordnung).
+  const erlassKey = intern.basisPfad.split('/').pop() ?? '';
+  const eigenesKuerzel = kuerzelKanon(erlassKey);
   // A10 (Plural-Linker, David 5.7.2026): «in den Artikeln 31 …, 35 … und 45 …» —
   // jedes Glied EINZELN verlinken. Die Regionen werden VOR dem Singular-Lauf
   // erhoben; ART_INTERN-Treffer, die in eine Region fallen (der Öffner «die
@@ -416,7 +419,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
   // V-7 (W2·20): Ebene des gelesenen Erlasses — in kantonalen Erlassen lösen
   // nur ebenenübergreifend eindeutige Bund-Namen auf (`positivliste.ts`).
   const ebene: FremdEbene = ebeneFuer(intern.basisPfad);
-  const pluralRegionen = artikelnPluralVerweise(s, ebene);
+  const pluralRegionen = artikelnPluralVerweise(s, ebene, erlassKey);
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
   const out: React.ReactNode[] = [];
@@ -543,7 +546,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // Darstellung, wie NORM_IM_TEXT-Treffer); die Existenz gegen den Ziel-Erlass
     // prüft das Popover beim Öffnen. Läuft VOR der Self-Link-Logik, damit «Artikel
     // 49a … (MStG)» nie fälschlich auf den eigenen Erlass (AIG art_49_a) zeigt.
-    const routing = fremdRoutingFormB(rest, m[1], undefined, ebene);
+    const routing = fremdRoutingFormB(rest, m[1], undefined, ebene, erlassKey);
     // V-7: nennt der Volltitel den GELESENEN Erlass, ist es kein Fremdverweis —
     // dann kein Fremd-Chip auf sich selbst; der Rest läuft durch die Self-Weichen.
     if (routing && kuerzelKanon(routing.gesetz) !== eigenesKuerzel) {
