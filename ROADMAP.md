@@ -328,29 +328,6 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Alt-Block als §7-Zitat mit Deckel 8 MB / 2 MB je Erlass; Vor-Messung E5.0 vor dem Bau. Etappen E5.0, E5, E6.
   **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.
 
-- [x] **Entstehung am Artikel — Synopse alt/neu in der Änderungskarte** *(`W2·6c-ENTSTEHUNG-SYNOPSE-LESER`, §14-Intake 11.9.2026)*
-  <!-- @meta id: W2·6c-ENTSTEHUNG-SYNOPSE-LESER · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-SYNOPSE, W2·6c-ENTSTEHUNG-LESER] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
-  Ziel: in der Änderungskarte (E3, `EntstehungsBlock.tsx`) je Fassungspunkt den alten Wortlaut aus
-  `public/materialien/synopse/<KEY>.json` gegen den geltenden zeigen, nachgeladen erst beim Klick,
-  Zustände ehrlich (`ohne_ereignis`-Blöcke als «ohne Fussnoten-Ereignis» gekennzeichnet), §7-Merkmale
-  sichtbar (Stand, Quelle, Live-Link), Entwurf↔Beschluss aus `synopse-entwurf/` wo vorhanden. Grenzen:
-  kein Prerender-Markup, CLS 0, Deckel unverändert. **Bau erst nach Merge von** `W2·6c-ENTSTEHUNG-SYNOPSE`
-  **(PR #794, Stand 11.9.2026: offen).**
-  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.5.
-
-- [x] **Entstehung am Artikel — Quelllücken in einzelnen Fedlex-Ständen ehrlich zeigen** *(`W2·6c-ENTSTEHUNG-QUELLLUECKE`, Auflage A6 Gegenprüfung PR #798, 12.9.2026)*
-  <!-- @meta id: W2·6c-ENTSTEHUNG-QUELLLUECKE · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-SYNOPSE] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
-  Erkennt der Generator, dass eine eId in GENAU EINEM Stand fehlt und danach unverändert
-  zurückkehrt (Beleg CHEMRRV `cc/2005/478` @2022-05-01: Art. 4–24 stehen als
-  `<mod>`/`<quotedStructure>` eines Anhangs statt als `<article>`, 22 Blöcke darum fälschlich
-  «entfallen»/«neu»), bucht er «Quelle unvollständig» statt «entfallen»/«neu»; Karte
-  (`SynopseKarte.tsx`) zeigt den Zustand. Lineage-Regel in `neuNach()` über die ganze
-  Stände-Kette statt des nächsten Token-Treffers (zweite, andersartige Ursache in derselben
-  Ausnahmeliste: AVIV 57b @2021-07-01, echte Token-Kontinuität — bleibt dort, keine
-  Quelllücke). Löst die 11 befristeten Ausnahmen in
-  `bibliothek/register/entstehung-leerdiff-ausnahmen.json` ab — **fällig vor deren Verfall
-  2026-10-12**. **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.10.
-
 - [ ] **Entstehung am Paragraph — Basel-Stadt (vor Zürich)** *(`R12a-ENTSTEHUNG-BS`, Vormessung
   lex-recherche 12.9.2026)*
   <!-- @meta id: R12a-ENTSTEHUNG-BS · status: blocked · blocker: david-bs-lizenz-schluessel · dep: [W2·6c-ENTSTEHUNG-SYNOPSE] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
@@ -565,21 +542,6 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Aktionen nur bei Hover/Fokus/offener Rubrik, D45-Split, Umbenennung `BezuegeKopf` →
   `Funktionszeile`. **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §9.
 
-- [x] **Bezüge-Zähler in den Erlass-Payload** *(`W2·26-FUNKTIONSZEILE-ZAEHLER`, D34-Nachfix)*
-  <!-- @meta id: W2·26-FUNKTIONSZEILE-ZAEHLER · status: done · blocker: null · dep: [W2·26-FUNKTIONSZEILE] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
-  Bezüge-Zähler (Entscheide/Materialien/Verweise/Rechner) in den Erlass-Payload statt eigenem
-  Fetch — heute entstehen die Fuss-Zeilen erst in der zweiten Render-Runde. Korpus/Generator ⇒
-  **Gegenprüfung Pflicht**, Golden byte-gleich bzw. deklarierter Re-Bless.
-  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §9.
-
-- [x] **Reiter anheften und Arbeitsmappe** *(`W2·25-ARBEITSMAPPE`, §5a Ziff. 5/9 · R11-M5)*
-  <!-- @meta id: W2·25-ARBEITSMAPPE · status: done · blocker: null · dep: [W2·24-DESIGN-IDENTITAET] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
-  Angeheftete Kürzel-Reiter (OR/ZGB/ZPO, links, ohne ✕, überleben «Alle schliessen») und die
-  benannte Arbeitsmappe (offene Reiter lokal speichern/öffnen, als Adresse teilbar,
-  deterministisch ohne Konto). **Risiko D16:** Anheften darf keine zweite Anzeige-Ordnung sein,
-  sondern muss den flachen Speicher umsortieren — sonst Rückfall in den behobenen Zieh-Bug.
-  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §7.
-
 - [ ] **Perf-Rest Leser: `fremdRoutingFormB` / `artikelnPluralVerweise`** *(`W2·24-PERF-REST`)*
   <!-- @meta id: W2·24-PERF-REST · status: ready · blocker: null · dep: [W2·24-DESIGN-IDENTITAET] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
   Zwei Fix-Vorschläge aus `abnahme/design-identitaet/PERF-LESER.md` (`fedlex/parser.ts`
@@ -701,18 +663,14 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
     statt einer benannten Konstante/eines strukturierten Schlüssels; ersetzen.
 
 - [ ] **Grenzwert-Test Lohnfortzahlung + zwei überholte Code-Kommentare** *(`QS-CODE-LFZ-GRENZE`, Ertrag der Jules-Suggestions-Sichtung 14.9.2026)*
-  <!-- @meta id: QS-CODE-LFZ-GRENZE · status: ready · blocker: null · dep: [] · feld: werkzeuge -->
-  Die drei belastbaren Funde aus 76 proaktiven Jules-Vorschlägen (Opus-Sichtung am Code 14.9.2026,
-  Ausbeute ~4 %; Messwerte: [FAHRPLAN-FREMDAGENTEN.md](fahrplaene/FAHRPLAN-FREMDAGENTEN.md) §5) als
-  EINE sortenreine Bau-Einheit. Ziel: die Drei-Monats-Grenze direkt prüfen und zwei Kommentare, die
-  Erledigtes als offen ausgeben, auf ihren Beleg zeigen lassen. Grenzen: keine Verhaltensänderung,
-  kein Eingriff in die Rechenlogik selbst — bestehende Tests bleiben unverändert (§6.3).
-  **S-Grösse: nach §3 mit der nächsten `feld: werkzeuge`-Einheit bündeln, nicht allein fahren.**
-  - [ ] **Grenzwert-Test `dauerUeberDreiMonate`** (`src/lib/datumsUtils.ts:38`, Art. 324a OR) — genau drei Monate und Tag 1 des vierten Monats direkt prüfen. Heute nur indirekt über `lohnfortzahlung.test.ts` (LA4) gedeckt; der dokumentierte Bug-Fix vom 10.6.2026 hat keinen Direkttest an der Grenze.
-  - [ ] **Gegenprüfung: nicht erforderlich — gemessen, nicht geraten** *(14.9.2026)* — `istRisikoPfad()` (`scripts/gegenpruefung/kern.ts`) gibt für alle vier Dateien dieses Schritts **false** zurück (Probe: `src/lib/datumsUtils.ts`, `src/tests/lohnfortzahlung.test.ts`, `ZefixSuche.tsx`, `ZustaendigkeitForm.tsx`). **Aber:** `datumsUtils.ts` trägt die 324a-Grenze und fällt trotzdem aus dem Klassifikator, weil `RECHNEN_RE` den Dateinamen nicht trifft. Ob der Klassifikator die Datei aufnehmen muss, gehört mit Rot-Beweis (§6.7) entschieden, **bevor** dort jemand Rechenlogik ändert — eigener Punkt, nicht Teil dieses Schritts.
-  - [ ] **`src/components/vorlagen/ZefixSuche.tsx:8`** — Kommentar «Datenschutz-Wortlaut TODO David» ist überholt: Wortlaut abgenommen 12.6.2026 (`abnahme/wortlaute-2026-06/PAUSCHALABNAHME-2026-06-12.md`), der Absatz steht in `src/pages/Datenschutz.tsx:52-57`. Kommentar auf den Abnahme-Beleg zeigen lassen (§5, keine zweite Wahrheit).
-  - [ ] **`src/components/forms/ZustaendigkeitForm.tsx:235`** — Klammer-Vermerk «(TODO 5 betreibungskreise-kantone.md)» liest sich als offen; die klickbare Auswahl (`PlzGemeindeWahl`, SelectionGrid) ist seit 10.6.2026 gebaut und wird zwei Zeilen darunter gerendert ⇒ auf «erledigt 10.6.2026» korrigieren.
-  - [ ] **Optional, zwei Zeilen Wächter-Kommentar** — `src/components/normtext/ArtikelBody.tsx:135`: festhalten, dass die Quelle des `dangerouslySetInnerHTML` ausschliesslich das eigene DOM ist (Fussnoten-Fuss), damit ein späteres Refactoring dort nie eine Fremdquelle anschliesst. *(Der Jules-Vorschlag «Security-Fund» an derselben Stelle ist ein Fehlalarm — Self-XSS-Klasse, kein Nutzerkanal.)*
+  <!-- @meta id: QS-CODE-LFZ-GRENZE · status: ready · blocker: null · dep: [] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-FREMDAGENTEN.md -->
+  Die drei belastbaren Funde aus 76 proaktiven Jules-Vorschlägen (~4 % Ausbeute) als EINE
+  sortenreine Bau-Einheit. Ziel: die Drei-Monats-Grenze von Art. 324a OR direkt prüfen und zwei
+  Kommentare, die Erledigtes als offen ausgeben, auf ihren Beleg zeigen lassen. Grenzen: keine
+  Verhaltensänderung, bestehende Tests bleiben unverändert (§6.3).
+  **S-Grösse ⇒ mit der nächsten `feld: werkzeuge`-Einheit bündeln, nicht allein fahren.**
+  **Detail (Fundstellen, Belege, Rauschen-Muster):** [FAHRPLAN-FREMDAGENTEN.md](fahrplaene/FAHRPLAN-FREMDAGENTEN.md) §5.
+  - [ ] **Gegenprüfung nicht erforderlich — gemessen, nicht geraten** *(14.9.2026)*: `istRisikoPfad()` ist für alle vier Dateien **false**. **Offener Punkt daraus:** `src/lib/datumsUtils.ts` trägt die 324a-Grenze, fällt aber aus dem Klassifikator (`RECHNEN_RE` trifft den Dateinamen nicht) — mit Rot-Beweis (§6.7) entscheiden, **bevor** dort jemand Rechenlogik ändert.
 
 - [x] **Tarif-Stammdaten: Stand maschinenlesbar + Drift-Tor** *(`W3-TARIF-STAND`, Rules-as-Code-Sichtung 5.9.2026, Entscheid David 5.9.2026)*
   <!-- @meta id: W3-TARIF-STAND · status: done · blocker: null · dep: [] · feld: werkzeuge -->
@@ -757,6 +715,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-EFFIZIENZ-CHECKLISTE.md](fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md) §1 —
   die Checkliste liegt seit 29.8.2026 dort statt hier (sie war eine Merge-Konflikt-Falle: 6 Konflikte
   in EINER Zeile bei 15 PRs).
+  - [ ] **ROADMAP-Deckel bleibt knapp — nächste Umschichtung braucht einen `dep`-Umbau** *(Messung 14.9.2026)* — `main` stand bei 122 875 von 122 880 Bytes (fünf Bytes Luft); vier erledigte Schritte sind in die Chronik überführt (Umschichtung 14.9.2026 (7)), vier weitere `done`-Schritte **können nicht** wandern, weil lebende Schritte `dep` auf sie halten (`W2·6c-ENTSTEHUNG-DATEN`/`-LESER`/`-SYNOPSE`, `W2·26-FUNKTIONSZEILE`). Wurzel-Kandidat: `dep` auf erledigte Schritte auflösen oder `check:plan` erledigte `dep`-Ziele aus der Chronik akzeptieren lassen.
   - [ ] **Steuerdeckel-Entscheid — wartet auf David:** Streichkandidat unter `scripts/check-*.ts` (5.9.2026 Prosa-Diät statt Deckel-Hebung; Hooks ~0 B Luft) *(sechs erledigte Nebenpunkte 5.9.2026 umgeschichtet: ROADMAP-CHRONIK.md, Umschichtung 6.9.2026).*
 
 - [ ] **Fremde Agenten im Bau — Jules, Antigravity, Gemini** *(`QS-FREMDAGENTEN`, Freigabe David 3.9.2026)*
@@ -769,7 +728,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [x] **Erledigt:** Phase 0 · Pilot Jules · Diskrepanz-Finder — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
   - [x] **Fremd-PR-Tor vergleicht die Kommentar-MULTIMENGE** — ✅ erledigt 14.9.2026, PR #862 (`d61193dbe`): Regel 3b prüft die getrimmten Kommentarzeilen zeichengleich (`comm -23` leer), nicht mehr nur die Summe. Anlass: #855 baute die Summe nach einer Ablehnung exakt zurück (580 → 580) und verfälschte dabei trotzdem vier Zeilen.
   - [ ] **Jules-Bilanz 14.9.2026 — drei Tickets, drei Ablehnungen** *(Messreihe: FAHRPLAN-FREMDAGENTEN §5)* — Tickets #849/#850/#858 (Reiterleiste.tsx-/tabs.ts-Split), PRs #855, #857 und #861 **alle abgelehnt**. Muster: **Jules generiert, statt zu verschieben** (Kommentar-Paraphrasen, gelöschte Kommentarzeilen, in #855 zusätzlich eine geänderte Hook-Reihenfolge). **Ticket #858 war mein eigener Fehler** — der Body enthielt nur die EN-Summary-Zeile, die Detailregeln fehlten (Vorfall und Regel: Fahrplan §5). Die Rückbau-Schwelle §3 ist damit zu prüfen; die Neuanlauf-Tickets (Reiterleiste, `tabs.ts`-Split dritter Anlauf mit gemeinsamer Typen-Datei) gehören in die **nächste Session**, nicht in diese.
-  - [x] **Proaktiver Kanal «Suggestions» abgeschaltet** *(Entscheid David 14.9.2026, D8; Messwerte Fahrplan §5)* — 76 unaufgeforderte Vorschläge, am Code geprüft (Opus, read-only, Repo-Stand `203a292e9`): **3 belastbar (~4 %)**, davon zwei reine Kommentar-Korrekturen; 0 direkt gestartet. Davids Wortlaut: «einverstanden, wir schalten jules wieder ab» — Toggle in Jules aus («0 / 5 repo max»). Jules bleibt für **auftragsgebundene** Tickets verbunden (Landungsquote 83 %, n = 6). Die drei Funde sind als Schritt `QS-CODE-LFZ-GRENZE` eingeordnet (Weisung: Jules-Vorschläge nie direkt starten, immer über den Roadmap-Eingang).
+  - [x] **Proaktiver Kanal «Suggestions» abgeschaltet** *(Entscheid David 14.9.2026 — Wortlaut, Zahlen und Begründung: Fahrplan §6 D8, Messwerte §5)* — 76 unaufgeforderte Vorschläge, am Code geprüft: 3 belastbar (~4 %), 0 gestartet; die drei Funde als Schritt `QS-CODE-LFZ-GRENZE` eingeordnet. Jules bleibt für auftragsgebundene Tickets verbunden.
   - [ ] Zweitblick-Messung — erster Durchgang eingetragen (#658, VZV/AMBV: 1 echt vorbestehend, 7 Schein, 0 verpasst; 1/5, Schwelle §3 noch nicht erreicht), weitere vier im Alltag. §2/§3.
   - [ ] Phase 4 Skalierung läuft — Landungsquote 83 % (n=6), Median 30 min ⇒ Ticketzahl 3–5 offen; Jules-API mit Plan-Gegenlesen (D4) noch offen; Antigravity-Claude als Bauarbeiter (D7) **geparkt** (Bauleiter/David-Chat 4.9.2026, kein Zwischenmarkt zu Jules — Wiedervorlage nur bei Kontingent-Engpass). §2.
   - [ ] **Wiedervorlage «Google-Ökosystem-Sichtung»** *(Dach QS-FREMDAGENTEN, Phase 4)* — alle 3 Monate, erste Fälligkeit **Dezember 2026**: Gemini-Recherche (agy, `read_url(*)`) «neue Google-KI-Produkte/Modelle, Jules-/Antigravity-Changelog seit \<Datum\>», Bewertung ~30 min, Eintrag in Fahrplan §7. Maschinischer Anstoss: `retro:17` Regel (h) ab 30 Tagen seit `bibliothek/register/antigravity-stand.json`. §7.

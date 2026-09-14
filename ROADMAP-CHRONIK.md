@@ -4760,3 +4760,68 @@ src/tests/normtext-revisionen.test.ts src/tests/verzahnung-artikel-
 revisionen.test.ts` (61/61). Kaskade (`gen:entstehung-projektion`/
 `-deckung`) erneut 0 Abweichungen. Rot-Beweis (8b) erneut demonstriert
 (identischer Ablauf wie Nachtrag 1, neues Schema).
+
+# Umschichtung 14.9.2026 (7) — vier erledigte Schritte aus dem Steuerungsplan
+
+**Anlass:** `check:steuerdeckel` rot. `ROADMAP.md` stand auf `main` (`f6bdd89c7`)
+bei 122 875 von 122 880 Bytes — **fünf Bytes Luft**: jede weitere Plan-Zeile,
+von welcher Session auch immer, hätte das Tor gerissen. Aufgefallen ist das beim
+Doku-PR zur Jules-Suggestions-Sichtung; überführt wird nach `aufraeumen.md` §2
+(vollständig und wörtlich, nichts zusammengefasst). Alle vier Schritte tragen
+`status: done`, haben keine offenen Unterpunkte und sind von keinem Schritt als
+`dep` referenziert.
+
+**Bewusst NICHT überführt**, obwohl ebenfalls `done`: `W2·6c-ENTSTEHUNG-DATEN`,
+`W2·6c-ENTSTEHUNG-LESER`, `W2·6c-ENTSTEHUNG-SYNOPSE` und `W2·26-FUNKTIONSZEILE`
+— auf sie zeigen `dep`-Einträge lebender Schritte; die Überführung machte
+`check:plan` rot («dep existiert nicht»). Sie bleiben im Plan, bis die
+Abhängigkeiten aufgelöst sind. **Der Deckel bleibt damit knapp** (~2 KB Luft):
+die nächste grössere Umschichtung ist absehbar fällig und braucht dann den
+dep-Umbau.
+
+
+## W2·6c-ENTSTEHUNG-SYNOPSE-LESER — Entstehung am Artikel — Synopse alt/neu in der Änderungskarte *(done, verschoben 14.9.2026)*
+
+- [x] **Entstehung am Artikel — Synopse alt/neu in der Änderungskarte** *(`W2·6c-ENTSTEHUNG-SYNOPSE-LESER`, §14-Intake 11.9.2026)*
+  <!-- @meta id: W2·6c-ENTSTEHUNG-SYNOPSE-LESER · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-SYNOPSE, W2·6c-ENTSTEHUNG-LESER] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Ziel: in der Änderungskarte (E3, `EntstehungsBlock.tsx`) je Fassungspunkt den alten Wortlaut aus
+  `public/materialien/synopse/<KEY>.json` gegen den geltenden zeigen, nachgeladen erst beim Klick,
+  Zustände ehrlich (`ohne_ereignis`-Blöcke als «ohne Fussnoten-Ereignis» gekennzeichnet), §7-Merkmale
+  sichtbar (Stand, Quelle, Live-Link), Entwurf↔Beschluss aus `synopse-entwurf/` wo vorhanden. Grenzen:
+  kein Prerender-Markup, CLS 0, Deckel unverändert. **Bau erst nach Merge von** `W2·6c-ENTSTEHUNG-SYNOPSE`
+  **(PR #794, Stand 11.9.2026: offen).**
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.5.
+
+## W2·6c-ENTSTEHUNG-QUELLLUECKE — Entstehung am Artikel — Quelllücken in einzelnen Fedlex-Ständen ehrlich zeigen *(done, verschoben 14.9.2026)*
+
+- [x] **Entstehung am Artikel — Quelllücken in einzelnen Fedlex-Ständen ehrlich zeigen** *(`W2·6c-ENTSTEHUNG-QUELLLUECKE`, Auflage A6 Gegenprüfung PR #798, 12.9.2026)*
+  <!-- @meta id: W2·6c-ENTSTEHUNG-QUELLLUECKE · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-SYNOPSE] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Erkennt der Generator, dass eine eId in GENAU EINEM Stand fehlt und danach unverändert
+  zurückkehrt (Beleg CHEMRRV `cc/2005/478` @2022-05-01: Art. 4–24 stehen als
+  `<mod>`/`<quotedStructure>` eines Anhangs statt als `<article>`, 22 Blöcke darum fälschlich
+  «entfallen»/«neu»), bucht er «Quelle unvollständig» statt «entfallen»/«neu»; Karte
+  (`SynopseKarte.tsx`) zeigt den Zustand. Lineage-Regel in `neuNach()` über die ganze
+  Stände-Kette statt des nächsten Token-Treffers (zweite, andersartige Ursache in derselben
+  Ausnahmeliste: AVIV 57b @2021-07-01, echte Token-Kontinuität — bleibt dort, keine
+  Quelllücke). Löst die 11 befristeten Ausnahmen in
+  `bibliothek/register/entstehung-leerdiff-ausnahmen.json` ab — **fällig vor deren Verfall
+  2026-10-12**. **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.10.
+
+## W2·26-FUNKTIONSZEILE-ZAEHLER — Bezüge-Zähler in den Erlass-Payload *(done, verschoben 14.9.2026)*
+
+- [x] **Bezüge-Zähler in den Erlass-Payload** *(`W2·26-FUNKTIONSZEILE-ZAEHLER`, D34-Nachfix)*
+  <!-- @meta id: W2·26-FUNKTIONSZEILE-ZAEHLER · status: done · blocker: null · dep: [W2·26-FUNKTIONSZEILE] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  Bezüge-Zähler (Entscheide/Materialien/Verweise/Rechner) in den Erlass-Payload statt eigenem
+  Fetch — heute entstehen die Fuss-Zeilen erst in der zweiten Render-Runde. Korpus/Generator ⇒
+  **Gegenprüfung Pflicht**, Golden byte-gleich bzw. deklarierter Re-Bless.
+  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §9.
+
+## W2·25-ARBEITSMAPPE — Reiter anheften und Arbeitsmappe *(done, verschoben 14.9.2026)*
+
+- [x] **Reiter anheften und Arbeitsmappe** *(`W2·25-ARBEITSMAPPE`, §5a Ziff. 5/9 · R11-M5)*
+  <!-- @meta id: W2·25-ARBEITSMAPPE · status: done · blocker: null · dep: [W2·24-DESIGN-IDENTITAET] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  Angeheftete Kürzel-Reiter (OR/ZGB/ZPO, links, ohne ✕, überleben «Alle schliessen») und die
+  benannte Arbeitsmappe (offene Reiter lokal speichern/öffnen, als Adresse teilbar,
+  deterministisch ohne Konto). **Risiko D16:** Anheften darf keine zweite Anzeige-Ordnung sein,
+  sondern muss den flachen Speicher umsortieren — sonst Rückfall in den behobenen Zieh-Bug.
+  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §7.
