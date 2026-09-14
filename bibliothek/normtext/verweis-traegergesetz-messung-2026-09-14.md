@@ -147,6 +147,52 @@ Weg nach Skill `scraping-swiss-official-sources`: SPARQL `dateApplicability`-Fen
 Zusätzlich korpusweit (Test, nicht Stichprobe): **alle 169** Trägergesetz-Glieder und **alle
 28** Glieder der neuen Kurztitel zeigen auf einen Artikel, den der Ziel-Snapshot führt.
 
+## Nachzug 14.9.2026 (Gegenprüfung zu PR #864)
+
+Die Gegenprüfung bestand im Kern, WIDERLEGTE aber die Vollständigkeit. Drei Befunde, alle
+nachgemessen und behoben; der ursprüngliche Befundstand oben bleibt unverändert stehen
+(Belege altern nicht — dies ist die Ergänzung, keine Korrektur).
+
+**B1 — die Tabelle war unvollständig, und sie behauptete das Gegenteil.** Ein eigener
+Sweep über alle 228 Bund-Struktur-Sidecars findet NEUN Erlasse mit einer Ingress-Klammer,
+die die Kurzform «Gesetz» definiert, nicht sieben. ARGV3 und ARGV4 fehlten: ihre Klammer
+lautet «(nachstehend «Gesetz»)», eine vierte Schreibweise neben «(Gesetz)», «(Gesetz, ArG)»
+und «(Gesetz/UVG)». Folge: neun Stellen der ArGV 4 sprangen in die Verordnung statt ins
+Arbeitsgesetz — ArGV 4 Art. 5 und 7 gibt es, sie regeln nur etwas anderes.
+
+Amtlich nachgeholt (SPARQL-Fassungsfenster + AKN-XML aus dem Filestore, Content-Type
+`application/xml` geprüft):
+
+| Erlass | SR | ELI | Fassung | Ingress-Legaldefinition | → Ziel |
+|---|---|---|---|---|---|
+| ArGV 3 | 822.113 | `cc/1993/2553_2553_2553` | 2024-09-01 | «gestützt auf die Artikel 6 Absatz 4 und 40 des Arbeitsgesetzes vom 13. März 1964 (nachstehend «Gesetz»),» | ArG (822.11) |
+| ArGV 4 | 822.114 | `cc/1993/2564_2564_2564` | 2015-05-01 | «gestützt auf die Artikel 8 und 40 des Arbeitsgesetzes vom 13. März 1964 (nachstehend «Gesetz») sowie gestützt auf Artikel 83 des Unfallversicherungsgesetzes vom 20. März 1981,» | ArG (822.11) |
+
+ArGV 3 zitiert «des Gesetzes» im Korpus null Mal; der Eintrag steht trotzdem, weil der
+Wächter seit dem Nachzug Mengen-GLEICHHEIT Tabelle ↔ Sweep verlangt, nicht Nutzen.
+
+**Restklasse KKV.** Der KKV-Ingress definiert nur «(KAG)». art_128 zitiert zweimal «des
+Gesetzes» und meint das KAG — der Leser sprang auf KKV Art. 124 bzw. 120. Der des/der-Guard
+greift dort nicht, weil er bewusst am ROHEN Rest steht und «Absatz 2» dazwischensteht. Neue
+enge Weiche `GESETZES_GENITIV` (NormText.tsx): «des Gesetzes» hinter dem Passus ist nie ein
+Selbstverweis — der eigene Erlass heisst «dieses Gesetzes». 91 Stellen fallen in die neue
+Klasse, 24 davon ändern den Entscheid von SELF auf TEXT; alle 24 einzeln nachgelesen, alle
+vorher falsch (KKV 2 · LUGUE 2 · ArGV 4 art_37 Abs. 4 · 19 kantonale Vollzugsverordnungen).
+
+**B2 — Messdefinition statt nackter Zahl.** «35 Bund-Stellen» galt für die engste Form
+(Artikelnummer direkt vor der Wendung). Gemessen 14.9.2026 über alle Bund-Snapshots:
+eng 35 Stellen / 10 Erlasse · mit Passus dazwischen 189 / 16 · blosse Wendung «des
+Gesetzes» ohne «dieses» 315 / 49. Die Tabelle bedient die mittlere Menge (179 Glieder).
+Die per-Verordnung-Zahl LSV war mit 11 zu hoch angesetzt; gemessen sind es 9 — genau die
+zwei, um die die Summe 169 von der gemessenen Klassenzahl 167 abwich.
+
+**B3 — Erlassdatum allein trägt die Zuordnung nicht.** 15 Werte in `ERLASSDATUM` teilen
+sich mindestens zwei Erlasse; UVG und IRSG sind beide vom 20.3.1981. Der Wächter prüft
+seither zusätzlich die IDENTITÄT: der Name, den der Ingress vor der Klammer nennt, muss
+über dieselbe kuratierte Positivliste auf dasselbe Ziel auflösen, die auch die Produktion
+benutzt. Rot-Beweis: Eintrag «UVV → IRSG» kommt durch die Datumsprüfung glatt durch und
+scheitert am Namen.
+
 ## Geltung/Ausnahmen
 
 - Momentaufnahme 14.9.2026; Zahlen NICHT fortschreiben — den Ist-Stand trägt das V-1-Tor.
@@ -163,8 +209,11 @@ Zusätzlich korpusweit (Test, nicht Stichprobe): **alle 169** Trägergesetz-Glie
   genau eine «Gesetz»-Klammer und Datums-Gleichheit mit `ERLASSDATUM`.
 - Kommt ein heute fehlender Ziel-Erlass als Snapshot in den Korpus, wird sein Kurztitel in
   `GENITIV_EINTRAEGE` nachziehbar (Befund 3) — dann V-1-Tor regenerieren.
-- Ändert Fedlex den Ingress einer der 7 Verordnungen (Revision der Rechtsgrundlage), reisst
+- Ändert Fedlex den Ingress einer der 9 Verordnungen (Revision der Rechtsgrundlage), reisst
   der Wächter beim nächsten Snapshot-Nachzug — das ist gewollt.
+- Kommt ein NEUER Bundeserlass mit «Gesetz»-Legaldefinition in den Korpus, reisst der
+  Sweep-Wächter, bis er in `TRAEGER_EINTRAEGE` steht (seit 14.9.2026) — Vollständigkeit ist
+  damit nicht mehr Handarbeit.
 
 ## Abnahme-Status
 
