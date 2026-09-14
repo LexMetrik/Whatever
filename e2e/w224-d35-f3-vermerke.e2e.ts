@@ -65,7 +65,11 @@ test.describe('D35-F3 — eine Wahl, drei Stellungen, genau eine gesetzt', () =>
     await expect(gruppe).toHaveAttribute('aria-label', 'Änderungen anzeigen als');
     await expect(gruppe.getByText('Änderungen anzeigen als')).toBeVisible();
 
-    const stellungen = panel.getByRole(WAHL_ROLLE);
+    // W2·5m (14.9.2026): in der EIGENEN Gruppe gezählt. Seit der Lesart-Wahl
+    // (Kap. 15.3) trägt das Menü ZWEI Radiogruppen; eine Zählung über das ganze
+    // Panel sprang damit auf 5, ohne dass an dieser Wahl etwas anders wäre.
+    // Schärfung, kein Nachgeben — die Zeile misst jetzt, was sie behauptet.
+    const stellungen = gruppe.getByRole(WAHL_ROLLE);
     await expect(stellungen).toHaveCount(3);
     for (const name of [VERMERKE_SCHALTER_NAME, FUSSNOTEN_WAHL_NAME, AUS_WAHL_NAME]) {
       await expect(panel.getByRole(WAHL_ROLLE, { name })).toHaveCount(1);

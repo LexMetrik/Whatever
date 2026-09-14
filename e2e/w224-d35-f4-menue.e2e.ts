@@ -126,7 +126,11 @@ test.describe('D35-F4 — der Aus-Zustand ist eine Form, keine Tintenstufe', () 
     // Klick auf eine ungewählte verschiebt die gefüllte Marke, der Klick auf
     // die gesetzte tut nichts — beides ist Form, nicht Tinte.
     await ansichtAuf(page, 1440, 900)
-    const stellungen = page.locator('[data-v3-ansicht-panel] [role="menuitemradio"]')
+    // W2·5m (14.9.2026): in der EIGENEN Gruppe gezählt. Seit der Lesart-Wahl
+    // (Kap. 15.3) trägt das Menü ZWEI Radiogruppen; eine Zählung über das ganze
+    // Panel sprang damit auf 5, ohne dass an dieser Wahl etwas anders wäre.
+    // Schärfung, kein Nachgeben — die Zeile misst jetzt, was sie behauptet.
+    const stellungen = page.locator('[data-v3-vermerke-wahl] [role="menuitemradio"]')
     expect(await stellungen.count(), 'Stellungen der Wahl').toBe(3)
     const gesetzte = stellungen.filter({ has: page.locator('[data-menu-marke][data-an="an"]') })
     await expect(gesetzte, 'genau eine gesetzte Stellung').toHaveCount(1)

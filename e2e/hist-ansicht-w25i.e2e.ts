@@ -136,7 +136,13 @@ test('Grundzustand: «Fassung» ist Vorgabe, Attribut am <html>, DREI Stellungen
   await warteReader(page, '/gesetze/bund/BGBM', 'art-4');
   await expect(page.locator('html')).toHaveAttribute('data-vermerke', 'fassung');
   await ansichtOeffnen(page);
-  const wahl = page.locator(ANSICHT_PANEL).getByRole(WAHL_ROLLE);
+  // W2·5m (14.9.2026): gezählt wird in der EIGENEN Gruppe. Bis hierher zählte
+  // die Zeile `menuitemradio` über das ganze Panel — richtig, solange es nur
+  // eine Radiogruppe gab. Seit der Lesart-Wahl (Kap. 15.3) sind es zwei, und
+  // die Zahl sprang auf 5, ohne dass an dieser Wahl etwas anders wäre. Die
+  // Sonde misst jetzt, was sie behauptet, und bliebe auch bei einer dritten
+  // Gruppe richtig.
+  const wahl = page.locator('[data-v3-vermerke-wahl]').getByRole(WAHL_ROLLE);
   await expect(wahl, 'die Wahl hat genau drei Stellungen').toHaveCount(3);
   // GENAU EINE steht — das ist die Zusage einer Radiogruppe, und sie ist der
   // Kern von Davids Befund («entweder … oder»). Eine Checkbox-Gruppe wäre hier
