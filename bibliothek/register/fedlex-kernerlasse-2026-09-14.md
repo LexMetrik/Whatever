@@ -85,6 +85,22 @@ pdf-embed-Zeile nur, wenn der Fedlex-Konsolidierungstext vollständig ist»):
 - **Struktur vollständig:** `preface` · `preamble` · Abschnitt I (Rechte und Freiheiten) ·
   Abschnitt II (Europäischer Gerichtshof für Menschenrechte) · Abschnitt III (Verschiedene
   Bestimmungen) · `Unterschriften` · `scope`/`scope_u1` = «Geltungsbereich am 16. September 2022».
+  **Nachmessung 14.9.2026 (Gegenprüfungs-Auflage PR #860), ergänzend — die Zeile oben zählt die
+  Sektionen der AMTLICHEN Quelle, nicht die des Snapshots:** `preface` und `preamble` sind im
+  Snapshot vorhanden, aber im Struktur-Sidecar (`kopf.srNummer`/`kopf.titel`/`kopf.erlassdatum`
+  bzw. `kopf.praeambel`), nicht als Einträge. `scope_u1` ist ein eigener Eintrag
+  (`bund/EMRK/scope_u1`). **`<section id="signature">` ist NICHT im Snapshot** — die 60 Einträge
+  sind `art_1`…`art_59` + `scope_u1`; `grep "Geschehen zu Rom"` und `grep "Unterschriften"` auf
+  `public/normtext/bund/EMRK.json` liefern 0 Treffer. Amtlicher Wortlaut der fehlenden Sektion
+  (Filestore-HTML `…-20220916-de-html-9.html`, 122 930 B, abgerufen 14.9.2026): «Unterschriften /
+  Geschehen zu Rom am 4. November 1950 in englischer und französischer Sprache, wobei jeder
+  Wortlaut gleichermassen verbindlich ist, in einer Urschrift, die im Archiv des Europarats
+  hinterlegt wird. Der Generalsekretär übermittelt allen Unterzeichnern beglaubigte Abschriften.
+  (Es folgen die Unterschriften)». Das ist eine **Extraktor-Grenze, kein EMRK-Sonderfall**:
+  wo die amtliche Quelle den Unterschriftsblock IN einen Artikel oder Anhang legt, trägt ihn der
+  Snapshot sehr wohl (belegt: `EAUE/art_32`, `RBUE/annex_u1`, `FZA/annex_III`, `CMR/annex_u1` —
+  je mit «(Es folgen die Unterschriften)»); nur die eigene `<section id="signature">` fällt weg.
+  Rechtlich ohne Normgehalt (Schlussformel), darum §8-Lücke und kein Blocker — aber zu nennen.
 - **Randtitel:** an allen 59 Artikeln vorhanden (z. B. Art. 6 «Recht auf ein faires Verfahren»).
 - **Gegen das amtliche PDF/A** (`…-20220916-de-pdf-a-2.pdf`, 445 401 B, 22 Seiten): Buchstabenstrom
   HTML 37 490 vs. PDF **ohne Seitenkopf/-fuss** 37 901 — die Differenz von 1,1 % liegt in der
@@ -92,6 +108,14 @@ pdf-embed-Zeile nur, wenn der Fedlex-Konsolidierungstext vollständig ist»):
   HTML: eigene Elemente), nicht in fehlendem Text. Stichproben mit Wortgrenze im HTML getroffen:
   «Urteile der Kammern werden nach Massgabe des Artikels 44 Absatz 2 endgültig» (Art. 42, Rumpftext)
   und «Fassung gemäss Art. 14 des Prot. Nr. 14 vom 13. Mai 2004» (Fussnote 28).
+- **Fussnoten-Nachmessung 14.9.2026 (Gegenprüfungs-Auflage PR #860), ergänzend:** die amtlichen
+  HTML-Fassungen tragen EMRK **38**, EÖBV **18**, AVG **70** `id="fn-…"`. Die Historie-Abdeckung
+  des Snapshots (`public/normtext/historie/*.json`, Feld `abdeckung.fussnoten`) liegt darunter:
+  EMRK **33/38**, EÖBV **12/18**, AVG **67/70**. Die Differenz sind genau die Fussnoten der
+  Sonder-Sektionen ausserhalb der Artikel — EMRK 4 in `preface`/`preamble` + 1 in `scope_u1`;
+  EÖBV 4 in `preface` + 2 in `annex_u1/lvl_u1`; AVG 3 in `preface`. Dieselbe Extraktor-Grenze
+  wie beim Unterschriftsblock, im Fahrplan `FAHRPLAN-BUND-FERTIG.md` §2 als §8-Lücke vermerkt.
+
 - **Protokolle:** die Zusatzprotokolle sind **eigene SR-Nummern** (0.101.06, 0.101.07, 0.101.09 …)
   und gehören nicht zum Konsolidierungstext von SR 0.101. «Vollständig» heisst hier also Art. 1–59
   — und die sind vollständig.
