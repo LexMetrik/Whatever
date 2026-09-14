@@ -19,12 +19,12 @@ Nichts gestrichen, nichts inhaltlich geändert (§2b — die Zahlen stehen im Wo
 **`W2·22-VERWEIS-FEDLEX` — Wortlaut Z6 (a)/(c) bis 14.9.2026 (#852, #856):**
 
 >     (a) ✅ erledigt 14.9.2026 — die Suffix-Reihe (bis…duodecies) steht jetzt EINMAL in
-    `src/lib/fedlex/nummer.ts`; alle vier Konsumenten lesen sie. 13 Fundstellen in 9 Bundes-
-    erlassen lösen neu auf (41 unterdrückte Aufzählungs-Glieder → 50 Links, +2 Selbstsprünge),
-    0 kantonale Stellen, 0 neue tote Anker; (b) ✅ erledigt (Wortlaut: Chronik, Umschichtung 6.9.2026);
-    (c) **Artikel-Anker gegen den Ziel-Snapshot prüfen, Fallback Erlass-Link** —
-    ✅ **gebaut 14.9.2026**: **39 tote Fremd-Anker** von 10 254 prüfbaren, 28 Ziele (36 Bund /
-    3 Kanton), Wächter `check:verweis-inventar`; amtlich gegengeprüft, keine Extraktionslücke.
+> `src/lib/fedlex/nummer.ts`; alle vier Konsumenten lesen sie. 13 Fundstellen in 9 Bundes-
+> erlassen lösen neu auf (41 unterdrückte Aufzählungs-Glieder → 50 Links, +2 Selbstsprünge),
+> 0 kantonale Stellen, 0 neue tote Anker; (b) ✅ erledigt (Wortlaut: Chronik, Umschichtung 6.9.2026);
+> (c) **Artikel-Anker gegen den Ziel-Snapshot prüfen, Fallback Erlass-Link** —
+> ✅ **gebaut 14.9.2026**: **39 tote Fremd-Anker** von 10 254 prüfbaren, 28 Ziele (36 Bund /
+> 3 Kanton), Wächter `check:verweis-inventar`; amtlich gegengeprüft, keine Extraktionslücke.
 
 *Nachtrag zur ausgelagerten Fassung (nicht in sie hineingeschrieben, §2b):* die Zahl «10 254
 prüfbare Ziele» ist der Stand VOR PR #852; das Artefakt nach #852 führt 10 276. Der Kommentar in
