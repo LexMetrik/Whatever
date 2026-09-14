@@ -91,6 +91,15 @@ liegen lassen.
 - **Jules-Branches: CI prüft Assertion-Diff + Dateigrenzen automatisch**
   (CI-Schritt «Fremd-PR-Tor» im Job «Tore», T6 3.9.2026) — das gilt zusätzlich zu 3./4.
   oben, nicht statt ihnen.
+- **Kommentar-Tabu: verschieben ja, ändern/löschen nie — und das gilt
+  zeichengleich, nicht nur zeilengleich.** Eine gleichbleibende Kommentar-
+  ZAHL genügt nicht: das Fremd-PR-Tor vergleicht seit 14.9.2026 zusätzlich
+  die MULTIMENGE der getrimmten Kommentarzeilen (`scripts/analyse/kommentar-
+  bilanz.ts`, Regel 3b) — jede Kommentarzeile der Basis muss im Head
+  wortgleich weiter existieren. Beleg: PR #855 baute die Summe nach einer
+  Ablehnung exakt auf den Ausgangswert zurück (580 → 580), verfälschte dabei
+  aber vier Zeileninhalte («hing» → «hung» u. a.) — eine reine Summen-Bilanz
+  hätte das nicht bemerkt.
 
 ## 5 · Bauregeln, die kein Tor erzwingt
 
