@@ -1,5 +1,18 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Umschichtung 14.9.2026 (4) — W2·5m Pfeile/Rohdaten-Link (Wortlaut) + Platz für das Einzelartikel-Konzept
+
+**Begründung.** Beide Punkte sind mit PR #854 (`7b0338916`, 13.9.2026) gebaut, standen in der ROADMAP aber weiter als offen — das Abhaken war beim Landen unterblieben (§14). Gleichzeitig fügt das Konzept «Einzelartikel-Ansicht» (Auftrag David 14.9.2026) dem Schritt `W2·5m-LESER-V3` eine Zeile hinzu; ROADMAP.md stand danach bei 119,9 KB von 120 KB Budget, also rund 80 Bytes Luft. Der Wortlaut beider erledigter Punkte wandert darum hierher, die ROADMAP behält die Erledigt-Zeile mit PR-Zeiger. Inhaltlich unverändert.
+
+**`W2·5m-LESER-V3` — Wortlaut bis 14.9.2026:**
+
+>   - [ ] **Nachbar-Artikel-Pfeile** (← Art. 89 · Art. 90a →) im Artikelkopf; Muster gesetze-im-internet/dejure/buzer. Reine Hülle, Kern unangetastet. Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §3 #1.
+>   - [ ] **Rohdaten-Link je Erlass** (JSON-Snapshot/AKN-Quelle, Stand, Fassungs-Token) im Leser-Kopf — §7-Transparenz, Muster legislation.gov.uk «Print Options». Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §3 #11.
+
+**Einordnung.** Die Pfeile bleiben gebaut, wechseln aber mit dem Konzept Kap. 15 (E1) den Ort: sie verschwinden aus der Scroll-Ansicht und erscheinen nur noch im Einzelmodus — Anlass ist Davids Befund vom 14.9.2026, «das bringt aber nur etwas wenn man einzeln einen artikel hat». Das ist kein Rückbau des Nutzens, sondern seine Verlagerung dorthin, wo er wirkt; der Wortlaut oben bleibt als Beleg des Ist-Standes vom 13.9.2026 stehen (§2b).
+
+---
+
 ## Umschichtung 14.9.2026 (3) — QS-CI-MINUTEN Erledigt-Prosa und Entscheide 8.9.2026 (Wortlaut)
 
 **Begründung.** PR #859 fügt W2·27 die Auflage-Zeile «§8-Anzeige der ungeklärten Leerstellen» hinzu; ROADMAP.md stand danach bei 120,4 KB (Budget 120 KB). Die Erledigt-Prosa von QS-CI-MINUTEN wandert wörtlich hierher; die ROADMAP behält Nachmessung, offene Posten und Zeiger. Inhaltlich unverändert.
