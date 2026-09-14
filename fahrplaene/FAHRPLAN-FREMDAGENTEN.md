@@ -330,6 +330,19 @@ Gemini-Finder: `scripts/analyse/gemini-diskrepanz*.ts`,
 **Messbedingung mitschreiben:** Jede Quote nennt n, Zeitraum und Art der
 Schritte — eine Quote ohne Bedingung ist keine Zahl.
 
+**Datenpunkt und Entscheid — proaktiver Kanal «Suggestions» (14.9.2026).** Der
+Kanal erzeugte **76 Vorschläge** unaufgefordert; eine Opus-Sichtung am Code
+(read-only, Repo-Stand `main 203a292e9`) fand **3 belastbare** (~4 %), davon zwei
+reine Kommentar-Korrekturen; **0 wurden gestartet** (Weisung: nie direkt starten,
+immer über den Roadmap-Eingang). **Für diesen Kanal war nie eine Schwelle
+vorregistriert** — der Entscheid ist darum ein David-Entscheid, keine gerissene
+Messlatte: «einverstanden, wir schalten jules wieder ab» (14.9.2026, §6 D8).
+Rückbau statt Bewachung (§17-Gegengewicht): Toggle aus, keine Wächter-Mechanik
+gebaut. **Der auftragsgebundene Ticket-Weg bleibt unberührt** (Landungsquote
+83 %, n = 6) — gemessen wurde der proaktive Kanal, nicht Jules als Bauequipe.
+Messbedingung: ein Sichtungslauf, ein Repo-Stand, ein Prüfer; der Aufwand der
+Sichtung selbst ist nicht gemessen.
+
 **Landungsquote ist nicht Nacharbeits-Quote (4.9.2026).** Die Landungsquote der
 Zeile «Skalierung Jules» misst, was ANKOMMT (gemergt gegen abgelehnt) — sie ist
 automatisch erhebbar. Die Zeile «Phase 1 Jules» misst etwas anderes: den Anteil
@@ -561,6 +574,16 @@ Snapshot vor dieser Session, 04.9.2026T18:41Z), nicht handgerechnet:
 | Muster | **Jules generiert, statt zu verschieben.** Bei Split-Aufträgen an gewachsenen Dateien schreibt er Kommentare neu, statt sie mitzunehmen. Die Rückbau-Schwelle §3 ist an dieser Serie zu prüfen. |
 | Folge-Ticket (nächste Session) | `tabs.ts`-Split, dritter Anlauf: geteilte Konstanten/Helfer/Typen (`MAX`, `hashVon`, `GeschlossenerReiter`) **wörtlich** in eine Typen-Datei, beide Hälften importieren daraus; `export` nur bei echtem Import. Fremd-PR-Tor zusätzlich um Duplikat-Erkennung ergänzen (`comm -13` auf identische Code-Zeilen). Folge zu #862. |
 
+**Kanal «Suggestions» (proaktiv) — Sichtung 14.9.2026, Kanal danach abgeschaltet.**
+
+| Teil | Befund |
+|---|---|
+| Umfang | **76 Vorschläge**, unaufgefordert erzeugt (Jules-Toggle «Suggestions»; nach dem Abschalten zeigt die Oberfläche «0 / 5 repo max»). |
+| Ausbeute | **3 belastbar (~4 %)**, **0 gestartet** — eingeordnet als ROADMAP-Schritt `QS-CODE-LFZ-GRENZE`. (1) `src/lib/datumsUtils.ts:38` `dauerUeberDreiMonate` (Art. 324a OR): Bug-Fix vom 10.6.2026 ohne Direkttest an der Grenze (genau 3 Monate / Tag 1 des 4. Monats), heute nur indirekt über `lohnfortzahlung.test.ts` LA4 gedeckt. (2) `src/components/vorlagen/ZefixSuche.tsx:8`: Kommentar «Datenschutz-Wortlaut TODO David» überholt — abgenommen 12.6.2026 (`abnahme/wortlaute-2026-06/PAUSCHALABNAHME-2026-06-12.md`), Absatz in `src/pages/Datenschutz.tsx:52-57`. (3) `src/components/forms/ZustaendigkeitForm.tsx:235`: Klammer-Vermerk «(TODO 5 betreibungskreise-kantone.md)» liest sich als offen, die Auswahl (`PlzGemeindeWahl`) ist seit 10.6.2026 gebaut. Optional dazu: Wächter-Kommentar `ArtikelBody.tsx:135` (Quelle des `dangerouslySetInnerHTML` ist ausschliesslich das eigene DOM). |
+| Rauschen-Muster | Der Kanal kennt den Repo-Kontext nicht: «Refactor long function» (20×) gegen ein Tor, das Datei- statt Funktionslängen misst; «Sequential await» (20×, 19 davon in `scripts/`) gegen absichtliche Höflichkeitspausen an amtlichen Quellen; «Cleanup» (7×) gegen bewusst geparkte David-Entscheide (Abnahme-Zeitsperre ab 1.12.2026); «Actionable marker» (5×) auf Kommentare, die das Gegenteil sagen («KEIN document.title-Hack»); 1 Security-Fehlalarm (Self-XSS-Klasse, `ArtikelBody.tsx`); 8 von 17 Test-Vorschlägen bereits abgedeckt. |
+| Folge | **Kanal aus** (David 14.9.2026, §6 D8). Jules bleibt mit GitHub verbunden für auftragsgebundene Tickets mit vorgegebener Partition. |
+| Messbedingung | Ein Sichtungslauf, Repo-Stand `main 203a292e9`, Prüfung am Code durch einen Opus-Agenten (read-only). Keine Wiederholung, n = 1 Kanal-Lauf; der Sichtungsaufwand selbst wurde nicht gemessen. |
+
 **Regel (14.9.2026, Vorfall Ticket #858): Ticket-Body nach `gh issue create` zurücklesen.**
 Beim Ableiten aus `docs/token-oekonomie/jules-ticket-vorlage.md` scheiterte das `sed`-Kommando an
 Sonderzeichen, die Body-Datei blieb leer, `gh issue create` nahm sie trotzdem an, und ein
@@ -622,6 +645,7 @@ Claude D7 geparkt, kein Zwischenmarkt zu Jules). Schritt-Status darum `ready`, n
 | D5 | Auffindbarkeits-Basis (Sitemap + Search Console) trotz SEO-Parkung entparken? | **ja**, minimal | neuer Schritt `SEO-BASIS`, kein SEO-Ausbau; Domain-Verifikation durch David |
 | D6 | NotebookLM-Abnahme-Notizbuch anlegen? | **David** (empfohlen) | kein Bau nötig |
 | D7 | Antigravity-Claude als Bauarbeiter testen? | **geparkt** (Bauleiter/David-Chat 4.9.2026) | Jules deckt die Rolle bereits ab, Claude 4.6 ohne Skills bringt keinen Zwischenmarkt; Wiedervorlage nur bei Kontingent-Engpass |
+| D8 *(14.9.2026)* | Proaktiven Jules-Kanal «Suggestions» weiterlaufen lassen? | **nein — abgeschaltet** («einverstanden, wir schalten jules wieder ab», David 14.9.2026) | Toggle aus («0 / 5 repo max»); Jules bleibt für auftragsgebundene Tickets verbunden. Begründung: 76 Vorschläge → 3 belastbar (~4 %, §5). Der Kanal urteilt **ohne Repo-Kontext** — er kennt weder `check:schlankheit` (misst Datei-, nicht Funktionslängen) noch die Abnahme-Zeitsperre bis 1.12.2026 noch die absichtlichen Höflichkeitspausen an amtlichen Quellen. Die drei Funde: ROADMAP `QS-CODE-LFZ-GRENZE` |
 
 **Offen — klärt nur ein Testlauf:** Jules-Laufzeiten, Branch/Autor, deutsche
 Aufträge, CI-Auto-Fix, reales Kontingent · Antigravity `read_file`-Regelform,

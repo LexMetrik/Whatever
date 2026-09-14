@@ -33,6 +33,11 @@ falsch — korrigiert 30.8.2026). Karten abgeschlossener Sessions (älter als
 werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
+## Session 14.9.2026 (2) — Jules-Suggestions gesichtet (76 → 3), Kanal abgeschaltet
+
+- Proaktiven Jules-Kanal «Suggestions» am Code gesichtet (Opus, read-only, Repo-Stand `203a292e9`): **76 Vorschläge → 3 belastbar (~4 %)**, 0 gestartet; Kanal auf Davids Entscheid abgeschaltet (Wortlaut und Begründung: `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §6 D8, Messwerte §5, Datenpunkt zur Rückbau-Regel §3). Die drei Funde als Roadmap-Schritt **`QS-CODE-LFZ-GRENZE`** eingeordnet (Weisung: Jules-Vorschläge nie direkt starten, immer über den Roadmap-Eingang), Nebenbefund `NormText.tsx` 795/800 unter `W2·5m-LESER-V3` gebucht. Reiner Doku-PR, kein Code: PR #872 (`21846d038`, `269802a18`).
+- **Werkzeug-Vorfall (§17, gehört in die nächste Lehren-Durchsicht):** der Arbeits-Worktree dieser Session wurde mitten im Lauf von aussen entfernt (`LexMetrik-wt-jules` samt Branch) — uncommittete Doku-Arbeit war verloren und musste neu geschrieben werden. Lehre: im Worktree sofort nach dem ersten Teilschritt committen und den Branch pushen, nicht erst am Ende (§0 Recovery, Skill `landung` Ziff. 5).
+
 ## Session 14.9.2026 — Phasen-Dekret «Bund zuerst» und die Phase-1-Welle (#846–#869)
 
 **Rahmen.** Auftrag David 14.9.2026: drei Phasen (Bund → Kantone → mehr als Fedlex), Phase 1 wird
