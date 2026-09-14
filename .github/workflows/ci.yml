@@ -860,6 +860,15 @@ jobs:
       - name: Normtext-Korpus (Drift/Coverage · Struktur-Konsistenz · Verklebung · Stand-Zukunft)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:normtext && npm run check:struktur-konsistenz && npm run check:verklebung && npm run check:stand-zukunft
+      # W2·27 (14.9.2026): eine «ungeklärte Leerstelle» ist ein Artikel mit leerem
+      # bzw. «…»-Body, den die amtliche Fedlex-Fussnote NICHT als aufgehoben
+      # ausweist — die exakte Signatur eines Extraktionsfehlers, die bis hierher
+      # still als «aufgehoben» angezeigt wurde (§7/§8). Das Tor hält die Menge auf
+      # ihrer committeten Basislinie fest (Bund 98, Kanton 481) und faerbt bei
+      # ZUWACHS je Erlass rot — nicht bloss in der Summe. Offline, <2 s.
+      - name: Normtext-Leerstellen (aufgehoben strukturell, Zuwachs-Riegel)
+        if: needs.diff.outputs.art != 'doku'
+        run: npm run check:leerstellen
       # Das §6-Beweismittel selbst: golden/normtext-snapshot.json wird vom
       # Generator PAUSCHAL ueberschrieben (PR #383 Runde 2: 55'763 -> 32'639
       # Eintraege aus einem partiellen Korpus) und wurde bis 27.7.2026 von KEINEM

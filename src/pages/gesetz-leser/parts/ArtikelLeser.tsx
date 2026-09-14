@@ -21,13 +21,15 @@ import { RandTitel } from './ArtikelLeser.kopfteile';
 import { ArtikelHistorieZeile } from './ArtikelHistorie';
 import { ArtikelBezuegeFuss } from './ArtikelLeser.bezuegeFuss';
 import { ArtikelAktionen } from './ArtikelAktionen';
+import { ArtikelNachbarn } from './ArtikelNachbarn';
+import type { ArtikelNachbarn as NachbarnAmArtikel } from '../v3/nachbarArtikel';
 
 // Ein Artikel im Lesefluss (Richtung A): zweispaltig wie die amtliche Druckfassung —
 // links «Art. N» als ruhiger Anker mit den Randtiteln darunter (rechtsbündig, nur die
 // gegenüber dem Vorartikel GEÄNDERTEN Stufen, `marg`), rechts der Serif-
 // Bestimmungstext. Ersetzt den früheren fliegenden Standort-Tracker. Reine Darstellung.
 
-export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, bezuegeImFuss, materialien, onBezuegeOeffnen, onImBlatt, bezuegeLaedt, revision, historie, zaehler, istAnhang = false }: {
+export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, bezuegeImFuss, materialien, onBezuegeOeffnen, onImBlatt, bezuegeLaedt, revision, historie, zaehler, nachbarn, istAnhang = false }: {
   e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: InternRefs;
   marg?: string[];
   /** G-HIST-UI: Fassungshistorie dieses Artikels aus dem erlass-lokalen Shard
@@ -51,6 +53,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
    *  Struktur-Überschrift statt Artikelnummer). Reine Darstellung (§3); Prosa
    *  byte-gleich, nur Markup/Klassen. Delimitation über Typo + Struktur-Trenner
    *  (Linien-Kanon «Ruhe durch Reduktion» — keine Farb-/Box-Sprache). */
+  /** W2·5m · Vorgänger/Nachfolger DIESES Artikels in amtlicher Reihenfolge
+   *  (`../v3/nachbarArtikel.ts`). REFERENZ-STABIL übergeben — diese Komponente
+   *  ist `memo`, und ein je Render frisch gebautes Objekt höbe die Schranke
+   *  über alle 1686 Artikel des OR auf (§15). `undefined` = die Hülle setzt
+   *  keine Nachbarschaft (Test-Render, Einzel-Ausspielung) ⇒ keine Zeile. */
+  nachbarn?: NachbarnAmArtikel;
   istAnhang?: boolean;
   /** Leitfälle dieses Artikels (V1a-Form, flache BGE-Chip-Reihe).
    *
@@ -380,6 +388,15 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
             {/* aufgehoben gedämpft, aber ink-500 (WCAG 4.5:1 hell+dunkel) statt
                 ink-400 (3.2–3.6:1) — essentieller Link-Text, kein incidental. */}
             {ganzAufgehoben && <span {...{ [SUCH_META]: '' }} className="text-xs italic text-ink-500">· aufgehoben</span>}
+            {/* ── W2·5m · NACHBAR-ARTIKEL «‹ Art. 89 · Art. 90a ›» ───────────
+                Muster gesetze-im-internet/dejure/buzer, hier als Anker im
+                selben Dokument (der Leser zeigt den ganzen Erlass auf EINER
+                Seite — der Pfeil blättert, er lädt nicht nach).
+                NICHT in der Suchsicht (`imTreffer`): dort ist die Lesespalte
+                durch die Trefferliste ersetzt, `#art-…` zeigte ins Leere. Die
+                Artikelnummer daneben trägt in diesem Modus aus demselben Grund
+                schon einen `<button>` statt eines Ankers. */}
+            {!imTreffer && nachbarn && <ArtikelNachbarn nachbarn={nachbarn} />}
             {/* ── W2·24-D35-F1 (David 7.9.2026) · HIER STANDEN DIE AKTIONEN ──
                 «Zitat · Link · Amtliche Fassung ↗» sassen rechtsbündig in
                 dieser Kopfzeile — und trugen `opacity-0` bis Hover, Fokus oder

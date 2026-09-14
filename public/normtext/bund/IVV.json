@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-12",
+  "erzeugt": "2026-09-14",
   "eintraege": [
     {
       "id": "bund/IVV/art_1",
@@ -16,7 +16,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_1",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b9493929864cc33751cb8e2eafee42f704bd76c36b3264ce7f0b3f534d430b3e"
     },
@@ -146,7 +146,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_1_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "016287b09e04b3eec8b809f826c8cc189a8bef85e25c362ef06df8f1fdb6043d"
     },
@@ -169,7 +169,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_1_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "e95f84487be7550ee841bac40154d162857300e518cbe87f30757737e0745d39"
     },
@@ -192,7 +192,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_1_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "8f6a5987a71dda2c1880e0ad5858bde9162dfeb6908552032dabee9fde21c394"
     },
@@ -203,6 +203,7 @@
       "erlass": "IVV",
       "artikel": "1_quinquies",
       "artikelLabel": "Art. 1quinquies",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -211,7 +212,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_1_quinquies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -234,7 +235,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_1_sexies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "894a9a296d5c918bfe7c5f9087e23f883dcaff42e22d0dd3d674da744d8688e9"
     },
@@ -267,7 +268,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_1_septies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "55fe9a97e327488c056b7ecdcfa41a7d9b0bbeaa35050ca528d278d72f144317"
     },
@@ -286,7 +287,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_1_octies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "bf0e4d475743c5ddea29ec4305e9d28dfa253adc3ecce86b9a7ca678999433cf"
     },
@@ -305,7 +306,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_1_novies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "dacabb28ed17e7a30513a9eb6a6eabb13b8f98fe2a8663e0e489548c297b5f45"
     },
@@ -346,7 +347,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_2",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "68ae7e3ec84eebe52334099558dbbd1fb5726c68618ebf4eceec577617e9da81"
     },
@@ -379,7 +380,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_2_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "ceb409beb26096a3df696562beea0ea2719a81d6e865d97a02104c1fa1fc0aa9"
     },
@@ -412,7 +413,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_2_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "ee1a200e913139b277da422b8494a1e538b722387937eed3d36e8b6ead6eca72"
     },
@@ -477,7 +478,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_3",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "602565e47b673a134818bb9dd67e7b8bb63fa98c62a5ddc8016c27619d610c2e"
     },
@@ -500,7 +501,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_3_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "552ea9e5cbaf601a5cfbb8ee8ad901d21dc674110b76b5154d1336e3f868a90c"
     },
@@ -523,7 +524,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_3_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "0475d723b9cee337a445876c9ae28a3b89bb4b8dceb4ece9e6f979576436eb87"
     },
@@ -534,6 +535,7 @@
       "erlass": "IVV",
       "artikel": "3_quater",
       "artikelLabel": "Art. 3quater",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -542,7 +544,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_3_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -573,7 +575,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_3_quinquies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "3fcc3ccaa22404e77745ac6058e0fcec49dc16efd5f58c8fdcdf7257a8af5464"
     },
@@ -614,7 +616,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_3_sexies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b17f7f278474ce0ab65f76893c0ebe24494a2955580e5bea426e6ea01a308895"
     },
@@ -647,7 +649,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_3_septies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "35c3abd235ef6ccf25df2d89ee78d55ce399b95207f8c14ad62b9629ee4352f8"
     },
@@ -666,7 +668,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_3_octies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "787b119bb6e124be8bdcf6240d41cb93b3d040ef1484f61e804e4afb9f0afeb8"
     },
@@ -717,7 +719,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_3_novies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "35e9291818f1e787da844065d6787ad84d9741e0c9d0d46a33c4de564f13a10d"
     },
@@ -740,7 +742,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_3_decies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "8bb8c2bf921be9705c4a46a5e669954801002e8089f1e430b608fb04c5510f81"
     },
@@ -751,6 +753,7 @@
       "erlass": "IVV",
       "artikel": "4",
       "artikelLabel": "Art. 4",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -759,7 +762,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_4",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -770,6 +773,7 @@
       "erlass": "IVV",
       "artikel": "4_bis",
       "artikelLabel": "Art. 4bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -778,7 +782,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_4_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -797,7 +801,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_4_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "a706f6cecc449fc91c27d9ee4097b1d63b9cbbd3131f48f68fd583f8002ce7b6"
     },
@@ -824,7 +828,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_4_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "30d30d035651da62efbbadde8a09e5e7e4e9adceb2d42c4f47753b6b7b66bd9f"
     },
@@ -855,7 +859,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_4_quinquies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "ae5ce6795215ab9ed23cab3a8ec7f35abb1e2c76f99c77e7a325a4a0859f5cc6"
     },
@@ -928,7 +932,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_4_sexies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "290055b72c200044ad84e4b1c55732a903d5403682585b4c8badc6cfed4a0a69"
     },
@@ -939,6 +943,7 @@
       "erlass": "IVV",
       "artikel": "4_septies",
       "artikelLabel": "Art. 4septies",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -947,7 +952,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_4_septies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -970,7 +975,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_4_octies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "4f28579f9b3ca4e25a42542239e7657a7fe1fcd127467ec62dd19bf312dfa1b8"
     },
@@ -989,7 +994,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_4_novies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "50b5cb07d2b03a9c6ae3a4ae7c40c6b8f7ca9ed16c122d681347b0a8faa6b448"
     },
@@ -1048,7 +1053,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_4_a",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "f43fe62a75b2f46671ba92b9fef5ff6dbf489e92a163e815e3c35bccb5095674"
     },
@@ -1121,7 +1126,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_5",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b6bec2ec52f91a9846f48329c7a65382298b739b0ebd28c053a3a0d4015440ca"
     },
@@ -1198,7 +1203,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_5_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "49fa1f18359020d3e6f1c2965814a5dfab2cf54a481a90ac6b79b2dbd45e73c5"
     },
@@ -1229,7 +1234,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_5_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "becc40134f4d8dff30a0d4695396f0c8a1cea8553f8d6887dad3528a5f196270"
     },
@@ -1274,7 +1279,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_6",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "adba7e643698865164b9a4e889ee5c02da1806c303a677dbfd16b44e9dd8e336"
     },
@@ -1311,7 +1316,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_6_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "eb815f6065f21fafcb515f0d3c3606f97d201971ead1543e4c0e7422adfffb1e"
     },
@@ -1356,7 +1361,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_6_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9cea8471ba1dd20133ee39f0802e188990a450ebe1cef444755a1bc17755f469"
     },
@@ -1397,7 +1402,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_6_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "cba41c34fc8a3ac5b686ae86ca7ebd347d6427c3a2d98fdae0bf1434f0814c4a"
     },
@@ -1446,7 +1451,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_6_quinquies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "425b650280fe22ec1ce643d6c880e284f017296224f930cf856112842dfb00cd"
     },
@@ -1469,7 +1474,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_7",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9635eb310e3424643add23e3db12313b84627f9b6edb532ded21b722e84ee538"
     },
@@ -1480,6 +1485,7 @@
       "erlass": "IVV",
       "artikel": "8_12",
       "artikelLabel": "Art. 8–12",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1488,7 +1494,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_8_12",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -1499,6 +1505,7 @@
       "erlass": "IVV",
       "artikel": "13",
       "artikelLabel": "Art. 13",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1507,7 +1514,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_13",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -1566,7 +1573,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_14",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "82b22b8e2c939aefe8a0caa4235cc7df472a9fdbbc5d569907a6032c6c863777"
     },
@@ -1589,7 +1596,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_14_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9ca556f830269e8e04a3c56938d0fbed712939b6f8064aefb24fe26c7d25b894"
     },
@@ -1608,7 +1615,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_14_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9d9cb8cb6a1c0243a40124540b596e42013d4e9270710f071ef2c1fe94560ae2"
     },
@@ -1627,7 +1634,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_14_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "6bcde435aaa79c8e4767835b71079e4677e45f11cee95c2da02dddb5b00d1bf1"
     },
@@ -1638,6 +1645,7 @@
       "erlass": "IVV",
       "artikel": "15_16",
       "artikelLabel": "Art. 15–16",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1646,7 +1654,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_15_16",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -1669,7 +1677,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_17",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "583cc29823ea90174f9f3711be46058e8bd28071bef2e0f3794e353249d02a6b"
     },
@@ -1698,7 +1706,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_17_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "912daf0921c741cfcfd0e1b2ac7a8ec686cb64ce1c93c2ac3f41220cd24cbd4a"
     },
@@ -1729,7 +1737,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_18",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "056b6ba56a4ffe85be1006fa432b203fd1d4a75b368b935840dd19400ff018a7"
     },
@@ -1752,7 +1760,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_19",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "7ebf70388f012e1e74c004a7f47ad6d56dcb8c6a5179ab61307f70f28ff3396c"
     },
@@ -1763,6 +1771,7 @@
       "erlass": "IVV",
       "artikel": "20",
       "artikelLabel": "Art. 20",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1771,7 +1780,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_20",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -1782,6 +1791,7 @@
       "erlass": "IVV",
       "artikel": "20_bis",
       "artikelLabel": "Art. 20bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -1790,7 +1800,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_20_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -1813,7 +1823,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_20_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "23b961865ad2dcfcf54a3a1c187c8a11726d0be75bfe2ded244c641b9e3761f5"
     },
@@ -1876,7 +1886,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_20_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "7061d5c2ae84d88561a77e75abcaf90086359ab2dffe08a4efb9f0c1c2aa89d2"
     },
@@ -1895,7 +1905,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_20_quinquies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "d6f87824b75f61ea0d4b043a3b10b40c5d92394d323701381d5ef233a1eef7b9"
     },
@@ -1928,7 +1938,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_20_sexies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "905191f7b42dd89a7db7e296f05e8fcf2085c18c8a123a20120220c8255a18b4"
     },
@@ -1989,7 +1999,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_21",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "fedf4e719a30e294072c2a38cbf2a2aebedd71371705ae3c8727903fedffad97"
     },
@@ -2038,7 +2048,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_21_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "4410c5fd2162bb9f1fdc7deaf61d8c9ded46f711f53289fef94c1cd02402402b"
     },
@@ -2061,7 +2071,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_21_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "f6b2740ffe137289d03f1e3bdb53f8fb4eb4e909e1e43f557dc946fbdcaf70ad"
     },
@@ -2084,7 +2094,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_21_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "112819ec375439979a8d259adede2dfb1e3962f30239eeb654ecc20ead8a0eaf"
     },
@@ -2103,7 +2113,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_21_quinquies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "4fa0278dd8f754e70272be075815279e2b75207ab8a640bfebea4aa410ab87d7"
     },
@@ -2122,7 +2132,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_21_sexies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "4004f2c656850b3949d51f809a7faf478f5ef5c0ae8d68c9bac5df4755e93f5d"
     },
@@ -2157,7 +2167,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_21_septies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "1a46773fe37bbf3607d0d42c20e2518c470b8741b01c388833b57393563c5dcc"
     },
@@ -2184,7 +2194,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_21_octies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "4a8ef3281db40b4c8d0c7529805a638b93cd0d135133d430d74a7563ed852175"
     },
@@ -2203,7 +2213,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_21_novies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "ad0d6563b8dd5ebd12edfb14a0f5332d5eacd300994dd691c9036d2f01930428"
     },
@@ -2248,7 +2258,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_22",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "afcf1e09b9c6023dfd8a493225c8fcb1508252f1ca70ff18651fd45d7f94cf44"
     },
@@ -2259,6 +2269,7 @@
       "erlass": "IVV",
       "artikel": "22_bis",
       "artikelLabel": "Art. 22bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2267,7 +2278,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_22_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2278,6 +2289,7 @@
       "erlass": "IVV",
       "artikel": "22_ter",
       "artikelLabel": "Art. 22ter",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2286,7 +2298,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_22_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2335,7 +2347,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_22_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "83e91fb2191b66bd7a59dedd05b10bb6ff390a2501107627d9eb6d5391e16135"
     },
@@ -2362,7 +2374,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_22_quinquies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "f8b3f007dddf0c92f0f6f74d5d652c38e54e8b14b9db152dd62818fd171e6c28"
     },
@@ -2373,6 +2385,7 @@
       "erlass": "IVV",
       "artikel": "23",
       "artikelLabel": "Art. 23",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2381,7 +2394,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_23",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2408,7 +2421,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_23_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "eb3bfba52ac1bf46334a733a62203903f886655f92bfda894a7260756de7c03e"
     },
@@ -2431,7 +2444,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_23_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "ca3a8c8cb2b527673b6cc1afb9e18d13f78746d54470dd9f96f2459f33f3b95d"
     },
@@ -2458,7 +2471,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_24",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "3db835256e88e63e2870c18c2ac1849d1b1918d004da2cc211874cdf8e7ffac3"
     },
@@ -2497,7 +2510,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_24_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "16e6dc12ad7d3f962f56b1b10359924db06e1a76aed9fd38e7d586cbef664743"
     },
@@ -2524,7 +2537,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_24_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "378d843b2391fe93e5ee7849b4f3d7bc887e1198507a7217193bf16fd00171c7"
     },
@@ -2555,7 +2568,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_24_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "e3c8338c940109572ad3980c70333e5cdf3b7dbd31c3bdf5279e4455c309fee8"
     },
@@ -2574,7 +2587,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_24_quinquies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "45101b9508fa920ff8f9cddb0ff9fe40dc2967175f0f40c400673c6dd9ba4adb"
     },
@@ -2597,7 +2610,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_24_sexies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "5684325af98d0864fc1ff17ded1da4753a0baa790ef0b6bcbbbe1fff6c488545"
     },
@@ -2634,7 +2647,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_24_septies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "ca03608d601a95e18009b39c177c9bb271f3650bc0b2a36d82b648658437b81f"
     },
@@ -2675,7 +2688,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_25",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "467799023b1cd3f959f43aacc5765e9938e5ecb2dee449a1e2a35b29505ba4cc"
     },
@@ -2724,7 +2737,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_26",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "8bf99cf57ac02ab46bbf2980c161163e916dd1b467852845fa96495911de3c28"
     },
@@ -2751,7 +2764,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_26_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "a0beedcb8239df2cb7bf2a1d5eba809433774530e837c4e2af80f1d844844e8f"
     },
@@ -2774,7 +2787,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_27",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "6668087b3830cc52e5c65f90258c3ada4282bed1b890583eedab5519d83046fb"
     },
@@ -2835,7 +2848,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_27_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "1b2125aabe7a3ffee1f3f8e3d959ce2c8bf323bd95c68bc225c38ee71a7ff61f"
     },
@@ -2862,7 +2875,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_28",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "adf99e22df8e134acc969cfaad78c98253bf9873ce3901ccfcb3e9b8ac79816e"
     },
@@ -2873,6 +2886,7 @@
       "erlass": "IVV",
       "artikel": "28_bis",
       "artikelLabel": "Art. 28bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2881,7 +2895,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_28_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2892,6 +2906,7 @@
       "erlass": "IVV",
       "artikel": "29",
       "artikelLabel": "Art. 29",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -2900,7 +2915,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_29",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2919,7 +2934,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_29_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "063bc9274817969f372e88809fd397ba426eaba894e5b5efb236d25f7f8395fb"
     },
@@ -2938,7 +2953,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_29_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "114277bb06a54f6a8ac14d8b4ffce29a2920368221568685840079d7438899ea"
     },
@@ -2957,7 +2972,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_29_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "a92c35ad6c643f86c82d76fd1fb7efe8b568553d0ca04a13d5145f385e1e0722"
     },
@@ -3000,7 +3015,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_30",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "1330bfeeb7b557fdfd9f721fda9c6d66663965c25f469b3ef633461ee6a36929"
     },
@@ -3011,6 +3026,7 @@
       "erlass": "IVV",
       "artikel": "30_bis",
       "artikelLabel": "Art. 30bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3019,7 +3035,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_30_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3042,7 +3058,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_31",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "a4ad2e82054bf2edd09585a23f6399b3a8364e10eb10d912aa5ee2565ac7feda"
     },
@@ -3065,7 +3081,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_32",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9c21f675674c68ff6f4ff90be78881a2a3a213adc5a2674351ae08e9220e9dd5"
     },
@@ -3084,7 +3100,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_32_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "98f27e64995a3e927c8d3528aecf5963d3498a1922f9392b6ca5b224a7c824e2"
     },
@@ -3095,6 +3111,7 @@
       "erlass": "IVV",
       "artikel": "33",
       "artikelLabel": "Art. 33",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3103,7 +3120,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_33",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3126,7 +3143,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_33_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "46011a754db601d4cd118245906cf2726037b993d31deb117ea98bdda6c3dd16"
     },
@@ -3149,7 +3166,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_33_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b1f5f73c95bcd87967cce890514779521fe66dddc367e32e8bdb603c4e0a187c"
     },
@@ -3168,7 +3185,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_34",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "75cd234f9bab83bed308c5ebf02fad6e75379f8492ca14463777a483003d3ed7"
     },
@@ -3195,7 +3212,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_35",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "1ab8ebb09a9ef70a39a2a7aa898e1e6d8d8a305636716d1ea03e7b3e50b4d791"
     },
@@ -3238,7 +3255,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_35_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "65c657a15e5063bfbb1550d2487e5fb973f05fb24218dd3a7006a3fcb8e871e3"
     },
@@ -3301,7 +3318,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_35_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "498e876ef4bc5fbccbb6c2fe5d6080f9a991c651b46c4753f04eed02712db605"
     },
@@ -3328,7 +3345,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_36",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "653224cc13421aa48aa67ee7bc3da4ad8903257428ffd9b8bbc9c14035eaaf53"
     },
@@ -3395,7 +3412,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_37",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "5870b371d56fa3d9489e08a7cdbcb1fc87df9ede148f494264f403b9864ba8ed"
     },
@@ -3436,7 +3453,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_38",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "3e5feaa4698553abfd31e43bf56fbf5f38f85d0f1d0905208a26e495501800e9"
     },
@@ -3463,7 +3480,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "5b83afc0ccc54a19c9781fc67bd63f9fd34dc97db648dce4fe5434d8f88c95c4"
     },
@@ -3496,7 +3513,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39_a",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "32ee198fe973b31030995a26612e6f109ef5abcf9a1a60a741534269b8efa672"
     },
@@ -3533,7 +3550,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39_b",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "28d5864a71301a94df20c92f154b7cdecf1486a9fbe92556dc9cf18dae4372f7"
     },
@@ -3590,7 +3607,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39_c",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9871c4690f93452bdfc8a8abe398f5f7c49385029132be0d6c457ca51fe49fee"
     },
@@ -3609,7 +3626,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39_d",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "3407c602fc2d1254b0afc1e1934622cacff0640f56ed3b25337451efc0102f6c"
     },
@@ -3687,7 +3704,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39_e",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "5ddfc57d2ccf444f9c8a1e7e0b985af9ba784403f88bf39a5ae3bebe401f3882"
     },
@@ -3718,7 +3735,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39_f",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "d5e8630e89dcdb81de3f9fd27574fe86bd84c045e4086cec6d894b5eb8b25c10"
     },
@@ -3761,7 +3778,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39_g",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "24b4f17dde91cfb86441dec0e21e80b3d0a3ede2c601e0035631cdc5548631f6"
     },
@@ -3784,7 +3801,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39_h",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "88e7bbd20c4369056a9dc5e1903973fa97f854b9d4bf7df34de2bb9ee731ba68"
     },
@@ -3823,7 +3840,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39_i",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "a26561d0341ab6994caf6e29f51a5e916ab339479d7671f93d3ef0b9436f6179"
     },
@@ -3850,7 +3867,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39_j",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "e45aa478ec3d84f5d04aa5e6ab4a5d3b22cbb02b9fbf5390bf55e364fbe7f7b5"
     },
@@ -3877,7 +3894,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39_k",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9259938bf4022baf4a30968b516a87b185632631fc54503bfe7991367a368f64"
     },
@@ -3888,6 +3905,7 @@
       "erlass": "IVV",
       "artikel": "39_ter",
       "artikelLabel": "Art. 39ter",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -3896,7 +3914,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_39_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -3949,7 +3967,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_40",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "880e251e9740e8c905f4b3cc9fa1bb57e69a89637c8e85c50ab0b643a5a8f31e"
     },
@@ -4024,7 +4042,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_41",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "f3e21b25420b0c09ec4c631691d4aca0338ea109763457de72b8e8a97c20bfab"
     },
@@ -4077,7 +4095,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_41_a",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "3b577c826ba06bf8c2552e18b44ba5ecd9e583adb85e1ac804dff8eeff8e99b6"
     },
@@ -4142,7 +4160,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_41_b",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "3b2893d9f6a814da10172d02c9ba13c4258152e56aea55b092befff6e1fccfd1"
     },
@@ -4161,7 +4179,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_42",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "30628d26b8d13d50b5367ad1f623c8cb997a2c19d5c4cb3114cf5525ff8866a8"
     },
@@ -4184,7 +4202,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_43",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "2b1f0e559a2c64cc79a7162888c980fc2e398b629cacfb9435fec012a91e3916"
     },
@@ -4203,7 +4221,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_44",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "cb3edb8e79c4d5d63f5e251e07056ba90bd48077d4c3de711203bb32bd45c3a0"
     },
@@ -4214,6 +4232,7 @@
       "erlass": "IVV",
       "artikel": "45",
       "artikelLabel": "Art. 45",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4222,7 +4241,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_45",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -4241,7 +4260,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_46",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "e4bd301c68bad8c5ddcff5603d07e33f0fc46d9f9061ad062429593dc196fe4a"
     },
@@ -4268,7 +4287,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_47",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "7109ff4cd7e5f3b916a9affef15c634362b19d91e0c4d8c1b7e1ff319e65f465"
     },
@@ -4287,7 +4306,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_48",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b1cbd1954b424c9293fe6d47977df7ffd28ce5b7e2cc58e4d59532c4c56385ae"
     },
@@ -4318,7 +4337,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_49",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "293b73bd5586da5de08fdf13afbbbce04aeb8043e494bef2c1404a92ae7d48f7"
     },
@@ -4345,7 +4364,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_50",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "163b1e46ad7b14ea63968e7f3aa5b1c82c12a35f8acadc93b5668c111ac3ef33"
     },
@@ -4364,7 +4383,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_51",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "8bec3890b6e5afa1f39f45e6e3877640518ff20b4fb4c668193e646e360bad30"
     },
@@ -4391,7 +4410,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_52",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "5ae168268802aa3bb4243c44de37beead1b93a0c4242c67a852f33dc2c9929ad"
     },
@@ -4418,7 +4437,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_53",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "137ba084376d35af1d4bc310dfd702a88c907c339d14b15cd9e86038f298e3b2"
     },
@@ -4445,7 +4464,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_54",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "0e35120080fb76d322106be2cf4f41eb56f3a2d9ff0af99c6cc9b386d96e4aae"
     },
@@ -4468,7 +4487,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_55",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9f93e117d5ef1c14b3e29d74cc887b76e71fd63e8ee23416dd21fa4023cfedb6"
     },
@@ -4491,7 +4510,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_56",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "52f2115dcb2bfb901e9f87cc0657818d11278c4065b8e8fb7184c141ba8da8df"
     },
@@ -4514,7 +4533,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_57",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "d141e0a53531e564c2239acf2cd41f66de7da6f697691511f7445c1de3ad0a89"
     },
@@ -4525,6 +4544,7 @@
       "erlass": "IVV",
       "artikel": "58_64",
       "artikelLabel": "Art. 58–64",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4533,7 +4553,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_58_64",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -4560,7 +4580,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_65",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "fca88c2f29289f0f27eb8440bb4fc76f1d77801f77ac8d5460266066741484fe"
     },
@@ -4587,7 +4607,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_66",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "389ace0ad0ea0fa869471cb39f0ad5063afba8fb19ad495a5795899603369f60"
     },
@@ -4614,7 +4634,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_67",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "fa68b90afb355c351b2e547275f0447ccbcebc138084186375e58457f5cb2fb1"
     },
@@ -4633,7 +4653,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_68",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "46d2324f15c362a38f59075fff7fe15c3835d162fe3c3d8676b05e3813fb155c"
     },
@@ -4664,7 +4684,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_69",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9a11c333c1f01e8e72f81b2fae474ea63a27dccf29a21b55e8cbe17d84f9b61b"
     },
@@ -4675,6 +4695,7 @@
       "erlass": "IVV",
       "artikel": "70",
       "artikelLabel": "Art. 70",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4683,7 +4704,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_70",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -4694,6 +4715,7 @@
       "erlass": "IVV",
       "artikel": "71",
       "artikelLabel": "Art. 71",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4702,7 +4724,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_71",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -4713,6 +4735,7 @@
       "erlass": "IVV",
       "artikel": "72",
       "artikelLabel": "Art. 72",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4721,7 +4744,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_72",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -4748,7 +4771,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_72_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "c659c9428f0657991cfc90ff55a536bfa9454be12bccbaf6039198a9cf0d839c"
     },
@@ -4767,7 +4790,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_72_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "c720f3596f1011e49f2845e1a759745c7d5a0fd8cf8e0c523843033b1f4e9966"
     },
@@ -4778,6 +4801,7 @@
       "erlass": "IVV",
       "artikel": "73",
       "artikelLabel": "Art. 73",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4786,7 +4810,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_73",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -4835,7 +4859,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_73_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "ea0c31db321ad891913d8b82ee8b7e6c9a4d06a79c4dc04c482b9ec6069c3fc8"
     },
@@ -4866,7 +4890,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_73_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9379acceddb984f3e45f398e511772368dd1e92c339b6a6cb8f4dddb471cb8de"
     },
@@ -4889,7 +4913,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_74",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "77294b4c0e3f995c424bb9b9b8b25b2a582958baae043ec316fa973765ad62c1"
     },
@@ -4900,6 +4924,7 @@
       "erlass": "IVV",
       "artikel": "74_bis",
       "artikelLabel": "Art. 74bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -4908,7 +4933,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_74_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -4961,7 +4986,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_74_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "91e893d40b68485b726489a959ae31d0b6a474a8507626f977389dd4342f32ea"
     },
@@ -4984,7 +5009,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_74_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "71a87f2d2e6a67f881e80094bcf13d98f4c7b2143b5a6873438e4284ae170d0f"
     },
@@ -4995,6 +5020,7 @@
       "erlass": "IVV",
       "artikel": "75",
       "artikelLabel": "Art. 75",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5003,7 +5029,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_75",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -5061,7 +5087,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_76",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "a02c0e96cdc0ad685bc18aa61e31c1fa3c3a799f576049cbf74a4413ca8a5d97"
     },
@@ -5080,7 +5106,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_77",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "8a5a06fd0ccf16ed78f6d3d8460e9966da25c42f6aa4e873197900a9c0669e62"
     },
@@ -5123,7 +5149,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_78",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "fc3731f51419b164dfd3e1487a7cc1bc6154c9f17e25d4985af591e139d9f78c"
     },
@@ -5168,7 +5194,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_79",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "8a17a931645f39014ca51bf994141e92e4ebec05401f9cae90e3d1a143881e8b"
     },
@@ -5187,7 +5213,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_79_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "4e93419cdff8259986f582fd8967e3f7f11044c31caf801aff3b36ad74df97d8"
     },
@@ -5244,7 +5270,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_79_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "d4ac109f148b5165d5a4320905164aa99081f9e2546488af691efc49f431ca26"
     },
@@ -5275,7 +5301,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_79_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "45cc845da9df1c434e5eb434d40489b5a3b2c0a7adf38921ade5c10ffde0c972"
     },
@@ -5294,7 +5320,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_79_quinquies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "c44e4fb983e9a1c39c928287d383f9e6d41b68b240d004b7288a4b44e5e48979"
     },
@@ -5317,7 +5343,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_79_sexies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "e2f51eb179ffc3cacbb442cd2cd389e2a87f2282cb3c41780dc3e99efb5c54ae"
     },
@@ -5358,7 +5384,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_80",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "29e69a037a880b00c86e497296ba0ddb632c0efd6c95585722dea6c8b3e5bfc5"
     },
@@ -5381,7 +5407,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_81",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "7f313e5bbcfb4dd657a79e75fdcb73c310c9ec516688bd674c61653802a8744f"
     },
@@ -5404,7 +5430,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_81_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "22b17d4f0beae52556526be28293e249d36345cf99e71ac33659dc01daca23a8"
     },
@@ -5431,7 +5457,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_82",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "016281ff89c7ec9dc3e7636f441fbaa0a557dece941f1a3d6bd454efe3a2b423"
     },
@@ -5454,7 +5480,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_83",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "cd776ed252b91064fde5675d880ef1db5353d65f5272efc29d216fc3c9467774"
     },
@@ -5465,6 +5491,7 @@
       "erlass": "IVV",
       "artikel": "84",
       "artikelLabel": "Art. 84",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5473,7 +5500,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_84",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -5500,7 +5527,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_85",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "279d38f8115c5b3005285d633243618115e1e49c7f5f4b1a9b79e7905f0753ae"
     },
@@ -5537,7 +5564,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_85_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "26106a0448c72ed37bf3fb0a1e8e01d4b07d6f92f3596e35f63583c9f26ba0ec"
     },
@@ -5548,6 +5575,7 @@
       "erlass": "IVV",
       "artikel": "86",
       "artikelLabel": "Art. 86",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5556,7 +5584,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_86",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -5567,6 +5595,7 @@
       "erlass": "IVV",
       "artikel": "86_bis",
       "artikelLabel": "Art. 86bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5575,7 +5604,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_86_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -5594,7 +5623,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_86_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "7aea44c9589ae429a18278b18e172042b59879e6df84eb17a8c26216a76ca32e"
     },
@@ -5631,7 +5660,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_87",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "2bea70aded4f1bb5362f92372bea162681409c65b427b2dc4a81c3a91299d413"
     },
@@ -5662,7 +5691,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_88",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "33815a8bc353cbd619af3bfa819e64e1afe37464c0c3dc44adde1ec65b5fcdde"
     },
@@ -5685,7 +5714,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_88_a",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "50d82a83243768dcd1f171500a505bb8c47215769331e543de938c05a1f24b4d"
     },
@@ -5732,7 +5761,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_88_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "99867907876eb4c919b77a4ede5954ea78787cfca3af94a64652fbcf651e4959"
     },
@@ -5751,7 +5780,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_88_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "aaa00b06fb7e29508375d0d37558d55f3f5a079514f1c4ff94669aed3181c2e3"
     },
@@ -5770,7 +5799,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_88_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "af01417bf4b5bdc1cb5afb59fa52f0028271d13c2cba61f130e883af18237657"
     },
@@ -5781,6 +5810,7 @@
       "erlass": "IVV",
       "artikel": "88_quinquies",
       "artikelLabel": "Art. 88quinquies",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5789,7 +5819,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_88_quinquies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -5808,7 +5838,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_88_sexies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "03ebb1bd7a57177bd6b09981aab9feaebf1dc7cfb5aaeabda729c638977e52c1"
     },
@@ -5831,7 +5861,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_88_septies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "236eb5d1858a9147d3f869de3161b018cac85bf4a1f8d5fe5c094894c84fbd03"
     },
@@ -5854,7 +5884,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_88_octies",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "e4d01ecd5143c93ce356096ab4a710f964f971585a049c92f2fc0e9ef2bfc892"
     },
@@ -5873,7 +5903,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_89",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "06457887b227244885f0f6f4320ab2e406698b671f5701aced7a890d0b77cd40"
     },
@@ -5884,6 +5914,7 @@
       "erlass": "IVV",
       "artikel": "89_bis",
       "artikelLabel": "Art. 89bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -5892,7 +5923,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_89_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -5915,7 +5946,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_89_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "fce1b6d95e9937b5d1cf7ef6eed2789b7c85d857c6882d4032b27749f518ac3f"
     },
@@ -5998,7 +6029,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_90",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "be5d40878391373c435315fb70c0c0fad11ea3462737a739bd7d7edf9f746df8"
     },
@@ -6017,7 +6048,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_90_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "7eea2b1df89d514b7fcaefd1231b3b0e90c10b8eff6e2a4f5994b69e4d2c7b9c"
     },
@@ -6062,7 +6093,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_91",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9d5ded572a082d8bee67d4eff4b7ff6345bf04cd6659174ca66bf36527659ce3"
     },
@@ -6073,6 +6104,7 @@
       "erlass": "IVV",
       "artikel": "92",
       "artikelLabel": "Art. 92",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6081,7 +6113,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_92",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6092,6 +6124,7 @@
       "erlass": "IVV",
       "artikel": "92_bis",
       "artikelLabel": "Art. 92bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6100,7 +6133,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_92_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6111,6 +6144,7 @@
       "erlass": "IVV",
       "artikel": "93",
       "artikelLabel": "Art. 93",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6119,7 +6153,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_93",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6130,6 +6164,7 @@
       "erlass": "IVV",
       "artikel": "93_bis_93_ter",
       "artikelLabel": "Art. 93bis–93ter",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6138,7 +6173,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_93_bis_93_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6149,6 +6184,7 @@
       "erlass": "IVV",
       "artikel": "94_95",
       "artikelLabel": "Art. 94–95",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6157,7 +6193,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_94_95",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6180,7 +6216,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_96",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "000c872b627dbd1bd5d7b36845623b40d55388d0e76d5d471d3e45ab2a49b1db"
     },
@@ -6203,7 +6239,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_96_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "f67653c2168d931868b5f27c65f34919b02ff3a4e42444db2aaaf5b635643a96"
     },
@@ -6250,7 +6286,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_96_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9085205b1205dd778d227ced9872555300b0a72d0bf0dc3dbb765c5856c8dd58"
     },
@@ -6277,7 +6313,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_96_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b40278f8cf72fcc333e8ae606455bd04eebe4347ac9f7adb08364f1095eecda2"
     },
@@ -6314,7 +6350,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_97",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9f003c0762d339cfebad2be3b15a103613b16c410efa20e3f5e5f60f5a89810c"
     },
@@ -6355,7 +6391,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_98",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "ad4a637f4aa6f9f7783134765e5bb3f59c3bf3c38072a4577a4e56a9b02ce9ee"
     },
@@ -6374,7 +6410,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_98_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "ae9235ff4d3150c29a3c6707ded4f84e45666b1b4b40099ff9928f0c6032edd7"
     },
@@ -6405,7 +6441,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_98_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "67d4fc39e22ac0a8c49f964e35283a40ac91f4388406db299a50ec1cf0c8d4ca"
     },
@@ -6450,7 +6486,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_98_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "0b54806f3bf7aec7cbb1318ed83b94114f7a374d0696038000363c9b97fa6636"
     },
@@ -6461,6 +6497,7 @@
       "erlass": "IVV",
       "artikel": "99_104",
       "artikelLabel": "Art. 99–104",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6469,7 +6506,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_99_104",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6480,6 +6517,7 @@
       "erlass": "IVV",
       "artikel": "104_bis",
       "artikelLabel": "Art. 104bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6488,7 +6526,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_104_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6499,6 +6537,7 @@
       "erlass": "IVV",
       "artikel": "104_ter",
       "artikelLabel": "Art. 104ter",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6507,7 +6546,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_104_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6518,6 +6557,7 @@
       "erlass": "IVV",
       "artikel": "105_106",
       "artikelLabel": "Art. 105–106",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6526,7 +6566,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_105_106",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6537,6 +6577,7 @@
       "erlass": "IVV",
       "artikel": "106_bis",
       "artikelLabel": "Art. 106bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6545,7 +6586,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_106_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6556,6 +6597,7 @@
       "erlass": "IVV",
       "artikel": "107",
       "artikelLabel": "Art. 107",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6564,7 +6606,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_107",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6575,6 +6617,7 @@
       "erlass": "IVV",
       "artikel": "107_bis",
       "artikelLabel": "Art. 107bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6583,7 +6626,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_107_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6624,7 +6667,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_108",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "9b108b1bd9ea718b4d7eed18fe2d8ae27fae4e9e225880ff1627247640876216"
     },
@@ -6673,7 +6716,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_108_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "93eef9a30dcbb58143c40fde863e6ecf0bdb1c79033c60d963df7444ae6f4ad9"
     },
@@ -6696,7 +6739,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_108_ter",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "a81d9c536cb189b99776511e4487be839ca53898bf3ede03cddbb556f8d7f62c"
     },
@@ -6727,7 +6770,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_108_quater",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "70c5a4ed540902219bc336318bb9500db1f311da9545035b7637cb46802008a5"
     },
@@ -6738,6 +6781,7 @@
       "erlass": "IVV",
       "artikel": "109",
       "artikelLabel": "Art. 109",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6746,7 +6790,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_109",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6757,6 +6801,7 @@
       "erlass": "IVV",
       "artikel": "109_bis",
       "artikelLabel": "Art. 109bis",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6765,7 +6810,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_109_bis",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6800,7 +6845,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_110",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "ae0c47495b3de2480a4df1425f061faf31afacef8704ee7b687bfa8d9f590a19"
     },
@@ -6811,6 +6856,7 @@
       "erlass": "IVV",
       "artikel": "111_114",
       "artikelLabel": "Art. 111–114",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6819,7 +6865,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_111_114",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6830,6 +6876,7 @@
       "erlass": "IVV",
       "artikel": "115",
       "artikelLabel": "Art. 115",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6838,7 +6885,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_115",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6849,6 +6896,7 @@
       "erlass": "IVV",
       "artikel": "116",
       "artikelLabel": "Art. 116",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -6857,7 +6905,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_116",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -6888,7 +6936,7 @@
       ],
       "stand": "2025-06-01",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1961/29_29_29/de#art_117",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20250601",
       "sha": "7faa9a34b1615febf5709d4012a411358d8814f820b0c78385725554ff705af0"
     }
