@@ -1,5 +1,62 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Umschichtung 14.9.2026 — ZH-4d und R1-Restposten (Befund-Wortlaut, `W2·13-KANTONE-DATEN`)
+
+**Begründung.** Beide Zeilen trugen ihre vollständige Befund-Geschichte in ROADMAP.md; steuernd ist
+davon nur, was noch offen ist. Die Steuer-Doku-Welle vom 14.9.2026 (Phasen-Dekret) brachte die Datei
+auf 0,4 % unter das 120-KB-Ceiling — der Wortlaut wandert darum hierher, die ROADMAP behält je Zeile
+Ziel, Grenze und den Zeiger. Inhaltlich unverändert, nichts erledigt.
+
+**R1-Restposten — Wortlaut bis 14.9.2026:**
+
+> **R1-Restposten (Auflage Gegenprüfung PR #629, 2.9.2026):** ZH-615 §§ 1–2 tragen im PDF die Randtitel «Beitritt»/«Vollzug», Sidecar und Messreihe melden `randtitel: 0` (stille Auslassung; Verdacht: Bandbestimmung auf einer von der angehängten Rahmenvereinbarung dominierten Seite). Dazu ZH-615/691: 14 amtliche Randtitel fallen wegen der Marker-Zählweise (Art. vs. §) der Snapshots weg — Folgeschritt an der Snapshot-Zählweise, nicht am Sidecar. §1-A.
+
+**ZH-4d — Wortlaut bis 14.9.2026:**
+
+> **ZH-4d · Gliederungs-Überschriften + Übergangsbestimmungen** *(Befund 31.8.2026, nach der Fix-Runde neu geschnitten)* — «4. Abschnitt: Medien» u. ä. landet am Ende des VORANGEHENDEN § (129 Blöcke). Teilentlastet 31.8.2026: römische Gliederungsziffern werden jetzt wie die Buchstaben-Gliederung verworfen; die Marginalien-/Randnoten-Ebene bleibt offen und braucht den Tag-Leser. **Neu dazu:** Übergangs- und Schlussbestimmungen sind seit der Fix-Runde bewusst NICHT mehr im Snapshot (§8: ausgewiesene Lücke statt falscher Zuordnung an den letzten §) — ihre Aufnahme als eigener Eintragstyp gehört hierher, ebenso der PBG-Anhang mit den nachgedruckten Altfassungen. Der Loseblatt-Änderungsapparat im letzten § ist erledigt (43 → 0 Blöcke). *Ergänzung 31.8.2026 (Fix-Runde 2, der Satz oben bleibt als Stand nach Runde 1 stehen):* Die ZÄHLENDE Gliederungsform («2. Kapitel:», «1. Abschnitt:», «Erster Teil:») ist seither ebenfalls erledigt (103 → 0 Blöcke); offen bleibt allein die Marginalien-/Randnoten-Ebene. Die Auslassung der Übergangsbestimmungen und des PBG-Anhangs ist seither im Artefakt ausgewiesen (`kanton-luecken.json`) — ihre Aufnahme als eigener Eintragstyp bleibt hier. Sollte vor ZH-Stufe 3. §1-A.
+
+## Phasen-Dekret 14.9.2026 — Bund zuerst, drei Phasen statt vier Blöcke (`W2·27-BUND-FERTIG`)
+
+**Anlass.** Entscheide Davids im Chat vom 14.9.2026, nach der Ist-Messung des Bundes-Normtext-Korpus
+vom selben Tag. Wortlaut (unverändert, §0/2b — Belege altern nicht):
+
+> «ok dann lass uns erst das fundament fertig bauen und vps erst danach»
+> «das wirkt alles sehr kompliziert. können wir das klarer aufbauen? ich denke der erste schritt
+> sollte sein den gesetzesleser und die struktur der daten die wir darstellen zu optimieren»
+> «grundsätzlich würde ich zuerst mit dem bund beginnen»
+> «ja das passt grundsätzlich aber lass uns zuerst das für den bund machen»
+
+**Wirkung.** Der Vier-Block-Aufbau des Zielbild-Dekrets 1.9.2026 ist durch drei Phasen ersetzt
+(1 Bund fertig machen · 2 Kantone · 3 Mehr als Fedlex); das Zielbild selbst — bester Gesetzesleser
+für Schweizer Juristen, nur amtliche Quellen — bleibt unverändert. Neuer Dach-Schritt
+`W2·27-BUND-FERTIG` mit Sollbild «Was ist ein Gesetz bei LexMetrik» und der Messung 14.9.2026
+(Detail: `fahrplaene/FAHRPLAN-BUND-FERTIG.md`). Die VPS-Bestellung rückt hinter Phase 2, der Termin
+«Sonntag 13.9.2026» ist hinfällig. Der bestehende kantonale Online-Bestand bleibt bis Phase 2
+unverändert; nur echte Fehler laufen übers Fehlerbuch.
+
+**Ersetzter Wortlaut (ROADMAP.md, Zielbild-Prosa bis 14.9.2026, wörtlich):**
+
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·13-KANTONE-DATEN`** (ZH-Programm: Randtitel R1 in Landung, danach
+> Tag-Leser-Rest). Block 1 gelandet 1./2.9.2026: K3 (#610), Leser-Tempo (#612), Normen-Monitor (#623) —
+> deren Restlisten bleiben in den Schritten, sind nicht mehr Queue-Kopf.
+> **Zielbild-Dekret 1.9.2026 (David):** der Gesetzesleser steht im Vordergrund — Ziel sind
+> möglichst alle Gesetze, die ein Schweizer Jurist braucht, und der beste Gesetzesdarsteller für
+> Schweizer Juristen auf dem Markt; Fundament zuerst, wo es dem Leser dient. Die `@queue` bildet
+> die vier Blöcke ab: **1 Fundament** (Suche-Edge · Leser-Tempo · Normen-Monitor · Tag-Leser) →
+> **2 Text-Treue Bund** (Schlusstitel/Fussnoten · Korpus-Lücken · Verweis-Schärfe · Leser-V3-Rest)
+> → **2b Zulieferer-Entscheid** (`W2·21-ZULIEFERER`: OpenCaseLaw & Co. anbinden statt nachbauen? —
+> Entscheid David) → **3 Kantone und Bund-Breite, nur Deutschschweiz** (Entscheid David 1.9.2026: ZH
+> und BS zuerst perfektionieren, dann **Bund-Vollabdeckung SR** (`W2·5n-BUND-VOLL`, billiger als jeder
+> Kanton), dann BE, AG, SG, LU mit fremdem Portal-Wissen als Vorlage und Zweitlesung; VD, GE, TI und
+> fr/it-Fassungen ausdrücklich später) → **4 Differenzierung**
+> (Zeitmaschine · Watchlist · Rechtsprechungs-Nachweis). Rechner, Vorlagen, Design-Wärme, FINMA
+> und Prozess-Schritte ohne Vorfall sind geparkt (`zielbild-gesetzesleser`). Fokus-Dekret 24.7.2026
+> bleibt darin enthalten. Wortlaute der Dekrete → `ROADMAP-CHRONIK.md`.
+
+**Begründung der Streichung:** Der Block-Aufbau steuert nicht mehr — er nennt eine Reihenfolge, die
+der Entscheid vom 14.9.2026 ersetzt hat; der Wortlaut bleibt hier erhalten, weil die
+Block-1-Landungen (K3 #610, Leser-Tempo #612, Normen-Monitor #623) daran datiert sind.
+
 ## Leser-Wurzel «Anhänge» uneinheitlich für scope/decl-Sektionen — gelöst 12.9.2026 (W2·18-FEHLERBUCH)
 
 **Ursprünglicher Befund (Wortlaut, bis 12.9.2026 offen, `W2·18-FEHLERBUCH`):** «**Leser-Wurzel «Anhänge» uneinheitlich für scope/decl-Sektionen** *(Nebenfund PR #838, 12.9.2026, gehört ins Fehlerbuch-Dach `W2·18-FEHLERBUCH`)* — die Leser-Wurzel für scope/decl-Sektionen (Geltungsbereich, CH-Erklärungen/Vorbehalte) heisst synthetisch «Anhänge»; uneinheitlich bei den 14 LUGUE-Verträgen und den 12 aus #838. §3/§8-Darstellungsschritt; Empfehlung der Gegenprüfung zu PR #838 abwarten, bevor gebaut wird.»
