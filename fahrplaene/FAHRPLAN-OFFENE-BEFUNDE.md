@@ -512,6 +512,24 @@ Rot-Beweis; Rot-Beweise auf DIESEM Stand fahren, nie übernehmen.
    Punkt 6» — Entscheid (Kopf + Kern), Rechner in zweiter Instanz (Kern + Nummer), Gesetz (nur
    Kern, KEIN leerer Kopf-Anker).
 
+### §4.R4 — Die Marke sagte «dahinter», der Reiter landete «davor» (14.9.2026, behoben)
+
+**Spec:** `e2e/w224-reiter-umordnen-d16.e2e.ts` «INNERHALB der freien Zone zieht es weiter wie vor
+W2·25» — auf CI 3/3 rot in PR #859 (Run 34837942934, Shard 2/4, ein reiner Daten-PR) und 2/2 rot in
+#855; lokal 4/10 rot (warmer `vite preview`, `--workers=1`, @1440).
+**Wurzel:** keine Test-Flake, ein Zusagebruch in der App. Die Reiter-Beschriftung kommt aus einem
+nachladenden Manifest — der Entscheid-Reiter wächst von «Entscheid öffnen» (171 px) auf «AppGer BS
+BEZ.2022.42» (225 px), alles rechts davon rückt 54 px weiter (`/vorlagen/arbeitsvertrag` von left
+429 auf 483). Fällt das Nachladen zwischen das letzte `dragover` und das `drop`, liegt ein ruhender
+Zeiger plötzlich in der anderen Ziel-Hälfte (x 529; Mitte vorher 495.5, nachher 549.5);
+`Reiter.onDrop` rechnete die Seite aus der frischen Geometrie NEU und fügte «davor» ein, während die
+Einfügemarke «dahinter» anzeigte (§8).
+**Fix:** `src/components/layout/reiterleiste/Reiter.tsx` — das Loslassen vollzieht die angesagte
+Seite aus `ueber`; nur ohne Marke an diesem Reiter bleibt die Geometrie der Anhaltspunkt. Neuer
+Wächter im selben Spec-File («was die Einfügemarke ansagt, gilt auch dann, wenn die Leiste danach
+rückt»), der den Ruck erzwingt statt auf den Ladezeitpunkt zu warten — ohne Fix 5/5 rot, mit Fix
+20/20 grün (ganze Datei: 500/500).
+
 ## §5 — `QS-CODE-PROP` · Eigenschafts-Tests (property-based) für die Rechen-Engines
 
 Entscheid David 7.8.2026: je Engine ein Invarianten-Katalog («eine Frist endet nie vor ihrem
