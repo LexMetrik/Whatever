@@ -529,6 +529,13 @@ Seite aus `ueber`; nur ohne Marke an diesem Reiter bleibt die Geometrie der Anha
 Wächter im selben Spec-File («was die Einfügemarke ansagt, gilt auch dann, wenn die Leiste danach
 rückt»), der den Ruck erzwingt statt auf den Ladezeitpunkt zu warten — ohne Fix 5/5 rot, mit Fix
 20/20 grün (ganze Datei: 500/500).
+**Nachbarbefund, offen (14.9.2026):** `e2e/uinav-j-rechtsprechung.e2e.ts` «Treffer → Detail →
+zurück» zählt im vollen Lauf 201 statt 200 `a[href^="/rechtsprechung/"]` — der eine zusätzliche Link
+ist der REITER des besuchten Entscheids. Allein gefahren 4/4 grün, im vollen Lauf 3/3 rot (lokal,
+`CI=1`, `--workers=1`, macOS). Verdacht: dieselbe Familie — wie breit die Reiter sind, entscheidet,
+welche im Streifen stehen und welche im Überlauf, und das hängt am Ladezeitpunkt der Manifeste. Die
+Sonde zählt Reiter-Links mit; ein `:not([data-reiter-streifen] a)` im Selektor wäre die ehrliche
+Abgrenzung. Eigener Schritt, nicht in diesem PR.
 
 ## §5 — `QS-CODE-PROP` · Eigenschafts-Tests (property-based) für die Rechen-Engines
 
