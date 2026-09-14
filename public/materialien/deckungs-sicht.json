@@ -1,12 +1,12 @@
 {
   "profil": "entstehung-deckung/1",
   "staende": {
-    "deckung": "2026-09-11",
-    "entstehung": "2026-09-12",
+    "deckung": "2026-09-14",
+    "entstehung": "2026-09-14",
     "synopse": "2026-09-12",
     "curia": "2026-09-11",
     "provenienz": "2026-09-12",
-    "normtext": "2026-09-12"
+    "normtext": "2026-09-14"
   },
   "ebenen": {
     "anker": {
@@ -286,6 +286,14 @@
       "ohneEreignis": 0,
       "konflikte": 1,
       "quellLuecken": 0
+    },
+    "AVG": {
+      "titel": "Bundesgesetz vom 6. Oktober 1989 über die Arbeitsvermittlung und den Personalverleih (Arbeitsvermittlungsgesetz, AVG)",
+      "sr": "823.11",
+      "ocFussnoten": 17,
+      "ocGetroffen": 1,
+      "aenderungen": 1,
+      "mitBotschaft": 0
     },
     "AVIG": {
       "titel": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
@@ -856,7 +864,7 @@
     "EMRK": {
       "titel": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten (EMRK)",
       "sr": "0.101",
-      "ocFussnoten": 0,
+      "ocFussnoten": 1,
       "ocGetroffen": 0,
       "aenderungen": 0,
       "mitBotschaft": 0,
@@ -896,6 +904,14 @@
       "ocGetroffen": 2,
       "aenderungen": 2,
       "mitBotschaft": 2
+    },
+    "EOEBV": {
+      "titel": "Verordnung vom 8. Dezember 2017 über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen (EÖBV)",
+      "sr": "211.435.1",
+      "ocFussnoten": 2,
+      "ocGetroffen": 1,
+      "aenderungen": 1,
+      "mitBotschaft": 0
     },
     "EOG": {
       "titel": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzordnung)",

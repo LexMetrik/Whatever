@@ -1,0 +1,649 @@
+{
+ "erzeugt": "2026-09-14",
+ "stand": "2024-01-01",
+ "fassungsToken": "20240101",
+ "kopf": {
+  "srNummer": "211.435.1",
+  "titel": "Verordnung über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen",
+  "erlassdatum": "vom 8. Dezember 2017 (Stand am 1. Januar 2024)",
+  "praeambel": [
+   {
+    "rolle": "autor",
+    "text": "Der Schweizerische Bundesrat,"
+   },
+   {
+    "rolle": "ingress",
+    "text": "gestützt auf die Artikel 48 Absatz 5 des Zivilgesetzbuches und 55a Absatz 4 des Schlusstitels des Zivilgesetzbuches, die Artikel 929 und 929a des Obligationenrechts und Artikel 33 Absatz 3 Buchstabe b des Geoinformationsgesetzes vom 5. Oktober 2007,",
+    "fnNrs": [
+     "1",
+     "2",
+     "3",
+     "4"
+    ]
+   },
+   {
+    "rolle": "verb",
+    "text": "verordnet:"
+   }
+  ],
+  "fussnoten": [
+   {
+    "nr": "1",
+    "text": "SR <b>210</b>",
+    "links": [
+     {
+      "label": "SR <b>210</b>",
+      "url": "https://fedlex.data.admin.ch/eli/cc/24/233_245_233"
+     }
+    ],
+    "absatz": null,
+    "item": null,
+    "kl": "V"
+   },
+   {
+    "nr": "2",
+    "text": "SR <b>220</b>",
+    "links": [
+     {
+      "label": "SR <b>220</b>",
+      "url": "https://fedlex.data.admin.ch/eli/cc/27/317_321_377"
+     }
+    ],
+    "absatz": null,
+    "item": null,
+    "kl": "V"
+   },
+   {
+    "nr": "3",
+    "text": "SR <b>510.62</b>",
+    "links": [
+     {
+      "label": "SR <b>510.62</b>",
+      "url": "https://fedlex.data.admin.ch/eli/cc/2008/388"
+     }
+    ],
+    "absatz": null,
+    "item": null,
+    "kl": "V"
+   },
+   {
+    "nr": "4",
+    "text": "Fassung gemäss Anhang Ziff. 3 der V vom 23. Aug. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 529).",
+    "links": [
+     {
+      "label": "AS <b>2023</b> 529",
+      "url": "https://fedlex.data.admin.ch/eli/oc/2023/529"
+     }
+    ],
+    "absatz": null,
+    "item": null,
+    "kl": "A"
+   }
+  ]
+ },
+ "artikel": {
+  "1": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
+    }
+   ],
+   "marginalie": [
+    "Gegenstand und Zweck"
+   ],
+   "fussnoten": [
+    {
+     "nr": "5",
+     "text": "Fassung gemäss Anhang Ziff. 3 der V vom 23. Aug. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 529).",
+     "links": [
+      {
+       "label": "AS <b>2023</b> 529",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/529"
+      }
+     ],
+     "absatz": "1",
+     "item": null,
+     "pos": {
+      "b": 0,
+      "o": 152,
+      "l": 152
+     },
+     "kl": "A"
+    }
+   ]
+  },
+  "2": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
+    }
+   ],
+   "marginalie": [
+    "Begriffe"
+   ],
+   "fussnoten": [
+    {
+     "nr": "6",
+     "text": "Eingefügt durch Anhang Ziff. 3 der V vom 23. Aug. 2023, in Kraft seit 1. Jan. 2024 (AS <b>2023</b> 529).",
+     "links": [
+      {
+       "label": "AS <b>2023</b> 529",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/529"
+      }
+     ],
+     "absatz": null,
+     "item": "4",
+     "kl": "A"
+    },
+    {
+     "nr": "7",
+     "text": "SR <b>211.432.2</b>",
+     "links": [
+      {
+       "label": "SR <b>211.432.2</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/1992/2446_2446_2446"
+      }
+     ],
+     "absatz": null,
+     "item": "4",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 185,
+      "l": 228
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "8",
+     "text": "SR<b> 943.03</b>",
+     "links": [
+      {
+       "label": "SR<b> 943.03</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2016/752"
+      }
+     ],
+     "absatz": null,
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 7,
+      "o": 76,
+      "l": 169
+     },
+     "kl": "V"
+    }
+   ]
+  },
+  "3": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
+    }
+   ],
+   "marginalie": [
+    "Gleichwertigkeit der Formen"
+   ]
+  },
+  "4": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "1. Abschnitt: Allgemeine Bestimmungen",
+     "eId": "sec_1"
+    }
+   ],
+   "marginalie": [
+    "Anwendbarkeit ausländischen Rechts"
+   ]
+  },
+  "5": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Abschnitt: Schweizerisches Register der Urkundspersonen",
+     "eId": "sec_2"
+    }
+   ],
+   "marginalie": [
+    "Zweck und Betrieb"
+   ]
+  },
+  "6": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Abschnitt: Schweizerisches Register der Urkundspersonen",
+     "eId": "sec_2"
+    }
+   ],
+   "marginalie": [
+    "Einzutragende Personen"
+   ]
+  },
+  "7": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Abschnitt: Schweizerisches Register der Urkundspersonen",
+     "eId": "sec_2"
+    }
+   ],
+   "marginalie": [
+    "Einträge"
+   ],
+   "fussnoten": [
+    {
+     "nr": "9",
+     "text": "SR <b>431.03</b>",
+     "links": [
+      {
+       "label": "SR <b>431.03</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2010/705"
+      }
+     ],
+     "absatz": "1",
+     "item": "e",
+     "pos": {
+      "b": 0,
+      "it": 4,
+      "o": 80,
+      "l": 210
+     },
+     "kl": "V"
+    }
+   ]
+  },
+  "8": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Abschnitt: Schweizerisches Register der Urkundspersonen",
+     "eId": "sec_2"
+    }
+   ],
+   "marginalie": [
+    "Verantwortung für die Daten, Datenführung und Datenlieferung"
+   ]
+  },
+  "9": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "2. Abschnitt: Schweizerisches Register der Urkundspersonen",
+     "eId": "sec_2"
+    }
+   ],
+   "marginalie": [
+    "Öffentlichkeit der Daten"
+   ]
+  },
+  "10": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Abschnitt: Verfahren für die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen",
+     "eId": "sec_3"
+    }
+   ],
+   "marginalie": [
+    "Allgemeine Bestimmungen"
+   ],
+   "fussnoten": [
+    {
+     "nr": "10",
+     "text": "SR <b>943.03</b>",
+     "links": [
+      {
+       "label": "SR <b>943.03</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2016/752"
+      }
+     ],
+     "absatz": "1",
+     "item": "d",
+     "pos": {
+      "b": 0,
+      "it": 3,
+      "o": 137,
+      "l": 138
+     },
+     "kl": "V"
+    },
+    {
+     "nr": "11",
+     "text": "Eingefügt durch Ziff. I der V vom 23. Aug. 2023, in Kraft seit 1. Okt 2023 (AS <b>2023</b> 479).",
+     "links": [
+      {
+       "label": "AS <b>2023</b> 479",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2023/479"
+      }
+     ],
+     "absatz": "2bis",
+     "item": null,
+     "pos": {
+      "b": 2,
+      "o": 246,
+      "l": 246
+     },
+     "kl": "A"
+    }
+   ]
+  },
+  "11": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Abschnitt: Verfahren für die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen",
+     "eId": "sec_3"
+    }
+   ],
+   "marginalie": [
+    "Elektronische Ausfertigung einer öffentlichen Urkunde"
+   ]
+  },
+  "12": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Abschnitt: Verfahren für die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen",
+     "eId": "sec_3"
+    }
+   ],
+   "marginalie": [
+    "Elektronische öffentliche Urkunden aus einem öffentlichen Register"
+   ]
+  },
+  "13": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Abschnitt: Verfahren für die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen",
+     "eId": "sec_3"
+    }
+   ],
+   "marginalie": [
+    "Beglaubigung einer elektronischen Kopie eines Papierdokuments"
+   ]
+  },
+  "14": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Abschnitt: Verfahren für die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen",
+     "eId": "sec_3"
+    }
+   ],
+   "marginalie": [
+    "Beglaubigung einer elektronischen Kopie eines elektronischen Dokuments"
+   ],
+   "fussnoten": [
+    {
+     "nr": "12",
+     "text": "SR <b>943.03</b>",
+     "links": [
+      {
+       "label": "SR <b>943.03</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2016/752"
+      }
+     ],
+     "absatz": "2",
+     "item": "d",
+     "pos": {
+      "b": 1,
+      "it": 3,
+      "o": 136,
+      "l": 150
+     },
+     "kl": "V"
+    }
+   ]
+  },
+  "15": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Abschnitt: Verfahren für die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen",
+     "eId": "sec_3"
+    }
+   ],
+   "marginalie": [
+    "Elektronische Beglaubigung einer eigenhändigen Unterschrift oder eines Handzeichens auf einem Papierdokument"
+   ]
+  },
+  "16": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3. Abschnitt: Verfahren für die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen",
+     "eId": "sec_3"
+    }
+   ],
+   "marginalie": [
+    "Elektronische Beglaubigung einer elektronischen Signatur"
+   ]
+  },
+  "17": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "4. Abschnitt: Beglaubigung eines Papierausdrucks eines elektronischen Dokuments",
+     "eId": "sec_4"
+    }
+   ],
+   "marginalie": []
+  },
+  "18": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "5. Abschnitt: Technische Hilfsmittel",
+     "eId": "sec_5"
+    }
+   ],
+   "marginalie": [],
+   "fussnoten": [
+    {
+     "nr": "13",
+     "text": "Das Programm oder die Programmbestandteile können beim Bundesamt für Justiz unter www.openegov.admin.ch > Open eGov Produkte > Signieren bezogen werden.",
+     "links": [],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 187,
+      "l": 187
+     },
+     "kl": "V"
+    }
+   ]
+  },
+  "19": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "6. Abschnitt: Validatorsystem",
+     "eId": "sec_6"
+    }
+   ],
+   "marginalie": []
+  },
+  "20": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "7. Abschnitt: Bewilligungen",
+     "eId": "sec_7"
+    }
+   ],
+   "marginalie": []
+  },
+  "21": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "8. Abschnitt: Gebühren",
+     "eId": "sec_8"
+    }
+   ],
+   "marginalie": [
+    "Ansätze"
+   ]
+  },
+  "22": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "8. Abschnitt: Gebühren",
+     "eId": "sec_8"
+    }
+   ],
+   "marginalie": [
+    "Anwendbarkeit der Allgemeinen Gebührenverordnung"
+   ],
+   "fussnoten": [
+    {
+     "nr": "14",
+     "text": "SR <b>172.041.1</b>",
+     "links": [
+      {
+       "label": "SR <b>172.041.1</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2004/677"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 138,
+      "l": 139
+     },
+     "kl": "V"
+    }
+   ]
+  },
+  "23": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "8. Abschnitt: Gebühren",
+     "eId": "sec_8"
+    }
+   ],
+   "marginalie": [
+    "Rechnungsstellung und Verzugsfolgen"
+   ]
+  },
+  "24": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "8. Abschnitt: Gebühren",
+     "eId": "sec_8"
+    }
+   ],
+   "marginalie": [
+    "Gebührenfreier Bezug von Zulassungsbestätigungen"
+   ]
+  },
+  "25": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
+    }
+   ],
+   "marginalie": [
+    "Aufhebung und Änderung anderer Erlasse"
+   ]
+  },
+  "26": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
+    }
+   ],
+   "marginalie": [
+    "Übergangsbestimmung für elektronische öffentliche Urkunden und elektronische Beglaubigungen ohne Zulassungsbestätigung"
+   ]
+  },
+  "27": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
+    }
+   ],
+   "marginalie": [
+    "Übergangsbestimmung zu Art. 166 Abs. 6 der Handelsregisterverordnung vom 17. Oktober 2007"
+   ],
+   "fussnoten": [
+    {
+     "nr": "15",
+     "text": "SR <b>221.411</b>",
+     "links": [
+      {
+       "label": "SR <b>221.411</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2007/686"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "V"
+    },
+    {
+     "nr": "16",
+     "text": "SR <b>943.03</b>",
+     "links": [
+      {
+       "label": "SR <b>943.03</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/2016/752"
+      }
+     ],
+     "absatz": "1",
+     "item": "a",
+     "pos": {
+      "b": 0,
+      "it": 0,
+      "o": 210,
+      "l": 230
+     },
+     "kl": "V"
+    }
+   ]
+  },
+  "28": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "9. Abschnitt: Schlussbestimmungen",
+     "eId": "sec_9"
+    }
+   ],
+   "marginalie": [
+    "Inkrafttreten"
+   ]
+  },
+  "annex_u1": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Anhänge",
+     "eId": "annex"
+    }
+   ],
+   "marginalie": []
+  }
+ }
+}

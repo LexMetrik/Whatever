@@ -1,5 +1,5 @@
 // AUTO-GENERIERT von scripts/normtext/seed-grundart.mjs — NICHT von Hand editieren.
-// Grundart-Klassifikation (1469 Erlasse) aus der UX-Audit-Klassifikation
+// Grundart-Klassifikation (1471 Erlasse) aus der UX-Audit-Klassifikation
 // docs/ux-audit-2026-07/erlass-klassifikation.json (Methode: Datengetriebene Signal-Extraktion je Erlass, Grundart-Zuordnung per Prioritäts-Kaskade (Trägerformat → Systematik → Bund-Struktur).).
 // Datengrundlage für register.ts (grundart/erlassTyp) + die spätere Grundart-
 // Darstellung (bestimmungsEtikett, §/Art.-Label — NUR sichtbar, NIE Anker; K2/R8).
@@ -8,13 +8,13 @@
 //
 // Grundart-Verteilung:
 //   KANTON: 1230
-//   ERLASS_MIT_ANHANG: 85
-//   STANDARD_ERLASS: 68
+//   ERLASS_MIT_ANHANG: 86
+//   STANDARD_ERLASS: 69
 //   FLACHER_KURZERLASS: 31
-//   STAATSVERTRAG: 27
+//   STAATSVERTRAG: 28
 //   KODIFIKATION: 17
 //   LIVE_VERWEIS: 9
-//   PDF_EMBED: 2
+//   PDF_EMBED: 1
 import type { Grundart, ErlassTyp } from './register-typen';
 
 export interface GrundartSeed {
@@ -325,6 +325,7 @@ export const GRUNDART_SEED: Readonly<Record<string, GrundartSeed>> = {
   "ASYLV3": {"grundart":"ERLASS_MIT_ANHANG","erlassTyp":"verordnung","hatAnhang":true},
   "ATSG": {"grundart":"STANDARD_ERLASS","erlassTyp":"gesetz"},
   "ATSV": {"grundart":"STANDARD_ERLASS","erlassTyp":"verordnung"},
+  "AVG": {"grundart":"STANDARD_ERLASS","erlassTyp":"gesetz"},
   "AVIG": {"grundart":"STANDARD_ERLASS","erlassTyp":"gesetz"},
   "AVIV": {"grundart":"ERLASS_MIT_ANHANG","erlassTyp":"verordnung","hatAnhang":true},
   "AVO": {"grundart":"ERLASS_MIT_ANHANG","erlassTyp":"verordnung","hatAnhang":true},
@@ -1244,10 +1245,11 @@ export const GRUNDART_SEED: Readonly<Record<string, GrundartSeed>> = {
   "EBG": {"grundart":"ERLASS_MIT_ANHANG","erlassTyp":"gesetz","hatAnhang":true},
   "ELG": {"grundart":"STANDARD_ERLASS","erlassTyp":"gesetz"},
   "ELV": {"grundart":"STANDARD_ERLASS","erlassTyp":"verordnung"},
-  "EMRK": {"grundart":"PDF_EMBED","erlassTyp":"staatsvertrag"},
+  "EMRK": {"grundart":"STAATSVERTRAG","erlassTyp":"staatsvertrag"},
   "ENG": {"grundart":"ERLASS_MIT_ANHANG","erlassTyp":"gesetz","hatAnhang":true},
   "ENTG": {"grundart":"FLACHER_KURZERLASS","erlassTyp":"gesetz"},
   "ENTSG": {"grundart":"FLACHER_KURZERLASS","erlassTyp":"gesetz"},
+  "EOEBV": {"grundart":"ERLASS_MIT_ANHANG","erlassTyp":"verordnung","hatAnhang":true},
   "EOG": {"grundart":"STANDARD_ERLASS","erlassTyp":"gesetz"},
   "EOV": {"grundart":"STANDARD_ERLASS","erlassTyp":"verordnung"},
   "EPG": {"grundart":"STANDARD_ERLASS","erlassTyp":"gesetz"},

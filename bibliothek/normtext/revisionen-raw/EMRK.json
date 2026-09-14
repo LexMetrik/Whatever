@@ -1,0 +1,758 @@
+{
+  "sr": "0.101",
+  "korpusStand": "2022-09-16",
+  "bBindings": [
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/1974/2151_2151_2151"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1974-11-28"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1950-11-04"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 1974 2151"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten (EMRK)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales (CEDH)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali (CEDU)"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/1974/2151_2151_2151"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1974-11-28"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1950-11-04"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 1974 2151"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten (EMRK)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales (CEDH)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali (CEDU)"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/1974/2151_2151_2151"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1974-11-28"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1950-11-04"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 1974 2151"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten (EMRK)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales (CEDH)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali (CEDU)"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/1974/2151_2151_2151"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1974-11-28"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1950-11-04"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 1974 2151"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten (EMRK)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales (CEDH)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali (CEDU)"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2000/139"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1999-10-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1999-10-01"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2000 916"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2000/139"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1999-10-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1999-10-01"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2000 916"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2000/139"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1999-10-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1999-10-01"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2000 916"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2002/188"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1999-04-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1999-04-01"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2002 1143"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2002/188"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1999-04-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1999-04-01"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2002 1143"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2002/188"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1999-04-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1999-04-01"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2002 1143"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2005/306"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2005-03-23"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2005-03-23"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2005 1835"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2005/306"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2005-03-23"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2005-03-23"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2005 1835"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2005/306"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2005-03-23"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2005-03-23"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2005 1835"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2006/514"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2006-06-14"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2006-06-14"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2006 3319"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2006/514"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2006-06-14"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2006-06-14"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2006 3319"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2006/514"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2006-06-14"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2006-06-14"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2006 3319"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2012/166"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2012-02-23"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2012-02-23"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2012 1143"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2012/166"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2012-02-23"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2012-02-23"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2012 1143"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2012/166"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2012-02-23"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2012-02-23"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 2012 1143"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "0.101"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2022/248"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2022-03-16"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2022-04-22"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Mitteilung betreffend die im Rahmen des Europarates abgeschlossenen Übereinkommen und Protokolle, denen die Schweiz als Vertragspartei angehört. Beendigung des Vertragsparteistatus der Russischen Föderation"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Communication concernant des Conventions et Protocoles conclus dans le cadre du Conseil de l’Europe, auxquels la Suisse fait. Partie Cessation de la Fédération de Russie d’être Partie contractante"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Comunicazione concernente Convenzioni e Protocolli conclusi nel quadro del Consiglio d’Europa, di cui la Svizzera è parte contraente. Cessazione della Federazione russa di essere Parte contraente"
+      }
+    }
+  ],
+  "aStaende": [
+    "1974-11-28",
+    "1976-12-01",
+    "1977-07-01",
+    "1978-01-15",
+    "1981-01-01",
+    "1982-02-15",
+    "1982-12-01",
+    "1983-12-01",
+    "1984-09-01",
+    "1984-12-01",
+    "1985-04-01",
+    "1986-01-01",
+    "1987-01-01",
+    "1987-10-01",
+    "1988-04-29",
+    "1988-07-15",
+    "1989-12-01",
+    "1990-01-01",
+    "1991-03-01",
+    "1992-11-01",
+    "1993-10-15",
+    "1998-11-01",
+    "1999-04-01",
+    "1999-10-01",
+    "2005-03-23",
+    "2006-06-14",
+    "2009-06-01",
+    "2010-06-01",
+    "2012-02-23",
+    "2021-08-01",
+    "2022-02-01",
+    "2022-09-16"
+  ],
+  "belegteOcs": [],
+  "rectifiesInfoProOc": {}
+}

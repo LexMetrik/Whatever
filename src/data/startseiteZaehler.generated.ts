@@ -63,9 +63,9 @@ export interface StartseiteZaehler {
 }
 
 export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
-  "gesetzeBundVolltext": 228,
+  "gesetzeBundVolltext": 231,
   "gesetzeKantonVolltext": 1339,
-  "gesetzeVolltext": 1567,
+  "gesetzeVolltext": 1570,
   "kantonErlassZahlen": {
     "AG": 5,
     "AI": 4,
@@ -117,7 +117,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
         "GBV",
         "TGBV"
       ],
-      "anzahl": 32
+      "anzahl": 33
     },
     {
       "nr": "03",
@@ -153,15 +153,15 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
         "VGKE",
         "VGR"
       ],
-      "anzahl": 140
+      "anzahl": 141
     }
   ],
-  "gesetzeInternationalVolltext": 27,
+  "gesetzeInternationalVolltext": 28,
   "internationalKuerzel": [
+    "EMRK",
     "CISG",
     "LugÜ",
-    "HZÜ",
-    "HBewÜ"
+    "HZÜ"
   ],
   "rechtsprechungVolltext": 5093,
   "rechtsprechungSachgebiete": [
@@ -262,7 +262,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   ],
   "rechner": 23,
   "vorlagen": 26,
-  "standGesetze": "2026-09-12",
+  "standGesetze": "2026-09-14",
   "standRechtsprechung": "2026-09-12",
   "standMaterialien": "2026-09-12",
   "juengsterGesetzStand": "2026-09-02",

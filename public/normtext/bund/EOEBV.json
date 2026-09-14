@@ -1,0 +1,1033 @@
+{
+  "erzeugt": "2026-09-14",
+  "eintraege": [
+    {
+      "id": "bund/EOEBV/art_1",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "1",
+      "artikelLabel": "Art. 1",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Diese Verordnung regelt im Bereich des Privatrechts und der amtlichen Vermessung die technischen Anforderungen und das Verfahren für die Erstellung von:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "elektronischen öffentlichen Urkunden, einschliesslich der elektronischen amtlichen Auszüge, Bestätigungen und Bescheinigungen aus öffentlichen Registern;"
+            },
+            {
+              "marke": "b",
+              "text": "elektronischen Beglaubigungen von Kopien und Unterschriften;"
+            },
+            {
+              "marke": "c",
+              "text": "Beglaubigungen von Papierausdrucken elektronischer Dokumente."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Sie soll sicherstellen, dass elektronische öffentliche Urkunden gleich sicher sind wie öffentliche Urkunden auf Papier und zwischen unterschiedlichen Informatiksystemen ausgetauscht werden können."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_1",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "c25d054066545bfd6704e7bcb2fdafed65285395b59cbc403702c774d9d14a6e"
+    },
+    {
+      "id": "bund/EOEBV/art_2",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "2",
+      "artikelLabel": "Art. 2",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "In dieser Verordnung bedeuten:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Urkundsperson: eine Person mit amtlicher Befugnis nach Bundesrecht oder kantonalem Recht, elektronische öffentliche Urkunden oder elektronische Beglaubigungen zu erstellen, namentlich:"
+            },
+            {
+              "marke": "1",
+              "text": "freiberufliche Notarin oder freiberuflicher Notar,",
+              "tiefe": 1
+            },
+            {
+              "marke": "2",
+              "text": "Amtsnotarin oder Amtsnotar,",
+              "tiefe": 1
+            },
+            {
+              "marke": "3",
+              "text": "Mitarbeiterin oder Mitarbeiter von Grundbuch-, Handelsregister-, oder Zivilstandsbehörden,",
+              "tiefe": 1
+            },
+            {
+              "marke": "4",
+              "text": "Ingenieur-Geometerin oder Ingenieur-Geometer, die oder der im Geometerregister eingetragen ist und vom Kanton die Befugnis nach Artikel 46a Absatz 1 der Verordnung vom 18. November 1992 über die amtliche Vermessung erhalten hat;",
+              "tiefe": 1
+            },
+            {
+              "marke": "b",
+              "text": "Zulassungsbestätigung: elektronischer Nachweis, wonach die Person, die eine elektronische öffentliche Urkunde oder eine elektronische Beglaubigung erstellt, im Zeitpunkt der Erstellung dazu befugt ist;"
+            },
+            {
+              "marke": "c",
+              "text": "Verbal: Vermerk, in dem die Urkundsperson die Feststellungen festhält, die sie bei der Erstellung von elektronischen öffentlichen Urkunden und elektronischen Beglaubigungen macht;"
+            },
+            {
+              "marke": "d",
+              "text": "Zertifikat: digitales Zertifikat einer gemäss Bundesgesetz vom 18. März 2016 über die elektronische Signatur (ZertES) anerkannten Anbieterin von Zertifizierungsdiensten."
+            }
+          ]
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_2",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "4c63635514d835819ccc6c820f27cd92cb99c9754eb22817f140c18abbc74880"
+    },
+    {
+      "id": "bund/EOEBV/art_3",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "3",
+      "artikelLabel": "Art. 3",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Nach dieser Verordnung erstellte elektronische öffentliche Urkunden und elektronische Beglaubigungen sind den entsprechenden Dokumenten auf Papier gleichgestellt."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie können im Verkehr mit allen Behörden verwendet werden, die den elektronischen Geschäftsverkehr eingeführt haben."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_3",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "85a837c9f0f23c660513c82625dde162bdab6d1b45adaf692dd2d152419ecc0e"
+    },
+    {
+      "id": "bund/EOEBV/art_4",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "4",
+      "artikelLabel": "Art. 4",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Ist eine elektronische öffentliche Urkunde oder eine elektronische Beglaubigung für die Verwendung im Ausland bestimmt, so kann sie in Abweichung von dieser Verordnung nach den dort gültigen Anforderungen erstellt werden, sofern bei deren Einhaltung eine vergleichbare Sicherheit, insbesondere eine vergleichbare Integrität und Authentizität, gewährleistet ist."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_4",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "49ea9345c2da4bf37a0f8478999eab41666143e8c64132ce28d0f89681faa6e4"
+    },
+    {
+      "id": "bund/EOEBV/art_5",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "5",
+      "artikelLabel": "Art. 5",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das Schweizerische Register der Urkundspersonen (UPReg) gibt Zulassungsbestätigungen zur Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen aus und macht Daten über die darin eingetragenen Urkundspersonen im Internet öffentlich zugänglich."
+        },
+        {
+          "absatz": "2",
+          "text": "Es wird vom Bundesamt für Justiz (BJ) betrieben."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_5",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "1be74848fde76a5b8b210dabb60dcc0761138e061a3090cf4d9f769af139ead5"
+    },
+    {
+      "id": "bund/EOEBV/art_6",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "6",
+      "artikelLabel": "Art. 6",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "In das UPReg eingetragen werden können:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Urkundspersonen;"
+            },
+            {
+              "marke": "b",
+              "text": "Mitarbeiterinnen und Mitarbeiter der Behörden, die zur Führung der Daten der eingetragenen Personen zuständig sind."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die zuständigen Behörden tragen in das UPReg die Urkundspersonen ein, die befugt sind, elektronische öffentliche Urkunden oder elektronische Beglaubigungen zu erstellen."
+        },
+        {
+          "absatz": "3",
+          "text": "Jede Person ist mit ihrer Funktion und ihrer zugehörigen Organisation einzutragen. Pro Person können mehrere Funktionen und Organisationen eingetragen werden."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_6",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "51e01e2261a8f1c255b10ef8a5b0dbdbfe6d78a476316097001102842334134d"
+    },
+    {
+      "id": "bund/EOEBV/art_7",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "7",
+      "artikelLabel": "Art. 7",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Urkundspersonen werden in das UPReg mit den folgenden Daten eingetragen:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die Namen und Vornamen gemäss Pass oder Identitätskarte;"
+            },
+            {
+              "marke": "b",
+              "text": "Geburtsdatum;"
+            },
+            {
+              "marke": "c",
+              "text": "Staatsangehörigkeit;"
+            },
+            {
+              "marke": "d",
+              "text": "Berufs- oder Funktionsbezeichnung nach dem massgebenden Recht sowie Bezeichnung des massgebenden Kantons oder der Bundesbehörde;"
+            },
+            {
+              "marke": "e",
+              "text": "Unternehmens-Identifikationsnummer (UID) nach dem Bundesgesetz vom 18. Juni 2010 über die Unternehmens-Identifikationsnummer (UIDG) und gegebenenfalls im massgebenden Kanton verwendete Nummer der Urkundsperson;"
+            },
+            {
+              "marke": "f",
+              "text": "Geschäfts- oder Amtsadresse gemäss Eintrag im UID-Register (Art. 6 UIDG);"
+            },
+            {
+              "marke": "g",
+              "text": "Datum der Erteilung der amtlichen Befugnis;"
+            },
+            {
+              "marke": "h",
+              "text": "gegebenenfalls Datum des Wegfalls der amtlichen Befugnis;"
+            },
+            {
+              "marke": "i",
+              "text": "zur Überprüfung von Signaturen und zur Authentifizierung der Urkundsperson durch das UPReg:"
+            },
+            {
+              "marke": "1",
+              "text": "falls dauerhafte Zertifikate verwendet wurden oder werden: diese Zertifikate,",
+              "tiefe": 1
+            },
+            {
+              "marke": "2",
+              "text": "falls Einmalzertifikate verwendet wurden oder werden: die dauerhaften Seriennummern oder andere Elemente dieser Zertifikate, die eine eindeutige Identifikation der Urkundsperson ermöglichen, sowie Angaben über den verwendeten Authentifizierungs-Mechanismus.",
+              "tiefe": 1
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Für jede erneute Zulassung einer schon einmal zugelassenen Urkundsperson wird im UPReg ein neuer Eintrag erstellt. Nicht mehr rechtswirksame Daten bleiben bestehen und werden als solche gekennzeichnet."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_7",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "9c8b65846047833340a9921f066abdeaeb7d7220398a961048182681769b9f11"
+    },
+    {
+      "id": "bund/EOEBV/art_8",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "8",
+      "artikelLabel": "Art. 8",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Verantwortung für Daten über eingetragene Personen, die durch eine kantonale Behörde ernannt werden, liegt beim betreffenden Kanton."
+        },
+        {
+          "absatz": "2",
+          "text": "Die Verantwortung für Daten über eingetragene Personen, die durch eine Bundesbehörde ernannt werden, liegt bei dieser Behörde."
+        },
+        {
+          "absatz": "3",
+          "text": "Die Urkundsperson stellt dem UPReg die zur Überprüfung von Signaturen und zur Authentifizierung der Urkundsperson notwendigen Daten nach Artikel 7 Absatz 1 Buchstabe i zu."
+        },
+        {
+          "absatz": "4",
+          "text": "Die Daten können über eine Eingabemaske des UPReg eingetragen oder, mit Bewilligung des BJ, dem UPReg über eine Schnittstelle aus anderen Systemen geliefert werden. Das Bewilligungsverfahren richtet sich nach Artikel 20."
+        },
+        {
+          "absatz": "5",
+          "text": "Die zuständige Behörde des Kantons oder des Bundes sorgt dafür, dass die Daten jederzeit aktuell sind."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_8",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "560cc6ab490c39540d4a6b3dbb5472217956b00fec4df85179f973aa427a542a"
+    },
+    {
+      "id": "bund/EOEBV/art_9",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "9",
+      "artikelLabel": "Art. 9",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Daten des UPReg sind mit den folgenden Ausnahmen öffentlich beim UPReg abrufbar:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Die Daten nach Artikel 7 Absatz 1 Buchstaben b und c sind nicht öffentlich."
+            },
+            {
+              "marke": "b",
+              "text": "Die Daten, die nach Artikel 8 Absatz 4 aus anderen Systemen geliefert wurden, sind über das UPReg nicht öffentlich zugänglich; das UPReg veröffentlicht einen Verweis auf das jeweilige Herkunftsystem, falls die Daten dort zugänglich sind."
+            }
+          ]
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_9",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "dbe3cfdfd43cc4f27205c74fc3cf15ea6cfee4e94a3163d3a411fdee59bc10a3"
+    },
+    {
+      "id": "bund/EOEBV/art_10",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "10",
+      "artikelLabel": "Art. 10",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Urkundsperson geht bei der Erstellung einer elektronischen öffentlichen Urkunde oder einer elektronischen Beglaubigung nach den Artikeln 11–16 wie folgt vor:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Sie erstellt das elektronische Dokument."
+            },
+            {
+              "marke": "b",
+              "text": "Sie fügt dem Dokument das betreffende Verbal auf einer eigenen Seite (Verbalseite) an."
+            },
+            {
+              "marke": "c",
+              "text": "Sie speichert das Dokument in einem anerkannten elektronischen Format."
+            },
+            {
+              "marke": "d",
+              "text": "Sie signiert das Dokument mit einer mit einem qualifizierten Zeitstempel verbundenen qualifizierten elektronischen Signatur gemäss ZertES."
+            },
+            {
+              "marke": "e",
+              "text": "Sie ruft die Zulassungsbestätigung aus dem UPReg ab und bringt sie auf der Verbalseite an; die Zulassungsbestätigung bezieht sich ausschliesslich auf das betreffende von der Urkundsperson signierte Dokument."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die Zulassungsbestätigung enthält folgenden Inhalt:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "die folgenden sichtbaren Elemente:"
+            },
+            {
+              "marke": "1",
+              "text": "das Wappen der Schweizerischen Eidgenossenschaft und bei kantonalen Urkundspersonen das Kantonswappen,",
+              "tiefe": 1
+            },
+            {
+              "marke": "2",
+              "text": "die Bezeichnung des Kantons oder der Bundesbehörde, der oder die die Befugnis erteilt hat,",
+              "tiefe": 1
+            },
+            {
+              "marke": "3",
+              "text": "die Namen und Vornamen der Urkundsperson gemäss Eintrag im UPReg,",
+              "tiefe": 1
+            },
+            {
+              "marke": "4",
+              "text": "die UID,",
+              "tiefe": 1
+            },
+            {
+              "marke": "5",
+              "text": "die Berufs- oder Funktionsbezeichnung der Urkundsperson,",
+              "tiefe": 1
+            },
+            {
+              "marke": "6",
+              "text": "die Umschreibung der Befugnis, die die Urkundsperson nach dem massgebenden Recht hat, elektronische öffentliche Urkunden oder elektronische Beglaubigungen zu erstellen;",
+              "tiefe": 1
+            },
+            {
+              "marke": "b",
+              "text": "ein mit einem qualifizierten elektronischen Zeitstempel verbundenes geregeltes elektronisches Siegel nach Artikel 2 Buchstabe d ZertES."
+            }
+          ]
+        },
+        {
+          "absatz": "2bis",
+          "text": "Bei technischen Störungen kann für die Zulassungsbestätigung anstelle des geregelten elektronischen Siegels eine andere fortgeschrittene elektronische Signatur einer nach ZertES anerkannten Anbieterin von Zertifizierungsdiensten verwendet werden."
+        },
+        {
+          "absatz": "3",
+          "text": "Der Kanton kann vorsehen, dass auf der Verbalseite zusätzliche Elemente wie ein mit einem qualifizierten Zeitstempel verbundenes geregeltes elektronisches Siegel nach Artikel 2 Buchstabe d ZertES und andere sichtbare oder unsichtbare Elemente anzubringen sind. Diese Elemente haben keinen Einfluss auf die bundesrechtliche Gültigkeit elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen."
+        },
+        {
+          "absatz": "4",
+          "text": "Der Kontakt zwischen dem von der Urkundsperson verwendeten Informatiksystem und dem UPReg kann durch Dritte vermittelt werden. Diese bedürfen einer Bewilligung des BJ (Art. 20)."
+        },
+        {
+          "absatz": "5",
+          "text": "Das Eidgenössische Justiz- und Polizeidepartement (EJPD) bezeichnet in einer Verordnung die anerkannten elektronischen Formate, regelt die technischen und organisatorischen Vorgaben sowie die Eigenschaften der Zulassungsbestätigung."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_10",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "7630aeff34d9f095351a0f86e7e6e38ce5d7aa96212fd5aa7c8f2a273126a106"
+    },
+    {
+      "id": "bund/EOEBV/art_11",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "11",
+      "artikelLabel": "Art. 11",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Urkundsperson erstellt das Original der öffentlichen Urkunde auf Papier."
+        },
+        {
+          "absatz": "2",
+          "text": "Sie erstellt eine elektronische Ausfertigung, indem sie:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "das Original ganz oder teilweise zusammen mit allfälligen Beilagen einliest; und"
+            },
+            {
+              "marke": "b",
+              "text": "auf der Verbalseite das Verbal anfügt, wonach das Dokument mit dem Original oder dessen entsprechenden Teilen wortgetreu übereinstimmt."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Sie kann dem Verbal weitere Angaben wie die Adressatin oder den Adressaten oder die Laufnummer der Ausfertigung beifügen."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_11",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "4bd48097c1f62b80eaee972f754f747a29f527a4f1715773616a69070f3e3d5e"
+    },
+    {
+      "id": "bund/EOEBV/art_12",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "12",
+      "artikelLabel": "Art. 12",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Urkundsperson erstellt eine elektronische öffentliche Urkunde aus einem öffentlichen Register, indem sie:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "das entsprechende Papierdokument einliest oder das elektronische Dokument direkt aus dem Register erstellt; und"
+            },
+            {
+              "marke": "b",
+              "text": "dem elektronischen Dokument auf der Verbalseite das Verbal anfügt, wonach es sich um einen amtlichen Auszug, eine Bescheinigung oder eine Bestätigung aus dem betreffenden öffentlichen Register handelt."
+            }
+          ]
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_12",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "9a02c727b3d4eaf2667bdbfb46774e972d3b727d7f8cb3b8762b2cd5902df3bf"
+    },
+    {
+      "id": "bund/EOEBV/art_13",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "13",
+      "artikelLabel": "Art. 13",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Urkundsperson beglaubigt eine elektronische Kopie eines Papierdokuments, indem sie:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "das Papierdokument ganz oder teilweise einliest; und"
+            },
+            {
+              "marke": "b",
+              "text": "dem elektronischen Dokument das Verbal anfügt, wonach es mit dem Papierdokument oder dessen entsprechenden Teilen übereinstimmt."
+            }
+          ]
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_13",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "393fa7043c9b0173e057515142facca4b2fc219da4dd3580601c953156c210d1"
+    },
+    {
+      "id": "bund/EOEBV/art_14",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "14",
+      "artikelLabel": "Art. 14",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Urkundsperson beglaubigt eine elektronische Kopie eines elektronischen Dokuments, indem sie:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "das Dokument ganz oder teilweise in ein neues elektronisches Dokument überführt; und"
+            },
+            {
+              "marke": "b",
+              "text": "dem neuen Dokument das Verbal anfügt, wonach es mit dem vorgelegten elektronischen Dokument oder dessen entsprechenden Teilen übereinstimmt."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Ist das vorgelegte elektronische Dokument elektronisch signiert, so überprüft die Urkundsperson unter Verwendung dazu geeigneter technischer Hilfsmittel die Signatur hinsichtlich:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Integrität des Dokuments;"
+            },
+            {
+              "marke": "b",
+              "text": "Identität des Unterzeichners oder der Unterzeichnerin;"
+            },
+            {
+              "marke": "c",
+              "text": "Gültigkeit und Qualität des Zertifikats einschliesslich allfälliger Attribute;"
+            },
+            {
+              "marke": "d",
+              "text": "Zeitpunkt der Signatur und Angabe, ob das Dokument mit einem qualifizierten elektronischen Zeitstempel nach Artikel 2 Buchstabe j ZertES versehen ist."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Sie hält im Verbal das Ergebnis der Prüfung sowie allfällige in der Signatur enthaltene Attribute fest."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_14",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "045d5e3c10a93cf6755737c12fe6a33afe2086b92e75b6bc0702861942a885ef"
+    },
+    {
+      "id": "bund/EOEBV/art_15",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "15",
+      "artikelLabel": "Art. 15",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Urkundsperson beglaubigt eine eigenhändige Unterschrift oder ein Handzeichen auf einem Papierdokument elektronisch, indem sie:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "das Papierdokument, einschliesslich der Unterschrift oder des Handzeichens, ganz oder teilweise elektronisch einliest; und"
+            },
+            {
+              "marke": "b",
+              "text": "dem elektronischen Dokument das Verbal mit dem Beglaubigungsvermerk nach dem anwendbaren Recht anfügt."
+            }
+          ]
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_15",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "191fb1f35b6793956933522c8a4acaad7308c06305ad0bda8992f511e5c2dbf2"
+    },
+    {
+      "id": "bund/EOEBV/art_16",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "16",
+      "artikelLabel": "Art. 16",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Urkundsperson beglaubigt eine elektronische Signatur elektronisch, indem sie dem elektronischen Dokument das Verbal anfügt, wonach der Unterzeichner oder die Unterzeichnerin die elektronische Signatur:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "in Anwesenheit der Urkundsperson selber angebracht hat; oder"
+            },
+            {
+              "marke": "b",
+              "text": "als selber angebrachte elektronische Signatur anerkannt hat."
+            }
+          ]
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_16",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "a3ab3dd19afd75ff786874152fb530783b62ff17d14d5ed9f11c2be6e406cb72"
+    },
+    {
+      "id": "bund/EOEBV/art_17",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "17",
+      "artikelLabel": "Art. 17",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Urkundsperson beglaubigt den Papierausdruck eines elektronischen Dokuments, indem sie ihm das Verbal anfügt, wonach er mit dem vorgelegten elektronischen Dokument oder dessen entsprechenden Teilen übereinstimmt."
+        },
+        {
+          "absatz": "2",
+          "text": "Ist das vorgelegte elektronische Dokument elektronisch signiert, so überprüft die Urkundsperson die Signatur nach Artikel 14 Absatz 2."
+        },
+        {
+          "absatz": "3",
+          "text": "Sie hält im Verbal das Prüfungsergebnis sowie allfällige in der Signatur enthaltene Attribute fest."
+        },
+        {
+          "absatz": "4",
+          "text": "Sie datiert und unterschreibt den mit dem Verbal versehenen Papierausdruck nach dem anwendbaren Recht."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_17",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "036dc74e472518cff7a54d32bf482936a4d4f8cda80328d99682938faf7a2ee0"
+    },
+    {
+      "id": "bund/EOEBV/art_18",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "18",
+      "artikelLabel": "Art. 18",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Das BJ stellt ein Programm oder Programmbestandteile zur Verfügung, die Funktionen im Zusammenhang mit der Prüfung und mit dem Anfordern und Einfügen von Zulassungsbestätigungen umfassen."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_18",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "09bfe55285d039f5fe6b3be7b523a86c447bf306080197874ee51d852f7f26bc"
+    },
+    {
+      "id": "bund/EOEBV/art_19",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "19",
+      "artikelLabel": "Art. 19",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Der Bund stellt ein Validatorsystem öffentlich zur Verfügung zur Überprüfung der technischen Elemente:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "nach Artikel 10 Absatz 1 Buchstabe d und Absatz 2 Buchstabe b von elektronischen öffentlichen Urkunden und elektronischen Beglaubigungen;"
+            },
+            {
+              "marke": "b",
+              "text": "nach den Artikeln 14 Absatz 2 und 17 Absatz 2 von elektronisch signierten Dokumenten."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Die Grundbuch-, Handelsregister-, und Zivilstandsämter überprüfen die ihnen eingereichten elektronischen öffentlichen Urkunden und elektronischen Beglaubigungen mittels dieses Validatorsystems."
+        },
+        {
+          "absatz": "3",
+          "text": "Das EJPD regelt den Gegenstand der Prüfung von elektronischen öffentlichen Urkunden und elektronischen Beglaubigungen, die das Validatorsystem durchführt."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_19",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "47c098af91bed03219d35faae5c8c19a64f364bbf9ecc378432531f6a4001d71"
+    },
+    {
+      "id": "bund/EOEBV/art_20",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "20",
+      "artikelLabel": "Art. 20",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das BJ entscheidet über Gesuche:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "der zuständigen Behörden des Kantons oder des Bundes um Bewilligung, Daten über die Urkundspersonen aus anderen Systemen an das UPReg über eine Schnittstelle nach Artikel 8 Absatz 4 zu liefern;"
+            },
+            {
+              "marke": "b",
+              "text": "von Dritten um Bewilligung, nach Artikel 10 Absatz 4 den Abruf von Zulassungsbestätigungen zu vermitteln."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Das EJPD regelt die Einzelheiten, insbesondere:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "welche technischen Anforderungen jeweils zu erfüllen sind;"
+            },
+            {
+              "marke": "b",
+              "text": "welche Angaben mit dem jeweiligen Gesuch einzureichen sind."
+            }
+          ]
+        },
+        {
+          "absatz": "3",
+          "text": "Das BJ entzieht die jeweilige Bewilligung, wenn es feststellt, dass die Voraussetzungen dazu nicht mehr erfüllt sind."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_20",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "e029d315ac467997264536cf37be2ff9120b24088f38aeef850dc63ba2fda034"
+    },
+    {
+      "id": "bund/EOEBV/art_21",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "21",
+      "artikelLabel": "Art. 21",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das BJ erhebt für die Ausgabe der Zulassungsbestätigung eine Gebühr von 2 Franken pro Dokument."
+        },
+        {
+          "absatz": "2",
+          "text": "Es erhebt für Bewilligungsverfahren nach Artikel 20 eine Gebühr nach Zeitaufwand. Der Stundenansatz beträgt 250 Franken."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_21",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "a32f273fce20aa14ae56dc34ab538b35c44c422ecf8634193b98e6f16eb5357c"
+    },
+    {
+      "id": "bund/EOEBV/art_22",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "22",
+      "artikelLabel": "Art. 22",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Soweit diese Verordnung keine besondere Regelung enthält, gelten die Bestimmungen der Allgemeinen Gebührenverordnung vom 8. September 2004."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_22",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "5dc381fbe82792c4d8f02fc2692f320e4ba31e93908c5d3908d4bcc18b4a7933"
+    },
+    {
+      "id": "bund/EOEBV/art_23",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "23",
+      "artikelLabel": "Art. 23",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Das BJ stellt die Gebühren jährlich der Urkundsperson oder der nach dem anwendbaren Recht zuständigen Stelle in Rechnung."
+        },
+        {
+          "absatz": "2",
+          "text": "Anderslautende Vereinbarungen zwischen dem BJ und dem Kanton oder der nach dem anwendbaren Recht zuständigen Stelle bleiben vorbehalten."
+        },
+        {
+          "absatz": "3",
+          "text": "Schuldet die Urkundsperson die Gebühren und ist sie trotz Mahnung mit der Zahlung in Verzug, so kann das BJ anordnen, dass die zuständige Behörde des Kantons oder des Bundes die Rechtswirksamkeit des Eintrags nach Artikel 7 widerruft."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_23",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "c8fca8879d887499239a4fe46f53ac472cbbee895b8711264606f145ba4d0f01"
+    },
+    {
+      "id": "bund/EOEBV/art_24",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "24",
+      "artikelLabel": "Art. 24",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Keine Gebühr wird erhoben für den Bezug von Zulassungsbestätigungen, wenn Mitarbeiterinnen und Mitarbeiter einer Grundbuch-, Handelsregister-, oder Zivilstandsbehörde elektronische Kopien von auf Papier oder in elektronischer Form vorliegenden Anmeldungen, Belegen oder sonstigen Dokumenten beglaubigen:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "zwecks Aufbewahrung; oder"
+            },
+            {
+              "marke": "b",
+              "text": "für die Zusammenarbeit zwischen Behörden."
+            }
+          ]
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_24",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "5888ecb6c40c773f288444b0717452337f31a809c9dd87aba96a5f3cfb77d08e"
+    },
+    {
+      "id": "bund/EOEBV/art_25",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "25",
+      "artikelLabel": "Art. 25",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Die Aufhebung und die Änderung anderer Erlasse werden im Anhang geregelt."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_25",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "93e22037e152e6d81645971e5e075550a6f8bcf0c089df8edfd926bdcabae6f5"
+    },
+    {
+      "id": "bund/EOEBV/art_26",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "26",
+      "artikelLabel": "Art. 26",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Das EJPD regelt, wie die Handelsregister- und Grundbuchämter die Gültigkeit elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen überprüfen, die zwischen dem 1. August 2013 und dem 31. Dezember 2013 erstellt worden sind."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_26",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "72fbf9fdaece04b3184b1c14e6ceb7bd04d213eeef2dd1f0c7bab41e844c9a66"
+    },
+    {
+      "id": "bund/EOEBV/art_27",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "27",
+      "artikelLabel": "Art. 27",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "In Abweichung zu den Artikeln 10 und 13 kann sich die Erstellung einer beglaubigten elektronischen Kopie eines Papierdokuments zwecks Aufbewahrung bis zum 31. Dezember 2022 nach den nachstehenden Bestimmungen richten:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Durch Einlesen der Papierdokumente entstandene elektronische Kopien müssen mit einer qualifizierten elektronischen Signatur mit qualifiziertem elektronischem Zeitstempel nach Artikel 2 Buchstaben e und j ZertES unterzeichnet sein."
+            },
+            {
+              "marke": "b",
+              "text": "Die für Beglaubigungen von den Handelsregisterämtern verwendeten qualifizierten Zertifikate müssen folgende Elemente enthalten:"
+            },
+            {
+              "marke": "1",
+              "text": "den Namen und Vornamen sowie die offizielle Funktionsbezeichnung der Inhaberin oder des Inhabers,",
+              "tiefe": 1
+            },
+            {
+              "marke": "2",
+              "text": "die Bezeichnung des Handelsregisteramts und den Kantonsnamen.",
+              "tiefe": 1
+            },
+            {
+              "marke": "c",
+              "text": "Qualifizierte Zertifikate mit einem Pseudonym dürfen nicht verwendet werden."
+            },
+            {
+              "marke": "d",
+              "text": "Auf der beglaubigten Kopie ist das Verbal anzubringen, wonach es mit dem Papierdokument oder dessen entsprechenden Teilen übereinstimmt."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Eine anerkannte Anbieterin von Zertifizierungsdiensten darf ein qualifiziertes Zertifikat nach Absatz 1 Buchstabe b nur ausstellen, wenn der Kanton die offizielle Funktionsbezeichnung der Inhaberin oder des Inhabers und die Bezeichnung des Handelsregisteramts bestätigt."
+        },
+        {
+          "absatz": "3",
+          "text": "Das Eidgenössische Amt für das Handelsregister im BJ kann in einer Weisung Ausführungsbestimmungen erlassen."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_27",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "cd01704f5ae0ec47d162cccc9aa0ec53ca605fd0005c5e641ee3af0d01004dce"
+    },
+    {
+      "id": "bund/EOEBV/art_28",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "28",
+      "artikelLabel": "Art. 28",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Diese Verordnung tritt am 1. Februar 2018 in Kraft."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#art_28",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "8814d70a1ef0d0242ebef143aaa330281164d1af53895d0088be44a3b78e6c97"
+    },
+    {
+      "id": "bund/EOEBV/annex_u1",
+      "ebene": "bund",
+      "quelle": "EOEBV",
+      "erlass": "EÖBV",
+      "artikel": "annex_u1",
+      "artikelLabel": "Anhang",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "(Art. 25)"
+        },
+        {
+          "absatz": null,
+          "text": "Aufhebung und Änderung anderer Erlasse",
+          "titel": 2
+        },
+        {
+          "absatz": null,
+          "text": "I"
+        },
+        {
+          "absatz": null,
+          "text": "Die Verordnung vom 23. September 2011 über die elektronische öffentliche Beurkundung wird aufgehoben."
+        },
+        {
+          "absatz": null,
+          "text": "II"
+        },
+        {
+          "absatz": null,
+          "text": "Die nachstehenden Verordnungen werden wie folgt geändert:"
+        },
+        {
+          "absatz": null,
+          "text": "..."
+        }
+      ],
+      "stand": "2024-01-01",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2018/29/de#annex_u1",
+      "abgerufen": "2026-09-14",
+      "fassungsToken": "20240101",
+      "sha": "b012051523bd2d650cb6d8e1e2170ecb7b39f04c6ec820f037e822babb997cb5"
+    }
+  ]
+}

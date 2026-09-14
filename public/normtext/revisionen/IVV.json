@@ -1,9 +1,16 @@
 {
   "erlassKey": "IVV",
   "sr": "831.201",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-14",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2027-07-01",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.201",
+      "sha": "0486dfba60ed19d93c00a63e261a12ee7f2cf274128c397568bb0aca0799cbdb"
+    },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2025-06-01",
@@ -587,5 +594,5 @@
       "sha": "51715511f86e8cfcfbc233d11a8c99f370966397f8d4084bb046034c64d3c1a2"
     }
   ],
-  "sha": "543b1b01d41d2a113f1233751b270de03d30c504344d5ecb63ab6640fa5f5e7d"
+  "sha": "2dc4439ed31cfeffbf7c239fa7fedba51b32f7a1ed94baa9d1d5343b5caf6b44"
 }

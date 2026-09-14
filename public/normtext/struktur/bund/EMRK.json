@@ -1,0 +1,1643 @@
+{
+ "zaehler":{"1":[4,0],"2":[9,0],"3":[85,0],"4":[5,0],"5":[93,0],"6":[349,0],"7":[28,0],"8":[226,0],"9":[3,0],"10":[34,0],"11":[18,0],"12":[7,0],"13":[32,0],"14":[24,0],"15":[3,0],"17":[2,0],"18":[2,0],"19":[1,0],"20":[1,0],"29":[1,0],"30":[1,0],"34":[7,0],"35":[3,0],"39":[1,0],"41":[3,0],"44":[2,0],"46":[2,0],"58":[2,0],"59":[1,0]},
+ "erzeugt": "2026-09-14",
+ "stand": "2022-09-16",
+ "fassungsToken": "20220916",
+ "kopf": {
+  "srNummer": "0.101",
+  "titel": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten",
+  "erlassdatum": "(Stand am 16. September 2022)",
+  "praeambel": [
+   {
+    "rolle": "autor",
+    "text": "Die Unterzeichnerregierungen, Mitglieder des Europarats –"
+   },
+   {
+    "rolle": "praeambel",
+    "text": "in Anbetracht der Allgemeinen Erklärung der Menschenrechte, die am 10. Dezember 1948 von der Generalversammlung der Vereinten Nationen verkündet worden ist;"
+   },
+   {
+    "rolle": "praeambel",
+    "text": "in der Erwägung, dass diese Erklärung bezweckt, die universelle und wirksame Anerkennung und Einhaltung der in ihr aufgeführten Rechte zu gewährleisten;"
+   },
+   {
+    "rolle": "praeambel",
+    "text": "in der Erwägung, dass es das Ziel des Europarats ist, eine engere Verbindung zwischen seinen Mitgliedern herzustellen, und dass eines der Mittel zur Erreichung dieses Zieles die Wahrung und Fortentwicklung der Menschenrechte und Grundfreiheiten ist;"
+   },
+   {
+    "rolle": "praeambel",
+    "text": "in Bekräftigung ihres tiefen Glaubens an diese Grundfreiheiten, welche die Grundlage von Gerechtigkeit und Frieden in der Welt bilden und die am besten durch eine wahrhaft demokratische politische Ordnung sowie durch ein gemeinsames Verständnis und eine gemeinsame Achtung der diesen Grundfreiheiten zugrunde liegenden Menschenrechte gesichert werden;"
+   },
+   {
+    "rolle": "praeambel",
+    "text": "entschlossen, als Regierungen europäischer Staaten, die vom gleichen Geist beseelt sind und ein gemeinsames Erbe an politischen Überlieferungen, Idealen, Achtung der Freiheit und Rechtsstaatlichkeit besitzen, die ersten Schritte auf dem Weg zu einer kollektiven Garantie bestimmter in der Allgemeinen Erklärung aufgeführter Rechte zu unternehmen;"
+   },
+   {
+    "rolle": "praeambel",
+    "text": "in Bekräftigung dessen, dass es nach dem Grundsatz der Subsidiarität in erster Linie Aufgabe der Hohen Vertragsparteien ist, die Achtung der in dieser Konvention und den Protokollen dazu bestimmten Rechte und Freiheiten zu gewährleisten, und dass sie dabei über einen Ermessensspielraum verfügen, welcher der Kontrolle des durch diese Konvention errichteten Europäischen Gerichtshofs für Menschenrechte untersteht –",
+    "fnNrs": [
+     "4"
+    ]
+   },
+   {
+    "rolle": "verb",
+    "text": "haben folgendes vereinbart:"
+   }
+  ],
+  "fussnoten": [
+   {
+    "nr": "1",
+    "text": "Bereinigte Übersetzung der EMRK unter Berücksichtigung des Prot. Nr. 11 (zwischen Deutschland, Liechtenstein, Österreich und der Schweiz abgestimmte Fassung). Der französische Originaltext findet sich unter der gleichen Nummer in der französischen Ausgabe dieser Sammlung. Der englische Originaltext kann beim Bundesamt für Bauten und Logistik, BBL, 3000 Bern, bezogen werden (AS <b>1975</b> 614).",
+    "links": [
+     {
+      "label": "AS <b>1975</b> 614",
+      "url": "https://fedlex.data.admin.ch/eli/oc/1975/614_614_614"
+     }
+    ],
+    "absatz": null,
+    "item": null,
+    "kl": "V"
+   },
+   {
+    "nr": "2",
+    "text": "Die Änd. vom 13. Mai 2004 (SR <b>0.101.094</b>; AS <b>2009</b> 3067) und 24. Juni 2013 (SR <b>0.101.095</b>; AS <b>2021</b> 461) sind im vorliegenden Text eingebaut, gelten aber nur im Verhältnis zu jenen Staaten, die ihr beigetreten sind. Siehe deshalb ihren eigenen Geltungsbereich.",
+    "links": [
+     {
+      "label": "SR <b>0.101.094</b>",
+      "url": "https://fedlex.data.admin.ch/eli/cc/2009/377",
+      "rs": "0.101.094"
+     },
+     {
+      "label": "AS <b>2009</b> 3067",
+      "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+     },
+     {
+      "label": "SR <b>0.101.095</b>",
+      "url": "https://fedlex.data.admin.ch/eli/cc/2021/461",
+      "rs": "0.101.095"
+     },
+     {
+      "label": "AS <b>2021</b> 461",
+      "url": "https://fedlex.data.admin.ch/eli/oc/2021/461"
+     }
+    ],
+    "absatz": null,
+    "item": null,
+    "kl": "V"
+   },
+   {
+    "nr": "3",
+    "text": "Art. 1 Abs. 1 Bst. a des BB vom 3. Okt. 1974 (AS <b>1974</b> 2148).",
+    "links": [
+     {
+      "label": "AS <b>1974</b> 2148",
+      "url": "https://fedlex.data.admin.ch/eli/oc/1974/2148_2148_2148"
+     }
+    ],
+    "absatz": null,
+    "item": null,
+    "kl": "V"
+   },
+   {
+    "nr": "4",
+    "text": "Erwägung eingefügt durch Art. 1 des Prot. Nr. 15 vom 24. Juni 2013, von der BVers genehmigt am 18. März 2016 und in Kraft für die Schweiz seit 1. Aug. 2021 (AS <b>2021</b> 461; BBl <b>2015</b> 2347).",
+    "links": [
+     {
+      "label": "AS <b>2021</b> 461",
+      "url": "https://fedlex.data.admin.ch/eli/oc/2021/461"
+     },
+     {
+      "label": "BBl <b>2015</b> 2347",
+      "url": "https://fedlex.data.admin.ch/eli/fga/2015/479"
+     }
+    ],
+    "absatz": null,
+    "item": null,
+    "kl": "U"
+   }
+  ]
+ },
+ "artikel": {
+  "1": {
+   "gliederung": [],
+   "marginalie": [
+    "Verpflichtung zur Achtung der Menschenrechte"
+   ]
+  },
+  "2": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Recht auf Leben"
+   ]
+  },
+  "3": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Verbot der Folter"
+   ]
+  },
+  "4": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Verbot der Sklaverei und der Zwangsarbeit"
+   ]
+  },
+  "5": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Recht auf Freiheit und Sicherheit"
+   ],
+   "fussnoten": [
+    {
+     "nr": "5",
+     "text": "Redaktionelle Änd. auf Grund der Übersetzungskonferenz der deutschsprachigen Länder (Deutschland, Liechtenstein, Österreich und Schweiz).",
+     "links": [],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 62,
+      "l": 213
+     },
+     "kl": "U"
+    }
+   ]
+  },
+  "6": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Recht auf ein faires Verfahren"
+   ]
+  },
+  "7": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Keine Strafe ohne Gesetz"
+   ]
+  },
+  "8": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Recht auf Achtung des Privat‑ und Familienlebens"
+   ]
+  },
+  "9": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Gedanken‑, Gewissens‑ und Religionsfreiheit"
+   ]
+  },
+  "10": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Freiheit der Meinungsäusserung"
+   ]
+  },
+  "11": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Versammlungs‑ und Vereinigungsfreiheit"
+   ]
+  },
+  "12": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Recht auf Eheschliessung"
+   ]
+  },
+  "13": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Recht auf wirksame Beschwerde"
+   ]
+  },
+  "14": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Diskriminierungsverbot"
+   ]
+  },
+  "15": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Abweichen im Notstandsfall"
+   ]
+  },
+  "16": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Beschränkungen der politischen Tätigkeit ausländischer Personen"
+   ]
+  },
+  "17": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Verbot des Missbrauchs der Rechte"
+   ]
+  },
+  "18": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt I: Rechte und Freiheiten",
+     "eId": "tit_I"
+    }
+   ],
+   "marginalie": [
+    "Begrenzung der Rechtseinschränkungen"
+   ]
+  },
+  "19": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Errichtung des Gerichtshofs"
+   ],
+   "fussnoten": [
+    {
+     "nr": "6",
+     "text": "Fassung gemäss Art. 1 des Prot. Nr. 11 vom 11. Mai 1994 von der BVers genehmigt am 12. Juni 1995 und in Kraft gesetzt seit dem 1. Nov. 1998 (AS <b>1998</b> 2993 2992; BBl <b>1995</b> I 999).",
+     "links": [
+      {
+       "label": "AS <b>1998</b> 2993",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2993_2993_2993"
+      },
+      {
+       "label": "2992",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2992_2992_2992"
+      },
+      {
+       "label": "BBl <b>1995</b> I 999",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/1_999_987_835"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "sektion": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "kl": "A"
+    }
+   ]
+  },
+  "20": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Zahl der Richter"
+   ]
+  },
+  "21": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Voraussetzungen für das Amt"
+   ],
+   "fussnoten": [
+    {
+     "nr": "7",
+     "text": "Bereinigt gemäss Art. 2 Ziff. 1 und 2 des Prot. Nr. 15 vom 24. Juni 2013, von der BVers genehmigt am 18. März 2016 und in Kraft für die Schweiz seit 1. Aug. 2021 (AS <b>2021</b> 461; BBl <b>2015</b> 2347).",
+     "links": [
+      {
+       "label": "AS <b>2021</b> 461",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/461"
+      },
+      {
+       "label": "BBl <b>2015</b> 2347",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/479"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "22": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Wahl der Richter"
+   ],
+   "fussnoten": [
+    {
+     "nr": "8",
+     "text": "Aufgehoben durch Art. 1 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und mit Wirkung seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 5,
+      "l": 5
+     },
+     "kl": "A"
+    }
+   ]
+  },
+  "23": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Amtszeit und Entlassung"
+   ],
+   "fussnoten": [
+    {
+     "nr": "9",
+     "text": "Fassung gemäss Art. 2 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 (AS <b>2009</b> 3067 3065; BBl <b>2005</b> 2119). Bereinigt gemäss Art. 2 Ziff. 3 des Prot. Nr. 15 vom 24. Juni 2013, von der BVers genehmigt am 18. März 2016 und in Kraft für die Schweiz seit 1. Aug. 2021 (AS <b>2021</b> 461; BBl <b>2015</b> 2347).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      },
+      {
+       "label": "AS <b>2021</b> 461",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/461"
+      },
+      {
+       "label": "BBl <b>2015</b> 2347",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/479"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "24": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Kanzlei und Berichterstatter"
+   ],
+   "fussnoten": [
+    {
+     "nr": "10",
+     "text": "Ursprünglich: Art. 25. Fassung gemäss Art. 4 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "25": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Plenum"
+   ],
+   "fussnoten": [
+    {
+     "nr": "11",
+     "text": "Ursprünglich: Art. 26.",
+     "links": [],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    },
+    {
+     "nr": "12",
+     "text": "Fassung gemäss Art. 5 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    },
+    {
+     "nr": "13",
+     "text": "Eingefügt durch Art. 5 Ziff. 3 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": "f",
+     "kl": "A"
+    }
+   ]
+  },
+  "26": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Einzelrichterbesetzung, Ausschüsse, Kammern und Grosse Kammer"
+   ],
+   "fussnoten": [
+    {
+     "nr": "14",
+     "text": "Ursprünglich: Art. 27. Fassung gemäss Art. 6 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "27": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Befugnisse des Einzelrichters"
+   ],
+   "fussnoten": [
+    {
+     "nr": "15",
+     "text": "Eingefügt durch Art. 7 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "28": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Befugnisse der Ausschüsse"
+   ],
+   "fussnoten": [
+    {
+     "nr": "16",
+     "text": "Fassung gemäss Art. 8 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "29": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Entscheidungen der Kammern über die Zulässigkeit und Begründetheit"
+   ],
+   "fussnoten": [
+    {
+     "nr": "17",
+     "text": "Fassung gemäss Art. 9 Ziff. 1 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 264,
+      "l": 264
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "18",
+     "text": "Satz eingefügt durch Art. 9 Ziff. 2 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 241,
+      "l": 241
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "19",
+     "text": "Aufgehoben durch Art. 9 Ziff. 3 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und mit Wirkung seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 5,
+      "l": 5
+     },
+     "kl": "A"
+    }
+   ]
+  },
+  "30": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Abgabe der Rechtssache an die Grosse Kammer"
+   ],
+   "fussnoten": [
+    {
+     "nr": "20",
+     "text": "Satzteil aufgehoben durch Art. 3 des Prot. Nr. 15 vom 24. Juni 2013, von der BVers genehmigt am 18. März 2016 und mit Wirkung für die Schweiz seit 1. Aug. 2021 (AS <b>2021</b> 461; BBl <b>2015</b> 2347).",
+     "links": [
+      {
+       "label": "AS <b>2021</b> 461",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/461"
+      },
+      {
+       "label": "BBl <b>2015</b> 2347",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/479"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 371,
+      "l": 372
+     },
+     "kl": "U"
+    }
+   ]
+  },
+  "31": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Befugnisse der Grossen Kammer"
+   ],
+   "fussnoten": [
+    {
+     "nr": "21",
+     "text": "Eingefügt durch Art. 10 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": "b",
+     "kl": "A"
+    },
+    {
+     "nr": "22",
+     "text": "Ursprünglich: Bst. b.",
+     "links": [],
+     "absatz": null,
+     "item": "c",
+     "kl": "A"
+    }
+   ]
+  },
+  "32": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Zuständigkeit des Gerichtshofs"
+   ],
+   "fussnoten": [
+    {
+     "nr": "23",
+     "text": "Bereinigt gemäss Art. 11 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 214,
+      "l": 214
+     },
+     "kl": "A"
+    }
+   ]
+  },
+  "33": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Staatenbeschwerden"
+   ]
+  },
+  "34": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Individualbeschwerden"
+   ]
+  },
+  "35": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Zulässigkeitsvoraussetzungen"
+   ],
+   "fussnoten": [
+    {
+     "nr": "24",
+     "text": "Ausdruck gemäss Art. 4 des Prot. Nr. 15 vom 24. Juni 2013, von der BVers genehmigt am 18. März 2016 und in Kraft für die Schweiz seit 1. Febr. 2022 (AS <b>2021</b> 461; BBl <b>2015</b> 2347).",
+     "links": [
+      {
+       "label": "AS <b>2021</b> 461",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/461"
+      },
+      {
+       "label": "BBl <b>2015</b> 2347",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/479"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 229,
+      "l": 298
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "25",
+     "text": "Fassung gemäss Art. 12 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": "b",
+     "kl": "A"
+    },
+    {
+     "nr": "26",
+     "text": "Satzteil aufgehoben durch Art. 5 des Prot. Nr. 15 vom 24. Juni 2013, von der BVers genehmigt am 18. März 2016 und mit Wirkung für die Schweiz seit 1. Aug. 2021 (AS <b>2021</b> 461; BBl <b>2015</b> 2347).",
+     "links": [
+      {
+       "label": "AS <b>2021</b> 461",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2021/461"
+      },
+      {
+       "label": "BBl <b>2015</b> 2347",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2015/479"
+      }
+     ],
+     "absatz": null,
+     "item": "b",
+     "pos": {
+      "b": 2,
+      "it": 1,
+      "o": 266,
+      "l": 267
+     },
+     "kl": "U"
+    }
+   ]
+  },
+  "36": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Beteiligung Dritter"
+   ],
+   "fussnoten": [
+    {
+     "nr": "27",
+     "text": "Eingefügt durch Art. 13 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 214,
+      "l": 214
+     },
+     "kl": "A"
+    }
+   ]
+  },
+  "37": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Streichung von Beschwerden"
+   ]
+  },
+  "38": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Prüfung der Rechtssache"
+   ],
+   "fussnoten": [
+    {
+     "nr": "28",
+     "text": "Fassung gemäss Art. 14 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "39": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Gütliche Einigung"
+   ],
+   "fussnoten": [
+    {
+     "nr": "29",
+     "text": "Fassung gemäss Art. 15 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "40": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Öffentliche Verhandlung und Akteneinsicht"
+   ]
+  },
+  "41": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Gerechte Entschädigung"
+   ]
+  },
+  "42": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Urteile der Kammern"
+   ]
+  },
+  "43": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Verweisung an die Grosse Kammer"
+   ]
+  },
+  "44": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Endgültige Urteile"
+   ]
+  },
+  "45": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Begründung der Urteile und Entscheidungen"
+   ]
+  },
+  "46": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Verbindlichkeit und Vollzug der Urteile"
+   ],
+   "fussnoten": [
+    {
+     "nr": "30",
+     "text": "Fassung gemäss Art. 16 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "kl": "A"
+    }
+   ]
+  },
+  "47": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Gutachten"
+   ]
+  },
+  "48": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Gutachterliche Zuständigkeit des Gerichtshofs"
+   ]
+  },
+  "49": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Begründung der Gutachten"
+   ]
+  },
+  "50": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Kosten des Gerichtshofs"
+   ]
+  },
+  "51": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt II: Europäischer Gerichtshof für Menschenrechte",
+     "eId": "tit_II"
+    }
+   ],
+   "marginalie": [
+    "Privilegien und Immunitäten der Richter"
+   ],
+   "fussnoten": [
+    {
+     "nr": "31",
+     "text": "SR <b>0.192.030</b>",
+     "links": [
+      {
+       "label": "SR <b>0.192.030</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/1963/772_769_797",
+       "rs": "0.192.030"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 128,
+      "l": 206
+     },
+     "kl": "V"
+    }
+   ]
+  },
+  "52": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt III: Verschiedene Bestimmungen",
+     "eId": "tit_III"
+    }
+   ],
+   "marginalie": [
+    "Anfragen des Generalsekretärs"
+   ],
+   "fussnoten": [
+    {
+     "nr": "32",
+     "text": "Ursprünglich: Abschn. V. Bereinigt gemäss Art. 2 des Prot. Nr. 11 vom 11. Mai 1994, von der BVers genehmigt am 12. Juni 1995 und in Kraft seit 1. Nov. 1998 (AS <b>1998</b> 2993 2992; BBl <b>1995</b> I 999).",
+     "links": [
+      {
+       "label": "AS <b>1998</b> 2993",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2993_2993_2993"
+      },
+      {
+       "label": "2992",
+       "url": "https://fedlex.data.admin.ch/eli/oc/1998/2992_2992_2992"
+      },
+      {
+       "label": "BBl <b>1995</b> I 999",
+       "url": "https://fedlex.data.admin.ch/eli/fga/1995/1_999_987_835"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "sektion": "Abschnitt III: Verschiedene Bestimmungen",
+     "kl": "A"
+    }
+   ]
+  },
+  "53": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt III: Verschiedene Bestimmungen",
+     "eId": "tit_III"
+    }
+   ],
+   "marginalie": [
+    "Wahrung anerkannter Menschenrechte"
+   ]
+  },
+  "54": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt III: Verschiedene Bestimmungen",
+     "eId": "tit_III"
+    }
+   ],
+   "marginalie": [
+    "Befugnisse des Ministerkomitees"
+   ],
+   "fussnoten": [
+    {
+     "nr": "33",
+     "text": "SR <b>0.192.030</b>",
+     "links": [
+      {
+       "label": "SR <b>0.192.030</b>",
+       "url": "https://fedlex.data.admin.ch/eli/cc/1963/772_769_797",
+       "rs": "0.192.030"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 0,
+     "pos": {
+      "b": 0,
+      "o": 87,
+      "l": 112
+     },
+     "kl": "V"
+    }
+   ]
+  },
+  "55": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt III: Verschiedene Bestimmungen",
+     "eId": "tit_III"
+    }
+   ],
+   "marginalie": [
+    "Ausschluss anderer Verfahren zur Streitbeilegung"
+   ]
+  },
+  "56": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt III: Verschiedene Bestimmungen",
+     "eId": "tit_III"
+    }
+   ],
+   "marginalie": [
+    "Räumlicher Geltungsbereich"
+   ]
+  },
+  "57": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt III: Verschiedene Bestimmungen",
+     "eId": "tit_III"
+    }
+   ],
+   "marginalie": [
+    "Vorbehalte"
+   ]
+  },
+  "58": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt III: Verschiedene Bestimmungen",
+     "eId": "tit_III"
+    }
+   ],
+   "marginalie": [
+    "Kündigung"
+   ]
+  },
+  "59": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Abschnitt III: Verschiedene Bestimmungen",
+     "eId": "tit_III"
+    }
+   ],
+   "marginalie": [
+    "Unterzeichnung und Ratifikation"
+   ],
+   "fussnoten": [
+    {
+     "nr": "34",
+     "text": "Eingefügt durch Art. 17 des Prot. Nr. 14 vom 13. Mai 2004, von der BVers genehmigt am 16. Dez. 2005 und in Kraft seit 1. Juni 2010 (AS <b>2009</b> 3067 3065, <b>2010</b> 1241; BBl <b>2005</b> 2119).",
+     "links": [
+      {
+       "label": "AS <b>2009</b> 3067",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/377"
+      },
+      {
+       "label": "3065",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2009/376"
+      },
+      {
+       "label": "<b>2010</b> 1241",
+       "url": "https://fedlex.data.admin.ch/eli/oc/2010/173"
+      },
+      {
+       "label": "BBl <b>2005</b> 2119",
+       "url": "https://fedlex.data.admin.ch/eli/fga/2005/260"
+      }
+     ],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 1,
+     "pos": {
+      "b": 1,
+      "o": 59,
+      "l": 59
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "35",
+     "text": "Ursprünglich: Abs. 2.",
+     "links": [],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 2,
+     "pos": {
+      "b": 2,
+      "o": 85,
+      "l": 85
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "36",
+     "text": "Ursprünglich: Abs. 3.",
+     "links": [],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 3,
+     "pos": {
+      "b": 3,
+      "o": 136,
+      "l": 136
+     },
+     "kl": "A"
+    },
+    {
+     "nr": "37",
+     "text": "Ursprünglich: Abs. 4.",
+     "links": [],
+     "absatz": null,
+     "item": null,
+     "absatzIndex": 4,
+     "pos": {
+      "b": 4,
+      "o": 240,
+      "l": 240
+     },
+     "kl": "A"
+    }
+   ]
+  },
+  "scope_u1": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "Geltungsbereich",
+     "eId": "scope"
+    }
+   ],
+   "marginalie": []
+  }
+ }
+}
