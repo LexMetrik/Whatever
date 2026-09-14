@@ -82,8 +82,10 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
      vor `Betrieb & Prüfstrasse`. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·27-BUND-FERTIG`** (Sollbild «Was ist ein Gesetz bei
-> LexMetrik», am Bund festgeschrieben und dort eingelöst).
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·5l-NORMTEXT-B2`** (Text-Treue M13/M14).
+> **In Arbeit:** `W2·27-BUND-FERTIG` (Sollbild «Was ist ein Gesetz bei LexMetrik», am Bund
+> festgeschrieben und dort eingelöst) — `status: wip`, darum liefert `plan:next` den nächsten
+> Queue-Eintrag.
 > **Phasen-Dekret 14.9.2026 (David):** «erst das fundament fertig bauen und vps erst danach» ·
 > «der erste schritt sollte sein den gesetzesleser und die struktur der daten die wir darstellen zu
 > optimieren» · «grundsätzlich würde ich zuerst mit dem bund beginnen». Das Zielbild-Dekret
@@ -187,8 +189,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §8.
   - [ ] **Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG; heute ist nur `de` befüllt. Regel aus `QS-FRIT-DRIFT`: **eId trägt nicht über Sprachen** — Abgleich über die Artikelnummer.
 
-- [ ] **Phase 1 · Bund fertig machen — Sollbild und Struktur-Schluss** *(`W2·27-BUND-FERTIG`, Entscheid David 14.9.2026)*
-  <!-- @meta id: W2·27-BUND-FERTIG · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-BUND-FERTIG.md -->
+- [~] **Phase 1 · Bund fertig machen — Sollbild und Struktur-Schluss** *(`W2·27-BUND-FERTIG`, Entscheid David 14.9.2026)*
+  <!-- @meta id: W2·27-BUND-FERTIG · status: wip · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-BUND-FERTIG.md -->
   Dach der Phase 1: einmal niederschreiben, **was ein Gesetz bei LexMetrik ist**, und es am Bund
   einlösen — Sollbild, Datenstruktur schliessen, Leser schärfen, dann alle Bundeserlasse. Der
   Schritt trägt selbst nur die Struktur-Posten ohne eigenen Schritt; die übrigen Phase-1-Einheiten
