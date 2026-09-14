@@ -1,5 +1,30 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Umschichtung 14.9.2026 (3) — QS-CI-MINUTEN Erledigt-Prosa und Entscheide 8.9.2026 (Wortlaut)
+
+**Begründung.** PR #859 fügt W2·27 die Auflage-Zeile «§8-Anzeige der ungeklärten Leerstellen» hinzu; ROADMAP.md stand danach bei 120,4 KB (Budget 120 KB). Die Erledigt-Prosa von QS-CI-MINUTEN wandert wörtlich hierher; die ROADMAP behält Nachmessung, offene Posten und Zeiger. Inhaltlich unverändert.
+
+**QS-PERF — Ergänzung 1.9.2026, Wortlaut bis 14.9.2026:**
+
+>   **Ergänzt 1.9.2026 (Leser-Tempo gebaut, A/B n=5, alte Zahl bleibt stehen — §0/2b):** Das
+>   753-KB-`rechtsprechung/register.json` lädt nicht mehr auf Gesetzes-Leserseiten, und der Prerender
+>   lädt Register/Struktur im Kopf vor → OR **10 368 → 7 899 ms @4×+4G (−23,8 %)**,
+>   **38 296 → 27 432 ms @6×+3G (−28,4 %)**; ungedrosselt misst derselbe Basis-Stand **780 ms**, die
+>   17.8.-Zahl ist dort also nicht mehr reproduzierbar. **Bestands-Defekt dabei gefunden UND gefixt:**
+>   `InhaltsKopf` montierte die Sprung-Rückmeldungen beim Wechsel auf `kopfzeileSelbst` um → die
+>   Deep-Link-Ansage «Springe zur verlinkten Stelle …» blinkte (Aus-Flanke auf die Millisekunde mit
+>   dem Zweigwechsel, 3/3); jetzt EIN Träger mit zwei Zuständen, Markup byte-gleich, R7 50/50 grün,
+>   volle e2e 722/722. **Offen:** der Snapshot-Preload (+3–10 %) hängt an einer ZWEITEN
+>   Reihenfolge-Stelle im Spy-Effekt (`inhalt-hooks.tsx`, 20 Specs, nicht untersucht) ·
+>   K3-Chunk-Kaskade · Reader-Kopf-Reflow (Design-Entscheid §13) · `hydrateRoot` (eigener PR unter
+>   `QS-BASIS`).
+
+**QS-CI-MINUTEN — Wortlaut bis 14.9.2026:**
+
+> ✅ M2 (#767) · M1/M3/M4/M5 (#773) · Flacker-Wächter (#779, Melde-Modus bis 22.9.2026, dann hart) · Ergebnis-Job (#780) · Playwright-Install-Retry dpkg-Sperre (#785); Regeln: Skill `landung` §«Prüfstrasse seit 8.9.2026». **Nachmessung 8.10.2026.** Offen: Merge Queue (Gate) · Wurzel der 6 flackernden Specs (Fehlerbuch §4, bis 22.9.).
+>
+> **Entscheide David 8.9.2026:** Weg **A** (Repo bleibt öffentlich, Sparplan bauen; privat nur zusammen mit VPS/Self-hosted Runner) · **M2 freigegeben und gelandet** (Dependabot monatlich, `rebase-strategy: disabled`).
+
 ## Umschichtung 14.9.2026 (2) — W2·7-VZUI Fertig-Kriterium und QS-KORPUS adapter-lexwork (Wortlaut)
 
 **Begründung.** Die Quittungs-Commits der Gegenprüfungen #848/#851 und die zwei neuen W2·27-Zeilen

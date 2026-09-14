@@ -280,10 +280,22 @@ export function istAufgehoben(text: string): boolean {
  *  (2) `markiert` (NormSnapshot.aufgehoben, amtlich VERIFIZIERtes Adapter-
  *      Signal) entscheidet SOFORT, wenn (1) nicht bereits negativ entschieden
  *      hat.
- *  (3) fehlt `markiert` (Bund-Bestand vor diesem Feld, andere Kantone vor
- *      ihrer Regeneration), fällt die Funktion auf die bisherige TEXT-
- *      Heuristik zurück — bestehendes Verhalten bleibt unverändert (§6
- *      Byte-Gleichheit für alle Daten ohne das Feld). */
+ *  (3) fehlt `markiert`, fällt die Funktion auf die TEXT-Heuristik zurück —
+ *      bestehendes Verhalten unverändert (§6 Byte-Gleichheit für alle Daten
+ *      ohne das Feld).
+ *
+ *  W2·27 (14.9.2026) — STATUS DER STUFE (3): Für den BUND ist sie seit der
+ *  Regeneration kein Wahrheitsträger mehr, sondern nur noch ein WÄCHTER-SIGNAL.
+ *  1 277 Bund-Artikel tragen `aufgehoben` neu aus dem AMTLICHEN Signal der
+ *  Fedlex-Fussnote (scripts/normtext/aufhebung-signal.ts); jeder Artikel, den
+ *  Stufe (3) allein für aufgehoben hält, ist eine UNGEKLÄRTE LEERSTELLE und
+ *  wird von `npm run check:leerstellen` gezählt (Bund 98, Kanton 481 —
+ *  Basislinie 14.9.2026; Zuwachs ⇒ rot).
+ *  Die Stufe BLEIBT trotzdem stehen, aus zwei Gründen: (a) 481 kantonale
+ *  Artikel hängen noch an ihr — sie zu entfernen änderte die Kantons-
+ *  Darstellung, was Phase 2 vorbehalten ist; (b) für die 98 Bund-Restfälle ist
+ *  «eingeklappt anzeigen» das bisherige, geprüfte Verhalten — es unbegründet
+ *  umzuwerfen wäre eine fachliche Änderung ohne Beleg (§1/§6.3). */
 export function artikelGanzAufgehoben(
   bloecke: { text: string; items?: { text: string }[]; tabelle?: unknown[]; mehrspaltig?: { zeilen: unknown[] } }[],
   markiert?: boolean,
