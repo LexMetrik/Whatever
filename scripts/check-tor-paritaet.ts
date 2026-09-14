@@ -11,129 +11,12 @@
 // 20.7.2026 · NACHTRAG · Tor stand fälschlich auf der eigenen Allowlist (rekursiv unsichtbar) — behoben, läuft seither in ci.yml.
 // 15.8.2026 · SCHÄRFUNG (#425) · Wächter-Deckung wurde fälschlich als PR-Deckung gezählt (226 Snapshots passierten PR-CI grün) — ab hier zählt nur pull_request-Trigger als PR-Deckung.
 // 5.9.2026 · SCHÄRFUNG (#712) · check:testtreue lief in ci.yml, nirgends lokal — Gegenrichtung ergänzt (s. Zweck oben).
-import { readFileSync, readdirSync } from 'node:fs';
-
-const pkg = JSON.parse(readFileSync('package.json', 'utf8')) as {
-  scripts: Record<string, string>;
-};
-
-/** Tore aus der `check:seriell`-Kette, in Reihenfolge. */
-function seriellTore(): string[] {
-  const kette = pkg.scripts['check:seriell'];
-  if (!kette) throw new Error('check:seriell fehlt in package.json — Kette umbenannt?');
-  return [...kette.matchAll(/npm run (check:[a-z0-9:-]+)/g)].map((m) => m[1]);
-}
-
-/**
- * Top-Level-Schlüssel des `on:`-Blocks eines Workflows (Block- und Inline-Form).
- * `null` = kein lesbarer Block — Aufrufer wertet das als ROT, nie stillschweigend
- * als «kein PR-Trigger» (§6.7 lit. b).
- */
-function ereignisse(inhalt: string): Set<string> | null {
-  const zeilen = inhalt.split('\n');
-  const start = zeilen.findIndex((z) => /^["']?on["']?\s*:/.test(z));
-  if (start === -1) return null;
-
-  const rest = zeilen[start].replace(/^["']?on["']?\s*:/, '').replace(/#.*$/, '').trim();
-  if (rest) {
-    // Inline-Form: `on: push` oder `on: [push, pull_request]`.
-    return new Set(rest.replace(/^\[|\]$/g, '').split(',').map((s) => s.trim()).filter(Boolean));
-  }
-
-  // Block-Form: alle Kinder auf der GERINGSTEN Einrücktiefe des Blocks. Tiefere
-  // Zeilen sind Unterschlüssel (`branches:`, `- cron:`) und keine Ereignisse.
-  const block: string[] = [];
-  for (const z of zeilen.slice(start + 1)) {
-    if (/^\S/.test(z)) break;                 // Spalte 0 ⇒ nächster Top-Level-Schlüssel
-    if (!z.trim() || /^\s*#/.test(z)) continue; // Leerzeile / Kommentarzeile
-    block.push(z);
-  }
-  if (!block.length) return new Set();
-  const tiefe = Math.min(...block.map((z) => z.length - z.trimStart().length));
-  const namen = new Set<string>();
-  for (const z of block) {
-    if (z.length - z.trimStart().length !== tiefe) continue;
-    const m = /^\s*([a-z_]+)\s*:/.exec(z);
-    if (m) namen.add(m[1]);
-  }
-  return namen;
-}
-
-/**
- * Tore, die `scripts/gate.sh` im `voll`-Modus tatsächlich AUSFÜHRT — per
- * npm-Alias (`npm run check:<name>`) oder per direktem Skript-Pfad (z. B.
- * check:zh-vollstaendigkeit/zh-randtitel, gebunden über den Pfad aus
- * package.json). Kommentarzeilen zählen nie als Ausführung.
- */
-function gateShAbgedeckt(): Set<string> {
-  const inhalt = readFileSync('scripts/gate.sh', 'utf8')
-    .split('\n')
-    .filter((z) => !/^\s*#/.test(z))
-    .join('\n');
-  const abgedeckt = new Set<string>();
-  for (const m of inhalt.matchAll(/npm run (check:[a-z0-9:-]+)/g)) abgedeckt.add(m[1]);
-  for (const [name, cmd] of Object.entries(pkg.scripts)) {
-    if (!name.startsWith('check:') || abgedeckt.has(name)) continue;
-    const pfad = /(scripts\/\S+\.(?:ts|tsx|mjs|sh))\b/.exec(cmd)?.[1];
-    if (pfad && inhalt.includes(pfad)) abgedeckt.add(name);
-  }
-  return abgedeckt;
-}
-
-/** Zeilennummern (1-basiert) in ci.yml, an denen `npm run <tor>` vorkommt —
- *  die «Fundstelle» für die Fehlermeldung von Regel (4). */
-function ciYmlFundstellen(tor: string): number[] {
-  const zeilen = readFileSync('.github/workflows/ci.yml', 'utf8').split('\n');
-  const treffer: number[] = [];
-  const muster = new RegExp(`npm run ${tor.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`);
-  zeilen.forEach((z, i) => { if (muster.test(z)) treffer.push(i + 1); });
-  return treffer;
-}
-
-type Deckung = { pr: string[]; waechter: string[] };
-
-/** Skript-Pfad → Tor-Name (CI-Pfad-Fallback zu gateShAbgedeckt). */
-function pfadZuTor(): Map<string, string> {
-  const abbildung = new Map<string, string>();
-  for (const [name, cmd] of Object.entries(pkg.scripts)) {
-    if (!name.startsWith('check:')) continue;
-    const pfad = /(scripts\/\S+\.(?:ts|tsx|mjs|sh))\b/.exec(cmd)?.[1];
-    if (pfad) abbildung.set(pfad, name);
-  }
-  return abbildung;
-}
-
-/** Tore, die ein Workflow aufruft — getrennt nach PR- und Wächter-Deckung (s. Kopf). */
-function ciTore(): { deckung: Map<string, Deckung>; ohneOn: string[] } {
-  const deckung = new Map<string, Deckung>();
-  const ohneOn: string[] = [];
-  const dir = '.github/workflows';
-  const pfadAbbildung = pfadZuTor();
-  for (const datei of readdirSync(dir)) {
-    if (!/\.ya?ml$/.test(datei)) continue;
-    const inhalt = readFileSync(`${dir}/${datei}`, 'utf8');
-    const ev = ereignisse(inhalt);
-    if (ev === null) ohneOn.push(datei);
-    const istPr = ev !== null && (ev.has('pull_request') || ev.has('pull_request_target'));
-    // Nur echte `run:`-Zeilen zählen — ein Tor, das bloss im Kommentar erwähnt
-    // wird, läuft nicht (und hat genau diesen Irrtum schon einmal erzeugt).
-    for (const zeile of inhalt.split('\n')) {
-      const ohneKommentar = zeile.replace(/^\s*#.*$/, '');
-      const vermerken = (tor: string) => {
-        const d = deckung.get(tor) ?? { pr: [], waechter: [] };
-        const liste = istPr ? d.pr : d.waechter;
-        if (!liste.includes(datei)) liste.push(datei);
-        deckung.set(tor, d);
-      };
-      for (const m of ohneKommentar.matchAll(/npm run (check:[a-z0-9:-]+)/g)) vermerken(m[1]);
-      // Pfad-Fallback: `vite-node`/`node scripts/x.*` zählt als Tor mit diesem Pfad.
-      const pfad = /(?:npx vite-node|node)\s+(scripts\/\S+\.(?:ts|tsx|mjs|sh))\b/.exec(ohneKommentar)?.[1];
-      const tor = pfad && pfadAbbildung.get(pfad);
-      if (tor) vermerken(tor);
-    }
-  }
-  return { deckung, ohneOn };
-}
+// 14.9.2026 · SCHÄRFUNG (Befund B, PR #856) · `check:artikel-bestand` stand in package.json, lief in KEINEM Lauf. Beide Richtungen konnten das strukturell nicht sehen: Regel (1) sieht nur check:seriell, Regel (4) nur ci.yml — ein Tor in keiner der beiden Listen war unsichtbar (§6.7). Regel (6) setzt darum an der Grundmenge an: JEDES `check:*`-Skript.
+import {
+  pkg, seriellTore, gateShAbgedeckt, ciYmlFundstellen, ciTore,
+  alleCheckSkripte, irgendwoGedeckt,
+} from './tor-paritaet-sonden';
+import { readdirSync } from 'node:fs';
 
 /**
  * Begründete Ausnahmen: Tore, die bewusst NICHT in CI laufen.
@@ -165,6 +48,21 @@ const ALLOWLIST_NUR_CI: Record<string, string> = {
     'braucht `playwright-report.json` — den erzeugt der JSON-Reporter laut playwright.config.ts NUR unter `CI`, und nur der Shard-Lauf selbst füllt ihn. Lokal fehlt die Datei, das Tor wäre bei jedem Gate-Lauf rot. Lokales Pendant ist der Verdikt-Test src/tests/e2e-flake-waechter.test.ts (läuft in check:seriell über die Vitest-Suite); Arbiter bleibt ci.yml (PR-Pfad, e2e-Job).',
   'check:perf-lighthouse':
     'braucht `dist/` (Build-Artefakt) und eine echte Chrome/Lighthouse-Messung über mehrere Läufe für den Median (mehrere Minuten) — ungeeignet für einen Gate-Lauf bei jedem WIP-Commit. Arbiter bleibt ci.yml (Job Perf, PR-Pfad).',
+};
+
+/**
+ * REGEL (6) · GRUNDMENGE (SCHÄRFUNG 14.9.2026, s. Kopf): Tore, die in KEINEM
+ * Lauf stehen — weder in `check:seriell`, noch in einer Kette, noch in einem
+ * Workflow oder in `gate.sh`. Jeder Eintrag braucht einen wahren Grund, warum
+ * das richtig ist; «wird noch verdrahtet» ist keiner (dann verdrahten).
+ */
+const ALLOWLIST_UNVERDRAHTET: Record<string, string> = {
+  'check:zitatgraph':
+    'BEWUSST KEIN TOR: die Hülle scripts/report-zitatgraph-warnungen.ts endet stets mit Exit 0 (so im Kopf deklariert) — ein erheblicher Teil der gemessenen Differenz ist bauartbedingtes Rauschen (Fussnoten-Citations, Erlass-Verweise ohne Artikelnummer). Ein Lauf daraus wäre ein Tor, das aus richtigem Verhalten Rot macht (§6.7 lit. a). Bericht auf Abruf: npm run check:zitatgraph.',
+  'check:be-sprengel':
+    'reine Kommandozeilen-Hülle um pruefeBeSprengel(); DIESELBE Prüfung läuft merge-blockierend als src/tests/beSprengel.test.ts über die Vitest-Suite (und damit in check:seriell und im PR-CI). Ein zweiter Lauf desselben Prädikats prüft nichts Zusätzliches — er verdoppelt nur die Laufzeit (§17-Gegengewicht).',
+  'check:suchindex':
+    'Drift-Tor des Suchindex-Generators — aber `npm run build` beginnt mit `gen:suchindex` und erzeugt den Index vor JEDEM Build neu (package.json, Skript "build"). Eine Drift kann die Auslieferung darum strukturell nicht erreichen: was gebaut wird, ist immer frisch generiert. Das Tor bleibt als Diagnose für den Zwischenstand im Arbeitsbaum.',
 };
 
 const seriell = seriellTore();
@@ -257,9 +155,38 @@ for (const [t, grund] of Object.entries(ALLOWLIST_NUR_CI)) {
   }
 }
 
+// Regel (6) · GRUNDMENGE (SCHÄRFUNG 14.9.2026, Befund B): jedes `check:*`-Skript
+//     läuft irgendwo — in check:seriell, in einer Kette, in einem Workflow oder
+//     in gate.sh — oder steht begründet auf ALLOWLIST_UNVERDRAHTET. Wie die
+//     Deckung ermittelt wird (transitiv über Ketten und kettenlesende Runner,
+//     samt der Rekursions-Falle, die dabei zuschlug), steht in den Sonden.
+for (const t of alleCheckSkripte) {
+  if (irgendwoGedeckt.has(t) || t in ALLOWLIST_UNVERDRAHTET) continue;
+  fehler.push(
+    `  ${t}: steht in package.json, läuft aber in KEINEM Lauf — nicht in\n` +
+    `      check:seriell, in keiner Kette, in keinem Workflow, nicht in gate.sh.\n` +
+    `      Ein Tor, das nie läuft, kann nicht scheitern (§6.7); es sieht nach\n` +
+    `      Deckung aus und ist keine (Befund B, PR #856: check:artikel-bestand).\n` +
+    `      → in check:seriell + ci.yml verdrahten, oder mit GRUND in\n` +
+    `        ALLOWLIST_UNVERDRAHTET (scripts/check-tor-paritaet.ts) eintragen.`);
+}
+
+// (7) Verrottete ALLOWLIST_UNVERDRAHTET: ein Eintrag, dessen Tor inzwischen
+//     doch irgendwo läuft (oder das es gar nicht mehr gibt), ist tote Regel.
+for (const [t, grund] of Object.entries(ALLOWLIST_UNVERDRAHTET)) {
+  if (!(t in pkg.scripts)) {
+    fehler.push(`  ${t}: steht auf ALLOWLIST_UNVERDRAHTET, existiert aber nicht (mehr) in package.json — Eintrag streichen.`);
+  } else if (irgendwoGedeckt.has(t)) {
+    fehler.push(
+      `  ${t}: läuft inzwischen in einem Lauf — ALLOWLIST_UNVERDRAHTET-Eintrag ist überholt, streichen.\n` +
+      `      (alter Grund: ${grund})`);
+  }
+}
+
 const imPrPfad = seriell.filter((t) => prGedeckt(t).length);
 const nurWaechter = seriell.filter((t) => !prGedeckt(t).length && waechterGedeckt(t).length);
 const nurCi = alleCiPrTore.filter((t) => !lokalGedeckt(t) && t in ALLOWLIST_NUR_CI);
+const unverdrahtet = alleCheckSkripte.filter((t) => !irgendwoGedeckt.has(t));
 
 if (fehler.length) {
   console.log(`check:tor-paritaet ROT — ${fehler.length} Abweichung(en):\n${fehler.join('\n')}`);
@@ -275,4 +202,8 @@ console.log(
   `Gegenrichtung: ${alleCiPrTore.length} Tore ruft ci.yml im PR-Pfad auf, ` +
   `${alleCiPrTore.length - nurCi.length} davon laufen auch lokal ` +
   `(check:seriell/gate.sh), ${nurCi.length} begründet auf ALLOWLIST_NUR_CI. ` +
-  `Kein Tor nur-CI ohne Eintrag.`);
+  `Kein Tor nur-CI ohne Eintrag. ` +
+  `Grundmenge: ${alleCheckSkripte.length} check:*-Skripte in package.json, ` +
+  `${alleCheckSkripte.length - unverdrahtet.length} laufen irgendwo ` +
+  `(Kette/Workflow/gate.sh), ${unverdrahtet.length} begründet auf ` +
+  `ALLOWLIST_UNVERDRAHTET. Kein Tor ohne Lauf.`);
