@@ -197,6 +197,21 @@ export interface BezugsMarke {
    * Liste selbst im `title` der Statusgruppe steht (`./BezuegeZeile.tsx`).
    */
   titel?: string;
+  /**
+   * W2·5m · Der Klartext-Leerzustand, wenn `anzahl === 0` (§8, Kap. 15.5).
+   *
+   * Gesetzt NUR an Rubriken, deren Null gesichert ist — «Verweise» und
+   * «Rechner» stehen aus der Struktur des Artikels sofort fest. Die
+   * shard-abhängigen Rubriken (Fassung, Entscheide, Materialien) bekommen
+   * KEINEN: ihre Null heisst vor dem Eintreffen «noch nicht bekannt», und ein
+   * Satz darüber wäre eine Behauptung über Daten, die unterwegs sind.
+   *
+   * DIE ZEILE HIER WERTET DAS FELD NICHT AUS — sie filtert `anzahl > 0`
+   * unverändert heraus (Verhalten der Gesamtansicht byte-gleich, §6). Gelesen
+   * wird es allein vom Dossier des Einzelmodus (`./ArtikelDossier.tsx`), das
+   * genug Platz für einen Satz hat, wo die Zeile nur einen Chip hätte.
+   */
+  leer?: string;
   /** Was beim Aufklappen GENAU DIESER Rubrik erscheint. */
   inhalt: ReactNode;
   /** Hängt der Inhalt an einem nachzuladenden Shard? Dann fragt das Aufklappen

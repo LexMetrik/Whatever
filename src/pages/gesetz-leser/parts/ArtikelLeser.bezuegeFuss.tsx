@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { NormChip } from '../../../components/vorlagen/NormChip';
 import { SUCH_META } from '../suchHighlight';
 import { Funktionszeile, type BezugsMarke } from './Funktionszeile';
+import { ArtikelDossier } from './ArtikelDossier';
 import { fassungsMarkeEtikett } from '../fassungsEtikett';
 import { entscheidZahl } from '../entscheidZahl';
 import { BezuegeZeile } from './BezuegeZeile';
@@ -79,6 +80,7 @@ import type { NormSnapshot } from '../../../lib/normtext/typen';
 export function ArtikelBezuegeFuss({
   bezuege, bezuegeImFuss, historie, leitfaelle, materialien, verweise, werkzeuge, zaehler,
   zitat, revision, onOeffnen, laedt, aktionen, onImBlatt, erlassKey, artikel, snapshot,
+  form = 'zeile',
 }: {
   bezuege?: ArtikelBezuege;
   bezuegeImFuss?: ArtikelBezuege;
@@ -136,6 +138,17 @@ export function ArtikelBezuegeFuss({
    * Wortlaut wäre die zweite Wahrheit, die §5 verbietet.
    */
   snapshot?: NormSnapshot;
+  /**
+   * W2·5m (Kap. 15.5) · die GESTALT der Rubriken — `'zeile'` ist die
+   * Funktionszeile am Artikelende (Gesamtansicht, unverändert), `'dossier'` die
+   * gestapelten Blöcke unter dem Einzelartikel.
+   *
+   * EINE Prop und kein zweites Modul: die Marken darüber werden in beiden
+   * Fällen aus derselben Rechnung gebaut (§5). Wer hier eine zweite
+   * Marken-Liste anlegt, hat den Schritt verfehlt — Wächter
+   * `src/tests/leser-einzel-dossier-quelle.test.ts`.
+   */
+  form?: 'zeile' | 'dossier';
 }) {
   /** Die Zahlen der Funktionszeile — ausschliesslich aus Daten, die der Artikel
    *  ohnehin führt (§8: keine Rubrik ohne echte Zahl, keine neue Ladelogik). */
@@ -305,6 +318,13 @@ export function ArtikelBezuegeFuss({
       reg: 'g',
       anzahl: verweise.length,
       wort: ['Verweis', 'Verweise'],
+      /* W2·5m · Die Null ist hier GESICHERT: die Verweise stehen aus dem
+         Artikel selbst (`sammleVerweise`), es wartet kein Shard. Der Satz sagt
+         darum, was gilt — und er sagt «verweist auf», nicht «hat keine
+         Verweise»: die Rückrichtung «zitiert von» gibt es im Korpus noch nicht
+         (W2·22-VERWEIS-FEDLEX Z4), und ein Leser soll sie nicht für leer
+         halten statt für fehlend (§8, Kap. 15.5). */
+      leer: 'Dieser Artikel verweist auf keine andere Bestimmung. Wer auf ihn verweist, führen wir noch nicht.',
       inhalt: (
         <>
           <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Verweise</span>
@@ -318,6 +338,12 @@ export function ArtikelBezuegeFuss({
       reg: 'w',
       anzahl: werkzeuge.length,
       wort: ['Rechner', 'Rechner'],
+      /* W2·5m · Ebenfalls gesichert: die Norm-Werkzeug-Kanten stehen fest im
+         Code (`lib/normtext/werkzeuge.ts`), jede mit fachlichem Beleg (§7),
+         Zweifelsfälle bewusst ausgelassen (§8). «Bisher» ist kein Füllwort: es
+         sagt, dass die Liste wächst, statt den Eindruck zu erwecken, hier sei
+         nichts zu rechnen. */
+      leer: 'Zu dieser Bestimmung führen wir bisher keinen Rechner und keine Vorlage.',
       inhalt: (
         <>
           <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Rechnen</span>
@@ -335,6 +361,22 @@ export function ArtikelBezuegeFuss({
       ),
     },
   ];
+  // W2·5m · ZWEI GESTALTEN, EINE RECHNUNG (§5). Oberhalb dieser Zeile steht
+  // kein einziges `if (form …)`: die Marken sind in beiden Fällen dieselben,
+  // nur ihr Bild ist ein anderes.
+  if (form === 'dossier') {
+    return (
+      <div {...{ [SUCH_META]: '' }}>
+        {/* Die Fusszeile der Artikel-Karte (Kap. 15.3): die Aktionen stehen im
+            Einzelmodus DAUERHAFT, nicht erst bei Hover — der Artikel ist hier
+            der Gegenstand der Seite, nicht einer von 1686 (Z6 gilt für die
+            Zeile, wo 1686 × 3 Knöpfe im DOM stünden; hier sind es drei). */}
+        <div className="lr7-einzel-fuss">{aktionen}</div>
+        <ArtikelDossier marken={bezugsMarken} zitat={zitat}
+          onOeffnen={onOeffnen} laedt={laedt} />
+      </div>
+    );
+  }
   return (
     <div {...{ [SUCH_META]: '' }}>
       <Funktionszeile marken={bezugsMarken} zitat={zitat} aktionen={aktionen}

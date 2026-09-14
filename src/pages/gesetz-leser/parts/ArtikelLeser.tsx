@@ -29,7 +29,7 @@ import type { ArtikelNachbarn as NachbarnAmArtikel } from '../v3/nachbarArtikel'
 // gegenüber dem Vorartikel GEÄNDERTEN Stufen, `marg`), rechts der Serif-
 // Bestimmungstext. Ersetzt den früheren fliegenden Standort-Tracker. Reine Darstellung.
 
-export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, bezuegeImFuss, materialien, onBezuegeOeffnen, onImBlatt, bezuegeLaedt, revision, historie, zaehler, nachbarn, istAnhang = false }: {
+export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, fussnoten, intern, marg, margBasis, imTreffer, onSpringe, leitfaelle, bezuege, bezuegeImFuss, materialien, onBezuegeOeffnen, onImBlatt, bezuegeLaedt, revision, historie, zaehler, nachbarn, fussForm, istAnhang = false }: {
   e: NormSnapshot; erlass: BrowseErlass; basisPfad: string; fussnoten?: Fussnote[]; intern?: InternRefs;
   marg?: string[];
   /** G-HIST-UI: Fassungshistorie dieses Artikels aus dem erlass-lokalen Shard
@@ -59,6 +59,17 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
    *  über alle 1686 Artikel des OR auf (§15). `undefined` = die Hülle setzt
    *  keine Nachbarschaft (Test-Render, Einzel-Ausspielung) ⇒ keine Zeile. */
   nachbarn?: NachbarnAmArtikel;
+  /**
+   * W2·5m (Kap. 15.5) · die GESTALT der Rubriken am Artikelende. `undefined`
+   * bzw. `'zeile'` ist die Funktionszeile der Gesamtansicht (unverändert),
+   * `'dossier'` sind die gestapelten Blöcke des Einzelmodus.
+   *
+   * DURCHGEREICHT, nicht ausgewertet: die Weiche steht in
+   * `./ArtikelLeser.bezuegeFuss.tsx`, wo auch die Marken gerechnet werden (§5).
+   * Der Artikel-Körper darüber ist in beiden Fällen byte-gleich derselbe —
+   * genau das misst das PX-Tor (Kap. 15.1, Grenze Hülle/Kern).
+   */
+  fussForm?: 'zeile' | 'dossier';
   istAnhang?: boolean;
   /** Leitfälle dieses Artikels (V1a-Form, flache BGE-Chip-Reihe).
    *
@@ -719,6 +730,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           historie={historie} leitfaelle={leitfaelle} materialien={materialien} verweise={verweise}
           werkzeuge={werkzeuge} zaehler={zaehler} zitat={zitat} revision={revision}
           onOeffnen={onBezuegeOeffnen} onImBlatt={onImBlatt} laedt={bezuegeLaedt && !bezuege}
+          form={fussForm}
           aktionen={<ArtikelAktionen artikel={e.artikel} basisPfad={basisPfad}
             zitat={zitat} zitatVoll={zitatVoll} amtlich={amtlich} />} />
       </div>
