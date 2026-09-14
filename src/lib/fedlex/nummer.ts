@@ -10,22 +10,30 @@
 // Darum liegt die Reihe hier, und die Nummern-Grammatik liest sie — statt sie zu
 // wiederholen.
 //
-// BESTAND, gemessen 14.9.2026 über den GANZEN Snapshot-Korpus (public/normtext/**,
-// Feld `artikel`): bis 442 · ter 172 · quater 91 · quinquies 47 · sexies 27 ·
-// septies 20 · octies 17 · novies 8 · decies 5 · undecies 2 · duodecies 2.
-// Höhere Glieder (terdecies …) kennt der Korpus heute NICHT; sie gehören erst in
-// die Reihe, wenn eine Snapshot-Messung sie ausweist — eine geratene Erweiterung
-// erzeugt Anker für Bestimmungen, die es nicht gibt (§7). «novies» ist die
-// Fedlex-Schreibweise (das ebenfalls gebräuchliche «nonies» kommt im Korpus
-// 0-mal vor).
+// BESTAND, gemessen 14.9.2026 über public/normtext/bund/ (228 Dateien, Feld
+// `artikelLabel`, ohne Bereichs-Kopftitel wie «Art. 48bis–48sexies» und ohne
+// Anhang-Einträge — Kommando siehe Commit-Body):
+// bis 268 · ter 117 · quater 72 · quinquies 39 · sexies 25 · septies 20 ·
+// octies 16 · novies 8 · decies 5 · undecies 2 · duodecies 2.
+// Diese Reihe gilt für die BUND-Grammatik (Fedlex-Anker); die kantonale
+// Grammatik (RE_PARAGRAF in KantonNormText.tsx) ist eine separate Reihe mit
+// eigenem Bestand. Höhere Glieder (terdecies …) kennt der Bund-Korpus heute
+// NICHT; sie gehören erst in die Reihe, wenn eine Snapshot-Messung sie
+// ausweist — eine geratene Erweiterung erzeugt Anker für Bestimmungen, die es
+// nicht gibt (§7). «novies» ist die Fedlex-Schreibweise (das im Bund-Korpus
+// nicht vorkommende «nonies» ist eine kantonale Schreibweise, belegt in
+// SO-614.11 [115nonies, neben 115septies/-octies/-decies/-undecies] — dort
+// eine andere Grammatik, siehe oben).
 export const ART_SUFFIXE = [
   'bis', 'ter', 'quater', 'quinquies', 'sexies',
   'septies', 'octies', 'novies', 'decies', 'undecies', 'duodecies',
 ] as const;
 
-// Regex-Alternation der Reihe, LÄNGSTE ZUERST. Die Reihenfolge ist nicht Kosmetik:
-// in einem ungeankerten Scan nimmt die Engine die erste passende Alternative —
-// stünde «decies» vor «duodecies», zerfiele «80dduodecies» in «80dduo» + Rest.
+// Regex-Alternation der Reihe, LÄNGSTE ZUERST. Mit dem heutigen Bestand ist
+// kein Glied Präfix eines anderen (die Alternation probiert ohnehin alle
+// Zweige, ein «decies» vor «duodecies» würde also heute nicht falsch matchen)
+// — die Sortierung ist VORSORGE für ein künftiges Glied, das doch ein Präfix
+// eines bestehenden wäre (z. B. ein «bis»-Verwandtes vor «bisbis»-artigem).
 // Deterministisch aus ART_SUFFIXE abgeleitet, damit ein neues Glied nur EINMAL
 // eingetragen werden muss (bei gleicher Länge entscheidet die Reihen-Position,
 // also stabil).

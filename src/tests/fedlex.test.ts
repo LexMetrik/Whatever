@@ -433,6 +433,11 @@ describe('artikelnPluralVerweise — Plural-Aufzählungs-Regionen (A10)', () => 
     const rs = artikelnPluralVerweise('gemäss den Artikeln 42quater–42terdecies IVG sinngemäss');
     expect(rs).toHaveLength(1);
     expect(rs[0].unterdruecken).toBe(true);
+    // Die im Kommentar oben versprochene Aussage «nicht als 42t halb
+    // an-gematcht»: das zweite Glied bricht komplett ab, statt als halber
+    // Treffer «42t» in die Glieder-Liste zu rutschen — nur das erste, saubere
+    // Glied «42quater» bleibt stehen.
+    expect(rs[0].glieder.map((g) => g.roh)).toEqual(['42quater']);
   });
 
   it('Negativ: Singular «Artikel 6 Absatz 2 und die Bestimmungen des OR» erzeugt KEINE Region', () => {

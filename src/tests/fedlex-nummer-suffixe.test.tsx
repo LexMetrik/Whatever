@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { renderToString } from 'react-dom/server';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { ART_SUFFIXE, artikelToken, fedlexLinkFuerArtikel } from '../lib/fedlex';
 import { N2_ARTNR } from '../lib/fedlex/parser';
@@ -21,10 +21,12 @@ import { LocaleProvider } from '../components/locale';
 // Konsumenten. Dieser Test hält jeden einzeln fest — sonst könnte einer still
 // zurückfallen und genau den falschen Anker wieder erzeugen.
 //
-// KORPUS-BESTAND (14.9.2026, `public/normtext/**`, Feld `artikel`):
-//   septies 20 · octies 17 · novies 8 · decies 5 · undecies 2 · duodecies 2.
-// Höhere Glieder (terdecies …) führt der Korpus NICHT — sie bleiben draussen
-// und dienen hier als Negativfall (§7: nur Gemessenes).
+// KORPUS-BESTAND (14.9.2026, `public/normtext/bund/`, Feld `artikelLabel`,
+// ohne Bereichs-Kopftitel/Anhang — Details und Kommando: `nummer.ts`):
+//   bis 268 · ter 117 · quater 72 · quinquies 39 · sexies 25 · septies 20 ·
+//   octies 16 · novies 8 · decies 5 · undecies 2 · duodecies 2.
+// Höhere Glieder (terdecies …) führt der Bund-Korpus NICHT — sie bleiben
+// draussen und dienen hier als Negativfall (§7: nur Gemessenes).
 
 const NORMTEXT = join(process.cwd(), 'public/normtext');
 type Snapshot = { eintraege: Array<{ artikel: string }> };
@@ -39,18 +41,41 @@ describe('Z6 a · geteilte Suffix-Reihe (nummer.ts)', () => {
     ]);
   });
 
-  it('jedes Glied ist am Snapshot-Korpus belegt (§7: kein geratenes Suffix)', () => {
-    // Gegenprobe zur Liste oben: ein Glied, das kein einziger Artikel führt,
-    // wäre eine Erfindung — und erzeugte Anker auf Bestimmungen, die es nicht
-    // gibt. Gezählt wird über die Bund-Erlasse, die die hohen Glieder tragen.
-    const tokens = new Set<string>();
-    for (const key of ['AHVG', 'AHVV', 'STGB', 'IVG', 'IVV', 'IRSG', 'KKV', 'USG', 'OR']) {
-      for (const e of lade(`bund/${key}`).eintraege) tokens.add(e.artikel);
-    }
+  it('Korpus-Suffixmenge == ART_SUFFIXE, in BEIDE Richtungen (§7: kein geratenes, kein vergessenes Suffix)', () => {
+    // Vorher deckte dieser Test nur eine Richtung ab: der Filter
+    // `ART_SUFFIXE.includes(m[1])` liess `belegt` nie etwas ausserhalb
+    // ART_SUFFIXE enthalten — ein im Korpus vorhandenes, in der Reihe
+    // fehlendes Suffix konnte darum nie auffallen (Befund Gegenprüfung
+    // 14.9.2026, B2). Jetzt: ganzer Bund-Korpus (228 Dateien statt neun
+    // handverlesene), und die Extraktion prüft gegen eine vom Korpus
+    // UNABHÄNGIGE Referenz — die klassische lateinische Ordnungsreihe, ein
+    // Superset von ART_SUFFIXE — statt gegen ART_SUFFIXE selbst; nur so kann
+    // die Gegenprobe ein Suffix melden, das im Korpus auftaucht, aber der
+    // Reihe fehlt (die Alternative wäre zirkulär und könnte nie rot werden).
+    // Rot-Beweis geführt (§6.7): `duodecies` temporär aus ART_SUFFIXE
+    // entfernt → dieser Test schlägt fehl (Kommando + Ausgabe: Commit-Body).
+    // Regex über den rohen Dateitext statt JSON.parse (Performance: 228
+    // Dateien / ~25 500 Einträge in ca. 2 s statt ca. 3,3 s mit JSON.parse).
+    const LAT_ORDNUNGSREIHE = [
+      'duodevicies', 'undevicies', 'vicies', 'quaterdecies', 'quindecies',
+      'sedecies', 'septendecies', 'terdecies', 'tredecies', 'duodecies',
+      'undecies', 'decies', 'novies', 'nonies', 'octies', 'septies',
+      'sexies', 'quinquies', 'quater', 'ter', 'bis',
+    ].sort((a, b) => b.length - a.length);
+    const labelRe = /"artikelLabel":\s*"(Art\. \d[^"]*)"/g;
+    const suffixRe = new RegExp(`(${LAT_ORDNUNGSREIHE.join('|')})$`);
     const belegt = new Set<string>();
-    for (const t of tokens) {
-      const m = /_([a-z]+)$/.exec(t);
-      if (m && (ART_SUFFIXE as readonly string[]).includes(m[1])) belegt.add(m[1]);
+    const bundDir = join(NORMTEXT, 'bund');
+    for (const datei of readdirSync(bundDir).filter((f) => f.endsWith('.json'))) {
+      const text = readFileSync(join(bundDir, datei), 'utf8');
+      labelRe.lastIndex = 0;
+      let m: RegExpExecArray | null;
+      while ((m = labelRe.exec(text))) {
+        const label = m[1];
+        if (label.includes('–')) continue; // Bereichs-Kopftitel wie «Art. 48bis–48sexies»
+        const sm = suffixRe.exec(label);
+        if (sm) belegt.add(sm[1]);
+      }
     }
     expect([...belegt].sort()).toEqual([...ART_SUFFIXE].sort());
   });
