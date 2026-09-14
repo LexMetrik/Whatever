@@ -178,6 +178,20 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
     `art_91_a` ×4, StGB `art_340` …); dieselbe Mechanik trägt auch die ALTEN Anker-Pfade, der
     Bestand ist also mitzumessen. Zielbild: existiert das Ziel-Token nicht, auf den Erlass-Link
     zurückfallen statt auf einen toten Sprung (§8). Risikopfad — Gegenprüfung Pflicht.
+    ✅ **gebaut 14.9.2026** — korpusweit über ALLE Anker-Pfade nachgemessen, nicht nur Z5:
+    **36 tote Fremd-Anker** von 9 675 prüfbaren, 26 verschiedene Ziele, 25 Bund / 11 Kanton.
+    Wächter: `check:verweis-inventar` → `toteFremdanker` + `fremdZiele`. Amtlich gegengeprüft
+    (Fedlex-SPARQL + AKN-XML, 26/26): keines existiert in der geltenden Fassung — **keine**
+    Extraktionslücke, und auch Fedlex trägt keinen `id="art_<token>"`, der Anker war dort
+    ebenso tot.
+  - [ ] **Z6c-Folge · Sammel-Anker auflösen statt nur zurückfallen** — von den 26 toten Zielen
+    führt Fedlex **19** als aufgehobene Nummer in einem SAMMEL-Anker («Art. 876–883 Aufgehoben»,
+    `id="art_876_883"`); heute fallen auch sie auf den Erlass-Link zurück. Den Block anzuspringen
+    ist mehr als ein Anker-Wechsel — Popover-Inhalt, Sachtitel und Passus-Markierung zeigen dann
+    eine ANDERE Bestimmung — und braucht darum einen eigenen deklarierten Schritt. Vorarbeit
+    liegt: `sammelblockFuer()` in `src/lib/normtext/artikel-bestand.ts` misst die Lage (erkennt
+    13 der 19 — rein numerische Blöcke; suffixbehaftete wie `art_275_bis_275_ter` erst nach Z6a).
+    *Risikopfad ⇒ Gegenprüfung.*
   - [ ] **Z4 Leser-Schicht «zitiert von»** (Erlassebene, nur Bund) — erst nach Z1–Z3 und Abnahme.
 
 - [ ] **Norm-Zeitmaschine + Fassungs-Diff** *(`W2·5g-ZEIT`, Ideen-Intake 20.7.2026; Phase 3 — FR/IT-Datenanteil ist David-Frage, s. FAHRPLAN-BUND-FERTIG §4 a)*
