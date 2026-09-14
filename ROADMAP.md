@@ -135,10 +135,15 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   «Art. xx dieses Gesetzes» springt im Gesetz; Verweise nach ausserhalb sind als solche
   erkennbar; Inventar-Schärfe messbar statt Kommentar-Zahlen. **Stand 14.9.2026 (Prosa
   nachgezogen):** V-1 (Mess-Tor `check:verweis-inventar`) · V-2 · V-3 · V-4 · V-6 gebaut 1.9.2026
-  (PR #599), V-7/V-8 Bund-Stufe 1.9.2026. **Offen (Phase 1):** V-7-Bund-Rest — Trägergesetz-Kontext
-  «des Gesetzes» (169 Stellen) und Kurztitel ohne Fedlex-Ziel (28) als kuratierte Positivliste
-  (prüfbare Liste im PR, nie heuristisch). **Phase 2:** V-7 kantonale Namensliste (916 Stellen).
-  **Phase 3:** V-5 (Zeit-Kante), Konzept an W2·5g-ZEIT. Leitplanke: kein Link besser als falscher (§1).
+  (PR #599), V-7/V-8 Bund-Stufe 1.9.2026, **V-7c Trägergesetz-Kontext + 15 Kurztitel mit
+  Korpus-Ziel 14.9.2026** («des Gesetzes» = das im Ingress legaldefinierte Trägergesetz, 169 Glieder
+  in 7 Vollzugsverordnungen; davon 97 vorher FALSCHE Self-Links). **Offen (Phase 1):** Kurztitel OHNE
+  Korpus-Erlass (Revisionsaufsichts-, Subventions-, Zoll-, Strafregister-, Post-, Gaststaat-,
+  Medizinalberufegesetz … zusammen ~146 Stellen) — hängt am KORPUS, nicht am Erkenner: der
+  Positivlisten-Wächter verlangt ein Erlassdatum aus dem Struktur-Sidecar, das ohne Snapshot des Ziels
+  nicht existiert. Wurzel-Fix = Snapshot dieser Erlasse (Kernerlass-Schritt), nie eine Wächter-Lockerung.
+  **Phase 2:** V-7 kantonale Namensliste (916 Stellen). **Phase 3:** V-5 (Zeit-Kante), Konzept an
+  W2·5g-ZEIT. Leitplanke: kein Link besser als falscher (§1).
   **Detail:** [FAHRPLAN-VERWEIS-SCHAERFE.md](fahrplaene/FAHRPLAN-VERWEIS-SCHAERFE.md) §1.
 
 - [ ] **Verzahnung sichtbar machen** *(`W2·7-VZUI`, David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)*
