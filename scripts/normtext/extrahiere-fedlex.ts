@@ -14,6 +14,12 @@
  */
 
 export interface ArtikelText {
+  /** G-AUFH-ART (W2·27): der GANZE Artikel ist AMTLICH aufgehoben — belegt durch
+   *  einen Aufhebungs-Vermerk in der Fedlex-Fussnote (Kopf- oder Absatz-Marker)
+   *  bzw. durch den amtlichen Wortlaut «Aufgehoben» selbst. Regel und Beleg:
+   *  `aufhebung-signal.ts`. Fehlt das Feld, ist über den Aufhebungsstatus NICHTS
+   *  bekannt (§7: nichts fabrizieren) — nicht «gilt». */
+  aufgehoben?: true;
   /** G23 (M8): Delegationsnorm-Verweis «(Art. N ArG)» aus
    *  <p class="man-template-referenz"> — die Trägergesetz-Grundlage, auf der eine
    *  Verordnungsbestimmung beruht. Steht in Fedlex direkt unter der Überschrift;
@@ -61,6 +67,7 @@ export interface BildRef {
   sha?: string;
 }
 
+import { artikelAmtlichAufgehoben } from './aufhebung-signal.ts';
 import { dekodiereEntities } from './html-entities.ts';
 import { normalisiereTabelle, type RohTabelle, type RohZelle } from './tabelle-normalisieren.ts';
 
@@ -133,8 +140,17 @@ export function extrahiereArtikelAusAnker(html: string, ankerRoh: string): Artik
     .replace(/<h6\b[^>]*>[\s\S]*?<\/h6>/gi, '');
 
   const r = parseArtikelInner(innerRoh);
-  // Byte-gleich zum bisherigen Rückgabe-Shape: grundlage-Key nur, wenn gesetzt.
-  return r.grundlage != null ? { grundlage: r.grundlage, bloecke: r.bloecke } : { bloecke: r.bloecke };
+  // G-AUFH-ART (W2·27): amtliches Aufhebungs-Signal aus dem ROHEN Artikel-HTML
+  // (articleMatch[1] — mit <h…> und Fussnoten-Apparat, die innerRoh gerade
+  // verloren hat). `quellen` ordnet jeden Block seinem Quell-Span zu, damit ein
+  // Absatz-Vermerk vom Kopf-Vermerk unterscheidbar bleibt (Regel: aufhebung-signal.ts).
+  const aufgehoben = artikelAmtlichAufgehoben(articleMatch[1], r.bloecke, r.quellen);
+  // Byte-gleich zum bisherigen Rückgabe-Shape: grundlage-/aufgehoben-Key nur, wenn gesetzt.
+  return {
+    ...(aufgehoben ? { aufgehoben: true as const } : {}),
+    ...(r.grundlage != null ? { grundlage: r.grundlage } : {}),
+    bloecke: r.bloecke,
+  };
 }
 
 /**
