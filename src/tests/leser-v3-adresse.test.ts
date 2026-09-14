@@ -50,6 +50,10 @@ const V3_REIN = [
   'src/pages/gesetz-leser/v3/LeserLesespalte.tsx',
   'src/pages/gesetz-leser/v3/LeserGliederung.tsx',
   'src/pages/gesetz-leser/v3/erlassAnsicht.ts',
+  // Schwesterdatei des Schnitts vom 14.9.2026 — ohne diesen Eintrag wäre die
+  // halbe alte `erlassAnsicht.ts` aus der Verbotsliste gefallen, ohne dass
+  // etwas rot geworden wäre (§6.7: das Tor prüft sonst weniger als vorher).
+  'src/pages/gesetz-leser/v3/erlassWortlaut.ts',
   'src/pages/gesetz-leser/v3/LeserKopf.tsx',
   'src/pages/gesetz-leser/v3/LeserSeitenleiste.tsx',
   'src/pages/gesetz-leser/v3/SuchSprungFeld.tsx',
