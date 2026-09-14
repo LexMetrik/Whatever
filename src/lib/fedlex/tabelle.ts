@@ -332,6 +332,11 @@ export const FEDLEX = {
   ICAO: 'https://www.fedlex.admin.ch/eli/cc/63/1377_1378_1381/de', // SR 0.748.0
   STAATENLOSE: 'https://www.fedlex.admin.ch/eli/cc/1972/2320_2374_2150/de', // SR 0.142.40
   GFK: 'https://www.fedlex.admin.ch/eli/cc/1955/443_461_469/de', // SR 0.142.30
+  // ── QS-KORPUS Kernerlasse (14.9.2026): ELI je SPARQL belegt, siehe die Pins in
+  //    scripts/fedlex-cache.sh und bibliothek/register/fedlex-kernerlasse-2026-09-14.md. ──
+  EMRK: 'https://www.fedlex.admin.ch/eli/cc/1974/2151_2151_2151/de', // SR 0.101
+  EOEBV: 'https://www.fedlex.admin.ch/eli/cc/2018/29/de', // SR 211.435.1
+  AVG: 'https://www.fedlex.admin.ch/eli/cc/1991/392_392_392/de', // SR 823.11
   // ── International P4 (Fedlex-Portfolio Paket 4, 10.7.2026): kuratierte
   //    Staatsverträge SR 0.*. ELI + kanonische html-N via Fedlex-SPARQL
   //    (isExemplifiedBy) belegt — html-0 war bei 5/8 STALE (P1-a-Falle), s.

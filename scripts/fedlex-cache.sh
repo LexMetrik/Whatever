@@ -417,6 +417,36 @@ EINTRAEGE=(
   # NICHT 20160706, das ist eine ältere Fassung, deren HTML nur SPA-Shell ist). Unter
   # 20240904 liefert Fedlex extrahierbares HTML; kanonisch html-4 (isExemplifiedBy).
   "apostille|cc/1973/348_347_349|20240904|4|art_1|0.172.030.4"
+  # ── QS-KORPUS Kernerlasse-Luecken Bund (14.9.2026) ──────────────────────────
+  # Drei Kernerlasse, die der Bestandsmessung 1.9.2026 fehlten. ELI + geltende
+  # Konsolidierung je SPARQL (dateApplicability, groesste <= 2026-09-14), html-N
+  # kanonisch via isExemplifiedBy (scripts/fedlex-manifest.ts) — NICHT konstruiert.
+  #
+  # FALLE, hier empirisch aufgetreten (14.9.2026): `npm run fedlex:eli -- <SR>` liefert
+  # fuer EOEBV und AVG die FALSCHE ConsolidationAbstract und fuer EMRK das falsche
+  # Datum — Ursache ist der Resolver selbst (LIMIT 200 + bindings[0].cc), Detail und
+  # Rot-Beweis in bibliothek/register/fedlex-kernerlasse-2026-09-14.md. Die Pins
+  # unten stammen darum aus der direkten SPARQL-Abfrage, nicht aus fedlex:eli.
+  #
+  # EMRK SR 0.101 — geltend 2022-09-16 (32 Konsolidierungen, keine kuenftige).
+  # Wechselt von status 'pdf-embed' auf 'snapshot': Fedlex fuehrt den Konsolidierungs-
+  # text seit der Konsolidierung 2012-02-23 als HTML (davor, u.a. unter dem bis
+  # 5.7.2026 gepinnten Stand 20050323, war pdf-a die EINZIGE deutsche Manifestation —
+  # die pdf-embed-Begruendung vom 25.6.2026 war fuer ihren Pin zutreffend und wird
+  # hier nicht nachgefuehrt, sondern ergaenzt). html-9 traegt Praeambel, Art. 1-59
+  # lueckenlos, Unterschriften und «Geltungsbereich am 16. September 2022».
+  "emrk|cc/1974/2151_2151_2151|20220916|9|art_1,art_6,art_8,art_34,art_35,art_59|0.101"
+  # EOEBV SR 211.435.1 — geltend 2024-01-01, ELI cc/2018/29. NICHT cc/12/369_337_369:
+  # das ist das BG vom 25.6.1891 betr. die zivilrechtlichen Verhaeltnisse der
+  # Niedergelassenen und Aufenthalter (NAG), das dieselbe SR-Notation historisch traegt.
+  # Die SR-Sonde ist hier besonders wichtig (zwei Abstracts unter derselben SR) und
+  # greift: Fedlex schreibt bei diesem Erlass `class="srnummer "` MIT Leerzeichen —
+  # die Sonden-Regex deckt das ueber `srnummer[^"]*` bereits ab (empirisch 14.9.2026).
+  "eoebv|cc/2018/29|20240101|5|art_1,art_10,art_16,art_28|211.435.1"
+  # AVG SR 823.11 — geltend 2026-01-01, ELI cc/1991/392_392_392. NICHT
+  # cc/1951/1211_1217_1249: das ist das aufgehobene AVG vom 22.6.1951.
+  # html-N kanonisch = 0 (echt suffixlose Datei, per isExemplifiedBy belegt).
+  "avg|cc/1991/392_392_392|20260101|0|art_1,art_12,art_19,art_33_a,art_35_b,art_44|823.11"
 )
 
 fehler=0

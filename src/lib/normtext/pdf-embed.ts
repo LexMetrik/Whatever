@@ -36,15 +36,16 @@ export interface PdfEmbedQuelle {
 }
 
 export const PDF_EMBED_QUELLEN: PdfEmbedQuelle[] = [
-  {
-    key: 'EMRK', kuerzel: 'EMRK',
-    titel: 'Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten (EMRK)',
-    sr: '0.101', rechtsgebiet: 'international', rang: 89,
-    // Re-Pin 20050323→20220916 (QS-CURRENCY P1-a, 5.7.2026): geltende Konsolidierung
-    // per SPARQL (dateApplicability 2022-09-16, letzte ≤ heute). Kanonische pdf-a per
-    // isExemplifiedBy trägt Suffix '-2' (suffixlos = älterer Re-Issue, s. pdfSuffix).
-    eli: 'cc/1974/2151_2151_2151', kons: '20220916', pdfSuffix: '-2',
-  },
+  // EMRK (0.101) stand hier bis 14.9.2026 (QS-KORPUS). Sie ist seither ein
+  // regulaerer Volltext-Snapshot: Fedlex registriert fuer die geltende
+  // Konsolidierung 20220916 eine deutsche HTML-Manifestation (html-9,
+  // isExemplifiedBy) mit Praeambel, Art. 1-59 lueckenlos, Unterschriften und
+  // «Geltungsbereich am 16. September 2022». Der Kopfkommentar oben («Fedlex
+  // liefert nur eine SPA-Shell») war fuer den DAMALS gepinnten Stand 20050323
+  // zutreffend — unter dieser Konsolidierung ist pdf-a die einzige deutsche
+  // Manifestation (SPARQL-Beleg im Register-Dossier). Der Re-Pin 20050323 →
+  // 20220916 vom 5.7.2026 verschob nur das Datum, nicht die Format-Entscheidung;
+  // nachgeholt 14.9.2026. Beleg: bibliothek/register/fedlex-kernerlasse-2026-09-14.md.
   {
     key: 'NYUE', kuerzel: 'NYÜ',
     titel: 'Übereinkommen vom 10. Juni 1958 über die Anerkennung und Vollstreckung ausländischer Schiedssprüche (New Yorker Übereinkommen)',
