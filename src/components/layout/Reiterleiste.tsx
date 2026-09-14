@@ -5,6 +5,22 @@ import {
   schliesseTab, leereTabs, ordneTabsUm, tabSchluessel,
   stelleLetztenWiederHer, merkeTab, nachfolgerReiter, merkeAktivenReiter,
   reiterKurzformText, reiterKarteTeile, zugErlaubt,
+  // W2·18 Welle 2 Punkt 2 · Pendeln zwischen den zwei zuletzt benutzten
+  // Reitern — die Buchführung steht in `lib/tabs` (§3), hier nur die Taste.
+  // ── R3 (Prüfbefund R11, 6.9.2026) · EINE KURZFORM, EIN TITEL (§5) ────────
+  // Beide Ableitungen wohnten bis hierher IN dieser Datei — das Überlauf-Blatt
+  // (`TabPanel`) baute daneben seine eigene Beschriftung aus `verlaufLabel`
+  // und trug darum den Volltitel, wo die Leiste die Kurzform zeigte. Jetzt
+  // stehen sie in `lib/tabs` und beide Flächen lesen dieselbe Quelle.
+  // W2·18 Welle 3 Punkt 4 · die Auskunft der Hover-Karte, zerlegt — dieselbe
+  // Quelle, aus der sich der `title`-Einzeiler zusammensetzt (§5).
+  // W2·18 Welle 3 Punkt 2 · der Rand-Schub liest die Ordnung bei JEDEM Takt
+  // frisch aus der einen Quelle — ein Intervall-Rückruf sähe sonst für immer
+  // die Ordnung des Renders, in dem er entstanden ist (§5).
+  // W2·25 · Anheften: die Mechanik wohnt ganz in `lib/tabs` (§3) — hier stehen
+  // nur die beiden Menüzeilen und die Frage, ob ein Zug angenommen würde.
+  // W2·25 Teil 2 · die Übernahme einer Mappe rechnet `lib/tabs` (welche Reiter
+  // bleiben, was in den Ring geht) — hier stehen nur Menü, Rückfrage und Ziel.
 } from '../../lib/tabs';
 import { speichereMappe, loescheMappe, mappenAdresse } from '../../lib/mappen';
 import { verlaufLabel, type VerlaufManifeste } from '../../lib/verlaufLabel';
@@ -140,7 +156,7 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   // «eine App, eine Ordnung». Gemessen war die Folge das Gegenteil:
   // `lib/tabs.ordneTabsUm` verschiebt den FLACHEN Speicher, und jede
   // Verschiebung über eine Kategoriegrenze sammelte das Bucketing sofort wieder
-  // ein. David 6.9.2026: «es geht nur wenn nur gesetze offen sind — bug»
+  // eins. David 6.9.2026: «es geht nur wenn nur gesetze offen sind — bug»
   // (nachgestellt über acht Kombinationen, `e2e/w224-reiter-umordnen-d16`).
   //
   // ENTSCHEID (analog Browser): man ordnet, was man SIEHT. Die Arbeitsleiste
@@ -400,6 +416,28 @@ export function Reiterleiste({ paneSchluessel = [] }: {
   }, [blattOffen]);
   useDialogFokus(blattOffen, blattRef, schliesseBlatt);
 
+  // ── R10-BEFUND (Nullprobe 6.9.2026) · DIE HÖHE STEHT VOR DEN REITERN ──────
+  //
+  // Hier stand `if (tabs.length < 1) return null` — «keine Reiter, keine
+  // Zeile». GEMESSEN am Stand `0093fad28` (Preview, `/rechner/tagerechner`,
+  // ganzer Spec-Lauf `ics-export-z1` A9): der Prerender kennt keinen Speicher,
+  // lieferte also KEINE Leiste; unmittelbar nach der Hydration las `useTabs`
+  // den `localStorage`, die Leiste erschien, und `main#inhalt` rutschte von
+  // 132 px auf 166 px — 34 px = genau `--app-reiter-h`, CLS 0.025 auf einer
+  // Seite, die sonst 0 misst (§15). Der WURZEL-FIX bleibt: die Zeile ist immer
+  // da und immer gleich hoch (`sticky top-[--app-krone-h]`, `h-[--app-reiter-h]`),
+  // ob mit oder ohne Reiter — der Wechsel verschiebt nichts.
+  //
+  // ── D19-NACHTRAG (6.9.2026) · KEIN STUMMER PLATZHALTER MEHR ────────────────
+  // Bis hierher stand an dieser Stelle bei 0 Reitern EIN `aria-hidden`-`<div>`
+  // ohne `<nav>` — eine Navigations-Landmark ohne ein einziges Ziel wäre für
+  // den Screenreader ein leeres Versprechen gewesen. Seit dem «+»-Knopf
+  // (unten im Streifen) gibt es aber IMMER ein Ziel, auch bei 0 Reitern: den
+  // Browser-«+», mit dem man den ERSTEN Reiter überhaupt anlegt. Der frühere
+  // Sonderpfad ist darum ersatzlos gestrichen (§17-Gegengewicht) — dieselbe
+  // `<nav>` trägt jetzt beide Fälle, `sichtbar`/`ordnung` sind bei 0 Reitern
+  // schlicht leer und rendern keinen Reiter, keinen Überlauf-Knopf.
+
   const gefiltert = suche.trim()
     ? tabs.filter((t) => `${reiterKurzformText(t, manifeste)} ${verlaufLabel(t.path, manifeste)} ${t.path}`
         .toLowerCase().includes(suche.trim().toLowerCase()))
@@ -414,6 +452,48 @@ export function Reiterleiste({ paneSchluessel = [] }: {
     stelleWiederHer, oeffneMappen, navigate, kopieren,
   };
 
+  /** ── R14b (Nachzug 7.9.2026) · DEN 0-REITER-ZUSTAND GIBT ES NICHT MEHR ────
+   *
+   *  Hier stand `const leer = tabs.length === 0;` und trug vier Zweige: das
+   *  Mess-Attribut `data-reiter-leer`, den Unterstrich, die Trennkante des
+   *  Streifens und den ausgeblendeten Blatt-Knopf. R2 hatte sie für die
+   *  Startseite gebaut, R14 hat «/» und den letzten ✕ herausgenommen, R14b
+   *  jetzt die letzten fünf Routen (/ueber, /methodik, /einstellungen,
+   *  /kontakt, /datenschutz): seit `lib/tabs` keine Route mehr ausnimmt, legt
+   *  `components/TabTracker.tsx` auf JEDER Adresse einen Reiter an — die
+   *  Leiste steht nie leer, und ein Zweig, der nicht mehr scheitern kann, wird
+   *  gestrichen statt bewacht (§17-Gegengewicht).
+   *  Die GEOMETRIE-Zusagen von R2/R13B bleiben unangetastet: die Höhe ist
+   *  weiter fest reserviert (`--app-reiter-h`), der Unterstrich liegt weiter
+   *  absolut auf statt als `border-b` im Fluss (`borderBottomWidth: 0px`), und
+   *  «+» wie Blatt-Knopf haben weiter ihren festen Platz. */
+
+  /** Der Browser-«+» (D19). `solo` = die Fassung ohne Reiter: keine linke
+   *  Trennkante, weil links von ihm nichts steht, das zu trennen wäre.
+   *
+   *  ── R13B (Prüfbefund PR #743 §8 b + Fixer D34, 7.9.2026) · EIN PLATZ ─────
+   *  Bis hierher gab es ZWEI Aufrufstellen: `{leer && plusKnopf(true)}` VOR dem
+   *  Streifen und `{!leer && plusKnopf(false)}` DAHINTER. Der erste Reiter liess
+   *  das «+» damit die Seite wechseln — GEMESSEN am Stand `cfa8a9f81` (gebautes
+   *  dist/, Preview 4429, Chromium @1280, `/` → `/gesetze/bund/ZGB`):
+   *  «+» x 24 → 1140, der Streifen x 60|1196 → 24|1116, Layout-Shift 0.000944
+   *  (input-frei, Quelle `DIV.relative.flex.min-w-0` in dieser Datei).
+   *  Das ist der Befund «das führende + fällt beim ersten Reiter weg».
+   *
+   *  JETZT: EINE Aufrufstelle, und zwar die LINKE. Die Wahl ist nicht frei —
+   *  die Bestandssonde R2 (`e2e/w224-r11-reiterleiste.e2e.ts:345`, «+ am linken
+   *  Inhaltsrand») misst genau diesen Platz im leeren Fall und bleibt
+   *  unverändert (§6.3). Ein «+» am ENDE hätte sie rot gemacht; ein zweiter,
+   *  unsichtbarer Platzhalter links hätte den Reitern dauerhaft 36 px Leerraum
+   *  vorgeschoben. Bleibt der eine linke Platz: er erfüllt R2 in BEIDEN
+   *  Zuständen, kostet keinen Raum und bewegt sich nie.
+   *  WAS SICH DAMIT ÄNDERT (offen für Davids Entscheid): das Vorbild aus D19
+   *  («analog zum browser») setzt das «+» hinter den letzten Reiter. Seine
+   *  FUNKTION ist unberührt — Klick und Alt+T legen weiter einen neuen Reiter
+   *  an —, nur seine Seite ist jetzt links statt rechts.
+   *  `solo` heisst darum nicht mehr «ohne Reiter», sondern «ganz links, es steht
+   *  nichts links davon, das zu trennen wäre» — und das gilt immer. Die
+   *  Trennung zu den Reitern trägt jetzt der Streifen (`border-l`, unten). */
   const plusKnopf = () => (
     <button type="button" onClick={neuerReiter}
       aria-label="Neuer Reiter" title="Neuer Reiter (Alt+T)"
@@ -424,20 +504,79 @@ export function Reiterleiste({ paneSchluessel = [] }: {
 
   return (
     <nav aria-label="Offene Reiter" ref={leisteRef}
+      // W2·18 Welle 2 Punkt 5 · Vorlauf für das Kontextmenü (Herleitung oben).
+      // ZWEI Wege hinein, beide zählen als Absicht: der Zeiger betritt die
+      // Leiste (`pointerenter` — einmal, nicht bei jedem Reiterwechsel, weil
+      // er am `nav` hängt und nicht am Reiter) und der Fokus kommt herein
+      // (`focus` steigt hier als `focusin` an; ohne ihn hätte der
+      // Tastaturweg Shift+F10 keinen Vorlauf).
       onPointerEnter={() => { holeMenue(); holeKarte(); }}
       onFocus={() => { holeMenue(); holeKarte(); }}
+      // W2·24-R4: die Arbeitsleiste KLEBT jetzt — unter der Titelblatt-Zeile
+      // (`--app-krone-h`) und mit ihrer eigenen, festen Höhe (`--app-reiter-h`).
+      // Beide Zahlen stehen in `src/index.css`; dieselbe Summe (`--app-kopf-h`)
+      // liest `pages/gesetz-leser/v3/leserGeometrie.ts` für den Kopf-Anschlag
+      // und `--nt-stick`. R2 hatte die Leiste bewusst im Fluss gelassen, weil
+      // diese eine Quelle fehlte (R2-Protokoll §2) — ohne sie landete jeder
+      // `#art-…`-Sprung um die Leistenhöhe zu hoch.
+      // ── R2 (Prüfbefund R11, 6.9.2026) · KEIN STRICH UNTER DEM NICHTS ──────
+      // GEMESSEN auf «/» (Startseite, die nach D7 bewusst keinen Reiter
+      // erzeugt): ein 34 px hoher, leerer Streifen mit einem durchgehenden
+      // Unterstrich über die volle Breite — eine Trennlinie, die nichts trennt.
+      // Der Unterstrich fällt weg, solange kein Reiter da ist; die HÖHE bleibt
+      // reserviert (`h-[var(--app-reiter-h)]`, box-border: der 1-px-Rahmen
+      // liegt INNEN), damit der Inhalt beim ersten Reiter nicht springt —
+      // CLS 0, bewacht in `e2e/w224-r11-reiterleiste.e2e.ts`.
       className="print:hidden shrink-0 sticky top-[var(--app-krone-h)] z-leiste h-[var(--app-reiter-h)] bg-paper">
+      {/* ── R13B (7.9.2026) · DER UNTERSTRICH LIEGT AUF, NICHT IM FLUSS ──────
+          R2 wollte «kein Strich unter dem Nichts» und hat ihn als `border-b`
+          an-/abgeschaltet. Ein Rahmen ist aber Geometrie: box-border zieht er
+          1 px aus der INNENhöhe, die Zeile darin sass mit und ohne Reiter
+          verschieden hoch. Als absolut liegende 1-px-Linie sagt er dasselbe,
+          ohne dass die Leiste ihre Masse ändert — `borderBottomWidth` bleibt
+          in BEIDEN Zuständen `0px` (das misst R2). */}
       <span aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-rule-soft" />
+      {/* ── R13B (7.9.2026) · DIE ZEILE HAT IHRE HÖHE AUS SICH SELBST ────────
+          GEMESSEN am Stand `cfa8a9f81`: der Streifen mass OHNE Reiter 16 px,
+          MIT dem ersten 33 px — seine Höhe kam allein aus dem Inhalt, den er
+          im leeren Fall nicht hat. `h-full` bindet sie an die feste Leistenhöhe
+          des `<nav>` (`--app-reiter-h`), die R2 schon reserviert hatte; damit
+          stehen «+» und Blatt (beide `items-stretch`/`self-center`) vom ersten
+          Bild an auf ihrer Endhöhe. */}
       <div className="flex h-full items-stretch px-4 sm:px-6">
+        {/* R2 · DAS «+» STEHT LINKS, AM INHALTSRAND. «Im Browser beginnt die
+            Leiste dort, wo der Inhalt beginnt — ein «+», das ganz rechts im
+            Leeren klebt, findet niemand.» R13B (7.9.2026) macht daraus den
+            EINZIGEN Platz: mit und ohne Reiter derselbe, damit der erste Reiter
+            ihn nicht mehr die Seite wechseln lässt (Herleitung bei
+            `plusKnopf`). */}
         {plusKnopf()}
+        {/* M6 · DOPPELKLICK AUF DEN LEERRAUM = NEUER REITER (Befund #34).
+            GEMESSEN 6.9.2026: 457 px ungenutzte Fläche rechts des letzten
+            Reiters — im Browser genau die Stelle, auf die man doppelklickt.
+            `ev.target === ev.currentTarget` ist die ganze Bedingung: ein
+            Doppelklick AUF einem Reiter steigt hierher auf und darf keinen
+            zweiten Reiter erzeugen (Risiko aus dem Plan). */}
         <div ref={streifenRef} data-reiter-streifen
+          // Mess-Anker für die Sonden (R13): «ab welchem Reiter / wie viele /
+          // von wie vielen». Die Zahlen sind das, was `useReiterFenster`
+          // ausgerechnet hat — im DOM nachlesbar, statt aus Breiten erraten.
           data-reiter-fenster={`${start}/${anzahl}/${ordnung.length}`}
           onDoubleClick={(ev) => { if (ev.target === ev.currentTarget) neuerReiter(); }}
+          // W2·18 Welle 2 Punkt 1 · Pfeiltasten/Home/End/Delete. AM STREIFEN,
+          // nicht am einzelnen Reiter: welcher der Nachbar ist, weiss nur die
+          // Leiste (§3) — und ein Zuhörer statt N spart N−1 Verdrahtungen.
           onKeyDown={onStreifenTaste}
+          // W2·18 Welle 3 Punkt 2: der Schub hört AM STREIFEN zu, nicht am
+          // einzelnen Reiter — die Randzone gehört dem Streifen, und während
+          // des Schubs wechselt der Reiter unter dem Zeiger ohnehin.
           onDragOver={beiRandZug}
           onDrop={stoppSchub}
           onDragEnd={stoppSchub}
           onDragLeave={(ev) => { if (ev.target === ev.currentTarget) stoppSchub(); }}
+          // R13-5 · Rechtsklick NUR auf der freien Fläche (dieselbe Bedingung
+          // wie beim Doppelklick daneben): über einem Reiter gilt dessen
+          // eigenes Menü, über allem anderen bleibt das Browser-Menü.
           onContextMenu={(ev) => {
             if (ev.target !== ev.currentTarget) return;
             ev.preventDefault();
@@ -456,15 +595,70 @@ export function Reiterleiste({ paneSchluessel = [] }: {
                 onSchliessen={schliessen}
                 onZieht={setZieht} onUeber={setUeber} onMenue={oeffneMenue} onKarte={setKarte}
                 onUmordnen={ordneTabsUm}
+                // W2·25: die Ordnung hält die Leiste, die Regel `lib/tabs` —
+                // der Reiter fragt nur, was er unter dem Zeiger zeichnen soll.
                 pruefeZug={(von, nach, davor) => zugErlaubt(ordnung, von, nach, davor)} />
             );
           })}
         </div>
+        {/* D19 · BROWSER-«+» AM ENDE DES STREIFENS — fest, nicht Teil der
+            scrollenden Reiter-Fläche (das Vorbild wandert beim Scrollen der
+            Reiter nicht mit weg). `.rl-plus` trägt nur Breite/Zentrierung/
+            Hover (index.css); die 34-px-Höhe kommt aus `items-stretch` des
+            Elternflusses, ohne eigene Höhen-Angabe. */}
+
+        {/* «+N» bzw. «N offen» — EIN Blatt für Überlauf (Desktop) und die
+            schmale Ansicht (§5a Ziff. 5 + 8). Inhalt ist die gruppierte Liste
+            `TabPanel`, also genau das, was das abgelöste ☰-Flyout zeigte,
+            zusätzlich mit Suchfeld. */}
+        {/* ── R13-1 · DER KNOPF STEHT IMMER, UND IMMER GLEICH BREIT ────────
+            Er erschien bis R13 erst BEI Überlauf (und ab md nur dann). Genau
+            das war die Ursache des R13-1-Befundes: der Knopf verschmälerte den
+            Streifen um ~58 px, NACHDEM die Leiste gerechnet hatte — der aktive
+            Reiter stand danach angeschnitten am Rand.
+            Und es ist zugleich eine RÜCKKOPPLUNG: die gemessene Überlauf-Zahl
+            (R13-2) entscheidet über den Knopf, der Knopf über die Breite, die
+            Breite wieder über die Zahl. GEMESSEN 7.9.2026 @1024 mit 8 Reitern:
+            React-Fehler #185 («Maximum update depth exceeded»), die Leiste
+            verschwand ganz. Ein fester Platz bricht den Kreis: die Breite des
+            Streifens hängt nicht mehr davon ab, wie viele Reiter hineinpassen.
+            FESTE Breite, nicht nur eine Mindestbreite: die Aufschrift wechselt
+            zwischen «8 offen» und «+2», und GEMESSEN 7.9.2026 reichte allein
+            dieser Textwechsel, um den Kreis am Leben zu halten (React #185
+            blieb). Ein Kasten mit fester Breite hat keine Meinung zu seinem
+            Inhalt — erst damit ist der Streifen wirklich unabhängig. */}
+        {/* ── R13B (7.9.2026) · DER PLATZ GILT AUCH FÜR DAS NICHTS ────────────
+            R13-1 (oben) hat den Knopf schon vom Überlauf gelöst; am `leer`-Fall
+            hing er weiter (R14b hat den Fall selbst gestrichen — der feste
+            Platz bleibt, er war nie nur für ihn da). GEMESSEN am Stand `cfa8a9f81` (@1280, `/` →
+            `/gesetze/bund/ZGB`): mit dem ersten Reiter erschien der Knopf und
+            nahm dem `flex-1`-Streifen 4.5rem + `ml-2` weg — das «+» rechts davon
+            rückte mit. Derselbe Kreis, denselben Schritt weitergedacht: der
+            Kasten steht IMMER, mit `visibility` statt Mount/Unmount, und ist
+            ohne Reiter aus Bedienung und Vorlesereihenfolge genommen
+            (`invisible` + `aria-hidden` + `disabled` + `tabIndex={-1}`) — was
+            R2 wollte («kein Knopf über dem Nichts»), ohne dass die Geometrie
+            der Leiste davon abhängt. */}
+        {/* ── W2·18 WELLE 3 PUNKT 2 · DER KNOPF IST AUCH EINE ABLAGE ────────
+            «+N» ist der sichtbare Ort des Restes. Wer einen Reiter darauf
+            fallen lässt, meint «den brauche ich jetzt nicht im Bild» — also
+            ans ENDE der Ordnung, womit er als erster ins Blatt rutscht.
+            Umgeordnet, nicht geschlossen: der Reiter bleibt offen, nur nicht
+            mehr vorn (ein Drop, der etwas wegwirft, wäre eine destruktive
+            Geste ohne Rückfrage, A3-1).
+            Der Rahmen zeigt die Ablage an, solange etwas darüber schwebt —
+            ohne diese Rückmeldung wäre es eine Funktion, die man nur findet,
+            wenn man sie schon kennt (D15). */}
         <button ref={triggerRef} type="button"
           aria-haspopup="dialog" aria-expanded={blattOffen}
           aria-label={`Alle ${tabs.length} offenen Reiter`}
           title="Alle offenen Reiter"
           onClick={() => setBlatt((z) => (z.offen ? BLATT_ZU : { offen: true, suche: '' }))}
+          // ── W2·25 Teil 2 · DAS ZWEITE TOR ZUR MAPPE ──────────────────────
+          // Derselbe Leerraum-Menüsatz wie beim Rechtsklick neben die Reiter —
+          // aber erreichbar, wenn KEIN Leerraum da ist: @390 und bei vollem
+          // Streifen ist dieser Knopf die einzige freie Fläche der Leiste. Die
+          // Einträge sind dieselben (§5, eine Quelle: `leerraumEintraege`).
           onContextMenu={(ev) => {
             ev.preventDefault();
             oeffneMenue({ path: null, x: ev.clientX, y: ev.clientY });
@@ -474,6 +668,10 @@ export function Reiterleiste({ paneSchluessel = [] }: {
             if (!von) return;
             ev.preventDefault();
             stoppSchub();
+            // W2·25: ein ANGEHEFTETER Reiter kann nicht ans Ende abgelegt
+            // werden — dort beginnt die freie Zone. Der Rahmen erscheint dann
+            // gar nicht erst, und der Zeiger trägt das «kein Zutritt» des
+            // Browsers (dieselbe Auskunft wie an der Marke, nur hier).
             const letzte = ordnung[ordnung.length - 1];
             const geht = !!letzte && tabSchluessel(letzte.path) !== tabSchluessel(von)
               && zugErlaubt(ordnung, von, letzte.path, false);
@@ -498,6 +696,9 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         </button>
       </div>
 
+      {/* M4 · das Kontextmenü des angeklickten Reiters. Ein Menü zur Zeit —
+          `menue` hält den Reiter, nicht der Reiter das Menü (sonst stünden bei
+          zwölf Reitern zwölf Portale bereit). */}
       {menue && MenueFlaeche && menue.path === null && (
         <MenueFlaeche x={menue.x} y={menue.y} name="Offene Reiter"
           eintraege={leerraumEintraege(kontext)} onSchliessen={() => setMenue(null)} />
@@ -512,6 +713,8 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         );
       })()}
 
+      {/* W2·18 Welle 3 Punkt 4 · die Hover-Karte des gezeigten Reiters. EINE
+          zur Zeit, aus denselben Gründen wie beim Menü. */}
       {karte && KarteFlaeche && (() => {
         const t = tabs.find((x) => tabSchluessel(x.path) === tabSchluessel(karte.path));
         if (!t) return null;
@@ -523,6 +726,10 @@ export function Reiterleiste({ paneSchluessel = [] }: {
         );
       })()}
 
+      {/* W2·25 Teil 2 · der Mappen-Dialog. Ein Zustand für alle drei Absichten
+          (speichern · öffnen · verwalten), dieselbe Bauart wie Menü und Karte:
+          die Fläche kommt aus einem eigenen Chunk und wird erst gezeigt, wenn
+          sie da ist — kein Platzhalter unter dem Zeiger. */}
       {mappenAbsicht && MappenFlaeche && (
         <MappenFlaeche absicht={mappenAbsicht} offeneReiter={tabs}
           onSpeichern={(name) => { speichereMappe(name, tabs); setMappenAbsicht(null); }}
