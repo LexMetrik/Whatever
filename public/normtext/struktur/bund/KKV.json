@@ -1,6 +1,8 @@
 {
  "zaehler":{"37":[1,0]},
- "erzeugt": "2026-08-29",
+ "erzeugt": "2026-09-14",
+ "stand": "2025-11-25",
+ "fassungsToken": "20251125",
  "kopf": {
   "srNummer": "951.311",
   "titel": "Verordnung über die kollektiven Kapitalanlagen",
@@ -7146,6 +7148,28 @@
    ]
   },
   "126_z": {
+   "gliederung": [
+    {
+     "ebene": 1,
+     "label": "3a. Titel: Limited Qualified Investor Fund",
+     "eId": "tit_3_a"
+    },
+    {
+     "ebene": 2,
+     "label": "3. Kapitel: Anlagevorschriften",
+     "eId": "tit_3_a/chap_3"
+    },
+    {
+     "ebene": 3,
+     "label": "3. Abschnitt: Anlagevorschriften für L-QIF in der Rechtsform der KmGK",
+     "eId": "tit_3_a/chap_3/sec_3"
+    }
+   ],
+   "marginalie": [
+    "Anlagebeschränkungen und Anlagetechniken"
+   ]
+  },
+  "126_z__2": {
    "gliederung": [
     {
      "ebene": 1,

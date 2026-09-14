@@ -1,5 +1,32 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Umschichtung 14.9.2026 (2) — W2·7-VZUI Fertig-Kriterium und QS-KORPUS adapter-lexwork (Wortlaut)
+
+**Begründung.** Die Quittungs-Commits der Gegenprüfungen #848/#851 und die zwei neuen W2·27-Zeilen
+(Randtitel-Entscheid, Zukunftsfassungen-Hinweis) brachten ROADMAP.md auf 120,1 KB (Budget 120 KB,
+`struktur-rotieren --check` rot im PR #851). Zwei Erledigt-Prosen wandern darum wörtlich hierher; die
+ROADMAP behält je Zeile Ziel, Datum und Zeiger. Inhaltlich unverändert, nichts neu erledigt.
+
+**W2·7-VZUI — Wortlaut bis 14.9.2026:**
+
+> **Fertig, wenn** die Panel-Reiter fachlich sauber geschnitten sind («Passende Werkzeuge» und
+> `kontextSoftLaw` gehören nicht in «Materialien») — ✅ **erfüllt 31.8.2026** mit dem vierten Reiter
+> «Anwendung» (s. Checkliste). *(Quell-Zeiger berichtigt 31.8.2026: die Zeile nannte «Kontaktbogen H4
+> §7a»; dort steht die Vollzugs-Tabelle der B-Spec-Umhängung. Der Wortlaut steht in
+> `archiv/fahrplaene/FAHRPLAN-LESER-V3.md` C6/W2·7-VZUI-Restzeilen.)*
+
+**QS-KORPUS scope/decl-Sektionen — Wortlaut bis 14.9.2026:**
+
+> ✅ erledigt 12.9.2026, PR #838 (`87db8a514`); Gegenprüfung bestanden. Nebenfund «Anhänge»-Label → PR #840 (offen). Wortlaut: FAHRPLAN-OFFENE-BEFUNDE.md.
+
+**QS-KORPUS Geltende BMV — Wortlaut bis 14.9.2026:** *(Zusatz: der Stand «noch nicht gemergt» war überholt — #823 ist am 12.9.2026 gelandet, s. Mandat-Karte 12.9.)*
+
+> ✅ erledigt 12.9.2026 (Wortlaut: ROADMAP-CHRONIK.md); Gegenprüfung ausstehend, noch nicht gemergt.
+
+**QS-KORPUS `adapter-lexwork.ts:778` — Wortlaut bis 14.9.2026:**
+
+> erledigt 12.9.2026, PR #813 (`af5e35ce9`), Gegenprüfung ausstehend: Laufzeit-Validierung `validiereTextOfLaw()` statt Compile-Cast, Nullprobe mit drei vorher rot laufenden Tests. Wortlaut: ROADMAP-CHRONIK.md.
+
 ## Umschichtung 14.9.2026 — ZH-4d und R1-Restposten (Befund-Wortlaut, `W2·13-KANTONE-DATEN`)
 
 **Begründung.** Beide Zeilen trugen ihre vollständige Befund-Geschichte in ROADMAP.md; steuernd ist

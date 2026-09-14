@@ -181,6 +181,18 @@ interface Ktx { kind: 'g' | 'm'; ebene: number; label: string; fnIds: string[]; 
 /** Extrahiert je Artikel-Token die Gliederung + Marginalie aus Fedlex-HTML. */
 export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur> {
   const result: Record<string, ArtikelStruktur> = {};
+  // W2·27 (Doppel-id): Fedlex liefert vereinzelt ZWEI <article> mit IDENTISCHER id —
+  // belegt an KKV (`id="art_126_z"` zweimal: Art. 126z «Anlagebeschränkungen und
+  // Anlagetechniken» und Art. 126z^tredecies «Wesentliche Mängel», deren Ordinal-
+  // Suffix Fedlex nicht in die eId schreibt). Der Snapshot-Generator vergibt dafür
+  // seit M9/G7 den Synthese-Suffix «__2»/«__3» (alleArtikelTokens/alleSchlussteilAnker,
+  // extrahiere-fedlex.ts); der Struktur-Extraktor tat es NICHT und keyte beide
+  // Vorkommen auf denselben Schlüssel — das zweite überschrieb das erste. Folge war
+  // kein blosser Fehlbestand, sondern FALSCHE Daten: Art. 126z KKV trug die Marginalie
+  // und die Gliederung von Art. 126z^tredecies (§1/§7). Die Zählung läuft über den
+  // ROHEN Anker und ist damit deckungsgleich mit beiden Snapshot-Zählern (Haupttext
+  // `art_X` bzw. Schlussteil `disp_uN/art_X` zählen je für sich).
+  const ankerAnzahl = new Map<string, number>();
   const divstack: Knoten[] = [];
   const context: Ktx[] = [];
   let pending: Ktx | null = null;
@@ -226,7 +238,9 @@ export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur
                 c.attached = true;
               }
             }
-            artId = ankerZuToken(id[1]);
+            const n = (ankerAnzahl.get(id[1]) ?? 0) + 1;
+            ankerAnzahl.set(id[1], n);
+            artId = ankerZuToken(n === 1 ? id[1] : `${id[1]}__${n}`);
             result[artId] = {
               // EID-1: `eId` additiv NACH den Bestandsfeldern (ebene/label bleiben
               // byte-gleich in Reihenfolge und Wert; Einträge ohne Section-Wrapper

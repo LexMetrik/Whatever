@@ -82,8 +82,10 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
      vor `Betrieb & Prüfstrasse`. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·27-BUND-FERTIG`** (Sollbild «Was ist ein Gesetz bei
-> LexMetrik», am Bund festgeschrieben und dort eingelöst).
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·5l-NORMTEXT-B2`** (Text-Treue M13/M14).
+> **In Arbeit:** `W2·27-BUND-FERTIG` (Sollbild «Was ist ein Gesetz bei LexMetrik», am Bund
+> festgeschrieben und dort eingelöst) — `status: wip`, darum liefert `plan:next` den nächsten
+> Queue-Eintrag.
 > **Phasen-Dekret 14.9.2026 (David):** «erst das fundament fertig bauen und vps erst danach» ·
 > «der erste schritt sollte sein den gesetzesleser und die struktur der daten die wir darstellen zu
 > optimieren» · «grundsätzlich würde ich zuerst mit dem bund beginnen». Das Zielbild-Dekret
@@ -142,11 +144,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 - [ ] **Verzahnung sichtbar machen** *(`W2·7-VZUI`, David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)*
   <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   EINE Interaktions-Grammatik für die Verzahnung, ohne neue Rechtsregel (§3). Offen: V2 (E3-Serving)
-  und V3 (E6a) — an den Datenstrang gekoppelt. **Fertig, wenn** die Panel-Reiter fachlich sauber
-  geschnitten sind («Passende Werkzeuge» und `kontextSoftLaw` gehören nicht in «Materialien»)
-  — ✅ **erfüllt 31.8.2026** mit dem vierten Reiter «Anwendung» (s. Checkliste). *(Quell-Zeiger
-  berichtigt 31.8.2026: die Zeile nannte «Kontaktbogen H4 §7a»; dort steht die Vollzugs-Tabelle der
-  B-Spec-Umhängung. Der Wortlaut steht in `archiv/fahrplaene/FAHRPLAN-LESER-V3.md` C6/W2·7-VZUI-Restzeilen.)*
+  und V3 (E6a) — an den Datenstrang gekoppelt. Fertig-Kriterium (Panel-Reiter fachlich sauber
+  geschnitten) ✅ erfüllt 31.8.2026 — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (2).
   **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §11.
   - [x] **Erledigt:** Grundzustand-Fetch · `?norm=`-Sprung · vierter Reiter «Anwendung» — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
   - [ ] **Kantonaler Zitat-Resolver** — 9 674 kantonale Kanten haben weiterhin kein Sprungziel: `fedlexLinkFuerArtikel`/`normVerweiseImText` kennen nur Bundesrecht, und die wörtliche Regel greift nur, wo der Entscheid exakt `§ N <Kürzel>` schreibt. Nötig wäre eine Kürzel-/Alias-Tabelle je kantonalem Erlass **mit Kanton-Scoping** (ein «StG» in BS ist nicht das «StG» in ZH — ohne Scoping entstünde ein stumm falscher Sprung, §1). Risiko-Pfad Extraktion ⇒ eigener Schritt mit Gegenprüfung, nicht als UI-Nebenprodukt.
@@ -187,8 +186,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §8.
   - [ ] **Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG; heute ist nur `de` befüllt. Regel aus `QS-FRIT-DRIFT`: **eId trägt nicht über Sprachen** — Abgleich über die Artikelnummer.
 
-- [ ] **Phase 1 · Bund fertig machen — Sollbild und Struktur-Schluss** *(`W2·27-BUND-FERTIG`, Entscheid David 14.9.2026)*
-  <!-- @meta id: W2·27-BUND-FERTIG · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-BUND-FERTIG.md -->
+- [~] **Phase 1 · Bund fertig machen — Sollbild und Struktur-Schluss** *(`W2·27-BUND-FERTIG`, Entscheid David 14.9.2026)*
+  <!-- @meta id: W2·27-BUND-FERTIG · status: wip · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-BUND-FERTIG.md -->
   Dach der Phase 1: einmal niederschreiben, **was ein Gesetz bei LexMetrik ist**, und es am Bund
   einlösen — Sollbild, Datenstruktur schliessen, Leser schärfen, dann alle Bundeserlasse. Der
   Schritt trägt selbst nur die Struktur-Posten ohne eigenen Schritt; die übrigen Phase-1-Einheiten
@@ -197,11 +196,12 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   schneller als auf Fedlex liest.
   **Detail:** [FAHRPLAN-BUND-FERTIG.md](fahrplaene/FAHRPLAN-BUND-FERTIG.md) §3.
   - [x] **Sollbild + Messung 14.9.2026** (dieser PR) — elf Bausteine mit Soll/Ist-Bund/Leser/Zuständigkeit, Fünf-Artefakte-Befund, Randtitel-Doppelmodell, zehn Lücken (Fahrplan §1/§2).
-  - [ ] **Randtitel-Doppelmodell auflösen** — `NormSnapshot.titel` (Bund 0/25 463) und `struktur.marginalie` (22 223 Artikel) sind zwei Heimaten derselben amtlichen Sache (§5). Sollbild-Entscheid David (Fahrplan §4 c). *Risikopfad ⇒ Gegenprüfung.*
+  - [ ] **Randtitel-Doppelmodell auflösen** — `NormSnapshot.titel` (Bund 0/25 463) und `struktur.marginalie` (22 223 Artikel) sind zwei Heimaten derselben amtlichen Sache (§5). **Entschieden David 14.9.2026 (Fahrplan §4 c, Option i):** `struktur.marginalie` wird die eine Quelle, `NormSnapshot.titel` Projektion oder entfällt; Kanton migriert Phase 2. Vorbedingung Sidecar-Drift-Riegel: PR #851. *Risikopfad ⇒ Gegenprüfung.*
+  - [ ] **Zukunftsfassungen-Hinweis im Leserkopf** *(Entscheid David 14.9.2026, Fahrplan §4 b)* — «ab <Datum> gilt eine neue Fassung» + amtlicher Link aus `naechsteFassungAb`/Inkrafttreten-Register (62 Erlasse, 93 künftige Inkrafttreten liegen als Daten vor); reiner Hinweis, kein Umschalter (Phase 3). Hülle, kein Risikopfad.
   - [ ] **`aufgehoben` strukturell statt Text-Heuristik** — 1 389 Bund-Artikel in 177 Dateien gelten nur deshalb als aufgehoben, weil ihr Body leer oder «…» ist; ein Extraktionsfehler sähe identisch aus (§7/§8). *Risikopfad ⇒ Gegenprüfung.*
-  - [ ] **Sidecar-Drift-Riegel 216/228** — der Struktur-Sidecar trägt in 216 von 228 Dateien keinen eigenen `stand`/`fassungsToken`; Randtitel und Fussnoten altern unbemerkt (passt zu «Golden-Token blind für Randtitel», `sha-bloecke.ts:50`). *Risikopfad ⇒ Gegenprüfung.*
+  - [x] **Sidecar-Drift-Riegel 216/228** — der Struktur-Sidecar trug in 216 von 228 Dateien keinen eigenen `stand`/`fassungsToken`; Randtitel und Fussnoten alterten unbemerkt (passt zu «Golden-Token blind für Randtitel», `sha-bloecke.ts:50`). Erledigt 14.9.2026: Generator-Lauf zog alle 228 nach (215 davon substanz-byte-gleich = die Marke ist reproduziert, nicht behauptet), `check:struktur-konsistenz` verlangt sie im Bund-Ast neu als Pflicht statt additiv. *Risikopfad ⇒ Gegenprüfung.*
   - [ ] **`confidence.json`-Neulauf** — das Artefakt stammt vom 23.6.2026 (150 Erlasse), der Korpus umfasst heute ~1 566; das ausgewiesene Qualitätsbild ist veraltet (§8).
-  - [ ] **KKV-Token `126_z__2`** — ein Artikel existiert im Snapshot, nicht im Struktur-Sidecar (25 463 vs. 25 462): ohne Gliederung, Randtitel, Fussnoten. Extraktions- oder Quell-Effekt ungeprüft. *Risikopfad ⇒ Gegenprüfung.*
+  - [x] **KKV-Token `126_z__2`** — ein Artikel existierte im Snapshot, nicht im Struktur-Sidecar (25 463 vs. 25 462). Geklärt 14.9.2026: **Quell-Effekt** — Fedlex vergibt die id `art_126_z` zweimal (Art. 126z und Art. 126z^tredecies, dessen Ordinal-Suffix fehlt in der eId); unser Struktur-Extraktor kannte den Synthese-Suffix `__2` des Snapshot-Generators nicht und liess das zweite `<article>` das erste überschreiben. Es fehlte also nicht nur ein Eintrag, Art. 126z trug **fremde** Marginalie und Gliederung. Fix an der Pipeline-Quelle, Tor meldet den Fall neu als Fehler. *Risikopfad ⇒ Gegenprüfung.*
   - [ ] **Staatsverträge ohne Randtitel und Historie (19)** — CISG, CMR, LugÜ, HKÜ, UNO-Pakte u. a.: kein Sachtitel im Sprungziel, kein «gilt seit». Bau-Heimat `QS-KORPUS`, hier als Phase-1-Pflicht geführt. *Risikopfad ⇒ Gegenprüfung.*
 
 - [ ] **Schlusstitel/UeB/Anhänge (M13) + wortgenaue Fussnoten (M14)** *(`W2·5l-NORMTEXT-B2`)*
@@ -369,7 +369,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   <!-- @meta id: QS-KORPUS · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
   Dach für die offenen Reparaturen an Normtext- und Rechtsprechungs-Korpus; je Zeile eine
   sortenreine Bau-Einheit. **Detail:** [FAHRPLAN-OFFENE-BEFUNDE.md](fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md) §1.
-  - [x] **`adapter-lexwork.ts:778` Fetch-Ergebnis unvalidiert** — erledigt 12.9.2026, PR #813 (`af5e35ce9`), Gegenprüfung ausstehend: Laufzeit-Validierung `validiereTextOfLaw()` statt Compile-Cast, Nullprobe mit drei vorher rot laufenden Tests. Wortlaut: ROADMAP-CHRONIK.md.
+  - [x] **`adapter-lexwork.ts:778` Fetch-Ergebnis unvalidiert** — ✅ erledigt 12.9.2026, PR #813 (`af5e35ce9`); Gegenprüfung ausstehend. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (2).
   - [ ] **Bezüge-Kanten mit Phantom-Zitaten** *(Befund Split-Bau 30.8.2026, PR #582)* — 18 854 von
     75 365 Artikel↔Entscheid-Kanten nennen den Artikel im Entscheid-Snapshot gar nicht; Stichprobe
     `bge_148_V_265` trägt `«Art. 4 BGE»` in `zitierteNormen` (Extraktions-Artefakt). Wurzel im
@@ -378,8 +378,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
     Entscheid-Snapshot wörtlich steht — §1 sofort erfüllt), den Generator-Neubau erst nach
     `W2·21-ZULIEFERER` (kommt der Graph von dort, entfällt er).
   - [ ] **Kernerlasse-Lücken Bund schliessen** *(Bestandsmessung 1.9.2026, Zielbild Gesetzesleser)* — EMRK (SR 0.101) ist nur PDF-Einbettung, kein Snapshot; EÖBV (SR 211.435.1) und AVG (SR 823.11) fehlen ganz. Fedlex-Adapter, Pin in `fedlex-cache.sh`, §7-Beleg; EMRK-Pin ersetzt die pdf-embed-Zeile nur, wenn der Fedlex-Konsolidierungstext vollständig ist (sonst Einbettung behalten, §8).
-  - [x] **Geltende BMV in den Korpus aufnehmen** — ✅ erledigt 12.9.2026 (Wortlaut: ROADMAP-CHRONIK.md); Gegenprüfung ausstehend, noch nicht gemergt.
-  - [x] **scope/decl-Sektionen von 12 Staatsverträgen ingestieren** — ✅ erledigt 12.9.2026, PR #838 (`87db8a514`); Gegenprüfung bestanden. Nebenfund «Anhänge»-Label → PR #840 (offen). Wortlaut: FAHRPLAN-OFFENE-BEFUNDE.md.
+  - [x] **Geltende BMV in den Korpus aufnehmen** — ✅ erledigt 12.9.2026 (#823, gelandet). Wortlaut: ROADMAP-CHRONIK.md.
+  - [x] **scope/decl-Sektionen von 12 Staatsverträgen ingestieren** — ✅ erledigt 12.9.2026, PR #838; Gegenprüfung bestanden. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (2).
   - [x] **Entscheid-Datumsfehler bereinigen** — ✅ (Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 12.9.2026).
   - [x] **Erledigt:** VZV Art. 3/4 · AMBV — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
   - [ ] **Golden-Token blind für Randtitel** *(Befund PR #668, 4.9.2026)* — `sha256Bloecke` (`scripts/normtext/sha-bloecke.ts`) hasht weder `titel` noch `absatz` (Gegenprüfung 4.9.2026: `sha-bloecke.ts:50`); eine reine Randtitel-Revision (BE 154.21 Art. 31) bewegt den Golden-Index nicht. Wurzel-Fix korpusweit (~60k Hashes) als eigener Schritt mit Gegenprüfung.
