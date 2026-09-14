@@ -1,5 +1,122 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Umschichtung 14.9.2026 (6) — Erledigt-Prosa der Phase-1-Welle (#846–#869), Wortlaut ausgelagert
+
+**Begründung.** Der Session-Abschluss vom 14.9.2026 bucht sechzehn gelandete PRs und rund
+dreissig Nebenfunde in ROADMAP.md. Der 120-KB-Deckel (`struktur-rotieren.py --check`) liess vor
+dem Schreiben nur ~3 KB Luft. Ausgelagert wird ausschliesslich **Prosa bereits erledigter
+Posten**; in der ROADMAP bleibt je Zeile Titel, Datum, PR + Merge-SHA und der Zeiger hierher.
+Nichts gestrichen, nichts inhaltlich geändert (§2b — die Zahlen stehen im Wortlaut ihres Datums).
+
+**`W2·27-BUND-FERTIG` — Wortlaut bis 14.9.2026 (erledigte Posten aus #851 und #859):**
+
+>   - [x] **Sidecar-Drift-Riegel 216/228** — der Struktur-Sidecar trug in 216 von 228 Dateien keinen eigenen `stand`/`fassungsToken`; Randtitel und Fussnoten alterten unbemerkt (passt zu «Golden-Token blind für Randtitel», `sha-bloecke.ts:50`). Erledigt 14.9.2026: Generator-Lauf zog alle 228 nach (215 davon substanz-byte-gleich = die Marke ist reproduziert, nicht behauptet), `check:struktur-konsistenz` verlangt sie im Bund-Ast neu als Pflicht statt additiv. *Risikopfad ⇒ Gegenprüfung.*
+
+>   - [x] **KKV-Token `126_z__2`** — ein Artikel existierte im Snapshot, nicht im Struktur-Sidecar (25 463 vs. 25 462). Geklärt 14.9.2026: **Quell-Effekt** — Fedlex vergibt die id `art_126_z` zweimal (Art. 126z und Art. 126z^tredecies, dessen Ordinal-Suffix fehlt in der eId); unser Struktur-Extraktor kannte den Synthese-Suffix `__2` des Snapshot-Generators nicht und liess das zweite `<article>` das erste überschreiben. Es fehlte also nicht nur ein Eintrag, Art. 126z trug **fremde** Marginalie und Gliederung. Fix an der Pipeline-Quelle, Tor meldet den Fall neu als Fehler. *Risikopfad ⇒ Gegenprüfung.*
+
+>   - [x] **`aufgehoben` strukturell statt Text-Heuristik** — Artikel galten nur deshalb als aufgehoben, weil ihr Body leer oder «…» ist; ein Extraktionsfehler sähe identisch aus (§7/§8). Erledigt 14.9.2026: amtliches Signal = Aufhebungs-Vermerk der Fedlex-Fussnote; `aufgehoben` 0 → **1 277/25 463**, Golden byte-gleich. Neuer Wächter `check:leerstellen` deckelt die 98 ungeklärten Bund-Leerstellen. Zahlen, Restklassen und ein Historie-Nebenbefund: Fahrplan §1 (Nachtrag 14.9.). *Risikopfad ⇒ Gegenprüfung.*
+
+**`W2·22-VERWEIS-FEDLEX` — Wortlaut Z6 (a)/(c) bis 14.9.2026 (#852, #856):**
+
+>     (a) ✅ erledigt 14.9.2026 — die Suffix-Reihe (bis…duodecies) steht jetzt EINMAL in
+    `src/lib/fedlex/nummer.ts`; alle vier Konsumenten lesen sie. 13 Fundstellen in 9 Bundes-
+    erlassen lösen neu auf (41 unterdrückte Aufzählungs-Glieder → 50 Links, +2 Selbstsprünge),
+    0 kantonale Stellen, 0 neue tote Anker; (b) ✅ erledigt (Wortlaut: Chronik, Umschichtung 6.9.2026);
+    (c) **Artikel-Anker gegen den Ziel-Snapshot prüfen, Fallback Erlass-Link** —
+    ✅ **gebaut 14.9.2026**: **39 tote Fremd-Anker** von 10 254 prüfbaren, 28 Ziele (36 Bund /
+    3 Kanton), Wächter `check:verweis-inventar`; amtlich gegengeprüft, keine Extraktionslücke.
+
+*Nachtrag zur ausgelagerten Fassung (nicht in sie hineingeschrieben, §2b):* die Zahl «10 254
+prüfbare Ziele» ist der Stand VOR PR #852; das Artefakt nach #852 führt 10 276. Der Kommentar in
+`src/components/normtext/NormChip.tsx:105` trug dieselbe Altzahl. Ebenso war «vier Konsumenten»
+der Suffix-Reihe (`spannen.ts:502`) zu tief gezählt — es sind sechs.
+
+**W2·27-BUND-FERTIG — erledigte Posten 14.9.2026 — Wortlaut bis 14.9.2026:**
+
+> - [x] **Sollbild + Messung 14.9.2026** (dieser PR) — elf Bausteine mit Soll/Ist-Bund/Leser/Zuständigkeit, Fünf-Artefakte-Befund, Randtitel-Doppelmodell, zehn Lücken (Fahrplan §1/§2).
+
+> - [x] **Zukunftsfassungen-Hinweis im Leserkopf** — ✅ erledigt 14.9.2026, PR #863 (`7f5aa592e`); *(Entscheid David 14.9.2026, Fahrplan §4 b)* — «ab <Datum> gilt eine neue Fassung» + amtlicher Link aus `naechsteFassungAb`/Inkrafttreten-Register (62 Erlasse, 93 künftige Inkrafttreten liegen als Daten vor); reiner Hinweis, kein Umschalter (Phase 3). Hülle, kein Risikopfad.
+
+> - [x] **`aufgehoben` strukturell statt Text-Heuristik** — ✅ erledigt 14.9.2026, PR #859 (`d16acf466`); Gegenprüfung bestanden. `aufgehoben` 0 → **1 277/25 463**, Golden byte-gleich, neuer Wächter `check:leerstellen`. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6). *Risikopfad.*
+
+> - [x] **Sidecar-Drift-Riegel 216/228** — ✅ erledigt 14.9.2026, PR #851 (`6c4f9fa2f`); Gegenprüfung bestanden. 228 Sidecars tragen `stand`/`fassungsToken`, `check:struktur-konsistenz` verlangt sie im Bund-Ast als Pflicht. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6). *Risikopfad.*
+
+> - [x] **`confidence.json`-Neulauf** — ✅ erledigt 14.9.2026, PR #848 (`90cb59fff`); Gegenprüfung bestanden. Qualitätsbild 23.6. → 14.9.2026, das Artefakt liegt öffentlich unter `/normtext/confidence.json` (~500 KB, heute ohne UI-Leser). Zwei Folgeposten stehen im Fehlerbuch (§4): `[N]`-Heuristik falsch-positiv (FIDLEV Anh. 9) und die auto-akzeptierte Tabellen-Verklebung VD-vd-106879 Art. 81.
+
+> - [x] **KKV-Token `126_z__2`** — ✅ geklärt 14.9.2026, PR #851 (`6c4f9fa2f`): Quell-Effekt (Fedlex vergibt `art_126_z` zweimal), Fix an der Pipeline-Quelle, Tor meldet den Fall neu als Fehler. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6). *Risikopfad.*
+
+**W2·13-KANTONE-DATEN — erledigte Posten 12.9.2026 — Wortlaut bis 14.9.2026:**
+
+> - [x] **K-15 · Sprengel-Zuordnung BE aus amtlichen Geodaten** — erledigt 12.9.2026, PR #810 (`064d191f6`): 334/334 Gemeinden, 5 Gerichtsstandorte, 4 regionale Staatsanwaltschaften; Normbasis GSOG Art. 80/81/88a/92 (BSG 161.1); Artefakt `src/data/zustaendigkeit/beSprengel.json`; Tore `check:be-sprengel`/`check:be-sprengel-netz`. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 12.9.2026.
+
+> - [x] **K-16 (BS-Teil) · Kantonale Materialien Basel-Stadt an die Botschaften-Pipeline** — erledigt 12.9.2026, PR #799 (`c83501304`): Grosser Rat (data.bs.ch, CC BY 4.0), 117 Geschäfte, 122 Kanten (8 amtlich, 114 maschinell gekennzeichnet), 409 Verfahrens-Ereignisse. ZH-Teil bleibt offen (Präzisierung 6.9.2026: Bund → BS → ZH; ZH-Pendant FAHRPLAN-KANTONE §5 R12b). Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 12.9.2026.
+
+> - [x] **Deckel-Reserven vor ZH (R12b) — erledigt 12.9.2026 (PR #802, `c0acd4557`):** Register in drei Projektionen geteilt (Kern/i18n/Provenienz nach Nutzungszeitpunkt) — Kern 118/280 KB gzip (42 %), i18n 84/140 KB (60 %), Provenienz 93/240 KB (39 %), Verfahrens-Ereignisse 16/60 KB (27 %, jetzt alle Herkünfte statt nur Bund); ZH-Prognose Kern 49 %. — ✅ Wortlaut: ROADMAP-CHRONIK.md.
+
+**W2·13-KANTONE-DRIFT — erledigte Posten 12.9.2026 — Wortlaut bis 14.9.2026:**
+
+> - [x] **`check:fedlex-versionen` rot: Pin `erv` html-6 ≠ kanonisch html-7** *(gemeldet von zwei Prüfern 12.9.2026, Vorbestand, Netz-Tor)* — gelöst mit PR #806 (`56d33dae8`): Pin auf die kanonische Fedlex-Manifestation html-7 nachgeführt (Republish derselben Konsolidierung 2025-01-24). Erster Beleg «byte-identisch» war falsch, in der Gegenprüfung (Opus, #808) korrigiert (§2b, ergänzt statt überschrieben): richtig ist **textgleich, Markup abweichend** — Extraktionsgleichheit über 224/224 Artikel-SHAs belegt.
+
+> - [x] **`QS-CURRENCY-KANON-FRISCHE`** — gelöst mit PR #808: `fedlex-frische.yml` regenerierte das Manifest nur bei einem `cache.sh`-Diff, während `gen:fedlex-wiedervorlage` `currency.json` (ingestierte DB-Quelle) in JEDEM Lauf schreibt — Lauf 34107274098 scheiterte an `check:datenhaltung`, PR-Schritt `skipped`. `datenhaltung:manifest` läuft jetzt unbedingt nach der Regenerierung. Dazu Pin-Identitäts-Sonde in `scripts/normtext/cache-pin-befund.ts`: ein `/tmp`-Cache gilt erst nach Marker-Abgleich (`eli|konsolidierung|html-N`) als gültig, nicht mehr nach reiner Inhalts-Sonde.
+
+**QS-UI/Design — Reiterleiste 13.9.2026 — Wortlaut bis 14.9.2026:**
+
+> - [x] **Reiterleiste: sechs stille Fehler** — ✅ 13.9.2026, PR #842 (+ Nachzug R8-Sweep mobil), dazu Welle 2 #843 (Tastatur-Ring, Alt+Q, Ring-Ordnung, Menü-Vorlauf, 24-px-Griffe) und Welle 3 #844 (Kopf weicht am Anschlag, Rand-Schub, Reiter als Links, Hover-Karte, Touch-Umordnen); Specs Fahrplan §4.R/§4.R2/§4.R3. *(Sichtprüfung + Code-Zweitblick 13.9.2026, Auftrag David «bau 1 bis 6»)* — Alt-Kürzel am Mac (`e.key` statt `e.code`), Render-Kaskade beim Scrollen, Kappungs-Verluste ohne Ring, gestutzte Beschriftungen ab 7 Reitern, Nachbar-Wahl nach Schliessen, stehender Blatt-Filter. Spec: Fahrplan §4.R «Reiterleiste 13.9.2026».
+
+**`QS-KORPUS` — erledigte Posten 7.9.–12.9.2026, Wortlaut bis 14.9.2026:**
+
+> - [x] **`adapter-lexwork.ts:778` Fetch-Ergebnis unvalidiert** — ✅ erledigt 12.9.2026, PR #813 (`af5e35ce9`); Gegenprüfung ausstehend. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (2).
+
+> - [x] **Geltende BMV in den Korpus aufnehmen** — ✅ erledigt 12.9.2026 (#823, gelandet). Wortlaut: ROADMAP-CHRONIK.md.
+
+> - [x] **scope/decl-Sektionen von 12 Staatsverträgen ingestieren** — ✅ erledigt 12.9.2026, PR #838; Gegenprüfung bestanden. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (2).
+
+> - [x] **Entscheid-Datumsfehler bereinigen** — ✅ (Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 12.9.2026).
+
+> - [x] **Erledigt:** VZV Art. 3/4 · AMBV — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+
+> - [x] **Erledigt:** Deckungs-Seite «was wir nicht haben» — ✅ Wortlaut: ROADMAP-CHRONIK.md, PR #807 (12.9.2026).
+
+> - [x] **Ingest-Wächter `ungedeckteTopLevelJson`** (#807) fand vier vorbestehende Lücken (`inkrafttreten`, `kanton-luecken`, `pdf-quellen`, `bezuege-bilanz`) — geschlossen; Ausnahme-Mechanik ohne Verfall bewusst nicht gebaut.
+
+**W2·20-VERWEIS-SCHAERFE — Stand-Prosa bis 14.9.2026:**
+
+> «Art. xx dieses Gesetzes» springt im Gesetz; Verweise nach ausserhalb sind als solche
+> erkennbar; Inventar-Schärfe messbar statt Kommentar-Zahlen. **Stand 14.9.2026 (Prosa
+> nachgezogen):** V-1 (Mess-Tor `check:verweis-inventar`) · V-2 · V-3 · V-4 · V-6 gebaut 1.9.2026
+> (PR #599), V-7/V-8 1.9.2026, **V-7c Trägergesetz + 15 Kurztitel 14.9.2026** («des Gesetzes» = das
+> im Ingress legaldefinierte Trägergesetz, 169 Glieder, davon 97 vorher FALSCHE Self-Links).
+> **Offen (Phase 1):** Kurztitel OHNE Korpus-Erlass (Gaststaat-, Zoll-, Subventionsgesetz … ~146
+> Stellen) — hängt am KORPUS, nicht am Erkenner (Wächter braucht das Erlassdatum aus dem Sidecar);
+> Wurzel-Fix ist ein Snapshot dieser Erlasse, nie eine Wächter-Lockerung. **Phase 2:** kantonale
+> Namensliste (916). **Phase 3:** V-5 (Zeit-Kante) an W2·5g-ZEIT. Kein Link besser als falscher (§1).
+
+**QS-BASIS (d) — Landungs-Protokoll aus F1, Wortlaut bis 14.9.2026:**
+
+> **VOR DEM MERGE (Landungs-Protokoll aus F1):** Sync und Deploy hängen am selben Push und warten NICHT aufeinander — gemessen 5,3–6,6 min (Sync) gegen 14,8 min (Prod live), im Normalfall also die sichere Reihenfolge, aber ein Rennen. **Ohne `TURSO_AUTH_TOKEN` überspringt der Sync-Job und endet grün, während der Deploy ausliefert** — dann bleibt das Fenster offen bis zu einem Sync von Hand. Billigster Riegel: «Turso-Serving-Sync» per `workflow_dispatch` auf dem Branch fahren, **bevor** gemergt wird (die alte Edge-Funktion verträgt den neuen Index — verifiziert; `daten-manifest.json` unverändert, `check:turso-frische` bleibt also grün).
+
+**W2·13-KANTONE-DATEN — ZH-Tranche Stufe 1, Wortlaut bis 14.9.2026:**
+
+> Stufe 1 erledigt: 944 in-Kraft-Erlasse via amtlichem JSON-Endpunkt gezählt, Volltext nur PDF (beweisgeführt), Systematik-Ebene 1 = 14 Ordner browserlos, Drift-Token = PDF-ETag; Dossier [zh-quellinventar-2026-08-31.md](bibliothek/recherche/zh-quellinventar-2026-08-31.md). Stufe 2
+
+**Werkzeuge/Tarif — Landungs-Prosa PR #764, Wortlaut bis 14.9.2026:**
+
+> ✅ Gelandet 8.9.2026 (PR #764, Gegenprüfung Opus bestanden: 4 Wertkorrekturen amtlich nachgerechnet, DRIFT 0, `check:tarif-drift` in der Netz-Kette; Drift-Tor: unerreichbar ⇒ rot).
+
+**Rechtsprechung — Bezüge-Zeile, Wortlaut bis 14.9.2026:**
+
+> - [x] **Bezüge-Zeile: Kopfzähler gefiltert/ungefiltert** — ✅ entschieden 11.9.2026 (Mandat David «führe alles durch»): EINE Zahl, gefiltert bei aktivem Filter, Gesamtzahl nur im `title`. Detail: `FAHRPLAN-DESIGN-IDENTITAET.md` §9 Z3.
+
+**QS-FREMDAGENTEN — selbstoptKern-Befund, Wortlaut bis 14.9.2026:**
+
+> - [ ] **`scripts/plan/selbstoptKern.ts` über der Schlankheits-Schwelle, unregistriert gefunden** *(Nebenfund Abschluss-Session 4.9.2026)* — 1094 Z. (Schwelle 800), vermutlich durch #666 gewachsen, ohne dass jemand `npm run schlankheit:update` fuhr; diese Session hat die Datei nur ins Baseline-Register aufgenommen (kein Split, Doku-Auftrag), Split bleibt offen. `src/tests/plan-selbstopt.test.ts` (1087 Z., ebenfalls jetzt registriert statt gesplittet) — *seit PR #699 (Jules 8, 5.9.2026) gesplittet: 500/236/382 Z., Baseline-Eintrag entfernt* hängt dran — beide teilen sich denselben Wächter-Blick.
+
+**`W2·5m-LESER-V3` — Wortlaut Deckel-Fix bis 14.9.2026 (#868):**
+
+>   - [x] **Tor-Konflikt `erlassAnsicht.ts`-Deckel** *(§17-Wurzel-Fix)* — ✅ **erledigt 14.9.2026, PR #868**: Datei in zwei Schwestern geschnitten (`erlassAnsicht.ts` 419→198, neu `erlassWortlaut.ts` 267), Deckel unverändert 420, Tor aufs Paar gezogen. Vermerkt offen: `leserV3Modell.ts` 420/420 (Schnitt dort dokumentiert gescheitert).
+
+---
+
 ## Umschichtung 14.9.2026 (5) — 5 offene Befund-Zeilen, Wortlaut ausgelagert (Steuerdeckel)
 
 **Begründung.** ROADMAP.md stand nach den Landungen des 14.9.2026 (#846–#866) bei 120,0 KB und riss den 120-KB-Deckel im CI-Lauf von PR #864. Diese OFFENEN Zeilen trugen je 500–1 000 Zeichen Befund-Prosa (Nebenfunde 3.9./4.9./12.9.2026); steuernd ist Titel, Datum, PR-Bezug und Zeiger — der Wortlaut steht hier unverändert. Nichts erledigt, nichts gestrichen.
