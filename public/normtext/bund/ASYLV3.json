@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-12",
+  "erzeugt": "2026-09-14",
   "eintraege": [
     {
       "id": "bund/ASYLV3/art_1",
@@ -20,7 +20,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "a96936fbcb7e7a285026ef7e1b3c2968991f31cd23f4abb71b28e7adfa520afe"
     },
@@ -86,7 +86,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1_a",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "52e7e7c3a8b7ef8b13718989756c85311b7f327c08730f881cf9dcea2508dee7"
     },
@@ -131,7 +131,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1_b",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "d832cd56b4588755eeef2e0b3f0525e4dde0a64534f3737e0afe38dd3e84e3be"
     },
@@ -154,7 +154,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1_c",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "a2284eb27eb47ff6c8ae8ecacf219e8bd4aaf3dd781dc619d270a13f75862ce1"
     },
@@ -165,6 +165,7 @@
       "erlass": "AsylV 3",
       "artikel": "1_d",
       "artikelLabel": "Art. 1d",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -173,7 +174,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1_d",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -208,7 +209,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1_e",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "87546d73218aa2f622a18dd33bae96411e1bc53455bed72009e8c675946eeaf6"
     },
@@ -231,7 +232,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1_f",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "404b035b0b2ec86e0e1f62803323835be86ac3476e4889bf1a755de05e0b4585"
     },
@@ -254,7 +255,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1_g",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "c9fec986bf68dde48df49a064a8f2aa4ddcf8b7f5e800a0997b39100e60d3812"
     },
@@ -265,6 +266,7 @@
       "erlass": "AsylV 3",
       "artikel": "1_h",
       "artikelLabel": "Art. 1h",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -273,7 +275,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1_h",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -301,7 +303,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1_i",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "00d7fb8e4164dc29a66661ee5f5d9df0e59ae720d62772840ee57c89bad5642e"
     },
@@ -451,7 +453,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1_j",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "3da10faf8def77972b0a30300d083c87738450abd316d364b5e0003795d47141"
     },
@@ -486,7 +488,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1_k",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "a44542cd4a2ab38fe4ab1ccfda714b799ced8483603737a0e44d97ed53f8ba67"
     },
@@ -535,7 +537,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_1_l",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "535a9856c29313b6e1afb7ee41e8471ae287b3ced1db52e04fec69d691d69e3b"
     },
@@ -555,7 +557,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_2",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "faaf79d8ce6ebafeac1aa41b5ff7f6d2fd7cef9e96d82bf9cae3e96292644259"
     },
@@ -575,7 +577,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_3",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "5bfe98ed4475f2855705902674f2ddfcccf82b9b532bb48552b38f14487ceaec"
     },
@@ -595,7 +597,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_4",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "dfb386e5bf36f34265acecf112bd3630232fba6fb78b77014eee63342fa907bb"
     },
@@ -629,7 +631,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_5",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "dc27bbf52c8696829efe9ffe97102a059ab3ef3298e883fbf0590c43247d692c"
     },
@@ -673,7 +675,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_6",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "a0655717cbec2a923cdb0cf0e13ea0e15e38a491dfea74cef1617e30afb47d57"
     },
@@ -693,7 +695,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_6_a",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "e74d490b0d6999a83ffc9e4e5fbd89560dcd687cd983f195b72d7a37be5d6e0f"
     },
@@ -720,7 +722,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_6_b",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "989686c7c4ba535f25369346ceae553e5f1bccc1494576683f891ccfcf3b9e16"
     },
@@ -739,7 +741,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_6_c",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "58283fa60e5e01b83ad51547dfd2622c45c833e37927f578f51508176589bfd7"
     },
@@ -865,7 +867,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_6_d",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "da2406a975cba521145342c67f776a951a424796532c148f9f16d2fbdd7e3e45"
     },
@@ -876,6 +878,7 @@
       "erlass": "AsylV 3",
       "artikel": "7_8",
       "artikelLabel": "Art. 7–8",
+      "aufgehoben": true,
       "bloecke": [
         {
           "absatz": null,
@@ -884,7 +887,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_7_8",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -907,7 +910,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_9",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "0c5e6606e3f638bfb502d9a9307367d47b38bdf242a6b3a0fb102f0518eb9418"
     },
@@ -930,7 +933,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_10",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "2336154d992f1e2bdbf6d56b50d5a444d66265522327bf71702f6cb432c7f03d"
     },
@@ -964,7 +967,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_10_a",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "fd47ac9bda16d4b6a9d69e29c08f1099c5e05fa0dc01e3b8e03e126baaeddf1f"
     },
@@ -1002,7 +1005,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_10_b",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "dd696efd0d395be741fc8951b17405f8f300666e9a4ab5c920667f611c3bed6d"
     },
@@ -1030,7 +1033,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_10_c",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "d6e66955a9387f38b975dbb582b831dbe807d980e9d994d73bdbf6ef86ba123c"
     },
@@ -1061,7 +1064,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_10_d",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "1628fbf60b1251514fc582a3eabe385f027d272a358d1f78ffe25001b764d3aa"
     },
@@ -1093,7 +1096,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_10_e",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "9dc8d6d29e464ee231a318a82d7dadd98f4e22ae16c18ede689fa3e2c683ee9f"
     },
@@ -1117,7 +1120,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_10_f",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "b5b1fe6f074be1a3289486e71662fc7f95fb41c24290a4c2e8c2441f22b9a3bb"
     },
@@ -1145,7 +1148,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_10_g",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "6f1df535002a2a0603cd67b1a6048d3fff5ed22c6d1cc8082a770615ad80563d"
     },
@@ -1219,7 +1222,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_10_h",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "d6f1ff672fd0d40ca6775d6644e3241eda6d089603dccd6fb1e8af679757ef51"
     },
@@ -1243,7 +1246,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_10_i",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "396cec53394f6c2bebb05eaea557493fa5b6e9e18d49a8d5168e743d60abc51c"
     },
@@ -1299,7 +1302,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_11",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "0ade7959c1d4bc19b1a069f33c281bc4b0aae1385771f4eaf69c4209114772e2"
     },
@@ -1359,7 +1362,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_11_a",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "634b33ae494b8d019c2dfed5ba20718f42abb71632223f7b0d1702cac85411bf"
     },
@@ -1382,7 +1385,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_11_b",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "a0d2592002dba17d4476eff8d6e53c509b04773dc574c5dc42e8f41aaf491c1e"
     },
@@ -1405,7 +1408,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_11_c",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "317963662a74ad6ae5c93330a0da36bfb6014380f3252bfb84fa5da70f94fed7"
     },
@@ -1428,7 +1431,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_11_d",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "7291cec259908efa95e3d5644dfc86513d561244070bece386c5ce1ed6a621f7"
     },
@@ -1502,7 +1505,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_11_e",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "b0ae1c3ebe756d7b75f1f5a36601a69b35b450693baf783e35dfe7cca5d9d9dc"
     },
@@ -1535,7 +1538,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_12",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "6edddd8694727ff83363da8926d62d9f14ec5904c224d534bbdfad8965669b91"
     },
@@ -1554,7 +1557,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_13",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "d19cb1e96202249506b9cbe7abf20ac6f8e637d6d5e8a63e4cf52a90848e6400"
     },
@@ -1577,7 +1580,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_14",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "f7880a3300365207dc94b72cba45c697f80354acbdf3fa9d1750baa74cb4ccfc"
     },
@@ -1596,7 +1599,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_14_a",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "7764b77385f39cb34edd17837d8a9a1a028c2f80b6c5a822da989e144e4dd786"
     },
@@ -1615,7 +1618,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#art_15",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "d87fdab272de6acd082d49c6120f109556485adb44a1e19d3c243eaa8b33576a"
     },
@@ -2099,7 +2102,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#annex_1",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "79687234daf759bf0ea4a2197bd403e9e6d2596cdb15e26a9a7469fe57a40dd4"
     },
@@ -2118,7 +2121,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#annex_2",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "b4935894c8ce16bde67bbffc672428b1533c4f1e1e8b1ce21a2933183db6bfa5"
     },
@@ -2142,7 +2145,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#annex_3",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "27e516ae5422e8c61a5c5c0270aa0732e1da77bf965d2b6767a860fd1a218fe7"
     },
@@ -2192,7 +2195,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#annex_4",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "98e729a094c4c413860b7f64edfe866df061c2f95ccd83b813fc2f356ffa2885"
     },
@@ -4700,7 +4703,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#annex_5",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "453d47df1522fcceab9202f97d5229032f30e3c8bc669d6f82acc81bca157c59"
     },
@@ -4966,7 +4969,7 @@
       ],
       "stand": "2026-06-12",
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/361/de#annex_6",
-      "abgerufen": "2026-09-12",
+      "abgerufen": "2026-09-14",
       "fassungsToken": "20260612",
       "sha": "1586ad5f7eccc35252969012150fa36edce0d6186a0aa7822d238d549b7e4811"
     }

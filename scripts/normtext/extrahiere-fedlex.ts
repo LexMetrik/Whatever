@@ -14,6 +14,8 @@
  */
 
 export interface ArtikelText {
+  /** G-AUFH-ART (W2·27) — GANZER Artikel amtlich aufgehoben. Regel + Belege + die Grenze «kein Signal ≠ gilt» (§7): `aufhebung-signal.ts`. */
+  aufgehoben?: true;
   /** G23 (M8): Delegationsnorm-Verweis «(Art. N ArG)» aus
    *  <p class="man-template-referenz"> — die Trägergesetz-Grundlage, auf der eine
    *  Verordnungsbestimmung beruht. Steht in Fedlex direkt unter der Überschrift;
@@ -61,6 +63,7 @@ export interface BildRef {
   sha?: string;
 }
 
+import { artikelTextMitAufhebung } from './aufhebung-signal.ts';
 import { dekodiereEntities } from './html-entities.ts';
 import { normalisiereTabelle, type RohTabelle, type RohZelle } from './tabelle-normalisieren.ts';
 
@@ -132,9 +135,8 @@ export function extrahiereArtikelAusAnker(html: string, ankerRoh: string): Artik
     .replace(/<div\s+class="footnotes">[\s\S]*$/i, '') // Apparat steht am Artikelende
     .replace(/<h6\b[^>]*>[\s\S]*?<\/h6>/gi, '');
 
-  const r = parseArtikelInner(innerRoh);
-  // Byte-gleich zum bisherigen Rückgabe-Shape: grundlage-Key nur, wenn gesetzt.
-  return r.grundlage != null ? { grundlage: r.grundlage, bloecke: r.bloecke } : { bloecke: r.bloecke };
+  // W2·27: G-AUFH-ART aus dem ROHEN Artikel-HTML (articleMatch[1] trägt <h…> + Fussnoten-Apparat, die innerRoh gerade verlor); Shape sonst unverändert.
+  return artikelTextMitAufhebung(articleMatch[1], parseArtikelInner(innerRoh));
 }
 
 /**
