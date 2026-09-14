@@ -180,6 +180,32 @@ function zielAusIngress(name: string, ueber: string | undefined): FedlexGesetz |
   return erkenneGenitivGesetz(/es$/.test(name) ? name : `${name}es`);
 }
 
+describe('V-7c — warum der Name geprüft werden MUSS: Erlassdaten sind mehrdeutig', () => {
+  it('mindestens ein Trägergesetz teilt sein Erlassdatum mit einem anderen Erlass', () => {
+    // §6.7 lit. a: die Namensprüfung unten wäre ein Tor, das nie greifen kann,
+    // WENN Erlassdaten eindeutig wären. Sind sie nicht — und dieser Test hält
+    // den Beleg dafür aktuell, statt ihn im Kommentar altern zu lassen.
+    // Verschwindet die Kollision eines Tages, wird er rot und sagt, dass die
+    // Namensprüfung geprüft werden darf, ob sie noch etwas trägt.
+    const jeDatum = new Map<string, string[]>();
+    for (const [g, d] of Object.entries(ERLASSDATUM)) {
+      if (!d) continue;
+      jeDatum.set(d, [...(jeDatum.get(d) ?? []), g]);
+    }
+    const kollisionen = [...jeDatum.values()].filter((v) => v.length > 1);
+    expect(kollisionen.length,
+      'kein einziges geteiltes Erlassdatum mehr — die Datumsprüfung allein trüge die Zuordnung wieder')
+      .toBeGreaterThan(0);
+    // Und konkret: ein ZIEL dieser Tabelle ist betroffen. Das UVG teilt den
+    // 20.3.1981 mit dem IRSG; «UVV → IRSG» käme durch die Datumsprüfung
+    // glatt durch und scheitert erst am Namen (Rot-Beweis im PR).
+    const ziele = [...new Set(TRAEGER_EINTRAEGE.map((e) => String(e.gesetz)))];
+    const betroffen = ziele.filter((g) => (jeDatum.get(ERLASSDATUM[g as FedlexGesetz] ?? '') ?? []).length > 1).sort();
+    expect(betroffen, 'kein Trägergesetz-Ziel mit geteiltem Erlassdatum').toEqual(['UVG']);
+    expect([...(jeDatum.get(ERLASSDATUM.UVG ?? '') ?? [])].sort()).toEqual(['IRSG', 'UVG']);
+  });
+});
+
 describe('V-7c — der zitierte NAME bestätigt das Ziel (Datums-Kollisionen)', () => {
   it.each(TRAEGER_EINTRAEGE.map((e) => [e.verordnung, e.gesetz] as const))(
     '%s → %s: der Ingress-Name löst auf dasselbe Ziel auf',
