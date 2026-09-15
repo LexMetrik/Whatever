@@ -109,7 +109,11 @@ npm run check:perf-budget  # liest dist, Chrome-frei
    laufen** (`daten-manifest.json` → `npm run datenhaltung:manifest`;
    `*.generated.ts` → Banner-`gen:*`; rechtsprechung-Indexe →
    entscheide-Pipeline). Append-Register: union hat beide Seiten — nur
-   prüfen. `golden/*.json`: von Hand, dann `npm run golden`, Byte-Diff bewusst
+   prüfen. **GitHub kennt den union-Treiber nicht:** jeder gelandete
+   Risikopfad-PR hängt eine Register-Zeile an, danach meldet GitHub die
+   übrigen Risiko-PRs DIRTY und startet keine CI — also nach JEDER Landung
+   `origin/main` lokal in den nächsten Zweig mergen, Tore, push, dann erst
+   die Kette (15.9.2026, vier Risiko-PRs #888–#892 in Serie). `golden/*.json`: von Hand, dann `npm run golden`, Byte-Diff bewusst
    bestätigen. `public/normtext/**`: Konflikt SOLL anhalten ⇒ Gegenprüfung.
    Steuer-Doku (STRUKTUR/ROADMAP/FAHRPLAN/INDEX): von Hand, beide Beiträge.
 5. **Gate:** `npm run gate` grün — erzwingt die Regeneration aus Schritt 4.

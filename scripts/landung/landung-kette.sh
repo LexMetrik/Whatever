@@ -30,6 +30,13 @@ for PR in "$@"; do
   echo "== PR #$PR $(date +%H:%M)" >> "$LOG"
   for versuch in 1 2 3; do
     ST=$(gh pr view "$PR" --json mergeStateStatus -q .mergeStateStatus)
+    # Direkt nach einem Push liefert GitHub den ALTEN Zustand (DIRTY/UNKNOWN), bis die
+    # Mergbarkeit neu gerechnet ist — Vorfall 15.9.2026, PR #892: main war schon im
+    # Zweig, die Kette hielt trotzdem mit DIRTY an. Darum erst nachfragen (bis 3×20 s).
+    for w in 1 2 3; do
+      [ "$ST" != "DIRTY" ] && [ "$ST" != "UNKNOWN" ] && break
+      sleep 20; ST=$(gh pr view "$PR" --json mergeStateStatus -q .mergeStateStatus)
+    done
     if [ "$ST" = "BEHIND" ]; then gh pr update-branch "$PR" >> "$LOG" 2>&1; sleep 60; fi
     if [ "$ST" = "DIRTY" ]; then
       echo "PR #$PR: DIRTY (Konflikt mit main) - GitHub startet keinen CI-Lauf." >> "$LOG"
