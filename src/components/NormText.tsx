@@ -182,49 +182,6 @@ export interface InternRefs {
    *  ohne Karte) ⇒ die Weiche ruht, Rendering byte-identisch. */
   kantonKuerzel?: ReadonlyMap<string, string>;
 }
-// ─── Linker-Memo (W2·24-PERF-REST) ──────────────────────────────────────────
-//
-// WARUM. Der Verweis-Linker ist rein und deterministisch (§2): gleiche Eingabe
-// ⇒ gleiche Ausgabe. Der Leser rendert die Artikelliste beim Seitenaufbau aber
-// MEHRFACH — gemessen 15.9.2026 auf `/gesetze/bund/OR`, dist-Preview, CPU×4,
-// Kadenz «reines Laden, kein Scrollen», n=3 (CDP `Profiler.startPreciseCoverage`,
-// also gezählt, nicht geschätzt):
-//
-//   · `artikelnPluralVerweise`  16 420 Aufrufe für 4 850 Snapshot-Texte (OR) —
-//     11 515 bis «bedienbar», 4 905 NOCH DANACH, also 3.35 volle Durchgänge;
-//   · `fremdRoutingFormB`        1 125 Aufrufe (802 + 323) auf demselben Weg.
-//
-// Die Wiederholung kostete 1 088 ms bzw. 1 079 ms Self-Time @CPU×4. Das ist die
-// offene Position aus `abnahme/design-identitaet/PERF-LESER.md` §7; die dortige
-// Vermutung («laufen vielfach über denselben Text») ist damit belegt — nicht
-// vielfach je Fragment, sondern einmal je Fragment und je Render-Durchgang.
-//
-// WAS. Ein Ergebnis-Speicher VOR den beiden Aufrufen. Er verändert nichts am
-// Ergebnis (dieselbe reine Funktion, dasselbe Objekt) und liegt bewusst in der
-// DARSTELLUNGSSCHICHT (§3): die Wiederholung entsteht beim Rendern, nicht in der
-// Rechtslogik — `src/lib/fedlex/parser.ts` bleibt unberührt und rein.
-//
-// SCHLÜSSEL. Ebene + Erlass + Text — nie der Text allein. Skill `perf`,
-// Bauregel 4: ein globaler Token-Key kollidiert zwischen Erlassen; derselbe Satz
-// löst in einem kantonalen Erlass anders auf als im OR (`ebene`), und «des
-// Gesetzes» zielt je gelesenem Erlass auf ein anderes Trägergesetz (`erlassKey`).
-// Beide Funktionen werden aus DIESER Datei ausschliesslich mit dem hier
-// gebildeten Schlüsseltupel aufgerufen — `fremdRoutingFormB` insbesondere immer
-// ohne `zielTokenExistiert` (Prädikat fest `undefined`), sonst wäre es Teil des
-// Schlüssels. `\u0000` trennt die Felder: es kommt in keinem Normtext vor.
-//
-// DECKEL. Kein Leck: läuft der Speicher voll (viele Erlasse in einer Sitzung,
-// Prerender-Lauf über 1 570 Erlasse), wird er ganz geleert. Das ändert nur, wie
-// oft gerechnet wird, nie WAS herauskommt — der Speicher ist beobachtungsfrei.
-const LINKER_MEMO = new Map<string, unknown>();
-const LINKER_MEMO_DECKEL = 50_000;
-function linkerMemo<T>(schluessel: string, rechne: () => T): T {
-  if (LINKER_MEMO.has(schluessel)) return LINKER_MEMO.get(schluessel) as T;
-  const wert = rechne();
-  if (LINKER_MEMO.size >= LINKER_MEMO_DECKEL) LINKER_MEMO.clear();
-  LINKER_MEMO.set(schluessel, wert);
-  return wert;
-}
 const normRef = (s: string): string => s.toLowerCase().replace(/[^a-z0-9]/g, '');
 // Kürzel-Kanon für IDENTITÄTS-Vergleiche (nur A–Z0–9): der Register-Schlüssel
 // trägt «_» (FINFRAV_FINMA), der FEDLEX-Key «-» (FinfraV-FINMA). Stand seit N2
@@ -470,11 +427,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
   // V-7 (W2·20): Ebene des gelesenen Erlasses — in kantonalen Erlassen lösen
   // nur ebenenübergreifend eindeutige Bund-Namen auf (`positivliste.ts`).
   const ebene: FremdEbene = ebeneFuer(intern.basisPfad);
-  // Memo-Schlüssel: Ebene + gelesener Erlass + Text (s. `linkerMemo`). Das
-  // Ergebnis wird hier nur GELESEN (`some`/`for…of`) — kein Aufrufer mutiert
-  // eine Region, der geteilte Wert bleibt damit gültig.
-  const pluralRegionen = linkerMemo(`p\u0000${ebene}\u0000${erlassKey}\u0000${s}`,
-    () => artikelnPluralVerweise(s, ebene, erlassKey));
+  const pluralRegionen = artikelnPluralVerweise(s, ebene, erlassKey);
   const inPluralRegion = (idx: number) =>
     pluralRegionen.some((r) => idx >= r.oeffnerStart && idx < r.end);
   const out: React.ReactNode[] = [];
@@ -601,11 +554,7 @@ function restMitIntern(s: string, key: string, intern?: InternRefs): React.React
     // Darstellung, wie NORM_IM_TEXT-Treffer); die Existenz gegen den Ziel-Erlass
     // prüft das Popover beim Öffnen. Läuft VOR der Self-Link-Logik, damit «Artikel
     // 49a … (MStG)» nie fälschlich auf den eigenen Erlass (AIG art_49_a) zeigt.
-    // Memo wie beim Plural-Lauf (s. `linkerMemo`): der Schlüssel trägt ZUSÄTZLICH
-    // die erste Artikelnummer `m[1]` — sie geht als `ersteNummer` in das Ergebnis
-    // ein (erstes Glied), derselbe `rest` mit anderer Nummer ist ein anderer Fall.
-    const routing = linkerMemo(`f\u0000${ebene}\u0000${erlassKey}\u0000${m[1]}\u0000${rest}`,
-      () => fremdRoutingFormB(rest, m[1], undefined, ebene, erlassKey));
+    const routing = fremdRoutingFormB(rest, m[1], undefined, ebene, erlassKey);
     // V-7: nennt der Volltitel den GELESENEN Erlass, ist es kein Fremdverweis —
     // dann kein Fremd-Chip auf sich selbst; der Rest läuft durch die Self-Weichen.
     if (routing && kuerzelKanon(routing.gesetz) !== eigenesKuerzel) {
