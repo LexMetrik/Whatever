@@ -1,9 +1,14 @@
 {
-  "erzeugt": "2026-09-14",
+  "erzeugt": "2026-09-15",
   "schwelle": 0.95,
+  "korpus": {
+    "quelle": "daten-manifest.json#normtext.db.artikel.sha",
+    "sha": "1cec0dcc2d592a9e8acb45d436fb69a27681331fff2522e6a2bb20d10cdfc559",
+    "erlasseDateien": 1570
+  },
   "zusammenfassung": {
-    "erlasse": 1567,
-    "autoAkzept": 1367,
+    "erlasse": 1570,
+    "autoAkzept": 1370,
     "quarantaene": 200,
     "klassen": {
       "fussnoten-marker-im-text": 6,
@@ -179,6 +184,15 @@
       "ebene": "bund",
       "key": "ATSV",
       "artikelTotal": 56,
+      "score": 1,
+      "vetos": 0,
+      "flags": []
+    },
+    {
+      "datei": "bund/AVG.json",
+      "ebene": "bund",
+      "key": "AVG",
+      "artikelTotal": 49,
       "score": 1,
       "vetos": 0,
       "flags": []
@@ -636,6 +650,15 @@
       "flags": []
     },
     {
+      "datei": "bund/EMRK.json",
+      "ebene": "bund",
+      "key": "EMRK",
+      "artikelTotal": 60,
+      "score": 1,
+      "vetos": 0,
+      "flags": []
+    },
+    {
       "datei": "bund/ENG.json",
       "ebene": "bund",
       "key": "ENG",
@@ -658,6 +681,15 @@
       "ebene": "bund",
       "key": "ENTSG",
       "artikelTotal": 21,
+      "score": 1,
+      "vetos": 0,
+      "flags": []
+    },
+    {
+      "datei": "bund/EOEBV.json",
+      "ebene": "bund",
+      "key": "EOEBV",
+      "artikelTotal": 29,
       "score": 1,
       "vetos": 0,
       "flags": []

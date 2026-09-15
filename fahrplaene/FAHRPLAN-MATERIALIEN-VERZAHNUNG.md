@@ -303,6 +303,86 @@ Fussnoten-Parser · jede Änderung am Historie-Shard (`botschaftKey`, Kopf) und 
 
 ---
 
+## §12 · Entstehung am Artikel — Stufe 4: Botschaftstext, Parlament je Artikel, Bulletin, Ursprung (Planung 15.9.2026)
+
+**Auftrag:** David 15.9.2026 (Planungs-Session, kein Bau): «Ist geplant, den Text aus Botschaften
+darzustellen?» → «Wäre das möglich? Wichtig ist die Datenherkunft, und dass diese optimal ist» →
+«Endziel: alles, was die Schweiz an Behördeninformationen hat, auf LexMetrik abbilden und einfach
+besser verlinken» → «Verankere alles; PDF-Extraktion vorher optimieren; Deep Research zum
+Gesetzgebungsprozess einbauen.» Belege: `bibliothek/materialien/entstehung-2026-09-15/`
+(drei Live-Recherchen, Count-Gate 407/407). Rahmen unverändert: CLAUDE.md §1, §2, §5, §7 a–d,
+§8, §15; Leitprinzip 8 «verknüpfen statt kopieren» (ROADMAP.md, 15.9.2026).
+
+### §12.1 Sollbild — was wir abbilden können und sollen
+
+Drei Speicherklassen, je Quelle die niedrigste, die den Mehrwert trägt (Leitprinzip 8):
+
+| Klasse | Inhalt | Bedingung | Beispiel |
+|---|---|---|---|
+| **Verweis** (Regel) | Titel · Datum · Behörde · amtlicher Link · Kanten zum Artikel | amtlich; Artikel-Anker vorhanden | Botschaften-Register (Paket 2), Parlaments-Etappen (E4) |
+| **Zitat** (Ausnahme) | ein Textblock am Artikel | §7 a–d: Stand, Quelle-URL, Live-Link, Drift-Wächter; Block zeigt am Artikel, was der Link nicht kann | Synopse-Alt-Block (E5); **Erläuterung je Artikel aus der Botschaft (neu)** |
+| **Korpus** (Sonderfall) | Volltext im eigenen Leser | unser Leser kann mehr als die Quelle | Gesetze; **nicht** Botschaften, **nicht** Bulletin |
+
+Datenhaltung: ein DB-Artefakt als Wahrheit (§5), jede Quelle als Dokument mit `norm_referenzen`-
+Kanten (FAHRPLAN-DATENHALTUNG §3.2, Nordstern «EIN Query über alle Doktypen»); `public/*.json`
+sind Projektionen, je Erlass, laden erst beim Klick. Kein VPS nötig (statische Shards wie
+`public/normtext/`), solange die Deckel je Klasse halten.
+
+### §12.2 Quellen-Matrix (Recherche 15.9.2026, alles live belegt)
+
+| Quelle | Herkunft | Höchste Stufe | Verlässlichkeit | Bericht |
+|---|---|---|---|---|
+| Botschaften ab 2022 (43) | Fedlex Filestore, `isExemplifiedBy` | Akoma-Ntoso-XML; Erläuterungs-Kapitel `<level eId="lvl_N">` in 43/43 | kapitelscharf deterministisch; artikelscharf strukturell 7/43, sonst `<p>Art. 5 Abs. 2</p>` = Textmuster | botschaften-formate.md §2a |
+| Botschaften 2020/21 (54) | Fedlex DOCX | Absatzstil `TitelArtikelKomm` auf Artikel-Überschriften (8/9 gemessen) | sehr wahrscheinlich deterministisch; Rest-DOCX ungemessen | ebd. §2b |
+| Botschaften 1999–2019 (~300) | Fedlex PDF/A (alle born-digital, einspaltig) | Kapitel via Zwei-Zeilen-Regel (11/13), Artikel-Überschriften kursiv/fett als eigene Zeile | gemessene Heuristik, kein Vertrag; Lesezeichen erst ab 2021 | ebd. §2b |
+| Botschaften vor 1999 | Bundesarchiv (Scans) | — | nicht deterministisch (§2) ⇒ Live-Link | ebd. §5 |
+| Kommissionsberichte, Stellungnahmen BR | Fedlex (BBl), Verfahrens-Codes 301/201 vorhanden; Dokumenttyp-Codes **nicht inventarisiert** | vermutlich wie Botschaften | Art. 111 Abs. 3 ParlG: gleicher Pflichtinhalt ⇒ gleiches Schema | gesetzgebungsverfahren-bund.md §1/§2 |
+| Erläuternde Berichte, Vorentwurf, Ergebnisbericht | Fedlex Vernehmlassungen (Verfahren erfasst, Dokumente **nicht**) | PDF | Art. 6a VlG: gleicher Pflichtinhalt; Weg ungeprüft | ebd. §1 (2b–2e) |
+| NR-Abstimmungen je Artikel | Curia Vista `Vote` (`RegistrationNumber` ← `Transcript.VoteId`) | `Subject` = Artikel, `MeaningYes/No` = Antragsseiten | strukturiert, 181/188 | bulletin-vote-ursprung.md |
+| Bulletin-Voten BR/Kommission | Curia Vista `Transcript` (`CouncilName`, `Function eq '*'`) | Rolle deterministisch; Artikel per Text ~81 %/50 % | Metadaten + Deep-Link; kein Redetext | ebd. |
+| SR-Stimmenzahlen | `Transcript.Text` («… 25 Stimmen») | Freitext | Textmuster, ausgewiesen | ebd. §3 Bsp. 3 |
+| Vehikel der Vorlage | Curia Vista `BusinessType` (15 Werte) | strukturiert | deterministisch; keine Kategorie Volksinitiative | ebd. §6 |
+| Auslöser (Motion/Postulat) | `Business.InitialSituation` (Prosa); `RelatedBusiness` leer | Freitext | nur Hinweis, nie Behauptung (korpusweit 3 wörtliche Treffer) | ebd. §6 |
+
+### §12.3 Etappen (Roadmap-Schritte `W2·6d-*`; Reihenfolge = `@queue`)
+
+| Etappe | Schritt | Ziel | Harte Auflagen | Phase |
+|---|---|---|---|---|
+| 0 | `W2·6d-VERFAHREN-RECHERCHE` | Deep Research Gesetzgebungsprozess Bund (später Kantone): Verfahrensmodell aus amtlichen Quellen (BV, ParlG, VlG, PublG, RVOV, BJ-Gesetzgebungsleitfaden), je Schritt Norm · Akteur · Dokument · Publikationsort · Datenspur (Fedlex-Code / Curia-Entität / nur Prosa); Vorlage = `entstehung-2026-09-15/gesetzgebungsverfahren-bund.md` (Entwurf) | nur amtliche Quellen (§7), Gegenprüfung durch zweites Modell, Ablage `bibliothek/` + INDEX; fachliche Abnahme David `[D]` nach Zeitsperre — der Bau der Daten-Etappen hängt NICHT daran | 2 |
+| 1 | K-7 (FAHRPLAN-KANTONE) erweitert um **PDF-Kern** | gemeinsamer Leser aus `adapter-pdf.ts` + `adapter-zh-pdf.ts` (Geometrie, Kopf/Fuss, Silbentrennung); Dehyphenations-Tor mit Rot-Beweis; Messgeschirr Fehlerrate je Profil gegen Handauszählung; Werkzeugvergleich pdfjs ↔ PyMuPDF an den 13 Botschaften-PDF (Vormessung, kein Entscheid) | Refactoring §6: Golden byte-gleich; mitnehmen: Ziffern-Tarife (ROADMAP Z. «PDF-Pfad liest Ziffern-Tarife falsch»), Fassungs-Drift PDF-Snapshots, rectifies doc/pdf-a | 2 |
+| 2 | `W2·6d-PARLAMENT-ARTIKEL` | NR-Abstimmungen je Artikel aus `Vote` (Artikel, Antragsseiten ohne Namen, Ergebnis, Datum, Rat, Lesung) → Chip «im Rat umstritten» am Artikel; Vehikel der Vorlage (`BusinessType`) als Zeile im Verfahrens-Block | Personendaten: `MeaningYes/No` ohne Namensteil speichern («Antrag der Minderheit»), Name bleibt im Deep-Link; Auflagen Parlamentsdienste (Quelle, unverändert, Abrufdatum, kein amtlicher Eindruck) am Block; Monatslauf wie E4, `curia/**` bleibt Risikopfad; Blockberatung «Art. 3-11» = n Kanten, nie stumm eine | 2 |
+| 3 | `W2·6d-BOTSCHAFT-TEXT` Stufe A | XML ab 2022 + DOCX 2020/21: Erläuterungs-Kapitel je Erlass (Mantel: Eltern-`level`), Artikel-Block als §7-Zitat am Artikel; artikelscharf nur wo strukturell (`<article>`/Heading «Artikel N»/Stil `TitelArtikelKomm`), sonst Kapitel-Block mit «maschinell zugeordnet» | Erläuterung an die **Fassung** binden, die aus dieser Botschaft hervorging (dep E5/E6; Entwurf≠Beschluss≠heute, 7/41 verrutscht) + Hinweis «seither geändert»; Drift `If-Modified-Since`/`Content-Length`, URLs nur aus `isExemplifiedBy`, Soft-404-Sonde; Deckel je Erlass + gesamt vor dem Bau messen; FR/IT erst nach DE-Messung; nichts vor 1999 | 3 |
+| 4 | `W2·6d-BOTSCHAFT-TEXT` Stufe B | PDF/A 1999–2019 auf dem PDF-Kern: kapitelscharf (Zwei-Zeilen-Regel, erster Treffer, Anhang-Sperre), Sprung auf BBl-Seite; Artikel-Überschriften nur als «maschinell» | dep Etappe 1; Fehlerrate gemessen und im Tor-Output; Kapitel ohne Treffer ⇒ Live-Link, nie raten | 3 |
+| 5 | `W2·6d-BOTSCHAFT-TEXT` Stufe C | Kommissionsberichte (Pa.Iv.) + Stellungnahmen BR mit demselben Schema; vorher Fedlex-Dokumenttyp-Codes inventarisieren (heute nur 23 = Botschaft); Titelmuster «Zusatzbotschaft» (Code 200 geteilt) | wie A/B | 3 |
+| 6 | `W2·6d-BULLETIN-VOTEN` | Voten Bundesrat/Berichterstatter je Traktandum als Metadaten (Funktion, Rat, Datum, Lesung) + Deep-Link `?SubjectId=`; Artikel-Zuordnung «maschinell» mit Präzision/Recall im Tor; SR-Stimmenzahlen aus Text; **kein Redetext gespeichert** | Name nie (auch nicht im Fliesstext-Auszug); Auflagen wie Etappe 2; Lesungs-/Datumskontext Pflicht (Differenzbereinigung); Epochen-Markup (2006 ohne `[GZ]`) im Messgeschirr | 3 |
+| 7 | `W2·6d-VERNEHMLASSUNG-DOKUMENTE` | Vorentwurf, Erläuternder Bericht, Ergebnisbericht als Verweise am Verfahren (Vernehmlassungs-Generator erfasst heute nur Status); für Verordnungen die einzige Entstehungsquelle | Weg zuerst erheben (Fedlex-Vernehmlassungs-Endpunkt vs. Departements-Websites); nur Verweis-Klasse | 3 |
+
+**Nicht-Ziele (15.9.2026):** Bulletin-Volltext (≈ 370 MB; kollidiert mit «nicht verändern») · Auslöser
+«geht auf Motion X zurück» als Behauptung (nur Hinweis mit Quelle `InitialSituation`) · Botschaften
+vor 1999 · Reden einzelner Ratsmitglieder · jede Speicherung von Namen/`PersonNumber` · Volltextsuche
+über Botschaften/Debatten (parlament.ch/Fedlex können das).
+
+### §12.4 Offene Entscheide
+
+1. **Rangfolge der Materialien in der Oberfläche** (Botschaft > Kommissionsbericht > Votum
+   Bundesrat/Berichterstatter > Abstimmung; Einzelvoten gar nicht) — Fachfrage `[D]`, nach der
+   Zeitsperre; Daten-Etappen hängen nicht daran.
+2. **Personendaten-Präzisierung** (Empfehlung 15.9.2026, David: «einverstanden» zum Gesamtvorschlag;
+   bei Baubeginn von Etappe 2 einmal bestätigen): Funktion und Rat speichern, Name nie; amtliche
+   Antragsnamen ohne Namensteil; Name nur über den Deep-Link.
+3. **Phase-Zuordnung:** Etappen 0–2 in Phase 2 (nützen den Kantonen: PDF-Kern hebt die Sperre für
+   FR/VS/AR), Etappen 3–7 in Phase 3 «Mehr als Fedlex»; kein Schritt braucht den VPS.
+
+### §12.5 Werkzeug-Fallen aus der Recherche (Lehren, Formregel Skill `lehren`)
+
+- Host-Tausch `isExemplifiedByPrivate` → öffentlicher Host (E2-Muster) trägt bei fga-`doc` vor 2017
+  NICHT (Casemates-Shell) — nur `isExemplifiedBy` nehmen; Skill `scraping-swiss-official-sources`
+  recipes nachgeführt 15.9.2026.
+- `Transcript.VoteId` ≠ `Vote.ID`; Join über `Vote.RegistrationNumber`, String-Vergleich.
+- `lese-schutz.py` blockt PDF > 200 KB auch im Scratchpad und verweist nur auf `zeige`/`golden:diff`
+  — Hinweis «Text vorher extrahieren (PyMuPDF), dann gezielt lesen» fehlt (Hook-Edits blockt der
+  Klassifizierer; Zeile im Fehlerbuch-Dach `W2·18-FEHLERBUCH`).
+
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
 
 9 Abschnitt(e) dieser Datei sind wörtlich nach

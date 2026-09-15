@@ -171,6 +171,22 @@ selben Schicht wie Gliederung und Fussnoten (alle im Sidecar), und das Bund-Feld
 weitaus grössere Datenmenge. Gegenargument, das mitentschieden werden muss: der Kanton-Pfad müsste
 migrieren, und der Sidecar hat heute keinen Drift-Riegel (§2, Zeile Sidecar).
 
+**Umsetzung 15.9.2026 (WP-D, verhaltensneutraler Phase-1-Schnitt, Entscheid David 14.9.2026
+Option i):** die zwei Inline-Kopien der Fallback-Kette (`marginalie` vor `titel`) in
+`leserSuche.ts` (`baueLeserSuchIndex`, vormals Z.230 und Z.246) sind durch den kanonischen
+Accessor `artikelRandtitel` (`gliederungsArtikel.ts:75`) ersetzt — EINE Stelle im Code für die
+Regel, geprüft in `src/tests/randtitel-eine-quelle-w227.test.ts`. Der Typ-Kommentar zu
+`NormSnapshot.titel` (`typen.ts`) benennt das Sollbild jetzt ausdrücklich als KANTON-
+Übergangsprojektion. Neuer Wächter im selben Test-File: kein Bund-Artikel im Korpus trägt
+`titel` (Ist 0/25 601, Stand 15.9.2026). Bewusst **Phase 2** (unverändert, kein Kanton-Verhalten
+angefasst): `NormSnapshot.titel` bleibt als Feld bestehen und wird vom Kanton-Pfad weiter
+geschrieben (`adapter-lexwork.ts:615–659`); `such-index-generieren.ts:134–151` und
+`NormChip.tsx:225` lesen weiterhin nur `marginalie`, ohne `titel`-Fallback (für Kanton eine
+bestehende Lücke, für Bund korrekt); der zweite, unabhängige Kanton-Parser für `marginalie`
+(`struktur-lexwork.ts:317`) bleibt bestehen; `ArtikelLeser.tsx`/`ArtikelLeser.kopfteile.tsx`
+(Render mit den zwei Props `randtitel`/`titel`) sind unverändert — der Render-Fallback bleibt
+als Kanton-Übergang bestehen, bis Phase 2 den Kanton-Pfad migriert.
+
 ---
 
 ## §2 · Lücken, nach Nutzen für einen lesenden Juristen
@@ -192,7 +208,7 @@ migrieren, und der Sidecar hat heute keinen Drift-Riegel (§2, Zeile Sidecar).
 
 | Nebenfund | Beleg | Zuständig |
 |---|---|---|
-| `confidence.json` stammt vom **23.6.2026** (150 Erlasse; heutiger Lauf ~1 566) ⇒ Qualitätsbild veraltet | `public/normtext/confidence.json` | `W2·27` (Neulauf) |
+| `confidence.json` stammt vom **23.6.2026** (150 Erlasse; heutiger Lauf ~1 566) ⇒ Qualitätsbild veraltet | `public/normtext/confidence.json` | `W2·27` (Neulauf; Frische-Tor `check:confidence-frische` seit 15.9.2026) |
 | Korpus stammt aus **drei Generationsläufen** (113 Dateien 29.8. · 109 Dateien 12.9. · 6 Dateien 4.9.2026) — kein einheitlicher Stand | Dateizeitstempel `public/normtext/bund/` | `W2·27` (Messung dokumentiert; Neubau erst mit `W2·5n-BUND-VOLL`) |
 | Struktur-Sidecar **ohne eigenen Drift-Riegel**: 216/228 Dateien ohne `stand`/`fassungsToken` — Randtitel und Fussnoten altern unbemerkt; passt zum Befund «Golden-Token blind für Randtitel» (`sha-bloecke.ts:50`) | Messung §1.1 | `W2·27` (Risikopfad) |
 | **KKV-Token `126_z__2`** fehlt im Struktur-Sidecar (Snapshot 25 463 vs. Struktur 25 462) — ein Artikel ohne Gliederung, Randtitel und Fussnoten | `KKV.json` | `W2·27` |

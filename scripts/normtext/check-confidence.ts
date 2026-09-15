@@ -18,6 +18,17 @@
  *
  * Aufruf:  npm run report:confidence  (vite-node scripts/normtext/check-confidence.ts) [-- --schwelle=0.95] [--datum=YYYY-MM-DD] [--schreibe]
  * §2: die Bewertung ist rein (confidence-logik); dieser Runner ist nur FS-Hülle.
+ *
+ * Frische-Kopplung (§17, Wurzel-Befund Prüfer #848, 15.9.2026): `erzeugt`
+ * wurde bislang per `--datum` von Hand gesetzt, ohne dass irgendetwas es an
+ * den Korpus koppelte — die Datei alterte drei Monate unbemerkt. `--schreibe`
+ * trägt seither zusätzlich `korpus` (sha aus dem committeten
+ * `daten-manifest.json#normtext.db.artikel.sha`, das sich mit jeder Snapshot-
+ * Änderung bewegt, geprüft gegen scripts/datenhaltung/ingest.ts::
+ * ingestNormtextZiel — dieselben Dateien, die `ladeErlasse` unten einliest).
+ * Ohne `--datum` bricht `--schreibe` jetzt ab, statt `erzeugt` still
+ * wegzulassen. Das begleitende Tor `check:confidence-frische`
+ * (check-confidence-frische.ts) hält die Kopplung fest.
  */
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -112,9 +123,24 @@ for (const b of quarantaene.slice(0, 15)) {
 
 if (process.argv.includes('--schreibe')) {
   const datum = arg('datum');
+  if (!datum) {
+    throw new Error(
+      'report:confidence --schreibe ohne --datum=YYYY-MM-DD: erzeugt darf nicht still wegfallen ' +
+      '(§17, Prüfer-Befund #848) — Aufruf ergänzen: --schreibe --datum=YYYY-MM-DD',
+    );
+  }
+  const manifestPfad = join(process.cwd(), 'daten-manifest.json');
+  const manifest = JSON.parse(readFileSync(manifestPfad, 'utf-8')) as {
+    'normtext.db'?: { artikel?: { sha?: string } };
+  };
+  const manifestSha = manifest['normtext.db']?.artikel?.sha;
+  if (!manifestSha) {
+    throw new Error(`${manifestPfad} trägt kein normtext.db.artikel.sha — Manifest neu bauen (npm run datenhaltung:manifest).`);
+  }
   const out = {
-    ...(datum ? { erzeugt: datum } : {}),
+    erzeugt: datum,
     schwelle,
+    korpus: { quelle: 'daten-manifest.json#normtext.db.artikel.sha', sha: manifestSha, erlasseDateien: befunde.length },
     zusammenfassung: { erlasse: befunde.length, autoAkzept: autoAkzept.length, quarantaene: quarantaene.length, klassen },
     erlasse: befunde.map((b) => ({
       datei: b.datei, ebene: b.ebene, key: b.key, artikelTotal: b.artikelTotal,
