@@ -1403,7 +1403,6 @@ async function main(): Promise<void> {
     for (const token of tokens) {
       const ankerVoll = `art_${token}`;
       // W2·27 (Nebenfund Prüfer #851): «__N» ist UNSERE Eindeutigmachung einer doppelten Fedlex-id — nie ins Label (Regel + Heading-Beleg: normtext/doppel-id-label.ts) und nie in die quelleUrl. Das Sprungziel liefert amtlicherAnker() aus normtext/artikel-vorkommen.ts: beim N-ten Vorkommen der eindeutige amtliche Namens-Anker (KKV: #ta126z), sonst der Basis-Anker.
-      const basisToken = token.replace(/__\d+$/, '');
       const extrakt = extrahiereArtikel(html, token);
 
       if (extrakt === null || extrakt.bloecke.length === 0) {
@@ -1420,7 +1419,7 @@ async function main(): Promise<void> {
         quelle: gesetzKey,
         erlass,
         artikel: token,
-        artikelLabel: labelFuerAnker(html, ankerVoll, artikelLabel(basisToken)),
+        artikelLabel: labelFuerAnker(html, ankerVoll, artikelLabel(token.replace(/__\d+$/, ''))), // Basis-Token nur noch hier gebraucht (die quelleUrl rechnet seit dem Anker-Fix selbst zurück) — darum inline statt eigener const
         // Artikel-Metadaten: `aufgehoben` (W2·27 G-AUFH-ART, normtext/aufhebung-signal.ts) und `grundlage` (G23/M8, Delegationsnorm «(Art. N ArG)») — wie `titel` NICHT im Block-sha, also golden-neutral; Reihenfolge titel→aufgehoben→grundlage hält die DB-Projektion byte-gleich.
         ...(extrakt.aufgehoben ? { aufgehoben: true as const } : {}),
         ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}),

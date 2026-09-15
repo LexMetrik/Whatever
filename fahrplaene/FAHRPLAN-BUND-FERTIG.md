@@ -184,6 +184,33 @@ und zwar generisch für jeden `__N`-Token, nicht KKV-hart-kodiert:
   vermerkt. Der Verifizier-Deep-Link (`src/lib/normtext/verifikationslink.ts`) unterdrückt den
   Artikel-Link bei `__N` unverändert ganz.
 
+**Nachtrag 15.9.2026 (Gegenprüfung PR #890, Schwere mittel) — der Anker trifft jetzt das
+richtige Vorkommen.** Der Absatz darüber bleibt als Beleg des Zwischenstands stehen; die dort
+ausgewiesene Rest-Unschärfe ist **behoben**, nicht nur ausgewiesen. `#art_126_z` ist der Anker des
+**ersten** Vorkommens — ein Browser löst ein doppeltes `id` immer auf das erste Element auf, der
+Leser landete also bei «Anlagebeschränkungen» statt bei «Wesentliche Mängel».
+
+- **Herkunft des neuen Ankers.** Fedlex legt vor jeden Artikel-Kopf einen eigenen amtlichen
+  Namens-Anker `<a name="…"></a>`; beim zweiten `<article id="art_126_z">` lautet er `ta126z`,
+  beim ersten `a126z` (gepinnter Cache `/tmp/kkv.html`, KKV SR 951.311, ELI `cc/2006/859`,
+  Konsolidierung 20251125: genau 1× `name="ta126z"`, 0× `id="ta126z"` — kollisionsfrei).
+  `amtlicherAnker()` in `scripts/normtext/artikel-vorkommen.ts` nutzt ihn generisch für jeden
+  `__N`-Token und nur dann, wenn er dokumentweit genau einmal als `name` und nie als `id`
+  vorkommt; sonst bleibt es beim Basis-Anker (§7). Eingehängt an beiden `__N`-fähigen
+  Generator-Pfaden (Haupttext, Schlussteil). Empirie: Sweep über alle **269** gepinnten
+  Fedlex-Caches — 25 880 `<article>`, ausnahmslos alle mit `<a name>` vor dem Kopf; zwei doppelte
+  ids mit N ≥ 2, beide mit eindeutigem Namen.
+- **Live-Nachweis (Playwright, headless Chromium, 15.9.2026, Viewport 1280×900, `networkidle`
+  + 3 s).** Fedlex ist eine SPA und setzt den Sprung selbst — sie springt den `name`-Anker an:
+  `…/de#ta126z` → `scrollY` 64886, 2. Vorkommen «Wesentliche Mängel» bei `top=0px` (im Viewport),
+  1. Vorkommen bei `top=-3097px` (draussen). Gegenprobe `…/de#art_126_z` → `scrollY` 61735,
+  1. Vorkommen «Anlagebeschränkungen» bei `top=32px` (im Viewport), 2. Vorkommen bei `top=3129px`
+  (draussen) — der reproduzierte Fehlsprung.
+- **Diff der Regeneration:** genau **eine** Zeile gegen den Vorstand (`quelleUrl` von
+  `…#art_126_z` auf `…#ta126z`); der Eintrag `bund/KKV/art_126_z` behält `#art_126_z`.
+  Golden unverändert (Anker ist nicht im Block-sha). Neuer Test:
+  `src/tests/artikel-vorkommen-anker.test.ts` mit wörtlichem Cache-Markup beider `<article>`.
+
 **Blast-Radius (gemessen 15.9.2026):** `126_z__2` ist der **einzige** `__N`-Token im gesamten
 Korpus (`public/normtext/**`: 1 Datei, 1 Token). Diff der Regeneration: exakt zwei Zeilen —
 `artikelLabel` und `quelleUrl` dieses einen Eintrags; die übrigen 210 Einträge byte-gleich,
@@ -192,8 +219,8 @@ Block-sha, `scripts/normtext/sha-bloecke.ts`).
 
 **Weiterhin offen (§8):** Genau weil Label und `quelleUrl` golden-neutral sind, bewacht sie **kein
 Drift-Tor** — ein künftiger Rückfall bliebe still. Geschützt sind sie heute nur durch
-`src/tests/doppel-id-label.test.ts` (Fixture = wörtliches Heading-Markup) und die
-Pflicht-Gegenprüfung. Ein Label-/Anker-Riegel im Sinne von §6.7 wäre ein eigener Schritt.
+`src/tests/doppel-id-label.test.ts` und `src/tests/artikel-vorkommen-anker.test.ts` (Fixtures =
+wörtliches Cache-Markup) und die Pflicht-Gegenprüfung. Ein Label-/Anker-Riegel im Sinne von §6.7 wäre ein eigener Schritt.
 
 ### §1.2 · Struktur-Befund: das Randtitel-Doppelmodell
 

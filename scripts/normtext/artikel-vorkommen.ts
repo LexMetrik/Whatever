@@ -52,6 +52,14 @@ export function artikelRohHtml(html: string, ankerRoh: string): string | null {
 // Fällen ist der Name im Dokument eindeutig. Im gebauten Korpus existiert heute
 // genau EIN «__N»-Token: KKV 126_z__2.
 //
+// Live-Nachweis (Playwright, headless Chromium, 15.9.2026, Viewport 1280x900,
+// networkidle + 3 s — Fedlex ist eine SPA und setzt den Sprung selbst):
+//   .../eli/cc/2006/859/de#ta126z    → scrollY 64886; 2. Vorkommen «Wesentliche
+//     Mängel» bei top=0px (im Viewport), 1. Vorkommen bei top=-3097px (draussen).
+//   .../eli/cc/2006/859/de#art_126_z → scrollY 61735; 1. Vorkommen
+//     «Anlagebeschränkungen» bei top=32px (im Viewport), 2. Vorkommen bei
+//     top=3129px (draussen) — der Fehlsprung, den dieser Fix behebt.
+//
 // Regel eng gehalten (§7 «nichts fabrizieren»): genutzt wird der Name nur, wenn
 // er im ganzen Dokument genau einmal als name="…" und NIE als id="…" vorkommt —
 // sonst schlüge die Fragment-Auflösung wieder auf ein fremdes Element um. Greift
