@@ -783,8 +783,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-SEO-A11Y-GOVERNANCE.md](fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md) §4/§5
   (§-Sigel nachgezogen 30.8.2026 — Regel 11 bindet).
 
-- [ ] **Geräte-Last / Performance** *(`QS-PERF`, `[OF]`; **OR-Erst-Render und Register-Schnitt gehören zu Phase 1**, Entscheid 14.9.2026)*
-  <!-- @meta id: QS-PERF · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
+- [~] **Geräte-Last / Performance** *(`QS-PERF`, `[OF]`; **OR-Erst-Render und Register-Schnitt gehören zu Phase 1**, Entscheid 14.9.2026)*
+  <!-- @meta id: QS-PERF · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
   Nicht merklich langsamer, ohne Logikverlust (§15). Der **Erst-Render des OR braucht 8,4–17,2 s
   bis zur Bedienbarkeit** (vermessen 17.8.2026, Nullprobe auf `main` 6/6 rot) — das ist die Wurzel
   des Shard-7-Rots und der Fix gehört hierher, nicht in eine Spec-Anpassung.
