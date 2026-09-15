@@ -3,6 +3,7 @@ paths:
   - "src/lib/**"
 ---
 # §4 Eine Engine pro Rechtsgebiet
+<!-- @wiedervorlage: 2027-02-14 -->
 
 <!-- Wortlaut unverändert aus CLAUDE.md §4 hierher verschoben (QS-HOOKS-AUSBAU
      14.8.2026). Lädt pfad-gescoped bei Berührung von src/lib/**. -->

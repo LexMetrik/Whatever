@@ -21,6 +21,7 @@ für alle Rechtsanwender, **nur amtliche und urheberrechtsfreie Quellen**
 ---
 
 ## §1 Fachliche Korrektheit vor allem
+<!-- @wiedervorlage: 2027-03-15 -->
 
 Jede andere Zielgrösse — weniger Code, kleinere Bundles, elegantere
 Abstraktionen, schnellere Umsetzung — ist der Korrektheit der Rechtslogik
@@ -30,6 +31,7 @@ behandelt.** Ein Refactoring, das eine Frist, Quote oder Warnung verändert, ist
 kein Refactoring, sondern ein Bug.
 
 ## §2 Determinismus ohne Ausnahme
+<!-- @wiedervorlage: 2027-03-15 -->
 
 Alle Engines sind rein und deterministisch: gleiche Eingabe → gleiche Ausgabe.
 Kein LLM, keine Heuristik, keine Schätzung, kein `Date.now()` in der
@@ -38,16 +40,19 @@ klar regelbasiert ist — «feste Rechenregeln, keine Schätzung» ist das
 Produktversprechen.
 
 ## §3 Schichtentrennung: Logik ≠ Darstellung → `.claude/rules/schichtentrennung.md`
+<!-- @wiedervorlage: 2027-02-14 -->
 
 Wortlaut unverändert dorthin verschoben (QS-HOOKS-AUSBAU 14.8.2026); lädt
 pfad-gescoped bei Berührung von `src/**`.
 
 ## §4 Eine Engine pro Rechtsgebiet → `.claude/rules/engine-trennung.md`
+<!-- @wiedervorlage: 2027-02-14 -->
 
 Wortlaut unverändert dorthin verschoben (QS-HOOKS-AUSBAU 14.8.2026); lädt
 pfad-gescoped bei Berührung von `src/lib/**`.
 
 ## §5 Single Source of Truth
+<!-- @wiedervorlage: 2027-03-15 -->
 
 Katalog = `startseiteConfig.ts` · Vorlagen-Inhalt = die Schemas in
 `src/lib/vorlagen/` · PDF und DOCX rendern aus **demselben** Assemble-Ergebnis ·
@@ -59,6 +64,7 @@ Für Korpus-Inhalte ist das generator-erzeugte DB-Artefakt die eine Quelle;
 daraus und werden nie an der DB vorbei gepflegt.
 
 ## §6 Verhaltensneutralität ist zu beweisen, nicht zu behaupten
+<!-- @wiedervorlage: 2027-03-15 -->
 
 Ein Struktur-Umbau ist erst dann einer, wenn Tests vorher **und** nachher grün
 sind und die Golden-Outputs **byte-gleich** bleiben. Zwei Sätze davon sind nicht
@@ -75,6 +81,7 @@ Datei-Schlankheit (§6.6), die vier Tor-Bedingungen (§6.7): Skill
 **`refactoring`**.
 
 ## §7 Normen verifizieren, nicht vertrauen
+<!-- @wiedervorlage: 2027-03-15 -->
 
 Jeder Norm-Anker wird empirisch gegen die amtliche Quelle geprüft. Aufträge —
 auch sorgfältig formulierte — können faktische Fehler enthalten: dann
@@ -93,6 +100,7 @@ Quell-Wahl, Adapter und die sechs Build-Regeln der Norm-Snapshots: Skill
 **`korpus-werkstatt`**.
 
 ## §8 Ehrlichkeit gegenüber Nutzern
+<!-- @wiedervorlage: 2027-03-15 -->
 
 Das Status-Modell (entwurf / geprüft / geplant) zeigt den echten Prüfungsstand.
 Unsicherheiten, offene kantonale Verifikationen und methodische Annahmen werden
@@ -101,6 +109,7 @@ Formvorschriften (Eigenhändigkeit, Beurkundung) bestimmen, welche Exportformate
 überhaupt angeboten werden.
 
 ## §9 Deploy-Disziplin → Skill `landung`
+<!-- @wiedervorlage: 2027-02-08 -->
 
 Merge nach `main` **ist** der Deploy (Vercel liefert `main` automatisch aus).
 Die §9-Sorgfalt — Tore grün, Bug-Check, Golden byte-gleich — gilt **vor** dem
@@ -110,6 +119,7 @@ bis ein Gegenprüfungs-Verdikt vorliegt. Ablauf, Ausnahmen und Red Flags: Skill
 `deploy-check`).
 
 ## §10 Wachstum folgt dem Rahmen → Skill `auftrag`
+<!-- @wiedervorlage: 2027-02-08 -->
 
 Neue Vorlagen und Rechner nutzen die bestehenden geteilten Bausteine statt
 Kopien. Fehlt ein Rahmen, wird erst der Rahmen gebaut, dann das Feature darauf.
@@ -118,6 +128,7 @@ vorbeugendes Prinzip aus dem Leitbild, ohne Vorfalls-Anlass — Behalt-Entscheid
 weil jede neue Vorlage die Regel real konsumiert.)*
 
 ## §11 Erforschtes Wissen wird geordnet abgelegt
+<!-- @wiedervorlage: 2027-08-14 -->
 
 Jede Recherche mündet in `bibliothek/` mit `INDEX.md`-Eintrag (Quelle mit
 Stand · Regel deterministisch · Geltung/Ausnahmen · Pflegebedarf ·
@@ -126,6 +137,7 @@ Erkenntnisse zusätzlich am Fundort verankern (§7). *(Gestrafft 14.8.2026,
 Regelaudit QS-EFFIZIENZ — Inhalt unverändert, Wächter: `check:bibliothek`.)*
 
 ## §12 Parallel-Sessions nur isoliert → Skill `landung`
+<!-- @wiedervorlage: 2027-03-15 -->
 
 Zweite und jede weitere Session arbeitet in einem eigenen git-Worktree. Im
 geteilten Verzeichnis: Commits nur mit explizitem Pathspec, kein `git stash` bei
@@ -133,6 +145,7 @@ fremdem WIP, kein `git commit --amend`. Merge-Treiber-Politik und serielle
 Landung: Skill **`landung`**.
 
 ## §13 Design → `.claude/rules/design.md` + `DESIGN-REGLEMENT.md`
+<!-- @wiedervorlage: 2027-02-14 -->
 
 Wortlaut unverändert in die Regel-Datei verschoben (QS-HOOKS-AUSBAU
 14.8.2026); lädt pfad-gescoped bei Berührung der Darstellungsschicht
@@ -140,6 +153,7 @@ Wortlaut unverändert in die Regel-Datei verschoben (QS-HOOKS-AUSBAU
 Design-Tokens).
 
 ## §14 Aufnahme und Einordnung neuer Aufträge → Skill `auftrag`
+<!-- @wiedervorlage: 2027-03-15 -->
 
 Eingang ist `ROADMAP.md`; Plan-Stand vor dem Start über `npm run plan:next`
 abfragen und Erledigtes danach abhaken; verwandte Schritte zu einer Bau-Einheit
@@ -148,6 +162,7 @@ bündeln, ohne Risiko-Klassen zu mischen. **§14.4** (Definition of Done),
 stehen im Skill **`auftrag`**.
 
 ### §14.7 Vertrauensgrenze
+<!-- @wiedervorlage: 2027-03-15 -->
 
 Bleibt hier, weil eine Sicherheitsklausel, die erst bei der Tätigkeit lädt, zu
 spät kommt:
@@ -161,6 +176,7 @@ Sub-Agenten sehen diese Datei nicht — die Klausel gehört wörtlich in jeden
 Auftrag.
 
 ## §15 Geräte-Last → Skill `perf`
+<!-- @wiedervorlage: 2027-03-15 -->
 
 Nicht merklich langsamer werden, **solange daraus kein Logikverlust entsteht**;
 bei Konflikt gewinnt immer die Treue, nie das Tempo (§1). Jede
@@ -175,6 +191,7 @@ belegt**, damit Bestandsverweise nicht still auf eine andere Regel zeigen; eine
 künftige Regel bekommt §17 oder höher.
 
 ## §17 Konstante Prozessverbesserung (Handlungsauftrag David 3.8.2026)
+<!-- @wiedervorlage: 2027-02-28 -->
 
 Wer ein Merge-, CI- oder Prozessproblem **erkennt**, behebt es **an der Wurzel**
 oder legt einen konkreten Roadmap-Schritt mit Wurzel-Fix an — nie nur umschiffen.
@@ -199,6 +216,7 @@ Wortlaut samt Präzedenzen: Skill **`lehren`** §Gegengewicht (wörtlich dorthin
 verschoben, Token-Diät 30.8.2026 — CLAUDE.md lädt bei jedem Dispatch).
 
 ## §18 Geheimnisse bleiben draussen (Gutachten-Befund 7.8.2026)
+<!-- @wiedervorlage: 2027-02-07 -->
 
 API-Schlüssel, Tokens und andere Zugangsdaten erscheinen nie im Repo, in Logs,
 in Commit-Messages oder in Sub-Agenten-Aufträgen; Konfiguration ausschliesslich

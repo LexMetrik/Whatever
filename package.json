@@ -196,6 +196,7 @@
     "dispatch": "vite-node scripts/dispatch-cli.ts --",
     "dispatch:agents": "vite-node scripts/dispatch-agents-cli.ts",
     "check:dispatch-klausel": "vite-node scripts/check-dispatch-klausel.ts",
+    "check:regel-wiedervorlage": "vite-node scripts/check-regel-wiedervorlage.ts",
     "fremdagenten:messung": "FREMDAGENTEN_CLI=1 vite-node scripts/analyse/fremdagenten-messung.ts --",
     "zh:cache": "vite-node scripts/normtext/zh-cache-fuellen.ts --",
     "perf:leser-lcp": "vite-node scripts/perf/leser-lcp.ts --",
