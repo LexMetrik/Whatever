@@ -25,9 +25,16 @@ const erlass: BrowseErlass = {
 
 // Voll aufgehobener Artikel (leerer Körper «…») + amtliche Aufhebungs-Fussnote
 // auf Artikelebene (absatz/item null).
+//
+// RE-BLESS W2·27 (15.9.2026, §6.3 deklariert): die Vorrichtung trägt jetzt
+// zusätzlich `aufgehoben: true`. Bis dahin genügte der Platzhalter-Body, um die
+// Zeile «· aufgehoben» zu erzeugen; seit der §8-Trennung sagt der Leser das nur
+// noch mit amtlichem Vermerk — und genau den beschreibt dieser Fall («amtliche
+// Aufhebungs-Fussnote»). Ohne das Feld prüfte er ab sofort den anderen Fall.
 const aufgehoben: NormSnapshot = {
   id: 'bund/ZGB/art_349', ebene: 'bund', quelle: 'ZGB', erlass: 'ZGB', artikel: '349', artikelLabel: 'Art. 349',
   bloecke: [{ absatz: null, text: '…' }],
+  aufgehoben: true,
   stand: '2026-01-01', quelleUrl: 'https://x', abgerufen: '2026-06-29', fassungsToken: '20260101', sha: 'x',
 };
 const aufhebung: Fussnote[] = [

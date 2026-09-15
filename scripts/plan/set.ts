@@ -1,7 +1,7 @@
 // scripts/plan/set.ts
 import { readFileSync, writeFileSync } from 'node:fs';
 import { parseEtikett, serializeEtikett } from './etikett';
-import { bindeCheckbox, checkboxAus, CHECKBOX_STATUS, parseRoadmap } from './parse';
+import { bindeCheckbox, checkboxAus, CHECKBOX_STATUS, CHRONIK_DATEI, chronikErledigte, dateiLeser, parseRoadmap, ladeChronikDone } from './parse';
 import { resolve } from './aufloesen';
 import { obersterMarkerId } from './marker';
 
@@ -23,11 +23,39 @@ const FELDER = new Set(['id', 'status', 'blocker', 'dep', 'feld', 'fahrplan']);
 const CHECKBOX_FUER: Record<string, string> = { done: '[x]', wip: '[~]' };
 const CHECKBOX_ERSATZ_RE = /([-*+][ \t]*)\[[ xX~dD]\]/;
 
-export function setField(md: string, id: string, feld: string, wert: string): string {
+/**
+ * @param leseDatei injizierter Datei-Leser, allein für die Diagnose unten
+ *   (ROADMAP-CHRONIK.md). Injiziert statt fest verdrahtet, damit `setField` rein
+ *   und dateisystemfrei testbar bleibt — wie `pruefe` in check.ts.
+ */
+export function setField(
+  md: string,
+  id: string,
+  feld: string,
+  wert: string,
+  leseDatei: (p: string) => string | null = dateiLeser,
+): string {
   if (!FELDER.has(feld)) throw new Error(`Unbekanntes Feld "${feld}"`);
   const zeilen = md.split('\n');
   const idx = zeilen.findIndex((z) => z.includes('<!-- @meta') && parseEtikett(z).id === id);
-  if (idx < 0) throw new Error(`Schritt-id "${id}" nicht gefunden`);
+  if (idx < 0) {
+    // Seit der Deckel-Entlastung (15.9.2026) wandern erledigte Schritte WÖRTLICH
+    // nach ROADMAP-CHRONIK.md und verschwinden damit aus ROADMAP.md. «nicht
+    // gefunden» ist dann eine wahre, aber irreführende Auskunft: sie liest sich
+    // wie ein Tippfehler in der ID und schickt den Bediener auf die Suche nach
+    // einem Schritt, den er gerade selbst korrekt archiviert hat. Also den
+    // Fundort nennen — und trotzdem werfen: ein Archiv-Eintrag ist Wortlaut-Beleg
+    // und wird nie nachgeführt (Regel: Belege altern nicht).
+    const archiviert = chronikErledigte(leseDatei(CHRONIK_DATEI)).status.get(id);
+    if (archiviert !== undefined) {
+      throw new Error(
+        `Schritt-id "${id}" steht nicht in ROADMAP.md — sie liegt erledigt in der Chronik ` +
+          `(${CHRONIK_DATEI}, status: ${archiviert}). Archivierte Schritte werden nicht mehr gesetzt; ` +
+          `wer sie wieder aufnimmt, legt einen neuen Schritt an.`,
+      );
+    }
+    throw new Error(`Schritt-id "${id}" nicht gefunden`);
+  }
 
   // Zeile normalisieren (kanonische Feld-Reihenfolge), dann das eine Feld ersetzen.
   const indent = zeilen[idx].match(/^([ \t]*(?:>[ \t]*)*)/)![1];
@@ -122,7 +150,9 @@ export function prosaMarkerDriftHinweis(md: string): string | null {
   const idImText = obersterMarkerId(md);
   if (idImText === null) return null;
   const { einheiten, queue } = parseRoadmap(md);
-  const readyNow0 = resolve(einheiten, queue).readyNow[0] ?? null;
+  // Chronik mit auflösen — sonst nennt der Hinweis einen anderen «obersten» als
+  // plan:next und check.ts Regel 8.4 (dieselbe Drift, nur eine Ebene höher).
+  const readyNow0 = resolve(einheiten, queue, ladeChronikDone()).readyNow[0] ?? null;
   if (idImText === readyNow0) return null;
   return (
     `Hinweis: Prosa-Marker nennt \`${idImText}\`, plan:next liefert nun \`${readyNow0 ?? '—'}\` — ` +

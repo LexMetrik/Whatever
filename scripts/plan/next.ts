@@ -1,7 +1,7 @@
 // scripts/plan/next.ts — CLI über der nebenwirkungsfreien Auflösung (aufloesen.ts).
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
-import { parseRoadmap } from './parse';
+import { parseRoadmap, ladeChronikDone } from './parse';
 import { resolve } from './aufloesen';
 import { lageBlock } from './lage';
 import { leseNotizen, notizenBefund, notizenVerzeichnis, notizenZeilen } from './notizen';
@@ -10,7 +10,11 @@ export { resolve, type Buckets } from './aufloesen';
 // CLI
 if (!process.env.VITEST) {
   const { einheiten, queue } = parseRoadmap(readFileSync('ROADMAP.md', 'utf8'));
-  const b = resolve(einheiten, queue);
+  // Erledigte Schritte dürfen in ROADMAP-CHRONIK.md liegen (Deckel-Entlastung
+  // 15.9.2026) — ihre dep-Kanten gelten trotzdem als erfüllt. Ohne diese Zeile
+  // meldete plan:next jeden Nachfolger eines archivierten Schrittes als
+  // «wartet auf dep» und nie als baubar.
+  const b = resolve(einheiten, queue, ladeChronikDone());
   const z = (s: string) => console.log(s);
   z(`▶ OBERSTER offener Schritt: ${b.readyNow[0] ?? '—'}`);
   // Token-Diät 31.8.2026 (QS-EFFIZIENZ): die volle ready-now-Aufzählung stand

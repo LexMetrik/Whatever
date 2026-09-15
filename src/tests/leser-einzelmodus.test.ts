@@ -164,19 +164,20 @@ describe('(f) der Blätter-Schritt überspringt nichts (§8)', () => {
 describe('(g) die Nachbarn-Vorschau (F-E2)', () => {
   it('nimmt Nummer, Randtitel und Zustand aus dem geladenen Snapshot', () => {
     const ziel = vorschauZiel(
-      { token: '337_d', label: 'Art. 337d', aufgehoben: false },
+      { token: '337_d', label: 'Art. 337d', zustand: 'lebt' },
       (t) => (t === '337_d' ? 'Ungerechtfertigtes Nichtantreten' : null),
     );
     expect(ziel).toEqual({
       token: '337_d', label: 'Art. 337d',
-      marginalie: 'Ungerechtfertigtes Nichtantreten', aufgehoben: false,
+      marginalie: 'Ungerechtfertigtes Nichtantreten', zustand: 'lebt',
     });
   });
 
   it('ohne Randtitel steht nichts da — keine gebastelte Kurzfassung (§8)', () => {
-    const ziel = vorschauZiel({ token: '5', label: 'Art. 5', aufgehoben: true }, () => null);
+    // RE-BLESS W2·27 (15.9.2026): `aufgehoben: boolean` → `zustand`-Belegstufe.
+    const ziel = vorschauZiel({ token: '5', label: 'Art. 5', zustand: 'aufgehoben' }, () => null);
     expect(ziel?.marginalie).toBeNull();
-    expect(ziel?.aufgehoben).toBe(true);
+    expect(ziel?.zustand).toBe('aufgehoben');
   });
 
   it('am Rand des Erlasses gibt es keine Karte', () => {

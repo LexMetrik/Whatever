@@ -33,12 +33,13 @@ falsch — korrigiert 30.8.2026). Karten abgeschlossener Sessions (älter als
 werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
-## Session 15.9.2026 (3) — Planung «Entstehung am Artikel Stufe 4» (1 Doku-PR, kein Bau)
+## Session 15.9.2026 (3) — Planung «Entstehung am Artikel Stufe 4» (3 PRs, kein Bau)
 
 - Drei Live-Recherchen → `bibliothek/materialien/entstehung-2026-09-15/`; Leitprinzip 8; fünf
-  Schritte `W2·6d-*` in der `@queue`; K-7 + PDF-Kern; Fahrplan Materialien §12. Lehren: Host-Tausch
-  versagt bei fga-`doc` < 2017 (Skill recipes). Offen `[D]`: Materialien-Rangfolge; Personendaten.
-- Vorlauf ohne Karte (fremde Sessions, §12): #888 Manifest-Frische-Tor, #889 W2·27 WP-D Randtitel.
+  Schritte `W2·6d-*` in `@queue`; K-7 + PDF-Kern; Fahrplan Materialien §12 (#893). Lehre: Host-Tausch
+  versagt bei fga-`doc` < 2017. Offen `[D]`: Rangfolge, Personendaten.
+- Nachlauf: #895 Hook-Hinweis PDF (Deckel riss), #896 dep-Chronik (Opus).
+- Vorlauf ohne Karte §12: #888 Frische-Tor, #889 Randtitel, #891 Notizen-Datei.
 
 ## Session 15.9.2026 (2) — Dossier «Rekursive Selbstverbesserung» + `QS-BEWAEHRUNG` gebaut (6 PRs)
 
