@@ -13,6 +13,7 @@ import { grundartMeta, pfadZu } from './helpers';
 import { istHashVerbraucht } from './scrollAnker';
 import { paneRoot } from './berechnungen';
 import { loeseSpyNachlauf } from './inhalt-hooks';
+import { merkeSprungAstManuell } from './sprungAst';
 import { useTiefLinkZweig } from './v3/tiefLinkZweig';
 
 // ═══ ABSCHNITT · Sektions-Sprung, Instanz-Navigation, Suche-Scroll (§6.6-Split,
@@ -107,7 +108,12 @@ export function useSektionSprung(opts: {
     // Sprung-Ziel als MANUELL behandeln (K): in manuellOffenRef aufnehmen und aus
     // dem Auto-Set nehmen, damit der Scroll-Spy den angesprungenen Zweig nicht
     // gleich wieder zuklappt.
-    for (const x of ids) { autoOffenRef.current.delete(x); autoTickRef.current.delete(x); manuellOffenRef.current.add(x); manuellZuRef.current.delete(x); }
+    // Seit 15.9.2026 steht die Regel in `./sprungAst` — der ARTIKEL-Sprung hielt
+    // hier nur die halbe Buchhaltung und liess den Ast ungeschützt (Fehlerbuch).
+    merkeSprungAstManuell(ids, {
+      autoOffen: autoOffenRef.current, autoTick: autoTickRef.current,
+      manuellOffen: manuellOffenRef.current, manuellZu: manuellZuRef.current,
+    });
     // §15.2: der Klick öffnet den TOC-Zweig — diese Höhenänderung SYNCHRON im
     // Klick-Task committen (flushSync), damit der Layout-Shift des einwachsenden
     // Gliederungs-Zweigs dem Input zugerechnet wird (hadRecentInput ⇒ CLS-frei).
