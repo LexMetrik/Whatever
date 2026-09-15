@@ -189,7 +189,10 @@ Prüfarbeit, macht aber selbst: Plan-/Doku-Buchhaltung, Landungs-Mechanik,
 kleine verifizierte Fixes < ~30 Min, Konfig-Flächen (mit Davids Freigabe).
 Übersteigt der Übergabe-Aufwand die Arbeit, ist Delegation Pseudo-Disziplin.
 **Delegationspflichtig bleiben:** Gegenprüfung (Unabhängigkeit!),
-Risiko-Pfad-Bau, alles Parallelisierbare oder Kontext-Schwere.
+Risiko-Pfad-Bau, alles Parallelisierbare oder Kontext-Schwere. Dazu gehört
+auch die Session-Notizen-Datei (§17, Weisung David 15.9.2026): der
+Orchestrator führt sie selbst, nie ein Sub-Agent (Skill `bauschritt`
+Station A/B/E).
 
 **Vier Orchestrator-Fallen** (Belege 5.–9.8.2026, Detail: git-Historie):
 (a) nie Probe-/Testnachrichten an Agenten, Empfänger-ID vor dem Senden

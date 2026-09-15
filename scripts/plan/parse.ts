@@ -1,4 +1,5 @@
 // scripts/plan/parse.ts
+import { existsSync, readFileSync } from 'node:fs';
 import { parseEtikett, type Etikett } from './etikett';
 
 export type Checkbox = '[ ]' | '[x]' | '[~]' | '[d]' | null;
@@ -145,4 +146,94 @@ export function parseRoadmap(md: string): { einheiten: Einheit[]; blockers: Reco
     }
   }
   return { einheiten, blockers, queue };
+}
+
+/**
+ * Die Chronik — `ROADMAP-CHRONIK.md`, das Wortlaut-Archiv erledigter Schritte.
+ *
+ * Sie ist die ZWEITE Fundstelle für eine Schritt-ID (die erste und massgebliche
+ * bleibt `ROADMAP.md`). Ohne sie wäre der ROADMAP-Deckel von 120 KiB nicht mehr
+ * senkbar: ein erledigter Schritt, auf den irgendein lebender Schritt noch `dep`
+ * hält, müsste bis in alle Ewigkeit in der ROADMAP stehen bleiben, weil check.ts
+ * Regel 4 seine ID sonst als «existiert nicht» meldet (Messung 14.9.2026: fünf
+ * Bytes Luft unter dem Ceiling, vier Schritte durch genau diese Kante gesperrt).
+ */
+export const CHRONIK_DATEI = 'ROADMAP-CHRONIK.md';
+
+/**
+ * Was die Chronik über archivierte Schritt-IDs weiss.
+ *
+ * WARUM nicht einfach eine Menge erledigter IDs: die Chronik ist ein
+ * WORTLAUT-Archiv, kein Status-Register. Sie friert den Text eines Schrittes
+ * samt des damals gültigen `status:` ein und wird nie nachgeführt (Messung
+ * 15.9.2026: 83 Anker, davon 16 mit `ready`/`wip` — historische Zwischenstände).
+ * Wer sie als Status-Quelle liest, muss diesen Unterschied sehen können, sonst
+ * gilt ein damals halbfertiger Schritt heute still als erledigt.
+ */
+export interface ChronikWissen {
+  /** IDs, die die Chronik eindeutig als `done` archiviert — nur diese erfüllen ein `dep`. */
+  done: ReadonlySet<string>;
+  /** ID → archivierter Status, für die Fehlermeldung («steht als wip, nicht als done»). */
+  status: ReadonlyMap<string, string>;
+  /** IDs, die die Chronik MEHRFACH mit VERSCHIEDENEM Status führt — nicht auflösbar. */
+  mehrdeutig: ReadonlySet<string>;
+}
+
+/**
+ * Liest die `@meta`-Anker der Chronik.
+ *
+ * Dieselbe Erkennung wie `parseRoadmap` (`<!-- @meta`, `parseEtikett`) statt einer
+ * eigenen Regex — zwei Leseregeln für dasselbe Format wären zwei Wahrheiten (§5),
+ * und sie könnten nur still auseinanderlaufen.
+ *
+ * Eine NICHT parsebare Anker-Zeile wird übersprungen statt geworfen: die Chronik
+ * ist ein halbe Megabyte grosses Archiv mit Anker-Formen aus einem Jahr Bauzeit
+ * (der Parser toleriert gestrichene Felder ausdrücklich, s. etikett.ts), und ein
+ * Absturz beim Lesen des ARCHIVS würde `plan:next`, `check:plan` und `plan:bild`
+ * gleichzeitig lahmlegen. Die Folge eines übersprungenen Ankers ist die sichere
+ * Richtung: sein `dep`-Ziel gilt als «existiert nicht» und wird laut gemeldet.
+ */
+export function chronikErledigte(md: string | null): ChronikWissen {
+  const status = new Map<string, string>();
+  const mehrdeutig = new Set<string>();
+  if (!md) return { done: new Set(), status, mehrdeutig };
+  for (const z of md.split(/\r?\n/)) {
+    if (!z.includes('<!-- @meta')) continue;
+    let e: Etikett;
+    try {
+      e = parseEtikett(z);
+    } catch {
+      continue;
+    }
+    const bisher = status.get(e.id);
+    // Mehrfach mit GLEICHEM Status ist eindeutig (Bestandsform: `W2·23-STARTSEITE-V4`
+    // steht 2× als done). Erst ein WIDERSPRUCH macht die Auflösung unmöglich.
+    if (bisher !== undefined && bisher !== e.status) mehrdeutig.add(e.id);
+    else status.set(e.id, e.status);
+  }
+  const done = new Set<string>();
+  for (const [id, st] of status) if (st === 'done' && !mehrdeutig.has(id)) done.add(id);
+  return { done, status, mehrdeutig };
+}
+
+/**
+ * Datei-Leser der Plan-Werkzeuge: Inhalt oder `null`, wenn nicht lesbar.
+ *
+ * Lag bis 15.9.2026 in check.ts. Der Umzug ist kein Stil, sondern Notwehr: die
+ * CLI-Einstiege (next.ts, set.ts, bildSeiten.ts, bildBau.ts) brauchen denselben
+ * Leser, und ein Import aus check.ts zöge dessen CLI-Block als Nebenwirkung mit
+ * — er liest ROADMAP.md und ruft bei Funden `process.exit(1)`, mitten in einem
+ * fremden Werkzeug (dieselbe Falle, die marker.ts in ihrem Kopf beschreibt).
+ * check.ts re-exportiert das Symbol, damit bestehende Importe gültig bleiben.
+ */
+export const dateiLeser = (p: string): string | null => (existsSync(p) ? readFileSync(p, 'utf8') : null);
+
+/**
+ * Die `done`-IDs der Chronik von der Platte — die eine Verkettung aus
+ * `dateiLeser` + `CHRONIK_DATEI` + `chronikErledigte`, statt sie an jedem der
+ * vier CLI-Einstiege zu wiederholen (§5). Genau diese Menge gehört in
+ * `resolve(einheiten, queue, ...)`.
+ */
+export function ladeChronikDone(leser: (p: string) => string | null = dateiLeser): ReadonlySet<string> {
+  return chronikErledigte(leser(CHRONIK_DATEI)).done;
 }

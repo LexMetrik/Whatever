@@ -7,7 +7,7 @@ description: Verwenden für einen Lagebild-Bau-Prompt oder einen einzelnen Roadm
 
 **Anlass-Kopf — Ritual-Diät 29.8.2026 (Auftrag David: «Kontrolle abbauen, wo
 sie nichts trägt»).** Der frühere «leichte Pfad» ist ab hier der NORMALFALL:
-Station A hat 3 Punkte, Station E 6 (Nachtrag 4.9.2026:
+Station A hat 4 Punkte (Nachtrag 15.9.2026: Session-Notizen-Datei), Station E 7 (Nachtrag 4.9.2026:
 Fremdagenten-Messwerte; Nachtrag 4.9.2026: Kontingent-Lauf). Was gestrichen wurde und warum, steht
 unten unter «Gestrichene Pflichten» — **Station C (Prüfung) ist unverändert**,
 und §9/§12/§14.7/§18 bleiben Wort für Wort in Kraft.
@@ -19,7 +19,7 @@ Session. Nach Landung baut eine tragfähige Session automatisch weiter
 (Station W). Davids einziger Input ist der Bau-Prompt — alles Übrige läuft
 ohne Rückfrage nach diesem Zyklus.
 
-## Station A — Einstieg (3 Punkte)
+## Station A — Einstieg (4 Punkte)
 
 1. **`git fetch --prune`, dann `plan:next`**, Lage-Block **lesen**: stale
    `wip`, gleiches `feld:` auf `wip`, fremde Bau-Plätze = Kollisionsmeldung →
@@ -35,6 +35,12 @@ ohne Rückfrage nach diesem Zyklus.
    Auto-Merge-PRs auf BEHIND; Hook `tor-schutz.py` blockt, Skill `landung`
    Ziff. 7). Parallel-Session ⇒ eigener Worktree (§12). Bau-Spec bei Bedarf
    als Slice: `npm run fahrplan -- <fahrplan-datei> <§>`.
+4. **Notizen-Datei anlegen** (§17, Weisung David 15.9.2026): aus der Vorlage
+   `docs/token-oekonomie/session-notizen-vorlage.md` unter
+   `<Haupt-Checkout>/.claude/notizen/<YYYY-MM-DD>-<session-slug>.md`
+   (gitignored). Zeigt `plan:next` bereits eine Vorgänger-Datei mit offenen
+   Posten (`📝 Session-Notizen: … — N offen`), wird sie ÜBERNOMMEN
+   (weiterführen), nicht ignoriert.
 
 ## Station B — Bau
 
@@ -59,6 +65,10 @@ ohne Rückfrage nach diesem Zyklus.
 - **Nebenfunde in den Plan**, nie in diese Session oder als Chip:
   Checklisten-Zeile im Dach-Schritt, sonst ROADMAP-Schritt (Skill `auftrag`
   Ziff. 3), weiterbauen.
+- **Jeder Agentenbericht: Punkt «Nebenfunde/Abweichungen» und jede
+  aufkommende Lehre SOFORT in die Notizen-Datei**, vor dem nächsten Dispatch —
+  der Chat ist kein Speicher (Kompaktierung bei 400k; Weisung David
+  15.9.2026).
 
 ## Station C — Prüfung (unverändert)
 
@@ -98,8 +108,11 @@ Commit mit eigenem Roadmap-Trailer).
 **NIE sortenrein-widrig auf Risikopfade wechseln**; Schluss
 **spätestens bevor der Kontext zur Neige geht** — lieber sauber landen.
 
-## Station E — Abschluss (5 Punkte)
+## Station E — Abschluss (7 Punkte)
 
+- [ ] **Notizen-Datei abarbeiten:** jede Zeile an ihren Repo-Ort (ROADMAP-
+      Zeile, Fahrplan, Skill, Tor), danach Datei löschen. Übergabe statt
+      Abschluss: Datei bleibt, Pfad im Übergabe-Chip.
 - [ ] **Karten-ZEILE in `STRUKTUR.md`** (was gebaut, Commit/PR-Beleg).
       Volle Session-Karte NUR bei Risikopfad-Berührung, gezogener §17-Lehre
       oder offenen Enden, die eine Folge-Session steuern müssen.
@@ -129,7 +142,10 @@ Commit mit eigenem Roadmap-Trailer).
 - **`npm run selbstopt:erheben`** — auf Abruf bzw. über den Wächter; die
   Zeitreihe braucht keinen Snapshot je Session.
 - **`struktur-rotieren.py --check`** — läuft als SessionStart-Hook UND als
-  CI-Tor `check:steuerdeckel`; eine dritte Handprüfung fängt nichts.
+  CI-Tor `check:steuerdeckel`; eine dritte Handprüfung fängt nichts — ausser
+  nach einem Edit an `.claude/hooks/*.py` oder `scripts/check-*.ts`: dort
+  einmal von Hand vor dem Push (Flächen-Deckel; Beleg #895, 15.9.2026: ein
+  CI-Lauf verloren).
 - **Memory-Durchsicht** — nur wenn die Session das Memory berührt hat.
 - **Grössen-Check (`groesse:`)** — Feld existiert nicht mehr; Bündelung
   läuft über `feld:` (Station A Ziff. 1).

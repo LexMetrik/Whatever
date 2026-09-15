@@ -17,7 +17,7 @@ import {
 } from '../../lib/entstehung/synopse-diff';
 import { SynopseKarte, type EntwurfFund } from './SynopseKarte';
 import { ladeKantenShard } from '../../lib/materialien/kanten-shard';
-import { artikelGanzAufgehoben } from '../../lib/normtext/darstellung';
+import { artikelLeerstellenStatus } from '../../lib/normtext/darstellung';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import type { ArtikelHistorie, HistorieEreignis } from '../../lib/normtext/historie-laden';
 
@@ -321,7 +321,8 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
 
   // ── Der geltende Wortlaut als rechte Spalte (§5: keine zweite Ablage) ──────
   const geltend = geltendeBloecke(snapshot?.bloecke);
-  const geltendAufgehoben = snapshot ? artikelGanzAufgehoben(snapshot.bloecke, snapshot.aufgehoben) : false;
+  // W2·27 (15.9.2026): dreiwertig — «aufgehoben» nur mit amtlichem Beleg (§8).
+  const geltendZustand = snapshot ? artikelLeerstellenStatus(snapshot.bloecke, snapshot.aufgehoben) : 'lebt';
   const geltendQuelle = {
     stand: snapshot?.stand, quelleUrl: snapshot?.quelleUrl, abgerufen: snapshot?.abgerufen,
   };
@@ -388,7 +389,7 @@ export function EntstehungsBlock({ historie, erlassKey, artikel, snapshot }: {
       lage = { art: 'vergleich', treffer };
     }
     return <SynopseKarte id={id} lage={lage} shard={synShard} geltend={geltendQuelle}
-      entwurf={e ? entwurfFund : null} aufgehoben={geltendAufgehoben} />;
+      entwurf={e ? entwurfFund : null} zustand={geltendZustand} />;
   };
 
   const zusatz = (e: HistorieEreignis, i: number): ReactNode => {

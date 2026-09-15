@@ -6,6 +6,7 @@ import {
 } from './einzelModus';
 import type { ArtikelNachbarn as NachbarnAmArtikel } from './nachbarArtikel';
 import type { LeserV3Modell } from './leserV3Modell';
+import { leerstellenWort } from '../../../lib/normtext/darstellung';
 
 // ═══ W2·5m · DIE EINZELARTIKEL-ANSICHT (Kap. 15.3/15.4) ═════════════════════
 //
@@ -172,10 +173,12 @@ function VorschauKarte({ ziel, richtung, adresse, eigen }: {
   // ausdrücklich als «kein eigener Mehrwert»; das ist die Bedingung, unter der
   // sie trotzdem einen hat.
   if (!ziel || !ziel.marginalie) return <span />;
+  // W2·27: EIN Zustandswort für Pfeil, Vorschau und Statuszeile (§5).
+  const zustandsWort = leerstellenWort(ziel.zustand);
   return (
     <Link to={adresse(ziel.token)} data-vorschau={richtung}
       className="lr7-einzel-vorschau-karte"
-      aria-label={`${richtung === 'vor' ? 'Davor' : 'Danach'} — ${eigen} zu ${ziel.label}${ziel.marginalie ? `: ${ziel.marginalie}` : ''}${ziel.aufgehoben ? ' (aufgehoben)' : ''}`}>
+      aria-label={`${richtung === 'vor' ? 'Davor' : 'Danach'} — ${eigen} zu ${ziel.label}${ziel.marginalie ? `: ${ziel.marginalie}` : ''}${zustandsWort ? ` (${zustandsWort})` : ''}`}>
       <span className="lr7-einzel-vorschau-num num text-body-s">
         {richtung === 'vor' && <span aria-hidden>‹ </span>}
         {ziel.label}
@@ -185,7 +188,7 @@ function VorschauKarte({ ziel, richtung, adresse, eigen }: {
           WOVON die nächste Bestimmung handelt. Fehlt er, steht nichts da —
           kein Platzhalter, keine erfundene Kurzfassung des Wortlauts (§8). */}
       {ziel.marginalie && <span className="lr7-einzel-vorschau-marg text-micro leading-snug">{ziel.marginalie}</span>}
-      {ziel.aufgehoben && <span className="lr7-einzel-vorschau-marg text-micro leading-snug">aufgehoben</span>}
+      {zustandsWort && <span className="lr7-einzel-vorschau-marg text-micro leading-snug">{zustandsWort}</span>}
     </Link>
   );
 }

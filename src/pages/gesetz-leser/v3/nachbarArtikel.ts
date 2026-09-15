@@ -1,4 +1,6 @@
-import { labelMitBereich, artikelGanzAufgehoben } from '../../../lib/normtext/darstellung';
+import {
+  labelMitBereich, artikelLeerstellenStatus, type LeerstellenStatus,
+} from '../../../lib/normtext/darstellung';
 import type { NormSnapshot } from '../../../lib/normtext/typen';
 
 // ═══ W2·5m · NACHBAR-ARTIKEL: «‹ Art. 89» / «Art. 90a ›» ════════════════════
@@ -26,8 +28,13 @@ import type { NormSnapshot } from '../../../lib/normtext/typen';
 // Leser. Ein Pfeil, der still über die Lücke springt, verschwiege dem Leser,
 // DASS die Bestimmung aufgehoben wurde: das ist keine Bequemlichkeit, sondern
 // eine falsche Auskunft über den Erlass. Der Zustand wandert stattdessen in den
-// zugänglichen Namen des Links (`aufgehoben`), damit die Sprachausgabe ihn
-// nennt, bevor man springt.
+// zugänglichen Namen des Links, damit die Sprachausgabe ihn nennt, bevor man
+// springt.
+//
+// W2·27 (15.9.2026): der Zustand ist DREIwertig, seit der Leser den amtlich
+// belegten Fall vom bloss vermuteten trennt. Ein Boolean hier hiesse, dem
+// Nachbarn «aufgehoben» anzusagen, wo der Artikel selbst «kein Text im
+// Snapshot» sagt — zwei Wörter für denselben Zustand (§5).
 //
 // Rein und deterministisch (§2): kein DOM, keine Uhr, kein Speicher.
 
@@ -37,8 +44,9 @@ export interface NachbarZiel {
   token: string;
   /** Anzeige-Label («Art. 90a», «Art. 31–32») aus `labelMitBereich` (§5). */
   label: string;
-  /** Der Nachbar ist ganz aufgehoben — geht in den aria-Namen, nie ins Weglassen. */
-  aufgehoben: boolean;
+  /** Belegstufe des Nachbarn — geht in den aria-Namen, nie ins Weglassen.
+   *  Wortlaut über `leerstellenWort` (§5, nie hier abgeschrieben). */
+  zustand: LeerstellenStatus;
 }
 
 /** Was an EINEM Artikel steht. Beide Seiten dürfen fehlen (erster/letzter Eintrag). */
@@ -53,9 +61,9 @@ const ziel = (e: NormSnapshot): NachbarZiel => ({
   // `artLabelByToken` benutzt — ein Schlusstitel-Token («disp_u1_art_3») lässt
   // sich NICHT aus dem Token raten, der Eintrag trägt sein Label selbst.
   label: labelMitBereich(e.artikelLabel, e.artikel),
-  // §5: dieselbe Prüfung, die `parts/ArtikelLeser` für seine eigene Zeile
-  // «· aufgehoben» stellt (dort Z. 142) — Marker vor Text-Heuristik.
-  aufgehoben: artikelGanzAufgehoben(e.bloecke, e.aufgehoben),
+  // §5: dieselbe Prüfung, die `parts/ArtikelLeser` für seine eigene Statuszeile
+  // stellt — Marker vor Text-Heuristik, Beleggrund im Ergebnis.
+  zustand: artikelLeerstellenStatus(e.bloecke, e.aufgehoben),
 });
 
 /**

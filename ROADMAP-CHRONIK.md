@@ -1,5 +1,24 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Umschichtung 15.9.2026 (dep-Umbau) — drei erledigte Schritte mit lebenden `dep`-Kanten (Wortlaut)
+
+**Anlass und was sich geändert hat.** Bis heute mussten erledigte Schritte in `ROADMAP.md` stehen bleiben, sobald irgendein lebender Schritt `dep` auf sie hielt: `check:plan` Regel 4 («dep-IDs existieren») kannte nur `ROADMAP.md` und hätte die Überführung rot gemacht. Der Steuerdeckel (120 KiB) liess sich damit nur noch senken, indem man entweder die `dep`-Kante fälscht oder den Deckel reisst — beides macht den Plan unwahr. Die Umschichtung 15.9.2026 (Entstehung) weiter unten hat darum die PROSA ausgelagert und die Anker bewusst stehen lassen («Anker bleiben wegen `dep`»); dieser Abschnitt zieht sie nach, nachdem der Wurzel-Fix gebaut ist (Schritt `QS-EFFIZIENZ`, PR dieser Session): Regel 4 akzeptiert ein `dep`-Ziel, das hier als `done` archiviert ist, und `plan:next`/`plan:bild`/`plan:set` lösen mit derselben Menge auf. Der frühere Vermerk bleibt als Beleg seines Datums stehen und wird nicht nachgeführt.
+
+Damit hängt die Auflösung an DIESEN Ankern — sie sind ab hier die einzige Fundstelle der drei IDs und dürfen nicht entfernt werden, solange ein lebender Schritt auf sie zeigt (`R12a-ENTSTEHUNG-BS` → `W2·6c-ENTSTEHUNG-SYNOPSE`). Wortlaut der Erledigt-Prosa je Schritt: Abschnitt «Umschichtung 15.9.2026 (Entstehung)».
+
+- [x] **Entstehung am Artikel — Daten: Verfahrens-Ereignisse, Historie-Kopf, Botschafts-Keys, Anker, Parlament** *(`W2·6c-ENTSTEHUNG-DATEN`, §14-Intake 6.9.2026, Design-Freigabe David 6.9.2026)*
+  <!-- @meta id: W2·6c-ENTSTEHUNG-DATEN · status: done · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  ✅ Erledigt 11.9.2026 — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (Entstehung).
+
+- [x] **Entstehung am Artikel — Synopse alt/neu ab 2021 und Entwurf↔Beschluss** *(`W2·6c-ENTSTEHUNG-SYNOPSE`, 6.9.2026; absorbiert den Datenanteil von M16)*
+  <!-- @meta id: W2·6c-ENTSTEHUNG-SYNOPSE · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-DATEN] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  ✅ Erledigt 11.9.2026 — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (Entstehung).
+
+- [x] **Drift-Nachverifikation der Tarif-Stammdaten (34 Erlasse, 93 Einträge)** *(`W3-TARIF-NACHVERIFIKATION`, Auftrag David 6.9.2026, Befund Tor-Erstlauf `check:tarif-drift`)*
+  <!-- @meta id: W3-TARIF-NACHVERIFIKATION · status: done · blocker: null · dep: [] · feld: werkzeuge -->
+  ✅ Erledigt — Wortlaut der Erledigt-Prosa: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (Entstehung).
+
+
 ## Umschichtung 15.9.2026 (Entstehung) — Erledigt-Prosa `W2·6c-ENTSTEHUNG-DATEN` + `-SYNOPSE` (Wortlaut), Anker bleiben wegen `dep`
 
 **Anlass.** Steuerdeckel ROADMAP 120 KB bei der Verankerung der Stufe-4-Schritte `W2·6d-*` (Session 15.9.2026 (3)). Die beiden Schritte sind seit 11.9.2026 `done`; ihre Titel- und `@meta`-Zeilen bleiben in der ROADMAP, weil lebende Schritte (`R12a-ENTSTEHUNG-BS`) `dep` auf sie halten (Befund ROADMAP «ROADMAP-Deckel bleibt knapp»). Hier der Wortlaut der ausgelagerten Prosa:
@@ -26,8 +45,8 @@
   - [ ] **OW Beurkundungstarif Ziff. 35 lit. a/b — Zuordnungsverdacht** *(Nebenfund 6.9.2026)* — `beurkundung.ts` (OW) etikettiert die Staffel als lit. a; amtlich ist lit. a ein Rahmen 500–2000, und erst lit. b verweist auf Ziff. 31 Bst. a. Kodiert ist lit. b. Eigener Prüfschritt: Wert und Etikett zusammenführen.
   - [ ] **VS LTar Art. 15 — zwei Einträge, dieselbe Norm, verschiedene Begründung** *(§5, 6.9.2026)* — `schlichtung.ts` (50–500) und `nicht-vermoegensrechtlich.ts` (60–500) berufen sich beide auf Art. 15 mit demselben Hinweis-Baustein; amtlich sind Abs. 1 lit. a/b (170–350) und Abs. 2 (60–500) verschiedene Tatbestände. Klären, welcher Absatz je Rechner gilt, dann EINE Quelle.
   - [ ] **Härtungen `check:tarif-drift`** *(Wurzelbefunde 6.9.2026, je mit Rot-Beweis; `scripts/tarif/**` ist Risikopfad)* — (a) zeigen `artikel` und `quelleUrl` auf verschiedene Erlasse, urteilt das Tor über den falschen (belegt AG 725.100/725.110, SH 221.101/211.433) ⇒ «unklar/Zuordnung» statt DRIFT; (b) pinnt die URL die geltende Fassung, bleibt ein uralter `stand` unsichtbar (11 FR-261.16-Einträge trugen «7.10.1986» bei Pin auf 2016) ⇒ Zusatzbefund «Pin aktuell, stand > 1 Jahr daneben»; (c) 13 Einträge nannten das Beschlussdatum GENAU DIESER Fassung (FR 214.5.16, BS 154.810) ⇒ als gültigen Stand akzeptieren.
-  - [ ] **Werkzeug-Falle Norm-PDFs** *(6.9.2026, gehört ins Fehlerbuch-Dach `W2·18-FEHLERBUCH`)* — `Read` auf PDF > 200 KB blockt `lese-schutz.py`, `pdftotext` fehlt auf dieser Maschine; funktionierender Ersatz: PyMuPDF (`python3 -c "import fitz; …"`).
-  - [ ] **Werkzeug-Falle Lese-Schutz im Scratchpad** *(15.9.2026)* — `lese-schutz.py` blockt PDF > 200 KB auch im Scratchpad, Hinweis auf PyMuPDF fehlt; Hook-Edit ⇒ Diff für David. Detail: Fahrplan Materialien §12.5.
+  - [x] **Werkzeug-Falle Norm-PDFs** *(✅ #895 15.9.2026; 6.9.2026, gehört ins Fehlerbuch-Dach `W2·18-FEHLERBUCH`)* — `Read` auf PDF > 200 KB blockt `lese-schutz.py`, `pdftotext` fehlt auf dieser Maschine; funktionierender Ersatz: PyMuPDF (`python3 -c "import fitz; …"`).
+  - [x] **Werkzeug-Falle Lese-Schutz im Scratchpad** *(✅ #895; 15.9.2026)* — `lese-schutz.py` blockt PDF > 200 KB auch im Scratchpad, Hinweis auf PyMuPDF fehlt; Hook-Edit ⇒ Diff für David. Detail: Fahrplan Materialien §12.5.
   - [ ] **Konflations-Wächter breiter** *(Gegenprüfungs-Nachtrag D2, 12.9.2026, PR #816, gehört ins Fehlerbuch-Dach `W2·18-FEHLERBUCH`)* — Befund-Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (5); Bau-Einheit offen, Zeiger genügt zur Steuerung.
   - [ ] **`BMV`-Zitat löst auf die aufgehobene Fassung auf** *(Nebenfund PR #823, 12.9.2026, gehört ins Fehlerbuch-Dach `W2·18-FEHLERBUCH`)* — Befund-Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (5); Bau-Einheit offen, Zeiger genügt zur Steuerung.
   - [ ] **Prerender-Shell nennt aufgehobene Erlasse «geltend»** *(Nebenfund PR #823, 12.9.2026, gehört ins Fehlerbuch-Dach `W2·18-FEHLERBUCH`)* — Befund-Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (5); Bau-Einheit offen, Zeiger genügt zur Steuerung.

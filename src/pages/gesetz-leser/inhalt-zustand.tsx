@@ -7,6 +7,7 @@ import type { KantonSystematik } from '../../lib/normtext/systematik';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { beiLeerlauf } from '../../lib/leerlauf';
+import { merkeKlappAstManuell, merkeSprungAstManuell } from './sprungAst';
 import { useBezuege } from './bezuegeLaden';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
@@ -275,12 +276,22 @@ export function useLeserTocZustand() {
   // offen startet, liesse sich sonst mit dem ersten Klick nicht schliessen.
   const tocToggleGruppe = useCallback((ids: string[], istOffen: boolean) => {
     const ziel = !istOffen;
-    for (const id of ids) {
-      autoOffenRef.current.delete(id); autoTickRef.current.delete(id);
-      if (ziel) { manuellOffenRef.current.add(id); manuellZuRef.current.delete(id); }
-      else { manuellOffenRef.current.delete(id); manuellZuRef.current.add(id); }
-    }
+    // Die Buchhaltung steht seit 15.9.2026 in `./sprungAst` (§5) — sie war an
+    // vier Stellen getippt, und die Kopie im Artikel-Sprung war unvollständig.
+    merkeKlappAstManuell(ids, ziel, {
+      autoOffen: autoOffenRef.current, autoTick: autoTickRef.current,
+      manuellOffen: manuellOffenRef.current, manuellZu: manuellZuRef.current,
+    });
     setTocBaum((o) => klappZeile(o, ids, istOffen));
+  }, []);
+  // Dasselbe für ein SPRUNG-Ziel, gebunden an die Refs, die hier wohnen: die
+  // Sprung-Pfade sollen die vier Mengen nicht selbst kennen müssen — genau daran
+  // ist die Kopie in `springeZuArtikel` gescheitert (Fehlerbuch 15.9.2026).
+  const merkeSprungAst = useCallback((ids: Iterable<string>) => {
+    merkeSprungAstManuell(ids, {
+      autoOffen: autoOffenRef.current, autoTick: autoTickRef.current,
+      manuellOffen: manuellOffenRef.current, manuellZu: manuellZuRef.current,
+    });
   }, []);
   const [aktivIds, setAktivIds] = useState<string[]>([]); // Sektions-IDs (TOC-Markierung, eindeutig)
   const [tocAuf, setTocAuf] = useState(false); // unter lg: Gliederungs-Sheet offen?
@@ -306,20 +317,17 @@ export function useLeserTocZustand() {
     if (!tocAuf) { pfadAufgeklapptRef.current = false; return; }
     if (pfadAufgeklapptRef.current || aktivIds.length === 0) return;
     pfadAufgeklapptRef.current = true;
-    for (const id of aktivIds) {
-      autoOffenRef.current.delete(id); autoTickRef.current.delete(id);
-      manuellOffenRef.current.add(id); manuellZuRef.current.delete(id);
-    }
+    merkeSprungAst(aktivIds);
     // Im rAF NACH dem Öffnungs-Paint: das Aufklappen ist damit demselben Klick
     // zugerechnet (hadRecentInput ⇒ CLS-frei, §15.2) und der Effekt ruft kein
     // setState synchron in seinem Rumpf (Kaskaden-Render-Regel).
     const raf = window.requestAnimationFrame(() =>
       setTocBaum((o) => ({ ...o, ...Object.fromEntries(aktivIds.map((id) => [id, true])) })));
     return () => window.cancelAnimationFrame(raf);
-  }, [tocAuf, aktivIds]);
+  }, [tocAuf, aktivIds, merkeSprungAst]);
 
   return {
-    offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
+    offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, merkeSprungAst, aktivIds, setAktivIds, tocAuf, setTocAuf,
     jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   };
 }
