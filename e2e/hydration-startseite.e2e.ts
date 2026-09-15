@@ -214,18 +214,17 @@ test('Der Tag NACH dem Bau: Datum und Fristende kommen vom Gerät, der Mismatch 
   expect(nachher.fristende, 'das Fristende rechnet ab dem Tag des Besuchers').toBe('15.03.2027')
   expect(nachher.fristende, 'und ist nicht das prerenderte').not.toBe(vorher.fristende)
 
-  // (b) EINGEGRENZT: der Rückbau endet an der Modul-Grenze in `start/PultModul`
-  // und reisst die hydrierte Hülle nicht mit. Ohne diese Grenze verwirft React
-  // bis zur Grenze von `RouteHuelle` — und weil der dortige Rückbau ERST NACH
-  // der Hydration kommt, misst dann auch `e2e/d39-begruessung.e2e.ts` an
-  // abgehängten Knoten (der Blocker, der diesen Nachzug ausgelöst hat).
+  // (b) Die HÜLLE bleibt hydriert, obwohl der Routen-Inhalt andere Zahlen trägt
+  // als das prerenderte HTML.
   expect(nachher.huelleUeberlebt,
-    'Skip-Link und Fuss sind dieselben Knoten — der Rückbau blieb im Modul').toBe(true)
+    'Skip-Link und Fuss sind dieselben Knoten wie vor dem Bundle').toBe(true)
 
   const s = await stand(page)
   expect(s.modus).toBe('hydration')
-  // Genau EIN gemeldeter Rückbau, und zwar der erwartete: das Pult-Modul mit
-  // dem ab HEUTE rechnenden Schnellrechner. Mehr wäre eine neue, unbeaufsichtigte
-  // Divergenz-Quelle — dieser Zähler ist der Wächter darüber.
-  expect(s.fehler, `gemeldete Rückbauten: ${s.meldungen.join(' | ')}`).toBe(1)
+  // NULL gemeldete Mismatches, und das ist keine Selbstverständlichkeit: die
+  // abweichenden Zahlen stehen im Routen-Inhalt, den React mangels Chunk
+  // ohnehin client-seitig baut — er wird also gar nicht erst verglichen. Ein
+  // Zähler über 0 hiesse, dass eine Divergenz die HÜLLE erreicht hat, und die
+  // ist das, was hier hydriert.
+  expect(s.fehler, `gemeldete Rückbauten: ${s.meldungen.join(' | ')}`).toBe(0)
 })

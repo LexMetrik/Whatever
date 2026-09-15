@@ -93,23 +93,38 @@ export function PultModul({ id, titel, reg, an, position, aufSchalten, children 
             Markup-Unterschied zwischen Prerender und erstem Client-Render
             nicht mehr folgenlos: React verwirft dann den Teilbaum bis zur
             NÄCHSTEN Suspense-Grenze und baut ihn neu auf. Ohne diese Grenze
-            hier war das die Grenze von `layout/RouteHuelle` — also die GANZE
+            hier wäre das die Grenze von `layout/RouteHuelle` — also die GANZE
             Route samt der <h1>, dem LCP-Element.
             DAS TRIFFT DAS PULT ZWANGSLÄUFIG: seine Module zeigen bewusst
             Besucher-Abhängiges, das der Prerender nicht kennen kann — der
             Schnellrechner rechnet ab HEUTE (`forms/EinfacheFristForm`), die
             Zeiterfassung und «Zuletzt verwendet» lesen den lokalen Speicher.
-            GEMESSEN am 15.9.2026 (gebautes dist/, Uhr auf den 7.9. gestellt,
-            also die Lage JEDES Besuchers nach dem Bautag): ohne diese Grenze
-            überlebten 102 von 450 prerenderten Knoten und die <h1> war nicht
-            darunter; mit ihr 384 von 450 samt <h1>.
+            GEMESSEN am 15.9.2026 an einem Stand, der den Routen-Chunk vor dem
+            Hydrieren vorwärmte (also mit hydriertem Routen-Inhalt; Uhr auf den
+            7.9. gestellt = die Lage jedes Besuchers nach dem Bautag):
+            ohne diese Grenze überlebten 102 von 450 prerenderten Knoten, mit
+            ihr 377. Das Vorwärmen ist wieder draussen (es kostete 1.05 s LCP,
+            Herleitung im PR) — die Grenze bleibt, weil die drei genannten
+            Quellen bleiben und die offenen Pins der Hülle (Seitenleisten-
+            Gruppen, Sprache, `istMobil`) den Routen-Inhalt jederzeit wieder in
+            die Hydration ziehen können.
+            ZWEITE, HEUTE WIRKSAME FOLGE, und sie ist ehrlich als knapp zu
+            benennen: die zusätzlichen Grenzen verschieben den Zeitpunkt, zu
+            dem React den prerenderten Routen-Inhalt entfernt, von 26 ms auf
+            51 ms nach `DOMContentLoaded` (gemessen, `requestAnimationFrame`-
+            Probe auf `main h1`; das Loch schliesst sich in beiden Fällen bei
+            ~258 ms). Diese 25 ms sind der Unterschied, mit dem die Messung in
+            `e2e/d39-begruessung.e2e.ts` noch vor dem Loch fertig wird —
+            ohne die Grenze ist jene Spec 3/3 rot, mit ihr 5/5 grün (und grün
+            im vollen Lauf, 1231 Fälle). Das ist eine MARGE, keine Garantie;
+            der robuste Weg wäre, jene Spec wie die übrigen auf
+            `e2e/helpers/appGebootet` warten zu lassen (§17-Wurzelfix vom
+            6.9.2026) — das gehört in einen eigenen Schritt.
             KEIN WEICHSPÜLER: die Grenze unterdrückt nichts und verändert
             nichts am Inhalt — sie sagt nur, WIE WEIT React zurückbauen darf.
             Der neu gebaute Teilbaum ist der Client-Baum, das angezeigte
-            Fristende also das des BESUCHERS (gemessen: 17.09.2026 bei Uhr auf
-            den 7.9., nicht das prerenderte 25.09.2026) — genau wie vor der
-            Umstellung auf `hydrateRoot`. Gemeldet wird der Vorgang weiterhin
-            über `onRecoverableError` (main.tsx). */}
+            Fristende also das des BESUCHERS. Gemeldet wird ein Rückbau
+            weiterhin über `onRecoverableError` (main.tsx). */}
         <Suspense>{children}</Suspense>
       </div>
     </section>
