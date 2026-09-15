@@ -1,5 +1,9 @@
 # VPS-Bestell-Dossier (QS-BASIS B-5 · Stand 17.7.2026)
 
+**Erstellt:** 17.7.2026 — QS-BASIS B-5: VPS-Beschaffung für E3-Serving/E4-Zitatgraph/VZUI-V2,
+Preise live verifiziert.
+**Status:** ERSTRECHERCHE
+
 > **Zweck:** David bestellt in ~15 Min den VPS, der E3-Serving (195 342 Bundes-Entscheide),
 > E4-Zitatgraph (8,7 Mio Kanten) und VZUI-V2 «Zitiert-von» entsperrt. Der Serving-**Bau** bleibt
 > QS-DATA (E3/E4) — dieses Dossier ist NUR die Beschaffung. **Preise live verifiziert 17.7.2026**

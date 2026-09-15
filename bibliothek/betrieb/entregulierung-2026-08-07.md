@@ -1,5 +1,9 @@
 # Ent-Regulierungs-Analyse 7.8.2026 (QS-SELBSTOPT)
 
+**Erstellt:** 7.8.2026 — Roadmap-Schritt `QS-SELBSTOPT`, Auftrag Ent-Regulierung David
+5.8.2026 («nicht überregulieren, keine unnötigen Sicherungen, die Bauzeit kosten»).
+**Status:** ERSTRECHERCHE
+
 **Anlass:** Roadmap-Schritt `QS-SELBSTOPT`, gleichwertiger Auftrag Ent-Regulierung
 (David 5.8.2026: «nicht überregulieren, keine unnötigen Sicherungen, die Bauzeit
 kosten»). Prüfkriterium: Anthropic-Löschkriterium «würde das Fehlen einen realen
