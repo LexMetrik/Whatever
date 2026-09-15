@@ -143,7 +143,7 @@ Agenten-Aussage «Vorbestand/Flake, per Nullprobe belegt» gilt nur mit
 Kommando + Ausgabe der Probe im Bericht; ohne Beleg gilt sie als nicht
 erbracht und die Haupt-Session misst selbst nach. Anlass: eine falsche
 Nullproben-Behauptung hätte eine echte Lesemass-Regression beinahe
-durchgelassen — erst die Gegen-Messung auf main fing sie. **Repo-Fakt-Behauptungen («es gibt kein X») nur mit repo-weiter Suche** (`grep -rn` über `scripts/ src/`, Blick in `dist/`), nie nur nach Dateinamen unter `public/` — Beleg 4.9.2026: «keine Sitemap» war falsch (Generator inline in `scripts/prerender.ts`), ein Sonnet-Bauer fing es per Nullprobe vor dem Bau ab.
+durchgelassen — erst die Gegen-Messung auf main fing sie. **Repo-Fakt-Behauptungen («es gibt kein X») nur mit repo-weiter Suche** (`grep -rn` über `scripts/ src/`, Blick in `dist/`), nie nur nach Dateinamen unter `public/` — Beleg 4.9.2026: «keine Sitemap» war falsch (Generator inline in `scripts/prerender.ts`), ein Sonnet-Bauer fing es per Nullprobe vor dem Bau ab. **Verhaltensneutral mit mehreren ersetzten Stellen: je ersetzte Stelle eine Zusicherung und eine Rot-Probe** — ein Test, der nur Stelle 1 abdeckt, beweist Stelle 2 nicht (Prüfer-Befund #889, 15.9.2026: zweite Inline-Kopie in `leserSuche.ts` konnte nicht rot werden, nachgezogen 1fec26412).
 
 **Grüne Spur → Jules (Phase 4 QS-FREMDAGENTEN, 4.9.2026):** Vor jedem Dispatch an
 `lex-bau` prüfen, ob der Schritt auf die grüne Spur gehört — dann geht er als
