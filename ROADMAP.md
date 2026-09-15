@@ -737,8 +737,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **`Reiterleiste.tsx` (1237 Z.) + `tabs.ts` (1205 Z.) über der Schlankheits-Schwelle** *(Nebenfund 15.9.2026, aus #843–#845; Tor nicht CI-pflichtig)* — Baseline aufgenommen (#874), **Split offen**.
   - [ ] **`scripts/plan/selbstoptKern.ts` über der Schlankheits-Schwelle, unregistriert gefunden** *(Nebenfund 4.9.2026)* — 1094 Z. (Schwelle 800), nur ins Baseline-Register aufgenommen, **Split offen**. Das Geschwister `src/tests/plan-selbstopt.test.ts` ist seit PR #699 gesplittet. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
 
-- [~] **Turso-Schreibkontingent: Sync bündeln, Unverändertes überspringen, Sperre klar melden** *(`QS-TURSO-SCHREIBVOLUMEN`, Vorfall 15.9.2026)*
-  <!-- @meta id: QS-TURSO-SCHREIBVOLUMEN · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-DATENHALTUNG.md -->
+- [x] **Turso-Schreibkontingent: Sync bündeln, Unverändertes überspringen, Sperre klar melden** *(`QS-TURSO-SCHREIBVOLUMEN`, Vorfall 15.9.2026)*
+  <!-- @meta id: QS-TURSO-SCHREIBVOLUMEN · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-DATENHALTUNG.md -->
   Schreibsperre 15.9.2026 (Gratis-Kontingent): Voll-Rebuild je Push (~171 000 Zeilen, 39 Läufe/14 d).
   **Ziel:** täglich EIN Sync, Tabellen-Skip per Signatur, Sperre als Exit 3; Wächter bleiben ehrlich. Lesen nie betroffen.
   **Detail:** [FAHRPLAN-DATENHALTUNG.md](fahrplaene/FAHRPLAN-DATENHALTUNG.md) §17.
