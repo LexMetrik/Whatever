@@ -24,6 +24,8 @@ import {
   extrahiereAnhang,
   anhangLabelVonAnker,
 } from './normtext/extrahiere-fedlex.ts';
+import { labelFuerAnker } from './normtext/doppel-id-label.ts';
+import { amtlicherAnker } from './normtext/artikel-vorkommen.ts';
 import {
   sammleKantonInventar,
   sammleFallback,
@@ -1400,6 +1402,7 @@ async function main(): Promise<void> {
 
     for (const token of tokens) {
       const ankerVoll = `art_${token}`;
+      // W2·27 (Nebenfund Prüfer #851): «__N» ist UNSERE Eindeutigmachung einer doppelten Fedlex-id — nie ins Label (Regel + Heading-Beleg: normtext/doppel-id-label.ts) und nie in die quelleUrl. Das Sprungziel liefert amtlicherAnker() aus normtext/artikel-vorkommen.ts: beim N-ten Vorkommen der eindeutige amtliche Namens-Anker (KKV: #ta126z), sonst der Basis-Anker.
       const extrakt = extrahiereArtikel(html, token);
 
       if (extrakt === null || extrakt.bloecke.length === 0) {
@@ -1416,16 +1419,13 @@ async function main(): Promise<void> {
         quelle: gesetzKey,
         erlass,
         artikel: token,
-        // M9/G7: Synthese-Suffix «__2» (doppelte art_id) NICHT ins Label ziehen —
-        // beide Artikel zeigen ihre echte Basis-Bezeichnung («Art. 126z»); der
-        // Inhalt unterscheidet sie. Anker/id behalten den Suffix (eindeutig).
-        artikelLabel: artikelLabel(token.replace(/__\d+$/, '')),
+        artikelLabel: labelFuerAnker(html, ankerVoll, artikelLabel(token.replace(/__\d+$/, ''))), // Basis-Token nur noch hier gebraucht (die quelleUrl rechnet seit dem Anker-Fix selbst zurück) — darum inline statt eigener const
         // Artikel-Metadaten: `aufgehoben` (W2·27 G-AUFH-ART, normtext/aufhebung-signal.ts) und `grundlage` (G23/M8, Delegationsnorm «(Art. N ArG)») — wie `titel` NICHT im Block-sha, also golden-neutral; Reihenfolge titel→aufgehoben→grundlage hält die DB-Projektion byte-gleich.
         ...(extrakt.aufgehoben ? { aufgehoben: true as const } : {}),
         ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}),
         bloecke: extrakt.bloecke,
         stand,
-        quelleUrl: `https://www.fedlex.admin.ch/eli/${eli}/de#${ankerVoll}`,
+        quelleUrl: `https://www.fedlex.admin.ch/eli/${eli}/de#${amtlicherAnker(html, ankerVoll)}`, // W2·27: amtlicher Anker des tatsächlichen Vorkommens, s. o.
         abgerufen,
         fassungsToken: konsolidierung,
         sha: sha256Bloecke(extrakt.bloecke),
@@ -1458,12 +1458,12 @@ async function main(): Promise<void> {
         quelle: gesetzKey,
         erlass,
         artikel: token,
-        artikelLabel: artikelLabel(schlussteilLabelSuffix(anker)),
+        artikelLabel: labelFuerAnker(html, anker, artikelLabel(schlussteilLabelSuffix(anker))), // W2·27 wie Haupttext (heute kein «__N»-Schlussteil im Korpus, aber der Pfad erbt die alte Halbwahrheit nicht)
         ...(extrakt.aufgehoben ? { aufgehoben: true as const } : {}), ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}), // W2·27 + G23, s. Haupttext-Pfad
         bloecke: extrakt.bloecke,
         stand,
-        // Roher Anker (mit «/», ohne Synthese-Suffix) als Live-Sprungziel.
-        quelleUrl: `https://www.fedlex.admin.ch/eli/${eli}/de#${anker.replace(/__\d+$/, '')}`,
+        // Amtlicher Anker (mit «/») als Live-Sprungziel; bei «__N» der Namens-Anker des N-ten Vorkommens (amtlicherAnker(), s. Haupttext-Pfad).
+        quelleUrl: `https://www.fedlex.admin.ch/eli/${eli}/de#${amtlicherAnker(html, anker)}`,
         abgerufen,
         fassungsToken: konsolidierung,
         sha: sha256Bloecke(extrakt.bloecke),

@@ -15,10 +15,16 @@
 // Anhang-Einträge — Kommando siehe Commit-Body):
 // bis 268 · ter 117 · quater 72 · quinquies 39 · sexies 25 · septies 20 ·
 // octies 16 · novies 8 · decies 5 · undecies 2 · duodecies 2.
+// NACHMESSUNG 15.9.2026 (231 Dateien, gleiche Methode): unverändert, PLUS
+// «tredecies 1». Das Glied wurde nicht geraten, sondern sichtbar, als W2·27
+// das Label des KKV-Tokens `126_z__2` aus dem amtlichen Heading ableitete
+// (`<sup>tredecies</sup>` → «Art. 126ztredecies», Beleg:
+// scripts/normtext/doppel-id-label.ts). Damit erfüllt es genau die Bedingung,
+// die der Absatz unten stellt — es ist gemessen, nicht angenommen.
 // Diese Reihe gilt für die BUND-Grammatik (Fedlex-Anker); die kantonale
 // Grammatik (RE_PARAGRAF in KantonNormText.tsx) ist eine separate Reihe mit
-// eigenem Bestand. Höhere Glieder (terdecies …) kennt der Bund-Korpus heute
-// NICHT; sie gehören erst in die Reihe, wenn eine Snapshot-Messung sie
+// eigenem Bestand. Noch höhere Glieder (quaterdecies …) kennt der Bund-Korpus
+// heute NICHT; sie gehören erst in die Reihe, wenn eine Snapshot-Messung sie
 // ausweist — eine geratene Erweiterung erzeugt Anker für Bestimmungen, die es
 // nicht gibt (§7). «novies» ist die Fedlex-Schreibweise (das im Bund-Korpus
 // nicht vorkommende «nonies» ist eine kantonale Schreibweise, belegt in
@@ -26,7 +32,7 @@
 // eine andere Grammatik, siehe oben).
 export const ART_SUFFIXE = [
   'bis', 'ter', 'quater', 'quinquies', 'sexies',
-  'septies', 'octies', 'novies', 'decies', 'undecies', 'duodecies',
+  'septies', 'octies', 'novies', 'decies', 'undecies', 'duodecies', 'tredecies',
 ] as const;
 
 // Regex-Alternation der Reihe, LÄNGSTE ZUERST. Mit dem heutigen Bestand ist

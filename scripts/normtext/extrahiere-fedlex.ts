@@ -63,6 +63,7 @@ export interface BildRef {
   sha?: string;
 }
 
+import { artikelRohHtml } from './artikel-vorkommen.ts';
 import { artikelTextMitAufhebung } from './aufhebung-signal.ts';
 import { dekodiereEntities } from './html-entities.ts';
 import { normalisiereTabelle, type RohTabelle, type RohZelle } from './tabelle-normalisieren.ts';
@@ -101,42 +102,24 @@ export function extrahiereArtikel(html: string, token: string): ArtikelText | nu
  * unterscheidet sich. So fällt der Schlusstitel (eigenes Anker-Schema
  * `disp_uN/art_*`, von alleArtikelTokens digit-only nicht erfasst) nicht mehr
  * stumm weg (§7-Vollabdeckung), ohne den Haupttext-Pfad anzufassen.
- *
  * @param ankerRoh - Voller Anker, optional mit Synthese-Suffix «__2» (N-tes
  *                   Vorkommen bei doppelter id, s. alleArtikelTokens/alleSchlussteilAnker).
  */
 export function extrahiereArtikelAusAnker(html: string, ankerRoh: string): ArtikelText | null {
-  // M9/G7: doppelte id. Ein Erlass kann ZWEI <article id="…"> mit identischem
-  // Anker tragen (KKV art_126_z: «Anlagebeschränkungen» + «126z tredecies
-  // Wesentliche Mängel»; betmg/vwvg/pavo: aufgehobene Bereichs-Artikel «15a–15c»).
-  // alleArtikelTokens/alleSchlussteilAnker vergeben dem 2./3. Vorkommen einen
-  // Synthese-Suffix «__2»/«__3»; hier extrahieren wir dann das N-te Vorkommen des
-  // BASIS-Ankers. Ohne Suffix (Normalfall) = erstes Vorkommen, byte-gleich.
-  const suffix = ankerRoh.match(/^(.*)__(\d+)$/);
-  const basisAnker = suffix ? suffix[1] : ankerRoh;
-  const nth = suffix ? Number(suffix[2]) : 1;
-  // Escape des Ankers für die Regex (Unterstriche und «/» sind literal, kein
-  // Sonderzeichen — der «/»-Trenner des disp-Schemas bleibt unberührt).
-  const escapedToken = basisAnker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const articleRe = new RegExp(
-    `<article[^>]*\\sid="${escapedToken}"[^>]*>([\\s\\S]*?)</article>`,
-    'gi',
-  );
-  const treffer = [...html.matchAll(articleRe)];
-  const articleMatch = treffer[nth - 1];
-  if (!articleMatch) return null;
+  const artikelRoh = artikelRohHtml(html, ankerRoh);
+  if (artikelRoh === null) return null;
 
   // Fussnoten-Apparat (<div class="footnotes">…</div>) und Artikel-Überschrift
   // (<h6>…</h6>, trägt eine Heading-Fussnote) sind KEIN Normtext und werden vorab
   // entfernt — sonst leckt der Fallback-Pfad (unnummerierte plain-<p>-Artikel wie
   // BETMG/VStrR) den Fussnotentext + Marker in den Normtext (Bug-Check 23.6.2026).
   // Der Haupt-Loop matcht diese Elemente ohnehin nicht; nur der Fallback profitiert.
-  const innerRoh = articleMatch[1]
+  const innerRoh = artikelRoh
     .replace(/<div\s+class="footnotes">[\s\S]*$/i, '') // Apparat steht am Artikelende
     .replace(/<h6\b[^>]*>[\s\S]*?<\/h6>/gi, '');
 
-  // W2·27: G-AUFH-ART aus dem ROHEN Artikel-HTML (articleMatch[1] trägt <h…> + Fussnoten-Apparat, die innerRoh gerade verlor); Shape sonst unverändert.
-  return artikelTextMitAufhebung(articleMatch[1], parseArtikelInner(innerRoh));
+  // W2·27: G-AUFH-ART aus dem ROHEN Artikel-HTML (artikelRoh trägt <h…> + Fussnoten-Apparat, die innerRoh gerade verlor); Shape sonst unverändert.
+  return artikelTextMitAufhebung(artikelRoh, parseArtikelInner(innerRoh));
 }
 
 /**
