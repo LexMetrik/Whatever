@@ -541,16 +541,18 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Aktionen nur bei Hover/Fokus/offener Rubrik, D45-Split, Umbenennung `BezuegeKopf` →
   `Funktionszeile`. **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §9.
 
-- [ ] **Perf-Rest Leser: `fremdRoutingFormB` / `artikelnPluralVerweise`** *(`W2·24-PERF-REST`)*
-  <!-- @meta id: W2·24-PERF-REST · status: ready · blocker: null · dep: [W2·24-DESIGN-IDENTITAET] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+- [~] **Perf-Rest Leser: `fremdRoutingFormB` / `artikelnPluralVerweise`** *(`W2·24-PERF-REST`)*
+  <!-- @meta id: W2·24-PERF-REST · status: wip · blocker: null · dep: [W2·24-DESIGN-IDENTITAET] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
   Zwei Fix-Vorschläge aus `abnahme/design-identitaet/PERF-LESER.md` (`fedlex/parser.ts`
   `FREMD_FORM_B`, Aufruf `NormText.tsx`; ~2.3 s). **Die Root-Cause war zum Messzeitpunkt NICHT
   abschliessend verifiziert** — Ziel ist erst verifizieren (misst der gelandete Fix das schon
   weg?), dann fixen; ohne Verifikation kein Eingriff (§7). Risikopfad (`src/lib/fedlex`) ⇒
   **Gegenprüfung Pflicht**, Merge gesperrt bis Verdikt. Messregel: nie neben laufendem Build
   oder e2e (Skill `perf` Bauregel 7).
-  - [ ] **`check:perf-budget` deckt die Struktur-Sidecars nicht** *(Befund 11.9.2026, #791)* — `public/normtext/**/struktur/*.json` (vorbestehend, seit #791 um die Zähler-Nutzlast
+  - [x] **`check:perf-budget` deckt die Struktur-Sidecars nicht** *(Befund 11.9.2026, #791 — erledigt #874, 15.9.2026: Deckel 95 KB gzip je Sidecar + 175 KB Register)* — `public/normtext/**/struktur/*.json` (vorbestehend, seit #791 um die Zähler-Nutzlast
     gewachsen) läuft ausserhalb der festen Deckel-Liste; eigene Zusicherung nachziehen.
+
+- **Idee (ohne `@meta`, W2·24-PERF-REST 15.9.2026):** Regex-Kosten des Verweis-Linkers (~1.4 s @CPU×4 auf OR); Memoisierung widerlegt (`abnahme/design-identitaet/PERF-LESER.md`, Nachtrag 15.9.) — Hebel liegt in der Regex-Semantik, Risikopfad `src/lib/fedlex`.
 
 - [ ] **UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(`W2·17-UI-BEFUNDE`)*
   <!-- @meta id: W2·17-UI-BEFUNDE · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->

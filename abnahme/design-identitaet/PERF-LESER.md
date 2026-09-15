@@ -214,6 +214,79 @@ globalem Key) und gehört in einen eigenen, gegengeprüften Schritt: er berührt
 dieselbe Risiko-Fläche (`src/lib/fedlex/**`) und die Render-Schicht, die in
 dieser Runde parallel umgebaut wurde.
 
+### Nachtrag 15.9.2026 (W2·24-PERF-REST): Ursache halb bestätigt, Fix-Vorschlag falsifiziert
+
+Der Absatz oben bleibt stehen, wie er am 6.9.2026 gemessen wurde. Die
+Nachmessung ergänzt ihn, sie korrigiert ihn nicht (§0 Ziff. 2b).
+
+**Aufbau.** `/gesetze/bund/OR`, Produktions-Build + `vite preview`, 1280×800,
+CPU×4, Netz ungedrosselt, jeder Lauf kalt. Kadenz: **reines Laden, KEIN
+Scrollen**, bis `[data-v3-ansicht]` UND `article[id^="art-"]` im DOM stehen und
+danach 1500 ms ohne Long Task. Zwei Stände laufen **verschränkt** als zwei
+Preview-Server im selben Playwright-Lauf, Runde für Runde (Vorbild Ziff. 1) —
+nötig, weil zwei getrennte Reihen desselben Stands um 22 % auseinanderlagen
+(`bedienbar` 5 083 vs. 6 214 ms Median). Aufruf-Zahlen kommen aus CDP
+`Profiler.startPreciseCoverage({callCount, detailed})`, sind also **gezählt**;
+Self-Time aus `Profiler` (Sampling 200 µs). Es lief nichts daneben.
+
+**Was stimmt.** Die beiden Funktionen laufen tatsächlich mehrfach über denselben
+Text. Gezählt auf OR: `artikelnPluralVerweise` **16 420** Aufrufe,
+`fremdRoutingFormB` **1 125** — bei nur **4 850** nichtleeren Snapshot-Texten.
+Die Aufteilung nach dem Marker zeigt die Struktur: 11 515 bzw. 802 bis
+«bedienbar», 4 905 bzw. 323 **danach**. Es sind also zwei Render-Durchgänge über
+je rund 11 400 **Fragmente** (`restMitIntern` 11 435 + 4 869) — nicht über 4 850
+Texte. Inhaltlich verschieden sind davon nur 4 831 bzw. 314; der Rest sind
+Wiederholungen, überwiegend kurze Zwischenstücke.
+
+**Was nicht stimmt: die Kosten-Zuschreibung.** Ein Memo je (Ebene, Erlass, Text)
+in `NormText` senkt die Aufrufe deterministisch auf 4 831 bzw. 314 (−71 %/−72 %,
+in jedem Lauf identisch) — und bewegt **keine einzige Zeitkennzahl**:
+
+| Kennzahl (Median [Min–Max], n=4 je Stand, verschränkt) | ohne Memo | mit Memo |
+|---|--:|--:|
+| `artikelnPluralVerweise` Aufrufe | 16 420 [16 420–16 420] | 4 831 [4 831–4 831] |
+| `fremdRoutingFormB` Aufrufe | 1 125 [1 125–1 125] | 314 [314–314] |
+| `bedienbar` (ms) | 5 040 [4 870–5 278] | 5 004 [4 959–5 105] |
+| TBT (ms) | 5 717 [5 523–5 839] | 5 665 [5 611–5 825] |
+| längster Task (ms) | 4 176 [4 035–4 202] | 4 141 [4 120–4 266] |
+
+**Nullprobe des Messgeräts** (dritter Stand, Wegwerf-Build: beide Linker liefern
+`[]` bzw. `null`) — verschränkt gegen denselben Vorher-Stand, n=4:
+
+| Kennzahl | Linker AN | Linker AUS |
+|---|--:|--:|
+| `artikelnPluralVerweise` Self-Time (ms) | 912 [835–938] | 1 [0–1] |
+| `bedienbar` (ms) | 4 954 [4 768–4 961] | **3 578 [3 510–3 637]** |
+| TBT (ms) | 5 614 [5 432–5 632] | 4 208 [4 172–4 276] |
+| längster Task (ms) | 4 112 [3 944–4 137] | 2 731 [2 681–2 800] |
+
+Die Spannweiten sind **disjunkt**: die beiden Linker kosten real rund **1.4 s**
+@CPU×4, und das Messgerät sieht sie. Es sieht nur die *Wiederholung* nicht —
+weil sie nichts kostet. Die 1.4 s stecken im EINEN Durchgang über die langen
+Texte; die Wiederholungs-Aufrufe treffen überwiegend kurze Fragmente und laufen
+zudem auf warmem JIT.
+
+*(Die in derselben Reihe ausgewiesene Self-Time von `fremdRoutingFormB` ist
+NICHT belastbar — sie zeigt im Nullproben-Stand 455 ms bei 7 Aufrufen und ist
+damit in sich widersprüchlich, vermutlich eine Offset-Fehlzuordnung des
+Sampling-Profils. Die Aussage oben stützt sich allein auf die gezählten Aufrufe
+und die Wanduhr-Kennzahlen.)*
+
+**Folge.** Der Fix-Vorschlag «Memoisierung je Textreferenz» aus diesem Abschnitt
+ist damit **falsifiziert** — gebaut, verhaltensneutral bewiesen (golden
+byte-gleich, 36 276 Verweis-Stellen im Inventar unverändert) und wieder
+zurückgebaut, weil er Aufrufe spart und keine Zeit (§17-Gegengewicht: was nichts
+bewirkt, wird gestrichen statt bewacht). Der Rückbau-Commit trägt den Bau in der
+Historie, ein Cherry-Pick bleibt möglich.
+
+Der offene Hebel ist derselbe wie beim Z1-Erlass-Scan in Ziff. 4: **die Kosten je
+Text**, nicht ihre Anzahl. Zu prüfen wären die Muster-Kosten von
+`PLURAL_OEFFNER`/`P_SIGNAL_RE` und `FREMD_FORM_B` (Riesen-Alternationen aus
+`NORM_NAMEN_ESC`/`GENITIV_NAMEN_ESC`/`TITEL_FRAGMENTE_ESC`) — mit demselben
+Beweis-Regime wie dort: Identitäts-Argument, volle Korpus-Gegenprobe über beide
+Muster, Wächter mit Rot-Probe. Das berührt Regex-Semantik auf dem Risikopfad
+`src/lib/fedlex` und gehört in einen eigenen, gegengeprüften Schritt.
+
 Ebenfalls offen: `CLS 0.0469–0.0909` auf den Leserseiten in **beiden** Ständen —
 die Vor-Runde hatte «CLS 0 in allen Szenarien» gemessen; unter dieser
 Mess-Kadenz (Viewport 1280×800, kein Scrollen) ist es nicht 0. Kein
