@@ -259,7 +259,7 @@ als Kanton-Übergang bestehen, bis Phase 2 den Kanton-Pfad migriert.
 |---|---|---|---|
 | 1 | **EMRK nur PDF-Einbettung, EÖBV und AVG fehlen ganz** | Drei Erlasse, die täglich aufgeschlagen werden, sind nicht als Normtext benutzbar. | `QS-KORPUS` |
 | 2 | **228 von ~5 100 Bundeserlassen (4,4 %)** | Wer ausserhalb des Kernrepertoires sucht, findet nichts. | `W2·5n-BUND-VOLL` |
-| 3 | **19 Staatsverträge ohne Randtitel und ohne Historie** (CISG, CMR, LugÜ, HKÜ, UNO-Pakte …) | Kein Sachtitel im Sprungziel, kein «gilt seit» — also kein Fassungsvertrauen. | `QS-KORPUS` |
+| 3 | **19 Staatsverträge ohne Randtitel und ohne Historie** (CISG, CMR, LugÜ, HKÜ, UNO-Pakte …) — **korrigiert 15.9.2026 (Recherche W2·27 (3)):** 17 Staatsverträge + VBB/VG; Randtitel amtlich nicht vorhanden (Fedlex-Heading nur «Art. N», kein Extraktions-Bug); Historie-Lücke LugÜ = Anhang-Fussnoten → W2·5l M13, CMR ohne Datum in der Quelle, KRK/VBB/VG haben Historie. | Kein Sachtitel im Sprungziel, kein «gilt seit» — also kein Fassungsvertrauen. **Rest:** «Erlass in Kraft seit» als Projektion aus `inkrafttreten.json` am Artikel (Leseoberfläche). | `W2·27-BUND-FERTIG` (Zeile «Staatsverträge»), Spec `w227-staatsvertraege-spec.md` (Übergabe) |
 | 4 | **1 389 aufgehobene Artikel stehen auf einer Text-Heuristik** | Ein Extraktionsfehler sähe exakt aus wie eine Aufhebung (§7/§8). | `W2·27` |
 | 5 | **45,8 % der Fussnoten-Marker am falschen Ort** (14 266 von 31 178) | Der Leser sieht die Fussnote am Absatzende statt am Wort. | `W2·5l-NORMTEXT-B2` §M14 |
 | 6 | **Kein persistenter Zitatgraph, 16 tote Artikel-Anker** | Verweise entstehen aus Kürzel + Nummer ohne Nachschlag im Ziel; «zitiert von» gibt es nicht. | `W2·22-VERWEIS-FEDLEX` Z4/Z6c |
