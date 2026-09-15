@@ -1,5 +1,9 @@
 # Gliederungs-Performance-Diagnose 8.8.2026 (Fehlerbuch-Befund David)
 
+**Erstellt:** 8.8.2026 — Fehlerbuch-Befund David, 8.8.2026 abends: «das mit der gliederung
+funktioniert immer noch sehr harzig … sie springt komisch».
+**Status:** ERSTRECHERCHE
+
 **Anlass:** David, 8.8.2026 abends (Wortlaute): «das mit der gliederung
 funktioniert immer noch sehr harzig» · «sie springt komisch und ist nicht
 flüssig. gerne sollen auch teile wieder zugehehen wo man sich gerade nicht

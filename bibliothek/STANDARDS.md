@@ -9,7 +9,7 @@ Bug-Check §9 vor jedem Deploy, der Bibliotheks-Änderungen enthält.
 ## S1 — Pflichtkopf jedes Dossiers
 
 Jede Datei in `recherche/`, `behoerden/`, `normen/`, `kosten/`, `materialien/`,
-`normtext/`, `seo/` beginnt mit:
+`normtext/`, `seo/`, `betrieb/` beginnt mit:
 
 1. `# Titel` (Zeile 1),
 2. **Erstellt:**-Zeile mit Datum **und Auftrag/Anlass** (wer hat es warum
@@ -27,6 +27,9 @@ David). Zusatzmarker erlaubt («Norm-Kerne zweifach»), ersetzen den
 Hauptstatus nicht. **Nie** «verifiziert/geprüft» ohne diese Bedeutung —
 das UI-Statusmodell (`entwurf`/`geprüft`) und der `verified`-Anker hängen
 daran (§8). Hochstufung nur mit Beleg im Dossier (wer, wann, wogegen).
+Betriebs-Dossiers (`betrieb/`) starten ebenfalls mit `ERSTRECHERCHE`, auch
+wenn sie inhaltlich eher ein Messbericht oder Entscheid sind — das Vokabular
+wird dafür nicht erweitert.
 
 ## S3 — Quellen-Hierarchie und Zitier-Disziplin
 

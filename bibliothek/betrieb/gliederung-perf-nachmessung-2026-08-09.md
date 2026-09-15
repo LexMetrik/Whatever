@@ -1,5 +1,9 @@
 # Gliederungs-Perf-Nachmessung 9.8.2026 (DoD-Beleg W2·19, S1–S7)
 
+**Erstellt:** 9.8.2026 — DoD-Posten «Nachmessen gegen die Dossier-Tabelle» aus
+W2·19-GLIEDERUNG.
+**Status:** ERSTRECHERCHE
+
 **Anlass:** DoD-Posten «Nachmessen gegen die Dossier-Tabelle» aus W2·19-GLIEDERUNG.
 **Gemessener Stand:** main `865d48e8a` (S1–S7 live), frischer /tmp-Worktree, `npm ci` +
 Build EXIT 0, vite preview, 20 Playwright-Läufe, 0 Konsolenfehler. **Vorher-Werte:**
