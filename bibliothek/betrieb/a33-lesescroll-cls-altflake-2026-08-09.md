@@ -1,5 +1,9 @@
 # a33-Lese-Scroll-CLS: Alt-Flake mit Zielkonflikt (Befund 9.8.2026)
 
+**Erstellt:** 9.8.2026 — Vor-Merge-Batterie der Landung W2·19 (S1–S5) fand den Alt-Flake
+CLS 0.0504 in `e2e/leser-gliederung-a33.e2e.ts:363`.
+**Status:** ERSTRECHERCHE
+
 **Anlass:** Vor-Merge-Batterie der Landung W2·19 (S1–S5): `e2e/leser-gliederung-a33.e2e.ts:363`
 («A9 — Lese-Scroll unter CPU-Drossel: CLS 0») fiel einmal mit CLS 0.0504 (Limit 0.05).
 

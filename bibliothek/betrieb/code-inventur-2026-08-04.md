@@ -1,5 +1,9 @@
 # Code-Inventur 4.8.2026 — Logikschicht · Darstellungsschicht · Pipeline
 
+**Erstellt:** 4.8.2026 — Auftrag David «plane Verbesserung des Codes, denk gross»: drei
+parallele read-only Code-Analysen.
+**Status:** ERSTRECHERCHE
+
 **Quelle:** Drei parallele read-only Explore-Analysen (Session 4.8.2026, Auftrag
 David «plane Verbesserung des Codes, denk gross»), erhoben am Stand
 `2c4d97e54` (3.8.2026); Bundle-Zahlen aus `dist/` vom 3.8. 11:22 (älter als

@@ -38,7 +38,7 @@ done | tee /tmp/bibcheck-links.txt
 [ -s /tmp/bibcheck-links.txt ] && fehler=$((fehler+$(wc -l < /tmp/bibcheck-links.txt)))
 
 # ── S1: Pflichtkopf (Erstellt/Datum + Status) in Fach-Dossiers ──────────────
-for f in recherche/*.md behoerden/*.md kosten/*.md normen/*.md materialien/*.md normtext/*.md seo/*.md; do
+for f in recherche/*.md behoerden/*.md kosten/*.md normen/*.md materialien/*.md normtext/*.md seo/*.md betrieb/*.md; do
   b=$(basename "$f"); [ "$b" = "INDEX.md" ] && continue
   kopf=$(head -30 "$f")
   echo "$kopf" | grep -qiE '\*\*(Erstellt|Datum|Stand)\b' || melde S1 "$f ohne Erstellt-/Datums-Zeile im Kopf"
