@@ -109,6 +109,34 @@ const AHNEN_TINTE: Record<string, string> = {
   'text-ink-800': 'text-ink-800',
 };
 
+// ─── W2·18-FEHLERBUCH (David 15.9.2026): «man erkennt nicht, wo man ist» ────
+//
+// DIE MARKE VERSPRACH `font-medium` UND LIEFERTE `font-weight: 400`. Gemessen
+// am laufenden Stand (Chromium, /gesetze/bund/OR, 15.9.2026): die aktive Zeile
+// trug `… font-normal text-brass-700 font-medium` und stand bei 400.
+// URSACHE, nicht vermutet, sondern aus dem Stylesheet gelesen: zwei
+// gleichrangige Gewichts-Utilities in EINEM className entscheiden nach der
+// QUELLORDNUNG der erzeugten Regeln — und Tailwind 3.4 emittiert `.font-medium`
+// (Regel-Index 926) VOR `.font-normal` (927). Die spätere Regel gewinnt, also
+// font-normal. Dasselbe Muster, das der `stimme`-Kommentar für die TINTE
+// bereits beschreibt («nicht deterministisch, §2») — für das Gewicht war es
+// übersehen worden.
+//
+// DIE MARKE ERSETZT DAS GEWICHT STATT ES ZU ERGÄNZEN. Die Tabelle ist explizit,
+// damit nie eine Stufe entsteht, die die Skala nicht kennt, und eine Ebene, die
+// ohnehin schwerer setzt (Tiefe 0: `font-semibold`), ihr Gewicht BEHÄLT — die
+// Marke darf eine Zeile nie leichter machen.
+const MARKEN_GEWICHT: Record<string, string> = {
+  'font-normal': 'font-medium',
+  'font-medium': 'font-medium',
+  'font-semibold': 'font-semibold',
+};
+/** Die Form der Marken-Zeile: gleiche Stimme, gehobenes Gewicht (genau EIN
+ *  Gewichts-Utility im Ergebnis). */
+function markenForm(form: string): string {
+  return form.replace(/\bfont-(?:normal|medium|semibold)\b/, (t) => MARKEN_GEWICHT[t] ?? t);
+}
+
 // `zeileIstOffen` und `findeMarke` sind seit dem Bug-Check 9.8.2026 KEINE
 // lokalen Helfer mehr, sondern Teil des Modells (`gliederungsModell.ts`). Beide
 // sind reine Ableitungen aus dem Knoten und dem Klapp-Zustand — sie gehören zur
@@ -259,8 +287,11 @@ const Zeile = memo(function Zeile({
     'text-ink-500': 'text-ink-500',
   };
   const grund = stimmeGedaempft ? (GEDAEMPFT[stimme.tinte] ?? stimme.tinte) : stimme.tinte;
-  const markenTinte = stimmeGedaempft ? 'text-brass-700 font-medium' : 'text-ink-900';
+  // Das Gewicht der Marke steckt seit 15.9.2026 in `markenForm` (s. o.), NICHT
+  // mehr hier: zwei Gewichts-Utilities nebeneinander hoben sich still auf.
+  const markenTinte = stimmeGedaempft ? 'text-brass-700' : 'text-ink-900';
   const tinte = istMarke ? markenTinte : aufPfad ? (AHNEN_TINTE[grund] ?? grund) : grund;
+  const form = istMarke ? markenForm(stimme.form) : stimme.form;
   // LM-155 Mittel 3: Rhythmus — die obersten Knoten bekommen einen Vorlauf. Der
   // jeweils ERSTE Knoten einer Liste bleibt bündig. Statisches margin ⇒ kein
   // Layout-Shift zur Laufzeit (§15.2).
@@ -340,9 +371,29 @@ const Zeile = memo(function Zeile({
               // ink-400 (hell 3.13 auf `--well`) hätte 0.13 Reserve gehabt.
               // §5: dieselbe Stufe, die SprachUmschalter.tsx und die
               // Formular-Chevrons für dasselbe Zeichen längst setzen.
-              className="shrink-0 text-ink-500 hover:text-ink-600 px-1 mt-0.5 text-micro w-4">{auf ? '▾' : '▸'}</button>
+              // ── W2·18-FEHLERBUCH (David 15.9.2026) · DAS KLICKZIEL ──────
+              // Vorzustand gemessen: 16 × 16 px, Glyphe in `text-micro`, kein
+              // Druck-Feedback — unter der WCAG-2.2-Schwelle 2.5.8 (24 × 24),
+              // die das Haus als `--tap-ziel` führt (index.css, Wächter
+              // `src/tests/tap-ziel-token.test.ts`). Der Knopf holt sich jetzt
+              // genau dieses Mass: 24 px breit (`w-6`), `min-h` aus dem Token
+              // und `self-stretch`, damit er die ganze Zeilenhöhe mitnimmt.
+              // KEIN negativer Margin und keine ::before-Fläche: beide würden
+              // über die Nachbarzeilen bzw. über den Titel-Link greifen, und
+              // ein Ziel, das Klicks des Nachbarn frisst, macht genau den
+              // gemeldeten Eindruck schlimmer. Die Spalte wird stattdessen um
+              // 8 px breiter — statisch für ALLE Zeilen, also kein CLS.
+              // ZUSTANDSWECHSEL: der Chevron ROTIERT (ein Zeichen, 90°) statt
+              // die Glyphe zu tauschen; die Bewegung ist im Augenwinkel
+              // sichtbar, wo der Glyphentausch es nicht war.
+              // `prefers-reduced-motion` ist global bedient (index.css setzt
+              // alle transition-duration auf .001ms) — hier braucht es keine
+              // zweite Regel (§5).
+              className="shrink-0 self-stretch w-6 min-h-[var(--tap-ziel)] flex items-start justify-center pt-0.5 text-ink-500 hover:text-ink-900 active:text-ink-900 text-xs">
+              <span aria-hidden className={`inline-block transition-transform ${auf ? 'rotate-90' : ''}`}>▸</span>
+            </button>
           )
-          : <span className="shrink-0 w-4" aria-hidden />}
+          : <span className="shrink-0 w-6" aria-hidden />}
         {/* F5-Positionsmarke (§3.5): 2-px-Messingkante, Muster layout/Sidebar.tsx.
             Der Streifen steht IMMER im Markup und ist im Ruhezustand nur
             transparent — so reserviert er seinen Platz und der Wechsel der
@@ -356,7 +407,17 @@ const Zeile = memo(function Zeile({
             ≥ 3:1» (Spec §9) reisst brass-500 im HELLEN Modus um zwei
             Hundertstel — und eine Positionsmarke, die man nicht sieht, ist keine.
             Darum brass-600, also genau der Ton des zitierten Musters. */}
-        <span aria-hidden className={`mt-1 h-3.5 w-0.5 shrink-0 ${istMarke ? 'bg-brass-600' : 'bg-transparent'}`} />
+        {/* W2·18-FEHLERBUCH (David 15.9.2026): der Strich war 2 px hoch 14 px
+            und markierte damit eher einen Punkt als eine Zeile. Er misst jetzt
+            3 px — das Haus-Mass für den Registerstrich seit D23 (RegisterMarke,
+            ZuletztVerwendet, SuchResultate, PultModul, §5) — und läuft über die
+            GANZE Zeilenhöhe (`self-stretch`), auch wenn das Etikett auf zwei
+            Zeilen bricht. Farbe unverändert `brass-600` (gemessen 3.78:1 hell /
+            11.74:1 dunkel gegen den Leisten-Hintergrund, Herleitung unten);
+            KEIN neues Token, keine Änderung an der brass-Skala. Der transparente
+            Zwilling im Ruhezustand bleibt: er reserviert den Platz, der Wechsel
+            der Leseposition bewegt nichts (§15.2). */}
+        <span aria-hidden className={`w-[3px] shrink-0 self-stretch ${istMarke ? 'bg-brass-600' : 'bg-transparent'}`} />
         <TocZeile
           href={sprungZiel}
           // TASTATUR: `Enter` löst am Link `onClick` aus wie am Knopf; die
@@ -407,7 +468,15 @@ const Zeile = memo(function Zeile({
           // Gliederung ist NAVIGATION: kein Unterstrich (die P3-Regel in
           // `index.css` unterstreicht Textlinks — hier steht die Ausnahme
           // ausdrücklich im Markup, wie die Regel es verlangt).
-          className={`flex-1 min-w-0 text-left no-underline rounded px-1.5 py-0.5 leading-snug transition-colors ${stimme.form} ${tinte} ${istMarke ? '' : 'hover:text-ink-900 hover:bg-brass-100/40'}`}>
+          // W2·18-FEHLERBUCH: die Marken-Zeile bekommt die FLÄCHE, die das Haus
+          // für «-selected/-aktuell» führt (`brass-100`, index.css §lc-chip:
+          // «GEFUELLT BLEIBEN die ZUSTAENDE -selected/-aktuell»). Sie ist die
+          // volle Stufe derselben Tönung, die der Hover zu 40 % zeigt — Hover
+          // heller als aktiv, kein neuer Farbwert, kein Radius-Bruch.
+          // EHRLICH GEMESSEN: die Fläche allein trägt wenig (1.03–1.12:1 gegen
+          // Leiste bzw. Blatt); die Auskunft geben der 3-px-Strich und das
+          // Gewicht. Sie ist die dritte, beiläufige Stufe — nicht das Signal.
+          className={`flex-1 min-w-0 text-left no-underline rounded px-1.5 py-0.5 leading-snug transition-colors ${form} ${tinte} ${istMarke ? 'bg-brass-100' : 'hover:text-ink-900 hover:bg-brass-100/40'}`}>
           {/* line-clamp-2 (§3.3): Labels bis 280 Zeichen sind belegt — ohne
               Klammer wuchs eine einzige Zeile auf sechs und schob den ganzen
               Baum. Der volle Text bleibt über title/aria-label erreichbar.

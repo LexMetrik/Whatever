@@ -206,7 +206,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     // Rechtsprechung steht im Panel und lädt beim Öffnen (`./panelModell`).
   } = useLeserZustand({ bezuegeVorladen: false });
   const {
-    offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
+    offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, merkeSprungAst, aktivIds, setAktivIds, tocAuf, setTocAuf,
     jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   } = useLeserTocZustand();
   const {
@@ -297,7 +297,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
     if (ids.length) {
       setOffen((o) => { const n = { ...o }; for (const id of ids) n[id] = true; return n; });
-      for (const id of ids) manuellZuRef.current.delete(id);
+      merkeSprungAst(ids); // Fehlerbuch 15.9.2026: hier stand nur `manuellZu.delete` — der Ast war danach ungeschützt (`../sprungAst`)
       if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
       setAktivIds(ids);
       setTocBaum((o) => ({ ...o, ...Object.fromEntries(ids.map((id) => [id, true])) }));

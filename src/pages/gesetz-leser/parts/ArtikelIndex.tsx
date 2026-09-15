@@ -52,16 +52,21 @@ function Zeile({ z, aktiv, onSprung }: {
   return (
     <li>
       <div className="flex items-start">
-        {/* F5-Marke — dieselbe 2-px-Messingkante wie im Gliederungsbaum
-            (SektionBaumTOC), immer im Markup (CLS 0, §15.2). */}
-        <span aria-hidden className={`mt-1 h-3.5 w-0.5 shrink-0 ${aktiv ? 'bg-brass-600' : 'bg-transparent'}`} />
+        {/* F5-Marke — dieselbe Messingkante wie im Gliederungsbaum
+            (SektionBaumTOC), immer im Markup (CLS 0, §15.2).
+            W2·18-FEHLERBUCH (15.9.2026): 3 px statt 2 px und über die ganze
+            Zeilenhöhe, Zug um Zug mit dem Baum. Der flache Index IST die
+            Gliederung der Erlasse ohne amtliche Struktur (b2/b4) — eine
+            Standort-Marke, die dort anders aussieht, behauptete einen
+            Unterschied, den es fachlich nicht gibt (§5). */}
+        <span aria-hidden className={`w-[3px] shrink-0 self-stretch ${aktiv ? 'bg-brass-600' : 'bg-transparent'}`} />
         <button type="button"
           onClick={() => { merkeRuecksprungVonDom(); onSprung(z.token); }}
           data-toc-aktiv={aktiv ? '1' : undefined}
           aria-current={aktiv ? 'location' : undefined}
           title={voll} aria-label={voll}
           className={`flex-1 min-w-0 text-left rounded px-1.5 py-0.5 leading-snug transition-colors text-xs ${
-            aktiv ? 'text-ink-900' : 'text-ink-700 hover:text-ink-900 lc-hover-flaeche'
+            aktiv ? 'text-ink-900 font-medium bg-brass-100' : 'text-ink-700 hover:text-ink-900 lc-hover-flaeche'
           }`}>
           {/* Zusatzpunkt David 9.8.2026: dieselbe Umbruch-Garantie wie im Baum
               (SektionBaumTOC) — kein horizontaler Overflow im [data-toc]. */}
