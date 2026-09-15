@@ -33,6 +33,14 @@ falsch — korrigiert 30.8.2026). Karten abgeschlossener Sessions (älter als
 werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
+## Session 15.9.2026 (2) — Dossier «Rekursive Selbstverbesserung» + `QS-BEWAEHRUNG` gebaut (6 PRs)
+
+- Recherche-Auftrag David («recherchiere rekursive Selbstverbesserung bei Coding-Agenten, stell das unserem Prozess gegenüber»): Web-Recherche (Opus) + Repo-Karte (Sonnet) → Dossier `bibliothek/betrieb/rekursive-selbstverbesserung-gegenueberstellung-2026-09-15.md` (#881). Kernbefund: der §17-Kreislauf deckt die Schutzmechanismen der Literatur, hat aber kein Fitness-Signal für sich selbst — kein Tor und keine Regel wird je auf Bewährung gemessen.
+- Davids Entscheid «ok einverstanden, auch vier, setz es direkt um» → Schritt `QS-BEWAEHRUNG` (#883), drei Bau-Agenten in eigenen Worktrees: **A** Tor-Bewährungs-Register + Auswerter `tor:bewaehrung` (219 importierte Belege, Einstufung 32 bewährt · 4 Rückbau-Kandidaten · 5 ungemessen · 46 jung) und Prozess-Kennzahlen `prozess:kennzahlen` mit Verlauf seit 1.7.2026 (#886); **B** `@wiedervorlage`-Marker an 49 Regeln (CLAUDE.md, rules, F1–F17) + Wächter `check:regel-wiedervorlage` in `gate` voll, fällig heute 0 (#885); **D** STANDARDS S1 gilt für `betrieb/`, Tor-Schleife erweitert, 9 Altdossiers nachgetragen (#884). Alle drei Tore je einmal rot gezeigt (§6.7).
+- Nebenfund beim Dossier-Bau, an der Wurzel behoben: `check:bibliothek` S7.1 kannte `betrieb/` und `werkzeuge/` nicht — Tor, das für 19 Dossiers nicht scheitern konnte; Rot-Beweis, #882. Muster ist F2 (Tor prüft den gedachten statt den realen Bestand), kein neuer Register-Eintrag.
+- Vorlauf ohne Karte (fremde Sessions 14./15.9.2026, §12): #873–#880 (Session-Ende-Buchung, Turso-Schreibvolumen, LCP-Diagnose, Landekette-Fix, PERF-REST, Chronik-Überführung) — Betreffzeilen sind die Karte, hier nicht erneut umgesetzt.
+- Wartet auf David: Rückbau-Entscheid zu 4 Tor-Kandidaten und Hook-Log-Diff (`QS-EFFIZIENZ`-Zeile); Werkzeug-Befund `scripts/check-*.ts`-Deckel hat nach #885 noch 122 Bytes Luft.
+
 ## Session 14.9.2026 (2) — Jules-Suggestions gesichtet (76 → 3), Kanal abgeschaltet
 
 - Proaktiven Jules-Kanal «Suggestions» am Code gesichtet (Opus, read-only, Repo-Stand `203a292e9`): **76 Vorschläge → 3 belastbar (~4 %)**, 0 gestartet; Kanal auf Davids Entscheid abgeschaltet (Wortlaut und Begründung: `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §6 D8, Messwerte §5, Datenpunkt zur Rückbau-Regel §3). Die drei Funde als Roadmap-Schritt **`QS-CODE-LFZ-GRENZE`** eingeordnet (Weisung: Jules-Vorschläge nie direkt starten, immer über den Roadmap-Eingang), Nebenbefund `NormText.tsx` 795/800 unter `W2·5m-LESER-V3` gebucht. Reiner Doku-PR, kein Code: PR #872 (`21846d038`, `269802a18`).
