@@ -134,6 +134,11 @@ if [ "$mode" = "voll" ]; then
   # Tests ändert (§6.3), war lokal unsichtbar grün und erst in CI rot. Basis
   # ist `origin/main` (Skript-Default), wie im CI-Schritt «Testtreue (§6.3)».
   run "testtreue" npm run check:testtreue
+  # Wiedervorlage-Register der Prosa-Regeln (QS-BEWAEHRUNG B). Bewusst NUR hier
+  # und nicht in check:seriell/ci.yml: das Tor ist rot nur bei struktureller
+  # Verletzung, seine eigentliche Ausgabe ist die Fälligkeitsliste — die gehört
+  # vor den Deploy und ins Aufräumen, nicht in jeden fremden Produkt-PR.
+  run "regel-wiedervorlage" npm run check:regel-wiedervorlage
   # ── ZH-Vollständigkeit (ZH-Fix-Runde 3, B7) ────────────────────────────────
   # Das Tor hält die ZH-Snapshots gegen das amtliche PDF. Zwei Teile:
   #  · ARTEFAKT — braucht kein PDF (Trennstrich-Enden, Gliederungstitel im

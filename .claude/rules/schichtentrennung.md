@@ -3,6 +3,7 @@ paths:
   - "src/**"
 ---
 # §3 Schichtentrennung: Logik ≠ Darstellung
+<!-- @wiedervorlage: 2027-02-14 -->
 
 <!-- Wortlaut unverändert aus CLAUDE.md §3 hierher verschoben (QS-HOOKS-AUSBAU
      14.8.2026). Lädt pfad-gescoped bei Berührung von src/** — Doku-Sessions
@@ -18,6 +19,7 @@ paths:
   über das Protokoll von §4/§6, nie beiläufig im Zuge einer UI-Verkleinerung.
 
 ## Minimalismus-Prinzip ausserhalb der Rechtsschicht (Auftrag David 14.8.2026)
+<!-- @wiedervorlage: 2027-08-14 -->
 
 Für alles, was **weder Rechtslogik noch Rechtsdaten** trägt — UI, Navigation,
 Speicherung, Infrastruktur-Code — gilt: **so wenig Code wie möglich.**
