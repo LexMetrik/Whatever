@@ -40,8 +40,10 @@
 // (§8 ehrliche Degradierung, wie der Sync selbst) — er behauptet nie, geprüft zu haben.
 //
 // WO DIESER TOR LÄUFT — und wo bewusst NICHT. Verdrahtet ist er ausschliesslich in
-// `.github/workflows/turso-sync.yml`: als harter Schritt nach dem Sync und als täglicher
-// cron-Job. NICHT in `check:netz`: der einzige Job, der `check:netz` fährt
+// `.github/workflows/turso-sync.yml`: als harter Schritt nach dem Sync. Bis zum 15.9.2026
+// lief er zusätzlich als eigener täglicher cron-Job; seit der Bündelung
+// (QS-TURSO-SCHREIBVOLUMEN, §17) IST der Sync-Lauf der tägliche Lauf, der Wächter steckt
+// darin — unverändert hart, mit dem Token-Riegel davor. NICHT in `check:netz`: der einzige Job, der `check:netz` fährt
 // (`normen-monitor.yml`), bekommt kein TURSO_AUTH_TOKEN — der Tor liefe dort immer nur in
 // die „ÜBERSPRUNGEN"-Meldung und täuschte Abdeckung vor. Umgekehrt ginge er LOKAL auf jedem
 // Branch rot, der `daten-manifest.json` völlig legitim neu generiert (§12/4 `merge=regen`),
