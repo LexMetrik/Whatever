@@ -414,7 +414,35 @@ function chromePfad(): string | undefined {
 
 // ── Lighthouse-Lauf ──────────────────────────────────────────────────────────
 
-type Metrik = { cls: number; lcp: number; tbt: number; tti: number; score: number };
+type Metrik = { cls: number; lcp: number; tbt: number; tti: number; score: number; lcpElement: string | null };
+
+/**
+ * LCP-Element-Attribution (AUFGABE A, QS-PERF 15.9.2026, reine Diagnose zur
+ * OR-LCP-Bimodalität 3.5 s/11.4 s — Ursache oben als offen geführt).
+ *
+ * Im installierten Paket (lighthouse@13.4.1, geprüft unter
+ * node_modules/lighthouse/core/audits/insights/lcp-discovery-insight.js) heisst
+ * das Companion-Audit NICHT mehr `largest-contentful-paint-element` — dieser
+ * Audit-Id ist mit Lighthouse ≥10 entfallen (node_modules/lighthouse/
+ * changelog-pre10.md). Ersatz ist das Insight-Audit `lcp-discovery-insight`
+ * (Teil von `onlyCategories:['performance']`, default-config.js Zeile 425f.);
+ * sein Node-Detail kommt über `makeNodeItemForNodeId` → `Audit.makeNodeItem`
+ * (insight-audit.js / audit.js) als FLACHES Listen-Item mit `type:'node'` —
+ * NICHT als `items[0].items[0].node`, wie ursprünglich vermutet.
+ */
+function lcpElementAus(audits: Record<string, { details?: unknown }>): string | null {
+  const details = audits['lcp-discovery-insight']?.details as { items?: unknown[] } | undefined;
+  const items = Array.isArray(details?.items) ? details.items : [];
+  const nodeItem = items.find((i): i is { nodeLabel?: unknown; selector?: unknown } =>
+    !!i && typeof i === 'object' && (i as { type?: unknown }).type === 'node');
+  if (!nodeItem) return null;
+  const label = typeof nodeItem.nodeLabel === 'string' ? nodeItem.nodeLabel.trim() : '';
+  const selector = typeof nodeItem.selector === 'string' ? nodeItem.selector : '';
+  return label || selector || null;
+}
+
+/** Zeile auf ≤ `max` Zeichen kürzen (Konsolen-Lesbarkeit, Auflage der Aufgabe). */
+const kurz = (zeile: string, max = 80): string => (zeile.length <= max ? zeile : `${zeile.slice(0, max - 1)}…`);
 
 const median = (xs: number[]): number => {
   const s = [...xs].sort((a, b) => a - b);
@@ -458,6 +486,7 @@ async function einLauf(url: string): Promise<Metrik> {
     tbt: num('total-blocking-time'),
     tti: num('interactive'),
     score: Math.round((lhr.categories.performance?.score ?? 0) * 100),
+    lcpElement: lcpElementAus(lhr.audits),
   };
   });
 }
@@ -519,17 +548,26 @@ async function kalibriere(): Promise<number> {
 // ist im CI-Log unterscheidbar, ob ein roter Median echte Last ist oder ein über
 // die Läufe driftender Messaufbau (siehe RUNS-Kommentar oben) — sonst diskutiert
 // die nächste Session wieder über eine einzelne Zahl ohne Streuung (§8).
-async function messe(url: string): Promise<Metrik> {
+async function messe(url: string): Promise<{ cls: number; lcp: number; tbt: number; tti: number; score: number; lcpElement: Array<string | null> }> {
   const laeufe: Metrik[] = [];
   for (let i = 0; i < RUNS; i++) laeufe.push(await einLauf(url));
   console.log(`    Einzelläufe TBT: ${laeufe.map((m) => Math.round(m.tbt)).join(' · ')} ms`
     + `  |  LCP: ${laeufe.map((m) => (m.lcp / 1000).toFixed(1)).join(' · ')} s`);
+  // LCP-Element je Lauf (AUFGABE A): eigene Zeile statt in die Zahlen-Zeile
+  // gemischt — damit bleibt die Bimodalität (OR 3.5 s/11.4 s) auf einen Blick
+  // einem LAUF zuordenbar, nicht nur einer gemittelten Zahl. `?? 'unbekannt'`
+  // ist nie stumm: fehlt das Audit, steht das ausdrücklich in der Zeile.
+  laeufe.forEach((m, i) => {
+    const lauf = RUNS > 1 ? ` (Lauf ${i + 1}/${RUNS})` : '';
+    console.log(kurz(`    LCP-Element${lauf}: ${m.lcpElement ?? 'unbekannt'}`));
+  });
   return {
     cls: median(laeufe.map((m) => m.cls)),
     lcp: median(laeufe.map((m) => m.lcp)),
     tbt: median(laeufe.map((m) => m.tbt)),
     tti: median(laeufe.map((m) => m.tti)),
     score: median(laeufe.map((m) => m.score)),
+    lcpElement: laeufe.map((m) => m.lcpElement),
   };
 }
 

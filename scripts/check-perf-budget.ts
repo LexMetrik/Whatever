@@ -96,11 +96,23 @@ if (entry.length === 1) {
 //    Linse 4 (28.7.2026): derselbe Backfill hob register.json auf 756.9 KB gegen
 //    das 780-KB-Budget (97 % Ausnutzung, normKeys-Vollständigkeit) — bewusst
 //    nicht hier gelöst (§8); Verschlankung in eigene Projektion ist Folgearbeit.
+//    QS-PERF (15.9.2026, Tor-Diagnose LCP-Element + Budget-Deckel Register/
+//    Sidecars): `public/normtext/register.json` (der Normtext-Katalog, nicht
+//    zu verwechseln mit dem Rechtsprechungs-Register oben) hatte BISHER GAR
+//    KEIN Budget — Anlass war derselbe wie bei Linse 4: die Datei wuchs mit
+//    W2·5n weiter (1518 KB roh, gemessen `wc -c public/normtext/register.json`,
+//    15.9.2026) und lädt wie das Rechtsprechungs-Register jede Leserseite.
+//    Deckel erzwingt bewusst den Register-Schnitt, nicht umgekehrt (§17: ein
+//    Wachstum, das kein Tor sieht, kommt wieder). Ist 163 KB gzip
+//    (`gzip -c public/normtext/register.json | wc -c` = 163323 Bytes,
+//    15.9.2026) — Budget = Ist + ~7 % Kopffreiheit, absichtlich eng: die Datei
+//    soll NICHT unbemerkt weiterwachsen, ein Rückschritt soll sofort rot sein.
 const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 780 * 1024],
   ['public/rechtsprechung/richter.json', 24 * 1024],
   ['public/rechtsprechung/norm-index-erlasse.json', 120 * 1024],
   ['public/such-index/artikel.json', 5_850 * 1024], // K3, 1.9.2026: Ist 5 311 KB gzip (Bund-only)
+  ['public/normtext/register.json', 175 * 1024], // QS-PERF 15.9.2026: Ist 163 KB gzip, s. Begründung oben
   // ── W2·7-BEZUG: die drei grössten Bezugs-Shards ───────────────────────────
   // Ein Nutzer lädt genau EINEN Shard (seinen Erlass), nie die Summe — Schranke
   // ist der Grösste, nicht das Verzeichnis. DREI Einträge (Gegenprüfung Runde
@@ -143,6 +155,58 @@ for (const [rel, max] of DATEN_BUDGET) {
   if (g > max) {
     fehler.push(`${rel} ${kb(g)} > Budget ${kb(max)} — Daten-Nutzlast auf dem kritischen Pfad. `
       + 'Entweder die Projektion verschlanken (Felder/Rollen auslagern) oder das Budget bewusst anheben.');
+  }
+}
+
+// 5) STRUKTUR-SIDECARS (Glob-Deckel, QS-PERF 15.9.2026): `public/normtext/
+//    struktur/**/*.json` — je Erlass ein Ganzarchiv-Baum, Bund + Kanton,
+//    1535 Dateien (gezählt 15.9.2026) — hatte wie das Register oben BISHER
+//    KEIN Budget. Anders als bei DATEN_BUDGET gibt es hier keine feste
+//    Dateiliste (die Bezügs-Shards oben SIND schon eine feste Dreier-Liste,
+//    kein Glob): der kantonale Korpus wächst laufend (W2·13-KANTONE), ein
+//    einzelner neuer Erlass darf das Tor nicht an drei Stellen zugleich
+//    ändern müssen. Ein Nutzer lädt nie die Summe, sondern höchstens EINEN
+//    Erlass — die Schranke ist deshalb wie bei den Bezügs-Shards die
+//    GRÖSSTE Einzeldatei, nicht das Verzeichnis.
+//
+//    Ist (`gzip -c public/normtext/struktur/bund/OR.json | wc -c`, 15.9.2026):
+//    OR.json 87.6 KB gzip (grösster Bund-Erlass), ZGB 70.7 KB, STGB 43.2 KB.
+//    Budget = Ist(OR) + ~8 % Kopffreiheit — bewusst eng aus demselben Grund
+//    wie beim Register: der Schnitt ist Ziel, nicht Ausnahme.
+const STRUKTUR_GLOB = { basis: 'public/normtext/struktur', max: 95 * 1024 };
+
+/** Alle Dateien unter `dir`, die auf `endung` enden — rekursiv (Bund-/Kanton-
+ *  Unterordner). Reihenfolge ist irrelevant, es wird nur das Maximum gesucht. */
+function alleDateien(dir: string, endung: string): string[] {
+  const out: string[] = [];
+  for (const eintrag of readdirSync(dir, { withFileTypes: true })) {
+    const p = join(dir, eintrag.name);
+    if (eintrag.isDirectory()) out.push(...alleDateien(p, endung));
+    else if (eintrag.name.endsWith(endung)) out.push(p);
+  }
+  return out;
+}
+
+console.log('check:perf-budget — Struktur-Sidecars (gzip, grösste Einzeldatei):');
+const strukturBasis = daten(STRUKTUR_GLOB.basis);
+if (!strukturBasis) {
+  fehler.push(`${STRUKTUR_GLOB.basis}/ fehlt (weder in dist/ noch in public/) — Budget nicht prüfbar.`);
+} else {
+  const dateien = alleDateien(strukturBasis, '.json');
+  if (dateien.length === 0) {
+    fehler.push(`${STRUKTUR_GLOB.basis}/ enthält keine *.json — Budget nicht prüfbar.`);
+  } else {
+    let groesste = { pfad: dateien[0], g: gz(dateien[0]) };
+    for (const p of dateien.slice(1)) {
+      const g = gz(p);
+      if (g > groesste.g) groesste = { pfad: p, g };
+    }
+    const name = groesste.pfad.slice(strukturBasis.length + 1);
+    console.log(`  ${name}  gzip ${kb(groesste.g)}  (Budget ${kb(STRUKTUR_GLOB.max)}, grösste von ${dateien.length} Dateien)`);
+    if (groesste.g > STRUKTUR_GLOB.max) {
+      fehler.push(`${STRUKTUR_GLOB.basis}/${name} ${kb(groesste.g)} > Budget ${kb(STRUKTUR_GLOB.max)} — grösste Struktur-Sidecar-Datei. `
+        + 'Entweder den Erlass-Baum verschlanken oder das Budget bewusst anheben.');
+    }
   }
 }
 
