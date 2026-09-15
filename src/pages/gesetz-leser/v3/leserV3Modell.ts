@@ -18,6 +18,7 @@ import { useLeserDaten, useLeserSprungSpy, loeseSpyNachlauf } from '../inhalt-ho
 import { useLeserZustand, useLeserTocZustand, useLeserAnsichtZustand } from '../inhalt-zustand';
 import { useArtikelAbleitungen, useArtikelTokens, useNachbarn } from '../inhalt-ableitungen';
 import { useSektionSprung, useInternRefs } from '../inhalt-sprung';
+import { merkeSprungAstManuell } from '../sprungAst';
 import { useWeiterlesen } from '../inhalt-weiterlesen';
 import { useSuchTreffer } from '../inhalt-suchtreffer';
 import type { LesePosition } from '../lesePosition';
@@ -297,7 +298,18 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
     if (ids.length) {
       setOffen((o) => { const n = { ...o }; for (const id of ids) n[id] = true; return n; });
-      for (const id of ids) manuellZuRef.current.delete(id);
+      // FEHLERBUCH 15.9.2026 («der Pfeil klappt teils erst beim zweiten Klick»).
+      // Hier stand nur `manuellZuRef.delete(id)` — der Ast wurde geöffnet, aber
+      // NICHT als manuell verbucht. Der nächste Scroll-Spy-Zyklus adoptierte ihn
+      // deshalb ins Auto-Lager (inhalt-hooks, `darfAutoAdoptieren`) und durfte ihn
+      // nach AUTO_ZU_NACHLAUF Pfadwechseln wieder zuklappen: der Leser sah einen
+      // Ast, der sich nicht merken wollte, und klickte ein zweites Mal. Der
+      // SEKTIONS-Sprung führte die volle Buchhaltung seit dem Bug-Check 9.8.2026;
+      // beide lesen sie jetzt aus `../sprungAst` (§5, EINE Regel an EINEM Ort).
+      merkeSprungAstManuell(ids, {
+        autoOffen: autoOffenRef.current, autoTick: autoTickRef.current,
+        manuellOffen: manuellOffenRef.current, manuellZu: manuellZuRef.current,
+      });
       if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
       setAktivIds(ids);
       setTocBaum((o) => ({ ...o, ...Object.fromEntries(ids.map((id) => [id, true])) }));

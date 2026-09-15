@@ -7,6 +7,7 @@ import type { KantonSystematik } from '../../lib/normtext/systematik';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { beiLeerlauf } from '../../lib/leerlauf';
+import { merkeKlappAstManuell, merkeSprungAstManuell } from './sprungAst';
 import { useBezuege } from './bezuegeLaden';
 import { ladeRevisionShard, revisionFuerToken, type RevisionShard } from '../../lib/verzahnung/artikel-revisionen';
 import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../../lib/normtext/historie-laden';
@@ -275,11 +276,12 @@ export function useLeserTocZustand() {
   // offen startet, liesse sich sonst mit dem ersten Klick nicht schliessen.
   const tocToggleGruppe = useCallback((ids: string[], istOffen: boolean) => {
     const ziel = !istOffen;
-    for (const id of ids) {
-      autoOffenRef.current.delete(id); autoTickRef.current.delete(id);
-      if (ziel) { manuellOffenRef.current.add(id); manuellZuRef.current.delete(id); }
-      else { manuellOffenRef.current.delete(id); manuellZuRef.current.add(id); }
-    }
+    // Die Buchhaltung steht seit 15.9.2026 in `./sprungAst` (§5) — sie war an
+    // vier Stellen getippt, und die Kopie im Artikel-Sprung war unvollständig.
+    merkeKlappAstManuell(ids, ziel, {
+      autoOffen: autoOffenRef.current, autoTick: autoTickRef.current,
+      manuellOffen: manuellOffenRef.current, manuellZu: manuellZuRef.current,
+    });
     setTocBaum((o) => klappZeile(o, ids, istOffen));
   }, []);
   const [aktivIds, setAktivIds] = useState<string[]>([]); // Sektions-IDs (TOC-Markierung, eindeutig)
@@ -306,10 +308,10 @@ export function useLeserTocZustand() {
     if (!tocAuf) { pfadAufgeklapptRef.current = false; return; }
     if (pfadAufgeklapptRef.current || aktivIds.length === 0) return;
     pfadAufgeklapptRef.current = true;
-    for (const id of aktivIds) {
-      autoOffenRef.current.delete(id); autoTickRef.current.delete(id);
-      manuellOffenRef.current.add(id); manuellZuRef.current.delete(id);
-    }
+    merkeSprungAstManuell(aktivIds, {
+      autoOffen: autoOffenRef.current, autoTick: autoTickRef.current,
+      manuellOffen: manuellOffenRef.current, manuellZu: manuellZuRef.current,
+    });
     // Im rAF NACH dem Öffnungs-Paint: das Aufklappen ist damit demselben Klick
     // zugerechnet (hadRecentInput ⇒ CLS-frei, §15.2) und der Effekt ruft kein
     // setState synchron in seinem Rumpf (Kaskaden-Render-Regel).

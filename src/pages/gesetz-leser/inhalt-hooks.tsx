@@ -16,6 +16,7 @@ import { useTieflinkSprung } from './inhalt-hooks-tieflink';
 import { paneRoot, findeArt } from './berechnungen';
 import { findeSynthPfad, uebersetzeRohPfad, type GliederungsKnoten } from './gliederungsModell';
 import { planeZuklappen, retteFokusVorZuklapp, scrollRuht, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
+import { darfAutoAdoptieren } from './sprungAst';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { datenEbeneVonRoute, erlassPfad } from '../../lib/normtext/erlassAdresse';
@@ -460,7 +461,11 @@ export function useLeserSprungSpy(opts: {
         // adoptieren (die bleiben dauerhaft offen) und manuell ZUgeklappte (manuellZuRef)
         // gar nicht auto-aufklappen (explizites Einklappen des aktiven Zweigs gewinnt).
         // Jedes Aktiv-Vorkommen (inkl. Vorfahren aus pfadZu) frischt den Nachlauf-Tick.
-        for (const id of ids) if (!manuellOffenRef.current.has(id) && !manuellZuRef.current.has(id)) { if (aufklappen) auto.add(id); autoTickRef.current.set(id, tick); }
+        // Das Prädikat steht seit 15.9.2026 in `./sprungAst` — dieselbe Datei, die
+        // die Sprung-Pfade verbuchen lässt. Vorher war die Regel dreimal getippt und
+        // eine der drei Kopien unvollständig (Fehlerbuch-Befund, §5).
+        const nutzerLager = { manuellOffen: manuellOffenRef.current, manuellZu: manuellZuRef.current };
+        for (const id of ids) if (darfAutoAdoptieren(id, nutzerLager)) { if (aufklappen) auto.add(id); autoTickRef.current.set(id, tick); }
         // F2-Wurzelfix (W2·19-GLIEDERUNG/S5, Bau-Spec §3.6): welche Äste zugehen
         // dürfen und wie viel Höhe dabei OBERHALB des Sichtbands verschwindet,
         // entscheidet `planeZuklappen` — Herleitung, Provenienz des 19.7.-Wächters
