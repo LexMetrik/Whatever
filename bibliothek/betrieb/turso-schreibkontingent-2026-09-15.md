@@ -126,6 +126,14 @@ weil er determinismus-beweisbar ist und kein Delta-Drift entstehen kann.
   warten will, stösst den Workflow `Turso-Serving-Sync` per `workflow_dispatch`
   an. `check:turso-frische` fällt erst nach `MAX_ALTER_TAGE` (7) über das Alter;
   ein Tag Verzug ist kein Rot.
+- **Kosten des Skip selbst (gemessen 15.9.2026, macOS, lokale Artefakte vom
+  Stand `daten-manifest.json` 14.9.2026):** eine vollständige Signatur-Runde über
+  alle fünf Tabellen — inklusive der FTS-Schatten mit dem ~157 MiB grossen
+  `_content` der Entscheide — braucht **0,5–0,8 s** und **743 MiB RSS**, und
+  liefert über zwei Läufe byte-gleiche Signaturen. Der Speicherbedarf ist
+  dieselbe Grössenordnung, die der Sync ohnehin hält (`leseFtsSchatten()` ist ein
+  Generator, es liegt immer nur eine Schatten-Tabelle im Heap). Der Skip kostet
+  also lokale Rechenzeit, keine Zeilen.
 - **Pflegebedarf: entfällt mit dem VPS.** Sobald die Serving-DB auf dem eigenen
   Server liegt (FAHRPLAN-DATENHALTUNG §13/§14, netcup RS 4000 G12), gibt es kein
   Zeilenkontingent mehr. Skip-Plan und Sperr-Erkennung schaden dort nicht, sie
