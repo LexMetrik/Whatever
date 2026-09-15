@@ -550,8 +550,10 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   weg?), dann fixen; ohne Verifikation kein Eingriff (§7). Risikopfad (`src/lib/fedlex`) ⇒
   **Gegenprüfung Pflicht**, Merge gesperrt bis Verdikt. Messregel: nie neben laufendem Build
   oder e2e (Skill `perf` Bauregel 7).
-  - [ ] **`check:perf-budget` deckt die Struktur-Sidecars nicht** *(Befund 11.9.2026, #791)* — `public/normtext/**/struktur/*.json` (vorbestehend, seit #791 um die Zähler-Nutzlast
+  - [x] **`check:perf-budget` deckt die Struktur-Sidecars nicht** *(Befund 11.9.2026, #791 — erledigt #874, 15.9.2026: Deckel 95 KB gzip je Sidecar + 175 KB Register)* — `public/normtext/**/struktur/*.json` (vorbestehend, seit #791 um die Zähler-Nutzlast
     gewachsen) läuft ausserhalb der festen Deckel-Liste; eigene Zusicherung nachziehen.
+
+- **Idee (ohne `@meta`, aus W2·24-PERF-REST 15.9.2026):** Muster-Kosten des Verweis-Linkers (`PLURAL_OEFFNER`/`P_SIGNAL_RE`/`FREMD_FORM_B`, Riesen-Alternationen an jeder Textposition, real ~1.4 s @CPU×4 auf OR) — Memoisierung ist widerlegt (Kosten je Text, nicht je Aufruf; `abnahme/design-identitaet/PERF-LESER.md` Nachtrag 15.9.), Hebel liegt in der Regex-Semantik ⇒ Risikopfad `src/lib/fedlex`, Beweis-Regime wie Z1-Fix (Identitäts-Argument, volle Korpus-Gegenprobe).
 
 - [ ] **UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(`W2·17-UI-BEFUNDE`)*
   <!-- @meta id: W2·17-UI-BEFUNDE · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
