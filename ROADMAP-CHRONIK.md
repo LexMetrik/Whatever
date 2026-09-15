@@ -1,5 +1,24 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Umschichtung 15.9.2026 (dep-Umbau) — drei erledigte Schritte mit lebenden `dep`-Kanten (Wortlaut)
+
+**Anlass und was sich geändert hat.** Bis heute mussten erledigte Schritte in `ROADMAP.md` stehen bleiben, sobald irgendein lebender Schritt `dep` auf sie hielt: `check:plan` Regel 4 («dep-IDs existieren») kannte nur `ROADMAP.md` und hätte die Überführung rot gemacht. Der Steuerdeckel (120 KiB) liess sich damit nur noch senken, indem man entweder die `dep`-Kante fälscht oder den Deckel reisst — beides macht den Plan unwahr. Die Umschichtung 15.9.2026 (Entstehung) weiter unten hat darum die PROSA ausgelagert und die Anker bewusst stehen lassen («Anker bleiben wegen `dep`»); dieser Abschnitt zieht sie nach, nachdem der Wurzel-Fix gebaut ist (Schritt `QS-EFFIZIENZ`, PR dieser Session): Regel 4 akzeptiert ein `dep`-Ziel, das hier als `done` archiviert ist, und `plan:next`/`plan:bild`/`plan:set` lösen mit derselben Menge auf. Der frühere Vermerk bleibt als Beleg seines Datums stehen und wird nicht nachgeführt.
+
+Damit hängt die Auflösung an DIESEN Ankern — sie sind ab hier die einzige Fundstelle der drei IDs und dürfen nicht entfernt werden, solange ein lebender Schritt auf sie zeigt (`R12a-ENTSTEHUNG-BS` → `W2·6c-ENTSTEHUNG-SYNOPSE`). Wortlaut der Erledigt-Prosa je Schritt: Abschnitt «Umschichtung 15.9.2026 (Entstehung)».
+
+- [x] **Entstehung am Artikel — Daten: Verfahrens-Ereignisse, Historie-Kopf, Botschafts-Keys, Anker, Parlament** *(`W2·6c-ENTSTEHUNG-DATEN`, §14-Intake 6.9.2026, Design-Freigabe David 6.9.2026)*
+  <!-- @meta id: W2·6c-ENTSTEHUNG-DATEN · status: done · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  ✅ Erledigt 11.9.2026 — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (Entstehung).
+
+- [x] **Entstehung am Artikel — Synopse alt/neu ab 2021 und Entwurf↔Beschluss** *(`W2·6c-ENTSTEHUNG-SYNOPSE`, 6.9.2026; absorbiert den Datenanteil von M16)*
+  <!-- @meta id: W2·6c-ENTSTEHUNG-SYNOPSE · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-DATEN] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  ✅ Erledigt 11.9.2026 — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (Entstehung).
+
+- [x] **Drift-Nachverifikation der Tarif-Stammdaten (34 Erlasse, 93 Einträge)** *(`W3-TARIF-NACHVERIFIKATION`, Auftrag David 6.9.2026, Befund Tor-Erstlauf `check:tarif-drift`)*
+  <!-- @meta id: W3-TARIF-NACHVERIFIKATION · status: done · blocker: null · dep: [] · feld: werkzeuge -->
+  ✅ Erledigt — Wortlaut der Erledigt-Prosa: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (Entstehung).
+
+
 ## Umschichtung 15.9.2026 (Entstehung) — Erledigt-Prosa `W2·6c-ENTSTEHUNG-DATEN` + `-SYNOPSE` (Wortlaut), Anker bleiben wegen `dep`
 
 **Anlass.** Steuerdeckel ROADMAP 120 KB bei der Verankerung der Stufe-4-Schritte `W2·6d-*` (Session 15.9.2026 (3)). Die beiden Schritte sind seit 11.9.2026 `done`; ihre Titel- und `@meta`-Zeilen bleiben in der ROADMAP, weil lebende Schritte (`R12a-ENTSTEHUNG-BS`) `dep` auf sie halten (Befund ROADMAP «ROADMAP-Deckel bleibt knapp»). Hier der Wortlaut der ausgelagerten Prosa:

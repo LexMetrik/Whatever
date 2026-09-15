@@ -309,14 +309,6 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Register-Ebene, kein Volltext-Nachbau). Kontext: externer Termin (FINMA-Bereich soll vorzeigbar sein).
   **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §10.
 
-- [x] **Entstehung am Artikel — Daten: Verfahrens-Ereignisse, Historie-Kopf, Botschafts-Keys, Anker, Parlament** *(`W2·6c-ENTSTEHUNG-DATEN`, §14-Intake 6.9.2026, Design-Freigabe David 6.9.2026)*
-  <!-- @meta id: W2·6c-ENTSTEHUNG-DATEN · status: done · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
-  ✅ Erledigt 11.9.2026 — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (Entstehung).
-
-- [x] **Entstehung am Artikel — Synopse alt/neu ab 2021 und Entwurf↔Beschluss** *(`W2·6c-ENTSTEHUNG-SYNOPSE`, 6.9.2026; absorbiert den Datenanteil von M16)*
-  <!-- @meta id: W2·6c-ENTSTEHUNG-SYNOPSE · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-DATEN] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
-  ✅ Erledigt 11.9.2026 — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (Entstehung).
-
 - [ ] **Entstehung am Artikel — Deep Research Gesetzgebungsprozess** *(`W2·6d-VERFAHREN-RECHERCHE`, §14-Intake 15.9.2026)*
   <!-- @meta id: W2·6d-VERFAHREN-RECHERCHE · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
   Verfahrensmodell «Wie entsteht ein Bundeserlass» aus amtlichen Quellen, je Schritt Norm · Akteur ·
@@ -691,9 +683,6 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **`scripts/tarif/**` in `istRisikoPfad()` aufnehmen** *(Nebenfund Nachzug 6.9.2026)* — die Drift-Logik fällt Rechtsdaten-Verdikte, liegt aber ausserhalb des Klassifikators in `scripts/gegenpruefung/kern.ts`; Rot-Beweis: Edit an `drift-logik.ts` muss `check:gegenpruefung` rot machen.
   - [ ] **WARTET AUF DAVID (fachlich, §7):** Verjährungsrevision 2020 (relative Frist 1→3 J.) als echte Weiche statt Nutzerwarnung (`verjaehrung.ts:547`).
 
-- [x] **Drift-Nachverifikation der Tarif-Stammdaten (34 Erlasse, 93 Einträge)** *(`W3-TARIF-NACHVERIFIKATION`, Auftrag David 6.9.2026, Befund Tor-Erstlauf `check:tarif-drift`)*
-  <!-- @meta id: W3-TARIF-NACHVERIFIKATION · status: done · blocker: null · dep: [] · feld: werkzeuge -->
-  ✅ Erledigt — Wortlaut der Erledigt-Prosa: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (Entstehung).
 
 ---
 
@@ -710,7 +699,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-EFFIZIENZ-CHECKLISTE.md](fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md) §1 —
   die Checkliste liegt seit 29.8.2026 dort statt hier (sie war eine Merge-Konflikt-Falle: 6 Konflikte
   in EINER Zeile bei 15 PRs).
-  - [ ] **ROADMAP-Deckel bleibt knapp — nächste Umschichtung braucht einen `dep`-Umbau** *(Messung 14.9.2026)* — `main` stand bei 122 875 von 122 880 Bytes (fünf Bytes Luft); vier erledigte Schritte sind in die Chronik überführt (Umschichtung 14.9.2026 (7)), vier weitere `done`-Schritte **können nicht** wandern, weil lebende Schritte `dep` auf sie halten (`W2·6c-ENTSTEHUNG-DATEN`/`-LESER`/`-SYNOPSE`, `W2·26-FUNKTIONSZEILE`). Wurzel-Kandidat: `dep` auf erledigte Schritte auflösen oder `check:plan` erledigte `dep`-Ziele aus der Chronik akzeptieren lassen.
+  - [x] **ROADMAP-Deckel bleibt knapp — nächste Umschichtung braucht einen `dep`-Umbau** *(Messung 14.9.2026)* — `main` stand bei 122 875 von 122 880 Bytes (fünf Bytes Luft); vier erledigte Schritte sind in die Chronik überführt (Umschichtung 14.9.2026 (7)), vier weitere `done`-Schritte **können nicht** wandern, weil lebende Schritte `dep` auf sie halten (`W2·6c-ENTSTEHUNG-DATEN`/`-LESER`/`-SYNOPSE`, `W2·26-FUNKTIONSZEILE`). Wurzel-Kandidat: `dep` auf erledigte Schritte auflösen oder `check:plan` erledigte `dep`-Ziele aus der Chronik akzeptieren lassen. **Erledigt 15.9.2026 (PR dieser Session, Schritt `QS-EFFIZIENZ`):** Wurzel-Kandidat (b) gebaut — `chronikErledigte` in `scripts/plan/parse.ts`, `check:plan` Regel 4/4c, `resolve()`/`plan:next`, `plan:bild` und `plan:set` akzeptieren ein `dep`-Ziel, das in `ROADMAP-CHRONIK.md` als `done` archiviert ist; `ROADMAP.md` gewinnt bei Doppel-Fundstellen, ein Archiv-Eintrag mit `status != done` und ein mehrdeutiges Archiv sind rot (Rot-Beweis: `src/tests/plan-check.dep-chronik.test.ts`). Erste Anwendung: `W2·6c-ENTSTEHUNG-DATEN`/`-SYNOPSE` und `W3-TARIF-NACHVERIFIKATION` überführt (Chronik, «Umschichtung 15.9.2026 (dep-Umbau)»), 120 788 → 119 487 Bytes.
   - [ ] **Steuerdeckel-Entscheid — wartet auf David:** Streichkandidat unter `scripts/check-*.ts` (5.9.2026 Prosa-Diät statt Deckel-Hebung; Hooks ~0 B Luft) *(sechs erledigte Nebenpunkte 5.9.2026 umgeschichtet: ROADMAP-CHRONIK.md, Umschichtung 6.9.2026).*
   - [ ] **Rückbau-Kandidaten aus `npm run tor:bewaehrung` — wartet auf David:** `check:smoke` · `check:sweep` · `check:verfall` · `check:normtext` (je 83 Läufe, null Rot seit Einführung, Stand 15.9.2026); dazu entscheiden, ob `tor:bewaehrung` und `retro:17` (gleiche Frage, andere Zeitreihe) zusammengelegt werden (§17-Gegengewicht). Hook-Log-Diff für die 9 Hooks liegt bei David (`/tmp/qs-bewaehrung-hook-log.diff`).
   - [x] **Session-Notizen-Datei (Nebenfunde/Lehren überleben Kompaktierung und Übergabe)** — erledigt 15.9.2026, PR #891

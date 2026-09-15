@@ -21,7 +21,7 @@
 // Lagebild (§5) — die Seiten widersprechen sich nicht, sie zeigen verschiedene
 // Auflösungsgrade.
 import { readFileSync } from 'node:fs';
-import { parseRoadmap, type Einheit } from './parse';
+import { parseRoadmap, type Einheit, ladeChronikDone } from './parse';
 import { resolve, type Buckets } from './aufloesen';
 import {
   baustellenInfo,
@@ -101,7 +101,8 @@ const OHNE_FLAECHE = 'Ohne deklariertes Baufeld';
 export function bauSeite(o: SeitenOpts): string {
   const md = readFileSync('ROADMAP.md', 'utf8');
   const { einheiten, queue } = parseRoadmap(md);
-  const b: Buckets = resolve(einheiten, queue);
+  // Chronik-Wissen mitgeben, sonst zeigt das Lagebild andere Buckets als plan:next.
+  const b: Buckets = resolve(einheiten, queue, ladeChronikDone());
   const schritte = schrittInfoAusRoadmap(md);
   const t = (id: string) => schritte.get(id)?.titel ?? id;
   const byId = new Map(einheiten.map((e) => [e.id, e]));

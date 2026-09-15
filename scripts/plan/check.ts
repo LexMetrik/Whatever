@@ -1,6 +1,6 @@
 // scripts/plan/check.ts
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
-import { parseRoadmap, bindeCheckbox, bulletEinzug, BULLET_RE, CHECKBOX_RE, CHECKBOX_STATUS, type Einheit } from './parse';
+import { parseRoadmap, bindeCheckbox, bulletEinzug, BULLET_RE, CHECKBOX_RE, CHECKBOX_STATUS, CHRONIK_DATEI, chronikErledigte, dateiLeser, type Einheit } from './parse';
 import { resolve } from './aufloesen';
 import { parseEtikett, FELD_WERTE, istFeld, type Status } from './etikett';
 import { pruefeSpecBindung } from './specBindung';
@@ -72,8 +72,10 @@ function zyklus(einheiten: Einheit[]): string | null {
   return fund;
 }
 
-/** Datei-Leser für Regel 11 (Spec-Bindung): Inhalt oder `null`, wenn nicht lesbar. */
-export const dateiLeser = (p: string): string | null => (existsSync(p) ? readFileSync(p, 'utf8') : null);
+// `dateiLeser` liegt seit 15.9.2026 in parse.ts (Begründung dort: die CLI-Einstiege
+// brauchen ihn, und ein Import aus DIESER Datei zöge den CLI-Block unten mit).
+// Re-Export, damit bestehende Importe aus check.ts gültig bleiben.
+export { dateiLeser } from './parse';
 
 export function pruefe(
   md: string,
@@ -84,6 +86,10 @@ export function pruefe(
   const probleme: Problem[] = [];
   const { einheiten, blockers, queue } = parseRoadmap(md);
   const vorhanden = new Set(einheiten.map((e) => e.id));
+  // Zweite Fundstelle für eine Schritt-ID: das Wortlaut-Archiv. Gelesen über
+  // DENSELBEN injizierten `leseDatei` wie Regel 11/13/14 — so bleibt `pruefe`
+  // dateisystemfrei testbar, und der Weg zur Chronik ist genau einer (§5).
+  const chronik = chronikErledigte(leseDatei(CHRONIK_DATEI));
 
   // (1) Keine Doppel-IDs.
   //
@@ -114,11 +120,38 @@ export function pruefe(
     }
     if (t.status === 'ready' && t.blocker) probleme.push({ id: e.id, meldung: `status ready aber blocker gesetzt` });
     // (4) dep-IDs existieren
-    for (const d of t.dep) if (!vorhanden.has(d)) probleme.push({ id: e.id, meldung: `dep "${d}" existiert nicht` });
+    //
+    // Der Chronik-Zweig (15.9.2026, QS-EFFIZIENZ) ist der Wurzel-Fix zum
+    // ROADMAP-Deckel: ohne ihn hält jede eingehende dep-Kante einen erledigten
+    // Schritt für immer in der 120-KiB-Datei fest, und die einzigen Auswege wären
+    // eine gefälschte dep-Kante oder ein nicht mehr senkbarer Deckel (Messung
+    // 14.9.2026: fünf Bytes Luft, vier done-Schritte durch genau diese Kante gesperrt).
+    //
+    // ROADMAP.md GEWINNT IMMER (`vorhanden` zuerst): die Chronik friert Wortlaut
+    // samt damaligem Status ein und ist kein Status-Register — 16 ihrer 83 Anker
+    // stehen auf `ready`/`wip`, drei IDs stehen in beiden Dateien (Messung
+    // 15.9.2026). Der Fallback greift darum nur für IDs, die in ROADMAP.md nicht
+    // (mehr) stehen. Genau dort — und nur dort — ist ein mehrdeutiges Archiv ein
+    // Fehler, weil sich das Ziel dann nicht mehr auflösen lässt.
+    for (const d of t.dep) {
+      if (vorhanden.has(d)) continue;
+      if (chronik.mehrdeutig.has(d)) {
+        probleme.push({ id: e.id, meldung: `dep "${d}" ist in ${CHRONIK_DATEI} mehrdeutig archiviert (mehrfach mit verschiedenem status) — nicht auflösbar` });
+      } else if (chronik.done.has(d)) {
+        continue; // erledigt und archiviert — die dep ist erfüllt
+      } else if (chronik.status.has(d)) {
+        probleme.push({ id: e.id, meldung: `dep "${d}" steht in ${CHRONIK_DATEI} als ${chronik.status.get(d)}, nicht als done — nur erledigte Schritte gehören ins Archiv` });
+      } else {
+        probleme.push({ id: e.id, meldung: `dep "${d}" existiert nicht` });
+      }
+    }
     // (4c) done ⇒ alle dep sind done. Ein erledigter Schritt, der auf einem
     // offenen hängt, ist entweder falsch abgehakt oder trägt eine überholte
     // dep — beides macht den Plan unwahr. (Befund 20.7.2026: W2·6a-MAT done
     // mit dep auf W2·7-VZUI ready — die Regel fehlte, also fiel es nie auf.)
+    // Ein dep-Ziel, das NUR in der Chronik steht, fällt hier durch `ziel === undefined`
+    // heraus und gilt als erfüllt — richtig, denn Regel 4 oben hat es bereits gegen
+    // die Chronik geprüft und meldet jeden nicht-`done`-Fall selbst.
     if (t.status === 'done') {
       const offeneDeps = t.dep.filter((d) => {
         const ziel = einheiten.find((x) => x.id === d);
@@ -295,7 +328,10 @@ export function pruefe(
     if (!queue.length) {
       probleme.push({ id: null, meldung: `Prosa behauptet einen obersten Schritt («⬆ OBERSTER OFFENER SCHRITT»), aber es gibt keine @queue` });
     } else if (idImText) {
-      const mechanischOberster = resolve(einheiten, queue).readyNow[0] ?? null;
+      // Chronik-Wissen MUSS mit: plan:next (next.ts) löst mit ihm auf, und ein
+      // Tor, das gegen eine andere Auflösung prüft als das Werkzeug, meldet Drift,
+      // wo keine ist — bzw. sieht echte nicht.
+      const mechanischOberster = resolve(einheiten, queue, chronik.done).readyNow[0] ?? null;
       if (idImText !== mechanischOberster) {
         probleme.push({ id: idImText, meldung: `Prosa behauptet oberster "${idImText}", plan:next liefert "${mechanischOberster ?? '—'}"` });
       }
