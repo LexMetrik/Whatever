@@ -57,6 +57,12 @@ erfüllt.
 > Drift-**Erkennung**, keinen Hash-Abdruck im UI (Ä71, 18.8.2026); der Token steht in der
 > verlinkten Datei. Fahrplan §1 entsprechend präzisiert.»
 
+> *(Prosa-Hälfte der abgehakten Zeile «Einzelartikel-Ansicht E1 + E2», ausgelagert 15.9.2026 —
+> in der ROADMAP bleibt Titel, Datum, PR + Merge-SHA und der Zeiger hierher:)*
+> «Umschalter «Ganzer Erlass | Einzelner Artikel», Blättern, Dossier-Blöcke
+> Historie/Verweise/Materialien/Werkzeuge; die Nachbar-Pfeile aus #854 erscheinen nur noch
+> hier (Davids Befund «das bringt aber nur etwas wenn man einzeln einen artikel hat»).»
+
 **Entscheid zur Kennung S4** (§5, eine Bedeutung): **S4 = Sortierung der Suchtreffer auf
 Erlass-Reihenfolge**, wie der Fahrplan sie seit dem 16.8.2026 führt. Die Kantons-Probe behält
 keine Etappen-Kennung — sie war ein Nachweis innerhalb von H4, kein Bauschritt. Die
