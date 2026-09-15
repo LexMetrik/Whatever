@@ -43,7 +43,11 @@
 
 import { findeVorkommen } from './suchHighlight';
 import { ohneMarkup } from './helpers';
-import { artikelSachtitel, randtitelKnoten } from '../../lib/normtext/darstellung';
+import { randtitelKnoten } from '../../lib/normtext/darstellung';
+// W2·27 (Entscheid David 14.9.2026, Randtitel-Doppelmodell): die
+// Sachtitel-Fallback-Kette (`marginalie` vor `titel`) lebt nur noch hier —
+// vorher zweite Inline-Kopie derselben Regel wie im Gliederungs-Baum (§5).
+import { artikelRandtitel } from './gliederungsArtikel';
 import type { StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 
@@ -226,8 +230,9 @@ export function baueLeserSuchIndex(
     // Randtitel selbst (`titel`, LexWork article_title) — dieselbe Zwei-Quellen-
     // Regel wie `hatRandtitel` im Gliederungs-Modell (§5). Für die ANZEIGE der
     // Trefferzeile zählt die reine Sachüberschrift (Aufzähler abgestreift),
-    // sonst hiesse die halbe VwVG-Trefferliste «1.» und «II.».
-    const sachtitel = artikelSachtitel(marginalie) ?? (e.titel?.trim() || null);
+    // sonst hiesse die halbe VwVG-Trefferliste «1.» und «II.». `artikelRandtitel`
+    // ist die EINE Stelle für diese Regel (W2·27, vorher zweite Inline-Kopie).
+    const sachtitel = artikelRandtitel(e, struktur);
     const gliederung = st?.gliederung ?? [];
 
     const segmente: Segment[] = [];
@@ -242,8 +247,11 @@ export function baueLeserSuchIndex(
         blatt !== null && stufe === blatt ? 'immer' : 'nie', stufe);
     });
     // Kantons-Snapshots ohne Sidecar-Marginalie: `titel` ist der amtliche
-    // Randtitel und wird am Artikel gerendert (ArtikelLeser-Fallback).
-    if (marginalie.length === 0) schiebe(segmente, 'm', 'Randtitel', 'immer', e.titel);
+    // Randtitel und wird am Artikel gerendert (ArtikelLeser-Fallback). `sachtitel`
+    // ist hier bereits genau dieser Wert (marginalie.length === 0 ⇒
+    // `artikelRandtitel` reduziert sich auf den `titel`-Zweig) — zweite
+    // Inline-Kopie entfernt (W2·27), keine neue Berechnung nötig.
+    if (marginalie.length === 0) schiebe(segmente, 'm', 'Randtitel', 'immer', sachtitel);
     // 2 · Die Bestimmungs-Bezeichnung selbst. Sie steht im Artikelkopf und war
     //     schon in der alten Filterregel durchsuchbar («Art. 41»); sie zählt
     //     zum Feld `g`, weil sie eine Überschrift ist und kein Wortlaut.
