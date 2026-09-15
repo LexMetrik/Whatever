@@ -2,7 +2,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { absatzNorm, bestimmePassusZiel, type PassusInfo } from '../../lib/normtext/passusZiel';
-import { trenneAenderungshistorie, absatzMarke, gruppiereBetraege, istAufgehoben } from '../../lib/normtext/darstellung';
+import {
+  trenneAenderungshistorie, absatzMarke, gruppiereBetraege, istAufgehoben, LEERSTELLE_KURZ,
+  LEERSTELLE_ERLAEUTERUNG,
+} from '../../lib/normtext/darstellung';
 import { NormText, type InternRefs } from '../NormText';
 import { chapeauZielFremdgesetz } from '../../lib/fedlex';
 import { BildFigur, BildKacheln } from './BildElemente';
@@ -179,7 +182,7 @@ function etabliertFremdgesetz(absatzText: string, eigenesKuerzel?: string): bool
   return false;
 }
 
-export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, autolink = false, zitierKontext, fnProAbsatz, fnProItem, fnInlineAbsatz, fnInlineItem, fnKlasse, intern }: {
+export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, autolink = false, zitierKontext, fnProAbsatz, fnProItem, fnInlineAbsatz, fnInlineItem, fnKlasse, intern, artikelAufgehoben = false }: {
   bloecke: NormSnapshot['bloecke'];
   /** Artikel-Token des Snapshots — steuert die Tarif-Darstellungs-Normalisierung. */
   artikel: string;
@@ -225,6 +228,11 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
   zitierKontext?: ZitierKontext;
   /** Lesesicht: bare Artikelverweise auf denselben Erlass als Sprung-Links. */
   intern?: InternRefs;
+  /** W2·27 (15.9.2026): Der GANZE Artikel ist AMTLICH aufgehoben
+   *  (`NormSnapshot.aufgehoben`). Nur dieser Beleg deckt einen LEEREN Block als
+   *  «aufgehoben» — s. den Block «LEERER BLOCK ≠ AUFHEBUNG» unten. Default
+   *  `false` hält Popover/Vorschau byte-gleich (golden, §6). */
+  artikelAufgehoben?: boolean;
 }) {
   const { passusMarke, zielItemKey } = bestimmePassusZiel(bloecke, passus);
   // Im Lesefluss zitierte Normen/Urteile klickbar machen (D2); sonst Klartext.
@@ -430,7 +438,15 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                     Text, §7). Leeren Item-Text wie eine Aufhebung gedämpft
                     zeigen — die Marke bleibt links sichtbar (Lücke geschlossen). */}
                 {/* B2: Ersatztext, kein Wortlaut → `data-such-meta` (s. Import). */}
-                {it.text.trim() === '' || istAufgehoben(it.text)
+                {/* W2·27 (15.9.2026): LEERES Item ohne amtlichen Artikel-Beleg
+                    sagt «kein Text im Snapshot», nicht «aufgehoben» — dieselbe
+                    Grenze wie am Absatz unten (Block «LEERER BLOCK ≠ AUFHEBUNG»).
+                    Der amtliche Wortlaut «Aufgehoben» (istAufgehoben) bleibt
+                    unberührt: er ist Quelle, keine Heuristik. */}
+                {it.text.trim() === '' && !artikelAufgehoben
+                  ? <span {...{ [SUCH_META]: '' }} className="italic text-ink-500"
+                      title={LEERSTELLE_ERLAEUTERUNG}>{LEERSTELLE_KURZ}</span>
+                  : it.text.trim() === '' || istAufgehoben(it.text)
                   ? <span {...{ [SUCH_META]: '' }} className="italic text-ink-500">aufgehoben</span>
                   : (() => {
                       // Tarif-Staffel auch in Items als Tabelle (viele
@@ -662,7 +678,38 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                 // «aufgehoben» fälschlich über der Liste stehen (Bug 22.6., 232 Blöcke,
                 // z.B. VWVG Art. 1). tabelle/mehrspaltig haben oben bereits Early-Return.
                 const hatItems = b.items != null && b.items.length > 0;
+                // ── W2·27 (15.9.2026) · LEERER BLOCK ≠ AUFHEBUNG (§8) ────────
+                // Bis hierher galt beides als «aufgehoben»: der amtliche
+                // Platzhalter «…»/«Aufgehoben» UND der buchstäblich LEERE Block.
+                // Das sind zwei verschiedene Dinge.
+                //   «…» / «Aufgehoben» ist ein Zeichen DER QUELLE. Bund: die
+                //     Fedlex-Aufhebungsellipse (OR Art. 48). Kanton: LexWork
+                //     setzt sie als eigene Klasse `abrogation_ellip`
+                //     (adapter-lexwork.ts, `enthaeltEigeneAbrogationEllipse`) —
+                //     eine amtliche Aufhebungsmarke. Sie bleibt «aufgehoben».
+                //   LEER ist KEIN Zeichen der Quelle, sondern das Fehlen eines
+                //     jeden. Gemessen 15.9.2026 über den committeten Korpus: 816
+                //     Bund- und 746 Kanton-Blöcke sind leer OHNE Absatznummer in
+                //     einem Artikel ohne amtliches `aufgehoben`. Beleg, dass das
+                //     keine Aufhebungen sind: AHVG Art. 34bis trägt einen solchen
+                //     Block direkt hinter Abs. 2 «Der Grundzuschlag wird
+                //     folgendermassen abgestuft:» — die Staffel ist bei der
+                //     Extraktion weggefallen, und der Leser schrieb darüber
+                //     «aufgehoben». Das ist eine falsche Auskunft (§1), kein
+                //     Detail der Dämpfung.
+                // Der ARTIKEL-Beleg deckt seine Blöcke mit: ist der ganze Artikel
+                // amtlich aufgehoben, ist es auch sein leerer Block (Kanton:
+                // 1 142 Fälle, LexWork-Segment ohne jeden Body).
+                // NICHT gebaut: die absatz-genaue Aufhebung. Ihr Beleg existiert
+                // (Bund: Historie-Shard, 872 Fälle; Kanton: `abrogation_ellip` je
+                // <p>), liegt aber nicht in dieser Schicht — der Shard wird lazy
+                // geholt (nicht prerendert ⇒ die Aussage flackerte), und der
+                // Kanton hat gar keinen. Das gehört an die Bauzeit
+                // (scripts/normtext/**) und ist als eigener Schritt vermerkt.
                 // B2: Ersatztext, kein Wortlaut → `data-such-meta` (s. Import).
+                if (!hatItems && !anzeige.trim() && !artikelAufgehoben)
+                  return <span {...{ [SUCH_META]: '' }} className="italic text-ink-500"
+                    title={LEERSTELLE_ERLAEUTERUNG}>{LEERSTELLE_KURZ}</span>;
                 if ((!anzeige.trim() || istAufgehoben(anzeige)) && !hatItems) return <span {...{ [SUCH_META]: '' }} className="italic text-ink-500">aufgehoben</span>;
                 if (!anzeige.trim()) return null;
                 const zeilen = staffelZeilen(anzeige);

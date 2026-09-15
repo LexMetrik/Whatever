@@ -37,11 +37,17 @@ const erlass: BrowseErlass = {
   pdfPfad: null,
 };
 
-/** Ein Eintrag in Snapshot-Form. `tot` = ganz aufgehobener Artikel («…»). */
+/** Ein Eintrag in Snapshot-Form.
+ *  `tot` = AMTLICH aufgehobener Artikel: Platzhalter-Body «…» UND das Feld
+ *  `aufgehoben` (W2·27, 15.9.2026 — RE-BLESS deklariert). Bis dahin trug die
+ *  Vorrichtung nur den Body; seit der §8-Trennung ist das der Fall
+ *  «leer-ungeklaert», nicht «aufgehoben». Der Fall OHNE Feld hat jetzt einen
+ *  eigenen Abschnitt (unten) — er ist der Kern der Auflage. */
 const eintrag = (artikel: string, tot = false): NormSnapshot => ({
   id: `bund/OR/art_${artikel}`, ebene: 'bund', quelle: 'OR', erlass: 'OR',
   artikel, artikelLabel: `Art. ${artikel}`,
   bloecke: tot ? [{ absatz: null, text: '…' }] : [{ absatz: '1', text: `Wortlaut von Art. ${artikel}.` }],
+  ...(tot ? { aufgehoben: true as const } : {}),
   stand: '2026-01-01', quelleUrl: 'https://x', abgerufen: '2026-09-14',
   fassungsToken: '20260101', sha: artikel,
 });
@@ -70,8 +76,10 @@ describe('W2·5m (a) · welche Artikel sind die Nachbarn (rein, `v3/nachbarArtik
     // der Vorgänger von 92 — wer von 90a weiterblättert, soll SEHEN, dass dort
     // eine aufgehobene Bestimmung steht, statt still darüber zu springen.
     expect(labels('92').vor).toBe('Art. 91');
-    expect(map.get('90a')?.nach?.aufgehoben).toBe(true);
-    expect(map.get('90a')?.vor?.aufgehoben).toBe(false);
+    // RE-BLESS W2·27: aus `aufgehoben: true/false` wurde die dreiwertige
+    // Belegstufe — der amtlich markierte Art. 91 ist 'aufgehoben', Art. 90 lebt.
+    expect(map.get('90a')?.nach?.zustand).toBe('aufgehoben');
+    expect(map.get('90a')?.vor?.zustand).toBe('lebt');
   });
 
   it('Anfang und Ende des Erlasses: die fehlende Seite ist `null`, kein toter Verweis', () => {

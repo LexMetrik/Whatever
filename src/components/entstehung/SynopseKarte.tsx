@@ -1,4 +1,5 @@
 import { datumCh } from '../../lib/normtext/erlassKopfText';
+import { LEERSTELLE_ERLAEUTERUNG, type LeerstellenStatus } from '../../lib/normtext/darstellung';
 import { AMTLICHE_FASSUNG_NOMEN } from '../../lib/benennung';
 import { standVon, type SynopseShard } from '../../lib/entstehung/synopse';
 import { entwurfUrl, type EntwurfArtikel, type EntwurfShard } from '../../lib/entstehung/synopse-entwurf';
@@ -136,19 +137,21 @@ export interface GeltendQuelle { stand?: string; quelleUrl?: string; abgerufen?:
 /** Der Entwurfs-Fund zu diesem Artikel (E6) — `null` = keiner. */
 export interface EntwurfFund { shard: EntwurfShard; artikel: EntwurfArtikel }
 
-export function SynopseKarte({ lage, shard, geltend, entwurf, aufgehoben, id }: {
+export function SynopseKarte({ lage, shard, geltend, entwurf, zustand, id }: {
   lage: SynopseLage;
   shard: SynopseShard | null | undefined;
   geltend: GeltendQuelle;
   entwurf?: EntwurfFund | null;
-  /** Der geltende Artikel ist vollständig aufgehoben (Korpus-Signal, §5). */
-  aufgehoben?: boolean;
+  /** Belegstufe des geltenden Artikels (W2·27, §5 — dieselbe Quelle wie der
+   *  Leser). 'leer-ungeklaert' darf NICHT «aufgehoben» sagen: der Korpus weiss
+   *  nur, dass kein Wortlaut da ist, nicht warum (§8). */
+  zustand?: LeerstellenStatus;
   id: string;
 }) {
   return (
     <div className="lr8-syn" data-synopse-karte id={id}>
       {lage.art === 'vergleich'
-        ? <Vergleich treffer={lage.treffer} shard={shard!} geltend={geltend} entwurf={entwurf} aufgehoben={aufgehoben} />
+        ? <Vergleich treffer={lage.treffer} shard={shard!} geltend={geltend} entwurf={entwurf} zustand={zustand} />
         : lage.art === 'quelle_unvollstaendig'
           ? <QuellLuecke treffer={lage.treffer} />
           : <p className="lr8-syn-lage" data-synopse-lage={lage.art}>{lageSatz(lage)}</p>}
@@ -245,12 +248,12 @@ function QuellLuecke({ treffer }: { treffer: QuellLueckeTreffer }) {
   );
 }
 
-function Vergleich({ treffer, shard, geltend, entwurf, aufgehoben }: {
+function Vergleich({ treffer, shard, geltend, entwurf, zustand }: {
   treffer: SynopseTreffer;
   shard: SynopseShard;
   geltend: GeltendQuelle;
   entwurf?: EntwurfFund | null;
-  aufgehoben?: boolean;
+  zustand?: LeerstellenStatus;
 }) {
   const { schritt, artikel, neu, neuHerkunft, mehrdeutig } = treffer;
   const altStand = standVon(shard, schritt.von);
@@ -273,8 +276,13 @@ function Vergleich({ treffer, shard, geltend, entwurf, aufgehoben }: {
       {neu === null && (
         <p className="lr8-syn-hinweis">Der Artikel ist mit diesem Stand entfallen; rechts steht darum nichts.</p>
       )}
-      {aufgehoben && neuHerkunft === 'geltend' && (
+      {zustand === 'aufgehoben' && neuHerkunft === 'geltend' && (
         <p className="lr8-syn-hinweis">Der Artikel ist heute aufgehoben — die rechte Spalte zeigt den Korpus-Stand dieser Aufhebung.</p>
+      )}
+      {/* W2·27 (15.9.2026): ohne amtlichen Vermerk sagt die Karte, WAS sie weiss
+          — dass kein Wortlaut da ist —, und nicht, was sie vermutet (§8). */}
+      {zustand === 'leer-ungeklaert' && neuHerkunft === 'geltend' && (
+        <p className="lr8-syn-hinweis">{LEERSTELLE_ERLAEUTERUNG} Die rechte Spalte zeigt den Korpus-Stand.</p>
       )}
       {artikel.zustand === 'ohne_ereignis' && (
         <p className="lr8-syn-hinweis" data-synopse-ohne-ereignis>
