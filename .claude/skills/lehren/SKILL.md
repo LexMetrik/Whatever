@@ -166,6 +166,34 @@ neben dem in Runde 2 gefundenen SKV-Fall. Beide Ausnahmen liegen als Muster in
 der amtliche Wert künftig ab, wird der Wächter rot (Stale-Bindung) statt die Ausnahme
 stillschweigend weiter zu tragen — dieselbe Prüfer-Regel, jetzt auch als Tor-Muster.
 
+**F17 — Gebaut, nie gebucht: der Vollzug landet im Fahrplan, die ROADMAP-Checkbox
+bleibt offen (15.9.2026, `W2·5m-LESER-V3`, vier Posten, vier Wochen).** Die
+Bereinigung der Leser-V3-Checkliste ergab: **alle vier offenen Posten waren gebaut**
+— D0 (#534, 16.8.), S1 (#547) und S2 (#550, beide 17.8.), Kantons-Probe (#552, 18.8.).
+Vier verschiedene Wege in denselben Zustand, jeder für sich harmlos: **#534** hakte die
+Zeile ab, aber die andere — `DESIGN-D0` stand doppelt im Plan (§5), die Kopie unter dem
+Leser-Dach blieb stehen. **#547** fasste ROADMAP.md an, aber nur um drei NEUE §17-Funde
+einzutragen; die eigene Checkbox blieb unberührt. **#550** fasste ROADMAP.md gar nicht an
+und schrieb «✅ gebaut» nur in den Fahrplan — zwei Wahrheiten, kein Tor las beide. **#539**
+meldete die S4-Begriffskollision ausdrücklich und verwies sie ans «nächste Plan-Aufräumen»;
+dieses (#577, Steuerungs-Diät 29.8.) **löschte den Warn-Absatz beim Verdichten, ohne den
+darin hinterlegten Auftrag auszuführen**. Muster: eine Bau-Session führt zuverlässig, was
+ihr im Weg steht — die eigene Checkbox ist das Einzige, was nicht stört, wenn es
+stehenbleibt; und ein Doku-Aufräumen nach Zeichenzahl entfernt Warn-Absätze zuverlässiger,
+als es die darin hinterlegten Aufträge ausführt. Schaden: keine Doppelarbeit belegt, aber
+vier Wochen falsche Steuerung — `plan:next` und jeder Lagebild-Bau-Prompt lasen «offen».
+**Gegenmittel (Tor, nicht Prosa): `check:plan` Regel 14** — trägt eine eingerückte
+Checklisten-Zeile eine Etappen-Kennung und markiert der per `fahrplan:` verlinkte Fahrplan
+dieselbe Kennung mit ✅/«VOLLZOGEN», ist die offene Checkbox rot
+(`scripts/plan/etappenBuchung.ts`, `src/tests/plan-check.etappen-buchung.test.ts`).
+Geburtsbeweis §6.7: rot auf `e94a3dc90` mit exakt den zwei vorhergesagten Treffern (S2, S4),
+grün nach der Bereinigung, dazu 9 Vitest-Fälle inkl. Rot-Fall — damit bleibt die Regel
+prüfbar, wenn die reale ROADMAP längst sauber ist (F2e). **Deklarierte Richtungs-Grenze:**
+die Regel prüft nur «Fahrplan sagt fertig, Plan sagt offen». Die Gegenrichtung ist
+Normalfall, nicht Defekt; und einen Vollzug, den WEDER Fahrplan noch ROADMAP notiert (D0,
+S1 fand die Regel nicht), fängt sie nicht — sie ist eine Untergrenze, kein
+Vollständigkeitsbeweis.
+
 ## Eine neue Lehre ablegen
 
 1. **Klasse bestimmen.** Fällt der Vorfall unter F1–F6? Dann dort das Gegenmittel
