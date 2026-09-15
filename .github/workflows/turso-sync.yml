@@ -7,7 +7,7 @@
 # Secret TURSO_AUTH_TOKEN (Schreib-Token) — David-Rahmen-Gate 16.7.2026 freigegeben.
 # Ohne Secret degradiert der Job ehrlich (ueberspringt den Sync, meldet es).
 #
-# ── Reparatur 20.7.2026: warum dieser Workflow zwei Jobs hat ───────────────────────────
+# ── Reparatur 20.7.2026: warum der Frische-Waechter existiert ──────────────────────────
 # Vom 18. bis 20.7.2026 lief `sync` sechsmal in `timeout-minutes: 20` und wurde jedes Mal
 # `cancelled`. GitHub faerbt einen abgebrochenen Lauf GRAU, nicht rot — es fiel tagelang
 # niemandem auf, obwohl BS-Import #300 (3765 Entscheide), G-REF #299, ASYLV2 #304 und die
@@ -16,41 +16,44 @@
 # Commit PRO ZEILE (~33 Zeilen/s → 46 min fuer 61k Zeilen). Behoben in turso-sync.ts durch
 # Mehrzeilen-INSERTs in BEGIN/COMMIT (gemessen 43x schneller). Zwei Konsequenzen hier:
 #   1. `timeout-minutes` bleibt eine ECHTE Notbremse mit Reserve, nicht die Loesung.
-#   2. Der Job `frische` laeuft taeglich per cron und wird ROT, wenn die Replika hinterher-
-#      hinkt oder unvollstaendig ist. Ein abgebrochener Sync kann damit nicht mehr schweigen —
-#      genau das war der eigentliche Schaden (§8).
+#   2. `check:turso-frische` wird ROT, wenn die Replika hinterherhinkt oder unvollstaendig
+#      ist. Ein abgebrochener Sync kann damit nicht mehr schweigen — genau das war der
+#      eigentliche Schaden (§8). Bis zum 15.9.2026 lief der Waechter als EIGENER Job
+#      `frische` fuer den cron-Zweig; seit der Buendelung unten steckt er im Tageslauf
+#      selbst — samt seinem harten Token-Riegel (siehe dort).
 #
-# ── Erweiterung 31.8.2026 (Gegenpruefungs-Befund F1 zu QS-BASIS (d)) ───────────────────
-# Die `paths` unten sahen bis dahin NUR Daten-Diffs. Damit war die stille Annahme
-# verdrahtet, das SCHEMA der Replika aendere sich nie — und genau die brach QS-BASIS (d) K1:
-# `fts_artikel` bekam sechs Spalten statt einer, und api/suche.ts schickt seit K2
-# spalten-gefilterte MATCH-Ausdruecke (`{marginalie gliederung} : "…"`). Der Diff dieses
-# Bauschritts beruehrt KEINE Datei aus der alten Liste; der Sync waere also nicht gelaufen,
-# waehrend die neue Edge-Funktion gegen die alte Ein-Spalten-Replika `no such column:
-# marginalie` und damit 502 auf JEDE Artikel-Query geliefert haette.
-# Aufgenommen sind darum alle Flaechen, die das Replika-Schema oder die Query-Form
-# bestimmen: Generator- und Sync-Code (scripts/datenhaltung/**), die geteilte
-# Feld-Extraktion, die den Index FUELLT (scripts/suche-felder.ts), die Edge-Funktion selbst
-# (api/suche.ts) und diese Datei.
-# `paths` ist und bleibt aber ein Ausloeser, kein Beweis — deshalb steht der zweite,
-# unabhaengige Riegel derselben Klasse in check-turso-frische.ts: der vergleicht seit
-# demselben Befund die DDL der Replika gegen `ddlFtsArtikel()`/`ddlFtsEntscheide()` und
-# wird ROT, wenn ein Sync aus irgendeinem Grund doch nicht lief.
+# ── Buendelung 15.9.2026 (QS-TURSO-SCHREIBVOLUMEN, FAHRPLAN-DATENHALTUNG §17) ──────────
+# BIS HIERHER lief dieser Workflow bei JEDEM Push auf main, der Daten- oder Schema-Pfade
+# beruehrte, und baute dabei alle fuenf HOT-Tabellen komplett neu: 171 065 Zeilen je Lauf,
+# 39 Laeufe vom 1.–14.9.2026 ≈ 6,7 Mio Zeilen — und Turso zaehlt bei indexierten Tabellen
+# jede betroffene Index-Zeile zusaetzlich (turso.tech/pricing, FAQ «rows written», Abruf
+# 15.9.2026). Am 15.9.2026 sperrte Turso das Schreiben (Mail «Writes Blocked», Organisation
+# ravedave, Gratisplan). Lesen war nie gesperrt: api/suche lieferte an demselben Tag HTTP 200
+# mit Treffern. Entscheid David 15.9.2026: nicht zahlen, Wurzel-Fix bauen.
+#
+# DER PUSH-TRIGGER IST DARUM WEG. Der Sync laeuft EINMAL taeglich (cron 05:17 UTC) plus
+# `workflow_dispatch`; innerhalb des Laufs baut turso-sync.ts nur noch die Tabellen neu,
+# deren Signatur oder Zeilenzahl nicht mehr stimmt (Skip-Plan, scripts/datenhaltung/turso-skip.ts).
+#
+# PREIS, ehrlich benannt (§8): ein gelandeter Korpus-Stand ist bis zum naechsten Tageslauf
+# in der SUCHE noch nicht sichtbar. Die Seiten selbst sind sofort aktuell — sie kommen aus
+# den prerenderten Projektionen, nicht aus der Replika. Wer nicht warten will, stoesst den
+# Workflow von Hand an (`workflow_dispatch`). `check:turso-frische` bleibt davon unberuehrt:
+# er faellt erst nach MAX_ALTER_TAGE (7) ueber das Alter, ein Tag Verzug ist kein Rot.
+#
+# Die frueheren `paths` (Gegenpruefungs-Befund F1 zu QS-BASIS (d), 31.8.2026) deckten neben
+# den Daten auch alle Flaechen ab, die das Replika-SCHEMA bestimmen — Generator- und
+# Sync-Code, scripts/suche-felder.ts, api/suche.ts. Der Befund selbst bleibt gueltig, seine
+# Absicherung aber lag nie im Trigger: `paths` war immer ein Ausloeser, nie ein Beweis. Der
+# unabhaengige Riegel derselben Klasse steht in check-turso-frische.ts (Pruefung 0 SCHEMA:
+# DDL der Replika gegen `ddlFtsArtikel()`/`ddlFtsEntscheide()`), und seit dem 15.9.2026
+# zusaetzlich in der Skip-Signatur selbst: die DDL geht in `sig_<tabelle>` ein, eine
+# Schema-Aenderung erzwingt also den Neuaufbau, statt uebersprungen zu werden.
 name: Turso-Serving-Sync
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'public/normtext/**'
-      - 'public/rechtsprechung/**'
-      - 'daten-manifest.json'
-      - 'scripts/datenhaltung/**'
-      - 'scripts/suche-felder.ts'
-      - 'api/suche.ts'
-      - '.github/workflows/turso-sync.yml'
   schedule:
-    # Taeglich 05:17 UTC — Frische-Waechter, unabhaengig davon ob jemand pusht.
+    # Taeglich 05:17 UTC — der EINE Sync-Lauf des Tages (Buendelung 15.9.2026, s. o.).
     - cron: '17 5 * * *'
   workflow_dispatch:
 
@@ -60,8 +63,7 @@ concurrency:
 
 jobs:
   sync:
-    name: Build HOT-Artefakt · Turso-Sync · Live-Paritaet
-    if: github.event_name != 'schedule'
+    name: Build HOT-Artefakt · Turso-Sync · Frische · Live-Paritaet
     runs-on: ubuntu-latest
     # AUSGANGSLAGE (workflow_dispatch 20.7.2026, Lauf 29757068566): 32,8 min gesamt, davon
     # 22,3 min allein `fts_entscheide_schaufenster` (5093 Zeilen, 165 MiB) bei ~128 KiB/s.
@@ -100,14 +102,21 @@ jobs:
           cache: npm
       - run: npx -y npm@11 ci
 
-      - name: Token vorhanden?
-        id: token
+      # HARTER Token-Riegel. Er stand bis zum 15.9.2026 nur im taeglichen `frische`-Job; der
+      # Sync-Job daneben degradierte weich (Warnung, Sync uebersprungen, Lauf gruen). Seit
+      # der Buendelung ist DIESER Job der taegliche Lauf — die weiche Variante wuerde also
+      # genau das Loch aufreissen, gegen das der Riegel gebaut war: faellt oder verfaellt das
+      # Secret, waere der Wachhund fuer immer gruen, ohne je zu pruefen oder zu syncen (§8).
+      # Beide Ausloeser (cron, workflow_dispatch) laufen aus diesem Repo, das Secret steht
+      # ihnen also gleichermassen zur Verfuegung; eine weiche Stufe haette hier keinen Fall
+      # mehr, den sie abfedern koennte (§6.7 — was nicht scheitern kann, gehoert weg).
+      - name: Token vorhanden? (HART — ohne Token wird weder gesynct noch geprueft)
         env:
           T: ${{ secrets.TURSO_AUTH_TOKEN }}
         run: |
-          if [ -n "$T" ]; then echo "da=1" >> "$GITHUB_OUTPUT"; else
-            echo "da=0" >> "$GITHUB_OUTPUT"
-            echo "::warning::Kein TURSO_AUTH_TOKEN — Sync uebersprungen (ehrliche Degradierung)."
+          if [ -z "$T" ]; then
+            echo "::error::TURSO_AUTH_TOKEN fehlt — Sync und Frische-Waechter koennen nichts tun."
+            exit 1
           fi
 
       # Cache fuer die drei DB-Dateien, die `datenhaltung:build` erzeugt (normtext/
@@ -120,7 +129,6 @@ jobs:
       # suche-felder.ts ist FTS-Bau-Input ausserhalb datenhaltung/ (Befund F1 31.8.2026) — darum im Schlüssel.
       - name: Cache HOT-Artefakt (DB-Dateien)
         id: db-cache
-        if: steps.token.outputs.da == '1'
         uses: actions/cache@v4
         with:
           path: |
@@ -130,7 +138,7 @@ jobs:
           key: db-${{ runner.os }}-${{ hashFiles('daten-manifest.json', 'scripts/datenhaltung/**', 'scripts/suche-felder.ts', 'package-lock.json') }}
 
       - name: HOT-Artefakt bauen (aus committeten JSONs, reproduzierbar)
-        if: steps.token.outputs.da == '1' && steps.db-cache.outputs.cache-hit != 'true'
+        if: steps.db-cache.outputs.cache-hit != 'true'
         run: npm run datenhaltung:build
 
       # Beweist, dass der SOEBEN gebaute lokale Stand zum committeten daten-manifest.json
@@ -140,11 +148,13 @@ jobs:
       # sich die ganze Kette gegen ihre eigene Ladung validiert (Gegenpruefung Runde 4).
       # Laeuft sonst nur im PR-Gate (`check:seriell`), also nicht auf diesem Pfad.
       - name: Build gegen committetes Manifest pruefen (check:datenhaltung)
-        if: steps.token.outputs.da == '1'
         run: npm run check:datenhaltung
 
-      - name: Turso-Sync (Voll-Rebuild ueber Schatten-Tabellen, determinismus-beweisbar)
-        if: steps.token.outputs.da == '1'
+      # Exit 3 bedeutet: Turso hat das Schreiben wegen des Monatskontingents gesperrt (die
+      # Meldung des Skripts sagt es als ::error::). Der Schritt faellt dann rot — richtig so:
+      # die Replika hinkt ab diesem Moment nach, und das soll nicht schweigen (§8). Lesen und
+      # Suche laufen dabei weiter; der Reset kommt am 1. des Monats.
+      - name: Turso-Sync (tabellenweiser Rebuild ueber Schatten-Tabellen, determinismus-beweisbar)
         env:
           TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
         run: npm run datenhaltung:turso-sync
@@ -153,20 +163,20 @@ jobs:
       # vollstaendig ist. Faengt insbesondere den halb-gedroppten Zustand, der vorher
       # tagelang unbemerkt live lag.
       - name: Frische-Waechter (Replika == committetes daten-manifest.json)
-        if: steps.token.outputs.da == '1'
         env:
           TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
         run: npm run check:turso-frische
 
       - name: Live-Paritaets-Stichprobe (Prod /api/suche, Artikel UND Entscheide)
-        if: steps.token.outputs.da == '1'
         run: |
           set -uo pipefail
           basis="https://lexmetrik.vercel.app/api/suche"
           fehler=0
-          # Prod deployt nach dem Merge parallel — bis zu 5 Versuche mit Pause, danach ROT.
-          # (Frueher war jeder Nicht-200 nur eine Warnung; damit konnte die Stichprobe
-          # dauerhaft nichts pruefen, ohne je rot zu werden.)
+          # Bis zu 5 Versuche mit Pause, danach ROT. (Frueher war jeder Nicht-200 nur eine
+          # Warnung; damit konnte die Stichprobe dauerhaft nichts pruefen, ohne je rot zu
+          # werden.) Die Wiederholung stammt aus der Zeit, als dieser Job unmittelbar nach
+          # einem Merge lief und gegen ein noch deployendes Prod probte; seit der Buendelung
+          # 15.9.2026 laeuft er nachts, die Reserve bleibt aber als Netzpuffer stehen.
           probe() {
             local q="$1" feld="$2" versuch=1 code gesamt
             while [ "$versuch" -le 5 ]; do
@@ -195,32 +205,3 @@ jobs:
           probe "Beschwerde" entscheide || fehler=1
           exit $fehler
 
-  frische:
-    name: Frische-Waechter (taeglich) — haengt die Replika hinterher?
-    if: github.event_name == 'schedule'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 22
-          cache: npm
-      - run: npx -y npm@11 ci
-      # Der Waechter muss sich MELDEN koennen, wenn er nichts pruefen kann. Ohne Token
-      # endet check:turso-frische ehrlich mit "UEBERSPRUNGEN" und Exit 0 — im Sync-Job ist
-      # das richtig (dort wurde auch nicht gesynct), im taeglichen Waechter waere es fatal:
-      # faellt oder verfaellt das Secret, waere der Wachhund fuer immer gruen, ohne je zu
-      # pruefen. Darum hier ein eigener, harter Token-Riegel.
-      - name: Token vorhanden? (im Waechter HART — sonst prueft er nie und schweigt)
-        env:
-          T: ${{ secrets.TURSO_AUTH_TOKEN }}
-        run: |
-          if [ -z "$T" ]; then
-            echo "::error::TURSO_AUTH_TOKEN fehlt — der Frische-Waechter kann die Replika nicht pruefen."
-            exit 1
-          fi
-      - name: check:turso-frische
-        env:
-          TURSO_AUTH_TOKEN: ${{ secrets.TURSO_AUTH_TOKEN }}
-        run: npm run check:turso-frische

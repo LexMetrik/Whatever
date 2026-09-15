@@ -104,6 +104,10 @@ import {
   REQUEST_OVERHEAD,
   type Wert,
 } from './turso-transport';
+import {
+  BASIS, DDL_BASIS, SPALTEN_BASIS, EXIT_SPERRE, SQL_SIG_MARKEN,
+  istSchreibsperre, planeSkip, pruefeKopplung, sigMarkenAusText, signaturenLokal, sperrMeldung,
+} from './turso-skip';
 
 const URL_STD = 'libsql://lexmetrik-ravedave.aws-eu-west-1.turso.io';
 const TOKEN_DATEI = 'daten/turso-token.txt';
@@ -115,8 +119,11 @@ export const MANIFEST_DATEI = process.env.LEXMETRIK_MANIFEST ?? 'daten-manifest.
 /** Live-Tabellen der HOT-Replika, in Abhängigkeits-Reihenfolge (Basis zuerst).
  *  Der Tausch läuft sie vorwärts (RENAME) und rückwärts (DROP) ab. */
 const SCHATTEN = ['erlasse', 'erlass_fassungen', 'artikel', 'fts_artikel', 'fts_entscheide_schaufenster'] as const;
-/** Teilmenge für `--nur-fts` (Basistabellen bleiben stehen). */
+/** FTS5-Teilmenge (eigener Bau- und Pruefweg: Index-Transfer statt Zeilen). */
 const FTS_TABELLEN = ['fts_artikel', 'fts_entscheide_schaufenster'] as const;
+/** Zugang, sobald geladen — der Sperr-Ausgang unten braucht ihn, um den Stand der Replika
+ *  zu LESEN (Lesen ist bei erschoepftem Schreibkontingent nicht gesperrt). */
+let zugang: { url: string; token: string } | null = null;
 
 interface Stmt {
   sql: string;
@@ -407,12 +414,12 @@ async function integritaet(url: string, token: string, tabelle: string): Promise
 // Mal von Hand stand.
 
 async function main(): Promise<void> {
-  const { url, token } = ladeZugang();
+  zugang = ladeZugang();
+  const { url, token } = zugang;
   const normtext = new DatabaseSync('daten/normtext.db');
   const rspr = new DatabaseSync('daten/rechtsprechung.db');
 
-  const nurFts = process.argv.includes('--nur-fts');
-  console.log(nurFts ? 'turso-sync: NUR-FTS-Neubau (Basistabellen bleiben).' : 'turso-sync: VOLL-REBUILD der Hot-Replika beginnt (Weiche C).');
+  console.log('turso-sync: Rebuild der Hot-Replika beginnt (Weiche C, tabellenweise).');
 
   // 0a) QUELL-RIEGEL gegen das committete Manifest — die einzige UNABHÄNGIGE Zahl.
   //
@@ -474,13 +481,11 @@ async function main(): Promise<void> {
   //      auch der Remote-integrity-check inhaltsblind. Real eng mitigiert, weil build.ts
   //      Basis+Index in einem Zug baut und der Quell-Riegel die Basis per sha ans Manifest
   //      bindet; das Restfenster ist eine handgebastelte DB.
+  const nFtsArtikel = ftsDokumente(normtext, 'fts_artikel');
+  const nEntscheide = ftsDokumente(rspr, 'fts_entscheide_schaufenster');
   const indexRiegel: Array<[string, number, number]> = [
-    ['fts_artikel', ftsDokumente(normtext, 'fts_artikel'), istNormtext['artikel']?.zeilen ?? -1],
-    [
-      'fts_entscheide_schaufenster',
-      ftsDokumente(rspr, 'fts_entscheide_schaufenster'),
-      istRspr['eintrag']?.zeilen ?? -1,
-    ],
+    ['fts_artikel', nFtsArtikel, istNormtext['artikel']?.zeilen ?? -1],
+    ['fts_entscheide_schaufenster', nEntscheide, istRspr['eintrag']?.zeilen ?? -1],
   ];
   const indexFehler = indexRiegel.filter(([, ist, soll]) => ist !== soll);
   if (indexFehler.length > 0) {
@@ -500,98 +505,69 @@ async function main(): Promise<void> {
   // 0) Schatten-Reste eines abgebrochenen Vorlaufs wegräumen (idempotenter Start).
   await pipeline(url, token, SCHATTEN.map((t) => ({ sql: `DROP TABLE IF EXISTS ${t}_neu` })));
 
-  // 0b) `--nur-fts` KORRESPONDENZ-RIEGEL (Gegenprüfungs-Befund B1, schwerster Befund).
-  //     Dieser Modus baut `fts_artikel` aus den LOKALEN Zeilen, tauscht ihn aber gegen die
-  //     LIVE `artikel`-Tabelle. Hinkt die live hinterher, zeigt die Suche systematisch den
-  //     FALSCHEN Artikel — und weil Schritt 7 trotzdem die volle Frische-Marke schrieb, wäre
-  //     der Wächter dazu auch noch grün geworden. Darum: Basistabellen müssen Zeile für Zeile
-  //     UND stichprobenweise inhaltlich zur lokalen DB passen, sonst Abbruch.
-  if (nurFts) {
-    // Alle drei Basistabellen prüfen, nicht nur `artikel`: Schritt 8 stempelt am Ende einen
-    // manifest_sha, der auch für `erlasse`/`erlass_fassungen` gilt (Runde 2, Befund 7).
-    for (const t of ['erlasse', 'erlass_fassungen', 'artikel'] as const) {
-      const lokal = (normtext.prepare(`SELECT count(*) AS n FROM ${t}`).get() as { n: number }).n;
-      const remote = Number(await abfrage(url, token, `SELECT count(*) FROM ${t}`));
-      if (lokal !== remote) {
-        console.error(
-          `turso-sync ROT: --nur-fts unzulässig — live ${t}=${remote}, lokal=${lokal}. ` +
-            'Der FTS-Index würde auf einen fremden Zeilenbestand zeigen (falsche Treffer). ' +
-            'Voll-Rebuild fahren: npm run datenhaltung:turso-sync (ohne --nur-fts).',
-        );
-        process.exit(1);
-      }
-    }
-    // Zeilenzahl allein schliesst eine Verschiebung nicht aus (gleich viele, andere
-    // Reihenfolge). Die Proben werden darum ÜBER DIE GANZE SPANNWEITE gestreut — fünf
-    // aufeinanderfolgende rowids aus einer Region hätten eine Verschiebung, die erst weiter
-    // hinten beginnt, glatt verpasst (Runde 2, Befund 7).
-    const nArt = (normtext.prepare('SELECT count(*) AS n FROM artikel').get() as { n: number }).n;
+  // 0aa) SKIP-PLAN (QS-TURSO-SCHREIBVOLUMEN, §17). Bis zum 15.9.2026 baute JEDER Lauf alle
+  //      fünf Tabellen neu — 171 065 Zeilen, ×39 Läufe im September; das Schreibkontingent
+  //      des Gratisplans war damit aufgebraucht. Jetzt bleibt eine Tabelle stehen, wenn ihre
+  //      Signatur (Ziel-DDL + Inhalt) UND ihre Remote-Zeilenzahl passen. Herleitung, Grenzen
+  //      und Tests: `turso-skip.ts`.
+  const sollZeilen: Record<string, number> = {
+    erlasse: istNormtext['erlasse']?.zeilen ?? -1,
+    erlass_fassungen: istNormtext['erlass_fassungen']?.zeilen ?? -1,
+    artikel: istNormtext['artikel']?.zeilen ?? -1,
+    fts_artikel: nFtsArtikel,
+    fts_entscheide_schaufenster: nEntscheide,
+  };
+  const lokaleSig = signaturenLokal(manifest['normtext.db'] ?? {}, sollZeilen, [
+    ['fts_artikel', ddlFtsArtikel('fts_artikel'), leseFtsSchatten(normtext, 'fts_artikel', false)],
+    ['fts_entscheide_schaufenster', ddlFtsEntscheide('fts_entscheide_schaufenster'),
+      leseFtsSchatten(rspr, 'fts_entscheide_schaufenster', true)],
+  ]);
+  const plan = await planeSkip(
+    lokaleSig,
+    async () => sigMarkenAusText(await abfrage(url, token, SQL_SIG_MARKEN)),
+    async (t) => {
+      const n = Number(await abfrage(url, token, `SELECT count(*) FROM ${t}`));
+      return Number.isFinite(n) ? n : null;
+    },
+  );
+  /** Wird diese Tabelle in DIESEM Lauf neu gebaut? */
+  const baue = (t: string): boolean => plan.get(t)?.skip !== true;
+  for (const t of SCHATTEN) console.log(`  Skip-Plan ${t}: ${plan.get(t)?.grund ?? 'kein Befund — Neuaufbau'}`);
+
+  // 0b) KORRESPONDENZ-RIEGEL fuer den TEILBAU (Gegenpruefungs-Befund B1, schwerster Befund).
+  //     Wird `fts_artikel` neu gebaut, `artikel` aber uebersprungen, zeigt der contentless
+  //     Index auf eine LIVE-Tabelle, die dieser Lauf nicht angefasst hat. Passt sie nicht zur
+  //     lokalen DB, liefert die Suche systematisch den FALSCHEN Artikel — und Schritt 8
+  //     schriebe trotzdem die volle Frische-Marke. Bis zum 15.9.2026 hing dieser Riegel am
+  //     Handschalter `--nur-fts`; den gibt es nicht mehr (der Skip-Plan leistet dasselbe
+  //     automatisch und signatur-belegt), die Gefahr aber sehr wohl. Herleitung: turso-skip.ts.
+  if (baue('fts_artikel') && !baue('artikel')) {
     const stelle = normtext.prepare('SELECT rowid AS rid, erlass_key, art_id FROM artikel ORDER BY rowid LIMIT 1 OFFSET ?');
-    // Der letzte Anteil ist bewusst 1.0 (= letzte Zeile): eine Umsortierung, die erst ganz
-    // am Ende beginnt, entginge einer Streuung, die bei 0,99 aufhört (Runde 3).
-    for (const anteil of [0, 0.17, 0.37, 0.53, 0.71, 0.89, 1]) {
-      const p = stelle.get(Math.min(nArt - 1, Math.floor(nArt * anteil))) as
-        | { rid: number; erlass_key: string; art_id: string }
-        | undefined;
-      if (!p) continue;
-      const ist = await abfrage(url, token, `SELECT erlass_key || '|' || art_id FROM artikel WHERE rowid = ${p.rid}`);
-      const soll = `${p.erlass_key}|${p.art_id}`;
-      if (ist !== soll) {
-        console.error(
-          `turso-sync ROT: --nur-fts unzulässig — rowid ${p.rid} zeigt live auf «${ist}», lokal auf «${soll}». ` +
-            'Die rowid-Kopplung ist verschoben; Voll-Rebuild fahren.',
-        );
-        process.exit(1);
-      }
+    const befunde = await pruefeKopplung({
+      lokalZeilen: (t) => (normtext.prepare(`SELECT count(*) AS n FROM ${t}`).get() as { n: number }).n,
+      remoteZeilen: async (t) => Number(await abfrage(url, token, `SELECT count(*) FROM ${t}`)),
+      lokaleProbe: (i) => {
+        const p = stelle.get(i) as { rid: number; erlass_key: string; art_id: string } | undefined;
+        return p && { rid: p.rid, schluessel: `${p.erlass_key}|${p.art_id}` };
+      },
+      remoteProbe: (rid) => abfrage(url, token, `SELECT erlass_key || '|' || art_id FROM artikel WHERE rowid = ${rid}`),
+    });
+    if (befunde.length > 0) {
+      console.error('turso-sync ROT: Teilbau unzulaessig — die uebersprungenen Basistabellen passen nicht zum lokalen Index:');
+      for (const b of befunde) console.error(`  · ${b}`);
+      console.error('Abhilfe: sync_meta-Signaturen verwerfen (DELETE FROM sync_meta) und voll neu bauen.');
+      process.exit(1);
     }
-    console.log('  --nur-fts Korrespondenz-Riegel: Basistabellen zeilengleich, 7 gestreute rowid-Proben deckungsgleich.');
+    console.log('  Teilbau-Korrespondenz: Basistabellen zeilengleich, gestreute rowid-Proben deckungsgleich.');
   }
 
-  let nErlasse = 0, nFassungen = 0, nArtikel = 0;
-  if (!nurFts) {
-  // 1) DDL auf den SCHATTEN-Tabellen (Teilmenge des §3-Zielschemas — exakt die Spalten,
-  //    die SQL_ARTIKEL_TREFFER braucht). Die LIVE-Tabellen bleiben unangetastet, bis der
-  //    Tausch in Schritt 6 gelingt. Index erst NACH dem Laden (schneller + kein Pflegeaufwand
-  //    je Insert); der Name `ix_artikel_erlass` entsteht dort auf der getauschten Tabelle.
-  await pipeline(url, token, [
-    {
-      sql: `CREATE TABLE erlasse_neu (key TEXT PRIMARY KEY, ebene TEXT NOT NULL, kanton TEXT, sr TEXT,
-            abkuerzung TEXT NOT NULL, titel TEXT NOT NULL, rechtsgebiet TEXT, status TEXT)`,
-    },
-    {
-      sql: `CREATE TABLE erlass_fassungen_neu (erlass_key TEXT NOT NULL, fassungs_token TEXT NOT NULL,
-            gueltig_von TEXT, gueltig_bis TEXT, stand TEXT, quelle_url TEXT NOT NULL,
-            as_fundstelle TEXT, abgerufen TEXT, sha TEXT,
-            PRIMARY KEY (erlass_key, fassungs_token))`,
-    },
-    {
-      sql: `CREATE TABLE artikel_neu (erlass_key TEXT NOT NULL, fassungs_token TEXT NOT NULL,
-            art_id TEXT NOT NULL, ord INTEGER, artikel TEXT, artikel_label TEXT, marg TEXT,
-            grundlage TEXT, quelle_url TEXT, bloecke_json TEXT NOT NULL, sha TEXT,
-            PRIMARY KEY (erlass_key, fassungs_token, art_id))`,
-    },
-  ]);
-
-  // 2) Daten (Spaltenlisten == lokale Zieltabellen; ladeTabelle liest sie 1:1).
-  nErlasse = await ladeTabelle(url, token, normtext, 'erlasse', 'erlasse_neu', [
-    'key', 'ebene', 'kanton', 'sr', 'abkuerzung', 'titel', 'rechtsgebiet', 'status',
-  ]);
-  nFassungen = await ladeTabelle(url, token, normtext, 'erlass_fassungen', 'erlass_fassungen_neu', [
-    'erlass_key', 'fassungs_token', 'gueltig_von', 'gueltig_bis', 'stand', 'quelle_url',
-    'as_fundstelle', 'abgerufen', 'sha',
-  ]);
-  // `rowid` wird EXPLIZIT mitgeladen — nicht kosmetisch, sondern tragend: api/suche.ts
-  // joint `fts_artikel` (contentless) über `a.rowid = fts_artikel.rowid` auf `artikel`.
-  // Würde die Ziel-rowid implizit vergeben, hinge die Korrektheit daran, dass die lokalen
-  // artikel-rowids lückenlos 1..N sind. Das gilt heute zufällig (frisch gebaute DB ohne
-  // DELETE), ist aber nirgends garantiert — eine einzige Lücke in der Quelle verschiebt
-  // alle folgenden Zeilen und liefert im Betrieb den FALSCHEN Artikel als Suchtreffer
-  // (Gegenprüfungs-Befund B2, am Minimalbeispiel reproduziert). Mit expliziter rowid ist
-  // die Kopplung unabhängig von der Lückenlosigkeit korrekt.
-  nArtikel = await ladeTabelle(url, token, normtext, 'artikel', 'artikel_neu', [
-    'rowid', 'erlass_key', 'fassungs_token', 'art_id', 'ord', 'artikel', 'artikel_label', 'marg',
-    'grundlage', 'quelle_url', 'bloecke_json', 'sha',
-  ]);
+  // 1+2) DDL auf den SCHATTEN-Tabellen, dann laden. Die LIVE-Tabellen bleiben unangetastet,
+  //    bis der Tausch in Schritt 6 gelingt. Gebaut wird nur, was `baue()` freigibt.
+  const zahl: Record<string, number> = {};
+  const basisNeu = BASIS.filter(baue);
+  if (basisNeu.length > 0) {
+    await pipeline(url, token, basisNeu.map((t) => ({ sql: DDL_BASIS[t](`${t}_neu`) })));
+    for (const t of basisNeu) zahl[t] = await ladeTabelle(url, token, normtext, t, `${t}_neu`, SPALTEN_BASIS[t]);
   }
 
   // 3) FTS artikel: CONTENTLESS (content=''), rowid == artikel.rowid. Übertragen wird
@@ -611,8 +587,10 @@ async function main(): Promise<void> {
   //    behauptete). Die frühere Bauart-Divergenz lokal/remote entfällt damit; die
   //    Byte-Gleichheit beider Bauarten bleibt in turso-fts-index.test.ts dokumentiert,
   //    wird vom Produktionspfad aber nicht mehr vorausgesetzt.
-  await pipeline(url, token, [{ sql: ddlFtsArtikel('fts_artikel_neu') }]);
-  const nFtsArtikel = await ladeFtsIndex(url, token, normtext, 'fts_artikel', 'fts_artikel_neu', false);
+  if (baue('fts_artikel')) {
+    await pipeline(url, token, [{ sql: ddlFtsArtikel('fts_artikel_neu') }]);
+    await ladeFtsIndex(url, token, normtext, 'fts_artikel', 'fts_artikel_neu', false);
+  }
 
   // 4) FTS Schaufenster-Entscheide: standalone (Text physisch gespeichert, native snippet()).
   //    Umfang = ALLE Einträge der rechtsprechung.db (Stand 20.7.2026: 5093) — kein Filter,
@@ -622,42 +600,35 @@ async function main(): Promise<void> {
   //    Funktion, die die lokale Tabelle anlegt. Vorher stand die Spaltenliste hier ein
   //    zweites Mal von Hand: genau die stille Falle, vor der der Kommentar zu `fts_artikel`
   //    drei Absätze weiter oben warnt, nur für die Entscheide nie eingelöst.
-  await pipeline(url, token, [{ sql: ddlFtsEntscheide('fts_entscheide_schaufenster_neu') }]);
   //    Auch hier wandert der FERTIGE Index (inkl. `_content`, weil standalone) statt der
   //    Zeilen. Das war die teuerste Phase des Syncs — 22,3 der 32,8 Minuten des CI-Laufs
   //    29757068566 — und der Grund für diesen Umbau.
-  const nEntscheide = await ladeFtsIndex(
-    url,
-    token,
-    rspr,
-    'fts_entscheide_schaufenster',
-    'fts_entscheide_schaufenster_neu',
-    true,
-  );
+  if (baue('fts_entscheide_schaufenster')) {
+    await pipeline(url, token, [{ sql: ddlFtsEntscheide('fts_entscheide_schaufenster_neu') }]);
+    await ladeFtsIndex(url, token, rspr, 'fts_entscheide_schaufenster', 'fts_entscheide_schaufenster_neu', true);
+  }
 
   // 5) Verifikation VOR dem Tausch — auf den Schatten-Tabellen. Was hier rot ist, geht nie
   //    live; die alte, vollständige Replika bleibt in dem Fall unverändert stehen.
   console.log('  — Verifikation der Schatten-Tabellen (vor dem Tausch) —');
+  // Geprüft wird, was GEBAUT wurde — eine übersprungene Tabelle hat gar keine
+  // `_neu`-Schattentabelle; ihr Ist steht in der Nachkontrolle auf dem LIVE-Namen.
   const vorChecks: Array<[string, string, number]> = [];
-  if (!nurFts) {
-    vorChecks.push(
-      ['erlasse_neu', 'SELECT count(*) FROM erlasse_neu', nErlasse],
-      ['erlass_fassungen_neu', 'SELECT count(*) FROM erlass_fassungen_neu', nFassungen],
-      ['artikel_neu', 'SELECT count(*) FROM artikel_neu', nArtikel],
-    );
-  }
-  vorChecks.push(
+  for (const t of basisNeu) vorChecks.push([`${t}_neu`, `SELECT count(*) FROM ${t}_neu`, zahl[t]]);
+  if (baue('fts_artikel')) vorChecks.push(
     // ZEILENGLEICHHEIT fts_artikel == artikel ist die Invariante, an der der Such-Join
     // hängt — sie war bisher als einzige nirgends geprüft (Gegenprüfungs-Befund B5);
     // getestet wurde nur „MATCH liefert irgendwas". Jetzt hart gegen die Artikel-Zahl.
     ['fts_artikel_neu (zeilengleich artikel)', 'SELECT count(*) FROM fts_artikel_neu', nFtsArtikel],
     ['fts_artikel_neu MATCH "und"', "SELECT count(*) FROM fts_artikel_neu WHERE fts_artikel_neu MATCH '\"und\"'", -1],
-    ['fts_entscheide_schaufenster_neu', 'SELECT count(*) FROM fts_entscheide_schaufenster_neu', nEntscheide],
     [
       'smoke "verjahrung" (diakritik-gefaltet)',
       `SELECT count(*) FROM fts_artikel_neu WHERE fts_artikel_neu MATCH '"verjahrung"'`,
       -1,
     ],
+  );
+  if (baue('fts_entscheide_schaufenster')) vorChecks.push(
+    ['fts_entscheide_schaufenster_neu', 'SELECT count(*) FROM fts_entscheide_schaufenster_neu', nEntscheide],
     // Inhaltliche Probe der Entscheide MUSS hier stehen, nicht erst nach dem Tausch.
     // Vorher gab es für `fts_entscheide_schaufenster` nur die (selbstbezügliche) Zeilenzahl;
     // die einzige MATCH-Probe lief in der Nachkontrolle — also erst, NACHDEM der DROP die
@@ -681,7 +652,7 @@ async function main(): Promise<void> {
   // vollständigen unterscheiden, weil `count(*)` aus `_docsize` kommt und eine MATCH-Probe
   // schon bei einem einzigen Treffer grün wird. Erst `integrity-check` rechnet den Index
   // gegen den Inhalt nach. Steht bewusst VOR dem Tausch: was hier reisst, geht nie live.
-  for (const t of ['fts_artikel_neu', 'fts_entscheide_schaufenster_neu']) {
+  for (const t of FTS_TABELLEN.filter(baue).map((n) => `${n}_neu`)) {
     try {
       await integritaet(url, token, t);
       console.log(`  verify ${t} integrity-check: OK`);
@@ -704,20 +675,32 @@ async function main(): Promise<void> {
   //    Pipeline bricht bei einem fehlgeschlagenen Statement nicht ab, das COMMIT gelingt
   //    trotzdem und schreibt den Teilzustand fest (Gegenprüfung Runde 2 hat genau damit eine
   //    Live-Tabelle dauerhaft verschwinden lassen). Siehe `transaktion()`.
-  const tausch: Stmt[] = [];
-  const zuTauschen = nurFts ? FTS_TABELLEN : SCHATTEN;
-  for (const t of [...zuTauschen].reverse()) tausch.push({ sql: `DROP TABLE IF EXISTS ${t}` });
-  for (const t of zuTauschen) tausch.push({ sql: `ALTER TABLE ${t}_neu RENAME TO ${t}` });
-  if (!nurFts) tausch.push({ sql: 'CREATE INDEX ix_artikel_erlass ON artikel(erlass_key)' });
-  await transaktion(url, token, tausch);
-  console.log(`  Tausch vollzogen (${zuTauschen.length} Tabellen, atomar über baton-Transaktion).`);
+  //
+  //    Getauscht wird NUR, was gebaut wurde; Uebersprungenes bleibt unberuehrt stehen (der
+  //    Skip-Plan hat Signatur UND Zeilenzahl geprueft). Bei einem VOLLSKIP entfaellt der
+  //    Tausch ganz — der Lauf schreibt dann nur die Marken aus Schritt 8.
+  const gebaut = SCHATTEN.filter(baue);
+  if (gebaut.length === 0) {
+    console.log('  Tausch entfaellt: keine Tabelle geaendert (Vollskip) — Live-Stand bleibt, wie er ist.');
+  } else {
+    const tausch: Stmt[] = [];
+    for (const t of [...gebaut].reverse()) tausch.push({ sql: `DROP TABLE IF EXISTS ${t}` });
+    for (const t of gebaut) tausch.push({ sql: `ALTER TABLE ${t}_neu RENAME TO ${t}` });
+    // Der Index faellt mit `DROP TABLE artikel` — er wird darum genau dann neu angelegt,
+    // wenn `artikel` selbst neu gebaut wurde (frueher: immer, weil immer gedroppt wurde).
+    if (gebaut.includes('artikel')) tausch.push({ sql: 'CREATE INDEX ix_artikel_erlass ON artikel(erlass_key)' });
+    await transaktion(url, token, tausch);
+    console.log(`  Tausch vollzogen (${gebaut.length} Tabellen, atomar über baton-Transaktion).`);
+  }
 
   // 7) Nachkontrolle auf den LIVE-Namen (doppelt verifiziert): der Tausch selbst könnte
   //    schiefgegangen sein, ohne dass ein Statement gefehlt hätte.
   console.log('  — Nachkontrolle auf den Live-Tabellen —');
   let nachRot = false;
   const nachChecks: Array<[string, string, number]> = [
-    ['artikel', 'SELECT count(*) FROM artikel', nurFts ? -1 : nArtikel],
+    // Soll aus dem lokalen Artefakt (Manifest-gebunden) statt aus den Lade-Zaehlern — so
+    // traegt die Nachkontrolle auch fuer UEBERSPRUNGENE Tabellen eine echte Zahl.
+    ['artikel', 'SELECT count(*) FROM artikel', sollZeilen['artikel']],
     ['fts_artikel (zeilengleich artikel)', 'SELECT count(*) FROM fts_artikel', nFtsArtikel],
     ['fts_entscheide_schaufenster', 'SELECT count(*) FROM fts_entscheide_schaufenster', nEntscheide],
     ['fts_artikel MATCH "verjahrung"', `SELECT count(*) FROM fts_artikel WHERE fts_artikel MATCH '"verjahrung"'`, -1],
@@ -766,23 +749,48 @@ async function main(): Promise<void> {
   const manifestSha = createHash('sha256').update(readFileSync(MANIFEST_DATEI)).digest('hex');
   const istZahlen: Record<string, string> = {};
   for (const t of SCHATTEN) istZahlen[`zeilen_${t}`] = String(Number(await abfrage(url, token, `SELECT count(*) FROM ${t}`)));
+  // `sig_<tabelle>` ist die Grundlage des Skip-Plans im NAECHSTEN Lauf. Sie wird erst hier
+  // gesetzt — nach bestandener Nachkontrolle —, aus demselben Grund wie die Frische-Marke:
+  // eine Signatur ueber einen unverifizierten Stand wuerde den naechsten Lauf dazu bringen,
+  // eine kaputte Tabelle als «unveraendert» stehenzulassen.
   const marken: Array<[string, string]> = [
     ['manifest_sha', manifestSha],
     ['stand', new Date().toISOString()],
     ...Object.entries(istZahlen),
+    ...[...lokaleSig].map(([t, sig]): [string, string] => [`sig_${t}`, sig.signatur]),
   ];
+  // UPSERT statt «alles loeschen, alles neu schreiben»: das pauschale `DELETE FROM sync_meta`
+  // kostete an jedem Tag ohne Korpus-Aenderung die doppelte Zeilenzahl, ohne etwas zu
+  // beweisen. Der gezielte DELETE raeumt fremde Schluessel weiter weg (eingeschwungen: null
+  // Zeilen) — die Garantie «keine Marken-Leiche» bleibt, nur ohne Aufschlag (§17).
   await pipeline(url, token, [
     { sql: 'CREATE TABLE IF NOT EXISTS sync_meta (schluessel TEXT PRIMARY KEY, wert TEXT NOT NULL)' },
-    { sql: 'DELETE FROM sync_meta' },
     {
-      sql: `INSERT INTO sync_meta (schluessel, wert) VALUES ${marken.map(() => '(?, ?)').join(', ')}`,
+      sql: `DELETE FROM sync_meta WHERE schluessel NOT IN (${marken.map(() => '?').join(', ')})`,
+      args: marken.map(([k]) => k),
+    },
+    {
+      sql: `INSERT INTO sync_meta (schluessel, wert) VALUES ${marken.map(() => '(?, ?)').join(', ')}
+            ON CONFLICT(schluessel) DO UPDATE SET wert = excluded.wert`,
       args: marken.flat(),
     },
   ]);
   console.log(`turso-sync grün: Hot-Replika vollständig + verifiziert (manifest_sha ${manifestSha.slice(0, 12)}…).`);
 }
 
-main().catch((e) => {
-  console.error('turso-sync ROT:', e instanceof Error ? e.message : e);
+// SPERR-AUSGANG (§17/3). Bei aufgebrauchtem Monatskontingent scheitert JEDES Schreib-
+// Statement als stmt-Fehler INNERHALB einer HTTP-200-Antwort; ohne eigene Erkennung suchte
+// der Betreiber im Korpus nach einer Ursache, die im Abrechnungsmodell liegt. Exit 3
+// (Datenfehler bleiben 1); der Stand wird noch GELESEN — Lesen ist nicht gesperrt.
+main().catch(async (e) => {
+  const m = e instanceof Error ? e.message : String(e);
+  if (istSchreibsperre(m) && zugang) {
+    const stand = await abfrage(zugang.url, zugang.token, "SELECT wert FROM sync_meta WHERE schluessel = 'stand'").catch(
+      () => null,
+    );
+    console.error(sperrMeldung(stand));
+    process.exit(EXIT_SPERRE);
+  }
+  console.error('turso-sync ROT:', m);
   process.exit(1);
 });

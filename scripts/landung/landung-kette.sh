@@ -50,7 +50,24 @@ for PR in "$@"; do
     while [ "$(gh run view "$R" --json status -q .status)" != "completed" ]; do sleep 45; done
     C=$(gh run view "$R" --json conclusion -q .conclusion); [ "$C" = "success" ] && RC=0 || RC=1
     echo "PR #$PR run $R exit $RC" >> "$LOG"
-    ST=$(gh pr view "$PR" --json mergeStateStatus -q .mergeStateStatus); echo "PR #$PR state $ST" >> "$LOG"
+    # UNKNOWN heisst bei GitHub «wird gerade neu berechnet» — direkt nach einem
+    # Auto-Merge oder einem frischen Push ist das der Normalfall, kein Rot. Erst
+    # nachfragen (bis 3×20 s), dann urteilen. Vorfall 15.9.2026, PR #874: der PR war
+    # per --auto schon MERGED, die Kette las UNKNOWN und hielt mit «ROT/BLOCKIERT» an.
+    for w in 1 2 3; do
+      ST=$(gh pr view "$PR" --json mergeStateStatus -q .mergeStateStatus)
+      [ "$ST" != "UNKNOWN" ] && break; sleep 20
+    done
+    echo "PR #$PR state $ST" >> "$LOG"
+    # Schon gelandet (Auto-Merge hat gezuendet)? Dann ist nichts rot — Zweig
+    # abraeumen (Loeschung erst NACH bestaetigtem MERGED, Hook-Regel) und weiter.
+    if [ "$(gh pr view "$PR" --json state -q .state)" = "MERGED" ]; then
+      echo "PR #$PR bereits MERGED (Auto-Merge) $(gh pr view "$PR" --json mergeCommit -q '.mergeCommit.oid[0:9]')" >> "$LOG"
+      BR=$(gh pr view "$PR" --json headRefName -q .headRefName)
+      git push -q origin --delete "$BR" >> "$LOG" 2>&1 || true
+      echo "PR #$PR Zweig $BR entfernt" >> "$LOG"
+      break
+    fi
     if [ "$RC" = "0" ] && [ "$ST" = "CLEAN" ]; then
       gh pr merge "$PR" --squash >> "$LOG" 2>&1
       sleep 10
