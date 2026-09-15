@@ -25,6 +25,7 @@ import {
   anhangLabelVonAnker,
 } from './normtext/extrahiere-fedlex.ts';
 import { labelFuerAnker } from './normtext/doppel-id-label.ts';
+import { amtlicherAnker } from './normtext/artikel-vorkommen.ts';
 import {
   sammleKantonInventar,
   sammleFallback,
@@ -1401,7 +1402,7 @@ async function main(): Promise<void> {
 
     for (const token of tokens) {
       const ankerVoll = `art_${token}`;
-      // W2·27 (Nebenfund Prüfer #851): «__N» ist UNSERE Eindeutigmachung einer doppelten Fedlex-id — nie ins Label, nie in den amtlichen Anker (dort springt Fedlex auf das 1. Vorkommen: ausgewiesene Unschärfe §8, aber ehrlicher als ein amtlich nicht existierendes Fragment; Schlussteil-/Anhang-Pfad rechnen seit je so zurück). Regel + Heading-Beleg: normtext/doppel-id-label.ts.
+      // W2·27 (Nebenfund Prüfer #851): «__N» ist UNSERE Eindeutigmachung einer doppelten Fedlex-id — nie ins Label (Regel + Heading-Beleg: normtext/doppel-id-label.ts) und nie in die quelleUrl. Das Sprungziel liefert amtlicherAnker() aus normtext/artikel-vorkommen.ts: beim N-ten Vorkommen der eindeutige amtliche Namens-Anker (KKV: #ta126z), sonst der Basis-Anker.
       const basisToken = token.replace(/__\d+$/, '');
       const extrakt = extrahiereArtikel(html, token);
 
@@ -1425,7 +1426,7 @@ async function main(): Promise<void> {
         ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}),
         bloecke: extrakt.bloecke,
         stand,
-        quelleUrl: `https://www.fedlex.admin.ch/eli/${eli}/de#art_${basisToken}`, // W2·27: roher amtlicher Anker, s. o.
+        quelleUrl: `https://www.fedlex.admin.ch/eli/${eli}/de#${amtlicherAnker(html, ankerVoll)}`, // W2·27: amtlicher Anker des tatsächlichen Vorkommens, s. o.
         abgerufen,
         fassungsToken: konsolidierung,
         sha: sha256Bloecke(extrakt.bloecke),
@@ -1462,8 +1463,8 @@ async function main(): Promise<void> {
         ...(extrakt.aufgehoben ? { aufgehoben: true as const } : {}), ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}), // W2·27 + G23, s. Haupttext-Pfad
         bloecke: extrakt.bloecke,
         stand,
-        // Roher Anker (mit «/», ohne Synthese-Suffix) als Live-Sprungziel.
-        quelleUrl: `https://www.fedlex.admin.ch/eli/${eli}/de#${anker.replace(/__\d+$/, '')}`,
+        // Amtlicher Anker (mit «/») als Live-Sprungziel; bei «__N» der Namens-Anker des N-ten Vorkommens (amtlicherAnker(), s. Haupttext-Pfad).
+        quelleUrl: `https://www.fedlex.admin.ch/eli/${eli}/de#${amtlicherAnker(html, anker)}`,
         abgerufen,
         fassungsToken: konsolidierung,
         sha: sha256Bloecke(extrakt.bloecke),
