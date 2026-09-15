@@ -78,6 +78,36 @@
 // überschreibbar mit `--ereignis-log=<pfad>` (nötig im Worktree, wo das Log
 // nicht liegt).
 //
+// ── ABGRENZUNG GEGEN `retro:17` (§17-Gegengewicht: erst die Stelle suchen, die
+//    dieselbe Sorge schon trägt) ─────────────────────────────────────────────
+// `scripts/plan/retro17Kern.ts` kennt seit QS-SELBSTOPT die Regel «nie rot ⇒
+// Streich-PRÜFkandidat» — über die Snapshots von `messwerte/selbstopt-
+// zeitreihe.json`, mit der Schwelle NIE_ROT_MINDEST_LAEUFE = 30 Läufe. Dieses
+// Register ersetzt sie NICHT und dupliziert sie nicht: es unterscheidet sich
+// in drei Punkten, und die Schwelle wird von dort IMPORTIERT statt neu gesetzt
+// (§5 — eine Kalibrierung, eine Stelle).
+//   · Grundmenge: dort nur Tore, die in der Zeitreihe stehen; hier JEDES
+//     `check:*`-Skript und jeder Hook, also auch die nie gelaufenen.
+//   · Quellen: dort nur lokale Läufe ab Snapshot-Beginn; hier zusätzlich CI
+//     und Fang-Vermerke.
+//   · Zeitachse: dort «nie rot über die Messreihe»; hier «letztes Rot» mit
+//     Einführungsdatum und Tagesabstand — die 90-Tage-Regel aus Dossier §8.
+// Ob die beiden später zusammengelegt werden, ist ein eigener Entscheid; sie
+// hier stillschweigend zu verdoppeln wäre der Fehler, den §17 verbietet.
+//
+// ── «RÜCKBAU-KANDIDAT» BRAUCHT EINEN BELEGTEN LAUF (Abweichung vom Auftrag,
+//    §7) ────────────────────────────────────────────────────────────────────
+// Der Auftrag stufte «nie belegt und seit >= 90 Tagen» als Rückbau-Kandidat
+// ein. Das verwechselt «hat nichts gefangen» mit «wurde nie gemessen».
+// Gemessen 15.9.2026 am lokalen Log: `check:smoke`, `check:sweep`,
+// `check:verfall`, `check:normtext` liefen je 83-mal ohne ein einziges Rot —
+// das sind belastbare Prüfkandidaten. `check:caches`, `check:netz`,
+// `check:zitate`, `check:fedlex-versionen`, `check:normtext-netz` liefen im
+// Fenster NULLMAL; über sie sagt die Erhebung schlicht nichts. Beide in
+// denselben Topf zu werfen hiesse, fünf Rückbau-Vorschläge zu erzeugen, die
+// nichts ausser einer Messlücke belegen. Sie bekommen darum die eigene Klasse
+// `ungemessen (kein Lauf belegt)` — sichtbar, aber kein Streichvorschlag.
+//
 // ── HOOKS ────────────────────────────────────────────────────────────────
 // Hooks führen KEIN Log: sie blockieren mit `sys.exit(2)`, und niemand
 // protokolliert das. Ein Hook kann darum weder «bewährt» noch «Rückbau-
@@ -89,6 +119,7 @@
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { alleCheckSkripte, pkg } from '../tor-paritaet-sonden.ts';
+import { NIE_ROT_MINDEST_LAEUFE } from '../plan/retro17Kern.ts';
 
 export const REGISTER_DATEI = 'messwerte/tor-bewaehrung.json';
 export const HOOK_VERZEICHNIS = '.claude/hooks';
@@ -99,6 +130,13 @@ export const GENERIERT_MARKE =
   'Einträge der Quelle `manuell` dürfen von Hand stehen und werden nie überschrieben';
 /** §8 Ziff. 1 des Dossiers: «nie rot in ≥ 90 Tagen ⇒ Rückbau-Kandidat». */
 export const SCHWELLE_TAGE = 90;
+/**
+ * Mindestzahl belegter Läufe, bevor «nie rot» ein Rückbau-Vorschlag sein darf.
+ * NICHT hier kalibriert, sondern aus `retro17Kern` übernommen — dieselbe Frage
+ * hat dort seit QS-SELBSTOPT ihre Schwelle, und zwei Kalibrierungen derselben
+ * Sorge wären genau die zweite Wahrheit, die §5 verbietet.
+ */
+export const LAEUFE_SCHWELLE = NIE_ROT_MINDEST_LAEUFE;
 
 export type Quelle = 'ci-run-URL' | 'lokaler-lauf' | 'commit-SHA' | 'fang-vermerk' | 'manuell';
 export type Beleg = { datum: string; quelle: Quelle; hinweis: string };
@@ -109,6 +147,12 @@ export type Eintrag = {
   /** Einführungsdatum (ISO-Tag) oder null, wenn git es nicht hergibt. */
   seit: string | null;
   letztesRot: string | null;
+  /**
+   * Belegte Läufe im Erhebungsfenster (aus dem lokalen Ereignis-Log, rot UND
+   * grün). Trennt «lief oft und war nie rot» von «lief nie» — s. Kopf.
+   * `null` = nicht erhoben (kein Log verfügbar).
+   */
+  laeufe: number | null;
   belege: Beleg[];
 };
 /**
@@ -130,7 +174,12 @@ export type CiFenster = {
 };
 export type Register = { _generiert: string; schema: number; ciFenster: CiFenster | null; eintraege: Eintrag[] };
 
-export type Klasse = 'bewährt' | 'RÜCKBAU-KANDIDAT' | 'jung' | 'unbelegt (Hook ohne Log)';
+export type Klasse =
+  | 'bewährt'
+  | 'RÜCKBAU-KANDIDAT'
+  | 'ungemessen (kein Lauf belegt)'
+  | 'jung'
+  | 'unbelegt (Hook ohne Log)';
 export type Befund = {
   name: string;
   art: Art;
@@ -138,6 +187,7 @@ export type Befund = {
   letztesRot: string | null;
   tageSeitRot: number | null;
   tageSeitEinfuehrung: number | null;
+  laeufe: number | null;
   klasse: Klasse;
 };
 
@@ -193,7 +243,15 @@ export function stufeEin(eintrag: Eintrag, stichtag: string): Befund {
   const letztesRot = letztesRotAus(eintrag);
   const tageSeitRot = letztesRot ? tageZwischen(letztesRot, stichtag) : null;
   const tageSeitEinfuehrung = eintrag.seit ? tageZwischen(eintrag.seit, stichtag) : null;
-  const gemeinsam = { name: eintrag.name, art: eintrag.art, seit: eintrag.seit, letztesRot, tageSeitRot, tageSeitEinfuehrung };
+  const gemeinsam = {
+    name: eintrag.name,
+    art: eintrag.art,
+    seit: eintrag.seit,
+    letztesRot,
+    tageSeitRot,
+    tageSeitEinfuehrung,
+    laeufe: eintrag.laeufe ?? null,
+  };
 
   // Hooks zuerst: für sie existiert gar keine Messreihe (s. Kopf).
   if (eintrag.art === 'hook') return { ...gemeinsam, klasse: 'unbelegt (Hook ohne Log)' };
@@ -201,13 +259,19 @@ export function stufeEin(eintrag: Eintrag, stichtag: string): Befund {
   if (tageSeitRot !== null) {
     return { ...gemeinsam, klasse: tageSeitRot <= SCHWELLE_TAGE ? 'bewährt' : 'RÜCKBAU-KANDIDAT' };
   }
-  // Nie belegt: jung (noch keine faire Chance) oder Rückbau-Kandidat.
-  // Unbekanntes `seit` zählt NICHT als jung — ein Eintrag ohne Einführungsdatum
-  // ist alt genug, dass git ihn nicht mehr auflösen kann.
+  // Nie rot belegt: jung (noch keine faire Chance) — unbekanntes `seit` zählt
+  // NICHT als jung, ein Eintrag ohne Einführungsdatum ist alt genug, dass git
+  // ihn nicht mehr auflösen kann.
   if (tageSeitEinfuehrung !== null && tageSeitEinfuehrung < SCHWELLE_TAGE) {
     return { ...gemeinsam, klasse: 'jung' };
   }
-  return { ...gemeinsam, klasse: 'RÜCKBAU-KANDIDAT' };
+  // Alt und nie rot — aber nur dann ein Rückbau-Vorschlag, wenn das Tor
+  // nachweislich oft genug GELAUFEN ist (Schwelle aus retro17Kern, s. Kopf).
+  // Sonst belegt die Zahl eine Messlücke, keinen Befund.
+  if ((eintrag.laeufe ?? 0) >= LAEUFE_SCHWELLE) {
+    return { ...gemeinsam, klasse: 'RÜCKBAU-KANDIDAT' };
+  }
+  return { ...gemeinsam, klasse: 'ungemessen (kein Lauf belegt)' };
 }
 
 /**
@@ -366,6 +430,7 @@ function holeFehlSchritte(runId: number): string[] | null {
 }
 
 export type LokalesRot = { tor: string; ts: string };
+export type LokalesErgebnis = { rot: LokalesRot[]; laeufe: Map<string, number>; verworfen: number };
 
 /**
  * Rote Tor-Läufe aus dem lokalen Ereignis-Log (JSONL, eine Zeile je Lauf:
@@ -382,8 +447,9 @@ export type LokalesRot = { tor: string; ts: string };
  *
  * Unlesbare Zeilen werden gezählt, nicht verschwiegen.
  */
-export function parseLokalesLog(inhalt: string, bekannteTore: Set<string>): { rot: LokalesRot[]; verworfen: number } {
+export function parseLokalesLog(inhalt: string, bekannteTore: Set<string>): LokalesErgebnis {
   const rot: LokalesRot[] = [];
+  const laeufe = new Map<string, number>();
   let verworfen = 0;
   for (const zeile of inhalt.split('\n')) {
     if (!zeile.trim()) continue;
@@ -398,12 +464,13 @@ export function parseLokalesLog(inhalt: string, bekannteTore: Set<string>): { ro
       verworfen += 1;
       continue;
     }
-    if (e.ok) continue;
     const name = e.tor.startsWith('gate:') ? `check:${e.tor.slice(5).trim()}` : e.tor;
     if (!bekannteTore.has(name)) continue;
+    laeufe.set(name, (laeufe.get(name) ?? 0) + 1);
+    if (e.ok) continue;
     rot.push({ tor: name, ts: e.ts });
   }
-  return { rot, verworfen };
+  return { rot, laeufe, verworfen };
 }
 
 type FangCommit = { sha: string; datum: string; nachricht: string };
@@ -452,7 +519,7 @@ export function importiere(limit: number, ereignisLog: string = LOKALES_LOG): { 
   for (const [name, art] of soll) {
     let e = nachName.get(name);
     if (!e) {
-      e = { name, art, seit: null, letztesRot: null, belege: [] };
+      e = { name, art, seit: null, letztesRot: null, laeufe: null, belege: [] };
       register.eintraege.push(e);
       nachName.set(name, e);
       bericht.neueEintraege.push(name);
@@ -510,9 +577,17 @@ export function importiere(limit: number, ereignisLog: string = LOKALES_LOG): { 
     bericht.ausfaelle.push(`${ereignisLog} (maschinenlokales Ereignis-Log, hier nicht vorhanden) — lokale Rot-Belege fehlen in diesem Lauf`);
   } else {
     const bekannt = new Set(alleCheckSkripte);
-    const { rot, verworfen } = parseLokalesLog(readFileSync(ereignisLog, 'utf8'), bekannt);
+    const { rot, laeufe, verworfen } = parseLokalesLog(readFileSync(ereignisLog, 'utf8'), bekannt);
     if (verworfen) bericht.ausfaelle.push(`${ereignisLog}: ${verworfen} unlesbare Zeile(n) übersprungen`);
     bericht.lokaleRot = rot.length;
+    // Laufzahlen: 0 ist hier eine ECHTE Null (das Log lag vor und nannte das
+    // Tor nicht), nicht «unbekannt» — darum wird sie gesetzt, nicht offen
+    // gelassen. `null` bleibt nur, wenn gar kein Log da war.
+    for (const [name, art] of soll) {
+      if (art !== 'tor') continue;
+      const e = nachName.get(name);
+      if (e) e.laeufe = laeufe.get(name) ?? 0;
+    }
     for (const r of rot) {
       belegeFuer(r.tor, { datum: r.ts.slice(0, 10), quelle: 'lokaler-lauf', hinweis: `lokaler Gate-/Tor-Lauf ${r.ts} rot` });
     }
@@ -566,20 +641,34 @@ export function fensterZeilen(f: CiFenster | null): string[] {
 }
 
 export function berichtZeilen(befunde: Befund[], stichtag: string): string[] {
-  const kopf = ['Tor / Hook', 'seit', 'letztes Rot', 'Tage', 'Einstufung'];
+  const kopf = ['Tor / Hook', 'seit', 'letztes Rot', 'Tage', 'Läufe', 'Einstufung'];
   const breiten = [
     Math.max(kopf[0].length, ...befunde.map((b) => b.name.length)),
     10,
     11,
     5,
+    5,
   ];
   const zeilen = [
     `Tor-Bewährung · Stichtag ${stichtag} · Schwelle ${SCHWELLE_TAGE} Tage (Dossier §8 Ziff. 1)`,
     '',
-    [spalte(kopf[0], breiten[0]), spalte(kopf[1], breiten[1]), spalte(kopf[2], breiten[2]), spalte(kopf[3], breiten[3]), kopf[4]].join('  '),
-    '─'.repeat(breiten[0] + breiten[1] + breiten[2] + breiten[3] + 8 + 22),
+    [
+      spalte(kopf[0], breiten[0]),
+      spalte(kopf[1], breiten[1]),
+      spalte(kopf[2], breiten[2]),
+      spalte(kopf[3], breiten[3]),
+      spalte(kopf[4], breiten[4]),
+      kopf[5],
+    ].join('  '),
+    '─'.repeat(breiten.reduce((a, b) => a + b, 0) + 10 + 30),
   ];
-  const rang: Record<Klasse, number> = { 'RÜCKBAU-KANDIDAT': 0, 'unbelegt (Hook ohne Log)': 1, jung: 2, bewährt: 3 };
+  const rang: Record<Klasse, number> = {
+    'RÜCKBAU-KANDIDAT': 0,
+    'ungemessen (kein Lauf belegt)': 1,
+    'unbelegt (Hook ohne Log)': 2,
+    jung: 3,
+    bewährt: 4,
+  };
   const sortiert = [...befunde].sort((a, b) => {
     if (rang[a.klasse] !== rang[b.klasse]) return rang[a.klasse] - rang[b.klasse];
     const ta = a.tageSeitRot ?? a.tageSeitEinfuehrung ?? Number.MAX_SAFE_INTEGER;
@@ -593,6 +682,7 @@ export function berichtZeilen(befunde: Befund[], stichtag: string): string[] {
         spalte(b.seit ?? '—', breiten[1]),
         spalte(b.letztesRot ?? '—', breiten[2]),
         spalte(b.tageSeitRot === null ? '—' : String(b.tageSeitRot), breiten[3]),
+        spalte(b.laeufe === null ? '—' : String(b.laeufe), breiten[4]),
         b.klasse,
       ].join('  '),
     );
@@ -607,10 +697,14 @@ export function berichtZeilen(befunde: Befund[], stichtag: string): string[] {
   zeilen.push(
     '',
     `Summe: ${befunde.length} Einträge — ${zaehle('bewährt')} bewährt · ${zaehle('RÜCKBAU-KANDIDAT')} Rückbau-Kandidaten · ` +
+      `${zaehle('ungemessen (kein Lauf belegt)')} ungemessen · ` +
       `${zaehle('jung')} jung · ${zaehle('unbelegt (Hook ohne Log)')} Hooks ohne Log` +
       (hooksMitFang ? ` (davon ${hooksMitFang} mit Fang-Vermerk — ausgewiesen, nicht eingerechnet)` : ''),
+    `Spalte «Läufe» = belegte Läufe im Fenster; ab ${LAEUFE_SCHWELLE} (Schwelle aus retro17Kern)`,
+    'wird «nie rot» zum Rückbau-Kandidaten, darunter nur zu «ungemessen».',
     'Einstufung ist ein VORSCHLAG, kein Urteil: vor jedem Rückbau das Chesterton-Gegenargument',
-    'prüfen (§17-Gegengewicht — «ausser die Stelle hat einen datierten Vorfall verhindert»).',
+    'prüfen (§17-Gegengewicht — «ausser die Stelle hat einen datierten Vorfall verhindert»);',
+    '«nie rot» belegt genauso gut, dass der Fehler nicht mehr gebaut wird, WEIL das Tor da ist.',
   );
   return zeilen;
 }

@@ -7,6 +7,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   SCHWELLE_TAGE,
+  LAEUFE_SCHWELLE,
   fangTreffer,
   letztesRotAus,
   mischeBelege,
@@ -25,6 +26,7 @@ const eintrag = (teil: Partial<Eintrag> & { name: string }): Eintrag => ({
   art: 'tor',
   seit: null,
   letztesRot: null,
+  laeufe: null,
   belege: [],
   ...teil,
 });
@@ -51,13 +53,25 @@ describe('stufeEin', () => {
     expect(stufeEin(e, STICHTAG)).toMatchObject({ klasse: 'RÜCKBAU-KANDIDAT', tageSeitRot: 91 });
   });
 
-  it('nennt ein junges Tor ohne Rot «jung», ein altes ohne Rot «RÜCKBAU-KANDIDAT»', () => {
-    expect(stufeEin(eintrag({ name: 'check:neu', seit: '2026-09-14' }), STICHTAG).klasse).toBe('jung');
-    expect(stufeEin(eintrag({ name: 'check:alt', seit: '2026-06-07' }), STICHTAG).klasse).toBe('RÜCKBAU-KANDIDAT');
+  it('nennt ein junges Tor ohne Rot «jung» — egal wie oft es lief', () => {
+    expect(stufeEin(eintrag({ name: 'check:neu', seit: '2026-09-14', laeufe: 500 }), STICHTAG).klasse).toBe('jung');
+  });
+
+  it('macht aus «alt, nie rot, oft gelaufen» einen Rückbau-Kandidaten', () => {
+    const e = eintrag({ name: 'check:alt', seit: '2026-06-07', laeufe: LAEUFE_SCHWELLE });
+    expect(stufeEin(e, STICHTAG).klasse).toBe('RÜCKBAU-KANDIDAT');
+  });
+
+  it('macht aus «alt, nie rot, kaum gelaufen» KEINEN Rückbau-Kandidaten, sondern «ungemessen»', () => {
+    // Der Kern der Abweichung vom Auftrag: eine Messlücke ist kein Befund.
+    for (const laeufe of [null, 0, LAEUFE_SCHWELLE - 1]) {
+      const e = eintrag({ name: 'check:alt', seit: '2026-06-07', laeufe });
+      expect(stufeEin(e, STICHTAG).klasse, String(laeufe)).toBe('ungemessen (kein Lauf belegt)');
+    }
   });
 
   it('zählt ein Tor ohne Einführungsdatum NICHT als jung — unbekannt ist kein Freibrief', () => {
-    expect(stufeEin(eintrag({ name: 'check:x', seit: null }), STICHTAG).klasse).toBe('RÜCKBAU-KANDIDAT');
+    expect(stufeEin(eintrag({ name: 'check:x', seit: null, laeufe: 100 }), STICHTAG).klasse).toBe('RÜCKBAU-KANDIDAT');
   });
 
   it('hält Hooks in jeder Lage bei «unbelegt (Hook ohne Log)» — auch mit Fang-Vermerk', () => {
@@ -167,9 +181,14 @@ describe('parseLokalesLog', () => {
       '{"ts":"2026-09-04T10:00:00.000Z","tor":"gate:vitest","ok":false}',
       '{"ts":"2026-09-05T10:00:00.000Z","tor":"check:inventur","ok":false}',
     ].join('\n');
-    const { rot, verworfen } = parseLokalesLog(inhalt, bekannt);
+    const { rot, laeufe, verworfen } = parseLokalesLog(inhalt, bekannt);
     expect(rot.map((r) => r.tor)).toEqual(['check:plan', 'check:zh-vollstaendigkeit']);
     expect(verworfen).toBe(0);
+    // Läufe zählen GRÜN mit — sonst könnte man «lief oft, nie rot» nie von
+    // «lief nie» unterscheiden.
+    expect(laeufe.get('check:plan')).toBe(2);
+    expect(laeufe.get('check:zh-vollstaendigkeit')).toBe(1);
+    expect(laeufe.has('check:inventur')).toBe(false);
   });
 
   it('zählt unlesbare Zeilen, statt sie stillschweigend zu schlucken', () => {
