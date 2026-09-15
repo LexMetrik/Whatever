@@ -1,8 +1,10 @@
 // scripts/plan/next.ts — CLI über der nebenwirkungsfreien Auflösung (aufloesen.ts).
+import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { parseRoadmap, ladeChronikDone } from './parse';
 import { resolve } from './aufloesen';
 import { lageBlock } from './lage';
+import { leseNotizen, notizenBefund, notizenVerzeichnis, notizenZeilen } from './notizen';
 export { resolve, type Buckets } from './aufloesen';
 
 // CLI
@@ -35,4 +37,19 @@ if (!process.env.VITEST) {
   // Lage-Block ANGEHÄNGT (nie dazwischen): zieht man ihn ab, ist die Ausgabe
   // oben byte-identisch zum Stand vor QS-PLAN-REVIEW/4a.
   for (const zeile of lageBlock(einheiten, b.inArbeit, { prs: process.argv.includes('--prs') })) z(zeile);
+  // Session-Notizen-Befund NACH dem Lage-Block angehängt (nie dazwischen,
+  // Weisung David 15.9.2026): zieht man diesen Block ab, ist die Ausgabe
+  // darüber byte-identisch zum Stand vor QS-EFFIZIENZ/Session-Notizen. Kein
+  // Verzeichnis/keine Datei ⇒ still (kein Gate-Tor, §17-Gegengewicht).
+  try {
+    const gitCommonDir = execFileSync('git', ['rev-parse', '--git-common-dir'], {
+      encoding: 'utf8',
+      timeout: 3000,
+    }).trim();
+    const dateien = leseNotizen(notizenVerzeichnis(gitCommonDir));
+    for (const zeile of notizenZeilen(notizenBefund(dateien))) z(zeile);
+  } catch {
+    // git nicht verfügbar/kein Repo — Pflicht-Einstieg degradiert still (§8,
+    // gleiche Regel wie lage.ts).
+  }
 }
