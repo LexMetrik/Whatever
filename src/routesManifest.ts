@@ -1,5 +1,4 @@
-import { type ComponentType, type LazyExoticComponent } from 'react';
-import { lazyRetry } from './lazyRetry';
+import { lazyRetry, type VorwaermbareKomponente } from './lazyRetry';
 
 // ─── Datengetriebenes Routen-Register (FAHRPLAN-FUNDAMENT-UMBAU Thema B) ─────
 //
@@ -14,11 +13,15 @@ import { lazyRetry } from './lazyRetry';
 // react-refresh-Konflikt): die Lazy-Komponente steht inline als `Comp`.
 // App.tsx baut daraus das Element (<r.Comp />).
 //
-// Sonderrouten bleiben bewusst EXPLIZIT in App.tsx und stehen nicht hier:
-// «/» und die Alt-Redirects (/pro, /fachpersonen, /rechner), der
+// Sonderrouten standen bewusst EXPLIZIT im Routen-Baum und nicht hier — «/»
+// und die Alt-Redirects (/pro, /fachpersonen, /rechner), der
 // Fristenspiegel-Redirect (/rechner/fristenspiegel), der Stub (/rechner/:slug),
 // die statischen Seiten (/methodik, /ueber, /kontakt, /datenschutz) und der
-// NotFound-Catch-all (*) — alle bewusst NICHT im Katalog.
+// NotFound-Catch-all (*), alle bewusst NICHT im Katalog. Seit dem
+// QS-BASIS-Nachzug (15.9.2026) gilt das nur noch für die Redirects, die
+// dynamischen Pfade und den Catch-all; die PRERENDERTEN statischen Seiten sind
+// als STATISCHE_SEITENROUTEN hierher gezogen, weil `main.tsx` sie nachschlagen
+// können muss (Begründung am Block unten).
 //
 // §6.4: Code-Splitting unverändert — jeder Eintrag ist ein eigener STATISCHER
 // import() (nur Ladezeitpunkt, keine Logik). KEINE Pfad→Name-Auto-Ableitung:
@@ -31,7 +34,11 @@ import { lazyRetry } from './lazyRetry';
 
 export interface RoutenEintrag {
   pfad: string;
-  Comp: LazyExoticComponent<ComponentType>;
+  /** Die code-gesplittete Seite. Seit dem QS-BASIS-Nachzug (15.9.2026)
+   *  vorwärmbar: `main.tsx` löst den Chunk der aktuellen Route VOR
+   *  `hydrateRoot` auf, damit der prerenderte Inhalt hydriert statt ersetzt
+   *  wird (Herleitung in `src/lazyRetry.ts`). */
+  Comp: VorwaermbareKomponente;
 }
 
 /** Karten-Routen: Pfad ↔ Lazy-Seite. Reihenfolge wie zuvor in App.tsx
@@ -91,3 +98,80 @@ export const ROUTEN_MANIFEST: RoutenEintrag[] = [
   { pfad: '/vorlagen/ag-gruendung', Comp: lazyRetry(() => import('./pages/VorlageAgGruendung').then((m) => ({ default: m.VorlageAgGruendung }))) },
   { pfad: '/vorlagen/kapitalerhoehung', Comp: lazyRetry(() => import('./pages/VorlageKapitalerhoehung').then((m) => ({ default: m.VorlageKapitalerhoehung }))) },
 ];
+
+// ─── Statische Seitenrouten: EINE Quelle für Baum UND Vorwärmen ────────────
+//
+// WARUM SIE SEIT DEM QS-BASIS-NACHZUG (15.9.2026) HIER STEHEN und nicht mehr
+// als vierzehn einzelne `<Route>`-Zeilen in `RouteSwitch.tsx`:
+// `main.tsx` muss den Seiten-Chunk der aktuellen Route VOR `hydrateRoot`
+// auflösen, sonst suspendiert die Route und der prerenderte Inhalt wird
+// ersetzt statt übernommen (Herleitung und Messung in `src/lazyRetry.ts`).
+// Dafür braucht es eine Pfad→Seite-Tabelle, die man NACHSCHLAGEN kann — und
+// zwar genau die, aus der auch der Routen-Baum entsteht; eine zweite,
+// danebenstehende Vorwärm-Liste wäre eine still driftende zweite Wahrheit
+// (§5), mit dem kaum bemerkbaren Schaden, dass eine einzelne Seite wieder
+// ersetzt statt hydriert wird. Der Baum selbst ist unverändert: `RouteSwitch`
+// rendert diese Einträge per `.map` an derselben Stelle, an der die Zeilen
+// standen, und react-router v6 rankt konkrete Pfade vor dynamischen (dieselbe
+// Zusage, auf die sich das ROUTEN_MANIFEST-.map und der Stub `/rechner/:slug`
+// schon bisher stützen).
+//
+// Diese vierzehn Pfade sind die statischen Seiten, die `scripts/prerender.ts`
+// schreibt (`lib/seo` → `STATISCHE_SEITEN`); zusammen mit den fünfzig
+// Karten-Routen oben sind sie die 64 Routen, die `main.tsx` hydriert.
+// NICHT hier (und bewusst weiter als eigene `<Route>` in `RouteSwitch.tsx`):
+// die Redirect-Routen (/pro, /fachpersonen, /recherche, /international,
+// /rechner/fristenspiegel), die dynamischen Pfade (/rechner/:slug,
+// /gesetze/:ebene(/:key), /rechtsprechung/:key, /materialien/:key) und der
+// Catch-all — nichts davon wird prerendert, nichts davon ist vorzuwärmen.
+export const STATISCHE_SEITENROUTEN: RoutenEintrag[] = [
+  { pfad: '/', Comp: lazyRetry(() => import('./pages/Startseite').then((m) => ({ default: m.Startseite }))) },
+  // Rubrik-Übersichten (UI-Welle): /rechner und /vorlagen lösen die frühere
+  // /recherche-Such-Seite ab — eigene Browse-Übersichten analog /gesetze; die
+  // Suche lebt seither im Header-Dropdown.
+  { pfad: '/rechner', Comp: lazyRetry(() => import('./pages/RechnerUebersicht').then((m) => ({ default: m.RechnerUebersicht }))) },
+  { pfad: '/vorlagen', Comp: lazyRetry(() => import('./pages/VorlagenUebersicht').then((m) => ({ default: m.VorlagenUebersicht }))) },
+  // Rubrik V «Gesetze» (browsbare Rechtssammlung) — eigenständige Nav-Sektion,
+  // KEINE Katalog-Oberkategorie (oberkategorien.ts unberührt). Die Lesesicht
+  // /gesetze/:ebene/:key ist client-lazy und steht im Baum, nicht hier.
+  { pfad: '/gesetze', Comp: lazyRetry(() => import('./pages/Gesetze').then((m) => ({ default: m.Gesetze }))) },
+  // Rubrik VI «Rechtsprechung» (Bundesgerichtsentscheide) — analog zu Gesetze:
+  // Übersicht prerendert, Reader /rechtsprechung/:key client-lazy.
+  { pfad: '/rechtsprechung', Comp: lazyRetry(() => import('./pages/Rechtsprechung').then((m) => ({ default: m.Rechtsprechung }))) },
+  // Rubrik «Materialien»: amtliche Ressourcen / Soft-Law (Kreisschreiben,
+  // Wegleitungen, Leitfäden …) — alle nur-live-link (amtliche Quelle), kein
+  // Volltext-Snapshot. Detail /materialien/:key steht im Baum.
+  { pfad: '/materialien', Comp: lazyRetry(() => import('./pages/Materialien').then((m) => ({ default: m.Materialien }))) },
+  // W2·6c-DECKUNGS-SEITE (§11.5): «was wir nicht haben» — die Deckungs-Seite
+  // der Entstehungsgeschichte. Konkreter Pfad UNTER /materialien; weil alle
+  // Material-Schlüssel versal sind, kann der kleingeschriebene ihn auch
+  // inhaltlich nicht verschatten (Tor: routenManifest-Test).
+  { pfad: '/materialien/deckung', Comp: lazyRetry(() => import('./pages/MaterialienDeckung').then((m) => ({ default: m.MaterialienDeckung }))) },
+  { pfad: '/methodik', Comp: lazyRetry(() => import('./pages/Methodik').then((m) => ({ default: m.Methodik }))) },
+  { pfad: '/ueber', Comp: lazyRetry(() => import('./pages/Ueber').then((m) => ({ default: m.Ueber }))) },
+  { pfad: '/kontakt', Comp: lazyRetry(() => import('./pages/Kontakt').then((m) => ({ default: m.Kontakt }))) },
+  { pfad: '/datenschutz', Comp: lazyRetry(() => import('./pages/Datenschutz').then((m) => ({ default: m.Datenschutz }))) },
+  { pfad: '/einstellungen', Comp: lazyRetry(() => import('./pages/Einstellungen').then((m) => ({ default: m.Einstellungen }))) },
+  // UI-NAV S3/E1: Korpus-Abdeckungsseite «Was ist drin» (Suche-Fusszeile verlinkt hierher).
+  { pfad: '/abdeckung', Comp: lazyRetry(() => import('./pages/Abdeckung').then((m) => ({ default: m.Abdeckung }))) },
+  // UI-NAV S5: Volltext-Ergebnisseite (?q=) — macht die im Dropdown gekappten
+  // Treffer zugänglich (bes. die Gesetzestext-Gruppe). Additiv zum A5/A6-Dropdown.
+  { pfad: '/suche', Comp: lazyRetry(() => import('./pages/Suche').then((m) => ({ default: m.Suche }))) },
+];
+
+/** Adress-Vergleich ohne den Schlusstrich (`/rechner/x/` == `/rechner/x`) —
+ *  wortgleich zu `main.tsx`, das denselben Vergleich am Prerender-Marker
+ *  führt. */
+const ohneSchlusstrich = (p: string) => (p.length > 1 && p.endsWith('/') ? p.slice(0, -1) : p);
+
+/**
+ * Den Seiten-Chunk dieses Pfades anfordern — für `main.tsx` VOR `hydrateRoot`.
+ * Unbekannter Pfad (Detailseite, Redirect, 404) → `undefined`: dann gibt es
+ * nichts vorzuwärmen, und der Aufrufer startet ohne Warten.
+ */
+export function vorwaermenFuerPfad(pfad: string): Promise<unknown> | undefined {
+  const gesucht = ohneSchlusstrich(pfad);
+  const eintrag = STATISCHE_SEITENROUTEN.find((r) => r.pfad === gesucht)
+    ?? ROUTEN_MANIFEST.find((r) => r.pfad === gesucht);
+  return eintrag?.Comp.vorwaermen();
+}

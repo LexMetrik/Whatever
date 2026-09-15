@@ -32,6 +32,7 @@ import { wendeLeserOptionenAn } from './pages/gesetz-leser/leserOptionen'
 import { meldeFehler } from './components/fehlermeldung'
 import { fruehesSuchKuerzelStarten } from './components/suche/fruehesSuchKuerzel'
 import { hydrationsPinSetzen } from './lib/hydration'
+import { vorwaermenFuerPfad } from './routesManifest'
 
 // Thema so früh wie möglich anwenden (vor dem ersten App-Render) — ohne
 // CSP-verbotenes Inline-Script bleibt für Dunkel-Nutzer ein kurzes Aufblitzen
@@ -133,10 +134,31 @@ window.addEventListener('unhandledrejection', (e) => {
 //  nichts. Darum muss jeder Client-Initialstate, der von einem Attribut
 //  abhaengt, auf den Server-Zustand gepinnt sein (perf-Bauregel 2); die
 //  Startseite tut das ueber `useSyncExternalStore` mit Werk-Schnappschuss.
-type HydrationsStand = { modus: 'hydration' | 'client'; fehler: number; meldungen: string[] }
+//  (d) VORWAERMEN DER ROUTE, und ohne das bleibt der Rest halb (Nachzug
+//      15.9.2026). `React.lazy` suspendiert auch bei laengst geladenem Modul;
+//      der Routen-Inhalt haengt hinter der `<Suspense>`-Grenze von
+//      `RouteHuelle`, und einen suspendierten Teilbaum kann React nicht
+//      uebernehmen — es erzeugt ihn neu. GEMESSEN auf `/`: 101 von 449
+//      prerenderten Knoten ueberlebten, die <h1> (das LCP-Element!) war nicht
+//      darunter, und `e2e/d39-begruessung.e2e.ts` mass darum an einem
+//      abgehaengten Knoten. Darum wird der Chunk der aktuellen Route ZUERST
+//      aufgeloest (`vorwaermenFuerPfad`, eine Quelle in `routesManifest`), und
+//      erst danach hydriert; `lazyRetry` rendert eine so vorgewaermte Seite
+//      synchron, ohne Suspense. Faellt der Pfad durch (unbekannt) oder
+//      scheitert der Chunk, wird trotzdem hydriert — schlechtestenfalls genau
+//      wie ohne Vorwaermen.
+type HydrationsStand = {
+  modus: 'hydration' | 'client'
+  /** Was aus dem Routen-Vorwaermen wurde — der pruefbare Teil von (d).
+   *  `unbekannt` heisst: dieser Pfad steht in keiner Routen-Liste, es gab
+   *  nichts vorzuwaermen (dann wird der Inhalt wie frueher ersetzt). */
+  vorwaermung: 'getroffen' | 'unbekannt' | 'gescheitert' | 'entfaellt'
+  fehler: number
+  meldungen: string[]
+}
 
 const wurzel = document.getElementById('root')!
-const stand: HydrationsStand = { modus: 'client', fehler: 0, meldungen: [] }
+const stand: HydrationsStand = { modus: 'client', vorwaermung: 'entfaellt', fehler: 0, meldungen: [] }
 ;(window as unknown as { __lexmetrikHydration: HydrationsStand }).__lexmetrikHydration = stand
 
 const baum = (
@@ -151,11 +173,11 @@ const baum = (
 const ohneSchlusstrich = (p: string) => (p.length > 1 && p.endsWith('/') ? p.slice(0, -1) : p)
 const markierterPfad = wurzel.dataset.prerender
 
-if (markierterPfad !== undefined
-    && ohneSchlusstrich(markierterPfad) === ohneSchlusstrich(window.location.pathname)) {
-  stand.modus = 'hydration'
-  // Vor dem ersten Render: Zustandsquellen, die im Prerender leer sind, halten
-  // sich fuer diesen einen Render an den Server-Stand (lib/hydration).
+function hydriere() {
+  // Unmittelbar vor dem ersten Render: Zustandsquellen, die im Prerender leer
+  // sind, halten sich fuer diesen einen Render an den Server-Stand
+  // (lib/hydration). Erst HIER, nicht vor dem Vorwaermen — der Pin soll nur
+  // den einen Render ueberspannen, nicht die Wartezeit davor.
   hydrationsPinSetzen()
   hydrateRoot(wurzel, baum, {
     onRecoverableError: (fehler, info) => {
@@ -168,6 +190,21 @@ if (markierterPfad !== undefined
       )
     },
   })
+}
+
+if (markierterPfad !== undefined
+    && ohneSchlusstrich(markierterPfad) === ohneSchlusstrich(window.location.pathname)) {
+  stand.modus = 'hydration'
+  const vorlauf = vorwaermenFuerPfad(window.location.pathname)
+  if (vorlauf) {
+    vorlauf.then(
+      () => { stand.vorwaermung = 'getroffen'; hydriere() },
+      () => { stand.vorwaermung = 'gescheitert'; hydriere() },
+    )
+  } else {
+    stand.vorwaermung = 'unbekannt'
+    hydriere()
+  }
 } else {
   createRoot(wurzel).render(baum)
 }

@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
-import { ROUTEN_MANIFEST } from './routesManifest';
+import { ROUTEN_MANIFEST, STATISCHE_SEITENROUTEN } from './routesManifest';
 import { lazyRetry } from './lazyRetry';
 import { importGesetzLeser, importEntscheidLeser } from './leserPrefetch';
 
@@ -17,33 +17,19 @@ import { importGesetzLeser, importEntscheidLeser } from './leserPrefetch';
 // Reine Ladezeitpunkt-Änderung (CLAUDE.md §6.4), keine Logik betroffen.
 // Karten-Routen (Rechner/Vorlagen) kommen datengetrieben aus dem
 // ROUTEN_MANIFEST (src/routesManifest.ts), katalog-gegated (FUNDAMENT-UMBAU
-// Thema B, §5). Hier stehen nur die Sonderrouten, die bewusst NICHT im
-// Katalog sind.
-const Startseite = lazyRetry(() => import('./pages/Startseite').then((m) => ({ default: m.Startseite })));
-// Rubrik-Übersichten (UI-Welle): /rechner und /vorlagen lösen die frühere
-// /recherche-Such-Seite ab — eigene Browse-Übersichten analog /gesetze; die
-// Suche lebt seither im Header-Dropdown.
-const RechnerUebersicht = lazyRetry(() => import('./pages/RechnerUebersicht').then((m) => ({ default: m.RechnerUebersicht })));
-const VorlagenUebersicht = lazyRetry(() => import('./pages/VorlagenUebersicht').then((m) => ({ default: m.VorlagenUebersicht })));
+// Thema B, §5); seit dem QS-BASIS-Nachzug (15.9.2026) kommen die PRERENDERTEN
+// statischen Seiten ebenso datengetrieben aus STATISCHE_SEITENROUTEN derselben
+// Datei — `main.tsx` muss ihren Chunk vor dem Hydrieren nachschlagen können
+// (Begründung dort). Hier stehen damit nur noch die Routen, die weder im
+// Katalog noch prerendert sind: Redirects, dynamische Pfade, Catch-all.
 // S-5c: Fristenspiegel AUFGELÖST (Auftrag David 10.6.2026 abends) — Link-Erbe
 // alter Teilen-/.ics-Links übernimmt der Redirect auf die Fach-Rechner.
 const FristenspiegelRedirect = lazyRetry(() => import('./pages/FristenspiegelRedirect').then((m) => ({ default: m.FristenspiegelRedirect })));
 const RechnerStub = lazyRetry(() => import('./pages/RechnerStub').then((m) => ({ default: m.RechnerStub })));
-const Methodik = lazyRetry(() => import('./pages/Methodik').then((m) => ({ default: m.Methodik })));
-const Ueber = lazyRetry(() => import('./pages/Ueber').then((m) => ({ default: m.Ueber })));
-const Kontakt = lazyRetry(() => import('./pages/Kontakt').then((m) => ({ default: m.Kontakt })));
-const Datenschutz = lazyRetry(() => import('./pages/Datenschutz').then((m) => ({ default: m.Datenschutz })));
-const Einstellungen = lazyRetry(() => import('./pages/Einstellungen').then((m) => ({ default: m.Einstellungen })));
-// UI-NAV S3/E1: Korpus-Abdeckungsseite «Was ist drin» (Suche-Fusszeile verlinkt hierher).
-const Abdeckung = lazyRetry(() => import('./pages/Abdeckung').then((m) => ({ default: m.Abdeckung })));
-// UI-NAV S5: Volltext-Ergebnisseite (?q=) — macht die im Dropdown gekappten
-// Treffer zugänglich (bes. die Gesetzestext-Gruppe). Additiv zum A5/A6-Dropdown.
-const Suche = lazyRetry(() => import('./pages/Suche').then((m) => ({ default: m.Suche })));
 // Rubrik V «Gesetze» (browsbare Rechtssammlung) — eigenständige Nav-Sektion,
 // KEINE Katalog-Oberkategorie (oberkategorien.ts unberührt). Übersicht /gesetze
 // wird prerendert (seo.ts), die Lesesicht /gesetze/:ebene/:key ist client-lazy
 // (SPA-Fallback via vercel.json-Rewrite) — die Routenzahl bleibt stabil bei +1.
-const Gesetze = lazyRetry(() => import('./pages/Gesetze').then((m) => ({ default: m.Gesetze })));
 // Rank 2 (QS-PERF): der Gesetzes-Leser ist der schwerste Route-Chunk. Der Import-Thunk
 // lebt in leserPrefetch.ts (EINE Quelle, §5), damit prefetchLeser() exakt denselben
 // Chunk idle vorwärmen kann.
@@ -51,7 +37,6 @@ const GesetzLeser = lazyRetry(importGesetzLeser);
 // Rubrik VI «Rechtsprechung» (Bundesgerichtsentscheide) — analog zu Gesetze:
 // Übersicht /rechtsprechung wird prerendert (seo.ts), der Reader
 // /rechtsprechung/:key ist client-lazy (SPA-Fallback). Routenzahl +1.
-const Rechtsprechung = lazyRetry(() => import('./pages/Rechtsprechung').then((m) => ({ default: m.Rechtsprechung })));
 const EntscheidLeser = lazyRetry(importEntscheidLeser);
 // Rubrik «International»: die Übersicht lebt kanonisch in der Gesetzes-Säule
 // /gesetze?ebene=international (IA-6 Stufe 2, FAHRPLAN-GESETZES-UX §11.4 Ziff. 3
@@ -64,13 +49,11 @@ const InternationalRedirect = lazyRetry(() => import('./pages/InternationalRedir
 // Wegleitungen, Leitfäden …) — alle nur-live-link (amtliche Quelle), kein
 // Volltext-Snapshot. Übersicht /materialien wird prerendert, Detail /materialien/:key
 // als Metadaten-/Live-Link-Seite (seo-detail.ts). Routenzahl +1.
-const Materialien = lazyRetry(() => import('./pages/Materialien').then((m) => ({ default: m.Materialien })));
 const MaterialLeser = lazyRetry(() => import('./pages/MaterialLeser').then((m) => ({ default: m.MaterialLeser })));
 // W2·6c-DECKUNGS-SEITE (§11.5): «was wir nicht haben» — die Deckungs-Seite der
 // Entstehungsgeschichte. Eigene statische Route UNTER /materialien; sie steht
 // vor /materialien/:key, und weil alle Material-Schlüssel versal sind, kann der
 // kleingeschriebene Pfad keinen Eintrag verschatten (Tor: routenManifest-Test).
-const MaterialienDeckung = lazyRetry(() => import('./pages/MaterialienDeckung').then((m) => ({ default: m.MaterialienDeckung })));
 const NotFound = lazyRetry(() => import('./pages/NotFound').then((m) => ({ default: m.NotFound })));
 
 // Alt-Routen der aufgehobenen Free/Pro-Zweiteilung (FAHRPLAN-EINE-HAUPTSEITE
@@ -107,10 +90,12 @@ function EbeneRedirect() {
 export function RouteSwitch({ location }: { location?: string }) {
   return (
     <Routes location={location}>
-      <Route path="/" element={<Startseite />} />
-      {/* Rubrik-Übersichten (UI-Welle): Rechner + Vorlagen je eigene Seite. */}
-      <Route path="/rechner" element={<RechnerUebersicht />} />
-      <Route path="/vorlagen" element={<VorlagenUebersicht />} />
+      {/* Die statischen (= prerenderten) Seiten datengetrieben aus
+          STATISCHE_SEITENROUTEN — dieselbe Liste, die main.tsx vor dem
+          Hydrieren vorwärmt (§5, Herleitung oben). */}
+      {STATISCHE_SEITENROUTEN.map((r) => (
+        <Route key={r.pfad} path={r.pfad} element={<r.Comp />} />
+      ))}
       {/* /recherche aufgelöst → auf die Rechner-Übersicht (alte Permalinks). */}
       <Route path="/recherche" element={<Navigate to="/rechner" replace />} />
       {/* Alt-Routen (Free/Pro aufgehoben): alle auf die eine Hauptseite */}
@@ -128,25 +113,14 @@ export function RouteSwitch({ location }: { location?: string }) {
       {/* Noch nicht implementierte Rechner (geplant / in Vorbereitung) */}
       <Route path="/rechner/:slug" element={<RechnerStub />} />
       {/* Rubrik V «Gesetze»: Übersicht (prerendert) + Lesesicht (SPA-Fallback) */}
-      <Route path="/gesetze" element={<Gesetze />} />
       <Route path="/gesetze/:ebene" element={<EbeneRedirect />} />
       <Route path="/gesetze/:ebene/:key" element={<GesetzLeser />} />
       {/* Rubrik VI «Rechtsprechung»: Übersicht (prerendert) + Reader (SPA-Fallback) */}
-      <Route path="/rechtsprechung" element={<Rechtsprechung />} />
       <Route path="/rechtsprechung/:key" element={<EntscheidLeser />} />
       {/* Alt-Route «International» (IA-6 Stufe 2): Redirect auf die Säule, Anker abgebildet */}
       <Route path="/international" element={<InternationalRedirect />} />
       {/* Rubrik «Materialien»: Übersicht (prerendert) + Detail (Metadaten/Live-Link) */}
-      <Route path="/materialien" element={<Materialien />} />
-      <Route path="/materialien/deckung" element={<MaterialienDeckung />} />
       <Route path="/materialien/:key" element={<MaterialLeser />} />
-      <Route path="/methodik" element={<Methodik />} />
-      <Route path="/ueber" element={<Ueber />} />
-      <Route path="/kontakt" element={<Kontakt />} />
-      <Route path="/datenschutz" element={<Datenschutz />} />
-      <Route path="/einstellungen" element={<Einstellungen />} />
-      <Route path="/abdeckung" element={<Abdeckung />} />
-      <Route path="/suche" element={<Suche />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
