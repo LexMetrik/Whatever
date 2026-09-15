@@ -94,14 +94,17 @@ test('Startseite: die prerenderten Hüllen-Knoten ÜBERLEBEN den Start (Hydratio
       skipUeberlebt: skip?.__vor === 0,
       fussUeberlebt: fuss?.__vor === 1,
       vonReactGefuehrt: !!skip && Object.keys(skip).some((k) => k.startsWith('__reactFiber$')),
-      ueberschrift: el('h1')?.textContent ?? null,
     }
   })
 
   expect(nachher.skipUeberlebt, 'der Skip-Link ist noch DERSELBE DOM-Knoten wie vor dem Bundle').toBe(true)
   expect(nachher.fussUeberlebt, 'der Fuss ebenso — die Hülle wurde hydriert, nicht ersetzt').toBe(true)
   expect(nachher.vonReactGefuehrt, 'React führt sie jetzt (die Hydration hat committet)').toBe(true)
-  expect(nachher.ueberschrift, 'und die Überschrift ist wortgleich geblieben').toBe(vorher.ueberschrift)
+  // Die Überschrift wird NACHZIEHEND geprüft (`toHaveText` wiederholt), weil sie
+  // im Routen-Inhalt hinter der lazy Suspense-Grenze sitzt und der Teilbaum
+  // client-seitig neu entsteht (s. «Bekannte Grenze» oben) — der Wortlaut muss
+  // gleich bleiben, der Zeitpunkt ist keine Zusage.
+  await expect(page.locator('#root h1')).toHaveText(vorher.ueberschrift!)
 
   const s = await stand(page)
   expect(s.modus).toBe('hydration')

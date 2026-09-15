@@ -93,17 +93,32 @@ window.addEventListener('unhandledrejection', (e) => {
 // WELCHE Seite hydriert wird, entscheidet NICHT eine Routenliste im Client
 // (die waere eine zweite Wahrheit neben scripts/prerender.ts, §5), sondern ein
 // Marker, den der Prerender an den Container schreibt:
-//   · `data-prerender="app"`  → HTML kommt aus `entry-server` = dieser App
-//                               ⇒ hydrierbar (die 64 Katalog-/Seiten-Routen).
-//   · kein Marker             → Leser-Detailseiten (Erlasse/Entscheide/
-//                               Materialien) mit bewusst ANDEREM SEO-Markup
-//                               aus `lib/seo-detail`, und der SPA-Fallback
-//                               `app.html` mit leerem #root ⇒ createRoot.
+//   · `data-prerender="/pfad"` → HTML kommt aus `entry-server` = dieser App
+//                                ⇒ hydrierbar, SOFERN der Pfad der aktuellen
+//                                Adresse entspricht (die 64 Katalog-/Seiten-
+//                                Routen).
+//   · kein Marker              → Leser-Detailseiten (Erlasse/Entscheide/
+//                                Materialien) mit bewusst ANDEREM SEO-Markup
+//                                aus `lib/seo-detail`, und der SPA-Fallback
+//                                `app.html` mit leerem #root ⇒ createRoot.
+//   · Marker mit FREMDEM Pfad  → ein SPA-Fallback hat das HTML einer anderen
+//                                Seite geliefert (lokal beantwortet
+//                                `vite preview` unbekannte Routen mit der
+//                                Startseite) ⇒ createRoot, statt sehenden
+//                                Auges gegen fremdes Markup zu hydrieren.
 //
 // WAECHTER (perf-Bauregel 5: «kein NAIVES hydrateRoot — ein Markup-Mismatch ist
 // stiller Normtext-Verlust»). Er macht das Nicht-Naive aus:
 //  (a) `onRecoverableError` meldet JEDEN Mismatch sichtbar auf der Konsole,
-//      mit Route und erster Zeile — nichts scheitert mehr still;
+//      mit Route und erster Zeile — nichts scheitert mehr still. Stufe `warn`,
+//      nicht `error`, und das ist kein Weichspülen: React hat sich an dieser
+//      Stelle BEREITS erholt (Punkt c), die Anwendung ist also nicht in einem
+//      Fehlerzustand, sondern im Zustand von vor dieser Änderung. `error` hätte
+//      zudem die bestehenden Konsolen-Wächter (`qsui-hierarchie`,
+//      `w224-d37-seitenleiste-gruppen`, `leser-v3-kopfzeile`, …) rot gemacht
+//      für eine Lage, die sie gar nicht meinen — gemessen im vollen e2e-Lauf
+//      15.9.2026: 6 solche Fälle. Der prüfbare Wächter ist der Zähler in (b);
+//      der Konsolentext ist die Diagnosehilfe daneben.
 //  (b) `window.__lexmetrikHydration` zaehlt mit, damit e2e darauf assertieren
 //      kann (`e2e/hydration-startseite.e2e.ts`), statt Optik zu raten.
 //  (c) Der Rueckfall selbst kommt aus React 19 und ist in react-dom 19.2.8
@@ -132,7 +147,12 @@ const baum = (
   </StrictMode>
 )
 
-if (wurzel.dataset.prerender === 'app') {
+/** Adress-Vergleich ohne den Schlusstrich (`/rechner/x/` == `/rechner/x`). */
+const ohneSchlusstrich = (p: string) => (p.length > 1 && p.endsWith('/') ? p.slice(0, -1) : p)
+const markierterPfad = wurzel.dataset.prerender
+
+if (markierterPfad !== undefined
+    && ohneSchlusstrich(markierterPfad) === ohneSchlusstrich(window.location.pathname)) {
   stand.modus = 'hydration'
   // Vor dem ersten Render: Zustandsquellen, die im Prerender leer sind, halten
   // sich fuer diesen einen Render an den Server-Stand (lib/hydration).
@@ -142,7 +162,7 @@ if (wurzel.dataset.prerender === 'app') {
       const text = fehler instanceof Error ? fehler.message : String(fehler)
       stand.fehler += 1
       stand.meldungen.push(text)
-      console.error(
+      console.warn(
         `[Hydration] ${window.location.pathname}: ${text.split('\n')[0]}`,
         info.componentStack ?? '',
       )

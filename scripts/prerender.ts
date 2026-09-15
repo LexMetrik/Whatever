@@ -80,8 +80,17 @@ const ROOT_MARKER = '<div id="root"></div>';
 // Routenliste neben dieser hier (§5) — er liest nur `root.dataset.prerender`.
 // Gesetzt wird er ausschliesslich in `seitenHtml()`, also genau auf dem Pfad,
 // dessen Inhalt aus `entry-server` stammt.
+//
+// Der Marker trägt den PFAD, nicht bloss ein Ja. Grund (gemessen 15.9.2026 in
+// der e2e-Suite): ein SPA-Fallback liefert unter Umständen fremdes HTML unter
+// einer anderen Adresse aus — `vite preview` beantwortet eine unbekannte Route
+// mit `dist/index.html`, also mit der STARTSEITE. Ein Marker ohne Pfad hiesse
+// dort «hydriere die Startseiten-Markup gegen den Baum von /gesetze/bund/
+// GIBTSNICHT» — ein garantierter Mismatch. Mit Pfad vergleicht `main.tsx` und
+// lässt es bleiben. (In der Produktion zeigt der Rewrite auf `app.html`, das
+// gar keinen Marker trägt; die Sonde kostet nichts und deckt beide Fälle.)
 const WURZEL_AUF = '<div id="root">';
-const WURZEL_AUF_HYDRIERBAR = '<div id="root" data-prerender="app">';
+const wurzelAufHydrierbar = (pfad: string) => `<div id="root" data-prerender="${esc(pfad)}">`;
 
 const template = readFileSync(join(DIST, 'index.html'), 'utf8');
 if (!template.includes(ROOT_MARKER)) {
@@ -159,7 +168,7 @@ function seitenHtml(pfad: string, inhalt: string): string {
   if (!html.includes(WURZEL_AUF)) {
     throw new Error(`#root-Container in ${pfad} nicht gefunden — Hydrations-Marker nicht setzbar.`);
   }
-  return html.replace(WURZEL_AUF, () => WURZEL_AUF_HYDRIERBAR);
+  return html.replace(WURZEL_AUF, () => wurzelAufHydrierbar(pfad));
 }
 
 const routen = prerenderRouten();
