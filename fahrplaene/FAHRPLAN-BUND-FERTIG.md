@@ -174,7 +174,7 @@ migrieren, und der Sidecar hat heute keinen Drift-Riegel (§2, Zeile Sidecar).
 **Umsetzung 15.9.2026 (WP-D, verhaltensneutraler Phase-1-Schnitt, Entscheid David 14.9.2026
 Option i):** die zwei Inline-Kopien der Fallback-Kette (`marginalie` vor `titel`) in
 `leserSuche.ts` (`baueLeserSuchIndex`, vormals Z.230 und Z.246) sind durch den kanonischen
-Accessor `artikelRandtitel` (`gliederungsArtikel.ts:76`) ersetzt — EINE Stelle im Code für die
+Accessor `artikelRandtitel` (`gliederungsArtikel.ts:75`) ersetzt — EINE Stelle im Code für die
 Regel, geprüft in `src/tests/randtitel-eine-quelle-w227.test.ts`. Der Typ-Kommentar zu
 `NormSnapshot.titel` (`typen.ts`) benennt das Sollbild jetzt ausdrücklich als KANTON-
 Übergangsprojektion. Neuer Wächter im selben Test-File: kein Bund-Artikel im Korpus trägt

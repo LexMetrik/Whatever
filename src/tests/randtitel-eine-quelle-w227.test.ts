@@ -96,6 +96,14 @@ describe('W2·27 WP-D — eine Quelle für den Randtitel in leserSuche.ts', () =
       const randtitel = index.artikel.find((a) => a.token === e.artikel)?.randtitel ?? null;
       expect(randtitel).toBe(alteFormel(e, struktur));
     }
+    // Zweite konsolidierte Stelle (Suchindex-Segment «Randtitel», leserSuche.ts
+    // ~Z.254): ohne diese Zusicherung konnte der Test dort nicht rot werden
+    // (Gegenprüfung #889, Befund B1, 15.9.2026 — §6.7).
+    const randtitelSegmente = (token: string) =>
+      (index.artikel.find((a) => a.token === token)?.segmente ?? [])
+        .filter((s) => s.quelle === 'Randtitel').map((s) => s.text);
+    expect(randtitelSegmente('2')).toEqual(['Zweck']);            // Kanton ohne Sidecar: aus titel
+    expect(randtitelSegmente('3')).toEqual(['Vorrang']);          // marginalie gewinnt, titel nie
   });
 });
 
