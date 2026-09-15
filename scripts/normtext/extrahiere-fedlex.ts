@@ -95,17 +95,18 @@ export function extrahiereArtikel(html: string, token: string): ArtikelText | nu
 }
 
 /**
- * Wie extrahiereArtikel, aber mit dem VOLLEN Anker statt nur der Artikel-Nr. —
- * z.B. «art_335_c» (Haupttext) ODER «disp_u1/art_1» (Schlusstitel/UeB, M13).
- * Die Block-Parserei darunter ist identisch; nur das gesuchte <article id="…">
- * unterscheidet sich. So fällt der Schlusstitel (eigenes Anker-Schema
- * `disp_uN/art_*`, von alleArtikelTokens digit-only nicht erfasst) nicht mehr
- * stumm weg (§7-Vollabdeckung), ohne den Haupttext-Pfad anzufassen.
+ * Roh-Inhalt des <article id="…">-Elements zu `ankerRoh` (ohne die
+ * <article>-Tags selbst), inkl. Kopf-<h6> und Fussnoten-Apparat.
+ *
+ * W2·27 (15.9.2026) aus {@link extrahiereArtikelAusAnker} herausgezogen, damit
+ * die Anker-Auflösung EINE Wahrheit bleibt (§5): Block-Parser und die
+ * Label-Ableitung bei doppelter id (doppel-id-label.ts) greifen auf denselben
+ * Artikel zu, statt die Vorkommens-Regex zweimal zu führen.
  *
  * @param ankerRoh - Voller Anker, optional mit Synthese-Suffix «__2» (N-tes
  *                   Vorkommen bei doppelter id, s. alleArtikelTokens/alleSchlussteilAnker).
  */
-export function extrahiereArtikelAusAnker(html: string, ankerRoh: string): ArtikelText | null {
+export function artikelRohHtml(html: string, ankerRoh: string): string | null {
   // M9/G7: doppelte id. Ein Erlass kann ZWEI <article id="…"> mit identischem
   // Anker tragen (KKV art_126_z: «Anlagebeschränkungen» + «126z tredecies
   // Wesentliche Mängel»; betmg/vwvg/pavo: aufgehobene Bereichs-Artikel «15a–15c»).
@@ -124,19 +125,35 @@ export function extrahiereArtikelAusAnker(html: string, ankerRoh: string): Artik
   );
   const treffer = [...html.matchAll(articleRe)];
   const articleMatch = treffer[nth - 1];
-  if (!articleMatch) return null;
+  return articleMatch ? articleMatch[1] : null;
+}
+
+/**
+ * Wie extrahiereArtikel, aber mit dem VOLLEN Anker statt nur der Artikel-Nr. —
+ * z.B. «art_335_c» (Haupttext) ODER «disp_u1/art_1» (Schlusstitel/UeB, M13).
+ * Die Block-Parserei darunter ist identisch; nur das gesuchte <article id="…">
+ * unterscheidet sich. So fällt der Schlusstitel (eigenes Anker-Schema
+ * `disp_uN/art_*`, von alleArtikelTokens digit-only nicht erfasst) nicht mehr
+ * stumm weg (§7-Vollabdeckung), ohne den Haupttext-Pfad anzufassen.
+ *
+ * @param ankerRoh - Voller Anker, optional mit Synthese-Suffix «__2» (N-tes
+ *                   Vorkommen bei doppelter id, s. alleArtikelTokens/alleSchlussteilAnker).
+ */
+export function extrahiereArtikelAusAnker(html: string, ankerRoh: string): ArtikelText | null {
+  const artikelRoh = artikelRohHtml(html, ankerRoh);
+  if (artikelRoh === null) return null;
 
   // Fussnoten-Apparat (<div class="footnotes">…</div>) und Artikel-Überschrift
   // (<h6>…</h6>, trägt eine Heading-Fussnote) sind KEIN Normtext und werden vorab
   // entfernt — sonst leckt der Fallback-Pfad (unnummerierte plain-<p>-Artikel wie
   // BETMG/VStrR) den Fussnotentext + Marker in den Normtext (Bug-Check 23.6.2026).
   // Der Haupt-Loop matcht diese Elemente ohnehin nicht; nur der Fallback profitiert.
-  const innerRoh = articleMatch[1]
+  const innerRoh = artikelRoh
     .replace(/<div\s+class="footnotes">[\s\S]*$/i, '') // Apparat steht am Artikelende
     .replace(/<h6\b[^>]*>[\s\S]*?<\/h6>/gi, '');
 
-  // W2·27: G-AUFH-ART aus dem ROHEN Artikel-HTML (articleMatch[1] trägt <h…> + Fussnoten-Apparat, die innerRoh gerade verlor); Shape sonst unverändert.
-  return artikelTextMitAufhebung(articleMatch[1], parseArtikelInner(innerRoh));
+  // W2·27: G-AUFH-ART aus dem ROHEN Artikel-HTML (artikelRoh trägt <h…> + Fussnoten-Apparat, die innerRoh gerade verlor); Shape sonst unverändert.
+  return artikelTextMitAufhebung(artikelRoh, parseArtikelInner(innerRoh));
 }
 
 /**

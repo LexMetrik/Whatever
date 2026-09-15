@@ -23,7 +23,9 @@ import {
   alleAnhangAnker,
   extrahiereAnhang,
   anhangLabelVonAnker,
+  artikelRohHtml,
 } from './normtext/extrahiere-fedlex.ts';
+import { doppelIdLabel } from './normtext/doppel-id-label.ts';
 import {
   sammleKantonInventar,
   sammleFallback,
@@ -1400,6 +1402,14 @@ async function main(): Promise<void> {
 
     for (const token of tokens) {
       const ankerVoll = `art_${token}`;
+      // W2·27 (15.9.2026, Nebenfund Prüfer #851): der Synthese-Suffix «__N» ist
+      // UNSERE Eindeutigmachung einer doppelten Fedlex-id — amtlich existiert er
+      // nicht. Er bleibt in id/artikel (Schlüssel), darf aber weder ins Label
+      // noch in den Anker der quelleUrl. Schlussteil- und Anhang-Pfad unten
+      // rechnen seit je auf den rohen Anker zurück; der Haupttext-Pfad zog ihn
+      // bis hierher mit («…#art_126_z__2» = amtlich toter Anker).
+      const basisToken = token.replace(/__\d+$/, '');
+      const ankerAmtlich = `art_${basisToken}`;
       const extrakt = extrahiereArtikel(html, token);
 
       if (extrakt === null || extrakt.bloecke.length === 0) {
@@ -1416,16 +1426,30 @@ async function main(): Promise<void> {
         quelle: gesetzKey,
         erlass,
         artikel: token,
-        // M9/G7: Synthese-Suffix «__2» (doppelte art_id) NICHT ins Label ziehen —
-        // beide Artikel zeigen ihre echte Basis-Bezeichnung («Art. 126z»); der
-        // Inhalt unterscheidet sie. Anker/id behalten den Suffix (eindeutig).
-        artikelLabel: artikelLabel(token.replace(/__\d+$/, '')),
+        // M9/G7 + W2·27: Der Synthese-Suffix «__2» geht NIE ins Label. Für das
+        // N-te Vorkommen einer doppelten art_id liefert seit W2·27 aber das
+        // AMTLICHE Heading das unterscheidende Ordinal (KKV art_126_z Nr. 2:
+        // «<sup>tredecies</sup>» → «Art. 126ztredecies», Hausstil der Nachbarn
+        // art_126_z_bis … art_126_z_duodecies). Trägt der Kopf kein Ordinal,
+        // bleibt es beim Basis-Label (§7: nichts erfinden). Anker/id behalten
+        // den Suffix (eindeutig).
+        artikelLabel:
+          (token === basisToken
+            ? null
+            : doppelIdLabel(artikelRohHtml(html, ankerVoll), artikelLabel(basisToken))) ??
+          artikelLabel(basisToken),
         // Artikel-Metadaten: `aufgehoben` (W2·27 G-AUFH-ART, normtext/aufhebung-signal.ts) und `grundlage` (G23/M8, Delegationsnorm «(Art. N ArG)») — wie `titel` NICHT im Block-sha, also golden-neutral; Reihenfolge titel→aufgehoben→grundlage hält die DB-Projektion byte-gleich.
         ...(extrakt.aufgehoben ? { aufgehoben: true as const } : {}),
         ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}),
         bloecke: extrakt.bloecke,
         stand,
-        quelleUrl: `https://www.fedlex.admin.ch/eli/${eli}/de#${ankerVoll}`,
+        // W2·27: ROHER amtlicher Anker (ohne «__N»). Bekannte Quell-Unschärfe
+        // (§8): bei doppelter id springt Fedlex auf das ERSTE Vorkommen — der
+        // Erlass ist damit richtig, die Stelle nur ungenau. Das ist ehrlicher
+        // als ein Fragment, das in der amtlichen Fassung gar nicht existiert.
+        // Der Verifizier-Deep-Link (src/lib/normtext/verifikationslink.ts)
+        // unterdrückt den Artikel-Link bei «__N» weiterhin ganz.
+        quelleUrl: `https://www.fedlex.admin.ch/eli/${eli}/de#${ankerAmtlich}`,
         abgerufen,
         fassungsToken: konsolidierung,
         sha: sha256Bloecke(extrakt.bloecke),
@@ -1458,7 +1482,15 @@ async function main(): Promise<void> {
         quelle: gesetzKey,
         erlass,
         artikel: token,
-        artikelLabel: artikelLabel(schlussteilLabelSuffix(anker)),
+        // W2·27: wie im Haupttext-Pfad — bei doppelter id trägt das amtliche
+        // Heading des N-ten Vorkommens das Ordinal. Im gepinnten Bund-Korpus
+        // gibt es heute keinen «__N»-Schlussteil-Token (Bestand 15.9.2026: der
+        // EINZIGE «__N» im ganzen Korpus ist KKV 126_z__2); die Regel steht
+        // hier, damit der Pfad nicht still die alte Halbwahrheit erbt.
+        artikelLabel:
+          (/__\d+$/.test(anker)
+            ? doppelIdLabel(artikelRohHtml(html, anker), artikelLabel(schlussteilLabelSuffix(anker)))
+            : null) ?? artikelLabel(schlussteilLabelSuffix(anker)),
         ...(extrakt.aufgehoben ? { aufgehoben: true as const } : {}), ...(extrakt.grundlage ? { grundlage: extrakt.grundlage } : {}), // W2·27 + G23, s. Haupttext-Pfad
         bloecke: extrakt.bloecke,
         stand,
