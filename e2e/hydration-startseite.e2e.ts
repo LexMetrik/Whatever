@@ -27,39 +27,35 @@
 //  (4) Die Leser-Detailseiten werden NICHT hydriert (anderes SEO-Markup aus
 //      `lib/seo-detail`; dort wäre ein Mismatch Normtext-Verlust, Bauregel 5).
 //
-//  (5) DER ROUTEN-INHALT ÜBERLEBT EBENFALLS, die `<h1>` eingeschlossen
-//      (QS-BASIS-Nachzug, 15.9.2026). Er hängt hinter der `<Suspense>`-Grenze
-//      von `RouteHuelle`, und `React.lazy` suspendiert auch bei längst
-//      geladenem Modul — ein suspendierter Teilbaum ist nicht hydrierbar.
-//      Seither wärmt `main.tsx` den Chunk der aktuellen Route VOR
-//      `hydrateRoot` vor (`routesManifest.vorwaermenFuerPfad`), und
-//      `lazyRetry` rendert eine vorgewärmte Seite synchron. GEMESSEN auf `/`:
-//      101 von 449 Knoten vorher, 449 von 450 nachher.
-//  (6) DER TAG NACH DEM BAU ist ein eigener Fall, und zwar der häufigere:
-//      der Prerender kennt weder das Datum noch den Speicher des Besuchers.
-//      Zugesichert wird hier, dass (a) die Datumszeile und das Fristende des
-//      Schnellrechners den Wert des BESUCHERS tragen (nie den des Baus —
-//      genau das ging beim ersten Anlauf schief, s. `start/Begruessung.tsx`)
-//      und (b) der unvermeidliche Mismatch im Pult-Modul EINGEGRENZT bleibt:
-//      Hülle und `<h1>` überleben ihn. GEMESSEN: 102 von 450 Knoten ohne die
-//      Modul-Grenze in `start/PultModul`, 377 von 450 mit ihr.
-//  (7) JEDE prerenderte Route findet ihren Loader. Der Sweep unten ist der
-//      Drift-Wächter über die zwei Tabellen in `routesManifest` — eine neue
-//      prerenderte Route, die dort fehlt, wird nicht vorgewärmt und verlöre
-//      still ihren Routen-Inhalt an einen Ersatz-Render.
+//  (5) DER TAG NACH DEM BAU ist ein eigener Fall, und zwar der häufigere:
+//      der Prerender kennt das Datum des Besuchers nicht, sein HTML trägt also
+//      zwangsläufig andere Zahlen als dessen Gerät. Zugesichert wird, dass
+//      (a) Datumszeile und Fristende des Schnellrechners den Wert des
+//      BESUCHERS tragen — nie den des Baus, was `suppressHydrationWarning`
+//      unter `hydrateRoot` genau bewirkt hätte (s. `start/Begruessung.tsx`) —
+//      und (b) der unvermeidliche Modul-Mismatch EINGEGRENZT bleibt: die
+//      Hülle überlebt ihn. GEMESSEN am 15.9.2026 (Uhr auf den 7.9.):
+//      102 von 450 prerenderten Knoten ohne die Grenze in `start/PultModul`,
+//      377 von 450 mit ihr.
+//
+// BEKANNTE GRENZE, bewusst NICHT hier zugesichert: der ROUTEN-INHALT hängt
+// hinter der lazy `<Suspense>`-Grenze von `RouteHuelle`, deren Chunk beim
+// Hydrations-Start noch nicht da ist — React rendert diesen Teilbaum darum
+// client-seitig (gemessen auf `/`: 101 von 449 Knoten hydriert). Den Chunk VOR
+// `hydrateRoot` vorzuwärmen wurde am 15.9.2026 gebaut und WIEDER ZURÜCKGEBAUT:
+// es rettete zwar alle 449 Knoten samt `<h1>`, kostete auf Lighthouse-Mobil
+// aber 1.05 s LCP (3.91 s → 4.96 s, je Median aus 3, Einzelläufe 3.9·3.9·4.1
+// gegen 5.0·5.0·4.7) und schluckte Klicks, die vor dem verspäteten
+// `hydrateRoot` eintrafen (`e2e/startseite-pult-r10.e2e.ts` 1–2 von 10 rot je
+// Lauf). Die Knoten-Identität ist kein Selbstzweck; das Ziel war LCP, und
+// genau den verschlechterte sie. Herleitung im PR-Text.
 //
 // ROT-PROBEN (§6.7, ausgeführt 15.9.2026, jede Mutation einzeln gebaut und
 // gefahren) — Ergebnisse im PR-Text.
 import { test, expect, type Page } from '@playwright/test'
 import { appGebootet } from './helpers/appGebootet'
-import { prerenderRouten } from '../src/lib/seo'
 
-type Stand = {
-  modus: 'hydration' | 'client'
-  vorwaermung: 'getroffen' | 'unbekannt' | 'gescheitert' | 'entfaellt'
-  fehler: number
-  meldungen: string[]
-}
+type Stand = { modus: 'hydration' | 'client'; fehler: number; meldungen: string[] }
 const stand = (page: Page) =>
   page.evaluate(() => (window as unknown as { __lexmetrikHydration: Stand }).__lexmetrikHydration)
 
@@ -111,8 +107,6 @@ test('Startseite: die prerenderten Hüllen-Knoten ÜBERLEBEN den Start (Hydratio
     return {
       skipUeberlebt: skip?.__vor === 0,
       fussUeberlebt: fuss?.__vor === 1,
-      ueberschriftUeberlebt: el('h1')?.__vor === 2,
-      ueberschriftText: el('h1')?.textContent ?? null,
       vonReactGefuehrt: !!skip && Object.keys(skip).some((k) => k.startsWith('__reactFiber$')),
     }
   })
@@ -120,17 +114,14 @@ test('Startseite: die prerenderten Hüllen-Knoten ÜBERLEBEN den Start (Hydratio
   expect(nachher.skipUeberlebt, 'der Skip-Link ist noch DERSELBE DOM-Knoten wie vor dem Bundle').toBe(true)
   expect(nachher.fussUeberlebt, 'der Fuss ebenso — die Hülle wurde hydriert, nicht ersetzt').toBe(true)
   expect(nachher.vonReactGefuehrt, 'React führt sie jetzt (die Hydration hat committet)').toBe(true)
-  // DIE ÜBERSCHRIFT AUCH, und das ist der Punkt von (5): sie ist das
-  // LCP-Element. Geprüft an der IDENTITÄT, nicht am Wortlaut — ein
-  // zeichengleich neu erzeugter Knoten bestünde einen Textvergleich und wäre
-  // trotzdem ein Neuanstrich.
-  expect(nachher.ueberschriftUeberlebt,
-    'die <h1> ist noch DERSELBE Knoten — der Routen-Chunk war vor dem Hydrieren da').toBe(true)
-  expect(nachher.ueberschriftText, 'und trägt unverändert denselben Wortlaut').toBe(vorher.ueberschrift)
+  // Die Überschrift wird NACHZIEHEND geprüft (`toHaveText` wiederholt), weil sie
+  // im Routen-Inhalt hinter der lazy Suspense-Grenze sitzt und der Teilbaum
+  // client-seitig neu entsteht (s. «Bekannte Grenze» oben) — der Wortlaut muss
+  // gleich bleiben, der Zeitpunkt ist keine Zusage.
+  await expect(page.locator('#root h1')).toHaveText(vorher.ueberschrift!)
 
   const s = await stand(page)
   expect(s.modus).toBe('hydration')
-  expect(s.vorwaermung, 'der Loader der Startseite wurde gefunden und abgewartet').toBe('getroffen')
   expect(s.fehler, `Hydrations-Mismatch: ${s.meldungen.join(' | ')}`).toBe(0)
 })
 
@@ -192,8 +183,10 @@ test('Der Tag NACH dem Bau: Datum und Fristende kommen vom Gerät, der Mismatch 
   await page.goto('/', { waitUntil: 'commit' })
   await page.waitForSelector('#root footer', { state: 'attached' })
   const vorher = await page.evaluate(() => {
-    const h1 = document.querySelector('#root h1')
-    if (h1) (h1 as unknown as { __vor?: boolean }).__vor = true
+    const skip = document.querySelector('#root a[href="#inhalt"]')
+    const fuss = document.querySelector('#root footer')
+    if (skip) (skip as unknown as { __vor?: boolean }).__vor = true
+    if (fuss) (fuss as unknown as { __vor?: boolean }).__vor = true
     return {
       // Das prerenderte Fristende des Schnellrechners — gerechnet ab dem
       // BAU-Tag, also nicht das, was der Besucher sehen darf.
@@ -214,41 +207,25 @@ test('Der Tag NACH dem Bau: Datum und Fristende kommen vom Gerät, der Mismatch 
   const nachher = await page.evaluate(() => ({
     fristende: [...document.querySelectorAll('#root p')]
       .map((e) => e.textContent).find((t) => /^\d{2}\.\d{2}\.\d{4}$/.test(t ?? '')) ?? null,
-    h1Ueberlebt: (document.querySelector('#root h1') as unknown as { __vor?: boolean } | null)?.__vor === true,
+    huelleUeberlebt:
+      (document.querySelector('#root a[href="#inhalt"]') as unknown as { __vor?: boolean } | null)?.__vor === true
+      && (document.querySelector('#root footer') as unknown as { __vor?: boolean } | null)?.__vor === true,
   }))
   expect(nachher.fristende, 'das Fristende rechnet ab dem Tag des Besuchers').toBe('15.03.2027')
   expect(nachher.fristende, 'und ist nicht das prerenderte').not.toBe(vorher.fristende)
 
-  // (b) Eingegrenzt: die <h1> (das LCP-Element) überlebt den Modul-Mismatch.
-  expect(nachher.h1Ueberlebt,
-    'die <h1> ist derselbe Knoten — der Rückbau endete an der Modul-Grenze in start/PultModul').toBe(true)
+  // (b) EINGEGRENZT: der Rückbau endet an der Modul-Grenze in `start/PultModul`
+  // und reisst die hydrierte Hülle nicht mit. Ohne diese Grenze verwirft React
+  // bis zur Grenze von `RouteHuelle` — und weil der dortige Rückbau ERST NACH
+  // der Hydration kommt, misst dann auch `e2e/d39-begruessung.e2e.ts` an
+  // abgehängten Knoten (der Blocker, der diesen Nachzug ausgelöst hat).
+  expect(nachher.huelleUeberlebt,
+    'Skip-Link und Fuss sind dieselben Knoten — der Rückbau blieb im Modul').toBe(true)
 
   const s = await stand(page)
   expect(s.modus).toBe('hydration')
-  expect(s.vorwaermung).toBe('getroffen')
   // Genau EIN gemeldeter Rückbau, und zwar der erwartete: das Pult-Modul mit
   // dem ab HEUTE rechnenden Schnellrechner. Mehr wäre eine neue, unbeaufsichtigte
   // Divergenz-Quelle — dieser Zähler ist der Wächter darüber.
   expect(s.fehler, `gemeldete Rückbauten: ${s.meldungen.join(' | ')}`).toBe(1)
-})
-
-test('Jede prerenderte Route findet ihren Loader (Drift-Wächter über routesManifest)', async ({ page }) => {
-  // §5-Wächter: `main.tsx` schlägt den Seiten-Chunk der aktuellen Route in
-  // STATISCHE_SEITENROUTEN + ROUTEN_MANIFEST nach. Fehlt eine prerenderte Route
-  // dort, meldet der Stand `unbekannt` — die Seite hydriert dann zwar noch ihre
-  // Hülle, verliert aber ihren Routen-Inhalt an einen Ersatz-Render, und zwar
-  // LAUTLOS. Der Sweep fragt bewusst nur diese eine, billige Auskunft ab.
-  test.setTimeout(180_000)
-  const routen = prerenderRouten()
-  expect(routen.length, 'der Sweep deckt alle prerenderten Routen ab').toBe(64)
-  const fehlend: string[] = []
-  for (const pfad of routen) {
-    await page.goto(pfad)
-    await appGebootet(page)
-    const s = await stand(page)
-    if (s.modus !== 'hydration' || s.vorwaermung !== 'getroffen') {
-      fehlend.push(`${pfad} (modus=${s.modus}, vorwaermung=${s.vorwaermung})`)
-    }
-  }
-  expect(fehlend, `Routen ohne Vorwärmung: ${fehlend.join(' · ')}`).toEqual([])
 })
