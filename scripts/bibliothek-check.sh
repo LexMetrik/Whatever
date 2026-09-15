@@ -13,7 +13,7 @@ for f in recherche/*.md; do
   b=$(basename "$f"); [ "$b" = "INDEX.md" ] && continue
   grep -q "($b)" recherche/INDEX.md || melde S7 "recherche/INDEX.md ohne Zeile für $b"
 done
-for f in behoerden/*.md kosten/*.md normen/*.md rechtsprechung/*.md register/*.md materialien/*.md normtext/*.md seo/*.md muster/MANIFEST.md *.md; do
+for f in behoerden/*.md kosten/*.md normen/*.md rechtsprechung/*.md register/*.md materialien/*.md normtext/*.md seo/*.md betrieb/*.md werkzeuge/*.md muster/MANIFEST.md *.md; do
   b=$(basename "$f")
   [ "$b" = "INDEX.md" ] && continue
   grep -q "$b" INDEX.md || melde S7 "Haupt-INDEX ohne Eintrag für $f"
