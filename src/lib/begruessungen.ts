@@ -493,3 +493,72 @@ export function waehleBegruessung(stunde: number, zufall: () => number): string 
   const i = Math.min(pool.length - 1, Math.max(0, Math.floor(zufall() * pool.length)));
   return pool[i];
 }
+
+// ─── Build-Seed statt Live-Zufall (QS-PERF, 15.9.2026) ──────────────────────
+//
+// BEFUND (CI-Lighthouse main, Lauf 40f634b3d, Mobil 4×CPU/4G): Startseite-
+// Score 66, LCP 9.38 s bei TBT 0 — und das LCP-Element (die grösste Zeile der
+// Seite, der Gruss-h1 in `SuchBlock.tsx`) war je Lauf ein ANDERER Text. Ursache:
+// `waehleBegruessung(stunde, Math.random)` wurde ZWEIMAL unabhängig gezogen —
+// einmal beim Prerender (Node-Prozess, `scripts/prerender.ts`), einmal beim
+// Client-Mount (Browser, `useHeute` in `Begruessung.tsx`). Das prerenderte
+// `dist/index.html` zeigt Zug 1 sofort (schneller erster Paint), der Client
+// ersetzt sie nach dem JS-Download durch Zug 2 — Lighthouse misst diesen
+// Tausch als LCP, nicht den echten ersten Paint (Bauregel 2 «Client-
+// Initialstate auf den Server-Zustand pinnen»).
+//
+// FIX: eine deterministische Auswahl aus einem BUILD-Seed statt aus einem
+// Live-Zufall. Prerender (`vite-node scripts/prerender.ts`) UND Client-Bundle
+// (`vite build`) lesen denselben `import.meta.env.VITE_BUILD_ID` (vite.config.ts
+// `define`, bereits Single Source für die Fehlerkanal-Zuordnung in
+// `components/fehlermeldung.ts` — hier wiederverwendet, §5) — beide Prozesse
+// laufen innerhalb DESSELBEN `npm run build`-Aufrufs und sehen darum denselben
+// Commit-SHA (bzw. 'dev' lokal), NIE eine Uhrzeit, die zwischen den zwei
+// Prozessschritten leicht auseinanderliefe. Der Aufrufer (`Begruessung.tsx`)
+// bringt den Seed mit — diese Datei bleibt rein (§2-Kommentar oben gilt
+// unverändert: kein `Math.random()`/`Date.now()` HIER).
+//
+// NACHBESSERUNG (15.9.2026, noch selber Tag): die erste Fassung hashte auch
+// eine «Stunde» aus dem Seed und zog damit aus dem TAGESZEIT-Pool dieser
+// Stunde — ein Inhaltsfehler, kein Layout-Problem: der Build-Zeitpunkt hat
+// NICHTS mit der Uhrzeit des Besuchs zu tun, ein um 09:00 gebauter Stand
+// konnte darum um 09:00 real einen Abend-Gruss zeigen. Der Build-Pfad wählt
+// jetzt ausschliesslich aus `IMMER` — dem bereits bestehenden, explizit
+// TAGESZEIT-UNABHÄNGIGEN Pool (s. Definition oben: «kommen zu JEDEM
+// Tageszeit-Pool dazu») —, keine neuen oder umformulierten Texte, kein
+// Stunden-Hash mehr. Die live tageszeit-abhängige Auswahl (`waehleBegruessung`
+// mit echter Stunde) bleibt unverändert für jeden anderen Aufrufer bestehen.
+//
+// PRODUKT-NUANCE (ehrlich benannt): Davids Wunsch «verschiedene Begrüssungen
+// … etwas persönlicher» (5.9.2026) bleibt erfüllt — der Gruss wechselt weiter
+// zufällig, aber ohne Tageszeit-Bezug —, die Kadenz ändert sich von PRO
+// BESUCH auf PRO DEPLOY. Kein Logikverlust (Skill `perf`): keine Rechtslogik
+// betroffen, reine Darstellung.
+
+/**
+ * Einfacher, deterministischer 32-Bit-Hash (FNV-1a-Variante). Dient nur der
+ * Ableitung einer Zahl aus einem Build-Seed (Text → Streuwert) — kein
+ * Sicherheits- oder Kryptografie-Zweck.
+ */
+function hashText(text: string): number {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return h >>> 0;
+}
+
+/**
+ * Gruss deterministisch aus einem Build-Seed (z. B. `VITE_BUILD_ID`) statt aus
+ * einem Live-Zufall — s. Abschnitt oben. Zieht NUR aus `IMMER` (tageszeit-
+ * unabhängig): der Build-Zeitpunkt ist kein verlässlicher Bezug zur Uhrzeit
+ * des Besuchs, darum keine Tageszeit-Pools hier. Reine Funktion: gleicher
+ * Seed ⇒ IMMER derselbe (und immer ein tageszeit-neutraler) Gruss
+ * (Rot-Beweis in `src/tests/begruessungen.test.ts`).
+ */
+export function waehleBegruessungFuerBuild(seed: string): string {
+  const streuwert = hashText(`${seed}:immer`) / 0xffffffff;
+  const i = Math.min(IMMER.length - 1, Math.max(0, Math.floor(streuwert * IMMER.length)));
+  return IMMER[i];
+}

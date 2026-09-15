@@ -91,9 +91,13 @@ export function SuchBlock() {
   // Breiten-Deckel wie im Referenzbild (`.such{max-width:860px}`).
   return (
     <div className="max-w-[54rem] border-b border-rule pb-8">
-      {/* Gruss kommt aus EINER Uhrzeit (`useHeute`) und weicht zwischen Build
-          und Client ab (der Build backt einen Gruss) — trägt darum ehrlich
-          `suppressHydrationWarning`. */}
+      {/* Gruss kommt aus `useHeute` — seit QS-PERF (15.9.2026) deterministisch
+          aus dem Build-Seed, also IDENTISCH zwischen Prerender und Client
+          (`lib/begruessungen.ts`, `waehleBegruessungFuerBuild`); kein Tausch
+          mehr nach dem Mount. `suppressHydrationWarning` bleibt als
+          Bau-then-replace-Vorsichtsmassnahme stehen (kein `hydrateRoot`,
+          `docs/ssg-diagnose.md` §5), ist aber nicht mehr wegen einer
+          erwarteten Text-Abweichung nötig. */}
       <h1 suppressHydrationWarning
         className={`font-serif italic text-ink-900 ${pk('text-h1 lg:text-display', 'text-h1 @3xl/pane:text-display')}`}>
         {gruss}
