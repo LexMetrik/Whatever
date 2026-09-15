@@ -104,21 +104,29 @@ function uhrzeit(jetzt: Date): string {
  *  Wächter (`e2e/d39-begruessung.e2e.ts`) installiert die Uhr vor `goto`. */
 export function useHeute(): Heute {
   const [gruss] = useState(() => waehleBegruessungFuerBuild(BUILD_SEED));
-  // Wochentag/Datum: EIN Bild vom Mount-Zeitpunkt (sie sollen nicht mitten in
-  // der Sitzung springen), aber erst NACH der Hydration gezogen — davor `null`,
-  // identisch zwischen Server- und erstem Client-Render (Herleitung oben).
-  const [tag, setTag] = useState<{ wochentag: string; datum: string } | null>(null);
-  const [zeit, setZeit] = useState<string | null>(null);
+  // EIN Zustand für alle drei Zeitwerte, `null` bis nach der Hydration — davor
+  // sind Server- und erster Client-Render zeichengleich (Herleitung oben).
+  const [stand, setStand] = useState<{ wochentag: string; datum: string; uhrzeit: string } | null>(null);
   useEffect(() => {
-    const jetzt = new Date();
-    setTag({
-      wochentag: WOCHENTAGE[jetzt.getDay()],
-      datum: `${jetzt.getDate()}. ${MONATE[jetzt.getMonth()]} ${jetzt.getFullYear()}`,
+    // Wochentag und Datum bleiben das Bild des MOUNTS (sie sollen nicht mitten
+    // in der Sitzung springen — §4-Kommentar oben); nur die Uhrzeit wird jede
+    // Minute nachgeführt. Darum beim Nachführen der bisherige Tag stehen.
+    const nachfuehren = () => setStand((vorher) => {
+      const jetzt = new Date();
+      return {
+        wochentag: vorher?.wochentag ?? WOCHENTAGE[jetzt.getDay()],
+        datum: vorher?.datum ?? `${jetzt.getDate()}. ${MONATE[jetzt.getMonth()]} ${jetzt.getFullYear()}`,
+        uhrzeit: uhrzeit(jetzt),
+      };
     });
-    const nachfuehren = () => setZeit(uhrzeit(new Date()));
     nachfuehren();
     const id = setInterval(nachfuehren, 60_000);
     return () => clearInterval(id);
   }, []);
-  return { gruss, wochentag: tag?.wochentag ?? null, datum: tag?.datum ?? null, uhrzeit: zeit };
+  return {
+    gruss,
+    wochentag: stand?.wochentag ?? null,
+    datum: stand?.datum ?? null,
+    uhrzeit: stand?.uhrzeit ?? null,
+  };
 }
