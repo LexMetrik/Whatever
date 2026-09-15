@@ -17,6 +17,11 @@ import {
   signaturFts,
   skipEntscheid,
   planeSkip,
+  sigMarkenAusText,
+  signaturenLokal,
+  probenIndices,
+  pruefeKopplung,
+  DDL_BASIS,
   type Signatur,
   type SchattenLadungLese,
 } from './turso-skip';
@@ -210,5 +215,110 @@ describe('planeSkip (Zusammenspiel, mit eingespeisten Lesern)', () => {
   it('liefert für jede lokale Tabelle genau einen Befund', async () => {
     const plan = await planeSkip(lokal, async () => new Map(), async () => 10);
     expect([...plan.keys()].sort()).toEqual(['artikel', 'fts_artikel']);
+  });
+});
+
+describe('sigMarkenAusText (Lesen der sync_meta-Marken)', () => {
+  it('zerlegt die group_concat-Antwort in Tabelle → Signatur', () => {
+    const m = sigMarkenAusText('sig_artikel=aaa\nsig_fts_artikel=bbb');
+    expect(m.get('artikel')).toBe('aaa');
+    expect(m.get('fts_artikel')).toBe('bbb');
+    expect(m.size).toBe(2);
+  });
+
+  it('liefert eine LEERE Karte, wenn sync_meta fehlt — und damit «alles neu bauen» (§8)', () => {
+    expect(sigMarkenAusText(null).size).toBe(0);
+    expect(sigMarkenAusText('').size).toBe(0);
+  });
+
+  it('ignoriert Fremd-Marken ohne sig_-Praefix', () => {
+    expect(sigMarkenAusText('zeilen_artikel=60508\nstand=2026-09-14').size).toBe(0);
+  });
+});
+
+describe('signaturenLokal (alle fuenf HOT-Tabellen)', () => {
+  const fts = (): Array<[string, string, SchattenLadungLese[]]> => [
+    ['fts_artikel', 'DDL-A', [{ suffix: '_data', spalten: ['id'], werte: [[1]] }]],
+    ['fts_entscheide_schaufenster', 'DDL-E', [{ suffix: '_data', spalten: ['id'], werte: [[2]] }]],
+  ];
+  const manifest = { erlasse: { zeilen: 1, sha: 'x' }, erlass_fassungen: { zeilen: 2, sha: 'y' }, artikel: { zeilen: 3, sha: 'z' } };
+  const soll = { erlasse: 1, erlass_fassungen: 2, artikel: 3, fts_artikel: 3, fts_entscheide_schaufenster: 9 };
+
+  it('deckt genau die fuenf HOT-Tabellen ab', () => {
+    expect([...signaturenLokal(manifest, soll, fts()).keys()].sort()).toEqual(
+      ['artikel', 'erlass_fassungen', 'erlasse', 'fts_artikel', 'fts_entscheide_schaufenster'],
+    );
+  });
+
+  it('uebernimmt die Soll-Zeilenzahlen unveraendert', () => {
+    const sig = signaturenLokal(manifest, soll, fts());
+    expect(sig.get('artikel')?.sollZeilen).toBe(3);
+    expect(sig.get('fts_entscheide_schaufenster')?.sollZeilen).toBe(9);
+  });
+
+  it('bindet die Basis-Signatur an die DDL aus DDL_BASIS — eine Schema-Aenderung schlaegt durch', () => {
+    const sig = signaturenLokal(manifest, soll, fts());
+    expect(sig.get('artikel')?.signatur).toBe(signaturBasis(DDL_BASIS.artikel('artikel'), 'z'));
+  });
+
+  it('haelt die Tabellen auseinander: gleiche sha, andere DDL ⇒ andere Signatur', () => {
+    const gleich = { erlasse: { zeilen: 1, sha: 'q' }, erlass_fassungen: { zeilen: 1, sha: 'q' }, artikel: { zeilen: 1, sha: 'q' } };
+    const sig = signaturenLokal(gleich, soll, fts());
+    expect(new Set([sig.get('erlasse')?.signatur, sig.get('erlass_fassungen')?.signatur, sig.get('artikel')?.signatur]).size).toBe(3);
+  });
+
+  it('ohne Manifest-Eintrag entsteht eine Signatur, die nie zu einer frueheren passt (nie Skip)', () => {
+    const ohne = signaturenLokal({}, soll, fts()).get('artikel')?.signatur;
+    expect(ohne).toBe(signaturBasis(DDL_BASIS.artikel('artikel'), ''));
+    expect(ohne).not.toBe(signaturenLokal(manifest, soll, fts()).get('artikel')?.signatur);
+  });
+});
+
+describe('Kopplungs-Beweis fuer den Teilbau (§17/2, Befund B1)', () => {
+  it('probt bis zur LETZTEN Zeile — eine Umsortierung ganz am Ende darf nicht entgehen', () => {
+    const i = probenIndices(100);
+    expect(i[0]).toBe(0);
+    expect(i.at(-1)).toBe(99);
+  });
+
+  it('probt gestreut, nicht als Block (eine Verschiebung weiter hinten wuerde sonst entgehen)', () => {
+    const i = probenIndices(1000);
+    expect(i.length).toBeGreaterThanOrEqual(5);
+    expect(new Set(i).size).toBe(i.length);
+  });
+
+  it('bleibt bei kleinen und leeren Tabellen im gueltigen Bereich', () => {
+    expect(probenIndices(0)).toEqual([]);
+    expect(probenIndices(1)).toEqual([0]);
+    expect(probenIndices(3).every((x) => x >= 0 && x <= 2)).toBe(true);
+  });
+
+  const leser = (opt: { remote?: Partial<Record<string, number>>; verschoben?: number }) => ({
+    lokalZeilen: () => 10,
+    remoteZeilen: async (t: string) => opt.remote?.[t] ?? 10,
+    lokaleProbe: (i: number) => ({ rid: i + 1, schluessel: `OR|${i + 1}` }),
+    remoteProbe: async (rid: number) => (rid === opt.verschoben ? 'OR|999' : `OR|${rid}`),
+  });
+
+  it('meldet nichts, wenn Zeilenzahlen und Proben deckungsgleich sind', async () => {
+    expect(await pruefeKopplung(leser({}))).toEqual([]);
+  });
+
+  it('meldet eine abweichende Zeilenzahl je Basistabelle (nicht nur artikel)', async () => {
+    const b = await pruefeKopplung(leser({ remote: { erlass_fassungen: 7 } }));
+    expect(b.length).toBe(1);
+    expect(b[0]).toContain('erlass_fassungen');
+  });
+
+  it('meldet eine verschobene rowid-Kopplung — der eigentliche B1-Schaden', async () => {
+    const b = await pruefeKopplung(leser({ verschoben: 1 }));
+    expect(b.length).toBe(1);
+    expect(b[0]).toContain('rowid 1');
+  });
+
+  it('probt gar nicht erst weiter, wenn schon die Zeilenzahl klemmt (der Befund steht fest)', async () => {
+    const b = await pruefeKopplung(leser({ remote: { artikel: 3 }, verschoben: 1 }));
+    expect(b.length).toBe(1);
+    expect(b[0]).toContain('artikel');
   });
 });

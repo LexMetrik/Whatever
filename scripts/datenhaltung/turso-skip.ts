@@ -224,3 +224,164 @@ export async function planeSkip(
   }
   return plan;
 }
+
+// ─── Ziel-Schema der Basis-Tabellen ──────────────────────────────────────────
+//
+// Liegt HIER und nicht in `turso-sync.ts`, weil die Signatur genau die DDL hashen muss,
+// mit der die Tabelle angelegt wird. Zwei Kopien waeren die stille Falle, gegen die der
+// ganze Skip gebaut ist: eine DDL-Aenderung ohne Signatur-Aenderung wuerde uebersprungen,
+// die Replika behielte die alte Form, und api/suche.ts antwortete 502 (§5).
+
+/** Tabellentyp der Basis-Tabellen. */
+export type BasisTabelle = (typeof BASIS)[number];
+
+/** Basis-Tabellen (alles ausser FTS) — dieselbe Reihenfolge wie in SCHATTEN. */
+export const BASIS = ['erlasse', 'erlass_fassungen', 'artikel'] as const;
+
+/** DDL der Basis-Tabellen (Teilmenge des §3-Zielschemas — exakt die Spalten, die
+ *  SQL_ARTIKEL_TREFFER braucht). Steht seit QS-TURSO-SCHREIBVOLUMEN auf Modulebene statt
+ *  inline in Schritt 1: die Skip-Signatur muss dieselbe DDL hashen, die die Tabelle anlegt.
+ *  Eine zweite Kopie waere genau die stille Falle, vor der der fts_artikel-Kommentar unten
+ *  warnt — nur eine Ebene hoeher (§5). Index erst NACH dem Laden (Schritt 6). */
+export const DDL_BASIS: Record<BasisTabelle, (name: string) => string> = {
+  erlasse: (n) => `CREATE TABLE ${n} (key TEXT PRIMARY KEY, ebene TEXT NOT NULL, kanton TEXT, sr TEXT,
+            abkuerzung TEXT NOT NULL, titel TEXT NOT NULL, rechtsgebiet TEXT, status TEXT)`,
+  erlass_fassungen: (n) => `CREATE TABLE ${n} (erlass_key TEXT NOT NULL, fassungs_token TEXT NOT NULL,
+            gueltig_von TEXT, gueltig_bis TEXT, stand TEXT, quelle_url TEXT NOT NULL,
+            as_fundstelle TEXT, abgerufen TEXT, sha TEXT,
+            PRIMARY KEY (erlass_key, fassungs_token))`,
+  artikel: (n) => `CREATE TABLE ${n} (erlass_key TEXT NOT NULL, fassungs_token TEXT NOT NULL,
+            art_id TEXT NOT NULL, ord INTEGER, artikel TEXT, artikel_label TEXT, marg TEXT,
+            grundlage TEXT, quelle_url TEXT, bloecke_json TEXT NOT NULL, sha TEXT,
+            PRIMARY KEY (erlass_key, fassungs_token, art_id))`,
+};
+
+/** Spaltenlisten == lokale Zieltabellen; `ladeTabelle` liest sie 1:1.
+ *  `rowid` bei `artikel` EXPLIZIT — nicht kosmetisch, sondern tragend: api/suche.ts joint
+ *  `fts_artikel` (contentless) ueber `a.rowid = fts_artikel.rowid` auf `artikel`. Wuerde die
+ *  Ziel-rowid implizit vergeben, hinge die Korrektheit daran, dass die lokalen artikel-rowids
+ *  lueckenlos 1..N sind. Das gilt heute zufaellig (frisch gebaute DB ohne DELETE), ist aber
+ *  nirgends garantiert — eine einzige Luecke in der Quelle verschiebt alle folgenden Zeilen
+ *  und liefert im Betrieb den FALSCHEN Artikel als Suchtreffer (Gegenpruefungs-Befund B2, am
+ *  Minimalbeispiel reproduziert). Mit expliziter rowid ist die Kopplung unabhaengig von der
+ *  Lueckenlosigkeit korrekt. */
+export const SPALTEN_BASIS: Record<BasisTabelle, string[]> = {
+  erlasse: ['key', 'ebene', 'kanton', 'sr', 'abkuerzung', 'titel', 'rechtsgebiet', 'status'],
+  erlass_fassungen: ['erlass_key', 'fassungs_token', 'gueltig_von', 'gueltig_bis', 'stand',
+    'quelle_url', 'as_fundstelle', 'abgerufen', 'sha'],
+  artikel: ['rowid', 'erlass_key', 'fassungs_token', 'art_id', 'ord', 'artikel', 'artikel_label',
+    'marg', 'grundlage', 'quelle_url', 'bloecke_json', 'sha'],
+};
+
+/** Liest die Signatur-Marken in EINER Abfrage — ein Request statt fuenf. `ESCAPE` haelt das
+ *  `_` im Praefix literal, sonst waere es ein LIKE-Platzhalter. */
+export const SQL_SIG_MARKEN =
+  "SELECT group_concat(schluessel || '=' || wert, char(10)) FROM sync_meta WHERE schluessel LIKE 'sig\\_%' ESCAPE '\\'";
+
+/**
+ * Zerlegt die Antwort auf `SQL_SIG_MARKEN` in eine Tabelle→Signatur-Karte.
+ *
+ * `null` (Tabelle `sync_meta` fehlt, erster Lauf oder stmt-Fehler) ergibt eine LEERE Karte —
+ * und eine leere Karte heisst in `skipEntscheid()` «Neuaufbau». Ein nicht lesbarer Marken-
+ * bestand darf nie als «unveraendert» durchgehen (§8).
+ */
+export function sigMarkenAusText(roh: string | null): Map<string, string> {
+  const marken = new Map<string, string>();
+  for (const zeile of (roh ?? '').split('\n')) {
+    const i = zeile.indexOf('=');
+    if (i > 4 && zeile.startsWith('sig_')) marken.set(zeile.slice(4, i), zeile.slice(i + 1));
+  }
+  return marken;
+}
+
+/**
+ * Lokale Soll-Signaturen aller fuenf HOT-Tabellen.
+ *
+ * Basis-Tabellen: Ziel-DDL + Inhalts-sha aus dem committeten `daten-manifest.json`. Fehlt ein
+ * Manifest-Eintrag, wird `''` gehasht — die Signatur weicht dann von jeder frueheren ab und
+ * die Tabelle wird neu gebaut (nie uebersprungen).
+ * FTS-Tabellen: Ziel-DDL + Inhalt der lokalen Schatten-Tabellen, als `[tabelle, ddl, ladungen]`
+ * hereingereicht, damit dieses Modul kein `node:sqlite` braucht.
+ */
+export function signaturenLokal(
+  manifestNormtext: Partial<Record<string, { zeilen: number; sha: string }>>,
+  sollZeilen: Record<string, number>,
+  fts: Array<[string, string, Iterable<SchattenLadungLese>]>,
+): Map<string, Signatur> {
+  const sig = new Map<string, Signatur>();
+  for (const t of BASIS) {
+    sig.set(t, {
+      signatur: signaturBasis(DDL_BASIS[t](t), manifestNormtext[t]?.sha ?? ''),
+      sollZeilen: sollZeilen[t] ?? -1,
+    });
+  }
+  for (const [tabelle, ddl, ladungen] of fts) {
+    sig.set(tabelle, { signatur: signaturFts(ddl, ladungen), sollZeilen: sollZeilen[tabelle] ?? -1 });
+  }
+  return sig;
+}
+
+// ─── Kopplungs-Beweis fuer den TEILBAU ───────────────────────────────────────
+
+/** Probenstellen ueber die ganze rowid-Spannweite, als Anteile.
+ *  Der letzte Anteil ist bewusst 1.0 (= letzte Zeile): eine Umsortierung, die erst ganz am
+ *  Ende beginnt, entginge einer Streuung, die bei 0,99 aufhoert (Gegenpruefung Runde 3).
+ *  Fuenf aufeinanderfolgende rowids aus EINER Region haetten eine Verschiebung, die weiter
+ *  hinten beginnt, glatt verpasst (Runde 2, Befund 7). */
+export const PROBEN_ANTEILE = [0, 0.17, 0.37, 0.53, 0.71, 0.89, 1] as const;
+
+/** Die konkreten 0-basierten Probenstellen fuer `n` Zeilen (leer bei leerer Tabelle). */
+export function probenIndices(n: number): number[] {
+  if (n <= 0) return [];
+  return [...new Set(PROBEN_ANTEILE.map((a) => Math.min(n - 1, Math.floor(n * a))))];
+}
+
+/**
+ * Beweist, dass die LIVE-Basistabellen zu der lokalen DB passen, aus der ein FTS-Index
+ * gebaut wird — noetig immer dann, wenn `fts_artikel` neu gebaut, `artikel` aber
+ * uebersprungen wird (frueher: der Handschalter `--nur-fts`, seit dem 15.9.2026 der
+ * regulaere Teilbau des Skip-Plans).
+ *
+ * WARUM (Gegenpruefungs-Befund B1, schwerster Befund): der FTS-Index ist contentless und
+ * haengt ueber `fts_artikel.rowid == artikel.rowid` an der LIVE-Tabelle. Hinkt die hinterher,
+ * zeigt die Suche systematisch den FALSCHEN Artikel — und weil Schritt 8 trotzdem die volle
+ * Frische-Marke schreibt, waere der Waechter dazu auch noch gruen geworden.
+ *
+ * Geprueft werden ALLE DREI Basistabellen, nicht nur `artikel`: Schritt 8 stempelt einen
+ * manifest_sha, der auch fuer `erlasse`/`erlass_fassungen` gilt (Runde 2, Befund 7). Die
+ * Zeilenzahl allein schliesst eine Verschiebung nicht aus (gleich viele, andere Reihenfolge)
+ * — darum zusaetzlich die gestreuten rowid-Proben.
+ *
+ * @returns Befunde; leeres Array heisst «deckungsgleich».
+ */
+export async function pruefeKopplung(leser: {
+  lokalZeilen: (tabelle: BasisTabelle) => number;
+  remoteZeilen: (tabelle: BasisTabelle) => Promise<number>;
+  lokaleProbe: (index: number) => { rid: number; schluessel: string } | undefined;
+  remoteProbe: (rid: number) => Promise<string | null>;
+}): Promise<string[]> {
+  const befunde: string[] = [];
+  for (const t of BASIS) {
+    const lokal = leser.lokalZeilen(t);
+    const remote = await leser.remoteZeilen(t);
+    if (lokal !== remote) {
+      befunde.push(
+        `live ${t}=${remote}, lokal=${lokal} — der FTS-Index wuerde auf einen fremden ` +
+          'Zeilenbestand zeigen (falsche Treffer).',
+      );
+    }
+  }
+  if (befunde.length > 0) return befunde;
+  for (const i of probenIndices(leser.lokalZeilen('artikel'))) {
+    const p = leser.lokaleProbe(i);
+    if (!p) continue;
+    const ist = await leser.remoteProbe(p.rid);
+    if (ist !== p.schluessel) {
+      befunde.push(
+        `rowid ${p.rid} zeigt live auf «${ist}», lokal auf «${p.schluessel}» — die ` +
+          'rowid-Kopplung ist verschoben.',
+      );
+    }
+  }
+  return befunde;
+}
