@@ -284,6 +284,15 @@ export function useLeserTocZustand() {
     });
     setTocBaum((o) => klappZeile(o, ids, istOffen));
   }, []);
+  // Dasselbe für ein SPRUNG-Ziel, gebunden an die Refs, die hier wohnen: die
+  // Sprung-Pfade sollen die vier Mengen nicht selbst kennen müssen — genau daran
+  // ist die Kopie in `springeZuArtikel` gescheitert (Fehlerbuch 15.9.2026).
+  const merkeSprungAst = useCallback((ids: Iterable<string>) => {
+    merkeSprungAstManuell(ids, {
+      autoOffen: autoOffenRef.current, autoTick: autoTickRef.current,
+      manuellOffen: manuellOffenRef.current, manuellZu: manuellZuRef.current,
+    });
+  }, []);
   const [aktivIds, setAktivIds] = useState<string[]>([]); // Sektions-IDs (TOC-Markierung, eindeutig)
   const [tocAuf, setTocAuf] = useState(false); // unter lg: Gliederungs-Sheet offen?
   // W2·10-UI-NAV/R2: «beim Öffnen Hierarchie zur aktuellen Leseposition
@@ -308,20 +317,17 @@ export function useLeserTocZustand() {
     if (!tocAuf) { pfadAufgeklapptRef.current = false; return; }
     if (pfadAufgeklapptRef.current || aktivIds.length === 0) return;
     pfadAufgeklapptRef.current = true;
-    merkeSprungAstManuell(aktivIds, {
-      autoOffen: autoOffenRef.current, autoTick: autoTickRef.current,
-      manuellOffen: manuellOffenRef.current, manuellZu: manuellZuRef.current,
-    });
+    merkeSprungAst(aktivIds);
     // Im rAF NACH dem Öffnungs-Paint: das Aufklappen ist damit demselben Klick
     // zugerechnet (hadRecentInput ⇒ CLS-frei, §15.2) und der Effekt ruft kein
     // setState synchron in seinem Rumpf (Kaskaden-Render-Regel).
     const raf = window.requestAnimationFrame(() =>
       setTocBaum((o) => ({ ...o, ...Object.fromEntries(aktivIds.map((id) => [id, true])) })));
     return () => window.cancelAnimationFrame(raf);
-  }, [tocAuf, aktivIds]);
+  }, [tocAuf, aktivIds, merkeSprungAst]);
 
   return {
-    offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, aktivIds, setAktivIds, tocAuf, setTocAuf,
+    offen, setOffen, tocBaum, setTocBaum, tocToggleGruppe, merkeSprungAst, aktivIds, setAktivIds, tocAuf, setTocAuf,
     jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   };
 }
