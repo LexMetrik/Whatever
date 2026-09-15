@@ -153,10 +153,47 @@ Befund war damit **schwerer als gemessen**: nicht ein Artikel ohne Struktur, son
 mit **fremder** Marginalie und Gliederung (§1/§7). Fix an der Pipeline-Quelle; korpusweiter
 Blast-Radius gemessen: 1 Datei, 1 Token.
 
-**Offen und ausgewiesen (§8):** Der Snapshot führt `126_z__2` mit `artikelLabel: "Art. 126z"` —
-amtlich richtig wäre «Art. 126ztredecies». Die Ursache liegt in der Fedlex-eId, die Korrektur
-beträfe den Snapshot (Golden) und gehört in einen eigenen, deklarierten Schritt; hier bewusst
-**nicht** mitgemacht. Zwei Artikel des Erlasses tragen darum im Leser dasselbe Label.
+**Offen und ausgewiesen (§8) — Stand 14.9.2026 (historisch, nicht nachgeführt):** Der Snapshot
+führte `126_z__2` mit `artikelLabel: "Art. 126z"` — amtlich richtig wäre «Art. 126ztredecies».
+Die Ursache liegt in der Fedlex-eId, die Korrektur beträfe den Snapshot (Golden) und gehört in
+einen eigenen, deklarierten Schritt; damals bewusst **nicht** mitgemacht. Zwei Artikel des
+Erlasses trugen darum im Leser dasselbe Label.
+
+**Erledigt am 15.9.2026 (WP-C, der oben verlangte eigene Schritt).** Beide Punkte sind behoben,
+und zwar generisch für jeden `__N`-Token, nicht KKV-hart-kodiert:
+
+- **Label aus dem amtlichen Heading.** Das zweite `<article id="art_126_z">` trägt das
+  unterscheidende Ordinal selbst — wörtlich aus dem gepinnten Cache (`/tmp/kkv.html`,
+  ELI `cc/2006/859`, Konsolidierung 20251125):
+  `<b>Art. 126</b><i>z</i><sup></sup> <sup>tredecies</sup><sub></sub>Wesentliche Mängel`
+  (das erste Vorkommen trägt an derselben Stelle nur leere `<sup></sup>`). Neu leitet
+  `scripts/normtext/doppel-id-label.ts` das Label von dort ab: `Art. 126ztredecies`, im Hausstil
+  der Nachbarn `art_126_z_bis` … `art_126_z_duodecies`, die das Ordinal in der id führen. Die
+  Regel ist eine **Form**-Regel, keine Wortliste: genau ein `<sup>` im Artikel-Kopf, dessen Text
+  nach Tag-Entfernung aus reinen Kleinbuchstaben (≥ 3) besteht. Trägt der Kopf keines oder mehr
+  als eines, bleibt es beim Basis-Label (§7: nichts erfinden). Empirische Deckung: Sweep über
+  **alle 262 gepinnten Fedlex-HTML-Caches** — in Artikel-Köpfen treten als reine
+  Kleinbuchstaben-`<sup>` ausschliesslich die 12 Ordinalia `bis · ter · quater · quinquies ·
+  sexies · septies · octies · novies · decies · undecies · duodecies · tredecies` auf, kein
+  einziger Fehltreffer (Fussnoten sind `<sup><a …>N</a></sup>`).
+- **`quelleUrl` ohne Synthese-Suffix.** Der Haupttext-Pfad schrieb `…/de#art_126_z__2` — ein
+  Fragment, das in der amtlichen Fassung nicht existiert. Neu der rohe Anker `#art_126_z`, wie es
+  der Schlussteil- und der Anhang-Pfad seit je tun (§5: eine Anker-Wahrheit). **Bewusst
+  ausgewiesene Rest-Unschärfe (§8):** bei doppelter id springt Fedlex auf das **erste** Vorkommen
+  — der Erlass stimmt, die Stelle ist ungenau. Das ist ehrlicher als ein toter Anker; im Code
+  vermerkt. Der Verifizier-Deep-Link (`src/lib/normtext/verifikationslink.ts`) unterdrückt den
+  Artikel-Link bei `__N` unverändert ganz.
+
+**Blast-Radius (gemessen 15.9.2026):** `126_z__2` ist der **einzige** `__N`-Token im gesamten
+Korpus (`public/normtext/**`: 1 Datei, 1 Token). Diff der Regeneration: exakt zwei Zeilen —
+`artikelLabel` und `quelleUrl` dieses einen Eintrags; die übrigen 210 Einträge byte-gleich,
+`golden/normtext-snapshot.json` unverändert (weder Label noch `quelleUrl` fliessen in den
+Block-sha, `scripts/normtext/sha-bloecke.ts`).
+
+**Weiterhin offen (§8):** Genau weil Label und `quelleUrl` golden-neutral sind, bewacht sie **kein
+Drift-Tor** — ein künftiger Rückfall bliebe still. Geschützt sind sie heute nur durch
+`src/tests/doppel-id-label.test.ts` (Fixture = wörtliches Heading-Markup) und die
+Pflicht-Gegenprüfung. Ein Label-/Anker-Riegel im Sinne von §6.7 wäre ein eigener Schritt.
 
 ### §1.2 · Struktur-Befund: das Randtitel-Doppelmodell
 
