@@ -4,6 +4,7 @@ import { parseRoadmap, bindeCheckbox, bulletEinzug, BULLET_RE, CHECKBOX_RE, CHEC
 import { resolve } from './aufloesen';
 import { parseEtikett, FELD_WERTE, istFeld, type Status } from './etikett';
 import { pruefeSpecBindung } from './specBindung';
+import { pruefeEtappenBuchung } from './etappenBuchung';
 import { obersterMarkerId } from './marker';
 import { ZEITREIHE_DATEI, pruefeZeitreihe } from './selbstoptKern';
 
@@ -218,6 +219,13 @@ export function pruefe(
   // falschen Abschnitt trifft, für jedes Tor unsichtbar (Befund B1 des
   // Bauplan-Reviews 4.8.2026; F2-Familie: geprüft wurde der Container, nicht der Inhalt).
   probleme.push(...pruefeSpecBindung(md, leseDatei));
+
+  // (14) Etappen-Buchung — Regel, Richtungs-Grenze und Geburtsbeweis in
+  // scripts/plan/etappenBuchung.ts. Regel 11 prüft, ob der Zeiger in den
+  // Fahrplan das Richtige TRIFFT; Regel 14, ob Fahrplan und Checkbox dasselbe
+  // SAGEN. Anlass: vier seit 16.–18.8.2026 gebaute Posten standen am 15.9.2026
+  // noch offen (W2·5m-LESER-V3).
+  probleme.push(...pruefeEtappenBuchung(md, leseDatei));
 
   // (13) Selbstoptimierungs-Zeitreihe — FORM, nie WERTE (Schritt QS-SELBSTOPT).
   //
