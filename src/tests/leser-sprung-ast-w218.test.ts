@@ -103,7 +103,9 @@ const QUELLE = (p: string) => readFileSync(p, 'utf8');
 describe('W2·18 · die Ast-Buchhaltung steht an EINEM Ort', () => {
   it('alle vier Schreiber rufen sprungAst statt eigener Mengen-Arithmetik', () => {
     const schreiber: Array<[string, RegExp]> = [
-      ['src/pages/gesetz-leser/v3/leserV3Modell.ts', /merkeSprungAstManuell\(/],
+      // Der Artikel-Sprung ruft die an die Refs GEBUNDENE Fassung aus
+      // `useLeserTocZustand` (`merkeSprungAst`) — dort wohnen die vier Mengen.
+      ['src/pages/gesetz-leser/v3/leserV3Modell.ts', /merkeSprungAst\(/],
       ['src/pages/gesetz-leser/inhalt-sprung.tsx', /merkeSprungAstManuell\(/],
       ['src/pages/gesetz-leser/inhalt-zustand.tsx', /merkeKlappAstManuell\(/],
       ['src/pages/gesetz-leser/inhalt-zustand.tsx', /merkeSprungAstManuell\(/],
