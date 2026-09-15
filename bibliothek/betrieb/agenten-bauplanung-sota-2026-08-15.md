@@ -1,5 +1,9 @@
 # Agenten-Bauplanung — State of the Art (Recherche 15.8.2026)
 
+**Erstellt:** 15.8.2026 — BAUPLAN-UMBAU (David 15.8.2026, QS-EFFIZIENZ): vor dem Umbau der
+Plan-/Fahrplan-Steuerung erst Internet-Inspiration einholen.
+**Status:** ERSTRECHERCHE
+
 **Anlass:** BAUPLAN-UMBAU (David 15.8.2026, QS-EFFIZIENZ) — vor dem Umbau
 der Plan-/Fahrplan-Steuerung erst Internet-Inspiration einholen.
 **Quelle mit Stand:** Web-Recherche 15.8.2026 (Unteragent, Quellen unten).

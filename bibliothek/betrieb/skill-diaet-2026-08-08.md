@@ -1,5 +1,9 @@
 # Skill-Diät 8.8.2026 (QS-SKILL-DIAET) — Konsolidierungs-Protokoll
 
+**Erstellt:** 8.8.2026 — ROADMAP-Schritt `QS-SKILL-DIAET` (Entscheid David 7.8.2026):
+vier Skills mit demselben Übergang Bau → Landung → Abschluss auf zwei konsolidieren.
+**Status:** ERSTRECHERCHE
+
 **Auftrag:** ROADMAP-Schritt `QS-SKILL-DIAET` (Entscheid David 7.8.2026;
 leichter Pfad + Weiterbau-Regel: Entscheide David 8.8.2026). Vier Skills, die
 denselben Übergang Bau → Landung → Abschluss regelten (`bauschritt`-D/E,

@@ -1,5 +1,9 @@
 # CLAUDE.md-Gutachten 7.8.2026 (unbefangenes Fremd-Review)
 
+**Erstellt:** 7.8.2026 — Auftrag David: CLAUDE.md unbefangen prüfen, «so als hättest du es
+noch nie gesehen … ob regeln wirklich alle sinn ergeben».
+**Status:** ERSTRECHERCHE
+
 **Anlass:** Auftrag David 7.8.2026: «claude.md prüfen so als hättest du es noch
 nie gesehen … ob regeln wirklich alle sinn ergeben». **Methode:** Frisch
 gestarteter Prüf-Agent (Fable, spitze) ohne Session-Vorwissen und ohne Kenntnis
