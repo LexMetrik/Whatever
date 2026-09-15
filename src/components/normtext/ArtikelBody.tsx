@@ -688,18 +688,24 @@ export function ArtikelBody({ bloecke, artikel, passus, passusRef, className, au
                 //     (adapter-lexwork.ts, `enthaeltEigeneAbrogationEllipse`) —
                 //     eine amtliche Aufhebungsmarke. Sie bleibt «aufgehoben».
                 //   LEER ist KEIN Zeichen der Quelle, sondern das Fehlen eines
-                //     jeden. Gemessen 15.9.2026 über den committeten Korpus: 816
-                //     Bund- und 746 Kanton-Blöcke sind leer OHNE Absatznummer in
-                //     einem Artikel ohne amtliches `aufgehoben`. Beleg, dass das
-                //     keine Aufhebungen sind: AHVG Art. 34bis trägt einen solchen
-                //     Block direkt hinter Abs. 2 «Der Grundzuschlag wird
-                //     folgendermassen abgestuft:» — die Staffel ist bei der
-                //     Extraktion weggefallen, und der Leser schrieb darüber
-                //     «aufgehoben». Das ist eine falsche Auskunft (§1), kein
-                //     Detail der Dämpfung.
-                // Der ARTIKEL-Beleg deckt seine Blöcke mit: ist der ganze Artikel
-                // amtlich aufgehoben, ist es auch sein leerer Block (Kanton:
-                // 1 142 Fälle, LexWork-Segment ohne jeden Body).
+                //     jeden — und nach den Frühausstiegen oben (titel, Bild,
+                //     mehrspaltig, tabelle) auch kein weggefallener Inhalt, der
+                //     woanders rendert.
+                // GEMESSEN 15.9.2026 über den committeten Korpus, mit genau den
+                // Bedingungen dieses Zweigs: BUND 0 Blöcke und 0 Items ändern
+                // sich — jeder leere Bund-Block liegt in einem amtlich
+                // markierten Artikel (1 283) oder trägt die Ellipse (1 100).
+                // KANTON 109 Blöcke und 60 Items. Belegtes Beispiel für die
+                // Items: BS-154.980 § 5 Abs. 1 lit. a — eine GELTENDE
+                // Gebührenordnung («Für die nachstehend aufgeführten … werden
+                // folgende Gebühren erhoben:»), deren Zwischentitel-Item beim
+                // Extrahieren leer blieb. Der Leser schrieb daneben
+                // «aufgehoben»: eine falsche Rechtsauskunft (§1), keine
+                // Dämpfung. Die 109 Blöcke sind durchwegs Ein-Block-Artikel
+                // (BS-153.100 § 53 «Änderung anderer Gesetze» u. a.) — dort
+                // sagt schon die Statuszeile des Artikels dasselbe.
+                // Der ARTIKEL-Beleg deckt seine Blöcke mit: ist der ganze
+                // Artikel amtlich aufgehoben, ist es auch sein leerer Block.
                 // NICHT gebaut: die absatz-genaue Aufhebung. Ihr Beleg existiert
                 // (Bund: Historie-Shard, 872 Fälle; Kanton: `abrogation_ellip` je
                 // <p>), liegt aber nicht in dieser Schicht — der Shard wird lazy
