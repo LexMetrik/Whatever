@@ -17,17 +17,13 @@ Generatoren/Tore/CI lesen dieselben Dateien per fs im Subprozess — die berühr
 dieser Hook NICHT (er feuert nur auf die Tool-Aufrufe des Agenten). Leitplanke:
 kein Tor, kein Build, kein Generator-Lauf wird blockiert.
 
-MCP-Kanal-Deckung (QS-EFFIZIENZ 15.8.2026, Werkzeug-Analyse Befund 3): Der Hook
-hing allein an den Matchern `Read`/`Bash`. Dieselbe Lese-Wirkung erzielen
-`read_file`/`read_multiple_files`, dieselbe Shell-Wirkung
-`start_process`/`interact_with_process` (Desktop Commander u. a.) — nur unter
-anderen Feldnamen (`path`/`paths`/`length` statt `file_path`/`limit`, `input`
-statt `command`). Unten wird ausschliesslich die HERKUNFT normalisiert; Rule A
-und Rule B sind Wort für Wort unverändert, Read- und Bash-Pfad bleiben
-byte-gleich.
+MCP-Kanal-Deckung (QS-EFFIZIENZ 15.8.2026, Befund 3): dieselbe Lese-/Shell-Wirkung
+haben `read_file`/`read_multiple_files` bzw. `start_process`/`interact_with_process`
+(Desktop Commander u. a.), nur mit anderen Feldnamen (`path`/`paths`/`length`,
+`input`). Unten wird nur die HERKUNFT normalisiert; Rule A/B bleiben unverändert.
 
-Exit 2 = Aufruf blockieren, stderr geht als Feedback an Claude. Bei jeder
-Unsicherheit (Stat schlägt fehl, Pfad unbekannt) → Exit 0 (nie fälschlich blocken).
+Exit 2 = blockieren, stderr = Feedback an Claude. Bei Unsicherheit (Stat schlägt
+fehl, Pfad unbekannt) → Exit 0 (nie fälschlich blocken).
 """
 import json
 import os
@@ -54,10 +50,9 @@ WERKZEUG_HINWEIS = (
 SONDE_HINWEIS = (
     "Statt der Riesendatei: gezielt mit offset/limit lesen, oder die Daten-Sonde "
     "`npm run zeige -- <Erlass> <Artikel>` (normtext, byte-treu) / `golden:diff` nutzen "
-    "(FAHRPLAN-TOKEN-OEKONOMIE §4 T6). PDF oder andere Binärdatei (auch im Scratchpad, "
-    "z. B. amtliche Fedlex-/BBl-PDF): Text VORHER extrahieren — PyMuPDF "
-    "`python3 -c \"import fitz; d=fitz.open('<pfad>'); print(d[0].get_text())\"` "
-    "(kein pdftotext auf dieser Maschine; Befund 15.9.2026) — und dann gezielt lesen."
+    "(FAHRPLAN-TOKEN-OEKONOMIE §4 T6). PDF/Binärdatei (auch Fedlex-/BBl-PDF im Scratchpad): "
+    "erst Text extrahieren — `python3 -c \"import fitz; print(fitz.open('<pfad>')[0].get_text())\"` "
+    "(PyMuPDF; kein pdftotext hier, 15.9.2026) — dann gezielt lesen."
 )
 
 
