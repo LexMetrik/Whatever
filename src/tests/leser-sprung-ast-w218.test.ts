@@ -108,11 +108,15 @@ describe('W2·18 · die Ast-Buchhaltung steht an EINEM Ort', () => {
       ['src/pages/gesetz-leser/inhalt-zustand.tsx', /merkeKlappAstManuell\(/],
       ['src/pages/gesetz-leser/inhalt-zustand.tsx', /merkeSprungAstManuell\(/],
     ];
-    for (const [datei, muster] of schreiber) expect(QUELLE(datei), datei).toMatch(muster);
+    // Boolesch statt `toMatch`: ein Fehlschlag soll den DATEINAMEN melden, nicht
+    // die halbe Quelldatei in die CI-Ausgabe kippen (gesehen bei der Rot-Probe).
+    for (const [datei, muster] of schreiber) {
+      expect(muster.test(QUELLE(datei)), `${datei} ruft ${muster} nicht`).toBe(true);
+    }
   });
 
   it('der Scroll-Spy liest sein Adoptions-Prädikat aus derselben Datei', () => {
-    expect(QUELLE('src/pages/gesetz-leser/inhalt-hooks.tsx')).toMatch(/darfAutoAdoptieren\(/);
+    expect(/darfAutoAdoptieren\(/.test(QUELLE('src/pages/gesetz-leser/inhalt-hooks.tsx'))).toBe(true);
   });
 
   it('keine Datei ausser sprungAst.ts schreibt noch von Hand in manuellOffenRef', () => {
@@ -124,7 +128,7 @@ describe('W2·18 · die Ast-Buchhaltung steht an EINEM Ort', () => {
       'src/pages/gesetz-leser/inhalt-hooks.tsx',
     ];
     for (const datei of verdacht) {
-      expect(QUELLE(datei), datei).not.toMatch(/manuellOffenRef\.current\.add\(/);
+      expect(/manuellOffenRef\.current\.add\(/.test(QUELLE(datei)), `${datei} schreibt wieder von Hand`).toBe(false);
     }
   });
 });
