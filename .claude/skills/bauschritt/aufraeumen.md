@@ -19,6 +19,12 @@ check:plan-Regel 1 existieren nach der Steuerungs-Diät nicht mehr.*
 Exit 1 nennt Steuerdokument + Überschreitung; Ceilings stehen im Skript-Kopf
 (`BUDGET`-Dict). Ohne Ist-Messung kein Aufräumen (§0.3: Verdacht ≠ Ursache).
 
+**Dazu je Überführung zwei Läufe** (QS-BEWAEHRUNG A, 15.9.2026): `npm run
+tor:bewaehrung -- --import-ci` — Einstufung `RÜCKBAU-KANDIDAT` als
+Streichkandidat unter QS-EFFIZIENZ in `ROADMAP.md` vermerken, nie direkt
+streichen (Chesterton, §3); `npm run prozess:kennzahlen -- --schreiben` —
+eine Zeile je Überführung nach `messwerte/prozess-kennzahlen.csv`.
+
 ## 2 · Erledigtes wörtlich nach `ROADMAP-CHRONIK.md`
 
 **Geltende Fassung** (ROADMAP Ziff. 6, seit 3.8.2026): ein `done`-Schritt
