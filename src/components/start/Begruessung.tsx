@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { waehleBegruessung } from '../../lib/begruessungen';
+import { waehleBegruessungFuerBuild } from '../../lib/begruessungen';
 
 // ─── Begrüssung und Tagesdatum der Startseite (W2·23-STARTSEITE-V4 §4) ──────
 //
@@ -10,21 +10,27 @@ import { waehleBegruessung } from '../../lib/begruessungen';
 // `new Date()` könnten (nachts, an der Monatsgrenze) auseinanderlaufen.
 // Wortlaut, Pool und Zufallsquelle sind unverändert.
 //
-// ZUFALL, bewusst UND an der richtigen Schicht: der Gruss wird bei JEDEM
-// Seitenaufruf neu aus dem Pool gezogen (Auftrag David 5.9.2026 «verschiedene
-// Begrüssungen … etwas persönlicher»). Die Zufallsquelle `Math.random` steht
-// HIER, in der Darstellungsschicht — `src/lib/**` sperrt sie mechanisch (§2,
-// eslint no-restricted-properties), und das zu Recht: die Pool-Datei bleibt so
-// rein und im Test deterministisch prüfbar. CLAUDE.md §2 ist nicht berührt: die
-// Regel bindet die ENGINES (gleiche Eingabe → gleiche Frist, gleicher Betrag);
-// diese Zeile trägt keinen Rechtswert und geht in keine Berechnung ein.
+// ZUFALL, bewusst UND an der richtigen Schicht (Auftrag David 5.9.2026
+// «verschiedene Begrüssungen … etwas persönlicher»): der Gruss wechselt
+// weiterhin zufällig, seit QS-PERF (15.9.2026) aber pro DEPLOY statt pro
+// Besuch — s. `waehleBegruessungFuerBuild` in `lib/begruessungen.ts` für den
+// Befund (Prerender/Client zogen bis dahin je einen EIGENEN Zufallswert, die
+// grösste Zeile der Seite tauschte nach dem JS-Download, Lighthouse mass das
+// als LCP bei 9.4 s) und die Begründung der Produkt-Nuance. CLAUDE.md §2 ist
+// nicht berührt: die Regel bindet die ENGINES (gleiche Eingabe → gleiche
+// Frist, gleicher Betrag); diese Zeile trägt keinen Rechtswert und geht in
+// keine Berechnung ein.
 //
-// PRERENDER: Gruss UND Datum divergieren zwischen Build und Client (der Build
-// backt einen Gruss und den Build-Tag, der Client zieht neu). Beide Anzeigeorte
-// tragen darum ehrlich `suppressHydrationWarning`. Ein min-height braucht es
-// nicht: die Pool-Datei hält jeden Eintrag unter GRUSS_MAX_ZEICHEN (30), der
-// Gruss bleibt also auch auf 390 px einzeilig (§15: kein Layout-Sprung, weil die
-// Umbruchstelle nicht vom gezogenen Gruss abhängt).
+// PRERENDER: `gruss` ist jetzt bei GLEICHEM Build-Seed (`VITE_BUILD_ID`)
+// zwischen Prerender und Client identisch (Bauregel 2 «Client-Initialstate
+// auf den Server-Zustand pinnen») — kein Tausch mehr. `datum`/`wochentag`
+// bleiben live (echte Uhrzeit des Aufrufs) und divergieren wie bisher
+// zwischen Build und Client; sie tragen darum weiterhin ehrlich
+// `suppressHydrationWarning` (kleine Nebenzeile, nicht die LCP-h1). Ein
+// min-height braucht `gruss` nicht: die Pool-Datei hält jeden Eintrag unter
+// GRUSS_MAX_ZEICHEN (30), der Gruss bleibt also auch auf 390 px einzeilig
+// (§15: kein Layout-Sprung, weil die Umbruchstelle nicht vom gezogenen Gruss
+// abhängt).
 
 // Datum «5. September 2026» + Wochentag getrennt — deterministisch ohne
 // Locale-Abhängigkeit (SSR-stabil, keine Intl-Überraschungen zwischen Node und
@@ -45,6 +51,15 @@ export interface Heute {
    *  Erscheinen zu öffnen (§15, CLS 0). */
   uhrzeit: string | null;
 }
+
+// Build-Seed für `waehleBegruessungFuerBuild` — dieselbe Kennung, die
+// `components/fehlermeldung.ts` schon für die Fehlerkanal-Zuordnung liest
+// (§5, Single Source): Vercel-Commit-SHA (vite.config.ts `define`), sonst
+// 'dev'. Identisch für `vite build` (Client-Bundle) UND
+// `vite-node scripts/prerender.ts` (derselbe Vite-`define`, beide Schritte
+// desselben `npm run build`-Aufrufs) — NIE eine Uhrzeit, die zwischen den
+// zwei Prozessen leicht auseinanderliefe.
+const BUILD_SEED = (import.meta.env?.VITE_BUILD_ID as string | undefined) ?? 'dev';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
@@ -75,7 +90,7 @@ export function useHeute(): Heute {
   const [heute] = useState<Omit<Heute, 'uhrzeit'>>(() => {
     const jetzt = new Date();
     return {
-      gruss: waehleBegruessung(jetzt.getHours(), Math.random),
+      gruss: waehleBegruessungFuerBuild(BUILD_SEED),
       wochentag: WOCHENTAGE[jetzt.getDay()],
       datum: `${jetzt.getDate()}. ${MONATE[jetzt.getMonth()]} ${jetzt.getFullYear()}`,
     };

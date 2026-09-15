@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import {
   GRUSS_MAX_ZEICHEN, IMMER, TAGESZEITEN,
-  begruessungsPool, tageszeitFuer, waehleBegruessung,
+  begruessungsPool, tageszeitFuer, waehleBegruessung, waehleBegruessungFuerBuild,
 } from '../lib/begruessungen';
 
 // ─── Begrüssungs-Pools (W2·23-STARTSEITE-V4 §4) ─────────────────────────────
@@ -210,5 +210,52 @@ describe('Begrüssungs-Pools', () => {
     // Satzzeichen-Wächter fängt genau solche Einträge.
     expect(/[.?!]$/.test('Der frühe Vogel …')).toBe(false);
     expect('Schön, dass Sie Recht behalten wollen.'.length).toBeGreaterThan(GRUSS_MAX_ZEICHEN);
+  });
+
+  // ─── QS-PERF (15.9.2026) · Build-Seed statt Live-Zufall ──────────────────
+  //
+  // BEFUND: `waehleBegruessung(stunde, Math.random)` wurde bis hierher beim
+  // Prerender UND beim Client-Mount je EIGENSTÄNDIG gezogen — zwei
+  // unabhängige `Math.random()`-Aufrufe, real fast immer zwei verschiedene
+  // Texte. Die grösste Zeile der Startseite (der Gruss-h1) tauschte darum
+  // nach dem JS-Download; Lighthouse hat das als LCP bei 9.38 s gemessen
+  // (CI-Lauf 40f634b3d). Der Rot-Beweis unten bildet GENAU dieses Szenario
+  // nach: gleiche Stunde, aber Prerender und Client ziehen (wie real) je eine
+  // EIGENE Zufallszahl — die alte Kopplung liefert dann i. A. verschiedene
+  // Texte. `waehleBegruessungFuerBuild` ersetzt das durch eine reine Funktion
+  // EINES gemeinsamen Seeds.
+  it('ROT-BEWEIS: zwei unabhängige Math.random()-Züge zur selben Stunde weichen typischerweise voneinander ab', () => {
+    // Reproduziert den alten Pfad (Prerender-Prozess vs. Client-Prozess,
+    // JE EIN eigener Zufallsaufruf) mit zwei FESTEN, verschiedenen Ziehungen —
+    // deterministisch rot, keine Flake-Wahrscheinlichkeit (Dispatch-§0 Ziff. 3c).
+    const stunde = 10;
+    const prerenderZug = waehleBegruessung(stunde, () => 0.02);
+    const clientZug = waehleBegruessung(stunde, () => 0.87);
+    expect(prerenderZug).not.toBe(clientZug);
+  });
+
+  it('waehleBegruessungFuerBuild: Prerender-Auswahl == Client-Auswahl bei gleichem Seed', () => {
+    // Der eigentliche Fix: EIN Seed (im Bau `import.meta.env.VITE_BUILD_ID`,
+    // von Prerender-Prozess UND Client-Bundle identisch gelesen) ⇒ IMMER
+    // derselbe Gruss — unabhängig davon, wie oft oder wo die Funktion
+    // aufgerufen wird. Reine Funktion, darum hier ohne Mocking direkt
+    // prüfbar: zwei "Aufrufer" (Prerender/Client simuliert durch zwei
+    // unabhängige Aufrufe) mit demselben Seed müssen übereinstimmen.
+    for (const seed of ['a1b2c3d4', 'deadbeef', 'dev', '00000000', 'ffffffff']) {
+      const prerenderAuswahl = waehleBegruessungFuerBuild(seed);
+      const clientAuswahl = waehleBegruessungFuerBuild(seed);
+      expect(clientAuswahl, `Seed ${seed}`).toBe(prerenderAuswahl);
+    }
+  });
+
+  it('waehleBegruessungFuerBuild bleibt im Pool und liefert bei verschiedenem Seed nicht immer denselben Gruss', () => {
+    // Kein Logikverlust: die Zufalls-/Tageszeit-Vielfalt bleibt erhalten,
+    // nur die Kadenz wechselt von PRO BESUCH auf PRO DEPLOY (im PR als
+    // Produkt-Nuance benannt). Mehrere Seeds müssen darum nicht alle
+    // denselben Gruss ziehen.
+    const seeds = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10'];
+    const ergebnisse = seeds.map((s) => waehleBegruessungFuerBuild(s));
+    for (const g of ergebnisse) expect(ALLE).toContain(g);
+    expect(new Set(ergebnisse).size, ergebnisse.join(' · ')).toBeGreaterThan(1);
   });
 });
