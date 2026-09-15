@@ -1,5 +1,5 @@
 import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 // LexMetrik-Typografie (W2·24-DESIGN-IDENTITAET R1, 6.9.2026): ZWEI Stimmen,
 // beide OFL und selbst gehostet (kein Google-Fonts-Request zur Laufzeit).
@@ -31,6 +31,7 @@ import { wendeSchriftskalaAn } from './components/layout/useSchriftskala'
 import { wendeLeserOptionenAn } from './pages/gesetz-leser/leserOptionen'
 import { meldeFehler } from './components/fehlermeldung'
 import { fruehesSuchKuerzelStarten } from './components/suche/fruehesSuchKuerzel'
+import { hydrationsPinSetzen } from './lib/hydration'
 
 // Thema so früh wie möglich anwenden (vor dem ersten App-Render) — ohne
 // CSP-verbotenes Inline-Script bleibt für Dunkel-Nutzer ein kurzes Aufblitzen
@@ -80,10 +81,73 @@ window.addEventListener('unhandledrejection', (e) => {
   meldeFehler(g instanceof Error ? g.message : typeof g === 'string' ? g : 'Unhandled promise rejection')
 })
 
-createRoot(document.getElementById('root')!).render(
+// ─── Start: hydrieren, wo der Prerender die ECHTE App geschrieben hat ───────
+//
+// QS-BASIS (15.9.2026). Bis hierher startete JEDE Seite mit `createRoot()` —
+// also render-then-replace: der Browser malt das prerenderte HTML, React wirft
+// es nach dem JS-Download weg und malt es neu. Gemessen (Lighthouse Mobil,
+// 4x CPU + langsames 4G, Median aus 3): Startseite LCP 9.20 s bei TBT 0 —
+// das LCP-Element ist die prerenderte <h1>, die erst der Ersatz-Render
+// «endgueltig» macht. Hydration behaelt den DOM, damit zaehlt der ERSTE Paint.
+//
+// WELCHE Seite hydriert wird, entscheidet NICHT eine Routenliste im Client
+// (die waere eine zweite Wahrheit neben scripts/prerender.ts, §5), sondern ein
+// Marker, den der Prerender an den Container schreibt:
+//   · `data-prerender="app"`  → HTML kommt aus `entry-server` = dieser App
+//                               ⇒ hydrierbar (die 64 Katalog-/Seiten-Routen).
+//   · kein Marker             → Leser-Detailseiten (Erlasse/Entscheide/
+//                               Materialien) mit bewusst ANDEREM SEO-Markup
+//                               aus `lib/seo-detail`, und der SPA-Fallback
+//                               `app.html` mit leerem #root ⇒ createRoot.
+//
+// WAECHTER (perf-Bauregel 5: «kein NAIVES hydrateRoot — ein Markup-Mismatch ist
+// stiller Normtext-Verlust»). Er macht das Nicht-Naive aus:
+//  (a) `onRecoverableError` meldet JEDEN Mismatch sichtbar auf der Konsole,
+//      mit Route und erster Zeile — nichts scheitert mehr still;
+//  (b) `window.__lexmetrikHydration` zaehlt mit, damit e2e darauf assertieren
+//      kann (`e2e/hydration-startseite.e2e.ts`), statt Optik zu raten.
+//  (c) Der Rueckfall selbst kommt aus React 19 und ist in react-dom 19.2.8
+//      nachgelesen, nicht vermutet: `throwOnHydrationMismatch` wirft
+//      («…this tree will be regenerated on the client»), und ohne umgebende
+//      Suspense-Grenze greift der Root-Pfad «React was able to recover by
+//      instead client rendering the entire root». Der schlechteste Fall ist
+//      damit exakt das bisherige Verhalten (voller Client-Render), nie ein
+//      halb ersetzter Baum und nie fehlender Text.
+//  ACHTUNG, Grenze desselben Belegs: reine ATTRIBUT-Abweichungen wirft React
+//  NICHT — es laesst den Server-Wert stehen und meldet in der Produktion gar
+//  nichts. Darum muss jeder Client-Initialstate, der von einem Attribut
+//  abhaengt, auf den Server-Zustand gepinnt sein (perf-Bauregel 2); die
+//  Startseite tut das ueber `useSyncExternalStore` mit Werk-Schnappschuss.
+type HydrationsStand = { modus: 'hydration' | 'client'; fehler: number; meldungen: string[] }
+
+const wurzel = document.getElementById('root')!
+const stand: HydrationsStand = { modus: 'client', fehler: 0, meldungen: [] }
+;(window as unknown as { __lexmetrikHydration: HydrationsStand }).__lexmetrikHydration = stand
+
+const baum = (
   <StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
+
+if (wurzel.dataset.prerender === 'app') {
+  stand.modus = 'hydration'
+  // Vor dem ersten Render: Zustandsquellen, die im Prerender leer sind, halten
+  // sich fuer diesen einen Render an den Server-Stand (lib/hydration).
+  hydrationsPinSetzen()
+  hydrateRoot(wurzel, baum, {
+    onRecoverableError: (fehler, info) => {
+      const text = fehler instanceof Error ? fehler.message : String(fehler)
+      stand.fehler += 1
+      stand.meldungen.push(text)
+      console.error(
+        `[Hydration] ${window.location.pathname}: ${text.split('\n')[0]}`,
+        info.componentStack ?? '',
+      )
+    },
+  })
+} else {
+  createRoot(wurzel).render(baum)
+}

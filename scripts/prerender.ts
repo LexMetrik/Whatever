@@ -5,9 +5,14 @@
 // Läuft als DRITTER Build-Schritt (tsc -b && vite build && vite-node …) und
 // schreibt für jede öffentliche Route dist/<pfad>/index.html: gerendertes
 // HTML im #root plus routen-individuelle Meta-Tags aus lib/seo.ts (§5).
-// Browser-Verhalten unverändert: main.tsx ersetzt den Inhalt per
-// createRoot().render() (render-then-replace, Entscheid Freigabe 11.6.2026 —
-// KEIN hydrateRoot, Begründung in docs/ssg-diagnose.md §5).
+// Browser-Verhalten seit QS-BASIS (15.9.2026) ZWEIGETEILT — der Marker
+// `data-prerender="app"` am #root-Container entscheidet, siehe WURZEL_AUF*
+// weiter unten:
+//  – die 64 Routen HIER (HTML aus entry-server = der ECHTEN App) tragen ihn und
+//    werden im Browser HYDRIERT (main.tsx: hydrateRoot);
+//  – die Detail-Seiten (Erlasse/Entscheide/Materialien, HTML aus lib/seo-detail)
+//    tragen ihn NICHT: ihr Markup ist bewusst ein anderes als das des React-
+//    Baums, dort bleibt es bei render-then-replace via createRoot().
 //
 // Drift-Tore (brechen den Build):
 //  – Route rendert den 404-Marker → Pfad fehlt in App.tsx
@@ -69,6 +74,14 @@ const MIN_ZEICHEN = 500; // Smoke-Konvention (scripts/smoke-render.tsx)
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = join(ROOT, 'dist');
 const ROOT_MARKER = '<div id="root"></div>';
+// ── Hydrations-Marker (QS-BASIS, 15.9.2026) ────────────────────────────────
+// Er sitzt am CONTAINER, nicht im React-Baum: React fasst Container-Attribute
+// bei der Hydration nicht an, und der Client braucht damit keine zweite
+// Routenliste neben dieser hier (§5) — er liest nur `root.dataset.prerender`.
+// Gesetzt wird er ausschliesslich in `seitenHtml()`, also genau auf dem Pfad,
+// dessen Inhalt aus `entry-server` stammt.
+const WURZEL_AUF = '<div id="root">';
+const WURZEL_AUF_HYDRIERBAR = '<div id="root" data-prerender="app">';
 
 const template = readFileSync(join(DIST, 'index.html'), 'utf8');
 if (!template.includes(ROOT_MARKER)) {
@@ -142,7 +155,11 @@ function rendereTemplate(
 function seitenHtml(pfad: string, inhalt: string): string {
   const meta = metaFuerPfad(pfad);
   if (!meta) throw new Error(`keine Metadaten für ${pfad} (lib/seo.ts)`);
-  return rendereTemplate(meta, jsonLdFuerPfad(pfad), inhalt, pfad);
+  const html = rendereTemplate(meta, jsonLdFuerPfad(pfad), inhalt, pfad);
+  if (!html.includes(WURZEL_AUF)) {
+    throw new Error(`#root-Container in ${pfad} nicht gefunden — Hydrations-Marker nicht setzbar.`);
+  }
+  return html.replace(WURZEL_AUF, () => WURZEL_AUF_HYDRIERBAR);
 }
 
 const routen = prerenderRouten();

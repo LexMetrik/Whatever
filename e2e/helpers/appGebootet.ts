@@ -29,6 +29,14 @@ import { type Page } from '@playwright/test'
 // nichts. Wer ihn missbraucht, um eine Zusage zu umgehen, merkt es daran, dass
 // die Zusage danach unverändert dasteht.
 //
+// NACHTRAG 15.9.2026 (QS-BASIS) — die Messung oben bleibt, wie sie war; hier
+// steht nur, was seither DAZUGEKOMMEN ist: auf den prerenderten App-Routen
+// hydriert `main.tsx` inzwischen (`hydrateRoot`) statt zu ersetzen. Der Satz
+// «die App hydratisiert bewusst nicht» in Signal 1 beschreibt damit den Stand
+// bis 14.9.2026. Am Helfer ändert das NICHTS: der `__reactFiber$`-Schlüssel
+// entsteht beim ersten React-Commit, ob der nun hydriert oder neu rendert —
+// beide Wege werden unverändert erkannt.
+//
 // ROT ZU BEKOMMEN (§6.7): den `requestIdleCallback`-Schritt streichen ⇒ der
 // Skip-Link-Wächter fällt unter Drossel 20× wieder auf 12/12 rot zurück.
 export async function appGebootet(page: Page, timeout = 30_000): Promise<void> {
