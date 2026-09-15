@@ -38,6 +38,10 @@ nur am Ende.
 **Nie zusammenfassen** — ~40 % Retrieval-Verlust; die Chronik ist Archiv,
 kein Extrakt.
 
+**Regel-Wiedervorlage mitnehmen:** `npm run check:regel-wiedervorlage` laufen
+lassen; fällige Regeln als Streichkandidaten in ROADMAP `QS-EFFIZIENZ`
+vermerken (Vorschlag — streichen tut David).
+
 **`@meta` LEBENDER Schritte ist unantastbar.** Nur das `@meta` eines
 tatsächlich wandernden Schrittes (`done` bzw. ✅-Teilerfolg oben) wird
 verschoben; `@meta` eines offenen Schrittes (Status, `dep`, `blocker`,

@@ -5,6 +5,7 @@ paths:
   - "src/index.css"
 ---
 # §13 Design → `DESIGN-REGLEMENT.md`
+<!-- @wiedervorlage: 2027-03-15 -->
 
 Jede sichtbare Änderung folgt `DESIGN-REGLEMENT.md` als Dach-Schicht; darunter
 konkretisieren die Domänen-Reglemente ihren Bereich. Bei Konflikt gewinnt das
@@ -12,6 +13,7 @@ speziellere innerhalb seiner Domäne, sonst das Dach. Der hier tragende Satz —
 **jeder Rechtswert mit Norm, Link und Stand** (D1) — ist mit §7 verzahnt.
 
 ## Handschrift «Sammlung» (6.9.2026) — zwölf Zeilen, Detail in §F0
+<!-- @wiedervorlage: 2027-09-06 -->
 
 1. Literata liest, Archivo bedient, Mono nur Rechenweg/Code (Zahlen `tabular-nums`) → F0.4
 2. Papier/Tinte chromafrei-nah, Leiter `well<paper<surface<paper-raised` → F0.1
