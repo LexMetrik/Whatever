@@ -17,6 +17,12 @@ export interface NormSnapshot {
    * die Quelle einen trägt (LexWork article_title). Fehlt er oder ist er nur der
    * Aufhebungs-Platzhalter «…», bleibt das Feld weg (§7: nichts fabrizieren). Wird
    * in der Lesesicht als Randtitel angezeigt.
+   *
+   * W2·27, Entscheid David 14.9.2026: `struktur.marginalie` ist die eine Quelle
+   * des Randtitels; dieses Feld ist eine KANTON-Übergangs-Projektion (LexWork
+   * article_title) bis zur Phase-2-Migration — Bund schreibt es nie (0/25 601
+   * im Korpus, gewächtert von `src/tests/randtitel-eine-quelle-w227.test.ts`).
+   * Lese-Zugriff nur über `artikelRandtitel()` (`gliederungsArtikel.ts`).
    */
   titel?: string;
   /**

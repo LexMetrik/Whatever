@@ -171,6 +171,22 @@ selben Schicht wie Gliederung und Fussnoten (alle im Sidecar), und das Bund-Feld
 weitaus grössere Datenmenge. Gegenargument, das mitentschieden werden muss: der Kanton-Pfad müsste
 migrieren, und der Sidecar hat heute keinen Drift-Riegel (§2, Zeile Sidecar).
 
+**Umsetzung 15.9.2026 (WP-D, verhaltensneutraler Phase-1-Schnitt, Entscheid David 14.9.2026
+Option i):** die zwei Inline-Kopien der Fallback-Kette (`marginalie` vor `titel`) in
+`leserSuche.ts` (`baueLeserSuchIndex`, vormals Z.230 und Z.246) sind durch den kanonischen
+Accessor `artikelRandtitel` (`gliederungsArtikel.ts:76`) ersetzt — EINE Stelle im Code für die
+Regel, geprüft in `src/tests/randtitel-eine-quelle-w227.test.ts`. Der Typ-Kommentar zu
+`NormSnapshot.titel` (`typen.ts`) benennt das Sollbild jetzt ausdrücklich als KANTON-
+Übergangsprojektion. Neuer Wächter im selben Test-File: kein Bund-Artikel im Korpus trägt
+`titel` (Ist 0/25 601, Stand 15.9.2026). Bewusst **Phase 2** (unverändert, kein Kanton-Verhalten
+angefasst): `NormSnapshot.titel` bleibt als Feld bestehen und wird vom Kanton-Pfad weiter
+geschrieben (`adapter-lexwork.ts:615–659`); `such-index-generieren.ts:134–151` und
+`NormChip.tsx:225` lesen weiterhin nur `marginalie`, ohne `titel`-Fallback (für Kanton eine
+bestehende Lücke, für Bund korrekt); der zweite, unabhängige Kanton-Parser für `marginalie`
+(`struktur-lexwork.ts:317`) bleibt bestehen; `ArtikelLeser.tsx`/`ArtikelLeser.kopfteile.tsx`
+(Render mit den zwei Props `randtitel`/`titel`) sind unverändert — der Render-Fallback bleibt
+als Kanton-Übergang bestehen, bis Phase 2 den Kanton-Pfad migriert.
+
 ---
 
 ## §2 · Lücken, nach Nutzen für einen lesenden Juristen
