@@ -4894,3 +4894,64 @@ dep-Umbau.
   deterministisch ohne Konto). **Risiko D16:** Anheften darf keine zweite Anzeige-Ordnung sein,
   sondern muss den flachen Speicher umsortieren — sonst Rückfall in den behobenen Zieh-Bug.
   **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §7.
+
+# Umschichtung 15.9.2026 (2) — vier erledigte Schritte aus dem Steuerungsplan
+
+**Anlass:** `check:steuerdeckel` stand auf 13 Bytes Luft (ROADMAP.md 122 867 von 122 880
+Bytes). Überführt nach `aufraeumen.md` §2 (vollständig und wörtlich, nichts zusammengefasst).
+Vier `status: done`-Schritte ohne offene Unterpunkte und ohne eingehende `dep`-Referenz eines
+noch lebenden Schrittes.
+
+**Bewusst NICHT überführt**, obwohl ebenfalls `done`: `W2·6c-ENTSTEHUNG-DATEN` und
+`W2·6c-ENTSTEHUNG-SYNOPSE` — der offene Schritt `R12a-ENTSTEHUNG-BS` (status: blocked) trägt
+`dep: [W2·6c-ENTSTEHUNG-SYNOPSE]`, und SYNOPSE selbst trägt `dep: [W2·6c-ENTSTEHUNG-DATEN]`;
+eine Überführung hätte `check:plan` rot gemacht («dep existiert nicht»). `W2·24-DESIGN-IDENTITAET`,
+`W3-TARIF-STAND` und `W3-TARIF-NACHVERIFIKATION` tragen ebenfalls `status: done`, ihre
+Elternzeile ist aber bereits in früheren Umschichtungen auf Pointer-Form reduziert UND sie
+tragen weiterhin zahlreiche offene `- [ ]`-Unterpunkte (Folgeschritte) — ein Verschieben des
+ganzen Blocks zöge lebende offene Arbeit in die Chronik. Bleiben stehen, gemeldet als
+Urteilsbedarf.
+
+## W2·6c-ENTSTEHUNG-LESER — Entstehung am Artikel — Leser: Chip mit Fassungszahl, Karte mit Fassungsleiste und Begründung *(done, verschoben 15.9.2026)*
+
+- [x] **Entstehung am Artikel — Leser: Chip mit Fassungszahl, Karte mit Fassungsleiste und Begründung** *(`W2·6c-ENTSTEHUNG-LESER`, 6.9.2026)*
+  <!-- @meta id: W2·6c-ENTSTEHUNG-LESER · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-DATEN, W2·24-DESIGN-IDENTITAET] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  **Nachgeführt 11.9.2026 (Sichtung §11 Fassung 5):** die Fassung ist seit D40 (#761, 7.9.2026)
+  eine Rubrik der Funktionszeile am Artikelende, der frühere Kopf-/Marginalie-Slot ist entfallen;
+  die Karte rendert im bestehenden Aufklapp-Block (`.lr7-bez-inhalt`, künftig `Funktionszeile.tsx`)
+  — **kein zweiter Slot nötig**, C5/C6 der alten Spec sind damit gegenstandslos. Nichts lädt vor
+  dem Klick (Auflage David 6.9.2026). Alle neun slot-verlagernden W2·24-Branches sind auf `main`
+  (geprüft 11.9.2026 gegen `git log origin/main`, PR #744–#761).
+  Etappe E3. **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.
+
+## W2·26-FUNKTIONSZEILE — Funktionszeile am Artikelende überarbeiten *(done, verschoben 15.9.2026)*
+
+- [x] **Funktionszeile am Artikelende überarbeiten** *(`W2·26-FUNKTIONSZEILE`, Mandat David 11.9.2026)*
+  <!-- @meta id: W2·26-FUNKTIONSZEILE · status: done · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  Bau läuft seit 11.9.2026 in Worktree `feat/w226-funktionszeile`. Fassung zugeklappt zeigt nur
+  «Gilt seit …», Akkordeon je Artikel, Fussnoten-Option blendet auch SR-Nummer-Fussnoten aus,
+  Aktionen nur bei Hover/Fokus/offener Rubrik, D45-Split, Umbenennung `BezuegeKopf` →
+  `Funktionszeile`. **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §9.
+
+## W2·24-PERF-REST — Perf-Rest Leser: `fremdRoutingFormB` / `artikelnPluralVerweise` *(done, verschoben 15.9.2026)*
+
+- [x] **Perf-Rest Leser: `fremdRoutingFormB` / `artikelnPluralVerweise`** *(`W2·24-PERF-REST`)*
+  <!-- @meta id: W2·24-PERF-REST · status: done · blocker: null · dep: [W2·24-DESIGN-IDENTITAET] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  Zwei Fix-Vorschläge aus `abnahme/design-identitaet/PERF-LESER.md` (`fedlex/parser.ts`
+  `FREMD_FORM_B`, Aufruf `NormText.tsx`; ~2.3 s). **Die Root-Cause war zum Messzeitpunkt NICHT
+  abschliessend verifiziert** — Ziel ist erst verifizieren (misst der gelandete Fix das schon
+  weg?), dann fixen; ohne Verifikation kein Eingriff (§7). Risikopfad (`src/lib/fedlex`) ⇒
+  **Gegenprüfung Pflicht**, Merge gesperrt bis Verdikt. Messregel: nie neben laufendem Build
+  oder e2e (Skill `perf` Bauregel 7).
+  - [x] **`check:perf-budget` deckt die Struktur-Sidecars nicht** *(Befund 11.9.2026, #791 — erledigt #874, 15.9.2026: Deckel 95 KB gzip je Sidecar + 175 KB Register)* — `public/normtext/**/struktur/*.json` (vorbestehend, seit #791 um die Zähler-Nutzlast
+    gewachsen) läuft ausserhalb der festen Deckel-Liste; eigene Zusicherung nachziehen.
+
+- **Idee (ohne `@meta`, W2·24-PERF-REST 15.9.2026):** Regex-Kosten des Verweis-Linkers (~1.4 s @CPU×4 auf OR); Memoisierung widerlegt (`abnahme/design-identitaet/PERF-LESER.md`, Nachtrag 15.9.) — Hebel liegt in der Regex-Semantik, Risikopfad `src/lib/fedlex`.
+
+## QS-TURSO-SCHREIBVOLUMEN — Turso-Schreibkontingent: Sync bündeln, Unverändertes überspringen, Sperre klar melden *(done, verschoben 15.9.2026)*
+
+- [x] **Turso-Schreibkontingent: Sync bündeln, Unverändertes überspringen, Sperre klar melden** *(`QS-TURSO-SCHREIBVOLUMEN`, Vorfall 15.9.2026)*
+  <!-- @meta id: QS-TURSO-SCHREIBVOLUMEN · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-DATENHALTUNG.md -->
+  Schreibsperre 15.9.2026 (Gratis-Kontingent): Voll-Rebuild je Push (~171 000 Zeilen, 39 Läufe/14 d).
+  **Ziel:** täglich EIN Sync, Tabellen-Skip per Signatur, Sperre als Exit 3; Wächter bleiben ehrlich. Lesen nie betroffen.
+  **Detail:** [FAHRPLAN-DATENHALTUNG.md](fahrplaene/FAHRPLAN-DATENHALTUNG.md) §17.
