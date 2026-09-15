@@ -12,7 +12,7 @@
 // Ableitung — sie beschreiben Absicht und Verfahren, nicht Messwerte.
 
 import { readFileSync } from 'node:fs';
-import { parseRoadmap, type Einheit } from './parse';
+import { parseRoadmap, type Einheit, ladeChronikDone } from './parse';
 import { resolve, type Buckets } from './aufloesen';
 import {
   KANTONE,
@@ -452,7 +452,8 @@ ${fussnote(`Das Kürzel jedes Arbeitspakets steht als Tooltip an seinem Titel. F
 export function lagebildSicht(o: SeitenOpts): LagebildSicht {
   const md = readFileSync('ROADMAP.md', 'utf8');
   const { einheiten, blockers, queue } = parseRoadmap(md);
-  const b: Buckets = resolve(einheiten, queue);
+  // Chronik-Wissen mitgeben, sonst zeigt das Lagebild andere Buckets als plan:next.
+  const b: Buckets = resolve(einheiten, queue, ladeChronikDone());
   const schritte = schrittInfoAusRoadmap(md);
   const t = (id: string) => schritte.get(id)?.titel ?? id;
   const byId = new Map(einheiten.map((e) => [e.id, e]));
