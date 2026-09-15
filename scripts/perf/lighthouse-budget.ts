@@ -420,18 +420,47 @@ type Metrik = { cls: number; lcp: number; tbt: number; tti: number; score: numbe
  * LCP-Element-Attribution (AUFGABE A, QS-PERF 15.9.2026, reine Diagnose zur
  * OR-LCP-Bimodalität 3.5 s/11.4 s — Ursache oben als offen geführt).
  *
- * Im installierten Paket (lighthouse@13.4.1, geprüft unter
- * node_modules/lighthouse/core/audits/insights/lcp-discovery-insight.js) heisst
- * das Companion-Audit NICHT mehr `largest-contentful-paint-element` — dieser
- * Audit-Id ist mit Lighthouse ≥10 entfallen (node_modules/lighthouse/
- * changelog-pre10.md). Ersatz ist das Insight-Audit `lcp-discovery-insight`
- * (Teil von `onlyCategories:['performance']`, default-config.js Zeile 425f.);
- * sein Node-Detail kommt über `makeNodeItemForNodeId` → `Audit.makeNodeItem`
- * (insight-audit.js / audit.js) als FLACHES Listen-Item mit `type:'node'` —
- * NICHT als `items[0].items[0].node`, wie ursprünglich vermutet.
+ * Im installierten Paket (lighthouse@13.4.1) heisst das Companion-Audit NICHT
+ * mehr `largest-contentful-paint-element` — dieser Audit-Id ist mit
+ * Lighthouse ≥10 entfallen (node_modules/lighthouse/changelog-pre10.md).
+ * Beide Nachfolge-Insights liefern ihr Node-Detail über dieselbe Helferkette
+ * (`makeNodeItemForNodeId` → `Audit.makeNodeItem`, insight-audit.js /
+ * audit.js) als FLACHES Listen-Item mit `type:'node'` — NICHT als
+ * `items[0].items[0].node`.
+ *
+ * NACHBESSERUNG (Bug-Check PR #874): `lcp-discovery-insight` allein liefert
+ * bei Text-LCP (Startseiten-h1 — genau unser Diagnosefall) IMMER `details:
+ * undefined`. Grund, geprüft im Quellcode:
+ *   - node_modules/@paulirish/trace_engine/models/trace/insights/
+ *     LCPDiscovery.js:79-129 (`generateInsight`) setzt `checklist` NUR, wenn
+ *     ein `lcpRequest` existiert — das ist der Bild-Ladevorgang. Bei Text-LCP
+ *     gibt es keinen `lcpRequest`, `finalize({ lcpEvent })` liefert also ein
+ *     Modell OHNE `checklist`.
+ *   - node_modules/lighthouse/core/audits/insights/lcp-discovery-insight.js:
+ *     `if (!insight.checklist) { return; }` — der Audit liefert dann gar
+ *     keine Details, `insight-audit.js` reicht `details: undefined` durch.
+ *
+ * Zuverlässige Quelle für BEIDE LCP-Arten ist `lcp-breakdown-insight`
+ * (`replacesAudits: ['largest-contentful-paint-element']`, guidanceLevel 3):
+ *   - node_modules/@paulirish/trace_engine/models/trace/insights/
+ *     LCPBreakdown.js:76-77 («If the LCP is text, we don't have a request,
+ *     so just 2 subparts») — `subparts` (und damit `details`) wird für
+ *     Text-LCP MIT NUR 2 statt 4 Teilstrecken gesetzt, nicht weggelassen.
+ *   - node_modules/lighthouse/core/audits/insights/lcp-breakdown-insight.js
+ *     baut `details` als `Audit.makeListDetails([subpartsTable,
+ *     makeNodeItemForNodeId(...)])` — dieselbe flache `type:'node'`-Item-Form
+ *     wie bei `lcp-discovery-insight`, der bestehende Scan über `items` greift
+ *     also unverändert.
+ * Primärquelle daher `lcp-breakdown-insight`, Rückfall auf
+ * `lcp-discovery-insight` (deckt den Sonderfall ab, dass Breakdown zwar läuft,
+ * aber `makeNodeItemForNodeId` keinen Knoten findet und die Liste dadurch nur
+ * die Tabelle ohne Node-Item enthält), sonst `null`.
  */
-function lcpElementAus(audits: Record<string, { details?: unknown }>): string | null {
-  const details = audits['lcp-discovery-insight']?.details as { items?: unknown[] } | undefined;
+function lcpElementAusInsight(
+  audits: Record<string, { details?: unknown }>,
+  auditId: string,
+): string | null {
+  const details = audits[auditId]?.details as { items?: unknown[] } | undefined;
   const items = Array.isArray(details?.items) ? details.items : [];
   const nodeItem = items.find((i): i is { nodeLabel?: unknown; selector?: unknown } =>
     !!i && typeof i === 'object' && (i as { type?: unknown }).type === 'node');
@@ -439,6 +468,13 @@ function lcpElementAus(audits: Record<string, { details?: unknown }>): string | 
   const label = typeof nodeItem.nodeLabel === 'string' ? nodeItem.nodeLabel.trim() : '';
   const selector = typeof nodeItem.selector === 'string' ? nodeItem.selector : '';
   return label || selector || null;
+}
+
+function lcpElementAus(audits: Record<string, { details?: unknown }>): string | null {
+  return (
+    lcpElementAusInsight(audits, 'lcp-breakdown-insight') ??
+    lcpElementAusInsight(audits, 'lcp-discovery-insight')
+  );
 }
 
 /** Zeile auf ≤ `max` Zeichen kürzen (Konsolen-Lesbarkeit, Auflage der Aufgabe). */

@@ -56,10 +56,14 @@ export const kb = (n: number): string => `${(n / 1024).toFixed(1)} KB`;
 //    W2·5n weiter (1518 KB roh, gemessen `wc -c public/normtext/register.json`,
 //    15.9.2026) und lädt wie das Rechtsprechungs-Register jede Leserseite.
 //    Deckel erzwingt bewusst den Register-Schnitt, nicht umgekehrt (§17: ein
-//    Wachstum, das kein Tor sieht, kommt wieder). Ist 163 KB gzip
-//    (`gzip -c public/normtext/register.json | wc -c` = 163323 Bytes,
-//    15.9.2026) — Budget = Ist + ~7 % Kopffreiheit, absichtlich eng: die Datei
-//    soll NICHT unbemerkt weiterwachsen, ein Rückschritt soll sofort rot sein.
+//    Wachstum, das kein Tor sieht, kommt wieder). Ist NACH DER CODE-MESSUNG
+//    (`gz()` = `zlib.gzipSync`, nicht CLI-`gzip`): 158.5 KB / 162335 Bytes,
+//    15.9.2026 — Budget = Ist + ~10 % Kopffreiheit, absichtlich eng: die
+//    Datei soll NICHT unbemerkt weiterwachsen, ein Rückschritt soll sofort
+//    rot sein. (Bug-Check PR #874: die zuvor hier genannten 163 KB stammten
+//    aus CLI-`gzip -c … | wc -c` = 163323 Bytes — Node-`zlib.gzipSync` misst
+//    wegen anderer Default-Kompression/Header ~0.6 % tiefer; das Tor prüft
+//    ausschliesslich den `gz()`-Wert, der Deckel 175 KB bleibt unverändert.)
 export const DATEN_BUDGET: readonly (readonly [string, number])[] = [
   ['public/rechtsprechung/register.json', 780 * 1024],
   ['public/rechtsprechung/richter.json', 24 * 1024],
@@ -112,10 +116,14 @@ export const daten = (rel: string): string | null => {
 // Erlass — die Schranke ist deshalb wie bei den Bezügs-Shards die
 // GRÖSSTE Einzeldatei, nicht das Verzeichnis.
 //
-// Ist (`gzip -c public/normtext/struktur/bund/OR.json | wc -c`, 15.9.2026):
-// OR.json 87.6 KB gzip (grösster Bund-Erlass), ZGB 70.7 KB, STGB 43.2 KB.
-// Budget = Ist(OR) + ~8 % Kopffreiheit — bewusst eng aus demselben Grund
-// wie beim Register: der Schnitt ist Ziel, nicht Ausnahme.
+// Ist NACH DER CODE-MESSUNG (`gz()` = `zlib.gzipSync`, nicht CLI-`gzip`;
+// 15.9.2026): OR.json 85.2 KB / 87246 Bytes gzip (grösster Bund-Erlass),
+// ZGB 70.4 KB, STGB 43.0 KB. Budget = Ist(OR) + ~11 % Kopffreiheit — bewusst
+// eng aus demselben Grund wie beim Register: der Schnitt ist Ziel, nicht
+// Ausnahme. (Bug-Check PR #874: die zuvor hier genannten 87.6/70.7/43.2 KB
+// stammten aus CLI-`gzip -c … | wc -c` — Node-`zlib.gzipSync` misst wegen
+// anderer Default-Kompression/Header minimal tiefer; das Tor prüft
+// ausschliesslich den `gz()`-Wert, der Deckel 95 KB bleibt unverändert.)
 export const STRUKTUR_GLOB = { basis: 'public/normtext/struktur', max: 95 * 1024 };
 
 /** Alle Dateien unter `dir`, die auf `endung` enden — rekursiv (Bund-/Kanton-
