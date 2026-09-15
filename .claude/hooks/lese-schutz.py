@@ -54,7 +54,10 @@ WERKZEUG_HINWEIS = (
 SONDE_HINWEIS = (
     "Statt der Riesendatei: gezielt mit offset/limit lesen, oder die Daten-Sonde "
     "`npm run zeige -- <Erlass> <Artikel>` (normtext, byte-treu) / `golden:diff` nutzen "
-    "(FAHRPLAN-TOKEN-OEKONOMIE §4 T6)."
+    "(FAHRPLAN-TOKEN-OEKONOMIE §4 T6). PDF oder andere Binärdatei (auch im Scratchpad, "
+    "z. B. amtliche Fedlex-/BBl-PDF): Text VORHER extrahieren — PyMuPDF "
+    "`python3 -c \"import fitz; d=fitz.open('<pfad>'); print(d[0].get_text())\"` "
+    "(kein pdftotext auf dieser Maschine; Befund 15.9.2026) — und dann gezielt lesen."
 )
 
 
