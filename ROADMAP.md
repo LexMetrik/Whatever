@@ -311,16 +311,6 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   nur aggregiert, Monatslauf statt Gate-Kette. Etappen E1, E2, E4. **Bau erst auf Davids Go.**
   **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.
 
-- [x] **Entstehung am Artikel — Leser: Chip mit Fassungszahl, Karte mit Fassungsleiste und Begründung** *(`W2·6c-ENTSTEHUNG-LESER`, 6.9.2026)*
-  <!-- @meta id: W2·6c-ENTSTEHUNG-LESER · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-DATEN, W2·24-DESIGN-IDENTITAET] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
-  **Nachgeführt 11.9.2026 (Sichtung §11 Fassung 5):** die Fassung ist seit D40 (#761, 7.9.2026)
-  eine Rubrik der Funktionszeile am Artikelende, der frühere Kopf-/Marginalie-Slot ist entfallen;
-  die Karte rendert im bestehenden Aufklapp-Block (`.lr7-bez-inhalt`, künftig `Funktionszeile.tsx`)
-  — **kein zweiter Slot nötig**, C5/C6 der alten Spec sind damit gegenstandslos. Nichts lädt vor
-  dem Klick (Auflage David 6.9.2026). Alle neun slot-verlagernden W2·24-Branches sind auf `main`
-  (geprüft 11.9.2026 gegen `git log origin/main`, PR #744–#761).
-  Etappe E3. **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.
-
 - [x] **Entstehung am Artikel — Synopse alt/neu ab 2021 und Entwurf↔Beschluss** *(`W2·6c-ENTSTEHUNG-SYNOPSE`, 6.9.2026; absorbiert den Datenanteil von M16)*
   <!-- @meta id: W2·6c-ENTSTEHUNG-SYNOPSE · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-DATEN] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
   Diff zweier Fedlex-Konsolidierungen je Artikel (HTML nur ab Stand 1.1.2021), gespeichert wird nur der
@@ -534,26 +524,6 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Budget-Entscheid Entry 99,5 %** (59.7 / 60.0 KB) — der nächste Kopf-Bau reisst das Budget: Lazy-Laden oder Budget-Hebung (§15). **Wartet auf David.**
   - [ ] **Jules-Kandidaten** (grüne Spur, nach Landung W2·24): toter CSS-Rückbau `[data-lr-spiegel]`/`.lr-notiz*`/alte Druckregeln in `index.css` · Typ-Härtungen `lib/tabs.ts`/`tabGruppen.ts` · Allowlist-Pflege `e2e/kein-abschnitt.allow.json`. Datei-Splits erledigt (ArtikelLeser R6F; `Reiterleiste.tsx` 7.9. gemessen 650 Z. — **überholt: seit #843–#845 wieder 1 237 Z.**, s. Jules-Bilanz unten). *(Der proaktive Jules-Kanal «Suggestions» ist seit 14.9.2026 abgeschaltet — diese Kandidaten laufen unverändert als auftragsgebundene Tickets weiter; Entscheid D8: `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §6.)*
 
-- [x] **Funktionszeile am Artikelende überarbeiten** *(`W2·26-FUNKTIONSZEILE`, Mandat David 11.9.2026)*
-  <!-- @meta id: W2·26-FUNKTIONSZEILE · status: done · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
-  Bau läuft seit 11.9.2026 in Worktree `feat/w226-funktionszeile`. Fassung zugeklappt zeigt nur
-  «Gilt seit …», Akkordeon je Artikel, Fussnoten-Option blendet auch SR-Nummer-Fussnoten aus,
-  Aktionen nur bei Hover/Fokus/offener Rubrik, D45-Split, Umbenennung `BezuegeKopf` →
-  `Funktionszeile`. **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §9.
-
-- [x] **Perf-Rest Leser: `fremdRoutingFormB` / `artikelnPluralVerweise`** *(`W2·24-PERF-REST`)*
-  <!-- @meta id: W2·24-PERF-REST · status: done · blocker: null · dep: [W2·24-DESIGN-IDENTITAET] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
-  Zwei Fix-Vorschläge aus `abnahme/design-identitaet/PERF-LESER.md` (`fedlex/parser.ts`
-  `FREMD_FORM_B`, Aufruf `NormText.tsx`; ~2.3 s). **Die Root-Cause war zum Messzeitpunkt NICHT
-  abschliessend verifiziert** — Ziel ist erst verifizieren (misst der gelandete Fix das schon
-  weg?), dann fixen; ohne Verifikation kein Eingriff (§7). Risikopfad (`src/lib/fedlex`) ⇒
-  **Gegenprüfung Pflicht**, Merge gesperrt bis Verdikt. Messregel: nie neben laufendem Build
-  oder e2e (Skill `perf` Bauregel 7).
-  - [x] **`check:perf-budget` deckt die Struktur-Sidecars nicht** *(Befund 11.9.2026, #791 — erledigt #874, 15.9.2026: Deckel 95 KB gzip je Sidecar + 175 KB Register)* — `public/normtext/**/struktur/*.json` (vorbestehend, seit #791 um die Zähler-Nutzlast
-    gewachsen) läuft ausserhalb der festen Deckel-Liste; eigene Zusicherung nachziehen.
-
-- **Idee (ohne `@meta`, W2·24-PERF-REST 15.9.2026):** Regex-Kosten des Verweis-Linkers (~1.4 s @CPU×4 auf OR); Memoisierung widerlegt (`abnahme/design-identitaet/PERF-LESER.md`, Nachtrag 15.9.) — Hebel liegt in der Regex-Semantik, Risikopfad `src/lib/fedlex`.
-
 - [ ] **UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(`W2·17-UI-BEFUNDE`)*
   <!-- @meta id: W2·17-UI-BEFUNDE · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   Externe Sichtprüfung, geschnitten nach Bauteil; alles reine Darstellungsschicht, Blocker zuerst.
@@ -735,12 +705,6 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Wiedervorlage «Google-Ökosystem-Sichtung»** *(Dach QS-FREMDAGENTEN, Phase 4)* — alle 3 Monate, erste Fälligkeit **Dezember 2026**: Gemini-Recherche (agy, `read_url(*)`) «neue Google-KI-Produkte/Modelle, Jules-/Antigravity-Changelog seit \<Datum\>», Bewertung ~30 min, Eintrag in Fahrplan §7. Maschinischer Anstoss: `retro:17` Regel (h) ab 30 Tagen seit `bibliothek/register/antigravity-stand.json`. §7.
   - [ ] **`Reiterleiste.tsx` (1237 Z.) + `tabs.ts` (1205 Z.) über der Schlankheits-Schwelle** *(Nebenfund 15.9.2026, aus #843–#845; Tor nicht CI-pflichtig)* — Baseline aufgenommen (#874), **Split offen**.
   - [ ] **`scripts/plan/selbstoptKern.ts` über der Schlankheits-Schwelle, unregistriert gefunden** *(Nebenfund 4.9.2026)* — 1094 Z. (Schwelle 800), nur ins Baseline-Register aufgenommen, **Split offen**. Das Geschwister `src/tests/plan-selbstopt.test.ts` ist seit PR #699 gesplittet. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
-
-- [x] **Turso-Schreibkontingent: Sync bündeln, Unverändertes überspringen, Sperre klar melden** *(`QS-TURSO-SCHREIBVOLUMEN`, Vorfall 15.9.2026)*
-  <!-- @meta id: QS-TURSO-SCHREIBVOLUMEN · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-DATENHALTUNG.md -->
-  Schreibsperre 15.9.2026 (Gratis-Kontingent): Voll-Rebuild je Push (~171 000 Zeilen, 39 Läufe/14 d).
-  **Ziel:** täglich EIN Sync, Tabellen-Skip per Signatur, Sperre als Exit 3; Wächter bleiben ehrlich. Lesen nie betroffen.
-  **Detail:** [FAHRPLAN-DATENHALTUNG.md](fahrplaene/FAHRPLAN-DATENHALTUNG.md) §17.
 
 - [ ] **Automatik-Gesundheit** *(`QS-AUTOMATIK`, `[OF]`)*
   <!-- @meta id: QS-AUTOMATIK · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
