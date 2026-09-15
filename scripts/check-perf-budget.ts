@@ -10,19 +10,21 @@
 //
 // Budgets als gzip-Bytes; Headroom eng genug, dass ein Rückfall von
 // react-dom/react-router in den Entry rot wird.
+//
+// Die Daten-Nutzlast-Budgets (feste Liste + Struktur-Sidecar-Glob) stehen seit
+// 15.9.2026 in scripts/perf/daten-budget.ts (Steuerdeckel-Wurzelfix: die
+// Prüf-LOGIK zählte als Steuerungs-Fläche `scripts/check-*.ts` mit, obwohl sie
+// dort nicht liegen muss — s. Kopfkommentar dort). Verhalten byte-gleich.
 
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
-import { gzipSync } from 'node:zlib';
 import { join } from 'node:path';
+import { gz, kb, pruefeDatenBudgets } from './perf/daten-budget';
 
 const DIST = join(process.cwd(), 'dist', 'assets');
 
 // gzip-Budgets. Stand 30.6.2026: entry 30 KB, vendor-react 73 KB.
 const ENTRY_MAX = 60 * 1024;          // ~2× Headroom; fängt react-dom-Rückfall in den Entry
 const VENDOR_REACT_MAX = 90 * 1024;   // react/-dom/-router(+scheduler) zusammen
-
-const gz = (p: string): number => gzipSync(readFileSync(p)).length;
-const kb = (n: number): string => `${(n / 1024).toFixed(1)} KB`;
 
 if (!existsSync(DIST)) {
   console.error('check:perf-budget — dist/assets/ fehlt. Zuerst `npm run build` (das Tor prüft das gebaute Bundle).');
@@ -69,82 +71,9 @@ if (entry.length === 1) {
   }
 }
 
-// 4) DATEN-Nutzlast auf dem kritischen Pfad (Gegenprüfung 20.7.2026: Tor prüfte
-//    nur dist/assets/*.js, register.json-Wachstum +118 KB gzip blieb unentdeckt
-//    — public/**/*.json seither im Budget; register.json lädt jede Leserseite).
-//
-//    W2·5 (25.7.2026): Artikel-Suchindex dazu — lazy, aber gedeckelt, weil der
-//    kantonale Korpus weiterwächst und der clientseitige Indexaufbau mit der
-//    Artikelzahl skaliert (bei 54 444 Artikeln ~6.1 s node / 5.3 s Browser, riss
-//    auf dem ~3.9× langsameren CI-Runner die Smoke-Suite). Wer die Schranke
-//    anhebt, hebt auch die Wartezeit bis zum ersten Treffer — Staffelung
-//    (artikelVolltext.ts `baue()`) mitdenken.
-//
-//    K3-SCHARFSCHALTUNG (1.9.2026): Deckel GESENKT, nicht gelockert — Generator
-//    schreibt seit Korpusstand `123ffe495` per Default nur noch Bund-Ebene
-//    (such-index-generieren.ts `EBENEN_DEFAULT`), kantonaler Volltext kommt aus
-//    der Edge-Suche: 9 974.0 → 5 311.0 KB gzip (−46.8 %), neuer Deckel 5 850 KB.
-//
-//    W2·6-NKEY (28.7.2026): `norm-index.json` → `norm-index-erlasse.json` — der
-//    normKeys-Backfill trieb den Monolithen auf 724 KB gzip (Erlass-Ebene allein
-//    93 KB), der Nutzerpfad (kontextEntscheide → Verweis-Popover) braucht aber
-//    nur die Erlass-Ebene. Monolith bleibt Build-/Prüf-Artefakt (eigenes Budget:
-//    `NORM_INDEX_BUDGET_MB` in scripts/normtext/check-entscheide.ts). Schranke =
-//    Ist 93 KB + ~30 % Reserve. §15: kein Logikverlust, nur weniger Bytes. Wer
-//    `ladeNormIndex()` wieder in eine Komponente holt, muss hier neu eintragen.
-//
-//    Linse 4 (28.7.2026): derselbe Backfill hob register.json auf 756.9 KB gegen
-//    das 780-KB-Budget (97 % Ausnutzung, normKeys-Vollständigkeit) — bewusst
-//    nicht hier gelöst (§8); Verschlankung in eigene Projektion ist Folgearbeit.
-const DATEN_BUDGET: readonly (readonly [string, number])[] = [
-  ['public/rechtsprechung/register.json', 780 * 1024],
-  ['public/rechtsprechung/richter.json', 24 * 1024],
-  ['public/rechtsprechung/norm-index-erlasse.json', 120 * 1024],
-  ['public/such-index/artikel.json', 5_850 * 1024], // K3, 1.9.2026: Ist 5 311 KB gzip (Bund-only)
-  // ── W2·7-BEZUG: die drei grössten Bezugs-Shards ───────────────────────────
-  // Ein Nutzer lädt genau EINEN Shard (seinen Erlass), nie die Summe — Schranke
-  // ist der Grösste, nicht das Verzeichnis. DREI Einträge (Gegenprüfung Runde
-  // 1/I3, 29.7.2026): BV mit 123.3 KB gzip ist grösser als StPO (102.0 KB) —
-  // BGG als Ausreisser, BV/StPO als das, was ein grosser Erlass normal kostet.
-  //
-  // B7 (David-Auftrag 28.7.2026): Auslieferungs-Deckel «8 je Status» aufgehoben,
-  // jede Kante eines Artikels wird ausgeliefert (24'173 → 75'365 Kanten) —
-  // Budgets deshalb angehoben, nicht weil man an sie stiess (§8).
-  //
-  // Gemessen 29.7.2026 (`gzip -6 -c`, `serialisiereShard`; Gegenprüfung Runde
-  // 1/I2 — Vorher-Werte aus `git show origin/main`, nicht erinnert):
-  //   BGG   300.2 KB (vorher 44.1 KB, Faktor 6.8) — Art. 42 BGG trägt 4'140 Kanten
-  //   BV    123.3 KB (vorher 46.8 KB, Faktor 2.6)
-  //   StPO  102.0 KB (vorher 63.6 KB, Faktor 1.6)
-  //   StGB   77.8 KB (vorher 56.3 KB)
-  //
-  // §15 Logikverlust: keiner — Shard liegt nicht auf dem kritischen Pfad, lädt
-  // nur bei aktiver Instanz-Facette (`bezuegeLaden.ts`). Budgets = Ist + ~28 %.
-  ['public/rechtsprechung/bezuege/BGG.json', 384 * 1024],
-  ['public/rechtsprechung/bezuege/BV.json', 160 * 1024],
-  ['public/rechtsprechung/bezuege/STPO.json', 132 * 1024],
-];
-// Gemessen wird dist/ (Ausgelieferte Kopie), public/ nur als Rückfall —
-// CI-Befund 25.7.2026: public/such-index/artikel.json ist gitignored, entsteht
-// erst im Build; ohne dist/-Fallback lief das Tor rot mit «fehlt», obwohl die
-// Datei existierte. vite build kopiert public/ nach dist/.
-const daten = (rel: string): string | null => {
-  const inDist = join(process.cwd(), 'dist', rel.replace(/^public\//, ''));
-  if (existsSync(inDist)) return inDist;
-  const inPublic = join(process.cwd(), rel);
-  return existsSync(inPublic) ? inPublic : null;
-};
-console.log('check:perf-budget — Daten-Nutzlast (gzip):');
-for (const [rel, max] of DATEN_BUDGET) {
-  const p = daten(rel);
-  if (!p) { fehler.push(`${rel} fehlt (weder in dist/ noch in public/) — Budget nicht prüfbar.`); continue; }
-  const g = gz(p);
-  console.log(`  ${rel.replace('public/', '')}  gzip ${kb(g)}  (Budget ${kb(max)})`);
-  if (g > max) {
-    fehler.push(`${rel} ${kb(g)} > Budget ${kb(max)} — Daten-Nutzlast auf dem kritischen Pfad. `
-      + 'Entweder die Projektion verschlanken (Felder/Rollen auslagern) oder das Budget bewusst anheben.');
-  }
-}
+// 4) + 5) Daten-Nutzlast (feste Liste) + Struktur-Sidecars (Glob, grösste
+//    Einzeldatei) — ausgelagert, s. Kopfkommentar.
+fehler.push(...pruefeDatenBudgets());
 
 if (fehler.length) {
   console.error('\ncheck:perf-budget ROT:');

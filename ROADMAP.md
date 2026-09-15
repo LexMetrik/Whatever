@@ -732,6 +732,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] Zweitblick-Messung — erster Durchgang eingetragen (#658, VZV/AMBV: 1 echt vorbestehend, 7 Schein, 0 verpasst; 1/5, Schwelle §3 noch nicht erreicht), weitere vier im Alltag. §2/§3.
   - [ ] Phase 4 Skalierung läuft — Landungsquote 83 % (n=6), Median 30 min ⇒ Ticketzahl 3–5 offen; Jules-API mit Plan-Gegenlesen (D4) noch offen; Antigravity-Claude als Bauarbeiter (D7) **geparkt** (Bauleiter/David-Chat 4.9.2026, kein Zwischenmarkt zu Jules — Wiedervorlage nur bei Kontingent-Engpass). §2.
   - [ ] **Wiedervorlage «Google-Ökosystem-Sichtung»** *(Dach QS-FREMDAGENTEN, Phase 4)* — alle 3 Monate, erste Fälligkeit **Dezember 2026**: Gemini-Recherche (agy, `read_url(*)`) «neue Google-KI-Produkte/Modelle, Jules-/Antigravity-Changelog seit \<Datum\>», Bewertung ~30 min, Eintrag in Fahrplan §7. Maschinischer Anstoss: `retro:17` Regel (h) ab 30 Tagen seit `bibliothek/register/antigravity-stand.json`. §7.
+  - [ ] **`src/components/layout/Reiterleiste.tsx` (1237 Z.) und `src/lib/tabs.ts` (1205 Z.) über der Schlankheits-Schwelle** *(Nebenfund 15.9.2026, Gate lokal rot)* — gewachsen in den Reiterleisten-PRs #843–#845 (13./14.9.), unbemerkt, weil `check:schlankheit` bewusst nicht CI-pflichtig ist. Nur ins Baseline-Register aufgenommen (PR QS-PERF 15.9.), **Split offen** (§6.6: Reiterleiste in Leiste/Hover-Karte/Touch-Umordnen, tabs.ts in Speicher/Mappen/Ring).
   - [ ] **`scripts/plan/selbstoptKern.ts` über der Schlankheits-Schwelle, unregistriert gefunden** *(Nebenfund 4.9.2026)* — 1094 Z. (Schwelle 800), nur ins Baseline-Register aufgenommen, **Split offen**. Das Geschwister `src/tests/plan-selbstopt.test.ts` ist seit PR #699 gesplittet. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
 
 - [~] **Turso-Schreibkontingent: Sync bündeln, Unverändertes überspringen, Sperre klar melden** *(`QS-TURSO-SCHREIBVOLUMEN`, Vorfall 15.9.2026)*
@@ -793,8 +794,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-SEO-A11Y-GOVERNANCE.md](fahrplaene/FAHRPLAN-SEO-A11Y-GOVERNANCE.md) §4/§5
   (§-Sigel nachgezogen 30.8.2026 — Regel 11 bindet).
 
-- [ ] **Geräte-Last / Performance** *(`QS-PERF`, `[OF]`; **OR-Erst-Render und Register-Schnitt gehören zu Phase 1**, Entscheid 14.9.2026)*
-  <!-- @meta id: QS-PERF · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
+- [~] **Geräte-Last / Performance** *(`QS-PERF`, `[OF]`; **OR-Erst-Render und Register-Schnitt gehören zu Phase 1**, Entscheid 14.9.2026)*
+  <!-- @meta id: QS-PERF · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-PERFORMANCE.md -->
   Nicht merklich langsamer, ohne Logikverlust (§15). Der **Erst-Render des OR braucht 8,4–17,2 s
   bis zur Bedienbarkeit** (vermessen 17.8.2026, Nullprobe auf `main` 6/6 rot) — das ist die Wurzel
   des Shard-7-Rots und der Fix gehört hierher, nicht in eine Spec-Anpassung.
