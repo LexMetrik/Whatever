@@ -63,6 +63,7 @@ export interface BildRef {
   sha?: string;
 }
 
+import { artikelRohHtml } from './artikel-vorkommen.ts';
 import { artikelTextMitAufhebung } from './aufhebung-signal.ts';
 import { dekodiereEntities } from './html-entities.ts';
 import { normalisiereTabelle, type RohTabelle, type RohZelle } from './tabelle-normalisieren.ts';
@@ -95,47 +96,12 @@ export function extrahiereArtikel(html: string, token: string): ArtikelText | nu
 }
 
 /**
- * Roh-Inhalt des <article id="…">-Elements zu `ankerRoh` (ohne die
- * <article>-Tags selbst), inkl. Kopf-<h6> und Fussnoten-Apparat.
- *
- * W2·27 (15.9.2026) aus {@link extrahiereArtikelAusAnker} herausgezogen, damit
- * die Anker-Auflösung EINE Wahrheit bleibt (§5): Block-Parser und die
- * Label-Ableitung bei doppelter id (doppel-id-label.ts) greifen auf denselben
- * Artikel zu, statt die Vorkommens-Regex zweimal zu führen.
- *
- * @param ankerRoh - Voller Anker, optional mit Synthese-Suffix «__2» (N-tes
- *                   Vorkommen bei doppelter id, s. alleArtikelTokens/alleSchlussteilAnker).
- */
-export function artikelRohHtml(html: string, ankerRoh: string): string | null {
-  // M9/G7: doppelte id. Ein Erlass kann ZWEI <article id="…"> mit identischem
-  // Anker tragen (KKV art_126_z: «Anlagebeschränkungen» + «126z tredecies
-  // Wesentliche Mängel»; betmg/vwvg/pavo: aufgehobene Bereichs-Artikel «15a–15c»).
-  // alleArtikelTokens/alleSchlussteilAnker vergeben dem 2./3. Vorkommen einen
-  // Synthese-Suffix «__2»/«__3»; hier extrahieren wir dann das N-te Vorkommen des
-  // BASIS-Ankers. Ohne Suffix (Normalfall) = erstes Vorkommen, byte-gleich.
-  const suffix = ankerRoh.match(/^(.*)__(\d+)$/);
-  const basisAnker = suffix ? suffix[1] : ankerRoh;
-  const nth = suffix ? Number(suffix[2]) : 1;
-  // Escape des Ankers für die Regex (Unterstriche und «/» sind literal, kein
-  // Sonderzeichen — der «/»-Trenner des disp-Schemas bleibt unberührt).
-  const escapedToken = basisAnker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const articleRe = new RegExp(
-    `<article[^>]*\\sid="${escapedToken}"[^>]*>([\\s\\S]*?)</article>`,
-    'gi',
-  );
-  const treffer = [...html.matchAll(articleRe)];
-  const articleMatch = treffer[nth - 1];
-  return articleMatch ? articleMatch[1] : null;
-}
-
-/**
  * Wie extrahiereArtikel, aber mit dem VOLLEN Anker statt nur der Artikel-Nr. —
  * z.B. «art_335_c» (Haupttext) ODER «disp_u1/art_1» (Schlusstitel/UeB, M13).
  * Die Block-Parserei darunter ist identisch; nur das gesuchte <article id="…">
  * unterscheidet sich. So fällt der Schlusstitel (eigenes Anker-Schema
  * `disp_uN/art_*`, von alleArtikelTokens digit-only nicht erfasst) nicht mehr
  * stumm weg (§7-Vollabdeckung), ohne den Haupttext-Pfad anzufassen.
- *
  * @param ankerRoh - Voller Anker, optional mit Synthese-Suffix «__2» (N-tes
  *                   Vorkommen bei doppelter id, s. alleArtikelTokens/alleSchlussteilAnker).
  */

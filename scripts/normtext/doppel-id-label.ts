@@ -28,6 +28,8 @@
 // fallen über Ziffern/Tags heraus. Darum eine Form-Regel statt einer
 // hartkodierten Wortliste: ein künftiges «quaterdecies» trägt sich selbst.
 
+import { artikelRohHtml } from './artikel-vorkommen.ts';
+
 /** Erstes Überschriften-Element (<h1>…<h6>) im rohen <article>-Inhalt. */
 export function artikelKopfMarkup(artikelRoh: string): string | null {
   const m = artikelRoh.match(/<h[1-6]\b[^>]*>[\s\S]*?<\/h[1-6]>/i);
@@ -41,7 +43,9 @@ export function artikelKopfMarkup(artikelRoh: string): string | null {
 export function ordinalAusKopf(kopfMarkup: string): string | null {
   const treffer = new Set<string>();
   for (const m of kopfMarkup.matchAll(/<sup\b[^>]*>([\s\S]*?)<\/sup>/gi)) {
-    const text = m[1].replace(/<[^>]+>/g, '').replace(/ /g, ' ').trim();
+    // \u00a0 explizit: trim() entfernt das geschützte Leerzeichen nicht, ein
+    // «tredecies\u00a0» fiele sonst durch die Kleinbuchstaben-Regel.
+    const text = m[1].replace(/<[^>]+>/g, '').replace(/\u00a0/g, ' ').trim();
     if (/^[a-z]{3,}$/.test(text)) treffer.add(text);
   }
   return treffer.size === 1 ? [...treffer][0] : null;
@@ -60,4 +64,15 @@ export function doppelIdLabel(artikelRoh: string | null, basisLabel: string): st
   if (kopf === null) return null;
   const ordinal = ordinalAusKopf(kopf);
   return ordinal === null ? null : `${basisLabel}${ordinal}`;
+}
+
+/**
+ * Amtliches Label zu `ankerRoh` für den Snapshot-Generator: bei Synthese-Suffix
+ * «__N» aus dem Heading des N-ten Vorkommens, sonst — und wenn dort kein
+ * Ordinal ableitbar ist — unverändert `basisLabel`. Der Suffix bleibt in
+ * `id`/`artikel` (dort ist er der Schlüssel), nur das Label wird amtlich.
+ */
+export function labelFuerAnker(html: string, ankerRoh: string, basisLabel: string): string {
+  if (!/__\d+$/.test(ankerRoh)) return basisLabel;
+  return doppelIdLabel(artikelRohHtml(html, ankerRoh), basisLabel) ?? basisLabel;
 }

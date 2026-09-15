@@ -25,8 +25,13 @@ import { LocaleProvider } from '../components/locale';
 // ohne Bereichs-Kopftitel/Anhang — Details und Kommando: `nummer.ts`):
 //   bis 268 · ter 117 · quater 72 · quinquies 39 · sexies 25 · septies 20 ·
 //   octies 16 · novies 8 · decies 5 · undecies 2 · duodecies 2.
-// Höhere Glieder (terdecies …) führt der Bund-Korpus NICHT — sie bleiben
-// draussen und dienen hier als Negativfall (§7: nur Gemessenes).
+// NACHMESSUNG 15.9.2026 (231 Dateien): unverändert, PLUS «tredecies 1» — das
+// KKV-Label `126_z__2`, das W2·27 aus dem amtlichen Fedlex-Heading ableitet
+// (`<sup>tredecies</sup>`). Genau diese Prüfung hat den Zuwachs gemeldet
+// (Rot-Lauf 15.9.2026, Ausgabe im Commit-Body): die Reihe folgt dem Korpus,
+// nicht umgekehrt. Noch höhere Glieder (quaterdecies …) führt der Bund-Korpus
+// NICHT — sie bleiben draussen und dienen hier als Negativfall (§7: nur
+// Gemessenes).
 
 const NORMTEXT = join(process.cwd(), 'public/normtext');
 type Snapshot = { eintraege: Array<{ artikel: string }> };
@@ -37,7 +42,7 @@ describe('Z6 a · geteilte Suffix-Reihe (nummer.ts)', () => {
   it('trägt die im Korpus belegten Glieder — und nur die', () => {
     expect([...ART_SUFFIXE]).toEqual([
       'bis', 'ter', 'quater', 'quinquies', 'sexies',
-      'septies', 'octies', 'novies', 'decies', 'undecies', 'duodecies',
+      'septies', 'octies', 'novies', 'decies', 'undecies', 'duodecies', 'tredecies',
     ]);
   });
 
