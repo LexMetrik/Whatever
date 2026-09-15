@@ -33,6 +33,14 @@ falsch — korrigiert 30.8.2026). Karten abgeschlossener Sessions (älter als
 werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
+## Session 15.9.2026 (3) — Planung «Entstehung am Artikel Stufe 4» (3 PRs, kein Bau)
+
+- Drei Live-Recherchen → `bibliothek/materialien/entstehung-2026-09-15/`; Leitprinzip 8; fünf
+  Schritte `W2·6d-*` in `@queue`; K-7 + PDF-Kern; Fahrplan Materialien §12 (#893). Lehre: Host-Tausch
+  versagt bei fga-`doc` < 2017. Offen `[D]`: Rangfolge, Personendaten.
+- Nachlauf: #895 Hook-Hinweis PDF (Deckel riss), #896 dep-Chronik (Opus).
+- Vorlauf ohne Karte §12: #888 Frische-Tor, #889 Randtitel, #891 Notizen-Datei.
+
 ## Session 15.9.2026 (2) — Dossier «Rekursive Selbstverbesserung» + `QS-BEWAEHRUNG` gebaut (6 PRs)
 
 - Recherche-Auftrag David («recherchiere rekursive Selbstverbesserung bei Coding-Agenten, stell das unserem Prozess gegenüber»): Web-Recherche (Opus) + Repo-Karte (Sonnet) → Dossier `bibliothek/betrieb/rekursive-selbstverbesserung-gegenueberstellung-2026-09-15.md` (#881). Kernbefund: der §17-Kreislauf deckt die Schutzmechanismen der Literatur, hat aber kein Fitness-Signal für sich selbst — kein Tor und keine Regel wird je auf Bewährung gemessen.

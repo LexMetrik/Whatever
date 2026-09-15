@@ -136,6 +136,7 @@ Drei belegte Grenzen:
 | (f) Vernehmlassungs-Ergebnisbericht | mittel (F10) | **niedrig** — kein Doktyp «Ergebnisbericht» im Fedlex-Vokabular gefunden; liegt als PDF an der Verfahrensseite | Pflegeaufwand hoch | zurückstellen |
 | (g) BGer-Zitate der Botschaft (Kreuzverweis) | hoch (F9) | mittel — Regex auf «BBl JJJJ Nnnn» im BGE-Text, Jahr+Seite → fga-ELI ist **nicht** 1:1 | Fehlzuordnung → «maschinell» | nach (b) |
 | (c) Amtliches Bulletin je Artikel | mittel (F5) | **niedrig** — `Transcript` hat kein Artikel-Feld, nur Freitext | Heuristik + Datenvolumen | zurückstellen |
+| ↳ Ergänzung 15.9.2026 (Recherche B) | — | `Vote.Subject` (NR) trägt den Artikel STRUKTURIERT (181/188 gejoint); Ständerat nur Freitext | keine (Metadaten) | eigener Schritt `W2·6d-PARLAMENT-ARTIKEL` — siehe `../entstehung-2026-09-15/bulletin-vote-ursprung.md` |
 | (f2) Kommissionsberichte / Rapporteur (`Preconsultation`, `Rapporteur`) | mittel (F5) | mittel (OData-Join) | gering | Beiwerk zu (a) |
 | Referendum-Erkennung | mittel (F7) | **niedrig** — Doktyp 54 «Fakultatives Referendum» hat korpusweit **1** Ressource | Heuristik auf AS-Fussnote | nur als Fussnoten-Zitat |
 

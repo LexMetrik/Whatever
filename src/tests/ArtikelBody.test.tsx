@@ -69,8 +69,15 @@ describe('ArtikelBody', () => {
 
   // S3 (BS-Audit 23.6.2026): aufgehobene lit. werden mit Marke + LEEREM Text
   // gespeichert (kein fabrizierter «Aufgehoben.»-Text). Die Lesesicht zeigt das
-  // leere item gedämpft als «aufgehoben», die Marke (hier «g.») bleibt sichtbar.
-  it('lit. mit Marke aber leerem Text → Marke sichtbar, Text «aufgehoben»', () => {
+  // leere item gedämpft, die Marke (hier «g.») bleibt sichtbar.
+  //
+  // RE-BLESS W2·27 (15.9.2026, §6.3 deklariert): der Ersatztext war
+  // «aufgehoben» und ist jetzt «kein Text im Snapshot». Der Artikel hier LEBT
+  // (Abs. 1 trägt Wortlaut) und trägt keinen amtlichen Aufhebungsvermerk — dass
+  // lit. g aufgehoben sei, ist genau die Vermutung, die §8 verbietet. Mit
+  // amtlichem Beleg (`artikelAufgehoben`) steht «aufgehoben» weiter da: der
+  // Fall unmittelbar darunter.
+  it('lit. mit Marke aber leerem Text → Marke sichtbar, Text «kein Text im Snapshot»', () => {
     const out = renderToString(
       <ArtikelBody
         artikel="35"
@@ -88,7 +95,23 @@ describe('ArtikelBody', () => {
       />,
     );
     expect(out).toContain('g.'); // Marke bleibt sichtbar (Lücke geschlossen)
-    expect(out).toContain('aufgehoben'); // leeres item gedämpft
+    expect(out).toContain('kein Text im Snapshot'); // leeres item gedämpft, ohne Behauptung
+    expect(out).not.toContain('>aufgehoben<');
+  });
+
+  // Gegenprobe zum Fall darüber (§6.7): MIT amtlichem Artikel-Beleg bleibt es
+  // beim alten Wort — der Beleg deckt den leeren Block/das leere Item mit.
+  it('leeres lit. IN einem amtlich aufgehobenen Artikel bleibt «aufgehoben»', () => {
+    const out = renderToString(
+      <ArtikelBody
+        artikel="35"
+        passus={{ absatz: null }}
+        artikelAufgehoben
+        bloecke={[{ absatz: '1', text: '', items: [{ marke: 'g', text: '' }] }]}
+      />,
+    );
+    expect(out).toContain('aufgehoben');
+    expect(out).not.toContain('kein Text im Snapshot');
   });
 
   // M6 §1: Bei invertierter Verschachtelung (Ziff. → lit.) muss das Zitat der
@@ -325,12 +348,16 @@ describe('trenneAenderungshistorie (§3 — Extraktions-Artefakt-Trennung)', () 
     expect(historie).toBeNull();
   });
 
-  it('render: Ganzkörper-Aufhebung → «aufgehoben», KEIN Artefakt im Wortlaut (Historie gehört an den Fuss)', () => {
+  // RE-BLESS W2·27 (15.9.2026, §6.3 deklariert): nach dem Abtrennen der
+  // Historie bleibt ein LEERER Block ohne amtlichen Vermerk — der Ersatztext ist
+  // darum «kein Text im Snapshot» statt «aufgehoben». Die eigentliche Aussage
+  // des Falls (kein Artefakt im Wortlaut) ist unverändert.
+  it('render: Ganzkörper-Leerstelle → Ersatztext, KEIN Artefakt im Wortlaut (Historie gehört an den Fuss)', () => {
     const out = renderToString(
       <ArtikelBody bloecke={[{ absatz: null, text: 'g 25 25 Eingefügt durch Ziff. I des BG vom 5. Okt. 1990.' }]}
         artikel="40_g" passus={{ absatz: null }} />,
     );
-    expect(out).toContain('aufgehoben');
+    expect(out).toContain('kein Text im Snapshot');
     expect(out).not.toContain('25 25');
     expect(out).not.toContain('Eingefügt durch'); // Historie nicht im Wortlaut-Block
     expect(out).not.toMatch(/>\s*g 25/);

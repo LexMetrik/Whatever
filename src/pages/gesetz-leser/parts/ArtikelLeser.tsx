@@ -1,7 +1,9 @@
 import { useState, memo } from 'react';
 import { ArtikelBody, FnRef } from '../../../components/normtext/ArtikelBody';
 import { type InternRefs } from '../../../components/NormText';
-import { labelMitBereich, artikelGanzAufgehoben } from '../../../lib/normtext/darstellung';
+import {
+  labelMitBereich, artikelLeerstellenStatus, LEERSTELLE_KURZ, LEERSTELLE_ERLAEUTERUNG,
+} from '../../../lib/normtext/darstellung';
 import type { Fussnote } from '../../../lib/normtext/browse';
 import type { LeitfallRef } from '../../../lib/rechtsprechung/norm-index';
 import type { MaterialBezug } from '../../../lib/normtext/werkzeuge';
@@ -167,15 +169,22 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // Stelle» — die per-Artikel-ELI-URL des Snapshots (quelleUrl#art_…), validiert
   // im Builder (§5-SSoT; Kanton/aufgehoben/Synthese-Suffix ⇒ null = KEIN Link, §8).
   const amtlich = verifizierLinkArtikel(e, erlass);
-  // Vollständig aufgehobener Artikel → dezent + standardmässig eingeklappt
+  // Artikel ohne lebenden Wortlaut → dezent + standardmässig eingeklappt
   // (Auftrag David: «nicht so präsent», aufklappbar über den ▾/▸-Toggle).
-  // G-AUFH-ART: e.aufgehoben (amtlich verifiziertes Adapter-Signal) hat Vorrang
-  // vor der Text-Heuristik, falls gesetzt (s. artikelGanzAufgehoben-Doku).
-  const ganzAufgehoben = artikelGanzAufgehoben(e.bloecke, e.aufgehoben);
+  // W2·27 (15.9.2026): WAS der Leser dazu SAGT, hängt am Beleg, nicht am Befund
+  // — `artikelLeerstellenStatus` trennt den amtlich belegten Fall
+  // ('aufgehoben', e.aufgehoben) von der blossen Text-Heuristik
+  // ('leer-ungeklaert'). Herleitung in `lib/normtext/darstellung.ts`.
+  // Die FORM (Dämpfung, fehlendes Chevron, eingeklappt) ist für beide gleich:
+  // in beiden Fällen gibt es nichts zu entfalten — nur die Statuszeile
+  // unterscheidet, und genau das ist der §8-Punkt.
+  const leerstelle = artikelLeerstellenStatus(e.bloecke, e.aufgehoben);
+  const ganzAufgehoben = leerstelle === 'aufgehoben';
+  const ohneWortlaut = leerstelle !== 'lebt';
   // Welche Fussnoten der Apparat zeigt und in welcher Reihenfolge:
   // `./ArtikelLeser.fussnoten` (§6.6-Split, Herleitung dort).
   const fussAnzeige: Fussnote[] = fussnotenAnzeige(e, fussnoten);
-  const [artOffen, setArtOffen] = useState(!ganzAufgehoben); // einzelner Artikel ein-/ausklappbar; aufgehoben → zu
+  const [artOffen, setArtOffen] = useState(!ohneWortlaut); // einzelner Artikel ein-/ausklappbar; ohne Wortlaut → zu
   // Marker-Verteilung (Absatz · Item · Randtitel · Artikelebene) samt Inline-
   // Positionen und Klassen: `./ArtikelLeser.fussnoten` (§6.6-Split, Namen
   // unveraendert).
@@ -211,7 +220,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // wie jede Fussnote IMMER im DOM (data-fn-apparat, per data-fussnoten-CSS dämpfbar,
   // R9); die Statuszeile «· aufgehoben» (Artikelzustand) bleibt davon unberührt
   // immer sichtbar. Wortlaut nie erfunden (§1).
-  const aufhebungNotiz: Fussnote[] = ganzAufgehoben
+  // W2·27 (15.9.2026): auch für 'leer-ungeklaert' — GERADE dort steht in der
+  // Artikel-Fussnote die Auskunft, die der Leser braucht («Die Änderung kann
+  // unter AS … konsultiert werden», «Tritt zu einem späteren Zeitpunkt in
+  // Kraft»). Sie zu unterdrücken, weil kein Aufhebungsvermerk vorliegt, wäre
+  // das Gegenteil von §8. Wortlaut nie erfunden (§1).
+  const kopfNotiz: Fussnote[] = ohneWortlaut
     ? fussAnzeige.filter((f) => f.absatz == null && f.item == null)
     : [];
   // ═══ W2·24-R6b · DIE FORM DES ARTIKELS ══════════════════════════════════
@@ -365,7 +379,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 Chevron-Knopf der aktiven Artikel → die «Art. N» fluchten bündig auf
                 EINER Ebene (Art. 349–358 ZGB bündig zu Art. 348). Beide inline-flex
                 w-4 justify-center, damit die Glyphe nicht die Spaltenbreite verschiebt. */}
-            {ganzAufgehoben
+            {ohneWortlaut
               ? <span className="inline-flex w-4 shrink-0" aria-hidden />
               : <button type="button" onClick={() => setArtOffen((v) => !v)} aria-expanded={artOffen}
                   // WCAG 4.1.2 · konstanter, den Artikel BENENNENDER Name
@@ -402,16 +416,25 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 title="Im Volltext zu diesem Artikel springen"
                 className={istAnhang
                   ? 'font-display text-h3 font-semibold text-ink-900 hover:text-brass-700 text-left'
-                  : `num text-base font-bold tracking-wide hover:text-brass-700 text-left ${ganzAufgehoben ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</button>
+                  : `num text-base font-bold tracking-wide hover:text-brass-700 text-left ${ohneWortlaut ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</button>
             ) : (
               <a href={`#art-${e.artikel}`} className={istAnhang
                 ? 'font-display text-h3 font-semibold text-ink-900 hover:text-brass-700 no-underline'
-                : `num text-base font-bold tracking-wide hover:text-brass-700 no-underline ${ganzAufgehoben ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</a>
+                : `num text-base font-bold tracking-wide hover:text-brass-700 no-underline ${ohneWortlaut ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</a>
             )}{fnMarker}
             </span>
             {/* aufgehoben gedämpft, aber ink-500 (WCAG 4.5:1 hell+dunkel) statt
                 ink-400 (3.2–3.6:1) — essentieller Link-Text, kein incidental. */}
             {ganzAufgehoben && <span {...{ [SUCH_META]: '' }} className="text-xs italic text-ink-500">· aufgehoben</span>}
+            {/* W2·27 (15.9.2026) · §8: NUR die Text-Heuristik greift — der
+                Korpus weiss nicht, warum hier kein Wortlaut steht. Dieselbe
+                Dämpfung (text-xs italic ink-500) wie «· aufgehoben»: es ist
+                dieselbe Rolle (Artikelzustand), kein neuer Ton, keine neue
+                Farbe (§13). Ersatztext, kein Wortlaut → data-such-meta. */}
+            {leerstelle === 'leer-ungeklaert' && (
+              <span {...{ [SUCH_META]: '' }} className="text-xs italic text-ink-500"
+                title={LEERSTELLE_ERLAEUTERUNG}>· {LEERSTELLE_KURZ}</span>
+            )}
             {/* ── W2·5m · NACHBAR-ARTIKEL «‹ Art. 89 · Art. 90a ›» ───────────
                 Muster gesetze-im-internet/dejure/buzer, hier als Anker im
                 selben Dokument (der Leser zeigt den ganzen Erlass auf EINER
@@ -437,8 +460,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 Bedienwörter mehr stehen. */}
             {/* Amtliche Aufhebungsnotiz (eigene Zeile, dezent eingerückt) — M2: erst
                 auf Klick (hinter dem Fussnoten-Schalter), wie jede andere Fussnote.
-                Die Statuszeile «· aufgehoben» oben bleibt unabhängig immer sichtbar. */}
-            {ganzAufgehoben && aufhebungNotiz.length > 0 && (
+                Die Statuszeile oben bleibt unabhängig immer sichtbar. */}
+            {ohneWortlaut && kopfNotiz.length > 0 && (
               /* S2: `text-leser-fn` wie der Haupt-Apparat am Artikelfuss. Beide tragen
                  `data-fn-apparat`, sind also dieselbe Rolle — bis S2 lief dieser hier
                  auf `text-xs` (12 px) und der andere auf 11 px, zwei Grössen für eine
@@ -447,7 +470,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               /* T3 (29.8.2026): dieselbe Feinschrift-Spalte wie der Haupt-Apparat
                  am Artikelfuss — es ist dieselbe Rolle (§5). */
               <span data-fn-apparat className="basis-full pl-6 max-w-kleintext text-leser-fn text-ink-500">
-                {aufhebungNotiz.map((fn, i) => (
+                {kopfNotiz.map((fn, i) => (
                   <span key={i}>{i > 0 && '; '}{fnTextMitLinks(fn)}</span>
                 ))}
               </span>
@@ -468,6 +491,8 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
         {artOffen && (
         <div className="max-w-normtext min-w-0 overflow-x-clip">
           <ArtikelBody bloecke={e.bloecke} artikel={e.artikel} passus={{ absatz: null }} autolink
+            /* W2·27: der amtliche Artikel-Beleg deckt auch die leeren Blöcke. */
+            artikelAufgehoben={ganzAufgehoben}
             zitierKontext={{ artikelLabel: label, kuerzel: erlass.kuerzel, fassung: erlass.stand, permalinkBasis: `${basisPfad}#art-${e.artikel}` }}
             fnProAbsatz={fnProAbsatz} fnProItem={fnProItem}
             fnInlineAbsatz={fnInlineAbsatz} fnInlineItem={fnInlineItem}

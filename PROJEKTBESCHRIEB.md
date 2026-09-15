@@ -22,7 +22,15 @@ alle Rechtsanwender (Kanzlei, Gericht, Behörden, Steuerbehörden,
 Notariate, Treuhänder, Studierende), um das Schweizer Recht zu
 konsultieren und damit zu arbeiten — ausschliesslich auf Basis
 **amtlicher, urheberrechtsfreier Quellen** (Art. 5 URG, keine
-Kommentare). Vier «Klingen»:
+Kommentare).
+
+**Endziel (David 15.9.2026):** alles, was die Schweiz an amtlichen
+Behördeninformationen hat, kennen, am einzelnen Artikel verknüpfen und
+besser verlinken als die Quellen selbst — **Nachweisdatenbank statt
+Volltextsammlung** (16.8.2026). Kopiert wird nur, was am Artikel etwas
+zeigt, das der Link nicht kann (Zitat unter §7), und im eigenen Leser
+gehalten wird nur, was er besser darstellt als die Quelle (heute die
+Gesetze). Regel: `ROADMAP.md` Leitprinzip 8. Vier «Klingen»:
 
 1. **Konsultieren** — Gesetze des Bundes und der Kantone (`/gesetze`)
    mit amtlicher Gliederung, Marginalien, Fussnoten, Fassungs-Timeline

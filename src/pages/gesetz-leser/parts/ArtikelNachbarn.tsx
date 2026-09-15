@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { SUCH_META } from '../suchHighlight';
 import type { ArtikelNachbarn, NachbarZiel } from '../v3/nachbarArtikel';
+import { leerstellenWort } from '../../../lib/normtext/darstellung';
 
 // ═══ W2·5m · DIE NACHBAR-PFEILE IM ARTIKELKOPF ══════════════════════════════
 //
@@ -63,6 +64,9 @@ function Pfeil({ ziel, richtung, adresse }: {
   adresse?: (token: string) => string;
 }) {
   const wort = richtung === 'vor' ? 'Voriger Artikel' : 'Nächster Artikel';
+  // W2·27: «aufgehoben» nur, wo es amtlich belegt ist — sonst «kein Text im
+  // Snapshot» oder gar nichts. EIN Wort für alle Flächen (§5, darstellung.ts).
+  const zustandsWort = leerstellenWort(ziel.zustand);
   // EIN Satz Attribute für beide Hüllen (§5): der zugängliche Name, die
   // Selektor-Marke und die Optik dürfen zwischen den zwei Modi nicht
   // auseinanderlaufen — sie sind dieselbe Bedienung an derselben Zeile.
@@ -71,7 +75,7 @@ function Pfeil({ ziel, richtung, adresse }: {
     // WCAG 4.1.2 · der zugängliche Name benennt Richtung UND Ziel, nicht das
     // Zeichen. Der Aufhebungs-Zustand steht darin, weil er vor dem Sprung
     // bekannt sein muss (§8) — im Bild sagt ihn der Artikel selbst an.
-    'aria-label': `${wort}: ${ziel.label}${ziel.aufgehoben ? ' (aufgehoben)' : ''}`,
+    'aria-label': `${wort}: ${ziel.label}${zustandsWort ? ` (${zustandsWort})` : ''}`,
     // ── KEIN `text-ink-400` FÜR DEN AUFGEHOBENEN NACHBARN ──────────────────
     // Der erste Wurf dämpfte ihn auf `ink-400`. Die a11y-Sonde hat das am
     // 14.9.2026 gefangen (`e2e/a11y.e2e.ts`, Reader BS-640.100, hell UND
