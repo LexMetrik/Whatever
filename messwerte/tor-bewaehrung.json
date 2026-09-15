@@ -1,0 +1,1806 @@
+{
+  "_generiert": "scripts/analyse/tor-bewaehrung.ts — Belege maschinell ergänzt (--import-ci); Einträge der Quelle `manuell` dürfen von Hand stehen und werden nie überschrieben",
+  "schema": 1,
+  "ciFenster": {
+    "abgerufenAm": "2026-09-15",
+    "laeufeAbgerufen": 1000,
+    "fehlLaeufe": 143,
+    "aeltesterLauf": "2026-08-31",
+    "juengsterLauf": "2026-09-15"
+  },
+  "eintraege": [
+    {
+      "name": "abschluss-wache.py",
+      "art": "hook",
+      "seit": "2026-08-14",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "deploy-schutz.py",
+      "art": "hook",
+      "seit": "2026-08-14",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "dispatch-schutz.py",
+      "art": "hook",
+      "seit": "2026-07-20",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "gate-stopp.py",
+      "art": "hook",
+      "seit": "2026-06-11",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "lese-schutz.py",
+      "art": "hook",
+      "seit": "2026-07-10",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "struktur-aktuell.py",
+      "art": "hook",
+      "seit": "2026-06-22",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "struktur-rotieren.py",
+      "art": "hook",
+      "seit": "2026-07-10",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "subagent-wache.py",
+      "art": "hook",
+      "seit": "2026-08-14",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "tor-schutz.py",
+      "art": "hook",
+      "seit": "2026-06-10",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:artikel-bestand",
+      "art": "tor",
+      "seit": "2026-09-14",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:artikel-revisionen",
+      "art": "tor",
+      "seit": "2026-07-04",
+      "letztesRot": "2026-09-12",
+      "belege": [
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33939055043 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33940149623 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33942037561 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34694592166 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:be-sprengel",
+      "art": "tor",
+      "seit": "2026-09-12",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:be-sprengel-netz",
+      "art": "tor",
+      "seit": "2026-09-12",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:besetzung",
+      "art": "tor",
+      "seit": "2026-07-20",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:bezuege",
+      "art": "tor",
+      "seit": "2026-07-28",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:bezuege-zaehler",
+      "art": "tor",
+      "seit": "2026-09-07",
+      "letztesRot": "2026-09-12",
+      "belege": [
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33939055043 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33940149623 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33942037561 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34694592166 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:bibliothek",
+      "art": "tor",
+      "seit": "2026-06-07",
+      "letztesRot": "2026-08-14",
+      "belege": [
+        {
+          "datum": "2026-08-14",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-08-14T16:23:39.287Z rot"
+        }
+      ]
+    },
+    {
+      "name": "check:bilder",
+      "art": "tor",
+      "seit": "2026-07-01",
+      "letztesRot": "2026-09-12",
+      "belege": [
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34699340052 — Step «Quellen-Projektionen (PDF · PDF-Quellen · Bilder)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:botschaften-netz",
+      "art": "tor",
+      "seit": "2026-07-10",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:bs-entscheide",
+      "art": "tor",
+      "seit": "2026-07-19",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:bs-grossrat-netz",
+      "art": "tor",
+      "seit": "2026-09-12",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:bs-materialien",
+      "art": "tor",
+      "seit": "2026-09-12",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:caches",
+      "art": "tor",
+      "seit": "2026-06-07",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:ci-laeufe",
+      "art": "tor",
+      "seit": "2026-07-20",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:datenhaltung",
+      "art": "tor",
+      "seit": "2026-07-03",
+      "letztesRot": "2026-09-05",
+      "belege": [
+        {
+          "datum": "2026-09-05",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-05T00:12:56.661Z rot"
+        }
+      ]
+    },
+    {
+      "name": "check:design-tokens",
+      "art": "tor",
+      "seit": "2026-06-25",
+      "letztesRot": "2026-09-07",
+      "belege": [
+        {
+          "datum": "2026-08-31",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33442525670 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-08-31",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33449281531 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33565407431 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33586506023 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33607720159 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33612623522 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33642153445 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33650142604 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33652719251 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33656942059 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33899171879 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33909493740 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33944199290 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33966219930 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-06",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34027362732 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-07",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34084277020 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:dispatch-klausel",
+      "art": "tor",
+      "seit": "2026-07-20",
+      "letztesRot": "2026-09-13",
+      "belege": [
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33569851208 — Step «Dispatch-Pflichtklausel (§0-Generator lauffähig)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33569992221 — Step «Dispatch-Pflichtklausel (§0-Generator lauffähig)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33570230082 — Step «Dispatch-Pflichtklausel (§0-Generator lauffähig)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33570297345 — Step «Dispatch-Pflichtklausel (§0-Generator lauffähig)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33572040441 — Step «Dispatch-Pflichtklausel (§0-Generator lauffähig)» rot"
+        },
+        {
+          "datum": "2026-09-13",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34787738674 — Step «Dispatch-Pflichtklausel (§0-Generator lauffähig)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:dossiers",
+      "art": "tor",
+      "seit": "2026-08-03",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:e2e-flake",
+      "art": "tor",
+      "seit": "2026-09-08",
+      "letztesRot": "2026-09-08",
+      "belege": [
+        {
+          "datum": "2026-09-08",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34226958182 — Step «Flacker-Wächter (Retry-Grün ist kein Grün)» rot"
+        },
+        {
+          "datum": "2026-09-08",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34231123731 — Step «Flacker-Wächter (Retry-Grün ist kein Grün)» rot"
+        },
+        {
+          "datum": "2026-09-08",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34237307203 — Step «Flacker-Wächter (Retry-Grün ist kein Grün)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:e2e-shards",
+      "art": "tor",
+      "seit": "2026-07-19",
+      "letztesRot": "2026-09-11",
+      "belege": [
+        {
+          "datum": "2026-08-17",
+          "quelle": "fang-vermerk",
+          "hinweis": "19a989f93 — feat(leser-v3): H2 Suchverhalten — Trefferliste als Verzeichnis, Suchbereich, Esc/✕ ohne Sprung (+ S4, PX, QS-UI-HIGHLIG"
+        },
+        {
+          "datum": "2026-08-21",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-08-21T15:37:41.257Z rot"
+        },
+        {
+          "datum": "2026-08-21",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-08-21T15:39:32.065Z rot"
+        },
+        {
+          "datum": "2026-08-31",
+          "quelle": "fang-vermerk",
+          "hinweis": "ac6a2cf7b — Runde 2 / Batch A — e2e-Diät: V2-Erbe, Kopf-Konsolidierung, Überlauf-Trio (beweisgestützt) (#592)"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33948042538 — Step «e2e-Shard-Union-Wächter (Gruppen == playwright --list)» rot"
+        },
+        {
+          "datum": "2026-09-11",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34613098864 — Step «e2e-Shard-Union-Wächter (Gruppen == playwright --list)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:entscheide",
+      "art": "tor",
+      "seit": "2026-06-23",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:entstehung",
+      "art": "tor",
+      "seit": "2026-09-11",
+      "letztesRot": "2026-09-12",
+      "belege": [
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34686933136 — Step «Entstehung (Deckel · Anker-Provenienz · Deckung je Erlass)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:farbwelt",
+      "art": "tor",
+      "seit": "2026-07-11",
+      "letztesRot": "2026-09-07",
+      "belege": [
+        {
+          "datum": "2026-08-31",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33442525670 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-08-31",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33449281531 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33565407431 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33586506023 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33607720159 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33612623522 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33642153445 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33650142604 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33652719251 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33656942059 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33899171879 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33909493740 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33944199290 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33966219930 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-06",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34027362732 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-07",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34084277020 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:fedlex-abk-netz",
+      "art": "tor",
+      "seit": "2026-07-28",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:fedlex-versionen",
+      "art": "tor",
+      "seit": "2026-06-07",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:feed",
+      "art": "tor",
+      "seit": "2026-09-02",
+      "letztesRot": "2026-09-04",
+      "belege": [
+        {
+          "datum": "2026-09-04",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-04T20:44:54.320Z rot"
+        }
+      ]
+    },
+    {
+      "name": "check:frit-drift",
+      "art": "tor",
+      "seit": "2026-08-16",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:gegenpruefung",
+      "art": "tor",
+      "seit": "2026-07-01",
+      "letztesRot": "2026-09-05",
+      "belege": [
+        {
+          "datum": "2026-08-14",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-08-14T09:07:36.015Z rot"
+        },
+        {
+          "datum": "2026-08-15",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-08-15T12:51:33.106Z rot"
+        },
+        {
+          "datum": "2026-08-15",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-08-15T13:51:35.945Z rot"
+        },
+        {
+          "datum": "2026-08-15",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-08-15T22:29:38.422Z rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-04T20:44:54.455Z rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-04T20:52:27.827Z rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-05T00:12:43.572Z rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-05T00:14:39.201Z rot"
+        }
+      ]
+    },
+    {
+      "name": "check:golden-normtext",
+      "art": "tor",
+      "seit": "2026-07-27",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:grundart",
+      "art": "tor",
+      "seit": "2026-07-04",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:historie",
+      "art": "tor",
+      "seit": "2026-07-18",
+      "letztesRot": "2026-09-12",
+      "belege": [
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33939055043 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33940149623 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33942037561 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34694592166 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:invarianten",
+      "art": "tor",
+      "seit": "2026-07-01",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:leerstellen",
+      "art": "tor",
+      "seit": "2026-09-14",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:lik-frische",
+      "art": "tor",
+      "seit": "2026-07-18",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:linien-kanon",
+      "art": "tor",
+      "seit": "2026-07-04",
+      "letztesRot": "2026-09-07",
+      "belege": [
+        {
+          "datum": "2026-08-31",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33442525670 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-08-31",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33449281531 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33565407431 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33586506023 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33607720159 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33612623522 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33642153445 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33650142604 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33652719251 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33656942059 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33899171879 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33909493740 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33944199290 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33966219930 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-06",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34027362732 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-07",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34084277020 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:lizenzen",
+      "art": "tor",
+      "seit": "2026-09-02",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:materialien",
+      "art": "tor",
+      "seit": "2026-06-27",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:materialien-netz",
+      "art": "tor",
+      "seit": "2026-07-03",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:merge-schutz",
+      "art": "tor",
+      "seit": "2026-07-20",
+      "letztesRot": "2026-09-14",
+      "belege": [
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33561911761 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33561911761 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33569971184 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33569971184 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33570800541 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33570800541 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33580895076 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33580895076 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33606281476 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33606281476 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33606678683 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33606678683 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33644190041 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33644190041 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33645737562 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33645737562 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33653185651 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33653185651 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33895960418 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33895960418 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33930384849 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33930384849 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33938473575 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33938473575 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33954700992 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33954700992 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-07",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34169642442 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-07",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34169642442 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-11",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34623244710 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-11",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34623244710 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-11",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34632454254 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-11",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34632454254 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-11",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34651638933 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-11",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34651638933 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-11",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34655009449 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-11",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34655009449 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34665851155 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34665851155 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34672186640 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34672186640 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34679448155 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34679448155 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34679617631 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34679617631 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34689021097 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34689021097 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34690641043 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34690641043 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34693187048 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34693187048 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34694330056 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34694330056 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34827047447 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34827047447 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34828251591 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34828251591 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34832006845 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34832006845 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34837432792 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34837432792 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34838143744 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34838143744 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34840958328 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34840958328 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34842703945 — Step «Gegenprüfungs-Verdikt auf Risikopfaden (committeter Bereich)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34842703945 — Step «Merge-Schutz (Gegenprüfungs-Verdikt auf Risikopfaden)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:netz",
+      "art": "tor",
+      "seit": "2026-06-07",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:netz:kette",
+      "art": "tor",
+      "seit": "2026-09-02",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:normkeys",
+      "art": "tor",
+      "seit": "2026-07-28",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:normkeys-kanton",
+      "art": "tor",
+      "seit": "2026-08-31",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:normtext",
+      "art": "tor",
+      "seit": "2026-06-16",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:normtext-netz",
+      "art": "tor",
+      "seit": "2026-06-16",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:p-klassen",
+      "art": "tor",
+      "seit": "2026-07-05",
+      "letztesRot": "2026-09-07",
+      "belege": [
+        {
+          "datum": "2026-08-31",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33442525670 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-08-31",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33449281531 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-01",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33565407431 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33586506023 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33607720159 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33612623522 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33642153445 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33650142604 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33652719251 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33656942059 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33899171879 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-04",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33909493740 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33944199290 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33966219930 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-06",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34027362732 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        },
+        {
+          "datum": "2026-09-07",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34084277020 — Step «Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:paritaet",
+      "art": "tor",
+      "seit": "2026-07-02",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:pdf",
+      "art": "tor",
+      "seit": "2026-06-25",
+      "letztesRot": "2026-09-12",
+      "belege": [
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34699340052 — Step «Quellen-Projektionen (PDF · PDF-Quellen · Bilder)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:pdf-netz",
+      "art": "tor",
+      "seit": "2026-06-25",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:pdf-quellen",
+      "art": "tor",
+      "seit": "2026-07-11",
+      "letztesRot": "2026-09-12",
+      "belege": [
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34699340052 — Step «Quellen-Projektionen (PDF · PDF-Quellen · Bilder)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:pdf-quellen-netz",
+      "art": "tor",
+      "seit": "2026-07-11",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:perf-budget",
+      "art": "tor",
+      "seit": "2026-06-30",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:perf-lighthouse",
+      "art": "tor",
+      "seit": "2026-07-05",
+      "letztesRot": "2026-09-07",
+      "belege": [
+        {
+          "datum": "2026-09-02",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33590849073 — Step «Perf-Budget — Lighthouse-Metriken (4× CPU + langsames 4G)» rot"
+        },
+        {
+          "datum": "2026-09-07",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34086372353 — Step «Perf-Budget — Lighthouse-Metriken (4× CPU + langsames 4G)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:plan",
+      "art": "tor",
+      "seit": "2026-07-01",
+      "letztesRot": "2026-09-05",
+      "belege": [
+        {
+          "datum": "2026-09-05",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-05T11:39:09.309Z rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-05T13:19:50.292Z rot"
+        }
+      ]
+    },
+    {
+      "name": "check:raw-store",
+      "art": "tor",
+      "seit": "2026-09-02",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:revisionen",
+      "art": "tor",
+      "seit": "2026-07-10",
+      "letztesRot": "2026-09-12",
+      "belege": [
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33939055043 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33940149623 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33942037561 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34694592166 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:revisionen-netz",
+      "art": "tor",
+      "seit": "2026-07-10",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:revisionen-rectifies",
+      "art": "tor",
+      "seit": "2026-09-12",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:rss-oc",
+      "art": "tor",
+      "seit": "2026-07-18",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:schlankheit",
+      "art": "tor",
+      "seit": "2026-08-05",
+      "letztesRot": "2026-08-14",
+      "belege": [
+        {
+          "datum": "2026-08-14",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-08-14T15:47:33.900Z rot"
+        }
+      ]
+    },
+    {
+      "name": "check:seo-index",
+      "art": "tor",
+      "seit": "2026-07-03",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:smoke",
+      "art": "tor",
+      "seit": "2026-06-07",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:stand-zukunft",
+      "art": "tor",
+      "seit": "2026-08-29",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:steuerdeckel",
+      "art": "tor",
+      "seit": "2026-08-16",
+      "letztesRot": "2026-09-15",
+      "belege": [
+        {
+          "datum": "2026-08-21",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-08-21T15:37:39.260Z rot"
+        },
+        {
+          "datum": "2026-08-21",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-08-21T15:39:30.779Z rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33933346428 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33980251489 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33980830858 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33994107899 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33994511482 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33994806173 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33995322214 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-05T11:39:11.012Z rot"
+        },
+        {
+          "datum": "2026-09-07",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34171270544 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-08",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34175354473 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-08",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34227723147 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-11",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34635843162 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34711825135 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34829173447 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34849607661 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-14",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34853989098 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-15",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34955132776 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-15",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34959461857 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-15",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34961916302 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        },
+        {
+          "datum": "2026-09-15",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34963192787 — Step «Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:struktur-konsistenz",
+      "art": "tor",
+      "seit": "2026-06-30",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:suchindex",
+      "art": "tor",
+      "seit": "2026-06-28",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:sweep",
+      "art": "tor",
+      "seit": "2026-06-07",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:tabellen",
+      "art": "tor",
+      "seit": "2026-06-30",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:tarif-drift",
+      "art": "tor",
+      "seit": "2026-09-06",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:testtreue",
+      "art": "tor",
+      "seit": "2026-08-08",
+      "letztesRot": "2026-09-05",
+      "belege": [
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33958460915 — Step «Testtreue (§6.3 — refactor-Commits ändern keine Tests)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:tor-paritaet",
+      "art": "tor",
+      "seit": "2026-07-20",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:turso-frische",
+      "art": "tor",
+      "seit": "2026-07-20",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:ui-normzitate",
+      "art": "tor",
+      "seit": "2026-08-04",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:verfall",
+      "art": "tor",
+      "seit": "2026-06-07",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:verfall-ui",
+      "art": "tor",
+      "seit": "2026-06-28",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:verklebung",
+      "art": "tor",
+      "seit": "2026-07-24",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:vernehmlassungen-alter",
+      "art": "tor",
+      "seit": "2026-09-12",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:vernehmlassungen-netz",
+      "art": "tor",
+      "seit": "2026-07-10",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:verweis-inventar",
+      "art": "tor",
+      "seit": "2026-08-31",
+      "letztesRot": "2026-09-12",
+      "belege": [
+        {
+          "datum": "2026-09-04",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-04T20:45:02.444Z rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34696110073 — Step «Verweis-Inventar (Basislinie)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:vollstaendigkeit",
+      "art": "tor",
+      "seit": "2026-06-16",
+      "letztesRot": "2026-09-12",
+      "belege": [
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33939055043 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33940149623 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33942037561 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34694592166 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:zaehler",
+      "art": "tor",
+      "seit": "2026-07-03",
+      "letztesRot": "2026-09-12",
+      "belege": [
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33939055043 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33940149623 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/33942037561 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        },
+        {
+          "datum": "2026-09-05",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-05T00:12:36.791Z rot"
+        },
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34694592166 — Step «Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)» rot"
+        }
+      ]
+    },
+    {
+      "name": "check:zh-randtitel",
+      "art": "tor",
+      "seit": "2026-09-02",
+      "letztesRot": "2026-09-04",
+      "belege": [
+        {
+          "datum": "2026-09-04",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-04T20:45:08.560Z rot"
+        }
+      ]
+    },
+    {
+      "name": "check:zh-vollstaendigkeit",
+      "art": "tor",
+      "seit": "2026-09-01",
+      "letztesRot": "2026-09-04",
+      "belege": [
+        {
+          "datum": "2026-09-04",
+          "quelle": "lokaler-lauf",
+          "hinweis": "lokaler Gate-/Tor-Lauf 2026-09-04T20:45:07.414Z rot"
+        }
+      ]
+    },
+    {
+      "name": "check:zitate",
+      "art": "tor",
+      "seit": "2026-06-07",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:zitatgraph",
+      "art": "tor",
+      "seit": "2026-09-02",
+      "letztesRot": null,
+      "belege": []
+    },
+    {
+      "name": "check:zyklen",
+      "art": "tor",
+      "seit": "2026-07-12",
+      "letztesRot": "2026-09-12",
+      "belege": [
+        {
+          "datum": "2026-09-12",
+          "quelle": "ci-run-URL",
+          "hinweis": "https://github.com/davidgraf95-sys/LexMetrik/actions/runs/34668026699 — Step «Import-Zyklen» rot"
+        }
+      ]
+    }
+  ]
+}
