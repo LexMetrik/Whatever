@@ -142,7 +142,10 @@ Commit mit eigenem Roadmap-Trailer).
 - **`npm run selbstopt:erheben`** — auf Abruf bzw. über den Wächter; die
   Zeitreihe braucht keinen Snapshot je Session.
 - **`struktur-rotieren.py --check`** — läuft als SessionStart-Hook UND als
-  CI-Tor `check:steuerdeckel`; eine dritte Handprüfung fängt nichts.
+  CI-Tor `check:steuerdeckel`; eine dritte Handprüfung fängt nichts — ausser
+  nach einem Edit an `.claude/hooks/*.py` oder `scripts/check-*.ts`: dort
+  einmal von Hand vor dem Push (Flächen-Deckel; Beleg #895, 15.9.2026: ein
+  CI-Lauf verloren).
 - **Memory-Durchsicht** — nur wenn die Session das Memory berührt hat.
 - **Grössen-Check (`groesse:`)** — Feld existiert nicht mehr; Bündelung
   läuft über `feld:` (Station A Ziff. 1).

@@ -32,7 +32,18 @@ export function kollidiert(a: string | null, b: string | null): boolean {
   return a === b;
 }
 
-export function resolve(einheiten: Einheit[], queue: string[] = []): Buckets {
+/**
+ * @param chronikDone IDs, die `ROADMAP-CHRONIK.md` als `done` archiviert
+ *   (`chronikErledigte(...).done`). Ein `dep` auf eine solche ID ist ERFÜLLT —
+ *   sonst hinge jeder Schritt, dessen Vorgänger in die Chronik überführt wurde,
+ *   für immer in `wartetDep` und `plan:next` meldete ihn nie als baubar.
+ *   Default leer: `resolve` bleibt damit rein und ohne Dateisystem prüfbar.
+ */
+export function resolve(
+  einheiten: Einheit[],
+  queue: string[] = [],
+  chronikDone: ReadonlySet<string> = new Set(),
+): Buckets {
   // Dokumentreihenfolge = Bau-Reihenfolge. Vorher wurde lexikografisch nach ID
   // sortiert; damit waren alle ready-Einheiten gleichrangig und die Frage nach
   // dem «obersten offenen Schritt» (Ausführungs-Protokoll) nicht beantwortbar.
@@ -49,6 +60,12 @@ export function resolve(einheiten: Einheit[], queue: string[] = []): Buckets {
   // Dokument, also gewinnt auch bei LEERER Queue ein Produkt-Schritt.
   const sortiert = [...einheiten].sort((a, b) => a.pos - b.pos);
   const done = new Set(sortiert.filter((e) => e.etikett.status === 'done').map((e) => e.id));
+  // Archivierte Erledigungen zählen mit. ROADMAP.md gewinnt trotzdem: steht die ID
+  // dort, hat der Schleifendurchlauf oben bereits entschieden — ein in der ROADMAP
+  // OFFENER Schritt bleibt offen, auch wenn die Chronik einen alten `done`-Wortlaut
+  // desselben Namens trägt (Bestandsform, s. chronikErledigte in parse.ts).
+  const inRoadmap = new Set(sortiert.map((e) => e.id));
+  for (const id of chronikDone) if (!inRoadmap.has(id)) done.add(id);
 
   const readyNow: string[] = [];
   const wartetDep: { id: string; offen: string[] }[] = [];
