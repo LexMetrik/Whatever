@@ -865,6 +865,13 @@ jobs:
       - name: Normtext-Leerstellen (aufgehoben strukturell, Zuwachs-Riegel)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:leerstellen
+      # Wurzel-Fix Prüfer-Befund #848 (15.9.2026, §17): confidence.json trug
+      # nur ein von Hand gesetztes `erzeugt`-Datum, gekoppelt an nichts — alterte
+      # 3 Monate unbemerkt. Prüft korpus.sha (aus daten-manifest.json) und die
+      # Erlass-Anzahl gegen den aktuellen Dateibestand. Offline, <1 s.
+      - name: Confidence-Frische (korpus.sha ↔ daten-manifest.json)
+        if: needs.diff.outputs.art != 'doku'
+        run: npm run check:confidence-frische
       # Das §6-Beweismittel selbst: golden/normtext-snapshot.json wird vom
       # Generator PAUSCHAL ueberschrieben (PR #383 Runde 2: 55'763 -> 32'639
       # Eintraege aus einem partiellen Korpus) und wurde bis 27.7.2026 von KEINEM

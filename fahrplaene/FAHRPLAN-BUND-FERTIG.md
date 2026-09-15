@@ -192,7 +192,7 @@ migrieren, und der Sidecar hat heute keinen Drift-Riegel (§2, Zeile Sidecar).
 
 | Nebenfund | Beleg | Zuständig |
 |---|---|---|
-| `confidence.json` stammt vom **23.6.2026** (150 Erlasse; heutiger Lauf ~1 566) ⇒ Qualitätsbild veraltet | `public/normtext/confidence.json` | `W2·27` (Neulauf) |
+| `confidence.json` stammt vom **23.6.2026** (150 Erlasse; heutiger Lauf ~1 566) ⇒ Qualitätsbild veraltet | `public/normtext/confidence.json` | `W2·27` (Neulauf; Frische-Tor `check:confidence-frische` seit 15.9.2026) |
 | Korpus stammt aus **drei Generationsläufen** (113 Dateien 29.8. · 109 Dateien 12.9. · 6 Dateien 4.9.2026) — kein einheitlicher Stand | Dateizeitstempel `public/normtext/bund/` | `W2·27` (Messung dokumentiert; Neubau erst mit `W2·5n-BUND-VOLL`) |
 | Struktur-Sidecar **ohne eigenen Drift-Riegel**: 216/228 Dateien ohne `stand`/`fassungsToken` — Randtitel und Fussnoten altern unbemerkt; passt zum Befund «Golden-Token blind für Randtitel» (`sha-bloecke.ts:50`) | Messung §1.1 | `W2·27` (Risikopfad) |
 | **KKV-Token `126_z__2`** fehlt im Struktur-Sidecar (Snapshot 25 463 vs. Struktur 25 462) — ein Artikel ohne Gliederung, Randtitel und Fussnoten | `KKV.json` | `W2·27` |
