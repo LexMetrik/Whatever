@@ -52,6 +52,12 @@
    Invarianten über allen Feldern. **Zustandslosigkeit** (kein Dossier-Creep) ist Querschnittsregel.
 7. **Geräte-Last: nicht merklich langsamer — ausser bei Logikverlust** (CLAUDE.md §15): bei Konflikt
    gewinnt **immer die Treue**; jede Optimierung trägt eine Logikverlust-Bewertung.
+8. **Endziel: alles Amtliche kennen, am Artikel verknüpfen, nur das Nötige kopieren** (David
+   15.9.2026; «Nachweisdatenbank statt Volltextsammlung», 16.8.2026). Speicherklassen, je Quelle
+   die niedrigste mit Mehrwert: **Verweis** (Regel) → **Zitat** (§7 a–d, nur wenn der Block am
+   Artikel zeigt, was der Link nicht kann) → **Korpus** (nur wo unser Leser mehr kann als die
+   Quelle). Aufnahme nur, wenn amtlich und frei (oder Auflagen erfüllbar), Artikel-Anker vorhanden,
+   Mehrwert-Test bestanden. Spec: [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.1.
 
 **Verifikations-Blockaden (einmal definiert, danach nur referenziert):**
 - **§4 — Lizenz/CORS für Live-Rechtsprechung** (CC-BY-SA vs. Art. 5 URG, CORS/Rate-Limits
@@ -76,7 +82,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
      Das Lagebild liest diesen Block mechanisch (davidFragen, scripts/plan/bildDaten.ts) —
      beantwortete Fragen HIER löschen, dann verschwinden sie von der Seite (§5). -->
 
-<!-- @queue: W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·22-VERWEIS-FEDLEX, W2·5m-LESER-V3, QS-PERF, W2·5n-BUND-VOLL, W2·21-ZULIEFERER, W2·13-KANTONE-DATEN, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT, W2·14-SIGNAL, W2·6 -->
+<!-- @queue: W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·22-VERWEIS-FEDLEX, W2·5m-LESER-V3, QS-PERF, W2·5n-BUND-VOLL, W2·21-ZULIEFERER, W2·6d-VERFAHREN-RECHERCHE, W2·6d-PARLAMENT-ARTIKEL, W2·13-KANTONE-DATEN, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT, W2·14-SIGNAL, W2·6, W2·6d-BOTSCHAFT-TEXT, W2·6d-BULLETIN-VOTEN, W2·6d-VERNEHMLASSUNG-DOKUMENTE -->
 <!-- ^ SSoT der Bau-Reihenfolge: plan:next wertet die @queue VOR der Dokumentreihenfolge aus;
      Integrität erzwingt check:plan Regel 8. Priorität ändern = NUR diese Zeile ändern.
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
@@ -243,7 +249,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   Zeile. **Detail:** [FAHRPLAN-KANTONE.md](fahrplaene/FAHRPLAN-KANTONE.md) §2.
   - [ ] **K-4 · Einzel-Nachzüge Stand/Currency** *(F14/F9 + SO-Lektion)* — Invariante «stand ≤ Generierungsdatum» ins Tor `check:normtext`. §1-A.
   - [ ] **K-6 · Quellen-Hygiene: lexfind → amtlich + Dedupe** *(F7/F8/F15/F11/F25-Keys/F22)* — pro Kanton eine Tranche; K-6a vor K-6d. §1-A.
-  - [ ] **K-7 · PDF-Werkstatt VD/SZ/ZH + Range-Platzhalter** — Teil a ist das **harte Dehyphenations-Gate**; ohne es bleibt jeder FR/VS/AR-PDF-Nachzug gesperrt. §1-A.
+  - [ ] **K-7 · PDF-Werkstatt VD/SZ/ZH + Range-Platzhalter** — Teil a ist das **harte Dehyphenations-Gate**; ohne es bleibt jeder FR/VS/AR-PDF-Nachzug gesperrt. §1-A. **Teil b (15.9.2026): PDF-Kern** — ein Leser aus `adapter-pdf.ts` + `adapter-zh-pdf.ts` (Golden byte-gleich), Fehlerraten-Messgeschirr, pdfjs↔PyMuPDF-Vergleich; Vorbedingung `W2·6d-BOTSCHAFT-TEXT` B. Detail: Fahrplan Materialien §12.3 Etappe 1.
   - [ ] **K-8 · xhtml-`<p>`-Strukturerhalt** *(F21)* — Schema nur additiv, Golden-Diff korpusweit offline. §1-A.
   - [ ] **K-9 · Erlass→Werkzeug-Brücke Kanton** *(F38)* — Build-Zeit-Inversion der Tarif-`quelleUrl`s + Konsistenz-Tor. §1-A.
   - [ ] **K-10 · AR-Sidecar-Batch** *(F30-AR)* — nur amtliche Überschriften, **Einzel-Erlass-POC vor dem Batch**. §1-A.
@@ -305,17 +311,45 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 
 - [x] **Entstehung am Artikel — Daten: Verfahrens-Ereignisse, Historie-Kopf, Botschafts-Keys, Anker, Parlament** *(`W2·6c-ENTSTEHUNG-DATEN`, §14-Intake 6.9.2026, Design-Freigabe David 6.9.2026)*
   <!-- @meta id: W2·6c-ENTSTEHUNG-DATEN · status: done · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
-  Ziel: die Fassungskette je Artikel (liegt als G-HIST-Shard vor) mit der Verfahrenskette der Vorlage
-  (Fedlex-Projektgraph, Curia Vista) und der Botschaft verbinden — ohne zweiten Parser, ohne Volltext,
-  ohne Personendaten. Grenzen: Bund zuerst; Historie-Generator und -Shard bleiben unangetastet; Curia
-  nur aggregiert, Monatslauf statt Gate-Kette. Etappen E1, E2, E4. **Bau erst auf Davids Go.**
-  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.
+  ✅ Erledigt 11.9.2026 — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (Entstehung).
 
 - [x] **Entstehung am Artikel — Synopse alt/neu ab 2021 und Entwurf↔Beschluss** *(`W2·6c-ENTSTEHUNG-SYNOPSE`, 6.9.2026; absorbiert den Datenanteil von M16)*
   <!-- @meta id: W2·6c-ENTSTEHUNG-SYNOPSE · status: done · blocker: null · dep: [W2·6c-ENTSTEHUNG-DATEN] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
-  Diff zweier Fedlex-Konsolidierungen je Artikel (HTML nur ab Stand 1.1.2021), gespeichert wird nur der
-  Alt-Block als §7-Zitat mit Deckel 8 MB / 2 MB je Erlass; Vor-Messung E5.0 vor dem Bau. Etappen E5.0, E5, E6.
-  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §11.
+  ✅ Erledigt 11.9.2026 — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (Entstehung).
+
+- [ ] **Entstehung am Artikel — Deep Research Gesetzgebungsprozess** *(`W2·6d-VERFAHREN-RECHERCHE`, §14-Intake 15.9.2026)*
+  <!-- @meta id: W2·6d-VERFAHREN-RECHERCHE · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Verfahrensmodell «Wie entsteht ein Bundeserlass» aus amtlichen Quellen, je Schritt Norm · Akteur ·
+  Dokument · Publikationsort · Datenspur; Vorlage = Entwurf 15.9.2026. Recherche, kein Bau; Bund
+  zuerst; Gegenprüfung zweites Modell; Abnahme David `[D]` blockiert die Daten-Etappen nicht.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 0.
+
+- [ ] **Entstehung am Artikel — Nationalrats-Abstimmungen je Artikel + Vehikel der Vorlage** *(`W2·6d-PARLAMENT-ARTIKEL`, 15.9.2026)*
+  <!-- @meta id: W2·6d-PARLAMENT-ARTIKEL · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Curia-Vista-`Vote` je Detailberatungs-Abstimmung strukturiert am Artikel (Chip «im Rat
+  umstritten») + `BusinessType` im Verfahrens-Block. Grenzen: keine Personendaten, Auflagen der
+  Parlamentsdienste am Block, Monatslauf; Risikopfad ⇒ Gegenprüfung.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 2.
+
+- [ ] **Entstehung am Artikel — Botschaftstext je Artikel (Erläuterung als §7-Zitat)** *(`W2·6d-BOTSCHAFT-TEXT`, 15.9.2026; Phase 3)*
+  <!-- @meta id: W2·6d-BOTSCHAFT-TEXT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Stufe A: XML ab 2022 + DOCX 2020/21 (kapitelscharf deterministisch, artikelscharf nur wo
+  strukturell); B: PDF/A 1999–2019 auf dem PDF-Kern (K-7); C: Kommissionsberichte + Stellungnahmen
+  BR. **Auflagen:** erst nach Synopse E5/E6 (#794); Erläuterung an die Fassung gebunden, die aus der Botschaft hervorging;
+  Mantel über Eltern-Level; URLs nur aus `isExemplifiedBy`; nichts vor 1999; Gegenprüfung.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappen 3–5.
+
+- [ ] **Entstehung am Artikel — Bulletin-Voten Bundesrat/Kommission: Metadaten + Deep-Link** *(`W2·6d-BULLETIN-VOTEN`, 15.9.2026; Phase 3)*
+  <!-- @meta id: W2·6d-BULLETIN-VOTEN · status: ready · blocker: null · dep: [W2·6d-PARLAMENT-ARTIKEL] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Voten nach Funktion, Rat, Datum, Lesung mit Deep-Link ins Amtliche Bulletin; Artikel-Zuordnung
+  «maschinell» mit ausgewiesener Präzision; SR-Stimmenzahlen aus dem Text. **Kein Redetext, kein Name.**
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 6.
+
+- [ ] **Entstehung am Artikel — Vernehmlassungs-Dokumente als Verweise** *(`W2·6d-VERNEHMLASSUNG-DOKUMENTE`, 15.9.2026; Phase 3)*
+  <!-- @meta id: W2·6d-VERNEHMLASSUNG-DOKUMENTE · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Vorentwurf, Erläuternder Bericht, Ergebnisbericht je Verfahren (für Verordnungen die einzige
+  Entstehungsquelle). Grenzen: Weg zuerst erheben, nur Verweis-Klasse.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 7.
 
 - [ ] **Entstehung am Paragraph — Basel-Stadt (vor Zürich)** *(`R12a-ENTSTEHUNG-BS`, Vormessung
   lex-recherche 12.9.2026)*
@@ -659,17 +693,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 
 - [x] **Drift-Nachverifikation der Tarif-Stammdaten (34 Erlasse, 93 Einträge)** *(`W3-TARIF-NACHVERIFIKATION`, Auftrag David 6.9.2026, Befund Tor-Erstlauf `check:tarif-drift`)*
   <!-- @meta id: W3-TARIF-NACHVERIFIKATION · status: done · blocker: null · dep: [] · feld: werkzeuge -->
-  ✅ Gelandet 8.9.2026 (PR #764, Gegenprüfung bestanden) — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6). Ziel/Grenzen/Belegkette wörtlich: ROADMAP-CHRONIK.md, Umschichtung 8.9.2026 (Landung). Offene Folgeschritte unten.
-  - [ ] **OW Beurkundungstarif Ziff. 35 lit. a/b — Zuordnungsverdacht** *(Nebenfund 6.9.2026)* — `beurkundung.ts` (OW) etikettiert die Staffel als lit. a; amtlich ist lit. a ein Rahmen 500–2000, und erst lit. b verweist auf Ziff. 31 Bst. a. Kodiert ist lit. b. Eigener Prüfschritt: Wert und Etikett zusammenführen.
-  - [ ] **VS LTar Art. 15 — zwei Einträge, dieselbe Norm, verschiedene Begründung** *(§5, 6.9.2026)* — `schlichtung.ts` (50–500) und `nicht-vermoegensrechtlich.ts` (60–500) berufen sich beide auf Art. 15 mit demselben Hinweis-Baustein; amtlich sind Abs. 1 lit. a/b (170–350) und Abs. 2 (60–500) verschiedene Tatbestände. Klären, welcher Absatz je Rechner gilt, dann EINE Quelle.
-  - [ ] **Härtungen `check:tarif-drift`** *(Wurzelbefunde 6.9.2026, je mit Rot-Beweis; `scripts/tarif/**` ist Risikopfad)* — (a) zeigen `artikel` und `quelleUrl` auf verschiedene Erlasse, urteilt das Tor über den falschen (belegt AG 725.100/725.110, SH 221.101/211.433) ⇒ «unklar/Zuordnung» statt DRIFT; (b) pinnt die URL die geltende Fassung, bleibt ein uralter `stand` unsichtbar (11 FR-261.16-Einträge trugen «7.10.1986» bei Pin auf 2016) ⇒ Zusatzbefund «Pin aktuell, stand > 1 Jahr daneben»; (c) 13 Einträge nannten das Beschlussdatum GENAU DIESER Fassung (FR 214.5.16, BS 154.810) ⇒ als gültigen Stand akzeptieren.
-  - [ ] **Werkzeug-Falle Norm-PDFs** *(6.9.2026, gehört ins Fehlerbuch-Dach `W2·18-FEHLERBUCH`)* — `Read` auf PDF > 200 KB blockt `lese-schutz.py`, `pdftotext` fehlt auf dieser Maschine; funktionierender Ersatz: PyMuPDF (`python3 -c "import fitz; …"`).
-  - [ ] **Konflations-Wächter breiter** *(Gegenprüfungs-Nachtrag D2, 12.9.2026, PR #816, gehört ins Fehlerbuch-Dach `W2·18-FEHLERBUCH`)* — Befund-Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (5); Bau-Einheit offen, Zeiger genügt zur Steuerung.
-  - [ ] **`BMV`-Zitat löst auf die aufgehobene Fassung auf** *(Nebenfund PR #823, 12.9.2026, gehört ins Fehlerbuch-Dach `W2·18-FEHLERBUCH`)* — Befund-Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (5); Bau-Einheit offen, Zeiger genügt zur Steuerung.
-  - [ ] **Prerender-Shell nennt aufgehobene Erlasse «geltend»** *(Nebenfund PR #823, 12.9.2026, gehört ins Fehlerbuch-Dach `W2·18-FEHLERBUCH`)* — Befund-Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (5); Bau-Einheit offen, Zeiger genügt zur Steuerung.
-  - [ ] **Tabellen-`<dt>`-Marken «–»/[tab] als Aufzählungsmarken extrahiert** *(Nebenfund PR #836, 12.9.2026, gehört ins Fehlerbuch-Dach `W2·18-FEHLERBUCH`)* — betrifft ZPO art_250, StG art_5 f., BV art_197: Extraktions-Altlast, bei der `extrahiere-fedlex.ts` Tabellen-`<dt>`-Zellen wie Aufzählungs-`<dt>` behandelt und ihnen fälschlich eine Aufzählungsmarke zuweist. Fix im Extraktor — Tabellen-`<dt>` von Aufzählungs-`<dt>` trennen —, nie in den Daten selbst geflickt (§5).
-  - [ ] **216 Struktur-Sidecars ohne `stand`/`fassungsToken`** *(Nebenfund PR #836, 12.9.2026, gehört ins Fehlerbuch-Dach `W2·18-FEHLERBUCH`)* — additiver Alt-Rollout aus #824: nur die 12 Sidecars aus #838 tragen die Felder bereits, die übrigen 216 noch nicht. Eigener Regenerations-Schritt aus dem Cache mit Skelett-Nullprobe, kein Inhaltsdiff erwartet.
-  - [ ] **Test-Budget `scripts/datenhaltung/suche.test.ts`** *(Messung 6.9.2026 zum bekannten Wurzel-Fix-Kandidaten)* — der `beforeAll` baut den ganzen Suchindex bei 95 s Budget. Seriell je ein Lauf: sauberer `main` 91.79 s grün (3 s Luft), Worktree kalt 119.72 s rot, warm 43.28 s grün. Ausschlag ist kalt/warm, nicht Inhalt (+0.07 % Korpus). Fixture verkleinern oder Budget an die kalte Messung binden.
+  ✅ Erledigt — Wortlaut der Erledigt-Prosa: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (Entstehung).
 
 ---
 

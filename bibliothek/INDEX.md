@@ -224,6 +224,18 @@ abgeschlossen/zurückgezogen), Frist aus `ConsultationPhase`; Reichweite ~2000�
 `check:vernehmlassungen-netz` + Offline-Assertion `laufend && fristEnde<heute ⇒ rot`. Maschinell
 zugeordnet (grob bei Mantelvorlagen, §8); fachliche Abnahme David offen.
 
+**Entstehung am Artikel — Recherche-Runde 15.9.2026 (Stufe 4):** [materialien/entstehung-2026-09-15/README.md](materialien/entstehung-2026-09-15/README.md) —
+drei Recherchen (read-only, Live-Abrufe 15.9.2026) zur Datenherkunft für
+Botschaftstext je Artikel, Parlament je Artikel und Ursprung: Fedlex-
+Manifestationen 407/407 (PDF/A alle born-digital, XML/HTML erst ab 2022: 43,
+DOCX 2020/21: 54 mit Stil `TitelArtikelKomm`; Erläuterungs-Kapitel 43/43 als
+`<level>`, Artikel-Ebene strukturell 7/43); Curia Vista `Vote.Subject` liefert
+NR-Abstimmungen je Artikel strukturiert, Bulletin-Voten→Artikel nur ~81 %/50 %
+(maschinell), Ursprung = Vehikel deterministisch, Auslöser nur Prosa;
+Verfahrensmodell Bund (Art. 141 Abs. 2 ParlG wörtlich, Fedlex-Code-Lücken).
+Regel deterministisch je Stufe in Fahrplan §12. Pflege: Drift über
+`Last-Modified`/`Modified`. Maschinell erhoben; fachliche Abnahme David offen.
+
 **Entstehung am Artikel — Recherche-Runde 6.9.2026:** [materialien/entstehung-2026-09-06/README.md](materialien/entstehung-2026-09-06/README.md) —
 sieben Sonnet-Recherchen (read-only, Live-Abrufe 6.9.2026) zu Materialien-
 Verzahnung und Gesetzgebungsprozess: Fedlex-Wissensgraph `type-projet`-Kette
