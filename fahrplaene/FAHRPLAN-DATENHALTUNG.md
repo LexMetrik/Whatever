@@ -249,6 +249,59 @@ David-Gate; es wurde kein echter Turso-Lauf gefahren (Env fehlt lokal).
 
 ---
 
+## §17 · Turso-Schreibkontingent — QS-TURSO-SCHREIBVOLUMEN *(15.9.2026)*
+
+**Anlass.** Mail Turso 15.9.2026 «Writes Blocked» (Organisation ravedave, Gratisplan). Befund:
+`turso-sync.yml` läuft bei jedem Push auf `main` mit Korpus-Diff und baut alle fünf HOT-Tabellen
+samt FTS5-Schatten-Tabellen komplett neu — 171 065 Zeilen je Lauf (Lauf 14.9.2026 16:10 UTC),
+39 Push-Läufe vom 1.–14.9.2026 ≈ 6,7 Mio Zeilen, und Turso zählt bei indexierten Tabellen jede
+betroffene Index-Zeile zusätzlich (turso.tech/pricing, FAQ «rows written», Abruf 15.9.2026). Lesen
+war nie gesperrt: `api/suche` lieferte am 15.9. HTTP 200 mit Treffern. Gesperrt bleibt nur der
+Sync; Reset am 1. des Monats. Entscheid David 15.9.2026: nicht zahlen, Wurzel-Fix bauen.
+
+**Ziel (Schritt `QS-TURSO-SCHREIBVOLUMEN`).** Schreibvolumen ≥ 10× kleiner, Wächter bleiben
+ehrlich (§8), kein neuer Tor, der nicht scheitern kann (§6.7).
+
+**Bausteine — Ziel und Grenzen, nicht der Weg:**
+
+1. **Bündeln.** Der Sync läuft nicht mehr je Push, sondern EINMAL täglich (bestehender Cron
+   05:17 UTC) plus `workflow_dispatch`. Der Push-Trigger auf Datenpfade entfällt. Der bisherige
+   separate `frische`-Job wird in den Tageslauf integriert (Sync → `check:turso-frische` →
+   Live-Parität); sein harter Token-Riegel («ohne Token ROT, nie stumm grün») bleibt für den
+   Cron-Lauf erhalten. Folge, ehrlich benannt: ein gelandeter Korpus-Stand ist bis zum nächsten
+   Tageslauf in der Suche noch nicht sichtbar (Seite selbst ist aktuell). Kopf-Kommentar des
+   Workflows nachziehen.
+2. **Tabellen-Skip.** Je HOT-Tabelle wird eine **Signatur** in `sync_meta` hinterlegt
+   (`sig_<tabelle>`), die ALLES abdeckt, was den Remote-Inhalt bestimmt: Daten-SHA (aus
+   `daten-manifest.json`, wo vorhanden), Ziel-DDL der Tabelle und für FTS5 den Inhalt der lokal
+   gebauten Schatten-Tabellen (deterministisch, byte-gleich belegt in `turso-fts-index.ts`).
+   Stimmt die lokale Signatur mit der remote hinterlegten überein UND stimmt die Remote-Zeilenzahl
+   mit dem Soll, wird die Tabelle übersprungen. `daten-manifest.json` trägt keine FTS-Einträge —
+   die FTS-Signatur wird aus dem lokalen Artefakt gerechnet, nicht erfunden. Bei Vollskip werden
+   nur `sync_meta`-Marken geschrieben (`stand`, `manifest_sha`), damit Prüfung 4 (ALTER) des
+   Wächters weiter trägt. Prüfung 0 (SCHEMA) des Wächters darf durch den Skip nie umgangen werden:
+   DDL-Änderung ⇒ andere Signatur ⇒ Neuaufbau.
+3. **Sperre erkennen.** Antwortet Turso beim Schreiben mit der Kontingent-Sperre (Antwortform
+   belegt durch Sonde Lauf 34948342923, 15.9.2026: HTTP 200, je Statement ein Pipeline-Fehler mit dem Text «Operation was blocked: SQL write operations are forbidden (writes are blocked, do you need to upgrade your plan?)» — also kein HTTP-Status, sondern ein stmt-Fehler), endet der Sync mit
+   eigener `::error::`-Meldung («Turso: Schreiben gesperrt — Monatskontingent; Replika bleibt auf
+   Stand <sync_meta.stand>, Lesen/Suche läuft weiter; Reset am 1. des Monats») und **Exit 3**
+   (unterscheidbar von Datenfehlern, Exit 1). `check:turso-frische` bleibt Lese-Tor und unverändert.
+4. **Prüfbarkeit.** Skip-Entscheid und Sperr-Erkennung als reine Funktionen in einem eigenen
+   Modul (`scripts/datenhaltung/turso-skip.ts` o. ä., Muster `turso-transport.ts`), mit Tests; §6.7:
+   jeder neue Test einmal rot gezeigt. Golden bleibt byte-gleich (kein Leser-Code berührt).
+5. **Doku.** `docs/betrieb/env-inventar.md` (Turso-Zeile: Gratis-Kontingent, was «gesperrt» heisst)
+   und eine Bibliotheks-Notiz `bibliothek/betrieb/turso-schreibkontingent-2026-09-15.md` mit
+   INDEX-Eintrag (Zählweise, Messung vorher/nachher, Pflegebedarf: entfällt mit VPS).
+
+**Erfolgsmass.** Rechnerisch ≤ 1 Voll-Rebuild je Korpus-Änderungstag statt je Push, an Tagen ohne
+Änderung nur Marken (< 20 Zeilen). Nachmessen im Oktober in der Turso-Konsole (David, kein Gate).
+
+**Nicht Teil des Schritts.** Plan-Upgrade oder Overages (Entscheid David: nein); Umbau der
+Lese-Seite; Delta-Sync innerhalb einer Tabelle (Voll-Rebuild je geänderter Tabelle bleibt
+Weiche C, §10(7)).
+
+---
+
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
 
 15 Abschnitt(e) dieser Datei sind wörtlich nach

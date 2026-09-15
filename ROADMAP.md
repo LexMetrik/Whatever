@@ -734,6 +734,16 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Wiedervorlage «Google-Ökosystem-Sichtung»** *(Dach QS-FREMDAGENTEN, Phase 4)* — alle 3 Monate, erste Fälligkeit **Dezember 2026**: Gemini-Recherche (agy, `read_url(*)`) «neue Google-KI-Produkte/Modelle, Jules-/Antigravity-Changelog seit \<Datum\>», Bewertung ~30 min, Eintrag in Fahrplan §7. Maschinischer Anstoss: `retro:17` Regel (h) ab 30 Tagen seit `bibliothek/register/antigravity-stand.json`. §7.
   - [ ] **`scripts/plan/selbstoptKern.ts` über der Schlankheits-Schwelle, unregistriert gefunden** *(Nebenfund 4.9.2026)* — 1094 Z. (Schwelle 800), nur ins Baseline-Register aufgenommen, **Split offen**. Das Geschwister `src/tests/plan-selbstopt.test.ts` ist seit PR #699 gesplittet. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
 
+- [~] **Turso-Schreibkontingent: Sync bündeln, Unverändertes überspringen, Sperre klar melden** *(`QS-TURSO-SCHREIBVOLUMEN`, Vorfall 15.9.2026)*
+  <!-- @meta id: QS-TURSO-SCHREIBVOLUMEN · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-DATENHALTUNG.md -->
+  Turso hat am 15.9.2026 das Schreiben gesperrt (Gratis-Monatskontingent): der Serving-Sync baute
+  bei JEDEM Korpus-Push alle Tabellen neu (~171 000 Zeilen je Lauf, 39 Läufe in 14 Tagen).
+  **Ziel:** Schreibvolumen um ≥ 10× senken, ohne die Frische-Wächter zu entwerten — täglich EIN
+  gebündelter Sync, Tabellen mit unverändertem Stand überspringen, gesperrtes Schreiben als eigene
+  Meldung statt als generisches Rot. Lesen (api/suche) war nie betroffen. Kein Planwechsel (§17-Wurzel-Fix,
+  Turso wird nach Phase 2 ohnehin durch den VPS abgelöst).
+  **Detail:** [FAHRPLAN-DATENHALTUNG.md](fahrplaene/FAHRPLAN-DATENHALTUNG.md) §17.
+
 - [ ] **Automatik-Gesundheit** *(`QS-AUTOMATIK`, `[OF]`)*
   <!-- @meta id: QS-AUTOMATIK · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-BASIS-AUSBAU.md -->
   Läuft unsere Automatik wirklich, und würde sie scheitern können? Offen: Turso-Wächter-Abdeckung +
