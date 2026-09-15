@@ -133,3 +133,7 @@ messwerte/token-spool.jsonl
 # Rohdateien landen hier NUR temporär (korpus-raw-release.yml), werden als
 # Release-Archiv veröffentlicht und nie committet.
 /raw/
+
+# Session-Notizen (§17, Weisung David 15.9.2026): Nebenfunde/Lehren-Kandidaten
+# je Session, lokal im Haupt-Checkout — nie committen (docs/token-oekonomie/session-notizen-vorlage.md).
+.claude/notizen/
