@@ -1,4 +1,4 @@
-import { useId, type ReactNode } from 'react';
+import { Suspense, useId, type ReactNode } from 'react';
 import { usePaneKlasse } from '../layout/PaneKontext';
 import type { Register } from '../../lib/startseiteModulTypen';
 
@@ -88,7 +88,29 @@ export function PultModul({ id, titel, reg, an, position, aufSchalten, children 
       </div>
       <div id={inhaltId} hidden={!an} suppressHydrationWarning
         className="min-w-0 font-sans text-body-s text-ink-600">
-        {children}
+        {/* ─── Mismatch-Grenze je Modul (QS-BASIS-Nachzug, 15.9.2026) ─────────
+            Seit `main.tsx` die prerenderten Routen HYDRIERT, ist ein
+            Markup-Unterschied zwischen Prerender und erstem Client-Render
+            nicht mehr folgenlos: React verwirft dann den Teilbaum bis zur
+            NÄCHSTEN Suspense-Grenze und baut ihn neu auf. Ohne diese Grenze
+            hier war das die Grenze von `layout/RouteHuelle` — also die GANZE
+            Route samt der <h1>, dem LCP-Element.
+            DAS TRIFFT DAS PULT ZWANGSLÄUFIG: seine Module zeigen bewusst
+            Besucher-Abhängiges, das der Prerender nicht kennen kann — der
+            Schnellrechner rechnet ab HEUTE (`forms/EinfacheFristForm`), die
+            Zeiterfassung und «Zuletzt verwendet» lesen den lokalen Speicher.
+            GEMESSEN am 15.9.2026 (gebautes dist/, Uhr auf den 7.9. gestellt,
+            also die Lage JEDES Besuchers nach dem Bautag): ohne diese Grenze
+            überlebten 102 von 450 prerenderten Knoten und die <h1> war nicht
+            darunter; mit ihr 384 von 450 samt <h1>.
+            KEIN WEICHSPÜLER: die Grenze unterdrückt nichts und verändert
+            nichts am Inhalt — sie sagt nur, WIE WEIT React zurückbauen darf.
+            Der neu gebaute Teilbaum ist der Client-Baum, das angezeigte
+            Fristende also das des BESUCHERS (gemessen: 17.09.2026 bei Uhr auf
+            den 7.9., nicht das prerenderte 25.09.2026) — genau wie vor der
+            Umstellung auf `hydrateRoot`. Gemeldet wird der Vorgang weiterhin
+            über `onRecoverableError` (main.tsx). */}
+        <Suspense>{children}</Suspense>
       </div>
     </section>
   );

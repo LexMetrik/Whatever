@@ -27,14 +27,25 @@ import { waehleBegruessungFuerBuild } from '../../lib/begruessungen';
 //
 // PRERENDER: `gruss` ist jetzt bei GLEICHEM Build-Seed (`VITE_BUILD_ID`)
 // zwischen Prerender und Client identisch (Bauregel 2 «Client-Initialstate
-// auf den Server-Zustand pinnen») — kein Tausch mehr. `datum`/`wochentag`
-// bleiben live (echte Uhrzeit des Aufrufs) und divergieren wie bisher
-// zwischen Build und Client; sie tragen darum weiterhin ehrlich
-// `suppressHydrationWarning` (kleine Nebenzeile, nicht die LCP-h1). Ein
-// min-height braucht `gruss` nicht: die Pool-Datei hält jeden Eintrag unter
-// GRUSS_MAX_ZEICHEN (30), der Gruss bleibt also auch auf 390 px einzeilig
-// (§15: kein Layout-Sprung, weil die Umbruchstelle nicht vom gezogenen Gruss
-// abhängt).
+// auf den Server-Zustand pinnen») — kein Tausch mehr. Ein min-height braucht
+// `gruss` nicht: die Pool-Datei hält jeden Eintrag unter GRUSS_MAX_ZEICHEN
+// (30), der Gruss bleibt also auch auf 390 px einzeilig (§15: kein
+// Layout-Sprung, weil die Umbruchstelle nicht vom gezogenen Gruss abhängt).
+//
+// WOCHENTAG UND DATUM KOMMEN SEIT DEM QS-BASIS-NACHZUG (15.9.2026) DEN
+// GLEICHEN WEG WIE DIE UHRZEIT: `null` im Prerender UND im ersten
+// Client-Render, gesetzt erst im `useEffect`. Vorher trugen sie
+// `suppressHydrationWarning`, was unter `createRoot` folgenlos war (alles
+// wurde ohnehin neu gerendert) — unter `hydrateRoot` aber GENAU DAS FALSCHE
+// tut: React behält bei unterdrückter Warnung den SERVER-Text stehen, und
+// weil danach kein State mehr wechselt, zeigte die Startseite jedem Besucher
+// dauerhaft das BAUDATUM statt seines eigenen (gemessen 15.9.2026, Uhr auf
+// den 7.9. gestellt: «Dienstag, 15. September 2026» statt «Montag, 7.
+// September 2026»; `e2e/d39-begruessung.e2e.ts` wurde dafür rot). Ein Datum
+// ist nichts, was ein Prerender wissen KANN — darum steht im Server-HTML
+// jetzt nur noch ein unsichtbarer Platzhalter, der die Zeilenbreite
+// reserviert (SuchBlock, §15/CLS), und der Wert kommt vom Gerät des
+// Besuchers.
 
 // Datum «5. September 2026» + Wochentag getrennt — deterministisch ohne
 // Locale-Abhängigkeit (SSR-stabil, keine Intl-Überraschungen zwischen Node und
@@ -45,10 +56,11 @@ const MONATE = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'A
 export interface Heute {
   /** Gezogener Gruss aus dem Pool (`lib/begruessungen.ts`). */
   gruss: string;
-  /** «Samstag» */
-  wochentag: string;
-  /** «5. September 2026» */
-  datum: string;
+  /** «Samstag» — `null` vor der Hydration (Prerender UND erster Client-Render,
+   *  s. `useHeute()` unten), danach der Wochentag des Besuchs. */
+  wochentag: string | null;
+  /** «5. September 2026» — `null` vor der Hydration, wie `wochentag`. */
+  datum: string | null;
   /** «14:32» — `null` vor der Hydration (Prerender UND erster Client-Render,
    *  s. `uhrzeit()` unten), danach jede Minute nachgeführt. NIE im
    *  Server-HTML: SuchBlock reserviert dafür Platz, statt ihn erst beim
@@ -91,20 +103,22 @@ function uhrzeit(jetzt: Date): string {
  *  (Minimalismus-Prinzip, `.claude/rules/schichtentrennung.md`) — der e2e-
  *  Wächter (`e2e/d39-begruessung.e2e.ts`) installiert die Uhr vor `goto`. */
 export function useHeute(): Heute {
-  const [heute] = useState<Omit<Heute, 'uhrzeit'>>(() => {
-    const jetzt = new Date();
-    return {
-      gruss: waehleBegruessungFuerBuild(BUILD_SEED),
-      wochentag: WOCHENTAGE[jetzt.getDay()],
-      datum: `${jetzt.getDate()}. ${MONATE[jetzt.getMonth()]} ${jetzt.getFullYear()}`,
-    };
-  });
+  const [gruss] = useState(() => waehleBegruessungFuerBuild(BUILD_SEED));
+  // Wochentag/Datum: EIN Bild vom Mount-Zeitpunkt (sie sollen nicht mitten in
+  // der Sitzung springen), aber erst NACH der Hydration gezogen — davor `null`,
+  // identisch zwischen Server- und erstem Client-Render (Herleitung oben).
+  const [tag, setTag] = useState<{ wochentag: string; datum: string } | null>(null);
   const [zeit, setZeit] = useState<string | null>(null);
   useEffect(() => {
+    const jetzt = new Date();
+    setTag({
+      wochentag: WOCHENTAGE[jetzt.getDay()],
+      datum: `${jetzt.getDate()}. ${MONATE[jetzt.getMonth()]} ${jetzt.getFullYear()}`,
+    });
     const nachfuehren = () => setZeit(uhrzeit(new Date()));
     nachfuehren();
     const id = setInterval(nachfuehren, 60_000);
     return () => clearInterval(id);
   }, []);
-  return { ...heute, uhrzeit: zeit };
+  return { gruss, wochentag: tag?.wochentag ?? null, datum: tag?.datum ?? null, uhrzeit: zeit };
 }

@@ -103,16 +103,24 @@ export function SuchBlock() {
         {gruss}
       </h1>
       {/* Wochentag/Datum/Uhrzeit — kleiner, EIGENE Zeile unter der Begrüssung
-          (D39). Die Uhrzeit ist `null` vor der Hydration (Prerender UND erster
-          Client-Render, `Begruessung.tsx`); der Platz dafür ist über
-          `visibility:hidden` an einem `00:00`-Platzhalter UNVERÄNDERT von
-          Anfang an reserviert (beide unter `.num` tabellarisch gleich breit),
-          statt erst beim Erscheinen der echten Zeit zu öffnen — kein CLS
-          (§15). Datum trägt ebenfalls `suppressHydrationWarning` (Build- vs.
-          Client-Tag). */}
+          (D39). ALLE DREI sind `null` vor der Hydration (Prerender UND erster
+          Client-Render, `Begruessung.tsx`) und kommen erst aus dem
+          Mount-Effect: welchen Tag und welche Stunde der Besucher hat, kann
+          ein Prerender nicht wissen. Der Platz ist für beide über
+          `visibility:hidden` an einem Platzhalter von Anfang an reserviert
+          (Ziffern unter `.num` tabellarisch gleich breit), statt erst beim
+          Erscheinen des echten Werts zu öffnen — kein CLS (§15).
+          KEIN `suppressHydrationWarning` mehr an dieser Zeile, und das ist der
+          Punkt: unter `hydrateRoot` hiesse Unterdrücken, dass React den
+          SERVER-Text stehen lässt — die Zeile zeigte dann dauerhaft das
+          Baudatum (Herleitung und Messung in `Begruessung.tsx`). Server- und
+          erster Client-Render sind hier jetzt zeichengleich, es gibt nichts zu
+          unterdrücken. */}
       <p className="num mt-1.5 font-sans text-xs text-ink-500">
-        <span suppressHydrationWarning>{wochentag}, {datum}</span>
-        <span suppressHydrationWarning style={{ visibility: uhrzeit ? 'visible' : 'hidden' }}>
+        <span style={{ visibility: datum ? 'visible' : 'hidden' }}>
+          {wochentag ?? 'Montag'}, {datum ?? '1. Januar 2026'}
+        </span>
+        <span style={{ visibility: uhrzeit ? 'visible' : 'hidden' }}>
           {' '}· {uhrzeit ?? '00:00'}
         </span>
       </p>
