@@ -1,4 +1,5 @@
 import type { Sektion } from '../../../lib/normtext/browse';
+import type { LeerstellenStatus } from '../../../lib/normtext/darstellung';
 import { pfadZu } from '../helpers';
 import { MODUS_PARAM, MODUS_VORGABE, type LeserModus } from './leserModus';
 
@@ -205,7 +206,8 @@ export interface VorschauZiel {
   label: string;
   /** Der Randtitel, soweit der Eintrag einen trägt — sonst `null`. */
   marginalie: string | null;
-  aufgehoben: boolean;
+  /** Belegstufe (W2·27) — Wortlaut über `leerstellenWort`, nie hier gewählt (§5). */
+  zustand: LeerstellenStatus;
 }
 
 /**
@@ -249,7 +251,7 @@ export function vorschauMarginalie(
  * gebastelte Kurzfassung (§8).
  */
 export function vorschauZiel(
-  ziel: { token: string; label: string; aufgehoben: boolean } | null | undefined,
+  ziel: { token: string; label: string; zustand: LeerstellenStatus } | null | undefined,
   marginalieVon: (token: string) => string | null,
 ): VorschauZiel | null {
   if (!ziel) return null;
@@ -257,6 +259,6 @@ export function vorschauZiel(
     token: ziel.token,
     label: ziel.label,
     marginalie: marginalieVon(ziel.token),
-    aufgehoben: ziel.aufgehoben,
+    zustand: ziel.zustand,
   };
 }

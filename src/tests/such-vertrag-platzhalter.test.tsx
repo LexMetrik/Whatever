@@ -28,16 +28,20 @@ import type { NormSnapshot } from '../lib/normtext/typen';
 // ROT VOR DEM FIX: beide Fälle scheiterten («expected … to contain
 // data-such-meta») — die Platzhalter-Spans trugen das Attribut nicht.
 describe('B2 — Aufhebungs-Platzhalter sind Bedienung, nicht Wortlaut', () => {
-  it('Ganzkörper-Aufhebung eines Blocks: Platzhalter trägt data-such-meta', () => {
+  // RE-BLESS W2·27 (15.9.2026, §6.3 deklariert): der Platzhalter am LEEREN Block
+  // ohne amtlichen Vermerk heisst «kein Text im Snapshot» statt «aufgehoben».
+  // Der geprüfte Vertrag (Ersatztext trägt data-such-meta) ist unverändert.
+  it('Leerstelle eines Blocks: Platzhalter trägt data-such-meta', () => {
     const bloecke: NormSnapshot['bloecke'] = [{ absatz: null, text: '' }];
     const out = renderToString(
       <ArtikelBody bloecke={bloecke} artikel="12" passus={{ absatz: null }} />,
     );
-    expect(out).toContain('aufgehoben');
+    expect(out).toContain('kein Text im Snapshot');
     expect(out).toContain(SUCH_META);
   });
 
-  it('aufgehobene lit./Ziff.: auch der Item-Platzhalter trägt ihn', () => {
+  // RE-BLESS W2·27 (15.9.2026, §6.3 deklariert): ebenso am leeren Item.
+  it('leere lit./Ziff.: auch der Item-Platzhalter trägt ihn', () => {
     const bloecke: NormSnapshot['bloecke'] = [{
       absatz: '1',
       text: 'Der Vertrag endet:',
@@ -49,7 +53,7 @@ describe('B2 — Aufhebungs-Platzhalter sind Bedienung, nicht Wortlaut', () => {
     const out = renderToString(
       <ArtikelBody bloecke={bloecke} artikel="13" passus={{ absatz: null }} />,
     );
-    expect(out).toContain('aufgehoben');
+    expect(out).toContain('kein Text im Snapshot');
     expect(out).toContain(SUCH_META);
   });
 

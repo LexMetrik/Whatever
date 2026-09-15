@@ -295,7 +295,17 @@ export function istAufgehoben(text: string): boolean {
  *  Artikel hängen noch an ihr — sie zu entfernen änderte die Kantons-
  *  Darstellung, was Phase 2 vorbehalten ist; (b) für die 98 Bund-Restfälle ist
  *  «eingeklappt anzeigen» das bisherige, geprüfte Verhalten — es unbegründet
- *  umzuwerfen wäre eine fachliche Änderung ohne Beleg (§1/§6.3). */
+ *  umzuwerfen wäre eine fachliche Änderung ohne Beleg (§1/§6.3).
+ *
+ *  W2·27 NACHZUG (15.9.2026, Auflage Gegenprüfung #859) — WER DIESE FUNKTION
+ *  NOCH FRAGEN DARF. Die Antwort ist seither zweiwertig zu wenig: «true» deckt
+ *  den amtlich belegten UND den bloss vermuteten Fall ab. Der LESER fragt darum
+ *  nicht mehr hier, sondern `artikelLeerstellenStatus` (unten) — es ist
+ *  DIESELBE Heuristik, nur mit dem Beleggrund im Ergebnis (§5: eine Regel, eine
+ *  Stelle). Unverändert bleibt diese Funktion für den WÄCHTER
+ *  `scripts/normtext/check-leerstellen.ts`: er misst genau die Heuristik-Menge
+ *  und muss sie deshalb nackt sehen. Signatur und Verhalten sind byte-gleich
+ *  (§6) — geändert hat sich nur, wer sie aufruft. */
 export function artikelGanzAufgehoben(
   bloecke: { text: string; items?: { text: string }[]; tabelle?: unknown[]; mehrspaltig?: { zeilen: unknown[] } }[],
   markiert?: boolean,
@@ -313,4 +323,78 @@ export function artikelGanzAufgehoben(
     if (items.length) return leadTot && items.every((it) => it.text.trim() === '' || istAufgehoben(it.text));
     return leadTot;
   });
+}
+
+
+// ── W2·27 · §8-EHRLICHKEIT ÜBER DIE LEERSTELLEN (15.9.2026) ──────────────────
+//
+// ANLASS (ROADMAP W2·27-BUND-FERTIG, Auflage der Gegenprüfung #859). Der Leser
+// schrieb «· aufgehoben» an 98 Bund- und 481 Kanton-Artikel, für die KEIN
+// amtlicher Aufhebungsvermerk existiert — darunter GELTENDE Bestimmungen:
+// AVIG Art. 115 und BGFA Art. 35 (Änderungsartikel, deren Inhalt Fedlex nur
+// nicht ausschreibt), AIG Art. 126f («Tritt zu einem späteren Zeitpunkt in
+// Kraft»), StGB Art. 108 («bleibt aus gesetzestechnischen Gründen leer»). Das
+// ist keine Dämpfung, sondern eine falsche Rechtsauskunft (§1/§8): der Leser
+// behauptete etwas, was die Quelle nicht hergibt.
+//
+// DIE UNTERSCHEIDUNG, die `artikelGanzAufgehoben` nicht treffen kann, ist die
+// nach dem BELEG — nicht nach dem Befund:
+//   'aufgehoben'      amtlich belegt: `NormSnapshot.aufgehoben` (Bund aus der
+//                     Fedlex-Aufhebungsfussnote, Kanton aus dem LexWork-Segment
+//                     ohne jeden Body-Block; Herleitung in `typen.ts`).
+//   'leer-ungeklaert' NUR die Text-Heuristik greift: Body ist leer oder «…».
+//                     Was das heisst, WEISS der Korpus nicht — es kann eine
+//                     Aufhebung ohne Vermerk sein, ein Änderungsartikel, eine
+//                     künftige Bestimmung oder ein Extraktionsfehler. Vier
+//                     belegte Klassen: `scripts/normtext/check-leerstellen.ts`.
+//   'lebt'            lebender Wortlaut (oder Tabelle, die IMMER schlägt).
+//
+// Die Zahlen bleiben gedeckelt, wo sie sind: `check:leerstellen` misst weiter
+// `artikelGanzAufgehoben` gegen die Basislinie. Diese Funktion ändert KEINE
+// Daten (§3) — nur den Satz, den der Leser darüber schreibt.
+
+/** Belegstufe einer Artikel-Leerstelle — s. Block darüber. */
+export type LeerstellenStatus = 'lebt' | 'aufgehoben' | 'leer-ungeklaert';
+
+/** Kurzform für die Statuszeile am Artikel. Bewusst eine AUSSAGE ÜBER DAS
+ *  ARTEFAKT, nicht über die Rechtslage: der Snapshot trägt hier keinen Text —
+ *  mehr behauptet der Satz nicht (§8). */
+export const LEERSTELLE_KURZ = 'kein Text im Snapshot';
+
+/** Erläuterung (title/Tooltip). Nennt die vier belegten Ursachen, ohne eine
+ *  davon zu wählen, und verweist auf die amtliche Fassung (§7: massgeblich ist
+ *  nie das Artefakt). «Amtliche Quelle» statt «Fedlex» — die Zeile trifft auch
+ *  den Kanton (LexWork). */
+export const LEERSTELLE_ERLAEUTERUNG =
+  'Die amtliche Quelle zeigt hier keinen Wortlaut — Änderungsartikel, künftige '
+  + 'Bestimmung oder Aufhebung ohne Vermerk. Massgeblich ist die amtliche Fassung.';
+
+/**
+ * Belegstufe EINES Artikels. Baut auf `artikelGanzAufgehoben` auf statt die
+ * Rangfolge (Tabelle → `markiert` → Text-Heuristik) ein zweites Mal zu
+ * schreiben: §5 — dieselbe Heuristik darf nur EINMAL existieren, sonst driften
+ * Leser und Wächter auseinander.
+ *
+ * Rein und deterministisch (§2): kein Netz, keine Uhr, kein Sidecar. Der
+ * Absatz-genaue Aufhebungsbeleg (Historie-Shard, LexWork `abrogation_ellip`)
+ * steht dieser Schicht NICHT zur Verfügung — s. `ArtikelBody.tsx`.
+ */
+/** Das Zustandswort, das eine Fläche NEBEN dem Artikel über ihn schreibt —
+ *  Nachbar-Pfeil, Vorschaukarte, Statuszeile. EINE Stelle (§5): liefe die
+ *  Vorschau anders als der Artikel, stünde derselbe Zustand mit zwei Wörtern da.
+ *  `null` = nichts zu sagen (lebender Artikel → kein Platzhalter, §8/M1). */
+export function leerstellenWort(zustand: LeerstellenStatus): string | null {
+  if (zustand === 'aufgehoben') return 'aufgehoben';
+  return zustand === 'leer-ungeklaert' ? LEERSTELLE_KURZ : null;
+}
+
+export function artikelLeerstellenStatus(
+  bloecke: Parameters<typeof artikelGanzAufgehoben>[0],
+  markiert?: boolean,
+): LeerstellenStatus {
+  if (!artikelGanzAufgehoben(bloecke, markiert)) return 'lebt';
+  // `artikelGanzAufgehoben` war true — also hat entweder `markiert` entschieden
+  // (Stufe 2) oder die Text-Heuristik (Stufe 3). Die Tabelle ist damit bereits
+  // ausgeschlossen, sonst wäre der Wert false gewesen.
+  return markiert === true ? 'aufgehoben' : 'leer-ungeklaert';
 }
