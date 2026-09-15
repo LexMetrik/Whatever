@@ -108,20 +108,22 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 - [ ] **Gesetz-Leser V3 — Hülle neu, Kern unangetastet** *(`W2·5m-LESER-V3`, Auftrag David 16.8.2026)*
   <!-- @meta id: W2·5m-LESER-V3 · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-LESER-V3.md -->
   Ziel: Leser-Oberfläche nach Apple-HIG-Prinzipien radikal vereinfacht; Kern (`ArtikelBody`,
-  `ArtikelLeser`, Datenlogik) unangetastet, Golden byte-gleich. **Fertig, wenn** H1–H5 gelandet
-  und die S-Etappen abgehakt sind. H1–H5 sind seit 21.8.2026 gebaut (Chronik).
+  `ArtikelLeser`, Datenlogik) unangetastet, Golden byte-gleich. **H1–H5 und S1–S4 sind seit
+  21.8.2026 vollständig** (Chronik; S-Buchung nachgeholt 15.9.2026). **Offen und damit neues
+  Fertig-Kriterium:** die drei Deckel-/Schnitt-Posten unten, Einzelartikel E3 samt
+  Rechtsprechungs-Block und der Fassungs-Diff-Tab.
   **Detail:** [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) (Kurzfassung zuoberst; Kap. 7 Etappen H1–H5/S1–S4, Kap. 9 Fragen F1–F6).
-  - [ ] **D0 · Farb-Vorarbeit** — Tailwind-Deckkraft-Klassen (`bg-brass-100/70`) erzeugen keine CSS-Regel; Wurzel-Fix + Rot-Beweis, eigener kleiner PR. Kap. 14.
-  - [ ] **S1 · Historie-Modell** — «Änderungsvermerke: an/aus», bei «aus» keine Spur im Lesetext (Sichtbarkeits-Wächter §8) — **wartet auf F1/F2**. Kap. 7.
-  - [ ] **S2 · Typografie + Artikel-Raster** — Variante nach Bildvergleich (**F3**), gleichmässige Abstände, CLS 0. Kap. 7/8.
-  - [ ] **S4 · Kantons-Probe** — Kantonserlasse rendern unverändert (Fokus Bund, nichts bricht); der H2-Kontaktbogen deckt nur Bund ab. Kap. 7.
+  - [x] **D0 · Farb-Vorarbeit** — ✅ 16.8.2026, PR #534 (`47f805423`); Wächter-Ausbau 5.9.2026, PR #680 (`0cffc695a`).
+  - [x] **S1 · Historie-Modell** — ✅ 17.8.2026, PR #547 (`2538dd356`); seit D35-F3 (7.9.2026) trägt die dreiwertige `vermerke`-Wahl dieselbe Zusage.
+  - [x] **S2 · Typografie + Artikel-Raster** — ✅ 17.8.2026, PR #550 (`afc008c19`), F3 = V2 (17 px / lh 1.55).
+  - [x] **S4 · Trefferreihenfolge** *(Begriffskollision 16.8. aufgelöst 15.9.2026, §5: die Kennung trägt nur noch die Fahrplan-Bedeutung; die Kantons-Probe war ein Nachweis, keine Etappe)* — ✅ Sortierung 16.8.2026 mit H2, PR #539 (`19a989f93`); Kantons-Probe erbracht 18.8.2026 (H4-Kontaktbogen Ziff. 7, BS-640.100 + ZH-211.11, 0 Konsolenfehler), PR #552. Wortlaut aller vier Posten samt Ursachen-Analyse: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (1).
   - [x] **Tor-Konflikt `erlassAnsicht.ts`-Deckel** *(§17-Wurzel-Fix)* — ✅ erledigt 14.9.2026, PR #868 (`892a6f0fb`). Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
   - [ ] **`leserV3Modell.ts` 420/420 und `uebersichtAngaben.ts` 418/420 schneiden** *(§17, offen nach #868)* — der v3-Deckel hat null Kopfraum; der Zukunftsfassungen-Hook (#863) musste deshalb nach `useZukunftsfassung.ts` ausweichen. Der Schnitt am Adapter ist laut Tor-Kommentar (16.8.2026) **verhaltenstragend** (Hook-Reihenfolge) ⇒ **eigener deklarierter Schritt** mit Rot-Beweis, kein Struktur-Umbau (§6.3). Dazu: der Satz «inzwischen in Kraft» gehört nach `src/lib/normtext/erlassKopfText.ts` (§5, heute zweite Heimat), `seo-detail.ts:354` trägt ihn unverlinkt.
   - [ ] **`NormText.tsx` 795/800 Zeilen** *(Messung 14.9.2026, `check:schlankheit`)* — fünf Zeilen Kopfraum: die nächste Änderung an der Datei lässt das Tor anschlagen. Erst schneiden (§6.6), dann ändern — kein Deckel-Anheben (§17). *(Nebenbefund der Jules-Suggestions-Sichtung 14.9.2026.)*
   - [x] **Erledigt:** Nachbar-Artikel-Pfeile · Rohdaten-Link je Erlass — ✅ #854 (`7b0338916`). Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (4).
-  - [x] **Einzelartikel-Ansicht E1 + E2** *(Ansichtsoption, Auftrag David 14.9.2026; Konzept Kap. 15)* — ✅ gelandet 14.9.2026, PR #869 (`946cb155d`), David: «merge»: Umschalter «Ganzer Erlass | Einzelner Artikel», Blättern, Dossier-Blöcke Historie/Verweise/Materialien/Werkzeuge; die Nachbar-Pfeile aus #854 erscheinen nur noch hier (Davids Befund «das bringt aber nur etwas wenn man einzeln einen artikel hat»). *Warum offen: der Doku-PR #870 hat dieselbe ROADMAP-Zeile umgeschrieben und ist zuerst gelandet — #869 steht seither auf DIRTY und braucht einen Rebase durch die bauende Session (§12: fremder Worktree, nicht von hier anfassen).*
+  - [x] **Einzelartikel-Ansicht E1 + E2** *(Ansichtsoption, Auftrag David 14.9.2026; Konzept Kap. 15)* — ✅ gelandet 14.9.2026, PR #869 (`946cb155d`), David: «merge»: Umschalter «Ganzer Erlass | Einzelner Artikel», Blättern, Dossier-Blöcke Historie/Verweise/Materialien/Werkzeuge; die Nachbar-Pfeile aus #854 erscheinen nur noch hier (Davids Befund «das bringt aber nur etwas wenn man einzeln einen artikel hat»).
   - [ ] **Einzelartikel-Ansicht E3** *(Rest des Konzepts Kap. 15)* — offen (Druck/Export). Ebenfalls offen: der **Rechtsprechung-Block im Artikel-Dossier**, bewusst hinter M3 / `QS-KORPUS` gestellt (Formulierung aus PR #869).
-  - [x] **Rohdaten-Zeiger ohne `fassungsToken`** *(Entscheid Agent C, #854, 14.9.2026)* — der Zeiger nennt Stand und Quelle, **nicht** den `fassungsToken`: §7 d verlangt Drift-**Erkennung**, keinen Hash-Abdruck im UI (Ä71, 18.8.2026); der Token steht in der verlinkten Datei. Fahrplan §1 entsprechend präzisiert.
+  - [x] **Rohdaten-Zeiger ohne `fassungsToken`** *(Entscheid Agent C, #854, 14.9.2026)* — der Zeiger nennt Stand und Quelle, nicht den Token (§7 d verlangt Drift-**Erkennung**, keinen Hash-Abdruck im UI). Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (1).
   - [ ] **Fassungs-Diff-Tab** — UI-Anteil zu `W2·5l-NORMTEXT-B2` M16 (Fassungs-Zeitleiste), erst danach; einziges Vorbild mit echtem Diff: Légifrance «Comparer les versions». Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §3 #9.
 
 - [ ] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`; Phase 2, Entscheid 14.9.2026)*

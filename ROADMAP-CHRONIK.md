@@ -1,5 +1,68 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Umschichtung 15.9.2026 (1) — `W2·5m-LESER-V3`: vier gebaute, nie abgehakte Checklisten-Posten (Wortlaut) + Auflösung der S4-Begriffskollision
+
+**Anlass.** Auftrag David 15.9.2026: «bereinige die Checkliste und überprüfe, warum es nicht
+abgehakt wurde». Die Verifikation (je Posten Fahrplan/Chronik + Code/Test + `git log`) ergab:
+**alle vier offenen Posten waren gebaut** — D0 seit 16.8.2026, S1 und S2 seit 17.8.2026, die
+Kantons-Probe seit 18.8.2026. Sie standen vier Wochen lang falsch offen.
+
+**Ursache, je Posten mechanisch belegt — vier verschiedene Wege zu demselben Ergebnis:**
+
+| Posten | Bau | Was mit der ROADMAP-Zeile geschah |
+|---|---|---|
+| **D0** | PR #534, `47f805423`, 16.8.2026 | Der Bau-PR hakte ab — aber die **andere** Zeile. `DESIGN-D0` stand doppelt im Plan: einmal im Design-Dach (dort `- [x]` gesetzt, am 29.8. mit #577 in die Chronik ausgelagert, s. Abschnitt «Plan-Neuschnitt 29.8.2026») und einmal als Vorbedingungs-Kopie unter `W2·5m-LESER-V3`. Die Kopie blieb stehen. Zwei Zeilen für einen Sachverhalt (§5). |
+| **S1** | PR #547, `2538dd356`, 17.8.2026 | Der Bau-PR **hat** ROADMAP.md angefasst — aber nur, um drei NEUE §17-Funde einzutragen (Nullprobe-Messreihe, Reader-Kopf-Reflow, `QS-DATA-INGEST-DRIFT`). Die eigene Checkbox blieb unberührt: Nebenfunde wurden gebucht, der Vollzug nicht. |
+| **S2** | PR #550, `afc008c19`, 17.8.2026 | Der Bau-PR fasste ROADMAP.md **gar nicht** an, nur `fahrplaene/FAHRPLAN-LESER-V3.md` — dort steht seit dem 17.8.2026 «**S2** ✅ **gebaut**». Der Fahrplan wurde geführt, der Plan nicht: zwei Wahrheiten (§5), und kein Tor las beide. |
+| **S4** | Sortierung: PR #539, `19a989f93`, 16.8.2026 · Kantons-Probe: PR #552, 18.8.2026 | Der Bau-PR #539 fasste die Zeile an und **meldete die Begriffskollision ausdrücklich** («Namenskonflikt, 16.8.2026 gemeldet statt stillschweigend aufgelöst … Welcher Inhalt die Kennung S4 behält, entscheidet das nächste Plan-Aufräumen»). Das nächste Plan-Aufräumen war die Steuerungs-Diät #577 (29.8.2026) — sie **löschte den Warn-Absatz und kondensierte die Zeile**, ohne den darin hinterlegten Auftrag auszuführen. Die Übergabe ging beim Verdichten verloren. |
+
+**Muster.** Eine Bau-Session führt zuverlässig, was ihr im Weg steht (Fahrplan-Vollzugsvermerk,
+neue Nebenfunde) — die eigene Checkbox ist das Einzige, was sie nicht behindert, wenn sie
+stehenbleibt. Und ein Doku-Aufräumen, das nach Zeichen verdichtet, entfernt Warn-Absätze
+zuverlässiger als es die darin hinterlegten Aufträge ausführt. Gegenmittel: `check:plan`
+**Regel 14** (Fahrplan-✅ ↔ ROADMAP-Checkbox derselben Etappe), gebaut 15.9.2026,
+Geburtsbeweis rot auf `e94a3dc90` mit genau den S2- und S4-Treffern
+(`scripts/plan/etappenBuchung.ts`, `src/tests/plan-check.etappen-buchung.test.ts`).
+
+**Nachweis der Kantons-Probe** (weil sie nie eine eigene Etappe hatte und darum nirgends
+abgehakt wurde): `docs/ux-audit-2026-07/reader/leser-v3-h4/README.md` Ziff. 7 und Abschnitt
+«Proben — Kanton und Bund unter `?leser=v3`» — **BS-640.100** (StG BS, 292 Bestimmungen) und
+**ZH-211.11** (GebV OG, 23), je V3-Rahmen · V3-Kopf · Gliederung vorhanden, **0 Konsolenfehler**,
+mit und ohne Adresszusatz; Bund-Gegenprobe StPO (480) · VMWG (32) · LugÜ (91). Damit ist die
+Fahrplan-Auflage aus Kap. 1 Ziff. 4 (H-Etappen gegen einen Bund- UND einen Kantons-Erlass)
+erfüllt.
+
+**Wortlaut, wie er bis 15.9.2026 in `ROADMAP.md` stand** (§2b — nicht nachgeführt, nur ausgelagert):
+
+>   - [ ] **D0 · Farb-Vorarbeit** — Tailwind-Deckkraft-Klassen (`bg-brass-100/70`) erzeugen keine CSS-Regel; Wurzel-Fix + Rot-Beweis, eigener kleiner PR. Kap. 14.
+
+>   - [ ] **S1 · Historie-Modell** — «Änderungsvermerke: an/aus», bei «aus» keine Spur im Lesetext (Sichtbarkeits-Wächter §8) — **wartet auf F1/F2**. Kap. 7.
+
+>   - [ ] **S2 · Typografie + Artikel-Raster** — Variante nach Bildvergleich (**F3**), gleichmässige Abstände, CLS 0. Kap. 7/8.
+
+>   - [ ] **S4 · Kantons-Probe** — Kantonserlasse rendern unverändert (Fokus Bund, nichts bricht); der H2-Kontaktbogen deckt nur Bund ab. Kap. 7.
+
+**Zwei weitere Wortlaute, bei dieser Gelegenheit ausgelagert** (§2b — nicht nachgeführt):
+
+> *(Zusatz an der abgehakten Zeile «Einzelartikel-Ansicht E1 + E2», gestrichen 15.9.2026, weil
+> **überholt**: #869 ist am 14.9.2026 als `946cb155d` auf main gelandet und die Zeile ist seit
+> `4be6e9797` abgehakt — die Begründung erklärte, warum sie es damals NICHT war.)*
+> «Warum offen: der Doku-PR #870 hat dieselbe ROADMAP-Zeile umgeschrieben und ist zuerst gelandet
+> — #869 steht seither auf DIRTY und braucht einen Rebase durch die bauende Session (§12: fremder
+> Worktree, nicht von hier anfassen).»
+
+> *(Begründungs-Hälfte der Zeile «Rohdaten-Zeiger ohne `fassungsToken`», Wortlaut bis 15.9.2026 —
+> in der ROADMAP steht die Kurzform mit Zeiger hierher:)*
+> «der Zeiger nennt Stand und Quelle, **nicht** den `fassungsToken`: §7 d verlangt
+> Drift-**Erkennung**, keinen Hash-Abdruck im UI (Ä71, 18.8.2026); der Token steht in der
+> verlinkten Datei. Fahrplan §1 entsprechend präzisiert.»
+
+**Entscheid zur Kennung S4** (§5, eine Bedeutung): **S4 = Sortierung der Suchtreffer auf
+Erlass-Reihenfolge**, wie der Fahrplan sie seit dem 16.8.2026 führt. Die Kantons-Probe behält
+keine Etappen-Kennung — sie war ein Nachweis innerhalb von H4, kein Bauschritt. Die
+ROADMAP-Bedeutung «S4 · Kantons-Probe» ist damit **stillgelegt**; wer sie in einem alten
+Dokument liest, findet hier, was daraus wurde.
+
 ## Umschichtung 14.9.2026 (6) — Erledigt-Prosa der Phase-1-Welle (#846–#869), Wortlaut ausgelagert
 
 **Begründung.** Der Session-Abschluss vom 14.9.2026 bucht sechzehn gelandete PRs und rund
