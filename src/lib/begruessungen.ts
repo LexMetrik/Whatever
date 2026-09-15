@@ -518,11 +518,22 @@ export function waehleBegruessung(stunde: number, zufall: () => number): string 
 // bringt den Seed mit — diese Datei bleibt rein (§2-Kommentar oben gilt
 // unverändert: kein `Math.random()`/`Date.now()` HIER).
 //
+// NACHBESSERUNG (15.9.2026, noch selber Tag): die erste Fassung hashte auch
+// eine «Stunde» aus dem Seed und zog damit aus dem TAGESZEIT-Pool dieser
+// Stunde — ein Inhaltsfehler, kein Layout-Problem: der Build-Zeitpunkt hat
+// NICHTS mit der Uhrzeit des Besuchs zu tun, ein um 09:00 gebauter Stand
+// konnte darum um 09:00 real einen Abend-Gruss zeigen. Der Build-Pfad wählt
+// jetzt ausschliesslich aus `IMMER` — dem bereits bestehenden, explizit
+// TAGESZEIT-UNABHÄNGIGEN Pool (s. Definition oben: «kommen zu JEDEM
+// Tageszeit-Pool dazu») —, keine neuen oder umformulierten Texte, kein
+// Stunden-Hash mehr. Die live tageszeit-abhängige Auswahl (`waehleBegruessung`
+// mit echter Stunde) bleibt unverändert für jeden anderen Aufrufer bestehen.
+//
 // PRODUKT-NUANCE (ehrlich benannt): Davids Wunsch «verschiedene Begrüssungen
 // … etwas persönlicher» (5.9.2026) bleibt erfüllt — der Gruss wechselt weiter
-// zufällig UND innerhalb der Tageszeit-Logik —, nur die Kadenz ändert sich von
-// PRO BESUCH auf PRO DEPLOY. Kein Logikverlust (Skill `perf`): keine
-// Rechtslogik betroffen, reine Darstellung.
+// zufällig, aber ohne Tageszeit-Bezug —, die Kadenz ändert sich von PRO
+// BESUCH auf PRO DEPLOY. Kein Logikverlust (Skill `perf`): keine Rechtslogik
+// betroffen, reine Darstellung.
 
 /**
  * Einfacher, deterministischer 32-Bit-Hash (FNV-1a-Variante). Dient nur der
@@ -540,13 +551,14 @@ function hashText(text: string): number {
 
 /**
  * Gruss deterministisch aus einem Build-Seed (z. B. `VITE_BUILD_ID`) statt aus
- * einem Live-Zufall — s. Abschnitt oben. Zwei aus dem SELBEN Seed, aber
- * unterschiedlich gesalzene Hashes liefern Stunde und Pool-Index, damit beide
- * nicht auf denselben Streuwert zusammenfallen. Reine Funktion: gleicher
- * Seed ⇒ IMMER derselbe Gruss (Rot-Beweis in `src/tests/begruessungen.test.ts`).
+ * einem Live-Zufall — s. Abschnitt oben. Zieht NUR aus `IMMER` (tageszeit-
+ * unabhängig): der Build-Zeitpunkt ist kein verlässlicher Bezug zur Uhrzeit
+ * des Besuchs, darum keine Tageszeit-Pools hier. Reine Funktion: gleicher
+ * Seed ⇒ IMMER derselbe (und immer ein tageszeit-neutraler) Gruss
+ * (Rot-Beweis in `src/tests/begruessungen.test.ts`).
  */
 export function waehleBegruessungFuerBuild(seed: string): string {
-  const stunde = hashText(`${seed}:stunde`) % 24;
-  const poolWert = hashText(`${seed}:pool`) / 0xffffffff;
-  return waehleBegruessung(stunde, () => poolWert);
+  const streuwert = hashText(`${seed}:immer`) / 0xffffffff;
+  const i = Math.min(IMMER.length - 1, Math.max(0, Math.floor(streuwert * IMMER.length)));
+  return IMMER[i];
 }

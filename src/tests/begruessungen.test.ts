@@ -248,14 +248,29 @@ describe('Begrüssungs-Pools', () => {
     }
   });
 
-  it('waehleBegruessungFuerBuild bleibt im Pool und liefert bei verschiedenem Seed nicht immer denselben Gruss', () => {
-    // Kein Logikverlust: die Zufalls-/Tageszeit-Vielfalt bleibt erhalten,
-    // nur die Kadenz wechselt von PRO BESUCH auf PRO DEPLOY (im PR als
-    // Produkt-Nuance benannt). Mehrere Seeds müssen darum nicht alle
+  // NACHBESSERUNG (15.9.2026, selber Tag): die erste Fassung hashte zusätzlich
+  // eine «Stunde» aus dem Seed und zog aus DEREN Tageszeit-Pool — ein
+  // Inhaltsfehler (ein um 09:00 gebauter Stand konnte um 09:00 real einen
+  // Abend-Gruss zeigen), nicht landbar. ROT-BEWEIS dieser Nachbesserung
+  // (real gemessen, nicht nur behauptet): mit dem alten Stunden-Hash liefert
+  // der Seed 'a2' unten «Bonsoir à vous.» (Pool `abend`) — kein Mitglied von
+  // `IMMER`. Der Wächter fängt genau das.
+  it('waehleBegruessungFuerBuild liefert für JEDEN Seed einen tageszeit-neutralen Gruss (nur `IMMER`)', () => {
+    const seeds = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10',
+      'a1b2c3d4', 'deadbeef', 'dev', '00000000', 'ffffffff'];
+    for (const seed of seeds) {
+      expect(IMMER, `Seed ${seed}`).toContain(waehleBegruessungFuerBuild(seed));
+    }
+  });
+
+  it('waehleBegruessungFuerBuild bleibt im tageszeit-neutralen Pool und liefert bei verschiedenem Seed nicht immer denselben Gruss', () => {
+    // Kein Logikverlust: die Zufalls-Vielfalt innerhalb von `IMMER` bleibt
+    // erhalten, nur die Kadenz wechselt von PRO BESUCH auf PRO DEPLOY (im PR
+    // als Produkt-Nuance benannt). Mehrere Seeds müssen darum nicht alle
     // denselben Gruss ziehen.
     const seeds = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10'];
     const ergebnisse = seeds.map((s) => waehleBegruessungFuerBuild(s));
-    for (const g of ergebnisse) expect(ALLE).toContain(g);
+    for (const g of ergebnisse) expect(IMMER).toContain(g);
     expect(new Set(ergebnisse).size, ergebnisse.join(' · ')).toBeGreaterThan(1);
   });
 });

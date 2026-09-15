@@ -13,8 +13,12 @@ import { waehleBegruessungFuerBuild } from '../../lib/begruessungen';
 // ZUFALL, bewusst UND an der richtigen Schicht (Auftrag David 5.9.2026
 // «verschiedene Begrüssungen … etwas persönlicher»): der Gruss wechselt
 // weiterhin zufällig, seit QS-PERF (15.9.2026) aber pro DEPLOY statt pro
-// Besuch — s. `waehleBegruessungFuerBuild` in `lib/begruessungen.ts` für den
-// Befund (Prerender/Client zogen bis dahin je einen EIGENEN Zufallswert, die
+// Besuch, UND (Nachbesserung selber Tag) aus dem tageszeit-NEUTRALEN
+// `IMMER`-Pool statt aus einem Tageszeit-Fenster — der Build-Zeitpunkt ist
+// kein verlässlicher Bezug zur Uhrzeit des Besuchs (ein um 09:00 gebauter
+// Stand könnte sonst um 09:00 real einen Abend-Gruss zeigen). S.
+// `waehleBegruessungFuerBuild` in `lib/begruessungen.ts` für den Befund
+// (Prerender/Client zogen bis dahin je einen EIGENEN Zufallswert, die
 // grösste Zeile der Seite tauschte nach dem JS-Download, Lighthouse mass das
 // als LCP bei 9.4 s) und die Begründung der Produkt-Nuance. CLAUDE.md §2 ist
 // nicht berührt: die Regel bindet die ENGINES (gleiche Eingabe → gleiche
