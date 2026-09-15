@@ -96,5 +96,12 @@ for PR in "$@"; do
     else echo "PR #$PR ROT/BLOCKIERT - Kette haelt an" >> "$LOG"; echo "halt" >> "$LOG"; exit 1
     fi
   done
+  # Drei Anlaeufe verbraucht (dreimal BEHIND, weil fremde PRs dazwischen landeten) und
+  # trotzdem nicht gemerged: laut sagen, nicht still «fertig» melden (15.9.2026, #892:
+  # #893/#891/#895 landeten waehrend dreier CI-Laeufe; Kette waere stumm ausgelaufen).
+  if [ "$(gh pr view "$PR" --json state -q .state)" != "MERGED" ]; then
+    echo "PR #$PR nach 3 Anlaeufen nicht gemerged (immer wieder BEHIND) - Kette neu starten" >> "$LOG"
+    echo "halt" >> "$LOG"; exit 1
+  fi
 done
 echo "fertig" >> "$LOG"
