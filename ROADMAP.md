@@ -732,17 +732,13 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] Zweitblick-Messung — erster Durchgang eingetragen (#658, VZV/AMBV: 1 echt vorbestehend, 7 Schein, 0 verpasst; 1/5, Schwelle §3 noch nicht erreicht), weitere vier im Alltag. §2/§3.
   - [ ] Phase 4 Skalierung läuft — Landungsquote 83 % (n=6), Median 30 min ⇒ Ticketzahl 3–5 offen; Jules-API mit Plan-Gegenlesen (D4) noch offen; Antigravity-Claude als Bauarbeiter (D7) **geparkt** (Bauleiter/David-Chat 4.9.2026, kein Zwischenmarkt zu Jules — Wiedervorlage nur bei Kontingent-Engpass). §2.
   - [ ] **Wiedervorlage «Google-Ökosystem-Sichtung»** *(Dach QS-FREMDAGENTEN, Phase 4)* — alle 3 Monate, erste Fälligkeit **Dezember 2026**: Gemini-Recherche (agy, `read_url(*)`) «neue Google-KI-Produkte/Modelle, Jules-/Antigravity-Changelog seit \<Datum\>», Bewertung ~30 min, Eintrag in Fahrplan §7. Maschinischer Anstoss: `retro:17` Regel (h) ab 30 Tagen seit `bibliothek/register/antigravity-stand.json`. §7.
-  - [ ] **`src/components/layout/Reiterleiste.tsx` (1237 Z.) und `src/lib/tabs.ts` (1205 Z.) über der Schlankheits-Schwelle** *(Nebenfund 15.9.2026, Gate lokal rot)* — gewachsen in den Reiterleisten-PRs #843–#845 (13./14.9.), unbemerkt, weil `check:schlankheit` bewusst nicht CI-pflichtig ist. Nur ins Baseline-Register aufgenommen (PR QS-PERF 15.9.), **Split offen** (§6.6: Reiterleiste in Leiste/Hover-Karte/Touch-Umordnen, tabs.ts in Speicher/Mappen/Ring).
+  - [ ] **`Reiterleiste.tsx` (1237 Z.) + `tabs.ts` (1205 Z.) über der Schlankheits-Schwelle** *(Nebenfund 15.9.2026, aus #843–#845; Tor nicht CI-pflichtig)* — Baseline aufgenommen (#874), **Split offen**.
   - [ ] **`scripts/plan/selbstoptKern.ts` über der Schlankheits-Schwelle, unregistriert gefunden** *(Nebenfund 4.9.2026)* — 1094 Z. (Schwelle 800), nur ins Baseline-Register aufgenommen, **Split offen**. Das Geschwister `src/tests/plan-selbstopt.test.ts` ist seit PR #699 gesplittet. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
 
 - [~] **Turso-Schreibkontingent: Sync bündeln, Unverändertes überspringen, Sperre klar melden** *(`QS-TURSO-SCHREIBVOLUMEN`, Vorfall 15.9.2026)*
   <!-- @meta id: QS-TURSO-SCHREIBVOLUMEN · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-DATENHALTUNG.md -->
-  Turso hat am 15.9.2026 das Schreiben gesperrt (Gratis-Monatskontingent): der Serving-Sync baute
-  bei JEDEM Korpus-Push alle Tabellen neu (~171 000 Zeilen je Lauf, 39 Läufe in 14 Tagen).
-  **Ziel:** Schreibvolumen um ≥ 10× senken, ohne die Frische-Wächter zu entwerten — täglich EIN
-  gebündelter Sync, Tabellen mit unverändertem Stand überspringen, gesperrtes Schreiben als eigene
-  Meldung statt als generisches Rot. Lesen (api/suche) war nie betroffen. Kein Planwechsel (§17-Wurzel-Fix,
-  Turso wird nach Phase 2 ohnehin durch den VPS abgelöst).
+  Schreibsperre 15.9.2026 (Gratis-Kontingent): Voll-Rebuild je Push (~171 000 Zeilen, 39 Läufe/14 d).
+  **Ziel:** täglich EIN Sync, Tabellen-Skip per Signatur, Sperre als Exit 3; Wächter bleiben ehrlich. Lesen nie betroffen.
   **Detail:** [FAHRPLAN-DATENHALTUNG.md](fahrplaene/FAHRPLAN-DATENHALTUNG.md) §17.
 
 - [ ] **Automatik-Gesundheit** *(`QS-AUTOMATIK`, `[OF]`)*
