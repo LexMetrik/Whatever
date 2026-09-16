@@ -161,8 +161,13 @@ test.describe('D39 · Begrüssung als Kopf', () => {
 //
 // ROT-PROBE (§6.7, 16.9.2026) des Kein-Tausch-Wächters: `anfangsGruss()` so
 // verändert, dass der Client IMMER selbst neu zieht (erste Zeile
-// `return waehleBegruessung(new Date().getHours(), Math.random)`) — Befund im
-// Commit dieses Schritts.
+// `return waehleBegruessung(new Date().getHours(), Math.random)`): rot mit
+// «Endtext ≠ Skript-Gruss · null@5 → Die Suche steht bereit.@6 → Eine stille
+// Stunde.@18 → null@70 → No am Läse?@372» (Build-Gruss, Skript-Gruss vor dem
+// Paint, Loch des render-then-replace, Client-Neuzug = Tausch). CSP-Wächter:
+// Hash in vercel.json um ein Zeichen verfälscht ⇒ Unit-Test UND der CSP-Fall
+// unten rot («script-src-elem inline»). Grün danach 40/40 (`--repeat-each=8`,
+// 5 Worker, warm).
 test.describe('Gruss pro Besuch (Entscheid David 16.9.2026 «a»)', () => {
   /** Math.random fest (bzw. als Folge) — VOR jedem Seitenskript. */
   async function zufallFest(page: Page, werte: number[]): Promise<void> {
