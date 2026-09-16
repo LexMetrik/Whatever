@@ -44,6 +44,7 @@ import type { BrowseEntscheid } from '../src/lib/rechtsprechung/register';
 import type { EntscheidSnapshotDatei } from '../src/lib/rechtsprechung/typen';
 import type { BrowseMaterial } from '../src/lib/materialien/typen';
 import { renderRoute } from '../src/entry-server';
+import { GRUSS_DATEN_JSON, GRUSS_SKRIPT } from '../src/components/start/Begruessung';
 
 // Deklarierter Routen-Zähler (wie die Katalog-Zähler in den Tests): bei neuen
 // Karten/Seiten bewusst im selben Commit nachführen.
@@ -69,6 +70,13 @@ const MIN_ZEICHEN = 500; // Smoke-Konvention (scripts/smoke-render.tsx)
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = join(ROOT, 'dist');
 const ROOT_MARKER = '<div id="root"></div>';
+// Die zwei erlaubten Gruss-Skripte der Startseite, exakt so, wie React sie
+// rendert (Ausnahme am `<script`-Tor unten).
+const GRUSS_SKRIPTE = [
+  `<script type="application/json" data-gruss="pools">${GRUSS_DATEN_JSON}</script>`,
+  `<script data-gruss="wahl">${GRUSS_SKRIPT}</script>`,
+];
+const ohneGrussSkripte = (html: string) => GRUSS_SKRIPTE.reduce((h, s) => h.split(s).join(''), html);
 
 const template = readFileSync(join(DIST, 'index.html'), 'utf8');
 if (!template.includes(ROOT_MARKER)) {
@@ -169,7 +177,13 @@ for (const pfad of routen) {
     // <div hidden>-Segment + $RC-Inline-Script) bleiben unter der CSP als
     // sichtbares «Wird geladen …» stehen — der Zwei-Pass-Render in
     // entry-server muss sauberes, script-freies HTML liefern.
-    if (inhalt.includes('<script')) {
+    // AUSNAHME, eng (16.9.2026, QS-PERF «Gruss pro Besuch»): die Startseite
+    // trägt GENAU zwei bekannte <script> hinter der Gruss-h1 — den JSON-
+    // Datenblock und das konstante, per sha256 in der CSP freigegebene
+    // Wahl-Skript (`components/start/Begruessung.tsx`). Nur diese beiden,
+    // Zeichen für Zeichen, werden vor der Prüfung herausgenommen; jedes andere
+    // <script> (etwa ein $RC-Suspense-Rest) schlägt weiterhin an.
+    if (ohneGrussSkripte(inhalt).includes('<script')) {
       throw new Error('Inline-Script im gerenderten HTML — Suspense-Segment statt synchronem Render (entry-server-Zwei-Pass prüfen)');
     }
     if (inhalt.includes('Wird geladen')) {
