@@ -30,6 +30,9 @@
 //   · `border-b border-rule` aus dem SuchBlock-Container entfernt: Linien-Fall
 //     rot (`borderBottomWidth` maass 0px statt 1px).
 import { test, expect, type Page } from '@playwright/test'
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
+import { tageszeitFuer, waehleBegruessung } from '../src/lib/begruessungen'
 
 /** Montag, 7. September 2026, 14:32 — Davids eigenes Beispiel im Auftrag. */
 const FIXIERT = new Date('2026-09-07T14:32:00')
@@ -146,5 +149,120 @@ test.describe('D39 · Begrüssung als Kopf', () => {
     await page.waitForTimeout(500)
     const cls = await page.evaluate(() => (window as unknown as { __cls: number }).__cls)
     expect(cls, `CLS ${cls}`).toBeLessThan(0.01)
+  })
+})
+
+// ─── Gruss pro Besuch, nach Besuchsstunde, ohne Tausch (16.9.2026) ─────────
+//
+// Entscheid David 16.9.2026 «a»: der Gruss soll wieder BEI JEDEM BESUCH
+// wechseln und zur lokalen Stunde passen — ohne den LCP-Tausch, den QS-PERF
+// #879 behoben hat. Umsetzung: konstantes Inline-Skript hinter der h1
+// (`start/Begruessung.tsx`, `GRUSS_SKRIPT`), der Client übernimmt dessen Text.
+//
+// ROT-PROBE (§6.7, 16.9.2026) des Kein-Tausch-Wächters: `anfangsGruss()` so
+// verändert, dass der Client IMMER selbst neu zieht (erste Zeile
+// `return waehleBegruessung(new Date().getHours(), Math.random)`) — Befund im
+// Commit dieses Schritts.
+test.describe('Gruss pro Besuch (Entscheid David 16.9.2026 «a»)', () => {
+  /** Math.random fest (bzw. als Folge) — VOR jedem Seitenskript. */
+  async function zufallFest(page: Page, werte: number[]): Promise<void> {
+    await page.addInitScript((w) => {
+      let i = 0
+      Math.random = () => w[i++ % w.length]
+    }, werte)
+  }
+
+  for (const [stunde, zeit] of [[8, '2026-09-07T08:15:00'], [23, '2026-09-07T23:40:00']] as const) {
+    test(`der Gruss stammt aus dem Pool der Besuchsstunde (${stunde} Uhr)`, async ({ page }) => {
+      // Zufall 0 ⇒ Index 0 des Stunden-Pools = erster Gruss des TAGESZEIT-
+      // Fensters (der Pool beginnt mit dem Fenster, `IMMER` folgt).
+      await zufallFest(page, [0])
+      await geheMitFixierterUhr(page, new Date(zeit))
+      await expect(page.locator('main h1')).toHaveText(waehleBegruessung(stunde, () => 0))
+      expect(tageszeitFuer(stunde).pool).toContain(await page.locator('main h1').innerText())
+    })
+  }
+
+  test('zwei Besuche zur selben Stunde können verschiedene Grüsse liefern', async ({ browser }) => {
+    const gesehen: string[] = []
+    for (const r of [0.02, 0.87]) {
+      const kontext = await browser.newContext()
+      const page = await kontext.newPage()
+      await zufallFest(page, [r])
+      await geheMitFixierterUhr(page)
+      await expect(page.locator('main h1')).toHaveText(waehleBegruessung(14, () => r))
+      gesehen.push(await page.locator('main h1').innerText())
+      await kontext.close()
+    }
+    expect(gesehen[0], gesehen.join(' · ')).not.toBe(gesehen[1])
+  })
+
+  test('kein Tausch: der vor dem ersten Paint gesetzte Gruss bleibt nach vollständigem Laden stehen', async ({ page }) => {
+    // Folge statt fester Zahl: zöge der Client selbst noch einmal, bekäme er
+    // einen ANDEREN Wert als das Inline-Skript (Rot-Probe oben).
+    await zufallFest(page, [0.02, 0.87, 0.5, 0.33])
+    await page.addInitScript(() => {
+      const w = window as unknown as { __grussLog: { t: string | null; zeit: number }[] }
+      w.__grussLog = []
+      let zuletzt: string | null | undefined
+      new MutationObserver(() => {
+        const t = document.querySelector('main h1')?.textContent ?? null
+        if (t !== zuletzt) { w.__grussLog.push({ t, zeit: performance.now() }); zuletzt = t }
+      }).observe(document, { subtree: true, childList: true, characterData: true })
+    })
+    // OHNE `page.clock`: die virtuelle Uhr ersetzt auch `performance` — die
+    // Paint-Einträge fehlten dann (gemessen 16.9.2026: FCP `undefined`), und
+    // für diese Zusage ist die Stunde egal.
+    await page.goto('/')
+    // App gebootet: die Uhrzeit kommt erst aus dem Mount-Effekt.
+    await expect(kopfBlock(page).locator('p').first()).toHaveText(/\d{2}:\d{2}$/)
+    await page.waitForTimeout(500)
+    const { log, gezogen, fcp, ende } = await page.evaluate(() => ({
+      log: (window as unknown as { __grussLog: { t: string | null; zeit: number }[] }).__grussLog,
+      gezogen: (window as unknown as { __lexmetrikGruss?: string }).__lexmetrikGruss,
+      fcp: performance.getEntriesByName('first-contentful-paint')[0]?.startTime,
+      ende: document.querySelector('main h1')?.textContent,
+    }))
+    const bild = log.map((e) => `${e.t}@${Math.round(e.zeit)}`).join(' → ')
+    expect(gezogen, `Inline-Skript lief nicht · ${bild}`).toBeTruthy()
+    expect(ende, `Endtext ≠ Skript-Gruss · ${bild}`).toBe(gezogen)
+    // Ab dem ersten Auftreten des Skript-Grusses zeigt die h1 nie einen
+    // anderen Text (ein kurzes Fehlen der h1 beim render-then-replace ist kein
+    // Tausch und wird übergangen).
+    const erst = log.findIndex((e) => e.t === gezogen)
+    expect(erst, bild).toBeGreaterThanOrEqual(0)
+    const danach = log.slice(erst).filter((e) => e.t !== null && e.t !== gezogen)
+    expect(danach, `Tausch nach dem Skript-Gruss · ${bild}`).toEqual([])
+    // … und er stand VOR dem ersten Paint.
+    expect(fcp, 'first-contentful-paint fehlt').toBeTruthy()
+    expect(log[erst].zeit, `Skript-Gruss erst nach FCP ${fcp} · ${bild}`).toBeLessThanOrEqual(fcp!)
+  })
+
+  test('CSP aus vercel.json: das Inline-Skript läuft (sha256 passt zu den ausgelieferten Bytes)', async ({ page }) => {
+    const vercel = JSON.parse(readFileSync(resolve(process.cwd(), 'vercel.json'), 'utf8')) as {
+      headers: { source: string; headers: { key: string; value: string }[] }[]
+    }
+    const csp = vercel.headers.find((h) => h.source === '/(.*)')!.headers
+      .find((h) => h.key === 'Content-Security-Policy')!.value
+    await page.route((url) => url.pathname === '/', async (route) => {
+      const antwort = await route.fetch()
+      await route.fulfill({ response: antwort, headers: { ...antwort.headers(), 'content-security-policy': csp } })
+    })
+    await page.addInitScript(() => {
+      const w = window as unknown as { __cspVerstoesse: string[] }
+      w.__cspVerstoesse = []
+      document.addEventListener('securitypolicyviolation', (e) => {
+        w.__cspVerstoesse.push(`${e.violatedDirective} ${e.blockedURI}`)
+      })
+    })
+    await geheMitFixierterUhr(page)
+    await expect(kopfBlock(page).locator('p').first()).toContainText('14:32')
+    const { gezogen, verstoesse } = await page.evaluate(() => ({
+      gezogen: (window as unknown as { __lexmetrikGruss?: string }).__lexmetrikGruss,
+      verstoesse: (window as unknown as { __cspVerstoesse: string[] }).__cspVerstoesse,
+    }))
+    expect(verstoesse.filter((v) => v.startsWith('script-src')), verstoesse.join(' | ')).toEqual([])
+    expect(gezogen, 'Inline-Skript unter der Prod-CSP nicht gelaufen').toBeTruthy()
+    await expect(page.locator('main h1')).toHaveText(gezogen!)
   })
 })
