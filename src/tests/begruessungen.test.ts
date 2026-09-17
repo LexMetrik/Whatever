@@ -55,9 +55,14 @@ describe('Begrüssungs-Pools', () => {
     }
   });
 
-  it('der «immer»-Pool trägt 30–40 Grüsse', () => {
+  // SPRACHREGIONEN 16.9.2026 (DEKLARIERTE fachliche Änderung, Auftrag David
+  // «mach noch mehr grüsse aus allen sprachregionen der schweiz»): Obergrenze
+  // 40 → 70, weil der «immer»-Pool 27 tageszeit-neutrale Grüsse aus Mundart,
+  // Romandie, Tessin und Rätoromanisch dazubekommt (Stand 65). Rot gesehen:
+  // «expected 65 to be less than or equal to 40». Untergrenze unverändert.
+  it('der «immer»-Pool trägt 30–70 Grüsse', () => {
     expect(IMMER.length).toBeGreaterThanOrEqual(30);
-    expect(IMMER.length).toBeLessThanOrEqual(40);
+    expect(IMMER.length).toBeLessThanOrEqual(70);
   });
 
   it('kein Gruss steht zweimal — auch nicht über Pool-Grenzen hinweg', () => {
