@@ -212,7 +212,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Wallis · Graubünden
       // · Innerschweiz · Romandie · Tessin (Dialekt «Bondì») · Sutsilvan
       // «bùn gi!» (Pledari Grond: guten Morgen).
-      'Güete Morgu.',
       'Guata Morga.',
       'Guätä Morgä.',
       'Bonjour de bon matin.',
@@ -426,7 +425,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Graubünden ·
       // Romandie · Tessin · Rätoromanisch «guten Tag» NACH dem Mittagessen —
       // Sutsilvan «bùna sera!», Sursilvan «bunasera!» (Pledari Grond).
-      'Guata Namittag.',
       'Bonjour, comment allez-vous?',
       'Salve, come va?',
       'Ciao, tutto bene?',
@@ -476,7 +474,6 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Basel «Fyroobe» ·
       // Mundart · Romandie · Tessin (Dialekt «Bonasera») · Sursilvan
       // «buna sera!» (Pledari Grond: guten Abend).
-      'Schöne Fyroobe.',
       'Scho Fyrabig?',
       'Bonsoir tout le monde.',
       'Bonsoir, ça joue?',
