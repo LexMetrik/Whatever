@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { usePaneKlasse } from '../layout/PaneKontext';
-import { useHeute } from './Begruessung';
+import { GRUSS_DATEN_JSON, GRUSS_SKRIPT, useHeute } from './Begruessung';
 
 // ─── Erste Ebene des Pults: die Begrüssung (W2·24-R10, D18, D39) ───────────
 //
@@ -91,17 +91,22 @@ export function SuchBlock() {
   // Breiten-Deckel wie im Referenzbild (`.such{max-width:860px}`).
   return (
     <div className="max-w-[54rem] border-b border-rule pb-8">
-      {/* Gruss kommt aus `useHeute` — seit QS-PERF (15.9.2026) deterministisch
-          aus dem Build-Seed, also IDENTISCH zwischen Prerender und Client
-          (`lib/begruessungen.ts`, `waehleBegruessungFuerBuild`); kein Tausch
-          mehr nach dem Mount. `suppressHydrationWarning` bleibt als
-          Bau-then-replace-Vorsichtsmassnahme stehen (kein `hydrateRoot`,
-          `docs/ssg-diagnose.md` §5), ist aber nicht mehr wegen einer
-          erwarteten Text-Abweichung nötig. */}
+      {/* Gruss kommt aus `useHeute`. Im Server-HTML steht der Build-Gruss
+          (Fallback ohne JavaScript); die zwei <script> direkt danach tauschen
+          ihn noch VOR dem ersten Paint gegen einen Gruss der Besuchsstunde
+          (16.9.2026, Entscheid David «a» — Herleitung, CSP-Hash und Wächter
+          in `Begruessung.tsx`), und der Client übernimmt genau diesen Text:
+          kein Tausch nach dem JS-Download (QS-PERF #879, LCP). Die Reihenfolge
+          h1 → pools → wahl ist tragend: das Skript liest seine Vorgänger.
+          `suppressHydrationWarning` bleibt als Vorsichtsmassnahme stehen; unter
+          `hydrateRoot` stimmt der Client-Text ohnehin mit dem umgeschriebenen
+          DOM überein. */}
       <h1 suppressHydrationWarning
         className={`font-serif italic text-ink-900 ${pk('text-h1 lg:text-display', 'text-h1 @3xl/pane:text-display')}`}>
         {gruss}
       </h1>
+      <script type="application/json" data-gruss="pools" dangerouslySetInnerHTML={{ __html: GRUSS_DATEN_JSON }} />
+      <script data-gruss="wahl" dangerouslySetInnerHTML={{ __html: GRUSS_SKRIPT }} />
       {/* Wochentag/Datum/Uhrzeit — kleiner, EIGENE Zeile unter der Begrüssung
           (D39). Die Uhrzeit ist `null` vor der Hydration (Prerender UND erster
           Client-Render, `Begruessung.tsx`); der Platz dafür ist über

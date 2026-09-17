@@ -1,7 +1,11 @@
 import { describe, it, expect } from 'vitest';
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { GRUSS_DATEN_JSON, GRUSS_SKRIPT } from '../components/start/Begruessung';
 import {
   GRUSS_MAX_ZEICHEN, IMMER, TAGESZEITEN,
-  begruessungsPool, tageszeitFuer, waehleBegruessung, waehleBegruessungFuerBuild,
+  begruessungsPool, grussSkriptDaten, tageszeitFuer, waehleBegruessung, waehleBegruessungFuerBuild,
 } from '../lib/begruessungen';
 
 // ─── Begrüssungs-Pools (W2·23-STARTSEITE-V4 §4) ─────────────────────────────
@@ -273,9 +277,92 @@ describe('Begrüssungs-Pools', () => {
     // erhalten, nur die Kadenz wechselt von PRO BESUCH auf PRO DEPLOY (im PR
     // als Produkt-Nuance benannt). Mehrere Seeds müssen darum nicht alle
     // denselben Gruss ziehen.
+    // BEDEUTUNG SEIT 16.9.2026 (deklarierte fachliche Änderung, Entscheid
+    // David «a»): der Build-Gruss ist nur noch der FALLBACK im Server-HTML
+    // (ohne JavaScript); im Browser zieht das Inline-Skript pro Besuch nach
+    // der Besuchsstunde (Block «Gruss pro Besuch» unten). Die Zusagen hier
+    // (deterministisch, tageszeit-neutral) gelten für den Fallback unverändert.
     const seeds = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10'];
     const ergebnisse = seeds.map((s) => waehleBegruessungFuerBuild(s));
     for (const g of ergebnisse) expect(IMMER).toContain(g);
     expect(new Set(ergebnisse).size, ergebnisse.join(' · ')).toBeGreaterThan(1);
+  });
+});
+
+// ─── Gruss pro Besuch (QS-PERF, Entscheid David «a» 16.9.2026) ─────────────
+//
+// Das Inline-Skript `GRUSS_SKRIPT` (`components/start/Begruessung.tsx`) wählt
+// den sichtbaren Gruss vor dem ersten Paint. Drei Zusagen, jede mechanisch:
+//  1. ÄQUIVALENZ: Skript + JSON-Datenblock wählen für jede Stunde 0–23 und jede
+//     Zufallszahl GENAU, was `waehleBegruessung(stunde, zufall)` wählt — der
+//     Skript-Code dupliziert keine Pools und keine Fenster-Regel (§5), nur die
+//     Index-Formel, und die ist hier festgenagelt.
+//  2. CSP: der sha256 des Skripts steht in der CSP von `vercel.json`. Läuft
+//     beides auseinander, blockt der Browser das Skript still — der Client
+//     fiele auf den neutralen Build-Gruss zurück (kein Tausch, aber kein Gruss
+//     pro Besuch mehr). Das e2e sieht keine Vercel-Header; dieser Wächter ist
+//     die einzige Stelle, die das fängt.
+//  3. HTML-Sicherheit: kein Eintrag kann den Datenblock schliessen, und keiner
+//     trägt eine «HH:MM»-Folge (`e2e/d39-begruessung.e2e.ts` zählt die im
+//     Roh-HTML).
+describe('Gruss pro Besuch — Inline-Skript', () => {
+  /** Führt GRUSS_SKRIPT gegen eine Attrappe aus (Stunde, Zufall fest). */
+  function fuehreSkriptAus(stunde: number, zufall: number): string | undefined {
+    const h1 = { textContent: 'Build-Gruss.' };
+    const fenster: { __lexmetrikGruss?: string } = {};
+    const dokument = {
+      currentScript: {
+        previousElementSibling: { textContent: GRUSS_DATEN_JSON },
+        parentNode: { querySelector: (sel: string) => (sel === 'h1' ? h1 : null) },
+      },
+    };
+    class FesteUhr { getHours() { return stunde; } }
+    const math = Object.assign(Object.create(Math) as Math, { random: () => zufall });
+    new Function('document', 'window', 'Date', 'Math', GRUSS_SKRIPT)(dokument, fenster, FesteUhr, math);
+    expect(fenster.__lexmetrikGruss, `Stunde ${stunde}: window-Wert == h1-Text`).toBe(h1.textContent);
+    return fenster.__lexmetrikGruss;
+  }
+
+  it('grussSkriptDaten bildet für jede Stunde genau begruessungsPool(stunde) ab', () => {
+    const d = grussSkriptDaten();
+    for (let h = 0; h < 24; h++) {
+      expect([...d.t[d.s[h]], ...d.i], `Stunde ${h}`).toEqual(begruessungsPool(h));
+    }
+  });
+
+  it('ÄQUIVALENZ: das Skript wählt für jede Stunde und Zufallszahl dasselbe wie waehleBegruessung', () => {
+    for (let h = 0; h < 24; h++) {
+      for (const r of [0, 0.02, 0.3333, 0.5, 0.87, 0.999999]) {
+        expect(fuehreSkriptAus(h, r), `Stunde ${h}, Zufall ${r}`).toBe(waehleBegruessung(h, () => r));
+      }
+    }
+  });
+
+  it('zwei Besuche zur selben Stunde können verschiedene Grüsse liefern (pro Besuch, nicht pro Deploy)', () => {
+    expect(fuehreSkriptAus(9, 0.02)).not.toBe(fuehreSkriptAus(9, 0.87));
+  });
+
+  it('der Gruss stammt aus dem Pool der BESUCHS-Stunde — 23 Uhr Nacht-Pool, 8 Uhr Morgen-Pool', () => {
+    const nacht = fuehreSkriptAus(23, 0.01);
+    expect(tageszeitFuer(23).pool).toContain(nacht);
+    const morgen = fuehreSkriptAus(8, 0.01);
+    expect(tageszeitFuer(8).pool).toContain(morgen);
+  });
+
+  it('CSP: vercel.json gibt genau diesen Skript-Text per sha256 frei, ohne unsafe-inline', () => {
+    const hash = `'sha256-${createHash('sha256').update(GRUSS_SKRIPT, 'utf8').digest('base64')}'`;
+    const vercel = JSON.parse(readFileSync(resolve(__dirname, '../../vercel.json'), 'utf8')) as {
+      headers: { source: string; headers: { key: string; value: string }[] }[];
+    };
+    const csp = vercel.headers.find((h) => h.source === '/(.*)')?.headers
+      .find((h) => h.key === 'Content-Security-Policy')?.value ?? '';
+    const scriptSrc = csp.split(';').map((d) => d.trim()).find((d) => d.startsWith('script-src')) ?? '';
+    expect(scriptSrc.split(/\s+/), `script-src: ${scriptSrc}`).toContain(hash);
+    expect(scriptSrc).not.toContain('unsafe-inline');
+  });
+
+  it('der JSON-Datenblock kann sein <script> nicht schliessen und trägt keine HH:MM-Folge', () => {
+    expect(GRUSS_DATEN_JSON).not.toMatch(/<\/?script/i);
+    expect(GRUSS_DATEN_JSON + GRUSS_SKRIPT).not.toMatch(/\d{2}:\d{2}/);
   });
 });

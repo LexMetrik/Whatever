@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { waehleBegruessungFuerBuild } from '../../lib/begruessungen';
+import { grussSkriptDaten, waehleBegruessung, waehleBegruessungFuerBuild } from '../../lib/begruessungen';
 
 // ─── Begrüssung und Tagesdatum der Startseite (W2·23-STARTSEITE-V4 §4) ──────
 //
@@ -11,23 +11,40 @@ import { waehleBegruessungFuerBuild } from '../../lib/begruessungen';
 // Wortlaut, Pool und Zufallsquelle sind unverändert.
 //
 // ZUFALL, bewusst UND an der richtigen Schicht (Auftrag David 5.9.2026
-// «verschiedene Begrüssungen … etwas persönlicher»): der Gruss wechselt
-// weiterhin zufällig, seit QS-PERF (15.9.2026) aber pro DEPLOY statt pro
-// Besuch, UND (Nachbesserung selber Tag) aus dem tageszeit-NEUTRALEN
-// `IMMER`-Pool statt aus einem Tageszeit-Fenster — der Build-Zeitpunkt ist
-// kein verlässlicher Bezug zur Uhrzeit des Besuchs (ein um 09:00 gebauter
-// Stand könnte sonst um 09:00 real einen Abend-Gruss zeigen). S.
-// `waehleBegruessungFuerBuild` in `lib/begruessungen.ts` für den Befund
-// (Prerender/Client zogen bis dahin je einen EIGENEN Zufallswert, die
-// grösste Zeile der Seite tauschte nach dem JS-Download, Lighthouse mass das
-// als LCP bei 9.4 s) und die Begründung der Produkt-Nuance. CLAUDE.md §2 ist
-// nicht berührt: die Regel bindet die ENGINES (gleiche Eingabe → gleiche
-// Frist, gleicher Betrag); diese Zeile trägt keinen Rechtswert und geht in
-// keine Berechnung ein.
+// «verschiedene Begrüssungen … etwas persönlicher»):
+//  · bis 15.9.2026 zogen Prerender UND Client-Mount je einen EIGENEN
+//    Zufallswert — die grösste Zeile der Seite tauschte nach dem JS-Download,
+//    Lighthouse mass das als LCP bei 9.4 s (Befund in `lib/begruessungen.ts`);
+//  · QS-PERF #879 (15.9.2026) fixierte den Gruss per Build-Seed aus dem
+//    tageszeit-NEUTRALEN `IMMER`-Pool: kein Tausch mehr, aber Wechsel nur pro
+//    DEPLOY und ohne Tageszeit-Bezug;
+//  · 16.9.2026 (Entscheid David «a»): wieder PRO BESUCH und nach der ECHTEN
+//    lokalen Stunde des Besuchers — ohne den Tausch zurückzubringen.
 //
-// PRERENDER: `gruss` ist jetzt bei GLEICHEM Build-Seed (`VITE_BUILD_ID`)
-// zwischen Prerender und Client identisch (Bauregel 2 «Client-Initialstate
-// auf den Server-Zustand pinnen») — kein Tausch mehr. `datum`/`wochentag`
+// WIE (16.9.2026): der Tausch entstand, weil ZWEI Stellen zogen. Jetzt zieht
+// im Browser genau EINE, und zwar VOR dem ersten Paint. `SuchBlock` rendert
+// direkt nach der h1 zwei <script>-Elemente:
+//   1. `data-gruss="pools"` (`type="application/json"`): die Pools als DATEN
+//      aus `grussSkriptDaten()` (§5 — keine Kopie der Grüsse im Skript-Code;
+//      ein JSON-Datenblock wird nie ausgeführt und fällt nicht unter die CSP);
+//   2. `data-gruss="wahl"`: `GRUSS_SKRIPT` unten, ein KONSTANTES klassisches
+//      Inline-Skript. Der Parser hält an ihm an; es schreibt den Gruss der
+//      Besuchsstunde in die h1 und legt ihn unter `window.__lexmetrikGruss`
+//      ab. Weil der Text konstant ist, ist es auch sein sha256 — der steht in
+//      der CSP von `vercel.json` (`script-src 'self' 'sha256-…'`, KEIN
+//      `unsafe-inline`); `src/tests/begruessungen.test.ts` rechnet ihn nach.
+// Der Client (`anfangsGruss`) übernimmt beim Mount GENAU diesen Text statt neu
+// zu ziehen — unter `createRoot` (render-then-replace: gleicher Text, kein
+// Tausch) wie unter `hydrateRoot` (Client-Text == DOM-Text, den das Skript
+// schon geschrieben hat: kein Mismatch). Nur wo KEIN Skript lief (Client-
+// Navigation auf «/», SPA-Fallback ohne Prerender) zieht der Client selbst —
+// dort war vorher nichts zu sehen. Ohne JavaScript bleibt der deterministische
+// Build-Gruss aus `IMMER` im Server-HTML stehen (tageszeit-neutral, also nie
+// falsch). CLAUDE.md §2 ist nicht berührt: die Regel bindet die ENGINES; diese
+// Zeile trägt keinen Rechtswert. `src/lib/**` bleibt rein — Uhr und Zufall
+// leben nur hier und im Skript.
+//
+// PRERENDER: `datum`/`wochentag`
 // bleiben live (echte Uhrzeit des Aufrufs) und divergieren wie bisher
 // zwischen Build und Client; sie tragen darum weiterhin ehrlich
 // `suppressHydrationWarning` (kleine Nebenzeile, nicht die LCP-h1). Ein
@@ -65,6 +82,71 @@ export interface Heute {
 // zwei Prozessen leicht auseinanderliefe.
 const BUILD_SEED = (import.meta.env?.VITE_BUILD_ID as string | undefined) ?? 'dev';
 
+// ─── Inline-Skript: Gruss der Besuchsstunde VOR dem ersten Paint ───────────
+// Steht im HTML direkt hinter `<h1>` und `<script data-gruss="pools">`
+// (`SuchBlock`). `document.currentScript` findet den Datenblock als Vorgänger
+// und die h1 im selben Elternknoten — ohne id, damit zwei Instanzen (Pane)
+// sich nicht in die Quere kommen. Die Auswahl ist Zeichen für Zeichen
+// `waehleBegruessung(stunde, Math.random)` über `t[s[stunde]] ++ i` =
+// `begruessungsPool(stunde)` (Äquivalenz-Wächter im Unit-Test). try/catch: ein
+// Fehler hier darf die Seite nie brechen — dann bleibt der Build-Gruss stehen.
+// ACHTUNG: jede Änderung an diesem Text ändert seinen sha256 — die CSP in
+// `vercel.json` im selben Commit nachführen (Wächter sonst rot).
+export const GRUSS_SKRIPT =
+  `(function(){try{var s=document.currentScript,d=JSON.parse(s.previousElementSibling.textContent),h=s.parentNode.querySelector('h1'),p=d.t[d.s[new Date().getHours()]].concat(d.i),g=p[Math.min(p.length-1,Math.floor(Math.random()*p.length))];if(h&&g){h.textContent=g;window.__lexmetrikGruss=g}}catch(e){}})()`;
+
+/** Pools als JSON für `<script type="application/json" data-gruss="pools">`;
+ *  `<` maskiert, damit kein Eintrag den Datenblock je schliessen könnte. */
+export const GRUSS_DATEN_JSON = JSON.stringify(grussSkriptDaten()).replace(/</g, '\\u003c');
+
+// EINMAL-ÜBERNAHME (Nachzug Gegenprüfung #899, 17.9.2026): das Inline-Skript
+// läuft nur beim ERSTEN, vom Parser geladenen Seitenaufruf — ein von React
+// gerendertes <script> (dangerouslySetInnerHTML) führt der Browser nie aus.
+// `window.__lexmetrikGruss` bleibt darum für die ganze Tab-Lebensdauer stehen.
+// Bis 16.9.2026 übernahm JEDER Mount diesen Wert: jeder Rückweg per
+// `<Link to="/">` (Topbar-Logo, Sidebar, Footer) zeigte denselben Gruss, auch
+// Stunden später aus dem falschen Tageszeit-Fenster, und ein zweites Pane las
+// denselben Wert mit. Jetzt zeigt nur der erste COMMITTETE Mount im Tab den
+// vorgemalten Gruss; jeder spätere Mount zieht frisch (dort ist nichts
+// vorgemalt, also kein Tausch).
+//
+// WARUM EIN FLAG NACH DEM COMMIT (Befund Gegenprüfung 17.9.2026): bis dahin
+// «besass» der erste Initializer-Aufruf den Wert über ein Mount-Objekt aus
+// `useState(() => ({}))`. Das hält, solange React den ersten Render auch
+// committet — verwirft React ihn aber vor dem Commit (Suspense, unterbrochener
+// Concurrent-Render, Hydration-Rückfall; auch in Produktion möglich), ist das
+// Mount-Objekt weg, der Neuversuch trägt ein anderes und zog frisch: Tausch.
+// Belegt durch den echten Render-Test `begruessung-strictmode.test.tsx` (rot
+// gegen f7f2bb540). Darum ist der Initializer jetzt REIN: er liest nur, und
+// `skriptGrussVerbraucht` setzt erst der Effekt NACH dem Commit. Beide
+// StrictMode-Aufrufe des Initializers und jeder verworfene Render sehen so
+// denselben Zustand; Effekt-Doppellauf (mount→unmount→mount im Dev) setzt nur
+// dasselbe Flag erneut, der State des Mounts bleibt erhalten. Der globale Wert
+// selbst bleibt stehen (Diagnose, e2e-Wächter lesen ihn).
+let skriptGrussVerbraucht = false;
+
+/** Der Gruss, mit dem `useHeute` startet (lazy init, rein — keine Schreibzugriffe):
+ *  1. ohne DOM (Prerender, Unit-Test): Build-Gruss — der Fallback-Text im
+ *     Server-HTML, den sieht, wer kein JavaScript ausführt;
+ *  2. bis zum ersten Commit im Tab: hat das Inline-Skript gezogen, GENAU
+ *     dieser Text (kein Tausch); steht die prerenderte h1 noch im DOM, lief
+ *     das Skript aber nicht (etwa CSP-Hash veraltet): deren Text — lieber
+ *     neutral als ein Tausch; sonst selbst ziehen;
+ *  3. jeder Mount nach dem ersten Commit (Client-Navigation zurück auf «/»,
+ *     zweites Pane, SPA-Fallback): selbst ziehen, aus dem Pool der lokalen
+ *     Stunde — sichtbar war dort vorher nichts. */
+function anfangsGruss(): string {
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return waehleBegruessungFuerBuild(BUILD_SEED);
+  }
+  if (skriptGrussVerbraucht) return waehleBegruessung(new Date().getHours(), Math.random);
+  const gezogen = (window as { __lexmetrikGruss?: unknown }).__lexmetrikGruss;
+  if (typeof gezogen === 'string' && gezogen) return gezogen;
+  const gezeigt = document.querySelector('script[data-gruss="wahl"]')
+    ?.parentElement?.querySelector('h1')?.textContent?.trim();
+  return gezeigt || waehleBegruessung(new Date().getHours(), Math.random);
+}
+
 const pad = (n: number) => String(n).padStart(2, '0');
 
 /** «14:32», 24-Stunden, ohne Locale-Abhängigkeit (wie Wochentag/Datum oben). */
@@ -94,13 +176,16 @@ export function useHeute(): Heute {
   const [heute] = useState<Omit<Heute, 'uhrzeit'>>(() => {
     const jetzt = new Date();
     return {
-      gruss: waehleBegruessungFuerBuild(BUILD_SEED),
+      gruss: anfangsGruss(),
       wochentag: WOCHENTAGE[jetzt.getDay()],
       datum: `${jetzt.getDate()}. ${MONATE[jetzt.getMonth()]} ${jetzt.getFullYear()}`,
     };
   });
   const [zeit, setZeit] = useState<string | null>(null);
   useEffect(() => {
+    // Erst nach dem Commit: der vorgemalte Gruss ist jetzt sichtbar vergeben
+    // (Einmal-Übernahme oben) — jeder spätere Mount zieht frisch.
+    skriptGrussVerbraucht = true;
     const nachfuehren = () => setZeit(uhrzeit(new Date()));
     nachfuehren();
     const id = setInterval(nachfuehren, 60_000);
