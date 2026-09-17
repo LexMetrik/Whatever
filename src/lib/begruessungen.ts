@@ -41,6 +41,15 @@
 // Salve), und das Nacht-Fenster grüsst Spätaufsteher, statt sie ins Bett zu
 // schicken; ein Wächter in src/tests/begruessungen.test.ts erzwingt das.
 //
+// SPRACHREGIONEN 16.9.2026 (Auftrag David: «mach noch mehr grüsse aus allen
+// sprachregionen der schweiz»): je Pool ein datierter Block mit Mundart
+// (Basel · Bern · Zürich · Innerschweiz · Ostschweiz · Wallis · Graubünden),
+// Westschweizer Französisch (z. B. «ça joue?»), Tessiner Italienisch samt
+// Dialekt (Bondì · Bonasera) und Rätoromanisch in RG und Idiomen — jede
+// rätoromanische Form belegt im Pledari Grond (RG, Sursilvan, Sutsilvan,
+// Surmiran; api.pledarigrond.ch) bzw. in den Dicziunaris ladins (Puter,
+// Vallader), Abruf 17.9.2026. Die Pool-Grössen-Zusagen wachsen mit (Test).
+//
 // KURATIERT, nicht 1:1 übernommen (§4-Auflage): Sprichwort-Fragmente («Der
 // frühe Vogel …», «Morgenstund hat Gold im Mund», «Schaffe, schaffe …») und
 // alles, was nach Werbung oder Kalauer klingt («Willkommen im Paragraphen-
@@ -105,6 +114,42 @@ export const IMMER: readonly string[] = [
   'Benvenuti.',
   'Bainvegni.',
   'Allegra.',
+  // Sprachregionen (Ausbau 16.9.2026, Auftrag David «mach noch mehr grüsse
+  // aus allen sprachregionen der schweiz») — Mundart: Hoi/Sali allgemein,
+  // «zäma» Wallis/Graubünden, «Griäzi» Innerschweiz, «Grüessech» Bern.
+  'Hoi.',
+  'Sali.',
+  'Ciao zäme.',
+  'Hoi zäma.',
+  'Griäzi mitänand.',
+  'Grüessech zäme.',
+  // Romandie.
+  'Salut.',
+  'Salut à tous.',
+  'Salut tout le monde.',
+  'Salut, ça joue?',
+  'Comment ça va?',
+  'Bienvenue à tous.',
+  'Bienvenue parmi nous.',
+  'Soyez les bienvenus.',
+  // Italienische Schweiz.
+  'Ciao.',
+  'Ciao a tutti.',
+  'Ciao, come va?',
+  'Salve, benvenuti.',
+  'Benvenuti a tutti.',
+  'Ben arrivati.',
+  // Rätoromanisch (Pledari Grond / Dicziunaris ladins, Abruf 17.9.2026):
+  // RG «Cordial bainvegni!», «chau ensemen!» (hallo zusammen) · Sursilvan
+  // «beinvegni» · Sutsilvan «bagnvagnieu!» · Surmiran «bavagnez!» (Sie-Form),
+  // «cordial bavegna» · Puter/Vallader «allegramaing!» (grüezi).
+  'Cordial bainvegni.',
+  'Chau ensemen.',
+  'Beinvegni.',
+  'Bagnvagnieu.',
+  'Bavagnez.',
+  'Cordial bavegna.',
+  'Allegramaing.',
 ];
 
 export interface Tageszeit {
@@ -164,6 +209,17 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Bun di.',
       'Zeit für ein Zmorge.',
       'En guete Zmorge.',
+      // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Wallis · Graubünden
+      // · Innerschweiz · Romandie · Tessin (Dialekt «Bondì») · Sutsilvan
+      // «bùn gi!» (Pledari Grond: guten Morgen).
+      'Güete Morgu.',
+      'Guata Morga.',
+      'Guätä Morgä.',
+      'Bonjour de bon matin.',
+      'Bonjour, déjà debout?',
+      'Buondì.',
+      'Bondì.',
+      'Bùn gi.',
     ],
   },
   {
@@ -206,6 +262,15 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Grüezi und guete Morge.',
       'Zeit für ein Znüni.',
       'Bald ist Znüni.',
+      // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Mundart · Romandie
+      // («ça joue?») · Tessin · Sursilvan «bien di!» (Pledari Grond).
+      'Morge zäme.',
+      'Morge mitenand.',
+      'Bonjour, ça joue?',
+      'Bonjour tout le monde.',
+      'Buongiorno, come va?',
+      'Buondì a tutti.',
+      'Bien di.',
     ],
   },
   {
@@ -249,6 +314,17 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Guete Tag mitenand.',
       'Nach dem Znüni weiter.',
       'Tagwohl.',
+      // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Graubünden ·
+      // Innerschweiz · Mundart · Romandie · Tessin · Surmiran «bun de!»
+      // (Pledari Grond: guten Tag).
+      'Guata Tag.',
+      'Guätä Tag.',
+      'Tag zäme.',
+      'Bien le bonjour.',
+      'Bonjour, bienvenue.',
+      'Buongiorno, benvenuti.',
+      'Buongiorno, come sta?',
+      'Bun de.',
     ],
   },
   {
@@ -295,6 +371,16 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Zeit fürs Zmittag.',
       'Es Zmittag tuet guet.',
       'Nach em Zmittag witer.',
+      // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Basel «e Guete» ·
+      // Romandie · Tessin · Rätoromanisch «Mahlzeit!» im Pledari Grond —
+      // RG «bun appetit!», Sursilvan «bien appetit!», Surmiran «bun appatet!».
+      'E Guete.',
+      'Bonjour, ça va?',
+      'Bonjour à toutes et à tous.',
+      'Buongiorno e ben arrivati.',
+      'Bun appetit.',
+      'Bien appetit.',
+      'Bun appatet.',
     ],
   },
   {
@@ -337,6 +423,15 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Zeit für ein Zvieri.',
       'Schöni Zvieri-Zyt.',
       'Bald ist Zvieri.',
+      // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Graubünden ·
+      // Romandie · Tessin · Rätoromanisch «guten Tag» NACH dem Mittagessen —
+      // Sutsilvan «bùna sera!», Sursilvan «bunasera!» (Pledari Grond).
+      'Guata Namittag.',
+      'Bonjour, comment allez-vous?',
+      'Salve, come va?',
+      'Ciao, tutto bene?',
+      'Bùna sera.',
+      'Bunasera.',
     ],
   },
   {
@@ -378,6 +473,16 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Buonasera a tutti.',
       'Schöne Fyrabe.',
       'Bald gits Znacht.',
+      // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Basel «Fyroobe» ·
+      // Mundart · Romandie · Tessin (Dialekt «Bonasera») · Sursilvan
+      // «buna sera!» (Pledari Grond: guten Abend).
+      'Schöne Fyroobe.',
+      'Scho Fyrabig?',
+      'Bonsoir tout le monde.',
+      'Bonsoir, ça joue?',
+      'Buonasera, come va?',
+      'Bonasera.',
+      'Buna sera.',
     ],
   },
   {
@@ -418,6 +523,21 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       // Nachgeschärft 8.9.2026 (Haupt-Session): «Was suchen Sie heute Abend?»
       // gestrichen, dafür nach.
       'Guete Aabig, willkomme.',
+      // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Basel «Obe» ·
+      // Ostschweiz «Obig» · Bern «Abe» · Graubünden · Innerschweiz · Romandie ·
+      // Tessin · Sutsilvan «bùna sera a tuts!» (Pledari Grond: guten Abend
+      // allerseits).
+      'Guete Obe.',
+      'Guete Obig.',
+      'Guete n Abe.',
+      'Guata Obig.',
+      'Guätä Aabig.',
+      'Bonsoir et bienvenue.',
+      'Bonsoir, comment ça va?',
+      'Bonsoir à toutes et à tous.',
+      'Buonasera e benvenuti.',
+      'Buonasera, come sta?',
+      'Bùna sera a tuts.',
     ],
   },
   {
@@ -462,6 +582,15 @@ export const TAGESZEITEN: readonly Tageszeit[] = [
       'Bonsoir, bienvenue.',
       'Buonasera, benvenuti.',
       'Salü, no wach?',
+      // Sprachregionen (Ausbau 16.9.2026, Auftrag David): Mundart · Romandie ·
+      // Tessin · Surmiran «tgau!» (Pledari Grond: hallo, als Begrüssung).
+      'No uf?',
+      'Grüessech, no wach?',
+      'Bonsoir, encore debout?',
+      'Encore là? Bienvenue.',
+      'Buonasera, ancora svegli?',
+      'Ciao, ancora al lavoro?',
+      'Tgau.',
     ],
   },
 ];
