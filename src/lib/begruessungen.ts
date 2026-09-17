@@ -534,6 +534,19 @@ export function waehleBegruessung(stunde: number, zufall: () => number): string 
 // zufällig, aber ohne Tageszeit-Bezug —, die Kadenz ändert sich von PRO
 // BESUCH auf PRO DEPLOY. Kein Logikverlust (Skill `perf`): keine Rechtslogik
 // betroffen, reine Darstellung.
+//
+// NACHTRAG 16.9.2026 (Entscheid David «a»: wieder PRO BESUCH und wieder
+// TAGESZEIT-abhängig, ohne den LCP-Tausch zurückzubringen): die Produkt-Nuance
+// oben ist damit für den Browser mit JavaScript ABGELÖST. Den sichtbaren Gruss
+// wählt jetzt ein kleines, blockierendes Inline-Skript DIREKT NACH der h1 im
+// prerenderten HTML — echte lokale Stunde des Besuchers, `Math.random` —, noch
+// bevor der Browser die Zeile zum ersten Mal malt; der React-Client übernimmt
+// genau diesen Text, statt neu zu ziehen (`components/start/Begruessung.tsx`,
+// `GRUSS_SKRIPT`). `waehleBegruessungFuerBuild` bleibt als FALLBACK stehen: es
+// ist der Text im Server-HTML, den sieht, wer kein JavaScript ausführt (und
+// jeder Test ohne DOM) — darum weiterhin nur aus dem tageszeit-neutralen
+// `IMMER`. Die Pools reist dem Skript als JSON-Datenblock mit
+// (`grussSkriptDaten` unten), NICHT als Kopie im Skript-Code (§5).
 
 /**
  * Einfacher, deterministischer 32-Bit-Hash (FNV-1a-Variante). Dient nur der
@@ -561,4 +574,29 @@ export function waehleBegruessungFuerBuild(seed: string): string {
   const streuwert = hashText(`${seed}:immer`) / 0xffffffff;
   const i = Math.min(IMMER.length - 1, Math.max(0, Math.floor(streuwert * IMMER.length)));
   return IMMER[i];
+}
+
+/** Datenform für das Inline-Skript der Startseite (`GRUSS_SKRIPT` in
+ *  `components/start/Begruessung.tsx`). Kurze Schlüssel, weil der Block in
+ *  jedem Startseiten-HTML mitreist:
+ *  - `t` — die Pools der Tageszeit-Fenster in `TAGESZEITEN`-Reihenfolge,
+ *  - `s` — für jede Stunde 0–23 der Index ihres Fensters in `t`, abgeleitet
+ *    aus `tageszeitFuer` (die Mitternachts-Regel wird damit NICHT im Skript
+ *    nachgebaut, sondern hier einmal ausgewertet — §5),
+ *  - `i` — der `IMMER`-Pool.
+ *  Das Skript bildet daraus `t[s[stunde]] ++ i` — genau `begruessungsPool`
+ *  (Äquivalenz-Wächter in `src/tests/begruessungen.test.ts`). */
+export interface GrussSkriptDaten {
+  t: readonly (readonly string[])[];
+  s: readonly number[];
+  i: readonly string[];
+}
+
+/** Reine Projektion der Pools für das Inline-Skript — kein Zufall, keine Uhr. */
+export function grussSkriptDaten(): GrussSkriptDaten {
+  return {
+    t: TAGESZEITEN.map((t) => t.pool),
+    s: Array.from({ length: 24 }, (_, h) => TAGESZEITEN.indexOf(tageszeitFuer(h))),
+    i: IMMER,
+  };
 }
