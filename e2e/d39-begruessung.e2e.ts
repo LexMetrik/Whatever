@@ -243,6 +243,31 @@ test.describe('Gruss pro Besuch (Entscheid David 16.9.2026 «a»)', () => {
     expect(log[erst].zeit, `Skript-Gruss erst nach FCP ${fcp} · ${bild}`).toBeLessThanOrEqual(fcp!)
   })
 
+  // NACHZUG GEGENPRÜFUNG #899 (17.9.2026): das Inline-Skript läuft nur beim
+  // Parser-Laden; `window.__lexmetrikGruss` bleibt danach für den ganzen Tab
+  // stehen. Der Rückweg per `<Link to="/">` (Topbar-Logo) muss frisch aus der
+  // DANN aktuellen Stunde ziehen, nicht den Gruss des ersten Aufrufs zeigen.
+  // Zufall fest 0 ⇒ erster Gruss des jeweiligen Tageszeit-Fensters; 08 und
+  // 23 Uhr liegen in verschiedenen Fenstern, die Grüsse unterscheiden sich.
+  // ROT-PROBE (§6.7, 17.9.2026): gegen den Stand 992325c67 (jeder Mount
+  // übernimmt `__lexmetrikGruss`) rot mit «Expected: Schönen späten Abend. ·
+  // Received: Einen klaren Morgen.»; mit Einmal-Übernahme grün (3/3, CI=1).
+  test('SPA-Rückweg auf «/» Stunden später: frischer Gruss aus dem Pool der neuen Stunde', async ({ page }) => {
+    const morgens = waehleBegruessung(8, () => 0)
+    const nachts = waehleBegruessung(23, () => 0)
+    expect(nachts, 'Testannahme: verschiedene Fenster').not.toBe(morgens)
+    await zufallFest(page, [0])
+    await geheMitFixierterUhr(page, new Date('2026-09-07T08:15:00'))
+    await expect(page.locator('main h1')).toHaveText(morgens)
+    await page.getByRole('navigation', { name: 'Bereiche der Sammlung' }).getByRole('link').first().click()
+    await expect(page).not.toHaveURL(/\/$/)
+    await page.clock.setSystemTime(new Date('2026-09-07T23:40:00'))
+    await page.getByRole('link', { name: 'LexMetrik – Startseite' }).first().click()
+    await expect(page).toHaveURL(/\/$/)
+    await expect(page.locator('main h1')).toHaveText(nachts)
+    expect(tageszeitFuer(23).pool).toContain(await page.locator('main h1').innerText())
+  })
+
   test('CSP aus vercel.json: das Inline-Skript läuft (sha256 passt zu den ausgelieferten Bytes)', async ({ page }) => {
     const vercel = JSON.parse(readFileSync(resolve(process.cwd(), 'vercel.json'), 'utf8')) as {
       headers: { source: string; headers: { key: string; value: string }[] }[]

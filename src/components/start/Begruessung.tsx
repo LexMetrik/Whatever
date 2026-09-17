@@ -99,24 +99,48 @@ export const GRUSS_SKRIPT =
  *  `<` maskiert, damit kein Eintrag den Datenblock je schliessen könnte. */
 export const GRUSS_DATEN_JSON = JSON.stringify(grussSkriptDaten()).replace(/</g, '\\u003c');
 
-/** Der Gruss, mit dem `useHeute` startet (lazy init, einmal je Mount):
+// EINMAL-ÜBERNAHME (Nachzug Gegenprüfung #899, 17.9.2026): das Inline-Skript
+// läuft nur beim ERSTEN, vom Parser geladenen Seitenaufruf — ein von React
+// gerendertes <script> (dangerouslySetInnerHTML) führt der Browser nie aus.
+// `window.__lexmetrikGruss` bleibt darum für die ganze Tab-Lebensdauer stehen.
+// Bis 16.9.2026 übernahm JEDER Mount diesen Wert: jeder Rückweg per
+// `<Link to="/">` (Topbar-Logo, Sidebar, Footer) zeigte denselben Gruss, auch
+// Stunden später aus dem falschen Tageszeit-Fenster, und ein zweites Pane las
+// denselben Wert mit. Jetzt BESITZT genau ein Mount den vorgemalten Gruss —
+// der allererste im Tab; jeder spätere Mount zieht frisch (dort ist nichts
+// vorgemalt, also kein Tausch). Besitz über ein Mount-Objekt statt eines
+// blossen «verbraucht»-Flags: unter StrictMode ruft React den Initializer
+// desselben Mounts zweimal auf; beide Aufrufe tragen dasselbe Objekt und
+// bekommen denselben Wert. Der globale Wert selbst bleibt stehen (Diagnose,
+// e2e-Wächter lesen ihn).
+let grussBesitzer: object | null = null;
+let besitzerGruss = '';
+
+/** Der Gruss, mit dem `useHeute` startet (lazy init, einmal je Mount; `mount`
+ *  = ein pro Komponenten-Instanz stabiles Objekt):
  *  1. ohne DOM (Prerender, Unit-Test): Build-Gruss — der Fallback-Text im
  *     Server-HTML, den sieht, wer kein JavaScript ausführt;
- *  2. hat das Inline-Skript gezogen: GENAU dieser Text (kein Tausch);
- *  3. steht die prerenderte h1 noch im DOM, das Skript lief aber nicht (etwa
- *     CSP-Hash veraltet): deren Text — lieber neutral als ein Tausch;
- *  4. sonst (Client-Navigation, SPA-Fallback ohne Prerender): selbst ziehen,
- *     aus dem Pool der lokalen Stunde — sichtbar war vorher nichts. */
-function anfangsGruss(): string {
+ *  2. erster Mount im Tab (Besitzer): hat das Inline-Skript gezogen, GENAU
+ *     dieser Text (kein Tausch); steht die prerenderte h1 noch im DOM, lief
+ *     das Skript aber nicht (etwa CSP-Hash veraltet): deren Text — lieber
+ *     neutral als ein Tausch; sonst selbst ziehen;
+ *  3. jeder weitere Mount (Client-Navigation zurück auf «/», zweites Pane,
+ *     SPA-Fallback): selbst ziehen, aus dem Pool der lokalen Stunde —
+ *     sichtbar war dort vorher nichts. */
+export function anfangsGruss(mount: object): string {
   if (typeof window === 'undefined' || typeof document === 'undefined') {
     return waehleBegruessungFuerBuild(BUILD_SEED);
   }
+  if (grussBesitzer === mount) return besitzerGruss;
+  if (grussBesitzer !== null) return waehleBegruessung(new Date().getHours(), Math.random);
+  grussBesitzer = mount;
   const gezogen = (window as { __lexmetrikGruss?: unknown }).__lexmetrikGruss;
-  if (typeof gezogen === 'string' && gezogen) return gezogen;
   const gezeigt = document.querySelector('script[data-gruss="wahl"]')
     ?.parentElement?.querySelector('h1')?.textContent?.trim();
-  if (gezeigt) return gezeigt;
-  return waehleBegruessung(new Date().getHours(), Math.random);
+  besitzerGruss = typeof gezogen === 'string' && gezogen
+    ? gezogen
+    : gezeigt || waehleBegruessung(new Date().getHours(), Math.random);
+  return besitzerGruss;
 }
 
 const pad = (n: number) => String(n).padStart(2, '0');
@@ -145,10 +169,13 @@ function uhrzeit(jetzt: Date): string {
  *  (Minimalismus-Prinzip, `.claude/rules/schichtentrennung.md`) — der e2e-
  *  Wächter (`e2e/d39-begruessung.e2e.ts`) installiert die Uhr vor `goto`. */
 export function useHeute(): Heute {
+  // Mount-Identität für `anfangsGruss` (Einmal-Übernahme oben): der erste
+  // Hook, damit sein Objekt im Initializer darunter schon feststeht.
+  const [mount] = useState<object>(() => ({}));
   const [heute] = useState<Omit<Heute, 'uhrzeit'>>(() => {
     const jetzt = new Date();
     return {
-      gruss: anfangsGruss(),
+      gruss: anfangsGruss(mount),
       wochentag: WOCHENTAGE[jetzt.getDay()],
       datum: `${jetzt.getDate()}. ${MONATE[jetzt.getMonth()]} ${jetzt.getFullYear()}`,
     };
