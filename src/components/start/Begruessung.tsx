@@ -106,41 +106,45 @@ export const GRUSS_DATEN_JSON = JSON.stringify(grussSkriptDaten()).replace(/</g,
 // Bis 16.9.2026 übernahm JEDER Mount diesen Wert: jeder Rückweg per
 // `<Link to="/">` (Topbar-Logo, Sidebar, Footer) zeigte denselben Gruss, auch
 // Stunden später aus dem falschen Tageszeit-Fenster, und ein zweites Pane las
-// denselben Wert mit. Jetzt BESITZT genau ein Mount den vorgemalten Gruss —
-// der allererste im Tab; jeder spätere Mount zieht frisch (dort ist nichts
-// vorgemalt, also kein Tausch). Besitz über ein Mount-Objekt statt eines
-// blossen «verbraucht»-Flags: unter StrictMode ruft React den Initializer
-// desselben Mounts zweimal auf; beide Aufrufe tragen dasselbe Objekt und
-// bekommen denselben Wert. Der globale Wert selbst bleibt stehen (Diagnose,
-// e2e-Wächter lesen ihn).
-let grussBesitzer: object | null = null;
-let besitzerGruss = '';
+// denselben Wert mit. Jetzt zeigt nur der erste COMMITTETE Mount im Tab den
+// vorgemalten Gruss; jeder spätere Mount zieht frisch (dort ist nichts
+// vorgemalt, also kein Tausch).
+//
+// WARUM EIN FLAG NACH DEM COMMIT (Befund Gegenprüfung 17.9.2026): bis dahin
+// «besass» der erste Initializer-Aufruf den Wert über ein Mount-Objekt aus
+// `useState(() => ({}))`. Das hält, solange React den ersten Render auch
+// committet — verwirft React ihn aber vor dem Commit (Suspense, unterbrochener
+// Concurrent-Render, Hydration-Rückfall; auch in Produktion möglich), ist das
+// Mount-Objekt weg, der Neuversuch trägt ein anderes und zog frisch: Tausch.
+// Belegt durch den echten Render-Test `begruessung-strictmode.test.tsx` (rot
+// gegen f7f2bb540). Darum ist der Initializer jetzt REIN: er liest nur, und
+// `skriptGrussVerbraucht` setzt erst der Effekt NACH dem Commit. Beide
+// StrictMode-Aufrufe des Initializers und jeder verworfene Render sehen so
+// denselben Zustand; Effekt-Doppellauf (mount→unmount→mount im Dev) setzt nur
+// dasselbe Flag erneut, der State des Mounts bleibt erhalten. Der globale Wert
+// selbst bleibt stehen (Diagnose, e2e-Wächter lesen ihn).
+let skriptGrussVerbraucht = false;
 
-/** Der Gruss, mit dem `useHeute` startet (lazy init, einmal je Mount; `mount`
- *  = ein pro Komponenten-Instanz stabiles Objekt):
+/** Der Gruss, mit dem `useHeute` startet (lazy init, rein — keine Schreibzugriffe):
  *  1. ohne DOM (Prerender, Unit-Test): Build-Gruss — der Fallback-Text im
  *     Server-HTML, den sieht, wer kein JavaScript ausführt;
- *  2. erster Mount im Tab (Besitzer): hat das Inline-Skript gezogen, GENAU
+ *  2. bis zum ersten Commit im Tab: hat das Inline-Skript gezogen, GENAU
  *     dieser Text (kein Tausch); steht die prerenderte h1 noch im DOM, lief
  *     das Skript aber nicht (etwa CSP-Hash veraltet): deren Text — lieber
  *     neutral als ein Tausch; sonst selbst ziehen;
- *  3. jeder weitere Mount (Client-Navigation zurück auf «/», zweites Pane,
- *     SPA-Fallback): selbst ziehen, aus dem Pool der lokalen Stunde —
- *     sichtbar war dort vorher nichts. */
-export function anfangsGruss(mount: object): string {
+ *  3. jeder Mount nach dem ersten Commit (Client-Navigation zurück auf «/»,
+ *     zweites Pane, SPA-Fallback): selbst ziehen, aus dem Pool der lokalen
+ *     Stunde — sichtbar war dort vorher nichts. */
+function anfangsGruss(): string {
   if (typeof window === 'undefined' || typeof document === 'undefined') {
     return waehleBegruessungFuerBuild(BUILD_SEED);
   }
-  if (grussBesitzer === mount) return besitzerGruss;
-  if (grussBesitzer !== null) return waehleBegruessung(new Date().getHours(), Math.random);
-  grussBesitzer = mount;
+  if (skriptGrussVerbraucht) return waehleBegruessung(new Date().getHours(), Math.random);
   const gezogen = (window as { __lexmetrikGruss?: unknown }).__lexmetrikGruss;
+  if (typeof gezogen === 'string' && gezogen) return gezogen;
   const gezeigt = document.querySelector('script[data-gruss="wahl"]')
     ?.parentElement?.querySelector('h1')?.textContent?.trim();
-  besitzerGruss = typeof gezogen === 'string' && gezogen
-    ? gezogen
-    : gezeigt || waehleBegruessung(new Date().getHours(), Math.random);
-  return besitzerGruss;
+  return gezeigt || waehleBegruessung(new Date().getHours(), Math.random);
 }
 
 const pad = (n: number) => String(n).padStart(2, '0');
@@ -169,19 +173,19 @@ function uhrzeit(jetzt: Date): string {
  *  (Minimalismus-Prinzip, `.claude/rules/schichtentrennung.md`) — der e2e-
  *  Wächter (`e2e/d39-begruessung.e2e.ts`) installiert die Uhr vor `goto`. */
 export function useHeute(): Heute {
-  // Mount-Identität für `anfangsGruss` (Einmal-Übernahme oben): der erste
-  // Hook, damit sein Objekt im Initializer darunter schon feststeht.
-  const [mount] = useState<object>(() => ({}));
   const [heute] = useState<Omit<Heute, 'uhrzeit'>>(() => {
     const jetzt = new Date();
     return {
-      gruss: anfangsGruss(mount),
+      gruss: anfangsGruss(),
       wochentag: WOCHENTAGE[jetzt.getDay()],
       datum: `${jetzt.getDate()}. ${MONATE[jetzt.getMonth()]} ${jetzt.getFullYear()}`,
     };
   });
   const [zeit, setZeit] = useState<string | null>(null);
   useEffect(() => {
+    // Erst nach dem Commit: der vorgemalte Gruss ist jetzt sichtbar vergeben
+    // (Einmal-Übernahme oben) — jeder spätere Mount zieht frisch.
+    skriptGrussVerbraucht = true;
     const nachfuehren = () => setZeit(uhrzeit(new Date()));
     nachfuehren();
     const id = setInterval(nachfuehren, 60_000);

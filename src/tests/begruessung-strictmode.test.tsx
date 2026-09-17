@@ -26,9 +26,10 @@ async function frischesModul() {
 }
 
 function aufbauen(fensterWerte: Record<string, unknown>) {
-  const { window, document } = parseHTML('<!doctype html><html><body><div id="app"></div></body></html>');
-  Object.assign(window, fensterWerte);
-  vi.stubGlobal('window', window);
+  const { document } = parseHTML('<!doctype html><html><body><div id="app"></div></body></html>');
+  // Schlichtes Objekt statt linkedoms `window`: das ist ein Proxy auf
+  // `globalThis`, gesetzte Werte leckten in die nächsten Fälle (gemessen 17.9.2026).
+  vi.stubGlobal('window', { document, ...fensterWerte });
   vi.stubGlobal('document', document);
   vi.stubGlobal('IS_REACT_ACT_ENVIRONMENT', true);
   return document.getElementById('app') as unknown as HTMLElement;
@@ -69,6 +70,8 @@ describe('useHeute — Einmal-Übernahme unter StrictMode (echter Render)', () =
     }
     await rendern(ziel, createElement(Sonde));
     expect(ziel.textContent).toBe(VORGEMALT);
+    // StrictMode wirkt wirklich (Doppel-Render), und kein Durchlauf sah etwas anderes.
+    expect(gesehen.length).toBeGreaterThanOrEqual(2);
     expect(new Set(gesehen)).toEqual(new Set([VORGEMALT]));
 
     await abbauen();
@@ -102,5 +105,16 @@ describe('useHeute — Einmal-Übernahme unter StrictMode (echter Render)', () =
       await warten;
     });
     expect(ziel.textContent).toBe(VORGEMALT);
+  });
+
+  it('ohne Skript-Gruss und ohne prerenderte h1 zieht auch der erste Mount selbst', async () => {
+    const ziel = aufbauen({});
+    const { useHeute } = await frischesModul();
+    const stunde = new Date().getHours();
+    function Sonde() {
+      return createElement('h1', null, useHeute().gruss);
+    }
+    await rendern(ziel, createElement(Sonde));
+    expect(ziel.textContent).toBe(waehleBegruessung(stunde, () => 0));
   });
 });
