@@ -33,6 +33,12 @@ falsch — korrigiert 30.8.2026). Karten abgeschlossener Sessions (älter als
 werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
+## Session 17.9.2026 — Startseiten-Gruss pro Besuch + Sprachregionen (Buchung, 2 PRs)
+
+- Gelandet: #899 Startseiten-Gruss wieder pro Besuch + Tageszeit (Inline-Skript vor Erstem Paint, CSP-Hash in `vercel.json`, StrictMode-/Suspense-fester Einmal-Verbrauch; `c18e65574`) · #900 88 neue Grüsse aus vier Sprachregionen, Rätoromanisch per Pledari Grond belegt (`e4189bed6`). Entscheid David 16.9.2026 «a» (Gruss pro Besuch) + Auftrag «mehr Grüsse aus allen Sprachregionen». Roadmap: `QS-PERF` (LCP-Messreihe, Suspense-Verdacht) / `QS-UI`.
+- Lehren verankert (§17): Skill `perf` (Perf-Massnahme mit stiller Produkt-Rücknahme = wartet auf David, Wirkung vor Opfer nachmessen) · Skill `gegenpruefung` (Prüfer-Befund zu Render-/Lifecycle-Mechanismen braucht einen echten Repro-Test) · Skill `auftrag` Ziff. 6 (PR-Body-Trailer-Reihenfolge für Bau-Agenten explizit gemacht, landung Formregel 5). Details je Fundort.
+- Nebenfunde gebucht (kein Bau, nur Steuer-Doku): `QS-PERF`-Checkliste (LCP-Ursache offen, CSP-Hash-Prüftiefe), `QS-BASIS` (Branch-Kollision `feat/qs-basis-hydrate`, `linkedom`-`window`-Leck), `QS-EFFIZIENZ` (`check:lizenzen` in node_modules-losen Worktrees).
+
 ## Session 15.9.2026 (4) — `W2·27-BUND-FERTIG` Weiterbau: vier Risikopfad-PRs + Gliederungs-Fix + Notizen-Prozess (7 PRs)
 
 - Orchestrator Fable, Bau Opus/Sonnet, Prüfer stets anderes Modell. **Gelandet:** #888 `confidence.json`-Frische-Tor (`3202047ae`, GP af1d214a3; Neulauf 1567→1570 belegte die Staleness) · #889 Randtitel Phase-1-Schnitt (`d20e3f5d3`, GP 5a93ac060 — Bauer hatte nur eine der zwei ersetzten Stellen mit Rot-Probe belegt, nachgezogen 1fec26412) · #892 §8-Leerstellen «kein Text im Snapshot» (`674cc42ae`, GP dbe25de86) · #890 KKV-Label «Art. 126ztredecies» + amtlicher Anker `#ta126z` für `__N`-Token (GP zweimal: Fix `amtlicherAnker()` nach Prüfer-Befund «`#art_126_z` zeigt aufs erste Vorkommen», Live-Nachweis Playwright; Nachzug-Quittung a93c616c8; `682edb070`) · #894 Gliederung: Ast bleibt nach Artikel-Sprung offen, Klickziel 24 px, Marke 3-px-Strich + Fläche (`fb0ab0249`, Befund David) · #891 Session-Notizen-Datei (`9ffee0a04`, `plan:next` zeigt offene Posten).

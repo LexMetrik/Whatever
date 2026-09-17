@@ -714,18 +714,9 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Rückbau-Kandidaten aus `npm run tor:bewaehrung` — wartet auf David:** `check:smoke` · `check:sweep` · `check:verfall` · `check:normtext` (je 83 Läufe, null Rot seit Einführung, Stand 15.9.2026); dazu entscheiden, ob `tor:bewaehrung` und `retro:17` (gleiche Frage, andere Zeitreihe) zusammengelegt werden (§17-Gegengewicht). Hook-Log-Diff für die 9 Hooks liegt bei David (`/tmp/qs-bewaehrung-hook-log.diff`).
   - [x] **Session-Notizen-Datei (Nebenfunde/Lehren überleben Kompaktierung und Übergabe)** — erledigt 15.9.2026, PR #891
   - [ ] **Chronik-Hygiene** *(Nebenfunde #896, 15.9.2026)* — `ROADMAP-CHRONIK.md` 489 KB ungedeckelt und seit #896 bei jedem `plan:next`/`check:plan` gelesen → Monats-Split wie `archiv/STRUKTUR-SESSIONKARTEN*`; Wächter «keine offene `- [ ]`-Zeile in der Chronik» (Beleg: elf Posten lagen nach #893 unsichtbar im Archiv, zurückgeholt 15.9.); Dublette `W2·23-STARTSEITE-V4` 2× done.
+  - [ ] **`check:lizenzen` in Agent-Worktrees ohne `node_modules` immer rot** *(17.9.2026)* — meldet «0 Paket(e) geprüft» als Lizenzverstoss statt Umgebungsproblem. Fix: `node_modules` vor `npm ls` prüfen, sonst «npm ci» melden.
 
-- [x] **Bewährungs-Messung für Tore, Hooks und Regeln** *(`QS-BEWAEHRUNG`, Entscheid David 15.9.2026)*
-  <!-- @meta id: QS-BEWAEHRUNG · status: done · blocker: null · dep: [] · feld: betrieb -->
-  Ziel: der §17-Kreislauf bekommt ein Fitness-Signal für sich selbst. (1) Tor-Bewährungs-Register
-  plus Auswerter: je `check:*`-Tor und Hook das Datum des letzten echten Rot (CI-Import + Fang-Vermerke);
-  nie rot in 90 Tagen ⇒ Rückbau-Kandidat nach §17-Gegengewicht, Liste bei jeder Chronik-Überführung.
-  (2) Wiedervorlage-Datum für Prosa-Regeln (CLAUDE.md, Skills, Lehren-Register), Wächter meldet Überfällige.
-  (3) Prozess-Kennzahlen mit Verlauf (Zeilen CLAUDE.md/Skills, Tore, Hooks, Prozess-Commit-Anteil)
-  je Chronik-Überführung fortgeschrieben. (4) STANDARDS S1 gilt auch für `bibliothek/betrieb/`:
-  Tor-Schleife erweitert, Altbestand nachgetragen. Grenzen: kein Agent ändert Tore oder Regeln
-  selbständig — der Auswerter schlägt vor, David entscheidet; kein Risiko-Pfad.
-  **Detail:** [rekursive-selbstverbesserung-gegenueberstellung-2026-09-15.md](bibliothek/betrieb/rekursive-selbstverbesserung-gegenueberstellung-2026-09-15.md) §8.
+- [x] **Bewährungs-Messung für Tore, Hooks und Regeln** *(`QS-BEWAEHRUNG`)* — ✅ 15.9.2026. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 17.9.2026.
 
 - [ ] **Fremde Agenten im Bau — Jules, Antigravity, Gemini** *(`QS-FREMDAGENTEN`, Freigabe David 3.9.2026)*
   <!-- @meta id: QS-FREMDAGENTEN · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-FREMDAGENTEN.md -->
@@ -756,6 +747,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   CI/lokal-Tor-Parität + offene B-Einheiten.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
   - [ ] **`main.tsx` nutzt `createRoot` statt `hydrateRoot`** — prerendertes DOM wird 27–78 ms nach `load` verworfen (Nullprobe auf main bestätigt); Wurzel der «flaky» Tastatur-/Skip-Link-Specs und ein CLS-/TTI-Posten. Fix mit Hydrations-Fehler-Wächter, Vorher/Nachher-Messung, Gegenprüfung, eigener PR.
+  - [ ] **Branch `feat/qs-basis-hydrate` (still seit 15.9.) kollidiert nach #899 mit `Begruessung.tsx`/`SuchBlock.tsx`/`prerender.ts`** *(17.9.2026)* — bei Wiederaufnahme `anfangsGruss()` in `useHeute` übernehmen.
+  - [ ] **`linkedom`-`window` ist Proxy auf `globalThis`: Werte lecken in Folgetests** (`begruessung-strictmode.test.tsx`, 17.9.2026).
   - [ ] **E2E-Flake Shard 2/8 — Wurzel messen statt neu starten** *(Befund QS-FREMDAGENTEN, Session 4.9.2026)* — Befund-Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (5); Bau-Einheit offen, Zeiger genügt zur Steuerung.
   - [ ] **§17 Doku-PR macht offene PRs nicht nur BEHIND, sondern DIRTY** *(Vorfall 14.9.2026, #870 gegen #869)* — BEHIND kostet einen CI-Lauf, DIRTY eine fremde Session. Befund, Regel und Wurzel-Kandidat: FAHRPLAN-OFFENE-BEFUNDE §4 («Doku-PR gegen offenen Bau-PR»).
   - [ ] **§17 BEHIND-Schleife durch Plan-Buchung** *(Befund Parallel-Session 2.9.2026, an einer Nacht mit 5 offenen PRs belegt)* — jeder Squash-Merge erzeugt via `plan-buchung.yml` einen Folge-Commit auf main (`[skip ci]`), der alle offenen PRs sofort BEHIND setzt; bei «up to date»-Pflicht kostet jede Landung damit einen zweiten vollen CI-Lauf (15–20 min). Wurzel-Kandidaten: Buchung im PR-Branch vor dem Merge statt auf main, oder Merge-Queue (`QS-ORG-UMZUG`, David-Entscheid). Bis dahin: Landungen zwischen Sessions ansagen, je Seite genau ein Nachzug.
@@ -806,6 +799,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   nur Vorbedingung von `W2·5n-BUND-VOLL`, sondern heute schon unbewachte Fläche.
   **Offen (Phase 1):** Snapshot-Preload (zweite Reihenfolge-Stelle im Spy-Effekt, `inhalt-hooks.tsx`) ·
   K3-Chunk-Kaskade · Reader-Kopf-Reflow (§13) · `hydrateRoot` (eigener PR unter `QS-BASIS`) · Register-Schnitt (Vorbedingung `W2·5n-BUND-VOLL`).
+  - [ ] **Startseite LCP 9,3 s — wahre Ursache offen** *(Lighthouse Mobil, 17.9.2026)* — 9,38 s/66 vor #879; 9,33 s/66 nach #879 (`13fbaaead`, 35015052713, kein Gewinn); 9,34 s/69 nach #899 (`c18e65574`, 35222958433); 9,40 s/66 nach #900 (`e4189bed6`). TTI==LCP, Budget 10,0 s. Verdacht: Route-Suspense zeigt Startseite erneut (#899). `perf-budget` 58,0/60 KB knapp.
+  - [ ] **#899 CSP-Hash `GRUSS_SKRIPT` nur per Unit-/e2e-Test** — Vercel-Header prüft CI nicht.
   **Detail:** [FAHRPLAN-PERFORMANCE.md](fahrplaene/FAHRPLAN-PERFORMANCE.md) §1 (dort seit 29.8.2026
   auch die vollständige Messreihe und der Reader-Kopf-Reflow-Befund, wörtlich aus der ROADMAP; §1-N3
   trägt die A/B-Reihe vom 1.9.2026) und

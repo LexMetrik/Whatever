@@ -5030,3 +5030,22 @@ kein `@meta` berührt. Im Plan bleibt je ein ✅-Einzeiler mit Pointer hierher.
 
 ## QS-EFFIZIENZ — ROADMAP-Deckel bleibt knapp, `dep`-Umbau *(✅ PR #896, verschoben 15.9.2026)*
   - [x] **ROADMAP-Deckel bleibt knapp — nächste Umschichtung braucht einen `dep`-Umbau** *(Messung 14.9.2026)* — `main` stand bei 122 875 von 122 880 Bytes (fünf Bytes Luft); vier erledigte Schritte sind in die Chronik überführt (Umschichtung 14.9.2026 (7)), vier weitere `done`-Schritte **können nicht** wandern, weil lebende Schritte `dep` auf sie halten (`W2·6c-ENTSTEHUNG-DATEN`/`-LESER`/`-SYNOPSE`, `W2·26-FUNKTIONSZEILE`). Wurzel-Kandidat: `dep` auf erledigte Schritte auflösen oder `check:plan` erledigte `dep`-Ziele aus der Chronik akzeptieren lassen. **Erledigt 15.9.2026 (PR dieser Session, Schritt `QS-EFFIZIENZ`):** Wurzel-Kandidat (b) gebaut — `chronikErledigte` in `scripts/plan/parse.ts`, `check:plan` Regel 4/4c, `resolve()`/`plan:next`, `plan:bild` und `plan:set` akzeptieren ein `dep`-Ziel, das in `ROADMAP-CHRONIK.md` als `done` archiviert ist; `ROADMAP.md` gewinnt bei Doppel-Fundstellen, ein Archiv-Eintrag mit `status != done` und ein mehrdeutiges Archiv sind rot (Rot-Beweis: `src/tests/plan-check.dep-chronik.test.ts`). Erste Anwendung: `W2·6c-ENTSTEHUNG-DATEN`/`-SYNOPSE` und `W3-TARIF-NACHVERIFIKATION` überführt (Chronik, «Umschichtung 15.9.2026 (dep-Umbau)»), 120 788 → 119 487 Bytes.
+
+# Umschichtung 17.9.2026 — `QS-BEWAEHRUNG` (Wortlaut, Steuerdeckel 120 KB)
+
+Anlass: `check:steuerdeckel` rot nach Buchung Session 17.9.2026 (ROADMAP 122,1 KB). Verschoben ist ein
+vollständig erledigter Schritt ohne offene Unterzeilen (aufraeumen.md §2); kein lebender `dep` zeigt
+auf `QS-BEWAEHRUNG`.
+
+## QS-BEWAEHRUNG — Bewährungs-Messung für Tore, Hooks und Regeln *(✅, verschoben 17.9.2026)*
+- [x] **Bewährungs-Messung für Tore, Hooks und Regeln** *(`QS-BEWAEHRUNG`, Entscheid David 15.9.2026)*
+  <!-- @meta id: QS-BEWAEHRUNG · status: done · blocker: null · dep: [] · feld: betrieb -->
+  Ziel: der §17-Kreislauf bekommt ein Fitness-Signal für sich selbst. (1) Tor-Bewährungs-Register
+  plus Auswerter: je `check:*`-Tor und Hook das Datum des letzten echten Rot (CI-Import + Fang-Vermerke);
+  nie rot in 90 Tagen ⇒ Rückbau-Kandidat nach §17-Gegengewicht, Liste bei jeder Chronik-Überführung.
+  (2) Wiedervorlage-Datum für Prosa-Regeln (CLAUDE.md, Skills, Lehren-Register), Wächter meldet Überfällige.
+  (3) Prozess-Kennzahlen mit Verlauf (Zeilen CLAUDE.md/Skills, Tore, Hooks, Prozess-Commit-Anteil)
+  je Chronik-Überführung fortgeschrieben. (4) STANDARDS S1 gilt auch für `bibliothek/betrieb/`:
+  Tor-Schleife erweitert, Altbestand nachgetragen. Grenzen: kein Agent ändert Tore oder Regeln
+  selbständig — der Auswerter schlägt vor, David entscheidet; kein Risiko-Pfad.
+  **Detail:** [rekursive-selbstverbesserung-gegenueberstellung-2026-09-15.md](bibliothek/betrieb/rekursive-selbstverbesserung-gegenueberstellung-2026-09-15.md) §8.

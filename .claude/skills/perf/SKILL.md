@@ -20,6 +20,14 @@ Jeder Verlust an
   Deep-Links, Print- und PDF-Vollständigkeit, Scroll-Spy und TOC,
   Split-View-Pane-Zustand
 - **Golden-Byte-Gleichheit**
+- **Sichtbare Produkt-/Wunsch-Einbusse** — eine Perf-Massnahme, die einen
+  ausdrücklichen David-Wunsch still zurücknimmt, ist eine Bewertungspflicht wie
+  die anderen vier: das Opfer «wartet auf David», wird nicht stillschweigend
+  entschieden. Und die Wirkung geht VOR das Opfer — erst nachmessen, dann
+  entscheiden. Beleg 15./17.9.2026 (#879/#899): #879 nahm den Wunsch «Gruss pro
+  Besuch» (5.9.2026) still zugunsten «Gruss pro Deploy» zurück, und die
+  Lighthouse-Messung zeigte danach KEINEN LCP-Gewinn (9,38 s → 9,33 s, 6/6
+  Nullprobe) — das Opfer war umsonst und wurde erst mit #899 rückgängig gemacht.
 
 **Jede Performance-Massnahme trägt eine explizite Logikverlust-Bewertung. Ohne
 sie wird sie nicht gemerged.**

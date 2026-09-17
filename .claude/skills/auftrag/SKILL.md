@@ -118,6 +118,13 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
   Merge-Schutz sehen nichts), jeder Trailer einzeilig. Lokal prüfbar:
   `git log -1 --format='%(trailers:key=Roadmap,valueonly)'` muss den Wert
   liefern; Risiko-Pfad-Form zusätzlich per `npm run check:merge-schutz`.
+- **PR-Body: Roadmap-Trailer-Block nach «🤖 Generated with …», nicht davor**
+  (Skill `landung`, Formregel 5, PR #628 2.9.2026) — der Fallback in
+  `plan-buchung.yml` liest den LETZTEN Absatz des PR-Bodys; ein Bau-Agent, der
+  seinen PR-Body selbst zusammenstellt, schreibt darum genau in dieser
+  Reihenfolge: Prosa → «🤖 Generated with …» → Leerzeile → Trailer-Block.
+  Wiederholt aufgetreten 17.9.2026 (#899/#900, Trailer vor der Generated-Zeile) —
+  bau-seitig sichtbar gemacht, weil ein Bau-Agent `landung` selten lädt.
 
 ## 6 · Delegation und Kontext-Hygiene
 

@@ -31,8 +31,12 @@ Risiko-Datei, bis genau für diesen Diff ein `bestanden`-Nachweis vorliegt.
    ernsthafter Widerlegungsversuch scheitert, ist das Verdikt `bestanden`.
 4. **Belegpflicht.** Jeder Befund UND jedes `bestanden` mit konkreter Norm
    (Artikel/§) + Link + Stand hinterlegen (Daueranweisung David: doppelt
-   verifizieren, jeder Wert mit Norm-Anker).
-
+   verifizieren, jeder Wert mit Norm-Anker). **Gilt sinngemäss ausserhalb der
+   Norm-Prüfung:** ein Befund zu einem technischen Mechanismus (Render-/
+   Lifecycle-Verhalten, Race Conditions) ohne echten Reproduktions-Test ist
+   eine Hypothese, kein Fund. Beleg 15.9.2026 (PR #899): ein Sonnet-Prüfer
+   nannte den falschen StrictMode-Mechanismus; erst ein Nachzug mit echtem
+   Render-Test fand den realen Fall (verworfener Suspense-Render, auch Prod).
 5. **Wer quittiert.** Das Verdikt schreibt der Prüfer, die Quittung
    (`gegenpruefung:ok`, Register-Zeile, `Gegenpruefung:`-Trailer) setzt der
    Orchestrator — **nie der Bauer**. Eine Selbstbescheinigung des Bau-Agenten
