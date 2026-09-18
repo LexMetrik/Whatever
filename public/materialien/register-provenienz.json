@@ -15278,7 +15278,7 @@
       ]
     },
     "BS-GR-26.0508": {
-      "sha": "e7be04a427631dcac65d3be9836ac7f1c53e01e2cdae5e9fb3392ad0e787bcb1",
+      "sha": "bbf52514d5999b53fb6d085acaff4cae145baa151008c0a49075d52fd0039bd9",
       "ereignisse": [
         {
           "code": 1010,
@@ -15300,6 +15300,13 @@
           "res": "https://grosserrat.bs.ch/?dnr=26.0508.02",
           "vok": "bs-gr",
           "bez": "Bericht der BKK"
+        },
+        {
+          "code": 1050,
+          "datum": "2026-09-16",
+          "res": "https://grosserrat.bs.ch/dokumente/100413/000000413294.pdf",
+          "vok": "bs-gr",
+          "bez": "GR Beschluss"
         }
       ],
       "bsKanten": [
