@@ -155,6 +155,29 @@ Materialien-Verzahnung weitgehend ab.
    Rechtsgebiet-Facette, deskriptiv, Richter-Gate beachten); Staatsarchiv ZH TEI (OS 1803–1998,
    Zenodo 13347459) und Zentrale Serien (KRP/RRB) für Fussnoten-Apparat, Zeitmaschine und Materialien
    Kanton ZH (FAHRPLAN-KANTONE §5 R3/R7/R12).
+6. **Alt-Plan abgleichen (Nachtrag 18.9.2026, Auftrag David):** `PLAN-OCL-ABBAU.md` (2.7.2026) führt
+   die Pakete W4 (Botschaft-/Materialien-Adapter), W5 (Struktur-Splitter), W6 (Instanzenzug), W7
+   (Zitationsgraph-UI), W10 (Rechtsetzungs-Tracking), W11 (LexWork `json_content`), W12
+   (Bulk-Parquet), W13 (Suchindex-Härtung) und #16 (FR/IT-Mapping) als «wartet auf Davids
+   Priorisierung» — ohne ROADMAP-ID. Je Paket entscheiden: erledigt (Beleg: PR/Commit in `main`;
+   auch W0/W2/W3/W9 «fertig+committet» gegen `main` prüfen, Branch `feat/ocl-abbau` existiert nicht
+   mehr) · geht in einem bestehenden Schritt auf · eigener ROADMAP-Schritt · verworfen. Danach
+   `PLAN-OCL-ABBAU.md` archivieren — ein Plan neben der ROADMAP ist eine zweite Wahrheit (§5).
+7. **Regulierungsbehörden als mögliches neues Feld (Nachtrag 18.9.2026):** OCL führt Scraper für
+   FINMA, WEKO, EDÖB, ElCom, ComCom, PostCom, Preisüberwacher, UBI, ESBK, ESchK, RAB, BAZG, BSV
+   (6083 Einträge), OAK BV — in LexMetrik nie geprüft. Nur Mehrwert-Test und amtliche
+   Verlinkbarkeit je Behörde; Ergebnis = Ja/Nein-Vorschlag an David, kein Bau.
+8. **OCL-Scraper als Pflicht-Vorlage für Kantonsurteile (Nachtrag 18.9.2026):** `scrapers/cantonal/`
+   (rund 50 Adapter, Basis-Klassen `base_tribuna.py` / `base_vaadin.py` / `base_weblaw.py`) zeigt je
+   Kanton den amtlichen Endpunkt und die Portal-Technik. Als Wegweiser-Tabelle Kanton → Amtsportal →
+   Technik in die Kantons-Schritte (`W2·13-KANTONE-DATEN`, `W3·12`) übergeben; OCL-eigene Lücken
+   (`docs/scraper-audit-2026-03-19.md`: BL ~⅓ Volltexte verloren, GR OCR, ZH/JU/SH tote Links) als
+   Warnliste mitführen. Bezug weiterhin direkt bei der Amtsquelle (OCL-first Ziff. 1: nie Mittelsmann).
+
+Inventar OCL-Angebot ↔ LexMetrik-Nutzung, Stand 18.9.2026: zwei Rechercheberichte der Session
+18.9.2026 (nicht absorbiert; Kernzahlen oben). Offen daraus: Feldschema 34 vs. 15 Spalten
+(README ↔ HF-Karte), EGMR 8275 vs. 9600+, Aktualität HF-Snapshot (Karte Feb. 2026) ↔ Live-System,
+keine eigene Daten-Lizenzdatei im OCL-Repo (CC0 nur im README-Text).
 
 **Grenzen:** §2 (kein LLM-Richter wie deren `/verify-claim` im Produkt), §7 (Fremdindex ist Wegweiser,
 nie Wahrheit), §8 (Herkunft je Nachweis sichtbar). Entscheid bleibt bei David.

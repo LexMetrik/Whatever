@@ -452,7 +452,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   unter Ausschluss von Gerichten mit umgangenem Bot-Schutz? Ergebnis = Entscheidvorlage an David mit
   Lizenz-/§7-Matrix je Datenschicht; bestimmt den Zuschnitt von Block 4 (`W2·6`, `W2·14-SIGNAL`-GER,
   Materialien) und die Tiefe des Phantom-Kanten-Fixes in `QS-KORPUS`.
-  **Detail:** [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §15.
+  **Detail:** [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §15 — Nachtrag
+  18.9.2026 (Ziff. 6–8): `PLAN-OCL-ABBAU.md` abgleichen, Regulierungsbehörden, OCL-Scraper als Kantons-Vorlage.
 
 - [ ] **Konsultieren-Klingen — Dach der Rechtsprechungs-Fläche** *(`W2·6`, `[OF]`, amtlich; Phase 3)*
   <!-- @meta id: W2·6 · status: ready · blocker: null · dep: [] · feld: rechtsprechung · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
