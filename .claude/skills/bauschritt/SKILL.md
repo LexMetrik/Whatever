@@ -161,4 +161,8 @@ Commit mit eigenem Roadmap-Trailer).
   Sweeps auf günstigere Stufe, Skill `auftrag` Klassen-Palette).
 - **Kein direkter main-Push** (Hook blockt): Verwaltung fährt im PR mit;
   Doku ohne PR am Session-Ende in EINEM Push (Station E).
+- **Lange Tor-Ausgaben in eine Logdatei, Exit-Code lesen** (Orchestrator):
+  `npm run <tor> > <scratchpad>/x.log 2>&1; echo $?` ist keine Pipe (der Hook
+  lässt es zu) und hält 200+ Zeilen aus dem Kontext — `check:fedlex-versionen`
+  druckt 232 Zeilen (Beleg 18.9.2026). Bei Exit ≠ 0 die Logdatei gezielt lesen.
 - **Antworten kurz:** kein Nacherzählen von Tool-Ausgaben.
