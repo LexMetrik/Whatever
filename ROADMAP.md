@@ -747,7 +747,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   CI/lokal-Tor-Parität + offene B-Einheiten.
   **Detail:** [FAHRPLAN-BASIS-AUSBAU.md](fahrplaene/FAHRPLAN-BASIS-AUSBAU.md) §2.
   - [ ] **`main.tsx` nutzt `createRoot` statt `hydrateRoot`** — prerendertes DOM wird 27–78 ms nach `load` verworfen (Nullprobe auf main bestätigt); Wurzel der «flaky» Tastatur-/Skip-Link-Specs und ein CLS-/TTI-Posten. Fix mit Hydrations-Fehler-Wächter, Vorher/Nachher-Messung, Gegenprüfung, eigener PR.
-  - [ ] **Branch `feat/qs-basis-hydrate` (still seit 15.9.) kollidiert nach #899 mit `Begruessung.tsx`/`SuchBlock.tsx`/`prerender.ts`** *(17.9.2026)* — bei Wiederaufnahme `anfangsGruss()` in `useHeute` übernehmen.
+  - [ ] **Geparkter Stand `hydrateRoot` (9 Commits, still seit 15.9.) — Tag `archiv/qs-basis-hydrate-2026-09-18` (ae04f6caf), Branch + Worktree am 18.9.2026 abgeräumt; kollidiert nach #899 mit `Begruessung.tsx`/`SuchBlock.tsx`/`prerender.ts`** *(17.9.2026)* — Wiederaufnahme aus dem Tag (`git switch -c feat/qs-basis-hydrate archiv/qs-basis-hydrate-2026-09-18`), dabei `anfangsGruss()` in `useHeute` übernehmen.
   - [ ] **`linkedom`-`window` ist Proxy auf `globalThis`: Werte lecken in Folgetests** (`begruessung-strictmode.test.tsx`, 17.9.2026).
   - [ ] **E2E-Flake Shard 2/8 — Wurzel messen statt neu starten** *(Befund QS-FREMDAGENTEN, Session 4.9.2026)* — Befund-Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (5); Bau-Einheit offen, Zeiger genügt zur Steuerung.
   - [ ] **§17 Doku-PR macht offene PRs nicht nur BEHIND, sondern DIRTY** *(Vorfall 14.9.2026, #870 gegen #869)* — BEHIND kostet einen CI-Lauf, DIRTY eine fremde Session. Befund, Regel und Wurzel-Kandidat: FAHRPLAN-OFFENE-BEFUNDE §4 («Doku-PR gegen offenen Bau-PR»).
