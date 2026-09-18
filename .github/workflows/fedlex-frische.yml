@@ -85,7 +85,14 @@ jobs:
         run: echo "iso=$(date -u +%F)" >> "$GITHUB_OUTPUT"
 
       - name: Wiedervorlage + Currency frisch halten (O-2.2)
-        run: npm run gen:fedlex-wiedervorlage -- --datum=${{ steps.datum.outputs.iso }}
+        # `gen:verfall` direkt danach seit 18.9.2026 (§17/§5): der Generator schreibt den
+        # AUTO-Block in `parameter-verfall.md`; die UI-Projektion `verfallTermine.generated.ts`
+        # zog bisher nur der Re-Pin-Zweig unten nach. Änderte sich das Register OHNE Re-Pin
+        # (neue «Künftige Fassung»-Termine), scheiterte der Lauf an seinem eigenen Tor
+        # `check:verfall-ui` — Läufe 34107274098 (7.9.), 34831381914 (14.9.), 35348496966 (18.9.).
+        run: |
+          npm run gen:fedlex-wiedervorlage -- --datum=${{ steps.datum.outputs.iso }}
+          npm run gen:verfall
 
       - name: Batch-Re-Pin überholter Pins (O-2.1)
         id: repin
