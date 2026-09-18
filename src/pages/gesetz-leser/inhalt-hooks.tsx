@@ -433,21 +433,47 @@ export function useLeserSprungSpy(opts: {
       // Auf/Zu statt einer dichten Reflow-Folge des Baums. Der Klick-Sprung-Pfad
       // (springeZuArtikel/springeZuSektion) setzt aktivIds/tocBaum weiterhin SOFORT
       // und löscht diesen Timer (kein Kampf mit einem verspäteten Auto-Update).
+      // NACHTRAG 18.9.2026: die MARKIERUNG ist aus diesem Timer herausgelöst — sie
+      // ist an ihm verhungert; Herleitung und Messreihe unmittelbar unten.
       //
       // RUHE-TOR (Entscheid David 9.8.2026 (a); Herleitung bei AUTO_AUF_RUHE_MS):
       // der AUFklapp feuert nur, wenn der Dokument-Scroll ruht — sonst wird der
-      // Durchlauf mit `erneut = true` neu angesetzt. Der Rest des Blocks (Marke,
-      // Nachlauf-Ticks, Zuklappen) läuft unverändert weiter; `erneut` hält beim
+      // Durchlauf mit `erneut = true` neu angesetzt. Der Rest des Blocks
+      // (Nachlauf-Ticks, Zuklappen) läuft unverändert weiter; `erneut` hält beim
       // Warten allein den Tick an, damit die Zuklapp-Regel ihren Takt behält.
       // Damit löst dieser Commit den a33-Zielkonflikt an der Wurzel: das Wachstum
       // im Sichtband entsteht nicht mehr während des Scrollens.
+
+      // ── DIE MARKE SOFORT, DAS AKKORDEON ENTPRELLT (Befund David 18.9.2026) ──
+      // BIS HIERHER lagen beide im selben 200-ms-Trailing-Timer. Der wird von
+      // JEDEM Artikelwechsel neu angesetzt — und beim gewöhnlichen Lese-Scrollen
+      // kommen die Artikelgrenzen schneller als alle 200 ms. Der Timer ist damit
+      // verhungert: `setAktivIds` lief während des Lesens NIE, die Gliederung
+      // zeigte keinen Standort, solange man las, und holte ihn erst nach dem
+      // Anhalten nach.
+      // GEMESSEN am gebauten `dist/` (vite preview, 1440×900, /gesetze/bund/OR,
+      // Lese-Schritte 400 px/60 ms, Zähler im Prod-Bundle): 27 Artikelwechsel ⇒
+      // 27 Neuansetzungen des Timers, `anwenden` lief GENAU EINMAL — am Schluss,
+      // nach dem Anhalten. Zeitreihe über 24'000 px: 76 von 113 Proben (50-ms-
+      // Takt) ohne jede Marke, erste Marke nach 3891 ms; über dieselbe Strecke
+      // auf lexmetrik.vercel.app: keine einzige.
+      // WARUM DEV «LIEF» UND DER WÄCHTER GRÜN BLIEB — beide halten an: der
+      // Dev-Server rendert je Frame teurer, und `e2e/leser-gliederung-a33.e2e.ts`
+      // (F1) wartet nach JEDEM 120-px-Schritt 260 ms. Stop-and-go lässt den Timer
+      // feuern, durchgehendes Lesen nicht.
+      // WURZEL: die Entprellung gehört dem AKKORDEON, nicht der Marke. Entprellt
+      // wurde am 16.7.2026 der REFLOW des Baums; `setAktivIds` dagegen schreibt
+      // nur Attribut und Klasse an EINER Zeile — kein Auf-/Zuklappen, keine
+      // Höhenänderung, kein Layout-Thrash (§15). Sie wird darum sofort gesetzt,
+      // der ganze Rest (Auto-Set, Nachlauf-Ticks, `planeZuklappen`, `setTocBaum`)
+      // bleibt unverändert im 200-ms-Timer samt Ruhe-Tor.
+      // Wertgleichen Pfad nicht neu setzen (pfadZu liefert stets ein neues Array):
+      // sonst Re-Render + Mitscroll-Effekt bei jedem Artikel derselben Blatt-Sektion.
+      setAktivIds((prev) => prev.length === ids.length && prev.every((v, i) => v === ids[i]) ? prev : ids);
       if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
       const anwenden = (erneut: boolean) => {
         const aufklappen = scrollRuht(letzterScroll, Date.now());
         if (!aufklappen) tocBaumTimer.current = window.setTimeout(() => anwenden(true), AUTO_AUF_RUHE_MS);
-        // Wertgleichen Pfad nicht neu setzen (pfadZu liefert stets ein neues Array):
-        // sonst Re-Render + Mitscroll-Effekt bei jedem Artikel derselben Blatt-Sektion.
-        setAktivIds((prev) => prev.length === ids.length && prev.every((v, i) => v === ids[i]) ? prev : ids);
         // Auto-Set fortschreiben (Seiteneffekt ausserhalb des State-Updaters, der rein
         // bleibt): aufklappen, was jetzt im Pfad liegt; zuklappen NUR, was die Lese-
         // position um AUTO_ZU_NACHLAUF Pfadwechsel hinter sich gelassen hat (§15.2: dann
