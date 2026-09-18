@@ -33,6 +33,19 @@ falsch — korrigiert 30.8.2026). Karten abgeschlossener Sessions (älter als
 werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
+## Session 18.9.2026 (2) — `QS-MONITOR-ROT`: sechs Daten-Befunde des Normen-Monitors behoben, Fedlex-Frische an der Wurzel (@@N@@ PRs, Risikopfad)
+
+- Orchestrator Fable; Bau `lex-daten` auf **Sonnet** (offengelegte Abweichung von «nie unter stark»: Obergrenze Opus + Prüfer ≠ Bau-Modell), Prüfung `lex-pruefung` auf Opus, je frischer Kontext. **Gelandet:** #907 Fedlex-Frische fährt die volle Projektions-Kaskade (`scripts/normtext-repin-kaskade.sh`, `npm run projektionen:normtext`; Bug-Check fand latenten 4. Einzelfall `gen:artikel-bestand`; `745b276b7`; Nachweislauf 35365372442 erstmals wieder grün) · #908 rectifies-Parser liest «AS JJJJ N, M», Klassierung nach Headline-Blöcken — VTS `oc/2025/691` war Parser-Lücke, KEIN Fedlex-Fehler, kein Ausnahme-Eintrag (`790a32bf5`; GP 2 Durchgänge, 1. fand Schlupfloch Mehrfach-Nummer ohne Ziel-Vergleich) · #910 EDÖB-Merkblatt, AVG-Botschaften + Revisionen-Sidecar, BS-GR 26.0508, Vernehmlassungs-Status inkl. drei vom 8-Erlass-Tor ungesehener Deltas (`f7aa5c12d`; GP 2 Prüfer, Vollabgleiche 831 Einträge / 441 Dokumente = 0 Abw.) · @@ABK@@ · @@REPIN@@
+- **Nicht gelandet, bewusst:** Automatik-PR #909 — Gegenprüfung «Auflage blockierend»: der Lauf materialisiert erstmals `rectifiesInfoProOc` (latent seit #827), rectifies-Kanten 31 → 82, vier neu rot (3 Parser-Lücken, LRV `oc/2025/448` echte Abweichung). Folge-Schritt «rectifies-Tor Runde 2» in der ROADMAP (`QS-MONITOR-ROT`), Verdikt am PR. **VRV/VTS-Pflegetermin steht bis dahin auf 1.1.2031 statt 1.10.2026.**
+- **Lehren verankert (§17):** @@LEHREN@@
+- **Schlussnachweis:** @@MONITOR@@ · `QS-MONITOR-ROT` zurück auf `ready` (offene Unterpunkte), `W2·27-BUND-FERTIG` wip ohne Bau-Spur → `ready`.
+
+## Session 18.9.2026 — Aufräumen: nur noch ein main, rote Läufe an der Wurzel, Gedächtnis (3 PRs)
+
+- Gelandet: #902 Normen-Monitor-Zeitlimit 25→45 min · Fedlex-Frische `gen:verfall` nach Wiedervorlage-Refresh · Chronik-Überführung (`0905598c8`) · #904 Fedlex-Frische volle Historie (`969c5efc5`) · #905 Monats-Jobs npm 11 + ROADMAP-Deckel nur Warnung (Entscheid David 18.9.2026) + Vormerkung Hebel «Befund-Prosa in die Fahrpläne». Roadmap: `QS-MONITOR-ROT` / `QS-EFFIZIENZ`.
+- Aufgeräumt: 3 Worktrees, 5 gelandete Zweige, `feat/qs-basis-hydrate` → Tag `archiv/qs-basis-hydrate-2026-09-18`, Autopilot-Entwurf #867 geschlossen (nichts übernommen, Begründung am PR), Issues #742/#722/#723 geschlossen; Vault LexMetrik 29 → 20 Einträge (7 archiviert, 3 zusammengelegt, Prüfer 0 Fehler).
+- Befund: Normen-Monitor läuft wieder durch (28 min) und ist ECHT rot, 6/16 Netz-Tore — Übergabe an die Folge-Session. Lehre verankert: Skill `auftrag` Ziff. 6 (j). *(Karte nachgetragen von der Folge-Session, Wortlaut der Aufräum-Session.)*
+
 ## Session 17.9.2026 — Startseiten-Gruss pro Besuch + Sprachregionen (Buchung, 2 PRs)
 
 - Gelandet: #899 Startseiten-Gruss wieder pro Besuch + Tageszeit (Inline-Skript vor Erstem Paint, CSP-Hash in `vercel.json`, StrictMode-/Suspense-fester Einmal-Verbrauch; `c18e65574`) · #900 88 neue Grüsse aus vier Sprachregionen, Rätoromanisch per Pledari Grond belegt (`e4189bed6`). Entscheid David 16.9.2026 «a» (Gruss pro Besuch) + Auftrag «mehr Grüsse aus allen Sprachregionen». Roadmap: `QS-PERF` (LCP-Messreihe, Suspense-Verdacht) / `QS-UI`.
