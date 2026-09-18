@@ -14017,6 +14017,26 @@
       "hinweis": "Automatisch über den Fedlex-Projekt-Graphen zugeordnet; maschinell, fachlich nicht geprüft."
     },
     {
+      "key": "BOTSCHAFT-2002-172",
+      "behoerde": "BR",
+      "behoerdeName": "Bundesrat (Botschaften)",
+      "behoerdeKuerzel": "BR",
+      "doktyp": "botschaft",
+      "doktypLabel": "Botschaft",
+      "titel": "Botschaft über die Änderung des Arbeitsvermittlungsgesetzes",
+      "nummer": "02.008",
+      "rechtsgebiet": "oeffentlich",
+      "sprache": "de",
+      "status": "nur-live-link",
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/fga/2002/172/de",
+      "stand": "2002-01-09",
+      "rang": 79979891,
+      "normKeys": [
+        "AVG"
+      ],
+      "hinweis": "Automatisch über den Fedlex-Projekt-Graphen zugeordnet; maschinell, fachlich nicht geprüft."
+    },
+    {
       "key": "BOTSCHAFT-2002-443",
       "behoerde": "BR",
       "behoerdeName": "Bundesrat (Botschaften)",
@@ -14577,6 +14597,7 @@
       "rang": 80008876,
       "normKeys": [
         "AHVG",
+        "AVG",
         "AVIG",
         "BVG",
         "ELG",

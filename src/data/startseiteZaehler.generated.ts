@@ -197,7 +197,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     }
   ],
   "rechtsprechungLeitentscheide": 1259,
-  "materialien": 1682,
+  "materialien": 1683,
   "materialienBehoerden": [
     {
       "id": "ESTV",
@@ -245,7 +245,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
       "id": "BR",
       "kuerzel": "BR",
       "name": "Bundesrat (Botschaften)",
-      "anzahl": 407
+      "anzahl": 408
     },
     {
       "id": "BUND",

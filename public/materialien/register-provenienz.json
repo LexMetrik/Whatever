@@ -11565,6 +11565,30 @@
         }
       ]
     },
+    "BOTSCHAFT-2002-172": {
+      "sha": "93b45f85bccf608b41a8f8de7a2f8809d5dcc0582247ec282bb393ec6be86881",
+      "projEli": "https://fedlex.data.admin.ch/eli/proj/2001/2669",
+      "ocUris": [
+        "https://fedlex.data.admin.ch/eli/oc/2002/560"
+      ],
+      "botschaftDate": "2002-01-09",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2002-01-09",
+          "res": "fga/2002/172"
+        },
+        {
+          "code": 300,
+          "datum": "2002-06-21",
+          "res": "fga/2002/702"
+        },
+        {
+          "code": 400,
+          "datum": "2002-10-17"
+        }
+      ]
+    },
     "BOTSCHAFT-2002-443": {
       "sha": "e79789f26fdedc19a1f000db1c90407091089eb87318a264bba675e0c887d1d5",
       "projEli": "https://fedlex.data.admin.ch/eli/proj/2001/2722",
@@ -12262,13 +12286,14 @@
       ]
     },
     "BOTSCHAFT-2000-99": {
-      "sha": "da3df3826f5ad84eb92e647bb76196f2c58d8cbd04724c4628f8cf1bd55737b5",
+      "sha": "a0c907636f99e340bba31974305afefad42477aa7261dc1f48997d4386ae4167",
       "projEli": "https://fedlex.data.admin.ch/eli/proj/1999/5673",
       "ocUris": [
         "https://fedlex.data.admin.ch/eli/oc/2000/440",
         "https://fedlex.data.admin.ch/eli/oc/2000/441",
         "https://fedlex.data.admin.ch/eli/oc/2000/442",
         "https://fedlex.data.admin.ch/eli/oc/2000/443",
+        "https://fedlex.data.admin.ch/eli/oc/2000/460",
         "https://fedlex.data.admin.ch/eli/oc/2000/461",
         "https://fedlex.data.admin.ch/eli/oc/2000/463",
         "https://fedlex.data.admin.ch/eli/oc/2000/464",
@@ -12282,6 +12307,11 @@
           "code": 200,
           "datum": "1999-11-24",
           "res": "fga/2000/99"
+        },
+        {
+          "code": 300,
+          "datum": "2000-06-23",
+          "res": "fga/2000/745"
         },
         {
           "code": 300,
