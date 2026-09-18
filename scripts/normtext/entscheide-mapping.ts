@@ -159,6 +159,15 @@ export const ABK_AUSSCHLUSS: ReadonlyMap<string, string> = new Map([
     + 'in der Fliesstext-Nennung, eine Suffix-Heuristik greift zu kurz — '
     + 'Gegenprüfung W3 (Opus, 2.7.2026): 5 kantonale Falsch-Positive. Lieber '
     + 'eine Lücke als eine falsche Bundesrechts-Zuordnung (§1/§8).'],
+  ['LC', 'föderal/kantonal mehrdeutig: das amtliche it-Kürzel des Arbeits'
+    + 'vermittlungsgesetzes (SR 823.11, «Legge sul collocamento») ODER die '
+    + 'Waadtländer «Loi du 28 février 1956 sur les communes (LC; RSV 175.11)». '
+    + 'Gegenprüfung (Opus, 18.9.2026) auf Commit 4eec6ea1f: BGE 149 I 343 (fr, '
+    + '19.9.2023) zitiert «art. 40e LC», «art. 40g al. 1 LC» — ein Waadtländer '
+    + 'Gemeindegesetz, KEIN Token AVG im Text; committete normKeys [BGG, BV, '
+    + 'EMRK]. Die echten AVG-Fundstellen tragen zusätzlich das Token AVG (de) '
+    + 'oder LSE (fr) und bleiben über diese Aliase wirksam. Lieber eine Lücke '
+    + 'als eine falsche Bundesrechts-Zuordnung (§1/§8).'],
 ]);
 
 /**

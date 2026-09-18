@@ -132,10 +132,43 @@ describe('Alias-Ebene — amtliche FR/IT-Kürzel zeigen auf den Register-key', (
     expect(normKeyFuerAbk('LTB')).toBeNull();
     expect(normKeyFuerAbk('StG')).toBeNull();
     expect([...ABK_ALIAS_AUSGESCHLOSSEN]).toEqual([
+      'LC (SR 823.11, it) → AVG',
       'LT (SR 641.10, fr) → STG',
       'LTB (SR 641.10, it) → STG',
       'StG (SR 641.10, de) → STG',
     ]);
+  });
+  it('sperrt das it-Alias «LC» (SR 823.11, AVG) — kantonales Homonym Waadt (Nachzug QS-MONITOR-ROT)', () => {
+    // Gegenprüfung (Opus, 18.9.2026) auf Commit 4eec6ea1f: das amtliche it-Alias
+    // 'LC' (Legge sul collocamento, SR 823.11) kollidiert normalisiert mit der
+    // Waadtländer «Loi du 28 février 1956 sur les communes (LC; RSV 175.11)».
+    // Repro-Fund BGE 149 I 343 (fr, 19.9.2023): «art. 40e LC», «art. 40g al. 1
+    // LC» — KEIN 'AVG'-Token im Text, committete normKeys [BGG, BV, EMRK]. Ohne
+    // Sperre lieferte normKeysVonSnapshot fälschlich zusätzlich 'AVG'.
+    expect(normKeyFuerAbk('LC')).toBeNull();
+    const vaudLC = snap({
+      id: 'bund/bge/149_I_343', sprache: 'fr',
+      abschnitte: [{ typ: 'erwaegung', bloecke: [{
+        marke: '2', text: 'L\'art. 40e LC prévoit que le syndic est élu par le corps électoral; '
+          + 'les mêmes règles prévues par l\'art. 40g al. 1 LC s\'appliquent.',
+      }] }],
+    });
+    expect(normKeysVonSnapshot(vaudLC)).toEqual([]);   // insb. KEIN 'AVG'
+    // Gegenprobe: die Sperre trifft NUR 'LC' — die echten AVG-Fundstellen (de
+    // «AVG», fr «LSE») bleiben wirksam, exakt wie die fünf realen AVG-Fälle im
+    // Korpus (BGE 151 II 178, 151 III 143, 148 II 426, 148 II 203, 147 II 397),
+    // die AVG bzw. LSE zusätzlich zu — oder statt — LC im Text tragen.
+    expect(normKeyFuerAbk('AVG')).toBe('AVG');
+    expect(normKeyFuerAbk('LSE')).toBe('AVG');
+    const echtDe = snap({
+      abschnitte: [{ typ: 'erwaegung', bloecke: [{ marke: '4', text: 'Nach Art. 12 AVG ist eine Bewilligung nötig.' }] }],
+    });
+    expect(normKeysVonSnapshot(echtDe)).toEqual(['AVG']);
+    const echtFr = snap({
+      sprache: 'fr',
+      abschnitte: [{ typ: 'erwaegung', bloecke: [{ marke: '4', text: 'En vertu de l\'art. 12 LSE, une autorisation est nécessaire.' }] }],
+    });
+    expect(normKeysVonSnapshot(echtFr)).toEqual(['AVG']);
   });
 });
 
@@ -153,9 +186,13 @@ describe('Sicherungen der Ableitung — sichtbar statt still (§6.7)', () => {
     // genau darum steht die Liste hier exakt und nicht als Obergrenze.
     expect([...ABK_KOLLISIONEN]).toEqual([]);
   });
-  it('ABK_AUSSCHLUSS trägt heute nur «STG», mit begründendem Text', () => {
-    expect([...ABK_AUSSCHLUSS.keys()]).toEqual(['STG']);
+  it('ABK_AUSSCHLUSS trägt heute «LC» und «STG», mit begründendem Text', () => {
+    // 'LC' seit Nachzug QS-MONITOR-ROT (18.9.2026): Gegenprüfung Opus auf Commit
+    // 4eec6ea1f — das it-Alias 'LC' (SR 823.11, AVG) kollidiert mit dem
+    // Waadtländer Gemeindegesetz (RSV 175.11), Beleg BGE 149 I 343.
+    expect([...ABK_AUSSCHLUSS.keys()]).toEqual(['STG', 'LC']);
     expect(ABK_AUSSCHLUSS.get('STG')).toMatch(/kantonal/);
+    expect(ABK_AUSSCHLUSS.get('LC')).toMatch(/Waadt|Vaud/);
   });
   it('AUSGESCHLOSSENE_KEYS spiegelt den Ausschluss auf Register-key-Ebene (Alt-Bestand)', () => {
     expect([...AUSGESCHLOSSENE_KEYS]).toEqual(['STG']);
