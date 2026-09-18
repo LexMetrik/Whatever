@@ -129,19 +129,35 @@ async function leseZeitreihe(
  *  unberührt. Ein langsamer Runner macht die Probe darum nicht rot, sondern
  *  höchstens milder (eine feste ms-Entprellung feuert zwischen zwei trägen
  *  Frames irgendwann doch) — sie tauscht die Lücke nicht gegen Flackern.
- *  GEMESSEN (dist/, vite preview, 1440×900, /gesetze/bund/OR, 3 × 20 × 400 px):
- *    Ist-Stand            3 Läufe je 60/60 treu, Rückstand max 0, 8 Einträge
- *    Ist-Stand 4× Drossel       60/60 treu, Rückstand max 0
- *    Ist-Stand 6× Drossel       60/60 treu, Rückstand max 0, 30 Einträge
- *    120-ms-Entprellung         27/58 treu, Rückstand max 4 (Histogramm
- *                               {0:27, 1:9, 2:4, 3:3, 4:15})
- *  Die Schranken unten (≥ 90 % treu, Rückstand ≤ 1) liegen zwischen beiden
- *  Verteilungen und halten zum Ist-Stand vollen Abstand.
+ *  GEMESSEN (dist/, vite preview, 1440×900, /gesetze/bund/OR, 3 × 20 × 400 px,
+ *  je Zeile die VERTEILUNG über mehrere Läufe, nicht ein Einzelwert — §0 Nr. 3):
+ *    Ist-Stand      3 Läufe  je 60/60 treu, kein Rückstand, 8 Einträge
+ *    4× Drossel     1 Lauf      60/60 treu, kein Rückstand, 14 Einträge
+ *    6× Drossel     4 Läufe  3× 60/60 treu, 1× 59/60 (ein Eintrag Rückstand
+ *                            in EINER Probe), 29–31 Einträge
+ *    10× Drossel    2 Läufe  je 58/59 treu, ein Eintrag Rückstand in einer
+ *                            Probe, 29–30 Einträge
+ *    120-ms-Entprellung       27/58 treu, 22/58 Proben ≥ 2 Einträge zurück,
+ *                            max 4 (Histogramm {0:27, 1:9, 2:4, 3:3, 4:15})
+ *    Original-Defekt (200 ms, Marke im Akkordeon-Timer)
+ *                             0/40 treu, 39/40 Proben ≥ 2 zurück, max 4
+ *                            (Histogramm {1:1, 2:10, 3:11, 4:18})
+ *  DARUM STEHT DIE SCHRANKE AUF DEM ANTEIL, NICHT AUF DEM MAXIMUM: der
+ *  Ist-Stand leistet sich unter schwerer Drossel EINE Probe mit einem Eintrag
+ *  Rückstand (React committet einen Frame später). Ein `rueckMax ≤ 0` wäre
+ *  darum ein Tor, das per Rerun grün wird, und ein `rueckMax ≤ 1` läge exakt
+ *  auf dem gemessenen Rand. Geprüft wird stattdessen (a) ≥ 90 % treu und (b)
+ *  höchstens 5 % der Proben ≥ 2 Einträge zurück — beides mit vollem Abstand
+ *  zum Ist-Stand (0 %) UND zu beiden Defekt-Ständen (38 % / 98 %).
  *
  *  Der Rückstand wird IM STOSS gemessen, nicht in der Pause: gelesen wird
- *  jeweils 60 ms nach dem Scroll-Schritt und damit vor dem nächsten. Eine
- *  Entprellung ≥ 120 ms kann bis dahin nicht gefeuert haben, die Sofort-
- *  Zuweisung ist längst committet. Die Pausen bleiben trotzdem nötig — ohne
+ *  jeweils 60 ms nach dem Scroll-Schritt und damit vor dem nächsten. Hat
+ *  dieser Schritt eine Artikelgrenze überquert — beim OR der Regelfall, die
+ *  Artikel sind im Mittel ~485 px hoch —, dann wurde eine Trailing-Entprellung
+ *  dabei NEU ANGESETZT und kann bis zur Messung nicht gefeuert haben, während
+ *  die Sofort-Zuweisung längst committet ist. Nur ein Schritt ohne
+ *  Artikelwechsel lässt die Entprellung durch; das sind die 27 treuen Proben
+ *  in der Messreihe oben. Die Pausen bleiben trotzdem nötig — ohne
  *  sie hält das Ruhe-Tor den Baum zu, die Gliederung zeigt nur ihre oberste
  *  Ebene und die Messung hätte keine Auflösung (gemessen: 1 Eintrag über
  *  24'000 px statt 8 — ein Tor, das nicht scheitern kann, §6.7; genau darum
@@ -221,6 +237,7 @@ async function leseRueckstand(
       abErster: abErster.length,
       gueltig: gueltig.length,
       treu: rueck.filter((r) => r === 0).length,
+      abZwei: rueck.filter((r) => r >= 2).length,
       rueckMax: rueck.length > 0 ? Math.max(...rueck) : -1,
       rueckMin: rueck.length > 0 ? Math.min(...rueck) : -1,
       hist: JSON.stringify(hist),
@@ -328,12 +345,14 @@ test.describe('W2·5m — Standort-Marke läuft beim Lesen mit', () => {
     expect(m.gueltig / Math.max(1, m.abErster), `nur ${m.gueltig}/${m.abErster} Proben messbar`)
       .toBeGreaterThanOrEqual(0.9)
     // (3) DAS KRITERIUM. Rückstand 0 = die Marke steht im Abschnitt, in dem der
-    //     Leser liest. Ein Eintrag Verzug bleibt erlaubt (React committet den
-    //     Zustand einen Frame später); ab zwei ist es eine Entprellung.
-    expect(m.rueckMax, `Rückstand bis ${m.rueckMax} Einträge (Histogramm ${m.hist}, min ${m.rueckMin})`)
-      .toBeLessThanOrEqual(1)
-    expect(m.treu / Math.max(1, m.gueltig), `nur ${m.treu}/${m.gueltig} Proben am richtigen Eintrag (Histogramm ${m.hist})`)
+    //     Leser liest. EIN Eintrag Verzug bleibt in Einzelproben erlaubt (React
+    //     committet den Zustand einen Frame später, unter 6×/10× Drossel je
+    //     einmal gemessen); ab ZWEI ist es eine Entprellung. Beide Schranken
+    //     stehen auf Anteilen — Herleitung und Verteilungen oben.
+    expect(m.treu / Math.max(1, m.gueltig), `nur ${m.treu}/${m.gueltig} Proben am richtigen Eintrag (Histogramm ${m.hist}, min ${m.rueckMin})`)
       .toBeGreaterThanOrEqual(0.9)
+    expect(m.abZwei / Math.max(1, m.gueltig), `${m.abZwei}/${m.gueltig} Proben ≥ 2 Gliederungs-Einträge zurück (max ${m.rueckMax}, Histogramm ${m.hist}) — das ist eine Entprellung, keine Sofort-Zuweisung`)
+      .toBeLessThanOrEqual(0.05)
     expect(fehler).toEqual([])
   })
 
