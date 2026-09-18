@@ -28,12 +28,12 @@
       "value": "Modifica dell'ordinanza sulla parte generale del diritto delle assicurazioni sociali (OPGA) - Disposizioni d'esecuzione relative alla sorveglianza degli assicurati (osservazione)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-09-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-12-21"
     }
@@ -67,12 +67,12 @@
       "value": "Disposizioni d'esecuzione relative alla modifica della legge federale sull'assicurazione per l'invalidità (Ulteriore sviluppo dell'AI)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-12-04"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-03-19"
     }
@@ -106,12 +106,12 @@
       "value": "Modifica dell'ordinanza sulla parte generale del diritto delle assicurazioni sociali (OPGA) - Disposizioni d'esecuzione della revisione della LPGA"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-02-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-05-26"
     }

@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/60/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/101/cons_1"
     },
     "status": {
       "type": "uri",
@@ -20,22 +20,22 @@
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de l'ordonnance sur les services de télécommunication (OST)"
+      "value": "Modification de l’ordonnance sur les services de télécommunication (OST)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica dell'ordinanza sui servizi di telecomunicazione (OST)"
+      "value": "Modifica dell’ordinanza sui servizi di telecomunicazione (OST)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-04-17"
+      "value": "2021-12-03"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-06-21"
+      "value": "2022-03-18"
     }
   },
   {
@@ -45,7 +45,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/7/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/92/cons_1"
     },
     "status": {
       "type": "uri",
@@ -54,27 +54,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung von Verordnungen zum FMG (FDV, AEFV, PBV) und neue Verordnung über die Internet-Domains (VID)"
+      "value": "Revision der Verordnung über Fernmeldedienste (Anpassung der Grundversorgungsbestimmungen)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification d'ordonnances relatives à la LTC (OST, ORAT, OIP) et nouvelle ordonnance sur les domaines Internet (ODI)"
+      "value": "Révision de l’ordonnance sur les services de télécommunication (adaptation des dispositions du service universel)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica delle ordinanze relative alla LTC (OST, ORAT, OIP) e nuova ordinanza sui domini Internet (ODIn)"
+      "value": "Revisione dell’Ordinanza sui servizi di telecomunicazione (adattamento delle disposizioni del servizio universale)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-02-13"
+      "value": "2021-12-10"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-04-17"
+      "value": "2022-03-25"
     }
   },
   {
@@ -106,12 +106,12 @@
       "value": "Modifica dell’ordinanza sui servizi di telecomunicazione (OST)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-11-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-02-16"
     }
@@ -123,7 +123,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/101/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/30/cons_1"
     },
     "status": {
       "type": "uri",
@@ -132,27 +132,105 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung der Verordnung über Fernmeldedienste (FDV)"
+      "value": "Teilrevision der Verordnung vom 9. März 2007 über Fernmeldedienste (FDV)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de l’ordonnance sur les services de télécommunication (OST)"
+      "value": "Révision partielle de l’ordonnance du 9 mars 2007 sur les services de télécommunication (OST)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica dell’ordinanza sui servizi di telecomunicazione (OST)"
+      "value": "Revisione parziale dell’ordinanza del 9 marzo 2007 sui servizi di telecomunicazione (OST)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-12-03"
+      "value": "2025-06-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-03-18"
+      "value": "2025-10-14"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "784.101.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/97/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Neuordnung der ausserparlamentarischen Kommissionen im Rahmen der Überprüfung 2025"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Réorganisation des commissions extra-parlementaires dans le cadre du réexamen 2025"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-01-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-04-28"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "784.101.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/39/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Erhöhung der Netzsicherheit und Schutz vor Cyberbedrohungen (Teilrevision der Verordnungen im Fernmeldebereich)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Renforcement de la sécurité des réseaux et protection contre les cybermenaces (révision partielle des ordonnances dans le domaine des télécommunications)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Miglioramento della sicurezza della rete e protezione dalle minacce informatiche (revisione parziale delle ordinanze nel settore delle telecomunicazioni)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-17"
     }
   },
   {
@@ -184,12 +262,12 @@
       "value": "Modifica della LTC: adattamento delle disposizioni d'esecuzione del Consiglio federale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2006-06-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2006-09-15"
     }
@@ -223,12 +301,12 @@
       "value": "Modifica dell'OST concernente il servizio universale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2006-02-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2006-05-31"
     }
@@ -262,12 +340,12 @@
       "value": "Modifiche delle ordinanze relative alla legge sulle telecomunicazioni (LTC)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-04-08"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-06-05"
     }
@@ -301,14 +379,92 @@
       "value": "Modifica dell'ordinanza sui servizi di telecomunicazione (OST)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-05-24"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-07-22"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "784.101.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/60/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verordnung über Fernmeldedienste (FDV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l'ordonnance sur les services de télécommunication (OST)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell'ordinanza sui servizi di telecomunicazione (OST)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-04-17"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-06-21"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "784.101.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/7/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung von Verordnungen zum FMG (FDV, AEFV, PBV) und neue Verordnung über die Internet-Domains (VID)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification d'ordonnances relatives à la LTC (OST, ORAT, OIP) et nouvelle ordonnance sur les domaines Internet (ODI)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica delle ordinanze relative alla LTC (OST, ORAT, OIP) e nuova ordinanza sui domini Internet (ODIn)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-02-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-04-17"
     }
   },
   {
@@ -340,170 +496,14 @@
       "value": "Modifica dell'ordinanza sui servizi di telecomunicazione (OST)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-09-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-12-01"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "784.101.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/97/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Neuordnung der ausserparlamentarischen Kommissionen im Rahmen der Überprüfung 2025"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Réorganisation des commissions extra-parlementaires dans le cadre du réexamen 2025"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-01-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-28"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "784.101.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/92/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision der Verordnung über Fernmeldedienste (Anpassung der Grundversorgungsbestimmungen)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de l’ordonnance sur les services de télécommunication (adaptation des dispositions du service universel)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione dell’Ordinanza sui servizi di telecomunicazione (adattamento delle disposizioni del servizio universale)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-12-10"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-03-25"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "784.101.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/30/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision der Verordnung vom 9. März 2007 über Fernmeldedienste (FDV)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de l’ordonnance du 9 mars 2007 sur les services de télécommunication (OST)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale dell’ordinanza del 9 marzo 2007 sui servizi di telecomunicazione (OST)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-06-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-14"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "784.101.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/39/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Erhöhung der Netzsicherheit und Schutz vor Cyberbedrohungen (Teilrevision der Verordnungen im Fernmeldebereich)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Renforcement de la sécurité des réseaux et protection contre les cybermenaces (révision partielle des ordonnances dans le domaine des télécommunications)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Miglioramento della sicurezza della rete e protezione dalle minacce informatiche (revisione parziale delle ordinanze nel settore delle telecomunicazioni)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-27"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-17"
     }
   }
 ]

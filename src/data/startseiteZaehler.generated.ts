@@ -267,5 +267,5 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   "standMaterialien": "2026-09-18",
   "juengsterGesetzStand": "2026-09-02",
   "juengsterEntscheid": "2026-07-08",
-  "juengsteMaterialie": "2026-09-16"
+  "juengsteMaterialie": "2026-09-18"
 };

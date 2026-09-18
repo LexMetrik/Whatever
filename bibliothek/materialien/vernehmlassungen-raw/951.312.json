@@ -28,12 +28,12 @@
       "value": "Revisione totale dell'ordinanza FINMA sugli investimenti collettivi (OICol-FINMA)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-04-03"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-05-19"
     }

@@ -6,6 +6,74 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/81/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (Gesetz über die Transparenz juristischer Personen; TJPG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales; LTPM)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sulla trasparenza delle persone giuridiche e di altri costrutti giuridici (Legge sulla trasparenza delle persone giuridiche; LTPG)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-08-30"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-11-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "951.31"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/84/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des Obligationenrechts und Änderung der Handelsregistersverordnung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision du Code des obligations et modification de l'ordonnance sur le registre du commerce"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sugli aiuti finanziari a favore dell'Instituto del federalismo"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "951.31"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6004/1/cons_1"
     },
     "status": {
@@ -28,53 +96,14 @@
       "value": "Revisione totale della legge federale sui fondi di investimento "
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2004-01-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2004-05-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "951.31"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/50/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Kollektivanlagengesetzes (Limited Qualified Investment Funds, L-QIF)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi sur les placements collectifs (Limited Qualified Investment Funds, L-QIF)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge sugli investimenti collettivi (Limited Qualified Investment Funds, L-QIF)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-06-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-10-17"
     }
   },
   {
@@ -106,12 +135,12 @@
       "value": "Modifica della legge federale sugli investimenti collettivi di capitale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-07-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-10-07"
     }
@@ -145,12 +174,12 @@
       "value": "10.450 Iv.pa. Punire severamente la vendita di dati bancari"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-11-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-02-28"
     }
@@ -162,7 +191,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/81/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/50/cons_1"
     },
     "status": {
       "type": "uri",
@@ -171,56 +200,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Bundesgesetz über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (Gesetz über die Transparenz juristischer Personen; TJPG)"
+      "value": "Änderung des Kollektivanlagengesetzes (Limited Qualified Investment Funds, L-QIF)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Loi fédérale des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales; LTPM)"
+      "value": "Modification de la loi sur les placements collectifs (Limited Qualified Investment Funds, L-QIF)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Legge federale sulla trasparenza delle persone giuridiche e di altri costrutti giuridici (Legge sulla trasparenza delle persone giuridiche; LTPG)"
+      "value": "Modifica della legge sugli investimenti collettivi (Limited Qualified Investment Funds, L-QIF)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-08-30"
+      "value": "2019-06-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-11-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "951.31"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/84/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des Obligationenrechts und Änderung der Handelsregistersverordnung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision du Code des obligations et modification de l'ordonnance sur le registre du commerce"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sugli aiuti finanziari a favore dell'Instituto del federalismo"
+      "value": "2019-10-17"
     }
   }
 ]

@@ -28,12 +28,12 @@
       "value": "10.467 Iv.pa. Prevenire l'indebitamento vietando la pubblicità dei piccoli crediti"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-06-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-09-30"
     }

@@ -6,6 +6,152 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/65/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Ausführungsverordnungen zu den Einschränkungen für Reisen ins Ausland (RDV, VZAE, VEV, VVWAL und AsylV 1)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification des ordonnances d’exécution relatifs aux restrictions de voyage à l'étranger (ODV, OASA, OEV, OERE et OA 1)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica delle ordinanze esecutive relativi alle limitazioni per i viaggi all’estero (ODV, OASA, , OEV, OEAE e OAsi 1)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-10-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-02-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.311"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/7/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnungsanpassungen aufgrund der Übernahme des EU-Migrations- und Asylpakts"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modifications d’ordonnances en raison de la reprise du pacte de l’UE sur la migration et l’asile"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifiche di ordinanze a seguito del recepimento del Patto sulla migrazione e l’asilo dell’UE"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-06-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-10-13"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.311"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/83/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Ausführungsverordnungen (RDV, AsylV 1, VEV, VVWAL und VZAE) (Einschränkungen für Reisen ins Ausland; 20.063)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification des ordonnances d’exécution (ODV, OA 1, OEV, OERE et OASA) (Restriction des voyages à l’étranger ; 20.063)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica delle ordinanze esecutive (ODV, OAsi 1, OEV, OEAE e OASA) (Limitazioni per i viaggi all’estero; 20.063)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.311"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/99/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnungsänderungen im Zusammenhang mit der Genehmigung und Umsetzung des Notenaustauschs zwischen der Schweiz und der EG betreffend die Übernahme der EG-Rückführungsrichtlinie (Richtlinie 2008/115/EG) (Weiterentwicklung des Schengen-Besitzstands) "
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification d'ordonnance suite à la reprise et la mise en œuvre de l'échange de notes entre la Suisse et la CE concernant la reprise de la directive CE sur le retour (directive 2008/115/CE) (développement de l'acquis de Schengen) "
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifiche d'ordinanza legate all'approvazione e alla trasposizione dello scambio di note tra la Svizzera e la CE relativo al recepimento della direttiva CE sul rimpatrio (direttiva 2008/115/CE) (sviluppo dell'acquis di Schengen)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-07-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-09-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.311"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/149/cons_1"
     },
     "status": {
@@ -28,12 +174,12 @@
       "value": "Modifica dell'ordinanza 1 sull'asilo (OAsi 1), dell'ordinanza 2 sull'asilo (OAsi 2), dell'ordinanza sull'integrazione degli stranieri (OIntS) e dell'ordinanza concernente l'esecuzione dell'allontanamento e dell'espulsione di stranieri (OEAE)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-06-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-10-17"
     }
@@ -67,92 +213,14 @@
       "value": "Revisione urgente della legge sull'asilo: indagine conoscitiva sull'attuazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-02-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-03-19"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.311"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/7/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungsanpassungen aufgrund der Übernahme des EU-Migrations- und Asylpakts"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modifications d’ordonnances en raison de la reprise du pacte de l’UE sur la migration et l’asile"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifiche di ordinanze a seguito del recepimento del Patto sulla migrazione e l’asilo dell’UE"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-06-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-13"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.311"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/99/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungsänderungen im Zusammenhang mit der Genehmigung und Umsetzung des Notenaustauschs zwischen der Schweiz und der EG betreffend die Übernahme der EG-Rückführungsrichtlinie (Richtlinie 2008/115/EG) (Weiterentwicklung des Schengen-Besitzstands) "
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification d'ordonnance suite à la reprise et la mise en œuvre de l'échange de notes entre la Suisse et la CE concernant la reprise de la directive CE sur le retour (directive 2008/115/CE) (développement de l'acquis de Schengen) "
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifiche d'ordinanza legate all'approvazione e alla trasposizione dello scambio di note tra la Svizzera e la CE relativo al recepimento della direttiva CE sul rimpatrio (direttiva 2008/115/CE) (sviluppo dell'acquis di Schengen)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-07-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-09-15"
     }
   },
   {
@@ -184,12 +252,12 @@
       "value": "Ordinanza che adegua ordinanze in seguito a sviluppi nell'ambito di Schengen e Dublino"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-01-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-03-16"
     }
@@ -223,53 +291,14 @@
       "value": "Attuazione del progetto per velocizzare le procedure d'asilo (Riassetto del settore dell'asilo)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-08-30"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-11-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.311"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/65/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Ausführungsverordnungen zu den Einschränkungen für Reisen ins Ausland (RDV, VZAE, VEV, VVWAL und AsylV 1)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification des ordonnances d’exécution relatifs aux restrictions de voyage à l'étranger (ODV, OASA, OEV, OERE et OA 1)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica delle ordinanze esecutive relativi alle limitazioni per i viaggi all’estero (ODV, OASA, , OEV, OEAE e OAsi 1)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-02-05"
     }
   },
   {
@@ -301,43 +330,14 @@
       "value": "Modifica delle ordinanze d'esecuzione delle norme procedurali e dei sistemi d'informazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-05-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-08-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.311"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/83/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Ausführungsverordnungen (RDV, AsylV 1, VEV, VVWAL und VZAE) (Einschränkungen für Reisen ins Ausland; 20.063)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification des ordonnances d’exécution (ODV, OA 1, OEV, OERE et OASA) (Restriction des voyages à l’étranger ; 20.063)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica delle ordinanze esecutive (ODV, OAsi 1, OEV, OEAE e OASA) (Limitazioni per i viaggi all’estero; 20.063)"
     }
   }
 ]

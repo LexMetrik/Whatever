@@ -6,6 +6,45 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/52/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verkehrszulassungs- und der Strassenverkehrskontrollverordnung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l’ordonnance réglant l’admission à la circulation routière et de l’ordonnance sur le contrôle de la circulation routière"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica delle ordinanze sull’ammissione alla circolazione e sul controllo della circolazione stradale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-04-21"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-08-11"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.013"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/82/cons_1"
     },
     "status": {
@@ -28,12 +67,12 @@
       "value": "Attuazione della mozione 20.4339 CAPTE-N («Ridurre efficacemente il rumore eccessivo dei motori»): Adattamento di due articoli della legge federale sulla circolazione stradale e di quattro ordinanze"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-12-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-03-23"
     }
@@ -67,12 +106,12 @@
       "value": "Adattamento delle ordinanze sulla segnaletica stradale e sul controllo della circolazione stradale in attuazione dell’iniziativa cantonale 17.304 («Strade più sicure subito!»)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-02-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-05-22"
     }
@@ -84,36 +123,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/52/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/19/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung der Verkehrszulassungs- und der Strassenverkehrskontrollverordnung"
+      "value": "Verordnung über das Informationssystem Strassenverkehrskontrollen (ISKV)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de l’ordonnance réglant l’admission à la circulation routière et de l’ordonnance sur le contrôle de la circulation routière"
+      "value": "Ordonnance sur le système d’information relatif aux contrôles de la circulation routière (OSICCR)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica delle ordinanze sull’ammissione alla circolazione e sul controllo della circolazione stradale"
+      "value": "Ordinanza sul sistema d’informazione sui controlli della circolazione stradale (OSICC)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-04-21"
+      "value": "2025-06-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-08-11"
+      "value": "2025-10-31"
     }
   },
   {
@@ -145,12 +184,12 @@
       "value": "Attuazione delle misure contenute nel secondo pacchetto «Via sicura»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-04-16"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-07-12"
     }
@@ -184,12 +223,12 @@
       "value": "Introduzione dell'accertamento etilometrico con valore probatorio"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-11-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-02-17"
     }
@@ -223,53 +262,14 @@
       "value": "Modifica dei requisiti tecnici e dell'esame d'immatricolazione dei veicoli stradali e introduzione di un nuovo cronotachigrafo"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-01-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-04-25"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.013"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/19/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnung über das Informationssystem Strassenverkehrskontrollen (ISKV)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Ordonnance sur le système d’information relatif aux contrôles de la circulation routière (OSICCR)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Ordinanza sul sistema d’informazione sui controlli della circolazione stradale (OSICC)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-06-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-31"
     }
   }
 ]

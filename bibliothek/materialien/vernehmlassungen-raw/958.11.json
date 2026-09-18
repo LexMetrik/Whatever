@@ -28,12 +28,12 @@
       "value": "Modifica dell'ordinanza sull'infrastruttura finanziaria (scambio di garanzie)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-02-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-04-13"
     }

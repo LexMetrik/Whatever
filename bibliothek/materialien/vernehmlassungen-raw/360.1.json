@@ -28,12 +28,12 @@
       "value": "Entrata in vigore parziale della legge federale sulle misure di polizia per la lotta al terrorismo; ordinanza sulle misure di polizia per la lotta al terrorismo"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-06-23"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-10-14"
     }

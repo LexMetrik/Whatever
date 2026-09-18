@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/64/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/79/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über die Krankenversicherung; Verhandlung der Tarife der Analysenliste"
+      "value": "Änderung des Bundesgesetzes über die Krankenversicherung (KVG) (Datenaustausch, Risikoausgleich)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur l’assurance-maladie; Négociation des tarifs de la liste des analyses"
+      "value": "Modification de la loi fédérale sur l’assurance-maladie (LAMal) (Échange de données, compensation des risques)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica della legge federale sull’assicurazione malattie: negoziazione delle tariffe dell’elenco delle analisi"
+      "value": "Modifica della legge federale sull’assicurazione malattie (LAMal) (Scambio di dati, compensazione dei rischi)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-12-09"
+      "value": "2021-11-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-03-31"
+      "value": "2022-03-03"
     }
   },
   {
@@ -67,12 +67,12 @@
       "value": "22.431 n Iv. pa. CSSS-CN. Eccezioni all’obbligo di esercitare l’attività per tre anni di cui all’articolo 37 capoverso 1 LAMal in caso di comprovata penuria di medici"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-08-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-10-07"
     }
@@ -84,7 +84,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/118/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/64/cons_1"
     },
     "status": {
       "type": "uri",
@@ -93,261 +93,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Pa. Iv. 10.407/13.477 «Prämienbefreiung für Kinder» / «KVG. Änderung der Prämienkategorien für Kinder, Jugendliche und junge Erwachsene»"
+      "value": "Änderung des Bundesgesetzes über die Krankenversicherung; Verhandlung der Tarife der Analysenliste"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Iv. pa. 10.407 / 13.477 «Exonérer les enfants du paiement des primes d'assurance-maladie» / «LAMal. Révision des catégories de primes enfants, jeunes et jeunes adultes»"
+      "value": "Modification de la loi fédérale sur l’assurance-maladie; Négociation des tarifs de la liste des analyses"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Iv. pa. 10.407/13.477 «Esenzione dei premi per i minorenni» / «LAMal. Revisione delle categorie dei premi per minorenni, giovani adulti e adulti»"
+      "value": "Modifica della legge federale sull’assicurazione malattie: negoziazione delle tariffe dell’elenco delle analisi"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-11-23"
+      "value": "2022-12-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-03-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/74/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Pa.Iv. 14.417 «Nachbesserung der Pflegefinanzierung»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Iv.pa. 14.417 «Amender le régime de financement des soins»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iv.pa 14.417 «Correttivi da apportare al finanziamento delle cure»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-09-09"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-12-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/60/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die Krankenversicherung (KVG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur l'assurance-maladie (LAMal)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sull'assicurazione malattie (LAMal)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-06-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-10-19"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/63/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Bundesgesetzes über die Krankenversicherung (Zulassung von Leistungserbringern)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de la loi fédérale sur l'assurance-maladie (admission des fournisseurs de prestations)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della legge federale sull'assicurazione malattie (autorizzazione dei fornitori di prestazioni)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-07-05"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-10-25"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/71/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "15.468 Pa.Iv. «Stärkung der Selbstverantwortung im KVG»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "15.468 Iv.pa. «LAMal. Renforcer la responsabilité individuelle»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "15.468 Iv.pa. «Rafforzamento della responsabilità individuale \r\nnella LAMal»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-09-18"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-12-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/45/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über die Krankenversicherung (Massnahmen zur Kostendämpfung - Paket 2)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur l'assurance-maladie (Mesures visant à freiner la hausse des coûts - 2<sup>e</sup> volet)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sull'assicurazione malattie (misure di contenimento dei costi - 2° pacchetto)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-08-19"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-11-19"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/79/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über die Krankenversicherung (KVG) (Datenaustausch, Risikoausgleich)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur l’assurance-maladie (LAMal) (Échange de données, compensation des risques)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sull’assicurazione malattie (LAMal) (Scambio di dati, compensazione dei rischi)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-11-17"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-03-03"
+      "value": "2023-03-31"
     }
   },
   {
@@ -379,12 +145,12 @@
       "value": "Modifica della legge federale sull’assicurazione malattie (Garanzia del principio secondo il quale la raccolta dei dati avviene una sola volta)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-12-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-03-31"
     }
@@ -418,706 +184,14 @@
       "value": "Modifica della legge federale sull’assicurazione malattie (LAMal; RS 832.10) (assicurazione delle persone detenute)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-11-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-03-07"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/21/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes vom 18. März 1994 über die Krankenversicherung (KVG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale du 18 mars 1994 sur l’assurance-maladie (LAMal)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale del 18 marzo 1994 sull'assicurazione malattia (LAMal)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/113/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision der Verordnung über die Krankenversicherung (KVV), der Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (KLV) und der Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l'ordonnance sur l'assurance-maladie (OAMal), de l'ordonnance sur les prestations de l'assurance des soins (OPAS) et du règlement sur l'assurance-vieillesse et survivants (RAVS)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale dell'ordinanza sull'assicurazione malattie (OAMal), dell'ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (OPre) e dell'ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2008-12-18"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-03-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/20/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Dringliche Revision des Bundesgesetzes über die Krankenversicherung (KVG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision urgente de la loi fédérale sur l'assurance-maladie (LAMal)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione urgente della legge federale sull'assicurazione malattie (LAMal)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-05-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-05-13"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/26/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Korrektur der zwischen 1996 und 2011 bezahlten Prämien"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Correction des primes payées entre 1996 et 2011"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Correzione dei premi pagati tra il 1996 e 2011"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-06-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/100/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "BG über die Krankenversicherung (KVG) (Vorübergehende Wiedereinführung der bedarfsabhängigen Zulassung)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "LF sur l'assurance-maladie (LAMal) (Réintroduction temporaire de l'admission selon le besoin)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "LF sull'assicurazione malattie (LAMal) (Reintroduzione temporanea dell'autorizzazione secondo il bisogno)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-24"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-11-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/101/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Volksinitiative «Für eine öffentliche Krankenkasse» und indirekter Gegenvorschlag (Änderung des Bundesgesetzes über die Krankenversicherung; KVG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Initiative populaire «Pour une caisse publique d'assurance-maladie» et contre-projet indirect (Modification de la loi fédérale sur l'assurance-maladie; LAMal)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iniziativa popolare «Per una cassa malati pubblica» e controprogetto indiretto (Modifica della Legge federale sull'assicurazione malattie; LAMal)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-02-27"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-06-03"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/101/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über die Krankenversicherung - Anpassung von Bestimmungen mit internationalem Bezug"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur l'assurance-maladie - Adaptation de dispositions à caractère international"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sull'assicurazione malattie (LAMal) nell'ambito del diritto internazionale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-10-15"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-02-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/53/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Bundesgesetzes über die Krankenversicherung betreffend Steuerung des ambulanten Bereichs"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de la loi fédérale sur l'assurance-maladie relative au pilotage du domaine ambulatoire"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della legge federale sull'assicurazione malattie concernente la gestione del settore ambulatoriale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-06-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-10-10"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/88/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Pa.Iv. 10.431 «Komatrinker sollen Aufenthalte im Spital und in Ausnüchterungszellen selber bezahlen»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Iv.pa. 10.431 «Coma éthylique. Aux personnes en cause de payer les frais des séjours hospitaliers et en cellule de dégrisement!»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iv.pa. 10.431 «Chi abusa di alcol o droghe deve pagare di tasca propria la permanenza in una cella ‹anti-sbornia› o il ricovero in ospedale»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-07-03"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-10-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/14/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "11.418 Pa.Iv. KVG. Gesetzliche Anerkennung der Verantwortung der Pflege"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "11.418 Iv.pa. LAMal. Accorder plus d'autonomie au personnel soignant"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "11.418 Iv.pa. LAMal. Maggiore autonomia per il personale sanitario"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-04-24"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-08-14"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/96/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über das Entlastungspaket 2027"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur le programme d’allégement budgétaire 2027"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sulle misure di sgravio del bilancio della Confederazione applicabili dal 2027"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-01-29"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-05-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/103/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des Bundesgesetzes über die Krankenversicherung (KVG): Anpassung der Franchise"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de la loi fédérale sur l’assurance-maladie (LAMal): adaptation de la franchise"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione della legge federale sull'assicurazione malattie (LAMal): adeguamento della franchigia"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-03-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-06-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/33/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Pa.Iv. 09.528 «Finanzierung der Gesundheitsleistungen aus einer Hand. Einführung des Monismus»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Iv.pa. 09.528 «Financement moniste des prestations de soins»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iv.pa 09.528 «Finanziamento delle prestazioni della salute da parte di un unico soggetto. Introduzione di un sistema di finanziamento monistico»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-05-15"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-09-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/62/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über die Krankenversicherung (Massnahmen zur Kostendämpfung - Paket 1)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur l'assurance-maladie (Mesures visant à freiner la hausse des coûts, 1<sup>er</sup> volet)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sull'assicurazione malattie (Misure di contenimento dei costi - pacchetto 1)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-09-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-12-14"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/81/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Pa.Iv. 16.411 «Für den Persönlichkeitsschutz auch in der Aufsicht über die Krankenversicherung»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Iv.pa. 16.411 «Surveillance de l'assurance-maladie. Garantir la protection de la personnalité»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iv.pa. 16.411 «Per la protezione della personalità anche nella vigilanza sull'assicurazione malattie»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-11-15"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-03-01"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/64/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Pa.Iv. 16.419 «Wettbewerbspreise bei Medizinalprodukten der Mittel- und Gegenständeliste»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Iv.pa. 16.419 «Dispositifs médicaux figurant sur la liste des moyens et appareils. Instaurer la concurrence sur les prix»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iv.pa. 16.419 «Humbel. Concorrenza per i prodotti menzionati nell'elenco dei mezzi e degli apparecchi»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-09-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-12-16"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/79/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über die Krankenversicherung (Vergütung des Pflegematerials)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur l'assurance-maladie (rémunération du matériel de soins)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sull'assicurazione malattie (rimunerazione del materiale di cura)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-12-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-02-06"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/32/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Kt.Iv. TG 16.312. Ergänzung von Artikel 64a des Bundesgesetzes über die Krankenversicherung betreffend Vollstreckung der Prämienzahlungspflicht der Versicherten"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Iv.ct. TG 16.312. Exécution de l'obligation de payer les primes. Modification de l'article 64a de la loi fédérale sur l'assurance-maladie"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iv.ct. TG. 16.312 Complemento all'articolo 64a della legge federale sull'assicurazione malattie concernente l'esecuzione dell'obbligo di pagare i premi da parte degli assicurati"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-06-15"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-10-06"
     }
   },
   {
@@ -1149,12 +223,12 @@
       "value": "Modifica della legge federale sull'assicurazione malattia (LAMal); acquisto di mezzi e apparecchi nel SEE"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-12-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-03-31"
     }
@@ -1188,14 +262,92 @@
       "value": "17.480 n Iv. pa. (Weibel) Bäumle. Tassa per i casi di lieve entità nei reparti di pronto soccorso degli ospedali"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-09-27"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-01-10"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/96/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über das Entlastungspaket 2027"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur le programme d’allégement budgétaire 2027"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sulle misure di sgravio del bilancio della Confederazione applicabili dal 2027"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-01-29"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-05-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/103/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des Bundesgesetzes über die Krankenversicherung (KVG): Anpassung der Franchise"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de la loi fédérale sur l’assurance-maladie (LAMal): adaptation de la franchise"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione della legge federale sull'assicurazione malattie (LAMal): adeguamento della franchigia"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-03-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-06-22"
     }
   },
   {
@@ -1234,26 +386,26 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/91/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/21/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung des Asylgesetzes und des Ausländer- und Integrationsgesetzes sowie der Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (Asylstrategie 2027)"
+      "value": "Änderung des Bundesgesetzes vom 18. März 1994 über die Krankenversicherung (KVG)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de la loi sur l'asile et de la loi sur les étrangers et l'intégration ainsi que de l’ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (Stratégie en matière d'asile 2027)"
+      "value": "Modification de la loi fédérale du 18 mars 1994 sur l’assurance-maladie (LAMal)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica della legge sull’asilo e della legge sugli stranieri e sull’integrazione nonché dell’ ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (Strategia in materia di asilo 2027)"
+      "value": "Modifica della legge federale del 18 marzo 1994 sull'assicurazione malattia (LAMal)"
     }
   },
   {
@@ -1283,6 +435,854 @@
       "type": "literal",
       "xml:lang": "it",
       "value": "Modifica della legge federale sull’assicurazione malattie (LAMal): contratti pluriennali"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/91/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Asylgesetzes und des Ausländer- und Integrationsgesetzes sowie der Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (Asylstrategie 2027)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi sur l'asile et de la loi sur les étrangers et l'intégration ainsi que de l’ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (Stratégie en matière d'asile 2027)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge sull’asilo e della legge sugli stranieri e sull’integrazione nonché dell’ ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (Strategia in materia di asilo 2027)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/113/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision der Verordnung über die Krankenversicherung (KVV), der Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (KLV) und der Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l'ordonnance sur l'assurance-maladie (OAMal), de l'ordonnance sur les prestations de l'assurance des soins (OPAS) et du règlement sur l'assurance-vieillesse et survivants (RAVS)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale dell'ordinanza sull'assicurazione malattie (OAMal), dell'ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (OPre) e dell'ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2008-12-18"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-03-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/20/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Dringliche Revision des Bundesgesetzes über die Krankenversicherung (KVG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision urgente de la loi fédérale sur l'assurance-maladie (LAMal)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione urgente della legge federale sull'assicurazione malattie (LAMal)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-05-06"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-05-13"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/26/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Korrektur der zwischen 1996 und 2011 bezahlten Prämien"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Correction des primes payées entre 1996 et 2011"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Correzione dei premi pagati tra il 1996 e 2011"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-06-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-09-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/100/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "BG über die Krankenversicherung (KVG) (Vorübergehende Wiedereinführung der bedarfsabhängigen Zulassung)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "LF sur l'assurance-maladie (LAMal) (Réintroduction temporaire de l'admission selon le besoin)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "LF sull'assicurazione malattie (LAMal) (Reintroduzione temporanea dell'autorizzazione secondo il bisogno)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-10-24"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-11-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/101/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Volksinitiative «Für eine öffentliche Krankenkasse» und indirekter Gegenvorschlag (Änderung des Bundesgesetzes über die Krankenversicherung; KVG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Initiative populaire «Pour une caisse publique d'assurance-maladie» et contre-projet indirect (Modification de la loi fédérale sur l'assurance-maladie; LAMal)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iniziativa popolare «Per una cassa malati pubblica» e controprogetto indiretto (Modifica della Legge federale sull'assicurazione malattie; LAMal)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-02-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-06-03"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/101/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über die Krankenversicherung - Anpassung von Bestimmungen mit internationalem Bezug"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur l'assurance-maladie - Adaptation de dispositions à caractère international"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sull'assicurazione malattie (LAMal) nell'ambito del diritto internazionale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-10-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-02-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/53/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des Bundesgesetzes über die Krankenversicherung betreffend Steuerung des ambulanten Bereichs"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de la loi fédérale sur l'assurance-maladie relative au pilotage du domaine ambulatoire"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale della legge federale sull'assicurazione malattie concernente la gestione del settore ambulatoriale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-06-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-10-10"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/88/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Pa.Iv. 10.431 «Komatrinker sollen Aufenthalte im Spital und in Ausnüchterungszellen selber bezahlen»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Iv.pa. 10.431 «Coma éthylique. Aux personnes en cause de payer les frais des séjours hospitaliers et en cellule de dégrisement!»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iv.pa. 10.431 «Chi abusa di alcol o droghe deve pagare di tasca propria la permanenza in una cella ‹anti-sbornia› o il ricovero in ospedale»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-07-03"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-10-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/118/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Pa. Iv. 10.407/13.477 «Prämienbefreiung für Kinder» / «KVG. Änderung der Prämienkategorien für Kinder, Jugendliche und junge Erwachsene»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Iv. pa. 10.407 / 13.477 «Exonérer les enfants du paiement des primes d'assurance-maladie» / «LAMal. Révision des catégories de primes enfants, jeunes et jeunes adultes»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iv. pa. 10.407/13.477 «Esenzione dei premi per i minorenni» / «LAMal. Revisione delle categorie dei premi per minorenni, giovani adulti e adulti»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-11-23"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-03-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/14/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "11.418 Pa.Iv. KVG. Gesetzliche Anerkennung der Verantwortung der Pflege"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "11.418 Iv.pa. LAMal. Accorder plus d'autonomie au personnel soignant"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "11.418 Iv.pa. LAMal. Maggiore autonomia per il personale sanitario"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-04-24"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-08-14"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/74/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Pa.Iv. 14.417 «Nachbesserung der Pflegefinanzierung»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Iv.pa. 14.417 «Amender le régime de financement des soins»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iv.pa 14.417 «Correttivi da apportare al finanziamento delle cure»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-09-09"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-12-18"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/60/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die Krankenversicherung (KVG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur l'assurance-maladie (LAMal)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sull'assicurazione malattie (LAMal)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-06-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-10-19"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/63/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des Bundesgesetzes über die Krankenversicherung (Zulassung von Leistungserbringern)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de la loi fédérale sur l'assurance-maladie (admission des fournisseurs de prestations)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale della legge federale sull'assicurazione malattie (autorizzazione dei fornitori di prestazioni)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-07-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-10-25"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/71/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "15.468 Pa.Iv. «Stärkung der Selbstverantwortung im KVG»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "15.468 Iv.pa. «LAMal. Renforcer la responsabilité individuelle»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "15.468 Iv.pa. «Rafforzamento della responsabilità individuale \r\nnella LAMal»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-09-18"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-12-18"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/33/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Pa.Iv. 09.528 «Finanzierung der Gesundheitsleistungen aus einer Hand. Einführung des Monismus»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Iv.pa. 09.528 «Financement moniste des prestations de soins»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iv.pa 09.528 «Finanziamento delle prestazioni della salute da parte di un unico soggetto. Introduzione di un sistema di finanziamento monistico»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-05-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-09-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/62/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über die Krankenversicherung (Massnahmen zur Kostendämpfung - Paket 1)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur l'assurance-maladie (Mesures visant à freiner la hausse des coûts, 1<sup>er</sup> volet)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sull'assicurazione malattie (Misure di contenimento dei costi - pacchetto 1)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-09-14"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-12-14"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/81/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Pa.Iv. 16.411 «Für den Persönlichkeitsschutz auch in der Aufsicht über die Krankenversicherung»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Iv.pa. 16.411 «Surveillance de l'assurance-maladie. Garantir la protection de la personnalité»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iv.pa. 16.411 «Per la protezione della personalità anche nella vigilanza sull'assicurazione malattie»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-11-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-03-01"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/64/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Pa.Iv. 16.419 «Wettbewerbspreise bei Medizinalprodukten der Mittel- und Gegenständeliste»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Iv.pa. 16.419 «Dispositifs médicaux figurant sur la liste des moyens et appareils. Instaurer la concurrence sur les prix»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iv.pa. 16.419 «Humbel. Concorrenza per i prodotti menzionati nell'elenco dei mezzi e degli apparecchi»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-09-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-12-16"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/79/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über die Krankenversicherung (Vergütung des Pflegematerials)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur l'assurance-maladie (rémunération du matériel de soins)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sull'assicurazione malattie (rimunerazione del materiale di cura)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-12-06"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-02-06"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/32/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Kt.Iv. TG 16.312. Ergänzung von Artikel 64a des Bundesgesetzes über die Krankenversicherung betreffend Vollstreckung der Prämienzahlungspflicht der Versicherten"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Iv.ct. TG 16.312. Exécution de l'obligation de payer les primes. Modification de l'article 64a de la loi fédérale sur l'assurance-maladie"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iv.ct. TG. 16.312 Complemento all'articolo 64a della legge federale sull'assicurazione malattie concernente l'esecuzione dell'obbligo di pagare i premi da parte degli assicurati"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-06-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-10-06"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/45/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über die Krankenversicherung (Massnahmen zur Kostendämpfung - Paket 2)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur l'assurance-maladie (Mesures visant à freiner la hausse des coûts - 2<sup>e</sup> volet)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sull'assicurazione malattie (misure di contenimento dei costi - 2° pacchetto)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-08-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-11-19"
     }
   }
 ]

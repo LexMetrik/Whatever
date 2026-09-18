@@ -6,6 +6,162 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/100/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des AHVG: Anpassung der Hinterlassenenrenten"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de la LAVS: adaptation des rentes de survivants"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale della LAVS: adeguamento delle rendite per superstiti"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-12-08"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-03-29"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.30"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/48/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELG). Anerkennung des betreuten Wohnens für Bezügerinnen und Bezüger von EL zur AHV"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi sur les prestations complémentaires à l’AVS et à l’AI (LPC). Reconnaissance des logements protégés pour les bénéficiaires de PC à l’AVS"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (LPC). Riconoscimento di forme di alloggio con assistenza per i beneficiari di PC all’AVS"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-06-21"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-10-23"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.30"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/28/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Umsetzung und Finanzierung der Initiative für eine 13. AHV-Rente; Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHVG) und des Bundesgesetzes über die Ergänzungsleistungen (ELG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Mise en œuvre et financement de l’initiative pour une 13e rente AVS; modification de la loi fédérale sur l’assurance-vieillesse et survivants (LAVS) et de la loi fédérale sur les prestations complémentaires (LPC)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Attuazione e finanziamento dell’iniziativa per una 13esima mensilità AVS; modifica della Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) e della Legge federale sulle prestazioni complementari (LPC)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-05-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-07-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.30"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/45/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHV 2030)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de la loi fédérale sur l’assurance-vieillesse et survivants (AVS 2030)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione della legge federale sull’assicurazione per la vecchiaia e per i superstiti (AVS 2030)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-11"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.30"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/113/cons_1"
     },
     "status": {
@@ -28,12 +184,12 @@
       "value": "Revisione parziale dell'ordinanza sull'assicurazione malattie (OAMal), dell'ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (OPre) e dell'ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-12-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-03-31"
     }
@@ -67,170 +223,14 @@
       "value": "Riforma parziale della legge federale sulle prestazioni complementari all'AVS e all'AI (riforma delle PC)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-11-25"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-03-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.30"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/28/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Umsetzung und Finanzierung der Initiative für eine 13. AHV-Rente; Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHVG) und des Bundesgesetzes über die Ergänzungsleistungen (ELG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Mise en œuvre et financement de l’initiative pour une 13e rente AVS; modification de la loi fédérale sur l’assurance-vieillesse et survivants (LAVS) et de la loi fédérale sur les prestations complémentaires (LPC)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Attuazione e finanziamento dell’iniziativa per una 13esima mensilità AVS; modifica della Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) e della Legge federale sulle prestazioni complementari (LPC)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-05-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-07-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.30"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/48/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELG). Anerkennung des betreuten Wohnens für Bezügerinnen und Bezüger von EL zur AHV"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi sur les prestations complémentaires à l’AVS et à l’AI (LPC). Reconnaissance des logements protégés pour les bénéficiaires de PC à l’AVS"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (LPC). Riconoscimento di forme di alloggio con assistenza per i beneficiari di PC all’AVS"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-06-21"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-10-23"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.30"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/100/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des AHVG: Anpassung der Hinterlassenenrenten"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de la LAVS: adaptation des rentes de survivants"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della LAVS: adeguamento delle rendite per superstiti"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-12-08"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-03-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.30"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/45/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHV 2030)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de la loi fédérale sur l’assurance-vieillesse et survivants (AVS 2030)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione della legge federale sull’assicurazione per la vecchiaia e per i superstiti (AVS 2030)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-11"
     }
   }
 ]

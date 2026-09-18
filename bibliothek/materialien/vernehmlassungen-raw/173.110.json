@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/75/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/35/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,66 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über das Bundesgericht (BGG) - Erweiterung der Kognition bei Beschwerden in Strafsachen"
+      "value": "Erwachsenenschutzrecht – Änderung des ZGB"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de la loi sur le Tribunal fédéral (LTF) - extension du pouvoir d'examen aux recours en matière pénale"
+      "value": "Droit de la protection de l’adulte – Modification du code civil"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica della legge sul Tribunale federale (LTF) - ampliamento della cognizione in caso di ricorsi in materia penale"
+      "value": "Diritto della protezione degli adulti – Modifica del codice civile"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-09-05"
+      "value": "2023-02-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-12-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "173.110"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/36/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Bundesgesetzes über das Bundesgericht (Bundesgerichtsgesetz, BGG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de la loi fédérale sur le Tribunal fédéral (Loi sur le Tribunal fédéral, LTF)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della Legge federale sul Tribunale federale (Legge sul Tribunale federale, BGG)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-12-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-03-21"
+      "value": "2023-05-31"
     }
   },
   {
@@ -106,12 +67,12 @@
       "value": "Legge federale sulla notificazione della posta nei fine settimana e nei giorni festivi"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-02-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-05-24"
     }
@@ -123,7 +84,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/35/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/36/cons_1"
     },
     "status": {
       "type": "uri",
@@ -132,27 +93,95 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Erwachsenenschutzrecht – Änderung des ZGB"
+      "value": "Teilrevision des Bundesgesetzes über das Bundesgericht (Bundesgerichtsgesetz, BGG)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Droit de la protection de l’adulte – Modification du code civil"
+      "value": "Révision partielle de la loi fédérale sur le Tribunal fédéral (Loi sur le Tribunal fédéral, LTF)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Diritto della protezione degli adulti – Modifica del codice civile"
+      "value": "Revisione parziale della Legge federale sul Tribunale federale (Legge sul Tribunale federale, BGG)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-02-22"
+      "value": "2024-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-05-31"
+      "value": "2025-03-21"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "173.110"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/47/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Paket «Stabilisierung und Weiterentwicklung der Beziehungen Schweiz–EU»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Paquet «stabilisation et développement des relations Suisse-UE»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-06-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-10-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "173.110"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/91/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Asylgesetzes und des Ausländer- und Integrationsgesetzes sowie der Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (Asylstrategie 2027)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi sur l'asile et de la loi sur les étrangers et l'intégration ainsi que de l’ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (Stratégie en matière d'asile 2027)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge sull’asilo e della legge sugli stranieri e sull’integrazione nonché dell’ ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (Strategia in materia di asilo 2027)"
     }
   },
   {
@@ -184,12 +213,12 @@
       "value": "Legge federale su un adeguamento della LIFD e della LAID alle disposizioni generali del Codice penale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-06-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-08-31"
     }
@@ -223,14 +252,53 @@
       "value": "Strategia energetica 2050"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-09-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-01-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "173.110"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/75/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über das Bundesgericht (BGG) - Erweiterung der Kognition bei Beschwerden in Strafsachen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi sur le Tribunal fédéral (LTF) - extension du pouvoir d'examen aux recours en matière pénale"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge sul Tribunale federale (LTF) - ampliamento della cognizione in caso di ricorsi in materia penale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-09-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-12-05"
     }
   },
   {
@@ -262,12 +330,12 @@
       "value": "Revisione della Legge sul Tribunale federale (LTF)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-11-04"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-02-29"
     }
@@ -301,82 +369,14 @@
       "value": "Modifica della legge federale sul diritto internazionale privato (arbitrato internazionale)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-01-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-05-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "173.110"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/47/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Paket «Stabilisierung und Weiterentwicklung der Beziehungen Schweiz–EU»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet «stabilisation et développement des relations Suisse-UE»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-06-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "173.110"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/91/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Asylgesetzes und des Ausländer- und Integrationsgesetzes sowie der Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (Asylstrategie 2027)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi sur l'asile et de la loi sur les étrangers et l'intégration ainsi que de l’ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (Stratégie en matière d'asile 2027)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge sull’asilo e della legge sugli stranieri e sull’integrazione nonché dell’ ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (Strategia in materia di asilo 2027)"
     }
   }
 ]

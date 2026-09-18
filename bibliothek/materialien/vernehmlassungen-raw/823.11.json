@@ -2,11 +2,11 @@
   {
     "sr": {
       "type": "literal",
-      "value": "955.033.0"
+      "value": "823.11"
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/5/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/47/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Totalrevision der Geldwäschereiverordnung-FINMA, GwV-FINMA"
+      "value": "Paket «Stabilisierung und Weiterentwicklung der Beziehungen Schweiz–EU»"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision totale de l'ordonnance de la FINMA sur le blanchiment d'argent, OBA-FINMA"
+      "value": "Paquet «stabilisation et développement des relations Suisse-UE»"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Revisione totale dell'Ordinanza FINMA sul riciclaggio di denaro, ORD-FINMA"
+      "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
     },
     "start": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-02-11"
+      "value": "2025-06-13"
     },
     "ende": {
       "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-04-07"
+      "value": "2025-10-31"
     }
   }
 ]

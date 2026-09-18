@@ -6,84 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/82/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Umsetzung der Motion 20.4339 UREK-N («Übermässigen Motorenlärm wirksam reduzieren»): Anpassung von zwei Artikeln des Strassenverkehrsgesetzes und Teilrevision von vier Verordnungen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Mise en œuvre de la motion 20.4339 de la CEATE-N («Réduire de manière efficace le bruit excessif des moteurs»): adaptation de deux articles de la loi sur la circulation routière et de quatre ordonnances"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Attuazione della mozione 20.4339 CAPTE-N («Ridurre efficacemente il rumore eccessivo dei motori»): Adattamento di due articoli della legge federale sulla circolazione stradale e di quattro ordinanze"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-12-09"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-03-23"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.01"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/29/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Standesinitiative 17.304 «Sicherere Strassen jetzt!»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Initiative cantonale 17.304 «Pour des routes plus sûres, des mesures maintenant!»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iniziativa cantonale 17.304 «Strade più sicure subito!»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-06-05"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.01"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/15/cons_1"
     },
     "status": {
@@ -106,12 +28,12 @@
       "value": "Modifica della legge federale sulle attività informative"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-05-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-09-09"
     }
@@ -123,7 +45,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/6/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/82/cons_1"
     },
     "status": {
       "type": "uri",
@@ -132,105 +54,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "08.520 Parlamentarische Initiative. Abschaffung der Fahrradnummer"
+      "value": "Umsetzung der Motion 20.4339 UREK-N («Übermässigen Motorenlärm wirksam reduzieren»): Anpassung von zwei Artikeln des Strassenverkehrsgesetzes und Teilrevision von vier Verordnungen"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "08.520 Iv. pa. Suppression des signes distinctifs pour cycles"
+      "value": "Mise en œuvre de la motion 20.4339 de la CEATE-N («Réduire de manière efficace le bruit excessif des moteurs»): adaptation de deux articles de la loi sur la circulation routière et de quatre ordonnances"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "08.520 Iv. Pa. Abolizione dei contrassegni per velocipedi"
+      "value": "Attuazione della mozione 20.4339 CAPTE-N («Ridurre efficacemente il rumore eccessivo dei motori»): Adattamento di due articoli della legge federale sulla circolazione stradale e di quattro ordinanze"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-02-04"
+      "value": "2022-12-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-03-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.01"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/46/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Energiestrategie 2050"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Stratégie énergétique 2050"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Strategia energetica 2050"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-09-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-01-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.01"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6016/57/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Umsetzung der Pa.Iv. 15.456 Reimann vom 18. Juni 2015 «Heraufsetzung der periodischen vertrauensärztlichen Kontrolluntersuchung für Senioren-Autofahrer vom 70. auf das 75. Altersjahr»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Mise en œuvre de l'initiative parlementaire 15.456 Reimann du 18 juin 2015 «Relever l'examen de contrôle périodique effectué par un médecin-conseil de 70 à 75 ans pour les conducteurs âgés»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Attuazione dell'Iv. pa. 15.456 Reimann del 18 giugno 2015 «Innalzare da 70 a 75 anni l'età della visita di controllo periodica del medico di fiducia per i conducenti anziani»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-11-04"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-02-03"
+      "value": "2023-03-23"
     }
   },
   {
@@ -262,12 +106,12 @@
       "value": "Legge federale sulle misure di sgravio del bilancio della Confederazione applicabili dal 2027"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-01-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-05-05"
     }
@@ -301,14 +145,170 @@
       "value": "Tassa sul chilometraggio dei veicoli elettrici / Imposta sulla corrente di ricarica dei veicoli elettrici"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-09-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-01-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.01"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/6/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "08.520 Parlamentarische Initiative. Abschaffung der Fahrradnummer"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "08.520 Iv. pa. Suppression des signes distinctifs pour cycles"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "08.520 Iv. Pa. Abolizione dei contrassegni per velocipedi"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-02-04"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-03-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.01"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/46/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Energiestrategie 2050"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Stratégie énergétique 2050"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Strategia energetica 2050"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-09-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-01-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.01"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6016/57/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Umsetzung der Pa.Iv. 15.456 Reimann vom 18. Juni 2015 «Heraufsetzung der periodischen vertrauensärztlichen Kontrolluntersuchung für Senioren-Autofahrer vom 70. auf das 75. Altersjahr»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Mise en œuvre de l'initiative parlementaire 15.456 Reimann du 18 juin 2015 «Relever l'examen de contrôle périodique effectué par un médecin-conseil de 70 à 75 ans pour les conducteurs âgés»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Attuazione dell'Iv. pa. 15.456 Reimann del 18 giugno 2015 «Innalzare da 70 a 75 anni l'età della visita di controllo periodica del medico di fiducia per i conducenti anziani»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-11-04"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-02-03"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.01"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/29/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Standesinitiative 17.304 «Sicherere Strassen jetzt!»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Initiative cantonale 17.304 «Pour des routes plus sûres, des mesures maintenant!»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iniziativa cantonale 17.304 «Strade più sicure subito!»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-06-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-09-30"
     }
   },
   {
@@ -340,12 +340,12 @@
       "value": "Revisione parziale della legge federale sulla circolazione stradale, della legge sulle multe disciplinari e di otto ordinanze"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-08-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-12-12"
     }
