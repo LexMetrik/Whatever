@@ -303,6 +303,18 @@ jobs:
             # das Register änderte sich, der Feed blieb stehen — check:feed rot
             # mit «erlasse.xml VERALTET gegenüber dem Register».
             npm run gen:feed
+            # ── §17-Wurzelfix (18.9.2026, dritter Einzelfall derselben Klasse nach
+            # #902/gen:verfall und #904/Checkout-Historie, Lauf 35358212138) ─────────
+            # Dieser Arm fuhr die VOLLE Projektions-Kaskade nach einem Normtext-
+            # Re-Pin nicht (Skill `auftrag` Ziff. 6 (g)): `check:entstehung` meldete
+            # 4 veraltete Projektions-Dateien, weil `gen:entstehung-projektion`
+            # fehlte. Die Kaskade (entstehung-projektion/-deckung,
+            # verweis-inventar, e2e-shards, Manifest→confidence-Sandwich) bündelt
+            # jetzt EIN Skript (§5/§17-Gegengewicht: ersetzen statt eine zweite
+            # Liste im Workflow zu pflegen) — `npm run projektionen:normtext`,
+            # dasselbe Skript, das Skill `auftrag` Ziff. 6 (g) künftig auch für
+            # Hand-PRs nach Normtext-Berührung nennt.
+            npm run projektionen:normtext -- --datum=${{ steps.datum.outputs.iso }}
             # Gegenprüfung #822 D1: DIESER Zweig hat `bash scripts/fedlex-cache.sh`
             # tatsächlich gefahren (via `npm run normtext -- --nur=bund` oben,
             # `sicherstelleCaches`) — nur hier darf der Tor-Schritt unten die volle
