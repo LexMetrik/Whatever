@@ -284,7 +284,9 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      # npm 11 wie überall sonst (18.9.2026, §17): das bare `npm ci` des Runners (npm 10) bricht am
+      # npm-11-Lockfile mit EUSAGE ab — Lauf 35353185468, alle drei Monats-Jobs rot nach < 1 min.
+      - run: npx -y npm@11 ci
       - name: Abrufdatum (Zürich, nie Date.now im Generator)
         id: datum
         run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"
@@ -347,7 +349,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci  # s. Job `curia`: bares `npm ci` bricht am npm-11-Lockfile
       - name: Abrufdatum (Zürich, nie Date.now im Generator)
         id: datum
         run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"
@@ -423,7 +425,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npx -y npm@11 ci  # s. Job `curia`: bares `npm ci` bricht am npm-11-Lockfile
       - name: Abrufdatum (Zürich, nie Date.now im Generator)
         id: datum
         run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"

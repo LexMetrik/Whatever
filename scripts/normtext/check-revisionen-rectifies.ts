@@ -38,6 +38,15 @@
  * «messen, nicht übernehmen»): 14 uebereinstimmend, 2 abweichend, 2 sammelberichtigung,
  * 7 nicht-abrufbar (nur pdf-a/docx, keine HTML-Manifestation).
  *
+ * ── Stand 18.9.2026 (2b: ergänzt, nicht nachgeführt — der Satz oben bleibt der 12.9.-Beleg
+ * stehen; der Korpus ist seither gewachsen und die Klassifikation nach Blöcken statt roher
+ * AS-Anzahl korrigiert, Gegenprüfung Opus Auflagen B1/B2, s. `rectifies-berichtigung.ts`) ──
+ * 31 rectifies-Kanten (Modus `auto` UND `netz`, live gemessen 18.9.2026, identisches
+ * Ergebnis): 19 uebereinstimmend, 2 abweichend (AIG/oc/2025/342, SKV/oc/2025/686 — beide
+ * weiter per Ausnahmeliste grün), 8 nicht-abrufbar, 2 sammelberichtigung (VVEA/oc/2023/543,
+ * SSV/oc/2024/144). VTS/oc/2025/691 zählt jetzt korrekt zu uebereinstimmend (vor B1/B2 wäre
+ * es fälschlich als sammelberichtigung durchgerutscht, s. Fixture-Test).
+ *
  * ── Ergänzung 12.9.2026, Gegenprüfung PR #834 (Auflage 1) ── (2b: ergänzt, nicht
  * nachgeführt — der obige Mess-Satz bleibt stehen) Beide `abweichend`-Funde sind jetzt
  * amtlich eingeordnet und in `rectifies-ausnahmen.json` belegt: SKV/oc/2025/686 (Erst-Fund,
@@ -66,7 +75,12 @@ type Klasse = RectifiesKlasse | 'nicht-abrufbar' | 'stale';
 interface Befund {
   erlassKey: string; oc: string; klasse: Klasse; detail: string;
   /** Nur bei genau einem Headline-Zitat gesetzt (abweichend/uebereinstimmend) — Grundlage
-   *  des Stale-Vergleichs gegen `erwarteteTextFundstelle`. */
+   *  des Stale-Vergleichs gegen `erwarteteTextFundstelle`. Ergänzung 18.9.2026, Gegenprüfung
+   *  Opus Auflage B3: der Code setzte dieses Feld vorher UNCONDITIONIERT (`zitate.as[0]`) —
+   *  seit `klassifiziereBerichtigung` nach Blöcken klassiert (Auflage B2), kann `abweichend`
+   *  auch bei MEHR als einer genannten Fundstelle auftreten (der Fall, den dieser Kommentar
+   *  schon immer ausschliessen wollte); das Feld bleibt darum jetzt nur bei genau einer
+   *  gesetzt, sonst `undefined`. */
   textFundstelle?: string;
 }
 
@@ -108,7 +122,7 @@ async function pruefeKante(k: Kante, modus: ReturnType<typeof modusAusUmgebung>)
       ? `Text: ${zitate.as.join(', ') || '∅'}.`
       : `Text nennt ${zitate.as.join(', ') || '∅'} (SR ${zitate.sr.join(', ') || '∅'}) — `
         + `rectifies-Ziel ${k.info.zielFundstelle ?? k.info.zielOc} (SR ${k.info.fremdeSr}).`;
-    return { erlassKey: k.erlassKey, oc: k.oc, klasse, detail, textFundstelle: zitate.as[0] };
+    return { erlassKey: k.erlassKey, oc: k.oc, klasse, detail, textFundstelle: zitate.as.length === 1 ? zitate.as[0] : undefined };
   } catch (e) {
     return { erlassKey: k.erlassKey, oc: k.oc, klasse: 'nicht-abrufbar', detail: (e as Error).message };
   }
