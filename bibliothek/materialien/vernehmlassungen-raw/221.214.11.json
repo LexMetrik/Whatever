@@ -28,12 +28,12 @@
       "value": "Modifica dell'ordinanza concernente la legge sul credito al consumo (adeguamento del tasso d'interesse massimo)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-12-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-03-30"
     }

@@ -6,123 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/101/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Genehmigung und Umsetzung des Übereinkommens des Europarates über die Cyberkriminalität"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Approbation et mise en œuvre de la Convention du Conseil de l'Europe sur la cybercriminalité"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Approvazione e attuazione della Convenzione del Consiglio d'Europa sulla cibercriminalità"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-03-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-06-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "351.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/124/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über eine Vereinheitlichung des Steuerstrafrechts"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur l'unification des procédures pénales en matière fiscale"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale concernente l'unificazione del diritto penale fiscale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-05-29"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "351.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/67/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung von Artikel 1 IRSG - Lückenschliessung bei der Zusammenarbeit mit internationalen Strafinstitutionen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l'art. 1 EIMP - combler les lacunes dans le domaine de la coopération avec les institutions pénales internationales"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell'articolo 1 AIMP - colmare le lacune nella cooperazione con istituzioni penali internazionali"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-10-01"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-01-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "351.1"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/15/cons_1"
     },
     "status": {
@@ -145,14 +28,53 @@
       "value": "Modifica della legge federale sulle attività informative"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-05-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-09-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "351.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/91/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Genehmigung und Umsetzung des Übereinkommens von Ljubljana und Den Haag über die internationale Zusammenarbeit bei der Ermittlung und Strafverfolgung in Bezug auf das Verbrechen des Völkermords, auf Verbrechen gegen die Menschlichkeit, Kriegsverbrechen und andere internationale Verbrechen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Approbation et mise en œuvre de la Convention de Ljubljana-La Haye pour la coopération internationale en matière d’enquête et de poursuite du crime de génocide, des crimes contre l’humanité, des crimes de guerre et autres crimes internationaux"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Approvazione e attuazione della Convenzione di Lubiana-L’Aia sulla cooperazione internazionale in materia di indagini e di azione penale per il crimine di genocidio, i crimini contro l’umanità, i crimini di guerra e altri crimini internazionali"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-02-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-05-30"
     }
   },
   {
@@ -191,6 +113,45 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/101/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Genehmigung und Umsetzung des Übereinkommens des Europarates über die Cyberkriminalität"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Approbation et mise en œuvre de la Convention du Conseil de l'Europe sur la cybercriminalité"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Approvazione e attuazione della Convenzione del Consiglio d'Europa sulla cibercriminalità"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-03-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-06-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "351.1"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/99/cons_1"
     },
     "status": {
@@ -213,14 +174,53 @@
       "value": "Estensione dell'assistenza giudiziaria in materia di reati fiscali"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-06-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-10-08"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "351.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/124/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über eine Vereinheitlichung des Steuerstrafrechts"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur l'unification des procédures pénales en matière fiscale"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale concernente l'unificazione del diritto penale fiscale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-05-29"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-09-30"
     }
   },
   {
@@ -252,12 +252,12 @@
       "value": "Avamprogetto di legge federale relativo alla revisione totale della legge sulla protezione dei dati e alla modifica di altri atti normativi sulla protezione dei dati"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-12-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-04-04"
     }
@@ -291,12 +291,12 @@
       "value": "Approvazione e trasposizione della Convenzione del Consiglio d'Europa per la prevenzione del terrorismo e del relativo Protocollo addizionale nonché potenziamento del dispositivo penale contro il terrorismo e la criminalità organizzata"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-06-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-10-13"
     }
@@ -308,36 +308,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/91/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/67/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Genehmigung und Umsetzung des Übereinkommens von Ljubljana und Den Haag über die internationale Zusammenarbeit bei der Ermittlung und Strafverfolgung in Bezug auf das Verbrechen des Völkermords, auf Verbrechen gegen die Menschlichkeit, Kriegsverbrechen und andere internationale Verbrechen"
+      "value": "Änderung von Artikel 1 IRSG - Lückenschliessung bei der Zusammenarbeit mit internationalen Strafinstitutionen"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Approbation et mise en œuvre de la Convention de Ljubljana-La Haye pour la coopération internationale en matière d’enquête et de poursuite du crime de génocide, des crimes contre l’humanité, des crimes de guerre et autres crimes internationaux"
+      "value": "Modification de l'art. 1 EIMP - combler les lacunes dans le domaine de la coopération avec les institutions pénales internationales"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Approvazione e attuazione della Convenzione di Lubiana-L’Aia sulla cooperazione internazionale in materia di indagini e di azione penale per il crimine di genocidio, i crimini contro l’umanità, i crimini di guerra e altri crimini internazionali"
+      "value": "Modifica dell'articolo 1 AIMP - colmare le lacune nella cooperazione con istituzioni penali internazionali"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-02-19"
+      "value": "2018-10-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-05-30"
+      "value": "2019-01-15"
     }
   }
 ]

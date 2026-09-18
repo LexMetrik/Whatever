@@ -28,12 +28,12 @@
       "value": "Modifica dell'ordinanza del 27 giugno 1995 sull'assicurazione malattie (OAMal) e modifica totale dell’ordinanza sul calcolo dei costi e la registrazione delle prestazioni da parte degli ospedali, delle case per partorienti e delle case di cura nell’assicurazione malattie (OCPre) – Attuazione della modifica della legge federale del 18 marzo 1994 sull'assicurazione malattie (LAMal) relativa al finanziamento uniforme delle prestazioni"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-04-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-07-08"
     }
@@ -67,12 +67,12 @@
       "value": "Modifica dell'ordinanza sull'assicurazione malattie (OAMal), dell'ordinanza sul calcolo dei costi e la registrazione delle prestazioni da parte degli ospedali, delle case per partorienti e delle case di cura nell'assicurazione malattie (OCPre) e dell'ordinanza sull'assicurazione contro gli infortuni (OAINF)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-02-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-09-02"
     }

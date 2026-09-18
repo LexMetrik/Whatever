@@ -197,7 +197,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
     }
   ],
   "rechtsprechungLeitentscheide": 1259,
-  "materialien": 1681,
+  "materialien": 1683,
   "materialienBehoerden": [
     {
       "id": "ESTV",
@@ -209,7 +209,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
       "id": "EDOEB",
       "kuerzel": "EDÖB",
       "name": "Eidg. Datenschutz- und Öffentlichkeitsbeauftragter",
-      "anzahl": 18
+      "anzahl": 19
     },
     {
       "id": "SECO",
@@ -245,7 +245,7 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
       "id": "BR",
       "kuerzel": "BR",
       "name": "Bundesrat (Botschaften)",
-      "anzahl": 407
+      "anzahl": 408
     },
     {
       "id": "BUND",
@@ -264,8 +264,8 @@ export const STARTSEITE_ZAEHLER: StartseiteZaehler = {
   "vorlagen": 26,
   "standGesetze": "2026-09-14",
   "standRechtsprechung": "2026-09-12",
-  "standMaterialien": "2026-09-12",
+  "standMaterialien": "2026-09-18",
   "juengsterGesetzStand": "2026-09-02",
   "juengsterEntscheid": "2026-07-08",
-  "juengsteMaterialie": "2026-09-12"
+  "juengsteMaterialie": "2026-09-18"
 };

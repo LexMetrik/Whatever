@@ -28,12 +28,12 @@
       "value": "Modifica della legge federale sul diritto fondiario rurale (attuazione della mozione 22.4253 CET-S «Disgiungere il diritto fondiario rurale dalla PA22+»)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-09-27"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-01-10"
     }
@@ -67,12 +67,12 @@
       "value": "Politica agricola a partire dal 2022"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-11-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-03-06"
     }

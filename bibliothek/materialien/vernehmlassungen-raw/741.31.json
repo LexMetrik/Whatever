@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/12/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/42/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Verordnungsänderungen zur Abschaffung der Fahrradvignette"
+      "value": "Fahrzeugvorschriften – Teilrevision von vier Verordnungen des Strassenverkehrsrechts"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modifications d'ordonnances dues à la suppression de la vignette pour cycles"
+      "value": "Prescriptions applicables aux véhicules – révision partielle de quatre ordonnances relevant du droit de la circulation routière"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifiche a livello di ordinanza dovute all'abolizione del contrassegno per velocipedi"
+      "value": "Prescrizioni per i veicoli – Revisione parziale di quattro ordinanze in materia di circolazione stradale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-04-15"
+      "value": "2022-06-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-06-17"
+      "value": "2022-10-20"
     }
   },
   {
@@ -45,7 +45,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/24/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/53/cons_1"
     },
     "status": {
       "type": "uri",
@@ -54,56 +54,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Neuregelung der periodischen Nachprüfintervalle - Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS), Verkehrsversicherungsverordnung (VVV)\r\n"
+      "value": "Verkehrsflächen für den Langsamverkehr"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Nouvelle réglementation concernant les intervalles périodiques entre les contrôles subséquents - Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV), Ordonnance sur l'assurance des véhicules (OAV)"
+      "value": "Aires de circulation destinées à la mobilité douce"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Nuova regolamentazione degli intervalli tra gli esami successivi periodici - Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV), Ordinanza sull'assicurazione dei veicoli (OAV)"
+      "value": "Aree destinate alla mobilità lenta"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-04-04"
+      "value": "2023-06-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-07-04"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.31"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/81/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision von sieben Verordnungen des Strassenverkehrsrechts"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de sept ordonnances du droit de la circulation routière"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale di sette ordinanze in materia di circolazione stradale"
+      "value": "2023-10-18"
     }
   },
   {
@@ -135,14 +106,53 @@
       "value": "Modifiche di diverse ordinanze della legislazione sulla circolazione stradale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2006-05-04"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2006-07-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.31"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/12/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnungsänderungen zur Abschaffung der Fahrradvignette"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modifications d'ordonnances dues à la suppression de la vignette pour cycles"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifiche a livello di ordinanza dovute all'abolizione del contrassegno per velocipedi"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-04-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-06-17"
     }
   },
   {
@@ -174,14 +184,53 @@
       "value": "Attuazione delle misure contenute nel secondo pacchetto «Via sicura»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-04-16"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-07-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.31"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/24/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Neuregelung der periodischen Nachprüfintervalle - Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS), Verkehrsversicherungsverordnung (VVV)\r\n"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Nouvelle réglementation concernant les intervalles périodiques entre les contrôles subséquents - Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV), Ordonnance sur l'assurance des véhicules (OAV)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Nuova regolamentazione degli intervalli tra gli esami successivi periodici - Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV), Ordinanza sull'assicurazione dei veicoli (OAV)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-04-04"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-07-04"
     }
   },
   {
@@ -213,12 +262,12 @@
       "value": "Deroghe al divieto di guida sotto l'effetto dell'alcol Autorizzazione di gare su circuito con veicoli elettrici Aumento del limite di potenza massima per la patente «A limitata» (cat. UE A2)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-07-16"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-10-16"
     }
@@ -252,12 +301,12 @@
       "value": "Modifica dei requisiti tecnici e dell'esame d'immatricolazione dei veicoli stradali e introduzione di un nuovo cronotachigrafo"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-01-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-04-25"
     }
@@ -269,75 +318,26 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/53/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/81/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Verkehrsflächen für den Langsamverkehr"
+      "value": "Teilrevision von sieben Verordnungen des Strassenverkehrsrechts"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Aires de circulation destinées à la mobilité douce"
+      "value": "Révision partielle de sept ordonnances du droit de la circulation routière"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Aree destinate alla mobilità lenta"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-06-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-10-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.31"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/42/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Fahrzeugvorschriften – Teilrevision von vier Verordnungen des Strassenverkehrsrechts"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Prescriptions applicables aux véhicules – révision partielle de quatre ordonnances relevant du droit de la circulation routière"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Prescrizioni per i veicoli – Revisione parziale di quattro ordinanze in materia di circolazione stradale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-06-29"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-10-20"
+      "value": "Revisione parziale di sette ordinanze in materia di circolazione stradale"
     }
   }
 ]

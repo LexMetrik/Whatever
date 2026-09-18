@@ -28,53 +28,14 @@
       "value": "Modifica dell’ordinanza 1 concernente la legge sul lavoro (OLL 1) e dell’ordinanza 2 concernente la legge sul lavoro (OLL 2)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-03-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-07-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "822.111"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/76/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Neuer Artikel 73<i>a</i> der Verordnung 1 zum Arbeitsgesetz (ArGV 1): Verzicht auf die Arbeitszeiterfassung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Nouvel article 73<i>a</i> de l'ordonnance 1 relative à la loi sur le travail (OLT 1): Renonciation à l'enregistrement de la durée du travail"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Nuovo articolo 73<i>a</i> dell'ordinanza 1 concernente la legge sul lavoro (OLL 1): Rinuncia alla registrazione della durata del lavoro"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-09-11"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-11-30"
     }
   },
   {
@@ -106,14 +67,53 @@
       "value": "Revisione delle ordinanze 1 e 3 concernenti la legge sul lavoro (Sistema di informazione e di documentazione della Confederazione per l’attuazione e l’esecuzione dell’obbligo relativo all’utilizzazione corretta dei prodotti chimici sul posto di lavoro)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-09-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-12-01"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "822.111"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/97/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Neuordnung der ausserparlamentarischen Kommissionen im Rahmen der Überprüfung 2025"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Réorganisation des commissions extra-parlementaires dans le cadre du réexamen 2025"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-01-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-04-28"
     }
   },
   {
@@ -145,14 +145,53 @@
       "value": "Revisione dell'ordinanza 1 concernente la legge sul lavoro (OLL 1)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-03-04"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-04-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "822.111"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/76/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Neuer Artikel 73<i>a</i> der Verordnung 1 zum Arbeitsgesetz (ArGV 1): Verzicht auf die Arbeitszeiterfassung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Nouvel article 73<i>a</i> de l'ordonnance 1 relative à la loi sur le travail (OLT 1): Renonciation à l'enregistrement de la durée du travail"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Nuovo articolo 73<i>a</i> dell'ordinanza 1 concernente la legge sul lavoro (OLL 1): Rinuncia alla registrazione della durata del lavoro"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-09-11"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-11-30"
     }
   },
   {
@@ -184,12 +223,12 @@
       "value": "Revisione dell'Ordinanza 1 concernente la legge sul lavoro (OLL 1)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-11-04"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-01-17"
     }
@@ -223,53 +262,14 @@
       "value": "Modifica dell'ordinanza 1 concernente la legge sul lavoro (OLL 1) - Registrazione della durata del lavoro"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-04-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-06-08"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "822.111"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/97/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Neuordnung der ausserparlamentarischen Kommissionen im Rahmen der Überprüfung 2025"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Réorganisation des commissions extra-parlementaires dans le cadre du réexamen 2025"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-01-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-28"
     }
   },
   {
@@ -301,12 +301,12 @@
       "value": "Modifica dell'ordinanza 1 concernente la legge sul lavoro (OLL 1)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-12-10"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-03-20"
     }

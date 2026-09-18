@@ -28,12 +28,12 @@
       "value": "Revisione totale dell'Ordinanza FINMA sul riciclaggio di denaro, ORD-FINMA"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-02-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-04-07"
     }

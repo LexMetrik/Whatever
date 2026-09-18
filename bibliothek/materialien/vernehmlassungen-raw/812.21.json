@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6002/24/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/16/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,144 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Heilmittelverordnungspaket II"
+      "value": "Neue Verordnung über In-vitro-Diagnostika und Änderung der Verordnung über klinische Versuche mit Medizinprodukten"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Projets d'ordonnances sur les produits thérapeutiques, série  II"
+      "value": "Nouvelle ordonnance sur les diagnostics in vitro et modification de l'ordonnance sur les essais cliniques des dispositifs médicaux"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Disegni del secondo pacchetto di ordinanze sugli agenti terapeutici "
+      "value": "Nuova ordinanza sulla diagnostica in vitro e modifica dell'ordinanza sulle sperimentazioni cliniche dei dispositivi medici"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2003-07-15"
+      "value": "2021-04-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2003-10-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "812.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/123/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Bundesgesetzes über Arzneimittel und Medizinprodukte (Heilmittelgesetz) / 1. Etappe; Spitalpräparate"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Revision partielle de la loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques) / 1ère étappe; préparations hospitalières"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici) / 1a fase; preparati ospedalieri"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-12-08"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-12-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "812.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/15/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Ordentliche Revision des Heilmittelgesetzes (2. Etappe)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision ordinaire de la loi sur les produits thérapeutiques (2ème étape)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione ordinaria della legge sugli agenti terapeutici (2a tappa)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-10-21"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-02-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "812.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/8/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "20.490 n Pa. Iv. Hurni. Pharmazeutische Industrie und Medizin. Mehr Transparenz"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "20.490 n Iv. pa. Hurni. Industrie pharmaceutique et médecine. Plus de transparence!"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "20.490 n Iv. pa. Hurni. Industria farmaceutica e medicina. Maggiore trasparenza!"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-02-07"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-05-16"
+      "value": "2021-07-14"
     }
   },
   {
@@ -184,12 +67,12 @@
       "value": "16.504 n Iv. pa. Giezendanner. Garantire l’approvvigionamento di sangue e la gratuità della donazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-02-24"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-05-31"
     }
@@ -223,92 +106,14 @@
       "value": "Modifica della legge sugli agenti terapeutici (LATer)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-12-08"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-03-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "812.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/16/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Neue Verordnung über In-vitro-Diagnostika und Änderung der Verordnung über klinische Versuche mit Medizinprodukten"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Nouvelle ordonnance sur les diagnostics in vitro et modification de l'ordonnance sur les essais cliniques des dispositifs médicaux"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Nuova ordinanza sulla diagnostica in vitro e modifica dell'ordinanza sulle sperimentazioni cliniche dei dispositivi medici"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-04-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-07-14"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "812.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/114/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Genehmigung und Umsetzung des Übereinkommens des Europarates über die Fälschung von Arzneimitteln und Medizinprodukten und über ähnliche die öffentliche Gesundheit gefährdende Straftaten (Medicrime Konvention)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Ratification et mise en œuvre de la Convention du Conseil de l'Europe sur la contrefaçon des produits médicaux et les infractions similaires menaçant la santé publique (Convention Médicrime)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Approvazione e trasposizione della Convenzione del Consiglio d'Europa su contraffazione dei prodotti sanitari e reati affini che rappresentano una minaccia per la salute pubblica (Convenzione Medicrime)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-12-18"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-04-02"
     }
   },
   {
@@ -340,14 +145,53 @@
       "value": "Modifica della legge sulle epizoozie (LFE)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-05-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-07-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "812.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/8/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "20.490 n Pa. Iv. Hurni. Pharmazeutische Industrie und Medizin. Mehr Transparenz"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "20.490 n Iv. pa. Hurni. Industrie pharmaceutique et médecine. Plus de transparence!"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "20.490 n Iv. pa. Hurni. Industria farmaceutica e medicina. Maggiore trasparenza!"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-02-07"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-05-16"
     }
   },
   {
@@ -379,14 +223,170 @@
       "value": "Modifica della legge sugli agenti terapeutici 3b"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-06-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-10-16"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "812.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6002/24/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Heilmittelverordnungspaket II"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Projets d'ordonnances sur les produits thérapeutiques, série  II"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Disegni del secondo pacchetto di ordinanze sugli agenti terapeutici "
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2003-07-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2003-10-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "812.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/123/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des Bundesgesetzes über Arzneimittel und Medizinprodukte (Heilmittelgesetz) / 1. Etappe; Spitalpräparate"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Revision partielle de la loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques) / 1ère étappe; préparations hospitalières"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale della legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici) / 1a fase; preparati ospedalieri"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-12-08"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-12-22"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "812.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/15/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Ordentliche Revision des Heilmittelgesetzes (2. Etappe)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision ordinaire de la loi sur les produits thérapeutiques (2ème étape)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione ordinaria della legge sugli agenti terapeutici (2a tappa)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-10-21"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-02-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "812.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/114/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Genehmigung und Umsetzung des Übereinkommens des Europarates über die Fälschung von Arzneimitteln und Medizinprodukten und über ähnliche die öffentliche Gesundheit gefährdende Straftaten (Medicrime Konvention)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Ratification et mise en œuvre de la Convention du Conseil de l'Europe sur la contrefaçon des produits médicaux et les infractions similaires menaçant la santé publique (Convention Médicrime)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Approvazione e trasposizione della Convenzione del Consiglio d'Europa su contraffazione dei prodotti sanitari e reati affini che rappresentano una minaccia per la salute pubblica (Convenzione Medicrime)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-12-18"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-04-02"
     }
   },
   {

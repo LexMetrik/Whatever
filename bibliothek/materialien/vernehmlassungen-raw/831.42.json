@@ -6,45 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/109/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Freizügigkeitsgesetz und Gesetz über die berufliche Vorsorge. Verminderte Garantie bei der Wahl gewisser Anlagestrategien durch den Versicherten und Massnahmen zur Sicherung von Vorsorgeguthaben bei Vernachlässigung der Unterhaltspflicht"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi sur le libre passage et loi sur la prévoyance professionnelle. Garantie moindre lors du choix par l'assuré de certaines stratégies de placement et mesures de garantie de l'avoir de prévoyance en cas de négligence de l'obligation d'entretien"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge sul libero passaggio e legge sulla previdenza professionale. Garanzia ridotta in caso di scelta di determinate strategie d'investimento da parte dell'assicurato e misure di garanzia dell'avere di previdenza in caso di inadempienza degli obbligh"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-24"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-02-11"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.42"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/51/cons_1"
     },
     "status": {
@@ -67,53 +28,14 @@
       "value": "Modifica della legge sul libero passaggio: proteggere gli averi di vecchiaia in caso di uscita da un piano di previdenza 1e"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-10-16"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-01-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.42"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/45/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHV 2030)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de la loi fédérale sur l’assurance-vieillesse et survivants (AVS 2030)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione della legge federale sull’assicurazione per la vecchiaia e per i superstiti (AVS 2030)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-11"
     }
   },
   {
@@ -145,14 +67,92 @@
       "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-06-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-10-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.42"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/45/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHV 2030)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de la loi fédérale sur l’assurance-vieillesse et survivants (AVS 2030)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione della legge federale sull’assicurazione per la vecchiaia e per i superstiti (AVS 2030)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-11"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.42"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/109/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Freizügigkeitsgesetz und Gesetz über die berufliche Vorsorge. Verminderte Garantie bei der Wahl gewisser Anlagestrategien durch den Versicherten und Massnahmen zur Sicherung von Vorsorgeguthaben bei Vernachlässigung der Unterhaltspflicht"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi sur le libre passage et loi sur la prévoyance professionnelle. Garantie moindre lors du choix par l'assuré de certaines stratégies de placement et mesures de garantie de l'avoir de prévoyance en cas de négligence de l'obligation d'entretien"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge sul libero passaggio e legge sulla previdenza professionale. Garanzia ridotta in caso di scelta di determinate strategie d'investimento da parte dell'assicurato e misure di garanzia dell'avere di previdenza in caso di inadempienza degli obbligh"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-10-24"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-02-11"
     }
   }
 ]

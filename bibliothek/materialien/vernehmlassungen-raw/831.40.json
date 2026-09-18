@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/94/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/15/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,105 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Strukturreform in der beruflichen Vorsorge / Massnahmen für ältere Arbeitnehmende"
+      "value": "Änderung des Nachrichtendienstgesetzes"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Réforme structurelle dans la prévoyance professionnelle / Mesures pour les travailleurs âgés "
+      "value": "Modification de la loi fédérale sur le renseignement"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Riforma strutturale nella previdenza professionale / Provvedimenti a favore dei salariati anziani "
+      "value": "Modifica della legge federale sulle attività informative"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-07-05"
+      "value": "2022-05-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-10-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.40"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/109/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Freizügigkeitsgesetz und Gesetz über die berufliche Vorsorge. Verminderte Garantie bei der Wahl gewisser Anlagestrategien durch den Versicherten und Massnahmen zur Sicherung von Vorsorgeguthaben bei Vernachlässigung der Unterhaltspflicht"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi sur le libre passage et loi sur la prévoyance professionnelle. Garantie moindre lors du choix par l'assuré de certaines stratégies de placement et mesures de garantie de l'avoir de prévoyance en cas de négligence de l'obligation d'entretien"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge sul libero passaggio e legge sulla previdenza professionale. Garanzia ridotta in caso di scelta di determinate strategie d'investimento da parte dell'assicurato e misure di garanzia dell'avere di previdenza in caso di inadempienza degli obbligh"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-24"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-02-11"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.40"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/32/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Obligationenrechts (Aktienrecht)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision du code des obligations (Droit de la société anonyme)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice delle obbligazioni (Diritto della società anonima)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-11-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-03-15"
+      "value": "2022-09-09"
     }
   },
   {
@@ -145,12 +67,12 @@
       "value": "Investimento di fondi di libero passaggio dell’istituto collettore (modifica della LPP)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-09-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-11-07"
     }
@@ -162,7 +84,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/15/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/7/cons_1"
     },
     "status": {
       "type": "uri",
@@ -171,27 +93,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung des Nachrichtendienstgesetzes"
+      "value": "15.434 n Pa. Iv. (Kessler) Weibel. Mutterschaftsurlaub für hinterbliebene Väter"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur le renseignement"
+      "value": "15.434 n Iv. pa. (Kessler) Weibel. Octroyer le congé de maternité au père en cas de décès de la mère"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica della legge federale sulle attività informative"
+      "value": "15.434 n Iv. pa. (Kessler) Weibel. Congedo maternità per padri superstiti"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-05-18"
+      "value": "2022-02-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-09-09"
+      "value": "2022-05-24"
     }
   },
   {
@@ -201,7 +123,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/93/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/47/cons_1"
     },
     "status": {
       "type": "uri",
@@ -210,105 +132,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Anpassung des Mindestumwandlungssatzes in der beruflichen Vorsorge"
+      "value": "Paket «Stabilisierung und Weiterentwicklung der Beziehungen Schweiz–EU»"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Adaptation du taux de conversion minimal dans la prévoyance professionnelle"
+      "value": "Paquet «stabilisation et développement des relations Suisse-UE»"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Adattamento dell'aliquota minima di conversione nella previdenza professionale"
+      "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-02-01"
+      "value": "2025-06-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-04-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.40"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/86/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes vom 25. Juni 1982 über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale du 25 juin 1982 sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modificazione della Legge federale del 25 giugno 1982 sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-06-29"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-10-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.40"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/44/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Zivilgesetzbuches (ZGB; Adoption)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code civil (CC; Droit de l'adoption)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del codice civile (CC; Diritto dell'adozione)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-11-29"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-03-31"
+      "value": "2025-10-31"
     }
   },
   {
@@ -340,12 +184,12 @@
       "value": "Investimento di fondi di libero passaggio dell’istituto collettore (modifica della LPP)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-01-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-03-30"
     }
@@ -379,131 +223,14 @@
       "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-01-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-04-28"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.40"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/85/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Botschaft zur Reform der beruflichen Vorsorge"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Message sur la réforme de la prévoyance professionnelle"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Messaggio concernente la riforma della previdenza professionale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-12-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-05-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.40"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/7/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "15.434 n Pa. Iv. (Kessler) Weibel. Mutterschaftsurlaub für hinterbliebene Väter"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "15.434 n Iv. pa. (Kessler) Weibel. Octroyer le congé de maternité au père en cas de décès de la mère"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "15.434 n Iv. pa. (Kessler) Weibel. Congedo maternità per padri superstiti"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-02-17"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-05-24"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.40"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/51/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "22.448 s Pa. Iv. Caroni. Einen Pacs für die Schweiz"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "22.448 é Iv. pa. Caroni. Un pacs pour la Suisse"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "22.448 s Iv. pa. Caroni. Un Pacs adeguato alla Svizzera"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-27"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-17"
     }
   },
   {
@@ -535,12 +262,12 @@
       "value": "Revisione della legge federale sull’assicurazione per la vecchiaia e per i superstiti (AVS 2030)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-05-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-09-11"
     }
@@ -552,7 +279,46 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/47/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/51/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "22.448 s Pa. Iv. Caroni. Einen Pacs für die Schweiz"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "22.448 é Iv. pa. Caroni. Un pacs pour la Suisse"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "22.448 s Iv. pa. Caroni. Un Pacs adeguato alla Svizzera"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-17"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.40"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/93/cons_1"
     },
     "status": {
       "type": "uri",
@@ -561,27 +327,261 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Paket «Stabilisierung und Weiterentwicklung der Beziehungen Schweiz–EU»"
+      "value": "Anpassung des Mindestumwandlungssatzes in der beruflichen Vorsorge"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Paquet «stabilisation et développement des relations Suisse-UE»"
+      "value": "Adaptation du taux de conversion minimal dans la prévoyance professionnelle"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
+      "value": "Adattamento dell'aliquota minima di conversione nella previdenza professionale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-06-13"
+      "value": "2006-02-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-31"
+      "value": "2006-04-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.40"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/94/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Strukturreform in der beruflichen Vorsorge / Massnahmen für ältere Arbeitnehmende"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Réforme structurelle dans la prévoyance professionnelle / Mesures pour les travailleurs âgés "
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Riforma strutturale nella previdenza professionale / Provvedimenti a favore dei salariati anziani "
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-07-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-10-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.40"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/86/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes vom 25. Juni 1982 über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale du 25 juin 1982 sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modificazione della Legge federale del 25 giugno 1982 sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-06-29"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-10-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.40"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/109/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Freizügigkeitsgesetz und Gesetz über die berufliche Vorsorge. Verminderte Garantie bei der Wahl gewisser Anlagestrategien durch den Versicherten und Massnahmen zur Sicherung von Vorsorgeguthaben bei Vernachlässigung der Unterhaltspflicht"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi sur le libre passage et loi sur la prévoyance professionnelle. Garantie moindre lors du choix par l'assuré de certaines stratégies de placement et mesures de garantie de l'avoir de prévoyance en cas de négligence de l'obligation d'entretien"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge sul libero passaggio e legge sulla previdenza professionale. Garanzia ridotta in caso di scelta di determinate strategie d'investimento da parte dell'assicurato e misure di garanzia dell'avere di previdenza in caso di inadempienza degli obbligh"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-10-24"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-02-11"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.40"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/44/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Zivilgesetzbuches (ZGB; Adoption)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code civil (CC; Droit de l'adoption)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del codice civile (CC; Diritto dell'adozione)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-11-29"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-03-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.40"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/32/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Obligationenrechts (Aktienrecht)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision du code des obligations (Droit de la société anonyme)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice delle obbligazioni (Diritto della società anonima)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-11-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-03-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.40"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/85/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Botschaft zur Reform der beruflichen Vorsorge"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Message sur la réforme de la prévoyance professionnelle"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Messaggio concernente la riforma della previdenza professionale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-12-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-05-29"
     }
   }
 ]

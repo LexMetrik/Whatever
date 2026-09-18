@@ -6,84 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/23/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnung über die Regulierung der Versicherungsvermittlertätigkeit"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Ordonnance sur la réglementation de l’activité des intermédiaires d’assurance"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Ordinanza che disciplina l’attività degli intermediari assicurativi"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-04-19"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-08-09"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "961.011"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/79/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision der Verordnung vom 9. November 2005 über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de l'Ordonnance du 9 novembre 2005 sur la surveillance des entreprises d'assurance privées (Ordonnance sur la surveillance, OS)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale dell'ordinanza del 9 novembre 2005 sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-09-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-19"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "961.011"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/118/cons_1"
     },
     "status": {
@@ -106,12 +28,12 @@
       "value": "Modifica dell’ordinanza sulla sorveglianza (sorveglianza, solvibilità, norme di comportamento, intermediazione assicurativa)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-05-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-09-07"
     }
@@ -123,7 +45,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/161/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/23/cons_1"
     },
     "status": {
       "type": "uri",
@@ -132,27 +54,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Teilrevision der Verordnung vom 9. November 2005 über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)"
+      "value": "Verordnung über die Regulierung der Versicherungsvermittlertätigkeit"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision partielle de l'Ordonnance sur la surveillance des entreprises d'assurance privées (Ordonnance sur la surveillance, OS)."
+      "value": "Ordonnance sur la réglementation de l’activité des intermédiaires d’assurance"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Revisione parziale dell'ordinanza del 9 novembre 2005 sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)"
+      "value": "Ordinanza che disciplina l’attività degli intermediari assicurativi"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-11-12"
+      "value": "2023-04-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-12-12"
+      "value": "2023-08-09"
     }
   },
   {
@@ -184,14 +106,92 @@
       "value": "Consultazione relativa all’intermediazione in riassicurazione (revisione parziale LSA)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-05-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-09-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "961.011"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/79/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision der Verordnung vom 9. November 2005 über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de l'Ordonnance du 9 novembre 2005 sur la surveillance des entreprises d'assurance privées (Ordonnance sur la surveillance, OS)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale dell'ordinanza del 9 novembre 2005 sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-09-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-10-19"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "961.011"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/161/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision der Verordnung vom 9. November 2005 über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de l'Ordonnance sur la surveillance des entreprises d'assurance privées (Ordonnance sur la surveillance, OS)."
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale dell'ordinanza del 9 novembre 2005 sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-11-12"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-12-12"
     }
   }
 ]
