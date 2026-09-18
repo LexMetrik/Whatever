@@ -152,6 +152,11 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **V-7-Folgen** *(Nebenfunde #864)* — **(a)** `KLAMMER_NACH_NAME` sperrt ArGV 4 `art_37` Abs. 4 → ArG Art. 7 Abs. 4, obwohl der Link korrekt wäre: Klammer-Guard auf die Kürzel-Form (≥ 2 Grossbuchstaben) einschränken; **(b)** `definiertGesetz` arbeitet mit einer endlichen Einführungswort-Liste — breiterer Filter «Gesetz eigenständig in Klammer»; **(c)** `NormText.tsx:407` liest den Erlass-Key ohne `decodeURIComponent` (§5-Abweichung gegen `inhalt-sprung.tsx:279`). *Risikopfad ⇒ Gegenprüfung.*
   - [ ] **Kantonales Trägergesetz-Register** *(Phase 2, Folge aus #864)* — 19 kantonale Vollzugsverordnungen (AR u. a., HuV → HuG) verlieren mit #864 den falschen Self-Link, bekommen aber keinen richtigen: die Ingress-Auswertung gibt es nur für den Bund (nur dort tragen die Struktur-Sidecars den Ingress). Kein Link ist besser als ein falscher (§1) — der Nachzug ist ein eigener Schritt. Dazu die **12. Handkopie der Suffix-Reihe**: `KantonNormText.tsx:49` (`RE_PARAGRAF`) trägt nur `(?:bis|ter)?`, darum bleiben SO-614.11 § 115septies…undecies unverlinkt (Kanton-Grammatik auf `ART_SUFFIXE` ziehen).
 
+- [ ] **Treffer-Landkarte: wo im Dokument liegen die Treffer** *(`W2·28-TREFFER-LANDKARTE`, David 18.9.2026; reine UI)*
+  <!-- @meta id: W2·28-TREFFER-LANDKARTE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md -->
+  Streifen neben dem Scrollbalken mit einer Marke je Suchtreffer (Gesetz + Entscheid), Klick springt; dieselbe Trefferquelle wie die Hervorhebung (§5).
+  **Detail:** [FAHRPLAN-RECHERCHE-KOMFORT.md](fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md) §1.
+
 - [ ] **Verzahnung sichtbar machen** *(`W2·7-VZUI`, David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)*
   <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   EINE Interaktions-Grammatik für die Verzahnung, ohne neue Rechtsregel (§3). Offen: V2 (E3-Serving)
@@ -463,7 +468,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13.
   - [ ] **Gerichts-/Behörden-Adressregister** — Lese-/Index-Schicht über die bestehenden Bestände, **kein Datenduplikat** (§5); Quelle `bibliothek/behoerden/`.
   - [ ] **Entscheid-Filter über die API — Richter + allgemeine Facetten** — eine Bau-Fläche (Turso-Schema + `api/suche.ts` + Facetten-UI); Risikopfad ⇒ Gegenprüfung. [FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md](fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md) §7.
-  - [ ] **Zitationsnetz: Rückwärts-Zitate + Leitentscheid-Score** — deterministisch aus dem Zitat-Graph (§2 — kein Ranking-Modell); Merkposten LM-042 («ff.»-Sammelzitate) als Auflage. [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §10.
+  - [ ] **Zitationsnetz: Rückwärts-Zitate + Leitentscheid-Score** — deterministisch aus dem Zitat-Graph (§2 — kein Ranking-Modell); Merkposten LM-042 («ff.»-Sammelzitate) als Auflage. [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §10; erweitert 18.9.2026 (erwägungsgenaue Links, Zitat-Kontext, Normsuche DE/FR/IT, Urteils-Vorschau; Daten vor UI): [FAHRPLAN-RECHERCHE-KOMFORT.md](fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md) §2.
   - [ ] **Rechtsprechungs-Übersicht: P0-Rest + Korpus-Breite** — SG-Regeste-Rest und die Übersichts-/Facetten-Breite; **erst nach `W2·6-RESOLVER`**.
 
 - [ ] **Kantonaler Norm-Resolver → Kantonalnorm-Buckets (P0-Kern)** *(`W2·6-RESOLVER`)*
@@ -577,6 +582,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Plan-Buchungs-Commit wirft wartende Auto-Merge-PRs auf BEHIND** *(§17-Prozessfund 13.9.2026, PR #843)* — `plan-buchung.yml` schreibt nach jedem Merge einen `[skip ci]`-Commit auf main; bei `strict`-Schutz fällt jeder offene Auto-Merge-PR auf BEHIND und kostet Rebase + vollen CI-Lauf (~25 min). Wurzel-Fix: der Buchungs-Workflow aktualisiert danach alle offenen PRs mit aktivem Auto-Merge (`gh pr update-branch`), oder Merge-Queue (David-Handgriff, offen). Bis dahin: nach jeder Landung sofort rebasen.
   - [ ] **Flacker-Fall `leser-v3-blatt` (c) ⌘K im Split** *(CI #844, 13.9.2026; isoliert 6/6 grün auf Branch und main)* — last-/parallelbedingt, deckt sich mit «⌘K-Vorlauf im Split» (CI #711); Fahrplan §4.
   - [ ] **WARTET AUF DAVID:** Sollen die Meta-Routen (/ueber, /methodik, /einstellungen, /kontakt) einen Reiter tragen? Seit R14b (`istReiterPfad` gestrichen) ist jede Route Reiterinhalt — Orchestrator-Entscheid, Bestätigung offen (FAHRPLAN-DESIGN-IDENTITAET §7, Korrektur 13.9.2026).
+  - [ ] **Reiterleisten-Abgleich + WARTET AUF DAVID: Merkliste ja/nein** *(David 18.9.2026)* — Lücken zum Vorbild einzeln prüfen; Favoriten sind seit 5.6.2026 gestrichen. [FAHRPLAN-RECHERCHE-KOMFORT.md](fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md) §3.
   - [x] **Reiterleiste-Wellen 1–3** — ✅ 13.9.2026, PR #842/#843/#844 (+ Nachzug R8-Sweep mobil); Specs Fahrplan §4.R/§4.R2/§4.R3. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
   - [ ] **Zurückgeholt aus der Chronik** *(Umschichtung 15.9.2026 (Entstehung); Nebenfund #896: offene Posten im Archiv sind für `plan:next` unsichtbar)* — Konflations-Wächter breiter (D2 #816) · Prerender-Shell nennt aufgehobene Erlasse «geltend» (#823) · Tabellen-`<dt>`-Marken «–»/[tab] als Aufzählung (#836; ZPO art_250, StG art_5 f., BV art_197) · 216 Struktur-Sidecars ohne `stand`/`fassungsToken` (#836) · Test-Budget `suche.test.ts` 95 s bei 3 s Luft — Wortlaut dort. BMV-Zitat (#823) deckt die Zeile «Art. 9 BMV» oben; Werkzeug-Fallen Norm-PDF/Scratchpad ✅ #895.
 
