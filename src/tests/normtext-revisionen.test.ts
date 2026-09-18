@@ -374,6 +374,9 @@ describe('revisionenFuerNorm — Lese-Brücke', () => {
 // Filestore-HTML-Fixtures (additiv, kein Netz). Rot-Beweis für `check:revisionen-rectifies`
 // liegt in dessen eigenem Docstring (Live-Mass 12.9.2026: 14 uebereinstimmend/2 abweichend/
 // 2 sammelberichtigung/7 nicht-abrufbar von 25 Kanten) — hier nur die reine Klassifikation.
+// Stand 18.9.2026: 31 Kanten, 19 uebereinstimmend/2 abweichend/2 sammelberichtigung/
+// 8 nicht-abrufbar (Modus auto UND netz, identisch; Gegenprüfung Opus Auflagen B1/B2 —
+// Klassifikation nach Headline-Blöcken statt roher AS-Anzahl, s. `check-revisionen-rectifies.ts`).
 function ladeFixture(datei: string): string {
   return readFileSync(join(__dirname, 'fixtures', datei), 'utf8');
 }
@@ -397,16 +400,73 @@ describe('extrahiereHeadlineZitate + klassifiziereBerichtigung (rectifies-Wächt
       .toBe('uebereinstimmend');
   });
 
-  it('mehr als ein Headline-Zitat ⇒ sammelberichtigung, unabhängig vom Ziel', () => {
-    const zitate = { as: ['AS 1979 1961', 'AS 2007 5957'], sr: ['741.21'] };
+  // ── Angepasst 18.9.2026, Gegenprüfung Opus (Auflage B1, TEST-REGEL §6.3/§6.7):
+  // die Erst-Fassung dieses Tests behauptete «sammelberichtigung, unabhängig vom Ziel» —
+  // seit Auflage B2 (Klassifikation nach Headline-BLÖCKEN statt roher AS-Anzahl) ist das nur
+  // noch richtig, WENN das Ziel in der Vereinigung der Blöcke liegt; liegt es NICHT darin,
+  // ist das Ergebnis `abweichend` (Gegenstück-Test direkt darunter). Dies ist die deklarierte
+  // fachliche Tor-Verschärfung aus B1, keine Refaktorierung (§6.7: «ein Tor, das nicht
+  // scheitern kann, ist gefährlicher als keines»).
+  it('zwei UNABHÄNGIGE Headline-Blöcke (VVEA-/SSV-Muster), Ziel in der Vereinigung ⇒ sammelberichtigung', () => {
+    const zitate = { bloecke: [{ as: ['AS 1979 1961'], sr: '741.21' }, { as: ['AS 2007 5957'] }] };
     expect(klassifiziereBerichtigung(zitate, { fremdeSr: '741.21', zielFundstelle: 'AS 1979 1961' }))
       .toBe('sammelberichtigung');
   });
 
+  it('zwei UNABHÄNGIGE Headline-Blöcke, Ziel NICHT in der Vereinigung ⇒ abweichend (Auflage B1, 18.9.2026)', () => {
+    const zitate = { bloecke: [{ as: ['AS 1979 1961'], sr: '741.21' }, { as: ['AS 2007 5957'] }] };
+    expect(klassifiziereBerichtigung(zitate, { fremdeSr: '741.21', zielFundstelle: 'AS 1999 1' }))
+      .toBe('abweichend');
+  });
+
   it('fällt ohne ableitbare zielFundstelle auf den SR-Abgleich zurück', () => {
-    const zitate = { as: [], sr: ['220'] };
+    const zitate = { as: [] as string[], sr: ['220'], bloecke: [{ as: [] as string[], sr: '220' }] };
     expect(klassifiziereBerichtigung(zitate, { fremdeSr: '220' })).toBe('uebereinstimmend');
     expect(klassifiziereBerichtigung(zitate, { fremdeSr: '221' })).toBe('abweichend');
+  });
+
+  // ── Dritte Falle, live belegt VTS/oc-2025-691 (Normen-Monitor-Lauf 35353185468,
+  // 18.9.2026): DIESELBE Klammer nennt mehrere komma-getrennte AS-Nummern desselben
+  // Jahrgangs («AS 2025 646, 665») — die Original-Änderung (646) UND eine vorangehende
+  // Berichtigung derselben Änderung (665, selbst Genre 900, dateDocument 2025-10-30,
+  // Filestore-Beleg https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/
+  // 2025/665/de/html/fedlex-data-admin-ch-eli-oc-2025-665-de-html.html). Ohne Fix: 0
+  // Treffer (die Regex liess nach der ersten Nummer nur `;SR…` oder `)` zu). Amtlicher
+  // Filestore-Beleg des Fixture-Texts: https://fedlex.data.admin.ch/filestore/fedlex.data.
+  // admin.ch/eli/oc/2025/691/de/html/fedlex-data-admin-ch-eli-oc-2025-691-de-html.html
+  // (Abruf 18.9.2026).
+  it('VTS/oc-2025-691: eine Klammer mit ZWEI komma-getrennten AS-Nummern desselben Jahrgangs liefert beide Fundstellen', () => {
+    const html = ladeFixture('rectifies-vts-oc-2025-691-de.html');
+    const zitate = extrahiereHeadlineZitate(html);
+    expect(zitate.as).toEqual(['AS 2025 646', 'AS 2025 665']);
+    expect(zitate.sr).toEqual(['741.41']);
+    expect(zitate.bloecke).toEqual([{ as: ['AS 2025 646', 'AS 2025 665'], sr: '741.41' }]);
+    // Korrigiert 18.9.2026, Gegenprüfung Opus (Auflage B2 — der Präzedenz-Satz der
+    // Erst-Fassung «exakt wie bei VVEA/oc-2023-543 und SSV/oc-2024-144» war FALSCH): VTS ist
+    // EIN Headline-BLOCK mit zweiteiliger Fundstelle (eine Änderung, zweimal berichtigt),
+    // nicht zwei unabhängige Änderungen wie VVEA/SSV (die je ZWEI separate Blöcke tragen).
+    // Genau ein Block, Ziel (646) liegt darin ⇒ uebereinstimmend.
+    expect(klassifiziereBerichtigung(zitate, { fremdeSr: '741.41', zielFundstelle: 'AS 2025 646' }))
+      .toBe('uebereinstimmend');
+  });
+
+  it('Schlupfloch geschlossen (Auflage B1, Gegenprüfung Opus 18.9.2026, §6.7): VTS/oc-2025-691 mit einem NICHT genannten Ziel ⇒ abweichend statt fälschlich sammelberichtigung', () => {
+    const html = ladeFixture('rectifies-vts-oc-2025-691-de.html');
+    const zitate = extrahiereHeadlineZitate(html);
+    // Repro der Gegenprüfung: das rectifies-Ziel zeigt auf ein Dokument, dessen Fundstelle
+    // der Text gar nicht nennt. Vor B1 lieferte `zitate.as.length > 1` unconditioniert
+    // `sammelberichtigung` (still grün trotz echter Abweichung) — nach B1/B2 zählt, ob das
+    // Ziel im (einzigen) Block liegt.
+    expect(klassifiziereBerichtigung(zitate, { fremdeSr: '741.41', zielFundstelle: 'AS 2025 999' }))
+      .toBe('abweichend');
+  });
+
+  it('Negativ-Fall: eine Klammer mit nur EINER Nummer liefert weiterhin genau eine Fundstelle (SKV/ChemRRV unverändert)', () => {
+    const zitate = extrahiereHeadlineZitate(
+      '<p>Änderung vom 15. Oktober 2025 (AS 2025 644; SR 741.013)</p>',
+    );
+    expect(zitate.as).toEqual(['AS 2025 644']);
+    expect(zitate.sr).toEqual(['741.013']);
   });
 });
 
