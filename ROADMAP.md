@@ -88,10 +88,9 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
      vor `Betrieb & Prüfstrasse`. -->
 
-> **⬆ OBERSTER OFFENER SCHRITT: `W2·5l-NORMTEXT-B2`** (Text-Treue M13/M14).
-> **In Arbeit:** `W2·27-BUND-FERTIG` (Sollbild «Was ist ein Gesetz bei LexMetrik», am Bund
-> festgeschrieben und dort eingelöst) — `status: wip`, darum liefert `plan:next` den nächsten
-> Queue-Eintrag.
+> **⬆ OBERSTER OFFENER SCHRITT: `W2·27-BUND-FERTIG`** (Sollbild «Was ist ein Gesetz bei LexMetrik», am Bund
+> festgeschrieben und dort eingelöst — Restposten als Zeilen im Schritt; seit 18.9.2026 wieder
+> `ready`, weil `wip` ohne Bau-Spur stand). Danach `W2·5l-NORMTEXT-B2` (Text-Treue M13/M14).
 > **Phasen-Dekret 14.9.2026 (David):** «erst das fundament fertig bauen und vps erst danach» ·
 > «der erste schritt sollte sein den gesetzesleser und die struktur der daten die wir darstellen zu
 > optimieren» · «grundsätzlich würde ich zuerst mit dem bund beginnen». Das Zielbild-Dekret
@@ -210,8 +209,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-GESETZESDARSTELLUNG-V2.md](fahrplaene/FAHRPLAN-GESETZESDARSTELLUNG-V2.md) §8.
   - [ ] **Mehrsprachiger Normvergleich DE/FR/IT** — Auslegungswerkzeug nach Art. 14 PublG; heute ist nur `de` befüllt. Regel aus `QS-FRIT-DRIFT`: **eId trägt nicht über Sprachen** — Abgleich über die Artikelnummer.
 
-- [~] **Phase 1 · Bund fertig machen — Sollbild und Struktur-Schluss** *(`W2·27-BUND-FERTIG`, Entscheid David 14.9.2026)*
-  <!-- @meta id: W2·27-BUND-FERTIG · status: wip · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-BUND-FERTIG.md -->
+- [ ] **Phase 1 · Bund fertig machen — Sollbild und Struktur-Schluss** *(`W2·27-BUND-FERTIG`, Entscheid David 14.9.2026)*
+  <!-- @meta id: W2·27-BUND-FERTIG · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-BUND-FERTIG.md -->
   Dach der Phase 1: einmal niederschreiben, **was ein Gesetz bei LexMetrik ist**, und es am Bund
   einlösen — Sollbild, Datenstruktur schliessen, Leser schärfen, dann alle Bundeserlasse. Der
   Schritt trägt selbst nur die Struktur-Posten ohne eigenen Schritt; die übrigen Phase-1-Einheiten
@@ -431,11 +430,11 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **WARTET AUF DAVID:** die 4 Fedlex-Fundstellen dem Fedlex-Betrieb melden? Empfehlung: ja — belegte Fehler in der amtlichen Publikation, Meldung kostet wenig.
   - [ ] Stufe 2: Abgleich über Artikelnummer statt eId; Vollausbau auf alle 227 Pins nach Laufzeit.
 
-- [~] **Normen-Monitor seit ≥5 Wochen rot — Wurzel-Fix** *(`QS-MONITOR-ROT`, Aktivierungs-Audit 14.8.2026)*
-  <!-- @meta id: QS-MONITOR-ROT · status: wip · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
+- [ ] **Normen-Monitor seit ≥5 Wochen rot — Wurzel-Fix** *(`QS-MONITOR-ROT`, Aktivierungs-Audit 14.8.2026)*
+  <!-- @meta id: QS-MONITOR-ROT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
   Rechtsstand-relevant: `normen-monitor.yml` 5/5 Läufe failure. Diagnose 14.8. — **das Rot ist ECHT**,
   der Monitor korrekt. **Detail:** [FAHRPLAN-OFFENE-BEFUNDE.md](fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md) §2.
-  - [x] **Nachweislauf 18.9.2026 (35353185468): sechs echte Daten-Befunde behoben** — ✅ 18.9.2026: #908 (`790a32bf5`, rectifies-Parser Mehrfach-Fundstellen — VTS `oc/2025/691` war Parser-Lücke, kein Fedlex-Fehler, KEIN Ausnahme-Eintrag) · #910 (`f7aa5c12d`, EDÖB-Merkblatt, AVG-Botschaften `BOTSCHAFT-2002-172`/`-2000-99` + Revisionen-Sidecar, `BS-GR-26.0508`, VERN-2026-51/-52 + drei vom 8-Erlass-Tor ungesehene Deltas) · @@ABK@@ · Wurzel-Fix Fedlex-Frische #907 (`745b276b7`, `projektionen:normtext`, Nachweislauf 35365372442 grün). Je Opus-Gegenprüfung, Register. @@MONITOR@@
+  - [x] **Nachweislauf 18.9.2026 (35353185468): sechs echte Daten-Befunde behoben** — ✅ 18.9.2026: #908 (`790a32bf5`, rectifies-Parser Mehrfach-Fundstellen — VTS `oc/2025/691` war Parser-Lücke, kein Fedlex-Fehler, KEIN Ausnahme-Eintrag) · #910 (`f7aa5c12d`, EDÖB-Merkblatt, AVG-Botschaften `BOTSCHAFT-2002-172`/`-2000-99` + Revisionen-Sidecar, `BS-GR-26.0508`, VERN-2026-51/-52 + drei vom 8-Erlass-Tor ungesehene Deltas) · #911 (`59ac17fcd`, Fedlex-Abkürzungen EÖBV/AVG de/fr/it; it-«LC» als Waadtländer Homonym gesperrt) · #912 (`a1d099a79`, Re-Pin `uno_antifolter` html-1) · Wurzel-Fix Fedlex-Frische #907 (`745b276b7`, `projektionen:normtext`, Nachweislauf 35365372442 grün). Je Opus-Gegenprüfung, Register. @@MONITOR@@
   - [ ] **rectifies-Tor Runde 2 — blockiert JEDEN Fedlex-Frische-PR** *(Gegenprüfung #909, 18.9.2026; Risikopfad)* — der Automatik-Lauf materialisiert erstmals `belegteOcs`/`rectifiesInfoProOc` (latent seit #827): Kanten 31 → 82, vier neu rot: KRK `oc/2026/314` (Staatsvertrags-Headline → ∅), OR `oc/2023/62` (Fussnotenzeichen «AS 2020 4005 ¹»), VZAE `oc/2026/170` (Ziel = cc-Abstract, Klassifikationslücke), **LRV `oc/2025/448` echte Abweichung** (Text AS 1992 124 vs. Ziel AS 1986 208 — amtlich einordnen, nie raten). Mit bauen (Auflagen #908): 0-Treffer-Fall eigene Meldung «keine Headline erkannt — zuerst Parser prüfen, NICHT Ausnahmeliste» (`check-revisionen-rectifies.ts:121`; genau diese Meldung legte am 18.9. die falsche Fedlex-Fehler-Spur) · nicht konsumierte Einträge in `rectifies-ausnahmen.json` melden (§6.7, Docstring verspricht es) · Phantom «(AS 2015 5699, 2022; …)» → `AS 2015 2022` (`rectifies-berichtigung.ts:118`) · Test-Eingabe `:423` erzeugbar machen · bei `sammelberichtigung` den treffenden Block statt der Vereinigungs-SR zeigen. Danach #909 bzw. den Folge-PR der Automatik landen (Verdikt-Kommentar am PR #909; bringt auch den VRV/VTS-Pflegetermin 1.10.2026 statt 1.1.2031).
   - [ ] **Automatik-PR «(Auto-Merge)» auf Risikopfad hängt immer am Merge-Schutz** *(18.9.2026, #909)* — Titel/Body der Fedlex-Frische-PRs ehrlich machen («wartet auf Gegenprüfung») und den Wächter solche PRs melden lassen; `check:revisionen-rectifies` läuft nur im Netz-Rhythmus — latente Schema-Erweiterungen werden erst im Automatik-PR rot.
   - [ ] **`check:vernehmlassungen-netz` sieht nur 8 Erlasse** *(Beleg Gegenprüfung #910)* — 2 von 5 Deltas (VERN-2026-39 FAV/FDV, VERN-2025-34 ZEMIS_V) und die neue AVG-Kante lagen ausserhalb; der Prüfer glich alle 831 Einträge + 1294 (SR, Konsultation, Status)-Paare in einer Session ab ⇒ Vollabgleich als Tor machbar.
