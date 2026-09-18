@@ -57,9 +57,29 @@
  * Erst-Fassung der Regex liess nach der ersten Nummer nur `;SR…` oder die schliessende
  * Klammer zu und verfehlte den Fall vollständig (0 Treffer). Fix: Gruppe 2 der Regex lässt
  * `(?:\s*,\s*\d+)*` weitere Nummern zu, `extrahiereHeadlineZitate` fügt jede einzeln der
- * `as`-Menge hinzu. Klassifikation bewusst UNVERÄNDERT gelassen (§17: nicht umgedeutet, um
- * Grün zu erzwingen) — mehr als eine genannte Fundstelle bleibt `sammelberichtigung`, exakt
- * wie bei VVEA/oc/2023/543 und SSV/oc/2024/144.
+ * `as`-Menge UND dem sie tragenden Block hinzu (s. unten, Ergänzung 18.9.2026).
+ *
+ * ── Ergänzung 18.9.2026, Gegenprüfung Opus (Auflagen B1 + B2) ── (2b: ergänzt, nicht
+ * nachgeführt — der Falle-c-Befund oben bleibt unverändert stehen; die ERST-Fassung liess
+ * die Klassifikation bewusst unverändert, «mehr als eine genannte Fundstelle bleibt
+ * sammelberichtigung, exakt wie bei VVEA/oc/2023/543 und SSV/oc/2024/144» — DAS war falsch
+ * und ist mit dieser Ergänzung korrigiert, s. u.). VTS/oc/2025/691 ist EINE korrigierte
+ * Änderung mit zweiteiliger Fundstelle in EINEM Headline-Block, nicht zwei unabhängige
+ * Änderungen (VVEA/SSV haben ZWEI separate «vom … (AS …)»-Blöcke, VTS nur EINEN mit zwei
+ * komma-getrennten Nummern). Zwei Bugs folgten aus der Gleichbehandlung:
+ * (B1) `zitate.as.length > 1` klassierte JEDE Mehrfach-Nennung unconditioniert als
+ *      `sammelberichtigung`, ohne zu prüfen, ob das rectifies-Ziel überhaupt darunter ist —
+ *      ein Text, der «AS 2025 646, 665» nennt, während das rectifies-Ziel auf ein FALSCHES
+ *      Dokument (z. B. AS 2025 999) zeigt, wurde damit still grün statt rot (Schlupfloch,
+ *      Repro Gegenprüfung 18.9.2026).
+ * (B2) Sammelberichtigung ist eigentlich ein Aussage über BLÖCKE (unabhängige Änderungen),
+ *      nicht über die rohe AS-Anzahl. `HeadlineZitate` trägt darum neu `bloecke` — ein
+ *      `HeadlineBlock` je Headline-Zitat-Vorkommen (Regex-Treffer); `klassifiziereBerichtigung`
+ *      unterscheidet jetzt: GENAU EIN Block ⇒ `uebereinstimmend`, wenn das Ziel in DIESEM
+ *      Block liegt, sonst `abweichend` (schliesst B1). MEHR als ein Block ⇒
+ *      `sammelberichtigung`, wenn das Ziel in der VEREINIGUNG aller Blöcke liegt, sonst
+ *      `abweichend`. `as`/`sr` bleiben als flache, deduplizierte Listen für bestehende
+ *      Konsumenten (Anzeige in `check-revisionen-rectifies.ts`) erhalten.
  */
 import { sparqlSelect, type FetchImpl } from '../fedlex-sparql.ts';
 import type { RectifiesInfo } from './revisionen-generieren.ts';
@@ -73,11 +93,26 @@ const LANG_DE = '<http://publications.europa.eu/resource/authority/language/DEU>
 const HEADLINE_ZITAT =
   /vom\s+\d{1,2}\.\s*\p{L}+\s+\d{4}\s*\(\s*AS\s+(\d{4})\s+(\d+(?:\s*,\s*\d+)*)(?:;\s*SR\s+([\d.]+)\s*)?\)/gu;
 
-export interface HeadlineZitate {
-  /** Distinkte «AS jjjj nnn»-Fundstellen, sortiert. */
+/** Ein EINZELNES Headline-Zitat-Vorkommen («vom … (AS … [, …] [; SR …])», EIN Regex-Treffer).
+ *  Mehrere komma-getrennte Nummern IN DERSELBEN Klammer (VTS/oc/2025/691) landen im SELBEN
+ *  Block; mehrere UNABHÄNGIGE Klammern (VVEA/oc/2023/543, SSV/oc/2024/144) ergeben mehrere
+ *  Blöcke (Ergänzung 18.9.2026, Auflage B2). */
+export interface HeadlineBlock {
+  /** Distinkte «AS jjjj nnn»-Fundstellen DIESES Blocks, sortiert. */
   as: string[];
-  /** Distinkte SR-Notationen (nur wo im selben Zitat genannt), sortiert. */
+  /** SR-Notation dieses Blocks, falls im selben Zitat genannt. */
+  sr?: string;
+}
+
+export interface HeadlineZitate {
+  /** Distinkte «AS jjjj nnn»-Fundstellen über ALLE Blöcke, sortiert (flache Projektion für
+   *  bestehende Konsumenten, z. B. die Anzeige in check-revisionen-rectifies.ts). */
+  as: string[];
+  /** Distinkte SR-Notationen über ALLE Blöcke, sortiert. */
   sr: string[];
+  /** Je ein Eintrag pro Headline-Zitat-Vorkommen — Grundlage der Klassifikation (Auflage B2,
+   *  s. `klassifiziereBerichtigung`). */
+  bloecke: HeadlineBlock[];
 }
 
 /** Reine Extraktion (§2, kein Netz) — Fedlex-Filestore-HTML → Headline-Zitate.
@@ -88,11 +123,18 @@ export function extrahiereHeadlineZitate(html: string): HeadlineZitate {
   const text = html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ');
   const asSet = new Set<string>();
   const srSet = new Set<string>();
+  const bloecke: HeadlineBlock[] = [];
   for (const m of text.matchAll(HEADLINE_ZITAT)) {
-    for (const nummer of m[2].split(',')) asSet.add(`AS ${m[1]} ${nummer.trim()}`);
+    const blockAsSet = new Set<string>();
+    for (const nummer of m[2].split(',')) {
+      const fundstelle = `AS ${m[1]} ${nummer.trim()}`;
+      asSet.add(fundstelle);
+      blockAsSet.add(fundstelle);
+    }
     if (m[3]) srSet.add(m[3]);
+    bloecke.push({ as: [...blockAsSet].sort(), sr: m[3] });
   }
-  return { as: [...asSet].sort(), sr: [...srSet].sort() };
+  return { as: [...asSet].sort(), sr: [...srSet].sort(), bloecke };
 }
 
 export type RectifiesKlasse = 'uebereinstimmend' | 'abweichend' | 'sammelberichtigung';
@@ -128,19 +170,28 @@ export function ausnahmeGueltig(
     && (ausnahme.erwarteteTextFundstelle ?? '') === (aktuell.textFundstelle ?? '');
 }
 
-/** Reine Komposition (§2): Headline-Zitate + rectifies-Zielinfo → Klasse.
- *  - >1 distinktes AS-Zitat ⇒ Sammelberichtigung (der Text korrigiert mehr als eine
- *    Fundstelle; das rectifies-Tripel trägt nur eine davon, §8-Ehrlichkeit).
- *  - genau 1 (oder 0) AS-Zitat: übereinstimmend gdw. es die vom rectifies-Ziel abgeleitete
- *    Fundstelle trifft (oder, wenn `fundstelle()` keine ableiten konnte, die SR-Notation) —
- *    sonst abweichend (Befund, NIE in Prosa übersetzt — §7/§17-Fehlerbuch W2·18). */
+/** Reine Komposition (§2): Headline-Zitate + rectifies-Zielinfo → Klasse. Klassifiziert nach
+ *  BLÖCKEN (Ergänzung 18.9.2026, Auflage B2 — nicht mehr nach roher AS-Anzahl, s. Docstring
+ *  oben): ein «Treffer» heisst, das rectifies-Ziel liegt in einem Block (Fundstelle-Vergleich,
+ *  oder — wenn `zielFundstelle` nicht ableitbar war — SR-Vergleich desselben Blocks).
+ *  - GENAU EIN Block (oder keiner) ⇒ übereinstimmend gdw. Treffer, sonst abweichend (schliesst
+ *    das Schlupfloch der Erst-Fassung: eine Mehrfach-Nennung IN EINEM Block war vorher
+ *    unconditioniert `sammelberichtigung`, auch wenn das Ziel gar nicht genannt war — Auflage
+ *    B1, Repro VTS/oc/2025/691 mit einem nicht genannten Ziel).
+ *  - MEHR als ein Block ⇒ sammelberichtigung, wenn irgendein Block trifft (das rectifies-
+ *    Tripel trägt dann nur EINEN der mehreren, §8-Ehrlichkeit — wie VVEA/oc/2023/543,
+ *    SSV/oc/2024/144), sonst abweichend (Befund, NIE in Prosa übersetzt — §7/§17-Fehlerbuch
+ *    W2·18). */
 export function klassifiziereBerichtigung(
-  zitate: HeadlineZitate,
+  zitate: Pick<HeadlineZitate, 'bloecke'>,
   ziel: Pick<RectifiesInfo, 'fremdeSr' | 'zielFundstelle'>,
 ): RectifiesKlasse {
-  if (zitate.as.length > 1) return 'sammelberichtigung';
-  if (ziel.zielFundstelle) return zitate.as.includes(ziel.zielFundstelle) ? 'uebereinstimmend' : 'abweichend';
-  return zitate.sr.includes(ziel.fremdeSr) ? 'uebereinstimmend' : 'abweichend';
+  const trifftZu = (block: HeadlineBlock): boolean => (ziel.zielFundstelle
+    ? block.as.includes(ziel.zielFundstelle)
+    : block.sr === ziel.fremdeSr);
+  if (zitate.bloecke.length > 1) return zitate.bloecke.some(trifftZu) ? 'sammelberichtigung' : 'abweichend';
+  const block = zitate.bloecke[0];
+  return block && trifftZu(block) ? 'uebereinstimmend' : 'abweichend';
 }
 
 /** Löst die DE-HTML-Filestore-URL des berichtigenden oc via die amtliche
