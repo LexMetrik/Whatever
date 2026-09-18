@@ -1,9 +1,22 @@
 {
   "erlassKey": "ELV",
   "sr": "831.301",
-  "abgerufen": "2026-09-12",
+  "abgerufen": "2026-09-18",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2028-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/466",
+      "dateDocument": "2026-08-26",
+      "roFundstelle": "AS 2026 466",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l’assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
+      "titelIt": "Ordinanza sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (OPC-AVS/AI)",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/466/de",
+      "sha": "723aab5c26fc03d27bf6de3047bbef72a6889bfb18e78938ef13625c4aa30b63"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
@@ -217,5 +230,5 @@
       "sha": "6a716d1738317f93f515385a72862748f6e274ef452f67356c1406ee5f916cd2"
     }
   ],
-  "sha": "9cddc618f5235bb5c1e6550fc1db1ee7c8eb3e153b494989847888c8df571b3f"
+  "sha": "9b57d659abb542710eaaf01e192428b5fce9e26ee3a1dd1fb477241ab4579bd1"
 }
