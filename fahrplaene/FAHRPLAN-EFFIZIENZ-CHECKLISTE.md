@@ -26,6 +26,17 @@ Token (Rückbau 5.9.2026, QS-EFFIZIENZ Runde 2).
 
 Offen (Altbestand):
 
+- [ ] **Prozess-Kleinfunde Session QS-MONITOR-ROT (18.9.2026)** — (a) `check:suchindex` läuft in keinem
+  Workflow und keiner Tor-Kette (§6.7: Tor, das nie läuft) — einhängen oder streichen; (b) `plan:next`
+  meldet eine Notizen-/Übergabe-Datei OHNE `- [ ]`-Zeilen als «abgearbeitet, löschen», obwohl sie offen
+  ist (Anzeige liest nur Checkboxen) — Übergabe-Vorlage mit Pflicht-Checkbox oder Sonde auf Inhalt;
+  (c) das Write-Werkzeug sperrt `<Haupt-Checkout>/.claude/notizen/` aus Worktree-Sessions — Notizen
+  gehen nur per Shell-Heredoc; Skill `bauschritt` Station A Ziff. 4 sagt das nicht; (d) Skill `auftrag`
+  Ziff. 6 (g) ist ein ~4500-Zeichen-Absatz — als Liste «Kaskade je Korpus-Art» gliedern; (e) Prüfer-
+  Hinweis in den `lex-pruefung`-Auftrag: vite-node-Prüfskripte mit relativen Imports müssen im
+  Repo-Wurzelverzeichnis liegen (Scratchpad-Skripte brauchen absolute Imports) und werden danach
+  gelöscht; (f) Rot-Beweis mit Vorzustand: Backup per `git show <ref>:<pfad>` in den Scratchpad, nie
+  Redirect auf eine getrackte Datei (Auto-Modus blockt).
 - [ ] **LSP** — Befund 30.8.2026: `typescript-language-server` ist keine devDependency mehr
   (`npx` lädt remote nach). Rest-Auftrag: `WERKZEUG-VERDRAHTUNG.md`-Pflicht zurückbauen oder
   devDependency bewusst neu setzen — Entscheid in einer Session mit LSP-Bedarf.
