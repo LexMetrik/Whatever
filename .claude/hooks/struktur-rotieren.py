@@ -38,11 +38,9 @@ from datetime import date
 # Grundlinie:
 #  · STRUKTUR.md 60 KB = §3 T1 DoD; nach der Rotation ~37 KB → Wächter schweigt,
 #    meldet erst echtes Re-Anschwellen.
-#  · ROADMAP.md 120 KB = Ceiling, 8.9.2026 von 100 gelockert (David; Grundlinie ~94 KB, PR #173).
-#    Das §3 T7 DoD-ZIEL «≤ ~65 KB» ist damit NOCH NICHT erreicht (weitere Chronik-
-#    Auslagerung offen, s. FAHRPLAN-TOKEN-OEKONOMIE §Stand) — aber das ist T7-/ROADMAP-
-#    Gebiet und kollidiert mit aktiven Parallel-Schreibern; der Wächter nörgelt darum
-#    nicht auf dem bekannten Rest, sondern schlägt erst bei neuem Wachstum an.
+#  · ROADMAP.md 120 KB = NUR WARNUNG (NUR_WARNUNG, Exit 0) seit 18.9.2026, Entscheid David:
+#    54 % offene Zeilen, Erledigtes 0,4 KB — vier Überführungen in fünf Tagen kauften je < 3 KB
+#    und färbten fremde Läufe rot. Hebel: Befund-Prosa in die Fahrpläne (ROADMAP QS-EFFIZIENZ).
 #  · CLAUDE.md 14 KB = Drift-Wächter (QS-AUDIT-VERWEISE 8.8.2026; Audit 7.8.:
 #    36 von 38 Commits vergrössern die Datei, Kürzungen in 5–11 Tagen wieder
 #    aufgeholt — Drift ist strukturell). Ist beim Setzen: ~11.8 KB / 234 Z.;
@@ -55,6 +53,7 @@ BUDGET = {
     "ROADMAP.md": 120 * 1024,
     "CLAUDE.md": 14 * 1024,
 }
+NUR_WARNUNG = {"ROADMAP.md"}
 # Steuerungs-Deckel (Auftrag David 15.8.2026, «Steuerungszuwachs minimieren, und
 # darauf achten, dass es immer so bleibt»): dieselbe Mechanik für FLÄCHEN statt
 # Einzeldateien — Summe der Bytes je Glob. Anlass: 15.8. wuchsen Hooks/Wächter
@@ -321,10 +320,12 @@ def verteile_rotierte(repo, rotierte):
     return karten_bytes
 
 
-def waechter_meldungen(repo):
-    """Re-Akkumulations-Wächter (T7-K Teil 2): Steuer-Doks über Budget?"""
+def waechter_meldungen(repo, nur_harte=False):
+    """Re-Akkumulations-Wächter (T7-K Teil 2); `nur_harte` lässt NUR_WARNUNG aus."""
     out = []
     for name, budget in BUDGET.items():
+        if nur_harte and name in NUR_WARNUNG:
+            continue
         p = os.path.join(repo, name)
         try:
             groesse = os.path.getsize(p)
@@ -478,10 +479,13 @@ def modus_write(repo):
 
 
 def modus_check(repo):
-    meldungen = waechter_meldungen(repo)
-    if meldungen:
+    harte = waechter_meldungen(repo, nur_harte=True)
+    for m in waechter_meldungen(repo):
+        if m not in harte:
+            print("GELB (nur Warnung, blockiert nicht):\n" + m)
+    if harte:
         print("Re-Akkumulations-Wächter ROT:")
-        for m in meldungen:
+        for m in harte:
             print(m)
         sys.exit(1)
     print("Re-Akkumulations-Wächter grün (Steuer-Doks im Budget).")
