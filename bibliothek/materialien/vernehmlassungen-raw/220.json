@@ -6,6 +6,45 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Introduction du trust (modification du code des obligations)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-01-12"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-04-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/91/cons_1"
     },
     "status": {
@@ -28,12 +67,12 @@
       "value": "CO (diritto di locazione): attuazione delle iniziative parlamentari sul diritto di locazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-09-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-12-06"
     }
@@ -67,950 +106,14 @@
       "value": "16.470 n Iv. pa. Regazzi. Interessi di mora applicati dalla Confederazione in linea con i tassi di mercato"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-07-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-10-28"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/39/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über eine Teilrevision des Zivilgesetzbuches, des Obligationenrechts und der Zivilprozessordnung (Nachrichtenlose Vermögenswerte)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale portant révision partielle du code civil, du code des obligations et du code de procédure civile (fonds en déshérence)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sulla revisione parziale del Codice civile, del Codice delle obbligazioni e del Codice di procedura civile (averi non rivendicati) "
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-08-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-11-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/41/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Obligationenrechts (Schutz bei Meldung von Missständen am Arbeitsplatz)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle du code des obligations (protection en cas de signalement de faits répréhensibles par le travailleur)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale del Codice delle obbligazioni (protezione in caso di segnalazione di irregolarità da parte del lavoratore)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2008-12-05"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-03-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/115/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Obligationenrechts (Revision des Verjährungsrechts)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle du code des obligations (révision du droit de la prescription) "
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale del diritto delle obbligazioni (revisione del diritto di prescrizione)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-08-31"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-11-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/143/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur l'amélioration de la protection des victimes de violence"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale per migliorare la protezione delle vittime di violenza"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-10-07"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-01-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/32/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Obligationenrechts (Aktienrecht)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision du code des obligations (Droit de la société anonyme)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice delle obbligazioni (Diritto della società anonima)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-11-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-03-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/35/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Artikel 404 OR. Anpassung an die Erfordernisse des 21. Jahrhunderts"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Adapter le droit du mandat et l'article 404 CO au XXI<sup>e</sup> siècle"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Un diritto del mandato e un articolo 404 CO al passo col tempo"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-09-16"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-12-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/39/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz zur Optimierung der flankierenden Massnahmen zur Personenfreizügigkeit"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur l'optimisation des mesures d'accompagnement à la libre circulation des personnes"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sull'ottimizzazzione delle misure collaterali alla libera circolazione delle persone"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-09-19"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-12-19"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/44/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "13.426 Pa.Iv. Stillschweigende Verlängerung von Dienstleistungsverträgen. Mehr Informationen und Schutz für Konsumentinnen und Konsumenten"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "13.426 Iv.pa. Renouvellement tacite des contrats de services. Améliorer l'information et la protection des consommateurs et des consommatrices"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "13.426 Iv.pa. Rinnovo tacito dei contratti di servizi. Migliorare l'informazione e la protezione dei consumatori"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-06-16"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-10-09"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/73/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Telearbeit)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur le travail dans l’industrie, l’artisanat et le commerce (télétravail)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sul lavoro nell’industria, nell’artigianato e nel commercio (Telelavoro)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-09-10"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-12-10"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/107/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "OR (Mietrecht): Anfangsmietzins und Ort- und Quartierüblichkeit"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "CO (droit du bail): loyer initial et loyers usuels dans la localité ou le quartier"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "CO (diritto di locazione): pigione iniziale e pigioni in uso in una località o in un quartiere"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-12-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-04-10"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Introduction du trust (modification du code des obligations)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-01-12"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-04-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6007/78/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Obligationenrechts (Miete)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code des obligations (bail à loyer)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice delle obbligazioni (Locazione)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2008-02-27"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2008-05-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/49/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Obligationenrechts (Sanktionen bei missbräuchlicher oder ungerechtfertigter Kündigung)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle du code des obligations (sanction en cas de congé abusif ou injustifié)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale del Codice delle obbligazioni (sanzione in caso di disdetta abusiva o ingiustificata)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-10-01"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-01-14"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/72/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "06.490 Parlamentarische Initiative. Mehr Schutz der Konsumentinnen und Konsumenten. Änderung von Artikel 210 OR"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "06.490 Initiative parlementaire. Renforcement de la protection des consommateurs. Modification de l'article 210 CO"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "06.490 Iniziativa parlamentare. Maggiore protezione dei consumatori. Modifica dell'articolo 210 del Codice delle obbligazioni"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-06-01"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-09-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/142/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Obligationenrechts (Handelsregisterrecht und Anpassungen im Aktien-, GmbH- und Genossenschaftsrecht) sowie des Revisionsaufsichtsrechts"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code des obligations (droit du registre du commerce et adaptation des droits de la société anonyme, de la société à responsabilité limitée et de la société coopérative) et du droit de la surveillance de la révision"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del codice delle obbligazioni (Diritto del registro di commercio e adattamento del diritto della società anonima, della società a garanzia limitata e della società cooperativa) e del diritto della sorveglianza dei revisori"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-12-19"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-04-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/77/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "07.500 Parlamentarische Initiative. Aufhebung der Bestimmungen zum Vorauszahlungsvertrag"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "07.500 Initiative parlementaire. Abrogation des dispositions sur le contrat de vente avec paiements préalables"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "07.500 Iniziativa parlamentare. Abrogazione delle disposizioni concernenti il contratto di vendita a rate anticipate"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-09-17"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-12-21"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/78/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "06.441 Parlamentarische Initiative. Mehr Konsumentenschutz und weniger Missbräuche beim Telefonverkauf"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "06.441 Initiative parlementaire. Pour une protection du consommateur contre les abus du démarchage téléphonique"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "06.441 Iniziativa parlamentare. Protezione dei consumatori contro gli abusi nell'ambito della vendita per telefono"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-09-17"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-12-21"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/115/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Obligationenrechts (Firmenrecht)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du Code des obligations (Droit des raisons de commerce)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice delle obbligazioni (Diritto delle ditte commerciali)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-01-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-04-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/47/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Mietrechts im Obligationenrecht"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du droit du bail dans le code des obligations"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del diritto di locazione nel Codice delle obbligazioni"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-05-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/81/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (Gesetz über die Transparenz juristischer Personen; TJPG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales; LTPM)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sulla trasparenza delle persone giuridiche e di altri costrutti giuridici (Legge sulla trasparenza delle persone giuridiche; LTPG)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-08-30"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-11-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/116/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Indirekter Gegenvorschlag (Bundesgesetz über die nachhaltige Unternehmensführung) zur Volksinitiative «Für verantwortungsvolle Grossunternehmen – zum Schutz von Mensch und Umwelt»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Contre-projet indirect (Loi fédérale sur la gestion durable des entreprises) à l’initiative populaire « Pour des grandes entreprises responsables – pour la protection de l’être humain et de l’environnement »"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Controprogetto indiretto (Legge federale sulla gestione sostenibile delle imprese) all'iniziativa popolare «Per grandi imprese responsabili – a tutela dell’essere umano e dell'ambiente»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-02"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-07-09"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/97/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Neuordnung der ausserparlamentarischen Kommissionen im Rahmen der Überprüfung 2025"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Réorganisation des commissions extra-parlementaires dans le cadre du réexamen 2025"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-01-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-28"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/46/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des Obligationenrechts (Baumängel)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision du code des obligations (Défauts de construction)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione del Codice delle obbligazioni (Difetti di costruzione)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-08-19"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-11-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "220"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/58/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Transparenz über Nachhaltigkeitsaspekte: Änderung des Obligationenrechts (OR), des Revisionsaufsichtsgesetzes (RAG) und des Strafgesetzbuchs (StGB)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Transparence sur les questions de durabilité: Modification du code des obligations (CO), de la loi sur la surveillance de la révision (LSR) et du code pénal suisse (CP)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Trasparenza concernente lo sviluppo sostenibile: Modifica del diritto delle obbligazioni (CO), della legge sui revisori (LSR) e del codice penale svizzero (CP)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-06-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-10-17"
     }
   },
   {
@@ -1042,12 +145,12 @@
       "value": "15.434 n Iv. pa. (Kessler) Weibel. Congedo maternità per padri superstiti"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-02-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-05-24"
     }
@@ -1059,36 +162,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/51/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/81/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "22.448 s Pa. Iv. Caroni. Einen Pacs für die Schweiz"
+      "value": "Bundesgesetz über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (Gesetz über die Transparenz juristischer Personen; TJPG)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "22.448 é Iv. pa. Caroni. Un pacs pour la Suisse"
+      "value": "Loi fédérale des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales; LTPM)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "22.448 s Iv. pa. Caroni. Un Pacs adeguato alla Svizzera"
+      "value": "Legge federale sulla trasparenza delle persone giuridiche e di altri costrutti giuridici (Legge sulla trasparenza delle persone giuridiche; LTPG)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-27"
+      "value": "2023-08-30"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-17"
+      "value": "2023-11-30"
     }
   },
   {
@@ -1098,36 +201,114 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/7/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/107/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung Obligationenrecht (Stimmrechtsberater)"
+      "value": "OR (Mietrecht): Anfangsmietzins und Ort- und Quartierüblichkeit"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification du code des obligations (Conseillers en vote)"
+      "value": "CO (droit du bail): loyer initial et loyers usuels dans la localité ou le quartier"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica del Codice delle obbligazioni (Consulenti di voto)"
+      "value": "CO (diritto di locazione): pigione iniziale e pigioni in uso in una località o in un quartiere"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-13"
+      "value": "2023-12-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-04"
+      "value": "2024-04-10"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/58/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Transparenz über Nachhaltigkeitsaspekte: Änderung des Obligationenrechts (OR), des Revisionsaufsichtsgesetzes (RAG) und des Strafgesetzbuchs (StGB)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Transparence sur les questions de durabilité: Modification du code des obligations (CO), de la loi sur la surveillance de la révision (LSR) et du code pénal suisse (CP)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Trasparenza concernente lo sviluppo sostenibile: Modifica del diritto delle obbligazioni (CO), della legge sui revisori (LSR) e del codice penale svizzero (CP)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-06-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-10-17"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/73/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Telearbeit)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur le travail dans l’industrie, l’artisanat et le commerce (télétravail)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sul lavoro nell’industria, nell’artigianato e nel commercio (Telelavoro)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-09-10"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-12-10"
     }
   },
   {
@@ -1159,14 +340,53 @@
       "value": "Modifica del Codice delle obbligazioni (Prolungamento del congedo per attività giovanili extrascolastiche)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-05-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-09-18"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/116/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Indirekter Gegenvorschlag (Bundesgesetz über die nachhaltige Unternehmensführung) zur Volksinitiative «Für verantwortungsvolle Grossunternehmen – zum Schutz von Mensch und Umwelt»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Contre-projet indirect (Loi fédérale sur la gestion durable des entreprises) à l’initiative populaire « Pour des grandes entreprises responsables – pour la protection de l’être humain et de l’environnement »"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Controprogetto indiretto (Legge federale sulla gestione sostenibile delle imprese) all'iniziativa popolare «Per grandi imprese responsabili – a tutela dell’essere umano e dell'ambiente»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-04-02"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-07-09"
     }
   },
   {
@@ -1198,14 +418,82 @@
       "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-06-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-10-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/97/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Neuordnung der ausserparlamentarischen Kommissionen im Rahmen der Überprüfung 2025"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Réorganisation des commissions extra-parlementaires dans le cadre du réexamen 2025"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-01-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-04-28"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/84/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des Obligationenrechts und Änderung der Handelsregistersverordnung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision du Code des obligations et modification de l'ordonnance sur le registre du commerce"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sugli aiuti finanziari a favore dell'Instituto del federalismo"
     }
   },
   {
@@ -1244,26 +532,738 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/84/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/51/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Revision des Obligationenrechts und Änderung der Handelsregistersverordnung"
+      "value": "22.448 s Pa. Iv. Caroni. Einen Pacs für die Schweiz"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision du Code des obligations et modification de l'ordonnance sur le registre du commerce"
+      "value": "22.448 é Iv. pa. Caroni. Un pacs pour la Suisse"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Legge federale sugli aiuti finanziari a favore dell'Instituto del federalismo"
+      "value": "22.448 s Iv. pa. Caroni. Un Pacs adeguato alla Svizzera"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-17"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/7/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung Obligationenrecht (Stimmrechtsberater)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code des obligations (Conseillers en vote)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice delle obbligazioni (Consulenti di voto)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-04"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6007/78/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Obligationenrechts (Miete)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code des obligations (bail à loyer)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice delle obbligazioni (Locazione)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2008-02-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2008-05-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/39/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über eine Teilrevision des Zivilgesetzbuches, des Obligationenrechts und der Zivilprozessordnung (Nachrichtenlose Vermögenswerte)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale portant révision partielle du code civil, du code des obligations et du code de procédure civile (fonds en déshérence)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sulla revisione parziale del Codice civile, del Codice delle obbligazioni e del Codice di procedura civile (averi non rivendicati) "
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-08-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-11-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/41/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des Obligationenrechts (Schutz bei Meldung von Missständen am Arbeitsplatz)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle du code des obligations (protection en cas de signalement de faits répréhensibles par le travailleur)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale del Codice delle obbligazioni (protezione in caso di segnalazione di irregolarità da parte del lavoratore)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2008-12-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-03-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/115/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des Obligationenrechts (Revision des Verjährungsrechts)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle du code des obligations (révision du droit de la prescription) "
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale del diritto delle obbligazioni (revisione del diritto di prescrizione)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-08-31"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-11-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/49/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des Obligationenrechts (Sanktionen bei missbräuchlicher oder ungerechtfertigter Kündigung)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle du code des obligations (sanction en cas de congé abusif ou injustifié)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale del Codice delle obbligazioni (sanzione in caso di disdetta abusiva o ingiustificata)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-10-01"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-01-14"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/72/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "06.490 Parlamentarische Initiative. Mehr Schutz der Konsumentinnen und Konsumenten. Änderung von Artikel 210 OR"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "06.490 Initiative parlementaire. Renforcement de la protection des consommateurs. Modification de l'article 210 CO"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "06.490 Iniziativa parlamentare. Maggiore protezione dei consumatori. Modifica dell'articolo 210 del Codice delle obbligazioni"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-06-01"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-09-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/142/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Obligationenrechts (Handelsregisterrecht und Anpassungen im Aktien-, GmbH- und Genossenschaftsrecht) sowie des Revisionsaufsichtsrechts"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code des obligations (droit du registre du commerce et adaptation des droits de la société anonyme, de la société à responsabilité limitée et de la société coopérative) et du droit de la surveillance de la révision"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del codice delle obbligazioni (Diritto del registro di commercio e adattamento del diritto della società anonima, della società a garanzia limitata e della società cooperativa) e del diritto della sorveglianza dei revisori"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-12-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-04-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/143/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur l'amélioration de la protection des victimes de violence"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale per migliorare la protezione delle vittime di violenza"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-10-07"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-01-29"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/77/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "07.500 Parlamentarische Initiative. Aufhebung der Bestimmungen zum Vorauszahlungsvertrag"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "07.500 Initiative parlementaire. Abrogation des dispositions sur le contrat de vente avec paiements préalables"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "07.500 Iniziativa parlamentare. Abrogazione delle disposizioni concernenti il contratto di vendita a rate anticipate"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-09-17"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-12-21"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/78/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "06.441 Parlamentarische Initiative. Mehr Konsumentenschutz und weniger Missbräuche beim Telefonverkauf"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "06.441 Initiative parlementaire. Pour une protection du consommateur contre les abus du démarchage téléphonique"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "06.441 Iniziativa parlamentare. Protezione dei consumatori contro gli abusi nell'ambito della vendita per telefono"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-09-17"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-12-21"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/115/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Obligationenrechts (Firmenrecht)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du Code des obligations (Droit des raisons de commerce)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice delle obbligazioni (Diritto delle ditte commerciali)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-01-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-04-29"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/32/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Obligationenrechts (Aktienrecht)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision du code des obligations (Droit de la société anonyme)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice delle obbligazioni (Diritto della società anonima)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-11-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-03-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/35/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Artikel 404 OR. Anpassung an die Erfordernisse des 21. Jahrhunderts"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Adapter le droit du mandat et l'article 404 CO au XXI<sup>e</sup> siècle"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Un diritto del mandato e un articolo 404 CO al passo col tempo"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-09-16"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-12-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/39/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz zur Optimierung der flankierenden Massnahmen zur Personenfreizügigkeit"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur l'optimisation des mesures d'accompagnement à la libre circulation des personnes"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sull'ottimizzazzione delle misure collaterali alla libera circolazione delle persone"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-09-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-12-19"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/47/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Mietrechts im Obligationenrecht"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du droit du bail dans le code des obligations"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del diritto di locazione nel Codice delle obbligazioni"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-05-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-09-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/44/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "13.426 Pa.Iv. Stillschweigende Verlängerung von Dienstleistungsverträgen. Mehr Informationen und Schutz für Konsumentinnen und Konsumenten"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "13.426 Iv.pa. Renouvellement tacite des contrats de services. Améliorer l'information et la protection des consommateurs et des consommatrices"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "13.426 Iv.pa. Rinnovo tacito dei contratti di servizi. Migliorare l'informazione e la protezione dei consumatori"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-06-16"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-10-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "220"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/46/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des Obligationenrechts (Baumängel)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision du code des obligations (Défauts de construction)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione del Codice delle obbligazioni (Difetti di costruzione)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-08-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-11-30"
     }
   }
 ]

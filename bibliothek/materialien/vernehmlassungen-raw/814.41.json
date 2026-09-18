@@ -6,123 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/10/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision Lärmschutz-Verordnung - Flexibilisierung der raumplanerischen Vorsorge gegen Fluglärm"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l'ordonnance sur la protection contre le bruit - Flexibilisation des mesures préventives en matière d'aménagement du territoire en rapport avec le bruit aérien."
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell'ordinanza contro l'inquinamento fonico - Per una maggiore flessibilità della prevenzione contro il rumore del traffico aereo nella pianificazione del territorio."
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-03-04"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-05-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.41"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/17/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Frühling 2021"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet d'ordonnances environnementales du printemps 2021"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pachetto d'ordinanze in materie ambientale, primavera 2021"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-04-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-08-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.41"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/62/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Umsetzung der Motion 21.4516 Schilliger «Hierarchie des Strassennetzes innerorts und ausserorts sichern»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Mise en œuvre de la motion 21.4516 Schilliger «Consolider la hiérarchie du réseau routier à l’intérieur comme à l’extérieur des localités»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Attuazione della mozione 21.4516 Schilliger «Garantire la gerarchia della rete stradale nei centri abitati e fuori»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-09-03"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-12-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.41"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/91/cons_1"
     },
     "status": {
@@ -145,12 +28,12 @@
       "value": "Pachetto d’ordinanze in materie ambientale, autunno 2023"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-12-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-03-27"
     }
@@ -184,14 +67,131 @@
       "value": "Revisione dell’ordinanza contro l’inquinamento fonico"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-06-16"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-10-06"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.41"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/62/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Umsetzung der Motion 21.4516 Schilliger «Hierarchie des Strassennetzes innerorts und ausserorts sichern»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Mise en œuvre de la motion 21.4516 Schilliger «Consolider la hiérarchie du réseau routier à l’intérieur comme à l’extérieur des localités»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Attuazione della mozione 21.4516 Schilliger «Garantire la gerarchia della rete stradale nei centri abitati e fuori»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-09-03"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-12-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.41"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/10/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision Lärmschutz-Verordnung - Flexibilisierung der raumplanerischen Vorsorge gegen Fluglärm"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l'ordonnance sur la protection contre le bruit - Flexibilisation des mesures préventives en matière d'aménagement du territoire en rapport avec le bruit aérien."
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell'ordinanza contro l'inquinamento fonico - Per una maggiore flessibilità della prevenzione contro il rumore del traffico aereo nella pianificazione del territorio."
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-03-04"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-05-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.41"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/17/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnungspaket Umwelt Frühling 2021"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Paquet d'ordonnances environnementales du printemps 2021"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Pachetto d'ordinanze in materie ambientale, primavera 2021"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-04-06"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-08-20"
     }
   }
 ]

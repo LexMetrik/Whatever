@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-08-30",
+  "erzeugt": "2026-09-18",
   "erlass": "DSG",
   "dokumente": {
     "EDOEB-LEITFADEN-UNTERSUCHUNG-VERSTOESSEN-GEGEN-DATENSCHUTZVORSCHRIFTEN-DURCH-ANALYSE-ART": {
@@ -21,6 +21,10 @@
     "EDOEB-MERKBLATT-PLANUNG-BEGRUENDUNG-ONLINEZUGANGS-PERSONENDATEN": {
       "urlBasis": "https://www.edoeb.admin.ch/dam/de/sd-web/dFB4b6NNMPWv/online-zugang-personendaten.pdf",
       "stand": "2024-06-18"
+    },
+    "EDOEB-MERKBLATT-UEBERWACHUNG-BETREUTEN-PERSONEN": {
+      "urlBasis": "https://www.edoeb.admin.ch/dam/de/sd-web/pil5XhpiROR7/Merkblatt-Datenbearbeitung%20mittels%20Kameras%20und%20anderer%20Sensoren.pdf",
+      "stand": "2026-09-16"
     },
     "EDOEB-MERKBLATT-UNTERSUCHUNG-VERSTOESSEN-GEGEN-DATENSCHUTZVORSCHRIFTEN-DURCH": {
       "urlBasis": "https://www.edoeb.admin.ch/dam/de/sd-web/ekJsT3lqvU35/Merkblatt%20Untersuchung%20von%20Verst%C3%B6ssen%20gegen%20Datenschutzvorschriften_Oktober%202024_DE.pdf",
@@ -69,6 +73,13 @@
       "quelle": "kuratiert",
       "konfidenz": "regex-niedrig",
       "stand": "2024-06-18",
+      "fundstellen": []
+    },
+    {
+      "dok": "EDOEB-MERKBLATT-UEBERWACHUNG-BETREUTEN-PERSONEN",
+      "quelle": "kuratiert",
+      "konfidenz": "regex-niedrig",
+      "stand": "2026-09-16",
       "fundstellen": []
     },
     {

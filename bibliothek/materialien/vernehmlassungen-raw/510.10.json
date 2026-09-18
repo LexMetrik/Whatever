@@ -28,12 +28,12 @@
       "value": "Modifica della legge federale sulle attività informative"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-05-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-09-09"
     }
@@ -67,12 +67,12 @@
       "value": "Modifica della legge federale sulla protezione della popolazione e sulla protezione civile, la legge sul servizio civile e la legge militare"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-01-25"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-05-02"
     }
@@ -84,46 +84,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/65/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "MG/AO-Revision 2029"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision LAAM/OOrgA 2029"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione LM/OEs 2029"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-09"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-12-11"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "510.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6001/13/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/26/cons_1"
     },
     "status": {
       "type": "uri",
@@ -132,105 +93,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Armeereform XXI: Armeeleitbild und Revision der Militärgesetzgebung"
+      "value": "Änderung des Militärgesetzes, der Verordnung der Bundesversammlung über die Verwaltung der Armee und der Armeeorganisation"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Réforme de l'armée XXI: Plan directeur de l'armée et la révision de la législation militaire"
+      "value": "Modification de la loi sur l’armée, de l’ordonnance de l’Assemblée fédérale concernant l’administration de l’armée et de l’ordonnance sur l’organisation de l’armée"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Riforma Esercito XXI: Concetto direttivo per l'esercito e revisione della legislazione militare"
+      "value": "Modifica della legge militare, dell’ordinanza dell’Assemblea federale sull’amministrazione dell’esercito e dell’organizzazione dell’esercito"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-05-02"
+      "value": "2023-11-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-07-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "510.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/15/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision 09 der Militärgesetzgebung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision 09 de la législation militaire"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione 09 della legislazione militare"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-08-23"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-12-01"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "510.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/69/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Rechtsgrundlagen für die Weiterentwicklung der Armee"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modifications à apporter aux bases légales en vue du développement de l'armée"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica delle basi legali per l'ulteriore sviluppo dell'esercito"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-06-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-10-17"
+      "value": "2024-03-08"
     }
   },
   {
@@ -262,12 +145,12 @@
       "value": "Introduzione di una giornata informativa obbligatoria per le Svizzere: revisione parziale della Costituzione federale nonché delle relative disposizioni di legge"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-11-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-02-28"
     }
@@ -301,14 +184,170 @@
       "value": "Revisione totale della legge federale sulle imprese di armamento della Confederazione (LAAC) e trasformazione della RUAG MRO in una società anonima di diritto speciale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-11-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-03-23"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "510.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/65/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "MG/AO-Revision 2029"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision LAAM/OOrgA 2029"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione LM/OEs 2029"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-09"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-12-11"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "510.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6001/13/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Armeereform XXI: Armeeleitbild und Revision der Militärgesetzgebung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Réforme de l'armée XXI: Plan directeur de l'armée et la révision de la législation militaire"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Riforma Esercito XXI: Concetto direttivo per l'esercito e revisione della legislazione militare"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-05-02"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-07-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "510.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/15/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision 09 der Militärgesetzgebung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision 09 de la législation militaire"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione 09 della legislazione militare"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-08-23"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-12-01"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "510.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/69/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Rechtsgrundlagen für die Weiterentwicklung der Armee"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modifications à apporter aux bases légales en vue du développement de l'armée"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica delle basi legali per l'ulteriore sviluppo dell'esercito"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-06-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-10-17"
     }
   },
   {
@@ -340,53 +379,14 @@
       "value": "Modifica della legge militare e dell'organizzazione dell'esercito"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-10-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-01-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "510.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/26/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Militärgesetzes, der Verordnung der Bundesversammlung über die Verwaltung der Armee und der Armeeorganisation"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi sur l’armée, de l’ordonnance de l’Assemblée fédérale concernant l’administration de l’armée et de l’ordonnance sur l’organisation de l’armée"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge militare, dell’ordinanza dell’Assemblea federale sull’amministrazione dell’esercito e dell’organizzazione dell’esercito"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-11-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-03-08"
     }
   }
 ]

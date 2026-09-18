@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/59/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/74/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "16.414 Pa.Iv. Graber Konrad. Teilflexibilisierung des Arbeitsgesetzes und Erhalt bewährter Arbeitszeitmodelle; 16.423 Pa.Iv. Keller-Sutter. Ausnahme von der Arbeitszeiterfassung für leitende Angestellte und Fachspezialisten"
+      "value": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Ausnahme für Arbeitnehmende von neu gegründeten Betrieben)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "16.414 Iv.pa. Graber Konrad. Introduire un régime de flexibilité partielle dans la loi sur le travail et maintenir des modèles de temps de travail éprouvés; 16.423 Iv.pa. Keller-Sutter. Libérer le personnel dirigeant et les spécialistes de l'obligation de saisie du temps de travail"
+      "value": "Loi fédérale sur le travail dans l’industrie, l’artisanat et le commerce (Exception pour les travailleurs occupés par de nouvelles entreprises)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "16.414 s Iv.pa. Graber Konrad. Flessibilizzare parzialmente la legge sul lavoro preservando i modelli di orario di lavoro dimostratisi validi; 16.423 s Iv.pa. Keller-Sutter. Deroga alla registrazione della durata del lavoro per dirigenti e specialisti"
+      "value": "Legge sul lavoro (eccezione per i dipendenti di aziende di nuova costituzione)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-09-04"
+      "value": "2022-11-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-12-04"
+      "value": "2023-03-03"
     }
   },
   {
@@ -67,12 +67,12 @@
       "value": "Legge federale sul lavoro nell’industria, nell’artigianato e nel commercio (Telelavoro)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-09-10"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-12-10"
     }
@@ -106,12 +106,12 @@
       "value": "23.325 s Iv. ct. ZH. Flessibilizzazione temporanea degli orari di apertura dei negozi"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-08-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-11-17"
     }
@@ -145,12 +145,12 @@
       "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-01-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-04-28"
     }
@@ -162,7 +162,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/74/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/59/cons_1"
     },
     "status": {
       "type": "uri",
@@ -171,27 +171,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Ausnahme für Arbeitnehmende von neu gegründeten Betrieben)"
+      "value": "16.414 Pa.Iv. Graber Konrad. Teilflexibilisierung des Arbeitsgesetzes und Erhalt bewährter Arbeitszeitmodelle; 16.423 Pa.Iv. Keller-Sutter. Ausnahme von der Arbeitszeiterfassung für leitende Angestellte und Fachspezialisten"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Loi fédérale sur le travail dans l’industrie, l’artisanat et le commerce (Exception pour les travailleurs occupés par de nouvelles entreprises)"
+      "value": "16.414 Iv.pa. Graber Konrad. Introduire un régime de flexibilité partielle dans la loi sur le travail et maintenir des modèles de temps de travail éprouvés; 16.423 Iv.pa. Keller-Sutter. Libérer le personnel dirigeant et les spécialistes de l'obligation de saisie du temps de travail"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Legge sul lavoro (eccezione per i dipendenti di aziende di nuova costituzione)"
+      "value": "16.414 s Iv.pa. Graber Konrad. Flessibilizzare parzialmente la legge sul lavoro preservando i modelli di orario di lavoro dimostratisi validi; 16.423 s Iv.pa. Keller-Sutter. Deroga alla registrazione della durata del lavoro per dirigenti e specialisti"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-11-17"
+      "value": "2018-09-04"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-03-03"
+      "value": "2018-12-04"
     }
   }
 ]

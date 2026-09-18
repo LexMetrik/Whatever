@@ -6,45 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/45/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision der Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung; AVIV)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-10-01"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-01-08"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "837.02"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/67/cons_1"
     },
     "status": {
@@ -67,12 +28,12 @@
       "value": "Modifica dell’ordinanza sull’assicurazione contro la disoccupazione e dell’ordinanza concernente il rimborso delle casse di disoccupazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-11-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-03-03"
     }
@@ -106,14 +67,53 @@
       "value": "Modifica dell'ordinanza sull'assicurazione obbligatoria contro la disoccupazione e l'indemnità per insolvenza (OADI)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2002-12-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2003-03-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "837.02"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/45/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision der Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung; AVIV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Ordonnance sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Ordonnance sur l'assurance-chômage, OACI)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Ordinanza su l'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Ordinanza sull'assicurazione contro la disoccupazione, OADI)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-10-01"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-01-08"
     }
   },
   {
@@ -145,12 +145,12 @@
       "value": "Disposizioni d'esecuzione per la modifica della legge sugli stranieri del 16 dicembre 2016 (Regolazione dell'immigrazione e miglioramenti dell'esecuzione degli accordi sulla libera circolazione)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-06-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-09-06"
     }
@@ -184,12 +184,12 @@
       "value": "Modifica dell'ordinanza sull'assicurazione contro la disoccupazione e ordinanza sui sistemi d'informazione AD"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-07-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-10-22"
     }
@@ -223,12 +223,12 @@
       "value": "Disposizioni d'esecuzione relative alla modifica della legge federale sull'assicurazione per l'invalidità (Ulteriore sviluppo dell'AI)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-12-04"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-03-19"
     }

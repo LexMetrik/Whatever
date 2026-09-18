@@ -6,6 +6,357 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/1/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Strafgesetzbuches (Reform der lebenslangen Freiheitsstrafe)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code pénal (réforme de la peine privative de liberté à vie)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice penale (riforma della pena detentiva a vita)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-06-02"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-10-02"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "321.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/33/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "19.433 n Pa. Iv. RK-NR. StGB-Tatbestände mit Stalking ergänzen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "19.433 n Iv. pa. CAJ-CN. Etendre au harcèlement obsessionnel («stalking») le champ d'application des dispositions du CP relatives aux délits"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "19.433 n Iv. pa. CAG-CN. Includere lo stalking nelle fattispecie del Codice penale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-05-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-09-16"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "321.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/69/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die Zustellung von Sendungen an Wochenenden und Feiertagen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur les notifications d’actes le week-end et les jours fériés"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sulla notificazione della posta nei fine settimana e nei giorni festivi"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-02-14"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-05-24"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "321.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/91/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Genehmigung und Umsetzung des Übereinkommens von Ljubljana und Den Haag über die internationale Zusammenarbeit bei der Ermittlung und Strafverfolgung in Bezug auf das Verbrechen des Völkermords, auf Verbrechen gegen die Menschlichkeit, Kriegsverbrechen und andere internationale Verbrechen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Approbation et mise en œuvre de la Convention de Ljubljana-La Haye pour la coopération internationale en matière d’enquête et de poursuite du crime de génocide, des crimes contre l’humanité, des crimes de guerre et autres crimes internationaux"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Approvazione e attuazione della Convenzione di Lubiana-L’Aia sulla cooperazione internazionale in materia di indagini e di azione penale per il crimine di genocidio, i crimini contro l’umanità, i crimini di guerra e altri crimini internazionali"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-02-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-05-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "321.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/102/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "20.504 n Pa.Iv. Flach. Folter als eigener Straftatbestand im Schweizer Strafrecht"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "20.504 n Iv.pa. Flach. Inscrire la torture en tant que telle dans le catalogue des infractions du droit pénal suisse"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "20.504 n Iv.pa. Flach. La tortura deve figurare come fattispecie a sé stante nel diritto penale svizzero"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-12-18"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-04-02"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "321.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/5/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Unverjährbarkeit von Mord)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code pénal et du code pénal militaire (imprescriptibilité de l’assassinat)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice penale e del Codice penale militare (imprescrittibilità dell’assassinio)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-01-09"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-04-16"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "321.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/84/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Einführung eines obligatorischen Orientierungstags für Schweizerinnen: Teilrevision der Bundesverfassung sowie der dazugehörigen Gesetzesbestimmungen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Instauration d’une journée d’information obligatoire pour les Suissesses : révision partielle de la Constitution et des dispositions légales associées"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Introduzione di una giornata informativa obbligatoria per le Svizzere: revisione parziale della Costituzione federale nonché delle relative disposizioni di legge"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-11-12"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-02-28"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "321.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/58/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "23.443 n Pa. Iv. Addor. Ausweisung krimineller Ausländerinnen und Ausländer. Interessenabwägung mit gesundem Menschenverstand"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "23.443 n Iv. pa. Addor. Expulsion des étrangers criminels. Pour une pesée des intérêts conforme au bon sens"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Titolo: 23.443 n Iv. pa. Addor. Espulsione degli stranieri che commettono reati. Per una ponderazione degli interessi conforme al buon senso"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-06-11"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-10-02"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "321.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/65/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "MG/AO-Revision 2029"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision LAAM/OOrgA 2029"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione LM/OEs 2029"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-09"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-12-11"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "321.0"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/11/cons_1"
     },
     "status": {
@@ -28,12 +379,12 @@
       "value": "Statuto di Roma della Corte penale internazionale; ratifica"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2000-06-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2000-09-15"
     }
@@ -67,12 +418,12 @@
       "value": "Modificazione del Codice penale svizzero e del Codice penale militare concernente i simboli razzisti"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-07-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-10-31"
     }
@@ -106,326 +457,14 @@
       "value": "Modifica del Codice penale e del Codice penale militare concernente l'assistenza organizzata al suicidio"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-10-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-03-01"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "321.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/101/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 3-6 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Code pénal suisse et code pénal militaire (mise en œuvre de l'art. 121, al. 3 à 6, Cst. relatif à l'expulsion des étrangers criminels)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Codice penale svizzero e Codice penale militare (attuazione dell'articolo 121 capoversi 3-6 Cost. sull'espulsione di stranieri che commettono reati)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-05-23"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "321.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/43/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Schweizerischen Strafgesetzbuches (StGB) und des Militärstrafgesetzes (MStG). Verlängerung der Verfolgungsverjährung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code pénal (CP) et du code pénal militaire (CPM). Prolongation du délai de prescription"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice penale (CP) e del Codice penale militare (CPM). Proroga del termine di prescrizione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-10-12"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-01-21"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "321.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/143/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur l'amélioration de la protection des victimes de violence"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale per migliorare la protezione delle vittime di violenza"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-10-07"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-01-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "321.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/102/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "20.504 n Pa.Iv. Flach. Folter als eigener Straftatbestand im Schweizer Strafrecht"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "20.504 n Iv.pa. Flach. Inscrire la torture en tant que telle dans le catalogue des infractions du droit pénal suisse"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "20.504 n Iv.pa. Flach. La tortura deve figurare come fattispecie a sé stante nel diritto penale svizzero"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-12-18"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-04-02"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "321.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/33/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "19.433 n Pa. Iv. RK-NR. StGB-Tatbestände mit Stalking ergänzen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "19.433 n Iv. pa. CAJ-CN. Etendre au harcèlement obsessionnel («stalking») le champ d'application des dispositions du CP relatives aux délits"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "19.433 n Iv. pa. CAG-CN. Includere lo stalking nelle fattispecie del Codice penale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-05-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-09-16"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "321.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/1/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Strafgesetzbuches (Reform der lebenslangen Freiheitsstrafe)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code pénal (réforme de la peine privative de liberté à vie)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice penale (riforma della pena detentiva a vita)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-06-02"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-10-02"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "321.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/69/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die Zustellung von Sendungen an Wochenenden und Feiertagen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur les notifications d’actes le week-end et les jours fériés"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sulla notificazione della posta nei fine settimana e nei giorni festivi"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-02-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-05-24"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "321.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/65/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "MG/AO-Revision 2029"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision LAAM/OOrgA 2029"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione LM/OEs 2029"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-09"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-12-11"
     }
   },
   {
@@ -457,12 +496,12 @@
       "value": "Legge federale sull'armonizzazione delle pene nel Codice penale, nel Codice penale militare e nel diritto penale accessorio"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-09-08"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-12-10"
     }
@@ -496,14 +535,92 @@
       "value": "Modifica della Costituzione federale, del Codice penale svizzero, del Codice penale militare e del diritto penale minorile (divieto di attività, di contatto e di accesso e allontanamento)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-02-23"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-05-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "321.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/101/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 3-6 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Code pénal suisse et code pénal militaire (mise en œuvre de l'art. 121, al. 3 à 6, Cst. relatif à l'expulsion des étrangers criminels)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Codice penale svizzero e Codice penale militare (attuazione dell'articolo 121 capoversi 3-6 Cost. sull'espulsione di stranieri che commettono reati)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-05-23"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-09-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "321.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/43/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Schweizerischen Strafgesetzbuches (StGB) und des Militärstrafgesetzes (MStG). Verlängerung der Verfolgungsverjährung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code pénal (CP) et du code pénal militaire (CPM). Prolongation du délai de prescription"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice penale (CP) e del Codice penale militare (CPM). Proroga del termine di prescrizione"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-10-12"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-01-21"
     }
   },
   {
@@ -535,14 +652,53 @@
       "value": "Revisione delle disposizioni penali in materia di corruzione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-05-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-09-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "321.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/143/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur l'amélioration de la protection des victimes de violence"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale per migliorare la protezione delle vittime di violenza"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-10-07"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-01-29"
     }
   },
   {
@@ -574,12 +730,12 @@
       "value": "10.519 Iv.pa. Modifica dell'articolo 53 CP"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-10-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-02-03"
     }
@@ -613,92 +769,14 @@
       "value": "Approvazione e trasposizione della Convenzione del Consiglio d'Europa per la prevenzione del terrorismo e del relativo Protocollo addizionale nonché potenziamento del dispositivo penale contro il terrorismo e la criminalità organizzata"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-06-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-10-13"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "321.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/84/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Einführung eines obligatorischen Orientierungstags für Schweizerinnen: Teilrevision der Bundesverfassung sowie der dazugehörigen Gesetzesbestimmungen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Instauration d’une journée d’information obligatoire pour les Suissesses : révision partielle de la Constitution et des dispositions légales associées"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Introduzione di una giornata informativa obbligatoria per le Svizzere: revisione parziale della Costituzione federale nonché delle relative disposizioni di legge"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-11-12"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-02-28"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "321.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/91/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Genehmigung und Umsetzung des Übereinkommens von Ljubljana und Den Haag über die internationale Zusammenarbeit bei der Ermittlung und Strafverfolgung in Bezug auf das Verbrechen des Völkermords, auf Verbrechen gegen die Menschlichkeit, Kriegsverbrechen und andere internationale Verbrechen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Approbation et mise en œuvre de la Convention de Ljubljana-La Haye pour la coopération internationale en matière d’enquête et de poursuite du crime de génocide, des crimes contre l’humanité, des crimes de guerre et autres crimes internationaux"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Approvazione e attuazione della Convenzione di Lubiana-L’Aia sulla cooperazione internazionale in materia di indagini e di azione penale per il crimine di genocidio, i crimini contro l’umanità, i crimini di guerra e altri crimini internazionali"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-02-19"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-05-30"
     }
   },
   {
@@ -730,12 +808,12 @@
       "value": "Trasferimento di alcuni compiti/alcune competenze della giustizia militare alle autorità giudiziarie civili; modifica del Codice penale militare"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-12-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-04-12"
     }
@@ -769,92 +847,14 @@
       "value": "Armonizzazione delle pene e adeguamento del diritto penale accessorio alla nuova disciplina delle sanzioni. Oggetto 3: Legge federale sulla revisione del diritto penale in materia sessuale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-02-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-05-10"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "321.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/5/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Unverjährbarkeit von Mord)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code pénal et du code pénal militaire (imprescriptibilité de l’assassinat)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice penale e del Codice penale militare (imprescrittibilità dell’assassinio)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-01-09"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-04-16"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "321.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/58/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "23.443 n Pa. Iv. Addor. Ausweisung krimineller Ausländerinnen und Ausländer. Interessenabwägung mit gesundem Menschenverstand"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "23.443 n Iv. pa. Addor. Expulsion des étrangers criminels. Pour une pesée des intérêts conforme au bon sens"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Titolo: 23.443 n Iv. pa. Addor. Espulsione degli stranieri che commettono reati. Per una ponderazione degli interessi conforme al buon senso"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-06-11"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-10-02"
     }
   }
 ]

@@ -28,12 +28,12 @@
       "value": "Modifica dell'ordinanza sul diritto d'autore e sui diritti di protezione affini "
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-12-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-01-31"
     }

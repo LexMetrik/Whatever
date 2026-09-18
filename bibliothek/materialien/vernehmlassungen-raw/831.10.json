@@ -6,123 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/59/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "NFA - Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen: 1. Schlussbericht über die Festlegung des Ressourcen-, Lasten- und Härteausgleichs"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "RPT - Réforme de la péréquation financière et de la compensation des charges: 1. Rapport final sur la dotation de la péréquation des ressources et de la compensation des charges et des cas de rigueur"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "NPC - Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni: 1. Rapporto finale concernente la perequazione delle risorse e la compensazione degli oneri e dei casi di rigore"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-07-05"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-10-13"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/48/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Stabilisierung der AHV (AHV21)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Stabilisation de l'AVS (AVS21)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Stabilizzazione dell'AVS (AVS21)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-06-27"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-10-17"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/78/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung  (Systematische Verwendung der AHV-Nummer durch Behörden)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la la loi fédérale sur l'assurance-vieillesse et survivants (Utilisation systématique du numéro AVS par les autorités)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti  (Utilizzazione sistematica del numero AVS da parte delle autorità)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-11-07"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-02-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/15/cons_1"
     },
     "status": {
@@ -145,14 +28,326 @@
       "value": "Modifica della legge federale sulle attività informative"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-05-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-09-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/100/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des AHVG: Anpassung der Hinterlassenenrenten"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de la LAVS: adaptation des rentes de survivants"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale della LAVS: adeguamento delle rendite per superstiti"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-12-08"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-03-29"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/30/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Ausländer- und Integrationsgesetzes (Erleichterung der selbstständigen Erwerbstätigkeit, Berücksichtigung des Lebensmittelpunkts und Zugriffe auf Informationssysteme)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur les étrangers et l’intégration (facilitation de l’exercice d’une activité lucrative indépendante, prise en compte du centre des intérêts et accès aux systèmes d’information)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sugli stranieri e la loro integrazione (facilitazione dell’esercizio di un’attività lucrativa indipendente, considerazione del centro degli interessi e accessi ai sistemi d’informazione)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-12-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-03-29"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/28/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Umsetzung und Finanzierung der Initiative für eine 13. AHV-Rente; Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHVG) und des Bundesgesetzes über die Ergänzungsleistungen (ELG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Mise en œuvre et financement de l’initiative pour une 13e rente AVS; modification de la loi fédérale sur l’assurance-vieillesse et survivants (LAVS) et de la loi fédérale sur les prestations complémentaires (LPC)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Attuazione e finanziamento dell’iniziativa per una 13esima mensilità AVS; modifica della Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) e della Legge federale sulle prestazioni complementari (LPC)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-05-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-07-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/63/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "18.455 n Pa. Iv. Grossen Jürg. Selbstständigkeit ermöglichen, Parteiwillen berücksichtigen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "18.455 n Iv. pa. Grossen Jürg. Accorder la qualité de personne exerçant une activité lucrative indépendante en tenant compte de la volonté des parties"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "18.455 n Iv. pa. Grossen Jürg. Consentire l’indipendenza tenendo conto della volontà delle parti"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-07-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-11-01"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/96/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über das Entlastungspaket 2027"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur le programme d’allégement budgétaire 2027"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sulle misure di sgravio del bilancio della Confederazione applicabili dal 2027"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-01-29"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-05-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/97/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Neuordnung der ausserparlamentarischen Kommissionen im Rahmen der Überprüfung 2025"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Réorganisation des commissions extra-parlementaires dans le cadre du réexamen 2025"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-01-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-04-28"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/45/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHV 2030)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de la loi fédérale sur l’assurance-vieillesse et survivants (AVS 2030)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione della legge federale sull’assicurazione per la vecchiaia e per i superstiti (AVS 2030)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-11"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/51/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "22.448 s Pa. Iv. Caroni. Einen Pacs für die Schweiz"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "22.448 é Iv. pa. Caroni. Un pacs pour la Suisse"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "22.448 s Iv. pa. Caroni. Un Pacs adeguato alla Svizzera"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-17"
     }
   },
   {
@@ -191,6 +386,74 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/91/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Asylgesetzes und des Ausländer- und Integrationsgesetzes sowie der Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (Asylstrategie 2027)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi sur l'asile et de la loi sur les étrangers et l'intégration ainsi que de l’ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (Stratégie en matière d'asile 2027)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge sull’asilo e della legge sugli stranieri e sull’integrazione nonché dell’ ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (Strategia in materia di asilo 2027)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/59/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "NFA - Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen: 1. Schlussbericht über die Festlegung des Ressourcen-, Lasten- und Härteausgleichs"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "RPT - Réforme de la péréquation financière et de la compensation des charges: 1. Rapport final sur la dotation de la péréquation des ressources et de la compensation des charges et des cas de rigueur"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "NPC - Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni: 1. Rapporto finale concernente la perequazione delle risorse e la compensazione degli oneri e dei casi di rigore"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-07-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-10-13"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.10"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/113/cons_1"
     },
     "status": {
@@ -213,12 +476,12 @@
       "value": "Revisione parziale dell'ordinanza sull'assicurazione malattie (OAMal), dell'ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (OPre) e dell'ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-12-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-03-31"
     }
@@ -230,46 +493,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/96/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über das Entlastungspaket 2027"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur le programme d’allégement budgétaire 2027"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sulle misure di sgravio del bilancio della Confederazione applicabili dal 2027"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-01-29"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-05-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/97/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/48/cons_1"
     },
     "status": {
       "type": "uri",
@@ -278,27 +502,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Neuordnung der ausserparlamentarischen Kommissionen im Rahmen der Überprüfung 2025"
+      "value": "Stabilisierung der AHV (AHV21)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Réorganisation des commissions extra-parlementaires dans le cadre du réexamen 2025"
+      "value": "Stabilisation de l'AVS (AVS21)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
+      "value": "Stabilizzazione dell'AVS (AVS21)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-01-28"
+      "value": "2018-06-27"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-28"
+      "value": "2018-10-17"
     }
   },
   {
@@ -308,7 +532,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/28/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/78/cons_1"
     },
     "status": {
       "type": "uri",
@@ -317,251 +541,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Umsetzung und Finanzierung der Initiative für eine 13. AHV-Rente; Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHVG) und des Bundesgesetzes über die Ergänzungsleistungen (ELG)"
+      "value": "Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung  (Systematische Verwendung der AHV-Nummer durch Behörden)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Mise en œuvre et financement de l’initiative pour une 13e rente AVS; modification de la loi fédérale sur l’assurance-vieillesse et survivants (LAVS) et de la loi fédérale sur les prestations complémentaires (LPC)"
+      "value": "Modification de la la loi fédérale sur l'assurance-vieillesse et survivants (Utilisation systématique du numéro AVS par les autorités)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Attuazione e finanziamento dell’iniziativa per una 13esima mensilità AVS; modifica della Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) e della Legge federale sulle prestazioni complementari (LPC)"
+      "value": "Modifica della legge federale sull'assicurazione per la vecchiaia e per i superstiti  (Utilizzazione sistematica del numero AVS da parte delle autorità)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-05-22"
+      "value": "2018-11-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-07-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/30/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Ausländer- und Integrationsgesetzes (Erleichterung der selbstständigen Erwerbstätigkeit, Berücksichtigung des Lebensmittelpunkts und Zugriffe auf Informationssysteme)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur les étrangers et l’intégration (facilitation de l’exercice d’une activité lucrative indépendante, prise en compte du centre des intérêts et accès aux systèmes d’information)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sugli stranieri e la loro integrazione (facilitazione dell’esercizio di un’attività lucrativa indipendente, considerazione del centro degli interessi e accessi ai sistemi d’informazione)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-12-15"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-03-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/63/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "18.455 n Pa. Iv. Grossen Jürg. Selbstständigkeit ermöglichen, Parteiwillen berücksichtigen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "18.455 n Iv. pa. Grossen Jürg. Accorder la qualité de personne exerçant une activité lucrative indépendante en tenant compte de la volonté des parties"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "18.455 n Iv. pa. Grossen Jürg. Consentire l’indipendenza tenendo conto della volontà delle parti"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-07-05"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-11-01"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/100/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des AHVG: Anpassung der Hinterlassenenrenten"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de la LAVS: adaptation des rentes de survivants"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della LAVS: adeguamento delle rendite per superstiti"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-12-08"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-03-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/51/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "22.448 s Pa. Iv. Caroni. Einen Pacs für die Schweiz"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "22.448 é Iv. pa. Caroni. Un pacs pour la Suisse"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "22.448 s Iv. pa. Caroni. Un Pacs adeguato alla Svizzera"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-27"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-17"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/45/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHV 2030)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de la loi fédérale sur l’assurance-vieillesse et survivants (AVS 2030)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione della legge federale sull’assicurazione per la vecchiaia e per i superstiti (AVS 2030)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-11"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/91/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Asylgesetzes und des Ausländer- und Integrationsgesetzes sowie der Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (Asylstrategie 2027)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi sur l'asile et de la loi sur les étrangers et l'intégration ainsi que de l’ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (Stratégie en matière d'asile 2027)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge sull’asilo e della legge sugli stranieri e sull’integrazione nonché dell’ ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (Strategia in materia di asilo 2027)"
+      "value": "2019-02-22"
     }
   }
 ]

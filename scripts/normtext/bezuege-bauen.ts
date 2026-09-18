@@ -342,8 +342,21 @@ export function baueBezugsIndex(
     // Korrektur am W2·6-NKEY-Kanal, nicht Teil dieser Bau-Einheit — sie gehört
     // in einen eigenen, deklarierten Schritt mit eigenem Nachweis (§14/§6.3),
     // sonst wandert eine Inhaltsänderung als Nebenwirkung eines
-    // Struktur-Schritts nach main. Die beiden Fundstellen sind hier benannt,
-    // damit die Lücke nicht verloren geht, sondern beauftragt werden kann.
+    // Struktur-Schritts nach main. Die beiden Fundstellen vom 28.7.2026 sind
+    // hier benannt; der dritte Fall (Nachtrag 18.9.2026) folgt unten.
+    //
+    // Nachtrag (gemessen 18.9.2026, Nachzug QS-MONITOR-ROT, Nach-Verdikt
+    // Opus): ohne die Alias-Sperre 'LC' (ABK_AUSSCHLUSS, entscheide-mapping.ts)
+    // feuert `fremdDefinierteKeys` auf Bundesgerichts-Text DREIMAL statt
+    // zweimal — bge/149_I_161 «(LEP; BLV 340.01)»→EPG, bge/149_I_343
+    // «(LC; BLV 175.11)»→AVG, bge/150_II_105 «(AIMP; BLV 726.91)»→IRSG; mit
+    // Sperre bleiben es die oben gemessenen zwei. BGE 149 I 343 gehört zur
+    // selben Fehlerklasse «(ABK; BLV nnn.nn)» wie die beiden obigen Fälle und
+    // ist seit der LC-Sperre für diesen Riegel unsichtbar — dritter Fall für
+    // den oben beauftragten Folge-Schritt. Präzisierung: der dritte Treffer
+    // entsteht nur über die Publikations-Schicht «BLV» (`auszugAbschnitte`)
+    // — der Volltext (`abschnitte`) trägt «rs/VD 175.11», das die Riegel-
+    // Regex (Sigel-Token ohne Trennzeichen) strukturell nicht erfasst.
     const gesperrt = s.gerichtstyp === 'bundesgericht' ? new Set<string>() : fremdDefinierteKeys(s);
     const schluessel = new Set<string>();
     for (const k of befund.schluessel) {

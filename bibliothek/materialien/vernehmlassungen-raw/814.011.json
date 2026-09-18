@@ -28,12 +28,12 @@
       "value": "Revisione dell'ordinanza concernente l'esame dell'impatto sull'ambiente (OEIA)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-10-31"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-01-31"
     }

@@ -28,12 +28,12 @@
       "value": "Modifica delle disposizioni della Legge sulla vigilanza dei mercati finanziari (LFINMA) e di altri atti legislativi in vista della cooperazione con le autorità estere"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-09-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-01-03"
     }
