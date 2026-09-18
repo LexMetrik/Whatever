@@ -1,5 +1,5 @@
 {
-  "erzeugt": "2026-09-12",
+  "erzeugt": "2026-09-18",
   "materialien": [
     {
       "key": "ESTV-KS-DBG-5A",
@@ -3119,6 +3119,26 @@
         "DSG"
       ],
       "hinweis": "Behörden-Praxis (erste revDSG-Verfahren); Auslegungsquelle, kein Gesetzesrang."
+    },
+    {
+      "key": "EDOEB-MERKBLATT-UEBERWACHUNG-BETREUTEN-PERSONEN",
+      "behoerde": "EDOEB",
+      "behoerdeName": "Eidg. Datenschutz- und Öffentlichkeitsbeauftragter",
+      "behoerdeKuerzel": "EDÖB",
+      "doktyp": "merkblatt",
+      "doktypLabel": "Merkblatt",
+      "titel": "Merkblatt: Überwachung von betreuten Personen",
+      "nummer": null,
+      "rechtsgebiet": "oeffentlich",
+      "sprache": "de",
+      "status": "nur-live-link",
+      "quelleUrl": "https://www.edoeb.admin.ch/dam/de/sd-web/pil5XhpiROR7/Merkblatt-Datenbearbeitung%20mittels%20Kameras%20und%20anderer%20Sensoren.pdf",
+      "stand": "2026-09-16",
+      "rang": 79739084,
+      "normKeys": [
+        "DSG"
+      ],
+      "hinweis": "Amtliche EDÖB-Publikation, kein Gesetzesrang."
     },
     {
       "key": "EDOEB-MERKBLATT-VERWENDUNG-COOKIES-TECHNOLOGIEN-ZUSAMMENHANG-ONLINE-TRACKING",
