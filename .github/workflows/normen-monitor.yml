@@ -81,7 +81,13 @@ jobs:
   normen:
     name: Rechtsstände (check:netz) · Live-Site-Smoke · Runtime-APIs
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    # 45 statt 25 seit 18.9.2026 (§17): der Netz-Lauf ist seriell und wächst mit dem Korpus —
+    # 5.9. grün in 22 min, 14.9. bei 25 min mitten in `check:be-sprengel-netz` abgewürgt
+    # (Lauf 34853464780: caches 4 min · normtext-netz 10 min · materialien-netz 8 min).
+    # `cancelled` färbt GitHub grau, der Wächter meldet es rot. Das Limit ist Notbremse mit
+    # Reserve, nicht Taktgeber (gleiche Regel wie turso-sync.yml); reisst der Lauf 35 min,
+    # ist der Zeitfresser zu messen, nicht das Limit erneut zu heben.
+    timeout-minutes: 45
     permissions:
       contents: read
       issues: write

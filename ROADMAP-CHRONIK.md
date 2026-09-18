@@ -5049,3 +5049,44 @@ auf `QS-BEWAEHRUNG`.
   Tor-Schleife erweitert, Altbestand nachgetragen. Grenzen: kein Agent ändert Tore oder Regeln
   selbständig — der Auswerter schlägt vor, David entscheidet; kein Risiko-Pfad.
   **Detail:** [rekursive-selbstverbesserung-gegenueberstellung-2026-09-15.md](bibliothek/betrieb/rekursive-selbstverbesserung-gegenueberstellung-2026-09-15.md) §8.
+
+# Umschichtung 18.9.2026 — erledigte Schritte/Teilerfolge aus dem Steuerungsplan
+
+Anlass: `check:steuerdeckel` rot nach Buchung (ROADMAP 123 081 B = 120,2 KB > 120 KB). Verschoben
+sind ausschliesslich datierte ✅-/`[x]`-Teilerfolgs-Zeilen aus offenen Schritten (aufraeumen.md §2);
+kein `@meta` eines lebenden Schrittes berührt, keine offene `[ ]`-Zeile angefasst. Im Plan bleibt je
+Gruppe ein ✅-Einzeiler mit Pointer hierher.
+
+## W2·5m-LESER-V3 — D0/S1/S2 Teilerfolge *(✅, verschoben 18.9.2026)*
+  - [x] **D0 · Farb-Vorarbeit** — ✅ 16.8.2026, PR #534 (`47f805423`); Wächter-Ausbau #680 (`0cffc695a`).
+  - [x] **S1 · Historie-Modell** — ✅ 17.8.2026, PR #547 (`2538dd356`).
+  - [x] **S2 · Typografie + Artikel-Raster** — ✅ 17.8.2026, PR #550 (`afc008c19`), F3 = V2 (17 px / lh 1.55).
+
+## W2·20-VERWEIS-SCHAERFE — V-7 Bund-Rest: Trägergesetz-Kontext + Kurztitel-Positivliste *(✅ PR #864, verschoben 18.9.2026)*
+  - [x] **V-7 Bund-Rest: Trägergesetz-Kontext + Kurztitel-Positivliste** — ✅ erledigt 14.9.2026, PR #864 (`6fb37368b`); Gegenprüfung bestand im Kern und **widerlegte die Vollständigkeit** (drei Befunde, im PR nachgezogen). 197 belegte Stellen; darunter **97 «des Gesetzes»-Glieder in Verordnungen, die bis 14.9.2026 FALSCHE Self-Links trugen** (Link auf die Verordnung statt aufs Trägergesetz) — §1-relevant, im Fehlerbuch §4 als behobener Falschlink-Fall geführt.
+
+## W2·27-BUND-FERTIG — KKV-Label `Art. 126z` statt `Art. 126ztredecies` *(✅ PR #890, verschoben 18.9.2026)*
+  - [x] **KKV-Label `Art. 126z` statt `Art. 126ztredecies`** *(Nebenfund Prüfer #851)* — ✅ 15.9.2026, PR #890 (`682edb070`, Gegenprüfung zweimal bestanden 390ed4917/a93c616c8): Label aus dem Fedlex-`<sup>` (`doppel-id-label.ts`), `quelleUrl` auf den amtlichen Anker `#ta126z` (`amtlicherAnker()`, Live-Nachweis Playwright); `tredecies` in `ART_SUFFIXE`. Rest: `__N`-Deep-Link, Label-Drift-Tor (Zeilen unten).
+
+## QS-KORPUS — Kernerlasse-Lücken Bund schliessen + confidence.json veraltet *(✅ PR #860/#848, verschoben 18.9.2026)*
+  - [x] **Kernerlasse-Lücken Bund schliessen** — ✅ erledigt 14.9.2026, PR #860 (`6a67f01be`); Gegenprüfung **mit Auflage bestanden**, Auflage im PR nachgezogen. EMRK (SR 0.101), EÖBV (SR 211.435.1) und AVG (SR 823.11) liegen als Fedlex-Snapshots vor. **Status «entwurf» — die fachliche Abnahme macht David** (§7, Zeitsperre 1.12.2026).
+  - [x] **`public/normtext/confidence.json` veraltet** *(Befund PR #668, 4.9.2026)* — ✅ erledigt 14.9.2026, PR #848 (`90cb59fff`); geführt unter `W2·27-BUND-FERTIG`. Offen bleibt dort die Frische-Kopplung (§17).
+
+## QS-FREMDAGENTEN — Fremd-PR-Tor Kommentar-MULTIMENGE + Suggestions abgeschaltet *(✅ PR #862, verschoben 18.9.2026)*
+  - [x] **Fremd-PR-Tor vergleicht die Kommentar-MULTIMENGE** — ✅ erledigt 14.9.2026, PR #862 (`d61193dbe`): Regel 3b prüft die getrimmten Kommentarzeilen zeichengleich (`comm -23` leer), nicht mehr nur die Summe. Anlass: #855 baute die Summe nach einer Ablehnung exakt zurück (580 → 580) und verfälschte dabei trotzdem vier Zeilen.
+  - [x] **Proaktiver Kanal «Suggestions» abgeschaltet** *(Entscheid David 14.9.2026 — Wortlaut, Zahlen und Begründung: Fahrplan §6 D8, Messwerte §5)* — 76 unaufgeforderte Vorschläge, am Code geprüft: 3 belastbar (~4 %), 0 gestartet; die drei Funde als Schritt `QS-CODE-LFZ-GRENZE` eingeordnet. Jules bleibt für auftragsgebundene Tickets verbunden.
+
+## W2·24-DESIGN-IDENTITAET — acht Nachwunsch-Teilerfolge *(✅, verschoben 18.9.2026)*
+  - [x] **L6 · PaneKopf-Name** — ✅ gelandet 7.9.2026 (PR #746, `d32e5bf80`), Protokoll `L6-PANEKOPF.md`.
+  - [x] **Leerer 34-px-Reiterstreifen auf «/»** — bleibt (David 7.9.2026, wie empfohlen).
+  - [x] **ZGB-Reiter am Dokumentanfang** — «ZGB» bleibt (David 7.9.2026, wie empfohlen).
+  - [x] **Orchestrator-Entscheide 7.9.2026 bestätigt** (D33 A · D32 · N1 · N4 · R13; David «alles wie empfohlen»).
+  - [x] **D45 · Entscheid-Klick in der Fusszeile öffnet daneben** — ✅ umgebucht 11.9.2026 nach `W2·26-FUNKTIONSZEILE`. Detail: `FAHRPLAN-DESIGN-IDENTITAET.md` §9 Z5.
+  - [x] **«Daneben öffnen» in der Funktionszeile** — entfällt (David 7.9.2026, D44 #760: Aktion bewusst entfernt; Erlass-Kopf behält «Daneben öffnen»).
+  - [x] **Bezüge-Zähler in den Erlass-Payload** *(D34-Nachfix, Korpus ⇒ **Gegenprüfung Pflicht**)* — ✅ umgebucht 11.9.2026 als eigener Schritt `W2·26-FUNKTIONSZEILE-ZAEHLER`.
+  - [x] **OR-Leser trägt 15'239 Knöpfe im DOM** *(§15, seit F1 sichtbar)* — ✅ umgebucht 11.9.2026 nach `W2·26-FUNKTIONSZEILE`. Detail: `FAHRPLAN-DESIGN-IDENTITAET.md` §9 Z6.
+
+## W2·17-UI-BEFUNDE — B9/B10/B15/B16 geschlossen *(✅, verschoben 18.9.2026)*
+  - [x] **B9 · Textsatz und Umbruch (K-12)** — 12/12 geschlossen (Fahrplan §10, Nachzug Häkchen 13.9.2026).
+  - [x] **B10 · Aktions-Anker, Symbolknöpfe, Trefferflächen (K-09b)** — 7/7 geschlossen 4.9.2026 (Fahrplan §11, Nachzug Häkchen 13.9.2026).
+  - [x] **B15 · Umschalter, Tabs, Akkordeons (K-06)** — 9/9. §16. · **B16 · Seitengerüst/Inhaltsbreite (K-13)** — 8/8. §17. *(Nachzug Häkchen 13.9.2026)*
