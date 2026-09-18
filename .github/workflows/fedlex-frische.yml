@@ -74,6 +74,14 @@ jobs:
       actions: write
     steps:
       - uses: actions/checkout@v7
+        with:
+          # Volle Historie wie der Tore-Job in ci.yml (seit 18.9.2026, §17): der Schritt
+          # «Offline-Tore vor dem PR» fährt die VOLLE Tor-Menge, also auch `npm test` —
+          # und `hooks-wache.test.ts` (seit #688, 5.9.2026) löst `HEAD~1` auf. Im flachen
+          # Default-Checkout (Tiefe 1) gibt es den Vorgänger nicht ⇒ der Test war hier
+          # strukturell rot, verdeckt durch das frühere `check:verfall-ui`-Rot
+          # (Lauf 35352220607). Gleiche Tore brauchen gleiche Bedingungen.
+          fetch-depth: 0
       - uses: actions/setup-node@v5
         with:
           node-version: 22
