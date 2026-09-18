@@ -700,6 +700,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-EFFIZIENZ-CHECKLISTE.md](fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md) §1 —
   die Checkliste liegt seit 29.8.2026 dort statt hier (sie war eine Merge-Konflikt-Falle: 6 Konflikte
   in EINER Zeile bei 15 PRs).
+  - [ ] **Steuer-Luft + Gedächtnis-Rest** *(18.9.2026)* — ROADMAP nur ~1 KB unter Budget: `dep`-Bereinigung, damit `done`-Schritte wandern (Muster #896); Vault-Eintrag `lexmetrik-lektionen`: UI-/Code-Konventionen ins Reglement, dann archivieren.
   - [x] **ROADMAP-Deckel bleibt knapp — nächste Umschichtung braucht einen `dep`-Umbau** *(Messung 14.9.2026)* — ✅ 15.9.2026 (PR #896, `d26dbbac6`): `check:plan` akzeptiert erledigte `dep`-Ziele aus der Chronik. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (4).
   - [ ] **Steuerdeckel-Entscheid — wartet auf David:** Streichkandidat unter `scripts/check-*.ts` (5.9.2026 Prosa-Diät statt Deckel-Hebung; Hooks ~0 B Luft) *(sechs erledigte Nebenpunkte 5.9.2026 umgeschichtet: ROADMAP-CHRONIK.md, Umschichtung 6.9.2026).*
   - [ ] **Rückbau-Kandidaten aus `npm run tor:bewaehrung` — wartet auf David:** `check:smoke` · `check:sweep` · `check:verfall` · `check:normtext` (je 83 Läufe, null Rot seit Einführung, Stand 15.9.2026); dazu entscheiden, ob `tor:bewaehrung` und `retro:17` (gleiche Frage, andere Zeitreihe) zusammengelegt werden (§17-Gegengewicht). Hook-Log-Diff für die 9 Hooks liegt bei David (`/tmp/qs-bewaehrung-hook-log.diff`).
