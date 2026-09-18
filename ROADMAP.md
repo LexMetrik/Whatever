@@ -152,6 +152,11 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **V-7-Folgen** *(Nebenfunde #864)* — **(a)** `KLAMMER_NACH_NAME` sperrt ArGV 4 `art_37` Abs. 4 → ArG Art. 7 Abs. 4, obwohl der Link korrekt wäre: Klammer-Guard auf die Kürzel-Form (≥ 2 Grossbuchstaben) einschränken; **(b)** `definiertGesetz` arbeitet mit einer endlichen Einführungswort-Liste — breiterer Filter «Gesetz eigenständig in Klammer»; **(c)** `NormText.tsx:407` liest den Erlass-Key ohne `decodeURIComponent` (§5-Abweichung gegen `inhalt-sprung.tsx:279`). *Risikopfad ⇒ Gegenprüfung.*
   - [ ] **Kantonales Trägergesetz-Register** *(Phase 2, Folge aus #864)* — 19 kantonale Vollzugsverordnungen (AR u. a., HuV → HuG) verlieren mit #864 den falschen Self-Link, bekommen aber keinen richtigen: die Ingress-Auswertung gibt es nur für den Bund (nur dort tragen die Struktur-Sidecars den Ingress). Kein Link ist besser als ein falscher (§1) — der Nachzug ist ein eigener Schritt. Dazu die **12. Handkopie der Suffix-Reihe**: `KantonNormText.tsx:49` (`RE_PARAGRAF`) trägt nur `(?:bis|ter)?`, darum bleiben SO-614.11 § 115septies…undecies unverlinkt (Kanton-Grammatik auf `ART_SUFFIXE` ziehen).
 
+- [ ] **Treffer-Landkarte: wo im Dokument liegen die Treffer** *(`W2·28-TREFFER-LANDKARTE`, David 18.9.2026; reine UI)*
+  <!-- @meta id: W2·28-TREFFER-LANDKARTE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md -->
+  Streifen neben dem Scrollbalken mit einer Marke je Suchtreffer (Gesetz + Entscheid), Klick springt; dieselbe Trefferquelle wie die Hervorhebung (§5).
+  **Detail:** [FAHRPLAN-RECHERCHE-KOMFORT.md](fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md) §1.
+
 - [ ] **Verzahnung sichtbar machen** *(`W2·7-VZUI`, David-Auftrag 3.7.2026; reine UI auf vorhandenen Daten)*
   <!-- @meta id: W2·7-VZUI · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
   EINE Interaktions-Grammatik für die Verzahnung, ohne neue Rechtsregel (§3). Offen: V2 (E3-Serving)
@@ -429,6 +434,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   <!-- @meta id: QS-MONITOR-ROT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
   Rechtsstand-relevant: `normen-monitor.yml` 5/5 Läufe failure. Diagnose 14.8. — **das Rot ist ECHT**,
   der Monitor korrekt. **Detail:** [FAHRPLAN-OFFENE-BEFUNDE.md](fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md) §2.
+  - [ ] **Nachweislauf 18.9.2026 (35353185468, 28 min, nicht mehr abgewürgt): 6/16 Netz-Tore ECHT rot** — `materialien-netz` (1) · `botschaften-netz` (3) · `bs-grossrat-netz` · `revisionen-rectifies` (1) · `vernehmlassungen-netz` (VERN-2026-51/-52) · `fedlex-abk-netz`. Reparatur über die Monats-Jobs (öffnen eigene PRs, kein Auto-Merge; ihr `npm ci` war bis 18.9. kaputt) bzw. `lex-daten` + Gegenprüfung.
   - [x] **Erledigt:** LIK 2026-05→07 · ESTV-MWST/AIG · Verfahrens-Gap — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
   - [x] **§17-Wurzelfix 12.9.2026 (PR #803):** `check:materialien` Finding 7 war wanduhr-abhängig (2. Vorfall in 24 h, #789 + heute) — ✅ Wortlaut: ROADMAP-CHRONIK.md.
   - [ ] **§17-Wurzel-Fix:** soft-law-Detektor prüft nur den ToC-Token, nicht das Publikationsdatum — Detektor zusätzlich auf `stand`-Wechsel, Token nur über cipherDisplay-Anker.
@@ -462,7 +468,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13.
   - [ ] **Gerichts-/Behörden-Adressregister** — Lese-/Index-Schicht über die bestehenden Bestände, **kein Datenduplikat** (§5); Quelle `bibliothek/behoerden/`.
   - [ ] **Entscheid-Filter über die API — Richter + allgemeine Facetten** — eine Bau-Fläche (Turso-Schema + `api/suche.ts` + Facetten-UI); Risikopfad ⇒ Gegenprüfung. [FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md](fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md) §7.
-  - [ ] **Zitationsnetz: Rückwärts-Zitate + Leitentscheid-Score** — deterministisch aus dem Zitat-Graph (§2 — kein Ranking-Modell); Merkposten LM-042 («ff.»-Sammelzitate) als Auflage. [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §10.
+  - [ ] **Zitationsnetz: Rückwärts-Zitate + Leitentscheid-Score** — deterministisch aus dem Zitat-Graph (§2 — kein Ranking-Modell); Merkposten LM-042 («ff.»-Sammelzitate) als Auflage. [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §10; erweitert 18.9.2026 (erwägungsgenaue Links, Zitat-Kontext, Normsuche DE/FR/IT, Urteils-Vorschau; Daten vor UI): [FAHRPLAN-RECHERCHE-KOMFORT.md](fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md) §2.
   - [ ] **Rechtsprechungs-Übersicht: P0-Rest + Korpus-Breite** — SG-Regeste-Rest und die Übersichts-/Facetten-Breite; **erst nach `W2·6-RESOLVER`**.
 
 - [ ] **Kantonaler Norm-Resolver → Kantonalnorm-Buckets (P0-Kern)** *(`W2·6-RESOLVER`)*
@@ -576,6 +582,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Plan-Buchungs-Commit wirft wartende Auto-Merge-PRs auf BEHIND** *(§17-Prozessfund 13.9.2026, PR #843)* — `plan-buchung.yml` schreibt nach jedem Merge einen `[skip ci]`-Commit auf main; bei `strict`-Schutz fällt jeder offene Auto-Merge-PR auf BEHIND und kostet Rebase + vollen CI-Lauf (~25 min). Wurzel-Fix: der Buchungs-Workflow aktualisiert danach alle offenen PRs mit aktivem Auto-Merge (`gh pr update-branch`), oder Merge-Queue (David-Handgriff, offen). Bis dahin: nach jeder Landung sofort rebasen.
   - [ ] **Flacker-Fall `leser-v3-blatt` (c) ⌘K im Split** *(CI #844, 13.9.2026; isoliert 6/6 grün auf Branch und main)* — last-/parallelbedingt, deckt sich mit «⌘K-Vorlauf im Split» (CI #711); Fahrplan §4.
   - [ ] **WARTET AUF DAVID:** Sollen die Meta-Routen (/ueber, /methodik, /einstellungen, /kontakt) einen Reiter tragen? Seit R14b (`istReiterPfad` gestrichen) ist jede Route Reiterinhalt — Orchestrator-Entscheid, Bestätigung offen (FAHRPLAN-DESIGN-IDENTITAET §7, Korrektur 13.9.2026).
+  - [ ] **Reiterleisten-Abgleich + WARTET AUF DAVID: Merkliste ja/nein** *(David 18.9.2026)* — Lücken zum Vorbild einzeln prüfen; Favoriten sind seit 5.6.2026 gestrichen. [FAHRPLAN-RECHERCHE-KOMFORT.md](fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md) §3.
   - [x] **Reiterleiste-Wellen 1–3** — ✅ 13.9.2026, PR #842/#843/#844 (+ Nachzug R8-Sweep mobil); Specs Fahrplan §4.R/§4.R2/§4.R3. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
   - [ ] **Zurückgeholt aus der Chronik** *(Umschichtung 15.9.2026 (Entstehung); Nebenfund #896: offene Posten im Archiv sind für `plan:next` unsichtbar)* — Konflations-Wächter breiter (D2 #816) · Prerender-Shell nennt aufgehobene Erlasse «geltend» (#823) · Tabellen-`<dt>`-Marken «–»/[tab] als Aufzählung (#836; ZPO art_250, StG art_5 f., BV art_197) · 216 Struktur-Sidecars ohne `stand`/`fassungsToken` (#836) · Test-Budget `suche.test.ts` 95 s bei 3 s Luft — Wortlaut dort. BMV-Zitat (#823) deckt die Zeile «Art. 9 BMV» oben; Werkzeug-Fallen Norm-PDF/Scratchpad ✅ #895.
 
@@ -700,7 +707,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-EFFIZIENZ-CHECKLISTE.md](fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md) §1 —
   die Checkliste liegt seit 29.8.2026 dort statt hier (sie war eine Merge-Konflikt-Falle: 6 Konflikte
   in EINER Zeile bei 15 PRs).
-  - [ ] **Steuer-Luft + Gedächtnis-Rest** *(18.9.2026)* — ROADMAP nur ~1 KB unter Budget: `dep`-Bereinigung, damit `done`-Schritte wandern (Muster #896); Vault-Eintrag `lexmetrik-lektionen`: UI-/Code-Konventionen ins Reglement, dann archivieren.
+  - [ ] **Hebel ROADMAP-Grösse: Befund-Prosa in die Fahrpläne** *(David 18.9.2026, vorgemerkt)* — 54 % der Datei sind offene Zeilen (64 KB; Erledigtes 0,4 KB): lange `[ ]`-Befundzeilen in den Detail-Fahrplan des Dachs, hier je Kurzzeile + `**Detail:**`-Zeiger (Skill `auftrag` Ziff. 1), danach automatisierbar. ROADMAP-Deckel seit 18.9. nur Warnung (`struktur-rotieren.py` NUR_WARNUNG). Daneben: Vault-Eintrag `lexmetrik-lektionen` — UI-/Code-Konventionen ins Reglement, dann archivieren.
   - [x] **ROADMAP-Deckel bleibt knapp — nächste Umschichtung braucht einen `dep`-Umbau** *(Messung 14.9.2026)* — ✅ 15.9.2026 (PR #896, `d26dbbac6`): `check:plan` akzeptiert erledigte `dep`-Ziele aus der Chronik. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (4).
   - [ ] **Steuerdeckel-Entscheid — wartet auf David:** Streichkandidat unter `scripts/check-*.ts` (5.9.2026 Prosa-Diät statt Deckel-Hebung; Hooks ~0 B Luft) *(sechs erledigte Nebenpunkte 5.9.2026 umgeschichtet: ROADMAP-CHRONIK.md, Umschichtung 6.9.2026).*
   - [ ] **Rückbau-Kandidaten aus `npm run tor:bewaehrung` — wartet auf David:** `check:smoke` · `check:sweep` · `check:verfall` · `check:normtext` (je 83 Läufe, null Rot seit Einführung, Stand 15.9.2026); dazu entscheiden, ob `tor:bewaehrung` und `retro:17` (gleiche Frage, andere Zeitreihe) zusammengelegt werden (§17-Gegengewicht). Hook-Log-Diff für die 9 Hooks liegt bei David (`/tmp/qs-bewaehrung-hook-log.diff`).
