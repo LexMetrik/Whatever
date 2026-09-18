@@ -2,7 +2,7 @@
 // Amtliche Kurzbezeichnungen (DE/FR/IT) der Bund-Erlasse des ERLASS_REGISTER.
 // Quelle: Fedlex-SPARQL, jolux:titleShort am sprachlichen Ausdruck des geltenden
 // Konsolidierungs-Abstracts (Currency-Fenster gegen Schatten-Abstracts), §7.
-// Stand: 2026-07-28 — Abdeckung 200/230 SR (de 200 · fr 199 · it 198).
+// Stand: 2026-09-18 — Abdeckung 202/232 SR (de 202 · fr 201 · it 200).
 // Regenerieren: npm run gen:abk-aliase -- --datum=$(date +%F)
 // Wirkung: scripts/normtext/entscheide-mapping.ts löst jede Zeile über sr → Register-key
 // auf und nimmt die Abkürzung als zusätzlichen Kandidaten in die normKeys-Tabelle;
@@ -148,6 +148,9 @@ export const ABK_ALIASE: ReadonlyArray<{ sr: string; sprache: 'de' | 'fr' | 'it'
   { sr: "211.432.11", sprache: 'de', abk: "TGBV" },
   { sr: "211.432.11", sprache: 'fr', abk: "OTRF" },
   { sr: "211.432.11", sprache: 'it', abk: "OTRF" },
+  { sr: "211.435.1", sprache: 'de', abk: "EÖBV" },
+  { sr: "211.435.1", sprache: 'fr', abk: "OAAE" },
+  { sr: "211.435.1", sprache: 'it', abk: "OAPuE" },
   { sr: "220", sprache: 'de', abk: "OR" },
   { sr: "220", sprache: 'fr', abk: "CO" },
   { sr: "220", sprache: 'it', abk: "CO" },
@@ -433,6 +436,9 @@ export const ABK_ALIASE: ReadonlyArray<{ sr: string; sprache: 'de' | 'fr' | 'it'
   { sr: "822.115", sprache: 'de', abk: "ArGV 5" },
   { sr: "822.115", sprache: 'fr', abk: "OLT 5" },
   { sr: "822.115", sprache: 'it', abk: "OLL 5" },
+  { sr: "823.11", sprache: 'de', abk: "AVG" },
+  { sr: "823.11", sprache: 'fr', abk: "LSE" },
+  { sr: "823.11", sprache: 'it', abk: "LC" },
   { sr: "823.20", sprache: 'de', abk: "EntsG" },
   { sr: "823.20", sprache: 'fr', abk: "LDét" },
   { sr: "823.20", sprache: 'it', abk: "LDist" },
