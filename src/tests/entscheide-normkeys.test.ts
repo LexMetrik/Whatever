@@ -156,10 +156,15 @@ describe('Alias-Ebene — amtliche FR/IT-Kürzel zeigen auf den Register-key', (
     });
     expect(normKeysVonSnapshot(vaudLC)).toEqual([]);   // insb. KEIN 'AVG'
     // Gegenprobe: die Sperre trifft NUR 'LC' — die echten AVG-Fundstellen (de
-    // «AVG», fr «LSE») bleiben wirksam. Präzisiert (gemessen 18.9.2026): fünf
-    // Entscheide tragen das Token 'LC' im AVG-Sinn, alle it-Regesten (BGE
-    // 151 II 178, 151 III 143, 148 II 426, 148 II 203, 147 II 397); korpusweit
-    // lösen 11 Snapshots auf 'AVG' auf — die fünf genannten BGE plus 6 BS
+    // «AVG», fr «LSE») bleiben wirksam. Präzisiert (gemessen 18.9.2026, Nach-
+    // Verdikt Opus): SECHS Entscheide tragen das Token 'LC' im AVG-Sinn — fünf
+    // mit Artikel-Zitat «art. … LC», alle it-Regesten (BGE 151 II 178,
+    // 151 III 143, 148 II 426, 148 II 203, 147 II 397), die dadurch auf 'AVG'
+    // auflösen; dazu BGE 151 I 113 («legge federale sul collocamento e il
+    // personale a prestito (LC)», consid. 7.1) nur als Definitionsklammer OHNE
+    // Artikel-Zitat — löst NICHT auf 'AVG' auf. Der Waadtländer BGE 149 I 343
+    // zählt nicht mit: anderes 'LC' (Loi sur les communes). Korpusweit lösen
+    // 11 Snapshots auf 'AVG' auf — die fünf genannten BGE plus 6 BS
     // (BEZ.2023.59, VD.2025.49, ZB.2023.64, ZB.2023.66, ZB.2024.11, AH.2023.9),
     // die AVG bzw. LSE zusätzlich zu — oder statt — LC im Text tragen.
     expect(normKeyFuerAbk('AVG')).toBe('AVG');
