@@ -150,6 +150,14 @@ async function leseZeitreihe(
  *  höchstens 5 % der Proben ≥ 2 Einträge zurück — beides mit vollem Abstand
  *  zum Ist-Stand (0 %) UND zu beiden Defekt-Ständen (38 % / 98 %).
  *
+ *  EMPFINDLICHKEITSGRENZE, damit sie niemand raten muss: eine auf 60 ms
+ *  verkürzte Entprellung wurde mitgemessen und liegt bei 51/59 = 86 % treu
+ *  (2 Läufe, Histogramme {0:51, 1:7, 2:1} und {0:51, 1:6, 2:2}). Sie reisst
+ *  damit die 90-%-Schranke, aber knapp — und die 5-%-Schranke gar nicht. Wer
+ *  hier künftig noch feiner unterscheiden will, verschiebt die 90 % nicht
+ *  blind nach oben: der Ist-Stand liegt unter 10× Drossel bei 98 %, die Luft
+ *  zwischen «schärfer» und «flackrig» ist genau diese Spanne.
+ *
  *  Der Rückstand wird IM STOSS gemessen, nicht in der Pause: gelesen wird
  *  jeweils 60 ms nach dem Scroll-Schritt und damit vor dem nächsten. Hat
  *  dieser Schritt eine Artikelgrenze überquert — beim OR der Regelfall, die
