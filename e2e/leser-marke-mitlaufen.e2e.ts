@@ -94,6 +94,144 @@ async function leseZeitreihe(
   }, { schritte, stoesse })
 }
 
+/** ZWEITE, ORDINALE MESSUNG derselben Lesestrecke (Schärfung 18.9.2026).
+ *
+ *  WARUM ES SIE BRAUCHT — die Lücke, die eine Gegenprüfung KONSTRUIERT hat:
+ *  Die drei Proben oben fragen «schnell genug?» (erste Marke ≤ 1500 ms, Lücke
+ *  ≤ 500 ms, ≥ 5 Etiketten). Wer die Sofort-Zuweisung durch eine kurze
+ *  Trailing-Entprellung ersetzt — gemessen: 120 ms, also deutlich unter den
+ *  kaputten 200 ms —, bleibt in allen dreien GRÜN. Ein Rückfall auf eine kurze
+ *  Entprellung rutscht damit durch, und «die Marke friert beim Lesen ein» ist
+ *  genau der Defekt vom 18.9.2026, nur langsamer.
+ *
+ *  DAS KRITERIUM HÄNGT DARUM NICHT AN DER WANDUHR, sondern an der ORDNUNG des
+ *  Dokuments: gemessen wird der RÜCKSTAND DER MARKE IN GLIEDERUNGS-EINTRÄGEN.
+ *  Je Probe stehen zwei Zahlen nebeneinander, beide im selben synchronen Block
+ *  gelesen:
+ *   SOLL  — der letzte gerenderte Gliederungs-Eintrag, dessen Abschnitt bei
+ *           oder vor dem Artikel an der Bezugslinie beginnt. Jeder Eintrag
+ *           verlinkt den ersten Artikel seines Abschnitts (`href="#art-14"`),
+ *           die Artikel-Reihenfolge im DOM ist die Dokumentordnung — die
+ *           Zuordnung ist also GELESEN, nicht nachgebaut. Welcher Artikel an
+ *           der Linie liegt, entscheidet dasselbe Orakel wie in
+ *           `e2e/leser-spy-w25d.e2e.ts` (`messen`); dort steht die Herleitung
+ *           der Linie (`scroll-margin-top` + 8) und der Zwischenraum-Regel.
+ *   IST   — der Eintrag, der `[data-toc-aktiv]` trägt.
+ *  Rückstand = SOLL − IST, in Einträgen. Bei echter Sofort-Zuweisung ist er 0:
+ *  die Marke zeigt den Abschnitt, in dem der Leser steht. JEDE Trailing-
+ *  Entprellung zeigt systematisch einen FRÜHEREN — und zwar umso mehr, je
+ *  dichter die Artikelgrenzen kommen, weil ihr Timer dann neu angesetzt statt
+ *  ausgelöst wird.
+ *
+ *  WARUM DAS DIE RUNNER-GESCHWINDIGKEIT NICHT MITMISST: eine Ordnungszahl hat
+ *  keine Einheit. Wird der Runner langsamer, wandern SOLL und IST gemeinsam
+ *  langsamer durch dieselbe Liste; der Abstand zwischen ihnen ist davon
+ *  unberührt. Ein langsamer Runner macht die Probe darum nicht rot, sondern
+ *  höchstens milder (eine feste ms-Entprellung feuert zwischen zwei trägen
+ *  Frames irgendwann doch) — sie tauscht die Lücke nicht gegen Flackern.
+ *  GEMESSEN (dist/, vite preview, 1440×900, /gesetze/bund/OR, 3 × 20 × 400 px):
+ *    Ist-Stand            3 Läufe je 60/60 treu, Rückstand max 0, 8 Einträge
+ *    Ist-Stand 4× Drossel       60/60 treu, Rückstand max 0
+ *    Ist-Stand 6× Drossel       60/60 treu, Rückstand max 0, 30 Einträge
+ *    120-ms-Entprellung         27/58 treu, Rückstand max 4 (Histogramm
+ *                               {0:27, 1:9, 2:4, 3:3, 4:15})
+ *  Die Schranken unten (≥ 90 % treu, Rückstand ≤ 1) liegen zwischen beiden
+ *  Verteilungen und halten zum Ist-Stand vollen Abstand.
+ *
+ *  Der Rückstand wird IM STOSS gemessen, nicht in der Pause: gelesen wird
+ *  jeweils 60 ms nach dem Scroll-Schritt und damit vor dem nächsten. Eine
+ *  Entprellung ≥ 120 ms kann bis dahin nicht gefeuert haben, die Sofort-
+ *  Zuweisung ist längst committet. Die Pausen bleiben trotzdem nötig — ohne
+ *  sie hält das Ruhe-Tor den Baum zu, die Gliederung zeigt nur ihre oberste
+ *  Ebene und die Messung hätte keine Auflösung (gemessen: 1 Eintrag über
+ *  24'000 px statt 8 — ein Tor, das nicht scheitern kann, §6.7; genau darum
+ *  steht `distinktSoll` unten als Aussagekraft-Schranke im Test). */
+async function leseRueckstand(
+  page: import('@playwright/test').Page, schritte: number, stoesse = 3,
+) {
+  return page.evaluate(async ({ schritte, stoesse }) => {
+    const artEls = [...document.querySelectorAll('[id^="art-"]')]
+    const artIdx = new Map(artEls.map((el, i) => [el.id.replace(/^art-/, ''), i] as const))
+    const remPx = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16
+    const landepunkt = artEls[0]
+      ? (parseFloat(getComputedStyle(artEls[0]).scrollMarginTop) || 5 * remPx)
+      : 5 * remPx
+    const bezug = landepunkt + 8
+    // Artikel an der Bezugslinie — Auswahl wie `aktiverArtikel` über den
+    // Kandidatensatz des Readers (Zwischenraum-Regel; Rückfall auf den
+    // sichtbaren Satz). Herleitung: leser-spy-w25d.e2e.ts.
+    const linienArtikel = (): string | null => {
+      const hoehe = document.documentElement.clientHeight
+      const rects = artEls.map((el) => {
+        const r = el.getBoundingClientRect()
+        return { token: el.id.replace(/^art-/, ''), top: r.top, bottom: r.bottom }
+      })
+      const kandidaten = rects.filter((e) => e.bottom > bezug && e.top < hoehe)
+      const sichtbar = rects.filter((e) => e.bottom > 0 && e.top < hoehe)
+      const wahl = kandidaten.length > 0 ? kandidaten : (sichtbar.length > 0 ? sichtbar : rects)
+      let treffer: string | null = null
+      let beste = Infinity
+      for (const e of wahl) {
+        const d = bezug < e.top ? e.top - bezug : bezug > e.bottom ? bezug - e.bottom : 0
+        if (d === 0) return e.token
+        if (d < beste) { beste = d; treffer = e.token }
+      }
+      return treffer
+    }
+    const messung = () => {
+      const eintraege = [...document.querySelectorAll('[data-toc] a[href^="#art-"]')]
+      const token = linienArtikel()
+      const iLinie = token === null ? -1 : (artIdx.get(token) ?? -1)
+      let soll = -1
+      let marke = -1
+      let monoton = true
+      let letzter = -1
+      for (let k = 0; k < eintraege.length; k++) {
+        const i = artIdx.get(decodeURIComponent((eintraege[k].getAttribute('href') ?? '').slice(5)))
+        if (i === undefined) continue
+        if (i < letzter) monoton = false
+        letzter = i
+        if (i <= iLinie) soll = k
+        if (eintraege[k].hasAttribute('data-toc-aktiv')) marke = k
+      }
+      return { soll, marke, monoton }
+    }
+
+    const proben: { soll: number; marke: number; monoton: boolean }[] = []
+    for (let b = 0; b < stoesse; b++) {
+      for (let i = 0; i < schritte; i++) {
+        window.scrollBy(0, 400)
+        await new Promise((r) => setTimeout(r, 60))
+        proben.push(messung())
+      }
+      await new Promise((r) => setTimeout(r, 800))
+    }
+
+    // Vor der ERSTEN Marke ist «keine Marke» richtig (Erlass-Kopf, §8) —
+    // dieselbe Abgrenzung wie in `leseZeitreihe` oben.
+    const erste = proben.findIndex((p) => p.marke >= 0)
+    const abErster = erste < 0 ? [] : proben.slice(erste)
+    const gueltig = abErster.filter((p) => p.marke >= 0 && p.soll >= 0)
+    const rueck = gueltig.map((p) => p.soll - p.marke)
+    const hist: Record<string, number> = {}
+    for (const r of rueck) hist[String(r)] = (hist[String(r)] ?? 0) + 1
+    return {
+      vis: document.visibilityState,
+      proben: proben.length,
+      abErster: abErster.length,
+      gueltig: gueltig.length,
+      treu: rueck.filter((r) => r === 0).length,
+      rueckMax: rueck.length > 0 ? Math.max(...rueck) : -1,
+      rueckMin: rueck.length > 0 ? Math.min(...rueck) : -1,
+      hist: JSON.stringify(hist),
+      distinktSoll: new Set(gueltig.map((p) => p.soll)).size,
+      distinktMarken: new Set(gueltig.map((p) => p.marke)).size,
+      monotonVerletzt: proben.filter((p) => !p.monoton).length,
+      y: Math.round(window.scrollY),
+    }
+  }, { schritte, stoesse })
+}
+
 test.describe('W2·5m — Standort-Marke läuft beim Lesen mit', () => {
   // Reflow-schwerste Seite des Korpus (1686 Artikel, content-visibility) auf
   // einem 2-vCPU-Runner — dasselbe Notdach-Argument wie in a33/F1.
@@ -148,6 +286,54 @@ test.describe('W2·5m — Standort-Marke läuft beim Lesen mit', () => {
     // hält zum Ist die Hälfte Marge.
     expect(m.etiketten, `distinkte Marken-Etiketten ${m.etiketten}`).toBeGreaterThanOrEqual(5)
     expect(m.mehrfach, `Proben mit mehr als einer Marke ${m.mehrfach}`).toBe(0)
+    expect(fehler).toEqual([])
+  })
+
+  // DIE SCHÄRFE DIESER SPEC (18.9.2026): «synchron» statt «schnell genug».
+  // Herleitung, Messreihen und der konstruierte 120-ms-Halb-Fix stehen bei
+  // `leseRueckstand` oben. Die drei ms-Proben bleiben daneben stehen — sie
+  // decken die zwei GESICHTER des Defekts (gar keine Marke / eingefrorene
+  // Marke) an einem Stand ab, an dem es noch gar keinen Rückstand zu messen
+  // gäbe, weil es keine Marke gibt.
+  test('OR — die Marke deckt die Bezugslinie ab (Rückstand in Gliederungs-Einträgen)', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    // Opt-in-Drossel wie A33_CPU_DROSSEL in `leser-gliederung-a33.e2e.ts`:
+    // belegt lokal, dass die Probe unter Last mild wird statt flackrig
+    // (gemessen 4× und 6×: unverändert 60/60 treu). In CI unset → kein Effekt.
+    const drossel = Number(process.env.MITLAUFEN_CPU_DROSSEL ?? '0')
+    if (drossel > 1) {
+      const cdp = await page.context().newCDPSession(page)
+      await cdp.send('Emulation.setCPUThrottlingRate', { rate: drossel })
+    }
+    await page.goto('/gesetze/bund/OR')
+    await expect(page.locator('article[id^="art-"]').first()).toBeVisible({ timeout: 20000 })
+    await expect(page.locator('[data-toc]')).toBeVisible({ timeout: 10000 })
+
+    const m = await leseRueckstand(page, 20, 3)
+
+    // (0) MESSBEDINGUNG. Ohne `visible` läuft kein rAF-Kranz, der Spy ist tot
+    //     und die ganze Messung sagt nichts (`.claude/rules/webseiten-pruefung.md`).
+    expect(m.vis, `document.visibilityState war «${m.vis}» — ohne rAF misst diese Probe nichts`)
+      .toBe('visible')
+    // (1) PRÄMISSE DES ORAKELS: die Gliederungs-Einträge stehen in Dokument-
+    //     ordnung. Wäre das verletzt, wäre «der letzte Eintrag vor der Linie»
+    //     keine gültige Soll-Aussage — dann ist die Probe kaputt, nicht mild.
+    expect(m.monotonVerletzt, `Gliederungs-Einträge nicht in Dokumentordnung (${m.monotonVerletzt} Proben)`).toBe(0)
+    // (2) AUSSAGEKRAFT (§6.7): die Strecke muss wirklich Einträge überquert
+    //     haben. Ohne diese Schranke wäre die Probe an einem zugeklappten Baum
+    //     trivial grün — gemessen: 1 Eintrag über 24'000 px ohne Pausen, 8 mit.
+    expect(m.distinktSoll, `nur ${m.distinktSoll} Gliederungs-Einträge überquert (${m.y} px) — Probe ohne Aussage`)
+      .toBeGreaterThanOrEqual(5)
+    expect(m.gueltig / Math.max(1, m.abErster), `nur ${m.gueltig}/${m.abErster} Proben messbar`)
+      .toBeGreaterThanOrEqual(0.9)
+    // (3) DAS KRITERIUM. Rückstand 0 = die Marke steht im Abschnitt, in dem der
+    //     Leser liest. Ein Eintrag Verzug bleibt erlaubt (React committet den
+    //     Zustand einen Frame später); ab zwei ist es eine Entprellung.
+    expect(m.rueckMax, `Rückstand bis ${m.rueckMax} Einträge (Histogramm ${m.hist}, min ${m.rueckMin})`)
+      .toBeLessThanOrEqual(1)
+    expect(m.treu / Math.max(1, m.gueltig), `nur ${m.treu}/${m.gueltig} Proben am richtigen Eintrag (Histogramm ${m.hist})`)
+      .toBeGreaterThanOrEqual(0.9)
     expect(fehler).toEqual([])
   })
 
