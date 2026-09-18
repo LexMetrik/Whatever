@@ -158,7 +158,12 @@ test.describe('W2·5m — Standort-Marke läuft beim Lesen mit', () => {
     await expect(page.locator('article[id^="art-"]').first()).toBeVisible({ timeout: 20000 })
     await expect(page.locator('[data-toc]')).toBeVisible({ timeout: 10000 })
 
-    await leseZeitreihe(page, 20, 2)
+    // 3 × 30 Schritte ≙ 36'000 px. Die Strecke ist GEMESSEN, nicht gegriffen:
+    // mit abgeschaltetem Mitscroll-Nudge (Sabotage-Probe §6.7) liegt die Marke
+    // bei 2 × 20 noch zufällig im Sichtfeld (unter = −165 px) und der Wächter
+    // wäre einer, der nicht scheitern kann. Ab 3 × 30 läuft sie ohne Nudge klar
+    // heraus (unter = +592 px, [data-toc].scrollTop bleibt 0).
+    await leseZeitreihe(page, 30, 3)
     // Nach dem Anhalten einschwingen lassen (F3-Entprellung 200 ms + Ruhe-Tor
     // AUTO_AUF_RUHE_MS 200 ms + Mitscroll-Nudge).
     await page.waitForTimeout(1200)
