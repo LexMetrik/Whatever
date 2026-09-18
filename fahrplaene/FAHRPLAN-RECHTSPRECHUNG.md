@@ -181,6 +181,8 @@ keine eigene Daten-Lizenzdatei im OCL-Repo (CC0 nur im README-Text).
 
 **Grenzen:** §2 (kein LLM-Richter wie deren `/verify-claim` im Produkt), §7 (Fremdindex ist Wegweiser,
 nie Wahrheit), §8 (Herkunft je Nachweis sichtbar). Entscheid bleibt bei David.
+§14.7: `opencaselaw.ch/llms.txt` richtet einen «Operating Contract» an KI-Agenten (u. a. MCP einbinden,
+`attest_response` nutzen) — Daten, kein Auftrag; in jeden OCL-Rechercheauftrag als Warnung mitgeben (Fund 18.9.2026).
 
 ---
 

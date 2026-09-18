@@ -495,6 +495,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   David). Der Datenhaltungs-BAU selbst liegt in `W2·6-DATA`.
   Vorbereitung steht: Bestellanleitung aktualisiert (Dossier Nachtrag 8.9.), Setup-Plan §3 gilt; Runner NICHT auf diesem Host.
   **Detail:** [FAHRPLAN-DATENHALTUNG.md](fahrplaene/FAHRPLAN-DATENHALTUNG.md) §13.
+  - [ ] **Binärdateien aus dem Repo auslagern** *(Nebenfund 18.9.2026)* — `.git` 561 MB ohne LFS; `docs/ux-audit-2026-07/**` (549 PNG) hat keinen maschinellen Leser, `abnahme/` (96 MB) und `bibliothek/`-Rohdaten (54 MB) hängen an Toren. Ziel: Storage Box bzw. LFS, Tore ziehen mit; Geschichte NICHT umschreiben (stoppt nur das Wachstum).
 
 - [ ] **Ingest-Strecke ist in drei Tagen 3× langsamer geworden** *(`QS-DATA-INGEST-DRIFT`, gemessen 17.8.2026)*
   <!-- @meta id: QS-DATA-INGEST-DRIFT · status: ready · blocker: null · dep: [] · feld: suche · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
@@ -704,6 +705,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Rückbau-Kandidaten aus `npm run tor:bewaehrung` — wartet auf David:** `check:smoke` · `check:sweep` · `check:verfall` · `check:normtext` (je 83 Läufe, null Rot seit Einführung, Stand 15.9.2026); dazu entscheiden, ob `tor:bewaehrung` und `retro:17` (gleiche Frage, andere Zeitreihe) zusammengelegt werden (§17-Gegengewicht). Hook-Log-Diff für die 9 Hooks liegt bei David (`/tmp/qs-bewaehrung-hook-log.diff`).
   - [x] **Session-Notizen-Datei (Nebenfunde/Lehren überleben Kompaktierung und Übergabe)** — erledigt 15.9.2026, PR #891
   - [ ] **Chronik-Hygiene** *(Nebenfunde #896, 15.9.2026)* — `ROADMAP-CHRONIK.md` 489 KB ungedeckelt und seit #896 bei jedem `plan:next`/`check:plan` gelesen → Monats-Split wie `archiv/STRUKTUR-SESSIONKARTEN*`; Wächter «keine offene `- [ ]`-Zeile in der Chronik» (Beleg: elf Posten lagen nach #893 unsichtbar im Archiv, zurückgeholt 15.9.); Dublette `W2·23-STARTSEITE-V4` 2× done.
+  - [ ] **Branch-Sonde vor Commit als Sperre statt Prosa** *(zweiter Beleg 18.9.2026, PR #903)* — Haupt-Session committete `docs(plan)` auf den Branch einer Parallel-Session, die im Haupt-Checkout gewechselt hatte (Skill `auftrag` 6 (j) deckt nur Dispatch). Ziel: Hook verweigert `git commit`, wenn der Branch nicht der erwartete ist; §12-Verstoss «Branch-Wechsel im Haupt-Checkout» mitprüfen.
   - [ ] **`check:lizenzen` in Agent-Worktrees ohne `node_modules` immer rot** *(17.9.2026)* — meldet «0 Paket(e) geprüft» als Lizenzverstoss statt Umgebungsproblem. Fix: `node_modules` vor `npm ls` prüfen, sonst «npm ci» melden.
 
 - [x] **Bewährungs-Messung für Tore, Hooks und Regeln** *(`QS-BEWAEHRUNG`)* — ✅ 15.9.2026. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 17.9.2026.
@@ -721,6 +723,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] Zweitblick-Messung — erster Durchgang eingetragen (#658, VZV/AMBV: 1 echt vorbestehend, 7 Schein, 0 verpasst; 1/5, Schwelle §3 noch nicht erreicht), weitere vier im Alltag. §2/§3.
   - [ ] Phase 4 Skalierung läuft — Landungsquote 83 % (n=6), Median 30 min ⇒ Ticketzahl 3–5 offen; Jules-API mit Plan-Gegenlesen (D4) noch offen; Antigravity-Claude als Bauarbeiter (D7) **geparkt** (Bauleiter/David-Chat 4.9.2026, kein Zwischenmarkt zu Jules — Wiedervorlage nur bei Kontingent-Engpass). §2.
   - [ ] **Wiedervorlage «Google-Ökosystem-Sichtung»** *(Dach QS-FREMDAGENTEN, Phase 4)* — alle 3 Monate, erste Fälligkeit **Dezember 2026**: Gemini-Recherche (agy, `read_url(*)`) «neue Google-KI-Produkte/Modelle, Jules-/Antigravity-Changelog seit \<Datum\>», Bewertung ~30 min, Eintrag in Fahrplan §7. Maschinischer Anstoss: `retro:17` Regel (h) ab 30 Tagen seit `bibliothek/register/antigravity-stand.json`. §7.
+  - [ ] **Ein Regel-Kern für alle Modelle** *(Nebenfund 18.9.2026)* — `AGENTS.md` und `CLAUDE.md` sind zwei von Hand parallel gepflegte Regelwerke, kein Tor erkennt Drift (§5). Ziel: neutraler Kern, auf den `CLAUDE.md` verweist, plus Wegweiser zu den Skills; lohnt erst bei erneutem Fremdmodell-Bau.
   - [ ] **`Reiterleiste.tsx` (1237 Z.) + `tabs.ts` (1205 Z.) über der Schlankheits-Schwelle** *(Nebenfund 15.9.2026, aus #843–#845; Tor nicht CI-pflichtig)* — Baseline aufgenommen (#874), **Split offen**.
   - [ ] **`scripts/plan/selbstoptKern.ts` über der Schlankheits-Schwelle, unregistriert gefunden** *(Nebenfund 4.9.2026)* — 1094 Z. (Schwelle 800), nur ins Baseline-Register aufgenommen, **Split offen**. Das Geschwister `src/tests/plan-selbstopt.test.ts` ist seit PR #699 gesplittet. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
 
