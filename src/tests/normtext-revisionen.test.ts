@@ -408,6 +408,36 @@ describe('extrahiereHeadlineZitate + klassifiziereBerichtigung (rectifies-Wächt
     expect(klassifiziereBerichtigung(zitate, { fremdeSr: '220' })).toBe('uebereinstimmend');
     expect(klassifiziereBerichtigung(zitate, { fremdeSr: '221' })).toBe('abweichend');
   });
+
+  // ── Dritte Falle, live belegt VTS/oc-2025-691 (Normen-Monitor-Lauf 35353185468,
+  // 18.9.2026): DIESELBE Klammer nennt mehrere komma-getrennte AS-Nummern desselben
+  // Jahrgangs («AS 2025 646, 665») — die Original-Änderung (646) UND eine vorangehende
+  // Berichtigung derselben Änderung (665, selbst Genre 900, dateDocument 2025-10-30,
+  // Filestore-Beleg https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/
+  // 2025/665/de/html/fedlex-data-admin-ch-eli-oc-2025-665-de-html.html). Ohne Fix: 0
+  // Treffer (die Regex liess nach der ersten Nummer nur `;SR…` oder `)` zu). Amtlicher
+  // Filestore-Beleg des Fixture-Texts: https://fedlex.data.admin.ch/filestore/fedlex.data.
+  // admin.ch/eli/oc/2025/691/de/html/fedlex-data-admin-ch-eli-oc-2025-691-de-html.html
+  // (Abruf 18.9.2026).
+  it('VTS/oc-2025-691: eine Klammer mit ZWEI komma-getrennten AS-Nummern desselben Jahrgangs liefert beide Fundstellen', () => {
+    const html = ladeFixture('rectifies-vts-oc-2025-691-de.html');
+    const zitate = extrahiereHeadlineZitate(html);
+    expect(zitate.as).toEqual(['AS 2025 646', 'AS 2025 665']);
+    expect(zitate.sr).toEqual(['741.41']);
+    // Bestehende Klassen-Semantik unverändert angewendet (§17: nicht umgedeutet, um Grün zu
+    // erzwingen) — mehr als eine genannte Fundstelle, das rectifies-Tripel (646) trägt nur
+    // eine davon ⇒ sammelberichtigung, wie VVEA/oc-2023-543 und SSV/oc-2024-144.
+    expect(klassifiziereBerichtigung(zitate, { fremdeSr: '741.41', zielFundstelle: 'AS 2025 646' }))
+      .toBe('sammelberichtigung');
+  });
+
+  it('Negativ-Fall: eine Klammer mit nur EINER Nummer liefert weiterhin genau eine Fundstelle (SKV/ChemRRV unverändert)', () => {
+    const zitate = extrahiereHeadlineZitate(
+      '<p>Änderung vom 15. Oktober 2025 (AS 2025 644; SR 741.013)</p>',
+    );
+    expect(zitate.as).toEqual(['AS 2025 644']);
+    expect(zitate.sr).toEqual(['741.013']);
+  });
 });
 
 // ── Stale-Schutz der Ausnahmeliste (Gegenprüfung PR #834, Auflage 3, §6.7) ──

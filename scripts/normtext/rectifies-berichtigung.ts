@@ -45,16 +45,33 @@
  * abschliessend in Kraft.» Sie kann die im Berichtigungstext zitierte Anhangs-Änderung
  * nicht selbst tragen — jolux:rectifies zeigt auf das falsche AS-Dokument. Beide Funde
  * jetzt in `bibliothek/normtext/rectifies-ausnahmen.json`.
+ *
+ * ── Falle c, 18.9.2026, Normen-Monitor-Lauf 35353185468 (Parser-Lücke, KEIN Fedlex-
+ * Datenfehler) ── EINE Klammer kann MEHRERE komma-getrennte AS-Nummern DESSELBEN Jahrgangs
+ * tragen: VTS/oc/2025/691 nennt «Änderung vom 15. Oktober 2025 (AS 2025 646, 665; SR
+ * 741.41)» — Filestore-Beleg
+ * https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2025/691/de/html/
+ * fedlex-data-admin-ch-eli-oc-2025-691-de-html.html (Abruf 18.9.2026). AS 2025 665 ist
+ * selbst eine frühere Berichtigung DERSELBEN Änderung (Genre 900, dateDocument 2025-10-30,
+ * SPARQL `eli/oc/2025/665` — Abruf 18.9.2026), keine unabhängige zweite Änderung. Die
+ * Erst-Fassung der Regex liess nach der ersten Nummer nur `;SR…` oder die schliessende
+ * Klammer zu und verfehlte den Fall vollständig (0 Treffer). Fix: Gruppe 2 der Regex lässt
+ * `(?:\s*,\s*\d+)*` weitere Nummern zu, `extrahiereHeadlineZitate` fügt jede einzeln der
+ * `as`-Menge hinzu. Klassifikation bewusst UNVERÄNDERT gelassen (§17: nicht umgedeutet, um
+ * Grün zu erzwingen) — mehr als eine genannte Fundstelle bleibt `sammelberichtigung`, exakt
+ * wie bei VVEA/oc/2023/543 und SSV/oc/2024/144.
  */
 import { sparqlSelect, type FetchImpl } from '../fedlex-sparql.ts';
 import type { RectifiesInfo } from './revisionen-generieren.ts';
 
 const LANG_DE = '<http://publications.europa.eu/resource/authority/language/DEU>';
 
-/** Headline-Zitat: «vom <Tag>. <Monat> <Jahr> ( AS <jjjj> <nnn> [; SR <x.y> ] )».
- *  `\s*` beidseitig der Klammern (s. Docstring, Fallen a/b, beide live belegt). */
+/** Headline-Zitat: «vom <Tag>. <Monat> <Jahr> ( AS <jjjj> <nnn>[, <mmm>[, …]] [; SR <x.y> ] )».
+ *  `\s*` beidseitig der Klammern (s. Docstring, Fallen a/b, beide live belegt). Gruppe 2 kann
+ *  mehrere komma-getrennte Nummern DESSELBEN Jahrgangs tragen (Falle c, s. Docstring) — die
+ *  Aufsplittung passiert in `extrahiereHeadlineZitate`, nicht hier in der Regex. */
 const HEADLINE_ZITAT =
-  /vom\s+\d{1,2}\.\s*\p{L}+\s+\d{4}\s*\(\s*AS\s+(\d{4})\s+(\d+)(?:;\s*SR\s+([\d.]+)\s*)?\)/gu;
+  /vom\s+\d{1,2}\.\s*\p{L}+\s+\d{4}\s*\(\s*AS\s+(\d{4})\s+(\d+(?:\s*,\s*\d+)*)(?:;\s*SR\s+([\d.]+)\s*)?\)/gu;
 
 export interface HeadlineZitate {
   /** Distinkte «AS jjjj nnn»-Fundstellen, sortiert. */
@@ -72,7 +89,7 @@ export function extrahiereHeadlineZitate(html: string): HeadlineZitate {
   const asSet = new Set<string>();
   const srSet = new Set<string>();
   for (const m of text.matchAll(HEADLINE_ZITAT)) {
-    asSet.add(`AS ${m[1]} ${m[2]}`);
+    for (const nummer of m[2].split(',')) asSet.add(`AS ${m[1]} ${nummer.trim()}`);
     if (m[3]) srSet.add(m[3]);
   }
   return { as: [...asSet].sort(), sr: [...srSet].sort() };
