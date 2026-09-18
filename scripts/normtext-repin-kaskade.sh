@@ -24,11 +24,21 @@
 #      check:confidence-frische liefe rot (Kopplung #888/#890).
 #   6. report:confidence -- --schreibe --datum=…
 #
-# confidence.json geht selbst NUR in den Manifest-Eintrag `dokument.sha` ein,
-# NIE in `artikel.sha` (keine Zirkularität zu Schritt 5, Beleg #888/#890) —
-# ein Manifest-Lauf NACH diesem Skript (Sache des Aufrufers, hier bereits der
-# bestehende unbedingte Schritt "Manifest immer aktuell halten") holt diese
-# letzte Bewegung nach und bleibt der tatsächlich LETZTE DB-berührende Schritt.
+#   7. datenhaltung:manifest      — zweite Hälfte des Sandwichs: confidence.json
+#      geht NUR in den Manifest-Eintrag `dokument.sha` ein, NIE in
+#      `artikel.sha` (keine Zirkularität zu Schritt 5, Beleg #888/#890); ohne
+#      diesen Schlusslauf bliebe check:datenhaltung rot (Bug-Check #907, Opus,
+#      18.9.2026: empirisch belegt). Idempotent — der unbedingte Workflow-
+#      Schritt "Manifest immer aktuell halten" wird danach zum No-Op.
+#
+# Vor Schritt 1 laufen gen:artikel-bestand (liest register.json + bund/*.json;
+# ein Re-Pin mit neuem/entfallenem Artikel machte sonst check:artikel-bestand
+# rot — latenter vierter Einzelfall, Bug-Check #907) und gen:zaehler (Hand-PRs
+# nutzen dieses Skript "statt der Einzelbefehle", Skill `auftrag` 6 (g)).
+#
+# ACHTUNG Hand-Nutzung: das Skript PINNT das Manifest bewusst (Korpus hat sich
+# bewegt = die Ausnahme zu Skill `landung` Ziff. 8 / #717) — nur nach einer
+# echten Normtext-Bewegung fahren, Begründung in den Commit.
 set -euo pipefail
 
 datum=""
@@ -42,9 +52,12 @@ if [ -z "$datum" ]; then
   exit 1
 fi
 
+npm run gen:artikel-bestand
+npm run gen:zaehler
 npm run gen:entstehung-projektion
 npm run gen:entstehung-deckung
 npm run check:verweis-inventar -- --schreiben
 npm run gen:e2e-shards
 npm run datenhaltung:manifest
 npm run report:confidence -- --schreibe --datum="$datum"
+npm run datenhaltung:manifest
