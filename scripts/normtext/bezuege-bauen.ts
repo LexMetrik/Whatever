@@ -337,6 +337,15 @@ export function baueBezugsIndex(
     //   · bge/150_II_105 «(AIMP; BLV 726.91)» — die interkantonale Vereinbarung
     //     über das öffentliche Beschaffungswesen; der Register-key IRSG ist das
     //     Rechtshilfegesetz, dessen fr./it. Alias ebenfalls «AIMP» ist.
+    //
+    // Nachtrag (gemessen 18.9.2026, Nachzug QS-MONITOR-ROT): ohne die
+    // Alias-Sperre 'LC' (ABK_AUSSCHLUSS, entscheide-mapping.ts) feuert
+    // `fremdDefinierteKeys` auf Bundesgerichts-Text DREIMAL statt zweimal —
+    // bge/149_I_161→EPG, bge/149_I_343→AVG, bge/150_II_105→IRSG; mit Sperre
+    // bleiben es die oben gemessenen zwei. BGE 149 I 343 gehört zur selben
+    // Fehlerklasse «(ABK; BLV nnn.nn)» wie die beiden obigen Fälle und ist seit
+    // der LC-Sperre für diesen Riegel unsichtbar — dritter Fall für den oben
+    // beauftragten Folge-Schritt.
     // Sie hier mitzufiltern hiesse, `proNormArtikel` und damit ein
     // AUSGELIEFERTES Bestands-Artefakt zu verändern. Das ist eine fachliche
     // Korrektur am W2·6-NKEY-Kanal, nicht Teil dieser Bau-Einheit — sie gehört
