@@ -6,6 +6,84 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/38/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnung über das Meldeverfahren im Konzern bei der Verrechnungssteuer"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Ordonnance sur la procédure de déclaration au sein du groupe en matière d’impôt anticipé"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Ordinanza sulla procedura di notifica all’interno di un gruppo nell’ambito dell’imposta preventiva"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-04-14"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-07-14"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "642.211"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/6/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verordnungen über die Verrechnungssteuer, über die Stempelabgaben, über die Steuerentlastung schweizerischer Dividenden aus wesentlichen Beteiligungen ausländischer Gesellschaften und zum schweizerisch-amerikanischen Doppel-besteuerungsabkommen vom 2. Oktober 1996 (Wettbewerbsfähigkeit der Schweizer Wirtschaft stärken)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l’ordonnance sur l’impôt anticipé, de l’ordonnance sur les droits de timbre, de l’ordonnance sur le dégrèvement des dividendes suisses payés dans les cas de participations importantes détenues par des sociétés étrangères et de l’ordonnance concernant la convention de double imposition américano-suisse du 2 octobre 1996 (renforcer la compétitivité de l’économie suisse)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell’ordinanza sull’imposta preventiva, dell’ordinanza concernente le tasse di bollo, dell’ordinanza concernente lo sgravio fiscale dei dividendi svizzeri da partecipazioni determinanti di società straniere e dell’ordinanza concernente la convenzione svizzero-americana di doppia imposizione (rafforzare la competitività dell’economia svizzera)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-06-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-10-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "642.211"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/149/cons_1"
     },
     "status": {
@@ -28,12 +106,12 @@
       "value": "Ordinanza che modifica atti normativi in materia di tasse di bollo e di imposta preventiva"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-12-23"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-01-29"
     }
@@ -67,53 +145,14 @@
       "value": "Revisione parziale dell'ordinanza d'esecuzione della legge federale su l'imposta preventiva (Ordinanza dell'imposta preventiva; OIPrev)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-04-08"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-05-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "642.211"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/38/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnung über das Meldeverfahren im Konzern bei der Verrechnungssteuer"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Ordonnance sur la procédure de déclaration au sein du groupe en matière d’impôt anticipé"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Ordinanza sulla procedura di notifica all’interno di un gruppo nell’ambito dell’imposta preventiva"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-04-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-07-14"
     }
   },
   {
@@ -145,53 +184,14 @@
       "value": "Modifica dell'ordinanza sull'imposta preventiva"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-03-23"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "642.211"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/6/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Verordnungen über die Verrechnungssteuer, über die Stempelabgaben, über die Steuerentlastung schweizerischer Dividenden aus wesentlichen Beteiligungen ausländischer Gesellschaften und zum schweizerisch-amerikanischen Doppel-besteuerungsabkommen vom 2. Oktober 1996 (Wettbewerbsfähigkeit der Schweizer Wirtschaft stärken)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l’ordonnance sur l’impôt anticipé, de l’ordonnance sur les droits de timbre, de l’ordonnance sur le dégrèvement des dividendes suisses payés dans les cas de participations importantes détenues par des sociétés étrangères et de l’ordonnance concernant la convention de double imposition américano-suisse du 2 octobre 1996 (renforcer la compétitivité de l’économie suisse)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell’ordinanza sull’imposta preventiva, dell’ordinanza concernente le tasse di bollo, dell’ordinanza concernente lo sgravio fiscale dei dividendi svizzeri da partecipazioni determinanti di società straniere e dell’ordinanza concernente la convenzione svizzero-americana di doppia imposizione (rafforzare la competitività dell’economia svizzera)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-06-19"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-10-12"
     }
   }
 ]

@@ -28,14 +28,43 @@
       "value": "Revisione della legislazione sulla cittadinanza"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2001-01-31"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2001-05-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "141.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/91/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Asylgesetzes und des Ausländer- und Integrationsgesetzes sowie der Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (Asylstrategie 2027)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi sur l'asile et de la loi sur les étrangers et l'intégration ainsi que de l’ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (Stratégie en matière d'asile 2027)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge sull’asilo e della legge sugli stranieri e sull’integrazione nonché dell’ ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (Strategia in materia di asilo 2027)"
     }
   },
   {
@@ -67,12 +96,12 @@
       "value": "03.428 Iniziativa parlamentare. Cognome e cittadinanza dei coniugi. Parità"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-07-03"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-10-10"
     }
@@ -106,12 +135,12 @@
       "value": "06.414 Iniziativa parlamentare. Modifica della legge sulla cittadinanza. Dichiarazione d'annullamento ed estensione del termine  "
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-07-03"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-10-15"
     }
@@ -145,12 +174,12 @@
       "value": "Revisione totale della legge sulla cittadinanza"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-12-16"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-03-22"
     }
@@ -184,12 +213,12 @@
       "value": "08.432 n Iniziativa parlamentare. La Svizzera deve riconoscere i propri figli"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-11-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-02-15"
     }
@@ -223,43 +252,14 @@
       "value": "13.418/13.419/13.420/13.421/13.422 n Iv.pa. Equiparare le unioni domestiche registrate e il matrimonio nella procedura di naturalizzazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-03-30"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-07-06"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "141.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/91/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Asylgesetzes und des Ausländer- und Integrationsgesetzes sowie der Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (Asylstrategie 2027)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi sur l'asile et de la loi sur les étrangers et l'intégration ainsi que de l’ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (Stratégie en matière d'asile 2027)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge sull’asilo e della legge sugli stranieri e sull’integrazione nonché dell’ ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (Strategia in materia di asilo 2027)"
     }
   }
 ]

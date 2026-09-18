@@ -28,12 +28,12 @@
       "value": "Revisione dell'ordinanza sull'infrastruttura aeronautica e nuova ordinanza del DATEC concernente i compiti dei capi d'aerodromo"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-08-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-10-15"
     }

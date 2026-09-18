@@ -6,45 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6007/9/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Systementscheid bei der Erschöpfung im Patentrecht"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Choix du régime de l'épuisement en droit des brevets"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Scelta del sistema di esaurimento nel diritto dei brevetti"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-04-18"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-06-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "232.14"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/63/cons_1"
     },
     "status": {
@@ -67,14 +28,53 @@
       "value": "Avamprogetto di revisione della legge federale sui brevetti d’invenzione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-05-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-09-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "232.14"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6007/9/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Systementscheid bei der Erschöpfung im Patentrecht"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Choix du régime de l'épuisement en droit des brevets"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Scelta del sistema di esaurimento nel diritto dei brevetti"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-04-18"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-06-30"
     }
   }
 ]

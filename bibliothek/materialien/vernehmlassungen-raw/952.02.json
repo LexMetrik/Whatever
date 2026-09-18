@@ -6,45 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/45/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision der Verordnung über die Banken und Sparkassen (BankV) (FinTech-Bewilligung)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de l'ordonnance sur les banques (OB) (autorisation FinTech)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione dell'ordinanza sulle banche (OBCR) (autorizzazione FinTech)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-06-21"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-09-21"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "952.02"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/116/cons_1"
     },
     "status": {
@@ -67,12 +28,12 @@
       "value": "Modifica dell’ordinanza sulle banche"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-04-08"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-07-15"
     }
@@ -106,12 +67,12 @@
       "value": "Modifica dell'art. 3a cpv. 4, lett. d dell'ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-07-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-09-15"
     }
@@ -145,12 +106,12 @@
       "value": "Modifiche dell'ordinanza sulle banche e l'ordinanza sui fondi propri (too big to fail)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-12-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-01-16"
     }
@@ -184,12 +145,12 @@
       "value": "Revisione totale dell'ordinanza sulle banche (OBCR)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-10-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-12-31"
     }
@@ -223,14 +184,53 @@
       "value": "Modifica della legge sulle banche e dell'ordinanza sulle banche (FinTech)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-02-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-05-08"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "952.02"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/45/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision der Verordnung über die Banken und Sparkassen (BankV) (FinTech-Bewilligung)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de l'ordonnance sur les banques (OB) (autorisation FinTech)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione dell'ordinanza sulle banche (OBCR) (autorizzazione FinTech)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-06-21"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-09-21"
     }
   }
 ]

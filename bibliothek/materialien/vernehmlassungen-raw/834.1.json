@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/15/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/48/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,105 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über den Erwerbsersatz für Dienstleistende und bei Mutterschaft (EOG). Länger dauernde Mutterschaftsentschädigung bei längerem Spitalaufenthalt des Neugeborenen."
+      "value": "Standesinitiativen. ZG. Politisches Mandat auch bei Mutterschaft. Änderung der Bundesgesetzgebung. BL. Teilnahme an Parlamentssitzungen während des Mutterschaftsurlaubs. LU. Politikerinnen im Mutterschaftsurlaub. BS Wahrnehmung des Parlamentsmandates während des Mutterschaftsurlaubs"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur les allocations pour perte de gain en cas de service et de maternité (LAPG). Rallonger la durée de l'allocation de maternité en cas de séjour prolongé du nouveau-né à l'hôpital. "
+      "value": "Initiatives cantonales. ZG. Exercer un mandat politique en cas de maternité. Modification de la législation fédérale. BL. Participation aux séances parlementaires pendant le congé de maternité. LU. Femmes politiques en congé maternité. BS. Exercice du mandat parlementaire pendant le congé de maternité"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica della legge federale sulle indennità di perdita di guadagno per chi presta servizio e in caso di maternità (LIPG). Prolungare la durata dell'indennità di maternità in caso di soggiorno ospedaliero prolungato del neonato."
+      "value": "Iniziative cantonali. ZG. Mandato politico anche in caso di maternità. Modifica della legislazione federale. BL. Partecipazione a sedute parlamentari durante il congedo di maternità. LU. Donne in politica in congedo di maternità. BS. Adempimento del mandato parlamentare durante il congedo di maternità"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-03-02"
+      "value": "2022-08-25"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-06-12"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "834.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/82/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Pa.Iv. 18.441 «Indirekter Gegenentwurf zur Vaterschaftsurlaubs-Initiative»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Iv.pa. 18.441 «Contre-projet indirect à l'initiative pour un congé de paternité»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iv.pa. 18.441 «Controprogetto indiretto all'iniziativa sul congedo di paternità»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-11-16"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-03-02"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "834.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/106/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Angleichung der EO-Leistungen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Harmonisation des prestations dans le régime des APG"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Armonizzare le prestazioni delle IPG"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-12-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-04-12"
+      "value": "2022-11-25"
     }
   },
   {
@@ -145,12 +67,12 @@
       "value": "Digitalizzazione nell’ordinamento delle indennità di perdita di guadagno"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-11-02"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-02-15"
     }
@@ -162,36 +84,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/65/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/7/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "MG/AO-Revision 2029"
+      "value": "15.434 n Pa. Iv. (Kessler) Weibel. Mutterschaftsurlaub für hinterbliebene Väter"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision LAAM/OOrgA 2029"
+      "value": "15.434 n Iv. pa. (Kessler) Weibel. Octroyer le congé de maternité au père en cas de décès de la mère"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Revisione LM/OEs 2029"
+      "value": "15.434 n Iv. pa. (Kessler) Weibel. Congedo maternità per padri superstiti"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-09"
+      "value": "2022-02-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-12-11"
+      "value": "2022-05-24"
     }
   },
   {
@@ -201,7 +123,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/13/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/106/cons_1"
     },
     "status": {
       "type": "uri",
@@ -210,27 +132,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Pa.Iv. 13.478 «Einführung einer Adoptionsentschädigung»"
+      "value": "Angleichung der EO-Leistungen"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Iv.pa. 13.478 «Introduire des allocations en cas d'adoption d'un enfant»"
+      "value": "Harmonisation des prestations dans le régime des APG"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Iv.pa. 13.478 «Prevedere indennità in caso di adozione di un bambino»"
+      "value": "Armonizzare le prestazioni delle IPG"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-02-16"
+      "value": "2023-12-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-05-23"
+      "value": "2024-04-12"
     }
   },
   {
@@ -262,12 +184,12 @@
       "value": "Revisione totale della legge federale sulle imprese di armamento della Confederazione (LAAC) e trasformazione della RUAG MRO in una società anonima di diritto speciale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-11-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-03-23"
     }
@@ -301,92 +223,14 @@
       "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-01-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-04-28"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "834.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/48/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Standesinitiativen. ZG. Politisches Mandat auch bei Mutterschaft. Änderung der Bundesgesetzgebung. BL. Teilnahme an Parlamentssitzungen während des Mutterschaftsurlaubs. LU. Politikerinnen im Mutterschaftsurlaub. BS Wahrnehmung des Parlamentsmandates während des Mutterschaftsurlaubs"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Initiatives cantonales. ZG. Exercer un mandat politique en cas de maternité. Modification de la législation fédérale. BL. Participation aux séances parlementaires pendant le congé de maternité. LU. Femmes politiques en congé maternité. BS. Exercice du mandat parlementaire pendant le congé de maternité"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iniziative cantonali. ZG. Mandato politico anche in caso di maternità. Modifica della legislazione federale. BL. Partecipazione a sedute parlamentari durante il congedo di maternità. LU. Donne in politica in congedo di maternità. BS. Adempimento del mandato parlamentare durante il congedo di maternità"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-08-25"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-11-25"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "834.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/7/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "15.434 n Pa. Iv. (Kessler) Weibel. Mutterschaftsurlaub für hinterbliebene Väter"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "15.434 n Iv. pa. (Kessler) Weibel. Octroyer le congé de maternité au père en cas de décès de la mère"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "15.434 n Iv. pa. (Kessler) Weibel. Congedo maternità per padri superstiti"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-02-17"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-05-24"
     }
   },
   {
@@ -418,14 +262,170 @@
       "value": "Revisione della legge federale sull’assicurazione per la vecchiaia e per i superstiti (AVS 2030)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-05-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-09-11"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "834.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/65/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "MG/AO-Revision 2029"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision LAAM/OOrgA 2029"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione LM/OEs 2029"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-09"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-12-11"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "834.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/13/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Pa.Iv. 13.478 «Einführung einer Adoptionsentschädigung»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Iv.pa. 13.478 «Introduire des allocations en cas d'adoption d'un enfant»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iv.pa. 13.478 «Prevedere indennità in caso di adozione di un bambino»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-02-16"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-05-23"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "834.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/15/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über den Erwerbsersatz für Dienstleistende und bei Mutterschaft (EOG). Länger dauernde Mutterschaftsentschädigung bei längerem Spitalaufenthalt des Neugeborenen."
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur les allocations pour perte de gain en cas de service et de maternité (LAPG). Rallonger la durée de l'allocation de maternité en cas de séjour prolongé du nouveau-né à l'hôpital. "
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sulle indennità di perdita di guadagno per chi presta servizio e in caso di maternità (LIPG). Prolungare la durata dell'indennità di maternità in caso di soggiorno ospedaliero prolungato del neonato."
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-03-02"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-06-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "834.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/82/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Pa.Iv. 18.441 «Indirekter Gegenentwurf zur Vaterschaftsurlaubs-Initiative»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Iv.pa. 18.441 «Contre-projet indirect à l'initiative pour un congé de paternité»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iv.pa. 18.441 «Controprogetto indiretto all'iniziativa sul congedo di paternità»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-11-16"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-03-02"
     }
   }
 ]

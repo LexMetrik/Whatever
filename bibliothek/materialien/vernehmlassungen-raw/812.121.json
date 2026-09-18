@@ -28,12 +28,12 @@
       "value": "Diritto di esecuzione (modifica dell’OCStup e dell’OEStup-DFI) concernente la modifica della legge federale sugli stupefacenti (medicamenti a base di canapa)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-08-25"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-11-24"
     }

@@ -6,45 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/112/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Datenschutz bei der Benutzung der elektronischen Infrastruktur des Bundes"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Protection des données résultant de l'utilisation de l'infrastructure électronique de la Confédération"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Protezione dei dati concernenti l'utilizzazione dell'infrastruttura elettronica della Confederazione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2008-12-12"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-03-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "172.010"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/36/cons_1"
     },
     "status": {
@@ -67,12 +28,12 @@
       "value": "Revisione parziale della Legge federale sul Tribunale federale (Legge sul Tribunale federale, BGG)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-03-21"
     }
@@ -106,53 +67,14 @@
       "value": "Modifica della LOGA (protezione dei dati concernenti persone giuridiche da parte di organi federali)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-05-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-09-12"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "172.010"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/54/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Regierungs- und Verwaltungsorganisationsgesetz (Neuordnung der ausserparlamentarischen Kommissionen)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi sur l'organisation du gouvernement et de l'administration (Réorganisation des commissions extra-parlamentaires)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge sull'organizzazione del Governo e dell'Amministrazione (Riorganizzazione delle commissioni extraparlamentari)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-11-29"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-03-15"
     }
   },
   {
@@ -184,14 +106,92 @@
       "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-01-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-04-28"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "172.010"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/54/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Regierungs- und Verwaltungsorganisationsgesetz (Neuordnung der ausserparlamentarischen Kommissionen)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi sur l'organisation du gouvernement et de l'administration (Réorganisation des commissions extra-parlamentaires)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge sull'organizzazione del Governo e dell'Amministrazione (Riorganizzazione delle commissioni extraparlamentari)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-11-29"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-03-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "172.010"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/112/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Datenschutz bei der Benutzung der elektronischen Infrastruktur des Bundes"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Protection des données résultant de l'utilisation de l'infrastructure électronique de la Confédération"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Protezione dei dati concernenti l'utilizzazione dell'infrastruttura elettronica della Confederazione"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2008-12-12"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-03-31"
     }
   }
 ]

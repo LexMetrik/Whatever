@@ -17,7 +17,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/701"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-08-24"
     },
@@ -56,7 +56,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/701"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-08-24"
     },
@@ -95,7 +95,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2012/701"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-08-24"
     },
@@ -134,7 +134,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/583"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-09-11"
     },
@@ -173,7 +173,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/583"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-09-11"
     },
@@ -212,7 +212,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2016/583"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-09-11"
     },
@@ -251,7 +251,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/76"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-03-28"
     },
@@ -290,7 +290,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/76"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-03-28"
     },
@@ -329,7 +329,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2019/76"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-03-28"
     },
@@ -368,7 +368,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/719"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-10-28"
     },
@@ -407,7 +407,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2021/719"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-10-28"
     },

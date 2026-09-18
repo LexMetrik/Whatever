@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/121/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/126/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,105 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Aktionsplan gegen Feinstaub - Änderung der Luftreinhalte-Verordnung (LRV)"
+      "value": "Verordnungspaket Umwelt Herbst 2022"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Plan d'action contre les poussières fines - Modification de l'ordonnance sur la protection de l'air (OPair)"
+      "value": "Paquet d’ordonnances environnementales de l’automne 2022"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Piano d'azione contro le polveri fini - Modifica dell'ordinanza contro l'inquinamento atmosferico (OIAt)"
+      "value": "Pacchetto d’ordinanze in materie ambientale, autunno 2022"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-10-20"
+      "value": "2021-12-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-01-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.318.142.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/33/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Frühling 2018"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet d'ordonnances environnementales du printemps 2018"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pacchetto d'ordinanze in materie ambientale, primavera 2018"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-04-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-07-26"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.318.142.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/17/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Frühling 2021"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet d'ordonnances environnementales du printemps 2021"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pachetto d'ordinanze in materie ambientale, primavera 2021"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-04-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-08-20"
+      "value": "2022-04-05"
     }
   },
   {
@@ -145,14 +67,53 @@
       "value": "Pachetto d’ordinanze in materie ambientale, autunno 2025"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-03-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.318.142.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/121/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Aktionsplan gegen Feinstaub - Änderung der Luftreinhalte-Verordnung (LRV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Plan d'action contre les poussières fines - Modification de l'ordonnance sur la protection de l'air (OPair)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Piano d'azione contro le polveri fini - Modifica dell'ordinanza contro l'inquinamento atmosferico (OIAt)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-10-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-01-31"
     }
   },
   {
@@ -184,12 +145,12 @@
       "value": "Revisione parziale dell'ordinanza contro l'inquinamento atmosferico (OIAt)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-11-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-02-20"
     }
@@ -223,12 +184,12 @@
       "value": "Modifica dell'ordinanza contro l'inquinamento atmosferico (OIAt) nei settori dei motori a combustione stazionari, delle turbine a gas, di altri impianti stazionari nonché dei combustibili e della sorveglianza del mercato."
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-09-30"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-12-19"
     }
@@ -262,12 +223,12 @@
       "value": "Revisione dell'ordinanza contro l'inquinamento atmosferico (OIAt) nell'ambito della combustione del legno"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-06-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-08-31"
     }
@@ -279,7 +240,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/126/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/33/cons_1"
     },
     "status": {
       "type": "uri",
@@ -288,27 +249,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Herbst 2022"
+      "value": "Verordnungspaket Umwelt Frühling 2018"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Paquet d’ordonnances environnementales de l’automne 2022"
+      "value": "Paquet d'ordonnances environnementales du printemps 2018"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Pacchetto d’ordinanze in materie ambientale, autunno 2022"
+      "value": "Pacchetto d'ordinanze in materie ambientale, primavera 2018"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-12-22"
+      "value": "2017-04-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-04-05"
+      "value": "2017-07-26"
     }
   },
   {
@@ -340,14 +301,53 @@
       "value": "Pachetto d'ordinanze in materie ambientale, primavera 2020"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-03-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-06-21"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.318.142.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/17/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnungspaket Umwelt Frühling 2021"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Paquet d'ordonnances environnementales du printemps 2021"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Pachetto d'ordinanze in materie ambientale, primavera 2021"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-04-06"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-08-20"
     }
   }
 ]

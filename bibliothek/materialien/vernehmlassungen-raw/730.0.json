@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/14/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/4/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Revision des Energiegesetzes (Fördermassnahmen ab 2023)"
+      "value": "Änderung des Energiegesetzes"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision de la loi sur l'énergie (mesures à partir de 2023)"
+      "value": "Modification de la loi sur l’énergie"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Revisione della legge sull'energia (Misure di promozione a partire dal 2023)"
+      "value": "Modifica della legge sull’energia"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-04-03"
+      "value": "2022-02-02"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-07-12"
+      "value": "2022-05-23"
     }
   },
   {
@@ -67,199 +67,14 @@
       "value": "Modifiche della legge sull’approvvigionamento elettrico (riserva di elettricità)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-06-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-10-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "730.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/4/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Energiegesetzes"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi sur l’énergie"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge sull’energia"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-02-02"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-05-23"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "730.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/83/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des CO2-Gesetzes im Bereich Fahrzeuge für die Zeit ab 2030 und des Energiegesetzes (Fahrzeug-Label)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de la loi sur le CO2, concernant les véhicules, pour la période débutant en 2030, et de la loi sur l'énergie (étiquette du véhicule)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione della legge sul CO2 (veicoli) per il periodo successivo al 2030 e della legge federale sull’energia (etichetta per i veicoli)"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "730.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/20/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Energieverordnung (Übergangsregelung für elektrische Geräte)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l'ordonnance sur l'énergie (dispositions transitoires pour les appareils électriques) "
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell'ordinanza sull'energia (regolamentazione transitoria per gli apparecchi elettrici)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-11-16"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-11-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "730.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/32/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung von Artikel 8 des Energiegesetzes"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l'article 8 de la loi sur l'énergie"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell'articolo 8 della legge sull'energia"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-10-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-01-07"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "730.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/46/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Energiestrategie 2050"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Stratégie énergétique 2050"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Strategia energetica 2050"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-09-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-01-31"
     }
   },
   {
@@ -291,12 +106,12 @@
       "value": "Legge federale sulle misure di sgravio del bilancio della Confederazione applicabili dal 2027"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-01-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-05-05"
     }
@@ -330,12 +145,12 @@
       "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-06-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-10-31"
     }
@@ -369,14 +184,199 @@
       "value": "Modifica della legge federale sull’energia: obbligo di realizzare un’installazione di base per la ricarica dei veicoli elettrici (attuazione della mozione 23.3936)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-06-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-10-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "730.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/20/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Energieverordnung (Übergangsregelung für elektrische Geräte)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l'ordonnance sur l'énergie (dispositions transitoires pour les appareils électriques) "
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell'ordinanza sull'energia (regolamentazione transitoria per gli apparecchi elettrici)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-11-16"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-11-29"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "730.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/32/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung von Artikel 8 des Energiegesetzes"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l'article 8 de la loi sur l'énergie"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell'articolo 8 della legge sull'energia"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-10-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-01-07"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "730.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/46/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Energiestrategie 2050"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Stratégie énergétique 2050"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Strategia energetica 2050"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-09-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-01-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "730.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/14/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des Energiegesetzes (Fördermassnahmen ab 2023)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de la loi sur l'énergie (mesures à partir de 2023)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione della legge sull'energia (Misure di promozione a partire dal 2023)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-04-03"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-07-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "730.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/83/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des CO2-Gesetzes im Bereich Fahrzeuge für die Zeit ab 2030 und des Energiegesetzes (Fahrzeug-Label)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de la loi sur le CO2, concernant les véhicules, pour la période débutant en 2030, et de la loi sur l'énergie (étiquette du véhicule)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione della legge sul CO2 (veicoli) per il periodo successivo al 2030 e della legge federale sull’energia (etichetta per i veicoli)"
     }
   }
 ]

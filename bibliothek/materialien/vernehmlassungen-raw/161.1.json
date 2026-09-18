@@ -6,162 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6001/16/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz und  Verordnung über die politischen Rechte"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale et ordonnance sur les droits politiques"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale e ordinanza sui diritti politici"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-06-15"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "161.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6007/63/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Pa. Iv. 03.436 „Faire Abstimmungskampagnen“"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Iv. pa. 03.436 „Pour des campagnes de votation équitables“"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iniziativa parlamentare 03.436 „Imparzialità delle campagne elettorali“"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-08-30"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-11-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "161.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/4/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die politischen Rechte (Bedingter Rückzug von Volksinitiativen)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur les droits politiques (Retrait conditionnel d'une initiative populaire)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sui diritti politici (Ritiro condizionato di un'iniziativa popolare)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-03-30"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-04-24"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "161.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/34/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die politischen Rechte (Transparenz bei der Politikfinanzierung)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur les droits politiques (Transparence du financement de la vie politique)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sui diritti politici (Trasparenza del finanziamento della politica)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-05-07"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-08-28"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "161.1"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/15/cons_1"
     },
     "status": {
@@ -184,14 +28,53 @@
       "value": "Modifica della legge federale sui diritti politici (LDP) e dell’ordinanza sui diritti politici (ODP)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-12-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-04-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "161.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6001/16/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz und  Verordnung über die politischen Rechte"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale et ordonnance sur les droits politiques"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale e ordinanza sui diritti politici"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-06-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-09-30"
     }
   },
   {
@@ -230,6 +113,84 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6007/63/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Pa. Iv. 03.436 „Faire Abstimmungskampagnen“"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Iv. pa. 03.436 „Pour des campagnes de votation équitables“"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iniziativa parlamentare 03.436 „Imparzialità delle campagne elettorali“"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-08-30"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-11-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "161.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/4/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die politischen Rechte (Bedingter Rückzug von Volksinitiativen)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur les droits politiques (Retrait conditionnel d'une initiative populaire)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sui diritti politici (Ritiro condizionato di un'iniziativa popolare)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-03-30"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-04-24"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "161.1"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/139/cons_1"
     },
     "status": {
@@ -252,12 +213,12 @@
       "value": "Misure tese a migliorare la compatibilità del diritto internazionale con il diritto nazionale (revisione della Costituzione federale e della legge sui diritti politici)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-03-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-06-28"
     }
@@ -291,12 +252,12 @@
       "value": "Revisione parziale della legge federale sui diritti politici (LDP)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-03-08"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-06-30"
     }
@@ -330,14 +291,53 @@
       "value": "Modifica della legge federale sui diritti politici (passaggio del voto elettronico dalla fase sperimentale all'esercizio ordinario)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-12-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-04-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "161.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/34/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die politischen Rechte (Transparenz bei der Politikfinanzierung)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur les droits politiques (Transparence du financement de la vie politique)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sui diritti politici (Trasparenza del finanziamento della politica)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-05-07"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-08-28"
     }
   }
 ]

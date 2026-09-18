@@ -6,6 +6,45 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/42/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Fahrzeugvorschriften – Teilrevision von vier Verordnungen des Strassenverkehrsrechts"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Prescriptions applicables aux véhicules – révision partielle de quatre ordonnances relevant du droit de la circulation routière"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Prescrizioni per i veicoli – Revisione parziale di quattro ordinanze in materia di circolazione stradale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-06-29"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-10-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.11"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/82/cons_1"
     },
     "status": {
@@ -28,14 +67,209 @@
       "value": "Attuazione della mozione 20.4339 CAPTE-N («Ridurre efficacemente il rumore eccessivo dei motori»): Adattamento di due articoli della legge federale sulla circolazione stradale e di quattro ordinanze"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-12-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-03-23"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.11"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/53/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verkehrsflächen für den Langsamverkehr"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Aires de circulation destinées à la mobilité douce"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Aree destinate alla mobilità lenta"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-06-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-10-18"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.11"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/103/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verkehrsregelnverordnung bezüglich Ausnahmen vom Sonntags- und Nachtfahrverbot, Bewilligungen für Ausnahmetransporte und motorsportliche Veranstaltungen sowie Teilinkraftsetzung einer Änderung des Strassenverkehrsgesetzes"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l’ordonnance sur les règles de la circulation routière en ce qui concerne les dérogations à l’interdiction de circuler le dimanche et de nuit, les autorisations pour les transports spéciaux et les manifestations sportives automobiles, ainsi qu’entrée en vigueur partielle d’une modification de la loi fédérale sur la circulation routière"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell’ordinanza sulle norme della circolazione stradale per quanto riguarda le deroghe al divieto di circolazione domenicale e notturna e i permessi per i trasporti eccezionali e le manifestazioni sportive motoristiche nonché messa in vigore parziale di una modifica della legge federale sulla circolazione stradale."
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-05-14"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-09-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.11"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/71/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung von vier Verordnungen des Strassenverkehrsrechts bezüglich Anpassungen für Elektro-Nutzfahrzeuge bis 4,25 Tonnen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de quatre ordonnances relevant du droit de la circulation routière en ce qui concerne des adaptations pour les véhicules utilitaires électriques dont le poids n’excède pas 4,25 tonnes"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica di quattro ordinanze del codice stradale per l’adeguamento dei requisiti applicabili ai veicoli commerciali elettrici fino a 4,25 tonnellate"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-09-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-01-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.11"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/80/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verkehrsregelnverordnung und der Verkehrszulassungsverordnung sowie Erlass einer Departementsverordnung zur einheitlichen Regelung privater Ausnahmetransportbegleitung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l’ordonnance sur les règles de la circulation routière et de l’ordonnance réglant l’admission à la circulation routière, et édiction d’une ordonnance départementale visant à réglementer de manière uniforme l’accompagnement privé des convois exceptionnels"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell’ordinanza sulle norme della circolazione stradale e dell’ordinanza sull’ammissione alla circolazione, nonché emanazione di un’ordinanza dipartimentale sul disciplinamento uniforme della scorta privata ai trasporti eccezionali"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-08-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-11-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.11"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/97/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderungen von verschiedenen Verordnungen des Strassenverkehrsrechts"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modifications de diverses ordonnances du droit de la circulation routière"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifiche di diverse ordinanze della legislazione sulla circolazione stradale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-05-04"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-07-31"
     }
   },
   {
@@ -67,12 +301,12 @@
       "value": "Modifica dell'ordinanza sulle norme della circolazione stradale (ONC)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-12-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-03-21"
     }
@@ -106,121 +340,14 @@
       "value": "Revisione totale dell'ordinanza sulle norme della circolazione (ONC) e dell'ordinanza sulla segnaletica stradale (OSStr)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-01-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-05-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.11"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/80/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Verkehrsregelnverordnung und der Verkehrszulassungsverordnung sowie Erlass einer Departementsverordnung zur einheitlichen Regelung privater Ausnahmetransportbegleitung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l’ordonnance sur les règles de la circulation routière et de l’ordonnance réglant l’admission à la circulation routière, et édiction d’une ordonnance départementale visant à réglementer de manière uniforme l’accompagnement privé des convois exceptionnels"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell’ordinanza sulle norme della circolazione stradale e dell’ordinanza sull’ammissione alla circolazione, nonché emanazione di un’ordinanza dipartimentale sul disciplinamento uniforme della scorta privata ai trasporti eccezionali"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-08-19"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-11-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.11"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/81/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision von sieben Verordnungen des Strassenverkehrsrechts"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de sept ordonnances du droit de la circulation routière"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale di sette ordinanze in materia di circolazione stradale"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.11"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/97/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderungen von verschiedenen Verordnungen des Strassenverkehrsrechts"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modifications de diverses ordonnances du droit de la circulation routière"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifiche di diverse ordinanze della legislazione sulla circolazione stradale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-05-04"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-07-31"
     }
   },
   {
@@ -252,12 +379,12 @@
       "value": "Maggiore sicurezza sulle biciclette a peda-lata assistita (Ordinanza concernente le esigenze tecniche per i veicoli stradali OETV, ordinanza sulle norme della circolazione stradale ONC e ordinanza sulla segnaletica stradale OSStr)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-05-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-08-15"
     }
@@ -291,12 +418,12 @@
       "value": "Attuazione delle misure contenute nel secondo pacchetto «Via sicura»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-04-16"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-07-12"
     }
@@ -330,12 +457,12 @@
       "value": "Modifica dell'obbligo di controllo gas di scarico"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-05-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-07-31"
     }
@@ -369,12 +496,12 @@
       "value": "Attuazione della mozione 12.3979 «Requisiti agevolati per la mobilità ad assistenza elettrica»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-08-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-11-14"
     }
@@ -408,12 +535,12 @@
       "value": "Introduzione dell'accertamento etilometrico con valore probatorio"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-11-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-02-17"
     }
@@ -447,53 +574,14 @@
       "value": "Deroghe al divieto di guida sotto l'effetto dell'alcol Autorizzazione di gare su circuito con veicoli elettrici Aumento del limite di potenza massima per la patente «A limitata» (cat. UE A2)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-07-16"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-10-16"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.11"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/71/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung von vier Verordnungen des Strassenverkehrsrechts bezüglich Anpassungen für Elektro-Nutzfahrzeuge bis 4,25 Tonnen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de quatre ordonnances relevant du droit de la circulation routière en ce qui concerne des adaptations pour les véhicules utilitaires électriques dont le poids n’excède pas 4,25 tonnes"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica di quattro ordinanze del codice stradale per l’adeguamento dei requisiti applicabili ai veicoli commerciali elettrici fino a 4,25 tonnellate"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-09-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-01-09"
     }
   },
   {
@@ -525,12 +613,12 @@
       "value": "Modifica dei requisiti tecnici e dell'esame d'immatricolazione dei veicoli stradali e introduzione di un nuovo cronotachigrafo"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-01-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-04-25"
     }
@@ -564,12 +652,12 @@
       "value": "Modificazione delle norme della circolazione e della segnaletica stradale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-10-10"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-01-25"
     }
@@ -603,12 +691,12 @@
       "value": "Revisione parziale della legge federale sulla circolazione stradale, della legge sulle multe disciplinari e di otto ordinanze"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-08-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-12-12"
     }
@@ -620,114 +708,26 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/53/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/81/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Verkehrsflächen für den Langsamverkehr"
+      "value": "Teilrevision von sieben Verordnungen des Strassenverkehrsrechts"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Aires de circulation destinées à la mobilité douce"
+      "value": "Révision partielle de sept ordonnances du droit de la circulation routière"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Aree destinate alla mobilità lenta"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-06-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-10-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.11"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/42/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Fahrzeugvorschriften – Teilrevision von vier Verordnungen des Strassenverkehrsrechts"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Prescriptions applicables aux véhicules – révision partielle de quatre ordonnances relevant du droit de la circulation routière"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Prescrizioni per i veicoli – Revisione parziale di quattro ordinanze in materia di circolazione stradale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-06-29"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-10-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.11"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/103/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Verkehrsregelnverordnung bezüglich Ausnahmen vom Sonntags- und Nachtfahrverbot, Bewilligungen für Ausnahmetransporte und motorsportliche Veranstaltungen sowie Teilinkraftsetzung einer Änderung des Strassenverkehrsgesetzes"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l’ordonnance sur les règles de la circulation routière en ce qui concerne les dérogations à l’interdiction de circuler le dimanche et de nuit, les autorisations pour les transports spéciaux et les manifestations sportives automobiles, ainsi qu’entrée en vigueur partielle d’une modification de la loi fédérale sur la circulation routière"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell’ordinanza sulle norme della circolazione stradale per quanto riguarda le deroghe al divieto di circolazione domenicale e notturna e i permessi per i trasporti eccezionali e le manifestazioni sportive motoristiche nonché messa in vigore parziale di una modifica della legge federale sulla circolazione stradale."
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-05-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-09-12"
+      "value": "Revisione parziale di sette ordinanze in materia di circolazione stradale"
     }
   }
 ]

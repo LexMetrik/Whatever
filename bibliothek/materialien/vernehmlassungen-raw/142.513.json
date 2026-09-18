@@ -28,12 +28,12 @@
       "value": "Entrata in vigore parziale della legge federale sulle misure di polizia per la lotta al terrorismo; ordinanza sulle misure di polizia per la lotta al terrorismo"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-06-23"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-10-14"
     }
@@ -67,131 +67,14 @@
       "value": "Ordinanza sull’interoperabilità dei sistemi d’informazione Schengen/Dublino"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-12-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-03-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.513"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/7/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungsanpassungen aufgrund der Übernahme des EU-Migrations- und Asylpakts"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modifications d’ordonnances en raison de la reprise du pacte de l’UE sur la migration et l’asile"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifiche di ordinanze a seguito del recepimento del Patto sulla migrazione e l’asilo dell’UE"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-06-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-13"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.513"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/30/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Ausführungsverordnungen zu den Verfahrensregelungen und Informationssystemen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modifications des ordonnances d'exécution des normes procédurales et systèmes d'information"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica delle ordinanze d'esecuzione delle norme procedurali e dei sistemi d'informazione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-05-01"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-08-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.513"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6021/2/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungsanpassungen aufgrund der Übernahme der SIS-Verordnungen (EU) 2018/1860, 2018/1861 und 2018/1862 (Weiterentwicklungen des Schengen-Besitzstands) und der Anpassung des BGIAA zur Erstellung einer umfassenden Statistik im Rückkehrbereich"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modifications d'ordonnances liées à la reprise des règlements (UE) 2018/1860, 2018/1861 et 2018/1862 (développements de l'acquis de Schengen) et à la modification de la LDEA visant à instaurer une statistique complète sur les retours"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Adeguamenti di ordinanze in seguito al recepimento dei regolamenti SIS (UE) 2018/1860, 2018/1861 e 2018/1862 (sviluppo dell'acquis di Schengen) e all'adeguamento della LSISA al fine di allestire una statistica completa dei rimpatri"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-01-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-04-20"
     }
   },
   {
@@ -223,12 +106,12 @@
       "value": "Modifiche d’ordinanze dovute al recepimento e all’attuazione dei regolamenti (UE) 2021/1133 e (UE) 2021/1134 (sviluppi dell’acquis di Schengen)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-06-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-10-17"
     }
@@ -262,12 +145,12 @@
       "value": "Modifiche di ordinanze a seguito del recepimento e della trasposizione nel diritto svizzero del regolamento (UE) 2024/1717 relativo alla revisione del codice frontiere Schengen (Sviluppo dell’acquis di Schengen) nonché a seguito di una modifica della legge federale sugli stranieri e la loro integrazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-05-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-09-18"
     }
@@ -283,7 +166,7 @@
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
@@ -301,14 +184,131 @@
       "value": "Avamprogetto di ordinanza sui dati dei passeggeri aerei e modifica di altre ordinanze"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-10-08"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-01-22"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.513"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/7/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnungsanpassungen aufgrund der Übernahme des EU-Migrations- und Asylpakts"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modifications d’ordonnances en raison de la reprise du pacte de l’UE sur la migration et l’asile"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifiche di ordinanze a seguito del recepimento del Patto sulla migrazione e l’asilo dell’UE"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-06-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-10-13"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.513"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/30/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Ausführungsverordnungen zu den Verfahrensregelungen und Informationssystemen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modifications des ordonnances d'exécution des normes procédurales et systèmes d'information"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica delle ordinanze d'esecuzione delle norme procedurali e dei sistemi d'informazione"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-05-01"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-08-22"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.513"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6021/2/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnungsanpassungen aufgrund der Übernahme der SIS-Verordnungen (EU) 2018/1860, 2018/1861 und 2018/1862 (Weiterentwicklungen des Schengen-Besitzstands) und der Anpassung des BGIAA zur Erstellung einer umfassenden Statistik im Rückkehrbereich"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modifications d'ordonnances liées à la reprise des règlements (UE) 2018/1860, 2018/1861 et 2018/1862 (développements de l'acquis de Schengen) et à la modification de la LDEA visant à instaurer une statistique complète sur les retours"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Adeguamenti di ordinanze in seguito al recepimento dei regolamenti SIS (UE) 2018/1860, 2018/1861 e 2018/1862 (sviluppo dell'acquis di Schengen) e all'adeguamento della LSISA al fine di allestire una statistica completa dei rimpatri"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-01-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-04-20"
     }
   }
 ]

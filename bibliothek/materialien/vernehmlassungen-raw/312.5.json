@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6002/58/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/38/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Revision des Bundesgesetzes über die Lotterien und Wetten, Entwurf der Expertenkommission"
+      "value": "Vorentwurf zur Teilrevision des Opferhilfegesetzes"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision de la loi fédérale sur les loteries et les paris professionnels, projet de la commission d'experts"
+      "value": "Avant-projet de révision partielle de la loi sur l’aide aux victimes"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Revisione della legge federale sulle lotterie e le scommesse, Progetto della commissione peritale"
+      "value": "Avamprogetto di revisione parziale della legge federale concernente l’aiuto alle vittime di reati"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2002-12-09"
+      "value": "2024-10-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2003-03-31"
+      "value": "2025-01-24"
     }
   },
   {
@@ -67,12 +67,12 @@
       "value": "Legge federale sulle misure di sgravio del bilancio della Confederazione applicabili dal 2027"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-01-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-05-05"
     }
@@ -84,7 +84,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/38/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6002/58/cons_1"
     },
     "status": {
       "type": "uri",
@@ -93,27 +93,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Vorentwurf zur Teilrevision des Opferhilfegesetzes"
+      "value": "Revision des Bundesgesetzes über die Lotterien und Wetten, Entwurf der Expertenkommission"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Avant-projet de révision partielle de la loi sur l’aide aux victimes"
+      "value": "Révision de la loi fédérale sur les loteries et les paris professionnels, projet de la commission d'experts"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Avamprogetto di revisione parziale della legge federale concernente l’aiuto alle vittime di reati"
+      "value": "Revisione della legge federale sulle lotterie e le scommesse, Progetto della commissione peritale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-10-09"
+      "value": "2002-12-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-01-24"
+      "value": "2003-03-31"
     }
   }
 ]

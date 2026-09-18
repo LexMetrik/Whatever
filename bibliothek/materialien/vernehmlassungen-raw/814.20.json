@@ -6,45 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/16/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Botschaft zur Änderung des Gewässerschutzgesetzes (Verursachergerechte Finanzierung der Elimination von Spurenstoffen im Abwasser)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Message concernant la modification de la loi fédérale sur la protection des eaux (Financement selon le principe de causalité de l'élimination des composés traces organiques dans les eaux usées)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Messaggio concernente la modifica della legge federale sulla protezione delle acque (Finanziamento dell'eliminazione delle sostanze in tracce nelle acque di scarico conformemente al principio «chi inquina paga»)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-04-25"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-08-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.20"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/96/cons_1"
     },
     "status": {
@@ -67,12 +28,12 @@
       "value": "Legge federale sulle misure di sgravio del bilancio della Confederazione applicabili dal 2027"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-01-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-05-05"
     }
@@ -106,14 +67,53 @@
       "value": "Modifica della legge federale sulla protezione delle acque per la protezione delle acque sotterranee e l’aumento dell’efficienza depurativa degli impianti di depurazione delle acque di scarico"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-11-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-03-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/16/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Botschaft zur Änderung des Gewässerschutzgesetzes (Verursachergerechte Finanzierung der Elimination von Spurenstoffen im Abwasser)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Message concernant la modification de la loi fédérale sur la protection des eaux (Financement selon le principe de causalité de l'élimination des composés traces organiques dans les eaux usées)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Messaggio concernente la modifica della legge federale sulla protezione delle acque (Finanziamento dell'eliminazione delle sostanze in tracce nelle acque di scarico conformemente al principio «chi inquina paga»)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-04-25"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-08-31"
     }
   }
 ]

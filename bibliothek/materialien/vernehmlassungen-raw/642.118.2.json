@@ -28,12 +28,12 @@
       "value": "Ordinanza del DFF sull'imposta alla fonte nel quadro dell'imposta federale diretta (Ordinanza sull'imposta alla fonte, OIFo)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-08-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-09-28"
     }
@@ -67,12 +67,12 @@
       "value": "Revisione totale dell'ordinanza del DFF sull'imposta alla fonte"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-09-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-12-21"
     }

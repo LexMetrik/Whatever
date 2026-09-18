@@ -28,14 +28,170 @@
       "value": "Modifica dell’ordinanza 1 concernente la legge sul lavoro (OLL 1) e dell’ordinanza 2 concernente la legge sul lavoro (OLL 2)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-03-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-07-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "822.112"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/65/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verordnung 2 zum Arbeitsgesetz zum Arbeitsgesetz (ArGV 2)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l’ordonnance 2 relative à la loi sur le travail (OLT 2)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell’ordinanza 2 concernente la legge sul lavoro (OLL 2)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-05-25"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-09-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "822.112"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/77/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision der Verordnung 2 zum Arbeitsgesetz (ArGV 2): Sonntagsarbeit in städtischen Tourismusquartieren"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de l’ordonnance 2 relative à la loi sur le travail (OLT 2): travail du dimanche dans les quartiers touristiques urbains"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione dell’ordinanza 2 concernente la legge sul lavoro: Lavoro domenicale nei distretti turistici urbani"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-11-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-03-08"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "822.112"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/75/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verordnung 2 zum Arbeitsgesetz: Sonderbestimmungen für die Live-in-Betreuung (Art. 17a - 17e ArGV 2)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l'ordonnance 2 relative à la loi sur le travail : dispositions spéciales l’assistance Live-In  (Art. 17a - 17e OLT 2)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell'ordinanza 2 sulla legge sul lavoro: Disposizioni speciali per l’ assistenza live-in (Art. 17a - 17e OLL 2)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-11-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-03-17"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "822.112"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/1/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verordnung 2 zum Arbeitsgesetz: Sonderbestimmung für Arbeitnehmende mit Unternehmensbeteiligung in Jungunternehmen (Art. 32c ArGV 2)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de l’ordonnance 2 relative à la loi sur le travail : Disposition spéciale pour les travailleurs de jeunes entreprises détenant des participations dans l’entreprise (art. 32c OLT 2)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell’ordinanza 2 concernente la legge sul lavoro: Disposizione speciale per lavoratori di giovani aziende che detengono partecipazioni nell’azienda (art. 32c OLL 2)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-01-07"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-04-14"
     }
   },
   {
@@ -67,12 +223,12 @@
       "value": "Revisione dell'Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-09-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-10-27"
     }
@@ -106,131 +262,14 @@
       "value": "Revisione dell'ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-12-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-02-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "822.112"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/65/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Verordnung 2 zum Arbeitsgesetz zum Arbeitsgesetz (ArGV 2)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l’ordonnance 2 relative à la loi sur le travail (OLT 2)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell’ordinanza 2 concernente la legge sul lavoro (OLL 2)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-05-25"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-09-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "822.112"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/75/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Verordnung 2 zum Arbeitsgesetz: Sonderbestimmungen für die Live-in-Betreuung (Art. 17a - 17e ArGV 2)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l'ordonnance 2 relative à la loi sur le travail : dispositions spéciales l’assistance Live-In  (Art. 17a - 17e OLT 2)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell'ordinanza 2 sulla legge sul lavoro: Disposizioni speciali per l’ assistenza live-in (Art. 17a - 17e OLL 2)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-11-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-03-17"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "822.112"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/77/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision der Verordnung 2 zum Arbeitsgesetz (ArGV 2): Sonntagsarbeit in städtischen Tourismusquartieren"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de l’ordonnance 2 relative à la loi sur le travail (OLT 2): travail du dimanche dans les quartiers touristiques urbains"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione dell’ordinanza 2 concernente la legge sul lavoro: Lavoro domenicale nei distretti turistici urbani"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-11-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-03-08"
     }
   },
   {
@@ -262,12 +301,12 @@
       "value": "Modifica dell'articolo 25 dell'Ordinanza 2 concernente la legge sul lavoro (OLL 2)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-11-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-01-31"
     }
@@ -301,12 +340,12 @@
       "value": "Modifica dell'ordinanza 2 concernente la legge sul lavoro (OLL 2)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-02-28"
     }
@@ -340,12 +379,12 @@
       "value": "Revisione dell'Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinante categorie di aziende e di lavoratori)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-05-02"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-07-31"
     }
@@ -379,12 +418,12 @@
       "value": "Revisione dell'Ordinanza 2 concernente la legge sul lavoro (OLL 2)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-02-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-05-06"
     }
@@ -418,12 +457,12 @@
       "value": "Modifica dell'ordinanza 2 concernente la legge sul lavoro - Disposizioni speciali per studi veterinari e cliniche per animali (art. 21 OLL 2)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-03-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-06-27"
     }
@@ -457,12 +496,12 @@
       "value": "Modifica dell'ordinanza 2 concernente la legge sul lavoro  - Disposizioni speciali per i lavoratori con compiti legati alle tecnologie dell'informazione e della comunicazione (art. 32<i>a</i> OLL 2)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-07-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-10-31"
     }
@@ -496,53 +535,14 @@
       "value": "Modifica dell'ordinanza 2 concernente la legge sul lavoro (OLL 2): disposizioni speciali per aziende di costruzione e di manutenzione che effettuano lavori su strade nazionali"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-08-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-11-17"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "822.112"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/1/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Verordnung 2 zum Arbeitsgesetz: Sonderbestimmung für Arbeitnehmende mit Unternehmensbeteiligung in Jungunternehmen (Art. 32c ArGV 2)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de l’ordonnance 2 relative à la loi sur le travail : Disposition spéciale pour les travailleurs de jeunes entreprises détenant des participations dans l’entreprise (art. 32c OLT 2)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell’ordinanza 2 concernente la legge sul lavoro: Disposizione speciale per lavoratori di giovani aziende che detengono partecipazioni nell’azienda (art. 32c OLL 2)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-01-07"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-14"
     }
   }
 ]

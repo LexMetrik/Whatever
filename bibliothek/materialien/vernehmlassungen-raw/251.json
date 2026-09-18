@@ -28,170 +28,14 @@
       "value": "Revisione parziale della legge sui cartelli (LCart)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-11-24"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-03-11"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "251"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/58/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Kartellgesetzes als indirekter Gegenvorschlag zur Eidgenössischen Volksinitiative «Stop der Hochpreisinsel - für faire Preise (Fair-Preis-Initiative)»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi sur les cartels en tant que contre-projet indirect à l'initiative populaire fédérale «Stop à l'îlot de cherté - pour des prix équitables (initiative pour des prix équitables)»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge sui cartelli come controprogetto indiretto all'iniziativa popolare federale «Stop all'isola dei prezzi elevati - per prezzi equi (iniziativa per prezzi equi)»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-08-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-11-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "251"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/25/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Kartellgesetz (KG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi sur les cartels (LCart)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge sui cartelli (LCart)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-09-18"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-12-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "251"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/101/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über Kartelle und andere Wettbewerbsbeschränkungen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur les cartels et autres restrictions à la concurrence"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sui cartelli e altre limitazioni alla concorrenza"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-06-30"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-11-19"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "251"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/71/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilkartellverbot mit Rechtfertigungsmöglichkeit: Anpassung von Artikel 5 Kartellgesetz gemäss Entscheid des Bundesrates vom 17. August 2011"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Interdiction partielle des cartels avec possibilité de justification : adaptation de l'art. 5 de la loi sur les cartels conformément à la décision du Conseil fédéral du 17 août 2011"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Divieto parziale dei cartelli con possibilità di giustificazione: modifica dell'articolo 5 della legge sui cartelli conformemente alla decisione del Consiglio federale del 17 agosto 2011"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-09-23"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-10-05"
     }
   },
   {
@@ -223,12 +67,12 @@
       "value": "Modifica della legge sui cartelli (Riforma delle autorità in materia di concorrenza)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-06-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-10-06"
     }
@@ -262,14 +106,170 @@
       "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-06-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-10-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "251"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/25/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Kartellgesetz (KG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi sur les cartels (LCart)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge sui cartelli (LCart)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-09-18"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-12-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "251"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/101/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über Kartelle und andere Wettbewerbsbeschränkungen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur les cartels et autres restrictions à la concurrence"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sui cartelli e altre limitazioni alla concorrenza"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-06-30"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-11-19"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "251"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/71/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilkartellverbot mit Rechtfertigungsmöglichkeit: Anpassung von Artikel 5 Kartellgesetz gemäss Entscheid des Bundesrates vom 17. August 2011"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Interdiction partielle des cartels avec possibilité de justification : adaptation de l'art. 5 de la loi sur les cartels conformément à la décision du Conseil fédéral du 17 août 2011"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Divieto parziale dei cartelli con possibilità di giustificazione: modifica dell'articolo 5 della legge sui cartelli conformemente alla decisione del Consiglio federale del 17 agosto 2011"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-09-23"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-10-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "251"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/58/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Kartellgesetzes als indirekter Gegenvorschlag zur Eidgenössischen Volksinitiative «Stop der Hochpreisinsel - für faire Preise (Fair-Preis-Initiative)»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi sur les cartels en tant que contre-projet indirect à l'initiative populaire fédérale «Stop à l'îlot de cherté - pour des prix équitables (initiative pour des prix équitables)»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge sui cartelli come controprogetto indiretto all'iniziativa popolare federale «Stop all'isola dei prezzi elevati - per prezzi equi (iniziativa per prezzi equi)»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-08-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-11-22"
     }
   }
 ]

@@ -6,45 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/2/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Totalrevision der Verordnung vom 20. Januar 2010 über die Ausstellung von Reisedokumenten für ausländische Personen (RDV)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision totale de l'ordonnance du 20 janvier 2010 sur l'établissement de documents de voyage pour étrangers (ODV)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione totale dell'ordinanza del 20 gennaio 2010 concernente il rilascio di documenti di viaggio per stranieri (ODV)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-01-11"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-03-12"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "143.5"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/65/cons_1"
     },
     "status": {
@@ -67,14 +28,82 @@
       "value": "Modifica delle ordinanze esecutive relativi alle limitazioni per i viaggi all’estero (ODV, OASA, , OEV, OEAE e OAsi 1)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-10-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-02-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "143.5"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/83/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Ausführungsverordnungen (RDV, AsylV 1, VEV, VVWAL und VZAE) (Einschränkungen für Reisen ins Ausland; 20.063)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification des ordonnances d’exécution (ODV, OA 1, OEV, OERE et OASA) (Restriction des voyages à l’étranger ; 20.063)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica delle ordinanze esecutive (ODV, OAsi 1, OEV, OEAE e OASA) (Limitazioni per i viaggi all’estero; 20.063)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "143.5"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/2/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Totalrevision der Verordnung vom 20. Januar 2010 über die Ausstellung von Reisedokumenten für ausländische Personen (RDV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision totale de l'ordonnance du 20 janvier 2010 sur l'établissement de documents de voyage pour étrangers (ODV)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione totale dell'ordinanza del 20 gennaio 2010 concernente il rilascio di documenti di viaggio per stranieri (ODV)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-01-11"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-03-12"
     }
   },
   {
@@ -106,12 +135,12 @@
       "value": "Ordinanze d'esecuzione per il recepimento del regolamento (UE) 2016/1624 relativo alla guardia di frontiera e costiera europea; nonché altre modifiche di ordinanze nel settore della migrazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-01-31"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-04-30"
     }
@@ -145,43 +174,14 @@
       "value": "Modifica delle ordinanze d'esecuzione delle norme procedurali e dei sistemi d'informazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-05-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-08-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "143.5"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/83/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Ausführungsverordnungen (RDV, AsylV 1, VEV, VVWAL und VZAE) (Einschränkungen für Reisen ins Ausland; 20.063)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification des ordonnances d’exécution (ODV, OA 1, OEV, OERE et OASA) (Restriction des voyages à l’étranger ; 20.063)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica delle ordinanze esecutive (ODV, OAsi 1, OEV, OEAE e OASA) (Limitazioni per i viaggi all’estero; 20.063)"
     }
   }
 ]

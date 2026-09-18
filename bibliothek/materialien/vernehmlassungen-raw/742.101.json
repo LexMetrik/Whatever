@@ -6,45 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/36/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Bundesgesetzes über das Bundesgericht (Bundesgerichtsgesetz, BGG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de la loi fédérale sur le Tribunal fédéral (Loi sur le Tribunal fédéral, LTF)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della Legge federale sul Tribunale federale (Legge sul Tribunale federale, BGG)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-12-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-03-21"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "742.101"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/124/cons_1"
     },
     "status": {
@@ -67,12 +28,12 @@
       "value": "Attuazione del pilastro tecnico del 4° pacchetto ferroviario dell’UE - 2a fase"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-12-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-03-31"
     }
@@ -106,14 +67,92 @@
       "value": "Revisione parziale della Legge federale sulla geoinformazione (GeoIG)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-05-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-09-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "742.101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/36/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des Bundesgesetzes über das Bundesgericht (Bundesgerichtsgesetz, BGG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de la loi fédérale sur le Tribunal fédéral (Loi sur le Tribunal fédéral, LTF)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale della Legge federale sul Tribunale federale (Legge sul Tribunale federale, BGG)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-12-06"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-03-21"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "742.101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/47/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Paket «Stabilisierung und Weiterentwicklung der Beziehungen Schweiz–EU»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Paquet «stabilisation et développement des relations Suisse-UE»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-06-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-10-31"
     }
   },
   {
@@ -145,12 +184,12 @@
       "value": "Seconda fase della riforma delle ferrovie 2"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-06-24"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-10-16"
     }
@@ -184,53 +223,14 @@
       "value": "Messaggio concernente il finanziamento dell'esercizio e del mantenimento della qualità dell'infrastruttura delle ferrovie negli anni 2017&#8722;2020"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-10-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-01-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "742.101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/47/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Paket «Stabilisierung und Weiterentwicklung der Beziehungen Schweiz–EU»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet «stabilisation et développement des relations Suisse-UE»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-06-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-31"
     }
   }
 ]

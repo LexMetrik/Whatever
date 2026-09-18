@@ -6,45 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/36/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Bundesgesetzes über das Bundesgericht (Bundesgerichtsgesetz, BGG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de la loi fédérale sur le Tribunal fédéral (Loi sur le Tribunal fédéral, LTF)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della Legge federale sul Tribunale federale (Legge sul Tribunale federale, BGG)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-12-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-03-21"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "830.1"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/69/cons_1"
     },
     "status": {
@@ -67,12 +28,12 @@
       "value": "Legge federale sulla notificazione della posta nei fine settimana e nei giorni festivi"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-02-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-05-24"
     }
@@ -84,7 +45,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/44/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/36/cons_1"
     },
     "status": {
       "type": "uri",
@@ -93,27 +54,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung des Zivilgesetzbuches (ZGB; Adoption)"
+      "value": "Teilrevision des Bundesgesetzes über das Bundesgericht (Bundesgerichtsgesetz, BGG)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification du code civil (CC; Droit de l'adoption)"
+      "value": "Révision partielle de la loi fédérale sur le Tribunal fédéral (Loi sur le Tribunal fédéral, LTF)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica del codice civile (CC; Diritto dell'adozione)"
+      "value": "Revisione parziale della Legge federale sul Tribunale federale (Legge sul Tribunale federale, BGG)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-11-29"
+      "value": "2024-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-03-31"
+      "value": "2025-03-21"
     }
   },
   {
@@ -145,14 +106,53 @@
       "value": "18.455 n Iv. pa. Grossen Jürg. Consentire l’indipendenza tenendo conto della volontà delle parti"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-07-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-11-01"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "830.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/44/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Zivilgesetzbuches (ZGB; Adoption)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code civil (CC; Droit de l'adoption)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del codice civile (CC; Diritto dell'adozione)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-11-29"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-03-31"
     }
   }
 ]

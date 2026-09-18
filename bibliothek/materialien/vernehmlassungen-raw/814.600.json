@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/77/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/126/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,66 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Herbst 2018"
+      "value": "Verordnungspaket Umwelt Herbst 2022"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Paquet d'ordonnances environnementales de l'automne 2018"
+      "value": "Paquet d’ordonnances environnementales de l’automne 2022"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Pachetto di ordinanze in materia ambientale, autunno 2018"
+      "value": "Pacchetto d’ordinanze in materie ambientale, autunno 2022"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-10-17"
+      "value": "2021-12-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-02-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.600"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6021/12/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Frühling 2022"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet d'ordonnances environnementales du printemps 2022"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pachetto d'ordinanze in materie ambientale, primavera 2022"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-03-11"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-06-18"
+      "value": "2022-04-05"
     }
   },
   {
@@ -106,12 +67,12 @@
       "value": "Pacchetto d’ordinanze in materie ambientale, autunno 2024"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-12-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-04-15"
     }
@@ -145,12 +106,12 @@
       "value": "Pachetto d’ordinanze in materie ambientale, primavera 2025"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-05-24"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-09-16"
     }
@@ -184,14 +145,131 @@
       "value": "Pachetto d’ordinanze in materie ambientale, autunno 2025"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-03-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.600"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/123/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnungspaket Umwelt Herbst 2026"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Paquet d’ordonnances environnementales de l’automne 2026"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Pachetto d’ordinanze in materie ambientale, autunno 2026"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-12-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-04-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.600"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/57/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnungspaket Umwelt Frühling 2026"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Paquet d’ordonnances environnementales du printemps 2026"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Pacchetto d’ordinanze in materie ambientale, primavera 2026"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-06-25"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-10-16"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.600"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/90/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnungspaket Umwelt Frühling 2027"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Paquet d’ordonnances environnementales du printemps 2027"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Pachetto d’ordinanze in materie ambientale, primavera 2027"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-07"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-12-07"
     }
   },
   {
@@ -223,12 +301,12 @@
       "value": "Revisione totale l'Ordinanza tecnica sui rifiuti (TVA)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-07-10"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-11-30"
     }
@@ -262,12 +340,12 @@
       "value": "Pachetto di ordinanze in materia ambientale, autunno 2017"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-10-31"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-02-28"
     }
@@ -279,7 +357,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/126/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/77/cons_1"
     },
     "status": {
       "type": "uri",
@@ -288,105 +366,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Herbst 2022"
+      "value": "Verordnungspaket Umwelt Herbst 2018"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Paquet d’ordonnances environnementales de l’automne 2022"
+      "value": "Paquet d'ordonnances environnementales de l'automne 2018"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Pacchetto d’ordinanze in materie ambientale, autunno 2022"
+      "value": "Pachetto di ordinanze in materia ambientale, autunno 2018"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-12-22"
+      "value": "2017-10-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-04-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.600"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/57/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Frühling 2026"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet d’ordonnances environnementales du printemps 2026"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pacchetto d’ordinanze in materie ambientale, primavera 2026"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-06-25"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-16"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.600"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/123/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Herbst 2026"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet d’ordonnances environnementales de l’automne 2026"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pachetto d’ordinanze in materie ambientale, autunno 2026"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-12-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-12"
+      "value": "2018-02-05"
     }
   },
   {
@@ -418,12 +418,12 @@
       "value": "Pachetto d'ordinanze in materie ambientale, primavera 2020"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-03-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-06-21"
     }
@@ -435,36 +435,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/90/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6021/12/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Frühling 2027"
+      "value": "Verordnungspaket Umwelt Frühling 2022"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Paquet d’ordonnances environnementales du printemps 2027"
+      "value": "Paquet d'ordonnances environnementales du printemps 2022"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Pachetto d’ordinanze in materie ambientale, primavera 2027"
+      "value": "Pachetto d'ordinanze in materie ambientale, primavera 2022"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-07"
+      "value": "2021-03-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-12-07"
+      "value": "2021-06-18"
     }
   }
 ]

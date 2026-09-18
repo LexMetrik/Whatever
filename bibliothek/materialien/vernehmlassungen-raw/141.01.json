@@ -28,12 +28,12 @@
       "value": "Nuovo sistema di finanziamento Asilo; orientamento al contesto svizzero dei certificati linguistici nell’ambito di una procedura in materia di diritto degli stranieri o di cittadinanza"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-06-23"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-10-14"
     }

@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/99/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/1/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Teilrevision der Verordnung über die eidgenössische Berufsmaturität (BMV)"
+      "value": "Totalrevision der Verordnung über die eidgenössische Berufsmaturität (BMV)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision partielle de l'ordonnance sur la maturité professionnelle fédérale (OMPr)"
+      "value": "Révision totale de l’ordonnance sur la maturité professionnelle fédérale (OMPr)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Revisione parziale dell'ordinanza sulla maturità professionale federale (OMPr)"
+      "value": "Revisione totale dell’ordinanza sulla maturità professionale federale (OMPr)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-03-15"
+      "value": "2024-04-10"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-05-17"
+      "value": "2024-07-24"
     }
   },
   {
@@ -67,12 +67,12 @@
       "value": "Ordinanza sulla maturità professionale federale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-04-23"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-08-15"
     }
@@ -106,12 +106,12 @@
       "value": "Revisione parziale dell'Ordinanza sulla maturità professionale federale (OMPr)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-03-08"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-05-07"
     }
@@ -123,7 +123,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/1/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/99/cons_1"
     },
     "status": {
       "type": "uri",
@@ -132,27 +132,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Totalrevision der Verordnung über die eidgenössische Berufsmaturität (BMV)"
+      "value": "Teilrevision der Verordnung über die eidgenössische Berufsmaturität (BMV)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision totale de l’ordonnance sur la maturité professionnelle fédérale (OMPr)"
+      "value": "Révision partielle de l'ordonnance sur la maturité professionnelle fédérale (OMPr)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Revisione totale dell’ordinanza sulla maturità professionale federale (OMPr)"
+      "value": "Revisione parziale dell'ordinanza sulla maturità professionale federale (OMPr)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-04-10"
+      "value": "2016-03-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-07-24"
+      "value": "2016-05-17"
     }
   }
 ]

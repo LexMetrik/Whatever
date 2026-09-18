@@ -28,12 +28,12 @@
       "value": "Revisione delle ordinanze 1 e 3 concernenti la legge sul lavoro (Sistema di informazione e di documentazione della Confederazione per l’attuazione e l’esecuzione dell’obbligo relativo all’utilizzazione corretta dei prodotti chimici sul posto di lavoro)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-09-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-12-01"
     }
@@ -67,12 +67,12 @@
       "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-01-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-04-28"
     }
