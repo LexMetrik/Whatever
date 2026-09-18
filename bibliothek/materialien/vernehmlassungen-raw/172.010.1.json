@@ -28,12 +28,12 @@
       "value": "Modifica dell’ordinanza sull’organizzazione del Governo e dell’Amministrazione (Uso dei media sociali da parte dell’Amministrazione federale)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-06-16"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-10-07"
     }
@@ -67,12 +67,12 @@
       "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-01-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-04-28"
     }

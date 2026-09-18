@@ -17,7 +17,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/848"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2005-05-18"
     },
@@ -56,7 +56,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/848"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2005-05-18"
     },
@@ -95,7 +95,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2007/848"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2005-05-18"
     },
@@ -134,7 +134,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/251"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2005-05-18"
     },
@@ -173,7 +173,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/251"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2005-05-18"
     },
@@ -212,7 +212,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/251"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2005-05-18"
     },
@@ -251,7 +251,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/366"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2005-11-23"
     },
@@ -290,7 +290,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/366"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2005-11-23"
     },
@@ -329,7 +329,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/366"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2005-11-23"
     },
@@ -368,7 +368,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/374"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2005-11-23"
     },
@@ -407,7 +407,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/374"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2005-11-23"
     },
@@ -446,7 +446,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2008/374"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2005-11-23"
     },
@@ -485,7 +485,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/349"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-12-21"
     },
@@ -524,7 +524,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/349"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-12-21"
     },
@@ -563,7 +563,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2009/349"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-12-21"
     },
@@ -602,7 +602,7 @@
       "value": "https://fedlex.data.admin.ch/eli/oc/2026/232"
     },
     "dateDoc": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-11-16"
     },

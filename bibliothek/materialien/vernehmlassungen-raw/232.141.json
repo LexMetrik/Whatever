@@ -6,45 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/50/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision der Verordnung über die Erfindungspatente (Patentverordnung, PatV)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Projet de révision partielle de l'ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Progetto di revisione parziale dell'ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-06-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-10-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "232.141"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/95/cons_1"
     },
     "status": {
@@ -67,14 +28,53 @@
       "value": "Revisione totale dell’ordinanza sui brevetti d'invenzione (ordinanza sui brevetti, OBI)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-04-30"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-08-22"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "232.141"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/50/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision der Verordnung über die Erfindungspatente (Patentverordnung, PatV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Projet de révision partielle de l'ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Progetto di revisione parziale dell'ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-06-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-10-20"
     }
   }
 ]

@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/39/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/47/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Bundesgesetz zur Optimierung der flankierenden Massnahmen zur Personenfreizügigkeit"
+      "value": "Paket «Stabilisierung und Weiterentwicklung der Beziehungen Schweiz–EU»"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Loi fédérale sur l'optimisation des mesures d'accompagnement à la libre circulation des personnes"
+      "value": "Paquet «stabilisation et développement des relations Suisse-UE»"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Legge federale sull'ottimizzazzione delle misure collaterali alla libera circolazione delle persone"
+      "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-09-19"
+      "value": "2025-06-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-12-19"
+      "value": "2025-10-31"
     }
   },
   {
@@ -67,14 +67,53 @@
       "value": "Riorganizzazione delle commissioni extraparlamentari nel quadro della verifica 2025"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-01-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-04-28"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "823.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/39/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz zur Optimierung der flankierenden Massnahmen zur Personenfreizügigkeit"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur l'optimisation des mesures d'accompagnement à la libre circulation des personnes"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sull'ottimizzazzione delle misure collaterali alla libera circolazione delle persone"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-09-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-12-19"
     }
   },
   {
@@ -106,53 +145,14 @@
       "value": "Modifica della legge sui lavoratori distaccati"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-04-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-08-12"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "823.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/47/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Paket «Stabilisierung und Weiterentwicklung der Beziehungen Schweiz–EU»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet «stabilisation et développement des relations Suisse-UE»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-06-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-31"
     }
   }
 ]

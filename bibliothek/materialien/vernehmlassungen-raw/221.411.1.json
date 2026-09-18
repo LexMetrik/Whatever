@@ -6,6 +6,35 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/84/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des Obligationenrechts und Änderung der Handelsregistersverordnung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision du Code des obligations et modification de l'ordonnance sur le registre du commerce"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sugli aiuti finanziari a favore dell'Instituto del federalismo"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "221.411.1"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/9/cons_1"
     },
     "status": {
@@ -28,43 +57,14 @@
       "value": "Modifica dell'ordinanza sul registro di commercio e dell'ordinanza sulle tasse in materia di registro di commercio"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-02-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-05-27"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "221.411.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/84/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des Obligationenrechts und Änderung der Handelsregistersverordnung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision du Code des obligations et modification de l'ordonnance sur le registre du commerce"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sugli aiuti finanziari a favore dell'Instituto del federalismo"
     }
   }
 ]

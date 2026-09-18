@@ -6,6 +6,45 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/64/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision Raumplanungsgesetz (2. Etappe mit Gegenvorschlag zur Landschaftsinitiative)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de la loi sur l’aménagement du territoire (2e étape avec un contre-projet à l’initiative pour le paysage)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale della legge sulla pianificazione del territorio (seconda fase con controprogetto all’Iniziativa paesaggio)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-05-21"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-09-13"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "700"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6007/106/cons_1"
     },
     "status": {
@@ -28,92 +67,14 @@
       "value": "Revisione della legge sulla pianificazione del territorio"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-12-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-04-17"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "700"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/127/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "04.472 Pa. Iv. Pferdehaltung in der Landwirtschaftszone (Darbellay)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "04.472 Iv. pa. Garde de chevaux en zone agricole (Darbellay)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "04.472. Iv. pa. Tenuta di cavalli nella zona agricola (Darbellay)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-12-05"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-03-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "700"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/55/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Zweite Etappe der Teilrevision des Raumplanungsgesetzes: Vernehmlassung zu neuen Elementen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Deuxième étape de la révision partielle de la loi sur l'aménagement du territoire: consultation sur de nouveaux éléments"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Seconda tappa della revisione parziale della legge sulla pianificazione del territorio: consultazione su nuovi elementi"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-06-21"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-08-31"
     }
   },
   {
@@ -145,14 +106,53 @@
       "value": "08.314 Iv. ct. SG. Costruzioni al di fuori delle zone edificabili"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-04-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-06-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "700"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/127/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "04.472 Pa. Iv. Pferdehaltung in der Landwirtschaftszone (Darbellay)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "04.472 Iv. pa. Garde de chevaux en zone agricole (Darbellay)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "04.472. Iv. pa. Tenuta di cavalli nella zona agricola (Darbellay)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-12-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-03-05"
     }
   },
   {
@@ -184,12 +184,12 @@
       "value": "Seconda fase delle revisione della legge sulla pianificazione del territorio (LPT)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-12-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-05-15"
     }
@@ -201,7 +201,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/64/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/55/cons_1"
     },
     "status": {
       "type": "uri",
@@ -210,27 +210,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Teilrevision Raumplanungsgesetz (2. Etappe mit Gegenvorschlag zur Landschaftsinitiative)"
+      "value": "Zweite Etappe der Teilrevision des Raumplanungsgesetzes: Vernehmlassung zu neuen Elementen"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision partielle de la loi sur l’aménagement du territoire (2e étape avec un contre-projet à l’initiative pour le paysage)"
+      "value": "Deuxième étape de la révision partielle de la loi sur l'aménagement du territoire: consultation sur de nouveaux éléments"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Revisione parziale della legge sulla pianificazione del territorio (seconda fase con controprogetto all’Iniziativa paesaggio)"
+      "value": "Seconda tappa della revisione parziale della legge sulla pianificazione del territorio: consultazione su nuovi elementi"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-05-21"
+      "value": "2017-06-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-09-13"
+      "value": "2017-08-31"
     }
   }
 ]

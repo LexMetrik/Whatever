@@ -6,6 +6,45 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Introduction du trust (modification du code des obligations)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-01-12"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-04-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/84/cons_1"
     },
     "status": {
@@ -28,599 +67,14 @@
       "value": "Recepimento e trasposizione nel diritto svizzero degli scambi di note tra la Svizzera e l’UE concernenti il recepimento dei regolamenti (UE) 2021/1150 e (UE) 2021/1152 per quanto riguarda la definizione delle condizioni di accesso agli altri sistemi di informazione dell’UE ai fini del sistema europeo di informazione e autorizzazione ai viaggi (ETIAS) (Sviluppi dell’acquis di Schengen)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-08-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-10-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/11/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Römer Statut des Internationalen Strafgerichtshofs; Ratifizierung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Statut de Rome de la Cour pénale internationale; ratification"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Statuto di Roma della Corte penale internazionale; ratifica"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-06-05"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-09-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/3/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "05.404 Parlamentarische Initiative. Verbot von sexuellen Verstümmelungen "
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "05.404 Initiative parlementaire. Réprimer explicitement les mutilations sexuelles commises en Suisse et commises à l'étranger par quiconque se trouve en Suisse"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "05.404 Iniziativa parlamentare. Divieto di compiere mutilazioni sessuali"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-03-16"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-06-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/45/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Ergänzung des schweizerischen Strafgesetzbuches und des Militärstrafgesetzes betreffend rassistische Symbole"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code pénal et du code pénal militaire concernant l'utilisation de symboles à caractère raciste"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modificazione del Codice penale svizzero e del Codice penale militare concernente i simboli razzisti"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-07-01"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-10-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/46/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bericht und Vorentwurf zur Änderung des Schweizerischen Strafgesetzbuches und des Militärstrafgesetzes zur Umsetzung von Artikel 123b BV über die Unverjährbarkeit sexueller und pornografischer Straftaten an Kindern vor der Pubertät"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Rapport et avant-projet relatifs à la modification du code pénal suisse et du code pénal militaire concernant la mise en œuvre de l'art. 123b Cst. sur l'imprescriptibilité des actes d'ordre sexuel ou pornographique commis sur des enfants impubères"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Rapporto esplicativo e avamprogetto relativi alla modifica del Codice penale svizzero e del Codice penale militare per l'attuazione dell'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati di pornografia infantile"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-05-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-10-04"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/48/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Strafgesetzbuches und des Militärstrafgesetzes betreffend die organisierte Suizidhilfe"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du Code pénal et du Code pénal militaire relative à l'assistance organisée au suicide"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice penale e del Codice penale militare concernente l'assistenza organizzata al suicidio"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-10-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-03-01"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/101/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 3-6 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Code pénal suisse et code pénal militaire (mise en œuvre de l'art. 121, al. 3 à 6, Cst. relatif à l'expulsion des étrangers criminels)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Codice penale svizzero e Codice penale militare (attuazione dell'articolo 121 capoversi 3-6 Cost. sull'espulsione di stranieri che commettono reati)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-05-23"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/43/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Schweizerischen Strafgesetzbuches (StGB) und des Militärstrafgesetzes (MStG). Verlängerung der Verfolgungsverjährung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code pénal (CP) et du code pénal militaire (CPM). Prolongation du délai de prescription"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice penale (CP) e del Codice penale militare (CPM). Proroga del termine di prescrizione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-10-12"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-01-21"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/143/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur l'amélioration de la protection des victimes de violence"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale per migliorare la protezione delle vittime di violenza"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-10-07"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-01-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/169/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "11.489 Pa.Iv. Aufhebung von Artikel 293 StGB"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "11.489 Iv.pa. Abrogation de l'article 293 CP"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "11.489 Iv.pa. Abrogazione dell'articolo 293 CP"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-12-08"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-03-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/32/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Obligationenrechts (Aktienrecht)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision du code des obligations (Droit de la société anonyme)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice delle obbligazioni (Diritto della società anonima)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-11-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-03-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/87/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Genehmigung und Umsetzung des mit der Europäischen Union geschlossenen Abkommens über die Prümer Zusammenarbeit, des Eurodac-Protokolls und des mit den Vereinigten Staaten von Amerika geschlossenen Abkommens über die Zusammenarbeit zur der Prävention und Bekämpfung schwerer Straftaten"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Approbation et mise en œuvre de l'accord relatif à la coopération Prüm et du protocole Eurodac conclus avec l'Union européenne ainsi que de l'accord avec les États-Unis d'Amérique concernant la coopération en matière de prévention et de répression des infractions graves"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Approvazione e trasposizione nel diritto svizzero di due accordi con l'Unione europea concernenti Prüm ed Eurodac nonché dell'Accordo con gli Stati Uniti d'America sul potenziamento della cooperazione nella prevenzione e nella lotta ai reati gravi"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-12-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-03-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/15/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Nachrichtendienstgesetzes"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur le renseignement"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sulle attività informative"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-05-18"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-09-09"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/102/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "20.504 n Pa.Iv. Flach. Folter als eigener Straftatbestand im Schweizer Strafrecht"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "20.504 n Iv.pa. Flach. Inscrire la torture en tant que telle dans le catalogue des infractions du droit pénal suisse"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "20.504 n Iv.pa. Flach. La tortura deve figurare come fattispecie a sé stante nel diritto penale svizzero"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-12-18"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-04-02"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/33/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "19.433 n Pa. Iv. RK-NR. StGB-Tatbestände mit Stalking ergänzen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "19.433 n Iv. pa. CAJ-CN. Etendre au harcèlement obsessionnel («stalking») le champ d'application des dispositions du CP relatives aux délits"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "19.433 n Iv. pa. CAG-CN. Includere lo stalking nelle fattispecie del Codice penale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-05-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-09-16"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/1/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Strafgesetzbuches (Reform der lebenslangen Freiheitsstrafe)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code pénal (réforme de la peine privative de liberté à vie)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice penale (riforma della pena detentiva a vita)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-06-02"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-10-02"
     }
   },
   {
@@ -652,12 +106,12 @@
       "value": "Attuazione del divieto di dissimulare il proprio viso (art. 10a Cost.): modifica del codice penale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-10-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-02-03"
     }
@@ -669,75 +123,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/44/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "21.464 s Pa. Iv. Zopfi. Anpassung von Artikel 276 StGB und Artikel 98 MStG an die heutige Realität zur Stärkung der Meinungsäusserungsfreiheit"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "21.464 é Iv. pa. Zopfi. Adapter les articles 276 CP et 98 CPM à la situation actuelle en vue de renforcer la liberté d'expression"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "21.464 s Iv. pa. Zopfi. Adeguare l’articolo 276 CP e l’articolo 98 CPM alla realtà attuale al fine di rafforzare la libertà di espressione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-08-27"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/61/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Vorentwurf zum Bundesgesetz über die Änderung von Bundesgesetzen im Rahmen der Umsetzung des Schengen-Besitzstands im Bereich Datenschutz"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Avant-projet de loi fédérale sur la modification de lois fédérales dans le cadre de l’application de l’acquis de Schengen dans le domaine de la protection des données personnelles"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Progetto preliminare di una legge federale sulla modificazione di leggi federali nell'ambito dell'attuazione dell'acquis di Schengen in materia di protezione dei dati personali"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/04/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/15/cons_1"
     },
     "status": {
       "type": "uri",
@@ -746,27 +132,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung des Schweizerischen Strafgesetzbuches betr. strafbare Handlungen gegen den Geheim- oder Privatbereich (Ergänzung von Artikel 179quinquies StGB)"
+      "value": "Änderung des Nachrichtendienstgesetzes"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification du code pénal suisse concernant les infractions contre le domaine secret ou le demaine privé<br>(complément à l'article 179quinquies du CP)"
+      "value": "Modification de la loi fédérale sur le renseignement"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica del Codice penale svizzero concernente i reati contro la sfera segreta o privata<br>(complemento all'articolo 179quinquies CP)"
+      "value": "Modifica della legge federale sulle attività informative"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-03-20"
+      "value": "2022-05-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-06-30"
+      "value": "2022-09-09"
     }
   },
   {
@@ -776,7 +162,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/1/cons_1"
     },
     "status": {
       "type": "uri",
@@ -785,27 +171,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
+      "value": "Änderung des Strafgesetzbuches (Reform der lebenslangen Freiheitsstrafe)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Introduction du trust (modification du code des obligations)"
+      "value": "Modification du code pénal (réforme de la peine privative de liberté à vie)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
+      "value": "Modifica del Codice penale (riforma della pena detentiva a vita)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-01-12"
+      "value": "2023-06-02"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-04-30"
+      "value": "2023-10-02"
     }
   },
   {
@@ -815,7 +201,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6001/09/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/33/cons_1"
     },
     "status": {
       "type": "uri",
@@ -824,573 +210,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Schweizerisches Strafgesetzbuch (Revision der Art. 123, 189 und 190 StGB)"
+      "value": "19.433 n Pa. Iv. RK-NR. StGB-Tatbestände mit Stalking ergänzen"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Code pénal suisse (Modification des art. 123, 189 et 190 CP)"
+      "value": "19.433 n Iv. pa. CAJ-CN. Etendre au harcèlement obsessionnel («stalking») le champ d'application des dispositions du CP relatives aux délits"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Codice penale svizzero (Modifica degli art. 123, 189 e 190 CP)"
+      "value": "19.433 n Iv. pa. CAG-CN. Includere lo stalking nelle fattispecie del Codice penale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-03-28"
+      "value": "2023-05-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-06-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6007/4/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bericht und Vorentwurf zur Änderung des Schweizerischen Strafgesetzbuches als indirekter Gegenvorschlag zur Volksinitiative „für die Unverjährbarkeit pornografischer Straftaten an Kindern“"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Rapport explicatif et avant-projet relatifs à la modification du Code pénal suisse concernant le contre-projet indirect à l'initiative populaire „pour l'imprescriptibilité des actes de pornographie enfantine“"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Rapporto esplicativo e avamprogetto relativo alla modifica del Codice penale svizzero concernente il controprogetto indiretto all'iniziativa popolare „per l'imprescrittibilità dei reati di pornografia infantile“"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-03-01"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-04-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/100/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Schweizerischen Strafgesetzbuches (Online-Zugriffe VOSTRA)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code pénal (droits d'accès en ligne à VOSTRA)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice penale svizzero (accesso online a VOSTRA)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-01-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-04-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/40/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des Schweizerischen Zivilgesetzbuches (Elterliche Sorge) und des Schweizerischen Strafgesetzbuches (Art. 220)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision du code civil suisse (autorité parentale) et du code pénal suisse (art. 220)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione del Codice civile (autorità parentale) e del Codice penale (art. 220)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-01-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-04-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/51/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die Harmonisierung der Strafrahmen im Strafgesetzbuch, im Militärstrafrecht und im Nebenstrafrecht"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur l'harmonisation des peines dans le code pénal, le code militaire et le droit pénal accessoire"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sull'armonizzazione delle pene nel Codice penale, nel Codice penale militare e nel diritto penale accessorio"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-09-08"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-12-10"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/52/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Änderungen des Sanktionenrechts)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code pénal et du code pénal militaire (réforme du droit des sanctions)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice penale e del Codice penale militare (diritto sanzionatorio)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-06-30"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-10-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/53/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Bundesverfassung, des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes (Tätigkeitsverbot und Kontakt- und Rayonverbot)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la Constitution, du code pénal, du code pénal militaire et du droit pénal des mineurs (interdiction d'exercer une activité, interdiction de contact et interdiction géographique)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della Costituzione federale, del Codice penale svizzero, del Codice penale militare e del diritto penale minorile (divieto di attività, di contatto e di accesso e allontanamento)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-02-23"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-05-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/42/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Genehmigung und Umsetzung des Übereinkommens des Europarates zum Schutz von Kindern vor sexueller Ausbeutung und sexuellem Missbrauch (Lanzarote-Konvention)."
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Approbation et mise en oeuvre de la Convention du Conseil de l'Europe sur la protection des enfants contre l'exploitation et les abus sexuels (Convention de Lanzarote)."
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Approvazione e attuazione della Convenzione del Consiglio d'Europa sulla protezione dei minori contro lo sfruttamento e gli abusi sessuali (Convenzione di Lanzarote)."
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-08-17"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-11-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/141/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Korruptionsstrafrechts"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification des dispositions pénales en matière de corruption"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione delle disposizioni penali in materia di corruzione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-05-15"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-09-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/92/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "09.430 Pa. Iv. Opferhilfegesetz. Schaffung wichtiger Informationsrechte des Opfers"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "09.430 Iv. pa. Loi sur l'aide aux victimes. Octroi à la victime de droits importants en matière d'information"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "09.430 Iv. Pa. Legge concernente l'aiuto alle vittime di reati"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-03"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-01-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6016/54/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "10.519 Pa.Iv. Modifizierung von Artikel 53 StGB"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "10.519 Iv.pa. Modifier l'article 53 CP"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "10.519 Iv.pa. Modifica dell'articolo 53 CP"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-10-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-02-03"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6016/61/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Vorentwurf für das Bundesgesetz über die Totalrevision des Datenschutzgesetzes und die Änderung weiterer Erlasse zum Datenschutz"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Avant-projet de loi fédérale sur la révision totale de la loi sur la protection des données et sur la modification d'autres lois fédérales"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Avamprogetto di legge federale relativo alla revisione totale della legge sulla protezione dei dati e alla modifica di altri atti normativi sulla protezione dei dati"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-12-21"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-04-04"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/43/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "13.407 n Pa.Iv. Reynard. Kampf gegen die Diskriminierung aufgrund der sexuellen Orientierung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "13.407 n Iv.pa. Reynard. Lutter contre les discriminations basées sur l'orientation sexuelle"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "13.407 n Iv.pa. Reynard. Lottare contro le discriminazioni basate sull'orientamento sessuale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-06-16"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-10-09"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/53/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Genehmigung und Umsetzung des Übereinkommens des Europarates zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll und Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Approbation et mise en œuvre de la Convention du Conseil de l'Europe pour la prévention du terrorisme et de son protocole additionnel et renforcement des normes pénales contre le terrorisme et le crime organisé"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Approvazione e trasposizione della Convenzione del Consiglio d'Europa per la prevenzione del terrorismo e del relativo Protocollo addizionale nonché potenziamento del dispositivo penale contro il terrorismo e la criminalità organizzata"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-06-21"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-10-13"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/116/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Indirekter Gegenvorschlag (Bundesgesetz über die nachhaltige Unternehmensführung) zur Volksinitiative «Für verantwortungsvolle Grossunternehmen – zum Schutz von Mensch und Umwelt»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Contre-projet indirect (Loi fédérale sur la gestion durable des entreprises) à l’initiative populaire « Pour des grandes entreprises responsables – pour la protection de l’être humain et de l’environnement »"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Controprogetto indiretto (Legge federale sulla gestione sostenibile delle imprese) all'iniziativa popolare «Per grandi imprese responsabili – a tutela dell’essere umano e dell'ambiente»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-02"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-07-09"
+      "value": "2023-09-16"
     }
   },
   {
@@ -1422,12 +262,12 @@
       "value": "Approvazione e attuazione della Convenzione di Lubiana-L’Aia sulla cooperazione internazionale in materia di indagini e di azione penale per il crimine di genocidio, i crimini contro l’umanità, i crimini di guerra e altri crimini internazionali"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-02-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-05-30"
     }
@@ -1439,7 +279,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/35/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/102/cons_1"
     },
     "status": {
       "type": "uri",
@@ -1448,222 +288,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "13.430 n Rickli Natalie. Haftung bei bedingten Entlassungen und Strafvollzugslockerungen"
+      "value": "20.504 n Pa.Iv. Flach. Folter als eigener Straftatbestand im Schweizer Strafrecht"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "13.430 n Iv.pa. Rickli Natalie. Responsabilité en cas de mise en liberté conditionnelle et de décision d'allègement de l'exécution d'une peine"
+      "value": "20.504 n Iv.pa. Flach. Inscrire la torture en tant que telle dans le catalogue des infractions du droit pénal suisse"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "13.430 n Iv.pa. Rickli Natalie. Responsabilità in caso di liberazione condizionale e regime aperto"
+      "value": "20.504 n Iv.pa. Flach. La tortura deve figurare come fattispecie a sé stante nel diritto penale svizzero"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-05-24"
+      "value": "2024-12-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-09-14"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/47/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Vorentwurf zum Bundesgesetz über das Gesichtsverhüllungsverbot"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Avant-projet de loi fédérale sur l'interdiction de se dissimuler le visage"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Avamprogetto di legge federale sul divieto di dissimulare il viso"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-06-27"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-10-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/10/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Strafgesetzbuches und des Jugendstrafgesetzes (Massnahmenpaket Sanktionenvollzug)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code pénal et du droit pénal des mineurs (Train de mesures. Exécution des sanctions)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice penale e del diritto penale minorile (Pacchetto di misure: esecuzione delle sanzioni)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-03-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/74/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Übertragung einzelner Aufgaben/Zuständigkeiten der Militärjustiz an die zivilen Justizbehörden; Änderung des Militärstrafgesetzes"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Transfert de certaines tâches et compétences de la justice militaire à la justice civile; modification du code pénal militaire"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Trasferimento di alcuni compiti/alcune competenze della giustizia militare alle autorità giudiziarie civili; modifica del Codice penale militare"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-12-18"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-04-12"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6021/4/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Strafrahmenharmonisierung und Anpassung des Nebenstrafrechts an das neue Sanktionenrecht. Vorlage 3: Bundesgesetz über eine Revision des Sexualstrafrechts"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Harmonisation des peines et adaptation du droit pénal accessoire au nouveau droit des sanctions. Projet 3: loi fédérale portant révision du droit pénal en matière sexuelle"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Armonizzazione delle pene e adeguamento del diritto penale accessorio alla nuova disciplina delle sanzioni. Oggetto 3: Legge federale sulla revisione del diritto penale in materia sessuale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-02-01"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-05-10"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/58/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Transparenz über Nachhaltigkeitsaspekte: Änderung des Obligationenrechts (OR), des Revisionsaufsichtsgesetzes (RAG) und des Strafgesetzbuchs (StGB)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Transparence sur les questions de durabilité: Modification du code des obligations (CO), de la loi sur la surveillance de la révision (LSR) et du code pénal suisse (CP)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Trasparenza concernente lo sviluppo sostenibile: Modifica del diritto delle obbligazioni (CO), della legge sui revisori (LSR) e del codice penale svizzero (CP)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-06-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-10-17"
+      "value": "2025-04-02"
     }
   },
   {
@@ -1695,12 +340,12 @@
       "value": "Modifica del Codice penale e del Codice penale militare (imprescrittibilità dell’assassinio)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-01-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-04-16"
     }
@@ -1712,36 +357,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/73/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/58/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Pa.Iv. 18.434 Cybergrooming mit Minderjährigen endlich unter Strafe stellen"
+      "value": "Transparenz über Nachhaltigkeitsaspekte: Änderung des Obligationenrechts (OR), des Revisionsaufsichtsgesetzes (RAG) und des Strafgesetzbuchs (StGB)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Iv.pa. 18.434 Punir enfin le pédopiégeage en ligne"
+      "value": "Transparence sur les questions de durabilité: Modification du code des obligations (CO), de la loi sur la surveillance de la révision (LSR) et du code pénal suisse (CP)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Iv.pa. 18.434 Rendere finalmente perseguibile l’adescamento in rete di minorenni"
+      "value": "Trasparenza concernente lo sviluppo sostenibile: Modifica del diritto delle obbligazioni (CO), della legge sui revisori (LSR) e del codice penale svizzero (CP)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-07-08"
+      "value": "2024-06-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-10-29"
+      "value": "2024-10-17"
     }
   },
   {
@@ -1751,104 +396,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/52/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/116/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "20.445 n Neuer Straftatbestand Cybermobbing"
+      "value": "Indirekter Gegenvorschlag (Bundesgesetz über die nachhaltige Unternehmensführung) zur Volksinitiative «Für verantwortungsvolle Grossunternehmen – zum Schutz von Mensch und Umwelt»"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "20.445 n Inscrire le cyberharcèlement dans le code pénal"
+      "value": "Contre-projet indirect (Loi fédérale sur la gestion durable des entreprises) à l’initiative populaire « Pour des grandes entreprises responsables – pour la protection de l’être humain et de l’environnement »"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "20.445 n Cyberbullismo. Una nuova fattispecie penale"
+      "value": "Controprogetto indiretto (Legge federale sulla gestione sostenibile delle imprese) all'iniziativa popolare «Per grandi imprese responsabili – a tutela dell’essere umano e dell'ambiente»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-27"
+      "value": "2026-04-02"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-17"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/58/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "23.443 n Pa. Iv. Addor. Ausweisung krimineller Ausländerinnen und Ausländer. Interessenabwägung mit gesundem Menschenverstand"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "23.443 n Iv. pa. Addor. Expulsion des étrangers criminels. Pour une pesée des intérêts conforme au bon sens"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Titolo: 23.443 n Iv. pa. Addor. Espulsione degli stranieri che commettono reati. Per una ponderazione degli interessi conforme al buon senso"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-06-11"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-10-02"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "311.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/86/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Übernahme und Umsetzung der Verordnung über den automatisierten Datenaustausch für die polizeiliche Zusammenarbeit (Prüm II)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Reprise et mise en œuvre du règlement relatif à l'échange automatisé de données dans le cadre de la coopération policière (Prüm II)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Adozione e attuazione del regolamento sullo scambio automatizzato di dati per la cooperazione di polizia (\"Prüm II\")"
+      "value": "2026-07-09"
     }
   },
   {
@@ -1887,6 +464,35 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/86/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Übernahme und Umsetzung der Verordnung über den automatisierten Datenaustausch für die polizeiliche Zusammenarbeit (Prüm II)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Reprise et mise en œuvre du règlement relatif à l'échange automatisé de données dans le cadre de la coopération policière (Prüm II)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Adozione e attuazione del regolamento sullo scambio automatizzato di dati per la cooperazione di polizia (\"Prüm II\")"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/86/cons_1"
     },
     "status": {
@@ -1907,6 +513,1400 @@
       "type": "literal",
       "xml:lang": "it",
       "value": "Modifica del codice penale (revisione del catalogo dei reati che comportano l'espulsione obbligatoria)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/44/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "21.464 s Pa. Iv. Zopfi. Anpassung von Artikel 276 StGB und Artikel 98 MStG an die heutige Realität zur Stärkung der Meinungsäusserungsfreiheit"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "21.464 é Iv. pa. Zopfi. Adapter les articles 276 CP et 98 CPM à la situation actuelle en vue de renforcer la liberté d'expression"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "21.464 s Iv. pa. Zopfi. Adeguare l’articolo 276 CP e l’articolo 98 CPM alla realtà attuale al fine di rafforzare la libertà di espressione"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-06"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-08-27"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/52/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "20.445 n Neuer Straftatbestand Cybermobbing"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "20.445 n Inscrire le cyberharcèlement dans le code pénal"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "20.445 n Cyberbullismo. Una nuova fattispecie penale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-17"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/58/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "23.443 n Pa. Iv. Addor. Ausweisung krimineller Ausländerinnen und Ausländer. Interessenabwägung mit gesundem Menschenverstand"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "23.443 n Iv. pa. Addor. Expulsion des étrangers criminels. Pour une pesée des intérêts conforme au bon sens"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Titolo: 23.443 n Iv. pa. Addor. Espulsione degli stranieri che commettono reati. Per una ponderazione degli interessi conforme al buon senso"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-06-11"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-10-02"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/73/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Pa.Iv. 18.434 Cybergrooming mit Minderjährigen endlich unter Strafe stellen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Iv.pa. 18.434 Punir enfin le pédopiégeage en ligne"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iv.pa. 18.434 Rendere finalmente perseguibile l’adescamento in rete di minorenni"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-07-08"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-10-29"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/04/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Schweizerischen Strafgesetzbuches betr. strafbare Handlungen gegen den Geheim- oder Privatbereich (Ergänzung von Artikel 179quinquies StGB)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code pénal suisse concernant les infractions contre le domaine secret ou le demaine privé<br>(complément à l'article 179quinquies du CP)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice penale svizzero concernente i reati contro la sfera segreta o privata<br>(complemento all'articolo 179quinquies CP)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-03-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-06-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/11/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Römer Statut des Internationalen Strafgerichtshofs; Ratifizierung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Statut de Rome de la Cour pénale internationale; ratification"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Statuto di Roma della Corte penale internazionale; ratifica"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-06-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-09-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6001/09/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Schweizerisches Strafgesetzbuch (Revision der Art. 123, 189 und 190 StGB)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Code pénal suisse (Modification des art. 123, 189 et 190 CP)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Codice penale svizzero (Modifica degli art. 123, 189 e 190 CP)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-03-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-06-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/61/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Vorentwurf zum Bundesgesetz über die Änderung von Bundesgesetzen im Rahmen der Umsetzung des Schengen-Besitzstands im Bereich Datenschutz"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Avant-projet de loi fédérale sur la modification de lois fédérales dans le cadre de l’application de l’acquis de Schengen dans le domaine de la protection des données personnelles"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Progetto preliminare di una legge federale sulla modificazione di leggi federali nell'ambito dell'attuazione dell'acquis di Schengen in materia di protezione dei dati personali"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6007/4/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bericht und Vorentwurf zur Änderung des Schweizerischen Strafgesetzbuches als indirekter Gegenvorschlag zur Volksinitiative „für die Unverjährbarkeit pornografischer Straftaten an Kindern“"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Rapport explicatif et avant-projet relatifs à la modification du Code pénal suisse concernant le contre-projet indirect à l'initiative populaire „pour l'imprescriptibilité des actes de pornographie enfantine“"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Rapporto esplicativo e avamprogetto relativo alla modifica del Codice penale svizzero concernente il controprogetto indiretto all'iniziativa popolare „per l'imprescrittibilità dei reati di pornografia infantile“"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-03-01"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-04-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/100/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Schweizerischen Strafgesetzbuches (Online-Zugriffe VOSTRA)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code pénal (droits d'accès en ligne à VOSTRA)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice penale svizzero (accesso online a VOSTRA)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-01-14"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-04-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/40/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des Schweizerischen Zivilgesetzbuches (Elterliche Sorge) und des Schweizerischen Strafgesetzbuches (Art. 220)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision du code civil suisse (autorité parentale) et du code pénal suisse (art. 220)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione del Codice civile (autorità parentale) e del Codice penale (art. 220)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-01-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-04-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/3/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "05.404 Parlamentarische Initiative. Verbot von sexuellen Verstümmelungen "
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "05.404 Initiative parlementaire. Réprimer explicitement les mutilations sexuelles commises en Suisse et commises à l'étranger par quiconque se trouve en Suisse"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "05.404 Iniziativa parlamentare. Divieto di compiere mutilazioni sessuali"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-03-16"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-06-22"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/45/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Ergänzung des schweizerischen Strafgesetzbuches und des Militärstrafgesetzes betreffend rassistische Symbole"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code pénal et du code pénal militaire concernant l'utilisation de symboles à caractère raciste"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modificazione del Codice penale svizzero e del Codice penale militare concernente i simboli razzisti"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-07-01"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-10-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/46/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bericht und Vorentwurf zur Änderung des Schweizerischen Strafgesetzbuches und des Militärstrafgesetzes zur Umsetzung von Artikel 123b BV über die Unverjährbarkeit sexueller und pornografischer Straftaten an Kindern vor der Pubertät"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Rapport et avant-projet relatifs à la modification du code pénal suisse et du code pénal militaire concernant la mise en œuvre de l'art. 123b Cst. sur l'imprescriptibilité des actes d'ordre sexuel ou pornographique commis sur des enfants impubères"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Rapporto esplicativo e avamprogetto relativi alla modifica del Codice penale svizzero e del Codice penale militare per l'attuazione dell'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati di pornografia infantile"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-05-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-10-04"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/48/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Strafgesetzbuches und des Militärstrafgesetzes betreffend die organisierte Suizidhilfe"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du Code pénal et du Code pénal militaire relative à l'assistance organisée au suicide"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice penale e del Codice penale militare concernente l'assistenza organizzata al suicidio"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-10-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-03-01"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/51/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die Harmonisierung der Strafrahmen im Strafgesetzbuch, im Militärstrafrecht und im Nebenstrafrecht"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur l'harmonisation des peines dans le code pénal, le code militaire et le droit pénal accessoire"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sull'armonizzazione delle pene nel Codice penale, nel Codice penale militare e nel diritto penale accessorio"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-09-08"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-12-10"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/52/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Änderungen des Sanktionenrechts)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code pénal et du code pénal militaire (réforme du droit des sanctions)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice penale e del Codice penale militare (diritto sanzionatorio)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-06-30"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-10-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/53/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Bundesverfassung, des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes (Tätigkeitsverbot und Kontakt- und Rayonverbot)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la Constitution, du code pénal, du code pénal militaire et du droit pénal des mineurs (interdiction d'exercer une activité, interdiction de contact et interdiction géographique)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della Costituzione federale, del Codice penale svizzero, del Codice penale militare e del diritto penale minorile (divieto di attività, di contatto e di accesso e allontanamento)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-02-23"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-05-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/101/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 3-6 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Code pénal suisse et code pénal militaire (mise en œuvre de l'art. 121, al. 3 à 6, Cst. relatif à l'expulsion des étrangers criminels)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Codice penale svizzero e Codice penale militare (attuazione dell'articolo 121 capoversi 3-6 Cost. sull'espulsione di stranieri che commettono reati)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-05-23"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-09-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/42/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Genehmigung und Umsetzung des Übereinkommens des Europarates zum Schutz von Kindern vor sexueller Ausbeutung und sexuellem Missbrauch (Lanzarote-Konvention)."
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Approbation et mise en oeuvre de la Convention du Conseil de l'Europe sur la protection des enfants contre l'exploitation et les abus sexuels (Convention de Lanzarote)."
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Approvazione e attuazione della Convenzione del Consiglio d'Europa sulla protezione dei minori contro lo sfruttamento e gli abusi sessuali (Convenzione di Lanzarote)."
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-08-17"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-11-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/43/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Schweizerischen Strafgesetzbuches (StGB) und des Militärstrafgesetzes (MStG). Verlängerung der Verfolgungsverjährung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code pénal (CP) et du code pénal militaire (CPM). Prolongation du délai de prescription"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice penale (CP) e del Codice penale militare (CPM). Proroga del termine di prescrizione"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-10-12"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-01-21"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/141/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Korruptionsstrafrechts"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification des dispositions pénales en matière de corruption"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione delle disposizioni penali in materia di corruzione"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-05-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-09-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/143/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur l'amélioration de la protection des victimes de violence"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale per migliorare la protezione delle vittime di violenza"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-10-07"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-01-29"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/92/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "09.430 Pa. Iv. Opferhilfegesetz. Schaffung wichtiger Informationsrechte des Opfers"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "09.430 Iv. pa. Loi sur l'aide aux victimes. Octroi à la victime de droits importants en matière d'information"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "09.430 Iv. Pa. Legge concernente l'aiuto alle vittime di reati"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-10-03"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-01-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/169/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "11.489 Pa.Iv. Aufhebung von Artikel 293 StGB"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "11.489 Iv.pa. Abrogation de l'article 293 CP"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "11.489 Iv.pa. Abrogazione dell'articolo 293 CP"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-12-08"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-03-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/32/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Obligationenrechts (Aktienrecht)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision du code des obligations (Droit de la société anonyme)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice delle obbligazioni (Diritto della società anonima)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-11-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-03-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6016/54/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "10.519 Pa.Iv. Modifizierung von Artikel 53 StGB"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "10.519 Iv.pa. Modifier l'article 53 CP"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "10.519 Iv.pa. Modifica dell'articolo 53 CP"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-10-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-02-03"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6016/61/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Vorentwurf für das Bundesgesetz über die Totalrevision des Datenschutzgesetzes und die Änderung weiterer Erlasse zum Datenschutz"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Avant-projet de loi fédérale sur la révision totale de la loi sur la protection des données et sur la modification d'autres lois fédérales"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Avamprogetto di legge federale relativo alla revisione totale della legge sulla protezione dei dati e alla modifica di altri atti normativi sulla protezione dei dati"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-12-21"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-04-04"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/43/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "13.407 n Pa.Iv. Reynard. Kampf gegen die Diskriminierung aufgrund der sexuellen Orientierung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "13.407 n Iv.pa. Reynard. Lutter contre les discriminations basées sur l'orientation sexuelle"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "13.407 n Iv.pa. Reynard. Lottare contro le discriminazioni basate sull'orientamento sessuale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-06-16"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-10-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/53/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Genehmigung und Umsetzung des Übereinkommens des Europarates zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll und Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Approbation et mise en œuvre de la Convention du Conseil de l'Europe pour la prévention du terrorisme et de son protocole additionnel et renforcement des normes pénales contre le terrorisme et le crime organisé"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Approvazione e trasposizione della Convenzione del Consiglio d'Europa per la prevenzione del terrorismo e del relativo Protocollo addizionale nonché potenziamento del dispositivo penale contro il terrorismo e la criminalità organizzata"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-06-21"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-10-13"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/35/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "13.430 n Rickli Natalie. Haftung bei bedingten Entlassungen und Strafvollzugslockerungen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "13.430 n Iv.pa. Rickli Natalie. Responsabilité en cas de mise en liberté conditionnelle et de décision d'allègement de l'exécution d'une peine"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "13.430 n Iv.pa. Rickli Natalie. Responsabilità in caso di liberazione condizionale e regime aperto"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-05-24"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-09-14"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/47/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Vorentwurf zum Bundesgesetz über das Gesichtsverhüllungsverbot"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Avant-projet de loi fédérale sur l'interdiction de se dissimuler le visage"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Avamprogetto di legge federale sul divieto di dissimulare il viso"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-06-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-10-18"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/87/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Genehmigung und Umsetzung des mit der Europäischen Union geschlossenen Abkommens über die Prümer Zusammenarbeit, des Eurodac-Protokolls und des mit den Vereinigten Staaten von Amerika geschlossenen Abkommens über die Zusammenarbeit zur der Prävention und Bekämpfung schwerer Straftaten"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Approbation et mise en œuvre de l'accord relatif à la coopération Prüm et du protocole Eurodac conclus avec l'Union européenne ainsi que de l'accord avec les États-Unis d'Amérique concernant la coopération en matière de prévention et de répression des infractions graves"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Approvazione e trasposizione nel diritto svizzero di due accordi con l'Unione europea concernenti Prüm ed Eurodac nonché dell'Accordo con gli Stati Uniti d'America sul potenziamento della cooperazione nella prevenzione e nella lotta ai reati gravi"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-12-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-03-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/10/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Strafgesetzbuches und des Jugendstrafgesetzes (Massnahmenpaket Sanktionenvollzug)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du code pénal et du droit pénal des mineurs (Train de mesures. Exécution des sanctions)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice penale e del diritto penale minorile (Pacchetto di misure: esecuzione delle sanzioni)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-03-06"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-09-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/74/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Übertragung einzelner Aufgaben/Zuständigkeiten der Militärjustiz an die zivilen Justizbehörden; Änderung des Militärstrafgesetzes"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Transfert de certaines tâches et compétences de la justice militaire à la justice civile; modification du code pénal militaire"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Trasferimento di alcuni compiti/alcune competenze della giustizia militare alle autorità giudiziarie civili; modifica del Codice penale militare"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-12-18"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-04-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "311.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6021/4/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Strafrahmenharmonisierung und Anpassung des Nebenstrafrechts an das neue Sanktionenrecht. Vorlage 3: Bundesgesetz über eine Revision des Sexualstrafrechts"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Harmonisation des peines et adaptation du droit pénal accessoire au nouveau droit des sanctions. Projet 3: loi fédérale portant révision du droit pénal en matière sexuelle"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Armonizzazione delle pene e adeguamento del diritto penale accessorio alla nuova disciplina delle sanzioni. Oggetto 3: Legge federale sulla revisione del diritto penale in materia sessuale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-02-01"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-05-10"
     }
   }
 ]

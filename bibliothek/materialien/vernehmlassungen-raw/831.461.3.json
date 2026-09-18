@@ -6,45 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/81/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungsänderungen in der beruflichen Vorsorge"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modifications des ordonnances dans le cadre de la prévoyance professionnelle"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifiche alle ordinanze sulla previdenza professionale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-12-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-03-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.461.3"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/22/cons_1"
     },
     "status": {
@@ -67,14 +28,53 @@
       "value": "Modifica dell’ordinanza sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3) per l’attuazione della mozione Ettlin 19.3702 «Consentire il riscatto di prestazioni del pilastro 3a»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-11-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-03-06"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.461.3"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/69/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnung über die Änderung verschiedener Verordnungen im Bereich der beruflichen Vorsorge 2026"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Ordonnance portant modification de diverses ordonnances dans la prévoyance professionnelle 2026"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Ordinanza concernente modifiche di disposizioni nell’ambito della previdenza professionale 2026"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-09-03"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-12-02"
     }
   },
   {
@@ -113,7 +113,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/69/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/81/cons_1"
     },
     "status": {
       "type": "uri",
@@ -122,27 +122,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Verordnung über die Änderung verschiedener Verordnungen im Bereich der beruflichen Vorsorge 2026"
+      "value": "Verordnungsänderungen in der beruflichen Vorsorge"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Ordonnance portant modification de diverses ordonnances dans la prévoyance professionnelle 2026"
+      "value": "Modifications des ordonnances dans le cadre de la prévoyance professionnelle"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Ordinanza concernente modifiche di disposizioni nell’ambito della previdenza professionale 2026"
+      "value": "Modifiche alle ordinanze sulla previdenza professionale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-09-03"
+      "value": "2019-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-12-02"
+      "value": "2020-03-20"
     }
   }
 ]

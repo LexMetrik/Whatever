@@ -6,84 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/149/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderungen der Asylverordnung 1 über Verfahrensfragen (AsylV 1), der Asylverordnung 2 über Finanzierungsfragen (AsylV 2), der Verordnung über die Integration von Ausländerinnen und Ausländern (VIntA) und der Verordnung über den Vollzug der Weg- und Ausweisung von ausländischen Personen (VVWA)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l'ordonnance 1 sur l'asile relative à la procédure (OA 1), de l'ordonnance 2 sur l'asile relative au financement (OA 2), de l'ordonnance sur l'intégration des étrangers (OIE) et de l'ordonnance sur l'exécution du renvoi et de l'expulsion d'étrangers (OERE)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell'ordinanza 1 sull'asilo (OAsi 1), dell'ordinanza 2 sull'asilo (OAsi 2), dell'ordinanza sull'integrazione degli stranieri (OIntS) e dell'ordinanza concernente l'esecuzione dell'allontanamento e dell'espulsione di stranieri (OEAE)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-06-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-10-17"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.205"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/60/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Asylverordnung 2 und der Verordnung über die Integration von Ausländerinnen und Ausländern; Umsetzung der Integrationsagenda Schweiz und Abgeltung der Kantone für die Kosten von unbegleiteten Minderjährigen im Asyl- und Flüchtlingsbereich"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l'ordonnance 2 sur l'asile et de l'ordonnance sur l'intégration des étrangers; mise en œuvre de l'Agenda Intégration Suisse et indemnisation des cantons pour les frais se rapportant aux mineurs non accompagnés dans le domaine de l'asile et des réfugiés"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell'ordinanza 2 sull'asilo e dell'ordinanza sull'integrazione degli stranieri; Attuazione dell'Agenda Integrazione Svizzera e indennizzo dei Cantoni per le spese occasionate dai minorenni non accompagnati nel settore dell'asilo e dei rifugiati"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-09-05"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-12-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.205"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/1/cons_1"
     },
     "status": {
@@ -106,14 +28,53 @@
       "value": "Promozione dell’attività lucrativa di persone con statuto di protezione S e agevolazione dell’ammissione di cittadini di Stati terzi che hanno conseguito una formazione in Svizzera: modifica della legge sugli stranieri e la loro integrazione, della legge sull’asilo, dell’ordinanza sull’ammissione, il soggiorno e l’attività lucrativa e dell’ordinanza sull’integrazione degli stranieri"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-02-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-06-02"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.205"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/117/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verordnung über die Integration von Ausländerinnen und Ausländern (VIntA) und der Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE) (Integration und Erwerbstätigkeit von spezifischen Personengruppen)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l’ordonnance sur l’intégration des étrangers (OIE) et de l’ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA) (intégration et activité lucrative de groupes spécifiques de personnes)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell’ordinanza sull’integrazione degli stranieri (OIntS) et dell’ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA) (integrazione e attività lucrativa di gruppi di persone specifici)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-03-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-06-29"
     }
   },
   {
@@ -145,12 +106,12 @@
       "value": "Ordinanza sull'integrazione sociale degli stranieri (OIS)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2000-04-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2000-06-21"
     }
@@ -184,12 +145,12 @@
       "value": "Revisione parziale dell'ordinanza sull'integrazione degli stranieri (OIntS) e alla revisione parziale dell'ordinanza che limita l'effettivo degli stranieri (OLS)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2003-06-25"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2003-09-30"
     }
@@ -223,14 +184,53 @@
       "value": "Revisioni parziali delle ordinanze sull'asilo 2 (OAsi 2) e 3 (OAsi 3), dell'ordinanza sull'integrazione degli stranieri (OIntS) e dell'ordinanza concernente l'esecuzione dell'allontanamento e dell'espulsione (OEAE)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-04-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-08-08"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.205"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/149/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderungen der Asylverordnung 1 über Verfahrensfragen (AsylV 1), der Asylverordnung 2 über Finanzierungsfragen (AsylV 2), der Verordnung über die Integration von Ausländerinnen und Ausländern (VIntA) und der Verordnung über den Vollzug der Weg- und Ausweisung von ausländischen Personen (VVWA)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l'ordonnance 1 sur l'asile relative à la procédure (OA 1), de l'ordonnance 2 sur l'asile relative au financement (OA 2), de l'ordonnance sur l'intégration des étrangers (OIE) et de l'ordonnance sur l'exécution du renvoi et de l'expulsion d'étrangers (OERE)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell'ordinanza 1 sull'asilo (OAsi 1), dell'ordinanza 2 sull'asilo (OAsi 2), dell'ordinanza sull'integrazione degli stranieri (OIntS) e dell'ordinanza concernente l'esecuzione dell'allontanamento e dell'espulsione di stranieri (OEAE)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-06-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-10-17"
     }
   },
   {
@@ -262,12 +262,12 @@
       "value": "Modifica dell'ordinanza 2 sull'asilo relativa alle questioni finanziarie e dell'ordinanza sull'integrazione degli stranieri"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-04-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-08-16"
     }
@@ -301,12 +301,12 @@
       "value": "Disposizioni d'esecuzione per la modifica della legge sugli stranieri del 16 dicembre 2016 (Regolazione dell'immigrazione e miglioramenti dell'esecuzione degli accordi sulla libera circolazione)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-06-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-09-06"
     }
@@ -340,12 +340,12 @@
       "value": "Modifica dell'ordinanza sull'ammissione, il soggiorno e l'attività lucrativa e revisione totale dell'ordinanza sull'integrazione degli stranieri"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-12-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-03-19"
     }
@@ -357,36 +357,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/117/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/60/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung der Verordnung über die Integration von Ausländerinnen und Ausländern (VIntA) und der Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE) (Integration und Erwerbstätigkeit von spezifischen Personengruppen)"
+      "value": "Änderung der Asylverordnung 2 und der Verordnung über die Integration von Ausländerinnen und Ausländern; Umsetzung der Integrationsagenda Schweiz und Abgeltung der Kantone für die Kosten von unbegleiteten Minderjährigen im Asyl- und Flüchtlingsbereich"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de l’ordonnance sur l’intégration des étrangers (OIE) et de l’ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA) (intégration et activité lucrative de groupes spécifiques de personnes)"
+      "value": "Modification de l'ordonnance 2 sur l'asile et de l'ordonnance sur l'intégration des étrangers; mise en œuvre de l'Agenda Intégration Suisse et indemnisation des cantons pour les frais se rapportant aux mineurs non accompagnés dans le domaine de l'asile et des réfugiés"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica dell’ordinanza sull’integrazione degli stranieri (OIntS) et dell’ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA) (integrazione e attività lucrativa di gruppi di persone specifici)"
+      "value": "Modifica dell'ordinanza 2 sull'asilo e dell'ordinanza sull'integrazione degli stranieri; Attuazione dell'Agenda Integrazione Svizzera e indennizzo dei Cantoni per le spese occasionate dai minorenni non accompagnati nel settore dell'asilo e dei rifugiati"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-03-20"
+      "value": "2018-09-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-06-29"
+      "value": "2018-12-05"
     }
   }
 ]

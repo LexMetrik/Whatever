@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/43/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/17/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,66 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Zivilstandsverordnung (ZStV) und Verordnung über die Gebühren im Zivilstandswesen (ZStGV)"
+      "value": "Revision der Zivilstandsverordnung (ZStV) und der Verordnung über die Gebühren im Zivilstandswesen (ZStGV)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Ordonnance sur l'état civil (OEC) et Ordonnance sur les émoluments en matière d'état civil (OEEC)"
+      "value": "Révision de l’ordonnance sur l’état civil (OEC) et de l’ordonnance sur les émoluments en matière d’état civil (OEEC)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Ordinanza sullo stato civile (OSC) e Ordinanza sugli emolumenti in materia di stato civile  (OESC)"
+      "value": "Revisione dell’ordinanza sullo stato civile (OSC) e dell’ordinanza sugli emolumenti in materia di stato civile (OESC)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-11-09"
+      "value": "2023-05-10"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-01-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "211.112.2"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/20/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision der Zivilstandsverordnung und der Verordnung über die Gebühren im Zivilstandswesen (ZStV; ZStGV): Bundeslösung Infostar und zivilstandsamtliche Behandlung Tot- und Fehlgeborener"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de l'ordonnance sur l'état civil et de l'ordonnance sur les émoluments en matière d'état civil (OEC; OEEC): «solution fédérale Infosta» et traitement à l'état civil des enfants mort-nés et nés sans vie"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione dell'ordinanza sullo stato civile e dell'ordinanza sugli emolumenti in materia di stato civile (OSC; OESC): «soluzione federale Infostar» e trattamento sotto il profilo dello stato civile degli infanti nati morti o venuti al mondo privi di vita"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-03-09"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-06-15"
+      "value": "2023-09-01"
     }
   },
   {
@@ -106,12 +67,12 @@
       "value": "Revisione parziale dell’Ordinanza sugli emolumenti in materia di stato civile (OESC)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-06-24"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-10-15"
     }
@@ -145,12 +106,12 @@
       "value": "Revisione dell'ordinanza sullo stato civile in vista dell'entrata in vigore della legge federale sull'unione domestica registrata (LUD)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2006-01-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2006-03-15"
     }
@@ -184,14 +145,53 @@
       "value": "Nuovo numero AVS. Modifica di ordinanze ed emanazione di disposizioni esecutive"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-06-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-08-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "211.112.2"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/43/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Zivilstandsverordnung (ZStV) und Verordnung über die Gebühren im Zivilstandswesen (ZStGV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Ordonnance sur l'état civil (OEC) et Ordonnance sur les émoluments en matière d'état civil (OEEC)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Ordinanza sullo stato civile (OSC) e Ordinanza sugli emolumenti in materia di stato civile  (OESC)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-11-09"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-01-15"
     }
   },
   {
@@ -223,12 +223,12 @@
       "value": "Revisione delle ordinanze sullo stato civile (OSC) e sugli emolumenti in materia di stato civile (OESC)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-09-02"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-12-02"
     }
@@ -240,7 +240,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/17/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/20/cons_1"
     },
     "status": {
       "type": "uri",
@@ -249,27 +249,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Revision der Zivilstandsverordnung (ZStV) und der Verordnung über die Gebühren im Zivilstandswesen (ZStGV)"
+      "value": "Revision der Zivilstandsverordnung und der Verordnung über die Gebühren im Zivilstandswesen (ZStV; ZStGV): Bundeslösung Infostar und zivilstandsamtliche Behandlung Tot- und Fehlgeborener"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision de l’ordonnance sur l’état civil (OEC) et de l’ordonnance sur les émoluments en matière d’état civil (OEEC)"
+      "value": "Révision de l'ordonnance sur l'état civil et de l'ordonnance sur les émoluments en matière d'état civil (OEC; OEEC): «solution fédérale Infosta» et traitement à l'état civil des enfants mort-nés et nés sans vie"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Revisione dell’ordinanza sullo stato civile (OSC) e dell’ordinanza sugli emolumenti in materia di stato civile (OESC)"
+      "value": "Revisione dell'ordinanza sullo stato civile e dell'ordinanza sugli emolumenti in materia di stato civile (OSC; OESC): «soluzione federale Infostar» e trattamento sotto il profilo dello stato civile degli infanti nati morti o venuti al mondo privi di vita"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-05-10"
+      "value": "2018-03-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-09-01"
+      "value": "2018-06-15"
     }
   }
 ]

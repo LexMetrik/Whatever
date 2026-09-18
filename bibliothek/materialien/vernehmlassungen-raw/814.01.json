@@ -6,45 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/93/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Bundesgesetzes über den Umweltschutz (Umweltschutzgesetz)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de la loi fédérale sur la protection de l’environnement"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della legge federale sulla protezione dell’ambiente"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-09-08"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-12-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.01"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/107/cons_1"
     },
     "status": {
@@ -67,12 +28,12 @@
       "value": "Revisione parziale della legge sulla protezione dell’ambiente – Rafforzare l’economia circolare svizzera"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-11-02"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-02-16"
     }
@@ -84,7 +45,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/146/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/93/cons_1"
     },
     "status": {
       "type": "uri",
@@ -93,261 +54,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "09.499 Pa.Iv. UREK-NR. Agrotreibstoffe. Indirekte Auswirkungen berücksichtigen"
+      "value": "Teilrevision des Bundesgesetzes über den Umweltschutz (Umweltschutzgesetz)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "09.499. Iv.pa. CEATE-CN. Agrocarburants. Prise en compte des effets indirects"
+      "value": "Révision partielle de la loi fédérale sur la protection de l’environnement"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "09.499 Iv. Pa. CAPTE-N. Agrocarburanti. Tenere conto degli effetti indiretti "
+      "value": "Revisione parziale della legge federale sulla protezione dell’ambiente"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-11-25"
+      "value": "2021-09-08"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-03-10"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.01"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/50/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Feldschiessen und historische Schiessen auch nach 2020 ermöglichen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Tirs en campagne et tirs historiques. Préservons notre patrimoine culturel au-delà de 2020"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Rendere possibile il tiro in campagna e il tiro storico anche dopo il 2020"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-07-03"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-10-24"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.01"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/38/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Umweltschutzgesetzes (Massnahmen gegen invasive gebietsfremde Organismen)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi sur la protection de l'environnement (mesures contre les organismes exotiques envahissants)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge sulla protezione dell'ambiente (misure contro le specie esotiche invasive)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-05-15"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-09-04"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.01"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6001/31/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Förderung der Einführung schwefelfreier Treibstoffe (Änderung des Umweltschutzgesetzes, USG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Encouragement des carburants désulfurés (modification de la loi sur la protection de l'environnement, LPE)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Promovimento dell'introduzione di carburanti privi di zolfo (modifica della legge federale sulla protezione dell'ambiente, LPAmb)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2001-11-21"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2002-02-28"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.01"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/101/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "11.466 Pa. Iv. Frist für die Sanierung belasteter Standorte (Recordon)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "11.466 Iv. pa. Délai d'assainissement des sites pollués (Recordon)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "11.466 Iv. pa. Scadenza per il risanamento dei siti inquinati (Recordon)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-06-25"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-10-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.01"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/56/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des Umweltschutzgesetzes (USG) als indirekter Gegenvorschlag zur Volksinitiative «Für eine nachhaltige und ressourceneffiziente Wirtschaft (Grüne Wirtschaft)»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de la loi sur la protection de l'environnement (LPE) en tant que contre-projet indirect à l'initiative populaire «Pour une économie durable et fondée sur une gestion efficiente des ressources (économie verte)»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione della legge sulla protezione dell'ambiente (LPAmb) quale controprogetto indiretto all'iniziativa popolare «Per un'economia sostenibile ed efficiente in materia di gestione delle risorse (economia verde)»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-06-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.01"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/7/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "13.413 n Pa.Iv. Verstärkung der Massnahmen gegen das Liegenlassen von Abfällen (Littering)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "13.413 n Iv.pa. Mesures à renforcer contre l'abandon des déchets"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "13.413 n Iv.pa. Rafforzare i provvedimenti contro l'abbandono dei rifiuti"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-03-09"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-06-08"
+      "value": "2021-12-30"
     }
   },
   {
@@ -379,12 +106,12 @@
       "value": "Legge federale sulle misure di sgravio del bilancio della Confederazione applicabili dal 2027"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-01-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-05-05"
     }
@@ -418,14 +145,287 @@
       "value": "Modifica della legge sulla protezione dell’ambiente: misure per combattere gli organismi alloctoni invasivi"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-06-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-10-13"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.01"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6001/31/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Förderung der Einführung schwefelfreier Treibstoffe (Änderung des Umweltschutzgesetzes, USG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Encouragement des carburants désulfurés (modification de la loi sur la protection de l'environnement, LPE)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Promovimento dell'introduzione di carburanti privi di zolfo (modifica della legge federale sulla protezione dell'ambiente, LPAmb)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2001-11-21"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2002-02-28"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.01"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/146/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "09.499 Pa.Iv. UREK-NR. Agrotreibstoffe. Indirekte Auswirkungen berücksichtigen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "09.499. Iv.pa. CEATE-CN. Agrocarburants. Prise en compte des effets indirects"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "09.499 Iv. Pa. CAPTE-N. Agrocarburanti. Tenere conto degli effetti indiretti "
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-11-25"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-03-10"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.01"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/101/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "11.466 Pa. Iv. Frist für die Sanierung belasteter Standorte (Recordon)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "11.466 Iv. pa. Délai d'assainissement des sites pollués (Recordon)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "11.466 Iv. pa. Scadenza per il risanamento dei siti inquinati (Recordon)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-06-25"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-10-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.01"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/56/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des Umweltschutzgesetzes (USG) als indirekter Gegenvorschlag zur Volksinitiative «Für eine nachhaltige und ressourceneffiziente Wirtschaft (Grüne Wirtschaft)»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de la loi sur la protection de l'environnement (LPE) en tant que contre-projet indirect à l'initiative populaire «Pour une économie durable et fondée sur une gestion efficiente des ressources (économie verte)»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione della legge sulla protezione dell'ambiente (LPAmb) quale controprogetto indiretto all'iniziativa popolare «Per un'economia sostenibile ed efficiente in materia di gestione delle risorse (economia verde)»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-06-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-09-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.01"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/7/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "13.413 n Pa.Iv. Verstärkung der Massnahmen gegen das Liegenlassen von Abfällen (Littering)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "13.413 n Iv.pa. Mesures à renforcer contre l'abandon des déchets"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "13.413 n Iv.pa. Rafforzare i provvedimenti contro l'abbandono dei rifiuti"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-03-09"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-06-08"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.01"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/50/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Feldschiessen und historische Schiessen auch nach 2020 ermöglichen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Tirs en campagne et tirs historiques. Préservons notre patrimoine culturel au-delà de 2020"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Rendere possibile il tiro in campagna e il tiro storico anche dopo il 2020"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-07-03"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-10-24"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.01"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/38/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Umweltschutzgesetzes (Massnahmen gegen invasive gebietsfremde Organismen)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi sur la protection de l'environnement (mesures contre les organismes exotiques envahissants)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge sulla protezione dell'ambiente (misure contro le specie esotiche invasive)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-05-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-09-04"
     }
   }
 ]

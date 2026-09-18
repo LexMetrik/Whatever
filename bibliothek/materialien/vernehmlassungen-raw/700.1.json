@@ -28,53 +28,14 @@
       "value": "Revisioni parziali dell’ordinanza sulla pianificazione del territorio, dell’ordinanza sull’efficienza energetica e dell’ordinanza sugli impianti a bassa tensione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-10-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-01-25"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "700.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/59/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Raumplanungsverordnung (inkl. Technische Richtlinien Bauzonen und Ergänzung des Leitfadens für die kantonale Richtplanung)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l'ordonnance sur l'aménagement du territoire (y compris les directives techniques sur les zones à bâtir et le complément au guide de la planification directrice)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell'ordinanza sulla pianificazione del territorio (incl. Direttive tecniche sulle zone edificabili e Integrazione della Guida alla pianificazione direttrice)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-08-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-11-30"
     }
   },
   {
@@ -106,14 +67,53 @@
       "value": "Modifica dell’ordinanza sulla pianificazione del territorio (attuazione della seconda fase della revisione parziale della legge sulla pianificazione del territorio [LPT 2] e della legge federale su un approvvigionamento elettrico sicuro con le energie rinnovabili)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-06-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-10-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "700.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/4/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verordnung über das Bundesinventar der schützenswerten Ortsbilder der Schweiz ISOS (VISOS) und der Raumplanungsverordnung (RPV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l’ordonnance concernant l’Inventaire fédéral des sites construits à protéger en Suisse (OISOS) et de l’ordonnance sur l’aménagement du territoire (OAT)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell’ordinanza riguardante l’inventario federale degli insediamenti svizzeri da proteggere (OISOS) e dell’ordinanza sulla pianificazione del territorio (OPT)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-02-11"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-18"
     }
   },
   {
@@ -145,12 +145,12 @@
       "value": "Normativa più precisa in merito alle trasformazioni di edifici al di fuori delle zone edificabili"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2002-05-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2002-09-30"
     }
@@ -184,12 +184,12 @@
       "value": "Revisione parziale dell'ordinanza sulla pianificazione del territorio"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-02-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-06-01"
     }
@@ -201,36 +201,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/4/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/59/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung der Verordnung über das Bundesinventar der schützenswerten Ortsbilder der Schweiz ISOS (VISOS) und der Raumplanungsverordnung (RPV)"
+      "value": "Änderung der Raumplanungsverordnung (inkl. Technische Richtlinien Bauzonen und Ergänzung des Leitfadens für die kantonale Richtplanung)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de l’ordonnance concernant l’Inventaire fédéral des sites construits à protéger en Suisse (OISOS) et de l’ordonnance sur l’aménagement du territoire (OAT)"
+      "value": "Modification de l'ordonnance sur l'aménagement du territoire (y compris les directives techniques sur les zones à bâtir et le complément au guide de la planification directrice)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica dell’ordinanza riguardante l’inventario federale degli insediamenti svizzeri da proteggere (OISOS) e dell’ordinanza sulla pianificazione del territorio (OPT)"
+      "value": "Modifica dell'ordinanza sulla pianificazione del territorio (incl. Direttive tecniche sulle zone edificabili e Integrazione della Guida alla pianificazione direttrice)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-02-11"
+      "value": "2013-08-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-18"
+      "value": "2013-11-30"
     }
   }
 ]

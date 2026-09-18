@@ -6,6 +6,45 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/5/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Mehrwertsteuergesetzes (MWSTG) und des Bundesgesetzes über die Stempelabgaben (StG) (Wettbewerbsfähigkeit der Schweizer Wirtschaft stärken)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi sur la TVA (LTVA) et de la loi fédérale sur les droits de timbre (LT) (Renforcer la compétitivité de l’économie suisse)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge sull’IVA (LIVA) e della legge sulle tasse di bollo (LTB) (Rafforzare la competitività dell’economia svizzera)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-06-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-10-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "641.10"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/124/cons_1"
     },
     "status": {
@@ -28,121 +67,14 @@
       "value": "Legge federale concernente l'unificazione del diritto penale fiscale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-05-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "641.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/15/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die Verrechnungssteuer"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur l'impôt anticipé"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sull'imposta preventiva"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-04-03"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-07-10"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "641.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/2/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "09.503 Pa.Iv. Stempelsteuer schrittweise abschaffen und Arbeitsplätze schaffen (Bundesgesetz über die Stempelabgaben)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "09.503 Iv.pa. Supprimer les droits de timbre par étapes et créer des emplois (Loi fédérale sur les droits de timbre)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "09.503 Iv.pa. Abolire progressivamente le tasse di bollo e creare nuovi posti di lavoro (Legge federale sulle tasse di bollo)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-01-16"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-04-23"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "641.10"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/41/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz und -verordnung über die Bearbeitung von Personendaten im Steuerbereich (Mantelerlasse zu Änderungen in StG, DBG, VSTG, StHG und WPEG sowie den dazugehörigen Verordnungen; SR 641.10, SR 641.101, SR 642.11, SR 642.14, SR 642.21, SR 661 und SR 661.1)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale et ordonnance sur le traitement des données personnelles en matière fiscale (actes modificateurs de la LT, de la LIFD, de la LIA, de la LHID et de la LTEO ainsi que des ordonnances correspondantes; RS 641.10, RS 641.101, RS 642.11, RS 642.14, RS 642.21, RS 661 et RS 661.1)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale e ordinanza sul trattamento dei dati personali in ambito fiscale (atti mantello su modifiche di LTB, LIFD, LIP, LAID e LTEO e sulle relative ordinanze; RS 641.10, RS 641.101, RS 642.11, RS 642.14, RS 642.21, RS 661 e RS 661.1)"
     }
   },
   {
@@ -174,12 +106,12 @@
       "value": "09.503 Iv.Pa. Abolire progressivamente le tasse di bollo e creare nuovi posti di lavoro"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-02-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-05-10"
     }
@@ -213,12 +145,12 @@
       "value": "Legge federale concernente misure fiscali volte a rafforzare la competitività della piazza imprenditoriale svizzera (Legge sulla riforma III dell'imposizione delle imprese)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-09-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-01-31"
     }
@@ -252,12 +184,12 @@
       "value": "Legge federale sulle tasse di bollo (LTB; attuazione della mozione Abate 13.4253)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-05-25"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-09-15"
     }
@@ -291,12 +223,12 @@
       "value": "Legge federale sulle procedure elettroniche in ambito fiscale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-06-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-10-14"
     }
@@ -308,36 +240,104 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/5/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/15/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung des Mehrwertsteuergesetzes (MWSTG) und des Bundesgesetzes über die Stempelabgaben (StG) (Wettbewerbsfähigkeit der Schweizer Wirtschaft stärken)"
+      "value": "Bundesgesetz über die Verrechnungssteuer"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de la loi sur la TVA (LTVA) et de la loi fédérale sur les droits de timbre (LT) (Renforcer la compétitivité de l’économie suisse)"
+      "value": "Loi fédérale sur l'impôt anticipé"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica della legge sull’IVA (LIVA) e della legge sulle tasse di bollo (LTB) (Rafforzare la competitività dell’economia svizzera)"
+      "value": "Legge federale sull'imposta preventiva"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-06-19"
+      "value": "2020-04-03"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-10-12"
+      "value": "2020-07-10"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "641.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/2/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "09.503 Pa.Iv. Stempelsteuer schrittweise abschaffen und Arbeitsplätze schaffen (Bundesgesetz über die Stempelabgaben)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "09.503 Iv.pa. Supprimer les droits de timbre par étapes et créer des emplois (Loi fédérale sur les droits de timbre)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "09.503 Iv.pa. Abolire progressivamente le tasse di bollo e creare nuovi posti di lavoro (Legge federale sulle tasse di bollo)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-01-16"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-04-23"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "641.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/41/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz und -verordnung über die Bearbeitung von Personendaten im Steuerbereich (Mantelerlasse zu Änderungen in StG, DBG, VSTG, StHG und WPEG sowie den dazugehörigen Verordnungen; SR 641.10, SR 641.101, SR 642.11, SR 642.14, SR 642.21, SR 661 und SR 661.1)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale et ordonnance sur le traitement des données personnelles en matière fiscale (actes modificateurs de la LT, de la LIFD, de la LIA, de la LHID et de la LTEO ainsi que des ordonnances correspondantes; RS 641.10, RS 641.101, RS 642.11, RS 642.14, RS 642.21, RS 661 et RS 661.1)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale e ordinanza sul trattamento dei dati personali in ambito fiscale (atti mantello su modifiche di LTB, LIFD, LIP, LAID e LTEO e sulle relative ordinanze; RS 641.10, RS 641.101, RS 642.11, RS 642.14, RS 642.21, RS 661 e RS 661.1)"
     }
   }
 ]

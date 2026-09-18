@@ -57,12 +57,12 @@
       "value": "Modifica della Ordinanza sulla protezione dei dati (SR 235.11) e Ordinanza sulle procedure di certificazione della protezione dei dati"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-02-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-05-18"
     }
@@ -96,12 +96,12 @@
       "value": "Avamprogetto di legge federale relativo alla revisione totale della legge sulla protezione dei dati e alla modifica di altri atti normativi sulla protezione dei dati"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-12-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-04-04"
     }
