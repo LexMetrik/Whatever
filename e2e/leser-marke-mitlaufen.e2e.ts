@@ -79,7 +79,10 @@ async function leseZeitreihe(
     if (offen !== null) laengsteLuecke = Math.max(laengsteLuecke, abErster[abErster.length - 1].t - offen)
 
     return {
-      ersteMarkeMs,
+      // Die Zuweisung steht im setInterval-Rückruf; TypeScript verengt den Wert
+      // an dieser Stelle sonst auf `null` und die Schranke unten wäre nicht
+      // formulierbar.
+      ersteMarkeMs: ersteMarkeMs as number | null,
       proben: proben.length,
       abErster: abErster.length,
       ohneMarke: abErster.filter((p) => p.n === 0).length,
@@ -96,32 +99,55 @@ test.describe('W2·5m — Standort-Marke läuft beim Lesen mit', () => {
   // einem 2-vCPU-Runner — dasselbe Notdach-Argument wie in a33/F1.
   test.setTimeout(240_000)
 
-  test('OR — beim durchgehenden Lesen ist immer genau eine Zeile markiert und sie wandert', async ({ page }) => {
+  // DER DEFEKT HAT ZWEI GESICHTER, und sie brauchen zwei verschiedene Proben —
+  // beide einzeln am ungefixten Stand rot gezeigt (§6.7):
+  //  (i)  Wer OHNE Pause liest, bekommt gar keine Marke: `aktivIds` startet leer
+  //       und der verhungerte Timer füllt es nie.
+  //  (ii) Wer MIT Pausen liest, bekommt eine Marke — aber sie friert zwischen den
+  //       Pausen ein. Sie verschwindet nicht (der alte Wert bleibt stehen), sie
+  //       zeigt nur den falschen Ort. Eine Lücken-Messung sieht das NICHT; nur
+  //       die Zahl der distinkten Etiketten.
+  test('OR — durchgehendes Lesen: die Marke erscheint sofort und bleibt', async ({ page }) => {
     const fehler = fehlerSammeln(page)
     await page.setViewportSize({ width: 1440, height: 900 })
     await page.goto('/gesetze/bund/OR')
     await expect(page.locator('article[id^="art-"]').first()).toBeVisible({ timeout: 20000 })
     await expect(page.locator('[data-toc]')).toBeVisible({ timeout: 10000 })
 
-    const m = await leseZeitreihe(page, 20)
+    const m = await leseZeitreihe(page, 60, 1)
 
-    // (1) Die Marke erscheint überhaupt — der Kern des Defekts: über 24'000 px
-    //     Lesestrecke kam sie nie.
+    // (1) Sie erscheint überhaupt — und zwar beim ERSTEN Artikel an der
+    //     Bezugslinie, nicht erst beim Anhalten. Gemessen nach dem Fix:
+    //     88 ms (OR) bzw. 52 ms (BV); ungefixt 3891 ms lokal und über dieselbe
+    //     Strecke auf lexmetrik.vercel.app überhaupt keine. 1500 ms hält
+    //     17-fache Marge zum Ist und bleibt eine Grössenordnung unter dem Defekt.
     expect(m.ersteMarkeMs, `erste Marke nach ${m.ersteMarkeMs} ms (Strecke ${m.y} px)`).not.toBeNull()
+    expect(m.ersteMarkeMs as number, `erste Marke nach ${m.ersteMarkeMs} ms`).toBeLessThanOrEqual(1500)
     // (2) Und sie BLEIBT. Gemessen nach dem Fix: 0 von 114 Proben ohne Marke.
-    //     Die Schranke lässt einen React-Commit-Verzug auf langsamen Runnern zu,
-    //     liegt aber um ein Vielfaches unter dem Defekt (dort: die GANZE
-    //     Lesestrecke, lokal 3838 ms bis zur ersten Marke, live gar keine).
+    //     Die Schranke lässt einen React-Commit-Verzug auf langsamen Runnern zu.
     expect(m.laengsteLuecke, `längste Lücke ohne Marke ${m.laengsteLuecke} ms`).toBeLessThanOrEqual(500)
     expect(m.ohneMarke / Math.max(1, m.abErster), `Anteil Proben ohne Marke ${m.ohneMarke}/${m.abErster}`)
       .toBeLessThanOrEqual(0.2)
     // (3) GENAU EINE (F5-Invariante, W2·19-GLIEDERUNG/S4): nie zwei Standorte.
     expect(m.mehrfach, `Proben mit mehr als einer Marke ${m.mehrfach}`).toBe(0)
-    // (4) Sie FOLGT dem Scrollen — eine stehende Marke wäre kein Mitlaufen.
-    //     Gemessen am gefixten Stand, 3 deterministisch gleiche Läufe: 11
-    //     distinkte Etiketten (BV: 10). Die Schranke hält die Hälfte Marge und
-    //     bleibt trotzdem scharf: der Defekt lieferte 0.
+    expect(fehler).toEqual([])
+  })
+
+  test('OR — die Marke wandert mit und friert nicht ein', async ({ page }) => {
+    const fehler = fehlerSammeln(page)
+    await page.setViewportSize({ width: 1440, height: 900 })
+    await page.goto('/gesetze/bund/OR')
+    await expect(page.locator('article[id^="art-"]').first()).toBeVisible({ timeout: 20000 })
+    await expect(page.locator('[data-toc]')).toBeVisible({ timeout: 10000 })
+
+    const m = await leseZeitreihe(page, 20, 3)
+
+    // Gemessen am gefixten Stand, 3 deterministisch gleiche Läufe: 11 distinkte
+    // Etiketten (BV: 10). Ungefixt sind es 3 — genau die drei Pausen, in denen
+    // der Timer einmal feuern durfte. Die Schranke liegt zwischen beiden und
+    // hält zum Ist die Hälfte Marge.
     expect(m.etiketten, `distinkte Marken-Etiketten ${m.etiketten}`).toBeGreaterThanOrEqual(5)
+    expect(m.mehrfach, `Proben mit mehr als einer Marke ${m.mehrfach}`).toBe(0)
     expect(fehler).toEqual([])
   })
 
