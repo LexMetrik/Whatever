@@ -28,12 +28,12 @@
       "value": "Revisione parziale della Legge federale sul Tribunale federale (Legge sul Tribunale federale, BGG)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-03-21"
     }
@@ -67,12 +67,12 @@
       "value": "Revisione della legge del 24 marzo 2000 sul personale federale (LPers)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-09-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-01-05"
     }
@@ -106,12 +106,12 @@
       "value": "Iv.pa. Per retribuzioni adeguate e contro gli eccessi salariali delle aziende della Confederazione e di aziende parastatali"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-11-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-02-28"
     }

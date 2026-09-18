@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/81/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/94/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,105 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Verordnungsänderungen in der beruflichen Vorsorge"
+      "value": "Modernisierung der Aufsicht. Änderung der Verordnung über die Alters- und Hinterlassenenversicherung (AHVV), der Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2) und weiterer Verordnungen"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modifications des ordonnances dans le cadre de la prévoyance professionnelle"
+      "value": "Modernisation de la surveillance. Modification du règlement sur l’assurance-vieillesse et survivants (RAVS), de l'ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2) et d'autres ordonnances"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifiche alle ordinanze sulla previdenza professionale"
+      "value": "Modernizzazione della vigilanza. Modifica dell’ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS), Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l’invalidità (OPP 2) e di altre ordinanze"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-12-06"
+      "value": "2022-04-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-03-20"
+      "value": "2023-07-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.441.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/69/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnung über die Änderung verschiedener Verordnungen im Bereich der beruflichen Vorsorge 2026"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Ordonnance portant modification de diverses ordonnances dans la prévoyance professionnelle 2026"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Ordinanza concernente modifiche di disposizioni nell’ambito della previdenza professionale 2026"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-09-03"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-12-02"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.441.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6004/36/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2) im Zuge der 1. BVG-Revision (3. Paket)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l'ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2) suite à la 1ère révision de la LPP (3ème paquet)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Ordinanza sulla previdenza professionale (OPP 2) - terzo pacchetto"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-01-12"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2005-03-15"
     }
   },
   {
@@ -74,45 +152,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6004/36/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2) im Zuge der 1. BVG-Revision (3. Paket)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l'ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2) suite à la 1ère révision de la LPP (3ème paquet)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Ordinanza sulla previdenza professionale (OPP 2) - terzo pacchetto"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-01-12"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2005-03-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.441.1"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/24/cons_1"
     },
     "status": {
@@ -135,12 +174,12 @@
       "value": "Riforma strutturale nella previdenza professionale: modifiche di ordinanze e novella ordinanza sui fondazioni d'investimento"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-11-23"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-02-28"
     }
@@ -152,7 +191,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/94/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/81/cons_1"
     },
     "status": {
       "type": "uri",
@@ -161,66 +200,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Modernisierung der Aufsicht. Änderung der Verordnung über die Alters- und Hinterlassenenversicherung (AHVV), der Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2) und weiterer Verordnungen"
+      "value": "Verordnungsänderungen in der beruflichen Vorsorge"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modernisation de la surveillance. Modification du règlement sur l’assurance-vieillesse et survivants (RAVS), de l'ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2) et d'autres ordonnances"
+      "value": "Modifications des ordonnances dans le cadre de la prévoyance professionnelle"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modernizzazione della vigilanza. Modifica dell’ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS), Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l’invalidità (OPP 2) e di altre ordinanze"
+      "value": "Modifiche alle ordinanze sulla previdenza professionale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-04-19"
+      "value": "2019-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-07-12"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.441.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/69/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnung über die Änderung verschiedener Verordnungen im Bereich der beruflichen Vorsorge 2026"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Ordonnance portant modification de diverses ordonnances dans la prévoyance professionnelle 2026"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Ordinanza concernente modifiche di disposizioni nell’ambito della previdenza professionale 2026"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-09-03"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-12-02"
+      "value": "2020-03-20"
     }
   },
   {
@@ -252,12 +252,12 @@
       "value": "Disposizioni d'esecuzione relative alla modifica della legge federale sull'assicurazione per l'invalidità (Ulteriore sviluppo dell'AI)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-12-04"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-03-19"
     }

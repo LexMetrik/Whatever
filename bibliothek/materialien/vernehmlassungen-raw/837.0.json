@@ -6,123 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/66/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Arbeitslosenversicherungsgesetzes (Entschädigungssystem der Arbeitslosenkassen)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de la loi sur l’assurance-chômage (Système d’indemnisation des caisses de chômage)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della legge sull’assicurazione contro la disoccupazione (sistema di rimborso delle casse di disoccupazione)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-12-09"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-03-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "837.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/147/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Deplafonierung des Solidaritätsprozents in der Arbeitslosenversicherung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Déplafonnement du pourcent de solidarité de l'assurance-chômage"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Soppressione del limite massimo per il contributo di solidarietà dell'assicurazione contro la disoccupazione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-11-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-01-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "837.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/73/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Arbeitslosenversicherung: Anpassungen zur administrativen Entlastung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Assurance-chômage: adaptations visant à réduire les charges administratives"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Assicurazione contro la disoccupazione: adeguamenti in materia di sgravio amministrativo"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-10-24"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-02-07"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "837.0"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/27/cons_1"
     },
     "status": {
@@ -145,14 +28,131 @@
       "value": "Revisione parziale della legge sull’assicurazione contro la disoccupazione (Indennità per lavoro ridotto destinata ai formatori)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-06-10"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-09-21"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "837.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/66/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des Arbeitslosenversicherungsgesetzes (Entschädigungssystem der Arbeitslosenkassen)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de la loi sur l’assurance-chômage (Système d’indemnisation des caisses de chômage)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale della legge sull’assicurazione contro la disoccupazione (sistema di rimborso delle casse di disoccupazione)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-12-09"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-03-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "837.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/29/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die Massnahmen zur Entlastung des Haushalts ab 2025"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur des mesures d’allégement budgétaire à partir de 2025"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale concernente le misure di sgravio del bilancio della Confederazione applicabili dal 2025"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-06-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-10-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "837.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/56/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "20.406 n Pa. Iv. Silberschmidt. Unternehmerinnen und Unternehmer, welche Beiträge an die Arbeitslosenversicherung bezahlen, sollen auch gegen Arbeitslosigkeit versichert sein"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "20.406 n Iv. pa. Silberschmidt. Les entrepreneurs qui versent des cotisations à l’assurance-chômage doivent être assurés eux aussi contre le chômage"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "20.406 n Iv. pa. Silberschmidt. Gli imprenditori che pagano i contributi per l’assicurazione contro la disoccupazione devono anche essere assicurati contro la disoccupazione"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-08-18"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-11-24"
     }
   },
   {
@@ -184,12 +184,12 @@
       "value": "Iniziativa Parlamentare. Sostituire il finanziamento iniziale con una soluzione moderna. Consultazione sul modello della CSEC-S"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-03-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-06-12"
     }
@@ -223,12 +223,12 @@
       "value": "Legge sull'assicurazione contro la disoccupazione (LADI)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2000-09-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2000-12-07"
     }
@@ -240,7 +240,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/29/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/147/cons_1"
     },
     "status": {
       "type": "uri",
@@ -249,27 +249,66 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Bundesgesetz über die Massnahmen zur Entlastung des Haushalts ab 2025"
+      "value": "Deplafonierung des Solidaritätsprozents in der Arbeitslosenversicherung"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Loi fédérale sur des mesures d’allégement budgétaire à partir de 2025"
+      "value": "Déplafonnement du pourcent de solidarité de l'assurance-chômage"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Legge federale concernente le misure di sgravio del bilancio della Confederazione applicabili dal 2025"
+      "value": "Soppressione del limite massimo per il contributo di solidarietà dell'assicurazione contro la disoccupazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-06-28"
+      "value": "2012-11-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-10-12"
+      "value": "2013-01-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "837.0"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/73/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Arbeitslosenversicherung: Anpassungen zur administrativen Entlastung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Assurance-chômage: adaptations visant à réduire les charges administratives"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Assicurazione contro la disoccupazione: adeguamenti in materia di sgravio amministrativo"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-10-24"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-02-07"
     }
   },
   {
@@ -301,53 +340,14 @@
       "value": "Modifica della legge federale sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (LADI) - finanziamento aggiuntivo dell'assicurazione contro la disoccupazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-07-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-07-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "837.0"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/56/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "20.406 n Pa. Iv. Silberschmidt. Unternehmerinnen und Unternehmer, welche Beiträge an die Arbeitslosenversicherung bezahlen, sollen auch gegen Arbeitslosigkeit versichert sein"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "20.406 n Iv. pa. Silberschmidt. Les entrepreneurs qui versent des cotisations à l’assurance-chômage doivent être assurés eux aussi contre le chômage"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "20.406 n Iv. pa. Silberschmidt. Gli imprenditori che pagano i contributi per l’assicurazione contro la disoccupazione devono anche essere assicurati contro la disoccupazione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-08-18"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-11-24"
     }
   }
 ]

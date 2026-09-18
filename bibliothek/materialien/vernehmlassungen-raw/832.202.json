@@ -6,36 +6,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/62/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/78/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung von Anhang 1 der Verordnung über die Unfallversicherung (UVV)"
+      "value": "Änderung von Artikel 117 Absatz 1 der Verordnung über die Unfallversicherung (UVV)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de l'annexe 1 de l'ordonnance sur l'assurance-accidents (OLAA)"
+      "value": "Modification de l’article 117 alinéa 1 de l’ordonnance sur l’assurance-accidents (OLAA)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica dell'allegato 1 dell'ordinanza sull'assicurazione contro gli infortuni (OAINF)"
+      "value": "Modifica dell’articolo 117 capoverso 1 dell’ordinanza sull’assicurazione contro gli infortuni (OAINF)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-07-03"
+      "value": "2021-10-27"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-10-20"
+      "value": "2022-02-11"
     }
   },
   {
@@ -67,12 +67,12 @@
       "value": "Adattamento dell’ordinanza sull’assicurazione contro gli infortuni"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-11-16"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-03-02"
     }
@@ -106,12 +106,12 @@
       "value": "Modifica dell’ordinanza sull’assicurazione contro gli infortuni (OAINF) in relazione ai grandi eventi"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-10-30"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-02-18"
     }
@@ -123,36 +123,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/78/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/105/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung von Artikel 117 Absatz 1 der Verordnung über die Unfallversicherung (UVV)"
+      "value": "Revision der Verordnung über die Unfallversicherung (UVV)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de l’article 117 alinéa 1 de l’ordonnance sur l’assurance-accidents (OLAA)"
+      "value": "Révision de l’ordonnance sur l’assurance-accidents (OLAA)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica dell’articolo 117 capoverso 1 dell’ordinanza sull’assicurazione contro gli infortuni (OAINF)"
+      "value": "Ordinanza sull’assicurazione contro gli infortuni (OAINF)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-10-27"
+      "value": "2025-12-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-02-11"
+      "value": "2026-04-02"
     }
   },
   {
@@ -184,12 +184,12 @@
       "value": "Modifica dell'ordinanza del 20 dicembre 1982 sull'assicurazione contro gli infortuni (OAINF)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-05-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-09-10"
     }
@@ -223,12 +223,12 @@
       "value": "Modifica dell'ordinanza sull'assicurazione contro gli infortuni (OAINF)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-06-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-08-21"
     }
@@ -262,12 +262,12 @@
       "value": "Revisione dell'ordinanza sull'assicurazione contro gli infortuni (OAINF) "
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-03-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-06-30"
     }
@@ -279,7 +279,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/105/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/62/cons_1"
     },
     "status": {
       "type": "uri",
@@ -288,27 +288,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Revision der Verordnung über die Unfallversicherung (UVV)"
+      "value": "Änderung von Anhang 1 der Verordnung über die Unfallversicherung (UVV)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision de l’ordonnance sur l’assurance-accidents (OLAA)"
+      "value": "Modification de l'annexe 1 de l'ordonnance sur l'assurance-accidents (OLAA)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Ordinanza sull’assicurazione contro gli infortuni (OAINF)"
+      "value": "Modifica dell'allegato 1 dell'ordinanza sull'assicurazione contro gli infortuni (OAINF)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-12-19"
+      "value": "2017-07-03"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-02"
+      "value": "2017-10-20"
     }
   },
   {
@@ -340,12 +340,12 @@
       "value": "Disposizioni d'esecuzione relative alla modifica della legge federale sull'assicurazione per l'invalidità (Ulteriore sviluppo dell'AI)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-12-04"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-03-19"
     }

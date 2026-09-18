@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/124/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,144 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Bundesgesetz über eine Vereinheitlichung des Steuerstrafrechts"
+      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Loi fédérale sur l'unification des procédures pénales en matière fiscale"
+      "value": "Introduction du trust (modification du code des obligations)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Legge federale concernente l'unificazione del diritto penale fiscale"
+      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-05-29"
+      "value": "2022-01-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "642.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/174/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über das Schuldner- und das Zahlstellenprinzip bei der Verrechnungssteuer"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur l'application des principes du débiteur et de l'agent payeur à l'impôt anticipé"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sul principio del debitore e dell'agente pagatore nell'imposta preventiva"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-12-17"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-03-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "642.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/59/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die Verrechnungssteuer (VStG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur l'impôt anticipé (LIA)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sull'imposta preventiva (LIP)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-06-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-10-19"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "642.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/15/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die Verrechnungssteuer"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur l'impôt anticipé"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sull'imposta preventiva"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-04-03"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-07-10"
+      "value": "2022-04-30"
     }
   },
   {
@@ -184,12 +67,12 @@
       "value": "Revisione parziale della Legge federale sul Tribunale federale (Legge sul Tribunale federale, BGG)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-03-21"
     }
@@ -223,12 +106,12 @@
       "value": "Modifica della legge federale sull’imposta preventiva (Strumenti too big to fail)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-08-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-11-21"
     }
@@ -240,26 +123,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/41/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/42/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Bundesgesetz und -verordnung über die Bearbeitung von Personendaten im Steuerbereich (Mantelerlasse zu Änderungen in StG, DBG, VSTG, StHG und WPEG sowie den dazugehörigen Verordnungen; SR 641.10, SR 641.101, SR 642.11, SR 642.14, SR 642.21, SR 661 und SR 661.1)"
+      "value": "Bundesgesetz über die separate Besteuerung von Geldspielgewinnen am steuerrechtlichen Wohnsitz im Zeitpunkt der Resultatermittlung (Umsetzung Mo. Zanetti 23.3701)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Loi fédérale et ordonnance sur le traitement des données personnelles en matière fiscale (actes modificateurs de la LT, de la LIFD, de la LIA, de la LHID et de la LTEO ainsi que des ordonnances correspondantes; RS 641.10, RS 641.101, RS 642.11, RS 642.14, RS 642.21, RS 661 et RS 661.1)"
+      "value": "Loi fédérale sur l’imposition séparée des gains provenant de jeux d’argent au domicile fiscal au moment de la détermination du résultat (mise en œuvre mo. Zanetti 23.3701)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Legge federale e ordinanza sul trattamento dei dati personali in ambito fiscale (atti mantello su modifiche di LTB, LIFD, LIP, LAID e LTEO e sulle relative ordinanze; RS 641.10, RS 641.101, RS 642.11, RS 642.14, RS 642.21, RS 661 e RS 661.1)"
+      "value": "Legge federale sull’imposizione separata delle vincite da giochi in denaro al domicilio fiscale al momento dell’ottenimento del risultato (attuazione mo. Zanetti 23.3701)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-12-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-03-20"
     }
   },
   {
@@ -269,7 +162,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/124/cons_1"
     },
     "status": {
       "type": "uri",
@@ -278,27 +171,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
+      "value": "Bundesgesetz über eine Vereinheitlichung des Steuerstrafrechts"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Introduction du trust (modification du code des obligations)"
+      "value": "Loi fédérale sur l'unification des procédures pénales en matière fiscale"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
+      "value": "Legge federale concernente l'unificazione del diritto penale fiscale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-01-12"
+      "value": "2013-05-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-04-30"
+      "value": "2013-09-30"
     }
   },
   {
@@ -330,12 +223,12 @@
       "value": "Legge federale concernente misure fiscali volte a rafforzare la competitività della piazza imprenditoriale svizzera (Legge sulla riforma III dell'imposizione delle imprese)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-09-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-01-31"
     }
@@ -369,12 +262,12 @@
       "value": "13.479 Iv.pa. Precisazione della prassi di lunga data nell'ambito della procedura di notifica prevista dalla legge sull'imposta preventiva"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-12-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-03-06"
     }
@@ -386,36 +279,75 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/42/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/174/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Bundesgesetz über die separate Besteuerung von Geldspielgewinnen am steuerrechtlichen Wohnsitz im Zeitpunkt der Resultatermittlung (Umsetzung Mo. Zanetti 23.3701)"
+      "value": "Bundesgesetz über das Schuldner- und das Zahlstellenprinzip bei der Verrechnungssteuer"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Loi fédérale sur l’imposition séparée des gains provenant de jeux d’argent au domicile fiscal au moment de la détermination du résultat (mise en œuvre mo. Zanetti 23.3701)"
+      "value": "Loi fédérale sur l'application des principes du débiteur et de l'agent payeur à l'impôt anticipé"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Legge federale sull’imposizione separata delle vincite da giochi in denaro al domicilio fiscale al momento dell’ottenimento del risultato (attuazione mo. Zanetti 23.3701)"
+      "value": "Legge federale sul principio del debitore e dell'agente pagatore nell'imposta preventiva"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-12-05"
+      "value": "2014-12-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-03-20"
+      "value": "2015-03-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "642.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6017/59/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die Verrechnungssteuer (VStG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur l'impôt anticipé (LIA)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sull'imposta preventiva (LIP)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-06-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2017-10-19"
     }
   },
   {
@@ -447,14 +379,53 @@
       "value": "Legge federale sulle procedure elettroniche in ambito fiscale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-06-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-10-14"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "642.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/15/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die Verrechnungssteuer"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur l'impôt anticipé"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sull'imposta preventiva"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-04-03"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-07-10"
     }
   },
   {
@@ -486,14 +457,43 @@
       "value": "Legge federale sull'imposizione di rendite vitalizie e forme di previdenza simili (attuazione della mozione 12.3814)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-04-03"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-07-10"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "642.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/41/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz und -verordnung über die Bearbeitung von Personendaten im Steuerbereich (Mantelerlasse zu Änderungen in StG, DBG, VSTG, StHG und WPEG sowie den dazugehörigen Verordnungen; SR 641.10, SR 641.101, SR 642.11, SR 642.14, SR 642.21, SR 661 und SR 661.1)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale et ordonnance sur le traitement des données personnelles en matière fiscale (actes modificateurs de la LT, de la LIFD, de la LIA, de la LHID et de la LTEO ainsi que des ordonnances correspondantes; RS 641.10, RS 641.101, RS 642.11, RS 642.14, RS 642.21, RS 661 et RS 661.1)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale e ordinanza sul trattamento dei dati personali in ambito fiscale (atti mantello su modifiche di LTB, LIFD, LIP, LAID e LTEO e sulle relative ordinanze; RS 641.10, RS 641.101, RS 642.11, RS 642.14, RS 642.21, RS 661 e RS 661.1)"
     }
   }
 ]

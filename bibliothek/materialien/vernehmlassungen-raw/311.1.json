@@ -28,12 +28,12 @@
       "value": "Modifica della Costituzione federale, del Codice penale svizzero, del Codice penale militare e del diritto penale minorile (divieto di attività, di contatto e di accesso e allontanamento)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-02-23"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-05-31"
     }
@@ -67,12 +67,12 @@
       "value": "09.430 Iv. Pa. Legge concernente l'aiuto alle vittime di reati"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-10-03"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-01-15"
     }
@@ -106,12 +106,12 @@
       "value": "10.519 Iv.pa. Modifica dell'articolo 53 CP"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-10-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-02-03"
     }
@@ -145,12 +145,12 @@
       "value": "Modifica del Codice penale e del diritto penale minorile (Pacchetto di misure: esecuzione delle sanzioni)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-03-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-09-30"
     }

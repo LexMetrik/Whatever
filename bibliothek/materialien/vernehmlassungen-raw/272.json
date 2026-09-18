@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/143/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,66 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen"
+      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Loi fédérale sur l'amélioration de la protection des victimes de violence"
+      "value": "Introduction du trust (modification du code des obligations)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Legge federale per migliorare la protezione delle vittime di violenza"
+      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-10-07"
+      "value": "2022-01-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-01-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "272"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/48/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Schweizerischen Zivilgesetzbuches (Besitzesschutz bei verbotener Eigenmacht an Grundstücken)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du code civil (Protection contre les atteintes à la possession d'un immeuble)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice civile (Protezione del possesso contro gli atti di usurpazione di fondi)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-09-02"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-12-23"
+      "value": "2022-04-30"
     }
   },
   {
@@ -106,12 +67,12 @@
       "value": "Modifica del diritto in materia di proprietà per piani (art. 712a segg. CC)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-09-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-12-20"
     }
@@ -123,7 +84,85 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/116/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Indirekter Gegenvorschlag (Bundesgesetz über die nachhaltige Unternehmensführung) zur Volksinitiative «Für verantwortungsvolle Grossunternehmen – zum Schutz von Mensch und Umwelt»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Contre-projet indirect (Loi fédérale sur la gestion durable des entreprises) à l’initiative populaire « Pour des grandes entreprises responsables – pour la protection de l’être humain et de l’environnement »"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Controprogetto indiretto (Legge federale sulla gestione sostenibile delle imprese) all'iniziativa popolare «Per grandi imprese responsabili – a tutela dell’essere umano e dell'ambiente»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-04-02"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-07-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "272"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/51/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "22.448 s Pa. Iv. Caroni. Einen Pacs für die Schweiz"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "22.448 é Iv. pa. Caroni. Un pacs pour la Suisse"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "22.448 s Iv. pa. Caroni. Un Pacs adeguato alla Svizzera"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-17"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "272"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/143/cons_1"
     },
     "status": {
       "type": "uri",
@@ -132,27 +171,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
+      "value": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Introduction du trust (modification du code des obligations)"
+      "value": "Loi fédérale sur l'amélioration de la protection des victimes de violence"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
+      "value": "Legge federale per migliorare la protezione delle vittime di violenza"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-01-12"
+      "value": "2015-10-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-04-30"
+      "value": "2016-01-29"
     }
   },
   {
@@ -184,12 +223,12 @@
       "value": "Modifica del codice civile (CC; Diritto dell'adozione)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-11-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-03-31"
     }
@@ -223,12 +262,12 @@
       "value": "Modifica della legge federale sul diritto internazionale privato (arbitrato internazionale)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-01-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-05-31"
     }
@@ -262,12 +301,12 @@
       "value": "Codice di procedura civile (Miglioramento della praticabilità e dell'applicazione)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-03-02"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-06-11"
     }
@@ -279,75 +318,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/116/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/48/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Indirekter Gegenvorschlag (Bundesgesetz über die nachhaltige Unternehmensführung) zur Volksinitiative «Für verantwortungsvolle Grossunternehmen – zum Schutz von Mensch und Umwelt»"
+      "value": "Änderung des Schweizerischen Zivilgesetzbuches (Besitzesschutz bei verbotener Eigenmacht an Grundstücken)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Contre-projet indirect (Loi fédérale sur la gestion durable des entreprises) à l’initiative populaire « Pour des grandes entreprises responsables – pour la protection de l’être humain et de l’environnement »"
+      "value": "Modification du code civil (Protection contre les atteintes à la possession d'un immeuble)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Controprogetto indiretto (Legge federale sulla gestione sostenibile delle imprese) all'iniziativa popolare «Per grandi imprese responsabili – a tutela dell’essere umano e dell'ambiente»"
+      "value": "Modifica del Codice civile (Protezione del possesso contro gli atti di usurpazione di fondi)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-02"
+      "value": "2020-09-02"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-07-09"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "272"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/51/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "22.448 s Pa. Iv. Caroni. Einen Pacs für die Schweiz"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "22.448 é Iv. pa. Caroni. Un pacs pour la Suisse"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "22.448 s Iv. pa. Caroni. Un Pacs adeguato alla Svizzera"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-27"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-17"
+      "value": "2020-12-23"
     }
   }
 ]

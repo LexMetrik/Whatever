@@ -6,84 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/85/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision der Verordnung über die Krankenversicherung (KVV) und der Verordnung des EDI über Leistungen in der obligatorischen Krankenpflegeversicherung (KLV)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de l'ordonnance sur l'assurance-maladie (OAMal) et l'ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (OPAS)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale dell'Ordinanza sull'assicurazione malattie (OAMal) e dell'Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (OPre)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-06-19"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-07-25"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.112.31"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/64/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Anpassung des Vertriebsanteils nach Artikel 38 der Krankenpflege-Leistungsverordnung (KLV)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "La révision de la part relative à la distribution définie à l'art. 38 de l'ordonnance sur les prestations de l'assurance des soins (OPAS)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "L'adeguamento della parte propria alla distribuzione secondo l'articolo 38 dell'ordinanza sulle prestazioni (OPre)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-09-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-12-14"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.112.31"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/74/cons_1"
     },
     "status": {
@@ -106,12 +28,12 @@
       "value": "Modifiche dell’OAMal e dell’OPre: misure relative ai medicamenti"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-06-03"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-09-30"
     }
@@ -145,14 +67,121 @@
       "value": "Modifiche all’ordinanza sull’assicurazione malattie (OAMal) e all’ordinanza sulle prestazioni (OPre)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-10-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-02-01"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.112.31"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/79/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verordnung über die Krankenversicherung (KVV) und der Krankenpflege-Leistungsverordnung (KLV) (Umsetzung des Kostendämpfungspakets 2 im Arzneimittelbereich)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l’ordonnance sur l’assurance-maladie (OAMal) et de l’ordonnance sur les prestations de l’assurance des soins (OPAS) (Mise en œuvre du deuxième volet de mesures visant à maîtriser les coûts dans le domaine des médicaments)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell’ordinanza sull’assicurazione malattie (OAMal) e dell’ordinanza sulle prestazioni (OPre) (Attuazione del pacchetto 2 di misure di contenimento dei costi nel settore dei medicamenti)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-02-18"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-26"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.112.31"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/78/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verordnung des EDI über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV) infolge Umsetzung der Massnahmen zur Kostendämpfung Paket 2 – Paket AKV"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l'ordonnance du DFI sur les prestations dans l'assurance obligatoire des soins (ordonnance sur les prestations de l'assurance des soins, OPAS) suite les mesures visant à freiner la hausse des coûts 2e volet – volet AKV"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell'ordinanza del DFI sulle prestazioni nell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre) a seguito dell'attuazione delle misure di contenimento dei costi del pacchetto 2 – pacchetto AKV"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.112.31"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/18/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Verordnung vom 27. Juni 1995 über die Krankenversicherung (KVV) und Totalrevision der Verordnung über die Kostenermittlung und die Leistungserfassung durch Spitäler, Geburtshäuser und Pflegeheime in der Krankenversicherung (VKL) – Umsetzung der Änderung des Bundesgesetzes vom 18. März 1994 über die Krankenversicherung (KVG) zur einheitlichen Finanzierung der Leistungen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l’ordonnance du 27 juin 1995 sur l’assurance-maladie (OAMal) et révision totale de l’ordonnance sur le calcul des coûts et le classement des prestations par les hôpitaux, les maisons de naissance et les établissements médico sociaux dans l’assurance-maladie (OCP) – Mise en œuvre de la modification de la loi fédérale du 18 mars 1994 sur l’assurance-maladie (LAMal) relative au financement uniforme des prestations"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell'ordinanza del 27 giugno 1995 sull'assicurazione malattie (OAMal) e modifica totale dell’ordinanza sul calcolo dei costi e la registrazione delle prestazioni da parte degli ospedali, delle case per partorienti e delle case di cura nell’assicurazione malattie (OCPre) – Attuazione della modifica della legge federale del 18 marzo 1994 sull'assicurazione malattie (LAMal) relativa al finanziamento uniforme delle prestazioni"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-04-01"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-07-08"
     }
   },
   {
@@ -184,12 +213,12 @@
       "value": "Revisione parziale dell'ordinanza sull'assicurazione malattie (OAMal), dell'ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (OPre) e dell'ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-12-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-03-31"
     }
@@ -223,12 +252,12 @@
       "value": "Elenco delle analisi (Allegato 3 dell'Ordinanza del DFI sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie) "
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-06-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-08-15"
     }
@@ -262,14 +291,53 @@
       "value": "Revisione parziale dell'ordinanza sull'assicurazione malattie (OAMal)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-02-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-03-18"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "832.112.31"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/85/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision der Verordnung über die Krankenversicherung (KVV) und der Verordnung des EDI über Leistungen in der obligatorischen Krankenpflegeversicherung (KLV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de l'ordonnance sur l'assurance-maladie (OAMal) et l'ordonnance sur les prestations dans l'assurance obligatoire des soins en cas de maladie (OPAS)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale dell'Ordinanza sull'assicurazione malattie (OAMal) e dell'Ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (OPre)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-06-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-07-25"
     }
   },
   {
@@ -301,12 +369,12 @@
       "value": "Rimunerazione obbligatoria delle prestazioni di medicina complementare fornite da un medico a carico dell'assicurazione obbligatoria delle cure medico-sanitarie (AOMS), revisione parziale dell OAMal e dell'OPre)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-03-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-06-30"
     }
@@ -318,7 +386,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/79/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/64/cons_1"
     },
     "status": {
       "type": "uri",
@@ -327,66 +395,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung der Verordnung über die Krankenversicherung (KVV) und der Krankenpflege-Leistungsverordnung (KLV) (Umsetzung des Kostendämpfungspakets 2 im Arzneimittelbereich)"
+      "value": "Anpassung des Vertriebsanteils nach Artikel 38 der Krankenpflege-Leistungsverordnung (KLV)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de l’ordonnance sur l’assurance-maladie (OAMal) et de l’ordonnance sur les prestations de l’assurance des soins (OPAS) (Mise en œuvre du deuxième volet de mesures visant à maîtriser les coûts dans le domaine des médicaments)"
+      "value": "La révision de la part relative à la distribution définie à l'art. 38 de l'ordonnance sur les prestations de l'assurance des soins (OPAS)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica dell’ordinanza sull’assicurazione malattie (OAMal) e dell’ordinanza sulle prestazioni (OPre) (Attuazione del pacchetto 2 di misure di contenimento dei costi nel settore dei medicamenti)"
+      "value": "L'adeguamento della parte propria alla distribuzione secondo l'articolo 38 dell'ordinanza sulle prestazioni (OPre)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-02-18"
+      "value": "2018-09-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-26"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.112.31"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/18/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Verordnung vom 27. Juni 1995 über die Krankenversicherung (KVV) und Totalrevision der Verordnung über die Kostenermittlung und die Leistungserfassung durch Spitäler, Geburtshäuser und Pflegeheime in der Krankenversicherung (VKL) – Umsetzung der Änderung des Bundesgesetzes vom 18. März 1994 über die Krankenversicherung (KVG) zur einheitlichen Finanzierung der Leistungen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l’ordonnance du 27 juin 1995 sur l’assurance-maladie (OAMal) et révision totale de l’ordonnance sur le calcul des coûts et le classement des prestations par les hôpitaux, les maisons de naissance et les établissements médico sociaux dans l’assurance-maladie (OCP) – Mise en œuvre de la modification de la loi fédérale du 18 mars 1994 sur l’assurance-maladie (LAMal) relative au financement uniforme des prestations"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell'ordinanza del 27 giugno 1995 sull'assicurazione malattie (OAMal) e modifica totale dell’ordinanza sul calcolo dei costi e la registrazione delle prestazioni da parte degli ospedali, delle case per partorienti e delle case di cura nell’assicurazione malattie (OCPre) – Attuazione della modifica della legge federale del 18 marzo 1994 sull'assicurazione malattie (LAMal) relativa al finanziamento uniforme delle prestazioni"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-01"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-07-08"
+      "value": "2018-12-14"
     }
   },
   {
@@ -418,12 +447,12 @@
       "value": "Modifica dell'ordinanza del 27 giugno 1995 sull'assicurazione malattie (OAMal; RS 832.102) e dell'ordinanza sulle prestazioni (OPre; RS 832.112.31)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-06-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-10-17"
     }
@@ -457,43 +486,14 @@
       "value": "Modifica dell'Ordinanza sull'assicurazione malattia (OAMal) e dell'Ordinanza sulle prestazioni (OPre); Autorizzazione dei podologi come fornitori di prestazioni nel quadro dell'assicurazione obbligatoria delle cure medico-sanitarie (AOMS); contributo ai costi ospedalieri"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-06-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-10-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "832.112.31"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/78/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Verordnung des EDI über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV) infolge Umsetzung der Massnahmen zur Kostendämpfung Paket 2 – Paket AKV"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l'ordonnance du DFI sur les prestations dans l'assurance obligatoire des soins (ordonnance sur les prestations de l'assurance des soins, OPAS) suite les mesures visant à freiner la hausse des coûts 2e volet – volet AKV"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell'ordinanza del DFI sulle prestazioni nell'assicurazione obbligatoria delle cure medico-sanitarie (Ordinanza sulle prestazioni, OPre) a seguito dell'attuazione delle misure di contenimento dei costi del pacchetto 2 – pacchetto AKV"
     }
   }
 ]

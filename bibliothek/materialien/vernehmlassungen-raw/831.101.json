@@ -28,14 +28,53 @@
       "value": "Modifica dell’ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-12-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-03-24"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "831.101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/94/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Modernisierung der Aufsicht. Änderung der Verordnung über die Alters- und Hinterlassenenversicherung (AHVV), der Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2) und weiterer Verordnungen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modernisation de la surveillance. Modification du règlement sur l’assurance-vieillesse et survivants (RAVS), de l'ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2) et d'autres ordonnances"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modernizzazione della vigilanza. Modifica dell’ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS), Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l’invalidità (OPP 2) e di altre ordinanze"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-04-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-07-12"
     }
   },
   {
@@ -67,12 +106,12 @@
       "value": "Modifica dell’ordinanza sull’assicurazione per la vecchiaia e per i superstiti (Riscossione dei contributi AVS – Salario di poco conto e interessi di mora)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-05-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-09-05"
     }
@@ -106,12 +145,12 @@
       "value": "Nuovo numero AVS. Modifica di ordinanze ed emanazione di disposizioni esecutive"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-06-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-08-31"
     }
@@ -145,53 +184,14 @@
       "value": "Revisione parziale dell'ordinanza sull'assicurazione malattie (OAMal), dell'ordinanza sulle prestazioni dell'assicurazione obbligatoria delle cure medico-sanitarie (OPre) e dell'ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-12-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-03-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "831.101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/94/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Modernisierung der Aufsicht. Änderung der Verordnung über die Alters- und Hinterlassenenversicherung (AHVV), der Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2) und weiterer Verordnungen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modernisation de la surveillance. Modification du règlement sur l’assurance-vieillesse et survivants (RAVS), de l'ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2) et d'autres ordonnances"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modernizzazione della vigilanza. Modifica dell’ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS), Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l’invalidità (OPP 2) e di altre ordinanze"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-04-19"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-07-12"
     }
   },
   {
@@ -223,12 +223,12 @@
       "value": "Disposizioni d'esecuzione relative alla modifica della legge federale sull'assicurazione per l'invalidità (Ulteriore sviluppo dell'AI)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-12-04"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-03-19"
     }

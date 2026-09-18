@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/97/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,66 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über Schuldbetreibung und Konkurs (Sanierungsverfahren für natürliche Personen)"
+      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur la poursuite pour dettes et la faillite (Assainissement des dettes des personnes physiques)"
+      "value": "Introduction du trust (modification du code des obligations)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica della legge federale sulla esecuzione e sul fallimento (Procedura di risanamento per persone fisiche)"
+      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-06-03"
+      "value": "2022-01-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-09-26"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "281.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/46/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über Schuldbetreibung und Konkurs (SchKG; Gewerbsmässige Gläubigervertretung)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur la poursuite pour dettes et la faillite (LP; représentation professionnelle)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sulla esecuzione e sul fallimento (LEF; Professione di rappresentante dei creditori)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-09-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-12-31"
+      "value": "2022-04-30"
     }
   },
   {
@@ -106,12 +67,12 @@
       "value": "Modifica della legge federale sulla esecuzione e sul fallimento (LEF) (Informazione sulle esecuzioni, notificazione per via elettronica e incanto in linea)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-06-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-10-17"
     }
@@ -123,7 +84,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/97/cons_1"
     },
     "status": {
       "type": "uri",
@@ -132,27 +93,105 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
+      "value": "Änderung des Bundesgesetzes über Schuldbetreibung und Konkurs (Sanierungsverfahren für natürliche Personen)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Introduction du trust (modification du code des obligations)"
+      "value": "Modification de la loi fédérale sur la poursuite pour dettes et la faillite (Assainissement des dettes des personnes physiques)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
+      "value": "Modifica della legge federale sulla esecuzione e sul fallimento (Procedura di risanamento per persone fisiche)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-01-12"
+      "value": "2022-06-03"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-04-30"
+      "value": "2022-09-26"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "281.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/47/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Paket «Stabilisierung und Weiterentwicklung der Beziehungen Schweiz–EU»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Paquet «stabilisation et développement des relations Suisse-UE»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-06-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-10-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "281.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/51/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "22.448 s Pa. Iv. Caroni. Einen Pacs für die Schweiz"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "22.448 é Iv. pa. Caroni. Un pacs pour la Suisse"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "22.448 s Iv. pa. Caroni. Un Pacs adeguato alla Svizzera"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-17"
     }
   },
   {
@@ -184,12 +223,12 @@
       "value": "Legge federale sull'esecuzione e sul fallimento (LEF)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2000-11-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2001-02-28"
     }
@@ -223,12 +262,12 @@
       "value": "Revisione della legge federale sulla esecuzione e sul fallimento (LEF): procedura di risanamento"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-01-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-05-08"
     }
@@ -262,14 +301,53 @@
       "value": "02.440 Iniziativa parlamentare. LEF. Crediti privilegiati dei dipendenti in caso di fallimento. Limitazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-09-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-12-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "281.1"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/46/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über Schuldbetreibung und Konkurs (SchKG; Gewerbsmässige Gläubigervertretung)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur la poursuite pour dettes et la faillite (LP; représentation professionnelle)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sulla esecuzione e sul fallimento (LEF; Professione di rappresentante dei creditori)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-09-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-12-31"
     }
   },
   {
@@ -301,92 +379,14 @@
       "value": "Modifica della legge federale sulla esecuzione e sul fallimento (LEF; Impedire gli abusi)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-04-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-08-14"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "281.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/51/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "22.448 s Pa. Iv. Caroni. Einen Pacs für die Schweiz"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "22.448 é Iv. pa. Caroni. Un pacs pour la Suisse"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "22.448 s Iv. pa. Caroni. Un Pacs adeguato alla Svizzera"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-27"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-17"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "281.1"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/47/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Paket «Stabilisierung und Weiterentwicklung der Beziehungen Schweiz–EU»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet «stabilisation et développement des relations Suisse-UE»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-06-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-31"
     }
   }
 ]

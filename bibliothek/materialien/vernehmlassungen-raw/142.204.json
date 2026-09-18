@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/118/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/18/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,66 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Anpassung der Verordnung über die Einreise und die Visumerteilung (VEV)"
+      "value": "Verordnungsänderungen aufgrund der Übernahme und Umsetzung der Verordnung (EU) 2024/1717 zur Revision des Schengener Grenzkodex (Schengen-Weiterentwicklung) sowie aufgrund einer Änderung des Ausländer- und Integrationsgesetzes"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Adaptation de l'ordonnance sur l'entrée et l'octroi de visas (OEV)"
+      "value": "Modifications d’ordonnances liées à la reprise et à la mise en œuvre du règlement (UE) 2024/1717 modifiant le code frontières Schengen (développement de l’acquis de Schengen) et à une modification de la loi fédérale sur les étrangers et l’intégration"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica dell'ordinanza concernente l'entrata e il rilascio del visto (OEV)"
+      "value": "Modifiche di ordinanze a seguito del recepimento e della trasposizione nel diritto svizzero del regolamento (UE) 2024/1717 relativo alla revisione del codice frontiere Schengen (Sviluppo dell’acquis di Schengen) nonché a seguito di una modifica della legge federale sugli stranieri e la loro integrazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-12-16"
+      "value": "2025-05-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2010-01-15"
+      "value": "2025-09-18"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.204"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/65/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Ausführungsverordnungen zu den Einschränkungen für Reisen ins Ausland (RDV, VZAE, VEV, VVWAL und AsylV 1)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification des ordonnances d’exécution relatifs aux restrictions de voyage à l'étranger (ODV, OASA, OEV, OERE et OA 1)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica delle ordinanze esecutive relativi alle limitazioni per i viaggi all’estero (ODV, OASA, , OEV, OEAE e OAsi 1)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-10-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-02-05"
     }
   },
   {
@@ -67,14 +106,82 @@
       "value": "Modifiche di ordinanze a seguito del recepimento del Patto sulla migrazione e l’asilo dell’UE"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-06-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-10-13"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.204"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/83/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Ausführungsverordnungen (RDV, AsylV 1, VEV, VVWAL und VZAE) (Einschränkungen für Reisen ins Ausland; 20.063)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification des ordonnances d’exécution (ODV, OA 1, OEV, OERE et OASA) (Restriction des voyages à l’étranger ; 20.063)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica delle ordinanze esecutive (ODV, OAsi 1, OEV, OEAE e OASA) (Limitazioni per i viaggi all’estero; 20.063)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.204"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/118/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Anpassung der Verordnung über die Einreise und die Visumerteilung (VEV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Adaptation de l'ordonnance sur l'entrée et l'octroi de visas (OEV)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell'ordinanza concernente l'entrata e il rilascio del visto (OEV)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-12-16"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2010-01-15"
     }
   },
   {
@@ -106,12 +213,12 @@
       "value": "Modifica dell'ordinanza concernente l'entrata e il rilascio del visto (OEV)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-03-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-04-05"
     }
@@ -145,53 +252,14 @@
       "value": "Ordinanza che adegua ordinanze in seguito a sviluppi nell'ambito di Schengen e Dublino"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-01-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-03-16"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.204"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/65/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Ausführungsverordnungen zu den Einschränkungen für Reisen ins Ausland (RDV, VZAE, VEV, VVWAL und AsylV 1)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification des ordonnances d’exécution relatifs aux restrictions de voyage à l'étranger (ODV, OASA, OEV, OERE et OA 1)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica delle ordinanze esecutive relativi alle limitazioni per i viaggi all’estero (ODV, OASA, , OEV, OEAE e OAsi 1)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-02-05"
     }
   },
   {
@@ -223,12 +291,12 @@
       "value": "Ordinanze d'esecuzione per il recepimento del regolamento (UE) 2016/1624 relativo alla guardia di frontiera e costiera europea; nonché altre modifiche di ordinanze nel settore della migrazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-01-31"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-04-30"
     }
@@ -262,82 +330,14 @@
       "value": "Disposizioni esecutive per l'utilizzo del sistema di ingressi e uscite (sviluppi dell'acquis di Schengen)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-02-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-05-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.204"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/18/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungsänderungen aufgrund der Übernahme und Umsetzung der Verordnung (EU) 2024/1717 zur Revision des Schengener Grenzkodex (Schengen-Weiterentwicklung) sowie aufgrund einer Änderung des Ausländer- und Integrationsgesetzes"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modifications d’ordonnances liées à la reprise et à la mise en œuvre du règlement (UE) 2024/1717 modifiant le code frontières Schengen (développement de l’acquis de Schengen) et à une modification de la loi fédérale sur les étrangers et l’intégration"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifiche di ordinanze a seguito del recepimento e della trasposizione nel diritto svizzero del regolamento (UE) 2024/1717 relativo alla revisione del codice frontiere Schengen (Sviluppo dell’acquis di Schengen) nonché a seguito di una modifica della legge federale sugli stranieri e la loro integrazione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-05-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-09-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.204"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/83/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Ausführungsverordnungen (RDV, AsylV 1, VEV, VVWAL und VZAE) (Einschränkungen für Reisen ins Ausland; 20.063)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification des ordonnances d’exécution (ODV, OA 1, OEV, OERE et OASA) (Restriction des voyages à l’étranger ; 20.063)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica delle ordinanze esecutive (ODV, OAsi 1, OEV, OEAE e OASA) (Limitazioni per i viaggi all’estero; 20.063)"
     }
   }
 ]
