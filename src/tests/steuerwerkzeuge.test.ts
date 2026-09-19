@@ -364,6 +364,26 @@ describe('klassifiziereDiff — Auftrags-Testmatrix', () => {
   });
 });
 
+// merge_group-Zweig (ci.yml, 19.9.2026, QS-ORG-UMZUG/QS-CI-MINUTEN): die Queue
+// klassiert den Diff je Eintrag mit DERSELBEN Drei-Klassen-Regel. Festgehalten
+// sind die beiden ersten echten Queue-Einträge (Dateilisten über die
+// Compare-API gemessen 19.9.2026, base_sha...head_sha):
+//   #922  135ec0cba...06489b10c → doku
+//   #917  06489b10c...9b125ce8e → code (gestapelt HINTER #922: base = Vordermann)
+describe('klassifiziereDiff — echte Merge-Queue-Einträge (19.9.2026)', () => {
+  it('#922 [ROADMAP.md + fahrplaene/*.md] → doku', () => {
+    expect(
+      klassifiziereDiff(['ROADMAP.md', 'fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md']),
+    ).toBe('doku');
+  });
+
+  it('#917 [2× .md + scripts/check-perf-budget.ts] → code (scripts/** ausserhalb plan/cowork)', () => {
+    expect(
+      klassifiziereDiff(['DESIGN-REGLEMENT.md', 'ROADMAP.md', 'scripts/check-perf-budget.ts']),
+    ).toBe('code');
+  });
+});
+
 describe('klassifiziereDateien — die einzelnen code-fernen Flächen', () => {
   it('scripts/cowork/** ist code-fern', () => {
     expect(klassifiziereDateien(['scripts/cowork/y.ts'])).toBe('code-fern');

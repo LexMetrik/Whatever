@@ -79,6 +79,10 @@ export function klassifiziereDateien(dateien: readonly string[]): DiffArt {
  * scheidung unverändert bestehen). Dient dem §6.7-Beweis der vier Testfälle
  * des Auftrags — ci.yml selbst ruft weiterhin nur `klassifiziereDateien` auf,
  * NACHDEM sein eigener `.md`-Kurztest den reinen Doku-Fall schon behandelt hat.
+ * Seit 19.9.2026 wertet auch der `merge_group`-Zweig in ci.yml dieselbe Regel
+ * je Queue-Eintrag aus (base_sha...head_sha); seine Sonderfälle (Gruppierung
+ * ≠ ALLGREEN, Bereich nicht «ahead», 0/≥300 Dateien ⇒ `code`) liegen wie die
+ * des push-Zweigs bewusst in der Bash, nicht hier.
  */
 export function klassifiziereDiff(dateien: readonly string[]): 'doku' | DiffArt {
   if (istReinerDokuDiff(dateien)) return 'doku';

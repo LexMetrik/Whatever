@@ -88,6 +88,10 @@
 # Davids Entscheid vom 14.8.2026 («wird freigegeben») bewusst gelockert.
 # `merge_group` bleibt unberührt und fährt weiterhin ausnahmslos das volle
 # Programm. Fehlerseite unverändert (§6.7): jede Unsicherheit fällt auf `code`.
+# (Stand 14.8.2026. Seit 19.9.2026 klassiert der `diff`-Job auch `merge_group`
+# — Entscheid David «alles durch die warteschlange»: jeder Doku-PR läuft durch
+# die Queue, der pauschale Volllauf wäre dort ein Dauer-Kostenposten. Regeln,
+# Auflage ALLGREEN und Fehlerseite: Kommentar im Schritt «PR-Diff klassieren».)
 #
 # ─── Dritte Klasse `code-fern` (QS-PLAN-EINFACH 14.8.2026, Punkt 3) ──────────
 # Die Playwright-Browser-Shards sind gemessen 77–78 % der CI-Zeit. Rührt ein
@@ -134,11 +138,14 @@
 #   pull_request   diff · bau* · tore · e2e(4)* · e2e-ergebnis · merge-schutz
 #   push (Diät)    diff · bau · e2e-ergebnis · perf · deploy
 #   push (o. Diät) diff · bau* · tore · e2e(4)* · e2e-ergebnis · perf · deploy
-#   merge_group    diff · bau · tore · e2e(4) · e2e-ergebnis · perf · merge-schutz
+#   merge_group    diff · bau* · tore · e2e(4)* · e2e-ergebnis · perf** · merge-schutz
 #   dispatch       diff · bau · tore · e2e(4) · e2e-ergebnis · perf · merge-schutz
 #                  (+ deploy nur bei probe=ohne-token)
 #   (* je nach Diff-Klasse: `bau` entfällt bei doku, `e2e` bei doku/code-fern;
 #      `e2e-ergebnis` läuft IMMER — er ist der Pflicht-Kontext der Browser-Tests)
+#   (** seit 19.9.2026 klassiert auch `merge_group`: `perf` läuft dort nur bei
+#      art=code und meldet sonst `skipped` — ein per `if:` übersprungener
+#      Nicht-Matrix-Job erfüllt seinen Pflicht-Kontext, siehe M4)
 #
 # ─── PFLICHT-KONTEXTE (Branch-Schutz main), abschliessend ───────────────────
 #   «Tore (Tests · Lint · Checks)»
@@ -239,6 +246,9 @@ jobs:
           GEMELDET: ${{ github.event.pull_request.changed_files }}
           BEFORE: ${{ github.event.before }}
           AFTER: ${{ github.event.after }}
+          MG_BASE: ${{ github.event.merge_group.base_sha }}
+          MG_HEAD: ${{ github.event.merge_group.head_sha }}
+          MG_BASE_REF: ${{ github.event.merge_group.base_ref }}
         run: |
           set -euo pipefail
           # Flächen, die die ausgelieferte App nachweislich nicht berühren
@@ -264,12 +274,104 @@ jobs:
           # (check:dispatch-klausel) lief nicht (§6.7). Wortgleich zu
           # WERKZEUG_TROTZ_MD_MUSTER in scripts/ci/diff-klassieren.ts.
           WERKZEUG_TROTZ_MD_RE='(^\.claude/agents/|^docs/token-oekonomie/dispatch-template\.md$)'
-          # `merge_group` und `workflow_dispatch` fahren unverändert das volle
-          # Programm: die Merge Queue prüft einen Stand, der gleich main WIRD,
-          # und ein Handstart ist immer als Volllauf gemeint.
-          if [ "$EVENT" != "pull_request" ] && [ "$EVENT" != "push" ]; then
+          # `workflow_dispatch` (und jedes unbekannte Event) fährt unverändert
+          # das volle Programm: ein Handstart ist immer als Volllauf gemeint.
+          if [ "$EVENT" != "pull_request" ] && [ "$EVENT" != "push" ] && [ "$EVENT" != "merge_group" ]; then
             echo "art=code" >> "$GITHUB_OUTPUT"
             echo "Event '${EVENT}' — keine Klassierung, volles Programm."
+            exit 0
+          fi
+          # ── merge_group (Merge-Queue auf main, QS-ORG-UMZUG 19.9.2026) ───────
+          # BIS 19.9.2026 fuhr jeder Queue-Eintrag pauschal `art=code`. Seit
+          # Davids Entscheid «alles durch die warteschlange» (19.9.2026) gibt
+          # es keine Direkt-Pushes mehr — auch jede Roadmap-Zeile läuft als PR
+          # durch die Queue und hätte dort Tore + Bau + 4 Playwright-Shards
+          # gebrannt (~70 Runner-Minuten, flake-anfällig). Klassiert wird
+          # darum der Diff DIESES Queue-Eintrags: `base_sha`...`head_sha` des
+          # Events, über die Compare-API (kein Checkout, wie im push-Zweig).
+          #
+          # STAPELUNG: `base_sha` ist der Eltern-Commit der Merge-Gruppe — bei
+          # gestapelten Einträgen also der Queue-Commit des VORDERMANNS, nicht
+          # main (gemessen 19.9.2026: Zweig `gh-readonly-queue/main/pr-917-
+          # 06489b10c…` trägt den Vordermann-SHA im Namen, und 9b125ce8e hat
+          # 06489b10c als einzigen Elter). Das ist richtig so: der Vordermann
+          # hat seinen EIGENEN merge_group-Lauf auf seinem eigenen Diff. Fliegt
+          # er raus, baut GitHub die Nachfolger neu — neuer Zweig, neuer
+          # head_sha, neues `merge_group`-Ereignis, neuer Lauf mit neuer
+          # Klassierung (docs.github.com «Managing a merge queue», Abruf
+          # 19.9.2026: «the merge queue automatically removes pull request #1
+          # from the merge queue. The merge queue recreates the temporary
+          # branch with the prefix of main/pr-2 to only contain changes from
+          # the target branch and pull request #2.»). Ein Lauf, der gegen
+          # einen verworfenen Vordermann klassiert hat, landet also nie.
+          #
+          # AUFLAGE, HART GEPRÜFT: Die Klassierung je Eintrag trägt NUR unter
+          # der Gruppierung ALLGREEN («All pull requests must satisfy required
+          # checks to be merged», ebd.). Unter HEADGREEN genügt der grüne
+          # KOPF der Gruppe — ein Doku-Eintrag am Kopf (leichtes Programm)
+          # würde dann einen roten Code-Vordermann mit durchwinken. Die
+          # Strategie wird darum bei JEDEM Lauf aus den aktiven Regeln des
+          # Ziel-Branches gelesen (`rules/branches/<branch>`, ohne Admin-Recht
+          # lesbar — gemessen 19.9.2026 sogar unauthentifiziert); alles ausser
+          # genau `ALLGREEN` ⇒ `code`.
+          #
+          # FEHLERSEITE (§6.7) — jeder dieser Fälle fällt auf `code`:
+          #   · base_sha/head_sha/base_ref fehlen im Ereignis
+          #   · Regeln nicht lesbar oder Strategie ≠ ALLGREEN
+          #   · Compare-API antwortet nicht, oder der Bereich ist nicht rein
+          #     «ahead» (base kein Vorfahre von head ⇒ die Drei-Punkt-Compare
+          #     rechnete gegen eine merge-base und könnte Dateien verschweigen)
+          #   · 0 Dateien oder 300 (Kappungsgrenze der API, wie im push-Zweig)
+          # Der DEPLOY bleibt davon unberührt: über Bau + Deploy entscheidet
+          # weiterhin allein der push-Zweig unten (Basis = live ausgelieferter
+          # Stand), nie diese Klassierung.
+          if [ "$EVENT" = "merge_group" ]; then
+            if [ -z "${MG_BASE:-}" ] || [ -z "${MG_HEAD:-}" ] || [ -z "${MG_BASE_REF:-}" ]; then
+              echo "art=code" >> "$GITHUB_OUTPUT"
+              echo "::warning::merge_group ohne base_sha/head_sha/base_ref — volles Programm."
+              exit 0
+            fi
+            STRATEGIE=$(gh api "repos/${REPO}/rules/branches/${MG_BASE_REF#refs/heads/}" --jq '[.[] | select(.type == "merge_queue") | .parameters.grouping_strategy] | unique | join(",")' || true)
+            if [ "$STRATEGIE" != "ALLGREEN" ]; then
+              echo "art=code" >> "$GITHUB_OUTPUT"
+              echo "::warning::Merge-Queue-Gruppierung '${STRATEGIE:-<nicht lesbar>}' statt ALLGREEN — Klassierung je Eintrag trägt nicht, volles Programm."
+              exit 0
+            fi
+            if ! gh api "repos/${REPO}/compare/${MG_BASE}...${MG_HEAD}" --jq '"\(.status)|\(.behind_by)", (.files[]?.filename)' > mg-antwort.txt; then
+              echo "art=code" >> "$GITHUB_OUTPUT"
+              echo "::warning::Compare-API ${MG_BASE}...${MG_HEAD} nicht auswertbar — volles Programm."
+              exit 0
+            fi
+            lage=$(sed -n '1p' mg-antwort.txt)
+            sed '1d' mg-antwort.txt > mg-dateien.txt
+            if [ "$lage" != "ahead|0" ]; then
+              echo "art=code" >> "$GITHUB_OUTPUT"
+              echo "::warning::Bereich ${MG_BASE}...${MG_HEAD} ist '${lage}' statt 'ahead|0' (base kein Vorfahre von head) — volles Programm."
+              exit 0
+            fi
+            anzahl=$(wc -l < mg-dateien.txt | tr -d ' ')
+            echo "Queue-Eintrag ${MG_BASE}...${MG_HEAD}: ${anzahl} Datei(en)."
+            if [ "$anzahl" -eq 0 ] || [ "$anzahl" -ge 300 ]; then
+              echo "art=code" >> "$GITHUB_OUTPUT"
+              echo "Dateizahl ${anzahl} (leer oder an der API-Kappungsgrenze 300) — volles Programm."
+              exit 0
+            fi
+            # Dieselbe Drei-Klassen-Regel wie im push- und pull_request-Zweig
+            # (CODE_FERN_RE/WERKZEUG_TROTZ_MD_RE oben; Modell und §6.7-Beweis:
+            # klassifiziereDiff in scripts/ci/diff-klassieren.ts).
+            if grep -qvE '\.md$' mg-dateien.txt || grep -qE "$WERKZEUG_TROTZ_MD_RE" mg-dateien.txt; then
+              if grep -qvE "$CODE_FERN_RE" mg-dateien.txt; then
+                echo "art=code" >> "$GITHUB_OUTPUT"
+                echo "App-nahe Dateien im Queue-Eintrag — volles Programm:"
+                grep -vE "$CODE_FERN_RE" -m 20 mg-dateien.txt
+              else
+                echo "art=code-fern" >> "$GITHUB_OUTPUT"
+                echo "Nur app-ferne Nicht-Doku-Dateien im Queue-Eintrag (${anzahl} Datei(en)) — Bau + alle Node-Tore laufen VOLL, nur die 4 Browser-Shards werden übersprungen; Perf-Budget meldet 'skipped'."
+              fi
+            else
+              echo "art=doku" >> "$GITHUB_OUTPUT"
+              echo "Reiner Doku-Queue-Eintrag (${anzahl} Datei(en)) — Merge-Schutz, Testtreue, check:plan, check:steuerdeckel und check:bibliothek laufen ECHT, restliche Code-Tore quittieren; Perf-Budget meldet 'skipped'."
+            fi
             exit 0
           fi
           # ── push auf main (Freigabe David 14.8.2026, Kopf dieser Datei) ──────
@@ -1191,6 +1293,14 @@ jobs:
     # Datei fern und damit auch von hier. Ohne diese Bedingung liefe Lighthouse
     # (4× CPU, langsames 4G, eigener Chromium) für jede Roadmap-Pflege — und
     # zwar gegen ein dist, das der Doku-Pfad gar nicht gebaut hat.
+    # merge_group (19.9.2026): seit der Queue-Klassierung ist `art` dort nicht
+    # mehr pauschal `code` — bei doku/code-fern wird dieser Job per `if:`
+    # übersprungen und meldet `skipped`. Das erfüllt den Pflicht-Kontext
+    # (docs.github.com «Troubleshooting required status checks», Abruf
+    # 19.9.2026: «A job is skipped by a conditional» ⇒ «The job reports
+    # "Success"»; empirisch: auf JEDEM PR seit 26.7.2026 so, zuletzt #922 —
+    # Perf `skipped`, PR in die Queue aufgenommen und gelandet). Das §15-Budget
+    # misst für solche Einträge weiterhin der push-Lauf je Deploy-Stand.
     # M1 (8.9.2026): `perf` BLEIBT auf main — das §15-Budget wird weiterhin je
     # Deploy-Stand gemessen. Weil `tore`/`e2e` dort jetzt übersprungen sein
     # KÖNNEN (Push-Diät), zieht die Standard-Skip-Logik `perf` sonst mit; die
