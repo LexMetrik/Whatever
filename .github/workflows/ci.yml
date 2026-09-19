@@ -118,6 +118,9 @@
 #       hart belegt, dass genau dieser Baum als PR grün war. Jede Unsicherheit
 #       fällt auf den Volllauf. −29 % der Minuten. Auslöser `merge_group` und
 #       `workflow_dispatch` bleiben unberührt.
+#       (Stand 8.9.2026. Seit 19.9.2026 ist der Beleg nicht mehr der PR-Lauf,
+#       sondern der grüne `merge_group`-Lauf AM GEPUSHTEN SHA — siehe AUFLAGE
+#       am Ende dieses Kopfs und den Schritt selbst.)
 #   M3  Browser-Shards 8 → 4. Je Shard-Job fallen gemessen 1.28 min Rüstzeit
 #       + 0.37 min Aufrundung an, unabhängig von der Testmenge; 8 Shards
 #       kosteten 46.7 abgerechnete Minuten für 33.3 min echte Testzeit.
@@ -177,10 +180,16 @@
 # Shard-ZAHL ist ab hier frei änderbar, ohne den Branch-Schutz nachzuziehen —
 # der bisherige Nachzieh-Zwang (K12) entfällt für die Browser-Tests ganz.
 #
-# AUFLAGE (§6.7): M1 steht und fällt mit `required_status_checks.strict: true`
-# im Branch-Schutz von main (gemessen 8.9.2026). Wird `strict` abgeschaltet,
-# ist ein PR-Lauf kein Beleg mehr für den landenden Baum — dann muss die
-# Push-Diät zurückgebaut werden.
+# AUFLAGE (§6.7), Fassung 19.9.2026: M1 steht und fällt mit der Merge-Queue
+# auf main (Ruleset 23699779). Bis 19.9.2026 lautete die Auflage
+# `required_status_checks.strict: true` (gemessen 8.9.2026) — `strict` ist seit
+# dem Org-Umzug AUS, der PR-Lauf damit kein Beleg mehr für den landenden Baum.
+# Der Beleg ist jetzt der `merge_group`-Lauf: die Queue setzt main per
+# Fast-Forward auf den GETESTETEN Queue-Commit, sein Lauf hängt also am selben
+# SHA wie der spätere Push (gemessen 19.9.2026, 9b125ce8e: Lauf 35449369984).
+# Wird die Queue abgeschaltet, erzeugt der Merge-Knopf einen neuen Commit, zu
+# dem es keinen `merge_group`-Lauf gibt ⇒ die Diät fällt von selbst auf den
+# Volllauf; ein Rückbau ist dann Aufräumen, keine Sicherheitsfrage.
 name: CI
 
 on:
@@ -232,6 +241,11 @@ jobs:
     permissions:
       contents: read
       pull-requests: read
+      # Push-Diät (19.9.2026): liest Läufe + Jobs des merge_group-Laufs
+      # (`actions/runs`). Im öffentlichen Repo auch ohne dieses Recht lesbar
+      # (gemessen 19.9.2026, unauthentifiziert) — ausdrücklich gesetzt, damit
+      # ein Wechsel auf «privat» die Diät nicht still abschaltet.
+      actions: read
     outputs:
       art: ${{ steps.klassieren.outputs.art }}
       push_diaet: ${{ steps.diaet.outputs.push_diaet }}
@@ -483,42 +497,78 @@ jobs:
             echo "Reine .md-Änderung (${anzahl} Datei(en)) — Merge-Schutz, check:plan, check:steuerdeckel und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
           fi
 
-      # ── Push-Diät (M1, QS-CI-MINUTEN, 8.9.2026) ──────────────────────────
-      # BEFUND der 30-Tage-Messung: 348 `push`-Läufe auf main à Ø 51.6 min =
-      # 17'951 min = 29 % ALLER CI-Minuten — und sie prüfen einen Baum, der
-      # Minuten zuvor als PR schon grün durchgelaufen ist. Der Branch-Schutz
-      # führt `strict: true` (ein PR muss vor dem Merge aktuell sein), und ein
-      # `pull_request`-Lauf testet den MERGE-Commit; der Baum, der auf main
-      # landet, ist damit derselbe. Ein zweiter Lauf liefert keine neue
-      # Information (§6: es ist derselbe Baum, Golden bleibt byte-gleich).
+      # ── Push-Diät (M1, QS-CI-MINUTEN, 8.9.2026; Beleg neu 19.9.2026) ─────
+      # BEFUND der 30-Tage-Messung (8.9.2026): 348 `push`-Läufe auf main à
+      # Ø 51.6 min = 17'951 min = 29 % ALLER CI-Minuten — und sie prüfen einen
+      # Baum, der Minuten zuvor schon grün durchgelaufen ist. Ein zweiter Lauf
+      # liefert keine neue Information (§6: derselbe Baum, Golden byte-gleich).
       #
-      # DIESER SCHRITT IST DAS TOR DAZU (§6.7). Der Bericht verlangt, dass
-      # «Head-Commit ist Squash-Merge eines grünen PR» HART geprüft wird und
-      # jede Unsicherheit auf den Volllauf fällt — nicht per Kommentar
-      # behauptet. Geprüft wird darum, gegen die API:
-      #   1. Der gepushte Commit ist der `merge_commit_sha` GENAU EINES
-      #      gemergten PR gegen `main` (kein Direkt-Push, kein Force-Push,
-      #      keine fremde Nummer).
-      #   2. Am Kopf-Commit dieses PR trägt KEIN Check-Run ein anderes
-      #      Ergebnis als success/skipped/neutral.
-      #   3. Die beiden ereignisunabhängigen Pflicht-Kontexte «Tore …» und
-      #      «Merge-Schutz …» stehen dort ausdrücklich auf `success` (nicht
-      #      bloss «nicht rot» — ein fehlender Kontext wäre sonst grün).
+      # BELEG BIS 19.9.2026 (Historie): «gepushter Commit ist Squash-Merge
+      # genau eines gemergten PR, dessen Kopf-Lauf durchgehend grün war» plus
+      # die Annahme `strict: true`. Beides trägt seit dem Org-Umzug nicht
+      # mehr: `strict` ist AUS (der PR-Kopf-Lauf kann veraltet sein), und bei
+      # Sammel-Landungen (mehrere PRs in EINEM Push, gemessen 19.9.2026:
+      # #922 + #917, Kopf 9b125ce8e) sah die Prüfung nur den Kopf-PR.
+      #
+      # BELEG JETZT: die Merge-Queue setzt main per Fast-Forward auf den
+      # Queue-Commit, den sie getestet hat — `AFTER` IST der head_sha eines
+      # `merge_group`-Laufs. Ein SHA legt Baum UND Vorgeschichte fest; ein
+      # grüner Lauf an genau diesem SHA ist darum ein Beleg für genau den
+      # landenden Stand, ohne jede Annahme über Aktualität. DIESER SCHRITT IST
+      # DAS TOR DAZU (§6.7) und prüft gegen die API:
+      #   1. Es gibt mindestens einen `merge_group`-Lauf DIESES Workflows mit
+      #      head_sha == AFTER, und JEDER solche Lauf ist `completed/success`.
+      #   2. In jedem dieser Läufe stehen die drei Pflicht-Kontexte, deren
+      #      Wiederholung die Diät erspart bzw. die in jeder Klasse laufen —
+      #      «Tore …», «Merge-Schutz …», «Browser-Smoke (Ergebnis)» — genau
+      #      einmal und ausdrücklich auf `completed|success`. «Nicht rot»
+      #      genügt nicht: ein fehlender, offener, übersprungener oder
+      #      doppelter Kontext ⇒ `false`.
+      #   3. «Perf-Budget …» steht dort auf `success` ODER `skipped`.
       # Jeder Fehlschlag, jede API-Störung, jeder unerwartete Wert ⇒ `false`
       # ⇒ VOLLES Programm. Zu viel zu prüfen kostet Minuten, zu wenig lässt
       # ungeprüften Code ausliefern (Vorfall #579).
       #
-      # WAS DIESER SCHRITT NICHT PRÜFT: `strict: true` selbst. Die
-      # Branch-Schutz-API verlangt Admin-Rechte, die `GITHUB_TOKEN` nicht hat
-      # — eine Prüfung wäre immer rot und die Diät damit wirkungslos. Der
-      # Wert ist am 8.9.2026 gemessen (`branches/main/protection`,
-      # `required_status_checks.strict == true`) und steht als Auflage im
-      # Landungs-Protokoll: wird `strict` je abgeschaltet, MUSS diese Diät
-      # zurückgebaut werden, weil dann ein veralteter PR-Lauf grün wäre.
+      # WARUM `skipped` NUR BEI PERF ZÄHLT: Seit der Queue-Klassierung
+      # (Schritt oben) meldet ein Doku-/code-fern-Eintrag Perf-Budget per
+      # Job-`if:` als `skipped`; verlangte die Diät dort `success`, wäre sie
+      # für genau die häufigste Klasse unerreichbar. Sicher ist die Ausnahme,
+      # weil die Diät `perf` gar nicht erspart: auf push entscheidet `perf`
+      # weiter selbst (art == 'code' gegen die LIVE-Basis) und misst je
+      # Deploy-Stand. «Browser-Smoke (Ergebnis)» braucht keine Ausnahme — der
+      # Sammel-Job wertet einen begründeten Shard-Skip selbst und meldet
+      # `success`; ein `skipped` DORT hiesse abgebrochener Lauf ⇒ kein Beleg.
+      #
+      # EIGENER LAUF: der laufende Push-Lauf hängt am selben SHA (sein `diff`
+      # ist «in_progress», sein Merge-Schutz sofort `skipped`). Er kann den
+      # Beleg weder liefern noch verderben, weil nur Läufe mit
+      # event == merge_group gelesen werden und ihre Jobs über die Lauf-ID —
+      # nie die namensgleichen Check-Runs am SHA. Die eigene GITHUB_RUN_ID ist
+      # zusätzlich ausgeschlossen (kostet eine Zeile).
+      #
+      # DOKU-KOPF ÜBER CODE-VORDERMANN: Landen mehrere Einträge in einem Push,
+      # belegt der Lauf an AFTER nur den KOPF-Eintrag — bei einem Doku-Kopf
+      # also das leichte Programm. Das genügt, weil die Queue-Klassierung nur
+      # unter ALLGREEN vom Volllauf abweicht (dort hart geprüft): jeder
+      # Vordermann hat dann seinen eigenen grünen Lauf auf seinem eigenen
+      # Diff, sonst wäre die Gruppe nicht gelandet.
+      #
+      # ENTFALLEN (§17-Gegengewicht): die frühere Bedingung «AFTER ist
+      # merge_commit_sha genau eines gemergten PR». Ihre Sorge «dieser Baum
+      # ist geprüft» trägt der SHA-Beleg vollständig und strenger; ihre
+      # zweite Sorge «kein Direkt-/Force-Push» ist Sache des Rulesets (keine
+      # Bypass-Akteure), nicht dieses Schritts — und ein direkt gepushter SHA
+      # OHNE grünen merge_group-Lauf fällt hier ohnehin auf `false`.
+      #
+      # WAS DIESER SCHRITT NICHT PRÜFT: dass die Queue aktiv ist. Muss er
+      # nicht — ohne Queue gibt es keinen merge_group-Lauf am landenden SHA
+      # (der Merge-Knopf erzeugt einen neuen Commit), die Diät fällt dann von
+      # selbst auf den Volllauf. Wird ci.yml umbenannt, gilt dasselbe
+      # (Pfad-Filter unten) — fail-safe, aber dann still teuer.
       #
       # EFFEKT MESSEN: `gh run list --event push --workflow CI --limit 20`
       # zeigt danach nur noch `diff`, `bau`, `perf`, `deploy` je main-Push.
-      - name: Push-Diät prüfen (Head ist Squash-Merge eines grünen PR)
+      - name: Push-Diät prüfen (grüner merge_group-Lauf am gepushten SHA)
         id: diaet
         env:
           GH_TOKEN: ${{ github.token }}
@@ -536,33 +586,40 @@ jobs:
           if [ "$EVENT" != "push" ] || [ "$REF" != "refs/heads/main" ]; then
             setze false "kein main-Push (Event=${EVENT}, Ref=${REF}) — volles Programm."
           fi
-          PRS=$(gh api "repos/${REPO}/commits/${AFTER}/pulls" \
-            --jq '[.[] | select(.merged_at != null and .merge_commit_sha == env.AFTER and .base.ref == "main")]') \
-            || setze false "commits/${AFTER}/pulls nicht auswertbar — volles Programm."
-          ANZAHL=$(echo "$PRS" | jq 'length')
-          if [ "$ANZAHL" != "1" ]; then
-            setze false "${ANZAHL} passende(r) gemergte(r) PR zu ${AFTER} (erwartet genau 1) — volles Programm."
+          if ! [[ "${AFTER:-}" =~ ^[0-9a-f]{40}$ ]]; then
+            setze false "AFTER='${AFTER:-}' ist kein Commit-SHA — volles Programm."
           fi
-          NUMMER=$(echo "$PRS" | jq -r '.[0].number')
-          KOPF=$(echo "$PRS" | jq -r '.[0].head.sha')
-          LAEUFE=$(gh api "repos/${REPO}/commits/${KOPF}/check-runs?per_page=100" \
-            --jq '.check_runs[] | "\(.conclusion // "offen")|\(.name)"') \
-            || setze false "check-runs am PR-Kopf ${KOPF} nicht auswertbar — volles Programm."
+          LAEUFE=$(gh api "repos/${REPO}/actions/runs?head_sha=${AFTER}&event=merge_group&per_page=100" \
+            --jq '.workflow_runs[] | select(.path == ".github/workflows/ci.yml") | "\(.id)|\(.head_sha)|\(.event)|\(.status)|\(.conclusion // "offen")"') \
+            || setze false "actions/runs zu ${AFTER} nicht auswertbar — volles Programm."
           if [ -z "$LAEUFE" ]; then
-            setze false "keine Check-Runs am Kopf von PR #${NUMMER} — volles Programm."
+            setze false "kein merge_group-Lauf am gepushten SHA ${AFTER} (Direkt-Push, Queue aus, Merge-Knopf) — volles Programm."
           fi
-          SCHLECHT=$(echo "$LAEUFE" | grep -vE '^(success|skipped|neutral)\|' || true)
-          if [ -n "$SCHLECHT" ]; then
-            echo "Nicht-grüne Check-Runs am Kopf von PR #${NUMMER}:"
-            echo "$SCHLECHT"
-            setze false "PR-Lauf nicht durchgehend grün — volles Programm."
-          fi
-          for pflicht in "Tore (Tests · Lint · Checks)" "Merge-Schutz (Required-Kontext)"; do
-            if ! echo "$LAEUFE" | grep -qxF "success|${pflicht}"; then
-              setze false "Pflicht-Kontext «${pflicht}» am PR-Kopf nicht auf success — volles Programm."
+          BELEGT=""
+          while IFS='|' read -r ID SHA EV STATUS SCHLUSS; do
+            if [ "$ID" = "${GITHUB_RUN_ID:-}" ] || [ "$SHA" != "$AFTER" ] || [ "$EV" != "merge_group" ]; then
+              setze false "Lauf ${ID} passt nicht (sha=${SHA}, event=${EV}) — volles Programm."
             fi
-          done
-          setze true "PR #${NUMMER}, Kopf ${KOPF} durchgehend grün; Branch-Schutz strict:true ⇒ identischer Baum. Tore/e2e/Merge-Schutz laufen auf main nicht erneut."
+            if [ "$STATUS" != "completed" ] || [ "$SCHLUSS" != "success" ]; then
+              setze false "merge_group-Lauf ${ID} steht auf ${STATUS}/${SCHLUSS} — volles Programm."
+            fi
+            JOBS=$(gh api "repos/${REPO}/actions/runs/${ID}/jobs?filter=latest&per_page=100" \
+              --jq '.jobs[] | "\(.status)|\(.conclusion // "offen")|\(.name)"') \
+              || setze false "Jobs von Lauf ${ID} nicht auswertbar — volles Programm."
+            for pflicht in "Tore (Tests · Lint · Checks)" "Merge-Schutz (Required-Kontext)" "Browser-Smoke (Ergebnis)" "Perf-Budget (§15 — nur bei grüner Treue)"; do
+              STAND=$(echo "$JOBS" | awk -F'|' -v n="$pflicht" '$3 == n { print $1 "|" $2 }')
+              case "${pflicht}#${STAND}" in
+                *"#completed|success") ;;
+                "Perf-Budget"*"#completed|skipped") ;;
+                *) setze false "Pflicht-Kontext «${pflicht}» in Lauf ${ID}: '${STAND:-fehlt}' — volles Programm." ;;
+              esac
+            done
+            BELEGT="${BELEGT} ${ID}"
+          done <<< "$LAEUFE"
+          if [ -z "$BELEGT" ]; then
+            setze false "kein Lauf ausgewertet — volles Programm."
+          fi
+          setze true "merge_group-Lauf(e)${BELEGT} an ${AFTER} grün, alle vier Pflicht-Kontexte belegt ⇒ identischer Stand. Tore/e2e laufen auf main nicht erneut."
 
   bau:
     name: Bau (dist-Artefakt)
@@ -617,9 +674,9 @@ jobs:
     needs: diff
     # ── M1 (QS-CI-MINUTEN, 8.9.2026): kein zweiter Lauf auf main ────────────
     # Auf `push` nach main läuft dieser Job nur noch, wenn die Push-Diät NICHT
-    # greift — also wenn der gepushte Baum NICHT nachweislich als grüner PR
-    # geprüft wurde (Direkt-Push, fremder Merge, rote/fehlende Check-Runs,
-    # API-Störung). Die harte Prüfung samt Fehlerseite sitzt im Schritt
+    # greift — also wenn am gepushten SHA KEIN grüner `merge_group`-Lauf
+    # belegt ist (Direkt-Push, Queue aus, rote/fehlende Pflicht-Kontexte,
+    # API-Störung; bis 19.9.2026: «nicht als grüner PR geprüft»). Die harte Prüfung samt Fehlerseite sitzt im Schritt
     # «Push-Diät prüfen» des `diff`-Jobs. `pull_request`, `merge_group` und
     # `workflow_dispatch` sind unberührt und fahren unverändert voll.
     # `!cancelled()` statt der Standard-Skip-Logik: fällt `diff` selbst aus,
@@ -1024,7 +1081,8 @@ jobs:
     # ausgelieferte App nachweislich nicht, Bau + alle Node-Tore laufen für sie
     # trotzdem voll).
     # Dazu die Push-Diät (M1): auf main läuft kein zweites Mal, was der
-    # PR-Lauf auf demselben Baum schon grün gefahren hat.
+    # merge_group-Lauf am selben SHA schon grün gefahren hat (bis 19.9.2026:
+    # der PR-Lauf).
     # Die Klassen stehen bewusst als NEGATIV-Liste (`!= doku`, `!= code-fern`)
     # statt als `== code`: fällt `diff` aus, ist `art` leer — dann laufen die
     # Shards (Fehlerseite = prüfen). `bau` muss erfolgreich sein, sonst gibt
@@ -1240,7 +1298,8 @@ jobs:
   #   (1) e2e=success              → grün (Shards gelaufen und bestanden)
   #   (2) e2e=skipped, art=doku    → grün (M4: Doku rührt die App nicht an)
   #   (2b) e2e=skipped, art=code-fern → grün (QS-PLAN-EINFACH 14.8.2026)
-  #   (2c) e2e=skipped, push_diaet=true → grün (M1: derselbe Baum war als PR grün)
+  #   (2c) e2e=skipped, push_diaet=true → grün (M1: derselbe SHA war im
+  #                                  merge_group-Lauf grün; bis 19.9.2026: als PR)
   #   (3) e2e=skipped, art=code    → ROT (verirrter Skip, z. B. rotes `bau` oder
   #                                  eine künftig falsch verdrahtete `if:`-Zeile)
   #   (4) e2e=failure              → ROT
@@ -1306,7 +1365,8 @@ jobs:
     # KÖNNEN (Push-Diät), zieht die Standard-Skip-Logik `perf` sonst mit; die
     # Gegenkopplung «erst bei grüner Treue» ist darum als explizite
     # Ergebnis-Prüfung ausgeschrieben: rot oder abgebrochen ⇒ keine Messung,
-    # übersprungen ⇒ die Treue ist im PR-Lauf bewiesen. `bau` muss grün sein,
+    # übersprungen ⇒ die Treue ist im merge_group-Lauf am selben SHA bewiesen
+    # (bis 19.9.2026: im PR-Lauf). `bau` muss grün sein,
     # sonst fehlt das dist-Artefakt.
     if: >-
       !cancelled()
@@ -1402,7 +1462,8 @@ jobs:
   #   sein, aber niemals `failure`/`cancelled`.
   # Damit gilt unverändert: rote Treue ⇒ kein Deploy. Übersprungen ist genau
   # dann zulässig, wenn die Klassierung (`code-fern`) oder die Push-Diät (M1,
-  # PR-Lauf hat denselben Baum schon grün gefahren) das begründet.
+  # merge_group-Lauf hat denselben SHA schon grün gefahren; bis 19.9.2026: der
+  # PR-Lauf) das begründet.
   #
   # BUILD-PARITÄT: `vercel pull` holt die Projekt-Einstellungen, `vercel build`
   # fährt `buildCommand` aus vercel.json — dort seit 17.8.2026 explizit
