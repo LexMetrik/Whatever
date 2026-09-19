@@ -14,8 +14,7 @@ import { ladeHistorieShard, historieFuerArtikel, type HistorieShard } from '../.
 import {
   fruehestesInKraft, nichtKonsolidierteInkrafttreten, revisionenFuerNorm,
 } from '../../lib/normtext/revisionen';
-import { klappZeile } from './tocAutoZuklappen';
-import { oeffneSprungZiel } from './klappKarte';
+import { klappZeile, oeffneSprungZiel } from './klappKarte';
 
 // ═══ ABSCHNITT · Reader-Zustand (§6.6-Split, QS-TOK/T14) ═════════════════════
 // Aus GesetzLeserInhalt ausgelagerte Zustands-Hooks: Daten-/Shard-/Such-Zustand,

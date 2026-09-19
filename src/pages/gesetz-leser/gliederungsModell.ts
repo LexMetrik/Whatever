@@ -40,7 +40,7 @@
 import type { Sektion, StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { berechneSektionMeta } from './berechnungen';
-import { artikelSchluessel } from './tocAutoZuklappen';
+import { artikelSchluessel } from './klappKarte';
 
 // ─── Fassade (§6.6-Aufteilung 13.8.2026) ─────────────────────────────────────
 // Die Typen und die Artikel-Ebene liegen seit dem 13.8.2026 in eigenen Dateien
