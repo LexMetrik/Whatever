@@ -1,49 +1,49 @@
 {
-  "nummer": "01.014",
-  "titel": "ZGB. Änderung (Elektronische Führung der Personenstandsregister)",
+  "nummer": "02.008",
+  "titel": "Arbeitsvermittlungsgesetz. Änderung",
   "geschaeftstyp": "Geschäft des Bundesrates",
   "status": "Erledigt",
-  "eingereicht": "2001-02-14",
-  "erstrat": "Ständerat",
-  "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010014",
+  "eingereicht": "2002-01-09",
+  "erstrat": "Nationalrat",
+  "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020008",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
   "abgerufen": "2026-09-19",
   "kommissionen": [
     {
-      "datum": "2001-02-14",
+      "datum": "2002-01-09",
       "name": "Kommission für Rechtsfragen Nationalrat",
       "kuerzel": "RK-N"
     },
     {
-      "datum": "2001-02-14",
+      "datum": "2002-01-09",
       "name": "Kommission für Rechtsfragen Ständerat",
       "kuerzel": "RK-S"
     }
   ],
   "beschluesse": [
     {
-      "datum": "2001-06-12",
-      "rat": "Ständerat",
-      "ratKuerzel": "SR",
-      "text": "Beschluss abweichend vom Entwurf",
+      "datum": "2002-06-05",
+      "rat": "Nationalrat",
+      "ratKuerzel": "NR",
+      "text": "Beschluss gemäss Entwurf",
       "vorlage": 1
     },
     {
-      "datum": "2001-09-20",
-      "rat": "Nationalrat",
-      "ratKuerzel": "NR",
+      "datum": "2002-06-12",
+      "rat": "Ständerat",
+      "ratKuerzel": "SR",
       "text": "Zustimmung",
       "vorlage": 1
     },
     {
-      "datum": "2001-10-05",
+      "datum": "2002-06-21",
       "rat": "Nationalrat",
       "ratKuerzel": "NR",
       "text": "Annahme in der Schlussabstimmung",
       "vorlage": 1
     },
     {
-      "datum": "2001-10-05",
+      "datum": "2002-06-21",
       "rat": "Ständerat",
       "ratKuerzel": "SR",
       "text": "Annahme in der Schlussabstimmung",
@@ -52,34 +52,34 @@
   ],
   "publikationen": [
     {
-      "datum": "2001-02-14",
+      "datum": "2002-01-09",
       "art": "Bundesblatt",
-      "jahr": "2001",
-      "nummer": "1639",
-      "text": "Botschaft vom 14. Februar 2001 über die Änderung des Schweizerischen Zivilgesetzbuches (Elektronische Führung der Personenstandsregister)",
+      "jahr": "2002",
+      "nummer": "1254",
+      "text": "Botschaft vom 9. Januar 2002 über die Änderung des Arbeitsvermittlungsgesetzes",
       "referendumsfrist": null
     },
     {
-      "datum": "2001-02-14",
+      "datum": "2002-01-09",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Schweizerisches Zivilgesetzbuch (Elektronische Führung der Personenstandsregister)",
+      "text": "Bundesgesetz über die Arbeitsvermittlung und den Personalverleih (Arbeitsvermittlungsgesetz, AVG)",
       "referendumsfrist": null
     },
     {
-      "datum": "2001-10-05",
+      "datum": "2002-07-09",
       "art": "Bundesblatt",
-      "jahr": "2001",
-      "nummer": "5733",
+      "jahr": "2002",
+      "nummer": "4463",
       "text": null,
-      "referendumsfrist": "2002-01-24"
+      "referendumsfrist": "2002-10-17"
     },
     {
-      "datum": "2004-06-22",
+      "datum": "2002-11-26",
       "art": "Amtliche Sammlung",
-      "jahr": "2004",
-      "nummer": "2911",
+      "jahr": "2002",
+      "nummer": "3666",
       "text": null,
       "referendumsfrist": null
     }
