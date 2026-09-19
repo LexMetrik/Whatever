@@ -45,3 +45,13 @@ feuern: `e2e/leser-gliederung-a33.e2e.ts` (F1 «Highlight folgt») wartet nach
 jedem 120-px-Schritt 260 ms und blieb grün, während die Funktion beim echten
 Lesen nie ansprang. Wer Scroll-Verhalten prüft, fährt **mindestens eine Strecke
 ohne Pause** — sonst misst das Tor die eigene Messpause.
+
+**Drittens — Zustand ist eine Folge, kein Schnappschuss.** Ein Wächter für
+Auf/Zu-Zustände, der jeden Prüffall frisch aus `{}` aufbaut, sieht keine
+Altlasten, die ein Pfad liegen lässt. Beleg 19.9.2026 (#924):
+`gliederung-sichtbarkeit.test.ts` war 12/12 grün, während Tieflink → Auto-Zu →
+Zurückscrollen eine reine Artikelliste öffnete (`art@` blieb beim Zuklappen
+stehen, 4'580 Fälle), gefunden erst im Code-Zweitblick. Wer Klapp- oder
+Markenzustand prüft, spielt **mindestens eine reale Aktionsfolge** mit den echten
+Übergangsfunktionen nach (`gliederung-zustandsfolgen.test.ts`) und bindet alle
+Schreibstellen an eine Karte (`klappKarte.ts` + Quellsonde).
