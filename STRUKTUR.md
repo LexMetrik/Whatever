@@ -33,6 +33,14 @@ falsch — korrigiert 30.8.2026). Karten abgeschlossener Sessions (älter als
 werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
+## Session 19.9.2026 (3) — `QS-MONITOR-ROT`: rectifies-Tor Runde 2 + wartende Automatik-PRs (5 PRs gelandet, Risikopfad)
+
+- Schritt `QS-MONITOR-ROT` (`feld: korpus`), zurück auf `status: ready` (Unterpunkte offen). **Gelandet:** #913 `135ec0cba` (BS-Monatslauf, Identitätsbeleg data.bs.ch) · #925 `95cb5a712` (Merge-Schutz liest Verdikt aus dem Queue-Squash — Wurzel: GitHub bricht den PR-Body bei 72 Zeichen um und hängt den Co-author-Absatz an; erster Risikopfad-PR in der Queue, #921, war daran gescheitert, Lauf 35449385978; Echt-Beleg grün: `merge_group` 35455945280) · #921 `2db154675` (Curia-/Materialien-Teilkaskade, BS-Sortier-Wächter) · #926 `c9e2e32cb` (rectifies-Tor Runde 2).
+- **Nachtrag gleicher Abend:** #909 `6de24c805` gelandet (Fedlex-Frische 2026-09-18, von Hand nach Opus-Nach-Verdikt «bestanden» 24/24 + Delta-Prüfung; fiel einmal als UNMERGEABLE aus der Queue — Stapelkonflikt Register/Manifest mit #923 —, danach einzeln eingereiht) · #930 Dependabot knip.
+- **Offen:** #934 Entwurf (Curia-Monatslauf, wartet auf Gegenprüfung, Ablauf 1.10.2026).
+- Prozess: Bau Sonnet, Gegenprüfung Opus, je frischer Kontext; 7 Prüfrunden, davon 5 mit Auflagen.
+- **Offene Enden:** `AUTOMERGE_TOKEN` nach dem Org-Umzug ohne Zugriff (wartet auf David) → Automatik-PRs entstehen nicht, Nachweis «Curia-Job grün» steht deshalb aus · Pflegetermin 1.10.2026 (14 «Künftige Fassung»-Einträge) unberührt offen · Punkt 5 des Auftrags (Pin-Marker-Wurzel `cache-pin-befund.ts`) NICHT gebaut. Fachliche Abnahme David offen (kein `verified`).
+
 ## Session 19.9.2026 (2) — `W2·5m-LESER-V3`: Gliederung — Art. 26 SVG unsichtbar, unterste Ebene klappte nicht auf (2 PRs, davon 1 Risikopfad)
 - Befund David 19.9.2026 («svg art. 26 nicht ersichtlich … unterste ebene klappt oft nicht auf», Nachtrag «auch das aufklappen soll optimiert werden»). Gemessen statt geraten (echte Leser-Kette, 231 Bundeserlasse): Daten korrekt, Fehler in der Anzeige — eigener Offen-Schlüssel der Artikel-Ebene (`art@`) lief mit dem Zeilenzustand auseinander (4'586 «offen, aber leer»-Zeilen nach Mitlaufen/Sprung), Artikel direkt unter gemischten Knoten ausgefiltert.
 - #924 (Anzeige, kein Risikopfad): «offen» aus dem Sichtbaren (`zeilenAnsicht`), alle Öffner/Schliesser über `klappKarte.ts`, ein Klick öffnet ganz, Marke nach Sprung auf dem Artikel; Wächter `gliederung-sichtbarkeit` + `gliederung-zustandsfolgen` (je rot gezeigt). Zwei Code-Zweitblicke (Sonnet): 1. fand Tieflink→Auto-Zu→Mitlaufen-Leck → Nachzug; 2. ok, Tradeoff offengelegt (direkte Artikel gemischter Knoten beim Mitlaufen, max. 26 Zeilen AHVV; a33-CLS grün). Browser-Probe lokal (SVG, OR).
