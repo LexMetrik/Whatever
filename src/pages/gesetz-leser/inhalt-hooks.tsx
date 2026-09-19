@@ -17,6 +17,7 @@ import { paneRoot, findeArt } from './berechnungen';
 import { findeSynthPfad, uebersetzeRohPfad, type GliederungsKnoten } from './gliederungsModell';
 import { planeZuklappen, retteFokusVorZuklapp, scrollRuht, AUTO_AUF_RUHE_MS } from './tocAutoZuklappen';
 import { darfAutoAdoptieren } from './sprungAst';
+import { mitlaufenKarte } from './klappKarte';
 import type { BrowseErlass, BrowseManifest } from '../../lib/normtext/browse-typen';
 import type { NormSnapshot } from '../../lib/normtext/typen';
 import { datenEbeneVonRoute, erlassPfad } from '../../lib/normtext/erlassAdresse';
@@ -501,13 +502,10 @@ export function useLeserSprungSpy(opts: {
           tocCont, auto, aktivIds: ids, tick, ticks: autoTickRef.current,
         });
         for (const id of schliessen) { auto.delete(id); autoTickRef.current.delete(id); }
-        const aktualisieren = (o: Record<string, boolean>): Record<string, boolean> => {
-          let geaendert = false;
-          const n = { ...o };
-          if (aufklappen) for (const id of ids) if (!n[id] && !manuellZuRef.current.has(id)) { n[id] = true; geaendert = true; }
-          for (const id of schliessen) if (n[id]) { n[id] = false; geaendert = true; }
-          return geaendert ? n : o; // identische Referenz, wenn nichts ändert → kein Re-Render
-        };
+        // Die Karten-Rechnung selbst ist rein und steht in ./klappKarte
+        // (`mitlaufenKarte`; Wächter prüft sie in Zustandsfolgen, §6.7).
+        const aktualisieren = (o: Record<string, boolean>): Record<string, boolean> =>
+          mitlaufenKarte(o, { aktivIds: ids, aufklappen, manuellZu: manuellZuRef.current, schliessen });
         if (schliessen.length > 0 && tocCont) {
           // BESCHLUSS UND MUTATION IM SELBEN FRAME — der Wurzelfix des roten
           // a33-Laufs (CLS 0.0504, drei SICHTBARE Baumzeilen 280×43 → 0×0).
