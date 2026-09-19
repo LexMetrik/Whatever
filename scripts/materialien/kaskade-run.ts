@@ -16,6 +16,14 @@
 // hier UND in den Workflow-Jobs). Bricht beim ersten roten Glied ab (Exit-Code des
 // Glieds), damit kein Folge-Artefakt aus einem kaputten Vorgänger entsteht.
 //
+// NEBENEFFEKT DIESER REIHENFOLGE (§17, QS-MONITOR-ROT-Nachzug, 19.9.2026): `gen:zaehler`
+// (Glied 3 von `entstehung:projektion-kaskade`) läuft dadurch jetzt NACH
+// `normtext:churn-reset` statt davor — und behebt damit ein latentes `check:zaehler`-Rot:
+// `standMaterialien` in `src/data/startseiteZaehler.generated.ts` ist `register.json#erzeugt`;
+// lief `gen:zaehler` VOR dem Churn-Reset, blieb dessen Datums-Bump im generierten Modul
+// stehen, während der Churn-Reset denselben Wert im Register gleich wieder zurücknahm —
+// die beiden Artefakte liefen auseinander, ohne dass sich fachlich etwas geändert hätte.
+//
 // Aufruf: npm run materialien:kaskade -- --datum=$(date +%F) (§2: Datum aus der Shell)
 
 import { spawnSync } from 'node:child_process';

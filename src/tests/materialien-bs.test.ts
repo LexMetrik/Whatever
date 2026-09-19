@@ -343,9 +343,17 @@ describe('Dokument-Ordnung — totale Sortierung vor der Roh-Ablage (Automatik-P
         'https://grosserrat.bs.ch/dokumente/100166/000000166148.pdf',
         'https://grosserrat.bs.ch/dokumente/100166/000000166100.pdf',
       ]),
+      ...gruppe('03.2068', '2004-12-08', [
+        'https://grosserrat.bs.ch/dokumente/100168/000000168104.pdf',
+        'https://grosserrat.bs.ch/dokumente/100168/000000168107.pdf',
+      ]),
       ...gruppe('04.8107', '2005-01-12', [
         'https://grosserrat.bs.ch/dokumente/100170/000000170962.pdf',
         'https://grosserrat.bs.ch/dokumente/100170/000000170684.pdf',
+      ]),
+      ...gruppe('06.1706', '2008-04-09', [
+        'https://grosserrat.bs.ch/dokumente/100273/000000273725.pdf',
+        'https://grosserrat.bs.ch/dokumente/100274/000000274004.pdf',
       ]),
     ];
     const sortiert = [...eingabe].sort(vergleicheBsDokumente);
@@ -356,8 +364,12 @@ describe('Dokument-Ordnung — totale Sortierung vor der Roh-Ablage (Automatik-P
       'https://grosserrat.bs.ch/dokumente/100165/000000165922.pdf',
       'https://grosserrat.bs.ch/dokumente/100166/000000166100.pdf',
       'https://grosserrat.bs.ch/dokumente/100166/000000166148.pdf',
+      'https://grosserrat.bs.ch/dokumente/100168/000000168104.pdf',
+      'https://grosserrat.bs.ch/dokumente/100168/000000168107.pdf',
       'https://grosserrat.bs.ch/dokumente/100170/000000170684.pdf',
       'https://grosserrat.bs.ch/dokumente/100170/000000170962.pdf',
+      'https://grosserrat.bs.ch/dokumente/100273/000000273725.pdf',
+      'https://grosserrat.bs.ch/dokumente/100274/000000274004.pdf',
     ]);
   });
 });
