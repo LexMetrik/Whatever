@@ -186,8 +186,9 @@ in diesem Commit:
   `(?!\.\s*\p{Lu})` im Klammer-Fenster blockt jede Lücke, die einen abgeschlossenen Satz
   («. Grossbuchstabe») überspringt — träfe das auf eine echte Ziffern-Gliederung wie
   «… 2025 Ziff. I (AS …)» zu, würde ein amtlich gültiger Block verloren gehen. Nachgemessen
-  (dieser Bau, alle 62 Cache-HTML im Probe-Worktree): 5 Vorkommen von «Ziff. I»/«Ziff. II» in 4
-  Dokumenten, AUSNAHMSLOS NACH der jeweiligen «(AS …)»-Klammer (nicht in der Lücke davor) — kein
+  (alle 62 Cache-HTML im Probe-Worktree; Zählung der Opus-Nach-Prüfung 19.9.2026, Regex
+  `Ziff\.\s*I{1,2}(?![IVX])` über den Klartext — der Bau hatte 5 gezählt): 7 Vorkommen von
+  «Ziff. I»/«Ziff. II» in 4 Dokumenten, AUSNAHMSLOS NACH der jeweiligen «(AS …)»-Klammer (nicht in der Lücke davor) — kein
   Live-Fall. Die Ausfallrichtung ist zudem sicher: träfe der Fall doch ein, macht die Regex 0
   Treffer statt eines falschen (ROT mit «KEINE Headline erkannt», nie ein stiller Falsch-Grün-Fall
   wie C1). Mögliche Lockerung, falls künftig ein Live-Fall auftritt:
@@ -198,13 +199,15 @@ in diesem Commit:
   (`HEADLINE_KLASSEN_ELEMENT`) schliesst nur Fliesstext AUSSERHALB der drei Klassen aus — Prosa,
   die INNERHALB eines bereits klassierten Elements steht (z. B. ein längerer Erlasstitel-Zusatz
   vor der eigentlichen Datums-/AS-Nennung), bleibt vom Struktur-Anker ungeschützt und ist nur noch
-  durch das 40-Zeichen-Fenster samt Satzgrenzen-Sperre begrenzt. Gemäss Opus-Nach-Prüfung: 3
-  Elemente im 62er-Korpus mit einer solchen Innerhalb-Prosa-Lücke, max. 61 Zeichen — diese
-  konkrete Zählung wurde in diesem Bau NICHT mit derselben Methodik reproduziert (zwei eigene
-  Messversuche fanden andere Grössen, s. u.); die qualitative Aussage (Struktur-Anker schützt
-  nicht gegen Prosa INNERHALB einer Klasse) ist unabhängig davon korrekt und bleibt offener
-  Beobachtungspunkt. Offenlegung (§7, Widerspruch bei einer Detailzahl): keine Rot-Meldung, kein
-  Fix ohne belegten Live-Fall.
+  durch das 40-Zeichen-Fenster samt Satzgrenzen-Sperre begrenzt. Nachgemessen (Opus-Nach-Prüfung
+  19.9.2026, alle 62 Cache-HTML): 3 Klassenelemente im `<main>`-Teil, grösste KLARTEXTLÄNGE 61
+  Zeichen («Änderung vom 11. April 2018 (AS 2018 1687; SR 814.318.142.1)», LRV oc/2025/537; KLV
+  oc/2026/209: 59). Die Zahl misst die Länge der Elemente, NICHT eine Prosa-Lücke vor der Klammer
+  — die reale Lücke «vom <Datum>» → «(AS» ist im ganzen Korpus 65× genau 1 Zeichen und einmal 28
+  («über die Rechte des Kindes», KRK), also weit unter dem 40er-Fenster. Richtigstellung (§7): der
+  Bau R2c hatte die Zahl als «nicht reproduzierbar» vermerkt, weil er sie als Lücken-Mass las. Die
+  qualitative Aussage (Struktur-Anker schützt nicht gegen Prosa INNERHALB einer Klasse) bleibt
+  offener Beobachtungspunkt; kein Fix ohne belegten Live-Fall.
 - **(c) `entferneFussnotenKoerper` schneidet nur `<div class="footnotes…`:** ein künftiges
   Fedlex-Layout mit `<section class="footnotes">` (statt `<div>`) würde am Schnitt vorbeilecken.
   Nachgemessen (dieser Bau, alle 62 Cache-HTML im Probe-Worktree): alle 17 vorkommenden
