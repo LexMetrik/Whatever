@@ -215,7 +215,12 @@ Agenten nimmt fremde Edits mit); Datei-Edits ohne git sind das Maximum. **(e) Pe
 `scripts/dispatch.ts`): anspruchsvoller Bau **stark** · eng umrissener
 nicht-riskanter Bau darf **mittel** · Mechanik **klein** · Synthese mind.
 **mittel** · Gegenprüfung bevorzugt **spitze**, Minimum stark, stets auf einem
-**anderen** Modell als dem bauenden.
+**anderen** Modell als dem bauenden. **Solange die Obergrenze Opus gilt**
+(globale Weisung 1.9.2026) sind «Risikopfad-Bau nie unter stark» und «Prüfer ≠
+Bau-Modell» nicht zugleich erfüllbar — Auflösung: **Risikopfad-Bau `lex-daten`
+auf Sonnet, Gegenprüfung `lex-pruefung` auf Opus**, Abweichung im Bericht
+offenlegen (Beleg 18.9.2026, `QS-MONITOR-ROT`: Opus widerlegte zwei von drei
+Sonnet-Bauten im ersten Durchgang — die Unabhängigkeit trug, nicht die Bau-Stufe).
 
 **Sparsamkeit** (David 8.8.2026): erst EIN Recherche-Agent, bei Lücken
 nachfassen statt parallel doppeln; Prüfaufwand skaliert mit Risiko × Umfang.

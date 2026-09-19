@@ -281,6 +281,17 @@ einen Autopilot-Entwurf ohne Entscheid — niemand war zuständig. Regel:
    Messung 8.9.2026: 113 CI-Läufe aus 13 Zweigen).
 4. **Autopilot-/Entwurfs-PRs** tragen ein Ablaufdatum in der Beschreibung;
    danach schliessen oder entscheiden.
+5. **Den EIGENEN Worktree zuletzt entfernen — oder gar nicht** (Lehre
+   18.9.2026, W2·5m-LESER-V3): `CLAUDE_PROJECT_DIR` der laufenden Session
+   zeigt weiter auf den gelöschten Pfad, die Hooks lösen nicht mehr auf
+   (`can't open file '…/.claude/hooks/tor-schutz.py'`) — und damit stehen
+   Bash UND Read still, die Session kann sich nicht mehr selbst helfen.
+   Reihenfolge also: Branches lokal + remote, `git worktree prune`,
+   Doku-Push, Nachkontrolle, Bericht — und **erst als allerletzte Handlung**
+   der eigene Worktree. Steckt eine Session schon fest: den Pfad einmal neu
+   anlegen (`git worktree add --detach <pfad> main`), das stellt die Hooks
+   wieder her. Nie Ersatz-Hooks schreiben — ein Durchlass-Stub nimmt die
+   Wächter weg, statt sie zu reparieren.
 Wächter: `npm run plan:next` zeigt Worktrees/Branches ohne Schritt-Bezug
 (Lage-Block) — am Session-Ende lesen, nicht nur am Anfang.
 
