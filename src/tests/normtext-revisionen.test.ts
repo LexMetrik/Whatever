@@ -8,7 +8,10 @@ import { istReinerDatumsChurn } from '../../scripts/normtext/churn-reset';
 import type { SparqlBinding } from '../../scripts/fedlex-sparql';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { ausnahmeGueltig, extrahiereHeadlineZitate, klassifiziereBerichtigung } from '../../scripts/normtext/rectifies-berichtigung';
+import {
+  ausnahmeGueltig, extrahiereHeadlineZitate, findeNichtKonsumierteAusnahmen, findeTreffendenBlock,
+  formatiereBefundDetail, klassifiziereBerichtigung, type RectifiesAusnahme,
+} from '../../scripts/normtext/rectifies-berichtigung';
 
 // Paket 5 (W2·6-REV): reine Generator-Logik (dedupe/Sortierung/Determinismus/
 // RO-Fundstelle/Botschafts-Join/Sammelerlass-Cross-Check/nichtKonsolidiert) + die
@@ -419,8 +422,15 @@ describe('extrahiereHeadlineZitate + klassifiziereBerichtigung (rectifies-Wächt
       .toBe('abweichend');
   });
 
+  // ── Auflage B4 (Gegenprüfung Runde 2, 19.9.2026, TEST-REGEL §6.3/§6.7): die Erst-Fassung
+  // dieses Tests fabrizierte einen Zustand, den der Parser NIE liefert (`as: []` bei
+  // gesetztem `sr` — Gruppe 2 der Regex ist NICHT optional, ein Regex-Treffer trägt daher
+  // IMMER mindestens eine AS-Fundstelle). Ersetzt durch eine echte Extraktion, die den
+  // SR-Fallback auf dieselbe Weise auslöst wie im Betrieb (rectifies-Ziel ohne ableitbare
+  // zielFundstelle, z. B. weil es auf ein `cc`-Abstract zeigt — Live-Fall VZAE/oc-2026-170).
   it('fällt ohne ableitbare zielFundstelle auf den SR-Abgleich zurück', () => {
-    const zitate = { as: [] as string[], sr: ['220'], bloecke: [{ as: [] as string[], sr: '220' }] };
+    const zitate = extrahiereHeadlineZitate('<p>Änderung vom 1. Januar 2020 (AS 2020 1; SR 220)</p>');
+    expect(zitate.bloecke).toEqual([{ as: ['AS 2020 1'], sr: '220' }]);
     expect(klassifiziereBerichtigung(zitate, { fremdeSr: '220' })).toBe('uebereinstimmend');
     expect(klassifiziereBerichtigung(zitate, { fremdeSr: '221' })).toBe('abweichend');
   });
@@ -467,6 +477,106 @@ describe('extrahiereHeadlineZitate + klassifiziereBerichtigung (rectifies-Wächt
     );
     expect(zitate.as).toEqual(['AS 2025 644']);
     expect(zitate.sr).toEqual(['741.013']);
+  });
+
+  // ── Runde 2 (ROADMAP QS-MONITOR-ROT, 19.9.2026): drei weitere Parser-Lücken, live auf dem
+  // #909-Datenstand reproduziert (RECTIFIES_CACHE=netz, Rot-Beweis im Bau-Bericht), KEINE davon
+  // ein Fedlex-Datenfehler. Fixtures sind die vollständigen, ungekürzten Filestore-HTML
+  // (Abruf 19.9.2026).
+  it('KRK/oc-2026-314 (Staatsvertrags-Headline): «vom <Datum>» steht im Erlasstitel, die AS-Klammer folgt erst in einem separaten <p> ohne eigenes «vom …» — vorher 0 Treffer', () => {
+    const html = ladeFixture('rectifies-krk-oc-2026-314-de.html');
+    const zitate = extrahiereHeadlineZitate(html);
+    expect(zitate.as).toEqual(['AS 2026 214']);
+    expect(zitate.sr).toEqual(['0.107']);
+    expect(klassifiziereBerichtigung(zitate, { fremdeSr: '0.107', zielFundstelle: 'AS 2026 214' }))
+      .toBe('uebereinstimmend');
+  });
+
+  it('OR/oc-2023-62 (Fussnotenzeichen-Marker): «(AS 2020 4005<sup><a href="#fn-…">1</a></sup>; SR 220)» — die Fussnoten-Ziffer reisst ohne Fix die Zahl auseinander (vorher 0 Treffer)', () => {
+    const html = ladeFixture('rectifies-or-oc-2023-62-de.html');
+    const zitate = extrahiereHeadlineZitate(html);
+    expect(zitate.as).toEqual(['AS 2020 4005']);
+    expect(zitate.sr).toEqual(['220']);
+    expect(klassifiziereBerichtigung(zitate, { fremdeSr: '220', zielFundstelle: 'AS 2020 4005' }))
+      .toBe('uebereinstimmend');
+  });
+
+  it('VZAE/oc-2026-170 (Leerzeichen vor dem Semikolon): «(AS 2018 3173 ; SR 142.201 )» — Tag-Fragmentierung erzeugt ein Leerzeichen vor «;» (vorher 0 Treffer); Ziel ist ein cc-Abstract ohne Fundstelle ⇒ SR-Fallback', () => {
+    const html = ladeFixture('rectifies-vzae-oc-2026-170-de.html');
+    const zitate = extrahiereHeadlineZitate(html);
+    expect(zitate.as).toEqual(['AS 2018 3173']);
+    expect(zitate.sr).toEqual(['142.201']);
+    expect(klassifiziereBerichtigung(zitate, { fremdeSr: '142.201' })).toBe('uebereinstimmend');
+  });
+
+  it('Footnote-leak-Nebenfalle (BPV/oc-2026-324): der Fussnoten-KÖRPER nennt beiläufig eine ANDERE «vom … (AS …)»-Stelle — ohne Abschneiden ab der ersten Fussnoten-<div> würde die geweitete Klammer-Distanz (Falle KRK) daraus einen erfundenen zweiten Block machen', () => {
+    const html = ladeFixture('rectifies-bpv-oc-2026-324-de.html');
+    const zitate = extrahiereHeadlineZitate(html);
+    expect(zitate.as).toEqual(['AS 2026 309']);
+    expect(zitate.bloecke).toEqual([{ as: ['AS 2026 309'], sr: '172.220.111.3' }]);
+  });
+});
+
+// ── formatiereBefundDetail / findeTreffendenBlock / findeNichtKonsumierteAusnahmen
+// (Gegenprüfung Runde 2, 19.9.2026, Auflagen B2/B3/B5 aus Gegenprüfung #908) ──
+describe('formatiereBefundDetail — B2 (0-Treffer-Meldung) + B5 (treffender Block statt Vereinigung)', () => {
+  it('0-Treffer (keine Headline erkannt): eigene Meldung «zuerst den Parser prüfen», NICHT die alte «Text nennt ∅» (Auflage B2 — genau diese Verwechslung legte am 18.9.2026 die falsche Fedlex-Fehler-Spur)', () => {
+    const zitate = { as: [], sr: [], bloecke: [] };
+    const detail = formatiereBefundDetail(zitate, { fremdeSr: '220', zielFundstelle: 'AS 2020 1', zielOc: 'x' }, 'abweichend');
+    expect(detail).toContain('KEINE Headline erkannt (0 Treffer)');
+    expect(detail).toContain('zuerst den Parser prüfen');
+    expect(detail).not.toContain('Text nennt ∅');
+  });
+
+  it('sammelberichtigung: zeigt den TREFFENDEN Block statt der Vereinigungs-SR (Auflage B5) — zwei unabhängige Blöcke, nur einer trägt das Ziel', () => {
+    const zitate = extrahiereHeadlineZitate(
+      '<p>Änderung vom 4. Dezember 2015 (AS 2015 5699; SR 814.600)</p>'
+      + '<p>Änderung vom 23. Februar 2022 (AS 2022 161; SR 814.600)</p>',
+    );
+    const ziel = { fremdeSr: '814.600', zielFundstelle: 'AS 2022 161' };
+    const klasse = klassifiziereBerichtigung(zitate, ziel);
+    expect(klasse).toBe('sammelberichtigung');
+    const detail = formatiereBefundDetail(zitate, { ...ziel, zielOc: 'x' }, klasse);
+    expect(detail).toContain('Treffender Block: AS 2022 161 (SR 814.600)');
+    // Die andere, NICHT treffende Fundstelle bleibt als Kontext sichtbar, aber nicht als
+    // „Treffer“ ausgewiesen.
+    expect(detail).toContain('AS 2015 5699');
+  });
+
+  it('findeTreffendenBlock liefert undefined, wenn kein Block trifft (abweichend)', () => {
+    const zitate = extrahiereHeadlineZitate('<p>Änderung vom 1. Januar 2020 (AS 2020 1; SR 220)</p>');
+    expect(findeTreffendenBlock(zitate.bloecke, { fremdeSr: '221', zielFundstelle: 'AS 2020 999' })).toBeUndefined();
+  });
+});
+
+describe('findeNichtKonsumierteAusnahmen — Auflage B3 (§6.7: eine Ausnahme, die nie mehr trifft, ist ein stiller Freibrief)', () => {
+  const ausnahme: RectifiesAusnahme = {
+    oc: 'https://fedlex.data.admin.ch/eli/oc/2025/999',
+    seit: '2026-09-19',
+    belegUrl: 'https://example.test/beleg',
+    begruendung: 'Test',
+    erwartetesZielOc: 'https://fedlex.data.admin.ch/eli/oc/2000/1',
+  };
+  const ausnahmen = new Map([[ausnahme.oc, ausnahme]]);
+
+  it('meldet KEINE nicht konsumierte Ausnahme, solange ihr oc noch als abweichend auftritt', () => {
+    const befunde = [{ oc: ausnahme.oc, klasse: 'abweichend' }];
+    expect(findeNichtKonsumierteAusnahmen(ausnahmen, befunde)).toEqual([]);
+  });
+
+  it('zählt `stale` ebenfalls als konsumiert (die stale-Kante bekommt ihre eigene, spezifischere Rot-Meldung)', () => {
+    const befunde = [{ oc: ausnahme.oc, klasse: 'stale' }];
+    expect(findeNichtKonsumierteAusnahmen(ausnahmen, befunde)).toEqual([]);
+  });
+
+  it('meldet die Ausnahme als NICHT konsumiert, wenn ihr oc gar keine rectifies-Kante mehr ist', () => {
+    const befunde = [{ oc: 'https://fedlex.data.admin.ch/eli/oc/2026/1', klasse: 'uebereinstimmend' }];
+    expect(findeNichtKonsumierteAusnahmen(ausnahmen, befunde)).toEqual([ausnahme]);
+  });
+
+  it('meldet die Ausnahme als NICHT konsumiert, wenn ihre Kante jetzt uebereinstimmend/sammelberichtigung ist (Rot-Beweis, §6.7: die Ausnahme wäre sonst ein stiller Freibrief)', () => {
+    const befunde = [{ oc: ausnahme.oc, klasse: 'sammelberichtigung' }];
+    expect(findeNichtKonsumierteAusnahmen(ausnahmen, befunde)).toEqual([ausnahme]);
   });
 });
 

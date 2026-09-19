@@ -16,5 +16,14 @@
     "erwartetesZielOc": "https://fedlex.data.admin.ch/eli/oc/2018/438",
     "erwarteteZielFundstelle": "AS 2018 2855",
     "erwarteteTextFundstelle": "AS 2016 3101"
+  },
+  {
+    "oc": "https://fedlex.data.admin.ch/eli/oc/2025/448",
+    "seit": "2026-09-19",
+    "belegUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2025/448/de/html/fedlex-data-admin-ch-eli-oc-2025-448-de-html.html",
+    "begruendung": "Dritter Fedlex-Datenfehler (Fehlerbuch W2·18, ROADMAP QS-MONITOR-ROT, rectifies-Tor Runde 2): die LRV-Berichtigung AS 2025 448 korrigiert laut amtlichem Berichtigungstext ausdrücklich «Änderung vom 20. November 1991 (AS 1992 124; SR 814.318.142.1)», Anhang 3 Ziff. 511/522. Diese Änderung existiert amtlich als eigenständiges Dokument eli/oc/1992/124_124_124 (historicalId «RO 1992 124», dateDocument 1991-11-20, Titel «Luftreinhalte-Verordnung, Änderung» — SPARQL-Abfrage gegen https://fedlex.data.admin.ch/sparqlendpoint, Abruf 19.9.2026) — Datum, Fundstelle UND Titel decken sich exakt mit dem Berichtigungstext. jolux:rectifies zeigt für AS 2025 448 aber auf eli/oc/1986/208_208_208 (historicalId «RO 1986 208», legalResourceGenre 100 = Grunderlass, dateDocument 1985-12-16 — der URSPRÜNGLICHE Erlass der LRV selbst, nicht die 1991er Änderung). Der korrekte Zielkandidat eli/oc/1992/124_124_124 trägt zudem KEINE jolux:classifiedByTaxonomyEntry (SR-Klassierung) — vermutlich deshalb fehlt er in der lokal gebauten Kantenliste (bBindings) dieses Erlasses, was den Fehler bislang verdeckt hat. jolux:rectifies zeigt damit auf das falsche AS-Dokument, exakt wie bei SKV/oc-2025-686 und AIG/oc-2025-342 oben.",
+    "erwartetesZielOc": "https://fedlex.data.admin.ch/eli/oc/1986/208_208_208",
+    "erwarteteZielFundstelle": "AS 1986 208",
+    "erwarteteTextFundstelle": "AS 1992 124"
   }
 ]

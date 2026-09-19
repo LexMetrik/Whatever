@@ -80,18 +80,88 @@
  *      `sammelberichtigung`, wenn das Ziel in der VEREINIGUNG aller Blöcke liegt, sonst
  *      `abweichend`. `as`/`sr` bleiben als flache, deduplizierte Listen für bestehende
  *      Konsumenten (Anzeige in `check-revisionen-rectifies.ts`) erhalten.
+ *
+ * ── Runde 2, 19.9.2026 (rectifies-Tor auf dem #909-Datenstand, ROADMAP QS-MONITOR-ROT) ──
+ * Rot-Reproduktion auf origin/chore/fedlex-frische-2026-09-18 + origin/main (82 Kanten statt
+ * 31): DREI weitere Parser-Lücken, live an KRK/oc-2026-314, OR/oc-2023-62, VZAE/oc-2026-170
+ * belegt (Filestore-HTML je Abruf 19.9.2026, RECTIFIES_CACHE=netz) — keine davon ein
+ * Fedlex-Datenfehler.
+ * (c1) Staatsvertrags-Headline: bei einem Übereinkommen steht «vom <Datum>» im ERLASSTITEL
+ *      (`<h1>Übereinkommen vom 20. November 1989 <br>über die Rechte des Kindes</h1>`), die
+ *      AS-Klammer aber in einem SEPARATEN, nachfolgenden `<p>` OHNE eigenes «vom …» — die
+ *      Erst-Fassung verlangte `\s*\(` direkt nach dem Jahr und verfehlte damit jeden
+ *      Titel-Text dazwischen («über die Rechte des Kindes», 0 Treffer). Beleg KRK/oc-2026-314.
+ *      Fix: `[^()]{0,120}?` statt `\s*` vor der öffnenden Klammer — bewusst NICHT `[^)]`, damit
+ *      eine fremde, VORAUSGEHENDE Klammer (z. B. ein Klammer-Zusatz vor der echten AS-Klammer)
+ *      den Treffer verhindert statt ihn falsch zu verschieben (§7: lieber 0 Treffer als ein
+ *      geratener).
+ * (c2) Leerzeichen vor dem Semikolon: Fedlex verteilt die Klammer oft über mehrere `<span>`
+ *      (`3173</span><span>; SR</span>`) — das Tag-Entfernen macht daraus ein Leerzeichen VOR
+ *      dem `;`, das die Erst-Fassung nicht zuliess (0 Treffer). Beleg VZAE/oc-2026-170:
+ *      «(AS 2018 3173 ; SR 142.201 )». Fix: `\s*` zusätzlich vor `(?:;\s*SR…)` — dieselbe
+ *      Tag-Fragmentierungs-Ursache wie die beiden bereits behobenen Fallen a/b oben, nur an
+ *      einer dritten Stelle derselben Klammer.
+ * (c3) Fussnotenzeichen UND Fussnoten-KÖRPER reissen die Extraktion, zwei getrennte Fallen:
+ *      – Marker inline: «(AS 2020 4005<sup><a href="#fn-…">1</a></sup>; SR 220)» wird nach dem
+ *        generischen Tag-Entfernen zu «4005 1 ; SR 220» — die nackte Fussnoten-ZAHL reisst die
+ *        Zahlenfolge auseinander (0 Treffer). Beleg OR/oc-2023-62. Fix: `<sup><a
+ *        href="#fn-…">…</a></sup>`-Marker werden VOR der generischen Tag-Entfernung ganz
+ *        entfernt (nicht nur zu Leerzeichen — sie sitzen ohne Trenner an der Zahl).
+ *      – Körper als Phantom-Treffer: der GEWEITETE Klammer-Abstand aus (c1) macht die
+ *        Fussnoten-KÖRPER-Prosa («Diese Bestimmung wird mit Inkrafttreten der Änderung vom
+ *        3. September 2025 der Bundespersonalverordnung vom 3. Juli 2001 (AS 2025 569) zu
+ *        Absatz 5.») selbst treffbar — eigene Erst-Probe an BPV/oc-2026-324 hätte sonst einen
+ *        FALSCHEN zusätzlichen Block «AS 2025 569» erzeugt (Skill `scraping-swiss-official-
+ *        sources`, Falle «Footnote-leak», hier durch (c1) reaktiviert). Fix: der Text ab dem
+ *        ERSTEN `<div class="footnotes"` wird VOR der Extraktion ganz abgeschnitten — jede
+ *        Headline-Zitat-Stelle steht immer im Preamble, nie in einer Fussnote (live über alle
+ *        62 zu diesem Zeitpunkt geladenen Filestore-HTML geprüft: 0 Fälle, in denen eine
+ *        echte Headline-Klammer NACH der ersten Fussnoten-`<div>` beginnt).
+ *
+ * B1 erneut geprüft (Auflage aus Gegenprüfung #908, Runde 2): das im Auftrag genannte Beispiel
+ * «(AS 2015 5699, 2022; SR …)» hat in den 62 fetch-baren Berichtigungstexten des #909-Bestands
+ * KEIN Gegenstück — der einzige Mehrfach-Treffer im gesamten Korpus ist VTS/oc-2025-691 (AS
+ * 2025 646, 665), beide Nummern amtlich derselbe Jahrgang. Die amtliche AS-Zitierkonvention
+ * trägt IMMER genau einen Jahrgang pro Klammer (ein zweiter Jahrgang wird immer mit eigenem
+ * «AS <Jahr>» wiederholt, nie nur als nackte Zahl nach Komma) — die im Auftrag beschriebene
+ * Verwechslungsgefahr ist damit durch die amtliche Konvention selbst ausgeschlossen, nicht nur
+ * durch fehlende Beispiele. Keine Code-Änderung (§7: kein Fix ohne Beleg einer echten
+ * Fehlmessung) — offener Beobachtungspunkt, falls ein künftiger Fund das widerlegt.
  */
 import { sparqlSelect, type FetchImpl } from '../fedlex-sparql.ts';
 import type { RectifiesInfo } from './revisionen-generieren.ts';
 
 const LANG_DE = '<http://publications.europa.eu/resource/authority/language/DEU>';
 
-/** Headline-Zitat: «vom <Tag>. <Monat> <Jahr> ( AS <jjjj> <nnn>[, <mmm>[, …]] [; SR <x.y> ] )».
- *  `\s*` beidseitig der Klammern (s. Docstring, Fallen a/b, beide live belegt). Gruppe 2 kann
- *  mehrere komma-getrennte Nummern DESSELBEN Jahrgangs tragen (Falle c, s. Docstring) — die
- *  Aufsplittung passiert in `extrahiereHeadlineZitate`, nicht hier in der Regex. */
+/** Headline-Zitat: «vom <Tag>. <Monat> <Jahr> [Titel-Rest] ( AS <jjjj> <nnn>[, <mmm>[, …]]
+ *  [; SR <x.y> ] )». `\s*` bzw. `[^()]{0,120}?` vor der öffnenden Klammer, `\s*` an drei
+ *  Stellen innerhalb (s. Docstring, Fallen a/b/c1/c2, alle live belegt). `[^()]{0,120}?` statt
+ *  `\s*` allein: bei einem Staatsvertrag steht zwischen Jahr und Klammer der restliche
+ *  Erlasstitel (Falle c1, KRK/oc-2026-314) — bewusst über KEINE Klammer hinweg (`[^()]`), damit
+ *  eine fremde Klammer davor den Treffer verhindert statt ihn falsch zu verschieben; die Länge
+ *  120 ist grosszügig gegenüber dem längsten live beobachteten Titel-Rest, aber begrenzt genug,
+ *  um nicht über einen ganzen Absatz hinwegzugreifen. Gruppe 2 kann mehrere komma-getrennte
+ *  Nummern DESSELBEN Jahrgangs tragen (Falle c, s. Docstring) — die Aufsplittung passiert in
+ *  `extrahiereHeadlineZitate`, nicht hier in der Regex. */
 const HEADLINE_ZITAT =
-  /vom\s+\d{1,2}\.\s*\p{L}+\s+\d{4}\s*\(\s*AS\s+(\d{4})\s+(\d+(?:\s*,\s*\d+)*)(?:;\s*SR\s+([\d.]+)\s*)?\)/gu;
+  /vom\s+\d{1,2}\.\s*\p{L}+\s+\d{4}\s*[^()]{0,120}?\(\s*AS\s+(\d{4})\s+(\d+(?:\s*,\s*\d+)*)\s*(?:;\s*SR\s+([\d.]+)\s*)?\)/gu;
+
+/** Fussnotenzeichen-Marker («<sup><a href="#fn-…">1</a></sup>», direkt an eine Zahl angehängt,
+ *  KEIN Trenner) — vor der generischen Tag-Entfernung ganz entfernt (Falle c3, OR/oc-2023-62).
+ *  Der Fussnoten-KÖRPER selbst (eigene `<div class="footnotes">`) wird separat abgeschnitten,
+ *  s. `entferneFussnotenKoerper`. */
+const FUSSNOTEN_MARKER = /<sup>\s*<a\s+href="#fn-[^"]*"[^>]*>[\s\S]*?<\/a>\s*<\/sup>/gi;
+
+/** Schneidet den Fussnoten-Körper ab (alles ab der ERSTEN `<div class="footnotes"`) — eine
+ *  Headline-Zitat-Stelle steht immer im Preamble, nie in einer Fussnote (Falle c3, live über
+ *  alle 62 zum Zeitpunkt der Runde-2-Messung ladbaren Filestore-HTML geprüft). Ohne diesen
+ *  Schnitt macht die geweitete Klammer-Distanz aus Falle c1 auch Fussnoten-Prosa treffbar
+ *  (Skill `scraping-swiss-official-sources`, Falle «Footnote-leak»; Beleg BPV/oc-2026-324:
+ *  «… Änderung vom 3. September 2025 der Bundespersonalverordnung vom 3. Juli 2001
+ *  (AS 2025 569) …» in der Fussnote hätte sonst einen erfundenen zweiten Block erzeugt). */
+function entferneFussnotenKoerper(html: string): string {
+  return html.split(/<div class="footnotes/)[0];
+}
 
 /** Ein EINZELNES Headline-Zitat-Vorkommen («vom … (AS … [, …] [; SR …])», EIN Regex-Treffer).
  *  Mehrere komma-getrennte Nummern IN DERSELBEN Klammer (VTS/oc/2025/691) landen im SELBEN
@@ -116,11 +186,15 @@ export interface HeadlineZitate {
 }
 
 /** Reine Extraktion (§2, kein Netz) — Fedlex-Filestore-HTML → Headline-Zitate.
- *  Tags werden vor der Regex entfernt (Fedlex verteilt ein Zitat oft über mehrere
- *  `<span>`, z. B. `<span>AS</span><span> </span>2016<span> 3101)</span>` — eine Regex
- *  über den rohen HTML-String verfehlt das systematisch, live an AIG/oc/2025/342 belegt). */
+ *  Reihenfolge: (1) Fussnoten-Körper abschneiden (Falle c3a), (2) Fussnoten-Marker entfernen
+ *  (Falle c3b), (3) generische Tags zu Leerzeichen — Fedlex verteilt ein Zitat oft über
+ *  mehrere `<span>`, z. B. `<span>AS</span><span> </span>2016<span> 3101)</span>` — eine
+ *  Regex über den rohen HTML-String verfehlt das systematisch, live an AIG/oc/2025/342
+ *  belegt). */
 export function extrahiereHeadlineZitate(html: string): HeadlineZitate {
-  const text = html.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ');
+  const text = entferneFussnotenKoerper(html)
+    .replace(FUSSNOTEN_MARKER, '')
+    .replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ');
   const asSet = new Set<string>();
   const srSet = new Set<string>();
   const bloecke: HeadlineBlock[] = [];
@@ -170,6 +244,15 @@ export function ausnahmeGueltig(
     && (ausnahme.erwarteteTextFundstelle ?? '') === (aktuell.textFundstelle ?? '');
 }
 
+/** Trifft dieser EINE Block das rectifies-Ziel? Fundstelle-Vergleich, oder — wenn
+ *  `zielFundstelle` nicht ableitbar war — SR-Vergleich desselben Blocks. Geteilt zwischen
+ *  `klassifiziereBerichtigung` und `findeTreffendenBlock` (Runde 2, Auflage B5): beide dürfen
+ *  nie auseinanderlaufen, sonst könnte eine Meldung einen Block als „treffend“ zeigen, den die
+ *  Klasse selbst nicht als Treffer zählt. */
+function blockTrifftZu(block: HeadlineBlock, ziel: Pick<RectifiesInfo, 'fremdeSr' | 'zielFundstelle'>): boolean {
+  return ziel.zielFundstelle ? block.as.includes(ziel.zielFundstelle) : block.sr === ziel.fremdeSr;
+}
+
 /** Reine Komposition (§2): Headline-Zitate + rectifies-Zielinfo → Klasse. Klassifiziert nach
  *  BLÖCKEN (Ergänzung 18.9.2026, Auflage B2 — nicht mehr nach roher AS-Anzahl, s. Docstring
  *  oben): ein «Treffer» heisst, das rectifies-Ziel liegt in einem Block (Fundstelle-Vergleich,
@@ -186,12 +269,76 @@ export function klassifiziereBerichtigung(
   zitate: Pick<HeadlineZitate, 'bloecke'>,
   ziel: Pick<RectifiesInfo, 'fremdeSr' | 'zielFundstelle'>,
 ): RectifiesKlasse {
-  const trifftZu = (block: HeadlineBlock): boolean => (ziel.zielFundstelle
-    ? block.as.includes(ziel.zielFundstelle)
-    : block.sr === ziel.fremdeSr);
-  if (zitate.bloecke.length > 1) return zitate.bloecke.some(trifftZu) ? 'sammelberichtigung' : 'abweichend';
+  if (zitate.bloecke.length > 1) {
+    return zitate.bloecke.some((b) => blockTrifftZu(b, ziel)) ? 'sammelberichtigung' : 'abweichend';
+  }
   const block = zitate.bloecke[0];
-  return block && trifftZu(block) ? 'uebereinstimmend' : 'abweichend';
+  return block && blockTrifftZu(block, ziel) ? 'uebereinstimmend' : 'abweichend';
+}
+
+/** Reine Suche (§2, Runde 2 Auflage B5): welcher Block trifft das Ziel? `undefined`, wenn
+ *  keiner trifft (dann ist die Klasse `abweichend`). Für `sammelberichtigung` ist das Ergebnis
+ *  IMMER definiert (die Klasse wird nur gesetzt, wenn `.some(...)` bereits wahr war) — der
+ *  Aufrufer (`formatiereBefundDetail`) zeigt damit den TREFFENDEN Block statt der Vereinigung
+ *  aller Blöcke/SR, die bei mehreren unabhängigen Änderungen sonst irreführt (Befund
+ *  Gegenprüfung Runde 2: eine Meldung «Text nennt A, B (SR X)» verschleiert, dass nur A das
+ *  Ziel trägt). */
+export function findeTreffendenBlock(
+  bloecke: HeadlineBlock[],
+  ziel: Pick<RectifiesInfo, 'fremdeSr' | 'zielFundstelle'>,
+): HeadlineBlock | undefined {
+  return bloecke.find((b) => blockTrifftZu(b, ziel));
+}
+
+/** Reine Formatierung (§2, Runde 2 Auflagen B2 + B5) der Detailzeile eines rectifies-Befunds.
+ *  - `uebereinstimmend`: unverändert «Text: …».
+ *  - 0 Treffer (`bloecke` leer): EIGENE, unmissverständliche Meldung statt des bisherigen
+ *    «Text nennt ∅» — ein 0-Treffer-Fall ist fast immer eine PARSER-Lücke (Fallen a/b/c1/c2/c3
+ *    oben), kein Fedlex-Datenfehler; genau diese Verwechslung legte am 18.9.2026 die falsche
+ *    Fedlex-Fehler-Spur (Auflage B2, s. `check-revisionen-rectifies.ts`-Docstring).
+ *  - `sammelberichtigung`: zeigt den TREFFENDEN Block statt der Vereinigung aller Blöcke/SR
+ *    (Auflage B5) — bei zwei unabhängigen Änderungen ist «Text nennt A, B (SR …)» irreführend,
+ *    wenn nur EINE davon das Ziel trägt; die übrigen Fundstellen bleiben als Kontext sichtbar.
+ *  - `abweichend` mit ≥1 Block: unverändert, zeigt alles Erkannte gegen das Ziel. */
+export function formatiereBefundDetail(
+  zitate: Pick<HeadlineZitate, 'as' | 'sr' | 'bloecke'>,
+  ziel: Pick<RectifiesInfo, 'fremdeSr' | 'zielFundstelle' | 'zielOc'>,
+  klasse: RectifiesKlasse,
+): string {
+  const zielText = `${ziel.zielFundstelle ?? ziel.zielOc} (SR ${ziel.fremdeSr})`;
+  if (klasse === 'uebereinstimmend') return `Text: ${zitate.as.join(', ') || '∅'}.`;
+  if (zitate.bloecke.length === 0) {
+    return 'KEINE Headline erkannt (0 Treffer) — zuerst den Parser prüfen (Auflage B2: ein '
+      + '0-Treffer-Fall ist meist eine Parser-Lücke, nie zuerst die Ausnahmeliste), erst danach '
+      + `eine Ausnahme erwägen. rectifies-Ziel ${zielText}.`;
+  }
+  if (klasse === 'sammelberichtigung') {
+    const block = findeTreffendenBlock(zitate.bloecke, ziel);
+    const blockText = block ? `${block.as.join(', ')}${block.sr ? ` (SR ${block.sr})` : ''}` : '∅';
+    return `Treffender Block: ${blockText} — rectifies-Ziel ${zielText} (weitere im Text genannte `
+      + `Fundstelle(n): ${zitate.as.join(', ') || '∅'}).`;
+  }
+  return `Text nennt ${zitate.as.join(', ') || '∅'} (SR ${zitate.sr.join(', ') || '∅'}) — `
+    + `rectifies-Ziel ${zielText}.`;
+}
+
+/** Reine Prüfung (§2, Runde 2 Auflage B3, §6.7): welche Ausnahmen greifen auf dem geprüften
+ *  Bestand auf KEINE einzige nicht-grüne Kante mehr — entweder, weil ihr oc gar keine
+ *  rectifies-Kante mehr ist, oder weil sich die Kante (z. B. durch einen Parser-Fix wie in
+ *  dieser Runde) auf `uebereinstimmend`/`sammelberichtigung` geändert hat. `abweichend` UND
+ *  `stale` zählen beide als «konsumiert» — eine stale gewordene Ausnahme bekommt bereits ihre
+ *  EIGENE, spezifischere Rot-Meldung (s. `main`), sie soll hier nicht zusätzlich als
+ *  „nicht konsumiert“ erscheinen. Der Docstring von `RectifiesAusnahme` verspricht genau diese
+ *  Prüfung (§6.7 «ein Tor, das nicht scheitern kann …») — ohne sie fiele eine überholte
+ *  Ausnahme, deren oc schlicht nicht mehr abweichend ist, nie auf. */
+export function findeNichtKonsumierteAusnahmen(
+  ausnahmen: Map<string, RectifiesAusnahme>,
+  befunde: { oc: string; klasse: string }[],
+): RectifiesAusnahme[] {
+  const konsumierteOcs = new Set(
+    befunde.filter((b) => b.klasse === 'abweichend' || b.klasse === 'stale').map((b) => b.oc),
+  );
+  return [...ausnahmen.values()].filter((a) => !konsumierteOcs.has(a.oc));
 }
 
 /** Löst die DE-HTML-Filestore-URL des berichtigenden oc via die amtliche

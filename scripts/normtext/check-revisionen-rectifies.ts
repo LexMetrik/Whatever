@@ -30,8 +30,11 @@
  *
  * Exit 1 bei `abweichend` ohne (gültigen) Eintrag in
  * `bibliothek/normtext/rectifies-ausnahmen.json` ODER bei `stale` (Identität = exakte
- * oc-URI, kein Substring). `sammelberichtigung`/`nicht-abrufbar` bleiben grün (dokumentierter
- * Befund, keine Behauptung eines Fehlers).
+ * oc-URI, kein Substring) ODER bei einer NICHT KONSUMIERTEN Ausnahme (Auflage B3, Runde 2,
+ * s. `findeNichtKonsumierteAusnahmen`: ein Ausnahmeliste-Eintrag, dessen oc auf KEINE
+ * `abweichend`/`stale`-Kante mehr trifft, wäre ein stiller, nie mehr scheiternder Freibrief —
+ * §6.7). `sammelberichtigung`/`nicht-abrufbar` bleiben grün (dokumentierter Befund, keine
+ * Behauptung eines Fehlers).
  *
  * ── Live-Befund 12.9.2026 (Mass, nicht übernommen — Auftragstext nannte ≈16/1/1/n) ──
  * 25 rectifies-Kanten im Korpus (nicht 71 — Schätzung des Auftrags widerlegt, §0/§17
@@ -61,8 +64,9 @@
  */
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import {
-  ausnahmeGueltig, extrahiereHeadlineZitate, holeBerichtigungstext, klassifiziereBerichtigung,
-  loeseBerichtigungsHtmlUrl, type RectifiesAusnahme, type RectifiesKlasse,
+  ausnahmeGueltig, extrahiereHeadlineZitate, findeNichtKonsumierteAusnahmen, formatiereBefundDetail,
+  holeBerichtigungstext, klassifiziereBerichtigung, loeseBerichtigungsHtmlUrl,
+  type RectifiesAusnahme, type RectifiesKlasse,
 } from './rectifies-berichtigung.ts';
 import { holeMitCache, modusAusUmgebung } from './rectifies-cache.ts';
 import type { RectifiesInfo } from './revisionen-generieren.ts';
@@ -118,10 +122,7 @@ async function pruefeKante(k: Kante, modus: ReturnType<typeof modusAusUmgebung>)
     }, modus);
     const zitate = extrahiereHeadlineZitate(treffer.html);
     const klasse = klassifiziereBerichtigung(zitate, k.info);
-    const detail = klasse === 'uebereinstimmend'
-      ? `Text: ${zitate.as.join(', ') || '∅'}.`
-      : `Text nennt ${zitate.as.join(', ') || '∅'} (SR ${zitate.sr.join(', ') || '∅'}) — `
-        + `rectifies-Ziel ${k.info.zielFundstelle ?? k.info.zielOc} (SR ${k.info.fremdeSr}).`;
+    const detail = formatiereBefundDetail(zitate, k.info, klasse);
     return { erlassKey: k.erlassKey, oc: k.oc, klasse, detail, textFundstelle: zitate.as.length === 1 ? zitate.as[0] : undefined };
   } catch (e) {
     return { erlassKey: k.erlassKey, oc: k.oc, klasse: 'nicht-abrufbar', detail: (e as Error).message };
@@ -174,6 +175,8 @@ async function main(): Promise<void> {
   }
 
   const rot = befunde.filter((b) => b.klasse === 'stale' || (b.klasse === 'abweichend' && !ausnahmen.has(b.oc)));
+  const nichtKonsumiert = findeNichtKonsumierteAusnahmen(ausnahmen, befunde);
+
   if (rot.length) {
     console.error(`\ncheck:revisionen-rectifies ROT: ${rot.length} unbelegte/veraltete Abweichung(en):`);
     for (const b of rot) console.error(`  - ${b.erlassKey} ${b.oc} (${b.klasse}): ${b.detail}`);
@@ -182,9 +185,22 @@ async function main(): Promise<void> {
       + `in ${AUSNAHMEN_PFAD} ergänzen/nachführen (oc + seit + belegUrl + begruendung + `
       + `erwartetesZielOc + erwarteteZielFundstelle + erwarteteTextFundstelle).`,
     );
-    process.exit(1);
   }
-  console.log('check:revisionen-rectifies grün: keine unbelegte oder veraltete Abweichung.');
+  if (nichtKonsumiert.length) {
+    console.error(
+      `\ncheck:revisionen-rectifies ROT: ${nichtKonsumiert.length} nicht konsumierte Ausnahmeliste-Eintrag/`
+      + `-einträge (Auflage B3, §6.7 — ein Tor, das nicht scheitern kann, ist gefährlicher als keines):`,
+    );
+    for (const a of nichtKonsumiert) {
+      console.error(
+        `  - ${a.oc} (seit ${a.seit}): keine aktuelle abweichend/stale-Kante trifft mehr zu — `
+        + `Eintrag in ${AUSNAHMEN_PFAD} prüfen und entfernen, falls die Kante jetzt uebereinstimmend/`
+        + 'sammelberichtigung ist, sonst neu einordnen.',
+      );
+    }
+  }
+  if (rot.length || nichtKonsumiert.length) process.exit(1);
+  console.log('check:revisionen-rectifies grün: keine unbelegte/veraltete Abweichung, alle Ausnahmen konsumiert.');
 }
 
 await main();
