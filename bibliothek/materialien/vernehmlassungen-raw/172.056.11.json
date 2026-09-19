@@ -28,12 +28,12 @@
       "value": "Revisione della LF e dell'O sugli acquisti pubblici (LAPub/OAPub), ordinanza sui valori soglia nel settore degli appalti pubblici (OVS)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-04-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-07-01"
     }

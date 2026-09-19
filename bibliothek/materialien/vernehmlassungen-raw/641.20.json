@@ -6,36 +6,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/124/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/111/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Bundesgesetz über eine Vereinheitlichung des Steuerstrafrechts"
+      "value": "Änderung des Mehrwertsteuergesetzes und Änderung der Verordnung über die Unternehmens-Identifikationsnummer"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Loi fédérale sur l'unification des procédures pénales en matière fiscale"
+      "value": "Modification de la loi sur la TVA et modification de l’ordonnance sur le numéro d’identification des entreprises"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Legge federale concernente l'unificazione del diritto penale fiscale"
+      "value": "Modifica della legge federale concernente l’imposta sul valore aggiunto et modifica dell’ordinanza sul numero d’identificazione delle imprese"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-05-29"
+      "value": "2022-06-29"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-09-30"
+      "value": "2022-10-20"
     }
   },
   {
@@ -45,36 +45,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/87/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/41/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "13.435 Pa.Iv. Indirekter Gegenentwurf zur Volksinitiative «Schluss mit der MWST-Diskriminierung des Gastgewerbes!»"
+      "value": "Änderung des Bundesgesetzes über die Mehrwertsteuer (MWSTG)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "13.435 Iv.pa. Contre-projet indirect à l'initiative populaire «Stop à la TVA discriminatoire pour la restauration!»"
+      "value": "Modification de la loi fédérale régissant la taxe sur la valeur ajoutée (LTVA)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "13.435 Iv.pa. Controprogetto indiretto all'iniziativa popolare «Basta con l'IVA discriminatoria per la ristorazione!»"
+      "value": "Modifica della legge concernente l’imposta sul valore aggiunto (LIVA)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-08-19"
+      "value": "2025-12-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-09-30"
+      "value": "2026-03-19"
     }
   },
   {
@@ -84,7 +84,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6016/58/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/43/cons_1"
     },
     "status": {
       "type": "uri",
@@ -93,27 +93,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "15.410 Pa.Iv. de Buman. Mehrwertsteuer. Dauerhafte Verankerung des Sondersatzes für Beherbergungsleistungen"
+      "value": "Änderung des Bundesgesetzes über die Mehrwertsteuer"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "15.410 Iv.pa. de Buman. Ancrer durablement le taux spécial de TVA applicable à l'hébergement"
+      "value": "Modification de la loi fédérale régissant la taxe sur la valeur ajoutée"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "15.410 Iv. Pa. de Buman. Inserire in modo permanente l'aliquota speciale IVA per le prestazioni del settore alberghiero"
+      "value": "Modifica della legge concernente l’imposta sul valore aggiunto"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-11-07"
+      "value": "2025-08-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2017-02-20"
+      "value": "2025-11-13"
     }
   },
   {
@@ -145,12 +145,12 @@
       "value": "Decreto federale concernente il finanziamento di uscite per l’armamento dell’esercito tramite un aumento dell’imposta sul valore aggiunto"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-03-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-05-30"
     }
@@ -162,36 +162,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/111/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/5/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung des Mehrwertsteuergesetzes und Änderung der Verordnung über die Unternehmens-Identifikationsnummer"
+      "value": "Änderung des Mehrwertsteuergesetzes (MWSTG) und des Bundesgesetzes über die Stempelabgaben (StG) (Wettbewerbsfähigkeit der Schweizer Wirtschaft stärken)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de la loi sur la TVA et modification de l’ordonnance sur le numéro d’identification des entreprises"
+      "value": "Modification de la loi sur la TVA (LTVA) et de la loi fédérale sur les droits de timbre (LT) (Renforcer la compétitivité de l’économie suisse)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica della legge federale concernente l’imposta sul valore aggiunto et modifica dell’ordinanza sul numero d’identificazione delle imprese"
+      "value": "Modifica della legge sull’IVA (LIVA) e della legge sulle tasse di bollo (LTB) (Rafforzare la competitività dell’economia svizzera)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-06-29"
+      "value": "2026-06-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-10-20"
+      "value": "2026-10-12"
     }
   },
   {
@@ -223,12 +223,12 @@
       "value": "Legge federale concernente l'imposta sul valore aggiunto (rendiconto annuale)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2004-06-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2004-09-30"
     }
@@ -262,14 +262,53 @@
       "value": "Semplificazione della legge federale concernente l'imposta sul valore aggiunto"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-02-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-07-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "641.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/124/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über eine Vereinheitlichung des Steuerstrafrechts"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur l'unification des procédures pénales en matière fiscale"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale concernente l'unificazione del diritto penale fiscale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-05-29"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-09-30"
     }
   },
   {
@@ -301,12 +340,12 @@
       "value": "Revisione parziale della legge sull'IVA (Attuazione della mozione CET-N 13.3362)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-06-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2014-09-26"
     }
@@ -318,7 +357,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/43/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/87/cons_1"
     },
     "status": {
       "type": "uri",
@@ -327,27 +366,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über die Mehrwertsteuer"
+      "value": "13.435 Pa.Iv. Indirekter Gegenentwurf zur Volksinitiative «Schluss mit der MWST-Diskriminierung des Gastgewerbes!»"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de la loi fédérale régissant la taxe sur la valeur ajoutée"
+      "value": "13.435 Iv.pa. Contre-projet indirect à l'initiative populaire «Stop à la TVA discriminatoire pour la restauration!»"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica della legge concernente l’imposta sul valore aggiunto"
+      "value": "13.435 Iv.pa. Controprogetto indiretto all'iniziativa popolare «Basta con l'IVA discriminatoria per la ristorazione!»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-08-13"
+      "value": "2013-08-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-11-13"
+      "value": "2013-09-30"
     }
   },
   {
@@ -357,36 +396,36 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/41/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6016/58/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über die Mehrwertsteuer (MWSTG)"
+      "value": "15.410 Pa.Iv. de Buman. Mehrwertsteuer. Dauerhafte Verankerung des Sondersatzes für Beherbergungsleistungen"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de la loi fédérale régissant la taxe sur la valeur ajoutée (LTVA)"
+      "value": "15.410 Iv.pa. de Buman. Ancrer durablement le taux spécial de TVA applicable à l'hébergement"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica della legge concernente l’imposta sul valore aggiunto (LIVA)"
+      "value": "15.410 Iv. Pa. de Buman. Inserire in modo permanente l'aliquota speciale IVA per le prestazioni del settore alberghiero"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-12-05"
+      "value": "2016-11-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-03-19"
+      "value": "2017-02-20"
     }
   },
   {
@@ -418,12 +457,12 @@
       "value": "Legge federale sulle procedure elettroniche in ambito fiscale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-06-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-10-14"
     }
@@ -457,12 +496,12 @@
       "value": "Revisione parziale della legge sull'IVA (evoluzione ulteriore dell'IVA in un'economia digitalizzata e globalizzata) e dell'ordinanza sull'IVA"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-06-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-10-12"
     }
@@ -496,53 +535,14 @@
       "value": "17.448 n Iv.Pa. Aumento del limite determinante della cifra d'affari in modo da permettere alle associazioni sportive e culturali di essere esentate dall'IVA"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-11-04"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-02-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "641.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/5/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Mehrwertsteuergesetzes (MWSTG) und des Bundesgesetzes über die Stempelabgaben (StG) (Wettbewerbsfähigkeit der Schweizer Wirtschaft stärken)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi sur la TVA (LTVA) et de la loi fédérale sur les droits de timbre (LT) (Renforcer la compétitivité de l’économie suisse)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge sull’IVA (LIVA) e della legge sulle tasse di bollo (LTB) (Rafforzare la competitività dell’economia svizzera)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-06-19"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-10-12"
     }
   }
 ]

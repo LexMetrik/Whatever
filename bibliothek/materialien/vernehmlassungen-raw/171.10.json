@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/7/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/44/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Eine Regelung für transparentes Lobbying im eidgenössischen Parlament"
+      "value": "Einführung einer Regulierungsbremse (Änderung von Art. 159 Abs. 3 der Bundesverfassung und Änderung des Parlamentsgesetzes)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Pour une réglementation destinée à instaurer de la transparence en matière de lobbyisme au Parlement fédéral"
+      "value": "Mise en place d’un frein à la réglementation (Modification de l’art. 159, al. 3, de la Constitution fédérale et modification de la loi sur le Parlement)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Per una normativa volta a instaurare la trasparenza in materia di lobbismo nel Parlamento federale"
+      "value": "Introduzione di un freno alla regolamentazione (modifica dell’art. 159 cpv. 3 della Costituzione federale e modifica della legge sul Parlamento)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-01-25"
+      "value": "2021-04-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-05-02"
+      "value": "2021-08-18"
     }
   },
   {
@@ -67,12 +67,12 @@
       "value": "Modifica della legge federale sulle attività informative"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-05-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-09-09"
     }
@@ -113,45 +113,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/44/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Einführung einer Regulierungsbremse (Änderung von Art. 159 Abs. 3 der Bundesverfassung und Änderung des Parlamentsgesetzes)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Mise en place d’un frein à la réglementation (Modification de l’art. 159, al. 3, de la Constitution fédérale et modification de la loi sur le Parlement)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Introduzione di un freno alla regolamentazione (modifica dell’art. 159 cpv. 3 della Costituzione federale e modifica della legge sul Parlamento)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-04-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-08-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "171.10"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/9/cons_1"
     },
     "status": {
@@ -174,14 +135,53 @@
       "value": "10.440 s Iv. Pa. Miglioramento dell'organizzazione e delle procedure del Parlamento (Procedura in caso di iniziative cantonali; oggetti della procedura di consultazione)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-03-30"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-06-10"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "171.10"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/7/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Eine Regelung für transparentes Lobbying im eidgenössischen Parlament"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Pour une réglementation destinée à instaurer de la transparence en matière de lobbyisme au Parlement fédéral"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Per una normativa volta a instaurare la trasparenza in materia di lobbismo nel Parlamento federale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-01-25"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-05-02"
     }
   }
 ]

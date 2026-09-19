@@ -258,7 +258,7 @@ eigener Buchstabe im Etappenplan.
 
 ### §11.8 Abgesagt oder verschoben nach Prüfung
 
-Amtliches Bulletin je Artikel · Ständerats-Stimmen (nicht in Curia) · Namensabstimmungen je Ratsmitglied
+Amtliches Bulletin je Artikel *(teilrevidiert 19.9.2026: AB-Fundstelle automatisch, Kurzzitat nur kuratiert — §12.6)* · Ständerats-Stimmen (nicht in Curia) · Namensabstimmungen je Ratsmitglied
 und **jede Speicherung von Personendaten** (Namen, PersonNumber) · Berichterstatter als Datenfeld (nur
 Link) · Referendum-Erkennung aus dem Graph · Erläuternde Berichte VO, Ergebnisberichte · Synopse aus
 AS-Änderungserlassen (kein `<mod>`) · Synopse vor 2021, Botschaftsstelle vor 2025 · zweiter
@@ -356,6 +356,8 @@ sind Projektionen, je Erlass, laden erst beim Klick. Kein VPS nötig (statische 
 | 5 | `W2·6d-BOTSCHAFT-TEXT` Stufe C | Kommissionsberichte (Pa.Iv.) + Stellungnahmen BR mit demselben Schema; vorher Fedlex-Dokumenttyp-Codes inventarisieren (heute nur 23 = Botschaft); Titelmuster «Zusatzbotschaft» (Code 200 geteilt) | wie A/B | 3 |
 | 6 | `W2·6d-BULLETIN-VOTEN` | Voten Bundesrat/Berichterstatter je Traktandum als Metadaten (Funktion, Rat, Datum, Lesung) + Deep-Link `?SubjectId=`; Artikel-Zuordnung «maschinell» mit Präzision/Recall im Tor; SR-Stimmenzahlen aus Text; **kein Redetext gespeichert** | Name nie (auch nicht im Fliesstext-Auszug); Auflagen wie Etappe 2; Lesungs-/Datumskontext Pflicht (Differenzbereinigung); Epochen-Markup (2006 ohne `[GZ]`) im Messgeschirr | 3 |
 | 7 | `W2·6d-VERNEHMLASSUNG-DOKUMENTE` | Vorentwurf, Erläuternder Bericht, Ergebnisbericht als Verweise am Verfahren (Vernehmlassungs-Generator erfasst heute nur Status); für Verordnungen die einzige Entstehungsquelle | Weg zuerst erheben (Fedlex-Vernehmlassungs-Endpunkt vs. Departements-Websites); nur Verweis-Klasse | 3 |
+| 8 | `W2·6d-URSPRUNG` | Ursprung je Bestimmung: «im Bundesratsentwurf enthalten» vs. «vom Parlament eingefügt (Kommission SR/NR)», auch vor 2021; Kante «Botschaft zu anderem Geschäft als Material» (z. B. Volksinitiative/Gegenvorschlag) | §12.6 Schicht 1; Weg zuerst messen (Entwurf im BBl ↔ Beschluss), wo nicht deterministisch ⇒ nur über Etappe 9, nie raten | 3 |
+| 9 | `W2·6d-ENTSTEHUNGSNOTIZ` | kuratierte Entstehungsnotiz am Artikel: Fakten mit Fundstelle (BBl, AB) + wörtliche Kurzzitate aus dem Bulletin, verfasst/freigegeben von David; Referenzfall Art. 90 Abs. 3/4 SVG | §12.6 Schichten 2–3; erster redaktioneller Inhalt ⇒ Abgrenzung «nur Entstehungsfakten, keine Auslegung»; Status entwurf/geprüft (§8) | 3 |
 
 **Nicht-Ziele (15.9.2026):** Bulletin-Volltext (≈ 370 MB; kollidiert mit «nicht verändern») · Auslöser
 «geht auf Motion X zurück» als Behauptung (nur Hinweis mit Quelle `InitialSituation`) · Botschaften
@@ -370,8 +372,48 @@ vor 1999 · Reden einzelner Ratsmitglieder · jede Speicherung von Namen/`Person
 2. **Personendaten-Präzisierung** (Empfehlung 15.9.2026, David: «einverstanden» zum Gesamtvorschlag;
    bei Baubeginn von Etappe 2 einmal bestätigen): Funktion und Rat speichern, Name nie; amtliche
    Antragsnamen ohne Namensteil; Name nur über den Deep-Link.
+   **Präzisiert David 19.9.2026** («beide empfehlungen übernehmen»): Namen von **Bundesratsmitgliedern
+   in amtlicher Funktion** und die Funktion «Berichterstatter/in Kommission» dürfen erscheinen;
+   einzelne Parlamentsmitglieder weiterhin nie (§12.6).
 3. **Phase-Zuordnung:** Etappen 0–2 in Phase 2 (nützen den Kantonen: PDF-Kern hebt die Sperre für
    FR/VS/AR), Etappen 3–7 in Phase 3 «Mehr als Fedlex»; kein Schritt braucht den VPS.
+
+### §12.6 Ergänzung 19.9.2026 — Entstehung am Artikel in drei Schichten (Referenzfall Art. 90 Abs. 3/4 SVG)
+
+**Auftrag:** David 19.9.2026 zeigt eine Folie «Genese von SVG 90 III und IV» und fragt: «ich hätte gern
+auch diese infos am arikel. ist das möglich?» → Vorschlag drei Schichten → «ja, so aufnehmen, beide
+empfehlungen übernehmen».
+
+**Befund am Referenzfall** (Plan-Stand 15.9. vs. Folie): (a) Abs. 3/4 stand nicht im BR-Entwurf (BBl 2010
+8551) ⇒ Etappe 3 «Botschaftstext» liefert nichts bzw. hängt die Via-sicura-Botschaft fälschlich an; Synopse
+Entwurf↔Beschluss erst ab 2021; (b) Hauptquelle ist das Bulletin (AB 2011 S 678 f., AB 2011 N 2151 f.),
+Etappe 6 lieferte nur Deep-Link ohne zitierfähige Fundstelle; (c) die Botschaft zur Raser-Initiative
+vom 9.5.2012 (BBl 2012 5487) ist Material zu Via sicura, gehört aber zu einem anderen Geschäft;
+(d) SR 2011 ohne elektronische Abstimmung ⇒ kein «im Rat umstritten». Datenlage gemessen 19.9.2026:
+Curia-Shard `public/materialien/curia/10.092.json` und `BOTSCHAFT-2010-1610` am SVG vorhanden;
+Raser-Initiative nicht im Register.
+
+| Schicht | Inhalt | Quelle / Verfahren | Schritt |
+|---|---|---|---|
+| 1 automatisch | Ursprung (BR-Entwurf vs. Parlament/Kommission) · Beschlüsse je Rat · **AB-Fundstelle im Zitierformat «AB Jahr S/N Seite»** mit Link · Kante «Botschaft zu anderem Geschäft als Material» | Fedlex + Curia Vista; ob `Transcript` die AB-Seite trägt, vor Bau messen | Etappe 6 (Fundstelle) + Etappe 8 |
+| 2 kuratiert | kurze Notiz je Artikel mit Fundstellen (z. B. «unter weitgehender Übernahme des Texts der Raser-Initiative») | von David verfasst oder freigegeben; Status entwurf/geprüft | Etappe 9 |
+| 3 Kurzzitat | wörtlicher Auszug aus dem Bulletin (ein Satz, als Zitat gekennzeichnet, Fundstelle + Link) | nur innerhalb Schicht 2, nie maschinell ausgeschnitten; §7 a–d (Bulletin unveränderlich ⇒ Drift-Wächter trivial) | Etappe 9 |
+
+**David-Entscheide 19.9.2026:** (1) Namen von Bundesratsmitgliedern in amtlicher Funktion und die
+Funktion «Berichterstatter/in» zulässig, einzelne Parlamentsmitglieder nie (§12.4 Ziff. 2);
+(2) wörtliche Kurzzitate ja, aber nur kuratiert (Schicht 2/3), nie maschinell.
+
+**Abgrenzung (Pflicht vor Bau Etappe 9):** Schicht 2 ist der erste redaktionelle Inhalt von LexMetrik —
+zulässig sind nur Entstehungsfakten mit amtlicher Fundstelle, keine Auslegung und keine Wertung
+(Leitbild: keine Kommentare); Eingabeformat und Abgrenzung legt der Bau vor, David bestätigt.
+
+**Referenzfall (Soll, Folie David 19.9.2026):** BR-Entwurf Via sicura ohne Abs. 3/4 (BBl 2010 8551) ⇒ in der
+Botschaft nicht erläutert · angenommener Antrag der Kommission SR, weitgehend Text der Raser-Initiative
+(AB 2011 S 678 f.) · NR stimmt zu (AB 2011 N 2151 f.) · BR Leuthard im NR: «vorsätzliche
+Verkehrsregelverletzung», ohne Stellungnahme zur Vorsätzlichkeit der Gefährdung · Botschaft 9.5.2012
+(BBl 2012 5487, Materialien zu Via sicura): Ablehnung der Raser-Initiative, weil weitgehend umgesetzt.
+Schicht 1 muss Fundstellen und Ursprung treffen; der Rest ist Schicht 2/3. Fundstellen vor Übernahme
+gegen die amtliche Quelle prüfen (§7).
 
 ### §12.5 Werkzeug-Fallen aus der Recherche (Lehren, Formregel Skill `lehren`)
 

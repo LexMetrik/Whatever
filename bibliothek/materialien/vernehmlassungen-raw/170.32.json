@@ -28,53 +28,14 @@
       "value": "Revisione parziale della Legge federale sul Tribunale federale (Legge sul Tribunale federale, BGG)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-03-21"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "170.32"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/71/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesbeschluss über die Genehmigung und die Umsetzung der Verordnungen (EU) 2019/817 und 2019/818 zur Interoperabilität (Weiterentwicklungen des Schengen-Besitzstands)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Arrêté fédéral portant approbation et mise en œuvre des règlements (UE) 2019/817 et 2019/818 sur l'interopérabilité (Développement de l'acquis de Schengen)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Decreto federale che approva e traspone i regolamenti (UE) 2019/817 e 2019/818 sull'interoperabilità (sviluppo dell'acquis di Schengen)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-10-09"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-01-09"
     }
   },
   {
@@ -106,14 +67,53 @@
       "value": "Legge federale che riforma il Ministero pubblico della Confederazione e la sua autorità di vigilanza e modifica la giurisdizione federale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-06-24"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-10-16"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "170.32"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/71/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesbeschluss über die Genehmigung und die Umsetzung der Verordnungen (EU) 2019/817 und 2019/818 zur Interoperabilität (Weiterentwicklungen des Schengen-Besitzstands)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Arrêté fédéral portant approbation et mise en œuvre des règlements (UE) 2019/817 et 2019/818 sur l'interopérabilité (Développement de l'acquis de Schengen)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Decreto federale che approva e traspone i regolamenti (UE) 2019/817 e 2019/818 sull'interoperabilità (sviluppo dell'acquis di Schengen)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-10-09"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-01-09"
     }
   }
 ]

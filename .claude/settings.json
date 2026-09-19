@@ -1,7 +1,8 @@
 {
   "env": {
     "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
-    "OTEL_METRICS_EXPORTER": "prometheus"
+    "OTEL_METRICS_EXPORTER": "prometheus",
+    "LEXMETRIK_NO_ROTATE": "1"
   },
   "permissions": {
     "allow": [

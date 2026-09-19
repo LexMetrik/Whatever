@@ -1,6 +1,8 @@
 import { useLayoutEffect, useRef, type Dispatch, type MutableRefObject, type SetStateAction } from 'react';
 import { pfadZu } from '../helpers';
 import type { Sektion } from '../../../lib/normtext/browse';
+import { oeffneSprungZiel, sprungZielOffen } from '../klappKarte';
+import { uebersetzeRohPfad } from '../gliederungsModell';
 
 // ── D21-NEBENFUND (W2·24-R6c) · DER TIEFLINK ÖFFNET SEINEN GLIEDERUNGSZWEIG
 //    VOR DEM ERSTEN BILD ────────────────────────────────────────────────────
@@ -57,6 +59,8 @@ export function useTiefLinkZweig(opts: {
   sektionen: Sektion[];
   /** Ebene + Schlüssel des Erlasses, damit ein Wechsel neu greift. */
   erlassMarke: string;
+  /** Rohpfad→Modellpfad (`GliederungsModell.umhaengPraefix`) — wie im Spy (B4). */
+  umhaengPraefix: Record<string, string[]>;
   setTocBaum: Dispatch<SetStateAction<Record<string, boolean>>>;
   autoOffenRef: MutableRefObject<Set<string>>;
   autoTickRef: MutableRefObject<Map<string, number>>;
@@ -65,7 +69,7 @@ export function useTiefLinkZweig(opts: {
   manuellZuRef: MutableRefObject<Set<string>>;
 }): void {
   const {
-    hash, sektionen, erlassMarke, setTocBaum,
+    hash, sektionen, erlassMarke, umhaengPraefix, setTocBaum,
     autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   } = opts;
   const pfadRef = useRef<string | null>(null);
@@ -75,7 +79,7 @@ export function useTiefLinkZweig(opts: {
     if (!token) return;
     const marke = `${erlassMarke}#${token}`;
     if (pfadRef.current === marke) return;
-    const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
+    const ids = uebersetzeRohPfad(umhaengPraefix, pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? []);
     if (ids.length === 0) return;
     pfadRef.current = marke;
     const tick = autoTickNowRef.current;
@@ -85,9 +89,9 @@ export function useTiefLinkZweig(opts: {
       autoTickRef.current.set(id, tick);
     }
     setTocBaum((o) => {
-      if (ids.every((id) => o[id])) return o; // schon offen ⇒ kein Re-Render
-      return { ...o, ...Object.fromEntries(ids.map((id) => [id, true])) };
+      if (sprungZielOffen(o, ids, ids.slice(-1))) return o; // schon offen ⇒ kein Re-Render
+      return oeffneSprungZiel(o, ids, ids.slice(-1));
     });
-  }, [hash, sektionen, erlassMarke,
+  }, [hash, sektionen, erlassMarke, umhaengPraefix,
       autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, setTocBaum]);
 }

@@ -1,5 +1,14 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Umschichtung 18.9.2026 (Leser-Mitlaufen) — drei erledigte Unterpunkte von `W2·5m-LESER-V3` (Wortlaut)
+
+**Anlass.** Steuerdeckel ROADMAP (132 KB bei 120 KB Budget, gelb) nach der Buchung der Session 18.9.2026 (3). Der Dach-Schritt `W2·5m-LESER-V3` bleibt offen (Auf/Zu-Handling, Einzelartikel E3, Fassungs-Diff-Tab); nur die drei erledigten Unterpunkte wandern hierher, die ROADMAP trägt eine Zeiger-Zeile. Wortlaut unverändert:
+
+- [x] **Mitlaufen beim Lesen** — ✅ 18.9.2026. Marke und Baum-Akkordeon lagen in **einem** 200-ms-Trailing-Timer, den jeder Artikelwechsel neu ansetzt; beim Lesen kommen die Artikelgrenzen schneller ⇒ der Timer verhungerte, `setAktivIds` lief **nie** (gemessen: 27 Artikelwechsel → 27 Neuansetzungen, `anwenden` lief 1×). `setAktivIds` aus dem entprellten Closure gelöst (`inhalt-hooks.tsx`), Akkordeon + Ruhe-Tor unverändert. Prod-Build: erste Marke **3891 → 88 ms** (Gegenprüfung unabhängig 57 ms; BV 52 ms), Proben ohne Marke **76/113 → 0/114**, distinkte Etiketten **3 → 11**. Wächter `e2e/leser-marke-mitlaufen.e2e.ts` mit Rot-Beweis (§6.7).
+- [x] **Standort-Fläche war ein Fehlalarm** — die `brass-100`-Fläche (1,03–1,13:1) ist **nicht** das tragende Signal; der Standort-Strich ist ein Geschwister-`<span>` (`w-[3px] bg-brass-600`, Radius 0), gemessen **8,26:1 hell / 10,62:1 dunkel** gegen `--paper`, bei 1440 px und 390 px gleich. Design-Handschrift Nr. 4/7 bereits erfüllt, seit PR #894 (`fb0ab0249`). Kein Token-Entscheid nötig — Zeile geschlossen (§17 Gegengewicht: keine Zutat ohne Mangel).
+- [x] **Wächter `leser-marke-mitlaufen` geschärft** — ✅ 18.9.2026. Die alten Schranken liessen einen **Halb-Fix durch** (konstruierte 120-ms-Trailing-Debounce bestand alle drei Proben). Blosses Senken der ms-Schranke war **nicht** der Weg: die Weite ist begründet (2-vCPU-Runner, reflow-schwerste Seite) und hätte Lücke gegen Flakiness getauscht. Neue vierte Probe misst **Rückstand in Gliederungs-Einträgen statt Millisekunden**: SOLL = letzter Eintrag, dessen Abschnitt bei/vor dem Artikel an der Bezugslinie beginnt (unabhängig aus `a[href^="#art-"]` + DOM-Artikelfolge abgeleitet, **nicht** aus der bewachten Marke), IST = Eintrag mit `[data-toc-aktiv]`. Eine Ordnungszahl hat keine Einheit — ein langsamerer Runner schiebt SOLL und IST gemeinsam, die Probe wird milder statt flackrig. Schranken auf **Anteilen** (≥ 90 % treu, ≤ 5 % der Proben ≥ 2 Einträge zurück), plus Selbstschutz `visibilityState === 'visible'` und `distinktSoll ≥ 5`. Beweise: rot gegen den Original-Defekt (**0/40** treu), rot gegen den 120-ms-Halb-Fix bei `--workers=1` = CI-Bedingung (**9/40**, 3 von 3 Läufen), 3× grün, gedrosselt 6×/10× grün.
+
+
 ## Umschichtung 15.9.2026 (dep-Umbau) — drei erledigte Schritte mit lebenden `dep`-Kanten (Wortlaut)
 
 **Anlass und was sich geändert hat.** Bis heute mussten erledigte Schritte in `ROADMAP.md` stehen bleiben, sobald irgendein lebender Schritt `dep` auf sie hielt: `check:plan` Regel 4 («dep-IDs existieren») kannte nur `ROADMAP.md` und hätte die Überführung rot gemacht. Der Steuerdeckel (120 KiB) liess sich damit nur noch senken, indem man entweder die `dep`-Kante fälscht oder den Deckel reisst — beides macht den Plan unwahr. Die Umschichtung 15.9.2026 (Entstehung) weiter unten hat darum die PROSA ausgelagert und die Anker bewusst stehen lassen («Anker bleiben wegen `dep`»); dieser Abschnitt zieht sie nach, nachdem der Wurzel-Fix gebaut ist (Schritt `QS-EFFIZIENZ`, PR dieser Session): Regel 4 akzeptiert ein `dep`-Ziel, das hier als `done` archiviert ist, und `plan:next`/`plan:bild`/`plan:set` lösen mit derselben Menge auf. Der frühere Vermerk bleibt als Beleg seines Datums stehen und wird nicht nachgeführt.
@@ -5090,3 +5099,49 @@ Gruppe ein ✅-Einzeiler mit Pointer hierher.
   - [x] **B9 · Textsatz und Umbruch (K-12)** — 12/12 geschlossen (Fahrplan §10, Nachzug Häkchen 13.9.2026).
   - [x] **B10 · Aktions-Anker, Symbolknöpfe, Trefferflächen (K-09b)** — 7/7 geschlossen 4.9.2026 (Fahrplan §11, Nachzug Häkchen 13.9.2026).
   - [x] **B15 · Umschalter, Tabs, Akkordeons (K-06)** — 9/9. §16. · **B16 · Seitengerüst/Inhaltsbreite (K-13)** — 8/8. §17. *(Nachzug Häkchen 13.9.2026)*
+
+# Umschichtung 19.9.2026 — `QS-ORG-UMZUG` erledigt (Merge-Queue steht), Herleitung aus `QS-CI-MINUTEN`
+
+Anlass: der Org-Umzug ist vollzogen (Repo `LexMetrik/Whatever`, Merge-Queue-Ruleset 23699779 aktiv,
+erster Durchlauf #922/#917 am 19.9.2026), und ROADMAP.md steht über dem 120-KB-Steuerdeckel.
+Verschoben sind ein vollständig erledigter Schritt ohne offene Unterzeilen (aufraeumen.md §2) und die
+erledigte Beleg-Prosa des offenen Schrittes `QS-CI-MINUTEN` (✅-Teilerfolg, Ausnahme 22.7.2026).
+Kein lebender `dep` und kein `@queue`-Eintrag zeigt auf `QS-ORG-UMZUG`; der Blocker
+`david-entscheid-org-umzug` ist mit dem Schritt aus dem `@blockers`-Register entfallen.
+
+## QS-ORG-UMZUG — Repo in eine GitHub-Organisation überführen (Merge Queue) *(✅, verschoben 19.9.2026)*
+- [x] **Repo in eine GitHub-Organisation überführen (Merge Queue)** *(`QS-ORG-UMZUG`)*
+  <!-- @meta id: QS-ORG-UMZUG · status: done · blocker: null · dep: [] · feld: betrieb -->
+  Erst, wenn der Auto-Nachzug (Checklisten-Zeile unter `QS-AUTOMATIK`) nicht reicht. **Stand 19.9.2026 (erledigt):** er reicht nicht (#914 und #892 je ein bzw. vier zusätzliche volle CI-Läufe), und David will die Merge-Queue («ja», 19.9.2026) — offen ist nur noch der Umzug selbst: Organisation anlegen und Repo übertragen macht David (Konto-Handlung), die ~1 h Nacharbeit (Vercel, Branch-Schutz, Secrets, Remote-URLs, Queue-Ruleset) die Session.
+  - [x] **DAVID (Ja 19.9.2026, Anleitung im Chat):** (1) Gratis-Organisation `lexmetrik` anlegen (Name am 19.9. frei), (2) Repo `Whatever` per Settings → Transfer ownership dorthin übertragen, Namen NICHT ändern, (3) Vercel → Settings → Git prüfen. Vorher der Session Bescheid geben (keine Landung im Flug). — ✅ 19.9.2026: Organisation `LexMetrik` (Free, public) angelegt, Repo als `LexMetrik/Whatever` übertragen, Vercel-Git-Anbindung geprüft.
+  - [x] **Session danach:** Merge-Queue-Ruleset auf `main` (SQUASH, ALLGREEN, Timeout 60 min — CI braucht ~20 min) und `strict` im klassischen Branch-Schutz AUS (die Queue zieht selbst nach) · `git remote set-url origin` auf `lexmetrik/Whatever` (ein `.git` für alle Worktrees) · Test-PR bis Deploy-Job grün · Secrets `AUTOMERGE_TOKEN`/`PLAN_BUCHUNG_TOKEN` am nächsten Lauf prüfen — feingranulare PATs mit Eigentümer `davidgraf95-sys` verlieren den Zugriff, Neuanlage kann nur David · Skill `landung` auf Queue-Betrieb nachführen (`gh pr merge --auto` reiht ein; `update-branch`-Nachzug und `landung-kette.sh`-Halt entfallen — §17-Rückbau) · `BETRIEB.md:13`/`PROJEKTBESCHRIEB.md:4` nennen noch die alten Repo-Namen `LegalCalc`/`LexMetrik`, tatsächlich `Whatever` — mitkorrigieren. — ✅ 19.9.2026: Ruleset 23699779 (SQUASH, ALLGREEN, max 3 Einträge, Timeout 60 min, keine Bypass-Akteure), `strict` AUS; erster Durchlauf #922 (`06489b10c`) + #917 (`9b125ce8e`) gemeinsam gelandet 15:05:00Z, `merge_group`-Lauf 35449369984 alle vier Required grün (inkl. Perf-Budget), Push-Lauf 35450690297 Deploy grün, live `lexmetrik-build=9b125ce8`. Remote-URLs, `BETRIEB.md`/`PROJEKTBESCHRIEB.md` (`aed15a7b8`) und die Skills `landung`/`bauschritt`/`auftrag` nachgeführt; `AUTOMERGE_TOKEN`/`PLAN_BUCHUNG_TOKEN` stehen als eigene Zeile unter `QS-BASIS` zur Prüfung am Lauf vom 21.9.2026.
+  **Detail:** [entregulierung-2026-08-07.md](bibliothek/betrieb/entregulierung-2026-08-07.md).
+
+## QS-CI-MINUTEN — «Offen: Merge Queue (Gate)», Beleg-Prosa *(✅-Teilerfolg, verschoben 19.9.2026)*
+
+Wortlaut, wie er bis zum 19.9.2026 in `ROADMAP.md` stand (die Frage «persönliches Repo kann keine
+Merge Queue» ist mit dem Org-Umzug beantwortet; im Plan bleibt eine Kurz-Zeile mit Verweis hierher):
+
+  Gebaut 8.9.2026: M1–M5, Flacker-Wächter (Melde-Modus bis 22.9.2026, dann hart), Ergebnis-Job, Playwright-Install-Retry — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (3); Regeln: Skill `landung` §«Prüfstrasse seit 8.9.2026». **Nachmessung 8.10.2026.** Offen: Merge Queue (Gate) — **Beleg 18.9.2026:** PR #914 war mit allen Toren grün, zündete aber nicht, weil die Parallel-Session während der ~20 min Prüfzeit nach `main` landete ⇒ `BEHIND`; `gh pr update-branch` kostete einen VOLLEN zweiten CI-Zyklus (4 Playwright-Schichten à 16–20 min). Präzedenz #892 (15.9., fünf Läufe aus demselben Grund; die Lehre damals behandelte mit `landung-kette.sh` nur das Symptom). Wurzel: bei zwei parallel landenden Sessions und «branch up to date» verliert der langsamere PR das Rennen strukturell — die Merge-Queue serialisiert und zieht den Zweig selbst nach. **David 19.9.2026: «ja zur merge warteschlange»** — der Schalter ist aber auf einem PERSÖNLICHEN Repo nicht setzbar (gemessen: GraphQL kennt `requiresMergeQueue` nicht, Ruleset-API antwortet 422 `Invalid rule 'merge_queue'`); die CI trägt den `merge_group`-Auslöser bereits. Weg: `QS-ORG-UMZUG` (Repo in eine Gratis-Organisation) · Wurzel der 6 flackernden Specs (Fehlerbuch §4, bis 22.9.) — **einer davon ist am 14.9.2026 gelöst**: die D16-Spec war kein Test-Flake, sondern ein Ladezeit-Race der App (PR #865, `a57e4698a`; Fehlerbuch §4.R4). Entscheide David 8.9.2026 (Weg A, M2) ebenfalls in der Chronik.
+
+## Vier BEHIND-Zeilen, durch die Merge-Queue erledigt *(✅, verschoben 19.9.2026)*
+
+Wortlaut, wie er bis zum 19.9.2026 in `ROADMAP.md` stand; im Plan bleibt je ein ✅-Einzeiler mit
+Verweis hierher (aufraeumen.md §2, Ausnahme datierte ✅-Teilerfolgs-Prosa aus offenen Schritten).
+
+- `W2·18-FEHLERBUCH`: **Plan-Buchungs-Commit wirft wartende Auto-Merge-PRs auf BEHIND** *(§17-Prozessfund 13.9.2026, PR #843)* — `plan-buchung.yml` schreibt nach jedem Merge einen `[skip ci]`-Commit auf main; bei `strict`-Schutz fällt jeder offene Auto-Merge-PR auf BEHIND und kostet Rebase + vollen CI-Lauf (~25 min). Wurzel-Fix: der Buchungs-Workflow aktualisiert danach alle offenen PRs mit aktivem Auto-Merge (`gh pr update-branch`), oder Merge-Queue (David-Handgriff, offen). Bis dahin: nach jeder Landung sofort rebasen.
+- `QS-BASIS`: **§17 BEHIND-Schleife durch Plan-Buchung** *(Befund Parallel-Session 2.9.2026, an einer Nacht mit 5 offenen PRs belegt)* — jeder Squash-Merge erzeugt via `plan-buchung.yml` einen Folge-Commit auf main (`[skip ci]`), der alle offenen PRs sofort BEHIND setzt; bei «up to date»-Pflicht kostet jede Landung damit einen zweiten vollen CI-Lauf (15–20 min). Wurzel-Kandidaten: Buchung im PR-Branch vor dem Merge statt auf main, oder Merge-Queue (`QS-ORG-UMZUG`, David-Entscheid). Bis dahin: Landungen zwischen Sessions ansagen, je Seite genau ein Nachzug.
+- `QS-CI-MINUTEN`: Wurzel `strict: true` ⇒ Merge Queue (`QS-ORG-UMZUG` unten, Gate G7).
+- `QS-CI-MINUTEN`: **Plan-Buchungs-Commit macht jede wartende PR BEHIND** *(Befund 11.9.2026, #791/#793)* — geführt unter `QS-BASIS` («§17 BEHIND-Schleife durch Plan-Buchung»), dort zusammen mit der teureren Schwester DIRTY (14.9.2026). Hier nur als CI-Minuten-Posten: ein zusätzlicher Volllauf je Landung.
+
+Erledigt am 19.9.2026 durch das Merge-Queue-Ruleset 23699779 (`strict` AUS — die Queue zieht den
+Zweig selbst nach, BEHIND kostet keinen zweiten Volllauf mehr). Offen bleibt allein die Plan-Buchung
+selbst (Zeile «Plan-Buchung: messen, dann zurückbauen» unter `QS-CI-MINUTEN`) und die teurere
+DIRTY-Schwester vom 14.9.2026 unter `QS-BASIS`.
+
+### Streichung 19.9.2026
+
+- **`QS-CI-MINUTEN` / «Plan-Buchungs-Commit macht jede wartende PR BEHIND»** — gestrichen 19.9.2026:
+  der Posten war schon bei seiner Anlage (11.9.2026) ein Zweitzeiger auf die `QS-BASIS`-Zeile «§17
+  BEHIND-Schleife durch Plan-Buchung»; mit der Merge-Queue ist die Sache dort erledigt, ein zweiter
+  Eintrag derselben Wahrheit (§5) steuert nichts mehr. Wortlaut oben archiviert.

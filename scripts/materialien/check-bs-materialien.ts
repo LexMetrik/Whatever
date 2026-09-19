@@ -17,6 +17,10 @@
 //   4. EXISTENZ. Jeder normKey zeigt auf eine committete Korpus-Datei; jeder Ereignis-
 //      Code steht in der BS-Klassen-Tabelle.
 //   5. DECKEL. Bestand und Register-Grösse mit Ist-Wert-Ausgabe (§11.6-Muster).
+//   6. ORDNUNG DER ROH-ABLAGE. `dokumente.json` muss nach `vergleicheBsDokumente`
+//      sortiert sein — sonst erzeugt ein Export mit anderer (arbiträrer) Reihenfolge
+//      einen reinen Positionstausch identischer Zeilen, der wie ein fachlicher Diff
+//      aussieht (Automatik-PR #913, 18.9.2026, §17-Wurzelfix).
 //
 // Offline, ohne Netz, ohne Date.now in der Rechnung: --datum nur für die Zukunftsprobe.
 //   npm run check:bs-materialien
@@ -29,7 +33,7 @@ import type { MaterialManifest } from '../../src/lib/materialien/typen.ts';
 import {
   baueKanten, baueEreignisse, baueBsEintraege, serialisiere, fussnotenGeschaefte, cu,
   datumsAngaben, normTitel, erlassDatum, GESCHAEFTSARTEN, GESCHAEFTSART_DOKTYP,
-  VERBOTENE_FELDER, VORSTOSS_TITEL, type BsErlassStamm,
+  VERBOTENE_FELDER, VORSTOSS_TITEL, vergleicheBsDokumente, type BsErlassStamm,
 } from './bs-materialien.ts';
 
 import { FELDER_GESCHAEFT, FELDER_DOKUMENT, type BsGeschaeft, type BsDokument, type BsErlassMeta } from './adapter-bs-grossrat.ts';
@@ -95,6 +99,23 @@ function main(): void {
   const geschaefte = leseRoh<BsGeschaeft>('geschaefte');
   const dokumente = leseRoh<BsDokument>('dokumente');
   const erlassMeta = leseRoh<BsErlassMeta>('erlasse');
+
+  // ── 0. Ordnung der Roh-Ablage (§17-Wurzelfix, Automatik-PR #913, 18.9.2026) ──
+  // `dokumente.json` muss nach `vergleicheBsDokumente` sortiert sein — sonst schreibt
+  // ein Export mit anderer (arbiträrer) OpenDataSoft-Reihenfolge einen reinen
+  // Positionstausch identischer Zeilen in die Roh-Ablage, der aussieht wie ein
+  // fachlicher Diff (genau der Fall in PR #913). Erste Verletzung melden, nicht nur
+  // zählen — das genügt zum Beheben (§6.7).
+  for (let i = 0; i < dokumente.length - 1; i++) {
+    if (vergleicheBsDokumente(dokumente[i], dokumente[i + 1]) > 0) {
+      fehler.push(
+        `${join(ROH_DIR, 'dokumente.json')}: nicht nach vergleicheBsDokumente sortiert — `
+        + `Index ${i}/${i + 1} (${JSON.stringify(dokumente[i])} vor ${JSON.stringify(dokumente[i + 1])}). `
+        + 'npm run materialien:bs -- --datum=… (frischer Netzlauf, sortiert beim Schreiben) erneut ziehen.',
+      );
+      break;
+    }
+  }
 
   // ── 1. Personendaten ───────────────────────────────────────────────────────
   const artefakte: Array<[string, string]> = [

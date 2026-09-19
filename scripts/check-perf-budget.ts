@@ -23,7 +23,8 @@ import { gz, kb, pruefeDatenBudgets } from './perf/daten-budget';
 const DIST = join(process.cwd(), 'dist', 'assets');
 
 // gzip-Budgets. Stand 30.6.2026: entry 30 KB, vendor-react 73 KB.
-const ENTRY_MAX = 60 * 1024;          // ~2× Headroom; fängt react-dom-Rückfall in den Entry
+// Entry 60 → 70 KB: David 19.9.2026 (bei 99,5 %); react-dom fängt Prüfung 3.
+const ENTRY_MAX = 70 * 1024;
 const VENDOR_REACT_MAX = 90 * 1024;   // react/-dom/-router(+scheduler) zusammen
 
 if (!existsSync(DIST)) {

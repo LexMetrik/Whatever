@@ -46,6 +46,11 @@ function lade(ebene: 'bund' | 'kanton', key: string, go = true): GliederungsMode
   return { ...modell, eintraege, struktur, sektionen };
 }
 
+/** Ist die Zeile `id` direktes Kind eines GEMISCHTEN Knotens (Sektions- und Artikel-Kinder)? */
+const unterGemischtem = (knoten: GliederungsKnoten[], id: string): boolean =>
+  flacheZeilen(knoten).some((k) => k.kinder.some((kk) => kk.id === id)
+    && k.kinder.some((kk) => kk.art !== 'artikel') && k.kinder.some((kk) => kk.art === 'artikel'));
+
 const artikelZeilen = (m: { knoten: GliederungsKnoten[] }): GliederungsKnoten[] =>
   flacheZeilen(m.knoten).filter((k) => k.art === 'artikel');
 
@@ -437,7 +442,15 @@ describe('W2·18 — die Artikel-Ebene ist verfügbar, aber nie von selbst offen
   // Artikel-Kindern. An gemischten Knoten (T8) nahm das die Untersektionen mit:
   // korpusweit 58 Erlasse, 257 Start-Zeilen. Die beiden Fälle hier sind die
   // gemessenen Extreme — sie sind gegen den Stand vor dem Fix rot.
-  const t8Faelle = [['kanton', 'BS-257.820', 7], ['kanton', 'GR-210.370', 16]] as const;
+  //
+  // W2·5m-LESER-V3 (Befund David 19.9.2026, «bei svg art. 26 nicht
+  // ersichtlich»; deklarierte fachliche Änderung, §6.3): am GEMISCHTEN Knoten
+  // folgen die direkten Artikel jetzt der Zeile — sie stehen im Gesetz vor dem
+  // ersten Unterabschnitt, und eine offene Zeile ohne sie war ein halb offener
+  // Ast. Die Start-Zahlen steigen darum um genau diese direkten Artikel
+  // (BS-257.820 7 → 20, GR-210.370 16 → 25); Artikel UNTER einer Zeile, die nur
+  // Artikel trägt, bleiben beim Start weiterhin zu.
+  const t8Faelle = [['kanton', 'BS-257.820', 20], ['kanton', 'GR-210.370', 25]] as const;
   for (const [ebene, key, zeilen] of t8Faelle) {
     it(`${key} (T8): der Start zeigt weiterhin ${zeilen} Zeilen, nicht nur den Stamm`, () => {
       const m = lade(ebene, key);
@@ -451,19 +464,20 @@ describe('W2·18 — die Artikel-Ebene ist verfügbar, aber nie von selbst offen
           expect(sichtbar.some((x) => x.id === kind.id), `${key}: ${kind.id} fehlt in der Start-Sicht`).toBe(true);
         }
       }
-      // …und keine einzige Artikel-Zeile ist dabei.
-      expect(sichtbar.some((k) => k.art === 'artikel')).toBe(false);
+      // …und Artikel-Zeilen nur als direkte Kinder gemischter Knoten.
+      expect(sichtbar.filter((k) => k.art === 'artikel' && !unterGemischtem(m.knoten, k.id))).toEqual([]);
+      expect(sichtbar.some((k) => k.art === 'artikel'), `${key}: Gegenprobe — gemischte Artikel sichtbar`).toBe(true);
     });
   }
 
-  it('gemischter Knoten: ein ausdrückliches Öffnen bringt die Artikel, die Start-Regel nie', () => {
+  it('gemischter Knoten: seine direkten Artikel folgen der Zeile (W2·5m-LESER-V3)', () => {
     const m = lade('kanton', 'GR-210.370');
     const misch = flacheZeilen(m.knoten).find((k) =>
       k.kinder.some((kk) => kk.art === 'artikel') && k.kinder.some((kk) => kk.art !== 'artikel'));
     expect(misch, 'GR-210.370 muss einen gemischten Knoten haben').toBeDefined();
-    // Start: Sektionen ja, Artikel nein.
+    // Start: Sektionen UND direkte Artikel (vorher: Artikel nein — Art.-26-Befund).
     expect(zeileIstOffen(misch!, {}, m.startOffeneTiefe)).toBe(true);
-    expect(artikelKinderOffen(misch!, {}, m.startOffeneTiefe)).toBe(false);
+    expect(artikelKinderOffen(misch!, {}, m.startOffeneTiefe)).toBe(true);
     // Nach dem Chevron-Klick: beides. Der Klick läuft über `klappZeile` — nur
     // dieser Weg öffnet die Artikel-Ebene (CI-Rot 13.8.2026, s. dort).
     const auf = klappZeile({}, misch!.ids, false);
@@ -471,10 +485,10 @@ describe('W2·18 — die Artikel-Ebene ist verfügbar, aber nie von selbst offen
     // Zugeklappt: nichts.
     const zu = klappZeile(auf, misch!.ids, true);
     expect(artikelKinderOffen(misch!, zu, m.startOffeneTiefe)).toBe(false);
-    // Und der SPY (schreibt nur die nackte Sektions-Id) öffnet sie NICHT.
+    // Und der SPY (schreibt nur die nackte Sektions-Id) öffnet sie mit der Zeile.
     const spy = Object.fromEntries(misch!.ids.map((id) => [id, true]));
     expect(zeileIstOffen(misch!, spy, m.startOffeneTiefe), 'Sektionen: ja').toBe(true);
-    expect(artikelKinderOffen(misch!, spy, m.startOffeneTiefe), 'Artikel: nein').toBe(false);
+    expect(artikelKinderOffen(misch!, spy, m.startOffeneTiefe), 'direkte Artikel: ja').toBe(true);
   });
 
   // ── CI-Rot 13.8.2026 (Lauf 31721564029, Shard 6): der Spy darf die
@@ -496,8 +510,11 @@ describe('W2·18 — die Artikel-Ebene ist verfügbar, aber nie von selbst offen
       const spy: Record<string, boolean> = {};
       for (const k of flacheZeilen(m.knoten)) for (const id of k.ids) spy[id] = true;
       const sichtbar = sichtbarBeimStart(m.knoten, m.startOffeneTiefe, spy);
-      expect(sichtbar.some((k) => k.art === 'artikel'),
-        `${key}: der Spy hat die Artikel-Ebene aufgerissen`).toBe(false);
+      // W2·5m-LESER-V3: ausgenommen die direkten Artikel gemischter Knoten, die
+      // der Zeile folgen (höchstens 26 an einem Knoten, AHVV); eine Zeile, die
+      // NUR Artikel trägt — der CLS-Fall der BV —, öffnet der Spy weiterhin nie.
+      expect(sichtbar.filter((k) => k.art === 'artikel' && !unterGemischtem(m.knoten, k.id)).length,
+        `${key}: der Spy hat die Artikel-Ebene aufgerissen`).toBe(0);
       // Gegenprobe: über den Klick-Weg erscheinen sie sehr wohl — sonst prüfte
       // der Fall eine Ebene, die es gar nicht gibt (§6.7).
       // Gegenprobe über den Klick-Weg: ALLE Zeilen aufklappen (bei b1-kompakt
