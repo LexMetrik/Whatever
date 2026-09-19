@@ -42,10 +42,10 @@ gh pr list --state open --json number,headRefName \
 
 Absichtliche Proben (T5/T6-Art) tragen das Label `probe` und zählen in `fremdagenten:messung` nie als Ablehnung — Label vor dem Schliessen setzen. Kommentar-Bilanz: Regel 3 des Tors (Beleg #662: 197 Kommentarzeilen gelöscht, um die Zeilen-Grenze zu erreichen) vergleicht nur die Summe; Regel 3b (14.9.2026, Beleg #855/#857) vergleicht zusätzlich die MULTIMENGE der getrimmten Kommentarzeilen — **zeichengleich, nicht nur zeilengleich**, verschieben ja, ändern/löschen nie — weil #855 die Summe nach einer Ablehnung exakt zurückbaute (580 → 580) und dabei trotzdem vier Zeilen verfälschte. Bei Sichtprüfung zusätzlich datierte Belegzeilen zählen. Fremd-PR-Tor rot ⇒ PR zurück an den Auftrag (Kommentar mit Tor-Ausgabe), nie
 selbst zurechtstutzen; der Step ist nicht Required, gilt aber als Tor. Fehlt
-der `Roadmap:`-Trailer (bisher 5/5 Jules-PRs): beim Squash-Merge im
-Merge-Body als letzten Absatz setzen
-(`gh pr merge --squash --body "…\n\nRoadmap: <ID>"`), nicht Jules nachbessern
-lassen.
+der `Roadmap:`-Trailer (bisher 5/5 Jules-PRs): im PR-BODY des eigenen
+Cherry-Pick-PR als letzten Absatz setzen (`gh pr edit <n> --body-file …`),
+nicht Jules nachbessern lassen — seit 19.9.2026 übernimmt die Merge-Queue
+`--body` des Merge-Kommandos nicht mehr (Skill, Formregel 5).
 
 **Entwurfs-PR ist ein gültiges Ergebnis.** `AGENTS.md` §7 verlangt bei rotem
 Tor oder unklarem Auftrag einen Entwurf mit Meldung statt einer kreativen

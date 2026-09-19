@@ -1,13 +1,16 @@
 # Befund 4d Werkzeug-Analyse 14.8.2026 (offener Punkt A1, BACKLOG-AUDIT-WERKZEUGE-2026-07):
 # Abhängigkeits-PRs klein gehalten. Landung (Skill landung §«Prüfstrasse seit
-# 8.9.2026»): Patch/Minor zieht die landende Session per `gh pr update-branch`
-# nach und setzt Auto-Merge; Hauptversionen werden mit Begründung geschlossen.
+# 8.9.2026», Nachzug-Zwang entfallen 19.9.2026 mit der Merge-Queue): die
+# landende Session reiht Patch/Minor per `gh pr merge --squash` in die
+# Merge-Queue ein; Hauptversionen werden mit Begründung geschlossen.
 version: 2
 updates:
   # Entscheid David 8.9.2026 (QS-CI-MINUTEN M2): monatlich statt wöchentlich und
   # KEIN automatisches Rebase — Messung 8.9.2026: 13 Zweige lösten 113 CI-Läufe
   # (4 487 min/30 Tage) aus, weil Dependabot bei jeder Landung auf main rebasierte.
-  # Nachziehen macht die Session, die den PR landet (`gh pr update-branch`).
+  # Nachziehen ist seit dem Org-Umzug (19.9.2026) nicht mehr nötig: die
+  # Merge-Queue auf main baut den PR gegen den aktuellen main und zieht den
+  # Zweig selbst nach — die landende Session reiht nur noch ein.
   - package-ecosystem: npm
     directory: /
     schedule:
