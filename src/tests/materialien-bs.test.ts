@@ -11,7 +11,8 @@ import { describe, it, expect } from 'vitest';
 import {
   baueKanten, baueEreignisse, baueBsEintraege, serialisiere, flexMuster, normTitel,
   fussnotenGeschaefte, sgAngaben, datumsAngaben, erlassDatum, keyAusSignatur, standVon,
-  VERBOTENE_FELDER, VORSTOSS_TITEL, doktypVonGeschaeftsart, DOKTYP_BS, type BsErlassStamm,
+  VERBOTENE_FELDER, VORSTOSS_TITEL, doktypVonGeschaeftsart, DOKTYP_BS, vergleicheBsDokumente, cu,
+  type BsErlassStamm,
 } from '../../scripts/materialien/bs-materialien';
 import type { BsGeschaeft, BsDokument } from '../../scripts/materialien/adapter-bs-grossrat';
 import { FELDER_GESCHAEFT, FELDER_DOKUMENT } from '../../scripts/materialien/adapter-bs-grossrat';
@@ -306,5 +307,57 @@ describe('Ausgelieferter Bestand — Personendaten und Provenienz', () => {
     const maschinell = BS_MATERIALIEN.filter((m) => (m.bsKanten ?? []).some((k) => k.quelle === 'maschinell'));
     expect(maschinell.length).toBeGreaterThan(0);
     for (const m of maschinell) expect(m.hinweis, m.key).toMatch(/fachlich nicht geprüft/);
+  });
+});
+
+describe('Dokument-Ordnung — totale Sortierung vor der Roh-Ablage (Automatik-PR #913)', () => {
+  // Rot-Beweis (§17-Wurzelfix, echter Fall #913, 18.9.2026): zwei Dokumente mit
+  // identischem Tupel (Geschäft, Dokudatum, Dok-Signatur=null, Titel) — bis zum
+  // Fix ohne letzten Schlüssel unentscheidbar, die Roh-Ablage übernahm die
+  // (arbiträre) Export-Reihenfolge unverändert. `url_dok` ist bei solchen
+  // Duplikaten immer verschieden (eigene PDF-Ablage) und macht die Ordnung total.
+  const gleichesTupel = (url: string): BsDokument => ({
+    signatur_ges: '04.8107', signatur_dok: null, titel_dok: 'GR Beschluss',
+    dokudatum: '2005-01-12', url_dok: url,
+  });
+
+  it('bricht ein identisches Tupel über url_dok auf, statt 0 zu liefern', () => {
+    const a = gleichesTupel('https://grosserrat.bs.ch/dokumente/100170/000000170962.pdf');
+    const b = gleichesTupel('https://grosserrat.bs.ch/dokumente/100170/000000170684.pdf');
+    expect(vergleicheBsDokumente(a, b)).not.toBe(0);
+    // Ordnung ist die des Textvergleichs (`cu`) auf url_dok, unabhängig davon,
+    // welches Dokument zuerst im Export stand (kein Zufall aus der Quelle, §2).
+    expect(vergleicheBsDokumente(a, b)).toBe(cu(a.url_dok ?? '', b.url_dok ?? ''));
+    expect(vergleicheBsDokumente(b, a)).toBe(-vergleicheBsDokumente(a, b));
+  });
+
+  it('sortiert einen Export mit vier Tie-Gruppen deterministisch, unabhängig von der Eingabe-Reihenfolge', () => {
+    // Die vier amtlichen Tie-Gruppen aus bibliothek/materialien/bs-grossrat-raw/
+    // dokumente.json (Messung 18.9.2026, 9 von 441 Zeilen).
+    const gruppe = (ges: string, datum: string, urls: string[]): BsDokument[] => urls.map((url) => ({
+      signatur_ges: ges, signatur_dok: null, titel_dok: 'GR Beschluss', dokudatum: datum, url_dok: url,
+    }));
+    const eingabe = [
+      ...gruppe('03.2068', '2004-11-10', [
+        'https://grosserrat.bs.ch/dokumente/100165/000000165922.pdf',
+        'https://grosserrat.bs.ch/dokumente/100166/000000166148.pdf',
+        'https://grosserrat.bs.ch/dokumente/100166/000000166100.pdf',
+      ]),
+      ...gruppe('04.8107', '2005-01-12', [
+        'https://grosserrat.bs.ch/dokumente/100170/000000170962.pdf',
+        'https://grosserrat.bs.ch/dokumente/100170/000000170684.pdf',
+      ]),
+    ];
+    const sortiert = [...eingabe].sort(vergleicheBsDokumente);
+    const rueckwaerts = [...eingabe].reverse().sort(vergleicheBsDokumente);
+    // Ergebnis hängt nicht von der Eingabe-Reihenfolge ab (Kern der Fehlerklasse #913).
+    expect(sortiert.map((d) => d.url_dok)).toEqual(rueckwaerts.map((d) => d.url_dok));
+    expect(sortiert.map((d) => d.url_dok)).toEqual([
+      'https://grosserrat.bs.ch/dokumente/100165/000000165922.pdf',
+      'https://grosserrat.bs.ch/dokumente/100166/000000166100.pdf',
+      'https://grosserrat.bs.ch/dokumente/100166/000000166148.pdf',
+      'https://grosserrat.bs.ch/dokumente/100170/000000170684.pdf',
+      'https://grosserrat.bs.ch/dokumente/100170/000000170962.pdf',
+    ]);
   });
 });

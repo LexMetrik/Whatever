@@ -292,8 +292,17 @@ jobs:
         run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"
       - name: Vollabgleich Curia Vista (Beschlüsse · Kommissionen · NR-Aggregat)
         run: npm run materialien:curia -- --datum=${{ steps.datum.outputs.iso }}
+      # §17-Wurzelfix (QS-MONITOR-ROT, Rot-Beleg Lauf 35373415150, 18.9.2026): die
+      # Curia-Shards sind eine Quelle der Deckungs-Sicht (deckung-projektion-quellen.ts,
+      # CURIA_DIR) — ohne diesen Nachzug meldete `check:entstehung` Ziff. 7 «1 Abweichung
+      # zur Neuberechnung», weil `public/materialien/deckungs-sicht.json` nie neu gebaut
+      # wurde. Dieselbe Teilkaskade wie `materialien:kaskade` (§5, EINE Glieder-Liste,
+      # scripts/entstehung/projektion-kaskade.ts) — schreibt am Ende auch das
+      # Datenhaltungs-Manifest, darum kein separater `datenhaltung:manifest`-Schritt mehr.
+      - name: Entstehungs-/Deckungs-Projektion nachziehen (Teilkaskade)
+        run: npm run entstehung:projektion-kaskade
       - name: Offline-Tore auf dem frischen Stand
-        run: npm run check:entstehung && npm run datenhaltung:manifest && npm run check:datenhaltung
+        run: npm run check:entstehung && npm run check:datenhaltung
       - name: Änderungen feststellen
         id: diff
         run: |
@@ -355,14 +364,23 @@ jobs:
         run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"
       - name: Vollabgleich data.bs.ch (Geschäfte · Dokumente · Gesetzessammlung)
         run: npm run materialien:bs -- --datum=${{ steps.datum.outputs.iso }}
-      - name: Projektion + Zähler auf dem frischen Stand
+      - name: Projektion auf dem frischen Stand
         run: npm run materialien -- --datum=${{ steps.datum.outputs.iso }}
-      - name: Zähler nachziehen
-        run: npm run gen:zaehler
+      # §17-Wurzelfix (QS-MONITOR-ROT, 19.9.2026, Beleg: lokale Simulation mit
+      # --datum=morgen, Bericht der Bau-Session): `materialien` schreibt bei JEDEM Lauf
+      # `register-provenienz.json#erzeugt` neu — unabhängig davon, ob sich ein Eintrag
+      # inhaltlich ändert (material-manifest.ts `provenienz: { erzeugt: voll.erzeugt }`).
+      # Dieses Feld geht UNGEFILTERT in `deckungs-sicht.json` ein (deckung-projektion.ts
+      # `staende.provenienz` + `ebenen.verfahrenBund/verfahrenBs/zh.stand`) — ohne
+      # Nachzug wird `check:entstehung` beim nächsten PR rot, sobald dieser Lauf nicht
+      # zufällig denselben Kalendertag trifft wie die letzte Deckungs-Projektion (genau
+      # dieselbe Fehlerklasse wie im Job `curia`, hier über eine andere Quelle). Ersetzt
+      # die frühere separate «Zähler nachziehen» + den Schreib-Teil von «Datenhaltungs-
+      # Manifest» — dieselbe Teilkaskade wie im Job `curia` (§5, EINE Glieder-Liste).
+      - name: Entstehungs-/Deckungs-Projektion + Zähler + Manifest nachziehen (Teilkaskade)
+        run: npm run entstehung:projektion-kaskade
       - name: Offline-Tore auf dem frischen Stand
-        run: npm run check:bs-materialien && npm run check:materialien
-      - name: Datenhaltungs-Manifest
-        run: npm run datenhaltung:manifest && npm run check:datenhaltung
+        run: npm run check:bs-materialien && npm run check:materialien && npm run check:datenhaltung
       - name: Änderungen feststellen
         id: diff
         run: |
@@ -431,14 +449,15 @@ jobs:
         run: echo "iso=$(date +%F)" >> "$GITHUB_OUTPUT"
       - name: Vernehmlassungs-Generator (Fedlex-Gesetzgebungs-Graph, SPARQL)
         run: npm run materialien:vernehmlassungen -- --datum=${{ steps.datum.outputs.iso }}
-      - name: Projektion + Zähler auf dem frischen Stand
+      - name: Projektion auf dem frischen Stand
         run: npm run materialien -- --datum=${{ steps.datum.outputs.iso }}
-      - name: Zähler nachziehen
-        run: npm run gen:zaehler
+      # §17-Wurzelfix — dieselbe Lücke und derselbe Nachzug wie im Job `bs-grossrat`
+      # oben (Begründung dort): `materialien` bumpt register-provenienz.json#erzeugt bei
+      # jedem Lauf, was ungeprüft in deckungs-sicht.json einginge.
+      - name: Entstehungs-/Deckungs-Projektion + Zähler + Manifest nachziehen (Teilkaskade)
+        run: npm run entstehung:projektion-kaskade
       - name: Offline-Tore auf dem frischen Stand (Finding 7 + Alterungs-Wächter)
-        run: npm run check:materialien
-      - name: Datenhaltungs-Manifest
-        run: npm run datenhaltung:manifest && npm run check:datenhaltung
+        run: npm run check:materialien && npm run check:datenhaltung
       - name: Änderungen feststellen
         id: diff
         run: |
