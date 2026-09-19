@@ -756,6 +756,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **Branch-Sonde vor Commit als Sperre statt Prosa** *(zweiter Beleg 18.9.2026, PR #903)* — Haupt-Session committete `docs(plan)` auf den Branch einer Parallel-Session, die im Haupt-Checkout gewechselt hatte (Skill `auftrag` 6 (j) deckt nur Dispatch). Ziel: Hook verweigert `git commit`, wenn der Branch nicht der erwartete ist; §12-Verstoss «Branch-Wechsel im Haupt-Checkout» mitprüfen.
   - [ ] **`check:lizenzen` in Agent-Worktrees ohne `node_modules` immer rot** *(17.9.2026)* — meldet «0 Paket(e) geprüft» als Lizenzverstoss statt Umgebungsproblem. Fix: `node_modules` vor `npm ls` prüfen, sonst «npm ci» melden.
   - [ ] **Steuerdeckel `scripts/check-*.ts` 204 KB hat ~100 B Luft** *(#925, 19.9.2026)* — jede Tor-Änderung reisst ihn (Logik musste in `scripts/gegenpruefung/squash-trailer.ts` ausweichen). Deckel heben oder Prüfskripte schneiden.
+  - [ ] **Register + Manifest sind Konfliktmagnete in der Merge-Queue** *(#909, 19.9.2026)* — jeder Risiko-PR hängt eine Register-Zeile an und pinnt `daten-manifest.json`; die Queue kennt `merge=union`/`regen` nicht ⇒ zwei Risiko-PRs hintereinander = der hintere sicher UNMERGEABLE (ein CI-Zyklus + Delta-Prüfung verloren; die Automatik reiht per Auto-Merge blind ein). Wurzel suchen: Register je PR als eigene Datei, Manifest-Pin erst nach der Landung.
+  - [ ] **Gegenprüfungs-Register: vier doppelt vergebene Diff-Hashes** *(Delta-Prüfer #909, 19.9.2026, Altbestand auf main)* — Wächter «Hash-Spalte eindeutig» oder begründen.
 
 - [x] **Bewährungs-Messung für Tore, Hooks und Regeln** *(`QS-BEWAEHRUNG`)* — ✅ 15.9.2026. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 17.9.2026.
 
