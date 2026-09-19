@@ -62,29 +62,6 @@ werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 - Lehren verankert (§17): Skill `perf` (Perf-Massnahme mit stiller Produkt-Rücknahme = wartet auf David, Wirkung vor Opfer nachmessen) · Skill `gegenpruefung` (Prüfer-Befund zu Render-/Lifecycle-Mechanismen braucht einen echten Repro-Test) · Skill `auftrag` Ziff. 6 (PR-Body-Trailer-Reihenfolge für Bau-Agenten explizit gemacht, landung Formregel 5). Details je Fundort.
 - Nebenfunde gebucht (kein Bau, nur Steuer-Doku): `QS-PERF`-Checkliste (LCP-Ursache offen, CSP-Hash-Prüftiefe), `QS-BASIS` (Branch-Kollision `feat/qs-basis-hydrate`, `linkedom`-`window`-Leck), `QS-EFFIZIENZ` (`check:lizenzen` in node_modules-losen Worktrees).
 
-## Session 15.9.2026 (4) — `W2·27-BUND-FERTIG` Weiterbau: vier Risikopfad-PRs + Gliederungs-Fix + Notizen-Prozess (7 PRs)
-
-- Orchestrator Fable, Bau Opus/Sonnet, Prüfer stets anderes Modell. **Gelandet:** #888 `confidence.json`-Frische-Tor (`3202047ae`, GP af1d214a3; Neulauf 1567→1570 belegte die Staleness) · #889 Randtitel Phase-1-Schnitt (`d20e3f5d3`, GP 5a93ac060 — Bauer hatte nur eine der zwei ersetzten Stellen mit Rot-Probe belegt, nachgezogen 1fec26412) · #892 §8-Leerstellen «kein Text im Snapshot» (`674cc42ae`, GP dbe25de86) · #890 KKV-Label «Art. 126ztredecies» + amtlicher Anker `#ta126z` für `__N`-Token (GP zweimal: Fix `amtlicherAnker()` nach Prüfer-Befund «`#art_126_z` zeigt aufs erste Vorkommen», Live-Nachweis Playwright; Nachzug-Quittung a93c616c8; `682edb070`) · #894 Gliederung: Ast bleibt nach Artikel-Sprung offen, Klickziel 24 px, Marke 3-px-Strich + Fläche (`fb0ab0249`, Befund David) · #891 Session-Notizen-Datei (`9ffee0a04`, `plan:next` zeigt offene Posten).
-- **Lehren verankert (§17):** Landekette liest nach Push den ALTEN mergeStateStatus (DIRTY) und lief nach drei BEHIND-Anläufen stumm aus (#892 brauchte 5 CI-Läufe wegen #893/#891/#895–#897) → `landung-kette.sh` fragt nach und meldet «halt»; Skill `landung` 3.4: GitHub kennt den union-Treiber nicht ⇒ nach jeder Risiko-Landung main lokal einmergen; Skill `auftrag` 6 g: Neuextraktion ⇒ `report:confidence --schreibe` + `datenhaltung:manifest` (das Frische-Tor aus #888 wurde in #890 prompt rot — Prüfer fand es, nicht der Bauer). Global: Kompaktierungs-Hook speist die Notizen-Datei wieder ein (Weisung David «mach das noch mit kompaktierungshook»).
-- **Befund-Korrektur:** «19 Staatsverträge ohne Randtitel/Historie» = 17 + VBB/VG; Randtitel amtlich nicht vorhanden (kein Bug), LugÜ-Historie = Anhang-Fussnoten (M13), CMR ohne Datum; Rest ist eine «Erlass in Kraft seit»-Projektion (Spec liegt in der Übergabe). Nebenfund Prüfer #889 B3: `NormSnapshot.titel`-Zweig ist toter Code (Phase 2 rückbaubar).
-- **Übergabe:** W2·27 bleibt `wip` (Restposten als Zeilen: Gegenstandslos-Signal, absatz-genau, `__N`-Deep-Link, Label-Drift-Tor, Umbenennungs-Lücke, Staatsverträge-Projektion); Chip «Weiterbau: W2·27-BUND-FERTIG Restposten». Wartet auf David: #867 Autopilot-Entwurf, Rückbau-Entscheid QS-EFFIZIENZ.
-
-## Session 15.9.2026 (3) — Planung «Entstehung am Artikel Stufe 4» (3 PRs, kein Bau)
-
-- Drei Live-Recherchen → `bibliothek/materialien/entstehung-2026-09-15/`; Leitprinzip 8; fünf
-  Schritte `W2·6d-*` in `@queue`; K-7 + PDF-Kern; Fahrplan Materialien §12 (#893). Lehre: Host-Tausch
-  versagt bei fga-`doc` < 2017. Offen `[D]`: Rangfolge, Personendaten.
-- Nachlauf: #895 Hook-Hinweis PDF (Deckel riss), #896 dep-Chronik (Opus).
-- Vorlauf ohne Karte §12: #888 Frische-Tor, #889 Randtitel, #891 Notizen-Datei.
-
-## Session 15.9.2026 (2) — Dossier «Rekursive Selbstverbesserung» + `QS-BEWAEHRUNG` gebaut (6 PRs)
-
-- Recherche-Auftrag David («recherchiere rekursive Selbstverbesserung bei Coding-Agenten, stell das unserem Prozess gegenüber»): Web-Recherche (Opus) + Repo-Karte (Sonnet) → Dossier `bibliothek/betrieb/rekursive-selbstverbesserung-gegenueberstellung-2026-09-15.md` (#881). Kernbefund: der §17-Kreislauf deckt die Schutzmechanismen der Literatur, hat aber kein Fitness-Signal für sich selbst — kein Tor und keine Regel wird je auf Bewährung gemessen.
-- Davids Entscheid «ok einverstanden, auch vier, setz es direkt um» → Schritt `QS-BEWAEHRUNG` (#883), drei Bau-Agenten in eigenen Worktrees: **A** Tor-Bewährungs-Register + Auswerter `tor:bewaehrung` (219 importierte Belege, Einstufung 32 bewährt · 4 Rückbau-Kandidaten · 5 ungemessen · 46 jung) und Prozess-Kennzahlen `prozess:kennzahlen` mit Verlauf seit 1.7.2026 (#886); **B** `@wiedervorlage`-Marker an 49 Regeln (CLAUDE.md, rules, F1–F17) + Wächter `check:regel-wiedervorlage` in `gate` voll, fällig heute 0 (#885); **D** STANDARDS S1 gilt für `betrieb/`, Tor-Schleife erweitert, 9 Altdossiers nachgetragen (#884). Alle drei Tore je einmal rot gezeigt (§6.7).
-- Nebenfund beim Dossier-Bau, an der Wurzel behoben: `check:bibliothek` S7.1 kannte `betrieb/` und `werkzeuge/` nicht — Tor, das für 19 Dossiers nicht scheitern konnte; Rot-Beweis, #882. Muster ist F2 (Tor prüft den gedachten statt den realen Bestand), kein neuer Register-Eintrag.
-- Vorlauf ohne Karte (fremde Sessions 14./15.9.2026, §12): #873–#880 (Session-Ende-Buchung, Turso-Schreibvolumen, LCP-Diagnose, Landekette-Fix, PERF-REST, Chronik-Überführung) — Betreffzeilen sind die Karte, hier nicht erneut umgesetzt.
-- Wartet auf David: Rückbau-Entscheid zu 4 Tor-Kandidaten und Hook-Log-Diff (`QS-EFFIZIENZ`-Zeile); Werkzeug-Befund `scripts/check-*.ts`-Deckel hat nach #885 noch 122 Bytes Luft.
-
 ## Ältere Session-Karten und Chroniken — rotiert ins Archiv
 
 Verbatim verschoben nach `archiv/STRUKTUR-SESSIONKARTEN.md`
