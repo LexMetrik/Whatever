@@ -1,10 +1,16 @@
-# rectifies-Tor Runde 2 — drei Parser-Lücken + ein dritter Fedlex-Datenfehler (19.9.2026)
+# rectifies-Tor Runde 2 — drei Parser-Lücken + eine wiederkehrende Fedlex-Fehlerklasse mit vier belegten Fällen (19.9.2026)
 
 **Erstellt:** 19.9.2026 — Anlass: ROADMAP `QS-MONITOR-ROT`, Rot-Reproduktion des
 rectifies-Tors auf dem #909-Datenstand; ergänzt um Nachzug R2b (Auflagen der Gegenprüfung
 Opus, F1–F7).
-**Status:** ZWEIFACH GEPRÜFT (Bau-Messung + Rot-Beweise + SPARQL-Belege, s. u.); fachliche
-Abnahme durch David und Gegenprüfung durch den Orchestrator offen (§7/§8, Risikopfad).
+**Status (Nachzug R2c, C3 — richtiggestellt: «ZWEIFACH GEPRÜFT» war zum Zeitpunkt des
+vorigen Commits überzeichnet, s. u.):** zweifach geprüft (Bau-Messung Sonnet + adversariale
+Opus-Gegenprüfung 19.9.2026, inkl. unabhängiger Re-Derivation des KLV-Negativbefunds am
+PDF-A oc/2014/269: 0 Treffer Syncytial/Synzytial/RSV, geändert nur Art. 12a Bst. a, b, d, f,
+g, i, j, l) — fachliche Abnahme David offen. «Zweifach geprüft» ist der in
+`bibliothek/INDEX.md` (Legende) definierte Bibliotheks-Status (Erstrecherche +
+adversarialer Durchgang), NICHT die fachliche Abnahme (§7) — `verified: true`/Status
+«geprüft» sind damit weiterhin nicht gesetzt.
 
 **Kontext:** ROADMAP `QS-MONITOR-ROT`, Einheit «rectifies-Tor Runde 2». Rot-Reproduktion von
 `npm run check:revisionen-rectifies` auf dem Datenstand des Automatik-PR #909
@@ -110,10 +116,15 @@ WEDER 419 noch 851. Unabhängig nachgemessen (dieser Bau, an den committeten `re
 Rohdaten und dem realen Cache-HTML): `rectifiesInfoProOc["…/oc/2026/209"]` trägt exakt
 `zielOc=…/oc/2014/269`, `zielFundstelle=AS 2014 1251`, `fremdeSr=832.112.31`
 (`bibliothek/normtext/revisionen-raw/KLV.json`); das Cache-HTML nennt wörtlich beide Blöcke wie
-oben. Nicht selbst nachgemessen (übernommen aus der Recherche, nicht amtlich nachgefetcht):
-dass `eli/oc/2014/269` selbst weder «Syncytial»/«Synzytial» noch «RSV» enthält und nur Art. 12a
-Bst. a, b, d, f, g, i, j, l ändert — diese Negativ-Prüfung erfordert den PDF-A-Volltext des
-2014er Dokuments, der in diesem Bau nicht gegengelesen wurde (Offenlegung §7).
+oben. **Nachzug R2c (C3), ZWEIFACH nachgemessen** — einmal durch die adversariale
+Opus-Gegenprüfung 19.9.2026, ein zweites Mal unabhängig durch diesen Bau (Sonnet) direkt am
+amtlichen PDF-A-Volltext (nicht nur aus der Erstrecherche übernommen), Abruf 19.9.2026:
+`https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2014/269/de/pdf-a/fedlex-data-admin-ch-eli-oc-2014-269-de-pdf-a.pdf`.
+Der Volltext (12 Seiten inkl. Anhang 1) enthält 0 Treffer für «Syncytial», «Synzytial» oder
+«RSV» und ändert laut eigener Überschrift ausschliesslich «Art. 12a Bst. a, b, d, f, g, i, j
+und l» (wörtlich, S. 1252/AS 2014 1253) — weder 419 (Bst. r) noch 851 (Bst. t) sind darunter.
+Die Negativ-Prüfung ist damit nicht mehr nur aus einer Recherche übernommen, sondern am
+Originaldokument bestätigt.
 
 Anders als bei LRV ist dies KEIN Grunderlass-Fall: SPARQL zeigt `eli/oc/2014/269`,
 `eli/oc/2025/419` UND `eli/oc/2025/851` sind alle drei `legalResourceGenre` 200 (reguläre
@@ -165,10 +176,50 @@ Fall bekannt ist, der ihn rechtfertigt.
   Extraktion eingeht), aber ein künftiges Fedlex-Layout, das `#fnbck-` auch ausserhalb des
   Fussnotenkörpers verwendet, würde diesen Marker nicht abfangen.
 
+## Beobachtungspunkte/Restrisiken (Nachzug R2c, C3 — adversariale Opus-Nach-Prüfung 19.9.2026)
+
+Drei zusätzliche, NICHT behobene Restrisiken der jetzigen Fassung — dokumentiert, weil §7
+Unsicherheiten sichtbar hält statt sie wegzuglätten, aber (jeweils begründet) OHNE Code-Änderung
+in diesem Commit:
+
+- **(a) Satzgrenzen-Sperre verliert «… vom <Datum> Ziff. I/II (AS …)»:** die Sperre
+  `(?!\.\s*\p{Lu})` im Klammer-Fenster blockt jede Lücke, die einen abgeschlossenen Satz
+  («. Grossbuchstabe») überspringt — träfe das auf eine echte Ziffern-Gliederung wie
+  «… 2025 Ziff. I (AS …)» zu, würde ein amtlich gültiger Block verloren gehen. Nachgemessen
+  (dieser Bau, alle 62 Cache-HTML im Probe-Worktree): 5 Vorkommen von «Ziff. I»/«Ziff. II» in 4
+  Dokumenten, AUSNAHMSLOS NACH der jeweiligen «(AS …)»-Klammer (nicht in der Lücke davor) — kein
+  Live-Fall. Die Ausfallrichtung ist zudem sicher: träfe der Fall doch ein, macht die Regex 0
+  Treffer statt eines falschen (ROT mit «KEINE Headline erkannt», nie ein stiller Falsch-Grün-Fall
+  wie C1). Mögliche Lockerung, falls künftig ein Live-Fall auftritt:
+  `(?!\.\s+\p{Lu}\p{Ll})` (verlangt nach dem Punkt einen KLEINBUCHSTABEN im zweiten Wortzeichen,
+  eine Ziffern-Gliederung wie «Ziff. I» hat dort keinen — nicht umgesetzt, da kein amtlicher Fall
+  sie rechtfertigt).
+- **(b) Prosa INNERHALB eines Klassenelements umgeht den Struktur-Anker:** der Struktur-Filter
+  (`HEADLINE_KLASSEN_ELEMENT`) schliesst nur Fliesstext AUSSERHALB der drei Klassen aus — Prosa,
+  die INNERHALB eines bereits klassierten Elements steht (z. B. ein längerer Erlasstitel-Zusatz
+  vor der eigentlichen Datums-/AS-Nennung), bleibt vom Struktur-Anker ungeschützt und ist nur noch
+  durch das 40-Zeichen-Fenster samt Satzgrenzen-Sperre begrenzt. Gemäss Opus-Nach-Prüfung: 3
+  Elemente im 62er-Korpus mit einer solchen Innerhalb-Prosa-Lücke, max. 61 Zeichen — diese
+  konkrete Zählung wurde in diesem Bau NICHT mit derselben Methodik reproduziert (zwei eigene
+  Messversuche fanden andere Grössen, s. u.); die qualitative Aussage (Struktur-Anker schützt
+  nicht gegen Prosa INNERHALB einer Klasse) ist unabhängig davon korrekt und bleibt offener
+  Beobachtungspunkt. Offenlegung (§7, Widerspruch bei einer Detailzahl): keine Rot-Meldung, kein
+  Fix ohne belegten Live-Fall.
+- **(c) `entferneFussnotenKoerper` schneidet nur `<div class="footnotes…`:** ein künftiges
+  Fedlex-Layout mit `<section class="footnotes">` (statt `<div>`) würde am Schnitt vorbeilecken.
+  Nachgemessen (dieser Bau, alle 62 Cache-HTML im Probe-Worktree): alle 17 vorkommenden
+  Fussnoten-Container sind `<div>` — kein Live-Fall, aber ein struktureller blinder Fleck, falls
+  Fedlex das Markup künftig ändert.
+
 ## Status
 
-Bau-Runde 2 + Nachzug R2b abgeschlossen: drei Parser-Fixes, Klammer-Fenster strukturell
-eingegrenzt (F1), Ausnahme-Konsumption dreistufig (F2), Text-Stale-Sicherung bei Mehrfach-AS
-(F3), vier Ausnahme-Einträge (SKV/AIG/LRV/KLV, alle dieselbe Fehlerklasse «falsches
-rectifies-Ziel»). Fachliche Abnahme (insb. der LRV/KLV-Einordnung als Fedlex-Fehler) David
-offen — **Gegenprüfung durch den Orchestrator ausstehend (Risikopfad, Pflicht vor Merge).**
+Bau-Runde 2 + Nachzug R2b + Nachzug R2c abgeschlossen: drei Parser-Fixes, Klammer-Fenster
+strukturell eingegrenzt (F1/C1), Ausnahme-Konsumption dreistufig (F2), Text-Stale-Sicherung
+bei Mehrfach-AS (F3), vier Ausnahme-Einträge (SKV/AIG/LRV/KLV, alle dieselbe Fehlerklasse
+«falsches rectifies-Ziel»). **Status: zweifach geprüft** (Bau-Messung Sonnet + adversariale
+Opus-Gegenprüfung 19.9.2026, inkl. unabhängiger Re-Derivation des KLV-Negativbefunds am
+PDF-A oc/2014/269: 0 Treffer Syncytial/Synzytial/RSV, geändert nur Art. 12a Bst. a, b, d, f,
+g, i, j, l) — fachliche Abnahme David offen (insb. der LRV/KLV-Einordnung als Fedlex-Fehler).
+«Zweifach geprüft» ist der Bibliotheks-Status aus `bibliothek/INDEX.md` (Legende), NICHT die
+fachliche Abnahme (§7) — **Gegenprüfung durch den Orchestrator ausstehend (Risikopfad, Pflicht
+vor Merge).**

@@ -210,7 +210,10 @@ const FUSSNOTEN_MARKER = /<sup>\s*<a\s+href="#fn-[^"]*"[^>]*>[\s\S]*?<\/a>\s*<\/
  *  erzeugt) — dieses Restrisiko (Fussnoten-KÖRPER-Prosa mit einer zufällig passenden
  *  «vom … (AS …)»-Nennung) bleibt für den Preamble-Teil bestehen, ist aber seit R2b für
  *  `<main>`-Fliesstext AUSSERHALB der drei Klassen strukturell ausgeschlossen (s. Docstring
- *  oben, Auflage R2b-1). */
+ *  oben, Auflage R2b-1). Restrisiko (Nachzug R2c, C4, Beobachtungspunkt (c) im Dossier): der
+ *  Schnitt greift nur `<div class="footnotes…` — ein künftiges Fedlex-Layout mit
+ *  `<section class="footnotes">` würde daran vorbeilecken (gemessen: alle 17 heutigen
+ *  Fussnoten-Container im 62er-Korpus sind `<div>`, kein Live-Fall). */
 function entferneFussnotenKoerper(html: string): string {
   return html.split(/<div class="footnotes/)[0];
 }
@@ -243,7 +246,12 @@ export interface HeadlineZitate {
  *  Erlassdatum-Absatz eine der drei Headline-Klassen trägt oder nicht, s. ChemV-Gegenbeleg).
  *  Der Abschnitt AB `<main` geht NUR ein, soweit er innerhalb eines `HEADLINE_KLASSEN_ELEMENT`
  *  liegt — das schliesst freien `<main>`-Fliesstext (Gegenbeispiel GB1) strukturell aus, ohne
- *  die drei belegten `<main>`-Zweit-Headlines zu verlieren (die tragen dieselben Klassen). */
+ *  die drei belegten `<main>`-Zweit-Headlines zu verlieren (die tragen dieselben Klassen).
+ *  Restrisiko (Nachzug R2c, C4, Beobachtungspunkt (b) im Dossier): der Struktur-Anker schützt
+ *  nur GEGEN Fliesstext AUSSERHALB der drei Klassen — Prosa INNERHALB eines bereits klassierten
+ *  Elements (z. B. ein längerer Titel-Zusatz vor der Datums-/AS-Nennung) bleibt ungeschützt und
+ *  nur noch durch das 40-Zeichen-Fenster samt Satzgrenzen-Sperre begrenzt (kein Live-Fall im
+ *  62er-Korpus bekannt). */
 function baueHeadlineSuchtext(ohneFussnoten: string): string {
   const [vorMain, ...rest] = ohneFussnoten.split(/<main\b/);
   const nachMain = rest.join('<main');
@@ -509,9 +517,12 @@ export async function holeBerichtigungstext(url: string, fetchImpl: FetchImpl = 
  *  Docstring) — SOLANGE ihre Zahl nicht weiter wächst. Ein STEIGENDER Wert bedeutet: eine NEUE
  *  Berichtigung ist ebenfalls nicht per HTML abrufbar und wird von diesem Tor mangels Text
  *  gar nicht erst geprüft — ein blinder Fleck, der nicht stillschweigend wachsen darf (§6.7).
- *  Grosszügig über der Ist-Messung (20), damit ein einzelner neuer Alt-Fall das Tor nicht
- *  sofort rot macht, aber eng genug, um einen ECHTEN Trend (mehrere neue docx-only-Fälle) zu
- *  fangen. */
+ *  RICHTIGSTELLUNG (Nachzug R2c, C2): die Obergrenze liegt NICHT grosszügig über der
+ *  Ist-Messung, sondern exakt AUF ihr — 20 ist die am 19.9.2026 gemessene Ist-Zahl auf dem
+ *  #909-Datenstand (20/82); jeder weitere HTML-lose Fall macht das Tor darum sofort rot
+ *  (gewollt, s. o.: der blinde Fleck darf nicht stillschweigend wachsen). Auf `main` (8/31,
+ *  Stand 19.9.2026, vor #909) ist dieselbe Konstante entsprechend lasch — dort bleiben 12
+ *  Fälle Luft, bis #909 gelandet ist. */
 export const NICHT_ABRUFBAR_OBERGRENZE = 20;
 
 /** Reine Prüfung (§2, Nachzug R2b F4): überschreitet die Anzahl `nicht-abrufbar`-Kanten die
