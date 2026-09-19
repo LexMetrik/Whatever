@@ -25,5 +25,14 @@
     "erwartetesZielOc": "https://fedlex.data.admin.ch/eli/oc/1986/208_208_208",
     "erwarteteZielFundstelle": "AS 1986 208",
     "erwarteteTextFundstelle": "AS 1992 124"
+  },
+  {
+    "oc": "https://fedlex.data.admin.ch/eli/oc/2026/209",
+    "seit": "2026-09-19",
+    "belegUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2026/209/de/html/fedlex-data-admin-ch-eli-oc-2026-209-de-html.html",
+    "begruendung": "Vierter Fedlex-Datenfehler, gleiche Fehlerklasse «falsches rectifies-Ziel» (Fehlerbuch W2·18, ROADMAP QS-MONITOR-ROT, Nachzug R2b F7). Die KLV-Berichtigung AS 2026 209 nennt laut amtlichem Berichtigungstext ZWEI Headline-Blöcke: «Änderung vom 4. Juni 2025 (AS 2025 419; SR 832.112.31)» (Art. 12a Abs. 1 Bst. r) und «Änderung vom 2. Dezember 2025 (AS 2025 851; SR 832.112.31)» (Art. 12a Abs. 1 Bst. t) — beide betreffen die Aufnahme der RSV-Impfung (Respiratorische Syncytial-Viren) in Art. 12a. jolux:rectifies zeigt für oc/2026/209 aber auf eli/oc/2014/269 (AS 2014 1251, KLV-Änderung vom 16. Mai 2014) — dieses Dokument ändert Art. 12a nur Bst. a, b, d, f, g, i, j, l und enthält weder «Syncytial»/«Synzytial» noch «RSV»; Bst. r und t existieren darin nicht. Reverse-Check: keine Berichtigung zeigt auf oc/2025/419 oder oc/2025/851. jolux:rectifies zeigt damit auf das falsche AS-Dokument, strukturell dieselbe Fehlerklasse wie SKV/oc-2025-686, AIG/oc-2025-342 und LRV/oc-2025-448 oben. Weiterer, ausserhalb dieses Korpus liegender Beleg derselben Fehlerklasse: oc/2025/227 → oc/1984/889_889_889 (SPARQL, Abruf 19.9.2026) — nicht Teil dieses Auftrags.",
+    "erwartetesZielOc": "https://fedlex.data.admin.ch/eli/oc/2014/269",
+    "erwarteteZielFundstelle": "AS 2014 1251",
+    "erwarteteTextFundstelle": "AS 2025 419 + AS 2025 851"
   }
 ]

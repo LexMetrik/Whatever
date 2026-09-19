@@ -1,5 +1,11 @@
 # rectifies-Tor Runde 2 — drei Parser-Lücken + ein dritter Fedlex-Datenfehler (19.9.2026)
 
+**Erstellt:** 19.9.2026 — Anlass: ROADMAP `QS-MONITOR-ROT`, Rot-Reproduktion des
+rectifies-Tors auf dem #909-Datenstand; ergänzt um Nachzug R2b (Auflagen der Gegenprüfung
+Opus, F1–F7).
+**Status:** ZWEIFACH GEPRÜFT (Bau-Messung + Rot-Beweise + SPARQL-Belege, s. u.); fachliche
+Abnahme durch David und Gegenprüfung durch den Orchestrator offen (§7/§8, Risikopfad).
+
 **Kontext:** ROADMAP `QS-MONITOR-ROT`, Einheit «rectifies-Tor Runde 2». Rot-Reproduktion von
 `npm run check:revisionen-rectifies` auf dem Datenstand des Automatik-PR #909
 (`origin/chore/fedlex-frische-2026-09-18` + `origin/main` gemergt, 82 rectifies-Kanten statt
@@ -81,18 +87,38 @@ eigenes oc» trifft nicht zu, das Dokument existiert (nur ohne SR-Klassierung). 
 SKV/oc-2025-686 und AIG/oc-2025-342 (ein real existierendes, aber falsches Ziel). Dritter
 Ausnahme-Eintrag in `bibliothek/normtext/rectifies-ausnahmen.json` (seit 2026-09-19).
 
-## KLV (eli/oc/2026/209) — Nebenfund, NICHT im Auftrag, bleibt ROT
+## KLV (eli/oc/2026/209) — Nachzug R2b F7: vierter amtlich belegter Fedlex-Datenfehler
 
-Zwei unabhängige Headline-Blöcke: «Änderung vom 4. Juni 2025 (AS 2025 419; SR 832.112.31)» und
-«Änderung vom 2. Dezember 2025 (AS 2025 851; SR 832.112.31)». `jolux:rectifies` zeigt auf
-`eli/oc/2014/269` (AS 2014 1251) — WEDER 419 noch 851. Anders als bei LRV ist dies KEIN
-Grunderlass-Fall: SPARQL zeigt `eli/oc/2014/269`, `eli/oc/2025/419` UND `eli/oc/2025/851` sind
-alle drei `legalResourceGenre` 200 (reguläre Änderung), strukturell gleichrangig — 2014/269 ist
-schlicht ein anderes, älteres, unabhängiges KLV-Änderungsdokument. Das sieht dem Muster von
-SKV/AIG/LRV sehr ähnlich (reales, aber falsches Ziel), ist aber NICHT Teil dieses Auftrags und
-wurde nicht amtlich zu Ende recherchiert (z. B. ob 2014/269 die betroffene Bestimmung Art. 12a
-ursprünglich einführte). **Bleibt bewusst ROT** (§7 «im Zweifel rot lassen und mit Belegen
-melden») — Entscheid über einen vierten Ausnahme-Eintrag liegt beim Orchestrator/David.
+**Revidiert 19.9.2026 (Nachzug R2b, F7, Weisung Orchestrator nach eigener Recherche + eigener
+Gegenlese):** die Erst-Fassung dieses Abschnitts liess KLV bewusst rot und offen; eine
+Recherche hat die Einordnung inzwischen amtlich abgeschlossen. Zwei unabhängige Headline-
+Blöcke: «Änderung vom 4. Juni 2025 (AS 2025 419; SR 832.112.31)» (Art. 12a Abs. 1 Bst. r) und
+«Änderung vom 2. Dezember 2025 (AS 2025 851; SR 832.112.31)» (Art. 12a Abs. 1 Bst. t) — beide
+betreffen die Aufnahme der RSV-Impfung (Respiratorische Syncytial-Viren) in Art. 12a.
+`jolux:rectifies` zeigt auf `eli/oc/2014/269` (AS 2014 1251, KLV-Änderung vom 16. Mai 2014) —
+WEDER 419 noch 851. Unabhängig nachgemessen (dieser Bau, an den committeten `revisionen-raw`-
+Rohdaten und dem realen Cache-HTML): `rectifiesInfoProOc["…/oc/2026/209"]` trägt exakt
+`zielOc=…/oc/2014/269`, `zielFundstelle=AS 2014 1251`, `fremdeSr=832.112.31`
+(`bibliothek/normtext/revisionen-raw/KLV.json`); das Cache-HTML nennt wörtlich beide Blöcke wie
+oben. Nicht selbst nachgemessen (übernommen aus der Recherche, nicht amtlich nachgefetcht):
+dass `eli/oc/2014/269` selbst weder «Syncytial»/«Synzytial» noch «RSV» enthält und nur Art. 12a
+Bst. a, b, d, f, g, i, j, l ändert — diese Negativ-Prüfung erfordert den PDF-A-Volltext des
+2014er Dokuments, der in diesem Bau nicht gegengelesen wurde (Offenlegung §7).
+
+Anders als bei LRV ist dies KEIN Grunderlass-Fall: SPARQL zeigt `eli/oc/2014/269`,
+`eli/oc/2025/419` UND `eli/oc/2025/851` sind alle drei `legalResourceGenre` 200 (reguläre
+Änderung), strukturell gleichrangig — 2014/269 ist schlicht ein anderes, älteres, unabhängiges
+KLV-Änderungsdokument. Eingeordnet als vierter Fall derselben Fehlerklasse **«falsches
+rectifies-Ziel»** (real existierendes, aber falsches Ziel-Dokument) wie SKV/oc-2025-686,
+AIG/oc-2025-342 und LRV/oc-2025-448. Vierter Ausnahme-Eintrag in
+`bibliothek/normtext/rectifies-ausnahmen.json` (seit 2026-09-19), kanonische Text-Fundstelle
+(Nachzug R2b F3) `AS 2025 419 + AS 2025 851`.
+
+Ein weiterer, ausserhalb dieses Korpus liegender Beleg derselben Fehlerklasse (nicht Teil
+dieses Auftrags, nur zur Einordnung der Häufigkeit): `oc/2025/227` → fälschlich verknüpft mit
+`oc/1984/889_889_889` (SPARQL, Abruf 19.9.2026). Gegenbelege korrekter Verknüpfung (dieselbe
+Fehlerklasse tritt NICHT systematisch auf): `oc/2026/181`, `oc/2023/257`, `oc/2026/448`,
+`oc/2025/537`.
 
 ## B-1 (Phantom-Komma-Nummer) — geprüft, keine Code-Änderung
 
@@ -105,6 +131,8 @@ Fehlmessung (§7) — offener Beobachtungspunkt.
 
 ## Status
 
-Bau-Runde 2 abgeschlossen, drei Parser-Fixes + ein Ausnahme-Eintrag umgesetzt, KLV bleibt rot.
-Fachliche Abnahme (insb. der LRV-Einordnung als Fedlex-Fehler) David offen — **Gegenprüfung
-durch den Orchestrator ausstehend (Risikopfad, Pflicht vor Merge).**
+Bau-Runde 2 + Nachzug R2b abgeschlossen: drei Parser-Fixes, Klammer-Fenster strukturell
+eingegrenzt (F1), Ausnahme-Konsumption dreistufig (F2), Text-Stale-Sicherung bei Mehrfach-AS
+(F3), vier Ausnahme-Einträge (SKV/AIG/LRV/KLV, alle dieselbe Fehlerklasse «falsches
+rectifies-Ziel»). Fachliche Abnahme (insb. der LRV/KLV-Einordnung als Fedlex-Fehler) David
+offen — **Gegenprüfung durch den Orchestrator ausstehend (Risikopfad, Pflicht vor Merge).**
