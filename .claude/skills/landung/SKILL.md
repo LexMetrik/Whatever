@@ -234,6 +234,12 @@ an; `scripts/gegenpruefung/squash-trailer.ts` liest das seither (Anlass: Lauf
 35449385978, #921 rot im `merge_group`). Echt-Beleg: #921 gelandet
 `2db154675` (19.9.2026). Risikopfad-PRs weiter strikt einzeln einreihen —
 jeder hängt eine Register-Zeile an (Ziff. 3.4).
+**Falle (gemessen 19.9.2026, #923, Lauf 35458509735):** lokales
+`check:merge-schutz` liest die ZWEIG-Commits, die Queue den Squash aus
+PR-Titel + PR-Body — ein im Body verkürztes Verdikt («… — keine», Befund-Teil
+< 15 Zeichen) ist lokal grün und fällt in der Queue. Das Verdikt im PR-Body
+muss dieselbe volle Form haben wie im Commit; vor dem Einreihen den Body
+gegenlesen (Vorab-Check: ROADMAP `QS-CI-MINUTEN`).
 
 ### Ausnahmefall manueller Deploy · Ausreden-Tabelle → referenz-ausnahmen.md
 
