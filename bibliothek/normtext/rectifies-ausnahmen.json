@@ -16,5 +16,23 @@
     "erwartetesZielOc": "https://fedlex.data.admin.ch/eli/oc/2018/438",
     "erwarteteZielFundstelle": "AS 2018 2855",
     "erwarteteTextFundstelle": "AS 2016 3101"
+  },
+  {
+    "oc": "https://fedlex.data.admin.ch/eli/oc/2025/448",
+    "seit": "2026-09-19",
+    "belegUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2025/448/de/html/fedlex-data-admin-ch-eli-oc-2025-448-de-html.html",
+    "begruendung": "Weiterer Fall EINER WIEDERKEHRENDEN Fedlex-Fehlerklasse «falsches rectifies-Ziel» (Fehlerbuch W2·18, ROADMAP QS-MONITOR-ROT, rectifies-Tor Runde 2/Nachzug R2b) — NICHT ein isolierter Einzelfehler: dieselbe Klasse trifft auch SKV/oc-2025-686, AIG/oc-2025-342 und KLV/oc-2026-209 (s. Eintrag unten); ein vierter, ausserhalb dieses Korpus liegender Beleg ist oc/2025/227 → fälschlich verknüpft mit oc/1984/889_889_889 (SPARQL, Abruf 19.9.2026). Gegenbelege korrekter Verknüpfung (die Fehlerklasse tritt NICHT systematisch auf): oc/2026/181, oc/2023/257, oc/2026/448, oc/2025/537. Die LRV-Berichtigung AS 2025 448 korrigiert laut amtlichem Berichtigungstext ausdrücklich «Änderung vom 20. November 1991 (AS 1992 124; SR 814.318.142.1)», Anhang 3 Ziff. 511/522. Diese Änderung existiert amtlich als eigenständiges Dokument eli/oc/1992/124_124_124 (historicalId «RO 1992 124», dateDocument 1991-11-20, Titel «Luftreinhalte-Verordnung, Änderung» — SPARQL-Abfrage gegen https://fedlex.data.admin.ch/sparqlendpoint, Abruf 19.9.2026) — Datum, Fundstelle UND Titel decken sich exakt mit dem Berichtigungstext. jolux:rectifies zeigt für AS 2025 448 aber auf eli/oc/1986/208_208_208 (historicalId «RO 1986 208», legalResourceGenre 100 = Grunderlass, dateDocument 1985-12-16 — der URSPRÜNGLICHE Erlass der LRV selbst, nicht die 1991er Änderung). Der korrekte Zielkandidat eli/oc/1992/124_124_124 trägt zudem KEINE jolux:classifiedByTaxonomyEntry (SR-Klassierung) — vermutlich deshalb fehlt er in der lokal gebauten Kantenliste (bBindings) dieses Erlasses, was den Fehler bislang verdeckt hat.",
+    "erwartetesZielOc": "https://fedlex.data.admin.ch/eli/oc/1986/208_208_208",
+    "erwarteteZielFundstelle": "AS 1986 208",
+    "erwarteteTextFundstelle": "AS 1992 124"
+  },
+  {
+    "oc": "https://fedlex.data.admin.ch/eli/oc/2026/209",
+    "seit": "2026-09-19",
+    "belegUrl": "https://fedlex.data.admin.ch/filestore/fedlex.data.admin.ch/eli/oc/2026/209/de/html/fedlex-data-admin-ch-eli-oc-2026-209-de-html.html",
+    "begruendung": "Vierter Fall derselben WIEDERKEHRENDEN Fedlex-Fehlerklasse «falsches rectifies-Ziel» (s. LRV/oc-2025-448 oben für den ausserhalb dieses Korpus liegenden Aussenfall oc/2025/227 + Gegenbelege korrekter Verknüpfung) — Fehlerbuch W2·18, ROADMAP QS-MONITOR-ROT, Nachzug R2b F7. Die KLV-Berichtigung AS 2026 209 nennt laut amtlichem Berichtigungstext ZWEI Headline-Blöcke: «Änderung vom 4. Juni 2025 (AS 2025 419; SR 832.112.31)» (Art. 12a Abs. 1 Bst. r) und «Änderung vom 2. Dezember 2025 (AS 2025 851; SR 832.112.31)» (Art. 12a Abs. 1 Bst. t) — beide betreffen die Aufnahme der RSV-Impfung (Respiratorische Syncytial-Viren) in Art. 12a. jolux:rectifies zeigt für oc/2026/209 aber auf eli/oc/2014/269 (AS 2014 1251, KLV-Änderung vom 16. Mai 2014) — dieses Dokument ändert Art. 12a nur Bst. a, b, d, f, g, i, j, l und enthält weder «Syncytial»/«Synzytial» noch «RSV»; Bst. r und t existieren darin nicht (Negativ-Prüfung aus der Recherche übernommen, nicht selbst am PDF-A nachgefetcht; seit Nachzug R2c und Opus-Gegenprüfung 19.9.2026 zweifach am amtlichen PDF-A oc/2014/269 re-deriviert: 0 Treffer «Syncytial»/«Synzytial»/«RSV», Kopfzeile «Art. 12a Bst. a, b, d, f, g, i, j und l»). Reverse-Check: keine Berichtigung zeigt auf oc/2025/419 oder oc/2025/851. jolux:rectifies zeigt damit auf das falsche AS-Dokument, strukturell dieselbe Fehlerklasse wie SKV/oc-2025-686, AIG/oc-2025-342 und LRV/oc-2025-448 oben.",
+    "erwartetesZielOc": "https://fedlex.data.admin.ch/eli/oc/2014/269",
+    "erwarteteZielFundstelle": "AS 2014 1251",
+    "erwarteteTextFundstelle": "AS 2025 419 + AS 2025 851"
   }
 ]

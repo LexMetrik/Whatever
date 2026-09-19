@@ -30,8 +30,18 @@
  *
  * Exit 1 bei `abweichend` ohne (gültigen) Eintrag in
  * `bibliothek/normtext/rectifies-ausnahmen.json` ODER bei `stale` (Identität = exakte
- * oc-URI, kein Substring). `sammelberichtigung`/`nicht-abrufbar` bleiben grün (dokumentierter
- * Befund, keine Behauptung eines Fehlers).
+ * oc-URI, kein Substring) ODER bei einer nicht konsumierten Ausnahme der Stufe `rot` (Auflage
+ * B3, Runde 2, DREISTUFIG verschärft Nachzug R2b F2, s. `findeNichtKonsumierteAusnahmen`): eine
+ * Ausnahme, deren oc auf eine `uebereinstimmend`/`sammelberichtigung`-Kante trifft, ist ein
+ * stiller, nie mehr scheiternder Freibrief (§6.7) — ROT. Die beiden anderen Stufen bleiben
+ * SICHTBAR, aber GRÜN: `warnung` (das oc kommt im geprüften Bestand gar nicht vor — kann nichts
+ * verdecken, evtl. Daten noch nicht geladen oder Kante bei Fedlex entfallen) und `hinweis` (die
+ * Kante existiert, ist aber `nicht-abrufbar` — zurzeit nicht prüfbar, Eintrag NICHT löschen).
+ * `sammelberichtigung`/`nicht-abrufbar` bleiben grün (dokumentierter Befund, keine Behauptung
+ * eines Fehlers) — AUSSER `nicht-abrufbar` überschreitet die Obergrenze `NICHT_ABRUFBAR_
+ * OBERGRENZE` (Nachzug R2b F4, s. `rectifies-berichtigung.ts`): dann ROT («neue Berichtigung
+ * ohne HTML — docx-Leser oder Einzelprüfung nötig»), weil eine wachsende Zahl auf einen echten
+ * Trend statt auf die bekannten 2021/22er Alt-Fälle hindeuten kann.
  *
  * ── Live-Befund 12.9.2026 (Mass, nicht übernommen — Auftragstext nannte ≈16/1/1/n) ──
  * 25 rectifies-Kanten im Korpus (nicht 71 — Schätzung des Auftrags widerlegt, §0/§17
@@ -61,8 +71,10 @@
  */
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import {
-  ausnahmeGueltig, extrahiereHeadlineZitate, holeBerichtigungstext, klassifiziereBerichtigung,
-  loeseBerichtigungsHtmlUrl, type RectifiesAusnahme, type RectifiesKlasse,
+  ausnahmeGueltig, extrahiereHeadlineZitate, findeNichtKonsumierteAusnahmen, formatiereBefundDetail,
+  formatiereStaleDetail, holeBerichtigungstext, kanonischeTextFundstelle, klassifiziereBerichtigung,
+  loeseBerichtigungsHtmlUrl, NICHT_ABRUFBAR_OBERGRENZE, nichtAbrufbarUeberObergrenze,
+  type RectifiesAusnahme, type RectifiesKlasse,
 } from './rectifies-berichtigung.ts';
 import { holeMitCache, modusAusUmgebung } from './rectifies-cache.ts';
 import type { RectifiesInfo } from './revisionen-generieren.ts';
@@ -74,13 +86,19 @@ interface Kante { erlassKey: string; oc: string; info: RectifiesInfo }
 type Klasse = RectifiesKlasse | 'nicht-abrufbar' | 'stale';
 interface Befund {
   erlassKey: string; oc: string; klasse: Klasse; detail: string;
-  /** Nur bei genau einem Headline-Zitat gesetzt (abweichend/uebereinstimmend) — Grundlage
-   *  des Stale-Vergleichs gegen `erwarteteTextFundstelle`. Ergänzung 18.9.2026, Gegenprüfung
-   *  Opus Auflage B3: der Code setzte dieses Feld vorher UNCONDITIONIERT (`zitate.as[0]`) —
-   *  seit `klassifiziereBerichtigung` nach Blöcken klassiert (Auflage B2), kann `abweichend`
-   *  auch bei MEHR als einer genannten Fundstelle auftreten (der Fall, den dieser Kommentar
-   *  schon immer ausschliessen wollte); das Feld bleibt darum jetzt nur bei genau einer
-   *  gesetzt, sonst `undefined`. */
+  /** Kanonische Text-Fundstelle (s. `kanonischeTextFundstelle`) — Grundlage des Stale-Vergleichs
+   *  gegen `erwarteteTextFundstelle`. `undefined` nur bei 0 erkannten Headline-Zitaten
+   *  (Parser-Lücke, s. `formatiereBefundDetail`).
+   *  ── Nachzug R2b, F3 (2b: ergänzt, nicht nachgeführt — Ergänzung 18.9.2026 unten bleibt
+   *  stehen) ── die vorherige Fassung setzte dieses Feld NUR bei `zitate.as.length === 1`; bei
+   *  MEHREREN AS-Fundstellen (Sammelberichtigung mit 2 Blöcken ODER eine Klammer mit mehreren
+   *  komma-getrennten Nummern) blieb es `undefined`, wodurch `ausnahmeGueltig` `'' === ''`
+   *  verglich — die Stale-Sicherung war damit für JEDE Mehrfach-AS-Kante stillschweigend
+   *  ausgeschaltet (§6.7). Jetzt: `kanonischeTextFundstelle(zitate.as)`, bei genau einer
+   *  Fundstelle byte-gleich zur bisherigen Form.
+   *  ── Ergänzung 18.9.2026, Gegenprüfung Opus Auflage B3 ── der Code setzte dieses Feld VORHER
+   *  UNCONDITIONIERT (`zitate.as[0]`) — seit `klassifiziereBerichtigung` nach Blöcken klassiert
+   *  (Auflage B2), kann `abweichend` auch bei MEHR als einer genannten Fundstelle auftreten. */
   textFundstelle?: string;
 }
 
@@ -118,11 +136,8 @@ async function pruefeKante(k: Kante, modus: ReturnType<typeof modusAusUmgebung>)
     }, modus);
     const zitate = extrahiereHeadlineZitate(treffer.html);
     const klasse = klassifiziereBerichtigung(zitate, k.info);
-    const detail = klasse === 'uebereinstimmend'
-      ? `Text: ${zitate.as.join(', ') || '∅'}.`
-      : `Text nennt ${zitate.as.join(', ') || '∅'} (SR ${zitate.sr.join(', ') || '∅'}) — `
-        + `rectifies-Ziel ${k.info.zielFundstelle ?? k.info.zielOc} (SR ${k.info.fremdeSr}).`;
-    return { erlassKey: k.erlassKey, oc: k.oc, klasse, detail, textFundstelle: zitate.as.length === 1 ? zitate.as[0] : undefined };
+    const detail = formatiereBefundDetail(zitate, k.info, klasse);
+    return { erlassKey: k.erlassKey, oc: k.oc, klasse, detail, textFundstelle: kanonischeTextFundstelle(zitate.as) };
   } catch (e) {
     return { erlassKey: k.erlassKey, oc: k.oc, klasse: 'nicht-abrufbar', detail: (e as Error).message };
   }
@@ -148,10 +163,9 @@ async function main(): Promise<void> {
         });
         if (!gueltig) {
           befund.klasse = 'stale';
-          befund.detail = `Ausnahmeliste-Eintrag seit ${ausnahme.seit} passt NICHT MEHR zum frischen Mass `
-            + `(erwartet Ziel ${ausnahme.erwartetesZielOc} / Fundstelle ${ausnahme.erwarteteZielFundstelle ?? '∅'} / `
-            + `Text ${ausnahme.erwarteteTextFundstelle ?? '∅'}; aktuell Ziel ${k.info.zielOc} / `
-            + `Fundstelle ${k.info.zielFundstelle ?? '∅'} / Text ${befund.textFundstelle ?? '∅'}) — neu einordnen.`;
+          befund.detail = formatiereStaleDetail(ausnahme, {
+            zielOc: k.info.zielOc, zielFundstelle: k.info.zielFundstelle, textFundstelle: befund.textFundstelle,
+          });
         }
       }
     }
@@ -160,9 +174,11 @@ async function main(): Promise<void> {
 
   const counts: Partial<Record<Klasse, number>> = {};
   for (const b of befunde) counts[b.klasse] = (counts[b.klasse] ?? 0) + 1;
+  const nichtAbrufbarAnzahl = counts['nicht-abrufbar'] ?? 0;
 
   console.log(`check:revisionen-rectifies: ${kanten.length} rectifies-Kante(n) geprüft (Modus ${modus}).`);
   console.log(`Klassen: ${JSON.stringify(counts)}`);
+  console.log(`nicht-abrufbar: ${nichtAbrufbarAnzahl}/${kanten.length} (Obergrenze ${NICHT_ABRUFBAR_OBERGRENZE}, Nachzug R2b F4).`);
 
   const nichtGruen = befunde
     .filter((b) => b.klasse !== 'uebereinstimmend')
@@ -174,6 +190,11 @@ async function main(): Promise<void> {
   }
 
   const rot = befunde.filter((b) => b.klasse === 'stale' || (b.klasse === 'abweichend' && !ausnahmen.has(b.oc)));
+  const nichtKonsumiert = findeNichtKonsumierteAusnahmen(ausnahmen, befunde);
+  const nkWarnung = nichtKonsumiert.filter((n) => n.stufe === 'warnung');
+  const nkHinweis = nichtKonsumiert.filter((n) => n.stufe === 'hinweis');
+  const nkRot = nichtKonsumiert.filter((n) => n.stufe === 'rot');
+
   if (rot.length) {
     console.error(`\ncheck:revisionen-rectifies ROT: ${rot.length} unbelegte/veraltete Abweichung(en):`);
     for (const b of rot) console.error(`  - ${b.erlassKey} ${b.oc} (${b.klasse}): ${b.detail}`);
@@ -182,9 +203,46 @@ async function main(): Promise<void> {
       + `in ${AUSNAHMEN_PFAD} ergänzen/nachführen (oc + seit + belegUrl + begruendung + `
       + `erwartetesZielOc + erwarteteZielFundstelle + erwarteteTextFundstelle).`,
     );
-    process.exit(1);
   }
-  console.log('check:revisionen-rectifies grün: keine unbelegte oder veraltete Abweichung.');
+  // Dreistufig statt pauschal rot (Nachzug R2b, F2): nur `rot` zählt zum Exit-Code. `warnung`
+  // (oc gar keine Kante mehr — kann nichts verdecken) und `hinweis` (Kante zurzeit
+  // `nicht-abrufbar` — Eintrag NICHT löschen) sind sichtbar, aber nicht blockierend.
+  if (nkWarnung.length) {
+    console.warn(`\ncheck:revisionen-rectifies WARNUNG: ${nkWarnung.length} Ausnahmeliste-Eintrag/-einträge ohne passende Kante:`);
+    for (const { ausnahme } of nkWarnung) {
+      console.warn(`  - ${ausnahme.oc} (seit ${ausnahme.seit}): Ausnahme-oc nicht im geprüften Bestand `
+        + '(Daten noch nicht geladen oder Kante bei Fedlex entfallen) — prüfen.');
+    }
+  }
+  if (nkHinweis.length) {
+    console.log(`\ncheck:revisionen-rectifies HINWEIS: ${nkHinweis.length} Ausnahmeliste-Eintrag/-einträge zurzeit nicht prüfbar:`);
+    for (const { ausnahme } of nkHinweis) {
+      console.log(`  - ${ausnahme.oc} (seit ${ausnahme.seit}): zurzeit nicht prüfbar (nicht-abrufbar) — Eintrag NICHT löschen.`);
+    }
+  }
+  if (nkRot.length) {
+    console.error(
+      `\ncheck:revisionen-rectifies ROT: ${nkRot.length} nicht konsumierte Ausnahmeliste-Eintrag/`
+      + `-einträge (Auflage B3, §6.7 — ein Tor, das nicht scheitern kann, ist gefährlicher als keines):`,
+    );
+    for (const { ausnahme } of nkRot) {
+      console.error(
+        `  - ${ausnahme.oc} (seit ${ausnahme.seit}): keine aktuelle abweichend/stale-Kante trifft mehr zu — `
+        + `Kante ist jetzt uebereinstimmend/sammelberichtigung. Eintrag in ${AUSNAHMEN_PFAD} entfernen `
+        + 'oder neu einordnen.',
+      );
+    }
+  }
+  const nichtAbrufbarUeber = nichtAbrufbarUeberObergrenze(nichtAbrufbarAnzahl);
+  if (nichtAbrufbarUeber) {
+    console.error(
+      `\ncheck:revisionen-rectifies ROT: ${nichtAbrufbarAnzahl} nicht-abrufbare Kante(n) — Obergrenze `
+      + `${NICHT_ABRUFBAR_OBERGRENZE} überschritten (Nachzug R2b F4): neue Berichtigung ohne HTML — `
+      + 'docx-Leser oder Einzelprüfung nötig.',
+    );
+  }
+  if (rot.length || nkRot.length || nichtAbrufbarUeber) process.exit(1);
+  console.log('check:revisionen-rectifies grün: keine unbelegte/veraltete Abweichung, alle Ausnahmen konsumiert oder erklärt.');
 }
 
 await main();
