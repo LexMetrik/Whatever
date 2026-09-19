@@ -643,6 +643,28 @@ export function artikelKinderOffen(
 }
 
 /**
+ * Was zeigt diese Zeile — und gilt sie als aufgeklappt? (W2·5m-LESER-V3,
+ * Befund David 19.9.2026 «klappt oft unterste Ebene nicht auf».)
+ *
+ * Die EINE Ableitung, aus der Renderer (`SektionBaumTOC`, Chevron,
+ * `aria-expanded`), Positionsmarke und Wächter lesen — bis hierher stand sie
+ * inline im Renderer, und die Tests prüften eine Kopie davon.
+ */
+export interface ZeilenAnsicht {
+  /** Gilt als aufgeklappt (Chevron gedreht, `aria-expanded`). */
+  auf: boolean;
+  /** Die Kind-Zeilen, die tatsächlich gerendert werden (Gesetzesreihenfolge). */
+  sichtbareKinder: GliederungsKnoten[];
+}
+export function zeilenAnsicht(
+  k: GliederungsKnoten, offen: Record<string, boolean>, startOffeneTiefe: number,
+): ZeilenAnsicht {
+  const auf = zeileIstOffen(k, offen, startOffeneTiefe);
+  const artikelAuf = artikelKinderOffen(k, offen, startOffeneTiefe);
+  return { auf, sichtbareKinder: auf ? k.kinder.filter((kk) => kk.art !== 'artikel' || artikelAuf) : [] };
+}
+
+/**
  * F5: welche EINE Zeile trägt die Positionsmarke?
  *
  * Die Spec sagt «der tiefste aktive Knoten». Das genügt als Regel nicht ganz,

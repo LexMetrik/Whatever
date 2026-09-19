@@ -15,6 +15,7 @@ import {
   fruehestesInKraft, nichtKonsolidierteInkrafttreten, revisionenFuerNorm,
 } from '../../lib/normtext/revisionen';
 import { klappZeile } from './tocAutoZuklappen';
+import { oeffneSprungZiel } from './klappKarte';
 
 // ═══ ABSCHNITT · Reader-Zustand (§6.6-Split, QS-TOK/T14) ═════════════════════
 // Aus GesetzLeserInhalt ausgelagerte Zustands-Hooks: Daten-/Shard-/Such-Zustand,
@@ -322,7 +323,7 @@ export function useLeserTocZustand() {
     // zugerechnet (hadRecentInput ⇒ CLS-frei, §15.2) und der Effekt ruft kein
     // setState synchron in seinem Rumpf (Kaskaden-Render-Regel).
     const raf = window.requestAnimationFrame(() =>
-      setTocBaum((o) => ({ ...o, ...Object.fromEntries(aktivIds.map((id) => [id, true])) })));
+      setTocBaum((o) => oeffneSprungZiel(o, aktivIds, aktivIds.slice(-1))));
     return () => window.cancelAnimationFrame(raf);
   }, [tocAuf, aktivIds, merkeSprungAst]);
 

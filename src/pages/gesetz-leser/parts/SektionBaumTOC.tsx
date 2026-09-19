@@ -1,7 +1,7 @@
 import { memo, useMemo, type KeyboardEvent, type MouseEvent, type ReactNode } from 'react';
 import { romanFrei, margLabel } from '../helpers';
 import { merkeRuecksprungVonDom } from '../scrollAnker';
-import { zeileIstOffen, artikelKinderOffen, findeMarke, type GliederungsKnoten } from '../gliederungsModell';
+import { zeilenAnsicht, findeMarke, type GliederungsKnoten } from '../gliederungsModell';
 import { vollText, berechneKlappKontext } from './klappNamen';
 
 // ═══ Gliederungsbaum der Seitenleiste (Zone B) ═══════════════════════════════
@@ -259,9 +259,7 @@ const Zeile = memo(function Zeile({
   // demselben START-Zustand folgen — Sektionen starten bei kleinen Bäumen
   // offen, Artikel nie. Welche der beiden Regeln greift, entscheidet das
   // Modell (`artikelKinderOffen`); hier wird sie nur angewandt (§3).
-  const auf = zeileIstOffen(k, offen, startOffeneTiefe);
-  const artikelAuf = artikelKinderOffen(k, offen, startOffeneTiefe);
-  const sichtbareKinder = auf ? k.kinder.filter((kk) => kk.art !== 'artikel' || artikelAuf) : [];
+  const { auf, sichtbareKinder } = zeilenAnsicht(k, offen, startOffeneTiefe);
   // `hatKinder` steuert Chevron und `aria-expanded`. Massgeblich ist, was die
   // Zeile ÖFFNEN KANN, nicht was gerade zu sehen ist — sonst verschwände der
   // Knopf an einer Zeile, die nur Artikel trägt, und die Ebene wäre unerreichbar.

@@ -15,6 +15,7 @@ import { paneRoot } from './berechnungen';
 import { loeseSpyNachlauf } from './inhalt-hooks';
 import { merkeSprungAstManuell } from './sprungAst';
 import { useTiefLinkZweig } from './v3/tiefLinkZweig';
+import { oeffneSprungZiel } from './klappKarte';
 
 // ═══ ABSCHNITT · Sektions-Sprung, Instanz-Navigation, Suche-Scroll (§6.6-Split,
 // QS-TOK/T14) ════════════════════════════════════════════════════════════════
@@ -122,7 +123,7 @@ export function useSektionSprung(opts: {
     // unerwartet (leser-kopf-a9 «Breadcrumb-Fluss» Mikro-CLS).
     flushSync(() => {
       setAktivIds(ids);
-      setTocBaum((o) => ({ ...o, ...Object.fromEntries(ids.map((x) => [x, true])) }));
+      setTocBaum((o) => oeffneSprungZiel(o, pfad, zeilenIds));
       setOffen((o) => ({ ...o, ...Object.fromEntries(ids.map((x) => [x, true])) }));
       setTocAuf(false); // mobilen Drawer schliessen
     });

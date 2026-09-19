@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, type Dispatch, type MutableRefObject, type SetStateAction } from 'react';
 import { pfadZu } from '../helpers';
 import type { Sektion } from '../../../lib/normtext/browse';
+import { oeffneSprungZiel, sprungZielOffen } from '../klappKarte';
 
 // ── D21-NEBENFUND (W2·24-R6c) · DER TIEFLINK ÖFFNET SEINEN GLIEDERUNGSZWEIG
 //    VOR DEM ERSTEN BILD ────────────────────────────────────────────────────
@@ -85,8 +86,8 @@ export function useTiefLinkZweig(opts: {
       autoTickRef.current.set(id, tick);
     }
     setTocBaum((o) => {
-      if (ids.every((id) => o[id])) return o; // schon offen ⇒ kein Re-Render
-      return { ...o, ...Object.fromEntries(ids.map((id) => [id, true])) };
+      if (sprungZielOffen(o, ids, ids.slice(-1))) return o; // schon offen ⇒ kein Re-Render
+      return oeffneSprungZiel(o, ids, ids.slice(-1));
     });
   }, [hash, sektionen, erlassMarke,
       autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, setTocBaum]);

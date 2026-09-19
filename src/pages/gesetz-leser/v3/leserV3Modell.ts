@@ -21,6 +21,7 @@ import { useSektionSprung, useInternRefs } from '../inhalt-sprung';
 import { useWeiterlesen } from '../inhalt-weiterlesen';
 import { useSuchTreffer } from '../inhalt-suchtreffer';
 import type { LesePosition } from '../lesePosition';
+import { oeffneSprungZiel } from '../klappKarte';
 
 // ═══ DATEN-ADAPTER DER V3-HÜLLE ═════════════════════════════════════════════
 //
@@ -300,7 +301,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
       merkeSprungAst(ids); // Fehlerbuch 15.9.2026: hier stand nur `manuellZu.delete` — der Ast war danach ungeschützt (`../sprungAst`)
       if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
       setAktivIds(ids);
-      setTocBaum((o) => ({ ...o, ...Object.fromEntries(ids.map((id) => [id, true])) }));
+      setTocBaum((o) => oeffneSprungZiel(o, ids, ids.slice(-1)));
       jumpLockRef.current = true;
     } else {
       // F2: Artikel ohne amtliche Sektion — der synthetische Pfad kommt aus
