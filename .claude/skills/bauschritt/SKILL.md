@@ -31,16 +31,17 @@ ohne Rückfrage nach diesem Zyklus.
    nicht der Prompt.
 3. **Sichtbar werden** (F6): Branch `feat/<slug-der-id>` anlegen,
    `plan:set -- <id> status=wip && check:plan`, committen, **Feature-Branch**
-   pushen — nie main (jeder main-Push ist ein Vercel-Deploy und wirft offene
-   Auto-Merge-PRs auf BEHIND; Hook `tor-schutz.py` blockt, Skill `landung`
-   Ziff. 7). Parallel-Session ⇒ eigener Worktree (§12). Bau-Spec bei Bedarf
+   pushen — nie main (main nimmt seit 19.9.2026 nur die Merge-Queue, kein
+   Bypass; Hook `tor-schutz.py` blockt, Skill `landung` Ziff. 7).
+   Parallel-Session ⇒ eigener Worktree (§12). Bau-Spec bei Bedarf
    als Slice: `npm run fahrplan -- <fahrplan-datei> <§>`.
 4. **Notizen-Datei anlegen** (§17, Weisung David 15.9.2026): aus der Vorlage
    `docs/token-oekonomie/session-notizen-vorlage.md` unter
    `<Haupt-Checkout>/.claude/notizen/<YYYY-MM-DD>-<session-slug>.md`
-   (gitignored). Zeigt `plan:next` bereits eine Vorgänger-Datei mit offenen
-   Posten (`📝 Session-Notizen: … — N offen`), wird sie ÜBERNOMMEN
-   (weiterführen), nicht ignoriert.
+   (gitignored; aus einem Worktree per Bash, `cat > … <<'EOF'` — das
+   Write-Werkzeug sperrt `<Haupt-Checkout>/.claude/`). Zeigt `plan:next`
+   eine Vorgänger-Datei mit offenen Posten (`📝 Session-Notizen: … — N
+   offen`), wird sie ÜBERNOMMEN (weiterführen), nicht ignoriert.
 
 ## Station B — Bau
 
@@ -85,14 +86,18 @@ ohne Rückfrage nach diesem Zyklus.
 ## Station D — Landung
 
 Skill **`landung`** Schritt für Schritt (§12 + §9: Tore vor Merge, Bug-Check,
-serielle Landung, CI-Grün, Nachkontrolle). Schlusspunkt: **Status schliessen**
-(`plan:set <id> status=done`/`ready`/`parked`, `check:plan`, committen, pushen).
+Einreihen in die Merge-Queue, CI-Grün, Nachkontrolle). **Status schliessen
+gehört IN den PR**, der den Schritt abschliesst (`plan:set -- <id>
+status=done`/`ready`/`parked`, `check:plan`, committen — `landung` Ziff. 9),
+nicht hinter die Landung.
 
 **Kein Stillstand ohne David (Auftrag 16.8.2026, nach 7 h stummem Warten):**
 Wer eine Landekette per Wächter begleitet, setzt einen **Stillstands-Anker** —
-Hintergrund-Bash mit `until … done` (alle 5 min `git fetch`; 25 min kein neuer
-main-Merge UND noch PRs offen ⇒ Meldung «STILLSTAND»), worauf die Session
-SELBST eingreift (Konflikt lösen, Hand-Merge bei allen Required grün, Nachzug).
+Hintergrund-Bash mit `until … done` (alle 5 min `git fetch`; 60 min
+[Check-Timeout der Queue; Durchlauf belegt ~30 min] kein neuer main-Merge
+UND noch Einträge in der Queue ⇒ «STILLSTAND»), worauf die Session SELBST
+eingreift (Konflikt lösen; nach Rauswurf ERST den `merge_group`-Lauf lesen,
+dann neu einreihen — `landung` §Merge-Queue).
 Keine Monitor-Streams — die liefen am 16.8.2026 mehrfach still aus. Massgeblich
 ist der Merge-Zeitstempel auf origin/main.
 
@@ -116,12 +121,14 @@ Commit mit eigenem Roadmap-Trailer).
 - [ ] **Karten-ZEILE in `STRUKTUR.md`** (was gebaut, Commit/PR-Beleg).
       Volle Session-Karte NUR bei Risikopfad-Berührung, gezogener §17-Lehre
       oder offenen Enden, die eine Folge-Session steuern müssen.
-- [ ] **Status schliessen:** `plan:set -- <id> status=done` + `check:plan`.
-- [ ] **Sammel-Push:** alle Doku-Commits der Session ohne PR in EINEM Push —
-      `LEXMETRIK_MAIN_PUSH=1 git push origin main` (der einzige direkte
-      main-Push der Session, Skill `landung` Ziff. 7); davor Bau-Flächen
-      abräumen (Worktree, Feature-Branch lokal + remote, `git worktree
-      prune`, Scratch-Dateien), danach `git checkout main && git pull`.
+- [ ] **Status geschlossen?** `plan:set -- <id> status=done` + `check:plan`
+      stehen im Feature-PR (Station D); fehlt es, in den Doku-PR.
+- [ ] **Doku-PR** (seit 19.9.2026 statt des direkten Schluss-Pushs): Rest-Doku
+      geht als EIN PR durch die Queue (Skill `landung` Ziff. 7) — samt
+      STRUKTUR-Rotation (`npm run struktur:rotieren -- --write`,
+      Pathspec-Commit). Danach Bau-Flächen abräumen (Feature-Branch lokal +
+      remote, `git worktree prune`, Scratch-Dateien), `git checkout main &&
+      git pull`; den EIGENEN Worktree zuletzt (`landung` §Session-Ende Ziff. 5).
 - [ ] **§17-Lehren-Check (einzeilig):** Lehre aufgekommen? Verankert nach
       Formregel Skill `lehren` (Tor > Dispatch-§0 > Skill > Prosa) — nur im
       Chat gilt als nicht gezogen. Dazu der Klartext-Schlusssatz an David:
@@ -141,8 +148,9 @@ Commit mit eigenem Roadmap-Trailer).
   es braucht); die Dock-Datei steuert keinen Bau.
 - **`npm run selbstopt:erheben`** — auf Abruf bzw. über den Wächter; die
   Zeitreihe braucht keinen Snapshot je Session.
-- **`struktur-rotieren.py --check`** — läuft als SessionStart-Hook UND als
-  CI-Tor `check:steuerdeckel`; eine dritte Handprüfung fängt nichts — ausser
+- **`struktur-rotieren.py --check`** — läuft als SessionStart-Hook (seit
+  19.9.2026 nur noch prüfend, Rotation im Doku-PR) UND als CI-Tor
+  `check:steuerdeckel`; eine dritte Handprüfung fängt nichts — ausser
   nach einem Edit an `.claude/hooks/*.py` oder `scripts/check-*.ts`: dort
   einmal von Hand vor dem Push (Flächen-Deckel; Beleg #895, 15.9.2026: ein
   CI-Lauf verloren).
@@ -159,8 +167,8 @@ Commit mit eigenem Roadmap-Trailer).
 - **Nichts doppelt lesen:** Unteragenten-Bericht ist das Ergebnis.
 - **Mechanik nach unten delegieren** (Verschieben/Formatieren/Umbenennen/
   Sweeps auf günstigere Stufe, Skill `auftrag` Klassen-Palette).
-- **Kein direkter main-Push** (Hook blockt): Verwaltung fährt im PR mit;
-  Doku ohne PR am Session-Ende in EINEM Push (Station E).
+- **Kein direkter main-Push** (Ruleset + Hook, kein Bypass): Verwaltung fährt
+  im PR mit; Rest-Doku am Session-Ende als EIN Doku-PR (Station E).
 - **Lange Tor-Ausgaben in eine Logdatei, Exit-Code lesen** (Orchestrator):
   `npm run <tor> > <scratchpad>/x.log 2>&1; echo $?` ist keine Pipe (der Hook
   lässt es zu) und hält 200+ Zeilen aus dem Kontext — `check:fedlex-versionen`

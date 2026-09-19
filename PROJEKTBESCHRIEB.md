@@ -1,7 +1,7 @@
 # LexMetrik — Projektbeschrieb
 
 **Stand:** 21. Juli 2026 · **Produktion:** https://lexmetrik.vercel.app ·
-**Repo:** github.com/davidgraf95-sys/LexMetrik · Marke: **LexMetrik** (grosses M)
+**Repo:** github.com/LexMetrik/Whatever · Marke: **LexMetrik** (grosses M)
 
 Dieses Dokument beschreibt das Projekt als Ganzes: Idee, Prinzipien,
 Architektur, Inventar, Qualitätssicherung und Pflege. Es ergänzt

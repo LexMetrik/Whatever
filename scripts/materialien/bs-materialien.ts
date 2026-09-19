@@ -29,6 +29,25 @@ export function cu(a: string, b: string): number {
   return a < b ? -1 : a > b ? 1 : 0;
 }
 
+/**
+ * Totale Ordnung der amtlichen BS-Dokumente vor der Roh-Ablage (Schreibstelle
+ * `bs-materialien-run.ts`, §2 Determinismus). Bis 18.9.2026 endete die Ordnung bei
+ * `titel_dok` — bei identischem Tupel (Geschäft, Dokudatum, Dok-Signatur, Titel)
+ * entschied die arbiträre Reihenfolge des OpenDataSoft-Exports (kein `order_by`
+ * dokumentiert, `adapter-bs-grossrat.ts` `exportUrl`) über die committete Ablage.
+ * Beleg Automatik-PR #913 (18.9.2026): reiner Positionstausch zweier Einträge mit
+ * identischem Tupel `04.8107`/«GR Beschluss»/2005-01-12 in
+ * `bibliothek/materialien/bs-grossrat-raw/dokumente.json` — kein fachlicher Diff,
+ * trotzdem ein PR. `url_dok` ist bei Duplikaten immer verschieden (eigene
+ * PDF-Ablage je Dokument) und macht die Ordnung total, nach demselben Muster wie
+ * `baueEreignisse` unten (dort bereits `res` als letzter Schlüssel).
+ */
+export function vergleicheBsDokumente(a: BsDokument, b: BsDokument): number {
+  return cu(a.signatur_ges ?? '', b.signatur_ges ?? '') || cu(a.dokudatum ?? '', b.dokudatum ?? '')
+    || cu(a.signatur_dok ?? '', b.signatur_dok ?? '') || cu(a.titel_dok ?? '', b.titel_dok ?? '')
+    || cu(a.url_dok ?? '', b.url_dok ?? '');
+}
+
 // ── Grundmenge: die Geschäftsarten, die überhaupt Materialien sind ───────────
 //
 // `ga_rr_gr` ist ein amtliches Feld mit 32 Werten (gemessen). Aufgenommen werden nur

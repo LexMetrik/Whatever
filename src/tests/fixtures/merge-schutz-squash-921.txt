@@ -1,0 +1,68 @@
+fix(entstehung): Curia-Monatsjob grün — Materialien-Teilkaskade in allen drei Monats-Jobs, BS-Sortier-Wächter (QS-MONITOR-ROT) (#921)
+
+## Was und warum
+
+Der Monats-Job «Curia Vista» im Normen-Monitor scheiterte (Lauf
+35373415150, 18.9.2026) im Schritt «Offline-Tore»: nach
+`materialien:curia` lief direkt `check:entstehung`, die Deckungs-Sicht
+`public/materialien/deckungs-sicht.json` wurde nie regeneriert («1
+Abweichung zur Neuberechnung») — der Job brach VOR dem PR-Öffnen ab, der
+Monatsabgleich kam nie an. Gleiche Fehlerklasse wie #907.
+
+- **Eine Teilkaskade statt verstreuter Einzelschritte (§5):** neu `npm
+run entstehung:projektion-kaskade`
+(`scripts/entstehung/projektion-kaskade.ts`): `gen:entstehung-projektion
+→ gen:entstehung-deckung → gen:zaehler → datenhaltung:manifest`, netz-
+und uhrfrei, Abbruch beim ersten roten Glied. Die bestehende
+`materialien:kaskade` ruft sie als letztes Glied (kein zweites Skript
+daneben); `gen:zaehler` läuft damit NACH `normtext:churn-reset` (behebt
+ein latentes `check:zaehler`-Rot).
+- **Workflow:** alle drei Monats-Jobs (`curia`, `bs-grossrat`,
+`vernehmlassungen`) fahren die Teilkaskade vor der Prüfung und alle drei
+prüfen jetzt `check:entstehung`. Die beiden anderen Jobs hatten dieselbe
+Lücke (`register-provenienz.json#erzeugt` fliesst in die Deckungs-Sicht;
+bei Kalendertag-Wechsel rot — per Sabotage nachgemessen); #913 blieb am
+18.9. nur zufällig grün. Schritt ehrlich benannt: «Vorflug-Prüfung gegen
+die eben geschriebenen Dateien (kein Drift-Tor — das ist die PR-CI)».
+- **Schein-Diff BS-Grossrat an der Wurzel (Beleg #913):**
+`vergleicheBsDokumente` mit `url_dok` als letztem Schlüssel (totale
+Ordnung) an der Schreibstelle `bs-materialien-run.ts`; neuer
+Sortier-Wächter in `check:bs-materialien` (läuft in der PR-CI), per
+Sabotage rot gezeigt (§6.7). Roh-Ablage `dokumente.json` einmalig
+kanonisch umsortiert: 441 = 441 Einträge, 0 Multimengen-Unterschiede,
+gegenüber main nur Index 56/57 vertauscht.
+- Doku-Halbsatz im Skill `auftrag` Ziff. 6 (g).
+
+Rot-/Grün-Beleg: lokal echter Vollabgleich (403 Geschäfte, ~24 min) ⇒
+`check:entstehung` Exit 1 mit identischer Meldung wie im CI-Log ⇒ nach
+der Teilkaskade 0 Abweichungen, `check:datenhaltung` grün. Daten-Diffs
+des Probelaufs sind bewusst NICHT Teil dieses PR (kommen über den
+Automatik-PR des Workflows). Nachweis nach der Landung:
+`workflow_dispatch` des Normen-Monitors.
+
+Richtigstellung zum Commit df1f04db5: dort steht «2 von 441 Positionen»
+— gemessen sind es 2 Vertauschungen = 4 Positionen (56/57, 82/83; 82/83
+ist seit #913 auf main bereits kanonisch).
+
+Offen als ROADMAP-Zeilen (nicht in diesem PR): `stand`-Felder der
+Deckungs-Sicht aus dem jüngsten QUELL-Datum statt aus dem Lauf-Datum
+ableiten (§8; beseitigt die Rot-Klasse und die monatlichen Churn-PRs an
+der Wurzel) · `normtext:churn-reset` in den drei Workflow-Jobs.
+
+Bau: Sonnet (zwei Runden) · Gegenprüfung: Opus, frischer Kontext, zwei
+Runden (Erst-Verdikt «bestanden mit Auflagen», Nach-Verdikt
+«bestanden»); Register-Zeile im PR.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Roadmap: QS-MONITOR-ROT
+Gegenpruefung: bestanden (Opus,
+Projektions-Konsistenz/Tor-Scheiternsfaehigkeit/Workflow-Sicherheit/Determinismus)
+— Auflagen A1-A3/H1/H4 erfuellt, Sortier-Waechter per Sabotage rot
+belegt, Merge mit main konfliktfrei und sortiert, 3 Hinweise ohne
+Blocker
+Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>
+
+---------
+
+Co-authored-by: Claude Sonnet <noreply@anthropic.com>

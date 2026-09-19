@@ -201,69 +201,10 @@ export const F2_OBERHALB = true;
  */
 export const F2_SICHERHEITSSAUM = 64;
 
-/**
- * B3 (Bug-Check 9.8.2026) — EINE ZEILE, EIN ZIELWERT.
- *
- * Eine verdichtete Einzelkind-Kette ist EINE Baumzeile mit MEHREREN
- * Sektions-Ids. Der Chevron kippte sie bis hierher EINZELN
- * (`k.ids.forEach(tocToggle)`). Standen die Ids nicht im gleichen Zustand — und
- * genau das hinterlässt ein Sektions-Sprung, der nur die äusserste Id öffnet —,
- * kam ein GEMISCHTER Zustand heraus. Weil eine Zeile als offen gilt, sobald
- * IRGENDEINE ihrer Ids offen ist (`zeileIstOffen`, `.some(Boolean)`), liess sich
- * der Ast danach nie wieder schliessen: `aria-expanded` blieb dauerhaft `true`,
- * und der Nutzer hatte keinen Ausweg. Betroffen sind alle Zeilen mit
- * Verdichtung UND Kindern (ZGB, VVG, KOV, mehrere BS-Erlasse).
- *
- * Die Regel steht HIER und nicht im Zustands-Hook, damit sie ohne React und
- * ohne DOM prüfbar ist (§6.7: das Tor muss den Fall rot zeigen können).
- * `istOffen` kommt vom Aufrufer, weil die Zeile ihren sichtbaren Zustand auch
- * aus dem Modell beziehen kann (`startOffen`, `startOffeneTiefe`) — eine Zeile
- * ohne Eintrag in der Karte liesse sich sonst mit dem ersten Klick nicht
- * schliessen.
- */
-export function klappZeile(
-  offen: Record<string, boolean>, ids: string[], istOffen: boolean,
-): Record<string, boolean> {
-  const ziel = !istOffen;
-  return {
-    ...offen,
-    ...Object.fromEntries(ids.map((id) => [id, ziel])),
-    // Die ARTIKEL-Ebene bewegt sich nur hier — beim Chevron-Klick (s. u.).
-    ...Object.fromEntries(ids.map((id) => [artikelSchluessel(id), ziel])),
-  };
-}
-
-/**
- * Schlüssel des Artikel-Ebenen-Zustands einer Zeile (CI-Rot 13.8.2026).
- *
- * WARUM EIN ZWEITER SCHLÜSSEL IN DERSELBEN KARTE. Die Klapp-Karte `tocBaum`
- * hat zwei Schreiber: den NUTZER (Chevron-Klick, Sektions-Sprung) und den
- * SCROLL-SPY (Auto-Akkordeon). Für die Sektions-Ebene ist das richtig — der
- * Spy soll den gelesenen Zweig aufreissen. Für die Artikel-Ebene ist es der
- * Defekt: der Spy öffnete beim Weiterlesen eine Zeile, die ihre Artikel trägt,
- * und das Auto-Zuklappen hängte den so gewachsenen Ast später wieder aus —
- * mit bis zu 49 Artikel-Zeilen darin.
- *
- * BELEG (CI-Lauf 31721564029, Shard 6, deterministisch in Erst- und
- * Zweitlauf): CLS 0.0751 gegen Budget 0.05, Quellen drei Baumzeilen der BV,
- * die im Sichtband auf 0×0 kollabieren — die grösste 280×498 px, also genau
- * eine aufgeklappte Artikel-Liste. Der Trace zeigt zugleich, dass die BV mit
- * `aria-expanded="false"` an den artikel-tragenden Zeilen STARTET: geöffnet
- * haben kann sie also nur der Spy.
- *
- * Mit dem zweiten Schlüssel bewegt der Spy weiterhin die Sektionen (a33-Auftrag
- * K bleibt erfüllt), die Artikel-Ebene aber nur noch der ausdrückliche Klick —
- * und der ist Nutzer-Eingabe, deren Layout-Sprung nicht als unerwarteter Shift
- * zählt. Zugleich landet eine so geöffnete Zeile in `manuellOffenRef`
- * (inhalt-zustand) und wird vom Auto-Zuklappen nie wieder angefasst: die
- * grossen Aushäng-Ereignisse können gar nicht mehr entstehen.
- *
- * Der Präfix kann mit keiner `sek-N`- oder `gm-…`-Id kollidieren.
- */
-export const ARTIKEL_OFFEN_PRAEFIX = 'art@';
-export function artikelSchluessel(id: string): string {
-  return `${ARTIKEL_OFFEN_PRAEFIX}${id}`;
-}
+// Die Klapp-Karten-Schreiber `klappZeile` und `artikelSchluessel` (samt
+// ihrer Herleitung B3 / CI-Rot 13.8.2026) wohnen seit W2·5m-LESER-V3 in
+// ./klappKarte — dort, wo auch alle Öffner und Schliesser stehen (§5).
+export { klappZeile, artikelSchluessel, ARTIKEL_OFFEN_PRAEFIX } from './klappKarte';
 
 /**
  * B8 (W2·19-Bug-Check; WCAG 2.4.3 «Fokus-Reihenfolge»): Rettet den
