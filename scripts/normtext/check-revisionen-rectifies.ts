@@ -69,7 +69,7 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import {
   ausnahmeGueltig, extrahiereHeadlineZitate, findeNichtKonsumierteAusnahmen, formatiereBefundDetail,
-  holeBerichtigungstext, klassifiziereBerichtigung, loeseBerichtigungsHtmlUrl,
+  holeBerichtigungstext, kanonischeTextFundstelle, klassifiziereBerichtigung, loeseBerichtigungsHtmlUrl,
   type RectifiesAusnahme, type RectifiesKlasse,
 } from './rectifies-berichtigung.ts';
 import { holeMitCache, modusAusUmgebung } from './rectifies-cache.ts';
@@ -82,13 +82,19 @@ interface Kante { erlassKey: string; oc: string; info: RectifiesInfo }
 type Klasse = RectifiesKlasse | 'nicht-abrufbar' | 'stale';
 interface Befund {
   erlassKey: string; oc: string; klasse: Klasse; detail: string;
-  /** Nur bei genau einem Headline-Zitat gesetzt (abweichend/uebereinstimmend) — Grundlage
-   *  des Stale-Vergleichs gegen `erwarteteTextFundstelle`. Ergänzung 18.9.2026, Gegenprüfung
-   *  Opus Auflage B3: der Code setzte dieses Feld vorher UNCONDITIONIERT (`zitate.as[0]`) —
-   *  seit `klassifiziereBerichtigung` nach Blöcken klassiert (Auflage B2), kann `abweichend`
-   *  auch bei MEHR als einer genannten Fundstelle auftreten (der Fall, den dieser Kommentar
-   *  schon immer ausschliessen wollte); das Feld bleibt darum jetzt nur bei genau einer
-   *  gesetzt, sonst `undefined`. */
+  /** Kanonische Text-Fundstelle (s. `kanonischeTextFundstelle`) — Grundlage des Stale-Vergleichs
+   *  gegen `erwarteteTextFundstelle`. `undefined` nur bei 0 erkannten Headline-Zitaten
+   *  (Parser-Lücke, s. `formatiereBefundDetail`).
+   *  ── Nachzug R2b, F3 (2b: ergänzt, nicht nachgeführt — Ergänzung 18.9.2026 unten bleibt
+   *  stehen) ── die vorherige Fassung setzte dieses Feld NUR bei `zitate.as.length === 1`; bei
+   *  MEHREREN AS-Fundstellen (Sammelberichtigung mit 2 Blöcken ODER eine Klammer mit mehreren
+   *  komma-getrennten Nummern) blieb es `undefined`, wodurch `ausnahmeGueltig` `'' === ''`
+   *  verglich — die Stale-Sicherung war damit für JEDE Mehrfach-AS-Kante stillschweigend
+   *  ausgeschaltet (§6.7). Jetzt: `kanonischeTextFundstelle(zitate.as)`, bei genau einer
+   *  Fundstelle byte-gleich zur bisherigen Form.
+   *  ── Ergänzung 18.9.2026, Gegenprüfung Opus Auflage B3 ── der Code setzte dieses Feld VORHER
+   *  UNCONDITIONIERT (`zitate.as[0]`) — seit `klassifiziereBerichtigung` nach Blöcken klassiert
+   *  (Auflage B2), kann `abweichend` auch bei MEHR als einer genannten Fundstelle auftreten. */
   textFundstelle?: string;
 }
 
@@ -127,7 +133,7 @@ async function pruefeKante(k: Kante, modus: ReturnType<typeof modusAusUmgebung>)
     const zitate = extrahiereHeadlineZitate(treffer.html);
     const klasse = klassifiziereBerichtigung(zitate, k.info);
     const detail = formatiereBefundDetail(zitate, k.info, klasse);
-    return { erlassKey: k.erlassKey, oc: k.oc, klasse, detail, textFundstelle: zitate.as.length === 1 ? zitate.as[0] : undefined };
+    return { erlassKey: k.erlassKey, oc: k.oc, klasse, detail, textFundstelle: kanonischeTextFundstelle(zitate.as) };
   } catch (e) {
     return { erlassKey: k.erlassKey, oc: k.oc, klasse: 'nicht-abrufbar', detail: (e as Error).message };
   }

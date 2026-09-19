@@ -277,6 +277,21 @@ export function extrahiereHeadlineZitate(html: string): HeadlineZitate {
   return { as: [...asSet].sort(), sr: [...srSet].sort(), bloecke };
 }
 
+/** Kanonische Text-Fundstelle für den Stale-Vergleich (Nachzug R2b, F3): ALLE im Berichtigungs-
+ *  text genannten AS-Fundstellen, sortiert (bereits Sortierreihenfolge von `extrahiereHeadline-
+ *  Zitate.as`), mit ` + ` verbunden. Bei GENAU EINER Fundstelle byte-gleich zur bisherigen Form
+ *  (nur die Fundstelle selbst, kein Trenner) — die drei bestehenden Ausnahmeliste-Einträge
+ *  (SKV/AIG/LRV, je genau eine Text-Fundstelle) bleiben damit unverändert gültig. Bei 0
+ *  Fundstellen `undefined` (0-Treffer-Fall, s. `formatiereBefundDetail` — eine PARSER-Lücke,
+ *  keine leere Text-Fundstelle im Sinne dieser Funktion).
+ *  Befund (F3): die vorherige Fassung setzte die Text-Fundstelle in `check-revisionen-
+ *  rectifies.ts` NUR bei `zitate.as.length === 1` — bei MEHREREN AS-Fundstellen blieb sie
+ *  `undefined`, wodurch `ausnahmeGueltig` `'' === ''` verglich (Stale-Sicherung still
+ *  ausgeschaltet, §6.7). */
+export function kanonischeTextFundstelle(as: readonly string[]): string | undefined {
+  return as.length === 0 ? undefined : [...as].sort().join(' + ');
+}
+
 export type RectifiesKlasse = 'uebereinstimmend' | 'abweichend' | 'sammelberichtigung';
 
 /** Ein Eintrag in `bibliothek/normtext/rectifies-ausnahmen.json` (Gegenprüfung PR #834,
@@ -298,16 +313,23 @@ export interface RectifiesAusnahme {
 }
 
 /** Reine Prüfung (§2): passt die dokumentierte Ausnahme noch zur AKTUELL gemessenen
- *  Realität (frisches rectifies-Ziel + frisch extrahierte Text-Fundstelle)? `false` ⇒ die
- *  Ausnahme ist stale — der Aufrufer listet sie dann als eigene, rote Klasse statt sie
- *  stillschweigend weiter greifen zu lassen. */
+ *  Realität (frisches rectifies-Ziel + frisch extrahierte, kanonische Text-Fundstelle, s.
+ *  `kanonischeTextFundstelle`)? `false` ⇒ die Ausnahme ist stale — der Aufrufer listet sie dann
+ *  als eigene, rote Klasse statt sie stillschweigend weiter greifen zu lassen.
+ *  F3-Sicherung (Nachzug R2b, §6.7): ein Eintrag OHNE `erwarteteTextFundstelle` ist NIE gültig
+ *  — auch nicht, wenn `aktuell.textFundstelle` ebenfalls fehlt (0-Treffer-Fall). Die vorherige
+ *  Fassung verglich beide Seiten über `?? ''` und liess «leer == leer» als Treffer durch; damit
+ *  hätte ein Eintrag ohne dokumentierte Text-Fundstelle die Stale-Sicherung stillschweigend
+ *  ausser Kraft gesetzt, sobald die Kante zufällig ebenfalls 0 Treffer lieferte (§6.7 «ein Tor,
+ *  das nicht scheitern kann, ist gefährlicher als keines»). */
 export function ausnahmeGueltig(
   ausnahme: Pick<RectifiesAusnahme, 'erwartetesZielOc' | 'erwarteteZielFundstelle' | 'erwarteteTextFundstelle'>,
   aktuell: { zielOc: string; zielFundstelle?: string; textFundstelle?: string },
 ): boolean {
+  if (ausnahme.erwarteteTextFundstelle === undefined) return false;
   return ausnahme.erwartetesZielOc === aktuell.zielOc
     && (ausnahme.erwarteteZielFundstelle ?? '') === (aktuell.zielFundstelle ?? '')
-    && (ausnahme.erwarteteTextFundstelle ?? '') === (aktuell.textFundstelle ?? '');
+    && ausnahme.erwarteteTextFundstelle === (aktuell.textFundstelle ?? '');
 }
 
 /** Trifft dieser EINE Block das rectifies-Ziel? Fundstelle-Vergleich, oder — wenn

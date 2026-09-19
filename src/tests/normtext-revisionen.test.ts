@@ -10,7 +10,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   ausnahmeGueltig, extrahiereHeadlineZitate, findeNichtKonsumierteAusnahmen, findeTreffendenBlock,
-  formatiereBefundDetail, klassifiziereBerichtigung, type RectifiesAusnahme,
+  formatiereBefundDetail, kanonischeTextFundstelle, klassifiziereBerichtigung, type RectifiesAusnahme,
 } from '../../scripts/normtext/rectifies-berichtigung';
 
 // Paket 5 (W2·6-REV): reine Generator-Logik (dedupe/Sortierung/Determinismus/
@@ -679,6 +679,52 @@ describe('ausnahmeGueltig — eine Ausnahme gilt nur für das PAAR, das sie ursp
   it('wird stale, wenn Fedlex die abgeleitete Ziel-Fundstelle selbst korrigiert', () => {
     expect(ausnahmeGueltig(skv, {
       zielOc: skv.erwartetesZielOc, zielFundstelle: 'AS 2025 649', textFundstelle: skv.erwarteteTextFundstelle,
+    })).toBe(false);
+  });
+
+  // ── Nachzug R2b, F3 (Rot-Beweis, §6.7): ein Eintrag OHNE erwarteteTextFundstelle darf NIE
+  // gültig sein — auch nicht, wenn die aktuell gemessene Text-Fundstelle ebenfalls fehlt
+  // (0-Treffer-Fall). Die vorherige Fassung verglich `?? ''` auf beiden Seiten und liess
+  // «leer == leer» als Treffer durch (Stale-Sicherung still ausgeschaltet).
+  it('ein Ausnahmeliste-Eintrag OHNE erwarteteTextFundstelle ist NIE gültig — auch nicht bei ebenfalls leerer aktueller Text-Fundstelle (F3-Sicherung)', () => {
+    const ohneText = { erwartetesZielOc: skv.erwartetesZielOc, erwarteteZielFundstelle: skv.erwarteteZielFundstelle };
+    expect(ausnahmeGueltig(ohneText, {
+      zielOc: skv.erwartetesZielOc, zielFundstelle: skv.erwarteteZielFundstelle, textFundstelle: undefined,
+    })).toBe(false);
+  });
+});
+
+// ── Nachzug R2b, F3: Text-Stale-Sicherung bei MEHREREN AS-Fundstellen. Die vorherige Fassung
+// setzte `textFundstelle` in check-revisionen-rectifies.ts NUR bei `zitate.as.length === 1` —
+// bei Mehrfach-AS blieb sie `undefined`, wodurch die Stale-Prüfung `'' === ''` verglich (§6.7).
+describe('kanonischeTextFundstelle — Grundlage der Text-Stale-Sicherung bei Mehrfach-AS (Nachzug R2b, F3)', () => {
+  it('genau EINE Fundstelle bleibt byte-gleich zur bisherigen Form (kein Trenner) — die drei bestehenden Ausnahmeliste-Einträge bleiben unverändert gültig', () => {
+    expect(kanonischeTextFundstelle(['AS 2025 644'])).toBe('AS 2025 644');
+  });
+
+  it('MEHRERE Fundstellen werden sortiert mit " + " verbunden (kanonische Form)', () => {
+    expect(kanonischeTextFundstelle(['AS 2025 851', 'AS 2025 419'])).toBe('AS 2025 419 + AS 2025 851');
+  });
+
+  it('0 Fundstellen ⇒ undefined (0-Treffer-Fall, keine „leere“ Text-Fundstelle im Sinne der Stale-Sicherung)', () => {
+    expect(kanonischeTextFundstelle([])).toBeUndefined();
+  });
+
+  it('Rot-Beweis (§6.7): eine Ausnahme, deren dokumentierte Text-Fundstelle NUR EINE von ZWEI amtlich genannten Fundstellen nennt, ist stale — die kanonische Form deckt beide auf', () => {
+    // Repro der Lücke: vor F3 hätte `check-revisionen-rectifies.ts` bei zwei AS-Fundstellen
+    // `textFundstelle: undefined` geliefert; eine Ausnahme mit `erwarteteTextFundstelle: undefined`
+    // wäre am `'' === ''`-Vergleich vorbeigekommen. Mit der kanonischen Form wird der volle Text
+    // verglichen — ein Eintrag, der nur die halbe Wahrheit dokumentiert, fällt jetzt auf.
+    const ausnahmeMitHalberWahrheit = {
+      erwartetesZielOc: 'https://fedlex.data.admin.ch/eli/oc/2014/269',
+      erwarteteZielFundstelle: 'AS 2014 1251',
+      erwarteteTextFundstelle: 'AS 2025 419',
+    };
+    const aktuelleKanonischeForm = kanonischeTextFundstelle(['AS 2025 419', 'AS 2025 851']);
+    expect(ausnahmeGueltig(ausnahmeMitHalberWahrheit, {
+      zielOc: ausnahmeMitHalberWahrheit.erwartetesZielOc,
+      zielFundstelle: ausnahmeMitHalberWahrheit.erwarteteZielFundstelle,
+      textFundstelle: aktuelleKanonischeForm,
     })).toBe(false);
   });
 });
