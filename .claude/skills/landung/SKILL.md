@@ -183,7 +183,8 @@ npm run check:perf-budget  # liest dist, Chrome-frei
 
 7c. **Die Kette als Werkzeug:** `scripts/landung/landung-kette.sh <log> <PR>…`
    reiht seriell ein und pollt `mergeQueueEntry.state` bis MERGED
-   (Queue-Umbau 19.9.2026 — **gegen die echte Queue noch UNGETESTET**). Sie
+   (Queue-Umbau 19.9.2026; Gut-Pfad real belegt mit #919, MERGED
+   `661612cea` — die Halte-Pfade sind nur simuliert). Sie
    hält an bei rotem PR und bei UNMERGEABLE/LOCKED/verschwundenem Eintrag,
    reiht nie selbst neu ein und löscht den Zweig erst nach MERGED. Zwei
    Fallen sind darin verdrahtet: `gh run watch` bricht vorzeitig mit Exit 1
