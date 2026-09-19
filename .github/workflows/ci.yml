@@ -181,10 +181,11 @@ on:
     branches: [main]
   # BEWUSST OHNE paths/paths-ignore — siehe K3/K12 im Kopf.
   pull_request:
-  # B-12-Vorbereitung: Damit die (noch NICHT aktivierte) GitHub Merge Queue die
-  # Tore fahren kann, muss CI auf `merge_group` reagieren. Der Trigger schadet
-  # OHNE Queue nicht (kein merge_group-Event ⇒ kein Lauf) und ist die einzige
-  # Workflow-Änderung, die die Aktivierung (David-Gate G7) voraussetzt.
+  # B-12: Die native GitHub-Merge-Queue auf main ist seit dem Org-Umzug
+  # AKTIV (19.9.2026, QS-ORG-UMZUG — Ruleset 23699779: SQUASH, ALLGREEN,
+  # max. 3 gleichzeitig, Check-Timeout 60 min). Dieser Trigger ist damit
+  # scharf: die Queue baut PR + aktuellen main als `merge_group`-Lauf, und
+  # nur bei grün landet der Commit. Ohne ihn liefe in der Queue kein Tor.
   merge_group:
   workflow_dispatch:
     inputs:
