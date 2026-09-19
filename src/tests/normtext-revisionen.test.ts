@@ -10,7 +10,8 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   ausnahmeGueltig, extrahiereHeadlineZitate, findeNichtKonsumierteAusnahmen, findeTreffendenBlock,
-  formatiereBefundDetail, kanonischeTextFundstelle, klassifiziereBerichtigung, type RectifiesAusnahme,
+  formatiereBefundDetail, kanonischeTextFundstelle, klassifiziereBerichtigung,
+  NICHT_ABRUFBAR_OBERGRENZE, nichtAbrufbarUeberObergrenze, type RectifiesAusnahme,
 } from '../../scripts/normtext/rectifies-berichtigung';
 
 // Paket 5 (W2·6-REV): reine Generator-Logik (dedupe/Sortierung/Determinismus/
@@ -726,5 +727,25 @@ describe('kanonischeTextFundstelle — Grundlage der Text-Stale-Sicherung bei Me
       zielFundstelle: ausnahmeMitHalberWahrheit.erwarteteZielFundstelle,
       textFundstelle: aktuelleKanonischeForm,
     })).toBe(false);
+  });
+});
+
+// ── Nachzug R2b, F4: Obergrenze der nicht-abrufbar-Klasse — heute (Messung 19.9.2026) 20/82
+// (#909-Stand) bzw. 8/31 (main), durchweg Alt-Berichtigungen 2021/22 ohne HTML-Manifestation.
+// Ein STEIGENDER Wert soll das Tor rot machen, nicht stillschweigend weiter grün bleiben.
+describe('nichtAbrufbarUeberObergrenze — Obergrenze der nicht-abrufbar-Klasse (Nachzug R2b, F4)', () => {
+  it('bleibt grün, solange die Anzahl die Obergrenze nicht überschreitet', () => {
+    expect(nichtAbrufbarUeberObergrenze(20, 20)).toBe(false);
+    expect(nichtAbrufbarUeberObergrenze(0, 20)).toBe(false);
+  });
+
+  it('Rot-Beweis (§6.7): eine neue Berichtigung ohne HTML treibt die Zahl über die Obergrenze', () => {
+    expect(nichtAbrufbarUeberObergrenze(21, 20)).toBe(true);
+  });
+
+  it('nutzt NICHT_ABRUFBAR_OBERGRENZE (20) als Default, wenn keine explizite Obergrenze übergeben wird', () => {
+    expect(NICHT_ABRUFBAR_OBERGRENZE).toBe(20);
+    expect(nichtAbrufbarUeberObergrenze(20)).toBe(false);
+    expect(nichtAbrufbarUeberObergrenze(21)).toBe(true);
   });
 });

@@ -38,7 +38,10 @@
  * verdecken, evtl. Daten noch nicht geladen oder Kante bei Fedlex entfallen) und `hinweis` (die
  * Kante existiert, ist aber `nicht-abrufbar` — zurzeit nicht prüfbar, Eintrag NICHT löschen).
  * `sammelberichtigung`/`nicht-abrufbar` bleiben grün (dokumentierter Befund, keine Behauptung
- * eines Fehlers).
+ * eines Fehlers) — AUSSER `nicht-abrufbar` überschreitet die Obergrenze `NICHT_ABRUFBAR_
+ * OBERGRENZE` (Nachzug R2b F4, s. `rectifies-berichtigung.ts`): dann ROT («neue Berichtigung
+ * ohne HTML — docx-Leser oder Einzelprüfung nötig»), weil eine wachsende Zahl auf einen echten
+ * Trend statt auf die bekannten 2021/22er Alt-Fälle hindeuten kann.
  *
  * ── Live-Befund 12.9.2026 (Mass, nicht übernommen — Auftragstext nannte ≈16/1/1/n) ──
  * 25 rectifies-Kanten im Korpus (nicht 71 — Schätzung des Auftrags widerlegt, §0/§17
@@ -70,6 +73,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import {
   ausnahmeGueltig, extrahiereHeadlineZitate, findeNichtKonsumierteAusnahmen, formatiereBefundDetail,
   holeBerichtigungstext, kanonischeTextFundstelle, klassifiziereBerichtigung, loeseBerichtigungsHtmlUrl,
+  NICHT_ABRUFBAR_OBERGRENZE, nichtAbrufbarUeberObergrenze,
   type RectifiesAusnahme, type RectifiesKlasse,
 } from './rectifies-berichtigung.ts';
 import { holeMitCache, modusAusUmgebung } from './rectifies-cache.ts';
@@ -171,9 +175,11 @@ async function main(): Promise<void> {
 
   const counts: Partial<Record<Klasse, number>> = {};
   for (const b of befunde) counts[b.klasse] = (counts[b.klasse] ?? 0) + 1;
+  const nichtAbrufbarAnzahl = counts['nicht-abrufbar'] ?? 0;
 
   console.log(`check:revisionen-rectifies: ${kanten.length} rectifies-Kante(n) geprüft (Modus ${modus}).`);
   console.log(`Klassen: ${JSON.stringify(counts)}`);
+  console.log(`nicht-abrufbar: ${nichtAbrufbarAnzahl}/${kanten.length} (Obergrenze ${NICHT_ABRUFBAR_OBERGRENZE}, Nachzug R2b F4).`);
 
   const nichtGruen = befunde
     .filter((b) => b.klasse !== 'uebereinstimmend')
@@ -228,7 +234,15 @@ async function main(): Promise<void> {
       );
     }
   }
-  if (rot.length || nkRot.length) process.exit(1);
+  const nichtAbrufbarUeber = nichtAbrufbarUeberObergrenze(nichtAbrufbarAnzahl);
+  if (nichtAbrufbarUeber) {
+    console.error(
+      `\ncheck:revisionen-rectifies ROT: ${nichtAbrufbarAnzahl} nicht-abrufbare Kante(n) — Obergrenze `
+      + `${NICHT_ABRUFBAR_OBERGRENZE} überschritten (Nachzug R2b F4): neue Berichtigung ohne HTML — `
+      + 'docx-Leser oder Einzelprüfung nötig.',
+    );
+  }
+  if (rot.length || nkRot.length || nichtAbrufbarUeber) process.exit(1);
   console.log('check:revisionen-rectifies grün: keine unbelegte/veraltete Abweichung, alle Ausnahmen konsumiert oder erklärt.');
 }
 

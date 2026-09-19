@@ -485,3 +485,22 @@ export async function holeBerichtigungstext(url: string, fetchImpl: FetchImpl = 
   }
   return text;
 }
+
+/** Obergrenze der `nicht-abrufbar`-Klasse (Nachzug R2b, F4): heute (Messung 19.9.2026)
+ *  20/82 auf dem #909-Datenstand bzw. 8/31 auf `main` — durchweg Berichtigungen aus 2021/22,
+ *  die amtlich NUR als docx/pdf-a existieren (keine HTML-Manifestation, Skill-Falle 3). Diese
+ *  Lücken sind bekannt und ungefährlich (Klasse bleibt grün, s. `check-revisionen-rectifies.ts`-
+ *  Docstring) — SOLANGE ihre Zahl nicht weiter wächst. Ein STEIGENDER Wert bedeutet: eine NEUE
+ *  Berichtigung ist ebenfalls nicht per HTML abrufbar und wird von diesem Tor mangels Text
+ *  gar nicht erst geprüft — ein blinder Fleck, der nicht stillschweigend wachsen darf (§6.7).
+ *  Grosszügig über der Ist-Messung (20), damit ein einzelner neuer Alt-Fall das Tor nicht
+ *  sofort rot macht, aber eng genug, um einen ECHTEN Trend (mehrere neue docx-only-Fälle) zu
+ *  fangen. */
+export const NICHT_ABRUFBAR_OBERGRENZE = 20;
+
+/** Reine Prüfung (§2, Nachzug R2b F4): überschreitet die Anzahl `nicht-abrufbar`-Kanten die
+ *  Obergrenze? `true` ⇒ der Aufrufer macht das Tor rot («neue Berichtigung ohne HTML —
+ *  docx-Leser oder Einzelprüfung nötig»). */
+export function nichtAbrufbarUeberObergrenze(anzahl: number, obergrenze: number = NICHT_ABRUFBAR_OBERGRENZE): boolean {
+  return anzahl > obergrenze;
+}
