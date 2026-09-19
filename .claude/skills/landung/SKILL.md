@@ -37,7 +37,10 @@ Belege: `referenz-ci.md` §Merge-Queue.
 
 - **`gh pr merge <n> --squash` REIHT EIN**, mergt nicht sofort; `--auto
   --squash` reiht selbst ein, sobald die PR-Checks grün sind. BEHIND ist kein
-  Hindernis mehr; der frühere Pflicht-Nachzug ist ersatzlos weg.
+  Hindernis mehr; der frühere Pflicht-Nachzug ist ersatzlos weg. **Falle:**
+  auf einem noch nicht grünen PR weist `gh` das Kommando NICHT ab, sondern
+  schärft still Auto-Merge (cli `merge.go`; belegt #922) — auf Risikopfaden
+  also erst NACH dem Verdikt aufrufen, zurück mit `--disable-auto`.
 - **Ablauf:** ein `merge_group`-Lauf prüft PR + aktuellen main (+
   Vordermänner) auf `gh-readonly-queue/main/pr-<n>-<sha>` gegen alle vier
   Required; bei Grün wird main auf GENAU diesen Commit vorgespult
@@ -51,9 +54,10 @@ Belege: `referenz-ci.md` §Merge-Queue.
 - **Rauswurf:** ein roter oder flackernder `merge_group`-Lauf wirft den
   Eintrag und baut die Nachfolger neu. ERST den Lauf lesen, dann neu
   einreihen — nie blind.
-- **Kosten:** jeder Eintrag fährt das volle Programm, auch Doku-PRs (~20+ min,
-  Stand 19.9.2026; Diff-Klassierung im `merge_group` in Arbeit — Ist:
-  `ci.yml`-Kopf). Doku bündeln, nie einzeln einreihen.
+- **Kosten:** der `merge_group`-Lauf klassiert den Diff des Eintrags wie der
+  PR-Lauf (reine Doku ohne Bau/Browser-Tests; Code voll, ~20+ min). Ob ein
+  übersprungenes «Perf-Budget» in der Queue als erfüllt zählt, ist UNGEMESSEN
+  (Stand 19.9.2026, ROADMAP `QS-CI-MINUTEN`). Doku trotzdem bündeln.
 
 ## §12 · Isolation — die Grundregeln vor jeder Landung
 
@@ -283,9 +287,9 @@ Anlässe im Wortlaut: `referenz-ci.md` §Umzug 19.9.2026.
   weiter. Ein per `if:` übersprungener Pflicht-Job gilt bei GitHub als erfüllt — deshalb
   bleibt `tore` immer aktiv.
 - **Push auf `main`** läuft nur `bau` + `deploy` («Push-Diät»), wenn der `diff`-Job den
-  Commit als schon geprüft belegt findet — sonst volles Programm. Der Beleg wird für die Queue
-  auf «Required-Kontexte am gepushten SHA auf success» umgebaut (Stand 19.9.2026, nicht
-  gelandet); massgeblich: `ci.yml`-Kopf.
+  Commit als schon geprüft belegt findet — sonst volles Programm. Beleg seit 19.9.2026: ein
+  grüner `merge_group`-Lauf am GEPUSHTEN SHA mit allen vier Required-Kontexten (fällt die
+  Queue weg, gibt es keinen solchen Lauf ⇒ von selbst Volllauf); massgeblich: `ci.yml`-Kopf.
 - **Dependabot** läuft monatlich ohne Auto-Rebase; Einordnung je Session: «Session-Ende» Ziff. 3.
 - Nachmessung Sparplan fällig **8.10.2026** (Datei siehe Merge-Queue-Kopf; gleiche Methode:
   Jobs je Lauf aufgerundet; Ausgangswert 61 381 min/30 Tage).
