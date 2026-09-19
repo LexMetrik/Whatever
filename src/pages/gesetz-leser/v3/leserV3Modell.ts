@@ -10,7 +10,7 @@ import type { ArtikelFundstelle, LeserTreffer, SuchBereich } from '../leserSuche
 import { strukturTiefe } from '../strukturTiefe';
 import { basisAdresse, pfadZu } from '../helpers';
 import { paneRoot, findeArt, kuratiereTocSektionen, zaehleAenderungsvermerke, bieteAenderungsvermerkeSchalter } from '../berechnungen';
-import { baueGliederungsModell, findeSynthPfad, type GliederungsKnoten, type GliederungsModell } from '../gliederungsModell';
+import { baueGliederungsModell, findeSynthPfad, type GliederungsModell } from '../gliederungsModell';
 // ── DIE EINE NAHT ZUR GETEILTEN MASCHINERIE ─────────────────────────────────
 // Alles, was V3 von ausserhalb `v3/` an ZUSTAND und EFFEKTEN braucht, wird in
 // genau diesen sechs Zeilen importiert. Siehe den Abschnitt «Naht» unten.
@@ -21,7 +21,7 @@ import { useSektionSprung, useInternRefs } from '../inhalt-sprung';
 import { useWeiterlesen } from '../inhalt-weiterlesen';
 import { useSuchTreffer } from '../inhalt-suchtreffer';
 import type { LesePosition } from '../lesePosition';
-import { oeffneSprungZiel } from '../klappKarte';
+import { oeffneSprungZiel, alleKlappIds } from '../klappKarte';
 
 // ═══ DATEN-ADAPTER DER V3-HÜLLE ═════════════════════════════════════════════
 //
@@ -239,14 +239,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [erlass?.key, eintraege, gliederung.leisteStartetZu]);
 
-  const alleKnotenIds = useMemo(() => {
-    const ids: string[] = [];
-    const geh = (knoten: readonly GliederungsKnoten[]) => {
-      for (const k of knoten) { if (k.kinder.length > 0) { ids.push(k.id); geh(k.kinder); } }
-    };
-    geh(gliederung.knoten);
-    return ids;
-  }, [gliederung.knoten]);
+  const alleKnotenIds = useMemo(() => alleKlappIds(gliederung.knoten), [gliederung.knoten]);
 
   const kantonErlassAnzahl = useMemo<number | null>(() => {
     const kanton = erlass?.kanton;

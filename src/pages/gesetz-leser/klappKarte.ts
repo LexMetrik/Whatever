@@ -12,6 +12,8 @@
 // bleibt bewusst draussen: er schreibt nur Sektions-Ids (CLS-Regel 13.8.2026,
 // `artikelSchluessel` in ./tocAutoZuklappen).
 
+import type { GliederungsKnoten } from './gliederungsModell';
+
 /**
  * Ein SPRUNG öffnet den Ast: alle Ids des Pfads (Wurzel → Ziel) und die
  * Ziel-Zeile selbst (`zielIds`).
@@ -31,6 +33,16 @@ export function sprungZielOffen(
 ): boolean {
   const soll = oeffneSprungZiel({}, pfad, zielIds);
   return Object.keys(soll).every((id) => offen[id] === true);
+}
+
+/** Die Ids, über die «alles auf/zu» läuft: je Zeile MIT Kindern ihre Zeilen-Id. */
+export function alleKlappIds(knoten: readonly GliederungsKnoten[]): string[] {
+  const ids: string[] = [];
+  const geh = (ks: readonly GliederungsKnoten[]) => {
+    for (const k of ks) { if (k.kinder.length > 0) { ids.push(k.id); geh(k.kinder); } }
+  };
+  geh(knoten);
+  return ids;
 }
 
 /** «alles auf» / «alles zu» über alle Zeilen mit Kindern. */
