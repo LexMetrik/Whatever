@@ -388,23 +388,43 @@ export function formatiereBefundDetail(
     + `rectifies-Ziel ${zielText}.`;
 }
 
-/** Reine Prüfung (§2, Runde 2 Auflage B3, §6.7): welche Ausnahmen greifen auf dem geprüften
- *  Bestand auf KEINE einzige nicht-grüne Kante mehr — entweder, weil ihr oc gar keine
- *  rectifies-Kante mehr ist, oder weil sich die Kante (z. B. durch einen Parser-Fix wie in
- *  dieser Runde) auf `uebereinstimmend`/`sammelberichtigung` geändert hat. `abweichend` UND
- *  `stale` zählen beide als «konsumiert» — eine stale gewordene Ausnahme bekommt bereits ihre
- *  EIGENE, spezifischere Rot-Meldung (s. `main`), sie soll hier nicht zusätzlich als
- *  „nicht konsumiert“ erscheinen. Der Docstring von `RectifiesAusnahme` verspricht genau diese
- *  Prüfung (§6.7 «ein Tor, das nicht scheitern kann …») — ohne sie fiele eine überholte
- *  Ausnahme, deren oc schlicht nicht mehr abweichend ist, nie auf. */
+/** Drei Stufen einer nicht (mehr) konsumierten Ausnahme (Nachzug R2b, F2 — löst die vorherige
+ *  PAUSCHALE Rot-Einstufung ab, s. `findeNichtKonsumierteAusnahmen`):
+ *  - `warnung`: das oc des Eintrags kommt im geprüften Kantenbestand GAR NICHT vor (Daten noch
+ *    nicht geladen, oder die Kante ist bei Fedlex entfallen) — kein Rot, weil ein Eintrag für
+ *    eine NICHT EXISTIERENDE Kante nichts verdecken kann (Ausnahmen wirken nur auf existierende
+ *    Kanten mit passendem Erwartungswert), aber ein Hinweis zum Prüfen.
+ *  - `hinweis`: die Kante existiert, ist aber (ausschliesslich) `nicht-abrufbar` — die Ausnahme
+ *    ist zurzeit nicht überprüfbar, der Eintrag darf NICHT gelöscht werden (er könnte morgen
+ *    wieder greifen, sobald die Kante abrufbar wird).
+ *  - `rot`: die Kante existiert und ist (mindestens einmal) `uebereinstimmend`/
+ *    `sammelberichtigung` — der Eintrag ist veraltet (wie bisher, §6.7 «ein Tor, das nicht
+ *    scheitern kann, ist gefährlicher als keines»). */
+export type NichtKonsumiertStufe = 'warnung' | 'hinweis' | 'rot';
+export interface NichtKonsumierteAusnahme { ausnahme: RectifiesAusnahme; stufe: NichtKonsumiertStufe }
+
+/** Reine Prüfung (§2, Runde 2 Auflage B3, dreistufig verschärft Nachzug R2b F2, §6.7): welche
+ *  Ausnahmen greifen auf dem geprüften Bestand auf KEINE einzige nicht-grüne Kante mehr.
+ *  `abweichend` UND `stale` zählen weiterhin als «konsumiert» (eine stale gewordene Ausnahme
+ *  bekommt bereits ihre EIGENE, spezifischere Rot-Meldung, s. `main` in
+ *  `check-revisionen-rectifies.ts`) — trägt IRGENDEINE Kante mit diesem oc eine dieser beiden
+ *  Klassen, gilt die Ausnahme als konsumiert, selbst wenn derselbe oc noch unter einem anderen
+ *  Erlass-Schlüssel zusätzlich auftritt. Sonst dreistufig (s. `NichtKonsumiertStufe`): KEINE
+ *  Kante mit diesem oc ⇒ `warnung`; NUR `nicht-abrufbar`-Kanten ⇒ `hinweis`; mindestens eine
+ *  `uebereinstimmend`/`sammelberichtigung`-Kante ⇒ `rot`. */
 export function findeNichtKonsumierteAusnahmen(
   ausnahmen: Map<string, RectifiesAusnahme>,
   befunde: { oc: string; klasse: string }[],
-): RectifiesAusnahme[] {
-  const konsumierteOcs = new Set(
-    befunde.filter((b) => b.klasse === 'abweichend' || b.klasse === 'stale').map((b) => b.oc),
-  );
-  return [...ausnahmen.values()].filter((a) => !konsumierteOcs.has(a.oc));
+): NichtKonsumierteAusnahme[] {
+  const ergebnis: NichtKonsumierteAusnahme[] = [];
+  for (const ausnahme of ausnahmen.values()) {
+    const treffer = befunde.filter((b) => b.oc === ausnahme.oc);
+    if (treffer.length === 0) { ergebnis.push({ ausnahme, stufe: 'warnung' }); continue; }
+    if (treffer.some((b) => b.klasse === 'abweichend' || b.klasse === 'stale')) continue;
+    if (treffer.every((b) => b.klasse === 'nicht-abrufbar')) { ergebnis.push({ ausnahme, stufe: 'hinweis' }); continue; }
+    ergebnis.push({ ausnahme, stufe: 'rot' });
+  }
+  return ergebnis;
 }
 
 /** Löst die DE-HTML-Filestore-URL des berichtigenden oc via die amtliche

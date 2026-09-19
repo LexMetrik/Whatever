@@ -607,7 +607,12 @@ describe('formatiereBefundDetail — B2 (0-Treffer-Meldung) + B5 (treffender Blo
   });
 });
 
-describe('findeNichtKonsumierteAusnahmen — Auflage B3 (§6.7: eine Ausnahme, die nie mehr trifft, ist ein stiller Freibrief)', () => {
+// ── Nachzug R2b, F2: dreistufig statt pauschal rot (TEST-REGEL §6.3/§6.7 — die Erst-Fassung
+// dieser Tests behauptete ein flaches `RectifiesAusnahme[]`; das ist die deklarierte fachliche
+// Verschärfung, keine Refaktorierung: ein oc ganz ohne Kante kann nichts verdecken (WARNUNG),
+// eine `nicht-abrufbar`-Kante ist zurzeit nicht prüfbar (HINWEIS), nur eine tatsächlich grüne
+// Kante ist ein veralteter, scheiternder Freibrief (ROT)).
+describe('findeNichtKonsumierteAusnahmen — Auflage B3, dreistufig (Nachzug R2b F2, §6.7: eine Ausnahme, die nie mehr trifft, ist ein stiller Freibrief)', () => {
   const ausnahme: RectifiesAusnahme = {
     oc: 'https://fedlex.data.admin.ch/eli/oc/2025/999',
     seit: '2026-09-19',
@@ -627,14 +632,19 @@ describe('findeNichtKonsumierteAusnahmen — Auflage B3 (§6.7: eine Ausnahme, d
     expect(findeNichtKonsumierteAusnahmen(ausnahmen, befunde)).toEqual([]);
   });
 
-  it('meldet die Ausnahme als NICHT konsumiert, wenn ihr oc gar keine rectifies-Kante mehr ist', () => {
+  it('Stufe WARNUNG: das oc kommt im geprüften Bestand gar nicht vor (Daten noch nicht geladen oder Kante entfallen) — kein Rot, es kann nichts verdecken', () => {
     const befunde = [{ oc: 'https://fedlex.data.admin.ch/eli/oc/2026/1', klasse: 'uebereinstimmend' }];
-    expect(findeNichtKonsumierteAusnahmen(ausnahmen, befunde)).toEqual([ausnahme]);
+    expect(findeNichtKonsumierteAusnahmen(ausnahmen, befunde)).toEqual([{ ausnahme, stufe: 'warnung' }]);
   });
 
-  it('meldet die Ausnahme als NICHT konsumiert, wenn ihre Kante jetzt uebereinstimmend/sammelberichtigung ist (Rot-Beweis, §6.7: die Ausnahme wäre sonst ein stiller Freibrief)', () => {
+  it('Stufe HINWEIS: die Kante existiert, ist aber (ausschliesslich) nicht-abrufbar — zurzeit nicht prüfbar, kein Rot', () => {
+    const befunde = [{ oc: ausnahme.oc, klasse: 'nicht-abrufbar' }];
+    expect(findeNichtKonsumierteAusnahmen(ausnahmen, befunde)).toEqual([{ ausnahme, stufe: 'hinweis' }]);
+  });
+
+  it('Stufe ROT (Rot-Beweis, §6.7: die Ausnahme wäre sonst ein stiller Freibrief): die Kante existiert und ist jetzt uebereinstimmend/sammelberichtigung', () => {
     const befunde = [{ oc: ausnahme.oc, klasse: 'sammelberichtigung' }];
-    expect(findeNichtKonsumierteAusnahmen(ausnahmen, befunde)).toEqual([ausnahme]);
+    expect(findeNichtKonsumierteAusnahmen(ausnahmen, befunde)).toEqual([{ ausnahme, stufe: 'rot' }]);
   });
 });
 

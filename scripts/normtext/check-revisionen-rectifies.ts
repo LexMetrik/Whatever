@@ -30,11 +30,15 @@
  *
  * Exit 1 bei `abweichend` ohne (gültigen) Eintrag in
  * `bibliothek/normtext/rectifies-ausnahmen.json` ODER bei `stale` (Identität = exakte
- * oc-URI, kein Substring) ODER bei einer NICHT KONSUMIERTEN Ausnahme (Auflage B3, Runde 2,
- * s. `findeNichtKonsumierteAusnahmen`: ein Ausnahmeliste-Eintrag, dessen oc auf KEINE
- * `abweichend`/`stale`-Kante mehr trifft, wäre ein stiller, nie mehr scheiternder Freibrief —
- * §6.7). `sammelberichtigung`/`nicht-abrufbar` bleiben grün (dokumentierter Befund, keine
- * Behauptung eines Fehlers).
+ * oc-URI, kein Substring) ODER bei einer nicht konsumierten Ausnahme der Stufe `rot` (Auflage
+ * B3, Runde 2, DREISTUFIG verschärft Nachzug R2b F2, s. `findeNichtKonsumierteAusnahmen`): eine
+ * Ausnahme, deren oc auf eine `uebereinstimmend`/`sammelberichtigung`-Kante trifft, ist ein
+ * stiller, nie mehr scheiternder Freibrief (§6.7) — ROT. Die beiden anderen Stufen bleiben
+ * SICHTBAR, aber GRÜN: `warnung` (das oc kommt im geprüften Bestand gar nicht vor — kann nichts
+ * verdecken, evtl. Daten noch nicht geladen oder Kante bei Fedlex entfallen) und `hinweis` (die
+ * Kante existiert, ist aber `nicht-abrufbar` — zurzeit nicht prüfbar, Eintrag NICHT löschen).
+ * `sammelberichtigung`/`nicht-abrufbar` bleiben grün (dokumentierter Befund, keine Behauptung
+ * eines Fehlers).
  *
  * ── Live-Befund 12.9.2026 (Mass, nicht übernommen — Auftragstext nannte ≈16/1/1/n) ──
  * 25 rectifies-Kanten im Korpus (nicht 71 — Schätzung des Auftrags widerlegt, §0/§17
@@ -176,6 +180,9 @@ async function main(): Promise<void> {
 
   const rot = befunde.filter((b) => b.klasse === 'stale' || (b.klasse === 'abweichend' && !ausnahmen.has(b.oc)));
   const nichtKonsumiert = findeNichtKonsumierteAusnahmen(ausnahmen, befunde);
+  const nkWarnung = nichtKonsumiert.filter((n) => n.stufe === 'warnung');
+  const nkHinweis = nichtKonsumiert.filter((n) => n.stufe === 'hinweis');
+  const nkRot = nichtKonsumiert.filter((n) => n.stufe === 'rot');
 
   if (rot.length) {
     console.error(`\ncheck:revisionen-rectifies ROT: ${rot.length} unbelegte/veraltete Abweichung(en):`);
@@ -186,21 +193,37 @@ async function main(): Promise<void> {
       + `erwartetesZielOc + erwarteteZielFundstelle + erwarteteTextFundstelle).`,
     );
   }
-  if (nichtKonsumiert.length) {
+  // Dreistufig statt pauschal rot (Nachzug R2b, F2): nur `rot` zählt zum Exit-Code. `warnung`
+  // (oc gar keine Kante mehr — kann nichts verdecken) und `hinweis` (Kante zurzeit
+  // `nicht-abrufbar` — Eintrag NICHT löschen) sind sichtbar, aber nicht blockierend.
+  if (nkWarnung.length) {
+    console.warn(`\ncheck:revisionen-rectifies WARNUNG: ${nkWarnung.length} Ausnahmeliste-Eintrag/-einträge ohne passende Kante:`);
+    for (const { ausnahme } of nkWarnung) {
+      console.warn(`  - ${ausnahme.oc} (seit ${ausnahme.seit}): Ausnahme-oc nicht im geprüften Bestand `
+        + '(Daten noch nicht geladen oder Kante bei Fedlex entfallen) — prüfen.');
+    }
+  }
+  if (nkHinweis.length) {
+    console.log(`\ncheck:revisionen-rectifies HINWEIS: ${nkHinweis.length} Ausnahmeliste-Eintrag/-einträge zurzeit nicht prüfbar:`);
+    for (const { ausnahme } of nkHinweis) {
+      console.log(`  - ${ausnahme.oc} (seit ${ausnahme.seit}): zurzeit nicht prüfbar (nicht-abrufbar) — Eintrag NICHT löschen.`);
+    }
+  }
+  if (nkRot.length) {
     console.error(
-      `\ncheck:revisionen-rectifies ROT: ${nichtKonsumiert.length} nicht konsumierte Ausnahmeliste-Eintrag/`
+      `\ncheck:revisionen-rectifies ROT: ${nkRot.length} nicht konsumierte Ausnahmeliste-Eintrag/`
       + `-einträge (Auflage B3, §6.7 — ein Tor, das nicht scheitern kann, ist gefährlicher als keines):`,
     );
-    for (const a of nichtKonsumiert) {
+    for (const { ausnahme } of nkRot) {
       console.error(
-        `  - ${a.oc} (seit ${a.seit}): keine aktuelle abweichend/stale-Kante trifft mehr zu — `
-        + `Eintrag in ${AUSNAHMEN_PFAD} prüfen und entfernen, falls die Kante jetzt uebereinstimmend/`
-        + 'sammelberichtigung ist, sonst neu einordnen.',
+        `  - ${ausnahme.oc} (seit ${ausnahme.seit}): keine aktuelle abweichend/stale-Kante trifft mehr zu — `
+        + `Kante ist jetzt uebereinstimmend/sammelberichtigung. Eintrag in ${AUSNAHMEN_PFAD} entfernen `
+        + 'oder neu einordnen.',
       );
     }
   }
-  if (rot.length || nichtKonsumiert.length) process.exit(1);
-  console.log('check:revisionen-rectifies grün: keine unbelegte/veraltete Abweichung, alle Ausnahmen konsumiert.');
+  if (rot.length || nkRot.length) process.exit(1);
+  console.log('check:revisionen-rectifies grün: keine unbelegte/veraltete Abweichung, alle Ausnahmen konsumiert oder erklärt.');
 }
 
 await main();
