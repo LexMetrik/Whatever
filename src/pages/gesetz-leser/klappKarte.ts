@@ -15,7 +15,12 @@
 // #924; Wächter `src/tests/gliederung-zustandsfolgen.test.ts`). Jeder
 // `setTocBaum` im Leser ruft eine Funktion dieser Datei.
 
-import type { GliederungsKnoten } from './gliederungsModell';
+/**
+ * Was `alleKlappIds` von einer Gliederungszeile braucht — strukturell statt
+ * `import type { GliederungsKnoten }`: gliederungsModell.ts liest
+ * `artikelSchluessel` von hier, ein Rück-Import wäre ein Zyklus (check:zyklen).
+ */
+interface KlappKnoten { readonly ids: readonly string[]; readonly kinder: readonly KlappKnoten[] }
 
 /**
  * Ein SPRUNG öffnet den Ast: alle Ids des Pfads (Wurzel → Ziel) und die
@@ -48,9 +53,9 @@ export function sprungZielOffen(
  * der Spy die inneren Ids offen geschrieben, blieb die Zeile nach «alles zu»
  * offen (`zeileIstOffen` ist `.some`; Wächter: 15 Zeilen, u. a. KOV, SVG).
  */
-export function alleKlappIds(knoten: readonly GliederungsKnoten[]): string[] {
+export function alleKlappIds(knoten: readonly KlappKnoten[]): string[] {
   const ids: string[] = [];
-  const geh = (ks: readonly GliederungsKnoten[]) => {
+  const geh = (ks: readonly KlappKnoten[]) => {
     for (const k of ks) { if (k.kinder.length > 0) { ids.push(...k.ids); geh(k.kinder); } }
   };
   geh(knoten);
