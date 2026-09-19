@@ -183,7 +183,8 @@ npm run check:perf-budget  # liest dist, Chrome-frei
 
 7c. **Die Kette als Werkzeug:** `scripts/landung/landung-kette.sh <log> <PR>…`
    reiht seriell ein und pollt `mergeQueueEntry.state` bis MERGED
-   (Queue-Umbau 19.9.2026 — **gegen die echte Queue noch UNGETESTET**). Sie
+   (Queue-Umbau 19.9.2026; Gut-Pfad real belegt mit #919, MERGED
+   `661612cea` — die Halte-Pfade sind nur simuliert). Sie
    hält an bei rotem PR und bei UNMERGEABLE/LOCKED/verschwundenem Eintrag,
    reiht nie selbst neu ein und löscht den Zweig erst nach MERGED. Zwei
    Fallen sind darin verdrahtet: `gh run watch` bricht vorzeitig mit Exit 1
@@ -225,11 +226,12 @@ Trailer allein ist Behauptung. Maschinell dreifach: Required-Check
 «Merge-Schutz» · derselbe Check im Hook vor jedem Merge-Kommando ·
 `check:gegenpruefung` in `npm run gate`. Erzwungen durch Vorfall PR #309
 (elf erfundene Amtsträger:innen ~1 h auf Prod).
-**OFFEN, Stand 19.9.2026:** Risikopfad-PRs scheitern im `merge_group`-Lauf an
-«Merge-Schutz»/«Tore» («KEIN 'Gegenpruefung:'-Verdikt in den Commits», Lauf
-35449385978, #921; Ursache Formregel 5). Wurzel-Fix in Arbeit
-(`scripts/check-merge-schutz.ts`, Zweig `fix/qs-monitor-rot-merge-schutz-queue`)
-— vor dem Einreihen prüfen, ob er auf main ist; danach diesen Absatz streichen.
+**Verdikt im Queue-Squash (behoben 19.9.2026, #925 `95cb5a712`):** Das
+`Gegenpruefung:`-Verdikt gehört in den Trailer-Block des **PR-BODY**. Der
+Queue-Squash bricht ihn bei 72 Zeichen um und hängt die Co-author-Sektion
+an; `scripts/gegenpruefung/squash-trailer.ts` liest das seither (Anlass: Lauf
+35449385978, #921 rot im `merge_group`). Erster Echt-Beleg steht mit #921
+aus — bis dahin Risikopfad-PRs strikt einzeln einreihen.
 
 ### Ausnahmefall manueller Deploy · Ausreden-Tabelle → referenz-ausnahmen.md
 

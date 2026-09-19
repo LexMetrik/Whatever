@@ -208,6 +208,7 @@
     "entstehung:deckung": "vite-node scripts/entstehung/check-entstehung.ts -- --schreibe",
     "projektionen:normtext": "bash scripts/normtext-repin-kaskade.sh",
     "materialien:curia": "vite-node scripts/entstehung/curia-run.ts --",
+    "entstehung:projektion-kaskade": "vite-node scripts/entstehung/projektion-kaskade.ts",
     "entstehung:synopse-messung": "vite-node scripts/entstehung/synopse-messung.ts --",
     "entstehung:synopse": "vite-node scripts/entstehung/synopse-run.ts --",
     "entstehung:synopse-stichprobe": "vite-node scripts/entstehung/synopse-stichprobe.ts --",
@@ -226,7 +227,7 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.8",
     "react-router-dom": "^7.18.3",
-    "valibot": "^1.4.2"
+    "valibot": "^1.5.0"
   },
   "devDependencies": {
     "@ast-grep/cli": "^0.45.3",
