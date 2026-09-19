@@ -620,9 +620,12 @@ export function zeileIstOffen(k: GliederungsKnoten, offen: Record<string, boolea
  * (58 Erlasse, 257 Zeilen; BS-257.820 7 → 1).
  *
  * Auflösung: die Artikel-Kinder bekommen eine eigene, engere Regel — sie
- * erscheinen NUR nach einem Klick auf das Chevron. Massgeblich ist der eigene
- * Schlüssel `art@<id>` der Klapp-Karte, den ausschliesslich `klappZeile`
- * schreibt (Herleitung dort).
+ * erscheinen NUR auf einen ausdrücklichen Schritt hin. Massgeblich ist der
+ * eigene Schlüssel `art@<id>` der Klapp-Karte (Herleitung bei `klappZeile`).
+ * Seit W2·5m-LESER-V3 (19.9.2026) schreiben ihn alle AUSDRÜCKLICHEN Öffner —
+ * Chevron, Titel, Sprung, Tieflink, Sheet-Öffnen, «alles auf» (`./klappKarte`)
+ * —, nur der Spy nicht; und er gilt nur noch für Zeilen, die NUR Artikel
+ * tragen (gemischte Knoten: s. u.).
  *
  * DASS DER SCROLL-SPY SIE NICHT ÖFFNET, IST KEIN DETAIL, sondern der Kern:
  * er schreibt beim Weiterlesen `true` auf die Sektions-Ids des Aktiv-Pfads.
@@ -639,6 +642,20 @@ export function artikelKinderOffen(
   k: GliederungsKnoten, offen: Record<string, boolean>, startOffeneTiefe: number,
 ): boolean {
   if (!zeileIstOffen(k, offen, startOffeneTiefe)) return false;
+  // W2·5m-LESER-V3 (Befund David 19.9.2026, «bei svg art. 26 nicht
+  // ersichtlich»): am GEMISCHTEN Knoten folgen die Artikel der Zeile. Sie
+  // stehen im Gesetz VOR dem ersten Unterabschnitt (SVG Art. 26 unter
+  // «III. Titel»); eine offene Zeile, die ihre Unterabschnitte zeigt und den
+  // Artikel davor verschweigt, ist ein halb offener Ast — genau der Befund
+  // (Messung 19.9.2026: 6 Erlasse/29 Art. beim Öffnen, 27/245 nach Mitlaufen).
+  // Die Klemme bleibt für die Zeile, die NUR Artikel trägt: dort ist die
+  // Artikel-Liste der ganze Ast (bis 49 Zeilen, CLS-Beleg oben), und dort
+  // öffnet ihn weiterhin nur ein ausdrücklicher Schritt (`art@`).
+  // Preis (§15): öffnet der Spy einen gemischten Knoten, wachsen mit den
+  // Unterabschnitten auch dessen direkte Artikel ein — korpusweit höchstens 26
+  // an einem Knoten (AHVV «B. Die ordentlichen Renten»), im selben Commit wie
+  // die Unterabschnitte, die der Spy dort ohnehin einblendet.
+  if (k.kinder.some((kk) => kk.art !== 'artikel')) return true;
   return k.ids.some((id) => offen[artikelSchluessel(id)] === true);
 }
 
@@ -659,9 +676,16 @@ export interface ZeilenAnsicht {
 export function zeilenAnsicht(
   k: GliederungsKnoten, offen: Record<string, boolean>, startOffeneTiefe: number,
 ): ZeilenAnsicht {
-  const auf = zeileIstOffen(k, offen, startOffeneTiefe);
-  const artikelAuf = artikelKinderOffen(k, offen, startOffeneTiefe);
-  return { auf, sichtbareKinder: auf ? k.kinder.filter((kk) => kk.art !== 'artikel' || artikelAuf) : [] };
+  if (!zeileIstOffen(k, offen, startOffeneTiefe)) return { auf: false, sichtbareKinder: [] };
+  const sichtbareKinder = artikelKinderOffen(k, offen, startOffeneTiefe)
+    ? k.kinder
+    : k.kinder.filter((kk) => kk.art !== 'artikel');
+  // «Offen» heisst: man sieht etwas. Eine Zeile, die nur Artikel trägt und
+  // deren Artikel-Ebene zu ist (Spy, Sprung auf einen Vorfahren), meldet sich
+  // darum ZU — Pfeil zu, `aria-expanded=false` —, und der erste Klick öffnet
+  // sie. Vorher meldete sie «offen» bei null Kindern, und der erste Klick
+  // klappte sie zu (4'586 Zeilen in 222 Erlassen, Messung 19.9.2026).
+  return { auf: sichtbareKinder.length > 0, sichtbareKinder };
 }
 
 /**
@@ -698,7 +722,8 @@ export function findeMarke(
     const treffer = liste.find((k) => k.ids.some((id) => aktivPfad.includes(id)));
     if (!treffer) return marke;
     marke = treffer.id;
-    if (treffer.kinder.length === 0 || !zeileIstOffen(treffer, offen, startOffeneTiefe)) return marke;
+    // Abstieg nur, wo die Zeile wirklich etwas zeigt (`zeilenAnsicht`, EINE Quelle).
+    if (!zeilenAnsicht(treffer, offen, startOffeneTiefe).auf) return marke;
     // Die Artikel-Zeile gewinnt, sobald sie wirklich sichtbar ist: sie ist der
     // tiefste sichtbare Knoten des Aktiv-Pfads. Ist sie zugeklappt (oder liest
     // der Nutzer einen Artikel ohne eigene Zeile), bleibt es beim Kapitel —

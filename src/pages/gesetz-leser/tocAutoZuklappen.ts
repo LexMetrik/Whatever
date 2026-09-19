@@ -228,7 +228,8 @@ export function klappZeile(
   return {
     ...offen,
     ...Object.fromEntries(ids.map((id) => [id, ziel])),
-    // Die ARTIKEL-Ebene bewegt sich nur hier — beim Chevron-Klick (s. u.).
+    // Die ARTIKEL-Ebene bewegt nur ein ausdrücklicher Schritt — dieser Klick
+    // und die Öffner in ./klappKarte, nie der Spy (s. u.).
     ...Object.fromEntries(ids.map((id) => [artikelSchluessel(id), ziel])),
   };
 }

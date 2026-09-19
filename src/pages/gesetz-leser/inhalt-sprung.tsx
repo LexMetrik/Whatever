@@ -16,6 +16,7 @@ import { loeseSpyNachlauf } from './inhalt-hooks';
 import { merkeSprungAstManuell } from './sprungAst';
 import { useTiefLinkZweig } from './v3/tiefLinkZweig';
 import { oeffneSprungZiel } from './klappKarte';
+import { uebersetzeRohPfad } from './gliederungsModell';
 
 // ═══ ABSCHNITT · Sektions-Sprung, Instanz-Navigation, Suche-Scroll (§6.6-Split,
 // QS-TOK/T14) ════════════════════════════════════════════════════════════════
@@ -35,6 +36,7 @@ import { oeffneSprungZiel } from './klappKarte';
 
 type SekRefs = MutableRefObject<Map<string, HTMLElement>>;
 type PaneWurzel = RefObject<HTMLElement | null> | null;
+const KEIN_PRAEFIX: Record<string, string[]> = {};
 
 // ─── Sprung aus dem Gliederungs-Baum + Instanz-Navigation + Such-Scroll ──────
 export function useSektionSprung(opts: {
@@ -60,6 +62,8 @@ export function useSektionSprung(opts: {
    * Effekt unten.
    */
   scrollBeiSuchwechsel?: boolean;
+  /** Rohpfad→Modellpfad (`GliederungsModell.umhaengPraefix`) — wie im Spy (B4). */
+  umhaengPraefix?: Record<string, string[]>;
   refs: {
     jumpLockRef: MutableRefObject<boolean>;
     autoOffenRef: MutableRefObject<Set<string>>;
@@ -75,7 +79,7 @@ export function useSektionSprung(opts: {
   const {
     sektionen, sekRefs, location, istSekundaer, imPane, wurzel, sucheDebounced, springeZuArtikel,
     setOffen, setTocBaum, setAktivIds, setTocAuf, scrollVorSucheRef, sucheVorherRef,
-    scrollBeiSuchwechsel = true,
+    scrollBeiSuchwechsel = true, umhaengPraefix = KEIN_PRAEFIX,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   } = opts;
 
@@ -83,7 +87,7 @@ export function useSektionSprung(opts: {
   // dem ersten Bild — er gehört zu den Sprüngen und steht darum hier. Befund,
   // Messreihe und Herleitung: `./v3/tiefLinkZweig`.
   useTiefLinkZweig({
-    hash: location.hash, sektionen, erlassMarke: location.key,
+    hash: location.hash, sektionen, erlassMarke: location.key, umhaengPraefix,
     setTocBaum, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef,
   });
 
@@ -101,7 +105,7 @@ export function useSektionSprung(opts: {
     // genau den Mischzustand, an dem der Chevron danach hängenblieb. Die Zeile
     // gibt ihre Ids jetzt selbst mit; behandelt werden sie alle gleich.
     const id = zeilenIds[0];
-    const pfad = pfadZu(sektionen, (s) => s.id === id) ?? [id];
+    const pfad = uebersetzeRohPfad(umhaengPraefix, pfadZu(sektionen, (s) => s.id === id) ?? [id]);
     const ids = [...new Set([...pfad, ...zeilenIds])];
     jumpLockRef.current = true;
     // F3: schwebenden Auto-Akkordeon-Timer verwerfen (Klick-Sprung ist autoritativ).
@@ -160,11 +164,12 @@ export function useSektionSprung(opts: {
     // Bewusst draussen: setOffen/setTocBaum/setAktivIds/setTocAuf (useState-Setter,
     // stabil) und jumpLockRef/autoOffenRef/autoTickRef/manuellOffenRef/
     // manuellZuRef/tocBaumTimer/sekRefs (useRef-Objekte, identisch über die
-    // Lebenszeit). `sektionen` ist der einzige gelesene Zustand. Als Hook-Argumente
+    // Lebenszeit). `sektionen` ist der einzige gelesene Zustand (seit W2·5m-LESER-V3 dazu
+    // `umhaengPraefix`, je Erlass einmal memoisiert). Als Hook-Argumente
     // kann die Regel die Stabilität nicht mehr belegen; Deps bleiben byte-gleich
     // zum Inline-Stand (Aufnahme wäre eine stille Verhaltens-Änderung, §6).
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sektionen]);
+  }, [sektionen, umhaengPraefix]);
 
   // Wechsel zwischen zwei Instanzen DESSELBEN Gesetzes (?r) bzw. ein Tab-Klick mit
   // #art-Anker remountet den Reader nicht (gleicher pathname) — darum bei jeder

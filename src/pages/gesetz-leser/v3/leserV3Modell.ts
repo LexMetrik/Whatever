@@ -10,7 +10,7 @@ import type { ArtikelFundstelle, LeserTreffer, SuchBereich } from '../leserSuche
 import { strukturTiefe } from '../strukturTiefe';
 import { basisAdresse, pfadZu } from '../helpers';
 import { paneRoot, findeArt, kuratiereTocSektionen, zaehleAenderungsvermerke, bieteAenderungsvermerkeSchalter } from '../berechnungen';
-import { baueGliederungsModell, findeSynthPfad, type GliederungsModell } from '../gliederungsModell';
+import { baueGliederungsModell, findeSynthPfad, uebersetzeRohPfad, type GliederungsModell } from '../gliederungsModell';
 // ── DIE EINE NAHT ZUR GETEILTEN MASCHINERIE ─────────────────────────────────
 // Alles, was V3 von ausserhalb `v3/` an ZUSTAND und EFFEKTEN braucht, wird in
 // genau diesen sechs Zeilen importiert. Siehe den Abschnitt «Naht» unten.
@@ -288,9 +288,12 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     // B1: das Gliederungs-BLATT geht mit zu — Befund, Messreihe und die
     // §7-Abweichung zum genannten Fundort stehen in `e2e/leser-v3-h4-gliederungswege`.
     setTocAuf(false);
-    const ids = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
+    const roh = pfadZu(sektionen, (s) => s.artikel.some((e) => e.artikel === token)) ?? [];
+    // Modellpfad wie im Spy (B4): ohne Umhäng-Präfix blieb der Anhang-Ast nach dem
+    // Sprung zu und unmarkiert (Wächter gliederung-sichtbarkeit 19.9.2026: 422 Fälle).
+    const ids = uebersetzeRohPfad(gliederung.umhaengPraefix, roh);
     if (ids.length) {
-      setOffen((o) => { const n = { ...o }; for (const id of ids) n[id] = true; return n; });
+      setOffen((o) => { const n = { ...o }; for (const id of roh) n[id] = true; return n; });
       merkeSprungAst(ids); // Fehlerbuch 15.9.2026: hier stand nur `manuellZu.delete` — der Ast war danach ungeschützt (`../sprungAst`)
       if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
       setAktivIds(ids);
@@ -303,6 +306,8 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
       if (synth) {
         if (tocBaumTimer.current != null) window.clearTimeout(tocBaumTimer.current);
         setAktivIds(synth);
+        merkeSprungAst(synth); // W2·5m-LESER-V3: auch hier bis zur Artikel-Zeile
+        setTocBaum((o) => oeffneSprungZiel(o, synth, synth.slice(-1)));
       }
     }
     if (typeof window === 'undefined') return;
@@ -327,7 +332,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     }, 110));
     // Deps byte-gleich zur Ist-Hülle (Setter/Refs sind stabil, Herleitung dort).
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sektionen, basisPfad, istSekundaer, imPane, wurzel, gliederung.knoten]);
+  }, [sektionen, basisPfad, istSekundaer, imPane, wurzel, gliederung.knoten, gliederung.umhaengPraefix]);
 
   const { tokenByLabel, aktivToken, artTokens } = useArtikelTokens({ artLabelByToken, eintraege, aktArtikel });
   const { weiterlesen, weiterlesenSprung, weiterlesenVerwerfen } = useWeiterlesen({
@@ -342,6 +347,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
     // Anlass dafür (gefilterte, geschrumpfte Lesespalte) besteht in V3 nicht.
     // Herleitung am Effekt in `inhalt-sprung.tsx`, Beweis `leser-v3-esc-ohne-sprung`.
     scrollBeiSuchwechsel: false,
+    umhaengPraefix: gliederung.umhaengPraefix,
     refs: { jumpLockRef, autoOffenRef, autoTickRef, autoTickNowRef, manuellOffenRef, manuellZuRef, tocBaumTimer },
   });
   const internRefs = useInternRefs({ eintraege, basisPfad, springeZuArtikel, istSekundaer, navigate, erlassKuerzel: erlass?.kuerzel, manifestErlasse: manifest?.erlasse, kanton: erlass?.kanton }); // V-2 · V-3 (Manifest/Kanton = Rohstoff der Kürzel-Karte)

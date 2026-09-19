@@ -34,7 +34,7 @@ import { pfadZu } from '../pages/gesetz-leser/helpers';
 import { klappZeile } from '../pages/gesetz-leser/tocAutoZuklappen';
 import { oeffneSprungZiel, setzeAlle, alleOffen, alleKlappIds } from '../pages/gesetz-leser/klappKarte';
 import {
-  baueGliederungsModell, flacheZeilen, zeilenAnsicht, findeMarke, findeSynthPfad,
+  baueGliederungsModell, flacheZeilen, zeilenAnsicht, findeMarke, findeSynthPfad, uebersetzeRohPfad,
   type GliederungsModell, type GliederungsKnoten,
 } from '../pages/gesetz-leser/gliederungsModell';
 
@@ -115,7 +115,7 @@ describe('W2·5m-LESER-V3 — eine offene Zeile zeigt alle ihre Kinder', () => {
       // Je Sektion mit eigenen Artikeln EIN Sprung — alle ihre Artikel teilen den Pfad.
       for (const s of flacheSektionen(m.sektionen)) {
         if (s.artikel.length === 0) continue;
-        const pfad = pfadZu(m.sektionen, (x) => x.id === s.id)!;
+        const pfad = uebersetzeRohPfad(m.umhaengPraefix, pfadZu(m.sektionen, (x) => x.id === s.id)!);
         const offen = oeffneSprungZiel({}, pfad, pfad.slice(-1));
         const aufPfad = zeilen.filter((k) => k.ids.some((id) => pfad.includes(id)));
         for (const k of offenLeer(aufPfad, offen, m.startOffeneTiefe)) funde.push(`${kurz(key, k)} (Art. ${s.artikel[0].artikel})`);
@@ -183,9 +183,10 @@ describe('W2·5m-LESER-V3 — Artikel-Sprung: der Ast steht bis zur Artikel-Zeil
       const artZeilen = flacheZeilen(m.knoten).filter((k) => k.art === 'artikel' && k.ersterArtikel);
       for (const z of artZeilen) {
         const token = z.ersterArtikel!;
-        // Genau der Pfad, den `springeZuArtikel` (leserV3Modell.ts) bildet.
-        const pfad = pfadZu(m.sektionen, (s) => s.artikel.some((e) => e.artikel === token))
-          ?? findeSynthPfad(m.knoten, token) ?? [];
+        // Genau der Pfad, den `springeZuArtikel` (leserV3Modell.ts) bildet —
+        // Modellpfad mit Umhäng-Präfix wie im Spy (B4); sonst der synthetische.
+        const roh = pfadZu(m.sektionen, (s) => s.artikel.some((e) => e.artikel === token));
+        const pfad = roh ? uebersetzeRohPfad(m.umhaengPraefix, roh) : findeSynthPfad(m.knoten, token) ?? [];
         if (pfad.length === 0) { funde.push(`${key} Art. ${token}: kein Pfad`); continue; }
         gezaehlt++;
         const offen = oeffneSprungZiel({}, pfad, pfad.slice(-1));
