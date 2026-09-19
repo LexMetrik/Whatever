@@ -55,9 +55,10 @@ Belege: `referenz-ci.md` §Merge-Queue.
   Eintrag und baut die Nachfolger neu. ERST den Lauf lesen, dann neu
   einreihen — nie blind.
 - **Kosten:** der `merge_group`-Lauf klassiert den Diff des Eintrags wie der
-  PR-Lauf (reine Doku ohne Bau/Browser-Tests; Code voll, ~20+ min). Ob ein
-  übersprungenes «Perf-Budget» in der Queue als erfüllt zählt, ist UNGEMESSEN
-  (Stand 19.9.2026, ROADMAP `QS-CI-MINUTEN`). Doku trotzdem bündeln.
+  PR-Lauf (reine Doku ohne Bau/Browser-Tests, ~1 min; Code voll, ~20+ min).
+  Ein übersprungenes «Perf-Budget» zählt in der Queue als erfüllt (gemessen
+  19.9.2026, #931, Lauf 35456359531). Doku trotzdem bündeln — gleiche
+  Steuer-Datei wie ein Vordermann ⇒ UNMERGEABLE.
 
 ## §12 · Isolation — die Grundregeln vor jeder Landung
 
@@ -230,8 +231,9 @@ Trailer allein ist Behauptung. Maschinell dreifach: Required-Check
 `Gegenpruefung:`-Verdikt gehört in den Trailer-Block des **PR-BODY**. Der
 Queue-Squash bricht ihn bei 72 Zeichen um und hängt die Co-author-Sektion
 an; `scripts/gegenpruefung/squash-trailer.ts` liest das seither (Anlass: Lauf
-35449385978, #921 rot im `merge_group`). Erster Echt-Beleg steht mit #921
-aus — bis dahin Risikopfad-PRs strikt einzeln einreihen.
+35449385978, #921 rot im `merge_group`). Echt-Beleg: #921 gelandet
+`2db154675` (19.9.2026). Risikopfad-PRs weiter strikt einzeln einreihen —
+jeder hängt eine Register-Zeile an (Ziff. 3.4).
 
 ### Ausnahmefall manueller Deploy · Ausreden-Tabelle → referenz-ausnahmen.md
 
