@@ -88,10 +88,20 @@
 # Davids Entscheid vom 14.8.2026 («wird freigegeben») bewusst gelockert.
 # `merge_group` bleibt unberührt und fährt weiterhin ausnahmslos das volle
 # Programm. Fehlerseite unverändert (§6.7): jede Unsicherheit fällt auf `code`.
-# (Stand 14.8.2026. Seit 19.9.2026 klassiert der `diff`-Job auch `merge_group`
-# — Entscheid David «alles durch die warteschlange»: jeder Doku-PR läuft durch
-# die Queue, der pauschale Volllauf wäre dort ein Dauer-Kostenposten. Regeln,
-# Auflage ALLGREEN und Fehlerseite: Kommentar im Schritt «PR-Diff klassieren».)
+# (Stand 14.8.2026. Seit 19.9.2026 klassiert der `diff`-Job auch `merge_group`.
+# ANLASS ist Davids Routing-Entscheid vom 19.9.2026 «alles durch die
+# warteschlange»: jeder Doku-PR läuft durch die Queue, der pauschale Volllauf
+# wäre dort ein Dauer-Kostenposten. Der Satz sagt, WO Änderungen landen — er
+# gibt KEINE Prüftiefe frei; die Freigabe vom 14.8.2026 galt im Wortlaut nur
+# für `push` auf main (ROADMAP-CHRONIK.md, Eintrag `QS-BASIS-DOKU-CI`).
+# BEGRÜNDUNG der Lockerung ist darum die ÄQUIVALENZ: die Prüftiefe eines
+# Doku-Eintrags sinkt nicht unter das am 14.8.2026 freigegebene Niveau —
+# vorher PR-Lauf (doku-klassiert) + Push-Lauf (doku-klassiert); jetzt PR-Lauf
+# (doku) + merge_group-Lauf (doku), der Push per Diät still. Code-Einträge
+# fahren unverändert das volle Programm, und Prod bleibt zusätzlich geschützt,
+# weil `deploy` auf push `art != 'doku'` verlangt. Scope-Wechsel David am
+# 19.9.2026 zur Bestätigung vorgelegt. Regeln, Auflage ALLGREEN und
+# Fehlerseite: Kommentar im Schritt «PR-Diff klassieren».)
 #
 # ─── Dritte Klasse `code-fern` (QS-PLAN-EINFACH 14.8.2026, Punkt 3) ──────────
 # Die Playwright-Browser-Shards sind gemessen 77–78 % der CI-Zeit. Rührt ein
@@ -555,8 +565,7 @@ jobs:
       # ist «in_progress», sein Merge-Schutz sofort `skipped`). Er kann den
       # Beleg weder liefern noch verderben, weil nur Läufe mit
       # event == merge_group gelesen werden und ihre Jobs über die Lauf-ID —
-      # nie die namensgleichen Check-Runs am SHA. Die eigene GITHUB_RUN_ID ist
-      # zusätzlich ausgeschlossen (kostet eine Zeile).
+      # nie die namensgleichen Check-Runs am SHA.
       #
       # DOKU-KOPF ÜBER CODE-VORDERMANN: Landen mehrere Einträge in einem Push,
       # belegt der Lauf an AFTER nur den KOPF-Eintrag — bei einem Doku-Kopf
@@ -567,10 +576,18 @@ jobs:
       #
       # ENTFALLEN (§17-Gegengewicht): die frühere Bedingung «AFTER ist
       # merge_commit_sha genau eines gemergten PR». Ihre Sorge «dieser Baum
-      # ist geprüft» trägt der SHA-Beleg vollständig und strenger; ihre
-      # zweite Sorge «kein Direkt-/Force-Push» ist Sache des Rulesets (keine
-      # Bypass-Akteure), nicht dieses Schritts — und ein direkt gepushter SHA
-      # OHNE grünen merge_group-Lauf fällt hier ohnehin auf `false`.
+      # ist geprüft» trägt der SHA-Beleg vollständig und strenger. Ihre
+      # zweite Sorge «kein Direkt-/Force-Push» trägt NICHT das Ruleset:
+      # GEMESSEN 19.9.2026 enthält Ruleset 23699779 nur die Regel
+      # `merge_queue` (keine pull_request-/non_fast_forward-Regel); der
+      # Push-Schutz kommt aus dem klassischen Branch-Schutz mit
+      # `enforce_admins: false`, `allow_force_pushes: false` — ein
+      # Admin-Direkt-Push bleibt technisch möglich. Getragen wird die Sorge
+      # von diesem Schritt selbst: ein SHA, der nicht durch die Queue lief,
+      # hat keinen grünen merge_group-Lauf ⇒ `false` ⇒ Volllauf. Ein
+      # Force-Push zurück auf einen alten Queue-Commit ergäbe `true`, liefert
+      # aber einen Baum aus, der damals seinen grünen merge_group-Lauf hatte —
+      # kein Rückschritt gegenüber der gestrichenen Bedingung.
       #
       # WAS DIESER SCHRITT NICHT PRÜFT: dass die Queue aktiv ist. Muss er
       # nicht — ohne Queue gibt es keinen merge_group-Lauf am landenden SHA
@@ -609,7 +626,7 @@ jobs:
           fi
           BELEGT=""
           while IFS='|' read -r ID SHA EV STATUS SCHLUSS; do
-            if [ "$ID" = "${GITHUB_RUN_ID:-}" ] || [ "$SHA" != "$AFTER" ] || [ "$EV" != "merge_group" ]; then
+            if [ "$SHA" != "$AFTER" ] || [ "$EV" != "merge_group" ]; then
               setze false "Lauf ${ID} passt nicht (sha=${SHA}, event=${EV}) — volles Programm."
             fi
             if [ "$STATUS" != "completed" ] || [ "$SCHLUSS" != "success" ]; then
