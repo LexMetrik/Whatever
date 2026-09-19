@@ -9,8 +9,11 @@
 // der Artikel-Ebene. Hier stehen die ausdrücklichen Öffner als reine
 // Funktionen, damit der Wächter (`src/tests/gliederung-sichtbarkeit.test.ts`)
 // genau das prüft, was die Oberfläche schreibt (§3, §6.7). Der Scroll-Spy
-// bleibt bewusst draussen: er schreibt nur Sektions-Ids (CLS-Regel 13.8.2026,
-// `artikelSchluessel` unten).
+// (`mitlaufenKarte`) ÖFFNET nur Sektions-Ids (CLS-Regel 13.8.2026,
+// `artikelSchluessel` unten). Geschlossen wird auf JEDEM Pfad über eine Regel
+// (`schliesseZeilen`): mit der Zeile ihre Artikel-Ebene (Code-Zweitblick PR
+// #924; Wächter `src/tests/gliederung-zustandsfolgen.test.ts`). Jeder
+// `setTocBaum` im Leser ruft eine Funktion dieser Datei.
 
 import type { GliederungsKnoten } from './gliederungsModell';
 
@@ -65,8 +68,42 @@ export function alleKlappIds(knoten: readonly GliederungsKnoten[]): string[] {
 export function setzeAlle(
   offen: Record<string, boolean>, zeilenIds: readonly string[], ziel: boolean,
 ): Record<string, boolean> {
+  if (!ziel) return schliesseZeilen(offen, zeilenIds);
   const n = { ...offen };
-  for (const id of zeilenIds) { n[id] = ziel; n[artikelSchluessel(id)] = ziel; }
+  for (const id of zeilenIds) { n[id] = true; n[artikelSchluessel(id)] = true; }
+  return n;
+}
+
+/**
+ * DIE Schliess-Regel der Klapp-Karte (W2·5m-LESER-V3, Code-Zweitblick PR #924):
+ * wird eine Zeile geschlossen — gleich über welchen Pfad —, ist auch ihre
+ * Artikel-Ebene geschlossen. Alle Schliesser laufen hierüber: Chevron
+ * (`klappZeile`), «alles zu» (`setzeAlle`), Auto-Zuklappen (`mitlaufenKarte`).
+ *
+ * WARUM. Bis hierher setzte das Auto-Zuklappen nur `<id>=false`; ein vom
+ * Tieflink gesetztes `art@<id>` blieb liegen, und das nächste Mitlaufen
+ * (`<id>=true`) öffnete darüber eine reine Artikel-Liste — ein Öffnen der
+ * Artikel-Ebene durch den Spy, das die CLS-Regel 13.8.2026 ausschliesst
+ * (Wächter `gliederung-zustandsfolgen`: 4'580/4'580 Fälle rot).
+ *
+ * `nurGesetzte`: nur Schlüssel umlegen, die `true` stehen (Spy: eine Zeile,
+ * die aus dem Modell offen startet, bleibt unberührt, und ohne Änderung
+ * bleibt es beim Nicht-Rendern). Sonst ausdrücklich `false` — Klick und
+ * «alles zu» müssen auch eine Zeile ohne Karten-Eintrag schliessen.
+ * Mutiert `n` (die Kopie des Aufrufers) und meldet, ob sich etwas änderte.
+ */
+function schliesseInKopie(n: Record<string, boolean>, id: string, nurGesetzte: boolean): boolean {
+  let geaendert = false;
+  for (const s of [id, artikelSchluessel(id)]) {
+    if (n[s] === true || (!nurGesetzte && n[s] !== false)) { n[s] = false; geaendert = true; }
+  }
+  return geaendert;
+}
+
+/** Schliesst die Zeilen `ids` samt Artikel-Ebene (ausdrücklich, neue Karte). */
+export function schliesseZeilen(offen: Record<string, boolean>, ids: readonly string[]): Record<string, boolean> {
+  const n = { ...offen };
+  for (const id of ids) schliesseInKopie(n, id, false);
   return n;
 }
 
@@ -99,13 +136,14 @@ export function alleOffen(offen: Record<string, boolean>, zeilenIds: readonly st
 export function klappZeile(
   offen: Record<string, boolean>, ids: string[], istOffen: boolean,
 ): Record<string, boolean> {
-  const ziel = !istOffen;
+  // Schliessen läuft über DIE Schliess-Regel (`schliesseZeilen`); Öffnen
+  // bewegt die ARTIKEL-Ebene mit — nur ein ausdrücklicher Schritt tut das
+  // (dieser Klick und die Öffner oben), nie der Spy (s. u.).
+  if (istOffen) return schliesseZeilen(offen, ids);
   return {
     ...offen,
-    ...Object.fromEntries(ids.map((id) => [id, ziel])),
-    // Die ARTIKEL-Ebene bewegt nur ein ausdrücklicher Schritt — dieser Klick
-    // und die Öffner in ./klappKarte, nie der Spy (s. u.).
-    ...Object.fromEntries(ids.map((id) => [artikelSchluessel(id), ziel])),
+    ...Object.fromEntries(ids.map((id) => [id, true])),
+    ...Object.fromEntries(ids.map((id) => [artikelSchluessel(id), true])),
   };
 }
 
@@ -147,7 +185,8 @@ export function artikelSchluessel(id: string): string {
  * `inhalt-hooks.tsx` und war nur über React erreichbar. Mitlaufen öffnet die
  * Sektions-Ids des aktiven Pfads (nie die Artikel-Ebene, CLS-Regel 13.8.2026;
  * nie eine vom Nutzer zugeklappte Id), das Auto-Zuklappen schliesst die Ids,
- * die `planeZuklappen` freigibt. Identische Referenz, wenn nichts ändert
+ * die `planeZuklappen` freigibt — samt Artikel-Ebene (`schliesseInKopie`,
+ * seit W2·5m-LESER-V3; vorher blieb `art@` liegen). Identische Referenz, wenn nichts ändert
  * (kein Re-Render).
  */
 export function mitlaufenKarte(
@@ -157,6 +196,7 @@ export function mitlaufenKarte(
   let geaendert = false;
   const n = { ...o };
   if (a.aufklappen) for (const id of a.aktivIds) if (!n[id] && !a.manuellZu.has(id)) { n[id] = true; geaendert = true; }
-  for (const id of a.schliessen) if (n[id]) { n[id] = false; geaendert = true; }
+  // Auto-Zu über DIE Schliess-Regel: mit der Zeile geht ihr `art@` zu.
+  for (const id of a.schliessen) if (schliesseInKopie(n, id, true)) geaendert = true;
   return geaendert ? n : o;
 }

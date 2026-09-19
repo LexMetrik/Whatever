@@ -19,7 +19,8 @@
  * Snapshots aller Bundeserlasse — ohne Zeit- oder Warte-Logik.
  */
 import { describe, it, expect } from 'vitest';
-import { readdirSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { baueGliederungsbaum, type Sektion } from '../lib/normtext/browse';
 import { ladeNormFixture } from './fixtures/normtext-fixture';
 import { kuratiereTocSektionen } from '../pages/gesetz-leser/berechnungen';
@@ -131,6 +132,30 @@ describe('W2·5m-LESER-V3 — Zustandsfolgen der Klapp-Karte (alle Bundeserlasse
         if (rest.length) funde.push(`${key}/${name}: ${rest.length}`);
       }
     }
+    expect(funde, funde.join(' | ')).toEqual([]);
+  });
+});
+
+// Quellsonde: jeder Schreiber der Klapp-Karte läuft über ./klappKarte. Ein
+// neuer Inline-`setTocBaum` (so entstanden die sechs Schreiber vor
+// W2·5m-LESER-V3, und so ging `art@` beim Auto-Zu verloren) fällt hier auf.
+describe('W2·5m-LESER-V3 — Quellsonde: alle setTocBaum-Aufrufe laufen über klappKarte', () => {
+  it('jeder Aufruf nutzt einen Öffner/Schliesser aus klappKarte.ts', () => {
+    const dateien = execFileSync('git', ['ls-files', 'src/pages'], { encoding: 'utf8' }).split('\n').filter((p) => /\.tsx?$/.test(p));
+    const KARTE = /\b(oeffneSprungZiel|sprungZielOffen|klappZeile|setzeAlle|schliesseZeilen|mitlaufenKarte)\(|setTocBaum\(aktualisieren\)/;
+    const funde: string[] = [];
+    let aufrufe = 0;
+    for (const p of dateien) {
+      const zeilen = readFileSync(p, 'utf8').split('\n');
+      zeilen.forEach((z, i) => {
+        if (!/\bsetTocBaum\(/.test(z)) return;
+        aufrufe++;
+        if (!KARTE.test(zeilen.slice(i, i + 4).join('\n'))) funde.push(`${p}:${i + 1}`);
+      });
+    }
+    const hooks = readFileSync('src/pages/gesetz-leser/inhalt-hooks.tsx', 'utf8');
+    expect(/const aktualisieren[^;]*mitlaufenKarte\(/s.test(hooks), 'aktualisieren delegiert an mitlaufenKarte').toBe(true);
+    expect(aufrufe).toBeGreaterThanOrEqual(10);
     expect(funde, funde.join(' | ')).toEqual([]);
   });
 });
