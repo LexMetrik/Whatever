@@ -248,7 +248,15 @@ function baueHeadlineSuchtext(ohneFussnoten: string): string {
   const [vorMain, ...rest] = ohneFussnoten.split(/<main\b/);
   const nachMain = rest.join('<main');
   const klassenTeile = [...nachMain.matchAll(HEADLINE_KLASSEN_ELEMENT)].map((m) => m[2]);
-  return [vorMain, ...klassenTeile].join(' § ');
+  // Fugentrenner ' () ' statt ' § ' (Nachzug R2c, Auflage C1, Falsch-Grün-Risiko, Rot-Beweis
+  // A5/A5b): `§` liegt in `[^()]` und ist damit für das Klammer-Fenster von HEADLINE_ZITAT
+  // (`[^()]{0,40}?` zwischen «vom <Datum>» und der öffnenden Klammer) durchlässig — ein
+  // «vom <Datum>» am ENDE eines Elements band dadurch über die Fuge hinweg an die AS-Klammer
+  // des NÄCHSTEN Elements (Phantom-Block, der `abweichend` fälschlich zu `sammelberichtigung`
+  // machen kann). Eine LEERE Klammer ist für dasselbe Fenster UNÜBERWINDBAR: `(` und `)` sind
+  // aus `[^()]` ausdrücklich ausgeschlossen, das Fenster kann also nie über eine Fuge hinweg
+  // an die nächste Klammer binden — unabhängig davon, wie viele Elemente verbunden werden.
+  return [vorMain, ...klassenTeile].join(' () ');
 }
 
 /** Reine Extraktion (§2, kein Netz) — Fedlex-Filestore-HTML → Headline-Zitate.

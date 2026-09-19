@@ -575,6 +575,34 @@ describe('extrahiereHeadlineZitate + klassifiziereBerichtigung (rectifies-Wächt
       expect(zitate.as).toEqual(['AS 2015 1903']);
     });
   });
+
+  // ── Nachzug R2c, 19.9.2026 (unabhängige Opus-Nach-Prüfung, Auflage C1, Falsch-Grün-Risiko):
+  // der Fugentrenner ' § ' zwischen `vorMain` und den `klassenTeile`-Elementen in
+  // `baueHeadlineSuchtext` lag selbst in `[^()]` und war damit für das Klammer-Fenster von
+  // HEADLINE_ZITAT durchlässig — ein «vom <Datum>» am ENDE eines Elements band über die Fuge
+  // hinweg an die AS-Klammer des NÄCHSTEN Elements (Phantom-Block). Rot-Beweis (Bau-Bericht):
+  // beide Tests unten liefern GEGEN DEN ALTEN CODE (Fuge ' § ') je 1 Phantom-Block, gegen den
+  // gefixten Code (Fuge ' () ', eine leere Klammer ist für `[^()]` unüberwindbar) 0 Blöcke.
+  describe('Nachzug R2c — Falsch-Grün-Risiko C1 (Fugentrenner § ist für das Klammer-Fenster durchlässig)', () => {
+    it('A5: Preamble endet auf «vom 4. Juni 2025» OHNE eigene AS-Klammer, das folgende <main>-Klassenelement trägt nur eine FREMDE AS-Klammer ⇒ 0 Blöcke (vorher 1 Phantom-Block)', () => {
+      const html = '<div id="preamble"><p class="erlassdatum">vom 4. Juni 2025</p></div>'
+        + '<main id="maintext"><p class="erlassdatum">(AS 2025 419; SR 832.112.31)</p></main>';
+      const zitate = extrahiereHeadlineZitate(html);
+      expect(zitate.bloecke).toEqual([]);
+      expect(zitate.as).toEqual([]);
+    });
+
+    it('A5b: zwei <main>-Klassenelemente («vom 4. Juni 2025» / fremde AS-Klammer), dazwischen unklassierter Fliesstext mit einer DRITTEN, irrelevanten AS-Nennung ⇒ 0 Blöcke (vorher 1 Phantom-Block [AS 2025 419], der unklassierte Fliesstext selbst geht gar nicht erst in den Suchtext ein)', () => {
+      const html = '<main id="maintext">'
+        + '<p class="erlassdatum">vom 4. Juni 2025</p>'
+        + '<p class="verweisartkursiv">Randbemerkung ausserhalb jeder Headline-Klasse (AS 9999 1)</p>'
+        + '<p class="erlassdatum">(AS 2025 419; SR 832.112.31)</p>'
+        + '</main>';
+      const zitate = extrahiereHeadlineZitate(html);
+      expect(zitate.bloecke).toEqual([]);
+      expect(zitate.as).toEqual([]);
+    });
+  });
 });
 
 // ── formatiereBefundDetail / findeTreffendenBlock / findeNichtKonsumierteAusnahmen
