@@ -4,6 +4,7 @@
 // Fälle stehen WÖRTLICH unter dem Banner ihrer Herkunftsdatei; gestrichen wurde
 // nur ein wörtliches Rumpf-Duplikat (ROADMAP-CHRONIK.md, 31.8.2026).
 import { describe, expect, it } from 'vitest';
+import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import {
   type CommitInfo,
@@ -370,7 +371,12 @@ describe('klassifiziereDiff — Auftrags-Testmatrix', () => {
 // Compare-API gemessen 19.9.2026, base_sha...head_sha):
 //   #922  135ec0cba...06489b10c → doku
 //   #917  06489b10c...9b125ce8e → code (gestapelt HINTER #922: base = Vordermann)
-describe('klassifiziereDiff — echte Merge-Queue-Einträge (19.9.2026)', () => {
+// EHRLICH ETIKETTIERT (Auflage Gegenprüfung 19.9.2026): die zwei Fälle prüfen
+// das TS-MODELL, nicht die in ci.yml gebaute Bash-Fassung — sie dokumentieren
+// die gemessenen Dateilisten. Dass Bash und TS dieselben Muster tragen UND
+// unter echtem `grep -E` gleich entscheiden, sichern die Paritäts-Blöcke am
+// Dateiende.
+describe('klassifiziereDiff — dokumentiert die am 19.9.2026 gemessenen Dateilisten von #922/#917', () => {
   it('#922 [ROADMAP.md + fahrplaene/*.md] → doku', () => {
     expect(
       klassifiziereDiff(['ROADMAP.md', 'fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md']),
@@ -464,5 +470,96 @@ describe('Bash↔TS-Parität — CODE_FERN_RE/WERKZEUG_TROTZ_MD_RE (Bug-Check #6
 
   it('WERKZEUG_TROTZ_MD_RE (ci.yml) == WERKZEUG_TROTZ_MD_MUSTER (diff-klassieren.ts)', () => {
     expect(bashMuster('WERKZEUG_TROTZ_MD_RE')).toBe(tsMuster(WERKZEUG_TROTZ_MD_MUSTER));
+  });
+});
+
+
+// ─── Bash↔TS-Parität, Verhaltensseite (Auflage Gegenprüfung 19.9.2026) ─────────
+// Der Block darüber (#626) vergleicht die Muster TEXTLICH (`.source` gegen das
+// ERSTE Literal in ci.yml). Zwei Lücken bleiben, die dieser Block schliesst:
+//  1. ein ZWEITES, abweichendes `NAME='…'` weiter unten in ci.yml (z. B. in
+//     einem der drei Zweige pull_request/push/merge_group) bliebe unbemerkt;
+//  2. Textgleichheit beweist nicht, dass Bash-ERE und JS-Regex dasselbe
+//     ENTSCHEIDEN — das ist bisher nur angenommen. Darum klassiert eine
+//     Pfad-Stichprobe (≥ 20, mit Grenzfällen für Anker, Punkt-Escape und `$`)
+//     mit dem ECHTEN `grep -E` gegen das ci.yml-Literal und mit den TS-Mustern;
+//     die Treffermengen müssen gleich sein.
+// Vergleichsform bewusst BEIDES statt nur eines: `.source` ist die strengere
+// Drift-Sonde (jedes Zeichen), die Stichprobe die einzige, die das gebaute
+// Werkzeug (grep -E) wirklich ausführt. §6.7-Rot-Beweis 19.9.2026: `^docs/` →
+// `docs/` in ci.yml ⇒ Stichprobe rot an `src/docs/x.ts`; zweites abweichendes
+// Literal ⇒ Fall 1 rot (der #626-Block bleibt dabei GRÜN).
+describe('Bash↔TS-Parität — alle Literale, echtes grep -E, drei Zweige (19.9.2026)', () => {
+  const ciYml = readFileSync('.github/workflows/ci.yml', 'utf8');
+
+  function alleLiterale(name: string): string[] {
+    return [...ciYml.matchAll(new RegExp(`^\\s*${name}='(.*)'\\s*$`, 'gm'))].map((t) => t[1]);
+  }
+
+  const STICHPROBE = [
+    'ROADMAP.md',
+    'fahrplaene/FAHRPLAN-X.md',
+    'README.mdx', // `\.md$`: Endanker
+    'notizen/amd', // `\.md$`: Punkt ist escaped
+    'src/x.md.ts',
+    'a.md/b.ts', // Verzeichnis namens *.md
+    'src/App.tsx',
+    'src/lib/x.ts',
+    'src/docs/x.ts', // `^docs/`: Anfangsanker
+    'scripts/plan/x.ts',
+    'scripts/planung/x.ts', // `^scripts/plan/`: Schrägstrich gehört zum Muster
+    'scripts/cowork/y.ts',
+    'scripts/check-perf-budget.ts',
+    '.claude/agents/lex-bau.md',
+    '.claude/settings.json',
+    'xclaude/a.ts', // `^\.claude/`: Punkt ist escaped
+    'docs/x.md',
+    'docs/token-oekonomie/dispatch-template.md',
+    'docs/token-oekonomie/dispatch-template.md.bak', // `$` im Werkzeug-Muster
+    'docs/token-oekonomie/dispatch-templateXmd', // Punkt-Escape im Werkzeug-Muster
+    'bibliothek/INDEX.md',
+    'messwerte/a.json',
+    'archiv/alt.ts',
+    'package.json',
+    'e2e/a.e2e.ts',
+    '.github/workflows/ci.yml',
+    'public/normtext/or.json',
+  ];
+
+  function grepTreffer(ere: string): string[] {
+    try {
+      const aus = execFileSync('grep', ['-E', ere], { input: STICHPROBE.join('\n') + '\n' });
+      return aus.toString('utf8').split('\n').filter(Boolean);
+    } catch (e) {
+      if ((e as { status?: number }).status === 1) return []; // grep: kein Treffer
+      throw e;
+    }
+  }
+
+  it.each([
+    ['CODE_FERN_RE', CODE_FERNE_MUSTER],
+    ['WERKZEUG_TROTZ_MD_RE', WERKZEUG_TROTZ_MD_MUSTER],
+  ] as const)('%s: jedes Literal in ci.yml identisch, grep -E == TS auf der Stichprobe', (name, ts) => {
+    const literale = alleLiterale(name);
+    expect(literale.length).toBeGreaterThanOrEqual(1);
+    expect(new Set(literale).size).toBe(1);
+    const viaTs = STICHPROBE.filter((d) => ts.some((re) => re.test(d)));
+    expect(grepTreffer(literale[0])).toEqual(viaTs);
+    // Nicht-leer und nicht-alles: sonst wäre die Stichprobe kein Beweis.
+    expect(viaTs.length).toBeGreaterThan(0);
+    expect(viaTs.length).toBeLessThan(STICHPROBE.length);
+  });
+
+  it('alle drei Zweige (pr/push/mg) werten dieselben zwei grep-Bedingungen aus', () => {
+    const doku = [
+      ...ciYml.matchAll(
+        /if grep -qvE '\\\.md\$' (\S+) \|\| grep -qE "\$WERKZEUG_TROTZ_MD_RE" (\S+); then/g,
+      ),
+    ];
+    const fern = [...ciYml.matchAll(/if grep -qvE "\$CODE_FERN_RE" (\S+); then/g)];
+    const soll = ['mg-dateien.txt', 'pr-dateien.txt', 'push-dateien.txt'];
+    expect(doku.map((t) => t[1]).sort()).toEqual(soll);
+    expect(doku.every((t) => t[1] === t[2])).toBe(true);
+    expect(fern.map((t) => t[1]).sort()).toEqual(soll);
   });
 });

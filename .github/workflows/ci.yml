@@ -640,7 +640,8 @@ jobs:
               case "${pflicht}#${STAND}" in
                 *"#completed|success") ;;
                 "Perf-Budget"*"#completed|skipped") ;;
-                *) setze false "Pflicht-Kontext «${pflicht}» in Lauf ${ID}: '${STAND:-fehlt}' — volles Programm." ;;
+                *) STAND=${STAND//$'\n'/ + } # doppelter Kontext ⇒ Meldung einzeilig
+                   setze false "Pflicht-Kontext «${pflicht}» in Lauf ${ID}: '${STAND:-fehlt}' — volles Programm." ;;
               esac
             done
             BELEGT="${BELEGT} ${ID}"

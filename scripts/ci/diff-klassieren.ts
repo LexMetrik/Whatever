@@ -77,8 +77,15 @@ export function klassifiziereDateien(dateien: readonly string[]): DiffArt {
  * push-Zweig hatte bis 29.8.2026 eine `scripts/plan/inventar.ts`-Sonderregel für
  * `doku`, siehe Kopf-Kommentar; dort bleibt die bestehende Bash-Fallunter-
  * scheidung unverändert bestehen). Dient dem §6.7-Beweis der vier Testfälle
- * des Auftrags — ci.yml selbst ruft weiterhin nur `klassifiziereDateien` auf,
- * NACHDEM sein eigener `.md`-Kurztest den reinen Doku-Fall schon behandelt hat.
+ * des Auftrags. RICHTIGSTELLUNG 19.9.2026 (Auflage Gegenprüfung): ci.yml ruft
+ * KEINE Funktion dieser Datei auf — der `diff`-Job ist checkout-/npm-frei und
+ * trägt eine wortgleiche Shell-Fassung (CODE_FERN_RE/WERKZEUG_TROTZ_MD_RE plus
+ * dieselben zwei grep-Bedingungen in allen drei Zweigen). Die Parität beider
+ * Fassungen sichern die Vitest-Blöcke «Bash↔TS-Parität» in
+ * src/tests/steuerwerkzeuge.test.ts (Mustertext, echtes `grep -E` auf einer
+ * Pfad-Stichprobe, Zweig-Struktur). UMBENENNUNGEN: der Aufrufer muss ALTEN
+ * und NEUEN Pfad übergeben (ci.yml: `previous_filename`), diese Funktion
+ * sieht nur Pfade.
  * Seit 19.9.2026 wertet auch der `merge_group`-Zweig in ci.yml dieselbe Regel
  * je Queue-Eintrag aus (base_sha...head_sha); seine Sonderfälle (Gruppierung
  * ≠ ALLGREEN, Bereich nicht «ahead», 0/≥300 Dateien ⇒ `code`) liegen wie die
@@ -103,8 +110,9 @@ export function istReinerDokuDiff(dateien: readonly string[]): boolean {
 
 // CLI: liest eine Datei je Zeile von stdin (wie `pr-dateien.txt`/
 // `push-dateien.txt` in ci.yml), gibt `code-fern` oder `code` auf stdout aus.
-// ci.yml ruft dies NUR im bereits-nicht-rein-.md-Zweig auf — darum genügt hier
-// `klassifiziereDateien` (zwei Klassen), nicht die volle Drei-Klassen-Variante.
+// Handwerkzeug für den lokalen Nachvollzug — ci.yml ruft es NICHT auf (siehe
+// Richtigstellung bei `klassifiziereDiff`); es bildet nur den bereits-nicht-
+// rein-.md-Zweig nach, darum `klassifiziereDateien` (zwei Klassen).
 if (!process.env.VITEST) {
   const chunks: Buffer[] = [];
   process.stdin.on('data', (c: Buffer) => chunks.push(c));
