@@ -29,6 +29,16 @@ check:revisionen-rectifies ROT: 5 unbelegte/veraltete Abweichung(en):
   - VZAE https://fedlex.data.admin.ch/eli/oc/2026/170 (abweichend): Text nennt ∅ (SR ∅) — rectifies-Ziel https://fedlex.data.admin.ch/eli/cc/2007/759 (SR 142.201).
 ```
 
+**Zählgrösse sauber (Nachzug R2b, F6):** die Klassenzeile zeigt `"abweichend":7`, die ROT-Zeile
+nennt 5 — kein Widerspruch, zwei verschiedene Grössen. 7 ist die volle `abweichend`-Klasse
+(alle Kanten, deren Text eine andere Fundstelle nennt als das rectifies-Ziel); davon sind SKV
+(oc-2025-686) und AIG (oc-2025-342) bereits durch bestehende Ausnahmeliste-Einträge grün — die
+verbleibenden 5 (KLV, KRK, LRV, OR, VZAE) sind ROT, weil ihnen noch kein (gültiger)
+Ausnahmeliste-Eintrag entspricht. Nach dem Nachzug R2b sind KRK/OR/VZAE Parser-Fixes
+(`uebereinstimmend`), LRV und KLV vierter/dritter Ausnahme-Eintrag — die `abweichend`-Klasse
+bleibt bei 4 (SKV, AIG, LRV, KLV), alle vier durch die Ausnahmeliste konsumiert (s. `npm run
+check:revisionen-rectifies`-Lauf am Ende dieses Dossiers).
+
 KLV war im Auftrag NICHT genannt (§7-Abweichung, unten dokumentiert).
 
 ## Drei Parser-Lücken (KRK/OR/VZAE) — je live an genau einem Fall belegt
@@ -124,10 +134,36 @@ Fehlerklasse tritt NICHT systematisch auf): `oc/2026/181`, `oc/2023/257`, `oc/20
 
 Das im Auftrag genannte Beispiel «(AS 2015 5699, 2022; SR …)» hat unter den 62 zum
 Messzeitpunkt ladbaren Filestore-HTML KEIN Gegenstück; der einzige echte Mehrfach-Treffer ist
-VTS/oc-2025-691 (AS 2025 646, 665 — belegt derselbe Jahrgang). Die amtliche AS-Zitierkonvention
-trägt immer genau einen Jahrgang pro Klammer; ein zweiter Jahrgang wird stets mit eigenem
-«AS `<Jahr>`» wiederholt, nie als nackte Zahl nach Komma. Kein Fix ohne Beleg einer echten
-Fehlmessung (§7) — offener Beobachtungspunkt.
+VTS/oc-2025-691 (AS 2025 646, 665 — belegt derselbe Jahrgang). **Gemessener Gegenbeleg (Nachzug
+R2b, F6):** VVEA/oc-2023-543 selbst — der Präzedenzfall für «zwei unabhängige Blöcke» — trägt
+laut Filestore-HTML ZWEI GETRENNTE Klammern, nie eine gemeinsame: «vom 4. Dezember 2015
+(AS 2015 5699; SR 814.600)» im ersten `<p class="erlassdatum">` und, in einem eigenen,
+späteren `<p class="man-template-datum-aend">`, «Änderung vom 23. Februar 2022 (AS 2022 161;
+SR 814.600)». Eine Klammer der Auftrags-Form «(AS 2015 5699, 2022; SR 814.600)» existiert damit
+amtlich nicht — die amtliche AS-Zitierkonvention trägt immer genau einen Jahrgang pro Klammer;
+ein zweiter Jahrgang wird stets mit eigenem «AS `<Jahr>`» in einer EIGENEN Klammer wiederholt,
+nie als nackte Zahl nach Komma in derselben. **Wäre** eine solche Eingabe dennoch amtlich
+aufgetaucht, ist die Phantom-Mechanik real: Gruppe 2 der Regex liest `\d+(?:\s*,\s*\d+)*` als
+weitere Nummern DESSELBEN Jahrgangs (Falle c, VTS-Fix) — «(AS 2015 5699, 2022; SR …)» würde
+also als EIN Block mit den beiden Fundstellen `AS 2015 5699` und `AS 2015 2022` (nicht
+`AS 2022 2022`!) gelesen, eine erfundene Fundstelle, die so nie existiert. Kein Fix ohne Beleg
+einer echten Fehlmessung (§7) — offener Beobachtungspunkt; ein dokumentierender Test (der
+dieses Verhalten festhält, ohne es als Bug zu werten) ist nicht angelegt, da kein amtlicher
+Fall bekannt ist, der ihn rechtfertigt.
+
+## Bekannte Grenzen des Tors (Nachzug R2b, F6)
+
+- **DE-only:** Extraktion und Klassifikation laufen ausschliesslich über die DE-Filestore-HTML
+  (`loeseBerichtigungsHtmlUrl` filtert explizit auf `LANG_DE`). Eine Abweichung, die NUR in der
+  FR- oder IT-Fassung auftritt (z. B. ein Übersetzungsfehler oder ein rectifies-Fehler, der nur
+  eine Sprachfassung betrifft), bleibt für dieses Tor unsichtbar.
+- **`FUSSNOTEN_MARKER` greift nur `#fn-`:** der Marker-Regex verlangt `href="#fn-…"`
+  (Fussnotenzeichen im Fliesstext). Ein `#fnbck-`-Anker (Rücksprung-Anker, der VOM
+  Fussnotenkörper zurück ins Fliesstext zeigt) wird nicht behandelt — das ist unschädlich,
+  weil `#fnbck-` heute ausschliesslich im bereits durch `entferneFussnotenKoerper`
+  abgeschnittenen Fussnotenkörper selbst vorkommt (nie im Preamble/Main-Teil, der in die
+  Extraktion eingeht), aber ein künftiges Fedlex-Layout, das `#fnbck-` auch ausserhalb des
+  Fussnotenkörpers verwendet, würde diesen Marker nicht abfangen.
 
 ## Status
 
