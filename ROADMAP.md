@@ -82,7 +82,7 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
      Das Lagebild liest diesen Block mechanisch (davidFragen, scripts/plan/bildDaten.ts) —
      beantwortete Fragen HIER löschen, dann verschwinden sie von der Seite (§5). -->
 
-<!-- @queue: W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·22-VERWEIS-FEDLEX, W2·5m-LESER-V3, QS-PERF, W2·5n-BUND-VOLL, W2·21-ZULIEFERER, W2·6d-VERFAHREN-RECHERCHE, W2·6d-PARLAMENT-ARTIKEL, W2·13-KANTONE-DATEN, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT, W2·14-SIGNAL, W2·6, W2·6d-BOTSCHAFT-TEXT, W2·6d-BULLETIN-VOTEN, W2·6d-VERNEHMLASSUNG-DOKUMENTE -->
+<!-- @queue: W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·22-VERWEIS-FEDLEX, W2·5m-LESER-V3, QS-PERF, W2·5n-BUND-VOLL, W2·21-ZULIEFERER, W2·6d-VERFAHREN-RECHERCHE, W2·6d-PARLAMENT-ARTIKEL, W2·13-KANTONE-DATEN, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT, W2·14-SIGNAL, W2·6, W2·6d-BOTSCHAFT-TEXT, W2·6d-BULLETIN-VOTEN, W2·6d-URSPRUNG, W2·6d-ENTSTEHUNGSNOTIZ, W2·6d-VERNEHMLASSUNG-DOKUMENTE -->
 <!-- ^ SSoT der Bau-Reihenfolge: plan:next wertet die @queue VOR der Dokumentreihenfolge aus;
      Integrität erzwingt check:plan Regel 8. Priorität ändern = NUR diese Zeile ändern.
      Ohne Queue-Eintrag entscheidet die Dokumentreihenfolge — Produkt-Felder stehen darum
@@ -347,9 +347,21 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
 
 - [ ] **Entstehung am Artikel — Bulletin-Voten Bundesrat/Kommission: Metadaten + Deep-Link** *(`W2·6d-BULLETIN-VOTEN`, 15.9.2026; Phase 3)*
   <!-- @meta id: W2·6d-BULLETIN-VOTEN · status: ready · blocker: null · dep: [W2·6d-PARLAMENT-ARTIKEL] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
-  Voten nach Funktion, Rat, Datum, Lesung mit Deep-Link ins Amtliche Bulletin; Artikel-Zuordnung
+  Voten nach Funktion, Rat, Datum, Lesung mit Deep-Link ins Amtliche Bulletin und AB-Fundstelle «AB Jahr S/N Seite» (19.9.2026); Artikel-Zuordnung
   «maschinell» mit ausgewiesener Präzision; SR-Stimmenzahlen aus dem Text. **Kein Redetext, kein Name.**
   **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 6.
+
+- [ ] **Entstehung am Artikel — Ursprung der Bestimmung (Bundesratsentwurf oder Parlament)** *(`W2·6d-URSPRUNG`, 19.9.2026; Phase 3)*
+  <!-- @meta id: W2·6d-URSPRUNG · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  «Nicht im BR-Entwurf, von Kommission SR/NR eingefügt» auch vor 2021 + Kante «Botschaft zu anderem
+  Geschäft als Material». Weg zuerst messen; nicht deterministisch ⇒ nur über die Entstehungsnotiz.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 8, §12.6.
+
+- [ ] **Entstehung am Artikel — kuratierte Entstehungsnotiz mit Bulletin-Kurzzitat** *(`W2·6d-ENTSTEHUNGSNOTIZ`, 19.9.2026; Phase 3)*
+  <!-- @meta id: W2·6d-ENTSTEHUNGSNOTIZ · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
+  Von David verfasste/freigegebene Notiz je Artikel: nur Entstehungsfakten mit Fundstelle, Kurzzitate
+  nur kuratiert, Namen von BR-Mitgliedern zulässig. Referenzfall Art. 90 Abs. 3/4 SVG; Abgrenzung vor Bau bestätigen.
+  **Detail:** [FAHRPLAN-MATERIALIEN-VERZAHNUNG.md](fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md) §12.3 Etappe 9, §12.6.
 
 - [ ] **Entstehung am Artikel — Vernehmlassungs-Dokumente als Verweise** *(`W2·6d-VERNEHMLASSUNG-DOKUMENTE`, 15.9.2026; Phase 3)*
   <!-- @meta id: W2·6d-VERNEHMLASSUNG-DOKUMENTE · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-MATERIALIEN-VERZAHNUNG.md -->
