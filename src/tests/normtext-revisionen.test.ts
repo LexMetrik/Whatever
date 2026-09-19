@@ -11,7 +11,8 @@ import { join } from 'node:path';
 import {
   ausnahmeGueltig, extrahiereHeadlineZitate, findeNichtKonsumierteAusnahmen, findeTreffendenBlock,
   formatiereBefundDetail, kanonischeTextFundstelle, klassifiziereBerichtigung,
-  NICHT_ABRUFBAR_OBERGRENZE, nichtAbrufbarUeberObergrenze, type RectifiesAusnahme,
+  loeseBerichtigungsHtmlUrl, NICHT_ABRUFBAR_OBERGRENZE, nichtAbrufbarUeberObergrenze,
+  type RectifiesAusnahme,
 } from '../../scripts/normtext/rectifies-berichtigung';
 
 // Paket 5 (W2·6-REV): reine Generator-Logik (dedupe/Sortierung/Determinismus/
@@ -747,5 +748,37 @@ describe('nichtAbrufbarUeberObergrenze — Obergrenze der nicht-abrufbar-Klasse 
     expect(NICHT_ABRUFBAR_OBERGRENZE).toBe(20);
     expect(nichtAbrufbarUeberObergrenze(20)).toBe(false);
     expect(nichtAbrufbarUeberObergrenze(21)).toBe(true);
+  });
+});
+
+// ── Nachzug R2b, F5: `loeseBerichtigungsHtmlUrl` wählte `bindings[0]` ohne `ORDER BY` —
+// bei mehr als einer ?file-Bindung wäre das nicht deterministisch (§2) gewesen. Empirisch
+// geprüft (19.9.2026, live SPARQL gegen alle 62 gecachten Kanten aus Bau- und Probe-Worktree):
+// KEIN oc liefert heute mehr als eine Bindung, die Änderung ist für den Ist-Stand
+// verhaltensneutral. Dieser Test verankert nur, dass die Query-Form die Ordnung trägt UND
+// dass eine einzelne Bindung weiterhin exakt wie zuvor durchgereicht wird.
+describe('loeseBerichtigungsHtmlUrl — deterministische Bindungsreihenfolge (Nachzug R2b, F5)', () => {
+  it('sendet eine Query mit ORDER BY ?file', async () => {
+    let gesendeteQuery = '';
+    const fakeFetch = (async (_url: unknown, init?: RequestInit) => {
+      gesendeteQuery = decodeURIComponent(String(init?.body).replace(/^query=/, ''));
+      return {
+        ok: true,
+        headers: new Headers({ 'content-type': 'application/sparql-results+json' }),
+        json: async () => ({ results: { bindings: [bind({ file: 'https://example.org/x.html' })] } }),
+      };
+    }) as unknown as typeof fetch;
+    await loeseBerichtigungsHtmlUrl('https://fedlex.data.admin.ch/eli/oc/2025/1', fakeFetch);
+    expect(gesendeteQuery).toMatch(/ORDER BY \?file/);
+  });
+
+  it('Regressions-Beweis: bei genau einer Bindung (heutiger Ist-Stand aller 62 Kanten) bleibt das Ergebnis unverändert', async () => {
+    const fakeFetch = (async () => ({
+      ok: true,
+      headers: new Headers({ 'content-type': 'application/sparql-results+json' }),
+      json: async () => ({ results: { bindings: [bind({ file: 'https://example.org/nur-eine.html' })] } }),
+    })) as unknown as typeof fetch;
+    await expect(loeseBerichtigungsHtmlUrl('https://fedlex.data.admin.ch/eli/oc/2025/1', fakeFetch))
+      .resolves.toBe('https://example.org/nur-eine.html');
   });
 });

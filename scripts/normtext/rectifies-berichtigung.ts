@@ -455,12 +455,20 @@ export function findeNichtKonsumierteAusnahmen(
  *  existiert (live beobachtet bei Alt-Berichtigungen mit nur pdf-a/docx) — dann ist der
  *  Abruf eine LÜCKE, nicht zu erraten (Skill-Falle 3). */
 export async function loeseBerichtigungsHtmlUrl(oc: string, fetchImpl: FetchImpl = fetch): Promise<string | null> {
+  // Nachzug R2b F5: `ORDER BY` statt einer unspezifizierten Bindungsreihenfolge —
+  // ohne sie war die Wahl von `bindings[0]` bei mehr als einer ?file-Bindung
+  // nicht deterministisch (§2). Empirisch geprüft (19.9.2026, live SPARQL, alle
+  // 62 gecachten Kanten aus Bau- und Probe-Worktree, RECTIFIES_CACHE=netz): KEIN
+  // oc liefert heute mehr als eine ?file-Bindung — `bindings[0]` ist mit und ohne
+  // `ORDER BY` identisch und deckt sich mit jeder Cache-Sidecar-URL. Die Änderung
+  // ist also für den heutigen Datenstand verhaltensneutral und macht das
+  // Verhalten für einen künftigen Mehrfach-Bindungs-Fall erst determiniert.
   const query = `PREFIX jolux: <http://data.legilux.public.lu/resource/ontology/jolux#>
 SELECT ?file WHERE {
   <${oc}> jolux:isRealizedBy ?expr .
   ?expr jolux:language ${LANG_DE} ; jolux:isEmbodiedBy ?manif .
   ?manif jolux:isExemplifiedBy ?file ; jolux:userFormat <https://fedlex.data.admin.ch/vocabulary/user-format/html> .
-}`;
+} ORDER BY ?file`;
   const bindings = await sparqlSelect(query, fetchImpl);
   return bindings[0]?.file?.value ?? null;
 }
