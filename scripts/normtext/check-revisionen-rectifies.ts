@@ -72,8 +72,8 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import {
   ausnahmeGueltig, extrahiereHeadlineZitate, findeNichtKonsumierteAusnahmen, formatiereBefundDetail,
-  holeBerichtigungstext, kanonischeTextFundstelle, klassifiziereBerichtigung, loeseBerichtigungsHtmlUrl,
-  NICHT_ABRUFBAR_OBERGRENZE, nichtAbrufbarUeberObergrenze,
+  formatiereStaleDetail, holeBerichtigungstext, kanonischeTextFundstelle, klassifiziereBerichtigung,
+  loeseBerichtigungsHtmlUrl, NICHT_ABRUFBAR_OBERGRENZE, nichtAbrufbarUeberObergrenze,
   type RectifiesAusnahme, type RectifiesKlasse,
 } from './rectifies-berichtigung.ts';
 import { holeMitCache, modusAusUmgebung } from './rectifies-cache.ts';
@@ -163,10 +163,9 @@ async function main(): Promise<void> {
         });
         if (!gueltig) {
           befund.klasse = 'stale';
-          befund.detail = `Ausnahmeliste-Eintrag seit ${ausnahme.seit} passt NICHT MEHR zum frischen Mass `
-            + `(erwartet Ziel ${ausnahme.erwartetesZielOc} / Fundstelle ${ausnahme.erwarteteZielFundstelle ?? '∅'} / `
-            + `Text ${ausnahme.erwarteteTextFundstelle ?? '∅'}; aktuell Ziel ${k.info.zielOc} / `
-            + `Fundstelle ${k.info.zielFundstelle ?? '∅'} / Text ${befund.textFundstelle ?? '∅'}) — neu einordnen.`;
+          befund.detail = formatiereStaleDetail(ausnahme, {
+            zielOc: k.info.zielOc, zielFundstelle: k.info.zielFundstelle, textFundstelle: befund.textFundstelle,
+          });
         }
       }
     }

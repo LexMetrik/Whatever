@@ -348,6 +348,25 @@ export function ausnahmeGueltig(
     && ausnahme.erwarteteTextFundstelle === (aktuell.textFundstelle ?? '');
 }
 
+/** Baut die Stale-Meldung für `check-revisionen-rectifies.ts` (Nachzug R2c, C5): ein FEHLENDES
+ *  Feld `erwarteteTextFundstelle` im Ausnahme-Eintrag (nie mit einer Text-Fundstelle belegt,
+ *  s. `ausnahmeGueltig`) ist etwas ANDERES als eine leer GEMESSENE aktuelle Text-Fundstelle
+ *  (`aktuell.textFundstelle === undefined`, 0-Treffer-Fall) — die Erst-Fassung zeigte beide
+ *  Ursachen identisch als «Text ∅» an und liess sie in der Meldung nicht unterscheiden. Die
+ *  eigene Formulierung macht das fehlende Feld sofort erkennbar. */
+export function formatiereStaleDetail(
+  ausnahme: Pick<RectifiesAusnahme, 'seit' | 'erwartetesZielOc' | 'erwarteteZielFundstelle' | 'erwarteteTextFundstelle'>,
+  aktuell: { zielOc?: string; zielFundstelle?: string; textFundstelle?: string },
+): string {
+  const erwarteteTextAnzeige = ausnahme.erwarteteTextFundstelle === undefined
+    ? 'Feld erwarteteTextFundstelle fehlt im Ausnahme-Eintrag'
+    : `Text ${ausnahme.erwarteteTextFundstelle}`;
+  return `Ausnahmeliste-Eintrag seit ${ausnahme.seit} passt NICHT MEHR zum frischen Mass `
+    + `(erwartet Ziel ${ausnahme.erwartetesZielOc} / Fundstelle ${ausnahme.erwarteteZielFundstelle ?? '∅'} / `
+    + `${erwarteteTextAnzeige}; aktuell Ziel ${aktuell.zielOc} / `
+    + `Fundstelle ${aktuell.zielFundstelle ?? '∅'} / Text ${aktuell.textFundstelle ?? '∅'}) — neu einordnen.`;
+}
+
 /** Trifft dieser EINE Block das rectifies-Ziel? Fundstelle-Vergleich, oder — wenn
  *  `zielFundstelle` nicht ableitbar war — SR-Vergleich desselben Blocks. Geteilt zwischen
  *  `klassifiziereBerichtigung` und `findeTreffendenBlock` (Runde 2, Auflage B5): beide dürfen

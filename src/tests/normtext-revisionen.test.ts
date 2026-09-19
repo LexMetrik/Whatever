@@ -10,7 +10,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   ausnahmeGueltig, extrahiereHeadlineZitate, findeNichtKonsumierteAusnahmen, findeTreffendenBlock,
-  formatiereBefundDetail, kanonischeTextFundstelle, klassifiziereBerichtigung,
+  formatiereBefundDetail, formatiereStaleDetail, kanonischeTextFundstelle, klassifiziereBerichtigung,
   loeseBerichtigungsHtmlUrl, NICHT_ABRUFBAR_OBERGRENZE, nichtAbrufbarUeberObergrenze,
   type RectifiesAusnahme,
 } from '../../scripts/normtext/rectifies-berichtigung';
@@ -721,6 +721,36 @@ describe('ausnahmeGueltig — eine Ausnahme gilt nur für das PAAR, das sie ursp
     expect(ausnahmeGueltig(ohneText, {
       zielOc: skv.erwartetesZielOc, zielFundstelle: skv.erwarteteZielFundstelle, textFundstelle: undefined,
     })).toBe(false);
+  });
+});
+
+// ── Nachzug R2c, C5 (Rot-Beweis, §6.7): die Stale-Meldung in check-revisionen-rectifies.ts
+// zeigte bisher `ausnahme.erwarteteTextFundstelle ?? '∅'` — ein FEHLENDES Feld (Eintrag nie mit
+// einer Text-Fundstelle belegt) und eine leer GEMESSENE aktuelle Text-Fundstelle (0-Treffer-
+// Fall) erschienen damit BEIDE identisch als «Text ∅», ununterscheidbar in der Meldung selbst.
+describe('formatiereStaleDetail — eigene Formulierung für ein FEHLENDES erwarteteTextFundstelle-Feld (Nachzug R2c, C5)', () => {
+  const basis = { seit: '2026-09-19', erwartetesZielOc: 'https://fedlex.data.admin.ch/eli/oc/2025/648', erwarteteZielFundstelle: 'AS 2025 648' };
+
+  it('Rot-Beweis der Altlücke: die alte Formel `?? \'∅\'` liefert für ein FEHLENDES Feld dieselbe Anzeige wie für eine leer gemessene aktuelle Fundstelle — ununterscheidbar', () => {
+    const fehlendesFeld: string | undefined = (basis as { erwarteteTextFundstelle?: string }).erwarteteTextFundstelle;
+    const leereMessung: string | undefined = undefined;
+    const alteFormelFehlendesFeld = `Text ${fehlendesFeld ?? '∅'}`;
+    const alteFormelLeereMessung = `Text ${leereMessung ?? '∅'}`;
+    expect(alteFormelFehlendesFeld).toBe(alteFormelLeereMessung);
+    expect(alteFormelFehlendesFeld).toBe('Text ∅');
+  });
+
+  it('FEHLENDES Feld ⇒ eigene Formulierung statt «Text ∅» (aktuelle Text-Fundstelle hier bewusst GEMESSEN, nicht leer, damit die Assertion nicht mit dem AKTUELL-Teil der Meldung kollidiert)', () => {
+    const detail = formatiereStaleDetail(basis, { zielOc: 'https://fedlex.data.admin.ch/eli/oc/2099/999', zielFundstelle: undefined, textFundstelle: 'AS 2030 1' });
+    expect(detail).toContain('Feld erwarteteTextFundstelle fehlt im Ausnahme-Eintrag');
+    expect(detail).not.toContain('Text ∅');
+  });
+
+  it('GESETZTES Feld bleibt in der bisherigen Form («Text <Wert>») — kein Verhaltensbruch für die drei bestehenden Einträge', () => {
+    const mitText = { ...basis, erwarteteTextFundstelle: 'AS 2025 644' };
+    const detail = formatiereStaleDetail(mitText, { zielOc: 'https://fedlex.data.admin.ch/eli/oc/2099/999', zielFundstelle: undefined, textFundstelle: 'AS 2030 1' });
+    expect(detail).toContain('Text AS 2025 644');
+    expect(detail).not.toContain('fehlt im Ausnahme-Eintrag');
   });
 });
 
