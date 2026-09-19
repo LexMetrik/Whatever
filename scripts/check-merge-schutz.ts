@@ -9,7 +9,7 @@
 // nichts neu klassifiziert, nur ein anderer Diff-Bereich eingespeist.
 import { execFileSync } from 'node:child_process';
 import { behalten } from './gegenpruefung/kern';
-import { leseGegenpruefungAusRohLog, pruefeVerdiktForm } from './gegenpruefung/squash-trailer';
+import { leseGegenpruefungAusRohLog, pruefeVerdiktForm, vereinigeVerdikte } from './gegenpruefung/squash-trailer';
 
 const BASIS = process.env.MERGE_SCHUTZ_BASIS ?? 'origin/main';
 // KOPF = Pruef-Spitze (Default HEAD). Der Merge-Hook setzt hier den
@@ -52,12 +52,16 @@ if (risiko.length === 0) {
 }
 
 // Trailer im committeten Bereich: `%(trailers)` (echte Trailer-Zeilen) plus
-// die tolerante Squash-Lesung (Anlass/Details: squash-trailer.ts), vereinigt —
-// Duplikate egal, die Form-/Register-Prüfung danach ist robust dagegen.
+// die tolerante Squash-Lesung (Anlass/Details: squash-trailer.ts), VEREINIGT
+// UND DEDUPLIZIERT (A1, PR #925 Nachzug): bei einem normalen (Nicht-Queue-)
+// Commit finden beide Lesungen denselben Wert — ohne Deduplizierung zählt die
+// Grün-Meldung unten das Verdikt doppelt. vereinigeVerdikte() macht das als
+// reine, separat getestete Funktion (stabile Reihenfolge, erster Treffer
+// gewinnt).
 const trailerKlassisch = git(['log', '--format=%(trailers:key=Gegenpruefung,valueonly)', `${basis}..${KOPF}`])
   .split('\n').map((z) => z.trim()).filter(Boolean);
 const rohLog = git(['log', '--format=%B%x00', `${basis}..${KOPF}`]);
-const trailer = [...trailerKlassisch, ...leseGegenpruefungAusRohLog(rohLog)];
+const trailer = vereinigeVerdikte(trailerKlassisch, leseGegenpruefungAusRohLog(rohLog));
 
 const liste = risiko.slice(0, 12).map((p) => `    ${p}`).join('\n')
   + (risiko.length > 12 ? `\n    … und ${risiko.length - 12} weitere` : '');

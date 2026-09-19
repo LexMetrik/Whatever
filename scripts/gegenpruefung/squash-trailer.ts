@@ -28,9 +28,19 @@
 const CO_AUTHOR_ZEILE = /^co-authored-by:\s*\S.*$/i;
 const STRICH_ZEILE = /^-{5,}$/;
 
-/** Message in Zeilen zerlegen; eine abschliessende Leerzeile (Trailing-\n) zählt nicht als Inhalt. */
+/**
+ * Message in Zeilen zerlegen; eine abschliessende Leerzeile (Trailing-\n)
+ * zählt nicht als Inhalt. Jede Zeile wird vor dem Vergleich RECHTS getrimmt
+ * (Spec-Zusage H2, PR #925 Nachzug): `trimEnd()` entfernt sowohl ein
+ * Whitespace-Rest ('   ' als «Leerzeile mit Space») als auch ein
+ * abschliessendes CRLF-`\r` — beide Formen verhalten sich damit SYMMETRISCH
+ * zur sauberen Eingabe (reines '\n', echte Leerzeile). Ohne das würde eine
+ * Leerzeile mit einem Space, oder ein CRLF-Export, an jeder `=== ''`-Prüfung
+ * (Absatz-/Co-Author-Grenzen unten) vorbeirutschen und die Erkennung
+ * stillschweigend anders behandeln als bei sauberem Input.
+ */
 function zeilen(text: string): string[] {
-  const roh = text.split('\n');
+  const roh = text.split('\n').map((z) => z.trimEnd());
   if (roh.length > 0 && roh[roh.length - 1] === '') roh.pop();
   return roh;
 }
@@ -74,6 +84,21 @@ function letzterAbsatz(eingabe: string[]): string[] {
  * Leerzeichen an die Vorzeile gehängt (GitHub-72-Zeichen-Umbruch rückgängig
  * machen). Beginnt schon die erste Zeile ohne Trailer-Kopf, ist der Absatz
  * kein Trailer-Block (Fliesstext) — das ruft der Aufrufer separat ab.
+ *
+ * BEKANNTE AUSWEITUNG (H1, PR #925 Nachzug, bewusst akzeptiert): jede Zeile
+ * OHNE Trailer-Kopf wird gefaltet — ein Schlussabsatz, dessen ERSTE Zeile ein
+ * 'Wort: '-Muster trägt, darf danach also auch Prosa-Zeilen enthalten und
+ * liefert trotzdem ein Verdikt (git selbst verlangt dafür entweder Einrückung
+ * oder bricht die Trailer-Erkennung ab >25 % Nicht-Trailer-Zeilen ab — diese
+ * Heuristik hier tut das nicht). Warum akzeptiert: der Trailer bleibt ohnehin
+ * SELBST-ATTESTIERT (siehe Bindungs-Kommentar in check-merge-schutz.ts) —
+ * die eigentliche Bindung ist der Register-Zuwachs, nicht die Formstrenge
+ * dieser Faltung. Eine strengere 72-Zeichen-Break-Heuristik scheitert an der
+ * echten Fixture (eine umgebrochene Zeile mit nur 31 Zeichen, weil das
+ * Folgewort 62 Zeichen lang ist — kein fester Umbruchpunkt). Empirische Basis:
+ * n = 2 gemessene Queue-Commits (41ae4ee99, 9b125ce8e). Ändert GitHub die
+ * Squash-Form, wird check:merge-schutz wieder ROT (fail-closed, kein stiller
+ * Blindflug) statt die neue Form fälschlich zu akzeptieren.
  */
 function entumbrich(absatz: string[]): string[] {
   const out: string[] = [];
@@ -126,6 +151,27 @@ export function leseGegenpruefungAusRohLog(rohNulGetrennt: string): string[] {
     .flatMap((m) => leseGegenpruefungAusSquash(m));
 }
 
+/**
+ * Vereinigt die klassischen `%(trailers:key=Gegenpruefung,valueonly)`-Treffer
+ * mit den zusätzlichen Squash-Treffern (leseGegenpruefungAusRohLog) und
+ * dedupliziert dabei (A1, PR #925 Nachzug, Opus-Gegenprüfung Runde 1): bei
+ * normalen (Nicht-Queue-)Commits liefern beide Lesungen denselben Wert — ohne
+ * Deduplizierung listet die Rot-Meldung einen Mangel doppelt, und die
+ * Grün-Meldung zählt «2 formal taugliche(s) Verdikt(e)» statt der tatsächlich
+ * einen. Reihenfolge bleibt STABIL (erster Treffer gewinnt) — reine
+ * Funktion, kein git/fs.
+ */
+export function vereinigeVerdikte(klassisch: string[], ausSquash: string[]): string[] {
+  const gesehen = new Set<string>();
+  const ergebnis: string[] = [];
+  for (const wert of [...klassisch, ...ausSquash]) {
+    if (gesehen.has(wert)) continue;
+    gesehen.add(wert);
+    ergebnis.push(wert);
+  }
+  return ergebnis;
+}
+
 // ── Form-Prüfung des Verdikts (unverändert aus check-merge-schutz.ts hierher
 // verschoben, Verhalten byte-gleich — check-merge-schutz.ts importiert von
 // hier, damit der Test sie ohne Skript-Nebenwirkungen prüfen kann) ─────────
@@ -133,6 +179,13 @@ export function leseGegenpruefungAusRohLog(rohNulGetrennt: string): string[] {
 // SABOTAGE-BEFUND 20.7.2026: der alte Filter `!/^n\/a\b/i.test(t)` prüfte nur,
 // dass der Wert nicht mit «n/a» beginnt — ein leerer Commit mit Trailer
 // `Gegenpruefung: x` machte das Tor GRÜN (F2a: gegen eigene Ladung validiert).
+//
+// Jetzt braucht das Verdikt eine PRÜFBARE FORM — Verdikt-Wort aus
+// geschlossener Menge, Zuschreibung (Modell + Linsen), Befund-Text:
+//     bestanden (Opus 4.8, Extraktion/Identitaet) — 13 Stichproben …
+// (H3, PR #925 Nachzug: Begründung wörtlich aus Commit 135ec0cba hierher
+// zurückgeholt — sie ging beim Verschieben dieser Form-Prüfung aus
+// check-merge-schutz.ts in dieses Modul verloren.)
 export const VERDIKT = /^(bestanden|behoben)\b/i;
 export const ZUSCHREIBUNG = /\(([^)]{5,})\)/; // (Modell, Linsen)
 export const BEFUNDE = /[—–-]{1,2}\s*(\S[\s\S]{14,})$/; // — <Befunde>, ≥15 Zeichen
