@@ -248,7 +248,15 @@ export function extrahiereStruktur(html: string): Record<string, ArtikelStruktur
               gliederung: context
                 .filter((c) => c.kind === 'g')
                 .map((c) => ({ ebene: c.ebene, label: c.label, ...(c.eId ? { eId: c.eId } : {}) })),
-              marginalie: context.filter((c) => c.kind === 'm').map((c) => c.label),
+              // W2·5m-LESER-V3: ein Randtitel gilt nur bis zur ersten amtlichen
+              // Gliederungsebene, die er umschliesst. Fedlex verpackt im SVG den
+              // ganzen III. Titel in `tit_3/lvl_u1` «Grundregel» (= Randtitel von
+              // Art. 26), die Abschnitte liegen darin; ohne diese Schranke erbten
+              // Art. 27–57 «Grundregel». Massgeblich sind darum nur die Marginalien
+              // NACH der innersten Gliederungsebene (Test: normtext-struktur-
+              // randtitel-container.test.ts).
+              marginalie: context.slice(context.map((c) => c.kind).lastIndexOf('g') + 1)
+                .filter((c) => c.kind === 'm').map((c) => c.label),
               ...(rfn.length ? { randtitelFn: rfn } : {}),
             };
           }
