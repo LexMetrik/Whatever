@@ -105,10 +105,10 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
 ## 5 · Commit-Trailer
 
 - Schritt-Commit: `Roadmap: <ID>`.
-- **Auto-Buchung (seit 14.8.2026):** trägt der Squash-Commit nach `main`
-  zusätzlich `Roadmap-Status: done|ready|parked(<blocker-token>)`, bucht der
-  Workflow `plan-buchung.yml` den Status automatisch nach — der manuelle
-  `plan:set`-Commit nach der Landung entfällt dann.
+- **Schritt-Status fährt im PR mit (seit 19.9.2026, Merge-Queue):**
+  `plan:set -- <ID> status=…` im eigenen PR, `Roadmap-Status:` im PR-Body
+  weglassen — `main` nimmt keine Direkt-Pushes mehr, auf die Auto-Buchung
+  (`plan-buchung.yml`) ist kein Verlass. Massgeblich: Skill `landung` Ziff. 9.
 - Risiko-Pfad zusätzlich: `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) —
   <Befunde>` bzw. `Gegenpruefung: n/a — reine Prüflogik`.
 - **Block-Form (vier Vorfälle 26.7./31.7.2026, aus Memory hierher überführt
@@ -206,8 +206,8 @@ Station A/B/E).
 verifizieren (eine Nachricht weckt auch einen beendeten Agenten mit vollem
 Kontext); (b) vor dem Editieren von Steuer-Dateien auf main prüfen, ob ein
 laufender Agent dieselben Dateien auf einem Branch hat; (c) keine
-main-Commits bei offener eigener Landekette (macht wartende PRs BEHIND, je
-Nachzug ein CI-Lauf); (d) keine Orchestrator-COMMITS in einem Worktree,
+main-Commits bei offener eigener Landekette (seit 19.9.2026 ohnehin
+unmöglich: main nimmt nur die Merge-Queue, Skill `landung`); (d) keine Orchestrator-COMMITS in einem Worktree,
 solange ein Bau-Agent darin baut (geteilter git-Index — `git add -A` des
 Agenten nimmt fremde Edits mit); Datei-Edits ohne git sind das Maximum. **(e) Peer-Session-Sonde (F6, 3. Beleg 6.9.2026):** vor dem ersten Dispatch auf ein `feld:` die laufenden Peer-Sessions prüfen (ListAgents bzw. `list_sessions`) und bei einer aktiven Session auf demselben Feld ZUERST per `send_message` koordinieren, wer den Zweig hält — eine Übergabe-Datei, die «gelandet» sagt, ersetzt die Sonde nicht (W2·24: Übergabe behauptete die Landung, der Zweig lag noch bei der Vorgänger-Session; drei Fixer mussten gestoppt werden). **(f) Prüfer-Worktree-Sperre (12.9.2026, PR #828):** nie einen Fixer-Agenten in einen Worktree schicken, in dem eine Gegenprüfung noch läuft — der Prüfer meldete dort fremdes, uncommittetes WIP (§12/§14.7); ein Worktree geht an einen Fixer erst nach Abschluss der laufenden Prüfrunde, oder der Fixer bekommt einen eigenen, dritten Worktree.
 

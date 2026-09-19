@@ -10,7 +10,7 @@ Vorgehen: `ROADMAP.md` (früher HANDLUNGSPLAN.md) + `STRATEGIE-PLATTFORM.md`.
 | Was | Wo | Zugang |
 |---|---|---|
 | Produktion | https://lexmetrik.vercel.app (Vercel-Projekt `lexmetrik`; `legal-calc.vercel.app` = 308-Redirect) | Vercel-Konto David; CLI-Token in `~/Library/Application Support/com.vercel.cli/auth.json` |
-| Repository | github.com/davidgraf95-sys/LegalCalc | GitHub-Konto David |
+| Repository | github.com/LexMetrik/Whatever (GitHub-Organisation **LexMetrik**, öffentlich, Plan Free; der alte Pfad `davidgraf95-sys/Whatever` leitet weiter) — **muss öffentlich bleiben**: privat kosten die CI-Minuten rund 467 $/Monat (mit vollem Sparplan noch ~273 $), öffentliche Repos haben sie gratis (`bibliothek/betrieb/ci-minuten-sparplan-2026-09-08.md`, 8.9.2026) | GitHub-Konto David (Org-Inhaber) |
 | Domain | **lexmetrik.ch — NOCH NICHT registriert** (Entscheid offen, STRATEGIE F1.1) | — |
 | CI | GitHub Actions (`.github/workflows/ci.yml` je Push · `normen-monitor.yml` wöchentlich Mo 05:17 UTC) | läuft kontolos mit dem Repo |
 | Zahlung/Backend | existiert nicht (bewusst — vollständig clientseitige SPA) | — |

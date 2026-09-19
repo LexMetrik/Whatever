@@ -1,7 +1,7 @@
 import { memo, useMemo, type KeyboardEvent, type MouseEvent, type ReactNode } from 'react';
 import { romanFrei, margLabel } from '../helpers';
 import { merkeRuecksprungVonDom } from '../scrollAnker';
-import { zeileIstOffen, artikelKinderOffen, findeMarke, type GliederungsKnoten } from '../gliederungsModell';
+import { zeilenAnsicht, findeMarke, type GliederungsKnoten } from '../gliederungsModell';
 import { vollText, berechneKlappKontext } from './klappNamen';
 
 // ═══ Gliederungsbaum der Seitenleiste (Zone B) ═══════════════════════════════
@@ -254,14 +254,10 @@ const Zeile = memo(function Zeile({
   k, erster, aktivPfad, markeId, klappKontext, offen, startOffeneTiefe, onToggle, onSprung, onSprungArtikel,
   titelKlapptAuf = false, stimmeGedaempft = false,
 }: ZeilenProps): ReactNode {
-  // F1 (§9-Bug-Check 13.8.2026): An einem gemischten Knoten (T8) hängen
-  // Sektions- und Artikel-Kinder am selben Klapp-Zustand, dürfen aber nicht
-  // demselben START-Zustand folgen — Sektionen starten bei kleinen Bäumen
-  // offen, Artikel nie. Welche der beiden Regeln greift, entscheidet das
-  // Modell (`artikelKinderOffen`); hier wird sie nur angewandt (§3).
-  const auf = zeileIstOffen(k, offen, startOffeneTiefe);
-  const artikelAuf = artikelKinderOffen(k, offen, startOffeneTiefe);
-  const sichtbareKinder = auf ? k.kinder.filter((kk) => kk.art !== 'artikel' || artikelAuf) : [];
+  // Was die Zeile zeigt und ob sie als offen gilt, entscheidet das Modell
+  // (`zeilenAnsicht`, §3) — «offen» heisst seit W2·5m-LESER-V3: man sieht
+  // Kinder. Eine Zeile mit zugeklappter Artikel-Ebene meldet sich ZU.
+  const { auf, sichtbareKinder } = zeilenAnsicht(k, offen, startOffeneTiefe);
   // `hatKinder` steuert Chevron und `aria-expanded`. Massgeblich ist, was die
   // Zeile ÖFFNEN KANN, nicht was gerade zu sehen ist — sonst verschwände der
   // Knopf an einer Zeile, die nur Artikel trägt, und die Ebene wäre unerreichbar.
@@ -337,10 +333,10 @@ const Zeile = memo(function Zeile({
               // sichtbare Zustand `auf` geht mit, damit auch eine Zeile ohne
               // Eintrag in `tocBaum` (Start-offen per Modell) mit dem ersten
               // Klick zugeht.
-              // F1: der sichtbare Zustand ist das, was WIRKLICH offen steht —
-              // an einem gemischten Knoten mit noch zugeklappter Artikel-Ebene
-              // meldet die Zeile darum `true` (die Sektionen stehen offen), und
-              // der erste Klick schliesst sie. Der zweite öffnet beides.
+              // W2·5m-LESER-V3 (Befund David 19.9.2026): `auf` ist das, was
+              // WIRKLICH zu sehen ist (`zeilenAnsicht`). Vorher meldete eine
+              // Zeile mit zugeklappter Artikel-Ebene `true` bei null Kindern,
+              // und der erste Klick klappte sie zu; jetzt öffnet er sie ganz.
               onClick={() => onToggle(k.ids, auf)}
               // KONSTANTER, EINDEUTIGER Name (QS-UI Teilpass (e), 5.9.2026).
               // Vorher: `auf ? 'Einklappen' : 'Aufklappen'` — zwei Fehler in

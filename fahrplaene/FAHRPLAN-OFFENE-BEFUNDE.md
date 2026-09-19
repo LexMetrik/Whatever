@@ -204,6 +204,21 @@ Die Liste steht wörtlich so, wie sie am 29.8.2026 in ROADMAP.md stand:
 
   **Nachtrag 8.9.2026 (Messung Orchestrator, drei Wächter-Läufe im eigenen PR #779):** die Browser-Suite flackert breit — 6 verschiedene Specs nur im Retry grün, je Lauf andere: `leser-r1-r2.e2e.ts`, `w224-reiterverhalten.e2e.ts`, `leser-v3-blatt.e2e.ts`, `leser-v3-suche-ohne-gliederung.e2e.ts`, `w224-r11-reiterleiste.e2e.ts`, `leser-v3-panel-zaehler.e2e.ts`. Ein harter Wächter mit Ausnahmeliste kann so nicht landen, ohne dass die Liste jeden Lauf wächst. **Entscheid (abweichend von «sofort rot», offengelegt):** Melde-Modus über `e2e/flake-modus.json` — bis dahin nur `::warning`/Exit 0, danach hart wie oben. **Stichtag hart 22.9.2026.** Auftrag: Wurzel je Spec messen (Race/Timing), nicht Ausnahmen sammeln.
 
+  **Nachtrag 19.9.2026 (PR #917, Lauf 35445618485) — Spur mit fester Zeichenzahl:**
+  `e2e/leser-r1-r2.e2e.ts:420` (S8 «Normtext-DOM unverändert») war im PR-Lauf **auch im
+  automatischen Retry rot**; `gh run rerun --failed` lief danach grün. Die verglichene
+  DOM-Signatur weicht in vielen Artikeln um **genau +27 Zeichen** ab — art-2 2989→3016,
+  art-7 1006→1033, art-8 1154→1181, art-10_a 444→471, art-12 1819→1846, art-15 625→652.
+  Ein konstanter Betrag über verschiedene Artikel ist kein Timing-Zufall, sondern ein
+  nachladendes Element fester Länge in Artikeln mit einem gemeinsamen Merkmal; naheliegend
+  ist, dass der Test den `vorher`-Wert nimmt, bevor dieses Element steht. **Das ist eine
+  Hypothese, kein Beleg** — das Merkmal ist nicht bestimmt und das Element nicht benannt.
+  Zwei weitere Specs waren im selben Lauf nur im Retry grün: `e2e/rechtsprechung.e2e.ts:107`
+  und `e2e/uinav-j-rechtsprechung.e2e.ts:30`.
+  **Warum das seit 19.9.2026 schwerer wiegt:** unter der Merge-Queue prüft jeder Eintrag alle
+  vier Required-Checks noch einmal; ein Flake wirft den Eintrag aus der Warteschlange und
+  lässt die Nachfolger neu bauen — der Schaden ist nicht mehr ein Retry, sondern eine Kette.
+
   **Wurzel gefunden 19.9.2026 — `leser-r1-r2.e2e.ts` «Ohne aktive Suche kein Zähler …» (1 von 2 Ausnahmen erledigt).** Anlass: der Fall fiel am 19.9.2026 zweimal HART (auch im Retry rot) — Läufe 35445618485 (PR #917) und 35446174293 (PR #920), je Shard 4/4; seit der Merge-Queue wirft ein solcher Fehlschlag Queue-Einträge und baut Nachfolger neu.
   *Befund, gemessen:* in genau sechs Artikeln wuchs die Wortlaut-Signatur um exakt 27 Zeichen (art-2 2989→3016 · art-7 1006→1033 · art-8 1154→1181 · art-10_a 444→471 · art-12 1819→1846 · art-15 625→652 — byte-gleich mit dem CI-Log). Der Zusatz ist «FassungGilt seit TT.MM.JJJJ» aus `ArtikelHistorieZeile` (`src/pages/gesetz-leser/parts/ArtikelHistorie.tsx`) im Druck-Wrapper `[data-hist-druck]` (`src/pages/gesetz-leser/parts/ArtikelLeser.tsx`, `hidden print:block`). Betroffen ist genau die Artikelmenge mit Eintrag in `public/normtext/historie/BGFA.json`; der Shard wird idle geladen und trifft auf einem langsamen Runner erst NACH der `vorher`-Messung ein.
   *Urteil: TEST-Fehler, kein App-Defekt.* Der Wrapper ist am Bildschirm in jeder Vermerke-Stellung `display:none`, und der Such-Walker der App überspringt nicht gerenderte Teilbäume ohnehin (`istGerendert`, `src/pages/gesetz-leser/suchHighlight.ts`) — dort wird nie gemalt, gezählt oder hingesprungen. Die Signatur des Tests war als einzige der drei Walker-Stellen ohne `display:none`-Regel und mass damit eine Fläche, die die Suche gar nicht erreichen kann.
