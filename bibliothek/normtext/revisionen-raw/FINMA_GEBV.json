@@ -12,12 +12,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2008/749"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2009-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2008-10-15"
       },
@@ -48,12 +48,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2008/749"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2009-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2008-10-15"
       },
@@ -84,12 +84,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2008/749"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2009-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2008-10-15"
       },
@@ -120,12 +120,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2008/749"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2009-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2008-10-15"
       },
@@ -156,12 +156,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2009/224"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2009-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2009-03-25"
       },
@@ -192,12 +192,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2009/224"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2009-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2009-03-25"
       },
@@ -228,12 +228,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2009/224"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2009-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2009-03-25"
       },
@@ -264,12 +264,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2010/799"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2011-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2010-11-17"
       },
@@ -300,12 +300,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2010/799"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2011-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2010-11-17"
       },
@@ -336,12 +336,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2010/799"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2011-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2010-11-17"
       },
@@ -372,12 +372,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2012/834"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2013-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2012-11-21"
       },
@@ -408,12 +408,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2012/834"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2013-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2012-11-21"
       },
@@ -444,12 +444,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2012/834"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2013-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2012-11-21"
       },
@@ -486,5 +486,7 @@
     "2024-01-01",
     "2024-03-01",
     "2027-01-01"
-  ]
+  ],
+  "belegteOcs": [],
+  "rectifiesInfoProOc": {}
 }

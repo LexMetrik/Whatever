@@ -12,12 +12,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1965/1209_1221_1209"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1966-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1965-09-30"
       },
@@ -48,12 +48,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1965/1209_1221_1209"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1966-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1965-09-30"
       },
@@ -84,12 +84,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1965/1209_1221_1209"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1966-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1965-09-30"
       },
@@ -120,12 +120,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1965/1209_1221_1209"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1966-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1965-09-30"
       },
@@ -156,48 +156,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1972/3059_3112_2893"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1972-12-20"
       },
       "dateDoc": {
-        "type": "typed-literal",
-        "datatype": "http://www.w3.org/2001/XMLSchema#date",
-        "value": "1972-12-20"
-      },
-      "roId": {
         "type": "literal",
-        "value": "RO 1972 3112"
-      },
-      "titleDe": {
-        "type": "literal",
-        "value": "Bundesbeschluss vom 20. Dezember 1972 betreffend Überwachung der Preise, Löhne und Gewinne"
-      },
-      "titleFr": {
-        "type": "literal",
-        "value": "Arrêté fédéral du 20 décembre 1972 sur la surveillance des prix, des salaires et des bénéfices"
-      },
-      "titleIt": {
-        "type": "literal",
-        "value": "Decreto federale del 20 dicembre 1972 concernente la vigilanza su i prezzi, i salari e i profitti"
-      }
-    },
-    {
-      "sr": {
-        "type": "literal",
-        "value": "942.20"
-      },
-      "oc": {
-        "type": "uri",
-        "value": "https://fedlex.data.admin.ch/eli/oc/1972/3059_3112_2893"
-      },
-      "dateForce": {
-        "type": "typed-literal",
-        "datatype": "http://www.w3.org/2001/XMLSchema#date",
-        "value": "1972-12-20"
-      },
-      "dateDoc": {
-        "type": "typed-literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1972-12-20"
       },
@@ -228,12 +192,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1972/3059_3112_2893"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1972-12-20"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1972-12-20"
       },
@@ -264,12 +228,48 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1972/3059_3112_2893"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1972-12-20"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1972-12-20"
+      },
+      "roId": {
+        "type": "literal",
+        "value": "RO 1972 3112"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Bundesbeschluss vom 20. Dezember 1972 betreffend Überwachung der Preise, Löhne und Gewinne"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Arrêté fédéral du 20 décembre 1972 sur la surveillance des prix, des salaires et des bénéfices"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Decreto federale del 20 dicembre 1972 concernente la vigilanza su i prezzi, i salari e i profitti"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "942.20"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/1972/3059_3112_2893"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "1972-12-20"
+      },
+      "dateDoc": {
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1972-12-20"
       },
@@ -300,12 +300,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1975/2552_2552_2552"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1976-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1975-12-19"
       },
@@ -336,12 +336,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1975/2552_2552_2552"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1976-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1975-12-19"
       },
@@ -372,12 +372,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1975/2552_2552_2552"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1976-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1975-12-19"
       },
@@ -408,12 +408,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1975/2552_2552_2552"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1976-01-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1975-12-19"
       },
@@ -444,12 +444,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1986/895_895_895"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1986-07-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1985-12-20"
       },
@@ -480,12 +480,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1986/895_895_895"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1986-07-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1985-12-20"
       },
@@ -516,12 +516,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1986/895_895_895"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1986-07-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1985-12-20"
       },
@@ -552,12 +552,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/1986/895_895_895"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1986-07-01"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "1985-12-20"
       },
@@ -588,12 +588,12 @@
         "value": "https://fedlex.data.admin.ch/eli/oc/2026/206"
       },
       "dateForce": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2026-05-08"
       },
       "dateDoc": {
-        "type": "typed-literal",
+        "type": "literal",
         "datatype": "http://www.w3.org/2001/XMLSchema#date",
         "value": "2026-05-07"
       },
@@ -619,5 +619,7 @@
     "2007-01-01",
     "2013-01-01",
     "2026-05-08"
-  ]
+  ],
+  "belegteOcs": [],
+  "rectifiesInfoProOc": {}
 }
