@@ -288,6 +288,15 @@ jobs:
           # (check:dispatch-klausel) lief nicht (§6.7). Wortgleich zu
           # WERKZEUG_TROTZ_MD_MUSTER in scripts/ci/diff-klassieren.ts.
           WERKZEUG_TROTZ_MD_RE='(^\.claude/agents/|^docs/token-oekonomie/dispatch-template\.md$)'
+          # UMBENENNUNGEN (Auflage Gegenprüfung 19.9.2026): Compare- und
+          # PR-Files-API melden bei `status: renamed` in `.filename` nur den
+          # NEUEN Pfad; der alte steht in `.previous_filename`. Ohne ihn wäre
+          # `src/lib/x.ts` → `docs/x.md` «rein .md» ⇒ `doku` — eine App-Datei
+          # verschwände ungeprüft. Alle drei Zweige klassieren darum BEIDE
+          # Pfade. Gezählt (changed_files-Abgleich, Kappungsgrenze 300) werden
+          # weiterhin nur die Einträge: Zeilen «N|<neu>» zählen, Zeilen
+          # «A|<alt>» fliessen nur in die Klassierung.
+          DATEI_JQ='"N|\(.filename)", (.previous_filename // empty | "A|\(.)")'
           # `workflow_dispatch` (und jedes unbekannte Event) fährt unverändert
           # das volle Programm: ein Handstart ist immer als Volllauf gemeint.
           if [ "$EVENT" != "pull_request" ] && [ "$EVENT" != "push" ] && [ "$EVENT" != "merge_group" ]; then
@@ -351,19 +360,20 @@ jobs:
               echo "::warning::Merge-Queue-Gruppierung '${STRATEGIE:-<nicht lesbar>}' statt ALLGREEN — Klassierung je Eintrag trägt nicht, volles Programm."
               exit 0
             fi
-            if ! gh api "repos/${REPO}/compare/${MG_BASE}...${MG_HEAD}" --jq '"\(.status)|\(.behind_by)", (.files[]?.filename)' > mg-antwort.txt; then
+            if ! gh api "repos/${REPO}/compare/${MG_BASE}...${MG_HEAD}" --jq '"\(.status)|\(.behind_by)", (.files[]? | '"${DATEI_JQ}"')' > mg-antwort.txt; then
               echo "art=code" >> "$GITHUB_OUTPUT"
               echo "::warning::Compare-API ${MG_BASE}...${MG_HEAD} nicht auswertbar — volles Programm."
               exit 0
             fi
             lage=$(sed -n '1p' mg-antwort.txt)
-            sed '1d' mg-antwort.txt > mg-dateien.txt
+            sed '1d' mg-antwort.txt > mg-roh.txt
+            sed 's/^[NA]|//' mg-roh.txt > mg-dateien.txt
             if [ "$lage" != "ahead|0" ]; then
               echo "art=code" >> "$GITHUB_OUTPUT"
               echo "::warning::Bereich ${MG_BASE}...${MG_HEAD} ist '${lage}' statt 'ahead|0' (base kein Vorfahre von head) — volles Programm."
               exit 0
             fi
-            anzahl=$(wc -l < mg-dateien.txt | tr -d ' ')
+            anzahl=$(grep -c '^N|' mg-roh.txt || true)
             echo "Queue-Eintrag ${MG_BASE}...${MG_HEAD}: ${anzahl} Datei(en)."
             if [ "$anzahl" -eq 0 ] || [ "$anzahl" -ge 300 ]; then
               echo "art=code" >> "$GITHUB_OUTPUT"
@@ -428,12 +438,13 @@ jobs:
             # Dateien — mit --paginate käme dieselbe Dateiliste je Seite erneut
             # und blähte die Zählung auf (falsch-`code` wäre harmlos, eine
             # falsche 300er-Kappung dagegen nicht).
-            if ! gh api "repos/${REPO}/compare/${BEFORE}...${AFTER}" --jq '.files[]?.filename' > push-dateien.txt; then
+            if ! gh api "repos/${REPO}/compare/${BEFORE}...${AFTER}" --jq ".files[]? | ${DATEI_JQ}" > push-roh.txt; then
               echo "art=code" >> "$GITHUB_OUTPUT"
               echo "::warning::Compare-API ${BEFORE}...${AFTER} nicht auswertbar (Force-Push?) — volles Programm."
               exit 0
             fi
-            anzahl=$(wc -l < push-dateien.txt | tr -d ' ')
+            sed 's/^[NA]|//' push-roh.txt > push-dateien.txt
+            anzahl=$(grep -c '^N|' push-roh.txt || true)
             echo "Push ${BEFORE}...${AFTER}: ${anzahl} Datei(en)."
             if [ "$anzahl" -eq 0 ] || [ "$anzahl" -ge 300 ]; then
               echo "art=code" >> "$GITHUB_OUTPUT"
@@ -462,8 +473,9 @@ jobs:
             fi
             exit 0
           fi
-          gh api --paginate "repos/${REPO}/pulls/${PR}/files" --jq '.[].filename' > pr-dateien.txt
-          anzahl=$(wc -l < pr-dateien.txt | tr -d ' ')
+          gh api --paginate "repos/${REPO}/pulls/${PR}/files" --jq ".[] | ${DATEI_JQ}" > pr-roh.txt
+          sed 's/^[NA]|//' pr-roh.txt > pr-dateien.txt
+          anzahl=$(grep -c '^N|' pr-roh.txt || true)
           echo "PR #${PR}: ${anzahl} Datei(en) über die API, changed_files=${GEMELDET:-?}."
           if [ "${GEMELDET:-x}" != "$anzahl" ]; then
             echo "art=code" >> "$GITHUB_OUTPUT"
