@@ -127,6 +127,39 @@
  * Verwechslungsgefahr ist damit durch die amtliche Konvention selbst ausgeschlossen, nicht nur
  * durch fehlende Beispiele. Keine Code-Änderung (§7: kein Fix ohne Beleg einer echten
  * Fehlmessung) — offener Beobachtungspunkt, falls ein künftiger Fund das widerlegt.
+ *
+ * ── Nachzug R2b, 19.9.2026 (Auflagen unabhängige Opus-Gegenprüfung, Falsch-Grün-Risiko F1) ──
+ * Das bis hierhin gültige `[^()]{0,120}?`-Fenster (Falle c1 oben) ist BREITER als amtlich
+ * belegt und lässt zwei konstruierte Gegenbeispiele durch: (GB1) Fliesstext im `<main>`, KEINE
+ * Fussnote, mit einer beiläufigen «vom … (AS …)»-Nennung — würde als zweiter, falscher Block
+ * gewertet; (GB2) eine Satzgrenze im Fenster («vom 1. Januar 2020. Der Bundesrat hat … verweist
+ * (AS 2024 999)») — das Fenster sollte NIE über einen Satzschluss hinwegspringen. Messung über
+ * alle 62 zum damaligen Zeitpunkt geladenen Filestore-HTML (Skript im Bau-Bericht): 66 echte
+ * Treffer, längste reale Lücke 28 Zeichen (KRK, s. Falle c1), 0 Satzgrenzen-Überspringer.
+ * Doppelte Gegenmassnahme:
+ * (R2b-1) STRUKTURELLES ANKERN, so weit es für alle 66 Treffer trägt (es trägt NICHT für alle —
+ *   7 der 62 Dokumente (älteres Fedlex-Vorlagenformat, z. B. ChemV/oc-1988-560) haben ihren
+ *   Erlassdatum-Absatz OHNE jede Klasse: nacktes `<p>vom … (AS …)</p>`. Reine Klassen-Filterung
+ *   auf `erlassdatum`/`man-template-datum-aend`/`erlasstitel` verfehlt darum 7/62 Dokumente —
+ *   das ist mit blossem Fenster+Satzgrenzen-Sperre allein NICHT zu unterscheiden, weil die
+ *   Klasse schlicht fehlt, nicht weil ein anderes Signal fehlt). Fund UMGANGEN, nicht ignoriert:
+ *   der Abschnitt VOR dem ersten `<main`-Tag (Kopf/`preface`/`preamble`) ist bei JEDEM der 62
+ *   Dokumente ohnehin nur Titel+Kurztitel+Datum — strukturell viel enger als beliebiger
+ *   `<main>`-Fliesstext — und wird darum VOLLSTÄNDIG verwendet (deckt die 7 unklassierten Fälle
+ *   UND den KRK-Sonderfall, wo «vom …» im `erlasstitel` steht und die AS-Klammer erst im
+ *   nachfolgenden `<p>` OHNE eigenes «vom» folgt — Falle c1). Der Teil AB dem ersten `<main`-Tag
+ *   wird dagegen NUR durchsucht, soweit er innerhalb eines der drei Klassen-Elemente liegt (löst
+ *   die drei belegten `<main>`-Zweit-Headlines SSV/oc-2024-144 «(AS 2007 5957)»,
+ *   LRV/oc-2025-537, KLV/oc-2026-209 — alle drei tragen `erlassdatum`/`man-template-datum-aend`
+ *   auch innerhalb `<main>`). `<main>`-FLIESSTEXT OHNE eine dieser Klassen (GB1) ist damit
+ *   STRUKTURELL ausgeschlossen, nicht nur durch das Fenster begrenzt.
+ * (R2b-2) Fenster von 120 auf 40 Zeichen verkürzt (deckt die reale Maximallücke 28 mit Reserve)
+ *   UND eine Satzgrenzen-Sperre ergänzt (kein `. ` + Grossbuchstabe in der Lücke) — als
+ *   zusätzliche, vom Klassen-Anker UNABHÄNGIGE Verteidigungslinie (greift auch, falls die
+ *   Vorspann-Klammer einmal doch eine gefüllte Prosa-Lücke wie GB2 enthält).
+ * Regressionsbeweis (Bau-Bericht): alle 62 Dokumente liefern mit dem neuen Code BYTE-GLEICHE
+ * `as`/`sr`/`bloecke`-Ergebnisse wie zuvor (0 Abweichungen) — GB1 liefert nur noch den echten
+ * ersten Block (keinen erfundenen zweiten aus Fliesstext), GB2 liefert 0 Blöcke.
  */
 import { sparqlSelect, type FetchImpl } from '../fedlex-sparql.ts';
 import type { RectifiesInfo } from './revisionen-generieren.ts';
@@ -134,17 +167,29 @@ import type { RectifiesInfo } from './revisionen-generieren.ts';
 const LANG_DE = '<http://publications.europa.eu/resource/authority/language/DEU>';
 
 /** Headline-Zitat: «vom <Tag>. <Monat> <Jahr> [Titel-Rest] ( AS <jjjj> <nnn>[, <mmm>[, …]]
- *  [; SR <x.y> ] )». `\s*` bzw. `[^()]{0,120}?` vor der öffnenden Klammer, `\s*` an drei
- *  Stellen innerhalb (s. Docstring, Fallen a/b/c1/c2, alle live belegt). `[^()]{0,120}?` statt
- *  `\s*` allein: bei einem Staatsvertrag steht zwischen Jahr und Klammer der restliche
- *  Erlasstitel (Falle c1, KRK/oc-2026-314) — bewusst über KEINE Klammer hinweg (`[^()]`), damit
- *  eine fremde Klammer davor den Treffer verhindert statt ihn falsch zu verschieben; die Länge
- *  120 ist grosszügig gegenüber dem längsten live beobachteten Titel-Rest, aber begrenzt genug,
- *  um nicht über einen ganzen Absatz hinwegzugreifen. Gruppe 2 kann mehrere komma-getrennte
- *  Nummern DESSELBEN Jahrgangs tragen (Falle c, s. Docstring) — die Aufsplittung passiert in
- *  `extrahiereHeadlineZitate`, nicht hier in der Regex. */
+ *  [; SR <x.y> ] )». `\s*` an drei Stellen innerhalb (s. Docstring, Fallen a/b/c2, alle live
+ *  belegt). Vor der öffnenden Klammer (Nachzug R2b, Falsch-Grün-Risiko F1): `[^()]{0,40}?` MIT
+ *  Satzgrenzen-Sperre (`(?!\.\s*\p{Lu})` vor jedem Lückenzeichen) statt des früheren blossen
+ *  `[^()]{0,120}?` — 40 statt 120, weil die längste live gemessene reale Lücke 28 Zeichen ist
+ *  (KRK/oc-2026-314, Titel-Rest «über die Rechte des Kindes»); die Satzgrenzen-Sperre verhindert
+ *  zusätzlich, dass die Lücke über einen abgeschlossenen Satz hinwegspringt (Gegenbeispiel GB2,
+ *  s. Docstring). Diese Regex wird NUR noch auf den strukturell vorgefilterten Text angewendet
+ *  (s. `extrahiereHeadlineZitate`/`baueHeadlineSuchtext`) — das eigentliche Falsch-Grün-Risiko
+ *  (Fliesstext-Prosa, GB1) schliesst der Struktur-Filter, nicht diese Regex allein. Gruppe 2
+ *  kann mehrere komma-getrennte Nummern DESSELBEN Jahrgangs tragen (Falle c, s. Docstring) — die
+ *  Aufsplittung passiert in `extrahiereHeadlineZitate`, nicht hier in der Regex. */
 const HEADLINE_ZITAT =
-  /vom\s+\d{1,2}\.\s*\p{L}+\s+\d{4}\s*[^()]{0,120}?\(\s*AS\s+(\d{4})\s+(\d+(?:\s*,\s*\d+)*)\s*(?:;\s*SR\s+([\d.]+)\s*)?\)/gu;
+  /vom\s+\d{1,2}\.\s*\p{L}+\s+\d{4}(?:(?!\.\s*\p{Lu})[^()]){0,40}?\(\s*AS\s+(\d{4})\s+(\d+(?:\s*,\s*\d+)*)\s*(?:;\s*SR\s+([\d.]+)\s*)?\)/gu;
+
+/** Ein Element, dessen Text sicher zum Headline-Zitat gehören kann (Nachzug R2b, s. Docstring
+ *  R2b-1): `erlassdatum`/`man-template-datum-aend` (Erlassdatum-Absatz) oder `erlasstitel`
+ *  (trägt bei Staatsverträgen «vom …» selbst im Titel, Falle c1). NUR für den Textabschnitt AB
+ *  dem ersten `<main`-Tag relevant — davor wird ohnehin der GESAMTE Text verwendet
+ *  (`baueHeadlineSuchtext`). `h1|h2|h3|p`: alle live beobachteten Trägerelemente; keine
+ *  verschachtelten Vorkommen dieser Tags innerhalb sich selbst beobachtet (§7: nicht raten,
+ *  gegen alle 62 Filestore-HTML geprüft). */
+const HEADLINE_KLASSEN_ELEMENT =
+  /<(h1|h2|h3|p)\b[^>]*\bclass="[^"]*\b(?:erlassdatum|man-template-datum-aend|erlasstitel)\b[^"]*"[^>]*>([\s\S]*?)<\/\1>/g;
 
 /** Fussnotenzeichen-Marker («<sup><a href="#fn-…">1</a></sup>», direkt an eine Zahl angehängt,
  *  KEIN Trenner) — vor der generischen Tag-Entfernung ganz entfernt (Falle c3, OR/oc-2023-62).
@@ -152,13 +197,20 @@ const HEADLINE_ZITAT =
  *  s. `entferneFussnotenKoerper`. */
 const FUSSNOTEN_MARKER = /<sup>\s*<a\s+href="#fn-[^"]*"[^>]*>[\s\S]*?<\/a>\s*<\/sup>/gi;
 
-/** Schneidet den Fussnoten-Körper ab (alles ab der ERSTEN `<div class="footnotes"`) — eine
- *  Headline-Zitat-Stelle steht immer im Preamble, nie in einer Fussnote (Falle c3, live über
- *  alle 62 zum Zeitpunkt der Runde-2-Messung ladbaren Filestore-HTML geprüft). Ohne diesen
- *  Schnitt macht die geweitete Klammer-Distanz aus Falle c1 auch Fussnoten-Prosa treffbar
- *  (Skill `scraping-swiss-official-sources`, Falle «Footnote-leak»; Beleg BPV/oc-2026-324:
- *  «… Änderung vom 3. September 2025 der Bundespersonalverordnung vom 3. Juli 2001
- *  (AS 2025 569) …» in der Fussnote hätte sonst einen erfundenen zweiten Block erzeugt). */
+/** Schneidet den Fussnoten-Körper ab (alles ab der ERSTEN `<div class="footnotes"`).
+ *  RICHTIGSTELLUNG (F6, Nachzug R2b): eine Headline-Zitat-Stelle steht NICHT «immer im
+ *  Preamble» — 3 von 66 live gemessenen Treffern liegen in `<main>` (SSV/oc-2024-144
+ *  «(AS 2007 5957)», LRV/oc-2025-537, KLV/oc-2026-209, alle drei in Elementen mit Klasse
+ *  `erlassdatum`/`man-template-datum-aend`). Der Schnitt hier betrifft nur den FUSSNOTEN-Körper,
+ *  nicht `<main>` allgemein — s. `baueHeadlineSuchtext` für die eigentliche Struktur-Eingrenzung.
+ *  Ohne diesen Schnitt macht die geweitete Klammer-Distanz aus Falle c1 auch Fussnoten-Prosa
+ *  treffbar (Skill `scraping-swiss-official-sources`, Falle «Footnote-leak»; Beleg
+ *  BPV/oc-2026-324: «… Änderung vom 3. September 2025 der Bundespersonalverordnung vom
+ *  3. Juli 2001 (AS 2025 569) …» in der Fussnote hätte sonst einen erfundenen zweiten Block
+ *  erzeugt) — dieses Restrisiko (Fussnoten-KÖRPER-Prosa mit einer zufällig passenden
+ *  «vom … (AS …)»-Nennung) bleibt für den Preamble-Teil bestehen, ist aber seit R2b für
+ *  `<main>`-Fliesstext AUSSERHALB der drei Klassen strukturell ausgeschlossen (s. Docstring
+ *  oben, Auflage R2b-1). */
 function entferneFussnotenKoerper(html: string): string {
   return html.split(/<div class="footnotes/)[0];
 }
@@ -185,15 +237,29 @@ export interface HeadlineZitate {
   bloecke: HeadlineBlock[];
 }
 
+/** Baut den Suchtext für die Headline-Regex (Nachzug R2b, s. Docstring R2b-1): der Abschnitt
+ *  VOR dem ersten `<main`-Tag geht VOLLSTÄNDIG ein (Kopf/`preface`/`preamble` — bei allen 62
+ *  live geprüften Dokumenten strukturell nur Titel/Kurztitel/Datum, unabhängig davon, ob der
+ *  Erlassdatum-Absatz eine der drei Headline-Klassen trägt oder nicht, s. ChemV-Gegenbeleg).
+ *  Der Abschnitt AB `<main` geht NUR ein, soweit er innerhalb eines `HEADLINE_KLASSEN_ELEMENT`
+ *  liegt — das schliesst freien `<main>`-Fliesstext (Gegenbeispiel GB1) strukturell aus, ohne
+ *  die drei belegten `<main>`-Zweit-Headlines zu verlieren (die tragen dieselben Klassen). */
+function baueHeadlineSuchtext(ohneFussnoten: string): string {
+  const [vorMain, ...rest] = ohneFussnoten.split(/<main\b/);
+  const nachMain = rest.join('<main');
+  const klassenTeile = [...nachMain.matchAll(HEADLINE_KLASSEN_ELEMENT)].map((m) => m[2]);
+  return [vorMain, ...klassenTeile].join(' § ');
+}
+
 /** Reine Extraktion (§2, kein Netz) — Fedlex-Filestore-HTML → Headline-Zitate.
  *  Reihenfolge: (1) Fussnoten-Körper abschneiden (Falle c3a), (2) Fussnoten-Marker entfernen
- *  (Falle c3b), (3) generische Tags zu Leerzeichen — Fedlex verteilt ein Zitat oft über
- *  mehrere `<span>`, z. B. `<span>AS</span><span> </span>2016<span> 3101)</span>` — eine
- *  Regex über den rohen HTML-String verfehlt das systematisch, live an AIG/oc/2025/342
- *  belegt). */
+ *  (Falle c3b), (3) Struktur-Suchtext bauen (Nachzug R2b, `baueHeadlineSuchtext`), (4) generische
+ *  Tags zu Leerzeichen — Fedlex verteilt ein Zitat oft über mehrere `<span>`, z. B.
+ *  `<span>AS</span><span> </span>2016<span> 3101)</span>` — eine Regex über den rohen
+ *  HTML-String verfehlt das systematisch, live an AIG/oc/2025/342 belegt). */
 export function extrahiereHeadlineZitate(html: string): HeadlineZitate {
-  const text = entferneFussnotenKoerper(html)
-    .replace(FUSSNOTEN_MARKER, '')
+  const ohneFussnoten = entferneFussnotenKoerper(html).replace(FUSSNOTEN_MARKER, '');
+  const text = baueHeadlineSuchtext(ohneFussnoten)
     .replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ');
   const asSet = new Set<string>();
   const srSet = new Set<string>();

@@ -515,6 +515,64 @@ describe('extrahiereHeadlineZitate + klassifiziereBerichtigung (rectifies-Wächt
     expect(zitate.as).toEqual(['AS 2026 309']);
     expect(zitate.bloecke).toEqual([{ as: ['AS 2026 309'], sr: '172.220.111.3' }]);
   });
+
+  // ── Nachzug R2b, 19.9.2026 (unabhängige Opus-Gegenprüfung, Falsch-Grün-Risiko F1): das
+  // bisherige `[^()]{0,120}?`-Fenster liess zwei konstruierte Gegenbeispiele durch. Beide sind
+  // jetzt durch Struktur-Anker (`baueHeadlineSuchtext`) UND Fenster+Satzgrenzen-Sperre
+  // ausgeschlossen — Rot-Beweis am Ende der Datei zeigt beide Regler live rot ohne den Fix.
+  describe('Nachzug R2b — Falsch-Grün-Risiko F1 (Klammer-Fenster zu weit)', () => {
+    it('GB1: Fliesstext im <main> OHNE Headline-Klasse mit einer beiläufigen «vom … (AS …)»-Nennung ⇒ KEIN zweiter Block (nur der echte Preamble-Block)', () => {
+      const html = '<div id="preamble"><p class="erlassdatum">vom 1. Januar 2020 (AS 2020 1; SR 100.1)</p></div>'
+        + '<main id="maintext"><p class="verweisartkursiv">Der Bundesrat erliess ausserdem eine '
+        + 'Änderung vom 3. März 2001 (AS 2001 2206; SR 172.220.111.3), die hier nur beiläufig als '
+        + 'Fliesstext erwähnt wird.</p></main>';
+      const zitate = extrahiereHeadlineZitate(html);
+      expect(zitate.as).toEqual(['AS 2020 1']);
+      expect(zitate.bloecke).toHaveLength(1);
+    });
+
+    it('GB2: eine Satzgrenze im Klammer-Fenster («vom … 2020. Der Bundesrat … (AS …)») ⇒ 0 Blöcke, auch innerhalb eines klassierten Elements', () => {
+      const html = '<div id="preamble"><p class="erlassdatum">vom 1. Januar 2020. Der Bundesrat hat die '
+        + 'Verordnung angepasst und verweist (AS 2024 999; SR 999.9).</p></div>';
+      const zitate = extrahiereHeadlineZitate(html);
+      expect(zitate.bloecke).toEqual([]);
+      expect(zitate.as).toEqual([]);
+    });
+
+    // Regressionsanker: die drei amtlich belegten <main>-Zweit-Headlines (SSV/oc-2024-144,
+    // LRV/oc-2025-537, KLV/oc-2026-209) dürfen durch die Struktur-Eingrenzung NICHT verloren
+    // gehen — sie tragen dieselben Headline-Klassen wie der Preamble-Block, nur eben innerhalb
+    // <main> (reale Fedlex-Struktur, s. Docstring R2b-1). Nachgebaut nach dem live beobachteten
+    // SSV-Muster (Filestore-HTML oc/2024/144, Abruf 19.9.2026): erster Block in `#preamble`
+    // (`erlassdatum`), zweiter Block als eigener `erlassdatum`-Absatz eines ANHANGS innerhalb
+    // `<main>`.
+    it('SSV-Muster: zweiter Headline-Block INNERHALB <main> (Klasse erlassdatum) bleibt erkannt', () => {
+      const html = '<div id="preamble"><h2 class="erlasskurztitel">(SSV)</h2>'
+        + '<p class="erlassdatum">vom 5. September 1979 (AS 1979 1961; SR 741.21)</p></div>'
+        + '<main id="maintext"><h1>Anhang</h1>'
+        + '<p class="erlasstitel10pt">Nationalstrassenverordnung</p><h2 class="erlasskurztitel">(NSV)</h2>'
+        + '<p class="erlassdatum">vom 7. November 2007 (AS 2007 5957)</p></main>';
+      const zitate = extrahiereHeadlineZitate(html);
+      expect(zitate.as).toEqual(['AS 1979 1961', 'AS 2007 5957']);
+      expect(zitate.bloecke).toEqual([
+        { as: ['AS 1979 1961'], sr: '741.21' },
+        { as: ['AS 2007 5957'], sr: undefined },
+      ]);
+    });
+
+    // Regressionsanker für den 7/62-Befund (Nachzug R2b): ältere Fedlex-Vorlagen tragen den
+    // Erlassdatum-Absatz OHNE jede der drei Klassen (nacktes `<p>vom … (AS …)</p>`) — reine
+    // Klassen-Filterung würde diese 7 Dokumente verlieren; der Vor-`<main>`-Teil geht darum
+    // IMMER vollständig ein, unabhängig von der Klasse.
+    it('unklassierter Erlassdatum-Absatz VOR <main> (älteres Vorlagenformat) bleibt erkannt', () => {
+      const html = '<div id="preamble"><p>Verordnung über den Schutz vor gefährlichen Stoffen</p>'
+        + '<h2 class="erlasskurztitel">(ChemV)</h2>'
+        + '<p>vom 5. Juni 2015 (AS 2015 1903; SR 813.11)</p></div>'
+        + '<main id="maintext"><p>Art. 10 Abs. 1 Bst. a</p></main>';
+      const zitate = extrahiereHeadlineZitate(html);
+      expect(zitate.as).toEqual(['AS 2015 1903']);
+    });
+  });
 });
 
 // ── formatiereBefundDetail / findeTreffendenBlock / findeNichtKonsumierteAusnahmen
