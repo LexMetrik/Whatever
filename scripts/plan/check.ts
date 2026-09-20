@@ -5,6 +5,7 @@ import { resolve } from './aufloesen';
 import { parseEtikett, FELD_WERTE, istFeld, type Status } from './etikett';
 import { pruefeSpecBindung } from './specBindung';
 import { pruefeEtappenBuchung } from './etappenBuchung';
+import { pruefeKopfBuchung } from './kopfBuchung';
 import { postenScan, type PostenDatei } from './postenKern';
 import { pruefePosten } from './postenRegel';
 import { obersterMarkerId } from './marker';
@@ -263,7 +264,29 @@ export function pruefe(
   // noch offen (W2·5m-LESER-V3).
   probleme.push(...pruefeEtappenBuchung(md, leseDatei));
 
+  // (15) Kopf-Buchung — Zuschnitt, deklarierte Grenzen und Geburtsbeweis in
+  // scripts/plan/kopfBuchung.ts. Abgrenzung zu den Nachbarn, damit niemand
+  // dreimal dasselbe zu prüfen glaubt:
+  //   · Regel 11 prüft den Zeiger vom Plan in den Fahrplan (trifft er den
+  //     richtigen Abschnitt?) — ZWEI Dateien, Blickrichtung hinaus.
+  //   · Regel 14 prüft Fahrplan ↔ Checkbox auf Deckungsgleichheit («gebaut,
+  //     nie gebucht») — ZWEI Dateien, eine Richtung: Fahrplan fertig, Plan offen.
+  //   · Regel 15 bleibt INNERHALB der ROADMAP und schaut vom erledigten Kopf
+  //     nach UNTEN: trägt er noch offene Posten? Das ist die Gegenrichtung
+  //     innerhalb des Plans und die Lücke, die Regel 14 in ihrer Richtungs-Grenze
+  //     ausdrücklich offengelassen hat (F17-Erweiterung, kein neuer Klassiker).
+  // Anlass 20.9.2026: 15 offene Posten unter zwei `done`-Köpfen, darunter eine
+  // seit dem 5.9.2026 offene Fachfrage an David — plan:next liest den Status des
+  // KOPFES, hat sie darum keiner Session je gezeigt.
+  probleme.push(...pruefeKopfBuchung(md));
+
   // (16) Posten-Modell — Regel, Grenzen und Anlass in scripts/plan/postenRegel.ts.
+  // Verhältnis zu Regel 15 (beide aus der F17-Familie, 20.9.2026, verschiedene
+  // Fundorte): Regel 15 sucht offene Posten unter einem erledigten Kopf INNERHALB
+  // von ROADMAP.md, Regel 16 (a) dieselbe Lage für die ausgelagerten
+  // Posten-DATEIEN. Seit der Posten-Migration ist 16 (a) der Regelfall und 15 der
+  // Rest-Wächter für die Zeilen, die in der ROADMAP bleiben dürfen
+  // (Etappen-Kennungen, etikettierte Unterschritte).
   probleme.push(...pruefePosten(md, postenDateien));
 
   // (13) Selbstoptimierungs-Zeitreihe — FORM, nie WERTE (Schritt QS-SELBSTOPT).
