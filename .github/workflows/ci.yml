@@ -404,7 +404,7 @@ jobs:
               fi
             else
               echo "art=doku" >> "$GITHUB_OUTPUT"
-              echo "Reiner Doku-Queue-Eintrag (${anzahl} Datei(en)) — Merge-Schutz, Testtreue, check:plan, check:steuerdeckel und check:bibliothek laufen ECHT, restliche Code-Tore quittieren; Perf-Budget meldet 'skipped'."
+              echo "Reiner Doku-Queue-Eintrag (${anzahl} Datei(en)) — Merge-Schutz, Testtreue, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren; Perf-Budget meldet 'skipped'."
             fi
             exit 0
           fi
@@ -479,7 +479,7 @@ jobs:
               fi
             else
               echo "art=doku" >> "$GITHUB_OUTPUT"
-              echo "Reiner Doku-Push (${anzahl} Datei(en)) — Merge-Schutz, Testtreue, check:plan, check:steuerdeckel und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
+              echo "Reiner Doku-Push (${anzahl} Datei(en)) — Merge-Schutz, Testtreue, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
             fi
             exit 0
           fi
@@ -516,7 +516,7 @@ jobs:
             fi
           else
             echo "art=doku" >> "$GITHUB_OUTPUT"
-            echo "Reine .md-Änderung (${anzahl} Datei(en)) — Merge-Schutz, check:plan, check:steuerdeckel und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
+            echo "Reine .md-Änderung (${anzahl} Datei(en)) — Merge-Schutz, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek laufen ECHT, restliche Code-Tore quittieren."
           fi
 
       # ── Push-Diät (M1, QS-CI-MINUTEN, 8.9.2026; Beleg neu 19.9.2026) ─────
@@ -824,6 +824,19 @@ jobs:
       # als Tor, nicht als Hinweis (Prosa-Deckel hielt seit 8.8. nicht).
       - name: Steuerungs-Deckel (Byte-Budgets Steuer-Doku + Wächter-Flächen)
         run: npm run check:steuerdeckel
+      # Sperrklinke über die GESAMTE Steuerungs-Fläche (Entscheid David
+      # 20.9.2026). Der Deckel darüber misst zwei Globs — am 19./20.9.2026 wich
+      # neue Steuerungs-Logik zweimal in Nachbar-Ordner aus. Dieses Tor summiert
+      # alle Steuerungs-Dateien und lässt die Grenze nur SINKEN (Anhebung
+      # braucht einen datierten David-Entscheid in `anhebungen`).
+      # LÄUFT IMMER (auch art=doku) — aus demselben Grund wie check:plan und
+      # check:steuerdeckel: die Steuerungs-Fläche ist überwiegend .md, ein
+      # md-only-PR ist genau die Klasse, die sie wachsen lässt.
+      # Braucht `origin/main` für die Klinke — der Checkout dieses Jobs steht
+      # auf `fetch-depth: 0` (s. oben, wegen check:merge-schutz). Ohne Basis
+      # prüft das Tor nur die Summe und sagt das ausdrücklich.
+      - name: Steuerungs-Fläche (Sperrklinke, Byte-Summe + Anhebungs-Schutz)
+        run: npm run check:steuerflaeche
       # tsc -b läuft im bau-Job (Teil von npm run build). KEIN dist-Download
       # hier: kein einziger tore-Check liest dist/ (Review 26.7.2026 — smoke
       # rendert SSR aus src, seo-index liest ROOT/index.html; Tests/Lint liefen
@@ -1096,7 +1109,7 @@ jobs:
         run: npm run check:seo-index && npm run check:verfall-ui
       - name: Kurzquittung (Doku-/Leer-Diff)
         if: needs.diff.outputs.art == 'doku'
-        run: echo "Kein Code im Diff — Merge-Schutz, check:plan, check:steuerdeckel und check:bibliothek sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
+        run: echo "Kein Code im Diff — Merge-Schutz, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
 
   e2e:
     name: Browser-Smoke Shard ${{ matrix.gruppe }}/4 (Playwright)
