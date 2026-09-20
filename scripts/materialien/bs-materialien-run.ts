@@ -20,6 +20,7 @@ import {
 } from './adapter-bs-grossrat.ts';
 import {
   baueKanten, baueEreignisse, baueBsEintraege, serialisiere, fussnotenGeschaefte, cu,
+  vergleicheBsDokumente,
   type BsErlassStamm,
 } from './bs-materialien.ts';
 
@@ -99,8 +100,7 @@ async function main(): Promise<void> {
     const alleDokumente = await holeExport<BsDokument>(BS_DATENSATZ.dokumente, FELDER_DOKUMENT);
     dokumente = alleDokumente
       .filter((d) => d.signatur_ges !== null && gebraucht.has(d.signatur_ges))
-      .sort((a, b) => cu(a.signatur_ges ?? '', b.signatur_ges ?? '') || cu(a.dokudatum ?? '', b.dokudatum ?? '')
-        || cu(a.signatur_dok ?? '', b.signatur_dok ?? '') || cu(a.titel_dok ?? '', b.titel_dok ?? ''));
+      .sort(vergleicheBsDokumente);
     // Roh-Ablage: nur die verwendeten Zeilen + die Erlass-Metadaten der verkanteten
     // Erlasse. Der Vollexport (31 MB) gehört nicht ins Repo, die Belegzeilen schon.
     const erlasseGebraucht = new Set(kantenVor.map((k) => k.erlass.slice('BS-'.length)));

@@ -55,9 +55,10 @@ Belege: `referenz-ci.md` §Merge-Queue.
   Eintrag und baut die Nachfolger neu. ERST den Lauf lesen, dann neu
   einreihen — nie blind.
 - **Kosten:** der `merge_group`-Lauf klassiert den Diff des Eintrags wie der
-  PR-Lauf (reine Doku ohne Bau/Browser-Tests; Code voll, ~20+ min). Ob ein
-  übersprungenes «Perf-Budget» in der Queue als erfüllt zählt, ist UNGEMESSEN
-  (Stand 19.9.2026, ROADMAP `QS-CI-MINUTEN`). Doku trotzdem bündeln.
+  PR-Lauf (reine Doku ohne Bau/Browser-Tests, ~1 min; Code voll, ~20+ min).
+  Ein übersprungenes «Perf-Budget» zählt in der Queue als erfüllt (gemessen
+  19.9.2026, #931, Lauf 35456359531). Doku trotzdem bündeln — gleiche
+  Steuer-Datei wie ein Vordermann ⇒ UNMERGEABLE.
 
 ## §12 · Isolation — die Grundregeln vor jeder Landung
 
@@ -183,7 +184,8 @@ npm run check:perf-budget  # liest dist, Chrome-frei
 
 7c. **Die Kette als Werkzeug:** `scripts/landung/landung-kette.sh <log> <PR>…`
    reiht seriell ein und pollt `mergeQueueEntry.state` bis MERGED
-   (Queue-Umbau 19.9.2026 — **gegen die echte Queue noch UNGETESTET**). Sie
+   (Queue-Umbau 19.9.2026; Gut-Pfad real belegt mit #919, MERGED
+   `661612cea` — die Halte-Pfade sind nur simuliert). Sie
    hält an bei rotem PR und bei UNMERGEABLE/LOCKED/verschwundenem Eintrag,
    reiht nie selbst neu ein und löscht den Zweig erst nach MERGED. Zwei
    Fallen sind darin verdrahtet: `gh run watch` bricht vorzeitig mit Exit 1
@@ -225,11 +227,19 @@ Trailer allein ist Behauptung. Maschinell dreifach: Required-Check
 «Merge-Schutz» · derselbe Check im Hook vor jedem Merge-Kommando ·
 `check:gegenpruefung` in `npm run gate`. Erzwungen durch Vorfall PR #309
 (elf erfundene Amtsträger:innen ~1 h auf Prod).
-**OFFEN, Stand 19.9.2026:** Risikopfad-PRs scheitern im `merge_group`-Lauf an
-«Merge-Schutz»/«Tore» («KEIN 'Gegenpruefung:'-Verdikt in den Commits», Lauf
-35449385978, #921; Ursache Formregel 5). Wurzel-Fix in Arbeit
-(`scripts/check-merge-schutz.ts`, Zweig `fix/qs-monitor-rot-merge-schutz-queue`)
-— vor dem Einreihen prüfen, ob er auf main ist; danach diesen Absatz streichen.
+**Verdikt im Queue-Squash (behoben 19.9.2026, #925 `95cb5a712`):** Das
+`Gegenpruefung:`-Verdikt gehört in den Trailer-Block des **PR-BODY**. Der
+Queue-Squash bricht ihn bei 72 Zeichen um und hängt die Co-author-Sektion
+an; `scripts/gegenpruefung/squash-trailer.ts` liest das seither (Anlass: Lauf
+35449385978, #921 rot im `merge_group`). Echt-Beleg: #921 gelandet
+`2db154675` (19.9.2026). Risikopfad-PRs weiter strikt einzeln einreihen —
+jeder hängt eine Register-Zeile an (Ziff. 3.4).
+**Falle (gemessen 19.9.2026, #923, Lauf 35458509735):** lokales
+`check:merge-schutz` liest die ZWEIG-Commits, die Queue den Squash aus
+PR-Titel + PR-Body — ein im Body verkürztes Verdikt («… — keine», Befund-Teil
+< 15 Zeichen) ist lokal grün und fällt in der Queue. Das Verdikt im PR-Body
+muss dieselbe volle Form haben wie im Commit; vor dem Einreihen den Body
+gegenlesen (Vorab-Check: ROADMAP `QS-CI-MINUTEN`).
 
 ### Ausnahmefall manueller Deploy · Ausreden-Tabelle → referenz-ausnahmen.md
 

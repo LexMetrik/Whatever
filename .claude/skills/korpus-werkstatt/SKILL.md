@@ -104,7 +104,10 @@ und die Zitat-Ausnahme (a)–(d), weil beides Invarianten sind.
 besten erreicht** — strukturiertes Schema > gerendertes HTML > PDF; an die
 **höchste verfügbare Struktur** andocken, nicht reflexhaft die naheliegende
 Quelle nehmen. Probe-Fetch je Kandidat, Inhalt prüfen (Soft-404-Shells
-erkennen). **Aber:** ein Quell- oder Formatwechsel wird per Messung (POC,
+erkennen — **Falle 19.9.2026:** der Fedlex-Filestore antwortet auf ein
+fehlendes Berichtigungs-Dokument mit HTTP 200 + Angular-Shell
+(`<title>Casemates</title>`) statt 404; ohne Content-Type-/`%PDF`-/
+`<!DOCTYPE`-Prüfung landet die Shell als «Dokument» im Cache). **Aber:** ein Quell- oder Formatwechsel wird per Messung (POC,
 Differenz) belegt, nie angenommen — Fehler sitzen oft in der eigenen
 Transformation, nicht in der Quelle. Wechsel inkrementell, nie Big-Bang.
 Beispiel und Detail: Memory `extraktion-amtliche-quellen-beste-option`,

@@ -1,9 +1,22 @@
 {
   "erlassKey": "BBV",
   "sr": "412.101",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-18",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/471",
+      "dateDocument": "2026-09-09",
+      "roFundstelle": "AS 2026 471",
+      "titelDe": "Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)",
+      "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
+      "titelIt": "Ordinanza sulla formazione professionale (OFPr)",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/471/de",
+      "sha": "7c75a31893a77b527cac3281bc31571bd8002091691eb3f35936b1d3014f0ef2"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2026-10-01",
@@ -216,5 +229,5 @@
       "sha": "f8ebaddc01f04049e99651e998725d39cec3858521c30d053391259554313595"
     }
   ],
-  "sha": "07a7bc37f3216612e30b25e2c0909789fc6a03575398fabb0bcd3394ce26340a"
+  "sha": "9a319b753dc5e51a98bfed8dac8fc146dfbfcb682c103793002d4ff191db9d1a"
 }

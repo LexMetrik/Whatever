@@ -1,9 +1,16 @@
 {
   "erlassKey": "VEV",
   "sr": "142.204",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-18",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2026-10-01",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.204",
+      "sha": "97716a28cca80d89e5ffdc10cb435c6696cf78b82e28f562c5b3eb60915ec02b"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2026-06-12",
@@ -755,5 +762,5 @@
       "sha": "26764cb5d9c994129380ac69e938b57a7be2d22fe3ac5b4e854bc795843adfce"
     }
   ],
-  "sha": "618a5667c98cdc334892f5b9e4e7b8164f9b0caaf76f47866e15a49c55c38c06"
+  "sha": "13f2eda3e1bb86c74c5d3f450af95b7da1d2987947eaec1347ffffed1832868a"
 }

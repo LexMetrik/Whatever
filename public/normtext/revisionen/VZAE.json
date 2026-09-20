@@ -1,9 +1,16 @@
 {
   "erlassKey": "VZAE",
   "sr": "142.201",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-18",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2026-10-01",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.201",
+      "sha": "b6475f7fbd987fcd9822e231c6198a0794c4f7f18c06018255c7e18fb69ec40f"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2026-06-12",
@@ -707,5 +714,5 @@
       "sha": "5faa8bc9b6199bcff0fe843775e5afcd649b0fbd09b098a11d3cf478972faa83"
     }
   ],
-  "sha": "a642f3cb8a990bab7a4958b50b9cdce9fdedb6ce9093c84e881b86b70b78b8bc"
+  "sha": "3d8bb4f85c3ebb32a0a652d1d395776a7062ed2772ff1f2940c20794b8961cd6"
 }
