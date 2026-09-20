@@ -192,7 +192,40 @@ prüfbar, wenn die reale ROADMAP längst sauber ist (F2e). **Deklarierte Richtun
 die Regel prüft nur «Fahrplan sagt fertig, Plan sagt offen». Die Gegenrichtung ist
 Normalfall, nicht Defekt; und einen Vollzug, den WEDER Fahrplan noch ROADMAP notiert (D0,
 S1 fand die Regel nicht), fängt sie nicht — sie ist eine Untergrenze, kein
-Vollständigkeitsbeweis. <!-- @wiedervorlage: 2027-09-15 -->
+Vollständigkeitsbeweis.
+
+**Zweite Richtung derselben Klasse (20.9.2026, `W2·24-DESIGN-IDENTITAET` und
+`W3-TARIF-STAND`, 15 Posten): «Kopf sagt fertig, Unterposten sagen offen».** Die
+Richtungs-Grenze oben wurde nach fünf Tagen real konsumiert — diesmal INNERHALB der
+ROADMAP. Zwei Schritte standen auf `status: done` und trugen darunter zusammen **15
+offene `- [ ]`-Posten** (6 unter dem Design-Kopf, 8 unter dem Tarif-Kopf, einer hinter
+den Feldtrenner `---` gerutscht). `plan:next` liest den Status des KOPFES, nie die
+Checkboxen darunter — die Arbeit stand im Plan und war im Plan unsichtbar, wochenlang,
+bei grünem `check:plan`. Schaden: 15 Posten, die keiner Session je angezeigt wurden,
+darunter **eine seit dem 5.9.2026 offene Fachfrage an David** («WARTET AUF DAVID
+(fachlich, §7): Verjährungsrevision 2020 … `verjaehrung.ts:547`») — ein Wartestand, der
+in einem `done`-Block verschwand. Zweiter Fall derselben Klasse im selben Plan: ein
+Verweis auf einen Schritt `W3-TARIF-NACHVERIFIKATION`, den es nie gab. Warum keine neue
+Klasse: nach Ziff. 1/5 der Ablage-Anleitung unten ist eine zweimal aufgetretene Klasse
+zu ESKALIEREN, nicht zu verdoppeln — F17 hatte seine Lücke deklariert, der Vorfall hat
+sie belegt. **Gegenmittel (Tor, nicht Prosa): `check:plan` Regel 15** — ein Kopf-Schritt
+(Checkbox auf Spalte 0), dessen Checkbox `[x]` ist oder dessen `@meta` `status: done`
+trägt, darf in seinem Block keine eingerückte `- [ ]`-Zeile führen
+(`scripts/plan/kopfBuchung.ts`, `src/tests/plan-check.kopf-buchung.test.ts`, 14
+Vitest-Fälle inkl. Rot-Fall). Geburtsbeweis §6.7: **rot auf `0e4999b48`** mit exakt den
+14 vorhergesagten Treffern (Z. 585/587/590/591/592/594 und 723–730), **grün auf
+`8f6fe6971`** mit 0 Treffern; Streuungs-Probe über 10 historische ROADMAP-Stände: 5
+Stände mit Treffern (1–25), Stichproben durchweg echte Fälle derselben Klasse, kein
+Fehlalarm. **Deklarierte Grenzen:** (1) hinter einem `---` wird nicht gesucht — dort
+beginnt nach CommonMark eine neue Liste, der 15. Posten des Anlassfalls hängt an gar
+keinem Schritt mehr und ist eine eigene Klasse (verwaister Posten), darum lautet die
+Trefferzahl 14 und nicht 15; (2) nur Kopf-Schritte auf Spalte 0, eingerückte
+`- [x]`-Unterposten werden nicht geprüft; (3) verschachtelte Unter-Schritte mit eigenem
+`@meta` gibt es im Bestand nicht (alle 65 stehen auf Einzug 2) und werden nicht
+behandelt — träte einer auf, wäre der Fehlalarm laut und in einem Blick aufzulösen.
+Keine Allowlist: der Zuschnitt trägt den Bestand ohne Ausnahme. *(Die Wiedervorlage des
+Eintrags läuft mit dieser Erweiterung neu — massgeblich ist der Marker hier.)*
+<!-- @wiedervorlage: 2027-09-20 -->
 
 ## Eine neue Lehre ablegen
 
