@@ -5186,3 +5186,48 @@ der Unterposten) ist ein eigener Entscheid, keine Aufräum-Bewegung.
     - [x] **Gliederung «noch schlecht» — Standort und unterste Ebene** *(Befund David 19.9.2026)* — ✅ 19.9.2026: gemessen = Anzeige (Art.-Ebene `art@` lief mit Zeilenzustand auseinander) + Daten (SVG-Randtitel «Grundregel»); Anzeige #924, Daten #923 (Gegenprüfung bestanden). Detail: Session-Karte STRUKTUR.md 19.9.2026 (2).
 
     - [x] **Erledigt 19.9.2026:** Auf/Zu-Handling + Befund David 19.9. («svg art. 26 nicht ersichtlich … unterste ebene klappt nicht auf», Nachtrag «auch das aufklappen soll optimiert werden») — Zeilen-Offen-Zustand aus dem Sichtbaren abgeleitet (`zeilenAnsicht`), alle ausdrücklichen Öffner über `klappKarte.ts` inkl. Artikel-Ebene, ein Klick öffnet ganz, «alles auf» öffnet die Artikel, Marke nach Sprung auf dem Artikel; Wächter `gliederung-sichtbarkeit.test.ts` (vorher 11/12 rot, u. a. 4'690 offen-leere Zeilen). Daten-Teil SVG-Randtitel «Grundregel» PR #923 (Gegenprüfung bestanden).
+
+## Nachtrag 2026-09-20 (2) — die beiden `done`-Köpfe folgen nun doch, nach Herauslösung ihrer offenen Unterposten
+
+Der Absatz am Kopf dieses Blocks («Erledigte SCHRITTE wurden in dieser Umschichtung KEINE
+überführt …») bleibt unverändert als Beleg des damaligen Stands stehen — Belege altern nicht,
+sie werden ergänzt. Entscheid David 20.9.2026: die 15 offenen `- [ ]`-Unterposten werden aus den
+beiden `done`-Köpfen herausgelöst, weil ein `done`-Kopf sie für `npm run plan:next` unsichtbar
+macht — darunter Davids eigene Fachfrage zur Verjährungsrevision 2020. Sie stehen seit dem
+20.9.2026 in vier neuen offenen Schritten in `ROADMAP.md`:
+
+| neuer Schritt | `feld` | Posten | Herkunft |
+|---|---|---|---|
+| `W2·24-C` — Design-Identität: offene Nachzüge nach der Landung | design | 4 | `W2·24-DESIGN-IDENTITAET` |
+| `W2·24-PERF-REST` — Leser-Kopf: Rest-CLS und Mount-Messung | design | 2 | `W2·24-DESIGN-IDENTITAET` |
+| `W3-TARIF-FOLGE` — Tarif-Stammdaten: Folgeschritte und Datenhygiene | werkzeuge | 7 | `W3-TARIF-STAND` |
+| `W3-RECHTSSTAND-WEICHE` — Rechtsstand als echte Weiche in den Rechen-Engines | werkzeuge | 2 | `W3-TARIF-STAND` |
+
+Die IDs `W2·24-C` und `W2·24-PERF-REST` sind keine Neuerfindung: `fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md`
+§8 führt beide bereits als «eigene Schritte» — die Herauslösung löst damit nur ein, was der
+Fahrplan seit 7.9.2026 vorsah. Gestrichen wurde nichts; die Gegenzählung 15 = 4 + 2 + 7 + 2 steht
+im Bericht der ausführenden Session. Danach wandern die beiden nun leeren Köpfe vollständig
+hierher — Checkbox, `@meta`, Prosa und ihre bereits erledigten Unterposten:
+
+## W2·24-DESIGN-IDENTITAET — Design-Identität: eigene Farb- und Schrift-Handschrift *(done, verschoben 2026-09-20)*
+
+- [x] **Design-Identität: eigene Farb- und Schrift-Handschrift** *(`W2·24-DESIGN-IDENTITAET`, David 5.9.2026)*
+  <!-- @meta id: W2·24-DESIGN-IDENTITAET · status: done · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  ✅ **erledigt 7.9.2026 (PR #739, e2ac7def9)** — Handschrift «Sammlung»: R1–R13 samt Nachzügen, Gesamtprüfung
+  (Ästhetik + Funktions-Inventar 90 OK / 0 verloren), Reglement §F0. Protokolle
+  `abnahme/design-identitaet/`; Zielbeschreibung: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026.
+  **Nachwünsche 7.9. (Tag):** 16 weitere PRs #744–#761 (D34–D44, D35-F1…F4, L6, R13B, R14, R14b) —
+  Tabelle Thema/PR/SHA/Protokoll in STRUKTUR.md, Abschnitt «Nachwünsche 7.9.» (zuletzt #761 ae32c5c4e).
+  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §1 — Stand je Runde dort in §6, Folgeschritte in §8.
+  - [x] **Bezüge-Zeile: Kopfzähler gefiltert/ungefiltert** — ✅ entschieden und gebaut 11.9.2026. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
+  - [x] **Erledigt:** L6 PaneKopf-Name · Reiterstreifen/ZGB-Reiter (bleiben) · Orchestrator-Entscheide 7.9. bestätigt · D45/«Daneben öffnen»/Bezüge-Zähler/OR-Leser-Knöpfe (umgebucht nach `W2·26-FUNKTIONSZEILE`) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026.
+  - [x] **Orchestrator-Entscheide vom Tag 7.9. — David 7.9.2026 «alles bestätigt»:** — ✅ (Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 8.9.2026 (Landung)).
+  - [x] **Budget-Entscheid Entry 99,5 %** (59.7 / 60.0 KB) — ✅ David 19.9.2026 «Kopfbereich budget heben»: Entry-Budget 60 → 70 KB (`scripts/check-perf-budget.ts`); der react-dom-Rückfall bleibt über die Zeichenketten-Prüfung gefangen.
+
+## W3-TARIF-STAND — Tarif-Stammdaten: Stand maschinenlesbar + Drift-Tor *(done, verschoben 2026-09-20)*
+
+- [x] **Tarif-Stammdaten: Stand maschinenlesbar + Drift-Tor** *(`W3-TARIF-STAND`, Rules-as-Code-Sichtung 5.9.2026, Entscheid David 5.9.2026)*
+  <!-- @meta id: W3-TARIF-STAND · status: done · blocker: null · dep: [] · feld: werkzeuge -->
+  ✅ gelandet 6.9.2026 (#734) — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026. Die offenen
+  Folgeschritte darunter bleiben unverändert stehen.
+  **Detail:** [rules-as-code-sichtung-2026-09-05.md](bibliothek/recherche/rules-as-code-sichtung-2026-09-05.md) §6.
