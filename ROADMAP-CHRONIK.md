@@ -5300,3 +5300,22 @@ ersatzlos entfallen und im PR einzeln aufgeführt.
 ## QS-VERWENDEN
 
   - [x] **Erledigt:** V1 · V1b · V2 · V3 · V4 · V5 · V6 · V8 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+
+## Umschichtung 20.9.2026 — `@queue` auf fünf Einträge
+
+**Entscheid David 20.9.2026** (Prozess-Messung, Leitlinie «Prozess verschlanken»): die `@queue`
+trägt nur noch die nächsten 3–5 Schritte. Messung: 11 der 22 Einträge standen 90 Tage unberührt,
+und nur 21 % der Bau-Trailer zeigten überhaupt auf einen Queue-Eintrag — die lange Liste war
+Absichtserklärung, keine Reihenfolge. Was nicht in der Queue steht, ordnet die Dokumentreihenfolge
+(Produkt-Felder vor `Betrieb & Prüfstrasse`); nachgefüllt wird, wenn der Kopf erledigt ist.
+
+Die Queue lautete bis dahin im Wortlaut (die ersten fünf bleiben stehen):
+
+`W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·22-VERWEIS-FEDLEX,
+W2·5m-LESER-V3, QS-PERF, W2·5n-BUND-VOLL, W2·21-ZULIEFERER, W2·6d-VERFAHREN-RECHERCHE,
+W2·6d-PARLAMENT-ARTIKEL, W2·13-KANTONE-DATEN, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT,
+W2·14-SIGNAL, W2·6, W2·6d-BOTSCHAFT-TEXT, W2·6d-BULLETIN-VOTEN, W2·6d-URSPRUNG,
+W2·6d-ENTSTEHUNGSNOTIZ, W2·6d-VERNEHMLASSUNG-DOKUMENTE`
+
+Die Phasen-Prosa im ROADMAP-Kopf (Phase 1 Bund → 2 Kantone → 3 Mehr als Fedlex) bleibt unverändert
+und trägt die grobe Reihenfolge weiter; die fünf verbliebenen Einträge sind der Kern von Phase 1.
