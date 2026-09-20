@@ -4,5 +4,59 @@
     "seit": "2026-09-08",
     "grund": "Lauf 34231123731 (PR #779, 8.9.2026): Test «(d) ⌘/Ctrl+Enter in der Kopfsuche öffnet einen NEUEN Reiter» nur im Retry grün. Wurzel messen (FAHRPLAN-OFFENE-BEFUNDE §4, Eintrag 8.9.2026), nicht neu starten.",
     "ablauf": "2026-10-08"
+  },
+  {
+    "spec": "uinav-j-rechtsprechung.e2e.ts",
+    "seit": "2026-09-20",
+    "grund": "Familie Reiterbreite am Ladezeitpunkt, 201 statt 200 Links — Fehlerbuch FAHRPLAN-OFFENE-BEFUNDE §4 (Nachbarbefund 14.9.2026). Flackert in 20/20 eigens gemessenen Code-Läufen mit ausgeführten Playwright-Shards (Stichprobe 18.–20.9.2026) bzw. 30/16 (PR/merge_group) in der Vormessung 20.9.2026. Wurzel ungemessen. Entscheid David 20.9.2026.",
+    "ablauf": "2026-10-20"
+  },
+  {
+    "spec": "leser-v3-suche-ohne-gliederung.e2e.ts",
+    "seit": "2026-09-20",
+    "grund": "Flackert in 19/20 eigens gemessenen Code-Läufen mit ausgeführten Playwright-Shards (Stichprobe 18.–20.9.2026) bzw. 27/16 (PR/merge_group) in der Vormessung 20.9.2026. Wurzel ungemessen. Entscheid David 20.9.2026.",
+    "ablauf": "2026-10-20"
+  },
+  {
+    "spec": "w224-r11-reiterleiste.e2e.ts",
+    "seit": "2026-09-20",
+    "grund": "Flackert in 19/20 eigens gemessenen Code-Läufen mit ausgeführten Playwright-Shards (Stichprobe 18.–20.9.2026) bzw. 27/16 (PR/merge_group) in der Vormessung 20.9.2026. Wurzel ungemessen. Entscheid David 20.9.2026.",
+    "ablauf": "2026-10-20"
+  },
+  {
+    "spec": "leser-v3-blatt.e2e.ts",
+    "seit": "2026-09-20",
+    "grund": "Familie ⌘K-Vorlauf im Split — Fehlerbuch FAHRPLAN-OFFENE-BEFUNDE §4 (CI #711/#844). Flackert in 7/20 eigens gemessenen Code-Läufen mit ausgeführten Playwright-Shards (Stichprobe 18.–20.9.2026) bzw. 6/7 in der Vormessung 20.9.2026. Wurzel ungemessen. Entscheid David 20.9.2026.",
+    "ablauf": "2026-10-20"
+  },
+  {
+    "spec": "verweis-u.e2e.ts",
+    "seit": "2026-09-20",
+    "grund": "Vereinzelt flackernd (1/20 in der eigenen Stichprobe 18.–20.9.2026, 1–5 Läufe in der Vormessung 20.9.2026). Wurzel ungemessen. Entscheid David 20.9.2026.",
+    "ablauf": "2026-10-20"
+  },
+  {
+    "spec": "w224-plus-reiter.e2e.ts",
+    "seit": "2026-09-20",
+    "grund": "Vereinzelt flackernd (1/20 in der eigenen Stichprobe 18.–20.9.2026, 1–5 Läufe in der Vormessung 20.9.2026). Wurzel ungemessen. Entscheid David 20.9.2026.",
+    "ablauf": "2026-10-20"
+  },
+  {
+    "spec": "rechtsprechung-richter.e2e.ts",
+    "seit": "2026-09-20",
+    "grund": "Vereinzelt flackernd (1/20 in der eigenen Stichprobe 18.–20.9.2026, 1–5 Läufe in der Vormessung 20.9.2026). Wurzel ungemessen. Entscheid David 20.9.2026.",
+    "ablauf": "2026-10-20"
+  },
+  {
+    "spec": "rechtsprechung.e2e.ts",
+    "seit": "2026-09-20",
+    "grund": "Familie Reiterbreite am Ladezeitpunkt, 201 statt 200 Links — Fehlerbuch FAHRPLAN-OFFENE-BEFUNDE §4 (Nachtrag 19.9.2026, PR #917-Lauf 35445618485). In der eigenen Stichprobe 18.–20.9.2026 (20 von 46 Läufen geprüft) nicht direkt getroffen, David-Vormessung 20.9.2026 nennt sie vereinzelt (1–5 Läufe). Wurzel ungemessen. Entscheid David 20.9.2026.",
+    "ablauf": "2026-10-20"
+  },
+  {
+    "spec": "leser-ruecksprung-r5-r7.e2e.ts",
+    "seit": "2026-09-20",
+    "grund": "Vereinzelt flackernd (1/20 in der eigenen Stichprobe 18.–20.9.2026, 1–5 Läufe in der Vormessung 20.9.2026). Wurzel ungemessen. Entscheid David 20.9.2026.",
+    "ablauf": "2026-10-20"
   }
 ]
