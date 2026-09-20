@@ -107,8 +107,9 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
 - Schritt-Commit: `Roadmap: <ID>`.
 - **Schritt-Status fährt im PR mit (seit 19.9.2026, Merge-Queue):**
   `plan:set -- <ID> status=…` im eigenen PR, `Roadmap-Status:` im PR-Body
-  weglassen — `main` nimmt keine Direkt-Pushes mehr, auf die Auto-Buchung
-  (`plan-buchung.yml`) ist kein Verlass. Massgeblich: Skill `landung` Ziff. 9.
+  weglassen — die Auto-Buchung (`plan-buchung.yml`) ist am 20.9.2026
+  abgebaut (0 Buchungs-Commits in 12 Läufen). Massgeblich: Skill `landung`
+  Ziff. 9.
 - Risiko-Pfad zusätzlich: `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) —
   <Befunde>` bzw. `Gegenpruefung: n/a — reine Prüflogik`.
 - **Block-Form (vier Vorfälle 26.7./31.7.2026, aus Memory hierher überführt

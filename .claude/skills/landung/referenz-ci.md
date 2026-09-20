@@ -270,7 +270,10 @@ nicht in den Commit», 2.9.2026) für die Queue überholt.
   dem Code gefolgert, nicht gemessen: der Workflow liest `git log -1`, bei
   einer Sammel-Landung (mehrere PRs, ein Push-Ereignis) also nur den
   Kopf-Commit. Darum Status im PR-Diff mitführen (Skill Ziff. 9); ob der
-  Workflow zurückgebaut wird, ist offener ROADMAP-Punkt.
+  Workflow zurückgebaut wird, ist offener ROADMAP-Punkt. **Abgebaut
+  20.9.2026** (QS-CI-MINUTEN): `plan-buchung.yml` und `scripts/plan/
+  buchung.ts` sind gelöscht — Messung 19./20.9.2026 zeigte 12 Läufe, 0
+  Buchungs-Commits auf main seit der Merge-Queue.
 - Kosten: der `diff`-Job setzt im `merge_group` pauschal `art=code` — jeder
   Eintrag fährt das volle Programm, auch Doku-PRs (~20+ min). Umbau auf echte
   Diff-Klassierung im `merge_group` und der «Push-Diät» auf
