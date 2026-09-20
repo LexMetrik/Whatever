@@ -21,7 +21,7 @@
 
 1. **Nimm den obersten offenen Schritt** (`npm run plan:next`); blockierte/`[D]` überspringen.
 2. **Gate vor Abschluss:** `npm run gate` grün; verhaltensändernd ⇒ Golden byte-gleich.
-3. **Markiere erledigt** (`plan:set … status=done`), Karten-Zeile in `STRUKTUR.md` nachziehen.
+3. **Markiere erledigt** (`plan:set … status=done`) — im PR, der den Schritt abschliesst.
    Push/PR/Auto-Merge stehend freigegeben (§9: Merge nach `main` = Deploy; Sorgfalt VOR dem Merge).
    Commit-Trailer immer `Roadmap: <@meta id>`.
 4. **Nur was steuert, bleibt hier.** Ein Nebenfund/Unterposten ist eine eigene Datei

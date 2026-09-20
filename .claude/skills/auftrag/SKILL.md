@@ -91,13 +91,7 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
 3. Verhaltensändernd ⇒ golden byte-gleich.
 4. Status-Marker gesetzt (CLAUDE.md §8).
 5. **Plan zurückgeschrieben:** `plan:set -- <id> status=done` + `check:plan`.
-6. **Session-Karte in `STRUKTUR.md`** — wer substanzielle Arbeit auf `main`
-   landet, zieht in derselben Session eine ehrliche Karte nach (auch
-   Parallel-/Autonom-Sessions; bei fremden undokumentierten Commits nur die
-   fehlende Karte). **Default ist die Kurzkarte**, volle Karte nur in den
-   Ausnahmen — Form: Skill `bauschritt` Station E (David 15.8.2026).
-   `npm run struktur:aktuell` meldet Lücken.
-7. **War Jules oder Gemini beteiligt:** Messwerte in
+6. **Nur wenn Jules oder Gemini beteiligt war:** Messwerte in
    `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5 nachtragen
    (`npm run fremdagenten:messung` für Jules-Quote/Dauer; Gemini echt/Schein
    von Hand ins Register) und Rückbau-Schwellen §3 prüfen.

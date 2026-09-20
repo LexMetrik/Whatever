@@ -247,8 +247,6 @@ Wortlaut von §14.4/§14.5 seit 25.7.2026 im Skill `auftrag`, Ziff. 4/4a/5.
 - [ ] §6-/§9-Tore grün (Tor-Status pro Schritt notiert).
 - [ ] Pflicht-Gegenprüfung gelaufen (Risiko-Pfad, §14.4).
 - [ ] Status-Marker §8 gesetzt — «verifiziert»/«geprüft» **nie automatisch**.
-- [ ] STRUKTUR.md-Session-Karte nachgezogen (Skill `auftrag`, Ziff. 4 — Form:
-      Kurzkarte, Skill `bauschritt` Station E).
 - [ ] §11-Wissensablage erfolgt (Schritt in der jeweiligen `methodology/`-Datei).
 - [ ] §14.5-Trailer am Produktions-Commit: `Roadmap: <ID>` und auf Risiko-Pfaden
       zusätzlich `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) — <Befunde>`
