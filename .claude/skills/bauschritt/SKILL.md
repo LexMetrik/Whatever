@@ -68,7 +68,7 @@ ohne Rückfrage nach diesem Zyklus.
   Ziff. 3), weiterbauen.
 - **Jeder Agentenbericht: Punkt «Nebenfunde/Abweichungen» und jede
   aufkommende Lehre SOFORT in die Notizen-Datei**, vor dem nächsten Dispatch —
-  der Chat ist kein Speicher (Kompaktierung bei 400k; Weisung David
+  der Chat ist kein Speicher (Kompaktierung bei 700k; Weisung David
   15.9.2026).
 
 ## Station C — Prüfung (unverändert)
