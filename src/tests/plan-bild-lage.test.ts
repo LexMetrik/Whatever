@@ -390,7 +390,10 @@ describe('bauPrompt — Skill-Auslöser `bauschritt`', () => {
   it('Tor: Station W im Skill bauschritt trägt die Weiterbau-Regel vollständig — sonst wäre die Prompt-Streichung ein Regelverlust', () => {
     const skill = readFileSync(new URL('../../.claude/skills/bauschritt/SKILL.md', import.meta.url), 'utf8');
     expect(skill).toContain('Station W — Weiterbau');
-    expect(skill).toContain('nächste offene Position derselben Dach-Checkliste');
+    // Wortlaut nachgezogen 20.9.2026 (Posten-Modell, QS-EFFIZIENZ): die
+    // Dach-Checkliste in ROADMAP.md gibt es nicht mehr, die Weiterbau-Regel
+    // selbst ist unverändert — nächster Posten DESSELBEN Dachs zuerst.
+    expect(skill).toContain('nächster offener Posten desselben Dachs');
     expect(skill).toContain('gleicher Risikoklasse');
     expect(skill).toContain('Roadmap-Trailer');
     expect(skill).toContain('NIE sortenrein-widrig auf Risikopfade wechseln');

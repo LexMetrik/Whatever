@@ -5231,3 +5231,132 @@ hierher — Checkbox, `@meta`, Prosa und ihre bereits erledigten Unterposten:
   ✅ gelandet 6.9.2026 (#734) — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026. Die offenen
   Folgeschritte darunter bleiben unverändert stehen.
   **Detail:** [rules-as-code-sichtung-2026-09-05.md](bibliothek/recherche/rules-as-code-sichtung-2026-09-05.md) §6.
+
+# Umschichtung 2026-09-20 — erledigte Unterpunkte (mechanisch)
+
+Wörtlich aus ROADMAP.md herausgelöst (`npm run plan:posten -- migrieren`, QS-EFFIZIENZ,
+Posten-Modell). Kein Satz ist umformuliert; reine Zeiger-Stubs auf diese Datei sind
+ersatzlos entfallen und im PR einzeln aufgeführt.
+
+## W2·7-VZUI
+
+  - [x] **Erledigt:** Grundzustand-Fetch · `?norm=`-Sprung · vierter Reiter «Anwendung» — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+
+## W2·22-VERWEIS-FEDLEX
+
+  - [x] **Erledigt:** Z1 · Z2 · Z3 · Z5 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+
+## W2·27-BUND-FERTIG
+
+  - [x] **Erledigt 14.9.2026 (Phase-1-Welle, alle vier Risikopfad-PRs mit bestandener Gegenprüfung):** Sollbild + Messung (elf Bausteine, Fahrplan §1/§2) · Sidecar-Drift-Riegel 216/228 **und** KKV-Token `126_z__2` — #851 (`6c4f9fa2f`) · `aufgehoben` strukturell statt Text-Heuristik, 0 → **1 277/25 463**, Wächter `check:leerstellen` — #859 (`d16acf466`) · `confidence.json`-Neulauf (Qualitätsbild 23.6. → 14.9.2026) — #848 (`90cb59fff`) · Zukunftsfassungen-Hinweis im Leserkopf — #863 (`7f5aa592e`). **Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).**
+  - [x] **§8-Anzeige der ungeklärten Leerstellen** *(Auflage Gegenprüfung #859)* — ✅ 15.9.2026, PR #892 (`674cc42ae`, Gegenprüfung bestanden dbe25de86): «kein Text im Snapshot» statt «aufgehoben». Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (4).
+  - [x] **§17 · `confidence.json` ohne Frische-Tor** *(Wurzel-Befund Prüfer #848)* — ✅ 15.9.2026, PR #888 (`3202047ae`, Gegenprüfung bestanden af1d214a3): Tor `check:confidence-frische`. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (4).
+  - [x] **KKV-Label `Art. 126z` statt `Art. 126ztredecies`** *(Nebenfund Prüfer #851)* — ✅ 15.9.2026, PR #890. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026. Rest: `__N`-Deep-Link, Label-Drift-Tor (Zeilen unten).
+
+## W2·5l-NORMTEXT-B2
+
+  - [x] **Erledigt:** M15 (absorbiert in `W2·6c-ENTSTEHUNG-DATEN`) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+
+## QS-CURRENCY-KANON
+
+  - [x] **Erledigt 12.9.2026:** Pin `erv` html-6 → kanonisch html-7 (#806, `56d33dae8`; Korrektur in der Gegenprüfung: **textgleich, Markup abweichend** — 224/224 Artikel-SHAs) · `QS-CURRENCY-KANON-FRISCHE` (#808, `datenhaltung:manifest` läuft unbedingt, Pin-Identitäts-Sonde) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
+
+## QS-MONITOR-ROT
+
+  - [x] **Nach Token-Tausch (David): Normen-Monitor per `workflow_dispatch` erneut fahren** — ✅ 20.9.2026: Lauf 35513728588, Curia-Job vollständig grün (Vollabgleich · Teilkaskade · Vorflug · «PR eröffnen» ⇒ #939), ebenso BS (#936) und Vernehmlassungen (#937, beide reiner Datums-Churn, geschlossen). Offen: Fedlex-Frische Mo 21.9.2026 04:43 UTC eröffnet ihren PR selbst? — nachsehen.
+
+## W2·17-UI-BEFUNDE
+
+  - [x] **Erledigt:** B6-N1 · B6-N2 · B7-N1 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+  - [x] **Erledigt:** B9 (12/12) · B10 (7/7) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026.
+  - [x] **Erledigt:** B15 (9/9) · B16 (8/8) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026.
+
+## W2·18-FEHLERBUCH
+
+  - [x] **Gliederungs-Pfeil klappt teils erst beim zweiten Klick** *(David 15.9.2026)* — ✅ 15.9.2026, PR #894 (`fb0ab0249`): Ast bleibt nach Sprung offen (`sprungAst.ts`), Klickziel 24 px, Marke; Rest `W2·5m-LESER-V3`. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (4).
+  - [x] **Plan-Buchungs-Commit wirft wartende Auto-Merge-PRs auf BEHIND** *(13.9.2026, #843)* — ✅ 19.9.2026, Merge-Queue (`strict` AUS). Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 19.9.2026.
+  - [x] **Reiterleiste-Wellen 1–3** — ✅ 13.9.2026, PR #842/#843/#844 (+ Nachzug R8-Sweep mobil); Specs Fahrplan §4.R/§4.R2/§4.R3. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
+
+## QS-UI
+
+  - [x] **Erledigt:** Marken-Präfix im Leser · pfadgebundene Wächter — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+
+## QS-CODE-PROP
+
+  - [x] **Gefixt 12.9.2026, PR #820, Gegenprüfung ausstehend — nicht gemergt:** `nichtKonsolidiert`-Marker bei Staatsverträgen falsch-positiv (FZA) — Wurzel-Fix + Vollerhebung siehe [ROADMAP-CHRONIK.md](ROADMAP-CHRONIK.md).
+
+## QS-EFFIZIENZ
+
+  - [x] **ROADMAP-Deckel steht dauerhaft gelb** *(Messung 18.9.2026)* — ✅ 20.9.2026, Posten-Modell (`plan:posten`, `check:plan` 16): 140 Unterposten als eigene Dateien herausgelöst, ROADMAP −44 KB. Damit ist auch der Konflikt-Hotspot Nr. 1 der Merge-Queue entschärft (50 % Berührungsquote, 4 von 10 Queue-Rauswürfen `merge_conflict`). Befund im Wortlaut: 120,6 KB bei Session-Start, 132,1 KB nach zwei parallelen Sessions, 130,0 KB nach einer Teil-Überführung in die Chronik; Budget 120 KB. Seit dem Entscheid David 18.9.2026 (#905) blockiert der Deckel nicht mehr, **darum wächst er unbemerkt weiter** — die Warnung allein ändert kein Verhalten. Fällige Chronik-Überführung nach Skill `bauschritt` → [aufraeumen.md](.claude/skills/bauschritt/aufraeumen.md): erledigte Unterpunkte lebender Dach-Schritte auslagern (nicht nur `done`-Schritte), je mit Zeiger-Zeile. Als eigener Schritt fahren, nicht nebenbei — die Auslagerung muss `check:plan` und die `dep`-Auflösung intakt lassen.
+  - [x] **Hebel ROADMAP-Grösse: Befund-Prosa in die Fahrpläne** *(David 18.9.2026, vorgemerkt)* — ✅ 20.9.2026 ANDERS gelöst als vorgemerkt: nicht Auslagern in die Fahrpläne mit Kurzzeilen-Stub (das kostete die Sessions Mehrarbeit, Vorgabe David 20.9.2026), sondern eine Datei je Posten. Ursprünglicher Befund: 54 % der Datei sind offene Zeilen (64 KB; Erledigtes 0,4 KB): lange `[ ]`-Befundzeilen in den Detail-Fahrplan des Dachs, hier je Kurzzeile + `**Detail:**`-Zeiger (Skill `auftrag` Ziff. 1), danach automatisierbar. ROADMAP-Deckel seit 18.9. nur Warnung (`struktur-rotieren.py` NUR_WARNUNG). Daneben: Vault-Eintrag `lexmetrik-lektionen` — UI-/Code-Konventionen ins Reglement, dann archivieren.
+  - [x] **ROADMAP-Deckel bleibt knapp — nächste Umschichtung braucht einen `dep`-Umbau** *(Messung 14.9.2026)* — ✅ 15.9.2026 (PR #896, `d26dbbac6`): `check:plan` akzeptiert erledigte `dep`-Ziele aus der Chronik. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (4).
+  - [x] **Session-Notizen-Datei (Nebenfunde/Lehren überleben Kompaktierung und Übergabe)** — erledigt 15.9.2026, PR #891
+
+## QS-FREMDAGENTEN
+
+  - [x] **Erledigt:** Phase 0 · Pilot Jules · Diskrepanz-Finder — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+  - [x] **Erledigt:** Fremd-PR-Tor Kommentar-MULTIMENGE (PR #862) — ✅ 14.9.2026. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026.
+
+## QS-VERWENDEN
+
+  - [x] **Erledigt:** V1 · V1b · V2 · V3 · V4 · V5 · V6 · V8 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+
+## Umschichtung 20.9.2026 — `@queue` auf fünf Einträge
+
+**Entscheid David 20.9.2026** (Prozess-Messung, Leitlinie «Prozess verschlanken»): die `@queue`
+trägt nur noch die nächsten 3–5 Schritte. Messung: 11 der 22 Einträge standen 90 Tage unberührt,
+und nur 21 % der Bau-Trailer zeigten überhaupt auf einen Queue-Eintrag — die lange Liste war
+Absichtserklärung, keine Reihenfolge. Was nicht in der Queue steht, ordnet die Dokumentreihenfolge
+(Produkt-Felder vor `Betrieb & Prüfstrasse`); nachgefüllt wird, wenn der Kopf erledigt ist.
+
+Die Queue lautete bis dahin im Wortlaut (die ersten fünf bleiben stehen):
+
+`W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·22-VERWEIS-FEDLEX,
+W2·5m-LESER-V3, QS-PERF, W2·5n-BUND-VOLL, W2·21-ZULIEFERER, W2·6d-VERFAHREN-RECHERCHE,
+W2·6d-PARLAMENT-ARTIKEL, W2·13-KANTONE-DATEN, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT,
+W2·14-SIGNAL, W2·6, W2·6d-BOTSCHAFT-TEXT, W2·6d-BULLETIN-VOTEN, W2·6d-URSPRUNG,
+W2·6d-ENTSTEHUNGSNOTIZ, W2·6d-VERNEHMLASSUNG-DOKUMENTE`
+
+Die Phasen-Prosa im ROADMAP-Kopf (Phase 1 Bund → 2 Kantone → 3 Mehr als Fedlex) bleibt unverändert
+und trägt die grobe Reihenfolge weiter; die fünf verbliebenen Einträge sind der Kern von Phase 1.
+
+## Umschichtung 20.9.2026 (2) — zwei stille Schritte werden Ideen-Zeilen
+
+**Entscheid David 20.9.2026** («mach 5 und 6 wie empfohlen»), Verfahren nach Skill `auftrag`
+Ziff. 1 («Über der Plan-Kapazität → Ideen-Zeile ohne `@meta`») und `aufraeumen.md` Ziff. 3.
+Nachmessung: von den Phase-3-Schritten sind genau diese zwei echte Kandidaten — 90 Tage ohne
+Trailer- oder PR-Nennung, nicht in der `@queue`, kein `dep:` darauf, kein junger David-Auftrag.
+Sie verlieren ihr `@meta` und stehen fortan als Ideen-Zeilen am Ende des Feldes `rechtsprechung`;
+die Bau-Specs in den Fahrplänen bleiben unberührt und bleiben verlinkt.
+
+Wortlaut der beiden Blöcke, wie sie bis zum 20.9.2026 in `ROADMAP.md` standen:
+
+```
+- [ ] **Kantonaler Norm-Resolver → Kantonalnorm-Buckets (P0-Kern)** *(`W2·6-RESOLVER`)*
+  <!-- @meta id: W2·6-RESOLVER · status: ready · blocker: null · dep: [] · feld: rechtsprechung · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
+  `norm-index` füllt heute nur Bundesnorm-Buckets; der Resolver ist Voraussetzung der kantonalen
+  Stufe. Risikopfad-Dach der Rechtsprechungs-DATEN.
+  **Detail:** [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13.
+
+- [ ] **Sachgebiet-Facette an der Norm↔Entscheid-Kante** *(`W2·7-VZUI-SACHGEBIET`)*
+  <!-- @meta id: W2·7-VZUI-SACHGEBIET · status: ready · blocker: null · dep: [] · feld: rechtsprechung · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
+  Deterministisch aus der amtlichen BGE-Bandnummer I–V (§2, keine Heuristik). Extraktion =
+  Risikopfad ⇒ Gegenprüfung.
+  **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §12.
+```
+
+**Der eine offene Posten wurde nicht geschlossen, sondern umgehängt.**
+`plan/posten/2026-09-20-richternamen-gegen-den-staatskalender-aufloesen.md` hing unter
+`W2·6-RESOLVER`; ein Posten unter einem toten Dach macht `check:plan` Regel 16 (a) rot. Statt ihn
+zu schliessen (das hätte einen offenen Befund unsichtbar gemacht) trägt er jetzt das Dach `W2·6`
+(«Konsultieren-Klingen», `feld: rechtsprechung`, `status: ready`) — dieselbe Fläche, derselbe
+Fahrplan-Strang, der Befund bleibt offen und zählbar. `W2·7-VZUI-SACHGEBIET` trug keinen Posten.
+
+**Offengelegte Abweichung (§7):** der ROADMAP-Text von `W2·6-RESOLVER` nannte sich selbst
+«Voraussetzung der kantonalen Stufe», und `fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md` §64 nennt
+ihn den «bauenden Schritt dieser Spec»; `fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md` §82 führt ihn als
+Andockpunkt. Ein maschineller `dep:`-Eintrag besteht nirgends, und kein lebender Schritt wartet auf
+ihn — die kantonale Rechtsprechungs-Stufe selbst liegt in Phase 3. Die Verweise zeigen weiterhin auf
+denselben Namen, der als Ideen-Zeile in der ROADMAP sichtbar bleibt; ein späteres Wiederöffnen
+heisst, die `@meta`-Zeile oben wörtlich zurückzustellen.
+
