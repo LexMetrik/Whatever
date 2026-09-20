@@ -53,16 +53,27 @@ describe('leseGegenpruefungAusSquash — Rot-Proben (§6.7)', () => {
     expect(leseGegenpruefungAusSquash(message)).toEqual([]);
   });
 
-  it('(iii) Pseudo-Co-Author-Sektion ohne Strichzeile wird NICHT abgeschnitten — der echte Trailer-Absatz davor bleibt verdeckt', () => {
+  // A3-Nachzug (Gegenprüfung 20.9.2026, «NICHT BESTANDEN»): DEKLARIERTE
+  // fachliche Änderung dieses einen Tests (§6.3 — kein stilles Anpassen).
+  // Bisher dokumentierte dieser Test die BEHOBENE Lücke selbst als
+  // gewolltes Verhalten: GitHub hängt den Co-Author-Absatz empirisch in
+  // ZWEI Formen an (6:6 unter den letzten 12 Queue-Merges) — mit
+  // `---------`-Trennzeile (PR #941/c94967134) UND bare, ohne Trennzeile
+  // (PR #942/d20efde42: `\n\nCo-authored-by: …`). Die bare Form ist exakt
+  // die hier konstruierte: ein reiner Co-Author-Absatz, nur durch eine
+  // Leerzeile vom echten Trailer-Absatz getrennt. Ohne Fix verschwand ein
+  // gültiges Verdikt in dieser Form spurlos — jetzt wird auch ein bare
+  // Co-Author-Anhang (AUSSCHLIESSLICH Co-authored-by-Zeilen als eigener
+  // Schluss-Absatz) abgeschnitten, der Trailer-Absatz davor wird gefunden.
+  it('(iii) bare Co-Author-Absatz (ohne Strichzeile) wird jetzt ABGESCHNITTEN — der echte Trailer-Absatz davor wird gefunden', () => {
     const message =
       `feat(x): irgendwas\n\n` +
       `Roadmap: X\n` +
-      `Gegenpruefung: bestanden (Opus, Test) — dieser echte Trailer-Absatz darf nicht gefunden werden, weil er nicht mehr der letzte ist.\n\n` +
+      `Gegenpruefung: bestanden (Opus, Test) — dieser echte Trailer-Absatz muss trotz bare Co-Author-Anhang gefunden werden.\n\n` +
       `Co-authored-by: Claude Sonnet <noreply@anthropic.com>\n`;
-    // Ohne Strichzeile davor gilt die Co-Author-Zeile selbst als letzter
-    // Absatz (kein Abschneiden) — der davorliegende echte Trailer-Absatz wird
-    // nicht durchsucht.
-    expect(leseGegenpruefungAusSquash(message)).toEqual([]);
+    const werte = leseGegenpruefungAusSquash(message);
+    expect(werte).toHaveLength(1);
+    expect(werte[0]).toContain('trotz bare Co-Author-Anhang gefunden werden');
   });
 
   it('(iii) Fremdzeile innerhalb der Co-Author-Sektion verhindert das Abschneiden', () => {
