@@ -114,8 +114,10 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
   `git log -1 --format='%(trailers:key=Roadmap,valueonly)'` muss den Wert
   liefern; Risiko-Pfad-Form zusätzlich per `npm run check:merge-schutz`.
 - **PR-Body: Roadmap-Trailer-Block nach «🤖 Generated with …», nicht davor**
-  (Skill `landung`, Formregel 5, PR #628 2.9.2026) — der Fallback in
-  `plan-buchung.yml` liest den LETZTEN Absatz des PR-Bodys; ein Bau-Agent, der
+  (Skill `landung`, Formregel 5, PR #628 2.9.2026) — seit #946 (`2146ef631`)
+  liest `check:merge-schutz` Titel und Body des PR selbst (die frühere
+  `plan-buchung.yml`-Auto-Buchung ist am 20.9.2026 abgebaut); der Trailer-Block
+  bleibt dabei der LETZTE Absatz des PR-Bodys. Ein Bau-Agent, der
   seinen PR-Body selbst zusammenstellt, schreibt darum genau in dieser
   Reihenfolge: Prosa → «🤖 Generated with …» → Leerzeile → Trailer-Block.
   Wiederholt aufgetreten 17.9.2026 (#899/#900, Trailer vor der Generated-Zeile) —
