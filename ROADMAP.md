@@ -453,8 +453,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   - [ ] **WARTET AUF DAVID:** die 4 Fedlex-Fundstellen dem Fedlex-Betrieb melden? Empfehlung: ja — belegte Fehler in der amtlichen Publikation, Meldung kostet wenig.
   - [ ] Stufe 2: Abgleich über Artikelnummer statt eId; Vollausbau auf alle 227 Pins nach Laufzeit.
 
-- [ ] **Normen-Monitor seit ≥5 Wochen rot — Wurzel-Fix** *(`QS-MONITOR-ROT`, Aktivierungs-Audit 14.8.2026)*
-  <!-- @meta id: QS-MONITOR-ROT · status: ready · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
+- [~] **Normen-Monitor seit ≥5 Wochen rot — Wurzel-Fix** *(`QS-MONITOR-ROT`, Aktivierungs-Audit 14.8.2026)*
+  <!-- @meta id: QS-MONITOR-ROT · status: wip · blocker: null · dep: [] · feld: korpus · fahrplan: fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md -->
   Rechtsstand-relevant: `normen-monitor.yml` 5/5 Läufe failure. Diagnose 14.8. — **das Rot ist ECHT**,
   der Monitor korrekt. **Detail:** [FAHRPLAN-OFFENE-BEFUNDE.md](fahrplaene/FAHRPLAN-OFFENE-BEFUNDE.md) §2.
   - [x] **Nachweislauf 18.9.2026 (35353185468): sechs echte Daten-Befunde behoben** — ✅ 18.9.2026: #908 (`790a32bf5`, rectifies-Parser Mehrfach-Fundstellen — VTS `oc/2025/691` war Parser-Lücke, kein Fedlex-Fehler, KEIN Ausnahme-Eintrag) · #910 (`f7aa5c12d`, EDÖB-Merkblatt, AVG-Botschaften `BOTSCHAFT-2002-172`/`-2000-99` + Revisionen-Sidecar, `BS-GR-26.0508`, VERN-2026-51/-52 + drei vom 8-Erlass-Tor ungesehene Deltas) · #911 (`59ac17fcd`, Fedlex-Abkürzungen EÖBV/AVG de/fr/it; it-«LC» als Waadtländer Homonym gesperrt) · #912 (`a1d099a79`, Re-Pin `uno_antifolter` html-1) · Wurzel-Fix Fedlex-Frische #907 (`745b276b7`, `projektionen:normtext`, Nachweislauf 35365372442 grün). Je Opus-Gegenprüfung, Register. Normen-Monitor-Lauf 35373415150 auf `a1d099a79`: Job «Rechtsstände (check:netz) · Live-Site-Smoke · Runtime-APIs» GRÜN, Issue #754 vom Lauf selbst geschlossen (#750 bleibt by design bis Turso-Reset 1.10. offen); Monatsjobs Vernehmlassungen + Basel-Stadt grün (BS öffnete Automatik-PR #913), Curia-Vista-Monatsjob ROT = dokumentierter Rest (Kaskaden-Lücke, eigene Zeile)
