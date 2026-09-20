@@ -340,7 +340,13 @@ export function migrationsPlan(
       continue;
     }
     const hash = zeilenHash(zeilen[b.start]);
-    const titel = titelAus(zeilen[b.start]) ?? titelVonHand.get(hash) ?? null;
+    // Der Hand-Titel GEWINNT. Erste Fassung 20.9.2026 las ihn nur als Notnagel
+    // für Zeilen ohne `**…**` — dann bekamen zwölf Posten den ersten Fettdruck
+    // der Zeile als Namen, und der ist nicht immer der Titel: «geparkt», «M2»,
+    // «Vorbestand», dreimal «WARTET AUF DAVID». Ein Posten, der «geparkt»
+    // heisst, ist in `plan:posten` und im Lagebild so gut wie unsichtbar —
+    // genau die Sichtbarkeit, für die das Modell gebaut ist (F17).
+    const titel = titelVonHand.get(hash) ?? titelAus(zeilen[b.start]) ?? null;
     if (!titel) {
       ohneTitel.push({ hash, text: zeilen[b.start].trim() });
       continue; // ohne Titel wird NICHT migriert — raten wäre schlimmer als stehen lassen
