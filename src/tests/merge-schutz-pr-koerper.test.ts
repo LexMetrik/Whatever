@@ -74,6 +74,28 @@ describe('pruefePrKoerper — die drei Kernfälle (a)/(b)/(c)', () => {
     const body = 'Gegenpruefung: x\nGegenpruefung: bestanden (Opus, Test) — genug Zeichen im Befund-Teil\n';
     expect(pruefePrKoerper('fix(x): y', body)).toEqual({ art: 'gueltig' });
   });
+
+  // A3-Nachzug (Gegenprüfung 20.9.2026): GitHub hängt den PR-Body-Co-Author-
+  // Absatz beim Squash empirisch in ZWEI Formen an (6:6 unter den letzten 12
+  // Queue-Merges) — mit `---------`-Trennzeile UND bare, ohne Trennzeile
+  // (PR #942/d20efde42). Beide Formen müssen die Queue-Squash-Simulation
+  // hier GRÜN lesen, sonst reisst ein gültiges Verdikt allein wegen der
+  // Anhangsform.
+  it('(d) Verdikt als letzter Body-Absatz + bare Co-author-Anhang (ohne Strichzeile) ⇒ gueltig', () => {
+    const titel = 'fix(x): y';
+    const body =
+      'Roadmap: X\n' +
+      'Gegenpruefung: bestanden (Opus, Test) — Verdikt trotz bare Co-Author-Anhang muss gelesen werden.\n\n' +
+      'Co-authored-by: Claude Sonnet <noreply@anthropic.com>\n';
+    expect(pruefePrKoerper(titel, body)).toEqual({ art: 'gueltig' });
+    // baueQueueSquash spielt beide Anhangsformen durch derselben Prüfung zu.
+    const mitStrich = body.replace(
+      '\n\nCo-authored-by',
+      '\n\n---------\n\nCo-authored-by',
+    );
+    expect(pruefePrKoerper(titel, mitStrich)).toEqual({ art: 'gueltig' });
+    expect(baueQueueSquash(titel, body)).toContain('Gegenpruefung: bestanden');
+  });
 });
 
 describe('pruefePrSchutz — injizierte gh-Holung, kein Netz', () => {
@@ -119,14 +141,73 @@ describe('pruefePrSchutz — injizierte gh-Holung, kein Netz', () => {
     expect(empfangen).toBe('555');
   });
 
-  it('ohne --pr wird holen() ohne Nummer gerufen (aktueller Branch)', () => {
+  // A1/A4-Nachzug (Gegenprüfung 20.9.2026, «NICHT BESTANDEN»): DEKLARIERTE
+  // fachliche Änderung dieses Tests (§6.3) — er zementierte bisher die A1-
+  // Lücke (Branch-Modus IMMER, auch wenn `MERGE_SCHUTZ_KOPF` gesetzt ist —
+  // genau der Realfall des Hooks, der im Haupt-Checkout auf `main` läuft und
+  // dort keinen PR für den Branch findet). Auf das neue Soll umgestellt:
+  // ohne `--pr` UND ohne `MERGE_SCHUTZ_KOPF` bleibt der Branch-Modus
+  // unverändert; ist `MERGE_SCHUTZ_KOPF` gesetzt, entscheidet stattdessen
+  // `holenFuerKopf` — der Branch-Modus (`holen()`) wird dann gar nicht erst
+  // aufgerufen.
+  it('ohne --pr, ohne MERGE_SCHUTZ_KOPF: Branch-Modus wie bisher (holen() ohne Nummer)', () => {
     let empfangen: string | undefined = 'unveraendert';
     const holen = (nr?: string): PrKoerper | null => {
       empfangen = nr;
       return null;
     };
-    pruefePrSchutz(['node', 'script'], 1, bereich, holen);
+    const r = pruefePrSchutz(['node', 'script'], 1, bereich, holen, () => null, {});
     expect(empfangen).toBeUndefined();
+    expect(r).toBeNull();
+  });
+
+  it('MERGE_SCHUTZ_KOPF gesetzt + Treffer ⇒ dieser PR wird geprüft, Branch-Modus bleibt aus', () => {
+    let branchAufgerufen = false;
+    const holen = (): PrKoerper | null => {
+      branchAufgerufen = true;
+      return null;
+    };
+    const holenFuerKopf = (kopf: string): PrKoerper | null => {
+      expect(kopf).toBe('deadbeef00112233');
+      return { nummer: 77, titel: 'fix(x): y', body: 'Kein Verdikt hier.\n' };
+    };
+    const r = pruefePrSchutz(
+      ['node', 'script'], 1, bereich, holen, holenFuerKopf,
+      { MERGE_SCHUTZ_KOPF: 'deadbeef00112233' },
+    );
+    expect(branchAufgerufen).toBe(false);
+    expect(r).toContain('PR #77');
+    expect(r).toContain("kein 'Gegenpruefung:'-Verdikt im PR-Body");
+  });
+
+  it('MERGE_SCHUTZ_KOPF gesetzt + kein Treffer ⇒ sauberer Überspring, NIE Fallback auf Branch-Modus (A2)', () => {
+    let branchAufgerufen = false;
+    const holen = (): PrKoerper | null => {
+      branchAufgerufen = true;
+      return null;
+    };
+    const holenFuerKopf = (): PrKoerper | null => null;
+    const r = pruefePrSchutz(
+      ['node', 'script'], 1, bereich, holen, holenFuerKopf,
+      { MERGE_SCHUTZ_KOPF: 'deadbeef00112233' },
+    );
+    expect(r).toBeNull();
+    expect(branchAufgerufen).toBe(false);
+  });
+
+  it('--pr <n> hat Vorrang vor MERGE_SCHUTZ_KOPF (expliziter Modus gewinnt)', () => {
+    const holen = (nr?: string): PrKoerper | null => {
+      expect(nr).toBe('555');
+      return null;
+    };
+    const holenFuerKopf = (): PrKoerper | null => {
+      throw new Error('holenFuerKopf haette bei explizitem --pr nicht aufgerufen werden duerfen');
+    };
+    const r = pruefePrSchutz(
+      ['node', 'script', '--pr', '555'], 1, bereich, holen, holenFuerKopf,
+      { MERGE_SCHUTZ_KOPF: 'deadbeef00112233' },
+    );
+    expect(r).toBeNull();
   });
 });
 
@@ -165,12 +246,33 @@ function commit(root: string, msg: string): void {
   execFileSync('git', ['-C', root, 'commit', '-q', '-m', msg]);
 }
 
-/** gh-Attrappe auf PATH: `gh pr view … --json …` liefert IMMER dieselbe (test-gesteuerte) Antwort. */
-function ghAttrappe(antwort: { number: number; title: string; body: string }): string {
+/**
+ * gh-Attrappe auf PATH: `gh pr view … --json …` UND `gh pr list … --json …`
+ * liefern dieselbe (test-gesteuerte) Antwort — als Einzelobjekt bzw. als
+ * Liste mit einem Eintrag, je nach Subkommando ($2). A1-Nachzug (Gegen-
+ * prüfung 20.9.2026): der echte Merge-Schutz ruft bei gesetztem
+ * `MERGE_SCHUTZ_KOPF` jetzt `gh pr list` (Holung über headRefOid) statt
+ * `gh pr view` (Branch-Modus) — die Attrappe muss deshalb BEIDE
+ * Subkommandos bedienen, sonst prüfen die Integrationstests unten seit dem
+ * A1-Fix den falschen Pfad (still `null` ⇒ Rückfall auf den alten
+ * Zweig-Trailer-Pfad, keine echte Probe der neuen Verdrahtung mehr).
+ */
+function ghAttrappe(antwort: { number: number; title: string; body: string; headRefOid?: string }): string {
   const bin = mkdtempSync(join(tmpdir(), 'gh-bin-'));
   aufgeraeumt.push(bin);
   const p = join(bin, 'gh');
-  writeFileSync(p, `#!/bin/sh\ncat <<'EOF_GH_FIXTURE'\n${JSON.stringify(antwort)}\nEOF_GH_FIXTURE\n`, 'utf8');
+  const einzeln = JSON.stringify(antwort);
+  const liste = JSON.stringify([antwort]);
+  writeFileSync(
+    p,
+    `#!/bin/sh\n` +
+      `if [ "$2" = "list" ]; then\n` +
+      `cat <<'EOF_GH_LISTE'\n${liste}\nEOF_GH_LISTE\n` +
+      `else\n` +
+      `cat <<'EOF_GH_FIXTURE'\n${einzeln}\nEOF_GH_FIXTURE\n` +
+      `fi\n`,
+    'utf8',
+  );
   chmodSync(p, 0o755);
   return bin;
 }
@@ -213,10 +315,14 @@ describe('Integration: check-merge-schutz.ts gegen ein temporäres git-Repo', ()
 
   it('Risiko-Diff + gültiger Zweig-Trailer, aber PR-Body-Verdikt verkürzt ⇒ ROT (Root-Cause-Regression, Befund PRs #921/#923)', () => {
     const { repo, basis, kopf } = repoMitRisikoUndGueltigemZweigTrailer();
+    // A1-Nachzug: headRefOid = kopf — der echte Hook uebergibt MERGE_SCHUTZ_KOPF
+    // aus `gh pr view --json headRefOid`, die Attrappe muss denselben Wert im
+    // `pr list`-Treffer liefern, sonst greift der neue Kopf-Modus nicht.
     const bin = ghAttrappe({
       number: 9,
       title: 'feat(vorlagen): x',
       body: 'Roadmap: X\nGegenpruefung: bestanden (Opus, Test) — keine\n',
+      headRefOid: kopf,
     });
     const r = laufeTor(repo, basis, kopf, bin);
     expect(r.status).toBe(1);
@@ -226,7 +332,27 @@ describe('Integration: check-merge-schutz.ts gegen ein temporäres git-Repo', ()
 
   it('dieselbe Lage, aber PR-Body-Verdikt gültig ⇒ GRÜN (alter Pfad greift, Register gewachsen)', () => {
     const { repo, basis, kopf } = repoMitRisikoUndGueltigemZweigTrailer();
-    const bin = ghAttrappe({ number: 9, title: TITEL_923, body: FIXTURE_923_BODY });
+    const bin = ghAttrappe({ number: 9, title: TITEL_923, body: FIXTURE_923_BODY, headRefOid: kopf });
+    const r = laufeTor(repo, basis, kopf, bin);
+    expect(r.status).toBe(0);
+    expect(r.ausgabe).toContain('grün');
+    expect(r.ausgabe).toContain('gewachsen');
+  }, 20000);
+
+  // A1-Nachzug: der eigentliche Realfall — `MERGE_SCHUTZ_KOPF` gesetzt, aber
+  // KEIN PR mit passendem headRefOid in der Liste (z. B. Haupt-Checkout auf
+  // `main`, PR laengst zu, oder `gh`-Antwort ohne Treffer). Muss sauber
+  // ueberspringen und NICHT auf den (hier gar nicht erreichbaren) Branch-
+  // Modus zurueckfallen — der alte Zweig-Trailer-Pfad greift danach weiter
+  // und macht dieses Repo GRUEN (gueltiger Zweig-Trailer + Register gewachsen).
+  it('MERGE_SCHUTZ_KOPF gesetzt, aber kein PR-Treffer (headRefOid passt nicht) ⇒ sauberer Überspring, alter Zweig-Pfad entscheidet', () => {
+    const { repo, basis, kopf } = repoMitRisikoUndGueltigemZweigTrailer();
+    const bin = ghAttrappe({
+      number: 9,
+      title: 'feat(vorlagen): x',
+      body: 'Kein Verdikt hier.\n',
+      headRefOid: '0'.repeat(40), // passt garantiert nicht zu `kopf`
+    });
     const r = laufeTor(repo, basis, kopf, bin);
     expect(r.status).toBe(0);
     expect(r.ausgabe).toContain('grün');
