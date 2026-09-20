@@ -132,7 +132,11 @@ export function holePrKoerperFuerKopf(
   try {
     const vollerSha = aufloesen(kopf);
     if (!vollerSha) return null; // unauflösbar ⇒ sauberer Überspring, kein gh-Aufruf nötig
-    const args = ['pr', 'list', '--state', 'open', '--json', 'number,title,body,headRefOid', '--limit', '200'];
+    // N3 (Nach-Verdikt 20.9.2026): 200 → 500 — bei mehreren offenen PRs mit
+    // identischem Head gewinnt weiterhin der erste Treffer der Liste; > 500
+    // offene PRs (bislang nie beobachtet) fallen aus der Liste und liefern
+    // denselben sauberen Überspring wie ein fehlender Treffer, NIE ein Rot.
+    const args = ['pr', 'list', '--state', 'open', '--json', 'number,title,body,headRefOid', '--limit', '500'];
     const out = execFileSync('gh', args, { stdio: ['ignore', 'pipe', 'ignore'], timeout: 8000 }).toString('utf8');
     const liste = JSON.parse(out);
     if (!Array.isArray(liste)) return null;
