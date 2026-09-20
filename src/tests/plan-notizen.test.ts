@@ -99,4 +99,21 @@ describe('notizenZeilen', () => {
   it('leere Befund-Liste ergibt keine Zeile (still, kein Gate-Tor)', () => {
     expect(notizenZeilen([])).toEqual([]);
   });
+
+  // Fehlmeldung-Fix (Befund 20.9.2026, F17): eine Datei ohne jede Checkbox
+  // (reine Übergabe-Prosa, z.B. ein Prüfauftrag im Fliesstext) darf NICHT als
+  // «abgearbeitet, löschen» gelten — sie wurde nie abgearbeitet, sie hat nie
+  // eine Checkliste getragen. Vorher: `offen === 0` allein reichte für den
+  // Lösch-Hinweis, das traf auch 0/0-Dateien.
+  it('markiert eine Datei ohne jede Checkbox als Übergabe/Notiz zum Lesen, nicht als abgearbeitet', () => {
+    expect(notizenZeilen([{ name: '2026-09-20-pruefauftrag.md', offen: 0, erledigt: 0 }])).toEqual([
+      '📝 Session-Notizen: 2026-09-20-pruefauftrag.md — Übergabe/Notiz ohne Checkboxen — lesen',
+    ]);
+  });
+
+  it('unterscheidet weiterhin: mindestens eine Checkbox + alle erledigt bleibt „abgearbeitet, löschen"', () => {
+    expect(notizenZeilen([{ name: 'fertig.md', offen: 0, erledigt: 3 }])).toEqual([
+      '📝 Session-Notizen: fertig.md — abgearbeitet, löschen',
+    ]);
+  });
 });

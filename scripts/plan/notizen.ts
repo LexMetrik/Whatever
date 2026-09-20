@@ -56,6 +56,12 @@ export function notizenBefund(dateien: NotizenDatei[]): NotizenBefund[] {
  * im Haupt-Checkout). Kein Verzeichnis ⇒ leere Liste, **nie werfen** — der
  * Pflicht-Einstieg `plan:next` darf an einer fehlenden/kaputten Ablage nicht
  * scheitern (Muster wie `lage.ts`/`leseZeitreihe`).
+ *
+ * Nicht-`.md`-Dateien (z.B. eine `.patch`-Beilage) filtert `endsWith('.md')`
+ * bereits vollständig heraus — bewusst beibehalten (Befund 20.9.2026): sie
+ * sind weder Übergabe-Prosa noch Checkbox-Liste, `notizenBefund`/`notizenZeilen`
+ * kennen kein Format dafür. Sie bleiben in `plan:next` unsichtbar (Beilage,
+ * ignoriert), statt sie roh als Text zu zählen.
  */
 export function leseNotizen(dir: string): NotizenDatei[] {
   try {
@@ -96,11 +102,27 @@ export function notizenVerzeichnis(gitCommonDir: string, cwd: string): string {
   return join(hauptCheckout, '.claude', 'notizen');
 }
 
-/** Formatiert die Befunde als `plan:next`-Zeilen (leere Liste ⇒ keine Zeile, still). */
+/**
+ * Formatiert die Befunde als `plan:next`-Zeilen (leere Liste ⇒ keine Zeile,
+ * still).
+ *
+ * Fehlmeldung-Fix (Befund 20.9.2026, F17): eine Datei OHNE jede Checkbox
+ * (`offen === 0 && erledigt === 0` — reine Übergabe-Prosa, z.B. ein
+ * Prüfauftrag im Fliesstext) galt zuvor als «abgearbeitet, löschen», weil
+ * die Zeile nur `offen > 0` prüfte. Real betroffen war u.a. ein neu zu
+ * dispatchender Prüfauftrag ohne Checkboxen-Liste. Eine Datei gilt jetzt nur
+ * dann als abgearbeitet, wenn sie MINDESTENS eine Checkbox trägt und alle
+ * erledigt sind (`erledigt > 0 && offen === 0`); ohne jede Checkbox ist sie
+ * unklassifiziert und wird zum Lesen markiert statt zum Löschen.
+ */
 export function notizenZeilen(befunde: NotizenBefund[]): string[] {
-  return befunde.map((b) =>
-    b.offen > 0
-      ? `📝 Session-Notizen: ${b.name} — ${b.offen} offen · übernehmen oder abarbeiten (Skill bauschritt Station A/E)`
-      : `📝 Session-Notizen: ${b.name} — abgearbeitet, löschen`,
-  );
+  return befunde.map((b) => {
+    if (b.offen > 0) {
+      return `📝 Session-Notizen: ${b.name} — ${b.offen} offen · übernehmen oder abarbeiten (Skill bauschritt Station A/E)`;
+    }
+    if (b.erledigt > 0) {
+      return `📝 Session-Notizen: ${b.name} — abgearbeitet, löschen`;
+    }
+    return `📝 Session-Notizen: ${b.name} — Übergabe/Notiz ohne Checkboxen — lesen`;
+  });
 }
