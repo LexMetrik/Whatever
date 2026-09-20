@@ -62,7 +62,7 @@ function zeilen(text: string): string[] {
  * konservativ, damit nie mehr abgeschnitten wird als exakt dieser
  * GitHub-Anhang.
  */
-function schneideCoAuthorAb(eingabe: string[]): string[] {
+function schneideEinenCoAuthorAbsatzAb(eingabe: string[]): string[] {
   let i = eingabe.length - 1;
   let sahCoAuthor = false;
   while (i >= 0 && CO_AUTHOR_ZEILE.test(eingabe[i])) {
@@ -74,6 +74,31 @@ function schneideCoAuthorAb(eingabe: string[]): string[] {
   const j = i - 1;
   if (j >= 0 && STRICH_ZEILE.test(eingabe[j])) return eingabe.slice(0, j); // Form A: Strichzeile davor
   return eingabe.slice(0, i); // Form B (bare): Leerzeile reicht, Co-Author ist eigener Absatz
+}
+
+/**
+ * Wendet schneideEinenCoAuthorAbsatzAb() SCHLEIFEND an, bis ein Durchlauf
+ * nichts mehr ändert (N1-Nachzug, Nach-Verdikt 20.9.2026 «BESTANDEN MIT
+ * AUFLAGEN»: GitHub kann ZWEI bare Co-Author-Absätze stapeln — den eigenen,
+ * bereits im PR-Body enthaltenen bare Absatz [Attribution 'Co-Authored-By:
+ * Claude …'] UND den von der Queue selbst nochmals bare angehängten. Ein
+ * EINZELSCHNITT legte dann bloss den EIGENEN Co-Author-Absatz als neuen
+ * letzten Absatz frei — der trägt selbst kein 'Gegenpruefung:'-Wort, der
+ * echte Verdikt-Absatz davor kam nie zum Zug: Simulation [baueQueueSquash()
+ * ohne den GitHub-Anhang] las 'gueltig', die echte Queue-Nachricht [mit
+ * beiden Absätzen] 'kein Verdikt' — derselbe PR-Body, zwei Antworten. Jeder
+ * Einzelschnitt bleibt UNVERÄNDERT konservativ (nur exakt eine erkannte
+ * Co-Author-Sektion, Form A oder B, siehe oben) — die Schleife wendet ihn
+ * bloss wiederholt an; sie terminiert immer, weil jeder Schnitt eingabe
+ * echt verkürzt oder aber unverändert zurückgibt (dann bricht die Schleife).
+ */
+function schneideCoAuthorAb(eingabe: string[]): string[] {
+  let aktuell = eingabe;
+  for (;;) {
+    const naechster = schneideEinenCoAuthorAbsatzAb(aktuell);
+    if (naechster.length === aktuell.length) return aktuell;
+    aktuell = naechster;
+  }
 }
 
 /** Ein Trailer-Kopf 'Schluessel: ' — dieselbe Zeichenmenge wie git (alnum + '-'). */
