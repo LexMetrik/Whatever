@@ -10,7 +10,7 @@
 // Dieselbe Trennung tragen retro-17.ts/retro17Kern.ts und
 // selbstopt-erheben.ts/selbstoptKern.ts.
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, realpathSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { parseRoadmap } from './parse';
 import {
@@ -23,6 +23,7 @@ import {
   postenPfad,
   postenScan,
   postenZeile,
+  schliessenPruefen,
 } from './postenKern';
 
 function flagge(argv: string[], name: string): string | null {
@@ -75,11 +76,17 @@ if (!process.env.VITEST) {
     schreibe(pfad, inhalt);
     console.log(`Posten angelegt: ${pfad}`);
   } else if (befehl === 'zu') {
-    const pfad = argv[1];
-    if (!pfad || !existsSync(pfad)) {
+    const pfadArg = argv[1];
+    if (!pfadArg) {
       console.error('Aufruf: npm run plan:posten -- zu plan/posten/<datei>.md [--beleg "PR #123"]');
       process.exit(2);
     }
+    const pruefung = schliessenPruefen(pfadArg, process.cwd(), existsSync, (p) => readFileSync(p, 'utf8'), realpathSync);
+    if (!pruefung.ok) {
+      console.error(`plan:posten ROT: ${pruefung.fehler}`);
+      process.exit(1);
+    }
+    const pfad = pruefung.relPfad;
     const beleg = flagge(argv, 'beleg') ?? '—';
     const ziel = `${POSTEN_ARCHIV}/${pfad.split('/').pop()}`;
     mkdirSync(POSTEN_ARCHIV, { recursive: true });

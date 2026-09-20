@@ -23,7 +23,7 @@
 // darf unsichtbar werden).
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { isAbsolute, join, relative, resolve, sep } from 'node:path';
 import { parseRoadmap } from './parse';
 
 export const POSTEN_ORDNER = 'plan/posten';
@@ -100,6 +100,80 @@ export function parsePosten(pfad: string, inhalt: string): Posten | { pfad: stri
     kopf: { dach, titel, anlass: felder.get('anlass') || null, wartetAuf: felder.get('wartet-auf') || null },
     rumpf: inhalt.slice(m[0].length),
   };
+}
+
+// ─── Schliessen («zu») ────────────────────────────────────────────────────────
+//
+// ANLASS (Bug-Check 20.9.2026, Auflage P1). `zu` prüfte nur `existsSync`: eine
+// beliebige Nicht-Posten-Datei (Prüfer-Probe `zu WICHTIG.md`) wurde anstandslos
+// nach `archiv/posten/` verschoben, mit einer «Erledigt»-Zeile versehen und
+// `git mv`/`git add` gestaged — ROT reproduziert, siehe Test unten. Zweiter
+// Fund derselben Probe: eine bereits geschlossene Datei (schon unter
+// `archiv/posten/`) bekam eine ZWEITE «Erledigt»-Zeile angehängt, bevor `git mv`
+// (Quelle == Ziel) mit einer unbehandelten Exception abbrach.
+//
+// Diese Funktion ist reine Vorprüfung (I/O injiziert, wie `pruefe()` in
+// check.ts) — sie schreibt nichts, sie sagt nur ja/nein. Geprüft wird:
+//  1. der Pfad liegt (textuell normalisiert über `path.resolve`/`relative`,
+//     kein `..`) unter POSTEN_ORDNER — nicht irgendwo im Repo;
+//  2. er liegt NICHT bereits unter POSTEN_ARCHIV (kein Doppel-Anhängen);
+//  3. die Datei existiert;
+//  4. ihr REALER Pfad (`realpathSync`, löst Symlinks auf) liegt ebenfalls
+//     unter dem realen Posten-Ordner — ein Symlink-Ausbruch scheitert hier,
+//     nicht erst beim Schreiben;
+//  5. `parsePosten` liefert einen gültigen Kopf — sonst ist es keine
+//     Posten-Datei, auch wenn sie zufällig im richtigen Ordner liegt.
+export interface SchliessenPruefung {
+  ok: boolean;
+  fehler: string | null;
+  /** Pfad relativ zur Repo-Wurzel, mit `/` getrennt — nur verlässlich bei `ok`. */
+  relPfad: string;
+}
+
+export function schliessenPruefen(
+  pfadEingabe: string,
+  repoRoot: string,
+  existsFn: (p: string) => boolean,
+  leseFn: (p: string) => string,
+  realFn: (p: string) => string,
+): SchliessenPruefung {
+  const posten = resolve(repoRoot, POSTEN_ORDNER);
+  const archiv = resolve(repoRoot, POSTEN_ARCHIV);
+  const abs = resolve(repoRoot, pfadEingabe);
+  const relPfad = relative(repoRoot, abs).split(sep).join('/');
+  const unter = (basis: string): boolean => {
+    const rel = relative(basis, abs);
+    return rel !== '' && !rel.startsWith('..') && !isAbsolute(rel);
+  };
+
+  if (unter(archiv)) {
+    return { ok: false, relPfad, fehler: `${pfadEingabe} liegt bereits unter ${POSTEN_ARCHIV}/ — Posten ist schon geschlossen, nichts angehängt.` };
+  }
+  if (!unter(posten)) {
+    return { ok: false, relPfad, fehler: `${pfadEingabe} liegt nicht unter ${POSTEN_ORDNER}/ — nichts verschoben.` };
+  }
+  if (!existsFn(abs)) {
+    return { ok: false, relPfad, fehler: `${pfadEingabe} existiert nicht.` };
+  }
+
+  let realAbs: string;
+  let realPosten: string;
+  try {
+    realAbs = realFn(abs);
+    realPosten = realFn(posten);
+  } catch (e) {
+    return { ok: false, relPfad, fehler: `${pfadEingabe}: Pfad nicht auflösbar — ${(e as Error).message}` };
+  }
+  const relReal = relative(realPosten, realAbs);
+  if (relReal !== '' && (relReal.startsWith('..') || isAbsolute(relReal))) {
+    return { ok: false, relPfad, fehler: `${pfadEingabe} zeigt (über einen Symlink) aus dem Posten-Ordner hinaus — nichts verschoben.` };
+  }
+
+  const p = parsePosten(relPfad, leseFn(abs));
+  if ('fehler' in p) {
+    return { ok: false, relPfad, fehler: `${pfadEingabe}: ${p.fehler} — nichts verschoben.` };
+  }
+  return { ok: true, relPfad, fehler: null };
 }
 
 // ─── Dateiname ───────────────────────────────────────────────────────────────

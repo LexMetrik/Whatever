@@ -16,6 +16,7 @@ import {
   postenPfad,
   postenZeile,
   postenJeDach,
+  schliessenPruefen,
   slugVon,
   titelAus,
   unterbloecke,
@@ -72,6 +73,98 @@ describe('Kopf-Format', () => {
     expect(datumAus('Messung 18.9.2026')).toBe('2026-09-18');
     expect(datumAus('Stand 2026-09-18')).toBe('2026-09-18');
     expect(datumAus('ohne Datum')).toBeNull();
+  });
+});
+
+// ---------------------------------------------------------------------------
+describe('schliessenPruefen — Vorprüfung für `plan:posten -- zu` (P1, Bug-Check 20.9.2026)', () => {
+  const REPO = '/repo';
+  const dateien = new Map<string, string>([
+    ['/repo/plan/posten/2026-09-20-t.md', postenInhalt({ dach: 'QS-X', titel: 'T', anlass: null, wartetAuf: null }, 'x')],
+    ['/repo/plan/posten/2026-09-20-ohne-kopf.md', 'kein Kopf'],
+    ['/repo/archiv/posten/2026-09-19-erledigt.md', postenInhalt({ dach: 'QS-X', titel: 'A', anlass: null, wartetAuf: null }, 'x')],
+    ['/repo/WICHTIG.md', '# Wichtig\n\nkeine Posten-Datei.'],
+  ]);
+  const existsFn = (p: string) => dateien.has(p);
+  const leseFn = (p: string) => {
+    const v = dateien.get(p);
+    if (v === undefined) throw new Error(`ENOENT ${p}`);
+    return v;
+  };
+  const identFn = (p: string) => p; // kein Symlink in diesem Fake-FS
+
+  it('GRÜN: gültiger Posten unter dem Posten-Ordner', () => {
+    const r = schliessenPruefen('plan/posten/2026-09-20-t.md', REPO, existsFn, leseFn, identFn);
+    expect(r).toEqual({ ok: true, fehler: null, relPfad: 'plan/posten/2026-09-20-t.md' });
+  });
+
+  it('ROT-Reproduktion (Prüfer-Probe `zu WICHTIG.md`): Datei ausserhalb des Posten-Ordners wird abgelehnt, nicht verschoben', () => {
+    const r = schliessenPruefen('WICHTIG.md', REPO, existsFn, leseFn, identFn);
+    expect(r.ok).toBe(false);
+    expect(r.fehler).toMatch(/liegt nicht unter plan\/posten\//);
+  });
+
+  it('ROT-Reproduktion (Doppel-Probe): bereits geschlossene Datei (unter archiv/posten) wird abgelehnt, nichts doppelt angehängt', () => {
+    const r = schliessenPruefen('archiv/posten/2026-09-19-erledigt.md', REPO, existsFn, leseFn, identFn);
+    expect(r.ok).toBe(false);
+    expect(r.fehler).toMatch(/liegt bereits unter archiv\/posten\/.*schon geschlossen/);
+  });
+
+  it('lehnt einen `..`-Ausbruch aus dem Posten-Ordner ab', () => {
+    const r = schliessenPruefen('plan/posten/../../WICHTIG.md', REPO, existsFn, leseFn, identFn);
+    expect(r.ok).toBe(false);
+    expect(r.fehler).toMatch(/liegt nicht unter plan\/posten\//);
+  });
+
+  it('meldet eine nicht existente Datei statt sie stillschweigend zu ignorieren', () => {
+    const r = schliessenPruefen('plan/posten/2026-09-20-fehlt.md', REPO, existsFn, leseFn, identFn);
+    expect(r.ok).toBe(false);
+    expect(r.fehler).toMatch(/existiert nicht/);
+  });
+
+  it('lehnt eine Datei ohne gültigen `@posten`-Kopf ab, auch wenn sie im richtigen Ordner liegt', () => {
+    const r = schliessenPruefen('plan/posten/2026-09-20-ohne-kopf.md', REPO, existsFn, leseFn, identFn);
+    expect(r.ok).toBe(false);
+    expect(r.fehler).toMatch(/kein `<!-- @posten/);
+  });
+
+  it('lehnt einen Symlink-Ausbruch aus dem realen Posten-Ordner ab', () => {
+    // Textuell liegt der Pfad unter plan/posten/, aber sein REALER Pfad (nach
+    // Symlink-Auflösung) zeigt aus dem Posten-Ordner hinaus.
+    const realFn = (p: string) => (p === '/repo/plan/posten' ? '/repo/plan/posten' : '/anderswo/ausserhalb.md');
+    const r = schliessenPruefen('plan/posten/2026-09-20-t.md', REPO, existsFn, leseFn, realFn);
+    expect(r.ok).toBe(false);
+    expect(r.fehler).toMatch(/Symlink.*hinaus/);
+  });
+});
+
+// ---------------------------------------------------------------------------
+describe('schliessenPruefen — echtes Dateisystem (Symlink-Ausbruch)', () => {
+  it('lehnt eine Datei ab, die über einen Symlink aus plan/posten/ hinauszeigt', async () => {
+    const os = await import('node:os');
+    const fs = await import('node:fs');
+    const path = await import('node:path');
+    const wurzel = fs.mkdtempSync(path.join(os.tmpdir(), 'plan-posten-symlink-'));
+    try {
+      const posten = path.join(wurzel, 'plan', 'posten');
+      const ausserhalb = path.join(wurzel, 'ausserhalb');
+      fs.mkdirSync(posten, { recursive: true });
+      fs.mkdirSync(ausserhalb, { recursive: true });
+      const ziel = path.join(ausserhalb, 'geheim.md');
+      fs.writeFileSync(ziel, postenInhalt({ dach: 'QS-X', titel: 'T', anlass: null, wartetAuf: null }, 'x'));
+      fs.symlinkSync(ziel, path.join(posten, '2026-09-20-ausbruch.md'));
+      const r = schliessenPruefen(
+        'plan/posten/2026-09-20-ausbruch.md',
+        wurzel,
+        fs.existsSync,
+        (p) => fs.readFileSync(p, 'utf8'),
+        fs.realpathSync,
+      );
+      expect(r.ok).toBe(false);
+      expect(r.fehler).toMatch(/Symlink.*hinaus/);
+    } finally {
+      fs.rmSync(wurzel, { recursive: true, force: true });
+    }
   });
 });
 
