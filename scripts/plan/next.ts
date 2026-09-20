@@ -5,6 +5,7 @@ import { parseRoadmap, ladeChronikDone } from './parse';
 import { resolve } from './aufloesen';
 import { lageBlock } from './lage';
 import { leseNotizen, notizenBefund, notizenVerzeichnis, notizenZeilen } from './notizen';
+import { postenJeDach, postenScan, postenZeile } from './postenKern';
 export { resolve, type Buckets } from './aufloesen';
 
 // CLI
@@ -52,4 +53,11 @@ if (!process.env.VITEST) {
     // git nicht verfügbar/kein Repo — Pflicht-Einstieg degradiert still (§8,
     // gleiche Regel wie lage.ts).
   }
+  // Posten-Zeile ZULETZT angehängt (Posten-Modell 20.9.2026, QS-EFFIZIENZ):
+  // zieht man sie ab, ist die Ausgabe darüber byte-identisch zum Stand davor.
+  // Ohne diese Zeile wären die aus ROADMAP.md herausgelösten Nebenfunde für
+  // jede Session unsichtbar — genau die Fehlerklasse F17, gegen die
+  // `check:plan` Regel 16 (a) die Gegenprobe hält.
+  const posten = postenZeile(postenJeDach(postenScan()));
+  if (posten) z(posten);
 }

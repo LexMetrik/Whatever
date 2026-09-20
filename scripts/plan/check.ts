@@ -5,6 +5,8 @@ import { resolve } from './aufloesen';
 import { parseEtikett, FELD_WERTE, istFeld, type Status } from './etikett';
 import { pruefeSpecBindung } from './specBindung';
 import { pruefeEtappenBuchung } from './etappenBuchung';
+import { postenScan, type PostenDatei } from './postenKern';
+import { pruefePosten } from './postenRegel';
 import { obersterMarkerId } from './marker';
 import { ZEITREIHE_DATEI, pruefeZeitreihe } from './selbstoptKern';
 
@@ -82,6 +84,7 @@ export function pruefe(
   fahrplanDateien: string[],
   fileExists: (p: string) => boolean,
   leseDatei: (p: string) => string | null = dateiLeser,
+  postenDateien: readonly PostenDatei[] = [],
 ): Problem[] {
   const probleme: Problem[] = [];
   const { einheiten, blockers, queue } = parseRoadmap(md);
@@ -260,6 +263,9 @@ export function pruefe(
   // noch offen (W2·5m-LESER-V3).
   probleme.push(...pruefeEtappenBuchung(md, leseDatei));
 
+  // (16) Posten-Modell — Regel, Grenzen und Anlass in scripts/plan/postenRegel.ts.
+  probleme.push(...pruefePosten(md, postenDateien));
+
   // (13) Selbstoptimierungs-Zeitreihe — FORM, nie WERTE (Schritt QS-SELBSTOPT).
   //
   // `messwerte/selbstopt-zeitreihe.json` ist eine generierte §5-Projektion von
@@ -355,7 +361,7 @@ if (!process.env.VITEST) {
   const zuPruefen = alle.filter((f) => !ARCHIV_BACKLOG.has(f));
   let probleme: Problem[];
   try {
-    probleme = pruefe(md, zuPruefen, (p) => existsSync(p));
+    probleme = pruefe(md, zuPruefen, (p) => existsSync(p), dateiLeser, postenScan());
   } catch (e) {
     console.error('check:plan ROT:\n  - (global): @meta nicht lesbar — ' + (e as Error).message);
     process.exit(1);
