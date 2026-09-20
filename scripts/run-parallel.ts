@@ -56,7 +56,18 @@ import { spawn } from 'node:child_process';
 import { appendFileSync, readFileSync } from 'node:fs';
 import { cpus } from 'node:os';
 import { performance } from 'node:perf_hooks';
-import { EREIGNIS_DATEI } from './plan/selbstoptKern';
+
+/**
+ * Lokales Ereignis-Log der Tor-Läufe (gitignoriert, je Maschine eigen).
+ * Bis 20.9.2026 aus `scripts/plan/selbstoptKern.ts` importiert — mit
+ * `retro:17`/`selbstopt:erheben` entfallen (Entscheid David, Rückbau
+ * QS-EFFIZIENZ); diese Datei ist seither die einzige Schreibstelle (neben
+ * `scripts/gate.sh`, eigenes Literal dort), gelesen von
+ * `scripts/analyse/tor-bewaehrung.ts` (Konstante `LOKALES_LOG`, ebenfalls
+ * eigenes Literal — zwei Konsumenten teilen sich den Pfad als Wert, nicht als
+ * Import, weil kein gemeinsamer Kern mehr existiert).
+ */
+const EREIGNIS_DATEI = '.selbstopt-ereignisse.jsonl';
 
 interface CheckErgebnis {
   name: string;
@@ -90,8 +101,8 @@ function leseCheckKette(): string[] {
  * Ein Tor-Ereignis anhängen. **Kann den Runner nicht rot machen:** ein voller
  * oder schreibgeschützter Baum darf keine Prüfung kosten, und ein Messwert ist
  * nie wichtiger als das Verdikt, das er misst. Deshalb schluckt der `catch`
- * bewusst alles — sichtbar wird der Ausfall trotzdem, weil `selbstopt:erheben`
- * die fehlenden Ereignisse als Lücke ausweist.
+ * bewusst alles — sichtbar wird der Ausfall trotzdem, weil
+ * `scripts/analyse/tor-bewaehrung.ts` ein fehlendes Log als Ausfall vermerkt.
  */
 function protokolliere(name: string, ok: boolean): void {
   try {

@@ -72,28 +72,21 @@
 // und enthält 58 rote Läufe, davon 23 auf `check:*`-Tore. Dossier §8 Ziff. 1 nennt als Quellen
 // ausdrücklich «CI-Logs, lokale Läufe»; die Quelle fehlte im Auftrag, nicht
 // in der Sache. Das Log schreibt `scripts/run-parallel.ts` (Konstante
-// EREIGNIS_DATEI in scripts/plan/selbstoptKern.ts), es ist gitignoriert und
-// darum MASCHINENLOKAL: auf einem anderen Rechner fehlt es, und der Import
-// vermerkt das als Ausfall statt still 0 Belege zu behaupten. Pfad
-// überschreibbar mit `--ereignis-log=<pfad>` (nötig im Worktree, wo das Log
-// nicht liegt).
+// EREIGNIS_DATEI dort, seit 20.9.2026 lokal — s. Rückbau-Vermerk unten), es ist
+// gitignoriert und darum MASCHINENLOKAL: auf einem anderen Rechner fehlt es,
+// und der Import vermerkt das als Ausfall statt still 0 Belege zu behaupten.
+// Pfad überschreibbar mit `--ereignis-log=<pfad>` (nötig im Worktree, wo das
+// Log nicht liegt).
 //
-// ── ABGRENZUNG GEGEN `retro:17` (§17-Gegengewicht: erst die Stelle suchen, die
-//    dieselbe Sorge schon trägt) ─────────────────────────────────────────────
-// `scripts/plan/retro17Kern.ts` kennt seit QS-SELBSTOPT die Regel «nie rot ⇒
-// Streich-PRÜFkandidat» — über die Snapshots von `messwerte/selbstopt-
-// zeitreihe.json`, mit der Schwelle NIE_ROT_MINDEST_LAEUFE = 30 Läufe. Dieses
-// Register ersetzt sie NICHT und dupliziert sie nicht: es unterscheidet sich
-// in drei Punkten, und die Schwelle wird von dort IMPORTIERT statt neu gesetzt
-// (§5 — eine Kalibrierung, eine Stelle).
-//   · Grundmenge: dort nur Tore, die in der Zeitreihe stehen; hier JEDES
-//     `check:*`-Skript und jeder Hook, also auch die nie gelaufenen.
-//   · Quellen: dort nur lokale Läufe ab Snapshot-Beginn; hier zusätzlich CI
-//     und Fang-Vermerke.
-//   · Zeitachse: dort «nie rot über die Messreihe»; hier «letztes Rot» mit
-//     Einführungsdatum und Tagesabstand — die 90-Tage-Regel aus Dossier §8.
-// Ob die beiden später zusammengelegt werden, ist ein eigener Entscheid; sie
-// hier stillschweigend zu verdoppeln wäre der Fehler, den §17 verbietet.
+// ── FRÜHERE ABGRENZUNG GEGEN `retro:17` ENTFALLEN (20.9.2026) ───────────────
+// `scripts/plan/retro17Kern.ts` kannte seit QS-SELBSTOPT eine eigene Regel
+// «nie rot ⇒ Streich-PRÜFkandidat» über die Snapshots von `messwerte/
+// selbstopt-zeitreihe.json`, mit derselben Schwelle 30 Läufe — von dort
+// importiert, um eine doppelte Kalibrierung zu vermeiden (§5). Mit
+// `retro:17`/`selbstopt:erheben` (Entscheid David, Rückbau QS-EFFIZIENZ: die
+// Zeitreihe wurde seit 4.9.2026 nicht mehr erhoben, kein Vorschlag je
+// umgesetzt) ist dieses Register der EINZIGE verbliebene Arbiter für «Tor nie
+// rot»; die Schwelle steht jetzt lokal, s. `LAEUFE_SCHWELLE` unten.
 //
 // ── «RÜCKBAU-KANDIDAT» BRAUCHT EINEN BELEGTEN LAUF (Abweichung vom Auftrag,
 //    §7) ────────────────────────────────────────────────────────────────────
@@ -119,7 +112,6 @@
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { alleCheckSkripte, pkg } from '../tor-paritaet-sonden.ts';
-import { NIE_ROT_MINDEST_LAEUFE } from '../plan/retro17Kern.ts';
 
 export const REGISTER_DATEI = 'messwerte/tor-bewaehrung.json';
 export const HOOK_VERZEICHNIS = '.claude/hooks';
@@ -132,11 +124,12 @@ export const GENERIERT_MARKE =
 export const SCHWELLE_TAGE = 90;
 /**
  * Mindestzahl belegter Läufe, bevor «nie rot» ein Rückbau-Vorschlag sein darf.
- * NICHT hier kalibriert, sondern aus `retro17Kern` übernommen — dieselbe Frage
- * hat dort seit QS-SELBSTOPT ihre Schwelle, und zwei Kalibrierungen derselben
- * Sorge wären genau die zweite Wahrheit, die §5 verbietet.
+ * Bis 20.9.2026 aus `retro17Kern.ts` übernommen (§5, eine Kalibrierung) — mit
+ * `retro:17` entfallen (Entscheid David, Rückbau QS-EFFIZIENZ); dieses
+ * Register ist seither der einzige Ort, der die Frage stellt, und kalibriert
+ * darum selbst, unverändert bei 30.
  */
-export const LAEUFE_SCHWELLE = NIE_ROT_MINDEST_LAEUFE;
+export const LAEUFE_SCHWELLE = 30;
 
 export type Quelle = 'ci-run-URL' | 'lokaler-lauf' | 'commit-SHA' | 'fang-vermerk' | 'manuell';
 export type Beleg = { datum: string; quelle: Quelle; hinweis: string };
@@ -266,7 +259,7 @@ export function stufeEin(eintrag: Eintrag, stichtag: string): Befund {
     return { ...gemeinsam, klasse: 'jung' };
   }
   // Alt und nie rot — aber nur dann ein Rückbau-Vorschlag, wenn das Tor
-  // nachweislich oft genug GELAUFEN ist (Schwelle aus retro17Kern, s. Kopf).
+  // nachweislich oft genug GELAUFEN ist (fest kalibriert, s. Kopf).
   // Sonst belegt die Zahl eine Messlücke, keinen Befund.
   if ((eintrag.laeufe ?? 0) >= LAEUFE_SCHWELLE) {
     return { ...gemeinsam, klasse: 'RÜCKBAU-KANDIDAT' };
@@ -700,7 +693,7 @@ export function berichtZeilen(befunde: Befund[], stichtag: string): string[] {
       `${zaehle('ungemessen (kein Lauf belegt)')} ungemessen · ` +
       `${zaehle('jung')} jung · ${zaehle('unbelegt (Hook ohne Log)')} Hooks ohne Log` +
       (hooksMitFang ? ` (davon ${hooksMitFang} mit Fang-Vermerk — ausgewiesen, nicht eingerechnet)` : ''),
-    `Spalte «Läufe» = belegte Läufe im Fenster; ab ${LAEUFE_SCHWELLE} (Schwelle aus retro17Kern)`,
+    `Spalte «Läufe» = belegte Läufe im Fenster; ab ${LAEUFE_SCHWELLE} (fest kalibriert, s. Kopf)`,
     'wird «nie rot» zum Rückbau-Kandidaten, darunter nur zu «ungemessen».',
     'Einstufung ist ein VORSCHLAG, kein Urteil: vor jedem Rückbau das Chesterton-Gegenargument',
     'prüfen (§17-Gegengewicht — «ausser die Stelle hat einen datierten Vorfall verhindert»);',

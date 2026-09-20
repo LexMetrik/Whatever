@@ -9,8 +9,12 @@
 //   * die Sperrmatrix «nicht parallel mit …» (`verknuepfungenZeile`)
 //   * «Jetzt parallel startbar — ohne Kollision» (Resolver-Lane 1)
 //   * das Fehlerbuch
-//   * die Bau-Messreihe
 //   * die 59 Bau-Prompts als `PROMPTS`-Skript (~75 KB)
+//
+// Die frühere Bau-Messreihe (Schritt QS-SELBSTOPT, `messwerte/selbstopt-
+// zeitreihe.json`) ist entfallen (Entscheid David 20.9.2026, Rückbau
+// QS-EFFIZIENZ, mit `retro:17`/`selbstopt:erheben`) — Nachfolge-Messung
+// `npm run tor:bewaehrung`.
 //
 // Nichts davon ist gelöscht — es hat nur ein anderes PUBLIKUM: Bau-Sessions
 // und Disponenten-Fragen («darf Session B parallel starten?»). Davids
@@ -27,7 +31,6 @@ import {
   baustellenInfo,
   ersterSatz,
   schrittInfoAusRoadmap,
-  selbstoptKennzahlen,
   verknuepfungenAusEinheiten,
   type Verknuepfung,
 } from './bildDaten';
@@ -40,7 +43,6 @@ import {
   esc,
   fussnote,
   feldPfade,
-  kacheln,
   rahmen,
   schrittLabel,
   seitenDatei,
@@ -217,29 +219,6 @@ export function bauSeite(o: SeitenOpts): string {
     }
   </div>`;
 
-  // Bau-Messreihe (Schritt QS-SELBSTOPT). Der erklärende Satz darunter ist
-  // Absicht, nicht Zierde: diese Zahlen SIND keine Bewertung, sondern
-  // Beobachtungsgrössen und ausdrücklich nie ein Tor-Kriterium.
-  const messreihe = selbstoptKennzahlen();
-  const messreiheHtml = messreihe
-    ? `${kacheln([
-        { wert: messreihe.ciFailure, label: 'der CI-Läufe MIT Ergebnis sind gescheitert' },
-        { wert: messreihe.ciAbgebrochen, label: 'der CI-Läufe wurden abgebrochen (ohne Ergebnis)' },
-        { wert: messreihe.ciRerun, label: 'der CI-Läufe waren Wiederholungen' },
-        { wert: `${messreihe.torRot}/${messreihe.torGesamt}`, label: 'Tor-Läufe rot seit der vorigen Messung' },
-        { wert: messreihe.rework, label: 'Quelltext-Commits mit Nacharbeit binnen 48 h' },
-        { wert: messreihe.snapshots, label: 'Messpunkte in der Reihe' },
-      ])}
-  <p class="hinweis">Stand ${esc(messreihe.stand)} · Quelle <span class="id">messwerte/selbstopt-zeitreihe.json</span>,
-  erhoben mit <span class="id">npm run selbstopt:erheben</span> aus git, der GitHub-API und dem lokalen Tor-Protokoll.
-  <b>Diese Zahlen bewerten nichts.</b> Sie sind Beobachtung: kein Prüf-Tor hängt an ihnen, und keines wird je an ihnen hängen —
-  sonst würde der Bau die Messung verbessern statt die Sache.${
-    messreihe.ausfaelle.length
-      ? ` <br>⚠ Bei der letzten Erhebung nicht verfügbar: ${esc(messreihe.ausfaelle.join(' · '))} (kein Fehler des Bau-Stands).`
-      : ''
-  }</p>`
-    : `<p class="hinweis">Noch keine Messreihe erhoben — <span class="id">npm run selbstopt:erheben</span> legt den ersten Messpunkt an.</p>`;
-
   const lagebildLink = esc(seitenDatei(o.indexPfad, 'lagebild'));
 
   const kopf = seitenKopf({
@@ -248,10 +227,10 @@ export function bauSeite(o: SeitenOpts): string {
     marke: 'Bau-Details',
     h1: 'Bau-Details — alles, was eine Bau-Session braucht',
     lede: `Die Arbeitsfläche hinter dem <a href="${lagebildLink}">Lagebild</a>: alle offenen Arbeitspakete mit Kürzel,
-  ihre Sperren untereinander, die fertigen Bau-Aufträge zum Kopieren und die Messreihe des Bau-Betriebs.
+  ihre Sperren untereinander und die fertigen Bau-Aufträge zum Kopieren.
   Das Lagebild beantwortet vier Fragen in Klartext; diese Seite beantwortet den Rest — und hier sind die
   Kürzel Absicht, weil Plan, Detailpläne und Änderungsvermerke darauf verweisen.`,
-    extra: `<nav class="springen">Springen zu: <a href="#bereiche">Alle offenen Schritte</a> · <a href="#queue">Vollständige Warteschlange</a> · <a href="#parallel">Parallel startbar</a> · <a href="#fehlerbuch">Fehlerbuch</a> · <a href="#messreihe">Bau-Messreihe</a></nav>`,
+    extra: `<nav class="springen">Springen zu: <a href="#bereiche">Alle offenen Schritte</a> · <a href="#queue">Vollständige Warteschlange</a> · <a href="#parallel">Parallel startbar</a> · <a href="#fehlerbuch">Fehlerbuch</a></nav>`,
   });
 
   const inhalt = `${kopf}
@@ -289,15 +268,6 @@ export function bauSeite(o: SeitenOpts): string {
   <p class="eyebrow">Fehlerbuch</p>
   <h2>Gesammelte Alltags-Fehlerfunde</h2>
   ${fehlerbuchHtml}
-</section>
-
-<section id="messreihe">
-  <p class="eyebrow">Bau-Messreihe</p>
-  <h2>Wie rund der Bau läuft</h2>
-  <p class="lede">Seit August 2026 misst der Bau sich selbst: bei jedem Prüflauf wird festgehalten, welches Tor grün oder rot war,
-  und in Abständen kommen die Zahlen aus der Bau-Prüfstrasse (CI) und der Versionsgeschichte dazu. So lässt sich später belegen,
-  ob eine Prozessänderung etwas gebracht hat — statt es zu vermuten.</p>
-  ${messreiheHtml}
 </section>
 
 ${fussnote('Klartext-Namen der Baustellen sind gepflegte Übersetzungen (@lagebild-Kopfzeile der Fahrpläne); alle Zahlen sind mechanisch.')}`;
