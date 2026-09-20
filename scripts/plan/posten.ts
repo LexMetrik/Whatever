@@ -17,6 +17,7 @@ import {
   CHRONIK,
   POSTEN_ARCHIV,
   migrationsPlan,
+  notizenLeerHinweis,
   notizenPosten,
   postenInhalt,
   postenJeDach,
@@ -102,7 +103,8 @@ if (!process.env.VITEST) {
       process.exit(2);
     }
     const belegt = new Set(postenScan().map((d) => d.pfad));
-    const r = notizenPosten(readFileSync(datei, 'utf8'), flagge(argv, 'datum') ?? heuteIso(), belegt);
+    const roh = readFileSync(datei, 'utf8');
+    const r = notizenPosten(roh, flagge(argv, 'datum') ?? heuteIso(), belegt);
     for (const d of r.dateien) {
       lebendePruefen(d.dach);
       schreibe(d.pfad, d.inhalt);
@@ -111,6 +113,8 @@ if (!process.env.VITEST) {
     if (r.dateien.length) writeFileSync(datei, r.neuerText);
     console.log(`${r.dateien.length} Posten angelegt, ${r.brauchtDach.length} Zeile(n) brauchen ein Dach:`);
     for (const z of r.brauchtDach) console.log(`  braucht Dach: ${z.slice(0, 110)}`);
+    const hinweis = notizenLeerHinweis(roh, r);
+    if (hinweis) console.log(hinweis);
   } else if (befehl === 'migrieren') {
     const trocken = argv.includes('--dry-run');
     const heute = flagge(argv, 'datum') ?? heuteIso();

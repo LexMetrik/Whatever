@@ -11,6 +11,7 @@ import {
   istZeigerStub,
   kopfText,
   migrationsPlan,
+  notizenLeerHinweis,
   notizenPosten,
   parsePosten,
   postenInhalt,
@@ -396,6 +397,48 @@ describe('aus-notizen', () => {
 
   it('rät kein Dach, sondern meldet die Zeile', () => {
     expect(notizenPosten(NOTIZEN, '2026-09-20').brauchtDach).toEqual(['ohne Dach-Marke']);
+  });
+
+  // P3 (Bug-Check 20.9.2026): `(.+)$` schliesst `\r` als Zeilenterminator aus,
+  // und der Split war nur an `\n` — eine CRLF-Datei liess jede Zeile still
+  // durchfallen. ROT-Reproduktion vor dem Fix: dateien:[], brauchtDach:[].
+  it('ROT→GRÜN: eine CRLF-Datei liefert dieselben Funde wie dieselbe Datei mit LF', () => {
+    const crlf = NOTIZEN.replace(/\n/g, '\r\n');
+    const rLf = notizenPosten(NOTIZEN, '2026-09-20');
+    const rCrlf = notizenPosten(crlf, '2026-09-20');
+    expect(rCrlf.dateien.map((d) => d.titel)).toEqual(rLf.dateien.map((d) => d.titel));
+    expect(rCrlf.brauchtDach).toEqual(rLf.brauchtDach);
+    expect(rCrlf.dateien).toHaveLength(2); // vor dem Fix: 0
+  });
+
+  it('schreibt beim Zurückschreiben durchgängig LF (Entscheid P3: vereinheitlichen statt mischen)', () => {
+    const crlf = NOTIZEN.replace(/\n/g, '\r\n');
+    const r = notizenPosten(crlf, '2026-09-20');
+    expect(r.neuerText).not.toContain('\r');
+    expect(r.neuerText).toContain('- [x] [QS-X] Zähler zählt doppelt');
+  });
+
+  it('einzelnes `\\r` (Alt-Mac-Zeilenende) wird ebenfalls normalisiert', () => {
+    const cr = NOTIZEN.replace(/\n/g, '\r');
+    expect(notizenPosten(cr, '2026-09-20').dateien).toHaveLength(2);
+  });
+});
+
+// ---------------------------------------------------------------------------
+describe('notizenLeerHinweis — Sichtbarkeit bei 0 Funden (P3, F17)', () => {
+  it('meldet 0 Funde in einer nicht-leeren Datei statt still zu enden', () => {
+    const r = { dateien: [], brauchtDach: [] };
+    expect(notizenLeerHinweis('# Notizen\n\nnichts Erkennbares hier.', r)).toMatch(/0 Zeilen erkannt/);
+  });
+
+  it('schweigt bei einer leeren Datei (kein Dauer-Rauschen)', () => {
+    expect(notizenLeerHinweis('', { dateien: [], brauchtDach: [] })).toBeNull();
+    expect(notizenLeerHinweis('   \n  ', { dateien: [], brauchtDach: [] })).toBeNull();
+  });
+
+  it('schweigt, sobald etwas gefunden wurde', () => {
+    expect(notizenLeerHinweis('Text', { dateien: [{ pfad: 'x', inhalt: 'x', dach: 'QS-X', titel: 'T' }], brauchtDach: [] })).toBeNull();
+    expect(notizenLeerHinweis('Text', { dateien: [], brauchtDach: ['eine Zeile'] })).toBeNull();
   });
 });
 

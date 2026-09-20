@@ -506,9 +506,18 @@ export interface NotizenErgebnis {
  * Eine Zeile ohne `[<DACH-ID>]`-Marke wird NICHT geraten, sondern als «braucht
  * Dach» gemeldet: ein falsch einsortierter Posten ist unsichtbarer als ein
  * gemeldeter (F17).
+ *
+ * ZEILENENDEN (Bug-Check 20.9.2026, Auflage P3). `NOTIZ_ZEILE`/`NOTIZ_OHNE_ID`
+ * enden auf `(.+)$` — `.` schliesst Zeilenterminatoren aus, wozu auch `\r`
+ * zählt. Eine CRLF-Datei, nur an `\n` gesplittet, liess darum jede Zeile mit
+ * angehängtem `\r` STILL durchfallen: `dateien: []`, `brauchtDach: []`, keine
+ * Meldung (rot reproduziert). Fix: `\r\n` UND einzelne `\r` werden vor dem
+ * Split auf `\n` normalisiert — bewusst für die ganze Datei, nicht nur die
+ * erkannten Zeilen, damit `neuerText` durchgängig EIN Zeilenenden-Format
+ * trägt statt eines aus der Erkennung heraus zufällig gemischten.
  */
 export function notizenPosten(text: string, heute: string, belegt: ReadonlySet<string> = new Set()): NotizenErgebnis {
-  const zeilen = text.split('\n');
+  const zeilen = text.replace(/\r\n?/g, '\n').split('\n');
   const dateien: NotizenErgebnis['dateien'] = [];
   const brauchtDach: string[] = [];
   const vergeben = new Set(belegt);
@@ -546,4 +555,17 @@ export function notizenPosten(text: string, heute: string, belegt: ReadonlySet<s
     zeilen[i] = `${m[1]}[x] [${m[2].trim()}] ${rest}`;
   }
   return { dateien, brauchtDach, neuerText: zeilen.join('\n') };
+}
+
+/**
+ * Explizite Meldung, wenn `aus-notizen` in einer NICHT-LEEREN Datei weder
+ * Posten noch «braucht Dach»-Zeilen findet — sonst endet das Kommando still,
+ * und ein Format-/Zeilenenden-Defekt wie P3 fällt niemandem auf (F17). Eine
+ * leere Datei ist kein Fund und bleibt ohne Meldung (§17-Gegengewicht: ein
+ * Werkzeug, das immer etwas sagt, wird überlesen).
+ */
+export function notizenLeerHinweis(roh: string, r: Pick<NotizenErgebnis, 'dateien' | 'brauchtDach'>): string | null {
+  if (r.dateien.length > 0 || r.brauchtDach.length > 0) return null;
+  if (roh.trim() === '') return null;
+  return '0 Zeilen erkannt — Format `- [ ] [<ID>] Titel — Text`';
 }
