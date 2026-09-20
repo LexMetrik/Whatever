@@ -362,6 +362,10 @@ deterministisch aus dieser Datei; Stufe 2 (`npm run retro:17`) deutet sie
 gegen die Schwellen dieser Tabelle. Detail und Quellenlage:
 `bibliothek/fremdagenten-google-ai-pro-2026-09.md`.
 
+Seit 20.9.2026 (retro:17-Rückbau, Entscheid David) entfallen beide Stufen
+samt Zeitreihe; Nachfolge-Messung `npm run tor:bewaehrung`, Jules-Zahlen
+weiterhin über `npm run fremdagenten:messung`.
+
 ## §4 · Sicherheit und Daten
 
 - **Öffentliches Repo.** Issues und PRs sind öffentlich lesbar; darin nur
@@ -696,6 +700,8 @@ Anstoss: `retro:17` Regel (h) (`scripts/plan/retro17Kern.ts`), sobald
 `bibliothek/register/antigravity-stand.json` `letzte_sichtung` mehr als 30
 Tage zurückliegt — Register erneuern mit `npm run fremdagenten:messung --
 --kontingent --snapshot`.
+
+Seit 20.9.2026 (retro:17-Rückbau, Entscheid David) entfällt der maschinelle Anstoss ersatzlos — die Wiedervorlage Dezember 2026 bleibt bestehen, der Anstoss läuft ab jetzt manuell.
 
 ## §8 · Gemini-Kritik am Plan und Antwort (3.9.2026)
 

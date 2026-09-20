@@ -7,8 +7,9 @@
 // `npm run check:plan` druckte ein fremdes «Keine offenen Posten.» in seine
 // Ausgabe. Ein Einstiegs-Test über `process.argv[1]` hilft nicht, weil vite-node
 // dort seinen eigenen Binärpfad führt, nicht das Skript (nachgemessen ebd.).
-// Dieselbe Trennung tragen retro-17.ts/retro17Kern.ts und
-// selbstopt-erheben.ts/selbstoptKern.ts.
+// Dieselbe Trennung trug retro-17.ts/retro17Kern.ts und
+// selbstopt-erheben.ts/selbstoptKern.ts — beide seit 20.9.2026 entfallen
+// (Entscheid David, Rückbau QS-EFFIZIENZ).
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, realpathSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';

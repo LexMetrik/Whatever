@@ -336,6 +336,13 @@ ist für Stufe 1 nicht nötig — Folge, ehrlich benannt: die Frische der Vorsch
 weiterhin an den Sessions). Höchstens EIN offener Entwurfs-PR gleichzeitig
 (Flut-Sperre), sonst ergäben 52 Läufe im Jahr 52 offene PRs.
 
+**Rückbau 20.9.2026 (Entscheid David, QS-EFFIZIENZ):** Der gesamte Kreislauf —
+Stufe 1 (`selbstopt:erheben`), Stufe 2 (`retro:17`) und der Autopilot-Cron
+(`.github/workflows/autopilot.yml`) — ist abgebaut, die Zeitreihe entfällt.
+Nachfolge-Messung `npm run tor:bewaehrung`. Der Abschnitt bleibt als
+historischer Baubericht stehen (§2b), beschreibt aber kein lauffähiges
+Werkzeug mehr.
+
 
 
 
