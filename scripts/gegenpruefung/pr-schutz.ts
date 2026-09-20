@@ -77,21 +77,69 @@ export function holePrKoerperEcht(nr?: string): PrKoerper | null {
 }
 
 /**
- * Vollständiger PR-Körper-Schutz für check-merge-schutz.ts: holt den PR
- * (Standard: holePrKoerperEcht, für Tests injizierbar über `holen`),
- * simuliert die Queue-Squash-Nachricht und liefert bei ungültigem Verdikt
- * die fertige ROT-Meldung — sonst `null` (kein PR gefunden, ODER PR gefunden
- * und Verdikt gültig: in beiden Fällen prüft der bestehende Pfad danach
- * unverändert weiter, diese Funktion ersetzt ihn nie).
+ * A1-Nachzug (Gegenprüfung 20.9.2026, «NICHT BESTANDEN»): holt den offenen PR
+ * über seinen HEAD-SHA (`MERGE_SCHUTZ_KOPF`, vom Hook gesetzt), NICHT über den
+ * aktuellen Branch-Checkout. Grund: der Merge-Hook läuft im HAUPT-Checkout auf
+ * `main` (`cwd=CLAUDE_PROJECT_DIR`, `gh pr merge <n>` ohne Zweig-Wechsel) —
+ * `gh pr view` ohne Nummer findet dort KEINEN PR (kein PR für `main`), der
+ * PR-Körper-Schutz wurde also genau dort still übersprungen, wo er gebraucht
+ * wird. `gh pr list` + Treffer auf `headRefOid` funktioniert unabhängig vom
+ * lokalen Checkout. Präfixvergleich (case-insensitiv), weil `MERGE_SCHUTZ_KOPF`
+ * zwar vom Hook als voller SHA gesetzt wird (`gh pr view --json headRefOid`,
+ * `.claude/hooks/tor-schutz.py` Z. ~255), ein manuell gesetzter Kurz-SHA aber
+ * ebenso treffen soll. Liefert `null` bei JEDEM Fehler UND bei keinem Treffer
+ * — nie werfen, der Aufrufer fällt dann NIE auf den Branch-Modus zurück (A2:
+ * das läse sonst den PR eines fremden Branches).
+ */
+export function holePrKoerperFuerKopf(kopf: string): PrKoerper | null {
+  try {
+    const args = ['pr', 'list', '--state', 'open', '--json', 'number,title,body,headRefOid', '--limit', '200'];
+    const out = execFileSync('gh', args, { stdio: ['ignore', 'pipe', 'ignore'], timeout: 8000 }).toString('utf8');
+    const liste = JSON.parse(out);
+    if (!Array.isArray(liste)) return null;
+    const k = kopf.toLowerCase();
+    const treffer = liste.find(
+      (e) => e && typeof e.headRefOid === 'string' && e.headRefOid.toLowerCase().startsWith(k),
+    );
+    if (!treffer || typeof treffer.title !== 'string') return null;
+    return { nummer: treffer.number, titel: treffer.title, body: typeof treffer.body === 'string' ? treffer.body : '' };
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Vollständiger PR-Körper-Schutz für check-merge-schutz.ts: holt den PR und
+ * simuliert die Queue-Squash-Nachricht. Drei Modi, in dieser Reihenfolge
+ * (A1/A2-Nachzug 20.9.2026):
+ *   1. `--pr <n>` explizit in argv → `holen(n)` (unverändert).
+ *   2. `MERGE_SCHUTZ_KOPF` gesetzt (Hook-Realfall) → `holenFuerKopf(kopf)`.
+ *      Kein Treffer ⇒ sauberer Überspring, NIE Fallback auf Modus 3 (A2: der
+ *      läse sonst den PR eines fremden Branches — Diff-Bereich und gelesener
+ *      Body müssen zum selben PR gehören).
+ *   3. Weder noch → `holen()` ohne Nummer (Branch-Modus, unverändert: lokale
+ *      interaktive Session auf ihrem eigenen Feature-Branch).
+ * Liefert bei ungültigem Verdikt die fertige ROT-Meldung — sonst `null`
+ * (kein PR gefunden, ODER PR gefunden und Verdikt gültig: in beiden Fällen
+ * prüft der bestehende Pfad danach unverändert weiter, diese Funktion ersetzt
+ * ihn nie).
  */
 export function pruefePrSchutz(
   argv: string[],
   risikoAnzahl: number,
   bereich: string,
   holen: (nr?: string) => PrKoerper | null = holePrKoerperEcht,
+  holenFuerKopf: (kopf: string) => PrKoerper | null = holePrKoerperFuerKopf,
+  umgebung: Record<string, string | undefined> = process.env,
 ): string | null {
   const i = argv.indexOf('--pr');
-  const pr = holen(i >= 0 ? argv[i + 1] : undefined);
+  let pr: PrKoerper | null;
+  if (i >= 0) {
+    pr = holen(argv[i + 1]);
+  } else {
+    const kopf = umgebung.MERGE_SCHUTZ_KOPF;
+    pr = kopf ? holenFuerKopf(kopf) : holen();
+  }
   if (!pr) return null;
   const urteil = pruefePrKoerper(pr.titel, pr.body);
   if (urteil.art === 'gueltig') return null;
