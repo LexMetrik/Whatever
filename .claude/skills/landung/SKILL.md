@@ -39,8 +39,8 @@ Belege: `referenz-ci.md` §Merge-Queue.
   --squash` reiht selbst ein, sobald die PR-Checks grün sind. BEHIND ist kein
   Hindernis mehr; der frühere Pflicht-Nachzug ist ersatzlos weg. **Falle:**
   auf einem noch nicht grünen PR weist `gh` das Kommando NICHT ab, sondern
-  schärft still Auto-Merge (cli `merge.go`; belegt #922) — auf Risikopfaden
-  also erst NACH dem Verdikt aufrufen, zurück mit `--disable-auto`.
+  schärft still Auto-Merge (cli `merge.go`; belegt #922) — zurück mit
+  `--disable-auto`.
 - **Ablauf:** ein `merge_group`-Lauf prüft PR + aktuellen main (+
   Vordermänner) auf `gh-readonly-queue/main/pr-<n>-<sha>` gegen alle vier
   Required; bei Grün wird main auf GENAU diesen Commit vorgespult
@@ -143,10 +143,14 @@ npm run check:perf-budget  # liest dist, Chrome-frei
    entscheide-Pipeline). Append-Register: union hat beide Seiten — nur
    prüfen. **GitHub kennt den union-Treiber nicht:** jeder gelandete
    Risikopfad-PR hängt eine Register-Zeile an, danach meldet GitHub die
-   übrigen Risiko-PRs DIRTY und startet keine CI — also nach JEDER Landung
+   übrigen Risiko-PRs DIRTY und startet keine CI — also nach jeder Landung
    `origin/main` lokal in den nächsten Zweig mergen, Tore, push, dann erst
    einreihen — die Queue heilt das nicht, sie wirft den Eintrag (15.9.2026,
-   #888–#892 in Serie; 19.9. #921). `golden/*.json`: von Hand, dann `npm run golden`, Byte-Diff bewusst
+   #888–#892 in Serie; 19.9. #921). **Nur für Risikopfad-PRs (Register-Zeile)
+   und PRs mit generierten Dateien; überschneidungsfreie Doku-/Code-PRs
+   brauchen ihn nicht** — die Queue baut main + Eintrag selbst (20.9.2026;
+   4 von 10 Rauswürfen `merge_conflict`, alle an geteilten Dateien).
+   `golden/*.json`: von Hand, dann `npm run golden`, Byte-Diff bewusst
    bestätigen. `public/normtext/**`: Konflikt SOLL anhalten ⇒ Gegenprüfung.
    Steuer-Doku (STRUKTUR/ROADMAP/FAHRPLAN/INDEX): von Hand, beide Beiträge.
 5. **Gate:** `npm run gate` grün — erzwingt die Regeneration aus Schritt 4.
@@ -167,20 +171,19 @@ npm run check:perf-budget  # liest dist, Chrome-frei
    Belege sind Identitäts-Treffer mit Wortgrenze, nie Substring (Vorfall
    PR #309 passierte genau hier).
 
-7. **Einreihen = Deploy.** **Push auf den Feature-Branch ist stehend
-   freigegeben** (David 2.7.2026); der Live-Gang-Entscheid ist die
-   Merge-Freigabe. **Direkte main-Pushes gibt es nicht mehr** — auch nicht
-   gebündelt am Session-Ende (Ruleset + Hook; der Auto-Modus-Klassifikator
-   lehnt `git push origin …:main` als CI-Bypass ab — nicht umgehen).
-   **Feature einzeln landen, Verwaltung bündeln** (David 15.8.2026): sie
-   fährt im Feature-PR mit (Ziff. 9); der Rest geht am Session-Ende als EIN
-   Doku-PR durch die Queue (`bauschritt` Station E). Einreihen: `gh pr merge
-   <nr> --squash`.
-   **`--auto` reiht ein, sobald die PR-Checks grün sind** — erst scharf, wenn
-   Schritte 0–2 abgeschlossen sind; grüne CI ERSETZT sie nicht. Nie einen
-   roten PR einreihen. **Verboten:** jeder Handdeploy und jeder zweite
-   Deploy-Pfad (Race; Red Flags, Aufzählung `referenz-ausnahmen.md`). Rot =
-   Stopp, kein «mergen und nachbessern». Realfälle: `referenz-ci.md`.
+7. **Einreihen = Deploy — die eine Regel:** **Nicht-Risiko** ⇒ `gh pr merge
+   <nr> --squash --auto`, sobald Ziff. 0–2 durch sind (grüne CI ersetzt sie
+   nicht); **Risikopfad** ⇒ nach Verdikt von Hand `gh pr merge <nr> --squash`,
+   nie `--auto`. Ein roter PR wird nie eingereiht: rot = Stopp, kein «mergen
+   und nachbessern».
+   **Push auf den Feature-Branch ist stehend freigegeben** (David 2.7.2026);
+   der Live-Gang-Entscheid ist die Merge-Freigabe. **Direkte main-Pushes gibt
+   es nicht mehr** — auch nicht gebündelt am Session-Ende (Ruleset + Hook; der
+   Auto-Modus-Klassifikator lehnt `git push origin …:main` als CI-Bypass ab).
+   **Feature einzeln landen, Verwaltung bündeln** (David 15.8.2026): sie fährt
+   im Feature-PR mit (Ziff. 9), Rest-Doku am Session-Ende als EIN Doku-PR
+   (`bauschritt` Station E). **Verboten:** jeder Handdeploy und jeder zweite
+   Deploy-Pfad (Race — Abschnitt unten). Historie/Realfälle: `referenz-ci.md`.
 
 7c. **Die Kette als Werkzeug:** `scripts/landung/landung-kette.sh <log> <PR>…`
    reiht seriell ein und pollt `mergeQueueEntry.state` bis MERGED
@@ -218,12 +221,11 @@ npm run check:perf-budget  # liest dist, Chrome-frei
 
 ### Auto-Merge ist auf Risiko-Pfaden gesperrt
 
-Auf Risiko-Pfaden (`istRisikoPfad()` in `scripts/gegenpruefung/kern.ts`) wird
-**erst nach vorliegendem Gegenprüfungs-Verdikt von Hand eingereiht** (`gh pr
-merge <n> --squash`); `--auto` ist dort **ganz gesperrt** (prüft nur den
-Stand beim Aktivieren). Das Verdikt braucht
-prüfbare Form **und** Zuwachs im committeten Gegenprüfungs-Register — ein
-Trailer allein ist Behauptung. Maschinell dreifach: Required-Check
+`--auto` ist auf Risiko-Pfaden (`istRisikoPfad()` in
+`scripts/gegenpruefung/kern.ts`) gesperrt, weil es nur den Stand beim
+Aktivieren prüft (Regel: Ziff. 7). Das Verdikt braucht prüfbare Form **und**
+Zuwachs im committeten Gegenprüfungs-Register — ein Trailer allein ist
+Behauptung. Maschinell dreifach: Required-Check
 «Merge-Schutz» · derselbe Check im Hook vor jedem Merge-Kommando ·
 `check:gegenpruefung` in `npm run gate`. Erzwungen durch Vorfall PR #309
 (elf erfundene Amtsträger:innen ~1 h auf Prod).
