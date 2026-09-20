@@ -77,6 +77,34 @@ export function holePrKoerperEcht(nr?: string): PrKoerper | null {
 }
 
 /**
+ * Löst `kopf` (z. B. 'HEAD', ein Kurz-SHA, ein Branchname — alles, was
+ * `git rev-parse` versteht) zum vollen 40-Zeichen-SHA auf. Injizierbar über
+ * `ausfuehren` (Default = echter `git rev-parse --verify <kopf>^{commit}`),
+ * damit ein Test ohne echtes Repo eine feste Antwort vorgeben kann. Liefert
+ * `null` bei JEDEM Fehler (ungültige Referenz, kein Repo) — der Aufrufer
+ * behandelt das als sauberen Überspring, NIE als Rot (N2-Fix, Nach-Verdikt
+ * 20.9.2026: `MERGE_SCHUTZ_KOPF=HEAD` oder ein anderer gültiger Nicht-Hex-Rev
+ * traf per `startsWith` nie einen `headRefOid` und wurde still übersprungen —
+ * `^{commit}` verlangt zusätzlich, dass die Referenz auf einen Commit zeigt,
+ * nicht bloss irgendein Objekt).
+ */
+export function loeseKopfAufZuSha(
+  kopf: string,
+  ausfuehren: (kopf: string) => string = (k) =>
+    execFileSync('git', ['rev-parse', '--verify', `${k}^{commit}`], {
+      stdio: ['ignore', 'pipe', 'ignore'],
+      timeout: 8000,
+    }).toString('utf8'),
+): string | null {
+  try {
+    const sha = ausfuehren(kopf).trim();
+    return sha || null;
+  } catch {
+    return null;
+  }
+}
+
+/**
  * A1-Nachzug (Gegenprüfung 20.9.2026, «NICHT BESTANDEN»): holt den offenen PR
  * über seinen HEAD-SHA (`MERGE_SCHUTZ_KOPF`, vom Hook gesetzt), NICHT über den
  * aktuellen Branch-Checkout. Grund: der Merge-Hook läuft im HAUPT-Checkout auf
@@ -84,22 +112,33 @@ export function holePrKoerperEcht(nr?: string): PrKoerper | null {
  * `gh pr view` ohne Nummer findet dort KEINEN PR (kein PR für `main`), der
  * PR-Körper-Schutz wurde also genau dort still übersprungen, wo er gebraucht
  * wird. `gh pr list` + Treffer auf `headRefOid` funktioniert unabhängig vom
- * lokalen Checkout. Präfixvergleich (case-insensitiv), weil `MERGE_SCHUTZ_KOPF`
- * zwar vom Hook als voller SHA gesetzt wird (`gh pr view --json headRefOid`,
- * `.claude/hooks/tor-schutz.py` Z. ~255), ein manuell gesetzter Kurz-SHA aber
- * ebenso treffen soll. Liefert `null` bei JEDEM Fehler UND bei keinem Treffer
+ * lokalen Checkout. Liefert `null` bei JEDEM Fehler UND bei keinem Treffer
  * — nie werfen, der Aufrufer fällt dann NIE auf den Branch-Modus zurück (A2:
  * das läse sonst den PR eines fremden Branches).
+ *
+ * N2-Fix (Nach-Verdikt 20.9.2026): vorher verglich diese Funktion `kopf` per
+ * `startsWith` DIREKT gegen `headRefOid` — `MERGE_SCHUTZ_KOPF=HEAD` (oder ein
+ * anderer gültiger Nicht-Hex-Rev) traf so NIE, egal welcher PR gemeint war,
+ * und wurde still übersprungen. Jetzt wird `kopf` zuerst über `aufloesen`
+ * (Default `loeseKopfAufZuSha`, injizierbar für Tests) zum vollen SHA
+ * aufgelöst und dann per GLEICHHEIT (nicht mehr Präfix) mit `headRefOid`
+ * verglichen — ein Kurz-SHA trifft weiterhin, weil `git rev-parse` ihn selbst
+ * zum vollen SHA auflöst.
  */
-export function holePrKoerperFuerKopf(kopf: string): PrKoerper | null {
+export function holePrKoerperFuerKopf(
+  kopf: string,
+  aufloesen: (kopf: string) => string | null = loeseKopfAufZuSha,
+): PrKoerper | null {
   try {
+    const vollerSha = aufloesen(kopf);
+    if (!vollerSha) return null; // unauflösbar ⇒ sauberer Überspring, kein gh-Aufruf nötig
     const args = ['pr', 'list', '--state', 'open', '--json', 'number,title,body,headRefOid', '--limit', '200'];
     const out = execFileSync('gh', args, { stdio: ['ignore', 'pipe', 'ignore'], timeout: 8000 }).toString('utf8');
     const liste = JSON.parse(out);
     if (!Array.isArray(liste)) return null;
-    const k = kopf.toLowerCase();
+    const s = vollerSha.toLowerCase();
     const treffer = liste.find(
-      (e) => e && typeof e.headRefOid === 'string' && e.headRefOid.toLowerCase().startsWith(k),
+      (e) => e && typeof e.headRefOid === 'string' && e.headRefOid.toLowerCase() === s,
     );
     if (!treffer || typeof treffer.title !== 'string') return null;
     return { nummer: treffer.number, titel: treffer.title, body: typeof treffer.body === 'string' ? treffer.body : '' };

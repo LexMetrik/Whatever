@@ -16,12 +16,19 @@
 // PR-Körper-Schutz wird gar nicht erst aufgerufen; Risiko-Diff + verkürztes
 // PR-Body-Verdikt ⇒ ROT trotz gültigem Zweig-Trailer — genau der Root-Cause).
 import { execFileSync, spawnSync } from 'node:child_process';
-import { chmodSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { chmodSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { afterAll, describe, expect, it } from 'vitest';
-import { baueQueueSquash, pruefePrKoerper, pruefePrSchutz, type PrKoerper } from '../../scripts/gegenpruefung/pr-schutz';
+import { afterAll, afterEach, describe, expect, it } from 'vitest';
+import {
+  baueQueueSquash,
+  holePrKoerperFuerKopf,
+  loeseKopfAufZuSha,
+  pruefePrKoerper,
+  pruefePrSchutz,
+  type PrKoerper,
+} from '../../scripts/gegenpruefung/pr-schutz';
 
 const WURZEL = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 
@@ -276,6 +283,80 @@ function ghAttrappe(antwort: { number: number; title: string; body: string; head
   chmodSync(p, 0o755);
   return bin;
 }
+
+// ── N2 (Nach-Verdikt 20.9.2026, niedrig): holePrKoerperFuerKopf löst `kopf`
+// jetzt auf und vergleicht per GLEICHHEIT, nicht mehr per `startsWith` ─────
+// Vorher: 'HEAD' (oder jeder andere gültige Nicht-Hex-Rev) startet nie mit
+// einem hex `headRefOid`-Präfix ⇒ traf NIE, egal welcher PR gemeint war,
+// und wurde still übersprungen — kein Rot, aber auch kein Schutz. Diese
+// Tests laufen ohne echtes Repo: `aufloesen` wird injiziert (kein `git`
+// nötig), `gh` wird per PATH-Attrappe (ghAttrappe, s. o.) bedient.
+describe('holePrKoerperFuerKopf — N2 (Auflösung statt Präfixvergleich)', () => {
+  const alterPath = process.env.PATH;
+  afterEach(() => {
+    process.env.PATH = alterPath;
+  });
+
+  it('kopf = "HEAD", aufloesen liefert vollen SHA ⇒ Treffer per Gleichheit (schlug vorher NIE an)', () => {
+    const vollerSha = 'deadbeef00112233445566778899aabbccddeeff';
+    const bin = ghAttrappe({ number: 9, title: 'fix(x): y', body: 'Body', headRefOid: vollerSha });
+    process.env.PATH = `${bin}:${alterPath}`;
+    const pr = holePrKoerperFuerKopf('HEAD', () => vollerSha);
+    expect(pr).toEqual({ nummer: 9, titel: 'fix(x): y', body: 'Body' });
+  });
+
+  it('kopf = Kurz-SHA, aufloesen liefert vollen SHA ⇒ Treffer über Auflösung', () => {
+    const vollerSha = 'deadbeef00112233445566778899aabbccddeeff';
+    const bin = ghAttrappe({ number: 9, title: 'fix(x): y', body: 'Body', headRefOid: vollerSha });
+    process.env.PATH = `${bin}:${alterPath}`;
+    const pr = holePrKoerperFuerKopf('deadbeef00', () => vollerSha);
+    expect(pr).toEqual({ nummer: 9, titel: 'fix(x): y', body: 'Body' });
+  });
+
+  it('kopf unauflösbar (aufloesen liefert null) ⇒ Überspringen, gh wird gar nicht erst aufgerufen', () => {
+    // Eine gh-Attrappe, die bei jedem Aufruf eine Markerdatei anlegt — wäre
+    // sie (trotz unauflösbarem `kopf`) doch aufgerufen worden, existierte die
+    // Markerdatei danach. Ohne diesen Beleg würde ein fehlender
+    // Früh-Ausstieg NICHT auffallen: `gh` scheitert dann zwar mangels
+    // Attrappe auf PATH und holePrKoerperFuerKopf gäbe wegen des
+    // umschliessenden try/catch ebenfalls `null` zurück — derselbe Rückgabewert,
+    // aber der falsche Grund.
+    const bin = mkdtempSync(join(tmpdir(), 'gh-bin-marker-'));
+    aufgeraeumt.push(bin);
+    const marker = join(bin, 'wurde-aufgerufen');
+    writeFileSync(join(bin, 'gh'), `#!/bin/sh\ntouch '${marker}'\necho '[]'\n`, 'utf8');
+    chmodSync(join(bin, 'gh'), 0o755);
+    process.env.PATH = `${bin}:${alterPath}`;
+
+    const pr = holePrKoerperFuerKopf('nicht-aufloesbare-referenz-xyz', () => null);
+    expect(pr).toBeNull();
+    expect(existsSync(marker)).toBe(false);
+  });
+
+  it('kopf = voller SHA direkt (Regression: unveränderter Grundfall bleibt ein Treffer)', () => {
+    const vollerSha = 'cafebabe00112233445566778899aabbccddeeff';
+    const bin = ghAttrappe({ number: 3, title: 'fix(y): z', body: 'B', headRefOid: vollerSha });
+    process.env.PATH = `${bin}:${alterPath}`;
+    const pr = holePrKoerperFuerKopf(vollerSha, () => vollerSha);
+    expect(pr).toEqual({ nummer: 3, titel: 'fix(y): z', body: 'B' });
+  });
+});
+
+describe('loeseKopfAufZuSha — injizierbar, kein echtes Repo nötig', () => {
+  it('ausfuehren liefert SHA mit Zeilenumbruch ⇒ getrimmt zurückgegeben', () => {
+    expect(loeseKopfAufZuSha('HEAD', () => 'deadbeef00112233445566778899aabbccddeeff\n')).toBe(
+      'deadbeef00112233445566778899aabbccddeeff',
+    );
+  });
+
+  it('ausfuehren wirft (ungültige Referenz) ⇒ null', () => {
+    expect(
+      loeseKopfAufZuSha('nicht-aufloesbar', () => {
+        throw new Error('unknown revision');
+      }),
+    ).toBeNull();
+  });
+});
 
 function laufeTor(repo: string, basis: string, kopf: string, ghBin: string): { status: number | null; ausgabe: string } {
   const vite = resolve(WURZEL, 'node_modules/.bin/vite-node');
