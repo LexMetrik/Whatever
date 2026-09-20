@@ -428,6 +428,46 @@ test.describe('S8 — Trefferliste in der Leiste, Lesespalte vollständig', () =
     // sonst das Nachladen messen statt den Suchmodus. Genau diese Nachlade-
     // Flächen tragen seit S8 `data-such-meta` (sie sind Referenzschicht, kein
     // Gesetzestext), also gibt es dafür bereits die richtige Marke.
+    //
+    // ── NACHTRAG 19.9.2026 · §0 Ziff. 2b: ERGÄNZT, nicht nachgeführt ─────────
+    // Der Absatz oben bleibt Wort für Wort stehen; er war für seinen Stand
+    // richtig. Was er NICHT abdeckt, hat die Signatur seit D40 (7.9.2026) hart
+    // rot fallen lassen — Flake-Buchung 8.9.2026, dann zweimal HART am
+    // 19.9.2026 (Läufe 35445618485 / 35446174293, je Shard 4/4, auch im Retry).
+    //
+    // GEMESSENE WURZEL (lokal deterministisch nachgestellt, indem der
+    // Historie-Shard bis NACH der `vorher`-Messung angehalten wurde, 6×
+    // CPU-Drossel): sechs Artikel wuchsen um exakt 27 Zeichen —
+    //   art-2 2989→3016 · art-7 1006→1033 · art-8 1154→1181 ·
+    //   art-10_a 444→471 · art-12 1819→1846 · art-15 625→652
+    // (byte-gleich mit dem CI-Log). Der Zusatz ist
+    //   «FassungGilt seit 01.07.2025» (art-2), «…01.01.2007» (art-7/12/15),
+    //   «…23.01.2023» (art-8), «…01.01.2011» (art-10_a) — je 27 Zeichen,
+    // gerendert von `ArtikelHistorieZeile` (`parts/ArtikelHistorie.tsx`) im
+    // DRUCK-Wrapper `[data-hist-druck]` (`parts/ArtikelLeser.tsx`,
+    // `hidden print:block`). Betroffen ist genau die Artikelmenge mit Eintrag
+    // in `public/normtext/historie/BGFA.json` (2, 7, 8, 10_a, 12, 15 innerhalb
+    // der ersten 25) — der Shard wird IDLE geladen und trifft auf einem
+    // langsamen Runner erst nach der `vorher`-Messung ein.
+    //
+    // KEIN SUCH-RÜCKSTAND, also kein App-Defekt: der Wrapper ist am Bildschirm
+    // in JEDER Vermerke-Stellung `display:none`, und der Such-Walker der App
+    // überspringt nicht gerenderte Teilbäume ohnehin (`istGerendert`,
+    // `src/pages/gesetz-leser/suchHighlight.ts`) — gemalt, gezählt und
+    // angesprungen wird dort nie etwas. `data-such-meta` fehlt dem Wrapper
+    // folgerichtig; es hätte an dieser Stelle keinen Leser.
+    //
+    // DER FEHLER LAG IM TEST, und zwar als ASYMMETRIE zu seinen eigenen
+    // Nachbarn: `malbareFundstellen` (oben in dieser Datei) und der Walker der
+    // App schneiden `display:none`-Teilbäume ab, `signatur()` als einzige
+    // nicht — sie mass damit eine Fläche, die die Suche gar nicht erreichen
+    // kann. Die Zeile unten schliesst genau diese Lücke.
+    //
+    // DIE AUSSAGE BLEIBT SCHARF (§6.3): ein echter Rückstand im sichtbaren
+    // Wortlaut fällt unverändert auf — gemessen mit eingebauter Mutation
+    // (Textknoten « RUECKSTAND» an `#art-2 p` nach dem Suchzyklus): art-2
+    // 1610→1621, Test rot. Und versteckte die Suche sichtbaren Wortlaut, SÄNKE
+    // die Zahl — auch das ist rot.
     const signatur = () => page.evaluate(() => {
       const arts = [...document.querySelectorAll('article[id^="art-"]')].slice(0, 25);
       const wortlaut = (a: Element) => {
@@ -435,7 +475,11 @@ test.describe('S8 — Trefferliste in der Leiste, Lesespalte vollständig', () =
         const w = document.createTreeWalker(a, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, {
           acceptNode(k) {
             if (k.nodeType !== 1) return NodeFilter.FILTER_ACCEPT;
-            return (k as Element).hasAttribute('data-such-meta')
+            const el = k as Element;
+            if (el.hasAttribute('data-such-meta')) return NodeFilter.FILTER_REJECT;
+            // 19.9.2026 (s. Nachtrag): dieselbe Regel wie in
+            // `malbareFundstellen` und in `istGerendert` der App.
+            return getComputedStyle(el).display === 'none'
               ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_SKIP;
           },
         });
