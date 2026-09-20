@@ -25,6 +25,7 @@ const zeile = (datum: string, tore = 0): Zeile => ({
   commits_30d: 5,
   prozess_commits_30d: 6,
   roadmap_bytes: 7,
+  steuerflaeche_bytes: 8,
 });
 
 describe('istProzessCommit', () => {

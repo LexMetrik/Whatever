@@ -6,9 +6,9 @@
 // scripts/analyse/steuerflaeche.ts) — kein git, kein Dateisystem, kein Netz.
 import { describe, expect, it } from 'vitest';
 import {
-  HEIL_SATZ, istFlaeche, klinkeUrteil, summeBytes, urteil, zielGrenze,
+  HEIL_SATZ, istFlaeche, klinkeUrteil, summeBytes, trendZeile, urteil, zielGrenze,
   type Grenze,
-} from '../../scripts/analyse/steuerflaeche';
+} from '../../scripts/analyse/steuerflaecheKern';
 
 const grenze = (bytes: number, anhebungen: Grenze['anhebungen'] = []): Grenze => ({
   grenze_bytes: bytes, gesetzt: '2026-09-20', anhebungen,
@@ -19,7 +19,7 @@ describe('Flächen-Definition', () => {
     expect(istFlaeche('.claude/skills/lehren/SKILL.md')).toBe(true);
     expect(istFlaeche('CLAUDE.md')).toBe(true);
     expect(istFlaeche('scripts/plan/next.ts')).toBe(true);
-    expect(istFlaeche('scripts/analyse/steuerflaeche.ts')).toBe(true);
+    expect(istFlaeche('scripts/analyse/steuerflaecheKern.ts')).toBe(true);
     expect(istFlaeche('.github/workflows/ci.yml')).toBe(true);
     // Helfer neben der Tor-Hülle — die Lücke, durch die am 19./20.9.2026
     // Steuerungs-Logik in Nachbar-Ordner auswich.
@@ -130,5 +130,38 @@ describe('Klinke zieht nur nach unten', () => {
   it('Ziel = Ist + 5 %, auf volle KB aufgerundet', () => {
     expect(zielGrenze(1000 * 1024)).toBe(1050 * 1024);
     expect(zielGrenze(1356.5 * 1024)).toBe(1425 * 1024);
+  });
+});
+
+describe('Trendzeile für plan:next', () => {
+  const reihe = [
+    { datum: '2026-08-15', bytes: 900 * 1024 },
+    { datum: '2026-09-01', bytes: 950 * 1024 },
+  ];
+  const heute = '2026-09-20';
+
+  it('nennt Ist, Grenze, Luft und den Vergleichspunkt mit SEINEM Datum', () => {
+    const s = trendZeile({ ist: 1000 * 1024, grenze: grenze(1050 * 1024), reihe, heute });
+    expect(s).toBe('📐 Steuerung: 1000.0 KB von 1050.0 KB (Luft 50.0 KB) · Trend seit 2026-08-15: +100.0 KB');
+  });
+
+  it('zeigt Schrumpfen als Minus', () => {
+    expect(trendZeile({ ist: 800 * 1024, grenze: grenze(1050 * 1024), reihe, heute }))
+      .toContain('Trend seit 2026-08-15: −100.0 KB');
+  });
+
+  it('schweigt über den Trend, wenn die Reihe keine Spalte trägt', () => {
+    const s = trendZeile({ ist: 1000 * 1024, grenze: grenze(1050 * 1024), reihe: [], heute });
+    expect(s).not.toContain('Trend');
+    expect(s).toContain('Luft 50.0 KB');
+  });
+
+  it('hängt den Nachzieh-Hinweis erst an, wenn > 10 KB Absenkung möglich sind', () => {
+    // Ist+5 % = 1050 KB, Grenze 1055 KB ⇒ nur 5 KB Absenkung ⇒ kein Hinweis.
+    expect(trendZeile({ ist: 1000 * 1024, grenze: grenze(1055 * 1024), reihe, heute }))
+      .not.toContain('nachziehen');
+    // Grenze 1200 KB ⇒ 150 KB Absenkung möglich ⇒ Hinweis.
+    expect(trendZeile({ ist: 1000 * 1024, grenze: grenze(1200 * 1024), reihe, heute }))
+      .toContain('npm run steuerflaeche -- --nachziehen');
   });
 });
