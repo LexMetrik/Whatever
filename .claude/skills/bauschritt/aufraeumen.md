@@ -70,12 +70,13 @@ verändert oder gelöscht, auch nicht formatierend.
 
 ## 3 · Streich-Massstab
 
-**Steuerungs-Deckel (David 15.8.2026):** `check:steuerdeckel` (Kette + CI)
-misst neben STRUKTUR/ROADMAP/CLAUDE auch `.claude/hooks/*.py` und
-`scripts/check-*.ts` gegen Byte-Budgets (`FLAECHEN_BUDGET` in
-`struktur-rotieren.py`). Rot ⇒ vor dem nächsten Wächter einen streichen;
-Kandidaten liefert `npm run retro:17` (Regel «nie rot», Chesterton-Vorbehalt
-dort). Rechtsdaten-Tore sind ausgenommen.
+**Steuerungs-Deckel (David 15.8.2026, ab 20.9.2026 `check:steuerflaeche`):**
+Byte-Summe der GESAMTEN Steuerungs-Fläche gegen `messwerte/steuerflaeche.json`;
+die Grenze sinkt nur (`npm run steuerflaeche -- --nachziehen`), Anhebung nur mit
+datiertem David-Entscheid. Rot ⇒ streichen, bevor etwas dazukommt; die zehn
+grössten Zuwächse nennt das Tor selbst, Stand und Trend die letzte Zeile von
+`plan:next`. Rechtsschutz ausgenommen (Liste im Kopf von
+`scripts/analyse/steuerflaecheKern.ts`).
 
 Vor jeder Streichung (echtes Entfernen, keine Verschiebung): **«Steuert der
 Schritt noch etwas?»** Ein Posten ohne `dep`-/`@queue`-/Blocker-Referenz,
