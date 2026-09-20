@@ -9,7 +9,6 @@ import { pruefeKopfBuchung } from './kopfBuchung';
 import { postenScan, type PostenDatei } from './postenKern';
 import { pruefePosten } from './postenRegel';
 import { obersterMarkerId } from './marker';
-import { ZEITREIHE_DATEI, pruefeZeitreihe } from './selbstoptKern';
 
 // (8.3) Status, die einen Schritt als Queue-Eintrag wertlos machen: er wird nicht
 // gebaut, hält aber einen Platz in der EINEN Prioritäts-Quelle. `blocked` gehört
@@ -91,7 +90,7 @@ export function pruefe(
   const { einheiten, blockers, queue } = parseRoadmap(md);
   const vorhanden = new Set(einheiten.map((e) => e.id));
   // Zweite Fundstelle für eine Schritt-ID: das Wortlaut-Archiv. Gelesen über
-  // DENSELBEN injizierten `leseDatei` wie Regel 11/13/14 — so bleibt `pruefe`
+  // DENSELBEN injizierten `leseDatei` wie Regel 11/14 — so bleibt `pruefe`
   // dateisystemfrei testbar, und der Weg zur Chronik ist genau einer (§5).
   const chronik = chronikErledigte(leseDatei(CHRONIK_DATEI));
 
@@ -280,6 +279,12 @@ export function pruefe(
   // KOPFES, hat sie darum keiner Session je gezeigt.
   probleme.push(...pruefeKopfBuchung(md));
 
+  // (13) entfällt (Entscheid David 20.9.2026, Rückbau QS-EFFIZIENZ): prüfte die
+  // Selbstoptimierungs-Zeitreihe (`messwerte/selbstopt-zeitreihe.json`, Schritt
+  // QS-SELBSTOPT) auf Schema-Form. Mit `retro:17`/`selbstopt:erheben` entfallen
+  // — die Datei wird nicht mehr erhoben. Nummer bleibt frei wie §16 in
+  // CLAUDE.md, damit Bestandsverweise nicht still auf eine andere Regel zeigen.
+
   // (16) Posten-Modell — Regel, Grenzen und Anlass in scripts/plan/postenRegel.ts.
   // Verhältnis zu Regel 15 (beide aus der F17-Familie, 20.9.2026, verschiedene
   // Fundorte): Regel 15 sucht offene Posten unter einem erledigten Kopf INNERHALB
@@ -288,25 +293,6 @@ export function pruefe(
   // Rest-Wächter für die Zeilen, die in der ROADMAP bleiben dürfen
   // (Etappen-Kennungen, etikettierte Unterschritte).
   probleme.push(...pruefePosten(md, postenDateien));
-
-  // (13) Selbstoptimierungs-Zeitreihe — FORM, nie WERTE (Schritt QS-SELBSTOPT).
-  //
-  // `messwerte/selbstopt-zeitreihe.json` ist eine generierte §5-Projektion von
-  // `npm run selbstopt:erheben`. Fehlt sie, ist das kein Fehler (Regel greift
-  // nur, wenn die Datei da ist — ein frischer Baum ohne Messreihe bleibt grün).
-  // Ist sie da, muss sie tragen, was jede Auswertung von ihr voraussetzt:
-  // Generat-Marke, Pflichtfelder, echt aufsteigende Zeitstempel. Ohne diese
-  // Regel wäre eine von Hand «korrigierte» oder halb geschriebene Messreihe für
-  // jedes Tor unsichtbar — und eine kaputte Messreihe ist schlimmer als keine,
-  // weil sie wie eine gültige aussieht.
-  //
-  // BEWUSST NICHT geprüft werden die WERTE (Failure-Rate, Rework-Quote, Anzahl
-  // roter Tore). Ein Tor über sie wäre der Punkt, an dem die Messung anfinge,
-  // den Bau zu steuern statt ihn zu beschreiben — Rework und Flaky sind
-  // ausdrücklich Beobachtungsgrössen und nie Tor-Kriterium (Fahrplan-Spec).
-  for (const meldung of pruefeZeitreihe(leseDatei(ZEITREIHE_DATEI))) {
-    probleme.push({ id: null, meldung });
-  }
 
   // (4b) Azyklie
   const z = zyklus(einheiten);

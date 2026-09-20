@@ -74,8 +74,9 @@ verändert oder gelöscht, auch nicht formatierend.
 misst neben STRUKTUR/ROADMAP/CLAUDE auch `.claude/hooks/*.py` und
 `scripts/check-*.ts` gegen Byte-Budgets (`FLAECHEN_BUDGET` in
 `struktur-rotieren.py`). Rot ⇒ vor dem nächsten Wächter einen streichen;
-Kandidaten liefert `npm run retro:17` (Regel «nie rot», Chesterton-Vorbehalt
-dort). Rechtsdaten-Tore sind ausgenommen.
+Kandidaten liefert `npm run tor:bewaehrung` (Regel «nie rot ≥ 90 Tage»,
+Chesterton-Vorbehalt dort — Nachfolger des entfallenen `retro:17`, Entscheid
+David 20.9.2026, Rückbau QS-EFFIZIENZ). Rechtsdaten-Tore sind ausgenommen.
 
 Vor jeder Streichung (echtes Entfernen, keine Verschiebung): **«Steuert der
 Schritt noch etwas?»** Ein Posten ohne `dep`-/`@queue`-/Blocker-Referenz,

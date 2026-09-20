@@ -30,19 +30,8 @@
 // Schritt-Daten kommen unverändert aus parse.ts/aufloesen.ts.
 
 import { execFileSync } from 'node:child_process';
-import { existsSync, readFileSync } from 'node:fs';
 import { type Einheit } from './parse';
 import { idTrifft } from './specBindung';
-import {
-  ZEITREIHE_DATEI,
-  letzterSnapshot,
-  pruefeZeitreihe,
-  quoteText,
-  type Zeitreihe,
-} from './selbstoptKern';
-// Nur der KERN (rein) — nie `retro-17.ts`: dessen CLI läuft beim Import und
-// druckte den ganzen Bericht in die plan:next-Ausgabe (s. Kopf von retro17Kern.ts).
-import { MIN_SNAPSHOTS, befunde } from './retro17Kern';
 
 /** Ein `wip`-Schritt mit dem von ihm belegten Baufeld (`feld:`). */
 export interface WipFlaeche {
@@ -316,103 +305,20 @@ export function lageZeilen(roh: LageRoh, ids: string[]): string[] {
 }
 
 /**
- * **Messreihen-Zeile** (Schritt `QS-SELBSTOPT`, Stufe 1 «erst messen»).
- *
- * Eine Zeile über den letzten Snapshot von `messwerte/selbstopt-zeitreihe.json`:
- * wann zuletzt gemessen wurde, wie die CI-Failure-Rate stand, wie viele
- * Tor-Läufe seit dem vorletzten Snapshot rot waren. Reine Funktion über die
- * Zeitreihe — im Test ohne Dateisystem prüfbar, genau wie `lageZeilen`.
- *
- * **Nie eine Warnung, nie ein Verdikt.** Der Block sagt, was gemessen wurde,
- * und nichts darüber, ob das gut ist: die Werte sind Beobachtungsgrössen (§8,
- * Fahrplan-Spec). Fehlt die Zeitreihe, steht das als Tatsache da, nicht als
- * Mangel — eine frisch geklonte Arbeitskopie hat sie schlicht noch nicht.
- */
-export function selbstoptZeile(z: Zeitreihe | null): string[] {
-  const s = letzterSnapshot(z);
-  if (!s) {
-    return [`📈 Bau-Messreihe: noch keine Zeitreihe (\`npm run selbstopt:erheben\` erhebt den ersten Snapshot)`];
-  }
-  const tag = s.erhobenAm.slice(0, 10);
-  // Die Basis wird MITGENANNT: eine Quote ohne Nenner lädt zur Fehldeutung ein,
-  // und der Nenner ist hier gerade der Punkt — abgebrochene Läufe zählen nicht.
-  const ci = s.ci
-    ? `CI-Failure-Rate ${quoteText(s.ci.failureRate)} (${s.ci.verdikte} von ${s.ci.laeufe} Läufen mit Verdikt)`
-    : 'CI-Rate nicht erhoben';
-  const tore = `${s.torRot.seitLetztem.rot} von ${s.torRot.seitLetztem.gesamt} Tor-Läufen rot`;
-  return [
-    `📈 Bau-Messreihe (Stand ${tag}, ${z?.snapshots.length ?? 0} Snapshots): ${ci} · seit dem vorigen Snapshot ${tore}` +
-      ` — Beobachtung, kein Tor-Kriterium.`,
-    ...vorschlagsZeile(z),
-  ];
-}
-
-/**
- * **Vorschlagslage** — die zweite Hälfte des Deutungs-Kreises.
- *
- * Stufe 2 (`retro:17`) nützt nur, wenn eine Session weiss, DASS es etwas zu
- * lesen gibt. Diese Zeile sagt es beim Pflicht-Einstieg: entweder «N Vorschläge
- * offen» oder, solange zu wenig gemessen wurde, den Zählerstand der Datenlage.
- *
- * **Warum ohne Chronik.** `befunde()` nimmt den Chronik-Text nur, um den
- * `anlass`-TEXT anzureichern («die Chronik nennt X 3×») — auf die ANZAHL der
- * Befunde hat er keinen Einfluss. Für eine blosse Zahl ist das Einlesen der
- * ~186 KB grossen `ROADMAP-CHRONIK.md` samt einem Regex-Lauf je Tor-Name also
- * reine Arbeit ohne Ertrag. `plan:next` ist der Pflicht-Einstieg JEDER Session;
- * dort zählt jede Zehntelsekunde, und der Block darf keine Netz- oder
- * gh-Aufrufe kennen. Deshalb `''` — identische Zahl, kein Dateizugriff.
- *
- * Bei leerer oder defekter Zeitreihe entfällt die Zeile still: `leseZeitreihe`
- * liefert dann `null`, und die Zeile darüber hat schon gesagt, dass es keine
- * Messreihe gibt. Zweimal dieselbe Nachricht wäre Rauschen.
- */
-export function vorschlagsZeile(z: Zeitreihe | null): string[] {
-  if (!z || !Array.isArray(z.snapshots) || z.snapshots.length === 0) return [];
-  const n = z.snapshots.length;
-  if (n < MIN_SNAPSHOTS) {
-    return [`   Selbstopt: Datenlage ${n}/${MIN_SNAPSHOTS} Snapshots — für Streich-Vorschläge noch zu dünn.`];
-  }
-  const anzahl = befunde(z, '').length;
-  return [
-    anzahl === 0
-      ? '   Selbstopt: keine Vorschläge über den Schwellen (`npm run retro:17` zeigt die Schwellen).'
-      : `   Selbstopt: ${anzahl} Vorschlag${anzahl === 1 ? '' : 'sblöcke'} offen — \`npm run retro:17\` (ENTWURF, Übernahme entscheidest du).`,
-  ];
-}
-
-/**
- * Zeitreihe von der Platte lesen. Wie überall in dieser Datei gilt: **nie
- * werfen.** Fehlt die Datei oder ist sie defekt, ist das Ergebnis `null` und die
- * Anzeige sagt «noch keine Zeitreihe» — der Pflicht-Einstieg `plan:next` darf an
- * einem kaputten Messwert nicht scheitern. Dass sie defekt IST, meldet das
- * zuständige Tor (`check:plan`, Regel 13), nicht diese Anzeige.
- */
-export function leseZeitreihe(pfad: string = ZEITREIHE_DATEI): Zeitreihe | null {
-  try {
-    if (!existsSync(pfad)) return null;
-    const roh = readFileSync(pfad, 'utf8');
-    if (pruefeZeitreihe(roh).length) return null;
-    return JSON.parse(roh) as Zeitreihe;
-  } catch {
-    return null;
-  }
-}
-
-/**
  * Ein Aufruf für die CLI: erheben und formatieren.
  *
- * Die Messreihen-Zeile wird ANGEHÄNGT (dasselbe Andock-Muster wie der ganze
- * Block gegenüber `plan:next`): zieht man sie ab, ist die Ausgabe von
- * `lageZeilen` byte-identisch zum Stand vor QS-SELBSTOPT.
+ * Bis 20.9.2026 hängte diese Funktion eine Messreihen-Zeile an (Schritt
+ * QS-SELBSTOPT, `selbstoptZeile`/`vorschlagsZeile`/`leseZeitreihe`) — entfallen
+ * mit `retro:17`/`selbstopt:erheben` (Entscheid David, Rückbau QS-EFFIZIENZ:
+ * die Zeitreihe wurde seit 4.9.2026 nicht mehr erhoben, `retro:17` nie
+ * umgesetzt; Nachfolge-Messung `npm run tor:bewaehrung`). `lageBlock` ist damit
+ * wieder deckungsgleich mit `lageZeilen`.
  */
 export function lageBlock(
   einheiten: Einheit[],
   inArbeit: string[],
-  opt: { prs: boolean; laufe?: Laufe; zeitreihe?: () => Zeitreihe | null },
+  opt: { prs: boolean; laufe?: Laufe },
 ): string[] {
   const roh = sammleLage(wipFlaechen(einheiten, inArbeit), opt);
-  return [
-    ...lageZeilen(roh, einheiten.map((e) => e.id)),
-    ...selbstoptZeile((opt.zeitreihe ?? leseZeitreihe)()),
-  ];
+  return lageZeilen(roh, einheiten.map((e) => e.id));
 }
