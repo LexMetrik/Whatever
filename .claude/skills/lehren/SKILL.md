@@ -40,10 +40,9 @@ wird in DERSELBEN Session nach der Formregel oben verankert — als Tor-Regel
 im Fahrplan-Register. Belege, dass das wirkt: der Assertion-Diff aus T5 (PR
 #638, `scripts/analyse/test-assertion-diff.ts`), die Kommentar-Bilanz aus
 #662 (Fremd-PR-Tor Regel 3), die Label-/Tabellen-Regeln aus #650
-(deterministischer Erstfilter). Stufe 2 (`retro:17`) trägt seit demselben
-Auftrag einen Erinnerungs-Vorschlag: jeder in den letzten 7 Tagen
-geschlossene Jules-PR erzeugt eine ENTWURF-Zeile «Lehre verankern» — sie
-ersetzt die Formregel nicht, sie erinnert nur daran, wenn sie vergessen ginge.
+(deterministischer Erstfilter). Der frühere Stufe-2-Erinnerungs-Vorschlag
+(`retro:17`) ist entfallen 20.9.2026 (Entscheid David, Rückbau QS-EFFIZIENZ) —
+Nachfolge-Messung `npm run tor:bewaehrung`.
 
 ## Register der belegten Fehlerklassen (Vorfälle seit 18.7.2026)
 

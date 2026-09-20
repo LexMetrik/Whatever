@@ -97,15 +97,16 @@ scripts/cowork/
 # Lagebild-Projektion (regenerierbar: npm run plan:bild) — nie einchecken (§5)
 tmp/
 
-# Tor-Ereignis-Log der Selbstoptimierungs-Messreihe (QS-SELBSTOPT): je Zeile ein
-# gelaufenes Tor {ts, tor, ok}, geschrieben von scripts/gate.sh und
-# scripts/run-parallel.ts. Bewusst LOKAL: es beschreibt die Läufe DIESER
-# Maschine, kollidierte bei jedem Parallel-PR und wäre committet ein
-# Merge-Konflikt-Generator. Was davon dauerhaft gilt, hält der jeweilige
-# Snapshot in der committeten messwerte/selbstopt-zeitreihe.json fest.
+# Tor-Ereignis-Log: je Zeile ein gelaufenes Tor {ts, tor, ok}, geschrieben von
+# scripts/gate.sh und scripts/run-parallel.ts. Bewusst LOKAL: es beschreibt die
+# Läufe DIESER Maschine, kollidierte bei jedem Parallel-PR und wäre committet
+# ein Merge-Konflikt-Generator. Gelesen von scripts/analyse/tor-bewaehrung.ts
+# (Konstante LOKALES_LOG dort). Bis 20.9.2026 hielt zusätzlich die committete
+# messwerte/selbstopt-zeitreihe.json fest, was daraus dauerhaft galt — mit
+# retro:17/selbstopt:erheben entfallen (Entscheid David, Rückbau QS-EFFIZIENZ).
 .selbstopt-ereignisse.jsonl
 
-# gate-stopp Grün-Fingerabdruck (Vorschlag QS-SELBSTOPT 7.8.2026)
+# gate-stopp Grün-Fingerabdruck (Vorschlag 7.8.2026)
 .gate-stopp-gruen
 
 # Volllog eines roten Tores (QS-EFFIZIENZ, Kondensat 5.9.2026): scripts/gate.sh
@@ -126,7 +127,11 @@ ABNAHME-AG-BAUSTEINE.md
 # Python-Bytecode (Hook-Testläufe)
 __pycache__/
 
-# Token-Spool je Session-Ende (QS-EFFIZIENZ 14.8.2026; Konsument: selbstopt:erheben)
+# Token-Spool je Session-Ende (QS-EFFIZIENZ 14.8.2026), geschrieben von
+# .claude/hooks/abschluss-wache.py. Der frühere Konsument-Vermerk
+# (selbstopt:erheben) war bereits vor dessen Rückbau 20.9.2026 falsch — der
+# Sammler las Token-Zahlen live vom OTel-Export, nie aus dieser Datei; ob sie
+# einen Leser hat, ist ungeprüft und ausserhalb dieses Rückbaus.
 messwerte/token-spool.jsonl
 
 # Raw-Store-Arbeitsverzeichnis (QS-VERWENDEN V3, 2.9.2026): geladene Fedlex-
