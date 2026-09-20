@@ -299,7 +299,18 @@ export function pruefe(
   // Arbeit auf derselben Fläche meldet die neue Feld-Warnung in plan:next.
 
   // (7) FAHRPLAN-Link-Check (eingegliedertes QS-PH)
-  for (const f of fahrplanDateien) if (!md.includes(f)) probleme.push({ id: null, meldung: `${f} ist nicht aus ROADMAP.md verlinkt` });
+  //
+  // Der Heuhaufen ist seit dem Posten-Modell (20.9.2026) der GANZE Steuerungsplan,
+  // nicht mehr nur ROADMAP.md: Posten-Dateien sind Plan-Inhalt, und Regel 16 (a)
+  // hält sie an einem lebenden Schritt fest. Ohne diese Erweiterung wurden drei
+  // Fahrpläne bei der Migration schlagartig «verwaist», obwohl ihr Verweis nur
+  // eine Datei weitergezogen war (gemessen: ENTSCHEIDSUCHE-AUSBAU, GESETZES-UX,
+  // SPLIT-VIEW) — ein Tor, das auf einen Umzug mit Fehlalarm reagiert, wird bald
+  // ignoriert (§6.7, dieselbe Seite wie ein Tor, das nie rot wird).
+  // Meldungstext bewusst unverändert (Bestands-Test plan-check.test.ts:223):
+  // er nennt den Regelfall, der Heuhaufen steht hier.
+  const planText = [md, ...postenDateien.map((d) => d.inhalt)].join('\n');
+  for (const f of fahrplanDateien) if (!planText.includes(f)) probleme.push({ id: null, meldung: `${f} ist nicht aus ROADMAP.md verlinkt` });
 
   // (8) @queue-Integrität — die Queue ist die EINE Prioritäts-Quelle (Einbau 24.7.2026);
   // eine Queue, die auf tote/erledigte IDs zeigt oder der Prosa widerspricht, steuert falsch.
