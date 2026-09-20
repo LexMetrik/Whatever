@@ -5,17 +5,13 @@ description: Verwenden, wenn etwas schiefgegangen ist und die Lehre daraus bleib
 
 # Lehren — belegte Fehlerklassen und wo ihr Gegenmittel sitzt
 
-**Zweck:** Lehren aus Vorfällen lagen früher ausserhalb des Repos (Memory) —
-unversioniert, für Sub-Agenten unsichtbar. Dieses Register liegt im Repo und
-kostet im Normalbetrieb nur seine Description.
-
 ## Die Formregel (wichtiger als jede einzelne Lehre)
 
 > **Eine Regel kostet dort am wenigsten, wo sie am spätesten gelesen wird.**
 
 `CLAUDE.md` wird bei **jedem** Dispatch geladen (nach dem A4-Umzug 25.7.2026
-~2 500 Token statt ~7 200 — der Hebel wird dadurch kleiner, nicht gegenstandslos).
-Eine Zeile dort kostet bei jeder delegierten Einheit. Reihenfolge der Wahl:
+~2 500 Token statt ~7 200 — der Hebel wird dadurch kleiner, nicht
+gegenstandslos). Reihenfolge der Wahl:
 
 | Form | Kosten je Dispatch | Wählen, wenn |
 |---|---|---|
@@ -24,12 +20,12 @@ Eine Zeile dort kostet bei jeder delegierten Einheit. Reihenfolge der Wahl:
 | **Skill** | nur die Description | die Regel situativ gilt (Landung, Gegenprüfung, Postmortem) |
 | **CLAUDE.md** | volle Kosten, immer | letzte Wahl — nur wenn nicht maschinalisierbar und immer gültig |
 
-Das Design-Reglement sagt das selbst (`DESIGN-REGLEMENT.md` E1, früher zitiert
-als `CLAUDE.md` §13 Ziff. 6): maschinell prüfbare Regeln gehören in ESLint/Tests,
-nicht ins .md. **Netto-Prosa-Zuwachs ist zu begründen.**
+Dasselbe sagt `DESIGN-REGLEMENT.md` E1 (früher `CLAUDE.md` §13 Ziff. 6):
+maschinell Prüfbares gehört in ESLint/Tests, nicht ins .md.
+**Netto-Prosa-Zuwachs ist zu begründen.**
 
-Und: **ein Tor ist erst ein Tor, wenn es einmal rot war.** Wer eines baut, zeigt
-den Sabotage-Beweis (§6.7 — Skill `refactoring`, Ziff. 7).
+**Ein Tor ist erst ein Tor, wenn es einmal rot war** — wer eines baut, zeigt
+den Sabotage-Beweis (§6.7, Skill `refactoring` Ziff. 7).
 
 ### Formregel-Ergänzung: Fremdagenten (QS-FREMDAGENTEN, 4.9.2026)
 
@@ -40,10 +36,10 @@ wird in DERSELBEN Session nach der Formregel oben verankert — als Tor-Regel
 im Fahrplan-Register. Belege, dass das wirkt: der Assertion-Diff aus T5 (PR
 #638, `scripts/analyse/test-assertion-diff.ts`), die Kommentar-Bilanz aus
 #662 (Fremd-PR-Tor Regel 3), die Label-/Tabellen-Regeln aus #650
-(deterministischer Erstfilter). Stufe 2 (`retro:17`) trägt seit demselben
-Auftrag einen Erinnerungs-Vorschlag: jeder in den letzten 7 Tagen
-geschlossene Jules-PR erzeugt eine ENTWURF-Zeile «Lehre verankern» — sie
-ersetzt die Formregel nicht, sie erinnert nur daran, wenn sie vergessen ginge.
+(deterministischer Erstfilter). `retro:17` erinnerte daran mit einer ENTWURF-Zeile
+je frisch geschlossenem Jules-PR; das entfällt mit dem retro:17-Rückbau
+(Entscheid David 20.9.2026) und fiel seit dem Jules-Stopp 14.9.2026 auf
+nichts.
 
 ## Register der belegten Fehlerklassen (Vorfälle seit 18.7.2026)
 
@@ -229,8 +225,8 @@ Eintrags läuft mit dieser Erweiterung neu — massgeblich ist der Marker hier.)
 
 ## Eine neue Lehre ablegen
 
-1. **Klasse bestimmen.** Fällt der Vorfall unter F1–F6? Dann dort das Gegenmittel
-   verschärfen — **keine neue Regel danebenlegen**.
+1. **Klasse bestimmen.** Passt der Vorfall in eine Register-Klasse? Dann dort
+   das Gegenmittel verschärfen — keine neue Regel danebenlegen.
 2. **Form wählen** nach der Tabelle oben. Maschinell schlägt Prosa, immer.
 3. **Beim Tor: Sabotage-Beweis zeigen** (einmal rot).
 4. **Neue Klasse** nur, wenn sie wirklich neu ist — mit Beleg (PR-Nr., Datum,
@@ -324,3 +320,8 @@ was nicht vorher gelöscht, vereinfacht und stabil geworden ist.
 - **ROADMAP-Restrukturierung** — Council-Entscheid 3.7.2026 geprüft und
   getragen: die Befunde sind Inhalts-**Frische**, nicht Architektur; ein
   zweiter autoritativer Artefakt hätte die Drift verdoppelt.
+  *Nachsatz 20.9.2026:* nach Messung (Deckel alle 8–15 Tage gerissen,
+  `ROADMAP.md` in 50 % der PRs, 4 von 10 Queue-Rauswürfen Konflikte) gab David
+  das **Posten-Modell** frei: ein Nebenfund = eine Datei unter `plan/posten/`,
+  Wächter `check:plan` 16 — keine zweite Wahrheit, sondern Auslagerung der
+  Nebenfunde aus der einen. Keine neue F-Klasse.
