@@ -101,8 +101,9 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
 - Schritt-Commit: `Roadmap: <ID>`.
 - **Schritt-Status fährt im PR mit (seit 19.9.2026, Merge-Queue):**
   `plan:set -- <ID> status=…` im eigenen PR, `Roadmap-Status:` im PR-Body
-  weglassen — `main` nimmt keine Direkt-Pushes mehr, auf die Auto-Buchung
-  (`plan-buchung.yml`) ist kein Verlass. Massgeblich: Skill `landung` Ziff. 9.
+  weglassen — die Auto-Buchung (`plan-buchung.yml`) ist am 20.9.2026
+  abgebaut (0 Buchungs-Commits in 12 Läufen). Massgeblich: Skill `landung`
+  Ziff. 9.
 - Risiko-Pfad zusätzlich: `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) —
   <Befunde>` bzw. `Gegenpruefung: n/a — reine Prüflogik`.
 - **Block-Form (vier Vorfälle 26.7./31.7.2026, aus Memory hierher überführt
@@ -113,8 +114,10 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
   `git log -1 --format='%(trailers:key=Roadmap,valueonly)'` muss den Wert
   liefern; Risiko-Pfad-Form zusätzlich per `npm run check:merge-schutz`.
 - **PR-Body: Roadmap-Trailer-Block nach «🤖 Generated with …», nicht davor**
-  (Skill `landung`, Formregel 5, PR #628 2.9.2026) — der Fallback in
-  `plan-buchung.yml` liest den LETZTEN Absatz des PR-Bodys; ein Bau-Agent, der
+  (Skill `landung`, Formregel 5, PR #628 2.9.2026) — seit #946 (`2146ef631`)
+  liest `check:merge-schutz` Titel und Body des PR selbst (die frühere
+  `plan-buchung.yml`-Auto-Buchung ist am 20.9.2026 abgebaut); der Trailer-Block
+  bleibt dabei der LETZTE Absatz des PR-Bodys. Ein Bau-Agent, der
   seinen PR-Body selbst zusammenstellt, schreibt darum genau in dieser
   Reihenfolge: Prosa → «🤖 Generated with …» → Leerzeile → Trailer-Block.
   Wiederholt aufgetreten 17.9.2026 (#899/#900, Trailer vor der Generated-Zeile) —

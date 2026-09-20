@@ -60,19 +60,69 @@
 // Das Register wird nie automatisch geschrieben (§2, Muster wie
 // `schlankheit:update`): erst `--kontingent --snapshot` aktualisiert es, nach
 // Sichtung durch die Session. Bleibt die letzte Sichtung > 30 Tage zurück,
-// schlägt `retro:17` (Regel h, `scripts/plan/retro17Kern.ts`) eine
-// Google-Ökosystem-Sichtung vor (Fahrplan §7).
+// schlug bis 20.9.2026 `retro:17` (Regel h, `scripts/plan/retro17Kern.ts`)
+// eine Google-Ökosystem-Sichtung vor (Fahrplan §7) — mit `retro:17` entfallen
+// (Entscheid David, Rückbau QS-EFFIZIENZ); die Wiedervorlage dafür bucht die
+// Haupt-Session in den Fahrplan.
 
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { klassiereAgyFehler, KONTINGENT_MELDUNG } from './agy-status.ts';
-// Der Typ ist EINMAL definiert, und zwar dort, wo das Schema der Zeitreihe
-// lebt (§5). Diese Datei erzeugt Werte dieses Typs, sie definiert ihn nicht —
-// eine zweite Deklaration hier war bis 4.9.2026 genau der Riss, an dem die
-// beiden Fassungen auseinanderlaufen konnten. Reiner Typ-Import: zur Laufzeit
-// bleibt er weg, es entsteht also keine Modul-Abhängigkeit.
-import type { JulesMessung } from '../plan/selbstoptKern.ts';
+
+/**
+ * Jules-Kennzahlen eines Snapshots. Bis 20.9.2026 aus
+ * `scripts/plan/selbstoptKern.ts` importiert (§5, EINE Definition dort, wo
+ * das Schema der Selbstopt-Zeitreihe lebt) — mit `retro:17`/
+ * `selbstopt:erheben` entfallen (Entscheid David, Rückbau QS-EFFIZIENZ).
+ * Diese Datei ist seither die einzige Erzeugerin von Werten dieses Typs und
+ * damit sein natürlicher Wohnort.
+ */
+export interface JulesMessung {
+  /** Jules-PRs, in den letzten 7 Tagen GEMERGED. */
+  prs_gemerged_7d: number;
+  /**
+   * Jules-PRs, in den letzten 7 Tagen GESCHLOSSEN ohne Merge — **ohne Proben**
+   * (s. `proben_7d`). Das ist der Nenner-Anteil der Landungsquote und misst
+   * Ablehnung, NICHT Nacharbeit: ein PR kann gemergt werden und trotzdem
+   * Nacharbeit gekostet haben.
+   */
+  prs_geschlossen_7d: number;
+  /**
+   * Jules-PRs im selben Fenster mit Label `probe` — Werkzeug-Proben (etwa der
+   * Erstfilter-Test PR #642), die weder Bau noch Ablehnung sind und darum aus
+   * Zähler UND Nenner der Landungsquote fallen. Sie bleiben sichtbar, statt
+   * zu verschwinden: eine Quote, die still Fälle weglässt, ist nicht prüfbar.
+   *
+   * `null` = diese Messung unterschied noch keine Proben (Schema < 4), nicht
+   * «keine Proben gefunden».
+   */
+  proben_7d: number | null;
+  /**
+   * Jules-PRs im selben Fenster mit Label `entwurf-antwort` (ANLASS 5.9.2026,
+   * PR #707: gültige Entwurf-Antwort auf Feldabweichung) — weder Bau noch
+   * Ablehnung, darum wie `proben_7d` aus Zähler UND Nenner der Landungsquote
+   * ausgeschlossen und getrennt ausgewiesen statt zu verschwinden.
+   *
+   * `null` = diese Messung unterschied noch keine Entwurf-Antworten
+   * (Schema < 5), nicht «keine gefunden».
+   */
+  entwurf_antworten_7d: number | null;
+  /**
+   * Nummern der geschlossenen (nicht-Proben-)PRs. Trägt die Entdopplung der
+   * Retro-Regel «Lehre verankern»: derselbe abgelehnte PR steht sieben Tage
+   * lang in jedem Snapshot, die Lehre ist aber einmal zu ziehen.
+   *
+   * `null` = Nummern nicht mitgeführt (Schema < 4).
+   */
+  prs_geschlossen_nummern: number[] | null;
+  /** Median Ticket→PR-Dauer der gemergten PRs, `null` ohne auflösbare Issue-Referenz. */
+  median_dauer_min: number | null;
+  /** Jules-Issues (Label `jules`), angelegt in den letzten 24 h. */
+  tickets_24h: number;
+  /** Mindestens ein Issue der letzten 24 h seit > 10 min ohne «Jules is on it» (Fahrplan §4 «Limite erkennen»). */
+  alarm: boolean;
+}
 
 const JULES_MUSTER = /[0-9]{19}|^jules[-/]/;
 /**

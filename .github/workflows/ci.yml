@@ -757,7 +757,8 @@ jobs:
       # Squash-Falle (Beleg 7.9.2026, PR #739): GitHub setzt beim Squash-Merge ALLE
       # Commit-Betreffs des PR in die Commit-Message von main. Trägt EINER davon
       # `[skip ci]`, überspringt GitHub auf main jeden Workflow — kein CI, KEIN
-      # DEPLOY, keine Plan-Buchung; der nächste Doku-Push meldet dann art=doku und
+      # DEPLOY (damals auch keine Plan-Buchung — `plan-buchung.yml` ist seit
+      # 20.9.2026 abgebaut); der nächste Doku-Push meldet dann art=doku und
       # deployt ebenfalls nicht. e2ac7def9 (287 Dateien) lag so unausgeliefert.
       # Darum Required-Tor: kein Commit im PR darf `[skip ci]`/`[ci skip]` tragen.
       - name: Squash-Schutz (kein [skip ci] in PR-Commits)

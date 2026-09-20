@@ -14,8 +14,7 @@
 
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
-import { laufeEcht, leseZeitreihe, parseWorktrees, type Laufe } from './lage';
-import { letzterSnapshot, quoteText } from './selbstoptKern';
+import { laufeEcht, parseWorktrees, type Laufe } from './lage';
 import { BULLET_RE } from './parse';
 import type { Einheit } from './parse';
 import { kollidiert } from './aufloesen';
@@ -745,55 +744,4 @@ export function bauStatistik(): BauStatistik {
   const tests = sh('git', ['ls-files', 'src/tests/*', 'e2e/*']);
   const testDateien = tests === null ? null : tests.split('\n').filter((f) => /\.(test\.ts|e2e\.ts)$/.test(f)).length;
   return { commits: Number.isFinite(commits) && commits > 0 ? commits : null, gemergtePrs, pruefTore, testDateien };
-}
-
-// ---------------------------------------------------------------------------
-// Bau-Messreihe (`messwerte/selbstopt-zeitreihe.json`, Schritt QS-SELBSTOPT)
-// ---------------------------------------------------------------------------
-
-/** Kachel-Werte des letzten Snapshots. `null`, wenn noch nicht gemessen wurde. */
-export interface SelbstoptKennzahlen {
-  /** Anzahl Snapshots in der Reihe. */
-  snapshots: number;
-  /** Tag der letzten Erhebung (`YYYY-MM-DD`). */
-  stand: string;
-  /** Ausfallquote unter den Läufen MIT Verdikt, Prozent-Text, oder «—». */
-  ciFailure: string;
-  /** Anteil abgebrochener Läufe (kein Verdikt), Prozent-Text, oder «—». */
-  ciAbgebrochen: string;
-  /** Rerun-Rate in Prozent-Text, oder «—». */
-  ciRerun: string;
-  /** Rote Tor-Läufe seit dem vorigen Snapshot. */
-  torRot: number;
-  /** Beurteilte Tor-Läufe seit dem vorigen Snapshot. */
-  torGesamt: number;
-  /** Rework-Quote als Prozent-Text, oder «—». */
-  rework: string;
-  /** Nicht erhobene Quellen dieses Snapshots (Ehrlichkeit, §8). */
-  ausfaelle: string[];
-}
-
-/**
- * Liest die Messreihe und verdichtet den LETZTEN Snapshot auf Kachel-Werte.
- *
- * Dieselbe Quelle und dieselbe Prozent-Formatierung wie die Zeile in
- * `plan:next` (`selbstoptZeile` in lage.ts) — zwei Anzeigen, eine Zählweise
- * (§5). `null` heisst «keine Messreihe» oder «Messreihe defekt»; die Seite
- * schreibt dann einen erklärenden Satz statt einer Kachel, nie eine 0.
- */
-export function selbstoptKennzahlen(): SelbstoptKennzahlen | null {
-  const z = leseZeitreihe();
-  const s = letzterSnapshot(z);
-  if (!z || !s) return null;
-  return {
-    snapshots: z.snapshots.length,
-    stand: s.erhobenAm.slice(0, 10),
-    ciFailure: s.ci ? quoteText(s.ci.failureRate) : '—',
-    ciAbgebrochen: s.ci ? quoteText(s.ci.cancelledRate) : '—',
-    ciRerun: s.ci ? quoteText(s.ci.rerunRate) : '—',
-    torRot: s.torRot.seitLetztem.rot,
-    torGesamt: s.torRot.seitLetztem.gesamt,
-    rework: s.rework ? quoteText(s.rework.handschrift.anteil) : '—',
-    ausfaelle: s.ausfaelle,
-  };
 }

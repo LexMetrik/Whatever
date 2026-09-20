@@ -39,7 +39,7 @@ im Fahrplan-Register. Belege, dass das wirkt: der Assertion-Diff aus T5 (PR
 (deterministischer Erstfilter). `retro:17` erinnerte daran mit einer ENTWURF-Zeile
 je frisch geschlossenem Jules-PR; das entfällt mit dem retro:17-Rückbau
 (Entscheid David 20.9.2026) und fiel seit dem Jules-Stopp 14.9.2026 auf
-nichts.
+nichts — Nachfolge-Messung `npm run tor:bewaehrung`.
 
 ## Register der belegten Fehlerklassen (Vorfälle seit 18.7.2026)
 

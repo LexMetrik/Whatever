@@ -64,12 +64,15 @@ export TZ=Europe/Zurich
 mode="${1:-voll}"
 fail=0
 
-# ─── Tor-Ereignis-Log (Schritt QS-SELBSTOPT, Stufe 1 «erst messen») ──────────
+# ─── Tor-Ereignis-Log ─────────────────────────────────────────────────────
 # Jeder Gate-Schritt hinterlässt eine JSONL-Zeile {ts, tor, ok} in
 # `.selbstopt-ereignisse.jsonl` (gitignoriert, je Maschine eigen). Ohne diese
 # Spur gibt es keine Antwort auf «welches Tor kostet uns wie oft Zeit» — die
 # Tor-Läufe waren bisher flüchtig, jeder rote Lauf verschwand mit dem Terminal.
-# Ausgewertet wird sie von `npm run selbstopt:erheben`.
+# Ausgewertet wird sie von `npm run tor:bewaehrung -- --import-ci`
+# (scripts/analyse/tor-bewaehrung.ts) — früher zusätzlich von
+# `npm run selbstopt:erheben`, entfallen 20.9.2026 (Entscheid David, Rückbau
+# QS-EFFIZIENZ).
 #
 # DREI EIGENSCHAFTEN, die nicht verhandelbar sind:
 #  * Das Logging ist ein NEBENEFFEKT. Es schreibt nichts nach stdout/stderr, es

@@ -70,13 +70,21 @@ verändert oder gelöscht, auch nicht formatierend.
 
 ## 3 · Streich-Massstab
 
-**Steuerungs-Deckel (David 15.8.2026, ab 20.9.2026 `check:steuerflaeche`):**
-Byte-Summe der GESAMTEN Steuerungs-Fläche gegen `messwerte/steuerflaeche.json`;
-die Grenze sinkt nur (`npm run steuerflaeche -- --nachziehen`), Anhebung nur mit
-datiertem David-Entscheid. Rot ⇒ streichen, bevor etwas dazukommt; die zehn
-grössten Zuwächse nennt das Tor selbst, Stand und Trend die letzte Zeile von
-`plan:next`. Rechtsschutz ausgenommen (Liste im Kopf von
-`scripts/analyse/steuerflaecheKern.ts`).
+**Steuerungs-Deckel (David 15.8.2026):** `check:steuerdeckel` (Kette + CI)
+misst neben STRUKTUR/ROADMAP/CLAUDE auch `.claude/hooks/*.py` und
+`scripts/check-*.ts` gegen Byte-Budgets (`FLAECHEN_BUDGET` in
+`struktur-rotieren.py`). Rot ⇒ vor dem nächsten Wächter einen streichen;
+Kandidaten liefert `npm run tor:bewaehrung` (Regel «nie rot ≥ 90 Tage»,
+Chesterton-Vorbehalt dort — Nachfolger des entfallenen `retro:17`, Entscheid
+David 20.9.2026, Rückbau QS-EFFIZIENZ). Rechtsdaten-Tore sind ausgenommen.
+
+**Sperrklinke über die gesamte Steuerungs-Fläche (David 15.8.2026, ab
+20.9.2026 `check:steuerflaeche`):** Byte-Summe der GESAMTEN Steuerungs-Fläche
+gegen `messwerte/steuerflaeche.json`; die Grenze sinkt nur (`npm run
+steuerflaeche -- --nachziehen`), Anhebung nur mit datiertem David-Entscheid.
+Rot ⇒ streichen, bevor etwas dazukommt; die zehn grössten Zuwächse nennt das
+Tor selbst, Stand und Trend die letzte Zeile von `plan:next`. Rechtsschutz
+ausgenommen (Liste im Kopf von `scripts/analyse/steuerflaecheKern.ts`).
 
 Vor jeder Streichung (echtes Entfernen, keine Verschiebung): **«Steuert der
 Schritt noch etwas?»** Ein Posten ohne `dep`-/`@queue`-/Blocker-Referenz,
