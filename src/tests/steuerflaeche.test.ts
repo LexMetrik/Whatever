@@ -40,6 +40,11 @@ describe('Flächen-Definition', () => {
     expect(istFlaeche('scripts/check-tor-paritaet.ts')).toBe(true);
   });
 
+  it('nimmt Testtreue (§6.3) aus — Wächter samt Helfer', () => {
+    expect(istFlaeche('scripts/check-testtreue.ts')).toBe(false);
+    expect(istFlaeche('scripts/testtreue-kern.ts')).toBe(false);
+  });
+
   it('zählt Tests nie mit — §6.7 verlangt sie', () => {
     expect(istFlaeche('scripts/analyse/tor-bewaehrung.test.ts')).toBe(false);
   });

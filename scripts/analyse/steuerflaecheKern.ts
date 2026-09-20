@@ -68,7 +68,7 @@ export const FLAECHE: { re: RegExp; grund: string }[] = [
   // ABSCHLIESSENDE Liste statt `scripts/*.ts`: dort liegt überwiegend
   // Produkt-/Datenwerkzeug, das nicht zur Steuerung zählt.
   {
-    re: /^scripts\/(dispatch|dispatch-cli|dispatch-agents|dispatch-agents-cli|tor-paritaet-sonden|testtreue-kern|fahrplan-slice|fahrplanSlicerKern|run-parallel|repo-map)\.ts$|^scripts\/(gate|ci-log-diaet)\.sh$/,
+    re: /^scripts\/(dispatch|dispatch-cli|dispatch-agents|dispatch-agents-cli|tor-paritaet-sonden|fahrplan-slice|fahrplanSlicerKern|run-parallel|repo-map)\.ts$|^scripts\/(gate|ci-log-diaet)\.sh$/,
     grund: 'Steuerungs-Helfer in scripts/ (Dispatch · Tor-Sonden · Gate-Runner)',
   },
 ];
@@ -98,6 +98,12 @@ export const RECHTSSCHUTZ: Record<string, string> = {
   // Normen-Überwachung). Byte-Druck darauf träfe die Rechtsdaten-Kette — im
   // Zweifel ausgenommen.
   'scripts/check-ci-laeufe.ts': 'Wächter-Motor über die Normen-/Korpus-Läufe',
+  // Paar check-testtreue.ts ↔ testtreue-kern.ts: das Tor schützt §6.3 — die
+  // Integrität der Rechtslogik-Tests (Tests werden bei Refactorings nicht
+  // angepasst). Byte-Druck darauf träfe genau die Prüftiefe, die §6.3 sichert
+  // — im Zweifel ausgenommen (Nachzug-Entscheid 20.9.2026).
+  'scripts/check-testtreue.ts': 'Testtreue-Wächter (§6.3) — Integrität der Rechtslogik-Tests',
+  'scripts/testtreue-kern.ts': 'Helfer von check-testtreue.ts — dieselbe Ausnahme',
   '.github/workflows/waechter.yml': 'Wächter über die Normen-/Korpus-Läufe',
   '.github/workflows/fedlex-frische.yml': 'Fedlex-Frische',
   '.github/workflows/normen-monitor.yml': 'Normen-/Verfall-Überwachung',
