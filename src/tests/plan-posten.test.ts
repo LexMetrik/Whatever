@@ -7,6 +7,7 @@
 import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
+  aehnlichsteIds,
   datumAus,
   istZeigerStub,
   kopfText,
@@ -167,6 +168,35 @@ describe('schliessenPruefen — echtes Dateisystem (Symlink-Ausbruch)', () => {
     } finally {
       fs.rmSync(wurzel, { recursive: true, force: true });
     }
+  });
+});
+
+// ---------------------------------------------------------------------------
+describe('aehnlichsteIds — «Meintest du …?»-Vorschlag für `neu --dach` (P4, Bug-Check 20.9.2026)', () => {
+  // Der Gate selbst (unbekannt/done ⇒ Exit 1, nichts geschrieben) existierte
+  // schon in `lebendePruefen` (posten.ts) — geprüft per CLI-Probe
+  // (`neu --dach "qs x"` bricht ab, ohne eine Datei anzulegen). Was fehlte,
+  // ist hier: die drei ähnlichsten IDs als Vorschlag.
+  const IDS = ['QS-X', 'QS-Y', 'QS-BASIS', 'W2·5m-LESER-V3', 'W2·13-KANTONE'];
+
+  it('findet die exakte ID mit Distanz 0 an erster Stelle', () => {
+    expect(aehnlichsteIds('QS-X', IDS)).toEqual(['QS-X', 'QS-Y', 'QS-BASIS']);
+  });
+
+  it('ist case-insensitiv (Tippfehler «klein geschrieben»)', () => {
+    expect(aehnlichsteIds('qs-x', IDS)[0]).toBe('QS-X');
+  });
+
+  it('findet die nächste ID bei einem Leerzeichen-Tippfehler («mit Leerzeichen»)', () => {
+    expect(aehnlichsteIds('qs x', IDS)[0]).toBe('QS-X');
+  });
+
+  it('liefert höchstens n Vorschläge, deterministisch bei Gleichstand (alphabetisch)', () => {
+    expect(aehnlichsteIds('ZZZ', ['B', 'A', 'C', 'D'], 2)).toEqual(['A', 'B']);
+  });
+
+  it('liefert eine leere Liste für eine leere Kandidatenmenge', () => {
+    expect(aehnlichsteIds('QS-X', [])).toEqual([]);
   });
 });
 

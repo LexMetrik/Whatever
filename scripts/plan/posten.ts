@@ -16,6 +16,7 @@ import { parseRoadmap } from './parse';
 import {
   CHRONIK,
   POSTEN_ARCHIV,
+  aehnlichsteIds,
   migrationsPlan,
   notizenLeerHinweis,
   notizenPosten,
@@ -41,15 +42,20 @@ function heuteIso(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
+// P4 (Bug-Check 20.9.2026): der Gate selbst existierte schon (unbekanntes/
+// erledigtes Dach ⇒ Exit 1, nichts geschrieben — geprüft, nicht angenommen,
+// §7). Ergänzt wurden nur die drei ähnlichsten lebenden IDs als Vorschlag.
 function lebendePruefen(dach: string): void {
   const { einheiten } = parseRoadmap(readFileSync('ROADMAP.md', 'utf8'));
   const e = einheiten.find((x) => x.id === dach);
+  const lebend = einheiten.filter((x) => x.etikett.status !== 'done').map((x) => x.id);
+  const vorschlag = (msg: string) => (lebend.length ? `${msg} Meintest du: ${aehnlichsteIds(dach, lebend).join(', ')}?` : msg);
   if (!e) {
-    console.error(`plan:posten ROT: Dach «${dach}» hat kein @meta in ROADMAP.md.`);
+    console.error(vorschlag(`plan:posten ROT: Dach «${dach}» hat kein @meta in ROADMAP.md.`));
     process.exit(1);
   }
   if (e.etikett.status === 'done') {
-    console.error(`plan:posten ROT: Dach «${dach}» ist done — Posten an einen lebenden Schritt hängen oder den Fund als eigenen Schritt aufnehmen.`);
+    console.error(vorschlag(`plan:posten ROT: Dach «${dach}» ist done — Posten an einen lebenden Schritt hängen oder den Fund als eigenen Schritt aufnehmen.`));
     process.exit(1);
   }
 }

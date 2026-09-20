@@ -176,6 +176,42 @@ export function schliessenPruefen(
   return { ok: true, relPfad, fehler: null };
 }
 
+// ─── «Meintest du …?»-Vorschlag für ein unbekanntes/erledigtes Dach ─────────
+//
+// Auflage P4 (Bug-Check 20.9.2026). Der Gate-Check gegen die lebenden
+// Schritt-IDs existiert bereits (`lebendePruefen` in posten.ts, dieselbe
+// Quelle wie Regel 16 (a): `parseRoadmap`) — geprüft am 20.9.2026: `neu
+// --dach "qs x"` bricht mit Exit 1 ab, OHNE Datei zu schreiben. Was fehlte:
+// die drei ähnlichsten IDs als Vorschlag in der Fehlermeldung.
+
+/** Levenshtein-Distanz zweier Strings — kein externes Paket für drei
+ *  Vorschläge (§17-Gegengewicht: was nicht scheitern kann, wird nicht
+ *  hinzugefügt, wenn eine Bildschirmseite reicht). */
+function editDistanz(a: string, b: string): number {
+  const dp: number[][] = Array.from({ length: a.length + 1 }, () => new Array<number>(b.length + 1).fill(0));
+  for (let i = 0; i <= a.length; i++) dp[i][0] = i;
+  for (let j = 0; j <= b.length; j++) dp[0][j] = j;
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      dp[i][j] = a[i - 1] === b[j - 1]
+        ? dp[i - 1][j - 1]
+        : 1 + Math.min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1]);
+    }
+  }
+  return dp[a.length][b.length];
+}
+
+/** Die `n` `kandidaten` mit der kleinsten Levenshtein-Distanz zu `gesucht`
+ *  (case-insensitive); bei Gleichstand alphabetisch, damit die Ausgabe
+ *  deterministisch bleibt (§2). */
+export function aehnlichsteIds(gesucht: string, kandidaten: readonly string[], n = 3): string[] {
+  return [...kandidaten]
+    .map((id) => ({ id, d: editDistanz(gesucht.toLowerCase(), id.toLowerCase()) }))
+    .sort((a, b) => a.d - b.d || a.id.localeCompare(b.id))
+    .slice(0, n)
+    .map((x) => x.id);
+}
+
 // ─── Dateiname ───────────────────────────────────────────────────────────────
 const UMLAUT: Record<string, string> = { ä: 'ae', ö: 'oe', ü: 'ue', Ä: 'ae', Ö: 'oe', Ü: 'ue', ß: 'ss' };
 
