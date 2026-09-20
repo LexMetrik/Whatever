@@ -1,7 +1,7 @@
 // AUTO-GENERIERT von scripts/materialien/bs-materialien-run.ts — NICHT von Hand editieren.
 // NICHT aus src/ importieren (Bundle §15) — reine Build-Zeit-Quelle für die register.json-Projektion.
 // Materialien des Grossen Rates Basel-Stadt je BS-Korpus-Erlass (data.bs.ch, CC BY 4.0).
-// Quelle abgerufen: 2026-09-18. Regenerieren: npm run materialien:bs -- --datum=$(date +%F)
+// Quelle abgerufen: 2026-09-20. Regenerieren: npm run materialien:bs -- --datum=$(date +%F)
 import type { MaterialRegistereintrag } from './typen';
 
 export const BS_MATERIALIEN: MaterialRegistereintrag[] = [
