@@ -173,7 +173,7 @@ describe('migrieren — Wortlaut-Erhalt', () => {
     const md = PLAN(
       '  - [ ] **Offen A** — Text.',
       '  - [x] **Erledigt mit Substanz** — ✅ 1.9.2026, dabei fiel ein zweiter Defekt auf: der Zähler zählt doppelt.',
-      '  - [x] **Erledigt:** B1 · B2 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).',
+      '  - [x] **Erledigt: B1 und B2** — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026.',
       '  - [ ] **S2 · Etappe** — bleibt.',
     );
     const r = migrationsPlan(md, new Map(), HEUTE);
@@ -221,7 +221,9 @@ describe('migrieren — Wortlaut-Erhalt', () => {
 
   it('lässt ein Dach ohne @meta und Etappen-Zeilen unberührt', () => {
     expect(titelAus('  - [ ] **Fund `A`:** Text')).toBe('Fund A');
-    expect(istZeigerStub(['  - [x] **Erledigt:** X — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).'])).toBe(true);
+    expect(istZeigerStub(['  - [x] **Erledigt: X** — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026.'])).toBe(true);
+    // Schwelle Null: schon eine Aufzählung ist Substanz und wandert wörtlich mit.
+    expect(istZeigerStub(['  - [x] **Erledigt:** Z1 · Z2 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026.'])).toBe(false);
     expect(istZeigerStub(['  - [x] **X** — ✅ dabei fiel ein zweiter, bisher unbekannter Defekt auf. Wortlaut: ROADMAP-CHRONIK.md.'])).toBe(false);
   });
 });

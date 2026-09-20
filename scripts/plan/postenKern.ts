@@ -264,8 +264,15 @@ export function zeilenHash(zeile: string): string {
  * Reiner Chronik-Zeiger? Solche `[x]`-Stubs sagen nur «der Wortlaut steht in
  * ROADMAP-CHRONIK.md» — sie in die Chronik zu kopieren hiesse, einen Zeiger auf
  * die Datei zu legen, in der er liegt. Mechanisch geprüft, nicht geraten: nach
- * Abzug von Checkbox, Titel, `*(Anlass)*`, ✅/Datum/PR-Marken und der
- * Zeiger-Wendung selbst darf kein Substanz-Rest über 40 Zeichen bleiben.
+ * Abzug von Checkbox, Titel, `*(Anlass)*`, ✅/Datum/PR-/SHA-Marken und der
+ * Zeiger-Wendung selbst muss der Rest LEER sein.
+ *
+ * Die Schwelle ist bewusst Null und nicht «kurz genug» (erste Fassung
+ * 20.9.2026: 40 Zeichen). Bei 40 fiel `**KKV-Label …** — ✅ … Rest: `__N`-
+ * Deep-Link, Label-Drift-Tor` heraus — eine Zeile, die OFFENE Folgearbeit
+ * nennt. Ein Stub-Erkenner, der einmal zu viel greift, löscht Wortlaut, den
+ * niemand vermisst, weil niemand mehr weiss, dass er da war (§8). Ein
+ * Aufzählungs-Rest wie «Z1 · Z2 · Z3» ist darum Substanz und wandert mit.
  */
 export function istZeigerStub(zeilen: string[]): boolean {
   const text = zeilen.join(' ');
@@ -280,7 +287,7 @@ export function istZeigerStub(zeilen: string[]): boolean {
     .replace(/`[0-9a-f]{7,40}`/g, '')
     .replace(/\d{1,2}\.\d{1,2}\.\d{4}|\d{4}-\d{2}-\d{2}/g, '')
     .replace(/[\s.,;:·—–\-()[\]{}*`]/g, '');
-  return rest.length <= 40;
+  return rest.length === 0;
 }
 
 // ─── Migration ───────────────────────────────────────────────────────────────
