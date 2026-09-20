@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·6-RESOLVER
+dach: W2·6
 titel: Richternamen gegen den Staatskalender auflösen
 -->
 

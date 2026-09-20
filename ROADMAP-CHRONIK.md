@@ -5319,3 +5319,44 @@ W2·6d-ENTSTEHUNGSNOTIZ, W2·6d-VERNEHMLASSUNG-DOKUMENTE`
 
 Die Phasen-Prosa im ROADMAP-Kopf (Phase 1 Bund → 2 Kantone → 3 Mehr als Fedlex) bleibt unverändert
 und trägt die grobe Reihenfolge weiter; die fünf verbliebenen Einträge sind der Kern von Phase 1.
+
+## Umschichtung 20.9.2026 (2) — zwei stille Schritte werden Ideen-Zeilen
+
+**Entscheid David 20.9.2026** («mach 5 und 6 wie empfohlen»), Verfahren nach Skill `auftrag`
+Ziff. 1 («Über der Plan-Kapazität → Ideen-Zeile ohne `@meta`») und `aufraeumen.md` Ziff. 3.
+Nachmessung: von den Phase-3-Schritten sind genau diese zwei echte Kandidaten — 90 Tage ohne
+Trailer- oder PR-Nennung, nicht in der `@queue`, kein `dep:` darauf, kein junger David-Auftrag.
+Sie verlieren ihr `@meta` und stehen fortan als Ideen-Zeilen am Ende des Feldes `rechtsprechung`;
+die Bau-Specs in den Fahrplänen bleiben unberührt und bleiben verlinkt.
+
+Wortlaut der beiden Blöcke, wie sie bis zum 20.9.2026 in `ROADMAP.md` standen:
+
+```
+- [ ] **Kantonaler Norm-Resolver → Kantonalnorm-Buckets (P0-Kern)** *(`W2·6-RESOLVER`)*
+  <!-- @meta id: W2·6-RESOLVER · status: ready · blocker: null · dep: [] · feld: rechtsprechung · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
+  `norm-index` füllt heute nur Bundesnorm-Buckets; der Resolver ist Voraussetzung der kantonalen
+  Stufe. Risikopfad-Dach der Rechtsprechungs-DATEN.
+  **Detail:** [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13.
+
+- [ ] **Sachgebiet-Facette an der Norm↔Entscheid-Kante** *(`W2·7-VZUI-SACHGEBIET`)*
+  <!-- @meta id: W2·7-VZUI-SACHGEBIET · status: ready · blocker: null · dep: [] · feld: rechtsprechung · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
+  Deterministisch aus der amtlichen BGE-Bandnummer I–V (§2, keine Heuristik). Extraktion =
+  Risikopfad ⇒ Gegenprüfung.
+  **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §12.
+```
+
+**Der eine offene Posten wurde nicht geschlossen, sondern umgehängt.**
+`plan/posten/2026-09-20-richternamen-gegen-den-staatskalender-aufloesen.md` hing unter
+`W2·6-RESOLVER`; ein Posten unter einem toten Dach macht `check:plan` Regel 16 (a) rot. Statt ihn
+zu schliessen (das hätte einen offenen Befund unsichtbar gemacht) trägt er jetzt das Dach `W2·6`
+(«Konsultieren-Klingen», `feld: rechtsprechung`, `status: ready`) — dieselbe Fläche, derselbe
+Fahrplan-Strang, der Befund bleibt offen und zählbar. `W2·7-VZUI-SACHGEBIET` trug keinen Posten.
+
+**Offengelegte Abweichung (§7):** der ROADMAP-Text von `W2·6-RESOLVER` nannte sich selbst
+«Voraussetzung der kantonalen Stufe», und `fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md` §64 nennt
+ihn den «bauenden Schritt dieser Spec»; `fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md` §82 führt ihn als
+Andockpunkt. Ein maschineller `dep:`-Eintrag besteht nirgends, und kein lebender Schritt wartet auf
+ihn — die kantonale Rechtsprechungs-Stufe selbst liegt in Phase 3. Die Verweise zeigen weiterhin auf
+denselben Namen, der als Ideen-Zeile in der ROADMAP sichtbar bleibt; ein späteres Wiederöffnen
+heisst, die `@meta`-Zeile oben wörtlich zurückzustellen.
+
