@@ -66,3 +66,35 @@ Runde 2 (5.9.2026, Token-Messung dieser Session als Anlass — je Punkt ein Comm
 - [x] **Fahrplan-§1-Kopie zurückgebaut** (9 KB → 3 KB, ~2 500 Token je Slice).
 - [x] **Landungs-Skill −3.5 KB** — Jules-Checkliste byte-treu nach `referenz-jules.md`, lädt nur bei
   offenem Jules-PR.
+
+Runde 3 (20.9.2026, Anlass: ROADMAP-Deckel-Aufräumen — Nebenfunde aus vier Bau-Einheiten,
+je Punkt ein eigener Commit/PR):
+
+- [x] **`check:plan` Regel 15 «Kopf-Buchung»** — offene `- [ ]`-Posten unter einem `done`-Kopf
+  werden rot (`scripts/plan/kopfBuchung.ts`, `src/tests/plan-check.kopf-buchung.test.ts`,
+  F17-Erweiterung im Lehren-Register). Anlass: 15 Posten wochenlang unsichtbar, darunter eine
+  offene §7-Fachfrage an David. Geburtsbeweis §6.7: rot 14/14 auf `0e4999b48`, grün 0 auf
+  `8f6fe6971`, beide vom Orchestrator unabhängig nachgemessen. PR #942.
+- [ ] **Tor «verwaister Posten ohne Kopf»** — eine eingerückte `- [ ]`-Zeile hinter einem `---`
+  gehört zu keinem Schritt: Regel 10 sieht sie nicht (sucht `@meta`), Regel 15 per deklarierter
+  Grenze auch nicht. Belegter Fall: Altstand `0e4999b48` Z. 734. Eigene Klasse, eigenes Tor.
+- [ ] **Tor «Prosa-Verweis auf Schritt-ID ohne `@meta`»** — `ROADMAP.md` verwies auf einen nie
+  angelegten Schritt `W3-TARIF-NACHVERIFIKATION` (angekündigt 6.9.2026, 0 Treffer am 20.9.2026).
+  Regel 8.1 prüft nur `@queue`-IDs, nicht Fliesstext. Dritte Klasse derselben Familie.
+- [ ] **`check:regel-wiedervorlage` härten** — bei zwei `@wiedervorlage`-Markern im selben Eintrag
+  gilt still der letzte; der Leser sieht das nicht. Besser: zweiten Marker melden statt überschreiben.
+- [ ] **`QS-CI-MINUTEN` widerspricht sich selbst** (§5, zwei Wahrheiten): Kopf sagt «Gebaut
+  8.9.2026: M1–M5», führt M1–M5 aber weiter als offene Checkboxen. Im Schritt selbst auflösen.
+- [ ] **Nachlass-Wache meldet Fehlalarm bei inhaltsgleichem Commit** — der SessionStart-Hook misst
+  `ahead`, nicht Inhalts-Identität. Am 20.9.2026 gemeldeter «ungepushter Commit» war bereits
+  upstream (andere SHA, von Parallel-Session gelandet), `git pull --rebase` verwarf ihn.
+  Fix: Meldung um «patch evtl. schon upstream — erst rebasen» ergänzen.
+- [ ] **Antigravity-Drift** agy 1.1.26 → 1.2.7 (Kontingent-Lauf 20.9.2026, kein Alarm).
+
+**WARTET AUF DAVID (Planungsentscheid, kein Bau):** Der 120-KB-Deckel auf `ROADMAP.md` ist durch
+die Verlagerung vom 20.9.2026 **entlastet, nicht stabilisiert**. Masse wandert in Fahrpläne, die
+der Wächter **nicht misst** (`FAHRPLAN-OFFENE-BEFUNDE.md` 106.5 KB, `FAHRPLAN-UI-BEFUNDE.md`
+155.1 KB). Rund 15 neue Befund-Zeilen aus einer Parallel-Session reissen den Deckel erneut —
+am 20.9.2026 real passiert: 119.5 KB → 122.1 KB innerhalb einer Stunde. Offene Frage: brauchen
+Fahrpläne ein eigenes Flächenbudget, oder soll ein Hook neue Befund-Zeilen unter einem Dach-Schritt
+mit `fahrplan:`-Zeiger gleich in den Fahrplan lenken? Ohne Entscheid wiederholt sich der Nachzug.
