@@ -254,6 +254,19 @@ export interface Unterblock {
   zeilen: string[];
 }
 
+/** Öffnet diese Zeile einen MEHRZEILIGEN HTML-Kommentar (kein `-->` auf
+ *  derselben Zeile)? Die einzeiligen Kommentare des Hausstils — `<!-- @meta … -->`,
+ *  `<!-- @queue: … -->`, `<!-- ^ … -->` — öffnen UND schliessen auf derselben
+ *  Zeile und lösen hier nichts aus; nur echte Blöcke wie `<!-- @blockers` /
+ *  `<!-- @david-fragen` tun es (Grenze P2, Bug-Check 20.9.2026: die brauchen
+ *  unverändertes Verhalten, weil sie unindentierte Prosa tragen, keine
+ *  Checklisten-Zeilen — hier trotzdem sauber übersprungen statt sich zufällig
+ *  auf die fehlende Einrückung zu verlassen). */
+function oeffnetMehrzeiligenKommentar(zeile: string): boolean {
+  const i = zeile.indexOf('<!--');
+  return i !== -1 && !zeile.slice(i).includes('-->');
+}
+
 /**
  * Alle eingerückten Checklisten-Blöcke, je gebunden an ihren Dach-Schritt.
  *
@@ -262,13 +275,25 @@ export interface Unterblock {
  * (Einzug 2) der `**Detail:**`-Block des DACHS auf demselben Einzug 2 — eine
  * Regel «alles bis zur nächsten Bullet» hätte ihn mitgenommen und den Zeiger aus
  * der ROADMAP gelöscht. Eine Leerzeile beendet den Block ebenfalls.
+ *
+ * KONTEXT-BLINDHEIT (Bug-Check 20.9.2026, Auflage P2). Eine eingerückte
+ * `- [ ]`-BEISPIELZEILE in einem ``` -Codezaun oder einem mehrzeiligen
+ * HTML-Kommentar ist Dokumentation, kein Posten — sie wird hier übersprungen,
+ * bevor sie überhaupt als Kandidat geprüft wird. `check:plan` Regel 16 (b) UND
+ * `migrieren` rufen beide diese Funktion, sehen also dieselbe Menge.
  */
 export function unterbloecke(md: string): Unterblock[] {
   const z = md.split('\n');
   const out: Unterblock[] = [];
   let dach: string | null = null;
+  let inFence = false;
+  let inKommentar = false;
   for (let i = 0; i < z.length; i++) {
     const w = z[i];
+    if (/^\s*```/.test(w)) { inFence = !inFence; continue; }
+    if (inFence) continue;
+    if (inKommentar) { if (w.includes('-->')) inKommentar = false; continue; }
+    if (oeffnetMehrzeiligenKommentar(w)) { inKommentar = true; continue; }
     if (/^#{1,6}\s/.test(w)) { dach = null; continue; }
     if (w.includes('<!-- @meta')) {
       dach = /@meta id:\s*(\S+)/.exec(w)?.[1] ?? dach;

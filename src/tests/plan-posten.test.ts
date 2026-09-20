@@ -4,6 +4,7 @@
 // einen Satz verliert, fällt niemandem auf — der Plan sieht danach aufgeräumt
 // aus. Darum prüfen die Tests unten zuerst den WORTLAUT-ERHALT byte-genau und
 // erst danach die Bequemlichkeit.
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
   datumAus,
@@ -194,6 +195,39 @@ describe('unterbloecke — was ein Posten ist und was nicht', () => {
     const md = [PLAN('  - [ ] **Fund A**'), '- [ ] **Anderer Schritt ohne @meta**', '  - [ ] **kein Posten**'].join('\n');
     expect(unterbloecke(md).map((x) => x.dach)).toEqual(['QS-X']);
   });
+
+  // P2 (Bug-Check 20.9.2026): eine `- [ ]`-BEISPIELZEILE in einem Codezaun
+  // oder einem mehrzeiligen HTML-Kommentar ist Dokumentation, kein Posten.
+  it('ROT→GRÜN: Beispielzeile in einem ```-Codezaun ist kein Posten', () => {
+    const md = PLAN('  Beispiel-Snippet:', '  ```', '  - [ ] **Beispiel** — nur zur Illustration.', '  ```');
+    expect(unterbloecke(md)).toEqual([]);
+  });
+
+  it('ROT→GRÜN: Beispielzeile in einem mehrzeiligen HTML-Kommentar ist kein Posten', () => {
+    const md = PLAN('<!-- Beispiel:', '  - [ ] **Beispiel** — nur zur Illustration.', '-->');
+    expect(unterbloecke(md)).toEqual([]);
+  });
+
+  it('GRÜN (Grenze): einzeilige `<!-- @meta … -->`-Kommentare öffnen keinen Kommentar-Block', () => {
+    // Wortgleich zum Hausstil — muss weiterhin das Dach setzen, nicht übersprungen werden.
+    expect(unterbloecke(PLAN('  - [ ] **Fund A** — Text.'))[0].dach).toBe('QS-X');
+  });
+
+  it('GRÜN (Bestand unverändert): echte @blockers-/@david-fragen-Blöcke bleiben wie zuvor ausserhalb jedes Posten-Blocks', () => {
+    // Diese Blöcke tragen unindentierte Prosa (kein `- [ ]`) — vor UND nach der
+    // Kontext-Erweiterung liefern sie keinen Unterblock.
+    const md = [
+      PLAN(),
+      '<!-- @blockers',
+      'irgendein-blocker: Prosa ohne Checkbox.',
+      '-->',
+      '',
+      '<!-- @david-fragen',
+      'irgendeine-frage: Prosa ohne Checkbox.',
+      '-->',
+    ].join('\n');
+    expect(unterbloecke(md)).toEqual([]);
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -243,6 +277,19 @@ describe('check:plan Regel 16', () => {
 // ---------------------------------------------------------------------------
 describe('migrieren — Wortlaut-Erhalt', () => {
   const HEUTE = '2026-09-20';
+
+  // P2-Regressionsschutz (Bug-Check 20.9.2026): `migrieren` liest denselben
+  // Bestand wie Regel 16 (b) über `unterbloecke()` — auf dem aktuellen
+  // ROADMAP.md-Stand (nach der Posten-Migration) muss der Lauf ein No-op
+  // bleiben, auch nachdem unterbloecke() Codezäune/HTML-Kommentare überspringt.
+  it('ist auf dem echten ROADMAP.md-Bestand ein No-op', () => {
+    const md = readFileSync('ROADMAP.md', 'utf8');
+    const r = migrationsPlan(md, new Map(), HEUTE);
+    expect(r.dateien).toEqual([]);
+    expect(r.ohneTitel).toEqual([]);
+    expect(r.chronikBlock).toBe('');
+    expect(r.neuesMd).toBe(md);
+  });
 
   it('löst eine offene Unterzeile byte-genau in eine Posten-Datei', () => {
     const zeile = '  - [ ] **Fund A** *(Messung 18.9.2026)* — langer Wortlaut mit `Code` und — Gedankenstrich.';
