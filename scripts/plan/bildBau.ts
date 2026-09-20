@@ -27,6 +27,7 @@
 import { readFileSync } from 'node:fs';
 import { parseRoadmap, type Einheit, ladeChronikDone } from './parse';
 import { resolve, type Buckets } from './aufloesen';
+import { postenTitelJeDach } from './postenKern';
 import {
   baustellenInfo,
   ersterSatz,
@@ -105,7 +106,7 @@ export function bauSeite(o: SeitenOpts): string {
   const { einheiten, queue } = parseRoadmap(md);
   // Chronik-Wissen mitgeben, sonst zeigt das Lagebild andere Buckets als plan:next.
   const b: Buckets = resolve(einheiten, queue, ladeChronikDone());
-  const schritte = schrittInfoAusRoadmap(md);
+  const schritte = schrittInfoAusRoadmap(md, postenTitelJeDach());
   const t = (id: string) => schritte.get(id)?.titel ?? id;
   const byId = new Map(einheiten.map((e) => [e.id, e]));
   const verkn = verknuepfungenAusEinheiten(einheiten);

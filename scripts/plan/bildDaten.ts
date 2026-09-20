@@ -238,7 +238,17 @@ function istEinheitenZeile(zeilen: string[], j: number): boolean {
  *  Auftrags-Wortlaut (Einheiten-Zeile bis zum @meta, an der Wortgrenze gekappt),
  *  der §-Anker hinter «Detail:»/«Bau-Spec:» und die Pflichtlektüre hinter
  *  «Befunde:»/«Dossier:». */
-export function schrittInfoAusRoadmap(md: string): Map<string, SchrittInfo> {
+export function schrittInfoAusRoadmap(
+  md: string,
+  /** Offene Posten je Dach-ID (Titel-Liste), aus `plan/posten/`.
+   *  Seit dem Posten-Modell (20.9.2026, QS-EFFIZIENZ) steht der Bestand eines
+   *  Dach-Schritts NICHT mehr als eingerückte `- [ ]`-Zeile in ROADMAP.md,
+   *  sondern je Posten in einer eigenen Datei. Ohne diesen Parameter zählte das
+   *  Lagebild nach der Migration null Positionen und riete zu «Unterschritt
+   *  bauen», den es in der Datei nicht mehr gibt — dieselbe Falle, gegen die
+   *  die Entstückelungs-Erfassung 8.8.2026 gebaut wurde, nur andersherum. */
+  postenTitel: ReadonlyMap<string, string[]> = new Map(),
+): Map<string, SchrittInfo> {
   const zeilen = md.split('\n');
   const info = new Map<string, SchrittInfo>();
   for (let i = 0; i < zeilen.length; i++) {
@@ -289,6 +299,11 @@ export function schrittInfoAusRoadmap(md: string): Map<string, SchrittInfo> {
           continue;
         }
         if (z.trim()) nachProsa.push(z);
+      }
+      for (const t of postenTitel.get(id) ?? []) {
+        chkGesamt++;
+        chkOffen++;
+        if (chkOffenTexte.length < 12) chkOffenTexte.push(klartext(t));
       }
       checkliste = chkGesamt > 0 ? { offen: chkOffen, gesamt: chkGesamt, offenTexte: chkOffenTexte } : null;
       const block = [...zeilen.slice(j, i), ...nachProsa].join(' ');

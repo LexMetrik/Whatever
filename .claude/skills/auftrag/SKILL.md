@@ -14,7 +14,7 @@ git-Historie und im Register des Skills `lehren`.)*
 
 | Neuer Eingang | Ablage |
 |---|---|
-| Kleinbefund unterhalb Sessiongrösse | `- [ ]`-Zeile im passenden **Dach-Schritt** (Davids Alltags-Funde: `W2·18-FEHLERBUCH`; Dach steckt im ID-Präfix) — **nie** eigener Schritt |
+| Kleinbefund unterhalb Sessiongrösse | `npm run plan:posten -- neu --dach <ID> --titel "…"` → eigene Datei in `plan/posten/` (Davids Alltags-Funde: `W2·18-FEHLERBUCH`; Dach steckt im ID-Präfix) — **nie** eigener Schritt, **nie** eine Zeile in `ROADMAP.md` (`check:plan` 16) |
 | Sessionfähige Bau-Einheit | Schritt mit `@meta` in der passenden Welle bzw. im Querschnitt-Band; Spec-Prosa in den Fahrplan, hier nur Titel + Ziel + `**Detail:**`-Link |
 | Grosses Detail / neuer Strang | `fahrplaene/FAHRPLAN-*.md`, verlinkt aus einem Roadmap-Schritt — nie als zweiter Einstieg |
 | Recherche-Erkenntnis | `bibliothek/` + Eintrag in `INDEX.md` (CLAUDE.md §11) |
@@ -91,13 +91,7 @@ Gewohnheit. Neue Schritte gleich in dieser Grössenordnung anlegen. Serielle
 3. Verhaltensändernd ⇒ golden byte-gleich.
 4. Status-Marker gesetzt (CLAUDE.md §8).
 5. **Plan zurückgeschrieben:** `plan:set -- <id> status=done` + `check:plan`.
-6. **Session-Karte in `STRUKTUR.md`** — wer substanzielle Arbeit auf `main`
-   landet, zieht in derselben Session eine ehrliche Karte nach (auch
-   Parallel-/Autonom-Sessions; bei fremden undokumentierten Commits nur die
-   fehlende Karte). **Default ist die Kurzkarte**, volle Karte nur in den
-   Ausnahmen — Form: Skill `bauschritt` Station E (David 15.8.2026).
-   `npm run struktur:aktuell` meldet Lücken.
-7. **War Jules oder Gemini beteiligt:** Messwerte in
+6. **Nur wenn Jules oder Gemini beteiligt war:** Messwerte in
    `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §5 nachtragen
    (`npm run fremdagenten:messung` für Jules-Quote/Dauer; Gemini echt/Schein
    von Hand ins Register) und Rückbau-Schwellen §3 prüfen.
