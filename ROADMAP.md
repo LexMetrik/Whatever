@@ -576,24 +576,26 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-DESIGN-KONSISTENZ.md](fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md) §1.
   - [ ] **Kontrast unter 4,5:1 an zwei Tokens — blockiert Dependabot #918** *(19.9.2026)* — das axe-Update der Gruppe `browser-tests` meldet echte Verstösse: `.lc-termin-ring` 4,45:1 und `.text-auf-gold` 3,46:1 (WCAG AA verlangt 4,5:1 für Normaltext). Tokens in `src/index.css` auf ≥ 4,5 heben (Reglement §F0; Farbwahl: David darf bestimmen, sonst minimal abdunkeln), dann #918 einreihen. Kommentar mit den Messwerten steht am PR.
 
-- [x] **Design-Identität: eigene Farb- und Schrift-Handschrift** *(`W2·24-DESIGN-IDENTITAET`, David 5.9.2026)*
-  <!-- @meta id: W2·24-DESIGN-IDENTITAET · status: done · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
-  ✅ **erledigt 7.9.2026 (PR #739, e2ac7def9)** — Handschrift «Sammlung»: R1–R13 samt Nachzügen, Gesamtprüfung
-  (Ästhetik + Funktions-Inventar 90 OK / 0 verloren), Reglement §F0. Protokolle
-  `abnahme/design-identitaet/`; Zielbeschreibung: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026.
-  **Nachwünsche 7.9. (Tag):** 16 weitere PRs #744–#761 (D34–D44, D35-F1…F4, L6, R13B, R14, R14b) —
-  Tabelle Thema/PR/SHA/Protokoll in STRUKTUR.md, Abschnitt «Nachwünsche 7.9.» (zuletzt #761 ae32c5c4e).
-  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §1 — Stand je Runde dort in §6, Folgeschritte in §8.
+- [ ] **Design-Identität: offene Nachzüge nach der Landung** *(`W2·24-C`, herausgelöst 20.9.2026 aus dem `done`-Kopf `W2·24-DESIGN-IDENTITAET`)*
+  <!-- @meta id: W2·24-C · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  Die vier offenen UI-Nachzüge der Handschrift «Sammlung» — reine Darstellungsschicht (§13), kein
+  Risikopfad; Normtext-Körper farbfrei, golden byte-gleich (§6). Der erledigte Kopf samt Prosa und
+  den erledigten Unterposten steht in [ROADMAP-CHRONIK.md](ROADMAP-CHRONIK.md), Umschichtung
+  2026-09-20 (2) — dort auch die Begründung der Herauslösung.
+  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §8.
   - [ ] **⚖ öffnet Entscheide im zweiten Pane** *(`W2·24-C`, Variante C zu D33)* — heute Variante A (überlagerndes Blatt, Δ=0); C = echtes zweites Pane (Split-Regel M3). **Zuerst prüfen, ob D35-F2 (#758, Erlass-Blatt) das schon abdeckt** — sonst doppelter Weg zum selben Inhalt. Fahrplan §8.
-  - [x] **Bezüge-Zeile: Kopfzähler gefiltert/ungefiltert** — ✅ entschieden und gebaut 11.9.2026. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
   - [ ] **Nachzüge aus R13 und Gesamtprüfung** — R13-11 Reiter-Adress-Kern · Geschäftsnummer-Kurzform statt R8-Allowlist · `StatusBadge` «maschinell» (§8) · `qsui-hierarchie` Vorlagen-Schranke 1.2533. Fahrplan §8.
-  - [x] **Erledigt:** L6 PaneKopf-Name · Reiterstreifen/ZGB-Reiter (bleiben) · Orchestrator-Entscheide 7.9. bestätigt · D45/«Daneben öffnen»/Bezüge-Zähler/OR-Leser-Knöpfe (umgebucht nach `W2·26-FUNKTIONSZEILE`) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026.
-  - [x] **Orchestrator-Entscheide vom Tag 7.9. — David 7.9.2026 «alles bestätigt»:** — ✅ (Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 8.9.2026 (Landung)).
-  - [ ] **Rest-CLS 0.0003 im Leser-Kopf** — `LeserKopf.tsx:289` (`data-v3-kopf-griffe`, Klassenwechsel `gap`/`pl`); klein, aber der einzige verbliebene Sprung in `leser-r1-r2`.
   - [ ] **«OR» dreimal untereinander @1440** *(L6-Nebenbefund)* — Reiter · Pane-Titel · Leser-Kennung; der V3-Leser sollte sein Kürzel im Pane abgeben.
-  - [ ] **Leser-Mount auf langsamem Netz messen** — Nachlauf zu #743/L2 (grosser Erlass: Ankersprung erst nach der zweiten Ladung, Anker-Oberkante 433 px statt 193 px).
-  - [x] **Budget-Entscheid Entry 99,5 %** (59.7 / 60.0 KB) — ✅ David 19.9.2026 «Kopfbereich budget heben»: Entry-Budget 60 → 70 KB (`scripts/check-perf-budget.ts`); der react-dom-Rückfall bleibt über die Zeichenketten-Prüfung gefangen.
   - [ ] **Jules-Kandidaten** (grüne Spur, nach Landung W2·24): toter CSS-Rückbau `[data-lr-spiegel]`/`.lr-notiz*`/alte Druckregeln in `index.css` · Typ-Härtungen `lib/tabs.ts`/`tabGruppen.ts` · Allowlist-Pflege `e2e/kein-abschnitt.allow.json`. Datei-Splits erledigt (ArtikelLeser R6F; `Reiterleiste.tsx` 7.9. gemessen 650 Z. — **überholt: seit #843–#845 wieder 1 237 Z.**, s. Jules-Bilanz unten). *(Der proaktive Jules-Kanal «Suggestions» ist seit 14.9.2026 abgeschaltet — diese Kandidaten laufen unverändert als auftragsgebundene Tickets weiter; Entscheid D8: `fahrplaene/FAHRPLAN-FREMDAGENTEN.md` §6.)*
+
+- [ ] **Leser-Kopf: Rest-CLS und Mount-Messung** *(`W2·24-PERF-REST`, herausgelöst 20.9.2026 aus dem `done`-Kopf `W2·24-DESIGN-IDENTITAET`)*
+  <!-- @meta id: W2·24-PERF-REST · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  Die zwei offenen §15-Posten der Handschrift: der letzte CLS-Sprung im Leser-Kopf und die
+  ausstehende Mount-Messung auf langsamem Netz. Messung vor Fix; jede Massnahme trägt eine
+  Logikverlust-Bewertung (§15), bei Konflikt gewinnt die Treue.
+  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §8.
+  - [ ] **Rest-CLS 0.0003 im Leser-Kopf** — `LeserKopf.tsx:289` (`data-v3-kopf-griffe`, Klassenwechsel `gap`/`pl`); klein, aber der einzige verbliebene Sprung in `leser-r1-r2`.
+  - [ ] **Leser-Mount auf langsamem Netz messen** — Nachlauf zu #743/L2 (grosser Erlass: Ankersprung erst nach der zweiten Ladung, Anker-Oberkante 433 px statt 193 px).
 
 - [ ] **UI-Befundliste extern (210 Befunde, Cowork 29.7.2026)** *(`W2·17-UI-BEFUNDE`)*
   <!-- @meta id: W2·17-UI-BEFUNDE · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
@@ -717,23 +719,36 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail (Fundstellen, Belege, Rauschen-Muster):** [FAHRPLAN-FREMDAGENTEN.md](fahrplaene/FAHRPLAN-FREMDAGENTEN.md) §5.
   - [ ] **Gegenprüfung nicht erforderlich — gemessen, nicht geraten** *(14.9.2026)*: `istRisikoPfad()` ist für alle vier Dateien **false**. **Offener Punkt daraus:** `src/lib/datumsUtils.ts` trägt die 324a-Grenze, fällt aber aus dem Klassifikator (`RECHNEN_RE` trifft den Dateinamen nicht) — mit Rot-Beweis (§6.7) entscheiden, **bevor** dort jemand Rechenlogik ändert.
 
-- [x] **Tarif-Stammdaten: Stand maschinenlesbar + Drift-Tor** *(`W3-TARIF-STAND`, Rules-as-Code-Sichtung 5.9.2026, Entscheid David 5.9.2026)*
-  <!-- @meta id: W3-TARIF-STAND · status: done · blocker: null · dep: [] · feld: werkzeuge -->
-  ✅ gelandet 6.9.2026 (#734) — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026. Die offenen
-  Folgeschritte darunter bleiben unverändert stehen.
-  **Detail:** [rules-as-code-sichtung-2026-09-05.md](bibliothek/recherche/rules-as-code-sichtung-2026-09-05.md) §6.
+- [ ] **Tarif-Stammdaten: Folgeschritte und Datenhygiene** *(`W3-TARIF-FOLGE`, herausgelöst 20.9.2026 aus dem `done`-Kopf `W3-TARIF-STAND`)*
+  <!-- @meta id: W3-TARIF-FOLGE · status: ready · blocker: null · dep: [] · feld: werkzeuge -->
+  Die offenen Folgeschritte zum gelandeten Drift-Tor (#734): Wert-Zeitreihe, amtliche
+  Golden-Quellen, Fassungsadressierung, Datenhygiene, Klassifikator-Lücke. **Risikopfad
+  Rechtsdaten ⇒ Gegenprüfung Pflicht**, Golden byte-gleich, jeder Wert mit Norm + Link + Stand
+  (§7). **Je Zeile eine sortenreine Bau-Einheit** — `src/data/tarif/**` und `scripts/tarif/**`
+  nie in EINER Session mischen. Der erledigte Kopf samt Prosa steht in
+  [ROADMAP-CHRONIK.md](ROADMAP-CHRONIK.md), Umschichtung 2026-09-20 (2).
+  **Detail (Herkunft der Folgeschritte):** [rules-as-code-sichtung-2026-09-05.md](bibliothek/recherche/rules-as-code-sichtung-2026-09-05.md) §6.
   - [ ] **Folgeschritt A · Wert-Zeitreihe je Tarif** *(nicht vor dem Tor)* — `{ab, wert, quelle, stand}` je Eintrag, UI-Eingabe «massgebender Zeitpunkt», Zeitreihen-Golden (ein Sachverhalt über alle Rechtsstände, Muster OpenFisca `tests/rates_rebates/time.yaml`); Vorfrage: frühere Fassungen bei lexfind/zh.ch/belex stabil adressierbar? Typ-Muster bitemporal (`nicia-ai/typegraph`, MIT). Quelle: Rules-as-Code-Sichtung 5.9.2026 §5/§6.
-  - [ ] **Folgeschritt B · Rechtsstand als Datumsbedingung neben der Regel** — `erbteilung.ts:200` und `gewaehrleistung.ts:71` von der `if datum >= …`-Weiche im Rumpf auf zwei nebeneinanderstehende, je mit Norm-Anker und Geltungsintervall versehene Regeln umstellen (verhaltensneutral, bestehende Mehr-Rechtsstand-Tests bleiben unverändert §6.3); Konvention dazu: nicht codierte Teilnormen als Kommentar mit Grund stehen lassen (Muster OpenFisca `CONTRIBUTING.md`). Risikopfad ⇒ Gegenprüfung. Quelle: Rules-as-Code-Sichtung 5.9.2026 §4/§5.
   - [ ] **Amtliche Golden-Quellen ins Tor** — Kantonsgericht VS Excel «Calcul des frais de justice» (7.2.2025), Amtsnotariate SG Gebührentabelle (Stand 27.3.2026), BGer-Tarif SR 173.110.210.1; Steuerrekursgericht-ZH-Excel (2019) nur nach Normabgleich. Negativbefund: kein Kanton betreibt einen interaktiven amtlichen Rechner, private Rechner sind keine Quelle (§7). Quelle: Fremdnutzen-Suchrunde 2 (6.9.2026) §1.
   - [ ] **Drift-Nachverifikation der 34 Erlasse** → eigener Schritt `W3-TARIF-NACHVERIFIKATION` (herausgelöst 6.9.2026, Auftrag David).
   - [ ] **Adapter-Lücke 268 Einträge / 34 Quellen ohne Fassungsadressierung** (lexfind 42, silgeneve, rsn.ne, m3.ti, sz.ch-PDF, rsju, urilaw, ur.ch, prestations.vd, 4 Einträge ohne `quelleUrl`) — je Portal Fassungskennung finden (Muster `zh-quellinventar`), lexfind und die 4 URL-losen zuerst.
   - [ ] **Datenhygiene `src/data/tarif/**`** *(§5-Befund 6.9.2026)* — 72 von 122 `quelleUrl` tragen mehr als einen `stand`-String (bis 8, TI atto/181; OW 210.32 fünf Schreibweisen desselben Datums); `erlassNr` «914.5 (GB-GebV); 821.5 (GebT)» nennt zwei Erlasse in einem Feld (20 Einträge «unklar»). Vereinheitlichen ohne Wertänderung, Golden byte-gleich, Gegenprüfung.
   - [ ] **`scripts/tarif/**` in `istRisikoPfad()` aufnehmen** *(Nebenfund Nachzug 6.9.2026)* — die Drift-Logik fällt Rechtsdaten-Verdikte, liegt aber ausserhalb des Klassifikators in `scripts/gegenpruefung/kern.ts`; Rot-Beweis: Edit an `drift-logik.ts` muss `check:gegenpruefung` rot machen.
+  - [ ] **Zurückgeholt aus der Chronik** *(Umschichtung 15.9.2026 (Entstehung))* — OW Beurkundungstarif Ziff. 35 lit. a/b Zuordnungsverdacht · VS LTar Art. 15 zwei Einträge, verschiedene Begründung (§5) · Härtungen `check:tarif-drift` (a)–(c), je mit Rot-Beweis, `scripts/tarif/**` Risikopfad — Wortlaut dort.
+
+- [ ] **Rechtsstand als echte Weiche in den Rechen-Engines** *(`W3-RECHTSSTAND-WEICHE`, herausgelöst 20.9.2026 aus dem `done`-Kopf `W3-TARIF-STAND`)*
+  <!-- @meta id: W3-RECHTSSTAND-WEICHE · status: ready · blocker: null · dep: [] · feld: werkzeuge -->
+  Zwei Posten derselben Fläche (Rechen-Engines unter `src/lib/**`): die `if datum >= …`-Weiche im
+  Rumpf auf nebeneinanderstehende Regeln mit Norm-Anker und Geltungsintervall umstellen — und
+  Davids offene Fachfrage zur Verjährungsrevision 2020, die erst entscheidet, ob dort eine zweite
+  Regel überhaupt entsteht. **Risikopfad Rechnen ⇒ Gegenprüfung Pflicht**; bestehende
+  Mehr-Rechtsstand-Tests bleiben unverändert (§6.3). **Der zweite Posten wartet auf David (§7) —
+  ohne seinen Entscheid wird dort nicht gebaut.**
+  - [ ] **Folgeschritt B · Rechtsstand als Datumsbedingung neben der Regel** — `erbteilung.ts:200` und `gewaehrleistung.ts:71` von der `if datum >= …`-Weiche im Rumpf auf zwei nebeneinanderstehende, je mit Norm-Anker und Geltungsintervall versehene Regeln umstellen (verhaltensneutral, bestehende Mehr-Rechtsstand-Tests bleiben unverändert §6.3); Konvention dazu: nicht codierte Teilnormen als Kommentar mit Grund stehen lassen (Muster OpenFisca `CONTRIBUTING.md`). Risikopfad ⇒ Gegenprüfung. Quelle: Rules-as-Code-Sichtung 5.9.2026 §4/§5.
   - [ ] **WARTET AUF DAVID (fachlich, §7):** Verjährungsrevision 2020 (relative Frist 1→3 J.) als echte Weiche statt Nutzerwarnung (`verjaehrung.ts:547`).
 
 
 ---
-  - [ ] **Zurückgeholt aus der Chronik** *(Umschichtung 15.9.2026 (Entstehung))* — OW Beurkundungstarif Ziff. 35 lit. a/b Zuordnungsverdacht · VS LTar Art. 15 zwei Einträge, verschiedene Begründung (§5) · Härtungen `check:tarif-drift` (a)–(c), je mit Rot-Beweis, `scripts/tarif/**` Risikopfad — Wortlaut dort.
 
 ## Betrieb & Prüfstrasse  *(`feld: betrieb`)*
 
