@@ -8,17 +8,18 @@ nie committen) — Kopie ab hier:
 ```
 Session: <YYYY-MM-DD> <session-slug> · Schritt: <ID>
 
-## Nebenfunde (→ ROADMAP-Zeile/Fahrplan, nie nur Chat)
-- [ ]
+## Nebenfunde (→ Posten-Datei/Fahrplan, nie nur Chat)
+- [ ] [<DACH-ID>] Titel — Wortlaut
 
 ## Lehren-Kandidaten (Formregel Skill lehren)
 - [ ]
 
 ## Wartet auf David
-- [ ]
+- [ ] [<DACH-ID>] Titel — Wortlaut
 ```
 
-Jeder Punkt als eigene `- [ ]`-Zeile. Abgearbeitet: `- [x]` statt streichen —
-`plan:next` liest den Unterschied (offen vs. erledigt). Station E: jede Zeile
-an ihren Repo-Ort überführen, danach die Datei löschen; bei Übergabe statt
-Abschluss bleibt sie stehen, Pfad in den Übergabe-Chip.
+Jeder Punkt als eigene `- [ ]`-Zeile; in den zwei markierten Abschnitten mit
+`[<DACH-ID>]` als erstem Element — `plan:posten -- aus-notizen <datei>` macht
+daraus Posten-Dateien und hakt die Zeile ab, ohne ID-Marke meldet es «braucht
+Dach» statt zu raten. Station E: Rest an seinen Repo-Ort, Datei löschen; bei
+Übergabe bleibt sie stehen, Pfad in den Übergabe-Chip.

@@ -64,8 +64,8 @@ ohne Rückfrage nach diesem Zyklus.
   archiviert die Session, und der Bau steht bis zum nächsten Menschen still (Nacht
   5./6.9.2026).
 - **Nebenfunde in den Plan**, nie in diese Session oder als Chip:
-  Checklisten-Zeile im Dach-Schritt, sonst ROADMAP-Schritt (Skill `auftrag`
-  Ziff. 3), weiterbauen.
+  `plan:posten -- neu --dach <ID> --titel "…"`, sonst ROADMAP-Schritt (Skill
+  `auftrag` Ziff. 3), weiterbauen.
 - **Jeder Agentenbericht: Punkt «Nebenfunde/Abweichungen» und jede
   aufkommende Lehre SOFORT in die Notizen-Datei**, vor dem nächsten Dispatch —
   der Chat ist kein Speicher (Kompaktierung bei 700k; Weisung David
@@ -104,7 +104,7 @@ ist der Merge-Zeitstempel auf origin/main.
 ## Station W — Weiterbau (David 8.8.2026)
 
 Gelandet + Session tragfähig ⇒ **nicht abschliessen**, weiterbauen:
-(a) nächste offene Position derselben Dach-Checkliste; (b) oberster `ready`-Schritt
+(a) nächster offener Posten desselben Dachs (`plan:posten -- <ID>`); (b) oberster `ready`-Schritt
 **gleicher Risikoklasse** und möglichst gleichen `feld:`-Werts (`plan:next` +
 Kollisionsprüfung); (c) nichts Sinnvolles mehr ⇒ Station E.
 
@@ -115,9 +115,9 @@ Commit mit eigenem Roadmap-Trailer).
 
 ## Station E — Abschluss (7 Punkte)
 
-- [ ] **Notizen-Datei abarbeiten:** jede Zeile an ihren Repo-Ort (ROADMAP-
-      Zeile, Fahrplan, Skill, Tor), danach Datei löschen. Übergabe statt
-      Abschluss: Datei bleibt, Pfad im Übergabe-Chip.
+- [ ] **Notizen-Datei abarbeiten:** `plan:posten -- aus-notizen <datei>` erntet
+      «Nebenfunde»/«Wartet auf David»; der Rest an seinen Repo-Ort (Fahrplan,
+      Skill, Tor), danach Datei löschen. Übergabe: Datei bleibt, Pfad im Chip.
 - [ ] **Karten-ZEILE in `STRUKTUR.md`** (was gebaut, Commit/PR-Beleg).
       Volle Session-Karte NUR bei Risikopfad-Berührung, gezogener §17-Lehre
       oder offenen Enden, die eine Folge-Session steuern müssen.

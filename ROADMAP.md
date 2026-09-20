@@ -24,9 +24,11 @@
 3. **Markiere erledigt** (`plan:set … status=done`), Karten-Zeile in `STRUKTUR.md` nachziehen.
    Push/PR/Auto-Merge stehend freigegeben (§9: Merge nach `main` = Deploy; Sorgfalt VOR dem Merge).
    Commit-Trailer immer `Roadmap: <@meta id>`.
-4. **Nur was steuert, bleibt hier.** Erledigt-Prosa wandert wörtlich in die
-   [`ROADMAP-CHRONIK.md`](ROADMAP-CHRONIK.md), Detail-WIE in den verlinkten Fahrplan; je Streichung
-   eine Begründungszeile in der Chronik. Grössen-Wächter: `struktur-rotieren.py --check`.
+4. **Nur was steuert, bleibt hier.** Ein Nebenfund/Unterposten ist eine eigene Datei
+   (`npm run plan:posten -- neu --dach <ID> --titel "…"`, erzwungen von `check:plan` 16),
+   Erledigt-Prosa wandert wörtlich in die [`ROADMAP-CHRONIK.md`](ROADMAP-CHRONIK.md), Detail-WIE in
+   den verlinkten Fahrplan; je Streichung eine Begründungszeile in der Chronik.
+   Grössen-Wächter: `struktur-rotieren.py --check`.
 
 ---
 
@@ -677,8 +679,8 @@ zgb-a36-anhang: Die ZGB-Gliederung zeigt 74 Artikel des Anhangs «Wortlaut der f
   **Detail:** [FAHRPLAN-EFFIZIENZ-CHECKLISTE.md](fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md) §1 —
   die Checkliste liegt seit 29.8.2026 dort statt hier (sie war eine Merge-Konflikt-Falle: 6 Konflikte
   in EINER Zeile bei 15 PRs).
-  - [ ] **ROADMAP-Deckel steht dauerhaft gelb** *(Messung 18.9.2026)* — 120,6 KB bei Session-Start, 132,1 KB nach zwei parallelen Sessions, 130,0 KB nach einer Teil-Überführung in die Chronik; Budget 120 KB. Seit dem Entscheid David 18.9.2026 (#905) blockiert der Deckel nicht mehr, **darum wächst er unbemerkt weiter** — die Warnung allein ändert kein Verhalten. Fällige Chronik-Überführung nach Skill `bauschritt` → [aufraeumen.md](.claude/skills/bauschritt/aufraeumen.md): erledigte Unterpunkte lebender Dach-Schritte auslagern (nicht nur `done`-Schritte), je mit Zeiger-Zeile. Als eigener Schritt fahren, nicht nebenbei — die Auslagerung muss `check:plan` und die `dep`-Auflösung intakt lassen.
-  - [ ] **Hebel ROADMAP-Grösse: Befund-Prosa in die Fahrpläne** *(David 18.9.2026, vorgemerkt)* — 54 % der Datei sind offene Zeilen (64 KB; Erledigtes 0,4 KB): lange `[ ]`-Befundzeilen in den Detail-Fahrplan des Dachs, hier je Kurzzeile + `**Detail:**`-Zeiger (Skill `auftrag` Ziff. 1), danach automatisierbar. ROADMAP-Deckel seit 18.9. nur Warnung (`struktur-rotieren.py` NUR_WARNUNG). Daneben: Vault-Eintrag `lexmetrik-lektionen` — UI-/Code-Konventionen ins Reglement, dann archivieren.
+  - [x] **ROADMAP-Deckel steht dauerhaft gelb** *(Messung 18.9.2026)* — ✅ 20.9.2026, Posten-Modell (`plan:posten`, `check:plan` 16): 140 Unterposten als eigene Dateien herausgelöst, ROADMAP −44 KB. Damit ist auch der Konflikt-Hotspot Nr. 1 der Merge-Queue entschärft (50 % Berührungsquote, 4 von 10 Queue-Rauswürfen `merge_conflict`). Befund im Wortlaut: 120,6 KB bei Session-Start, 132,1 KB nach zwei parallelen Sessions, 130,0 KB nach einer Teil-Überführung in die Chronik; Budget 120 KB. Seit dem Entscheid David 18.9.2026 (#905) blockiert der Deckel nicht mehr, **darum wächst er unbemerkt weiter** — die Warnung allein ändert kein Verhalten. Fällige Chronik-Überführung nach Skill `bauschritt` → [aufraeumen.md](.claude/skills/bauschritt/aufraeumen.md): erledigte Unterpunkte lebender Dach-Schritte auslagern (nicht nur `done`-Schritte), je mit Zeiger-Zeile. Als eigener Schritt fahren, nicht nebenbei — die Auslagerung muss `check:plan` und die `dep`-Auflösung intakt lassen.
+  - [x] **Hebel ROADMAP-Grösse: Befund-Prosa in die Fahrpläne** *(David 18.9.2026, vorgemerkt)* — ✅ 20.9.2026 ANDERS gelöst als vorgemerkt: nicht Auslagern in die Fahrpläne mit Kurzzeilen-Stub (das kostete die Sessions Mehrarbeit, Vorgabe David 20.9.2026), sondern eine Datei je Posten. Ursprünglicher Befund: 54 % der Datei sind offene Zeilen (64 KB; Erledigtes 0,4 KB): lange `[ ]`-Befundzeilen in den Detail-Fahrplan des Dachs, hier je Kurzzeile + `**Detail:**`-Zeiger (Skill `auftrag` Ziff. 1), danach automatisierbar. ROADMAP-Deckel seit 18.9. nur Warnung (`struktur-rotieren.py` NUR_WARNUNG). Daneben: Vault-Eintrag `lexmetrik-lektionen` — UI-/Code-Konventionen ins Reglement, dann archivieren.
   - [x] **ROADMAP-Deckel bleibt knapp — nächste Umschichtung braucht einen `dep`-Umbau** *(Messung 14.9.2026)* — ✅ 15.9.2026 (PR #896, `d26dbbac6`): `check:plan` akzeptiert erledigte `dep`-Ziele aus der Chronik. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (4).
   - [ ] **Steuerdeckel-Entscheid — wartet auf David:** Streichkandidat unter `scripts/check-*.ts` (5.9.2026 Prosa-Diät statt Deckel-Hebung; Hooks ~0 B Luft) *(sechs erledigte Nebenpunkte 5.9.2026 umgeschichtet: ROADMAP-CHRONIK.md, Umschichtung 6.9.2026).*
   - [ ] **Rückbau-Kandidaten aus `npm run tor:bewaehrung` — wartet auf David:** `check:smoke` · `check:sweep` · `check:verfall` · `check:normtext` (je 83 Läufe, null Rot seit Einführung, Stand 15.9.2026); dazu entscheiden, ob `tor:bewaehrung` und `retro:17` (gleiche Frage, andere Zeitreihe) zusammengelegt werden (§17-Gegengewicht). Hook-Log-Diff für die 9 Hooks liegt bei David (`/tmp/qs-bewaehrung-hook-log.diff`).

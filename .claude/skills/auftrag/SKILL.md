@@ -14,7 +14,7 @@ git-Historie und im Register des Skills `lehren`.)*
 
 | Neuer Eingang | Ablage |
 |---|---|
-| Kleinbefund unterhalb Sessiongrösse | `- [ ]`-Zeile im passenden **Dach-Schritt** (Davids Alltags-Funde: `W2·18-FEHLERBUCH`; Dach steckt im ID-Präfix) — **nie** eigener Schritt |
+| Kleinbefund unterhalb Sessiongrösse | `npm run plan:posten -- neu --dach <ID> --titel "…"` → eigene Datei in `plan/posten/` (Davids Alltags-Funde: `W2·18-FEHLERBUCH`; Dach steckt im ID-Präfix) — **nie** eigener Schritt, **nie** eine Zeile in `ROADMAP.md` (`check:plan` 16) |
 | Sessionfähige Bau-Einheit | Schritt mit `@meta` in der passenden Welle bzw. im Querschnitt-Band; Spec-Prosa in den Fahrplan, hier nur Titel + Ziel + `**Detail:**`-Link |
 | Grosses Detail / neuer Strang | `fahrplaene/FAHRPLAN-*.md`, verlinkt aus einem Roadmap-Schritt — nie als zweiter Einstieg |
 | Recherche-Erkenntnis | `bibliothek/` + Eintrag in `INDEX.md` (CLAUDE.md §11) |
