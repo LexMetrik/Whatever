@@ -373,7 +373,7 @@ Wächter: `npm run plan:next` zeigt Worktrees/Branches ohne Schritt-Bezug
 
 ## Trailer- und PR-Formregeln (CI-Rot-Lehren 31.8./1.9.2026, §17)
 
-1. **Trailer nur im SCHLUSSBLOCK:** `Roadmap:`/`Roadmap-Status:`/`Gegenpruefung:`/
+1. **Trailer nur im SCHLUSSBLOCK:** `Roadmap:`/`Gegenpruefung:`/
    `Co-Authored-By:` in EINEM letzten Absatz ohne Leerzeilen dazwischen —
    `git %(trailers)` liest nur den letzten Block (PR #604: Verdikt war da,
    aber durch eine Leerzeile unsichtbar → Merge-Schutz rot). Vor jedem PR

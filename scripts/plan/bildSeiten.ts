@@ -174,7 +174,7 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
           : `Detail-Spec: npm run fahrplan -- ${fp} <§> (den §-Verweis nennt der Schritt in ROADMAP.md).`
       : `Detail steht direkt im Schritt-Wortlaut in ROADMAP.md (kein eigener Fahrplan) — den Block dort VOLLSTÄNDIG lesen.`,
     ...pflichtZeilen,
-    `Commit-Trailer: Roadmap: ${e.id} im PR-Body (letzter Absatz). Status fährt im eigenen PR mit: plan:set -- ${e.id} status=${istDach ? 'done NUR wenn keine Checklisten-Position mehr offen, sonst ready (bzw. parked(<token>))' : 'done|ready|parked(<token>)'} + check:plan — keine Auto-Buchung (plan-buchung.yml am 20.9.2026 abgebaut).`,
+    `PR-Body-Trailer: Roadmap: ${e.id} (letzter Absatz). Status fährt im eigenen PR mit: plan:set -- ${e.id} status=${istDach ? 'done NUR wenn keine Checklisten-Position mehr offen, sonst ready (bzw. parked(<token>))' : 'done|ready|parked(<token>)'} + check:plan — keine Auto-Buchung (plan-buchung.yml am 20.9.2026 abgebaut).`,
   ];
   return zeilen.join('\n');
 }
