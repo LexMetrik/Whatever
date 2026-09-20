@@ -44,6 +44,11 @@ wird; bis dahin sammelt sich die Masse. Sie gilt **bei jeder Landung**, nicht
 erst beim Alarm: wer einen ✅-Teilerfolg in einen offenen Schritt schreibt,
 legt den Wortlaut gleich in die Chronik und lässt im Plan den Einzeiler.
 
+**Seit 20.9.2026 (Posten-Modell)** trägt ein offener Schritt gar keine
+eingerückte Checklisten-Zeile mehr (`check:plan` 16): die Ausnahme oben betrifft
+nur noch ✅-Prosa im Schritt-Rumpf. Unterposten leben je als Datei in
+`plan/posten/` und werden mit `plan:posten -- zu <datei> --beleg "…"` geschlossen.
+
 **Ablageort** (`793e9aee3`): neuer datierter Block ans **Dateiende**, z. B.
 `# Umschichtung <Datum> — erledigte Schritte aus dem Steuerungsplan`; je
 Schritt `## <ID> — <Titel> *(<Status>, verschoben <Datum>)*` + Original-

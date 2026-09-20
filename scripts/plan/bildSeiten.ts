@@ -39,6 +39,7 @@ import {
   type PrInfo,
   type SchrittInfo,
 } from './bildDaten';
+import { postenTitelJeDach } from './postenKern';
 import {
   bereichsBadges,
   esc,
@@ -454,7 +455,7 @@ export function lagebildSicht(o: SeitenOpts): LagebildSicht {
   const { einheiten, blockers, queue } = parseRoadmap(md);
   // Chronik-Wissen mitgeben, sonst zeigt das Lagebild andere Buckets als plan:next.
   const b: Buckets = resolve(einheiten, queue, ladeChronikDone());
-  const schritte = schrittInfoAusRoadmap(md);
+  const schritte = schrittInfoAusRoadmap(md, postenTitelJeDach());
   const t = (id: string) => schritte.get(id)?.titel ?? id;
   const byId = new Map(einheiten.map((e) => [e.id, e]));
   const feldVon = (id: string) => byId.get(id)?.etikett.feld ?? null;

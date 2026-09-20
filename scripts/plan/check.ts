@@ -6,6 +6,8 @@ import { parseEtikett, FELD_WERTE, istFeld, type Status } from './etikett';
 import { pruefeSpecBindung } from './specBindung';
 import { pruefeEtappenBuchung } from './etappenBuchung';
 import { pruefeKopfBuchung } from './kopfBuchung';
+import { postenScan, type PostenDatei } from './postenKern';
+import { pruefePosten } from './postenRegel';
 import { obersterMarkerId } from './marker';
 import { ZEITREIHE_DATEI, pruefeZeitreihe } from './selbstoptKern';
 
@@ -83,6 +85,7 @@ export function pruefe(
   fahrplanDateien: string[],
   fileExists: (p: string) => boolean,
   leseDatei: (p: string) => string | null = dateiLeser,
+  postenDateien: readonly PostenDatei[] = [],
 ): Problem[] {
   const probleme: Problem[] = [];
   const { einheiten, blockers, queue } = parseRoadmap(md);
@@ -277,6 +280,15 @@ export function pruefe(
   // KOPFES, hat sie darum keiner Session je gezeigt.
   probleme.push(...pruefeKopfBuchung(md));
 
+  // (16) Posten-Modell — Regel, Grenzen und Anlass in scripts/plan/postenRegel.ts.
+  // Verhältnis zu Regel 15 (beide aus der F17-Familie, 20.9.2026, verschiedene
+  // Fundorte): Regel 15 sucht offene Posten unter einem erledigten Kopf INNERHALB
+  // von ROADMAP.md, Regel 16 (a) dieselbe Lage für die ausgelagerten
+  // Posten-DATEIEN. Seit der Posten-Migration ist 16 (a) der Regelfall und 15 der
+  // Rest-Wächter für die Zeilen, die in der ROADMAP bleiben dürfen
+  // (Etappen-Kennungen, etikettierte Unterschritte).
+  probleme.push(...pruefePosten(md, postenDateien));
+
   // (13) Selbstoptimierungs-Zeitreihe — FORM, nie WERTE (Schritt QS-SELBSTOPT).
   //
   // `messwerte/selbstopt-zeitreihe.json` ist eine generierte §5-Projektion von
@@ -310,7 +322,18 @@ export function pruefe(
   // Arbeit auf derselben Fläche meldet die neue Feld-Warnung in plan:next.
 
   // (7) FAHRPLAN-Link-Check (eingegliedertes QS-PH)
-  for (const f of fahrplanDateien) if (!md.includes(f)) probleme.push({ id: null, meldung: `${f} ist nicht aus ROADMAP.md verlinkt` });
+  //
+  // Der Heuhaufen ist seit dem Posten-Modell (20.9.2026) der GANZE Steuerungsplan,
+  // nicht mehr nur ROADMAP.md: Posten-Dateien sind Plan-Inhalt, und Regel 16 (a)
+  // hält sie an einem lebenden Schritt fest. Ohne diese Erweiterung wurden drei
+  // Fahrpläne bei der Migration schlagartig «verwaist», obwohl ihr Verweis nur
+  // eine Datei weitergezogen war (gemessen: ENTSCHEIDSUCHE-AUSBAU, GESETZES-UX,
+  // SPLIT-VIEW) — ein Tor, das auf einen Umzug mit Fehlalarm reagiert, wird bald
+  // ignoriert (§6.7, dieselbe Seite wie ein Tor, das nie rot wird).
+  // Meldungstext bewusst unverändert (Bestands-Test plan-check.test.ts:223):
+  // er nennt den Regelfall, der Heuhaufen steht hier.
+  const planText = [md, ...postenDateien.map((d) => d.inhalt)].join('\n');
+  for (const f of fahrplanDateien) if (!planText.includes(f)) probleme.push({ id: null, meldung: `${f} ist nicht aus ROADMAP.md verlinkt` });
 
   // (8) @queue-Integrität — die Queue ist die EINE Prioritäts-Quelle (Einbau 24.7.2026);
   // eine Queue, die auf tote/erledigte IDs zeigt oder der Prosa widerspricht, steuert falsch.
@@ -372,7 +395,7 @@ if (!process.env.VITEST) {
   const zuPruefen = alle.filter((f) => !ARCHIV_BACKLOG.has(f));
   let probleme: Problem[];
   try {
-    probleme = pruefe(md, zuPruefen, (p) => existsSync(p));
+    probleme = pruefe(md, zuPruefen, (p) => existsSync(p), dateiLeser, postenScan());
   } catch (e) {
     console.error('check:plan ROT:\n  - (global): @meta nicht lesbar — ' + (e as Error).message);
     process.exit(1);

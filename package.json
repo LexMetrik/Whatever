@@ -162,6 +162,7 @@
     "plan:dump": "vite-node scripts/plan/dump.ts",
     "plan:bild": "vite-node scripts/plan/bild.ts",
     "check:plan": "vite-node scripts/plan/check.ts",
+    "plan:posten": "vite-node scripts/plan/posten.ts",
     "selbstopt:erheben": "vite-node scripts/plan/selbstopt-erheben.ts",
     "retro:17": "vite-node scripts/plan/retro-17.ts",
     "struktur:rotieren": "python3 .claude/hooks/struktur-rotieren.py",

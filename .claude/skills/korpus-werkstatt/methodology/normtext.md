@@ -113,7 +113,6 @@ Skill `auftrag`, Ziff. 4/5):
   `tools/verifikation.md`).
 - Status-Marker §8 gesetzt — «verifiziert»/«geprüft» NIE automatisch (Zeitsperre
   bis 1.12.2026, Status-Hebung nur über den `abnahme`-Skill).
-- STRUKTUR.md-Session-Karte nachgezogen.
 - §14.5-Trailer am Commit: `Roadmap: <ID>` + auf dem Risiko-Pfad
   `Gegenpruefung: <Verdikt> (<Modell>, <Linsen>) — <Befunde>`.
 - Bei rotem Tor: kein Push, keine Übergabe an `landung`.

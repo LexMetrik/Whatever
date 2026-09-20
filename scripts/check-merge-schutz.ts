@@ -10,6 +10,7 @@
 import { execFileSync } from 'node:child_process';
 import { behalten } from './gegenpruefung/kern';
 import { leseGegenpruefungAusRohLog, pruefeVerdiktForm, vereinigeVerdikte } from './gegenpruefung/squash-trailer';
+import { pruefePrSchutz } from './gegenpruefung/pr-schutz';
 
 const BASIS = process.env.MERGE_SCHUTZ_BASIS ?? 'origin/main';
 // KOPF = Pruef-Spitze (Default HEAD). Der Merge-Hook setzt hier den
@@ -50,6 +51,10 @@ if (risiko.length === 0) {
   raus(0, `check:merge-schutz grün — kein Risiko-Pfad im committeten Bereich ` +
     `${basis.slice(0, 8)}..${KOPF} (${geaendert.length} Datei(en) geändert).`);
 }
+
+// PR-Koerper-Schutz (§17, PRs #921/#923): Queue baut den Squash aus Titel+Body.
+const prRot = pruefePrSchutz(process.argv, risiko.length, `${basis.slice(0, 8)}..${KOPF}`);
+if (prRot) raus(1, prRot);
 
 // Trailer im committeten Bereich: `%(trailers)` (echte Trailer-Zeilen) plus
 // die tolerante Squash-Lesung (Anlass/Details: squash-trailer.ts), VEREINIGT

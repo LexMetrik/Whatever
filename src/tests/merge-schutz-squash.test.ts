@@ -53,16 +53,27 @@ describe('leseGegenpruefungAusSquash — Rot-Proben (§6.7)', () => {
     expect(leseGegenpruefungAusSquash(message)).toEqual([]);
   });
 
-  it('(iii) Pseudo-Co-Author-Sektion ohne Strichzeile wird NICHT abgeschnitten — der echte Trailer-Absatz davor bleibt verdeckt', () => {
+  // A3-Nachzug (Gegenprüfung 20.9.2026, «NICHT BESTANDEN»): DEKLARIERTE
+  // fachliche Änderung dieses einen Tests (§6.3 — kein stilles Anpassen).
+  // Bisher dokumentierte dieser Test die BEHOBENE Lücke selbst als
+  // gewolltes Verhalten: GitHub hängt den Co-Author-Absatz empirisch in
+  // ZWEI Formen an (6:6 unter den letzten 12 Queue-Merges) — mit
+  // `---------`-Trennzeile (PR #941/c94967134) UND bare, ohne Trennzeile
+  // (PR #942/d20efde42: `\n\nCo-authored-by: …`). Die bare Form ist exakt
+  // die hier konstruierte: ein reiner Co-Author-Absatz, nur durch eine
+  // Leerzeile vom echten Trailer-Absatz getrennt. Ohne Fix verschwand ein
+  // gültiges Verdikt in dieser Form spurlos — jetzt wird auch ein bare
+  // Co-Author-Anhang (AUSSCHLIESSLICH Co-authored-by-Zeilen als eigener
+  // Schluss-Absatz) abgeschnitten, der Trailer-Absatz davor wird gefunden.
+  it('(iii) bare Co-Author-Absatz (ohne Strichzeile) wird jetzt ABGESCHNITTEN — der echte Trailer-Absatz davor wird gefunden', () => {
     const message =
       `feat(x): irgendwas\n\n` +
       `Roadmap: X\n` +
-      `Gegenpruefung: bestanden (Opus, Test) — dieser echte Trailer-Absatz darf nicht gefunden werden, weil er nicht mehr der letzte ist.\n\n` +
+      `Gegenpruefung: bestanden (Opus, Test) — dieser echte Trailer-Absatz muss trotz bare Co-Author-Anhang gefunden werden.\n\n` +
       `Co-authored-by: Claude Sonnet <noreply@anthropic.com>\n`;
-    // Ohne Strichzeile davor gilt die Co-Author-Zeile selbst als letzter
-    // Absatz (kein Abschneiden) — der davorliegende echte Trailer-Absatz wird
-    // nicht durchsucht.
-    expect(leseGegenpruefungAusSquash(message)).toEqual([]);
+    const werte = leseGegenpruefungAusSquash(message);
+    expect(werte).toHaveLength(1);
+    expect(werte[0]).toContain('trotz bare Co-Author-Anhang gefunden werden');
   });
 
   it('(iii) Fremdzeile innerhalb der Co-Author-Sektion verhindert das Abschneiden', () => {
@@ -96,6 +107,61 @@ describe('leseGegenpruefungAusSquash — Rot-Proben (§6.7)', () => {
     expect(werte).toEqual(['x']);
     const pruefung = pruefeVerdiktForm(werte[0]);
     expect(pruefung.art).toBe('mangel');
+  });
+});
+
+// ── N1 (Nach-Verdikt 20.9.2026, «BESTANDEN MIT AUFLAGEN»): GESTAPELTE
+// bare Co-Author-Absätze ─────────────────────────────────────────────────
+// Der PR-Body selbst endet (Claude-Code-Attribution) mit einem eigenen bare
+// Co-Author-Absatz; die Queue haengt beim echten Squash NOCH EINEN bare
+// Co-Author-Absatz an. Ein EINZELSCHNITT (vor dem Fix) legte nur den
+// EIGENEN Absatz als neuen letzten Absatz frei — der traegt kein
+// 'Gegenpruefung:'-Wort, der echte Verdikt-Absatz davor wurde nie erreicht:
+// die Simulation (Titel+Body OHNE den zweiten, von der Queue selbst
+// angehaengten Absatz) las 'gueltig', die echte Queue-Nachricht (MIT beiden
+// Absaetzen) 'kein Verdikt' — Falsch-GRÜN der Simulation. Massgeblich ist
+// hier die echte Queue-Nachricht: ein Verdikt IST vorhanden, muss also
+// gefunden werden — der erwartete Wert ist deshalb 'gueltig' (Werte-Array
+// mit Laenge 1), nicht [].
+describe('leseGegenpruefungAusSquash — N1 (zwei gestapelte bare Co-Author-Absätze)', () => {
+  it('eigener bare Co-Author-Absatz + von der Queue angehängter zweiter bare Absatz ⇒ Verdikt davor wird trotzdem gefunden', () => {
+    const message =
+      `feat(x): irgendwas\n\n` +
+      `Roadmap: X\n` +
+      `Gegenpruefung: bestanden (Opus, Test) — echter Trailer-Absatz muss trotz ZWEI gestapelter bare Co-Author-Absaetze gefunden werden.\n\n` +
+      `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\n\n` +
+      `Co-authored-by: github-actor <noreply@github.com>\n`;
+    const werte = leseGegenpruefungAusSquash(message);
+    expect(werte).toHaveLength(1);
+    expect(werte[0]).toContain('trotz ZWEI gestapelter bare Co-Author-Absaetze gefunden werden');
+    expect(pruefeVerdiktForm(werte[0])).toEqual({ art: 'gueltig' });
+  });
+
+  it('drei gestapelte bare Co-Author-Absätze (Grenzfall) ⇒ Verdikt bleibt auffindbar', () => {
+    const message =
+      `feat(x): irgendwas\n\n` +
+      `Gegenpruefung: bestanden (Opus, Test) — auch bei drei gestapelten Absaetzen muss dieser Absatz gefunden werden.\n\n` +
+      `Co-Authored-By: Erster <a@example.com>\n\n` +
+      `Co-authored-by: Zweiter <b@example.com>\n\n` +
+      `Co-authored-by: Dritter <c@example.com>\n`;
+    const werte = leseGegenpruefungAusSquash(message);
+    expect(werte).toHaveLength(1);
+    expect(werte[0]).toContain('drei gestapelten Absaetzen');
+  });
+
+  // Mutationsprobe M3 (STRICH_ZEILE-Bedingung) bleibt unter der Schleife
+  // unveraendert scharf: ein Prosa-Absatz zwischen Trailer und Co-Author
+  // darf auch nach mehrfachem Schleifendurchlauf nicht durchgeschnitten
+  // werden — die Schleife bricht ab, sobald ein Durchlauf nichts mehr
+  // aendert (das Prosa-Wort 'Zwischenabsatz.' ist keine Co-Author-Zeile).
+  it('Prosa-Absatz zwischen Trailer und gestapelten Co-Author-Absätzen ⇒ [] bleibt konservativ', () => {
+    const message =
+      `feat(x): irgendwas\n\n` +
+      `Gegenpruefung: bestanden (Opus, Test) — darf wegen des Prosa-Absatzes nicht durchsickern.\n\n` +
+      `Zwischenabsatz.\n\n` +
+      `Co-Authored-By: Erster <a@example.com>\n\n` +
+      `Co-authored-by: Zweiter <b@example.com>\n`;
+    expect(leseGegenpruefungAusSquash(message)).toEqual([]);
   });
 });
 
