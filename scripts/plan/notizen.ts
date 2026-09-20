@@ -15,7 +15,7 @@
 // Ausgabe ist ein Hinweis in `plan:next`, kein Fehlschlag.
 
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 
 /** Befund für eine Notizen-Datei: Name plus Anzahl offener/erledigter Posten. */
 export interface NotizenBefund {
@@ -74,11 +74,25 @@ export function leseNotizen(dir: string): NotizenDatei[] {
  * (funktioniert gleich aus jedem Worktree — `git rev-parse --git-common-dir`
  * zeigt immer auf das `.git` des Haupt-Checkouts, dessen Elternverzeichnis der
  * Haupt-Checkout selbst ist).
+ *
+ * Pfad-Bug (Befund 20.9.2026, F17): im HAUPT-Checkout selbst liefert
+ * `git rev-parse --git-common-dir` einen RELATIVEN Wert (z.B. `.git` an der
+ * Repo-Wurzel, `../.git` aus einem Unterordner) — nur in Worktrees ist der
+ * Wert absolut. Die alte Regex strippte nur den absoluten Fall; beim
+ * relativen `.git` (kein Pfadtrenner davor) griff sie nicht, `hauptCheckout`
+ * blieb `.git`, und `.git/.claude/notizen` existiert nie ⇒ Befund still `[]`
+ * im Haupt-Checkout (gemessen: 0 Notizen-Zeilen dort vs. 7 im Worktree bei
+ * identischem `.claude/notizen`-Inhalt). Fix: `gitCommonDir` erst gegen
+ * `cwd` absolut auflösen (deckt relativ/absolut/Worktree-Form gleich ab —
+ * `--git-common-dir` zeigt aus einem Worktree ohnehin bereits auf das
+ * Haupt-`.git`, nie auf `.git/worktrees/<name>`, das liefert nur
+ * `--git-dir`).
  */
-export function notizenVerzeichnis(gitCommonDir: string): string {
-  // gitCommonDir ist z.B. "/Users/david/Developer/LexMetrik/.git" — das
+export function notizenVerzeichnis(gitCommonDir: string, cwd: string): string {
+  const gitCommonDirAbs = resolve(cwd, gitCommonDir);
+  // gitCommonDirAbs ist z.B. "/Users/david/Developer/LexMetrik/.git" — das
   // Elternverzeichnis davon ist der Haupt-Checkout.
-  const hauptCheckout = gitCommonDir.replace(/[/\\]\.git[/\\]?$/, '');
+  const hauptCheckout = gitCommonDirAbs.replace(/[/\\]\.git[/\\]?$/, '');
   return join(hauptCheckout, '.claude', 'notizen');
 }
 

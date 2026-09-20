@@ -47,7 +47,7 @@ if (!process.env.VITEST) {
       encoding: 'utf8',
       timeout: 3000,
     }).trim();
-    const dateien = leseNotizen(notizenVerzeichnis(gitCommonDir));
+    const dateien = leseNotizen(notizenVerzeichnis(gitCommonDir, process.cwd()));
     for (const zeile of notizenZeilen(notizenBefund(dateien))) z(zeile);
   } catch {
     // git nicht verfügbar/kein Repo — Pflicht-Einstieg degradiert still (§8,
