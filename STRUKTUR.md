@@ -33,6 +33,14 @@ falsch — korrigiert 30.8.2026). Karten abgeschlossener Sessions (älter als
 werden direkt unter dem KARTEN-Anker eingefügt (jüngste zuoberst).
 
 <!-- KARTEN -->
+## Session 20.9.2026 — `QS-MONITOR-ROT`: Token-Nachweis, #934 nachgezogen, Session auf Davids Wunsch beendet (0 PRs gelandet, Risikopfad berührt, Übergabe)
+
+- Schritt `QS-MONITOR-ROT` (`feld: korpus`), zurück auf `status: ready`. **Nichts gelandet.** #934 (Curia-Monatslauf 2026-09-19, später durch #939 ersetzt): origin/main eingezogen + Teilkaskade, Kopf `3047b63ae`, Einzeltore Exit 0, `gate` rot nur `check:gegenpruefung`; 386 curia-Dateien (1 neu `02.008`, `beschriftung` 908× ungeklärt). Opus-Gegenprüfung dispatcht und auf Davids «stop» abgebrochen — **frisch neu dispatchen** (Prüfauftrag P1–P8: `<Haupt-Checkout>/.claude/notizen/2026-09-20-gp-934-pruefauftrag.md`), Ablauf des Entwurfs 1.10.2026.
+- **Token:** David hat `AUTOMERGE_TOKEN` am 20.9.2026 13:30Z getauscht. Beleg: Lauf 35513728588 eröffnete #936 (BS) und #937 (Vernehmlassungen) selbst — beide reiner Datums-Churn, mit Begründung geschlossen. Curia-Job danach vollständig grün (Vollabgleich · Teilkaskade · Vorflug · «PR eröffnen») ⇒ **#939** (Curia-Monatslauf 2026-09-20, Kopf `91ce52263`) — nach Datums-Normalisierung inhaltsgleich mit #934, darum #934 als überholt geschlossen; **die Gegenprüfung geht auf #939 über.**
+- **Dependabot #918 geschlossen, kein Flake:** `@axe-core/playwright` 4.13.0 findet echten Kontrast-Befund («Fristende»-Marker 4.45 statt 4.5) — ROADMAP-Zeile, danach `@dependabot reopen`.
+- **Pflegetermin 1.10.2026:** nur recherchiert (18 statt 14 Einträge, alle per Fedlex-SPARQL bestätigt, `check:verfall` rot erst ab 2.10., Re-Pin frühestens Mo 5.10. via `fedlex-frische`), nichts gebaut.
+- **Offene Enden:** `PLAN_BUCHUNG_TOKEN` alt, Direkt-Push der Plan-Buchung scheitert vermutlich am Queue-Ruleset (ungemessen) · Restbefunde Auftragspunkt 5 unberührt · Fedlex-Frische-Lauf Mo 21.9. 04:43 UTC prüfen (eröffnet er seinen PR selbst?). Kein `verified` gesetzt.
+
 ## Session 19.9.2026 (3) — `QS-MONITOR-ROT`: rectifies-Tor Runde 2 + wartende Automatik-PRs (5 PRs gelandet, Risikopfad)
 
 - Schritt `QS-MONITOR-ROT` (`feld: korpus`), zurück auf `status: ready` (Unterpunkte offen). **Gelandet:** #913 `135ec0cba` (BS-Monatslauf, Identitätsbeleg data.bs.ch) · #925 `95cb5a712` (Merge-Schutz liest Verdikt aus dem Queue-Squash — Wurzel: GitHub bricht den PR-Body bei 72 Zeichen um und hängt den Co-author-Absatz an; erster Risikopfad-PR in der Queue, #921, war daran gescheitert, Lauf 35449385978; Echt-Beleg grün: `merge_group` 35455945280) · #921 `2db154675` (Curia-/Materialien-Teilkaskade, BS-Sortier-Wächter) · #926 `c9e2e32cb` (rectifies-Tor Runde 2).
