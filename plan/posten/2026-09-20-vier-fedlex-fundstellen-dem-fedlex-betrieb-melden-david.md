@@ -1,6 +1,6 @@
 <!-- @posten
 dach: QS-FRIT-DRIFT
-titel: WARTET AUF DAVID
+titel: Vier Fedlex-Fundstellen dem Fedlex-Betrieb melden (David)
 wartet-auf: david
 -->
 

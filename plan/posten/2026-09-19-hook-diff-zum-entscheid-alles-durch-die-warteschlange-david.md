@@ -1,6 +1,6 @@
 <!-- @posten
 dach: QS-BASIS
-titel: WARTET AUF DAVID · Hook-Diff zum Entscheid «alles durch die warteschlange»
+titel: Hook-Diff zum Entscheid alles durch die Warteschlange (David)
 anlass: 19.9.2026; Sessions ändern `.claude/hooks/*.py` nicht selbst
 wartet-auf: david
 -->

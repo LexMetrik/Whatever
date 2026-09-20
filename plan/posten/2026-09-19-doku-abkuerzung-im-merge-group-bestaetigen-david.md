@@ -1,6 +1,6 @@
 <!-- @posten
 dach: QS-BASIS
-titel: WARTET AUF DAVID · Doku-Abkürzung im merge_group bestätigen
+titel: Doku-Abkürzung im merge_group bestätigen (David)
 anlass: 19.9.2026
 wartet-auf: david
 -->

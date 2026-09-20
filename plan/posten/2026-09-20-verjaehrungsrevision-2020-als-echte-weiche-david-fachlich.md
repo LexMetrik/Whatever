@@ -1,6 +1,6 @@
 <!-- @posten
 dach: W3-RECHTSSTAND-WEICHE
-titel: WARTET AUF DAVID (fachlich, §7)
+titel: Verjährungsrevision 2020 als echte Weiche (David, fachlich)
 wartet-auf: david
 -->
 

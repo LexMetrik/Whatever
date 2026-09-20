@@ -1,6 +1,6 @@
 <!-- @posten
 dach: W3-TARIF-FOLGE
-titel: scripts/tarif/
+titel: scripts/tarif in istRisikoPfad aufnehmen
 anlass: Nebenfund Nachzug 6.9.2026
 -->
 

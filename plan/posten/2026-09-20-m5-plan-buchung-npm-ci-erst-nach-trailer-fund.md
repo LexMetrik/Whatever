@@ -1,6 +1,6 @@
 <!-- @posten
 dach: QS-CI-MINUTEN
-titel: M5
+titel: M5 Plan-Buchung npm ci erst nach Trailer-Fund
 -->
 
   - [ ] **M5** Plan-Buchung `npm ci` erst nach Trailer-Fund (−150,

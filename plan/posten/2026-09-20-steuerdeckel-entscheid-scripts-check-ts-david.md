@@ -1,6 +1,6 @@
 <!-- @posten
 dach: QS-EFFIZIENZ
-titel: Steuerdeckel-Entscheid — wartet auf David
+titel: Steuerdeckel-Entscheid scripts check-*.ts (David)
 wartet-auf: david
 -->
 

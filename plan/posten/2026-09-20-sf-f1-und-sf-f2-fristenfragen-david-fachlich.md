@@ -1,6 +1,6 @@
 <!-- @posten
 dach: QS-CODE-PROP
-titel: WARTET AUF DAVID (fachlich, §7)
+titel: SF-F1 und SF-F2 Fristenfragen (David, fachlich)
 wartet-auf: david
 -->
 

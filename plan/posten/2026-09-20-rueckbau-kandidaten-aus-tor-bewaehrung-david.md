@@ -1,6 +1,6 @@
 <!-- @posten
 dach: QS-EFFIZIENZ
-titel: Rückbau-Kandidaten aus npm run tor:bewaehrung — wartet auf David
+titel: Rückbau-Kandidaten aus tor:bewaehrung (David)
 wartet-auf: david
 -->
 
