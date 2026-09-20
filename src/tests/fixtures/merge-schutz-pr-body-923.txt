@@ -1,0 +1,18 @@
+## Was
+Fedlex packt im SVG (SR 741.01) alle Abschnitte von Titel III in den Randtitel-Container `tit_3/lvl_u1` («Grundregel», amtlich `role=marginal`, Randtitel von Art. 26). Der Struktur-Extraktor vererbte «Grundregel» dadurch als führenden Randtitel an Art. 27–57 (inkl. 53a, 57a, 57b) — sichtbar in der Leser-Gliederung als «1. Abschnitt … › Grundregel».
+
+Fix (`scripts/normtext/struktur-extrahiere.ts`): Randtitel-Kette eines Artikels beginnt erst nach der innersten Gliederungsebene über ihm. Generisch, kein SVG-Sonderfall.
+
+## Beleg
+- Neuerzeugung aller 231 Bundes-Sidecars: nur `public/normtext/struktur/bund/SVG.json` geändert (34 Artikel, nur führendes «Grundregel» entfernt); `daten-manifest.json` nachgezogen.
+- Amtlich: Fedlex Filestore SVG `eli/cc/1959/679_705_685/20260701` (XML + PDF-A S. 26, abgerufen 19.9.2026) — «Grundregel» genau einmal, Randtitel Art. 26.
+- Wächter `src/tests/normtext-struktur-randtitel-container.test.ts` rot gegen alten Code (2 failed), grün danach.
+- Gegenprüfung bestanden (Sonnet, frischer Kontext): eigene Amtswerte Art. 26/27/30/44/53a/57b, Randfall OR Art. 184–190 mehrstufige Marginalien erhalten, Korpus-Neulauf idempotent. Quittung `8c713fca4`.
+
+Befund David 19.9.2026 (Gliederung); Anzeige-Teil folgt in eigenem PR.
+
+🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+Roadmap: W2·5m-LESER-V3
+Gegenpruefung: bestanden (Sonnet, Extraktion/Randfall/Korpus) — 6 Art. SVG blind gegen Fedlex 20260701, OR-Randfall Art. 184-190, Korpus-Neulauf idempotent, keine Befunde
+
