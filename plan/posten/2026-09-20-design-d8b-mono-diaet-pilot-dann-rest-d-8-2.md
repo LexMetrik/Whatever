@@ -1,0 +1,6 @@
+<!-- @posten
+dach: W2·11-DESIGN
+titel: DESIGN-D8b · Mono-Diät — Pilot, dann Rest (D-8.2)
+-->
+
+  - [ ] **DESIGN-D8b · Mono-Diät — Pilot, dann Rest (D-8.2)** — ~50 Fundstellen; **Pilot zuerst**, nicht flip-reversibel, **nach D8a**.
