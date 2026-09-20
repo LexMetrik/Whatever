@@ -5166,3 +5166,23 @@ hierher (aufraeumen.md §2).
   - [x] **Ersten reinen Doku-Eintrag in der Queue beobachten** — ✅ 19.9.2026, #931: `merge_group`-Lauf 35456359531 klassiert «Reiner Doku-Queue-Eintrag (2 Dateien)», Bau/Shards/Perf-Budget `skipped`, Tore + Merge-Schutz + Browser-Smoke (Ergebnis) grün, Laufzeit ~1 min, gelandet `951382d26` — ein übersprungenes Perf-Budget zählt in der Queue als erfüllt, kein Hänger.
   - [x] **`scripts/landung/landung-kette.sh` real gegen die Queue fahren** *(19.9.2026)* — ✅ 19.9.2026 mit PR #919: eingereiht 15:59Z, `mergeQueueEntry.state` gepollt, MERGED `661612cea` 16:29:21Z, Zweig von GitHub selbst gelöscht, Exit 0. **Nur der Gut-Pfad ist real belegt**; die Halte-Pfade (UNMERGEABLE, verschwundener Eintrag, GraphQL-Fehler) sind weiterhin nur simuliert (Simulation a–g, 377ea3c11).
   - [x] **Erster `merge_group`-Lauf der neuen Klassierung** — ✅ 19.9.2026, Lauf 35454618928 (#927): Compare `95cb5a712…a5734fb86` (Basis = Queue-Commit des Vordermanns #925, nicht main), 19 Dateien, `art=code`, alle vier Required grün.
+
+---
+
+# Umschichtung 2026-09-20 — erledigte Schritte und Teilerfolgs-Prosa aus dem Steuerungsplan
+
+Anlass: Re-Akkumulations-Wächter meldet `ROADMAP.md` GELB (141.6 KB > Budget 120 KB).
+Ausnahme 22.7.2026 (datierte ✅-Teilerfolgs-Prosa aus einem noch OFFENEN Schritt —
+`W2·5m-LESER-V3` bleibt `status: ready`, die übrigen Unterzeilen offen); im Plan bleibt
+je ein ✅-Einzeiler mit Verweis hierher (aufraeumen.md §2). Erledigte SCHRITTE wurden
+in dieser Umschichtung KEINE überführt — die beiden `done`-Schritte
+`W2·24-DESIGN-IDENTITAET` und `W3-TARIF-STAND` halten zusammen 15 offene
+`- [ ]`-Unterposten; eine vollständige Überführung nach aufraeumen.md §2 hätte diese
+offene Steuerung mitgenommen. Auflösung (Umbau zu offenen Schritten oder Herauslösen
+der Unterposten) ist ein eigener Entscheid, keine Aufräum-Bewegung.
+
+## W2·5m-LESER-V3 — Gliederung: Standort, unterste Ebene, Auf/Zu-Handling *(✅-Teilerfolg, verschoben 2026-09-20)*
+
+    - [x] **Gliederung «noch schlecht» — Standort und unterste Ebene** *(Befund David 19.9.2026)* — ✅ 19.9.2026: gemessen = Anzeige (Art.-Ebene `art@` lief mit Zeilenzustand auseinander) + Daten (SVG-Randtitel «Grundregel»); Anzeige #924, Daten #923 (Gegenprüfung bestanden). Detail: Session-Karte STRUKTUR.md 19.9.2026 (2).
+
+    - [x] **Erledigt 19.9.2026:** Auf/Zu-Handling + Befund David 19.9. («svg art. 26 nicht ersichtlich … unterste ebene klappt nicht auf», Nachtrag «auch das aufklappen soll optimiert werden») — Zeilen-Offen-Zustand aus dem Sichtbaren abgeleitet (`zeilenAnsicht`), alle ausdrücklichen Öffner über `klappKarte.ts` inkl. Artikel-Ebene, ein Klick öffnet ganz, «alles auf» öffnet die Artikel, Marke nach Sprung auf dem Artikel; Wächter `gliederung-sichtbarkeit.test.ts` (vorher 11/12 rot, u. a. 4'690 offen-leere Zeilen). Daten-Teil SVG-Randtitel «Grundregel» PR #923 (Gegenprüfung bestanden).
