@@ -210,14 +210,13 @@ npm run check:perf-budget  # liest dist, Chrome-frei
 9. **Schritt-Status schliessen — wip verlässt die Session nie.** **Der PR,
    der den Schritt abschliesst, trägt den Status im Diff:** `plan:set --
    <id> status=done|ready|parked` + `check:plan`, im eigenen PR committet.
-   NICHT auf die Auto-Buchung verlassen (ob der Buchungs-PUSH von
-   `plan-buchung.yml` das Ruleset noch passiert, ist seit 19.9.2026
-   UNGEMESSEN; ihr Rückbau ist offener ROADMAP-Punkt). Zuordnung weiter per
+   Keine Auto-Buchung mehr: `plan-buchung.yml` ist am 20.9.2026 abgebaut
+   (QS-CI-MINUTEN, 0 Buchungs-Commits in 12 Läufen seit der Merge-Queue
+   19.9.2026 — der Status fuhr da schon im PR mit). Zuordnung weiter per
    Trailer **im PR-BODY**, eigener letzter Absatz, unformatiert: `Roadmap:
-   <ID>` — ohne `Roadmap-Status:`-Zeile bucht der Workflow nichts (seit
-   3.9.2026, PR #636), auch wenn der Schritt `wip` bleibt. Ein ECHTER halber
-   Block (`Roadmap-Status:` ohne `Roadmap:`) = Buchungs-Lauf laut rot. Form:
-   Skill `auftrag` Ziff. 5, Formregel 5 unten; Historie: `referenz-ci.md`.
+   <ID>` — kein `Roadmap-Status:` mehr nötig, auch wenn der Schritt `wip`
+   bleibt. Form: Skill `auftrag` Ziff. 5, Formregel 5 unten; Historie:
+   `referenz-ci.md`.
 
 ### Auto-Merge ist auf Risiko-Pfaden gesperrt
 
@@ -374,15 +373,13 @@ Wächter: `npm run plan:next` zeigt Worktrees/Branches ohne Schritt-Bezug
 
 ## Trailer- und PR-Formregeln (CI-Rot-Lehren 31.8./1.9.2026, §17)
 
-1. **Trailer nur im SCHLUSSBLOCK:** `Roadmap:`/`Roadmap-Status:`/`Gegenpruefung:`/
+1. **Trailer nur im SCHLUSSBLOCK:** `Roadmap:`/`Gegenpruefung:`/
    `Co-Authored-By:` in EINEM letzten Absatz ohne Leerzeilen dazwischen —
    `git %(trailers)` liest nur den letzten Block (PR #604: Verdikt war da,
    aber durch eine Leerzeile unsichtbar → Merge-Schutz rot). Vor jedem PR
    lokal `npm run check:merge-schutz` (Sekunden, spart den CI-Lauf).
-2. **`Roadmap-Status: parked(<slug>)` nur mit REGISTRIERTEM Slug:** der Slug
-   muss VOR dem Merge im `@blockers`-Register der ROADMAP stehen, sonst
-   verweigert das Konsistenz-Tor die automatische Plan-Buchung (Main-CI rot,
-   PR #604). Reihenfolge: Blocker-Zeile im PR mitliefern, dann Status-Trailer.
+2. *(entfällt 20.9.2026 — galt nur für die abgebaute `plan-buchung.yml`-
+   Auto-Buchung; `@blockers`-Slug bleibt Pflicht, das prüft `check:plan`.)*
 3. **PR zeigt «no checks reported» → ZUERST Mergeability prüfen**
    (`gh pr view N --json mergeable`): bei CONFLICTING baut GitHub gar keinen
    CI-Lauf (PR #605). Fix ist der main-Merge, nicht das Neu-Triggern.
@@ -399,4 +396,5 @@ Wächter: `npm run plan:next` zeigt Worktrees/Branches ohne Schritt-Bezug
    sieht am Squash-Commit NUR Co-authored-by, lange Trailer zerfallen in
    Fortsetzungszeilen (Beleg 9b125ce8e). Gelesen wird darum der PR-Body per
    API (PR #628, 2.9.2026). Mehrere IDs nie auf mehrere `Roadmap:`-Zeilen
-   verteilen — der Parser nimmt nur die letzte (`scripts/plan/buchung.ts`).
+   verteilen — nur die letzte Zeile gilt als Konvention (kein automatischer
+   Leser mehr seit dem Abbau der `plan-buchung.yml`-Auto-Buchung 20.9.2026).
