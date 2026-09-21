@@ -81,7 +81,7 @@ Gegenprüfung.
       Dokumentdatum, nicht das BBl-Erscheinungsdatum (Beleg 02.008: 2002-01-09 vs.
       Fedlex 2002-02-26); `schlussabstimmungen: []` heisst „keine Einzelstimmen-Daten"
       (vor ~2007), nicht „keine Schlussabstimmung".
-- [ ] Nach dem Fix: PR #939 (Curia-Monatslauf 2026-09-20) schliessen, Monatslauf neu
+- [x] Nach dem Fix: PR #939 (Curia-Monatslauf 2026-09-20) schliessen, Monatslauf neu
       fahren (nächster planmässiger Termin 1.10.2026).
 
 **FAHRPLAN-OFFENE-BEFUNDE.md geprüft, nicht geändert:** die Zeile „Gegenprüfung
@@ -129,3 +129,5 @@ statt übernommen (§7), Belege in
 **Nachbarn, die derselbe Mechanismus trifft** — eigene Posten, NICHT in diesem PR:
 Kommissions-Vorberatungen (`Preconsultation`) verlieren über die Shard-Geschäfte
 2093 → 790 Zeilen (62 %), Rats-Beschlüsse (`Resolution`) 3581 → 3577.
+
+**Erledigt 2026-09-21:** PR #960 (c967009b9, 21.9.2026): Schlüssel um ReferenceText UND vorlage erweitert, Tor gegen rohe amtliche Zeilenzahl, Vollabgleich 1923 → 2059 Publikationen, 0 Verluste; PR #939 von der koordinierenden Session geschlossen (21.9.2026). Der Monatslauf 1.10.2026 läuft als Routine — die Daten sind bereits vollständig auf main; offenes Restrisiko im Posten zum ungetesteten Retry.
