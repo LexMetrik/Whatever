@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 2
 // ═══ W2·24 R13B · DIE REITERLEISTE SPRINGT NICHT (Nachzug §8 Nr. 8) ═════════
 //
 // ANLASS: zwei unabhängige Messungen am selben Defekt.

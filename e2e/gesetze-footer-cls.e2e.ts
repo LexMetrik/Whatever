@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 7
 // Footer-CLS beim Such-Einschwung der Übersicht /gesetze (W2·5d, David 25.7.):
 // Beim Tippen in den lokalen Browse-Filter swappt der Ebenen-Inhalt gegen die
 // Trefferregion — vorher zog das den FOOTER in den Viewport (input-adjazenter

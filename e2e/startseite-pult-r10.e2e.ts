@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 3
 // ─── W2·24-DESIGN-IDENTITAET R10 · Die Startseite als Pult ──────────────────
 //
 // NEUER WÄCHTER (§6.3-Deklaration: neue Prüfung zu neuem Verhalten). Geprüft

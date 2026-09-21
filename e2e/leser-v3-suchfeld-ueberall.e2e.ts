@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 7
 // ─── Ä19 (LESER-V3 H2b) · JE PANE EIN ZUGREIFBARES SUCHFELD ──────────────────
 //
 // DER GEWICHTIGSTE BEFUND des Ästhetik-Reviews H1, gemessen 17.8.2026 im Split

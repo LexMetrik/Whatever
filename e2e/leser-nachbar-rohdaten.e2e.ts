@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 7
 // ═══ W2·5m · NACHBAR-ARTIKEL-PFEILE UND ROHDATEN-LINK IM BROWSER ════════════
 //
 // Was die Vitest-Sonden NICHT sagen können und diese Spec darum misst:

@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 6
 // ═══ DIE V3-KOPFZEILE: EINE LEISTE, BÜNDIG ══════════════════════════════════
 //
 // ZUSAMMENGELEGT 31.8.2026 (Ent-Regulierung Runde 2 / Batch A, QS-EFFIZIENZ) aus

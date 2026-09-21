@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 8
 // Browser-Smoke der Norm-Chip-Vorschau (W2·10-UI-NAV · V2 Hover / V4 interner
 // href). Was hier steht, kann die node-Suite NICHT sehen: die Zeiger-Kette aus
 // echtem Hover, portaliertem Kasten und Klick-Fänger — genau die Schicht, in

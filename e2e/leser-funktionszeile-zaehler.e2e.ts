@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 6
 // ── W2·26-FUNKTIONSZEILE-ZAEHLER · DIE ZEILE ZÄHLT OHNE EIGENEN FETCH ───────
 //
 // Diese Datei ERSETZT `e2e/leser-bezuege-zaehler.e2e.ts` (W2·24-R6c). Deren

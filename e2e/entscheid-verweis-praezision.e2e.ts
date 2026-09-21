@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 3
 // Browser-Beweis der «Verweis-Präzision» am Referenzfall BGE 151 III 377:
 //  · Teil 1: i.V.m.-Ketten-Glied «Art. 679» ist verlinkt (nicht nur «Art. 684 ZGB»).
 //  · Teil 2a: Deep-Link #e-2-4 scrollt nach on-demand-Laden zur Erwägung.

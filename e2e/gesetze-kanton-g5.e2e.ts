@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 1
 // Gesetzes-UX G5 (§4.3) — Kantons-Seite entrümpelt: Kontext-Zeile, Karte default,
 // Sortierung (Alphabet/Erlass-Zahl/Region), Roh-Code→Klartext, Mobil-Vollnamen.
 // Reine Darstellung (§3); läuft gegen `vite preview` (dist).

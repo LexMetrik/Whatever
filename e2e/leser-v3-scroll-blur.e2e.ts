@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 8
 // ─── Scroll-Blur an der Lesespalte (Auftrag David 21.8.2026) ────────────────
 //
 // Zwei dezente Verlaufskanten (CSS-Gradient, `bg-paper` → transparent) am

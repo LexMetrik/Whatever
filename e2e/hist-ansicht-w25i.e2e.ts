@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 5
 import { test, expect, type Page } from '@playwright/test';
 import { F_MARKE, fassungAufklappen, fassungsMarke } from './helpers/fassungsRubrik';
 import AxeBuilder from '@axe-core/playwright';

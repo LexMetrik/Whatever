@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 7
 // ─── W2·10-UI-NAV-Z1 · ICS-Ausleitung des Frist-Ergebnisses ────────────────
 //
 // Ist-Aufnahme vor dem Bau (Vintage-Regel §0.1): der geteilte Baustein

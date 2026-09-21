@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 5
 // E6a M1 · Content-Release-DoD (§7c Playwright-Beweis): eine ESTV-MWST-DB-Material-Karte rendert
 // den SICHTBAREN amtlichen Live-Link (stabile Kurz-URL des MWST-Portals); die Materialien-Übersicht
 // listet die neuen MWST-Infos/Branchen-Infos und bleibt bei 390 px ohne horizontalen Overflow (§15).

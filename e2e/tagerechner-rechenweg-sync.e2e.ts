@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 7
 // Live-Brücke des Fristenrechners (Auftrag David 1.9.2026: «der Rechenweg
 // aktualisiert sich nicht automatisch»): Eingaben im einfachen Rechner OBEN
 // fliessen in das Voll-Formular UNTEN — dessen Rechenweg rechnet damit

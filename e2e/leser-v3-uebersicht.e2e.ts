@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 8
 // ═══ Ä70–Ä74 · DIE ÜBERSICHTSBOX IM BROWSER (David 17.8.2026) ════════════════
 //
 // «Das Übersichtfeld ist sehr unästhetisch. Insbesondere wenn es aufgeklappt

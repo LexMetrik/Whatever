@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 5
 // ═══ W2·24 · D35-F2 — DER KOPF ZÄHLT NICHT MEHR, DAS MENÜ WÄHLT AB ══════════
 //
 // ENTSCHEID David 7.9.2026: Variante A des D35-Vorschlags, mit dem Nachtrag

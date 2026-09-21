@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 6
 // FN-5/M14 (W2·5d, FAHRPLAN-NORMTEXT-DARSTELLUNG §M14): wortgenaue Fussnoten-
 // Marker. Der Marker rendert an der amtlichen Wortstelle IM Satz (Sidecar-`pos`
 // aus fussnoten-offsets.ts), nicht mehr pauschal am Absatz-/Item-Ende.

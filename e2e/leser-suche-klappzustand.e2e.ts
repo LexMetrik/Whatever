@@ -1,5 +1,5 @@
 import { LESER_SUCHFELD_NAME } from './helpers/leserBeschriftung';
-// @shard-gruppe: 3
+// @shard-gruppe: 4
 // W2·19-S8 · Bug-Check §9 — Suche × Klapp-Zustand der Lesespalte (B3 + B4).
 //
 // ─── WAS HIER SCHIEFGING ─────────────────────────────────────────────────────

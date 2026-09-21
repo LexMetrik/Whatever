@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 7
 // IA-7 · Sidebar-Kantonsliste-Badges (FAHRPLAN-GESETZES-UX §11.5-IA-7, W2·5d):
 // Erlass-Zahl an den 26 Sidebar-Kantonslinks — Zahl aus dem build-time
 // Zähler-SSoT (kantonErlassZahlen, kein Client-Fetch §15.3), Zustands-Wort aus

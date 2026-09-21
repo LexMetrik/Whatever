@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 8
 // ═══ W2·24 · D35-F3 — «ÄNDERUNGEN ANZEIGEN ALS» IST EINE WAHL ═══════════════
 //
 // DAVIDS BEFUND (7.9.2026, am Ansicht-Menü des Lesers): «es soll entweder

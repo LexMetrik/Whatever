@@ -12,8 +12,9 @@
 # 11.8/15.5/21.0 min statt je ~7). Jetzt:
 #   1) `bau` baut dist EINMAL und lädt es als Artefakt hoch — mehr nicht.
 #      e2e-Shards und `tore` starten direkt danach PARALLEL;
-#   2) `e2e` fährt 4 dauer-balancierte Gruppen (LPT aus CI-GEMESSENEN
-#      Spec-Dauern, e2e/shard-gruppen.json, je ~7.8–8.6 min Testzeit).
+#   2) `e2e` fährt 8 dauer-balancierte Gruppen (LPT aus CI-GEMESSENEN
+#      Spec-Dauern, e2e/shard-gruppen.json; Zahl seit 21.9.2026 wieder 8,
+#      Packung dafür noch UNGEEICHT — s. NACHTRAG bei M3 unten, Posten LPT).
 #      Der Union-Wächter (`check:e2e-shards`, auch in `check:seriell`) beweist
 #      vor den Shards: Gruppen == `playwright --list` — kein Test doppelt,
 #      keiner verloren. Reine Verteilung, kein Test/Timeout/Umfang (§6.3).
@@ -108,7 +109,7 @@
 # Diff AUSSCHLIESSLICH Flächen an, die die ausgelieferte App nachweislich
 # nicht berühren (`**.md`, `scripts/plan/**`, `scripts/cowork/**`, `.claude/**`,
 # `docs/**`, `bibliothek/**`, `messwerte/**`, `archiv/**`), fahren Bau + alle
-# Node-Tore weiterhin VOLL — nur die 4 Browser-Shards werden übersprungen,
+# Node-Tore weiterhin VOLL — nur die 8 Browser-Shards werden übersprungen,
 # mit demselben Skip-Muster wie die bestehende `doku`-Klasse (Required-Check-
 # Semantik bleibt identisch). `Merge-Schutz` läuft für JEDE Klasse unverändert
 # echt. KONSERVATIV: jede weitere Datei (auch package.json, e2e/**, scripts/**
@@ -135,6 +136,22 @@
 #       + 0.37 min Aufrundung an, unabhängig von der Testmenge; 8 Shards
 #       kosteten 46.7 abgerechnete Minuten für 33.3 min echte Testzeit.
 #       Identische Spec-Menge, der Union-Wächter beweist das vor jedem Lauf.
+#       NACHTRAG 21.9.2026 (§0 Ziff. 2b — die Messung von 8.9.2026 darüber
+#       bleibt unverändert stehen, sie war für IHREN Stand richtig): M3 ist
+#       ZURÜCKGENOMMEN. Entscheid David 21.9.2026 («versuch das zu kürzen»,
+#       präzisiert auf Rückfrage «Zurück auf 8 Pakete»): das Repo ist
+#       öffentlich, `GET …/actions/workflows/ci.yml/timing` meldet
+#       `{"billable":{}}` — abgerechnete Minuten kosten derzeit nichts
+#       (bibliothek/betrieb/ci-minuten-sparplan-2026-09-08.md:163). Die
+#       Halbierung sparte Minuten, kostete aber WANDUHR (Preis war im
+#       Ursprungscommit selbst beziffert: «Wanduhr je PR ~5.5 → ~9.6 min»)
+#       — und Wanduhr ist jetzt das Ziel, nicht mehr Minuten. Rückbau:
+#       Job-Matrix `gruppe: [1..8]`, `e2e/shard-gruppen.json` neu generiert
+#       (`npm run gen:e2e-shards`), die `@shard-gruppe`-Kopfzeilen der
+#       betroffenen Specs auf ihren historischen VOR-M3-Wert zurückgesetzt
+#       (git-Diff des Ursprungscommits, nicht neu gepackt — 11 seither neue
+#       Specs zähl-balanciert zugeteilt, NICHT dauer-geeicht: offener Posten
+#       «LPT-Packung der 8 Shards aus CI-Dauern eichen», FAHRPLAN-CI-MINUTEN.md).
 #   M4  Bei art=doku bzw. art=code-fern werden `bau` und die Shard-Jobs GANZ
 #       übersprungen statt für eine echo-Zeile angeworfen (1 min
 #       Mindestabrechnung je Job). Ein per `if:` übersprungener Job erfüllt
@@ -144,15 +161,17 @@
 #
 # EFFEKT MESSEN: `gh run list --event push --workflow CI --limit 20` und je
 # Lauf `gh run view <id>` — auf main dürfen nur noch `diff`, `bau`, `perf`
-# und `deploy` Zeit brennen; `gh api repos/{repo}/actions/runs/<id>/jobs`
-# zeigt die abgerechneten Dauern.
+# und `deploy` Zeit brennen (Stand 8.9.2026; seit dem M1-Nachtrag 21.9.2026
+# brennen unter der Diät nur noch `diff`, `e2e-ergebnis` und `deploy` — `bau`
+# und `perf` sind dort mit ausgesetzt, s. Kommentare an den Jobs);
+# `gh api repos/{repo}/actions/runs/<id>/jobs` zeigt die abgerechneten Dauern.
 #
-# JOB-MATRIX je Auslöser (Soll-Zustand nach M1/M3/M4 + M4-Nachtrag):
-#   pull_request   diff · bau* · tore · e2e(4)* · e2e-ergebnis · merge-schutz
-#   push (Diät)    diff · bau · e2e-ergebnis · perf · deploy
-#   push (o. Diät) diff · bau* · tore · e2e(4)* · e2e-ergebnis · perf · deploy
-#   merge_group    diff · bau* · tore · e2e(4)* · e2e-ergebnis · perf** · merge-schutz
-#   dispatch       diff · bau · tore · e2e(4) · e2e-ergebnis · perf · merge-schutz
+# JOB-MATRIX je Auslöser (Soll-Zustand nach M1/M3/M4 + M4-Nachtrag + 21.9.2026):
+#   pull_request   diff · bau* · tore · e2e(8)* · e2e-ergebnis · merge-schutz
+#   push (Diät)    diff · e2e-ergebnis · deploy
+#   push (o. Diät) diff · bau* · tore · e2e(8)* · e2e-ergebnis · perf · deploy
+#   merge_group    diff · bau* · tore · e2e(8)* · e2e-ergebnis · perf** · merge-schutz
+#   dispatch       diff · bau · tore · e2e(8) · e2e-ergebnis · perf · merge-schutz
 #                  (+ deploy nur bei probe=ohne-token)
 #   (* je nach Diff-Klasse: `bau` entfällt bei doku, `e2e` bei doku/code-fern;
 #      `e2e-ergebnis` läuft IMMER — er ist der Pflicht-Kontext der Browser-Tests)
@@ -165,7 +184,8 @@
 #   «Merge-Schutz (Required-Kontext)»
 #   «Perf-Budget (§15 — nur bei grüner Treue)»
 #   «Browser-Smoke (Ergebnis)»
-# Die vier Shard-Kontexte «Browser-Smoke Shard N/4 (Playwright)» sind seit dem
+# Die acht Shard-Kontexte «Browser-Smoke Shard N/8 (Playwright)» (Zahl seit
+# 21.9.2026 wieder 8, s. M3-NACHTRAG) sind seit dem
 # M4-Nachtrag (8.9.2026) NICHT mehr Pflicht — nur ihr Sammel-Job ist es.
 #
 # ─── M4-NACHTRAG: der Sammel-Job (Befund PR #776/#777, 8.9.2026) ────────────
@@ -175,8 +195,9 @@
 # Für einen per Job-`if:` übersprungenen MATRIX-Job meldet GitHub genau EINEN
 # Check-Run, und zwar mit dem UNEXPANDIERTEN Namen
 #   «Browser-Smoke Shard ${{ matrix.gruppe }}/4 (Playwright)»
-# — die Matrix wird nie expandiert, weil der Job nie startet. Die vier
-# Pflicht-Kontexte «… Shard 1/4 …» bis «… Shard 4/4 …» werden damit NIE
+# — die Matrix wird nie expandiert, weil der Job nie startet. Die (damals vier,
+# seit 21.9.2026 acht) Pflicht-Kontexte «… Shard 1/4 …» bis «… Shard 4/4 …»
+# (Stand 8.9.2026; seit 21.9.2026 «… Shard 1/8 …» bis «… Shard 8/8 …») werden damit NIE
 # gemeldet und stehen für immer auf «expected». Der Beleg aus dem `bau`-Job
 # («Perf-Budget wird übersprungen und mergt trotzdem») gilt also nur für
 # Jobs OHNE `strategy.matrix`; für Matrix-Jobs ist er falsch.
@@ -259,6 +280,7 @@ jobs:
     outputs:
       art: ${{ steps.klassieren.outputs.art }}
       push_diaet: ${{ steps.diaet.outputs.push_diaet }}
+      bau_perf_belegt: ${{ steps.diaet.outputs.bau_perf_belegt }}
     steps:
       - name: PR-Diff klassieren
         id: klassieren
@@ -400,7 +422,7 @@ jobs:
                 grep -vE "$CODE_FERN_RE" -m 20 mg-dateien.txt
               else
                 echo "art=code-fern" >> "$GITHUB_OUTPUT"
-                echo "Nur app-ferne Nicht-Doku-Dateien im Queue-Eintrag (${anzahl} Datei(en)) — Bau + alle Node-Tore laufen VOLL, nur die 4 Browser-Shards werden übersprungen; Perf-Budget meldet 'skipped'."
+                echo "Nur app-ferne Nicht-Doku-Dateien im Queue-Eintrag (${anzahl} Datei(en)) — Bau + alle Node-Tore laufen VOLL, nur die 8 Browser-Shards werden übersprungen; Perf-Budget meldet 'skipped'."
               fi
             else
               echo "art=doku" >> "$GITHUB_OUTPUT"
@@ -475,7 +497,7 @@ jobs:
                 grep -vE "$CODE_FERN_RE" -m 20 push-dateien.txt
               else
                 echo "art=code-fern" >> "$GITHUB_OUTPUT"
-                echo "Nur app-ferne Nicht-Doku-Dateien im Push (${anzahl} Datei(en)) — Bau + alle Node-Tore laufen VOLL, nur die 4 Browser-Shards werden übersprungen (gleiches Skip-Muster wie 'doku')."
+                echo "Nur app-ferne Nicht-Doku-Dateien im Push (${anzahl} Datei(en)) — Bau + alle Node-Tore laufen VOLL, nur die 8 Browser-Shards werden übersprungen (gleiches Skip-Muster wie 'doku')."
               fi
             else
               echo "art=doku" >> "$GITHUB_OUTPUT"
@@ -512,7 +534,7 @@ jobs:
               grep -vE "$CODE_FERN_RE" -m 20 pr-dateien.txt
             else
               echo "art=code-fern" >> "$GITHUB_OUTPUT"
-              echo "Nur app-ferne Nicht-.md-Dateien (${anzahl} Datei(en)) — Bau + alle Node-Tore laufen VOLL, nur die 4 Browser-Shards werden übersprungen."
+              echo "Nur app-ferne Nicht-.md-Dateien (${anzahl} Datei(en)) — Bau + alle Node-Tore laufen VOLL, nur die 8 Browser-Shards werden übersprungen."
             fi
           else
             echo "art=doku" >> "$GITHUB_OUTPUT"
@@ -547,6 +569,10 @@ jobs:
       #      genügt nicht: ein fehlender, offener, übersprungener oder
       #      doppelter Kontext ⇒ `false`.
       #   3. «Perf-Budget …» steht dort auf `success` ODER `skipped`.
+      #   4. ZUSÄTZLICH, nicht diät-entscheidend (Bug-Check B1, 22.9.2026 —
+      #      4 von 39 Pushes): «Bau (dist-Artefakt)» UND «Perf-Budget …» beide
+      #      `completed|success` ⇒ Output `bau_perf_belegt=true`; sonst leer ⇒
+      #      `bau` und `perf` laufen auf push trotz Diät.
       # Jeder Fehlschlag, jede API-Störung, jeder unerwartete Wert ⇒ `false`
       # ⇒ VOLLES Programm. Zu viel zu prüfen kostet Minuten, zu wenig lässt
       # ungeprüften Code ausliefern (Vorfall #579).
@@ -625,6 +651,7 @@ jobs:
             setze false "kein merge_group-Lauf am gepushten SHA ${AFTER} (Direkt-Push, Queue aus, Merge-Knopf) — volles Programm."
           fi
           BELEGT=""
+          BAU_PERF=true
           while IFS='|' read -r ID SHA EV STATUS SCHLUSS; do
             if [ "$SHA" != "$AFTER" ] || [ "$EV" != "merge_group" ]; then
               setze false "Lauf ${ID} passt nicht (sha=${SHA}, event=${EV}) — volles Programm."
@@ -644,11 +671,17 @@ jobs:
                    setze false "Pflicht-Kontext «${pflicht}» in Lauf ${ID}: '${STAND:-fehlt}' — volles Programm." ;;
               esac
             done
+            for zusatz in "Bau (dist-Artefakt)" "Perf-Budget (§15 — nur bei grüner Treue)"; do
+              Z=$(echo "$JOBS" | awk -F'|' -v n="$zusatz" '$3 == n { print $1 "|" $2 }')
+              [ "$Z" = "completed|success" ] || BAU_PERF=false
+            done
             BELEGT="${BELEGT} ${ID}"
           done <<< "$LAEUFE"
           if [ -z "$BELEGT" ]; then
             setze false "kein Lauf ausgewertet — volles Programm."
           fi
+          echo "bau_perf_belegt=${BAU_PERF}" >> "$GITHUB_OUTPUT"
+          echo "Bau/Perf im merge_group-Lauf echt grün gelaufen: ${BAU_PERF}"
           setze true "merge_group-Lauf(e)${BELEGT} an ${AFTER} grün, alle vier Pflicht-Kontexte belegt ⇒ identischer Stand. Tore/e2e laufen auf main nicht erneut."
 
   bau:
@@ -671,9 +704,21 @@ jobs:
     # Runner-Anlauf (Mindestabrechnung 1 min je Job).
     # `!cancelled()`: fällt `diff` aus, ist `art` leer — dann baut dieser Job
     # (Fehlerseite = bauen und prüfen, nicht überspringen).
+    #
+    # PUSH-DIÄT auf `bau` und `perf` (M1-Nachtrag, QS-CI-MINUTEN, 21.9.2026;
+    # Bug-Check-Auflage B1 vom 22.9.2026 eingearbeitet): auf main laufen beide
+    # nicht ein drittes Mal, WENN der merge_group-Lauf am gepushten SHA sie
+    # ECHT grün gefahren hat — Output `bau_perf_belegt` des Schritts «Push-Diät
+    # prüfen» (nur `completed|success`; `push_diaet` allein genügt NICHT: die
+    # Diät akzeptiert Perf-Budget auch als `skipped` und liest `Bau` gar nicht —
+    # gemessen 21.9.2026: in 4 von 39 deployenden Pushes hatte der Queue-Lauf
+    # beide übersprungen). GEPRÜFT (Chesterton): `deploy` lädt das
+    # `dist`-Artefakt NICHT (s. BUILD-PARITÄT dort) — `bau` war dort nur
+    # Korrektheits-Gate; `deploy` nimmt darum `success` ODER `skipped`.
     if: >-
       !cancelled()
       && needs.diff.outputs.art != 'doku'
+      && needs.diff.outputs.bau_perf_belegt != 'true'
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Zurich
@@ -1113,7 +1158,7 @@ jobs:
         run: echo "Kein Code im Diff — Merge-Schutz, check:plan, check:steuerdeckel, check:steuerflaeche und check:bibliothek sind oben ECHT gelaufen; die übrigen Code-Tore sind nicht betroffen."
 
   e2e:
-    name: Browser-Smoke Shard ${{ matrix.gruppe }}/4 (Playwright)
+    name: Browser-Smoke Shard ${{ matrix.gruppe }}/8 (Playwright)
     needs: [diff, bau]
     # ── M4 (QS-CI-MINUTEN, 8.9.2026): Job-`if:` statt Leerlauf-Quittung ──────
     # Bei art=doku ODER art=code-fern liefen die Shard-Jobs bisher nur an, um
@@ -1179,7 +1224,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        gruppe: [1, 2, 3, 4]
+        gruppe: [1, 2, 3, 4, 5, 6, 7, 8]
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v5
@@ -1244,8 +1289,10 @@ jobs:
       # `npm run preview` serviert das heruntergeladene dist/ (kein Rebuild);
       # jeder Job fährt nur die Specs SEINER dauer-gepackten Gruppe seriell
       # (workers:1 bleibt, damit die Contention NICHT in EINEN Runner zurückkehrt)
-      # → e2e-Wand geviertelt UND nach CI-Messwerten balanciert (~7.8–8.6 min).
-      - name: Browser-Smoke (Playwright, e2e/ gegen dist — Gruppe ${{ matrix.gruppe }}/4)
+      # → e2e-Wand auf acht Gruppen verteilt (seit 21.9.2026). Die Dauern im
+      # Block über der Matrix stammen aus der 4-Gruppen-Phase; für 8 Gruppen
+      # ist die Packung noch nicht geeicht (Posten LPT).
+      - name: Browser-Smoke (Playwright, e2e/ gegen dist — Gruppe ${{ matrix.gruppe }}/8)
         run: npm run test:e2e:gruppe -- ${{ matrix.gruppe }}
       # Per-Spec-CI-Dauern sichern (auch bei rotem Shard — gerade dann sind sie
       # interessant). Damit lässt sich `e2e/shard-gruppen.json` künftig gegen
@@ -1326,7 +1373,8 @@ jobs:
   # ── Sammel-Kontext der Browser-Tests (M4-Nachtrag, 8.9.2026) ───────────────
   # WARUM ES DIESEN JOB GIBT: siehe «M4-NACHTRAG» im Kopf. Kurz: ein per `if:`
   # übersprungener MATRIX-Job meldet GitHub gegenüber genau einen Check-Run mit
-  # dem unexpandierten Namen «… Shard ${{ matrix.gruppe }}/4 …»; die vier
+  # dem unexpandierten Namen «… Shard ${{ matrix.gruppe }}/N …» (Beleg damals
+  # mit N=4, seit 21.9.2026 N=8); die
   # Shard-Kontexte, die der Branch-Schutz als Pflicht führte, kamen nie an und
   # jeder Doku-PR hing (PR #776/#777). Dieser Job hat KEINE Matrix, läuft immer
   # und ist ab jetzt der EINZIGE Pflicht-Kontext der Browser-Tests.
@@ -1412,13 +1460,26 @@ jobs:
     # übersprungen ⇒ die Treue ist im merge_group-Lauf am selben SHA bewiesen
     # (bis 19.9.2026: im PR-Lauf). `bau` muss grün sein,
     # sonst fehlt das dist-Artefakt.
+    #
+    # NACHTRAG 21./22.9.2026 (M1-Nachtrag — löst den Satz «perf BLEIBT auf
+    # main» oben ab; er bleibt als Beleg seines Standes stehen): `perf` läuft
+    # auf main nicht erneut, wenn `bau_perf_belegt` = true (Begründung und
+    # Messung am Job `bau`); sonst misst `perf` weiterhin echt.
     if: >-
       !cancelled()
       && github.event_name != 'pull_request'
       && needs.diff.outputs.art == 'code'
+      && needs.diff.outputs.bau_perf_belegt != 'true'
       && needs.bau.result == 'success'
       && (needs.tore.result == 'success' || needs.tore.result == 'skipped')
       && (needs.e2e.result == 'success' || needs.e2e.result == 'skipped')
+    # PRÜFUNG 21.9.2026 (QS-CI-MINUTEN Wanduhr-Auftrag): `e2e` aus `needs`
+    # zu nehmen, damit `perf` parallel zu den Shards statt danach liefe, WURDE
+    # GEPRÜFT UND VERWORFEN — der Grund ist keine Falsch-Rot-Episode, sondern
+    # die §15-Gegenkopplung selbst («Tempo zählt nur, wenn die Treue grün
+    # bleibt», Kommentar oben): ohne `e2e` würde `perf` messen, BEVOR die
+    # Browser-Shards die Korrektheit bewiesen haben — Tempo vor Treue, genau
+    # das Gegenteil von §15. Bleibt an `needs.e2e`.
     needs: [diff, bau, tore, e2e]
     runs-on: ubuntu-latest
     env:
@@ -1509,6 +1570,10 @@ jobs:
   # merge_group-Lauf hat denselben SHA schon grün gefahren; bis 19.9.2026: der
   # PR-Lauf) das begründet.
   #
+  # NACHTRAG 21./22.9.2026 (M1-Nachtrag — der Satz «bau MUSS erfolgreich
+  # sein» oben ist überholt und bleibt als Beleg seines Standes stehen): `bau`
+  # darf `skipped` sein, wenn `bau_perf_belegt` = true — Begründung am Job `bau`.
+  #
   # BUILD-PARITÄT: `vercel pull` holt die Projekt-Einstellungen, `vercel build`
   # fährt `buildCommand` aus vercel.json — dort seit 17.8.2026 explizit
   # `npm run build` (gen:suchindex + tsc -b + vite build + prerender), damit die
@@ -1522,7 +1587,7 @@ jobs:
     if: >-
       !cancelled()
       && needs.diff.result == 'success'
-      && needs.bau.result == 'success'
+      && (needs.bau.result == 'success' || needs.bau.result == 'skipped')
       && (needs.tore.result == 'success' || needs.tore.result == 'skipped')
       && (needs.e2e.result == 'success' || needs.e2e.result == 'skipped')
       && (

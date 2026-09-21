@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 6
 // ─── W2·7-VZUI · Der Reiter «Anwendung»: die dritte und vierte Sache ─────────
 //
 // WAS HIER BEWACHT WIRD. Die V3-Hülle löste das `KontextPanel` mit drei Reitern

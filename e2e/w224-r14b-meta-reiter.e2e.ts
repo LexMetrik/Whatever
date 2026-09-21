@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 2
 // ═══ W2·24 · R14b — META-SEITEN SIND EBENFALLS REITER ═══════════════════════
 //
 // R14 (Entscheid David 7.9.2026) hat die Sammlung «/» zum Reiter gemacht und

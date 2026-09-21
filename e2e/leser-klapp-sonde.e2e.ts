@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 7
 // ═══ D28-REGEL (David 6.9.2026) · DIE KLAPP-SONDE ════════════════════════════
 //
 // WÖRTLICH, im Anschluss an D28 («die suchleiste … will ich oben am gesetz —

@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 7
 // IA-5 (W2·5d · FAHRPLAN-GESETZES-UX §11.4 Ziff. 2) — Rechtsgebiet-Parameter-
 // Kanonisierung: `?ansicht=rechtsgebiet` bleibt auflösbarer Alias (A15: «Tür
 // bleibt zusätzlich erreichbar, NICHT entfernt»), wird aber beim Parse auf den

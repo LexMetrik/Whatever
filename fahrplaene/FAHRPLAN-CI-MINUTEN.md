@@ -27,11 +27,22 @@ wiederholt: die beiden David-Freigabe-Posten **M2** (Dependabot) und **M5** (Pla
 `npm ci`), der Flacker-Stichtag 22.9.2026 samt Nachmessungs-Termin 8.10.2026 und die
 Ziel-/Auflagen-Zeilen des Schrittes.
 
-  - [ ] **M1** main-Push-Lauf auf Bau/Perf/Deploy kürzen (−15'050/Mt,
+  - [x] **M1** main-Push-Lauf auf Bau/Perf/Deploy kürzen (−15'050/Mt,
     Bauschritt + §6.7-Tor: Head ist Squash-Merge eines grünen PR, sonst
-    Volllauf). **Bedingung `strict==true` neu fassen** — `strict` ist seit
-    19.9.2026 AUS (Merge-Queue).
-  - [ ] **M3** e2e-Shards 8 → 4 (−3'800, Bauschritt + Branch-Regel).
+    Volllauf). Bedingung `strict==true` (Posten-Text bis 21.9.2026 — `strict`
+    ist seit 19.9.2026 AUS) ist LÄNGST ersetzt durch den grünen
+    `merge_group`-Lauf am gepushten SHA (`ci.yml`-Kommentar «Push-Diät
+    prüfen»). ✅ 21.9.2026: Diät auf `bau`/`perf` ausgedehnt (QS-CI-MINUTEN
+    Wanduhr-Auftrag, Branch `feat/qs-ci-minuten-wanduhr`) — Diät-Push fährt
+    jetzt nur noch `diff · e2e-ergebnis · deploy`.
+  - [x] **M3** e2e-Shards 8 → 4 (−3'800, Bauschritt + Branch-Regel).
+    Umgesetzt 8.9.2026 (`dfc8cb164`, #773). **Zurückgenommen 21.9.2026**
+    (Entscheid David: «versuch das zu kürzen» / «Zurück auf 8 Pakete» —
+    Wanduhr vor kostenlosen Minuten, Repo öffentlich, `.../timing` meldet
+    `{"billable":{}}`, `bibliothek/betrieb/ci-minuten-sparplan-2026-09-08.md:163`).
+    `@shard-gruppe`-Annotationen auf den historischen Vor-M3-Stand
+    zurückgesetzt, 11 seither neue Specs zähl- statt dauer-balanciert
+    zugeteilt (offener Posten unten).
   - [ ] **M4** Doku-Läufe: 8 Shard-Kontexte → 1 Sammel-Kontext (−1'500,
     Bauschritt + Branch-Regel — **Fallstrick:** Required-Check-Name ändert,
     `check:merge-schutz`-Liste im selben Schritt nachziehen).

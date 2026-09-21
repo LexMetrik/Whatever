@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 6
 // D36 (David 7.9.2026) — «können diese felder wieder unten an die
 // seitenleiste? Einstellungen · Methodik · Über LexMetrik · Kontakt ·
 // Datenschutzerklärung» — präzisiert auf «also einstellungen separat» / «oder

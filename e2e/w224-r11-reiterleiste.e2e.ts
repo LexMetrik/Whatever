@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 2
 // ═══ W2·24 R11 · DIE REITERLEISTE ALS ARBEITSGERÄT (Prüfrunde 6.9.2026) ═════
 //
 // Die Prüfrunde R11 hat 42 Funktionen der Arbeitsleiste AUSGEFÜHRT (nicht

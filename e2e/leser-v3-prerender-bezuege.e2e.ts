@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 6
 // ─── H3 · SEO-Prüfpunkt: das Nachladen erreicht den Prerender nicht ──────────
 //
 // ── §7-BEFUND, ABWEICHEND UMGESETZT UND OFFENGELEGT ─────────────────────────

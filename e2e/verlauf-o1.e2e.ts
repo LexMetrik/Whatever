@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 6
 // Browser-Smoke der Verlauf-Initiative (UI-NAV O1). Prüft die zwei neuen
 // Zugänge auf DERSELBEN localStorage-Verlauf-Quelle (§5):
 //   1. ⌘K-/Fokus-Leerzustand der Kopf-Suche zeigt «Zuletzt geöffnet» (seit D23

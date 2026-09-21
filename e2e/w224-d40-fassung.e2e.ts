@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 5
 // ═══ W2·24 · D40 — DIE FASSUNG STEHT UNTEN AM ARTIKEL ═══════════════════════
 //
 // AUFTRAG David 7.9.2026, wörtlich: «und wieso ist fassung nicht auch unten am

@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 5
 // W2·10-UI-NAV — R3 (zitierfähige Referenz), R5 (Rücksprung-Chip) und R7
 // (Deep-Link-Skeleton). Läuft gegen `vite preview` (dist), wie die übrigen
 // Reader-Specs. A9-DoD am Schluss: Bedienbarkeit (Tastatur/Touch/aria/Tap-Ziele)

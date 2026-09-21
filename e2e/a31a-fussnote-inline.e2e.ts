@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 3
 // A31a (David-Befund 16.7.2026 Ziff. 3): Die SR-Fussnote 667 in ZGB Art. 798a
 // gehört INLINE in den Fliesstext nach «1991» (so rendert Fedlex), nicht an die
 // Artikelebene/Marginalie. fn 666 («Eingefügt durch …») bleibt an der Marginalie.

@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 4
 // Tastatur-Protokoll (FAHRPLAN-DESIGN 3.7) — automatisierter Teil.
 // Prüft das DatumsFeld-Kalender-Popover (grösster A11y-Einzelposten, auf
 // jeder Rechner-Seite) gegen das APG-Grid-/Dialog-Muster und sichert die

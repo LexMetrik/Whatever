@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 6
 // ═══ W2·24 · LESER-NACHZÜGE DER GESAMTPRÜFUNG (G11 · G14 · D4) ══════════════
 //
 // Drei Befunde der Gesamtprüfung vom 7.9.2026, drei Wächter. Alle drei sind am

@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 4
 // ─── §7b-Deckungslücke geschlossen (21.8.2026, Kontaktbogen H4 §7b Pos. 3) ───
 //
 // Deckt `normrevision-badge.e2e.ts` (a)/(b) — der ↻-Marker («Norm seit dem

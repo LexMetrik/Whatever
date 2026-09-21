@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 2
 // ── W2·24-D34 · DIE BEZÜGE-ZEILE STEHT AM ARTIKELENDE ───────────────────────
 //
 // AUFTRAG David 7.9.2026, wörtlich: «das mit den bezügen soll unten an den

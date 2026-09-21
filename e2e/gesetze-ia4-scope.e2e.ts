@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 4
 // IA-4 · Scope-Chip lokale Suche (FAHRPLAN-GESETZES-UX §11.5, O5-Rest):
 // Jedes lokale Browse-Filterfeld trägt ein ehrliches Scope-Label (§8), und wo
 // der Default-Scope die aktive Ebene ist, weitet der Chip «auf alle Ebenen

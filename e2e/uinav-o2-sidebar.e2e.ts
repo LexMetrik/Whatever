@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 8
 // O2 · Sidebar-Konsistenz (W2·10-UI-NAV-O). Drei Versprechen, die nur im echten
 // Browser beweisbar sind (SSR führt keine Effekte aus, kennt keine Klicks):
 //   1. Das Label einer Rechner-/Vorlagen-Gruppe NAVIGIERT (und landet auf dem

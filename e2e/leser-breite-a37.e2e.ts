@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 8
 import { test, expect, type Page } from '@playwright/test';
 
 // E6/A37 (David 16.7.2026, §10.10) — «Ingesamt gib dem Gesetz mehr platz. Zitat
