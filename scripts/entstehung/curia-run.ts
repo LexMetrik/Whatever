@@ -43,20 +43,62 @@ async function drossel(): Promise<void> {
   if (ziel > jetzt) await new Promise((r) => setTimeout(r, ziel - jetzt));
 }
 
+// ── Wiederholversuch: NUR bei Zufallsstörungen des Netzes (§17-Wurzelfix) ─────
+// BELEGTER ANLASS, 21.9.2026: der Vollabgleich starb bei 250 von 403 Geschäften an einem
+// einzelnen `ConnectTimeoutError` (`UND_ERR_CONNECT_TIMEOUT`, 10 s) und warf ~20 Minuten
+// Arbeit weg. Am 1.10.2026 läuft der Monatslauf, der die fehlenden Publikationen
+// nachschreiben soll — er würde heute an derselben Zufallsstörung scheitern.
+// GRENZE (§6.7): wiederholt wird NUR, was von selbst vorübergehen kann — ein
+// Verbindungs-/Netzfehler oder ein 5xx. Ein 4xx ist unsere Anfrage (falscher Filter,
+// falsche Entität) und wird durch Warten nicht richtig; eine fachlich unerwartete
+// Antwortform (Content-Type, `__next`, weder `d[]` noch `d.results[]`) muss sofort laut
+// scheitern, sonst verdeckte der Retry genau den Fehlertyp, den der Wächter finden soll.
+const VERSUCHE = 3;
+const BACKOFF_MS = [1000, 4000];   // exponentiell, gedeckelt — nie länger als der Lauf dauert
+
 /** Eine OData-Abfrage. `$select` nennt IMMER die Felder — nie `SELECT *` (§11.8). */
 async function odata(entitaet: string, filter: string, select?: string): Promise<OdataZeile[]> {
   const u = new URL(`${CURIA_BASIS}/${entitaet}`);
   u.searchParams.set('$filter', filter);
   if (select) u.searchParams.set('$select', select);
   u.searchParams.set('$format', 'json');
-  await drossel();
-  const res = await fetch(u, { headers: { Accept: 'application/json' } });
-  if (!res.ok) throw new Error(`Curia antwortet ${res.status} für ${entitaet} (${filter})`);
-  const typ = res.headers.get('content-type');
-  if (typ && !/json/i.test(typ)) throw new Error(`Curia antwortet Content-Type «${typ}» statt JSON für ${entitaet}`);
-  // Die URL mitgeben: der Paging-Wächter in `odataZeilen` soll sagen KÖNNEN, welche
-  // Abfrage abgeschnitten wurde — eine Fehlermeldung ohne Fundstelle kostet eine Stunde.
-  return odataZeilen(await res.json(), u.toString());
+  for (let versuch = 1; ; versuch += 1) {
+    // Jeder Versuch ist eine eigene Anfrage und geht darum durch denselben globalen Takt.
+    await drossel();
+    let res: Response;
+    try {
+      res = await fetch(u, { headers: { Accept: 'application/json' } });
+    } catch (e) {
+      // Verbindungsfehler (Timeout, DNS, Abbruch) — wiederholbar.
+      if (versuch >= VERSUCHE) {
+        throw new Error(
+          `Curia nicht erreichbar für ${entitaet} (${filter}) — ${VERSUCHE} Versuche: ${String(e)}`,
+          { cause: e },
+        );
+      }
+      await wiederhole(versuch, entitaet, filter, String(e));
+      continue;
+    }
+    if (res.status >= 500) {
+      // Serverseitig und vorübergehend — wiederholbar.
+      if (versuch >= VERSUCHE) throw new Error(`Curia antwortet ${res.status} für ${entitaet} (${filter}) — auch nach ${VERSUCHE} Versuchen`);
+      await wiederhole(versuch, entitaet, filter, `HTTP ${res.status}`);
+      continue;
+    }
+    if (!res.ok) throw new Error(`Curia antwortet ${res.status} für ${entitaet} (${filter})`);
+    const typ = res.headers.get('content-type');
+    if (typ && !/json/i.test(typ)) throw new Error(`Curia antwortet Content-Type «${typ}» statt JSON für ${entitaet}`);
+    // Die URL mitgeben: der Paging-Wächter in `odataZeilen` soll sagen KÖNNEN, welche
+    // Abfrage abgeschnitten wurde — eine Fehlermeldung ohne Fundstelle kostet eine Stunde.
+    return odataZeilen(await res.json(), u.toString());
+  }
+}
+
+/** Log JEDEN Wiederholversuch: ein stiller Dauer-Retry sähe sonst wie ein gesunder Lauf aus. */
+async function wiederhole(versuch: number, entitaet: string, filter: string, grund: string): Promise<void> {
+  const ms = BACKOFF_MS[Math.min(versuch - 1, BACKOFF_MS.length - 1)];
+  console.log(`curia: Versuch ${versuch}/${VERSUCHE} für ${entitaet} (${filter}) gescheitert — ${grund}; neuer Versuch in ${ms} ms`);
+  await new Promise((r) => setTimeout(r, ms));
 }
 
 const nummern = [...new Set(BOTSCHAFTEN.map((b) => b.nummer).filter((n): n is string => !!n))]
