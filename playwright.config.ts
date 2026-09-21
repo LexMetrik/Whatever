@@ -52,6 +52,7 @@ const SCHWERE_SPECS = ['**/a11y.e2e.ts']
 const PX_SPECS = ['**/px-*.e2e.ts']
 const PX_AN = process.env.PX === '1'
 
+if (process.env.CI) console.log(`[mess] cpus=${require('node:os').cpus().length}`);
 export default defineConfig({
   testDir: './e2e',
   testMatch: '**/*.e2e.ts',
@@ -62,7 +63,8 @@ export default defineConfig({
   // Klicks blockierten bis zum 30-s-Test-Timeout (lokal selbst bei 8× CPU-Drossel
   // < 1 s, 0 Konsolenfehler — also Contention, kein Code-Defekt). Auf CI darum
   // 1 Worker (sequenziell, stabil); lokal volle Parallelität.
-  workers: process.env.CI ? 1 : undefined,
+  // MESSUNG 21.9.2026 (nicht landen): 2 Worker auf CI — Kernzahl steht im Job-Log.
+  workers: process.env.CI ? 2 : undefined,
   retries: process.env.CI ? 2 : 0,
   // CI zusätzlich als JSON: der `github`-Reporter druckt KEINE Per-Test-Dauern
   // (das tut nur das lokale `list`-Format), und `reportSlowTests` flaggt erst ab
