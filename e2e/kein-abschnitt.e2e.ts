@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 8
 // ─── R8 «Nichts abgeschnitten» (Prüfbefund 6.9.2026, w224-pruef-r2-funde.md) ──
 //
 // MESSWERKZEUG, kein Fix. Prüft mechanisch über Routen × Viewports × Thema,

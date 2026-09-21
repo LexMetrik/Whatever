@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 1
 // W2·5d U-POSITION (A2 + A16 + A17) — Beweispunkte P4 (FAHRPLAN-GESETZES-UX §10.2).
 // A2 Scrollbalken-Proportionalität · A16 Zurück landet exakt am Ausgangsort
 // (anker-basiert) · A17 Split-View öffnet an der Fundstelle. Läuft gegen `vite

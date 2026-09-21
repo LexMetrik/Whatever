@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 4
 // G6 (W2·5d) — Rechtsgebiets-Sicht als «Gerüst»: die zweite Gliederung quer zum
 // Bund-Korpus (Querschnitts-Themen + Auto-Grundgerüst). Prüft Rendern, Deep-Link,
 // tolerante Abdeckungs-Angabe, Verzahnung, Rückweg — ohne Console-Fehler/Overflow.

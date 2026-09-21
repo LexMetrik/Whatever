@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 3
 // ═══ W2·26 · DIE FUNKTIONSZEILE AM ARTIKELENDE, ÜBERARBEITET ════════════════
 //
 // MANDAT David 11.9.2026, wörtlich: «überarbeite insgesamt die Funktionszeile am

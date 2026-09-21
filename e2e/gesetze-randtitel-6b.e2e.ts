@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 8
 // Regressionsschutz für 6b (Auftrag David 26.6.2026): die Randtitel-/Buchstaben-
 // Ebenen («A. … → II. … → 2. …») sind — analog Fedlex — eigene, einklappbare
 // Gliederungs-Knoten (nicht mehr nur Artikel-Marginalien). Geprüft am echten

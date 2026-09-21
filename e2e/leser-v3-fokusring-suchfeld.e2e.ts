@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 7
 // ─── Ä67 (David-Befund 17.8.2026 abends) · DER FOKUSRING WIRD NICHT BESCHNITTEN ─
 //
 // BEFUND, wörtlich: «um das suchfeld erscheint bei klick darin ein braun

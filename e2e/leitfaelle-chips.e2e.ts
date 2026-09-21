@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 5
 // Browser-Smoke der Rechtsprechungs-Auflistung am Artikel (FAHRPLAN-DATENHALTUNG
 // §11.2, Weiche B). Läuft gegen `vite preview` (dist).
 //

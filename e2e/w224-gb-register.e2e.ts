@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 2
 // ═══ W2·24 GB · «NICHT TRIST»: DIE REGISTERFARBE STEHT IN DER SEITE ═════════
 //
 // BEFUND G1 der Gesamtprüfung «Ästhetik + Kopf-/Ortsprüfung» (6./7.9.2026,

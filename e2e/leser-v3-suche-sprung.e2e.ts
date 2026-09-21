@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 1
 // FAHRPLAN-LESER-V3, Kap. 4b Pos. 4 (FL-5) — EIN Feld sucht UND springt.
 // `SuchSprungFeld.tsx` löst die Eingabe gegen die Artikel-Token auf
 // (`loeseArtikelEingabe`, suchTreffer.ts): eine auflösbare Zahl SPRINGT beim

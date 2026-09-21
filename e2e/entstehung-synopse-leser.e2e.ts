@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 1
 // ═══ W2·6c-SYNOPSE-LESER · DER WORTLAUT VON DAMALS ══════════════════════════
 //
 // Die Fassungs-Rubrik sagte seit E3, WARUM sich ein Artikel geändert hat. Sie

@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 3
 import { test, expect, type Page } from '@playwright/test'
 
 // ═══ §6.3-DEKLARATION (D33, David 7.9.2026) · DIE DRITTE SPUR IST WEG ═══════

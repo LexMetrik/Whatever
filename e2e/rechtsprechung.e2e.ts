@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 3
 // Browser-Smoke der Rubrik «Rechtsprechung»: Übersicht rendert + lädt das
 // Manifest, Klick führt in den Reader (gegliederter Entscheid), keine Console-/
 // Page-Errors, kein Mobil-Overflow. Läuft gegen `vite preview` (dist).

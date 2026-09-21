@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 6
 // ═══ W2·24 · D35-F4 — DIE EINE MENÜ-ANATOMIE, AM GEBAUTEN STAND ════════════
 //
 // BEFUND (gemessen 7.9.2026 am Vorstand `091e38ae5`, Ansicht-Menü des Lesers,

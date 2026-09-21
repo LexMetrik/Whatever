@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 1
 // ─── D5 (W2·24) · «Prüfen & Download» prüft — an einer echten Vorlage ────────
 //
 // Der SSR-Wächter `src/tests/wizard-pruefschritt-d5.test.tsx` hält den Rahmen

@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 3
 // Browser-Smoke des Norm-Sprungs in der NORMALEN Suchleiste (A5 · U-SUCHE,
 // David 5.7.2026). Der Kontrakt ist die Sprung-FUNKTION, nicht mehr eine eigene
 // ⌘K-Palette (die ist entfallen): erkennt die HeaderSuche eine Norm («OR 257d»,

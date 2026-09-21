@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 2
 // ═══ L6 · JEDES FENSTER NENNT SEIN DOKUMENT — GENAU EINMAL ══════════════════
 //
 // Befund L6 (Ästhetik-Review 17.8.2026, offen bis zum Entscheid David 7.9.2026

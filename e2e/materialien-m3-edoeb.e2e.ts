@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 3
 // E6a M3 · Content-Release-DoD (§7c Playwright-Beweis): eine EDÖB-DB-Material-Karte rendert
 // den SICHTBAREN amtlichen Live-Link (DAM-PDF-URL); die Materialien-Übersicht listet die neuen
 // EDÖB-Einträge und bleibt bei 390 px ohne horizontalen Overflow (§15 gefühlte Last / Lesbarkeit).

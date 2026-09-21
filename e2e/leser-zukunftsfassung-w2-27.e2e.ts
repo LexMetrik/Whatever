@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 8
 /**
  * W2·27 (BUND-FERTIG §4 b) — der Zukunftsfassungs-Hinweis im Leserkopf.
  *

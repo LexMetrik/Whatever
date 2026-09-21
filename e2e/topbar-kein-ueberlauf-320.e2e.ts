@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 6
 // ═══ C2 (Design-Review 29.8.2026) · DER APP-STREIFEN LÄUFT NICHT QUER @320 ═══
 //
 // BEFUND, gemessen 29.8.2026 gegen `vite preview` (Chromium, 320×800):

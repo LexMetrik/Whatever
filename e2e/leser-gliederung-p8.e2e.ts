@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 4
 // ── P8 · DIE GLIEDERUNG IST ADRESSIERBAR ────────────────────────────────────
 //
 // BEFUND (Prüfer R6, 6.9.2026): der Gliederungsbaum des Gesetzeslesers bestand

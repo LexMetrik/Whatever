@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 7
 // W2·10-UI-NAV/R1 + R2 — «Finden im Gesetz», NEUGESCHRIEBEN für
 // W2·19-GLIEDERUNG/S8 (Bau-Spec fahrplaene/FAHRPLAN-W2-19-SEITENLEISTE.md §4,
 // §10; Freigabe David 8.8.2026: «e2e-Anpassungen in deklarierten Commits

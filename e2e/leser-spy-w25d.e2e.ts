@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 8
 // W2·5d-SPY (V3/H6) — Scroll-Spy-Härtung: rootMargin ↔ Bezugslinie.
 //
 // Herkunft: `fahrplaene/FAHRPLAN-GESETZES-UX.md` §10.10, Ausführungsvermerk

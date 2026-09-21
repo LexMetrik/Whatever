@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 7
 // ═══ D32 / D33 / N1 / N4 (David 6.9.2026, Finder-Befund 7.9.2026) ════════════
 //
 // Vier gemessene Mängel derselben klebenden Kopf-Zone des Gesetzeslesers. Die

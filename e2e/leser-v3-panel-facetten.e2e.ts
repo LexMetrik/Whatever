@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 4
 // ─── H3 · Drei Reiter, Facetten im Panel, Sachgebiet-Platzhalter ─────────────
 //
 // WAS HIER BEWIESEN WIRD (Kap. 4d):

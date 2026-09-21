@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 4
 // ─── §7b-Deckungslücke geschlossen (21.8.2026, Kontaktbogen H4 §7b Pos. 4) ───
 //
 // Deckt `verzahnung.e2e.ts` «Fundstelle A (Gesetz-Chip)» — REINE Deckungs-

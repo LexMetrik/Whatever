@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 1
 // FAHRPLAN-LESER-V3, Etappe H2 · Position 14 (Kap. 4h) — «Esc leert das Feld,
 // schliesst die Trefferliste, SPRINGT ABER NICHT: die Scrollposition bleibt
 // exakt stehen» («recover from mistakes»).

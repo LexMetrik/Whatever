@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 7
 // W2·19-GLIEDERUNG — «Der Sprung landet im Abschnitt DAVOR» (Befund David
 // 9.8.2026, live an /gesetze/bund/OR: Klick auf «Dritte Abteilung: Die
 // Handelsgesellschaften und die Genossenschaft» landete eine Stufe zu früh).

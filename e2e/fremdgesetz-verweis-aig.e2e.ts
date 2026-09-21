@@ -1,4 +1,4 @@
-// @shard-gruppe: 4
+// @shard-gruppe: 6
 // Browser-Beweis des Fremdgesetz-Verweis-Bugs (Live-Report David 4.7.2026):
 // AIG Art. 5 Abs. 1 lit. d — «… nach Artikel 66a oder 66abis des Strafgesetzbuchs
 // (StGB) oder Artikel 49a oder 49abis des Militärstrafgesetzes vom 13. Juni 1927

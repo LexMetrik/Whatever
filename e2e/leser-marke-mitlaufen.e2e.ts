@@ -1,4 +1,4 @@
-// @shard-gruppe: 3
+// @shard-gruppe: 6
 // W2·5m-LESER-V3 — «Mitlaufen beim Lesen»: die Gliederung zeigt JEDERZEIT genau
 // einen Standort, und er folgt dem Scrollen.
 //

@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 4
 // W-1 (Architektur-Prüfer, PR #539) — die Trefferliste darf das Suchfeld nicht
 // zudecken.
 //
