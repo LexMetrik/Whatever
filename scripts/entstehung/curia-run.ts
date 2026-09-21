@@ -9,11 +9,12 @@ import { writeFileSync, mkdirSync, readdirSync, rmSync, existsSync } from 'node:
 import { join } from 'node:path';
 import { BOTSCHAFTEN } from '../../src/lib/materialien/botschaften.generated.ts';
 import {
-  CURIA_BASIS, CURIA_QUELLENANGABE, AUSZAEHLUNG_HINWEIS, odataZeilen, odataDatum,
+  CURIA_BASIS, CURIA_QUELLENANGABE, AUSZAEHLUNG_HINWEIS, odataDatum,
   aggregiereStimmen, ratAusGroesse, baueKommissionen, baueBeschluesse, bauePublikationen,
   schlussabstimmungsVotes, serialisiereShard, shaShard, curiaUrl,
-  type CuriaShard, type CuriaSchlussabstimmung, type OdataZeile,
+  type CuriaShard, type CuriaSchlussabstimmung,
 } from './curia.ts';
+import { odata, TAKT_MS } from './curia-abruf.ts';
 import {
   CURIA_DIR, CURIA_ZUSTAND_PFAD, leseCuriaZustand, serialisiereCuriaZustand, type CuriaZustand,
 } from './curia-zustand.ts';
@@ -24,82 +25,10 @@ if (!/^\d{4}-\d{2}-\d{2}$/.test(heute)) { console.error('--datum=YYYY-MM-DD nöt
 const nurArg = process.argv.find((a) => a.startsWith('--nur='));
 const nur = nurArg ? new Set(nurArg.slice('--nur='.length).split(',').map((s) => s.trim())) : null;
 
-// ── Drosselung: GLOBAL <= 2 Anfragen/s, unabhängig von der Nebenläufigkeit ─────
-// Gemessen 11.9.2026: der Endpunkt antwortet mit ~3,5 s Latenz je Anfrage. Streng
-// seriell (eine Anfrage, dann 500 ms Pause) dauert der Vollabgleich darum nicht die
-// geplanten ~27 min, sondern ~3,5 h — die Pause war nie der Engpass, die Latenz ist es.
-// Lösung: mehrere Geschäfte gleichzeitig, aber EIN gemeinsamer Takt vor jedem Absenden.
-// Damit bleibt die Rate bei <= 2 Anfragen/s (R4 §5: bei dieser Rate keine 429/503), und
-// die Wartezeit läuft parallel statt hintereinander.
-// `Date.now` steht hier NUR im Takt, nie in den Daten (§2): das Abrufdatum kommt
-// unverändert aus --datum, und kein Feld des Shards hängt an der Uhr des Laufs.
-const TAKT_MS = 500;
+// Takt (global <= 2 Anfragen/s), Wiederholversuch und OData-Abfrage liegen in
+// `curia-abruf.ts` (importierbar, getestet in src/tests/entstehung-curia-abruf.test.ts).
+// Die Aufruf-STELLEN mit ihren `$select`-Literalen bleiben HIER (§11.8, Quelltext-Test).
 const NEBENLAEUFIG = 8;
-let naechsterStart = 0;
-async function drossel(): Promise<void> {
-  const jetzt = Date.now();
-  const ziel = Math.max(jetzt, naechsterStart + TAKT_MS);
-  naechsterStart = ziel;
-  if (ziel > jetzt) await new Promise((r) => setTimeout(r, ziel - jetzt));
-}
-
-// ── Wiederholversuch: NUR bei Zufallsstörungen des Netzes (§17-Wurzelfix) ─────
-// BELEGTER ANLASS, 21.9.2026: der Vollabgleich starb bei 250 von 403 Geschäften an einem
-// einzelnen `ConnectTimeoutError` (`UND_ERR_CONNECT_TIMEOUT`, 10 s) und warf ~20 Minuten
-// Arbeit weg. Am 1.10.2026 läuft der Monatslauf, der die fehlenden Publikationen
-// nachschreiben soll — er würde heute an derselben Zufallsstörung scheitern.
-// GRENZE (§6.7): wiederholt wird NUR, was von selbst vorübergehen kann — ein
-// Verbindungs-/Netzfehler oder ein 5xx. Ein 4xx ist unsere Anfrage (falscher Filter,
-// falsche Entität) und wird durch Warten nicht richtig; eine fachlich unerwartete
-// Antwortform (Content-Type, `__next`, weder `d[]` noch `d.results[]`) muss sofort laut
-// scheitern, sonst verdeckte der Retry genau den Fehlertyp, den der Wächter finden soll.
-const VERSUCHE = 3;
-const BACKOFF_MS = [1000, 4000];   // exponentiell, gedeckelt — nie länger als der Lauf dauert
-
-/** Eine OData-Abfrage. `$select` nennt IMMER die Felder — nie `SELECT *` (§11.8). */
-async function odata(entitaet: string, filter: string, select?: string): Promise<OdataZeile[]> {
-  const u = new URL(`${CURIA_BASIS}/${entitaet}`);
-  u.searchParams.set('$filter', filter);
-  if (select) u.searchParams.set('$select', select);
-  u.searchParams.set('$format', 'json');
-  for (let versuch = 1; ; versuch += 1) {
-    // Jeder Versuch ist eine eigene Anfrage und geht darum durch denselben globalen Takt.
-    await drossel();
-    let res: Response;
-    try {
-      res = await fetch(u, { headers: { Accept: 'application/json' } });
-    } catch (e) {
-      // Verbindungsfehler (Timeout, DNS, Abbruch) — wiederholbar.
-      if (versuch >= VERSUCHE) {
-        throw new Error(
-          `Curia nicht erreichbar für ${entitaet} (${filter}) — ${VERSUCHE} Versuche: ${String(e)}`,
-          { cause: e },
-        );
-      }
-      await wiederhole(versuch, entitaet, filter, String(e));
-      continue;
-    }
-    if (res.status >= 500) {
-      // Serverseitig und vorübergehend — wiederholbar.
-      if (versuch >= VERSUCHE) throw new Error(`Curia antwortet ${res.status} für ${entitaet} (${filter}) — auch nach ${VERSUCHE} Versuchen`);
-      await wiederhole(versuch, entitaet, filter, `HTTP ${res.status}`);
-      continue;
-    }
-    if (!res.ok) throw new Error(`Curia antwortet ${res.status} für ${entitaet} (${filter})`);
-    const typ = res.headers.get('content-type');
-    if (typ && !/json/i.test(typ)) throw new Error(`Curia antwortet Content-Type «${typ}» statt JSON für ${entitaet}`);
-    // Die URL mitgeben: der Paging-Wächter in `odataZeilen` soll sagen KÖNNEN, welche
-    // Abfrage abgeschnitten wurde — eine Fehlermeldung ohne Fundstelle kostet eine Stunde.
-    return odataZeilen(await res.json(), u.toString());
-  }
-}
-
-/** Log JEDEN Wiederholversuch: ein stiller Dauer-Retry sähe sonst wie ein gesunder Lauf aus. */
-async function wiederhole(versuch: number, entitaet: string, filter: string, grund: string): Promise<void> {
-  const ms = BACKOFF_MS[Math.min(versuch - 1, BACKOFF_MS.length - 1)];
-  console.log(`curia: Versuch ${versuch}/${VERSUCHE} für ${entitaet} (${filter}) gescheitert — ${grund}; neuer Versuch in ${ms} ms`);
-  await new Promise((r) => setTimeout(r, ms));
-}
 
 const nummern = [...new Set(BOTSCHAFTEN.map((b) => b.nummer).filter((n): n is string => !!n))]
   .filter((n) => !nur || nur.has(n))
