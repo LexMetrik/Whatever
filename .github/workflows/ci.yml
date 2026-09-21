@@ -280,6 +280,7 @@ jobs:
     outputs:
       art: ${{ steps.klassieren.outputs.art }}
       push_diaet: ${{ steps.diaet.outputs.push_diaet }}
+      bau_perf_belegt: ${{ steps.diaet.outputs.bau_perf_belegt }}
     steps:
       - name: PR-Diff klassieren
         id: klassieren
@@ -646,6 +647,7 @@ jobs:
             setze false "kein merge_group-Lauf am gepushten SHA ${AFTER} (Direkt-Push, Queue aus, Merge-Knopf) — volles Programm."
           fi
           BELEGT=""
+          BAU_PERF=true
           while IFS='|' read -r ID SHA EV STATUS SCHLUSS; do
             if [ "$SHA" != "$AFTER" ] || [ "$EV" != "merge_group" ]; then
               setze false "Lauf ${ID} passt nicht (sha=${SHA}, event=${EV}) — volles Programm."
@@ -665,11 +667,17 @@ jobs:
                    setze false "Pflicht-Kontext «${pflicht}» in Lauf ${ID}: '${STAND:-fehlt}' — volles Programm." ;;
               esac
             done
+            for zusatz in "Bau (dist-Artefakt)" "Perf-Budget (§15 — nur bei grüner Treue)"; do
+              Z=$(echo "$JOBS" | awk -F'|' -v n="$zusatz" '$3 == n { print $1 "|" $2 }')
+              [ "$Z" = "completed|success" ] || BAU_PERF=false
+            done
             BELEGT="${BELEGT} ${ID}"
           done <<< "$LAEUFE"
           if [ -z "$BELEGT" ]; then
             setze false "kein Lauf ausgewertet — volles Programm."
           fi
+          echo "bau_perf_belegt=${BAU_PERF}" >> "$GITHUB_OUTPUT"
+          echo "Bau/Perf im merge_group-Lauf echt grün gelaufen: ${BAU_PERF}"
           setze true "merge_group-Lauf(e)${BELEGT} an ${AFTER} grün, alle vier Pflicht-Kontexte belegt ⇒ identischer Stand. Tore/e2e laufen auf main nicht erneut."
 
   bau:
@@ -693,26 +701,20 @@ jobs:
     # `!cancelled()`: fällt `diff` aus, ist `art` leer — dann baut dieser Job
     # (Fehlerseite = bauen und prüfen, nicht überspringen).
     #
-    # PUSH-DIÄT auf `bau` ausgedehnt (M1-Nachtrag, QS-CI-MINUTEN, 21.9.2026):
-    # BISHER lief `bau` auf JEDEM main-Push voll, obwohl `tore`/`e2e` dort
-    # schon seit M1 (8.9.2026) unter der Diät ausgesetzt wurden — Grund war,
-    # dass `deploy` `needs.bau.result == 'success'` hart verlangte. GEPRÜFT
-    # (Chesterton, 21.9.2026): `deploy` lädt das `dist`-Artefakt aus `bau`
-    # NICHT herunter (Kommentar an `deploy`: «Absichtlich KEIN Download …,
-    # vercel build installiert und baut selbst») — `bau` diente dort nur als
-    # KORREKTHEITS-GATE (tsc -b/vite build müssen vor dem Deploy bestanden
-    # haben), nicht als Artefakt-Quelle. Die Push-Diät belegt genau das schon
-    # für den GESAMTEN `merge_group`-Lauf: GitHub markiert einen Workflow-Lauf
-    # nur dann `completed/success`, wenn JEDER Job darin (auch `bau`, auch
-    # ohne `needs`-Kante von aussen) nicht fehlgeschlagen ist — ein rotes
-    # `bau` im Queue-Lauf hätte die Diät-Prüfung selbst schon verworfen. Ein
-    # geskipptes `bau` unter der Diät ist darum ebenso sicher wie ein
-    # geskipptes `tore`/`e2e`. `deploy`s Bedingung ist entsprechend gelockert
-    # (`success` ODER `skipped`, wie bei `tore`/`e2e` seit M1).
+    # PUSH-DIÄT auf `bau` und `perf` (M1-Nachtrag, QS-CI-MINUTEN, 21.9.2026;
+    # Bug-Check-Auflage B1 vom 22.9.2026 eingearbeitet): auf main laufen beide
+    # nicht ein drittes Mal, WENN der merge_group-Lauf am gepushten SHA sie
+    # ECHT grün gefahren hat — Output `bau_perf_belegt` des Schritts «Push-Diät
+    # prüfen» (nur `completed|success`; `push_diaet` allein genügt NICHT: die
+    # Diät akzeptiert Perf-Budget auch als `skipped` und liest `Bau` gar nicht —
+    # gemessen 21.9.2026: in 4 von 39 deployenden Pushes hatte der Queue-Lauf
+    # beide übersprungen). GEPRÜFT (Chesterton): `deploy` lädt das
+    # `dist`-Artefakt NICHT (s. BUILD-PARITÄT dort) — `bau` war dort nur
+    # Korrektheits-Gate; `deploy` nimmt darum `success` ODER `skipped`.
     if: >-
       !cancelled()
       && needs.diff.outputs.art != 'doku'
-      && needs.diff.outputs.push_diaet != 'true'
+      && needs.diff.outputs.bau_perf_belegt != 'true'
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Zurich
@@ -1283,7 +1285,8 @@ jobs:
       # `npm run preview` serviert das heruntergeladene dist/ (kein Rebuild);
       # jeder Job fährt nur die Specs SEINER dauer-gepackten Gruppe seriell
       # (workers:1 bleibt, damit die Contention NICHT in EINEN Runner zurückkehrt)
-      # → e2e-Wand geviertelt UND nach CI-Messwerten balanciert (~7.8–8.6 min).
+      # → e2e-Wand auf acht Gruppen verteilt (seit 21.9.2026; gemessene Dauern
+      # stehen im Block über der Matrix, Eichung der Packung: Posten LPT).
       - name: Browser-Smoke (Playwright, e2e/ gegen dist — Gruppe ${{ matrix.gruppe }}/8)
         run: npm run test:e2e:gruppe -- ${{ matrix.gruppe }}
       # Per-Spec-CI-Dauern sichern (auch bei rotem Shard — gerade dann sind sie
@@ -1453,23 +1456,15 @@ jobs:
     # (bis 19.9.2026: im PR-Lauf). `bau` muss grün sein,
     # sonst fehlt das dist-Artefakt.
     #
-    # NACHTRAG 21.9.2026 (M1-Nachtrag, QS-CI-MINUTEN — löst den Satz «perf
-    # BLEIBT auf main» oben ab, §0 Ziff. 2b: der Satz bleibt als Beleg seines
-    # Standes stehen): `perf` läuft unter der Push-Diät jetzt NICHT mehr ein
-    # drittes Mal am selben Baum. Der Pflicht-Kontext «Perf-Budget» ist selbst
-    # Teil der Diät-Prüfung (Schritt «Push-Diät prüfen» im Job `diff`
-    # verlangt ihn `completed/success` ODER `completed/skipped` im
-    # `merge_group`-Lauf) — eine zweite Lighthouse-Messung auf push liefert
-    # gegen denselben (per §2 deterministischen) `dist`-Build keine neue
-    # Information, nur dieselbe Wanduhr ein drittes Mal. Bei doku/code-fern
-    # bleibt `perf` unverändert per `art`-Bedingung übersprungen; ohne Diät
-    # (Direkt-Push, Queue aus, rote/fehlende Pflicht-Kontexte) misst `perf`
-    # weiterhin echt.
+    # NACHTRAG 21./22.9.2026 (M1-Nachtrag — löst den Satz «perf BLEIBT auf
+    # main» oben ab; er bleibt als Beleg seines Standes stehen): `perf` läuft
+    # auf main nicht erneut, wenn `bau_perf_belegt` = true (Begründung und
+    # Messung am Job `bau`); sonst misst `perf` weiterhin echt.
     if: >-
       !cancelled()
       && github.event_name != 'pull_request'
       && needs.diff.outputs.art == 'code'
-      && needs.diff.outputs.push_diaet != 'true'
+      && needs.diff.outputs.bau_perf_belegt != 'true'
       && needs.bau.result == 'success'
       && (needs.tore.result == 'success' || needs.tore.result == 'skipped')
       && (needs.e2e.result == 'success' || needs.e2e.result == 'skipped')
@@ -1569,20 +1564,9 @@ jobs:
   # merge_group-Lauf hat denselben SHA schon grün gefahren; bis 19.9.2026: der
   # PR-Lauf) das begründet.
   #
-  # NACHTRAG 21.9.2026 (M1-Nachtrag, QS-CI-MINUTEN — der Satz «bau MUSS
-  # erfolgreich sein» oben ist damit überholt, §0 Ziff. 2b: er bleibt als
-  # Beleg seines Standes stehen): die Push-Diät ist auf `bau` ausgedehnt (s.
-  # Kommentar am Job `bau`) — unter der Diät ist `needs.bau.result` jetzt
-  # `skipped`, nicht `success`. GEPRÜFT (Chesterton): dieser Job lädt das
-  # `dist`-Artefakt aus `bau` NICHT herunter (`vercel build` baut selbst, s.
-  # BUILD-PARITÄT unten) — `bau` war hier nur Korrektheits-GATE, kein
-  # Artefakt-Lieferant. Die Diät selbst verlangt für ihre eigene Gültigkeit
-  # bereits einen `completed/success`-Lauf des GESAMTEN `merge_group`-Workflows
-  # an genau diesem SHA; GitHub markiert einen Lauf nur dann `success`, wenn
-  # JEDER seiner Jobs — auch `bau`, unabhängig von wessen `needs`-Kante — nicht
-  # fehlgeschlagen ist. Ein geskipptes `bau` unter bewiesener Diät ist damit
-  # ebenso sicher wie ein geskipptes `tore`/`e2e`; `bau` ist der Bedingung
-  # unten darum gleich behandelt (`success` ODER `skipped`).
+  # NACHTRAG 21./22.9.2026 (M1-Nachtrag — der Satz «bau MUSS erfolgreich
+  # sein» oben ist überholt und bleibt als Beleg seines Standes stehen): `bau`
+  # darf `skipped` sein, wenn `bau_perf_belegt` = true — Begründung am Job `bau`.
   #
   # BUILD-PARITÄT: `vercel pull` holt die Projekt-Einstellungen, `vercel build`
   # fährt `buildCommand` aus vercel.json — dort seit 17.8.2026 explizit
