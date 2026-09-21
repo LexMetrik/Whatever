@@ -60,7 +60,7 @@ Fail-Assertions bleiben restlos erhalten), **T17** (`test:kurz` = Vitest-dot, `t
 Playwright-dot; `npm test`/`test:e2e`/CI unverändert = volle Rot-Diagnose), **T9** (Muster-Query-
 Satz `docs/token-oekonomie/ast-grep-queries.md`, verifiziert gegen den Baum; im Template §1
 bevorzugt; `npx --package @ast-grep/cli ast-grep` = 0-Fixkosten-CLI), **T10** (Machbarkeits-Notiz
-`docs/token-oekonomie/fixkosten-audit-t10.md`: **kein projektseitiger MCP-Hebel** — alle ~250
+`archiv/token-oekonomie/fixkosten-audit-t10.md`: **kein projektseitiger MCP-Hebel** — alle ~250
 deferred Namen sind Davids Konto-Konnektoren; Schemas bereits deferred → real ~4–7k Fensterplatz;
 Deaktivierung Account-Ebene/David-Go, hier dokumentiert nicht ausgeführt).
 

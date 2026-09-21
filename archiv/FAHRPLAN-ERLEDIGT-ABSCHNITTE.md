@@ -364,7 +364,7 @@ stehendes Instrument). Worktree `LexMetrik-qs-tok` (Branch `feat/qs-tok`), Bau-D
   `disabledMcpServers` nur für Projekt-MCP-Server in `.mcp.json`, nicht für
   Account-Konnektoren. Verdikt bleibt Account-Ebene = David-Entscheid. Repo-seitig mit
   diesem Negativ-Befund **abgeschlossen** (DoD «Verifikations-Notiz» erfüllt). Nachtrag:
-  [fixkosten-audit-t10.md](../docs/token-oekonomie/fixkosten-audit-t10.md) §«Verifikation 5.8.2026».
+  [fixkosten-audit-t10.md](token-oekonomie/fixkosten-audit-t10.md) §«Verifikation 5.8.2026».
 - **T12-Stufe-2 (Massgabe: neu bewertet).** `npm run token:baseline`, Fenster
   11.7.–5.8.2026, 115 Sessions (O 64 / B 21 / M 30): cacheRead 96,6 % · output 0,42 %
   (Alt-Baseline 10.7.: 95,8 % / 0,54 % — Output-Anteil **gesunken**, keine Materialität).
