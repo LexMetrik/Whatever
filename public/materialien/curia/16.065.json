@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20160065",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2016-09-16",
@@ -106,7 +106,8 @@
       "jahr": "2016",
       "nummer": "7465",
       "text": "Botschaft vom 16. September 2016 zur Änderung des Bundesgesetzes über Ergänzungsleistungen zur Alters-, Hinterlassenen- und lnvalidenversicherung (EL-Reform)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2016-09-16",
@@ -114,7 +115,8 @@
       "jahr": "2016",
       "nummer": "7563",
       "text": "Bundesgesetz über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELG) (EL-Reform)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2019-04-02",
@@ -122,7 +124,8 @@
       "jahr": "2019",
       "nummer": "2603",
       "text": null,
-      "referendumsfrist": "2019-07-11"
+      "referendumsfrist": "2019-07-11",
+      "vorlage": 1
     },
     {
       "datum": "2020-03-03",
@@ -130,7 +133,8 @@
       "jahr": "2020",
       "nummer": "585",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -149,7 +153,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

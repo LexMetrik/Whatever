@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20030060",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2003-09-19",
@@ -96,18 +96,20 @@
     {
       "datum": "2003-09-19",
       "art": "Bundesblatt",
-      "jahr": "2003",
-      "nummer": "6399",
-      "text": "Botschaft vom 19. September 2003 über Massnahmen zur Behebung von Unterdeckungen in der beruflichen Vorsorge (Änderung des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-09-19",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
-      "referendumsfrist": null
+      "jahr": "2003",
+      "nummer": "6399",
+      "text": "Botschaft vom 19. September 2003 über Massnahmen zur Behebung von Unterdeckungen in der beruflichen Vorsorge (Änderung des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2004-06-29",
@@ -115,7 +117,8 @@
       "jahr": "2004",
       "nummer": "3131",
       "text": null,
-      "referendumsfrist": "2004-10-07"
+      "referendumsfrist": "2004-10-07",
+      "vorlage": 1
     },
     {
       "datum": "2004-11-23",
@@ -123,7 +126,8 @@
       "jahr": "2004",
       "nummer": "4635",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

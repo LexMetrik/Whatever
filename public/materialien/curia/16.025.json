@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20160025",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2016-02-24",
@@ -456,7 +456,8 @@
       "jahr": "2016",
       "nummer": "3089",
       "text": "Botschaft vom 24. Februar 2016 zur Förderung von Bildung, Forschung und Innovation in den Jahren 2017-2020",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2016-02-24",
@@ -464,7 +465,8 @@
       "jahr": "2016",
       "nummer": "3345",
       "text": "Bundesbeschluss über die Finanzierung der Berufsbildung in den Jahren 2017-2020",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-02-24",
@@ -472,7 +474,8 @@
       "jahr": "2016",
       "nummer": "3347",
       "text": "Bundesbeschluss über die Finanzierung der Weiterbildung in den Jahren 2017-2020",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2016-02-24",
@@ -480,7 +483,8 @@
       "jahr": "2016",
       "nummer": "3349",
       "text": "Bundesbeschluss über die Finanzierung von Beiträgen an die Kantone für Ausbildungsbeiträge in den Jahren 2017-2020",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2016-02-24",
@@ -488,7 +492,8 @@
       "jahr": "2016",
       "nummer": "3351",
       "text": "Bundesbeschluss über den Zahlungsrahmen für den ETH-Bereich in den Jahren 2017-2020",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2016-02-24",
@@ -496,7 +501,8 @@
       "jahr": "2016",
       "nummer": "3353",
       "text": "Bundesbeschluss über die Kredite nach dem Hochschulförderungs- und -koordinationsgesetz in den Jahren 2017-2020",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 5
     },
     {
       "datum": "2016-02-24",
@@ -504,7 +510,8 @@
       "jahr": "2016",
       "nummer": "3355",
       "text": "Bundesbeschluss über die Kredite für die internationale Zusammenarbeit im Bereich der Bildung für Stipendien an ausländische Studierende und Kunstschaffende in den Jahren 2017-2020",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 6
     },
     {
       "datum": "2016-02-24",
@@ -512,7 +519,8 @@
       "jahr": "2016",
       "nummer": "3357",
       "text": "Bundesbeschluss über die Kredite für die Institutionen der Forschungsförderung in den Jahren 2017-2020",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 7
     },
     {
       "datum": "2016-02-24",
@@ -520,7 +528,8 @@
       "jahr": "2016",
       "nummer": "3359",
       "text": "Bundesbeschluss über die Finanzierung der Tätigkeiten der Kommission für Technologie und Innovation (KTI) in den Jahren 2017-2020",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 8
     },
     {
       "datum": "2016-02-24",
@@ -528,7 +537,8 @@
       "jahr": "2016",
       "nummer": "3361",
       "text": "Bundesbeschluss über die Kredite für Forschungseinrichtungen von nationaler Bedeutung in den Jahren 2017-2020",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 9
     },
     {
       "datum": "2016-02-24",
@@ -536,7 +546,8 @@
       "jahr": "2016",
       "nummer": "3363",
       "text": "Bundesbeschluss über die Kredite für die internationale Zusammenarbeit in Forschung und Innovation in den Jahren 2017-2020",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 10
     },
     {
       "datum": "2016-02-24",
@@ -544,7 +555,8 @@
       "jahr": "2016",
       "nummer": "3365",
       "text": "Bundesgesetz über die Berufsbildung (Berufsbildungsgesetz, BBG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 11
     },
     {
       "datum": "2016-02-24",
@@ -552,7 +564,8 @@
       "jahr": "2016",
       "nummer": "3369",
       "text": "Bundesgesetz über die Eidgenössischen Technischen Hochschulen (ETH-Gesetz)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 12
     },
     {
       "datum": "2016-02-24",
@@ -560,7 +573,8 @@
       "jahr": "2016",
       "nummer": "3377",
       "text": "Bundesgesetz über die Förderung der Hochschulen und die Koordination im schweizerischen Hochschulbereich (Hochschulförderungs- und -koordinationsgesetz, HFKG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 13
     },
     {
       "datum": "2016-02-24",
@@ -568,7 +582,8 @@
       "jahr": "2016",
       "nummer": "3379",
       "text": "Bundesgesetz über Stipendien an ausländische Studierende und Kunstschaffende in der Schweiz",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 14
     },
     {
       "datum": "2016-02-24",
@@ -576,7 +591,8 @@
       "jahr": "2016",
       "nummer": "3381",
       "text": "Bundesgesetz über die Förderung der Forschung und der Innovation (FIFG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 15
     },
     {
       "datum": "2016-02-24",
@@ -584,7 +600,8 @@
       "jahr": "2016",
       "nummer": "3383",
       "text": "Bundesgesetz über die Zusammenarbeit des Bundes mit den Kantonen im Bildungsraum Schweiz (Bildungszusammenarbeitsgesetz, BiZG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 16
     },
     {
       "datum": "2016-10-14",
@@ -592,7 +609,8 @@
       "jahr": "2016",
       "nummer": "7663",
       "text": null,
-      "referendumsfrist": "2017-01-19"
+      "referendumsfrist": "2017-01-19",
+      "vorlage": 12
     },
     {
       "datum": "2016-10-14",
@@ -600,7 +618,8 @@
       "jahr": "2016",
       "nummer": "7671",
       "text": null,
-      "referendumsfrist": "2017-01-19"
+      "referendumsfrist": "2017-01-19",
+      "vorlage": 13
     },
     {
       "datum": "2016-10-14",
@@ -608,7 +627,8 @@
       "jahr": "2016",
       "nummer": "7673",
       "text": null,
-      "referendumsfrist": "2017-01-19"
+      "referendumsfrist": "2017-01-19",
+      "vorlage": 14
     },
     {
       "datum": "2016-10-14",
@@ -616,7 +636,8 @@
       "jahr": "2016",
       "nummer": "7675",
       "text": null,
-      "referendumsfrist": "2017-01-19"
+      "referendumsfrist": "2017-01-19",
+      "vorlage": 15
     },
     {
       "datum": "2016-10-14",
@@ -624,7 +645,8 @@
       "jahr": "2016",
       "nummer": "7677",
       "text": null,
-      "referendumsfrist": "2017-01-19"
+      "referendumsfrist": "2017-01-19",
+      "vorlage": 16
     },
     {
       "datum": "2016-10-31",
@@ -632,7 +654,8 @@
       "jahr": "2016",
       "nummer": "7049",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-10-31",
@@ -640,7 +663,8 @@
       "jahr": "2016",
       "nummer": "7951",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2016-10-31",
@@ -648,7 +672,8 @@
       "jahr": "2016",
       "nummer": "7953",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2016-10-31",
@@ -656,7 +681,8 @@
       "jahr": "2016",
       "nummer": "7955",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2016-10-31",
@@ -664,7 +690,8 @@
       "jahr": "2016",
       "nummer": "7957",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 5
     },
     {
       "datum": "2016-10-31",
@@ -672,7 +699,8 @@
       "jahr": "2016",
       "nummer": "7959",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 6
     },
     {
       "datum": "2016-10-31",
@@ -680,7 +708,8 @@
       "jahr": "2016",
       "nummer": "7961",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 7
     },
     {
       "datum": "2016-10-31",
@@ -688,7 +717,8 @@
       "jahr": "2016",
       "nummer": "7963",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 8
     },
     {
       "datum": "2016-10-31",
@@ -696,7 +726,8 @@
       "jahr": "2016",
       "nummer": "7965",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 9
     },
     {
       "datum": "2016-10-31",
@@ -704,7 +735,8 @@
       "jahr": "2016",
       "nummer": "7967",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 10
     },
     {
       "datum": "2016-12-16",
@@ -712,7 +744,8 @@
       "jahr": "2017",
       "nummer": "5143",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 11
     },
     {
       "datum": "2016-12-28",
@@ -720,7 +753,8 @@
       "jahr": "2016",
       "nummer": "8939",
       "text": null,
-      "referendumsfrist": "2017-04-07"
+      "referendumsfrist": "2017-04-07",
+      "vorlage": 11
     },
     {
       "datum": "2017-01-27",
@@ -728,7 +762,8 @@
       "jahr": "2017",
       "nummer": "135",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 16
     },
     {
       "datum": "2017-01-27",
@@ -736,7 +771,8 @@
       "jahr": "2017",
       "nummer": "151",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 12
     },
     {
       "datum": "2017-01-27",
@@ -744,7 +780,8 @@
       "jahr": "2017",
       "nummer": "159",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 13
     },
     {
       "datum": "2017-01-27",
@@ -752,7 +789,8 @@
       "jahr": "2017",
       "nummer": "161",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 14
     },
     {
       "datum": "2017-01-27",
@@ -760,7 +798,8 @@
       "jahr": "2017",
       "nummer": "163",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 15
     }
   ],
   "schlussabstimmungen": [
@@ -779,7 +818,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2016-09-30",
@@ -796,7 +835,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2016-09-30",
@@ -813,7 +852,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2016-09-30",
@@ -830,7 +869,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2016-09-30",
@@ -847,7 +886,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2016-12-16",
@@ -864,7 +903,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

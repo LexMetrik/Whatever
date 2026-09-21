@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20170038",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2017-05-24",
@@ -71,7 +71,8 @@
       "jahr": "2017",
       "nummer": "4125",
       "text": "Botschaft vom 24. Mai 2017 zur Änderung des Bundesgesetzes über das Internationale Privatrecht (11. Kapitel: Konkurs und Nachlassvertrag)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-05-24",
@@ -79,7 +80,8 @@
       "jahr": "2017",
       "nummer": "4149",
       "text": "Bundesgesetz über das Internationale Privatrecht (IPRG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2018-03-27",
@@ -87,7 +89,8 @@
       "jahr": "2018",
       "nummer": "1505",
       "text": null,
-      "referendumsfrist": "2018-07-05"
+      "referendumsfrist": "2018-07-05",
+      "vorlage": 1
     },
     {
       "datum": "2018-10-02",
@@ -95,7 +98,8 @@
       "jahr": "2018",
       "nummer": "3263",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

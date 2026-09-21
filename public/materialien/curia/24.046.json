@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240046",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2024-05-22",
@@ -123,7 +123,8 @@
       "jahr": "2024",
       "nummer": "1607",
       "text": "Botschaft vom 22. Mai 2024 zum Bundesgesetz über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-05-22",
@@ -131,7 +132,8 @@
       "jahr": "2024",
       "nummer": "1608",
       "text": "Bundesgesetz über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPG) ",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-05-15",
@@ -139,7 +141,8 @@
       "jahr": null,
       "nummer": null,
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2025-10-07",
@@ -147,7 +150,8 @@
       "jahr": "2025",
       "nummer": "2899",
       "text": null,
-      "referendumsfrist": "2026-01-15"
+      "referendumsfrist": "2026-01-15",
+      "vorlage": 2
     },
     {
       "datum": "2025-10-07",
@@ -155,7 +159,8 @@
       "jahr": "2025",
       "nummer": "2900",
       "text": null,
-      "referendumsfrist": "2026-01-15"
+      "referendumsfrist": "2026-01-15",
+      "vorlage": 1
     },
     {
       "datum": "2026-06-16",
@@ -163,7 +168,8 @@
       "jahr": "2026",
       "nummer": "322",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2026-06-16",
@@ -171,7 +177,8 @@
       "jahr": "2026",
       "nummer": "323",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -190,7 +197,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2025-09-26",
@@ -207,7 +214,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

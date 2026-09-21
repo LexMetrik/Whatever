@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20220043",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2022-05-25",
@@ -57,7 +57,8 @@
       "jahr": "2022",
       "nummer": "1485",
       "text": "Botschaft vom 25. Mai 2022 zur Volksinitiative «Für ein besseres Leben im Alter (Initiative für eine 13. AHV-Rente)»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2022-05-25",
@@ -65,7 +66,8 @@
       "jahr": "2022",
       "nummer": "1486",
       "text": "Bundesbeschluss über die Volksinitiative «Für ein besseres Leben im Alter (Initiative für eine 13. AHV-Rente)»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2023-03-28",
@@ -73,7 +75,8 @@
       "jahr": "2023",
       "nummer": "781",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -92,7 +95,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010058",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2001-09-13",
@@ -110,18 +110,38 @@
     {
       "datum": "2001-09-13",
       "art": "Bundesblatt",
-      "jahr": "2001",
-      "nummer": "4963",
-      "text": "Botschaft vom 12. September 2001 zur Genehmigung des Abkommens vom 21. Juni 2001 zur Änderung des Übereinkommens vom 4. Januar 1960 zur Errichtung der Europäischen Freihandelsassoziation (EFTA)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über das Abkommen vom 21. Juni 2001 zur Änderung des  Übereinkommens vom 4. Januar 1960 zur Errichtung der Europäischen Freihandelsassoziation (EFTA)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2001-09-13",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesbeschluss über das Abkommen vom 21. Juni 2001 zur Änderung des  Übereinkommens vom 4. Januar 1960 zur Errichtung der Europäischen Freihandelsassoziation (EFTA)",
-      "referendumsfrist": null
+      "text": "Bundesgesetz bezüglich der Bestimmungen über die Personenfreizügigkeit im Abkommen vom 21. Juni 2001 zur Änderung des Übereinkommens vom 4. Januar 1960 zur Gründung der Europäischen Freihandelsassoziation (EFTA)",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2001-09-13",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die technischen Handelshemmnisse (THG)",
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2001-09-13",
+      "art": "Bundesblatt",
+      "jahr": "2001",
+      "nummer": "4963",
+      "text": "Botschaft vom 12. September 2001 zur Genehmigung des Abkommens vom 21. Juni 2001 zur Änderung des Übereinkommens vom 4. Januar 1960 zur Errichtung der Europäischen Freihandelsassoziation (EFTA)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2001-12-14",
@@ -129,7 +149,8 @@
       "jahr": "2001",
       "nummer": "6516",
       "text": null,
-      "referendumsfrist": "2002-04-07"
+      "referendumsfrist": "2002-04-07",
+      "vorlage": 2
     },
     {
       "datum": "2001-12-14",
@@ -137,7 +158,8 @@
       "jahr": "2001",
       "nummer": "6532",
       "text": null,
-      "referendumsfrist": "2002-04-07"
+      "referendumsfrist": "2002-04-07",
+      "vorlage": 3
     },
     {
       "datum": "2001-12-14",
@@ -145,7 +167,8 @@
       "jahr": "2001",
       "nummer": "6538",
       "text": null,
-      "referendumsfrist": "2002-04-07"
+      "referendumsfrist": "2002-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2002-05-07",
@@ -153,7 +176,8 @@
       "jahr": "2002",
       "nummer": "685",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2002-05-07",
@@ -161,7 +185,8 @@
       "jahr": "2002",
       "nummer": "883",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2003-08-26",
@@ -169,7 +194,8 @@
       "jahr": "2003",
       "nummer": "2684",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

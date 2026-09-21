@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20200063",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2020-08-26",
@@ -78,7 +78,8 @@
       "jahr": "2020",
       "nummer": "7457",
       "text": "Botschaft vom 26. August 2020  zur Änderung des Ausländer- und Integrationsgesetzes (Einschränkungen für Reisen ins Ausland und Anpassungen des Status der vorläufigen Aufnahme)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-08-26",
@@ -86,7 +87,8 @@
       "jahr": "2020",
       "nummer": "7509",
       "text": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG) (Einschränkungen für Reisen ins Ausland und Anpassungen des Status der vorläufigen Aufnahme)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2021-12-28",
@@ -94,7 +96,8 @@
       "jahr": "2021",
       "nummer": "2999",
       "text": null,
-      "referendumsfrist": "2022-04-07"
+      "referendumsfrist": "2022-04-07",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -113,7 +116,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

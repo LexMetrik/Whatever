@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20130105",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2013-11-29",
@@ -64,7 +64,8 @@
       "jahr": "2014",
       "nummer": "453",
       "text": "Botschaft vom 29. November 2013 über die Genehmigung und zur Umsetzung des Internationalen Übereinkommens zum Schutz aller Personen vor dem Verschwindenlassen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2013-11-29",
@@ -72,7 +73,8 @@
       "jahr": "2014",
       "nummer": "501",
       "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Internationalen Übereinkommens zum Schutz aller Personen vor dem Verschwindenlassen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-01-04",
@@ -80,7 +82,8 @@
       "jahr": "2015",
       "nummer": "9595",
       "text": null,
-      "referendumsfrist": "2016-04-09"
+      "referendumsfrist": "2016-04-09",
+      "vorlage": 1
     },
     {
       "datum": "2016-12-16",
@@ -88,7 +91,8 @@
       "jahr": "2016",
       "nummer": "4687",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

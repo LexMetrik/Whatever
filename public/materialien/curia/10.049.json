@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20100049",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2010-05-12",
@@ -159,10 +159,11 @@
     {
       "datum": "2010-05-12",
       "art": "Bundesblatt",
-      "jahr": "2010",
-      "nummer": "3993",
-      "text": "Botschaft vom 12. Mai 2010 zur Änderung des Bankengesetzes (Sicherung der Einlagen)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Nachrichtenlose Vermögenswerte)",
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2010-05-12",
@@ -170,7 +171,26 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Sicherung der Einlagen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2010-05-12",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Verstärkung des Einlegerschutzes)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2010-05-12",
+      "art": "Bundesblatt",
+      "jahr": "2010",
+      "nummer": "3993",
+      "text": "Botschaft vom 12. Mai 2010 zur Änderung des Bankengesetzes (Sicherung der Einlagen)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-10-01",
@@ -178,7 +198,8 @@
       "jahr": "2010",
       "nummer": "7495",
       "text": "Zusatzbotschaft vom 1. Oktober 2010 zur Änderung des Bankengesetzes (Nachrichtenlose Vermögen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-12-28",
@@ -186,7 +207,8 @@
       "jahr": "2010",
       "nummer": "6405",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2010-12-28",
@@ -194,7 +216,8 @@
       "jahr": "2010",
       "nummer": "9031",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2011-03-30",
@@ -202,7 +225,8 @@
       "jahr": "2011",
       "nummer": "2743",
       "text": null,
-      "referendumsfrist": "2011-07-07"
+      "referendumsfrist": "2011-07-07",
+      "vorlage": 2
     },
     {
       "datum": "2011-08-30",
@@ -210,7 +234,8 @@
       "jahr": "2011",
       "nummer": "3919",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2013-04-04",
@@ -218,7 +243,8 @@
       "jahr": "2013",
       "nummer": "2485",
       "text": null,
-      "referendumsfrist": "2013-07-13"
+      "referendumsfrist": "2013-07-13",
+      "vorlage": 3
     },
     {
       "datum": "2014-06-03",
@@ -226,7 +252,8 @@
       "jahr": "2014",
       "nummer": "1267",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     }
   ],
   "schlussabstimmungen": [
@@ -245,7 +272,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2011-03-18",
@@ -262,7 +289,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2013-03-22",
@@ -279,7 +306,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

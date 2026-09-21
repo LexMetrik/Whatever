@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20070047",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2007-06-08",
@@ -215,10 +215,20 @@
     {
       "datum": "2007-06-08",
       "art": "Bundesblatt",
-      "jahr": "2007",
-      "nummer": "4377",
-      "text": "Botschaft vom 8. Juni 2007 zur Güterverkehrsvorlage",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über den Zahlungsrahmen für die Förderung des Güterverkehrs auf Schmalspurlinien (Entwurf der Kommission für Verkehr und Fernmeldewesen des Ständerates vom 4. September 2007; Fahne siehe Vorlage 2c)",
+      "referendumsfrist": null,
+      "vorlage": 6
+    },
+    {
+      "datum": "2007-06-08",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über den Zahlungsrahmen für die Förderung des alpenquerenden Schienengüterverkehrs (Fahne siehe Vorlage 2a)",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2007-06-08",
@@ -226,7 +236,44 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesbeschluss über den Zahlungsrahmen für die Förderung des nicht alpenquerenden kombinierten Güterverkehrs (Entwurf der Kommission für Verkehr und Fernmeldewesen des Ständerates vom 4. September 2007; Fahne siehe Vorlage 2b)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 5
+    },
+    {
+      "datum": "2007-06-08",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über den Gütertransport von Bahn- und Schifffahrtsunternehmen (Gütertransportgesetz, GüTG)",
+      "referendumsfrist": null,
+      "vorlage": 4
+    },
+    {
+      "datum": "2007-06-08",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Verlagerung des alpenquerenden Güterschwerverkehrs von der Strasse auf die Schiene (Güterverkehrsverlagerungsgesetz, GVVG)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2007-06-08",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über Änderungen des Transportrechts",
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2007-06-08",
+      "art": "Bundesblatt",
+      "jahr": "2007",
+      "nummer": "4377",
+      "text": "Botschaft vom 8. Juni 2007 zur Güterverkehrsvorlage",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2009-01-06",
@@ -234,7 +281,8 @@
       "jahr": "2009",
       "nummer": "219",
       "text": null,
-      "referendumsfrist": "2009-04-16"
+      "referendumsfrist": "2009-04-16",
+      "vorlage": 1
     },
     {
       "datum": "2009-01-06",
@@ -242,7 +290,8 @@
       "jahr": "2009",
       "nummer": "223",
       "text": null,
-      "referendumsfrist": "2009-04-16"
+      "referendumsfrist": "2009-04-16",
+      "vorlage": 3
     },
     {
       "datum": "2009-01-06",
@@ -250,7 +299,8 @@
       "jahr": "2009",
       "nummer": "231",
       "text": null,
-      "referendumsfrist": "2009-04-16"
+      "referendumsfrist": "2009-04-16",
+      "vorlage": 4
     },
     {
       "datum": "2009-12-01",
@@ -258,7 +308,8 @@
       "jahr": "2009",
       "nummer": "5949",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2009-12-01",
@@ -266,7 +317,8 @@
       "jahr": "2009",
       "nummer": "5973",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2009-12-01",
@@ -274,7 +326,8 @@
       "jahr": "2009",
       "nummer": "6019",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2009-12-01",
@@ -282,7 +335,8 @@
       "jahr": "2009",
       "nummer": "8287",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 5
     },
     {
       "datum": "2009-12-01",
@@ -290,7 +344,8 @@
       "jahr": "2009",
       "nummer": "8289",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 6
     },
     {
       "datum": "2009-12-01",
@@ -298,7 +353,8 @@
       "jahr": "2009",
       "nummer": "8291",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -317,7 +373,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2008-12-19",
@@ -334,7 +390,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2008-12-19",
@@ -351,7 +407,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020035",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2002-05-01",
@@ -68,18 +68,29 @@
     {
       "datum": "2002-05-01",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "4340",
-      "text": "Botschaft vom 1. Mai 2002 betreffend das Zusatzprotokoll zum Übereinkommen des Europarates über die Überstellung verurteilter Personen sowie eine Änderung des Rechtshilfegesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Zusatzprotokolls zum Übereinkommen des Europarates über die Überstellung verurteilter Personen",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2002-05-01",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Zusatzprotokolls zum Übereinkommen des Europarates über die Überstellung verurteilter Personen",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über internationale Rechtshilfe in Strafsachen (Rechtshilfegesetz, IRSG)",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2002-05-01",
+      "art": "Bundesblatt",
+      "jahr": "2002",
+      "nummer": "4340",
+      "text": "Botschaft vom 1. Mai 2002 betreffend das Zusatzprotokoll zum Übereinkommen des Europarates über die Überstellung verurteilter Personen sowie eine Änderung des Rechtshilfegesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-12-30",
@@ -87,7 +98,8 @@
       "jahr": "2003",
       "nummer": "8247",
       "text": null,
-      "referendumsfrist": "2004-04-08"
+      "referendumsfrist": "2004-04-08",
+      "vorlage": 1
     },
     {
       "datum": "2004-09-21",
@@ -95,7 +107,8 @@
       "jahr": "2004",
       "nummer": "4161",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +127,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

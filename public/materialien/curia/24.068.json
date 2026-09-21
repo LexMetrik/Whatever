@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240068",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2024-08-22",
@@ -57,7 +57,8 @@
       "jahr": "2024",
       "nummer": "2316",
       "text": "Botschaft vom 28. August 2024 zur Änderung des Bundespersonalgesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-08-28",
@@ -65,7 +66,8 @@
       "jahr": "2024",
       "nummer": "2317",
       "text": "Bundespersonalgesetz (BPG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-07-01",
@@ -73,7 +75,8 @@
       "jahr": "2025",
       "nummer": "2028",
       "text": null,
-      "referendumsfrist": "2025-10-09"
+      "referendumsfrist": "2025-10-09",
+      "vorlage": 1
     },
     {
       "datum": "2026-02-27",
@@ -81,7 +84,8 @@
       "jahr": "2026",
       "nummer": "96",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

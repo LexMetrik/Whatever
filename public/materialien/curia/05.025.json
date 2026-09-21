@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050025",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-02-16",
@@ -96,18 +96,20 @@
     {
       "datum": "2005-02-16",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "2033",
-      "text": "Botschaft vom 16. Februar 2005 zum Bundesgesetz über die Neuordnung der Pflegefinanzierung",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Neuordnung der Pflegefinanzierung",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-02-16",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Neuordnung der Pflegefinanzierung",
-      "referendumsfrist": null
+      "jahr": "2005",
+      "nummer": "2033",
+      "text": "Botschaft vom 16. Februar 2005 zum Bundesgesetz über die Neuordnung der Pflegefinanzierung",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-06-24",
@@ -115,7 +117,8 @@
       "jahr": "2008",
       "nummer": "5247",
       "text": null,
-      "referendumsfrist": "2008-10-02"
+      "referendumsfrist": "2008-10-02",
+      "vorlage": 1
     },
     {
       "datum": "2009-07-14",
@@ -123,7 +126,8 @@
       "jahr": "2009",
       "nummer": "3517",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

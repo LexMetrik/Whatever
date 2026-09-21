@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20110022",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2011-03-04",
@@ -113,7 +113,8 @@
       "jahr": "2011",
       "nummer": "2825",
       "text": "Botschaft vom 4. März 2011 zur Totalrevision des Bundesgesetzes über das Schweizer Bürgerrecht",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-03-04",
@@ -121,7 +122,8 @@
       "jahr": "2011",
       "nummer": "2873",
       "text": "Bundesgesetz über das Schweizer Bürgerrecht (Bürgerrechtsgesetz, BüG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2014-07-01",
@@ -129,7 +131,8 @@
       "jahr": "2014",
       "nummer": "5133",
       "text": null,
-      "referendumsfrist": "2014-10-09"
+      "referendumsfrist": "2014-10-09",
+      "vorlage": 1
     },
     {
       "datum": "2016-08-15",
@@ -137,7 +140,8 @@
       "jahr": "2016",
       "nummer": "2561",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -156,7 +160,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

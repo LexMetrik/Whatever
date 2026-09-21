@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20030035",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2003-05-09",
@@ -124,10 +124,11 @@
     {
       "datum": "2003-05-09",
       "art": "Bundesblatt",
-      "jahr": "2003",
-      "nummer": "3789",
-      "text": "Botschaft vom 9. Mai 2003 zu einem Gesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG) und zur Änderung des Bundesgesetzes über den Versicherungsvertrag",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-05-09",
@@ -135,7 +136,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über den Versicherungsvertrag",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2003-05-09",
+      "art": "Bundesblatt",
+      "jahr": "2003",
+      "nummer": "3789",
+      "text": "Botschaft vom 9. Mai 2003 zu einem Gesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG) und zur Änderung des Bundesgesetzes über den Versicherungsvertrag",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2004-12-28",
@@ -143,7 +154,8 @@
       "jahr": "2004",
       "nummer": "7281",
       "text": null,
-      "referendumsfrist": "2005-04-07"
+      "referendumsfrist": "2005-04-07",
+      "vorlage": 2
     },
     {
       "datum": "2004-12-28",
@@ -151,7 +163,8 @@
       "jahr": "2004",
       "nummer": "7289",
       "text": null,
-      "referendumsfrist": "2005-04-07"
+      "referendumsfrist": "2005-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2005-12-06",
@@ -159,7 +172,8 @@
       "jahr": "2005",
       "nummer": "5245",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2005-12-06",
@@ -167,7 +181,8 @@
       "jahr": "2005",
       "nummer": "5269",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -186,7 +201,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2004-12-17",
@@ -203,7 +218,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

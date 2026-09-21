@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20090073",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2009-09-11",
@@ -61,18 +61,20 @@
     {
       "datum": "2009-09-11",
       "art": "Bundesblatt",
-      "jahr": "2009",
-      "nummer": "6749",
-      "text": "Botschaft vom 11. September 2009 über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EU betreffend die Übernahme des Rahmenbeschlusses 2008/977/Jl vom 27. November 2008 über den Schutz personenbezogener Daten, die im Rahmen der polizeilichen und justiziellen Zusammenarbeit in Strafsachen verarbeitet werden",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EU betreffend die Übernahme des Rahmenbeschlusses 2008/977/JI über den Schutz von Personendaten im Rahmen der polizeilichen und justiziellen Zusammenarbeit in Strafsachen (Weiterentwicklung des Schengen-Besitzstands)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2009-09-11",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EU betreffend die Übernahme des Rahmenbeschlusses 2008/977/JI über den Schutz von Personendaten im Rahmen der polizeilichen und justiziellen Zusammenarbeit in Strafsachen (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "jahr": "2009",
+      "nummer": "6749",
+      "text": "Botschaft vom 11. September 2009 über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EU betreffend die Übernahme des Rahmenbeschlusses 2008/977/Jl vom 27. November 2008 über den Schutz personenbezogener Daten, die im Rahmen der polizeilichen und justiziellen Zusammenarbeit in Strafsachen verarbeitet werden",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-03-30",
@@ -80,7 +82,8 @@
       "jahr": "2010",
       "nummer": "2107",
       "text": null,
-      "referendumsfrist": "2010-07-08"
+      "referendumsfrist": "2010-07-08",
+      "vorlage": 1
     },
     {
       "datum": "2010-08-03",
@@ -88,7 +91,8 @@
       "jahr": "2010",
       "nummer": "3417",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20110034",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2011-05-25",
@@ -78,7 +78,8 @@
       "jahr": "2011",
       "nummer": "5571",
       "text": "Botschaft vom 25. Mai 2011 zum Bundesgesetz über Lebensmittel und Gebrauchsgegenstände (LMG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-05-25",
@@ -86,7 +87,8 @@
       "jahr": "2011",
       "nummer": "5661",
       "text": "Bundesgesetz über Lebensmittel und Gebrauchsgegenstände (Lebensmittelgesetz, LMG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2014-07-01",
@@ -94,7 +96,8 @@
       "jahr": "2014",
       "nummer": "5079",
       "text": null,
-      "referendumsfrist": "2014-10-09"
+      "referendumsfrist": "2014-10-09",
+      "vorlage": 1
     },
     {
       "datum": "2017-02-06",
@@ -102,7 +105,8 @@
       "jahr": "2017",
       "nummer": "249",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -121,7 +125,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

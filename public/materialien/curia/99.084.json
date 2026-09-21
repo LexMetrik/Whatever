@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=19990084",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "1999-10-27",
@@ -89,10 +89,11 @@
     {
       "datum": "1999-10-27",
       "art": "Bundesblatt",
-      "jahr": "2000",
-      "nummer": "477",
-      "text": "Botschaft vom 27. Oktober 1999 betreffend die Änderung des Militärgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "1999-10-27",
@@ -100,7 +101,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "1999-10-27",
+      "art": "Bundesblatt",
+      "jahr": "2000",
+      "nummer": "477",
+      "text": "Botschaft vom 27. Oktober 1999 betreffend die Änderung des Militärgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2000-10-17",
@@ -108,7 +119,8 @@
       "jahr": "2000",
       "nummer": "5142",
       "text": null,
-      "referendumsfrist": "2001-01-25"
+      "referendumsfrist": "2001-01-25",
+      "vorlage": 1
     },
     {
       "datum": "2000-10-17",
@@ -116,7 +128,8 @@
       "jahr": "2000",
       "nummer": "5144",
       "text": null,
-      "referendumsfrist": "2001-01-25"
+      "referendumsfrist": "2001-01-25",
+      "vorlage": 2
     },
     {
       "datum": "2001-09-18",
@@ -124,7 +137,8 @@
       "jahr": "2001",
       "nummer": "2264",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2001-09-18",
@@ -132,7 +146,8 @@
       "jahr": "2001",
       "nummer": "2266",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": []

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20070087",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2007-10-31",
@@ -54,18 +54,20 @@
     {
       "datum": "2007-10-31",
       "art": "Bundesblatt",
-      "jahr": "2007",
-      "nummer": "8353",
-      "text": "Botschaft vom 31. Oktober 2007 zur Änderung des Militärstrafgesetzes und des Militärstrafprozesses (Korrekturen infolge der Revision AT MStG und weitere Anpassungen)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Militärstrafgesetz und Militärstrafprozess (Korrekturen infolge der Revision des AT MStG und weitere Anpassungen)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2007-10-31",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Militärstrafgesetz und Militärstrafprozess (Korrekturen infolge der Revision des AT MStG und weitere Anpassungen)",
-      "referendumsfrist": null
+      "jahr": "2007",
+      "nummer": "8353",
+      "text": "Botschaft vom 31. Oktober 2007 zur Änderung des Militärstrafgesetzes und des Militärstrafprozesses (Korrekturen infolge der Revision AT MStG und weitere Anpassungen)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-10-14",
@@ -73,7 +75,8 @@
       "jahr": "2008",
       "nummer": "8257",
       "text": null,
-      "referendumsfrist": "2009-01-22"
+      "referendumsfrist": "2009-01-22",
+      "vorlage": 1
     },
     {
       "datum": "2009-02-17",
@@ -81,7 +84,8 @@
       "jahr": "2009",
       "nummer": "701",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

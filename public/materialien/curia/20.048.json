@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20200048",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2020-06-05",
@@ -57,7 +57,8 @@
       "jahr": "2020",
       "nummer": "5827",
       "text": "Botschaft vom 5. Juni 2020 zur Genehmigung der Genfer Akte des Lissabonner Abkommens über Ursprungsbezeichnungen und geografische Angaben und zu ihrer Umsetzung (Änderung des Markenschutzgesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-06-05",
@@ -65,7 +66,8 @@
       "jahr": "2020",
       "nummer": "5879",
       "text": "Bundesbeschluss über die Genehmigung der Genfer Akte des Lissabonner Abkommens über Ursprungsbezeichnungen und geografische Angaben und über ihre Umsetzung (Änderung des Markenschutzgesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-06-05",
@@ -73,7 +75,8 @@
       "jahr": "2020",
       "nummer": "5885",
       "text": "Genfer Akte des Lissabonner Abkommens über Ursprungsbezeichnungen und geografische Angaben",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-06-05",
@@ -81,7 +84,8 @@
       "jahr": "2020",
       "nummer": "5905",
       "text": "Gemeinsame Ausführungsordnung zum Lissabonner Abkommen über den Schutz der Ursprungsbezeichnungen und ihre internationale Registrierung und zur Genfer Akte des Lissabonner Abkommens über Ursprungsbezeichnungen und geografische Angaben",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2021-03-30",
@@ -89,7 +93,8 @@
       "jahr": "2021",
       "nummer": "675",
       "text": null,
-      "referendumsfrist": "2021-07-08"
+      "referendumsfrist": "2021-07-08",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -108,7 +113,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

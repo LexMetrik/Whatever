@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20000050",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2000-06-05",
@@ -54,18 +54,20 @@
     {
       "datum": "2000-06-05",
       "art": "Bundesblatt",
-      "jahr": "2000",
-      "nummer": "3971",
-      "text": "Botschaft vom 5. Juni 2000 zu einer Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (Neuausrichtung der Anlagevorschriften des Ausgleichsfonds der AHV)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2000-06-05",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG)",
-      "referendumsfrist": null
+      "jahr": "2000",
+      "nummer": "3971",
+      "text": "Botschaft vom 5. Juni 2000 zu einer Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (Neuausrichtung der Anlagevorschriften des Ausgleichsfonds der AHV)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2000-10-17",
@@ -73,7 +75,8 @@
       "jahr": "2000",
       "nummer": "5126",
       "text": null,
-      "referendumsfrist": "2001-01-25"
+      "referendumsfrist": "2001-01-25",
+      "vorlage": 1
     },
     {
       "datum": "2001-02-13",
@@ -81,7 +84,8 @@
       "jahr": "2001",
       "nummer": "292",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20000090",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2000-11-15",
@@ -110,10 +110,20 @@
     {
       "datum": "2000-11-15",
       "art": "Bundesblatt",
-      "jahr": "2001",
-      "nummer": "391",
-      "text": "Botschaft vom 15. November 2000 über das Römer Statut des Internationalen Strafgerichtshofs, das Bundesgesetz über die Zusammenarbeit mit dem Internationalen Strafgerichtshof und eine Revision des Strafrechts",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss betreffend die Genehmigung des Römer Statuts des Internationalen Strafgerichtshofs",
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2000-11-15",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Zusammenarbeit mit dem Internationalen Strafgerichtshof (ZISG)",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2000-11-15",
@@ -121,7 +131,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Änderung des Strafgesetzbuchs und des Militärstrafgesetzes (Rechtspflegedelikte vor internationalen Gerichten)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2000-11-15",
+      "art": "Bundesblatt",
+      "jahr": "2001",
+      "nummer": "391",
+      "text": "Botschaft vom 15. November 2000 über das Römer Statut des Internationalen Strafgerichtshofs, das Bundesgesetz über die Zusammenarbeit mit dem Internationalen Strafgerichtshof und eine Revision des Strafrechts",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2001-06-22",
@@ -129,7 +149,8 @@
       "jahr": "2001",
       "nummer": "2885",
       "text": null,
-      "referendumsfrist": "2001-10-11"
+      "referendumsfrist": "2001-10-11",
+      "vorlage": 2
     },
     {
       "datum": "2001-06-22",
@@ -137,7 +158,8 @@
       "jahr": "2001",
       "nummer": "2906",
       "text": null,
-      "referendumsfrist": "2001-10-11"
+      "referendumsfrist": "2001-10-11",
+      "vorlage": 1
     },
     {
       "datum": "2001-06-22",
@@ -145,7 +167,8 @@
       "jahr": "2001",
       "nummer": "2939",
       "text": null,
-      "referendumsfrist": "2001-10-11"
+      "referendumsfrist": "2001-10-11",
+      "vorlage": 3
     },
     {
       "datum": "2002-07-02",
@@ -153,7 +176,8 @@
       "jahr": "2002",
       "nummer": "1491",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2002-07-02",
@@ -161,7 +185,8 @@
       "jahr": "2002",
       "nummer": "1493",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2002-12-03",
@@ -169,7 +194,8 @@
       "jahr": "2002",
       "nummer": "3741",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     }
   ],
   "schlussabstimmungen": []

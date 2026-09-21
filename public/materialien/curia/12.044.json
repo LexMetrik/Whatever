@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20120044",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2012-03-28",
@@ -71,7 +71,8 @@
       "jahr": "2012",
       "nummer": "4323",
       "text": "Botschaft vom 28. März 2012 zur Genehmigung und Umsetzung der Aarhus-Konvention und von deren Änderung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-03-28",
@@ -79,7 +80,8 @@
       "jahr": "2012",
       "nummer": "4363",
       "text": "Bundesbeschluss über die Genehmigung und die Umsetzung der Aarhus-Konvention und von deren Änderung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2013-10-08",
@@ -87,7 +89,8 @@
       "jahr": "2013",
       "nummer": "7403",
       "text": null,
-      "referendumsfrist": "2014-01-16"
+      "referendumsfrist": "2014-01-16",
+      "vorlage": 1
     },
     {
       "datum": "2014-05-13",
@@ -95,7 +98,8 @@
       "jahr": "2014",
       "nummer": "1021",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

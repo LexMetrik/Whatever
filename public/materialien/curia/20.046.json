@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20200046",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2020-05-27",
@@ -64,7 +64,8 @@
       "jahr": "2020",
       "nummer": "4825",
       "text": "Botschaft vom 27. Mai 2020 zur Änderung des Bundesgesetzes über die Krankenversicherung (Vergütung des Pflegematerials)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-05-27",
@@ -72,7 +73,8 @@
       "jahr": "2020",
       "nummer": "4843",
       "text": "Bundesgesetz über die Krankenversicherung (KVG) (Vergütung des Pflegematerials)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-12-31",
@@ -80,7 +82,8 @@
       "jahr": "2020",
       "nummer": "9945",
       "text": null,
-      "referendumsfrist": "2021-04-10"
+      "referendumsfrist": "2021-04-10",
+      "vorlage": 1
     },
     {
       "datum": "2021-06-15",
@@ -88,7 +91,8 @@
       "jahr": "2021",
       "nummer": "345",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

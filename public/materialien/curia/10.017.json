@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20100017",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2010-01-20",
@@ -145,10 +145,11 @@
     {
       "datum": "2010-01-20",
       "art": "Bundesblatt",
-      "jahr": "2010",
-      "nummer": "973",
-      "text": "Botschaft vom 20. Januar 2010 zur Volksinitiative \"Für menschenfreundlichere Fahrzeuge\" und zu einer Änderung des CO2-Gesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Volksinitiative \"Für menschenfreundlichere Fahrzeuge\"",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2010-01-20",
@@ -156,7 +157,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2010-01-20",
+      "art": "Bundesblatt",
+      "jahr": "2010",
+      "nummer": "973",
+      "text": "Botschaft vom 20. Januar 2010 zur Volksinitiative \"Für menschenfreundlichere Fahrzeuge\" und zu einer Änderung des CO2-Gesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-06-28",
@@ -164,7 +175,8 @@
       "jahr": "2011",
       "nummer": "4827",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2011-07-05",
@@ -172,7 +184,8 @@
       "jahr": "2011",
       "nummer": "5483",
       "text": null,
-      "referendumsfrist": "2011-10-13"
+      "referendumsfrist": "2011-10-13",
+      "vorlage": 2
     },
     {
       "datum": "2012-01-10",
@@ -180,7 +193,8 @@
       "jahr": "2012",
       "nummer": "351",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -199,7 +213,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2011-06-17",
@@ -216,7 +230,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

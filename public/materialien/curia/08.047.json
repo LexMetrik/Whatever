@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20080047",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2008-05-30",
@@ -155,7 +155,8 @@
       "jahr": "2008",
       "nummer": "5395",
       "text": "Botschaft vom 30. Mai 2008 zur Änderung des Bundesgesetzes über die Unfallversicherung (Unfallversicherung und Unfallverhütung; Organisation und Nebentätigkeiten der SUVA)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-05-30",
@@ -163,7 +164,8 @@
       "jahr": "2008",
       "nummer": "5465",
       "text": "Bundesgesetz über die Unfallversicherung (UVG) (Unfallversicherung und Unfallverhütung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2008-05-30",
@@ -171,7 +173,8 @@
       "jahr": "2008",
       "nummer": "5487",
       "text": "Bundesgesetz über die Unfallversicherung (UVG) (Organisation und Nebentätigkeiten der SUVA)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2014-09-19",
@@ -179,7 +182,8 @@
       "jahr": "2014",
       "nummer": "7911",
       "text": "Zusatzbotschaft vom 19. September 2014  zur Änderung des Bundesgesetzes über die Unfallversicherung (Unfallversicherung und Unfallverhütung; Organisation und Nebentätigkeiten der Suva)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2014-09-19",
@@ -187,7 +191,8 @@
       "jahr": "2014",
       "nummer": "7969",
       "text": "Bundesgesetz über die Unfallversicherung (UVG) (Unfallversicherung und Unfallverhütung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2015-10-06",
@@ -195,7 +200,8 @@
       "jahr": "2015",
       "nummer": "7133",
       "text": null,
-      "referendumsfrist": "2016-01-14"
+      "referendumsfrist": "2016-01-14",
+      "vorlage": 2
     },
     {
       "datum": "2015-10-06",
@@ -203,7 +209,8 @@
       "jahr": "2015",
       "nummer": "7139",
       "text": null,
-      "referendumsfrist": "2016-01-14"
+      "referendumsfrist": "2016-01-14",
+      "vorlage": 3
     },
     {
       "datum": "2016-12-09",
@@ -211,7 +218,8 @@
       "jahr": "2016",
       "nummer": "4375",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2016-12-23",
@@ -219,7 +227,8 @@
       "jahr": "2016",
       "nummer": "4941",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -238,7 +247,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2015-09-25",
@@ -255,7 +264,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

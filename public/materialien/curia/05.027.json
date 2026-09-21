@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050027",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-02-23",
@@ -82,18 +82,20 @@
     {
       "datum": "2005-02-23",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "2151",
-      "text": "Botschaft vom 23. Februar 2005 zur Teilrevision des Bundesgesetzes über den Natur- und Heimatschutz (NHG)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über den Natur- und Heimatschutz (NHG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-02-23",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über den Natur- und Heimatschutz (NHG)",
-      "referendumsfrist": null
+      "jahr": "2005",
+      "nummer": "2151",
+      "text": "Botschaft vom 23. Februar 2005 zur Teilrevision des Bundesgesetzes über den Natur- und Heimatschutz (NHG)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2006-10-17",
@@ -101,7 +103,8 @@
       "jahr": "2006",
       "nummer": "8429",
       "text": null,
-      "referendumsfrist": "2007-01-25"
+      "referendumsfrist": "2007-01-25",
+      "vorlage": 1
     },
     {
       "datum": "2007-11-20",
@@ -109,7 +112,8 @@
       "jahr": "2007",
       "nummer": "5237",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

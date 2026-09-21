@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20140025",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2014-02-26",
@@ -57,7 +57,8 @@
       "jahr": "2014",
       "nummer": "2087",
       "text": "Botschaft vom 26. Februar 2014 zur Änderung des Asylgesetzes (Verlängerung der dringlichen Änderung des Asylgesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2014-02-26",
@@ -65,7 +66,8 @@
       "jahr": "2014",
       "nummer": "2103",
       "text": "Asylgesetz (AsylG) (Verlängerung der dringlichen Änderungen des Asylgesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2014-10-07",
@@ -73,7 +75,8 @@
       "jahr": "2014",
       "nummer": "7309",
       "text": null,
-      "referendumsfrist": "2015-01-15"
+      "referendumsfrist": "2015-01-15",
+      "vorlage": 1
     },
     {
       "datum": "2015-06-30",
@@ -81,7 +84,8 @@
       "jahr": "2015",
       "nummer": "2047",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

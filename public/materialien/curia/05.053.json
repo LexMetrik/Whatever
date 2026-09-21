@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050053",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-06-14",
@@ -138,10 +138,11 @@
     {
       "datum": "2005-06-14",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "4623",
-      "text": "Botschaft vom 22. Juni zur Zusatzfinanzierung der Invalidenversicherung",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über eine befristete Zusatzfinanzierung der Invalidenversicherung durch Anhebung der Mehrwertsteuersätze",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-06-14",
@@ -149,7 +150,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Sanierung der Invalidenversicherung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2005-06-14",
+      "art": "Bundesblatt",
+      "jahr": "2005",
+      "nummer": "4623",
+      "text": "Botschaft vom 22. Juni zur Zusatzfinanzierung der Invalidenversicherung",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-06-24",
@@ -157,7 +168,8 @@
       "jahr": "2008",
       "nummer": "5241",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2008-06-24",
@@ -165,7 +177,8 @@
       "jahr": "2008",
       "nummer": "5255",
       "text": null,
-      "referendumsfrist": "2008-10-02"
+      "referendumsfrist": "2008-10-02",
+      "vorlage": 2
     },
     {
       "datum": "2010-09-07",
@@ -173,7 +186,8 @@
       "jahr": "2010",
       "nummer": "3821",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2010-09-07",
@@ -181,7 +195,8 @@
       "jahr": "2010",
       "nummer": "3835",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -200,7 +215,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2008-06-13",
@@ -217,7 +232,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

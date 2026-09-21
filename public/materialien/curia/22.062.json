@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20220062",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2022-09-07",
@@ -99,7 +99,8 @@
       "jahr": "2022",
       "nummer": "2427",
       "text": "Botschaft vom 7. September 2022 zur Änderung des Bundesgesetzes über die Krankenversicherung (Massnahmen zur Kostendämpfung – Paket 2)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2022-09-07",
@@ -107,7 +108,8 @@
       "jahr": "2022",
       "nummer": "2428",
       "text": "Bundesgesetz über die Krankenversicherung (KVG) (Massnahmen zur Kostendämpfung – Paket 2)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-04-01",
@@ -115,7 +117,8 @@
       "jahr": "2025",
       "nummer": "1108",
       "text": null,
-      "referendumsfrist": "2025-07-10"
+      "referendumsfrist": "2025-07-10",
+      "vorlage": 1
     },
     {
       "datum": "2026-06-09",
@@ -123,7 +126,8 @@
       "jahr": "2026",
       "nummer": "294",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20070055",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2007-06-19",
@@ -117,18 +117,29 @@
     {
       "datum": "2007-06-19",
       "art": "Bundesblatt",
-      "jahr": "2007",
-      "nummer": "5669",
-      "text": "Botschaft vom 15. Juni 2007 zur Änderung des Bundesgesetzes über die berufliche Alters,- Hinterlassenen- und Invalidenvorsorge (Strukturreform)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Massnahmen zur Erleichterung der Arbeitsmarktbeteiligung älterer Arbeitnehmender)",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2007-06-19",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Massnahmen zur Erleichterung der Arbeitsmarktbeteiligung älterer Arbeitnehmender)",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Strukturreform)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2007-06-19",
+      "art": "Bundesblatt",
+      "jahr": "2007",
+      "nummer": "5669",
+      "text": "Botschaft vom 15. Juni 2007 zur Änderung des Bundesgesetzes über die berufliche Alters,- Hinterlassenen- und Invalidenvorsorge (Strukturreform)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2009-12-22",
@@ -136,7 +147,8 @@
       "jahr": "2009",
       "nummer": "8775",
       "text": null,
-      "referendumsfrist": "2010-04-01"
+      "referendumsfrist": "2010-04-01",
+      "vorlage": 2
     },
     {
       "datum": "2010-03-30",
@@ -144,7 +156,8 @@
       "jahr": "2010",
       "nummer": "2017",
       "text": null,
-      "referendumsfrist": "2010-07-08"
+      "referendumsfrist": "2010-07-08",
+      "vorlage": 1
     },
     {
       "datum": "2010-10-05",
@@ -152,7 +165,8 @@
       "jahr": "2010",
       "nummer": "4427",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2011-07-19",
@@ -160,7 +174,8 @@
       "jahr": "2011",
       "nummer": "3393",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -179,7 +194,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2010-03-19",
@@ -196,7 +211,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

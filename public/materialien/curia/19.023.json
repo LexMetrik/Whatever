@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20190023",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2019-03-15",
@@ -113,7 +113,8 @@
       "jahr": "2019",
       "nummer": "2913",
       "text": "Botschaft vom 15. März 2019 zur Volksinitiative «Ja zum Verhüllungsverbot» und zum indirekten Gegenvorschlag (Bundesgesetz über die Gesichtsverhüllung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-03-15",
@@ -121,7 +122,8 @@
       "jahr": "2019",
       "nummer": "2951",
       "text": "Bundesbeschluss zur Volksinitiative «Ja zum Verhüllungsverbot»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2019-03-15",
@@ -129,7 +131,8 @@
       "jahr": "2019",
       "nummer": "2953",
       "text": "Bundesgesetz über die Gesichtsverhüllung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2020-06-30",
@@ -137,7 +140,8 @@
       "jahr": "2020",
       "nummer": "5507",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2021-12-08",
@@ -145,7 +149,8 @@
       "jahr": "2021",
       "nummer": "310",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -164,7 +169,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2020-06-19",
@@ -181,7 +186,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

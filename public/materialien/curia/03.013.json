@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20030013",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2003-02-12",
@@ -68,18 +68,20 @@
     {
       "datum": "2003-02-12",
       "art": "Bundesblatt",
-      "jahr": "2003",
-      "nummer": "1963",
-      "text": "Botschaft vom 12. Februar 2003 zum Bundesgesetz über die Öffentlichkeit der Verwaltung (Öffentlichkeitsgesetz, BGÖ)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über das Öffentlichkeitsprinzip der Verwaltung (Öffentlichkeitsgesetz, BGÖ)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-02-12",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über das Öffentlichkeitsprinzip der Verwaltung (Öffentlichkeitsgesetz, BGÖ)",
-      "referendumsfrist": null
+      "jahr": "2003",
+      "nummer": "1963",
+      "text": "Botschaft vom 12. Februar 2003 zum Bundesgesetz über die Öffentlichkeit der Verwaltung (Öffentlichkeitsgesetz, BGÖ)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2004-12-28",
@@ -87,7 +89,8 @@
       "jahr": "2004",
       "nummer": "7269",
       "text": null,
-      "referendumsfrist": "2005-04-07"
+      "referendumsfrist": "2005-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2006-06-20",
@@ -95,7 +98,8 @@
       "jahr": "2006",
       "nummer": "2319",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

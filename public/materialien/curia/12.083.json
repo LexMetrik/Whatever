@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20120083",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2012-10-31",
@@ -71,7 +71,8 @@
       "jahr": "2012",
       "nummer": "8015",
       "text": "Epidemiengesetz (Versorgung der Bevölkerung mit Heilmitteln)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-10-31",
@@ -79,7 +80,8 @@
       "jahr": "2012",
       "nummer": "9009",
       "text": "Botschaft vom 31. Oktober 2012 zur Verlängerung des dringlichen Bundesgesetzes vom 6. Oktober 2006 zur Änderung des Epidemiengesetzes (Versorgung der Bevölkerung mit Heilmitteln)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-12-28",
@@ -87,7 +89,8 @@
       "jahr": "2012",
       "nummer": "7281",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-12-28",
@@ -95,7 +98,8 @@
       "jahr": "2012",
       "nummer": "9739",
       "text": null,
-      "referendumsfrist": "2013-04-07"
+      "referendumsfrist": "2013-04-07",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

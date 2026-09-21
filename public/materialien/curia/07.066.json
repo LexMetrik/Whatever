@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20070066",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2007-08-29",
@@ -82,18 +82,20 @@
     {
       "datum": "2007-08-29",
       "art": "Bundesblatt",
-      "jahr": "2007",
-      "nummer": "6373",
-      "text": "Botschaft vom 29. August 2007 zur Schaffung einer Spezialfinanzierung Luftverkehr (Änderung von Art. 86 der Bundesverfassung)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss zur Schaffung einer Spezialfinanzierung für Aufgaben im Luftverkehr",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2007-08-29",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss zur Schaffung einer Spezialfinanzierung für Aufgaben im Luftverkehr",
-      "referendumsfrist": null
+      "jahr": "2007",
+      "nummer": "6373",
+      "text": "Botschaft vom 29. August 2007 zur Schaffung einer Spezialfinanzierung Luftverkehr (Änderung von Art. 86 der Bundesverfassung)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-10-14",
@@ -101,7 +103,8 @@
       "jahr": "2008",
       "nummer": "8231",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2010-06-01",
@@ -109,7 +112,8 @@
       "jahr": "2010",
       "nummer": "2159",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -128,7 +132,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

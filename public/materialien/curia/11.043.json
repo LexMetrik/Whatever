@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20110043",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2011-06-29",
@@ -71,7 +71,8 @@
       "jahr": "2011",
       "nummer": "6021",
       "text": "Botschaft vom 29. Juni 2011 zum Bundesgesetz über die Besteuerung nach dem Aufwand",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-06-29",
@@ -79,7 +80,8 @@
       "jahr": "2011",
       "nummer": "6047",
       "text": "Bundesgesetz über die Besteuerung nach dem Aufwand",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-10-09",
@@ -87,7 +89,8 @@
       "jahr": "2012",
       "nummer": "8251",
       "text": null,
-      "referendumsfrist": "2013-01-17"
+      "referendumsfrist": "2013-01-17",
+      "vorlage": 1
     },
     {
       "datum": "2013-03-12",
@@ -95,7 +98,8 @@
       "jahr": "2013",
       "nummer": "779",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 198
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

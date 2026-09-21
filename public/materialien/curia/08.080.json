@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20080080",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2008-12-05",
@@ -103,18 +103,20 @@
     {
       "datum": "2008-12-05",
       "art": "Bundesblatt",
-      "jahr": "2009",
-      "nummer": "299",
-      "text": "Botschaft vom 5. Dezember 2008 zur Volksinitiative \"Gegen die Abzockerei\" und zur Änderung des Obligationenrechts (Aktienrecht)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Volksinitiative \"Gegen die Abzockerei\"",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2008-12-05",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss über die Volksinitiative \"Gegen die Abzockerei\"",
-      "referendumsfrist": null
+      "jahr": "2009",
+      "nummer": "299",
+      "text": "Botschaft vom 5. Dezember 2008 zur Volksinitiative \"Gegen die Abzockerei\" und zur Änderung des Obligationenrechts (Aktienrecht)",
+      "referendumsfrist": null,
+      "vorlage": 0
     }
   ],
   "schlussabstimmungen": [
@@ -133,7 +135,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

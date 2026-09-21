@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20110070",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2011-11-16",
@@ -85,7 +85,8 @@
       "jahr": "2011",
       "nummer": "9077",
       "text": "Botschaft vom 16. November 2011 zu einer Änderung des Schweizerischen Zivilgesetzbuches (Elterliche Sorge)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-11-16",
@@ -93,7 +94,8 @@
       "jahr": "2011",
       "nummer": "9115",
       "text": "Schweizerisches Zivilgesetzbuch (Elterliche Sorge)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2013-07-02",
@@ -101,7 +103,8 @@
       "jahr": "2013",
       "nummer": "4763",
       "text": null,
-      "referendumsfrist": "2013-10-10"
+      "referendumsfrist": "2013-10-10",
+      "vorlage": 1
     },
     {
       "datum": "2014-02-04",
@@ -109,7 +112,8 @@
       "jahr": "2014",
       "nummer": "357",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -128,7 +132,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

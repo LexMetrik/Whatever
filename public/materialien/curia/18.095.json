@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20180095",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2018-12-07",
@@ -64,7 +64,8 @@
       "jahr": "2019",
       "nummer": "1251",
       "text": "Botschaft vom 7. Dezember 2018 zur Änderung des Umweltschutzgesetzes (Verbot des Inverkehrbringens von illegal geschlagenem Holz)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-12-07",
@@ -72,7 +73,8 @@
       "jahr": "2019",
       "nummer": "1275",
       "text": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2019-10-08",
@@ -80,7 +82,8 @@
       "jahr": "2019",
       "nummer": "6603",
       "text": null,
-      "referendumsfrist": "2019-01-16"
+      "referendumsfrist": "2019-01-16",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -99,7 +102,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -1,56 +1,49 @@
 {
-  "nummer": "02.043",
-  "titel": "Luftfahrtgesetz. Änderung",
+  "nummer": "02.008",
+  "titel": "Arbeitsvermittlungsgesetz. Änderung",
   "geschaeftstyp": "Geschäft des Bundesrates",
   "status": "Erledigt",
-  "eingereicht": "2002-05-22",
+  "eingereicht": "2002-01-09",
   "erstrat": "Nationalrat",
-  "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020043",
+  "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020008",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
   "abgerufen": "2026-09-21",
   "kommissionen": [
     {
-      "datum": "2002-05-22",
-      "name": "Kommission für Verkehr und Fernmeldewesen Nationalrat",
-      "kuerzel": "KVF-N"
+      "datum": "2002-01-09",
+      "name": "Kommission für Rechtsfragen Nationalrat",
+      "kuerzel": "RK-N"
     },
     {
-      "datum": "2002-05-22",
-      "name": "Kommission für Verkehr und Fernmeldewesen Ständerat",
-      "kuerzel": "KVF-S"
+      "datum": "2002-01-09",
+      "name": "Kommission für Rechtsfragen Ständerat",
+      "kuerzel": "RK-S"
     }
   ],
   "beschluesse": [
     {
-      "datum": "2002-12-04",
+      "datum": "2002-06-05",
       "rat": "Nationalrat",
       "ratKuerzel": "NR",
       "text": "Beschluss gemäss Entwurf",
       "vorlage": 1
     },
     {
-      "datum": "2003-03-11",
+      "datum": "2002-06-12",
       "rat": "Ständerat",
       "ratKuerzel": "SR",
-      "text": "Abweichung",
-      "vorlage": 1
-    },
-    {
-      "datum": "2003-03-12",
-      "rat": "Nationalrat",
-      "ratKuerzel": "NR",
       "text": "Zustimmung",
       "vorlage": 1
     },
     {
-      "datum": "2003-03-21",
+      "datum": "2002-06-21",
       "rat": "Nationalrat",
       "ratKuerzel": "NR",
       "text": "Annahme in der Schlussabstimmung",
       "vorlage": 1
     },
     {
-      "datum": "2003-03-21",
+      "datum": "2002-06-21",
       "rat": "Ständerat",
       "ratKuerzel": "SR",
       "text": "Annahme in der Schlussabstimmung",
@@ -59,37 +52,37 @@
   ],
   "publikationen": [
     {
-      "datum": "2002-05-22",
+      "datum": "2002-01-09",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Luftfahrtgesetz (LFG)",
+      "text": "Bundesgesetz über die Arbeitsvermittlung und den Personalverleih (Arbeitsvermittlungsgesetz, AVG)",
       "referendumsfrist": null,
       "vorlage": 1
     },
     {
-      "datum": "2002-05-22",
+      "datum": "2002-01-09",
       "art": "Bundesblatt",
       "jahr": "2002",
-      "nummer": "4430",
-      "text": "Botschaft vom 22. Mai 2002 zur Änderung des Luftfahrtgesetzes",
+      "nummer": "1254",
+      "text": "Botschaft vom 9. Januar 2002 über die Änderung des Arbeitsvermittlungsgesetzes",
       "referendumsfrist": null,
       "vorlage": 0
     },
     {
-      "datum": "2003-04-01",
+      "datum": "2002-07-09",
       "art": "Bundesblatt",
-      "jahr": "2003",
-      "nummer": "2852",
+      "jahr": "2002",
+      "nummer": "4463",
       "text": null,
-      "referendumsfrist": "2003-07-10",
+      "referendumsfrist": "2002-10-17",
       "vorlage": 1
     },
     {
-      "datum": "2003-07-22",
+      "datum": "2002-11-26",
       "art": "Amtliche Sammlung",
-      "jahr": "2003",
-      "nummer": "2179",
+      "jahr": "2002",
+      "nummer": "3666",
       "text": null,
       "referendumsfrist": null,
       "vorlage": 1

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240073",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2024-08-22",
@@ -193,7 +193,8 @@
       "jahr": "2024",
       "nummer": "2747",
       "text": "Botschaft vom 16. Oktober 2024 zur Umsetzung und Finanzierung der Initiative für eine 13. AHV-Rente",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-10-16",
@@ -201,7 +202,8 @@
       "jahr": "2024",
       "nummer": "2748",
       "text": "Bundesgesetz  über die Alters- und Hinterlassenenversicherung (AHVG) (Umsetzung der 13. Altersrente)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2024-10-16",
@@ -209,7 +211,8 @@
       "jahr": "2024",
       "nummer": "2749",
       "text": "Bundesgesetz  über die Alters- und Hinterlassenenversicherung (AHVG) (Finanzierung der 13. Altersrente)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2024-10-16",
@@ -217,7 +220,8 @@
       "jahr": "2024",
       "nummer": "2750",
       "text": "Bundesbeschluss  über die Zusatzfinanzierung der AHV durch eine Erhöhung der Mehrwertsteuer",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2025-04-01",
@@ -225,7 +229,8 @@
       "jahr": "2025",
       "nummer": "1105",
       "text": null,
-      "referendumsfrist": "2025-07-10"
+      "referendumsfrist": "2025-07-10",
+      "vorlage": 1
     },
     {
       "datum": "2025-11-13",
@@ -233,7 +238,8 @@
       "jahr": "2025",
       "nummer": "704",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2026-06-30",
@@ -241,7 +247,8 @@
       "jahr": "2026",
       "nummer": "1757",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     }
   ],
   "schlussabstimmungen": [
@@ -260,7 +267,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2026-06-19",
@@ -277,7 +284,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

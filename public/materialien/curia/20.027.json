@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20200027",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2020-03-06",
@@ -85,7 +85,8 @@
       "jahr": "2020",
       "nummer": "2885",
       "text": "Botschaft vom 6. März 2020 zur Genehmigung und Umsetzung des Notenaustauschs zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) 2018/1240 über das Europäische Reiseinformations- und genehmigungssystem (ETIAS) (Weiterentwicklung des Schengen-Besitzstands) und zur Änderung des Ausländer- und Integrationsgesetzes (Unterstellung des Nachrichtendienstes des Bundes unter das Schengen-Datenschutzgesetz)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-03-06",
@@ -93,7 +94,8 @@
       "jahr": "2020",
       "nummer": "2955",
       "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) 2018/1240 über das Europäische Reiseinformations- und  -genehmigungssystem (ETIAS) (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-03-06",
@@ -101,7 +103,8 @@
       "jahr": "2020",
       "nummer": "2965",
       "text": "Notenaustausch vom 11. Oktober 2018 zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der Verordnung (EU) 2018/1240 über die Einrichtung eines Europäischen Reiseinformations- und -genehmigungssystems (ETIAS) und zur Änderung der Verordnungen (EU) Nr. 1077/2011, (EU) Nr. 515/2014, (EU) 2016/399, (EU) 2016/1624 und (EU) 2017/2226 (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-03-06",
@@ -109,7 +112,8 @@
       "jahr": "2020",
       "nummer": "2967",
       "text": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG) (Unterstellung des Nachrichtendienstes des Bundes unter das Schengen-Datenschutzgesetz)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2020-10-06",
@@ -117,7 +121,8 @@
       "jahr": "2020",
       "nummer": "7797",
       "text": null,
-      "referendumsfrist": "2021-01-14"
+      "referendumsfrist": "2021-01-14",
+      "vorlage": 2
     },
     {
       "datum": "2020-10-06",
@@ -125,7 +130,8 @@
       "jahr": "2020",
       "nummer": "7911",
       "text": null,
-      "referendumsfrist": "2021-01-14"
+      "referendumsfrist": "2021-01-14",
+      "vorlage": 1
     },
     {
       "datum": "2023-05-01",
@@ -133,7 +139,8 @@
       "jahr": "2023",
       "nummer": "147",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -152,7 +159,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

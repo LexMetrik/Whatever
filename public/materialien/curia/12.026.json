@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20120026",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2012-02-15",
@@ -64,7 +64,8 @@
       "jahr": "2012",
       "nummer": "1923",
       "text": "Botschaft vom 15. Februar 2012 zur Änderung des Bundesgesetzes über die Krankenversicherung (Korrektur der zwischen 1996 und 2011 bezahlten Prämien)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-02-15",
@@ -72,7 +73,8 @@
       "jahr": "2012",
       "nummer": "1939",
       "text": "Bundesgesetz über die Krankenversicherung (KVG) (Prämienkorrektur)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2014-04-01",
@@ -80,7 +82,8 @@
       "jahr": "2014",
       "nummer": "2865",
       "text": null,
-      "referendumsfrist": "2014-07-10"
+      "referendumsfrist": "2014-07-10",
+      "vorlage": 1
     },
     {
       "datum": "2014-08-12",
@@ -88,7 +91,8 @@
       "jahr": "2014",
       "nummer": "2463",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

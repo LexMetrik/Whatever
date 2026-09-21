@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20140073",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2014-10-29",
@@ -57,7 +57,8 @@
       "jahr": "2014",
       "nummer": "8669",
       "text": "Botschaft vom 29. Oktober 2014 zur Änderung des Bundesgesetzes über Schuldbetreibung und Konkurs (Gewerbsmässige Vertretung im Zwangsvollstreckungsverfahren)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2014-10-29",
@@ -65,7 +66,8 @@
       "jahr": "2014",
       "nummer": "8681",
       "text": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG) (Gewerbsmässige Vertretung im Zwangsvollstreckungsverfahren)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2015-10-06",
@@ -73,7 +75,8 @@
       "jahr": "2015",
       "nummer": "7161",
       "text": null,
-      "referendumsfrist": "2016-01-14"
+      "referendumsfrist": "2016-01-14",
+      "vorlage": 1
     },
     {
       "datum": "2016-11-04",
@@ -81,7 +84,8 @@
       "jahr": "2016",
       "nummer": "3643",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

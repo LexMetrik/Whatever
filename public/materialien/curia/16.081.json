@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20160081",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2016-12-02",
@@ -57,7 +57,8 @@
       "jahr": "2017",
       "nummer": "185",
       "text": "Botschaft vom 2. Dezember 2016 zur Genehmigung des Übereinkommens des Europarats zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt (Istanbul-Konvention)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2016-12-02",
@@ -65,7 +66,8 @@
       "jahr": "2017",
       "nummer": "279",
       "text": "Bundesbeschluss über die Genehmigung des Übereinkommens des Europarats zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-12-02",
@@ -73,7 +75,8 @@
       "jahr": "2017",
       "nummer": "281",
       "text": "Übereinkommen des Europarats zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt (Istanbul-Konvention)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-06-30",
@@ -81,7 +84,8 @@
       "jahr": "2017",
       "nummer": "4275",
       "text": null,
-      "referendumsfrist": "2017-10-05"
+      "referendumsfrist": "2017-10-05",
+      "vorlage": 1
     },
     {
       "datum": "2018-03-20",
@@ -89,7 +93,8 @@
       "jahr": "2018",
       "nummer": "1117",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -108,7 +113,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

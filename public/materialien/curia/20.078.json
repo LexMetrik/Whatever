@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20200078",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2020-10-21",
@@ -78,7 +78,8 @@
       "jahr": "2020",
       "nummer": "8967",
       "text": "Botschaft vom 21. Oktober 2020 zur Änderung des Versicherungsaufsichtsgesetzes (VAG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-10-21",
@@ -86,7 +87,8 @@
       "jahr": "2020",
       "nummer": "9061",
       "text": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2022-03-29",
@@ -94,7 +96,8 @@
       "jahr": "2022",
       "nummer": "704",
       "text": null,
-      "referendumsfrist": "2022-07-07"
+      "referendumsfrist": "2022-07-07",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -113,7 +116,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

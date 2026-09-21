@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20220080",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2022-12-02",
@@ -57,7 +57,8 @@
       "jahr": "2022",
       "nummer": "3190",
       "text": "Botschaft vom 2. Dezember 2022 zur Änderung des Entsendegesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2022-12-02",
@@ -65,7 +66,8 @@
       "jahr": "2022",
       "nummer": "3191",
       "text": "Bundesgesetz über die flankierenden Massnahmen bei entsandten Arbeitnehmerinnen und Arbeitnehmern und über die Kontrolle der in Normalarbeitsverträgen vorgesehenen Mindestlöhne (Entsendegesetz, EntsG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2023-06-16",
@@ -73,7 +75,8 @@
       "jahr": "2023",
       "nummer": "1526",
       "text": null,
-      "referendumsfrist": "2023-10-05"
+      "referendumsfrist": "2023-10-05",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -92,7 +95,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

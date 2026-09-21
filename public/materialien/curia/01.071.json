@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010071",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2001-11-08",
@@ -82,18 +82,20 @@
     {
       "datum": "2001-11-08",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "2022",
-      "text": "Botschaft vom 7. November 2001 über die Änderung des Kartellgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2001-11-08",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
-      "referendumsfrist": null
+      "jahr": "2002",
+      "nummer": "2022",
+      "text": "Botschaft vom 7. November 2001 über die Änderung des Kartellgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2002-06-14",
@@ -101,7 +103,8 @@
       "jahr": "2002",
       "nummer": "5506",
       "text": "Zusatzbotschaft vom 14. Juni 2002 (Untersuchungen in Verfahren nach dem Luftverkehrsabkommen Schweiz-EG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-07-01",
@@ -109,7 +112,8 @@
       "jahr": "2003",
       "nummer": "4517",
       "text": null,
-      "referendumsfrist": "2003-10-09"
+      "referendumsfrist": "2003-10-09",
+      "vorlage": 1
     },
     {
       "datum": "2004-03-23",
@@ -117,7 +121,8 @@
       "jahr": "2004",
       "nummer": "1385",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

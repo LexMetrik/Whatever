@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20040025",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2004-05-12",
@@ -54,18 +54,20 @@
     {
       "datum": "2004-05-12",
       "art": "Bundesblatt",
-      "jahr": "2004",
-      "nummer": "2851",
-      "text": "Botschaft vom 12. Mai 2004 zum Bundesgesetz über die Übertragung der Führung der Militärversicherung an die SUVA",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Übertragung der Führung der Militärversicherung an die SUVA",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2004-05-12",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Übertragung der Führung der Militärversicherung an die SUVA",
-      "referendumsfrist": null
+      "jahr": "2004",
+      "nummer": "2851",
+      "text": "Botschaft vom 12. Mai 2004 zum Bundesgesetz über die Übertragung der Führung der Militärversicherung an die SUVA",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2005-03-29",
@@ -73,7 +75,8 @@
       "jahr": "2005",
       "nummer": "2273",
       "text": null,
-      "referendumsfrist": "2005-07-07"
+      "referendumsfrist": "2005-07-07",
+      "vorlage": 1
     },
     {
       "datum": "2005-07-12",
@@ -81,7 +84,8 @@
       "jahr": "2005",
       "nummer": "2881",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 1,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

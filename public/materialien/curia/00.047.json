@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20000047",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2000-05-31",
@@ -61,18 +61,20 @@
     {
       "datum": "2000-05-31",
       "art": "Bundesblatt",
-      "jahr": "2000",
-      "nummer": "4083",
-      "text": "Botschaft vom 31. Mai 2000 betreffend die Änderung des Bundesgesetzes über die Krankenversicherung",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Krankenversicherung (KVG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2000-05-31",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Krankenversicherung (KVG)",
-      "referendumsfrist": null
+      "jahr": "2000",
+      "nummer": "4083",
+      "text": "Botschaft vom 31. Mai 2000 betreffend die Änderung des Bundesgesetzes über die Krankenversicherung",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2000-10-17",
@@ -80,7 +82,8 @@
       "jahr": "2000",
       "nummer": "5122",
       "text": null,
-      "referendumsfrist": "2001-01-25"
+      "referendumsfrist": "2001-01-25",
+      "vorlage": 1
     },
     {
       "datum": "2002-05-07",
@@ -88,7 +91,8 @@
       "jahr": "2002",
       "nummer": "858",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

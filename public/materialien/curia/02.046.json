@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020046",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2002-05-29",
@@ -292,10 +292,47 @@
     {
       "datum": "2002-05-29",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "4721",
-      "text": "Botschaft vom 29. Mai 2002 betreffend der Weiterentwicklung der Agrarpolitik (Agrarpolitik 2007)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die finanziellen Mittel für die Landwirtschaft in den Jahren 2004-2007",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2002-05-29",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über das bäuerliche Bodenrecht (BGBB)",
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2002-05-29",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Landwirtschaft (Landwirtschaftsgesetz, LwG)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2002-05-29",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die landwirtschaftliche Pacht (LPG)",
+      "referendumsfrist": null,
+      "vorlage": 4
+    },
+    {
+      "datum": "2002-05-29",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Schweizerisches Zivilgesetzbuch",
+      "referendumsfrist": null,
+      "vorlage": 5
     },
     {
       "datum": "2002-05-29",
@@ -303,7 +340,26 @@
       "jahr": null,
       "nummer": null,
       "text": "Tierschutzgesetz (TSchG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 7
+    },
+    {
+      "datum": "2002-05-29",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Tierseuchengesetz (TSG)",
+      "referendumsfrist": null,
+      "vorlage": 6
+    },
+    {
+      "datum": "2002-05-29",
+      "art": "Bundesblatt",
+      "jahr": "2002",
+      "nummer": "4721",
+      "text": "Botschaft vom 29. Mai 2002 betreffend der Weiterentwicklung der Agrarpolitik (Agrarpolitik 2007)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2002-10-16",
@@ -311,7 +367,8 @@
       "jahr": "2002",
       "nummer": "7234",
       "text": "Zusatzbotschaft zur Botschaft vom 29. Mai 2002 zur Weiterentwicklung der Agrarpolitik (AP 2007; 02.046) und Botschaft zur Änderung des Landwirtschaftsgesetzes auf dem Dringlichkeitsweg (02.068)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-07-01",
@@ -319,7 +376,8 @@
       "jahr": "2003",
       "nummer": "4530",
       "text": null,
-      "referendumsfrist": "2003-10-09"
+      "referendumsfrist": "2003-10-09",
+      "vorlage": 5
     },
     {
       "datum": "2003-07-01",
@@ -327,7 +385,8 @@
       "jahr": "2003",
       "nummer": "4532",
       "text": null,
-      "referendumsfrist": "2003-10-09"
+      "referendumsfrist": "2003-10-09",
+      "vorlage": 7
     },
     {
       "datum": "2003-07-01",
@@ -335,7 +394,8 @@
       "jahr": "2003",
       "nummer": "4534",
       "text": null,
-      "referendumsfrist": "2003-10-09"
+      "referendumsfrist": "2003-10-09",
+      "vorlage": 6
     },
     {
       "datum": "2003-07-01",
@@ -343,7 +403,8 @@
       "jahr": "2003",
       "nummer": "4538",
       "text": null,
-      "referendumsfrist": "2003-10-09"
+      "referendumsfrist": "2003-10-09",
+      "vorlage": 1
     },
     {
       "datum": "2003-07-01",
@@ -351,7 +412,8 @@
       "jahr": "2003",
       "nummer": "4554",
       "text": null,
-      "referendumsfrist": "2003-10-09"
+      "referendumsfrist": "2003-10-09",
+      "vorlage": 4
     },
     {
       "datum": "2003-07-01",
@@ -359,7 +421,8 @@
       "jahr": "2003",
       "nummer": "4558",
       "text": null,
-      "referendumsfrist": "2003-10-09"
+      "referendumsfrist": "2003-10-09",
+      "vorlage": 3
     },
     {
       "datum": "2003-07-08",
@@ -367,7 +430,8 @@
       "jahr": "2003",
       "nummer": "4825",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2003-12-02",
@@ -375,7 +439,8 @@
       "jahr": "2003",
       "nummer": "4121",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 5
     },
     {
       "datum": "2003-12-02",
@@ -383,7 +448,8 @@
       "jahr": "2003",
       "nummer": "4123",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2003-12-02",
@@ -391,7 +457,8 @@
       "jahr": "2003",
       "nummer": "4127",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2003-12-02",
@@ -399,7 +466,8 @@
       "jahr": "2003",
       "nummer": "4181",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 7
     },
     {
       "datum": "2003-12-02",
@@ -407,7 +475,8 @@
       "jahr": "2003",
       "nummer": "4217",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-12-02",
@@ -415,7 +484,8 @@
       "jahr": "2003",
       "nummer": "4237",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 6
     }
   ],
   "schlussabstimmungen": []

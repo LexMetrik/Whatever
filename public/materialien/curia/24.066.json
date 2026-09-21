@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240066",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2024-08-22",
@@ -64,7 +64,8 @@
       "jahr": "2024",
       "nummer": "2242",
       "text": "Botschaft vom 21. August 2024 zur Änderung des Bundesgesetzes über die Invalidenversicherung (Intensive Frühintervention bei Autismus-Spektrum-Störungen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-08-21",
@@ -72,7 +73,8 @@
       "jahr": "2024",
       "nummer": "2243",
       "text": "Bundesgesetz über die Invalidenversicherung (IVG) (Intensive Frühintervention bei Autismus-Spektrum-Störungen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-04-01",
@@ -80,7 +82,8 @@
       "jahr": "2025",
       "nummer": "1106",
       "text": null,
-      "referendumsfrist": "2025-07-10"
+      "referendumsfrist": "2025-07-10",
+      "vorlage": 1
     },
     {
       "datum": "2026-05-08",
@@ -88,7 +91,8 @@
       "jahr": "2026",
       "nummer": "204",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

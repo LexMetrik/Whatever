@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20090063",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2009-08-19",
@@ -61,18 +61,20 @@
     {
       "datum": "2009-08-19",
       "art": "Bundesblatt",
-      "jahr": "2009",
-      "nummer": "5917",
-      "text": "Botschaft vom 19. August 2009 zur Änderung des Militärgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2009-08-19",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
-      "referendumsfrist": null
+      "jahr": "2009",
+      "nummer": "5917",
+      "text": "Botschaft vom 19. August 2009 zur Änderung des Militärgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-03-30",
@@ -80,7 +82,8 @@
       "jahr": "2010",
       "nummer": "2065",
       "text": null,
-      "referendumsfrist": "2010-07-08"
+      "referendumsfrist": "2010-07-08",
+      "vorlage": 1
     },
     {
       "datum": "2010-12-21",
@@ -88,7 +91,8 @@
       "jahr": "2010",
       "nummer": "6015",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

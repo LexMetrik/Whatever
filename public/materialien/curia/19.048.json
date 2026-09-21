@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20190048",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2019-08-28",
@@ -113,7 +113,8 @@
       "jahr": "2019",
       "nummer": "6697",
       "text": "Botschaft vom 28. August 2019 zur Änderung der Strafprozessordnung (Umsetzung der Motion 14.3383, Kommission für Rechtsfragen des Ständerats, Anpassung der Strafprozessordnung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-08-28",
@@ -121,7 +122,8 @@
       "jahr": "2019",
       "nummer": "6789",
       "text": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-05-26",
@@ -129,7 +131,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO) (Sicherheitshaft im selbstständigen, nachträglichen Verfahren) (Entwurf der RK-N vom 15.05.2020)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2020-10-06",
@@ -137,7 +140,8 @@
       "jahr": "2020",
       "nummer": "7889",
       "text": null,
-      "referendumsfrist": "2021-01-14"
+      "referendumsfrist": "2021-01-14",
+      "vorlage": 2
     },
     {
       "datum": "2021-02-09",
@@ -145,7 +149,8 @@
       "jahr": "2021",
       "nummer": "75",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2022-06-28",
@@ -153,7 +158,8 @@
       "jahr": "2022",
       "nummer": "1560",
       "text": null,
-      "referendumsfrist": "2022-10-06"
+      "referendumsfrist": "2022-10-06",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -172,7 +178,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2022-06-17",
@@ -189,7 +195,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

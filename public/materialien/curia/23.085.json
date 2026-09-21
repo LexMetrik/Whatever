@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20230085",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2024-02-08",
@@ -64,7 +64,8 @@
       "jahr": "2024",
       "nummer": "116",
       "text": "Botschaft vom 15. Dezember 2023 zur Änderung des Schweizerischen Zivilgesetzbuches (Besitzesschutz bei verbotener Eigenmacht an Grundstücken)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2023-12-15",
@@ -72,7 +73,8 @@
       "jahr": "2024",
       "nummer": "117",
       "text": "Schweizerisches Zivilgesetzbuch (Besitzesschutz bei verbotener Eigenmacht an Grundstücken)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-07-01",
@@ -80,7 +82,8 @@
       "jahr": "2025",
       "nummer": "2029",
       "text": null,
-      "referendumsfrist": "2025-10-09"
+      "referendumsfrist": "2025-10-09",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -99,7 +102,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20130100",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2013-11-29",
@@ -71,7 +71,8 @@
       "jahr": "2014",
       "nummer": "235",
       "text": "Botschaft vom 29. November 2013 zur Änderung des Obligationenrechts (Verjährungsrecht)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2013-11-29",
@@ -79,7 +80,8 @@
       "jahr": "2014",
       "nummer": "287",
       "text": "Obligationenrecht (Revision des Verjährungsrechts)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2018-07-16",
@@ -87,7 +89,8 @@
       "jahr": "2018",
       "nummer": "3537",
       "text": null,
-      "referendumsfrist": "2018-10-04"
+      "referendumsfrist": "2018-10-04",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -106,7 +109,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

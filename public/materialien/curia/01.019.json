@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010019",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2001-02-28",
@@ -82,18 +82,20 @@
     {
       "datum": "2001-02-28",
       "art": "Bundesblatt",
-      "jahr": "2001",
-      "nummer": "2245",
-      "text": "Botschaft vom 28. Februar 2001 zu einem revidierten Arbeitslosenversicherungsgesetz (AVIG)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2001-02-28",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
-      "referendumsfrist": null
+      "jahr": "2001",
+      "nummer": "2245",
+      "text": "Botschaft vom 28. Februar 2001 zu einem revidierten Arbeitslosenversicherungsgesetz (AVIG)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2002-04-09",
@@ -101,7 +103,8 @@
       "jahr": "2002",
       "nummer": "2771",
       "text": null,
-      "referendumsfrist": "2002-07-18"
+      "referendumsfrist": "2002-07-18",
+      "vorlage": 1
     },
     {
       "datum": "2003-06-24",
@@ -109,7 +112,8 @@
       "jahr": "2003",
       "nummer": "1728",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20060031",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2006-03-10",
@@ -96,18 +96,29 @@
     {
       "datum": "2006-03-10",
       "art": "Bundesblatt",
-      "jahr": "2006",
-      "nummer": "3389",
-      "text": "Botschaft vom 10. März 2006 zum Bundesbeschluss über die Genehmigung von zwei Abkommen der Weltorganisation für geistiges Eigentum und zur Änderung des Urheberrechtsgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung von zwei Abkommen der Weltorganisation für geistiges Eigentum und über die Änderung des Urheberrechtsgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2006-03-10",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesbeschluss über die Genehmigung von zwei Abkommen der Weltorganisation für geistiges Eigentum und über die Änderung des Urheberrechtsgesetzes",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsgesetz, URG)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2006-03-10",
+      "art": "Bundesblatt",
+      "jahr": "2006",
+      "nummer": "3389",
+      "text": "Botschaft vom 10. März 2006 zum Bundesbeschluss über die Genehmigung von zwei Abkommen der Weltorganisation für geistiges Eigentum und zur Änderung des Urheberrechtsgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2007-10-16",
@@ -115,7 +126,8 @@
       "jahr": "2007",
       "nummer": "7149",
       "text": null,
-      "referendumsfrist": "2008-01-24"
+      "referendumsfrist": "2008-01-24",
+      "vorlage": 1
     },
     {
       "datum": "2007-10-16",
@@ -123,7 +135,8 @@
       "jahr": "2007",
       "nummer": "7201",
       "text": null,
-      "referendumsfrist": "2008-01-24"
+      "referendumsfrist": "2008-01-24",
+      "vorlage": 2
     },
     {
       "datum": "2008-06-10",
@@ -131,7 +144,8 @@
       "jahr": "2008",
       "nummer": "2421",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2008-06-10",
@@ -139,7 +153,8 @@
       "jahr": "2008",
       "nummer": "2497",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -158,7 +173,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2007-10-05",
@@ -175,7 +190,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

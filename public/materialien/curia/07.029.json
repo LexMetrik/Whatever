@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20070029",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2007-02-28",
@@ -61,18 +61,20 @@
     {
       "datum": "2007-02-28",
       "art": "Bundesblatt",
-      "jahr": "2007",
-      "nummer": "2595",
-      "text": "Botschaft vom 28. Februar 2007 zur Umsetzung über internationale Kindesentführungen sowie zur Genehmigung und Umsetzung der Haager Übereinkommen über den Schutz von Kindern und Erwachsenen",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Umsetzung der Übereinkommen über internationale Kindesentführung sowie die Genehmigung und Umsetzung der Haager Übereinkommen über den Schutz von Kindern und Erwachsenen",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2007-02-28",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss über die Umsetzung der Übereinkommen über internationale Kindesentführung sowie die Genehmigung und Umsetzung der Haager Übereinkommen über den Schutz von Kindern und Erwachsenen",
-      "referendumsfrist": null
+      "jahr": "2007",
+      "nummer": "2595",
+      "text": "Botschaft vom 28. Februar 2007 zur Umsetzung über internationale Kindesentführungen sowie zur Genehmigung und Umsetzung der Haager Übereinkommen über den Schutz von Kindern und Erwachsenen",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-01-08",
@@ -80,7 +82,8 @@
       "jahr": "2008",
       "nummer": "33",
       "text": null,
-      "referendumsfrist": "2008-04-17"
+      "referendumsfrist": "2008-04-17",
+      "vorlage": 1
     },
     {
       "datum": "2009-06-23",
@@ -88,7 +91,8 @@
       "jahr": "2009",
       "nummer": "3077",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

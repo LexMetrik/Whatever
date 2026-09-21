@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20220044",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2022-05-18",
@@ -64,7 +64,8 @@
       "jahr": "2022",
       "nummer": "1312",
       "text": "Botschaft vom 18. Mai 2022 zur Änderung des Ausländer- und Integrationsgesetzes (Finanzielle Unterstützung von Kantonen mit Ausreisezentren an der Grenze)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2022-05-18",
@@ -72,7 +73,8 @@
       "jahr": "2022",
       "nummer": "1313",
       "text": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG) (Finanzielle Unterstützung von Kantonen mit Ausreisezentren an der Grenze)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2022-12-29",
@@ -80,7 +82,8 @@
       "jahr": "2022",
       "nummer": "3208",
       "text": null,
-      "referendumsfrist": "2023-04-08"
+      "referendumsfrist": "2023-04-08",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -99,7 +102,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

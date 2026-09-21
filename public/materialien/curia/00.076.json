@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20000076",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2000-10-02",
@@ -82,18 +82,20 @@
     {
       "datum": "2000-10-02",
       "art": "Bundesblatt",
-      "jahr": "2000",
-      "nummer": "5835",
-      "text": "Botschaft vom 2. Oktober 2000 für ein Bundesgesetz über neue dringliche Massnahmen im Bereich der Umsatzabgabe",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über neue dringliche Massnahmen im Bereich der Umsatzabgabe",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2000-10-02",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über neue dringliche Massnahmen im Bereich der Umsatzabgabe",
-      "referendumsfrist": null
+      "jahr": "2000",
+      "nummer": "5835",
+      "text": "Botschaft vom 2. Oktober 2000 für ein Bundesgesetz über neue dringliche Massnahmen im Bereich der Umsatzabgabe",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2000-12-15",
@@ -101,7 +103,8 @@
       "jahr": "2000",
       "nummer": "2991",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2000-12-15",
@@ -109,7 +112,8 @@
       "jahr": "2000",
       "nummer": "6203",
       "text": null,
-      "referendumsfrist": "2001-04-07"
+      "referendumsfrist": "2001-04-07",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

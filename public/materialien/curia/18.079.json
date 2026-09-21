@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20180079",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2018-11-07",
@@ -99,7 +99,8 @@
       "jahr": "2018",
       "nummer": "7653",
       "text": "Botschaft vom 7. November 2018 zur Volksinitiative «Für eine starke Pflege (Pflegeinitiative)»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-11-07",
@@ -107,7 +108,8 @@
       "jahr": "2018",
       "nummer": "7675",
       "text": "Bundesbeschluss über die Volksinitiative «Für eine starke Pflege (Pflegeinitiative)»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2021-06-29",
@@ -115,7 +117,8 @@
       "jahr": "2021",
       "nummer": "1488",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -134,7 +137,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

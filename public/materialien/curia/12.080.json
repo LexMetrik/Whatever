@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20120080",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2012-11-07",
@@ -106,7 +106,8 @@
       "jahr": "2013",
       "nummer": "1",
       "text": "Botschaft vom 7. November 2012 zur Änderung des Heilmittelgesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-11-07",
@@ -114,7 +115,8 @@
       "jahr": "2013",
       "nummer": "131",
       "text": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-04-01",
@@ -122,7 +124,8 @@
       "jahr": "2016",
       "nummer": "1953",
       "text": null,
-      "referendumsfrist": "2016-07-07"
+      "referendumsfrist": "2016-07-07",
+      "vorlage": 1
     },
     {
       "datum": "2017-05-09",
@@ -130,7 +133,8 @@
       "jahr": "2017",
       "nummer": "2745",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -149,7 +153,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

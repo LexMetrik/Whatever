@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050052",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-06-22",
@@ -89,18 +89,29 @@
     {
       "datum": "2005-06-22",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "4459",
-      "text": "Botschaft vom 22. Juni 2005 zur 5. Revision des Bundesgesetzes über die Invalidenversicherung",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Invalidenversicherung (IVG) (Finanzierung)",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2005-06-22",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesgesetz über die Invalidenversicherung (IVG) (Finanzierung)",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über die Invalidenversicherung (IVG)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2005-06-22",
+      "art": "Bundesblatt",
+      "jahr": "2005",
+      "nummer": "4459",
+      "text": "Botschaft vom 22. Juni 2005 zur 5. Revision des Bundesgesetzes über die Invalidenversicherung",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2006-10-17",
@@ -108,7 +119,8 @@
       "jahr": "2006",
       "nummer": "8313",
       "text": null,
-      "referendumsfrist": "2007-01-25"
+      "referendumsfrist": "2007-01-25",
+      "vorlage": 1
     },
     {
       "datum": "2007-11-13",
@@ -116,7 +128,8 @@
       "jahr": "2007",
       "nummer": "5129",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

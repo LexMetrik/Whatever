@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20190027",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2019-05-22",
@@ -64,7 +64,8 @@
       "jahr": "2019",
       "nummer": "4103",
       "text": "Botschaft vom 22. Mai 2019 zum Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-05-22",
@@ -72,7 +73,8 @@
       "jahr": "2019",
       "nummer": "4167",
       "text": "Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2019-12-31",
@@ -80,7 +82,8 @@
       "jahr": "2019",
       "nummer": "8667",
       "text": null,
-      "referendumsfrist": "2020-04-09"
+      "referendumsfrist": "2020-04-09",
+      "vorlage": 1
     },
     {
       "datum": "2020-11-04",
@@ -88,7 +91,8 @@
       "jahr": "2020",
       "nummer": "4525",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

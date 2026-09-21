@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020060",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2002-09-04",
@@ -152,18 +152,38 @@
     {
       "datum": "2002-09-04",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "6845",
-      "text": "Botschaft vom 4. September 2002 zur Änderung des Asylgesetzes, zur Änderung des Bundesgesetzes über die Krankenversicherung sowie zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenversicherung",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Asylgesetz (AsylG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2002-09-04",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Asylgesetz (AsylG)",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG)",
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2002-09-04",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Krankenversicherung (KVG)",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2002-09-04",
+      "art": "Bundesblatt",
+      "jahr": "2002",
+      "nummer": "6845",
+      "text": "Botschaft vom 4. September 2002 zur Änderung des Asylgesetzes, zur Änderung des Bundesgesetzes über die Krankenversicherung sowie zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenversicherung",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2005-12-27",
@@ -171,7 +191,8 @@
       "jahr": "2005",
       "nummer": "7425",
       "text": null,
-      "referendumsfrist": "2006-04-06"
+      "referendumsfrist": "2006-04-06",
+      "vorlage": 1
     },
     {
       "datum": "2005-12-27",
@@ -179,7 +200,8 @@
       "jahr": "2005",
       "nummer": "7457",
       "text": null,
-      "referendumsfrist": "2006-04-06"
+      "referendumsfrist": "2006-04-06",
+      "vorlage": 2
     },
     {
       "datum": "2005-12-27",
@@ -187,7 +209,8 @@
       "jahr": "2005",
       "nummer": "7459",
       "text": null,
-      "referendumsfrist": "2006-04-06"
+      "referendumsfrist": "2006-04-06",
+      "vorlage": 3
     },
     {
       "datum": "2006-12-05",
@@ -195,7 +218,8 @@
       "jahr": "2006",
       "nummer": "4745",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2006-12-05",
@@ -203,7 +227,8 @@
       "jahr": "2006",
       "nummer": "4817",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2006-12-05",
@@ -211,7 +236,8 @@
       "jahr": "2006",
       "nummer": "4823",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -230,7 +256,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2005-12-16",
@@ -247,7 +273,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2005-12-16",
@@ -264,7 +290,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2005-12-16",
@@ -281,7 +307,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

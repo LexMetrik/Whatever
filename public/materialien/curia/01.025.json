@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010025",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2001-04-04",
@@ -68,18 +68,20 @@
     {
       "datum": "2001-04-04",
       "art": "Bundesblatt",
-      "jahr": "2001",
-      "nummer": "3433",
-      "text": "Botschaft vom 4. April 2001 zur Volksinitiative \"Lebenslange Verwahrung für nicht therapierbare, extrem gefährliche Sexual- und Gewaltstraftäter\"",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Volksinitiative \"Lebenslange Verwahrung für nicht therapierbare, extrem gefährliche Sexual- und Gewaltstraftäter\"",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2001-04-04",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss über die Volksinitiative \"Lebenslange Verwahrung für nicht therapierbare, extrem gefährliche Sexual- und Gewaltstraftäter\"",
-      "referendumsfrist": null
+      "jahr": "2001",
+      "nummer": "3433",
+      "text": "Botschaft vom 4. April 2001 zur Volksinitiative \"Lebenslange Verwahrung für nicht therapierbare, extrem gefährliche Sexual- und Gewaltstraftäter\"",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-07-01",
@@ -87,7 +89,8 @@
       "jahr": "2003",
       "nummer": "4434",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20170051",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2017-08-23",
@@ -99,7 +99,8 @@
       "jahr": "2017",
       "nummer": "5901",
       "text": "Botschaft vom 23. August 2017 zur Volksinitiative «Zur Förderung der Velo-, Fuss- und Wanderwege (Velo-Initiative)» und zum direkten Gegenentwurf (Bundesbeschluss über die Velowege sowie die Fuss- und Wanderwege)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-08-23",
@@ -107,7 +108,8 @@
       "jahr": "2017",
       "nummer": "5921",
       "text": "Bundesbeschluss über die Volksinitiative «Zur Förderung der Velo-, Fuss und Wanderwege (Velo Initiative)»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2017-08-23",
@@ -115,7 +117,8 @@
       "jahr": "2017",
       "nummer": "5923",
       "text": "Bundesbeschluss über die Velowege sowie die Fuss- und Wanderwege (direkter Gegenentwurf zur Volksinitiative «Zur Förderung der Velo-, Fuss- und Wanderwege [Velo-Initiative]»)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2018-03-13",
@@ -123,7 +126,8 @@
       "jahr": "2019",
       "nummer": "525",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2018-03-27",
@@ -131,7 +135,8 @@
       "jahr": "2018",
       "nummer": "1481",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2018-03-27",
@@ -139,7 +144,8 @@
       "jahr": "2018",
       "nummer": "1483",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -158,7 +164,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2018-03-16",
@@ -175,7 +181,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2018-03-16",
@@ -192,7 +198,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

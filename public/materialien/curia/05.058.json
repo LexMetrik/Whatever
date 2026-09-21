@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050058",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-06-22",
@@ -145,18 +145,38 @@
     {
       "datum": "2005-06-22",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "4733",
-      "text": "Botschaft vom 22. Juni 2005 zum Bundesgesetz über die Verbesserung der steuerlichen Rahmenbedingungen für unternehmerische Tätigkeiten und Investitionen (Unternehmenssteuerreformgesetz II)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Verbesserung der steuerlichen Rahmenbedingungen für unternehmerische Tätigkeiten und Investitionen (Unternehmenssteuerreformgesetz II)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-06-22",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesgesetz über die Verbesserung der steuerlichen Rahmenbedingungen für unternehmerische Tätigkeiten und Investitionen (Unternehmenssteuerreformgesetz II)",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über dringende Anpassungen bei der Unternehmensbesteuerung",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2005-06-22",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Quasi-Wertschriftenhandel",
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2005-06-22",
+      "art": "Bundesblatt",
+      "jahr": "2005",
+      "nummer": "4733",
+      "text": "Botschaft vom 22. Juni 2005 zum Bundesgesetz über die Verbesserung der steuerlichen Rahmenbedingungen für unternehmerische Tätigkeiten und Investitionen (Unternehmenssteuerreformgesetz II)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2006-07-04",
@@ -164,7 +184,8 @@
       "jahr": "2006",
       "nummer": "5749",
       "text": null,
-      "referendumsfrist": "2006-10-12"
+      "referendumsfrist": "2006-10-12",
+      "vorlage": 2
     },
     {
       "datum": "2006-12-12",
@@ -172,7 +193,8 @@
       "jahr": "2006",
       "nummer": "4883",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2007-04-03",
@@ -180,7 +202,8 @@
       "jahr": "2007",
       "nummer": "2321",
       "text": null,
-      "referendumsfrist": "2007-07-12"
+      "referendumsfrist": "2007-07-12",
+      "vorlage": 1
     },
     {
       "datum": "2008-06-24",
@@ -188,7 +211,8 @@
       "jahr": "2008",
       "nummer": "2893",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -207,7 +231,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2007-03-23",
@@ -224,7 +248,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

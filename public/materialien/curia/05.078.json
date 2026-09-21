@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050078",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-11-09",
@@ -68,18 +68,20 @@
     {
       "datum": "2005-11-09",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "7165",
-      "text": "Botschaft vom 9. November 2005 zur Totalrevision des Bundesgesetzes über die Hilfe an Opfer von Straftaten (Opferhilfegesetz, OHG)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Hilfe an Opfer von Straftaten (Opferhilfegesetz, OHG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-11-09",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Hilfe an Opfer von Straftaten (Opferhilfegesetz, OHG)",
-      "referendumsfrist": null
+      "jahr": "2005",
+      "nummer": "7165",
+      "text": "Botschaft vom 9. November 2005 zur Totalrevision des Bundesgesetzes über die Hilfe an Opfer von Straftaten (Opferhilfegesetz, OHG)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2007-04-03",
@@ -87,7 +89,8 @@
       "jahr": "2007",
       "nummer": "2299",
       "text": null,
-      "referendumsfrist": "2007-07-12"
+      "referendumsfrist": "2007-07-12",
+      "vorlage": 1
     },
     {
       "datum": "2008-04-08",
@@ -95,7 +98,8 @@
       "jahr": "2008",
       "nummer": "1607",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20110028",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2011-04-20",
@@ -113,7 +113,8 @@
       "jahr": "2011",
       "nummer": "4717",
       "text": "Botschaft vom 20. April 2011 zur Änderung des Bankengesetzes (Stärkung der Stabilität im Finanzsektor; too big to fail)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-04-20",
@@ -121,7 +122,8 @@
       "jahr": "2011",
       "nummer": "4807",
       "text": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Stärkung der Stabilität im Finanzsektor; too big to fail)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2011-10-13",
@@ -129,7 +131,8 @@
       "jahr": "2011",
       "nummer": "7487",
       "text": null,
-      "referendumsfrist": "2012-01-19"
+      "referendumsfrist": "2012-01-19",
+      "vorlage": 1
     },
     {
       "datum": "2012-02-21",
@@ -137,7 +140,8 @@
       "jahr": "2012",
       "nummer": "811",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -156,7 +160,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

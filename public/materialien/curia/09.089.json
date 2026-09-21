@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20090089",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2009-11-27",
@@ -89,18 +89,20 @@
     {
       "datum": "2009-11-27",
       "art": "Bundesblatt",
-      "jahr": "2009",
-      "nummer": "8513",
-      "text": "Botschaft vom 27. November 2009 zur Änderung des Regierungs- und Verwaltungsorganisationsgsetzes (Datenschutz bei der Nutzung der elektronischen Infrastruktur)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG) (Datenschutz bei der Benutzung der elektronischen Infrastruktur)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2009-11-27",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG) (Datenschutz bei der Benutzung der elektronischen Infrastruktur)",
-      "referendumsfrist": null
+      "jahr": "2009",
+      "nummer": "8513",
+      "text": "Botschaft vom 27. November 2009 zur Änderung des Regierungs- und Verwaltungsorganisationsgsetzes (Datenschutz bei der Nutzung der elektronischen Infrastruktur)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-10-12",
@@ -108,7 +110,8 @@
       "jahr": "2010",
       "nummer": "6579",
       "text": null,
-      "referendumsfrist": "2011-01-20"
+      "referendumsfrist": "2011-01-20",
+      "vorlage": 1
     },
     {
       "datum": "2012-03-13",
@@ -116,7 +119,8 @@
       "jahr": "2012",
       "nummer": "941",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -135,7 +139,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

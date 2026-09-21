@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20110050",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2011-08-31",
@@ -71,7 +71,8 @@
       "jahr": "2011",
       "nummer": "6873",
       "text": "Botschaft vom 31. August 2011 zur Änderung des Börsengesetzes (Börsendelikte und Marktmissbrauch)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-08-31",
@@ -79,7 +80,8 @@
       "jahr": "2011",
       "nummer": "6915",
       "text": "Bundesgesetz über die Börsen und den Effektenhandel (Börsengesetz, BEHG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-10-09",
@@ -87,7 +89,8 @@
       "jahr": "2012",
       "nummer": "8207",
       "text": null,
-      "referendumsfrist": "2013-01-17"
+      "referendumsfrist": "2013-01-17",
+      "vorlage": 1
     },
     {
       "datum": "2013-04-23",
@@ -95,7 +98,8 @@
       "jahr": "2013",
       "nummer": "1103",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 198
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

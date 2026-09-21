@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20160077",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2016-11-23",
@@ -211,7 +211,8 @@
       "jahr": "2017",
       "nummer": "399",
       "text": "Botschaft vom 23. November 2016 zur Änderung des Obligationenrechts (Aktienrecht)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2016-11-23",
@@ -219,7 +220,8 @@
       "jahr": "2017",
       "nummer": "683",
       "text": "Obligationenrecht (Aktienrecht)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2018-06-14",
@@ -227,7 +229,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Obligationenrecht (Indirekter Gegenentwurf zur Volksinitiative «Für verantwortungsvolle Unternehmen – zum Schutz von Mensch und Umwelt»)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2020-06-30",
@@ -235,7 +238,8 @@
       "jahr": "2020",
       "nummer": "5573",
       "text": null,
-      "referendumsfrist": "2020-10-08"
+      "referendumsfrist": "2020-10-08",
+      "vorlage": 1
     },
     {
       "datum": "2020-10-13",
@@ -243,7 +247,8 @@
       "jahr": "2020",
       "nummer": "4005",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2021-04-27",
@@ -251,7 +256,8 @@
       "jahr": "2021",
       "nummer": "890",
       "text": null,
-      "referendumsfrist": "2021-08-05"
+      "referendumsfrist": "2021-08-05",
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -270,7 +276,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2020-06-19",
@@ -287,7 +293,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

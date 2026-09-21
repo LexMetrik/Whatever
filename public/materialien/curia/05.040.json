@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050040",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-05-18",
@@ -82,10 +82,11 @@
     {
       "datum": "2005-05-18",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "3773",
-      "text": "Boschaft vom 18. Mai 2005 über die Genehmigung von zwei Abkommen betreffend das europäische Patentsystem und die Änderungen des Patentgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung der Akte zur Revision des Europäischen Patentübereinkommens und über die Änderung des Patentgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-05-18",
@@ -93,7 +94,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesbeschluss über die Genehmigung des Übereinkommens über die Anwendung des Artikels 65 des Europäischen Patentübereinkommens und über die Änderung des Patentgesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2005-05-18",
+      "art": "Bundesblatt",
+      "jahr": "2005",
+      "nummer": "3773",
+      "text": "Boschaft vom 18. Mai 2005 über die Genehmigung von zwei Abkommen betreffend das europäische Patentsystem und die Änderungen des Patentgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2005-12-27",
@@ -101,7 +112,8 @@
       "jahr": "2005",
       "nummer": "7489",
       "text": null,
-      "referendumsfrist": "2006-04-06"
+      "referendumsfrist": "2006-04-06",
+      "vorlage": 1
     },
     {
       "datum": "2005-12-27",
@@ -109,7 +121,8 @@
       "jahr": "2005",
       "nummer": "7495",
       "text": null,
-      "referendumsfrist": "2006-04-06"
+      "referendumsfrist": "2006-04-06",
+      "vorlage": 2
     },
     {
       "datum": "2007-12-11",
@@ -117,7 +130,8 @@
       "jahr": "2007",
       "nummer": "6479",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2008-04-15",
@@ -125,7 +139,8 @@
       "jahr": "2008",
       "nummer": "1739",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -144,7 +159,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2005-12-16",
@@ -161,7 +176,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20200064",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2020-08-26",
@@ -85,7 +85,8 @@
       "jahr": "2020",
       "nummer": "7105",
       "text": "Botschaft vom 26. August 2020 zur Übernahme und Umsetzung der Verordnung (EU) 2019/1896 über die Europäische Grenz- und Küstenwache und zur Aufhebung der Verordnungen (EU) Nr. 1052/2013 und (EU) 2016/1624 (Weiterentwicklung des Schengen-Besitzstands) und zu einer Änderung des Asylgesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-08-26",
@@ -93,7 +94,8 @@
       "jahr": "2020",
       "nummer": "7185",
       "text": "Asylgesetz (AsylG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-08-26",
@@ -101,7 +103,8 @@
       "jahr": "2020",
       "nummer": "7187",
       "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustausches zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) 2019/1896 über die Europäische Grenz- und Küstenwache und zur Aufhebung der Verordnungen (EU) Nr. 1052/2013 und (EU) 2016/1624 (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2020-08-26",
@@ -109,7 +112,8 @@
       "jahr": "2020",
       "nummer": "7191",
       "text": "Notenaustausch vom 13. Dezember 2019 zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der Verordnung (EU) 2019/1896 über die Europäische Grenz- und Küstenwache und zur Aufhebung der Verordnungen (EU) Nr. 1052/2013 (EU) 2016/1624 (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2021-10-12",
@@ -117,7 +121,8 @@
       "jahr": "2021",
       "nummer": "2318",
       "text": null,
-      "referendumsfrist": "2022-01-20"
+      "referendumsfrist": "2022-01-20",
+      "vorlage": 1
     },
     {
       "datum": "2021-10-12",
@@ -125,7 +130,8 @@
       "jahr": "2021",
       "nummer": "2333",
       "text": null,
-      "referendumsfrist": "2022-01-20"
+      "referendumsfrist": "2022-01-20",
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -144,7 +150,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2021-10-01",
@@ -161,7 +167,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

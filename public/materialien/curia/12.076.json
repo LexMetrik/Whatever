@@ -7,7 +7,7 @@
   "erstrat": null,
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20120076",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2012-10-10",
@@ -169,7 +169,8 @@
       "jahr": "2012",
       "nummer": "8819",
       "text": "Botschaft vom 10. Oktober 2012 zur Volksinitiative \"Pädophile sollen nicht mehr mit Kindern arbeiten dürfen\" sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-10-10",
@@ -177,7 +178,8 @@
       "jahr": "2012",
       "nummer": "8881",
       "text": "Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-10-10",
@@ -185,7 +187,8 @@
       "jahr": "2012",
       "nummer": "8897",
       "text": "Bundesbeschluss über die Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2013-02-14",
@@ -193,7 +196,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesbeschluss über das Tätigkeitsverbot nach einer Straftat gegen die sexuelle Integrität (Gegenentwurf zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen») (Entwurf der RK-N vom 14. Februar 2013)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2013-05-23",
@@ -201,7 +205,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über das zwingende Tätigkeitsverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) (Entwurf der RK-N vom 23. Mai 2013)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2013-08-26",
@@ -209,7 +214,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesbeschluss über das Tätigkeits- und Kontaktverbot nach einer Straftat gegen die sexuelle Integrität (Gegenentwurf zur Volksinitiative „Pädophile sollen nicht mehr mit Kindern arbeiten dürfen“) (Entwurf der RK-S vom 26. August 2013)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 5
     },
     {
       "datum": "2013-12-27",
@@ -217,7 +223,8 @@
       "jahr": "2013",
       "nummer": "9683",
       "text": null,
-      "referendumsfrist": "2014-04-06"
+      "referendumsfrist": "2014-04-06",
+      "vorlage": 1
     },
     {
       "datum": "2014-07-08",
@@ -225,7 +232,8 @@
       "jahr": "2014",
       "nummer": "2055",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -244,7 +252,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2013-12-13",
@@ -261,7 +269,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2013-12-13",
@@ -278,7 +286,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

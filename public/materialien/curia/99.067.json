@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=19990067",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "1999-08-25",
@@ -82,18 +82,29 @@
     {
       "datum": "1999-08-25",
       "art": "Bundesblatt",
-      "jahr": "1999",
-      "nummer": "9005",
-      "text": "Botschaft vom 25. August 1999 über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Bearbeitung von Personendaten im Eidgenössischen Departement für auswärtige Angelegenheiten",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "1999-08-25",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesgesetz über die Bearbeitung von Personendaten im Eidgenössischen Departement für auswärtige Angelegenheiten",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "1999-08-25",
+      "art": "Bundesblatt",
+      "jahr": "1999",
+      "nummer": "9005",
+      "text": "Botschaft vom 25. August 1999 über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2000-04-12",
@@ -101,7 +112,8 @@
       "jahr": "2000",
       "nummer": "2136",
       "text": null,
-      "referendumsfrist": "2000-07-20"
+      "referendumsfrist": "2000-07-20",
+      "vorlage": 1
     },
     {
       "datum": "2000-04-12",
@@ -109,7 +121,8 @@
       "jahr": "2000",
       "nummer": "2160",
       "text": null,
-      "referendumsfrist": "2000-07-20"
+      "referendumsfrist": "2000-07-20",
+      "vorlage": 2
     },
     {
       "datum": "2000-08-02",
@@ -117,7 +130,8 @@
       "jahr": "2000",
       "nummer": "1891",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2000-08-02",
@@ -125,7 +139,8 @@
       "jahr": "2000",
       "nummer": "1915",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": []

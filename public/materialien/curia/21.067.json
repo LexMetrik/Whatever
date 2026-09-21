@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20210067",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2021-11-10",
@@ -155,7 +155,8 @@
       "jahr": "2021",
       "nummer": "2819",
       "text": "Botschaft vom 10. November 2021 zur Volksinitiative «Für tiefere Prämien – Kostenbremse im  Gesundheitswesen (Kostenbremse-Initiative)» und zum indirekten Gegenvorschlag (Änderung des Bundesgesetzes  über die Krankenversicherung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2021-11-10",
@@ -163,7 +164,8 @@
       "jahr": "2021",
       "nummer": "2820",
       "text": "Bundesbeschluss über die Volksinitiative «Für tiefere Prämien – Kostenbremse im Gesundheitswesen (Kostenbremse-Initiative)»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2021-11-10",
@@ -171,7 +173,8 @@
       "jahr": "2021",
       "nummer": "2821",
       "text": "Bundesgesetz über die Krankenversicherung (KVG) (Massnahmen zur Kostendämpfung – Vorgabe von Kostenzielen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2023-10-10",
@@ -179,7 +182,8 @@
       "jahr": "2023",
       "nummer": "2286",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2023-10-10",
@@ -187,7 +191,8 @@
       "jahr": "2023",
       "nummer": "2303",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2024-10-01",
@@ -195,7 +200,8 @@
       "jahr": "2024",
       "nummer": "2412",
       "text": null,
-      "referendumsfrist": "2025-01-09"
+      "referendumsfrist": "2025-01-09",
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -214,7 +220,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2023-09-29",
@@ -231,7 +237,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }
