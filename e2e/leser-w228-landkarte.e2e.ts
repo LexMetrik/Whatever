@@ -47,8 +47,26 @@
 //      Streifen bleibt trotz abgeschalteter Hervorhebung stehen.
 //  (d) in `v3/LandkarteZone.tsx` im `onSprung` den Zweig `m.springeZuTreffer`
 //      durch ein leeres `() => {}` ersetzen ⇒ der Klick bewegt nichts.
-//  (f) in `components/leser/MarkenSchalter.tsx` `min-h-6` streichen ⇒ die
-//      gemessene Knopfhöhe fällt auf ~20 px.
+//  (f) in `src/index.css` bei `.fc-schalter` `min-height: var(--tap-ziel)`
+//      streichen ⇒ die gemessene Knopfhöhe fällt auf 23 px (11 px · 1.2 Zeile
+//      + 2×4 px Polster + 2 px Strich). Die frühere Fassung dieser Zeile nannte
+//      ein `min-h-6` an der Aufrufstelle — das gab es am 21.9.2026 schon nicht
+//      mehr (der Baustein trägt das Tap-Ziel seit dem Schalter-Nachzug).
+//  (g) in `v3/SuchZone.tsx` am Zähler-Knopf `overflow-hidden whitespace-nowrap`
+//      streichen UND die zwei Beschriftungs-Spans wieder durch das feste
+//      «Treffer anzeigen →» ersetzen ⇒ der Knopf-Inhalt misst @390 234 px in
+//      einem 200-px-Kasten und malt über den Schalter (Rot-Beweis 21.9.2026).
+//      Für die S2-Hälfte: den `@layer components`-Block bei `.fc-schalter` in
+//      `src/index.css` entfernen ⇒ der Schalter steht wieder auf 13 px/500
+//      neben 11 px/400.
+//
+// ── (g) IST DIE SONDE ZUR SICHTPRÜFUNG VOM 21.9.2026 (§6.7) ─────────────────
+// Beide Befunde jenes Tages lagen auf der Zähler-Zeile @390 und KEIN Tor sah
+// sie: (a)–(f) messen Zahlen, Zustände und EINE Höhe, nie das Nebeneinander.
+// Der Überlauf war zudem INNEN — die drei Kästen der Zeile lagen sauber
+// nebeneinander, der Text lief aus seinem eigenen Kasten heraus. Eine Sonde,
+// die nur Rechtecke vergleicht, wäre an genau diesem Befund grün geblieben;
+// darum misst (g) beides.
 import { test, expect, type Page } from '@playwright/test'
 
 const BEGRIFF = 'Kündigung'
@@ -266,4 +284,108 @@ test('(f) der Schalter erreicht 24 px — ohne die Höhe der Such-Zone zu verän
   expect(drin, 'Schalter oder Zone fehlen').not.toBeNull()
   expect(drin!.unten, `der Schalter steht ${drin!.unten} px unter der Zonenkante`).toBeLessThanOrEqual(0)
   expect(drin!.oben, `der Schalter steht ${drin!.oben} px über der Zonenkante`).toBeGreaterThanOrEqual(0)
+})
+
+test('(g) @390 ist die Zähler-Zeile lesbar — nichts überlappt, nichts läuft heraus', async ({ page }) => {
+  // Die Sichtprüfung lief @390 hell. Der Fall stellt sie nach, nicht eine
+  // bequemere Breite: @1440 gab es keinen der beiden Befunde (623 px Zeile,
+  // 473 px Inhalt — gemessen 21.9.2026).
+  // Schmal von Anfang an, nicht nachträglich verkleinert: die Zone soll auf
+  // derselben Breite AUFGEBAUT werden, auf der sie gemessen wird.
+  await page.emulateMedia({ reducedMotion: 'reduce', colorScheme: 'light' })
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto('/gesetze/bund/OR')
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible({ timeout: 30000 })
+  await expect(page.locator('[data-v3-suchsprung] input').first()).toBeVisible({ timeout: 20000 })
+  await page.evaluate(() => document.fonts?.ready)
+  await sucheUndLies(page)
+
+  const zeile = await page.evaluate(() => {
+    const weg = document.querySelector('[data-v3-treffer-weg]') as HTMLElement | null
+    if (!weg) return null
+    const eltern = weg.parentElement as HTMLElement
+    const kasten = (el: Element) => {
+      const r = el.getBoundingClientRect()
+      return { x: Math.round(r.x), rechts: Math.round(r.right), b: Math.round(r.width), h: Math.round(r.height) }
+    }
+    const stil = (el: Element) => {
+      const cs = getComputedStyle(el)
+      return { gr: cs.fontSize, fett: cs.fontWeight }
+    }
+    return {
+      zeile: kasten(eltern),
+      kinder: Array.from(eltern.children).map((c) => ({
+        name: c.getAttributeNames().find((a) => a.startsWith('data-')) ?? c.tagName.toLowerCase(),
+        ...kasten(c), ...stil(c),
+      })),
+      // Der INNERE Überlauf des Zähler-Knopfs: genau hier lag der Befund.
+      knopf: { sichtbar: weg.clientWidth, inhalt: weg.scrollWidth },
+      schalterStil: (() => {
+        const k = document.querySelector('[data-treffer-marken-schalter]')
+        return k ? stil(k) : null
+      })(),
+    }
+  })
+  expect(zeile, 'Zähler-Zeile fehlt — Vorbedingung (§6.7)').not.toBeNull()
+  // POSITIV-Vorbedingung: die Zeile trägt wirklich alle drei Rollen, sonst wäre
+  // «nichts überlappt» trivial wahr.
+  expect(zeile!.kinder.length, `nur ${zeile!.kinder.length} Elemente in der Zeile`).toBe(3)
+
+  // 1 · KEIN KIND ÜBERLAPPT EIN ANDERES.
+  for (let i = 0; i < zeile!.kinder.length; i++) {
+    for (let j = i + 1; j < zeile!.kinder.length; j++) {
+      const a = zeile!.kinder[i]; const b = zeile!.kinder[j]
+      expect(a.x < b.rechts && b.x < a.rechts,
+        `${a.name} [${a.x}…${a.rechts}] überlappt ${b.name} [${b.x}…${b.rechts}]`).toBe(false)
+    }
+  }
+
+  // 2 · ALLES BLEIBT IN DER ZEILENBREITE.
+  for (const k of zeile!.kinder) {
+    expect(k.x, `${k.name} beginnt links der Zeile (${k.x} < ${zeile!.zeile.x})`).toBeGreaterThanOrEqual(zeile!.zeile.x)
+    expect(k.rechts, `${k.name} endet rechts der Zeile (${k.rechts} > ${zeile!.zeile.rechts})`).toBeLessThanOrEqual(zeile!.zeile.rechts)
+  }
+
+  // 3 · DER ZÄHLER LÄUFT NICHT AUS SEINEM EIGENEN KASTEN. Das ist der Befund
+  //     selbst: vor dem Fix 234 px Inhalt in 200 px Kasten, und die 34 px
+  //     überzähligen Pixel landeten als Text auf dem Schalter daneben.
+  expect(zeile!.knopf.inhalt,
+    `Zähler-Inhalt ${zeile!.knopf.inhalt} px in ${zeile!.knopf.sichtbar} px Kasten`)
+    .toBeLessThanOrEqual(zeile!.knopf.sichtbar)
+
+  // 4 · S2 · DER SCHALTER ORDNET SICH DER ZEILE UNTER. Gemessen gegen den
+  //     NACHBARN, nicht gegen eine im Test notierte Zahl — die wäre die zweite
+  //     Wahrheit neben der Typo-Skala (§5).
+  const zaehlerStil = zeile!.kinder.find((k) => k.name === 'data-v3-treffer-weg')
+  expect(zaehlerStil, 'Zähler-Knopf nicht gefunden').toBeTruthy()
+  expect(zeile!.schalterStil, 'Schalter nicht gefunden').not.toBeNull()
+  expect(zeile!.schalterStil!.gr,
+    `Schalter ${zeile!.schalterStil!.gr} gegen Zähler ${zaehlerStil!.gr}`).toBe(zaehlerStil!.gr)
+  expect(zeile!.schalterStil!.fett,
+    `Schalter-Gewicht ${zeile!.schalterStil!.fett} gegen Zähler ${zaehlerStil!.fett}`).toBe(zaehlerStil!.fett)
+
+  // 5 · DER WEG, DIE HERVORHEBUNG LOSZUWERDEN, IST AUF MOBIL ERREICHBAR.
+  //     Der Streifen fällt @390 ohnehin weg (`hidden xl:block`), die FARBE IM
+  //     TEXT nicht — ein Schalter, der hier verschwände, nähme dem Leser die
+  //     einzige Möglichkeit, sie abzustellen. Geprüft wird nicht «da», sondern
+  //     «wirkt»: bedienbares Tap-Ziel UND die Hervorhebung geht wirklich aus.
+  const schalter = page.locator('[data-treffer-marken-schalter]')
+  await expect(schalter).toBeVisible()
+  const mass = await schalter.evaluate((el) => {
+    const r = el.getBoundingClientRect()
+    return { h: Math.round(r.height), b: Math.round(r.width), oben: Math.round(r.top), unten: Math.round(r.bottom) }
+  })
+  expect(mass.h, `Tap-Ziel @390 nur ${mass.h} px hoch (WCAG 2.5.8: 24 px)`).toBeGreaterThanOrEqual(24)
+  expect(mass.b, `Tap-Ziel @390 nur ${mass.b} px breit`).toBeGreaterThanOrEqual(24)
+  expect(mass.oben, 'der Schalter steht über dem Fensterrand').toBeGreaterThanOrEqual(0)
+  expect(mass.unten, 'der Schalter steht unter der Falz').toBeLessThanOrEqual(844)
+
+  expect(await hervorhebungen(page), 'keine Hervorhebung vor dem Schalten — Vorbedingung fehlt').toBeGreaterThan(0)
+  await schalter.click()
+  await expect(schalter).toHaveAttribute('aria-pressed', 'false')
+  await expect.poll(() => hervorhebungen(page), { timeout: 10000 }).toBe(0)
+
+  // Und die Zone hat sich durch nichts davon bewegt (LM-003).
+  const zone = await page.locator('[data-v3-such-zone]').evaluate((el) => Math.round(el.getBoundingClientRect().height))
+  expect(zone, `Such-Zone @390 ${zone} px statt 68 px (SUCH_H_AKTIV)`).toBe(68)
 })

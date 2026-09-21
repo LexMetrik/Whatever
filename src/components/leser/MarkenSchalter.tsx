@@ -32,23 +32,37 @@
 // Fläche» — im Streifen ist sie bereits vergeben). Der Platzhalter für den
 // Strich steht trotzdem (transparent), die Zeile springt beim Umschalten nicht.
 //
-// GEOMETRIE — NACHGEMESSEN, nicht gerechnet (21.9.2026, @1440, OR/«Kündigung»):
+// ── S2 (Sichtprüfung 21.9.2026) · DER SCHALTER WAR DIE HAUPTSACHE DER ZEILE ──
+// GEMESSEN @390 UND @1440 (hell, OR/«Kündigung»), vor dem Nachzug:
+//   Schalter 13 px/500, Breite 100 px, Höhe 30 px
+//   Nachbarn derselben Zeile durchweg `text-micro` = 11 px/400
+//     Zähler `[data-v3-treffer-weg]` 11 px/400 · ‹ ›-Griffe 11 px/400
+// Eine leise Neben-Auskunft mit einem fetteren, grösseren Knopf darin — der
+// Blick fiel auf den Schalter statt auf die Zahlen (Design-Grundlage Kap. 8).
+// URSACHE war die SCHICHT, nicht der Wert: `.fc-schalter` stand ungeschichtet
+// am Dateiende von `index.css` und schlug jede Utility der Aufrufstelle; ein
+// `text-micro`/`py-0` hier war stumm. Darum ist der Fix in `index.css`
+// gelandet (die drei Typo-Eigenschaften nach `@layer components`, Herleitung
+// dort) und nicht als zweites Rezept hier — ein opt-in-Grössen-Selektor am
+// Baustein hätte dasselbe erreicht und dabei eine zweite Namens-Konvention
+// eingeführt, wo die kanonischen Schrift-Utilities genügen (§10/§17).
+//
+// GEOMETRIE — NACHGEMESSEN, nicht gerechnet (21.9.2026, OR/«Kündigung»):
 //   Zone in Ruhe 44 px (`SUCH_H_RUHE`) · Zone aktiv 68 px (`SUCH_H_AKTIV`)
-//   Knopf 30 px (13 px Schrift · 1.5 Zeile · 2×4 px Polster · 2 px Strich)
-//   Zähler-Zeile 24 px · ‹ ›-Griffe 20 px · Knopf-Unterkante 5 px ÜBER der Zone
-// Der Knopf ist damit höher als die `min-h-5`-Zeile (20 px), in der er steht,
-// und die Zeile wächst mit ihm auf 24 px. Die ZONE rührt sich trotzdem nicht:
-// sie hat eine feste Höhe, und der gewachsene Inhalt bleibt mit 5 px Luft
-// darin. Genau darauf kommt es an — `SUCH_H_AKTIV` trägt den Sprung-Offset
-// jedes Ankers (LM-003) und ist in `src/tests/leser-v3-fundament.test.ts` wie
-// in mehreren e2e-Specs auf den Pixel bewacht. Es war also NICHTS gegen-
-// zusteuern; der Versuch, mit `py-0` auf glatte 24 px zu drücken, ist wieder
-// gefallen, weil er gar nicht greift: `.fc-schalter` steht ungeschichtet am
-// Dateiende von `index.css` und schlägt jede Utility aus `@layer utilities`.
-// Eine Klasse, die nichts tut, wird gestrichen statt stehen gelassen (§17).
+//     — unverändert vor wie nach dem Nachzug, @390 wie @1440
+//   Knopf VORHER 30 px (13 px · 1.5 Zeile · 2×4 px Polster · 2 px Strich)
+//   Knopf NACHHER 24 px: 11 px · 1.2 Zeile = 13.2 + 8 + 2 = 23.2 px, gehoben
+//     auf `min-height: var(--tap-ziel)` = 24 px. WCAG 2.5.8 trägt die Höhe
+//     jetzt allein — darum darf der Wert NIE unter das Token fallen.
+//   Zähler-Zeile 24 px · ‹ ›-Griffe 20 px
+// Der Knopf füllt die Zeile damit genau statt sie um 6 px zu überragen; die
+// ZONE rührt sich in beiden Ständen nicht. Genau darauf kommt es an —
+// `SUCH_H_AKTIV` trägt den Sprung-Offset jedes Ankers (LM-003) und ist in
+// `src/tests/leser-v3-fundament.test.ts` wie in mehreren e2e-Specs auf den
+// Pixel bewacht.
 // Der e2e-Fall (f) misst beide Hälften in EINEM Durchgang — Knopfhöhe ≥ 24 px
 // UND Zone unverändert 68 px; er wäre sonst genau das halbe Tor, das eine der
-// zwei Zusagen still aufgibt.
+// zwei Zusagen still aufgibt. (g) misst die Zeile @390 auf Überlappung.
 //
 // A11Y: fester sichtbarer Text + `aria-pressed` (kein wechselndes Label — der
 // Name eines Umschalters bleibt gleich, der Zustand steht im Attribut).
@@ -65,7 +79,12 @@ export function MarkenSchalter({ aus, onSchalten }: {
       title={aus
         ? 'Hervorhebung im Text und Treffer-Marken wieder einblenden'
         : 'Hervorhebung im Text und Treffer-Marken zusammen ausblenden'}
-      className="fc-schalter shrink-0 whitespace-nowrap">
+      // `text-micro font-normal` (Nachzug 21.9.2026): der Schalter ordnet sich
+      // der Zeile unter, in der er steht — dieselbe Stufe wie Zähler, «Liste →»
+      // und die ‹ ›-Griffe. Der Baustein GIBT das jetzt her (seine drei Typo-
+      // Eigenschaften liegen seit heute in `@layer components`, Herleitung in
+      // `index.css` bei `.fc-schalter`); vorher war die Klasse hier stumm.
+      className="fc-schalter shrink-0 whitespace-nowrap text-micro font-normal">
       Hervorhebung
     </button>
   );

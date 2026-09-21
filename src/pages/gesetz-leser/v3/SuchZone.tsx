@@ -169,14 +169,42 @@ export function SuchZone({
         // eigener Knopf (er hat sein eigenes Ziel); die zwei Griffe stehen
         // NEBEN ihm statt darin, weil ein Knopf im Knopf kein Knopf ist.
         <div className="flex min-h-5 w-full items-center gap-1">
+          {/* ── S1 (Sichtprüfung 21.9.2026) · DIE ZEILE SCHRIEB SICH SELBST ZU ──
+              GEMESSEN @390 (hell, OR/«Kündigung», Liste mit ↵ geschlossen):
+              die Zeile hat 350 px; der Zähler-Knopf bekam als `flex-1` davon
+              200 px, sein INHALT mass 234 px (`scrollW`) — und weil der Knopf
+              weder umbricht noch klemmt, lief «Treffer anzeigen →» bis x=254
+              weiter, während der Schalter «✓ Hervorhebung» bei x=224 begann.
+              30 px Text auf Text, beides unlesbar. Die Kästen selbst lagen
+              dabei sauber nebeneinander (Flex hatte sie korrekt verteilt) —
+              darum sah keine Sonde etwas: der Überlauf war INNEN.
+              @1440 gibt es ihn nicht (623 px Zeile, 473 px Inhalt).
+              ZWEI TEILE, weil eine Breite allein nicht trägt:
+              (1) DER KNOPF KLEMMT (`overflow-hidden whitespace-nowrap`) — die
+                  harte Zusage: was nicht passt, wird abgeschnitten statt über
+                  den Nachbarn gemalt, bei JEDER Zahl und jedem Zähl-Substantiv
+                  («1 146 Paragraphen …» ist deutlich breiter als der Messfall).
+              (2) DIE WORTE WEICHEN (`hidden sm:inline`) — damit im Normalfall
+                  gar nichts erst klemmen muss: unter `sm` bleibt «Liste →».
+                  Kein Funktionsverlust und keine zweite a11y-Aussage — der
+                  ganze Span ist `aria-hidden`, der zugängliche Name des Knopfs
+                  sind seine Zahlen, auf jeder Breite dieselben. Der Weg bleibt
+                  BENANNT (§8, D28) statt zu einem Glyphen zu verkümmern.
+              NACH DEM FIX @390: Inhalt 155 px in 262 px Knopf — 107 px Luft.
+              UMBRUCH war keine Option: die Zone ist über `SUCH_H_AKTIV` auf
+              68 px festgeschrieben (Feld 32 + gap 4 + Zeile 24 + pb 8), eine
+              zweite Zeile verstellte den Sprung-Offset jedes Ankers (LM-003). */}
           <button type="button" data-v3-treffer-weg onClick={onListe}
-            className="flex min-w-0 flex-1 items-center gap-1 rounded-sm text-left text-micro text-ink-600 transition-colors hover:text-brass-700">
+            className="flex min-w-0 flex-1 items-center gap-1 overflow-hidden whitespace-nowrap rounded-sm text-left text-micro text-ink-600 transition-colors hover:text-brass-700">
             <span className="num">{bestimmungen}</span>
             <span>{zaehlform(bestimmungen, bestimmungsWort)}</span>
             <span aria-hidden className="text-ink-300">·</span>
             <span className="num">{fundstellen}</span>
             <span>{fundstellen === 1 ? 'Fundstelle' : 'Fundstellen'}</span>
-            <span aria-hidden className="ml-auto shrink-0 truncate">Treffer anzeigen →</span>
+            <span aria-hidden className="ml-auto shrink-0 truncate">
+              <span className="hidden sm:inline">Treffer anzeigen</span>
+              <span className="sm:hidden">Liste</span> →
+            </span>
           </button>
           {fundstellen > 0 && markenSchalter}
           {fundstellen > 0 && (onZurueck || onVor) && (
