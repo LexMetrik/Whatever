@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20090045",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2009-05-20",
@@ -68,18 +68,20 @@
     {
       "datum": "2009-05-20",
       "art": "Bundesblatt",
-      "jahr": "2009",
-      "nummer": "4729",
-      "text": "Botschaft vom 20. Mai 2009 zum Bundesgesetz über die steuerliche Entlastung von Familien mit Kindern",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die steuerliche Entlastung von Familien mit Kindern",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2009-05-20",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die steuerliche Entlastung von Familien mit Kindern",
-      "referendumsfrist": null
+      "jahr": "2009",
+      "nummer": "4729",
+      "text": "Botschaft vom 20. Mai 2009 zum Bundesgesetz über die steuerliche Entlastung von Familien mit Kindern",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2009-10-06",
@@ -87,7 +89,8 @@
       "jahr": "2009",
       "nummer": "6667",
       "text": null,
-      "referendumsfrist": "2010-01-14"
+      "referendumsfrist": "2010-01-14",
+      "vorlage": 1
     },
     {
       "datum": "2010-02-02",
@@ -95,7 +98,8 @@
       "jahr": "2010",
       "nummer": "455",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

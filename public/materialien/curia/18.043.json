@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20180043",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2018-04-25",
@@ -197,7 +197,8 @@
       "jahr": "2018",
       "nummer": "2827",
       "text": "Botschaft vom 25. April 2018 zur Harmonisierung der Strafrahmen und zur Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-04-25",
@@ -205,7 +206,8 @@
       "jahr": "2018",
       "nummer": "2959",
       "text": "Bundesgesetz über die Harmonisierung der Strafrahmen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2018-04-25",
@@ -213,7 +215,8 @@
       "jahr": "2018",
       "nummer": "3009",
       "text": "Bundesgesetz über die Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2021-12-28",
@@ -221,7 +224,8 @@
       "jahr": "2021",
       "nummer": "2996",
       "text": null,
-      "referendumsfrist": "2022-04-07"
+      "referendumsfrist": "2022-04-07",
+      "vorlage": 2
     },
     {
       "datum": "2021-12-28",
@@ -229,7 +233,8 @@
       "jahr": "2021",
       "nummer": "2997",
       "text": null,
-      "referendumsfrist": "2022-04-07"
+      "referendumsfrist": "2022-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2022-02-17",
@@ -237,7 +242,8 @@
       "jahr": "2022",
       "nummer": "687",
       "text": "Strafrahmenharmonisierung und Anpassung des Nebenstrafrechts an das neue Sanktionenrecht. Vorlage 3: Bundesgesetz über eine Revision des Sexualstrafrechts. Bericht der Kommission für Rechtsfragen des Ständerates",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2022-02-17",
@@ -245,7 +251,8 @@
       "jahr": "2022",
       "nummer": "688",
       "text": "Bundesgesetz über eine Revision des Sexualstrafrechts (Entwurf der RK-S vom 17.02.2022)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2022-04-13",
@@ -253,7 +260,8 @@
       "jahr": "2022",
       "nummer": "1011",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2023-06-16",
@@ -261,7 +269,8 @@
       "jahr": "2023",
       "nummer": "1521",
       "text": null,
-      "referendumsfrist": "2023-10-05"
+      "referendumsfrist": "2023-10-05",
+      "vorlage": 3
     },
     {
       "datum": "2023-06-20",
@@ -269,7 +278,8 @@
       "jahr": "2023",
       "nummer": "254",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2023-06-20",
@@ -277,7 +287,8 @@
       "jahr": "2023",
       "nummer": "259",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -296,7 +307,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2021-12-17",
@@ -313,7 +324,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2023-06-16",
@@ -330,7 +341,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

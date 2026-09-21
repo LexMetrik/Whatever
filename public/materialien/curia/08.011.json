@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20080011",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2007-12-21",
@@ -222,10 +222,20 @@
     {
       "datum": "2007-12-21",
       "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Obligationenrecht (Rechnungslegungsrecht)",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2007-12-21",
+      "art": "Bundesblatt",
       "jahr": "2008",
       "nummer": "1589",
       "text": "Botschaft vom 21. Dezember 2007 zur Änderung des Obligationenrechts (Aktienrecht und Rechnungslegungsrecht sowie Anpassungen im Recht der Kollektiv- und der Kommanditgesellschaft, im GmbH-Recht, Genossenschafts-, Handelsregister- sowie Firmenrecht)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2007-12-21",
@@ -233,15 +243,8 @@
       "jahr": "2008",
       "nummer": "1751",
       "text": "Obligationenrecht (Aktienrecht und Rechnungslegungsrecht sowie Anpassungen im Recht der Kollektiv- und der Kommanditgesellschaft, im GmbH-Recht, Genossenschafts-, Handelsregister- sowie Firmenrecht)",
-      "referendumsfrist": null
-    },
-    {
-      "datum": "2007-12-21",
-      "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Obligationenrecht (Rechnungslegungsrecht)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2010-09-20",
@@ -249,7 +252,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Obligationenrecht (Revisionsrecht) (Antrag Ineichen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2011-06-28",
@@ -257,7 +261,8 @@
       "jahr": "2011",
       "nummer": "4843",
       "text": null,
-      "referendumsfrist": "2011-10-06"
+      "referendumsfrist": "2011-10-06",
+      "vorlage": 3
     },
     {
       "datum": "2011-12-13",
@@ -265,7 +270,8 @@
       "jahr": "2011",
       "nummer": "5863",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2012-01-04",
@@ -273,7 +279,8 @@
       "jahr": "2012",
       "nummer": "63",
       "text": null,
-      "referendumsfrist": "2012-04-13"
+      "referendumsfrist": "2012-04-13",
+      "vorlage": 2
     },
     {
       "datum": "2012-12-11",
@@ -281,7 +288,8 @@
       "jahr": "2012",
       "nummer": "6679",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -300,7 +308,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2011-12-23",
@@ -317,7 +325,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

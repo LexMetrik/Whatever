@@ -199,6 +199,24 @@ die acht amtlichen Codes samt Erhebungsmethode (je Code eine eigene Live-Abfrage
 der DSG-Schlussabstimmung. `$metadata` deklariert kein Enum; die Tabelle ist darum von Hand belegt,
 ein unbekannter Code macht den Generator rot. Schliesst den offenen Punkt 2 aus R4.
 
+**Curia Vista — Identität einer Publikation, `datum`, leere Schlussabstimmungen (21.9.2026):**
+[materialien/curia-publikationen-identitaet-2026-09-21.md](materialien/curia-publikationen-identitaet-2026-09-21.md) —
+Regel: bei fehlendem `PublicationYear`/`PublicationNumber` ist `ReferenceText` das **Identitäts-
+merkmal**; der Dedupe-Schlüssel ohne ihn liess in 01.023 elf von 32 amtlichen Einträgen wegfallen
+(BGG, SGG, VGG u. a.), FR gleich, IT 30→20. **Berichtigt am 21.9.2026 (zweite Runde, Datei Ziff. 1a):**
+hier stand, 08.053 liefere «12 Zeilen, 8 distinkt», und das seien echte Duplikate — gemessen war das
+nur mit dem Sechs-Feld-Schlüssel, der Zeilen zusammenfasst, die sich in der **Vorlage** (`BillNumber`)
+unterscheiden. Der Vollzensus aller 14 669 DE-Objective-Zeilen zeigt an 08.053 zwölf verschiedene
+Zeilen (03.047: 17 statt 14); seit `publikationen[].vorlage` führt der Generator sie getrennt.
+Echte Doppellieferungen gibt es korpusweit trotzdem — vier Zeilen an 22.417, 26.023, 19.464, keines
+dieser Geschäfte mit Shard —, der Dedupe bleibt darum. Dazu zwei Beschriftungs-Regeln:
+`publikationen[].datum` ist Fedlex `jolux:dateDocument`, **nicht**
+das BBl-Erscheinungsdatum (nur bei «Beratungsgegenstand / Entwurf», bis −74 Tage), und leeres
+`schlussabstimmungen[]` heisst vor der Wintersession 2003 «keine Einzelstimmen-Daten», in neun
+Fällen danach aber wirklich «keine Schlussabstimmung». Tor `check:entstehung` (Kreuzprobe gegen die
+ROHE amtliche Zeilenzahl — die frühere Gegenzählung teilte die Identitäts-Entscheidung des
+Schlüssels und konnte dessen Fehler darum nicht finden). Gegenprüfung läuft; fachliche Abnahme David offen.
+
 **Änderungshistorie / Amtliche Sammlung (Fedlex-Portfolio Paket 5, W2·6-REV):** [normtext/revisionen-2026-07-10.md](normtext/revisionen-2026-07-10.md) —
 je Bund-Volltext-Erlass eine «Änderungen / Revisionen»-Timeline (3108 AS/RO-Änderungs-Einträge über
 218 Erlasse; SPARQL Pfad (b) über die SR-Taxonomie). RO-Fundstelle aus der oc-URI abgeleitet (100 %),

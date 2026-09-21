@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020079",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2002-11-06",
@@ -96,10 +96,11 @@
     {
       "datum": "2002-11-06",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "7911",
-      "text": "Botschaft vom 6. November 2002 über einen Rahmenkredit für die globale Umwelt und über eine Änderung des Bundesgesetzes über den Umweltschutz",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über einen Rahmenkredit für die Globale Umwelt",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2002-11-06",
@@ -107,7 +108,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2002-11-06",
+      "art": "Bundesblatt",
+      "jahr": "2002",
+      "nummer": "7911",
+      "text": "Botschaft vom 6. November 2002 über einen Rahmenkredit für die globale Umwelt und über eine Änderung des Bundesgesetzes über den Umweltschutz",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-07-01",
@@ -115,7 +126,8 @@
       "jahr": "2003",
       "nummer": "4564",
       "text": null,
-      "referendumsfrist": "2003-10-09"
+      "referendumsfrist": "2003-10-09",
+      "vorlage": 2
     },
     {
       "datum": "2003-11-25",
@@ -123,7 +135,8 @@
       "jahr": "2003",
       "nummer": "4061",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2003-12-16",
@@ -131,7 +144,8 @@
       "jahr": "2003",
       "nummer": "8047",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

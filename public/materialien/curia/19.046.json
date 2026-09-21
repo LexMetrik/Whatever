@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20190046",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2019-08-21",
@@ -155,7 +155,8 @@
       "jahr": "2019",
       "nummer": "6071",
       "text": "Botschaft vom 21. August 2019 zur Änderung des Bundesgesetzes über die Krankenversicherung (Massnahmen zur Kostendämpfung - Paket 1)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-08-21",
@@ -163,7 +164,8 @@
       "jahr": "2019",
       "nummer": "6177",
       "text": "Bundesgesetz über die Krankenversicherung (KVG) (Massnahmen zur Kostendämpfung – Paket 1)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-05-26",
@@ -171,7 +173,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Krankenversicherung (KVG) (Massnahmen zur Kostendämpfung – Paket 1a) (Entwurf der SGK-N vom 26.05.2020)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2021-06-29",
@@ -179,7 +182,8 @@
       "jahr": "2021",
       "nummer": "1496",
       "text": null,
-      "referendumsfrist": "2021-10-07"
+      "referendumsfrist": "2021-10-07",
+      "vorlage": 2
     },
     {
       "datum": "2022-10-11",
@@ -187,7 +191,8 @@
       "jahr": "2022",
       "nummer": "2405",
       "text": null,
-      "referendumsfrist": "2023-01-19"
+      "referendumsfrist": "2023-01-19",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -206,7 +211,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

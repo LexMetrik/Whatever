@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20110062",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2011-09-16",
@@ -127,7 +127,8 @@
       "jahr": "2011",
       "nummer": "7553",
       "text": "Botschaft vom 16. September 2011 zur Volksinitiative \"Ja zur Hausarztmedizin\" ; Berichtigung (BBl 2011 7963)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-09-16",
@@ -135,7 +136,8 @@
       "jahr": "2011",
       "nummer": "7591",
       "text": "Bundesbeschluss über die medizinische Grundversorgung (Direkter Gegenentwurf zur Volksinitiative «Ja zur Hausarztmedizin»)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2011-09-16",
@@ -143,7 +145,8 @@
       "jahr": "2011",
       "nummer": "7965",
       "text": "Bundesbeschluss über die Volksinitiative «Ja zur Hausarztmedizin»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2013-10-08",
@@ -151,7 +154,8 @@
       "jahr": "2013",
       "nummer": "7345",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2013-10-08",
@@ -159,7 +163,8 @@
       "jahr": "2013",
       "nummer": "7347",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2014-09-09",
@@ -167,7 +172,8 @@
       "jahr": "2014",
       "nummer": "2769",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -186,7 +192,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2013-09-27",
@@ -203,7 +209,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

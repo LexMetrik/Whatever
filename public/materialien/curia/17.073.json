@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20170073",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2017-12-01",
@@ -57,7 +57,8 @@
       "jahr": "2018",
       "nummer": "411",
       "text": "Botschaft vom 1. Dezember 2017 zur Genehmigung des Abkommens zwischen der Schweiz und der Europäischen Union über die Verknüpfung der Emissionshandelssysteme und zu seiner Umsetzung (Änderung des CO2-Gesetzes )",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-12-01",
@@ -65,7 +66,8 @@
       "jahr": "2018",
       "nummer": "461",
       "text": "Bundesbeschluss über die Genehmigung des Abkommens zwischen der Schweiz und der Europäischen Union zur Verknüpfung der Emissionshandelssysteme und über seine Umsetzung (Änderung des CO2-Gesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2017-12-01",
@@ -73,7 +75,8 @@
       "jahr": "2018",
       "nummer": "467",
       "text": "Abkommen zwischen der Schweizerischen Eidgenossenschaft und der Europäischen Union zur Verknüpfung ihrer jeweiligen Systeme für den Handel mit Treibhausgasemissionen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-04-02",
@@ -81,7 +84,8 @@
       "jahr": "2019",
       "nummer": "2643",
       "text": null,
-      "referendumsfrist": "2019-07-11"
+      "referendumsfrist": "2019-07-11",
+      "vorlage": 1
     },
     {
       "datum": "2019-12-17",
@@ -89,7 +93,8 @@
       "jahr": "2019",
       "nummer": "4327",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -108,7 +113,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

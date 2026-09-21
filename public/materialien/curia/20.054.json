@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20200054",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2020-05-29",
@@ -57,7 +57,17 @@
       "jahr": "2020",
       "nummer": "5123",
       "text": "Botschaft vom 27. Mai 2020 zur Genehmigung und Umsetzung des Protokolls zur Änderung des Abkommens über strafbare und bestimmte andere an Bord von Luftfahrzeugen begangene Handlungen (Änderung des Luftfahrtgesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
+    },
+    {
+      "datum": "2020-05-27",
+      "art": "Bundesblatt",
+      "jahr": "2020",
+      "nummer": "5137",
+      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Protokolls zur Änderung des Abkommens über strafbare und bestimmte andere an Bord von Luftfahrzeugen begangene Handlungen (Abkommen von Tokio) (Änderung des Luftfahrtgesetzes)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-05-27",
@@ -65,7 +75,8 @@
       "jahr": "2020",
       "nummer": "5137",
       "text": "Protokoll zur Änderung des Abkommens über strafbare und bestimmte andere an Bord von Luftfahrzeugen begangene Handlungen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-12-31",
@@ -73,7 +84,8 @@
       "jahr": "2020",
       "nummer": "10057",
       "text": null,
-      "referendumsfrist": "2021-04-10"
+      "referendumsfrist": "2021-04-10",
+      "vorlage": 1
     },
     {
       "datum": "2021-08-16",
@@ -81,7 +93,8 @@
       "jahr": "2021",
       "nummer": "468",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +113,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

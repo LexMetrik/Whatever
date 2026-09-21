@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050070",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-09-07",
@@ -110,18 +110,29 @@
     {
       "datum": "2005-09-07",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "6029",
-      "text": "Botschaft vom 7. September 2005 zur Ausführungsgesetzgebung zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-09-07",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
-      "referendumsfrist": null
+      "text": "Verordnung der Bundesversammlung über die Finanzierung der amtlichen Vermessung (FVAV)",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2005-09-07",
+      "art": "Bundesblatt",
+      "jahr": "2005",
+      "nummer": "6029",
+      "text": "Botschaft vom 7. September 2005 zur Ausführungsgesetzgebung zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2006-10-17",
@@ -129,7 +140,8 @@
       "jahr": "2006",
       "nummer": "8341",
       "text": null,
-      "referendumsfrist": "2007-01-25"
+      "referendumsfrist": "2007-01-25",
+      "vorlage": 1
     },
     {
       "datum": "2007-12-04",
@@ -137,7 +149,8 @@
       "jahr": "2007",
       "nummer": "5779",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2007-12-04",
@@ -145,7 +158,8 @@
       "jahr": "2007",
       "nummer": "5819",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": []

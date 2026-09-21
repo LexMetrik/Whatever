@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20130059",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2013-06-26",
@@ -57,7 +57,8 @@
       "jahr": "2013",
       "nummer": "5549",
       "text": "Botschaft vom 26. Juni 2013 zur Änderung des Gewässerschutzgesetzes (Verursachergerechte Finanzierung der Elimination von Spurenstoffen im Abwasser)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2013-06-26",
@@ -65,7 +66,8 @@
       "jahr": "2013",
       "nummer": "5569",
       "text": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2014-04-01",
@@ -73,7 +75,8 @@
       "jahr": "2014",
       "nummer": "2911",
       "text": null,
-      "referendumsfrist": "2014-07-10"
+      "referendumsfrist": "2014-07-10",
+      "vorlage": 1
     },
     {
       "datum": "2014-10-28",
@@ -81,7 +84,8 @@
       "jahr": "2014",
       "nummer": "3327",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20060057",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2006-06-09",
@@ -54,18 +54,20 @@
     {
       "datum": "2006-06-09",
       "art": "Bundesblatt",
-      "jahr": "2006",
-      "nummer": "5605",
-      "text": "Botschaft vom 9. Juni 2006 zur Änderung des Epidemiengesetzes (Versorgung der Bevölkerung mit Heilmitteln)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Epidemiengesetz (Versorgung der Bevölkerung mit Heilmitteln)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2006-06-09",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Epidemiengesetz (Versorgung der Bevölkerung mit Heilmitteln)",
-      "referendumsfrist": null
+      "jahr": "2006",
+      "nummer": "5605",
+      "text": "Botschaft vom 9. Juni 2006 zur Änderung des Epidemiengesetzes (Versorgung der Bevölkerung mit Heilmitteln)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2006-10-17",
@@ -73,7 +75,8 @@
       "jahr": "2006",
       "nummer": "4137",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2006-10-17",
@@ -81,7 +84,8 @@
       "jahr": "2006",
       "nummer": "8443",
       "text": null,
-      "referendumsfrist": "2007-01-25"
+      "referendumsfrist": "2007-01-25",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

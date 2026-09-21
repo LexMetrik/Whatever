@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20030057",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2003-09-10",
@@ -54,18 +54,20 @@
     {
       "datum": "2003-09-10",
       "art": "Bundesblatt",
-      "jahr": "2003",
-      "nummer": "6241",
-      "text": "Botschaft vom 10. September 2003 zur Änderung des Luftfahrtgesetzes (Prüfung der Vereinbarkeit von staatlichen Beihilfen mit dem Luftverkehrsabkommen Schweiz-EG)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Luftfahrt (Luftfahrtgesetz, LFG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-09-10",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Luftfahrt (Luftfahrtgesetz, LFG)",
-      "referendumsfrist": null
+      "jahr": "2003",
+      "nummer": "6241",
+      "text": "Botschaft vom 10. September 2003 zur Änderung des Luftfahrtgesetzes (Prüfung der Vereinbarkeit von staatlichen Beihilfen mit dem Luftverkehrsabkommen Schweiz-EG)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2004-03-30",
@@ -73,7 +75,8 @@
       "jahr": "2004",
       "nummer": "1387",
       "text": null,
-      "referendumsfrist": "2004-07-08"
+      "referendumsfrist": "2004-07-08",
+      "vorlage": 1
     },
     {
       "datum": "2004-08-24",
@@ -81,7 +84,8 @@
       "jahr": "2004",
       "nummer": "3867",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

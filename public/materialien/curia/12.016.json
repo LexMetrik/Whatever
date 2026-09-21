@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20120016",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2012-01-18",
@@ -295,7 +295,8 @@
       "jahr": "2012",
       "nummer": "1577",
       "text": "Botschaft vom 18. Januar 2012 zur Volksinitiative \"Für den öffentlichen Verkehr\" und zum direkten Gegenentwurf (Bundesbeschluss über die Finanzierung und Ausbau der Eisenbahninfrastruktur, FABI)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-01-18",
@@ -303,7 +304,8 @@
       "jahr": "2012",
       "nummer": "1755",
       "text": "Bundesbeschluss über die Volksinitiative «Für den öffentlichen Verkehr»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-01-18",
@@ -311,7 +313,8 @@
       "jahr": "2012",
       "nummer": "1759",
       "text": "Bundesbeschluss über die Finanzierung und den Ausbau der Eisenbahninfrastruktur (direkter Gegenentwurf zur Volksinitiative «Für den öffentlichen Verkehr»)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2012-01-18",
@@ -319,7 +322,8 @@
       "jahr": "2012",
       "nummer": "1761",
       "text": "Bundesgesetz über die Finanzierung und den Ausbau der Eisenbahninfrastruktur",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2012-01-18",
@@ -327,7 +331,8 @@
       "jahr": "2012",
       "nummer": "1773",
       "text": "Bundesbeschluss über den Ausbauschritt 2025 der Eisenbahninfrastruktur",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2012-01-18",
@@ -335,7 +340,8 @@
       "jahr": "2012",
       "nummer": "1775",
       "text": "Bundesbeschluss über den Verpflichtungskredit für den Ausbauschritt 2025 der Eisenbahninfrastruktur",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 5
     },
     {
       "datum": "2013-07-02",
@@ -343,7 +349,8 @@
       "jahr": "2013",
       "nummer": "4721",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2013-07-02",
@@ -351,7 +358,8 @@
       "jahr": "2013",
       "nummer": "4725",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2014-06-17",
@@ -359,7 +367,8 @@
       "jahr": "2014",
       "nummer": "4097",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2014-06-17",
@@ -367,7 +376,8 @@
       "jahr": "2014",
       "nummer": "4109",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2015-03-03",
@@ -375,7 +385,8 @@
       "jahr": "2015",
       "nummer": "645",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2015-03-03",
@@ -383,7 +394,8 @@
       "jahr": "2015",
       "nummer": "651",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2015-03-03",
@@ -391,7 +403,8 @@
       "jahr": "2015",
       "nummer": "665",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2015-03-03",
@@ -399,7 +412,8 @@
       "jahr": "2015",
       "nummer": "1807",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 5
     }
   ],
   "schlussabstimmungen": [
@@ -418,7 +432,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2013-06-21",
@@ -435,7 +449,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2013-06-21",
@@ -452,7 +466,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2013-06-21",
@@ -469,7 +483,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

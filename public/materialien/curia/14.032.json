@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20140032",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2014-04-09",
@@ -113,7 +113,8 @@
       "jahr": "2014",
       "nummer": "3373",
       "text": "Botschaft vom 9. April 2014 über die Genehmigung und die Umsetzung des Notenaustausches zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) Nr. 1051/2013 zur Änderung des Schengener Grenzkodex zwecks Festlegung einer gemeinsamen Regelung für die vorübergehende Wiedereinführung von Kontrollen an den Binnengrenzen (Weiterentwicklung des Schengen-Besitzstands) sowie zu weiteren Änderungen im Asyl- und Ausländerrecht",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2014-04-09",
@@ -121,7 +122,8 @@
       "jahr": "2014",
       "nummer": "3407",
       "text": "Bundesbeschluss über die Genehmigung und Umsetzung des Notenaustausches zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) Nr. 1051/2013 zur Änderung des Schengener Grenzkodex zwecks Festlegung einer gemeinsamen Regelung für die vorübergehende Wiedereinführung von Kontrollen an den Binnengrenzen (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2014-04-09",
@@ -129,7 +131,8 @@
       "jahr": "2014",
       "nummer": "3413",
       "text": "Bundesgesetz über die Ausländerinnen und Ausländer (Ausländergesetz, AuG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2014-04-09",
@@ -137,7 +140,8 @@
       "jahr": "2014",
       "nummer": "3415",
       "text": "Asylgesetz (AsylG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2014-10-07",
@@ -145,7 +149,8 @@
       "jahr": "2014",
       "nummer": "7305",
       "text": null,
-      "referendumsfrist": "2015-01-15"
+      "referendumsfrist": "2015-01-15",
+      "vorlage": 2
     },
     {
       "datum": "2014-10-07",
@@ -153,7 +158,8 @@
       "jahr": "2014",
       "nummer": "7307",
       "text": null,
-      "referendumsfrist": "2015-01-15"
+      "referendumsfrist": "2015-01-15",
+      "vorlage": 3
     },
     {
       "datum": "2014-10-07",
@@ -161,7 +167,8 @@
       "jahr": "2014",
       "nummer": "7367",
       "text": null,
-      "referendumsfrist": "2015-01-15"
+      "referendumsfrist": "2015-01-15",
+      "vorlage": 1
     },
     {
       "datum": "2015-02-17",
@@ -169,7 +176,8 @@
       "jahr": "2015",
       "nummer": "533",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2015-02-17",
@@ -177,7 +185,8 @@
       "jahr": "2015",
       "nummer": "535",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2015-06-24",
@@ -185,7 +194,8 @@
       "jahr": "2015",
       "nummer": "1871",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     }
   ],
   "schlussabstimmungen": [
@@ -204,7 +214,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2014-09-26",
@@ -221,7 +231,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2014-09-26",
@@ -238,7 +248,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

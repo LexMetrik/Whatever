@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20140063",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2014-09-03",
@@ -64,7 +64,8 @@
       "jahr": "2014",
       "nummer": "7991",
       "text": "Botschaft vom 3. September 2014 zur Änderung des Asylgesetzes (Neustrukturierung des Asylbereiches)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2014-09-03",
@@ -72,7 +73,8 @@
       "jahr": "2014",
       "nummer": "8119",
       "text": "Asylgesetz (AsylG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2015-10-06",
@@ -80,7 +82,8 @@
       "jahr": "2015",
       "nummer": "7181",
       "text": null,
-      "referendumsfrist": "2016-01-14"
+      "referendumsfrist": "2016-01-14",
+      "vorlage": 1
     },
     {
       "datum": "2016-09-16",
@@ -88,7 +91,8 @@
       "jahr": "2016",
       "nummer": "3101",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

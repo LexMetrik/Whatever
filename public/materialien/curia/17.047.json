@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20170047",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2017-07-05",
@@ -92,7 +92,8 @@
       "jahr": "2017",
       "nummer": "5507",
       "text": "Botschaft vom 5. Juli 2017 zur Änderung des Bundesgesetzes über die Gleichstellung von Frau und Mann (Gleichstellungsgesetz, GlG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-07-05",
@@ -100,7 +101,8 @@
       "jahr": "2017",
       "nummer": "5553",
       "text": "Bundesgesetz über die Gleichstellung von Frau und Mann (Gleichstellungsgesetz, GlG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2018-12-14",
@@ -108,7 +110,8 @@
       "jahr": "2018",
       "nummer": "7875",
       "text": null,
-      "referendumsfrist": "2019-04-07"
+      "referendumsfrist": "2019-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2019-09-11",
@@ -116,7 +119,8 @@
       "jahr": "2019",
       "nummer": "2815",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -135,7 +139,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

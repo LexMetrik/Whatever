@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20060085",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2006-10-18",
@@ -61,18 +61,20 @@
     {
       "datum": "2006-10-18",
       "art": "Bundesblatt",
-      "jahr": "2006",
-      "nummer": "8795",
-      "text": "Botschaft vom 18. Oktober 2006 zum Bundesgesetz über die Vereinfachung der Nachbesteuerung in Erbfällen und Einführung der straflosen Selbstanzeige",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Vereinfachung der Nachbesteuerung in Erbfällen und die Einführung der straflosen Selbstanzeige",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2006-10-18",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Vereinfachung der Nachbesteuerung in Erbfällen und die Einführung der straflosen Selbstanzeige",
-      "referendumsfrist": null
+      "jahr": "2006",
+      "nummer": "8795",
+      "text": "Botschaft vom 18. Oktober 2006 zum Bundesgesetz über die Vereinfachung der Nachbesteuerung in Erbfällen und Einführung der straflosen Selbstanzeige",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-04-01",
@@ -80,7 +82,8 @@
       "jahr": "2008",
       "nummer": "2321",
       "text": null,
-      "referendumsfrist": "2008-07-10"
+      "referendumsfrist": "2008-07-10",
+      "vorlage": 1
     },
     {
       "datum": "2008-09-30",
@@ -88,7 +91,8 @@
       "jahr": "2008",
       "nummer": "4453",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

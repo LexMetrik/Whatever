@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20210077",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2021-11-24",
@@ -57,7 +57,8 @@
       "jahr": "2021",
       "nummer": "3028",
       "text": "Botschaft vom 24.11.2021 zum Bundesgesetz über die Besteuerung von Leibrenten und ähnlichen Vorsorgeformen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2021-11-24",
@@ -65,7 +66,8 @@
       "jahr": "2021",
       "nummer": "3029",
       "text": "Bundesgesetz über die Besteuerung von Leibrenten und ähnlichen Vorsorgeformen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2022-06-28",
@@ -73,7 +75,8 @@
       "jahr": "2022",
       "nummer": "1566",
       "text": null,
-      "referendumsfrist": "2022-10-06"
+      "referendumsfrist": "2022-10-06",
+      "vorlage": 1
     },
     {
       "datum": "2023-04-18",
@@ -81,7 +84,8 @@
       "jahr": "2023",
       "nummer": "38",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

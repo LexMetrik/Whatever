@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20160053",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2016-06-22",
@@ -57,7 +57,8 @@
       "jahr": "2016",
       "nummer": "6221",
       "text": "Botschaft vom 22. Juni 2016 zur neuen Finanzordnung 2021",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2016-06-22",
@@ -65,7 +66,8 @@
       "jahr": "2016",
       "nummer": "6239",
       "text": "Bundesbeschluss über die neue Finanzordnung 2021",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2017-06-16",
@@ -73,7 +75,8 @@
       "jahr": "2019",
       "nummer": "769",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2017-06-30",
@@ -81,7 +84,8 @@
       "jahr": "2017",
       "nummer": "4205",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

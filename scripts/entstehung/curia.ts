@@ -30,14 +30,36 @@ export type OdataZeile = Record<string, unknown>;
  * OData v3 antwortet je Entität mal `{d:{results:[…]}}`, mal `{d:[…]}` (live belegt:
  * Business/Bill vs. Preconsultation/Resolution). Beides akzeptieren, alles andere ist
  * ein Fehler — nie stillschweigend als «keine Treffer» lesen (§6.7 lit. b).
+ *
+ * PAGING-WÄCHTER (21.9.2026): der Client wertet KEIN Paging aus — es gibt kein `$top`,
+ * kein `$skip`, keine `__next`-Schleife. Gemessen liefert der Endpunkt Seiten zu 1000
+ * Zeilen (`Objective?$filter=Language eq 'DE'`: `__count` 14 669, erste Seite 1000 mit
+ * `__next`). Je Geschäft ist das unkritisch (Maximum 39 Zeilen) — aber eine Antwort über
+ * der Seitengrenze würde STILL abgeschnitten, also genau derselbe Fehlertyp wie der
+ * kollabierende Dedupe-Schlüssel darunter. Darum lieber laut scheitern als leise
+ * verlieren (§6.7/§8): trägt die Antwort `__next`, wirft sie hier.
+ *
+ * `kontext` benennt die Abfrage (URL/Entität), soweit der Aufrufer sie kennt.
  */
-export function odataZeilen(json: unknown): OdataZeile[] {
+export function odataZeilen(json: unknown, kontext?: string): OdataZeile[] {
   const d = (json as { d?: unknown }).d;
+  const wo = kontext ? ` für ${kontext}` : '';
+  if (d && typeof d === 'object' && !Array.isArray(d)) {
+    const next = (d as { __next?: unknown }).__next;
+    if (next !== undefined && next !== null) {
+      throw new Error(
+        `curia: OData-Antwort${wo} ist UNVOLLSTÄNDIG — sie trägt «__next» (${String(next)}), es folgt `
+        + 'also mindestens eine weitere Server-Seite. Dieser Client wertet kein Paging aus; die Zeilen '
+        + 'der Folgeseiten gingen still verloren (§6.7/§8: lieber laut scheitern als leise verlieren). '
+        + 'Paging in scripts/entstehung/curia-run.ts nachrüsten, bevor dieser Lauf wieder grün wird.',
+      );
+    }
+  }
   if (Array.isArray(d)) return d as OdataZeile[];
   if (d && typeof d === 'object' && Array.isArray((d as { results?: unknown }).results)) {
     return (d as { results: OdataZeile[] }).results;
   }
-  throw new Error('curia: unerwartete OData-Antwortform (weder d[] noch d.results[])');
+  throw new Error(`curia: unerwartete OData-Antwortform${wo} (weder d[] noch d.results[])`);
 }
 
 /** `/Date(1505433600000)/` → `2017-09-15` (UTC). Unlesbar ⇒ null, nie geraten. */
@@ -129,6 +151,9 @@ export interface CuriaPublikation {
   /** WÖRTLICH aus `ReferenceText`. */
   text: string | null;
   referendumsfrist: string | null;
+  /** Vorlage (Entwurf) des Geschäfts, aus `Objective.BillNumber` — gleiche Benennung und
+   *  gleicher Typ wie `CuriaBeschluss.vorlage` (§5: eine Sache, ein Name). */
+  vorlage: number | null;
 }
 export interface CuriaSchlussabstimmung {
   datum: string | null;
@@ -184,7 +209,15 @@ export function curiaUrl(nummer: string): string | null {
 /** Textfeld übernehmen — WÖRTLICH (Auflage «nicht verändern»), aber leere Hüllen aussortieren.
  *  Der Endpunkt liefert stellenweise den LITERALEN String «null» (live belegt an 17.059,
  *  Objective.PublicationYear/-Number): ihn als Wert zu übernehmen hiesse, «null» als
- *  Jahrgang anzuzeigen. Er zählt deshalb als fehlender Wert, nicht als Text. */
+ *  Jahrgang anzuzeigen. Er zählt deshalb als fehlender Wert, nicht als Text.
+ *
+ *  DIE FALLE IM KLARTEXT (nachgemessen 21.9.2026, bisher nirgends festgehalten): Curia
+ *  sendet für ein fehlendes Feld NICHT JSON-`null`, sondern den vierbuchstabigen String
+ *  `"null"`. Wer `z.PublicationYear ?? …` oder `typeof v === 'string'` allein prüft, hält
+ *  ihn für einen Wert. Jede neue Feld-Übernahme geht deshalb durch `txt()`.
+ *  Und: `IsOldPublicationFormat` taugt NICHT als Erkennungsmerkmal dafür — an allen 32
+ *  DE-Zeilen des Geschäfts 01.023 steht es auf `false`, obwohl 12 dieser Zeilen weder
+ *  Jahr noch Nummer tragen. Nichts darauf bauen. */
 const txt = (v: unknown): string | null =>
   (typeof v === 'string' && v.trim() && v.trim().toLowerCase() !== 'null' ? v : null);
 const zahl = (v: unknown): number | null => (typeof v === 'number' ? v : null);
@@ -227,7 +260,60 @@ export function baueBeschluesse(zeilen: OdataZeile[], vorlageJeBill: Map<string,
   });
 }
 
-/** REIN: Objective-Zeilen → Publikationen inkl. Referendumsfrist, dedupliziert + sortiert. */
+/**
+ * REIN: Objective-Zeilen → Publikationen inkl. Referendumsfrist, dedupliziert + sortiert.
+ *
+ * SCHLÜSSEL = FUNDSTELLEN-IDENTITÄT, `text` EINGESCHLOSSEN (Korrektur 21.9.2026).
+ * Der Schlüssel identifiziert EINE Publikations-Fundstelle und führt deshalb alle
+ * unterscheidenden Felder. `text` (= `ReferenceText`) ist eines davon: alte
+ * BBl-Fundstellen liefern `PublicationYear`/`PublicationNumber` als literalen String
+ * «null», den `txt()` zu Recht als fehlenden Wert liest — dann ist `ReferenceText` das
+ * EINZIGE Feld, das zwei Fundstellen desselben Publikationsdatums auseinanderhält.
+ * Ohne ihn fielen am Geschäft 01.023 32 amtliche Objective-Zeilen auf 21 zusammen, und
+ * die jeweils letzte überschrieb still die vorherigen — das verletzt zugleich die
+ * Nutzungsauflage im Kopf dieser Datei («Die Daten dürfen inhaltlich nicht verändert
+ * werden»). Die Map BLEIBT trotzdem: eine byte-gleich doppelt gelieferte Zeile ist eine
+ * Wiederholung, keine zweite Fundstelle.
+ *
+ * DER VERGLEICHER ZIEHT ZWINGEND MIT (§2). Er sortierte nur nach `datum|jahr|nummer` und
+ * hatte damit für genau die Zeilen KEINEN Tiebreaker, die der Schlüssel bisher wegwarf;
+ * er führt darum jetzt zusätzlich `text` und `art`. Wer den Schlüssel erweitert, erweitert
+ * den Vergleicher — sonst hinge die Reihenfolge an der Zeilenfolge der Endpunkt-Antwort.
+ *
+ * BERICHTIGUNG 21.9.2026 (zweite Runde, F8: datierte Messsätze werden ergänzt, nie
+ * überschrieben). An dieser Stelle stand seit der ersten Runde, das Geschäft 08.053 liefere
+ * «zwei Fundstellen je dreifach byte-gleich» und sei damit der belegte Anlass des Dedupe.
+ * Das war FALSCH gemessen: die erste Runde verglich nur die sechs Felder oben und hielt
+ * darum für byte-gleich, was sich in `BillNumber` unterscheidet. Der Vollzensus aller
+ * 14 669 DE-`Objective`-Zeilen (Abruf 21.9.2026, `$inlinecount=allpages`, 15 Seiten) zeigt:
+ * an 08.053 sind alle 12 Zeilen verschieden (12 roh = 12 vollzeilen-distinkt), sie
+ * unterscheiden sich ausschliesslich in der VORLAGE. Darum steht `vorlage` jetzt im
+ * Schlüssel — ohne sie fielen 12 Zeilen auf 8 zusammen (03.047: 17 auf 14).
+ *
+ * `BillNumber` GENÜGT, `IdBill` ist redundant. Kardinalität über alle 3 763 DE-Geschäfte:
+ * roh 14 669 · Vollzeile (ohne `__metadata`/`Modified`/`ID`/`Bills`) 14 665 · sechs Felder
+ * 14 506 · sechs + `BillNumber` 14 665 · sechs + `BillNumber` + `IdBill` ebenfalls 14 665.
+ * Es gibt NULL Gruppen, die sich nur in `IdBill` unterscheiden; die GUID käme nur als
+ * Golden-Rauschen ins Artefakt. `Bills` scheidet ohnehin aus: sein `__deferred`-URI enthält
+ * die eigene `ID` der Zeile, ein Inhaltsvergleich darüber misst tautologisch grün.
+ *
+ * ECHTE Doppellieferungen gibt es — nur nicht bei uns. Korpusweit vier Zeilen in drei
+ * Geschäften (22.417, 26.023, 19.464), keines davon mit Shard. Über unsere 385 Shards gilt
+ * roh == vollzeilen-distinkt == 2055, der Lauf ist also VERLUSTFREI; die Map bleibt
+ * trotzdem, weil eine wirklich doppelt gelieferte Zeile eine Wiederholung ist und keine
+ * zweite Fundstelle. Weil der Bestand verlustfrei ist, rechnet `check:entstehung` gegen die
+ * ROHE Zeilenzahl gegen und wird rot, sobald ein Shard weniger speichert als der Endpunkt
+ * liefert (§6.7: fail-loud statt still dedupen).
+ *
+ * `BillNumber` IST EIN `int`, KEIN STRING (gemessen: 14 669 von 14 669 Zeilen `typeof
+ * 'number'`). `txt(z.BillNumber)` liefert deshalb für JEDE Zeile `null` — ein Fix über
+ * `txt()` änderte exakt nichts und sähe trotzdem nach Fix aus. Darum `zahl()`, und darum
+ * ein eigener Test, der genau diesen Irrweg rot macht.
+ *
+ * Schlüssel und Sortierschlüssel sind `JSON.stringify`-Tupel, kein `|`-Join: seit
+ * `ReferenceText` im Schlüssel steht, trägt er Freitext, und ein `|` darin würde zwei
+ * verschiedene Fundstellen zu einer verschmelzen (§1 — lieber trennscharf als hübsch).
+ */
 export function bauePublikationen(zeilen: OdataZeile[]): CuriaPublikation[] {
   const m = new Map<string, CuriaPublikation>();
   for (const z of zeilen) {
@@ -238,12 +324,27 @@ export function bauePublikationen(zeilen: OdataZeile[]): CuriaPublikation[] {
       nummer: txt(z.PublicationNumber),
       text: txt(z.ReferenceText),
       referendumsfrist: odataDatum(z.ReferendumDeadline),
+      vorlage: zahl(z.BillNumber),
     };
-    m.set(`${p.datum ?? ''}|${p.art ?? ''}|${p.jahr ?? ''}|${p.nummer ?? ''}|${p.referendumsfrist ?? ''}`, p);
+    m.set(JSON.stringify([p.datum, p.art, p.jahr, p.nummer, p.text, p.referendumsfrist, p.vorlage]), p);
   }
+  // Sortierschlüssel = alle sieben Felder ⇒ STRIKTE Totalordnung: zwei verschiedene
+  // Einträge können nie gleich vergleichen, die Reihenfolge hängt damit nirgends an der
+  // Zeilenfolge der Endpunkt-Antwort (§2). Reihung wie bisher datum → jahr → nummer,
+  // danach die Tiebreaker text → art → referendumsfrist.
+  // `vorlage` kommt ANS ENDE, nicht nach vorn: die bisherige fachliche Reihung (eine
+  // Publikationsliste liest sich chronologisch, dann nach Fundstelle) bleibt damit
+  // unverändert, und `vorlage` entscheidet nur dort, wo bisher gar nichts mehr entschied —
+  // nämlich zwischen den Zeilen, die der alte Schlüssel wegwarf. Padding wie bei
+  // `baueBeschluesse`, damit Vorlage 2 vor Vorlage 10 steht und nicht danach.
+  const sortSchluessel = (p: CuriaPublikation): string => JSON.stringify([
+    p.datum ?? '9999', p.jahr ?? '', (p.nummer ?? '').padStart(8, '0'),
+    p.text ?? '', p.art ?? '', p.referendumsfrist ?? '',
+    String(p.vorlage ?? 9999).padStart(4, '0'),
+  ]);
   return [...m.values()].sort((a, b) => {
-    const ka = `${a.datum ?? '9999'}|${a.jahr ?? ''}|${(a.nummer ?? '').padStart(8, '0')}`;
-    const kb = `${b.datum ?? '9999'}|${b.jahr ?? ''}|${(b.nummer ?? '').padStart(8, '0')}`;
+    const ka = sortSchluessel(a);
+    const kb = sortSchluessel(b);
     return ka < kb ? -1 : ka > kb ? 1 : 0;
   });
 }

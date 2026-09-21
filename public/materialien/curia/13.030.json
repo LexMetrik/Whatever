@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20130030",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2013-03-08",
@@ -85,7 +85,8 @@
       "jahr": "2013",
       "nummer": "2397",
       "text": "Botschaft vom 8. März 2013 zur Änderung des Ausländergesetzes (Integration)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2013-03-08",
@@ -93,7 +94,8 @@
       "jahr": "2013",
       "nummer": "2447",
       "text": "Bundesgesetz über die Ausländerinnen und Ausländer (Ausländergesetz, AuG) (Integration)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-03-04",
@@ -101,7 +103,8 @@
       "jahr": "2016",
       "nummer": "2821",
       "text": "Zusatzbotschaft vom 4. März 2016 zur Änderung des Ausländergesetzes (Integration)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2016-12-28",
@@ -109,7 +112,8 @@
       "jahr": "2016",
       "nummer": "8899",
       "text": null,
-      "referendumsfrist": "2017-04-07"
+      "referendumsfrist": "2017-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2017-12-05",
@@ -117,7 +121,8 @@
       "jahr": "2017",
       "nummer": "6521",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -136,7 +141,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

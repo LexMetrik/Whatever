@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20090086",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2009-11-18",
@@ -145,18 +145,29 @@
     {
       "datum": "2009-11-18",
       "art": "Bundesblatt",
-      "jahr": "2009",
-      "nummer": "8533",
-      "text": "Botschaft vom 18. November 2009 zur Änderung des Markenschutzgesetzes und zu einem Bundesgesetz über den Schutz des Schweizerwappens und anderer öffentlicher Zeichen (Swissness-Vorlage)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über den Schutz des Schweizerwappens und anderer öffentlicher Zeichen (Wappenschutzgesetz, WSchG)",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2009-11-18",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesgesetz über den Schutz des Schweizerwappens und anderer öffentlicher Zeichen (Wappenschutzgesetz, WSchG)",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über den Schutz von Marken und Herkunftsangaben (Markenschutzgesetz, MSchG)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2009-11-18",
+      "art": "Bundesblatt",
+      "jahr": "2009",
+      "nummer": "8533",
+      "text": "Botschaft vom 18. November 2009 zur Änderung des Markenschutzgesetzes und zu einem Bundesgesetz über den Schutz des Schweizerwappens und anderer öffentlicher Zeichen (Swissness-Vorlage)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2013-07-02",
@@ -164,7 +175,8 @@
       "jahr": "2013",
       "nummer": "4777",
       "text": null,
-      "referendumsfrist": "2013-10-10"
+      "referendumsfrist": "2013-10-10",
+      "vorlage": 2
     },
     {
       "datum": "2013-07-02",
@@ -172,7 +184,8 @@
       "jahr": "2013",
       "nummer": "4795",
       "text": null,
-      "referendumsfrist": "2013-10-10"
+      "referendumsfrist": "2013-10-10",
+      "vorlage": 1
     },
     {
       "datum": "2015-09-30",
@@ -180,7 +193,8 @@
       "jahr": "2015",
       "nummer": "3631",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2015-09-30",
@@ -188,7 +202,8 @@
       "jahr": "2015",
       "nummer": "3679",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -207,7 +222,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2013-06-21",
@@ -224,7 +239,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20080029",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2008-03-14",
@@ -152,10 +152,11 @@
     {
       "datum": "2008-03-14",
       "art": "Bundesblatt",
-      "jahr": "2008",
-      "nummer": "2135",
-      "text": "Botschaft vom 14. März 2008 zur Weiterführung des Freizügigkeitsabkommens sowie zu dessen Ausdehnung auf Bulgarien und Rumänien",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss zur Genehmigung der Weiterführung des Abkommens zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits über die Freizügigkeit",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2008-03-14",
@@ -163,7 +164,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesbeschluss zur Genehmigung und Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits auf Bulgarien und Rumänien",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2008-03-14",
+      "art": "Bundesblatt",
+      "jahr": "2008",
+      "nummer": "2135",
+      "text": "Botschaft vom 14. März 2008 zur Weiterführung des Freizügigkeitsabkommens sowie zu dessen Ausdehnung auf Bulgarien und Rumänien",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-06-24",
@@ -171,7 +182,8 @@
       "jahr": "2008",
       "nummer": "5323",
       "text": null,
-      "referendumsfrist": "2008-10-02"
+      "referendumsfrist": "2008-10-02",
+      "vorlage": 1
     },
     {
       "datum": "2009-05-19",
@@ -179,7 +191,8 @@
       "jahr": "2009",
       "nummer": "2411",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -198,7 +211,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

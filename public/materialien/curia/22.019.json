@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20220019",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2022-05-18",
@@ -85,7 +85,8 @@
       "jahr": "2022",
       "nummer": "1449",
       "text": "Botschaft vom 18. Mai 2022 zur Genehmigung und Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnungen (EU) 2021/1150 und (EU) 2021/1152 zur Festlegung der Bedingungen für den Zugang zu anderen EU-Informationssystemen für die Zwecke des Europäischen Reiseinformations- und -Genehmigungssystems (ETIAS) (Weiterentwicklungen des Schengen-Besitzstands) und zur Änderung des Ausländer- und Integrationsgesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2022-05-18",
@@ -93,7 +94,8 @@
       "jahr": "2022",
       "nummer": "1450",
       "text": "Bundesbeschluss über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnungen (EU) 2021/1150 und 2021/1152 zur Festlegung der Bedingungen für den Zugang zu anderen EU-Informationssystemen für die Zwecke des Europäischen Reiseinformations- und -genehmigungssystems (ETIAS) (Weiterentwicklungen des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2022-05-18",
@@ -101,7 +103,8 @@
       "jahr": "2022",
       "nummer": "1451",
       "text": "Notenaustausch vom 11. August 2021 zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der Verordnung (EU) 2021/1152 zur Änderung der Verordnungen (EG) Nr. 767/2008, (EU) 2017/2226, (EU) 2018/1240, (EU) 2018/1860, (EU) 2018/1861 und (EU) 2019/817 hinsichtlich der Festlegung der Bedingungen für den Zugang zu anderen EU-Informationssystemen für die Zwecke des Europäischen Reiseinformations- und -genehmigungssystems (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2022-05-18",
@@ -109,7 +112,8 @@
       "jahr": "2022",
       "nummer": "1452",
       "text": "Notenaustausch vom 11. August 2021 zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der Verordnung (EU) 2021/1150 zur Änderung der Verordnungen (EU) 2018/1862 und (EU) 2019/818 hinsichtlich der Festlegung der Bedingungen für den Zugang zu anderen EU-Informationssystemen für die Zwecke des Europäischen Reiseinformations- und -genehmigungssystems (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2022-05-18",
@@ -117,7 +121,8 @@
       "jahr": "2022",
       "nummer": "1453",
       "text": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2022-12-29",
@@ -125,7 +130,8 @@
       "jahr": "2022",
       "nummer": "3206",
       "text": null,
-      "referendumsfrist": "2023-04-08"
+      "referendumsfrist": "2023-04-08",
+      "vorlage": 2
     },
     {
       "datum": "2022-12-29",
@@ -133,7 +139,8 @@
       "jahr": "2022",
       "nummer": "3212",
       "text": null,
-      "referendumsfrist": "2023-04-08"
+      "referendumsfrist": "2023-04-08",
+      "vorlage": 1
     },
     {
       "datum": "2025-05-27",
@@ -141,7 +148,8 @@
       "jahr": "2025",
       "nummer": "341",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2025-05-28",
@@ -149,7 +157,8 @@
       "jahr": "2025",
       "nummer": "349",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -168,7 +177,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2022-12-16",
@@ -185,7 +194,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20120039",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2012-03-02",
@@ -103,10 +103,20 @@
     {
       "datum": "2012-03-02",
       "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die flankierenden Massnahmen bei entsandten Arbeitnehmerinnen und Arbeitnehmern und über die Kontrolle der in Normalarbeitsverträgen vorgesehenen Mindestlöhne (Entsendegesetz, EntsG9)",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2012-03-02",
+      "art": "Bundesblatt",
       "jahr": "2012",
       "nummer": "3397",
       "text": "Botschaft vom 2. März 2012 zum Bundesgesetz über die Anpassung der flankierenden Massnahmen zur Personenfreizügigkeit",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-03-02",
@@ -114,15 +124,8 @@
       "jahr": "2012",
       "nummer": "3429",
       "text": "Bundesgesetz über die Anpassung der flankierenden Massnahmen zur Personenfreizügigkeit",
-      "referendumsfrist": null
-    },
-    {
-      "datum": "2012-03-02",
-      "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die flankierenden Massnahmen bei entsandten Arbeitnehmerinnen und Arbeitnehmern und über die Kontrolle der in Normalarbeitsverträgen vorgesehenen Mindestlöhne (Entsendegesetz, EntsG9)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-06-26",
@@ -130,7 +133,8 @@
       "jahr": "2012",
       "nummer": "5945",
       "text": null,
-      "referendumsfrist": "2012-10-04"
+      "referendumsfrist": "2012-10-04",
+      "vorlage": 1
     },
     {
       "datum": "2012-12-11",
@@ -138,7 +142,8 @@
       "jahr": "2012",
       "nummer": "6703",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-12-28",
@@ -146,7 +151,8 @@
       "jahr": "2012",
       "nummer": "9725",
       "text": null,
-      "referendumsfrist": "2012-04-07"
+      "referendumsfrist": "2012-04-07",
+      "vorlage": 2
     },
     {
       "datum": "2013-07-09",
@@ -154,7 +160,8 @@
       "jahr": "2013",
       "nummer": "2121",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -173,7 +180,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2012-12-14",
@@ -190,7 +197,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

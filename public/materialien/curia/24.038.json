@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240038",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2024-05-02",
@@ -85,7 +85,8 @@
       "jahr": "2024",
       "nummer": "1107",
       "text": "Botschaft ...",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-04-24",
@@ -93,7 +94,8 @@
       "jahr": "2024",
       "nummer": "1108",
       "text": "Asylgesetz (AsylG) (Sicherheit und Betrieb in den Zentren des Bundes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-03-21",
@@ -101,7 +103,8 @@
       "jahr": "2025",
       "nummer": "1094",
       "text": null,
-      "referendumsfrist": "2025-07-10"
+      "referendumsfrist": "2025-07-10",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -120,7 +123,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

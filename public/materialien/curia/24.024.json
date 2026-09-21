@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240024",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2024-03-01",
@@ -57,7 +57,8 @@
       "jahr": "2024",
       "nummer": "650",
       "text": "Botschaft vom 1. März 2024 zum Bundesgesetz über die Besteuerung der Telearbeit im internationalen Verhältnis",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-03-01",
@@ -65,7 +66,8 @@
       "jahr": "2024",
       "nummer": "651",
       "text": "Bundesgesetz über die Besteuerung der Telearbeit im internationalen Verhältnis",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2024-06-25",
@@ -73,7 +75,8 @@
       "jahr": "2024",
       "nummer": "1453",
       "text": null,
-      "referendumsfrist": "2024-10-03"
+      "referendumsfrist": "2024-10-03",
+      "vorlage": 1
     },
     {
       "datum": "2025-05-15",
@@ -81,7 +84,8 @@
       "jahr": "2024",
       "nummer": "573",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

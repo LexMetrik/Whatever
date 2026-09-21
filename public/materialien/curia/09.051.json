@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20090051",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2009-05-29",
@@ -110,18 +110,29 @@
     {
       "datum": "2009-05-29",
       "art": "Bundesblatt",
-      "jahr": "2009",
-      "nummer": "4245",
-      "text": "Botschaft vom 29. Mai 2009 über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der Verordnung und des Beschlusses über das Visa-lnformationssystem (VIS) (Weiterentwicklungen des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung und des Beschlusses über das Visa-Informationssystem (VIS) (Weiterentwicklungen des Schengen-Besitzstands)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2009-05-29",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung und des Beschlusses über das Visa-Informationssystem (VIS) (Weiterentwicklungen des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über die Ausländerinnen und Ausländer (AuG)",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2009-05-29",
+      "art": "Bundesblatt",
+      "jahr": "2009",
+      "nummer": "4245",
+      "text": "Botschaft vom 29. Mai 2009 über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der Verordnung und des Beschlusses über das Visa-lnformationssystem (VIS) (Weiterentwicklungen des Schengen-Besitzstands)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2009-12-22",
@@ -129,7 +140,8 @@
       "jahr": "2009",
       "nummer": "8823",
       "text": null,
-      "referendumsfrist": "2010-04-01"
+      "referendumsfrist": "2010-04-01",
+      "vorlage": 1
     },
     {
       "datum": "2010-05-19",
@@ -137,7 +149,8 @@
       "jahr": "2010",
       "nummer": "2063",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -156,7 +169,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

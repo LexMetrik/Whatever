@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20150033",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2015-04-15",
@@ -99,7 +99,8 @@
       "jahr": "2015",
       "nummer": "3431",
       "text": "Botschaft vom 15. April 2015 zur Änderung des Schweizerischen Zivilgesetzbuches (Kindesschutz)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2015-04-15",
@@ -107,7 +108,8 @@
       "jahr": "2015",
       "nummer": "3469",
       "text": "Schweizerisches Zivilgesetzbuch (Kindesschutz)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2017-12-28",
@@ -115,7 +117,8 @@
       "jahr": "2017",
       "nummer": "7903",
       "text": null,
-      "referendumsfrist": "2018-04-07"
+      "referendumsfrist": "2018-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2018-08-14",
@@ -123,7 +126,8 @@
       "jahr": "2018",
       "nummer": "2947",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

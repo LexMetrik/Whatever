@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20130029",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2013-03-08",
@@ -71,7 +71,8 @@
       "jahr": "2013",
       "nummer": "2317",
       "text": "Botschaft vom 8. März 2013 zur Änderung des Transplantationsgesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2013-03-08",
@@ -79,7 +80,8 @@
       "jahr": "2013",
       "nummer": "2389",
       "text": "Bundesgesetz über die Transplantation von Organen, Geweben und Zellen (Transplantationsgesetz)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2015-06-30",
@@ -87,7 +89,8 @@
       "jahr": "2015",
       "nummer": "4875",
       "text": null,
-      "referendumsfrist": "2015-10-08"
+      "referendumsfrist": "2015-10-08",
+      "vorlage": 1
     },
     {
       "datum": "2016-04-22",
@@ -95,7 +98,8 @@
       "jahr": "2016",
       "nummer": "1163",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

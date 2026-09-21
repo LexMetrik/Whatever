@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20160048",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2016-06-03",
@@ -71,7 +71,8 @@
       "jahr": "2016",
       "nummer": "6115",
       "text": "Botschaft vom 3. Juni 2016 zur Änderung des Strafgesetzbuchs und des Militärstrafgesetzes (Umsetzung von Art. 123c BV)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2016-06-03",
@@ -79,7 +80,8 @@
       "jahr": "2016",
       "nummer": "6191",
       "text": "Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 123c BV)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2018-03-27",
@@ -87,7 +89,8 @@
       "jahr": "2018",
       "nummer": "1495",
       "text": null,
-      "referendumsfrist": "2018-07-05"
+      "referendumsfrist": "2018-07-05",
+      "vorlage": 1
     },
     {
       "datum": "2020-09-08",
@@ -95,7 +98,8 @@
       "jahr": "2018",
       "nummer": "3803",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

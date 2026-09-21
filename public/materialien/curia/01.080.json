@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010080",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2001-12-21",
@@ -201,10 +201,11 @@
     {
       "datum": "2001-12-21",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "2095",
-      "text": "Botschaft vom 19. Dezember 2001 zur Staatsleitungsreform",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Regierungsreform",
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2001-12-21",
@@ -212,7 +213,53 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesbeschluss über die Staatsleitungsreform",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2001-12-21",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
+      "referendumsfrist": null,
+      "vorlage": 5
+    },
+    {
+      "datum": "2001-12-21",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Reform der Regierungsorganisation",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2001-12-21",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG)",
+      "referendumsfrist": null,
+      "vorlage": 6
+    },
+    {
+      "datum": "2001-12-21",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Verordnung der Bundesversammlung über Besoldung und berufliche Vorsorge der Magistratspersonen",
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2001-12-21",
+      "art": "Bundesblatt",
+      "jahr": "2002",
+      "nummer": "2095",
+      "text": "Botschaft vom 19. Dezember 2001 zur Staatsleitungsreform",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-10-13",
@@ -220,7 +267,8 @@
       "jahr": "2010",
       "nummer": "7811",
       "text": "Zusatzbotschaft vom 13. Oktober 2010 zur Regierungsreform",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-10-09",
@@ -228,7 +276,8 @@
       "jahr": "2012",
       "nummer": "8199",
       "text": null,
-      "referendumsfrist": "2013-01-17"
+      "referendumsfrist": "2013-01-17",
+      "vorlage": 6
     },
     {
       "datum": "2013-12-17",
@@ -236,7 +285,8 @@
       "jahr": "2013",
       "nummer": "4549",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 6
     }
   ],
   "schlussabstimmungen": [
@@ -255,7 +305,7 @@
         "demissioniert": 0,
         "total": 198
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

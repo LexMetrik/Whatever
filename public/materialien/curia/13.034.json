@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20130034",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2013-04-10",
@@ -88,7 +88,8 @@
       "jahr": "2013",
       "nummer": "3009",
       "text": "Botschaft vom 10. April 2013 zur Genehmigung des Protokolls von Nagoya über den Zugang zu genetischen Ressourcen und die ausgewogene und gerechte Aufteilung der sich aus ihrer Nutzung ergebenden Vorteile (Nagoya-Protokoll) und dessen Umsetzung (Bundesgesetz über den Natur- und Heimatschutz)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2013-04-10",
@@ -96,7 +97,8 @@
       "jahr": "2013",
       "nummer": "3057",
       "text": "Bundesbeschluss über die Genehmigung des Protokolls von Nagoya über den Zugang zu genetischen Ressourcen und die ausgewogene und gerechte Aufteilung der sich aus ihrer Nutzung ergebenden Vorteile (Nagoya-Protokoll) und dessen Umsetzung (Bundesgesetz über den Natur- und Heimatschutz)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2014-04-01",
@@ -104,7 +106,8 @@
       "jahr": "2014",
       "nummer": "2917",
       "text": null,
-      "referendumsfrist": "2014-07-10"
+      "referendumsfrist": "2014-07-10",
+      "vorlage": 1
     },
     {
       "datum": "2014-09-02",
@@ -112,7 +115,8 @@
       "jahr": "2014",
       "nummer": "2629",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -131,7 +135,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20000052",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2000-06-13",
@@ -75,18 +75,20 @@
     {
       "datum": "2000-06-13",
       "art": "Bundesblatt",
-      "jahr": "2000",
-      "nummer": "4337",
-      "text": "Botschaft vom 13. Juni 2000 zum Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung (Fusionsgesetz, FusG)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung (Fusionsgesetz; FusG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2000-06-13",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung (Fusionsgesetz; FusG)",
-      "referendumsfrist": null
+      "jahr": "2000",
+      "nummer": "4337",
+      "text": "Botschaft vom 13. Juni 2000 zum Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung (Fusionsgesetz, FusG)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-10-14",
@@ -94,7 +96,8 @@
       "jahr": "2003",
       "nummer": "6691",
       "text": null,
-      "referendumsfrist": "2004-01-22"
+      "referendumsfrist": "2004-01-22",
+      "vorlage": 1
     },
     {
       "datum": "2004-06-01",
@@ -102,7 +105,8 @@
       "jahr": "2004",
       "nummer": "2617",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010069",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2001-11-07",
@@ -127,7 +127,8 @@
       "jahr": "2002",
       "nummer": "803",
       "text": "Botschaft vom 7. November 2001 über die Anpassung des Anhangs zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG; Revision des Anhangs)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2001-11-08",
@@ -135,7 +136,26 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Änderung des Anhangs zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (Revision 3 des Anhangs zum ATSG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2001-11-08",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Verordnung der Bundesversammlung betreffend die Änderung des Anhangs zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (Revision 1 des Anhangs zum ATSG)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2001-11-08",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Verordnung der Bundesversammlung betreffend die Änderung des Anhangs zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts im Zusammenhang mit der Inkraftsetzung des Bundesgesetzes zum Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits über die Freizügigkeit (Revision 2 des Anhangs zum ATSG)",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2002-07-09",
@@ -143,7 +163,8 @@
       "jahr": "2002",
       "nummer": "4453",
       "text": null,
-      "referendumsfrist": "2002-10-17"
+      "referendumsfrist": "2002-10-17",
+      "vorlage": 3
     },
     {
       "datum": "2002-11-05",
@@ -151,7 +172,8 @@
       "jahr": "2002",
       "nummer": "3453",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2002-11-05",
@@ -159,7 +181,8 @@
       "jahr": "2002",
       "nummer": "3472",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2002-11-05",
@@ -167,7 +190,8 @@
       "jahr": "2002",
       "nummer": "3475",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     }
   ],
   "schlussabstimmungen": []

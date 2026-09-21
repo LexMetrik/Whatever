@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20180068",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2018-09-28",
@@ -78,7 +78,8 @@
       "jahr": "2018",
       "nummer": "6565",
       "text": "Botschaft vom 28. September 2018 zur Änderung des Asylgesetzes (Kompetenz des Bundesrates zum Abschluss völkerrechtlicher Verträge über die Ausrichtung von Beiträgen an ausgewählte EU-Mitgliedstaaten oder an internationale Organisationen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-09-28",
@@ -86,7 +87,8 @@
       "jahr": "2018",
       "nummer": "6575",
       "text": "Asylgesetz (AsylG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2019-12-31",
@@ -94,7 +96,8 @@
       "jahr": "2019",
       "nummer": "8685",
       "text": null,
-      "referendumsfrist": "2020-04-09"
+      "referendumsfrist": "2020-04-09",
+      "vorlage": 1
     },
     {
       "datum": "2020-10-13",
@@ -102,7 +105,8 @@
       "jahr": "2020",
       "nummer": "3989",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -121,7 +125,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

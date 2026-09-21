@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20110024",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2011-03-04",
@@ -57,7 +57,8 @@
       "jahr": "2011",
       "nummer": "2433",
       "text": "Botschaft vom 4. März 2011 zur Änderung des Energiegesetzes (Art. 8)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-03-04",
@@ -65,7 +66,8 @@
       "jahr": "2011",
       "nummer": "2447",
       "text": "Energiegesetz (EnG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-01-04",
@@ -73,7 +75,8 @@
       "jahr": "2012",
       "nummer": "111",
       "text": null,
-      "referendumsfrist": "2012-04-13"
+      "referendumsfrist": "2012-04-13",
+      "vorlage": 1
     },
     {
       "datum": "2012-06-12",
@@ -81,7 +84,8 @@
       "jahr": "2012",
       "nummer": "3231",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20080069",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2008-09-19",
@@ -68,18 +68,20 @@
     {
       "datum": "2008-09-19",
       "art": "Bundesblatt",
-      "jahr": "2008",
-      "nummer": "8411",
-      "text": "Botschaft vom 19. September 2008 zur Änderung des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (Finanzierung öffentlich-rechtlicher Vorsorgeeinrichtungen)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2008-09-19",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften)",
-      "referendumsfrist": null
+      "jahr": "2008",
+      "nummer": "8411",
+      "text": "Botschaft vom 19. September 2008 zur Änderung des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (Finanzierung öffentlich-rechtlicher Vorsorgeeinrichtungen)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-12-28",
@@ -87,7 +89,8 @@
       "jahr": "2010",
       "nummer": "8979",
       "text": null,
-      "referendumsfrist": "2011-04-07"
+      "referendumsfrist": "2011-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2011-07-19",
@@ -95,7 +98,8 @@
       "jahr": "2011",
       "nummer": "3385",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

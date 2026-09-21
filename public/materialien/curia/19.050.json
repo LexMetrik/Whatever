@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20190050",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2019-08-28",
@@ -162,7 +162,8 @@
       "jahr": "2019",
       "nummer": "6305",
       "text": "Botschaft vom 28. August 2019 zur Stabilisierung der AHV (AHV 21)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-08-28",
@@ -170,7 +171,8 @@
       "jahr": "2019",
       "nummer": "6437",
       "text": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2019-08-28",
@@ -178,7 +180,8 @@
       "jahr": "2019",
       "nummer": "6455",
       "text": "Bundesbeschluss über die Zusatzfinanzierung der AHV durch eine Erhöhung der Mehrwertsteuer",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2021-06-09",
@@ -186,7 +189,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesbeschluss über die Zuweisung des Gewinns aus den Negativzinsen der Schweizerischen Nationalbank an den Ausgleichsfonds der Alters- und Hinterlassenenversicherung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2021-12-28",
@@ -194,7 +198,8 @@
       "jahr": "2021",
       "nummer": "2991",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2021-12-28",
@@ -202,7 +207,8 @@
       "jahr": "2021",
       "nummer": "2995",
       "text": null,
-      "referendumsfrist": "2022-04-07"
+      "referendumsfrist": "2022-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2023-02-28",
@@ -210,7 +216,8 @@
       "jahr": "2023",
       "nummer": "91",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2023-03-06",
@@ -218,7 +225,8 @@
       "jahr": "2023",
       "nummer": "92",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -237,7 +245,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2021-12-17",
@@ -254,7 +262,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

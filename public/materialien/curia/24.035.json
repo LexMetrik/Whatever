@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240035",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2024-05-02",
@@ -67,7 +67,8 @@
       "jahr": "2024",
       "nummer": "792",
       "text": "Botschaft vom 15. März 2024 zum Bundesbeschluss über den Einsatz elektronischer Kommunikationsmittel in grenzüberschreitenden Zivilprozessen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-03-15",
@@ -75,7 +76,8 @@
       "jahr": "2024",
       "nummer": "793",
       "text": "Bundesbeschluss über den Einsatz elektronischer Kommunikationsmittel in grenzüberschreitenden Zivilprozessen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-01-09",
@@ -83,7 +85,8 @@
       "jahr": "2025",
       "nummer": "24",
       "text": null,
-      "referendumsfrist": "2025-04-19"
+      "referendumsfrist": "2025-04-19",
+      "vorlage": 1
     },
     {
       "datum": "2025-11-07",
@@ -91,7 +94,8 @@
       "jahr": "2025",
       "nummer": "684",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -110,7 +114,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

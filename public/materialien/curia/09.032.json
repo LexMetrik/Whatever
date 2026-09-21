@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20090032",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2009-03-06",
@@ -96,18 +96,20 @@
     {
       "datum": "2009-03-06",
       "art": "Bundesblatt",
-      "jahr": "2009",
-      "nummer": "1657",
-      "text": "Botschaft vom 6. März 2009 zur Änderung des Bundesgesetzes über die direkte Bundessteuer (Rascherer Ausgleich der Folgen der kalten Progression bei der direkten Bundessteuer)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die direkte Bundessteuer (DBG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2009-03-06",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die direkte Bundessteuer (DBG)",
-      "referendumsfrist": null
+      "jahr": "2009",
+      "nummer": "1657",
+      "text": "Botschaft vom 6. März 2009 zur Änderung des Bundesgesetzes über die direkte Bundessteuer (Rascherer Ausgleich der Folgen der kalten Progression bei der direkten Bundessteuer)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2009-10-06",
@@ -115,7 +117,8 @@
       "jahr": "2009",
       "nummer": "6665",
       "text": null,
-      "referendumsfrist": "2010-01-14"
+      "referendumsfrist": "2010-01-14",
+      "vorlage": 1
     },
     {
       "datum": "2010-02-02",
@@ -123,7 +126,8 @@
       "jahr": "2010",
       "nummer": "453",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

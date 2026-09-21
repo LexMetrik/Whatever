@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20180020",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2018-02-14",
@@ -57,7 +57,8 @@
       "jahr": "2018",
       "nummer": "1263",
       "text": "Botschaft vom 14. Februar 2018 zum Bundesgesetz über die Berechnung des Beteiligungsabzugs bei Too-big-to-fail-Instrumenten",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-02-14",
@@ -65,7 +66,8 @@
       "jahr": "2018",
       "nummer": "1297",
       "text": "Bundesgesetz über die Berechnung des Beteiligungsabzugs bei Too-big-to-fail-Instrumenten",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2018-12-14",
@@ -73,7 +75,8 @@
       "jahr": "2018",
       "nummer": "7897",
       "text": null,
-      "referendumsfrist": "2019-04-07"
+      "referendumsfrist": "2019-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2019-04-16",
@@ -81,7 +84,8 @@
       "jahr": "2019",
       "nummer": "1207",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

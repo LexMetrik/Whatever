@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20120037",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2012-03-02",
@@ -85,7 +85,8 @@
       "jahr": "2012",
       "nummer": "3639",
       "text": "Botschaft vom 2. März 2012 über die Änderung des Kollektivanlagengesetzes (KAG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-03-02",
@@ -93,7 +94,8 @@
       "jahr": "2012",
       "nummer": "3693",
       "text": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-10-09",
@@ -101,7 +103,8 @@
       "jahr": "2012",
       "nummer": "8215",
       "text": null,
-      "referendumsfrist": "2013-01-17"
+      "referendumsfrist": "2013-01-17",
+      "vorlage": 1
     },
     {
       "datum": "2013-02-19",
@@ -109,7 +112,8 @@
       "jahr": "2013",
       "nummer": "585",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -128,7 +132,7 @@
         "demissioniert": 0,
         "total": 198
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

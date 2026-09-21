@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20110039",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2011-06-22",
@@ -64,7 +64,8 @@
       "jahr": "2011",
       "nummer": "5977",
       "text": "Botschaft vom 22. Juni 2011 zum Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-06-22",
@@ -72,7 +73,8 @@
       "jahr": "2011",
       "nummer": "6019",
       "text": "Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-06-26",
@@ -80,7 +82,8 @@
       "jahr": "2012",
       "nummer": "5933",
       "text": null,
-      "referendumsfrist": "2012-10-04"
+      "referendumsfrist": "2012-10-04",
+      "vorlage": 1
     },
     {
       "datum": "2012-11-13",
@@ -88,7 +91,8 @@
       "jahr": "2012",
       "nummer": "5951",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

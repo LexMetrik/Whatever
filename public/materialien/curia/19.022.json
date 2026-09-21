@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20190022",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2019-02-19",
@@ -104,7 +104,8 @@
       "jahr": "2019",
       "nummer": "2177",
       "text": "Armeebotschaft 2019 vom 20. Februar 2019",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-02-19",
@@ -112,7 +113,8 @@
       "jahr": "2019",
       "nummer": "2231",
       "text": "Bundesbeschluss über das Rüstungsprogramm 2019",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2019-02-19",
@@ -120,7 +122,8 @@
       "jahr": "2019",
       "nummer": "2233",
       "text": "Bundesbeschluss über die Rahmenkredite für Armeematerial 2019",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2019-02-19",
@@ -128,7 +131,8 @@
       "jahr": "2019",
       "nummer": "2235",
       "text": "Bundesbeschluss über das Immobilienprogramm VBS 2019",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2019-02-19",
@@ -136,7 +140,8 @@
       "jahr": "2019",
       "nummer": "2237",
       "text": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2019-10-08",
@@ -144,7 +149,8 @@
       "jahr": "2019",
       "nummer": "6595",
       "text": null,
-      "referendumsfrist": "2020-01-16"
+      "referendumsfrist": "2020-01-16",
+      "vorlage": 4
     },
     {
       "datum": "2020-05-19",
@@ -152,7 +158,8 @@
       "jahr": "2020",
       "nummer": "1547",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     }
   ],
   "schlussabstimmungen": [
@@ -171,7 +178,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240070",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2024-08-22",
@@ -71,7 +71,8 @@
       "jahr": "2024",
       "nummer": "2448",
       "text": "Botschaft vom 13. September 2024 zur Änderung des Bundesgesetzes über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung. Leistungen für Hilfe und Betreuung zu Hause für Bezügerinnen und Bezüger von Ergänzungsleistungen zur AHV/IV",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-09-13",
@@ -79,7 +80,8 @@
       "jahr": "2024",
       "nummer": "2449",
       "text": "Bundesgesetz über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-07-01",
@@ -87,7 +89,8 @@
       "jahr": "2025",
       "nummer": "2039",
       "text": null,
-      "referendumsfrist": "2025-10-09"
+      "referendumsfrist": "2025-10-09",
+      "vorlage": 1
     },
     {
       "datum": "2026-08-27",
@@ -95,7 +98,8 @@
       "jahr": "2026",
       "nummer": "434",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

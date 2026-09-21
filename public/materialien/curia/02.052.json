@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020052",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2002-06-26",
@@ -82,18 +82,29 @@
     {
       "datum": "2002-06-26",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "5390",
-      "text": "Botschaft vom 26. Juni 2002 betreffend die Internationalen Übereinkommen zur Bekämpfung der Finanzierung des Terrorismus und zur Bekämpfung terroristischer Bombenanschläge sowie die Änderung des Strafgesetzbuches und die Anpassung weiterer Bundesgesetze",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss betreffend die Genehmigung der Internationalen Übereinkommen zur Bekämpfung der Finanzierung des Terrorismus und zur Bekämpfung terroristischer Bombenanschläge",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2002-06-26",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesbeschluss betreffend die Genehmigung der Internationalen Übereinkommen zur Bekämpfung der Finanzierung des Terrorismus und zur Bekämpfung terroristischer Bombenanschläge",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über die Änderung des Strafgesetzbuches sowie die Anpassung weiterer Bundesgesetze (Terrorismus und Finanzierung des Terrorismus)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2002-06-26",
+      "art": "Bundesblatt",
+      "jahr": "2002",
+      "nummer": "5390",
+      "text": "Botschaft vom 26. Juni 2002 betreffend die Internationalen Übereinkommen zur Bekämpfung der Finanzierung des Terrorismus und zur Bekämpfung terroristischer Bombenanschläge sowie die Änderung des Strafgesetzbuches und die Anpassung weiterer Bundesgesetze",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-04-01",
@@ -101,7 +112,8 @@
       "jahr": "2003",
       "nummer": "2847",
       "text": null,
-      "referendumsfrist": "2003-07-10"
+      "referendumsfrist": "2003-07-10",
+      "vorlage": 1
     },
     {
       "datum": "2003-09-02",
@@ -109,7 +121,8 @@
       "jahr": "2003",
       "nummer": "3043",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2004-05-18",
@@ -117,7 +130,8 @@
       "jahr": "2004",
       "nummer": "2519",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": []

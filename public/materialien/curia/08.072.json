@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20080072",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2008-10-29",
@@ -82,18 +82,20 @@
     {
       "datum": "2008-10-29",
       "art": "Bundesblatt",
-      "jahr": "2008",
-      "nummer": "8741",
-      "text": "Botschaft vom 29. Oktober 2008 über die Änderung des CO2-Gesetzes im Hinblick auf die Abgabebefreiung fossilthermischer Kraftwerke",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2008-10-29",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
-      "referendumsfrist": null
+      "jahr": "2008",
+      "nummer": "8741",
+      "text": "Botschaft vom 29. Oktober 2008 über die Änderung des CO2-Gesetzes im Hinblick auf die Abgabebefreiung fossilthermischer Kraftwerke",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-06-29",
@@ -101,7 +103,8 @@
       "jahr": "2010",
       "nummer": "4321",
       "text": null,
-      "referendumsfrist": "2010-10-07"
+      "referendumsfrist": "2010-10-07",
+      "vorlage": 1
     },
     {
       "datum": "2011-01-04",
@@ -109,7 +112,8 @@
       "jahr": "2011",
       "nummer": "13",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -128,7 +132,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

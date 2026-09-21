@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20180029",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2018-03-02",
@@ -71,7 +71,8 @@
       "jahr": "2018",
       "nummer": "1607",
       "text": "Botschaft vom 2. März 2018 zur Änderung des Bundesgesetzes über den Allgemeinen Teil des Sozialversicherungsrechts",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-03-02",
@@ -79,7 +80,8 @@
       "jahr": "2018",
       "nummer": "1665",
       "text": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2019-07-02",
@@ -87,7 +89,8 @@
       "jahr": "2019",
       "nummer": "4475",
       "text": null,
-      "referendumsfrist": "2019-10-10"
+      "referendumsfrist": "2019-10-10",
+      "vorlage": 1
     },
     {
       "datum": "2020-12-01",
@@ -95,7 +98,8 @@
       "jahr": "2020",
       "nummer": "5137",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

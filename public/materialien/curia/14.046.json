@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20140046",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2014-05-21",
@@ -99,7 +99,8 @@
       "jahr": "2014",
       "nummer": "4909",
       "text": "Botschaft vom 21. Mai 2014 zur Änderung des Bundesgesetzes über den Wald",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2014-05-21",
@@ -107,7 +108,8 @@
       "jahr": "2014",
       "nummer": "4957",
       "text": "Bundesgesetz über den Wald (Waldgesetz, WaG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-04-01",
@@ -115,7 +117,8 @@
       "jahr": "2016",
       "nummer": "2117",
       "text": null,
-      "referendumsfrist": "2016-07-07"
+      "referendumsfrist": "2016-07-07",
+      "vorlage": 1
     },
     {
       "datum": "2016-09-20",
@@ -123,7 +126,8 @@
       "jahr": "2016",
       "nummer": "3207",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

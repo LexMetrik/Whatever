@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20190043",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2019-06-26",
@@ -78,7 +78,8 @@
       "jahr": "2019",
       "nummer": "5193",
       "text": "Botschaft vom 26. Juni 2019 zum Bundesgesetz über die Bekämpfung des missbräuchlichen Konkurses (Änderung, des Bundesgesetzes über Schuldbetreibung und Konkurs, des Obligationenrechts, des Strafgesetzbuches, des Militärstrafgesetzes und des Strafregistergesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-06-26",
@@ -86,7 +87,8 @@
       "jahr": "2019",
       "nummer": "5221",
       "text": "Bundesgesetz über die Bekämpfung des missbräuchlichen Konkurses (Änderung des Bundesgesetzes über Schuldbetreibung und Konkurs, des Obligationenrechts, des Strafgesetzbuches, des Militärstrafgesetzes und des Strafregistergesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2022-03-29",
@@ -94,7 +96,8 @@
       "jahr": "2022",
       "nummer": "702",
       "text": null,
-      "referendumsfrist": "2022-07-07"
+      "referendumsfrist": "2022-07-07",
+      "vorlage": 1
     },
     {
       "datum": "2023-11-28",
@@ -102,7 +105,8 @@
       "jahr": "2023",
       "nummer": "628",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -121,7 +125,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

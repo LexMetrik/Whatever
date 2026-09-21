@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20100040",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2010-04-21",
@@ -61,18 +61,20 @@
     {
       "datum": "2010-04-21",
       "art": "Bundesblatt",
-      "jahr": "2010",
-      "nummer": "2855",
-      "text": "Botschaft vom 21. April 2010 zum Bundesgesetz über die Steuerbefreiung des Feuerwehrsoldes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Steuerbefreiung des Feuerwehrsoldes",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2010-04-21",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Steuerbefreiung des Feuerwehrsoldes",
-      "referendumsfrist": null
+      "jahr": "2010",
+      "nummer": "2855",
+      "text": "Botschaft vom 21. April 2010 zum Bundesgesetz über die Steuerbefreiung des Feuerwehrsoldes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-06-28",
@@ -80,7 +82,8 @@
       "jahr": "2011",
       "nummer": "4921",
       "text": null,
-      "referendumsfrist": "2011-10-06"
+      "referendumsfrist": "2011-10-06",
+      "vorlage": 1
     },
     {
       "datum": "2012-01-31",
@@ -88,7 +91,8 @@
       "jahr": "2012",
       "nummer": "489",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20220066",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2022-10-19",
@@ -99,7 +99,8 @@
       "jahr": "2022",
       "nummer": "2743",
       "text": "Botschaft vom 19. Oktober 2022 zur Änderung des Obligationenrechts (Baumängel)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2022-10-19",
@@ -107,7 +108,8 @@
       "jahr": "2022",
       "nummer": "2744",
       "text": "Obligationenrecht (Baumängel)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-01-09",
@@ -115,7 +117,8 @@
       "jahr": "2025",
       "nummer": "18",
       "text": null,
-      "referendumsfrist": "2025-04-19"
+      "referendumsfrist": "2025-04-19",
+      "vorlage": 1
     },
     {
       "datum": "2025-05-27",
@@ -123,7 +126,8 @@
       "jahr": "2025",
       "nummer": "270",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

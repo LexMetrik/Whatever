@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20090060",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2009-06-24",
@@ -131,18 +131,29 @@
     {
       "datum": "2009-06-24",
       "art": "Bundesblatt",
-      "jahr": "2009",
-      "nummer": "5097",
-      "text": "Botschaft vom 24. Juni 2009 zur Volksinitiative \"für die Ausschaffung krimineller Ausländer (Ausschaffungsinitiative)\" und zur Änderung des Bundesgesetzes über die Ausländerinnen und Ausländer",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Volksinitiative \"Für die Ausschaffung krimineller Ausländer (Ausschaffungsinitiative)\"",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2009-06-24",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesbeschluss über die Volksinitiative \"Für die Ausschaffung krimineller Ausländer (Ausschaffungsinitiative)\"",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über die Ausländerinnen und Ausländer (AuG)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2009-06-24",
+      "art": "Bundesblatt",
+      "jahr": "2009",
+      "nummer": "5097",
+      "text": "Botschaft vom 24. Juni 2009 zur Volksinitiative \"für die Ausschaffung krimineller Ausländer (Ausschaffungsinitiative)\" und zur Änderung des Bundesgesetzes über die Ausländerinnen und Ausländer",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-02-18",
@@ -150,7 +161,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesbeschluss über die Aus- und Wegweisung krimineller Ausländerinnen und Ausländer im Rahmen der Bundesverfassung (Gegenentwurf zur Volksinitiative \"für die Ausschaffung krimineller Ausländer\" [Ausschaffungsinitiative]) (Entwurf der SPK-S vom 18.02.2010)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2010-06-29",
@@ -158,7 +170,8 @@
       "jahr": "2010",
       "nummer": "4241",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2010-06-29",
@@ -166,7 +179,8 @@
       "jahr": "2010",
       "nummer": "4243",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2011-03-29",
@@ -174,7 +188,8 @@
       "jahr": "2011",
       "nummer": "1199",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -193,7 +208,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2010-06-18",
@@ -210,7 +225,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

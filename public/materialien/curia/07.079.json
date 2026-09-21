@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20070079",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2007-09-28",
@@ -75,18 +75,20 @@
     {
       "datum": "2007-09-28",
       "art": "Bundesblatt",
-      "jahr": "2007",
-      "nummer": "7617",
-      "text": "Botschaft vom 28. September 2007 zur Änderung des Strassenverkehrsgesetzes (Führerausweisentzug nach Widerhandlung im Ausland)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Strassenverkehrsgesetz (SVG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2007-09-28",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Strassenverkehrsgesetz (SVG)",
-      "referendumsfrist": null
+      "jahr": "2007",
+      "nummer": "7617",
+      "text": "Botschaft vom 28. September 2007 zur Änderung des Strassenverkehrsgesetzes (Führerausweisentzug nach Widerhandlung im Ausland)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-04-01",
@@ -94,7 +96,8 @@
       "jahr": "2008",
       "nummer": "2331",
       "text": null,
-      "referendumsfrist": "2008-07-10"
+      "referendumsfrist": "2008-07-10",
+      "vorlage": 1
     },
     {
       "datum": "2008-08-26",
@@ -102,7 +105,8 @@
       "jahr": "2008",
       "nummer": "3939",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -121,7 +125,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

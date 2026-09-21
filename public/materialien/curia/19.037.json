@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20190037",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2019-05-29",
@@ -148,7 +148,8 @@
       "jahr": "2019",
       "nummer": "4877",
       "text": "Botschaft vom 29. Mai 2019 zur Volksinitiative «Stop der Hochpreisinsel – für faire Preise (Fair-Preis-Initiative)» und zum indirekten Gegenvorschlag (Änderung des Kartellgesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-05-29",
@@ -156,7 +157,8 @@
       "jahr": "2019",
       "nummer": "4957",
       "text": "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2019-05-29",
@@ -164,7 +166,8 @@
       "jahr": "2019",
       "nummer": "4959",
       "text": "Bundesbeschluss über die Volksinitiative «Stop der Hochpreisinsel – für faire Preise (Fair-Preis-Initiative)»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-03-20",
@@ -172,7 +175,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Neue Frist der Initiative nach verordnetem Fristenstillstand: 23. August 2020 (siehe SR 161.16)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2021-03-08",
@@ -180,7 +184,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG) (Entwurf der WAK-S vom 08.03.3021)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2021-03-19",
@@ -188,7 +193,8 @@
       "jahr": "2021",
       "nummer": "757",
       "text": null,
-      "referendumsfrist": "2021-07-18"
+      "referendumsfrist": "2021-07-18",
+      "vorlage": 2
     },
     {
       "datum": "2021-03-30",
@@ -196,7 +202,8 @@
       "jahr": "2021",
       "nummer": "663",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -215,7 +222,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2021-03-19",
@@ -232,7 +239,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

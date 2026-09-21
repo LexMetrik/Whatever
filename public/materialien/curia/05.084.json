@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050084",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-12-02",
@@ -82,18 +82,20 @@
     {
       "datum": "2005-12-02",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "7097",
-      "text": "Botschaft vom 2. Dezember 2005 zu einer Teilrevison des Raumplanungsgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Raumplanung (Raumplanungsgesetz, RPG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-12-02",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Raumplanung (Raumplanungsgesetz, RPG)",
-      "referendumsfrist": null
+      "jahr": "2005",
+      "nummer": "7097",
+      "text": "Botschaft vom 2. Dezember 2005 zu einer Teilrevison des Raumplanungsgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2007-04-03",
@@ -101,7 +103,8 @@
       "jahr": "2007",
       "nummer": "2357",
       "text": null,
-      "referendumsfrist": "2007-07-12"
+      "referendumsfrist": "2007-07-12",
+      "vorlage": 1
     },
     {
       "datum": "2007-07-31",
@@ -109,7 +112,8 @@
       "jahr": "2007",
       "nummer": "3637",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -128,7 +132,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

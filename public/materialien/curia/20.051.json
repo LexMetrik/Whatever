@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20200051",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2020-05-27",
@@ -71,7 +71,8 @@
       "jahr": "2020",
       "nummer": "4705",
       "text": "Botschaft vom 20. Mai 2020 zum Bundesgesetz über elektronische Verfahren im Steuerbereich",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-05-27",
@@ -79,7 +80,8 @@
       "jahr": "2020",
       "nummer": "4731",
       "text": "Bundesgesetz über elektronische Verfahren im Steuerbereich",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2021-06-29",
@@ -87,7 +89,8 @@
       "jahr": "2021",
       "nummer": "1499",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2021-11-16",
@@ -95,7 +98,8 @@
       "jahr": "2021",
       "nummer": "673",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

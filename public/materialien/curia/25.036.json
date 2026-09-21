@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20250036",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2025-02-14",
@@ -162,7 +162,8 @@
       "jahr": "2025",
       "nummer": "960",
       "text": "Botschaft vom 7. März 2025 zur Änderung des Militärgesetzes, der Verordnung über die Verwaltung der Armee und der Armeeorganisation",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2025-03-07",
@@ -170,7 +171,8 @@
       "jahr": "2025",
       "nummer": "961",
       "text": "Bundesgesetz über die Armee und Militärverwaltung (Militärgesetz, MG) ",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-03-07",
@@ -178,7 +180,8 @@
       "jahr": "2025",
       "nummer": "962",
       "text": "Verordnung der Bundesversammlung über die Verwaltung der Armee (VBVA)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2025-03-07",
@@ -186,7 +189,8 @@
       "jahr": "2025",
       "nummer": "963",
       "text": "Verordnung der Bundesversammlung über die Organisation der Armee (Armeeorganisation, AO)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2026-01-07",
@@ -194,7 +198,8 @@
       "jahr": "2026",
       "nummer": "21",
       "text": null,
-      "referendumsfrist": "2026-04-17"
+      "referendumsfrist": "2026-04-17",
+      "vorlage": 1
     },
     {
       "datum": "2026-04-20",
@@ -202,7 +207,8 @@
       "jahr": "2026",
       "nummer": "164",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -221,7 +227,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2025-12-19",
@@ -238,7 +244,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2025-12-19",
@@ -255,7 +261,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

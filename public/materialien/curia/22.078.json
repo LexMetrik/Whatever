@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20220078",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2022-11-16",
@@ -78,7 +78,8 @@
       "jahr": "2023",
       "nummer": "7",
       "text": "Botschaft vom 16. November 2022 zur Änderung des Patentgesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2022-11-16",
@@ -86,7 +87,8 @@
       "jahr": "2023",
       "nummer": "8",
       "text": "Bundesgesetz über die Erfindungspatente (Patentgesetz, PatG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2024-03-26",
@@ -94,7 +96,8 @@
       "jahr": "2024",
       "nummer": "685",
       "text": null,
-      "referendumsfrist": "2024-07-04"
+      "referendumsfrist": "2024-07-04",
+      "vorlage": 1
     },
     {
       "datum": "2026-05-21",
@@ -102,7 +105,8 @@
       "jahr": "2026",
       "nummer": "232",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -121,7 +125,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

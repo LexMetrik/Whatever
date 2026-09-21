@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20140094",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2014-11-28",
@@ -64,7 +64,8 @@
       "jahr": "2015",
       "nummer": "877",
       "text": "Botschaft vom 28. November 2014 zur Änderung des Schweizerischen Zivilgesetzbuches (Adoption)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2014-11-28",
@@ -72,7 +73,8 @@
       "jahr": "2015",
       "nummer": "949",
       "text": "Schweizerisches Zivilgesetzbuch (Adoption)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-07-06",
@@ -80,7 +82,8 @@
       "jahr": "2016",
       "nummer": "4925",
       "text": null,
-      "referendumsfrist": "2016-10-06"
+      "referendumsfrist": "2016-10-06",
+      "vorlage": 1
     },
     {
       "datum": "2017-07-18",
@@ -88,7 +91,8 @@
       "jahr": "2017",
       "nummer": "3699",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

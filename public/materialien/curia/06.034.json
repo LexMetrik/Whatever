@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20060034",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2006-05-03",
@@ -54,18 +54,20 @@
     {
       "datum": "2006-05-03",
       "art": "Bundesblatt",
-      "jahr": "2006",
-      "nummer": "4245",
-      "text": "Botschaft vom 3. Mai 2006 zur Änderung des Bundesgesetzes über die Bundestrafrechtspflege (Abgeltung ausserordentlicher Kosten kantonaler Organe bei ihrer Tätigkeit als gerichtliche Polizei des Bundes)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Bundesstrafrechtspflege",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2006-05-03",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Bundesstrafrechtspflege",
-      "referendumsfrist": null
+      "jahr": "2006",
+      "nummer": "4245",
+      "text": "Botschaft vom 3. Mai 2006 zur Änderung des Bundesgesetzes über die Bundestrafrechtspflege (Abgeltung ausserordentlicher Kosten kantonaler Organe bei ihrer Tätigkeit als gerichtliche Polizei des Bundes)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2007-04-03",
@@ -73,7 +75,8 @@
       "jahr": "2007",
       "nummer": "2297",
       "text": null,
-      "referendumsfrist": "2007-07-12"
+      "referendumsfrist": "2007-07-12",
+      "vorlage": 1
     },
     {
       "datum": "2007-12-11",
@@ -81,7 +84,8 @@
       "jahr": "2007",
       "nummer": "6087",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

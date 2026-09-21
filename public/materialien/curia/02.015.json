@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020015",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2002-01-30",
@@ -54,18 +54,20 @@
     {
       "datum": "2002-01-30",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "2637",
-      "text": "Botschaft vom 30. Januar 2002 zur Änderung des Bundesgesetzes über die Freizügigkeit der Anwältinnen und Anwälte",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Freizügigkeit der Anwältinnen und Anwälte (Anwaltsgesetz, BGFA)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2002-01-30",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Freizügigkeit der Anwältinnen und Anwälte (Anwaltsgesetz, BGFA)",
-      "referendumsfrist": null
+      "jahr": "2002",
+      "nummer": "2637",
+      "text": "Botschaft vom 30. Januar 2002 zur Änderung des Bundesgesetzes über die Freizügigkeit der Anwältinnen und Anwälte",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2002-04-09",
@@ -73,7 +75,8 @@
       "jahr": "2002",
       "nummer": "2762",
       "text": null,
-      "referendumsfrist": "2002-07-18"
+      "referendumsfrist": "2002-07-18",
+      "vorlage": 1
     },
     {
       "datum": "2002-07-30",
@@ -81,7 +84,8 @@
       "jahr": "2002",
       "nummer": "2134",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20210016",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2021-02-17",
@@ -200,7 +200,8 @@
       "jahr": "2021",
       "nummer": "287",
       "text": "Bundesbeschluss über die Finanzierung der Härtefallmassnahmen nach dem Covid-19-Gesetz",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2021-02-17",
@@ -208,7 +209,8 @@
       "jahr": "2021",
       "nummer": "285",
       "text": "Botschaft vom 17. Februar 2021 zu einer Änderung des Covid-19-Gesetzes betreffend Härtefälle, Arbeitslosenversicherung, familienergänzende Kinderbetreuung und Kulturschaffende, zu einer Änderung des Bundesbeschlusses Ia über den Voranschlag für das Jahr 2021 (Zusatzkredit «Kantonale Härtefallmassnahmen für Unternehmen») und zu einer Änderung des Arbeitslosenversicherungsgesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2021-02-17",
@@ -216,7 +218,8 @@
       "jahr": "2021",
       "nummer": "286",
       "text": "Bundesgesetz über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (Covid-19-Gesetz) (Härtefälle, Arbeitslosenversicherung, familienergänzende Kinderbetreuung, Kulturschaffende)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2021-02-17",
@@ -224,7 +227,8 @@
       "jahr": "2021",
       "nummer": "288",
       "text": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG) (Ausserordentlicher Beitrag 2021 an den Ausgleichsfonds)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2021-03-22",
@@ -232,7 +236,8 @@
       "jahr": "2021",
       "nummer": "569",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2021-03-30",
@@ -240,7 +245,8 @@
       "jahr": "2021",
       "nummer": "680",
       "text": null,
-      "referendumsfrist": "2021-07-08"
+      "referendumsfrist": "2021-07-08",
+      "vorlage": 1
     },
     {
       "datum": "2021-04-07",
@@ -248,7 +254,8 @@
       "jahr": "2021",
       "nummer": "154",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2021-04-19",
@@ -256,7 +263,8 @@
       "jahr": "2021",
       "nummer": "153",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -275,7 +283,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2021-03-19",
@@ -292,7 +300,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

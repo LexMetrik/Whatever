@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20040061",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2004-09-15",
@@ -173,18 +173,29 @@
     {
       "datum": "2004-09-15",
       "art": "Bundesblatt",
-      "jahr": "2004",
-      "nummer": "5551",
-      "text": "Botschaft vom 15. September 2004 betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Krankenversicherung (KVG) (Risikoausgleich)(Entwurf der Kommission für soziale Sicherheit und Gesundheit des Ständerates)",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2004-09-15",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesgesetz über die Krankenversicherung (KVG) (Risikoausgleich)(Entwurf der Kommission für soziale Sicherheit und Gesundheit des Ständerates)",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über die Krankenversicherung (KVG) (Spitalfinanzierung)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2004-09-15",
+      "art": "Bundesblatt",
+      "jahr": "2004",
+      "nummer": "5551",
+      "text": "Botschaft vom 15. September 2004 betreffend die Änderung des Bundesgesetzes über die Krankenversicherung (Spitalfinanzierung)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-01-08",
@@ -192,7 +203,8 @@
       "jahr": "2008",
       "nummer": "9",
       "text": null,
-      "referendumsfrist": "2008-04-17"
+      "referendumsfrist": "2008-04-17",
+      "vorlage": 1
     },
     {
       "datum": "2008-01-08",
@@ -200,7 +212,8 @@
       "jahr": "2008",
       "nummer": "19",
       "text": null,
-      "referendumsfrist": "2008-04-17"
+      "referendumsfrist": "2008-04-17",
+      "vorlage": 2
     },
     {
       "datum": "2008-05-14",
@@ -208,7 +221,8 @@
       "jahr": "2008",
       "nummer": "2049",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2009-09-22",
@@ -216,7 +230,8 @@
       "jahr": "2009",
       "nummer": "4755",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -235,7 +250,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2007-12-21",
@@ -252,7 +267,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

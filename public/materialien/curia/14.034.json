@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20140034",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2014-04-16",
@@ -106,7 +106,8 @@
       "jahr": "2014",
       "nummer": "3551",
       "text": "Botschaft vom 16. April 2014 zur Änderung des Schweizerischen Zivilgesetzbuches (Beurkundung des Personenstands und Grundbuch)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2014-04-16",
@@ -114,7 +115,8 @@
       "jahr": "2014",
       "nummer": "3587",
       "text": "Schweizerisches Zivilgesetzbuch (Beurkundung des Personenstands und Grundbuch)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2014-05-12",
@@ -122,7 +124,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Schweizerisches Zivilgesetzbuch (Elektronischer Zugriff auf das Grundbuch) (Entwurf der RK-N vom 12. Mai 2016)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2017-12-28",
@@ -130,7 +133,8 @@
       "jahr": "2017",
       "nummer": "7899",
       "text": null,
-      "referendumsfrist": "2018-04-07"
+      "referendumsfrist": "2018-04-07",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -149,7 +153,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

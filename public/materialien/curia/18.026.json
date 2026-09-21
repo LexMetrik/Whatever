@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20180026",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2018-03-02",
@@ -71,7 +71,8 @@
       "jahr": "2018",
       "nummer": "1685",
       "text": "Botschaft vom 2. März 2018 zur Revision des Ausländergesetzes (AuG) (Verfahrensnormen und Informationssysteme))",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-03-02",
@@ -79,7 +80,8 @@
       "jahr": "2018",
       "nummer": "1769",
       "text": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG) (Verfahrensregelungen und Informationssysteme)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2018-12-14",
@@ -87,7 +89,8 @@
       "jahr": "2018",
       "nummer": "7879",
       "text": null,
-      "referendumsfrist": "2019-04-07"
+      "referendumsfrist": "2019-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2019-05-21",
@@ -95,7 +98,8 @@
       "jahr": "2019",
       "nummer": "1413",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

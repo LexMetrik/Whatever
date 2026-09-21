@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20070083",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2007-10-24",
@@ -89,18 +89,29 @@
     {
       "datum": "2007-10-24",
       "art": "Bundesblatt",
-      "jahr": "2007",
-      "nummer": "7937",
-      "text": "Botschaft vom 24. Oktober 2007 zur Genehmigung und Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Union betreffend die Übernahme des Schengener Grenzkodex (Weiterentwicklung des Schengen-Besitzstands) und zu den Änderungen im Ausländer- und Asylrecht zur vollständigen Umsetzung des bereits übernommenen Schengen- und Dublin-Besitzstands (Ergänzungen)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Gemeinschaft betreffend die Übernahme des Schengener Grenzkodex (Weiterentwicklung des Schengen-Besitzstands)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2007-10-24",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Gemeinschaft betreffend die Übernahme des Schengener Grenzkodex (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über die Ausländerinnen und Ausländer (AuG) (Ergänzungen im Rahmen der Umsetzung der Schengen- und Dublin-Assoziierungsabkommen)",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2007-10-24",
+      "art": "Bundesblatt",
+      "jahr": "2007",
+      "nummer": "7937",
+      "text": "Botschaft vom 24. Oktober 2007 zur Genehmigung und Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Union betreffend die Übernahme des Schengener Grenzkodex (Weiterentwicklung des Schengen-Besitzstands) und zu den Änderungen im Ausländer- und Asylrecht zur vollständigen Umsetzung des bereits übernommenen Schengen- und Dublin-Besitzstands (Ergänzungen)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-06-24",
@@ -108,7 +119,8 @@
       "jahr": "2008",
       "nummer": "5287",
       "text": null,
-      "referendumsfrist": "2008-10-02"
+      "referendumsfrist": "2008-10-02",
+      "vorlage": 2
     },
     {
       "datum": "2008-06-24",
@@ -116,7 +128,8 @@
       "jahr": "2008",
       "nummer": "5319",
       "text": null,
-      "referendumsfrist": "2008-10-02"
+      "referendumsfrist": "2008-10-02",
+      "vorlage": 1
     },
     {
       "datum": "2008-12-02",
@@ -124,7 +137,8 @@
       "jahr": "2008",
       "nummer": "5407",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2008-12-02",
@@ -132,7 +146,8 @@
       "jahr": "2008",
       "nummer": "5629",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -151,7 +166,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2008-06-13",
@@ -168,7 +183,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

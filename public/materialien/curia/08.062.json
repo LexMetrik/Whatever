@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20080062",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2008-09-03",
@@ -75,18 +75,20 @@
     {
       "datum": "2008-09-03",
       "art": "Bundesblatt",
-      "jahr": "2008",
-      "nummer": "7733",
-      "text": "Botschaft vom 3. September 2008 zur Änderung des Arbeitslosenversicherungsgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2008-09-03",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
-      "referendumsfrist": null
+      "jahr": "2008",
+      "nummer": "7733",
+      "text": "Botschaft vom 3. September 2008 zur Änderung des Arbeitslosenversicherungsgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-03-30",
@@ -94,7 +96,8 @@
       "jahr": "2010",
       "nummer": "2089",
       "text": null,
-      "referendumsfrist": "2010-07-08"
+      "referendumsfrist": "2010-07-08",
+      "vorlage": 1
     },
     {
       "datum": "2011-03-22",
@@ -102,7 +105,8 @@
       "jahr": "2011",
       "nummer": "1167",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -121,7 +125,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

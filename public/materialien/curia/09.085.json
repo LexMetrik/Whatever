@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20090085",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2009-11-18",
@@ -82,10 +82,11 @@
     {
       "datum": "2009-11-18",
       "art": "Bundesblatt",
-      "jahr": "2010",
-      "nummer": "51",
-      "text": "Botschaft vom 18. November 2009 über die Genehmigung und Umsetzug des Notenaustausches zwischen der Schweiz und der Europäischen Gemeinschaft betreffend die Einführung biometrischer Daten im Ausländerausweis (Weiterentwicklung des Schengen Besitzstands)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustausches zwischen der Schweiz und der EG betreffend die Einführung biometrischer Daten im Ausländerausweis (Weiterentwicklung des Schengen-Besitzstands)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2009-11-18",
@@ -93,7 +94,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Anpassung von Bestimmungen betreffend die Erfassung von Daten im Bereich der Migration",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2009-11-18",
+      "art": "Bundesblatt",
+      "jahr": "2010",
+      "nummer": "51",
+      "text": "Botschaft vom 18. November 2009 über die Genehmigung und Umsetzug des Notenaustausches zwischen der Schweiz und der Europäischen Gemeinschaft betreffend die Einführung biometrischer Daten im Ausländerausweis (Weiterentwicklung des Schengen Besitzstands)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-06-29",
@@ -101,7 +112,8 @@
       "jahr": "2010",
       "nummer": "4303",
       "text": null,
-      "referendumsfrist": "2010-10-07"
+      "referendumsfrist": "2010-10-07",
+      "vorlage": 2
     },
     {
       "datum": "2010-06-29",
@@ -109,7 +121,8 @@
       "jahr": "2010",
       "nummer": "4335",
       "text": null,
-      "referendumsfrist": "2010-10-07"
+      "referendumsfrist": "2010-10-07",
+      "vorlage": 1
     },
     {
       "datum": "2011-01-11",
@@ -117,7 +130,8 @@
       "jahr": "2011",
       "nummer": "95",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2011-01-11",
@@ -125,7 +139,8 @@
       "jahr": "2011",
       "nummer": "175",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -144,7 +159,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2010-06-18",
@@ -161,7 +176,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

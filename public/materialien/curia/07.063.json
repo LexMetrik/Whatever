@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20070063",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2007-06-27",
@@ -96,10 +96,11 @@
     {
       "datum": "2007-06-27",
       "art": "Bundesblatt",
-      "jahr": "2007",
-      "nummer": "5369",
-      "text": "Botschaft vom 27. Juni 2007 zur Volksinitative \"für die Unverjährbarkeit pornografischer Straftatten an Kindern\" und zum Bundesgesetz über die Verfolgungsverjährung bei Straftaten an Kindern (Änderung des Strafgesetzbuches und des Militärstrafgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss betreffend die Volksinitiative \"Für die Unverjährbarkeit pornografischer Straftaten an Kindern\"",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2007-06-27",
@@ -107,7 +108,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Verfolgungsverjährung bei Straftaten an Kindern (Änderung des Strafgesetzbuchs und des Militärstrafgesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2007-06-27",
+      "art": "Bundesblatt",
+      "jahr": "2007",
+      "nummer": "5369",
+      "text": "Botschaft vom 27. Juni 2007 zur Volksinitative \"für die Unverjährbarkeit pornografischer Straftatten an Kindern\" und zum Bundesgesetz über die Verfolgungsverjährung bei Straftaten an Kindern (Änderung des Strafgesetzbuches und des Militärstrafgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-06-24",
@@ -115,7 +126,8 @@
       "jahr": "2008",
       "nummer": "5245",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2008-06-24",
@@ -123,7 +135,8 @@
       "jahr": "2008",
       "nummer": "5261",
       "text": null,
-      "referendumsfrist": "2008-10-02"
+      "referendumsfrist": "2008-10-02",
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +155,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20170043",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2017-06-28",
@@ -85,7 +85,8 @@
       "jahr": "2017",
       "nummer": "5089",
       "text": "Botschaft vom 28. Juni 2017 zur Änderung des Versicherungsvertragsgesetzes (VVG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-06-28",
@@ -93,7 +94,8 @@
       "jahr": "2017",
       "nummer": "5141",
       "text": "Bundesgesetz über den Versicherungsvertrag (Versicherungsvertragsgesetz, VVG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-06-30",
@@ -101,7 +103,8 @@
       "jahr": "2020",
       "nummer": "5661",
       "text": null,
-      "referendumsfrist": "2020-10-08"
+      "referendumsfrist": "2020-10-08",
+      "vorlage": 1
     },
     {
       "datum": "2020-12-01",
@@ -109,7 +112,8 @@
       "jahr": "2020",
       "nummer": "4969",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -128,7 +132,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

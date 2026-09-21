@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050046",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-05-25",
@@ -82,10 +82,11 @@
     {
       "datum": "2005-05-25",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "3857",
-      "text": "Botschaft vom 25. Mai 2005 über die Teilnahme der Schweiz an der Europäischen Agentur für Flugsicherheit EASA",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Teilnahme der Schweiz an der Europäischen Agentur für Flugsicherheit EASA",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2005-05-25",
@@ -93,7 +94,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Luftfahrt (Luftfahrtgesetz, LFG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2005-05-25",
+      "art": "Bundesblatt",
+      "jahr": "2005",
+      "nummer": "3857",
+      "text": "Botschaft vom 25. Mai 2005 über die Teilnahme der Schweiz an der Europäischen Agentur für Flugsicherheit EASA",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2005-12-27",
@@ -101,7 +112,8 @@
       "jahr": "2005",
       "nummer": "7481",
       "text": null,
-      "referendumsfrist": "2006-04-06"
+      "referendumsfrist": "2006-04-06",
+      "vorlage": 1
     },
     {
       "datum": "2005-12-27",
@@ -109,7 +121,8 @@
       "jahr": "2005",
       "nummer": "7497",
       "text": null,
-      "referendumsfrist": "2006-04-06"
+      "referendumsfrist": "2006-04-06",
+      "vorlage": 2
     },
     {
       "datum": "2006-05-23",
@@ -117,7 +130,8 @@
       "jahr": "2006",
       "nummer": "1989",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2007-05-22",
@@ -125,7 +139,8 @@
       "jahr": "2007",
       "nummer": "2265",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -144,7 +159,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2005-12-16",
@@ -161,7 +176,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

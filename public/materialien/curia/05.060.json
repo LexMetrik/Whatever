@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050060",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-06-29",
@@ -68,18 +68,20 @@
     {
       "datum": "2005-06-29",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "4689",
-      "text": "Botschaft vom 29. Juni 2005 zur Änderung des Strafgesetzbuches in der Fassung vom 13. Dezember 2002 und des Militärstrafgesetzes in der Fassung vom 21. März 2003",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Korrekturen am Sanktions- und Strafregisterrecht)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-06-29",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Korrekturen am Sanktions- und Strafregisterrecht)",
-      "referendumsfrist": null
+      "jahr": "2005",
+      "nummer": "4689",
+      "text": "Botschaft vom 29. Juni 2005 zur Änderung des Strafgesetzbuches in der Fassung vom 13. Dezember 2002 und des Militärstrafgesetzes in der Fassung vom 21. März 2003",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2006-04-04",
@@ -87,7 +89,8 @@
       "jahr": "2006",
       "nummer": "3557",
       "text": null,
-      "referendumsfrist": "2006-07-13"
+      "referendumsfrist": "2006-07-13",
+      "vorlage": 1
     },
     {
       "datum": "2006-09-05",
@@ -95,7 +98,8 @@
       "jahr": "2006",
       "nummer": "3539",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

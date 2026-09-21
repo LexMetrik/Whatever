@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20180077",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2018-10-31",
@@ -99,7 +99,8 @@
       "jahr": "2018",
       "nummer": "7443",
       "text": "Botschaft vom 31. Oktober 2018 zur zweiten Etappe der Teilrevision des Raumplanungsgesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-10-31",
@@ -107,7 +108,8 @@
       "jahr": "2018",
       "nummer": "7499",
       "text": "Bundesgesetz über die Raumplanung (Raumplanungsgesetz, RPG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2023-11-07",
@@ -115,7 +117,8 @@
       "jahr": "2023",
       "nummer": "2488",
       "text": null,
-      "referendumsfrist": "2024-02-15"
+      "referendumsfrist": "2024-02-15",
+      "vorlage": 1
     },
     {
       "datum": "2025-10-24",
@@ -123,7 +126,8 @@
       "jahr": "2025",
       "nummer": "640",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

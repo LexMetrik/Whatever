@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20170069",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2017-11-22",
@@ -176,7 +176,8 @@
       "jahr": "2018",
       "nummer": "591",
       "text": "Botschaft vom 22. November 2017 zu Änderungen des Urheberrechtsgesetzes sowie Entwürfe der Bundesbeschlüsse zur Genehmigung von zwei Abkommen der Weltorganisation für geistiges Eigentum",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-11-22",
@@ -184,7 +185,8 @@
       "jahr": "2018",
       "nummer": "693",
       "text": "Bundesgesetz über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsgesetz, URG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2017-11-22",
@@ -192,7 +194,8 @@
       "jahr": "2018",
       "nummer": "703",
       "text": "Bundesbeschluss über die Genehmigung des Vertrags von Peking über den Schutz von audiovisuellen Darbietungen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2017-11-22",
@@ -200,7 +203,8 @@
       "jahr": "2018",
       "nummer": "705",
       "text": "Vertrag von Peking über den Schutz von audiovisuellen Darbietungen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-11-22",
@@ -208,7 +212,8 @@
       "jahr": "2018",
       "nummer": "717",
       "text": "Bundesbeschluss über die Genehmigung des Vertrags von Marrakesch über die Erleichterung des Zugangs zu veröffentlichten Werken für blinde, sehbehinderte oder sonst lesebehinderte Menschen und über seine Umsetzung (Änderung des Urheberrechtsgesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2017-11-22",
@@ -216,7 +221,8 @@
       "jahr": "2018",
       "nummer": "719",
       "text": "Vertrag von Marrakesch über die Erleichterung des Zugangs zu veröffentlichten Werken für blinde, sehbehinderte oder sonst lesebehinderte Menschen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-07-02",
@@ -224,7 +230,8 @@
       "jahr": "2019",
       "nummer": "4581",
       "text": null,
-      "referendumsfrist": "2019-10-10"
+      "referendumsfrist": "2019-10-10",
+      "vorlage": 2
     },
     {
       "datum": "2019-07-02",
@@ -232,7 +239,8 @@
       "jahr": "2019",
       "nummer": "4583",
       "text": null,
-      "referendumsfrist": "2019-10-10"
+      "referendumsfrist": "2019-10-10",
+      "vorlage": 3
     },
     {
       "datum": "2019-10-08",
@@ -240,7 +248,8 @@
       "jahr": "2019",
       "nummer": "6585",
       "text": null,
-      "referendumsfrist": "2020-01-16"
+      "referendumsfrist": "2020-01-16",
+      "vorlage": 1
     },
     {
       "datum": "2020-03-24",
@@ -248,7 +257,8 @@
       "jahr": "2020",
       "nummer": "1003",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-03-24",
@@ -256,7 +266,8 @@
       "jahr": "2020",
       "nummer": "1013",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2020-04-29",
@@ -264,7 +275,8 @@
       "jahr": "2020",
       "nummer": "1359",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -283,7 +295,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2019-06-21",
@@ -300,7 +312,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2019-09-27",
@@ -317,7 +329,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

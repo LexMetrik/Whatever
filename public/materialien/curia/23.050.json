@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20230050",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2023-05-24",
@@ -64,7 +64,8 @@
       "jahr": "2023",
       "nummer": "1469",
       "text": "Botschaft vom 24. Mai 2023 zur Änderung des Familienzulagengesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2023-05-24",
@@ -72,7 +73,8 @@
       "jahr": "2023",
       "nummer": "1470",
       "text": "Bundesgesetz über die Familienzulagen und Finanzhilfen an Familienorganisationen (Familienzulagengesetz, FamZG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2024-03-26",
@@ -80,7 +82,8 @@
       "jahr": "2024",
       "nummer": "684",
       "text": null,
-      "referendumsfrist": "2024-07-04"
+      "referendumsfrist": "2024-07-04",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -99,7 +102,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

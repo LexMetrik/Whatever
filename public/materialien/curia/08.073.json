@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20080073",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2008-10-29",
@@ -68,18 +68,20 @@
     {
       "datum": "2008-10-29",
       "art": "Bundesblatt",
-      "jahr": "2008",
-      "nummer": "8757",
-      "text": "Botschaft vom 29. Oktober 2008 zur eidgenössischen Volksinitiative \"Schluss mit uferlosem Bau von Zweitwohnungen\"",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Volksinitiative \"Schluss mit uferlosem Bau von Zweitwohnungen!\"",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2008-10-29",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss über die Volksinitiative \"Schluss mit uferlosem Bau von Zweitwohnungen!\"",
-      "referendumsfrist": null
+      "jahr": "2008",
+      "nummer": "8757",
+      "text": "Botschaft vom 29. Oktober 2008 zur eidgenössischen Volksinitiative \"Schluss mit uferlosem Bau von Zweitwohnungen\"",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-06-28",
@@ -87,7 +89,8 @@
       "jahr": "2011",
       "nummer": "4825",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-07-03",
@@ -95,7 +98,8 @@
       "jahr": "2012",
       "nummer": "3627",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

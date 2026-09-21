@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20200040",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2020-05-20",
@@ -71,7 +71,8 @@
       "jahr": "2020",
       "nummer": "4461",
       "text": "Botschaft vom 20. Mai 2020 zu einer dringlichen Änderung des Epidemiengesetzes im Zusammenhang mit dem Coronavirus (Proximity-Tracing-System)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-05-20",
@@ -79,7 +80,8 @@
       "jahr": "2020",
       "nummer": "4481",
       "text": "Bundesgesetz über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemiengesetz, EpG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-06-19",
@@ -87,7 +89,8 @@
       "jahr": "2020",
       "nummer": "2191",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-06-30",
@@ -95,7 +98,8 @@
       "jahr": "2020",
       "nummer": "5749",
       "text": null,
-      "referendumsfrist": "2020-10-08"
+      "referendumsfrist": "2020-10-08",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20130074",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2013-09-04",
@@ -176,7 +176,8 @@
       "jahr": "2013",
       "nummer": "7561",
       "text": "Botschaft vom 4. September 2013 zum ersten Massnahmenpaket der Energiestrategie 2050 (Revision des Energierechts) und zur Volksinitiative «Für den geordneten Ausstieg aus der Atomenergie (Atomausstiegsinitiative)»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2013-09-04",
@@ -184,7 +185,8 @@
       "jahr": "2013",
       "nummer": "7799",
       "text": "Bundesbeschluss über die Volksinitiative «Für den geordneten Ausstieg aus der Atomenergie (Atomausstiegsinitiative)\"",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2014-11-12",
@@ -192,7 +194,8 @@
       "jahr": "2013",
       "nummer": "7757",
       "text": "Energiegesetz (EnG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-04-01",
@@ -200,7 +203,8 @@
       "jahr": "2016",
       "nummer": "1937",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2016-10-14",
@@ -208,7 +212,8 @@
       "jahr": "2016",
       "nummer": "7683",
       "text": null,
-      "referendumsfrist": "2017-01-19"
+      "referendumsfrist": "2017-01-19",
+      "vorlage": 1
     },
     {
       "datum": "2017-12-12",
@@ -216,7 +221,8 @@
       "jahr": "2017",
       "nummer": "6839",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -235,7 +241,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2016-09-30",
@@ -252,7 +258,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

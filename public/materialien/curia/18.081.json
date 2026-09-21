@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20180081",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2018-11-30",
@@ -99,7 +99,8 @@
       "jahr": "2019",
       "nummer": "1",
       "text": "Botschaft vom 30. November 2018 zur Änderung des Heilmittelgesetzes (neue Medizinprodukte-Regulierung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-11-30",
@@ -107,7 +108,8 @@
       "jahr": "2019",
       "nummer": "53",
       "text": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2019-04-02",
@@ -115,7 +117,8 @@
       "jahr": "2019",
       "nummer": "2589",
       "text": null,
-      "referendumsfrist": "2019-07-11"
+      "referendumsfrist": "2019-07-11",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -134,7 +137,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

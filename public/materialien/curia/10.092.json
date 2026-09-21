@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20100092",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2010-10-20",
@@ -145,10 +145,11 @@
     {
       "datum": "2010-10-20",
       "art": "Bundesblatt",
-      "jahr": "2010",
-      "nummer": "8447",
-      "text": "Botschaft vom 20. Oktober 2010 zu Via sicura, Handlungsprogramm des Bundes für mehr Sicherheit im Strassenverkehr",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Strassenverkehrsgesetz (SVG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2010-10-20",
@@ -156,7 +157,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Verordnung der Bundesversammlung über Alkoholgrenzwerte im Strassenverkehr",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2010-10-20",
+      "art": "Bundesblatt",
+      "jahr": "2010",
+      "nummer": "8447",
+      "text": "Botschaft vom 20. Oktober 2010 zu Via sicura, Handlungsprogramm des Bundes für mehr Sicherheit im Strassenverkehr",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-06-26",
@@ -164,7 +175,8 @@
       "jahr": "2012",
       "nummer": "5959",
       "text": null,
-      "referendumsfrist": "2012-10-04"
+      "referendumsfrist": "2012-10-04",
+      "vorlage": 1
     },
     {
       "datum": "2012-11-27",
@@ -172,7 +184,8 @@
       "jahr": "2012",
       "nummer": "6291",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2015-08-11",
@@ -180,7 +193,8 @@
       "jahr": "2015",
       "nummer": "2597",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -199,7 +213,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2012-06-15",
@@ -216,7 +230,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

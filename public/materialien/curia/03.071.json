@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20030071",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2003-11-05",
@@ -54,18 +54,20 @@
     {
       "datum": "2003-11-05",
       "art": "Bundesblatt",
-      "jahr": "2003",
-      "nummer": "7809",
-      "text": "Botschaft vom 5. November 2003 über die Änderung des Gleichstellungsgesetzes (Schlichtungsverfahren)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Gleichstellung von Frau und Mann (Gleichstellungsgesetz, GIG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-11-05",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Gleichstellung von Frau und Mann (Gleichstellungsgesetz, GIG)",
-      "referendumsfrist": null
+      "jahr": "2003",
+      "nummer": "7809",
+      "text": "Botschaft vom 5. November 2003 über die Änderung des Gleichstellungsgesetzes (Schlichtungsverfahren)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2004-10-19",
@@ -73,7 +75,8 @@
       "jahr": "2004",
       "nummer": "5451",
       "text": null,
-      "referendumsfrist": "2005-01-27"
+      "referendumsfrist": "2005-01-27",
+      "vorlage": 1
     },
     {
       "datum": "2005-02-22",
@@ -81,7 +84,8 @@
       "jahr": "2005",
       "nummer": "1023",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

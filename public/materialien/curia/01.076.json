@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010076",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2001-11-22",
@@ -201,10 +201,11 @@
     {
       "datum": "2001-11-22",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "1911",
-      "text": "Botschaft vom 21. November 2001 zum Bürgerrecht für junge Ausländerinnen und Ausländer und zur Revision des Bürgerrechtsgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über den Bürgerrechtserwerb von Ausländerinnen und Ausländern der dritten Generation",
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2001-11-22",
@@ -212,7 +213,44 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesbeschluss über die ordentliche Einbürgerung sowie über die erleichterte Einbürgerung junger Ausländerinnen und Ausländer der zweiten Generation",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2001-11-22",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über Erwerb und Verlust des Schweizer Bürgerrechts (Bürgerrechtsgesetz, BüG) (Bürgerrechtserwerb von Ausländerinnen und Ausländern der dritten Generation)",
+      "referendumsfrist": null,
+      "vorlage": 4
+    },
+    {
+      "datum": "2001-11-22",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über Erwerb und Verlust des Schweizer Bürgerrechts (Bürgerrechtsgesetz, BüG) (Bürgerrechtserwerb von Personen schweizerischer Herkunft und Gebühren)",
+      "referendumsfrist": null,
+      "vorlage": 5
+    },
+    {
+      "datum": "2001-11-22",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über Erwerb und Verlust des Schweizer Bürgerrechts (Bürgerrechtsgesetz, BüG) (Erleichterte Einbürgerung junger Ausländerinnen und Ausländer der zweiten Generation/Verfahrensvereinfachungen im Bereich der ordentlichen Einbürgerung)",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2001-11-22",
+      "art": "Bundesblatt",
+      "jahr": "2002",
+      "nummer": "1911",
+      "text": "Botschaft vom 21. November 2001 zum Bürgerrecht für junge Ausländerinnen und Ausländer und zur Revision des Bürgerrechtsgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-10-14",
@@ -220,7 +258,8 @@
       "jahr": "2003",
       "nummer": "6599",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-10-14",
@@ -228,7 +267,8 @@
       "jahr": "2003",
       "nummer": "6601",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2003-10-14",
@@ -236,7 +276,8 @@
       "jahr": "2003",
       "nummer": "6743",
       "text": null,
-      "referendumsfrist": "2004-01-22"
+      "referendumsfrist": "2004-01-22",
+      "vorlage": 5
     },
     {
       "datum": "2003-10-14",
@@ -244,7 +285,17 @@
       "jahr": "2003",
       "nummer": "6807",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2003-10-14",
+      "art": "Bundesblatt",
+      "jahr": "2003",
+      "nummer": "6807",
+      "text": null,
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2005-12-06",
@@ -252,7 +303,8 @@
       "jahr": "2005",
       "nummer": "5233",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 5
     }
   ],
   "schlussabstimmungen": []

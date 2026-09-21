@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20130027",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2013-02-27",
@@ -57,7 +57,8 @@
       "jahr": "2013",
       "nummer": "1915",
       "text": "Botschaft vom 27. Februar 2013 zur Deplafonierung Solidaritätsprozent in der Arbeitslosenversicherung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2013-02-27",
@@ -65,7 +66,8 @@
       "jahr": "2013",
       "nummer": "1923",
       "text": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2013-07-02",
@@ -73,7 +75,8 @@
       "jahr": "2013",
       "nummer": "4827",
       "text": null,
-      "referendumsfrist": "2013-10-10"
+      "referendumsfrist": "2013-10-10",
+      "vorlage": 1
     },
     {
       "datum": "2013-10-29",
@@ -81,7 +84,8 @@
       "jahr": "2013",
       "nummer": "3519",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

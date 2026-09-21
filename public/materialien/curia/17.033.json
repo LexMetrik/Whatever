@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20170033",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2017-05-17",
@@ -64,7 +64,8 @@
       "jahr": "2017",
       "nummer": "4155",
       "text": "Botschaft vom 17. Mai 2017 zur Genehmigung und Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der Verordnung (EU) 2016/1624 über die Europäische Grenz- und Küstenwache (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-05-17",
@@ -72,7 +73,8 @@
       "jahr": "2017",
       "nummer": "4195",
       "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der Verordnung (EU) 2016/1624 über die Europäische Grenz- und Küstenwache (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2017-05-17",
@@ -80,7 +82,8 @@
       "jahr": "2017",
       "nummer": "4201",
       "text": "Notenaustausch vom 14. Oktober 2016 zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der Verordnung (EU) 2016/1624 über die Europäische Grenz- und Küstenwache (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-12-28",
@@ -88,7 +91,8 @@
       "jahr": "2017",
       "nummer": "7925",
       "text": null,
-      "referendumsfrist": "2018-04-07"
+      "referendumsfrist": "2018-04-07",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

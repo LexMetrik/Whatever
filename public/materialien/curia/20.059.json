@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20200059",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2020-06-19",
@@ -71,7 +71,8 @@
       "jahr": "2020",
       "nummer": "6359",
       "text": "Botschaft vom 19. Juni 2020 zur Änderung des Bankengesetzes (BankG) (Insolvenz, Einlagensicherung, Segregierung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-06-19",
@@ -79,7 +80,8 @@
       "jahr": "2020",
       "nummer": "6437",
       "text": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Insolvenz und Einlagensicherung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2021-12-28",
@@ -87,7 +89,8 @@
       "jahr": "2021",
       "nummer": "3001",
       "text": null,
-      "referendumsfrist": "2022-04-07"
+      "referendumsfrist": "2022-04-07",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -106,7 +109,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

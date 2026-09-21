@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20150060",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2015-09-11",
@@ -64,7 +64,8 @@
       "jahr": "2015",
       "nummer": "7083",
       "text": "Botschaft vom 11. September 2015 zu einer Änderung des Verrechnungssteuergesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2015-09-11",
@@ -72,7 +73,8 @@
       "jahr": "2015",
       "nummer": "7097",
       "text": "Bundesgesetz über die Verrechnungssteuer (Verrechnungssteuergesetz, VStG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-04-01",
@@ -80,7 +82,8 @@
       "jahr": "2016",
       "nummer": "2097",
       "text": null,
-      "referendumsfrist": "2016-07-07"
+      "referendumsfrist": "2016-07-07",
+      "vorlage": 1
     },
     {
       "datum": "2016-10-21",
@@ -88,7 +91,8 @@
       "jahr": "2016",
       "nummer": "3451",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

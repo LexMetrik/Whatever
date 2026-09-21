@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20100108",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2010-12-03",
@@ -54,18 +54,20 @@
     {
       "datum": "2010-12-03",
       "art": "Bundesblatt",
-      "jahr": "2011",
-      "nummer": "543",
-      "text": "Botschaft vom 3. Dezember 2010 zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2010-12-03",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)",
-      "referendumsfrist": null
+      "jahr": "2011",
+      "nummer": "543",
+      "text": "Botschaft vom 3. Dezember 2010 zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHVG) (Verbesserung der Durchführung)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-06-28",
@@ -73,7 +75,8 @@
       "jahr": "2011",
       "nummer": "4845",
       "text": null,
-      "referendumsfrist": "2011-10-06"
+      "referendumsfrist": "2011-10-06",
+      "vorlage": 1
     },
     {
       "datum": "2011-11-01",
@@ -81,7 +84,8 @@
       "jahr": "2011",
       "nummer": "4745",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

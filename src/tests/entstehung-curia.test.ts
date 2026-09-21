@@ -27,6 +27,18 @@ describe('OData-Hülle und Datumsform', () => {
     expect(() => odataZeilen({ d: { x: 1 } })).toThrow(/unerwartete OData-Antwortform/);
   });
 
+  it('wirft bei «__next» statt die Folgeseiten still zu verlieren (Paging-Wächter)', () => {
+    // Gemessen 21.9.2026: der Endpunkt paginiert bei 1000 Zeilen. Der Client kann kein
+    // Paging — eine abgeschnittene Antwort muss darum LAUT scheitern, nie stumm kürzen.
+    expect(() => odataZeilen({
+      d: { results: [{ a: 1 }], __next: 'https://ws.parlament.ch/odata.svc/Objective?$skip=1000' },
+    })).toThrow(/UNVOLLSTÄNDIG/);
+    expect(() => odataZeilen({ d: { results: [], __next: 'x' } }, 'Objective (01.023)'))
+      .toThrow(/für Objective \(01\.023\)/);
+    // Ohne `__next` bleibt dieselbe Antwortform gültig — der Wächter darf nicht falsch-rot sein.
+    expect(odataZeilen({ d: { results: [{ a: 1 }] } })).toEqual([{ a: 1 }]);
+  });
+
   it('wandelt /Date(ms)/ nach ISO und rät nie', () => {
     expect(odataDatum('/Date(1505433600000)/')).toBe('2017-09-15');
     expect(odataDatum('/Date(1538092800000)/')).toBe('2018-09-28');
@@ -122,6 +134,139 @@ describe('Parse-Funktionen — deterministisch und wörtlich (Curia-Auflage)', (
     expect(p[0].jahr).toBeNull();
     expect(p[0].nummer).toBeNull();
     expect(p[0].text).toBe('Entwurf der SPK-N');
+  });
+
+  // ── Publikationen: der Dedupe-Schlüssel MUSS `ReferenceText` führen ──────────────
+  // Befund 21.9.2026: ohne ihn kollabierten am Geschäft 01.023 32 amtliche
+  // Objective-Zeilen auf 21 — alte BBl-Fundstellen tragen weder Jahr noch Nummer,
+  // dort ist `ReferenceText` das einzige unterscheidende Feld.
+  it('Publikationen: gleiches Datum, kein Jahr/Nummer, anderer Text ⇒ ZWEI Fundstellen', () => {
+    const p = bauePublikationen([
+      {
+        PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+        PublicationYear: 'null', PublicationNumber: 'null',
+        ReferenceText: 'Bundesgesetz über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG)',
+        ReferendumDeadline: null,
+      },
+      {
+        PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+        PublicationYear: 'null', PublicationNumber: 'null',
+        ReferenceText: 'Bundesbeschluss über die Vereinfachung der Mehrwertsteuer',
+        ReferendumDeadline: null,
+      },
+    ]);
+    expect(p).toHaveLength(2);
+    expect(p.map((x) => x.text)).toEqual([
+      'Bundesbeschluss über die Vereinfachung der Mehrwertsteuer',
+      'Bundesgesetz über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG)',
+    ]);
+  });
+
+  // ── Der Kernfall der zweiten Runde: NUR die Vorlage unterscheidet ───────────────
+  // Berichtigung zur ersten Runde (F8 — der alte Satz bleibt lesbar): dort hiess es,
+  // 08.053 liefere «zwei Fundstellen je dreifach byte-gleich». Das war mit dem
+  // Sechs-Feld-Schlüssel gemessen und darum falsch. Der Vollzensus aller 14 669
+  // DE-Objective-Zeilen (21.9.2026) zeigt: an 08.053 sind alle 12 Zeilen verschieden,
+  // sie unterscheiden sich AUSSCHLIESSLICH in `BillNumber` (03.047: 17 statt 14).
+  it('Publikationen: gleiche Fundstelle zu DREI Entwürfen ⇒ DREI Publikationen', () => {
+    const basis = {
+      PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+      PublicationYear: 'null', PublicationNumber: 'null',
+      ReferenceText: 'Bundesgesetz über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG)',
+      ReferendumDeadline: null,
+    };
+    const p = bauePublikationen([
+      { ...basis, BillNumber: 2 },
+      { ...basis, BillNumber: 1 },
+      { ...basis, BillNumber: 3 },
+    ]);
+    expect(p).toHaveLength(3);
+    expect(p.map((x) => x.vorlage)).toEqual([1, 2, 3]);
+  });
+
+  it('Publikationen: `vorlage` kommt aus zahl(), nie aus txt() — BillNumber ist ein int', () => {
+    // DIE MESSFALLE, an der ein naiver Fix wirkungslos durchginge: `BillNumber` ist in
+    // 14 669 von 14 669 DE-Objective-Zeilen `typeof 'number'` (Vollzensus 21.9.2026).
+    // `txt()` prüft `typeof v === 'string'` und lieferte deshalb für JEDE Zeile `null` —
+    // der Schlüssel bliebe unverändert, der Fix sähe trotzdem nach Fix aus. Dieser Test
+    // wird bei `txt(z.BillNumber)` doppelt rot: `vorlage` wäre null statt 7, und die drei
+    // Zeilen fielen wieder auf eine zusammen.
+    const basis = {
+      PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+      PublicationYear: 'null', PublicationNumber: 'null',
+      ReferenceText: 'Entwurf der SPK-N', ReferendumDeadline: null,
+    };
+    const p = bauePublikationen([{ ...basis, BillNumber: 7 }]);
+    expect(p[0].vorlage).toBe(7);
+    expect(typeof p[0].vorlage).toBe('number');
+    expect(bauePublikationen([
+      { ...basis, BillNumber: 7 }, { ...basis, BillNumber: 8 }, { ...basis, BillNumber: 9 },
+    ])).toHaveLength(3);
+  });
+
+  it('Publikationen: Vorlage 2 steht vor Vorlage 10 (Padding im Vergleicher)', () => {
+    // Ohne Padding verglichen die JSON-Tupel als Text: «10» käme vor «2».
+    const basis = {
+      PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+      PublicationYear: 'null', PublicationNumber: 'null',
+      ReferenceText: 'Entwurf', ReferendumDeadline: null,
+    };
+    const p = bauePublikationen([{ ...basis, BillNumber: 10 }, { ...basis, BillNumber: 2 }]);
+    expect(p.map((x) => x.vorlage)).toEqual([2, 10]);
+  });
+
+  it('Publikationen: umgekehrte Eingabereihenfolge ⇒ byte-gleiche Ausgabe, auch über Vorlagen (§2)', () => {
+    const basis = {
+      PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+      PublicationYear: 'null', PublicationNumber: 'null', ReferendumDeadline: null,
+    };
+    const zeilen: OdataZeile[] = [
+      { ...basis, ReferenceText: 'B-Vorlage', BillNumber: 2 },
+      { ...basis, ReferenceText: 'A-Vorlage', BillNumber: 3 },
+      { ...basis, ReferenceText: 'B-Vorlage', BillNumber: 1 },
+      { ...basis, ReferenceText: 'A-Vorlage', BillNumber: 1 },
+    ];
+    const vorwaerts = JSON.stringify(bauePublikationen(zeilen));
+    expect(JSON.stringify(bauePublikationen([...zeilen].reverse()))).toBe(vorwaerts);
+    expect(JSON.parse(vorwaerts)).toHaveLength(4);
+  });
+
+  it('Publikationen: eine byte-gleich doppelte Zeile bleibt EINE Fundstelle', () => {
+    // Der Dedupe bleibt wirksam: ECHTE Doppellieferungen existieren korpusweit an den
+    // Geschäften 22.417, 26.023 und 19.464 (vier Zeilen, Vollzensus 21.9.2026) — nur
+    // trägt keines davon heute einen Shard. Eine wirklich doppelt gelieferte Zeile ist
+    // eine Wiederholung, keine zweite Fundstelle.
+    const zeile: OdataZeile = {
+      PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+      PublicationYear: 'null', PublicationNumber: 'null',
+      ReferenceText: 'Bundesbeschluss über die Vereinfachung der Mehrwertsteuer',
+      ReferendumDeadline: null, BillNumber: 1,
+    };
+    expect(bauePublikationen([zeile, { ...zeile }, { ...zeile }])).toHaveLength(1);
+  });
+
+  it('Publikationen: umgekehrte Eingabereihenfolge ⇒ byte-gleiche Ausgabe (§2)', () => {
+    // Ohne Tiebreaker im Vergleicher hing die Reihenfolge an der Zeilenfolge der
+    // Endpunkt-Antwort — unsichtbar, solange der Schlüssel die Gleichstände wegwarf.
+    const zeilen: OdataZeile[] = [
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'C-Vorlage', ReferendumDeadline: null },
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Amtliche Sammlung', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'A-Vorlage', ReferendumDeadline: null },
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'B-Vorlage', ReferendumDeadline: '/Date(1219363200000)/' },
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'B-Vorlage', ReferendumDeadline: null },
+    ];
+    const vorwaerts = JSON.stringify(bauePublikationen(zeilen));
+    const rueckwaerts = JSON.stringify(bauePublikationen([...zeilen].reverse()));
+    expect(vorwaerts).toBe(rueckwaerts);
+    expect(JSON.parse(vorwaerts)).toHaveLength(4);
+  });
+
+  it('Publikationen: ein «|» im Freitext verschmilzt keine Fundstellen (JSON-Tupel statt Join)', () => {
+    const zeilen: OdataZeile[] = [
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'a|b', ReferendumDeadline: null },
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'a', ReferendumDeadline: null },
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt|null', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'b', ReferendumDeadline: null },
+    ];
+    expect(bauePublikationen(zeilen)).toHaveLength(3);
   });
 
   it('baut den amtlichen Deep-Link aus der Geschäftsnummer', () => {

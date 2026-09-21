@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020043",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2002-05-22",
@@ -61,18 +61,20 @@
     {
       "datum": "2002-05-22",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "4430",
-      "text": "Botschaft vom 22. Mai 2002 zur Änderung des Luftfahrtgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Luftfahrtgesetz (LFG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2002-05-22",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Luftfahrtgesetz (LFG)",
-      "referendumsfrist": null
+      "jahr": "2002",
+      "nummer": "4430",
+      "text": "Botschaft vom 22. Mai 2002 zur Änderung des Luftfahrtgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-04-01",
@@ -80,7 +82,8 @@
       "jahr": "2003",
       "nummer": "2852",
       "text": null,
-      "referendumsfrist": "2003-07-10"
+      "referendumsfrist": "2003-07-10",
+      "vorlage": 1
     },
     {
       "datum": "2003-07-22",
@@ -88,7 +91,8 @@
       "jahr": "2003",
       "nummer": "2179",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010015",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2001-02-21",
@@ -96,10 +96,11 @@
     {
       "datum": "2001-02-21",
       "art": "Bundesblatt",
-      "jahr": "2001",
-      "nummer": "3205",
-      "text": "Botschaft vom 21. Februar 2001 über die 4. Revision des Bundesgesetzes über die Invalidenversicherung",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Finanzierung der Invalidenversicherung durch die Anhebung der Mehrwertsteuersätze",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2001-02-21",
@@ -107,7 +108,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Invalidenversicherung (IVG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2001-02-21",
+      "art": "Bundesblatt",
+      "jahr": "2001",
+      "nummer": "3205",
+      "text": "Botschaft vom 21. Februar 2001 über die 4. Revision des Bundesgesetzes über die Invalidenversicherung",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-04-01",
@@ -115,7 +126,8 @@
       "jahr": "2003",
       "nummer": "2745",
       "text": null,
-      "referendumsfrist": "2003-07-10"
+      "referendumsfrist": "2003-07-10",
+      "vorlage": 1
     },
     {
       "datum": "2003-11-04",
@@ -123,7 +135,8 @@
       "jahr": "2003",
       "nummer": "3837",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

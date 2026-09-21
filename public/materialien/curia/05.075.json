@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050075",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-10-26",
@@ -68,18 +68,20 @@
     {
       "datum": "2005-10-26",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "6621",
-      "text": "Botschaft vom 26. Oktober 2005 zur Änderung des Bundesgesetzes über die Freizügigkeit der Anwältinnen und Anwälte",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Freizügigkeit der Anwältinnen und Anwälte (Anwaltsgesetz, BGFA)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-10-26",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Freizügigkeit der Anwältinnen und Anwälte (Anwaltsgesetz, BGFA)",
-      "referendumsfrist": null
+      "jahr": "2005",
+      "nummer": "6621",
+      "text": "Botschaft vom 26. Oktober 2005 zur Änderung des Bundesgesetzes über die Freizügigkeit der Anwältinnen und Anwälte",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2006-07-04",
@@ -87,7 +89,8 @@
       "jahr": "2006",
       "nummer": "5803",
       "text": null,
-      "referendumsfrist": "2006-10-12"
+      "referendumsfrist": "2006-10-12",
+      "vorlage": 1
     },
     {
       "datum": "2006-11-14",
@@ -95,7 +98,8 @@
       "jahr": "2006",
       "nummer": "4399",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

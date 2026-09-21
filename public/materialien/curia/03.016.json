@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20030016",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2003-02-19",
@@ -124,18 +124,29 @@
     {
       "datum": "2003-02-19",
       "art": "Bundesblatt",
-      "jahr": "2003",
-      "nummer": "2101",
-      "text": "Botschaft vom 19. Februar 2003 zur Änderung des Bundesgesetzes über den Datenschutz (DSG) und zum Bundesbeschluss betreffend den Beitritt der Schweiz zum Zusatzprotokoll vom 8. November 2001 zum Übereinkommen zum Schutz des Menschen bei der automatischen Verarbeitung personenbezogener Daten bezüglich Aufsichtsbehörden und grenzüberschreitende Datenübermittlung",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss betreffend den Beitritt der Schweiz zum Zusatzprotokoll vom 8. November 2001 zum Übereinkommen zum Schutz des Menschen bei der automatischen Verarbeitung personenbezogener Daten bezüglich Aufsichtsbehörden und grenzüberschreitende Datenübermittlung",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2003-02-19",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesbeschluss betreffend den Beitritt der Schweiz zum Zusatzprotokoll vom 8. November 2001 zum Übereinkommen zum Schutz des Menschen bei der automatischen Verarbeitung personenbezogener Daten bezüglich Aufsichtsbehörden und grenzüberschreitende Datenübermittlung",
-      "referendumsfrist": null
+      "text": "Bundesgesetz über den Datenschutz (DSG)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2003-02-19",
+      "art": "Bundesblatt",
+      "jahr": "2003",
+      "nummer": "2101",
+      "text": "Botschaft vom 19. Februar 2003 zur Änderung des Bundesgesetzes über den Datenschutz (DSG) und zum Bundesbeschluss betreffend den Beitritt der Schweiz zum Zusatzprotokoll vom 8. November 2001 zum Übereinkommen zum Schutz des Menschen bei der automatischen Verarbeitung personenbezogener Daten bezüglich Aufsichtsbehörden und grenzüberschreitende Datenübermittlung",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2006-04-04",
@@ -143,7 +154,8 @@
       "jahr": "2006",
       "nummer": "3547",
       "text": null,
-      "referendumsfrist": "2006-07-13"
+      "referendumsfrist": "2006-07-13",
+      "vorlage": 1
     },
     {
       "datum": "2006-04-04",
@@ -151,7 +163,8 @@
       "jahr": "2006",
       "nummer": "3649",
       "text": null,
-      "referendumsfrist": "2006-07-13"
+      "referendumsfrist": "2006-07-13",
+      "vorlage": 2
     },
     {
       "datum": "2007-11-06",
@@ -159,7 +172,8 @@
       "jahr": "2007",
       "nummer": "4983",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2008-03-18",
@@ -167,7 +181,8 @@
       "jahr": "2008",
       "nummer": "729",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -186,7 +201,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2006-03-24",
@@ -203,7 +218,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

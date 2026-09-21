@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20220085",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2022-12-16",
@@ -99,7 +99,8 @@
       "jahr": "2023",
       "nummer": "239",
       "text": "Botschaft vom 16. Dezember 2022 zur Änderung des Umweltschutzgesetzes (Lärm, Altlasten, Lenkungsabgaben, Finanzierung von Aus- und Weiterbildungskursen, Informations- und Dokumentationssysteme, Strafrecht)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2022-12-16",
@@ -107,7 +108,8 @@
       "jahr": "2023",
       "nummer": "240",
       "text": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2024-10-08",
@@ -115,7 +117,8 @@
       "jahr": "2024",
       "nummer": "2502",
       "text": null,
-      "referendumsfrist": "2025-01-16"
+      "referendumsfrist": "2025-01-16",
+      "vorlage": 1
     },
     {
       "datum": "2025-05-15",
@@ -123,7 +126,8 @@
       "jahr": "2025",
       "nummer": "178",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

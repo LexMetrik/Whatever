@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20040056",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2004-09-08",
@@ -152,10 +152,29 @@
     {
       "datum": "2004-09-08",
       "art": "Bundesblatt",
-      "jahr": "2004",
-      "nummer": "5313",
-      "text": "Botschaft vom 8. September 2004 zu Änderungen bei der Finanzierung der FinöV-Projekte",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Schweizerischen Bundesbahnen (SBBG)",
+      "referendumsfrist": null,
+      "vorlage": 4
+    },
+    {
+      "datum": "2004-09-08",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Änderung des Bundesbeschlusses betreffend das Konzept BAHN 2000",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2004-09-08",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Eisenbahngesetz (EBG)",
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2004-09-08",
@@ -163,7 +182,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Verordnung der Bundesversammlung über die Änderung des Bundesbeschlusses über das Reglement des Fonds für die Eisenbahngrossprojekte",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2004-09-08",
+      "art": "Bundesblatt",
+      "jahr": "2004",
+      "nummer": "5313",
+      "text": "Botschaft vom 8. September 2004 zu Änderungen bei der Finanzierung der FinöV-Projekte",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2005-06-28",
@@ -171,7 +200,8 @@
       "jahr": "2005",
       "nummer": "2517",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2005-06-28",
@@ -179,7 +209,8 @@
       "jahr": "2005",
       "nummer": "4207",
       "text": null,
-      "referendumsfrist": "2005-10-06"
+      "referendumsfrist": "2005-10-06",
+      "vorlage": 1
     },
     {
       "datum": "2005-06-28",
@@ -187,7 +218,8 @@
       "jahr": "2005",
       "nummer": "4209",
       "text": null,
-      "referendumsfrist": "2005-10-06"
+      "referendumsfrist": "2005-10-06",
+      "vorlage": 3
     },
     {
       "datum": "2005-06-28",
@@ -195,7 +227,8 @@
       "jahr": "2005",
       "nummer": "4211",
       "text": null,
-      "referendumsfrist": "2005-10-06"
+      "referendumsfrist": "2005-10-06",
+      "vorlage": 4
     },
     {
       "datum": "2005-10-07",
@@ -203,7 +236,8 @@
       "jahr": "2005",
       "nummer": "4777",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2005-10-25",
@@ -211,7 +245,8 @@
       "jahr": "2005",
       "nummer": "4773",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-10-25",
@@ -219,7 +254,8 @@
       "jahr": "2005",
       "nummer": "4775",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     }
   ],
   "schlussabstimmungen": [
@@ -238,7 +274,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2005-06-17",
@@ -255,7 +291,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2005-06-17",
@@ -272,7 +308,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2005-06-17",
@@ -289,7 +325,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

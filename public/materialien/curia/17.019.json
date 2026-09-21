@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20170019",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2017-02-15",
@@ -99,7 +99,8 @@
       "jahr": "2017",
       "nummer": "1851",
       "text": "Botschaft vom 15. Februar 2017 zur Totalrevision des Bundesgesetzes über das öffentliche Beschaffungswesen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-02-15",
@@ -107,7 +108,8 @@
       "jahr": "2017",
       "nummer": "2005",
       "text": "Bundesgesetz über das öffentliche Beschaffungswesen (BöB)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2019-07-02",
@@ -115,7 +117,8 @@
       "jahr": "2019",
       "nummer": "4505",
       "text": null,
-      "referendumsfrist": "2019-10-10"
+      "referendumsfrist": "2019-10-10",
+      "vorlage": 1
     },
     {
       "datum": "2020-03-10",
@@ -123,7 +126,8 @@
       "jahr": "2020",
       "nummer": "641",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

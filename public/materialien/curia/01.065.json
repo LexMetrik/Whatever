@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010065",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2001-10-24",
@@ -190,7 +190,17 @@
       "jahr": "2002",
       "nummer": "858",
       "text": "Botschaft vom 24. Oktober 2001 zur Armeereform XXI und zur Revision der Militärgesetzgebung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
+    },
+    {
+      "datum": "2001-10-26",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Verwaltung der Armee (BVA)",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2001-10-26",
@@ -198,7 +208,26 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über den Wehrpflichtersatz (WPEG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
+    },
+    {
+      "datum": "2001-10-26",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2001-10-26",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Verordnung der Bundesversammlung über die Organisation der Armee (Armeeorganisation, AO)",
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2002-10-15",
@@ -206,7 +235,8 @@
       "jahr": "2002",
       "nummer": "6543",
       "text": null,
-      "referendumsfrist": "2003-01-23"
+      "referendumsfrist": "2003-01-23",
+      "vorlage": 1
     },
     {
       "datum": "2002-10-15",
@@ -214,7 +244,8 @@
       "jahr": "2002",
       "nummer": "6557",
       "text": null,
-      "referendumsfrist": "2003-01-23"
+      "referendumsfrist": "2003-01-23",
+      "vorlage": 4
     },
     {
       "datum": "2002-11-26",
@@ -222,7 +253,8 @@
       "jahr": "2002",
       "nummer": "3641",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2003-10-21",
@@ -230,7 +262,8 @@
       "jahr": "2003",
       "nummer": "3707",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2003-11-11",
@@ -238,7 +271,8 @@
       "jahr": "2003",
       "nummer": "3957",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-11-18",
@@ -246,7 +280,8 @@
       "jahr": "2003",
       "nummer": "4027",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     }
   ],
   "schlussabstimmungen": []

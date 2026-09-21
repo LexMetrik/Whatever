@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20110047",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2011-08-24",
@@ -89,10 +89,20 @@
     {
       "datum": "2011-08-24",
       "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Verrechnungssteuer (VStG) (Entwurf der WAK-N)",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2011-08-24",
+      "art": "Bundesblatt",
       "jahr": "2011",
       "nummer": "6615",
       "text": "Botschaft vom 24. August 2011 zur Änderung des Bundesgesetzes über die Verrechnungssteuer (Belebung des schweizerischen Kapitalmarktes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-08-24",
@@ -100,15 +110,8 @@
       "jahr": "2011",
       "nummer": "6659",
       "text": "Bundesgesetz über die Verrechnungssteuer (VStG)",
-      "referendumsfrist": null
-    },
-    {
-      "datum": "2011-08-24",
-      "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Verrechnungssteuer (VStG) (Entwurf der WAK-N)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-06-26",
@@ -116,7 +119,8 @@
       "jahr": "2012",
       "nummer": "5943",
       "text": null,
-      "referendumsfrist": "2012-10-04"
+      "referendumsfrist": "2012-10-04",
+      "vorlage": 1
     },
     {
       "datum": "2012-11-13",
@@ -124,7 +128,8 @@
       "jahr": "2012",
       "nummer": "5981",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -143,7 +148,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

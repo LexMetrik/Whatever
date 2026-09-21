@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20140029",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2014-03-07",
@@ -99,7 +99,8 @@
       "jahr": "2014",
       "nummer": "2675",
       "text": "Botschaft vom 7. März 2014 zur Genehmigung und Umsetzung der Notenaustausche zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der revidierten Rechtsgrundlagen der Dublin/Eurodac-Zusammenarbeit (Verordnung (EU) Nr. 603/2013 und Verordnung (EU) Nr. 604/2013) (Weiterentwicklungen des Dublin/Eurodac-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2014-03-07",
@@ -107,7 +108,8 @@
       "jahr": "2014",
       "nummer": "2727",
       "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustausches zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) Nr. 604/2013 zur Festlegung der Kriterien und Verfahren zur Bestimmung des Mitgliedstaats, der für die Prüfung eines Antrags auf internationalen Schutz zuständig ist (Weiterentwicklung des Dublin/Eurodac-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2014-03-07",
@@ -115,7 +117,8 @@
       "jahr": "2014",
       "nummer": "2735",
       "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustausches zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) Nr. 603/2013 über die Errichtung von «Eurodac» sowie zur Änderung der Verordnung (EU) Nr. 1077/2011 zur Errichtung der IT-Agentur (Weiterentwicklung des Dublin/Eurodac-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2014-10-07",
@@ -123,7 +126,8 @@
       "jahr": "2014",
       "nummer": "7371",
       "text": null,
-      "referendumsfrist": "2015-01-15"
+      "referendumsfrist": "2015-01-15",
+      "vorlage": 1
     },
     {
       "datum": "2014-10-07",
@@ -131,7 +135,8 @@
       "jahr": "2014",
       "nummer": "7379",
       "text": null,
-      "referendumsfrist": "2015-01-15"
+      "referendumsfrist": "2015-01-15",
+      "vorlage": 2
     },
     {
       "datum": "2015-06-23",
@@ -139,7 +144,8 @@
       "jahr": "2015",
       "nummer": "1841",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2015-07-14",
@@ -147,7 +153,8 @@
       "jahr": "2015",
       "nummer": "2323",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -166,7 +173,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2014-09-26",
@@ -183,7 +190,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

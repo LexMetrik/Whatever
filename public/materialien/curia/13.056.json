@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20130056",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2013-06-26",
@@ -71,7 +71,8 @@
       "jahr": "2013",
       "nummer": "5975",
       "text": "Botschaft vom 26. Juni 2013 zur Änderung des Strafgesetzbuchs und des Militärstrafgesetzes (Umsetzung von Art. 121 Abs. 3-6 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2013-06-26",
@@ -79,7 +80,8 @@
       "jahr": "2013",
       "nummer": "6063",
       "text": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 3–6 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2015-03-31",
@@ -87,7 +89,8 @@
       "jahr": "2015",
       "nummer": "2735",
       "text": null,
-      "referendumsfrist": "2015-07-09"
+      "referendumsfrist": "2015-07-09",
+      "vorlage": 1
     },
     {
       "datum": "2016-07-08",
@@ -95,7 +98,8 @@
       "jahr": "2016",
       "nummer": "2329",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }
