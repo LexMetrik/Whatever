@@ -31,6 +31,7 @@
 
 import { execFileSync } from 'node:child_process';
 import { type Einheit } from './parse';
+import { parseWorktreeFakten, platzName } from './gitFlaechen';
 import { idTrifft } from './specBindung';
 
 /** Ein `wip`-Schritt mit dem von ihm belegten Baufeld (`feld:`). */
@@ -68,13 +69,20 @@ export interface LageRoh {
   ausfaelle: string[];
 }
 
-/** Kommando-Ausführung; wirft bei Fehler, Timeout oder fehlendem Programm. */
-export type Laufe = (cmd: string, args: string[]) => string;
+/**
+ * Kommando-Ausführung; wirft bei Fehler, Timeout oder fehlendem Programm.
+ *
+ * `cwd` ist optional und seit 21.9.2026 dabei (Schritt «Git-Flächen abräumen»):
+ * `git status` muss je Worktree in DESSEN Verzeichnis laufen, und der
+ * Integrationstest fährt den Sammler gegen ein temporäres Repo. Bestehende
+ * Aufrufer sind unberührt — sie lassen den Parameter weg.
+ */
+export type Laufe = (cmd: string, args: string[], cwd?: string) => string;
 
 const TIMEOUT_MS = 5000;
 
-export const laufeEcht: Laufe = (cmd, args) =>
-  execFileSync(cmd, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: TIMEOUT_MS });
+export const laufeEcht: Laufe = (cmd, args, cwd) =>
+  execFileSync(cmd, args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout: TIMEOUT_MS, cwd });
 
 /**
  * Schritt-ID → Namensbestandteil für Branches und Worktrees.
@@ -113,17 +121,19 @@ export function schrittFuerNamen(name: string, ids: string[]): string | null {
   return treffer;
 }
 
-/** `git worktree list --porcelain` → Bau-Plätze. Erster Block ist das Haupt-Repo. */
+/**
+ * `git worktree list --porcelain` → Bau-Plätze. Erster Block ist das Haupt-Repo.
+ *
+ * Seit 21.9.2026 nur noch eine Sicht auf `parseWorktreeFakten` aus
+ * gitFlaechen.ts statt eines zweiten Porcelain-Regex (§5). Verhaltensneutral —
+ * die Tests in plan-lage.test.ts blieben unverändert (§6.3).
+ */
 export function parseWorktrees(porcelain: string): BauPlatz[] {
-  return porcelain
-    .split('\n\n')
-    .map((block) => ({ pfad: block.match(/^worktree (.+)$/m)?.[1] ?? '', block }))
-    .filter((x) => x.pfad !== '')
-    .map(({ pfad, block }, lfd) => ({
-      name: pfad.split('/').filter(Boolean).pop() ?? pfad,
-      branch: block.match(/^branch refs\/heads\/(.+)$/m)?.[1] ?? null,
-      haupt: lfd === 0,
-    }));
+  return parseWorktreeFakten(porcelain).map((w) => ({
+    name: platzName(w.pfad),
+    branch: w.branch,
+    haupt: w.haupt,
+  }));
 }
 
 /** wip-Schritte des Resolvers mit ihren Flächen anreichern. */
