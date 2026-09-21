@@ -111,13 +111,17 @@ function laufenDuldsam(laufe: Laufe, cmd: string, args: string[], cwd?: string):
  * global = 76 ms (3 von 3 Läufen), 406 cwd-Pfade, gleiche Treffer. Darum die
  * globale Variante mit Filterung im Code.
  *
- * `null` = lsof nicht verfügbar ⇒ jede Belegung gilt als unbekannt.
+ * `null` = lsof nicht verfügbar ⇒ jede Belegung gilt als unbekannt. Ebenso
+ * `null`, wenn lsof KEINEN einzigen cwd-Pfad liefert: mindestens der eigene
+ * Prozess hat ein Arbeitsverzeichnis, «0 Pfade» heisst also «lsof hat nichts
+ * gesehen», nie «nichts ist belegt» (Delta-Prüfung 21.9.2026, fail-closed).
  */
 export function belegtePfade(laufe: Laufe, cwd?: string): string[] | null {
   const roh = laufenDuldsam(laufe, 'lsof', ['-a', '-d', 'cwd', '-Fn'], cwd);
   if (roh === null) return null;
   // `-Fn` druckt Datensätze als `p<pid>` / `f<fd>` / `n<pfad>` je Zeile.
-  return roh.split('\n').filter((z) => z.startsWith('n')).map((z) => z.slice(1)).filter(Boolean);
+  const pfade = roh.split('\n').filter((z) => z.startsWith('n')).map((z) => z.slice(1)).filter(Boolean);
+  return pfade.length === 0 ? null : pfade;
 }
 
 function zahl(roh: string | null): number | null {

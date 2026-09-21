@@ -3,7 +3,7 @@ import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
-import { erhebe, raeumeAb } from '../../scripts/plan/gitFlaechenSammeln';
+import { belegtePfade, erhebe, raeumeAb } from '../../scripts/plan/gitFlaechenSammeln';
 
 // ─── Git-Flächen · Integration gegen ein ECHTES temporäres Repo ───────────────
 //
@@ -173,5 +173,19 @@ describe('Sammler + Abräumen gegen ein echtes Repo', () => {
     expect(bef.branches.filter((b) => b.abraeumbar)).toEqual([]);
     expect(raeumeAb(bef, { cwd: repo }).zeilen).toEqual(['   — nichts abzuräumen']);
     expect(branchNamen()).toEqual(['main', 'notiztraeger', 'offen', 'schmutzig']);
+  });
+});
+
+describe('belegtePfade · fail-closed (Delta-Prüfung 21.9.2026)', () => {
+  it('liest die cwd-Pfade aus der -Fn-Ausgabe', () => {
+    expect(belegtePfade(() => 'p12\nfcwd\nn/a/b\np13\nfcwd\nn/c\n')).toEqual(['/a/b', '/c']);
+  });
+  it('ROT: lsof ohne einen einzigen cwd-Pfad heisst «nicht prüfbar», nie «alles frei»', () => {
+    expect(belegtePfade(() => '')).toBeNull();
+    expect(belegtePfade(() => 'p12\nfcwd\n')).toBeNull();
+  });
+  it('lsof endet mit Status 1, hat aber Treffer gedruckt ⇒ Treffer zählen', () => {
+    const wurf = Object.assign(new Error('exit 1'), { stdout: 'p1\nfcwd\nn/x\n' });
+    expect(belegtePfade(() => { throw wurf; })).toEqual(['/x']);
   });
 });
