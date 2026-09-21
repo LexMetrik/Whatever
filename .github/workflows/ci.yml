@@ -1473,6 +1473,13 @@ jobs:
       && needs.bau.result == 'success'
       && (needs.tore.result == 'success' || needs.tore.result == 'skipped')
       && (needs.e2e.result == 'success' || needs.e2e.result == 'skipped')
+    # PRÜFUNG 21.9.2026 (QS-CI-MINUTEN Wanduhr-Auftrag): `e2e` aus `needs`
+    # zu nehmen, damit `perf` parallel zu den Shards statt danach liefe, WURDE
+    # GEPRÜFT UND VERWORFEN — der Grund ist keine Falsch-Rot-Episode, sondern
+    # die §15-Gegenkopplung selbst («Tempo zählt nur, wenn die Treue grün
+    # bleibt», Kommentar oben): ohne `e2e` würde `perf` messen, BEVOR die
+    # Browser-Shards die Korrektheit bewiesen haben — Tempo vor Treue, genau
+    # das Gegenteil von §15. Bleibt an `needs.e2e`.
     needs: [diff, bau, tore, e2e]
     runs-on: ubuntu-latest
     env:
