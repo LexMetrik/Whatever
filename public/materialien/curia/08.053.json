@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20080053",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2008-06-25",
@@ -173,9 +173,9 @@
     {
       "datum": "2008-06-25",
       "art": "Bundesblatt",
-      "jahr": "2008",
-      "nummer": "6885",
-      "text": "Botschaft vom 25. Juni 2008 zur Vereinfachung der Mehrwertsteuer",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Vereinfachung der Mehrwertsteuer",
       "referendumsfrist": null
     },
     {
@@ -183,7 +183,23 @@
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesbeschluss über die Vereinfachung der Mehrwertsteuer",
+      "text": "Bundesgesetz über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG)",
+      "referendumsfrist": null
+    },
+    {
+      "datum": "2008-06-25",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Mehrwertsteuer",
+      "referendumsfrist": null
+    },
+    {
+      "datum": "2008-06-25",
+      "art": "Bundesblatt",
+      "jahr": "2008",
+      "nummer": "6885",
+      "text": "Botschaft vom 25. Juni 2008 zur Vereinfachung der Mehrwertsteuer",
       "referendumsfrist": null
     },
     {
@@ -235,7 +251,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }
