@@ -261,6 +261,10 @@ Absicht**: was den Deckel sprengt, verliert sein Etikett und lebt als
 Ideen-Liste ohne `@meta` und Tor weiter. Bei Konflikt gewinnt der Rückbau —
 ausser die Stelle hat einen datierten Vorfall verhindert. §1 bleibt unberührt.
 
+Satz 1 ist seit 20.9.2026 erzwungen statt Prosa: `check:steuerflaeche` deckelt
+die Byte-Summe der ganzen Steuerungs-Fläche, die Grenze sinkt nur (Anhebung nur
+mit datiertem David-Entscheid) — Rechtsschutz ausgenommen.
+
 ## §17-Prozessarbeit: die Fünf-Schritte-Reihenfolge
 
 *Herkunft: zugeschnitten aus `malkreide/musk-algorithm-skill` (Hayal Oezkan,

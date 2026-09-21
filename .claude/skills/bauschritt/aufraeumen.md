@@ -78,6 +78,14 @@ Kandidaten liefert `npm run tor:bewaehrung` (Regel «nie rot ≥ 90 Tage»,
 Chesterton-Vorbehalt dort — Nachfolger des entfallenen `retro:17`, Entscheid
 David 20.9.2026, Rückbau QS-EFFIZIENZ). Rechtsdaten-Tore sind ausgenommen.
 
+**Sperrklinke über die gesamte Steuerungs-Fläche (David 20.9.2026,
+`check:steuerflaeche`):** Byte-Summe der GESAMTEN Steuerungs-Fläche
+gegen `messwerte/steuerflaeche.json`; die Grenze sinkt nur (`npm run
+steuerflaeche -- --nachziehen`), Anhebung nur mit datiertem David-Entscheid.
+Rot ⇒ streichen, bevor etwas dazukommt; die zehn grössten Zuwächse nennt das
+Tor selbst, Stand und Trend die letzte Zeile von `plan:next`. Rechtsschutz
+ausgenommen (Liste im Kopf von `scripts/analyse/steuerflaecheKern.ts`).
+
 Vor jeder Streichung (echtes Entfernen, keine Verschiebung): **«Steuert der
 Schritt noch etwas?»** Ein Posten ohne `dep`-/`@queue`-/Blocker-Referenz,
 dessen Anlass entfallen ist, fällt. Jede Streichung bekommt in
