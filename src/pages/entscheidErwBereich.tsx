@@ -138,8 +138,8 @@ export const ErwBereich = memo(function ErwBereich({
   // (n=5, BS SB.2018.46, 288 Blöcke) statt der zwei getrennten Builds oben —
   // die Hervorhebung allein kostet 15 ± 5 ms je Anschlag. Mitentprellen der
   // Hervorhebung wurde GEMESSEN und verworfen: 5/5 Läufe schlechter, +68 ± 29
-  // ms je Anschlag (mehr Anschläge sammeln sich hinter derselben 200-ms-Kante,
-  // die dann alle auf einmal zeichnen). Die Hervorhebung bleibt darum roh.
+  // ms GESAMTBLOCKADE (längste Einzelblockade 130–156 statt 90–95 ms). Die
+  // Hervorhebung bleibt darum roh.
   const sucheGewertet = useSucheGewertet(suche);
   // ── § Falle a/b (21.9.2026) · EIN STAND FÜR DIE GANZE DARSTELLUNGSSEITE ────
   // `sucheAktiv` ist NICHT nur «`sucheGewertet` ist nicht leer» — das wäre zu
