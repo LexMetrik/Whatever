@@ -22,6 +22,7 @@ import { entscheidLandkarteEinheiten } from '../pages/entscheidLandkarte';
 import { baueLeserSuchIndex, sucheImErlass, zaehleTreffer } from '../pages/gesetz-leser/leserSuche';
 import { trefferInErwaegungen, zaehleTreffer as zaehleEntscheidTreffer } from '../pages/entscheidLeserRegeln';
 import type { EntscheidAbschnitt } from '../lib/rechtsprechung/typen';
+import { markenHoehe } from '../components/leser/landkarteMasse';
 
 const EINHEITEN: LandkarteEinheit[] = [
   { id: 'a', label: 'Art. 1', umfang: 100, abschnitt: 'Erster Titel' },
@@ -240,5 +241,85 @@ describe('B1 · Suche ohne Treffer ⇒ nichts abzubilden (der Streifen hat keine
     expect(zaehleTreffer(treffer).fundstellen).toBe(0);
     const gesetzSpur = landkarteSpur(gesetzLandkarteEinheiten(eintraege, struktur));
     expect(landkarteMarken(gesetzSpur, treffer.map((t) => ({ id: t.token, anzahl: t.fundstellen })))).toEqual([]);
+  });
+});
+
+
+// ─── B4 · Die Marke bleibt eine Marke (Befund 21.9.2026) ────────────────────
+//
+// DER BEFUND, DER DIESEN BLOCK AUSGELÖST HAT — gemessen im Browser @1440/hell
+// auf `/rechtsprechung/bge_152_V_52` mit «Beschwerde» (23 Fundstellen in 7
+// Erwägungen): sieben Marken von 40.4 bis 123.5 px, zusammen 495 px LÜCKENLOS
+// aneinander in einem 664 px hohen Streifen. Das waren 74.5 % der Spur als
+// durchgehender roter Block; einzelne Fundstellen liessen sich darin nicht
+// mehr unterscheiden. Ursache war die unbegrenzte Höhe `(bis - von) * HOEHE`:
+// im GESETZ ist ein Baustein einer von 1686 Artikeln und die Marke fällt unter
+// die Untergrenze (gemessen alle 88 OR-Marken 2.8–3.2 px), im ENTSCHEID ist er
+// eine ganze Erwägung — aus Marken wurde Fläche.
+//
+// Zwei Regeln sind damit gerissen: `.claude/rules/design.md` Handschrift 4
+// («Registerfarbe als Strich/Kante/Marke, NIE Fläche») und der Zweck des
+// Streifens (`FAHRPLAN-RECHERCHE-KOMFORT.md` §1: dicht behandelt oder nur
+// gestreift muss ohne Scrollen erkennbar sein).
+//
+// WARUM HIER UND NICHT IN e2e: die Klemmung ist eine reine Zahlenregel und
+// damit ohne Browser vollständig prüfbar (§2). `markenHoehe` ist der EINE Weg,
+// auf dem eine Markenhöhe entsteht — fällt der Deckel weg, fällt dieser Block.
+//
+// ROT ZU BEKOMMEN (§6.7): in `src/components/leser/TrefferLandkarte.tsx` in
+// `markenHoehe` das `Math.min(MARKE_MAX, …)` streichen ⇒ der erste Fall meldet
+// 186.5 statt ≤ 12.
+//
+// DIE ZAHLEN 12 UND 4 STEHEN HIER AUSGESCHRIEBEN und werden bewusst NICHT aus
+// `TrefferLandkarte` importiert: ein Tor, das seine Schwelle von der geprüften
+// Datei bezieht, folgt jeder künftigen Änderung stillschweigend und kann nicht
+// mehr scheitern (§6.7). Wer den Deckel verschiebt, verschiebt ihn an zwei
+// Stellen — und begründet ihn dabei.
+describe('B4 · Höchsthöhe: keine Marke wird zur Fläche', () => {
+  // Die sieben getroffenen Erwägungen des Befundes, als ANTEILE der Spur —
+  // abgelesen aus den gemessenen `y`/`height`-Attributen des SVG (viewBox
+  // 0 0 48 1000), nicht nachgerechnet.
+  const GEMESSEN: { label: string; von: number; bis: number }[] = [
+    { label: 'E. 4.1.2', von: 252.512, bis: 372.387 },
+    { label: 'E. 4.2.1', von: 372.387, bis: 558.898 },
+    { label: 'E. 4.2.2', von: 558.898, bis: 626.516 },
+    { label: 'E. 4.2.3', von: 626.516, bis: 732.244 },
+    { label: 'E. 4.3', von: 732.244, bis: 874.293 },
+    { label: 'E. 4.4', von: 874.293, bis: 939.023 },
+    { label: 'E. 4.5', von: 939.023, bis: 1000 },
+  ].map((e) => ({ label: e.label, von: e.von / 1000, bis: e.bis / 1000 }));
+
+  it('DER DEFEKT: keine der sieben Entscheid-Marken wächst über den Deckel', () => {
+    for (const e of GEMESSEN) {
+      const roh = (e.bis - e.von) * 1000;
+      expect(roh, `Vorbedingung: ${e.label} war ungedeckelt grösser als der Deckel`)
+        .toBeGreaterThan(12);
+      expect(markenHoehe(e.von, e.bis), `${e.label} überschreitet die Höchsthöhe`)
+        .toBeLessThanOrEqual(12);
+    }
+  });
+
+  it('und der Streifen ist danach keine Fläche mehr: unter einem Fünftel Farbe', () => {
+    const summe = GEMESSEN.reduce((n, e) => n + markenHoehe(e.von, e.bis), 0);
+    // Vorher: 745 von 1000 Einheiten (74.5 % — der gemessene Block).
+    expect(summe).toBeLessThan(200);
+  });
+
+  it('die Untergrenze bleibt: ein Artikel des OR verschwindet nicht', () => {
+    // Gemessen auf /gesetze/bund/OR mit «Kündigung»: alle 88 Marken lagen auf
+    // der Untergrenze. Der Deckel darf sie nicht berühren.
+    const { eintraege, struktur } = ladeNormFixture('bund', 'BGFA');
+    const gesetzSpur = landkarteSpur(gesetzLandkarteEinheiten(eintraege, struktur));
+    const index = baueLeserSuchIndex('BGFA', eintraege, struktur);
+    const treffer = sucheImErlass(index, 'Anwalt');
+    expect(treffer.length, 'Vorbedingung: der Begriff kommt vor').toBeGreaterThan(0);
+    const marken = landkarteMarken(gesetzSpur, treffer.map((t) => ({ id: t.token, anzahl: t.fundstellen })));
+    for (const m of marken) expect(markenHoehe(m.von, m.bis)).toBeGreaterThanOrEqual(4);
+  });
+
+  it('zwischen den Grenzen bildet die Höhe weiter den Umfang ab (§1: nichts eingeebnet)', () => {
+    // Zwei Bausteine unter dem Deckel: der doppelt so grosse ist doppelt so hoch.
+    expect(markenHoehe(0, 0.005)).toBeCloseTo(5, 6);
+    expect(markenHoehe(0, 0.01)).toBeCloseTo(10, 6);
   });
 });

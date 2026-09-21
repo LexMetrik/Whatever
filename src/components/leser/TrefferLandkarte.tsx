@@ -3,6 +3,9 @@ import {
   bereichZuId, feldBeiAnteil, landkarteBaender, landkarteMarken,
   type LandkarteFeld,
 } from './landkarteModell';
+// Die Masse des Streifens stehen in einer eigenen Datei, seit `markenHoehe`
+// für sein Tor exportierbar sein muss (21.9.2026 — Begründung dort).
+import { BREITE, HOEHE, MARKE_MIN, MARKE_X, markenBreite, markenHoehe } from './landkarteMasse';
 
 // ═══ W2·28-TREFFER-LANDKARTE · L-1 · Der Streifen neben dem Lesebereich ══════
 //
@@ -17,7 +20,7 @@ import {
 // Messreihe dort), die Gliederungsspur nimmt 19.25 rem, und die verbleibende
 // Zelle (≈ 764 px) wird vom Lesemass VOLLSTÄNDIG ausgefüllt — innerhalb der
 // Zelle gibt es auf keiner Breite eine freie Rinne von 44 px (und erst recht
-// keine von 48 — s. `BREITE` unten). Der Streifen liegt darum `fixed` am
+// keine von 48 — s. `BREITE` in `./landkarteMasse`). Der Streifen liegt `fixed` am
 // rechten FENSTERRAND, neben der Bildlaufleiste: dort ist ab 1280 px
 // Fensterbreite gemessen 104 px Randluft, er überdeckt keinen Text, und als
 // Element ausserhalb des Flusses kostet er null Layout (CLS 0 per Konstruktion,
@@ -47,39 +50,6 @@ import {
 // Bewegung: der Streifen animiert nichts; `prefers-reduced-motion` hat hier
 // nichts zu dämpfen, und der Sprung selbst läuft durch die bestehende
 // Sprungmechanik, die die Einstellung bereits respektiert.
-
-/**
- * Breite des Streifens in PIXELN — zugleich der Klickstreifen und die x-Achse
- * des SVG-Koordinatensystems. (Der Kommentar hier sagte bis zum Fertigbau
- * 21.9.2026 fälschlich «rem»; gemeint und gebaut waren immer px, `style.width`
- * setzt sie als solche.)
- *
- * 48 px = die Untergrenze des Richtwerts 48–64 px aus
- * `fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md` §1/L-1. Sie kostet die Lesespalte
- * gemessen nichts: der Streifen ist `fixed` und liegt mit `right-3` (12 px) in
- * der 104 px breiten Randluft ab 1280 px Fensterbreite — 60 px belegt, 44 px
- * frei. Breiter zu werden hiesse, Platz zu verbrauchen, den die Landkarte für
- * drei Marken-Stufen nicht braucht (`markenBreite`).
- */
-const BREITE = 48;
-/** Höhe des SVG-Koordinatensystems. Der Streifen wird auf die Elementhöhe
- *  gezogen (`preserveAspectRatio="none"`), die Zahl ist reine Rechenauflösung. */
-const HOEHE = 1000;
-/** Mindesthöhe einer Marke in Koordinaten-Einheiten (≈ 2.5 px bei 600 px Höhe).
- *  Ohne sie verschwände ein kurzer Artikel in einem langen Erlass. */
-const MARKE_MIN = 4;
-/** Seitliche Einfassung der Marken — die Kanten des Streifens bleiben sichtbar. */
-const MARKE_X = 6;
-
-/** Wie breit eine Marke gerät: drei Stufen nach Dichte (§8: die Stufe ist
- *  benannt, nicht stufenlos interpoliert — «viel» und «wenig» soll man
- *  unterscheiden können, nicht schätzen müssen). */
-function markenBreite(anzahl: number): number {
-  const voll = BREITE - 2 * MARKE_X;
-  if (anzahl >= 5) return voll;
-  if (anzahl >= 2) return voll * 0.7;
-  return voll * 0.45;
-}
 
 export function TrefferLandkarte({
   spur, treffer, leseId, register, obenVar, gesamtFundstellen, onSprung,
@@ -160,7 +130,11 @@ export function TrefferLandkarte({
         ))}
         {/* Leseposition — wo der Leser gerade steht. Fläche in der neutralen
             Messing-Stufe, damit die Registerfarbe der Marken die einzige Farbe
-            im Streifen bleibt (§13, Handschrift 4/6). */}
+            im Streifen bleibt (§13, Handschrift 4/6).
+            SIE BEKOMMT BEWUSST KEINEN `MARKE_MAX`-Deckel (21.9.2026): das
+            Verbot «nie Fläche» gilt der REGISTERFARBE, und Ausdehnung IST hier
+            die Auskunft — die Leseposition beantwortet «wieviel vom Dokument
+            habe ich vor mir», nicht «wo ist ein Treffer». */}
         {lese && (
           <rect x={0} y={lese.von * HOEHE} width={BREITE}
             height={Math.max(MARKE_MIN, (lese.bis - lese.von) * HOEHE)}
@@ -171,7 +145,7 @@ export function TrefferLandkarte({
           const b = markenBreite(m.anzahl);
           return (
             <rect key={m.id} x={MARKE_X + (BREITE - 2 * MARKE_X - b) / 2} y={m.von * HOEHE}
-              width={b} height={Math.max(MARKE_MIN, (m.bis - m.von) * HOEHE)}
+              width={b} height={markenHoehe(m.von, m.bis)}
               fill={`var(--reg-${register})`}>
               <title>{`${m.label} · ${m.anzahl} ${m.anzahl === 1 ? 'Fundstelle' : 'Fundstellen'}`}</title>
             </rect>
