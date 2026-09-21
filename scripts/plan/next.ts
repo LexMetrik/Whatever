@@ -4,6 +4,8 @@ import { readFileSync } from 'node:fs';
 import { parseRoadmap, ladeChronikDone } from './parse';
 import { resolve } from './aufloesen';
 import { lageBlock } from './lage';
+import { flaechenZeile, klassiere } from './gitFlaechen';
+import { sammleFakten } from './gitFlaechenSammeln';
 import { leseNotizen, notizenBefund, notizenVerzeichnis, notizenZeilen } from './notizen';
 import { postenJeDach, postenScan, postenZeile } from './postenKern';
 export { resolve, type Buckets } from './aufloesen';
@@ -60,4 +62,20 @@ if (!process.env.VITEST) {
   // `check:plan` Regel 16 (a) die Gegenprobe hält.
   const posten = postenZeile(postenJeDach(postenScan()));
   if (posten) z(posten);
+  // Git-Flächen-Zeile GANZ ZULETZT angehängt (21.9.2026, Anlass im Kopf von
+  // gitFlaechen.ts): zieht man sie ab, ist die Ausgabe darüber byte-identisch
+  // zum Stand davor. NETZFREI und ohne `gh` — plan:next fragt gh sonst nur mit
+  // `--prs`, und der Pflicht-Einstieg darf nicht am Netz hängen. Damit ist
+  // «gelandet» hier nicht unterscheidbar von «ungelandet»: die Zeile sagt
+  // darum ehrlich «zu prüfen» (§8), die Klassierung macht der Befehl.
+  // NUR ZÄHLER, keine Namen: die Namen stehen schon im Lage-Block darüber
+  // (Bug-Check 21.9.2026, Auflage 5 — keine zweite Liste derselben Sache).
+  // Sauberer Zustand ⇒ keine Zeile. Ausfall ⇒ still (§8, wie der Notizen-Block).
+  try {
+    const fakten = sammleFakten({ mitGh: false, zaehlen: false, tiefPruefen: false });
+    const flaechen = flaechenZeile(klassiere(fakten), false);
+    if (flaechen) z(flaechen);
+  } catch {
+    // git nicht verfügbar/kein Repo — der Pflicht-Einstieg degradiert still.
+  }
 }

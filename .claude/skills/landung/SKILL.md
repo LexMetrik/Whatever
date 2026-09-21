@@ -307,28 +307,28 @@ Anlässe im Wortlaut: `referenz-ci.md` §Umzug 19.9.2026.
 
 ### Session-Ende: Bau-Flächen hinterlassen keine Zweige (Lehre 8.9.2026)
 
-Beleg 8.9.2026: `referenz-ci.md` §Umzug 19.9.2026. Regel:
+Beleg: `referenz-ci.md` §Umzug 19.9.2026. Regel:
 1. **Eigene Worktrees und Branches** verlassen die Session nur gemergt oder
-   gelöscht (`git worktree remove`, Branch lokal + remote). Fertige Arbeit
-   ohne Landung = PR eröffnen (Risikopfad: ohne `--auto`, Gegenprüfung nennen),
-   nie stumm liegen lassen.
-2. **Geparkte Stände sind Tags, keine Branches:** `git tag archiv/<slug>-<datum>
-   <sha>`, Tag pushen, Branch löschen; Wiederaufnahme aus dem Tag.
-3. **Dependabot je Session einordnen:** Patch/Minor-Bumps einreihen (`gh pr
-   merge <n> --squash`, `--auto` zulässig — kein Risikopfad, kein Nachzug),
-   Hauptversionen schliessen mit Begründung — nie liegen lassen (Messung
-   8.9.2026: 113 CI-Läufe aus 13 liegenden Zweigen).
-4. **Autopilot-/Entwurfs-PRs** tragen ein Ablaufdatum in der Beschreibung;
-   danach schliessen oder entscheiden.
-5. **Den EIGENEN Worktree zuletzt entfernen — oder gar nicht** (Lehre
-   18.9.2026, Wortlaut `referenz-ci.md`): ist der Pfad weg, lösen die Hooks
-   nicht mehr auf — Bash UND Read stehen still. Reihenfolge: Doku-PR
-   einreihen und landen lassen, Branches lokal + remote, `git worktree
-   prune`, Nachkontrolle, Bericht — **erst als allerletzte Handlung** der
-   eigene Worktree. Steckt eine Session fest: Pfad neu anlegen (`git worktree
-   add --detach <pfad> main`). Nie Ersatz-Hooks schreiben.
-Wächter: `npm run plan:next` zeigt Worktrees/Branches ohne Schritt-Bezug
-(Lage-Block) — am Session-Ende lesen, nicht nur am Anfang.
+   gelöscht; fertige Arbeit ohne Landung = PR (Risikopfad: ohne `--auto`,
+   Gegenprüfung nennen). Handgriff: `npm run aufraeumen:git`
+   (`-- --ausfuehren` räumt ab) — **nur LOKAL**: Remote-Zweige ungelandeter
+   oder geparkter Arbeit von Hand (`git push origin --delete <branch>`),
+   gelandete löscht GitHub selbst. 21.9.2026: 20 Branches, 18 leere Hüllen
+   (7 gelandet, 5 `claude/*`, 6 `worktree-agent-*`), 2 ungelandet ohne PR.
+   Diese Ziffer sah nur EIGENE Flächen — daher Anzeige + Befehl (`lehren` 5).
+2. **Geparkte Stände sind Tags, keine Branches:** `git tag
+   archiv/<slug>-<datum> <sha>` pushen, Branch löschen.
+3. **Dependabot je Session einordnen:** Patch/Minor einreihen (`gh pr merge
+   <n> --squash`, `--auto` zulässig — kein Risikopfad, kein Nachzug),
+   Hauptversionen mit Begründung schliessen — nie liegen lassen (8.9.2026:
+   113 CI-Läufe aus 13 Zweigen).
+4. **Autopilot-/Entwurfs-PRs** tragen ein Ablaufdatum; danach schliessen.
+5. **Den EIGENEN Worktree zuletzt entfernen — oder gar nicht** (18.9.2026):
+   ist der Pfad weg, stehen Bash UND Read still (Hooks
+   lösen nicht mehr auf). Reihenfolge: Doku-PR landen, abräumen,
+   Nachkontrolle, Bericht — **erst zuletzt** der eigene. Festgefahren:
+   `git worktree add --detach <pfad> main`; nie Ersatz-Hooks.
+Wächter: `plan:next` (Lage-Block + Flächen-Zeile), auch am Session-Ende.
 
 ## 4 · Nachkontrolle
 
