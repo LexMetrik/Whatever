@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20000093",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2000-12-04",
@@ -61,18 +61,20 @@
     {
       "datum": "2000-12-04",
       "art": "Bundesblatt",
-      "jahr": "2001",
-      "nummer": "1183",
-      "text": "Botschaft vom 4. Dezember 2000 über die Volksinitiative \"Für den Beitritt der Schweiz zur Organisation der Vereinten Nationen (UNO)\"",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Volksinitiative \"Für den Beitritt der Schweiz zur Organisation der Vereinten Nationen (UNO)\"",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2000-12-04",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss über die Volksinitiative \"Für den Beitritt der Schweiz zur Organisation der Vereinten Nationen (UNO)\"",
-      "referendumsfrist": null
+      "jahr": "2001",
+      "nummer": "1183",
+      "text": "Botschaft vom 4. Dezember 2000 über die Volksinitiative \"Für den Beitritt der Schweiz zur Organisation der Vereinten Nationen (UNO)\"",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2001-10-05",
@@ -80,7 +82,8 @@
       "jahr": "2001",
       "nummer": "5731",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020024",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2002-03-08",
@@ -96,18 +96,20 @@
     {
       "datum": "2002-03-08",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "3709",
-      "text": "Botschaft vom 8. März 2002 zum Bundesgesetz über die Ausländerinnen und Ausländer",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Ausländerinnen und Ausländer (AuG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2002-03-08",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Ausländerinnen und Ausländer (AuG)",
-      "referendumsfrist": null
+      "jahr": "2002",
+      "nummer": "3709",
+      "text": "Botschaft vom 8. März 2002 zum Bundesgesetz über die Ausländerinnen und Ausländer",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2005-12-27",
@@ -115,7 +117,8 @@
       "jahr": "2005",
       "nummer": "7365",
       "text": null,
-      "referendumsfrist": "2006-04-06"
+      "referendumsfrist": "2006-04-06",
+      "vorlage": 1
     },
     {
       "datum": "2007-11-27",
@@ -123,7 +126,8 @@
       "jahr": "2007",
       "nummer": "5437",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

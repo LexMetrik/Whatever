@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020067",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2002-09-30",
@@ -103,10 +103,11 @@
     {
       "datum": "2002-09-30",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "6965",
-      "text": "Botschaft vom 30. September 2002 über die Massnahmen zur Entlastung des Bundeshaushaltes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über einen Rahmenkredit für die Raumplanung. Aufhebung",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2002-09-30",
@@ -114,7 +115,26 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Raumplanung (Raumplanungsgesetz, RPG). Änderung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2002-09-30",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Postgesetz. Änderung",
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2002-09-30",
+      "art": "Bundesblatt",
+      "jahr": "2002",
+      "nummer": "6965",
+      "text": "Botschaft vom 30. September 2002 über die Massnahmen zur Entlastung des Bundeshaushaltes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2002-12-24",
@@ -122,7 +142,8 @@
       "jahr": "2002",
       "nummer": "8348",
       "text": null,
-      "referendumsfrist": "2003-04-03"
+      "referendumsfrist": "2003-04-03",
+      "vorlage": 3
     },
     {
       "datum": "2002-12-24",
@@ -130,7 +151,8 @@
       "jahr": "2002",
       "nummer": "8352",
       "text": null,
-      "referendumsfrist": "2003-04-03"
+      "referendumsfrist": "2003-04-03",
+      "vorlage": 1
     },
     {
       "datum": "2003-04-22",
@@ -138,7 +160,8 @@
       "jahr": "2003",
       "nummer": "784",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2003-05-13",
@@ -146,7 +169,8 @@
       "jahr": "2003",
       "nummer": "1021",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-05-13",
@@ -154,7 +178,8 @@
       "jahr": "2003",
       "nummer": "3403",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": []

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20200056",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2020-07-01",
@@ -71,7 +71,8 @@
       "jahr": "2020",
       "nummer": "6343",
       "text": "Botschaft vom 1. Juli 2020 zur Änderung des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Anlage von Geldern aus dem Freizügigkeitsbereich der Auffangeinrichtung bei der Bundestresorerie)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-07-01",
@@ -79,7 +80,8 @@
       "jahr": "2020",
       "nummer": "6357",
       "text": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-09-29",
@@ -87,7 +89,8 @@
       "jahr": "2020",
       "nummer": "3845",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-10-06",
@@ -95,7 +98,8 @@
       "jahr": "2020",
       "nummer": "7923",
       "text": null,
-      "referendumsfrist": "2021-01-14"
+      "referendumsfrist": "2021-01-14",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020031",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2002-04-10",
@@ -82,10 +82,11 @@
     {
       "datum": "2002-04-10",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "3597",
-      "text": "Botschaft vom 10. April 2002 betreffend der Verlängerung der dringlichen Massnahmen im Bereich der Umsatzabgabe",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Änderung des Bundesbeschlusses über dringliche Massnahmen im Bereich der Umsatzabgabe",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2002-04-10",
@@ -93,7 +94,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über neue dringliche Massnahmen im Bereich der Umsatzabgabe",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2002-04-10",
+      "art": "Bundesblatt",
+      "jahr": "2002",
+      "nummer": "3597",
+      "text": "Botschaft vom 10. April 2002 betreffend der Verlängerung der dringlichen Massnahmen im Bereich der Umsatzabgabe",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2002-07-09",
@@ -101,7 +112,8 @@
       "jahr": "2002",
       "nummer": "4459",
       "text": null,
-      "referendumsfrist": "2002-10-17"
+      "referendumsfrist": "2002-10-17",
+      "vorlage": 2
     },
     {
       "datum": "2002-07-09",
@@ -109,7 +121,8 @@
       "jahr": "2002",
       "nummer": "4461",
       "text": null,
-      "referendumsfrist": "2002-10-17"
+      "referendumsfrist": "2002-10-17",
+      "vorlage": 1
     },
     {
       "datum": "2002-11-26",
@@ -117,7 +130,8 @@
       "jahr": "2002",
       "nummer": "3645",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2002-11-26",
@@ -125,7 +139,8 @@
       "jahr": "2002",
       "nummer": "3646",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": []

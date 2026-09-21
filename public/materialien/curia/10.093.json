@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20100093",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2010-10-20",
@@ -89,10 +89,11 @@
     {
       "datum": "2010-10-20",
       "art": "Bundesblatt",
-      "jahr": "2010",
-      "nummer": "7961",
-      "text": "Botschaft vom 20. Oktober 2010 zur Volksinitiative \"Für Geldspiele im Dienste des Gemeinwohls\"",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Regelung der Geldspiele zugunsten gemeinnütziger Zwecke (Gegenentwurf zur Volksinitiative \"Für Geldspiele im Dienste des Gemeinwohls\")",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2010-10-20",
@@ -100,7 +101,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesbeschluss über die Volksinitiative \"Für Geldspiele im Dienste des Gemeinwohls\"",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2010-10-20",
+      "art": "Bundesblatt",
+      "jahr": "2010",
+      "nummer": "7961",
+      "text": "Botschaft vom 20. Oktober 2010 zur Volksinitiative \"Für Geldspiele im Dienste des Gemeinwohls\"",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-09-29",
@@ -108,7 +119,8 @@
       "jahr": "2011",
       "nummer": "7401",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2011-09-30",
@@ -116,7 +128,8 @@
       "jahr": "2011",
       "nummer": "7399",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-07-03",
@@ -124,7 +137,8 @@
       "jahr": "2012",
       "nummer": "3629",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -143,7 +157,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2011-09-30",
@@ -160,7 +174,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

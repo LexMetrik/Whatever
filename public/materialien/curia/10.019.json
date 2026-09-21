@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20100019",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2010-01-20",
@@ -96,18 +96,20 @@
     {
       "datum": "2010-01-20",
       "art": "Bundesblatt",
-      "jahr": "2010",
-      "nummer": "1049",
-      "text": "Botschaft vom 20. Januar 2010 zu einer Teilrevision des Raumplanungsgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Raumplanung (Raumplanungsgesetz, RPG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2010-01-20",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Raumplanung (Raumplanungsgesetz, RPG)",
-      "referendumsfrist": null
+      "jahr": "2010",
+      "nummer": "1049",
+      "text": "Botschaft vom 20. Januar 2010 zu einer Teilrevision des Raumplanungsgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-06-26",
@@ -115,7 +117,8 @@
       "jahr": "2012",
       "nummer": "5987",
       "text": null,
-      "referendumsfrist": "2012-10-04"
+      "referendumsfrist": "2012-10-04",
+      "vorlage": 1
     },
     {
       "datum": "2014-04-23",
@@ -123,7 +126,8 @@
       "jahr": "2014",
       "nummer": "899",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

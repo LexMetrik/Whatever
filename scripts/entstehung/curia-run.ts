@@ -15,7 +15,7 @@ import {
   type CuriaShard, type CuriaSchlussabstimmung, type OdataZeile,
 } from './curia.ts';
 import {
-  CURIA_DIR, CURIA_ZUSTAND_PFAD, serialisiereCuriaZustand, type CuriaZustand,
+  CURIA_DIR, CURIA_ZUSTAND_PFAD, leseCuriaZustand, serialisiereCuriaZustand, type CuriaZustand,
 } from './curia-zustand.ts';
 
 const datumArg = process.argv.find((a) => a.startsWith('--datum='));
@@ -43,18 +43,62 @@ async function drossel(): Promise<void> {
   if (ziel > jetzt) await new Promise((r) => setTimeout(r, ziel - jetzt));
 }
 
+// ── Wiederholversuch: NUR bei Zufallsstörungen des Netzes (§17-Wurzelfix) ─────
+// BELEGTER ANLASS, 21.9.2026: der Vollabgleich starb bei 250 von 403 Geschäften an einem
+// einzelnen `ConnectTimeoutError` (`UND_ERR_CONNECT_TIMEOUT`, 10 s) und warf ~20 Minuten
+// Arbeit weg. Am 1.10.2026 läuft der Monatslauf, der die fehlenden Publikationen
+// nachschreiben soll — er würde heute an derselben Zufallsstörung scheitern.
+// GRENZE (§6.7): wiederholt wird NUR, was von selbst vorübergehen kann — ein
+// Verbindungs-/Netzfehler oder ein 5xx. Ein 4xx ist unsere Anfrage (falscher Filter,
+// falsche Entität) und wird durch Warten nicht richtig; eine fachlich unerwartete
+// Antwortform (Content-Type, `__next`, weder `d[]` noch `d.results[]`) muss sofort laut
+// scheitern, sonst verdeckte der Retry genau den Fehlertyp, den der Wächter finden soll.
+const VERSUCHE = 3;
+const BACKOFF_MS = [1000, 4000];   // exponentiell, gedeckelt — nie länger als der Lauf dauert
+
 /** Eine OData-Abfrage. `$select` nennt IMMER die Felder — nie `SELECT *` (§11.8). */
 async function odata(entitaet: string, filter: string, select?: string): Promise<OdataZeile[]> {
   const u = new URL(`${CURIA_BASIS}/${entitaet}`);
   u.searchParams.set('$filter', filter);
   if (select) u.searchParams.set('$select', select);
   u.searchParams.set('$format', 'json');
-  await drossel();
-  const res = await fetch(u, { headers: { Accept: 'application/json' } });
-  if (!res.ok) throw new Error(`Curia antwortet ${res.status} für ${entitaet} (${filter})`);
-  const typ = res.headers.get('content-type');
-  if (typ && !/json/i.test(typ)) throw new Error(`Curia antwortet Content-Type «${typ}» statt JSON für ${entitaet}`);
-  return odataZeilen(await res.json());
+  for (let versuch = 1; ; versuch += 1) {
+    // Jeder Versuch ist eine eigene Anfrage und geht darum durch denselben globalen Takt.
+    await drossel();
+    let res: Response;
+    try {
+      res = await fetch(u, { headers: { Accept: 'application/json' } });
+    } catch (e) {
+      // Verbindungsfehler (Timeout, DNS, Abbruch) — wiederholbar.
+      if (versuch >= VERSUCHE) {
+        throw new Error(
+          `Curia nicht erreichbar für ${entitaet} (${filter}) — ${VERSUCHE} Versuche: ${String(e)}`,
+          { cause: e },
+        );
+      }
+      await wiederhole(versuch, entitaet, filter, String(e));
+      continue;
+    }
+    if (res.status >= 500) {
+      // Serverseitig und vorübergehend — wiederholbar.
+      if (versuch >= VERSUCHE) throw new Error(`Curia antwortet ${res.status} für ${entitaet} (${filter}) — auch nach ${VERSUCHE} Versuchen`);
+      await wiederhole(versuch, entitaet, filter, `HTTP ${res.status}`);
+      continue;
+    }
+    if (!res.ok) throw new Error(`Curia antwortet ${res.status} für ${entitaet} (${filter})`);
+    const typ = res.headers.get('content-type');
+    if (typ && !/json/i.test(typ)) throw new Error(`Curia antwortet Content-Type «${typ}» statt JSON für ${entitaet}`);
+    // Die URL mitgeben: der Paging-Wächter in `odataZeilen` soll sagen KÖNNEN, welche
+    // Abfrage abgeschnitten wurde — eine Fehlermeldung ohne Fundstelle kostet eine Stunde.
+    return odataZeilen(await res.json(), u.toString());
+  }
+}
+
+/** Log JEDEN Wiederholversuch: ein stiller Dauer-Retry sähe sonst wie ein gesunder Lauf aus. */
+async function wiederhole(versuch: number, entitaet: string, filter: string, grund: string): Promise<void> {
+  const ms = BACKOFF_MS[Math.min(versuch - 1, BACKOFF_MS.length - 1)];
+  console.log(`curia: Versuch ${versuch}/${VERSUCHE} für ${entitaet} (${filter}) gescheitert — ${grund}; neuer Versuch in ${ms} ms`);
+  await new Promise((r) => setTimeout(r, ms));
 }
 
 const nummern = [...new Set(BOTSCHAFTEN.map((b) => b.nummer).filter((n): n is string => !!n))]
@@ -70,6 +114,8 @@ const fehlend: string[] = [];
 let beschluesseGesamt = 0;
 let vorberatungenGesamt = 0;
 let schlussGesamt = 0;
+let publikationenGesamt = 0;
+let objectiveZeilenGesamt = 0;
 
 let erledigt = 0;
 async function holeGeschaeft(nr: string): Promise<void> {
@@ -98,9 +144,13 @@ async function holeGeschaeft(nr: string): Promise<void> {
   const kommissionen = baueKommissionen(
     await odata('Preconsultation', `BusinessShortNumber eq ${q} and Language eq 'DE'`),
   );
-  const publikationen = bauePublikationen(
-    await odata('Objective', `BusinessShortNumber eq ${q} and Language eq 'DE'`),
-  );
+  // Die ROHE Zeilenzahl der amtlichen Antwort ist die Referenz der Kreuzprobe — die einzige
+  // Zahl, die KEINE unserer Identitäts-Entscheidungen teilt (die erste Runde rechnete gegen
+  // eine zweite Auszählung über dieselben sechs Felder und konnte deren Fehler darum nicht
+  // finden). Über unseren Bestand ist der Lauf verlustfrei (2055 = 2055, Vollzensus
+  // 21.9.2026); speichert ein Shard weniger, ist das ab jetzt ROT, nicht still.
+  const objectiveZeilen = await odata('Objective', `BusinessShortNumber eq ${q} and Language eq 'DE'`);
+  const publikationen = bauePublikationen(objectiveZeilen);
 
   const votes = schlussabstimmungsVotes(
     await odata('Vote', `BusinessShortNumber eq ${q} and Language eq 'DE'`, 'ID,BillNumber,Subject,VoteEnd'),
@@ -144,10 +194,14 @@ async function holeGeschaeft(nr: string): Promise<void> {
     beschluesse: beschluesse.length,
     vorberatungen: kommissionen.length,
     schlussabstimmung: schlussabstimmungen.length > 0,
+    publikationen: publikationen.length,
+    objectiveZeilen: objectiveZeilen.length,
   });
   beschluesseGesamt += beschluesse.length;
   vorberatungenGesamt += kommissionen.length;
   schlussGesamt += schlussabstimmungen.length;
+  publikationenGesamt += publikationen.length;
+  objectiveZeilenGesamt += objectiveZeilen.length;
   erledigt += 1;
   if (erledigt % 25 === 0) console.log(`curia: ${erledigt}/${nummern.length} …`);
 }
@@ -176,12 +230,36 @@ for (const f of readdirSync(CURIA_DIR)) {
 
 mkdirSync('bibliothek/register', { recursive: true });
 if (nur && existsSync(CURIA_ZUSTAND_PFAD)) {
-  console.log('curia: --nur-Lauf — Zustandsträger NICHT überschrieben (er beschreibt den Vollabgleich).');
+  // --nur berührt nur einen Ausschnitt. Den Zustandsträger deshalb FORTSCHREIBEN statt
+  // ersetzen (sonst verlören die übrigen Geschäfte ihre Zeile) — aber auch nicht
+  // unberührt lassen: die alte Zeile trüge dann den sha des ALTEN Shards, und
+  // `check:entstehung` wäre nach jedem --nur-Lauf rot, obwohl nichts kaputt ist
+  // (Korrektur 21.9.2026, §17 — Workaround an der Wurzel statt umschiffen).
+  const alt = leseCuriaZustand() ?? [];
+  const fortgeschrieben = new Map(alt.map((z) => [z.nummer, z]));
+  for (const z of zustand) fortgeschrieben.set(z.nummer, z);
+  writeFileSync(CURIA_ZUSTAND_PFAD, serialisiereCuriaZustand([...fortgeschrieben.values()]), 'utf8');
+  console.log(
+    `curia: --nur-Lauf — ${zustand.length} Zeile(n) im Zustandsträger fortgeschrieben, `
+    + `${fortgeschrieben.size - zustand.length} unberührt (der Vollabgleich schreibt ihn ganz neu).`,
+  );
 } else {
   writeFileSync(CURIA_ZUSTAND_PFAD, serialisiereCuriaZustand(zustand), 'utf8');
 }
 
 console.log(`curia: ${zustand.length}/${nummern.length} Geschäfte → ${CURIA_DIR}`);
 console.log(`  Rats-Beschlüsse ${beschluesseGesamt} · Kommissions-Vorberatungen ${vorberatungenGesamt} · Schlussabstimmungen ${schlussGesamt}`);
+// BERICHTIGUNG 21.9.2026 (zweite Runde, F8): hier standen DREI Zahlen mit der Lesart
+// «gespeichert ≠ distinkt = kollabiert, distinkt < roh = bloss doppelt geliefert». Die
+// mittlere Zahl war keine unabhängige Referenz — sie rechnete über dieselben sechs Felder
+// wie der Schlüssel und nannte darum Zeilen «Doppellieferungen», die sich in der Vorlage
+// unterscheiden (08.053: angeblich 4 Doppel, tatsächlich 4 eigene Fundstellen). Sie ist
+// ersatzlos weg; verglichen wird gegen die ROHE amtliche Zeilenzahl.
+// §8: die Zeile behauptet keine Vollständigkeit, sie nennt nur, was sie gemessen hat.
+console.log(
+  `  Publikationen ${publikationenGesamt} gespeichert · ${objectiveZeilenGesamt} rohe amtliche `
+  + 'Objective-Zeile(n) geliefert'
+  + `${publikationenGesamt === objectiveZeilenGesamt ? '' : ' ← ZUSAMMENGEFALLEN, check:entstehung wird rot'}`,
+);
 fehlend.sort();
 if (fehlend.length) console.log(`  ohne Business-Datensatz (${fehlend.length}): ${fehlend.join(', ')}`);

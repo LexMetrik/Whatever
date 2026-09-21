@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020078",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2002-12-09",
@@ -82,18 +82,29 @@
     {
       "datum": "2002-12-09",
       "art": "Bundesblatt",
-      "jahr": "2003",
-      "nummer": "1531",
-      "text": "Botschaft vom 9. Dezember 2002 über die neue Finanzordnung (NFO)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über eine neue Finanzordnung",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2002-12-09",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesbeschluss über eine neue Finanzordnung",
-      "referendumsfrist": null
+      "text": "Bundesbeschluss über einen Sondersatz der Mehrwertsteuer für Beherbergungsleistungen",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2002-12-09",
+      "art": "Bundesblatt",
+      "jahr": "2003",
+      "nummer": "1531",
+      "text": "Botschaft vom 9. Dezember 2002 über die neue Finanzordnung (NFO)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2004-03-30",
@@ -101,7 +112,8 @@
       "jahr": "2004",
       "nummer": "1363",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2006-04-04",
@@ -109,7 +121,8 @@
       "jahr": "2006",
       "nummer": "1057",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -128,7 +141,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

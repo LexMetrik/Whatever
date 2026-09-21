@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20190044",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2019-06-26",
@@ -78,7 +78,8 @@
       "jahr": "2019",
       "nummer": "5451",
       "text": "Botschaft vom 26. Juni 2019 zur Änderung des Geldwäschereigesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-06-26",
@@ -86,7 +87,8 @@
       "jahr": "2019",
       "nummer": "5555",
       "text": "Bundesgesetz über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereigesetz, GwG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2021-03-30",
@@ -94,7 +96,8 @@
       "jahr": "2021",
       "nummer": "668",
       "text": null,
-      "referendumsfrist": "2021-07-08"
+      "referendumsfrist": "2021-07-08",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -113,7 +116,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

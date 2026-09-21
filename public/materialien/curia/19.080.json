@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20190080",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2019-11-20",
@@ -85,7 +85,8 @@
       "jahr": "2020",
       "nummer": "1",
       "text": "Botschaft vom 20. November 2019 zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (Modernisierung der Aufsicht in der 1. Säule und Optimierung in der 2. Säule der Alters-, Hinterlassenen- und Invalidenvorsorge)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-11-20",
@@ -93,7 +94,8 @@
       "jahr": "2020",
       "nummer": "109",
       "text": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Modernisierung der Aufsicht)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2022-06-28",
@@ -101,7 +103,8 @@
       "jahr": "2022",
       "nummer": "1563",
       "text": null,
-      "referendumsfrist": "2022-10-06"
+      "referendumsfrist": "2022-10-06",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -120,7 +123,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

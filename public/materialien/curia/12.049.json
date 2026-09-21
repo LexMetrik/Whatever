@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20120049",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2012-04-18",
@@ -57,7 +57,8 @@
       "jahr": "2012",
       "nummer": "4769",
       "text": "Botschaft vom 18. April 2012 zur Änderung des Bundesgesetzes über die direkte Bundessteuer (Finanzielle Oberaufsicht über die direkte Bundessteuer)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-04-18",
@@ -65,7 +66,8 @@
       "jahr": "2012",
       "nummer": "4781",
       "text": "Bundesgesetz über die direkte Bundessteuer (DBG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-12-28",
@@ -73,7 +75,8 @@
       "jahr": "2012",
       "nummer": "9723",
       "text": null,
-      "referendumsfrist": "2013-04-07"
+      "referendumsfrist": "2013-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2013-05-22",
@@ -81,7 +84,8 @@
       "jahr": "2013",
       "nummer": "1345",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

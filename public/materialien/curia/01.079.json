@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010079",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2001-12-03",
@@ -96,18 +96,20 @@
     {
       "datum": "2001-12-03",
       "art": "Bundesblatt",
-      "jahr": "2001",
-      "nummer": "6401",
-      "text": "Botschaft vom 30. November 2001 über die Änderung des Bundesgesetzes über die politischen Rechte",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die politischen Rechte",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2001-12-03",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die politischen Rechte",
-      "referendumsfrist": null
+      "jahr": "2001",
+      "nummer": "6401",
+      "text": "Botschaft vom 30. November 2001 über die Änderung des Bundesgesetzes über die politischen Rechte",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2002-07-02",
@@ -115,7 +117,8 @@
       "jahr": "2002",
       "nummer": "4383",
       "text": null,
-      "referendumsfrist": "2002-10-10"
+      "referendumsfrist": "2002-10-10",
+      "vorlage": 1
     },
     {
       "datum": "2002-10-22",
@@ -123,7 +126,8 @@
       "jahr": "2002",
       "nummer": "3193",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

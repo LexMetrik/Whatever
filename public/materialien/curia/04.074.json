@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20040074",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2004-11-17",
@@ -75,18 +75,20 @@
     {
       "datum": "2004-11-17",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "575",
-      "text": "Botschaft vom 17. November 2004 zum Bundesgesetz über die Besteuerung von Mitarbeiterbeteiligungen",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Besteuerung von Mitarbeiterbeteiligungen",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2004-11-17",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Besteuerung von Mitarbeiterbeteiligungen",
-      "referendumsfrist": null
+      "jahr": "2005",
+      "nummer": "575",
+      "text": "Botschaft vom 17. November 2004 zum Bundesgesetz über die Besteuerung von Mitarbeiterbeteiligungen",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-12-28",
@@ -94,7 +96,8 @@
       "jahr": "2010",
       "nummer": "8987",
       "text": null,
-      "referendumsfrist": "2011-04-07"
+      "referendumsfrist": "2011-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2011-07-12",
@@ -102,7 +105,8 @@
       "jahr": "2011",
       "nummer": "3259",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -121,7 +125,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

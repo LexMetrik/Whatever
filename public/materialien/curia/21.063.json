@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20210063",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2021-09-17",
@@ -155,7 +155,8 @@
       "jahr": "2021",
       "nummer": "2383",
       "text": "Botschaft vom 17. September 2021 zur Volksinitiative «Maximal 10% des Einkommens für die Krankenkassenprämien (Prämien-Entlastungs-Initiative)» und zum indirekten Gegenvorschlag (Änderung des Krankenversicherungsgesetzes)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2021-09-17",
@@ -163,7 +164,8 @@
       "jahr": "2021",
       "nummer": "2384",
       "text": "Bundesbeschluss über die Volksinitiative «Maximal 10 % des Einkommens für die Krankenkassenprämien (Prämien-Entlastungs-Initiative)»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2021-09-17",
@@ -171,7 +173,8 @@
       "jahr": "2021",
       "nummer": "2385",
       "text": "Bundesgesetz über die Krankenversicherung (KVG) (Prämienverbilligung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2023-10-10",
@@ -179,7 +182,8 @@
       "jahr": "2023",
       "nummer": "2285",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2023-10-10",
@@ -187,7 +191,8 @@
       "jahr": "2023",
       "nummer": "2303",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2023-11-28",
@@ -195,7 +200,8 @@
       "jahr": "2023",
       "nummer": "630",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2024-10-01",
@@ -203,7 +209,8 @@
       "jahr": "2024",
       "nummer": "2413",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2025-09-17",
@@ -211,7 +218,8 @@
       "jahr": "2025",
       "nummer": "568",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -230,7 +238,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2023-09-29",
@@ -247,7 +255,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

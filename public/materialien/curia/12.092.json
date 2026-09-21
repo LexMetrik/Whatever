@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20120092",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2012-11-21",
@@ -92,7 +92,8 @@
       "jahr": "2012",
       "nummer": "9439",
       "text": "Botschaft vom 21. November 2012 zur Teilrevison des Krankversicherungsgesetzes (Vorübergehende Wiedereinführung der bedarfsabhängigen Zulassung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-11-21",
@@ -100,7 +101,8 @@
       "jahr": "2012",
       "nummer": "9453",
       "text": "Bundesgesetz über die Krankenversicherung (KVG) (Vorübergehende Wiedereinführung der bedarfsabhängigen Zulassung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2013-07-02",
@@ -108,7 +110,8 @@
       "jahr": "2013",
       "nummer": "2065",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2013-07-02",
@@ -116,7 +119,8 @@
       "jahr": "2013",
       "nummer": "4837",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -135,7 +139,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20230051",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2023-06-21",
@@ -183,7 +183,8 @@
       "jahr": "2023",
       "nummer": "1602",
       "text": "Botschaft vom 21. Juni 2023 zur Änderung des Energiegesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2023-06-21",
@@ -191,7 +192,8 @@
       "jahr": "2023",
       "nummer": "1603",
       "text": "Energiegesetz (EnG) ",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2024-12-19",
@@ -199,7 +201,8 @@
       "jahr": null,
       "nummer": null,
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2025-02-25",
@@ -207,7 +210,8 @@
       "jahr": null,
       "nummer": null,
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2025-04-01",
@@ -215,7 +219,8 @@
       "jahr": "2025",
       "nummer": "1101",
       "text": null,
-      "referendumsfrist": "2025-07-10"
+      "referendumsfrist": "2025-07-10",
+      "vorlage": 2
     },
     {
       "datum": "2025-08-14",
@@ -223,7 +228,8 @@
       "jahr": "2025",
       "nummer": "505",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2025-10-07",
@@ -231,7 +237,8 @@
       "jahr": "2025",
       "nummer": "2895",
       "text": null,
-      "referendumsfrist": "2026-01-15"
+      "referendumsfrist": "2026-01-15",
+      "vorlage": 1
     },
     {
       "datum": "2026-02-27",
@@ -239,7 +246,8 @@
       "jahr": "2026",
       "nummer": "99",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -258,7 +266,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2025-09-26",
@@ -275,7 +283,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

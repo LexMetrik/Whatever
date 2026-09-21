@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20100075",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2010-09-02",
@@ -68,10 +68,11 @@
     {
       "datum": "2010-09-02",
       "art": "Bundesblatt",
-      "jahr": "2010",
-      "nummer": "7095",
-      "text": "Botschaft vom 1. September 2010 zum Konsolidierungsprogramm 2012-2013 für den Bundeshaushalt sowie zu Optimierungen bei der Verwaltung von Personaldaten und bei den Anlagen von PUBLICA (KOP12/13)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über Optimierungen bei der Verwaltung von Personaldaten und bei den Anlagen von PUBLICA",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2010-09-02",
@@ -79,7 +80,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über das Konsolidierungsprogramm 2012-2013 (KOPG 12/13)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2010-09-02",
+      "art": "Bundesblatt",
+      "jahr": "2010",
+      "nummer": "7095",
+      "text": "Botschaft vom 1. September 2010 zum Konsolidierungsprogramm 2012-2013 für den Bundeshaushalt sowie zu Optimierungen bei der Verwaltung von Personaldaten und bei den Anlagen von PUBLICA (KOP12/13)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-06-28",
@@ -87,7 +98,8 @@
       "jahr": "2011",
       "nummer": "4915",
       "text": null,
-      "referendumsfrist": "2011-10-06"
+      "referendumsfrist": "2011-10-06",
+      "vorlage": 2
     },
     {
       "datum": "2011-12-06",
@@ -95,7 +107,8 @@
       "jahr": "2011",
       "nummer": "5583",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +127,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

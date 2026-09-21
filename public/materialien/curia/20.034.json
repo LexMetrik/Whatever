@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20200034",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2020-03-13",
@@ -85,7 +85,8 @@
       "jahr": "2020",
       "nummer": "3309",
       "text": "Botschaft vom 13. März 2020 zur Änderung des Bundesgesetzes über das Internationale Privatrecht (Erbrecht)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2020-03-13",
@@ -93,7 +94,8 @@
       "jahr": "2020",
       "nummer": "3353",
       "text": "Bundesgesetz über das Internationale Privatrecht (IPRG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2024-01-09",
@@ -101,7 +103,8 @@
       "jahr": "2024",
       "nummer": "32",
       "text": null,
-      "referendumsfrist": "2024-04-18"
+      "referendumsfrist": "2024-04-18",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -120,7 +123,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

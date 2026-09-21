@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20060079",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2006-09-22",
@@ -54,18 +54,20 @@
     {
       "datum": "2006-09-22",
       "art": "Bundesblatt",
-      "jahr": "2006",
-      "nummer": "8009",
-      "text": "Botschaft vom 22. September 2006 über die Änderung des Parlamentsgesetzes (Unvereinbarkeit mit Mitgliedschaft in ausserparlamentarischen Kommissionen)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2006-09-22",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
-      "referendumsfrist": null
+      "jahr": "2006",
+      "nummer": "8009",
+      "text": "Botschaft vom 22. September 2006 über die Änderung des Parlamentsgesetzes (Unvereinbarkeit mit Mitgliedschaft in ausserparlamentarischen Kommissionen)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2007-04-03",
@@ -73,7 +75,8 @@
       "jahr": "2007",
       "nummer": "2291",
       "text": null,
-      "referendumsfrist": "2007-07-12"
+      "referendumsfrist": "2007-07-12",
+      "vorlage": 1
     },
     {
       "datum": "2007-09-04",
@@ -81,7 +84,8 @@
       "jahr": "2007",
       "nummer": "4129",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

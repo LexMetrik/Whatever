@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050092",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-12-21",
@@ -152,18 +152,29 @@
     {
       "datum": "2005-12-21",
       "art": "Bundesblatt",
-      "jahr": "2006",
-      "nummer": "1085",
-      "text": "Botschaft vom 21. Dezember 2005 zur Vereinheitlichung des Strafprozessrechts",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Schweizerische Jugendstrafprozessordnung (Jugendstrafprozessordnung, JStPO)",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2005-12-21",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Schweizerische Jugendstrafprozessordnung (Jugendstrafprozessordnung, JStPO)",
-      "referendumsfrist": null
+      "text": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2005-12-21",
+      "art": "Bundesblatt",
+      "jahr": "2006",
+      "nummer": "1085",
+      "text": "Botschaft vom 21. Dezember 2005 zur Vereinheitlichung des Strafprozessrechts",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2007-08-22",
@@ -171,7 +182,8 @@
       "jahr": "2008",
       "nummer": "3121",
       "text": "Zusatzbericht vom 22. August 2007 (Erläuterung der Änderung des bundesrätlichen Entwurfs vom 21.12.2005 zu einer schweizerischen Jugendstrafprozessordnung, JStPO)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2007-10-16",
@@ -179,7 +191,8 @@
       "jahr": "2007",
       "nummer": "6977",
       "text": null,
-      "referendumsfrist": "2008-01-24"
+      "referendumsfrist": "2008-01-24",
+      "vorlage": 1
     },
     {
       "datum": "2009-03-31",
@@ -187,7 +200,8 @@
       "jahr": "2009",
       "nummer": "1993",
       "text": null,
-      "referendumsfrist": "2009-07-09"
+      "referendumsfrist": "2009-07-09",
+      "vorlage": 2
     },
     {
       "datum": "2010-04-27",
@@ -195,7 +209,8 @@
       "jahr": "2010",
       "nummer": "1573",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2010-05-19",
@@ -203,7 +218,8 @@
       "jahr": "2010",
       "nummer": "1881",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -222,7 +238,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2009-03-20",
@@ -239,7 +255,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

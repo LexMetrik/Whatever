@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20160027",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2016-03-04",
@@ -85,7 +85,8 @@
       "jahr": "2016",
       "nummer": "3007",
       "text": "Botschaft vom 4. März 2016 zur Änderung des Ausländergesetzes (Steuerung der Zuwanderung und Vollzugsverbesserungen bei den Freizügigkeitsabkommen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2016-03-04",
@@ -93,7 +94,8 @@
       "jahr": "2016",
       "nummer": "3079",
       "text": "Bundesgesetz über die Ausländerinnen und Ausländer (Ausländergesetz, AuG) (Steuerung der Zuwanderung und Vollzugsverbesserungen bei den Freizügigkeitsabkommen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-12-28",
@@ -101,7 +103,8 @@
       "jahr": "2016",
       "nummer": "8917",
       "text": null,
-      "referendumsfrist": "2017-04-07"
+      "referendumsfrist": "2017-04-07",
+      "vorlage": 1
     },
     {
       "datum": "2018-02-20",
@@ -109,7 +112,8 @@
       "jahr": "2018",
       "nummer": "733",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -128,7 +132,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

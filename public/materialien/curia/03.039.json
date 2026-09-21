@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20030039",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2003-05-28",
@@ -54,18 +54,20 @@
     {
       "datum": "2003-05-28",
       "art": "Bundesblatt",
-      "jahr": "2003",
-      "nummer": "4357",
-      "text": "Botschaft vom 28. Mai 2003 zu einer Änderung des Bundesgesetzes über den Erwerb von Grundstücken durch Personen im Ausland",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über den Erwerb von Grundstücken durch Personen im Ausland (BewG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-05-28",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über den Erwerb von Grundstücken durch Personen im Ausland (BewG)",
-      "referendumsfrist": null
+      "jahr": "2003",
+      "nummer": "4357",
+      "text": "Botschaft vom 28. Mai 2003 zu einer Änderung des Bundesgesetzes über den Erwerb von Grundstücken durch Personen im Ausland",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2004-10-19",
@@ -73,7 +75,8 @@
       "jahr": "2004",
       "nummer": "5499",
       "text": null,
-      "referendumsfrist": "2005-01-27"
+      "referendumsfrist": "2005-01-27",
+      "vorlage": 1
     },
     {
       "datum": "2005-03-22",
@@ -81,7 +84,8 @@
       "jahr": "2005",
       "nummer": "1337",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

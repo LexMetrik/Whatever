@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20060037",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2006-05-17",
@@ -54,18 +54,20 @@
     {
       "datum": "2006-05-17",
       "art": "Bundesblatt",
-      "jahr": "2006",
-      "nummer": "4471",
-      "text": "Botschaft vom 17. Mai 2006 zu den Sofortmassnahmen im Bereich der Ehepaarbesteuerung",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die direkte Bundessteuer (DBG) (Sofortmassnahmen im Bereich der Ehepaarbesteuerung)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2006-05-17",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die direkte Bundessteuer (DBG) (Sofortmassnahmen im Bereich der Ehepaarbesteuerung)",
-      "referendumsfrist": null
+      "jahr": "2006",
+      "nummer": "4471",
+      "text": "Botschaft vom 17. Mai 2006 zu den Sofortmassnahmen im Bereich der Ehepaarbesteuerung",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2006-10-17",
@@ -73,7 +75,8 @@
       "jahr": "2006",
       "nummer": "8339",
       "text": null,
-      "referendumsfrist": "2007-01-25"
+      "referendumsfrist": "2007-01-25",
+      "vorlage": 1
     },
     {
       "datum": "2007-03-13",
@@ -81,7 +84,8 @@
       "jahr": "2007",
       "nummer": "615",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

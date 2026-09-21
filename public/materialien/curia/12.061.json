@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20120061",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2012-06-01",
@@ -43,7 +43,8 @@
       "jahr": "2012",
       "nummer": "6669",
       "text": "Botschaft vom 1. Juni 2012 zum Bundesbeschluss über die Genehmigung der Änderungen der Bankenverordnung und der Eigenmittelverordnung (too big to fail)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-06-01",
@@ -51,7 +52,8 @@
       "jahr": "2012",
       "nummer": "6679",
       "text": "Bundesbeschluss über die Genehmigung der Änderungen der Bankenverordnung und der Eigenmittelverordnung (too big to fail)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2012-10-16",
@@ -59,7 +61,8 @@
       "jahr": "2012",
       "nummer": "8395",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20070072",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2007-09-12",
@@ -82,18 +82,20 @@
     {
       "datum": "2007-09-12",
       "art": "Bundesblatt",
-      "jahr": "2007",
-      "nummer": "6713",
-      "text": "Botschaft vom 12. September 2007 zum Verfassungsartikel über die Forschung am Menschen",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss zu einem Verfassungsartikel über die Forschung am Menschen",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2007-09-12",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss zu einem Verfassungsartikel über die Forschung am Menschen",
-      "referendumsfrist": null
+      "jahr": "2007",
+      "nummer": "6713",
+      "text": "Botschaft vom 12. September 2007 zum Verfassungsartikel über die Forschung am Menschen",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2009-10-06",
@@ -101,7 +103,8 @@
       "jahr": "2009",
       "nummer": "6649",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2010-04-27",
@@ -109,7 +112,8 @@
       "jahr": "2010",
       "nummer": "1569",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -128,7 +132,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

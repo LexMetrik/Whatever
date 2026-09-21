@@ -4205,6 +4205,25 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
    deckt `.fc-schalter` bewusst noch nicht ab: die Sweeps laufen nur auf den
    Leser-Seiten, nicht auf /rechtsprechung oder /suche — kein Regressions-Loch,
    weil vorher `.lc-chip-zeile button` dort ebenfalls nie gemessen wurde). */
+/* ─── W2·28-NACHZUG (21.9.2026) · DIE TYPO-STUFE IST EINE AUFRUF-ENTSCHEIDUNG ─
+   ANLASS: Sichtprüfung nach W2·28, @390 hell, `/gesetze/bund/OR` «Kündigung».
+   Der Schalter «Hervorhebung» in der Zähler-Zeile der Such-Zone las sich als
+   Hauptsache der Zeile — GEMESSEN 13 px/500 gegen `text-micro` (11 px/400) an
+   allen drei Nachbarn derselben Zeile (Zähler, «Treffer anzeigen →», ‹ ›).
+   URSACHE war nicht der Wert, sondern die SCHICHT: der Block unten steht
+   ungeschichtet und schlägt jede Utility der Aufrufstelle — ein `text-micro`
+   dort war stumm (13 px/500 trotz gesetzter Klasse, gemessen).
+   FIX nach dem Muster von GB-15 weiter unten (`.lc-topbar-griff`): die drei
+   TYPO-Eigenschaften ziehen nach `@layer components` und verlieren damit gegen
+   jede Schrift-Utility — genau das, was ein Baustein tun soll. Die IDENTITÄT
+   des Schalters (kein Rahmen, keine Fläche, ✓ als `::before`, `--tap-ziel`,
+   Zustands-Tinte) bleibt ungeschichtet und damit unverändert stark.
+   Die ANDERE Fundstelle, `ui/FacettenGruppe.tsx`, setzt KEINE Schrift-Utility
+   (`className="fc-schalter"`) und bekommt weiter 13 px/500 — /rechtsprechung
+   und /suche sind unberührt (nachgemessen, Bericht 21.9.2026). */
+@layer components {
+  .fc-schalter { font-size: 0.8125rem; line-height: 1.5; font-weight: 500; }
+}
 .fc-schalter {
   appearance: none; background: none; border: 0; border-radius: 0;
   display: inline-flex; align-items: baseline; gap: 0.25rem;
@@ -4212,7 +4231,6 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
   padding: 0.25rem 0;
   cursor: pointer;
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 0.8125rem; line-height: 1.5; font-weight: 500;
   color: var(--ink-500);
   border-bottom: 2px solid transparent;
   transition: color .15s, border-color .15s;

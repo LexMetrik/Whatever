@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20120100",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2012-12-19",
@@ -57,7 +57,8 @@
       "jahr": "2013",
       "nummer": "661",
       "text": "Botschaft vom 19. Dezember 2012 zur Genehmigung des Übereinkommens vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-12-19",
@@ -65,7 +66,8 @@
       "jahr": "2013",
       "nummer": "723",
       "text": "Bundesbeschluss über die Genehmigung des Übereinkommens über die Rechte von Menschen mit Behinderungen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2013-12-27",
@@ -73,7 +75,8 @@
       "jahr": "2013",
       "nummer": "9703",
       "text": null,
-      "referendumsfrist": "2014-04-06"
+      "referendumsfrist": "2014-04-06",
+      "vorlage": 1
     },
     {
       "datum": "2014-05-20",
@@ -81,7 +84,8 @@
       "jahr": "2014",
       "nummer": "1117",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20020032",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2002-04-10",
@@ -82,18 +82,29 @@
     {
       "datum": "2002-04-10",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "4397",
-      "text": "Botschaft vom 10. April 2002 zur Änderung des Strassenverkehrsgesetzes und des Versicherungsaufsichtsgesetzes (Übernahme des Inhalts der EG-Besucherschutzrichtlinie RL 2000/26/EG)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz betreffend die Aufsicht über die privaten Versicherungseinrichtungen (Versicherungsaufsichtsgesetz, VAG)",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2002-04-10",
       "art": "Bundesblatt",
       "jahr": null,
       "nummer": null,
-      "text": "Bundesgesetz betreffend die Aufsicht über die privaten Versicherungseinrichtungen (Versicherungsaufsichtsgesetz, VAG)",
-      "referendumsfrist": null
+      "text": "Strassenverkehrsgesetz (SVG)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2002-04-10",
+      "art": "Bundesblatt",
+      "jahr": "2002",
+      "nummer": "4397",
+      "text": "Botschaft vom 10. April 2002 zur Änderung des Strassenverkehrsgesetzes und des Versicherungsaufsichtsgesetzes (Übernahme des Inhalts der EG-Besucherschutzrichtlinie RL 2000/26/EG)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2002-10-15",
@@ -101,7 +112,8 @@
       "jahr": "2002",
       "nummer": "6522",
       "text": null,
-      "referendumsfrist": "2003-01-23"
+      "referendumsfrist": "2003-01-23",
+      "vorlage": 2
     },
     {
       "datum": "2002-10-15",
@@ -109,7 +121,8 @@
       "jahr": "2002",
       "nummer": "6563",
       "text": null,
-      "referendumsfrist": "2003-01-23"
+      "referendumsfrist": "2003-01-23",
+      "vorlage": 1
     },
     {
       "datum": "2003-01-28",
@@ -117,7 +130,8 @@
       "jahr": "2003",
       "nummer": "222",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-01-28",
@@ -125,7 +139,8 @@
       "jahr": "2003",
       "nummer": "232",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": []

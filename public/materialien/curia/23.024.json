@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20230024",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2023-02-22",
@@ -57,7 +57,8 @@
       "jahr": "2023",
       "nummer": "703",
       "text": "Botschaft vom 22. Februar 2023 zu einer Änderung des Eisenbahngesetzes (Umsetzung der technischen Säule des 4. EU-Eisenbahnpakets)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2023-02-22",
@@ -65,7 +66,8 @@
       "jahr": "2023",
       "nummer": "704",
       "text": "Eisenbahngesetz (EBG) (Umsetzung der technischen Säule des 4. EU-Eisenbahnpakets)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2023-10-10",
@@ -73,7 +75,8 @@
       "jahr": "2023",
       "nummer": "2300",
       "text": null,
-      "referendumsfrist": "2024-01-18"
+      "referendumsfrist": "2024-01-18",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -92,7 +95,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

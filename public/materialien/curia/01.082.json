@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010082",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2001-12-19",
@@ -117,10 +117,11 @@
     {
       "datum": "2001-12-19",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "3148",
-      "text": "Botschaft vom 19. Dezember 2001 zur Revision des Obligationenrechts (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsgesetz, RAG)",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2001-12-19",
@@ -128,7 +129,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Obligationenrecht (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht (OR)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2001-12-19",
+      "art": "Bundesblatt",
+      "jahr": "2002",
+      "nummer": "3148",
+      "text": "Botschaft vom 19. Dezember 2001 zur Revision des Obligationenrechts (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2004-06-23",
@@ -136,7 +147,8 @@
       "jahr": "2004",
       "nummer": "3969",
       "text": "Zusatzbotschaft vom 23. Juni 2004 zur Änderung des Obligationenrechts (Revisionspflicht im Gesellschaftsrecht) sowie zum Bundesgesetz über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2005-12-27",
@@ -144,7 +156,8 @@
       "jahr": "2005",
       "nummer": "7289",
       "text": null,
-      "referendumsfrist": "2006-04-06"
+      "referendumsfrist": "2006-04-06",
+      "vorlage": 1
     },
     {
       "datum": "2005-12-27",
@@ -152,7 +165,8 @@
       "jahr": "2005",
       "nummer": "7349",
       "text": null,
-      "referendumsfrist": "2006-04-06"
+      "referendumsfrist": "2006-04-06",
+      "vorlage": 2
     },
     {
       "datum": "2007-08-28",
@@ -160,7 +174,8 @@
       "jahr": "2007",
       "nummer": "3971",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2007-10-30",
@@ -168,7 +183,8 @@
       "jahr": "2007",
       "nummer": "4791",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -187,7 +203,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2005-12-16",
@@ -204,7 +220,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

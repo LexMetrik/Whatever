@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240075",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2024-08-22",
@@ -102,7 +102,8 @@
       "jahr": "2024",
       "nummer": "2319",
       "text": "Bundesbeschluss über die Genehmigung des Abkommens zwischen der Schweiz, Deutschland und Italien über Solidaritätsmassnahmen zur Gewährleistung der sicheren Gasversorgung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2024-08-22",
@@ -110,7 +111,8 @@
       "jahr": "2024",
       "nummer": "2320",
       "text": "Bundesbeschluss über einen Verpflichtungskredit zur Gewährung einer staatlichen Garantie im Rahmen des Abkommens über Solidaritätsmassnahmen zwischen der Schweiz, Deutschland und Italien zur Gewährleistung der sicheren Gasversorgung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2024-08-22",
@@ -118,7 +120,8 @@
       "jahr": "2024",
       "nummer": "2321",
       "text": "Bundesbeschluss über einen Verpflichtungskredit zur Finanzierung von Solidaritätsmassnahmen im Rahmen des Abkommens zwischen der Schweiz, Deutschland und Italien über Solidaritätsmassnahmen zur Gewährleistung der sicheren Gasversorgung",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2024-08-22",
@@ -126,7 +129,8 @@
       "jahr": "2024",
       "nummer": "2322",
       "text": "Abkommen über Solidaritätsmassnahmen zur Gewährleistung der sicheren Gasversorgung zwischen der Regierung der Bundesrepublik Deutschland, der Regierung der Schweizerischen Eidgenossenschaft und der Regierung der Italienischen Republik",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-08-28",
@@ -134,7 +138,8 @@
       "jahr": "2024",
       "nummer": "2318",
       "text": "Botschaft vom 28. August 2024 zur Genehmigung des Abkommens über Solidaritätsmassnahmen zur Gewährleistung der sicheren Gasversorgung zwischen Deutschland, der Schweiz und Italien",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2025-04-01",
@@ -142,7 +147,8 @@
       "jahr": "2025",
       "nummer": "1116",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-04-01",
@@ -150,7 +156,17 @@
       "jahr": "2025",
       "nummer": "1118",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2025-04-01",
+      "art": "Bundesblatt",
+      "jahr": "2025",
+      "nummer": "1118",
+      "text": null,
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2025-09-25",
@@ -158,7 +174,8 @@
       "jahr": "2025",
       "nummer": "589",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -177,7 +194,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

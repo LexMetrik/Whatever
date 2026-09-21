@@ -51,10 +51,37 @@ import {
 //     Herkunfts-Badge, bei ausgeschaltetem Apparat mit dem Zusatz
 //     «(ausgeblendet)» (§8) — statt dass der Sprung die Ansicht still umschaltet.
 
+// ─── W2·28 · L-2 · DER SCHALTER «HERVORHEBUNG», UND WARUM ER HIER WOHNT ──────
+//
+// Ein Schalter blendet Hervorhebung UND Treffer-Marken gemeinsam aus — beides
+// ist dieselbe Auskunft in zwei Darstellungen (§5). Der Zustand steht in DIESEM
+// Modul und nicht im V3-Adapter, weil er dorthin gehört, wo die Hervorhebung
+// entsteht: `useSuchTreffer` gleich darunter nimmt ihn entgegen, der Adapter
+// reicht ihn nur weiter. (Zweiter, mechanischer Grund, benannt statt
+// verschwiegen: `v3/leserV3Modell.ts` steht bei 420/420 der Schlankheits-Sonde
+// `src/tests/leser-v3-fundament.test.ts` und hat keine freie Zeile — was jene
+// Sonde selbst als offene Klemme vermerkt. Verlagern statt Grenze aufweichen.)
+//
+// ZURÜCK FÄLLT ER BEIM RENDER, NICHT IN EINEM EFFEKT — dasselbe Muster wie der
+// Gültigkeits-Schlüssel der Treffer-Navigation weiter unten: ein Effekt, der
+// den Schalter zurücksetzt, wäre ein Kaskaden-Render
+// (react-hooks/set-state-in-effect) und liesse ihn einen Frame lang falsch
+// stehen. Wer das Feld leert, bekommt beim nächsten Suchen wieder Hervorhebung
+// und Marken — ein Schalter, der stumm über Suchen hinweg wirkte, liesse
+// Treffer verschwinden, ohne dass jemand ihn gesetzt zu haben glaubt (§8,
+// dieselbe Begründung wie beim Suchbereich).
+export function useMarkenSchalter(sucheFeldLeer: boolean): {
+  markenAus: boolean;
+  setzeMarkenAus: (aus: boolean) => void;
+} {
+  const [markenAusRoh, setzeMarkenAus] = useState(false);
+  return { markenAus: !sucheFeldLeer && markenAusRoh, setzeMarkenAus };
+}
+
 export function useSuchTreffer({
   erlassKey, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
   internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel,
-  bereich = 'alles',
+  bereich = 'alles', markenAus = false,
 }: {
   /** Erlass-Schlüssel = Cache-Identität des Index (§4.1: EIN Eintrag je Pane). */
   erlassKey: string | null;
@@ -84,6 +111,16 @@ export function useSuchTreffer({
    *  Verhalten vor H2 — die Ist-Huelle reicht ihn nicht durch und aendert sich
    *  dadurch nicht (FL-4). */
   bereich?: SuchBereich;
+  /** W2·28 · L-2 — der Leser hat Hervorhebung UND Treffer-Marken weggeschaltet.
+   *
+   *  Er greift HIER und nicht per CSS, und das ist kein Stil-Entscheid: die
+   *  Highlight-Registry (`CSS.highlights`) ist dokument-global, eine
+   *  Abschalt-Regel über einen Vorfahren-Selektor wäre im Split-View eine
+   *  Aussage über beide Panes. An der Quelle abgeschaltet gilt der Schalter
+   *  genau für DIESE Leser-Instanz — dieselbe Grenze, die `highlightInstanz`
+   *  seit A35 zieht. Zähler, Trefferliste und ↑↓-Folge bleiben unberührt: der
+   *  Schalter nimmt die FARBE, nicht die Auskunft (§8). */
+  markenAus?: boolean;
 }) {
   // Wurzel der Lesespalte — der Bereich, in dem Artikel gemalt werden. Bis S8
   // zeigte dieser Ref auf den (gefilterten) Trefferblock; seit die Lesespalte
@@ -162,10 +199,16 @@ export function useSuchTreffer({
   const rangesRef = useRef<Map<string, Range[]>>(new Map());
   /** Vereinigt die je Artikel gehaltenen Ranges zur EINEN Highlight-Menge. */
   const male = useCallback(() => {
+    // W2·28/L-2: weggeschaltet wird NICHT gemalt — auch nicht aus
+    // `zeigeFundstelle` heraus. Ohne diese Zeile hätte der Sprung die
+    // Hervorhebung am Zielartikel wieder angezündet, und der Schalter hätte für
+    // genau den Artikel nicht gegolten, den man gerade ansieht (§8). Der Sprung
+    // selbst bleibt unverändert.
+    if (markenAus) return;
     const alle: Range[] = [];
     for (const rs of rangesRef.current.values()) alle.push(...rs);
     setzeSuchHighlightRanges(alle, highlightInstanz);
-  }, [highlightInstanz]);
+  }, [highlightInstanz, markenAus]);
   useEffect(() => {
     if (typeof window === 'undefined') return;
     // `leseWurzel` statt `wurzel`: seit B7 trägt die Prop `wurzel` den
@@ -173,7 +216,10 @@ export function useSuchTreffer({
     // die Verwechslung, die B7 überhaupt erst erzeugt hat.
     const leseWurzel = leseRef.current;
     rangesRef.current = new Map();
-    if (!sucheAktiv || !leseWurzel || typeof IntersectionObserver === 'undefined') {
+    // `markenAus` steht hier im selben Zweig wie «keine Suche»: der Effekt
+    // räumt die Registry und hängt gar keinen Beobachter ein — weggeschaltet
+    // kostet die Hervorhebung damit nichts, statt unsichtbar weiterzulaufen.
+    if (!sucheAktiv || markenAus || !leseWurzel || typeof IntersectionObserver === 'undefined') {
       setzeSuchHighlight(null, '', highlightInstanz);
       return;
     }
@@ -215,7 +261,7 @@ export function useSuchTreffer({
     // unmarkiert — der Leser sah einen Treffer-Artikel ohne eine einzige
     // leuchtende Stelle (§8). Der Scroll-Spy führt `offen` aus genau diesem Grund
     // schon in seiner Liste (inhalt-hooks.tsx).
-  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege, offen, imPane, wurzel, male, highlightInstanz]);
+  }, [sucheAktiv, sucheTrim, ansichtTick, eintraege, offen, imPane, wurzel, male, highlightInstanz, markenAus]);
 
   // ─── ↑↓-Navigation über die Fundstellen (§4.3) ─────────────────────────────
   // Position = 0-basierter Rang in der FLACHEN, datenseitigen Fundstellen-Folge.

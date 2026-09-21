@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20110030",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2011-05-11",
@@ -138,10 +138,20 @@
     {
       "datum": "2011-05-11",
       "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Invalidenversicherung (IVG) (6. IV-Revision, zweites Massnahmenpaket) (Entwurf der SGK-N vom 11.10.2012)",
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2011-05-11",
+      "art": "Bundesblatt",
       "jahr": "2011",
       "nummer": "5691",
       "text": "Botschaft vom 11. Mai 2011 zur Änderung des Bundesgesetzes über die Invalidenversicherung (6. IV-Revision, zweites Massnahmenpaket)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-05-11",
@@ -149,15 +159,8 @@
       "jahr": "2011",
       "nummer": "5837",
       "text": "Bundesgesetz über die Invalidenversicherung (IVG) (6. IV-Revision, zweites Massnahmenpaket)",
-      "referendumsfrist": null
-    },
-    {
-      "datum": "2011-05-11",
-      "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Invalidenversicherung (IVG) (6. IV-Revision, zweites Massnahmenpaket) (Entwurf der SGK-N vom 11.10.2012)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2011-12-19",
@@ -165,7 +168,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Invalidenversicherung (IVG) (6. IV-Revision, zweites Massnahmenpaket: Kostenvergütung für stationäre Massnahmen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2012-06-26",
@@ -173,7 +177,8 @@
       "jahr": "2012",
       "nummer": "5931",
       "text": null,
-      "referendumsfrist": "2012-10-04"
+      "referendumsfrist": "2012-10-04",
+      "vorlage": 2
     },
     {
       "datum": "2012-10-23",
@@ -181,7 +186,8 @@
       "jahr": "2012",
       "nummer": "5559",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -200,7 +206,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

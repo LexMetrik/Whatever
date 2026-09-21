@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20010074",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2001-11-15",
@@ -124,10 +124,11 @@
     {
       "datum": "2001-11-15",
       "art": "Bundesblatt",
-      "jahr": "2002",
-      "nummer": "2291",
-      "text": "Botschaft vom 14. November 2001 zur Neugestaltung des Finanzausgleichs und der Aufgaben zwischen Bund und Kantonen (NFA)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2001-11-15",
@@ -135,7 +136,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über den Finanz- und Lastenausgleich (FAG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2001-11-15",
+      "art": "Bundesblatt",
+      "jahr": "2002",
+      "nummer": "2291",
+      "text": "Botschaft vom 14. November 2001 zur Neugestaltung des Finanzausgleichs und der Aufgaben zwischen Bund und Kantonen (NFA)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-10-14",
@@ -143,7 +154,8 @@
       "jahr": "2003",
       "nummer": "6591",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2004-12-07",
@@ -151,7 +163,8 @@
       "jahr": "2004",
       "nummer": "6953",
       "text": null,
-      "referendumsfrist": "2005-03-17"
+      "referendumsfrist": "2005-03-17",
+      "vorlage": 2
     },
     {
       "datum": "2005-03-29",
@@ -159,7 +172,8 @@
       "jahr": "2005",
       "nummer": "1481",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2007-12-04",
@@ -167,7 +181,8 @@
       "jahr": "2007",
       "nummer": "5765",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

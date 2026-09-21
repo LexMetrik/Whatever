@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20170053",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2017-08-30",
@@ -57,7 +57,8 @@
       "jahr": "2017",
       "nummer": "5947",
       "text": "Botschaft vom 30. August 2017 zur Genehmigung und zur Umsetzung der Übereinkommen Nr. 94 und Nr. 100 des Europarates über die grenzüberschreitende Verwaltungszusammenarbeit.",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-08-30",
@@ -65,7 +66,8 @@
       "jahr": "2017",
       "nummer": "5953",
       "text": "Europäisches Übereinkommen über die Zustellung von Schriftstücken in Verwaltungssachen im Ausland",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-08-30",
@@ -73,7 +75,8 @@
       "jahr": "2017",
       "nummer": "5977",
       "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens Nr. 94 des Europarates über die Zustellung von Schriftstücken in Verwaltungssachen im Ausland",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2017-08-30",
@@ -81,7 +84,8 @@
       "jahr": "2017",
       "nummer": "5991",
       "text": "Europäisches Übereinkommen über die Erlangung von Auskünften und Beweisen in Verwaltungssachen im Ausland",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-10-12",
@@ -89,7 +93,8 @@
       "jahr": "2018",
       "nummer": "6077",
       "text": null,
-      "referendumsfrist": "2019-01-17"
+      "referendumsfrist": "2019-01-17",
+      "vorlage": 1
     },
     {
       "datum": "2019-03-26",
@@ -97,7 +102,8 @@
       "jahr": "2019",
       "nummer": "975",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -116,7 +122,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

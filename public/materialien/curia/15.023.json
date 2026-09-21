@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20150023",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2015-02-18",
@@ -225,7 +225,8 @@
       "jahr": "2015",
       "nummer": "2065",
       "text": "Botschaft vom 18. Februar 2015 zur Schaffung eines Nationalstrassen- und Agglomerationsverkehrs-Fonds, zur Schliessung der Finanzierungslücke und zum Strategischen Entwicklungsprogramm Nationalstrassen («NAF-Botschaft»)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2015-02-18",
@@ -233,7 +234,8 @@
       "jahr": "2015",
       "nummer": "2187",
       "text": "Bundesbeschluss über die Schaffung eines Fonds für die Nationalstrassen und den Agglomerationsverkehr",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2015-02-18",
@@ -241,7 +243,8 @@
       "jahr": "2015",
       "nummer": "2191",
       "text": "Bundesgesetz über den Fonds für die Nationalstrassen und den Agglomerationsverkehr (NAFG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2015-02-18",
@@ -249,7 +252,8 @@
       "jahr": "2015",
       "nummer": "2203",
       "text": "Bundesbeschluss über das Nationalstrassennetz (Netzbeschluss)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2015-02-18",
@@ -257,7 +261,8 @@
       "jahr": "2015",
       "nummer": "2209",
       "text": "Bundesbeschluss über den Gesamtkredit für den Infrastrukturfonds",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2016-10-14",
@@ -265,7 +270,8 @@
       "jahr": "2016",
       "nummer": "7587",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2017-05-02",
@@ -273,7 +279,8 @@
       "jahr": "2017",
       "nummer": "3373",
       "text": null,
-      "referendumsfrist": "2017-08-10"
+      "referendumsfrist": "2017-08-10",
+      "vorlage": 2
     },
     {
       "datum": "2017-12-12",
@@ -281,7 +288,8 @@
       "jahr": "2017",
       "nummer": "6731",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2017-12-12",
@@ -289,7 +297,8 @@
       "jahr": "2017",
       "nummer": "6825",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2017-12-12",
@@ -297,7 +306,8 @@
       "jahr": "2017",
       "nummer": "7807",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     }
   ],
   "schlussabstimmungen": [
@@ -316,7 +326,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2016-09-30",
@@ -333,7 +343,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

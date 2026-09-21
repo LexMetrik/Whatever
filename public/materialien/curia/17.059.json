@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20170059",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2017-09-15",
@@ -169,7 +169,8 @@
       "jahr": "2017",
       "nummer": "6941",
       "text": "Botschaft vom 15. September 2017 zum Bundesgesetz über die Totalrevision des Bundesgesetzes über den Datenschutz und die Änderung weiterer Erlasse zum Datenschutz.",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2017-09-15",
@@ -177,7 +178,8 @@
       "jahr": "2017",
       "nummer": "7193",
       "text": "Bundesgesetz über die Umsetzung der Richtlinie (EU) 2016/680 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten zum Zwecke der Verhütung, Ermittlung, Aufdeckung oder Verfolgung von Straftaten oder der Strafvollstreckung (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2017-09-15",
@@ -185,7 +187,8 @@
       "jahr": "2017",
       "nummer": "7277",
       "text": "Bundesbeschluss über die Genehmigung des Notenaustausches zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der Richtlinie (EU) 2016/680 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten zum Zwecke der Verhütung, Ermittlung, Aufdeckung oder Verfolgung von Straftaten oder der Strafvollstreckung (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2017-09-15",
@@ -193,7 +196,8 @@
       "jahr": "2017",
       "nummer": "7279",
       "text": "Notenaustausch vom 1. September 2016 zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der Richtlinie (EU) 2016/680 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten zum Zwecke der Verhütung, Ermittlung, Aufdeckung oder Verfolgung von Straftaten oder der Strafvollstreckung (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-09-28",
@@ -201,7 +205,8 @@
       "jahr": "2019",
       "nummer": "625",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2018-10-12",
@@ -209,7 +214,8 @@
       "jahr": "2018",
       "nummer": "6003",
       "text": null,
-      "referendumsfrist": "2019-01-17"
+      "referendumsfrist": "2019-01-17",
+      "vorlage": 1
     },
     {
       "datum": "2018-10-12",
@@ -217,7 +223,8 @@
       "jahr": "2018",
       "nummer": "6083",
       "text": null,
-      "referendumsfrist": "2019-01-17"
+      "referendumsfrist": "2019-01-17",
+      "vorlage": 2
     },
     {
       "datum": "2019-08-16",
@@ -225,7 +232,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über den Datenschutz (Datenschutzgesetz, DSG) (Entwurf der Staatspolitischen Kommission des Nationalrates vom 16.08.2019)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2020-10-06",
@@ -233,7 +241,8 @@
       "jahr": "2020",
       "nummer": "7639",
       "text": null,
-      "referendumsfrist": "2021-01-14"
+      "referendumsfrist": "2021-01-14",
+      "vorlage": 3
     }
   ],
   "schlussabstimmungen": [
@@ -252,7 +261,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2018-09-28",
@@ -269,7 +278,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2020-09-25",
@@ -286,7 +295,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

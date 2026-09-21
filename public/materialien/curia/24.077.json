@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240077",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2024-08-22",
@@ -57,7 +57,8 @@
       "jahr": "2024",
       "nummer": "2516",
       "text": "Botschaft vom 13. September 2024 zur Änderung des Schweizerischen Zivilgesetzbuchs (Gewaltfreie Erziehung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-09-13",
@@ -65,7 +66,8 @@
       "jahr": "2024",
       "nummer": "2517",
       "text": "Schweizerisches Zivilgesetzbuch (Gewaltfreie Erziehung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-10-07",
@@ -73,7 +75,8 @@
       "jahr": "2025",
       "nummer": "2892",
       "text": null,
-      "referendumsfrist": "2026-01-15"
+      "referendumsfrist": "2026-01-15",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -92,7 +95,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

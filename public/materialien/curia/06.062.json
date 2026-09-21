@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20060062",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2006-06-28",
@@ -82,18 +82,20 @@
     {
       "datum": "2006-06-28",
       "art": "Bundesblatt",
-      "jahr": "2006",
-      "nummer": "7221",
-      "text": "Botschaft vom 28. Juni 2006 zur Schweizerischen Zivilprozessordnung",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2006-06-28",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
-      "referendumsfrist": null
+      "jahr": "2006",
+      "nummer": "7221",
+      "text": "Botschaft vom 28. Juni 2006 zur Schweizerischen Zivilprozessordnung",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2009-01-06",
@@ -101,7 +103,8 @@
       "jahr": "2009",
       "nummer": "21",
       "text": null,
-      "referendumsfrist": "2009-04-16"
+      "referendumsfrist": "2009-04-16",
+      "vorlage": 1
     },
     {
       "datum": "2010-05-11",
@@ -109,7 +112,8 @@
       "jahr": "2010",
       "nummer": "1739",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -128,7 +132,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

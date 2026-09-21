@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20030047",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2003-07-02",
@@ -320,10 +320,38 @@
     {
       "datum": "2003-07-02",
       "art": "Bundesblatt",
-      "jahr": "2003",
-      "nummer": "5615",
-      "text": "Botschaft vom 2. Juli 2003 zum Entlastungsprogramm 2003 für den Bundeshaushalt (EP 03)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über den Zahlungsrahmen für die Infrastruktur der Aktiengesellschaft Schweizerische Bundesbahnen SBB für die Jahre 2003-2006",
+      "referendumsfrist": null,
+      "vorlage": 5
+    },
+    {
+      "datum": "2003-07-02",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Leistungsvereinbarung zwischen der Schweizerischen Eidgenossenschaft und der Aktiengesellschaft Schweizerische Bundesbahnen SBB für die Jahre 2003-2006",
+      "referendumsfrist": null,
+      "vorlage": 4
+    },
+    {
+      "datum": "2003-07-02",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über Bezüge und Infrastruktur der Mitglieder der eidgenössischen Räte und über die Beiträge an die Fraktionen (Parlamentsressourcengesetz, PRG)",
+      "referendumsfrist": null,
+      "vorlage": 6
+    },
+    {
+      "datum": "2003-07-02",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über das Entlastungsprogramm 2003",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-07-02",
@@ -331,7 +359,26 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über den eidgenössischen Finanzhaushalt",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2003-07-02",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über dringliche Massnahmen aus dem Entlastungsprogramm 2003",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2003-07-02",
+      "art": "Bundesblatt",
+      "jahr": "2003",
+      "nummer": "5615",
+      "text": "Botschaft vom 2. Juli 2003 zum Entlastungsprogramm 2003 für den Bundeshaushalt (EP 03)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-12-22",
@@ -339,7 +386,8 @@
       "jahr": "2003",
       "nummer": "8099",
       "text": null,
-      "referendumsfrist": "2004-03-31"
+      "referendumsfrist": "2004-03-31",
+      "vorlage": 1
     },
     {
       "datum": "2003-12-30",
@@ -347,7 +395,8 @@
       "jahr": "2003",
       "nummer": "5191",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2003-12-30",
@@ -355,7 +404,17 @@
       "jahr": "2003",
       "nummer": "5203",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2003-12-30",
+      "art": "Amtliche Sammlung",
+      "jahr": "2003",
+      "nummer": "5203",
+      "text": null,
+      "referendumsfrist": null,
+      "vorlage": 6
     },
     {
       "datum": "2003-12-30",
@@ -363,7 +422,26 @@
       "jahr": "2003",
       "nummer": "8249",
       "text": null,
-      "referendumsfrist": "2004-04-08"
+      "referendumsfrist": "2004-04-08",
+      "vorlage": 2
+    },
+    {
+      "datum": "2003-12-30",
+      "art": "Bundesblatt",
+      "jahr": "2003",
+      "nummer": "8249",
+      "text": null,
+      "referendumsfrist": "2004-04-08",
+      "vorlage": 3
+    },
+    {
+      "datum": "2003-12-30",
+      "art": "Bundesblatt",
+      "jahr": "2003",
+      "nummer": "8249",
+      "text": null,
+      "referendumsfrist": "2004-04-08",
+      "vorlage": 6
     },
     {
       "datum": "2004-01-13",
@@ -371,7 +449,8 @@
       "jahr": "2004",
       "nummer": "31",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2004-01-13",
@@ -379,7 +458,8 @@
       "jahr": "2004",
       "nummer": "33",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 5
     },
     {
       "datum": "2004-04-06",
@@ -387,7 +467,8 @@
       "jahr": "2004",
       "nummer": "1633",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -406,7 +487,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2003-12-19",
@@ -423,7 +504,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2003-12-19",
@@ -440,7 +521,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2003-12-19",
@@ -457,7 +538,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

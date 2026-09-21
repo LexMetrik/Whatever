@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20090047",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2009-05-20",
@@ -96,10 +96,11 @@
     {
       "datum": "2009-05-20",
       "art": "Bundesblatt",
-      "jahr": "2009",
-      "nummer": "4915",
-      "text": "Botschaft vom 20. Mai 2009 zur Teilrevision I des Luftfahrtgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung der Weiterführung der Beteiligung der Schweiz an der Europäischen Flugsicherheitsagentur EASA (Aufnahme der Verordnung (EG) Nr. 216/2008 in den Anhang zum Luftverkehrsabkommen Schweiz-EG)",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2009-05-20",
@@ -107,7 +108,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Luftfahrt (Luftfahrtgesetz, LFG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2009-05-20",
+      "art": "Bundesblatt",
+      "jahr": "2009",
+      "nummer": "4915",
+      "text": "Botschaft vom 20. Mai 2009 zur Teilrevision I des Luftfahrtgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-06-29",
@@ -115,7 +126,8 @@
       "jahr": "2010",
       "nummer": "4363",
       "text": null,
-      "referendumsfrist": "2010-10-07"
+      "referendumsfrist": "2010-10-07",
+      "vorlage": 2
     },
     {
       "datum": "2010-10-12",
@@ -123,7 +135,8 @@
       "jahr": "2010",
       "nummer": "6585",
       "text": null,
-      "referendumsfrist": "2011-01-20"
+      "referendumsfrist": "2011-01-20",
+      "vorlage": 1
     },
     {
       "datum": "2011-03-22",
@@ -131,7 +144,8 @@
       "jahr": "2011",
       "nummer": "1119",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -150,7 +164,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2010-10-01",
@@ -167,7 +181,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

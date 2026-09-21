@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20150050",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2015-06-24",
@@ -99,7 +99,8 @@
       "jahr": "2015",
       "nummer": "5753",
       "text": "Botschaft vom 24. Juni 2015 zur Volksinitiative «Für Ernährungssicherheit»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2015-06-24",
@@ -107,7 +108,8 @@
       "jahr": "2015",
       "nummer": "5783",
       "text": "Bundesbeschluss über die Volksinitiative «Für Ernährungssicherheit»",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-11-03",
@@ -115,7 +117,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesbeschluss über die Ernährungssicherheit (direkter Gegenentwurf zur Volksinitiative «Für Ernährungssicherheit»)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2017-03-14",
@@ -123,7 +126,8 @@
       "jahr": "2017",
       "nummer": "2383",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2017-12-12",
@@ -131,7 +135,8 @@
       "jahr": "2017",
       "nummer": "6735",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     }
   ],
   "schlussabstimmungen": [
@@ -150,7 +155,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

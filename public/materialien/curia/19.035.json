@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20190035",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2019-05-29",
@@ -71,7 +71,8 @@
       "jahr": "2019",
       "nummer": "4413",
       "text": "Botschaft vom 29. Mai 2019 zur Änderung des Arbeitslosenversicherungsgesetzes",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2019-05-29",
@@ -79,7 +80,8 @@
       "jahr": "2019",
       "nummer": "4457",
       "text": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-06-30",
@@ -87,7 +89,8 @@
       "jahr": "2020",
       "nummer": "5683",
       "text": null,
-      "referendumsfrist": "2020-10-08"
+      "referendumsfrist": "2020-10-08",
+      "vorlage": 1
     },
     {
       "datum": "2021-06-11",
@@ -95,7 +98,8 @@
       "jahr": "2021",
       "nummer": "338",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

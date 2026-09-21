@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20100077",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2010-09-08",
@@ -110,18 +110,20 @@
     {
       "datum": "2010-09-08",
       "art": "Bundesblatt",
-      "jahr": "2010",
-      "nummer": "6455",
-      "text": "Botschaft vom 8. September 2010 zur Änderung des Bundesgesetzes über Schuldbetreibung und Konkurs (Sanierungsrecht)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2010-09-08",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG)",
-      "referendumsfrist": null
+      "jahr": "2010",
+      "nummer": "6455",
+      "text": "Botschaft vom 8. September 2010 zur Änderung des Bundesgesetzes über Schuldbetreibung und Konkurs (Sanierungsrecht)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2013-07-02",
@@ -129,7 +131,8 @@
       "jahr": "2013",
       "nummer": "4747",
       "text": null,
-      "referendumsfrist": "2013-10-10"
+      "referendumsfrist": "2013-10-10",
+      "vorlage": 1
     },
     {
       "datum": "2013-12-03",
@@ -137,7 +140,8 @@
       "jahr": "2013",
       "nummer": "4111",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -156,7 +160,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

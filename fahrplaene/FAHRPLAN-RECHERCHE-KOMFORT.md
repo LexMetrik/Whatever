@@ -35,6 +35,18 @@ Landkarte (kein Code, kein Plan-Eintrag) und der Verteilungsbalken in der Treffe
   vorhandenen Struktur: Gesetz = Gliederungsebenen; Entscheid = Regeste · Sachverhalt ·
   Erwägungen · Dispositiv, soweit die Daten sie tragen (sonst weglassen, nie raten).
   Lesepositions-Anzeige; Klick = Sprung; Marke trägt zugänglichen Namen (Tastatur/Screenreader).
+
+  > **Korrektur L-1 (Fertigbau 21.9.2026) — zugänglicher Name am STREIFEN, nicht an
+  > jeder Marke.** Gebaut ist die Alternative: der Streifen ist `role="img"` mit
+  > zusammenfassendem `aria-label` («N Fundstellen in M Abschnitten»), das SVG darin
+  > `aria-hidden`; Tastatur und Screenreader bedienen dieselben Sprungziele über die
+  > bestehende Trefferliste (↑/↓, ‹ ›). Anlass: ein Dokument trägt bis zu 1146 Marken
+  > (OR) — ebenso viele Tabstopps vor der Lesespalte wären für genau jene Nutzer eine
+  > Verschlechterung, die der Satz schützen soll (WCAG 2.1.1 ist über die Alternative
+  > erfüllt). Herleitung in `src/components/leser/TrefferLandkarte.tsx`, gemessen in
+  > `e2e/leser-w228-landkarte.e2e.ts` (b). Breite: 48 px, also die Untergrenze des
+  > Richtwerts oben — der Streifen liegt `fixed` in der gemessenen Randluft von 104 px
+  > und verdrängt die Lesespalte damit nicht.
 - **L-2 · Schalter und Ruhezustand** *(S)* — Landkarte erscheint nur bei aktiver
   Dokumentsuche (kein Dauer-Element, DESIGN-REGLEMENT Ruhe-Grundsatz); ein Schalter
   blendet Hervorhebung **und** Marken gemeinsam aus. Mobil: ausgeblendet oder als

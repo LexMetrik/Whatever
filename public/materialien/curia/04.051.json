@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20040051",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2004-08-18",
@@ -57,7 +57,8 @@
       "jahr": "2004",
       "nummer": "4899",
       "text": "Botschaft vom 18. August 2004 zur Änderung des Bundesgesetzes über die Stempelabgaben",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2004-08-18",
@@ -65,7 +66,8 @@
       "jahr": "2004",
       "nummer": "4917",
       "text": "Bundesgesetz über die Stempelabgaben (StG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-03-29",
@@ -73,7 +75,8 @@
       "jahr": "2005",
       "nummer": "2281",
       "text": null,
-      "referendumsfrist": "2005-07-07"
+      "referendumsfrist": "2005-07-07",
+      "vorlage": 1
     },
     {
       "datum": "2005-08-09",
@@ -81,7 +84,8 @@
       "jahr": "2005",
       "nummer": "3577",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 1,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

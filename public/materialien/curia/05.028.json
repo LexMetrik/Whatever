@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050028",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-02-23",
@@ -306,10 +306,29 @@
     {
       "datum": "2005-02-23",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "2415",
-      "text": "Botschaft vom 23. Februar 2005 zur Bahnreform 2",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Umwandlung des der BLS Lötschbergbahn gewährten Baukredits in ein bedingt rückzahlbares Darlehen",
+      "referendumsfrist": null,
+      "vorlage": 7
+    },
+    {
+      "datum": "2005-02-23",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über den Sicherheitsdienst der Transportunternehmen (BGST)",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2005-02-23",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über den Transport im öffentlichen Verkehr (Transportgesetz, TG) (Entwurf der KVF-N vom 15. Oktober 2007)",
+      "referendumsfrist": null,
+      "vorlage": 10
     },
     {
       "datum": "2005-02-23",
@@ -317,7 +336,80 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über den Transport im öffentlichen Verkehr (Transportgesetz, TG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2005-02-23",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über den zweiten Schritt der Bahnreform 2",
+      "referendumsfrist": null,
+      "vorlage": 11
+    },
+    {
+      "datum": "2005-02-23",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr) (vom 9. März 2007)",
+      "referendumsfrist": null,
+      "vorlage": 9
+    },
+    {
+      "datum": "2005-02-23",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Personenbeförderung (Personenbeförderungsgesetz, PBG)",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2005-02-23",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Sicherheitsorgane der Transportunternehmen im öffentlichen Verkehr (BGST)",
+      "referendumsfrist": null,
+      "vorlage": 8
+    },
+    {
+      "datum": "2005-02-23",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Zulassung als Strassentransportunternehmen (STUG)",
+      "referendumsfrist": null,
+      "vorlage": 4
+    },
+    {
+      "datum": "2005-02-23",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Änderung von Erlassen auf Grund der Bahnreform 2",
+      "referendumsfrist": null,
+      "vorlage": 6
+    },
+    {
+      "datum": "2005-02-23",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Eisenbahngesetz (EBG)",
+      "referendumsfrist": null,
+      "vorlage": 5
+    },
+    {
+      "datum": "2005-02-23",
+      "art": "Bundesblatt",
+      "jahr": "2005",
+      "nummer": "2415",
+      "text": "Botschaft vom 23. Februar 2005 zur Bahnreform 2",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2007-03-09",
@@ -325,7 +417,8 @@
       "jahr": "2007",
       "nummer": "2681",
       "text": "Zusatzbotschaft vom 9. März 2007 zur Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2009-03-31",
@@ -333,7 +426,8 @@
       "jahr": "2009",
       "nummer": "2043",
       "text": null,
-      "referendumsfrist": "2009-07-09"
+      "referendumsfrist": "2009-07-09",
+      "vorlage": 9
     },
     {
       "datum": "2009-11-17",
@@ -341,7 +435,8 @@
       "jahr": "2009",
       "nummer": "5597",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 9
     },
     {
       "datum": "2010-10-20",
@@ -349,7 +444,8 @@
       "jahr": "2011",
       "nummer": "911",
       "text": "Zusatzbotschaft vom 20. Oktober 2010 zur Bahnreform 2 (Zweiter Schritt der Bahnreform 2)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2012-03-27",
@@ -357,7 +453,8 @@
       "jahr": "2012",
       "nummer": "3481",
       "text": null,
-      "referendumsfrist": "2012-07-05"
+      "referendumsfrist": "2012-07-05",
+      "vorlage": 11
     },
     {
       "datum": "2012-10-30",
@@ -365,7 +462,8 @@
       "jahr": "2012",
       "nummer": "5619",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 11
     }
   ],
   "schlussabstimmungen": [
@@ -384,7 +482,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2009-03-20",
@@ -401,7 +499,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2012-03-16",
@@ -418,7 +516,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

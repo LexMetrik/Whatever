@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20230027",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2023-02-01",
@@ -71,7 +71,8 @@
       "jahr": "2023",
       "nummer": "391",
       "text": "Botschaft vom 1. Februar 2023 zur Änderung des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Anlage von Freizügigkeitsgeldern der Auffangeinrichtung)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2023-02-01",
@@ -79,7 +80,8 @@
       "jahr": "2023",
       "nummer": "392",
       "text": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2023-06-16",
@@ -87,7 +89,8 @@
       "jahr": "2023",
       "nummer": "1531",
       "text": null,
-      "referendumsfrist": "2023-10-05"
+      "referendumsfrist": "2023-10-05",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -106,7 +109,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

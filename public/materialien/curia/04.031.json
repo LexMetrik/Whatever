@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20040031",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2004-05-26",
@@ -152,10 +152,20 @@
     {
       "datum": "2004-05-26",
       "art": "Bundesblatt",
-      "jahr": "2004",
-      "nummer": "4259",
-      "text": "Botschaft vom 26. Mai 2004 zur Änderung des Bundesgesetzes über die Krankenversicherung (Strategie und dringliche Punkte)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Anpassung der kantonalen Beiträge für die innerkantonalen stationären Behandlungen nach dem Bundesgesetz über die Krankenversicherung",
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2004-05-26",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Krankenversicherung (KVG) (Pflegetarife)",
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2004-05-26",
@@ -163,7 +173,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Krankenversicherung (KVG)(Gesamtstrategie und Risikoausgleich)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2004-05-26",
+      "art": "Bundesblatt",
+      "jahr": "2004",
+      "nummer": "4259",
+      "text": "Botschaft vom 26. Mai 2004 zur Änderung des Bundesgesetzes über die Krankenversicherung (Strategie und dringliche Punkte)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2004-10-19",
@@ -171,7 +191,8 @@
       "jahr": "2004",
       "nummer": "4373",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2004-10-19",
@@ -179,7 +200,8 @@
       "jahr": "2004",
       "nummer": "4375",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2004-10-19",
@@ -187,7 +209,8 @@
       "jahr": "2004",
       "nummer": "5479",
       "text": null,
-      "referendumsfrist": "2005-01-27"
+      "referendumsfrist": "2005-01-27",
+      "vorlage": 1
     },
     {
       "datum": "2004-10-19",
@@ -195,7 +218,17 @@
       "jahr": "2004",
       "nummer": "5505",
       "text": null,
-      "referendumsfrist": "2005-01-27"
+      "referendumsfrist": "2005-01-27",
+      "vorlage": 2
+    },
+    {
+      "datum": "2004-10-19",
+      "art": "Bundesblatt",
+      "jahr": "2004",
+      "nummer": "5505",
+      "text": null,
+      "referendumsfrist": "2005-01-27",
+      "vorlage": 3
     },
     {
       "datum": "2005-02-22",
@@ -203,7 +236,8 @@
       "jahr": "2005",
       "nummer": "1071",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -222,7 +256,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2004-10-08",
@@ -239,7 +273,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2004-10-08",
@@ -256,7 +290,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

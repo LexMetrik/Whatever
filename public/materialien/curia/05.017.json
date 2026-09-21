@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050017",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-01-26",
@@ -54,18 +54,20 @@
     {
       "datum": "2005-01-26",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "983",
-      "text": "Botschaft vom 26. Januar 2005 über das Abkommen zwischen der Schweizerischen Eidgenossenschaft und dem Europäischen Polizeiamt (Europol)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Abkommens zwischen der Schweiz und dem Europäischen Polizeiamt",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-01-26",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Abkommens zwischen der Schweiz und dem Europäischen Polizeiamt",
-      "referendumsfrist": null
+      "jahr": "2005",
+      "nummer": "983",
+      "text": "Botschaft vom 26. Januar 2005 über das Abkommen zwischen der Schweizerischen Eidgenossenschaft und dem Europäischen Polizeiamt (Europol)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2005-10-18",
@@ -73,7 +75,8 @@
       "jahr": "2005",
       "nummer": "5971",
       "text": null,
-      "referendumsfrist": "2006-01-26"
+      "referendumsfrist": "2006-01-26",
+      "vorlage": 1
     },
     {
       "datum": "2006-03-28",
@@ -81,7 +84,8 @@
       "jahr": "2006",
       "nummer": "1017",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

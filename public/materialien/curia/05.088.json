@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050088",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-12-02",
@@ -54,18 +54,20 @@
     {
       "datum": "2005-12-02",
       "art": "Bundesblatt",
-      "jahr": "2006",
-      "nummer": "551",
-      "text": "Botschaft vom 2. Dezember 2005 zur Genehmigung und Umsetzung des Haager Übereinkommens über das auf Trusts anzuwendende Recht und über ihre Anerkennung",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung und Umsetzung des Haager Übereinkommens über das auf Trusts anzuwendende Recht und über ihre Anerkennung",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-12-02",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss über die Genehmigung und Umsetzung des Haager Übereinkommens über das auf Trusts anzuwendende Recht und über ihre Anerkennung",
-      "referendumsfrist": null
+      "jahr": "2006",
+      "nummer": "551",
+      "text": "Botschaft vom 2. Dezember 2005 zur Genehmigung und Umsetzung des Haager Übereinkommens über das auf Trusts anzuwendende Recht und über ihre Anerkennung",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2007-01-03",
@@ -73,7 +75,8 @@
       "jahr": "2007",
       "nummer": "41",
       "text": null,
-      "referendumsfrist": "2007-04-13"
+      "referendumsfrist": "2007-04-13",
+      "vorlage": 1
     },
     {
       "datum": "2007-06-19",
@@ -81,7 +84,8 @@
       "jahr": "2007",
       "nummer": "2849",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 1,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

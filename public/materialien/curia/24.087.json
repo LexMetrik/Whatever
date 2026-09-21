@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20240087",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2024-11-14",
@@ -57,7 +57,8 @@
       "jahr": "2024",
       "nummer": "3276",
       "text": "Notenaustausch vom 13. Dezember 2023 zwischen der Schweiz und der Europäischen Union betreffend die Übernahme der Verordnung (EU) 2023/2667 zur Änderung der Verordnungen (EG) Nr. 767/2008, (EG) Nr. 810/2009, (EU) 2017/2226, (EG) Nr. 693/2003 und (EG) Nr. 694/2003 und des Übereinkommens zur Durchführung des Übereinkommens von Schengen in Hinblick auf die Digitalisierung des Visumverfahrens (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-11-13",
@@ -65,7 +66,8 @@
       "jahr": "2024",
       "nummer": "3274",
       "text": "Botschaft vom 13. November 2024 zur Genehmigung und Umsetzung des Notenaustauschs zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) 2023/2667 zur Änderung mehrerer Rechtsakte der EU im Hinblick auf die Digitalisierung des Visumverfahrens (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-11-13",
@@ -73,7 +75,8 @@
       "jahr": "2024",
       "nummer": "3275",
       "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) 2023/2667 zur Änderung mehrerer Rechtsakte im Hinblick auf die Digitalisierung des Visumverfahrens (Weiterentwicklung des Schengen-Besitzstands)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2025-10-07",
@@ -81,7 +84,8 @@
       "jahr": "2025",
       "nummer": "2901",
       "text": null,
-      "referendumsfrist": "2026-01-15"
+      "referendumsfrist": "2026-01-15",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

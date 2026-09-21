@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20040069",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2004-11-10",
@@ -68,18 +68,20 @@
     {
       "datum": "2004-11-10",
       "art": "Bundesblatt",
-      "jahr": "2004",
-      "nummer": "6747",
-      "text": "Botschaft vom 10. November 2004 zur Änderung der Bestimmung über die internationale Amtshilfe im Bundesgesetz über die Börsen und den Effektenhandel",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Börsen und den Effektenhandel (Börsengesetz, BEHG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2004-11-10",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Börsen und den Effektenhandel (Börsengesetz, BEHG)",
-      "referendumsfrist": null
+      "jahr": "2004",
+      "nummer": "6747",
+      "text": "Botschaft vom 10. November 2004 zur Änderung der Bestimmung über die internationale Amtshilfe im Bundesgesetz über die Börsen und den Effektenhandel",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2005-10-18",
@@ -87,7 +89,8 @@
       "jahr": "2005",
       "nummer": "5993",
       "text": null,
-      "referendumsfrist": "2006-01-26"
+      "referendumsfrist": "2006-01-26",
+      "vorlage": 1
     },
     {
       "datum": "2006-12-10",
@@ -95,7 +98,8 @@
       "jahr": "2006",
       "nummer": "197",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20030008",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2003-01-22",
@@ -54,18 +54,20 @@
     {
       "datum": "2003-01-22",
       "art": "Bundesblatt",
-      "jahr": "2003",
-      "nummer": "767",
-      "text": "Botschaft vom 22. Januar 2003 zur Änderung des Militärstrafprozesses (Zeugenschutz)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Militärstrafprozess (MStP)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2003-01-22",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Militärstrafprozess (MStP)",
-      "referendumsfrist": null
+      "jahr": "2003",
+      "nummer": "767",
+      "text": "Botschaft vom 22. Januar 2003 zur Änderung des Militärstrafprozesses (Zeugenschutz)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2003-12-30",
@@ -73,7 +75,8 @@
       "jahr": "2003",
       "nummer": "8237",
       "text": null,
-      "referendumsfrist": "2004-04-08"
+      "referendumsfrist": "2004-04-08",
+      "vorlage": 1
     },
     {
       "datum": "2004-06-01",
@@ -81,7 +84,8 @@
       "jahr": "2004",
       "nummer": "2691",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

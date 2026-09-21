@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20050030",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2005-03-11",
@@ -54,18 +54,20 @@
     {
       "datum": "2005-03-11",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "2807",
-      "text": "Botschaft vom 11. März 2005 über die Genehmigung des Fakultativprotokolls vom 25. Mai 2000 zum Übereinkommen über die Rechte des Kindes, betreffend den Verkauf von Kindern, die Kinderprostitution und die Kinderpornografie, und über die entsprechende Änderung der Strafnorm über den Menschenhandel",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Fakultativprotokolls vom 25. Mai 2000 zum Übereinkommen über die Rechte des Kindes, betreffend den Verkauf von Kindern, die Kinderprostitution und die Kinderpornografie",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2005-03-11",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Fakultativprotokolls vom 25. Mai 2000 zum Übereinkommen über die Rechte des Kindes, betreffend den Verkauf von Kindern, die Kinderprostitution und die Kinderpornografie",
-      "referendumsfrist": null
+      "jahr": "2005",
+      "nummer": "2807",
+      "text": "Botschaft vom 11. März 2005 über die Genehmigung des Fakultativprotokolls vom 25. Mai 2000 zum Übereinkommen über die Rechte des Kindes, betreffend den Verkauf von Kindern, die Kinderprostitution und die Kinderpornografie, und über die entsprechende Änderung der Strafnorm über den Menschenhandel",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2006-04-04",
@@ -73,7 +75,8 @@
       "jahr": "2006",
       "nummer": "3643",
       "text": null,
-      "referendumsfrist": "2006-07-13"
+      "referendumsfrist": "2006-07-13",
+      "vorlage": 1
     },
     {
       "datum": "2006-12-19",
@@ -81,7 +84,8 @@
       "jahr": "2006",
       "nummer": "5437",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

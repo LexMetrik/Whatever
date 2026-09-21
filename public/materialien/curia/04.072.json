@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20040072",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2004-11-12",
@@ -54,18 +54,20 @@
     {
       "datum": "2004-11-12",
       "art": "Bundesblatt",
-      "jahr": "2004",
-      "nummer": "6983",
-      "text": "Botschaft vom 10. November 2004 über die Genehmigung und die Umsetzung des Strafrechts-Übereinkommens und zum Zusatzprotokoll des Europarates über Korruption (Änderung des Strafgesetzbuches und des Bundesgesetzes gegen den unlauteren Wettbewerb)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Strafrechtsübereinkommens und des Zusatzprotokolls des Europarates über Korruption",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2004-11-12",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Strafrechtsübereinkommens und des Zusatzprotokolls des Europarates über Korruption",
-      "referendumsfrist": null
+      "jahr": "2004",
+      "nummer": "6983",
+      "text": "Botschaft vom 10. November 2004 über die Genehmigung und die Umsetzung des Strafrechts-Übereinkommens und zum Zusatzprotokoll des Europarates über Korruption (Änderung des Strafgesetzbuches und des Bundesgesetzes gegen den unlauteren Wettbewerb)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2005-10-18",
@@ -73,7 +75,8 @@
       "jahr": "2005",
       "nummer": "5967",
       "text": null,
-      "referendumsfrist": "2006-01-26"
+      "referendumsfrist": "2006-01-26",
+      "vorlage": 1
     },
     {
       "datum": "2006-06-20",
@@ -81,7 +84,8 @@
       "jahr": "2006",
       "nummer": "2371",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

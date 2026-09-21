@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20060053",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2006-05-30",
@@ -82,10 +82,11 @@
     {
       "datum": "2006-05-30",
       "art": "Bundesblatt",
-      "jahr": "2006",
-      "nummer": "5261",
-      "text": "Botschaft vom 31. Mai 2006 über die Einführung der allgemeinen Volksinitiative und über weitere Änderungen der Bundesgesetzgebung über die politischen Rechte",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über das vollständige Inkrafttreten der Änderung der Volksrechte vom 4. Oktober 2002",
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2006-05-30",
@@ -93,7 +94,26 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz betreffend die Änderung der Bundesgesetzgebung über die politischen Rechte",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
+    },
+    {
+      "datum": "2006-05-30",
+      "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Einführung der allgemeinen Volksinitiative",
+      "referendumsfrist": null,
+      "vorlage": 1
+    },
+    {
+      "datum": "2006-05-30",
+      "art": "Bundesblatt",
+      "jahr": "2006",
+      "nummer": "5261",
+      "text": "Botschaft vom 31. Mai 2006 über die Einführung der allgemeinen Volksinitiative und über weitere Änderungen der Bundesgesetzgebung über die politischen Rechte",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2007-04-03",
@@ -101,7 +121,8 @@
       "jahr": "2007",
       "nummer": "2293",
       "text": null,
-      "referendumsfrist": "2007-07-12"
+      "referendumsfrist": "2007-07-12",
+      "vorlage": 3
     }
   ],
   "schlussabstimmungen": [
@@ -120,7 +141,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

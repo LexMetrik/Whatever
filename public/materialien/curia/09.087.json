@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20090087",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2009-11-18",
@@ -96,10 +96,11 @@
     {
       "datum": "2009-11-18",
       "art": "Bundesblatt",
-      "jahr": "2009",
-      "nummer": "8881",
-      "text": "Botschaft vom 18. November 2009 über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EG betreffend die Übernahme der EG-Rückführungsrichtlinie (Richtlinie 2008/115/EG) (Weiterentwicklung des Schengen-Besitzstands) und über eine Änderung des Bundesgesetzes über die Ausländerinnen und Ausländer (Automatisierte Grenzkontrolle, Dokumentenberaterinnen und Dokumentenberater, Informationssystem MIDES)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EG betreffend die Übernahme der EG-Rückführungsrichtlinie (Richtlinie 2008/115/EG) (Weiterentwicklung des Schengen-Besitzstands)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2009-11-18",
@@ -107,7 +108,17 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesgesetz über die Ausländerinnen und Ausländer (AuG) (Automatisierte Grenzkontrolle, Dokumentenberaterinnen und Dokumentenberater, Informationssystem MIDES)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
+    },
+    {
+      "datum": "2009-11-18",
+      "art": "Bundesblatt",
+      "jahr": "2009",
+      "nummer": "8881",
+      "text": "Botschaft vom 18. November 2009 über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EG betreffend die Übernahme der EG-Rückführungsrichtlinie (Richtlinie 2008/115/EG) (Weiterentwicklung des Schengen-Besitzstands) und über eine Änderung des Bundesgesetzes über die Ausländerinnen und Ausländer (Automatisierte Grenzkontrolle, Dokumentenberaterinnen und Dokumentenberater, Informationssystem MIDES)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2010-06-29",
@@ -115,7 +126,8 @@
       "jahr": "2010",
       "nummer": "4307",
       "text": null,
-      "referendumsfrist": "2010-10-07"
+      "referendumsfrist": "2010-10-07",
+      "vorlage": 2
     },
     {
       "datum": "2010-06-29",
@@ -123,7 +135,8 @@
       "jahr": "2010",
       "nummer": "4325",
       "text": null,
-      "referendumsfrist": "2010-10-07"
+      "referendumsfrist": "2010-10-07",
+      "vorlage": 1
     },
     {
       "datum": "2010-12-14",
@@ -131,7 +144,8 @@
       "jahr": "2010",
       "nummer": "5755",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2010-12-14",
@@ -139,7 +153,8 @@
       "jahr": "2010",
       "nummer": "5925",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -158,7 +173,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2010-06-18",
@@ -175,7 +190,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

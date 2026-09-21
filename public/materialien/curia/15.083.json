@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20150083",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2015-12-04",
@@ -113,7 +113,8 @@
       "jahr": "2016",
       "nummer": "257",
       "text": "Botschaft vom 4. Dezember 2015 zur Änderung des Bundesgesetzes über die Krankenversicherung (Stärkung von Qualität und Wirtschaftlichkeit)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2015-12-04",
@@ -121,7 +122,8 @@
       "jahr": "2016",
       "nummer": "305",
       "text": "Bundesgesetz über die Krankenversicherung (KVG) (Stärkung von Qualität und Wirtschaftlichkeit)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2015-12-04",
@@ -129,7 +131,8 @@
       "jahr": "2016",
       "nummer": "309",
       "text": "Bundesbeschluss über den Gesamtkredit für Abgeltungen und Finanzhilfen zur Stärkung von Qualität und Wirtschaftlichkeit in der obligatorischen Krankenpflegeversicherung für die Jahre 2018–2021",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2019-06-15",
@@ -137,7 +140,8 @@
       "jahr": "2021",
       "nummer": "546",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2019-07-02",
@@ -145,7 +149,8 @@
       "jahr": "2019",
       "nummer": "4469",
       "text": null,
-      "referendumsfrist": "2019-10-10"
+      "referendumsfrist": "2019-10-10",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -164,7 +169,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

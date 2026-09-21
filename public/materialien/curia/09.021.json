@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20090021",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2009-02-18",
@@ -54,18 +54,20 @@
     {
       "datum": "2009-02-18",
       "art": "Bundesblatt",
-      "jahr": "2009",
-      "nummer": "1777",
-      "text": "Botschaft vom 18. Februar 2009 zum Bundesbeschluss über die Genehmigung und die Umsetzung des revidierten Übereinkommens von Lugano über die gerichtliche Zuständigkeit, die Anerkennung und die Vollstreckung gerichtlicher Entscheidungen in Zivil- und Handelssachen",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2009-02-18",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen)",
-      "referendumsfrist": null
+      "jahr": "2009",
+      "nummer": "1777",
+      "text": "Botschaft vom 18. Februar 2009 zum Bundesbeschluss über die Genehmigung und die Umsetzung des revidierten Übereinkommens von Lugano über die gerichtliche Zuständigkeit, die Anerkennung und die Vollstreckung gerichtlicher Entscheidungen in Zivil- und Handelssachen",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2009-12-22",
@@ -73,7 +75,8 @@
       "jahr": "2009",
       "nummer": "8809",
       "text": null,
-      "referendumsfrist": "2010-04-01"
+      "referendumsfrist": "2010-04-01",
+      "vorlage": 1
     },
     {
       "datum": "2010-12-07",
@@ -81,7 +84,8 @@
       "jahr": "2010",
       "nummer": "5601",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -100,7 +104,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

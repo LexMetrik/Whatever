@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20110023",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2011-03-04",
@@ -78,7 +78,8 @@
       "jahr": "2011",
       "nummer": "2607",
       "text": "Botschaft vom 4. März 2011 zum Bundesgesetz über die steuerliche Behandlung der berufsorientierten Aus- und Weiterbildungskosten",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2011-03-04",
@@ -86,7 +87,8 @@
       "jahr": "2011",
       "nummer": "2639",
       "text": "Bundesgesetz über die steuerliche Behandlung der berufsorientierten Aus- und Weiterbildungskosten",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2013-10-08",
@@ -94,7 +96,8 @@
       "jahr": "2013",
       "nummer": "7385",
       "text": null,
-      "referendumsfrist": "2014-01-16"
+      "referendumsfrist": "2014-01-16",
+      "vorlage": 1
     },
     {
       "datum": "2014-05-20",
@@ -102,7 +105,8 @@
       "jahr": "2014",
       "nummer": "1105",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -121,7 +125,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

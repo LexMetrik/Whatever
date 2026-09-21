@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20180092",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2018-11-30",
@@ -64,7 +64,8 @@
       "jahr": "2019",
       "nummer": "141",
       "text": "Botschaft vom 30. November 2018 zur Änderung des Erwerbsersatzgesetzes (Mutterschaftsentschädigung bei längerem Spitalaufenthalt des Neugeborenen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-11-30",
@@ -72,7 +73,8 @@
       "jahr": "2019",
       "nummer": "173",
       "text": "Bundesgesetz über den Erwerbsersatz für Dienstleistende und bei Mutterschaft (Erwerbsersatzgesetz, EOG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2021-12-31",
@@ -80,7 +82,8 @@
       "jahr": "2020",
       "nummer": "9947",
       "text": null,
-      "referendumsfrist": "2021-04-10"
+      "referendumsfrist": "2021-04-10",
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -99,7 +102,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

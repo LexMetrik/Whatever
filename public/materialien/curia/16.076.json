@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20160076",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2016-11-16",
@@ -78,7 +78,8 @@
       "jahr": "2016",
       "nummer": "8503",
       "text": "Botschaft vom 16. November 2016 zum Bundesgesetz über die steuerliche Behandlung finanzieller Sanktionen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2016-11-16",
@@ -86,7 +87,8 @@
       "jahr": "2016",
       "nummer": "8537",
       "text": "Bundesgesetz über die steuerliche Behandlung finanzieller Sanktionen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-06-30",
@@ -94,7 +96,8 @@
       "jahr": "2020",
       "nummer": "5679",
       "text": null,
-      "referendumsfrist": "2020-10-08"
+      "referendumsfrist": "2020-10-08",
+      "vorlage": 1
     },
     {
       "datum": "2020-12-01",
@@ -102,7 +105,8 @@
       "jahr": "2020",
       "nummer": "5121",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -121,7 +125,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20000072",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2000-09-06",
@@ -96,18 +96,20 @@
     {
       "datum": "2000-09-06",
       "art": "Bundesblatt",
-      "jahr": "2000",
-      "nummer": "5686",
-      "text": "Botschaft vom 6. September 2000 zu einem neuen Bundesgesetz über die Berufsbildung (Berufsbildungsgesetz, BBG)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über die Berufsbildung (Berufsbildungsgesetz, BBG)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2000-09-06",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über die Berufsbildung (Berufsbildungsgesetz, BBG)",
-      "referendumsfrist": null
+      "jahr": "2000",
+      "nummer": "5686",
+      "text": "Botschaft vom 6. September 2000 zu einem neuen Bundesgesetz über die Berufsbildung (Berufsbildungsgesetz, BBG)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2002-12-24",
@@ -115,7 +117,8 @@
       "jahr": "2002",
       "nummer": "8320",
       "text": null,
-      "referendumsfrist": "2003-04-03"
+      "referendumsfrist": "2003-04-03",
+      "vorlage": 1
     },
     {
       "datum": "2003-12-22",
@@ -123,7 +126,8 @@
       "jahr": "2003",
       "nummer": "4557",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": []

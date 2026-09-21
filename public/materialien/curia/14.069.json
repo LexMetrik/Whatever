@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20140069",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2014-09-03",
@@ -264,10 +264,20 @@
     {
       "datum": "2014-09-03",
       "art": "Bundesblatt",
+      "jahr": null,
+      "nummer": null,
+      "text": "Verordnung der Bundesversammlung über die Organisation der Armee (Armeeorganisation, AO) (Entwurf der SiK-S vom 20.01.2015)",
+      "referendumsfrist": null,
+      "vorlage": 5
+    },
+    {
+      "datum": "2014-09-03",
+      "art": "Bundesblatt",
       "jahr": "2014",
       "nummer": "6955",
       "text": "Botschaft vom 3. September 2014 zur Änderung der Rechtsgrundlagen für die Weiterentwicklung der Armee",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2014-09-03",
@@ -275,7 +285,8 @@
       "jahr": "2014",
       "nummer": "7063",
       "text": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2014-09-03",
@@ -283,7 +294,8 @@
       "jahr": "2014",
       "nummer": "7093",
       "text": "Verordnung der Bundesversammlung über die Verwaltung der Armee (VBVA)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2014-09-03",
@@ -291,7 +303,8 @@
       "jahr": "2014",
       "nummer": "7097",
       "text": "Bundesgesetz über die militärischen Informationssyteme (MIG)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2014-09-03",
@@ -299,15 +312,8 @@
       "jahr": "2014",
       "nummer": "7117",
       "text": "Verordnung der Bundesversammlung über die Organisation der Armee (Armeeorganisation, AO)",
-      "referendumsfrist": null
-    },
-    {
-      "datum": "2014-09-03",
-      "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Verordnung der Bundesversammlung über die Organisation der Armee (Armeeorganisation, AO) (Entwurf der SiK-S vom 20.01.2015)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 4
     },
     {
       "datum": "2015-11-03",
@@ -315,7 +321,8 @@
       "jahr": null,
       "nummer": null,
       "text": "Bundesbeschluss zum Zahlungsrahmen der Armee 2017–2020 (Entwurf der SiK-N vom 3.11.2015)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 6
     },
     {
       "datum": "2016-04-01",
@@ -323,7 +330,8 @@
       "jahr": "2016",
       "nummer": "2047",
       "text": null,
-      "referendumsfrist": "2016-07-07"
+      "referendumsfrist": "2016-07-07",
+      "vorlage": 1
     },
     {
       "datum": "2016-04-01",
@@ -331,7 +339,8 @@
       "jahr": "2016",
       "nummer": "2075",
       "text": null,
-      "referendumsfrist": "2016-07-07"
+      "referendumsfrist": "2016-07-07",
+      "vorlage": 3
     },
     {
       "datum": "2016-12-09",
@@ -339,7 +348,8 @@
       "jahr": "2016",
       "nummer": "4277",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2016-12-09",
@@ -347,7 +357,8 @@
       "jahr": "2016",
       "nummer": "4307",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 3
     },
     {
       "datum": "2017-04-11",
@@ -355,7 +366,8 @@
       "jahr": "2017",
       "nummer": "2299",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 2
     },
     {
       "datum": "2017-04-11",
@@ -363,7 +375,8 @@
       "jahr": "2017",
       "nummer": "2303",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 5
     },
     {
       "datum": "2017-05-01",
@@ -371,7 +384,8 @@
       "jahr": "2017",
       "nummer": "2915",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 6
     }
   ],
   "schlussabstimmungen": [
@@ -390,7 +404,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2016-03-18",
@@ -407,7 +421,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2016-03-18",
@@ -424,7 +438,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     },
     {
       "datum": "2016-03-18",
@@ -441,7 +455,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

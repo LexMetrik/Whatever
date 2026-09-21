@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { SuchZone } from './SuchZone';
 import type { BestimmungsWort } from './erlassAnsicht';
+import { MarkenSchalter } from '../../../components/leser/MarkenSchalter';
 
 // ═══ DER AUFBAU DER KLEBENDEN SUCH-ZONE ══════════════════════════════════════
 //
@@ -55,6 +56,11 @@ export function suchZoneAufbau(a: {
    *  Zähler-Zeile — Zahlen und ↑↓ stehen in ihrer eigenen Werkzeugzeile, aus
    *  derselben Quelle (§5). Herleitung am gleichnamigen Prop in `./SuchZone`. */
   listeSteht: boolean;
+  /** W2·28 · L-2 · Zustand des Schalters «Hervorhebung». Das ELEMENT baut diese
+   *  Datei (nicht der Rahmen): sie ist ohnehin die Naht, an der die Such-Zone
+   *  ihre Teile bekommt, und `./SuchZone` soll ein reiner Renderer bleiben. */
+  markenAus: boolean;
+  setzeMarkenAus: (aus: boolean) => void;
 }): ReactNode | undefined {
   if (!a.klebt) return undefined;
   return (
@@ -62,6 +68,7 @@ export function suchZoneAufbau(a: {
       bestimmungen={a.bestimmungen} fundstellen={a.fundstellen}
       bestimmungsWort={a.bestimmungsWort}
       onListe={a.onListe}
-      onVor={a.onVor} onZurueck={a.onZurueck} listeSteht={a.listeSteht} />
+      onVor={a.onVor} onZurueck={a.onZurueck} listeSteht={a.listeSteht}
+      markenSchalter={<MarkenSchalter aus={a.markenAus} onSchalten={a.setzeMarkenAus} />} />
   );
 }

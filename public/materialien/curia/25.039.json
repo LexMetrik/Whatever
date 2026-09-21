@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20250039",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2025-05-15",
@@ -64,7 +64,8 @@
       "jahr": "2025",
       "nummer": "1528",
       "text": "Botschaft vom 16. April 2025 zur Änderung des Bundesgesetzes über den Erwerbsersatz (Angleichung der EO-Leistungen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2025-04-16",
@@ -72,7 +73,8 @@
       "jahr": "2025",
       "nummer": "1529",
       "text": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzgesetz, EOG) (Angleichung der EO-Leistungen)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2026-01-07",
@@ -80,7 +82,8 @@
       "jahr": "2026",
       "nummer": "29",
       "text": null,
-      "referendumsfrist": "2026-04-17"
+      "referendumsfrist": "2026-04-17",
+      "vorlage": 1
     },
     {
       "datum": "2026-08-27",
@@ -88,7 +91,8 @@
       "jahr": "2026",
       "nummer": "433",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -107,7 +111,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

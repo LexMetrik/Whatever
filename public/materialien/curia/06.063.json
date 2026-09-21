@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20060063",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2006-06-28",
@@ -68,18 +68,20 @@
     {
       "datum": "2006-06-28",
       "art": "Bundesblatt",
-      "jahr": "2006",
-      "nummer": "7001",
-      "text": "Botschaft vom 28. Juni 2006 zur Änderung des Schweizerischen Zivilgesetzbuches (Erwachsenenschutz, Personenrecht und Kindesrecht)",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2006-06-28",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
-      "referendumsfrist": null
+      "jahr": "2006",
+      "nummer": "7001",
+      "text": "Botschaft vom 28. Juni 2006 zur Änderung des Schweizerischen Zivilgesetzbuches (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2009-01-06",
@@ -87,7 +89,8 @@
       "jahr": "2009",
       "nummer": "141",
       "text": null,
-      "referendumsfrist": "2009-04-16"
+      "referendumsfrist": "2009-04-16",
+      "vorlage": 1
     },
     {
       "datum": "2011-03-01",
@@ -95,7 +98,8 @@
       "jahr": "2011",
       "nummer": "725",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -114,7 +118,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

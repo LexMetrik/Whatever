@@ -7,7 +7,7 @@
   "erstrat": "Ständerat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20230045",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2023-05-24",
@@ -57,7 +57,8 @@
       "jahr": "2023",
       "nummer": "1460",
       "text": "Botschaft vom 24. Mai 2023 zur Genehmigung und Umsetzung des Haager Übereinkommens über Gerichtsstandsvereinbarungen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2023-05-24",
@@ -65,7 +66,8 @@
       "jahr": "2023",
       "nummer": "1461",
       "text": "Bundesbeschluss über die Genehmigung und die Umsetzung des Haager Übereinkommens über Gerichtsstandsvereinbarungen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2023-05-24",
@@ -73,7 +75,8 @@
       "jahr": "2023",
       "nummer": "1462",
       "text": "Übereinkommen über Gerichtsstandsvereinbarungen",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2024-01-09",
@@ -81,7 +84,8 @@
       "jahr": "2024",
       "nummer": "36",
       "text": null,
-      "referendumsfrist": "2024-04-18"
+      "referendumsfrist": "2024-04-18",
+      "vorlage": 1
     },
     {
       "datum": "2025-05-15",
@@ -89,7 +93,8 @@
       "jahr": "2024",
       "nummer": "561",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -108,7 +113,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

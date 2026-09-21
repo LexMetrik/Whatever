@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20040078",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2004-11-24",
@@ -75,18 +75,20 @@
     {
       "datum": "2004-11-24",
       "art": "Bundesblatt",
-      "jahr": "2005",
-      "nummer": "465",
-      "text": "Botschaft vom 24. November 2004 über die Änderung des Binnenmarktgesetzes",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesgesetz über den Binnenmarkt (Binnenmarktgesetz, BGBM)",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2004-11-24",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesgesetz über den Binnenmarkt (Binnenmarktgesetz, BGBM)",
-      "referendumsfrist": null
+      "jahr": "2005",
+      "nummer": "465",
+      "text": "Botschaft vom 24. November 2004 über die Änderung des Binnenmarktgesetzes",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2005-12-27",
@@ -94,7 +96,8 @@
       "jahr": "2005",
       "nummer": "7461",
       "text": null,
-      "referendumsfrist": "2006-04-06"
+      "referendumsfrist": "2006-04-06",
+      "vorlage": 1
     },
     {
       "datum": "2006-06-20",
@@ -102,7 +105,8 @@
       "jahr": "2006",
       "nummer": "2363",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -121,7 +125,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

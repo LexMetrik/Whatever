@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20180047",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2018-05-09",
@@ -99,7 +99,8 @@
       "jahr": "2018",
       "nummer": "3125",
       "text": "Botschaft vom 9. Mai 2018 zur Änderung des Bundesgesetzes über die Krankenversicherung (Zulassung von Leistungserbringern)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2018-05-09",
@@ -107,7 +108,8 @@
       "jahr": "2018",
       "nummer": "3169",
       "text": "Bundesgesetz über die Krankenversicherung (KVG) (Zulassung von Leistungserbringern)",
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2020-06-30",
@@ -115,7 +117,8 @@
       "jahr": "2020",
       "nummer": "5513",
       "text": null,
-      "referendumsfrist": "2020-10-08"
+      "referendumsfrist": "2020-10-08",
+      "vorlage": 1
     },
     {
       "datum": "2021-07-01",
@@ -123,7 +126,8 @@
       "jahr": "2021",
       "nummer": "413",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -142,7 +146,7 @@
         "demissioniert": 0,
         "total": 199
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }

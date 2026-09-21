@@ -7,7 +7,7 @@
   "erstrat": "Nationalrat",
   "quelleUrl": "https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20060066",
   "quellenangabe": "Parlamentsdienste der Bundesversammlung, Bern",
-  "abgerufen": "2026-09-11",
+  "abgerufen": "2026-09-21",
   "kommissionen": [
     {
       "datum": "2006-08-30",
@@ -75,18 +75,20 @@
     {
       "datum": "2006-08-30",
       "art": "Bundesblatt",
-      "jahr": "2006",
-      "nummer": "7591",
-      "text": "Botschaft vom 30. August 2006 über die Volksinitiative \"Ja zur Komplementärmedizin\"",
-      "referendumsfrist": null
+      "jahr": null,
+      "nummer": null,
+      "text": "Bundesbeschluss über die Volksinitiative \"Ja zur Komplementärmedizin\"",
+      "referendumsfrist": null,
+      "vorlage": 1
     },
     {
       "datum": "2006-08-30",
       "art": "Bundesblatt",
-      "jahr": null,
-      "nummer": null,
-      "text": "Bundesbeschluss über die Volksinitiative \"Ja zur Komplementärmedizin\"",
-      "referendumsfrist": null
+      "jahr": "2006",
+      "nummer": "7591",
+      "text": "Botschaft vom 30. August 2006 über die Volksinitiative \"Ja zur Komplementärmedizin\"",
+      "referendumsfrist": null,
+      "vorlage": 0
     },
     {
       "datum": "2008-10-14",
@@ -94,7 +96,8 @@
       "jahr": "2008",
       "nummer": "8229",
       "text": null,
-      "referendumsfrist": null
+      "referendumsfrist": null,
+      "vorlage": 1
     }
   ],
   "schlussabstimmungen": [
@@ -113,7 +116,7 @@
         "demissioniert": 0,
         "total": 200
       },
-      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-11"
+      "beschriftung": "eigene Auszählung der amtlichen Einzelstimmen, Abruf 2026-09-21"
     }
   ]
 }
