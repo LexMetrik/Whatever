@@ -188,13 +188,15 @@ describe('Test 2 · Rail-Schranke/Zähler/Schalter/Landkarte auf EINEM Stand', (
     // Jetzt wird das Feld geleert, bei WEITERHIN gesetztem Schalter — genau
     // die Falle-a-Abfolge («Feld leeren mit gesetztem Schalter»).
     await rendern(ziel, { suche: '', markenAusRoh: true });
-    // Direkt NACH dem Render, VOR dem 0-ms-Timer: sucheGewertet ist noch der
-    // alte, nicht-leere Stand. In diesem Tick darf die Landkarte NIE
-    // aufblitzen — markenAusRoh war schon vorher true, also war sie auch
-    // VORHER schon aus; Schalter und Landkarte müssen im GLEICHEN Tick
-    // dieselbe Aussage machen.
+    // Direkt NACH dem Render, VOR dem 0-ms-Timer: `sucheGewertet` ist noch der
+    // alte, nicht-leere Stand — aber `sucheAktiv` verlangt ZUSÄTZLICH das rohe
+    // `suche.trim() !== ''` (§ Falle b) und ist darum SOFORT false, genau wie
+    // beim Verlassen ohne Schalter. Landkarte UND Schalter verschwinden darum
+    // im SELBEN Tick (der Schalter ist danach gar nicht mehr im DOM — «aus»
+    // wäre eine Aussage über ein Element, das es nicht mehr gibt), kein
+    // Aufblitzen, kein Auseinanderlaufen.
     expect(landkarteSteht(ziel), 'kein Aufblitzen im Übergangs-Tick').toBe(false);
-    expect(schalterAusgeschaltet(ziel), 'Schalter zeigt im selben Tick weiter «aus», nicht «an»').toBe(true);
+    expect(schalterAusgeschaltet(ziel), 'Schalter verschwindet im selben Tick wie die Landkarte').toBeNull();
     await act(async () => { vi.advanceTimersByTime(0); });
     expect(landkarteSteht(ziel), 'nach dem Leeren bleibt sie aus (keine Treffer mehr)').toBe(false);
   });

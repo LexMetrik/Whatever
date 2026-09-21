@@ -113,8 +113,11 @@ export const ErwBereich = memo(function ErwBereich({
   // sprang das Verzeichnis beim Verfeinern 219 → 0 → 201 (gemessene Werte).
   // Behoben durch EIN Stand: Rail-Schranke, aria-live-Gate, Schalter-Gate,
   // Schalter-Anzeige und Landkarten-Sichtbarkeit hängen jetzt alle an
-  // `sucheGewertet` (über die neue Prop `sucheAktiv` an `ErwaegungsRail` bzw.
-  // `markenAusGewertet` weiter unten in dieser Datei) — nur das Eingabefeld
+  // `sucheAktiv` (Prop an `ErwaegungsRail` bzw. `markenAusGewertet` weiter
+  // unten) — NICHT an `sucheGewertet` allein, sondern an `suche.trim() !== ''`
+  // UND `sucheGewertet.trim() !== ''` zugleich (§ Falle b, Herleitung bei
+  // `sucheAktiv`): sonst hinkt das VERLASSEN einen Tick hinterher, was ein
+  // eigener Rot-Beweis war (`e2e/rechtsprechung.e2e.ts`). Nur das Eingabefeld
   // und die Hervorhebung im Lesetext bleiben roh, unverändert wie oben
   // beschrieben.
   //
@@ -138,15 +141,23 @@ export const ErwBereich = memo(function ErwBereich({
   // ms je Anschlag (mehr Anschläge sammeln sich hinter derselben 200-ms-Kante,
   // die dann alle auf einmal zeichnen). Die Hervorhebung bleibt darum roh.
   const sucheGewertet = useSucheGewertet(suche);
-  // ── § Falle a (21.9.2026) · EIN STAND FÜR DIE GANZE DARSTELLUNGSSEITE ──────
-  // `sucheAktiv` und `markenAusGewertet` sind die gewerteten Pendants zu
-  // `suche.trim() !== ''` bzw. `markenAus` im Leser (dort roh, für Eingabefeld
-  // und Hervorhebung — s. Nachträge oben). Rail-Schranke, aria-live-Gate,
-  // Schalter-Gate, Schalter-ANZEIGE und Landkarten-Sichtbarkeit hängen alle
-  // HIER, an derselben `sucheGewertet`-Herkunft wie `trefferGesamt` — damit
-  // kann keiner dieser fünf Orte während der 200-ms-Entprellung einen anderen
-  // Stand zeigen als die anderen vier (der Fehler, den Folge 1/2 oben belegen).
-  const sucheAktiv = sucheGewertet.trim() !== '';
+  // ── § Falle a/b (21.9.2026) · EIN STAND FÜR DIE GANZE DARSTELLUNGSSEITE ────
+  // `sucheAktiv` ist NICHT nur «`sucheGewertet` ist nicht leer» — das wäre zu
+  // GROSSZÜGIG in der falschen Richtung: beim VERLASSEN (Feld leeren) ist
+  // `suche` sofort leer, aber `sucheGewertet` hängt bis zum 0-ms-Timer noch
+  // einen Tick am alten, nicht-leeren Wert. Ein reiner `sucheGewertet`-Test
+  // hätte den Rail in GENAU diesem Tick weiter die (jetzt veraltete)
+  // Trefferliste zeigen lassen statt sofort auf die Gliederung zurückzufallen
+  // — ROT-BEWEIS: `e2e/rechtsprechung.e2e.ts` «sucht ehrlich im Entscheid»
+  // (Suche filtert nicht: 4 von 4, weil `ohneSuche` mitten in diesem Tick
+  // gelesen wurde). `suche.trim() !== ''` GLEICHZEITIG verlangt behebt das:
+  // das Verlassen ist damit wieder so instantan wie vor diesem Bau (die
+  // Gliederung braucht `sucheGewertet` gar nicht, sie hängt nur an
+  // `abschnitte`), während das BETRETEN/VERFEINERN weiterhin auf den
+  // gewerteten Stand wartet (Folge 1/2 oben). `markenAusGewertet` erbt dieselbe
+  // Regel — Schalter und Landkarte verschwinden beim Leeren darum im SELBEN
+  // Tick wie die Trefferliste, nicht einen Tick später.
+  const sucheAktiv = suche.trim() !== '' && sucheGewertet.trim() !== '';
   const markenAusGewertet = sucheAktiv && markenAusRoh;
   const treffer = useMemo(() => trefferInErwaegungen(abschnitte, sucheGewertet), [abschnitte, sucheGewertet]);
   const trefferGesamt = useMemo(() => zaehleTreffer(abschnitte, sucheGewertet), [abschnitte, sucheGewertet]);
@@ -184,8 +195,12 @@ export const ErwBereich = memo(function ErwBereich({
           `!markenAusGewertet` (§ Falle a, 21.9.2026): weggeschaltete Marken
           heissen auch keine Landkarte — GEWERTET, damit der Streifen beim
           Leeren des Feldes mit gesetztem Schalter nie für einen Tick
-          aufblitzt, während `trefferGesamt` noch den alten Stand zeigt. */}
-      {landkarteSteht && trefferGesamt > 0 && !markenAusGewertet && (
+          aufblitzt, während `trefferGesamt` noch den alten Stand zeigt.
+          `sucheAktiv` zusätzlich zu `trefferGesamt > 0` (§ Falle b): ohne sie
+          bliebe die Landkarte beim Leeren des Feldes einen Tick zu lang
+          stehen — `trefferGesamt` hängt nur an `sucheGewertet`, nicht am
+          rohen `suche`, s. Herleitung von `sucheAktiv` oben. */}
+      {landkarteSteht && sucheAktiv && trefferGesamt > 0 && !markenAusGewertet && (
         <EntscheidLandkarte abschnitte={abschnitte} treffer={treffer}
           gesamtFundstellen={trefferGesamt} aktivAnker={aktivAnker} springe={springe} />
       )}
