@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 4
 // ── DEKLARIERTE SONDEN-ÄNDERUNG (§6.3) · W2·18 Welle 3 Punkt 3, 13.9.2026 ───
 // Der Reiter ist seit diesem Schritt ein `<a href>` (React-Router-`Link`)
 // statt eines `<button>` — die Rollen-Korrektur ist die Massnahme selbst

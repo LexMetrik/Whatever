@@ -1,4 +1,4 @@
-// @shard-gruppe: 1
+// @shard-gruppe: 5
 // ═══ W2·5m · DIE EINZELARTIKEL-ANSICHT IM BROWSER (Kap. 15, E1+E2) ══════════
 //
 // Was die Vitest-Sonden NICHT sagen können und diese Spec darum misst:
