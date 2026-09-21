@@ -40,6 +40,12 @@ export interface PrFakt {
   number: number;
   zustand: 'MERGED' | 'OPEN' | 'CLOSED';
   headRefOid: string;
+  /**
+   * Zielzweig des PR. Nur `main` ist eine Landung (§9: Merge nach main IST
+   * der Deploy) — ein PR, der in einen Feature-Zweig gemergt wurde, beweist
+   * nichts über den Auslieferungsstand (Bug-Check 21.9.2026, Auflage 3).
+   */
+  basis: string;
 }
 
 /** Rohe Fakten zu einem lokalen Branch. Alles Gemessene, nichts Gedeutetes. */
@@ -79,8 +85,24 @@ export interface WorktreeFakt {
   /** Der Worktree, aus dem der Befehl gerade läuft. */
   aktuell: boolean;
   gelockt: boolean;
-  /** `git status --porcelain` leer (untracked zählt als dirty); `null` = nicht abfragbar. */
-  sauber: boolean | null;
+  /**
+   * Läuft im Worktree ein Prozess (cwd eines lebenden Prozesses)?
+   *
+   * `null` = nicht gemessen oder nicht messbar ⇒ fail-closed nicht abräumbar.
+   * Anlass (Bug-Check 21.9.2026, Blocker 1): der Trockenlauf hielt
+   * `.claude/worktrees/angry-bartik-e40d69` für abräumbar, während dort vier
+   * Prozesse einer LEBENDEN Desktop-App-Session liefen (`claude`, `zsh`,
+   * `python3`, `disclaime`) — sauber, ungelockt, 0 Commits. Kein Zeitstempel-
+   * Kriterium: eine offene, gerade untätige Session altert sonst aus dem Schutz.
+   */
+  belegt: boolean | null;
+  /**
+   * Rohzeilen aus `git status --porcelain --ignored`; `null` = nicht gemessen
+   * oder nicht abfragbar. Was davon «schmutzig» heisst, entscheidet `schmutz()`
+   * unten — das ist eine Regel und gehört darum in den Kern, nicht in die
+   * Beschaffung.
+   */
+  statusZeilen: string[] | null;
   /** Ausgecheckter Branch; `null` bei detached HEAD. */
   branch: string | null;
   head: string;
@@ -166,6 +188,65 @@ export function platzName(pfad: string): string {
   return pfad.split('/').filter(Boolean).pop() ?? pfad;
 }
 
+/**
+ * Ignorierte Einträge, die einen Worktree NICHT schmutzig machen.
+ *
+ * Anlass (Bug-Check 21.9.2026, Blocker 2): `git worktree remove` löscht
+ * gitignorte Dateien klaglos, OHNE `--force` — empirisch belegt am 21.9.2026
+ * in einem Wegwerf-Repo: `git status --porcelain` leer, `--ignored` zeigt
+ * `!! ignoriert/`, `git worktree remove` beendet sich mit 0 und die Datei ist
+ * weg. Betroffen wären u. a. Davids Pflicht-Notizen unter `.claude/notizen/`
+ * (.gitignore). Darum zählt seither JEDER ignorierte Eintrag als schmutzig —
+ * ausser diesen, die ein einziger Befehl wiederherstellt:
+ *
+ *   node_modules/ → `npm ci` · dist/ → `npm run build` · .vite/ → Vite-Cache
+ *   coverage/, playwright-report/, test-results/ → der jeweilige Testlauf
+ *   .gate/ → Logs von `gate.sh`
+ *
+ * Die Liste ist bewusst eine Aufzählung exakter Namen, kein Muster: ein
+ * `*.log`-Muster hätte irgendwann eine echte Messreihe mitgelöscht. Alles
+ * andere — auch `.selbstopt-ereignisse.jsonl` oder ein lokales `.env` —
+ * hält den Platz stehen.
+ *
+ * Ohne Schrägstrich notiert, weil git denselben Eintrag mal als
+ * `!! node_modules/` (echtes Verzeichnis) und mal als `!! node_modules`
+ * (Symlink auf das Haupt-Checkout) druckt — beides real gemessen am
+ * 21.9.2026 in zwei Worktrees desselben Repos.
+ */
+export const IGNORIERT_ERLAUBT: readonly string[] = [
+  'node_modules',
+  'dist',
+  '.vite',
+  'coverage',
+  'playwright-report',
+  'test-results',
+  '.gate',
+];
+
+const MAX_NAMEN = 3;
+
+function undSoWeiter(namen: string[]): string {
+  const gezeigt = namen.slice(0, MAX_NAMEN).join(', ');
+  return namen.length > MAX_NAMEN ? `${gezeigt} +${namen.length - MAX_NAMEN}` : gezeigt;
+}
+
+/**
+ * Prüft die `git status --porcelain --ignored`-Zeilen: `null` = sauber,
+ * sonst der Grund, warum der Platz stehen bleibt.
+ */
+export function schmutz(statusZeilen: string[]): string | null {
+  const zeilen = statusZeilen.map((z) => z.trimEnd()).filter((z) => z !== '');
+  const ignoriert = zeilen.filter((z) => z.startsWith('!! ')).map((z) => z.slice(3));
+  const rest = zeilen.filter((z) => !z.startsWith('!! '));
+  const heikel = ignoriert.filter((e) => !IGNORIERT_ERLAUBT.includes(e.replace(/\/$/, '')));
+  const teile: string[] = [];
+  if (rest.length > 0) teile.push(`${rest.length} Änderung(en)/unversionierte Datei(en)`);
+  if (heikel.length > 0) {
+    teile.push(`${heikel.length} ignorierte(r) Eintrag/Einträge: ${undSoWeiter(heikel)}`);
+  }
+  return teile.length === 0 ? null : `nicht sauber — ${teile.join(' · ')}`;
+}
+
 /** Klasse eines Branches — hängt bewusst NICHT vom Worktree ab (s. Kopf). */
 function klasseVon(b: BranchFakt, ghVerfuegbar: boolean): { klasse: BranchKlasse; grund: string } {
   if (b.leer) return { klasse: 'leer', grund: 'keine Commits vor main' };
@@ -176,6 +257,9 @@ function klasseVon(b: BranchFakt, ghVerfuegbar: boolean): { klasse: BranchKlasse
   if (!b.pr) return { klasse: 'offen', grund: `${n} vor main, kein PR` };
   if (b.pr.zustand !== 'MERGED') {
     return { klasse: 'offen', grund: `${n} vor main · PR #${b.pr.number} ${b.pr.zustand === 'OPEN' ? 'offen' : 'geschlossen, nicht gemergt'}` };
+  }
+  if (b.pr.basis !== 'main') {
+    return { klasse: 'offen', grund: `PR #${b.pr.number} gemergt, aber nach «${b.pr.basis}», nicht nach main` };
   }
   if (b.nachPrHead === null) {
     return { klasse: 'offen', grund: `PR #${b.pr.number} gemergt, aber der Abgleich mit dem PR-Head scheiterte — fail-closed` };
@@ -214,8 +298,13 @@ export function klassiere(f: Fakten): Befunde {
     if (w.haupt) return nein('Haupt-Checkout', true);
     if (w.aktuell) return nein('aktueller Worktree', true);
     if (w.gelockt) return nein('gelockt (nie `git worktree unlock`)');
-    if (w.sauber === null) return nein('`git status` nicht abfragbar — fail-closed');
-    if (!w.sauber) return nein('nicht sauber — uncommittete oder unversionierte Dateien');
+    // Lebende Session VOR allem anderen: ein belegter Platz bleibt stehen,
+    // auch wenn er sauber und sein Branch längst gelandet ist.
+    if (w.belegt === true) return nein('laufender Prozess im Worktree (lebende Session)');
+    if (w.belegt === null) return nein('Belegung nicht prüfbar (lsof) — fail-closed');
+    if (w.statusZeilen === null) return nein('`git status` nicht abfragbar — fail-closed');
+    const dreck = schmutz(w.statusZeilen);
+    if (dreck !== null) return nein(dreck);
     if (w.branch === null) {
       // detached HEAD
       if (w.headVonMain) return { ...basis, abraeumbar: true, grund: 'detached HEAD, von main erreichbar', stumm: false };
@@ -308,10 +397,16 @@ export function berichtZeilen(bef: Befunde, jetztUnix: number): string[] {
   return z;
 }
 
-const MAX_NAMEN = 3;
-
 /**
  * Die EINE Zeile für `plan:next` — `null`, wenn es nichts zu melden gibt.
+ *
+ * **Nur Zähler, keine Namen** (Bug-Check 21.9.2026, Auflage 5): der
+ * Lage-Block darüber nennt jeden Worktree und jeden Branch bereits beim
+ * Namen; eine zweite Namensliste wäre reine Verdopplung (§17-Gegengewicht:
+ * wer hinzufügt, ersetzt zuerst die Stelle, die dieselbe Sorge trägt). Der
+ * Zähler ist das, was der Lage-Block NICHT sagt — und die kleinere der beiden
+ * zulässigen Lösungen: die bestehenden plan-lage-Tests bleiben unberührt
+ * (§6.3), weil kein Zeichen am Lage-Block geändert wird.
  *
  * Byte-stabil: keine Uhrzeit, keine Zufallsquelle, keine Pfade. `geprueft`
  * trennt die ehrlichen Wortlaute (§8): ohne gh-Abfrage weiss der Aufrufer
@@ -320,14 +415,10 @@ const MAX_NAMEN = 3;
  */
 export function flaechenZeile(bef: Befunde, geprueft: boolean): string | null {
   const abr = bef.branches.filter((b) => b.abraeumbar).length + bef.worktrees.filter((w) => w.abraeumbar).length;
-  const rest = bef.branches.filter((b) => !b.abraeumbar && !b.stumm).map((b) => b.name);
-  if (abr === 0 && rest.length === 0) return null;
+  const rest = bef.branches.filter((b) => !b.abraeumbar && !b.stumm).length;
+  if (abr === 0 && rest === 0) return null;
   const teile: string[] = [];
   if (abr > 0) teile.push(`${abr} abräumbar`);
-  if (rest.length > 0) {
-    const gezeigt = rest.slice(0, MAX_NAMEN).join(', ');
-    const plus = rest.length > MAX_NAMEN ? ` +${rest.length - MAX_NAMEN}` : '';
-    teile.push(`${rest.length} ${geprueft ? 'mit ungelandeter Arbeit' : 'zu prüfen'}: ${gezeigt}${plus}`);
-  }
+  if (rest > 0) teile.push(`${rest} ${geprueft ? 'mit ungelandeter Arbeit' : 'zu prüfen'}`);
   return `🧹 Git-Flächen: ${teile.join(' · ')} — npm run aufraeumen:git`;
 }

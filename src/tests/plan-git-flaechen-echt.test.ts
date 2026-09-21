@@ -23,6 +23,7 @@ let root = '';
 let repo = '';
 let wtLeer = '';
 let wtSchmutzig = '';
+let wtNotiz = '';
 let shaB1 = '';
 let shaB2 = '';
 
@@ -34,7 +35,8 @@ const schreibeCommit = (datei: string, text: string) => {
   g(['commit', '-m', `${datei}: ${text}`]);
 };
 const branchNamen = () => g(['for-each-ref', 'refs/heads', '--format=%(refname:short)']).split('\n').filter(Boolean).sort();
-const pr = (number: number, headRefName: string, headRefOid: string, state = 'MERGED') => ({ number, headRefName, headRefOid, state });
+const pr = (number: number, headRefName: string, headRefOid: string, state = 'MERGED', baseRefName = 'main') =>
+  ({ number, headRefName, headRefOid, state, baseRefName });
 
 beforeAll(() => {
   root = mkdtempSync(join(tmpdir(), 'lexm-gitflaechen-'));
@@ -45,9 +47,11 @@ beforeAll(() => {
   g(['config', 'user.name', 'Test']);
   g(['config', 'commit.gpgsign', 'false']);
 
+  writeFileSync(join(repo, '.gitignore'), 'notizen/\nnode_modules/\n');
   schreibeCommit('a.txt', 'A');
   g(['branch', 'leer']); // 0 Commits vor main
   g(['branch', 'schmutzig']); // ebenfalls leer — nur der dreckige Worktree hält ihn
+  g(['branch', 'notiztraeger']); // leer — nur eine GITIGNORTE Datei hält ihn
 
   g(['checkout', '-b', 'gelandet']);
   schreibeCommit('b1.txt', 'B1');
@@ -63,25 +67,56 @@ beforeAll(() => {
 
   wtLeer = join(root, 'wt-leer');
   wtSchmutzig = join(root, 'wt-schmutzig');
+  wtNotiz = join(root, 'wt-notiz');
   g(['worktree', 'add', wtLeer, 'leer']);
   g(['worktree', 'add', wtSchmutzig, 'schmutzig']);
+  g(['worktree', 'add', wtNotiz, 'notiztraeger']);
   writeFileSync(join(wtSchmutzig, 'unversioniert.txt'), 'nicht committet'); // untracked = dirty
+  // Nur GITIGNORT: `git status --porcelain` zeigt hier nichts, und
+  // `git worktree remove` löscht die Datei ohne `--force` klaglos mit
+  // (empirisch belegt 21.9.2026) — der Realfall sind Davids `.claude/notizen/`.
+  mkdirSync(join(wtNotiz, 'notizen'));
+  writeFileSync(join(wtNotiz, 'notizen', 'uebergabe.md'), 'Davids Pflicht-Notiz');
+  // Reiner Bau-Cache im ABRÄUMBAREN Platz: darf ihn NICHT festhalten.
+  mkdirSync(join(wtLeer, 'node_modules'));
+  writeFileSync(join(wtLeer, 'node_modules', 'x.js'), '// Cache');
 });
 
 afterAll(() => {
   if (root) rmSync(root, { recursive: true, force: true });
 });
 
+/** Nichts belegt — die Belegungsregel prüft der Kern-Test, nicht `lsof`. */
+const FREI: string[] = [];
+
 describe('Sammler + Abräumen gegen ein echtes Repo', () => {
   it('ROT: ein Commit NACH dem PR-Head hält den Branch — auch mit gemergtem PR', () => {
-    const bef = erhebe({ cwd: repo, prs: [pr(41, 'gelandet', shaB1)] });
+    const bef = erhebe({ cwd: repo, belegtePfade: FREI, prs: [pr(41, 'gelandet', shaB1)] });
     const b = bef.branches.find((x) => x.name === 'gelandet')!;
     expect(b.abraeumbar).toBe(false);
     expect(b.grund).toContain('1 Commit danach');
   });
 
-  it('klassiert die vier Branches und die zwei Plätze richtig', () => {
-    const bef = erhebe({ cwd: repo, prs: [pr(42, 'gelandet', shaB2)] });
+  it('ROT (3): PR gemergt, aber nach einem Feature-Zweig ⇒ nicht abräumbar', () => {
+    const bef = erhebe({ cwd: repo, belegtePfade: FREI, prs: [pr(43, 'gelandet', shaB2, 'MERGED', 'feat/sammel')] });
+    const b = bef.branches.find((x) => x.name === 'gelandet')!;
+    expect(b.abraeumbar).toBe(false);
+    expect(b.grund).toContain('feat/sammel');
+  });
+
+  it('ROT (1): ein laufender Prozess im Worktree hält Platz UND Branch', () => {
+    // Pfad aus dem Befund nehmen, nicht selbst bauen: git meldet den
+    // aufgelösten Pfad (/private/var/… statt /var/…), und genau so druckt ihn
+    // auch `lsof` — ein handgebauter Pfad träfe daneben.
+    const pfad = erhebe({ cwd: repo, belegtePfade: FREI }).worktrees.find((w) => w.name === 'wt-leer')!.pfad;
+    const bef = erhebe({ cwd: repo, belegtePfade: [join(pfad, 'unterordner')], prs: [pr(42, 'gelandet', shaB2)] });
+    expect(bef.worktrees.find((w) => w.name === 'wt-leer')!.abraeumbar).toBe(false);
+    expect(bef.worktrees.find((w) => w.name === 'wt-leer')!.grund).toContain('laufender Prozess');
+    expect(bef.branches.find((x) => x.name === 'leer')!.abraeumbar).toBe(false);
+  });
+
+  it('klassiert die Branches und die drei Plätze richtig', () => {
+    const bef = erhebe({ cwd: repo, belegtePfade: FREI, prs: [pr(42, 'gelandet', shaB2)] });
     const b = (n: string) => bef.branches.find((x) => x.name === n)!;
 
     expect(bef.ghVerfuegbar).toBe(true);
@@ -98,12 +133,20 @@ describe('Sammler + Abräumen gegen ein echtes Repo', () => {
     expect(s.grund).toContain('nicht sauber');
     expect(b('schmutzig').abraeumbar).toBe(false);
 
+    // ROT (2): NUR eine gitignorte Datei — `git status --porcelain` wäre hier
+    // leer. Der Platz und sein Branch müssen trotzdem stehen bleiben.
+    const n = bef.worktrees.find((w) => w.name === 'wt-notiz')!;
+    expect(n.abraeumbar).toBe(false);
+    expect(n.grund).toContain('notizen/');
+    expect(b('notiztraeger').abraeumbar).toBe(false);
+
+    // Umgekehrt: ein reiner Bau-Cache (`node_modules/`) hält nichts auf.
     expect(bef.worktrees.find((w) => w.name === 'wt-leer')!.abraeumbar).toBe(true);
     expect(bef.worktrees.find((w) => w.name === 'repo')!.stumm).toBe(true);
   });
 
-  it('--ausfuehren löscht genau die abräumbaren Flächen — offene Arbeit überlebt', () => {
-    const bef = erhebe({ cwd: repo, prs: [pr(42, 'gelandet', shaB2)] });
+  it('--ausfuehren löscht genau die abräumbaren Flächen — offene Arbeit und Notizen überleben', () => {
+    const bef = erhebe({ cwd: repo, belegtePfade: FREI, prs: [pr(42, 'gelandet', shaB2)] });
     const shaLeer = bef.branches.find((x) => x.name === 'leer')!.spitze;
     const { zeilen, fehler } = raeumeAb(bef, { cwd: repo });
 
@@ -111,22 +154,24 @@ describe('Sammler + Abräumen gegen ein echtes Repo', () => {
     // Der alte SHA steht im Protokoll — sonst wäre nichts wiederherstellbar.
     expect(zeilen.join('\n')).toContain(`git branch leer ${shaLeer}`);
 
-    expect(branchNamen()).toEqual(['main', 'offen', 'schmutzig']);
+    expect(branchNamen()).toEqual(['main', 'notiztraeger', 'offen', 'schmutzig']);
     expect(existsSync(wtLeer)).toBe(false);
     expect(existsSync(wtSchmutzig)).toBe(true);
     expect(existsSync(join(wtSchmutzig, 'unversioniert.txt'))).toBe(true);
+    // Der Kern des Bug-Checks: die gitignorte Notiz steht noch da.
+    expect(existsSync(join(wtNotiz, 'notizen', 'uebergabe.md'))).toBe(true);
 
     // Der gelöschte `gelandet`-Commit ist über seinen SHA weiter erreichbar.
     expect(sha(shaB2)).toBe(shaB2);
   });
 
   it('ohne gh-Antwort bleibt der gelandete Branch stehen (fail-closed)', () => {
-    // Nach dem Abräumen oben: `offen` und `schmutzig` sind übrig. Ein zweiter
-    // Lauf ohne PR-Wissen darf an beiden nichts ändern.
-    const bef = erhebe({ cwd: repo, mitGh: false });
+    // Nach dem Abräumen oben sind `notiztraeger`, `offen` und `schmutzig`
+    // übrig. Ein zweiter Lauf ohne PR-Wissen darf an keinem etwas ändern.
+    const bef = erhebe({ cwd: repo, belegtePfade: FREI, mitGh: false });
     expect(bef.ghVerfuegbar).toBe(false);
     expect(bef.branches.filter((b) => b.abraeumbar)).toEqual([]);
     expect(raeumeAb(bef, { cwd: repo }).zeilen).toEqual(['   — nichts abzuräumen']);
-    expect(branchNamen()).toEqual(['main', 'offen', 'schmutzig']);
+    expect(branchNamen()).toEqual(['main', 'notiztraeger', 'offen', 'schmutzig']);
   });
 });

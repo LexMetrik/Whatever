@@ -5,6 +5,7 @@ import {
   klassiere,
   parseWorktreeFakten,
   platzName,
+  schmutz,
   type BranchFakt,
   type Fakten,
   type WorktreeFakt,
@@ -38,7 +39,8 @@ const wt = (p: Partial<WorktreeFakt> & { pfad: string }): WorktreeFakt => ({
   haupt: false,
   aktuell: false,
   gelockt: false,
-  sauber: true,
+  belegt: false,
+  statusZeilen: [],
   branch: null,
   head: SHA_B,
   headVonMain: false,
@@ -54,7 +56,7 @@ const fakten = (p: Partial<Fakten> = {}): Fakten => ({
   ...p,
 });
 
-const MERGED = { number: 7, zustand: 'MERGED' as const, headRefOid: SHA_A };
+const MERGED = { number: 7, zustand: 'MERGED' as const, headRefOid: SHA_A, basis: 'main' };
 
 const branch = (bef: ReturnType<typeof klassiere>, name: string) => bef.branches.find((b) => b.name === name)!;
 const platz = (bef: ReturnType<typeof klassiere>, pfad: string) => bef.worktrees.find((w) => w.pfad === pfad)!;
@@ -111,6 +113,17 @@ describe('klassiere · Branches', () => {
     expect(branch(bef, 'ohne-pr').grund).toContain('kein PR');
   });
 
+  it('ROT (3): PR gemergt, aber nach einem Feature-Zweig statt nach main ⇒ nicht abräumbar', () => {
+    const bef = klassiere(
+      fakten({
+        branches: [br({ name: 'teil', pr: { ...MERGED, basis: 'feat/sammel' }, nachPrHead: 0 })],
+      }),
+    );
+    expect(branch(bef, 'teil').klasse).toBe('offen');
+    expect(branch(bef, 'teil').abraeumbar).toBe(false);
+    expect(branch(bef, 'teil').grund).toContain('feat/sammel');
+  });
+
   it('ROT (c): gh ausgefallen ⇒ NUR leere Branches sind abräumbar', () => {
     const bef = klassiere(
       fakten({
@@ -144,7 +157,7 @@ describe('klassiere · Branches', () => {
     const bef = klassiere(
       fakten({
         branches: [br({ name: 'squash', pr: MERGED, nachPrHead: 0, imWorktree: '/tmp/platz' })],
-        worktrees: [wt({ pfad: '/tmp/platz', branch: 'squash', sauber: false })],
+        worktrees: [wt({ pfad: '/tmp/platz', branch: 'squash', statusZeilen: [' M src/x.ts'] })],
       }),
     );
     expect(branch(bef, 'squash').klasse).toBe('gelandet');
@@ -156,7 +169,7 @@ describe('klassiere · Branches', () => {
     const bef = klassiere(
       fakten({
         branches: [br({ name: 'squash', pr: MERGED, nachPrHead: 0, imWorktree: '/tmp/platz' })],
-        worktrees: [wt({ pfad: '/tmp/platz', branch: 'squash', sauber: true })],
+        worktrees: [wt({ pfad: '/tmp/platz', branch: 'squash', statusZeilen: ['!! node_modules/'] })],
       }),
     );
     expect(platz(bef, '/tmp/platz').abraeumbar).toBe(true);
@@ -165,24 +178,54 @@ describe('klassiere · Branches', () => {
 });
 
 describe('klassiere · Worktrees', () => {
-  it('ROT (b): unversionierte oder uncommittete Dateien ⇒ nicht abräumbar', () => {
-    const bef = klassiere(
+  /** Ein sonst makellos abräumbarer Platz — nur die geprüfte Bedingung hält ihn. */
+  const nurDieseBedingung = (p: Partial<WorktreeFakt>) =>
+    klassiere(
       fakten({
         branches: [br({ name: 'leer', leer: true, vorMain: 0, imWorktree: '/tmp/p' })],
-        worktrees: [wt({ pfad: '/tmp/p', branch: 'leer', sauber: false })],
+        worktrees: [wt({ pfad: '/tmp/p', branch: 'leer', ...p })],
       }),
     );
+
+  it('ROT (1): laufender Prozess im Worktree ⇒ nie abräumbar (lebende Session)', () => {
+    // Realfall 21.9.2026: `.claude/worktrees/angry-bartik-e40d69` — sauber,
+    // ungelockt, 0 Commits, und vier Prozesse einer offenen Desktop-App-Session.
+    const bef = nurDieseBedingung({ belegt: true });
+    expect(platz(bef, '/tmp/p').abraeumbar).toBe(false);
+    expect(platz(bef, '/tmp/p').grund).toContain('laufender Prozess');
+    // Der Branch darf dann auch nicht weg — sonst zöge man ihr den Zweig weg.
+    expect(branch(bef, 'leer').abraeumbar).toBe(false);
+  });
+
+  it('ROT (1b): Belegung nicht prüfbar (lsof fehlt) ⇒ nicht abräumbar (fail-closed)', () => {
+    const bef = nurDieseBedingung({ belegt: null });
+    expect(platz(bef, '/tmp/p').abraeumbar).toBe(false);
+    expect(platz(bef, '/tmp/p').grund).toContain('fail-closed');
+    expect(branch(bef, 'leer').abraeumbar).toBe(false);
+  });
+
+  it('ROT (b): unversionierte oder uncommittete Dateien ⇒ nicht abräumbar', () => {
+    const bef = nurDieseBedingung({ statusZeilen: [' M src/x.ts', '?? neu.txt'] });
     expect(platz(bef, '/tmp/p').abraeumbar).toBe(false);
     expect(platz(bef, '/tmp/p').grund).toContain('nicht sauber');
   });
 
+  it('ROT (2): NUR eine gitignorte Datei ⇒ nicht abräumbar (Davids Notizen)', () => {
+    // `git status --porcelain` OHNE --ignored wäre hier leer, und
+    // `git worktree remove` löschte die Datei klaglos (empirisch 21.9.2026).
+    const bef = nurDieseBedingung({ statusZeilen: ['!! .claude/notizen/'] });
+    expect(platz(bef, '/tmp/p').abraeumbar).toBe(false);
+    expect(platz(bef, '/tmp/p').grund).toContain('.claude/notizen/');
+    expect(branch(bef, 'leer').abraeumbar).toBe(false);
+  });
+
+  it('reine Bau-Caches allein halten den Platz NICHT auf', () => {
+    const bef = nurDieseBedingung({ statusZeilen: ['!! node_modules/', '!! dist/', '!! .gate/'] });
+    expect(platz(bef, '/tmp/p').abraeumbar).toBe(true);
+  });
+
   it('ROT (b2): `git status` nicht abfragbar ⇒ nicht abräumbar (fail-closed)', () => {
-    const bef = klassiere(
-      fakten({
-        branches: [br({ name: 'leer', leer: true, vorMain: 0, imWorktree: '/tmp/p' })],
-        worktrees: [wt({ pfad: '/tmp/p', branch: 'leer', sauber: null })],
-      }),
-    );
+    const bef = nurDieseBedingung({ statusZeilen: null });
     expect(platz(bef, '/tmp/p').abraeumbar).toBe(false);
   });
 
@@ -239,10 +282,10 @@ describe('flaechenZeile (plan:next)', () => {
     ).toBeNull();
   });
 
-  it('nennt höchstens drei Namen, dann +n', () => {
+  it('nennt KEINE Namen — die stehen schon im Lage-Block darüber (Auflage 5)', () => {
     const z = flaechenZeile(klassiere(rest(5)), false)!;
-    expect(z).toContain('5 zu prüfen: b0, b1, b2 +2');
-    expect(z).not.toContain('b3');
+    expect(z).toBe('🧹 Git-Flächen: 5 zu prüfen — npm run aufraeumen:git');
+    for (const n of ['b0', 'b1', 'b2', 'b3', 'b4']) expect(z).not.toContain(n);
   });
 
   it('mit gh-Prüfung heisst es «mit ungelandeter Arbeit», ohne «zu prüfen» (§8)', () => {
@@ -255,7 +298,39 @@ describe('flaechenZeile (plan:next)', () => {
       fakten({ branches: [br({ name: 'alt', leer: true, vorMain: 0, letzterCommitUnix: 1_700_000_000 }), br({ name: 'x' })] }),
     );
     expect(flaechenZeile(bef, false)).toBe(flaechenZeile(bef, false));
-    expect(flaechenZeile(bef, false)).toBe('🧹 Git-Flächen: 1 abräumbar · 1 zu prüfen: x — npm run aufraeumen:git');
+    expect(flaechenZeile(bef, false)).toBe('🧹 Git-Flächen: 1 abräumbar · 1 zu prüfen — npm run aufraeumen:git');
+  });
+});
+
+describe('schmutz (Auflage 2: --ignored)', () => {
+  it('leer ⇒ sauber', () => {
+    expect(schmutz([])).toBeNull();
+    expect(schmutz([''])).toBeNull();
+  });
+
+  it('erlaubte Bau-Caches ⇒ sauber, mit UND ohne Schrägstrich', () => {
+    // git druckt `node_modules/` beim echten Verzeichnis und `node_modules`
+    // beim Symlink — beides am 21.9.2026 real gemessen.
+    expect(schmutz(['!! node_modules/', '!! dist/'])).toBeNull();
+    expect(schmutz(['!! node_modules'])).toBeNull();
+  });
+
+  it('alles andere Ignorierte ⇒ schmutzig', () => {
+    expect(schmutz(['!! .selbstopt-ereignisse.jsonl'])).toContain('.selbstopt-ereignisse.jsonl');
+    expect(schmutz(['!! .env.local'])).toContain('.env.local');
+    // Kein Muster-Match: ein Pfad, der nur so HEISST wie ein Cache, zählt nicht.
+    expect(schmutz(['!! src/node_modules/'])).toContain('src/node_modules/');
+  });
+
+  it('zählt und benennt, höchstens drei Namen', () => {
+    const g = schmutz(['!! a', '!! b', '!! c', '!! d'])!;
+    expect(g).toContain('4 ignorierte(r) Eintrag/Einträge: a, b, c +1');
+  });
+
+  it('Änderungen und Ignoriertes werden getrennt gezählt', () => {
+    const g = schmutz([' M x.ts', '?? y.ts', '!! .claude/notizen/'])!;
+    expect(g).toContain('2 Änderung(en)');
+    expect(g).toContain('.claude/notizen/');
   });
 });
 

@@ -309,23 +309,23 @@ Anlässe im Wortlaut: `referenz-ci.md` §Umzug 19.9.2026.
 
 Beleg: `referenz-ci.md` §Umzug 19.9.2026. Regel:
 1. **Eigene Worktrees und Branches** verlassen die Session nur gemergt oder
-   gelöscht; fertige Arbeit ohne Landung = PR eröffnen (Risikopfad: ohne
-   `--auto`, Gegenprüfung nennen). Handgriff: `npm run aufraeumen:git`
-   (Trockenlauf; `-- --ausfuehren` räumt ab).
-   21.9.2026: 20 Branches, davon 18 leere Hüllen (7 gelandet — Squash löscht
-   nur remote; 5 `claude/*`, 6 `worktree-agent-*`), 2 mit ungelandeter Arbeit
-   ohne PR. Diese Ziffer sah nur EIGENE Flächen — darum Anzeige + Befehl
-   statt Prosa (`lehren` Regel 5).
+   gelöscht; fertige Arbeit ohne Landung = PR (Risikopfad: ohne `--auto`,
+   Gegenprüfung nennen). Handgriff: `npm run aufraeumen:git`
+   (`-- --ausfuehren` räumt ab) — **nur LOKAL**: Remote-Zweige ungelandeter
+   oder geparkter Arbeit von Hand (`git push origin --delete <branch>`),
+   gelandete löscht GitHub selbst. 21.9.2026: 20 Branches, 18 leere Hüllen
+   (7 gelandet, 5 `claude/*`, 6 `worktree-agent-*`), 2 ungelandet ohne PR.
+   Diese Ziffer sah nur EIGENE Flächen — daher Anzeige + Befehl (`lehren` 5).
 2. **Geparkte Stände sind Tags, keine Branches:** `git tag
-   archiv/<slug>-<datum> <sha>` pushen, Branch löschen; zurück aus dem Tag.
+   archiv/<slug>-<datum> <sha>` pushen, Branch löschen.
 3. **Dependabot je Session einordnen:** Patch/Minor einreihen (`gh pr merge
    <n> --squash`, `--auto` zulässig — kein Risikopfad, kein Nachzug),
    Hauptversionen mit Begründung schliessen — nie liegen lassen (8.9.2026:
-   113 CI-Läufe aus 13 liegenden Zweigen).
+   113 CI-Läufe aus 13 Zweigen).
 4. **Autopilot-/Entwurfs-PRs** tragen ein Ablaufdatum; danach schliessen.
-5. **Den EIGENEN Worktree zuletzt entfernen — oder gar nicht** (18.9.2026,
-   `referenz-ci.md`): ist der Pfad weg, lösen die Hooks nicht mehr auf —
-   Bash UND Read stehen still. Reihenfolge: Doku-PR landen, Flächen abräumen,
+5. **Den EIGENEN Worktree zuletzt entfernen — oder gar nicht** (18.9.2026):
+   ist der Pfad weg, stehen Bash UND Read still (Hooks
+   lösen nicht mehr auf). Reihenfolge: Doku-PR landen, abräumen,
    Nachkontrolle, Bericht — **erst zuletzt** der eigene. Festgefahren:
    `git worktree add --detach <pfad> main`; nie Ersatz-Hooks.
 Wächter: `plan:next` (Lage-Block + Flächen-Zeile), auch am Session-Ende.

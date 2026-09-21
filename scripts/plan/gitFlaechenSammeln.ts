@@ -30,6 +30,8 @@ export interface PrRoh {
   headRefName: string;
   headRefOid: string;
   state: string;
+  /** Zielzweig — nur `main` ist eine Landung (Auflage 3, Bug-Check 21.9.2026). */
+  baseRefName: string;
 }
 
 export interface SammelOpt {
@@ -48,18 +50,26 @@ export interface SammelOpt {
    */
   zaehlen?: boolean;
   /**
-   * `git status --porcelain` je Worktree fahren (ein Prozessstart pro Platz)?
+   * Worktrees tief prüfen — `git status --porcelain --ignored` je Platz plus
+   * EIN globales `lsof` für die Belegung?
    *
    * Default `true`. `plan:next` setzt `false` — gemessen 21.9.2026 im
-   * Haupt-Repo: mit Status 137 ms, ohne 66 ms (4 Worktrees), bei einer
-   * Gesamtlaufzeit von ~540 ms. Ohne Status gilt jeder Worktree als
-   * «nicht sauber prüfbar» und damit als nicht abräumbar (fail-closed) —
-   * in der Zeile fehlt dann höchstens ein abräumbarer Platz, es wird nie
-   * einer zu viel gemeldet.
+   * Haupt-Repo: mit Tiefprüfung 137 ms, ohne 37–53 ms (4 Worktrees), bei
+   * einer Gesamtlaufzeit von ~540 ms. Ohne Tiefprüfung gelten Belegung und
+   * Sauberkeit als «nicht gemessen» ⇒ kein Worktree ist abräumbar
+   * (fail-closed). In der Zeile fehlt dann höchstens ein abräumbarer Platz;
+   * es wird nie einer zu viel gemeldet.
    */
-  statusPruefen?: boolean;
+  tiefPruefen?: boolean;
   /** Test-Naht: PR-Liste direkt einspeisen statt `gh` zu rufen (dann gilt gh als verfügbar). */
   prs?: PrRoh[];
+  /**
+   * Test-Naht: cwd-Pfade laufender Prozesse direkt einspeisen statt `lsof` zu
+   * rufen. `[]` heisst ausdrücklich «nichts belegt». Nötig, weil `lsof` nicht
+   * auf jedem Läufer installiert ist — ohne diese Naht hinge der
+   * Integrationstest an einem Programm, das nichts mit der Regel zu tun hat.
+   */
+  belegtePfade?: string[];
 }
 
 /** Obergrenze der PR-Abfrage. Ein älterer gemergter PR fällt fail-closed in «offen». */
@@ -71,6 +81,43 @@ function stillLaufen(laufe: Laufe, cmd: string, args: string[], cwd?: string): s
   } catch {
     return null;
   }
+}
+
+/**
+ * Wie `stillLaufen`, aber ein Programm, das mit Code ≠ 0 endet UND etwas
+ * ausgegeben hat, gilt als geglückt.
+ *
+ * Nötig für `lsof`: es endet regelmässig mit Status 1, obwohl es Treffer
+ * gedruckt hat (gemessen 21.9.2026: 4 Treffer, Exit 1). Würde man den
+ * Exit-Code werten, hiesse jeder belegte Worktree «nicht prüfbar» — und
+ * jeder unbelegte auch. `null` bleibt dem echten Ausfall vorbehalten:
+ * Programm fehlt, Timeout, kein `stdout` am Fehler.
+ */
+function laufenDuldsam(laufe: Laufe, cmd: string, args: string[], cwd?: string): string | null {
+  try {
+    return laufe(cmd, args, cwd);
+  } catch (e) {
+    const aus = (e as { stdout?: unknown }).stdout;
+    return typeof aus === 'string' ? aus : null;
+  }
+}
+
+/**
+ * EIN globales `lsof` statt eines `+D`-Laufs je Worktree.
+ *
+ * Messung 21.9.2026 (4 Worktrees, macOS): `lsof -a -d cwd +D <pfad>` je Platz
+ * = 257/274/1680/2143 ms, Summe 4354 ms — `+D` läuft den ganzen Baum ab und
+ * reisst an `node_modules` über eine Sekunde. `lsof -a -d cwd -Fn` einmal
+ * global = 76 ms (3 von 3 Läufen), 406 cwd-Pfade, gleiche Treffer. Darum die
+ * globale Variante mit Filterung im Code.
+ *
+ * `null` = lsof nicht verfügbar ⇒ jede Belegung gilt als unbekannt.
+ */
+export function belegtePfade(laufe: Laufe, cwd?: string): string[] | null {
+  const roh = laufenDuldsam(laufe, 'lsof', ['-a', '-d', 'cwd', '-Fn'], cwd);
+  if (roh === null) return null;
+  // `-Fn` druckt Datensätze als `p<pid>` / `f<fd>` / `n<pfad>` je Zeile.
+  return roh.split('\n').filter((z) => z.startsWith('n')).map((z) => z.slice(1)).filter(Boolean);
 }
 
 function zahl(roh: string | null): number | null {
@@ -132,7 +179,7 @@ export function sammleFakten(opt: SammelOpt = {}): Fakten {
   } else if (opt.mitGh) {
     const ghRoh = stillLaufen(laufe, 'gh', [
       'pr', 'list', '--state', 'all', '--limit', PR_LIMIT,
-      '--json', 'number,headRefName,headRefOid,state',
+      '--json', 'number,headRefName,headRefOid,state,baseRefName',
     ], cwd);
     if (ghRoh !== null) {
       try {
@@ -144,13 +191,16 @@ export function sammleFakten(opt: SammelOpt = {}): Fakten {
   }
   const ghVerfuegbar = prs !== null;
 
-  /** Bevorzugt den gemergten PR — ein Branch kann mehrere PRs getragen haben. */
+  /**
+   * Bevorzugt den nach `main` gemergten PR — ein Branch kann mehrere PRs
+   * getragen haben, und nur der main-Merge ist eine Landung (Auflage 3).
+   */
   const prFuer = (name: string): PrFakt | null => {
     const treffer = (prs ?? []).filter((p) => p.headRefName === name);
     if (treffer.length === 0) return null;
-    const p = treffer.find((x) => x.state === 'MERGED') ?? treffer[0];
+    const p = treffer.find((x) => x.state === 'MERGED' && x.baseRefName === 'main') ?? treffer[0];
     const zustand = p.state === 'MERGED' ? 'MERGED' : p.state === 'OPEN' ? 'OPEN' : 'CLOSED';
-    return { number: p.number, zustand, headRefOid: p.headRefOid };
+    return { number: p.number, zustand, headRefOid: p.headRefOid, basis: p.baseRefName };
   };
 
   const zaehlen = opt.zaehlen ?? true;
@@ -168,7 +218,7 @@ export function sammleFakten(opt: SammelOpt = {}): Fakten {
       remote: (upstream ?? '') !== '' && !(track ?? '').includes('gone'),
       imWorktree: worktreeVonBranch.get(name) ?? null,
       nachPrHead:
-        pr && pr.zustand === 'MERGED'
+        pr && pr.zustand === 'MERGED' && pr.basis === 'main'
           ? zahl(stillLaufen(laufe, 'git', ['rev-list', '--count', `${pr.headRefOid}..${name}`], cwd))
           : null,
       pr,
@@ -177,19 +227,30 @@ export function sammleFakten(opt: SammelOpt = {}): Fakten {
 
   // --- Worktrees -----------------------------------------------------------
   const mergedOids = new Set((prs ?? []).filter((p) => p.state === 'MERGED').map((p) => p.headRefOid));
-  const statusPruefen = opt.statusPruefen ?? true;
+  const tiefPruefen = opt.tiefPruefen ?? true;
+  // EIN lsof für alle Plätze (s. `belegtePfade`). Ohne Tiefprüfung gar keins.
+  const belegtRoh = opt.belegtePfade ?? (tiefPruefen ? belegtePfade(laufe, cwd) : null);
+  const istBelegt = (pfad: string): boolean | null => {
+    if (belegtRoh === null) return null;
+    const echt = echterPfad(pfad);
+    return belegtRoh.some((p) => p === pfad || p.startsWith(`${pfad}/`) || p === echt || p.startsWith(`${echt}/`));
+  };
+
   const worktrees: WorktreeFakt[] = roh.map((w) => {
     // `null` heisst «nicht gemessen ODER nicht messbar» — beides ist
     // fail-closed dasselbe: der Platz bleibt stehen. Der Haupt-Checkout ist
     // ohnehin nie abräumbar, deshalb dort keine Messung.
-    const status = w.haupt ? '' : statusPruefen ? stillLaufen(laufe, 'git', ['status', '--porcelain'], w.pfad) : null;
+    const status = w.haupt || !tiefPruefen
+      ? null
+      : stillLaufen(laufe, 'git', ['status', '--porcelain', '--ignored'], w.pfad);
     return {
       pfad: w.pfad,
       name: platzName(w.pfad),
       haupt: w.haupt,
       aktuell: echterPfad(w.pfad) === hier,
       gelockt: w.gelockt,
-      sauber: w.haupt ? true : status === null ? null : status.trim() === '',
+      belegt: w.haupt ? true : istBelegt(w.pfad),
+      statusZeilen: w.haupt ? [] : status === null ? null : status.split('\n'),
       branch: w.branch,
       head: w.head,
       headVonMain:

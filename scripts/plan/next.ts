@@ -68,9 +68,11 @@ if (!process.env.VITEST) {
   // `--prs`, und der Pflicht-Einstieg darf nicht am Netz hängen. Damit ist
   // «gelandet» hier nicht unterscheidbar von «ungelandet»: die Zeile sagt
   // darum ehrlich «zu prüfen» (§8), die Klassierung macht der Befehl.
+  // NUR ZÄHLER, keine Namen: die Namen stehen schon im Lage-Block darüber
+  // (Bug-Check 21.9.2026, Auflage 5 — keine zweite Liste derselben Sache).
   // Sauberer Zustand ⇒ keine Zeile. Ausfall ⇒ still (§8, wie der Notizen-Block).
   try {
-    const fakten = sammleFakten({ mitGh: false, zaehlen: false, statusPruefen: false });
+    const fakten = sammleFakten({ mitGh: false, zaehlen: false, tiefPruefen: false });
     const flaechen = flaechenZeile(klassiere(fakten), false);
     if (flaechen) z(flaechen);
   } catch {
