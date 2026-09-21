@@ -29,6 +29,12 @@ export function pruefeCuriaBestand(dir: string, zustand: CuriaZustand[] | null):
     fehler.push(`${dir} ist befüllt, aber ${CURIA_ZUSTAND_PFAD} fehlt — der Zustandsträger ist der einzige Beleg des Laufs.`);
   }
   if (zustand) {
+    // ── DUBLETTE (Nachzug PR #963, Auflage 4): die Maps unten nähmen still die LETZTE Zeile einer
+    // doppelten Nummer — eine abweichende erste Zeile bliebe ungeprüft. Der Generator schreibt je
+    // Geschäft genau eine Zeile; zwei sind ein Hand-Edit oder ein halber Merge ⇒ ROT.
+    for (const [nummer, n] of zaehleDubletten(zustand)) {
+      fehler.push(`Curia-Geschäft ${nummer} steht ${n}× im Zustandsträger — Nummer mehrfach; die Prüfungen sähen nur die letzte Zeile (§5). Generator neu laufen lassen, nie von Hand angleichen.`);
+    }
     for (const z of zustand) {
       if (!shards.includes(`${z.nummer}.json`)) {
         fehler.push(`Curia-Geschäft ${z.nummer} steht im Zustandsträger, sein Shard fehlt in ${dir} — stiller Verlust (§11.6).`);
@@ -119,8 +125,14 @@ export function pruefeCuriaBestand(dir: string, zustand: CuriaZustand[] | null):
       }
       // ── ZÄHLER-GEGENPROBE (Posten 2026-09-21-curia-nachbarn Ziff. 3, 21.9.2026) ──
       // Der Zustandsträger führt je Geschäft auch `beschluesse`/`vorberatungen`/
-      // `schlussabstimmung`; bis hierher rechnete das Tor sie nie gegen den Shard — genau die
-      // Lücke, die beim Publikations-Feld den Kollabierungs-Bug unsichtbar hielt. Die Zuordnung
+      // `schlussabstimmung`; bis hierher rechnete das Tor sie nie gegen den Shard.
+      // REICHWEITE (berichtigt im Nachzug zu PR #963, 21.9.2026, §8): anders als `objectiveZeilen`
+      // sind diese Zahlen KEINE unabhängige Referenz. Der Schreiber setzt sie als `.length` der
+      // bereits DEDUPLIZIERTEN Arrays, die auch in den Shard gehen (curia-run.ts, `zustand.push`) —
+      // die Probe vergleicht also dieselbe Zahl zweimal. Sie fängt Register↔Shard-Drift
+      // (nachträglicher Edit einer der beiden Dateien, halber Lauf), NICHT einen Dedupe-Verlust:
+      // fällt beim Bauen eine amtliche Zeile zusammen, sinken beide Seiten gemeinsam. Den fängt
+      // nur die Schrumpf-Schwelle gegen den Vorstand (pruefeCuriaSchrumpf). Die Zuordnung
       // ist am Schreiber abgelesen, nicht geraten (curia-run.ts, `zustand.push`):
       //   beschluesse       = shard.beschluesse.length
       //   vorberatungen     = shard.kommissionen.length   (NICHT ein Feld «vorberatungen»)
@@ -184,7 +196,8 @@ export function pruefeCuriaBestand(dir: string, zustand: CuriaZustand[] | null):
       + `0 Personendaten-Felder; Publikationen ${publikationenGesamt} gespeichert = ${rohGesamt} rohe amtliche `
       + 'Objective-Zeile(n) laut Zustandsträger (keine Zeile ist beim Speichern zusammengefallen); '
       + `Zähler-Gegenprobe Beschlüsse ${beschluesseGesamt} · Vorberatungen ${vorberatungenGesamt} · `
-      + 'Schlussabstimmungs-Merker je Shard = Zustandsträger.',
+      + 'Schlussabstimmungs-Merker je Shard = Zustandsträger (Register↔Shard-Drift; einen Dedupe-Verlust '
+      + 'sieht diese Probe nicht, den prüft die Schrumpf-Schwelle).',
     );
   } else {
     zeilen.push('check:entstehung — Curia: kein Zustandsträger (Etappe E4 noch nicht gelaufen).');
@@ -234,14 +247,25 @@ export type CuriaVorstand =
   | { art: 'unveraendert'; herleitung: string }
   | { art: 'unbestimmbar'; grund: string };
 
+/** Nummern, die mehr als einmal vorkommen, mit Anzahl (Reihenfolge des ersten Auftretens). */
+function zaehleDubletten(zustand: readonly CuriaZustand[]): [string, number][] {
+  const n = new Map<string, number>();
+  for (const z of zustand) n.set(z.nummer, (n.get(z.nummer) ?? 0) + 1);
+  return [...n].filter(([, k]) => k > 1);
+}
+
 function parseJsonl(text: string): CuriaZustand[] {
   return text.split('\n').filter((z) => z.trim()).map((z) => JSON.parse(z) as CuriaZustand);
 }
 
-/** Reine Prüfung: sinkt ein Zähler oder fällt ein Geschäft weg ⇒ Fehler, ausser eine gültige Ausnahme nennt den Übergang. */
+/**
+ * Reine Prüfung: sinkt ein Zähler oder fällt ein Geschäft weg ⇒ Fehler, ausser eine gültige Ausnahme
+ * nennt den Übergang. `ist === null` = der Ist-Zustandsträger fehlt: führt der Vorstand Geschäfte, ist
+ * das ein Totalverlust (ROT); führt auch er keine, ist es der legitime Erstfall (vor E4).
+ */
 export function pruefeCuriaSchrumpf(
   vorstand: CuriaVorstand,
-  ist: readonly CuriaZustand[],
+  ist: readonly CuriaZustand[] | null,
   ausnahmen: readonly CuriaSchrumpfAusnahme[] = [],
 ): TorErgebnis {
   const fehler: string[] = [];
@@ -251,13 +275,36 @@ export function pruefeCuriaSchrumpf(
         `Curia-Schrumpf-Schwelle: Vorstand nicht bestimmbar — ${vorstand.grund} Ohne Vorstand bliebe ein `
         + 'globaler Unter-Abruf unsichtbar; das Tor wird darum NICHT still grün (§6.7). Abhilfe: '
         + '`git fetch origin main` (flacher Klon: `git fetch --unshallow` bzw. `fetch-depth: 0`) oder die Basis '
-        + 'ausdrücklich setzen: CURIA_VORSTAND_BASIS=<commit> npm run check:entstehung',
+        + 'ausdrücklich setzen: CURIA_VORSTAND_BASIS=<commit> npm run check:entstehung — <commit> muss der Stand '
+        + 'VOR dem geprüften sein (ein echter Vorfahr von HEAD; HEAD selbst nur, solange der Zustandsträger '
+        + 'ungebucht geändert ist), sonst vergleicht das Tor den Stand mit sich selbst.',
       ],
       zeilen: [],
     };
   }
   if (vorstand.art === 'unveraendert') {
     return { fehler, zeilen: [`check:entstehung — Curia-Schrumpf-Schwelle: nicht verglichen — ${vorstand.herleitung}`] };
+  }
+  // ── TOTALVERLUST (Nachzug PR #963, Auflage 2): fehlt der Ist-Zustandsträger (z. B. JSONL und
+  // Shards zusammen gelöscht), schwieg das Tor vorher ganz — pruefeCuriaBestand sieht ohne Shards
+  // nichts, und die Schrumpf-Schwelle lief nur bei vorhandenem Ist. Der Vorstand entscheidet.
+  if (ist === null) {
+    const n = vorstand.zustand?.length ?? 0;
+    if (n > 0) {
+      return {
+        fehler: [
+          `Curia-Schrumpf-Schwelle: Totalverlust — der Vorstand ${vorstand.basis} (${vorstand.herleitung}) führt `
+          + `${n} Geschäft(e), der Ist-Zustandsträger ${CURIA_ZUSTAND_PFAD} fehlt. Ein ausgefallener oder `
+          + 'abgebrochener Lauf darf den Bestand nicht still löschen (§11.6). Generator neu laufen lassen '
+          + '(npm run materialien:curia) bzw. die Löschung zurücknehmen.',
+        ],
+        zeilen: [],
+      };
+    }
+    return {
+      fehler,
+      zeilen: [`check:entstehung — Curia-Schrumpf-Schwelle: Erstfall — weder der Vorstand ${vorstand.basis} noch der Arbeitsbaum führt Curia-Geschäfte (Etappe E4 noch nicht gelaufen).`],
+    };
   }
   if (vorstand.zustand === null) {
     return {
@@ -320,6 +367,9 @@ export function pruefeCuriaSchrumpf(
     }
   }
   const nv = Object.entries(nichtVergleichbar).map(([k, n]) => `${k} ${n}×`).join(', ');
+  // Dubletten im VORSTAND sind historisch (gebucht) und nicht mehr zu heilen — gemeldet, nicht ROT;
+  // jede Zeile wird gegen das Ist verglichen (streng: keine darf sinken). Im Ist ROT (pruefeCuriaBestand).
+  const vorstandDubletten = zaehleDubletten(vorstand.zustand).map(([nr]) => nr);
   const ohneWirkung = gueltig.length - benutzt.size;
   return {
     fehler,
@@ -329,7 +379,10 @@ export function pruefeCuriaSchrumpf(
       + `${gesunken} Absenkung(en)/Wegfall; ${benutzt.size} Ausnahme(n) greifen`
       + (ohneWirkung ? `, ${ohneWirkung} ohne Wirkung (entfernen)` : '')
       + (ausnahmen.length - gueltig.length ? `, ${ausnahmen.length - gueltig.length} ungültig (ohne seit/grund, ignoriert)` : '')
-      + (nv ? `; nicht vergleichbar, weil der Vorstand das Feld nicht führt: ${nv}` : '') + '.',
+      + (nv ? `; nicht vergleichbar, weil der Vorstand das Feld nicht führt: ${nv}` : '')
+      + (vorstandDubletten.length
+        ? `; Vorstand führt ${vorstandDubletten.length} Nummer(n) mehrfach: ${vorstandDubletten.join(', ')} (historisch, jede Zeile verglichen)`
+        : '') + '.',
     ],
   };
 }
@@ -346,6 +399,8 @@ const echtesGit: Git = (args) => {
 /**
  * Bestimmt den Vorstand (imperativer Rand, liest git). Reihenfolge:
  *  1. CURIA_VORSTAND_BASIS gesetzt ⇒ genau dieser Commit (muss existieren, sonst unbestimmbar).
+ *     Er muss ein echter Vorfahr von HEAD sein; HEAD selbst nur bei ungebucht geändertem
+ *     Zustandsträger (sonst Selbstvergleich) — beides sonst unbestimmbar (ROT).
  *  2. B = merge-base(origin/main, HEAD). B ≠ HEAD ⇒ Vorstand B (Branch lokal, pull_request =
  *     Merge-Commit auf main, merge_group = Queue-Commit auf main). NICHT HEAD: steht die JSONL
  *     im eigenen Commit, wäre HEAD schon der geschrumpfte Stand.
@@ -368,12 +423,33 @@ export function bestimmeCuriaVorstand(
     const text = git(['cat-file', '-e', `${basis}:${pfad}`]) === null ? null : git(['show', `${basis}:${pfad}`]);
     return { art: 'stand', basis: basis.slice(0, 9), herleitung, zustand: text === null ? null : parseJsonl(text) };
   };
+  const zustandImArbeitsbaum = (): string | null => (existsSync(pfad) ? readFileSync(pfad, 'utf8') : null);
+  const zustandIn = (c: string): string | null => (git(['cat-file', '-e', `${c}:${pfad}`]) === null ? null : git(['show', `${c}:${pfad}`]));
   const explizit = env.CURIA_VORSTAND_BASIS?.trim();
+  const head = commit('HEAD');
   if (explizit) {
     const c = commit(explizit);
-    return c ? lies(c, `CURIA_VORSTAND_BASIS=${explizit}`) : { art: 'unbestimmbar', grund: `CURIA_VORSTAND_BASIS=${explizit} ist kein Commit in diesem Klon.` };
+    if (!c) return { art: 'unbestimmbar', grund: `CURIA_VORSTAND_BASIS=${explizit} ist kein Commit in diesem Klon.` };
+    if (!head) return { art: 'unbestimmbar', grund: 'HEAD ist kein Commit (kein git-Arbeitsbaum?).' };
+    // Nachzug PR #963, Auflage 3: die Basis muss der Stand VOR dem geprüften sein. Basis = HEAD ist
+    // nur legitim, solange der Zustandsträger UNGEBUCHT geändert ist (manueller Monatslauf, wie der
+    // automatische Ast 3); bei gebuchtem Stand wäre es ein Selbstvergleich, der jede Schrumpfung
+    // übersieht. Jede andere Basis muss ein echter Vorfahr von HEAD sein.
+    if (c === head) {
+      if (zustandImArbeitsbaum() === zustandIn(head)) {
+        return {
+          art: 'unbestimmbar',
+          grund: `CURIA_VORSTAND_BASIS=${explizit} ist HEAD, und der Zustandsträger ist gebucht (Arbeitsbaum = HEAD) — `
+            + 'ein Selbstvergleich, der jede Schrumpfung übersähe.',
+        };
+      }
+      return lies(c, `CURIA_VORSTAND_BASIS=${explizit} (= HEAD, Zustandsträger ungebucht geändert)`);
+    }
+    if (git(['merge-base', '--is-ancestor', c, head]) === null) {
+      return { art: 'unbestimmbar', grund: `CURIA_VORSTAND_BASIS=${explizit} ist kein echter Vorfahr von HEAD.` };
+    }
+    return lies(c, `CURIA_VORSTAND_BASIS=${explizit}`);
   }
-  const head = commit('HEAD');
   if (!head) return { art: 'unbestimmbar', grund: 'HEAD ist kein Commit (kein git-Arbeitsbaum?).' };
   if (!commit('origin/main')) {
     return { art: 'unbestimmbar', grund: 'origin/main fehlt in diesem Klon (flacher Checkout eines PR-/Queue-Refs?).' };
@@ -381,8 +457,8 @@ export function bestimmeCuriaVorstand(
   const mb = git(['merge-base', 'origin/main', 'HEAD'])?.trim();
   if (!mb) return { art: 'unbestimmbar', grund: 'merge-base(origin/main, HEAD) nicht bildbar (flacher Klon ohne gemeinsame Geschichte?).' };
   if (mb !== head) return lies(mb, 'merge-base(origin/main, HEAD)');
-  const arbeitsbaum = existsSync(pfad) ? readFileSync(pfad, 'utf8') : null;
-  const imHead = git(['cat-file', '-e', `HEAD:${pfad}`]) === null ? null : git(['show', `HEAD:${pfad}`]);
+  const arbeitsbaum = zustandImArbeitsbaum();
+  const imHead = zustandIn('HEAD');
   if (arbeitsbaum !== imHead) return lies(head, 'HEAD — Arbeitsbaum steht auf main, Zustandsträger ungebucht geändert (Monatslauf)');
   const vorgaenger = commit('HEAD^1');
   if (vorgaenger) return lies(vorgaenger, 'HEAD^1 — Arbeitsbaum = HEAD auf main (push), Vorstand = Stand vor dem gelandeten Commit');

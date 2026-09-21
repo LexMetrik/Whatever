@@ -234,11 +234,11 @@ for (const [name, pfad, max, gzip] of DECKEL) {
   const bestand = pruefeCuriaBestand(CURIA_DIR, zustand);
   fehler.push(...bestand.fehler);
   zeilen.push(...bestand.zeilen);
-  if (zustand) {
-    const schrumpf = pruefeCuriaSchrumpf(bestimmeCuriaVorstand(), zustand, leseCuriaSchrumpfAusnahmen());
-    fehler.push(...schrumpf.fehler);
-    zeilen.push(...schrumpf.zeilen);
-  }
+  // Immer, auch ohne Ist-Zustandsträger (Nachzug PR #963, Auflage 2): fehlt die JSONL, entscheidet
+  // der Vorstand zwischen Erstfall (grün) und Totalverlust (ROT) — vorher schwieg das Tor hier.
+  const schrumpf = pruefeCuriaSchrumpf(bestimmeCuriaVorstand(), zustand, leseCuriaSchrumpfAusnahmen());
+  fehler.push(...schrumpf.fehler);
+  zeilen.push(...schrumpf.zeilen);
 }
 
 // ── (7) Synopse-Shards: Deckel je Erlass, Zitat-Merkmale, Determinismus (E5) ───
