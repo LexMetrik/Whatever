@@ -11,7 +11,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import {
   odataZeilen, odataDatum, aggregiereStimmen, ratAusGroesse, DECISION_CODES,
-  baueKommissionen, baueBeschluesse, bauePublikationen, schlussabstimmungsVotes,
+  baueKommissionen, baueBeschluesse, bauePublikationen, distinkteObjectiveZeilen, schlussabstimmungsVotes,
   serialisiereShard, curiaUrl, VERBOTENE_FELDER, SCHLUSSABSTIMMUNG_RE,
   type CuriaShard, type OdataZeile,
 } from '../../scripts/entstehung/curia';
@@ -25,6 +25,18 @@ describe('OData-Hülle und Datumsform', () => {
   it('wirft bei unerwarteter Form, statt sie als «keine Treffer» zu lesen (§6.7 lit. b)', () => {
     expect(() => odataZeilen({ value: [] })).toThrow(/unerwartete OData-Antwortform/);
     expect(() => odataZeilen({ d: { x: 1 } })).toThrow(/unerwartete OData-Antwortform/);
+  });
+
+  it('wirft bei «__next» statt die Folgeseiten still zu verlieren (Paging-Wächter)', () => {
+    // Gemessen 21.9.2026: der Endpunkt paginiert bei 1000 Zeilen. Der Client kann kein
+    // Paging — eine abgeschnittene Antwort muss darum LAUT scheitern, nie stumm kürzen.
+    expect(() => odataZeilen({
+      d: { results: [{ a: 1 }], __next: 'https://ws.parlament.ch/odata.svc/Objective?$skip=1000' },
+    })).toThrow(/UNVOLLSTÄNDIG/);
+    expect(() => odataZeilen({ d: { results: [], __next: 'x' } }, 'Objective (01.023)'))
+      .toThrow(/für Objective \(01\.023\)/);
+    // Ohne `__next` bleibt dieselbe Antwortform gültig — der Wächter darf nicht falsch-rot sein.
+    expect(odataZeilen({ d: { results: [{ a: 1 }] } })).toEqual([{ a: 1 }]);
   });
 
   it('wandelt /Date(ms)/ nach ISO und rät nie', () => {
@@ -122,6 +134,72 @@ describe('Parse-Funktionen — deterministisch und wörtlich (Curia-Auflage)', (
     expect(p[0].jahr).toBeNull();
     expect(p[0].nummer).toBeNull();
     expect(p[0].text).toBe('Entwurf der SPK-N');
+  });
+
+  // ── Publikationen: der Dedupe-Schlüssel MUSS `ReferenceText` führen ──────────────
+  // Befund 21.9.2026: ohne ihn kollabierten am Geschäft 01.023 32 amtliche
+  // Objective-Zeilen auf 21 — alte BBl-Fundstellen tragen weder Jahr noch Nummer,
+  // dort ist `ReferenceText` das einzige unterscheidende Feld.
+  it('Publikationen: gleiches Datum, kein Jahr/Nummer, anderer Text ⇒ ZWEI Fundstellen', () => {
+    const p = bauePublikationen([
+      {
+        PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+        PublicationYear: 'null', PublicationNumber: 'null',
+        ReferenceText: 'Bundesgesetz über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG)',
+        ReferendumDeadline: null,
+      },
+      {
+        PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+        PublicationYear: 'null', PublicationNumber: 'null',
+        ReferenceText: 'Bundesbeschluss über die Vereinfachung der Mehrwertsteuer',
+        ReferendumDeadline: null,
+      },
+    ]);
+    expect(p).toHaveLength(2);
+    expect(p.map((x) => x.text)).toEqual([
+      'Bundesbeschluss über die Vereinfachung der Mehrwertsteuer',
+      'Bundesgesetz über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG)',
+    ]);
+  });
+
+  it('Publikationen: eine byte-gleich doppelte Zeile bleibt EINE Fundstelle', () => {
+    // Der Dedupe hat einen belegten Anlass: 08.053 liefert zwei Fundstellen je dreifach
+    // (12 Roh-Zeilen, 8 distinkte, Messung 21.9.2026). Die Map bleibt deshalb.
+    const zeile: OdataZeile = {
+      PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+      PublicationYear: 'null', PublicationNumber: 'null',
+      ReferenceText: 'Bundesbeschluss über die Vereinfachung der Mehrwertsteuer',
+      ReferendumDeadline: null,
+    };
+    expect(bauePublikationen([zeile, { ...zeile }, { ...zeile }])).toHaveLength(1);
+    expect(distinkteObjectiveZeilen([zeile, { ...zeile }, { ...zeile }])).toBe(1);
+  });
+
+  it('Publikationen: umgekehrte Eingabereihenfolge ⇒ byte-gleiche Ausgabe (§2)', () => {
+    // Ohne Tiebreaker im Vergleicher hing die Reihenfolge an der Zeilenfolge der
+    // Endpunkt-Antwort — unsichtbar, solange der Schlüssel die Gleichstände wegwarf.
+    const zeilen: OdataZeile[] = [
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'C-Vorlage', ReferendumDeadline: null },
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Amtliche Sammlung', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'A-Vorlage', ReferendumDeadline: null },
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'B-Vorlage', ReferendumDeadline: '/Date(1219363200000)/' },
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'B-Vorlage', ReferendumDeadline: null },
+    ];
+    const vorwaerts = JSON.stringify(bauePublikationen(zeilen));
+    const rueckwaerts = JSON.stringify(bauePublikationen([...zeilen].reverse()));
+    expect(vorwaerts).toBe(rueckwaerts);
+    expect(JSON.parse(vorwaerts)).toHaveLength(4);
+  });
+
+  it('distinkteObjectiveZeilen zählt unabhängig — und sieht dieselbe Zahl wie der Bau', () => {
+    // Kreuzprobe des Tors: zwei getrennt gebaute Identitäten, eine Zahl. Ein «|» im
+    // Freitext darf die Fundstellen nicht verschmelzen (darum JSON-Tupel statt Join).
+    const zeilen: OdataZeile[] = [
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'a|b', ReferendumDeadline: null },
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'a', ReferendumDeadline: null },
+      { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt|null', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'b', ReferendumDeadline: null },
+    ];
+    expect(bauePublikationen(zeilen)).toHaveLength(3);
+    expect(distinkteObjectiveZeilen(zeilen)).toBe(3);
   });
 
   it('baut den amtlichen Deep-Link aus der Geschäftsnummer', () => {
