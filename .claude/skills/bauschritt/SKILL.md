@@ -130,9 +130,10 @@ Commit mit eigenem Roadmap-Trailer).
       stehen im Feature-PR (Station D). Ein **separater Doku-PR nur dann**,
       wenn danach wirklich noch Rest-Doku offen ist (Skill `landung` Ziff. 7)
       — nicht als Ritual.
-- [ ] **Bau-Flächen abräumen** (Feature-Branch lokal + remote, `git worktree
-      prune`, Scratch-Dateien), `git checkout main && git pull`; den EIGENEN
-      Worktree zuletzt (`landung` §Session-Ende Ziff. 5). Dazu der
+- [ ] **Bau-Flächen abräumen:** `npm run aufraeumen:git` (räumt nur LOKAL;
+      Remote-Zweige ungelandeter Arbeit von Hand) + Scratch-Dateien,
+      `git checkout main && git pull`; den EIGENEN Worktree zuletzt
+      (`landung` §Session-Ende). Dazu der
       **Klartext-Schlusssatz an David**: was live ist, «nichts wartet auf dich»
       oder genau *was* und warum.
 
