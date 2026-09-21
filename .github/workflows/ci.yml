@@ -161,12 +161,14 @@
 #
 # EFFEKT MESSEN: `gh run list --event push --workflow CI --limit 20` und je
 # Lauf `gh run view <id>` — auf main dürfen nur noch `diff`, `bau`, `perf`
-# und `deploy` Zeit brennen; `gh api repos/{repo}/actions/runs/<id>/jobs`
-# zeigt die abgerechneten Dauern.
+# und `deploy` Zeit brennen (Stand 8.9.2026; seit dem M1-Nachtrag 21.9.2026
+# brennen unter der Diät nur noch `diff`, `e2e-ergebnis` und `deploy` — `bau`
+# und `perf` sind dort mit ausgesetzt, s. Kommentare an den Jobs);
+# `gh api repos/{repo}/actions/runs/<id>/jobs` zeigt die abgerechneten Dauern.
 #
-# JOB-MATRIX je Auslöser (Soll-Zustand nach M1/M3/M4 + M4-Nachtrag):
+# JOB-MATRIX je Auslöser (Soll-Zustand nach M1/M3/M4 + M4-Nachtrag + 21.9.2026):
 #   pull_request   diff · bau* · tore · e2e(8)* · e2e-ergebnis · merge-schutz
-#   push (Diät)    diff · bau · e2e-ergebnis · perf · deploy
+#   push (Diät)    diff · e2e-ergebnis · deploy
 #   push (o. Diät) diff · bau* · tore · e2e(8)* · e2e-ergebnis · perf · deploy
 #   merge_group    diff · bau* · tore · e2e(8)* · e2e-ergebnis · perf** · merge-schutz
 #   dispatch       diff · bau · tore · e2e(8) · e2e-ergebnis · perf · merge-schutz
@@ -690,9 +692,27 @@ jobs:
     # Runner-Anlauf (Mindestabrechnung 1 min je Job).
     # `!cancelled()`: fällt `diff` aus, ist `art` leer — dann baut dieser Job
     # (Fehlerseite = bauen und prüfen, nicht überspringen).
+    #
+    # PUSH-DIÄT auf `bau` ausgedehnt (M1-Nachtrag, QS-CI-MINUTEN, 21.9.2026):
+    # BISHER lief `bau` auf JEDEM main-Push voll, obwohl `tore`/`e2e` dort
+    # schon seit M1 (8.9.2026) unter der Diät ausgesetzt wurden — Grund war,
+    # dass `deploy` `needs.bau.result == 'success'` hart verlangte. GEPRÜFT
+    # (Chesterton, 21.9.2026): `deploy` lädt das `dist`-Artefakt aus `bau`
+    # NICHT herunter (Kommentar an `deploy`: «Absichtlich KEIN Download …,
+    # vercel build installiert und baut selbst») — `bau` diente dort nur als
+    # KORREKTHEITS-GATE (tsc -b/vite build müssen vor dem Deploy bestanden
+    # haben), nicht als Artefakt-Quelle. Die Push-Diät belegt genau das schon
+    # für den GESAMTEN `merge_group`-Lauf: GitHub markiert einen Workflow-Lauf
+    # nur dann `completed/success`, wenn JEDER Job darin (auch `bau`, auch
+    # ohne `needs`-Kante von aussen) nicht fehlgeschlagen ist — ein rotes
+    # `bau` im Queue-Lauf hätte die Diät-Prüfung selbst schon verworfen. Ein
+    # geskipptes `bau` unter der Diät ist darum ebenso sicher wie ein
+    # geskipptes `tore`/`e2e`. `deploy`s Bedingung ist entsprechend gelockert
+    # (`success` ODER `skipped`, wie bei `tore`/`e2e` seit M1).
     if: >-
       !cancelled()
       && needs.diff.outputs.art != 'doku'
+      && needs.diff.outputs.push_diaet != 'true'
     runs-on: ubuntu-latest
     env:
       TZ: Europe/Zurich
@@ -1432,10 +1452,24 @@ jobs:
     # übersprungen ⇒ die Treue ist im merge_group-Lauf am selben SHA bewiesen
     # (bis 19.9.2026: im PR-Lauf). `bau` muss grün sein,
     # sonst fehlt das dist-Artefakt.
+    #
+    # NACHTRAG 21.9.2026 (M1-Nachtrag, QS-CI-MINUTEN — löst den Satz «perf
+    # BLEIBT auf main» oben ab, §0 Ziff. 2b: der Satz bleibt als Beleg seines
+    # Standes stehen): `perf` läuft unter der Push-Diät jetzt NICHT mehr ein
+    # drittes Mal am selben Baum. Der Pflicht-Kontext «Perf-Budget» ist selbst
+    # Teil der Diät-Prüfung (Schritt «Push-Diät prüfen» im Job `diff`
+    # verlangt ihn `completed/success` ODER `completed/skipped` im
+    # `merge_group`-Lauf) — eine zweite Lighthouse-Messung auf push liefert
+    # gegen denselben (per §2 deterministischen) `dist`-Build keine neue
+    # Information, nur dieselbe Wanduhr ein drittes Mal. Bei doku/code-fern
+    # bleibt `perf` unverändert per `art`-Bedingung übersprungen; ohne Diät
+    # (Direkt-Push, Queue aus, rote/fehlende Pflicht-Kontexte) misst `perf`
+    # weiterhin echt.
     if: >-
       !cancelled()
       && github.event_name != 'pull_request'
       && needs.diff.outputs.art == 'code'
+      && needs.diff.outputs.push_diaet != 'true'
       && needs.bau.result == 'success'
       && (needs.tore.result == 'success' || needs.tore.result == 'skipped')
       && (needs.e2e.result == 'success' || needs.e2e.result == 'skipped')
@@ -1521,13 +1555,27 @@ jobs:
   # `tore` und `e2e` selbst ein Job-`if:`; die Regel wird darum durch eine
   # EXPLIZITE Ergebnis-Prüfung ersetzt statt aufgegeben:
   #   `!cancelled()` schaltet die Standard-Skip-Logik ab, danach wird jedes
-  #   `needs`-Ergebnis einzeln gefordert — `bau` MUSS erfolgreich sein (ohne
-  #   grünen Bau kein Deploy), `tore`/`e2e` dürfen `success` ODER `skipped`
-  #   sein, aber niemals `failure`/`cancelled`.
+  #   `needs`-Ergebnis einzeln gefordert — `tore`/`e2e`/`bau` dürfen `success`
+  #   ODER `skipped` sein, aber niemals `failure`/`cancelled`.
   # Damit gilt unverändert: rote Treue ⇒ kein Deploy. Übersprungen ist genau
   # dann zulässig, wenn die Klassierung (`code-fern`) oder die Push-Diät (M1,
   # merge_group-Lauf hat denselben SHA schon grün gefahren; bis 19.9.2026: der
   # PR-Lauf) das begründet.
+  #
+  # NACHTRAG 21.9.2026 (M1-Nachtrag, QS-CI-MINUTEN — der Satz «bau MUSS
+  # erfolgreich sein» oben ist damit überholt, §0 Ziff. 2b: er bleibt als
+  # Beleg seines Standes stehen): die Push-Diät ist auf `bau` ausgedehnt (s.
+  # Kommentar am Job `bau`) — unter der Diät ist `needs.bau.result` jetzt
+  # `skipped`, nicht `success`. GEPRÜFT (Chesterton): dieser Job lädt das
+  # `dist`-Artefakt aus `bau` NICHT herunter (`vercel build` baut selbst, s.
+  # BUILD-PARITÄT unten) — `bau` war hier nur Korrektheits-GATE, kein
+  # Artefakt-Lieferant. Die Diät selbst verlangt für ihre eigene Gültigkeit
+  # bereits einen `completed/success`-Lauf des GESAMTEN `merge_group`-Workflows
+  # an genau diesem SHA; GitHub markiert einen Lauf nur dann `success`, wenn
+  # JEDER seiner Jobs — auch `bau`, unabhängig von wessen `needs`-Kante — nicht
+  # fehlgeschlagen ist. Ein geskipptes `bau` unter bewiesener Diät ist damit
+  # ebenso sicher wie ein geskipptes `tore`/`e2e`; `bau` ist der Bedingung
+  # unten darum gleich behandelt (`success` ODER `skipped`).
   #
   # BUILD-PARITÄT: `vercel pull` holt die Projekt-Einstellungen, `vercel build`
   # fährt `buildCommand` aus vercel.json — dort seit 17.8.2026 explizit
@@ -1542,7 +1590,7 @@ jobs:
     if: >-
       !cancelled()
       && needs.diff.result == 'success'
-      && needs.bau.result == 'success'
+      && (needs.bau.result == 'success' || needs.bau.result == 'skipped')
       && (needs.tore.result == 'success' || needs.tore.result == 'skipped')
       && (needs.e2e.result == 'success' || needs.e2e.result == 'skipped')
       && (
