@@ -11,7 +11,7 @@ import { BOTSCHAFTEN } from '../../src/lib/materialien/botschaften.generated.ts'
 import {
   CURIA_BASIS, CURIA_QUELLENANGABE, AUSZAEHLUNG_HINWEIS, odataZeilen, odataDatum,
   aggregiereStimmen, ratAusGroesse, baueKommissionen, baueBeschluesse, bauePublikationen,
-  distinkteObjectiveZeilen, schlussabstimmungsVotes, serialisiereShard, shaShard, curiaUrl,
+  schlussabstimmungsVotes, serialisiereShard, shaShard, curiaUrl,
   type CuriaShard, type CuriaSchlussabstimmung, type OdataZeile,
 } from './curia.ts';
 import {
@@ -74,7 +74,6 @@ let vorberatungenGesamt = 0;
 let schlussGesamt = 0;
 let publikationenGesamt = 0;
 let objectiveZeilenGesamt = 0;
-let distinktObjectiveGesamt = 0;
 
 let erledigt = 0;
 async function holeGeschaeft(nr: string): Promise<void> {
@@ -103,13 +102,13 @@ async function holeGeschaeft(nr: string): Promise<void> {
   const kommissionen = baueKommissionen(
     await odata('Preconsultation', `BusinessShortNumber eq ${q} and Language eq 'DE'`),
   );
-  // Die ROHEN Objective-Zeilen bleiben stehen: aus ihnen kommt die Kreuzprobe des Tors.
-  // `distinkteObjectiveZeilen` zählt UNABHÄNGIG von `bauePublikationen` (Tautologie-Falle,
-  // §6.7) — beide Zahlen gehen in den Zustandsträger, `check:entstehung` rechnet offline
-  // gegen. Befund 21.9.2026: ohne diese Gegenrechnung fiel der Verlust 32 → 21 nicht auf.
+  // Die ROHE Zeilenzahl der amtlichen Antwort ist die Referenz der Kreuzprobe — die einzige
+  // Zahl, die KEINE unserer Identitäts-Entscheidungen teilt (die erste Runde rechnete gegen
+  // eine zweite Auszählung über dieselben sechs Felder und konnte deren Fehler darum nicht
+  // finden). Über unseren Bestand ist der Lauf verlustfrei (2055 = 2055, Vollzensus
+  // 21.9.2026); speichert ein Shard weniger, ist das ab jetzt ROT, nicht still.
   const objectiveZeilen = await odata('Objective', `BusinessShortNumber eq ${q} and Language eq 'DE'`);
   const publikationen = bauePublikationen(objectiveZeilen);
-  const distinktObjective = distinkteObjectiveZeilen(objectiveZeilen);
 
   const votes = schlussabstimmungsVotes(
     await odata('Vote', `BusinessShortNumber eq ${q} and Language eq 'DE'`, 'ID,BillNumber,Subject,VoteEnd'),
@@ -155,14 +154,12 @@ async function holeGeschaeft(nr: string): Promise<void> {
     schlussabstimmung: schlussabstimmungen.length > 0,
     publikationen: publikationen.length,
     objectiveZeilen: objectiveZeilen.length,
-    distinkteObjective: distinktObjective,
   });
   beschluesseGesamt += beschluesse.length;
   vorberatungenGesamt += kommissionen.length;
   schlussGesamt += schlussabstimmungen.length;
   publikationenGesamt += publikationen.length;
   objectiveZeilenGesamt += objectiveZeilen.length;
-  distinktObjectiveGesamt += distinktObjective;
   erledigt += 1;
   if (erledigt % 25 === 0) console.log(`curia: ${erledigt}/${nummern.length} …`);
 }
@@ -210,14 +207,17 @@ if (nur && existsSync(CURIA_ZUSTAND_PFAD)) {
 
 console.log(`curia: ${zustand.length}/${nummern.length} Geschäfte → ${CURIA_DIR}`);
 console.log(`  Rats-Beschlüsse ${beschluesseGesamt} · Kommissions-Vorberatungen ${vorberatungenGesamt} · Schlussabstimmungen ${schlussGesamt}`);
-// Drei Zahlen, nicht zwei: «gespeichert ≠ distinkt» heisst KOLLABIERT (Fehler),
-// «distinkt < roh» heisst nur doppelt geliefert (harmlos). Eine einzige Differenz
-// koennte beides bedeuten und hat in der Wegwerf-Probe am 21.9.2026 genau das
-// verwechselt — sie nannte 11 kollabierte Fundstellen «Doppellieferungen».
+// BERICHTIGUNG 21.9.2026 (zweite Runde, F8): hier standen DREI Zahlen mit der Lesart
+// «gespeichert ≠ distinkt = kollabiert, distinkt < roh = bloss doppelt geliefert». Die
+// mittlere Zahl war keine unabhängige Referenz — sie rechnete über dieselben sechs Felder
+// wie der Schlüssel und nannte darum Zeilen «Doppellieferungen», die sich in der Vorlage
+// unterscheiden (08.053: angeblich 4 Doppel, tatsächlich 4 eigene Fundstellen). Sie ist
+// ersatzlos weg; verglichen wird gegen die ROHE amtliche Zeilenzahl.
+// §8: die Zeile behauptet keine Vollständigkeit, sie nennt nur, was sie gemessen hat.
 console.log(
-  `  Publikationen ${publikationenGesamt} gespeichert · ${distinktObjectiveGesamt} distinkte `
-  + `· ${objectiveZeilenGesamt} rohe amtliche Objective-Zeile(n)`
-  + `${publikationenGesamt === distinktObjectiveGesamt ? '' : ' ← KOLLABIERT, check:entstehung wird rot'}`,
+  `  Publikationen ${publikationenGesamt} gespeichert · ${objectiveZeilenGesamt} rohe amtliche `
+  + 'Objective-Zeile(n) geliefert'
+  + `${publikationenGesamt === objectiveZeilenGesamt ? '' : ' ← ZUSAMMENGEFALLEN, check:entstehung wird rot'}`,
 );
 fehlend.sort();
 if (fehlend.length) console.log(`  ohne Business-Datensatz (${fehlend.length}): ${fehlend.join(', ')}`);

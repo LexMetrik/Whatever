@@ -30,16 +30,22 @@ export interface CuriaZustand {
   schlussabstimmung: boolean;
   /** Zahl der gespeicherten Publikations-Fundstellen (`shard.publikationen.length`). */
   publikationen: number;
-  /** Zahl der ROHEN Objective-Zeilen, die der amtliche Endpunkt geliefert hat — vor
-   *  jeder Auswertung. Nur Transparenz: `objectiveZeilen − distinkteObjective` ist die
-   *  Zahl der echt doppelt gelieferten Zeilen (gemessen 21.9.2026 bei 08.053: 12 − 8 = 4). */
+  /** Zahl der ROHEN Objective-Zeilen, die der amtliche Endpunkt geliefert hat — vor jeder
+   *  Auswertung. Das ist die UNABHÄNGIGE Referenz der Kreuzprobe: `check:entstehung`
+   *  verlangt `publikationen === objectiveZeilen` und wird sonst rot.
+   *
+   *  BERICHTIGUNG 21.9.2026 (zweite Runde, F8 — der alte Satz bleibt lesbar, statt
+   *  stillschweigend ersetzt zu werden): Hier stand, `objectiveZeilen − distinkteObjective`
+   *  sei «die Zahl der echt doppelt gelieferten Zeilen (08.053: 12 − 8 = 4)». Das war falsch
+   *  gemessen — jene vier Zeilen unterscheiden sich in der Vorlage (`BillNumber`), sind also
+   *  eigene Fundstellen und keine Doppellieferungen. Seit `publikationen[].vorlage` führt der
+   *  Lauf sie getrennt; 08.053 speichert 12 von 12. Mitgezähltes Feld `distinkteObjective`
+   *  entfällt damit ersatzlos: es mass dieselbe Entscheidung wie der Schlüssel und konnte
+   *  dessen Fehler darum nie finden (§17-Gegengewicht — nicht beides behalten, wenn eines
+   *  reicht). Echte Doppellieferungen existieren korpusweit (22.417, 26.023, 19.464 — vier
+   *  Zeilen, keines dieser Geschäfte hat einen Shard); taucht eines davon je im Bestand auf,
+   *  wird das Tor rot und der Fall gehört als begründete Ausnahme ins Register. */
   objectiveZeilen: number;
-  /** Zahl der DISTINKTEN Objective-Zeilen, unabhängig von `bauePublikationen` ausgezählt
-   *  (`distinkteObjectiveZeilen()`). Das ist die Kreuzprobe: weicht sie von
-   *  `publikationen` ab, hat der Lauf amtliche Fundstellen zusammenfallen lassen —
-   *  genau der Befund vom 21.9.2026 (Geschäft 01.023: 21 statt 32). `check:entstehung`
-   *  rechnet offline gegen, weil die CI kein Netz hat. */
-  distinkteObjective: number;
 }
 
 /** Liest den Zustandsträger; null = Etappe E4 noch nicht gelaufen.
@@ -47,7 +53,7 @@ export interface CuriaZustand {
  *  ACHTUNG, der Rückgabetyp ist ein VERSPRECHEN DES SCHREIBERS, keine Prüfung: die Datei
  *  auf der Platte kann aus einem Lauf vor einer Feld-Erweiterung stammen und ein Feld
  *  schlicht nicht führen. Wer ein junges Feld liest, prüft es darum selbst auf
- *  Vorhandensein (so macht es `check:entstehung` für die drei Publikations-Zahlen) —
+ *  Vorhandensein (so macht es `check:entstehung` für die beiden Publikations-Zahlen) —
  *  nie stillschweigend als 0 lesen, das wäre wieder ein leiser Verlust. */
 export function leseCuriaZustand(pfad = CURIA_ZUSTAND_PFAD): CuriaZustand[] | null {
   if (!existsSync(pfad)) return null;

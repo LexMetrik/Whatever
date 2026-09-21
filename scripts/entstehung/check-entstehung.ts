@@ -252,7 +252,6 @@ for (const [name, pfad, max, gzip] of DECKEL) {
     const zustandJe = new Map(zustand.map((z) => [z.nummer, z]));
     let summenProben = 0;
     let publikationenGesamt = 0;
-    let distinktGesamt = 0;
     let rohGesamt = 0;
     for (const f of shards) {
       const roh = readFileSync(join(CURIA_DIR, f), 'utf8');
@@ -269,22 +268,30 @@ for (const [name, pfad, max, gzip] of DECKEL) {
       if (z && shaShard(shard) !== z.sha) {
         fehler.push(`Curia-Shard ${f}: sha weicht vom Zustandsträger ab — nachträglich verändert (§7).`);
       }
-      // ── PUBLIKATIONS-KREUZPROBE (Befund 21.9.2026) ──────────────────────────────
-      // Der Dedupe-Schlüssel von `bauePublikationen` liess am Geschäft 01.023 32 amtliche
-      // Objective-Zeilen auf 21 zusammenfallen — still, weil niemand gegenrechnete. Das
-      // Tor rechnet jetzt gegen, OFFLINE: der Lauf führt drei Zahlen im Zustandsträger
-      // mit, davon ist `distinkteObjective` UNABHÄNGIG von `bauePublikationen` ausgezählt
-      // (`distinkteObjectiveZeilen()`). Darum ist der Vergleich keine Tautologie: mit dem
-      // alten Schlüssel wird er bei 01.023 rot (21 ≠ 32), mit dem neuen grün (32 = 32) —
-      // und bei 08.053, wo der Endpunkt echte Doppel liefert, bleibt er grün (8 = 8),
-      // weshalb hier NICHT gegen die rohe Zeilenzahl geprüft wird (die wäre falsch-rot).
+      // ── PUBLIKATIONS-KREUZPROBE (Befund 21.9.2026, Referenz berichtigt in Runde 2) ──
+      // Der Dedupe-Schlüssel von `bauePublikationen` liess amtliche Objective-Zeilen still
+      // zusammenfallen. Das Tor rechnet offline gegen — gegen die ROHE Zeilenzahl der
+      // amtlichen Antwort, die der Lauf im Zustandsträger mitführt.
+      //
+      // BERICHTIGUNG (F8, der alte Satz bleibt lesbar): Runde 1 verglich hier gegen
+      // `distinkteObjective`, eine zweite Auszählung über DIESELBEN sechs Felder und
+      // dieselben Normalisierer wie der Schlüssel. Das war kein zweiter Weg, sondern
+      // dieselbe Entscheidung zweimal — beide Wege machten denselben Fehler und der
+      // Vergleich blieb grün. Die rohe Zeilenzahl teilt keine unserer Entscheidungen.
+      //
+      // FAIL-LOUD STATT STILL DEDUPEN (§6.7/§8): Über unseren Bestand ist der Lauf
+      // verlustfrei — Vollzensus 21.9.2026, 385 Shards, 2055 rohe Zeilen = 2055
+      // vollzeilen-distinkte. Weniger zu speichern als der Endpunkt liefert, ist deshalb
+      // ROT. Echte Doppellieferungen gibt es korpusweit (22.417, 26.023, 19.464 — vier
+      // Zeilen, keines dieser Geschäfte hat heute einen Shard); bekommt eines je einen,
+      // wird dieses Tor rot, und der Fall gehört dann als begründete, im Register geführte
+      // Ausnahme hinterlegt — NICHT durch ein Aufweichen dieses Vergleichs erledigt.
       if (z) {
         const roh = z as Partial<CuriaZustand>; // Zeilen aus Läufen vor 21.9.2026 führen die Felder nicht.
-        if (typeof roh.publikationen !== 'number' || typeof roh.distinkteObjective !== 'number'
-          || typeof roh.objectiveZeilen !== 'number') {
+        if (typeof roh.publikationen !== 'number' || typeof roh.objectiveZeilen !== 'number') {
           fehler.push(
-            `Curia-Geschäft ${shard.nummer}: der Zustandsträger führt «publikationen»/«distinkteObjective»/`
-            + '«objectiveZeilen» nicht — die Zeile stammt aus einem Lauf vor der Publikations-Kreuzprobe '
+            `Curia-Geschäft ${shard.nummer}: der Zustandsträger führt «publikationen»/«objectiveZeilen» `
+            + 'nicht — die Zeile stammt aus einem Lauf vor der Publikations-Kreuzprobe '
             + '(21.9.2026). Ohne die Zahlen ist eine Kollabierung amtlicher Fundstellen nicht prüfbar, und '
             + 'stillschweigend durchwinken hiesse genau den Fehler decken, den die Probe finden soll. '
             + 'Vollabgleich fällig: npm run materialien:curia -- --datum=$(date +%F)',
@@ -296,17 +303,21 @@ for (const [name, pfad, max, gzip] of DECKEL) {
               + `${roh.publikationen} im Zustandsträger — Bestand und Register driften auseinander (§5).`,
             );
           }
-          if (shard.publikationen.length !== roh.distinkteObjective) {
+          if (shard.publikationen.length !== roh.objectiveZeilen) {
             fehler.push(
               `Curia-Shard ${f}: ${shard.publikationen.length} gespeicherte Publikation(en) ≠ `
-              + `${roh.distinkteObjective} distinkte amtliche Objective-Zeile(n) — der Lauf hat `
-              + `${roh.distinkteObjective - shard.publikationen.length} amtliche Fundstelle(n) `
-              + 'zusammenfallen lassen (Curia-Auflage «Die Daten dürfen inhaltlich nicht verändert '
-              + 'werden»; §5/§8). Dedupe-Schlüssel in bauePublikationen prüfen.',
+              + `${roh.objectiveZeilen} rohe amtliche Objective-Zeile(n) — der Lauf hat `
+              + `${roh.objectiveZeilen - shard.publikationen.length} amtliche Zeile(n) zusammenfallen `
+              + 'lassen (Curia-Auflage «Die Daten dürfen inhaltlich nicht verändert werden»; §5/§8). '
+              + 'ZUERST den Dedupe-Schlüssel in bauePublikationen (scripts/entstehung/curia.ts) gegen '
+              + `die Roh-Zeilen des Geschäfts ${shard.nummer} halten: fehlt ihm ein unterscheidendes `
+              + 'Feld, ist das der Fehler. NUR falls der Endpunkt dieselbe Zeile wirklich doppelt '
+              + 'liefert (korpusweit belegt an 22.417, 26.023, 19.464 — Stand 21.9.2026), ist es eine '
+              + 'echte Doppellieferung; die wird dann als begründete Ausnahme im Register belegt, nie '
+              + 'durch Aufweichen dieser Prüfung erledigt.',
             );
           }
           publikationenGesamt += shard.publikationen.length;
-          distinktGesamt += roh.distinkteObjective;
           rohGesamt += roh.objectiveZeilen;
         }
       }
@@ -335,10 +346,13 @@ for (const [name, pfad, max, gzip] of DECKEL) {
       }
     }
     zeilen.push(
-      `check:entstehung — Curia: ${zustand.length} Geschäft(e) im Zustandsträger, ${shards.length} Shard(s), verlustfrei; `
+      // §8: die Zeile nennt, was sie gemessen hat — gespeicherte gegen rohe amtliche Zeilen.
+      // Sie behauptet NICHT, der Bestand sei vollständig: ob der Endpunkt seinerseits alle
+      // Fundstellen führt, kann dieses Tor nicht wissen (es hat kein Netz).
+      `check:entstehung — Curia: ${zustand.length} Geschäft(e) im Zustandsträger, ${shards.length} Shard(s), keiner fehlt; `
       + `${summenProben} Schlussabstimmung(en) summenrein, ${Object.keys(DECISION_CODES).length} geprüfte Decision-Codes, `
-      + `0 Personendaten-Felder; Publikationen ${publikationenGesamt} gespeichert = ${distinktGesamt} distinkte `
-      + `amtliche Objective-Zeile(n) (aus ${rohGesamt} rohen, Differenz ${rohGesamt - distinktGesamt} = echte Doppellieferungen).`,
+      + `0 Personendaten-Felder; Publikationen ${publikationenGesamt} gespeichert = ${rohGesamt} rohe amtliche `
+      + 'Objective-Zeile(n) laut Zustandsträger (keine Zeile ist beim Speichern zusammengefallen).',
     );
   } else {
     zeilen.push('check:entstehung — Curia: kein Zustandsträger (Etappe E4 noch nicht gelaufen).');
