@@ -163,6 +163,7 @@
     "plan:bild": "vite-node scripts/plan/bild.ts",
     "check:plan": "vite-node scripts/plan/check.ts",
     "plan:posten": "vite-node scripts/plan/posten.ts",
+    "aufraeumen:git": "vite-node scripts/aufraeumen-git.ts --",
     "struktur:rotieren": "python3 .claude/hooks/struktur-rotieren.py",
     "check:steuerdeckel": "python3 .claude/hooks/struktur-rotieren.py --check",
     "check:steuerflaeche": "vite-node scripts/analyse/steuerflaeche.ts",

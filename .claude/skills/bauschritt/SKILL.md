@@ -42,6 +42,11 @@ ohne Rückfrage nach diesem Zyklus.
    Write-Werkzeug sperrt `<Haupt-Checkout>/.claude/`). Zeigt `plan:next`
    eine Vorgänger-Datei mit offenen Posten (`📝 Session-Notizen: … — N
    offen`), wird sie ÜBERNOMMEN (weiterführen), nicht ignoriert.
+   **Falle (Beleg 20.9.2026):** `tor-schutz.py` blockt das Bash-Kommando
+   schon, wenn die Hauptzweig-Push-Zeichenfolge nur als ZITAT im
+   Heredoc-Text der Notiz steht (keine Ausführung) — solche Zitate beim
+   Formulieren umschreiben; ohne Worktree (Haupt-Session) geht `Write`/`Edit`
+   mit dem absoluten Haupt-Checkout-Pfad direkt, statt des Heredoc-Umwegs.
 
 ## Station B — Bau
 
@@ -125,9 +130,10 @@ Commit mit eigenem Roadmap-Trailer).
       stehen im Feature-PR (Station D). Ein **separater Doku-PR nur dann**,
       wenn danach wirklich noch Rest-Doku offen ist (Skill `landung` Ziff. 7)
       — nicht als Ritual.
-- [ ] **Bau-Flächen abräumen** (Feature-Branch lokal + remote, `git worktree
-      prune`, Scratch-Dateien), `git checkout main && git pull`; den EIGENEN
-      Worktree zuletzt (`landung` §Session-Ende Ziff. 5). Dazu der
+- [ ] **Bau-Flächen abräumen:** `npm run aufraeumen:git` (räumt nur LOKAL;
+      Remote-Zweige ungelandeter Arbeit von Hand) + Scratch-Dateien,
+      `git checkout main && git pull`; den EIGENEN Worktree zuletzt
+      (`landung` §Session-Ende). Dazu der
       **Klartext-Schlusssatz an David**: was live ist, «nichts wartet auf dich»
       oder genau *was* und warum.
 
