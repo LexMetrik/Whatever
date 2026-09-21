@@ -5,6 +5,16 @@
 **Status:** einfach belegt — alle Zahlen in dieser Session selbst am amtlichen Endpunkt erhoben;
 adversariale Gegenprüfung des Fixes läuft getrennt, fachliche Abnahme David offen (§7/§8).
 
+> **BERICHTIGUNG 21.9.2026 (zweite Runde) — bitte vor Ziff. 1 und Ziff. 5 lesen.**
+> Die adversariale Gegenprüfung hat den Fix der ersten Runde als **unvollständig** widerlegt; eine
+> eigene Nachmessung (Vollzensus, siehe Ziff. 1a) hat das bestätigt. Betroffen sind die Sätze
+> dieses Eintrags, die **08.053 als Beleg für «echte Duplikate» bzw. «byte-gleiche» Zeilen**
+> anführen (Ziff. 1, dritter Aufzählungspunkt; Ziff. 5, Schlusssatz; Zeile 08.053 der Tabelle).
+> Sie sind **falsch gemessen**: verglichen wurden nur die sechs Felder aus Ziff. 1, also genau die
+> Identität, deren Richtigkeit zu prüfen war. Nach F8 werden sie hier **nicht überschrieben**,
+> sondern stehen gelassen und berichtigt — wer wann was gemessen hat, bleibt nachvollziehbar.
+> Die neue Wahrheit steht in **Ziff. 1a**.
+
 **Quellen (alle live abgerufen 21.9.2026):**
 
 | Quelle | Endpunkt | Abruf |
@@ -40,7 +50,7 @@ Gemessener Verlust über neun gegengezählte Geschäfte (Stand vor dem Fix, Korp
 | 01.023 | 21 | 32 | 32 | **11** |
 | 02.046 | 16 | 22 | 22 | **6** |
 | 06.038 | 15 | 21 | 21 | **6** |
-| 08.053 | 6 | 12 | **8** | **2** |
+| 08.053 | 6 | 12 | **8** *(berichtigt: 12, siehe Ziff. 1a)* | **2** *(berichtigt: 6)* |
 | 05.046 | 6 | 7 | 7 | **1** |
 | 99.067 | 6 | 7 | 7 | **1** |
 | 14.069 | 14 | 14 | 14 | 0 |
@@ -53,6 +63,10 @@ Gemessener Verlust über neun gegengezählte Geschäfte (Stand vor dem Fix, Korp
   deren Felder eigens zu prüfen.
 - **Der Dedupe bleibt**: Geschäft 08.053 liefert amtlich 12 Zeilen, von denen nur 8 verschieden
   sind — echte Duplikate existieren, das Zusammenfallen identischer Zeilen ist richtig.
+  **⚠ Dieser Satz ist falsch gemessen (Berichtigung 21.9.2026, zweite Runde).** Er zählte
+  «verschieden» über genau die sechs Felder aus dieser Ziffer — jene vier Zeilen unterscheiden
+  sich in der Vorlage (`BillNumber`) und sind eigene Fundstellen. An 08.053 sind alle 12 Zeilen
+  verschieden. Der Dedupe bleibt trotzdem, aber aus einem anderen Grund: Ziff. 1a.
 - **Exposition ≠ Verlust.** 182 der 385 Shards tragen mindestens eine Publikation ohne Jahr und
   Nummer; das ist eine Obergrenze, keine Verlustzahl. Geschäft 14.069 hat zwei solche Zeilen und
   trotzdem keinen Verlust, weil sie sich schon im Datum unterscheiden.
@@ -64,6 +78,54 @@ Gemessener Verlust über neun gegengezählte Geschäfte (Stand vor dem Fix, Korp
 - **Curia liefert den literalen String `"null"`, nicht JSON-`null`.** Der Helfer `txt`
   (`scripts/entstehung/curia.ts`) normalisiert das; jede eigene Auszählung über Roh-Zeilen muss
   dasselbe tun, sonst misst sie null Alt-Format-Zeilen statt zwölf.
+
+## 1a · Berichtigung (zweite Runde, 21.9.2026): die Vorlage gehört in die Identität
+
+**Was falsch war.** Ziff. 1 nannte sechs Identitätsfelder und deutete jede darüber hinaus
+verbleibende Mehrfachlieferung als «echtes Duplikat». Beide Messungen — die Spalte «distinkt mit
+`ReferenceText`» und der Negativbefund in Ziff. 5 — rechneten über genau diese sechs Felder und
+konnten deren Lücke darum nicht sehen (dieselbe Entscheidung zweimal ist keine Gegenprobe).
+
+**Neue Messung.** Vollzensus aller **14 669** DE-`Objective`-Zeilen über alle **3 763** DE-Geschäfte
+(Abruf 21.9.2026, `$inlinecount=allpages`, 15 Seiten à 1000). Kardinalität je Identitätsbegriff:
+
+| Identität | distinkte Zeilen |
+|---|---|
+| roh (alle gelieferten Zeilen) | 14 669 |
+| Vollzeile ohne `__metadata` / `Modified` / `ID` / `Bills` | 14 665 |
+| die sechs Felder aus Ziff. 1 | 14 506 |
+| die sechs Felder **+ `BillNumber`** | **14 665** |
+| die sechs Felder + `BillNumber` + `IdBill` | 14 665 |
+
+**Regel (berichtigt).** Eine Curia-Publikation wird identifiziert durch
+`PublicationDate | PublicationTypeName | PublicationYear | PublicationNumber | ReferenceText |
+ReferendumDeadline | BillNumber`. Was die sechs Felder noch zusammenfassten, sind **keine
+Doppellieferungen, sondern dieselbe Fundstelle zu verschiedenen Entwürfen (Vorlagen)** desselben
+Geschäfts. Seit Commit `4a41b04e7` führt `publikationen[].vorlage` (aus `Objective.BillNumber`,
+Benennung und Typ wie `beschluesse[].vorlage`) sie getrennt.
+
+- **`BillNumber` genügt; `IdBill` bleibt draussen.** Es gibt **null** Gruppen, die sich nur in
+  `IdBill` unterscheiden — die GUID käme allein als Golden-Rauschen ins Artefakt.
+- **`Bills` ist kein Inhalt, sondern ein Stempel.** Sein `__deferred`-URI enthält die eigene `ID`
+  der Zeile; wer `Bills` in einen Inhaltsvergleich nimmt, misst tautologisch grün.
+- **`BillNumber` ist ein `int`, kein String** (14 669 von 14 669 Zeilen `typeof 'number'`).
+  `txt(z.BillNumber)` lieferte für JEDE Zeile `null` — ein Fix über `txt()` änderte exakt nichts
+  und sähe trotzdem nach Fix aus. Gelesen wird über `zahl()`; ein eigener Test hält den Irrweg rot.
+
+**Wirkung auf unseren Bestand (385 Shards).** gespeichert 1923 · mit dem Sechs-Feld-Schlüssel 2044 ·
+mit `vorlage` **2055 = roh = Vollzeile ⇒ verlustfrei**. Die 11 Differenz-Zeilen zwischen Sechs-Feld-
+und Vorlage-Schlüssel sitzen in sechs Geschäften: 08.053 (8→12), 03.047 (14→17), 01.076 (11→12),
+04.031 (9→10), 24.075 (8→9), 99.084 (6→7). Korpusweit sind **82** Geschäfte betroffen; die übrigen
+76 haben heute keinen Shard. Damit ist auch der in Ziff. 4 als offen geführte Korpus-Gesamtverlust
+gemessen und nicht mehr offen.
+
+**Echte Doppellieferungen gibt es — nur nicht bei uns.** Korpusweit **vier** Zeilen in drei
+Geschäften: **22.417, 26.023, 19.464**. Keines davon trägt heute einen Shard. Der Dedupe bleibt
+deshalb bestehen (eine wirklich doppelt gelieferte Zeile ist eine Wiederholung, keine zweite
+Fundstelle) — und genau deshalb ist das Tor **fail-loud**: über unseren Bestand ist der Lauf
+verlustfrei, also darf ein Shard nie weniger speichern, als der Endpunkt liefert. Bekommt eines der
+drei Geschäfte je einen Shard, wird `check:entstehung` rot; der Fall gehört dann als **begründete,
+im Register geführte Ausnahme** hinterlegt, nie durch Aufweichen des Vergleichs erledigt.
 
 ## 2 · `publikationen[].datum` ist das Dokumentdatum, nicht das Erscheinungsdatum
 
@@ -121,6 +183,12 @@ Geschäfte 02.035 und 02.078 sind Jahrgang 2002 und haben Daten, weil ihre Schlu
   `check:entstehung`: der Lauf zählt die distinkten amtlichen Objective-Zeilen unabhängig von
   `bauePublikationen` aus, führt sie im Zustandsträger mit, und das Tor rechnet sie offline gegen
   den Shard-Bestand. Fehlen die Felder, ist das Tor rot statt stillschweigend grün.
+  **⚠ Berichtigung 21.9.2026 (zweite Runde):** jene «unabhängige» Auszählung war keine — sie lief
+  über dieselben sechs Felder und dieselben Normalisierer wie der Schlüssel und blieb darum grün,
+  während 08.053 acht von zwölf amtlichen Zeilen speicherte. Sie ist samt Register-Feld
+  `distinkteObjective` ersatzlos entfallen (Commit `b9fbdf0d3`). Verglichen wird seither gegen die
+  **rohe** Zeilenzahl der amtlichen Antwort (`objectiveZeilen`) — die einzige Zahl, die keine
+  unserer Identitäts-Entscheidungen teilt.
 - **Unbewacht bleiben** die Zähler `beschluesse` und `vorberatungen` im Zustandsträger: sie werden
   mitgeführt, aber nie gegen den Shard-Inhalt geprüft — dieselbe Lücke, eine Ebene weiter.
 - **Offen:** die amtliche Gegenzählung über alle 385 Geschäfte. Der Korpus-Gesamtverlust ist damit
@@ -134,3 +202,12 @@ dokumentierten Duplikat-Vorfall und ohne Test für echte Duplikate. Erst diese M
 Anlass nachgeliefert — Geschäft 08.053 mit vier echt doppelten Zeilen. Wer ein Muster kopiert,
 erbt dessen Annahmen mit; hier war die geerbte Annahme «Jahr und Nummer identifizieren eine
 Fundstelle» für den ganzen Altbestand falsch.
+
+**⚠ Berichtigung 21.9.2026 (zweite Runde).** Der Satz «Geschäft 08.053 mit vier echt doppelten
+Zeilen» ist falsch gemessen — jene vier Zeilen unterscheiden sich in der Vorlage (`BillNumber`),
+08.053 liefert zwölf verschiedene Zeilen (Ziff. 1a). Der Negativbefund selbst bleibt richtig und
+wird durch die Berichtigung sogar schärfer: der Dedupe entstand **ohne** Anlass, und der Anlass,
+den die erste Runde ihm nachträglich zuschrieb, existierte nicht. Nachgeliefert hat ihn erst der
+Vollzensus — vier echt doppelte Zeilen in den Geschäften **22.417, 26.023 und 19.464**, von denen
+heute keines einen Shard trägt. Die Lehre bleibt dieselbe, eine Ebene höher: wer einen Beleg über
+denselben Begriff misst, den er belegen soll, belegt nichts.
