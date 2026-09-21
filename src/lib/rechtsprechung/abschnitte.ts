@@ -11,6 +11,21 @@ export const ABSCHNITT_TITEL: Record<Abschnittstyp, string> = {
   dispositiv: 'Dispositiv',
 };
 
+/**
+ * «1 Erwägung» / «2 Erwägungen» — die Zählform des Erwägungs-Abschnitts.
+ *
+ * EINE Quelle (§5): die Zeile des Erwägungs-Rails («… Treffer in 2 Erwägungen»)
+ * und der zugängliche Name der Treffer-Landkarte sagen damit zwingend dasselbe
+ * Wort. Bis zum Befund 21.9.2026 trug der Rail das Paar als Inline-Ternär und
+ * der Streifen ein eigenes Vokabular («Abschnitten») — zwei Wörter für dieselbe
+ * Zahl, nebeneinander auf demselben Bildschirm.
+ * Die Mehrzahl kommt aus `ABSCHNITT_TITEL`, damit der Abschnittstitel und die
+ * Zählform nicht auseinanderlaufen können.
+ */
+export function erwaegungsWort(n: number): string {
+  return n === 1 ? 'Erwägung' : ABSCHNITT_TITEL.erwaegung;
+}
+
 /** Anker-Id eines Abschnitts (für die Sprung-Navigation). */
 export function abschnittAnker(typ: Abschnittstyp): string {
   return `abschnitt-${typ}`;

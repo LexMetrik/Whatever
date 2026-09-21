@@ -19,7 +19,7 @@ import { useLeserZustand, useLeserTocZustand, useLeserAnsichtZustand } from '../
 import { useArtikelAbleitungen, useArtikelTokens, useNachbarn } from '../inhalt-ableitungen';
 import { useSektionSprung, useInternRefs } from '../inhalt-sprung';
 import { useWeiterlesen } from '../inhalt-weiterlesen';
-import { useSuchTreffer } from '../inhalt-suchtreffer';
+import { useMarkenSchalter, useSuchTreffer } from '../inhalt-suchtreffer';
 import type { LesePosition } from '../lesePosition';
 import { oeffneSprungZiel, alleKlappIds } from '../klappKarte';
 
@@ -133,6 +133,7 @@ export interface LeserV3Modell {
    *  ihn gesetzt zu haben glaubt (§8). */
   suchBereich: SuchBereich;
   setzeSuchBereich: (b: SuchBereich) => void;
+  markenAus: boolean; setzeMarkenAus: (aus: boolean) => void; // W2·28/L-2 — Herleitung: `../inhalt-suchtreffer`
   /** H2 · Artikel + Rang der laufenden Fundstelle — hebt EINE Listenzeile hervor. */
   aktivStelle: { token: string; rang: number } | null;
   /** H2 · Fundstellen EINES Artikels auf Abruf (nur fuer aufgeklappte Artikel). */
@@ -372,14 +373,13 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   // Trefferliste, weil er in die Datenableitung eingeht (`useSuchTreffer`) und
   // nicht bloss die Darstellung filtert — die Liste bekommt ihn als Prop (§3).
   const [suchBereich, setzeSuchBereich] = useState<SuchBereich>('alles');
+  const { markenAus, setzeMarkenAus } = useMarkenSchalter(sucheFeldLeer); // W2·28/L-2, Herleitung dort
   const {
-    leseRef, treffer, fundstellen, aenderungenAus, trefferPos, aktivToken: trefferAktivToken,
-    springeZuFundstelle, springeZuTreffer, springeZuStelle, aktivStelle, fundstellenFuer,
-    loeseArtikel, siePfad, siePfadArtikel,
+    leseRef, treffer, fundstellen, aenderungenAus, trefferPos, aktivToken: trefferAktivToken, springeZuFundstelle,
+    springeZuTreffer, springeZuStelle, aktivStelle, fundstellenFuer, loeseArtikel, siePfad, siePfadArtikel,
   } = useSuchTreffer({
-    erlassKey: erlass?.key ?? null, eintraege, struktur,
-    sucheTrim, sucheFeldLeer, sektionen, aktivIds, internRefs, aktArtikel, tokenByLabel,
-    offen, setOffen, imPane, wurzel, bereich: suchBereich,
+    erlassKey: erlass?.key ?? null, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
+    internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel, bereich: suchBereich, markenAus,
   });
 
   // «↑ Anfang» — genau EIN Knopf pro Seite (Pos. 15). Bezugsraum ist derselbe,
@@ -407,7 +407,7 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
       tocOffen, setTocOffen, tocAuf, setTocAuf,
       suche, setSuche, sucheAktiv: sucheBegriff !== '', sucheBegriff,
       treffer, fundstellen, aenderungenAus, trefferPos, trefferAktivToken,
-      suchBereich, setzeSuchBereich, aktivStelle, fundstellenFuer,
+      suchBereich, setzeSuchBereich, markenAus, setzeMarkenAus, aktivStelle, fundstellenFuer,
       springeZuFundstelle, springeZuTreffer, springeZuStelle, loeseArtikel, siePfad, siePfadArtikel,
       springeZuArtikel, springeZuSektion, zumAnfang,
       weiterlesen, weiterlesenSprung, weiterlesenVerwerfen, basisPfad,
