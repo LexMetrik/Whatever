@@ -77,6 +77,12 @@ zusammengestellt.
   Typpruefung im Bau IMMER mit `npx tsc -b` (= npm run build), nie mit
   `tsc --noEmit -p tsconfig.json`: der Root-tsconfig prueft nicht dasselbe
   (Beleg 16.8.2026: --noEmit gruen, tsc -b rot an ungenutztem Parameter).
+  Die CI-Ueberspring-Markierung (eckige Klammer + skip ci / ci skip) NIE
+  woertlich in einen Commit-Text schreiben, auch nicht erklaerend zitierend —
+  das Squash-Schutz-Tor (ci.yml, Kommentar ~Z. 757-764) scannt JEDEN
+  Commit-Betreff/-Text im PR auf die blosse Zeichenfolge, ohne Kontext; PR
+  #950 wurde deshalb faelschlich rot und musste als #952 neu eroeffnet werden
+  (20.9.2026). Erwaehnung immer umschreiben («die CI-Ueberspring-Markierung»).
 4b ROLLEN-/SELEKTOR-WECHSEL WIRKT REPO-WEIT. Wer Rolle, Tag oder zugaenglichen
   Namen eines Bedienelements aendert (button→a, aria-label, Klassen-Anker),
   grept VOR dem Push alle Sonden (e2e/**, src/tests/**) auf den alten

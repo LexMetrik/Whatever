@@ -125,6 +125,10 @@ ROADMAP-CHRONIK.md).
   läuft aber gegen den Streich-Entscheid vom 5.6.2026. Ohne ausdrückliche Bestätigung wird
   nichts gebaut; Dossiers/Notizen/Teamfunktionen des Vorbilds sind serverseitig und bleiben
   ausgeschlossen.
+  **Entscheid David 19.9.2026: «ja»** — die Merkliste wird gebaut und hebt damit den
+  Streich-Entscheid vom 5.6.2026 auf (der neuere Entscheid gilt); vor dem Bau gegen Fedlex
+  messen, Mehrwert-Satz Pflicht. Bau-Posten:
+  [`plan/posten/2026-09-18-reiterleisten-abgleich-merkliste-bauen.md`](../plan/posten/2026-09-18-reiterleisten-abgleich-merkliste-bauen.md).
 
 ## Quellen
 
