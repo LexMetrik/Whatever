@@ -1,0 +1,54 @@
+--- a/.claude/hooks/tor-schutz.py
++++ b/.claude/hooks/tor-schutz.py
+@@ -209,19 +209,19 @@
+ # wip-Marker, Nachzuege) rissen das Tageslimit, sechs fertige PRs standen
+ # stundenlang. Regel (Skill landung Ziff. 7): Feature einzeln per PR landen,
+ # Verwaltung im PR mitfahren oder am Session-Ende in EINEM Push buendeln.
+-# Der Hook blockt darum den DIREKTEN Push auf main. Freigabe fuer den
+-# gebuendelten Schluss-Push: Umgebungsvariable LEXMETRIK_MAIN_PUSH=1 im
+-# selben Kommando (bewusster Akt, nicht Gewohnheit) — der Merge via PR
+-# (gh pr merge) ist davon unberuehrt.
+-if re.search(r"\bgit\s+push\b[^\n|;&]*\borigin\s+(HEAD:)?main\b", cmd) \
+-        and "LEXMETRIK_MAIN_PUSH=1" not in cmd:
++# Der Hook blockt darum den DIREKTEN Push auf main — seit 19.9.2026 OHNE
++# Freigabe-Schalter (Entscheid David 19.9.2026 «alles durch die
++# warteschlange», QS-ORG-UMZUG): auf main laeuft die Merge-Queue, auch Doku
++# und Buchung fahren als PR. Der frueher beworbene Schalter
++# LEXMETRIK_MAIN_PUSH=1 ist gestrichen. Der Merge via PR (gh pr merge) ist
++# davon unberuehrt.
++if re.search(r"\bgit\s+push\b[^\n|;&]*\borigin\s+(HEAD:)?main\b", cmd):
+     probleme.append(
+-        "BLOCKIERT (Skill landung Ziff. 7, David 15.8.2026): direkter Push "
+-        "auf main. Jeder main-Push ist ein Vercel-Deploy und wirft alle "
+-        "offenen Auto-Merge-PRs auf BEHIND. Weg: Aenderung in den "
+-        "Feature-Branch/PR (Buchung per Trailer, Ziff. 9) — oder Doku am "
+-        "Session-Ende in EINEM Push buendeln: `LEXMETRIK_MAIN_PUSH=1 git "
+-        "push origin main` (bewusste Freigabe im selben Kommando)."
++        "BLOCKIERT (Skill landung Ziff. 7, David 15.8./19.9.2026): direkter "
++        "Push auf main. Auf main laeuft die Merge-Queue — alles faehrt als "
++        "PR durch die Warteschlange, auch Doku und Buchung (Doku-PR, "
++        "`gh pr merge <nr> --squash --auto`). Einen Freigabe-Schalter gibt "
++        "es nicht mehr."
+     )
+ 
+ # ── 3. Merge-Sperre auf Risiko-Pfaden ──────────────────────────────────
+--- a/src/tests/hooks-wache.test.ts
++++ b/src/tests/hooks-wache.test.ts
+@@ -367,14 +367,14 @@
+   // Direkter main-Push = Deploy (Auftrag David 15.8.2026, Skill landung
+   // Ziff. 7): Verwaltungs-Pushes rissen am 15.8. das Vercel-Tageslimit und
+   // warfen sechs fertige PRs auf BEHIND. Der Hook blockt den direkten Push,
+-  // lässt Feature-Branch-Pushes und den bewusst freigegebenen Schluss-Push durch.
+-  it('blockt direkte main-Pushes, lässt Branch-Push und freigegebenen Schluss-Push durch', () => {
++  // lässt Feature-Branch-Pushes durch; der frühere Freigabe-Schalter ist seit 19.9.2026 gestrichen.
++  it('blockt direkte main-Pushes ohne Freigabe-Schalter, lässt Branch-Push durch', () => {
+     const bash = (command: string) => ({ tool_name: 'Bash', tool_input: { command } });
+     expect(hook('tor-schutz.py', bash('git push origin main'))).toBe(2);
+     expect(hook('tor-schutz.py', bash('git commit -m x -- ROADMAP.md && git push origin HEAD:main'))).toBe(2);
+     expect(hook('tor-schutz.py', bash('git push -u origin feat/qs-x'))).toBe(0);
+     expect(hook('tor-schutz.py', bash('git push'))).toBe(0);
+-    expect(hook('tor-schutz.py', bash('LEXMETRIK_MAIN_PUSH=1 git push origin main'))).toBe(0);
++    expect(hook('tor-schutz.py', bash('LEXMETRIK_MAIN_PUSH=1 git push origin main'))).toBe(2);
+     expect(hook('tor-schutz.py', dc('start_process', { command: 'git push origin main' }))).toBe(2);
+   });
+ 
