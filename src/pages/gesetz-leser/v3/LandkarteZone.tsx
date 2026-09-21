@@ -2,6 +2,7 @@ import { useMemo, type ReactNode } from 'react';
 import { TrefferLandkarte } from '../../../components/leser/TrefferLandkarte';
 import { landkarteSpur } from '../../../components/leser/landkarteModell';
 import { gesetzLandkarteEinheiten } from './landkarteGesetz';
+import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
 
 // ═══ W2·28 · L-1 · DER AUFBAU DER TREFFER-LANDKARTE ═════════════════════════
@@ -69,8 +70,13 @@ import type { LeserV3Modell } from './leserV3Modell';
 //    Wortlaut (§8). Die Auskunft fehlt nirgends: Trefferliste, Zähler und ↑↓
 //    stehen unverändert. Die Fenster-Schwelle selbst trägt das Bauteil
 //    (`components/leser/TrefferLandkarte`, Herleitung dort).
-export function LandkarteZone({ m, randluft, listeSteht, onVorSprung }: {
+export function LandkarteZone({ m, bestimmungsWort, randluft, listeSteht, onVorSprung }: {
   m: LeserV3Modell;
+  /** Zähl-Substantiv des Erlasses — DASSELBE, das die Zähler-Zeile daneben
+   *  zeigt (`./SuchZone`, `zaehlform(bestimmungen, bestimmungsWort)`). Es kommt
+   *  wie dort vom Rahmen aus der einen Ableitung `./erlassAnsicht` (B8/§5);
+   *  hier wird nichts abgeleitet, und der Streifen erfindet kein eigenes Wort. */
+  bestimmungsWort: BestimmungsWort;
   /** Hat diese Fläche Randluft neben dem Lesemass? (Einzelansicht: ja.) */
   randluft: boolean;
   /** Liegt die Trefferliste GERADE über der Lesespalte? Derselbe Wert, den auch
@@ -105,6 +111,8 @@ export function LandkarteZone({ m, randluft, listeSteht, onVorSprung }: {
       register="g"
       obenVar="--nt-stick"
       gesamtFundstellen={m.fundstellen}
+      wortEins={zaehlform(1, bestimmungsWort)}
+      wortMehr={zaehlform(2, bestimmungsWort)}
       onSprung={(token) => {
         // Danach läuft die BESTEHENDE Sprungmechanik: zur ersten Fundstelle, wo
         // es eine gibt, sonst zum Artikel. Keine zweite Sprungart (§5).

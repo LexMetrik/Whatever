@@ -1,8 +1,8 @@
-import { memo, useMemo, type ReactNode } from 'react';
+import { memo, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { ErwaegungsRail } from '../components/rechtsprechung/ErwaegungsRail';
 import { TrefferLandkarte } from '../components/leser/TrefferLandkarte';
 import { landkarteSpur } from '../components/leser/landkarteModell';
-import { erwaegungsGliederung } from '../lib/rechtsprechung/abschnitte';
+import { erwaegungsGliederung, erwaegungsWort } from '../lib/rechtsprechung/abschnitte';
 import type { EntscheidAbschnitt } from '../lib/rechtsprechung/typen';
 import { nennungsAnker, trefferInErwaegungen, zaehleTreffer, type SuchTreffer } from './entscheidLeserRegeln';
 import { entscheidLandkarteEinheiten } from './entscheidLandkarte';
@@ -61,8 +61,59 @@ export const ErwBereich = memo(function ErwBereich({
   aktivAnker: string | null;
 }) {
   const gliederung = useMemo(() => erwaegungsGliederung(abschnitte), [abschnitte]);
-  const treffer = useMemo(() => trefferInErwaegungen(abschnitte, suche), [abschnitte, suche]);
-  const trefferGesamt = useMemo(() => zaehleTreffer(abschnitte, suche), [abschnitte, suche]);
+  // ── §15 · DIE ZWEI SUCH-ABLEITUNGEN LAUFEN ENTPRELLT (Messung 21.9.2026) ───
+  //
+  // GEMESSEN am längsten Entscheid des Korpus (Appellationsgericht BS
+  // SB.2018.46, 288 Blöcke / 785 065 Zeichen), Chromium auf ungedrosseltem
+  // Desktop, zehn Anschläge «Beschwerde»: ZEHN Long Tasks, zusammen 1374–1588 ms
+  // Blockade, längste 284–332 ms — also ~140–160 ms Hauptstrang-Blockade JE
+  // TASTENDRUCK, Frame-p95 118–133 ms statt 17 ms. Mit abgeschalteter
+  // Hervorhebung (die auf einem eigenen, hier nicht berührten Pfad läuft)
+  // bleiben davon 977–979 ms, also ~98 ms je Anschlag allein für diese zwei
+  // Ableitungen samt Rail-Neuaufbau. Die reine Rechenzeit misst in Node 23 ms je
+  // Aufruf-Paar; der Rest ist der Neuaufbau der bis zu 201 Einträge langen
+  // Trefferliste. Der Gesetz-Leser entprellt denselben Vorgang seit Rank 9
+  // (200 ms, `gesetz-leser/inhalt-zustand.tsx`) — hier fehlte es.
+  //
+  // §15 · LOGIKVERLUST: KEINER. Entprellt wird das WANN, nie das WAS — dieselben
+  // Funktionen, dieselben Argumente, dasselbe Ergebnis (§2 bleibt unberührt).
+  // Sichtbare Folge, benannt statt weggeglättet (§8): beim Verfeinern eines
+  // Begriffs zeigen Zähler-Zeile und Streifen bis zu 200 ms lang die Zahlen des
+  // VORIGEN Präfixes. Das Eingabefeld selbst bleibt unverzögert (es hängt
+  // weiter an `suche`), und die Hervorhebung im Lesetext ebenfalls.
+  //
+  // BETRETEN UND VERLASSEN SIND SOFORT (0 ms), nur das VERFEINERN ist verzögert.
+  // Grund ist §8, nicht Bequemlichkeit: mit pauschaler Verzögerung stünde beim
+  // ERSTEN Zeichen einer frischen Suche 200 ms lang «Keine Treffer in dieser
+  // Fassung» in einem `aria-live="polite"`-Bereich — eine falsche Aussage, die
+  // ein Screenreader vorliest, bevor sie sich korrigiert. So gibt es sie nicht:
+  // angezeigt werden immer die Zahlen eines Präfixes, das wirklich getippt
+  // wurde. Den teuersten Aufruf (das erste, breiteste Zeichen) kostet das.
+  //
+  // NACHHER, gleiche Messung: Summe 989 ms statt 1374–1588, LÄNGSTE Blockade
+  // 91 ms statt 284–332, schlechtester Frame 183 ms statt 296–338 — der
+  // spürbare Hänger je Anschlag ist damit weg. Es bleiben Long Tasks je
+  // Anschlag, aber KEINE dieser Ableitungen mehr — sie kommen aus zwei anderen,
+  // hier bewusst nicht angefassten Quellen: (a) dem Neuzeichnen der
+  // Hervorhebung, das auf seinem eigenen Pfad (`EntscheidLeser.tsx`,
+  // `setzeSuchHighlight` am ROHEN `suche`) je Anschlag über den ganzen Lesetext
+  // läuft — gemessene ~27 ms je Anschlag (989 ms mit gegen 715 ms ohne); (b) dem
+  // Neu-Rendern des Lesers selbst, weil `suche` sein Zustand ist und das
+  // Eingabefeld gesteuert bleibt. Beides sind eigene Befunde (Bericht
+  // 21.9.2026); sie liegen ausserhalb dieser Datei, und (a) berührte die
+  // Markier-Logik.
+  const gewertetRef = useRef('');
+  const [sucheGewertet, setSucheGewertet] = useState('');
+  useEffect(() => {
+    const sofort = suche.trim() === '' || gewertetRef.current.trim() === '';
+    const id = window.setTimeout(() => {
+      gewertetRef.current = suche;
+      setSucheGewertet(suche);
+    }, sofort ? 0 : 200);
+    return () => window.clearTimeout(id);
+  }, [suche]);
+  const treffer = useMemo(() => trefferInErwaegungen(abschnitte, sucheGewertet), [abschnitte, sucheGewertet]);
+  const trefferGesamt = useMemo(() => zaehleTreffer(abschnitte, sucheGewertet), [abschnitte, sucheGewertet]);
   // Angewandte Normen MIT wörtlicher Nennung in einer Erwägung. Ohne Fundstelle
   // KEIN Chip: ein Sprungziel, das es nicht gibt, wird nicht angeboten (§8) —
   // die Norm selbst bleibt im Fuss-Panel («Zitierte Normen») sichtbar.
@@ -134,6 +185,9 @@ const EntscheidLandkarte = memo(function EntscheidLandkarte({
   return (
     <TrefferLandkarte spur={spur} treffer={marken} leseId={aktivAnker}
       register="r" obenVar="--rsp-stick"
-      gesamtFundstellen={gesamtFundstellen} onSprung={springe} />
+      gesamtFundstellen={gesamtFundstellen}
+      // Dasselbe Wort, das die Zeile im Rail daneben führt — eine Quelle (§5).
+      wortEins={erwaegungsWort(1)} wortMehr={erwaegungsWort(2)}
+      onSprung={springe} />
   );
 });

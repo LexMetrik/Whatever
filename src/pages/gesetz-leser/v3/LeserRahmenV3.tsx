@@ -379,7 +379,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           Platz brauchen. Ein Träger ohne eigene Box nimmt den Margin entgegen
           und wirft ihn weg. */}
       <div className="contents">
-        <LandkarteZone m={m} randluft={!umgebung.imPane} listeSteht={trefferSteht} onVorSprung={trefferSicht.schliesse} />
+        <LandkarteZone m={m} bestimmungsWort={bestimmungsWort} randluft={!umgebung.imPane} listeSteht={trefferSteht} onVorSprung={trefferSicht.schliesse} />
         {/* Der Reiter-Toast gehört hierher, nicht an den Kopf des Rahmens: er
             ist `fixed` und braucht keinen Platz, stand als ERSTES Grid-Kind aber
             im `space-y-5`-Fluss und gab der Kopfzeile darunter ein `mt-5` — ein

@@ -1,5 +1,6 @@
 import { memo, useState, type ReactNode } from 'react';
 import { usePaneKlasse } from '../layout/PaneKontext';
+import { erwaegungsWort } from '../../lib/rechtsprechung/abschnitte';
 
 // ─── V5 · Erwägungs-Navigation im Entscheid-Leser (W2·10-UI-NAV) ─────────────
 //
@@ -169,7 +170,11 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
                     <span className="num">{trefferErw}</span>
                     {trefferErw < trefferGesamt && <> von <span className="num">{trefferGesamt}</span></>}
                     {' '}Treffer in <span className="num">{treffer.length}</span>
-                    {treffer.length === 1 ? ' Erwägung' : ' Erwägungen'}
+                    {/* Zählform aus `lib/rechtsprechung/abschnitte` — dieselbe
+                        Quelle, aus der der Streifen daneben sein Wort zieht
+                        (§5; bis 21.9.2026 stand hier ein eigenes Ternär und
+                        dort «Abschnitten»). Ausgabe wortgleich wie zuvor. */}
+                    {' '}{erwaegungsWort(treffer.length)}
                     {trefferErw < trefferGesamt && (
                       <span title="Vorkommen ausserhalb der Erwägungen (Regeste, Sachverhalt, Dispositiv) tragen keinen zitierfähigen Anker und sind darum kein Sprungziel.">
                         {' '}· übrige ausserhalb

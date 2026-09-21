@@ -52,7 +52,7 @@ import { BREITE, HOEHE, MARKE_MIN, MARKE_X, markenBreite, markenHoehe } from './
 // Sprungmechanik, die die Einstellung bereits respektiert.
 
 export function TrefferLandkarte({
-  spur, treffer, leseId, register, obenVar, gesamtFundstellen, onSprung,
+  spur, treffer, leseId, register, obenVar, gesamtFundstellen, wortEins, wortMehr, onSprung,
 }: {
   /** Die Bausteine des Dokuments mit ihrer Lage (`landkarteSpur`). */
   spur: readonly LandkarteFeld[];
@@ -66,21 +66,51 @@ export function TrefferLandkarte({
   /** CSS-Variable, die die Höhe des klebenden Kopfes trägt («--nt-stick»
    *  im Gesetz-Leser, «--rsp-stick» im Entscheid-Leser). */
   obenVar: string;
-  /** Fundstellen im ganzen Dokument — für den zugänglichen Namen. Kommt aus
-   *  dem Zähler des Lesers, wird hier nicht nachgerechnet (§5). */
+  /** Fundstellen im GANZEN Dokument — die Bezugsgrösse des zugänglichen Namens.
+   *  Kommt aus dem Zähler des Lesers, wird hier nicht nachgerechnet (§5). Sie
+   *  kann GRÖSSER sein als das Abgebildete (Entscheid-Leser: Sachverhalt und
+   *  Dispositiv zählen mit, tragen aber keine Marke) — der Name legt die
+   *  Differenz darum offen, statt sie stillschweigend zu behaupten (§8). */
   gesamtFundstellen: number;
+  /** Zähl-Substantiv der markierten Bausteine, Einzahl und Mehrzahl — DASSELBE
+   *  Wort, das die Zähler-Zeile daneben schon benutzt (Gesetz-Leser:
+   *  `zaehlform(…, bestimmungsWort)`, also «Artikel»/«Paragraph(en)»;
+   *  Entscheid-Leser: `erwaegungsWort`). Der Streifen leitet es NICHT selbst ab
+   *  — ein zweites Vokabular neben der Zeile daneben wäre genau die zweite
+   *  Wahrheit, die §5 verbietet (Befund 21.9.2026: der Streifen sagte
+   *  «Abschnitten», die Zeile daneben «Artikel» bzw. «Erwägungen»). */
+  wortEins: string;
+  wortMehr: string;
   /** Klick auf Streifen oder Marke: Sprung zum Baustein. */
   onSprung: (id: string) => void;
 }) {
   const marken = useMemo(() => landkarteMarken(spur, treffer), [spur, treffer]);
   const baender = useMemo(() => landkarteBaender(spur), [spur]);
   const lese = useMemo(() => bereichZuId(spur, leseId), [spur, leseId]);
+  // Die Fundstellen, die WIRKLICH als Marke dastehen. Keine zweite Zählung (§5):
+  // summiert wird genau das `anzahl`, das die gezeichneten Marken ohnehin
+  // tragen — dieselbe Aggregation, die der Erwägungs-Rail für seine Zeile macht.
+  const summeMarken = useMemo(() => marken.reduce((n, m) => n + m.anzahl, 0), [marken]);
 
   // Ohne Spur gibt es nichts abzubilden — dann steht auch kein Streifen (§8).
   if (spur.length === 0) return null;
 
-  const name = `Treffer-Landkarte: ${gesamtFundstellen} ${gesamtFundstellen === 1 ? 'Fundstelle' : 'Fundstellen'}`
-    + ` in ${marken.length} ${marken.length === 1 ? 'Abschnitt' : 'Abschnitten'} des Dokuments`;
+  // ── §8 · DER NAME SAGT DAS ABGEBILDETE, NICHT MEHR (Befund 21.9.2026) ──────
+  // Bis hierher nannte der Name `gesamtFundstellen` — im Entscheid-Leser eine
+  // Zahl über ALLE Abschnitte (`zaehleTreffer`), während die Marken allein aus
+  // den Erwägungen kommen (`trefferInErwaegungen`). Gemessen an BGE-/BS-Daten
+  // lag sie regelmässig höher als die Summe der Marken (Beispiel BS SB.2018.46,
+  // «Beschwerde»: 26 gegen 19) — der Streifen sagte also eine Zahl an, die er
+  // nicht zeigt. Jetzt steht vorn, was gezeichnet ist; liegt die Bezugsgrösse
+  // darüber, wird die Differenz BENANNT, in genau den Worten, die der Rail
+  // daneben führt («3 von 16 … · übrige ausserhalb»). Im Gesetz-Leser fallen
+  // beide Zahlen zusammen — dort bleibt der Name damit unverändert eine einzige
+  // Zahl, und es entsteht keine dritte Wahrheit.
+  const teilmenge = summeMarken < gesamtFundstellen;
+  const bezug = teilmenge ? gesamtFundstellen : summeMarken;
+  const name = `Treffer-Landkarte: ${marken.length} ${marken.length === 1 ? wortEins : wortMehr}`
+    + ` · ${teilmenge ? `${summeMarken} von ` : ''}${bezug} ${bezug === 1 ? 'Fundstelle' : 'Fundstellen'}`
+    + (teilmenge ? ' · übrige ausserhalb' : '');
 
   return (
     <div
