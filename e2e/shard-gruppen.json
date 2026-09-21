@@ -12,7 +12,6 @@
    "deckung-seite.e2e.ts",
    "entstehung-synopse-leser.e2e.ts",
    "gesetze-kanton-g5.e2e.ts",
-   "leser-einzelmodus.e2e.ts",
    "leser-position-u.e2e.ts",
    "leser-v3-esc-ohne-sprung.e2e.ts",
    "leser-v3-kopf.e2e.ts",
@@ -27,14 +26,12 @@
    "bild-block-items.e2e.ts",
    "gesetze-az-register.e2e.ts",
    "gesetze-ia-v2-walks.e2e.ts",
-   "leser-lesemass.e2e.ts",
    "verzahnung.e2e.ts",
    "w223b-kopf-seitenleiste.e2e.ts",
    "w224-reiter-umordnen-d16.e2e.ts",
    "leser-links-p3.e2e.ts",
    "leser-bezuege-inhalt-d30.e2e.ts",
    "w224-ga-kopf.e2e.ts",
-   "a11y-flaeche.e2e.ts",
    "fussnote-absatz-altform.e2e.ts",
    "international-adresse-b45.e2e.ts",
    "leser-bezuege-fuss-d34.e2e.ts",
@@ -49,8 +46,7 @@
    "w224-r11-reiterleiste.e2e.ts",
    "w224-r13b-reiter-cls.e2e.ts",
    "w224-r14-reiter-modell.e2e.ts",
-   "w224-r14b-meta-reiter.e2e.ts",
-   "w224-reiterverhalten.e2e.ts"
+   "w224-r14b-meta-reiter.e2e.ts"
   ],
   "3": [
    "leser-suche-a35-a40-a41.e2e.ts",
@@ -93,7 +89,9 @@
    "materialien-m4-estv-ks.e2e.ts",
    "split-erwaegungssprung.e2e.ts",
    "tastatur.e2e.ts",
-   "verweis-u.e2e.ts"
+   "verweis-u.e2e.ts",
+   "leser-v3-uebersicht.e2e.ts",
+   "w224-reiterverhalten.e2e.ts"
   ],
   "5": [
    "hist-ansicht-w25i.e2e.ts",
@@ -114,7 +112,9 @@
    "suche-seite.e2e.ts",
    "uinav-j-rechtsprechung.e2e.ts",
    "w224-d35-f2-kopf.e2e.ts",
-   "w224-d40-fassung.e2e.ts"
+   "w224-d40-fassung.e2e.ts",
+   "a11y-flaeche.e2e.ts",
+   "leser-einzelmodus.e2e.ts"
   ],
   "6": [
    "d36-einstellungen-fuss.e2e.ts",
@@ -135,7 +135,8 @@
    "topbar-kein-ueberlauf-320.e2e.ts",
    "verlauf-o1.e2e.ts",
    "w224-d35-f4-menue.e2e.ts",
-   "w224-r6i-vorschau-schrift.e2e.ts"
+   "w224-r6i-vorschau-schrift.e2e.ts",
+   "leser-lesemass.e2e.ts"
   ],
   "7": [
    "d21-seitenleiste-kein-sprung.e2e.ts",
@@ -156,7 +157,8 @@
    "leser-w228-landkarte.e2e.ts",
    "schnellrechner-kalender.e2e.ts",
    "tagerechner-rechenweg-sync.e2e.ts",
-   "w224-leser-d32-d33.e2e.ts"
+   "w224-leser-d32-d33.e2e.ts",
+   "leser-v3-scroll-blur.e2e.ts"
   ],
   "8": [
    "gesetze-randtitel-6b.e2e.ts",
@@ -166,9 +168,7 @@
    "leser-kopf-v2.e2e.ts",
    "leser-spy-w25d.e2e.ts",
    "leser-v3-ortsangabe.e2e.ts",
-   "leser-v3-scroll-blur.e2e.ts",
    "leser-v3-split-a34-bugs.e2e.ts",
-   "leser-v3-uebersicht.e2e.ts",
    "leser-zukunftsfassung-w2-27.e2e.ts",
    "materialien-m2-seco.e2e.ts",
    "materialien-register-shards.e2e.ts",

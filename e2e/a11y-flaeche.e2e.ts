@@ -1,4 +1,4 @@
-// @shard-gruppe: 2
+// @shard-gruppe: 5
 // Gruppe 2 statt 1 (CI-Nachzug 5.9.2026, Lauf 33937186925): Gruppe 1 trug mit
 // dieser Spec 479 s reine CI-Testzeit und war damit der schwerste der acht
 // Shards (a11y 147 s + a11y-flaeche 108 s = 53 % der Gruppe), Gruppe 2 mit
