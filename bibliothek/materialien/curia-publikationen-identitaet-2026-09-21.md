@@ -108,9 +108,33 @@ Benennung und Typ wie `beschluesse[].vorlage`) sie getrennt.
   `IdBill` unterscheiden — die GUID käme allein als Golden-Rauschen ins Artefakt.
 - **`Bills` ist kein Inhalt, sondern ein Stempel.** Sein `__deferred`-URI enthält die eigene `ID`
   der Zeile; wer `Bills` in einen Inhaltsvergleich nimmt, misst tautologisch grün.
+- **`vorlage: 0` heisst NICHT «Vorlage Nummer 0» (§8).** Der Wert kommt **450-mal** im Bestand vor
+  (häufigster Wert nach 1) und bezeichnet die Geschäfts- bzw. Botschaftsebene, also eine Fundstelle,
+  die keinem einzelnen Entwurf zugeordnet ist. Das Schwesterfeld `beschluesse[].vorlage` kennt die 0
+  **nicht** — die beiden Felder sind gleich benannt und gleich typisiert, ihre Wertebereiche decken
+  sich aber nicht. Vor jeder Anzeige beschriften; `null` kommt im Bestand nicht vor (0 Einträge),
+  0 und `null` kollidieren also heute nicht.
 - **`BillNumber` ist ein `int`, kein String** (14 669 von 14 669 Zeilen `typeof 'number'`).
   `txt(z.BillNumber)` lieferte für JEDE Zeile `null` — ein Fix über `txt()` änderte exakt nichts
   und sähe trotzdem nach Fix aus. Gelesen wird über `zahl()`; ein eigener Test hält den Irrweg rot.
+
+**NACHTRAG 21.9.2026 (nach dem Vollabgleich, Gegenprüfung #960) — zwei Zählweisen, zwei Zahlen.**
+Der Absatz darunter rechnet über 385 Shards und den Stand VOR dem Vollabgleich; er bleibt stehen.
+Tatsächlich geschrieben wurden **386** Shards mit **2059** Publikationen (02.008 kam neu dazu).
+Die Aufschlüsselung des Zuwachses **+136**:
+
+| Anteil | Zeilen | Shards |
+|---|---|---|
+| `ReferenceText` im Schlüssel (erste Runde) | +121 | 63 |
+| `vorlage` zusätzlich (zweite Runde) | +11 | 6 |
+| neuer Shard 02.008 | +4 | 1 |
+
+**Und: «63 gewachsen · 322 unverändert» ist nicht falsch, aber die schwächere Zählung.** Sie misst
+über die sechs Felder. Zählt man Einträge, sind es **65 gewachsen · 320 unverändert**: die Geschäfte
+**24.075** (8→9) und **99.084** (6→7) wuchsen **ausschliesslich über `vorlage`** und sehen in der
+Sechs-Feld-Sicht darum unverändert aus. Wer den Churn prüft, muss wissen, welche der beiden Zahlen
+er vor sich hat — die Sechs-Feld-Zählung ist der konservative Vergleich gegen den alten Stand (der
+kein `vorlage` kennt), die Eintragszählung ist die ehrliche Antwort auf «wie viele Shards wuchsen».
 
 **Wirkung auf unseren Bestand (385 Shards).** gespeichert 1923 · mit dem Sechs-Feld-Schlüssel 2044 ·
 mit `vorlage` **2055 = roh = Vollzeile ⇒ verlustfrei**. Die 11 Differenz-Zeilen zwischen Sechs-Feld-
@@ -191,8 +215,14 @@ Geschäfte 02.035 und 02.078 sind Jahrgang 2002 und haben Daten, weil ihre Schlu
   unserer Identitäts-Entscheidungen teilt.
 - **Unbewacht bleiben** die Zähler `beschluesse` und `vorberatungen` im Zustandsträger: sie werden
   mitgeführt, aber nie gegen den Shard-Inhalt geprüft — dieselbe Lücke, eine Ebene weiter.
-- **Offen:** die amtliche Gegenzählung über alle 385 Geschäfte. Der Korpus-Gesamtverlust ist damit
-  unbekannt und wird bewusst **nicht** aus neun Stichproben hochgerechnet.
+- **Erledigt (Berichtigung 21.9.2026):** die amtliche Gegenzählung über den ganzen Bestand war hier
+  als offen geführt — sie ist durch den Vollzensus aus Ziff. 1a **erbracht** (14 669 DE-Zeilen, alle
+  386 Shards Eintrag für Eintrag: 2059 = 2059). Der frühere Satz «wird bewusst nicht aus neun
+  Stichproben hochgerechnet» galt für den Stand vor dem Zensus und ist überholt.
+- **Neu offen an seiner Stelle:** die Kommissions-Vorberatungen. Dort fallen 65 % der amtlichen
+  Zeilen zusammen (2249 amtlich → 792 gespeichert über 386 Shards, Prüfer-Messung; eigene Messung
+  über 385 Shards: 2093 → 790). Ob das gewollt ist, ist ein fachlicher Entscheid und liegt bei
+  David — Posten `plan/posten/2026-09-21-curia-vorberatungen-62-der-amtlichen-zeilen-fallen-zusammen.md`.
 
 ## 5 · Negativbefund (S5)
 

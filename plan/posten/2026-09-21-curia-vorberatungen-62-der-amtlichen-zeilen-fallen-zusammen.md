@@ -1,11 +1,19 @@
 <!-- @posten
 dach: QS-KORPUS
-titel: Curia-Vorberatungen: 62 % der amtlichen Zeilen fallen zusammen — gewollt oder Verlust? (David)
+titel: Curia-Vorberatungen: rund zwei Drittel der amtlichen Zeilen fallen zusammen — gewollt oder Verlust? (David)
 anlass: Vollzensus 21.9.2026 beim Fix des Publikations-Dedupe (fix/curia-publikationen-dedupe)
 wartet-auf: david
 -->
 
 **WARTET AUF DAVID — fachlicher Entscheid, kein Bau.**
+
+> **Einordnung (21.9.2026, nach der Gegenprüfung zu PR #960):** Das ist **kein Nebenfund**. Es ist
+> der grösste bekannte Mengenunterschied zwischen Amtsquelle und Korpus in dieser Etappe — rund
+> **1300 bis 1450 Zeilen**, gegenüber 136 beim behobenen Publikations-Fall. Solange der Entscheid
+> aussteht, gilt für die Vorberatungen dieselbe Curia-Auflage («Die Daten dürfen inhaltlich nicht
+> verändert werden») als ungeklärt, die beim Publikations-Fall den Fix ausgelöst hat. Der
+> Unterschied ist: dort war das Zusammenfallen sicher falsch, hier ist es **plausibel richtig** —
+> aber niemand hat es je entschieden.
 
 Beim Fix des Publikations-Dedupe (`bauePublikationen`) wurde dieselbe Schlüssel-Falle bei
 den Schwester-Entitäten mitgemessen. Bei den **Kommissions-Vorberatungen** ist sie um
@@ -15,10 +23,14 @@ Grössenordnungen stärker als im behobenen Fall.
 `$select=PreconsultationDate,CommitteeName,BusinessShortNumber`, `$inlinecount=allpages`,
 Abruf 21.9.2026; **keine Personenfelder abgefragt**, `Voting` nicht angefasst):
 
-| Menge | amtliche Zeilen | gespeichert | Differenz |
-|---|---|---|---|
-| über die Shard-Geschäfte | 2093 | **790** | **−1303 (62 %)** |
-| korpusweit (DE) | 32 031 | 22 542 | −9489 |
+| Menge | amtliche Zeilen | gespeichert | Differenz | Herkunft |
+|---|---|---|---|---|
+| über 385 Shard-Geschäfte | 2093 | **790** | **−1303 (62 %)** | eigene Messung, vor dem Vollabgleich |
+| über 386 Shard-Geschäfte | 2249 | **792** | **−1457 (65 %)** | Gegenprüfung #960, nach dem Vollabgleich |
+| korpusweit (DE) | 32 031 | 22 542 | −9489 | eigene Messung |
+
+Beide Messungen sind unabhängig voneinander entstanden und widersprechen sich nicht: die zweite
+zählt einen Shard mehr und einen späteren Abrufstand. Die Grössenordnung ist in beiden dieselbe.
 
 Stichproben: Geschäft 08.053 16 Zeilen → 2 · Geschäft 24.041 23 → 5.
 Der Schlüssel in `baueKommissionen` ist `datum|CommitteeName`. Die zusammenfallenden Zeilen
