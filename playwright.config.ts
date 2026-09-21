@@ -62,7 +62,12 @@ export default defineConfig({
   // Klicks blockierten bis zum 30-s-Test-Timeout (lokal selbst bei 8× CPU-Drossel
   // < 1 s, 0 Konsolenfehler — also Contention, kein Code-Defekt). Auf CI darum
   // 1 Worker (sequenziell, stabil); lokal volle Parallelität.
-  workers: process.env.CI ? 1 : undefined,
+  // NACHTRAG 22.9.2026 (QS-CI-MINUTEN, Messung Entwurfs-PR #968, nie gelandet):
+  // der Runner hat heute 4 Kerne (im Job-Log belegt, öffentliches Repo) — mit
+  // 2 Workern 3 Läufe × 4 Shards alle grün, Shard-Job 8,3–11,7 statt 16,8 min,
+  // Flaky je Lauf 2/3/4 gegen 3–4 mit 1 Worker (vier Vergleichsläufe). Darum 2.
+  // Kehrt die Klick-Blockade zurück: zurück auf 1, nicht Timeouts erhöhen.
+  workers: process.env.CI ? 2 : undefined,
   retries: process.env.CI ? 2 : 0,
   // CI zusätzlich als JSON: der `github`-Reporter druckt KEINE Per-Test-Dauern
   // (das tut nur das lokale `list`-Format), und `reportSlowTests` flaggt erst ab
