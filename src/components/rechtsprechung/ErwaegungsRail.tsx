@@ -89,17 +89,15 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
    *  reservierten Auskunfts-Slot unter dem Feld, nimmt also keine zusätzliche
    *  Höhe und verschiebt das Verzeichnis darunter nicht (§15.2). */
   markenSchalter?: ReactNode;
-  /** § Falle a (21.9.2026) — GEWERTETER Stand (`sucheGewertet.trim() !== ''`),
-   *  von `ErwBereich` gereicht: Verzeichnis-Schranke, aria-live-Zeile und
-   *  Schalter-Gate hängen daran, NICHT am rohen `suche` — sonst zeigen sie
-   *  während der 200-ms-Entprellung einen anderen Stand als `trefferGesamt`
-   *  (Befund 21.9.2026: Verzeichnis sprang 219→0→201, aria-live behauptete
-   *  bis zu 49 ms lang «Keine Treffer», obwohl es welche gab). Optional mit
-   *  Fallback auf das rohe `suche` — rückwärtskompatibel zu Aufrufen ohne
-   *  Entprellung (Direkt-Render in Tests, z. B.
-   *  `leser-landkarte-name-w228.test.tsx`, die den Rail ohne `ErwBereich`
-   *  instanziiert und darum diese Prop nicht kennt). */
-  sucheAktiv?: boolean;
+  /** § Falle a (21.9.2026) — EIN Stand für Verzeichnis-Schranke, aria-live-Zeile
+   *  und Schalter-Gate, von `ErwBereich` gereicht als `sucheAktiv` = rohes `suche`
+   *  UND entprelltes `sucheGewertet` beide nicht leer (Herleitung dort). Nicht am
+   *  rohen `suche` allein — sonst zeigen sie während der 200-ms-Entprellung einen
+   *  anderen Stand als `trefferGesamt` (Befund 21.9.2026: Verzeichnis sprang
+   *  219→0→201, aria-live behauptete ~49 ms lang «Keine Treffer»). PFLICHT und
+   *  ohne Rückfall aufs rohe `suche`: ein vergessener Prop wäre sonst wieder die
+   *  Zwei-Stände-Kante; so fängt sie der Compiler (Bug-Check 21.9.2026). */
+  sucheAktiv: boolean;
 }) {
   // Mobil (und in der schmalen Pane) eingeklappt starten: der Lesetext gehört
   // zuerst ans Auge. Ob die Spalte steht, entscheidet allein CSS — kein
@@ -111,9 +109,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
   if (gliederung.length === 0 && normen.length === 0) return null;
 
   const trefferErw = treffer.reduce((n, t) => n + (t.anzahl ?? 0), 0);
-  // § Falle a: Fallback auf roh NUR wenn die Prop fehlt (Alt-Aufrufer ohne
-  // Entprellung) — kommt sie vom Leser, ist sie immer gesetzt und gewertet.
-  const aktiv = sucheAktiv ?? suche.trim() !== '';
+  const aktiv = sucheAktiv;
   const liste: readonly RailPunkt[] | null = aktiv ? treffer : null;
 
   return (

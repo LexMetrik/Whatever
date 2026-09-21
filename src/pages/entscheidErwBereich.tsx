@@ -61,10 +61,10 @@ export const ErwBereich = memo(function ErwBereich({
   springe: (anker: string) => void;
   /** W2·28/L-2 · Roh-Zustand des Schalters «Hervorhebung» (State des Lesers,
    *  NIE selbst zurückgesetzt — s. Nachtrag 21.9.2026 unten bei `suche`).
-   *  ErwBereich wertet ihn GEWERTET (§ Falle a, 21.9.2026): Schalter-Anzeige
-   *  und Landkarten-Sichtbarkeit hängen an `sucheGewertet`, sonst zeigte der
-   *  Schalter für einen Tick den falschen Zustand, während Rail-Schranke und
-   *  Zähler noch den alten (gesperrten) Stand trugen. */
+   *  ErwBereich wertet ihn auf `sucheAktiv` (§ Falle a, 21.9.2026): Schalter-
+   *  Anzeige und Landkarten-Sichtbarkeit stehen so auf demselben Stand wie
+   *  Rail-Schranke und Zähler. Vorsorge für die neue Gewertet-Kopplung, kein
+   *  gemessener Altbefund (vorher fielen beide am rohen Stand zusammen). */
   markenAusRoh: boolean;
   onMarkenSchalten: (aus: boolean) => void;
   /** Darf der Streifen auf DIESER Fläche überhaupt stehen? Nur noch die Lage

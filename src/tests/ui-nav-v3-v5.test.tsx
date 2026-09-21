@@ -97,7 +97,7 @@ describe('V5 — Rail-Markup', () => {
   it('rendert Suchfeld, Erwägungs-Ziele und die Normen-Chips', () => {
     const s = ssr(
       <ErwaegungsRail gliederung={gliederung} treffer={[]} trefferGesamt={0} normen={[{ zitat: 'Art. 60 OR', anker: 'e-2' }]}
-        suche="" onSuche={() => {}} springe={() => {}} />,
+        suche="" sucheAktiv={false} onSuche={() => {}} springe={() => {}} />,
     );
     expect(s).toContain('data-erw-rail');
     expect(s).toContain('Im Entscheid suchen');
@@ -110,14 +110,14 @@ describe('V5 — Rail-Markup', () => {
 
   it('ohne Gliederung UND ohne Normen entsteht gar keine Fläche', () => {
     const s = ssr(<ErwaegungsRail gliederung={[]} treffer={[]} trefferGesamt={0} normen={[]}
-      suche="" onSuche={() => {}} springe={() => {}} />);
+      suche="" sucheAktiv={false} onSuche={() => {}} springe={() => {}} />);
     expect(s).not.toContain('data-erw-rail');
   });
 
   it('zeigt bei aktiver Suche die Treffer-Zahlen statt des vollen Verzeichnisses', () => {
     const treffer = trefferInErwaegungen(BEISPIEL, 'kenntnis');
     const s = ssr(<ErwaegungsRail gliederung={gliederung} treffer={treffer} trefferGesamt={16} normen={[]}
-      suche="kenntnis" onSuche={() => {}} springe={() => {}} />);
+      suche="kenntnis" sucheAktiv onSuche={() => {}} springe={() => {}} />);
     expect(s).toContain('Treffer in');
     expect(s).toContain('href="#e-2-1"');
     // E. 1 trägt keinen Treffer und steht in der Ergebnisliste darum nicht mehr.

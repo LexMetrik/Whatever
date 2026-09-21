@@ -984,10 +984,11 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
               `ErwBereich`, weil nur dort die Zahl GEWERTET vorliegt (§5, §
               Falle a 21.9.2026): `markenAus` hier ist roh und speist nur noch
               die Hervorhebung im Lesetext (unten); Landkarte, Rail-Schranke
-              und Schalter-Anzeige hängen an `sucheGewertet`, sonst zeigt der
-              Schalter für einen Tick einen anderen Zustand als die Landkarte,
-              wenn das Feld bei gesetztem Schalter geleert wird (gemessen
-              21.9.2026 — kein Frame-Beweis nötig, die Herleitung steht dort). */}
+              und Schalter-Anzeige hängen an `sucheAktiv` (roh UND gewertet
+              nicht leer). Vorsorge, kein gemessener Altbefund: vorher hingen
+              Schalter und Landkarte beide am rohen Stand und fielen im selben
+              Render; seit sie am gewerteten hängen, muss auch der Schalter
+              dort rechnen, sonst läge er beim Leeren einen Tick daneben. */}
           {!lese && (
             <ErwBereich abschnitte={aktiveAbschnitte} zitierteNormen={snap.zitierteNormen}
               suche={suche} onSuche={setSuche} springe={springeZuAbschnitt}

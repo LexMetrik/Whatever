@@ -166,7 +166,7 @@ describe('A2 · ein Wort für eine Zahl (§5)', () => {
       <MemoryRouter>
         <ErwaegungsRail gliederung={[]} treffer={treffer} trefferGesamt={5}
           normen={[{ zitat: 'Art. 60 OR', anker: 'e-2' }]}
-          suche={BEGRIFF} onSuche={() => {}} springe={() => {}} />
+          suche={BEGRIFF} sucheAktiv onSuche={() => {}} springe={() => {}} />
       </MemoryRouter>,
     );
     const wort = erwaegungsWort(treffer.length);
