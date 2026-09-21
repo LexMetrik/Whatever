@@ -69,15 +69,15 @@ Doku-Session (TABU `scripts/**`), sondern in einen eigenen `fix(`-Auftrag mit
 Gegenprüfung.
 
 **Nächste Schritte (Checkliste für den Bau-Auftrag):**
-- [ ] Fix (Klasse `daten`, `lex-daten` + eigene Gegenprüfung): `text` in den Dedupe-
+- [x] Fix (Klasse `daten`, `lex-daten` + eigene Gegenprüfung): `text` in den Dedupe-
       Schlüssel (Z. 242) aufnehmen UND gleichzeitig den Sortier-Vergleicher (Z. 244–248)
       um `text`+`art` als Tiebreaker erweitern (sonst kippt §2-Determinismus bei echten
       Gleichständen, die der geschärfte Schlüssel jetzt zulässt); Vollabgleich neu fahren,
       Erwartung Geschäft 01.023 → 32 Publikationen (DE).
-- [ ] Tor (§6.7, einmal rot zeigen): `check:entstehung` prüft je Shard
+- [x] Tor (§6.7, einmal rot zeigen): `check:entstehung` prüft je Shard
       `publikationen.length` gegen die im Lauf gezählten `Objective`-Zeilen, oder der
       Runner wird rot, wenn der Dedupe Zeilen schluckt.
-- [ ] Vor der ersten Anzeige beschriften (§8): `publikationen[].datum` ist Curias
+- [x] Vor der ersten Anzeige beschriften (§8) — VERIFIZIERT und teilweise berichtigt, siehe Erledigungs-Vermerk: `publikationen[].datum` ist Curias
       Dokumentdatum, nicht das BBl-Erscheinungsdatum (Beleg 02.008: 2002-01-09 vs.
       Fedlex 2002-02-26); `schlussabstimmungen: []` heisst „keine Einzelstimmen-Daten"
       (vor ~2007), nicht „keine Schlussabstimmung".
@@ -91,3 +91,41 @@ bewusst NICHT hier, sondern bleibt in `ROADMAP.md` (Dach-Schritt `QS-MONITOR-ROT
 Session TABU (Posten-Modell: Nebenfunde sind Dateien, keine ROADMAP-Zeilen) — dieser
 Posten hier ist der vorgesehene Ablageort für den neuen Befund, keine Änderung an
 `ROADMAP.md` nötig oder vorgenommen.
+
+
+---
+
+## Erledigungs-Vermerk 21.9.2026 (Bau-Session, Branch `fix/curia-publikationen-dedupe`)
+
+**Erledigt bis auf den letzten Haken.** Offen bleibt nur: PR #939 schliessen und den
+Monatslauf vom 1.10.2026 abwarten — der schreibt den Rest des Korpus fort.
+
+**Der Fix ging TIEFER als diese Checkliste.** `text` allein genügte nicht. Ein Vollzensus
+aller 14 669 DE-`Objective`-Zeilen (Abruf 21.9.2026, `$inlinecount=allpages`) hat gezeigt:
+was der Sechs-Feld-Schlüssel danach noch zusammenfasste, sind **keine Doppellieferungen,
+sondern dieselbe Fundstelle zu verschiedenen Entwürfen** desselben Geschäfts. Erst
+`BillNumber` (im Shard als `publikationen[].vorlage`) macht den Lauf verlustfrei:
+1923 → 2044 mit sechs Feldern, **2059 mit `vorlage` = rohe amtliche Zeilenzahl**.
+Gefunden hat das die adversariale Gegenprüfung; ohne sie wäre ein halber Fix gelandet.
+
+**Drei Zahlen dieses Postens sind berichtigt** (F8 — nicht überschrieben, sondern
+korrigiert): Exposition **182 von 385** Shards, nicht 183 von 386; gespeicherter
+Ausgangsbestand **1923**, nicht 1927. Nach dem Vollabgleich sind es **386** Shards
+(02.008 kam neu dazu).
+
+**Die beiden Beschriftungs-Hinweise waren nur teilweise richtig** — selbst nachgemessen
+statt übernommen (§7), Belege in
+`bibliothek/materialien/curia-publikationen-identitaet-2026-09-21.md`:
+- `publikationen[].datum`: im Kern bestätigt (= Fedlex `jolux:dateDocument`), aber **enger**
+  — gilt nur für `ReferenceTypeName` «Beratungsgegenstand / Entwurf»;
+  `Schlussabstimmungstext`-Zeilen tragen das Erscheinungsdatum korrekt. Das hier zitierte
+  Beleg-Geschäft **02.008 hatte zum Zeitpunkt der Behauptung gar keinen Shard**; geprüfte
+  Ersatzbelege: 02.024 (−74 Tage), 08.053 (−62 Tage).
+- `schlussabstimmungen: []`: Mechanismus bestätigt, **Grenze widerlegt** — nicht «~2007»,
+  sondern die **Wintersession 2003** (früheste erfasste Schlussabstimmung 19.12.2003). Und
+  die Deutung gilt nicht durchgehend: in neun Fällen nach 2003 heisst leer wirklich «keine
+  Schlussabstimmung». Ungeprüft übernommen hätte das eine falsche Pflege-Regel ergeben.
+
+**Nachbarn, die derselbe Mechanismus trifft** — eigene Posten, NICHT in diesem PR:
+Kommissions-Vorberatungen (`Preconsultation`) verlieren über die Shard-Geschäfte
+2093 → 790 Zeilen (62 %), Rats-Beschlüsse (`Resolution`) 3581 → 3577.
