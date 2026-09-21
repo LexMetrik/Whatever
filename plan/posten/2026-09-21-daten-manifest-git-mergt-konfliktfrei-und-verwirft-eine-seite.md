@@ -1,0 +1,7 @@
+<!-- @posten
+dach: QS-DATA-INGEST-DRIFT
+titel: daten-manifest.json — git führt zwei PRs konfliktfrei zusammen und verwirft still eine Prüfsumme
+anlass: Landestrecke 21.9.2026, PR #960 (Curia) und PR #953 (Fedlex-Frische); vorhergesagt von der Gegenprüfung #953 (Opus, Runde 2), beim Nachzug belegt
+-->
+
+  - [ ] **Stiller Merge-Verlust in `daten-manifest.json`** *(Beleg 21.9.2026)* — #960 und #953 änderten beide `soft-law.db` → `dokument` (Basis 606/`6dcfbe7e…`; #953 606/`c8fc44ab…`; #960 607/`c87830a3…`). `git merge-tree --write-tree` meldet Exit 0 ohne Konfliktmarker und liefert reihenfolgeabhängig ein anderes Ergebnis — eine Seite fällt still heraus. Nach der Landung von #960 und dem Einzug von main in #953 war `check:datenhaltung` rot («committet 606/c8fc44ab ≠ frisch 607/75e52faa»); `npm run datenhaltung:manifest` heilte es. Heute fängt `check:datenhaltung` im merge_group den Fall ab (kein defektes Prod), er kostet aber einen roten Queue-Lauf (~25 min) plus Rauswurf, und eine Gegenprüfungs-Quittung muss NACH der Neuerzeugung gesetzt werden (der Hash bindet den Endinhalt). Wurzel-Fix-Kandidat: Merge-Treiber für `daten-manifest.json`, der die Datei beim Zusammenführen immer neu erzeugt (Skill `landung`, Merge-Treiber-Politik — prüfen, ob es dort schon einen Treiber für generierte Projektionen gibt), oder `plan:next`/`landung` warnt, wenn zwei offene PRs dieselbe generierte Projektion ändern.
