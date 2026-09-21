@@ -76,7 +76,8 @@ Tool.
   ob sie rot wird (§6.7).
 - Den Bauer fragen, **welcher Stelle er am wenigsten traut**, dort zuerst.
 - Delta-Runde: **denselben Prüfer fortsetzen** (SendMessage), nicht neu
-  dispatchen.
+  dispatchen — nie aber einen BAU-Agenten als Prüfer fortsetzen (Skill
+  `auftrag` Ziff. 6).
 
 ## Red Flags — STOP und neu ansetzen
 
