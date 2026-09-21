@@ -20,7 +20,7 @@ import { useEinzelModus } from './useEinzelModus';
 import { ErlassGriff } from './LeserPanelOeffner';
 import { normZitat, panelBezug, usePanelBezuege, usePanelZustand } from './panelModell';
 import { SuchSprungFeld } from './SuchSprungFeld';
-import { suchZoneAufbau } from './suchZoneAufbau';
+import { landkarteZone, suchZoneAufbau } from './suchZoneAufbau';
 import { SchwebeMeldung } from '../../../components/ui/SchwebeMeldung';
 import { useTrefferSicht } from './useTrefferSicht';
 import { LeserTrefferSpalte } from './LeserTrefferSpalte';
@@ -216,6 +216,7 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
     onVor: () => m.springeZuFundstelle?.(1),
     onZurueck: () => m.springeZuFundstelle?.(-1),
     listeSteht: trefferSteht, // D38, Herleitung in `./SuchZone`
+    markenAus: m.markenAus, setzeMarkenAus: m.setzeMarkenAus, // W2·28/L-2, s. dort
   });
   // N4: die Zone zieht genau dann in die Kopfzeile, wenn links eine Spur steht
   // — nur dort hat das Feld eine Kante (D32) und daneben Platz für die Griffe
@@ -380,6 +381,8 @@ export function LeserRahmenV3({ ebene, schluessel }: LeserRahmenV3Props) {
           Platz brauchen. Ein Träger ohne eigene Box nimmt den Margin entgegen
           und wirft ihn weg. */}
       <div className="contents">
+        {/* W2·28/L-1 · Landkarte — `fixed`, darum an DIESEM Träger (s. `./suchZoneAufbau`). */}
+        {landkarteZone({ m, randluft: !umgebung.imPane, onVorSprung: trefferSicht.schliesse })}
         {/* Der Reiter-Toast gehört hierher, nicht an den Kopf des Rahmens: er
             ist `fixed` und braucht keinen Platz, stand als ERSTES Grid-Kind aber
             im `space-y-5`-Fluss und gab der Kopfzeile darunter ein `mt-5` — ein

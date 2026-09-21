@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useState, type ReactNode } from 'react';
 import { usePaneKlasse } from '../layout/PaneKontext';
 
 // ─── V5 · Erwägungs-Navigation im Entscheid-Leser (W2·10-UI-NAV) ─────────────
@@ -67,7 +67,7 @@ export interface RailPunkt { anker: string; marke: string; tiefe: number; anzahl
 // (`usePaneKlasse`, §5) — und die Prop entfällt ersatzlos (§17-Rückbau: sie
 // trug keine Aussage mehr, die nicht der Kontext schon trägt).
 export const ErwaegungsRail = memo(function ErwaegungsRail({
-  gliederung, treffer, trefferGesamt, normen, suche, onSuche, springe,
+  gliederung, treffer, trefferGesamt, normen, suche, onSuche, springe, markenSchalter,
 }: {
   /** Erwägungs-Gliederung der SICHTBAREN Fassung (`erwaegungsGliederung`). */
   gliederung: readonly RailPunkt[];
@@ -82,6 +82,11 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
   onSuche: (v: string) => void;
   /** Sprung + Hash-Spiegelung — dieselbe Funktion wie die Abschnitts-Chips. */
   springe: (anker: string) => void;
+  /** W2·28 · L-2 — Schalter «Hervorhebung und Treffer-Marken zusammen aus», als
+   *  fertiges Element vom Leser (der Rail bleibt reiner Renderer). Er steht IM
+   *  reservierten Auskunfts-Slot unter dem Feld, nimmt also keine zusätzliche
+   *  Höhe und verschiebt das Verzeichnis darunter nicht (§15.2). */
+  markenSchalter?: ReactNode;
 }) {
   // Mobil (und in der schmalen Pane) eingeklappt starten: der Lesetext gehört
   // zuerst ans Auge. Ob die Spalte steht, entscheidet allein CSS — kein
@@ -144,8 +149,14 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
               GEFÜLLT, nicht eingeschoben — dasselbe Muster wie `min-h-beiwerk`
               am Artikelfuss. Zwei Zeilen `text-micro` passen in `min-h-8`; die
               längste Fassung («3 von 16 Treffer in 2 Erwägungen · übrige
-              ausserhalb») bleibt bei 15 rem Railbreite darunter. */}
-          <div className="mt-1 min-h-8">
+              ausserhalb») bleibt bei 15 rem Railbreite darunter.
+              W2·28 (18.9.2026): der Slot fasst jetzt AUCH den Schalter
+              «Hervorhebung» und ist darum von `min-h-8` auf `min-h-12`
+              gehoben — zwei Zeilen Auskunft (28 px) plus eine Schalterzeile
+              (18 px) sind 46 px. Gehoben statt wachsen gelassen: die Zusage
+              dieses Slots ist, dass er RESERVIERT ist, und ein Slot, der beim
+              Tippen doch einwächst, wäre genau der gemessene Fehler von oben. */}
+          <div className="mt-1 min-h-12">
           {suche.trim() !== '' && (
             // §8: BEIDE Zahlen, sobald sie auseinanderfallen. «16 Treffer»
             // allein verschwiege, dass fünf davon im Sachverhalt liegen und in
@@ -168,6 +179,10 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
                 )}
             </p>
           )}
+          {/* W2·28/L-2: der Schalter erscheint mit der Suche und geht mit ihr —
+              und nur, wenn es überhaupt etwas hervorzuheben gibt (§13 F4: kein
+              Steuerelement ohne Wirkung). */}
+          {suche.trim() !== '' && trefferGesamt > 0 && markenSchalter}
           </div>
         </div>
 

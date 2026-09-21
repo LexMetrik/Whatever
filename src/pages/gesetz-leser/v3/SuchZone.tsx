@@ -71,7 +71,7 @@ export const SUCH_H_AKTIV = '4.25rem';
 
 export function SuchZone({
   suchFeld, sucheAktiv, bestimmungen, fundstellen, bestimmungsWort, onListe,
-  onVor, onZurueck, listeSteht,
+  onVor, onZurueck, listeSteht, markenSchalter,
 }: {
   /** Das Such-/Sprungfeld. Oberstes Element — das ist die ganze Zusage (Ä19).
    *
@@ -123,6 +123,14 @@ export function SuchZone({
    *  gerade etwas sagt. Der Platz bleibt reserviert, damit das Wegschalten der
    *  Liste die Zeile zurückbringt, ohne den Lesetext zu verschieben (§15.2). */
   listeSteht?: boolean;
+  /** W2·28 · L-2 — der Schalter «Hervorhebung», als fertiges Element vom Rahmen.
+   *
+   *  Er steht IN der bestehenden Zähler-Zeile und bekommt keine eigene: die
+   *  Zonenhöhe ist über `SUCH_H_AKTIV` festgeschrieben und gegen die gemessene
+   *  Element-Höhe bewacht (B9) — eine zweite Zeile verstellte still den
+   *  Sprung-Offset aller Anker (LM-003). Als Geschwister von ‹ › in einem
+   *  `min-h-5`-Flex bleibt die Höhe unverändert. */
+  markenSchalter?: ReactNode;
 }) {
   return (
     // `lr8-erlasssuche`: der Anschluss für die eine Druck-Regel (D28, «Druck
@@ -170,6 +178,7 @@ export function SuchZone({
             <span>{fundstellen === 1 ? 'Fundstelle' : 'Fundstellen'}</span>
             <span aria-hidden className="ml-auto shrink-0 truncate">Treffer anzeigen →</span>
           </button>
+          {fundstellen > 0 && markenSchalter}
           {fundstellen > 0 && (onZurueck || onVor) && (
             <span data-v3-treffer-schritt className="flex shrink-0 items-center gap-0.5">
               <button type="button" data-v3-treffer-zurueck onClick={onZurueck}

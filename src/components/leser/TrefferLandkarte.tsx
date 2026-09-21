@@ -69,7 +69,7 @@ function markenBreite(anzahl: number): number {
 }
 
 export function TrefferLandkarte({
-  spur, treffer, leseId, register, obenVar, klassen, gesamtFundstellen, onSprung,
+  spur, treffer, leseId, register, obenVar, gesamtFundstellen, onSprung,
 }: {
   /** Die Bausteine des Dokuments mit ihrer Lage (`landkarteSpur`). */
   spur: readonly LandkarteFeld[];
@@ -83,9 +83,6 @@ export function TrefferLandkarte({
   /** CSS-Variable, die die Höhe des klebenden Kopfes trägt («--nt-stick»
    *  im Gesetz-Leser, «--rsp-stick» im Entscheid-Leser). */
   obenVar: string;
-  /** Sichtbarkeits-Klassen des Aufrufers — er weiss, ob auf seiner Fläche
-   *  Randluft ist (Pane/Handy: keine). */
-  klassen: string;
   /** Fundstellen im ganzen Dokument — für den zugänglichen Namen. Kommt aus
    *  dem Zähler des Lesers, wird hier nicht nachgerechnet (§5). */
   gesamtFundstellen: number;
@@ -114,7 +111,16 @@ export function TrefferLandkarte({
         const feld = feldBeiAnteil(spur, (e.clientY - kasten.top) / kasten.height);
         if (feld && feld.id !== '') onSprung(feld.id);
       }}
-      className={`fixed right-3 z-sticky cursor-pointer border border-line bg-well print:hidden ${klassen}`}
+      // `hidden xl:block` steht HIER und nicht beim Aufrufer, und das ist kein
+      // Zufall: es ist eine Aussage über das FENSTER (der Streifen ist `fixed`,
+      // sein Bezugsrahmen ist der Viewport), nicht über die Fläche des Lesers.
+      // Beim Aufrufer wäre es eine Viewport-Klasse in einer Datei, die sonst
+      // konsequent Container-Queries führt — die Pane-Parität (`check:p-klassen`,
+      // `entscheid-leser-b2`) verlangt dort zu Recht ein Container-Gegenstück,
+      // und eines gäbe es hier nicht: in einer Pane steht der Streifen NIE,
+      // weil neben dem Lesemass keine Randluft ist. Der Aufrufer sagt darum
+      // «Pane: gar nicht rendern», dieses Element sagt «Fenster: erst ab xl».
+      className="fixed right-3 z-sticky hidden cursor-pointer border border-line bg-well print:hidden xl:block"
       style={{ top: `calc(var(${obenVar}, 7rem) + 0.5rem)`, bottom: '1.5rem', width: `${BREITE}px` }}>
       <svg aria-hidden viewBox={`0 0 ${BREITE} ${HOEHE}`} preserveAspectRatio="none"
         className="block h-full w-full">

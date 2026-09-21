@@ -7,6 +7,8 @@ import type { NormSnapshot } from '../../../lib/normtext/typen';
 import type { KantonSystematik } from '../../../lib/normtext/systematik';
 import type { InternRefs } from '../../../components/NormText';
 import type { ArtikelFundstelle, LeserTreffer, SuchBereich } from '../leserSuche';
+import { landkarteSpur, type LandkarteFeld } from '../../../components/leser/landkarteModell';
+import { gesetzLandkarteEinheiten } from './landkarteGesetz';
 import { strukturTiefe } from '../strukturTiefe';
 import { basisAdresse, pfadZu } from '../helpers';
 import { paneRoot, findeArt, kuratiereTocSektionen, zaehleAenderungsvermerke, bieteAenderungsvermerkeSchalter } from '../berechnungen';
@@ -132,6 +134,15 @@ export interface LeserV3Modell {
    *  ihn gesetzt zu haben glaubt (§8). */
   suchBereich: SuchBereich;
   setzeSuchBereich: (b: SuchBereich) => void;
+  /** W2·28 · L-1 — die Bausteine des Erlasses mit ihrer anteiligen Lage. Leer,
+   *  solange keine Suche läuft: die Landkarte gibt es nur zur Suche, und die
+   *  Rechnung entsteht mit ihr (dieselbe Lazy-Grenze wie der Suchindex, §15). */
+  landkarte: LandkarteFeld[];
+  /** W2·28 · L-2 — Schalter «Hervorhebung UND Marken zusammen aus». Er hängt an
+   *  DIESEM Leser (nicht am Dokument), ist nicht persistiert und fällt mit dem
+   *  Leeren des Suchfeldes von selbst zurück auf «ein» (Ruhe-Grundsatz). */
+  markenAus: boolean;
+  setzeMarkenAus: (aus: boolean) => void;
   /** H2 · Artikel + Rang der laufenden Fundstelle — hebt EINE Listenzeile hervor. */
   aktivStelle: { token: string; rang: number } | null;
   /** H2 · Fundstellen EINES Artikels auf Abruf (nur fuer aufgeklappte Artikel). */
@@ -372,6 +383,17 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   // Trefferliste, weil er in die Datenableitung eingeht (`useSuchTreffer`) und
   // nicht bloss die Darstellung filtert — die Liste bekommt ihn als Prop (§3).
   const [suchBereich, setzeSuchBereich] = useState<SuchBereich>('alles');
+  // ── W2·28 · L-2 · DER SCHALTER FÄLLT MIT DER SUCHE ZURÜCK ──────────────────
+  // Geprüft wird das beim RENDER, nicht in einem Effekt (dasselbe Muster wie der
+  // Gültigkeits-Schlüssel der Treffer-Navigation, `inhalt-suchtreffer.tsx`):
+  // ein Effekt, der den Schalter zurücksetzt, wäre ein Kaskaden-Render
+  // (react-hooks/set-state-in-effect) und liesse ihn einen Frame lang falsch
+  // stehen. Wer das Feld leert, bekommt beim nächsten Suchen wieder
+  // Hervorhebung und Marken — ein Schalter, der stumm über Suchen hinweg
+  // wirkte, liesse Treffer verschwinden, ohne dass jemand ihn gesetzt zu haben
+  // glaubt (§8, dieselbe Begründung wie beim Suchbereich).
+  const [markenAusRoh, setzeMarkenAus] = useState(false);
+  const markenAus = !sucheFeldLeer && markenAusRoh;
   const {
     leseRef, treffer, fundstellen, aenderungenAus, trefferPos, aktivToken: trefferAktivToken,
     springeZuFundstelle, springeZuTreffer, springeZuStelle, aktivStelle, fundstellenFuer,
@@ -379,8 +401,18 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
   } = useSuchTreffer({
     erlassKey: erlass?.key ?? null, eintraege, struktur,
     sucheTrim, sucheFeldLeer, sektionen, aktivIds, internRefs, aktArtikel, tokenByLabel,
-    offen, setOffen, imPane, wurzel, bereich: suchBereich,
+    offen, setOffen, imPane, wurzel, bereich: suchBereich, markenAus,
   });
+
+  // ── W2·28 · L-1 · Die Landkarten-Spur ──────────────────────────────────────
+  // LAZY wie der Suchindex (§15, dieselbe Grenze): der Lauf über alle Artikel
+  // entsteht erst, wenn wirklich gesucht wird, und wird mit dem Erlasswechsel
+  // bzw. dem Ende der Suche freigegeben. Gemessen (Node, BGFA/OR-Grössenordnung)
+  // ist er billiger als der Indexaufbau daneben — er liest nur Textlängen.
+  const landkarte = useMemo(
+    () => (sucheTrim !== '' && eintraege ? landkarteSpur(gesetzLandkarteEinheiten(eintraege, struktur)) : []),
+    [sucheTrim, eintraege, struktur],
+  );
 
   // «↑ Anfang» — genau EIN Knopf pro Seite (Pos. 15). Bezugsraum ist derselbe,
   // den auch der Artikel-Sprung auflöst (§5): im Pane der Pane-Scroller, sonst
@@ -407,7 +439,8 @@ export function useLeserV3Modell({ ebene: routenSegment, schluessel }: { ebene: 
       tocOffen, setTocOffen, tocAuf, setTocAuf,
       suche, setSuche, sucheAktiv: sucheBegriff !== '', sucheBegriff,
       treffer, fundstellen, aenderungenAus, trefferPos, trefferAktivToken,
-      suchBereich, setzeSuchBereich, aktivStelle, fundstellenFuer,
+      suchBereich, setzeSuchBereich, landkarte, markenAus, setzeMarkenAus,
+      aktivStelle, fundstellenFuer,
       springeZuFundstelle, springeZuTreffer, springeZuStelle, loeseArtikel, siePfad, siePfadArtikel,
       springeZuArtikel, springeZuSektion, zumAnfang,
       weiterlesen, weiterlesenSprung, weiterlesenVerwerfen, basisPfad,

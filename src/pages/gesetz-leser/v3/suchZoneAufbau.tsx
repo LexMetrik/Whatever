@@ -1,6 +1,9 @@
 import type { ReactNode } from 'react';
 import { SuchZone } from './SuchZone';
 import type { BestimmungsWort } from './erlassAnsicht';
+import { MarkenSchalter } from '../../../components/leser/MarkenSchalter';
+import { TrefferLandkarte } from '../../../components/leser/TrefferLandkarte';
+import type { LeserV3Modell } from './leserV3Modell';
 
 // ═══ DER AUFBAU DER KLEBENDEN SUCH-ZONE ══════════════════════════════════════
 //
@@ -55,6 +58,11 @@ export function suchZoneAufbau(a: {
    *  Zähler-Zeile — Zahlen und ↑↓ stehen in ihrer eigenen Werkzeugzeile, aus
    *  derselben Quelle (§5). Herleitung am gleichnamigen Prop in `./SuchZone`. */
   listeSteht: boolean;
+  /** W2·28 · L-2 · Zustand des Schalters «Hervorhebung». Das ELEMENT baut diese
+   *  Datei (nicht der Rahmen): sie ist ohnehin die Naht, an der die Such-Zone
+   *  ihre Teile bekommt, und `./SuchZone` soll ein reiner Renderer bleiben. */
+  markenAus: boolean;
+  setzeMarkenAus: (aus: boolean) => void;
 }): ReactNode | undefined {
   if (!a.klebt) return undefined;
   return (
@@ -62,6 +70,52 @@ export function suchZoneAufbau(a: {
       bestimmungen={a.bestimmungen} fundstellen={a.fundstellen}
       bestimmungsWort={a.bestimmungsWort}
       onListe={a.onListe}
-      onVor={a.onVor} onZurueck={a.onZurueck} listeSteht={a.listeSteht} />
+      onVor={a.onVor} onZurueck={a.onZurueck} listeSteht={a.listeSteht}
+      markenSchalter={<MarkenSchalter aus={a.markenAus} onSchalten={a.setzeMarkenAus} />} />
+  );
+}
+
+// ═══ W2·28 · L-1 · DER AUFBAU DER TREFFER-LANDKARTE ═════════════════════════
+//
+// Gleiche Naht, gleiche Datei: die Landkarte ist Such-Chrome wie die Zone
+// darüber, und der Rahmen soll auch für sie nur sagen, OB sie da ist. §3 —
+// reine Anordnung, hier wird nichts gerechnet (die Lagen stehen fertig in
+// `m.landkarte`, gerechnet von `components/leser/landkarteModell`).
+//
+// SICHTBARKEIT — drei Bedingungen, alle benannt:
+//  · nur mit laufender Suche (kein Dauer-Element, DESIGN-REGLEMENT Ruhe-Grundsatz),
+//  · nicht, wenn der Leser Hervorhebung und Marken weggeschaltet hat (L-2: EIN
+//    Schalter für beide Anzeigen),
+//  · nur auf einer Fläche mit Randluft. Gemessen füllt das Lesemass die
+//    Lese-Zelle auf jeder Breite vollständig aus (Rahmen auf 1072 px gedeckelt,
+//    Gliederungsspur 19.25 rem) — freien Platz gibt es erst NEBEN dem Rahmen,
+//    im Fensterrand. In einer geteilten Pane gibt es ihn gar nicht; dort steht
+//    der Streifen nicht, und kein Element ist besser als eines über dem
+//    Wortlaut (§8). Die Auskunft fehlt nirgends: Trefferliste, Zähler und ↑↓
+//    stehen unverändert. Die Fenster-Schwelle selbst trägt das Bauteil
+//    (`components/leser/TrefferLandkarte`, Herleitung dort).
+export function landkarteZone({ m, randluft, onVorSprung }: {
+  m: LeserV3Modell;
+  /** Hat diese Fläche Randluft neben dem Lesemass? (Einzelansicht: ja.) */
+  randluft: boolean;
+  /** Die Trefferliste weicht wie bei jedem anderen Sprung (D38). */
+  onVorSprung: () => void;
+}): ReactNode {
+  if (!m.sucheAktiv || m.markenAus || !randluft) return null;
+  return (
+    <TrefferLandkarte
+      spur={m.landkarte}
+      treffer={m.treffer.map((t) => ({ id: t.token, anzahl: t.fundstellen }))}
+      leseId={m.aktivToken}
+      register="g"
+      obenVar="--nt-stick"
+      gesamtFundstellen={m.fundstellen}
+      onSprung={(token) => {
+        // Danach läuft die BESTEHENDE Sprungmechanik: zur ersten Fundstelle, wo
+        // es eine gibt, sonst zum Artikel. Keine zweite Sprungart (§5).
+        onVorSprung();
+        if (m.treffer.some((t) => t.token === token)) m.springeZuTreffer?.(token);
+        else m.springeZuArtikel(token);
+      }} />
   );
 }
