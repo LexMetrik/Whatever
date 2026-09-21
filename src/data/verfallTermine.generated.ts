@@ -609,6 +609,14 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
+    "label": "Künftige Fassung StHG (SR 642.14)",
+    "datum": "2028-01-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (STHG)",
+    "wert": "gepinnt 1.1.2025",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
     "label": "Künftige Fassung FAV (SR 784.101.2)",
     "datum": "2028-07-01",
     "quelle": "Tabelle",
@@ -638,14 +646,6 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (FINFRAG)",
     "wert": "gepinnt 1.2.2024",
-    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
-  },
-  {
-    "label": "Künftige Fassung StHG (SR 642.14)",
-    "datum": "2029-01-01",
-    "quelle": "Tabelle",
-    "fundstelle": "`scripts/fedlex-cache.sh` (STHG)",
-    "wert": "gepinnt 1.1.2025",
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {

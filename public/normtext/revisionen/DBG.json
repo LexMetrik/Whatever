@@ -1,7 +1,7 @@
 {
   "erlassKey": "DBG",
   "sr": "642.11",
-  "abgerufen": "2026-09-12",
+  "abgerufen": "2026-09-21",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -16,6 +16,19 @@
       "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/213/de",
       "sha": "7aa8bcc3dbad8a178f8edc5751881aab9943b130de0863fa5bcda3f66e31ec43"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2028-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/482",
+      "dateDocument": "2025-12-19",
+      "roFundstelle": "AS 2026 482",
+      "titelDe": "Bundesgesetz über die Erstreckung der Verlustverrechnung",
+      "titelFr": "Loi fédérale sur la prolongation du délai de compensation des pertes",
+      "titelIt": "Legge federale concernente l’estensione della compensazione delle perdite",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/482/de",
+      "sha": "4468f02934ebb68ea736be5c57462443e3c441a4f9bdda76f9c8e27bdf92696f"
     },
     {
       "art": "sammelerlass-marker",
@@ -586,5 +599,5 @@
       "sha": "74a5495e38eb632fb30ba6da63289274d420124c5da6b68290cb16603989a9db"
     }
   ],
-  "sha": "6b50a618a5fded8b68a9922b6883826857cf73eab5b78197c22307f6e57facc9"
+  "sha": "fa85fed8d188156b54ddfdf600144b3262a8aa617409156e428d205282478fbe"
 }
