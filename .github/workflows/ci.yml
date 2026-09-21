@@ -13,8 +13,8 @@
 #   1) `bau` baut dist EINMAL und lädt es als Artefakt hoch — mehr nicht.
 #      e2e-Shards und `tore` starten direkt danach PARALLEL;
 #   2) `e2e` fährt 8 dauer-balancierte Gruppen (LPT aus CI-GEMESSENEN
-#      Spec-Dauern, e2e/shard-gruppen.json, je ~7.8–8.6 min Testzeit; Zahl
-#      seit 21.9.2026 wieder 8 — s. NACHTRAG bei M3 unten).
+#      Spec-Dauern, e2e/shard-gruppen.json; Zahl seit 21.9.2026 wieder 8,
+#      Packung dafür noch UNGEEICHT — s. NACHTRAG bei M3 unten, Posten LPT).
 #      Der Union-Wächter (`check:e2e-shards`, auch in `check:seriell`) beweist
 #      vor den Shards: Gruppen == `playwright --list` — kein Test doppelt,
 #      keiner verloren. Reine Verteilung, kein Test/Timeout/Umfang (§6.3).
@@ -569,6 +569,10 @@ jobs:
       #      genügt nicht: ein fehlender, offener, übersprungener oder
       #      doppelter Kontext ⇒ `false`.
       #   3. «Perf-Budget …» steht dort auf `success` ODER `skipped`.
+      #   4. ZUSÄTZLICH, nicht diät-entscheidend (Bug-Check B1, 22.9.2026 —
+      #      4 von 39 Pushes): «Bau (dist-Artefakt)» UND «Perf-Budget …» beide
+      #      `completed|success` ⇒ Output `bau_perf_belegt=true`; sonst leer ⇒
+      #      `bau` und `perf` laufen auf push trotz Diät.
       # Jeder Fehlschlag, jede API-Störung, jeder unerwartete Wert ⇒ `false`
       # ⇒ VOLLES Programm. Zu viel zu prüfen kostet Minuten, zu wenig lässt
       # ungeprüften Code ausliefern (Vorfall #579).
@@ -1285,8 +1289,9 @@ jobs:
       # `npm run preview` serviert das heruntergeladene dist/ (kein Rebuild);
       # jeder Job fährt nur die Specs SEINER dauer-gepackten Gruppe seriell
       # (workers:1 bleibt, damit die Contention NICHT in EINEN Runner zurückkehrt)
-      # → e2e-Wand auf acht Gruppen verteilt (seit 21.9.2026; gemessene Dauern
-      # stehen im Block über der Matrix, Eichung der Packung: Posten LPT).
+      # → e2e-Wand auf acht Gruppen verteilt (seit 21.9.2026). Die Dauern im
+      # Block über der Matrix stammen aus der 4-Gruppen-Phase; für 8 Gruppen
+      # ist die Packung noch nicht geeicht (Posten LPT).
       - name: Browser-Smoke (Playwright, e2e/ gegen dist — Gruppe ${{ matrix.gruppe }}/8)
         run: npm run test:e2e:gruppe -- ${{ matrix.gruppe }}
       # Per-Spec-CI-Dauern sichern (auch bei rotem Shard — gerade dann sind sie
@@ -1557,8 +1562,9 @@ jobs:
   # `tore` und `e2e` selbst ein Job-`if:`; die Regel wird darum durch eine
   # EXPLIZITE Ergebnis-Prüfung ersetzt statt aufgegeben:
   #   `!cancelled()` schaltet die Standard-Skip-Logik ab, danach wird jedes
-  #   `needs`-Ergebnis einzeln gefordert — `tore`/`e2e`/`bau` dürfen `success`
-  #   ODER `skipped` sein, aber niemals `failure`/`cancelled`.
+  #   `needs`-Ergebnis einzeln gefordert — `bau` MUSS erfolgreich sein (ohne
+  #   grünen Bau kein Deploy), `tore`/`e2e` dürfen `success` ODER `skipped`
+  #   sein, aber niemals `failure`/`cancelled`.
   # Damit gilt unverändert: rote Treue ⇒ kein Deploy. Übersprungen ist genau
   # dann zulässig, wenn die Klassierung (`code-fern`) oder die Push-Diät (M1,
   # merge_group-Lauf hat denselben SHA schon grün gefahren; bis 19.9.2026: der
