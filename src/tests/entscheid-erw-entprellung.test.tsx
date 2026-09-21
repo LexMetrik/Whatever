@@ -1,5 +1,5 @@
 /**
- * W2·17-UI-BEFUNDE — `useSucheGewertet` (Entscheid-Leser, `entscheidErwBereich.tsx`).
+ * W2·17-UI-BEFUNDE — `useSucheGewertet` (Entscheid-Leser, `entscheidErwEntprellung.ts`).
  *
  * ── WARUM ECHTER REACT-RENDER STATT REINER FUNKTION ─────────────────────────
  * Der Hook ist `useState`/`useEffect`/`useRef` — anders als `planeLiveSync`
@@ -21,7 +21,7 @@ import { act, createElement } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { parseHTML } from 'linkedom';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { useSucheGewertet } from '../pages/entscheidErwBereich';
+import { useSucheGewertet } from '../pages/entscheidErwEntprellung';
 
 let root: Root | null = null;
 

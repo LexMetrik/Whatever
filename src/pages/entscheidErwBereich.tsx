@@ -1,4 +1,4 @@
-import { memo, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useMemo } from 'react';
 import { ErwaegungsRail } from '../components/rechtsprechung/ErwaegungsRail';
 import { MarkenSchalter } from '../components/leser/MarkenSchalter';
 import { TrefferLandkarte } from '../components/leser/TrefferLandkarte';
@@ -7,6 +7,7 @@ import { erwaegungsGliederung, erwaegungsWort } from '../lib/rechtsprechung/absc
 import type { EntscheidAbschnitt } from '../lib/rechtsprechung/typen';
 import { nennungsAnker, trefferInErwaegungen, zaehleTreffer, type SuchTreffer } from './entscheidLeserRegeln';
 import { entscheidLandkarteEinheiten } from './entscheidLandkarte';
+import { useSucheGewertet } from './entscheidErwEntprellung';
 
 // ═══ ENTSCHEID-LESER · DIE ZWEITE SPALTE ════════════════════════════════════
 //
@@ -43,26 +44,12 @@ import { entscheidLandkarteEinheiten } from './entscheidLandkarte';
 // zufällig gleich. Zusammen stehen sie auch deshalb, weil sie DIESELBE
 // Bedingung teilen: ohne Treffer gibt es weder den Schalter im Rail noch
 // etwas, das die Landkarte zeigen könnte.
-// ── §15 · DER ENTPRELL-HOOK (extrahiert 21.9.2026, testbar) ─────────────────
-// Reiner Zustands-Hook, verhaltensneutral aus dem Rumpf von `ErwBereich`
-// herausgelöst (§6.3: keine bestehende Zusicherung ändert sich, nur der Ort —
-// `src/tests/entscheid-erw-entprellung.test.tsx` prüft ihn direkt mit
-// Fake-Timern, statt die ganze Komponente zu montieren). Herleitung der
-// 0-ms/200-ms-Regel und der Nachträge 21.9.2026 unten in `ErwBereich`.
-export function useSucheGewertet(suche: string): string {
-  const gewertetRef = useRef('');
-  const [sucheGewertet, setSucheGewertet] = useState('');
-  useEffect(() => {
-    const sofort = suche.trim() === '' || gewertetRef.current.trim() === '';
-    const id = window.setTimeout(() => {
-      gewertetRef.current = suche;
-      setSucheGewertet(suche);
-    }, sofort ? 0 : 200);
-    return () => window.clearTimeout(id);
-  }, [suche]);
-  return sucheGewertet;
-}
-
+// ── §15 · DER ENTPRELL-HOOK ──────────────────────────────────────────────────
+// `useSucheGewertet` steht seit 21.9.2026 in einer EIGENEN Datei
+// (`entscheidErwEntprellung.ts`) — nicht hier: `react-refresh/only-export-
+// components` bricht, wenn eine Datei einen Hook NEBEN einer Komponente
+// exportiert. Verhaltensneutral (§6.3), Herleitung der 0-ms/200-ms-Regel und
+// der Nachträge 21.9.2026 stehen unten bei ihrem Aufruf.
 export const ErwBereich = memo(function ErwBereich({
   abschnitte, zitierteNormen, suche, onSuche, springe, markenAusRoh, onMarkenSchalten,
   landkarteSteht, aktivAnker,
