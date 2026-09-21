@@ -11,11 +11,11 @@ import { BOTSCHAFTEN } from '../../src/lib/materialien/botschaften.generated.ts'
 import {
   CURIA_BASIS, CURIA_QUELLENANGABE, AUSZAEHLUNG_HINWEIS, odataZeilen, odataDatum,
   aggregiereStimmen, ratAusGroesse, baueKommissionen, baueBeschluesse, bauePublikationen,
-  schlussabstimmungsVotes, serialisiereShard, shaShard, curiaUrl,
+  distinkteObjectiveZeilen, schlussabstimmungsVotes, serialisiereShard, shaShard, curiaUrl,
   type CuriaShard, type CuriaSchlussabstimmung, type OdataZeile,
 } from './curia.ts';
 import {
-  CURIA_DIR, CURIA_ZUSTAND_PFAD, serialisiereCuriaZustand, type CuriaZustand,
+  CURIA_DIR, CURIA_ZUSTAND_PFAD, leseCuriaZustand, serialisiereCuriaZustand, type CuriaZustand,
 } from './curia-zustand.ts';
 
 const datumArg = process.argv.find((a) => a.startsWith('--datum='));
@@ -54,7 +54,9 @@ async function odata(entitaet: string, filter: string, select?: string): Promise
   if (!res.ok) throw new Error(`Curia antwortet ${res.status} für ${entitaet} (${filter})`);
   const typ = res.headers.get('content-type');
   if (typ && !/json/i.test(typ)) throw new Error(`Curia antwortet Content-Type «${typ}» statt JSON für ${entitaet}`);
-  return odataZeilen(await res.json());
+  // Die URL mitgeben: der Paging-Wächter in `odataZeilen` soll sagen KÖNNEN, welche
+  // Abfrage abgeschnitten wurde — eine Fehlermeldung ohne Fundstelle kostet eine Stunde.
+  return odataZeilen(await res.json(), u.toString());
 }
 
 const nummern = [...new Set(BOTSCHAFTEN.map((b) => b.nummer).filter((n): n is string => !!n))]
@@ -70,6 +72,8 @@ const fehlend: string[] = [];
 let beschluesseGesamt = 0;
 let vorberatungenGesamt = 0;
 let schlussGesamt = 0;
+let publikationenGesamt = 0;
+let objectiveZeilenGesamt = 0;
 
 let erledigt = 0;
 async function holeGeschaeft(nr: string): Promise<void> {
@@ -98,9 +102,13 @@ async function holeGeschaeft(nr: string): Promise<void> {
   const kommissionen = baueKommissionen(
     await odata('Preconsultation', `BusinessShortNumber eq ${q} and Language eq 'DE'`),
   );
-  const publikationen = bauePublikationen(
-    await odata('Objective', `BusinessShortNumber eq ${q} and Language eq 'DE'`),
-  );
+  // Die ROHEN Objective-Zeilen bleiben stehen: aus ihnen kommt die Kreuzprobe des Tors.
+  // `distinkteObjectiveZeilen` zählt UNABHÄNGIG von `bauePublikationen` (Tautologie-Falle,
+  // §6.7) — beide Zahlen gehen in den Zustandsträger, `check:entstehung` rechnet offline
+  // gegen. Befund 21.9.2026: ohne diese Gegenrechnung fiel der Verlust 32 → 21 nicht auf.
+  const objectiveZeilen = await odata('Objective', `BusinessShortNumber eq ${q} and Language eq 'DE'`);
+  const publikationen = bauePublikationen(objectiveZeilen);
+  const distinktObjective = distinkteObjectiveZeilen(objectiveZeilen);
 
   const votes = schlussabstimmungsVotes(
     await odata('Vote', `BusinessShortNumber eq ${q} and Language eq 'DE'`, 'ID,BillNumber,Subject,VoteEnd'),
@@ -144,10 +152,15 @@ async function holeGeschaeft(nr: string): Promise<void> {
     beschluesse: beschluesse.length,
     vorberatungen: kommissionen.length,
     schlussabstimmung: schlussabstimmungen.length > 0,
+    publikationen: publikationen.length,
+    objectiveZeilen: objectiveZeilen.length,
+    distinkteObjective: distinktObjective,
   });
   beschluesseGesamt += beschluesse.length;
   vorberatungenGesamt += kommissionen.length;
   schlussGesamt += schlussabstimmungen.length;
+  publikationenGesamt += publikationen.length;
+  objectiveZeilenGesamt += objectiveZeilen.length;
   erledigt += 1;
   if (erledigt % 25 === 0) console.log(`curia: ${erledigt}/${nummern.length} …`);
 }
@@ -176,12 +189,25 @@ for (const f of readdirSync(CURIA_DIR)) {
 
 mkdirSync('bibliothek/register', { recursive: true });
 if (nur && existsSync(CURIA_ZUSTAND_PFAD)) {
-  console.log('curia: --nur-Lauf — Zustandsträger NICHT überschrieben (er beschreibt den Vollabgleich).');
+  // --nur berührt nur einen Ausschnitt. Den Zustandsträger deshalb FORTSCHREIBEN statt
+  // ersetzen (sonst verlören die übrigen Geschäfte ihre Zeile) — aber auch nicht
+  // unberührt lassen: die alte Zeile trüge dann den sha des ALTEN Shards, und
+  // `check:entstehung` wäre nach jedem --nur-Lauf rot, obwohl nichts kaputt ist
+  // (Korrektur 21.9.2026, §17 — Workaround an der Wurzel statt umschiffen).
+  const alt = leseCuriaZustand() ?? [];
+  const fortgeschrieben = new Map(alt.map((z) => [z.nummer, z]));
+  for (const z of zustand) fortgeschrieben.set(z.nummer, z);
+  writeFileSync(CURIA_ZUSTAND_PFAD, serialisiereCuriaZustand([...fortgeschrieben.values()]), 'utf8');
+  console.log(
+    `curia: --nur-Lauf — ${zustand.length} Zeile(n) im Zustandsträger fortgeschrieben, `
+    + `${fortgeschrieben.size - zustand.length} unberührt (der Vollabgleich schreibt ihn ganz neu).`,
+  );
 } else {
   writeFileSync(CURIA_ZUSTAND_PFAD, serialisiereCuriaZustand(zustand), 'utf8');
 }
 
 console.log(`curia: ${zustand.length}/${nummern.length} Geschäfte → ${CURIA_DIR}`);
 console.log(`  Rats-Beschlüsse ${beschluesseGesamt} · Kommissions-Vorberatungen ${vorberatungenGesamt} · Schlussabstimmungen ${schlussGesamt}`);
+console.log(`  Publikationen ${publikationenGesamt} gespeichert aus ${objectiveZeilenGesamt} amtlichen Objective-Zeile(n) (Differenz = echte Doppellieferungen)`);
 fehlend.sort();
 if (fehlend.length) console.log(`  ohne Business-Datensatz (${fehlend.length}): ${fehlend.join(', ')}`);

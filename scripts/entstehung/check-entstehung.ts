@@ -45,7 +45,7 @@ import {
   misseDeckung, serialisiereDeckung, DECKUNG_REGISTER_PFAD,
   type DeckungRegister, type DeckungErlass,
 } from './deckung.ts';
-import { CURIA_DIR, CURIA_ZUSTAND_PFAD, leseCuriaZustand } from './curia-zustand.ts';
+import { CURIA_DIR, CURIA_ZUSTAND_PFAD, leseCuriaZustand, type CuriaZustand } from './curia-zustand.ts';
 import {
   SYNOPSE_DIR, NORM_PROFIL, SynopseBlockIndex, type SynopseShard, type SynopseBlock,
 } from '../../src/lib/entstehung/synopse.ts';
@@ -249,8 +249,11 @@ for (const [name, pfad, max, gzip] of DECKEL) {
     // Schlüssel noch als Wert. Das Tor prüft die AUSGELIEFERTEN Artefakte, nicht bloss
     // die Absicht des Generators: eine künftige Erweiterung, die ein Personenfeld
     // durchreicht, wird hier rot, nicht erst in der Gegenprüfung.
-    const zustandSha = new Map(zustand.map((z) => [z.nummer, z.sha]));
+    const zustandJe = new Map(zustand.map((z) => [z.nummer, z]));
     let summenProben = 0;
+    let publikationenGesamt = 0;
+    let distinktGesamt = 0;
+    let rohGesamt = 0;
     for (const f of shards) {
       const roh = readFileSync(join(CURIA_DIR, f), 'utf8');
       for (const verboten of VERBOTENE_FELDER) {
@@ -262,9 +265,50 @@ for (const [name, pfad, max, gzip] of DECKEL) {
       if (roh !== serialisiereShard(shard)) {
         fehler.push(`Curia-Shard ${f} ist nicht kanonisch serialisiert — von Hand editiert? (Generator neu laufen.)`);
       }
-      const sha = zustandSha.get(shard.nummer);
-      if (sha && shaShard(shard) !== sha) {
+      const z = zustandJe.get(shard.nummer);
+      if (z && shaShard(shard) !== z.sha) {
         fehler.push(`Curia-Shard ${f}: sha weicht vom Zustandsträger ab — nachträglich verändert (§7).`);
+      }
+      // ── PUBLIKATIONS-KREUZPROBE (Befund 21.9.2026) ──────────────────────────────
+      // Der Dedupe-Schlüssel von `bauePublikationen` liess am Geschäft 01.023 32 amtliche
+      // Objective-Zeilen auf 21 zusammenfallen — still, weil niemand gegenrechnete. Das
+      // Tor rechnet jetzt gegen, OFFLINE: der Lauf führt drei Zahlen im Zustandsträger
+      // mit, davon ist `distinkteObjective` UNABHÄNGIG von `bauePublikationen` ausgezählt
+      // (`distinkteObjectiveZeilen()`). Darum ist der Vergleich keine Tautologie: mit dem
+      // alten Schlüssel wird er bei 01.023 rot (21 ≠ 32), mit dem neuen grün (32 = 32) —
+      // und bei 08.053, wo der Endpunkt echte Doppel liefert, bleibt er grün (8 = 8),
+      // weshalb hier NICHT gegen die rohe Zeilenzahl geprüft wird (die wäre falsch-rot).
+      if (z) {
+        const roh = z as Partial<CuriaZustand>; // Zeilen aus Läufen vor 21.9.2026 führen die Felder nicht.
+        if (typeof roh.publikationen !== 'number' || typeof roh.distinkteObjective !== 'number'
+          || typeof roh.objectiveZeilen !== 'number') {
+          fehler.push(
+            `Curia-Geschäft ${shard.nummer}: der Zustandsträger führt «publikationen»/«distinkteObjective»/`
+            + '«objectiveZeilen» nicht — die Zeile stammt aus einem Lauf vor der Publikations-Kreuzprobe '
+            + '(21.9.2026). Ohne die Zahlen ist eine Kollabierung amtlicher Fundstellen nicht prüfbar, und '
+            + 'stillschweigend durchwinken hiesse genau den Fehler decken, den die Probe finden soll. '
+            + 'Vollabgleich fällig: npm run materialien:curia -- --datum=$(date +%F)',
+          );
+        } else {
+          if (shard.publikationen.length !== roh.publikationen) {
+            fehler.push(
+              `Curia-Shard ${f}: ${shard.publikationen.length} Publikation(en) im Shard, aber `
+              + `${roh.publikationen} im Zustandsträger — Bestand und Register driften auseinander (§5).`,
+            );
+          }
+          if (shard.publikationen.length !== roh.distinkteObjective) {
+            fehler.push(
+              `Curia-Shard ${f}: ${shard.publikationen.length} gespeicherte Publikation(en) ≠ `
+              + `${roh.distinkteObjective} distinkte amtliche Objective-Zeile(n) — der Lauf hat `
+              + `${roh.distinkteObjective - shard.publikationen.length} amtliche Fundstelle(n) `
+              + 'zusammenfallen lassen (Curia-Auflage «Die Daten dürfen inhaltlich nicht verändert '
+              + 'werden»; §5/§8). Dedupe-Schlüssel in bauePublikationen prüfen.',
+            );
+          }
+          publikationenGesamt += shard.publikationen.length;
+          distinktGesamt += roh.distinkteObjective;
+          rohGesamt += roh.objectiveZeilen;
+        }
       }
       // Nutzungsauflage der Parlamentsdienste: Quellenangabe + Abrufdatum je Datensatz.
       if (shard.quellenangabe !== CURIA_QUELLENANGABE) {
@@ -293,7 +337,8 @@ for (const [name, pfad, max, gzip] of DECKEL) {
     zeilen.push(
       `check:entstehung — Curia: ${zustand.length} Geschäft(e) im Zustandsträger, ${shards.length} Shard(s), verlustfrei; `
       + `${summenProben} Schlussabstimmung(en) summenrein, ${Object.keys(DECISION_CODES).length} geprüfte Decision-Codes, `
-      + '0 Personendaten-Felder.',
+      + `0 Personendaten-Felder; Publikationen ${publikationenGesamt} gespeichert = ${distinktGesamt} distinkte `
+      + `amtliche Objective-Zeile(n) (aus ${rohGesamt} rohen, Differenz ${rohGesamt - distinktGesamt} = echte Doppellieferungen).`,
     );
   } else {
     zeilen.push('check:entstehung — Curia: kein Zustandsträger (Etappe E4 noch nicht gelaufen).');

@@ -28,9 +28,27 @@ export interface CuriaZustand {
   vorberatungen: number;
   /** true = eine NR-Schlussabstimmung wurde aggregiert ausgezählt. */
   schlussabstimmung: boolean;
+  /** Zahl der gespeicherten Publikations-Fundstellen (`shard.publikationen.length`). */
+  publikationen: number;
+  /** Zahl der ROHEN Objective-Zeilen, die der amtliche Endpunkt geliefert hat — vor
+   *  jeder Auswertung. Nur Transparenz: `objectiveZeilen − distinkteObjective` ist die
+   *  Zahl der echt doppelt gelieferten Zeilen (gemessen 21.9.2026 bei 08.053: 12 − 8 = 4). */
+  objectiveZeilen: number;
+  /** Zahl der DISTINKTEN Objective-Zeilen, unabhängig von `bauePublikationen` ausgezählt
+   *  (`distinkteObjectiveZeilen()`). Das ist die Kreuzprobe: weicht sie von
+   *  `publikationen` ab, hat der Lauf amtliche Fundstellen zusammenfallen lassen —
+   *  genau der Befund vom 21.9.2026 (Geschäft 01.023: 21 statt 32). `check:entstehung`
+   *  rechnet offline gegen, weil die CI kein Netz hat. */
+  distinkteObjective: number;
 }
 
-/** Liest den Zustandsträger; null = Etappe E4 noch nicht gelaufen. */
+/** Liest den Zustandsträger; null = Etappe E4 noch nicht gelaufen.
+ *
+ *  ACHTUNG, der Rückgabetyp ist ein VERSPRECHEN DES SCHREIBERS, keine Prüfung: die Datei
+ *  auf der Platte kann aus einem Lauf vor einer Feld-Erweiterung stammen und ein Feld
+ *  schlicht nicht führen. Wer ein junges Feld liest, prüft es darum selbst auf
+ *  Vorhandensein (so macht es `check:entstehung` für die drei Publikations-Zahlen) —
+ *  nie stillschweigend als 0 lesen, das wäre wieder ein leiser Verlust. */
 export function leseCuriaZustand(pfad = CURIA_ZUSTAND_PFAD): CuriaZustand[] | null {
   if (!existsSync(pfad)) return null;
   return readFileSync(pfad, 'utf8')
