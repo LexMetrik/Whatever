@@ -137,6 +137,11 @@ Rückgabe-Schema, Modell-Default stecken in der Definition. Fallback:
 `docs/token-oekonomie/dispatch-template.md`): je Sub-Agent ein §-Slice,
 Pflicht-Rückgabe-Schema, `model` + `effort` explizit.
 
+**Tochter-Chip (Ausnahme, Entscheid David 21.9.2026):** Standard bleibt die
+Einzel-Session; ein Tochter-Chip (Mutter als Disponentin) nur bei zwei
+parallelen Bau-Dingen oder einem Baufeld, das den Mutter-Kontext sprengen
+würde. Vertrag + Melde-Regeln: `docs/token-oekonomie/tochter-chip-vorlage.md`.
+
 Bau-/Prüf-Aufträge mit Webseiten-Sichtung (Browser-Sonden, Screenshots,
 Sichtprüfungen) geben zusätzlich den Verweis auf
 `.claude/rules/webseiten-pruefung.md` mit — pfad-gescopte Regeln erben

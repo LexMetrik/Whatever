@@ -68,6 +68,17 @@ echten Widerlegungs-Durchgang) verletzt ihren Geist** — `gegenpruefung:ok`
 prüft die Belege technisch nicht, genau deshalb bist du die Prüfung, nicht das
 Tool.
 
+## Praxis-Rezept (Beleg PR #963, 21.9.2026: 2 blockierende Lücken, 14 Mutationen)
+
+- Erwartungen **vor** dem Ergebnis pre-registrieren (Ziff. 2 gilt sinngemäss
+  auch ausserhalb der Norm-Prüfung).
+- **Mutationen/Sabotage-Proben**: Prüf-Logik/Test kaputt machen, beobachten
+  ob sie rot wird (§6.7).
+- Den Bauer fragen, **welcher Stelle er am wenigsten traut**, dort zuerst.
+- Delta-Runde: **denselben Prüfer fortsetzen** (SendMessage), nicht neu
+  dispatchen — nie aber einen BAU-Agenten als Prüfer fortsetzen (Skill
+  `auftrag` Ziff. 6).
+
 ## Red Flags — STOP und neu ansetzen
 
 Wenn eines davon zutrifft, bist du gerade am Abnicken — dann **zuerst
