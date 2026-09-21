@@ -70,7 +70,8 @@ if (!process.env.VITEST) {
   // darum ehrlich «zu prüfen» (§8), die Klassierung macht der Befehl.
   // Sauberer Zustand ⇒ keine Zeile. Ausfall ⇒ still (§8, wie der Notizen-Block).
   try {
-    const flaechen = flaechenZeile(klassiere(sammleFakten({ mitGh: false, zaehlen: false })), false);
+    const fakten = sammleFakten({ mitGh: false, zaehlen: false, statusPruefen: false });
+    const flaechen = flaechenZeile(klassiere(fakten), false);
     if (flaechen) z(flaechen);
   } catch {
     // git nicht verfügbar/kein Repo — der Pflicht-Einstieg degradiert still.

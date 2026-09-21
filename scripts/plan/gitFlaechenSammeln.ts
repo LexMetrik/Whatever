@@ -47,6 +47,17 @@ export interface SammelOpt {
    * liefert ein einziges `git branch --merged`.
    */
   zaehlen?: boolean;
+  /**
+   * `git status --porcelain` je Worktree fahren (ein Prozessstart pro Platz)?
+   *
+   * Default `true`. `plan:next` setzt `false` — gemessen 21.9.2026 im
+   * Haupt-Repo: mit Status 137 ms, ohne 66 ms (4 Worktrees), bei einer
+   * Gesamtlaufzeit von ~540 ms. Ohne Status gilt jeder Worktree als
+   * «nicht sauber prüfbar» und damit als nicht abräumbar (fail-closed) —
+   * in der Zeile fehlt dann höchstens ein abräumbarer Platz, es wird nie
+   * einer zu viel gemeldet.
+   */
+  statusPruefen?: boolean;
   /** Test-Naht: PR-Liste direkt einspeisen statt `gh` zu rufen (dann gilt gh als verfügbar). */
   prs?: PrRoh[];
 }
@@ -89,8 +100,12 @@ export function sammleFakten(opt: SammelOpt = {}): Fakten {
   if (porcelain === null) return leer;
   const roh = parseWorktreeFakten(porcelain);
 
-  const hier = echterPfad(stillLaufen(laufe, 'git', ['rev-parse', '--show-toplevel'], cwd)?.trim() ?? cwd);
-  const aktuellerBranch = stillLaufen(laufe, 'git', ['rev-parse', '--abbrev-ref', 'HEAD'], cwd)?.trim() ?? null;
+  // Ein `rev-parse` für beides — jeder Prozessstart kostet am Pflicht-Einstieg.
+  const wo = (stillLaufen(laufe, 'git', ['rev-parse', '--show-toplevel', '--abbrev-ref', 'HEAD'], cwd) ?? '')
+    .split('\n')
+    .map((s) => s.trim());
+  const hier = echterPfad(wo[0] || cwd);
+  const aktuellerBranch = wo[1] && wo[1] !== 'HEAD' ? wo[1] : null;
 
   // --- Branches ------------------------------------------------------------
   // Ein Aufruf für Name, Spitze, Upstream und Datum; `git branch --merged`
@@ -162,8 +177,12 @@ export function sammleFakten(opt: SammelOpt = {}): Fakten {
 
   // --- Worktrees -----------------------------------------------------------
   const mergedOids = new Set((prs ?? []).filter((p) => p.state === 'MERGED').map((p) => p.headRefOid));
+  const statusPruefen = opt.statusPruefen ?? true;
   const worktrees: WorktreeFakt[] = roh.map((w) => {
-    const status = w.haupt ? '' : stillLaufen(laufe, 'git', ['status', '--porcelain'], w.pfad);
+    // `null` heisst «nicht gemessen ODER nicht messbar» — beides ist
+    // fail-closed dasselbe: der Platz bleibt stehen. Der Haupt-Checkout ist
+    // ohnehin nie abräumbar, deshalb dort keine Messung.
+    const status = w.haupt ? '' : statusPruefen ? stillLaufen(laufe, 'git', ['status', '--porcelain'], w.pfad) : null;
     return {
       pfad: w.pfad,
       name: platzName(w.pfad),
