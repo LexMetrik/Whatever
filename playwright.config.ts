@@ -4,6 +4,7 @@
 // Specs heissen *.e2e.ts, damit Vitest sie nicht aufsammelt.
 import { defineConfig } from '@playwright/test'
 import { createHash } from 'node:crypto'
+import { cpus } from 'node:os'
 
 // ── Port-Wahl (§17-Wurzelfix, Vorfall 4.8.2026) ──────────────────────────────
 // Bisher: fester Default 4317 + `reuseExistingServer: !CI`. In Parallel-Sessions
@@ -52,7 +53,7 @@ const SCHWERE_SPECS = ['**/a11y.e2e.ts']
 const PX_SPECS = ['**/px-*.e2e.ts']
 const PX_AN = process.env.PX === '1'
 
-if (process.env.CI) console.log(`[mess] cpus=${require('node:os').cpus().length}`);
+if (process.env.CI) console.error(`[mess] cpus=${cpus().length}`);
 export default defineConfig({
   testDir: './e2e',
   testMatch: '**/*.e2e.ts',
