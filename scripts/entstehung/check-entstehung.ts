@@ -45,7 +45,10 @@ import {
   misseDeckung, serialisiereDeckung, DECKUNG_REGISTER_PFAD,
   type DeckungRegister, type DeckungErlass,
 } from './deckung.ts';
-import { CURIA_DIR, CURIA_ZUSTAND_PFAD, leseCuriaZustand, type CuriaZustand } from './curia-zustand.ts';
+import { CURIA_DIR, leseCuriaZustand } from './curia-zustand.ts';
+import {
+  pruefeCuriaBestand, pruefeCuriaSchrumpf, bestimmeCuriaVorstand, leseCuriaSchrumpfAusnahmen,
+} from './curia-tor.ts';
 import {
   SYNOPSE_DIR, NORM_PROFIL, SynopseBlockIndex, type SynopseShard, type SynopseBlock,
 } from '../../src/lib/entstehung/synopse.ts';
@@ -57,10 +60,6 @@ import { SYNOPSE_REGISTER_PFAD, type SynopseRegister } from './synopse-register.
 import { ENTWURF_DIR, type EntwurfShard } from '../../src/lib/entstehung/synopse-entwurf.ts';
 import { serialisiereEntwurfShard, shaEntwurfShard } from './synopse-entwurf.ts';
 import { ENTWURF_REGISTER_PFAD, type EntwurfRegister } from './synopse-entwurf-register.ts';
-import {
-  VERBOTENE_FELDER, CURIA_QUELLENANGABE, AUSZAEHLUNG_HINWEIS, DECISION_CODES,
-  serialisiereShard, shaShard, leeresAggregat, type CuriaShard,
-} from './curia.ts';
 import {
   baueProjektion, serialisiereProjektion, PROJEKTION_DIR,
   type BotschaftQuelle, type HistorieQuelle, type RevisionsQuelle,
@@ -227,136 +226,19 @@ for (const [name, pfad, max, gzip] of DECKEL) {
   zeilen.push(`check:entstehung — Anker: ${geprueft} Sidecar(s) gegen ${register ? Object.keys(register.quellen).length : 0} Register-Einträge geprüft (sha + Determinismus-Wächter).`);
 }
 
-// ── (3) Curia-Zustandsträger ohne Verlust (E4) ─────────────────────────────────
+// ── (3) Curia-Zustandsträger ohne Verlust (E4) + Schrumpf-Schwelle gegen den Vorstand ───
+// Kernlogik in curia-tor.ts (reine Funktionen, rot gezeigt in
+// src/tests/entstehung-curia-zustand-tor.test.ts); hier nur der imperative Rand.
 {
   const zustand = leseCuriaZustand();
-  const shards = existsSync(CURIA_DIR) ? readdirSync(CURIA_DIR).filter((f) => f.endsWith('.json')) : [];
-  if (zustand === null && shards.length) {
-    fehler.push(`${CURIA_DIR} ist befüllt, aber ${CURIA_ZUSTAND_PFAD} fehlt — der Zustandsträger ist der einzige Beleg des Laufs.`);
-  }
-  if (zustand) {
-    for (const z of zustand) {
-      if (!shards.includes(`${z.nummer}.json`)) {
-        fehler.push(`Curia-Geschäft ${z.nummer} steht im Zustandsträger, sein Shard fehlt in ${CURIA_DIR} — stiller Verlust (§11.6).`);
-      }
-    }
-    const bekannt = new Set(zustand.map((z) => `${z.nummer}.json`));
-    for (const f of shards) {
-      if (!bekannt.has(f)) fehler.push(`Curia-Shard ${f} steht nicht im Zustandsträger — Herkunft unbelegt (§7).`);
-    }
-    // ── (6) PERSONENDATEN-TOR (§11.8, Kritik B1, Entscheid David 11.9.2026 Nr. 2) ──
-    // Kein Namensfeld, keine PersonNumber, keine Fraktion, kein Kanton — weder als
-    // Schlüssel noch als Wert. Das Tor prüft die AUSGELIEFERTEN Artefakte, nicht bloss
-    // die Absicht des Generators: eine künftige Erweiterung, die ein Personenfeld
-    // durchreicht, wird hier rot, nicht erst in der Gegenprüfung.
-    const zustandJe = new Map(zustand.map((z) => [z.nummer, z]));
-    let summenProben = 0;
-    let publikationenGesamt = 0;
-    let rohGesamt = 0;
-    for (const f of shards) {
-      const roh = readFileSync(join(CURIA_DIR, f), 'utf8');
-      for (const verboten of VERBOTENE_FELDER) {
-        if (new RegExp(`"${verboten}"\\s*:`).test(roh)) {
-          fehler.push(`Curia-Shard ${f} trägt das Personendaten-Feld «${verboten}» — §11.8 verbietet jede Speicherung von Personendaten.`);
-        }
-      }
-      const shard = JSON.parse(roh) as CuriaShard;
-      if (roh !== serialisiereShard(shard)) {
-        fehler.push(`Curia-Shard ${f} ist nicht kanonisch serialisiert — von Hand editiert? (Generator neu laufen.)`);
-      }
-      const z = zustandJe.get(shard.nummer);
-      if (z && shaShard(shard) !== z.sha) {
-        fehler.push(`Curia-Shard ${f}: sha weicht vom Zustandsträger ab — nachträglich verändert (§7).`);
-      }
-      // ── PUBLIKATIONS-KREUZPROBE (Befund 21.9.2026, Referenz berichtigt in Runde 2) ──
-      // Der Dedupe-Schlüssel von `bauePublikationen` liess amtliche Objective-Zeilen still
-      // zusammenfallen. Das Tor rechnet offline gegen — gegen die ROHE Zeilenzahl der
-      // amtlichen Antwort, die der Lauf im Zustandsträger mitführt.
-      //
-      // BERICHTIGUNG (F8, der alte Satz bleibt lesbar): Runde 1 verglich hier gegen
-      // `distinkteObjective`, eine zweite Auszählung über DIESELBEN sechs Felder und
-      // dieselben Normalisierer wie der Schlüssel. Das war kein zweiter Weg, sondern
-      // dieselbe Entscheidung zweimal — beide Wege machten denselben Fehler und der
-      // Vergleich blieb grün. Die rohe Zeilenzahl teilt keine unserer Entscheidungen.
-      //
-      // FAIL-LOUD STATT STILL DEDUPEN (§6.7/§8): Über unseren Bestand ist der Lauf
-      // verlustfrei — Vollzensus 21.9.2026, 385 Shards, 2055 rohe Zeilen = 2055
-      // vollzeilen-distinkte. Weniger zu speichern als der Endpunkt liefert, ist deshalb
-      // ROT. Echte Doppellieferungen gibt es korpusweit (22.417, 26.023, 19.464 — vier
-      // Zeilen, keines dieser Geschäfte hat heute einen Shard); bekommt eines je einen,
-      // wird dieses Tor rot, und der Fall gehört dann als begründete, im Register geführte
-      // Ausnahme hinterlegt — NICHT durch ein Aufweichen dieses Vergleichs erledigt.
-      if (z) {
-        const roh = z as Partial<CuriaZustand>; // Zeilen aus Läufen vor 21.9.2026 führen die Felder nicht.
-        if (typeof roh.publikationen !== 'number' || typeof roh.objectiveZeilen !== 'number') {
-          fehler.push(
-            `Curia-Geschäft ${shard.nummer}: der Zustandsträger führt «publikationen»/«objectiveZeilen» `
-            + 'nicht — die Zeile stammt aus einem Lauf vor der Publikations-Kreuzprobe '
-            + '(21.9.2026). Ohne die Zahlen ist eine Kollabierung amtlicher Fundstellen nicht prüfbar, und '
-            + 'stillschweigend durchwinken hiesse genau den Fehler decken, den die Probe finden soll. '
-            + 'Vollabgleich fällig: npm run materialien:curia -- --datum=$(date +%F)',
-          );
-        } else {
-          if (shard.publikationen.length !== roh.publikationen) {
-            fehler.push(
-              `Curia-Shard ${f}: ${shard.publikationen.length} Publikation(en) im Shard, aber `
-              + `${roh.publikationen} im Zustandsträger — Bestand und Register driften auseinander (§5).`,
-            );
-          }
-          if (shard.publikationen.length !== roh.objectiveZeilen) {
-            fehler.push(
-              `Curia-Shard ${f}: ${shard.publikationen.length} gespeicherte Publikation(en) ≠ `
-              + `${roh.objectiveZeilen} rohe amtliche Objective-Zeile(n) — der Lauf hat `
-              + `${roh.objectiveZeilen - shard.publikationen.length} amtliche Zeile(n) zusammenfallen `
-              + 'lassen (Curia-Auflage «Die Daten dürfen inhaltlich nicht verändert werden»; §5/§8). '
-              + 'ZUERST den Dedupe-Schlüssel in bauePublikationen (scripts/entstehung/curia.ts) gegen '
-              + `die Roh-Zeilen des Geschäfts ${shard.nummer} halten: fehlt ihm ein unterscheidendes `
-              + 'Feld, ist das der Fehler. NUR falls der Endpunkt dieselbe Zeile wirklich doppelt '
-              + 'liefert (korpusweit belegt an 22.417, 26.023, 19.464 — Stand 21.9.2026), ist es eine '
-              + 'echte Doppellieferung; die wird dann als begründete Ausnahme im Register belegt, nie '
-              + 'durch Aufweichen dieser Prüfung erledigt.',
-            );
-          }
-          publikationenGesamt += shard.publikationen.length;
-          rohGesamt += roh.objectiveZeilen;
-        }
-      }
-      // Nutzungsauflage der Parlamentsdienste: Quellenangabe + Abrufdatum je Datensatz.
-      if (shard.quellenangabe !== CURIA_QUELLENANGABE) {
-        fehler.push(`Curia-Shard ${f}: Quellenangabe fehlt oder weicht ab — Nutzungsauflage der Parlamentsdienste (§7c).`);
-      }
-      if (!/^\d{4}-\d{2}-\d{2}$/.test(shard.abgerufen)) {
-        fehler.push(`Curia-Shard ${f}: Abrufdatum fehlt oder ist nicht ISO — Nutzungsauflage (§7a).`);
-      }
-      for (const sa of shard.schlussabstimmungen ?? []) {
-        // Summenprobe: die Einzelzähler müssen die Gesamtzahl ergeben — sonst hat ein
-        // unbekannter Decision-Code Stimmen verschluckt (Kritik A18).
-        const felder = Object.keys(leeresAggregat()).filter((k) => k !== 'total') as (keyof typeof sa.aggregat)[];
-        const summe = felder.reduce((n, k) => n + (sa.aggregat[k] ?? 0), 0);
-        if (summe !== sa.aggregat.total) {
-          fehler.push(`Curia-Shard ${f}: Stimm-Summe ${summe} ≠ total ${sa.aggregat.total} — ein Decision-Code fehlt in der Tabelle (§2).`);
-        }
-        if (!sa.beschriftung.startsWith(AUSZAEHLUNG_HINWEIS)) {
-          fehler.push(`Curia-Shard ${f}: Schlussabstimmung ohne die Pflicht-Beschriftung «${AUSZAEHLUNG_HINWEIS}» (§8/Curia-Auflage).`);
-        }
-        if (sa.rat !== null && sa.rat !== 'Nationalrat') {
-          fehler.push(`Curia-Shard ${f}: Rat «${String(sa.rat)}» behauptet — Voting hat kein Council-Feld, nur der Nationalrat ist über die Grösse belegbar (§8).`);
-        }
-        summenProben += 1;
-      }
-    }
-    zeilen.push(
-      // §8: die Zeile nennt, was sie gemessen hat — gespeicherte gegen rohe amtliche Zeilen.
-      // Sie behauptet NICHT, der Bestand sei vollständig: ob der Endpunkt seinerseits alle
-      // Fundstellen führt, kann dieses Tor nicht wissen (es hat kein Netz).
-      `check:entstehung — Curia: ${zustand.length} Geschäft(e) im Zustandsträger, ${shards.length} Shard(s), keiner fehlt; `
-      + `${summenProben} Schlussabstimmung(en) summenrein, ${Object.keys(DECISION_CODES).length} geprüfte Decision-Codes, `
-      + `0 Personendaten-Felder; Publikationen ${publikationenGesamt} gespeichert = ${rohGesamt} rohe amtliche `
-      + 'Objective-Zeile(n) laut Zustandsträger (keine Zeile ist beim Speichern zusammengefallen).',
-    );
-  } else {
-    zeilen.push('check:entstehung — Curia: kein Zustandsträger (Etappe E4 noch nicht gelaufen).');
-  }
+  const bestand = pruefeCuriaBestand(CURIA_DIR, zustand);
+  fehler.push(...bestand.fehler);
+  zeilen.push(...bestand.zeilen);
+  // Immer, auch ohne Ist-Zustandsträger (Nachzug PR #963, Auflage 2): fehlt die JSONL, entscheidet
+  // der Vorstand zwischen Erstfall (grün) und Totalverlust (ROT) — vorher schwieg das Tor hier.
+  const schrumpf = pruefeCuriaSchrumpf(bestimmeCuriaVorstand(), zustand, leseCuriaSchrumpfAusnahmen());
+  fehler.push(...schrumpf.fehler);
+  zeilen.push(...schrumpf.zeilen);
 }
 
 // ── (7) Synopse-Shards: Deckel je Erlass, Zitat-Merkmale, Determinismus (E5) ───

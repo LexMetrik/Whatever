@@ -233,7 +233,10 @@ export function baueKommissionen(zeilen: OdataZeile[]): CuriaKommission[] {
       name,
       kuerzel: txt(z.Abbreviation1) ?? txt(z.Abbreviation) ?? txt(z.Abbreviation2),
     };
-    m.set(`${k.datum ?? ''}|${k.name}`, k);
+    // Map-Schlüssel als JSON-Tupel (21.9.2026, wie bei den Publikationen): ein `|` im
+    // Freitext darf zwei verschiedene Zeilen nicht zusammenfallen lassen. Der SORTIER-
+    // Schlüssel darunter bleibt unverändert (er bestimmt die Shard-Bytes).
+    m.set(JSON.stringify([k.datum ?? '', k.name]), k);
   }
   return [...m.values()].sort((a, b) => (`${a.datum ?? ''}|${a.name}` < `${b.datum ?? ''}|${b.name}` ? -1 : 1));
 }
@@ -251,7 +254,11 @@ export function baueBeschluesse(zeilen: OdataZeile[], vorlageJeBill: Map<string,
       text,
       vorlage: vorlageJeBill.get(String(z.IdBill)) ?? null,
     };
-    m.set(`${b.datum ?? ''}|${b.rat ?? ''}|${b.vorlage ?? ''}|${b.text}`, b);
+    // Map-Schlüssel als JSON-Tupel (21.9.2026): mit `|`-Join fielen z. B. rat «Nationalrat|1»
+    // ohne Vorlage und rat «Nationalrat» mit Vorlage 1 + Text «|…» still zusammen.
+    // Gleiche Felder, gleiche `?? ''`-Abbildungen; `ratKuerzel` bewusst NICHT (erst nach dem
+    // Monatslauf, änderte Bestand). Der SORTIER-Schlüssel darunter bleibt unverändert.
+    m.set(JSON.stringify([b.datum ?? '', b.rat ?? '', b.vorlage ?? '', b.text]), b);
   }
   return [...m.values()].sort((a, b) => {
     const ka = `${a.datum ?? '9999'}|${String(a.vorlage ?? 99).padStart(2, '0')}|${a.rat ?? ''}|${a.text}`;

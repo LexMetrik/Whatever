@@ -38,3 +38,16 @@ aber unnötige Nutzlast und eine selbstgesetzte Regel, die gebrochen ist. Die Ze
 `PublicationTypeName = "Amtliche Sammlung"` gilt. Am 21.9.2026 wurden nur BBl-Zeilen gegen
 Fedlex gejoint (siehe `bibliothek/materialien/curia-publikationen-identitaet-2026-09-21.md`
 Ziff. 2).
+
+**Stand 2026-09-21 (Branch `feat/curia-haertung`):** Punkt 2 erledigt — Map-Key von
+`baueKommissionen`/`baueBeschluesse` als JSON-Tupel, Sortierschlüssel unverändert,
+Byte-Beweis offline über alle 386 Shards (alt = neu = Shard); 0 gespeicherte Einträge mit
+`|`. Bei den Kommissionen konnte der alte Schlüssel nie kollidieren (Datum fix 10 Zeichen
+oder leer) — dort rein vorsorglich. Punkt 3 erledigt — `check:entstehung` rechnet
+`beschluesse` (= `beschluesse.length`) und `vorberatungen` (= `kommissionen.length`) samt
+Schlussabstimmungs-Merker gegen den Shard (Drift 0/386). **Offen bleiben Punkt 1
+(`ratKuerzel` in den Schlüssel, ändert ~228 Zeilen Bestand), Punkt 4 (`$select` für
+`Objective`) und Punkt 5** — alle drei brauchen Netz/Vollabgleich und kommen erst NACH dem
+Monatslauf 1.10.2026. Achtung für Punkt 1: er lässt `beschluesse` steigen (unkritisch für
+die Schrumpf-Schwelle); ein Fix, der Beschlüsse strenger zusammenfasst, bräuchte dagegen
+einen Eintrag in `bibliothek/register/curia-schrumpf-ausnahmen.json`.

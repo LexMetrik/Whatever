@@ -30,3 +30,5 @@ Ernstfall ist hier terminiert.
    gesunder Lauf aussehen.
 
 **Klasse:** `daten` (Risikopfad `scripts/entstehung/`), aber verhaltensneutral + Testbau ⇒ klein.
+
+**Erledigt 2026-09-21 (Branch `feat/curia-haertung`, QS-KORPUS):** Abruf-Logik verhaltensgleich nach `scripts/entstehung/curia-abruf.ts` gezogen (injizierbar `fetchImpl`/`warte`/`drossel`/`log`; Aufrufstellen mit `$select` bleiben in `curia-run.ts`). Der geteilte Baustein `scripts/normtext/netz-retry.ts` wurde bewusst NICHT übernommen — er wiederholt 429, gibt 4xx zurück statt zu werfen, hat anderen Backoff und keinen Takt je Versuch (§1 vor §17). Test `src/tests/entstehung-curia-abruf.test.ts`: alle drei Fälle dieses Postens (Netzfehler → Wiederholung → Erfolg, 404 sofort, `__next` sofort) plus 5xx-Erschöpfung, 429, Content-Type, Takt vor jedem Versuch, Log je Wiederholung; Rot-Beweise gezeigt (Retry entfernt ⇒ rot; 4xx wiederholbar ⇒ rot).

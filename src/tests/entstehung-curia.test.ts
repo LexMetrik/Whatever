@@ -8,7 +8,8 @@
 //  · Für den Ständerat wird nie eine Stimmenzahl behauptet (Entscheid Nr. 3): `Voting`
 //    hat kein Council-Feld, der Rat ist nur über die Grösse plausibel.
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
 import {
   odataZeilen, odataDatum, aggregiereStimmen, ratAusGroesse, DECISION_CODES,
   baueKommissionen, baueBeschluesse, bauePublikationen, schlussabstimmungsVotes,
@@ -287,6 +288,33 @@ describe('Personendaten-Grenze (§11.8) — im Generator, nicht erst im Artefakt
     for (const feld of VERBOTENE_FELDER) {
       expect(runner.includes(`,${feld}`)).toBe(false);
       expect(runner.includes(`'${feld}`)).toBe(false);
+    }
+  });
+
+  // Reichweite (Gegenprüfung PR #963, 21.9.2026): die Abrufe liegen seit dem Refactor in
+  // curia-abruf.ts; ein Literal dort (`u.searchParams.set('$select','ID,LastName')`) blieb
+  // grün, weil der Test oben nur curia-run.ts liest. Darum ALLE scripts/entstehung/curia*.ts,
+  // dynamisch — ein künftiges Modul wird automatisch mitgeprüft. Gelesen werden nur LITERALE:
+  //  (a) das Argument direkt hinter einem '$select'-Parameternamen (eine Variable wie
+  //      `set('$select', select)` ist kein Literal und keine Feldliste),
+  //  (b) jede Komma-Feldliste 'Feld,Feld[,…]' (die dritten odata-Argumente in curia-run.ts).
+  it('kein verbotenes Feld in einem $select-Literal irgendeines curia*.ts-Moduls', () => {
+    const dir = 'scripts/entstehung';
+    const module = readdirSync(dir).filter((f) => /^curia.*\.ts$/.test(f)).sort();
+    expect(module).toEqual(expect.arrayContaining(['curia-abruf.ts', 'curia-run.ts']));
+    const listen: { datei: string; liste: string }[] = [];
+    for (const datei of module) {
+      const text = readFileSync(join(dir, datei), 'utf8');
+      for (const m of text.matchAll(/['"`]\$select['"`]\s*,\s*(['"`])([^'"`]*)\1/g)) listen.push({ datei, liste: m[2] });
+      for (const m of text.matchAll(/(['"`])([A-Z][A-Za-z0-9]*(?:,[A-Z][A-Za-z0-9]*)+)\1/g)) listen.push({ datei, liste: m[2] });
+    }
+    // Wächter §6.7: findet die Extraktion nichts, prüft der Test nichts — dann rot.
+    expect(listen.length).toBeGreaterThan(0);
+    expect(listen.map((l) => l.liste)).toContain('IdVote,Decision,DecisionText');
+    for (const { datei, liste } of listen) {
+      for (const feld of liste.split(',').map((x) => x.trim())) {
+        expect(VERBOTENE_FELDER.includes(feld), `${datei}: $select «${liste}» nennt ${feld}`).toBe(false);
+      }
     }
   });
 
