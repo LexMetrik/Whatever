@@ -109,6 +109,17 @@ npx vite-node scripts/screenshots.ts -- --base-url http://localhost:4321 --out <
 
 ---
 
+## Wörtliche BGE-Zitate — zwei Textschichten im Snapshot (18.9.2026)
+
+- BGE-Snapshots tragen `auszugAbschnitte` (Publikationsfassung, deckungsgleich mit bger.ch) UND
+  `abschnitte` (Volltext-Urteil) — mit abweichendem Wortlaut (Beleg BGE 149 I 343: «(LC; BLV 175.11)»
+  vs. «(LC; rs/VD 175.11)»). Ein Zitat in Guillemets folgt der Publikationsschicht bzw. bger.ch, nie dem
+  Gedächtnis (ein «RSV 175.11» stand in keiner der beiden). Liefert `www.bger.ch` 503, trägt der amtliche
+  Zweithost `relevancy.bger.ch/php/clir/http/index.php?highlight_docid=atf%3A%2F%2F<Band>-<Teil>-<Seite>%3A<lang>&lang=<lang>&type=show_document` (per `curl -L`).
+- **Tor-Meldung «Text nennt ∅» heisst zuerst «eigener Parser hat nichts erkannt»**, nicht «Quelle falsch»
+  (`check:revisionen-rectifies`, VTS `oc/2025/691`, 18.9.2026): vor jedem Ausnahme-Eintrag den amtlichen
+  Text öffnen und die Extraktion daran prüfen.
+
 ## Weitere offline-Sonden
 
 - **`npm run check:smoke`** — rendert die Ansichten headless durch (Render-Crash-Frühwarnung).

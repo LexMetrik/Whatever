@@ -5,17 +5,13 @@ description: Verwenden, wenn etwas schiefgegangen ist und die Lehre daraus bleib
 
 # Lehren — belegte Fehlerklassen und wo ihr Gegenmittel sitzt
 
-**Zweck:** Lehren aus Vorfällen lagen früher ausserhalb des Repos (Memory) —
-unversioniert, für Sub-Agenten unsichtbar. Dieses Register liegt im Repo und
-kostet im Normalbetrieb nur seine Description.
-
 ## Die Formregel (wichtiger als jede einzelne Lehre)
 
 > **Eine Regel kostet dort am wenigsten, wo sie am spätesten gelesen wird.**
 
 `CLAUDE.md` wird bei **jedem** Dispatch geladen (nach dem A4-Umzug 25.7.2026
-~2 500 Token statt ~7 200 — der Hebel wird dadurch kleiner, nicht gegenstandslos).
-Eine Zeile dort kostet bei jeder delegierten Einheit. Reihenfolge der Wahl:
+~2 500 Token statt ~7 200 — der Hebel wird dadurch kleiner, nicht
+gegenstandslos). Reihenfolge der Wahl:
 
 | Form | Kosten je Dispatch | Wählen, wenn |
 |---|---|---|
@@ -24,12 +20,12 @@ Eine Zeile dort kostet bei jeder delegierten Einheit. Reihenfolge der Wahl:
 | **Skill** | nur die Description | die Regel situativ gilt (Landung, Gegenprüfung, Postmortem) |
 | **CLAUDE.md** | volle Kosten, immer | letzte Wahl — nur wenn nicht maschinalisierbar und immer gültig |
 
-Das Design-Reglement sagt das selbst (`DESIGN-REGLEMENT.md` E1, früher zitiert
-als `CLAUDE.md` §13 Ziff. 6): maschinell prüfbare Regeln gehören in ESLint/Tests,
-nicht ins .md. **Netto-Prosa-Zuwachs ist zu begründen.**
+Dasselbe sagt `DESIGN-REGLEMENT.md` E1 (früher `CLAUDE.md` §13 Ziff. 6):
+maschinell Prüfbares gehört in ESLint/Tests, nicht ins .md.
+**Netto-Prosa-Zuwachs ist zu begründen.**
 
-Und: **ein Tor ist erst ein Tor, wenn es einmal rot war.** Wer eines baut, zeigt
-den Sabotage-Beweis (§6.7 — Skill `refactoring`, Ziff. 7).
+**Ein Tor ist erst ein Tor, wenn es einmal rot war** — wer eines baut, zeigt
+den Sabotage-Beweis (§6.7, Skill `refactoring` Ziff. 7).
 
 ### Formregel-Ergänzung: Fremdagenten (QS-FREMDAGENTEN, 4.9.2026)
 
@@ -40,10 +36,10 @@ wird in DERSELBEN Session nach der Formregel oben verankert — als Tor-Regel
 im Fahrplan-Register. Belege, dass das wirkt: der Assertion-Diff aus T5 (PR
 #638, `scripts/analyse/test-assertion-diff.ts`), die Kommentar-Bilanz aus
 #662 (Fremd-PR-Tor Regel 3), die Label-/Tabellen-Regeln aus #650
-(deterministischer Erstfilter). Stufe 2 (`retro:17`) trägt seit demselben
-Auftrag einen Erinnerungs-Vorschlag: jeder in den letzten 7 Tagen
-geschlossene Jules-PR erzeugt eine ENTWURF-Zeile «Lehre verankern» — sie
-ersetzt die Formregel nicht, sie erinnert nur daran, wenn sie vergessen ginge.
+(deterministischer Erstfilter). `retro:17` erinnerte daran mit einer ENTWURF-Zeile
+je frisch geschlossenem Jules-PR; das entfällt mit dem retro:17-Rückbau
+(Entscheid David 20.9.2026) und fiel seit dem Jules-Stopp 14.9.2026 auf
+nichts — Nachfolge-Messung `npm run tor:bewaehrung`.
 
 ## Register der belegten Fehlerklassen (Vorfälle seit 18.7.2026)
 
@@ -192,12 +188,45 @@ prüfbar, wenn die reale ROADMAP längst sauber ist (F2e). **Deklarierte Richtun
 die Regel prüft nur «Fahrplan sagt fertig, Plan sagt offen». Die Gegenrichtung ist
 Normalfall, nicht Defekt; und einen Vollzug, den WEDER Fahrplan noch ROADMAP notiert (D0,
 S1 fand die Regel nicht), fängt sie nicht — sie ist eine Untergrenze, kein
-Vollständigkeitsbeweis. <!-- @wiedervorlage: 2027-09-15 -->
+Vollständigkeitsbeweis.
+
+**Zweite Richtung derselben Klasse (20.9.2026, `W2·24-DESIGN-IDENTITAET` und
+`W3-TARIF-STAND`, 15 Posten): «Kopf sagt fertig, Unterposten sagen offen».** Die
+Richtungs-Grenze oben wurde nach fünf Tagen real konsumiert — diesmal INNERHALB der
+ROADMAP. Zwei Schritte standen auf `status: done` und trugen darunter zusammen **15
+offene `- [ ]`-Posten** (6 unter dem Design-Kopf, 8 unter dem Tarif-Kopf, einer hinter
+den Feldtrenner `---` gerutscht). `plan:next` liest den Status des KOPFES, nie die
+Checkboxen darunter — die Arbeit stand im Plan und war im Plan unsichtbar, wochenlang,
+bei grünem `check:plan`. Schaden: 15 Posten, die keiner Session je angezeigt wurden,
+darunter **eine seit dem 5.9.2026 offene Fachfrage an David** («WARTET AUF DAVID
+(fachlich, §7): Verjährungsrevision 2020 … `verjaehrung.ts:547`») — ein Wartestand, der
+in einem `done`-Block verschwand. Zweiter Fall derselben Klasse im selben Plan: ein
+Verweis auf einen Schritt `W3-TARIF-NACHVERIFIKATION`, den es nie gab. Warum keine neue
+Klasse: nach Ziff. 1/5 der Ablage-Anleitung unten ist eine zweimal aufgetretene Klasse
+zu ESKALIEREN, nicht zu verdoppeln — F17 hatte seine Lücke deklariert, der Vorfall hat
+sie belegt. **Gegenmittel (Tor, nicht Prosa): `check:plan` Regel 15** — ein Kopf-Schritt
+(Checkbox auf Spalte 0), dessen Checkbox `[x]` ist oder dessen `@meta` `status: done`
+trägt, darf in seinem Block keine eingerückte `- [ ]`-Zeile führen
+(`scripts/plan/kopfBuchung.ts`, `src/tests/plan-check.kopf-buchung.test.ts`, 14
+Vitest-Fälle inkl. Rot-Fall). Geburtsbeweis §6.7: **rot auf `0e4999b48`** mit exakt den
+14 vorhergesagten Treffern (Z. 585/587/590/591/592/594 und 723–730), **grün auf
+`8f6fe6971`** mit 0 Treffern; Streuungs-Probe über 10 historische ROADMAP-Stände: 5
+Stände mit Treffern (1–25), Stichproben durchweg echte Fälle derselben Klasse, kein
+Fehlalarm. **Deklarierte Grenzen:** (1) hinter einem `---` wird nicht gesucht — dort
+beginnt nach CommonMark eine neue Liste, der 15. Posten des Anlassfalls hängt an gar
+keinem Schritt mehr und ist eine eigene Klasse (verwaister Posten), darum lautet die
+Trefferzahl 14 und nicht 15; (2) nur Kopf-Schritte auf Spalte 0, eingerückte
+`- [x]`-Unterposten werden nicht geprüft; (3) verschachtelte Unter-Schritte mit eigenem
+`@meta` gibt es im Bestand nicht (alle 65 stehen auf Einzug 2) und werden nicht
+behandelt — träte einer auf, wäre der Fehlalarm laut und in einem Blick aufzulösen.
+Keine Allowlist: der Zuschnitt trägt den Bestand ohne Ausnahme. *(Die Wiedervorlage des
+Eintrags läuft mit dieser Erweiterung neu — massgeblich ist der Marker hier.)*
+<!-- @wiedervorlage: 2027-09-20 -->
 
 ## Eine neue Lehre ablegen
 
-1. **Klasse bestimmen.** Fällt der Vorfall unter F1–F6? Dann dort das Gegenmittel
-   verschärfen — **keine neue Regel danebenlegen**.
+1. **Klasse bestimmen.** Passt der Vorfall in eine Register-Klasse? Dann dort
+   das Gegenmittel verschärfen — keine neue Regel danebenlegen.
 2. **Form wählen** nach der Tabelle oben. Maschinell schlägt Prosa, immer.
 3. **Beim Tor: Sabotage-Beweis zeigen** (einmal rot).
 4. **Neue Klasse** nur, wenn sie wirklich neu ist — mit Beleg (PR-Nr., Datum,
@@ -291,3 +320,8 @@ was nicht vorher gelöscht, vereinfacht und stabil geworden ist.
 - **ROADMAP-Restrukturierung** — Council-Entscheid 3.7.2026 geprüft und
   getragen: die Befunde sind Inhalts-**Frische**, nicht Architektur; ein
   zweiter autoritativer Artefakt hätte die Drift verdoppelt.
+  *Nachsatz 20.9.2026:* nach Messung (Deckel alle 8–15 Tage gerissen,
+  `ROADMAP.md` in 50 % der PRs, 4 von 10 Queue-Rauswürfen Konflikte) gab David
+  das **Posten-Modell** frei: ein Nebenfund = eine Datei unter `plan/posten/`,
+  Wächter `check:plan` 16 — keine zweite Wahrheit, sondern Auslagerung der
+  Nebenfunde aus der einen. Keine neue F-Klasse.

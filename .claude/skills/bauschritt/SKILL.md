@@ -7,8 +7,8 @@ description: Verwenden für einen Lagebild-Bau-Prompt oder einen einzelnen Roadm
 
 **Anlass-Kopf — Ritual-Diät 29.8.2026 (Auftrag David: «Kontrolle abbauen, wo
 sie nichts trägt»).** Der frühere «leichte Pfad» ist ab hier der NORMALFALL:
-Station A hat 4 Punkte (Nachtrag 15.9.2026: Session-Notizen-Datei), Station E 7 (Nachtrag 4.9.2026:
-Fremdagenten-Messwerte; Nachtrag 4.9.2026: Kontingent-Lauf). Was gestrichen wurde und warum, steht
+Station A hat 4 Punkte (Nachtrag 15.9.2026: Session-Notizen-Datei), Station E 3
+(Abschluss-Diät 20.9.2026). Was gestrichen wurde und warum, steht
 unten unter «Gestrichene Pflichten» — **Station C (Prüfung) ist unverändert**,
 und §9/§12/§14.7/§18 bleiben Wort für Wort in Kraft.
 
@@ -31,16 +31,17 @@ ohne Rückfrage nach diesem Zyklus.
    nicht der Prompt.
 3. **Sichtbar werden** (F6): Branch `feat/<slug-der-id>` anlegen,
    `plan:set -- <id> status=wip && check:plan`, committen, **Feature-Branch**
-   pushen — nie main (jeder main-Push ist ein Vercel-Deploy und wirft offene
-   Auto-Merge-PRs auf BEHIND; Hook `tor-schutz.py` blockt, Skill `landung`
-   Ziff. 7). Parallel-Session ⇒ eigener Worktree (§12). Bau-Spec bei Bedarf
+   pushen — nie main (main nimmt seit 19.9.2026 nur die Merge-Queue, kein
+   Bypass; Hook `tor-schutz.py` blockt, Skill `landung` Ziff. 7).
+   Parallel-Session ⇒ eigener Worktree (§12). Bau-Spec bei Bedarf
    als Slice: `npm run fahrplan -- <fahrplan-datei> <§>`.
 4. **Notizen-Datei anlegen** (§17, Weisung David 15.9.2026): aus der Vorlage
    `docs/token-oekonomie/session-notizen-vorlage.md` unter
    `<Haupt-Checkout>/.claude/notizen/<YYYY-MM-DD>-<session-slug>.md`
-   (gitignored). Zeigt `plan:next` bereits eine Vorgänger-Datei mit offenen
-   Posten (`📝 Session-Notizen: … — N offen`), wird sie ÜBERNOMMEN
-   (weiterführen), nicht ignoriert.
+   (gitignored; aus einem Worktree per Bash, `cat > … <<'EOF'` — das
+   Write-Werkzeug sperrt `<Haupt-Checkout>/.claude/`). Zeigt `plan:next`
+   eine Vorgänger-Datei mit offenen Posten (`📝 Session-Notizen: … — N
+   offen`), wird sie ÜBERNOMMEN (weiterführen), nicht ignoriert.
 
 ## Station B — Bau
 
@@ -63,11 +64,11 @@ ohne Rückfrage nach diesem Zyklus.
   archiviert die Session, und der Bau steht bis zum nächsten Menschen still (Nacht
   5./6.9.2026).
 - **Nebenfunde in den Plan**, nie in diese Session oder als Chip:
-  Checklisten-Zeile im Dach-Schritt, sonst ROADMAP-Schritt (Skill `auftrag`
-  Ziff. 3), weiterbauen.
+  `plan:posten -- neu --dach <ID> --titel "…"`, sonst ROADMAP-Schritt (Skill
+  `auftrag` Ziff. 3), weiterbauen.
 - **Jeder Agentenbericht: Punkt «Nebenfunde/Abweichungen» und jede
   aufkommende Lehre SOFORT in die Notizen-Datei**, vor dem nächsten Dispatch —
-  der Chat ist kein Speicher (Kompaktierung bei 400k; Weisung David
+  der Chat ist kein Speicher (Kompaktierung bei 700k; Weisung David
   15.9.2026).
 
 ## Station C — Prüfung (unverändert)
@@ -85,21 +86,25 @@ ohne Rückfrage nach diesem Zyklus.
 ## Station D — Landung
 
 Skill **`landung`** Schritt für Schritt (§12 + §9: Tore vor Merge, Bug-Check,
-serielle Landung, CI-Grün, Nachkontrolle). Schlusspunkt: **Status schliessen**
-(`plan:set <id> status=done`/`ready`/`parked`, `check:plan`, committen, pushen).
+Einreihen in die Merge-Queue, CI-Grün, Nachkontrolle). **Status schliessen
+gehört IN den PR**, der den Schritt abschliesst (`plan:set -- <id>
+status=done`/`ready`/`parked`, `check:plan`, committen — `landung` Ziff. 9),
+nicht hinter die Landung.
 
 **Kein Stillstand ohne David (Auftrag 16.8.2026, nach 7 h stummem Warten):**
 Wer eine Landekette per Wächter begleitet, setzt einen **Stillstands-Anker** —
-Hintergrund-Bash mit `until … done` (alle 5 min `git fetch`; 25 min kein neuer
-main-Merge UND noch PRs offen ⇒ Meldung «STILLSTAND»), worauf die Session
-SELBST eingreift (Konflikt lösen, Hand-Merge bei allen Required grün, Nachzug).
+Hintergrund-Bash mit `until … done` (alle 5 min `git fetch`; 60 min
+[Check-Timeout der Queue; Durchlauf belegt ~30 min] kein neuer main-Merge
+UND noch Einträge in der Queue ⇒ «STILLSTAND»), worauf die Session SELBST
+eingreift (Konflikt lösen; nach Rauswurf ERST den `merge_group`-Lauf lesen,
+dann neu einreihen — `landung` §Merge-Queue).
 Keine Monitor-Streams — die liefen am 16.8.2026 mehrfach still aus. Massgeblich
 ist der Merge-Zeitstempel auf origin/main.
 
 ## Station W — Weiterbau (David 8.8.2026)
 
 Gelandet + Session tragfähig ⇒ **nicht abschliessen**, weiterbauen:
-(a) nächste offene Position derselben Dach-Checkliste; (b) oberster `ready`-Schritt
+(a) nächster offener Posten desselben Dachs (`plan:posten -- <ID>`); (b) oberster `ready`-Schritt
 **gleicher Risikoklasse** und möglichst gleichen `feld:`-Werts (`plan:next` +
 Kollisionsprüfung); (c) nichts Sinnvolles mehr ⇒ Station E.
 
@@ -108,44 +113,51 @@ Commit mit eigenem Roadmap-Trailer).
 **NIE sortenrein-widrig auf Risikopfade wechseln**; Schluss
 **spätestens bevor der Kontext zur Neige geht** — lieber sauber landen.
 
-## Station E — Abschluss (7 Punkte)
+## Station E — Abschluss (3 Punkte)
 
-- [ ] **Notizen-Datei abarbeiten:** jede Zeile an ihren Repo-Ort (ROADMAP-
-      Zeile, Fahrplan, Skill, Tor), danach Datei löschen. Übergabe statt
-      Abschluss: Datei bleibt, Pfad im Übergabe-Chip.
-- [ ] **Karten-ZEILE in `STRUKTUR.md`** (was gebaut, Commit/PR-Beleg).
-      Volle Session-Karte NUR bei Risikopfad-Berührung, gezogener §17-Lehre
-      oder offenen Enden, die eine Folge-Session steuern müssen.
-- [ ] **Status schliessen:** `plan:set -- <id> status=done` + `check:plan`.
-- [ ] **Sammel-Push:** alle Doku-Commits der Session ohne PR in EINEM Push —
-      `LEXMETRIK_MAIN_PUSH=1 git push origin main` (der einzige direkte
-      main-Push der Session, Skill `landung` Ziff. 7); davor Bau-Flächen
-      abräumen (Worktree, Feature-Branch lokal + remote, `git worktree
-      prune`, Scratch-Dateien), danach `git checkout main && git pull`.
-- [ ] **§17-Lehren-Check (einzeilig):** Lehre aufgekommen? Verankert nach
-      Formregel Skill `lehren` (Tor > Dispatch-§0 > Skill > Prosa) — nur im
-      Chat gilt als nicht gezogen. Dazu der Klartext-Schlusssatz an David:
-      was live ist, «nichts wartet auf dich» oder genau *was* und warum.
-- [ ] **Fremdagenten-Messwerte:** war Jules oder Gemini beteiligt — Skill
-      `auftrag` Ziff. 4 Punkt 7 (Fahrplan §5 nachtragen, Rückbau-Schwellen §3
-      prüfen).
-- [ ] **Kontingent-Lauf:** `npm run fremdagenten:messung -- --kontingent` —
-      Ergebnis nur bei Alarm (Exit 3) in Fahrplan §5 «Kontingent-Ereignisse»
-      eintragen, sonst nichts zu tun.
+- [ ] **Notizen-Datei überführen:** `plan:posten -- aus-notizen <datei>` erntet
+      «Nebenfunde»/«Wartet auf David»; der Rest an seinen Repo-Ort (Fahrplan,
+      Skill, Tor). Einzeilig dabei der **§17-Lehren-Check**: Lehre aufgekommen
+      ⇒ verankert nach Formregel Skill `lehren` (Tor > Dispatch-§0 > Skill >
+      Prosa) — nur im Chat gilt als nicht gezogen. Danach Datei löschen;
+      Übergabe: Datei bleibt, Pfad im Chip.
+- [ ] **Status geschlossen:** `plan:set -- <id> status=done` + `check:plan`
+      stehen im Feature-PR (Station D). Ein **separater Doku-PR nur dann**,
+      wenn danach wirklich noch Rest-Doku offen ist (Skill `landung` Ziff. 7)
+      — nicht als Ritual.
+- [ ] **Bau-Flächen abräumen** (Feature-Branch lokal + remote, `git worktree
+      prune`, Scratch-Dateien), `git checkout main && git pull`; den EIGENEN
+      Worktree zuletzt (`landung` §Session-Ende Ziff. 5). Dazu der
+      **Klartext-Schlusssatz an David**: was live ist, «nichts wartet auf dich»
+      oder genau *was* und warum.
 
-### Gestrichene Pflichten (29.8.2026) — je mit Anlass
+Nur wenn Jules oder Gemini an der Session beteiligt war: Messwerte + `npm run
+fremdagenten:messung -- --kontingent` nach Skill `auftrag` Ziff. 4 Punkt 7.
+
+### Gestrichene Pflichten (29.8.2026, ergänzt 20.9.2026) — je mit Anlass
 
 - **Volle Session-Karte als Default** — nur noch bei Risikopfad/Lehre;
   15.8.2026 gemessen: 51 % aller Commits waren reine Doku-/Plan-Pflege.
 - **`npm run plan:bild`** — auf Abruf (David fragt das Lagebild an, wenn er
   es braucht); die Dock-Datei steuert keinen Bau.
-- **`npm run selbstopt:erheben`** — auf Abruf bzw. über den Wächter; die
-  Zeitreihe braucht keinen Snapshot je Session.
-- **`struktur-rotieren.py --check`** — läuft als SessionStart-Hook UND als
-  CI-Tor `check:steuerdeckel`; eine dritte Handprüfung fängt nichts — ausser
+- **`npm run selbstopt:erheben`** — war bis 20.9.2026 auf Abruf; seither
+  ENTFALLEN samt der Zeitreihe (Entscheid David, Rückbau QS-EFFIZIENZ) —
+  Nachfolge-Messung `npm run tor:bewaehrung`.
+- **`struktur-rotieren.py --check`** — läuft als SessionStart-Hook, dort nur
+  prüfend (`LEXMETRIK_NO_ROTATE=1` in `.claude/settings.json` schaltet die
+  Rotation ab; sie läuft von Hand, wenn der Wächter meldet), UND als CI-Tor
+  `check:steuerdeckel`; eine dritte Handprüfung fängt nichts — ausser
   nach einem Edit an `.claude/hooks/*.py` oder `scripts/check-*.ts`: dort
   einmal von Hand vor dem Push (Flächen-Deckel; Beleg #895, 15.9.2026: ein
   CI-Lauf verloren).
+- **Karten-ZEILE / Session-Karte in `STRUKTUR.md`** (20.9.2026) — kein
+  Werkzeug liest den Karten-INHALT: `struktur-aktuell.py` misst nur den
+  git-Abstand, `struktur-rotieren.py` nur Grösse und Alter; gemessen ~1 500
+  geänderte Zeilen in 14 Tagen reine Ablage. Ersatz ist der PR-Body.
+  STRUKTUR.md bleibt als Struktur-Nachschlagewerk.
+- **Fremdagenten-Messwerte und Kontingent-Lauf als Pflichtpunkte** (20.9.2026)
+  — jetzt bedingt (Station E, letzter Absatz): Jules-Suggestions sind seit
+  14.9.2026 aus.
 - **Memory-Durchsicht** — nur wenn die Session das Memory berührt hat.
 - **Grössen-Check (`groesse:`)** — Feld existiert nicht mehr; Bündelung
   läuft über `feld:` (Station A Ziff. 1).
@@ -159,6 +171,8 @@ Commit mit eigenem Roadmap-Trailer).
 - **Nichts doppelt lesen:** Unteragenten-Bericht ist das Ergebnis.
 - **Mechanik nach unten delegieren** (Verschieben/Formatieren/Umbenennen/
   Sweeps auf günstigere Stufe, Skill `auftrag` Klassen-Palette).
-- **Kein direkter main-Push** (Hook blockt): Verwaltung fährt im PR mit;
-  Doku ohne PR am Session-Ende in EINEM Push (Station E).
+- **Lange Tor-Ausgaben in eine Logdatei, Exit-Code lesen** (Orchestrator):
+  `npm run <tor> > <scratchpad>/x.log 2>&1; echo $?` ist keine Pipe (der Hook
+  lässt es zu) und hält 200+ Zeilen aus dem Kontext — `check:fedlex-versionen`
+  druckt 232 Zeilen (Beleg 18.9.2026). Bei Exit ≠ 0 die Logdatei gezielt lesen.
 - **Antworten kurz:** kein Nacherzählen von Tool-Ausgaben.

@@ -19,15 +19,11 @@ name: Wächter (geplante Läufe)
 on:
   schedule:
     - cron: '11 6 * * *' # täglich 06:11 UTC — nach den 04:43/05:17-Jobs
-  # `push: main` seit 15.8.2026 für den BEHIND-Nachzug unten (QS-MERGE-AUTOZUG).
-  # ABWEICHUNG von der Fahrplan-Spec «Cron ~10 min + Trigger nach main-Push»,
-  # bewusst und dokumentiert: ein PR wird ausschliesslich dadurch BEHIND, dass
-  # `main` sich bewegt. Der main-Push IST das Ereignis; ein 10-Minuten-Cron
-  # pollte 144-mal täglich auf einen Zustand, der sich nur bei Push ändert.
-  # Der Nachzug-Job unten hängt darum am Push, der schwere Lauf-Zustands-Job
-  # bleibt beim Tages-Cron (siehe sein `if:`).
-  push:
-    branches: [main]
+  # Rückbau 19.9.2026 (QS-ORG-UMZUG): Auslöser `push: branches: [main]`, der Job
+  # `autozug` (BEHIND-Nachzug per `gh pr update-branch`) und das dazugehörige
+  # `if: github.event_name != 'push'` am Job `laeufe` ersatzlos gestrichen — seit
+  # dem Org-Umzug serialisiert die native Merge-Queue auf main (Ruleset 23699779)
+  # und zieht den Zweig selbst nach; ein BEHIND-Rennen kann es nicht mehr geben.
   workflow_dispatch:
 
 permissions:
@@ -48,11 +44,6 @@ permissions:
 jobs:
   laeufe:
     name: Geplante Workflows — cancelled/skipped zählen als ROT
-    # NICHT bei main-Push: dieser Job ist der teure (npm ci + gh-Abfragen je
-    # Workflow) und beantwortet eine TAGES-Frage. An einen Push gehängt liefe er
-    # nach jedem Merge erneut, mit demselben Befund und einem weiteren Kommentar
-    # am Aufgaben-Zettel. Der Push-Pfad ist allein für `autozug` gedacht.
-    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -212,80 +203,3 @@ jobs:
           fi
           gh issue close "$offen" --reason completed --comment "🟢 Wächter wieder grün am $(date +%F). Lauf: ${RUN_URL}"
           echo "Zettel #${offen} geschlossen (Wächter grün)."
-
-  # ── BEHIND-Nachzug für scharfen Auto-Merge (QS-MERGE-AUTOZUG, 15.8.2026) ─────
-  # ANLASS: `gh pr merge --auto` feuert NIE, wenn der PR `BEHIND` ist — GitHub
-  # wartet auf einen aktuellen Zweig, und niemand macht ihn aktuell. Die
-  # QS-SELBSTOPT-Landekette verlor am 7.8.2026 drei Zyklen à ~15 min ans
-  # Nachziehen von Hand; am 15.8.2026 fuhr eine Session `gh pr update-branch`
-  # achtmal manuell. Die native Merge Queue, die das löste, gibt es auf
-  # User-Konten nicht (→ QS-ORG-UMZUG, geparkter David-Entscheid).
-  #
-  # EIGENER JOB, nicht ein Schritt oben: er braucht weder Checkout noch npm
-  # (reines `gh`), läuft darum in Sekunden — und er braucht SCHREIBRECHTE, die
-  # der Lauf-Zustands-Job nicht bekommen soll (least privilege, §18-Geist).
-  autozug:
-    name: BEHIND-PR mit scharfem Auto-Merge nachziehen (max. 1)
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write        # `update-branch` schreibt einen Merge-Commit auf den PR-Zweig
-      pull-requests: write   # dito, PR-seitig
-      actions: write         # ci.yml-Dispatch unten (Pflicht, siehe Kommentar dort)
-    steps:
-      - name: Ältesten BEHIND-PR mit scharfem Auto-Merge nachziehen
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
-        run: |
-          set -euo pipefail
-          # Auswahl in EINEM jq-Ausdruck, damit sie prüfbar ist (§6.7-Beleg im
-          # Commit-Body gegen Fixtures gefahren):
-          #   · autoMergeRequest != null  — nur PRs, die schon landen WOLLEN.
-          #     Ein PR ohne scharfen Auto-Merge wird bewusst nicht angefasst:
-          #     dort entscheidet ein Mensch, wann rebasiert wird.
-          #   · mergeStateStatus == BEHIND — nur der Rückstand. CLEAN braucht
-          #     nichts, BLOCKED/DIRTY/UNKNOWN löst ein update-branch nicht.
-          #   · sort_by(.number) | .[0] — ältester zuerst, MAX. EINER pro Lauf.
-          ziel=$(gh pr list --repo "$REPO" --state open \
-                   --json number,headRefName,mergeStateStatus,autoMergeRequest \
-                   --jq '[.[] | select(.autoMergeRequest != null and .mergeStateStatus == "BEHIND")]
-                         | sort_by(.number) | .[0] // empty
-                         | [.number, .headRefName] | @tsv')
-
-          if [ -z "$ziel" ]; then
-            echo "Kein offener PR mit scharfem Auto-Merge im Zustand BEHIND — nichts nachzuziehen."
-            exit 0
-          fi
-
-          nr=$(echo "$ziel" | cut -f1)
-          zweig=$(echo "$ziel" | cut -f2)
-          echo "Ältester BEHIND-PR mit scharfem Auto-Merge: #${nr} (${zweig})."
-
-          # WARUM SERIELL: zieht man alle BEHIND-PRs auf einmal nach, sind alle
-          # bis auf den ersten sofort wieder BEHIND, sobald dieser mergt — jeder
-          # Nachzug hätte einen vollen CI-Lauf verbrannt. Die Kette trägt sich
-          # selbst: #nr wird aktuell → CI grün → Auto-Merge feuert → main bewegt
-          # sich → dieser Workflow läuft erneut (push: main) → der nächste ist
-          # dran. Bleibt die Kette stehen, greift spätestens der Tages-Cron.
-          if ! gh pr update-branch "$nr" --repo "$REPO"; then
-            echo "::warning::PR #${nr}: update-branch fehlgeschlagen — bleibt BEHIND."
-            echo "  Häufigster Grund: der PR kommt aus einem FORK; GITHUB_TOKEN darf dort nicht schreiben."
-            exit 0
-          fi
-          echo "  → PR #${nr} auf main nachgezogen (update-branch)."
-
-          # PFLICHT, KEIN EXTRA: `update-branch` schreibt mit GITHUB_TOKEN, und
-          # von GITHUB_TOKEN erzeugte push-Events lösen KEINE Workflows aus. Der
-          # PR bekommt damit eine neue Head-SHA, an der die Required-Kontexte nie
-          # gemeldet würden — der Nachzug hätte den PR von BEHIND auf «für immer
-          # blockiert» umgestellt und wäre schlimmer als kein Nachzug. Der
-          # Kontext-Nachzug im Job oben kann das nicht auffangen: er hängt an der
-          # Branch-Schutz-Lesung, die unter GITHUB_TOKEN strukturell 403 gibt
-          # (dort dokumentiert, Beleg Lauf 31870641148 vom 15.8.2026).
-          # `workflow_dispatch` ist die dokumentierte Ausnahme von der
-          # Rekursionssperre — deshalb löst genau dieser Aufruf CI wieder aus.
-          if gh workflow run ci.yml --repo "$REPO" --ref "$zweig"; then
-            echo "  → ci.yml auf '${zweig}' angestossen (workflow_dispatch) — Required-Kontexte werden neu gemeldet."
-          else
-            echo "::warning::PR #${nr}: ci.yml-Dispatch auf '${zweig}' fehlgeschlagen — Kontexte fehlen an der neuen Head-SHA, PR bleibt blockiert."
-          fi

@@ -1,5 +1,14 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Umschichtung 18.9.2026 (Leser-Mitlaufen) — drei erledigte Unterpunkte von `W2·5m-LESER-V3` (Wortlaut)
+
+**Anlass.** Steuerdeckel ROADMAP (132 KB bei 120 KB Budget, gelb) nach der Buchung der Session 18.9.2026 (3). Der Dach-Schritt `W2·5m-LESER-V3` bleibt offen (Auf/Zu-Handling, Einzelartikel E3, Fassungs-Diff-Tab); nur die drei erledigten Unterpunkte wandern hierher, die ROADMAP trägt eine Zeiger-Zeile. Wortlaut unverändert:
+
+- [x] **Mitlaufen beim Lesen** — ✅ 18.9.2026. Marke und Baum-Akkordeon lagen in **einem** 200-ms-Trailing-Timer, den jeder Artikelwechsel neu ansetzt; beim Lesen kommen die Artikelgrenzen schneller ⇒ der Timer verhungerte, `setAktivIds` lief **nie** (gemessen: 27 Artikelwechsel → 27 Neuansetzungen, `anwenden` lief 1×). `setAktivIds` aus dem entprellten Closure gelöst (`inhalt-hooks.tsx`), Akkordeon + Ruhe-Tor unverändert. Prod-Build: erste Marke **3891 → 88 ms** (Gegenprüfung unabhängig 57 ms; BV 52 ms), Proben ohne Marke **76/113 → 0/114**, distinkte Etiketten **3 → 11**. Wächter `e2e/leser-marke-mitlaufen.e2e.ts` mit Rot-Beweis (§6.7).
+- [x] **Standort-Fläche war ein Fehlalarm** — die `brass-100`-Fläche (1,03–1,13:1) ist **nicht** das tragende Signal; der Standort-Strich ist ein Geschwister-`<span>` (`w-[3px] bg-brass-600`, Radius 0), gemessen **8,26:1 hell / 10,62:1 dunkel** gegen `--paper`, bei 1440 px und 390 px gleich. Design-Handschrift Nr. 4/7 bereits erfüllt, seit PR #894 (`fb0ab0249`). Kein Token-Entscheid nötig — Zeile geschlossen (§17 Gegengewicht: keine Zutat ohne Mangel).
+- [x] **Wächter `leser-marke-mitlaufen` geschärft** — ✅ 18.9.2026. Die alten Schranken liessen einen **Halb-Fix durch** (konstruierte 120-ms-Trailing-Debounce bestand alle drei Proben). Blosses Senken der ms-Schranke war **nicht** der Weg: die Weite ist begründet (2-vCPU-Runner, reflow-schwerste Seite) und hätte Lücke gegen Flakiness getauscht. Neue vierte Probe misst **Rückstand in Gliederungs-Einträgen statt Millisekunden**: SOLL = letzter Eintrag, dessen Abschnitt bei/vor dem Artikel an der Bezugslinie beginnt (unabhängig aus `a[href^="#art-"]` + DOM-Artikelfolge abgeleitet, **nicht** aus der bewachten Marke), IST = Eintrag mit `[data-toc-aktiv]`. Eine Ordnungszahl hat keine Einheit — ein langsamerer Runner schiebt SOLL und IST gemeinsam, die Probe wird milder statt flackrig. Schranken auf **Anteilen** (≥ 90 % treu, ≤ 5 % der Proben ≥ 2 Einträge zurück), plus Selbstschutz `visibilityState === 'visible'` und `distinktSoll ≥ 5`. Beweise: rot gegen den Original-Defekt (**0/40** treu), rot gegen den 120-ms-Halb-Fix bei `--workers=1` = CI-Bedingung (**9/40**, 3 von 3 Läufen), 3× grün, gedrosselt 6×/10× grün.
+
+
 ## Umschichtung 15.9.2026 (dep-Umbau) — drei erledigte Schritte mit lebenden `dep`-Kanten (Wortlaut)
 
 **Anlass und was sich geändert hat.** Bis heute mussten erledigte Schritte in `ROADMAP.md` stehen bleiben, sobald irgendein lebender Schritt `dep` auf sie hielt: `check:plan` Regel 4 («dep-IDs existieren») kannte nur `ROADMAP.md` und hätte die Überführung rot gemacht. Der Steuerdeckel (120 KiB) liess sich damit nur noch senken, indem man entweder die `dep`-Kante fälscht oder den Deckel reisst — beides macht den Plan unwahr. Die Umschichtung 15.9.2026 (Entstehung) weiter unten hat darum die PROSA ausgelagert und die Anker bewusst stehen lassen («Anker bleiben wegen `dep`»); dieser Abschnitt zieht sie nach, nachdem der Wurzel-Fix gebaut ist (Schritt `QS-EFFIZIENZ`, PR dieser Session): Regel 4 akzeptiert ein `dep`-Ziel, das hier als `done` archiviert ist, und `plan:next`/`plan:bild`/`plan:set` lösen mit derselben Menge auf. Der frühere Vermerk bleibt als Beleg seines Datums stehen und wird nicht nachgeführt.
@@ -5090,3 +5099,264 @@ Gruppe ein ✅-Einzeiler mit Pointer hierher.
   - [x] **B9 · Textsatz und Umbruch (K-12)** — 12/12 geschlossen (Fahrplan §10, Nachzug Häkchen 13.9.2026).
   - [x] **B10 · Aktions-Anker, Symbolknöpfe, Trefferflächen (K-09b)** — 7/7 geschlossen 4.9.2026 (Fahrplan §11, Nachzug Häkchen 13.9.2026).
   - [x] **B15 · Umschalter, Tabs, Akkordeons (K-06)** — 9/9. §16. · **B16 · Seitengerüst/Inhaltsbreite (K-13)** — 8/8. §17. *(Nachzug Häkchen 13.9.2026)*
+
+# Umschichtung 19.9.2026 — `QS-ORG-UMZUG` erledigt (Merge-Queue steht), Herleitung aus `QS-CI-MINUTEN`
+
+Anlass: der Org-Umzug ist vollzogen (Repo `LexMetrik/Whatever`, Merge-Queue-Ruleset 23699779 aktiv,
+erster Durchlauf #922/#917 am 19.9.2026), und ROADMAP.md steht über dem 120-KB-Steuerdeckel.
+Verschoben sind ein vollständig erledigter Schritt ohne offene Unterzeilen (aufraeumen.md §2) und die
+erledigte Beleg-Prosa des offenen Schrittes `QS-CI-MINUTEN` (✅-Teilerfolg, Ausnahme 22.7.2026).
+Kein lebender `dep` und kein `@queue`-Eintrag zeigt auf `QS-ORG-UMZUG`; der Blocker
+`david-entscheid-org-umzug` ist mit dem Schritt aus dem `@blockers`-Register entfallen.
+
+## QS-ORG-UMZUG — Repo in eine GitHub-Organisation überführen (Merge Queue) *(✅, verschoben 19.9.2026)*
+- [x] **Repo in eine GitHub-Organisation überführen (Merge Queue)** *(`QS-ORG-UMZUG`)*
+  <!-- @meta id: QS-ORG-UMZUG · status: done · blocker: null · dep: [] · feld: betrieb -->
+  Erst, wenn der Auto-Nachzug (Checklisten-Zeile unter `QS-AUTOMATIK`) nicht reicht. **Stand 19.9.2026 (erledigt):** er reicht nicht (#914 und #892 je ein bzw. vier zusätzliche volle CI-Läufe), und David will die Merge-Queue («ja», 19.9.2026) — offen ist nur noch der Umzug selbst: Organisation anlegen und Repo übertragen macht David (Konto-Handlung), die ~1 h Nacharbeit (Vercel, Branch-Schutz, Secrets, Remote-URLs, Queue-Ruleset) die Session.
+  - [x] **DAVID (Ja 19.9.2026, Anleitung im Chat):** (1) Gratis-Organisation `lexmetrik` anlegen (Name am 19.9. frei), (2) Repo `Whatever` per Settings → Transfer ownership dorthin übertragen, Namen NICHT ändern, (3) Vercel → Settings → Git prüfen. Vorher der Session Bescheid geben (keine Landung im Flug). — ✅ 19.9.2026: Organisation `LexMetrik` (Free, public) angelegt, Repo als `LexMetrik/Whatever` übertragen, Vercel-Git-Anbindung geprüft.
+  - [x] **Session danach:** Merge-Queue-Ruleset auf `main` (SQUASH, ALLGREEN, Timeout 60 min — CI braucht ~20 min) und `strict` im klassischen Branch-Schutz AUS (die Queue zieht selbst nach) · `git remote set-url origin` auf `lexmetrik/Whatever` (ein `.git` für alle Worktrees) · Test-PR bis Deploy-Job grün · Secrets `AUTOMERGE_TOKEN`/`PLAN_BUCHUNG_TOKEN` am nächsten Lauf prüfen — feingranulare PATs mit Eigentümer `davidgraf95-sys` verlieren den Zugriff, Neuanlage kann nur David · Skill `landung` auf Queue-Betrieb nachführen (`gh pr merge --auto` reiht ein; `update-branch`-Nachzug und `landung-kette.sh`-Halt entfallen — §17-Rückbau) · `BETRIEB.md:13`/`PROJEKTBESCHRIEB.md:4` nennen noch die alten Repo-Namen `LegalCalc`/`LexMetrik`, tatsächlich `Whatever` — mitkorrigieren. — ✅ 19.9.2026: Ruleset 23699779 (SQUASH, ALLGREEN, max 3 Einträge, Timeout 60 min, keine Bypass-Akteure), `strict` AUS; erster Durchlauf #922 (`06489b10c`) + #917 (`9b125ce8e`) gemeinsam gelandet 15:05:00Z, `merge_group`-Lauf 35449369984 alle vier Required grün (inkl. Perf-Budget), Push-Lauf 35450690297 Deploy grün, live `lexmetrik-build=9b125ce8`. Remote-URLs, `BETRIEB.md`/`PROJEKTBESCHRIEB.md` (`aed15a7b8`) und die Skills `landung`/`bauschritt`/`auftrag` nachgeführt; `AUTOMERGE_TOKEN`/`PLAN_BUCHUNG_TOKEN` stehen als eigene Zeile unter `QS-BASIS` zur Prüfung am Lauf vom 21.9.2026.
+  **Detail:** [entregulierung-2026-08-07.md](bibliothek/betrieb/entregulierung-2026-08-07.md).
+
+## QS-CI-MINUTEN — «Offen: Merge Queue (Gate)», Beleg-Prosa *(✅-Teilerfolg, verschoben 19.9.2026)*
+
+Wortlaut, wie er bis zum 19.9.2026 in `ROADMAP.md` stand (die Frage «persönliches Repo kann keine
+Merge Queue» ist mit dem Org-Umzug beantwortet; im Plan bleibt eine Kurz-Zeile mit Verweis hierher):
+
+  Gebaut 8.9.2026: M1–M5, Flacker-Wächter (Melde-Modus bis 22.9.2026, dann hart), Ergebnis-Job, Playwright-Install-Retry — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (3); Regeln: Skill `landung` §«Prüfstrasse seit 8.9.2026». **Nachmessung 8.10.2026.** Offen: Merge Queue (Gate) — **Beleg 18.9.2026:** PR #914 war mit allen Toren grün, zündete aber nicht, weil die Parallel-Session während der ~20 min Prüfzeit nach `main` landete ⇒ `BEHIND`; `gh pr update-branch` kostete einen VOLLEN zweiten CI-Zyklus (4 Playwright-Schichten à 16–20 min). Präzedenz #892 (15.9., fünf Läufe aus demselben Grund; die Lehre damals behandelte mit `landung-kette.sh` nur das Symptom). Wurzel: bei zwei parallel landenden Sessions und «branch up to date» verliert der langsamere PR das Rennen strukturell — die Merge-Queue serialisiert und zieht den Zweig selbst nach. **David 19.9.2026: «ja zur merge warteschlange»** — der Schalter ist aber auf einem PERSÖNLICHEN Repo nicht setzbar (gemessen: GraphQL kennt `requiresMergeQueue` nicht, Ruleset-API antwortet 422 `Invalid rule 'merge_queue'`); die CI trägt den `merge_group`-Auslöser bereits. Weg: `QS-ORG-UMZUG` (Repo in eine Gratis-Organisation) · Wurzel der 6 flackernden Specs (Fehlerbuch §4, bis 22.9.) — **einer davon ist am 14.9.2026 gelöst**: die D16-Spec war kein Test-Flake, sondern ein Ladezeit-Race der App (PR #865, `a57e4698a`; Fehlerbuch §4.R4). Entscheide David 8.9.2026 (Weg A, M2) ebenfalls in der Chronik.
+
+## Vier BEHIND-Zeilen, durch die Merge-Queue erledigt *(✅, verschoben 19.9.2026)*
+
+Wortlaut, wie er bis zum 19.9.2026 in `ROADMAP.md` stand; im Plan bleibt je ein ✅-Einzeiler mit
+Verweis hierher (aufraeumen.md §2, Ausnahme datierte ✅-Teilerfolgs-Prosa aus offenen Schritten).
+
+- `W2·18-FEHLERBUCH`: **Plan-Buchungs-Commit wirft wartende Auto-Merge-PRs auf BEHIND** *(§17-Prozessfund 13.9.2026, PR #843)* — `plan-buchung.yml` schreibt nach jedem Merge einen `[skip ci]`-Commit auf main; bei `strict`-Schutz fällt jeder offene Auto-Merge-PR auf BEHIND und kostet Rebase + vollen CI-Lauf (~25 min). Wurzel-Fix: der Buchungs-Workflow aktualisiert danach alle offenen PRs mit aktivem Auto-Merge (`gh pr update-branch`), oder Merge-Queue (David-Handgriff, offen). Bis dahin: nach jeder Landung sofort rebasen.
+- `QS-BASIS`: **§17 BEHIND-Schleife durch Plan-Buchung** *(Befund Parallel-Session 2.9.2026, an einer Nacht mit 5 offenen PRs belegt)* — jeder Squash-Merge erzeugt via `plan-buchung.yml` einen Folge-Commit auf main (`[skip ci]`), der alle offenen PRs sofort BEHIND setzt; bei «up to date»-Pflicht kostet jede Landung damit einen zweiten vollen CI-Lauf (15–20 min). Wurzel-Kandidaten: Buchung im PR-Branch vor dem Merge statt auf main, oder Merge-Queue (`QS-ORG-UMZUG`, David-Entscheid). Bis dahin: Landungen zwischen Sessions ansagen, je Seite genau ein Nachzug.
+- `QS-CI-MINUTEN`: Wurzel `strict: true` ⇒ Merge Queue (`QS-ORG-UMZUG` unten, Gate G7).
+- `QS-CI-MINUTEN`: **Plan-Buchungs-Commit macht jede wartende PR BEHIND** *(Befund 11.9.2026, #791/#793)* — geführt unter `QS-BASIS` («§17 BEHIND-Schleife durch Plan-Buchung»), dort zusammen mit der teureren Schwester DIRTY (14.9.2026). Hier nur als CI-Minuten-Posten: ein zusätzlicher Volllauf je Landung.
+
+Erledigt am 19.9.2026 durch das Merge-Queue-Ruleset 23699779 (`strict` AUS — die Queue zieht den
+Zweig selbst nach, BEHIND kostet keinen zweiten Volllauf mehr). Offen bleibt allein die Plan-Buchung
+selbst (Zeile «Plan-Buchung: messen, dann zurückbauen» unter `QS-CI-MINUTEN`) und die teurere
+DIRTY-Schwester vom 14.9.2026 unter `QS-BASIS`.
+
+### Streichung 19.9.2026
+
+- **`QS-CI-MINUTEN` / «Plan-Buchungs-Commit macht jede wartende PR BEHIND»** — gestrichen 19.9.2026:
+  der Posten war schon bei seiner Anlage (11.9.2026) ein Zweitzeiger auf die `QS-BASIS`-Zeile «§17
+  BEHIND-Schleife durch Plan-Buchung»; mit der Merge-Queue ist die Sache dort erledigt, ein zweiter
+  Eintrag derselben Wahrheit (§5) steuert nichts mehr. Wortlaut oben archiviert.
+
+# Umschichtung 19.9.2026 (2) — `QS-MONITOR-ROT`: drei Teilerfolge (rectifies-Tor R2, Curia-Kaskade, Materialien-Kaskade)
+
+Ausnahme 22.7.2026 (datierte ✅-Teilerfolgs-Prosa aus einem noch OFFENEN Schritt — `QS-MONITOR-ROT`
+bleibt `status: ready`, weitere Unterzeilen offen); im Plan bleibt je ein ✅-Einzeiler mit Verweis
+hierher (aufraeumen.md §2).
+
+## QS-MONITOR-ROT — rectifies-Tor Runde 2 *(✅-Teilerfolg, verschoben 19.9.2026)*
+
+  - [x] **rectifies-Tor Runde 2 — blockiert JEDEN Fedlex-Frische-PR** *(Gegenprüfung #909, 18.9.2026; Risikopfad)* — der Automatik-Lauf materialisiert erstmals `belegteOcs`/`rectifiesInfoProOc` (latent seit #827): Kanten 31 → 82, vier neu rot: KRK `oc/2026/314` (Staatsvertrags-Headline → ∅), OR `oc/2023/62` (Fussnotenzeichen «AS 2020 4005 ¹»), VZAE `oc/2026/170` (Ziel = cc-Abstract, Klassifikationslücke), **LRV `oc/2025/448` echte Abweichung** (Text AS 1992 124 vs. Ziel AS 1986 208 — amtlich einordnen, nie raten). Mit bauen (Auflagen #908): 0-Treffer-Fall eigene Meldung «keine Headline erkannt — zuerst Parser prüfen, NICHT Ausnahmeliste» (`check-revisionen-rectifies.ts:121`; genau diese Meldung legte am 18.9. die falsche Fedlex-Fehler-Spur) · nicht konsumierte Einträge in `rectifies-ausnahmen.json` melden (§6.7, Docstring verspricht es) · Phantom «(AS 2015 5699, 2022; …)» → `AS 2015 2022` (`rectifies-berichtigung.ts:118`) · Test-Eingabe `:423` erzeugbar machen · bei `sammelberichtigung` den treffenden Block statt der Vereinigungs-SR zeigen. Danach #909 bzw. den Folge-PR der Automatik landen (Verdikt-Kommentar am PR #909; bringt auch den VRV/VTS-Pflegetermin 1.10.2026 statt 1.1.2031). — ✅ 19.9.2026, PR #926 (`c9e2e32cb`): Parser-Lücken KRK/OR/VZAE + BPV-Fussnotenfalle, LRV `oc/2025/448` und KLV `oc/2026/209` als amtlich belegte Fedlex-Fehlziele in `rectifies-ausnahmen.json`, Auflagen #908 B-1..B-5, Fugen-Falsch-Grün (Fuzz alt 2 251 / neu 0), Obergrenze 20 nicht-abrufbar. Dossier: `bibliothek/normtext/rectifies-tor-runde2-2026-09-19.md`.
+
+## QS-MONITOR-ROT — Curia-Vista-Monatsjob + Materialien-Kaskade *(✅-Teilerfolg, verschoben 19.9.2026)*
+
+  - [x] **Curia-Vista-Monatsjob rot: Kaskade fehlt im Workflow** *(Lauf 35373415150, 18.9.2026)* — `normen-monitor.yml` Job `curia` fährt nach `materialien:curia` direkt `check:entstehung`; die Deckungs-Sicht (`public/materialien/deckungs-sicht.json`, 1 Abweichung zur Neuberechnung) wird nie regeneriert ⇒ Job scheitert VOR dem PR-Öffnen, der Monatsabgleich kommt nie an. Fix: `gen:entstehung-projektion` + `gen:entstehung-deckung` vor die Offline-Tore (gleiche Klasse wie #907; am besten über das Kaskaden-Skript der nächsten Zeile). Offen dazu: Automatik-PR #913 (BS-Monatslauf) braucht Gegenprüfung wie #909. — ✅ 19.9.2026, PR #921 (`2db154675`): alle drei Monats-Jobs fahren `entstehung:projektion-kaskade` + `check:entstehung`; Nachweislauf 35457303103: Vollabgleich, Teilkaskade, Vorflug-Prüfung grün — Job-Rot nur noch am Schritt «PR eröffnen» (Token-Befund, `QS-BASIS`). #913 war zu diesem Zeitpunkt bereits gelandet (`135ec0cba`, Identitätsbeleg data.bs.ch); #909 lag mit Verdikt «bestanden» vor, war aber noch nicht eingereiht.
+  - [x] **Materialien-Kaskade als EIN Skript** *(analog #907)* — nach `materialien:botschaften`/`:vernehmlassungen`/`:bs`/`:snapshot`: `gen:entstehung-deckung`, Revisionen-Sidecar (`botschaftIndex()`-Cross-Link, `check:revisionen`), Zähler, Manifest zuletzt; heute undokumentiert (ein Bau-Agent erklärte das Folge-Rot zum «Vorbestand», Gegenmessung widerlegte es). Raw-Caches (`botschaften-raw`, `vernehmlassungen-raw`, `revisionen-raw`) sortiert + literal-normalisiert schreiben — je Lauf 100–220 Dateien Schein-Diff. — ✅ 19.9.2026, PR #921 (`2db154675`): `scripts/entstehung/projektion-kaskade.ts` als letztes Glied der bestehenden `materialien:kaskade`. Die Raw-Caches-Sortierung ist nur für BS (`vergleicheBsDokumente`) mitgelöst — übrige Caches bleiben offen, eigene Zeile unten.
+
+## QS-CI-MINUTEN — drei erledigte Merge-Queue-Nachweise *(✅, verschoben 19.9.2026, Steuerdeckel-Ausgleich)*
+
+  - [x] **Ersten reinen Doku-Eintrag in der Queue beobachten** — ✅ 19.9.2026, #931: `merge_group`-Lauf 35456359531 klassiert «Reiner Doku-Queue-Eintrag (2 Dateien)», Bau/Shards/Perf-Budget `skipped`, Tore + Merge-Schutz + Browser-Smoke (Ergebnis) grün, Laufzeit ~1 min, gelandet `951382d26` — ein übersprungenes Perf-Budget zählt in der Queue als erfüllt, kein Hänger.
+  - [x] **`scripts/landung/landung-kette.sh` real gegen die Queue fahren** *(19.9.2026)* — ✅ 19.9.2026 mit PR #919: eingereiht 15:59Z, `mergeQueueEntry.state` gepollt, MERGED `661612cea` 16:29:21Z, Zweig von GitHub selbst gelöscht, Exit 0. **Nur der Gut-Pfad ist real belegt**; die Halte-Pfade (UNMERGEABLE, verschwundener Eintrag, GraphQL-Fehler) sind weiterhin nur simuliert (Simulation a–g, 377ea3c11).
+  - [x] **Erster `merge_group`-Lauf der neuen Klassierung** — ✅ 19.9.2026, Lauf 35454618928 (#927): Compare `95cb5a712…a5734fb86` (Basis = Queue-Commit des Vordermanns #925, nicht main), 19 Dateien, `art=code`, alle vier Required grün.
+
+---
+
+# Umschichtung 2026-09-20 — erledigte Schritte und Teilerfolgs-Prosa aus dem Steuerungsplan
+
+Anlass: Re-Akkumulations-Wächter meldet `ROADMAP.md` GELB (141.6 KB > Budget 120 KB).
+Ausnahme 22.7.2026 (datierte ✅-Teilerfolgs-Prosa aus einem noch OFFENEN Schritt —
+`W2·5m-LESER-V3` bleibt `status: ready`, die übrigen Unterzeilen offen); im Plan bleibt
+je ein ✅-Einzeiler mit Verweis hierher (aufraeumen.md §2). Erledigte SCHRITTE wurden
+in dieser Umschichtung KEINE überführt — die beiden `done`-Schritte
+`W2·24-DESIGN-IDENTITAET` und `W3-TARIF-STAND` halten zusammen 15 offene
+`- [ ]`-Unterposten; eine vollständige Überführung nach aufraeumen.md §2 hätte diese
+offene Steuerung mitgenommen. Auflösung (Umbau zu offenen Schritten oder Herauslösen
+der Unterposten) ist ein eigener Entscheid, keine Aufräum-Bewegung.
+
+## W2·5m-LESER-V3 — Gliederung: Standort, unterste Ebene, Auf/Zu-Handling *(✅-Teilerfolg, verschoben 2026-09-20)*
+
+    - [x] **Gliederung «noch schlecht» — Standort und unterste Ebene** *(Befund David 19.9.2026)* — ✅ 19.9.2026: gemessen = Anzeige (Art.-Ebene `art@` lief mit Zeilenzustand auseinander) + Daten (SVG-Randtitel «Grundregel»); Anzeige #924, Daten #923 (Gegenprüfung bestanden). Detail: Session-Karte STRUKTUR.md 19.9.2026 (2).
+
+    - [x] **Erledigt 19.9.2026:** Auf/Zu-Handling + Befund David 19.9. («svg art. 26 nicht ersichtlich … unterste ebene klappt nicht auf», Nachtrag «auch das aufklappen soll optimiert werden») — Zeilen-Offen-Zustand aus dem Sichtbaren abgeleitet (`zeilenAnsicht`), alle ausdrücklichen Öffner über `klappKarte.ts` inkl. Artikel-Ebene, ein Klick öffnet ganz, «alles auf» öffnet die Artikel, Marke nach Sprung auf dem Artikel; Wächter `gliederung-sichtbarkeit.test.ts` (vorher 11/12 rot, u. a. 4'690 offen-leere Zeilen). Daten-Teil SVG-Randtitel «Grundregel» PR #923 (Gegenprüfung bestanden).
+
+## Nachtrag 2026-09-20 (2) — die beiden `done`-Köpfe folgen nun doch, nach Herauslösung ihrer offenen Unterposten
+
+Der Absatz am Kopf dieses Blocks («Erledigte SCHRITTE wurden in dieser Umschichtung KEINE
+überführt …») bleibt unverändert als Beleg des damaligen Stands stehen — Belege altern nicht,
+sie werden ergänzt. Entscheid David 20.9.2026: die 15 offenen `- [ ]`-Unterposten werden aus den
+beiden `done`-Köpfen herausgelöst, weil ein `done`-Kopf sie für `npm run plan:next` unsichtbar
+macht — darunter Davids eigene Fachfrage zur Verjährungsrevision 2020. Sie stehen seit dem
+20.9.2026 in vier neuen offenen Schritten in `ROADMAP.md`:
+
+| neuer Schritt | `feld` | Posten | Herkunft |
+|---|---|---|---|
+| `W2·24-C` — Design-Identität: offene Nachzüge nach der Landung | design | 4 | `W2·24-DESIGN-IDENTITAET` |
+| `W2·24-PERF-REST` — Leser-Kopf: Rest-CLS und Mount-Messung | design | 2 | `W2·24-DESIGN-IDENTITAET` |
+| `W3-TARIF-FOLGE` — Tarif-Stammdaten: Folgeschritte und Datenhygiene | werkzeuge | 7 | `W3-TARIF-STAND` |
+| `W3-RECHTSSTAND-WEICHE` — Rechtsstand als echte Weiche in den Rechen-Engines | werkzeuge | 2 | `W3-TARIF-STAND` |
+
+Die IDs `W2·24-C` und `W2·24-PERF-REST` sind keine Neuerfindung: `fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md`
+§8 führt beide bereits als «eigene Schritte» — die Herauslösung löst damit nur ein, was der
+Fahrplan seit 7.9.2026 vorsah. Gestrichen wurde nichts; die Gegenzählung 15 = 4 + 2 + 7 + 2 steht
+im Bericht der ausführenden Session. Danach wandern die beiden nun leeren Köpfe vollständig
+hierher — Checkbox, `@meta`, Prosa und ihre bereits erledigten Unterposten:
+
+## W2·24-DESIGN-IDENTITAET — Design-Identität: eigene Farb- und Schrift-Handschrift *(done, verschoben 2026-09-20)*
+
+- [x] **Design-Identität: eigene Farb- und Schrift-Handschrift** *(`W2·24-DESIGN-IDENTITAET`, David 5.9.2026)*
+  <!-- @meta id: W2·24-DESIGN-IDENTITAET · status: done · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
+  ✅ **erledigt 7.9.2026 (PR #739, e2ac7def9)** — Handschrift «Sammlung»: R1–R13 samt Nachzügen, Gesamtprüfung
+  (Ästhetik + Funktions-Inventar 90 OK / 0 verloren), Reglement §F0. Protokolle
+  `abnahme/design-identitaet/`; Zielbeschreibung: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026.
+  **Nachwünsche 7.9. (Tag):** 16 weitere PRs #744–#761 (D34–D44, D35-F1…F4, L6, R13B, R14, R14b) —
+  Tabelle Thema/PR/SHA/Protokoll in STRUKTUR.md, Abschnitt «Nachwünsche 7.9.» (zuletzt #761 ae32c5c4e).
+  **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §1 — Stand je Runde dort in §6, Folgeschritte in §8.
+  - [x] **Bezüge-Zeile: Kopfzähler gefiltert/ungefiltert** — ✅ entschieden und gebaut 11.9.2026. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
+  - [x] **Erledigt:** L6 PaneKopf-Name · Reiterstreifen/ZGB-Reiter (bleiben) · Orchestrator-Entscheide 7.9. bestätigt · D45/«Daneben öffnen»/Bezüge-Zähler/OR-Leser-Knöpfe (umgebucht nach `W2·26-FUNKTIONSZEILE`) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026.
+  - [x] **Orchestrator-Entscheide vom Tag 7.9. — David 7.9.2026 «alles bestätigt»:** — ✅ (Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 8.9.2026 (Landung)).
+  - [x] **Budget-Entscheid Entry 99,5 %** (59.7 / 60.0 KB) — ✅ David 19.9.2026 «Kopfbereich budget heben»: Entry-Budget 60 → 70 KB (`scripts/check-perf-budget.ts`); der react-dom-Rückfall bleibt über die Zeichenketten-Prüfung gefangen.
+
+## W3-TARIF-STAND — Tarif-Stammdaten: Stand maschinenlesbar + Drift-Tor *(done, verschoben 2026-09-20)*
+
+- [x] **Tarif-Stammdaten: Stand maschinenlesbar + Drift-Tor** *(`W3-TARIF-STAND`, Rules-as-Code-Sichtung 5.9.2026, Entscheid David 5.9.2026)*
+  <!-- @meta id: W3-TARIF-STAND · status: done · blocker: null · dep: [] · feld: werkzeuge -->
+  ✅ gelandet 6.9.2026 (#734) — Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026. Die offenen
+  Folgeschritte darunter bleiben unverändert stehen.
+  **Detail:** [rules-as-code-sichtung-2026-09-05.md](bibliothek/recherche/rules-as-code-sichtung-2026-09-05.md) §6.
+
+# Umschichtung 2026-09-20 — erledigte Unterpunkte (mechanisch)
+
+Wörtlich aus ROADMAP.md herausgelöst (`npm run plan:posten -- migrieren`, QS-EFFIZIENZ,
+Posten-Modell). Kein Satz ist umformuliert; reine Zeiger-Stubs auf diese Datei sind
+ersatzlos entfallen und im PR einzeln aufgeführt.
+
+## W2·7-VZUI
+
+  - [x] **Erledigt:** Grundzustand-Fetch · `?norm=`-Sprung · vierter Reiter «Anwendung» — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+
+## W2·22-VERWEIS-FEDLEX
+
+  - [x] **Erledigt:** Z1 · Z2 · Z3 · Z5 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+
+## W2·27-BUND-FERTIG
+
+  - [x] **Erledigt 14.9.2026 (Phase-1-Welle, alle vier Risikopfad-PRs mit bestandener Gegenprüfung):** Sollbild + Messung (elf Bausteine, Fahrplan §1/§2) · Sidecar-Drift-Riegel 216/228 **und** KKV-Token `126_z__2` — #851 (`6c4f9fa2f`) · `aufgehoben` strukturell statt Text-Heuristik, 0 → **1 277/25 463**, Wächter `check:leerstellen` — #859 (`d16acf466`) · `confidence.json`-Neulauf (Qualitätsbild 23.6. → 14.9.2026) — #848 (`90cb59fff`) · Zukunftsfassungen-Hinweis im Leserkopf — #863 (`7f5aa592e`). **Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).**
+  - [x] **§8-Anzeige der ungeklärten Leerstellen** *(Auflage Gegenprüfung #859)* — ✅ 15.9.2026, PR #892 (`674cc42ae`, Gegenprüfung bestanden dbe25de86): «kein Text im Snapshot» statt «aufgehoben». Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (4).
+  - [x] **§17 · `confidence.json` ohne Frische-Tor** *(Wurzel-Befund Prüfer #848)* — ✅ 15.9.2026, PR #888 (`3202047ae`, Gegenprüfung bestanden af1d214a3): Tor `check:confidence-frische`. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (4).
+  - [x] **KKV-Label `Art. 126z` statt `Art. 126ztredecies`** *(Nebenfund Prüfer #851)* — ✅ 15.9.2026, PR #890. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026. Rest: `__N`-Deep-Link, Label-Drift-Tor (Zeilen unten).
+
+## W2·5l-NORMTEXT-B2
+
+  - [x] **Erledigt:** M15 (absorbiert in `W2·6c-ENTSTEHUNG-DATEN`) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+
+## QS-CURRENCY-KANON
+
+  - [x] **Erledigt 12.9.2026:** Pin `erv` html-6 → kanonisch html-7 (#806, `56d33dae8`; Korrektur in der Gegenprüfung: **textgleich, Markup abweichend** — 224/224 Artikel-SHAs) · `QS-CURRENCY-KANON-FRISCHE` (#808, `datenhaltung:manifest` läuft unbedingt, Pin-Identitäts-Sonde) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
+
+## QS-MONITOR-ROT
+
+  - [x] **Nach Token-Tausch (David): Normen-Monitor per `workflow_dispatch` erneut fahren** — ✅ 20.9.2026: Lauf 35513728588, Curia-Job vollständig grün (Vollabgleich · Teilkaskade · Vorflug · «PR eröffnen» ⇒ #939), ebenso BS (#936) und Vernehmlassungen (#937, beide reiner Datums-Churn, geschlossen). Offen: Fedlex-Frische Mo 21.9.2026 04:43 UTC eröffnet ihren PR selbst? — nachsehen.
+
+## W2·17-UI-BEFUNDE
+
+  - [x] **Erledigt:** B6-N1 · B6-N2 · B7-N1 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+  - [x] **Erledigt:** B9 (12/12) · B10 (7/7) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026.
+  - [x] **Erledigt:** B15 (9/9) · B16 (8/8) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026.
+
+## W2·18-FEHLERBUCH
+
+  - [x] **Gliederungs-Pfeil klappt teils erst beim zweiten Klick** *(David 15.9.2026)* — ✅ 15.9.2026, PR #894 (`fb0ab0249`): Ast bleibt nach Sprung offen (`sprungAst.ts`), Klickziel 24 px, Marke; Rest `W2·5m-LESER-V3`. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (4).
+  - [x] **Plan-Buchungs-Commit wirft wartende Auto-Merge-PRs auf BEHIND** *(13.9.2026, #843)* — ✅ 19.9.2026, Merge-Queue (`strict` AUS). Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 19.9.2026.
+  - [x] **Reiterleiste-Wellen 1–3** — ✅ 13.9.2026, PR #842/#843/#844 (+ Nachzug R8-Sweep mobil); Specs Fahrplan §4.R/§4.R2/§4.R3. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (6).
+
+## QS-UI
+
+  - [x] **Erledigt:** Marken-Präfix im Leser · pfadgebundene Wächter — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+
+## QS-CODE-PROP
+
+  - [x] **Gefixt 12.9.2026, PR #820, Gegenprüfung ausstehend — nicht gemergt:** `nichtKonsolidiert`-Marker bei Staatsverträgen falsch-positiv (FZA) — Wurzel-Fix + Vollerhebung siehe [ROADMAP-CHRONIK.md](ROADMAP-CHRONIK.md).
+
+## QS-EFFIZIENZ
+
+  - [x] **ROADMAP-Deckel steht dauerhaft gelb** *(Messung 18.9.2026)* — ✅ 20.9.2026, Posten-Modell (`plan:posten`, `check:plan` 16): 140 Unterposten als eigene Dateien herausgelöst, ROADMAP −44 KB. Damit ist auch der Konflikt-Hotspot Nr. 1 der Merge-Queue entschärft (50 % Berührungsquote, 4 von 10 Queue-Rauswürfen `merge_conflict`). Befund im Wortlaut: 120,6 KB bei Session-Start, 132,1 KB nach zwei parallelen Sessions, 130,0 KB nach einer Teil-Überführung in die Chronik; Budget 120 KB. Seit dem Entscheid David 18.9.2026 (#905) blockiert der Deckel nicht mehr, **darum wächst er unbemerkt weiter** — die Warnung allein ändert kein Verhalten. Fällige Chronik-Überführung nach Skill `bauschritt` → [aufraeumen.md](.claude/skills/bauschritt/aufraeumen.md): erledigte Unterpunkte lebender Dach-Schritte auslagern (nicht nur `done`-Schritte), je mit Zeiger-Zeile. Als eigener Schritt fahren, nicht nebenbei — die Auslagerung muss `check:plan` und die `dep`-Auflösung intakt lassen.
+  - [x] **Hebel ROADMAP-Grösse: Befund-Prosa in die Fahrpläne** *(David 18.9.2026, vorgemerkt)* — ✅ 20.9.2026 ANDERS gelöst als vorgemerkt: nicht Auslagern in die Fahrpläne mit Kurzzeilen-Stub (das kostete die Sessions Mehrarbeit, Vorgabe David 20.9.2026), sondern eine Datei je Posten. Ursprünglicher Befund: 54 % der Datei sind offene Zeilen (64 KB; Erledigtes 0,4 KB): lange `[ ]`-Befundzeilen in den Detail-Fahrplan des Dachs, hier je Kurzzeile + `**Detail:**`-Zeiger (Skill `auftrag` Ziff. 1), danach automatisierbar. ROADMAP-Deckel seit 18.9. nur Warnung (`struktur-rotieren.py` NUR_WARNUNG). Daneben: Vault-Eintrag `lexmetrik-lektionen` — UI-/Code-Konventionen ins Reglement, dann archivieren.
+  - [x] **ROADMAP-Deckel bleibt knapp — nächste Umschichtung braucht einen `dep`-Umbau** *(Messung 14.9.2026)* — ✅ 15.9.2026 (PR #896, `d26dbbac6`): `check:plan` akzeptiert erledigte `dep`-Ziele aus der Chronik. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (4).
+  - [x] **Session-Notizen-Datei (Nebenfunde/Lehren überleben Kompaktierung und Übergabe)** — erledigt 15.9.2026, PR #891
+
+## QS-FREMDAGENTEN
+
+  - [x] **Erledigt:** Phase 0 · Pilot Jules · Diskrepanz-Finder — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+  - [x] **Erledigt:** Fremd-PR-Tor Kommentar-MULTIMENGE (PR #862) — ✅ 14.9.2026. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026.
+
+## QS-VERWENDEN
+
+  - [x] **Erledigt:** V1 · V1b · V2 · V3 · V4 · V5 · V6 · V8 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+
+## Umschichtung 20.9.2026 — `@queue` auf fünf Einträge
+
+**Entscheid David 20.9.2026** (Prozess-Messung, Leitlinie «Prozess verschlanken»): die `@queue`
+trägt nur noch die nächsten 3–5 Schritte. Messung: 11 der 22 Einträge standen 90 Tage unberührt,
+und nur 21 % der Bau-Trailer zeigten überhaupt auf einen Queue-Eintrag — die lange Liste war
+Absichtserklärung, keine Reihenfolge. Was nicht in der Queue steht, ordnet die Dokumentreihenfolge
+(Produkt-Felder vor `Betrieb & Prüfstrasse`); nachgefüllt wird, wenn der Kopf erledigt ist.
+
+Die Queue lautete bis dahin im Wortlaut (die ersten fünf bleiben stehen):
+
+`W2·27-BUND-FERTIG, W2·5l-NORMTEXT-B2, QS-KORPUS, W2·20-VERWEIS-SCHAERFE, W2·22-VERWEIS-FEDLEX,
+W2·5m-LESER-V3, QS-PERF, W2·5n-BUND-VOLL, W2·21-ZULIEFERER, W2·6d-VERFAHREN-RECHERCHE,
+W2·6d-PARLAMENT-ARTIKEL, W2·13-KANTONE-DATEN, W2·13-KANTONE-DRIFT, W3·12, W2·5g-ZEIT,
+W2·14-SIGNAL, W2·6, W2·6d-BOTSCHAFT-TEXT, W2·6d-BULLETIN-VOTEN, W2·6d-URSPRUNG,
+W2·6d-ENTSTEHUNGSNOTIZ, W2·6d-VERNEHMLASSUNG-DOKUMENTE`
+
+Die Phasen-Prosa im ROADMAP-Kopf (Phase 1 Bund → 2 Kantone → 3 Mehr als Fedlex) bleibt unverändert
+und trägt die grobe Reihenfolge weiter; die fünf verbliebenen Einträge sind der Kern von Phase 1.
+
+## Umschichtung 20.9.2026 (2) — zwei stille Schritte werden Ideen-Zeilen
+
+**Entscheid David 20.9.2026** («mach 5 und 6 wie empfohlen»), Verfahren nach Skill `auftrag`
+Ziff. 1 («Über der Plan-Kapazität → Ideen-Zeile ohne `@meta`») und `aufraeumen.md` Ziff. 3.
+Nachmessung: von den Phase-3-Schritten sind genau diese zwei echte Kandidaten — 90 Tage ohne
+Trailer- oder PR-Nennung, nicht in der `@queue`, kein `dep:` darauf, kein junger David-Auftrag.
+Sie verlieren ihr `@meta` und stehen fortan als Ideen-Zeilen am Ende des Feldes `rechtsprechung`;
+die Bau-Specs in den Fahrplänen bleiben unberührt und bleiben verlinkt.
+
+Wortlaut der beiden Blöcke, wie sie bis zum 20.9.2026 in `ROADMAP.md` standen:
+
+```
+- [ ] **Kantonaler Norm-Resolver → Kantonalnorm-Buckets (P0-Kern)** *(`W2·6-RESOLVER`)*
+  <!-- @meta id: W2·6-RESOLVER · status: ready · blocker: null · dep: [] · feld: rechtsprechung · fahrplan: fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md -->
+  `norm-index` füllt heute nur Bundesnorm-Buckets; der Resolver ist Voraussetzung der kantonalen
+  Stufe. Risikopfad-Dach der Rechtsprechungs-DATEN.
+  **Detail:** [FAHRPLAN-RECHTSPRECHUNG.md](fahrplaene/FAHRPLAN-RECHTSPRECHUNG.md) §13.
+
+- [ ] **Sachgebiet-Facette an der Norm↔Entscheid-Kante** *(`W2·7-VZUI-SACHGEBIET`)*
+  <!-- @meta id: W2·7-VZUI-SACHGEBIET · status: ready · blocker: null · dep: [] · feld: rechtsprechung · fahrplan: fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md -->
+  Deterministisch aus der amtlichen BGE-Bandnummer I–V (§2, keine Heuristik). Extraktion =
+  Risikopfad ⇒ Gegenprüfung.
+  **Detail:** [FAHRPLAN-VERZAHNUNG-UI.md](fahrplaene/FAHRPLAN-VERZAHNUNG-UI.md) §12.
+```
+
+**Der eine offene Posten wurde nicht geschlossen, sondern umgehängt.**
+`plan/posten/2026-09-20-richternamen-gegen-den-staatskalender-aufloesen.md` hing unter
+`W2·6-RESOLVER`; ein Posten unter einem toten Dach macht `check:plan` Regel 16 (a) rot. Statt ihn
+zu schliessen (das hätte einen offenen Befund unsichtbar gemacht) trägt er jetzt das Dach `W2·6`
+(«Konsultieren-Klingen», `feld: rechtsprechung`, `status: ready`) — dieselbe Fläche, derselbe
+Fahrplan-Strang, der Befund bleibt offen und zählbar. `W2·7-VZUI-SACHGEBIET` trug keinen Posten.
+
+**Offengelegte Abweichung (§7):** der ROADMAP-Text von `W2·6-RESOLVER` nannte sich selbst
+«Voraussetzung der kantonalen Stufe», und `fahrplaene/FAHRPLAN-ENTSCHEIDSUCHE-AUSBAU.md` §64 nennt
+ihn den «bauenden Schritt dieser Spec»; `fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md` §82 führt ihn als
+Andockpunkt. Ein maschineller `dep:`-Eintrag besteht nirgends, und kein lebender Schritt wartet auf
+ihn — die kantonale Rechtsprechungs-Stufe selbst liegt in Phase 3. Die Verweise zeigen weiterhin auf
+denselben Namen, der als Ideen-Zeile in der ROADMAP sichtbar bleibt; ein späteres Wiederöffnen
+heisst, die `@meta`-Zeile oben wörtlich zurückzustellen.
+

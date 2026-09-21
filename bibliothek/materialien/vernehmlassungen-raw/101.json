@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/105/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/44/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Verfassungsbestimmung Hooliganismus"
+      "value": "Einführung einer Regulierungsbremse (Änderung von Art. 159 Abs. 3 der Bundesverfassung und Änderung des Parlamentsgesetzes)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Disposition constitutionnelle sur le hooliganisme"
+      "value": "Mise en place d’un frein à la réglementation (Modification de l’art. 159, al. 3, de la Constitution fédérale et modification de la loi sur le Parlement)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Disposto costituzionale tifoseria violenta"
+      "value": "Introduzione di un freno alla regolamentazione (modifica dell’art. 159 cpv. 3 della Costituzione federale e modifica della legge sul Parlamento)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-01-17"
+      "value": "2021-04-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-04-20"
+      "value": "2021-08-18"
     }
   },
   {
@@ -45,7 +45,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/16/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/59/cons_1"
     },
     "status": {
       "type": "uri",
@@ -54,300 +54,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung von Artikel 86 der Bundesverfassung und Schaffung einer Spezialfinanzierung Luftverkehr "
+      "value": "Pa.Iv. Aktives Stimm- und Wahlrecht für 16-Jährige"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de l'article 86 de la Constitution fédérale et création d'un financement spécial en faveur du transport aérien"
+      "value": "Iv.pa. Le droit de vote dès 16 ans"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica dell'articolo 86 della Costituzione federale e creazione di un sistema di finanziamento speciale del trasporto aereo"
+      "value": "Iv.pa. Diritto di voto e di elezione attivo per i sedicenni"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-10-18"
+      "value": "2022-09-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-01-26"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/123/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung von Artikel 119 BV und des Fortpflanzungsmedizingesetzes (Zulassung der Präimplantationsdiagnostik)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l'article 119 de la Constitution et de la loi fédérale sur la procréation médicalement assistée (admission du diagnostic préimplantatoire)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell'articolo 119 Cost. e della legge sulla medicina della procreazione (ammissione della diagnosi preimpianto)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-06-30"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/135/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Pa.Iv. 07.402 Verfassungsgrundlage für ein Bundesgesetz über die Kinder- und Jugendförderung sowie über den Kinder- und Jugendschutz"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Iv.pa. 07.402 Loi fédérale sur l'encouragement et la protection des enfants et des jeunes. Base constitutionnelle"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iv.pa. 07.402 Base costituzionale per una legge federale sul promovimento dell'infanzia e dei giovani nonché sulla loro protezione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-11-12"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-02-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/89/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Vorlage zur Schaffung eines Nationalstrassen- und Agglomerationsverkehrs-Fonds (NAF); zur Schliessung der Finanzierungslücke; zum Strategischen Entwicklungsprogramm Nationalstrasse (STEP)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Projet de création d'un fonds pour les routes nationales et le trafic d'agglomération (FORTA), de comblement du déficit prévisible et de mise en place du programme de développement stratégique des routes nationales (PRODES)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Progetto per la creazione del fondo per le strade nazionali e il traffico d'agglomerato (FOSTRA), il risanamento finanziario e il Programma di sviluppo strategico delle strade nazionali (PROSTRA SN)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-02-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-06-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6016/44/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesbeschluss über die Verankerung des Bankkundengeheimnisses in der Bundesverfassung (Gegenentwurf zur Volksinitiative «Ja zum Schutz der Privatsphäre»)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Arrêté fédéral concernant l'inscription du secret bancaire dans la Constitution \r\n(Contre-projet à l'initiative populaire «Oui à la protection de la sphère privée»)\r\n"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Decreto federale concernente l'iscrizione del segreto bancario nella Costituzione federale (controprogetto diretto all'iniziativa popolare «Sì alla protezione della sfera privata»)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-06-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-09-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/56/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Obligatorisches Referendum für völkerrechtliche Verträge mit verfassungsmässigem Charakter. Änderung der Bundesverfassung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Référendum obligatoire pour les traités internationaux ayant un caractère constitutionnel. Modification de la Constitution fédérale"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Referendum obbligatorio per i trattati internazionali a carattere costituzionale. Modifica della Costituzione federale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-08-15"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-11-16"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/42/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Gegenentwurf des Bundesrates zur Volksinitiative «Keine Massentierhaltung in der Schweiz (Massentierhaltungsinitiative)»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Contre-projet du Conseil fédéral à l'initiative populaire «Non à l'élevage intensif en Suisse (initiative sur l'élevage intensif)»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Controprogetto diretto del Consiglio federale all'iniziativa popolare «No all'allevamento intensivo in Svizzera (Iniziativa sull'allevamento intensivo)»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-08-12"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-11-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/23/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesbeschluss über die Finanzierung der Rüstungsausgaben der Armee durch Erhöhung der Mehrwertsteuer"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Arrêté fédéral sur le financement de dépenses d’armement de l’armée au moyen d’un relèvement de la taxe sur la valeur ajoutée"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Decreto federale concernente il finanziamento di uscite per l’armamento dell’esercito tramite un aumento dell’imposta sul valore aggiunto"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-03-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-30"
+      "value": "2022-12-16"
     }
   },
   {
@@ -379,14 +106,53 @@
       "value": "Finanziamento dei danni agli edifici in caso di terremoti"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-12-08"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-03-22"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/44/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Direkter Gegenentwurf zur Volksinitiative «Bargeld ist Freiheit»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Contre-projet direct à l’initiative populaire «L’argent liquide, c’est la liberté»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Controprogetto diretto all’iniziativa popolare «Il denaro contante è libertà»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-08-30"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-12-21"
     }
   },
   {
@@ -418,14 +184,365 @@
       "value": "Decreto federale concernente l’imposta immobiliare cantonale sulle abitazioni secondarie"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-11-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-03-04"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/27/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Abgabe auf der Fahrleistung von Elektrofahrzeugen / Steuer auf dem Ladestrom für Elektrofahrzeuge"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Redevance liée à la prestation kilométrique des véhicules électriques / Impôt sur le courant de recharge pour les véhicules électriques"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Tassa sul chilometraggio dei veicoli elettrici / Imposta sulla corrente di ricarica dei veicoli elettrici"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-09-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-01-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/49/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision der Bundesverfassung und Änderung des Bundesgesetzes über die polizeilichen Informationssysteme des Bundes"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de la Constitution et modification de la loi fédérale sur les systèmes d’information de police de la Confédération"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale della Costituzione federale e modifica della legge federale sui sistemi d’informazione di polizia della Confederazione"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-02-18"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-26"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/81/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Direkter Gegenentwurf zur Volksinitiative «Wahrung der schweizerischen Neutralität (Neutralitätsinitiative)»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Contre-projet direct à l’initiative populaire « Sauvegarder la neutralité suisse (initiative sur la neutralité) »"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Controprogetto diretto all’iniziativa popolare «Salvaguardia della neutralità svizzera (Iniziativa sulla neutralità)»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-09-23"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-12-23"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/84/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Einführung eines obligatorischen Orientierungstags für Schweizerinnen: Teilrevision der Bundesverfassung sowie der dazugehörigen Gesetzesbestimmungen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Instauration d’une journée d’information obligatoire pour les Suissesses : révision partielle de la Constitution et des dispositions légales associées"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Introduzione di una giornata informativa obbligatoria per le Svizzere: revisione parziale della Costituzione federale nonché delle relative disposizioni di legge"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-11-12"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-02-28"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/23/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesbeschluss über die Finanzierung der Rüstungsausgaben der Armee durch Erhöhung der Mehrwertsteuer"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Arrêté fédéral sur le financement de dépenses d’armement de l’armée au moyen d’un relèvement de la taxe sur la valeur ajoutée"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Decreto federale concernente il finanziamento di uscite per l’armamento dell’esercito tramite un aumento dell’imposta sul valore aggiunto"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-03-06"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/45/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHV 2030)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de la loi fédérale sur l’assurance-vieillesse et survivants (AVS 2030)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione della legge federale sull’assicurazione per la vecchiaia e per i superstiti (AVS 2030)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-11"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/15/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Beitritt der Schweiz zur Organisation der Vereinten Nationen (UNO)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Adhésion de la Suisse à l'Organisation des Nations Unies (ONU)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Adesione della Svizzera all'Organizzazione delle Nazioni Unite (ONU)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-06-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-10-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/18/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verwendung von 800 Tonnen Gold der Nationalbank"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Utilisation de 800 tonnes d'or de la Banque nationale"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Utilizzazione di 800 tonnellate di oro della Banca nazionale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-06-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-10-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/105/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verfassungsbestimmung Hooliganismus"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Disposition constitutionnelle sur le hooliganisme"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Disposto costituzionale tifoseria violenta"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-01-17"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-04-20"
     }
   },
   {
@@ -464,7 +581,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/44/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/16/cons_1"
     },
     "status": {
       "type": "uri",
@@ -473,105 +590,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Einführung einer Regulierungsbremse (Änderung von Art. 159 Abs. 3 der Bundesverfassung und Änderung des Parlamentsgesetzes)"
+      "value": "Änderung von Artikel 86 der Bundesverfassung und Schaffung einer Spezialfinanzierung Luftverkehr "
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Mise en place d’un frein à la réglementation (Modification de l’art. 159, al. 3, de la Constitution fédérale et modification de la loi sur le Parlement)"
+      "value": "Modification de l'article 86 de la Constitution fédérale et création d'un financement spécial en faveur du transport aérien"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Introduzione di un freno alla regolamentazione (modifica dell’art. 159 cpv. 3 della Costituzione federale e modifica della legge sul Parlamento)"
+      "value": "Modifica dell'articolo 86 della Costituzione federale e creazione di un sistema di finanziamento speciale del trasporto aereo"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-04-28"
+      "value": "2006-10-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-08-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/15/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Beitritt der Schweiz zur Organisation der Vereinten Nationen (UNO)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Adhésion de la Suisse à l'Organisation des Nations Unies (ONU)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Adesione della Svizzera all'Organizzazione delle Nazioni Unite (ONU)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-06-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-10-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/18/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verwendung von 800 Tonnen Gold der Nationalbank"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Utilisation de 800 tonnes d'or de la Banque nationale"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Utilizzazione di 800 tonnellate di oro della Banca nazionale"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-06-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-10-31"
+      "value": "2007-01-26"
     }
   },
   {
@@ -603,12 +642,12 @@
       "value": "Iniziativa parlamentare. Divieto dei pitbull in Svizzera (Consultazione delle Commissioni della scienza, dell'educazione e della cultura CSEC)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-06-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-09-15"
     }
@@ -642,12 +681,12 @@
       "value": "06.458 Iniziativa parlamentare. Rinuncia all'introduzione dell'iniziativa popolare generica"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-09-03"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2007-11-30"
     }
@@ -681,14 +720,53 @@
       "value": "08.432 n Iniziativa parlamentare. La Svizzera deve riconoscere i propri figli"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-11-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-02-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6010/123/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung von Artikel 119 BV und des Fortpflanzungsmedizingesetzes (Zulassung der Präimplantationsdiagnostik)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l'article 119 de la Constitution et de la loi fédérale sur la procréation médicalement assistée (admission du diagnostic préimplantatoire)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell'articolo 119 Cost. e della legge sulla medicina della procreazione (ammissione della diagnosi preimpianto)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-06-30"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-09-30"
     }
   },
   {
@@ -720,12 +798,12 @@
       "value": "Modifica della Costituzione federale, del Codice penale svizzero, del Codice penale militare e del diritto penale minorile (divieto di attività, di contatto e di accesso e allontanamento)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-02-23"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-05-31"
     }
@@ -759,14 +837,53 @@
       "value": "05.445 Iniziativa parlamentare. Giurisdizione costituzionale - 07.476 Iniziativa parlamentare. Costituzione federale determinante per le autorità incaricate dellʼapplicazione del diritto"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-02-21"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-05-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/135/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Pa.Iv. 07.402 Verfassungsgrundlage für ein Bundesgesetz über die Kinder- und Jugendförderung sowie über den Kinder- und Jugendschutz"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Iv.pa. 07.402 Loi fédérale sur l'encouragement et la protection des enfants et des jeunes. Base constitutionnelle"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iv.pa. 07.402 Base costituzionale per una legge federale sul promovimento dell'infanzia e dei giovani nonché sulla loro protezione"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-11-12"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-02-22"
     }
   },
   {
@@ -798,14 +915,53 @@
       "value": "Misure tese a migliorare la compatibilità del diritto internazionale con il diritto nazionale (revisione della Costituzione federale e della legge sui diritti politici)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-03-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-06-28"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/89/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Vorlage zur Schaffung eines Nationalstrassen- und Agglomerationsverkehrs-Fonds (NAF); zur Schliessung der Finanzierungslücke; zum Strategischen Entwicklungsprogramm Nationalstrasse (STEP)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Projet de création d'un fonds pour les routes nationales et le trafic d'agglomération (FORTA), de comblement du déficit prévisible et de mise en place du programme de développement stratégique des routes nationales (PRODES)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Progetto per la creazione del fondo per le strade nazionali e il traffico d'agglomerato (FOSTRA), il risanamento finanziario e il Programma di sviluppo strategico delle strade nazionali (PROSTRA SN)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-02-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-06-20"
     }
   },
   {
@@ -837,12 +993,12 @@
       "value": "Controprogetto diretto all'iniziativa popolare «Per la sicurezza alimentare»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-01-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-04-14"
     }
@@ -876,12 +1032,12 @@
       "value": "13.418/13.419/13.420/13.421/13.422 n Iv.pa. Equiparare le unioni domestiche registrate e il matrimonio nella procedura di naturalizzazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-03-30"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-07-06"
     }
@@ -915,12 +1071,12 @@
       "value": "Decreto federale concernente il nuovo ordinamento finanziario 2021 (NOF 2021)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-06-24"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-10-14"
     }
@@ -954,14 +1110,53 @@
       "value": "13.443 n Iv.pa. CIP-CN. Equa rappresentanza delle componenti linguistiche in un Consiglio federale composto di nove membri"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-03-27"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-07-03"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "101"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6016/44/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesbeschluss über die Verankerung des Bankkundengeheimnisses in der Bundesverfassung (Gegenentwurf zur Volksinitiative «Ja zum Schutz der Privatsphäre»)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Arrêté fédéral concernant l'inscription du secret bancaire dans la Constitution \r\n(Contre-projet à l'initiative populaire «Oui à la protection de la sphère privée»)\r\n"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Decreto federale concernente l'iscrizione del segreto bancario nella Costituzione federale (controprogetto diretto all'iniziativa popolare «Sì alla protezione della sfera privata»)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-06-06"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-09-05"
     }
   },
   {
@@ -993,12 +1188,12 @@
       "value": "Controprogetto diretto all'iniziativa popolare «Fuori dal vicolo cieco! Rinunciamo alla reintroduzione di contingenti d'immigrazione»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-02-01"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-03-01"
     }
@@ -1032,12 +1227,12 @@
       "value": "Ripristino della sovranità cantonale su questioni elettorali. Modifica della Costituzione federale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-06-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-10-13"
     }
@@ -1049,7 +1244,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/84/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/56/cons_1"
     },
     "status": {
       "type": "uri",
@@ -1058,27 +1253,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Einführung eines obligatorischen Orientierungstags für Schweizerinnen: Teilrevision der Bundesverfassung sowie der dazugehörigen Gesetzesbestimmungen"
+      "value": "Obligatorisches Referendum für völkerrechtliche Verträge mit verfassungsmässigem Charakter. Änderung der Bundesverfassung"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Instauration d’une journée d’information obligatoire pour les Suissesses : révision partielle de la Constitution et des dispositions légales associées"
+      "value": "Référendum obligatoire pour les traités internationaux ayant un caractère constitutionnel. Modification de la Constitution fédérale"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Introduzione di una giornata informativa obbligatoria per le Svizzere: revisione parziale della Costituzione federale nonché delle relative disposizioni di legge"
+      "value": "Referendum obbligatorio per i trattati internazionali a carattere costituzionale. Modifica della Costituzione federale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-11-12"
+      "value": "2018-08-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-02-28"
+      "value": "2018-11-16"
     }
   },
   {
@@ -1088,46 +1283,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/81/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Direkter Gegenentwurf zur Volksinitiative «Wahrung der schweizerischen Neutralität (Neutralitätsinitiative)»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Contre-projet direct à l’initiative populaire « Sauvegarder la neutralité suisse (initiative sur la neutralité) »"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Controprogetto diretto all’iniziativa popolare «Salvaguardia della neutralità svizzera (Iniziativa sulla neutralità)»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-09-23"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-12-23"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/27/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6020/42/cons_1"
     },
     "status": {
       "type": "uri",
@@ -1136,183 +1292,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Abgabe auf der Fahrleistung von Elektrofahrzeugen / Steuer auf dem Ladestrom für Elektrofahrzeuge"
+      "value": "Gegenentwurf des Bundesrates zur Volksinitiative «Keine Massentierhaltung in der Schweiz (Massentierhaltungsinitiative)»"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Redevance liée à la prestation kilométrique des véhicules électriques / Impôt sur le courant de recharge pour les véhicules électriques"
+      "value": "Contre-projet du Conseil fédéral à l'initiative populaire «Non à l'élevage intensif en Suisse (initiative sur l'élevage intensif)»"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Tassa sul chilometraggio dei veicoli elettrici / Imposta sulla corrente di ricarica dei veicoli elettrici"
+      "value": "Controprogetto diretto del Consiglio federale all'iniziativa popolare «No all'allevamento intensivo in Svizzera (Iniziativa sull'allevamento intensivo)»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-09-26"
+      "value": "2020-08-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-01-09"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/44/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Direkter Gegenentwurf zur Volksinitiative «Bargeld ist Freiheit»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Contre-projet direct à l’initiative populaire «L’argent liquide, c’est la liberté»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Controprogetto diretto all’iniziativa popolare «Il denaro contante è libertà»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-08-30"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-12-21"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/59/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Pa.Iv. Aktives Stimm- und Wahlrecht für 16-Jährige"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Iv.pa. Le droit de vote dès 16 ans"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iv.pa. Diritto di voto e di elezione attivo per i sedicenni"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-09-12"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-12-16"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/49/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision der Bundesverfassung und Änderung des Bundesgesetzes über die polizeilichen Informationssysteme des Bundes"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de la Constitution et modification de la loi fédérale sur les systèmes d’information de police de la Confédération"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della Costituzione federale e modifica della legge federale sui sistemi d’informazione di polizia della Confederazione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-02-18"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-26"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/45/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (AHV 2030)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de la loi fédérale sur l’assurance-vieillesse et survivants (AVS 2030)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione della legge federale sull’assicurazione per la vecchiaia e per i superstiti (AVS 2030)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-11"
+      "value": "2020-11-20"
     }
   }
 ]

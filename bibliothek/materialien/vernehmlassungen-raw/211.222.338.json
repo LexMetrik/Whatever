@@ -28,12 +28,12 @@
       "value": "Ordinanza sull'assistenza extrafamiliare di minori (OAssM) e Ordinanza sull'adozione (OAdoz)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-06-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-09-15"
     }
@@ -67,12 +67,12 @@
       "value": "Ordinanza sull'accudimento extrafamiliare di minori (Ordinanza sull'accudimento di minori, OAMi)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-09-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-12-20"
     }

@@ -211,6 +211,49 @@
 >   Extraktions-Anteile sind Risikopfad ⇒ `QS-GP` + golden byte-gleich.
 >   **Detail:** diese Datei §2. Trailer `Roadmap: W2·13-KANTONE`.
 
+### Restposten aus ROADMAP.md *(verlagert 20.9.2026)*
+
+Herkunft: `ROADMAP.md`, Dach-Schritte `W2·13-KANTONE` (Darstellung) und
+`W2·13-KANTONE-DATEN` (Daten/Extraktion). Anlass: der 120-KB-Deckel des Plans, Entscheid
+David 20.9.2026 — in `ROADMAP.md` bleiben Ziel, Auflagen, Status und der Zeiger auf diesen
+§2, die Unterpunkt-Listen stehen ab hier. **Wortlaut byte-genau, nichts zusammengefasst.**
+In `ROADMAP.md` bewusst geblieben sind die vier `K-15`/`K-16`-Nachzüge (fachliche Abnahme
+bzw. Entscheid David, §7) sowie `ZH-Programm` und `ZH-Tranche` (Auftrag David 31.8.2026,
+Stufen-Status `[~]`).
+
+**A · aus `W2·13-KANTONE` (Darstellung & Suche):**
+
+  - [x] **Erledigt:** K-1 · K-2 · K-3 · K-5 · K-11 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+  - [ ] **des/der-Guard Bund passus-tolerant** *(K-5-Ausläufer, Messung 31.8.2026)* — hätte 371 Self-Links in 226 **Bundes**-Erlassen entfernt ⇒ fachliche Änderung mit eigenem Schritt (§6.3), nicht golden-neutral; Caveat: die «über»-Alternative erzeugt echte Self-Verweise (VTS art_222j), 7 von 8 Stichproben der Kandidaten waren falsch.
+  - [ ] **Kanton-Lücken-Hinweis auch im prerenderten HTML** *(Auflage F4 Gegenprüfung PR #616, 2.9.2026)* — der Hinweis «Nicht vollständig erfasst» erscheint erst nach Hydration; `scripts/prerender.ts` (`erlassVolltextHtml`) kennt den Sidecar `kanton-luecken.json` nicht ⇒ §8-Offenlegung fehlt für Crawler/No-JS, und `check:perf-lighthouse` misst nur `/gesetze/bund/OR` (CLS des Kanton-Kopfs unbewacht). Zwei Renderpfade, einer offenbart (§5).
+  - [ ] **«§ N» in Fremdgesetz-Chapeau-Items verlinken** *(K-5-Lücke, 31.8.2026)* — `ArtikelBody` baut `fremdIntern` ohne `paragrafDesigniert`; dort bleibt «§ N» unverlinkt (konservativ, §1-konform — Nachzug klein).
+
+**B · aus `W2·13-KANTONE-DATEN` (Daten & Extraktion):**
+
+  - [ ] **K-4 · Einzel-Nachzüge Stand/Currency** *(F14/F9 + SO-Lektion)* — Invariante «stand ≤ Generierungsdatum» ins Tor `check:normtext`. §1-A.
+  - [ ] **K-6 · Quellen-Hygiene: lexfind → amtlich + Dedupe** *(F7/F8/F15/F11/F25-Keys/F22)* — pro Kanton eine Tranche; K-6a vor K-6d. §1-A.
+  - [ ] **K-7 · PDF-Werkstatt VD/SZ/ZH + Range-Platzhalter** — Teil a ist das **harte Dehyphenations-Gate**; ohne es bleibt jeder FR/VS/AR-PDF-Nachzug gesperrt. §1-A. **Teil b (15.9.2026): PDF-Kern** — ein Leser aus `adapter-pdf.ts` + `adapter-zh-pdf.ts` (Golden byte-gleich), Fehlerraten-Messgeschirr, pdfjs↔PyMuPDF-Vergleich; Vorbedingung `W2·6d-BOTSCHAFT-TEXT` B. Detail: Fahrplan Materialien §12.3 Etappe 1.
+  - [ ] **K-8 · xhtml-`<p>`-Strukturerhalt** *(F21)* — Schema nur additiv, Golden-Diff korpusweit offline. §1-A.
+  - [ ] **K-9 · Erlass→Werkzeug-Brücke Kanton** *(F38)* — Build-Zeit-Inversion der Tarif-`quelleUrl`s + Konsistenz-Tor. §1-A.
+  - [ ] **K-10 · AR-Sidecar-Batch** *(F30-AR)* — nur amtliche Überschriften, **Einzel-Erlass-POC vor dem Batch**. §1-A.
+  - [ ] **K-12 · Reports & kuratierte Listen** — lesend/planend; K-12a-AR-Anteile erst nach dem F20-Gate aus K-7. §1-A.
+  - [ ] **K-13 · Systematik-Bäume 7 Kantone** *(F6≡F43)* — ZH ✅ 31.8.2026 (Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 6.9.2026). Offen: GE/VD/TI/SZ/NE/JU (+GL-Index-Ordinalzahlen, +ZH-Band-Zweig); Quell-Erhebung je Kanton empirisch und browserlos. §1-A.
+        *Nachtrag 31.8.2026 (N0b, an den Merge-Stand 1.9.2026 angepasst): die f… — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 8.9.2026 (Landung).*
+  - [x] **Erledigt:** ZH-Stufe 2 · 2b · 2c · Kern-Erlasse · ZH-4e · K-14 · `inkraftSeit` (geprüft und abgelehnt) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 7.9.2026 (2).
+  - [ ] **R1-Restposten** *(Auflage GP PR #629)* — stille Randtitel-Auslassung ZH-615 §§ 1–2; 14 Randtitel scheitern an der Marker-Zählweise (Art. vs. §). Fix an der Snapshot-Zählweise, nicht am Sidecar. §1-A. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026.
+  - [ ] **ZH-4d · Gliederung + Übergangsbestimmungen** *(Befund 31.8.2026)* — offen: Marginalien-/Randnoten-Ebene (braucht den Tag-Leser) und die Aufnahme von Übergangs-/Schlussbestimmungen samt PBG-Anhang als eigener Eintragstyp; Lücke in `kanton-luecken.json` ausgewiesen (§8). Vor ZH-Stufe 3. §1-A. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026.
+  - [ ] **Systematik-Upstream-Drift AG/BS** *(Befund 31.8.2026, bewusst nicht mitgenommen)* — ein frischer `kanton-systematik-run.ts` zeigt: AG verliert Knoten 401, BS gewinnt 731/788/RiE#731. Eigener Schritt, damit der ZH-Diff sortenrein bleibt. §1-A.
+  - [ ] **`check:paritaet` ist gegen Datei-LÖSCHUNG blind** *(Nebenfund ZH-Fix-Runde 3, 31.8.2026 — bewusst NICHT hier gefixt, fremde Baufläche `scripts/datenhaltung/**`)* — Befund-Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (5); Bau-Einheit offen, Zeiger genügt zur Steuerung.
+  - [x] **Erledigt 12.9.2026:** K-15 BE-Sprengel (#810, `064d191f6`) · K-16 BS-Materialien (#799, `c83501304`) · Deckel-Reserven R12b (#802, `c0acd4557`) — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 12.9.2026 bzw. 14.9.2026 (6). Die vier Nachzüge (Abnahmen, UI-Verdrahtung, CC-BY-Nennung) stehen unverändert offen.
+  - [ ] **PDF-Pfad liest Ziffern-Tarife falsch** *(19B-Nachtrag 13.8.)* — SG-3849-Wurzel: generisches «Art. N»-Muster greift auch in Querverweisen; Regel «Nr. XX.YY am Zeilenanfang» nötig. §1-A.
+  - [ ] **Fassungs-Drift PDF-erfasster Snapshots unbemerkt** *(§17-Wurzel-Fix)* — `fassungsToken` ändert sich nicht bei neuer Portal-Fassung (SG-2808 hängt an 2808/2012, amtlich gilt 3863). Nötig: Tor `current_version.id` ↔ Snapshot. §1-A.
+  - [ ] **Kern-Kategorie als Registerfeld statt Titel-Muster** *(§17-Wurzel-Fix, Gegenprüfung 31.8.2026 Befunde 1+2)* — heute entscheidet die zufällige Wortzusammensetzung («Handänderungs**steuergesetz**» trifft, «Gesetz über die Handänderungssteuer» nicht; 15 Erlasse tragen die Sache nur im Kürzel, Bestandsmuster lesen nur den Titel). Deklariertes Feld in der Pipeline-Quelle, Muster-Raten zurückbauen; dabei die David-Frage «Handänderungs-/Grundbuchabgaben = Kernklasse?» mitentscheiden lassen.
+        *Teil-eingelöst 31.8.2026 (N0b): das deklarierte Feld existiert jetzt —… — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 8.9.2026 (Landung).*
+  - [ ] **SG-Langform-Erstzitate heben Recall der Zitat-Brücke** *(GP-N0-Hinweis 31.8.2026)* — 802/7790 SG-Nummern-Zitate mit vorhandenem Snapshot bleiben unaufgelöst (10,3 %; Muster: Langform-Erstzitierung «…gesetz, GOG; SG 154.100», BS-154.100 allein 396×) — Wurzel kanton-norm-resolver.ts (Altbestand); SG-Nummern-Fenster über die Langform ⇒ ~+800 Paare. Dazu: normkeys-kanton.json beim ERSTEN UI-Konsum in DATEN_BUDGET eintragen.
+  - [ ] **Manifest-Sprache ehrlich + Dubletten** *(Befund Bau W2·13-KANTONE 31.8.2026)* — 37 fr/it-Erlasse als `sprache:'de'` deklariert (nur 2 korrekt ≠ de, §8); mehrere Erlasse doppelt im Manifest (FR-261.16-Notariatstarif, JU-Décret émoluments, TI-Legge tariffa giudiziaria, VS-Notariats-Règlement). Pipeline-Quelle fixen, nie die Projektion (§5).
+  - [ ] **lexfind-API-Vertrag gebrochen** *(Inventar-Nebenfund 31.8.2026)* — `POST /api/fe/de/fulltext-search` weist das im Repo dokumentierte Schema (23.6.2026) mit HTTP 400 «Obsolete keys» ab; neues Schema im ZH-Dossier dokumentiert. Betrifft `scripts/normtext/lexfind-discovery.ts` (andere Kantone; ZH braucht lexfind nicht mehr). Nachziehen, bevor der nächste lexfind-Discovery-Lauf ansteht.
+
+
 
 ---
 

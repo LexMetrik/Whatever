@@ -6,6 +6,74 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/31/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "21.470 n Pa. Iv. Roduit. Die Nichteinhaltung der obligatorischen Arbeitsbedingungen stellt einen qualifizierten unlauteren Wettbewerb dar und muss strafrechtlich verfolgt werden"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "21.470 n Iv. pa. Roduit. La violation des conditions de travail obligatoires constitutive de concurrence déloyale qualifiée doit être poursuivie pénalement"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "21.470 n Iv. Pa. Roduit. La violazione delle condizioni di lavoro obbligatorie costituisce una concorrenza sleale qualificata e deve essere perseguita penalmente"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-04-30"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-08-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "241"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/77/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes gegen den unlauteren Wettbewerb (UWG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale contre la concurrence déloyale (LCD)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale contro la concorrenza sleale (LCSI)"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "241"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/40/cons_1"
     },
     "status": {
@@ -28,12 +96,12 @@
       "value": "Modifica della legge federale contro la concorrenza sleale (LCSl)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2006-05-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2006-08-18"
     }
@@ -67,12 +135,12 @@
       "value": "Legge federale sulla metrologia"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-04-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-07-31"
     }
@@ -106,12 +174,12 @@
       "value": "Revisione delle disposizioni penali in materia di corruzione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-05-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2013-09-05"
     }
@@ -145,53 +213,14 @@
       "value": "07.500 Iniziativa parlamentare. Abrogazione delle disposizioni concernenti il contratto di vendita a rate anticipate"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-09-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-12-21"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "241"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/31/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "21.470 n Pa. Iv. Roduit. Die Nichteinhaltung der obligatorischen Arbeitsbedingungen stellt einen qualifizierten unlauteren Wettbewerb dar und muss strafrechtlich verfolgt werden"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "21.470 n Iv. pa. Roduit. La violation des conditions de travail obligatoires constitutive de concurrence déloyale qualifiée doit être poursuivie pénalement"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "21.470 n Iv. Pa. Roduit. La violazione delle condizioni di lavoro obbligatorie costituisce una concorrenza sleale qualificata e deve essere perseguita penalmente"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-04-30"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-08-20"
     }
   },
   {
@@ -223,43 +252,14 @@
       "value": "Modifica della legge federale contro la concorrenza sleale (LCSl)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-11-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-02-26"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "241"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/77/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes gegen den unlauteren Wettbewerb (UWG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale contre la concurrence déloyale (LCD)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale contro la concorrenza sleale (LCSI)"
     }
   }
 ]

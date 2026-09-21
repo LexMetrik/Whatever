@@ -28,12 +28,12 @@
       "value": "Modifica dell’ordinanza sui fondi propri (Basilea III)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-07-04"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-10-25"
     }
@@ -45,7 +45,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/84/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/45/cons_1"
     },
     "status": {
       "type": "uri",
@@ -54,27 +54,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Revision der Eigenmittelverordnung (ERV; Basel III)"
+      "value": "Änderung der Eigenmittelverordnung (Umsetzung der Massnahmen aus dem Bericht des Bundesrates zur Bankenstabilität und dem Bericht der parlamentarischen Untersuchungskommission)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de l'Ordonnance sur les fonds propres (OFR; Bâle III)"
+      "value": "Modification de l’ordonnance sur les fonds propres (exécution des mesures du rapport du Conseil fédéral sur la stabilité des banques et du rapport de la commission d’enquête parlementaire)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica dell'Ordinanza sui fondi propri (OFoP; Basilea III)"
+      "value": "Modifica dell’ordinanza sui fondi propri (attuazione delle misure previste dal rapporto del Consiglio federale sulla stabilità delle banche e dal rapporto della Commissione parlamentare d’inchiesta)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-10-24"
+      "value": "2025-06-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-01-16"
+      "value": "2025-09-29"
     }
   },
   {
@@ -84,7 +84,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/20/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/61/cons_1"
     },
     "status": {
       "type": "uri",
@@ -93,27 +93,56 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Anpassung der Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (ERV)"
+      "value": "Änderung Bankengesetz und Eigenmittelverordnung (Eigenmittelunterlegung ausländischer Beteiligungen im Stammhaus von systemrelevanten Banken)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de l'ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (OFR)"
+      "value": "Modification de la loi sur les banques et de l’ordonnance sur les fonds propres (couverture des participations étrangères au moyen de fonds propres de la banque mère des banques d’importance systémique)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Adeguamento dell'ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (OFoP)"
+      "value": "Modifica della legge sulle banche e dell'ordinanza sui fondi propri (copertura con fondi propri per partecipazioni estere nella casa madre di banche di rilevanza sistemica)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-04-05"
+      "value": "2025-09-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-07-12"
+      "value": "2026-01-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "952.03"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/99/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung der Eigenmittelverordnung (Umsetzung der Massnahmen aus dem Bericht des Bundesrates zur Bankenstabilität und aus dem Bericht der parlamentarischen Untersuchungskommission)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l’ordonnance sur les fonds propres (exécution des mesures du rapport du Conseil fédéral sur la stabilité des banques et du rapport de la Commission d’enquête parlementaire)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell’ordinanza sui fondi propri (attuazione delle misure previste dal rapporto del Consiglio federale sulla stabilità delle banche e dal rapporto della Commissione parlamentare d’inchiesta)"
     }
   },
   {
@@ -145,12 +174,12 @@
       "value": "Modifica dell'Ordinanza sui fondi propri (OFoP; ponderazione del rischio per gli immobili d'abitazione)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-11-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-01-16"
     }
@@ -184,12 +213,12 @@
       "value": "Modifica dell'Ordinanza sui fondi propri (OFoP; ammortizzatore anticiclico)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-11-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-01-16"
     }
@@ -223,12 +252,51 @@
       "value": "Modifiche dell'ordinanza sulle banche e l'ordinanza sui fondi propri (too big to fail)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2011-12-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-01-16"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "952.03"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/84/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision der Eigenmittelverordnung (ERV; Basel III)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de l'Ordonnance sur les fonds propres (OFR; Bâle III)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica dell'Ordinanza sui fondi propri (OFoP; Basilea III)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-10-24"
+    },
+    "ende": {
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-01-16"
     }
@@ -262,12 +330,12 @@
       "value": "Modifiche dell'ordinanza sui fondi propri (OFoP) e dell'ordinanza sulle banche (OBCR)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-12-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-02-15"
     }
@@ -301,12 +369,12 @@
       "value": "Modifica dell'ordinanza sui fondi propri (copertura con fondi propri applicabile a derivati e quote di fondi)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-06-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-09-15"
     }
@@ -340,12 +408,12 @@
       "value": "Modifica dell'ordinanza sui fondi propri (leverage ratio e ripartizione dei rischi)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-04-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-07-14"
     }
@@ -379,12 +447,12 @@
       "value": "Modifica dell'ordinanza sui fondi propri (capitale «gone concern», deduzione per partecipazioni e altri adeguamenti)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-02-23"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-05-30"
     }
@@ -396,7 +464,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/61/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/20/cons_1"
     },
     "status": {
       "type": "uri",
@@ -405,95 +473,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderung Bankengesetz und Eigenmittelverordnung (Eigenmittelunterlegung ausländischer Beteiligungen im Stammhaus von systemrelevanten Banken)"
+      "value": "Anpassung der Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (ERV)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modification de la loi sur les banques et de l’ordonnance sur les fonds propres (couverture des participations étrangères au moyen de fonds propres de la banque mère des banques d’importance systémique)"
+      "value": "Modification de l'ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (OFR)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifica della legge sulle banche e dell'ordinanza sui fondi propri (copertura con fondi propri per partecipazioni estere nella casa madre di banche di rilevanza sistemica)"
+      "value": "Adeguamento dell'ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (OFoP)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-09-26"
+      "value": "2019-04-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-01-09"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "952.03"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/45/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Eigenmittelverordnung (Umsetzung der Massnahmen aus dem Bericht des Bundesrates zur Bankenstabilität und dem Bericht der parlamentarischen Untersuchungskommission)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l’ordonnance sur les fonds propres (exécution des mesures du rapport du Conseil fédéral sur la stabilité des banques et du rapport de la commission d’enquête parlementaire)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell’ordinanza sui fondi propri (attuazione delle misure previste dal rapporto del Consiglio federale sulla stabilità delle banche e dal rapporto della Commissione parlamentare d’inchiesta)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-06-06"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-09-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "952.03"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/99/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/6"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung der Eigenmittelverordnung (Umsetzung der Massnahmen aus dem Bericht des Bundesrates zur Bankenstabilität und aus dem Bericht der parlamentarischen Untersuchungskommission)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de l’ordonnance sur les fonds propres (exécution des mesures du rapport du Conseil fédéral sur la stabilité des banques et du rapport de la Commission d’enquête parlementaire)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica dell’ordinanza sui fondi propri (attuazione delle misure previste dal rapporto del Consiglio federale sulla stabilità delle banche e dal rapporto della Commissione parlamentare d’inchiesta)"
+      "value": "2019-07-12"
     }
   }
 ]

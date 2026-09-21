@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/117/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/126/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,144 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Teilrevision von vier Verordnungen des Chemikalienrechts (Chemikalienverordnung, Biozidprodukteverordnung, Verordnung über die Gute Laborpraxis und  Chemikaliengebührenverordnung)"
+      "value": "Verordnungspaket Umwelt Herbst 2022"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision partielle de quatre ordonnances sur le droit des produits chimiques (O sur les produits chimiques, O sur les produits biocides, O sur les bonnes pratiques de laboratoire et O sur les émoluments relatifs aux produits chimiques)"
+      "value": "Paquet d’ordonnances environnementales de l’automne 2022"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Revisione parziale di quattro ordinanze relative al diritto in materia di prodotti chimici (O sui prodotti chimici, O sui biocidi, O sulla buona prassi di laboratorio e O sugli emolumenti in materia di prodotti chimici)"
+      "value": "Pacchetto d’ordinanze in materie ambientale, autunno 2022"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-07-27"
+      "value": "2021-12-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-09-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.81"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/87/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderungen der Chemikalien-Risikoreduktions-Verordnung zwecks Anpassung an die Beschlüsse der 4. Vertragsparteienkonferenz (COP4 zur Stockholm POP-Konvention) "
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modifications de l'ordonnance sur la réduction des risques liés aux produits chimiques afin de l'adapter aux décisions de la 4e Conférence des Parties (COP4) à la Convention de Stockholm sur les POP"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifiche dell'ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, onde adeguarla alle decisioni della 4a Conferenza delle Parti della Convenzione POP di Stoccolma"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-10-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-12-01"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.81"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/98/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "4. Revision der Chemikalien-Risikoreduktions-Verordnung (ChemRRV)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "4<sup>e</sup> révision de l'ordonnance sur la réduction des risques liés aux produits chimiques (ORRChim)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Quarta revisione dell'ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici (ORRPChim)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-10-01"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-12-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.81"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6021/12/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Frühling 2022"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet d'ordonnances environnementales du printemps 2022"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pachetto d'ordinanze in materie ambientale, primavera 2022"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-03-11"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-06-18"
+      "value": "2022-04-05"
     }
   },
   {
@@ -184,14 +67,53 @@
       "value": "Pacchetto d’ordinanze in materie ambientale, autunno 2024"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-12-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-04-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.81"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/45/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnungspaket Umwelt Frühling 2024"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Paquet d’ordonnances environnementales du printemps 2024"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Pachetto d’ordinanze in materie ambientale, primavera 2024"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-06-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2023-10-06"
     }
   },
   {
@@ -223,14 +145,131 @@
       "value": "Pachetto d’ordinanze in materie ambientale, autunno 2025"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-12-06"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-03-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.81"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/123/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Verordnungspaket Umwelt Herbst 2026"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Paquet d’ordonnances environnementales de l’automne 2026"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Pachetto d’ordinanze in materie ambientale, autunno 2026"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-12-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-04-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.81"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/23/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision der Chemikalien-Risikoreduktions-Verordnung (ChemRRV) ‒ Anhang Biozidprodukte"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de l’ordonnance sur la réduction des risques liés aux produits chimiques (ORRChim) – annexe sur les produits biocides"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione dell’ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici (ORRPChim); Allegato sui biocidi"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-03-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-05-08"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.81"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/117/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision von vier Verordnungen des Chemikalienrechts (Chemikalienverordnung, Biozidprodukteverordnung, Verordnung über die Gute Laborpraxis und  Chemikaliengebührenverordnung)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de quatre ordonnances sur le droit des produits chimiques (O sur les produits chimiques, O sur les produits biocides, O sur les bonnes pratiques de laboratoire et O sur les émoluments relatifs aux produits chimiques)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale di quattro ordinanze relative al diritto in materia di prodotti chimici (O sui prodotti chimici, O sui biocidi, O sulla buona prassi di laboratorio e O sugli emolumenti in materia di prodotti chimici)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-07-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-09-29"
     }
   },
   {
@@ -262,12 +301,12 @@
       "value": "Prima revisione dell'ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2006-07-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2006-09-11"
     }
@@ -301,14 +340,92 @@
       "value": "Seconda revisione dell'ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici (ORRPChim)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2008-12-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2009-03-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.81"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/87/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderungen der Chemikalien-Risikoreduktions-Verordnung zwecks Anpassung an die Beschlüsse der 4. Vertragsparteienkonferenz (COP4 zur Stockholm POP-Konvention) "
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modifications de l'ordonnance sur la réduction des risques liés aux produits chimiques afin de l'adapter aux décisions de la 4e Conférence des Parties (COP4) à la Convention de Stockholm sur les POP"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifiche dell'ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, onde adeguarla alle decisioni della 4a Conferenza delle Parti della Convenzione POP di Stoccolma"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-10-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-12-01"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "814.81"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/98/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "4. Revision der Chemikalien-Risikoreduktions-Verordnung (ChemRRV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "4<sup>e</sup> révision de l'ordonnance sur la réduction des risques liés aux produits chimiques (ORRChim)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Quarta revisione dell'ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici (ORRPChim)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-10-01"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-12-15"
     }
   },
   {
@@ -340,92 +457,14 @@
       "value": "Pachetto di ordinanze in materia ambientale, autunno 2017"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-10-31"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-02-28"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.81"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/126/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Herbst 2022"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet d’ordonnances environnementales de l’automne 2022"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pacchetto d’ordinanze in materie ambientale, autunno 2022"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-12-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-04-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.81"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/123/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Herbst 2026"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Paquet d’ordonnances environnementales de l’automne 2026"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Pachetto d’ordinanze in materie ambientale, autunno 2026"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-12-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-12"
     }
   },
   {
@@ -457,12 +496,12 @@
       "value": "Pacchetto d'ordinanze in materia ambientale, primavera 2019"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-04-27"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-08-22"
     }
@@ -496,12 +535,12 @@
       "value": "Pachetto d'ordinanze in materie ambientale, primavera 2020"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-03-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-06-21"
     }
@@ -535,12 +574,12 @@
       "value": "Revisione dell'Ordinanza sui biocidi (OBioc)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-12-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2020-03-31"
     }
@@ -552,7 +591,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/45/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6021/12/cons_1"
     },
     "status": {
       "type": "uri",
@@ -561,66 +600,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Verordnungspaket Umwelt Frühling 2024"
+      "value": "Verordnungspaket Umwelt Frühling 2022"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Paquet d’ordonnances environnementales du printemps 2024"
+      "value": "Paquet d'ordonnances environnementales du printemps 2022"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Pachetto d’ordinanze in materie ambientale, primavera 2024"
+      "value": "Pachetto d'ordinanze in materie ambientale, primavera 2022"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-06-15"
+      "value": "2021-03-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-10-06"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "814.81"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/23/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision der Chemikalien-Risikoreduktions-Verordnung (ChemRRV) ‒ Anhang Biozidprodukte"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de l’ordonnance sur la réduction des risques liés aux produits chimiques (ORRChim) – annexe sur les produits biocides"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione dell’ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici (ORRPChim); Allegato sui biocidi"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-03-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-05-08"
+      "value": "2021-06-18"
     }
   }
 ]

@@ -6,7 +6,46 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/79/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/29/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Ausländer- und Integrationsgesetzes: Einschränkung der Sozialhilfeleistungen für Ausländerinnen und Ausländer aus Drittstaaten"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur les étrangers et l’intégration: Limitation des prestations d’aide sociale octroyées aux ressortissants d’États tiers"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sugli stranieri e la loro integrazione: Limitazione delle prestazioni di aiuto sociale versate a stranieri provenienti da Paesi terzi"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-01-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2022-05-03"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/31/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +54,105 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Pa.Iv. Bei häuslicher Gewalt die Härtefallpraxis nach Artikel 50 AIG garantieren"
+      "value": "Revision des ZGB (Massnahmen gegen Minderjährigenheiraten)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Iv.pa. Garantir la pratique pour raisons personnelles majeures visée à l'article 50 LEI en cas de violence domestique"
+      "value": "Révision du code civil (Mesures de lutte contre les mariages avec un mineur)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Pa.Iv. Garantire la prassi dei casi di rigore secondo l'articolo 50 LStrI in caso di violenza nel matrimonio"
+      "value": "Revisione del Codice civile (Misure contro i matrimoni con minorenni)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-11-24"
+      "value": "2021-06-30"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-03-15"
+      "value": "2021-10-29"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/76/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über die Ausländerinnen und Ausländer und über die Integration (AIG): Covid-19-Test bei der Ausschaffung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur les étrangers et l’intégration: test de dépistage du COVID-19 en cas de renvoi ou d’expulsion"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sugli stranieri e la loro integrazione (LStrI): test Covid-19 in caso di rinvio coatto"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-06-23"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-07-07"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/83/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Genehmigung und Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnungen (EU) 2021/1133 und (EU) 2021/1134 zur Reform des Visa-Informationssystems und der damit verbundenen Bedingungen für den Zugang zu anderen EU-Informationssystemen für VIS-Zwecke (Weiterentwicklungen des Schengen-Besitzstands) sowie zur Änderung des Ausländer- und Integrationsgesetzes"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Approbation et mise en œuvre des échanges de notes entre la Suisse et l’UE concernant la reprise des règlements (UE) 2021/1133 et (UE) 2021/1134 réformant le système d’information sur les visas et établissant les conditions d’accès aux autres systèmes d’information de l’UE aux fins du VIS (développements de l’acquis de Schengen) et à la modification de la loi fédérale sur les étrangers et l’intégration (LEI)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Approvazione e trasposizione nel diritto svizzero degli scambi di note tra la\nSvizzera e l’UE concernente il recepimento dei regolamenti (UE) 2021/1133 e (UE) 2021/1134 ai fini della riforma del sistema di informazione visti e della definizione delle condizioni di accesso agli altri sistemi di informazione dell’UE ai fini del VIS (sviluppi dell’acquis di Schengen) e sulla modifica della legge sugli stranieri e la loro integrazione"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-08-11"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2021-11-18"
     }
   },
   {
@@ -67,12 +184,12 @@
       "value": "Recepimento e trasposizione nel diritto svizzero degli scambi di note tra la Svizzera e l’UE concernenti il recepimento dei regolamenti (UE) 2021/1150 e (UE) 2021/1152 per quanto riguarda la definizione delle condizioni di accesso agli altri sistemi di informazione dell’UE ai fini del sistema europeo di informazione e autorizzazione ai viaggi (ETIAS) (Sviluppi dell’acquis di Schengen)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-08-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-10-18"
     }
@@ -106,365 +223,14 @@
       "value": "Modifica della legge federale sugli stranieri e la loro integrazione: ammissione agevolata di stranieri con un diploma universitario svizzero"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-10-27"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-02-10"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/20/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz für Ausländerinnen und Ausländer (Ausländergesetz; AuG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur les étrangers (loi sur les étrangers; LEtr)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sugli stranieri (legge sugli stranieri; LStr)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-07-05"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2000-11-10"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/37/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Einführung biometrischer Ausweise; Genehmigung und Umsetzung einer Weiterentwicklung des Schengen-Besitzstandes im Bereich Ausweis- und Ausländerrecht"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Introduction de documents d'identité biométriques; Approbation et mise en œuvre du développement de l'Acquis de Schengen concernant la loi en matière de documents d'identité et la loi sur les étrangers"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Introduzione dei documenti d'identità biometrici; L'Approvazione e la trasposizione di uno sviluppo dell'acquis di Schengen nell'ambito del diritto in materia di documenti d'identità e di stranieri"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-09-29"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-01-08"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/103/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Gemeinschaft betreffend die Übernahme der der Rückführungsrichtlinie (Weiterentwicklung des Schengen-Besitzstands)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Arrêté fédéral portant approbation et mise en œuvre de l'échange de notes entre la Suisse et la Communauté européenne concernant la reprise de la directive sur le retour (développement de l'acquis de Schengen)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Decreto federale che approva e traspone lo scambio di note tra la Svizzera e la Comunità europea relativo al recepimento della direttiva sul rimpatrio (Sviluppo dell'acquis di Schengen)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-06-05"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-09-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/101/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 3-6 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Code pénal suisse et code pénal militaire (mise en œuvre de l'art. 121, al. 3 à 6, Cst. relatif à l'expulsion des étrangers criminels)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Codice penale svizzero e Codice penale militare (attuazione dell'articolo 121 capoversi 3-6 Cost. sull'espulsione di stranieri che commettono reati)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-05-23"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/45/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des BG über die Ausländerinnen und Ausländer bezüglich der Sanktionen gegen Transportunternehmen («carrier sanctions»), des Informationssystem über die Angaben der zu beförderten Personen und der Finanzierung von Administrativhaftplätzen"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de la LF sur les étrangers concernant les sanctions applicables aux entreprises de transport («carrier sanctions»), le système d'information sur les données relatives aux passagers et le financement de places de détention administrative"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione della LF sugli stranieri, concernente le sanzioni applicabili alle imprese di trasporto («carrier sanctions»), il sistema d'informazione sui dati relativi alle persone trasportate e il finanziamento di posti in carcerazione amministrativa"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-06-27"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-10-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/93/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Anpassungen des Bundesgesetzes über die Ausländerinnen und Ausländer (AuG) (Verfahrensnormen und Informationssysteme)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Adaptations de la loi fédérale sur les étrangers (LEtr) (Normes procédurales et systèmes d'information)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Adattamenti della legge federale sugli stranieri (LStr) (Norme procedurali e sistemi informativi)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-06-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2016-10-13"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/83/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Ausländer- und Integrationsgesetzes zur Umsetzung des «Aktionsplans Integrierte Grenzverwaltung» sowie zur finanziellen Unterstützung von Kantonen mit Ausreisezentren an der Grenze"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur les étrangers et l'intégration portant mise en œuvre du plan d'action «Gestion intégrée des frontières» ainsi que le soutien financier aux cantons qui gèrent des centres de départ à la frontière"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sugli stranieri e la loro integrazione in attuazione del «Piano d'azione Gestione integrata delle frontiere» e per garantire un aiuto finanziario ai Cantoni che gestiscono centri di partenza alla frontiera svizzera"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-12-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-04-19"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/87/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Genehmigung und Umsetzung des mit der Europäischen Union geschlossenen Abkommens über die Prümer Zusammenarbeit, des Eurodac-Protokolls und des mit den Vereinigten Staaten von Amerika geschlossenen Abkommens über die Zusammenarbeit zur der Prävention und Bekämpfung schwerer Straftaten"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Approbation et mise en œuvre de l'accord relatif à la coopération Prüm et du protocole Eurodac conclus avec l'Union européenne ainsi que de l'accord avec les États-Unis d'Amérique concernant la coopération en matière de prévention et de répression des infractions graves"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Approvazione e trasposizione nel diritto svizzero di due accordi con l'Unione europea concernenti Prüm ed Eurodac nonché dell'Accordo con gli Stati Uniti d'America sul potenziamento della cooperazione nella prevenzione e nella lotta ai reati gravi"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-12-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-03-31"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/58/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Pa.Iv. Beseitigung und Verhinderung der Inländerinnen- und Inländerdiskriminierung beim Familiennachzug"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Iv.pa. Regroupement familial. Supprimer toute discrimination subie en raison du droit interne"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Iv.pa. Eliminare e impedire le discriminazioni degli svizzeri nell’ambito del ricongiungimento familiare"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-09-08"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-12-09"
     }
   },
   {
@@ -496,12 +262,12 @@
       "value": "Modifica della legge federale sulle attività informative"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-05-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-09-09"
     }
@@ -513,7 +279,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/91/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/58/cons_1"
     },
     "status": {
       "type": "uri",
@@ -522,27 +288,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Parlamentarische Initiative. Armut ist kein Verbrechen"
+      "value": "Pa.Iv. Beseitigung und Verhinderung der Inländerinnen- und Inländerdiskriminierung beim Familiennachzug"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Initiative parlementaire. La pauvreté n’est pas un crime"
+      "value": "Iv.pa. Regroupement familial. Supprimer toute discrimination subie en raison du droit interne"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Iniziativa parlamentare. La povertà non è un reato"
+      "value": "Iv.pa. Eliminare e impedire le discriminazioni degli svizzeri nell’ambito del ricongiungimento familiare"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-11-21"
+      "value": "2022-09-08"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-03-14"
+      "value": "2022-12-09"
     }
   },
   {
@@ -552,7 +318,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/45/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2022/79/cons_1"
     },
     "status": {
       "type": "uri",
@@ -561,846 +327,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Übernahme und Umsetzung der Verordnung (EU) 2024/1717 zur Änderung der Verordnung (EU) 2016/399 über einen Unionskodex für das Überschreiten der Grenzen durch Personen (Schengen-Weiterentwicklung) sowie Änderung des Ausländer- und Integrationsgesetzes"
+      "value": "Pa.Iv. Bei häuslicher Gewalt die Härtefallpraxis nach Artikel 50 AIG garantieren"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Reprise et mise en œuvre du règlement (UE) 2024/1717 modifiant le règlement (UE) 2016/399 concernant un code de l’Union relatif au régime de franchissement des frontières par les personnes (développement Schengen) et modification de la loi fédérale sur les étrangers et l’intégration"
+      "value": "Iv.pa. Garantir la pratique pour raisons personnelles majeures visée à l'article 50 LEI en cas de violence domestique"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Recepimento e trasposizione del regolamento (UE) 2024/1717 che modifica il regolamento (UE) 2016/399 che istituisce un codice dell’Unione relativo al regime di attraversamento delle frontiere da parte delle persone (sviluppo dell’acquis di Schengen) e modifica della legge federale sugli stranieri e la loro integrazione"
+      "value": "Pa.Iv. Garantire la prassi dei casi di rigore secondo l'articolo 50 LStrI in caso di violenza nel matrimonio"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-06-26"
+      "value": "2022-11-24"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-10-17"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/76/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über die Ausländerinnen und Ausländer und über die Integration (AIG): Covid-19-Test bei der Ausschaffung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur les étrangers et l’intégration: test de dépistage du COVID-19 en cas de renvoi ou d’expulsion"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sugli stranieri e la loro integrazione (LStrI): test Covid-19 in caso di rinvio coatto"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-06-23"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-07-07"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/29/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Ausländer- und Integrationsgesetzes: Einschränkung der Sozialhilfeleistungen für Ausländerinnen und Ausländer aus Drittstaaten"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur les étrangers et l’intégration: Limitation des prestations d’aide sociale octroyées aux ressortissants d’États tiers"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sugli stranieri e la loro integrazione: Limitazione delle prestazioni di aiuto sociale versate a stranieri provenienti da Paesi terzi"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-01-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-05-03"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/83/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Genehmigung und Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnungen (EU) 2021/1133 und (EU) 2021/1134 zur Reform des Visa-Informationssystems und der damit verbundenen Bedingungen für den Zugang zu anderen EU-Informationssystemen für VIS-Zwecke (Weiterentwicklungen des Schengen-Besitzstands) sowie zur Änderung des Ausländer- und Integrationsgesetzes"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Approbation et mise en œuvre des échanges de notes entre la Suisse et l’UE concernant la reprise des règlements (UE) 2021/1133 et (UE) 2021/1134 réformant le système d’information sur les visas et établissant les conditions d’accès aux autres systèmes d’information de l’UE aux fins du VIS (développements de l’acquis de Schengen) et à la modification de la loi fédérale sur les étrangers et l’intégration (LEI)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Approvazione e trasposizione nel diritto svizzero degli scambi di note tra la\nSvizzera e l’UE concernente il recepimento dei regolamenti (UE) 2021/1133 e (UE) 2021/1134 ai fini della riforma del sistema di informazione visti e della definizione delle condizioni di accesso agli altri sistemi di informazione dell’UE ai fini del VIS (sviluppi dell’acquis di Schengen) e sulla modifica della legge sugli stranieri e la loro integrazione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-08-11"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-11-18"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/1/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Förderung der Erwerbstätigkeit von Personen mit Schutzstatus S und Zulassungserleichterungen für in der Schweiz ausgebildete Drittstaatsangehörige: Änderung des Ausländer- und Integrationsgesetzes, des Asylgesetzes, der Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit sowie der Verordnung über die Integration von Ausländerinnen und Ausländern"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Encourager les bénéficiaires du statut de protection S à exercer une activité lucrative et faciliter l’admission des ressortissants d’États tiers formés en Suisse: modification de la loi fédérale sur les étrangers et l’intégration, de la loi sur l’asile, de l’ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative et de l’ordonnance sur l’intégration des étrangers"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Promozione dell’attività lucrativa di persone con statuto di protezione S e agevolazione dell’ammissione di cittadini di Stati terzi che hanno conseguito una formazione in Svizzera: modifica della legge sugli stranieri e la loro integrazione, della legge sull’asilo, dell’ordinanza sull’ammissione, il soggiorno e l’attività lucrativa e dell’ordinanza sull’integrazione degli stranieri"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-02-26"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-06-02"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/31/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision des ZGB (Massnahmen gegen Minderjährigenheiraten)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision du code civil (Mesures de lutte contre les mariages avec un mineur)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione del Codice civile (Misure contro i matrimoni con minorenni)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-06-30"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2021-10-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/31/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Genehmigung und Umsetzung des Notenaustausches zwischen der Schweiz und der EU betreffend die Übernahme des Schengener Grenzkodex (Weiterentwicklung des Schengen-Besitzstands) und Änderungen im Ausländer- und Asylrecht zur vollständigen Umsetzung "
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Approbation et mise en œuvre de l'échange de notes entre la Suisse et l'UE sur la reprise du code frontières Schengen (développement de l'acquis de Schengen) et Modifications du droit sur les étrangers et sur l'asile en vue de la mise en œuvre totale"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Approvazione e trasposizione dello scambio di note tra la Svizzera e l'UE concernente il recepimento del Codice frontiere Schengen (sviluppo dell'acquis di Schengen) e modifiche nel diritto in materia di stranieri e di asilo"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-03-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2007-06-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/102/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Entwurf zur Änderung des Asylgesetzes und des Bundesgesetzes über die Ausländerinnen und Ausländer "
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Projet de modification de la loi sur l'asile (LAsi) et de la loi fédérale sur les étrangers (LEtr)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Disegno di modifica della legge sull'asilo e della legge federale sugli stranieri"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-01-15"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-04-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/104/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des BG über die Ausländerinnen und Ausländer als indirekter  Gegenvorschlag zur «Ausschaffungsinitiative»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur les étrangers concernant le contre-projet indirect à l' «initiative sur le renvoi»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della LF sugli stranieri quale controprogetto indiretto all'Iniziativa espulsione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-01-15"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-04-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/122/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Bundesgesetzes über die Ausländerinnen und Ausländer (AuG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification partielle de la Loi sur les Etrangers (LEtr)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della legge federale sugli stranieri (LStr)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-11-23"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2012-03-23"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/150/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Übernahme und Umsetzung der Dublin III- und Eurodac-Verordnung (Weiterentwicklungen des Dublin/Eurodac-Besitzstands)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Reprise et mise en œuvre du règlement Dublin III et du règlement Eurodac (développements de l'acquis de Dublin/Eurodac)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Recepimento e trasposizione dei regolamenti Dublino III e Eurodac (sviluppi dell'acquis «Dublino/Eurodac»)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-08-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-11-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/47/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Übernahme und Umsetzung der Verordnung (EU) Nr. 1051/2013 zur Änderung des Schengener Grenzkodex zwecks Festlegung einer gemeinsamen Regelung für die vorübergehende Wiedereinführung von Kontrollen an den Binnengrenzen (Weiterentwicklungen des Schengen-Besitzstands) sowie weitere Änderungen im Asyl- und Ausländerrecht"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Reprise et mise en œuvre du règlement (UE) n° 1051/2013 modifiant le code frontières Schengen afin d'établir des règles communes relatives à la réintroduction temporaire du contrôle aux frontières intérieures (développement de l'acquis de Schengen) et autres modifications apportées au droit de l'asile et au droit des étrangers"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Recepimento e trasposizione del regolamento (UE) n. 1051/2013 che modifica il codice frontiere Schengen al fine di introdurre norme comuni sul ripristino temporaneo del controllo di frontiera alle frontiere interne (sviluppo dell'acquis di Schengen) e altre modifiche del diritto in materia d'asilo e di stranieri"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-11-20"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-02-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/168/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Bundesgesetzes über die Ausländerinnen und Ausländer (AuG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de la loi fédérale sur les étrangers (LEtr)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della legge federale sugli stranieri (LStr)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-02-11"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-05-28"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/87/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über die Ausländerinnen und Ausländer (AuG) und der Verordnung über die Einführung des freien Personenverkehrs (VEP)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur les étrangers (LEtr) et de l'ordonnance sur l'introduction de la libre circulation des personnes (OLCP)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sugli stranieri (LStr) e dell'ordinanza sull'introduzione della libera circolazione delle persone (OLCP)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-07-02"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-10-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/6/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision des Bundesgesetzes über die Ausländerinnen und Ausländer (AuG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de la loi fédérale sur les étrangers (LEtr)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale della legge federale sugli stranieri (LStr)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-02-11"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2015-05-28"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/10/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Errichtung und Nutzung des Einreise-/Ausreisesystems (EES) (Verordnungen [EU] 2017/2226 und [EU] 2017/2225) (Weiterentwicklungen des Schengen-Besitzstands)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Création et utilisation du système d'entrée/de sortie (EES) (règlements [UE] 2017/2226 et [UE] 2017/2225) (développement de l'acquis de Schengen)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Istituzione e uso del sistema di ingressi/uscite (Entry/Exit System [EES]) (regolamenti [UE]  2017/2226 e 2017/2225) (Sviluppo dell'acquis di Schengen)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-02-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2018-05-21"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/82/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Ausländer- und Integrationsgesetzes (Sonderregelung für Reisen ins Ausland für Personen aus der Ukraine mit Schutzstatus S)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur les étrangers et l’intégration (réglementation spéciale pour les voyages à l’étranger effectués par des personnes en provenance d’Ukraine titulaires du statut de protection S)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sugli stranieri e la loro integrazione (regolamentazione speciale per i viaggi all’estero di persone provenienti dall’Ucraina con statuto di protezione S)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-10-22"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-02-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/96/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über das Entlastungspaket 2027"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Loi fédérale sur le programme d’allégement budgétaire 2027"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Legge federale sulle misure di sgravio del bilancio della Confederazione applicabili dal 2027"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-01-29"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-05-05"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/16/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "24.438 n Pa. Iv. Rutz Gregor. Vorläufige Aufnahme als Ersatzmassnahme für eine nicht durchführbare Aus- oder Wegweisung. Genaue Definition der Unzumutbarkeit"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "24.438 n Iv. pa. Rutz Gregor. Admission provisoire comme mesure de substitution lorsqu'un renvoi ne peut pas être exécuté. Préciser les cas de figure où le renvoi \"ne peut être raisonnablement exigé\""
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "24.438 n Iv. Pa. Rutz Gregor. Ammissione provvisoria come misura sostitutiva in caso di espulsione o allontanamento ineseguibile. Per una definizione chiara di inesigibilità"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-03-05"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-06-12"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/53/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Zivilgesetzbuches (Eintragung der elterlichen Sorge in die Einwohnerregister)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification du Code civil (Inscription de l’autorité parentale dans les registres des habitants)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica del Codice civile (Iscrizione dell’autorità parentale nei registri degli abitanti)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-09-19"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2025-12-19"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/38/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG) (Anpassung der Wartefrist beim Familiennachzug von vorläufig Aufgenommenen)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur les étrangers et l’intégration (LEI)\n(Adaptation du délai d’attente pour le regroupement familial des personnes admises à titre provisoire)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sugli stranieri e la loro integrazione (LEI) (Adeguamento del periodo di attesa per il ricongiungimento familiare delle persone ammesse provvisoriamente)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-05-01"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-08-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/46/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Übernahme und Umsetzung der Rechtsgrundlagen zum EU-Migrations- und Asylpakt (Weiterentwicklungen des Schengen-/Dublin-Besitzstands)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Reprise et mise en œuvre des bases légales relatives au pacte de l’Union européenne sur la migration et l’asile (développements de l’acquis de Schengen/Dublin)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Recepimento e trasposizione delle basi legali relative al Patto sulla migrazione e l’asilo dell’UE (sviluppo dell’acquis di Schengen/Dublino)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-08-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-11-14"
+      "value": "2023-03-15"
     }
   },
   {
@@ -1432,170 +379,14 @@
       "value": "Modifica della legge federale sugli stranieri e la loro integrazione (facilitazione dell’esercizio di un’attività lucrativa indipendente, considerazione del centro degli interessi e accessi ai sistemi d’informazione)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-12-15"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-03-29"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/6/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Übernahme und Umsetzung der Verordnung (EU) 2018/1240 über die Einrichtung eines Europäischen Reiseinformations- und -genehmigungssystems (ETIAS) (Weiterentwicklung des Schengen-Besitzstands) und Änderung des Ausländer- und Integrationsgesetzes (AIG)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Reprise et mise en œuvre du règlement (UE) 2018/1240 portant création d'un système européen d'information et d'autorisation concernant les voyages (ETIAS) (développements de l'acquis de Schengen) et modification de la loi fédérale sur les étrangers et l'intégration (LEI)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Recepimento e trasposizione del regolamento (UE) 2018/1240 che istituisce un sistema europeo di informazione e autorizzazione ai viaggi (ETIAS) («Sviluppo dell'acquis di Schengen») e modifica della legge federale sugli stranieri e la loro integrazione (LStrI)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-02-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-05-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/60/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Bundesgesetzes über die Ausländerinnen und Ausländer und über die Integration (AIG): Einschränkungen für Reisen ins Ausland und Anpassungen des Status der vorläufigen Aufnahme"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur les étrangers et l'intégration (LEI): restriction des voyages à l'étranger et modification du statut de l'admission provisoire"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge federale sugli stranieri e la loro integrazione (LStrI): limitazioni per i viaggi all'estero e adeguamenti dello statuto degli stranieri ammessi a titolo provvisorio"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-08-21"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-11-22"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/7/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Übernahme und Umsetzung des Reformpakets zum Schengener Informationssystem (SIS) «Weiterentwicklung des Schengen-Besitzstands» und Eingabe der Landesverweisungen im ZEMIS und Erstellung einer erweiterten Statistik im Rückkehrbereich"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Reprise et la mise en œuvre des réformes relatives au Système d'information Schengen SIS «Développement de l'acquis de Schengen» et inscription des expulsions pénales dans le SYMIC et établissement d'une statistique étendue sur les décisions de retour"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Recepimento e trasposizione del pacchetto di riforme concernente il Sistema d'informazione Schengen (SIS) «Sviluppo dell'acquis di Schengen» e Inserimento delle espulsioni giudiziarie nel SIMIC e allestimento di una statistica ampliata nel settore del rimpatrio"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-02-13"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-05-20"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "142.20"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/71/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Bundesbeschluss über die Genehmigung und die Umsetzung der Verordnungen (EU) 2019/817 und 2019/818 zur Interoperabilität (Weiterentwicklungen des Schengen-Besitzstands)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Arrêté fédéral portant approbation et mise en œuvre des règlements (UE) 2019/817 et 2019/818 sur l'interopérabilité (Développement de l'acquis de Schengen)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Decreto federale che approva e traspone i regolamenti (UE) 2019/817 e 2019/818 sull'interoperabilità (sviluppo dell'acquis di Schengen)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-10-09"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2020-01-09"
     }
   },
   {
@@ -1627,14 +418,287 @@
       "value": "Recepimento e attuazione del regolamento (UE) 2023/2667 che modifica diversi atti normativi europei per quanto riguarda la digitalizzazione della procedura di visto (sviluppo dell’acquis de Schengen)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-12-08"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-03-22"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/38/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG) (Anpassung der Wartefrist beim Familiennachzug von vorläufig Aufgenommenen)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur les étrangers et l’intégration (LEI)\n(Adaptation du délai d’attente pour le regroupement familial des personnes admises à titre provisoire)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sugli stranieri e la loro integrazione (LEI) (Adeguamento del periodo di attesa per il ricongiungimento familiare delle persone ammesse provvisoriamente)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-05-01"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-08-22"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/45/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Übernahme und Umsetzung der Verordnung (EU) 2024/1717 zur Änderung der Verordnung (EU) 2016/399 über einen Unionskodex für das Überschreiten der Grenzen durch Personen (Schengen-Weiterentwicklung) sowie Änderung des Ausländer- und Integrationsgesetzes"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Reprise et mise en œuvre du règlement (UE) 2024/1717 modifiant le règlement (UE) 2016/399 concernant un code de l’Union relatif au régime de franchissement des frontières par les personnes (développement Schengen) et modification de la loi fédérale sur les étrangers et l’intégration"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Recepimento e trasposizione del regolamento (UE) 2024/1717 che modifica il regolamento (UE) 2016/399 che istituisce un codice dell’Unione relativo al regime di attraversamento delle frontiere da parte delle persone (sviluppo dell’acquis di Schengen) e modifica della legge federale sugli stranieri e la loro integrazione"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-06-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-10-17"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/46/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Übernahme und Umsetzung der Rechtsgrundlagen zum EU-Migrations- und Asylpakt (Weiterentwicklungen des Schengen-/Dublin-Besitzstands)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Reprise et mise en œuvre des bases légales relatives au pacte de l’Union européenne sur la migration et l’asile (développements de l’acquis de Schengen/Dublin)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Recepimento e trasposizione delle basi legali relative al Patto sulla migrazione e l’asilo dell’UE (sviluppo dell’acquis di Schengen/Dublino)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-08-14"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-11-14"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/82/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Ausländer- und Integrationsgesetzes (Sonderregelung für Reisen ins Ausland für Personen aus der Ukraine mit Schutzstatus S)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur les étrangers et l’intégration (réglementation spéciale pour les voyages à l’étranger effectués par des personnes en provenance d’Ukraine titulaires du statut de protection S)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sugli stranieri e la loro integrazione (regolamentazione speciale per i viaggi all’estero di persone provenienti dall’Ucraina con statuto di protezione S)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-10-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-02-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/91/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Parlamentarische Initiative. Armut ist kein Verbrechen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Initiative parlementaire. La pauvreté n’est pas un crime"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Iniziativa parlamentare. La povertà non è un reato"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-11-21"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-03-14"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/96/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz über das Entlastungspaket 2027"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur le programme d’allégement budgétaire 2027"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sulle misure di sgravio del bilancio della Confederazione applicabili dal 2027"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-01-29"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-05-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/1/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Förderung der Erwerbstätigkeit von Personen mit Schutzstatus S und Zulassungserleichterungen für in der Schweiz ausgebildete Drittstaatsangehörige: Änderung des Ausländer- und Integrationsgesetzes, des Asylgesetzes, der Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit sowie der Verordnung über die Integration von Ausländerinnen und Ausländern"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Encourager les bénéficiaires du statut de protection S à exercer une activité lucrative et faciliter l’admission des ressortissants d’États tiers formés en Suisse: modification de la loi fédérale sur les étrangers et l’intégration, de la loi sur l’asile, de l’ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative et de l’ordonnance sur l’intégration des étrangers"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Promozione dell’attività lucrativa di persone con statuto di protezione S e agevolazione dell’ammissione di cittadini di Stati terzi che hanno conseguito una formazione in Svizzera: modifica della legge sugli stranieri e la loro integrazione, della legge sull’asilo, dell’ordinanza sull’ammissione, il soggiorno e l’attività lucrativa e dell’ordinanza sull’integrazione degli stranieri"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-02-26"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-06-02"
     }
   },
   {
@@ -1666,12 +730,12 @@
       "value": "Modifica della legge federale sugli stranieri e la loro integrazione (Orientamento professionale, negli studi e nella carriera per persone ammesse nel quadro del ricongiungimento familiare)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-04-22"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-08-12"
     }
@@ -1705,14 +769,53 @@
       "value": "Pacchetto «stabilizzazione e sviluppo delle relazioni Svizzera-UE»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-06-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-10-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/53/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Zivilgesetzbuches (Eintragung der elterlichen Sorge in die Einwohnerregister)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification du Code civil (Inscription de l’autorité parentale dans les registres des habitants)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica del Codice civile (Iscrizione dell’autorità parentale nei registri degli abitanti)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-09-19"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2025-12-19"
     }
   },
   {
@@ -1742,6 +845,113 @@
       "type": "literal",
       "xml:lang": "it",
       "value": "Adozione e attuazione del regolamento sullo scambio automatizzato di dati per la cooperazione di polizia (\"Prüm II\")"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/16/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/4"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "24.438 n Pa. Iv. Rutz Gregor. Vorläufige Aufnahme als Ersatzmassnahme für eine nicht durchführbare Aus- oder Wegweisung. Genaue Definition der Unzumutbarkeit"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "24.438 n Iv. pa. Rutz Gregor. Admission provisoire comme mesure de substitution lorsqu'un renvoi ne peut pas être exécuté. Préciser les cas de figure où le renvoi \"ne peut être raisonnablement exigé\""
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "24.438 n Iv. Pa. Rutz Gregor. Ammissione provvisoria come misura sostitutiva in caso di espulsione o allontanamento ineseguibile. Per una definizione chiara di inesigibilità"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-03-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-06-12"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6000/20/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesgesetz für Ausländerinnen und Ausländer (Ausländergesetz; AuG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Loi fédérale sur les étrangers (loi sur les étrangers; LEtr)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Legge federale sugli stranieri (legge sugli stranieri; LStr)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-07-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2000-11-10"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/62/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Übernahme und Umsetzung der Verordnung (EU) 2026/xxx zur Einrichtung eines gemeinsamen Systems für die Rückkehr von illegal in der Union aufhältigen Drittstaatsangehörigen und zur Aufhebung der Richtlinie 2008/115/EG des Europäischen Parlaments und des Rates, der Richtlinie 2001/40/EG des Rates und der Entscheidung 2004/191/EG des Rates (Weiterentwicklung des Schengen-Besitzstands)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Reprise et mise en œuvre du règlement (UE) 2026/xxx établissant un système commun en matière de retour des ressortissants de pays tiers en séjour irrégulier dans l’Union, et abrogeant la directive 2008/115/CE du Parlement européen et du Conseil, la directive du Conseil 2001/40/CE et la décision du Conseil 2004/191/CE (développement de l’acquis de Schengen)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Recepimento e trasposizione del regolamento (UE) 2026/xxx che istituisce un sistema comune per il rimpatrio dei cittadini di paesi terzi il cui soggiorno nell’Unione è irregolare e che abroga la direttiva 2008/115/CE del Parlamento europeo e del Consiglio, la direttiva 2001/40/CE del Consiglio e la decisione 2004/191/CE del Consiglio (Sviluppo dell’acquis di Schengen)"
     }
   },
   {
@@ -1809,26 +1019,816 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/62/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/31/cons_1"
     },
     "status": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/1"
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
     },
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Übernahme und Umsetzung der Verordnung (EU) 2026/xxx zur Einrichtung eines gemeinsamen Systems für die Rückkehr von illegal in der Union aufhältigen Drittstaatsangehörigen und zur Aufhebung der Richtlinie 2008/115/EG des Europäischen Parlaments und des Rates, der Richtlinie 2001/40/EG des Rates und der Entscheidung 2004/191/EG des Rates (Weiterentwicklung des Schengen-Besitzstands)"
+      "value": "Genehmigung und Umsetzung des Notenaustausches zwischen der Schweiz und der EU betreffend die Übernahme des Schengener Grenzkodex (Weiterentwicklung des Schengen-Besitzstands) und Änderungen im Ausländer- und Asylrecht zur vollständigen Umsetzung "
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Reprise et mise en œuvre du règlement (UE) 2026/xxx établissant un système commun en matière de retour des ressortissants de pays tiers en séjour irrégulier dans l’Union, et abrogeant la directive 2008/115/CE du Parlement européen et du Conseil, la directive du Conseil 2001/40/CE et la décision du Conseil 2004/191/CE (développement de l’acquis de Schengen)"
+      "value": "Approbation et mise en œuvre de l'échange de notes entre la Suisse et l'UE sur la reprise du code frontières Schengen (développement de l'acquis de Schengen) et Modifications du droit sur les étrangers et sur l'asile en vue de la mise en œuvre totale"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Recepimento e trasposizione del regolamento (UE) 2026/xxx che istituisce un sistema comune per il rimpatrio dei cittadini di paesi terzi il cui soggiorno nell’Unione è irregolare e che abroga la direttiva 2008/115/CE del Parlamento europeo e del Consiglio, la direttiva 2001/40/CE del Consiglio e la decisione 2004/191/CE del Consiglio (Sviluppo dell’acquis di Schengen)"
+      "value": "Approvazione e trasposizione dello scambio di note tra la Svizzera e l'UE concernente il recepimento del Codice frontiere Schengen (sviluppo dell'acquis di Schengen) e modifiche nel diritto in materia di stranieri e di asilo"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-03-28"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-06-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6006/37/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Einführung biometrischer Ausweise; Genehmigung und Umsetzung einer Weiterentwicklung des Schengen-Besitzstandes im Bereich Ausweis- und Ausländerrecht"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Introduction de documents d'identité biométriques; Approbation et mise en œuvre du développement de l'Acquis de Schengen concernant la loi en matière de documents d'identité et la loi sur les étrangers"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Introduzione dei documenti d'identità biometrici; L'Approvazione e la trasposizione di uno sviluppo dell'acquis di Schengen nell'ambito del diritto in materia di documenti d'identità e di stranieri"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-09-29"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2007-01-08"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/102/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Entwurf zur Änderung des Asylgesetzes und des Bundesgesetzes über die Ausländerinnen und Ausländer "
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Projet de modification de la loi sur l'asile (LAsi) et de la loi fédérale sur les étrangers (LEtr)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Disegno di modifica della legge sull'asilo e della legge federale sugli stranieri"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-01-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-04-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/103/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Gemeinschaft betreffend die Übernahme der der Rückführungsrichtlinie (Weiterentwicklung des Schengen-Besitzstands)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Arrêté fédéral portant approbation et mise en œuvre de l'échange de notes entre la Suisse et la Communauté européenne concernant la reprise de la directive sur le retour (développement de l'acquis de Schengen)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Decreto federale che approva e traspone lo scambio di note tra la Svizzera e la Comunità europea relativo al recepimento della direttiva sul rimpatrio (Sviluppo dell'acquis di Schengen)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-06-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-09-05"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/104/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des BG über die Ausländerinnen und Ausländer als indirekter  Gegenvorschlag zur «Ausschaffungsinitiative»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur les étrangers concernant le contre-projet indirect à l' «initiative sur le renvoi»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della LF sugli stranieri quale controprogetto indiretto all'Iniziativa espulsione"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-01-15"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-04-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/101/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 3-6 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Code pénal suisse et code pénal militaire (mise en œuvre de l'art. 121, al. 3 à 6, Cst. relatif à l'expulsion des étrangers criminels)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Codice penale svizzero e Codice penale militare (attuazione dell'articolo 121 capoversi 3-6 Cost. sull'espulsione di stranieri che commettono reati)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-05-23"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-09-30"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/122/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des Bundesgesetzes über die Ausländerinnen und Ausländer (AuG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification partielle de la Loi sur les Etrangers (LEtr)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale della legge federale sugli stranieri (LStr)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-11-23"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-03-23"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/45/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision des BG über die Ausländerinnen und Ausländer bezüglich der Sanktionen gegen Transportunternehmen («carrier sanctions»), des Informationssystem über die Angaben der zu beförderten Personen und der Finanzierung von Administrativhaftplätzen"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de la LF sur les étrangers concernant les sanctions applicables aux entreprises de transport («carrier sanctions»), le système d'information sur les données relatives aux passagers et le financement de places de détention administrative"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione della LF sugli stranieri, concernente le sanzioni applicabili alle imprese di trasporto («carrier sanctions»), il sistema d'informazione sui dati relativi alle persone trasportate e il finanziamento di posti in carcerazione amministrativa"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-06-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2012-10-18"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6012/150/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Übernahme und Umsetzung der Dublin III- und Eurodac-Verordnung (Weiterentwicklungen des Dublin/Eurodac-Besitzstands)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Reprise et mise en œuvre du règlement Dublin III et du règlement Eurodac (développements de l'acquis de Dublin/Eurodac)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Recepimento e trasposizione dei regolamenti Dublino III e Eurodac (sviluppi dell'acquis «Dublino/Eurodac»)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-08-14"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-11-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/47/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Übernahme und Umsetzung der Verordnung (EU) Nr. 1051/2013 zur Änderung des Schengener Grenzkodex zwecks Festlegung einer gemeinsamen Regelung für die vorübergehende Wiedereinführung von Kontrollen an den Binnengrenzen (Weiterentwicklungen des Schengen-Besitzstands) sowie weitere Änderungen im Asyl- und Ausländerrecht"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Reprise et mise en œuvre du règlement (UE) n° 1051/2013 modifiant le code frontières Schengen afin d'établir des règles communes relatives à la réintroduction temporaire du contrôle aux frontières intérieures (développement de l'acquis de Schengen) et autres modifications apportées au droit de l'asile et au droit des étrangers"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Recepimento e trasposizione del regolamento (UE) n. 1051/2013 che modifica il codice frontiere Schengen al fine di introdurre norme comuni sul ripristino temporaneo del controllo di frontiera alle frontiere interne (sviluppo dell'acquis di Schengen) e altre modifiche del diritto in materia d'asilo e di stranieri"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-11-20"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-02-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/168/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des Bundesgesetzes über die Ausländerinnen und Ausländer (AuG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de la loi fédérale sur les étrangers (LEtr)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale della legge federale sugli stranieri (LStr)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-02-11"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-05-28"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6014/87/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über die Ausländerinnen und Ausländer (AuG) und der Verordnung über die Einführung des freien Personenverkehrs (VEP)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur les étrangers (LEtr) et de l'ordonnance sur l'introduction de la libre circulation des personnes (OLCP)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sugli stranieri (LStr) e dell'ordinanza sull'introduzione della libera circolazione delle persone (OLCP)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-07-02"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-10-22"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/6/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Teilrevision des Bundesgesetzes über die Ausländerinnen und Ausländer (AuG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision partielle de la loi fédérale sur les étrangers (LEtr)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione parziale della legge federale sugli stranieri (LStr)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-02-11"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2015-05-28"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6015/93/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Anpassungen des Bundesgesetzes über die Ausländerinnen und Ausländer (AuG) (Verfahrensnormen und Informationssysteme)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Adaptations de la loi fédérale sur les étrangers (LEtr) (Normes procédurales et systèmes d'information)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Adattamenti della legge federale sugli stranieri (LStr) (Norme procedurali e sistemi informativi)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-06-22"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2016-10-13"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6018/10/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Errichtung und Nutzung des Einreise-/Ausreisesystems (EES) (Verordnungen [EU] 2017/2226 und [EU] 2017/2225) (Weiterentwicklungen des Schengen-Besitzstands)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Création et utilisation du système d'entrée/de sortie (EES) (règlements [UE] 2017/2226 et [UE] 2017/2225) (développement de l'acquis de Schengen)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Istituzione e uso del sistema di ingressi/uscite (Entry/Exit System [EES]) (regolamenti [UE]  2017/2226 e 2017/2225) (Sviluppo dell'acquis di Schengen)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-02-14"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2018-05-21"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/6/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Übernahme und Umsetzung der Verordnung (EU) 2018/1240 über die Einrichtung eines Europäischen Reiseinformations- und -genehmigungssystems (ETIAS) (Weiterentwicklung des Schengen-Besitzstands) und Änderung des Ausländer- und Integrationsgesetzes (AIG)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Reprise et mise en œuvre du règlement (UE) 2018/1240 portant création d'un système européen d'information et d'autorisation concernant les voyages (ETIAS) (développements de l'acquis de Schengen) et modification de la loi fédérale sur les étrangers et l'intégration (LEI)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Recepimento e trasposizione del regolamento (UE) 2018/1240 che istituisce un sistema europeo di informazione e autorizzazione ai viaggi (ETIAS) («Sviluppo dell'acquis di Schengen») e modifica della legge federale sugli stranieri e la loro integrazione (LStrI)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-02-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-05-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/60/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Bundesgesetzes über die Ausländerinnen und Ausländer und über die Integration (AIG): Einschränkungen für Reisen ins Ausland und Anpassungen des Status der vorläufigen Aufnahme"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur les étrangers et l'intégration (LEI): restriction des voyages à l'étranger et modification du statut de l'admission provisoire"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sugli stranieri e la loro integrazione (LStrI): limitazioni per i viaggi all'estero e adeguamenti dello statuto degli stranieri ammessi a titolo provvisorio"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-08-21"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-11-22"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/7/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Übernahme und Umsetzung des Reformpakets zum Schengener Informationssystem (SIS) «Weiterentwicklung des Schengen-Besitzstands» und Eingabe der Landesverweisungen im ZEMIS und Erstellung einer erweiterten Statistik im Rückkehrbereich"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Reprise et la mise en œuvre des réformes relatives au Système d'information Schengen SIS «Développement de l'acquis de Schengen» et inscription des expulsions pénales dans le SYMIC et établissement d'une statistique étendue sur les décisions de retour"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Recepimento e trasposizione del pacchetto di riforme concernente il Sistema d'informazione Schengen (SIS) «Sviluppo dell'acquis di Schengen» e Inserimento delle espulsioni giudiziarie nel SIMIC e allestimento di una statistica ampliata nel settore del rimpatrio"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-02-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-05-20"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/71/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Bundesbeschluss über die Genehmigung und die Umsetzung der Verordnungen (EU) 2019/817 und 2019/818 zur Interoperabilität (Weiterentwicklungen des Schengen-Besitzstands)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Arrêté fédéral portant approbation et mise en œuvre des règlements (UE) 2019/817 et 2019/818 sur l'interopérabilité (Développement de l'acquis de Schengen)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Decreto federale che approva e traspone i regolamenti (UE) 2019/817 e 2019/818 sull'interoperabilità (sviluppo dell'acquis di Schengen)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-10-09"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-01-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/83/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Ausländer- und Integrationsgesetzes zur Umsetzung des «Aktionsplans Integrierte Grenzverwaltung» sowie zur finanziellen Unterstützung von Kantonen mit Ausreisezentren an der Grenze"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur les étrangers et l'intégration portant mise en œuvre du plan d'action «Gestion intégrée des frontières» ainsi que le soutien financier aux cantons qui gèrent des centres de départ à la frontière"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge federale sugli stranieri e la loro integrazione in attuazione del «Piano d'azione Gestione integrata delle frontiere» e per garantire un aiuto finanziario ai Cantoni che gestiscono centri di partenza alla frontiera svizzera"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-12-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-04-19"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "142.20"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/87/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Genehmigung und Umsetzung des mit der Europäischen Union geschlossenen Abkommens über die Prümer Zusammenarbeit, des Eurodac-Protokolls und des mit den Vereinigten Staaten von Amerika geschlossenen Abkommens über die Zusammenarbeit zur der Prävention und Bekämpfung schwerer Straftaten"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Approbation et mise en œuvre de l'accord relatif à la coopération Prüm et du protocole Eurodac conclus avec l'Union européenne ainsi que de l'accord avec les États-Unis d'Amérique concernant la coopération en matière de prévention et de répression des infractions graves"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Approvazione e trasposizione nel diritto svizzero di due accordi con l'Unione europea concernenti Prüm ed Eurodac nonché dell'Accordo con gli Stati Uniti d'America sul potenziamento della cooperazione nella prevenzione e nella lotta ai reati gravi"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2019-12-13"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2020-03-31"
     }
   }
 ]

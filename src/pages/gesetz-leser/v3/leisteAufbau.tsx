@@ -5,6 +5,7 @@ import { LeserLeisteSheet } from './LeserLeisteSheet';
 import { LeserUebersicht } from './LeserUebersicht';
 import type { BestimmungsWort } from './erlassAnsicht';
 import type { LeserV3Modell } from './leserV3Modell';
+import { setzeAlle, alleOffen } from '../klappKarte';
 
 // ═══ DER AUFBAU DER GLIEDERUNGS-LEISTE — Spalte UND Bottom-Sheet ════════════
 //
@@ -36,9 +37,9 @@ export function leisteAufbau(m: LeserV3Modell, bestimmungsWort: BestimmungsWort,
       // D28: kein Feld in der Leiste (`./SuchZone`); im Sheet: `sprungFeld` (A2).
       baum={<LeserGliederung m={m} />}
       baumTitel={imSheet ? undefined : 'Gliederung'}
-      onAlleAuf={() => m.setTocBaum((o) => ({ ...o, ...Object.fromEntries(m.alleKnotenIds.map((id) => [id, true])) }))}
-      onAlleZu={() => m.setTocBaum((o) => ({ ...o, ...Object.fromEntries(m.alleKnotenIds.map((id) => [id, false])) }))}
-      alleOffen={m.alleKnotenIds.length > 0 && m.alleKnotenIds.every((id) => m.tocBaum[id] === true)}
+      onAlleAuf={() => m.setTocBaum((o) => setzeAlle(o, m.alleKnotenIds, true))}
+      onAlleZu={() => m.setTocBaum((o) => setzeAlle(o, m.alleKnotenIds, false))}
+      alleOffen={alleOffen(m.tocBaum, m.alleKnotenIds)}
       onAnfang={m.zumAnfang} />
   );
 }

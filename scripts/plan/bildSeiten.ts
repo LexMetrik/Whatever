@@ -39,6 +39,7 @@ import {
   type PrInfo,
   type SchrittInfo,
 } from './bildDaten';
+import { postenTitelJeDach } from './postenKern';
 import {
   bereichsBadges,
   esc,
@@ -173,7 +174,7 @@ export function bauPrompt(e: Einheit, info: SchrittInfo | undefined, erledigt?: 
           : `Detail-Spec: npm run fahrplan -- ${fp} <§> (den §-Verweis nennt der Schritt in ROADMAP.md).`
       : `Detail steht direkt im Schritt-Wortlaut in ROADMAP.md (kein eigener Fahrplan) — den Block dort VOLLSTÄNDIG lesen.`,
     ...pflichtZeilen,
-    `Commit-Trailer: Roadmap: ${e.id}; der main-Commit zusätzlich Roadmap-Status: ${istDach ? 'done NUR wenn keine Checklisten-Position mehr offen, sonst ready (bzw. parked(<token>))' : 'done|ready|parked(<token>)'} — Auto-Buchung nach Merge.`,
+    `PR-Body-Trailer: Roadmap: ${e.id} (letzter Absatz). Status fährt im eigenen PR mit: plan:set -- ${e.id} status=${istDach ? 'done NUR wenn keine Checklisten-Position mehr offen, sonst ready (bzw. parked(<token>))' : 'done|ready|parked(<token>)'} + check:plan — keine Auto-Buchung (plan-buchung.yml am 20.9.2026 abgebaut).`,
   ];
   return zeilen.join('\n');
 }
@@ -454,7 +455,7 @@ export function lagebildSicht(o: SeitenOpts): LagebildSicht {
   const { einheiten, blockers, queue } = parseRoadmap(md);
   // Chronik-Wissen mitgeben, sonst zeigt das Lagebild andere Buckets als plan:next.
   const b: Buckets = resolve(einheiten, queue, ladeChronikDone());
-  const schritte = schrittInfoAusRoadmap(md);
+  const schritte = schrittInfoAusRoadmap(md, postenTitelJeDach());
   const t = (id: string) => schritte.get(id)?.titel ?? id;
   const byId = new Map(einheiten.map((e) => [e.id, e]));
   const feldVon = (id: string) => byId.get(id)?.etikett.feld ?? null;

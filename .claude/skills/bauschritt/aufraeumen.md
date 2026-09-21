@@ -35,6 +35,20 @@ mehr). Ausnahme (22.7.2026): **datierte ✅-Teilerfolgs-Prosa aus einem noch
 OFFENEN Schritt** wandert ebenfalls wörtlich in die Chronik, im Plan bleibt
 ein ✅-Einzeiler + Pointer.
 
+**Befund 20.9.2026 (Deckel-Alarm 130,7 KB): diese Ausnahme wird laufend
+NICHT angewandt.** Gemessen am Altstand `0e4999b48`: 63 Schritte, davon nur
+**2 × `status: done`** (6,7 KB) — der Deckel war also nicht durch einen
+`done`-Stau gerissen, sondern durch **58 ✅-Zeilen Teilerfolgs-Prosa in
+OFFENEN Schritten**. Die Ausnahme greift heute erst, wenn der Wächter rot
+wird; bis dahin sammelt sich die Masse. Sie gilt **bei jeder Landung**, nicht
+erst beim Alarm: wer einen ✅-Teilerfolg in einen offenen Schritt schreibt,
+legt den Wortlaut gleich in die Chronik und lässt im Plan den Einzeiler.
+
+**Seit 20.9.2026 (Posten-Modell)** trägt ein offener Schritt gar keine
+eingerückte Checklisten-Zeile mehr (`check:plan` 16): die Ausnahme oben betrifft
+nur noch ✅-Prosa im Schritt-Rumpf. Unterposten leben je als Datei in
+`plan/posten/` und werden mit `plan:posten -- zu <datei> --beleg "…"` geschlossen.
+
 **Ablageort** (`793e9aee3`): neuer datierter Block ans **Dateiende**, z. B.
 `# Umschichtung <Datum> — erledigte Schritte aus dem Steuerungsplan`; je
 Schritt `## <ID> — <Titel> *(<Status>, verschoben <Datum>)*` + Original-
@@ -60,8 +74,9 @@ verändert oder gelöscht, auch nicht formatierend.
 misst neben STRUKTUR/ROADMAP/CLAUDE auch `.claude/hooks/*.py` und
 `scripts/check-*.ts` gegen Byte-Budgets (`FLAECHEN_BUDGET` in
 `struktur-rotieren.py`). Rot ⇒ vor dem nächsten Wächter einen streichen;
-Kandidaten liefert `npm run retro:17` (Regel «nie rot», Chesterton-Vorbehalt
-dort). Rechtsdaten-Tore sind ausgenommen.
+Kandidaten liefert `npm run tor:bewaehrung` (Regel «nie rot ≥ 90 Tage»,
+Chesterton-Vorbehalt dort — Nachfolger des entfallenen `retro:17`, Entscheid
+David 20.9.2026, Rückbau QS-EFFIZIENZ). Rechtsdaten-Tore sind ausgenommen.
 
 Vor jeder Streichung (echtes Entfernen, keine Verschiebung): **«Steuert der
 Schritt noch etwas?»** Ein Posten ohne `dep`-/`@queue`-/Blocker-Referenz,

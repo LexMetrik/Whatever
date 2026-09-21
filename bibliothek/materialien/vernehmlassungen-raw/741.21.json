@@ -6,123 +6,6 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/89/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Totalrevision der Verkehrsregelnverordnung (VRV) und der Signalisationsverordnung (SSV)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision totale de l'ordonnance sur les règles de la circulation routière (OCR) et l'ordonnance sur la signalisation routière (OSR)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione totale dell'ordinanza sulle norme della circolazione (ONC) e dell'ordinanza sulla segnaletica stradale (OSStr)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-01-05"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-05-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/98/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Revision der Verordnung über die Beförderung gefährlicher Güter auf der Strasse (SDR) und der Signalisationsverordnung (SSV)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision de l'ordonnance relative au transport des marchandises dangereuses par route (SDR) et de l'ordonnance sur la signalisation routière (OSR)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione dell'ordinanza concernente il trasporto di merci pericolose su strada (SDR) e dell'ordinanza sulla segnaletica stradale (OSStr)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-10-07"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2013-12-24"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/50/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Teilrevision der Signalisationsverordnung zur Übernahme der wichtigsten Inhalte bestimmter technischer Normen in das Signalisationsrecht des Bundes; Teilrevision der Verkehrszulassungsverordnung betreffend den Kurs über Verkehrskunde"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Révision partielle de l’ordonnance sur la signalisation routière visant à intégrer les contenus les plus importants de certaines normes techniques dans le droit fédéral de la signalisation routière; Révision partielle de l’ordonnance réglant l’admission à la circulation routière concernant le cours de théorie de la circulation"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Revisione parziale dell’ordinanza sulla segnaletica stradale per trasporre i contenuti più importanti di alcune norme tecniche nella legislazione federale sulla segnaletica stradale;\nRevisione parziale dell’ordinanza sull’ammissione alla circolazione relativamente al corso di teoria della circolazione"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-06-07"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-09-30"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.21"
-    },
-    "cons": {
-      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/89/cons_1"
     },
     "status": {
@@ -145,12 +28,12 @@
       "value": "Revisione parziale dell’ordinanza sulla segnaletica stradale per semplificare l’introduzione di zone 30 e car pooling"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2021-11-10"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2022-02-25"
     }
@@ -184,12 +67,12 @@
       "value": "Adattamento delle ordinanze sulla segnaletica stradale e sul controllo della circolazione stradale in attuazione dell’iniziativa cantonale 17.304 («Strade più sicure subito!»)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-02-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2024-05-22"
     }
@@ -201,7 +84,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/97/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/53/cons_1"
     },
     "status": {
       "type": "uri",
@@ -210,27 +93,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Änderungen von verschiedenen Verordnungen des Strassenverkehrsrechts"
+      "value": "Verkehrsflächen für den Langsamverkehr"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Modifications de diverses ordonnances du droit de la circulation routière"
+      "value": "Aires de circulation destinées à la mobilité douce"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Modifiche di diverse ordinanze della legislazione sulla circolazione stradale"
+      "value": "Aree destinate alla mobilità lenta"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-05-04"
+      "value": "2023-06-28"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2006-07-31"
+      "value": "2023-10-18"
     }
   },
   {
@@ -240,7 +123,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/62/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/75/cons_1"
     },
     "status": {
       "type": "uri",
@@ -249,27 +132,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Revision der Signalisationsverordnung (SSV) im Zusammenhang mit der Einführung von Bahnübergangsanlagen vom Typ «MICRO»"
+      "value": "Verordnung über das automatisierte Fahren (AFV) und Verordnung über die Finanzhilfen zur Förderung neuartiger Lösungen für den Verkehr auf öffentlichen Strassen (ÖStFV)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Révision de l'ordonnance sur la signalisation routière (OSR) dans le contexte de l'introduction d'installations de passage à niveau du type «MICRO»"
+      "value": "Ordonnance sur la conduite automatisée (OCA) et ordonnance concernant les aides financières destinées à promouvoir des solutions innovantes pour la circulation sur la voie publique (OAFC)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Revisione dell'ordinanza sulla segnaletica stradale (OSStr) concernente l'impiego di impianti di tipo «MICRO» ai passaggi a livello"
+      "value": "Ordinanza sulla guida automatizzata (OGA) e ordinanza sugli aiuti finanziari per promuovere soluzioni innovative per la circolazione su strade pubbliche (OAFC)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-05-14"
+      "value": "2023-10-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-06-24"
+      "value": "2024-02-02"
     }
   },
   {
@@ -279,7 +162,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/51/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/50/cons_1"
     },
     "status": {
       "type": "uri",
@@ -288,66 +171,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Mehr Sicherheit für E-Bike-Fahrerinnen und -Fahrer (Verordnung über die technischen Anforderungen an Strassenfahrzeuge VTS, Verkehrsregelnverordnung VRV und Signalisationsverordnung SSV)"
+      "value": "Teilrevision der Signalisationsverordnung zur Übernahme der wichtigsten Inhalte bestimmter technischer Normen in das Signalisationsrecht des Bundes; Teilrevision der Verkehrszulassungsverordnung betreffend den Kurs über Verkehrskunde"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Plus de sécurité sur les vélos électriques (Ordonnance concernant les exigences techniques requises pour les véhicules routiers OETV, ordonnance sur les règles de la circulation routière OCR et ordonnance sur la signalisation routière OSR)"
+      "value": "Révision partielle de l’ordonnance sur la signalisation routière visant à intégrer les contenus les plus importants de certaines normes techniques dans le droit fédéral de la signalisation routière; Révision partielle de l’ordonnance réglant l’admission à la circulation routière concernant le cours de théorie de la circulation"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Maggiore sicurezza sulle biciclette a peda-lata assistita (Ordinanza concernente le esigenze tecniche per i veicoli stradali OETV, ordinanza sulle norme della circolazione stradale ONC e ordinanza sulla segnaletica stradale OSStr)"
+      "value": "Revisione parziale dell’ordinanza sulla segnaletica stradale per trasporre i contenuti più importanti di alcune norme tecniche nella legislazione federale sulla segnaletica stradale;\nRevisione parziale dell’ordinanza sull’ammissione alla circolazione relativamente al corso di teoria della circolazione"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-05-18"
+      "value": "2024-06-07"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2011-08-15"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/119/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Umsetzung der Motion 12.3979 «Verkehrserleichterungen für elektrische Mobilitätshilfen»"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Mise en œuvre de la motion 12.3979 «Des facilités pour les engins d'aide à la mobilité électrique»"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Attuazione della mozione 12.3979 «Requisiti agevolati per la mobilità ad assistenza elettrica»"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-08-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2014-11-14"
+      "value": "2024-09-30"
     }
   },
   {
@@ -379,12 +223,12 @@
       "value": "Attuazione della mozione 21.4516 Schilliger «Garantire la gerarchia della rete stradale nei centri abitati e fuori»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-09-03"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-12-05"
     }
@@ -418,14 +262,248 @@
       "value": "Modifica di quattro ordinanze del codice stradale per l’adeguamento dei requisiti applicabili ai veicoli commerciali elettrici fino a 4,25 tonnellate"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-09-26"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2026-01-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6005/97/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderungen von verschiedenen Verordnungen des Strassenverkehrsrechts"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modifications de diverses ordonnances du droit de la circulation routière"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifiche di diverse ordinanze della legislazione sulla circolazione stradale"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-05-04"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2006-07-31"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/62/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision der Signalisationsverordnung (SSV) im Zusammenhang mit der Einführung von Bahnübergangsanlagen vom Typ «MICRO»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de l'ordonnance sur la signalisation routière (OSR) dans le contexte de l'introduction d'installations de passage à niveau du type «MICRO»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione dell'ordinanza sulla segnaletica stradale (OSStr) concernente l'impiego di impianti di tipo «MICRO» ai passaggi a livello"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-05-14"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2009-06-24"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6009/89/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Totalrevision der Verkehrsregelnverordnung (VRV) und der Signalisationsverordnung (SSV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision totale de l'ordonnance sur les règles de la circulation routière (OCR) et l'ordonnance sur la signalisation routière (OSR)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione totale dell'ordinanza sulle norme della circolazione (ONC) e dell'ordinanza sulla segnaletica stradale (OSStr)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-01-05"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-05-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6011/51/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Mehr Sicherheit für E-Bike-Fahrerinnen und -Fahrer (Verordnung über die technischen Anforderungen an Strassenfahrzeuge VTS, Verkehrsregelnverordnung VRV und Signalisationsverordnung SSV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Plus de sécurité sur les vélos électriques (Ordonnance concernant les exigences techniques requises pour les véhicules routiers OETV, ordonnance sur les règles de la circulation routière OCR et ordonnance sur la signalisation routière OSR)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Maggiore sicurezza sulle biciclette a peda-lata assistita (Ordinanza concernente le esigenze tecniche per i veicoli stradali OETV, ordinanza sulle norme della circolazione stradale ONC e ordinanza sulla segnaletica stradale OSStr)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-05-18"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2011-08-15"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/119/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Umsetzung der Motion 12.3979 «Verkehrserleichterungen für elektrische Mobilitätshilfen»"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Mise en œuvre de la motion 12.3979 «Des facilités pour les engins d'aide à la mobilité électrique»"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Attuazione della mozione 12.3979 «Requisiti agevolati per la mobilità ad assistenza elettrica»"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-08-14"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2014-11-14"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "741.21"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6013/98/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Revision der Verordnung über die Beförderung gefährlicher Güter auf der Strasse (SDR) und der Signalisationsverordnung (SSV)"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Révision de l'ordonnance relative au transport des marchandises dangereuses par route (SDR) et de l'ordonnance sur la signalisation routière (OSR)"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Revisione dell'ordinanza concernente il trasporto di merci pericolose su strada (SDR) e dell'ordinanza sulla segnaletica stradale (OSStr)"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-10-07"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2013-12-24"
     }
   },
   {
@@ -457,92 +535,14 @@
       "value": "Modificazione delle norme della circolazione e della segnaletica stradale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-10-10"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2019-01-25"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/75/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verordnung über das automatisierte Fahren (AFV) und Verordnung über die Finanzhilfen zur Förderung neuartiger Lösungen für den Verkehr auf öffentlichen Strassen (ÖStFV)"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Ordonnance sur la conduite automatisée (OCA) et ordonnance concernant les aides financières destinées à promouvoir des solutions innovantes pour la circulation sur la voie publique (OAFC)"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Ordinanza sulla guida automatizzata (OGA) e ordinanza sugli aiuti finanziari per promuovere soluzioni innovative per la circolazione su strade pubbliche (OAFC)"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-10-18"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-02-02"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "741.21"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2023/53/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Verkehrsflächen für den Langsamverkehr"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Aires de circulation destinées à la mobilité douce"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Aree destinate alla mobilità lenta"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-06-28"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2023-10-18"
     }
   }
 ]

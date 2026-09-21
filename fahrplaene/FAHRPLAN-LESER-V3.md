@@ -711,6 +711,40 @@ Fassungs-Block im Einzelmodus offen startet (B6). Behoben auf `ink-500`.
 
 ---
 
+## §16 · Offene Unterpunkte aus ROADMAP.md — `W2·5m-LESER-V3` *(verlagert 20.9.2026)*
+
+Herkunft: `ROADMAP.md`, Dach-Schritt `W2·5m-LESER-V3`. Der Plan riss am 20.9.2026 den
+120-KB-Deckel; nach dem Entscheid David vom 20.9.2026 bleiben dort Ziel, Auflagen, Status
+und der Zeiger, die Unterpunkt-Listen wandern in den verlinkten Fahrplan. **Wortlaut
+byte-genau übernommen, nichts zusammengefasst** (~40 % Retrieval-Verlust). Belege altern
+nicht: datierte Mess- und Reproduktionsangaben werden hier nie nachgeführt, nur ergänzt.
+
+Die drei Deckel-/Schnitt-Posten, die das Fertig-Kriterium des Schrittes nennt, stehen als
+erste drei offene Zeilen unten; die Gliederungs-Nebenfunde folgen als eingerückte Gruppe
+unter ihrer Dach-Zeile (die Dach-Zeile selbst bleibt in `ROADMAP.md`, weil sie Davids Zitat
+vom 15.9.2026 und den gemessenen Mehrwert-Satz trägt).
+
+  - [x] **Erledigt:** D0 · S1 · S2 — ✅ Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026.
+  - [x] **S4 · Trefferreihenfolge** — ✅ 16.8.2026 mit H2, PR #539 (`19a989f93`); die «Kantons-Probe», die #577 unter dieser Kennung führte, war ein Nachweis und ist erbracht (H4-Bogen Ziff. 7, PR #552). Wortlaut, Ursachen-Analyse und Kollisions-Auflösung aller vier Posten: ROADMAP-CHRONIK.md, Umschichtung 15.9.2026 (1).
+  - [ ] **`leserV3Modell.ts` 420/420 und `uebersichtAngaben.ts` 418/420 schneiden** *(§17, offen nach #868)* — der v3-Deckel hat null Kopfraum; der Zukunftsfassungen-Hook (#863) musste deshalb nach `useZukunftsfassung.ts` ausweichen. Der Schnitt am Adapter ist laut Tor-Kommentar (16.8.2026) **verhaltenstragend** (Hook-Reihenfolge) ⇒ **eigener deklarierter Schritt** mit Rot-Beweis, kein Struktur-Umbau (§6.3). Dazu: der Satz «inzwischen in Kraft» gehört nach `src/lib/normtext/erlassKopfText.ts` (§5, heute zweite Heimat), `seo-detail.ts:354` trägt ihn unverlinkt.
+  - [ ] **`ArtikelLeser.tsx` ca. Z. 621: Kommentar behauptet `data-such-meta` am «Gilt seit»-Block** *(Nebenfund 19.9.2026, PR #929)* — seit D40 (7.9.2026) trägt `[data-hist-druck]` das Attribut nicht mehr; folgenlos (der Such-Walker schneidet `display:none` ab), aber die Aussage ist falsch. Ein-Zeilen-Nachtrag.
+  - [ ] **`NormText.tsx` 795/800 Zeilen** *(Messung 14.9.2026, `check:schlankheit`)* — fünf Zeilen Kopfraum: die nächste Änderung an der Datei lässt das Tor anschlagen. Erst schneiden (§6.6), dann ändern — kein Deckel-Anheben (§17). *(Nebenbefund der Jules-Suggestions-Sichtung 14.9.2026.)*
+  - [x] **Erledigt:** Tor-Konflikt `erlassAnsicht.ts`-Deckel (§17-Wurzel-Fix) #868 (`892a6f0fb`) · Nachbar-Artikel-Pfeile + Rohdaten-Link je Erlass #854 (`7b0338916`) · Rohdaten-Zeiger ohne `fassungsToken` (#854 — §7 d verlangt Drift-**Erkennung**, keinen Hash-Abdruck im UI) · **Einzelartikel-Ansicht E1 + E2** #869 (`946cb155d`, David «merge»: Umschalter, Blättern, Dossier-Blöcke). Wortlaute: ROADMAP-CHRONIK.md, Umschichtung 14.9.2026 (4)/(6) und 15.9.2026 (1).
+    - [x] **Gliederung «noch schlecht» — Standort und unterste Ebene** *(Befund David 19.9.2026)* — ✅ 19.9.2026, Anzeige #924 + Daten #923. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 2026-09-20.
+    - [x] **Erledigt 18.9.2026:** Mitlaufen beim Lesen · Standort-Fläche war ein Fehlalarm · Wächter auf Synchronität geschärft — PR #914 (`606b19066`) + #916. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 18.9.2026 (Leser-Mitlaufen).
+    - [x] **Erledigt 19.9.2026:** Auf/Zu-Handling + Befund David 19.9. — ✅ `zeilenAnsicht`/`klappKarte.ts`, Wächter `gliederung-sichtbarkeit.test.ts`, Daten-Teil PR #923. Wortlaut: ROADMAP-CHRONIK.md, Umschichtung 2026-09-20.
+    - [ ] **8 Artikel ohne eigene Gliederungszeile** *(Messung 19.9.2026)* — OR 748_750, 752, 858, ZGB disp_u1_art_39 u. a. (Umfang `luecken`) nur über die Abschnittszeile erreichbar; prüfen, ob gewollt.
+    - [ ] **Struktur-Extraktor liest Randtitel aus HTML statt aus `fedlex:role="marginal"` (XML)** *(Nebenfund 19.9.2026, #923)* — Fix greift nur bei h1–h5-Auszeichnung der Gliederung; robuster wäre das amtliche XML-Attribut. Risikopfad.
+    - [ ] **CLS-Flake `e2e/leser-funktionszeile-zaehler.e2e.ts:80`** *(Nebenfund 19.9.2026, #924)* — CLS konstant 0.04387 gegen 0.001, nur unter Parallel-Last (merge-base `135ec0cba` 8/20 rot, einzeln 0/8); Quelle unbekannt. Wurzel suchen (§17), nicht Budget anheben.
+    - [ ] **Bezugslinien-Orakel liegt in zwei Specs** *(§5-Nebenfund 18.9.2026)* — die Regel «`scroll-margin-top` + 8, Zwischenraum» steht jetzt in `e2e/leser-marke-mitlaufen.e2e.ts` **und** `e2e/leser-spy-w25d.e2e.ts`; die Kopie trägt einen Querverweis auf die Herleitung. Sauber wäre ein Baustein unter `e2e/helpers/` — bewusst nicht im selben Schritt gezogen, weil er `leser-spy-w25d` mitverändert hätte (§6.3: eigener deklarierter Schritt).
+    - [ ] **Empfindlichkeitsgrenze der Rückstands-Sonde** *(Messung 18.9.2026, kein Mangel — Dokumentation)* — eine auf **60 ms** verkürzte Entprellung liegt bei 51/59 = 86 % treu, reisst die 90-%-Schranke also nur knapp und die 5-%-Schranke gar nicht. Unterhalb des Frame-Intervalls des Runners ist eine Trailing-Entprellung prinzipiell nicht mehr von Synchronität unterscheidbar. Steht als Warnung im Test-Kommentar; **die 90 % nie blind hochschieben** (Ist-Stand unter 10× Drossel: 98 %).
+    - [ ] **Akkordeon klappt nur bei Scroll-Ruhe tiefer auf** *(Nachzug Gegenprüfung 18.9.2026, P6 ii)* — bei pausenlosem Dauerzug bleibt die Marke auf Pfadtiefe 1 («Erste Abteilung …»), nach 1 s Ruhe Tiefe 5 («II. Grundsatz»); heute strikt binär «scrollt/ruht». Prüfen, ob langsames, aber nicht pausierendes Lesen früher aufklappen darf — Grenze ist der Reflow im Scroll (§15, a33-CLS-Wurzel nicht antasten).
+    - [ ] **Stop-and-go-Wächter messen die eigene Messpause** *(§17-Nebenfund 18.9.2026)* — `e2e/leser-gliederung-a33.e2e.ts` (F1 «Highlight folgt») blieb grün, während die Funktion beim durchgehenden Lesen nie ansprang: er wartet nach jedem 120-px-Schritt 260 ms und lässt damit genau den Timer feuern, der beim echten Lesen verhungert. Regel verankert in `.claude/rules/webseiten-pruefung.md`; offen ist, F1 selbst auf eine pausenlose Strecke zu heben.
+    - [ ] **`w224-d35-f2-kopf.e2e.ts:96` unter Last** *(Nebenfund 18.9.2026)* — riss einmalig im Vollauf (5 Worker) mit `element(s) not found`, isoliert 27/27 bzw. 9/9 grün, diff-fremd; im Gegenlauf riss stattdessen `leser-r1-r2.e2e.ts:420` (Byte-Längen-Drift). Indiz für Last-Flake, **kein Beweis** — lokal 10 vCPU gegen CI 2 vCPU. Bei Gelegenheit gedrosselt wiederholen.
+
+
+---
+
 ## Archivierte Abschnitte *(Plan-Neuschnitt 29.8.2026)*
 
 9 Abschnitt(e) dieser Datei sind wörtlich nach

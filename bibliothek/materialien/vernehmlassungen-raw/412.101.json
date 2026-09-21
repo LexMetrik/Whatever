@@ -6,6 +6,45 @@
     },
     "cons": {
       "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/21/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "Änderung des Berufsbildungsgesetzes (BBG) sowie der Berufsbildungsverordnung (BBV). Massnahmenpaket zur Stärkung der höheren Berufsbildung"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "Modification de la loi fédérale sur la formation professionnelle (LFPr) et de l’ordonnance sur la formation professionnelle (OFPr). Mesures visant à renforcer la formation professionnelle"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "Modifica della legge sulla formazione professionale (LFPr) e della relativa ordinanza (OFPr). Pacchetto di misure per rafforzare la formazione professionale superiore"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-06-14"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2024-10-04"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "412.101"
+    },
+    "cons": {
+      "type": "uri",
       "value": "https://fedlex.data.admin.ch/eli/dl/proj/6003/37/cons_1"
     },
     "status": {
@@ -28,12 +67,12 @@
       "value": "Nuova Ordinanza sulla formazione professionale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2003-04-09"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2003-08-18"
     }
@@ -67,53 +106,14 @@
       "value": "Revisione parziale dell'ordinanza sulla formazione professionale (OFPr) ai fini dell'introduzione della cooperazione internazionale in materia di formazione professionale"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-03-17"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-05-27"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "412.101"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2024/21/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/5"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "Änderung des Berufsbildungsgesetzes (BBG) sowie der Berufsbildungsverordnung (BBV). Massnahmenpaket zur Stärkung der höheren Berufsbildung"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "Modification de la loi fédérale sur la formation professionnelle (LFPr) et de l’ordonnance sur la formation professionnelle (OFPr). Mesures visant à renforcer la formation professionnelle"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "Modifica della legge sulla formazione professionale (LFPr) e della relativa ordinanza (OFPr). Pacchetto di misure per rafforzare la formazione professionale superiore"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-06-14"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2024-10-04"
     }
   }
 ]

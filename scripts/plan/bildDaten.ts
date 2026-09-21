@@ -14,8 +14,7 @@
 
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
-import { laufeEcht, leseZeitreihe, parseWorktrees, type Laufe } from './lage';
-import { letzterSnapshot, quoteText } from './selbstoptKern';
+import { laufeEcht, parseWorktrees, type Laufe } from './lage';
 import { BULLET_RE } from './parse';
 import type { Einheit } from './parse';
 import { kollidiert } from './aufloesen';
@@ -239,7 +238,17 @@ function istEinheitenZeile(zeilen: string[], j: number): boolean {
  *  Auftrags-Wortlaut (Einheiten-Zeile bis zum @meta, an der Wortgrenze gekappt),
  *  der §-Anker hinter «Detail:»/«Bau-Spec:» und die Pflichtlektüre hinter
  *  «Befunde:»/«Dossier:». */
-export function schrittInfoAusRoadmap(md: string): Map<string, SchrittInfo> {
+export function schrittInfoAusRoadmap(
+  md: string,
+  /** Offene Posten je Dach-ID (Titel-Liste), aus `plan/posten/`.
+   *  Seit dem Posten-Modell (20.9.2026, QS-EFFIZIENZ) steht der Bestand eines
+   *  Dach-Schritts NICHT mehr als eingerückte `- [ ]`-Zeile in ROADMAP.md,
+   *  sondern je Posten in einer eigenen Datei. Ohne diesen Parameter zählte das
+   *  Lagebild nach der Migration null Positionen und riete zu «Unterschritt
+   *  bauen», den es in der Datei nicht mehr gibt — dieselbe Falle, gegen die
+   *  die Entstückelungs-Erfassung 8.8.2026 gebaut wurde, nur andersherum. */
+  postenTitel: ReadonlyMap<string, string[]> = new Map(),
+): Map<string, SchrittInfo> {
   const zeilen = md.split('\n');
   const info = new Map<string, SchrittInfo>();
   for (let i = 0; i < zeilen.length; i++) {
@@ -290,6 +299,11 @@ export function schrittInfoAusRoadmap(md: string): Map<string, SchrittInfo> {
           continue;
         }
         if (z.trim()) nachProsa.push(z);
+      }
+      for (const t of postenTitel.get(id) ?? []) {
+        chkGesamt++;
+        chkOffen++;
+        if (chkOffenTexte.length < 12) chkOffenTexte.push(klartext(t));
       }
       checkliste = chkGesamt > 0 ? { offen: chkOffen, gesamt: chkGesamt, offenTexte: chkOffenTexte } : null;
       const block = [...zeilen.slice(j, i), ...nachProsa].join(' ');
@@ -730,55 +744,4 @@ export function bauStatistik(): BauStatistik {
   const tests = sh('git', ['ls-files', 'src/tests/*', 'e2e/*']);
   const testDateien = tests === null ? null : tests.split('\n').filter((f) => /\.(test\.ts|e2e\.ts)$/.test(f)).length;
   return { commits: Number.isFinite(commits) && commits > 0 ? commits : null, gemergtePrs, pruefTore, testDateien };
-}
-
-// ---------------------------------------------------------------------------
-// Bau-Messreihe (`messwerte/selbstopt-zeitreihe.json`, Schritt QS-SELBSTOPT)
-// ---------------------------------------------------------------------------
-
-/** Kachel-Werte des letzten Snapshots. `null`, wenn noch nicht gemessen wurde. */
-export interface SelbstoptKennzahlen {
-  /** Anzahl Snapshots in der Reihe. */
-  snapshots: number;
-  /** Tag der letzten Erhebung (`YYYY-MM-DD`). */
-  stand: string;
-  /** Ausfallquote unter den Läufen MIT Verdikt, Prozent-Text, oder «—». */
-  ciFailure: string;
-  /** Anteil abgebrochener Läufe (kein Verdikt), Prozent-Text, oder «—». */
-  ciAbgebrochen: string;
-  /** Rerun-Rate in Prozent-Text, oder «—». */
-  ciRerun: string;
-  /** Rote Tor-Läufe seit dem vorigen Snapshot. */
-  torRot: number;
-  /** Beurteilte Tor-Läufe seit dem vorigen Snapshot. */
-  torGesamt: number;
-  /** Rework-Quote als Prozent-Text, oder «—». */
-  rework: string;
-  /** Nicht erhobene Quellen dieses Snapshots (Ehrlichkeit, §8). */
-  ausfaelle: string[];
-}
-
-/**
- * Liest die Messreihe und verdichtet den LETZTEN Snapshot auf Kachel-Werte.
- *
- * Dieselbe Quelle und dieselbe Prozent-Formatierung wie die Zeile in
- * `plan:next` (`selbstoptZeile` in lage.ts) — zwei Anzeigen, eine Zählweise
- * (§5). `null` heisst «keine Messreihe» oder «Messreihe defekt»; die Seite
- * schreibt dann einen erklärenden Satz statt einer Kachel, nie eine 0.
- */
-export function selbstoptKennzahlen(): SelbstoptKennzahlen | null {
-  const z = leseZeitreihe();
-  const s = letzterSnapshot(z);
-  if (!z || !s) return null;
-  return {
-    snapshots: z.snapshots.length,
-    stand: s.erhobenAm.slice(0, 10),
-    ciFailure: s.ci ? quoteText(s.ci.failureRate) : '—',
-    ciAbgebrochen: s.ci ? quoteText(s.ci.cancelledRate) : '—',
-    ciRerun: s.ci ? quoteText(s.ci.rerunRate) : '—',
-    torRot: s.torRot.seitLetztem.rot,
-    torGesamt: s.torRot.seitLetztem.gesamt,
-    rework: s.rework ? quoteText(s.rework.handschrift.anteil) : '—',
-    ausfaelle: s.ausfaelle,
-  };
 }

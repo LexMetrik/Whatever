@@ -9,6 +9,8 @@
 // nichts neu klassifiziert, nur ein anderer Diff-Bereich eingespeist.
 import { execFileSync } from 'node:child_process';
 import { behalten } from './gegenpruefung/kern';
+import { leseGegenpruefungAusRohLog, pruefeVerdiktForm, vereinigeVerdikte } from './gegenpruefung/squash-trailer';
+import { pruefePrSchutz } from './gegenpruefung/pr-schutz';
 
 const BASIS = process.env.MERGE_SCHUTZ_BASIS ?? 'origin/main';
 // KOPF = Pruef-Spitze (Default HEAD). Der Merge-Hook setzt hier den
@@ -50,12 +52,21 @@ if (risiko.length === 0) {
     `${basis.slice(0, 8)}..${KOPF} (${geaendert.length} Datei(en) geändert).`);
 }
 
-// Trailer im committeten Bereich suchen; `%(trailers)` liest nur echte
-// Trailer-Zeilen, keine beiläufige Erwähnung im Fliesstext.
-const trailer = git(['log', '--format=%(trailers:key=Gegenpruefung,valueonly)', `${basis}..${KOPF}`])
-  .split('\n')
-  .map((z) => z.trim())
-  .filter(Boolean);
+// PR-Koerper-Schutz (§17, PRs #921/#923): Queue baut den Squash aus Titel+Body.
+const prRot = pruefePrSchutz(process.argv, risiko.length, `${basis.slice(0, 8)}..${KOPF}`);
+if (prRot) raus(1, prRot);
+
+// Trailer im committeten Bereich: `%(trailers)` (echte Trailer-Zeilen) plus
+// die tolerante Squash-Lesung (Anlass/Details: squash-trailer.ts), VEREINIGT
+// UND DEDUPLIZIERT (A1, PR #925 Nachzug): bei einem normalen (Nicht-Queue-)
+// Commit finden beide Lesungen denselben Wert — ohne Deduplizierung zählt die
+// Grün-Meldung unten das Verdikt doppelt. vereinigeVerdikte() macht das als
+// reine, separat getestete Funktion (stabile Reihenfolge, erster Treffer
+// gewinnt).
+const trailerKlassisch = git(['log', '--format=%(trailers:key=Gegenpruefung,valueonly)', `${basis}..${KOPF}`])
+  .split('\n').map((z) => z.trim()).filter(Boolean);
+const rohLog = git(['log', '--format=%B%x00', `${basis}..${KOPF}`]);
+const trailer = vereinigeVerdikte(trailerKlassisch, leseGegenpruefungAusRohLog(rohLog));
 
 const liste = risiko.slice(0, 12).map((p) => `    ${p}`).join('\n')
   + (risiko.length > 12 ? `\n    … und ${risiko.length - 12} weitere` : '');
@@ -82,34 +93,18 @@ if (trailer.length === 0) {
 }
 
 // ── FORM DES VERDIKTS ────────────────────────────────────────────────────
-// SABOTAGE-BEFUND 20.7.2026: der alte Filter `!/^n\/a\b/i.test(t)` prüfte nur,
-// dass der Wert nicht mit «n/a» beginnt — ein leerer Commit mit Trailer
-// `Gegenpruefung: x` machte das Tor GRÜN (F2a: gegen eigene Ladung validiert).
-//
-// Jetzt braucht das Verdikt eine PRÜFBARE FORM — Verdikt-Wort aus
-// geschlossener Menge, Zuschreibung (Modell + Linsen), Befund-Text:
-//     bestanden (Opus 4.8, Extraktion/Identitaet) — 13 Stichproben …
-const VERDIKT = /^(bestanden|behoben)\b/i;
-const ZUSCHREIBUNG = /\(([^)]{5,})\)/;      // (Modell, Linsen)
-const BEFUNDE = /[—–-]{1,2}\s*(\S[\s\S]{14,})$/; // — <Befunde>, ≥15 Zeichen
-
+// Regexe + Prüf-Funktion (F2a-Sabotage-Fund 20.7.2026) in
+// ./gegenpruefung/squash-trailer.ts (Import oben) — Verhalten byte-gleich
+// zur vorherigen Inline-Fassung, dort testbar ohne git-Nebenwirkungen.
 type Mangel = { wert: string; grund: string };
 const maengel: Mangel[] = [];
 const gueltig: string[] = [];
 
 for (const t of trailer) {
-  if (/^n\/a\b/i.test(t)) continue; // bewusster n/a-Fall: zählt nie als Verdikt
-  if (!VERDIKT.test(t)) {
-    maengel.push({ wert: t, grund: `Verdikt-Wort fehlt (erwartet 'bestanden' oder 'behoben' am Anfang)` });
-    continue;
-  }
-  const z = ZUSCHREIBUNG.exec(t);
-  if (!z || z[1].split(',').filter((s) => s.trim().length >= 2).length < 2) {
-    maengel.push({ wert: t, grund: `Zuschreibung '(<Modell>, <Linsen>)' fehlt oder nennt nicht beides` });
-    continue;
-  }
-  if (!BEFUNDE.test(t)) {
-    maengel.push({ wert: t, grund: `Befund-Teil nach '—' fehlt oder ist zu kurz (< 15 Zeichen)` });
+  const p = pruefeVerdiktForm(t);
+  if (p.art === 'na') continue;
+  if (p.art === 'mangel') {
+    maengel.push({ wert: t, grund: p.grund });
     continue;
   }
   gueltig.push(t);

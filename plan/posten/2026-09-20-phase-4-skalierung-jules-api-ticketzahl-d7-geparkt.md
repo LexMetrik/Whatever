@@ -1,0 +1,6 @@
+<!-- @posten
+dach: QS-FREMDAGENTEN
+titel: Phase 4 Skalierung: Jules-API, Ticketzahl, D7 geparkt
+-->
+
+  - [ ] Phase 4 Skalierung läuft — Landungsquote 83 % (n=6), Median 30 min ⇒ Ticketzahl 3–5 offen; Jules-API mit Plan-Gegenlesen (D4) noch offen; Antigravity-Claude als Bauarbeiter (D7) **geparkt** (Bauleiter/David-Chat 4.9.2026, kein Zwischenmarkt zu Jules — Wiedervorlage nur bei Kontingent-Engpass). §2.

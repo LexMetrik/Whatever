@@ -122,6 +122,38 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
+    "label": "Künftige Fassung VEV (SR 142.204)",
+    "datum": "2026-10-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (VEV)",
+    "wert": "gepinnt 12.6.2026",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
+    "label": "Künftige Fassung VRV (SR 741.11)",
+    "datum": "2026-10-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (VRV)",
+    "wert": "gepinnt 1.7.2026",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
+    "label": "Künftige Fassung VTS (SR 741.41)",
+    "datum": "2026-10-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (VTS)",
+    "wert": "gepinnt 1.7.2026",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
+    "label": "Künftige Fassung VZAE (SR 142.201)",
+    "datum": "2026-10-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (VZAE)",
+    "wert": "gepinnt 12.6.2026",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
     "label": "Künftige Fassung ZEMIS-V (SR 142.513)",
     "datum": "2026-10-01",
     "quelle": "Tabelle",
@@ -521,6 +553,30 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
+    "label": "Künftige Fassung EOV (SR 834.11)",
+    "datum": "2027-07-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (EOV)",
+    "wert": "gepinnt 1.6.2026",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
+    "label": "Künftige Fassung FamZV (SR 836.21)",
+    "datum": "2027-07-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (FAMZV)",
+    "wert": "gepinnt 1.1.2025",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
+    "label": "Künftige Fassung IVV (SR 831.201)",
+    "datum": "2027-07-01",
+    "quelle": "Tabelle",
+    "fundstelle": "`scripts/fedlex-cache.sh` (IVV)",
+    "wert": "gepinnt 1.6.2025",
+    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
+  },
+  {
     "label": "Künftige Fassung BVG (SR 831.40)",
     "datum": "2027-09-26",
     "quelle": "Tabelle",
@@ -529,11 +585,11 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
-    "label": "Künftige Fassung EOV (SR 834.11)",
+    "label": "Künftige Fassung ELV (SR 831.301)",
     "datum": "2028-01-01",
     "quelle": "Tabelle",
-    "fundstelle": "`scripts/fedlex-cache.sh` (EOV)",
-    "wert": "gepinnt 1.6.2026",
+    "fundstelle": "`scripts/fedlex-cache.sh` (ELV)",
+    "wert": "gepinnt 1.1.2025",
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {
@@ -606,22 +662,6 @@ export const VERFALL_TERMINE: VerfallTermin[] = [
     "quelle": "Tabelle",
     "fundstelle": "`scripts/fedlex-cache.sh` (BVV_2)",
     "wert": "gepinnt 1.8.2026",
-    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
-  },
-  {
-    "label": "Künftige Fassung VRV (SR 741.11)",
-    "datum": "2031-01-01",
-    "quelle": "Tabelle",
-    "fundstelle": "`scripts/fedlex-cache.sh` (VRV)",
-    "wert": "gepinnt 1.7.2026",
-    "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
-  },
-  {
-    "label": "Künftige Fassung VTS (SR 741.41)",
-    "datum": "2031-01-01",
-    "quelle": "Tabelle",
-    "fundstelle": "`scripts/fedlex-cache.sh` (VTS)",
-    "wert": "gepinnt 1.7.2026",
     "rhythmus": "einmalig — Fedlex-Konsolidierung, dann re-pinnen (§7)"
   },
   {

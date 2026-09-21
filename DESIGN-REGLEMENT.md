@@ -846,9 +846,11 @@ hell+dunkel @1440/@390, Split-View), die Messreihen in `KONTRAST-R1.md`
 | F0.9 Menü-Anatomie | 🟠 offen: `.lc-schwebeflaeche` trägt noch `shadow-lg` | R11-Auflage R6/R7 |
 | A6 Sprach-Diät | 🟡 Runde R7 «Beschriftungen» geplant, nicht abgeschlossen | BEFUNDE §R7 |
 
-**Budget-Warnung (§15, wartet auf David):** die Erstlast steht bei **59.7 KB von
-60.0 KB** (99.5 %). Der nächste Kopf-Bau reisst das Budget; zu entscheiden ist
-Lazy-Laden gegen Budget-Hebung. Nicht selbst entschieden (§15).
+**Budget-Entscheid (§15, David 19.9.2026: «Kopfbereich budget heben»):** die
+Erstlast stand bei **59.7 KB von 60.0 KB** (99.5 %); das Entry-Budget ist auf
+**70 KB** gehoben (`scripts/check-perf-budget.ts`). Lazy-Laden weiterer Kopf-Teile
+ist damit nicht mehr Pflicht, bleibt aber der bessere Weg, wo er ohne
+Logikverlust geht.
 
 ---
 

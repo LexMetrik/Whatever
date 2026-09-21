@@ -28,12 +28,12 @@
       "value": "Modifica dell’ordinanza 3 sull’asilo e dell’ordinanza concernente l’esecuzione dell’allontanamento e dell’espulsione di stranieri (valutazione dei supporti elettronici di dati dei richiedenti l’asilo)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-03-10"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2023-06-19"
     }
@@ -67,12 +67,12 @@
       "value": "Modifiche di ordinanze a seguito del recepimento del Patto sulla migrazione e l’asilo dell’UE"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-06-20"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2025-10-13"
     }
@@ -106,12 +106,12 @@
       "value": "Modifiche d'ordinanza legate all'approvazione e alla trasposizione dello scambio di note tra la Svizzera e la CE relativo al recepimento della direttiva CE sul rimpatrio (direttiva 2008/115/CE) (sviluppo dell'acquis di Schengen)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-07-13"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2010-09-15"
     }
@@ -145,12 +145,12 @@
       "value": "Revisioni parziali delle ordinanze sull'asilo 2 (OAsi 2) e 3 (OAsi 3), dell'ordinanza sull'integrazione degli stranieri (OIntS) e dell'ordinanza concernente l'esecuzione dell'allontanamento e dell'espulsione (OEAE)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-04-18"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2012-08-08"
     }
@@ -184,12 +184,12 @@
       "value": "Ordinanza che adegua ordinanze in seguito a sviluppi nell'ambito di Schengen e Dublino"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-01-19"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-03-16"
     }
@@ -223,12 +223,12 @@
       "value": "Attuazione del progetto per velocizzare le procedure d'asilo (Riassetto del settore dell'asilo)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-08-30"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-11-30"
     }

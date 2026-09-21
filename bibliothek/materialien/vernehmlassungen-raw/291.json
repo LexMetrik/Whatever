@@ -6,7 +6,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/80/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
     },
     "status": {
       "type": "uri",
@@ -15,27 +15,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Bundesgesetz über Massnahmen gegen Zwangsheiraten"
+      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Loi fédérale concernant les mesures de lutte contre les mariages forcés"
+      "value": "Introduction du trust (modification du code des obligations)"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Legge federale concernente misure contro i matrimoni forzati"
+      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2008-11-05"
+      "value": "2022-01-12"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2009-02-15"
+      "value": "2022-04-30"
     }
   },
   {
@@ -45,7 +45,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/12/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/116/cons_1"
     },
     "status": {
       "type": "uri",
@@ -54,27 +54,66 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "13.468 n Pa.Iv. Fraktion GL. Ehe für alle"
+      "value": "Indirekter Gegenvorschlag (Bundesgesetz über die nachhaltige Unternehmensführung) zur Volksinitiative «Für verantwortungsvolle Grossunternehmen – zum Schutz von Mensch und Umwelt»"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "13.468 n Iv.pa. Groupe GL. Mariage civil pour tous"
+      "value": "Contre-projet indirect (Loi fédérale sur la gestion durable des entreprises) à l’initiative populaire « Pour des grandes entreprises responsables – pour la protection de l’être humain et de l’environnement »"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "13.468 n Iv.pa. Gruppo GL. Matrimonio civile per tutti"
+      "value": "Controprogetto indiretto (Legge federale sulla gestione sostenibile delle imprese) all'iniziativa popolare «Per grandi imprese responsabili – a tutela dell’essere umano e dell'ambiente»"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-03-14"
+      "value": "2026-04-02"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2019-06-21"
+      "value": "2026-07-09"
+    }
+  },
+  {
+    "sr": {
+      "type": "literal",
+      "value": "291"
+    },
+    "cons": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/51/cons_1"
+    },
+    "status": {
+      "type": "uri",
+      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/3"
+    },
+    "titelDe": {
+      "type": "literal",
+      "xml:lang": "de",
+      "value": "22.448 s Pa. Iv. Caroni. Einen Pacs für die Schweiz"
+    },
+    "titelFr": {
+      "type": "literal",
+      "xml:lang": "fr",
+      "value": "22.448 é Iv. pa. Caroni. Un pacs pour la Suisse"
+    },
+    "titelIt": {
+      "type": "literal",
+      "xml:lang": "it",
+      "value": "22.448 s Iv. pa. Caroni. Un Pacs adeguato alla Svizzera"
+    },
+    "start": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-05-27"
+    },
+    "ende": {
+      "type": "literal",
+      "datatype": "http://www.w3.org/2001/XMLSchema#date",
+      "value": "2026-09-17"
     }
   },
   {
@@ -113,7 +152,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2021/32/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6008/80/cons_1"
     },
     "status": {
       "type": "uri",
@@ -122,27 +161,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Einführung des Trusts (Änderung des Obligationenrechts)"
+      "value": "Bundesgesetz über Massnahmen gegen Zwangsheiraten"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Introduction du trust (modification du code des obligations)"
+      "value": "Loi fédérale concernant les mesures de lutte contre les mariages forcés"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Introduzione del trust (modificazione del codice delle obbligazioni)"
+      "value": "Legge federale concernente misure contro i matrimoni forzati"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-01-12"
+      "value": "2008-11-05"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2022-04-30"
+      "value": "2009-02-15"
     }
   },
   {
@@ -174,12 +213,12 @@
       "value": "Modifica della Legge federale sul diritto internazionale privato (capitolo 11, Fallimento e concordato)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2015-10-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2016-02-05"
     }
@@ -213,12 +252,12 @@
       "value": "Modifica della legge federale sul diritto internazionale privato (arbitrato internazionale)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-01-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2017-05-31"
     }
@@ -252,12 +291,12 @@
       "value": "Modifica della legge federale sul diritto internazionale privato (diritto successorio)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-02-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-05-31"
     }
@@ -269,7 +308,7 @@
     },
     "cons": {
       "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2025/116/cons_1"
+      "value": "https://fedlex.data.admin.ch/eli/dl/proj/6019/12/cons_1"
     },
     "status": {
       "type": "uri",
@@ -278,66 +317,27 @@
     "titelDe": {
       "type": "literal",
       "xml:lang": "de",
-      "value": "Indirekter Gegenvorschlag (Bundesgesetz über die nachhaltige Unternehmensführung) zur Volksinitiative «Für verantwortungsvolle Grossunternehmen – zum Schutz von Mensch und Umwelt»"
+      "value": "13.468 n Pa.Iv. Fraktion GL. Ehe für alle"
     },
     "titelFr": {
       "type": "literal",
       "xml:lang": "fr",
-      "value": "Contre-projet indirect (Loi fédérale sur la gestion durable des entreprises) à l’initiative populaire « Pour des grandes entreprises responsables – pour la protection de l’être humain et de l’environnement »"
+      "value": "13.468 n Iv.pa. Groupe GL. Mariage civil pour tous"
     },
     "titelIt": {
       "type": "literal",
       "xml:lang": "it",
-      "value": "Controprogetto indiretto (Legge federale sulla gestione sostenibile delle imprese) all'iniziativa popolare «Per grandi imprese responsabili – a tutela dell’essere umano e dell'ambiente»"
+      "value": "13.468 n Iv.pa. Gruppo GL. Matrimonio civile per tutti"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-04-02"
+      "value": "2019-03-14"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-07-09"
-    }
-  },
-  {
-    "sr": {
-      "type": "literal",
-      "value": "291"
-    },
-    "cons": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/eli/dl/proj/2026/51/cons_1"
-    },
-    "status": {
-      "type": "uri",
-      "value": "https://fedlex.data.admin.ch/vocabulary/consultation-status/2"
-    },
-    "titelDe": {
-      "type": "literal",
-      "xml:lang": "de",
-      "value": "22.448 s Pa. Iv. Caroni. Einen Pacs für die Schweiz"
-    },
-    "titelFr": {
-      "type": "literal",
-      "xml:lang": "fr",
-      "value": "22.448 é Iv. pa. Caroni. Un pacs pour la Suisse"
-    },
-    "titelIt": {
-      "type": "literal",
-      "xml:lang": "it",
-      "value": "22.448 s Iv. pa. Caroni. Un Pacs adeguato alla Svizzera"
-    },
-    "start": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-05-27"
-    },
-    "ende": {
-      "type": "typed-literal",
-      "datatype": "http://www.w3.org/2001/XMLSchema#date",
-      "value": "2026-09-17"
+      "value": "2019-06-21"
     }
   }
 ]

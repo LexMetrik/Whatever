@@ -28,12 +28,12 @@
       "value": "Revisione dell'ordinanza sulle tasse riscosse in applicazione della legge federale sulla esecuzione e sul fallimento (OTLEF)"
     },
     "start": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-04-11"
     },
     "ende": {
-      "type": "typed-literal",
+      "type": "literal",
       "datatype": "http://www.w3.org/2001/XMLSchema#date",
       "value": "2018-07-13"
     }
