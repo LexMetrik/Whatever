@@ -3477,6 +3477,38 @@
       },
       "oc": {
         "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/482"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2028-01-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2025-12-19"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Bundesgesetz über die Erstreckung der Verlustverrechnung"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Loi fédérale sur la prolongation du délai de compensation des pertes"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Legge federale concernente l’estensione della compensazione delle perdite"
+      }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "642.11"
+      },
+      "oc": {
+        "type": "uri",
         "value": "https://fedlex.data.admin.ch/eli/oc/56/1947_2021_2107"
       },
       "dateForce": {
@@ -3658,6 +3690,7 @@
     "2026-01-01",
     "2026-09-02",
     "2027-01-01",
+    "2028-01-01",
     "2029-01-01"
   ],
   "belegteOcs": [],
