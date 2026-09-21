@@ -25,6 +25,9 @@ describe('Flächen-Definition', () => {
     // Steuerungs-Logik in Nachbar-Ordner auswich.
     expect(istFlaeche('scripts/tor-paritaet-sonden.ts')).toBe(true);
     expect(istFlaeche('scripts/gate.sh')).toBe(true);
+    // Bug-Check 21.9.2026, Auflage 2: der erste neue Top-Level-Helfer nach dem
+    // Bau der Klinke (#955) wäre an der abschliessenden Liste vorbeigerutscht.
+    expect(istFlaeche('scripts/aufraeumen-git.ts')).toBe(true);
     // Produkt und Rechtsdaten sind keine Steuerung.
     expect(istFlaeche('src/lib/vorlagen/kuendigung.ts')).toBe(false);
     expect(istFlaeche('scripts/normtext/check-drift.ts')).toBe(false);

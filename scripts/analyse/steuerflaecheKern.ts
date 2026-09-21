@@ -68,7 +68,7 @@ export const FLAECHE: { re: RegExp; grund: string }[] = [
   // ABSCHLIESSENDE Liste statt `scripts/*.ts`: dort liegt überwiegend
   // Produkt-/Datenwerkzeug, das nicht zur Steuerung zählt.
   {
-    re: /^scripts\/(dispatch|dispatch-cli|dispatch-agents|dispatch-agents-cli|tor-paritaet-sonden|fahrplan-slice|fahrplanSlicerKern|run-parallel|repo-map)\.ts$|^scripts\/(gate|ci-log-diaet)\.sh$/,
+    re: /^scripts\/(dispatch|dispatch-cli|dispatch-agents|dispatch-agents-cli|tor-paritaet-sonden|fahrplan-slice|fahrplanSlicerKern|run-parallel|repo-map|aufraeumen-git)\.ts$|^scripts\/(gate|ci-log-diaet)\.sh$/,
     grund: 'Steuerungs-Helfer in scripts/ (Dispatch · Tor-Sonden · Gate-Runner)',
   },
 ];
