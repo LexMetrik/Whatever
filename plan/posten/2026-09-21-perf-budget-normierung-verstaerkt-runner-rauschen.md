@@ -1,0 +1,7 @@
+<!-- @posten
+dach: QS-PERF
+titel: Perf-Budget — einmalige Kalibrierung verstärkt Runner-Rauschen zu Falsch-Rot
+anlass: PR #955 fiel am 21.9.2026 im merge_group aus der Queue (Lauf 35609996767), Nullprobe unverändert grün (Lauf 35613437520); Klasse F3/F2g (Tor rot ohne Defekt)
+-->
+
+  - [ ] **Perf-Budget: Kalibrierung vor UND nach der Messung** *(Beleg 21.9.2026, PR #955 — berührt keinen Produkt-Code)* — `check:perf-lighthouse` normiert TBT mit EINEM Kalibrier-Lauf am Anfang. Lauf 1: Kalibrier-TBT 753 ms ⇒ Faktor 0,672 («Runner 33 % schneller»), OR-Seite danach roh 4879 ms wie auf einem langsamen Runner ⇒ normiert 7257 ms > 6500 ⇒ rot. Lauf 2 (identischer Stand): Faktor 1,088, roh 3360 ⇒ normiert 3088 ⇒ grün. Vergleich: #952 Faktor 1,243 / roh 4693 ⇒ ~3775; #951 Faktor 0,979 / roh 3060 ⇒ ~3126. Die Runner-Last schwankte ZWISCHEN Kalibrierung und Messung; die Division durch den kleinen Faktor verstärkt das Rauschen statt es herauszurechnen. Kosten: ein Queue-Zyklus (~25 min) + Rauswurf. Wurzel-Fix-Kandidaten (Mess-Robustheit, NICHT die Schwelle — die bleibt David-Entscheid §15): (a) Kalibrierung vor und nach der Messung, bei Drift > ~20 % Messung wiederholen statt rot; (b) Faktor nach unten deckeln (z. B. nie < 0,85), damit ein «zu schneller» Kalibrier-Lauf kein Rot erzeugen kann. Beim Bau: Nullprobe-Verteilung über die letzten ~20 merge_group-Läufe erheben (F3), Logikverlust-Bewertung nach Skill `perf`.
