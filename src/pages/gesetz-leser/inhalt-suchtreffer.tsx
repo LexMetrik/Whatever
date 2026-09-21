@@ -51,6 +51,33 @@ import {
 //     Herkunfts-Badge, bei ausgeschaltetem Apparat mit dem Zusatz
 //     «(ausgeblendet)» (§8) — statt dass der Sprung die Ansicht still umschaltet.
 
+// ─── W2·28 · L-2 · DER SCHALTER «HERVORHEBUNG», UND WARUM ER HIER WOHNT ──────
+//
+// Ein Schalter blendet Hervorhebung UND Treffer-Marken gemeinsam aus — beides
+// ist dieselbe Auskunft in zwei Darstellungen (§5). Der Zustand steht in DIESEM
+// Modul und nicht im V3-Adapter, weil er dorthin gehört, wo die Hervorhebung
+// entsteht: `useSuchTreffer` gleich darunter nimmt ihn entgegen, der Adapter
+// reicht ihn nur weiter. (Zweiter, mechanischer Grund, benannt statt
+// verschwiegen: `v3/leserV3Modell.ts` steht bei 420/420 der Schlankheits-Sonde
+// `src/tests/leser-v3-fundament.test.ts` und hat keine freie Zeile — was jene
+// Sonde selbst als offene Klemme vermerkt. Verlagern statt Grenze aufweichen.)
+//
+// ZURÜCK FÄLLT ER BEIM RENDER, NICHT IN EINEM EFFEKT — dasselbe Muster wie der
+// Gültigkeits-Schlüssel der Treffer-Navigation weiter unten: ein Effekt, der
+// den Schalter zurücksetzt, wäre ein Kaskaden-Render
+// (react-hooks/set-state-in-effect) und liesse ihn einen Frame lang falsch
+// stehen. Wer das Feld leert, bekommt beim nächsten Suchen wieder Hervorhebung
+// und Marken — ein Schalter, der stumm über Suchen hinweg wirkte, liesse
+// Treffer verschwinden, ohne dass jemand ihn gesetzt zu haben glaubt (§8,
+// dieselbe Begründung wie beim Suchbereich).
+export function useMarkenSchalter(sucheFeldLeer: boolean): {
+  markenAus: boolean;
+  setzeMarkenAus: (aus: boolean) => void;
+} {
+  const [markenAusRoh, setzeMarkenAus] = useState(false);
+  return { markenAus: !sucheFeldLeer && markenAusRoh, setzeMarkenAus };
+}
+
 export function useSuchTreffer({
   erlassKey, eintraege, struktur, sucheTrim, sucheFeldLeer, sektionen, aktivIds,
   internRefs, aktArtikel, tokenByLabel, offen, setOffen, imPane, wurzel,

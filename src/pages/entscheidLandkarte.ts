@@ -20,6 +20,19 @@ import type { LandkarteEinheit } from '../components/leser/landkarteModell';
 // existiert und den schon die Sprungleiste benutzt. Markenlose Erwägungen
 // (unplausible/kantonale Daten) haben auch den nicht — sie bilden Massstab,
 // aber kein Ziel (leere `id`). Erfunden wird nichts.
+//
+// ── SPRUNGZIEL ≠ LESEPOSITION (Fertigbau 21.9.2026, §5) ─────────────────────
+// Die Erwägungs-Bausteine tragen ZWEI Anker, und beide kommen aus bestehenden
+// Quellen — keiner ist neu erfunden:
+//  · `id` = der Erwägungs-Anker aus `gruppiereErwaegungen` («e-4-4»). Nur er
+//    springt an die Erwägung; ein Sprung auf den Abschnittskopf wäre in einem
+//    80-Erwägungen-Urteil kein Treffer, sondern ein Themawechsel.
+//  · `leseId` = `abschnitt-erwaegung`, derselbe Anker, den der Lesetext für die
+//    Sprungleiste setzt. Der Scroll-Spy des Lesers meldet ausschliesslich
+//    Anker dieser Form; ohne dieses zweite Feld fand die Leseposition im
+//    ganzen Erwägungsteil kein Feld und blieb unsichtbar (gemessener Defekt).
+// Sachverhalt und Dispositiv brauchen es nicht: dort IST der Abschnitts-Anker
+// schon das Sprungziel, und `bereichZuId` fällt auf `id` zurück.
 
 export function entscheidLandkarteEinheiten(abschnitte: EntscheidAbschnitt[]): LandkarteEinheit[] {
   const einheiten: LandkarteEinheit[] = [];
@@ -33,12 +46,14 @@ export function entscheidLandkarteEinheiten(abschnitte: EntscheidAbschnitt[]): L
     }
     // Erwägungen: Kopf vor seinen Unter-Erwägungen, exakt die Reihenfolge und
     // die Anker, die auch die Trefferliste vergibt.
+    const leseId = abschnittAnker('erwaegung');
     for (const g of gruppiereErwaegungen(a.bloecke)) {
       // `marke` trägt die amtliche Schreibweise samt «E.» («E. 2.3.1») — genau
       // die, die der Rail in seiner Trefferliste zeigt. Kein zweites Formatieren.
       if (g.kopf) {
         einheiten.push({
           id: g.kopfAnker,
+          leseId,
           label: g.kopf.marke ?? etikett,
           umfang: g.kopf.text.length,
           abschnitt: etikett,
@@ -47,6 +62,7 @@ export function entscheidLandkarteEinheiten(abschnitte: EntscheidAbschnitt[]): L
       for (const s of g.subs) {
         einheiten.push({
           id: s.anker,
+          leseId,
           label: s.block.marke ?? etikett,
           umfang: s.block.text.length,
           abschnitt: etikett,

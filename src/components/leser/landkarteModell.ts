@@ -31,6 +31,24 @@
 export interface LandkarteEinheit {
   /** Schlüssel des Sprungziels (Artikel-Token bzw. Anker-Id). Leer = kein Ziel. */
   id: string;
+  /**
+   * ZWEITER Anker, nur für die LESEPOSITION — die Id, die der Scroll-Spy des
+   * Lesers meldet. Fehlt er, gilt `id` für beides.
+   *
+   * WARUM ZWEI FELDER UND NICHT EINES (Befund 21.9.2026): im Entscheid-Leser
+   * sind Sprungziel und Lesepositions-Melder verschiedene Dinge. Eine Erwägung
+   * trägt als Sprungziel ihren eigenen Anker («e-4-4» — nur der springt an die
+   * richtige Stelle), der Scroll-Spy aber beobachtet ausschliesslich die
+   * ABSCHNITTS-Anker («abschnitt-erwaegung»; `EntscheidLeser.tsx`,
+   * `querySelectorAll('[id^="abschnitt-"]')`). Ein einziges Feld müsste sich
+   * für eine der beiden Rollen entscheiden und verlöre die andere: mit dem
+   * Erwägungs-Anker blieb die Leseposition im GRÖSSTEN Teil jedes Entscheids
+   * unsichtbar (der gemessene Defekt), mit dem Abschnitts-Anker sprängen alle
+   * Erwägungs-Marken an den Abschnittskopf statt an ihre Erwägung.
+   * Im Gesetz-Leser melden Spy und Sprung dieselbe Id (Artikel-Token) — dort
+   * bleibt das Feld darum leer, und `id` trägt wie bisher beides.
+   */
+  leseId?: string;
   /** Beschriftung für den zugänglichen Namen («Art. 12», «E. 4.4»). */
   label: string;
   /** Umfang im Dokument, in Zeichen des amtlichen Textes. Nie negativ. */
@@ -147,20 +165,30 @@ export function feldBeiAnteil(spur: readonly LandkarteFeld[], anteil: number): L
 }
 
 /**
- * Die Spanne ALLER Felder einer Id — die Leseposition.
+ * Die Spanne ALLER Felder, deren LESEPOSITIONS-Anker `id` ist — die Leseposition.
  *
- * Nicht `find`: im Entscheid-Leser meldet der Scroll-Spy einen ABSCHNITTS-Anker
- * («abschnitt-sachverhalt»), den sich alle Blöcke dieses Abschnitts teilen. Das
- * erste Feld allein wäre dann ein Strich am Abschnittsanfang statt der Stelle,
- * an der man liest. Im Gesetz-Leser meldet er einen Artikel-Token, der genau
- * einmal vorkommt — dort ist die Spanne das eine Feld. Unbekannt ⇒ null.
+ * GEMESSEN WIRD `leseId ?? id`, nicht `id` (Fertigbau 21.9.2026). Bis dahin las
+ * diese Funktion nur `id` und traf im Entscheid-Leser genau zwei der vier
+ * Abschnitte: Sachverhalt und Dispositiv tragen den Abschnitts-Anker ohnehin
+ * als Sprungziel, die ERWÄGUNGEN aber — der grösste Teil jedes Entscheids —
+ * tragen dort ihren eigenen Anker («e-4-4»). Der Scroll-Spy meldet nur
+ * «abschnitt-erwaegung», also fand die Spanne nichts und die Leseposition war
+ * über den ganzen Erwägungsteil hinweg unsichtbar. Seither führen die
+ * Erwägungs-Bausteine zusätzlich `leseId: 'abschnitt-erwaegung'`, ohne ihr
+ * Sprungziel herzugeben (`pages/entscheidLandkarte.ts`).
+ *
+ * Nicht `find`, sondern die Spanne über ALLE Treffer: einen Abschnitts-Anker
+ * teilen sich viele Blöcke, und das erste Feld allein wäre ein Strich am
+ * Abschnittsanfang statt der Stelle, an der man liest. Im Gesetz-Leser meldet
+ * der Spy einen Artikel-Token, der genau einmal vorkommt — dort ist die Spanne
+ * das eine Feld. Unbekannt ⇒ null.
  */
 export function bereichZuId(spur: readonly LandkarteFeld[], id: string | null): { von: number; bis: number } | null {
   if (id === null || id === '') return null;
   let von: number | null = null;
   let bis = 0;
   for (const f of spur) {
-    if (f.id !== id) continue;
+    if ((f.leseId ?? f.id) !== id) continue;
     if (von === null) von = f.von;
     bis = f.bis;
   }

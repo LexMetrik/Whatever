@@ -1,11 +1,10 @@
-import { memo, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { EntscheidBody } from '../components/rechtsprechung/EntscheidBody';
 import RegesteBlock from '../components/rechtsprechung/RegesteBlock';
 import { spracheBadgeTitel } from '../components/rechtsprechung/format';
 import { Tabs } from '../components/ui/Tabs';
-import { ABSCHNITT_TITEL, abschnittAnker, ersteFundstelle, erwaegungsGliederung } from '../lib/rechtsprechung/abschnitte';
-import { ErwaegungsRail } from '../components/rechtsprechung/ErwaegungsRail';
+import { ABSCHNITT_TITEL, abschnittAnker, ersteFundstelle } from '../lib/rechtsprechung/abschnitte';
 import { StatusBadge } from '../components/verzahnung/StatusBadge';
 import { entscheidDatum } from '../lib/verzahnung/artikel-revisionen';
 import { zitatMitAusweis, heuteIso } from '../lib/format';
@@ -20,15 +19,13 @@ import { GEBIET_LABEL } from '../lib/normtext/register';
 import {
   ENTSCHEID_HIGHLIGHT_INSTANZ, ankunftsAnker,
   LESE_PARAM, leseAusParam, loescheNennungen, maleNennungen, nennungsAnker,
-  referenzImTitel, trefferInErwaegungen, urlMitHash, urlMitLese, zaehleNennungen, zaehleTreffer,
+  referenzImTitel, urlMitHash, urlMitLese, zaehleNennungen,
   angabeImTitel, leitzeileOhneKopfangaben,
 } from './entscheidLeserRegeln';
 import { datumOderStrich } from '../components/ui/datumText';
 import { setzeSuchHighlight } from './gesetz-leser/suchHighlight';
-import { TrefferLandkarte } from '../components/leser/TrefferLandkarte';
 import { MarkenSchalter } from '../components/leser/MarkenSchalter';
-import { landkarteSpur } from '../components/leser/landkarteModell';
-import { entscheidLandkarteEinheiten } from './entscheidLandkarte';
+import { ErwBereich } from './entscheidErwBereich';
 import { usePaneKlasse, usePaneKontext } from '../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
 // ── W2·19-DESIGN-KONSISTENZ · B2/BAU-4 (31.8.2026) · KANON-NACHZÜGE ─────────
@@ -49,7 +46,7 @@ import { KopfOverline, LeserKopfGeruest } from '../components/layout/LeserKopfGe
 import { BesetzungWert, DatumMeta, MassgeblicheFassung } from '../components/rechtsprechung/EntscheidKopfTeile';
 import { FS_STUFEN, ladeFsIdx, speichereFsIdx } from '../components/rechtsprechung/leseGroesse';
 import { LesemodusOverlay } from '../components/rechtsprechung/LesemodusOverlay';
-import type { EntscheidAbschnitt, EntscheidSnapshot, EntscheidSprache, Abschnittstyp, Entscheidquelle } from '../lib/rechtsprechung/typen';
+import type { EntscheidSnapshot, EntscheidSprache, Abschnittstyp, Entscheidquelle } from '../lib/rechtsprechung/typen';
 
 // Provenienz-Fuss (§7): Daten-Label je Quelle — BS-Tranche §7.1 (vorher hart
 // «OpenCaseLaw», was für gerichte-bs falsch wäre). Deklariert, kein Raten.
@@ -111,84 +108,6 @@ const SYNTH_MARKER: Record<EntscheidSprache, string> = {
 // Reihenfolge der Sprung-Ziele (amtliche Gliederung); Regeste vorangestellt.
 const NAV_TYPEN: Abschnittstyp[] = ['regeste', 'sachverhalt', 'erwaegung', 'dispositiv'];
 
-// ── V5 · Rechen-Anschluss des Erwägungs-Rails ───────────────────────────────
-//
-// Die drei Ableitungen (Gliederung · Suchtreffer · Normen-Fundstellen) leben
-// HIER und nicht in `ErwaegungsRail`: sie sind Regeln des Lesers
-// (`entscheidLeserRegeln`, `abschnitte`), und die Rail-Komponente soll ein
-// reiner Renderer bleiben — dieselbe Arbeitsteilung wie Reader ↔ `BezuegeZeile`.
-// Eigene `memo`-Grenze, damit ein Tastendruck im Suchfeld nicht den ganzen
-// Leser (Kopf, Tabs, Fuss-Panel) neu rendert; die Ableitungen selbst hängen in
-// `useMemo` (React Compiler ist AUS, §15.4).
-// A-2 (31.8.2026): die `imPane`-Prop ist mit dem Rail selbst entfallen — er
-// liest die Lage jetzt aus demselben Kontext wie sein Raster (`usePaneKlasse`).
-const ErwRail = memo(function ErwRail({ abschnitte, zitierteNormen, suche, onSuche, springe, markenSchalter }: {
-  abschnitte: EntscheidAbschnitt[];
-  zitierteNormen: string[];
-  suche: string;
-  onSuche: (v: string) => void;
-  springe: (anker: string) => void;
-  /** W2·28/L-2 · fertiges Schalter-Element (der Rail rechnet nichts, s. dort). */
-  markenSchalter?: ReactNode;
-}) {
-  const gliederung = useMemo(() => erwaegungsGliederung(abschnitte), [abschnitte]);
-  const treffer = useMemo(() => trefferInErwaegungen(abschnitte, suche), [abschnitte, suche]);
-  const trefferGesamt = useMemo(() => zaehleTreffer(abschnitte, suche), [abschnitte, suche]);
-  // Angewandte Normen MIT wörtlicher Nennung in einer Erwägung. Ohne Fundstelle
-  // KEIN Chip: ein Sprungziel, das es nicht gibt, wird nicht angeboten (§8) —
-  // die Norm selbst bleibt im Fuss-Panel («Zitierte Normen») sichtbar.
-  const normen = useMemo(() => {
-    const out: { zitat: string; anker: string }[] = [];
-    const gesehen = new Set<string>();
-    for (const z of zitierteNormen) {
-      if (gesehen.has(z)) continue;
-      gesehen.add(z);
-      const anker = nennungsAnker(abschnitte, z)[0];
-      if (anker) out.push({ zitat: z, anker });
-    }
-    return out;
-  }, [abschnitte, zitierteNormen]);
-  return (
-    <ErwaegungsRail gliederung={gliederung} treffer={treffer} trefferGesamt={trefferGesamt}
-      normen={normen} suche={suche} onSuche={onSuche} springe={springe}
-      markenSchalter={markenSchalter} />
-  );
-});
-
-
-
-// ─── W2·28 · L-1 · Rechen-Anschluss der Treffer-Landkarte ───────────────────
-//
-// Eigene `memo`-Grenze, aus demselben Grund wie bei `ErwRail`: die Spur über
-// alle Blöcke des Entscheids hängt nur an den Abschnitten und soll einen
-// Tastendruck im Suchfeld überleben (React Compiler ist AUS, §15.4). Sie steht
-// ausserdem HIER und nicht im Hauptkörper, weil der Leser vor der Stelle, an
-// der `aktiveAbschnitte` feststeht, bereits frühe Rückgaben hat — ein `useMemo`
-// dort wäre ein bedingt laufender Hook.
-//
-// Die Treffer kommen aus `trefferInErwaegungen` und die Gesamtzahl aus
-// `zaehleTreffer` — genau den zwei Funktionen, die auch der Rail und die
-// Hervorhebung speisen (§5, eine Trefferquelle).
-const EntscheidLandkarte = memo(function EntscheidLandkarte({
-  abschnitte, suche, aktivAnker, springe,
-}: {
-  abschnitte: EntscheidAbschnitt[];
-  suche: string;
-  aktivAnker: string | null;
-  springe: (anker: string) => void;
-}) {
-  const spur = useMemo(() => landkarteSpur(entscheidLandkarteEinheiten(abschnitte)), [abschnitte]);
-  const treffer = useMemo(
-    () => trefferInErwaegungen(abschnitte, suche).map((t) => ({ id: t.anker, anzahl: t.anzahl })),
-    [abschnitte, suche],
-  );
-  const gesamt = useMemo(() => zaehleTreffer(abschnitte, suche), [abschnitte, suche]);
-  return (
-    <TrefferLandkarte spur={spur} treffer={treffer} leseId={aktivAnker}
-      register="r" obenVar="--rsp-stick"
-      gesamtFundstellen={gesamt} onSprung={springe} />
-  );
-});
 
 // Reine Chip-Reihe (Sprung-Ziele). Der sticky-Rahmen liegt im gemeinsamen
 // Kopf-Block (zusammen mit den BGE-Tabs), damit sich nicht zwei sticky-Leisten
@@ -1049,28 +968,26 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
               Sprungzielen ist genau die Halb-Auskunft, die §8 verbietet.
               Der Suchbegriff bleibt im State: wer den Lesemodus schliesst,
               findet seine Suche unverändert vor. */}
-          {!lese && (
-            <ErwRail abschnitte={aktiveAbschnitte} zitierteNormen={snap.zitierteNormen}
-              suche={suche} onSuche={setSuche} springe={springeZuAbschnitt}
-              markenSchalter={<MarkenSchalter aus={markenAus} onSchalten={setzeMarkenAus} />} />
-          )}
-          {/* ── W2·28 · L-1 · DIE TREFFER-LANDKARTE ────────────────────────
+          {/* ── W2·28 · L-1 · RAIL UND TREFFER-LANDKARTE ───────────────────
               Gleiche Bauart und gleiche Grenzen wie im Gesetz-Leser
-              (`gesetz-leser/v3/LeserRahmenV3.tsx`): `fixed` am rechten
-              Fensterrand, also ohne jeden Platz im Fluss (CLS 0 per
-              Konstruktion), nur mit laufender Suche, nur wenn die Hervorhebung
-              nicht weggeschaltet ist, nur ab `xl` und nie in einer Pane —
-              `usePaneKlasse` gibt dort die leere Fassung, weil in einer Pane
-              gemessen keine Randluft neben dem Lesemass steht. Im Lesemodus
-              gibt es sie so wenig wie den Rail (B6): dort sind die Sprungziele
-              nicht im DOM. */}
-          {/* `!imPane`: in einer Pane gibt es neben dem Lesemass gemessen keine
-              Randluft — der Streifen läge über dem Wortlaut. Die Bedingung steht
-              darum als Nicht-Rendern hier und nicht als Container-Query-Klasse;
-              die Fenster-Schwelle trägt das Bauteil selbst (Herleitung dort). */}
-          {!lese && !imPane && suche.trim() !== '' && !markenAus && (
-            <EntscheidLandkarte abschnitte={aktiveAbschnitte} suche={suche}
-              aktivAnker={aktivAnker} springe={springeZuAbschnitt} />
+              (`gesetz-leser/v3/suchZoneAufbau.tsx`): der Streifen liegt `fixed`
+              am rechten Fensterrand, also ohne jeden Platz im Fluss (CLS 0 per
+              Konstruktion), steht nur mit laufender Suche, nur wenn die
+              Hervorhebung nicht weggeschaltet ist, nur mit Treffern, nur ab
+              `xl` und nie in einer Pane. Im Lesemodus gibt es ihn so wenig wie
+              den Rail (B6): dort sind die Sprungziele nicht im DOM.
+              `!imPane`: in einer Pane steht neben dem Lesemass gemessen keine
+              Randluft — der Streifen läge über dem Wortlaut. Die Bedingung ist
+              darum ein Nicht-Rendern und keine Container-Query-Klasse; die
+              Fenster-Schwelle trägt das Bauteil selbst (Herleitung dort).
+              Die vierte Bedingung — «es gibt überhaupt Treffer» — steht in
+              `ErwBereich`, weil nur dort die Zahl gerechnet wird (§5). */}
+          {!lese && (
+            <ErwBereich abschnitte={aktiveAbschnitte} zitierteNormen={snap.zitierteNormen}
+              suche={suche} onSuche={setSuche} springe={springeZuAbschnitt}
+              markenSchalter={<MarkenSchalter aus={markenAus} onSchalten={setzeMarkenAus} />}
+              landkarteSteht={!imPane && suche.trim() !== '' && !markenAus}
+              aktivAnker={aktivAnker} />
           )}
           {/* Dieselbe Schwelle wie der Grid darüber — sonst stünde die
               Lesespalte in der Pane einspaltig unter einem zweispaltigen

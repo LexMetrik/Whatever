@@ -35,6 +35,12 @@ import { AMTLICHE_FASSUNG } from '../lib/benennung';
  */
 const FLAECHE = [
   'src/pages/EntscheidLeser.tsx',
+  // W2·28 (21.9.2026): fünfte Datei der Fläche. Der Rail-/Landkarten-Anschluss
+  // ist aus `EntscheidLeser.tsx` geschnitten, weil die Datei über ihre
+  // Schlankheits-Baseline gewachsen war (`check:schlankheit`, 1245/1204 Z.).
+  // Die Sonden lesen die VEREINIGUNG — ohne diese Zeile hörte die A-2-Parität
+  // stillschweigend an der Dateigrenze auf (§6.7).
+  'src/pages/entscheidErwBereich.tsx',
   'src/components/rechtsprechung/EntscheidKopfTeile.tsx',
   'src/components/rechtsprechung/LesemodusOverlay.tsx',
   'src/components/rechtsprechung/leseGroesse.ts',

@@ -164,3 +164,81 @@ describe('Entscheid-Leser: dieselben Anker wie die Trefferliste (§5)', () => {
     expect(spur[spur.length - 1].id).toBe('abschnitt-dispositiv');
   });
 });
+
+// ─── Fertigbau 21.9.2026 · zwei Mängel der Verdrahtung, auf Modell-Ebene ─────
+
+describe('B3 · Leseposition in den Erwägungen (Sprung-Anker ≠ Lesepositions-Anker)', () => {
+  const abschnitte: EntscheidAbschnitt[] = [
+    { typ: 'sachverhalt', bloecke: [{ marke: null, text: 'Die Miete war strittig.' }] },
+    {
+      typ: 'erwaegung',
+      bloecke: [
+        { marke: 'E. 1', text: 'Zur Miete im Allgemeinen.' },
+        { marke: 'E. 1.1', text: 'Die Miete ist ein Dauerschuldverhältnis; Miete bleibt Miete.' },
+        { marke: 'E. 2', text: 'Kosten.' },
+      ],
+    },
+    { typ: 'dispositiv', bloecke: [{ marke: null, text: 'Die Beschwerde wird abgewiesen.' }] },
+  ];
+  const spur = landkarteSpur(entscheidLandkarteEinheiten(abschnitte));
+  const erwFelder = spur.filter((f) => f.abschnitt === 'Erwägungen');
+
+  it('DER DEFEKT: der Spy meldet «abschnitt-erwaegung» — und findet jetzt einen Bereich', () => {
+    // Der Scroll-Spy des Entscheid-Lesers beobachtet ausschliesslich
+    // `[id^="abschnitt-"]`; für die Erwägungen meldet er also genau diese Id.
+    // Vor dem Fertigbau lieferte `bereichZuId` dafür `null`, und im grössten
+    // Teil jedes Entscheids stand die Landkarte ohne Leseposition da.
+    const bereich = bereichZuId(spur, 'abschnitt-erwaegung');
+    expect(bereich, 'keine Leseposition für die Erwägungen — genau der Befund').not.toBeNull();
+    // Und zwar über ALLE Erwägungsblöcke, nicht nur über den ersten.
+    expect(bereich).toEqual({ von: erwFelder[0].von, bis: erwFelder[erwFelder.length - 1].bis });
+  });
+
+  it('DER SPRUNG BLEIBT DIE ERWÄGUNG: `id` trägt weiter den Erwägungs-Anker', () => {
+    // Gegenprobe zum Test darüber. Trüge die Einheit den Abschnitts-Anker auch
+    // als Sprungziel, führte jeder Klick auf eine Erwägungs-Marke an den
+    // Abschnittskopf — in einem langen Urteil ein Themawechsel, kein Treffer.
+    expect(erwFelder.map((f) => f.id)).toEqual(['e-1', 'e-1-1', 'e-2']);
+    for (const f of erwFelder) expect(f.leseId).toBe('abschnitt-erwaegung');
+    // `feldBeiAnteil` (der Klick auf den Streifen) liefert folgerichtig das
+    // Sprungziel, nicht den Lesepositions-Anker.
+    const mitte = (erwFelder[1].von + erwFelder[1].bis) / 2;
+    expect(feldBeiAnteil(spur, mitte)?.id).toBe('e-1-1');
+  });
+
+  it('Sachverhalt und Dispositiv brauchen kein zweites Feld — `id` gilt für beides', () => {
+    expect(spur[0].leseId).toBeUndefined();
+    expect(bereichZuId(spur, 'abschnitt-sachverhalt')).toEqual({ von: spur[0].von, bis: spur[0].bis });
+    expect(bereichZuId(spur, 'abschnitt-dispositiv')).not.toBeNull();
+  });
+
+  it('der Gesetz-Leser bleibt unberührt: ein Artikel-Token trifft sein eines Feld', () => {
+    // Dort melden Scroll-Spy und Sprung dieselbe Id; `leseId` bleibt leer, und
+    // `bereichZuId` fällt auf `id` zurück — die alte Zusicherung gilt weiter.
+    const gesetzSpur = landkarteSpur(EINHEITEN);
+    expect(gesetzSpur[1].leseId).toBeUndefined();
+    expect(bereichZuId(gesetzSpur, 'b')).toEqual({ von: gesetzSpur[1].von, bis: gesetzSpur[1].bis });
+  });
+});
+
+describe('B1 · Suche ohne Treffer ⇒ nichts abzubilden (der Streifen hat keinen Anlass)', () => {
+  it('Entscheid: kein Treffer ⇒ Gesamtzahl 0 UND keine Marke — die Bedingung der Zone', () => {
+    const abschnitte: EntscheidAbschnitt[] = [
+      { typ: 'erwaegung', bloecke: [{ marke: 'E. 1', text: 'Zur Miete im Allgemeinen.' }] },
+    ];
+    const spur = landkarteSpur(entscheidLandkarteEinheiten(abschnitte));
+    const begriff = 'grundbucheintragung';
+    expect(zaehleEntscheidTreffer(abschnitte, begriff), 'Vorbedingung: der Begriff kommt nicht vor').toBe(0);
+    const treffer = trefferInErwaegungen(abschnitte, begriff);
+    expect(landkarteMarken(spur, treffer.map((t) => ({ id: t.anker, anzahl: t.anzahl })))).toEqual([]);
+  });
+
+  it('Gesetz: erfolgloser Begriff ⇒ null Fundstellen, null Marken', () => {
+    const { eintraege, struktur } = ladeNormFixture('bund', 'BGFA');
+    const index = baueLeserSuchIndex('BGFA', eintraege, struktur);
+    const treffer = sucheImErlass(index, 'zzzznichtvorhanden');
+    expect(zaehleTreffer(treffer).fundstellen).toBe(0);
+    const gesetzSpur = landkarteSpur(gesetzLandkarteEinheiten(eintraege, struktur));
+    expect(landkarteMarken(gesetzSpur, treffer.map((t) => ({ id: t.token, anzahl: t.fundstellen })))).toEqual([]);
+  });
+});

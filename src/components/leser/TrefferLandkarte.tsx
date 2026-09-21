@@ -16,14 +16,15 @@ import {
 // unmöglich: der Rahmen ist auf 1072 px gedeckelt (`v3/useElementBreite`,
 // Messreihe dort), die Gliederungsspur nimmt 19.25 rem, und die verbleibende
 // Zelle (≈ 764 px) wird vom Lesemass VOLLSTÄNDIG ausgefüllt — innerhalb der
-// Zelle gibt es auf keiner Breite eine freie Rinne von 44 px. Der Streifen liegt
-// darum `fixed` am rechten FENSTERRAND, neben der Bildlaufleiste: dort ist ab
-// 1280 px Fensterbreite gemessen 104 px Randluft, er überdeckt keinen Text, und
-// als Element ausserhalb des Flusses kostet er null Layout (CLS 0 per
-// Konstruktion, nicht per Messung).
+// Zelle gibt es auf keiner Breite eine freie Rinne von 44 px (und erst recht
+// keine von 48 — s. `BREITE` unten). Der Streifen liegt darum `fixed` am
+// rechten FENSTERRAND, neben der Bildlaufleiste: dort ist ab 1280 px
+// Fensterbreite gemessen 104 px Randluft, er überdeckt keinen Text, und als
+// Element ausserhalb des Flusses kostet er null Layout (CLS 0 per Konstruktion,
+// nicht per Messung).
 // Darunter — und in JEDEM geteilten Pane, wo es überhaupt keine Randluft gibt —
 // steht er nicht (§8: lieber kein Element als eines über dem Wortlaut). Der
-// Aufrufer sagt das über `klassen`; diese Datei entscheidet es nicht.
+// Aufrufer entscheidet das (er rendert dann gar nicht); diese Datei nicht.
 //
 // ── §15 · KEINE MESSUNG IM SCROLL ───────────────────────────────────────────
 // Der Streifen misst NICHTS am DOM. Die Lagen kommen aus `./landkarteModell`
@@ -47,8 +48,20 @@ import {
 // nichts zu dämpfen, und der Sprung selbst läuft durch die bestehende
 // Sprungmechanik, die die Einstellung bereits respektiert.
 
-/** Breite des Streifens in `rem` — der Klickstreifen und das Koordinatensystem. */
-const BREITE = 44;
+/**
+ * Breite des Streifens in PIXELN — zugleich der Klickstreifen und die x-Achse
+ * des SVG-Koordinatensystems. (Der Kommentar hier sagte bis zum Fertigbau
+ * 21.9.2026 fälschlich «rem»; gemeint und gebaut waren immer px, `style.width`
+ * setzt sie als solche.)
+ *
+ * 48 px = die Untergrenze des Richtwerts 48–64 px aus
+ * `fahrplaene/FAHRPLAN-RECHERCHE-KOMFORT.md` §1/L-1. Sie kostet die Lesespalte
+ * gemessen nichts: der Streifen ist `fixed` und liegt mit `right-3` (12 px) in
+ * der 104 px breiten Randluft ab 1280 px Fensterbreite — 60 px belegt, 44 px
+ * frei. Breiter zu werden hiesse, Platz zu verbrauchen, den die Landkarte für
+ * drei Marken-Stufen nicht braucht (`markenBreite`).
+ */
+const BREITE = 48;
 /** Höhe des SVG-Koordinatensystems. Der Streifen wird auf die Elementhöhe
  *  gezogen (`preserveAspectRatio="none"`), die Zahl ist reine Rechenauflösung. */
 const HOEHE = 1000;
@@ -115,17 +128,23 @@ export function TrefferLandkarte({
       // Zufall: es ist eine Aussage über das FENSTER (der Streifen ist `fixed`,
       // sein Bezugsrahmen ist der Viewport), nicht über die Fläche des Lesers.
       // Beim Aufrufer wäre es eine Viewport-Klasse in einer Datei, die sonst
-      // konsequent Container-Queries führt — die Pane-Parität (`check:p-klassen`,
-      // `entscheid-leser-b2`) verlangt dort zu Recht ein Container-Gegenstück,
-      // und eines gäbe es hier nicht: in einer Pane steht der Streifen NIE,
-      // weil neben dem Lesemass keine Randluft ist. Der Aufrufer sagt darum
-      // «Pane: gar nicht rendern», dieses Element sagt «Fenster: erst ab xl».
+      // konsequent Container-Queries führt; ein Container-Gegenstück dazu gäbe
+      // es nicht, denn in einer Pane steht der Streifen NIE — neben dem
+      // Lesemass ist dort keine Randluft. Der Aufrufer sagt darum «Pane: gar
+      // nicht rendern», dieses Element sagt «Fenster: erst ab xl».
+      // (Bis zum Fertigbau 21.9.2026 berief sich dieser Absatz auf ein Tor
+      // `check:p-klassen` und eine e2e-Datei `entscheid-leser-b2` — beides
+      // falsch: `check:p-klassen` ist der Fedlex-<p>-Wächter, und die
+      // Paritätssonde `src/tests/entscheid-leser-b2.test.tsx` deckt nur die
+      // vier Dateien der Fläche ENTSCHEID-Leser ab, nicht `gesetz-leser/v3`.
+      // Für die v3-Naht gibt es heute keinen Wächter; der Verweis ist darum
+      // gestrichen statt ersetzt — geraten wird keiner.)
       className="fixed right-3 z-sticky hidden cursor-pointer border border-line bg-well print:hidden xl:block"
       style={{ top: `calc(var(${obenVar}, 7rem) + 0.5rem)`, bottom: '1.5rem', width: `${BREITE}px` }}>
       <svg aria-hidden viewBox={`0 0 ${BREITE} ${HOEHE}`} preserveAspectRatio="none"
         className="block h-full w-full">
         {/* Abschnitts-Trenner: Haarlinien statt Etiketten. Für Wörter ist ein
-            44-px-Streifen zu schmal, und geraten wird nichts (§8) — die Namen
+            48-px-Streifen zu schmal, und geraten wird nichts (§8) — die Namen
             der Abschnitte stehen unverändert in der Gliederungsspalte bzw. im
             Erwägungs-Rail daneben. Jeder Trenner trägt seinen Namen als
             `<title>`, damit er beim Überfahren doch lesbar ist. */}
