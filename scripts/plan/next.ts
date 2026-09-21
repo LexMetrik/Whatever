@@ -8,6 +8,9 @@ import { flaechenZeile, klassiere } from './gitFlaechen';
 import { sammleFakten } from './gitFlaechenSammeln';
 import { leseNotizen, notizenBefund, notizenVerzeichnis, notizenZeilen } from './notizen';
 import { postenJeDach, postenScan, postenZeile } from './postenKern';
+import {
+  flaechenDateien, leseGrenze, leseZeitreihe, summeBytes, trendZeile,
+} from '../analyse/steuerflaecheKern';
 export { resolve, type Buckets } from './aufloesen';
 
 // CLI
@@ -62,6 +65,23 @@ if (!process.env.VITEST) {
   // `check:plan` Regel 16 (a) die Gegenprobe hält.
   const posten = postenZeile(postenJeDach(postenScan()));
   if (posten) z(posten);
+  // Steuerungs-Zeile ZULETZT angehängt (Sperrklinke 20.9.2026, QS-EFFIZIENZ):
+  // zieht man sie ab, ist die Ausgabe darüber byte-identisch zum Stand davor.
+  // Sie ist die einzige laufende Rückmeldung darüber, ob die Steuerung wächst —
+  // David hat ausdrücklich KEINEN zusätzlichen Bericht und keine Messung je
+  // Session gewollt (Entscheid 20.9.2026). Kein Netz, kein git-log-Scan: eine
+  // `git ls-files`-Summe plus eine CSV-Zeile. Fehlt git oder die Grenz-Datei,
+  // schweigt der Block (gleiche Regel wie Lage- und Notizen-Block).
+  try {
+    z(trendZeile({
+      ist: summeBytes(flaechenDateien()),
+      grenze: leseGrenze(),
+      reihe: leseZeitreihe(),
+      heute: new Date().toISOString().slice(0, 10),
+    }));
+  } catch {
+    // kein Repo / keine messwerte/steuerflaeche.json — still degradieren (§8).
+  }
   // Git-Flächen-Zeile GANZ ZULETZT angehängt (21.9.2026, Anlass im Kopf von
   // gitFlaechen.ts): zieht man sie ab, ist die Ausgabe darüber byte-identisch
   // zum Stand davor. NETZFREI und ohne `gh` — plan:next fragt gh sonst nur mit

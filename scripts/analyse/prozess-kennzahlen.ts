@@ -28,6 +28,10 @@
 //   commits_30d           Commits in den 30 Tagen vor dem Stichtag
 //   prozess_commits_30d   davon Prozess-Commits (HEURISTIK, s. unten)
 //   roadmap_bytes         Bytes der ROADMAP.md
+//   steuerflaeche_bytes   Bytes der GESAMTEN Steuerungs-Fläche (Definition in
+//                         steuerflaecheKern.ts, ab 20.9.2026 — rückwirkend auf
+//                         ältere Bäume nachgerechnet, damit die Klinke einen
+//                         Trend hat statt nur einen Momentwert)
 //
 // ── HEURISTIK `prozess_commits_30d` — ausdrücklich gekennzeichnet ────────
 // Ein «Prozess-Commit» ist nicht messbar, er ist geschätzt: gezählt wird ein
@@ -55,6 +59,7 @@
 // Sessions und den laufenden Bau zerschiessen (§12).
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { flaecheImCommit } from './steuerflaecheKern';
 
 export const CSV_DATEI = 'messwerte/prozess-kennzahlen.csv';
 export const SEED_START = '2026-07-01';
@@ -69,6 +74,7 @@ export const SPALTEN = [
   'commits_30d',
   'prozess_commits_30d',
   'roadmap_bytes',
+  'steuerflaeche_bytes',
 ] as const;
 
 export type Zeile = Record<(typeof SPALTEN)[number], string | number>;
@@ -192,6 +198,7 @@ export function erhebe(sha: string, datum: string, roh = false): Zeile {
     commits_30d: betreffe.length,
     prozess_commits_30d: betreffe.filter((b) => istProzessCommit(b, roh)).length,
     roadmap_bytes: Buffer.byteLength(zeige(sha, 'ROADMAP.md') ?? '', 'utf8'),
+    steuerflaeche_bytes: flaecheImCommit(sha),
   };
 }
 
@@ -210,7 +217,7 @@ export function anzeige(zeilen: Zeile[]): string[] {
     aus.push(
       '',
       `Trend ${erste.datum} → ${letzte.datum}: ` +
-        [delta('claude_md_zeilen'), delta('skills_zeilen'), delta('rules_zeilen'), delta('tore'), delta('hooks'), delta('roadmap_bytes')].join(' · '),
+        [delta('claude_md_zeilen'), delta('skills_zeilen'), delta('rules_zeilen'), delta('tore'), delta('hooks'), delta('roadmap_bytes'), delta('steuerflaeche_bytes')].join(' · '),
       'Kein Urteil: Wachstum ist nicht per se Verfall, Schrumpfen nicht per se Gewinn.',
       '`prozess_commits_30d` ist eine gekennzeichnete Heuristik (Kopf des Skripts), keine Messung.',
     );
