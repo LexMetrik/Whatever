@@ -151,6 +151,9 @@ export interface CuriaPublikation {
   /** WÖRTLICH aus `ReferenceText`. */
   text: string | null;
   referendumsfrist: string | null;
+  /** Vorlage (Entwurf) des Geschäfts, aus `Objective.BillNumber` — gleiche Benennung und
+   *  gleicher Typ wie `CuriaBeschluss.vorlage` (§5: eine Sache, ein Name). */
+  vorlage: number | null;
 }
 export interface CuriaSchlussabstimmung {
   datum: string | null;
@@ -277,10 +280,35 @@ export function baueBeschluesse(zeilen: OdataZeile[], vorlageJeBill: Map<string,
  * er führt darum jetzt zusätzlich `text` und `art`. Wer den Schlüssel erweitert, erweitert
  * den Vergleicher — sonst hinge die Reihenfolge an der Zeilenfolge der Endpunkt-Antwort.
  *
- * ECHTE Duplikate gibt es wirklich — der Dedupe hat einen belegten Anlass: das Geschäft
- * 08.053 liefert 12 Objective-Zeilen, davon nur 8 distinkte (zwei Fundstellen kommen je
- * dreifach byte-gleich, Messung 21.9.2026). Gegengerechnet wird offline über die
- * UNABHÄNGIGE Auszählung `distinkteObjectiveZeilen()` (siehe dort).
+ * BERICHTIGUNG 21.9.2026 (zweite Runde, F8: datierte Messsätze werden ergänzt, nie
+ * überschrieben). An dieser Stelle stand seit der ersten Runde, das Geschäft 08.053 liefere
+ * «zwei Fundstellen je dreifach byte-gleich» und sei damit der belegte Anlass des Dedupe.
+ * Das war FALSCH gemessen: die erste Runde verglich nur die sechs Felder oben und hielt
+ * darum für byte-gleich, was sich in `BillNumber` unterscheidet. Der Vollzensus aller
+ * 14 669 DE-`Objective`-Zeilen (Abruf 21.9.2026, `$inlinecount=allpages`, 15 Seiten) zeigt:
+ * an 08.053 sind alle 12 Zeilen verschieden (12 roh = 12 vollzeilen-distinkt), sie
+ * unterscheiden sich ausschliesslich in der VORLAGE. Darum steht `vorlage` jetzt im
+ * Schlüssel — ohne sie fielen 12 Zeilen auf 8 zusammen (03.047: 17 auf 14).
+ *
+ * `BillNumber` GENÜGT, `IdBill` ist redundant. Kardinalität über alle 3 763 DE-Geschäfte:
+ * roh 14 669 · Vollzeile (ohne `__metadata`/`Modified`/`ID`/`Bills`) 14 665 · sechs Felder
+ * 14 506 · sechs + `BillNumber` 14 665 · sechs + `BillNumber` + `IdBill` ebenfalls 14 665.
+ * Es gibt NULL Gruppen, die sich nur in `IdBill` unterscheiden; die GUID käme nur als
+ * Golden-Rauschen ins Artefakt. `Bills` scheidet ohnehin aus: sein `__deferred`-URI enthält
+ * die eigene `ID` der Zeile, ein Inhaltsvergleich darüber misst tautologisch grün.
+ *
+ * ECHTE Doppellieferungen gibt es — nur nicht bei uns. Korpusweit vier Zeilen in drei
+ * Geschäften (22.417, 26.023, 19.464), keines davon mit Shard. Über unsere 385 Shards gilt
+ * roh == vollzeilen-distinkt == 2055, der Lauf ist also VERLUSTFREI; die Map bleibt
+ * trotzdem, weil eine wirklich doppelt gelieferte Zeile eine Wiederholung ist und keine
+ * zweite Fundstelle. Weil der Bestand verlustfrei ist, rechnet `check:entstehung` gegen die
+ * ROHE Zeilenzahl gegen und wird rot, sobald ein Shard weniger speichert als der Endpunkt
+ * liefert (§6.7: fail-loud statt still dedupen).
+ *
+ * `BillNumber` IST EIN `int`, KEIN STRING (gemessen: 14 669 von 14 669 Zeilen `typeof
+ * 'number'`). `txt(z.BillNumber)` liefert deshalb für JEDE Zeile `null` — ein Fix über
+ * `txt()` änderte exakt nichts und sähe trotzdem nach Fix aus. Darum `zahl()`, und darum
+ * ein eigener Test, der genau diesen Irrweg rot macht.
  *
  * Schlüssel und Sortierschlüssel sind `JSON.stringify`-Tupel, kein `|`-Join: seit
  * `ReferenceText` im Schlüssel steht, trägt er Freitext, und ein `|` darin würde zwei
@@ -296,50 +324,29 @@ export function bauePublikationen(zeilen: OdataZeile[]): CuriaPublikation[] {
       nummer: txt(z.PublicationNumber),
       text: txt(z.ReferenceText),
       referendumsfrist: odataDatum(z.ReferendumDeadline),
+      vorlage: zahl(z.BillNumber),
     };
-    m.set(JSON.stringify([p.datum, p.art, p.jahr, p.nummer, p.text, p.referendumsfrist]), p);
+    m.set(JSON.stringify([p.datum, p.art, p.jahr, p.nummer, p.text, p.referendumsfrist, p.vorlage]), p);
   }
-  // Sortierschlüssel = alle sechs Felder ⇒ STRIKTE Totalordnung: zwei verschiedene
+  // Sortierschlüssel = alle sieben Felder ⇒ STRIKTE Totalordnung: zwei verschiedene
   // Einträge können nie gleich vergleichen, die Reihenfolge hängt damit nirgends an der
   // Zeilenfolge der Endpunkt-Antwort (§2). Reihung wie bisher datum → jahr → nummer,
-  // danach die neuen Tiebreaker text → art → referendumsfrist.
+  // danach die Tiebreaker text → art → referendumsfrist.
+  // `vorlage` kommt ANS ENDE, nicht nach vorn: die bisherige fachliche Reihung (eine
+  // Publikationsliste liest sich chronologisch, dann nach Fundstelle) bleibt damit
+  // unverändert, und `vorlage` entscheidet nur dort, wo bisher gar nichts mehr entschied —
+  // nämlich zwischen den Zeilen, die der alte Schlüssel wegwarf. Padding wie bei
+  // `baueBeschluesse`, damit Vorlage 2 vor Vorlage 10 steht und nicht danach.
   const sortSchluessel = (p: CuriaPublikation): string => JSON.stringify([
     p.datum ?? '9999', p.jahr ?? '', (p.nummer ?? '').padStart(8, '0'),
     p.text ?? '', p.art ?? '', p.referendumsfrist ?? '',
+    String(p.vorlage ?? 9999).padStart(4, '0'),
   ]);
   return [...m.values()].sort((a, b) => {
     const ka = sortSchluessel(a);
     const kb = sortSchluessel(b);
     return ka < kb ? -1 : ka > kb ? 1 : 0;
   });
-}
-
-/**
- * REIN: Zahl der DISTINKTEN Objective-Zeilen einer amtlichen Antwort — der zweite,
- * UNABHÄNGIGE Weg auf dieselbe Zahl (Kreuzprobe für `check:entstehung`, Befund 21.9.2026).
- *
- * Bewusst NICHT über `bauePublikationen()` gerechnet: ein Zähler, der den geprüften Weg
- * benutzt, kann dessen Fehler nicht finden (Tautologie-Falle, §6.7). Diese Funktion baut
- * ihre Identität selbst — Objekt-Form statt Tupel, direkt aus der Roh-Zeile, ohne
- * `CuriaPublikation`, ohne Map-Schlüssel, ohne Sortierung. Geteilt werden nur die
- * NORMALISIERER `txt`/`odataDatum`: die Normalisierung ist nicht die geprüfte Entscheidung
- * (und ihre Falle ist eine andere, siehe `txt`), die IDENTITÄTS-Entscheidung ist es.
- *
- * `objectiveZeilen − distinkteObjectiveZeilen` = Zahl der echt doppelt gelieferten Zeilen.
- */
-export function distinkteObjectiveZeilen(zeilen: OdataZeile[]): number {
-  const gesehen = new Set<string>();
-  for (const z of zeilen) {
-    gesehen.add(JSON.stringify({
-      art: txt(z.PublicationTypeName),
-      datum: odataDatum(z.PublicationDate),
-      frist: odataDatum(z.ReferendumDeadline),
-      jahr: txt(z.PublicationYear),
-      nummer: txt(z.PublicationNumber),
-      text: txt(z.ReferenceText),
-    }));
-  }
-  return gesehen.size;
 }
 
 /** REIN: Vote-Zeilen → die Schlussabstimmungs-IDs (sprachübergreifend erkannt). */

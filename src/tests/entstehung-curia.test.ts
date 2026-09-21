@@ -11,7 +11,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import {
   odataZeilen, odataDatum, aggregiereStimmen, ratAusGroesse, DECISION_CODES,
-  baueKommissionen, baueBeschluesse, bauePublikationen, distinkteObjectiveZeilen, schlussabstimmungsVotes,
+  baueKommissionen, baueBeschluesse, bauePublikationen, schlussabstimmungsVotes,
   serialisiereShard, curiaUrl, VERBOTENE_FELDER, SCHLUSSABSTIMMUNG_RE,
   type CuriaShard, type OdataZeile,
 } from '../../scripts/entstehung/curia';
@@ -162,17 +162,87 @@ describe('Parse-Funktionen — deterministisch und wörtlich (Curia-Auflage)', (
     ]);
   });
 
+  // ── Der Kernfall der zweiten Runde: NUR die Vorlage unterscheidet ───────────────
+  // Berichtigung zur ersten Runde (F8 — der alte Satz bleibt lesbar): dort hiess es,
+  // 08.053 liefere «zwei Fundstellen je dreifach byte-gleich». Das war mit dem
+  // Sechs-Feld-Schlüssel gemessen und darum falsch. Der Vollzensus aller 14 669
+  // DE-Objective-Zeilen (21.9.2026) zeigt: an 08.053 sind alle 12 Zeilen verschieden,
+  // sie unterscheiden sich AUSSCHLIESSLICH in `BillNumber` (03.047: 17 statt 14).
+  it('Publikationen: gleiche Fundstelle zu DREI Entwürfen ⇒ DREI Publikationen', () => {
+    const basis = {
+      PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+      PublicationYear: 'null', PublicationNumber: 'null',
+      ReferenceText: 'Bundesgesetz über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG)',
+      ReferendumDeadline: null,
+    };
+    const p = bauePublikationen([
+      { ...basis, BillNumber: 2 },
+      { ...basis, BillNumber: 1 },
+      { ...basis, BillNumber: 3 },
+    ]);
+    expect(p).toHaveLength(3);
+    expect(p.map((x) => x.vorlage)).toEqual([1, 2, 3]);
+  });
+
+  it('Publikationen: `vorlage` kommt aus zahl(), nie aus txt() — BillNumber ist ein int', () => {
+    // DIE MESSFALLE, an der ein naiver Fix wirkungslos durchginge: `BillNumber` ist in
+    // 14 669 von 14 669 DE-Objective-Zeilen `typeof 'number'` (Vollzensus 21.9.2026).
+    // `txt()` prüft `typeof v === 'string'` und lieferte deshalb für JEDE Zeile `null` —
+    // der Schlüssel bliebe unverändert, der Fix sähe trotzdem nach Fix aus. Dieser Test
+    // wird bei `txt(z.BillNumber)` doppelt rot: `vorlage` wäre null statt 7, und die drei
+    // Zeilen fielen wieder auf eine zusammen.
+    const basis = {
+      PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+      PublicationYear: 'null', PublicationNumber: 'null',
+      ReferenceText: 'Entwurf der SPK-N', ReferendumDeadline: null,
+    };
+    const p = bauePublikationen([{ ...basis, BillNumber: 7 }]);
+    expect(p[0].vorlage).toBe(7);
+    expect(typeof p[0].vorlage).toBe('number');
+    expect(bauePublikationen([
+      { ...basis, BillNumber: 7 }, { ...basis, BillNumber: 8 }, { ...basis, BillNumber: 9 },
+    ])).toHaveLength(3);
+  });
+
+  it('Publikationen: Vorlage 2 steht vor Vorlage 10 (Padding im Vergleicher)', () => {
+    // Ohne Padding verglichen die JSON-Tupel als Text: «10» käme vor «2».
+    const basis = {
+      PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+      PublicationYear: 'null', PublicationNumber: 'null',
+      ReferenceText: 'Entwurf', ReferendumDeadline: null,
+    };
+    const p = bauePublikationen([{ ...basis, BillNumber: 10 }, { ...basis, BillNumber: 2 }]);
+    expect(p.map((x) => x.vorlage)).toEqual([2, 10]);
+  });
+
+  it('Publikationen: umgekehrte Eingabereihenfolge ⇒ byte-gleiche Ausgabe, auch über Vorlagen (§2)', () => {
+    const basis = {
+      PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
+      PublicationYear: 'null', PublicationNumber: 'null', ReferendumDeadline: null,
+    };
+    const zeilen: OdataZeile[] = [
+      { ...basis, ReferenceText: 'B-Vorlage', BillNumber: 2 },
+      { ...basis, ReferenceText: 'A-Vorlage', BillNumber: 3 },
+      { ...basis, ReferenceText: 'B-Vorlage', BillNumber: 1 },
+      { ...basis, ReferenceText: 'A-Vorlage', BillNumber: 1 },
+    ];
+    const vorwaerts = JSON.stringify(bauePublikationen(zeilen));
+    expect(JSON.stringify(bauePublikationen([...zeilen].reverse()))).toBe(vorwaerts);
+    expect(JSON.parse(vorwaerts)).toHaveLength(4);
+  });
+
   it('Publikationen: eine byte-gleich doppelte Zeile bleibt EINE Fundstelle', () => {
-    // Der Dedupe hat einen belegten Anlass: 08.053 liefert zwei Fundstellen je dreifach
-    // (12 Roh-Zeilen, 8 distinkte, Messung 21.9.2026). Die Map bleibt deshalb.
+    // Der Dedupe bleibt wirksam: ECHTE Doppellieferungen existieren korpusweit an den
+    // Geschäften 22.417, 26.023 und 19.464 (vier Zeilen, Vollzensus 21.9.2026) — nur
+    // trägt keines davon heute einen Shard. Eine wirklich doppelt gelieferte Zeile ist
+    // eine Wiederholung, keine zweite Fundstelle.
     const zeile: OdataZeile = {
       PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt',
       PublicationYear: 'null', PublicationNumber: 'null',
       ReferenceText: 'Bundesbeschluss über die Vereinfachung der Mehrwertsteuer',
-      ReferendumDeadline: null,
+      ReferendumDeadline: null, BillNumber: 1,
     };
     expect(bauePublikationen([zeile, { ...zeile }, { ...zeile }])).toHaveLength(1);
-    expect(distinkteObjectiveZeilen([zeile, { ...zeile }, { ...zeile }])).toBe(1);
   });
 
   it('Publikationen: umgekehrte Eingabereihenfolge ⇒ byte-gleiche Ausgabe (§2)', () => {
@@ -190,16 +260,13 @@ describe('Parse-Funktionen — deterministisch und wörtlich (Curia-Auflage)', (
     expect(JSON.parse(vorwaerts)).toHaveLength(4);
   });
 
-  it('distinkteObjectiveZeilen zählt unabhängig — und sieht dieselbe Zahl wie der Bau', () => {
-    // Kreuzprobe des Tors: zwei getrennt gebaute Identitäten, eine Zahl. Ein «|» im
-    // Freitext darf die Fundstellen nicht verschmelzen (darum JSON-Tupel statt Join).
+  it('Publikationen: ein «|» im Freitext verschmilzt keine Fundstellen (JSON-Tupel statt Join)', () => {
     const zeilen: OdataZeile[] = [
       { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'a|b', ReferendumDeadline: null },
       { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'a', ReferendumDeadline: null },
       { PublicationDate: '/Date(1214352000000)/', PublicationTypeName: 'Bundesblatt|null', PublicationYear: 'null', PublicationNumber: 'null', ReferenceText: 'b', ReferendumDeadline: null },
     ];
     expect(bauePublikationen(zeilen)).toHaveLength(3);
-    expect(distinkteObjectiveZeilen(zeilen)).toBe(3);
   });
 
   it('baut den amtlichen Deep-Link aus der Geschäftsnummer', () => {
