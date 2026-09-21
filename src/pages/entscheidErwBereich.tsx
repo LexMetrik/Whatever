@@ -46,7 +46,7 @@ import { entscheidLandkarteEinheiten } from './entscheidLandkarte';
 // ── §15 · DER ENTPRELL-HOOK (extrahiert 21.9.2026, testbar) ─────────────────
 // Reiner Zustands-Hook, verhaltensneutral aus dem Rumpf von `ErwBereich`
 // herausgelöst (§6.3: keine bestehende Zusicherung ändert sich, nur der Ort —
-// `src/tests/entscheid-erw-entprellung.test.ts` prüft ihn direkt mit
+// `src/tests/entscheid-erw-entprellung.test.tsx` prüft ihn direkt mit
 // Fake-Timern, statt die ganze Komponente zu montieren). Herleitung der
 // 0-ms/200-ms-Regel und der Nachträge 21.9.2026 unten in `ErwBereich`.
 export function useSucheGewertet(suche: string): string {
