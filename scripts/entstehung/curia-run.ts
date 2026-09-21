@@ -74,6 +74,7 @@ let vorberatungenGesamt = 0;
 let schlussGesamt = 0;
 let publikationenGesamt = 0;
 let objectiveZeilenGesamt = 0;
+let distinktObjectiveGesamt = 0;
 
 let erledigt = 0;
 async function holeGeschaeft(nr: string): Promise<void> {
@@ -161,6 +162,7 @@ async function holeGeschaeft(nr: string): Promise<void> {
   schlussGesamt += schlussabstimmungen.length;
   publikationenGesamt += publikationen.length;
   objectiveZeilenGesamt += objectiveZeilen.length;
+  distinktObjectiveGesamt += distinktObjective;
   erledigt += 1;
   if (erledigt % 25 === 0) console.log(`curia: ${erledigt}/${nummern.length} …`);
 }
@@ -208,6 +210,14 @@ if (nur && existsSync(CURIA_ZUSTAND_PFAD)) {
 
 console.log(`curia: ${zustand.length}/${nummern.length} Geschäfte → ${CURIA_DIR}`);
 console.log(`  Rats-Beschlüsse ${beschluesseGesamt} · Kommissions-Vorberatungen ${vorberatungenGesamt} · Schlussabstimmungen ${schlussGesamt}`);
-console.log(`  Publikationen ${publikationenGesamt} gespeichert aus ${objectiveZeilenGesamt} amtlichen Objective-Zeile(n) (Differenz = echte Doppellieferungen)`);
+// Drei Zahlen, nicht zwei: «gespeichert ≠ distinkt» heisst KOLLABIERT (Fehler),
+// «distinkt < roh» heisst nur doppelt geliefert (harmlos). Eine einzige Differenz
+// koennte beides bedeuten und hat in der Wegwerf-Probe am 21.9.2026 genau das
+// verwechselt — sie nannte 11 kollabierte Fundstellen «Doppellieferungen».
+console.log(
+  `  Publikationen ${publikationenGesamt} gespeichert · ${distinktObjectiveGesamt} distinkte `
+  + `· ${objectiveZeilenGesamt} rohe amtliche Objective-Zeile(n)`
+  + `${publikationenGesamt === distinktObjectiveGesamt ? '' : ' ← KOLLABIERT, check:entstehung wird rot'}`,
+);
 fehlend.sort();
 if (fehlend.length) console.log(`  ohne Business-Datensatz (${fehlend.length}): ${fehlend.join(', ')}`);
