@@ -1,7 +1,7 @@
 {
   "erlassKey": "STHG",
   "sr": "642.14",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-21",
   "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
   "revisionen": [
     {
@@ -10,6 +10,13 @@
       "nichtKonsolidiert": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.14",
       "sha": "27d59f324cd096f5068d12fb5e348db67c9869b1618aa5a9deaf2a4e6abc8a10"
+    },
+    {
+      "art": "sammelerlass-marker",
+      "dateEntryInForce": "2028-01-01",
+      "nichtKonsolidiert": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.14",
+      "sha": "0a1c39cfd2caeab57ece0b9531b7ca27acc17ffbfb8b4b4b283d6f65ef94b84a"
     },
     {
       "art": "sammelerlass-marker",
@@ -259,5 +266,5 @@
       "sha": "5a0a60371880d45fdac9224e2b27f0c40b4aaa42820d66c58a13e53b45d2a0fb"
     }
   ],
-  "sha": "d66ee45b292df7f06ca5ca563ccc6734f50558a9f73ef6a62c174f51a6bb1d9d"
+  "sha": "6b41cd995eda3eb9d837be60c45083365cc923b6dfeb1c7249e1d026eff6a371"
 }
