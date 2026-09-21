@@ -27,6 +27,10 @@ leserSuche.ts`, `suchHighlight.ts`, `inhalt-suchtreffer.tsx`; Entscheid:
 `src/pages/entscheidLeserRegeln.ts` Treffer-Bündel je Erwägung). Es **fehlen**: die
 Landkarte (kein Code, kein Plan-Eintrag) und der Verteilungsbalken in der Trefferliste.
 
+> **Nachtrag Bestand 21.9.2026:** Die Landkarte ist gebaut und live (L-1/L-2, #959,
+> `src/components/leser/TrefferLandkarte.tsx`, Gesetz- und Entscheid-Leser). Weiterhin
+> **fehlt** nur der Verteilungsbalken L-3 — seit 21.9.2026 geparkt (s. L-3).
+
 **Einheiten.**
 - **L-1 · Landkarte im Leser** *(M)* — ein Streifen (Richtwert 48–64 px, Höhe = sichtbarer
   Lesebereich), massstäblich zum Dokument: Blöcke je Absatz/Artikel bzw. Erwägung,
@@ -48,13 +52,26 @@ Landkarte (kein Code, kein Plan-Eintrag) und der Verteilungsbalken in der Treffe
   > Richtwerts oben — der Streifen liegt `fixed` in der gemessenen Randluft von 104 px
   > und verdrängt die Lesespalte damit nicht.
 - **L-2 · Schalter und Ruhezustand** *(S)* — Landkarte erscheint nur bei aktiver
-  Dokumentsuche (kein Dauer-Element, DESIGN-REGLEMENT Ruhe-Grundsatz); ein Schalter
+  Dokumentsuche (kein Dauer-Element); ein Schalter
   blendet Hervorhebung **und** Marken gemeinsam aus. Mobil: ausgeblendet oder als
   waagrechter Balken — Entscheid im Bau nach Messung, nicht vorab.
+
+  > **Entscheid L-2 (Fertigbau #959, nachgetragen 21.9.2026):** Mobil **ausgeblendet** —
+  > der Streifen steht erst ab Fenster-Breite `xl` (`hidden xl:block`) und in einer Pane
+  > nie, weil er `fixed` in der Randluft neben dem Lesemass liegt und schmaler keine
+  > Randluft bleibt (Herleitung am Element in `TrefferLandkarte.tsx`). Kein waagrechter
+  > Balken. — **Verweis korrigiert 21.9.2026:** hier stand «DESIGN-REGLEMENT
+  > Ruhe-Grundsatz»; einen solchen Begriff führt das Reglement nicht (0 Treffer), der
+  > Verweis ist gestrichen. Die Regel «kein Steuerelement ohne Wirkung» trägt im Code
+  > §13 F4 (`ErwaegungsRail.tsx`, Schalter-Bedingung).
 - **L-3 · Verteilungsbalken in der Trefferliste** *(M, `feld: suche`-Berührung)* — je Treffer
   der globalen Suche ein waagrechter Balken «wo im Dokument liegen die Treffer». Nur bauen,
   wenn die Such-Antwort die Positionen **ohne** zweiten Volltext-Abruf je Treffer liefern
   kann (§15 — sonst Logikverlust-Bewertung und Verzicht); sonst als Ideen-Zeile parken.
+
+  > **Geparkt 21.9.2026** (Delta-Prüfung #959, Auflage 3): nicht gebaut; ob die
+  > Such-Antwort die Positionen ohne zweiten Volltext-Abruf liefern kann, ist UNGEPRÜFT.
+  > Wieder aufnehmen nur mit dieser Messung zuerst.
 
 **Grenzen.** Kein neuer Such-Index, keine Änderung an Treffer-Logik oder Rangfolge (§1/§6:
 Golden byte-gleich, Tests unverändert). Virtualisierte Leser-Ansichten: Positionen aus dem

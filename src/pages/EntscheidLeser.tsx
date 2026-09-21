@@ -24,7 +24,6 @@ import {
 } from './entscheidLeserRegeln';
 import { datumOderStrich } from '../components/ui/datumText';
 import { setzeSuchHighlight } from './gesetz-leser/suchHighlight';
-import { MarkenSchalter } from '../components/leser/MarkenSchalter';
 import { ErwBereich } from './entscheidErwBereich';
 import { usePaneKlasse, usePaneKontext } from '../components/layout/PaneKontext';
 import { useMeldeInhaltsKopf } from '../components/layout/InhaltsKopfKontext';
@@ -980,13 +979,21 @@ function EntscheidLeserInhalt({ schluessel, ansichtParam, normParam, leseParam }
               Randluft — der Streifen läge über dem Wortlaut. Die Bedingung ist
               darum ein Nicht-Rendern und keine Container-Query-Klasse; die
               Fenster-Schwelle trägt das Bauteil selbst (Herleitung dort).
-              Die vierte Bedingung — «es gibt überhaupt Treffer» — steht in
-              `ErwBereich`, weil nur dort die Zahl gerechnet wird (§5). */}
+              Die drei ÜBRIGEN Bedingungen — «es gibt überhaupt Treffer»,
+              «laufende Suche», «Hervorhebung nicht weggeschaltet» — stehen in
+              `ErwBereich`, weil nur dort die Zahl GEWERTET vorliegt (§5, §
+              Falle a 21.9.2026): `markenAus` hier ist roh und speist nur noch
+              die Hervorhebung im Lesetext (unten); Landkarte, Rail-Schranke
+              und Schalter-Anzeige hängen an `sucheAktiv` (roh UND gewertet
+              nicht leer). Vorsorge, kein gemessener Altbefund: vorher hingen
+              Schalter und Landkarte beide am rohen Stand und fielen im selben
+              Render; seit sie am gewerteten hängen, muss auch der Schalter
+              dort rechnen, sonst läge er beim Leeren einen Tick daneben. */}
           {!lese && (
             <ErwBereich abschnitte={aktiveAbschnitte} zitierteNormen={snap.zitierteNormen}
               suche={suche} onSuche={setSuche} springe={springeZuAbschnitt}
-              markenSchalter={<MarkenSchalter aus={markenAus} onSchalten={setzeMarkenAus} />}
-              landkarteSteht={!imPane && suche.trim() !== '' && !markenAus}
+              markenAusRoh={markenAusRoh} onMarkenSchalten={setzeMarkenAus}
+              landkarteSteht={!imPane}
               aktivAnker={aktivAnker} />
           )}
           {/* Dieselbe Schwelle wie der Grid darüber — sonst stünde die

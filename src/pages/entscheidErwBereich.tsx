@@ -1,11 +1,13 @@
-import { memo, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { memo, useMemo } from 'react';
 import { ErwaegungsRail } from '../components/rechtsprechung/ErwaegungsRail';
+import { MarkenSchalter } from '../components/leser/MarkenSchalter';
 import { TrefferLandkarte } from '../components/leser/TrefferLandkarte';
 import { landkarteSpur } from '../components/leser/landkarteModell';
 import { erwaegungsGliederung, erwaegungsWort } from '../lib/rechtsprechung/abschnitte';
 import type { EntscheidAbschnitt } from '../lib/rechtsprechung/typen';
 import { nennungsAnker, trefferInErwaegungen, zaehleTreffer, type SuchTreffer } from './entscheidLeserRegeln';
 import { entscheidLandkarteEinheiten } from './entscheidLandkarte';
+import { useSucheGewertet } from './entscheidErwEntprellung';
 
 // ═══ ENTSCHEID-LESER · DIE ZWEITE SPALTE ════════════════════════════════════
 //
@@ -42,8 +44,14 @@ import { entscheidLandkarteEinheiten } from './entscheidLandkarte';
 // zufällig gleich. Zusammen stehen sie auch deshalb, weil sie DIESELBE
 // Bedingung teilen: ohne Treffer gibt es weder den Schalter im Rail noch
 // etwas, das die Landkarte zeigen könnte.
+// ── §15 · DER ENTPRELL-HOOK ──────────────────────────────────────────────────
+// `useSucheGewertet` steht seit 21.9.2026 in einer EIGENEN Datei
+// (`entscheidErwEntprellung.ts`) — nicht hier: `react-refresh/only-export-
+// components` bricht, wenn eine Datei einen Hook NEBEN einer Komponente
+// exportiert. Verhaltensneutral (§6.3), Herleitung der 0-ms/200-ms-Regel und
+// der Nachträge 21.9.2026 stehen unten bei ihrem Aufruf.
 export const ErwBereich = memo(function ErwBereich({
-  abschnitte, zitierteNormen, suche, onSuche, springe, markenSchalter,
+  abschnitte, zitierteNormen, suche, onSuche, springe, markenAusRoh, onMarkenSchalten,
   landkarteSteht, aktivAnker,
 }: {
   abschnitte: EntscheidAbschnitt[];
@@ -51,11 +59,17 @@ export const ErwBereich = memo(function ErwBereich({
   suche: string;
   onSuche: (v: string) => void;
   springe: (anker: string) => void;
-  /** W2·28/L-2 · fertiges Schalter-Element (der Rail rechnet nichts, s. dort). */
-  markenSchalter?: ReactNode;
-  /** Darf der Streifen auf DIESER Fläche überhaupt stehen? (Lage + Schalter —
-   *  die trefferabhängige Hälfte der Bedingung entscheidet diese Komponente,
-   *  weil nur sie die Zahl hat.) */
+  /** W2·28/L-2 · Roh-Zustand des Schalters «Hervorhebung» (State des Lesers,
+   *  NIE selbst zurückgesetzt — s. Nachtrag 21.9.2026 unten bei `suche`).
+   *  ErwBereich wertet ihn auf `sucheAktiv` (§ Falle a, 21.9.2026): Schalter-
+   *  Anzeige und Landkarten-Sichtbarkeit stehen so auf demselben Stand wie
+   *  Rail-Schranke und Zähler. Vorsorge für die neue Gewertet-Kopplung, kein
+   *  gemessener Altbefund (vorher fielen beide am rohen Stand zusammen). */
+  markenAusRoh: boolean;
+  onMarkenSchalten: (aus: boolean) => void;
+  /** Darf der Streifen auf DIESER Fläche überhaupt stehen? Nur noch die Lage
+   *  (Pane ja/nein) — die trefferabhängige UND die Schalter-Hälfte der
+   *  Bedingung rechnet diese Komponente selbst, s.u. (§ Falle a). */
   landkarteSteht: boolean;
   /** Abschnitts-Anker des Scroll-Spys — die Leseposition im Streifen. */
   aktivAnker: string | null;
@@ -90,6 +104,23 @@ export const ErwBereich = memo(function ErwBereich({
   // angezeigt werden immer die Zahlen eines Präfixes, das wirklich getippt
   // wurde. Den teuersten Aufruf (das erste, breiteste Zeichen) kostet das.
   //
+  // NACHTRAG 21.9.2026 (F8, ergänzt statt nachgeführt): EMPIRISCH FALSIFIZIERT
+  // — ~49 ms lang stand die Falschaussage «Keine Treffer in dieser Fassung.»
+  // doch im aria-live-Bereich, weil die RAIL-SCHRANKE (Verzeichnis vs.
+  // Trefferliste, `ErwaegungsRail`) und die aria-live-Zeile selbst am ROHEN
+  // `suche` hingen, während der Inhalt (diese Zahlen hier) bereits am
+  // entprellten `sucheGewertet` hing — zwei Stände derselben Anzeige. Zugleich
+  // sprang das Verzeichnis beim Verfeinern 219 → 0 → 201 (gemessene Werte).
+  // Behoben durch EIN Stand: Rail-Schranke, aria-live-Gate, Schalter-Gate,
+  // Schalter-Anzeige und Landkarten-Sichtbarkeit hängen jetzt alle an
+  // `sucheAktiv` (Prop an `ErwaegungsRail` bzw. `markenAusGewertet` weiter
+  // unten) — NICHT an `sucheGewertet` allein, sondern an `suche.trim() !== ''`
+  // UND `sucheGewertet.trim() !== ''` zugleich (§ Falle b, Herleitung bei
+  // `sucheAktiv`): sonst hinkt das VERLASSEN einen Tick hinterher, was ein
+  // eigener Rot-Beweis war (`e2e/rechtsprechung.e2e.ts`). Nur das Eingabefeld
+  // und die Hervorhebung im Lesetext bleiben roh, unverändert wie oben
+  // beschrieben.
+  //
   // NACHHER, gleiche Messung: Summe 989 ms statt 1374–1588, LÄNGSTE Blockade
   // 91 ms statt 284–332, schlechtester Frame 183 ms statt 296–338 — der
   // spürbare Hänger je Anschlag ist damit weg. Es bleiben Long Tasks je
@@ -102,16 +133,32 @@ export const ErwBereich = memo(function ErwBereich({
   // Eingabefeld gesteuert bleibt. Beides sind eigene Befunde (Bericht
   // 21.9.2026); sie liegen ausserhalb dieser Datei, und (a) berührte die
   // Markier-Logik.
-  const gewertetRef = useRef('');
-  const [sucheGewertet, setSucheGewertet] = useState('');
-  useEffect(() => {
-    const sofort = suche.trim() === '' || gewertetRef.current.trim() === '';
-    const id = window.setTimeout(() => {
-      gewertetRef.current = suche;
-      setSucheGewertet(suche);
-    }, sofort ? 0 : 200);
-    return () => window.clearTimeout(id);
-  }, [suche]);
+  //
+  // NACHTRAG 21.9.2026 (F8, ergänzt): VERSCHRÄNKTE Messung im selben Build
+  // (n=5, BS SB.2018.46, 288 Blöcke) statt der zwei getrennten Builds oben —
+  // die Hervorhebung allein kostet 15 ± 5 ms je Anschlag. Mitentprellen der
+  // Hervorhebung wurde GEMESSEN und verworfen: 5/5 Läufe schlechter, +68 ± 29
+  // ms GESAMTBLOCKADE (längste Einzelblockade 130–156 statt 90–95 ms). Die
+  // Hervorhebung bleibt darum roh.
+  const sucheGewertet = useSucheGewertet(suche);
+  // ── § Falle a/b (21.9.2026) · EIN STAND FÜR DIE GANZE DARSTELLUNGSSEITE ────
+  // `sucheAktiv` ist NICHT nur «`sucheGewertet` ist nicht leer» — das wäre zu
+  // GROSSZÜGIG in der falschen Richtung: beim VERLASSEN (Feld leeren) ist
+  // `suche` sofort leer, aber `sucheGewertet` hängt bis zum 0-ms-Timer noch
+  // einen Tick am alten, nicht-leeren Wert. Ein reiner `sucheGewertet`-Test
+  // hätte den Rail in GENAU diesem Tick weiter die (jetzt veraltete)
+  // Trefferliste zeigen lassen statt sofort auf die Gliederung zurückzufallen
+  // — ROT-BEWEIS: `e2e/rechtsprechung.e2e.ts` «sucht ehrlich im Entscheid»
+  // (Suche filtert nicht: 4 von 4, weil `ohneSuche` mitten in diesem Tick
+  // gelesen wurde). `suche.trim() !== ''` GLEICHZEITIG verlangt behebt das:
+  // das Verlassen ist damit wieder so instantan wie vor diesem Bau (die
+  // Gliederung braucht `sucheGewertet` gar nicht, sie hängt nur an
+  // `abschnitte`), während das BETRETEN/VERFEINERN weiterhin auf den
+  // gewerteten Stand wartet (Folge 1/2 oben). `markenAusGewertet` erbt dieselbe
+  // Regel — Schalter und Landkarte verschwinden beim Leeren darum im SELBEN
+  // Tick wie die Trefferliste, nicht einen Tick später.
+  const sucheAktiv = suche.trim() !== '' && sucheGewertet.trim() !== '';
+  const markenAusGewertet = sucheAktiv && markenAusRoh;
   const treffer = useMemo(() => trefferInErwaegungen(abschnitte, sucheGewertet), [abschnitte, sucheGewertet]);
   const trefferGesamt = useMemo(() => zaehleTreffer(abschnitte, sucheGewertet), [abschnitte, sucheGewertet]);
   // Angewandte Normen MIT wörtlicher Nennung in einer Erwägung. Ohne Fundstelle
@@ -131,20 +178,29 @@ export const ErwBereich = memo(function ErwBereich({
   return (
     <>
       <ErwaegungsRail gliederung={gliederung} treffer={treffer} trefferGesamt={trefferGesamt}
-        normen={normen} suche={suche} onSuche={onSuche} springe={springe}
-        markenSchalter={markenSchalter} />
+        normen={normen} suche={suche} onSuche={onSuche} springe={springe} sucheAktiv={sucheAktiv}
+        markenSchalter={<MarkenSchalter aus={markenAusGewertet} onSchalten={onMarkenSchalten} />} />
       {/* ── W2·28 · L-1 · DER STREIFEN ────────────────────────────────────
           `trefferGesamt > 0` ist ZEICHENGLEICH die Bedingung, unter der der
           Rail seinen Schalter «Hervorhebung» zeigt (`ErwaegungsRail`, Zeile
-          «suche.trim() !== '' && trefferGesamt > 0 && markenSchalter»). Das
-          ist kein Zufall, sondern die Regel: Streifen und Abschalter stehen
-          und fallen gemeinsam. Vorher hing der Streifen allein an
-          `suche.trim() !== ''` — eine erfolglose Suche liess damit einen
-          leeren Streifen stehen, den der Leser nicht mehr wegbekam (Befund
-          21.9.2026). Ein Fragment und KEIN Wrapper-Element: der Rail muss
-          direktes Kind des Rasters bleiben, und der Streifen ist `fixed`,
-          nimmt also ohnehin keinen Platz im Fluss (CLS 0 per Konstruktion). */}
-      {landkarteSteht && trefferGesamt > 0 && (
+          «sucheAktiv && trefferGesamt > 0 && markenSchalter» — bis 21.9.2026
+          stand hier `suche.trim() !== ''`, s. Nachtrag oben). Das ist kein
+          Zufall, sondern die Regel: Streifen und Abschalter stehen und fallen
+          gemeinsam. Vorher hing der Streifen allein an `suche.trim() !== ''`
+          — eine erfolglose Suche liess damit einen leeren Streifen stehen,
+          den der Leser nicht mehr wegbekam (Befund 21.9.2026). Ein Fragment
+          und KEIN Wrapper-Element: der Rail muss direktes Kind des Rasters
+          bleiben, und der Streifen ist `fixed`, nimmt also ohnehin keinen
+          Platz im Fluss (CLS 0 per Konstruktion).
+          `!markenAusGewertet` (§ Falle a, 21.9.2026): weggeschaltete Marken
+          heissen auch keine Landkarte — GEWERTET, damit der Streifen beim
+          Leeren des Feldes mit gesetztem Schalter nie für einen Tick
+          aufblitzt, während `trefferGesamt` noch den alten Stand zeigt.
+          `sucheAktiv` zusätzlich zu `trefferGesamt > 0` (§ Falle b): ohne sie
+          bliebe die Landkarte beim Leeren des Feldes einen Tick zu lang
+          stehen — `trefferGesamt` hängt nur an `sucheGewertet`, nicht am
+          rohen `suche`, s. Herleitung von `sucheAktiv` oben. */}
+      {landkarteSteht && sucheAktiv && trefferGesamt > 0 && !markenAusGewertet && (
         <EntscheidLandkarte abschnitte={abschnitte} treffer={treffer}
           gesamtFundstellen={trefferGesamt} aktivAnker={aktivAnker} springe={springe} />
       )}

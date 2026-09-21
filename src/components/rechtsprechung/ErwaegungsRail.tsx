@@ -68,7 +68,7 @@ export interface RailPunkt { anker: string; marke: string; tiefe: number; anzahl
 // (`usePaneKlasse`, §5) — und die Prop entfällt ersatzlos (§17-Rückbau: sie
 // trug keine Aussage mehr, die nicht der Kontext schon trägt).
 export const ErwaegungsRail = memo(function ErwaegungsRail({
-  gliederung, treffer, trefferGesamt, normen, suche, onSuche, springe, markenSchalter,
+  gliederung, treffer, trefferGesamt, normen, suche, onSuche, springe, markenSchalter, sucheAktiv,
 }: {
   /** Erwägungs-Gliederung der SICHTBAREN Fassung (`erwaegungsGliederung`). */
   gliederung: readonly RailPunkt[];
@@ -79,6 +79,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
   trefferGesamt: number;
   /** Angewandte Normen MIT wörtlicher Fundstelle in einer Erwägung. */
   normen: readonly { zitat: string; anker: string }[];
+  /** ROHER Suchbegriff — nur für den Feldwert (unverzögert, §15). */
   suche: string;
   onSuche: (v: string) => void;
   /** Sprung + Hash-Spiegelung — dieselbe Funktion wie die Abschnitts-Chips. */
@@ -88,6 +89,15 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
    *  reservierten Auskunfts-Slot unter dem Feld, nimmt also keine zusätzliche
    *  Höhe und verschiebt das Verzeichnis darunter nicht (§15.2). */
   markenSchalter?: ReactNode;
+  /** § Falle a (21.9.2026) — EIN Stand für Verzeichnis-Schranke, aria-live-Zeile
+   *  und Schalter-Gate, von `ErwBereich` gereicht als `sucheAktiv` = rohes `suche`
+   *  UND entprelltes `sucheGewertet` beide nicht leer (Herleitung dort). Nicht am
+   *  rohen `suche` allein — sonst zeigen sie während der 200-ms-Entprellung einen
+   *  anderen Stand als `trefferGesamt` (Befund 21.9.2026: Verzeichnis sprang
+   *  219→0→201, aria-live behauptete ~49 ms lang «Keine Treffer»). PFLICHT und
+   *  ohne Rückfall aufs rohe `suche`: ein vergessener Prop wäre sonst wieder die
+   *  Zwei-Stände-Kante; so fängt sie der Compiler (Bug-Check 21.9.2026). */
+  sucheAktiv: boolean;
 }) {
   // Mobil (und in der schmalen Pane) eingeklappt starten: der Lesetext gehört
   // zuerst ans Auge. Ob die Spalte steht, entscheidet allein CSS — kein
@@ -99,7 +109,8 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
   if (gliederung.length === 0 && normen.length === 0) return null;
 
   const trefferErw = treffer.reduce((n, t) => n + (t.anzahl ?? 0), 0);
-  const liste: readonly RailPunkt[] | null = suche.trim() === '' ? null : treffer;
+  const aktiv = sucheAktiv;
+  const liste: readonly RailPunkt[] | null = aktiv ? treffer : null;
 
   return (
     <aside
@@ -158,7 +169,7 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
               dieses Slots ist, dass er RESERVIERT ist, und ein Slot, der beim
               Tippen doch einwächst, wäre genau der gemessene Fehler von oben. */}
           <div className="mt-1 min-h-12">
-          {suche.trim() !== '' && (
+          {aktiv && (
             // §8: BEIDE Zahlen, sobald sie auseinanderfallen. «16 Treffer»
             // allein verschwiege, dass fünf davon im Sachverhalt liegen und in
             // dieser Liste gar nicht anspringbar sind.
@@ -186,8 +197,9 @@ export const ErwaegungsRail = memo(function ErwaegungsRail({
           )}
           {/* W2·28/L-2: der Schalter erscheint mit der Suche und geht mit ihr —
               und nur, wenn es überhaupt etwas hervorzuheben gibt (§13 F4: kein
-              Steuerelement ohne Wirkung). */}
-          {suche.trim() !== '' && trefferGesamt > 0 && markenSchalter}
+              Steuerelement ohne Wirkung). GEWERTET (`aktiv`) statt roh seit
+              § Falle a (21.9.2026), s. Prop-Kommentar oben. */}
+          {aktiv && trefferGesamt > 0 && markenSchalter}
           </div>
         </div>
 
