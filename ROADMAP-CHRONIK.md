@@ -5360,3 +5360,27 @@ ihn — die kantonale Rechtsprechungs-Stufe selbst liegt in Phase 3. Die Verweis
 denselben Namen, der als Ideen-Zeile in der ROADMAP sichtbar bleibt; ein späteres Wiederöffnen
 heisst, die `@meta`-Zeile oben wörtlich zurückzustellen.
 
+
+## Verworfen 21.9.2026 — Mutter/Tochter-Bauprozess (Entscheid David)
+
+Zwei Test-Durchläufe am 21.9.2026 (eine orchestrierende «Mutter»-Session legt je Bau-Ding einen
+Chip an, David startet damit eine «Tochter»-Session, die eigenständig baut und mit Artefakten
+meldet). Zwischenstand «kleine Fassung» (PR #967) am selben Abend zurückgebaut — David: «es soll
+alles nicht noch komplizierter werden» · «ok, bau es zurück». **Standard bleibt: eine Session baut
+ein Ding; Serien über den Übergabe-Chip.**
+
+Zahlen (Listenpreis-Äquivalent USD, je `message.id` entdoppelt; David zahlt den Max-Plan):
+Durchlauf 1 ≈ 285 (Töchter 94 + 52, Mutter 57, ihre Unteragenten 82; Mutter-Kontext 626k, ~12
+David-Entscheide, Chip→live 3,5 h / 2,8 h) · Durchlauf 2 ≈ 75–78 (Töchter 23,0 + 24,5, Mutter
+17,5, Unteragenten 9,7; Kontext 314k, 2 Klicks, 0 Entscheide, 1 h 39 / 1 h 48, davon > 50 % CI).
+Gegenrechnung an Tochter A: Orchestrierung 11,3 (Opus-Tochter) vs. ≈ 11,7 (dieselben Züge in der
+Fable-Mutter) ⇒ **kostenneutral**; die Mutter-Schicht kostete ≈ 27 von 75 obendrauf. Grund der
+Verwerfung: kein Kostenvorteil, n = 2, eine zusätzliche Schicht für zwei seltene Fälle (zwei
+parallele Bau-Dinge kann David selbst starten; Verlaufs-Sprengung löst der Übergabe-Chip).
+
+**Behalten, weil sie ohne Mutter wirken:** Prüf-Rezept im Skill `gegenpruefung` (§Praxis-Rezept;
+Beleg PR #963: zwei blockierende Lücken, die jedes Tor passiert hätten) · Posten Verbrauchs-Summe
+als npm-Script (Skript: `plan/posten/anhang/2026-09-21-verbrauch-summe.py`) · Posten
+`aufraeumen:git` «nur meine». Die erprobte Chip-Vorlage steht in der git-Historie
+(`docs/token-oekonomie/tochter-chip-vorlage.md`, PR #967); die Messprotokolle liegen lokal unter
+`<Haupt-Checkout>/.claude/notizen/archiv/2026-09-21-*`.
