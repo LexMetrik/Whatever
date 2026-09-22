@@ -21,3 +21,5 @@ Zwei Vorbedingungen, beide offen:
 Ergebnis je Monat: EIN Posten mit wartet-auf david, der das Tor benennt, den
 Nie-rot-Zeitraum belegt und den Chesterton-Vorbehalt aus dem Skill lehren
 (Satz 3) ausdruecklich prueft. Entscheid trifft David, nie die Session.
+
+**Erledigt 2026-09-22:** Entscheid David 22.9.2026 «schliessen» — widerspricht Council/Nordstern 22.9.2026 «keine Wiederholung als Ritual»; Vorbedingung Fang-Scanner-Bug in den Streich-Runden-Posten übernommen
