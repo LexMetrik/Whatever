@@ -933,8 +933,8 @@
     /* Haarlinien */
     --line:color-mix(in oklab, var(--ink-900) 10%, transparent);
     --line-strong:color-mix(in oklab, var(--ink-900) 18%, transparent);
-    /* Gesetzes-Reader — EINE Linien-Sprache (W2·5d G1, DESIGN-REGLEMENT-NORMTEXT
-       §Linien-Kanon): benannte Rollen statt frei gewählter Ad-hoc-Opazitäten von
+    /* Gesetzes-Reader — EINE Linien-Sprache (W2·5d G1, DESIGN-REGLEMENT
+       §N-4b Linien-Kanon): benannte Rollen statt frei gewählter Ad-hoc-Opazitäten von
        --line (Artikel /70, Sektion voll|/50, Tabellenzeile/Fussnoten). Werte am
        bestehenden --line gemessen (10 %); nur der oberste Struktur-Trenner eine
        Spur kräftiger (14 %).
@@ -3376,7 +3376,7 @@
      wörtlich «bau deinen vorschlag (umriss grau)»): Umriss-Form wie
      lc-badge-entwurf, aber in der neutralen slate-Rolle. Beide Alt-Töne
      (soft-Füllung, warn-Umriss) waren vom Farb-Wörterbuch ausgeschlossen
-     (DESIGN-REGLEMENT-NORMTEXT §Farb-Wörterbuch: slate ≠ «in Vorbereitung»,
+     (DESIGN-REGLEMENT §N-4b-B Farb-Wörterbuch: slate ≠ «in Vorbereitung»,
      warn = echter Sach-/Fassungsvorbehalt). Kanonischer Wortlaut:
      «In Vorbereitung» — Wächter: design-konsistenz-chips-marken. */
   .lc-badge-geplant { @apply lc-badge; --badge-linie: var(--slate-line); color: var(--slate-700); }

@@ -10,12 +10,12 @@ zusätzlich Grundlage für `W2·5g-ZEIT` (zeit-historik-poc). Kein eigener `@met
 Konsolidierter Masterplan für den Normtext-Umbau Bund/DE: Davids 12 Punch-Punkte +
 33 Audit-Lücken (`AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md`). **Scope: Bund, DE.**
 Kein Deploy (bauen+gaten), isolierter Worktree `feat/normtext-bund-de`. Regelwerk:
-`DESIGN-REGLEMENT-NORMTEXT.md`.
+`DESIGN-REGLEMENT.md` §N.
 
 > **Stand 28.6.2026.** Konsolidierter Masterplan (ultracode: 5 Oberflächen-Karten → 3 unabhängige
 > Cluster-Strategien → Synthese). Deckt Davids 12 Punch-Punkte + 33 Audit-Lücken
 > (`AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md`). **Scope: Bund, DE.** Kein Deploy (bauen+gaten),
-> isolierter Worktree `feat/normtext-bund-de`. Regelwerk: `DESIGN-REGLEMENT-NORMTEXT.md`.
+> isolierter Worktree `feat/normtext-bund-de`. Regelwerk: `DESIGN-REGLEMENT-NORMTEXT.md` (seit 23.9.2026: `DESIGN-REGLEMENT.md` §N).
 
 ## B2 — eigener Pass direkt nach B1
 

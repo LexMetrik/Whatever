@@ -349,7 +349,7 @@ Der G2b-Eintrag vom 4.7.2026 hält fest, es gebe «**EINE** Fussnoten-Bedienung:
 `data-fussnoten`-Options-Toggle», der frühere zweite Schalter sei **entfernt** worden; der
 David-Entscheid **A1 vom 5.7.2026** regelt anschliessend, was «AUS» tut (verschwinden statt
 dämpfen) — er **setzt einen AUS-Zustand voraus**. Beide stehen in
-`DESIGN-REGLEMENT-NORMTEXT.md:395-415`. Den Schalter ersatzlos zu streichen, hiesse einen
+`DESIGN-REGLEMENT.md` §N-4c (U-KOPF-Nachtrag A1). Den Schalter ersatzlos zu streichen, hiesse einen
 datierten David-Entscheid stillschweigend zu kassieren; das darf dieser Fahrplan nicht.
 
 **Deshalb wird B in einer Fassung vorgeschlagen, die die Präzedenz wahrt:** Der Kopf verliert

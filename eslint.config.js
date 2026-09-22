@@ -110,7 +110,7 @@ export default defineConfig([
       }],
     },
   },
-  // R2 (W2·5d G1 / DESIGN-REGLEMENT-NORMTEXT §Typo-Skala): der Normtext-Reader
+  // R2 (W2·5d G1 / DESIGN-REGLEMENT §N-4b Lese-Typografie): der Normtext-Reader
   // verwendet KEINE arbitrary rem-basierte `max-w-[…rem]` mehr — die Lesespalte
   // kommt ausschliesslich aus den Tokens `max-w-reading` (40rem) bzw.
   // `max-w-content`. So kann keine Ad-hoc-Lesebreite (52rem/56rem) wieder

@@ -18,7 +18,7 @@ speziellere innerhalb seiner Domäne, sonst das Dach. Der hier tragende Satz —
 1. Literata liest, Archivo bedient, Mono nur Rechenweg/Code (Zahlen `tabular-nums`) → F0.4
 2. Papier/Tinte chromafrei-nah, Leiter `well<paper<surface<paper-raised` → F0.1
 3. Reinweiss existiert genau einmal: `--paper-raised`, die schwebende Ebene → §G d
-4. Vier Registerfarben `--reg-g/r/m/w` als Strich/Kante/Marke, nie Fläche, nie allein → F0.2
+4. Registerfarben `--reg-g/r/m/w` Strich/Kante/Marke; Fläche nur `--reg-*-flaeche`, Tinte darauf → F0.2
 5. Status bleibt `sage/slate/warn/danger`, keine Ad-hoc-Farbe → B3
 6. `--accent-*`/`--brass-*` sind **neutral = Tinte**; der Klassenname lügt, die Werte gelten → F0.3
 7. Alle Radien 0 (`rounded-full` ausgenommen); ein Schatten, nur `.lc-schwebeflaeche` → F0.5
@@ -28,8 +28,8 @@ speziellere innerhalb seiner Domäne, sonst das Dach. Der hier tragende Satz —
 11. Menü = Liste mit Linien + Zustandswort + Fokus-Strich; Feld = Unterstrich, Panel setzt es fort → F0.9
 12. Sprache: keine Slogans, keine Nutzenversprechen — Bezeichnungen, Zahlen mit Scope, Verben → §A6
 
-Normtext hat eigene Regeln: `DESIGN-REGLEMENT-NORMTEXT.md` §4b (Linien-Kanon,
-Lese-Typografie) und §4b-B (Farb-Wörterbuch) — §4b-B ist **gegatet**,
+Normtext hat eigene Regeln: `DESIGN-REGLEMENT.md` §N-4b (Linien-Kanon,
+Lese-Typografie) und §N-4b-B (Farb-Wörterbuch) — §N-4b-B ist **gegatet**,
 `check:farbwelt` vergleicht seine Zahlen gegen die Messung. Aufgehobene Regeln
 (Brass als Marke, Wärme-Dramaturgie, Geist/Source Serif 4, Versal-Overlines,
-gerundete Kanten) stehen mit AUFGEHOBEN-Vermerk am Ort; Fundstellen in F0.10.
+gerundete Kanten): je eine Zeile in der §-Konkordanz, Wortlaut im Archiv (F0.10).

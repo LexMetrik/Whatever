@@ -851,7 +851,7 @@ Erlass, Anker `#art-<token>`, Suchbegriff und den Zustand der geteilten Ansicht.
 
 **Quelle:** `src/pages/GesetzLeser.tsx`, `src/pages/gesetz-leser/v3/LeserRahmenV3.tsx`,
 `src/pages/gesetz-leser/**`, `src/components/normtext/*`, `src/lib/normtext/*`,
-`DESIGN-REGLEMENT-NORMTEXT.md`. Der Leser lädt Snapshot
+`DESIGN-REGLEMENT.md` §N. Der Leser lädt Snapshot
 (`public/normtext/{bund,kanton}/<KEY>.json`), Struktur-Sidecar, Historie-Shard,
 Bezüge-Shards (Entscheide, Materialien) und `currency.json` asynchron nach.
 
@@ -945,7 +945,7 @@ Vorbehalt-Satz: «massgeblich bleibt stets die amtliche Fassung».
   nicht in Kraft
 
 **Quelle:** `src/pages/gesetz-leser/parts/ArtikelAktionen.tsx`,
-`public/normtext/currency.json`, `DESIGN-REGLEMENT-NORMTEXT.md` §4b-B.
+`public/normtext/currency.json`, `DESIGN-REGLEMENT.md` §N-4b-B.
 
 #### 2.3.6 Fassungen und Revisionen
 
@@ -1724,7 +1724,7 @@ Trefferlogik `src/lib/katalogSuche.ts`; Kategorie-Filter `src/lib/katalogKategor
 
 ### 4.3 Gemeinsamer Rechner-Rahmen
 
-Verbindliche Reihenfolge und Bausteine laut `DESIGN-REGLEMENT-RECHNER.md` (R1–R14).
+Verbindliche Reihenfolge und Bausteine laut `DESIGN-REGLEMENT.md` §R (§R-1–§R-14).
 Jeder der 20 Rechner folgt diesem Schema oder ist eine **deklarierte** Ausnahme (R12).
 
 #### R1 — Seiten-Skelett (fix)
@@ -1865,7 +1865,7 @@ Sperrereignisse …) kommt aus dem geteilten **Listen-Editor**: Behälter, Kopfz
   ist die eine geteilte Komponente für alle Fristen-Rechner sowie — in der kompakten
   Variante — für den Schnellrechner des Tagerechners.
 
-**Quelle:** `DESIGN-REGLEMENT-RECHNER.md`, `src/components/vorlagen/ui.tsx`,
+**Quelle:** `DESIGN-REGLEMENT.md` §R, `src/components/vorlagen/ui.tsx`,
 `src/components/{PdfExport,IcsExportButton,LinkTeilenButton,AktenzeichenFeld,DatumsFeld,BetragsFeld,FristenKalender}.tsx`,
 `src/lib/{permalink,icsExport}.ts`, `src/lib/pdf/pdfRender.ts`.
 
@@ -4303,8 +4303,8 @@ Verhaltensrelevante Kernregeln:
   Zustandswort + Fokus-Strich · Feld-Anatomie = Unterstrich · Sprache ohne Slogans und
   Nutzenversprechen.
 
-**Quelle:** `DESIGN-REGLEMENT.md`, `.claude/rules/design.md`,
-`DESIGN-REGLEMENT-NORMTEXT.md`, `DESIGN-REGLEMENT-RECHNER.md`.
+**Quelle:** `DESIGN-REGLEMENT.md` (Teil I, §N, §R), `.claude/rules/design.md`,
+`design/tokens.json`.
 
 ---
 

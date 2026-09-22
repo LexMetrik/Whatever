@@ -454,7 +454,7 @@ export function BeispielChips({ items }: { items: { label: string; laden: () => 
  *  Nur die einfache Label/Wert(-Sub)-Form; Spezialkacheln (z. B. Verjährungs-
  *  FristKarte mit «massgeblich»-Badge) bleiben bewusst eigenständig.
  *  `akzent` markiert die EINE wichtigste Kachel des Blocks mit der
- *  Messing-Oberkante (DESIGN-REGLEMENT-RECHNER R4 Ziff. 1). */
+ *  Messing-Oberkante (DESIGN-REGLEMENT §R-4 Ziff. 1). */
 export function EckdatenKachel({ label, wert, sub, num, akzent }: { label: string; wert: string; sub?: string; num?: boolean; akzent?: boolean }) {
   return (
     <div className={akzent ? 'lc-tile lc-akzent-brass' : 'lc-tile'}>

@@ -375,7 +375,7 @@ for (const [breite, hoehe, name] of [[1280, 800, 'Desktop'], [390, 844, 'Mobil']
 //
 //   Rechtsprechung — «Verdikt» ist die Kern-Antwort der Seite: die Regeste bzw.
 //     die als solche gekennzeichnete Zusammenfassung (`[data-verdikt]`,
-//     DESIGN-REGLEMENT-RECHTSPRECHUNG R8). Fehlt sie der Quelle (kantonal:
+//     DESIGN-REGLEMENT §J-R8). Fehlt sie der Quelle (kantonal:
 //     `/structure` ist Bund-only), ist es der erste Abschnitt des Urteilstexts —
 //     Auffangnetz derselben Bauart wie `data-ansicht` + `table, svg` in Teil 1.
 //   Vorlagen — «Verdikt» ist das Dokument (`[data-dokument]`, das Vorschau-
@@ -479,7 +479,7 @@ async function lesespalte(page: Page): Promise<string[]> {
     .filter((p) => (p.textContent || '').trim().length > 90)
     // Kacheln, Tabellen und das Dokument-«Papier» sind ausgenommen (D-1.5; das
     // Papier bildet ein Schriftbild ab, das PDF und DOCX teilen — seine Breite
-    // regelt DESIGN-REGLEMENT-VORLAGEN V2, nicht die Lesespalte der App).
+    // regelt DESIGN-REGLEMENT §V-2, nicht die Lesespalte der App).
     .filter((p) => !p.closest('.lc-tile') && !p.closest('table') && !p.closest('[data-dokument]'))
     .filter((p) => p.getBoundingClientRect().width > max)
     .map((p) => (p.textContent || '').trim().slice(0, 46)), [LESESPALTE_MAX, SICHTBAR] as [number, typeof SICHTBAR])

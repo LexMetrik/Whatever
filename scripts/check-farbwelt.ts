@@ -69,7 +69,7 @@ for (const r of REFERENZ) {
     const soll = mode === 'hell' ? r.hell : r.dunkel;
     const ist = kontrast(r.fg, r.bg, mode);
     if (Math.abs(ist - soll) > REF_TOL)
-      fehler.push(`Referenz-Drift ${r.fg}/${r.bg} ${mode}: ${ist.toFixed(2)}:1 ≠ dokumentiert ${soll.toFixed(2)}:1 (±${REF_TOL}) — ${r.quelle}. Zahl in DESIGN-REGLEMENT-NORMTEXT §4b-B nachziehen.`);
+      fehler.push(`Referenz-Drift ${r.fg}/${r.bg} ${mode}: ${ist.toFixed(2)}:1 ≠ dokumentiert ${soll.toFixed(2)}:1 (±${REF_TOL}) — ${r.quelle}. Zahl in DESIGN-REGLEMENT §N-4b-B nachziehen.`);
   }
 }
 

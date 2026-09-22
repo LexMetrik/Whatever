@@ -96,8 +96,8 @@ export const STAND_UNBEKANNT = 'Stand unbekannt';
 
 /**
  * Angekündigte, noch nicht geltende Konsolidierung: «nächste Fassung ab TT.MM.JJJJ».
- * Echter Fassungsvorbehalt (Farb-Rolle `warn`, DESIGN-REGLEMENT-NORMTEXT §Farb-
- * Wörterbuch) — unverändert gegenüber P1-d, nur nicht mehr doppelt geschrieben.
+ * Echter Fassungsvorbehalt (Farb-Rolle `warn`, DESIGN-REGLEMENT §N-4b-B
+ * Farb-Wörterbuch) — unverändert gegenüber P1-d, nur nicht mehr doppelt geschrieben.
  */
 export function naechsteFassungSatz(abIso: string): string {
   return `nächste Fassung ab ${datumCh(abIso)}`;

@@ -13,7 +13,7 @@ import { NormText } from '../NormText';
 // Gerichts-Baustein-Set (ROADMAP W2·7). Reiner Struktur-Formatierer (§2/§8):
 // er prüft die FORM der Fundstelle und setzt sie nach der Plattform-Zitier-
 // konvention (src/lib/konventionen.ts) zusammen. Bewusst KEIN Berechnungs-
-// ergebnis (R12-Ausnahme des DESIGN-REGLEMENT-RECHNER): das Werkzeug liefert
+// ergebnis (Ausnahme DESIGN-REGLEMENT §R-12): das Werkzeug liefert
 // eine Zitat-Zeichenkette, keinen Rechtswert — darum kein ErgebnisAnzeige/PDF.
 
 type Typ = 'bge' | 'bger';

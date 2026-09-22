@@ -36,7 +36,7 @@ für Bau.
    Permalink-/ICS-/Begründungs-Bausteine)? Fehlt ein Rahmen → **erst den
    Rahmen** bauen (verhaltensneutral nach §6), dann das Feature.
    Rechner-UIs folgen zwingend dem Aufbau-Reglement
-   `DESIGN-REGLEMENT-RECHNER.md` (R1–R12: Seiten-/Formular-/
+   `DESIGN-REGLEMENT.md` §R (§R-1–§R-12: Seiten-/Formular-/
    Ergebnisblock-Skelett, ErgebnisBlock-Rahmen, Export-Reihenfolge).
 5. **Bibliothek zuerst (§11):** Liegt ein engine-orientiertes Dossier in
    `bibliothek/` (Quelle+Stand · Regel decision-tree-fähig · Geltungs-

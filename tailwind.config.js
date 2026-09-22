@@ -220,7 +220,7 @@ export default {
       // der Methode von `e2e/leser-lesemass.e2e.ts` (längster mehrzeiliger
       // Fliesstext-Absatz, Textlänge / Zeilenkisten):
       //   ZGB 68 · OR 71 · StPO 73 · VMWG 74 · StGB 77 ch
-      // Die Hausdecke des DESIGN-REGLEMENT-NORMTEXT §Typo-Skala (≤ 75 ch) hat damit
+      // Die Hausdecke des DESIGN-REGLEMENT §N-4b (≤ 75 ch) hat damit
       // NICHT mehr «≥ 3 ch Luft»: beim VMWG sind es 1 ch, und das StGB liegt mit
       // 77 ch DARÜBER (es steht nicht in der gegateten Erlass-Liste, s. die Notiz an
       // der Schwelle in `leser-lesemass.e2e.ts`). Die WCAG-Decke SC 1.4.8 (≤ 80 ch)
@@ -237,7 +237,7 @@ export default {
       // `normtext` gelten site-weit bzw. auch für die Kopfzeile und skalieren
       // nicht mit dem Schriftregler — ein Zeichen-Deckel tut beides. Die Zahlen
       // oben bleiben als Messprotokoll der 45-rem-Stufe stehen; das IST-Zeilenmass
-      // des Lesers steht in DESIGN-REGLEMENT-NORMTEXT §4b-C (67/66/66/64/63/56 ch).
+      // des Lesers steht in DESIGN-REGLEMENT §N-4b-C (Messreihe im Archiv, 67/66/66/64/63/56 ch).
       // Beide zentriert (mx-auto),
       // damit die Restbreite der 2-Spalten-Zelle ausbalanciert statt rechts als
       // toter Steg liegt — dort trieb es zuvor den «Zitat»-Link weit nach rechts.
@@ -277,7 +277,7 @@ export default {
       // Die Tokens hatten GENAU EINEN Verbraucher (`LeserLesespalte`), und der ist
       // fort — §17 «gestrichen statt bewacht», kein toter Token im Design-System.
       // Herleitung, Messreihe und Wächter: `pages/gesetz-leser/v3/
-      // LeserLesespalte.tsx` (`renderSektion`) und DESIGN-REGLEMENT-NORMTEXT §4b.
+      // LeserLesespalte.tsx` (`renderSektion`) und DESIGN-REGLEMENT §N-4b.
       // CLS-Reservierungs-Tokens der Startseite (Startseite V3, §5): benannte
       // Mindesthöhen für die async-/localStorage-Module — Masse, keine Farben
       // (hell = dunkel). `modul-news` benennt den bisherigen Arbitrary-Wert der

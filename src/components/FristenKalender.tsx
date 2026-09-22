@@ -142,7 +142,7 @@ export function FristenKalender({ ereignisISO, aQuoISO, adQuemISO, kanton, still
 
   return (
     // data-ansicht (QS-UI 8b): markiert eine ABGELEITETE Ansicht im Sinne von
-    // DESIGN-REGLEMENT-RECHNER R4 Ziff. 3 — sie stellt dar, was die Engine
+    // DESIGN-REGLEMENT §R-4 Ziff. 3 — sie stellt dar, was die Engine
     // bereits entschieden hat, und steht darum immer NACH dem Verdikt. Das Tor
     // `e2e/qsui-hierarchie.e2e.ts` (I1) prüft gegen dieses Attribut. Vorher
     // erkannte es Ansichten nur an `table, svg`; dieser Kalender ist aus reinen
