@@ -85,14 +85,14 @@ export function roheKnoepfe(quelle: string): number {
  *  einen Knopf kürzer, nicht umgebucht. */
 const HOECHSTZAHL: Readonly<Record<string, number>> = {
 
-  // LESER (19 Dateien, 33 Knoepfe) — D38: LeserTrefferBlatt.tsx gelöscht
+  // LESER (17 Dateien, 28 Knoepfe) — D38: LeserTrefferBlatt.tsx gelöscht;
+  // W2·29-WERKBANK-TOR-Nachzug (22.9.2026): ArtikelSprungFeld.tsx und
+  // TrefferListe.tsx in #979 gelöscht — Ratschen-Leichen entfernt.
   'pages/gesetz-leser/parts/ArtikelIndex.tsx': 1,
   'pages/gesetz-leser/parts/ArtikelLeser.tsx': 2,
-  'pages/gesetz-leser/parts/ArtikelSprungFeld.tsx': 1,
   'pages/gesetz-leser/parts/BezuegeZeile.tsx': 1,
   'pages/gesetz-leser/parts/SektionBaumTOC.tsx': 2,
   'pages/gesetz-leser/parts/SektionKopf.tsx': 2,
-  'pages/gesetz-leser/parts/TrefferListe.tsx': 4,
   'pages/gesetz-leser/v3/LeserAnsichtV3.tsx': 1,
   'pages/gesetz-leser/v3/LeserGliederungSchiene.tsx': 1,
   'pages/gesetz-leser/v3/LeserKopf.tsx': 1, // Gliederungs-Griff, D32 aus LeserLeseZeile verlegt
@@ -209,8 +209,13 @@ describe('B-K1 · jeder Knopf traegt einen Baustein — oder steht mit Zahl in d
   // die Trefferliste liegt seither über der Lesespalte statt als Blatt am Feld.
   // Die Ratsche darf nur SINKEN; sie sinkt hier, weil eine Datei ging, nicht
   // weil ein Knopf umgebucht wurde.
-  it('die Ratsche kennt ihren eigenen Stand (7.9.2026: 139 in 81 Dateien)', () => {
-    expect(Object.keys(HOECHSTZAHL).length, 'Dateien in der Ratsche').toBe(81);
+  // W2·29-WERKBANK-TOR-Nachzug (22.9.2026): 81 → 79 Dateien. `ArtikelSprungFeld.tsx`
+  // und `TrefferListe.tsx` sind in #979 gelöscht — deklarierte Test-Änderung
+  // (§6.3): die Ratsche zeigte auf zwei nicht mehr existierende Dateien, das
+  // war keine fachliche Änderung an der Ratsche selbst, sondern das Nachziehen
+  // eines Löschungs-Falls. Die Datei ging, nicht ein Knopf wurde umgebucht.
+  it('die Ratsche kennt ihren eigenen Stand (22.9.2026: 134 in 79 Dateien)', () => {
+    expect(Object.keys(HOECHSTZAHL).length, 'Dateien in der Ratsche').toBe(79);
     expect(SUMME_IST, 'Summe der Hoechstzahlen — sie darf nur sinken').toBeLessThanOrEqual(140);
   });
 

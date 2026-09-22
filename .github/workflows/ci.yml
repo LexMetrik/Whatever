@@ -1042,6 +1042,14 @@ jobs:
       - name: Import-Zyklen
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:zyklen
+      # Sediment (W2·29-WERKBANK-TOR, 22.9.2026): tote CSS-Klassen, verwaiste
+      # Module (knip) und doppelte Rechner-Metadaten (Registry gegen Katalog,
+      # §5). Offline, ~3 s. Der Werkbank-Umbau legt Rubrik fuer Rubrik ein neues
+      # Aussehen an Ort — ohne diese Wache bleibt bei jeder Runde Rueckstand
+      # liegen. Keine Baseline, keine Ausnahmeliste (Rats-Verdikt Auflage 3).
+      - name: Sediment (tote Klassen · verwaiste Module · doppelte Metadaten)
+        if: needs.diff.outputs.art != 'doku'
+        run: npm run check:sediment
       - name: Normtext-Projektionen (Vollständigkeit · Zähler · Historie · Revisionen)
         if: needs.diff.outputs.art != 'doku'
         run: npm run check:vollstaendigkeit && npm run check:zaehler && npm run check:bezuege-zaehler && npm run check:historie && npm run check:revisionen && npm run check:artikel-revisionen

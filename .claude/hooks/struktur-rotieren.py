@@ -70,7 +70,8 @@ FLAECHEN_BUDGET = {
     ".claude/hooks/*.py": 76 * 1024,
     # 2.9.2026 QS-VERWENDEN V1: +12 KB für check-lizenzen.ts (neues Tor, Lizenz-Allowlist);
     # Rückbau-Kandidat offen — retro:17 «40 Tore auf Wirksamkeit prüfen»
-    "scripts/check-*.ts": 204 * 1024,
+    # 22.9.2026 #979: +16 KB check-sediment.ts (Nullprobe 0.2 KB Luft); Rückbau-Kandidat gleich
+    "scripts/check-*.ts": 220 * 1024,
 }
 KARTEN_ANKER = "<!-- KARTEN -->"
 ARCHIV = "archiv/STRUKTUR-SESSIONKARTEN.md"
