@@ -411,8 +411,8 @@ Umschichtung 20.9.2026 (2)):*
 
 ## Design & Oberfläche  *(`feld: design`)*
 
-- [ ] **Werkbank-Umbau Schritt 1: eine Token-Quelle** *(`W2·29-WERKBANK-TOKENS`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-TOKENS · status: ready · blocker: null · dep: [W2·29-WERKBANK-TOR] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [~] **Werkbank-Umbau Schritt 1: eine Token-Quelle** *(`W2·29-WERKBANK-TOKENS`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-TOKENS · status: wip · blocker: null · dep: [W2·29-WERKBANK-TOR] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: `tokens.json` des Design-Systems als **einzige** Quelle im Repo; generiert werden daraus
   die `:root`/`html.dark`-Blöcke und die Farb-/Typo-Teile von `tailwind.config.js`, die fünf
   Reglemente werden auf eines konsolidiert (§5). Grenzen: Kontrast-Tore grün, Normtext-Körper

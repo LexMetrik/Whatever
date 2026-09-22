@@ -4,7 +4,12 @@
 //    text-[length:var(--…)], relative em/%.
 // 2) FARBE (F7): jede Farb-Utility (bg-/text-/border-/ring-… Haus-Familie)
 //    muss in tailwind.config.js existieren — sonst generiert Tailwind die
-//    Klasse still nicht (No-op).
+//    Klasse still nicht (No-op). Seit W2·29-WERKBANK-TOKENS (22.9.2026) stammen
+//    die Farb-Utilities aus `tailwind.tokens.generated.js`, der Projektion der
+//    EINEN Token-Quelle `design/tokens.json` (`npm run gen:tokens`); in der
+//    Konfig von Hand stehen nur noch die color-mix-Rezepte. Regel (2) bleibt
+//    unverändert — sie liest weiterhin den FERTIGEN Farbbaum aus
+//    `tailwind.config.js` und ist damit gegen beide Herkünfte dieselbe Prüfung.
 // 3) DECKKRAFT (D0, 8.8.2026): `bg-brass-100/70` & Co. erzeugten am Stand
 //    16.8.2026 KEINE CSS-Regel — var(--token)-Farbwerte sind nicht alpha-
 //    fähig (LM-156, PR #472). Wächter kompiliert die genutzten /<alpha>-

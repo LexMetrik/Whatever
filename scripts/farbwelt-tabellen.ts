@@ -193,6 +193,34 @@ export const PFLICHT: Paar[] = [
   TEXT('reg-w', 'paper', 'W2·24-R1: Register «Werkzeuge» auf Papier — der knappste der vier (4.88 hell)'),
   TEXT('reg-w', 'surface', 'W2·24-R1: Register «Werkzeuge» auf Karte'),
   TEXT('reg-w', 'paper-raised', 'W2·24-R1: Register «Werkzeuge» im Popover/Dialog'),
+  // ── «FARBE ALS FLÄCHE» (W2·29-WERKBANK-TOKENS, Entscheid David 22.9.2026,
+  // FAHRPLAN-WERKBANK-UMBAU §4 Ziff. 3). Reglement F0.2 sagte bis dahin «nie
+  // als Fläche»; die vier `reg-*-flaeche`-Token lösen das ab. Der Entscheid
+  // ändert die REGEL, nicht die SCHWELLEN: eine getönte Fläche ist nur dann
+  // eine, wenn der Text darauf weiter AA erreicht. Darum steht jede der vier
+  // Flächen hier mit DREI Auflagen — Fliesstext (ink-900), Sekundärtext
+  // (ink-600) und die Registerfarbe auf der eigenen Fläche (Marke/Nicht-Text,
+  // SC 1.4.11). Rezept und Messreihe stehen bei jedem Token in
+  // `design/tokens.json`; gemessen 22.9.2026 (culori, hell·dunkel):
+  //   reg-g-flaeche  ink-900 11.59·10.60 · ink-600 5.38·5.25 · reg-g 6.20·6.84
+  //   reg-r-flaeche  ink-900 11.40·10.70 · ink-600 5.29·5.30 · reg-r 7.41·6.34
+  //   reg-m-flaeche  ink-900 12.17·10.37 · ink-600 5.65·5.14 · reg-m 4.10·7.91
+  //   reg-w-flaeche  ink-900 12.13·10.46 · ink-600 5.63·5.18 · reg-w 4.30·7.52
+  // Die knappsten Werte sind die Registerfarbe auf ihrer eigenen Fläche im
+  // HELLEN (4.10 / 4.30 gegen 3:1) — dort entscheidet eine Verschiebung von
+  // `paper` oder der Registerfarbe zuerst, und genau dort greift das Tor.
+  TEXT('ink-900', 'reg-g-flaeche', 'Farbe als Fläche: Fliesstext auf der Register-Fläche «Gesetze»'),
+  TEXT('ink-600', 'reg-g-flaeche', 'Farbe als Fläche: Sekundärtext auf der Register-Fläche «Gesetze»'),
+  NICHT('reg-g', 'reg-g-flaeche', 'Farbe als Fläche: Marke «Gesetze» auf der eigenen Fläche'),
+  TEXT('ink-900', 'reg-r-flaeche', 'Farbe als Fläche: Fliesstext auf der Register-Fläche «Rechtsprechung»'),
+  TEXT('ink-600', 'reg-r-flaeche', 'Farbe als Fläche: Sekundärtext auf der Register-Fläche «Rechtsprechung»'),
+  NICHT('reg-r', 'reg-r-flaeche', 'Farbe als Fläche: Marke «Rechtsprechung» auf der eigenen Fläche'),
+  TEXT('ink-900', 'reg-m-flaeche', 'Farbe als Fläche: Fliesstext auf der Register-Fläche «Materialien»'),
+  TEXT('ink-600', 'reg-m-flaeche', 'Farbe als Fläche: Sekundärtext auf der Register-Fläche «Materialien»'),
+  NICHT('reg-m', 'reg-m-flaeche', 'Farbe als Fläche: Marke «Materialien» auf der eigenen Fläche'),
+  TEXT('ink-900', 'reg-w-flaeche', 'Farbe als Fläche: Fliesstext auf der Register-Fläche «Werkzeuge»'),
+  TEXT('ink-600', 'reg-w-flaeche', 'Farbe als Fläche: Sekundärtext auf der Register-Fläche «Werkzeuge»'),
+  NICHT('reg-w', 'reg-w-flaeche', 'Farbe als Fläche: Marke «Werkzeuge» auf der eigenen Fläche'),
 ];
 
 // (Referenz) C-1/C-2/C-3-Farb-Wörterbuch (§4b-B) — dokumentierte Zahlen als

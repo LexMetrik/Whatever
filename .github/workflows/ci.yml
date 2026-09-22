@@ -1006,9 +1006,14 @@ jobs:
       # Und: check:besetzung — das Tor, das die 11 erfundenen Amtstraeger:innen
       # fing — stand selbst auf dieser Liste. Diese Tore sind nicht ertragsarm,
       # sie waren unsichtbar.
-      - name: Darstellungs-Kanon (Tokens · Farbwelt · Linien · p-Klassen)
+      # `check:tokens-drift` (W2·29-WERKBANK-TOKENS, 22.9.2026): Drift-Tor der
+      # EINEN Token-Quelle `design/tokens.json` gegen ihre zwei Projektionen —
+      # die Marker-Bloecke in `src/index.css` und `tailwind.tokens.generated.js`.
+      # Es traegt zusaetzlich die Doppel-Definitions-Wache: kein Token darf
+      # ausserhalb der Marker ein zweites Mal definiert sein (§5). Offline, ~1 s.
+      - name: Darstellungs-Kanon (Tokens · Drift · Farbwelt · Linien · p-Klassen)
         if: needs.diff.outputs.art != 'doku'
-        run: npm run check:design-tokens && npm run check:farbwelt && npm run check:linien-kanon && npm run check:p-klassen
+        run: npm run check:design-tokens && npm run check:tokens-drift && npm run check:farbwelt && npm run check:linien-kanon && npm run check:p-klassen
       # UI-Normzitate gegen den Korpus (QS-CODE-AUSSENKANTEN, 4.8.2026): die
       # ~740 hart kodierten Art.-Zitate der Darstellungsschicht sind eine
       # zweite Norm-Quelle — jedes muss im committeten Snapshot des zitierten

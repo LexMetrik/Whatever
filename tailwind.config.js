@@ -1,4 +1,5 @@
 import containerQueries from '@tailwindcss/container-queries';
+import generiert from './tailwind.tokens.generated.js';
 
 // ─── Deckkraft-Fähigkeit der Token-Farben (DESIGN-D0, Fund B4 vom 8.8.2026) ──
 // Tailwind 3 wendet den `/<alpha>`-Modifier nur an, wenn der Farbwert parsebar
@@ -8,9 +9,10 @@ import containerQueries from '@tailwindcss/container-queries';
 // & Co. rendern unsichtbar statt halbtransparent (belegt LM-156 / PR #472).
 //
 // Der Fix wickelt die BLÄTTER des Farbbaums in eine Funktion, ohne die Werte
-// selbst anzufassen: eine Quelle bleibt die CSS-Variable in `src/index.css`
-// (§5 — keine zweite Wahrheit als RGB-Kanal-Token, und die Dunkel-Umschaltung
-// bleibt ein reiner :root-Eingriff). Der opake Fall gibt unverändert
+// selbst anzufassen: eine Quelle bleibt `design/tokens.json` und ihre
+// CSS-Projektion in `src/index.css` (§5 — keine zweite Wahrheit als
+// RGB-Kanal-Token, und die Dunkel-Umschaltung bleibt ein reiner
+// :root-Eingriff). Der opake Fall gibt unverändert
 // `var(--token)` zurück, damit alle bestehenden Utilities denselben Wert
 // behalten (§6); nur der Modifier-Fall mischt. `color-mix(in oklab, C p%,
 // transparent)` ist das Idiom, das `src/index.css` für `--line`/`--rule-*`
@@ -41,202 +43,170 @@ export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      // FARBEN. Die Token-Einträge kommen aus `tailwind.tokens.generated.js`
+      // (Quelle `design/tokens.json`, erzeugt mit `npm run gen:tokens`). Hier
+      // stehen nur noch die Einträge, die KEIN Token sind: die color-mix-
+      // Rezepte, deren Wert erst im Browser aus Mitte, Tönung und Papier
+      // entsteht und die darum keinen festen Farbwert haben (§5).
       colors: alphaFaehig({
-        ink: {
-          900: 'var(--ink-900)', 800: 'var(--ink-800)', 700: 'var(--ink-700)', 600: 'var(--ink-600)',
-          500: 'var(--ink-500)', 400: 'var(--ink-400)', 300: 'var(--ink-300)',
-        },
+        ...generiert.colors,
         line: { DEFAULT: 'var(--line)', strong: 'var(--line-strong)' },
-        // Gesetzes-Reader Linien-Kanon (W2·5d G1): drei benannte Rollen der EINEN
-        // Linien-Sprache — vertikaler Gliederungs-Guide, Artikel-Trenner (fein),
-        // Struktur-Trenner (oberste Sektionen, eine Spur kräftiger). Nur im
-        // Normtext-Reader verwendet; Chrome-Borders bleiben `border-line`.
-        // W2·24-R1 ergänzt DEFAULT/soft: die zwei SOLIDEN Trennlinien des neuen
-        // Bildes (1 px weich im Satzspiegel, 2 px hart unter der Titelblatt-Zeile)
-        // — dieselbe `rule`-Familie, weil es dieselbe Sache ist: Trennung durch
-        // Linie statt durch Fläche. Ein zweiter `rule:`-Schlüssel hätte diesen
-        // hier still überschrieben (JS-Objektliteral, letzter gewinnt).
-        rule: {
-          DEFAULT: 'var(--rule)', soft: 'var(--rule-soft)',
-          artikel: 'var(--rule-artikel)', struktur: 'var(--rule-struktur)',
-        },
-        // raised/sunken ergänzt 7.6.2026: bg-paper-raised wurde in
-        // FristenKalender/wizard bereits verwendet, war aber nie generiert
-        // (stiller No-op — die Kreise/Flächen blieben transparent).
-        paper: { DEFAULT: 'var(--paper)', raised: 'var(--paper-raised)', sunken: 'var(--paper-sunken)' },
-        // Kantonskarte (2B, 29.8.2026): Erfassungsgrad-Füllungen + Kante — Werte
-        // in index.css; hier registriert, damit das Farbwelt-Tor sie als
-        // Pflichtpaare prüfen kann (Bug-Check #568, §17).
-        karte: {
-          voll: 'var(--karte-voll)', auswahl: 'var(--karte-auswahl)',
-          duenn: 'var(--karte-duenn)', leer: 'var(--karte-leer)',
-          kante: 'var(--karte-kante)', marke: 'var(--karte-marke)',
-        },
-        surface: { DEFAULT: 'var(--surface)', raised: 'var(--surface-raised)' },
-        brass: {
-          100: 'var(--brass-100)', 200: 'var(--brass-200)', 300: 'var(--brass-300)',
-          400: 'var(--brass-400)', 500: 'var(--brass-500)', 600: 'var(--brass-600)',
-          700: 'var(--brass-700)', 800: 'var(--brass-800)',
-        },
-        // C2 (5.9.2026): Text AUF einer Gold-/Messing-Füllung braucht eine
-        // Tinte, die NIE mit dem Thema flippt (D-1.8, `--auf-gold` speist sich
-        // aus `--ink-fixed-dark`) — `text-ink-900` kippt im Dunkelmodus auf
-        // hell und verfehlt dort die 4.5:1 (Beleg: VerzugszinsTimeline.tsx,
-        // dort bislang nur per Inline-Style erreichbar; hier als Utility).
-        // C2-Gegenstück: Text auf --ok-solid (flippt bewusst nicht) braucht die
-        // STETS helle Tinte (--auf-sage, aus --ink-fixed-light gespeist).
-        auf: { gold: 'var(--auf-gold)', sage: 'var(--auf-sage)' },
-        // ── REGISTERFARBEN (W2·24-DESIGN-IDENTITAET R1, 6.9.2026) ───────────
-        // Die vier Register der Sammlung — Gesetze · Rechtsprechung ·
-        // Materialien · Werkzeuge. Werte in src/index.css (:root + html.dark).
-        // Hier registriert, damit sie ab R2 als Utility greifbar sind UND das
-        // Farbwelt-Tor sie als Pflichtpaare prüfen kann (sonst stiller No-op, F7).
-        reg: { g: 'var(--reg-g)', r: 'var(--reg-r)', m: 'var(--reg-m)', w: 'var(--reg-w)' },
-        // ── Rollen-Alias-Schicht (D-2, Radix-Muster) ──────────────────────
-        // Wertidentische Rollen über den Basis-Skalen (Werte in src/index.css).
-        // NEUE Komponenten greifen die Rolle (text-accent-text, bg-accent-bg,
-        // border-accent-line …), nie die nackte Stufe (brass-700). Damit ist
-        // eine Rekalibrierung (D-4/D-5) ein reiner :root-Eingriff. Die absichtl.
-        // Dark-Brass-Inversion (Befund 9) trägt --accent-hover — kein Werte-Tausch.
-        accent: {
-          bg: 'var(--accent-bg)', 'bg-hover': 'var(--accent-bg-hover)',
-          'line-decor': 'var(--accent-line-decor)', line: 'var(--accent-line)',
-          solid: 'var(--accent-solid)', text: 'var(--accent-text)',
-          'text-strong': 'var(--accent-text-strong)', hover: 'var(--accent-hover)',
-        },
-        // F1 (§4b-B-i): Zustands-Rolle «ok/geltend/live», wertidentisch zu sage,
-        // aber semantisch getrennt von der Materialien-Kennfarbe sage.
-        ok: { solid: 'var(--ok-solid)', text: 'var(--ok-text)', bg: 'var(--ok-bg)', line: 'var(--ok-line)' },
-        // `line`-Stufen (D-1.3): Nicht-Text-Kanten/Balken greifen den
-        // Linien-Alias (dunkel auf -700 gehoben), NIE -500 direkt (1.4.11).
-        // `solid`/`text`-Rollen (D-2) analog zu accent — …-500/-700 als Rolle.
-        sage: { 500: 'var(--sage-500)', 700: 'var(--sage-700)', bg: 'var(--sage-bg)', line: 'var(--sage-line)', solid: 'var(--sage-solid)', text: 'var(--sage-text)' },
-        slate: { 500: 'var(--slate-500)', 700: 'var(--slate-700)', bg: 'var(--slate-bg)', line: 'var(--slate-line)', solid: 'var(--slate-solid)', text: 'var(--slate-text)' },
-        well: 'var(--well)',
-        warn: { 500: 'var(--warn-500)', 700: 'var(--warn-700)', bg: 'var(--warn-bg)', line: 'var(--warn-line)', solid: 'var(--warn-solid)', text: 'var(--warn-text)' },
-        danger: { 500: 'var(--danger-500)', 700: 'var(--danger-700)', bg: 'var(--danger-bg)', line: 'var(--danger-line)', solid: 'var(--danger-solid)', text: 'var(--danger-text)' },
+        // Gesetzes-Reader Linien-Kanon (W2·5d G1): zwei benannte Rollen der EINEN
+        // Linien-Sprache — Artikel-Trenner (fein), Struktur-Trenner (oberste
+        // Sektionen, eine Spur kräftiger). Nur im Normtext-Reader verwendet;
+        // Chrome-Borders bleiben `border-line`. `DEFAULT`/`soft` (die zwei SOLIDEN
+        // Trennlinien des neuen Bildes) sind Token und kommen aus der Quelle —
+        // dieselbe `rule`-Familie, weil es dieselbe Sache ist: Trennung durch
+        // Linie statt durch Fläche.
+        rule: { ...generiert.colors.rule, artikel: 'var(--rule-artikel)', struktur: 'var(--rule-struktur)' },
+        // Die vier getönten Status-Flächen: `color-mix(in oklab, <Mitte>
+        // var(--status-tint), var(--paper))` — kein Farbwert, sondern ein Rezept.
+        sage: { ...generiert.colors.sage, bg: 'var(--sage-bg)' },
+        slate: { ...generiert.colors.slate, bg: 'var(--slate-bg)' },
+        warn: { ...generiert.colors.warn, bg: 'var(--warn-bg)' },
+        danger: { ...generiert.colors.danger, bg: 'var(--danger-bg)' },
+        ok: { ...generiert.colors.ok, bg: 'var(--ok-bg)' },
       }),
-      fontFamily: {
-        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
-        serif: ['var(--font-serif)', 'Georgia', 'serif'],
-      },
+      fontFamily: generiert.fontFamily,
       // Typo-Skala (vollständig): micro 11 · xs 12 · body-s 14 · base 16 ·
       // body-l 18 · h3 20 · h2 25.6 · h1 32 · display 36/44.
       // text-sm/text-lg (Tailwind-Defaults) NICHT verwenden — sie tragen
       // fremde Zeilenhöhen; body-s/body-l sind die Pendants mit System-lh.
+      // Die Stufen stehen in `design/tokens.json` (type.groups); der Block
+      // darunter ist ihre Projektion und wird von `npm run gen:tokens`
+      // geschrieben. Er bleibt — anders als colors/zIndex/… — IN dieser Datei,
+      // weil `src/tests/leser-typo-tokens.test.ts` und
+      // `src/tests/leser-schriftskala.test.ts` die drei Leser-Stufen am
+      // WORTLAUT von `tailwind.config.js` festnageln (§5-Spiegel gegen
+      // `leserSchrift.ts`); §6.3 verbietet, einen Test für einen Umbau
+      // anzupassen, also folgt die Projektion dem Konsumenten.
       fontSize: {
-        micro: ['0.6875rem', { lineHeight: '1.2' }],
-        // W2·24-R1: die Overline ist entversalt — 12 px, Tracking normal
-        // (Rezept .lc-overline in src/index.css; hier der Utility-Zwilling).
-        overline: ['0.75rem', { lineHeight: '1.4', letterSpacing: '0em' }],
-        xs: ['0.75rem', { lineHeight: '1.4' }],
+        /* @generated tokens:start — Quelle design/tokens.json, npm run gen:tokens; nie von Hand */
+        /* ── Bedienung und Fliesstext ── */
+        /* Kleinste Stufe des Hauses (11 px): Zaehler, Randangaben, Marken. */
+        'micro': ['0.6875rem', { lineHeight: '1.2' }],
+        /* Das Etikett ueber einer Gruppe. Ohne Versalien und ohne Sperrsatz - die Laufweite steht
+           ausdruecklich auf 0em, weil frueher hier ein Sperrsatz sass. Rezept: die Klasse
+           .lc-overline setzt zusaetzlich die gedaempfte Tinte ink-500.
+
+           W2·24-R1: die Overline ist entversalt — 12 px, Tracking normal (Rezept .lc-overline in
+           src/index.css; hier der Utility-Zwilling). */
+        'overline': ['0.75rem', { lineHeight: '1.4', letterSpacing: '0em' }],
+        /* Meta-Zeilen und Chip-Aufschriften. */
+        'xs': ['0.75rem', { lineHeight: '1.4' }],
+        /* Kleiner Fliesstext und die Aufschrift der Bedienelemente: Reiter, kleine Knoepfe, kleine
+           Eingabefelder. Statt der Tailwind-Stufe text-sm. */
         'body-s': ['0.875rem', { lineHeight: '1.5' }],
+        /* Grosser Fliesstext; Einleitungsabsaetze. Statt der Tailwind-Stufe text-lg zu verwenden,
+           die eine fremde Zeilenhoehe traegt. */
         'body-l': ['1.125rem', { lineHeight: '1.6' }],
-        h3: ['1.25rem', { lineHeight: '1.25' }],
-        h2: ['1.6rem', { lineHeight: '1.15' }],
-        h1: ['2rem', { lineHeight: '1.15' }],
-        display: ['2.25rem', { lineHeight: '1.05' }],
+        /* ── Titel ── */
+        /* Untertitel innerhalb einer Sektion. */
+        'h3': ['1.25rem', { lineHeight: '1.25' }],
+        /* Sektionstitel; mobil zugleich die Titelstufe des Leser-Kopfs. */
+        'h2': ['1.6rem', { lineHeight: '1.15' }],
+        /* Seitentitel. Gewicht und Laufweite stehen an der Element-Regel fuer h1 bis h3 und gelten
+           fuer alle drei Titelstufen. */
+        'h1': ['2rem', { lineHeight: '1.15' }],
+        /* Display-Stufe fuer Seiten-Eroeffnungen unterhalb von display-l. */
+        'display': ['2.25rem', { lineHeight: '1.05' }],
+        /* Groesste Stufe der Skala. Fuer die eine Zeile, die eine Seite eroeffnet. */
         'display-l': ['2.75rem', { lineHeight: '1.05' }],
-        // ── LESER-SATZSPIEGEL (W2·5m-LESER-V3 · S2, Pos. 19) ────────────────
-        // Entscheid David 17.8.2026 am Bildbogen `docs/ux-audit-2026-07/reader/
-        // leser-v3-s2/bogen.html` («v2 gefällt mir besser aber fussnoten
-        // hochgestellt») ⇒ Variante **V2 «amtsnah kompakt»** aus FAHRPLAN-
-        // LESER-V3 Kap. 8 / Design-Grundlage Kap. 2.4, mit der EINEN Abweichung
-        // «Fussnotenmarke hochgestellt statt in runden Klammern» (die Marke ist
-        // keine Grösse dieser Skala, sondern das em-relative Token `--fn-marke`
-        // in index.css — sie MUSS relativ bleiben, damit sie dem Fliesstext und
-        // dem Schriftregler folgt).
-        //
-        // Nur DREI Stufen treten neu ein, nicht die sieben der Grundlage
-        // Kap. 2.2: `leser-titel`/`leser-h`/`leser-chrome`/`leser-mikro` wären
-        // wertgleiche Zweitnamen für `h1`/`h2`/`body-s`/`overline` — ein zweiter
-        // Name für denselben Wert ist genau die zweite Wahrheit, die §5
-        // verbietet. `leser-art` (20 px Artikelnummer) ist bewusst NICHT
-        // eingeführt: V2 sagt «Titelstufen unverändert», und die Artikelnummer
-        // zu vergrössern hätte David am Bogen nicht gesehen (Ä7 wird über die
-        // Randtitel-Seite gelöst, s. `helpers.tsx` margStufeStil).
-        //
-        //  · `leser-text` 18 px / lh 1.62 (bis R6c 17 px / 1.55) — Normtext-
-        //    Fliesstext. Ersetzt das
-        //    Paar `text-body-l leading-[1.65]` (18 px / 1.65) am Artikel-Körper:
-        //    der rohe `leading-[…]`-Override fällt damit weg, die Zeilenhöhe
-        //    gehört zur Stufe (Grundlage Kap. 8 Nr. 4 «kein fixer Leading-Wert
-        //    über alle Grössen»). WCAG 1.4.8: lh 1.55 ≥ 1.5, Lesemass 42 rem.
-        //  · `leser-rand` 13 px / lh 1.35 — Marginalie/Randtitel, Sans, label-2.
-        //  · `leser-fn`   11 px / lh 1.45 — Fussnoten-Apparat am Artikelfuss
-        //    (war `text-xs leading-normal` = 12 px / 1.5; Kap. 8 nennt als Ist
-        //    `text-micro`, gemessen am Code war es `text-xs`).
-        //    ZEILENHÖHE 1.3 → 1.45 (T3, Design-Qualitäts-Pass 29.8.2026,
-        //    DEKLARIERTE fachliche Änderung, nicht Refactoring): die S2-V2-Spalte
-        //    setzte 1.3 für eine SCHMALE Fussnotenspalte an; gebaut wurde der
-        //    Apparat dann über die volle Lesespalte (gemessen @1440 am OR:
-        //    640 px Kasten, 108 ch/Zeile). 1.3 auf 11 px über 108 ch heisst
-        //    14.3 px Zeilenabstand bei 635 px Zeilenlänge — das Auge verliert
-        //    beim Rücksprung die Zeile (Doppelsprung/Zeilenwiederholung). Der
-        //    Apparat läuft seit T3 auf `max-w-kleintext` (26 rem ≈ 71 ch), also
-        //    genau auf der Spalte, für die 1.3 gedacht war; 1.45 gibt der
-        //    Feinschrift trotzdem die Luft, die WCAG 1.4.8 (≥ 1.5 für
-        //    Fliesstext) für Blocktext verlangt — knapp darunter, weil der
-        //    Apparat Referenz-, kein Lesetext ist. Die GRÖSSE bleibt
-        //    unangetastet (0.6875 rem, Entscheid David 17.8.2026 am Bildbogen).
-        // W2·24-R4 · ZEILENHÖHE 1.55 → 1.62 (deklarierte Typo-Änderung, kein
-        // Refactoring). Das freigegebene Referenzbild (`abnahme/design-
-        // identitaet/vorschlag-freigegeben.html`, `.norm { font-size:17px;
-        // line-height:1.62 }`) setzt den Normtext im Satzspiegel auf 1.62; die
-        // Grösse (17 px) bleibt unangetastet. Die Zahl muss HIER stehen und
-        // kann nirgends sonst gesetzt werden: `src/tests/leser-typo-tokens.
-        // test.ts` verbietet jedes `leading-…` am Fliesstext-Markup, weil die
-        // Zeilenhöhe zur Stufe gehört (Grundlage Kap. 8 Nr. 4) — die Tabelle
-        // dort ist mit derselben Änderung nachgezogen.
-        // WCAG 1.4.8 unverändert eingehalten: 1.62 ≥ 1.5 (Zusage von
-        // `e2e/leser-lesemass.e2e.ts`), das Zeilenmass rechnet nicht mit der
-        // Zeilenhöhe und bleibt Zeichen für Zeichen, was es war.
-        // W2·24-R6c · GRÖSSE 17 → 18 px (deklarierte Typo-Änderung, kein
-        // Refactoring). D20 (c) verlangt «Lesetext 18 px»; R6b konnte die Zahl
-        // nicht setzen, weil `src/index.css` dort TABU war und ein Alleingang an
-        // der Basis den Schriftregler zerbrochen hätte (die Stufe «mittel» wäre
-        // von 108 % auf 102 % kollabiert — Herleitung in `abnahme/design-
-        // identitaet/R6-NACHZUG.md` §4). R6c setzt die Basis UND die drei
-        // Reglerstufen in EINEM Zug: `index.css` (Block LESER-SCHRIFTSKALA) und
-        // `pages/gesetz-leser/leserSchrift.ts` (`SCHRIFT_REM`) tragen dieselben
-        // Faktoren 1.08 / 1.18 / 1.30 über der neuen Basis, die Anzeigewerte
-        // bleiben 100 · 108 · 118 · 130 %. `src/tests/leser-schriftskala.test.ts`
-        // hält die drei Orte gegeneinander.
+        /* ── Lesen (Normtext und Entscheide) ── */
+        /* Der Fliesstext im Satzspiegel des Gesetzes-Lesers. Die Zeilenhoehe gehoert zur Stufe und
+           darf nicht am Markup ueberschrieben werden; 1.62 haelt WCAG 1.4.8 (mindestens 1.5). Das
+           Gewicht 450 statt 400 stammt aus der Beobachtung, dass Serifen am Bildschirm duenner
+           wirken als im Druck.
+
+           ── LESER-SATZSPIEGEL (W2·5m-LESER-V3 · S2, Pos. 19) ────────────────
+           Entscheid David 17.8.2026 am Bildbogen `docs/ux-audit-2026-07/reader/
+           leser-v3-s2/bogen.html` («v2 gefällt mir besser aber fussnoten
+           hochgestellt») ⇒ Variante **V2 «amtsnah kompakt»** aus FAHRPLAN-
+           LESER-V3 Kap. 8 / Design-Grundlage Kap. 2.4, mit der EINEN Abweichung
+           «Fussnotenmarke hochgestellt statt in runden Klammern» (die Marke ist
+           keine Grösse dieser Skala, sondern das em-relative Token `--fn-marke`
+           in index.css — sie MUSS relativ bleiben, damit sie dem Fliesstext und
+           dem Schriftregler folgt).
+
+           Nur DREI Stufen treten neu ein, nicht die sieben der Grundlage
+           Kap. 2.2: `leser-titel`/`leser-h`/`leser-chrome`/`leser-mikro` wären
+           wertgleiche Zweitnamen für `h1`/`h2`/`body-s`/`overline` — ein zweiter
+           Name für denselben Wert ist genau die zweite Wahrheit, die §5
+           verbietet. `leser-art` (20 px Artikelnummer) ist bewusst NICHT
+           eingeführt: V2 sagt «Titelstufen unverändert», und die Artikelnummer
+           zu vergrössern hätte David am Bogen nicht gesehen (Ä7 wird über die
+           Randtitel-Seite gelöst, s. `helpers.tsx` margStufeStil).
+
+            · `leser-text` 18 px / lh 1.62 (bis R6c 17 px / 1.55) — Normtext-
+              Fliesstext. Ersetzt das
+              Paar `text-body-l leading-[1.65]` (18 px / 1.65) am Artikel-Körper:
+              der rohe `leading-[…]`-Override fällt damit weg, die Zeilenhöhe
+              gehört zur Stufe (Grundlage Kap. 8 Nr. 4 «kein fixer Leading-Wert
+              über alle Grössen»). WCAG 1.4.8: lh 1.55 ≥ 1.5, Lesemass 42 rem.
+            · `leser-rand` 13 px / lh 1.35 — Marginalie/Randtitel, Sans, label-2.
+            · `leser-fn`   11 px / lh 1.45 — Fussnoten-Apparat am Artikelfuss
+              (war `text-xs leading-normal` = 12 px / 1.5; Kap. 8 nennt als Ist
+              `text-micro`, gemessen am Code war es `text-xs`).
+              ZEILENHÖHE 1.3 → 1.45 (T3, Design-Qualitäts-Pass 29.8.2026,
+              DEKLARIERTE fachliche Änderung, nicht Refactoring): die S2-V2-Spalte
+              setzte 1.3 für eine SCHMALE Fussnotenspalte an; gebaut wurde der
+              Apparat dann über die volle Lesespalte (gemessen @1440 am OR:
+              640 px Kasten, 108 ch/Zeile). 1.3 auf 11 px über 108 ch heisst
+              14.3 px Zeilenabstand bei 635 px Zeilenlänge — das Auge verliert
+              beim Rücksprung die Zeile (Doppelsprung/Zeilenwiederholung). Der
+              Apparat läuft seit T3 auf `max-w-kleintext` (26 rem ≈ 71 ch), also
+              genau auf der Spalte, für die 1.3 gedacht war; 1.45 gibt der
+              Feinschrift trotzdem die Luft, die WCAG 1.4.8 (≥ 1.5 für
+              Fliesstext) für Blocktext verlangt — knapp darunter, weil der
+              Apparat Referenz-, kein Lesetext ist. Die GRÖSSE bleibt
+              unangetastet (0.6875 rem, Entscheid David 17.8.2026 am Bildbogen).
+           W2·24-R4 · ZEILENHÖHE 1.55 → 1.62 (deklarierte Typo-Änderung, kein
+           Refactoring). Das freigegebene Referenzbild (`abnahme/design-
+           identitaet/vorschlag-freigegeben.html`, `.norm { font-size:17px;
+           line-height:1.62 }`) setzt den Normtext im Satzspiegel auf 1.62; die
+           Grösse (17 px) bleibt unangetastet. Die Zahl muss HIER stehen und
+           kann nirgends sonst gesetzt werden: `src/tests/leser-typo-tokens.
+           test.ts` verbietet jedes `leading-…` am Fliesstext-Markup, weil die
+           Zeilenhöhe zur Stufe gehört (Grundlage Kap. 8 Nr. 4) — die Tabelle
+           dort ist mit derselben Änderung nachgezogen.
+           WCAG 1.4.8 unverändert eingehalten: 1.62 ≥ 1.5 (Zusage von
+           `e2e/leser-lesemass.e2e.ts`), das Zeilenmass rechnet nicht mit der
+           Zeilenhöhe und bleibt Zeichen für Zeichen, was es war.
+           W2·24-R6c · GRÖSSE 17 → 18 px (deklarierte Typo-Änderung, kein
+           Refactoring). D20 (c) verlangt «Lesetext 18 px»; R6b konnte die Zahl
+           nicht setzen, weil `src/index.css` dort TABU war und ein Alleingang an
+           der Basis den Schriftregler zerbrochen hätte (die Stufe «mittel» wäre
+           von 108 % auf 102 % kollabiert — Herleitung in `abnahme/design-
+           identitaet/R6-NACHZUG.md` §4). R6c setzt die Basis UND die drei
+           Reglerstufen in EINEM Zug: `index.css` (Block LESER-SCHRIFTSKALA) und
+           `pages/gesetz-leser/leserSchrift.ts` (`SCHRIFT_REM`) tragen dieselben
+           Faktoren 1.08 / 1.18 / 1.30 über der neuen Basis, die Anzeigewerte
+           bleiben 100 · 108 · 118 · 130 %. `src/tests/leser-schriftskala.test.ts`
+           hält die drei Orte gegeneinander. */
         'leser-text': ['1.125rem', { lineHeight: '1.62' }],
+        /* Marginalie und Randtitel am Artikel. Die Skala-Notiz im Repo nennt fuer diese Stufe die
+           Bedienschrift, das gebaute Rezept .lc-randtitel setzt sie kursiv in der Leseschrift -
+           siehe randtitel. */
         'leser-rand': ['0.8125rem', { lineHeight: '1.35' }],
+        /* Der Fussnoten-Apparat am Artikelfuss. Die Zeilenhoehe liegt bewusst knapp unter 1.5, weil
+           der Apparat Referenz- und kein Lesetext ist; er laeuft auf der schmalen
+           Feinschrift-Spalte kleintext. */
         'leser-fn': ['0.6875rem', { lineHeight: '1.45' }],
+        /* @generated tokens:end */
       },
-      borderRadius: {
-        // DEFAULT (= die nackte Klasse `rounded`) liegt seit 31.8.2026 auf
-        // demselben Token wie `rounded-sm` statt auf Tailwinds eigenem Default.
-        // Beide Werte sind HEUTE 4 px — die Angleichung ist visuell wirkungslos
-        // und rein latent. Sie schliesst aber die `rounded`-Fundstellen an die
-        // Haus-Radius-Skala an: ohne sie liefe eine künftige Rekalibrierung von
-        // --radius-sm an genau diesen Stellen still vorbei und die Kanten der
-        // Seite würden zweierlei (§5, Design-Konsistenz E-Mitgedacht a).
-        DEFAULT: 'var(--radius-sm)',
-        sm: 'var(--radius-sm)', md: 'var(--radius-md)', lg: 'var(--radius-lg)',
-        xl: 'var(--radius-xl)', '2xl': 'var(--radius-2xl)',
-      },
+      borderRadius: generiert.borderRadius,
       // D-1.7 Motion-Dedup: Literale auf die --dur-*-Token gemappt (Muster der
       // Nachbar-Keys ease/shadow) — index.css ist die EINE Motion-Quelle.
+      // KEIN Token: das Token-Format kennt bewusst keine Motion-Familie.
       transitionDuration: { fast: 'var(--dur-fast)', base: 'var(--dur-base)', slow: 'var(--dur-slow)', stage: 'var(--dur-stage)' },
       transitionTimingFunction: { DEFAULT: 'var(--ease)' },
-      boxShadow: { sm: 'var(--shadow-sm)', md: 'var(--shadow-md)', lg: 'var(--shadow-lg)' },
+      boxShadow: generiert.boxShadow,
       // Schichtungs-Skala (C3, 5.9.2026) — Rollen statt roher Zahlen, Werte
       // unverändert aus dem Bestand migriert (Herleitung + Reihenfolge in
-      // src/index.css bei --z-base). `extend` lässt Tailwinds Default-Skala
-      // (z-0/10/20/…) technisch weiter zu — Prüfung 5 in
+      // `design/tokens.json`, zIndex.tokens). `extend` lässt Tailwinds
+      // Default-Skala (z-0/10/20/…) technisch weiter zu — Prüfung 5 in
       // check-design-tokens.ts verbietet ihre NEUE Verwendung im Quellbaum.
-      zIndex: {
-        base: 'var(--z-base)', sticky: 'var(--z-sticky)',
-        'entscheid-sticky': 'var(--z-entscheid-sticky)',
-        'reader-scrim': 'var(--z-reader-scrim)', 'reader-kopf': 'var(--z-reader-kopf)',
-        'inhalt-kopf': 'var(--z-inhalt-kopf)', leiste: 'var(--z-leiste)',
-        dropdown: 'var(--z-dropdown)', overlay: 'var(--z-overlay)', modal: 'var(--z-modal)',
-      },
+      zIndex: generiert.zIndex,
       // `reading` (40rem ≈ 66–71 ch) = die knappe Standard-Lesespalte site-weit
       // (Verdikte, Leden). `normtext` (42rem = 672px) = die etwas grosszügigere
       // Lesespalte NUR des Gesetzes-Readers (E6/A37, David 16.7.2026: «gib dem

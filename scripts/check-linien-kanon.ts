@@ -111,8 +111,32 @@ for (const k of KANON) {
 }
 
 const css = lies('src/index.css');
-const rootBlock = css.slice(css.indexOf(':root'), css.indexOf('html.dark'));
-const darkBlock = css.slice(css.indexOf('html.dark'));
+/**
+ * Schneidet den Rumpf einer Regel heraus — über PASSENDE Klammern, nicht über
+ * die nächste Erwähnung des Nachbar-Selektors.
+ *
+ * §17-Wurzelfix (22.9.2026, W2·29-WERKBANK-TOKENS): hier stand
+ * `css.slice(css.indexOf(':root'), css.indexOf('html.dark'))`. Das zweite
+ * `indexOf` traf nicht die REGEL `html.dark {`, sondern die erste ERWÄHNUNG der
+ * Zeichenfolge — und die steht seit je in einem :root-Kommentar («Dunkel-
+ * brass-700 ist separat, s. html.dark»). Der «:root-Block» endete damit
+ * mitten im Block; dass `--rule-artikel` darin lag, war Zufall der
+ * Zeilenfolge. Beim Umbau auf die eine Token-Quelle verschob sich die Folge —
+ * und das Tor meldete ein Fehlen, das es nie gab (§6.7: ein Tor, das aus dem
+ * falschen Grund rot wird, ist so wertlos wie eines, das nicht rot werden kann).
+ */
+function regelRumpf(quelle: string, selektor: string): string {
+  const start = quelle.indexOf(`${selektor} {`);
+  if (start < 0) throw new Error(`check:linien-kanon: Regel «${selektor}» fehlt in src/index.css.`);
+  let tiefe = 0;
+  for (let i = quelle.indexOf('{', start); i < quelle.length; i++) {
+    if (quelle[i] === '{') tiefe++;
+    else if (quelle[i] === '}' && --tiefe === 0) return quelle.slice(start, i);
+  }
+  throw new Error(`check:linien-kanon: Regel «${selektor}» ist nicht geschlossen.`);
+}
+const rootBlock = regelRumpf(css, ':root');
+const darkBlock = regelRumpf(css, 'html.dark');
 for (const v of ['--rule-artikel', '--rule-struktur']) {
   if (!rootBlock.includes(v)) fehler.push(`CSS-Variable \`${v}\` fehlt im :root (hell).`);
   if (!darkBlock.includes(v)) fehler.push(`CSS-Variable \`${v}\` fehlt in html.dark.`);
