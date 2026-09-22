@@ -2091,15 +2091,15 @@
      via Utilities. slate-500 auf well = 4.81 hell / 3.47 dunkel (≥3:1 UI-Kontrast,
      WCAG 1.4.11) — --slate-500 in html.dark bewusst NICHT überschrieben. */
   .lc-chip-entscheid { border-left-color: var(--slate-500); }
-  /* Currency-Chip-Tonung (V2·C-2, §4b-B): der Fedlex-Freshness-Beweis trägt jetzt
-     Status-Semantik über den Tick — NUR die Tick-Farbe wechselt (Anatomie/Token
-     `lc-chip` identisch → CLS 0). sage = «geltend geprüft am … (maschinell)»
-     (neutraler, maschineller Freshness-Beweis; KEIN Rechtsstatus-Urteil — das
-     «(maschinell)»-Wording bleibt tragend, §7/§8). warn = «nächste Fassung ab …»
-     (echter Fassungsvorbehalt: angekündigt, noch nicht in Kraft). --sage-500/
-     --warn-500 in html.dark bewusst NICHT überschrieben (Tick-Kontrast gehalten). */
-  .lc-chip-geltend { border-left-color: var(--sage-500); }
-  .lc-chip-vorbehalt { border-left-color: var(--warn-500); }
+  /* W2·29-WERKBANK-TOR (22.9.2026): hier standen die Currency-Chip-Tonungen
+     `.lc-chip-geltend` (sage) und `.lc-chip-vorbehalt` (warn). S3 hat dem
+     Erlass-Kopf die Chip-Optik genommen; seither hatte keine der beiden Regeln
+     noch einen Konsumenten — `src/tests/v2-c2-farbwoerterbuch.test.tsx` hält
+     die Lücke seit damals ausdrücklich als OFFEN fest und prüft sogar, dass
+     die Klassen NICHT mehr gerendert werden. `check:sediment` (a) hat sie als
+     tot gemessen, dieser Commit trägt sie ab. Der Farb-Entscheid selbst (sage
+     = maschineller Freshness-Beweis, warn = Fassungsvorbehalt) ist davon
+     unberührt — er lebt in den Token und im Farb-Wörterbuch, nicht hier. */
   /* Aktionen-Zeile des Erlass-Kopfs (W2·5m-LESER-V3 · S3, Skizze Kap. 4e).
      Der Kopf zeigt seine Aktionen als ruhige Text-Links mit Icon + Label statt
      als Chip-Kästen (Ästhetik-Urteil Ä6: «5–6 Chips mit Brass-Kante in Mono»).
@@ -2146,17 +2146,13 @@
     color: var(--brass-800);
   }
   .lc-chip-selected::before { content: '✓'; margin-right: .375em; font-weight: 600; }
-  /* «Aktuelle Position»-Zustand für Sprung-Anker (LM-005, W2·17-UI-BEFUNDE-B3,
-     K-01): dasselbe tor-geprüfte Farbpaar wie `.lc-chip-selected` (brass-100/
-     brass-700/brass-800, F2b-Pflichtpaar) — aber OHNE das ✓-Präfix, das dort
-     eine Toggle-AUSWAHL markiert. Hier ist nichts ausgewählt, nur die aktuelle
-     Scroll-Position innerhalb eines Abschnitts nachgezogen (aria-current, kein
-     aria-pressed) — ein Häkchen wäre eine falsche Zusatzbehauptung (§8). */
-  .lc-chip-aktuell {
-    background: var(--brass-100);
-    border-left-color: var(--brass-700);
-    color: var(--brass-800);
-  }
+  /* W2·29-WERKBANK-TOR (22.9.2026): hier stand `.lc-chip-aktuell` — der
+     «Aktuelle Position»-Zustand für Sprung-Anker (LM-005, W2·17-UI-BEFUNDE-B3,
+     K-01), gebaut als Variante von `.lc-chip-selected` ohne ✓-Präfix. Repo-weit
+     ohne Verwender (`check:sediment` (a), Wortgrenzen-Messung); die Markierung
+     der aktuellen Position trägt heute `aria-current` plus die Selected-Form.
+     Braucht ein künftiger Sprung-Anker wieder eine eigene Tonung, ist sie in
+     drei Zeilen zurück — eine Regel auf Vorrat ist keine. */
   /* ─── Chip-Grammatik der Kopf-Metazeilen (W2·17-UI-BEFUNDE-B1: LM-045/046/047) ──
      In den Metazeilen von Erlass- und Entscheid-Kopf trägt derselbe `.lc-chip`
      drei verschiedene Dinge: externen Link (↗ geltende/massgebliche Fassung,
@@ -3495,91 +3491,20 @@
    damit es die Utility text-brass-700 schlägt (Layer-Reihenfolge sonst Utility). */
 .lc-highlight .lc-overline { color: var(--brass-800); }
 
-/* ─── Suchzeile der Startseite (W2·24-DESIGN-IDENTITAET R3) ──────────────────
-   Das Referenzbild (`abnahme/design-identitaet/vorschlag-freigegeben.html`,
-   Marke `.frage`) setzt die Universal-Suche als EINE Zeile Literata über einer
-   2-px-Kante — nicht als gerahmten Kasten. Das ist die einzige Form dieser
-   Runde, die `lc-input` nicht abbilden kann: `lc-input` IST der Kasten (Rahmen,
-   Innenabstand, Fokus-Saum), und ihn hier zu überschreiben hiesse, jede seiner
-   Eigenschaften einzeln zurückzunehmen. Darum eine eigene, kleine Regel — sie
-   gilt ausschliesslich der Startseite (Konsument: `start/UniversalSuche.tsx`).
-   Additiv angehängt (Parallel-Bau R4 arbeitet in derselben Datei).
-   Die Schriftgrösse setzt die Utility am Feld (`text-h3 sm:text-h1`), nicht
-   diese Regel — die Typo-Skala bleibt die eine Quelle (B2). */
-.st-frage { border-bottom: 2px solid var(--rule); }
-.st-frage-feld {
-  border: 0;
-  background: transparent;
-  color: var(--ink-900);
-  font-family: var(--font-serif), Georgia, serif;
-  padding: .25rem 0 .5rem;
-}
-.st-frage-feld::placeholder { color: var(--placeholder); }
-/* ── D9/D5-NACHZUG (6.9.2026) · FOKUS ALS STRICH, NICHT ALS KASTEN ──────────
-   Hier stand nur ein `outline-offset: 1px` — der globale `:focus-visible`-Ring
-   legte also einen 2-px-KASTEN um eine Zeile, die ausdrücklich kein Kasten
-   sein soll (Fahrplan §5: «Kanten statt Kissen»). GESEHEN am Screenshot
-   `r5f1-hero-suche-treffer-1440-hell` vom 6.9.2026: die Suchzeile der
-   Startseite stand im Fokus als gerahmtes Rechteck da, während dieselbe
-   Handlung im Formularfeld (`.lc-input:focus`) und in der Menüzeile
-   (`.lc-menu-zeile:focus-visible`) einen Unterstrich bekommt — drei Fokus-
-   Bilder für eine Sache.
-   Jetzt trägt sie dasselbe Bild wie die beiden anderen und wie das
-   Referenzbild (`.frage input:focus-visible{box-shadow:0 2px 0 0 var(--ink)}`):
-   die 2-px-Kante der Zeile wechselt in die Rolle `--focus` und verdoppelt sich
-   über einen Schatten UNTER der Kante — kein Platzverbrauch, keine
-   Höhenänderung, und der Indikator bleibt 2 px stark in einer Rolle, die das
-   Farbwelt-Tor als Nicht-Text-Kontrast führt (WCAG 2.4.11).
-   Der Schatten sitzt an der HÜLLE `.st-frage` (dort liegt die Kante), gesteuert
-   über `:focus-within` — das Feld selbst hat keine eigene Linie. */
-.st-frage-feld:focus-visible { outline: none; }
-.st-frage:focus-within { border-bottom-color: var(--focus); box-shadow: 0 2px 0 -1px var(--focus); }
-
-/* ── R3-NACHZUG (David-Befund D1, 6.9.2026) · DIE ZEILE MUSS SICH ALS SUCHE ──
-   ZU ERKENNEN GEBEN. Wortlaut David zum Bild vom 6.9.2026: die grosse Zeile
-   «liest sich als Überschrift, nicht als Eingabefeld». Sie trug nur einen
-   Platzhalter in grosser Literata — dieselbe Schrift und Grösse, in der
-   daneben die Begrüssung steht. Zwei Zeichen holen sie zurück, beide leise:
-   eine LUPE in der Zeile (SVG in `currentColor`, `start/UniversalSuche.tsx`)
-   und ein LABEL «Suchen» in Archivo darüber (12 px, Meta-Ton) — dieselbe
-   Anordnung «kleines Label über dem Feld», die das Referenzbild für seine
-   Werkzeug-Felder benutzt (`.werk label{display:grid;gap:3px}`).
-   NACHTRAG zur Notiz oben (§2b — die dortige Messung bleibt, wie sie war):
-   seit dem R3-F3-Nachzug ist `.lc-input` selbst ein Unterstrich-Feld. `.st-frage`
-   bleibt trotzdem eine eigene Regel: sie trägt die 2-px-Kante der Kopfzeile,
-   Literata statt Archivo und die Titelgrösse — das ist die Suchzeile des
-   Titelblatts, nicht das Formularfeld. */
-.st-frage { display: flex; align-items: center; gap: .5rem; }
-.st-frage-lupe { flex: none; width: 1.375rem; height: 1.375rem; color: var(--ink-500); }
-.st-frage-feld {
-  flex: 1 1 auto;
-  min-width: 0;
-  /* Wie `.lc-input` (LM-067/LM-068): wo gekürzt wird, ist die Kürzung sichtbar.
-     GEMESSEN 6.9.2026 @390: der Platzhalter brach mitten im Wort ab
-     («Kündigungsfri») — eine Auslassung sagt «hier steht mehr», ein hartes
-     Wortende liest sich wie ein Datenfehler (§8, Prüfbefund R3-F6). */
-  text-overflow: ellipsis;
-}
-
-/* ── R10-NACHZUG (David 6.9.2026, D14 «begrüssung prominenter und suche
-   kleiner») · Token statt roher Arbitrary-Grösse (B2, `check:design-tokens`
-   verbietet `text-[…rem]`): 22 px liegt zwischen h3 (20) und h2 (25.6),
-   keiner der beiden trägt die Stufe glaubwürdig — eigener Wert, als Variable
-   geführt (eigener :root-Block, additiv, fasst den grossen :root oben nicht an). */
-:root { --pult-suche-gross: 1.375rem; }
-
-/* ADDITIV, `.st-frage-feld` bleibt unverändert (Parallel-Bau in
-   dieser Datei, R10-Nachzug-Whitelist erlaubt hier nur `.pult-*`-Zusätze).
-   `.st-frage-feld` setzt `padding: .25rem 0 .5rem` für die vorherige, grosse
-   Stufe (bis 32 px); bei 22 px liest sich dasselbe Polster als zu knapp
-   (Feldhöhe fiele unter die Ziel-Höhe ~48 px). Diese Klasse trägt NUR das
-   Polster nach — Kante, Fokus-Schatten, Ellipsis, Platzhalterfarbe bleiben an
-   `.st-frage`/`.st-frage-feld`. Beide Klassen haben dieselbe Spezifität
-   (0,1,0); da diese Regel WEITER UNTEN im Stylesheet steht, gewinnt sie für
-   `padding` unabhängig von der Reihenfolge der Klassen im `className`.
-   GEMESSEN (Textzeile 22 px, `leading-[1.3]` ⇒ Zeilenbox 28.6 px): 28.6 +
-   Polster 18 px + 2-px-Kante (`.st-frage`) ≈ 48.6 px. */
-.pult-suche-feld { padding: .5rem 0 .625rem; }
+/* ─── GRABSTEIN · Suchzeile der Startseite (W2·24-R3/R10) ────────────────────
+   W2·29-WERKBANK-TOR (22.9.2026): hier standen 85 Zeilen für die
+   Startseiten-Suchzeile — `.st-frage`, `.st-frage-feld`, `.st-frage-lupe`,
+   `.pult-suche-feld` und der Grössen-Token `--pult-suche-gross`. Ihr einziger
+   Konsument war `src/components/start/UniversalSuche.tsx`; die Datei ist mit
+   dem R10-Umbau derselben Runde verschwunden (e2ac7def9, #739), die Regeln
+   blieben liegen. `check:sediment` (a) hat alle vier Klassen als tot gemessen
+   (Wortgrenzen-Treffer in src/** ohne src/tests/**, scripts/**, index.html);
+   der Token war weder in dieser Datei noch sonstwo referenziert und geht als
+   Teil derselben Einheit mit.
+   Die Gestaltungs-ENTSCHEIDE der Zeile sind damit nicht verworfen: die heutige
+   Startseiten-Suche (`start/SuchBlock.tsx`) trägt sie über `.lc-input`, das
+   seit dem R3-F3-Nachzug selbst ein Unterstrich-Feld mit Fokus-Strich ist.
+   Der gelöschte Wortlaut steht vollständig in der Historie dieses Commits. */
 
 /* ═══ W2·24-R6 · ZUSATZ AM DATEIENDE (Bau-Fläche R6, Präfix `.lr6-`) ══════════
    Additiv und ohne Berührung des Bestands: an `index.css` bauen in derselben
@@ -4480,10 +4405,12 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
    Marke nie überschreiben (§8). */
 .lc-route[data-reg] .lc-chip { border-left-color: var(--reg-marke); }
 .lc-route[data-reg] .lc-chip-entscheid { border-left-color: var(--slate-500); }
-.lc-route[data-reg] .lc-chip-geltend { border-left-color: var(--sage-500); }
-.lc-route[data-reg] .lc-chip-vorbehalt { border-left-color: var(--warn-500); }
-.lc-route[data-reg] .lc-chip-selected,
-.lc-route[data-reg] .lc-chip-aktuell { border-left-color: var(--brass-700); }
+/* W2·29-WERKBANK-TOR (22.9.2026): die Nachzüge für `.lc-chip-geltend`,
+   `.lc-chip-vorbehalt` und `.lc-chip-aktuell` sind mit den Grundregeln
+   entfallen — sie waren repo-weit ohne Verwender (`check:sediment` (a)). Der
+   Satz oben bleibt wahr: ein Zustands-Tick überschreibt die Register-Marke;
+   heute trägt diesen Vorrang allein der Selected-Zustand. */
+.lc-route[data-reg] .lc-chip-selected { border-left-color: var(--brass-700); }
 /* In der Trefferliste ist der Chip Klartext (§GB-12) — dort gibt es keinen
    Tick, den man färben könnte; die Regel oben läuft dort ins Leere, weil
    `border: 0` gewinnt (gleiche Herkunft, spätere Quellzeile). */
