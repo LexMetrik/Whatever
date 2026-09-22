@@ -1,27 +1,50 @@
 <!-- @posten
 dach: QS-KORPUS
-titel: Curia-Vorberatungen: rund zwei Drittel der amtlichen Zeilen fallen zusammen — gewollt oder Verlust? (David)
-anlass: Vollzensus 21.9.2026 beim Fix des Publikations-Dedupe (fix/curia-publikationen-dedupe)
-wartet-auf: david
+titel: Curia-Vorberatungen — Variante C bauen (Zeile je Zuweisung, Entwürfe als Liste)
+anlass: Vollzensus 21.9.2026 beim Fix des Publikations-Dedupe; Nachrecherche 22.9.2026; Entscheid David 22.9.2026
 -->
 
-**WARTET AUF DAVID — fachlicher Entscheid, kein Bau.**
+**ENTSCHEID DAVID 22.9.2026 (Chat, Wortlaut «dann c»): Variante C.** Eine Zeile je Kommission und
+Zuweisung, die betroffenen Entwürfe als Liste mitgeführt — verlustfrei, ohne Doppelungs-Optik.
+Marker `wartet-auf: david` entfernt. **Risikopfad Korpus** (`lex-daten` + Gegenprüfung),
+Reihenfolge nach `@queue`/`QS-KORPUS`.
 
-> **Einordnung (21.9.2026, nach der Gegenprüfung zu PR #960):** Das ist **kein Nebenfund**. Es ist
-> der grösste bekannte Mengenunterschied zwischen Amtsquelle und Korpus in dieser Etappe — rund
-> **1300 bis 1450 Zeilen**, gegenüber 136 beim behobenen Publikations-Fall. Solange der Entscheid
-> aussteht, gilt für die Vorberatungen dieselbe Curia-Auflage («Die Daten dürfen inhaltlich nicht
-> verändert werden») als ungeklärt, die beim Publikations-Fall den Fix ausgelöst hat. Der
-> Unterschied ist: dort war das Zusammenfallen sicher falsch, hier ist es **plausibel richtig** —
-> aber niemand hat es je entschieden.
+## Was gebaut wird
 
-Beim Fix des Publikations-Dedupe (`bauePublikationen`) wurde dieselbe Schlüssel-Falle bei
-den Schwester-Entitäten mitgemessen. Bei den **Kommissions-Vorberatungen** ist sie um
-Grössenordnungen stärker als im behobenen Fall.
+`vorlage` (bzw. die Entwurfs-Liste) wandert ins Datenmodell von `CuriaKommission`
+(`scripts/entstehung/curia.ts:142`), der Schlüssel `[datum, CommitteeName]` (`:226`/`:239`) bleibt —
+die heute verworfenen `BillNumber`/`IdBill` werden gesammelt statt weggeworfen. Bestand bleibt bei
+rund 790 Zeilen statt ~2093 (Variante B), kein Eintrag geht verloren.
 
-**Messung** (Vollzensus DE, `https://ws.parlament.ch/odata.svc`, Entität `Preconsultation`,
-`$select=PreconsultationDate,CommitteeName,BusinessShortNumber`, `$inlinecount=allpages`,
-Abruf 21.9.2026; **keine Personenfelder abgefragt**, `Voting` nicht angefasst):
+## Tatsachen, die den Bau binden (Nachrecherche 22.9.2026)
+
+  - **`PreconsultationDate` ist KEIN Sitzungsdatum**, sondern ein Zuweisungs- bzw.
+    Einreichungsdatum. Belegt: 08.053 = `Business.SubmissionDate`; 01.023, 02.046, 09.043, 16.077,
+    19.046 = Botschaftsdatum; 24.041 ungeklärt. **Eine Beschriftung «Kommission X beriet am Y» wäre
+    falsch (§8)** — unabhängig von der Variante. Auch die frühere Posten-Begründung «je Sitzung»
+    trägt damit nicht; sie ist mit diesem Nachtrag ersetzt.
+  - `$metadata`: `Preconsultation` hat Schlüssel `ID` + `Language` und Beziehungen zu `Bill`
+    (`IdBill`) und `Business`, **keine** zu Meeting oder Session — die Zeile ist amtlich «je Entwurf».
+  - Stichprobe über 8 Geschäfte: zusammenfallende Zeilen unterscheiden sich in 8/8 nur in
+    `BillNumber`/`IdBill`, in 2/8 zusätzlich in `TreatmentCategory` (09.043, 24.041; Bedeutung
+    **nicht amtlich belegt**). Kein Fall «Entwurf 1 zugewiesen, Entwurf 2 nicht».
+  - **Nebenfund, im selben Zug zu beheben:** `scripts/entstehung/curia.ts:229` verwirft mit
+    `if (!name) continue` amtliche Zeilen **ohne** `CommitteeName` ersatzlos (24.041: 3 Zeilen) —
+    ein eigener kleiner Verlust, unabhängig von der Variante.
+  - Die Liste wird heute **nirgends angezeigt** (Grep über `src/**`) → reiner Daten-Entscheid; die
+    Beschriftungsfrage stellt sich erst, wenn sie eine Oberfläche bekommt.
+  - Tor `curia-tor.ts:145`/`:230` hat für die Vorberatungen **keine unabhängige Referenz** —
+    beim Bau mitdenken. Zähler: `curia-run.ts:124/130/180`.
+
+## Auflage der Quelle
+
+parlament.ch «Open Data / Web Services»: vier gleichrangige Auflagen — kein amtlicher Anschein ·
+Quellenangabe · **inhaltlich nicht verändern** · Downloadzeitpunkt ersichtlich (FR: «Le contenu des
+données doit rester inchangé»). Keine amtliche Auslegungshilfe gefunden. **§14.7-Warnung:** eine
+WebFetch-Zusammenfassung der «Rahmenregeln Parlamentsdaten» (Sept. 2022) erfand ein
+Veränderungsverbot samt Aggregations-Erlaubnis — im Volltext null Treffer, **nicht zitieren**.
+
+## Messung (Stand 21.9.2026, unverändert als Beleg)
 
 | Menge | amtliche Zeilen | gespeichert | Differenz | Herkunft |
 |---|---|---|---|---|
@@ -29,31 +52,11 @@ Abruf 21.9.2026; **keine Personenfelder abgefragt**, `Voting` nicht angefasst):
 | über 386 Shard-Geschäfte | 2249 | **792** | **−1457 (65 %)** | Gegenprüfung #960, nach dem Vollabgleich |
 | korpusweit (DE) | 32 031 | 22 542 | −9489 | eigene Messung |
 
-Beide Messungen sind unabhängig voneinander entstanden und widersprechen sich nicht: die zweite
-zählt einen Shard mehr und einen späteren Abrufstand. Die Grössenordnung ist in beiden dieselbe.
-
 Stichproben: Geschäft 08.053 16 Zeilen → 2 · Geschäft 24.041 23 → 5.
-Der Schlüssel in `baueKommissionen` ist `datum|CommitteeName`. Die zusammenfallenden Zeilen
-unterscheiden sich **ausschliesslich in `BillNumber`/`IdBill`** (vereinzelt zusätzlich
-`TreatmentCategory`) — also: **dieselbe Kommissionssitzung, verschiedene Entwürfe**.
 
-**Die Frage an David.** Genau dieselbe Konstellation war bei den Publikationen ein Datenverlust
-und ist behoben. Hier ist sie **plausibel gewollt**: eine Kommissionssitzung behandelt alle
-Vorlagen eines Geschäfts, und «wer hat wann beraten» ist einmal pro Sitzung die richtige
-Aussage, nicht einmal pro Entwurf. Aber das ist bisher **eine Annahme, keine Messung und
-keine Entscheidung** — nirgends dokumentiert.
+**Offen:** **Zählwiderspruch** korpusweit — 35 309 amtliche Zeilen (Messung 22.9.2026) gegen
+32 031 oben (21.9.2026); vor dem Bau nachmessen. Darstellung auf parlament.ch (JS-Hülle) nicht
+belegbar; andere Weiterverwender nicht geprüft.
 
-- **Variante A (Behalt, nur beschriften):** Schlüssel bleibt; im Code und im §11-Eintrag wird
-  festgehalten, dass `vorberatungen[]` bewusst je Sitzung und nicht je Entwurf zählt. Günstig,
-  ändert keine Daten, macht die Auflage «Daten inhaltlich nicht verändern» aber zur
-  Auslegungsfrage.
-- **Variante B (wie bei den Publikationen):** `vorlage` in Schlüssel und Datenmodell; der
-  Bestand wächst von 790 auf ~2093 Zeilen. Treu zur Quelle, aber die Oberfläche müsste dann
-  zeigen, dass dieselbe Sitzung mehrfach erscheint — sonst sieht es nach Doppelung aus.
-
-**Empfehlung:** Variante A, weil die Aussage «Kommission X beriet am Datum Y» durch die
-Entwurfs-Aufteilung nicht genauer wird, sondern nur länger. Aber der Entscheid gehört David,
-weil er die fachliche Bedeutung der Vorberatungs-Liste festlegt (§7/§8).
-
-**Nicht Teil des Publikations-PR** — dort bewusst ausgeklammert, um Risiko-Flächen nicht zu
-mischen.
+Vollständige Belegkette: `bibliothek/recherche/legal-design-und-korrektheits-recherche-2026-09-21.md`
+Ziff. 17.

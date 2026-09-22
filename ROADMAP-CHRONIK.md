@@ -5384,3 +5384,48 @@ als npm-Script (Skript: `plan/posten/anhang/2026-09-21-verbrauch-summe.py`) · P
 `aufraeumen:git` «nur meine». Die erprobte Chip-Vorlage steht in der git-Historie
 (`docs/token-oekonomie/tochter-chip-vorlage.md`, PR #967); die Messprotokolle liegen lokal unter
 `<Haupt-Checkout>/.claude/notizen/archiv/2026-09-21-*`.
+
+
+## Geschlossen 22.9.2026 — vier Posten und eine David-Frage (Recherche-Buchung)
+
+Entscheide David 22.9.2026 im Chat; die Posten-Dateien liegen im Wortlaut unter `archiv/posten/`.
+Belegkette zu allem Übrigen:
+`bibliothek/recherche/legal-design-und-korrektheits-recherche-2026-09-21.md` Ziff. 20.
+
+**1. `2026-09-19-jules-github-app-in-der-organisation-lexmetrik-installiert.md` (QS-BASIS).**
+Wortlaut David: «jules ist nicht installiert». *Begründung: Frage beantwortet.* **Folge, die
+bleibt:** auftragsgebundene Jules-Tickets (grüne Spur, Skill `auftrag` Ziff. 6) laufen in der
+Organisation derzeit NICHT — bis zu einer Installation, die allein David vornehmen kann und die er
+nicht angekündigt hat, werden keine Jules-Tickets angelegt. Suggestions sind seit 14.9.2026
+ohnehin aus.
+
+**2. `2026-09-20-steuerdeckel-entscheid-scripts-check-ts-david.md` (QS-EFFIZIENZ).**
+Wortlaut David: «alten posten schliessen». *Begründung: überholt durch die am selben Tag
+freigegebene einmalige Streich-Runde* (`plan/posten/2026-09-21-einmalige-streich-runde-nie-fuendige-tore-loeschen-council-2.md`),
+die denselben Streichkandidaten-Bereich mit einem schärferen Massstab abdeckt.
+
+**3. `2026-09-20-monatlicher-abbau-vorschlag-aus-tor-bewaehrung-ab-dezember-2.md` (QS-EFFIZIENZ).**
+Wortlaut David: «schliessen». *Begründung: widerspricht dem Council-Verdikt und dem Nordstern vom
+22.9.2026 — «Produkt vor Prozess», keine Wiederholung als Ritual.* Der monatliche Rhythmus war
+selbst der Prozess-Zuwachs, den die einmalige Streich-Runde vermeiden soll. **Gerettet, nicht
+verloren:** die dort genannte Vorbedingung — der Fang-Scanner-Bug in der Bewährungs-Erhebung, ohne
+dessen Behebung `messwerte/tor-bewaehrung.json` falsch zählt und ein wirksames Tor gestrichen
+werden könnte — steht jetzt als Vorbedingung im Streich-Runden-Posten.
+
+**4. `2026-09-20-automerge-token-getauscht-…` (QS-BASIS).**
+Wortlaut David: «schliessen». *Begründung: gegenstandslos — der Posten hing am direkten
+Hauptzweig-Push von `.github/workflows/plan-buchung.yml:282`, und diese Datei existiert seit dem
+Abbau #952 (20.9.2026) nicht mehr; `PLAN_BUCHUNG_TOKEN` hat repo-weit null Treffer.*
+**Gerettet:** `AUTOMERGE_TOKEN` lebt weiter (`normen-monitor.yml:314/392/469`,
+`fedlex-frische.yml:447`), ein PAT-Ablaufdatum steht in
+`bibliothek/register/parameter-verfall.md` heute nicht — dieser Rest läuft als eigener Ein-Zeiler
+weiter (`plan/posten/2026-09-22-pat-ablaufdatum-als-pflegetermin-eintragen.md`, wartet auf David).
+
+**5. `@david-fragen`-Eintrag `zgb-a36-anhang` gelöscht.** Wortlaut David: «nein». *Begründung:
+Frage beantwortet, der Block ist die Single Source der offenen David-Fragen und wird nach der
+Antwort geleert (§5).* **Der Entscheid im Wortlaut, damit er auffindbar bleibt:** Die
+ZGB-Gliederung zeigt die 74 Artikel des Anhangs «Wortlaut der früheren Bestimmungen des sechsten
+Titels» **bewusst NICHT** in der Gliederungs-Leiste (Alt-Kuration A36); es sind aufgehobene
+Alt-Fassungen, die im Lesetext weiterhin vorhanden und verlinkbar bleiben. Die Vorgabe vom
+13.8.2026 («Artikel-Ebene in allen Gesetzen») ist sonst korpusweit erfüllt. Derselbe Vermerk steht
+im Bibliothek-Eintrag Ziff. 20.

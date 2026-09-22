@@ -763,6 +763,27 @@ vollständig). Darauf, je EIGENE Runde mit eigener Gegenprüfung:
   (1) Lizenz des LexWork-`versions`-Endpunkts klären, (2) amtlichen
   Schlüssel Erlass↔Geschäft bei BS anfragen. Deckel-Reserve nach `#802`
   ausreichend.
+  **Nachtrag 22.9.2026 (Recherche R2) — die Anfrage ist nur noch OPTIONAL.**
+  Handgriff 1 weitgehend geklärt ohne Anfrage: `data.bs.ch` 100354
+  «Gesetzessammlung: Gesetzestexte» (Zentraler Rechtsdienst) steht unter
+  **CC BY 4.0**, führt 1370 SG-Nummern und 8061 Fassungs-Volltexte und
+  verlinkt **dieselben** Fassungs-IDs wie die interne API; opendata.swiss
+  führt die Sammlung unter `terms_open`; `robots.txt` sperrt
+  `/api/texts_of_law/` und `versions` nicht; URG Art. 5 Abs. 1 lit. a und
+  Abs. 2 erfassen Erlasse UND amtliche Sammlungen ohne Beschränkung auf den
+  Bund. **Rest, der eine Anfrage rechtfertigt:** Fussnoten und
+  Änderungstabellen fehlen im CC-BY-Text (2/2 Stichproben) — genau das
+  braucht R12a — und der Endpunkt bleibt undokumentiert
+  (Stabilität/Abrufrate). Handgriff 2 **teilweise vorhanden:** kein
+  Datenfeld (100311/100355 ohne SG-Bezug, `materials_enabled:false`), aber
+  die amtlichen Änderungsdokumente nennen im Ingress die Ratschlagsnummer
+  (3/3), identisch mit `signatur_dok` in 100313 (4/4); Schlüssel ist die
+  NUMMER, nie das Datum. Nur über PDF-Fliesstext ⇒ Risikopfad. Belegkette:
+  `bibliothek/recherche/legal-design-und-korrektheits-recherche-2026-09-21.md`
+  Ziff. 19, Nachtrag §10 in
+  `bibliothek/materialien/2026-09-12-k16-bs-vormessung.md`. Der Blocker
+  `david-bs-lizenz-schluessel` **bleibt stehen** — David hat ihn nicht
+  aufgehoben.
 - **R12b Entstehung am Paragraph — ZH-Pendant zu `W2·6c-ENTSTEHUNG-*`**
   *(David 6.9.2026: «Botschaften und anderes analog von Gesetzen Zürich» —
   ja, aber nach Bund und BS; Grundlage `bibliothek/materialien/

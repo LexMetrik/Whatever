@@ -269,3 +269,30 @@ nur die Kosten des R12a-Baus, sobald die Lizenz geklärt ist: eine BS-
 Fassungskette bräuchte sonst einen eigenen zweiten Volltext-Parser ohne
 erkennbare Quelle.
 
+
+## 10 Nachtrag 22.9.2026: Lizenz weitgehend geklärt — ohne Anfrage
+
+Die in §9 offene Lizenzfrage ist per Recherche (nicht per Anfrage) weitgehend beantwortet;
+Datensatz 100354 wurde per eigenem API-GET gegengeprüft (Zentraler Rechtsdienst, **CC BY 4.0**,
+11 018 Records). Kurz:
+
+- `data.bs.ch` **100354 «Gesetzessammlung: Gesetzestexte»** trägt CC BY 4.0, führt 1370
+  SG-Nummern und 8061 Records mit Fassungs-Volltext (`gesetzestext_html`) und verlinkt
+  **dieselben** Fassungs-IDs wie die interne API (`…/versions/<id>`).
+- **Aber:** Fussnoten und Änderungstabellen fehlen im OGD-Text (2 von 2 Stichproben) — genau das,
+  was R12a braucht. Dieser Rest liegt ausserhalb der erklärten Lizenz.
+- `opendata.swiss` führt die Systematische Gesetzessammlung unter `rights=terms_open`;
+  `gesetzessammlung.bs.ch/robots.txt` sperrt nur Such-Endpunkte, nicht `/api/texts_of_law/` oder
+  `versions`; kein Crawl-delay. URG Art. 5 Abs. 1 lit. a und Abs. 2 erfassen Erlasse **und**
+  amtliche Sammlungen, ohne Beschränkung auf den Bund (SR 231.1, Stand 1.7.2025). Dazu PublG BS
+  SG 151.200 §5 und §12 Abs. 2, PublV SG 151.210 §10–14, OGD-Richtlinie RR 22.1.2019 Ziff. 2.2.
+- **Schlüssel Erlass↔Geschäft (Handgriff 2) teilweise vorhanden:** kein Datenfeld, aber die
+  amtlichen Änderungsdokumente nennen im Ingress die Ratschlags-/Berichtsnummer (3 von 3),
+  identisch mit `signatur_dok` in 100313 (4 von 4). Der Schlüssel ist die **Nummer**, nie das
+  Datum. Nur über PDF-Fliesstext erreichbar ⇒ Risikopfad.
+- **Nicht verifiziert:** ein amtlicher Beleg «kein sui-generis-Datenbankrecht» (nur Negativbefund
+  aus dem URG-Volltext); keine BGer-Recherche dazu.
+
+Volle Belegkette, die fünf Fragen für eine allfällige Anfrage und die zuständigen Stellen:
+`recherche/legal-design-und-korrektheits-recherche-2026-09-21.md` Ziff. 19. Der Blocker
+`david-bs-lizenz-schluessel` bleibt stehen — ob er fällt, entscheidet David.
