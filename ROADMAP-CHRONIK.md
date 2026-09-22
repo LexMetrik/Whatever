@@ -1,5 +1,17 @@
 # ROADMAP — Erledigt-Chronik (Detail-Archiv erledigter Schritte)
 
+## Ablösung 22.9.2026 (Werkbank-Umbau) — `W2·11-DESIGN` (Design-Wärme) gestrichen (Wortlaut)
+
+**Begründung der Streichung.** Davids Go zum Werkbank-Umbau (22.9.2026, «go») nach dem Rats-Verdikt desselben Tages macht den Schritt gegenstandslos: `W2·11-DESIGN` war der Ausbau der Brass-Wärme auf der bestehenden Token-Schicht; der Umbau tauscht genau diese Token-Schicht gegen `tokens.json` des Werkbank-Design-Systems aus (`W2·29-WERKBANK-TOKENS`, Auflage 2 «eine Token-Quelle»). Ein Ausbau dessen, was im selben Zug ersetzt wird, ist kein offener Schritt, sondern doppelte Arbeit. Bereits am 5.9.2026 hatte `FAHRPLAN-DESIGN-IDENTITAET.md` §4 festgehalten, dass die Design-Identität `W2·11-DESIGN` «inhaltlich ablöst» — diese Streichung vollzieht das. Der Fahrplan ist nach `archiv/FAHRPLAN-DESIGN-WAERME.md` verschoben (Dateiname unverändert, Index-Zeile in `archiv/README.md`); seine sechs offenen Posten hängen seit heute unter `W2·29-WERKBANK-TOKENS` (D-6 Dunkel-Paket, D-7 Lese-Register), `W2·29-WERKBANK-REST` (D-8a/b/c) und `W2·29-WERKBANK-LESER` (Qualitäts-Pass Gesetzes-Bereich). Die gemessenen Kontrast- und Token-Belege der Wellen D-1 bis D-5 (`abnahme/design-waerme/**`, `abnahme/design-d5/**`, `DESIGN-REGLEMENT.md` F2b-Nachträge) bleiben unverändert stehen — sie sind datierte Belege und werden nicht nachgeführt.
+
+Wortlaut des gestrichenen Schrittes:
+
+- [ ] **Design-Wärme & Atmosphäre** *(`W2·11-DESIGN`, Ultracode-Synthese 11.7., reine Token-Schicht)*
+  <!-- @meta id: W2·11-DESIGN · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-WAERME.md -->
+  Farbklima/Wärme/Typografie nach §13; Normtext-Körper bleibt farbfrei, golden byte-gleich.
+  **Detail:** [FAHRPLAN-DESIGN-WAERME.md](fahrplaene/FAHRPLAN-DESIGN-WAERME.md) §5.
+
+
 ## Umschichtung 18.9.2026 (Leser-Mitlaufen) — drei erledigte Unterpunkte von `W2·5m-LESER-V3` (Wortlaut)
 
 **Anlass.** Steuerdeckel ROADMAP (132 KB bei 120 KB Budget, gelb) nach der Buchung der Session 18.9.2026 (3). Der Dach-Schritt `W2·5m-LESER-V3` bleibt offen (Auf/Zu-Handling, Einzelartikel E3, Fassungs-Diff-Tab); nur die drei erledigten Unterpunkte wandern hierher, die ROADMAP trägt eine Zeiger-Zeile. Wortlaut unverändert:

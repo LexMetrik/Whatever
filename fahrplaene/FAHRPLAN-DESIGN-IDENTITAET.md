@@ -53,6 +53,9 @@ Golden byte-gleich (Token-Schicht berührt keine Ausgaben); Schrift-Lizenzen off
 
 `W2·11-DESIGN` (Design-Wärme, geparkt) baut auf der Brass-Welt auf — wird durch diesen Schritt
 inhaltlich abgelöst; bei Umsetzung Fahrplan-Wärme prüfen und Doppelungen in die Chronik.
+*(Nachtrag 22.9.2026: vollzogen, aber anders als hier gedacht — `W2·11-DESIGN` ist mit dem Go zum
+Werkbank-Umbau gestrichen, Wortlaut in `ROADMAP-CHRONIK.md` «Ablösung 22.9.2026», Fahrplan in
+`archiv/FAHRPLAN-DESIGN-WAERME.md`. Nachfolge: `fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md`.)*
 `W2·19-DESIGN-KONSISTENZ` (gelandet 5.9.2026) hat `--z-*`/`--auf-sage` in `index.css` — additiv
 respektieren.
 

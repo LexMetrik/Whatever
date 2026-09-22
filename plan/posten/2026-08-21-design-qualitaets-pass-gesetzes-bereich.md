@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·11-DESIGN
+dach: W2·29-WERKBANK-LESER
 titel: Design-Qualitäts-Pass Gesetzes-Bereich
 anlass: Auftrag David 21.8.2026, nach H5
 -->

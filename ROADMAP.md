@@ -74,6 +74,7 @@ richter-analytik-gate: Richter-/Spruchkörper-Analytik (W3·15-RICHTER). GRENZE 
 zielbild-gesetzesleser: Zurückgestellt durch das Zielbild-Dekret 1.9.2026 (Gesetzesleser zuerst) — wieder öffnen, sobald die Phasen 1–2 gelandet sind oder David einen Schritt ausdrücklich vorzieht (FINMA: vorziehen, wenn ein externer Termin drängt). Kein Bau-Blocker, reine Reihenfolge-Entscheidung.
 david-go-entstehung: ERTEILT — Go David 11.9.2026 («führe alles durch»); die drei W2·6c-ENTSTEHUNG-*-Schritte stehen auf `status: ready`, Blocker entfernt. Design freigegeben 6.9.2026; §11.9 der Materialien-Spec bucht die Entscheide 1–6 als entschieden 11.9.2026 (Mandat), Nr. 7 (fachliche Abnahme) bleibt bei David.
 david-bs-lizenz-schluessel: R12a — David klärt Lizenz LexWork-versions-Endpunkt + fragt amtlichen Schlüssel Erlass↔Geschäft bei BS an (Vormessung 12.9.2026). **Recherche 22.9.2026 (R2): Anfrage nur noch OPTIONAL.** Lizenz weitgehend geklärt ohne Anfrage — data.bs.ch 100354 (Zentraler Rechtsdienst) ist CC BY 4.0 und verlinkt dieselben Fassungs-IDs; opendata.swiss führt die Sammlung unter `terms_open`; URG Art. 5 Abs. 1 lit. a/Abs. 2 erfasst Erlasse UND amtliche Sammlungen (nicht nur Bund). REST für eine Anfrage: Fussnoten und Änderungstabellen fehlen im CC-BY-Text (2/2 Stichproben) und liegen damit ausserhalb der erklärten Lizenz; der Endpunkt ist undokumentiert (Stabilität/Abrufrate). Schlüssel TEILWEISE vorhanden: die Ratschlagsnummer steht im Ingress der amtlichen Änderungsdokumente (3/3), identisch mit `signatur_dok` in 100313 (4/4) — nur über PDF-Fliesstext, Risikopfad. Beleg: bibliothek/recherche/legal-design-und-korrektheits-recherche-2026-09-21.md Ziff. 19. Blocker BLEIBT — ob er fällt, entscheidet David.
+david-design-entscheide: `W2·29-WERKBANK-TOKENS` — drei Sichtentscheide Davids vor dem Token-Tausch (Werkbank-Entwürfe 22.9.2026): (1) Seitenleiste Variante 1, 2 oder 3; (2) Startseiten-Kachel liest «49» (23 Rechner-Karten + 26 Vorlagen im Register) oder «20 Rechner · 30 Vorlagen» (Routen); (3) «Farbe als Fläche» ja/nein — ändert Reglement F0.2 und `check:farbwelt`, bis dahin gilt F0.2. ECHTES David-Gate, kein Bau-Blocker: `W2·29-WERKBANK-TOR` ist ohne die Entscheide baubar und geht voraus. Varianten-Bilder liegen im Werkbank-Entwurf (Seite 8 «Zur Wahl»).
 -->
 
 <!-- @david-fragen
@@ -114,6 +115,14 @@ david-bs-lizenz-schluessel: R12a — David klärt Lizenz LexWork-versions-Endpun
 
 ## Leser — Gesetzes-Darstellung  *(`feld: leser`)*
 
+- [ ] **Werkbank-Umbau Schritt 2: der Gesetzes-Leser** *(`W2·29-WERKBANK-LESER`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-LESER · status: ready · blocker: null · dep: [W2·29-WERKBANK-TOKENS] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: die Leser-Hülle auf die Werkbank umziehen — grösster Korpus, darum zuerst. Abnahmeliste
+  ist Abschnitt 2 des Funktions-Inventars (jede Fläche, jedes Feld, jeder Zustand). Grenzen:
+  **Normtext-Körper golden byte-gleich**, Rechen-/Datenlogik unangetastet, alte Komponente fällt
+  im selben PR, e2e-Selektoren ziehen mit; drei Sessions, sonst zurückstellen.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
+
 - [ ] **Gesetz-Leser V3 — Hülle neu, Kern unangetastet** *(`W2·5m-LESER-V3`, Auftrag David 16.8.2026)*
   <!-- @meta id: W2·5m-LESER-V3 · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-LESER-V3.md -->
   Ziel: Leser-Oberfläche nach Apple-HIG-Prinzipien radikal vereinfacht; Kern (`ArtikelBody`,
@@ -123,6 +132,8 @@ david-bs-lizenz-schluessel: R12a — David klärt Lizenz LexWork-versions-Endpun
   Rechtsprechungs-Block und der Fassungs-Diff-Tab.
   **Detail:** [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) (Kurzfassung zuoberst; Kap. 7 Etappen H1–H5/S1–S4, Kap. 9 Fragen F1–F6).
   **Offene Unterpunkte im Wortlaut** (verlagert 20.9.2026, Entscheid David): [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) §16 — die drei Deckel-/Schnitt-Posten und die Gliederungs-Nebenfunde.
+  **Wird durch `W2·29-WERKBANK-LESER` abgelöst** (gleiches Ziel, anderer Weg) — Posten dort
+  abarbeiten (Fahrplan Werkbank-Umbau §7); bis dahin unverändert baubar.
 
 - [ ] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`; Phase 2, Entscheid 14.9.2026)*
   <!-- @meta id: W2·13-KANTONE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
@@ -400,10 +411,27 @@ Umschichtung 20.9.2026 (2)):*
 
 ## Design & Oberfläche  *(`feld: design`)*
 
-- [ ] **Design-Wärme & Atmosphäre** *(`W2·11-DESIGN`, Ultracode-Synthese 11.7., reine Token-Schicht)*
-  <!-- @meta id: W2·11-DESIGN · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-WAERME.md -->
-  Farbklima/Wärme/Typografie nach §13; Normtext-Körper bleibt farbfrei, golden byte-gleich.
-  **Detail:** [FAHRPLAN-DESIGN-WAERME.md](fahrplaene/FAHRPLAN-DESIGN-WAERME.md) §5.
+- [ ] **Werkbank-Umbau Schritt 1: eine Token-Quelle** *(`W2·29-WERKBANK-TOKENS`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-TOKENS · status: blocked · blocker: david-design-entscheide · dep: [W2·29-WERKBANK-TOR] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: `tokens.json` des Design-Systems als **einzige** Quelle im Repo; generiert werden daraus
+  die `:root`/`html.dark`-Blöcke und die Farb-/Typo-Teile von `tailwind.config.js`, die fünf
+  Reglemente werden auf eines konsolidiert (§5). Grenzen: Kontrast-Tore grün, Normtext-Körper
+  farbfrei, Golden byte-gleich, **Startseite unberührt** (V4 Werkbank live seit 5.9.2026).
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §4.
+
+- [ ] **Werkbank-Umbau Schritt 3: die vier Kataloge** *(`W2·29-WERKBANK-KATALOGE`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-KATALOGE · status: ready · blocker: null · dep: [W2·29-WERKBANK-LESER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: Gesetze-, Rechtsprechungs-, Rechner- und Vorlagen-Katalog samt Suche, Abdeckung und
+  Einstellungen auf die Werkbank umziehen; Abnahmeliste sind die Inventar-Abschnitte 2.2/3.2/4.2/5.2.
+  Grenzen: Status-Modell bleibt sichtbar (§8), Löschpflicht im selben PR, Löschbilanz ≥ 50 %.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
+
+- [ ] **Werkbank-Umbau Schritt 6: Rest und Rückbau** *(`W2·29-WERKBANK-REST`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-REST · status: ready · blocker: null · dep: [W2·29-WERKBANK-RECHNER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: Entscheid-Leser, Materialien, statische Seiten, mobile Breite und Druckansicht umziehen —
+  und die letzten Alt-Stylesheet-Reste samt abgelösten Reglementen und Fahrplänen löschen.
+  Grenzen: `check:sediment` grün ohne Ausnahme; datierte Belege (`abnahme/**`) bleiben.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5 + §7.
 
 - [ ] **Design-Konsistenz: gleiche Dinge gleich darstellen** *(`W2·19-DESIGN-KONSISTENZ`, Auftrag David 31.8.2026)*
   <!-- @meta id: W2·19-DESIGN-KONSISTENZ · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md -->
@@ -412,6 +440,8 @@ Umschichtung 20.9.2026 (2)):*
   (§5/§10), Normtext-Körper farbfrei/golden. Methode: Finder-Wellen → umsetzen → **run till dry**
   (Mandat David 31.8.2026, Befunde direkt umsetzen).
   **Detail:** [FAHRPLAN-DESIGN-KONSISTENZ.md](fahrplaene/FAHRPLAN-DESIGN-KONSISTENZ.md) §1.
+  **Wird durch `W2·29-WERKBANK-*` abgelöst** — die Posten dort je Rubrik abarbeiten (Fahrplan
+  Werkbank-Umbau §7); bis dahin unverändert baubar.
 
 - [ ] **Design-Identität: offene Nachzüge nach der Landung** *(`W2·24-C`, herausgelöst 20.9.2026 aus dem `done`-Kopf `W2·24-DESIGN-IDENTITAET`)*
   <!-- @meta id: W2·24-C · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
@@ -420,6 +450,7 @@ Umschichtung 20.9.2026 (2)):*
   den erledigten Unterposten steht in [ROADMAP-CHRONIK.md](ROADMAP-CHRONIK.md), Umschichtung
   2026-09-20 (2) — dort auch die Begründung der Herauslösung.
   **Detail:** [FAHRPLAN-DESIGN-IDENTITAET.md](fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md) §8.
+  **Wird durch `W2·29-WERKBANK-KATALOGE`/`-REST` abgelöst** — Posten dort abarbeiten (§7).
 
 - [ ] **Leser-Kopf: Rest-CLS und Mount-Messung** *(`W2·24-PERF-REST`, herausgelöst 20.9.2026 aus dem `done`-Kopf `W2·24-DESIGN-IDENTITAET`)*
   <!-- @meta id: W2·24-PERF-REST · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-DESIGN-IDENTITAET.md -->
@@ -432,6 +463,8 @@ Umschichtung 20.9.2026 (2)):*
   <!-- @meta id: W2·17-UI-BEFUNDE · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-BEFUNDE.md -->
   Externe Sichtprüfung, geschnitten nach Bauteil; alles reine Darstellungsschicht, Blocker zuerst.
   **Detail:** [FAHRPLAN-UI-BEFUNDE.md](fahrplaene/FAHRPLAN-UI-BEFUNDE.md) §24.
+  **Gegenstand ist die alte Hülle** — je Rubrik durch `W2·29-WERKBANK-*` abgelöst; Befunde dort
+  abhaken oder als gegenstandslos in die Chronik (Fahrplan Werkbank-Umbau §7).
   - [ ] **B8 · Menüinhalt, Zustandsanzeige, Scrollbereiche (K-03 + K-07)** — 10 Befunde (Blocker 1 · Hoch 3). §9. · **Blocker LM-061 vorgemessen 30.8.2026, wartet auf David:** News-Reihe verbirgt 2'588 px ohne Affordanz — der Bau würde den Entscheid D11 («angeschnittene Karte IST die Affordanz») revidieren. Messung + Bauform-Vorschlag im Fahrplan.
   - [ ] **B11 · Karten (K-04)** — 12/13, Rest LM-032 zurückgestellt. §12. · **B12 · Eingabe-/Auswahlfelder (K-08a)** — 9/11, Reste LM-066/LM-075 zurückgestellt (dokumentierte Entscheide). §13. *(Stand 13.9.2026)*
   - [ ] **B13 · Zahlen-, Datums-, Zählformate (K-11)** — 8/12, Reste LM-109/110/114/117 zurückgestellt. §14. · **B14 · Brotkrume/Kopfzeilen (K-19a)** — 4/8, Reste LM-183/184/197/198 zurückgestellt. §15. *(Stand 13.9.2026)*
@@ -450,12 +483,14 @@ Umschichtung 20.9.2026 (2)):*
   <!-- @meta id: QS-UI · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
   Kontinuierlicher Oberflächen-Pass (Fundament → Hierarchie → Politur), kein Einzel-Redesign.
   **Detail:** [FAHRPLAN-UI-QUALITAET.md](fahrplaene/FAHRPLAN-UI-QUALITAET.md) §8.
+  **Wird durch `W2·29-WERKBANK-REST` abgelöst** — Posten dort abarbeiten (§7).
 
 - [ ] **Aufräum-Item — zwei Restpunkte** *(`W2·9`)*
   <!-- @meta id: W2·9 · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md -->
   (a) A3 Kachel-Höhen (zur David-Abnahme geflaggt); (b) globaler Schalter «aufgehobene Normen
   ausblenden» nie gebaut. Abhaken bleibt David-Entscheid.
   **Detail:** [FAHRPLAN-ARCHIV-RESTPUNKTE.md](fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md) §20.
+  **(a) fällt mit `W2·29-WERKBANK-KATALOGE`**; (b) ist eine Funktion und bleibt hier.
 
 - [ ] **Bedienungsanleitung / Onboarding** *(`W2·16-ANLEITUNG`, §14-Intake 20.7.2026, bewusst spät)*
   <!-- @meta id: W2·16-ANLEITUNG · status: ready · blocker: null · dep: [W2·16-INVENTAR] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
@@ -465,6 +500,21 @@ Umschichtung 20.9.2026 (2)):*
 ---
 
 ## Werkzeuge — Rechner & Vorlagen  *(`feld: werkzeuge`)*
+
+- [ ] **Werkbank-Umbau Schritt 4: Vorlagen-Rahmen, dann die 30 Vorlagen** *(`W2·29-WERKBANK-VORLAGEN`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-VORLAGEN · status: ready · blocker: null · dep: [W2·29-WERKBANK-KATALOGE] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: **ein** gemeinsamer Assistenten-Rahmen aus den bestehenden `src/lib/vorlagen/*Schemas.ts`,
+  darauf die 30 Vorlagen; die 42 geplanten fallen danach aus demselben Rahmen. Grenzen: kein
+  zweites Schema-Modell (§5), PDF und DOCX aus demselben Assemble-Ergebnis, Golden byte-gleich.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
+
+- [ ] **Werkbank-Umbau Schritt 5: die 20 Rechner, einzeln** *(`W2·29-WERKBANK-RECHNER`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-RECHNER · status: ready · blocker: null · dep: [W2·29-WERKBANK-VORLAGEN] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: gemeinsamer Rahmen **nur** für Kopf, Ergebnisblock und Exportleiste; die 20 Rechner
+  ziehen einzeln um. Grenzen: **Rechenfälle werden nie abstrahiert (§1)** — lieber 20 Handgriffe
+  als eine Fabrik, die zwei rechtlich verschiedene Fälle gleich behandelt; Engine-Tests
+  unverändert (§6.3), Golden byte-gleich.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
 
 - [ ] **Prozesskosten-Cockpit Restbau** *(`W1·4`, Hauptmoat, ENTPARKT 3.8.2026 David)*
   <!-- @meta id: W1·4 · status: parked · blocker: zielbild-gesetzesleser · dep: [] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-PROZESSKOSTEN-COCKPIT.md -->
@@ -536,6 +586,15 @@ Umschichtung 20.9.2026 (2)):*
 
 > Dieses Feld steht bewusst zuletzt: ohne `@queue`-Eintrag entscheidet die Dokumentreihenfolge,
 > und dann soll ein Produkt-Schritt gewinnen, nicht ein Prozess-Schritt.
+
+- [ ] **Werkbank-Umbau Schritt 0: Tor gegen Sediment** *(`W2·29-WERKBANK-TOR`, Go David 22.9.2026, Auflage 3 des Rats-Verdikts)*
+  <!-- @meta id: W2·29-WERKBANK-TOR · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: ein Tor `check:sediment` gegen tote CSS-Klassen, verwaiste Komponenten und doppelte
+  Metadaten-Quellen — die drei Gattungen, für die keine der 91 Wachen zuständig ist. Grenzen:
+  **keine Baseline, keine Bestandsliste, kein Warnung-statt-Fail**; vorhandenes `knip` prüfen,
+  statt es zu verdoppeln (§17-Gegengewicht). **Fällt das Tor nicht rot, fällt der ganze
+  Umbau-Plan** — die sechs Folgeschritte werden dann gestrichen, nicht gebaut.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §3.
 
 - [ ] **Effizienz-Dauerauftrag (Token/Prozess)** *(`QS-EFFIZIENZ`, stehender Auftrag David 14.8.2026)*
   <!-- @meta id: QS-EFFIZIENZ · status: ready · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-EFFIZIENZ-CHECKLISTE.md -->
