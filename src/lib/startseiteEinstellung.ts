@@ -53,7 +53,7 @@ export const STARTSEITE_KEY = 'lexmetrik-startseite';
 
 /** Reaktives Event im GLEICHEN Tab (Muster ZULETZT_EVENT); andere Tabs laufen
  *  über das native `storage`-Event. */
-export const STARTSEITE_EVENT = 'lm:startseite';
+const STARTSEITE_EVENT = 'lm:startseite';
 
 function hatSpeicher(): boolean {
   return typeof localStorage !== 'undefined';

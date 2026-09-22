@@ -96,24 +96,6 @@ export function erlassPfadRoh(routenSegment: string, key: string): string {
   return `/gesetze/${routenSegment}/${encodeURIComponent(key)}`;
 }
 
-/**
- * Adresse einer DATEI unter `/normtext` — dieselbe Kodier-Regel wie für die
- * Seiten-Adresse, angewandt auf jedes Pfadsegment einzeln.
- *
- * AUSGELAGERT nach `dateiUrl.ts` (Gegenprüfung 5.9.2026, Auflage B zu
- * PR #684): dieses Modul hier importiert `ERLASS_REGISTER` (~42 KB), das
- * jeder Aufrufer von `normtextDateiUrl()` — u. a. den register-freien
- * Client-Loader `laden.ts` — bisher ungefragt in seinen Import-Graphen zog.
- * Herkunft, Begründung und die (korrigierte) Wirkung — Vercel toleriert beide
- * Kodierformen der drei Glarner Schlüssel, der Defekt betraf nachweisbar nur
- * einen einmal dekodierenden lokalen Server — stehen jetzt in `dateiUrl.ts`,
- * ebenso die Sidecar-Lader, die seither dieselbe Regel für einzelne
- * Schlüssel nutzen. Re-Export hier, damit bestehende Aufrufstellen
- * unverändert bleiben — WER EINE NEUE NORMTEXT-DATEI-URL BAUT, IMPORTIERT
- * DIREKT AUS `dateiUrl.ts`.
- */
-export { normtextDateiUrl } from './dateiUrl';
-
 /** Alt-Adresse desselben Erlasses (vor Befund 45), die dauerhaft weiterleitet.
  *  null, wenn der Erlass nie umgezogen ist (Bund-/Kantonserlasse). */
 export function erlassAltPfad(e: Pick<BrowseErlass, 'ebene' | 'rechtsgebiet' | 'key'>): string | null {

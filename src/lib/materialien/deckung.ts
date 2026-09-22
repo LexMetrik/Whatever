@@ -191,7 +191,7 @@ export function sortiere(
 // Kein Modul ausserhalb der Seite ruft das hier auf — die Materialien-Übersicht
 // und die Artikel-Karte verlinken die Seite, sie laden sie nicht mit.
 
-export const DECKUNG_URL = '/materialien/deckungs-sicht.json';
+const DECKUNG_URL = '/materialien/deckungs-sicht.json';
 
 let laufend: Promise<DeckungProjektion | null> | null = null;
 
@@ -209,9 +209,4 @@ export function ladeDeckungProjektion(): Promise<DeckungProjektion | null> {
     }
   })();
   return laufend;
-}
-
-/** Nur für Tests: Cache leeren. */
-export function _leereDeckungsCache(): void {
-  laufend = null;
 }

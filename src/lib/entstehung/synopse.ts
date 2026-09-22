@@ -261,20 +261,6 @@ export function ladeSynopseShard(erlassKey: string): Promise<SynopseShard | null
   return p;
 }
 
-/** Alle Alt-Fassungen eines Artikels, jüngster Schritt zuerst (leer = keine erfasst). */
-export function synopseFuerArtikel(
-  s: SynopseShard,
-  token: string,
-): { schritt: SynopseSchritt; artikel: SynopseArtikel }[] {
-  const out: { schritt: SynopseSchritt; artikel: SynopseArtikel }[] = [];
-  for (const schritt of s.schritte) {
-    for (const artikel of schritt.artikel) {
-      if (artikel.token === token) out.push({ schritt, artikel });
-    }
-  }
-  return out.sort((a, b) => (a.schritt.bis < b.schritt.bis ? 1 : -1));
-}
-
 /** Quell-Beleg eines Stands (für die Zitat-Angabe am Alt-Block, §7 a–c). */
 export function standVon(s: SynopseShard, datum: string): SynopseStand | null {
   return s.staende.find((x) => x.datum === datum) ?? null;

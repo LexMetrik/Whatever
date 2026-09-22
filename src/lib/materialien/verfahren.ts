@@ -154,7 +154,7 @@ export const BS_GROSSRAT: Readonly<Record<number, { typ: VerfahrensTypBs; label:
  * kein Bericht. Alle Muster sind am Anfang verankert — ein Wort irgendwo im Titel
  * reicht nie (das wäre die Substring-Falle, CLAUDE.md §7).
  */
-export const BS_DOKTYP_REGELN: ReadonlyArray<{ muster: RegExp; code: number }> = [
+const BS_DOKTYP_REGELN: ReadonlyArray<{ muster: RegExp; code: number }> = [
   { muster: /^Ratschlag\b/, code: 1010 },
   { muster: /^Ausgabenbericht\b/, code: 1010 },
   { muster: /^(Zwischen)?[Bb]ericht des RR\b/, code: 1020 },
@@ -192,7 +192,7 @@ export function verfahrensTypVonCode(code: number, vok?: 'bs-gr'): VerfahrensTyp
 }
 
 /** Stabiler Schlüssel eines gespeicherten Ereignisses (abgeleitet, nie gespeichert). */
-export function verfahrensTyp(e: VerfahrensEreignis): VerfahrensTyp | VerfahrensTypBs {
+function verfahrensTyp(e: VerfahrensEreignis): VerfahrensTyp | VerfahrensTypBs {
   return verfahrensTypVonCode(e.code, e.vok);
 }
 
