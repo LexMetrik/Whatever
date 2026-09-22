@@ -72,9 +72,128 @@ export default {
       // body-l 18 · h3 20 · h2 25.6 · h1 32 · display 36/44.
       // text-sm/text-lg (Tailwind-Defaults) NICHT verwenden — sie tragen
       // fremde Zeilenhöhen; body-s/body-l sind die Pendants mit System-lh.
-      // Die Stufen selbst stehen in `design/tokens.json` (type.groups); ihre
-      // Herleitungen wohnen dort bei der jeweiligen Stufe.
-      fontSize: generiert.fontSize,
+      // Die Stufen stehen in `design/tokens.json` (type.groups); der Block
+      // darunter ist ihre Projektion und wird von `npm run gen:tokens`
+      // geschrieben. Er bleibt — anders als colors/zIndex/… — IN dieser Datei,
+      // weil `src/tests/leser-typo-tokens.test.ts` und
+      // `src/tests/leser-schriftskala.test.ts` die drei Leser-Stufen am
+      // WORTLAUT von `tailwind.config.js` festnageln (§5-Spiegel gegen
+      // `leserSchrift.ts`); §6.3 verbietet, einen Test für einen Umbau
+      // anzupassen, also folgt die Projektion dem Konsumenten.
+      fontSize: {
+        /* @generated tokens:start — Quelle design/tokens.json, npm run gen:tokens; nie von Hand */
+        /* ── Bedienung und Fliesstext ── */
+        /* Kleinste Stufe des Hauses (11 px): Zaehler, Randangaben, Marken. */
+        'micro': ['0.6875rem', { lineHeight: '1.2' }],
+        /* Das Etikett ueber einer Gruppe. Ohne Versalien und ohne Sperrsatz - die Laufweite steht
+           ausdruecklich auf 0em, weil frueher hier ein Sperrsatz sass. Rezept: die Klasse
+           .lc-overline setzt zusaetzlich die gedaempfte Tinte ink-500.
+
+           W2·24-R1: die Overline ist entversalt — 12 px, Tracking normal (Rezept .lc-overline in
+           src/index.css; hier der Utility-Zwilling). */
+        'overline': ['0.75rem', { lineHeight: '1.4', letterSpacing: '0em' }],
+        /* Meta-Zeilen und Chip-Aufschriften. */
+        'xs': ['0.75rem', { lineHeight: '1.4' }],
+        /* Kleiner Fliesstext und die Aufschrift der Bedienelemente: Reiter, kleine Knoepfe, kleine
+           Eingabefelder. Statt der Tailwind-Stufe text-sm. */
+        'body-s': ['0.875rem', { lineHeight: '1.5' }],
+        /* Grosser Fliesstext; Einleitungsabsaetze. Statt der Tailwind-Stufe text-lg zu verwenden,
+           die eine fremde Zeilenhoehe traegt. */
+        'body-l': ['1.125rem', { lineHeight: '1.6' }],
+        /* ── Titel ── */
+        /* Untertitel innerhalb einer Sektion. */
+        'h3': ['1.25rem', { lineHeight: '1.25' }],
+        /* Sektionstitel; mobil zugleich die Titelstufe des Leser-Kopfs. */
+        'h2': ['1.6rem', { lineHeight: '1.15' }],
+        /* Seitentitel. Gewicht und Laufweite stehen an der Element-Regel fuer h1 bis h3 und gelten
+           fuer alle drei Titelstufen. */
+        'h1': ['2rem', { lineHeight: '1.15' }],
+        /* Display-Stufe fuer Seiten-Eroeffnungen unterhalb von display-l. */
+        'display': ['2.25rem', { lineHeight: '1.05' }],
+        /* Groesste Stufe der Skala. Fuer die eine Zeile, die eine Seite eroeffnet. */
+        'display-l': ['2.75rem', { lineHeight: '1.05' }],
+        /* ── Lesen (Normtext und Entscheide) ── */
+        /* Der Fliesstext im Satzspiegel des Gesetzes-Lesers. Die Zeilenhoehe gehoert zur Stufe und
+           darf nicht am Markup ueberschrieben werden; 1.62 haelt WCAG 1.4.8 (mindestens 1.5). Das
+           Gewicht 450 statt 400 stammt aus der Beobachtung, dass Serifen am Bildschirm duenner
+           wirken als im Druck.
+
+           ── LESER-SATZSPIEGEL (W2·5m-LESER-V3 · S2, Pos. 19) ────────────────
+           Entscheid David 17.8.2026 am Bildbogen `docs/ux-audit-2026-07/reader/
+           leser-v3-s2/bogen.html` («v2 gefällt mir besser aber fussnoten
+           hochgestellt») ⇒ Variante **V2 «amtsnah kompakt»** aus FAHRPLAN-
+           LESER-V3 Kap. 8 / Design-Grundlage Kap. 2.4, mit der EINEN Abweichung
+           «Fussnotenmarke hochgestellt statt in runden Klammern» (die Marke ist
+           keine Grösse dieser Skala, sondern das em-relative Token `--fn-marke`
+           in index.css — sie MUSS relativ bleiben, damit sie dem Fliesstext und
+           dem Schriftregler folgt).
+
+           Nur DREI Stufen treten neu ein, nicht die sieben der Grundlage
+           Kap. 2.2: `leser-titel`/`leser-h`/`leser-chrome`/`leser-mikro` wären
+           wertgleiche Zweitnamen für `h1`/`h2`/`body-s`/`overline` — ein zweiter
+           Name für denselben Wert ist genau die zweite Wahrheit, die §5
+           verbietet. `leser-art` (20 px Artikelnummer) ist bewusst NICHT
+           eingeführt: V2 sagt «Titelstufen unverändert», und die Artikelnummer
+           zu vergrössern hätte David am Bogen nicht gesehen (Ä7 wird über die
+           Randtitel-Seite gelöst, s. `helpers.tsx` margStufeStil).
+
+            · `leser-text` 18 px / lh 1.62 (bis R6c 17 px / 1.55) — Normtext-
+              Fliesstext. Ersetzt das
+              Paar `text-body-l leading-[1.65]` (18 px / 1.65) am Artikel-Körper:
+              der rohe `leading-[…]`-Override fällt damit weg, die Zeilenhöhe
+              gehört zur Stufe (Grundlage Kap. 8 Nr. 4 «kein fixer Leading-Wert
+              über alle Grössen»). WCAG 1.4.8: lh 1.55 ≥ 1.5, Lesemass 42 rem.
+            · `leser-rand` 13 px / lh 1.35 — Marginalie/Randtitel, Sans, label-2.
+            · `leser-fn`   11 px / lh 1.45 — Fussnoten-Apparat am Artikelfuss
+              (war `text-xs leading-normal` = 12 px / 1.5; Kap. 8 nennt als Ist
+              `text-micro`, gemessen am Code war es `text-xs`).
+              ZEILENHÖHE 1.3 → 1.45 (T3, Design-Qualitäts-Pass 29.8.2026,
+              DEKLARIERTE fachliche Änderung, nicht Refactoring): die S2-V2-Spalte
+              setzte 1.3 für eine SCHMALE Fussnotenspalte an; gebaut wurde der
+              Apparat dann über die volle Lesespalte (gemessen @1440 am OR:
+              640 px Kasten, 108 ch/Zeile). 1.3 auf 11 px über 108 ch heisst
+              14.3 px Zeilenabstand bei 635 px Zeilenlänge — das Auge verliert
+              beim Rücksprung die Zeile (Doppelsprung/Zeilenwiederholung). Der
+              Apparat läuft seit T3 auf `max-w-kleintext` (26 rem ≈ 71 ch), also
+              genau auf der Spalte, für die 1.3 gedacht war; 1.45 gibt der
+              Feinschrift trotzdem die Luft, die WCAG 1.4.8 (≥ 1.5 für
+              Fliesstext) für Blocktext verlangt — knapp darunter, weil der
+              Apparat Referenz-, kein Lesetext ist. Die GRÖSSE bleibt
+              unangetastet (0.6875 rem, Entscheid David 17.8.2026 am Bildbogen).
+           W2·24-R4 · ZEILENHÖHE 1.55 → 1.62 (deklarierte Typo-Änderung, kein
+           Refactoring). Das freigegebene Referenzbild (`abnahme/design-
+           identitaet/vorschlag-freigegeben.html`, `.norm { font-size:17px;
+           line-height:1.62 }`) setzt den Normtext im Satzspiegel auf 1.62; die
+           Grösse (17 px) bleibt unangetastet. Die Zahl muss HIER stehen und
+           kann nirgends sonst gesetzt werden: `src/tests/leser-typo-tokens.
+           test.ts` verbietet jedes `leading-…` am Fliesstext-Markup, weil die
+           Zeilenhöhe zur Stufe gehört (Grundlage Kap. 8 Nr. 4) — die Tabelle
+           dort ist mit derselben Änderung nachgezogen.
+           WCAG 1.4.8 unverändert eingehalten: 1.62 ≥ 1.5 (Zusage von
+           `e2e/leser-lesemass.e2e.ts`), das Zeilenmass rechnet nicht mit der
+           Zeilenhöhe und bleibt Zeichen für Zeichen, was es war.
+           W2·24-R6c · GRÖSSE 17 → 18 px (deklarierte Typo-Änderung, kein
+           Refactoring). D20 (c) verlangt «Lesetext 18 px»; R6b konnte die Zahl
+           nicht setzen, weil `src/index.css` dort TABU war und ein Alleingang an
+           der Basis den Schriftregler zerbrochen hätte (die Stufe «mittel» wäre
+           von 108 % auf 102 % kollabiert — Herleitung in `abnahme/design-
+           identitaet/R6-NACHZUG.md` §4). R6c setzt die Basis UND die drei
+           Reglerstufen in EINEM Zug: `index.css` (Block LESER-SCHRIFTSKALA) und
+           `pages/gesetz-leser/leserSchrift.ts` (`SCHRIFT_REM`) tragen dieselben
+           Faktoren 1.08 / 1.18 / 1.30 über der neuen Basis, die Anzeigewerte
+           bleiben 100 · 108 · 118 · 130 %. `src/tests/leser-schriftskala.test.ts`
+           hält die drei Orte gegeneinander. */
+        'leser-text': ['1.125rem', { lineHeight: '1.62' }],
+        /* Marginalie und Randtitel am Artikel. Die Skala-Notiz im Repo nennt fuer diese Stufe die
+           Bedienschrift, das gebaute Rezept .lc-randtitel setzt sie kursiv in der Leseschrift -
+           siehe randtitel. */
+        'leser-rand': ['0.8125rem', { lineHeight: '1.35' }],
+        /* Der Fussnoten-Apparat am Artikelfuss. Die Zeilenhoehe liegt bewusst knapp unter 1.5, weil
+           der Apparat Referenz- und kein Lesetext ist; er laeuft auf der schmalen
+           Feinschrift-Spalte kleintext. */
+        'leser-fn': ['0.6875rem', { lineHeight: '1.45' }],
+        /* @generated tokens:end */
+      },
       borderRadius: generiert.borderRadius,
       // D-1.7 Motion-Dedup: Literale auf die --dur-*-Token gemappt (Muster der
       // Nachbar-Keys ease/shadow) — index.css ist die EINE Motion-Quelle.

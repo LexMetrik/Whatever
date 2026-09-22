@@ -12,10 +12,19 @@
  *       `:root` (helle Werte + alle skalaren) und einmal in `html.dark`
  *       (nur die Token mit eigenem Dunkel-Wert).
  *   (b) `tailwind.tokens.generated.js`: die Token-Teile der Tailwind-Konfig
- *       (colors · fontFamily · fontSize · borderRadius · boxShadow · zIndex).
+ *       (colors · fontFamily · borderRadius · boxShadow · zIndex).
  *       `tailwind.config.js` importiert sie und ergänzt von Hand, was NICHT
  *       aus Token stammt (maxWidth, minHeight, transition*, die color-mix-
  *       Rezepte `line`/`rule-artikel`/`*-bg`).
+ *   (c) die Typo-Skala (`fontSize`) als Marker-Block IN `tailwind.config.js`.
+ *       Sie bleibt dort und wandert NICHT in die Modul-Datei, weil zwei
+ *       Vitest-Fälle sie am WORTLAUT dieser Datei festnageln —
+ *       `src/tests/leser-typo-tokens.test.ts` und
+ *       `src/tests/leser-schriftskala.test.ts` lesen `tailwind.config.js` als
+ *       Text und halten die drei Leser-Stufen gegen `leserSchrift.ts`
+ *       (§5-Spiegel). §6.3 verbietet, einen Test für einen Umbau anzupassen;
+ *       also folgt die Projektion dem Konsumenten, nicht umgekehrt. Eine
+ *       Quelle bleibt es dadurch: der Block ist generiert wie die anderen zwei.
  *
  * WAS NICHT AUS DER QUELLE KOMMT, bleibt handgeschrieben AUSSERHALB der
  * Marker: color-mix()-Rezepte (`--line`, `--rule-artikel`, `--sage-bg` …),
@@ -43,6 +52,7 @@ import { join } from 'node:path';
 const QUELLE = 'design/tokens.json';
 const CSS = 'src/index.css';
 const TW_DATEI = 'tailwind.tokens.generated.js';
+const TW_KONFIG = 'tailwind.config.js';
 const CSS_WURZEL = 'src';
 
 const MARKER_START =
@@ -188,21 +198,38 @@ function cssBlock(q: Quelle, modus: 'light' | 'dark', einzug: string): string {
   return zeilen.join('\n');
 }
 
-/** Ersetzt den n-ten Marker-Abschnitt einer Datei durch `inhalt`. */
-function ersetzeMarker(text: string, abschnitte: string[]): string {
+/** Ersetzt der Reihe nach jeden Marker-Abschnitt einer Datei durch `inhalt`. */
+function ersetzeMarker(datei: string, text: string, abschnitte: string[]): string {
   let rest = text;
   let raus = '';
   for (const inhalt of abschnitte) {
     const von = rest.indexOf(MARKER_START);
-    if (von < 0) throw new Error(`${CSS}: Marker «tokens:start» fehlt (erwartet ${abschnitte.length} Abschnitte).`);
+    if (von < 0) throw new Error(`${datei}: Marker «tokens:start» fehlt (erwartet ${abschnitte.length} Abschnitte).`);
     const bis = rest.indexOf(MARKER_ENDE, von);
-    if (bis < 0) throw new Error(`${CSS}: Marker «tokens:end» fehlt nach Position ${von}.`);
+    if (bis < 0) throw new Error(`${datei}: Marker «tokens:end» fehlt nach Position ${von}.`);
     const zeilenanfang = rest.lastIndexOf('\n', von) + 1;
     raus += rest.slice(0, zeilenanfang) + inhalt;
     rest = rest.slice(bis + MARKER_ENDE.length);
   }
-  if (rest.includes(MARKER_START)) throw new Error(`${CSS}: mehr Marker-Abschnitte als erwartet (${abschnitte.length}).`);
+  if (rest.includes(MARKER_START)) throw new Error(`${datei}: mehr Marker-Abschnitte als erwartet (${abschnitte.length}).`);
   return raus + rest;
+}
+
+/** (c) Die Typo-Skala als Marker-Block für `tailwind.config.js`. */
+function fontSizeBlock(q: Quelle, einzug: string): string {
+  const zeilen: string[] = [`${einzug}${MARKER_START}`];
+  for (const gruppe of q.type.groups) {
+    zeilen.push(...kommentar(`── ${gruppe.name} ──`, einzug));
+    for (const s of gruppe.styles) {
+      if (s.usage) zeilen.push(...kommentar(s.usage, einzug));
+      const zusatz = [`lineHeight: '${s.lineHeight}'`];
+      if (s.letterSpacing !== undefined) zusatz.push(`letterSpacing: '${s.letterSpacing}'`);
+      if (s.fontWeight !== undefined) zusatz.push(`fontWeight: ${s.fontWeight}`);
+      zeilen.push(`${einzug}'${s.name}': ['${s.fontSize}', { ${zusatz.join(', ')} }],`);
+    }
+  }
+  zeilen.push(`${einzug}${MARKER_ENDE}`);
+  return zeilen.join('\n');
 }
 
 // ── (b) Tailwind-Projektion ─────────────────────────────────────────────────
@@ -246,18 +273,6 @@ function tailwindFarben(q: Quelle): Record<string, JsWert> {
   return raus;
 }
 
-function tailwindSchriftgroessen(q: Quelle): Record<string, JsWert> {
-  const raus: Record<string, JsWert> = {};
-  for (const gruppe of q.type.groups)
-    for (const s of gruppe.styles) {
-      const zusatz: Record<string, string | number> = { lineHeight: s.lineHeight };
-      if (s.letterSpacing !== undefined) zusatz.letterSpacing = s.letterSpacing;
-      if (s.fontWeight !== undefined) zusatz.fontWeight = s.fontWeight;
-      raus[s.name] = [s.fontSize, zusatz];
-    }
-  return raus;
-}
-
 function praefixMap(tokens: Token[], praefix: string): Record<string, string> {
   const raus: Record<string, string> = {};
   for (const t of tokens)
@@ -274,7 +289,6 @@ function tailwindDatei(q: Quelle): string {
   const teile: Array<[string, unknown]> = [
     ['colors', tailwindFarben(q)],
     ['fontFamily', schriften],
-    ['fontSize', tailwindSchriftgroessen(q)],
     ['borderRadius', { DEFAULT: `var(--${RADIUS_DEFAULT})`, ...radius }],
     ['boxShadow', praefixMap(q.shadow.tokens, 'shadow-')],
     ['zIndex', praefixMap(q.zIndex.tokens, 'z-')],
@@ -288,6 +302,10 @@ function tailwindDatei(q: Quelle): string {
     '// `tailwind.config.js` importiert die Teile hier und ergänzt von Hand, was',
     '// NICHT aus Token stammt — maxWidth, minHeight, transition*, screens und die',
     '// color-mix-Rezepte (`line`, `rule-artikel`/`-struktur`, `*-bg`).',
+    '//',
+    '// Die Typo-Skala (`fontSize`) fehlt hier mit Absicht: sie steht als eigener',
+    '// @generated-Block IN `tailwind.config.js` — Begründung im Kopf von',
+    '// `scripts/design/tokens-generieren.ts` (Projektion (c)).',
     '',
   ];
   const koerper = teile.map(([name, wert]) => `export const ${name} = ${js(wert, '')};\n`);
@@ -408,8 +426,10 @@ function zeilenDiff(soll: string, ist: string, datei: string): string[] {
 const pruefen = process.argv.includes('--check');
 const quelle = JSON.parse(readFileSync(QUELLE, 'utf8')) as Quelle;
 const cssIst = readFileSync(CSS, 'utf8');
-const cssSoll = ersetzeMarker(cssIst, [cssBlock(quelle, 'light', '    '), cssBlock(quelle, 'dark', '    ')]);
+const cssSoll = ersetzeMarker(CSS, cssIst, [cssBlock(quelle, 'light', '    '), cssBlock(quelle, 'dark', '    ')]);
 const twSoll = tailwindDatei(quelle);
+const konfigIst = readFileSync(TW_KONFIG, 'utf8');
+const konfigSoll = ersetzeMarker(TW_KONFIG, konfigIst, [fontSizeBlock(quelle, '        ')]);
 
 const fehler = wachen(quelle, cssSoll);
 if (fehler.length > 0) {
@@ -419,7 +439,11 @@ if (fehler.length > 0) {
 
 if (pruefen) {
   const twIst = readFileSync(TW_DATEI, 'utf8');
-  const abweichungen = [...zeilenDiff(cssSoll, cssIst, CSS), ...zeilenDiff(twSoll, twIst, TW_DATEI)];
+  const abweichungen = [
+    ...zeilenDiff(cssSoll, cssIst, CSS),
+    ...zeilenDiff(twSoll, twIst, TW_DATEI),
+    ...zeilenDiff(konfigSoll, konfigIst, TW_KONFIG),
+  ];
   if (abweichungen.length > 0) {
     console.error(
       `check:tokens-drift ROT — Quelle ${QUELLE} und Projektion stehen auseinander.\n` +
@@ -429,9 +453,14 @@ if (pruefen) {
   }
   const zahl = quelle.color.tokens.length + quelle.spacing.tokens.length + quelle.radius.tokens.length +
     quelle.shadow.tokens.length + quelle.zIndex.tokens.length + Object.keys(quelle.type.families).length;
-  console.log(`check:tokens-drift grün — ${zahl} Token, ${CSS} und ${TW_DATEI} decken sich mit ${QUELLE}.`);
+  const stufen = quelle.type.groups.reduce((a, g) => a + g.styles.length, 0);
+  console.log(
+    `check:tokens-drift grün — ${zahl} Token und ${stufen} Typo-Stufen; ` +
+      `${CSS}, ${TW_DATEI} und ${TW_KONFIG} decken sich mit ${QUELLE}.`,
+  );
 } else {
   writeFileSync(CSS, cssSoll);
   writeFileSync(TW_DATEI, twSoll);
-  console.log(`gen:tokens — ${CSS} und ${TW_DATEI} aus ${QUELLE} erzeugt.`);
+  writeFileSync(TW_KONFIG, konfigSoll);
+  console.log(`gen:tokens — ${CSS}, ${TW_DATEI} und ${TW_KONFIG} aus ${QUELLE} erzeugt.`);
 }

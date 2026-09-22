@@ -5,6 +5,10 @@
 // `tailwind.config.js` importiert die Teile hier und ergänzt von Hand, was
 // NICHT aus Token stammt — maxWidth, minHeight, transition*, screens und die
 // color-mix-Rezepte (`line`, `rule-artikel`/`-struktur`, `*-bg`).
+//
+// Die Typo-Skala (`fontSize`) fehlt hier mit Absicht: sie steht als eigener
+// @generated-Block IN `tailwind.config.js` — Begründung im Kopf von
+// `scripts/design/tokens-generieren.ts` (Projektion (c)).
 export const colors = {
   ink: {
     300: 'var(--ink-300)',
@@ -113,49 +117,6 @@ export const fontFamily = {
   mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
 };
 
-export const fontSize = {
-  micro: ['0.6875rem', {
-    lineHeight: '1.2',
-  }],
-  overline: ['0.75rem', {
-    lineHeight: '1.4',
-    letterSpacing: '0em',
-  }],
-  xs: ['0.75rem', {
-    lineHeight: '1.4',
-  }],
-  'body-s': ['0.875rem', {
-    lineHeight: '1.5',
-  }],
-  'body-l': ['1.125rem', {
-    lineHeight: '1.6',
-  }],
-  h3: ['1.25rem', {
-    lineHeight: '1.25',
-  }],
-  h2: ['1.6rem', {
-    lineHeight: '1.15',
-  }],
-  h1: ['2rem', {
-    lineHeight: '1.15',
-  }],
-  display: ['2.25rem', {
-    lineHeight: '1.05',
-  }],
-  'display-l': ['2.75rem', {
-    lineHeight: '1.05',
-  }],
-  'leser-text': ['1.125rem', {
-    lineHeight: '1.62',
-  }],
-  'leser-rand': ['0.8125rem', {
-    lineHeight: '1.35',
-  }],
-  'leser-fn': ['0.6875rem', {
-    lineHeight: '1.45',
-  }],
-};
-
 export const borderRadius = {
   DEFAULT: 'var(--radius-sm)',
   sm: 'var(--radius-sm)',
@@ -184,4 +145,4 @@ export const zIndex = {
   modal: 'var(--z-modal)',
 };
 
-export default { colors, fontFamily, fontSize, borderRadius, boxShadow, zIndex };
+export default { colors, fontFamily, borderRadius, boxShadow, zIndex };
