@@ -49,7 +49,7 @@ import { artikelSchluessel } from './klappKarte';
 // Importpfad ändern muss — und damit `./gliederungsModell` weiterhin die eine
 // Adresse des Modells bleibt —, wird hier alles re-exportiert, was vorher hier
 // stand. Reines Fassaden-Muster: keine Umbenennung, keine Signatur-Änderung.
-export type { ArtikelIndexZeile, ArtikelIndexGruppe } from './gliederungsTypen';
+export type { ArtikelIndexGruppe } from './gliederungsTypen';
 export {
   ARTIKEL_EBENE_MAX_BLATT_DECKUNG, ID_ARTIKEL, artikelRandtitel, hatRandtitel, istAnhangEintrag,
 } from './gliederungsArtikel';
@@ -59,8 +59,11 @@ import type {
 } from './gliederungsTypen';
 // Die hier auch LOKAL gebrauchten Typen werden aus dem Import re-exportiert —
 // ein zweites `export … from` daneben wäre laut `tsc -b` ein Konflikt (TS2484).
+// `ArtikelEbeneUmfang` bleibt bewusst NUR im Import oben (Zeile 560 nutzt es
+// lokal) — kein externer Konsument re-exportiert es über diese Fassade mehr
+// (check:sediment (d), W2·29-WERKBANK-EXPORTE-Nachzug 23.9.2026).
 export type {
-  ArtikelEbeneUmfang, GliederungsKennzahlen, GliederungsKnoten, GliederungsModell, GliederungsModus, ModellEingabe,
+  GliederungsKennzahlen, GliederungsKnoten, GliederungsModell, GliederungsModus, ModellEingabe,
 };
 import {
   ARTIKEL_EBENE_MAX_BLATT_DECKUNG, baueArtikelIndex, haengeArtikelZeilen, hatRandtitel,

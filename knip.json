@@ -5,12 +5,7 @@
     "scripts/**/*.{ts,tsx,mjs}",
     "api/**/*.ts",
     "e2e/**/*.e2e.ts",
-    "src/lib/pdf/html2canvas-stub.ts",
-    "src/lib/fedlex.ts",
-    "src/lib/rechtsprechung/besetzung.ts",
-    "src/lib/startseiteModule.tsx",
-    "src/lib/zustaendigkeit.ts",
-    "src/pages/gesetz-leser/gliederungsModell.ts"
+    "src/lib/pdf/html2canvas-stub.ts"
   ],
   "project": [
     "src/**/*.{ts,tsx}",

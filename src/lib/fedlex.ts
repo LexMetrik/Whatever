@@ -27,12 +27,8 @@ export {
   chapeauZielFremdgesetz,
   fedlexLinkFuerArtikel,
 } from './fedlex/erkennung';
-export {
-  GENITIV_EINTRAEGE, TITEL_EINTRAEGE, KUERZEL_SCHREIBWEISEN, titelGeltung,
-} from './fedlex/positivliste';
-export type { FremdEbene, Geltung, GenitivEintrag, TitelEintrag, TitelKopf } from './fedlex/positivliste';
+export type { FremdEbene } from './fedlex/positivliste';
 export { TRAEGER_EINTRAEGE, traegergesetzFuerErlass } from './fedlex/traegergesetz';
-export type { TraegerEintrag } from './fedlex/traegergesetz';
 
 export {
   NORM_IM_TEXT,
@@ -40,6 +36,5 @@ export {
   fremdRoutingFormB,
   artikelnPluralVerweise,
 } from './fedlex/parser';
-export type { FremdRoutingGlied, FremdSignal, PluralRegion } from './fedlex/parser';
-export { normVerweiseImText, erlassVerweiseImText, ausgeschriebeneVerweiseImText } from './fedlex/spannen';
+export { normVerweiseImText, erlassVerweiseImText } from './fedlex/spannen';
 export type { NormVerweisSpan } from './fedlex/spannen';

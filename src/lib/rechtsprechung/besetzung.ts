@@ -21,7 +21,7 @@
 // keine Auslassung (§6).
 
 export { istAnonymisiert, fold, kanonSlug, bereinigeBesetzungsFreitext, parseBesetzung } from './besetzung/parser';
-export type { RichterRolle, BesetzungKontext, BesetzungErgebnis } from './besetzung/parser';
+export type { RichterRolle } from './besetzung/parser';
 
 export { kanonisiere } from './besetzung/kanon';
-export type { KanonEintrag, KanonErgebnis } from './besetzung/kanon';
+export type { KanonEintrag } from './besetzung/kanon';

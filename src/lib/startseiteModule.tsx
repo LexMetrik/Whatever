@@ -42,7 +42,7 @@ import { Werkzeuge } from '../components/start/Werkzeuge';
 // die Datei, die dieselben Komponenten als Werte laedt: ein echter Import-
 // Zyklus (check:zyklen). Diese Datei bleibt die Fassade (§6.6) — wer die Typen
 // hier importiert, bekommt sie unveraendert.
-export type { Register, StartModulId, StartModulProps, StartModul } from './startseiteModulTypen';
+export type { StartModul } from './startseiteModulTypen';
 import type { StartModul } from './startseiteModulTypen';
 
 // Reihenfolge = die des Referenzbildes: Bundesrecht → Kantone → Frist →
