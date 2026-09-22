@@ -33,7 +33,7 @@ const gruppenCache = new Map<string, ArtikelWerkzeugGruppe[]>();
  * Wortgleich zur Ableitung in `artikelKontext.ts`; Sub-Artikel fallen auf ihre
  * Hauptnummer, weil die Kantentabelle so definiert ist (dort dokumentiert).
  */
-export function hauptNummer(token: string): number | null {
+function hauptNummer(token: string): number | null {
   const m = /^(\d+)/.exec(token);
   return m ? Number(m[1]) : null;
 }

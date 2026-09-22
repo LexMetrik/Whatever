@@ -155,6 +155,12 @@ export type SkalaDauer =
 // Import verwendet (`import('../types/legal').SkalaEintrag`); knip löst diese
 // Form nicht auf. Zusätzlich referenziert ihn Skala.eintraege unten.
 // Belegt 3.8.2026 per `grep -rnE "\bSkalaEintrag\b" src/`.
+/**
+ * @inlinetyp check:sediment (d) (W2·29-WERKBANK-EXPORTE, 22.9.2026) griff
+ * denselben Fehlalarm erneut auf; Tag-Ausnahme `tags: ["-inlinetyp"]` in
+ * knip.json macht ihn für knip dauerhaft unsichtbar statt bei jedem Lauf neu
+ * aufzufallen.
+ */
 export type SkalaEintrag = {
   dienstjahrVon: number;
   dienstjahrBis: number | null; // null = unbeschränkt

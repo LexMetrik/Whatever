@@ -106,7 +106,7 @@ function schliesseInKopie(n: Record<string, boolean>, id: string, nurGesetzte: b
 }
 
 /** Schliesst die Zeilen `ids` samt Artikel-Ebene (ausdrücklich, neue Karte). */
-export function schliesseZeilen(offen: Record<string, boolean>, ids: readonly string[]): Record<string, boolean> {
+function schliesseZeilen(offen: Record<string, boolean>, ids: readonly string[]): Record<string, boolean> {
   const n = { ...offen };
   for (const id of ids) schliesseInKopie(n, id, false);
   return n;
@@ -179,7 +179,7 @@ export function klappZeile(
  *
  * Der Präfix kann mit keiner `sek-N`- oder `gm-…`-Id kollidieren.
  */
-export const ARTIKEL_OFFEN_PRAEFIX = 'art@';
+const ARTIKEL_OFFEN_PRAEFIX = 'art@';
 export function artikelSchluessel(id: string): string {
   return `${ARTIKEL_OFFEN_PRAEFIX}${id}`;
 }

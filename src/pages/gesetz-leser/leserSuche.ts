@@ -86,7 +86,7 @@ export const FELD_GEWICHT: Record<SuchFeld, number> = { t: 6, m: 5, n: 4, g: 3, 
  * Leser sagen soll, WARUM der Artikel trifft (Spec §4.3/§8). Das Feld steuert
  * die Sortierung, die Quelle den Badge.
  */
-export type SuchQuelle =
+type SuchQuelle =
   | 'Fliesstext' | 'Bestimmung' | 'Randtitel' | 'Überschrift'
   | 'Tabelle' | 'Bild' | 'Grundlage' | 'Fussnote';
 
@@ -120,7 +120,7 @@ export type SuchQuelle =
  * unabhängig von Ansicht-Schaltern; die DOM-Hervorhebung malt nur, was malbar
  * ist. «Gemalte ≤ gezählte» ist damit KONSTRUKTIV wahr, nicht behauptet.
  */
-export type Malbarkeit = 'immer' | 'nie' | 'aenderung';
+type Malbarkeit = 'immer' | 'nie' | 'aenderung';
 
 interface Segment {
   feld: SuchFeld;
@@ -130,7 +130,7 @@ interface Segment {
 }
 
 /** Ein durchsuchbarer Artikel-Record. */
-export interface SuchArtikel {
+interface SuchArtikel {
   token: string;
   /** Amtliches Label («Art. 12», «§ 4», «Anhang 1»). */
   label: string;
@@ -182,7 +182,7 @@ const BEREICH_FELDER: Record<SuchBereich, ReadonlySet<SuchFeld>> = {
 };
 
 /** Gehört dieses Feld zum gewählten Bereich? */
-export function imBereich(feld: SuchFeld, bereich: SuchBereich): boolean {
+function imBereich(feld: SuchFeld, bereich: SuchBereich): boolean {
   return BEREICH_FELDER[bereich].has(feld);
 }
 
@@ -329,7 +329,7 @@ export function baueLeserSuchIndex(
 
 // ─── Treffer ─────────────────────────────────────────────────────────────────
 
-export interface TrefferFeld {
+interface TrefferFeld {
   feld: SuchFeld;
   quelle: SuchQuelle;
   malbar: Malbarkeit;

@@ -166,7 +166,7 @@ const SUCH_ORT = 'Im Erlass suchen';
  * Orientierungspunkt mehr, sondern Lärm vor der eigentlichen Auskunft — dann
  * lieber die Sache ohne Namen (§8: nichts behaupten, was nicht trägt).
  */
-export const KUERZEL_NAME_MAX = 20;
+const KUERZEL_NAME_MAX = 20;
 
 function suchOrt(kuerzel?: string): string {
   const k = kuerzel?.trim();
@@ -236,7 +236,7 @@ export function zeigeVolltitel(erlass: Pick<BrowseErlass, 'titel' | 'kuerzel'>):
  * rohe — sonst gilt eine Schwelle, die an der Lesezelle kalibriert ist, für einen
  * String, der dort nie steht (s. `helpers.titelOhneKlammerSuffix`).
  */
-export const TITEL_LANG_ZEICHEN = 80;
+const TITEL_LANG_ZEICHEN = 80;
 
 /**
  * Ä-(d) aus S3 (H2b) — die KENNUNG eines Erlasses, wenn sie vor den Titel gehört.

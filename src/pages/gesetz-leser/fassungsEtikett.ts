@@ -32,7 +32,7 @@ import { formatiereDatum } from './helpers';
  * (dieselbe Rangfolge, die `parts/ArtikelHistorie.tsx` seit G-HIST-UI führt —
  * von dort ist sie unverändert hierher gezogen, nicht neu erfunden).
  */
-export function fassungsStand(historie: ArtikelHistorie | undefined): string | null {
+function fassungsStand(historie: ArtikelHistorie | undefined): string | null {
   if (!historie) return null;
   if (historie.aufgehobenSeit) return `Aufgehoben seit ${formatiereDatum(historie.aufgehobenSeit)}`;
   if (historie.giltSeit) return `Gilt seit ${formatiereDatum(historie.giltSeit)}`;

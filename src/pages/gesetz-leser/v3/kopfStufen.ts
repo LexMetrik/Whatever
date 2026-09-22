@@ -195,7 +195,7 @@ export function kopfElemente(stufe: KopfStufe): KopfElemente {
 
 /** Die EINE Bauform eines Kopf-Griffs (⚖ · ☰ · «Ansicht»). Chip auf `--well`,
  *  damit alle Griffe derselben Zeile denselben Umriss haben. */
-export const KOPF_GRIFF = 'lc-leiste-griff lc-leiste-griff-fest';
+const KOPF_GRIFF = 'lc-leiste-griff lc-leiste-griff-fest';
 
 /**
  * Klassen des Kopf-Griffs.

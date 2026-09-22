@@ -83,15 +83,15 @@ export const INDEX_MIN_DICHTE = 0.6;
 /** B2: so wenige AMTLICHE Knoten sind keine Gliederung mehr (VwVG: 5). */
 export const INDEX_MAX_AMTLICHE_KNOTEN = 6;
 /** B2: erst ab dieser Artikelzahl ist ein Index überhaupt ein Thema. */
-export const INDEX_MIN_ARTIKEL = 30;
+const INDEX_MIN_ARTIKEL = 30;
 /** B1: bis zu so vielen Baumzeilen darf der Baum ganz offen starten. */
 export const OFFEN_MAX_ZEILEN = 40;
 /** Anhang-Ast startet aufgeklappt, sobald er den Erlass dominiert (ZH-243: 88 %). */
-export const ANHANG_DOMINANZ = 0.5;
+const ANHANG_DOMINANZ = 0.5;
 
 /** Synthetische Knoten-Ids — bewusst KEIN `sek-`-Präfix (Kollision ausgeschlossen). */
 export const ID_VORSPANN = 'gm-vorspann';
-export const ID_NACHSPANN = 'gm-nachspann';
+const ID_NACHSPANN = 'gm-nachspann';
 export const ID_ANHANG = 'gm-anhang';
 /**
  * Mittelgruppe (Bug-Check 9.8.2026, B2) — freie Artikel ZWISCHEN zwei

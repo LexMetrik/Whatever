@@ -1,14 +1,9 @@
-import { useEffect, useMemo, useState } from 'react';
-import { ladeLeitfallShard, type LeitfallShard } from '../../lib/rechtsprechung/norm-index';
-import { ladeKantenShard, type KantenShard } from '../../lib/materialien/kanten-shard';
-import { artikelWerkzeugGruppen } from '../../lib/normtext/werkzeuge';
+import type { LeitfallShard } from '../../lib/rechtsprechung/norm-index';
+import type { KantenShard } from '../../lib/materialien/kanten-shard';
 import { normArtikelToken } from '../../lib/rechtsprechung/bezuege';
-import { beiLeerlauf } from '../../lib/leerlauf';
-import type { ArtikelRevision } from '../../lib/verzahnung/artikel-revisionen';
 import type { StrukturMap } from '../../lib/normtext/browse';
 import type { NormSnapshot } from '../../lib/normtext/typen';
-import type { BrowseErlass } from '../../lib/normtext/browse-typen';
-import type { ArtikelKontextAnsicht, KontextVerweis } from '../../lib/kontext';
+import type { KontextVerweis } from '../../lib/kontext';
 import { internerErlassFuerSr } from './helpers';
 import { erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
 
@@ -42,13 +37,7 @@ import { erlassPfadVonKey } from '../../lib/normtext/erlassAdresse';
 // Die TYPEN liegen in `src/lib/kontext.ts` — das KontextPanel (Komponenten-
 // Schicht) muss die Form kennen dürfen, ohne in die Seiten-Schicht hinauf zu
 // importieren (check:zyklen). Gebaut wird die Ansicht hier.
-export type { ArtikelKontextAnsicht, KontextVerweis } from '../../lib/kontext';
-
-/** Erste (kleinste) Artikelnummer eines Tokens — «20_a» → 20, «annex_1» → null. */
-function artikelNummer(token: string): number | null {
-  const m = /^(\d+)/.exec(token);
-  return m ? Number.parseInt(m[1], 10) : null;
-}
+export type { KontextVerweis } from '../../lib/kontext';
 
 /**
  * Ausgehende Verweise EINES Artikels, rein abgeleitet aus dem, was der Reader
@@ -115,62 +104,4 @@ export function materialienAmArtikel(shard: KantenShard | null, token: string): 
  */
 export function leitentscheideAmArtikel(shard: LeitfallShard | null, token: string): number {
   return shard?.proArtikel[normArtikelToken(token)]?.length ?? 0;
-}
-
-/**
- * Der Artikel-Kontext des AKTIVEN Artikels. Ein Hook im Leser (nicht im Panel),
- * damit die gegatete Gruppe eine reine Prop bleibt und nichts in den
- * Entscheid-Leser lecken kann (Bau-Spec §5.2).
- *
- * Die Aktualisierung braucht KEINEN eigenen Takt: `aktivToken` kommt aus dem
- * bereits entprellten Scroll-Spy (`aktArtikelTimer`, inhalt-hooks) — ein
- * zweiter Timer daneben wäre eine zweite Wahrheit über «wo bin ich» (§5).
- */
-export function useArtikelKontext({ erlass, token, label, eintraege, struktur, revision }: {
-  erlass: BrowseErlass | null;
-  /** Aktiver Artikel-Token aus dem Scroll-Spy; `null` = noch keine Leseposition. */
-  token: string | null;
-  /** Amtliches Label des aktiven Artikels («Art. 41»). */
-  label: string | null;
-  eintraege: NormSnapshot[] | null;
-  struktur: StrukturMap | null;
-  /** `revisionFuer(token)` des Readers — kein zweiter Shard-Zugriff (§5). */
-  revision: ArtikelRevision | null | undefined;
-}): ArtikelKontextAnsicht | null {
-  const key = erlass?.key;
-  const [leitfall, setLeitfall] = useState<{ key: string; shard: LeitfallShard | null } | null>(null);
-  const [kanten, setKanten] = useState<{ key: string; shard: KantenShard | null } | null>(null);
-  useEffect(() => {
-    if (!key) return;
-    let lebt = true;
-    const abbrechen = beiLeerlauf(() => {
-      void ladeLeitfallShard(key).then((s) => { if (lebt) setLeitfall({ key, shard: s }); });
-      void ladeKantenShard(key).then((s) => { if (lebt) setKanten({ key, shard: s }); });
-    });
-    return () => { lebt = false; abbrechen(); };
-  }, [key]);
-
-  // Snapshot-Eintrag des aktiven Artikels — EINE Map je Einträge-Satz statt einer
-  // linearen Suche je Render (§15.4, grosse Erlasse haben ~1000 Artikel).
-  const eintragByToken = useMemo(
-    () => new Map((eintraege ?? []).map((e) => [e.artikel, e])),
-    [eintraege],
-  );
-  const werkzeugGruppen = useMemo(() => (key ? artikelWerkzeugGruppen(key) : []), [key]);
-
-  return useMemo<ArtikelKontextAnsicht | null>(() => {
-    if (!erlass) return null;
-    if (!token) return { label: '', token: '', verweise: [] };
-    const nr = artikelNummer(token);
-    const gruppe = nr === null ? undefined : werkzeugGruppen.find((g) => nr >= g.von && nr <= g.bis);
-    return {
-      label: label ?? '',
-      token,
-      leitentscheide: leitfall?.key === erlass.key ? leitentscheideAmArtikel(leitfall.shard, token) : undefined,
-      materialien: kanten?.key === erlass.key ? materialienAmArtikel(kanten.shard, token) : undefined,
-      revision,
-      verweise: ausgehendeVerweise(eintragByToken.get(token), struktur, token),
-      werkzeugGruppe: gruppe?.label,
-    };
-  }, [erlass, token, label, leitfall, kanten, revision, eintragByToken, struktur, werkzeugGruppen]);
 }

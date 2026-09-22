@@ -204,7 +204,7 @@ export const F2_SICHERHEITSSAUM = 64;
 // Die Klapp-Karten-Schreiber `klappZeile` und `artikelSchluessel` (samt
 // ihrer Herleitung B3 / CI-Rot 13.8.2026) wohnen seit W2·5m-LESER-V3 in
 // ./klappKarte — dort, wo auch alle Öffner und Schliesser stehen (§5).
-export { klappZeile, artikelSchluessel, ARTIKEL_OFFEN_PRAEFIX } from './klappKarte';
+export { klappZeile } from './klappKarte';
 
 /**
  * B8 (W2·19-Bug-Check; WCAG 2.4.3 «Fokus-Reihenfolge»): Rettet den
