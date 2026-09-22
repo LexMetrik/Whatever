@@ -427,10 +427,19 @@ function zeilenDiff(soll: string, ist: string, datei: string): string[] {
 const pruefen = process.argv.includes('--check');
 const quelle = JSON.parse(readFileSync(QUELLE, 'utf8')) as Quelle;
 const cssIst = readFileSync(CSS, 'utf8');
-const cssSoll = ersetzeMarker(CSS, cssIst, [cssBlock(quelle, 'light', '    '), cssBlock(quelle, 'dark', '    ')]);
-const twSoll = tailwindDatei(quelle);
 const konfigIst = readFileSync(TW_KONFIG, 'utf8');
-const konfigSoll = ersetzeMarker(TW_KONFIG, konfigIst, [fontSizeBlock(quelle, '        ')]);
+// Marker-Fehler gefasst wie die übrigen Tor-Befunde, kein Stack-Trace im CI-Log (Auflage GP PR #981, 23.9.2026).
+let cssSoll = '';
+let konfigSoll = '';
+try {
+  cssSoll = ersetzeMarker(CSS, cssIst, [cssBlock(quelle, 'light', '    '), cssBlock(quelle, 'dark', '    ')]);
+  konfigSoll = ersetzeMarker(TW_KONFIG, konfigIst, [fontSizeBlock(quelle, '        ')]);
+} catch (e) {
+  console.error(`check:tokens-drift ROT — Marker-Struktur verletzt.\n  ${(e as Error).message}\n\n` +
+    '  Beheben: je Abschnitt genau ein Paar «tokens:start»/«tokens:end», dann npm run gen:tokens.');
+  process.exit(1);
+}
+const twSoll = tailwindDatei(quelle);
 
 const fehler = wachen(quelle, cssSoll);
 if (fehler.length > 0) {
