@@ -587,8 +587,8 @@ Umschichtung 20.9.2026 (2)):*
 > Dieses Feld steht bewusst zuletzt: ohne `@queue`-Eintrag entscheidet die Dokumentreihenfolge,
 > und dann soll ein Produkt-Schritt gewinnen, nicht ein Prozess-Schritt.
 
-- [~] **Werkbank-Umbau Schritt 0: Tor gegen Sediment** *(`W2·29-WERKBANK-TOR`, Go David 22.9.2026, Auflage 3 des Rats-Verdikts)*
-  <!-- @meta id: W2·29-WERKBANK-TOR · status: wip · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [x] **Werkbank-Umbau Schritt 0: Tor gegen Sediment** *(`W2·29-WERKBANK-TOR`, Go David 22.9.2026, Auflage 3 des Rats-Verdikts)*
+  <!-- @meta id: W2·29-WERKBANK-TOR · status: done · blocker: null · dep: [] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: ein Tor `check:sediment` gegen tote CSS-Klassen, verwaiste Komponenten und doppelte
   Metadaten-Quellen — die drei Gattungen, für die keine der 91 Wachen zuständig ist. Grenzen:
   **keine Baseline, keine Bestandsliste, kein Warnung-statt-Fail**; vorhandenes `knip` prüfen,
