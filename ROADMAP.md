@@ -74,7 +74,7 @@ richter-analytik-gate: Richter-/Spruchkörper-Analytik (W3·15-RICHTER). GRENZE 
 zielbild-gesetzesleser: Zurückgestellt durch das Zielbild-Dekret 1.9.2026 (Gesetzesleser zuerst) — wieder öffnen, sobald die Phasen 1–2 gelandet sind oder David einen Schritt ausdrücklich vorzieht (FINMA: vorziehen, wenn ein externer Termin drängt). Kein Bau-Blocker, reine Reihenfolge-Entscheidung.
 david-go-entstehung: ERTEILT — Go David 11.9.2026 («führe alles durch»); die drei W2·6c-ENTSTEHUNG-*-Schritte stehen auf `status: ready`, Blocker entfernt. Design freigegeben 6.9.2026; §11.9 der Materialien-Spec bucht die Entscheide 1–6 als entschieden 11.9.2026 (Mandat), Nr. 7 (fachliche Abnahme) bleibt bei David.
 david-bs-lizenz-schluessel: R12a — David klärt Lizenz LexWork-versions-Endpunkt + fragt amtlichen Schlüssel Erlass↔Geschäft bei BS an (Vormessung 12.9.2026). **Recherche 22.9.2026 (R2): Anfrage nur noch OPTIONAL.** Lizenz weitgehend geklärt ohne Anfrage — data.bs.ch 100354 (Zentraler Rechtsdienst) ist CC BY 4.0 und verlinkt dieselben Fassungs-IDs; opendata.swiss führt die Sammlung unter `terms_open`; URG Art. 5 Abs. 1 lit. a/Abs. 2 erfasst Erlasse UND amtliche Sammlungen (nicht nur Bund). REST für eine Anfrage: Fussnoten und Änderungstabellen fehlen im CC-BY-Text (2/2 Stichproben) und liegen damit ausserhalb der erklärten Lizenz; der Endpunkt ist undokumentiert (Stabilität/Abrufrate). Schlüssel TEILWEISE vorhanden: die Ratschlagsnummer steht im Ingress der amtlichen Änderungsdokumente (3/3), identisch mit `signatur_dok` in 100313 (4/4) — nur über PDF-Fliesstext, Risikopfad. Beleg: bibliothek/recherche/legal-design-und-korrektheits-recherche-2026-09-21.md Ziff. 19. Blocker BLEIBT — ob er fällt, entscheidet David.
-david-design-entscheide: `W2·29-WERKBANK-TOKENS` — drei Sichtentscheide Davids vor dem Token-Tausch (Werkbank-Entwürfe 22.9.2026): (1) Seitenleiste Variante 1, 2 oder 3; (2) Startseiten-Kachel liest «49» (23 Rechner-Karten + 26 Vorlagen im Register) oder «20 Rechner · 30 Vorlagen» (Routen); (3) «Farbe als Fläche» ja/nein — ändert Reglement F0.2 und `check:farbwelt`, bis dahin gilt F0.2. ECHTES David-Gate, kein Bau-Blocker: `W2·29-WERKBANK-TOR` ist ohne die Entscheide baubar und geht voraus. Varianten-Bilder liegen im Werkbank-Entwurf (Seite 8 «Zur Wahl»).
+david-design-entscheide: ENTSCHIEDEN — David 22.9.2026 (Chat): (1) Seitenleiste-Aufbau bleibt wie im Produkt; (2) Startseite vier Kacheln, Zahl aus dem generierten Zähler; (3) Farbe als Fläche JA (F0.2 und `check:farbwelt` im Tokens-Schritt ändern). `W2·29-WERKBANK-TOKENS` steht auf `ready`, Blocker entfernt; Wortlaut in FAHRPLAN-WERKBANK-UMBAU.md §4.
 -->
 
 <!-- @david-fragen
@@ -412,7 +412,7 @@ Umschichtung 20.9.2026 (2)):*
 ## Design & Oberfläche  *(`feld: design`)*
 
 - [ ] **Werkbank-Umbau Schritt 1: eine Token-Quelle** *(`W2·29-WERKBANK-TOKENS`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-TOKENS · status: blocked · blocker: david-design-entscheide · dep: [W2·29-WERKBANK-TOR] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  <!-- @meta id: W2·29-WERKBANK-TOKENS · status: ready · blocker: null · dep: [W2·29-WERKBANK-TOR] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: `tokens.json` des Design-Systems als **einzige** Quelle im Repo; generiert werden daraus
   die `:root`/`html.dark`-Blöcke und die Farb-/Typo-Teile von `tailwind.config.js`, die fünf
   Reglemente werden auf eines konsolidiert (§5). Grenzen: Kontrast-Tore grün, Normtext-Körper

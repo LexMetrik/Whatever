@@ -88,12 +88,17 @@ kommentiert — keine zweite Wahrheit (§5).
 Rohwerte in Komponenten; Golden byte-gleich. **Die Startseite bleibt unberührt** — V4 Werkbank ist
 seit 5.9.2026 live (`a66421362`).
 
-**Vorbedingung — drei Entscheide Davids** (Blocker `david-design-entscheide`):
+**Die drei Entscheide Davids — entschieden 22.9.2026 (Chat, Blocker gelöst):**
 
-1. Seitenleiste: Variante 1, 2 oder 3 (Board «Seitenleiste drei Varianten»).
-2. Startseiten-Kachel: «49» (23 Rechner-Karten + 26 Vorlagen im Register) oder «20 Rechner ·
-   30 Vorlagen» (Routen)? — Inventar, «Zahlen im Entwurf gegen Zahlen im Produkt».
-3. «Farbe als Fläche» ja oder nein (ändert F0.2 und `check:farbwelt`).
+1. **Seitenleiste: Aufbau bleibt wie heute im Produkt.** Keine der drei Entwurfs-Varianten
+   ändert die Struktur (Einträge, Gruppen, Auf-/Zuklappen); nur Stil und Tokens ziehen nach.
+2. **Startseite: Empfehlung des Orchestrators übernommen** — vier Kacheln (Gesetze · Rechtsprechung ·
+   Materialien · Werkzeuge); die Zahl kommt aus dem generierten Zähler
+   (`startseiteZaehler.generated.ts`, heute 23 Rechner-Karten + 26 Vorlagen im Register = 49),
+   Unterzeile aus derselben Quelle, nie von Hand (§5/§8). Umsetzung im Schritt, der die
+   Startseite anfasst (REST), nicht hier.
+3. **Farbe als Fläche: ja.** Reglement F0.2 («nie als Fläche») wird im Tokens-Schritt geändert,
+   `check:farbwelt` auf die Flächen-Regel umgestellt — Kontrast-Schwellen bleiben unverändert.
 
 ## §5 · Die fünf Rubrik-Schritte
 
