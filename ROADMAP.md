@@ -419,6 +419,33 @@ Umschichtung 20.9.2026 (2)):*
   farbfrei, Golden byte-gleich, **Startseite unberührt** (V4 Werkbank live seit 5.9.2026).
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §4.
 
+- [ ] **Werkbank-Umbau Schritt 0b: vierte Sediment-Gattung — ungenutzte Exporte** *(`W2·29-WERKBANK-EXPORTE`, Go David 22.9.2026 «einverstanden zu allem»)*
+  <!-- @meta id: W2·29-WERKBANK-EXPORTE · status: ready · blocker: null · dep: [W2·29-WERKBANK-TOR] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: `check:sediment` (d) — exportierte Funktionen und Typen ohne Importer (knip liefert sie
+  schon: gemessen 22.9.2026 84 Exporte + 43 Typen). Geburtsbeweis rot, dann alle Funde im
+  selben PR beseitigt (Export entfernen oder Code löschen), Tor grün; keine Baseline.
+  Grenzen: Rechtslogik unberührt, Golden byte-gleich, `src/lib/**` nur Export-Schlüsselwort.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §3 (Nachtrag d).
+
+- [ ] **Tore-Diät: 92 Wachen auf Wirksamkeit messen** *(`QS-TORE-DIAET`, Go David 22.9.2026)*
+  <!-- @meta id: QS-TORE-DIAET · status: ready · blocker: null · dep: [W2·29-WERKBANK-REST] · feld: betrieb · fahrplan: null -->
+  Ziel: jedes `check:*`-Tor (22.9.2026: 92, davon 22 unter `scripts/check-*.ts` = 218 KB)
+  gegen `npm run tor:bewaehrung -- --import-ci` messen: hat es in 60 Tagen je etwas gefangen?
+  Unwirksame und doppelte Prädikate (z. B. `check:be-sprengel`, laut `check-tor-paritaet.ts`
+  «prüft nichts Zusätzliches») streichen; Flächen-Deckel danach auf Ist + 5 % senken.
+  Grenzen: Rechtsdaten-Tore (§7-Prüftiefe) sind vom Rückbau ausgenommen; jede Streichung mit
+  Messwert im Commit. Anlass: Deckel zweimal gerissen in #979 (0,2 KB Luft).
+
+- [ ] **Doku-Diät: Fahrpläne und Belege** *(`QS-DOKU-DIAET`, Go David 22.9.2026)*
+  <!-- @meta id: QS-DOKU-DIAET · status: ready · blocker: null · dep: [W2·29-WERKBANK-REST] · feld: betrieb · fahrplan: null -->
+  Ziel: (a) die 36 aktiven Fahrpläne gegen «hat der Schritt in 30 Tagen einen Commit gesehen?»
+  prüfen, Rest nach `archiv/` (Steuer-Deckel 22.9.2026: 1 268 von 1 290 KB, +389 KB seit
+  15.8.); (b) datierte Belege, die kein Werkzeug liest und kein Skill als Pflichtlektüre nennt
+  (`abnahme/**`, `docs/ui-befunde-2026-07/**`, Audit-Tabellen), in den Obsidian-Vault
+  `03_Projekte/LexMetrik/archiv-belege/` auslagern (Weisung David 22.9.2026 «nach Obsidian
+  auslagern, soweit sinnvoll»; erster Fall: 549 UX-Audit-Screenshots, 130 MB, PR dieser Zeile).
+  Grenzen: `bibliothek/` (Tor `check:bibliothek`) und Norm-Belege bleiben im Repo.
+
 - [ ] **Werkbank-Umbau Schritt 3: die vier Kataloge** *(`W2·29-WERKBANK-KATALOGE`, Go David 22.9.2026)*
   <!-- @meta id: W2·29-WERKBANK-KATALOGE · status: ready · blocker: null · dep: [W2·29-WERKBANK-LESER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: Gesetze-, Rechtsprechungs-, Rechner- und Vorlagen-Katalog samt Suche, Abdeckung und
