@@ -1,93 +1,126 @@
-// ─── Zentrale Rechner-Registry ────────────────────────────────────────────
+// ─── Zentrale Rechner-Registry — ABGELEITET aus dem Katalog ────────────────
 //
-// Einzige Quelle für Navigation UND Startseiten-Raster. Neue Rechner werden
-// ausschliesslich hier registriert (+ eigene Seite unter src/pages).
+// 22.9.2026 · W2·29-WERKBANK-TOR (FAHRPLAN-WERKBANK-UMBAU §3) · Bis hierher
+// war diese Datei ein HANDREGISTER: für alle 20 gebauten Rechner standen
+// Titel, Kategorie, Kurzbeschrieb, Normen und Status ein zweites Mal hier,
+// neben denselben Angaben im Katalog (`startseiteConfig` → KARTEN). Das ist
+// die dokumentierte §5-Verletzung aus `docs/INVENTAR-FUNKTIONEN.md` §7 N1 —
+// und sie war schon auseinandergelaufen: `check:sediment` mass beim ersten
+// Lauf 113 Abweichungen. Die Detailseite eines Rechners nannte ihre Kategorie
+// «Obligationenrecht», die Katalogkarte desselben Rechners «Vertrag &
+// Forderung (OR)»; bei `verjaehrung` wichen sogar die Norm-Chips ab
+// (Registry: Art. 127/128/132 OR · Katalog: Art. 127–142 OR).
 //
-// Normentreue: Die `normen`-Einträge erscheinen 1:1 als Chips. Keine
-// Artikelnummern erfinden; fehlt eine gesicherte Angabe, bleibt das Feld allgemein.
+// SEITHER: der KATALOG ist die eine Quelle (§5). `CALCULATORS` entsteht beim
+// Modul-Laden aus den Katalog-Karten und kann per Konstruktion nicht mehr
+// abweichen. Die API (`Calculator`, `CALCULATORS`, `getCalculator`) bleibt
+// unverändert, damit die 20 Rechner-Seiten nicht angefasst werden müssen.
+//
+// SICHTBARE FOLGE (deklariert und gewollt): Overline, Einleitung und
+// Norm-Chips der Rechner-Köpfe zeigen künftig die KATALOG-Werte — z. B. die
+// Overline «Zivilprozess (ZPO) & Bundesgericht» statt «Zivilprozess». Das ist
+// Darstellung, keine Rechtslogik (§3); keine Engine, kein Golden und keine
+// Frist ändert sich.
+//
+// FOLGE FÜR DEN TITEL-TEST: `src/tests/startseiteConfig.test.ts` prüft
+// «Detailseiten-Titel = Katalog-Kartentitel». Diese Zusicherung ist damit
+// tautologisch — sie kann nicht mehr scheitern. Der Test bleibt trotzdem
+// unverändert stehen (§6.3: bei einem Umbau werden Tests nicht angepasst);
+// wer ihn später abräumt, braucht einen eigenen, deklarierten Schritt. Die
+// wirksame Wache ist seither `check:sediment` (c2): sie verbietet, dass hier
+// je wieder ein Metadaten-Literal auftaucht.
+//
+// Normentreue: Die Norm-Chips sind die `label` der Katalog-Karte. Keine
+// Artikelnummern erfinden — wer eine Norm ändern will, ändert die Karte.
 
-type CalcStatus = 'entwurf' | 'geprüft' | 'in Vorbereitung' | 'geplant';
+import type { CalculatorCard, Status } from './startseiteConfigTypen';
+import { KARTEN } from './startseiteKarten';
 
 export interface Calculator {
   slug: string;            // URL: /rechner/<slug>
-  /** Detailseiten-Titel = Katalog-Kartentitel (Vereinheitlichung 7.6.2026, §5 — bei Karten-Umbenennung hier nachziehen; Test katalogTitel deckt die Paare). */
+  /** Detailseiten-Titel = Katalog-Kartentitel — seit dem Umbau per Ableitung. */
   titel: string;
-  kategorie: string;       // Overline, z. B. "Arbeitsrecht"
+  kategorie: string;       // Overline; im Katalog das `rechtsgebiet` der Karte
   kurzbeschrieb: string;
-  normen: string[];        // Chips – exakter Gesetzeswortlaut
-  status: CalcStatus;
-  icon: string;            // Schlüssel auf eine Icon-Komponente
+  normen: string[];        // Chips – exakter Gesetzeswortlaut der Karten-Labels
+  status: Status;
 }
 
-export const CALCULATORS: Calculator[] = [
-  { slug: 'kuendigung', titel: 'Kündigung & Fristen im Arbeitsverhältnis', kategorie: 'Arbeitsrecht',
-    kurzbeschrieb: 'Kündigungs- und Sperrfristen sowie Lohnfortzahlung nach kantonaler Skala.',
-    normen: ['Art. 324a OR', 'Art. 335c OR', 'Art. 336c OR'], status: 'entwurf', icon: 'document' },
-  // Abweichung von der Bau-Anweisung: ZPO-Rechner ist in diesem Repo bereits
-  // implementiert und getestet → Status 'geprüft' statt 'in Vorbereitung'.
-  { slug: 'zpo-fristen', titel: 'Verfahrens- & Rechtsmittelfristen', kategorie: 'Zivilprozess',
-    kurzbeschrieb: 'Verfahrens- und Rechtsmittelfristen mit Gerichtsferien und Stillstand.',
-    normen: ['Art. 142–147 ZPO'], status: 'entwurf', icon: 'clock' },
-  { slug: 'verzugszins', titel: 'Verzugszins', kategorie: 'Obligationenrecht',
-    kurzbeschrieb: 'Verzugszins bei Schuldnerverzug – Zeitraum, Satz und Betrag.',
-    normen: ['Art. 104 OR'], status: 'entwurf', icon: 'percent' },
-  { slug: 'gerichtszitat', titel: 'Amtlicher Zitierer (BGE/BGer)', kategorie: 'Gerichts-Bausteine',
-    kurzbeschrieb: 'Fundstellen bundesgerichtlicher Entscheide nach der Zitierkonvention formatieren – BGE (Band · Teil · Seite) und BGer (Geschäftsnummer · Datum). Reine Zitierhilfe, keine Recherche.',
-    normen: ['Art. 112 BGG'], status: 'entwurf', icon: 'court' },
-  { slug: 'inkasso-strecke', titel: 'Forderungs- & Inkasso-Strecke', kategorie: 'Obligationenrecht',
-    kurzbeschrieb: 'Die Schritte der Geldforderungs-Durchsetzung als stateless Strecke: Verzug (Art. 102 OR), Verzugszins (Art. 104 OR), Mahnung, Betreibung und Fristen – jeder Schritt mit dem zuständigen Werkzeug.',
-    normen: ['Art. 102 OR', 'Art. 104 OR', 'Art. 67 SchKG'], status: 'entwurf', icon: 'clipboard' },
-  { slug: 'erbteilung', titel: 'Pflichtteil & verfügbare Quote', kategorie: 'Erbrecht',
-    kurzbeschrieb: 'Gesetzliche Erbteile, Pflichtteile und verfügbare Quote – mit Todesdatum-Weiche für die Revision 2023 und güterrechtlicher Vorstufe.',
-    normen: ['Art. 457 ff. ZGB', 'Art. 470 f. ZGB'], status: 'entwurf', icon: 'scale' },
-  { slug: 'erb-fristen', titel: 'Erbrecht – Fristen', kategorie: 'Erbrecht',
-    kurzbeschrieb: 'Ausschlagung, öffentliches Inventar sowie Ungültigkeits-, Herabsetzungs- und Erbschaftsklage – 15 Tatbestände mit exaktem Fristbeginn.',
-    normen: ['Art. 567 ff. ZGB', 'Art. 521 ZGB', 'Art. 533 ZGB'], status: 'entwurf', icon: 'clock' },
-  { slug: 'mietrecht', titel: 'Kündigung & Fristen im Mietverhältnis', kategorie: 'Mietrecht',
-    kurzbeschrieb: 'Kündigungstermine und -fristen für Wohn- und Geschäftsräume – mit Termin-Hierarchie, Formprüfung und ausserordentlichen Kündigungen.',
-    normen: ['Art. 266a–o OR', 'Art. 257d OR', 'Art. 257f OR'], status: 'entwurf', icon: 'house' },
-  { slug: 'schkg-fristen', titel: 'Betreibungs- & Konkursfristen', kategorie: 'SchKG',
-    kurzbeschrieb: 'Fristen im Betreibungs- und Konkursverfahren mit Betreibungsferien (Art. 63 SchKG) und ZPO-Stillstand für gerichtliche Klagen.',
-    normen: ['Art. 56 SchKG', 'Art. 63 SchKG', 'Art. 145 ZPO'], status: 'entwurf', icon: 'clipboard' },
-  { slug: 'verjaehrung', titel: 'Verjährung', kategorie: 'Obligationenrecht',
-    kurzbeschrieb: 'Verjährung vertraglicher, deliktischer und bereicherungsrechtlicher Forderungen – mit Stillstand, Unterbrechung und Einredeverzicht.',
-    normen: ['Art. 60 OR', 'Art. 67 OR', 'Art. 127 OR', 'Art. 128 OR', 'Art. 132 OR'], status: 'entwurf', icon: 'clock' },
-  { slug: 'gewaehrleistung', titel: 'Gewährleistung & Mängelrüge', kategorie: 'Obligationenrecht',
-    kurzbeschrieb: 'Rüge- und Verjährungsfristen bei Kauf, Werkvertrag und Grundstückkauf – mit Zwei-Regime-Weiche zur Baumängel-Revision 2026.',
-    normen: ['Art. 201 OR', 'Art. 210 OR', 'Art. 219a OR', 'Art. 367 OR', 'Art. 371 OR'], status: 'entwurf', icon: 'house' },
-  { slug: 'verjaehrung-board', titel: 'Verjährungs- & Gewährleistungs-Board', kategorie: 'Obligationenrecht',
-    kurzbeschrieb: 'Die sechs Verjährungs-Regime im Überblick, der Gewährleistungs-Sonderfall (Rüge- und Verjährungsfristen bei Kauf/Werkvertrag) und die Brücke zur AT-Mechanik – internationaler Warenkauf (CISG) verlinkt.',
-    normen: ['Art. 127 OR', 'Art. 128 OR', 'Art. 210 OR', 'Art. 371 OR'], status: 'entwurf', icon: 'clock' },
-  { slug: 'teuerung', titel: 'Teuerungsrechner (LIK-Indexierung)', kategorie: 'Übergreifend',
-    kurzbeschrieb: 'Indexierung von Beträgen nach dem Landesindex der Konsumentenpreise – Indexmiete (100 %-Weitergabe), Unterhaltsbeiträge und generische Wertsicherung, mit amtlicher BFS-Reihe und automatischer Basis-Wahl.',
-    normen: ['Art. 269b OR', 'Art. 17 VMWG', 'Art. 286 ZGB', 'Art. 128 ZGB'], status: 'entwurf', icon: 'percent' },
-  // S-3 Struktur-Umbau 10.6.2026: Registry-Titel = Zivil-Default; die
-  // SchKG-/Straf-Sichten überschreiben Titel/Kategorie/Normen im Kopf
-  // (HERO_JE_RECHTSWEG, reine Anzeige §3).
-  { slug: 'zustaendigkeit', titel: 'Zuständigkeit Zivilprozess', kategorie: 'Zivilprozess',
-    kurzbeschrieb: 'Verfahrensart, Schlichtungspflicht und -behörde sowie örtlicher Gerichtsstand nach ZPO (Fassung 1.1.2025) – mit Handelsgerichts- und Direktklage-Weichen; konkrete Stelle mit Adresse für erfasste Kantone (BS).',
-    normen: ['Art. 197 ZPO', 'Art. 199 ZPO', 'Art. 200 ZPO', 'Art. 210 ZPO', 'Art. 243 ZPO'], status: 'entwurf', icon: 'scale' },
-  { slug: 'tagerechner', titel: 'Fristenrechner (Tage · ZPO · SchKG)', kategorie: 'Übergreifend',
-    kurzbeschrieb: 'Ein Fristenrechner für die meisten Verfahren: Allgemein nach Art. 77/78 OR (Ereignistag zählt nicht, Monatsende-Klemmung, Werktag-Verschiebung), Zivilprozess mit Stillstand (Art. 145 ZPO) und Betreibung mit Betreibungsferien/Rechtsstillstand (Art. 56 ff. SchKG) – drei getrennte Engines, ein Einstieg.',
-    normen: ['Art. 77 OR', 'Art. 78 OR', 'Art. 145 ZPO', 'Art. 56 SchKG'], status: 'entwurf', icon: 'clock' },
-  { slug: 'streitwert', titel: 'Streitwert (ZPO)', kategorie: 'Zivilprozess',
-    kurzbeschrieb: 'Streitwert aus den Rechtsbegehren nach Art. 91–94a ZPO – Kapitalisierung wiederkehrender Leistungen (× 20), Klagenhäufung, Widerklage mit getrennter Kosten-Bemessungsgrundlage und Teilklage-Sonderregel der Revision 2025.',
-    normen: ['Art. 91 ZPO', 'Art. 92 ZPO', 'Art. 93 ZPO', 'Art. 94 ZPO'], status: 'entwurf', icon: 'percent' },
-  { slug: 'betreibungskosten', titel: 'Betreibungskosten (GebV SchKG)', kategorie: 'SchKG',
-    kurzbeschrieb: 'Amtliche Gebühren je Betreibungsschritt nach der GebV SchKG (Stand 1.1.2026): Zahlungsbefehl, Pfändung, Verwertung, Einzahlung als Punktwerte; Entscheidgebühren (z. B. Rechtsöffnung) ehrlich als Rahmen; Auslagen und Überwälzung (Art. 68 SchKG) als Hinweis.',
-    normen: ['Art. 16 GebV SchKG', 'Art. 20 GebV SchKG', 'Art. 30 GebV SchKG', 'Art. 48 GebV SchKG', 'Art. 68 SchKG'], status: 'entwurf', icon: 'percent' },
-  { slug: 'prozesskosten', titel: 'Prozesskosten (Gerichts- & Parteikosten)', kategorie: 'Zivilprozess',
-    kurzbeschrieb: 'Gerichtskosten (Entscheidgebühr) und Parteientschädigung im erstinstanzlichen Zivilprozess nach Streitwert – amtlich verifizierte Tarife aller 26 Kantone, mit interkantonaler Vergleichstabelle. Kostenlose Verfahren (Art. 113/114 ZPO) und Schlichtung/Entscheid berücksichtigt; Ermessenstarife als Spanne.',
-    normen: ['Art. 95 ZPO', 'Art. 96 ZPO', 'Art. 98 ZPO', 'Art. 113 ZPO', 'Art. 114 ZPO'], status: 'entwurf', icon: 'percent' },
-  { slug: 'notariat-grundbuch', titel: 'Notariats- & Grundbuchkosten', kategorie: 'Immobilien',
-    kurzbeschrieb: 'Beurkundungs- und Grundbuchkosten aller 26 Kantone in drei Bereichen: Grundstückkauf (Beurkundung + Grundbuch + Grundpfand + Handänderungssteuer), Beurkundung (Notariat) je Geschäftsart (Testament, Erbvertrag, Ehevertrag, Schenkung, Gründungen AG/GmbH, Stiftung, Bürgschaft, Dienstbarkeiten …) und Grundbuch je Eintragungsart (Grundpfand, Dienstbarkeit, Vormerkung, Mutation …) – kantonale Tarife mit amtlicher Quelle, interkantonaler Vergleich. Rahmen-/Aufwandtarife ehrlich als Spanne.',
-    normen: ['Art. 55 SchlT ZGB', 'Art. 216 OR', 'Art. 499 ZGB', 'Art. 629 OR'], status: 'entwurf', icon: 'percent' },
-  { slug: 'bgg-fristen', titel: 'Beschwerde ans Bundesgericht (BGG)', kategorie: 'Übergreifend',
-    kurzbeschrieb: 'Weiterzug ans Bundesgericht für alle vier Beschwerdewege: Zulässigkeit (Streitwertgrenzen Art. 74 BGG mit Ausnahmen), Beschwerdefrist 30/10/5/3 Tage mit Stillstand (Art. 100/46 BGG) und konkretem Fristende, zuständige Abteilung nach BGerR – inkl. subsidiärer Verfassungsbeschwerde.',
-    normen: ['Art. 74 BGG', 'Art. 100 BGG', 'Art. 46 BGG', 'Art. 113 BGG', 'Art. 33 BGerR'], status: 'entwurf', icon: 'scale' },
-  // S-5c 10.6.2026: Fristenspiegel aufgelöst (Ereignis-Blöcke in den Fach-
-  // Rechnern; /rechner/fristenspiegel = Redirect mit Query-Weiterreichung).
-];
+/**
+ * Mehrere Katalog-Karten können sich EINE Rechner-Seite teilen (Deep-Link per
+ * `#anker`). Für diese Slugs sagt die Tabelle, welche Karte den Seiten-Kopf
+ * stellt — genau einmal, ausdrücklich und mit Grund. Jeder Eintrag 22.9.2026
+ * gesetzt (W2·29-WERKBANK-TOR), keiner geraten:
+ */
+export const KANON_KARTE_JE_SLUG: Record<string, string> = {
+  // /rechner/kuendigung ist die Arbeitsrechts-Seite; `lohnfortzahlung` ist ein
+  // Abschnitt darauf (Deep-Link #lohnfortzahlung), kein eigener Kopf. Dieselbe
+  // Zuordnung führt src/tests/startseiteConfig.test.ts seit 7.6.2026 von Hand.
+  kuendigung: 'kuendigung-sperrfristen',
+  // /rechner/zustaendigkeit trägt den Zivil-Rechtsweg als Default; die Sichten
+  // SchKG und Straf (#schkg, #straf) überschreiben Kopf-Kategorie, -Beschrieb
+  // und -Normen ohnehin selbst (HERO_JE_RECHTSWEG in RechnerZustaendigkeit,
+  // reine Anzeige §3) — sie dürfen den Default darum nicht stellen.
+  zustaendigkeit: 'zustaendigkeit',
+};
+
+/**
+ * Slug einer Karte: der `href` ohne `/rechner/`-Präfix und ohne Deep-Link.
+ * `undefined`, wenn die Karte keine gebaute Rechner-Seite ist.
+ */
+function slugVonKarte(karte: CalculatorCard): string | undefined {
+  if (karte.modus !== 'rechner' || karte.status === 'geplant') return undefined;
+  if (!karte.href?.startsWith('/rechner/')) return undefined;
+  return karte.href.slice('/rechner/'.length).split('#')[0];
+}
+
+/**
+ * Baut die Registry aus dem Katalog. Wirft beim Modul-Laden, wenn die
+ * Kanon-Abbildung nicht mehr passt — eine Zuordnung, die still veraltet, wäre
+ * genau die zweite Wahrheit, die dieser Umbau beseitigt.
+ */
+function ausKatalog(): Calculator[] {
+  const proSlug = new Map<string, CalculatorCard[]>();
+  for (const karte of Object.values(KARTEN)) {
+    const slug = slugVonKarte(karte);
+    if (!slug) continue;
+    const liste = proSlug.get(slug);
+    if (liste) liste.push(karte); else proSlug.set(slug, [karte]);
+  }
+
+  for (const slug of Object.keys(KANON_KARTE_JE_SLUG)) {
+    if (!proSlug.has(slug)) {
+      throw new Error(`calculators: KANON_KARTE_JE_SLUG führt «${slug}» — dazu gibt es keine aktive Katalog-Karte mehr.`);
+    }
+  }
+
+  const aus: Calculator[] = [];
+  for (const [slug, karten] of proSlug) {
+    let karte = karten[0];
+    if (karten.length > 1) {
+      const gewaehlt = KANON_KARTE_JE_SLUG[slug];
+      if (!gewaehlt) {
+        throw new Error(`calculators: Slug «${slug}» wird von ${karten.length} Katalog-Karten geteilt (${karten.map((k) => k.id).join(', ')}) — Kanon-Abbildung fehlt.`);
+      }
+      const gefunden = karten.find((k) => k.id === gewaehlt);
+      if (!gefunden) {
+        throw new Error(`calculators: KANON_KARTE_JE_SLUG bildet «${slug}» auf «${gewaehlt}» ab — keine Karte dieses Slugs trägt diese ID.`);
+      }
+      karte = gefunden;
+    }
+    aus.push({
+      slug,
+      titel: karte.title,
+      kategorie: karte.rechtsgebiet,
+      kurzbeschrieb: karte.description,
+      normen: karte.norms.map((n) => n.label),
+      status: karte.status,
+    });
+  }
+  return aus;
+}
+
+export const CALCULATORS: Calculator[] = ausKatalog();
 
 export function getCalculator(slug: string): Calculator | undefined {
   return CALCULATORS.find((c) => c.slug === slug);
