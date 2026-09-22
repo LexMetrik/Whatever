@@ -73,9 +73,10 @@ type Stil = {
   letterSpacing?: string;
   usage?: string;
 };
+type Familie = { value: string; usage?: string };
 type Quelle = {
   color: { tokens: Token[] };
-  type: { families: Record<string, string>; groups: { name: string; styles: Stil[] }[] };
+  type: { families: Record<string, Familie>; groups: { name: string; styles: Stil[] }[] };
   spacing: { tokens: Token[] };
   radius: { tokens: Token[] };
   shadow: { tokens: Token[] };
@@ -179,8 +180,8 @@ function eintraege(q: Quelle, modus: 'light' | 'dark'): Eintrag[] {
   };
   q.color.tokens.forEach(nimm);
   if (modus === 'light')
-    for (const [name, kette] of Object.entries(q.type.families))
-      raus.push({ name: `font-${name}`, wert: kette });
+    for (const [name, familie] of Object.entries(q.type.families))
+      raus.push({ name: `font-${name}`, wert: familie.value, text: familie.usage });
   q.spacing.tokens.forEach(nimm);
   q.radius.tokens.forEach(nimm);
   q.shadow.tokens.forEach(nimm);

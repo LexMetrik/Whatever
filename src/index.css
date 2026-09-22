@@ -686,8 +686,21 @@
     --scrim-dialog: rgb(0 0 0 / .40);
     /* Abdunkelnde Flaeche hinter der Vollflaechen-Schublade. Dichteste der drei Stufen. */
     --scrim-voll: rgb(0 0 0 / .50);
+    /* W2·24-DESIGN-IDENTITAET R1 (6.9.2026) · ZWEI STIMMEN STATT EINER:
+       Archivo (Grotesk) trägt die BEDIENUNG — Reiter, Knöpfe, Marginalien,
+       Meta-Zeilen; Literata (Serife) trägt alles GELESENE — Normtext, Entscheide,
+       Titel. Beide OFL, beide self-hosted über @fontsource-variable (kein
+       Google-Fonts-Request zur Laufzeit), Import in src/main.tsx.
+       Rank 11: 'Archivo Fallback'/'Literata Fallback' (metrik-angepasstes
+       Arial/Georgia, @font-face oben) direkt HINTER dem Webfont — sie tragen den
+       Zeilenkasten während font-display:swap CLS-frei, bis der Webfont da ist.
+       --font-mono trägt NUR noch, was fachlich Monospace braucht (Rechenweg,
+       Code, Tausender-Gruppen): eine SYSTEM-Kette ohne eigenes Paket — Geist
+       Mono ist mit Geist gegangen, und eine dritte Webfont-Ladung für
+       Ziffernkolonnen wäre Geräte-Last ohne Gegenwert (§15). */
     --font-display: 'Archivo Variable','Archivo Fallback','Arimo';
     --font-sans: 'Archivo Variable','Archivo Fallback','Arimo';
+    /* Lese-Serif: Normtext, Entscheide und Titel (Rubrik V und, ab R3/R4, mehr). */
     --font-serif: 'Literata Variable','Literata Fallback','Literata Times Fallback','Charter','Georgia';
     --font-mono: ui-monospace,'SFMono-Regular','SF Mono','Menlo','Consolas','Liberation Mono';
     /* Grundschritt des 8-px-Rasters, halbe Stufe: engste Luecke zwischen Marke und Wort.
@@ -779,33 +792,6 @@
     --menu-zeile-h: 2.375rem;
     /* Hoehe der Titelblatt-Zeile der Kopfzeile, samt der 2-px-Kante am inneren Traeger.
 
-       ── Schichtungs-Skala (C3, 5.9.2026, Design-Review R6) ────────────────
-       VORHER: 65 Fundstellen in ~30 Dateien trugen rohe `z-<Zahl>`/`z-[<Zahl>]`
-       ohne Skala — Reihenfolgen liessen sich nur durch Ausprobieren rekon-
-       struieren. Migriert 1:1 auf denselben resolvierten Wert (keine Zahl
-       geändert, nur benannt) — die Stapelreihenfolge ist damit BEWEISBAR
-       identisch zum Vorher-Stand. Reihenfolge, aufsteigend, mit den Dateien,
-       die sie tragen:
-         0  --z-base           ArtikelLeser.tsx (Ruhezustand des Artikel-Blocks)
-         10 --z-sticky         app-weit: klebende Kopf-/Werkzeugleisten
-         15 --z-entscheid-sticky  EntscheidLeser.tsx (zweite Sticky-Ebene dort)
-         16 --z-reader-scrim   v3/LeserScrim.tsx (Ansicht-Menü-Scrim)
-                                — Träger mit D41 (7.9.2026) entfallen; die
-                                Sprosse bleibt reserviert, weil 17 und 19
-                                sich ausdrücklich GEGEN sie herleiten.
-         17 --z-reader-kopf    v3/LeserKopf.tsx (klebt ÜBER seinem eigenen Scrim)
-         19 --z-inhalt-kopf    layout/InhaltsKopf.tsx (ÜBER allen Reader-Sticky-
-                                Leisten 15/16, UNTER der App-Leiste 20/30)
-         20 --z-leiste         layout/Topbar.tsx (App-Kopfzeile)
-         30 --z-dropdown       Popover/Tooltips/Menüs (HeaderSuche-Dropdown,
-                                RichterFilter, SprachUmschalter, Begriff, …)
-         40 --z-overlay        abdunkelnde Scrim-Flächen hinter Sheets/Panels
-         50 --z-modal          Dialog-/Sheet-/Panel-Inhalt über seinem Scrim
-       Bewusst NICHT verändert: die Reihenfolge selbst — nur ihr Ausdruck.
-       Wächter: Prüfung 5 in `scripts/check-design-tokens.ts` verbietet neue
-       rohe `z-[…]`/Tailwind-Zahlen-Utilities ausserhalb dieser Skala —
-       vollständig migriert (5.9.2026, Runde 6), keine Ausnahmen.
-
        ── W2·24-R4 · DIE APP-KRONE ALS EINE ZAHL ────────────────────────────
        R2 hat die Arbeitsleiste (`layout/Reiterleiste.tsx`) BEWUSST nicht kleben
        lassen: die Kopfhöhe stand als Konstante `APP_TOPBAR_H = '4rem'` in
@@ -895,7 +881,34 @@
        Abgesetzter Doppelring (Fokus): Papier-Spalt + Messing — auf warmem
        Papier klar sichtbar und vom Hover unterscheidbar (Redesign A11y). */
     --ring: 0 0 0 2px var(--surface), 0 0 0 4px var(--focus);
-    /* Ruhezustand eines Artikel-Blocks im Leser - die Null der Schichtung. */
+    /* Ruhezustand eines Artikel-Blocks im Leser - die Null der Schichtung.
+
+       ── Schichtungs-Skala (C3, 5.9.2026, Design-Review R6) ────────────────
+       VORHER: 65 Fundstellen in ~30 Dateien trugen rohe `z-<Zahl>`/`z-[<Zahl>]`
+       ohne Skala — Reihenfolgen liessen sich nur durch Ausprobieren rekon-
+       struieren. Migriert 1:1 auf denselben resolvierten Wert (keine Zahl
+       geändert, nur benannt) — die Stapelreihenfolge ist damit BEWEISBAR
+       identisch zum Vorher-Stand. Reihenfolge, aufsteigend, mit den Dateien,
+       die sie tragen:
+         0  --z-base           ArtikelLeser.tsx (Ruhezustand des Artikel-Blocks)
+         10 --z-sticky         app-weit: klebende Kopf-/Werkzeugleisten
+         15 --z-entscheid-sticky  EntscheidLeser.tsx (zweite Sticky-Ebene dort)
+         16 --z-reader-scrim   v3/LeserScrim.tsx (Ansicht-Menü-Scrim)
+                                — Träger mit D41 (7.9.2026) entfallen; die
+                                Sprosse bleibt reserviert, weil 17 und 19
+                                sich ausdrücklich GEGEN sie herleiten.
+         17 --z-reader-kopf    v3/LeserKopf.tsx (klebt ÜBER seinem eigenen Scrim)
+         19 --z-inhalt-kopf    layout/InhaltsKopf.tsx (ÜBER allen Reader-Sticky-
+                                Leisten 15/16, UNTER der App-Leiste 20/30)
+         20 --z-leiste         layout/Topbar.tsx (App-Kopfzeile)
+         30 --z-dropdown       Popover/Tooltips/Menüs (HeaderSuche-Dropdown,
+                                RichterFilter, SprachUmschalter, Begriff, …)
+         40 --z-overlay        abdunkelnde Scrim-Flächen hinter Sheets/Panels
+         50 --z-modal          Dialog-/Sheet-/Panel-Inhalt über seinem Scrim
+       Bewusst NICHT verändert: die Reihenfolge selbst — nur ihr Ausdruck.
+       Wächter: Prüfung 5 in `scripts/check-design-tokens.ts` verbietet neue
+       rohe `z-[…]`/Tailwind-Zahlen-Utilities ausserhalb dieser Skala —
+       vollständig migriert (5.9.2026, Runde 6), keine Ausnahmen. */
     --z-base: 0;
     /* App-weit: klebende Kopf- und Werkzeugleisten. */
     --z-sticky: 10;
