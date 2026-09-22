@@ -54,6 +54,14 @@ Rückbau der alten Hülle **erzwungen** wird (§2) statt gehofft. **Quellen:**
 - **Korpus-Pflege läuft parallel weiter** — §7-Frische-Workflows (Fedlex, Normen-Monitor,
   Currency) sind unberührt.
 - **«Farbe als Fläche»** ändert F0.2 und `check:farbwelt` — **nur mit Davids Entscheid**.
+- **Grundregel (Weisung David 22.9.2026, wörtlich: «grundregel für diesen umbau wenn möglich
+  aufräumen» und «evtl. dinge auch nach obsidian vault auslagern soweit sinnvoll»):** jeder
+  Schritt der Kette räumt, was er berührt — ungenutzte Exporte (`W2·29-WERKBANK-EXPORTE`),
+  e2e-Sonden und Vitest-Ratschen, die eine gelöschte Hülle prüfen, gehen **mit der Hülle**
+  (deklarierte Test-Änderung, §6.3); datierte Belege, die kein Werkzeug liest und kein Skill
+  als Pflichtlektüre nennt, wandern in den Vault `03_Projekte/LexMetrik/archiv-belege/`
+  (Kriterium und Erstfall: ROADMAP `QS-DOKU-DIAET`). Nach der Kette folgen `QS-TORE-DIAET`
+  und `QS-DOKU-DIAET` (Go David 22.9.2026 «einverstanden zu allem»).
 - **Löschbilanz je Rubrik-PR:** gelöschte Zeilen ≥ 50 % der hinzugefügten in `src/components`
   + `src/pages`. Wächst der Bestand netto, war es kein Umbau, sondern eine zweite Hülle.
 
@@ -75,6 +83,15 @@ Warnung-statt-Fail. Tor ins `gate:` einhängen, `check:tor-paritaet` grün.
 
 **Bedingung des Rats:** Fällt das Tor **nicht** rot, fällt der Umbau-Plan — dann bleibt es beim
 Restyling und TOKENS…REST werden gestrichen, nicht gebaut.
+
+**Stand 22.9.2026:** gebaut und rot/grün bewiesen (PR #979: a 7→0 · b 4→0 · c 113→0; Census nach
+Gegenprüfung auf postcss, 202 Klassen). **Nachtrag (d) — `W2·29-WERKBANK-EXPORTE`** (Go David
+22.9.2026 «einverstanden zu allem»): vierte Gattung **ungenutzte Exporte und exportierte Typen**
+ohne Importer — knip liefert sie bereits (`--include exports,types`; gemessen 22.9.2026: 84 + 43),
+das Tor wertet die JSON-Liste wie bei (b) aus, kein Nachbau. Geburtsbeweis rot, dann jeder Fund
+im selben PR beseitigt (Export-Schlüsselwort entfernen, wenn intern genutzt; sonst Code löschen),
+keine Baseline. Grenzen: `src/lib/**` nur Export-Schlüsselwort (§3), Golden byte-gleich, e2e-Helfer
+(`e2e/helpers/**`) sind Teil des Umfangs.
 
 ## §4 · Schritt 1 — Tokens (`W2·29-WERKBANK-TOKENS`, `feld: design`, dep `TOR`)
 

@@ -48,3 +48,13 @@ versioniert — die `belege/`-Auswahl oben genügt als Beweis. Betroffen:
 
 Regenerierbar über die committeten `*.mjs`-Capture-Skripte gegen die laufende App
 bzw. Fedlex.
+
+## Bildschirmfotos ausgelagert (22.9.2026)
+
+Die 549 PNG-Belege dieses Audits (130 MB) liegen seit dem 22.9.2026 nicht mehr im
+Repo, sondern im Obsidian-Vault unter
+`~/Documents/David/03_Projekte/LexMetrik/archiv-belege/ux-audit-2026-07-screenshots.zip`
+(Weisung David 22.9.2026: Belege, die kein Werkzeug liest, nach Obsidian auslagern;
+Kriterium in `fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md` §2). Die Text-Befunde, JSON und
+Skripte bleiben hier; Bildverweise in den Befund-Dateien zeigen auf die Pfade im Zip.
+Git-Historie bis `adef0ae29` trägt die Bilder weiterhin.
