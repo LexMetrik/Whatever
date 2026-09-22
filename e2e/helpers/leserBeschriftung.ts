@@ -19,9 +19,6 @@
  *  kein Menü-Eintrag ist. Der Selektor bleibt derselbe. */
 export const ANSICHT_PANEL = '[data-v3-ansicht-panel]';
 
-/** Der zugängliche Name des Menüs. */
-export const ANSICHT_NAME = 'Ansicht';
-
 /**
  * ── D4 (Gesamtprüfung W2·24, 7.9.2026) · DIE ROLLE DER DREI SCHALTER ─────────
  * Sie waren `role="switch"` in einer `role="group"`. Gemessen war die Fläche

@@ -16,15 +16,6 @@ export const F_MARKE = '.lr7-bez-marke[data-reg="f"]';
 /** Der aufgeklappte Block darunter (Badge «Gilt seit …» + Zeitleiste). */
 export const F_BLOCK = '.lr7-bez-block[data-reg="f"]';
 /**
- * Die Druck-Projektion derselben Komponente (`hidden print:block`,
- * `parts/ArtikelLeser.tsx`). Am Bildschirm IMMER unsichtbar — sie ist der
- * Grund, warum `[data-historie-zeile]` als Sichtbarkeits-Sonde nicht mehr
- * taugt: das Element steht seit D40 zweimal im DOM, einmal fürs Papier und
- * einmal im aufgeklappten Block.
- */
-export const F_DRUCK = '[data-hist-druck]';
-
-/**
  * Wartet, bis der Historie-Shard die Fassungs-Marke dieses Artikels gefüllt hat.
  * Sie kommt idle nach (`inhalt-zustand.tsx`), wie die Marken «Entscheide» und
  * «Materialien» aus der Zähl-Datei.
