@@ -13,9 +13,10 @@
 // je Erlass zweistellig kurz ist (OR: 22 Kanten).
 //
 // KEINE ZWEITE WAHRHEIT (§5): die Zuordnung «Artikelnummer → Werkzeuge» ist
-// dieselbe, die `useArtikelKontext` (artikelKontext.ts) für das Panel bildet —
-// Hauptnummer aus dem Token, dann die erste Kante, deren Bereich sie enthält.
-// Sie steht hier nur EINMAL formuliert und wird von beiden gelesen.
+// dieselbe, die die Panels (`v3/PanelAnwendung.tsx`, `KontextPanel.tsx`) über
+// `artikelWerkzeugGruppen` (lib/normtext/werkzeuge.ts) bilden — Hauptnummer aus
+// dem Token, dann die erste Kante, deren Bereich sie enthält. (Der frühere
+// Zweitleser `useArtikelKontext` fiel 23.9.2026 ohne Aufrufer weg, W2·29-WERKBANK-EXPORTE.)
 //
 // WARUM EIN CACHE: `artikelWerkzeugGruppen` filtert und sortiert die ganze
 // Kantentabelle. Der Leser fragt EINMAL JE ARTIKEL — im OR also 1686-mal für
