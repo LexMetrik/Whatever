@@ -17,7 +17,7 @@ import { ERLASS_REGISTER } from '../../lib/normtext/register';
 // Schlüssel, den das Register nicht kennt, verschwindet still aus der Zeile
 // statt ins Leere zu verlinken — dass keiner der zehn verschwindet, hält der
 // Wächter `src/tests/gesetze-kernerlasse.test.ts` fest (§8/§6.7).
-export const KERNERLASS_KEYS = ['OR', 'ZGB', 'ZPO', 'STGB', 'STPO', 'SCHKG', 'BV', 'DBG', 'VWVG', 'BGG'] as const;
+const KERNERLASS_KEYS = ['OR', 'ZGB', 'ZPO', 'STGB', 'STPO', 'SCHKG', 'BV', 'DBG', 'VWVG', 'BGG'] as const;
 
 export function kernerlasse(): { key: string; kuerzel: string; titel: string; pfad: string }[] {
   return KERNERLASS_KEYS.flatMap((k) => {

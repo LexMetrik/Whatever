@@ -22,7 +22,7 @@
 // Informationsverlust (§1/§8), kein Vereinheitlichen. Sie steht als deklarierter
 // `ton` am Item; ohne `ton` gilt das Kanon-Signal.
 
-export type SelectionTon = 'zustimmung' | 'ablehnung' | 'vorbehalt';
+type SelectionTon = 'zustimmung' | 'ablehnung' | 'vorbehalt';
 
 export type SelectionItem<T extends string> = {
   code: T;

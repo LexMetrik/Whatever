@@ -74,17 +74,6 @@ export function istInhaltsPfad(pfad: string): boolean {
   return INHALT_RE.test(pfad);
 }
 
-/** Ein GEÖFFNETER Erlass (`/gesetze/<ebene>/<key>`) — nicht die Übersicht.
- *
- *  Ä1c (LESER-V3 H2b): nur diese Seite trägt eine zweite, gleichwertige
- *  Navigationsspalte (die Gliederung) und startet darum mit eingeklappter
- *  App-Seitenleiste. Rein und an derselben Stelle wie `istInhaltsPfad`, damit es
- *  nicht zwei Pfad-Grammatiken für dieselben Routen gibt (§5). */
-const GESETZ_LESER_RE = /^\/gesetze\/[^/]+\/[^/]+/;
-export function istGesetzLeserPfad(pfad: string): boolean {
-  return GESETZ_LESER_RE.test(pfad.split('?')[0].split('#')[0]);
-}
-
 const SEKTION_LABEL: Record<string, string> = {
   gesetze: 'Gesetze', rechner: 'Rechner', vorlagen: 'Vorlagen',
   rechtsprechung: 'Rechtsprechung', materialien: 'Materialien',

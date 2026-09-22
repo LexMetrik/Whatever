@@ -59,7 +59,7 @@ import { kanonisierePfad } from '../lib/normtext/erlassAdresse';
 /** Navigations-State, mit dem ein Aufrufer «diesmal ein NEUER Reiter» sagt.
  *  Bewusst über `navigate(ziel, { state })` statt über ein Modul-Flag: der
  *  Wunsch gehört zu GENAU dieser Navigation und überlebt sie nicht (§2). */
-export interface NeuerReiterState { lmNeuerReiter?: boolean }
+interface NeuerReiterState { lmNeuerReiter?: boolean }
 
 export function TabTracker() {
   const { pathname, search, hash, state } = useLocation();

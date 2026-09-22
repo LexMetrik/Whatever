@@ -48,7 +48,7 @@ import type { Krume } from './OrtsAngabe';
  * (`KopfDaten.breadcrumb`) und ist damit dieselbe Quelle, aus der die Leiste
  * ohnehin liest (§5) — die Regel braucht keine zweite Pfad-Grammatik.
  */
-export const SEITE_ZEIGT_RUECKWEG_SELBST: readonly string[] = ['/vorlagen'];
+const SEITE_ZEIGT_RUECKWEG_SELBST: readonly string[] = ['/vorlagen'];
 
 /**
  * Die Krumen, die die Ortsleiste der Einzelansicht zeigt: höchstens die
