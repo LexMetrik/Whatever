@@ -14,16 +14,25 @@
  *
  * PRÜFUNGEN (alle drei ≥ 1 Fund ⇒ Exit 1):
  *   (a) TOTE CSS-KLASSEN in `src/index.css`. Census aller Klassenselektoren
- *       (Kommentare entfernt, `.name` im Selektortext vor `{`, auch
- *       verschachtelt und in `:is(…)`); `@apply`-Argumente sind KEINE
- *       Definitionen. Verwender = Treffer MIT WORTGRENZE (`lc-btn` zählt nicht
- *       in `lc-btn-sm`, §7 «Identitäts-Treffer, nie Substring-Präsenz») in
- *       `src/**` ohne `src/tests/**`, in `scripts/**` (Prerender/Generatoren
- *       emittieren Klassen in Artefakte) und in `index.html`. Ein Treffer nur
- *       in `src/index.css` selbst zählt nicht — eine Regel belegt sich nicht
- *       selbst. Umfang: ALLE Präfixe, nicht nur `lc-`/`lr7-` (gemessen
- *       22.9.2026: 206 Klassen, 7 tot, 0 dynamisch zusammengesetzte
- *       Klassennamen — die Voll-Messung ist tragbar, also wird sie gemacht).
+ *       per postcss (`postcss.parse` + `root.walkRules`, wie in
+ *       `check-design-tokens.ts` und `src/tests/scroll-rand-b8.test.ts`
+ *       vorgemacht) über ALLE Regeln in ALLEN Tiefen (`@layer`, `@media`,
+ *       `@container`, `@supports`, verschachtelt und in `:is(…)`);
+ *       `@apply`-Argumente sind KEINE Definitionen und werden von
+ *       `walkRules` gar nicht erst besucht. Verwender = Treffer MIT
+ *       WORTGRENZE (`lc-btn` zählt nicht in `lc-btn-sm`, §7 «Identitäts-
+ *       Treffer, nie Substring-Präsenz») in `src/**` ohne `src/tests/**`, in
+ *       `scripts/**` (Prerender/Generatoren emittieren Klassen in Artefakte)
+ *       und in `index.html`. Ein Treffer nur in `src/index.css` selbst zählt
+ *       nicht — eine Regel belegt sich nicht selbst. Umfang: ALLE Präfixe,
+ *       nicht nur `lc-`/`lr7-` (gemessen 22.9.2026 nach Umstellung auf
+ *       postcss: 202 Klassen — Gegenprüfung PR #979 zeigte, dass die
+ *       vormalige `;`/`}`-Anker-Regex die erste Regel direkt nach der
+ *       öffnenden Klammer eines `@layer`/`@media`/`@container`-Blocks
+ *       übersah, sobald ihr nur Kommentare/Whitespace vorausgingen — 199
+ *       statt 202, drei Klassen (`lc-ziffern`, `tb-raster-2`,
+ *       `lr8-erlasssuche`) blieben für das Tor unsichtbar. Die Voll-Messung
+ *       ist tragbar, also wird sie gemacht).
  *   (b) VERWAISTE MODULE. knip wird NICHT nachgebaut (§17-Gegengewicht: keine
  *       Doppelwache) — das Tor ruft die vorhandene Installation auf und wertet
  *       ihre `files`-Liste. `report:tot` (knip --no-exit-code) bleibt daneben
@@ -54,6 +63,7 @@
 import { spawnSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import postcss from 'postcss';
 import { KARTEN } from '../src/lib/startseiteKarten';
 import * as registry from '../src/lib/calculators';
 
@@ -63,20 +73,26 @@ const REGISTRY_PFAD = join(WURZEL, 'src', 'lib', 'calculators.ts');
 
 // ─── (a) Tote CSS-Klassen ───────────────────────────────────────────────────
 
-/** Alle Klassennamen, die `src/index.css` als Selektor DEFINIERT. */
+/**
+ * Alle Klassennamen, die `src/index.css` als Selektor DEFINIERT.
+ *
+ * postcss statt Regex (Gegenprüfung PR #979, 22.9.2026): eine `;`/`}`-Anker-
+ * Regex kann nicht zwischen «Ende der vorigen Regel» und «Anfang eines neuen
+ * Blocks» unterscheiden — die erste Regel direkt nach der öffnenden Klammer
+ * eines `@layer`/`@media`/`@container`-Blocks folgt auf ein `{`, nicht auf
+ * `;`/`}`, und blieb darum unsichtbar, sobald nur Kommentare/Whitespace
+ * dazwischenlagen. `root.walkRules` läuft dagegen über ALLE Regeln in ALLEN
+ * Verschachtelungstiefen, unabhängig davon, was ihnen vorausgeht — dasselbe
+ * Vorbild wie `check-design-tokens.ts` und
+ * `src/tests/scroll-rand-b8.test.ts`. `@apply`-Argumente sind KEINE
+ * Definitionen; sie stehen als eigener AtRule-Knoten IN einer Regel und
+ * werden von `walkRules` nicht als Regel besucht.
+ */
 function cssKlassenCensus(css: string): string[] {
-  const ohneKommentare = css.replace(/\/\*[\s\S]*?\*\//g, '');
   const namen = new Set<string>();
-  // Selektortext = alles zwischen dem letzten Block-Ende und der nächsten `{`.
-  // At-Regeln (`@media`, `@layer`, `@supports`, `@apply` …) fallen weg: ihr
-  // Kopf ist keine Selektorliste.
-  const bloecke = /(^|[};])([^{};]*)\{/g;
-  let treffer: RegExpExecArray | null;
-  while ((treffer = bloecke.exec(ohneKommentare))) {
-    const selektor = treffer[2].trim();
-    if (!selektor || selektor.startsWith('@')) continue;
-    for (const k of selektor.matchAll(/\.(-?[A-Za-z_][\w-]*)/g)) namen.add(k[1]);
-  }
+  postcss.parse(css).walkRules((regel) => {
+    for (const k of regel.selector.matchAll(/\.(-?[_a-zA-Z][\w-]*)/g)) namen.add(k[1]);
+  });
   return [...namen].sort();
 }
 
