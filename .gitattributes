@@ -12,6 +12,9 @@ golden/*.json linguist-generated
 
 # Generierte Quellcode-Dateien: als generiert markiert (Banner tragen sie bereits).
 *.generated.ts linguist-generated
+# Token-Projektion der Tailwind-Konfig (W2·29-WERKBANK-TOKENS): dieselbe Sorge,
+# nur `.js` statt `.ts` — die Datei ist ein Modul der Konfig, und die ist `.js`.
+tailwind.tokens.generated.js linguist-generated
 
 # Reine Massendaten ohne sinnvollen Textdiff: einklappen UND Diff unterdrücken (K).
 src/lib/pdf/fonts/fontData.ts linguist-generated -diff
@@ -42,8 +45,10 @@ bibliothek/register/gegenpruefung-register.md merge=union
 #   *.generated.ts               → das im Datei-Banner genannte `npm run gen:*`   (Tor: das jeweilige check:* --check)
 #   public/rechtsprechung/*index* → entscheide-Pipeline (`npm run entscheide …`)  (Tor: check:entscheide)
 #   e2e/shard-gruppen.json       → `npm run gen:e2e-shards` (aus `@shard-gruppe`-Kopf-Annotationen in e2e/*.e2e.ts, QS-E2E-SHARD-GEN) (Tor: check:e2e-shards — prüft Union UND Annotation-Drift)
+#   tailwind.tokens.generated.js → `npm run gen:tokens`            (Tor: check:tokens-drift)
 daten-manifest.json merge=regen
 *.generated.ts merge=regen
+tailwind.tokens.generated.js merge=regen
 public/rechtsprechung/register.json merge=regen
 public/rechtsprechung/norm-index.json merge=regen
 public/rechtsprechung/norm-index/*.json merge=regen
