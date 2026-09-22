@@ -12,7 +12,7 @@
  * liste, KEIN Warnung-statt-Fail. Was heute rot ist, wird im selben PR gefixt.
  * Ein Tor mit Bestandsschutz hätte genau das sedimentiert, was es misst.
  *
- * PRÜFUNGEN (alle drei ≥ 1 Fund ⇒ Exit 1):
+ * PRÜFUNGEN (alle vier ≥ 1 Fund ⇒ Exit 1):
  *   (a) TOTE CSS-KLASSEN in `src/index.css`. Census aller Klassenselektoren
  *       per postcss (`postcss.parse` + `root.walkRules`, wie in
  *       `check-design-tokens.ts` und `src/tests/scroll-rand-b8.test.ts`
@@ -35,10 +35,10 @@
  *       ist tragbar, also wird sie gemacht).
  *   (b) VERWAISTE MODULE. knip wird NICHT nachgebaut (§17-Gegengewicht: keine
  *       Doppelwache) — das Tor ruft die vorhandene Installation auf und wertet
- *       ihre `files`-Liste. `report:tot` (knip --no-exit-code) bleibt daneben
- *       bestehen: es meldet auch tote Exporte und Abhängigkeiten, hat aber
- *       bauartbedingt keine Zaunwirkung. Der Exit-Code von knip ist hier NICHT
- *       die Wahrheit (knip endet bei Funden mit 1) — gewertet wird die
+ *       ihre `files`-Liste (derselbe Lauf bedient auch (d), s. u.).
+ *       `report:tot` (knip --no-exit-code) bleibt daneben bestehen: es meldet
+ *       dieselben Gattungen ohne Zaunwirkung. Der Exit-Code von knip ist hier
+ *       NICHT die Wahrheit (knip endet bei Funden mit 1) — gewertet wird die
  *       geparste Liste.
  *   (c) DOPPELTE RECHNER-METADATEN. Der Katalog (`startseiteConfig` → KARTEN)
  *       ist Single Source of Truth (§5). Zwei Teile:
@@ -53,6 +53,18 @@
  *       brauchen einen Eintrag in `KANON_KARTE_JE_SLUG` (exportiert aus
  *       `src/lib/calculators.ts`); fehlt er oder zeigt er ins Leere, ist das
  *       ein Fund — so kann die Abbildung nicht still veralten.
+ *   (d) UNGENUTZTE EXPORTE. 22.9.2026 · Go David, Grundregel Umbau: wenn
+ *       möglich aufräumen. Gleicher knip-Lauf wie (b), EIN Aufruf
+ *       (`--include files,exports,types`): Funktionen, Konstanten und
+ *       Typen, die exportiert, aber von keiner anderen Datei importiert
+ *       werden. knip zählt `src/tests/**` als Projekt — ein Test-Import
+ *       eines PRODUKTIV-Exports zählt als Verwendung; erscheint er
+ *       trotzdem, ist knip.json zu prüfen, nicht der Export zu löschen.
+ *       Ungenutzte Exporte INNERHALB `src/tests/**` selbst zählt (d) NICHT
+ *       — Testhilfsdateien bleiben TABU für dieses Tor (Bau-Auftrag
+ *       W2·29-WERKBANK-EXPORTE), Aufräumen dort ist ein eigener Schritt.
+ *       Geburtsbeweis: 84 Exporte + 43 Typen, davon 12 in `src/tests/**`
+ *       (ausgeklammert) — 115 zu beheben.
  *
  * DETERMINISMUS (§2): kein Netz, keine Uhr, kein Zufall. Gelesen werden
  * ausschliesslich Dateien des Arbeitsbaums; knip ist statische Analyse.
@@ -159,13 +171,14 @@ function knipBin(): string | undefined {
   }
 }
 
-function verwaisteModule(): string[] {
+/** Ein knip-Lauf, gemeinsam ausgewertet für (b) verwaiste Module und (d) ungenutzte Exporte. */
+function knipBefund(): { module: string[]; exporte: string[] } {
   const bin = knipBin();
   if (!bin) {
-    console.error('check:sediment: knip nicht installiert (node_modules/.bin/knip) — Gattung (b) kann nicht gemessen werden.');
+    console.error('check:sediment: knip nicht installiert (node_modules/.bin/knip) — Gattung (b)/(d) kann nicht gemessen werden.');
     process.exit(2);
   }
-  const lauf = spawnSync(bin, ['--include', 'files', '--reporter', 'json', '--no-progress'], {
+  const lauf = spawnSync(bin, ['--include', 'files,exports,types', '--reporter', 'json', '--no-progress'], {
     cwd: WURZEL, encoding: 'utf8', maxBuffer: 32 * 1024 * 1024,
   });
   if (lauf.error) {
@@ -177,7 +190,14 @@ function verwaisteModule(): string[] {
     console.error(`check:sediment: knip endete mit Exit ${lauf.status}.\n${lauf.stderr ?? ''}`);
     process.exit(2);
   }
-  let roh: { issues?: { file?: string; files?: { name?: string }[] }[] };
+  let roh: {
+    issues?: {
+      file?: string;
+      files?: { name?: string }[];
+      exports?: { name?: string; line?: number }[];
+      types?: { name?: string; line?: number }[];
+    }[];
+  };
   try {
     roh = JSON.parse(lauf.stdout.trim());
   } catch {
@@ -185,10 +205,17 @@ function verwaisteModule(): string[] {
     process.exit(2);
   }
   const dateien = new Set<string>();
+  const exporte: string[] = [];
   for (const eintrag of roh.issues ?? []) {
     for (const f of eintrag.files ?? []) if (f.name) dateien.add(f.name);
+    const datei = eintrag.file;
+    // (d) klammert src/tests/** aus: Testhilfsdateien sind TABU für dieses
+    // Tor (s. Kopfkommentar); (b) bleibt unbeschränkt, wie vor #979.
+    if (!datei || datei.startsWith('src/tests/')) continue;
+    for (const e of eintrag.exports ?? []) if (e.name) exporte.push(`${datei}:${e.line ?? '?'} · ${e.name}`);
+    for (const t of eintrag.types ?? []) if (t.name) exporte.push(`${datei}:${t.line ?? '?'} · ${t.name} (Typ)`);
   }
-  return [...dateien].sort();
+  return { module: [...dateien].sort(), exporte: exporte.sort() };
 }
 
 // ─── (c) Doppelte Rechner-Metadaten ─────────────────────────────────────────
@@ -219,7 +246,7 @@ const kuerzen = (w: string) => (w.length > 70 ? `${w.slice(0, 67)}…` : w);
 function metadatenFunde(): string[] {
   const funde: string[] = [];
   const proSlug = katalogJeSlug();
-  const kanon = (registry as unknown as { KANON_KARTE_JE_SLUG?: Record<string, string> }).KANON_KARTE_JE_SLUG;
+  const kanon = registry.KANON_KARTE_JE_SLUG;
 
   // (c1) Registry-Werte gegen die kanonische Karte.
   for (const calc of registry.CALCULATORS) {
@@ -281,21 +308,24 @@ function metadatenFunde(): string[] {
 // ─── Bericht ────────────────────────────────────────────────────────────────
 
 const a = toteKlassen();
-const b = verwaisteModule();
+const knip = knipBefund();
+const b = knip.module;
 const c = metadatenFunde();
+const d = knip.exporte;
 
 const block = (titel: string, funde: string[]) => {
   console.log(`\n${titel}: ${funde.length}`);
   for (const f of funde) console.log(`  · ${f}`);
 };
 
-console.log('check:sediment — tote CSS-Klassen · verwaiste Module · doppelte Rechner-Metadaten');
+console.log('check:sediment — tote CSS-Klassen · verwaiste Module · doppelte Rechner-Metadaten · ungenutzte Exporte');
 block('(a) tote CSS-Klassen in src/index.css ohne Verwender', a);
 block('(b) verwaiste Module (knip --include files)', b);
 block('(c) doppelte Rechner-Metadaten (Registry ≠ Katalog · Handregister)', c);
+block('(d) ungenutzte Exporte/Typen (knip --include exports,types)', d);
 
-const zaehler = `a ${a.length} · b ${b.length} · c ${c.length}`;
-if (a.length + b.length + c.length > 0) {
+const zaehler = `a ${a.length} · b ${b.length} · c ${c.length} · d ${d.length}`;
+if (a.length + b.length + c.length + d.length > 0) {
   console.error(`\ncheck:sediment ROT (${zaehler}) — keine Baseline, keine Ausnahmeliste: im selben PR beheben.`);
   process.exit(1);
 }
