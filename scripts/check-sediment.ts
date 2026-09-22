@@ -63,8 +63,8 @@
  *       Ungenutzte Exporte INNERHALB `src/tests/**` selbst zählt (d) NICHT
  *       — Testhilfsdateien bleiben TABU für dieses Tor (Bau-Auftrag
  *       W2·29-WERKBANK-EXPORTE), Aufräumen dort ist ein eigener Schritt.
- *       Geburtsbeweis: 84 Exporte + 43 Typen, davon 12 in `src/tests/**`
- *       (ausgeklammert) — 115 zu beheben.
+ *       Geburtsbeweis: rot 114 (Commit 42a45c2c6), nicht 84+43-12=115 wie
+ *       zuvor vorgerechnet — nachgemessen 23.9.2026.
  *
  * DETERMINISMUS (§2): kein Netz, keine Uhr, kein Zufall. Gelesen werden
  * ausschliesslich Dateien des Arbeitsbaums; knip ist statische Analyse.
