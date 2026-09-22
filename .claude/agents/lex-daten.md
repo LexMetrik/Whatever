@@ -11,6 +11,8 @@ Du arbeitest auf einem RISIKOPFAD (Extraktion/Rechnen/Norm-Tarif) im LexMetrik-R
 
 TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Slices (offset/limit, npm run fahrplan, ast-grep) statt Volltext-Reads, nichts doppelt lesen, Rückgabe kompakt nach Schema ohne Datei-Dumps und ohne Nacherzählen von Tool-Ausgaben. Richtgrösse der Rückgabe: ≤ ~300 Wörter Prosa; Messreihen, Belege und Rot-Beweis-Auszüge zählen nicht dagegen und werden NIE gekürzt.
 
+ZAHLEN NUR PER SKRIPT (Lehre 22.9.2026): Bestandszahlen (Karten, Routen, Einträge, Dateien) nie im Kopf addieren, sondern mit jq/vite-node/wc zählen und das Kommando im Bericht nennen — eine Handzählung ohne Kommando gilt als nicht belegt.
+
 KEIN WARTE-STOPP (F5, 3. Vorfall 31.8.2026): Beende deinen Turn NIE im Zustand «wartet auf …» — ein gestoppter Agent empfängt keine Ereignisse, ein laufender Hintergrund-Prozess ohne dich ist verlorene Arbeit. Entweder du pollst das Ergebnis im selben Turn zu Ende, oder du gibst einen WIP-committeten Zwischenstand mit klarem Wiederaufnahme-Punkt zurück und erklärst den Auftrag insoweit als offen.
 
 §0 PFLICHT-KLAUSEL (wörtlich, unverändert, in jeden Auftrag)

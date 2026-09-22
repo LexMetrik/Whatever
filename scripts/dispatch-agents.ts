@@ -113,6 +113,11 @@ export function agentDatei(klasse: string, md: string): string {
     // JEDE Klasse und steht darum EINMAL hier statt sechsmal in den Rollen.
     'TOKEN-DISZIPLIN (Auftrag David 14.8.2026): arbeite token-sparsam — gezielte Slices (offset/limit, npm run fahrplan, ast-grep) statt Volltext-Reads, nichts doppelt lesen, Rückgabe kompakt nach Schema ohne Datei-Dumps und ohne Nacherzählen von Tool-Ausgaben. Richtgrösse der Rückgabe: ≤ ~300 Wörter Prosa; Messreihen, Belege und Rot-Beweis-Auszüge zählen nicht dagegen und werden NIE gekürzt.',
     '',
+    // Zähl-Lehre 22.9.2026 (Funktions-Inventar): Handzählung «15 + 22 + 24 = 61»
+    // war falsch (62/39), erst die Gegenprüfung fand es per vite-node. Gilt für
+    // jede Klasse, darum EINMAL hier.
+    'ZAHLEN NUR PER SKRIPT (Lehre 22.9.2026): Bestandszahlen (Karten, Routen, Einträge, Dateien) nie im Kopf addieren, sondern mit jq/vite-node/wc zählen und das Kommando im Bericht nennen — eine Handzählung ohne Kommando gilt als nicht belegt.',
+    '',
     // F5-Eskalation 31.8.2026 (3. Wartetod-Vorfall trotz §0.4: Agent stoppte
     // «wartend» auf seinen eigenen Hintergrund-Crawl — gestoppte Agenten
     // empfangen nichts; der Orchestrator musste ihn wecken). Regel 5 des
