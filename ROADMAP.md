@@ -419,8 +419,8 @@ Umschichtung 20.9.2026 (2)):*
   farbfrei, Golden byte-gleich, **Startseite unberührt** (V4 Werkbank live seit 5.9.2026).
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §4.
 
-- [ ] **Werkbank-Umbau Schritt 0b: vierte Sediment-Gattung — ungenutzte Exporte** *(`W2·29-WERKBANK-EXPORTE`, Go David 22.9.2026 «einverstanden zu allem»)*
-  <!-- @meta id: W2·29-WERKBANK-EXPORTE · status: ready · blocker: null · dep: [W2·29-WERKBANK-TOR] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [x] **Werkbank-Umbau Schritt 0b: vierte Sediment-Gattung — ungenutzte Exporte** *(`W2·29-WERKBANK-EXPORTE`, Go David 22.9.2026 «einverstanden zu allem»)*
+  <!-- @meta id: W2·29-WERKBANK-EXPORTE · status: done · blocker: null · dep: [W2·29-WERKBANK-TOR] · feld: betrieb · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: `check:sediment` (d) — exportierte Funktionen und Typen ohne Importer (knip liefert sie
   schon: gemessen 22.9.2026 84 Exporte + 43 Typen). Geburtsbeweis rot, dann alle Funde im
   selben PR beseitigt (Export entfernen oder Code löschen), Tor grün; keine Baseline.
