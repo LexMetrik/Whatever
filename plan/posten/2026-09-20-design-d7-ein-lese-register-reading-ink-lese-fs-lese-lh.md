@@ -1,5 +1,5 @@
 <!-- @posten
-dach: W2·29-WERKBANK-TOKENS
+dach: W2·29-WERKBANK-LESER
 titel: DESIGN-D7 · Ein Lese-Register (--reading-ink, --lese-fs/--lese-lh)
 -->
 
