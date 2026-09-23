@@ -4,8 +4,8 @@ import { RechnerKopf } from '../components/layout/RechnerKopf';
 import { getCalculator } from '../lib/calculators';
 
 // ─── Amtlicher Gerichts-Zitierer (BGE / BGer) ───────────────────────────────
-// Gerichts-Baustein-Set (ROADMAP W2·7). Thin-Shell nach DESIGN-REGLEMENT-RECHNER
-// R1; die R12-Ausnahme (kein Berechnungsergebnis, reiner Zitat-Formatierer) ist
+// Gerichts-Baustein-Set (ROADMAP W2·7). Thin-Shell nach DESIGN-REGLEMENT
+// §R-1; die R12-Ausnahme (kein Berechnungsergebnis, reiner Zitat-Formatierer) ist
 // in GerichtszitatForm dokumentiert.
 
 export function RechnerGerichtszitat() {

@@ -83,39 +83,39 @@ export default {
       fontSize: {
         /* @generated tokens:start — Quelle design/tokens.json, npm run gen:tokens; nie von Hand */
         /* ── Bedienung und Fliesstext ── */
-        /* Kleinste Stufe des Hauses (11 px): Zaehler, Randangaben, Marken. */
+        /* Kleinste Stufe des Hauses (11 px): Zähler, Randangaben, Marken. */
         'micro': ['0.6875rem', { lineHeight: '1.2' }],
-        /* Das Etikett ueber einer Gruppe. Ohne Versalien und ohne Sperrsatz - die Laufweite steht
-           ausdruecklich auf 0em, weil frueher hier ein Sperrsatz sass. Rezept: die Klasse
-           .lc-overline setzt zusaetzlich die gedaempfte Tinte ink-500.
+        /* Das Etikett über einer Gruppe. Ohne Versalien und ohne Sperrsatz - die Laufweite steht
+           ausdrücklich auf 0em, weil früher hier ein Sperrsatz sass. Rezept: die Klasse
+           .lc-overline setzt zusätzlich die gedämpfte Tinte ink-500.
 
            W2·24-R1: die Overline ist entversalt — 12 px, Tracking normal (Rezept .lc-overline in
            src/index.css; hier der Utility-Zwilling). */
         'overline': ['0.75rem', { lineHeight: '1.4', letterSpacing: '0em' }],
         /* Meta-Zeilen und Chip-Aufschriften. */
         'xs': ['0.75rem', { lineHeight: '1.4' }],
-        /* Kleiner Fliesstext und die Aufschrift der Bedienelemente: Reiter, kleine Knoepfe, kleine
+        /* Kleiner Fliesstext und die Aufschrift der Bedienelemente: Reiter, kleine Knöpfe, kleine
            Eingabefelder. Statt der Tailwind-Stufe text-sm. */
         'body-s': ['0.875rem', { lineHeight: '1.5' }],
-        /* Grosser Fliesstext; Einleitungsabsaetze. Statt der Tailwind-Stufe text-lg zu verwenden,
-           die eine fremde Zeilenhoehe traegt. */
+        /* Grosser Fliesstext; Einleitungsabsätze. Statt der Tailwind-Stufe text-lg zu verwenden,
+           die eine fremde Zeilenhöhe trägt. */
         'body-l': ['1.125rem', { lineHeight: '1.6' }],
         /* ── Titel ── */
         /* Untertitel innerhalb einer Sektion. */
         'h3': ['1.25rem', { lineHeight: '1.25' }],
         /* Sektionstitel; mobil zugleich die Titelstufe des Leser-Kopfs. */
         'h2': ['1.6rem', { lineHeight: '1.15' }],
-        /* Seitentitel. Gewicht und Laufweite stehen an der Element-Regel fuer h1 bis h3 und gelten
-           fuer alle drei Titelstufen. */
+        /* Seitentitel. Gewicht und Laufweite stehen an der Element-Regel für h1 bis h3 und gelten
+           für alle drei Titelstufen. */
         'h1': ['2rem', { lineHeight: '1.15' }],
-        /* Display-Stufe fuer Seiten-Eroeffnungen unterhalb von display-l. */
+        /* Display-Stufe für Seiten-Eröffnungen unterhalb von display-l. */
         'display': ['2.25rem', { lineHeight: '1.05' }],
-        /* Groesste Stufe der Skala. Fuer die eine Zeile, die eine Seite eroeffnet. */
+        /* Grösste Stufe der Skala. Für die eine Zeile, die eine Seite eröffnet. */
         'display-l': ['2.75rem', { lineHeight: '1.05' }],
         /* ── Lesen (Normtext und Entscheide) ── */
-        /* Der Fliesstext im Satzspiegel des Gesetzes-Lesers. Die Zeilenhoehe gehoert zur Stufe und
-           darf nicht am Markup ueberschrieben werden; 1.62 haelt WCAG 1.4.8 (mindestens 1.5). Das
-           Gewicht 450 statt 400 stammt aus der Beobachtung, dass Serifen am Bildschirm duenner
+        /* Der Fliesstext im Satzspiegel des Gesetzes-Lesers. Die Zeilenhöhe gehört zur Stufe und
+           darf nicht am Markup überschrieben werden; 1.62 hält WCAG 1.4.8 (mindestens 1.5). Das
+           Gewicht 450 statt 400 stammt aus der Beobachtung, dass Serifen am Bildschirm dünner
            wirken als im Druck.
 
            ── LESER-SATZSPIEGEL (W2·5m-LESER-V3 · S2, Pos. 19) ────────────────
@@ -184,13 +184,13 @@ export default {
            bleiben 100 · 108 · 118 · 130 %. `src/tests/leser-schriftskala.test.ts`
            hält die drei Orte gegeneinander. */
         'leser-text': ['1.125rem', { lineHeight: '1.62' }],
-        /* Marginalie und Randtitel am Artikel. Die Skala-Notiz im Repo nennt fuer diese Stufe die
+        /* Marginalie und Randtitel am Artikel. Die Skala-Notiz im Repo nennt für diese Stufe die
            Bedienschrift, das gebaute Rezept .lc-randtitel setzt sie kursiv in der Leseschrift -
            siehe randtitel. */
         'leser-rand': ['0.8125rem', { lineHeight: '1.35' }],
-        /* Der Fussnoten-Apparat am Artikelfuss. Die Zeilenhoehe liegt bewusst knapp unter 1.5, weil
-           der Apparat Referenz- und kein Lesetext ist; er laeuft auf der schmalen
-           Feinschrift-Spalte kleintext. */
+        /* Der Fussnoten-Apparat am Artikelfuss. Die Zeilenhöhe liegt bewusst knapp unter 1.5, weil
+           der Apparat Referenz- und kein Lesetext ist; er läuft auf der schmalen Feinschrift-Spalte
+           kleintext. */
         'leser-fn': ['0.6875rem', { lineHeight: '1.45' }],
         /* @generated tokens:end */
       },
@@ -220,7 +220,7 @@ export default {
       // der Methode von `e2e/leser-lesemass.e2e.ts` (längster mehrzeiliger
       // Fliesstext-Absatz, Textlänge / Zeilenkisten):
       //   ZGB 68 · OR 71 · StPO 73 · VMWG 74 · StGB 77 ch
-      // Die Hausdecke des DESIGN-REGLEMENT-NORMTEXT §Typo-Skala (≤ 75 ch) hat damit
+      // Die Hausdecke des DESIGN-REGLEMENT §N-4b (≤ 75 ch) hat damit
       // NICHT mehr «≥ 3 ch Luft»: beim VMWG sind es 1 ch, und das StGB liegt mit
       // 77 ch DARÜBER (es steht nicht in der gegateten Erlass-Liste, s. die Notiz an
       // der Schwelle in `leser-lesemass.e2e.ts`). Die WCAG-Decke SC 1.4.8 (≤ 80 ch)
@@ -237,7 +237,7 @@ export default {
       // `normtext` gelten site-weit bzw. auch für die Kopfzeile und skalieren
       // nicht mit dem Schriftregler — ein Zeichen-Deckel tut beides. Die Zahlen
       // oben bleiben als Messprotokoll der 45-rem-Stufe stehen; das IST-Zeilenmass
-      // des Lesers steht in DESIGN-REGLEMENT-NORMTEXT §4b-C (67/66/66/64/63/56 ch).
+      // des Lesers steht in DESIGN-REGLEMENT §N-4b-C (Messreihe im Archiv, 67/66/66/64/63/56 ch).
       // Beide zentriert (mx-auto),
       // damit die Restbreite der 2-Spalten-Zelle ausbalanciert statt rechts als
       // toter Steg liegt — dort trieb es zuvor den «Zitat»-Link weit nach rechts.
@@ -277,7 +277,7 @@ export default {
       // Die Tokens hatten GENAU EINEN Verbraucher (`LeserLesespalte`), und der ist
       // fort — §17 «gestrichen statt bewacht», kein toter Token im Design-System.
       // Herleitung, Messreihe und Wächter: `pages/gesetz-leser/v3/
-      // LeserLesespalte.tsx` (`renderSektion`) und DESIGN-REGLEMENT-NORMTEXT §4b.
+      // LeserLesespalte.tsx` (`renderSektion`) und DESIGN-REGLEMENT §N-4b.
       // CLS-Reservierungs-Tokens der Startseite (Startseite V3, §5): benannte
       // Mindesthöhen für die async-/localStorage-Module — Masse, keine Farben
       // (hell = dunkel). `modul-news` benennt den bisherigen Arbitrary-Wert der

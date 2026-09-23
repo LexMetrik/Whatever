@@ -54,9 +54,9 @@
   :root {
     /* @generated tokens:start — Quelle design/tokens.json, npm run gen:tokens; nie von Hand */
     /* Der eine Dunkel-Tinten-Ton, der NIE mit dem Thema kippt. Speist die helle Fliesstext-Tinte
-       `ink-900` und `auf-gold`; im Dunkel-Thema bewusst nicht ueberschrieben. Bewusst nicht maximal
+       `ink-900` und `auf-gold`; im Dunkel-Thema bewusst nicht überschrieben. Bewusst nicht maximal
        dunkel (14.68:1 auf `paper`): Maximalkontrast erzeugt am Bildschirm Halation, das Zielband
-       fuer Langlese-Fliesstext liegt bei 12-15:1.
+       für Langlese-Fliesstext liegt bei 12-15:1.
 
        ── LexMetrik-Designtokens (Designsystem §2) ───────────────────────
 
@@ -82,18 +82,18 @@
        Grund «blutet» in die Buchstabenkanten), Zielband für Langlese-Fliesstext
        ~12–15:1. Der Wert speist weiterhin ink-900 hell UND --auf-gold. */
     --ink-fixed-dark: #25231F;
-    /* Das Gegenstueck: die eine helle Tinte, die nie mit dem Thema kippt. Fuer Text auf Flaechen,
-       die in beiden Themes mittel-dunkel bleiben; speist `auf-sage` und wird im Dunkel-Thema nicht
-       ueberschrieben.
+    /* Das Gegenstück: die eine helle Tinte, die nie mit dem Thema kippt. Für Text auf Flächen, die
+       in beiden Themes mittel-dunkel bleiben; speist `auf-sage` und wird im Dunkel-Thema nicht
+       überschrieben.
 
        C2-Gegenstück (5.9.2026): --ink-fixed-light für Text auf einer Fläche,
        die STETS mittel-dunkel bleibt (--ok-solid/--sage-500 flippt bewusst
        NICHT, s. Zeile ~1042-Kommentar) — Wert = helles --paper, hier nicht
        überschrieben. Speist --auf-sage (unten). */
     --ink-fixed-light: #FAF7F2;
-    /* Fliesstext-Tinte und Grundfarbe des Koerpertexts. Liest auf `paper`, `surface`,
-       `paper-raised` und `well`. Traegt zugleich den 2-px-Trenner `rule` und die Marken im Menue.
-       Die Rampe ink-900 bis ink-300 ist chromafrei (C = 0, reines Neutralgrau).
+    /* Fliesstext-Tinte und Grundfarbe des Körpertexts. Liest auf `paper`, `surface`, `paper-raised`
+       und `well`. Trägt zugleich den 2-px-Trenner `rule` und die Marken im Menü. Die Rampe ink-900
+       bis ink-300 ist chromafrei (C = 0, reines Neutralgrau).
 
        W2·24-DESIGN-IDENTITAET R1 (6.9.2026): die Rampe ist CHROMAFREI (C = 0,
        reines Neutralgrau) — die frühere Wärme (Hue 88°) WAR die halbe
@@ -103,31 +103,31 @@
        die Referenz-Tinte #767676 (die läge auf --well bei 4.44:1) — gemessen
        4.85:1 auf --well, 5.34:1 auf --paper. */
     --ink-900: var(--ink-fixed-dark);
-    /* Zweitdunkelste Stufe der Tinten-Rampe fuer hervorgehobenen Text, der nicht die volle Tinte
+    /* Zweitdunkelste Stufe der Tinten-Rampe für hervorgehobenen Text, der nicht die volle Tinte
        sein soll. Liest auf `paper`, `surface`, `paper-raised` und `well`. */
     --ink-800: #32302C;
-    /* Tinte fuer Sekundaertext und Textknoepfe der Chrome (z. B. der feste Leistengriff). Speist
-       ausserdem `karte-kante`, die Kantonsgrenze der Schweiz-Karte, und traegt sie darum aus EINER
+    /* Tinte für Sekundärtext und Textknöpfe der Chrome (z. B. der feste Leistengriff). Speist
+       ausserdem `karte-kante`, die Kantonsgrenze der Schweiz-Karte, und trägt sie darum aus EINER
        Definition in beiden Themes. Liest auf `paper`, `surface`, `paper-raised` und `well`. */
     --ink-700: #3B3832;
-    /* Sekundaer- und Metatext: Hinweiszeilen, Feinschrift (`fineprint`), Notice-Text. Liest auf
+    /* Sekundär- und Metatext: Hinweiszeilen, Feinschrift (`fineprint`), Notice-Text. Liest auf
        `paper`, `surface`, `paper-raised` und `well`. */
     --ink-600: #5C564A;
-    /* Dunkelste Stufe der gedaempften Tinte: Etiketten (`overline`), Menue-Titel, Normkuerzel im
+    /* Dunkelste Stufe der gedämpften Tinte: Etiketten (`overline`), Menü-Titel, Normkürzel im
        Klartext. Bewusst dunkler als die Referenz-Tinte #767676, damit die Stufe auch auf `well`
-       traegt. Liest auf `paper`, `surface`, `paper-raised` und `well`; ein Dimmen unter diese Stufe
+       trägt. Liest auf `paper`, `surface`, `paper-raised` und `well`; ein Dimmen unter diese Stufe
        verbietet das Haus-Tor. */
     --ink-500: #6A665E;
     /* Deko- und Haarlinien-Stufe, kein Lesetext: Trennstriche, inaktive Marken, Zierlinien auf
-       `paper` und `surface`. KONTRAST-VERMERK: rein dekorativ, traegt keine Bedeutung - WCAG 1.4.11
-       (3:1) gilt dafuer nicht. Gemessen auf paper 3.30:1 hell / 3.30:1 dunkel und auf well 3.10:1
-       hell / 3.53:1 dunkel. Nie fuer Text oder fuer eine Kante, die eine Aussage traegt. */
+       `paper` und `surface`. KONTRAST-VERMERK: rein dekorativ, trägt keine Bedeutung - WCAG 1.4.11
+       (3:1) gilt dafür nicht. Gemessen auf paper 3.30:1 hell / 3.30:1 dunkel und auf well 3.10:1
+       hell / 3.53:1 dunkel. Nie für Text oder für eine Kante, die eine Aussage trägt. */
     --ink-400: #8D887E;
-    /* Hellste Stufe der Rampe, reine Dekoration: feinste Kanten und ruhende Punkte. Nie fuer Text;
+    /* Hellste Stufe der Rampe, reine Dekoration: feinste Kanten und ruhende Punkte. Nie für Text;
        die Platzhalter-Rolle hat mit `placeholder` einen eigenen, dunkleren Ton bekommen.
-       KONTRAST-VERMERK: rein dekorativ, traegt keine Bedeutung - WCAG 1.4.11 (3:1) gilt dafuer
-       nicht. Gemessen auf paper 2.09:1 hell / 2.15:1 dunkel und auf well 1.97:1 hell / 2.30:1
-       dunkel. Nie fuer Text oder fuer eine Kante, die eine Aussage traegt. */
+       KONTRAST-VERMERK: rein dekorativ, trägt keine Bedeutung - WCAG 1.4.11 (3:1) gilt dafür nicht.
+       Gemessen auf paper 2.09:1 hell / 2.15:1 dunkel und auf well 1.97:1 hell / 2.30:1 dunkel. Nie
+       für Text oder für eine Kante, die eine Aussage trägt. */
     --ink-300: #B0ADA7;
     /* Platzhaltertext im Eingabefeld. Eigener Ton statt `ink-300`, weil dieser auf `well` nur rund
        2:1 erreichte und damit praktisch unsichtbar war. Liest auf `well`.
@@ -144,8 +144,8 @@
        D-5/A38 (16.7.2026): --well wurde heller/weisser (#F2EFE6→#F6F4EE) →
        --placeholder/well steigt 4.76→4.98:1 (Ton unverändert, Kontrast-Gewinn). */
     --placeholder: #69655D;
-    /* Das Blatt: Seitenhintergrund und grosse Flaechen (`body`). Traegt Tinte `ink-900` bis
-       `ink-500`. Zweite Sprosse der Flaechen-Leiter `well < paper < surface < paper-raised`, die im
+    /* Das Blatt: Seitenhintergrund und grosse Flächen (`body`). Trägt Tinte `ink-900` bis
+       `ink-500`. Zweite Sprosse der Flächen-Leiter `well < paper < surface < paper-raised`, die im
        Farb-Tor ein harter FAIL ist.
 
        Papier – Flächen. Token-Landkarte (Regel, ohne Wertänderung):
@@ -186,29 +186,29 @@
        über LINIEN, nicht über Flächen-Tönung. paper-raised ist das Reinweiss der
        schwebenden Ebene (Menü/Dialog), das Blatt selbst liegt eine Spur darunter. */
     --paper: #FAF7F2;
-    /* Die schwebende Ebene: Menue, Dialog, Popover. Der einzige Ort, an dem Reinweiss im Haus
+    /* Die schwebende Ebene: Menü, Dialog, Popover. Der einzige Ort, an dem Reinweiss im Haus
        vorkommt; als Lesegrund ist Reinweiss sonst ausgeschlossen. Oberste Sprosse der
-       Flaechen-Leiter.
+       Flächen-Leiter.
 
        raised/sunken ergänzt 7.6.2026: bg-paper-raised wurde in FristenKalender/wizard bereits
        verwendet, war aber nie generiert (stiller No-op — die Kreise/Flächen blieben transparent). */
     --paper-raised: #FFFFFF;
-    /* Die versenkte Flaeche: Mulde unter Eingabefeldern; speist `well` und `karte-leer` (Kantone
-       ohne erfasste Erlasse). Unterste Sprosse der Flaechen-Leiter. */
+    /* Die versenkte Fläche: Mulde unter Eingabefeldern; speist `well` und `karte-leer` (Kantone
+       ohne erfasste Erlasse). Unterste Sprosse der Flächen-Leiter. */
     --paper-sunken: #F3F0EA;
     /* Karten, Kacheln und Panels (`.lc-card`, `.lc-tile`, `.lc-panel`). Dritte Sprosse der
-       Flaechen-Leiter; traegt dieselbe Tinte wie `paper`. */
+       Flächen-Leiter; trägt dieselbe Tinte wie `paper`. */
     --surface: #FCFAF6;
-    /* Karten-Namensraum fuer die schwebende Ebene: wertgleicher Alias auf `paper-raised`. Eine
-       Toenung, zwei semantische Namensraeume - so bleibt im Markup lesbar, ob eine Karte oder eine
-       Seitenflaeche gemeint ist. */
+    /* Karten-Namensraum für die schwebende Ebene: wertgleicher Alias auf `paper-raised`. Eine
+       Tönung, zwei semantische Namensräume - so bleibt im Markup lesbar, ob eine Karte oder eine
+       Seitenfläche gemeint ist. */
     --surface-raised: var(--paper-raised);
-    /* Das Eingabefeld (`.lc-input`): versenkte Flaeche unter Suchfeld, Formularfeld und Select.
-       Hell als Alias auf `paper-sunken` gefuehrt; dunkel schreibt die Quelle denselben Wert noch
-       einmal aus. */
+    /* Das Eingabefeld (`.lc-input`): versenkte Fläche unter Suchfeld, Formularfeld und Select. Hell
+       als Alias auf `paper-sunken` geführt; dunkel schreibt die Quelle denselben Wert noch einmal
+       aus. */
     --well: var(--paper-sunken);
     /* Die 2-px-Kante unter Kopfzeilen (Titelblatt-Zeile). Solider Ton, nicht transparent gemischt -
-       eine der zwei Trennlinien, ueber die das Haus gliedert, statt ueber Kaesten und Fuellungen.
+       eine der zwei Trennlinien, über die das Haus gliedert, statt über Kästen und Füllungen.
 
        W2·24-DESIGN-IDENTITAET R1 · DIE ZWEI TRENNLINIEN DES NEUEN BILDES.
        Anders als --line/--line-strong (transparente Mischungen, die sich der
@@ -216,15 +216,15 @@
        1-px-Zeilentrennung im Satzspiegel, --rule die 2-px-Kante unter der
        Titelblatt-Zeile. Hier als Grundschicht definiert; Konsumenten ab R2. */
     --rule: var(--ink-900);
-    /* Der 1-px-Zeilentrenner im Satzspiegel und in Menuelisten. Zweite der zwei soliden
-       Trennlinien; sie ordnet Zeilen, ohne eine Flaeche zu erzeugen. KONTRAST-VERMERK: rein
-       dekorativ, traegt keine Bedeutung - WCAG 1.4.11 (3:1) gilt dafuer nicht. Gemessen auf paper
-       1.31:1 hell / 1.39:1 dunkel und auf well 1.23:1 hell / 1.48:1 dunkel. Nie fuer Text oder fuer
-       eine Kante, die eine Aussage traegt. */
+    /* Der 1-px-Zeilentrenner im Satzspiegel und in Menülisten. Zweite der zwei soliden Trennlinien;
+       sie ordnet Zeilen, ohne eine Fläche zu erzeugen. KONTRAST-VERMERK: rein dekorativ, trägt
+       keine Bedeutung - WCAG 1.4.11 (3:1) gilt dafür nicht. Gemessen auf paper 1.31:1 hell / 1.39:1
+       dunkel und auf well 1.23:1 hell / 1.48:1 dunkel. Nie für Text oder für eine Kante, die eine
+       Aussage trägt. */
     --rule-soft: #DDDAD4;
-    /* Staerkster Akzenttext und Link-Hover. Die Messing-Skala ist seit der Identitaets-Runde
-       NEUTRAL: der Klassenname sagt Messing, der Wert ist Tinte - massgeblich ist der Wert. Liest
-       auf `paper`, `surface`, `paper-raised`, `well` und auf `brass-100`.
+    /* Stärkster Akzenttext und Link-Hover. Die Messing-Skala ist seit der Identitäts-Runde NEUTRAL:
+       der Klassenname sagt Messing, der Wert ist Tinte - massgeblich ist der Wert. Liest auf
+       `paper`, `surface`, `paper-raised`, `well` und auf `brass-100`.
 
        Messing – der eine Akzent (= gravierte Skala)
 
@@ -256,28 +256,29 @@
     /* Linien- und Fokus-Stufe der neutralen Skala: Kanten, Umrisse, der Ring der Kantonsauswahl,
        dunkel der Fokusring. Nicht-Text-Marke, darum 3:1 als Schwelle. */
     --brass-500: #7A766E;
-    /* Dekorative Linie und helle Flaeche der neutralen Skala (`accent-line-decor`). In beiden
-       Themes vergleichsweise hell - Text darauf nimmt darum `auf-gold`. KONTRAST-VERMERK: rein
-       dekorativ, traegt keine Bedeutung - WCAG 1.4.11 (3:1) gilt dafuer nicht. Gemessen auf paper
-       1.58:1 hell / 2.15:1 dunkel und auf well 1.48:1 hell / 2.29:1 dunkel. Nie fuer Text oder fuer
-       eine Kante, die eine Aussage traegt. */
+    /* Dekorative Linie und helle Fläche der neutralen Skala (`accent-line-decor`). In beiden Themes
+       vergleichsweise hell - Text darauf nimmt darum `auf-gold`. KONTRAST-VERMERK: rein dekorativ,
+       trägt keine Bedeutung - WCAG 1.4.11 (3:1) gilt dafür nicht. Gemessen auf paper 1.58:1 hell /
+       2.15:1 dunkel und auf well 1.48:1 hell / 2.29:1 dunkel. Nie für Text oder für eine Kante, die
+       eine Aussage trägt. */
     --brass-300: #CAC7C1;
-    /* Punkt- und Dekor-Stufe: Aufzaehlungsmarken, kleine Zeichen neben Text. */
+    /* Punkt- und Dekor-Stufe: Aufzählungsmarken, kleine Zeichen neben Text. */
     --brass-600: #4D4A44;
-    /* Flaechen- und Kantenstufe zwischen Linie und Flaeche; ruhige Trennungen ohne Textlast.
-       KONTRAST-VERMERK: rein dekorativ, traegt keine Bedeutung - WCAG 1.4.11 (3:1) gilt dafuer
-       nicht. Gemessen auf paper 2.35:1 hell / 3.45:1 dunkel und auf well 2.21:1 hell / 3.68:1
-       dunkel. Nie fuer Text oder fuer eine Kante, die eine Aussage traegt. */
+    /* Flächen- und Kantenstufe zwischen Linie und Fläche; ruhige Trennungen ohne Textlast.
+       KONTRAST-VERMERK: rein dekorativ, trägt keine Bedeutung - WCAG 1.4.11 (3:1) gilt dafür nicht.
+       Gemessen auf paper 2.35:1 hell / 3.45:1 dunkel und auf well 2.21:1 hell / 3.68:1 dunkel. Nie
+       für Text oder für eine Kante, die eine Aussage trägt. */
     --brass-400: #A6A39D;
-    /* Hover-Flaeche der Akzent-Rolle (`accent-bg-hover`): der angefasste Zustand eines
+    /* Hover-Fläche der Akzent-Rolle (`accent-bg-hover`): der angefasste Zustand eines
        Listeneintrags oder Knopfes. */
     --brass-200: #E6E4E0;
-    /* Ruhende Akzent-Flaeche (`accent-bg`): aktiver Navigations-Grund, Badge-Grund. Traegt
+    /* Ruhende Akzent-Fläche (`accent-bg`): aktiver Navigations-Grund, Badge-Grund. Trägt
        `brass-800` und `brass-700` als Text. */
     --brass-100: #F3F1ED;
     /* Registerfarbe GESETZE. Die vier Registerfarben sind die einzige Farbe des Hauses und stehen
-       nur als Strich, Reiter-Unterkante und Randmarke - nie als Flaeche unter Fliesstext und nie
-       allein bedeutungstragend. Speist auch die Fuellungen der Schweiz-Karte und `karte-marke`.
+       als Strich, Reiter-Unterkante und Randmarke; als Fläche nur über die Flächen-Token
+       `reg-*-flaeche` (F0.2 i. d. F. 22.9.2026), nie der Registerton selbst unter Fliesstext und
+       nie allein bedeutungstragend. Speist auch die Füllungen der Schweiz-Karte und `karte-marke`.
        Liest auf `paper`, `surface`, `paper-raised` und `well`.
 
        ── REGISTERFARBEN (W2·24-DESIGN-IDENTITAET R1, Referenzbild §5) ───────
@@ -290,106 +291,105 @@
 
        Gesetze — David 6.9.: eine Stufe kräftiger (8.1:1 auf Papier) */
     --reg-g: #1D4E89;
-    /* Registerfarbe RECHTSPRECHUNG. Bewusst dezent gehalten. Nur als Strich, Kante oder Marke;
-       liest auf `paper`, `surface`, `paper-raised` und `well`.
+    /* Registerfarbe RECHTSPRECHUNG. Bewusst dezent gehalten. Als Strich, Kante oder Marke, als
+       Fläche nur über `reg-r-flaeche` (F0.2); liest auf `paper`, `surface`, `paper-raised` und
+       `well`.
 
        Rechtsprechung — bewusst dezent (David 6.9.: «dezenter rot einsetzen») */
     --reg-r: #7A1F2B;
-    /* Registerfarbe MATERIALIEN. Nur als Strich, Kante oder Marke; liest auf `paper`, `surface`,
-       `paper-raised` und `well`.
+    /* Registerfarbe MATERIALIEN. Als Strich, Kante oder Marke, als Fläche nur über `reg-m-flaeche`
+       (F0.2); liest auf `paper`, `surface`, `paper-raised` und `well`.
 
        Materialien — kräftiger (5.1:1 auf Papier) */
     --reg-m: #2F7A3E;
-    /* Registerfarbe WERKZEUGE. Nur als Strich, Kante oder Marke; liest auf `paper`, `surface`,
-       `paper-raised` und `well`.
+    /* Registerfarbe WERKZEUGE. Als Strich, Kante oder Marke, als Fläche nur über `reg-w-flaeche`
+       (F0.2); liest auf `paper`, `surface`, `paper-raised` und `well`.
 
        Werkzeuge — kräftiger, bleibt ≥ 4.5 auf Well (4.97) */
     --reg-w: #8F5E0E;
-    /* Getoente Flaeche des Registers «Gesetze» — der Entscheid «Farbe als Flaeche» (David
-       22.9.2026,
-       FAHRPLAN-WERKBANK-UMBAU §4 Ziff. 3; Reglement F0.2 «nie als Flaeche» ist damit abgeloest).
+    /* Getönte Fläche des Registers «Gesetze» — der Entscheid «Farbe als Fläche» (David 22.9.2026,
+       FAHRPLAN-WERKBANK-UMBAU §4 Ziff. 3; Reglement F0.2 «nie als Fläche» ist damit abgelöst).
 
        REZEPT, deterministisch gerechnet (culori, Interpolation in OKLab, Ergebnis auf sRGB-Hex
        gerundet):
-       14 % `reg-g` auf `paper` des jeweiligen Themas. Die Flaeche ist damit kein neuer
-       Farbwert, sondern die Registerfarbe selbst, so weit zurueckgenommen, dass Fliesstext darauf
+       14 % `reg-g` auf `paper` des jeweiligen Themas. Die Fläche ist damit kein neuer
+       Farbwert, sondern die Registerfarbe selbst, so weit zurückgenommen, dass Fliesstext darauf
        steht.
 
-       GEMESSEN (WCAG 2.x Kontrastverhaeltnis, w3.org/TR/WCAG22/#contrast-minimum ·
+       GEMESSEN (WCAG 2.x Kontrastverhältnis, w3.org/TR/WCAG22/#contrast-minimum ·
        #non-text-contrast):
        hell   #D9DEE4  ink-900 11.59:1 · ink-600 5.38:1 · reg-g 6.20:1
        dunkel #2A2C31  ink-900 10.60:1 · ink-600 5.25:1 · reg-g 6.84:1
        Auflagen: `ink-900` und `ink-600` >= 4.5:1 in beiden Themen (Text, SC 1.4.3), die
        Registerfarbe
-       selbst >= 3:1 auf ihrer Flaeche (Nicht-Text/Marke, SC 1.4.11). Alle acht Paare sind seit
-       22.9.2026 harte Pflichtpaare in `check:farbwelt` — eine spaetere Verschiebung von `paper`,
+       selbst >= 3:1 auf ihrer Fläche (Nicht-Text/Marke, SC 1.4.11). Alle acht Paare sind seit
+       22.9.2026 harte Pflichtpaare in `check:farbwelt` — eine spätere Verschiebung von `paper`,
        `reg-g` oder der Tinten-Rampe wird dort rot, nicht still. */
     --reg-g-flaeche: #D9DEE4;
-    /* Getoente Flaeche des Registers «Rechtsprechung» — der Entscheid «Farbe als Flaeche» (David
+    /* Getönte Fläche des Registers «Rechtsprechung» — der Entscheid «Farbe als Fläche» (David
        22.9.2026,
-       FAHRPLAN-WERKBANK-UMBAU §4 Ziff. 3; Reglement F0.2 «nie als Flaeche» ist damit abgeloest).
+       FAHRPLAN-WERKBANK-UMBAU §4 Ziff. 3; Reglement F0.2 «nie als Fläche» ist damit abgelöst).
 
        REZEPT, deterministisch gerechnet (culori, Interpolation in OKLab, Ergebnis auf sRGB-Hex
        gerundet):
-       14 % `reg-r` auf `paper` des jeweiligen Themas. Die Flaeche ist damit kein neuer
-       Farbwert, sondern die Registerfarbe selbst, so weit zurueckgenommen, dass Fliesstext darauf
+       14 % `reg-r` auf `paper` des jeweiligen Themas. Die Fläche ist damit kein neuer
+       Farbwert, sondern die Registerfarbe selbst, so weit zurückgenommen, dass Fliesstext darauf
        steht.
 
-       GEMESSEN (WCAG 2.x Kontrastverhaeltnis, w3.org/TR/WCAG22/#contrast-minimum ·
+       GEMESSEN (WCAG 2.x Kontrastverhältnis, w3.org/TR/WCAG22/#contrast-minimum ·
        #non-text-contrast):
        hell   #EAD8D3  ink-900 11.40:1 · ink-600 5.29:1 · reg-r 7.41:1
        dunkel #332928  ink-900 10.70:1 · ink-600 5.30:1 · reg-r 6.34:1
        Auflagen: `ink-900` und `ink-600` >= 4.5:1 in beiden Themen (Text, SC 1.4.3), die
        Registerfarbe
-       selbst >= 3:1 auf ihrer Flaeche (Nicht-Text/Marke, SC 1.4.11). Alle acht Paare sind seit
-       22.9.2026 harte Pflichtpaare in `check:farbwelt` — eine spaetere Verschiebung von `paper`,
+       selbst >= 3:1 auf ihrer Fläche (Nicht-Text/Marke, SC 1.4.11). Alle acht Paare sind seit
+       22.9.2026 harte Pflichtpaare in `check:farbwelt` — eine spätere Verschiebung von `paper`,
        `reg-r` oder der Tinten-Rampe wird dort rot, nicht still. */
     --reg-r-flaeche: #EAD8D3;
-    /* Getoente Flaeche des Registers «Materialien» — der Entscheid «Farbe als Flaeche» (David
+    /* Getönte Fläche des Registers «Materialien» — der Entscheid «Farbe als Fläche» (David
        22.9.2026,
-       FAHRPLAN-WERKBANK-UMBAU §4 Ziff. 3; Reglement F0.2 «nie als Flaeche» ist damit abgeloest).
+       FAHRPLAN-WERKBANK-UMBAU §4 Ziff. 3; Reglement F0.2 «nie als Fläche» ist damit abgelöst).
 
        REZEPT, deterministisch gerechnet (culori, Interpolation in OKLab, Ergebnis auf sRGB-Hex
        gerundet):
-       14 % `reg-m` auf `paper` des jeweiligen Themas. Die Flaeche ist damit kein neuer
-       Farbwert, sondern die Registerfarbe selbst, so weit zurueckgenommen, dass Fliesstext darauf
+       14 % `reg-m` auf `paper` des jeweiligen Themas. Die Fläche ist damit kein neuer
+       Farbwert, sondern die Registerfarbe selbst, so weit zurückgenommen, dass Fliesstext darauf
        steht.
 
-       GEMESSEN (WCAG 2.x Kontrastverhaeltnis, w3.org/TR/WCAG22/#contrast-minimum ·
+       GEMESSEN (WCAG 2.x Kontrastverhältnis, w3.org/TR/WCAG22/#contrast-minimum ·
        #non-text-contrast):
        hell   #DEE5D7  ink-900 12.17:1 · ink-600 5.65:1 · reg-m 4.10:1
        dunkel #2B2F25  ink-900 10.37:1 · ink-600 5.14:1 · reg-m 7.91:1
        Auflagen: `ink-900` und `ink-600` >= 4.5:1 in beiden Themen (Text, SC 1.4.3), die
        Registerfarbe
-       selbst >= 3:1 auf ihrer Flaeche (Nicht-Text/Marke, SC 1.4.11). Alle acht Paare sind seit
-       22.9.2026 harte Pflichtpaare in `check:farbwelt` — eine spaetere Verschiebung von `paper`,
+       selbst >= 3:1 auf ihrer Fläche (Nicht-Text/Marke, SC 1.4.11). Alle acht Paare sind seit
+       22.9.2026 harte Pflichtpaare in `check:farbwelt` — eine spätere Verschiebung von `paper`,
        `reg-m` oder der Tinten-Rampe wird dort rot, nicht still. */
     --reg-m-flaeche: #DEE5D7;
-    /* Getoente Flaeche des Registers «Werkzeuge» — der Entscheid «Farbe als Flaeche» (David
-       22.9.2026,
-       FAHRPLAN-WERKBANK-UMBAU §4 Ziff. 3; Reglement F0.2 «nie als Flaeche» ist damit abgeloest).
+    /* Getönte Fläche des Registers «Werkzeuge» — der Entscheid «Farbe als Fläche» (David 22.9.2026,
+       FAHRPLAN-WERKBANK-UMBAU §4 Ziff. 3; Reglement F0.2 «nie als Fläche» ist damit abgelöst).
 
        REZEPT, deterministisch gerechnet (culori, Interpolation in OKLab, Ergebnis auf sRGB-Hex
        gerundet):
-       14 % `reg-w` auf `paper` des jeweiligen Themas. Die Flaeche ist damit kein neuer
-       Farbwert, sondern die Registerfarbe selbst, so weit zurueckgenommen, dass Fliesstext darauf
+       14 % `reg-w` auf `paper` des jeweiligen Themas. Die Fläche ist damit kein neuer
+       Farbwert, sondern die Registerfarbe selbst, so weit zurückgenommen, dass Fliesstext darauf
        steht.
 
-       GEMESSEN (WCAG 2.x Kontrastverhaeltnis, w3.org/TR/WCAG22/#contrast-minimum ·
+       GEMESSEN (WCAG 2.x Kontrastverhältnis, w3.org/TR/WCAG22/#contrast-minimum ·
        #non-text-contrast):
        hell   #EBE1D3  ink-900 12.13:1 · ink-600 5.63:1 · reg-w 4.30:1
        dunkel #332C21  ink-900 10.46:1 · ink-600 5.18:1 · reg-w 7.52:1
        Auflagen: `ink-900` und `ink-600` >= 4.5:1 in beiden Themen (Text, SC 1.4.3), die
        Registerfarbe
-       selbst >= 3:1 auf ihrer Flaeche (Nicht-Text/Marke, SC 1.4.11). Alle acht Paare sind seit
-       22.9.2026 harte Pflichtpaare in `check:farbwelt` — eine spaetere Verschiebung von `paper`,
+       selbst >= 3:1 auf ihrer Fläche (Nicht-Text/Marke, SC 1.4.11). Alle acht Paare sind seit
+       22.9.2026 harte Pflichtpaare in `check:farbwelt` — eine spätere Verschiebung von `paper`,
        `reg-w` oder der Tinten-Rampe wird dort rot, nicht still. */
     --reg-w-flaeche: #EBE1D3;
-    /* Tinte fuer Text auf einer stets hellen Flaeche (`brass-300` und verwandte
-       Gold-/Messing-Fuellungen). Kippt bewusst nicht mit dem Thema, sonst wuerde die Beschriftung
-       im Dunkel-Thema hell auf hell stehen (gemessen rund 1.3:1). Liest auf `brass-300`.
+    /* Tinte für Text auf einer stets hellen Fläche (`brass-300` und verwandte
+       Gold-/Messing-Füllungen). Kippt bewusst nicht mit dem Thema, sonst würde die Beschriftung im
+       Dunkel-Thema hell auf hell stehen (gemessen rund 1.3:1). Liest auf `brass-300`.
        KONTRAST-VERMERK: unter der Schwelle 4.5:1 - brass-300 dunkel 1.92:1. Der Wert bleibt exakt
-       wie in der Quelle; diese Paarung darf nicht fuer Lesetext verwendet werden.
+       wie in der Quelle; diese Paarung darf nicht für Lesetext verwendet werden.
 
        Fixe dunkle Tinte für Text auf STETS hellen Gold-Flächen (brass-300 ist
        in BEIDEN Modi hell). Flippt bewusst NICHT mit dem Thema — sonst kippt
@@ -406,10 +406,10 @@
        (flippt
        bewusst nicht) braucht die STETS helle Tinte (--auf-sage, aus --ink-fixed-light gespeist). */
     --auf-gold: var(--ink-fixed-dark);
-    /* Spiegelbild von `auf-gold`: helle Tinte fuer Text auf `ok-solid`, das bewusst nicht mit dem
+    /* Spiegelbild von `auf-gold`: helle Tinte für Text auf `ok-solid`, das bewusst nicht mit dem
        Thema kippt. Liest auf `ok-solid`. KONTRAST-VERMERK: unter der Schwelle 4.5:1 - ok-solid hell
        4.45:1, ok-solid dunkel 4.45:1. Der Wert bleibt exakt wie in der Quelle; diese Paarung darf
-       nicht fuer Lesetext verwendet werden.
+       nicht für Lesetext verwendet werden.
 
        C2 (5.9.2026): Text auf `--ok-solid` (= --sage-500, flippt bewusst NICHT
        mit dem Thema) braucht spiegelbildlich eine STETS helle Tinte — `text-paper`
@@ -417,24 +417,24 @@
        (dunkel, < 4.5:1 AA). Aus dem Solitär --ink-fixed-light gespeist, im
        Dunkel-Block NICHT überschrieben (Fund L6/Befund 2, FristenKalender.tsx). */
     --auf-sage: var(--ink-fixed-light);
-    /* Mitte der Status-Familie GRUEN (geltend, in Kraft, erledigt). Speist die getoente Flaeche und
+    /* Mitte der Status-Familie GRUEN (geltend, in Kraft, erledigt). Speist die getönte Fläche und
        die Rollen `ok-solid`/`sage-solid`; als Nicht-Text-Marke gedacht.
 
        `line`-Stufen (D-1.3): Nicht-Text-Kanten/Balken greifen den Linien-Alias (dunkel auf -700
        gehoben), NIE -500 direkt (WCAG 1.4.11). `solid`/`text`-Rollen (D-2) analog zu accent —
        …-500/-700 als Rolle. */
     --sage-500: #5F7A58;
-    /* Status-Text GRUEN: Badge- und Hinweistext fuer geltende Faelle. Liest auf `paper`, `surface`,
+    /* Status-Text GRUEN: Badge- und Hinweistext für geltende Fälle. Liest auf `paper`, `surface`,
        `paper-raised` und `well`. */
     --sage-700: #48603F;
-    /* Mitte der Status-Familie BLAUGRAU (neutral, geplant, Entscheid). Speist Flaeche und
+    /* Mitte der Status-Familie BLAUGRAU (neutral, geplant, Entscheid). Speist Fläche und
        Linien-Rolle. KONTRAST-VERMERK: unter der Schwelle 3:1 - paper-raised dunkel 2.76:1. Der Wert
-       bleibt exakt wie in der Quelle; diese Paarung darf nicht fuer Lesetext verwendet werden. */
+       bleibt exakt wie in der Quelle; diese Paarung darf nicht für Lesetext verwendet werden. */
     --slate-500: #5B6B73;
     /* Status-Text BLAUGRAU: Text in Entwurfs-, Geplant- und Entscheid-Badges. Liest auf `paper`,
        `surface`, `paper-raised` und `well`. */
     --slate-700: #46535A;
-    /* Mitte der Status-Familie WARNUNG (Vorbehalt, Entwurf, Achtung). Speist Flaeche und
+    /* Mitte der Status-Familie WARNUNG (Vorbehalt, Entwurf, Achtung). Speist Fläche und
        `warn-solid`; die Linien-Rolle ist davon bewusst entkoppelt. */
     --warn-500: #C07A1A;
     /* Status-Text WARNUNG: Text in Warnhinweis und Entwurfs-Badge. Liest auf `paper`, `surface`,
@@ -444,12 +444,12 @@
        eine Stufe angehoben worden, als das dunkle Papier heller wurde, damit das bekannte
        Kontrast-Paar nicht tiefer sinkt. KONTRAST-VERMERK: unter der Schwelle 3:1 - paper dunkel
        2.80:1, surface dunkel 2.65:1, paper-raised dunkel 2.43:1, well dunkel 2.99:1. Der Wert
-       bleibt exakt wie in der Quelle; diese Paarung darf nicht fuer Lesetext verwendet werden. */
+       bleibt exakt wie in der Quelle; diese Paarung darf nicht für Lesetext verwendet werden. */
     --danger-500: #9A3F30;
     /* Status-Text GEFAHR: Text in Fehler- und Aufhebungs-Hinweisen. Liest auf `paper`, `surface`,
        `paper-raised` und `well`. */
     --danger-700: #7A2F23;
-    /* Rollen-Name fuer Akzenttext und Links. Neue Komponenten greifen die Rolle, nie die nackte
+    /* Rollen-Name für Akzenttext und Links. Neue Komponenten greifen die Rolle, nie die nackte
        Stufe - so ist eine Rekalibrierung ein Eingriff an genau einer Stelle. Liest auf `paper`,
        `surface`, `paper-raised` und `well`.
 
@@ -464,15 +464,15 @@
        absichtliche Dark-Brass-Inversion (Befund 9) trägt --accent-hover — kein Werte-Tausch. */
     --accent-text: var(--brass-700);
     /* Der Fokusring (`:focus-visible`, 2 px Umriss) und der Kern des Doppelrings am Eingabefeld.
-       Hell auf die dunklere Stufe gelegt, weil die Linienstufe dort die 3:1 fuer Nicht-Text
-       verfehlt; dunkel umgekehrt, weil die Tinte dort als Umriss zu grell waere.
+       Hell auf die dunklere Stufe gelegt, weil die Linienstufe dort die 3:1 für Nicht-Text
+       verfehlt; dunkel umgekehrt, weil die Tinte dort als Umriss zu grell wäre.
 
        Fokus-Ton: brass-500 verfehlt im Hell die 3:1 (WCAG 1.4.11) auf
        paper/surface/well (~2.7–3.0:1). brass-700 (≈4.7:1) erfüllt es überall.
        Im Dunkel bleibt brass-500 (dort hell genug) — siehe html.dark-Override.
        --focus speist auch --ring (lc-input-Doppelring) und :focus-visible. */
     --focus: var(--brass-700);
-    /* Linienton der neutralen Skala: Kante von Notiz-Kaesten, Akzentlinie ueber einer Karte, Umriss
+    /* Linienton der neutralen Skala: Kante von Notiz-Kästen, Akzentlinie über einer Karte, Umriss
        des Umriss-Knopfes.
 
        Linien-Töne für Akzent-/Notice-Borders: in Hell die Status-Mitte (-500),
@@ -480,8 +480,8 @@
        speist die -bg-color-mix-Flächen). */
     --brass-line: var(--brass-500);
     /* Der EINZIGE Linienton, der von seiner Familien-Mitte entkoppelt ist. Grund ist eine Messung:
-       auf der getoenten Warn-Flaeche mass die Mitte genau 3.008:1 gegen die 3:1-Schwelle fuer
-       Nicht-Text-Kontraste - zu wenig Abstand fuer jede Token-Rundung. Der Wert ist die Mitte, eine
+       auf der getönten Warn-Fläche mass die Mitte genau 3.008:1 gegen die 3:1-Schwelle für
+       Nicht-Text-Kontraste - zu wenig Abstand für jede Token-Rundung. Der Wert ist die Mitte, eine
        Spur abgedunkelt, Farbwinkel und Buntheit gehalten.
 
        QS-UI-WARNLINE (FAHRPLAN-UI-QUALITAET.md §11): --warn-line ist als
@@ -505,7 +505,7 @@
     /* Kante und Balken der Gefahr-Rolle. Dunkel auf die helle Stufe gehoben, weil die Mitte dort
        nur rund 2.7:1 auf dem dunklen Papier erreicht. */
     --danger-line: var(--danger-500);
-    /* Kante und Balken der Gruen-Rolle. Dunkel auf die helle Stufe gehoben, damit Nicht-Text-Kanten
+    /* Kante und Balken der Grün-Rolle. Dunkel auf die helle Stufe gehoben, damit Nicht-Text-Kanten
        klaren Abstand zur 3:1-Schwelle haben, ohne die Mitte zu verschieben.
 
        D-1.3: sage/slate nach demselben Muster — Call-Sites greifen NIE mehr
@@ -514,7 +514,7 @@
     --sage-line: var(--sage-500);
     /* Kante und Balken der Blaugrau-Rolle, dunkel wie `sage-line` auf die helle Stufe gehoben. */
     --slate-line: var(--slate-500);
-    /* Ruhende Flaeche der Akzent-Rolle: aktiver Navigationseintrag, ruhender Badge-Grund.
+    /* Ruhende Fläche der Akzent-Rolle: aktiver Navigationseintrag, ruhender Badge-Grund.
 
        ── Rollen-Alias-Schicht (D-2, Radix-Stufenlehre) ─────────────────────
        Wertidentische ROLLEN über den Basis-Skalen: Komponenten greifen die
@@ -531,50 +531,50 @@
 
        Akzent = Messing (--accent-text existiert bereits oben = --brass-700) */
     --accent-bg: var(--brass-100);
-    /* Flaeche der Akzent-Rolle im angefassten Zustand (Hover, offener Menueeintrag). */
+    /* Fläche der Akzent-Rolle im angefassten Zustand (Hover, offener Menüeintrag). */
     --accent-bg-hover: var(--brass-200);
-    /* Dekorative Linie der Akzent-Rolle - Zierstrich ohne Bedeutungslast, schwaecher als
-       `accent-line`. KONTRAST-VERMERK: rein dekorativ, traegt keine Bedeutung - WCAG 1.4.11 (3:1)
-       gilt dafuer nicht. Gemessen auf paper 1.58:1 hell / 2.15:1 dunkel und auf well 1.48:1 hell /
-       2.29:1 dunkel. Nie fuer Text oder fuer eine Kante, die eine Aussage traegt. */
+    /* Dekorative Linie der Akzent-Rolle - Zierstrich ohne Bedeutungslast, schwächer als
+       `accent-line`. KONTRAST-VERMERK: rein dekorativ, trägt keine Bedeutung - WCAG 1.4.11 (3:1)
+       gilt dafür nicht. Gemessen auf paper 1.58:1 hell / 2.15:1 dunkel und auf well 1.48:1 hell /
+       2.29:1 dunkel. Nie für Text oder für eine Kante, die eine Aussage trägt. */
     --accent-line-decor: var(--brass-300);
-    /* Bedeutungstragende Kante der Akzent-Rolle: Rand eines Hinweiskastens, Akzentlinie ueber einer
+    /* Bedeutungstragende Kante der Akzent-Rolle: Rand eines Hinweiskastens, Akzentlinie über einer
        Karte. */
     --accent-line: var(--brass-line);
-    /* Gefuellte Flaeche der Akzent-Rolle fuer Marken und Balken (kein Lesetext darauf). */
+    /* Gefüllte Fläche der Akzent-Rolle für Marken und Balken (kein Lesetext darauf). */
     --accent-solid: var(--brass-500);
-    /* Verstaerkter Akzenttext der Rolle, eine Stufe ueber `accent-text`. Liest auf `paper`,
+    /* Verstärkter Akzenttext der Rolle, eine Stufe über `accent-text`. Liest auf `paper`,
        `surface`, `paper-raised` und `well`. */
     --accent-text-strong: var(--brass-800);
     /* Der Link im Hover. Im Dunkel-Thema ist das absichtlich der HELLSTE Ton der Skala: Hover
        heisst hier heller, nicht dunkler - das ist eine gewollte Umkehr und kein zu reparierender
        Wertetausch. */
     --accent-hover: var(--brass-800);
-    /* Gefuellte Flaeche der Gruen-Rolle: Punkt, Balken, Zustandsmarke.
+    /* Gefüllte Fläche der Grün-Rolle: Punkt, Balken, Zustandsmarke.
 
        Status-Rollen analog (…-bg/…-line existieren; …-solid/-text ergänzt) */
     --sage-solid: var(--sage-500);
-    /* Text der Gruen-Rolle. Liest auf `paper`, `surface`, `paper-raised` und `well`. */
+    /* Text der Grün-Rolle. Liest auf `paper`, `surface`, `paper-raised` und `well`. */
     --sage-text: var(--sage-700);
-    /* Gefuellte Flaeche der Blaugrau-Rolle: Punkt und Balken an Entscheid- und Geplant-Marken.
+    /* Gefüllte Fläche der Blaugrau-Rolle: Punkt und Balken an Entscheid- und Geplant-Marken.
        KONTRAST-VERMERK: unter der Schwelle 3:1 - paper-raised dunkel 2.76:1. Der Wert bleibt exakt
-       wie in der Quelle; diese Paarung darf nicht fuer Lesetext verwendet werden. */
+       wie in der Quelle; diese Paarung darf nicht für Lesetext verwendet werden. */
     --slate-solid: var(--slate-500);
     /* Text der Blaugrau-Rolle. Liest auf `paper`, `surface`, `paper-raised` und `well`. */
     --slate-text: var(--slate-700);
-    /* Gefuellte Flaeche der Warn-Rolle: Schraffur-Streifen, Balken, Punkt. */
+    /* Gefüllte Fläche der Warn-Rolle: Schraffur-Streifen, Balken, Punkt. */
     --warn-solid: var(--warn-500);
     /* Text der Warn-Rolle. Liest auf `paper`, `surface`, `paper-raised` und `well`. */
     --warn-text: var(--warn-700);
-    /* Gefuellte Flaeche der Gefahr-Rolle: Balken und Punkt an Aufhebungs-Marken. KONTRAST-VERMERK:
+    /* Gefüllte Fläche der Gefahr-Rolle: Balken und Punkt an Aufhebungs-Marken. KONTRAST-VERMERK:
        unter der Schwelle 3:1 - paper dunkel 2.80:1, surface dunkel 2.65:1, paper-raised dunkel
        2.43:1, well dunkel 2.99:1. Der Wert bleibt exakt wie in der Quelle; diese Paarung darf nicht
-       fuer Lesetext verwendet werden. */
+       für Lesetext verwendet werden. */
     --danger-solid: var(--danger-500);
     /* Text der Gefahr-Rolle. Liest auf `paper`, `surface`, `paper-raised` und `well`. */
     --danger-text: var(--danger-700);
-    /* Zustands-Rolle ok/geltend/live als Flaeche - wertgleich zur Gruen-Familie, aber semantisch
-       getrennt von der Register-Bedeutung Materialien. Traegt `auf-sage` als Text.
+    /* Zustands-Rolle ok/geltend/live als Fläche - wertgleich zur Grün-Familie, aber semantisch
+       getrennt von der Register-Bedeutung Materialien. Trägt `auf-sage` als Text.
 
        F1 (§4b-B-i): Zustands-Rolle «ok/geltend/live» — semantisch getrennt von
        der Materialien-Kennfarbe sage, aber wertidentisch (zeigt auf sage). So
@@ -591,10 +591,10 @@
     /* Zustands-Rolle ok/geltend/live als Kante: Umriss des Termin-Rings, linke Kante des
        Geltend-Badges. */
     --ok-line: var(--sage-line);
-    /* Schweiz-Karte, Fuellung Stufe 1: Kanton mit duenn erfassten Erlassen. Die Fuellung kodiert
-       den Erfassungsgrad ueber EINEN Farbton in drei Helligkeiten - die Stufen trennt allein die
-       Helligkeit, nie der Farbton, damit sie auch bei Rot-Gruen-Schwaeche unterscheidbar bleiben.
-       Die Kantonstrennung traegt `karte-kante`.
+    /* Schweiz-Karte, Füllung Stufe 1: Kanton mit dünn erfassten Erlassen. Die Füllung kodiert den
+       Erfassungsgrad über EINEN Farbton in drei Helligkeiten - die Stufen trennt allein die
+       Helligkeit, nie der Farbton, damit sie auch bei Rot-Grün-Schwäche unterscheidbar bleiben. Die
+       Kantonstrennung trägt `karte-kante`.
 
        Schweiz-Karte: die FÜLLUNG kodiert den ERFASSUNGSGRAD (Entscheid David
        29.8.2026 «2B», Design-Review-Befund F1). Vorher streute ein Goldwinkel
@@ -621,13 +621,13 @@
        Tailwind-Utility registriert, damit das Farbwelt-Tor sie als Pflichtpaare prüfen kann
        (Bug-Check #568, §17). */
     --karte-duenn: hsl(215 32% 88%);
-    /* Schweiz-Karte, Fuellung Stufe 2: mittlerer Erfassungsgrad. */
+    /* Schweiz-Karte, Füllung Stufe 2: mittlerer Erfassungsgrad. */
     --karte-auswahl: hsl(215 38% 74%);
-    /* Schweiz-Karte, Fuellung Stufe 3: vollstaendig erfasst. Dunkel bewusst auf 36 % Helligkeit
-       gedeckelt - hoeher faellt die Kante unter die 3:1-Schwelle. */
+    /* Schweiz-Karte, Füllung Stufe 3: vollständig erfasst. Dunkel bewusst auf 36 % Helligkeit
+       gedeckelt - höher fällt die Kante unter die 3:1-Schwelle. */
     --karte-voll: hsl(215 42% 60%);
     /* Schweiz-Karte: Kanton ohne erfasste Erlasse, neutral und chromafrei. Der Unterschied wird
-       zusaetzlich durch eine Schraffur getragen, weil die Helligkeit allein ihn nicht traegt
+       zusätzlich durch eine Schraffur getragen, weil die Helligkeit allein ihn nicht trägt
        (gemessen 1.18:1 gegen Stufe 1 in beiden Themes).
 
        Kantone ohne erfasste Erlasse: neutral (chromafrei) UND schraffiert — die
@@ -635,8 +635,8 @@
        «nie nur Farbe»); die Luminanz allein täte es nicht (gemessen 1.18:1
        gegen «dünn» in beiden Themes). Gilt für beide Modi, kein Override. */
     --karte-leer: var(--paper-sunken);
-    /* Kantonsgrenze der Schweiz-Karte. Sie ist der Trennungstraeger und haelt mindestens 3:1 gegen
-       jede Fuellung; weil sie an der Tinte haengt, kippt sie mit dem Thema und traegt die Kante aus
+    /* Kantonsgrenze der Schweiz-Karte. Sie ist der Trennungsträger und hält mindestens 3:1 gegen
+       jede Füllung; weil sie an der Tinte hängt, kippt sie mit dem Thema und trägt die Kante aus
        einer Definition in beiden Modi.
 
        Kantonsgrenze: Luminanz-Kante ≥3:1 gegen JEDE Füllung (Befund F2 — vorher
@@ -644,9 +644,9 @@
        dem Modus (dunkle Tinte hell / helle Tinte dunkel) und trägt die Kante
        darum in beiden Themes aus EINER Definition. */
     --karte-kante: var(--ink-700);
-    /* Auswahl- und Hover-Ring eines Kantons, gezeichnet im Gehaeuse der Kante. Der Ring
-       unterscheidet sich von der gewoehnlichen Grenze ueber Farbe UND Strichstaerke (3-6 statt 1
-       Punkt der Zeichenflaeche) - dunkel traegt die Strichstaerke die Unterscheidung allein.
+    /* Auswahl- und Hover-Ring eines Kantons, gezeichnet im Gehäuse der Kante. Der Ring
+       unterscheidet sich von der gewöhnlichen Grenze über Farbe UND Strichstärke (3-6 statt 1 Punkt
+       der Zeichenfläche) - dunkel trägt die Strichstärke die Unterscheidung allein.
 
        Auswahl-/Hover-Ring: der Messing-Linienton (in BEIDEN Themes brass-500),
        gezeichnet IM Gehäuse der Kante (s. SchweizKarte). Die ≥3:1-Kante gegen
@@ -656,8 +656,8 @@
        3.70:1 hell, 1.74:1 dunkel — dunkel trägt darum die Strichstärke die
        Unterscheidung, nicht die Luminanz. Kein Dunkel-Override nötig. */
     --karte-marke: var(--reg-g);
-    /* Abdunkelnde Flaeche hinter einem angeschlagenen Blatt oder Menue. Die Farbe ist bewusst
-       reines Schwarz und nicht die Tinte: ein Tinten-Token wuerde im Dunkel-Thema aufhellen statt
+    /* Abdunkelnde Fläche hinter einem angeschlagenen Blatt oder Menü. Die Farbe ist bewusst reines
+       Schwarz und nicht die Tinte: ein Tinten-Token würde im Dunkel-Thema aufhellen statt
        abdunkeln.
 
        ── ABDUNKELNDE FLÄCHE HINTER EINEM OVERLAY (Scrim) · F2-1 ─────────────
@@ -681,10 +681,10 @@
        Wer eine Zahl ändert, ändert sie für die ganze ROLLE (§5). Wächter gegen
        neue Ad-hoc-Scrims: `scripts/check-design-tokens.ts` (Prüfung 5). */
     --scrim: rgb(0 0 0 / .30);
-    /* Abdunkelnde Flaeche hinter einem zentrierten modalen Dialog. Dieselbe Farbe, eine Stufe
-       dichter - je groesser die Flaeche des Overlays, desto weiter tritt der Rest zurueck. */
+    /* Abdunkelnde Fläche hinter einem zentrierten modalen Dialog. Dieselbe Farbe, eine Stufe
+       dichter - je grösser die Fläche des Overlays, desto weiter tritt der Rest zurück. */
     --scrim-dialog: rgb(0 0 0 / .40);
-    /* Abdunkelnde Flaeche hinter der Vollflaechen-Schublade. Dichteste der drei Stufen. */
+    /* Abdunkelnde Fläche hinter der Vollflächen-Schublade. Dichteste der drei Stufen. */
     --scrim-voll: rgb(0 0 0 / .50);
     /* W2·24-DESIGN-IDENTITAET R1 (6.9.2026) · ZWEI STIMMEN STATT EINER:
        Archivo (Grotesk) trägt die BEDIENUNG — Reiter, Knöpfe, Marginalien,
@@ -703,38 +703,38 @@
     /* Lese-Serif: Normtext, Entscheide und Titel (Rubrik V und, ab R3/R4, mehr). */
     --font-serif: 'Literata Variable','Literata Fallback','Literata Times Fallback','Charter','Georgia';
     --font-mono: ui-monospace,'SFMono-Regular','SF Mono','Menlo','Consolas','Liberation Mono';
-    /* Grundschritt des 8-px-Rasters, halbe Stufe: engste Luecke zwischen Marke und Wort.
+    /* Grundschritt des 8-px-Rasters, halbe Stufe: engste Lücke zwischen Marke und Wort.
 
        Mass-Skala (8-px-Raster) — Grundlage der meisten Abstände; einzelne
        Halbstufen (gap-1.5 = 6px) werden bewusst über Tailwind-Utilities gesetzt */
     --space-1: 4px;
-    /* Der Rasterschritt selbst: Standardabstand zwischen eng zusammengehoerenden Elementen. */
+    /* Der Rasterschritt selbst: Standardabstand zwischen eng zusammengehörenden Elementen. */
     --space-2: 8px;
-    /* Innenabstand kleiner Knoepfe und Chips. */
+    /* Innenabstand kleiner Knöpfe und Chips. */
     --space-3: 12px;
-    /* Innenabstand von Karten und Hinweiskaesten; Standardabstand zwischen Absaetzen. */
+    /* Innenabstand von Karten und Hinweiskästen; Standardabstand zwischen Absätzen. */
     --space-4: 16px;
-    /* Abstand zwischen Bloecken innerhalb einer Sektion. */
+    /* Abstand zwischen Blöcken innerhalb einer Sektion. */
     --space-6: 24px;
     /* Abstand zwischen Sektionen. */
     --space-8: 32px;
-    /* Grosser Sektionsabstand auf Uebersichtsseiten. */
+    /* Grosser Sektionsabstand auf Übersichtsseiten. */
     --space-12: 48px;
-    /* Abstand um eine eigenstaendige Seitenzone. */
+    /* Abstand um eine eigenständige Seitenzone. */
     --space-16: 64px;
-    /* Groesster Schritt der Skala: Luft vor und nach einer Seite. */
+    /* Grösster Schritt der Skala: Luft vor und nach einer Seite. */
     --space-24: 96px;
-    /* Anatomie-Hoehe der grossen Bedienelemente: Suchfeld und Segmente des Umschalters.
+    /* Anatomie-Höhe der grossen Bedienelemente: Suchfeld und Segmente des Umschalters.
 
        Suchfeld, Toggle-Segmente */
     --control-h: 44px;
-    /* Anatomie-Hoehe der Rechtsgebiet-Pillen.
+    /* Anatomie-Höhe der Rechtsgebiet-Pillen.
 
        Rechtsgebiet-Pills */
     --pill-h: 36px;
-    /* Mindest-Trefferflaeche jedes Bedienelements. Keine Hausnummer, sondern der normative Wert aus
+    /* Mindest-Trefferfläche jedes Bedienelements. Keine Hausnummer, sondern der normative Wert aus
        WCAG 2.2, Erfolgskriterium 2.5.8 Target Size (Minimum), Stufe AA. Ausgenommen sind
-       Inline-Links im Fliesstext und Ziele, deren Groesse der Browser bestimmt.
+       Inline-Links im Fliesstext und Ziele, deren Grösse der Browser bestimmt.
 
        Trefferfläche — EIN Token für die Mindest-Hitbox jedes Bedienelements
        (W2·10-UI-NAV-R4 / R6, DESIGN-REGLEMENT F9). 24 px ist KEINE Hausnummer,
@@ -747,8 +747,8 @@
        Grösse der Browser/UA bestimmt, und Bedienelemente, für die dieselbe
        Funktion daneben gross genug erreichbar ist («equivalent»). */
     --tap-ziel: 24px;
-    /* Komfort-Trefferflaeche nach WCAG 2.2, Erfolgskriterium 2.5.5 Target Size (Enhanced), Stufe
-       AAA. Gilt fuer allein stehende Chrome-Griffe; die 44 px an einem fertigen Knopf sind dagegen
+    /* Komfort-Trefferfläche nach WCAG 2.2, Erfolgskriterium 2.5.5 Target Size (Enhanced), Stufe
+       AAA. Gilt für allein stehende Chrome-Griffe; die 44 px an einem fertigen Knopf sind dagegen
        dessen Anatomie, kein Mindestmass.
 
        ── KOMFORT-Trefferfläche (W2·19-DESIGN-KONSISTENZ R2/F2-6) ────────────
@@ -771,8 +771,8 @@
        KONSUMENT: `.lc-leiste-griff-komfort` (unten). Der Wert steht EINMAL
        hier. */
     --tap-ziel-komfort: 44px;
-    /* Eine Zeilenhoehe fuer jede Menuezeile - gemessen, nicht gesetzt: drei von vier Zeilen trugen
-       diese Hoehe ohnehin. In rem, damit sie mit dem Schriftregler mitwaechst (WCAG 1.4.4).
+    /* Eine Zeilenhöhe für jede Menüzeile - gemessen, nicht gesetzt: drei von vier Zeilen trugen
+       diese Höhe ohnehin. In rem, damit sie mit dem Schriftregler mitwächst (WCAG 1.4.4).
 
        ── EINE ZEILENHÖHE FÜR JEDE MENÜZEILE (W2·24 D35-F4) ─────────────────
        BEFUND, gemessen 7.9.2026 im Ansicht-Menü des Lesers: die vier Zeilen
@@ -790,7 +790,7 @@
        Der Wert steht EINMAL hier; die Komponenten greifen ihn als Variable
        (§5/D2, dieselbe Regel wie `--tap-ziel`). */
     --menu-zeile-h: 2.375rem;
-    /* Hoehe der Titelblatt-Zeile der Kopfzeile, samt der 2-px-Kante am inneren Traeger.
+    /* Höhe der Titelblatt-Zeile der Kopfzeile, samt der 2-px-Kante am inneren Träger.
 
        ── W2·24-R4 · DIE APP-KRONE ALS EINE ZAHL ────────────────────────────
        R2 hat die Arbeitsleiste (`layout/Reiterleiste.tsx`) BEWUSST nicht kleben
@@ -814,13 +814,13 @@
        weiter im Fluss mit: sie trägt eine Angabe (Korpus-Stand), keine
        Bedienung, und scrollt darum weg wie Fliesstext. */
     --app-krone-h: 4rem;
-    /* Hoehe der klebenden Arbeitsleiste mit den Gesetzes-Reitern. Fester Wert, weil ein klebender
-       Streifen eine Hoehe haben muss, bevor etwas unter ihm rechnet. */
+    /* Höhe der klebenden Arbeitsleiste mit den Gesetzes-Reitern. Fester Wert, weil ein klebender
+       Streifen eine Höhe haben muss, bevor etwas unter ihm rechnet. */
     --app-reiter-h: 2.125rem;
-    /* Breite, die ein Gesetzes-Reiter fuer die Lesestelle freihaelt (Art. 336c). Gemessen: 60 px
-       decken jede Einzelstelle ab; nur seltene Bereichs-Angaben wachsen darueber hinaus, und dann
-       waechst der Reiter einmal statt bei jedem Artikelwechsel. Immer als Mindestbreite, nie als
-       feste Breite - die Stelle darf nicht verstuemmeln.
+    /* Breite, die ein Gesetzes-Reiter für die Lesestelle freihält (Art. 336c). Gemessen: 60 px
+       decken jede Einzelstelle ab; nur seltene Bereichs-Angaben wachsen darüber hinaus, und dann
+       wächst der Reiter einmal statt bei jedem Artikelwechsel. Immer als Mindestbreite, nie als
+       feste Breite - die Stelle darf nicht verstümmeln.
 
        --app-reiter-stelle-b · D27 (David 6.9.2026): die BREITE, die ein
        Gesetzes-Reiter für die Lesestellung freihält («Art. 336c»). Sie steht
@@ -838,8 +838,8 @@
        kleinsten wird. `min-width`, nie `width`: die Stelle darf nicht
        verstümmeln (§8). */
     --app-reiter-stelle-b: 3.75rem;
-    /* Kanten statt Kissen: alle fuenf Radius-Stufen stehen auf 0. Die Skala bleibt als EIN Ort
-       bestehen, damit die Konsumenten ohne Edit umfaerben. Diese Stufe traegt zugleich die nackte
+    /* Kanten statt Kissen: alle fünf Radius-Stufen stehen auf 0. Die Skala bleibt als EIN Ort
+       bestehen, damit die Konsumenten ohne Edit umfärben. Diese Stufe trägt zugleich die nackte
        Klasse rounded.
 
        Radien – W2·24-R1: KANTEN STATT KISSEN. Alle fünf Stufen sind 0; die
@@ -854,7 +854,7 @@
     --radius-lg: 0px;
     /* Kanten statt Kissen - 0. Vierte Stufe der Skala. */
     --radius-xl: 0px;
-    /* Kanten statt Kissen - 0. Fuenfte Stufe der Skala. Ausgenommen von der Regel sind nur echte
+    /* Kanten statt Kissen - 0. Fünfte Stufe der Skala. Ausgenommen von der Regel sind nur echte
        Punkte, Marken und Avatare bis 12 px, die als Vollkreis stehen bleiben. */
     --radius-2xl: 0px;
     /* Bewusst leer. Karten und Kacheln tragen keinen Schatten mehr; die Utility bleibt als
@@ -868,13 +868,13 @@
        Historie (Design-Review
        6.6.2026: vorher identische Tokens) */
     --shadow-sm: none;
-    /* Bewusst leer - dieselbe Begruendung wie bei shadow-sm. */
+    /* Bewusst leer - dieselbe Begründung wie bei shadow-sm. */
     --shadow-md: none;
-    /* Der EINE Schatten des Hauses. Er gehoert ausschliesslich der schwebenden Ebene - Menue,
-       Dialog, Popover - weil dort ablesbar sein muss, dass etwas ueber dem Blatt liegt. Dunkel
-       tiefer, weil ein Schatten auf dunklem Grund sonst nicht traegt. */
+    /* Der EINE Schatten des Hauses. Er gehört ausschliesslich der schwebenden Ebene - Menü, Dialog,
+       Popover - weil dort ablesbar sein muss, dass etwas über dem Blatt liegt. Dunkel tiefer, weil
+       ein Schatten auf dunklem Grund sonst nicht trägt. */
     --shadow-lg: 0 8px 24px rgb(0 0 0 / .12);
-    /* Der abgesetzte Doppelring am Eingabefeld: erst ein Spalt in der Kartenflaeche, dann der
+    /* Der abgesetzte Doppelring am Eingabefeld: erst ein Spalt in der Kartenfläche, dann der
        Fokuston. Quelle schreibt ihn als var(--surface) und var(--focus); hier stehen die
        Literalwerte der beiden Variablen je Thema, weil ein Schatten keine Variablen tragen darf.
 
@@ -914,27 +914,27 @@
     --z-sticky: 10;
     /* Zweite klebende Ebene im Entscheid-Leser. */
     --z-entscheid-sticky: 15;
-    /* Reserviert: abdunkelnde Flaeche des Ansicht-Menues im Leser. Der Traeger ist entfallen, die
-       Sprosse bleibt reserviert, weil 17 und 19 sich ausdruecklich gegen sie herleiten. */
+    /* Reserviert: abdunkelnde Fläche des Ansicht-Menüs im Leser. Der Träger ist entfallen, die
+       Sprosse bleibt reserviert, weil 17 und 19 sich ausdrücklich gegen sie herleiten. */
     --z-reader-scrim: 16;
-    /* Der Leser-Kopf, der ueber seiner eigenen abdunkelnden Flaeche klebt. */
+    /* Der Leser-Kopf, der über seiner eigenen abdunkelnden Fläche klebt. */
     --z-reader-kopf: 17;
-    /* Das Inhalts-Kopfband: ueber allen klebenden Leser-Leisten, unter der App-Kopfzeile. */
+    /* Das Inhalts-Kopfband: über allen klebenden Leser-Leisten, unter der App-Kopfzeile. */
     --z-inhalt-kopf: 19;
     /* Die App-Kopfzeile. */
     --z-leiste: 20;
-    /* Popover, Tooltips und Menues. */
+    /* Popover, Tooltips und Menüs. */
     --z-dropdown: 30;
-    /* Abdunkelnde Flaechen hinter Blaettern und Panels. */
+    /* Abdunkelnde Flächen hinter Blättern und Panels. */
     --z-overlay: 40;
-    /* Dialog-, Blatt- und Panel-Inhalt ueber seiner abdunkelnden Flaeche. */
+    /* Dialog-, Blatt- und Panel-Inhalt über seiner abdunkelnden Fläche. */
     --z-modal: 50;
     /* @generated tokens:end */
     /* Haarlinien */
     --line:color-mix(in oklab, var(--ink-900) 10%, transparent);
     --line-strong:color-mix(in oklab, var(--ink-900) 18%, transparent);
-    /* Gesetzes-Reader — EINE Linien-Sprache (W2·5d G1, DESIGN-REGLEMENT-NORMTEXT
-       §Linien-Kanon): benannte Rollen statt frei gewählter Ad-hoc-Opazitäten von
+    /* Gesetzes-Reader — EINE Linien-Sprache (W2·5d G1, DESIGN-REGLEMENT
+       §N-4b Linien-Kanon): benannte Rollen statt frei gewählter Ad-hoc-Opazitäten von
        --line (Artikel /70, Sektion voll|/50, Tabellenzeile/Fussnoten). Werte am
        bestehenden --line gemessen (10 %); nur der oberste Struktur-Trenner eine
        Spur kräftiger (14 %).
@@ -1114,11 +1114,11 @@
     --slate-700: #A9B8BF;
     --warn-700: #E3AC5E;
     /* D12 (6.9.2026), §17-Wurzelfix statt Baseline-Absenkung: das dunkle Papier
-       wird von #151515 auf #1B1917 gehoben — dadurch faellt das ALTBEKANNTE
+       wird von #151515 auf #1B1917 gehoben — dadurch fällt das ALTBEKANNTE
        Riss-Paar danger-500/paper dunkel von 2.72:1 auf 2.61:1. Ein bekannter
        Riss darf nicht tiefer sinken (Baseline-Guard). Statt die Baseline
        nachzuziehen, wird der Ton im DUNKELMODUS um dieselbe Stufe mitgehoben
-       (L 0.488 -> 0.504, Hue/Chroma unveraendert): gemessen 2.80:1, also BESSER
+       (L 0.488 -> 0.504, Hue/Chroma unverändert): gemessen 2.80:1, also BESSER
        als vor D12. Hell bleibt #9A3F30 unangetastet. */
     --danger-500: #9F4434;
     --danger-700: #E29280;
@@ -3376,7 +3376,7 @@
      wörtlich «bau deinen vorschlag (umriss grau)»): Umriss-Form wie
      lc-badge-entwurf, aber in der neutralen slate-Rolle. Beide Alt-Töne
      (soft-Füllung, warn-Umriss) waren vom Farb-Wörterbuch ausgeschlossen
-     (DESIGN-REGLEMENT-NORMTEXT §Farb-Wörterbuch: slate ≠ «in Vorbereitung»,
+     (DESIGN-REGLEMENT §N-4b-B Farb-Wörterbuch: slate ≠ «in Vorbereitung»,
      warn = echter Sach-/Fassungsvorbehalt). Kanonischer Wortlaut:
      «In Vorbereitung» — Wächter: design-konsistenz-chips-marken. */
   .lc-badge-geplant { @apply lc-badge; --badge-linie: var(--slate-line); color: var(--slate-700); }

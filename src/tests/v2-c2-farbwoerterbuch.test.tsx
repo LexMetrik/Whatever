@@ -22,7 +22,7 @@
  *
  * OFFEN (im PR deklariert): `lc-chip-geltend`/`lc-chip-vorbehalt` sind damit in
  * `src/` unbenutzt. Ihr Rückbau berührt das Farb-Wörterbuch in
- * DESIGN-REGLEMENT-NORMTEXT.md und ist als eigener Schritt geführt, nicht als
+ * DESIGN-REGLEMENT.md §N-4b-B und ist als eigener Schritt geführt, nicht als
  * Nebenwirkung dieses UI-PR.
  */
 import { describe, it, expect } from 'vitest';

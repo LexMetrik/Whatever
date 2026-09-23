@@ -54,7 +54,7 @@ OR), rechnet die 5 % aber **nicht** selbst nach. Stateless: keine Speicherung.
 ### 3a. Amtlicher Zitierer BGE/BGer (`src/lib/gerichtszitat.ts`)
 
 Deterministischer Struktur-Formatierer (§2), reine Zeichenketten-Ausgabe, kein
-Berechnungsergebnis (dokumentierte R12-Ausnahme des DESIGN-REGLEMENT-RECHNER).
+Berechnungsergebnis (dokumentierte Ausnahme DESIGN-REGLEMENT §R-12).
 
 - **BGE:** `BGE {Band} {Teil} {Seite}` [+ ` E. {Erwägung}`]. Sammlungsteile
   I · Ia · Ib · II · III · IV · V (fünf Hauptteile der Amtlichen Sammlung +

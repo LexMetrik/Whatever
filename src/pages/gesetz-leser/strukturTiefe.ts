@@ -20,7 +20,7 @@
 // Mit dem Rückbau entfallen `guideEbene`, `dichteAmGuide`, `autoGuide`, der
 // Schalter «Linien» und das Aufbau-Regelwerk in `check:linien-kanon` (Teil B).
 // Struktur im Fliesstext trägt allein die Typo (seit §4b-C, 29.8.2026 — der Tiefen-Einzug ist aufgehoben, Entscheid David «eine Kante wie Fedlex»); zuvor die höchsten zwei Ränge
-// der Rangfolge aus DESIGN-REGLEMENT-NORMTEXT §4b («Typo > Einzug > Guide»),
+// der Rangfolge aus DESIGN-REGLEMENT §N-4b («Typo > Einzug > Guide»),
 // deren dritter Rang damit ersatzlos wegfällt. Übrig bleibt genau die Kennzahl
 // unten; sie hat mit Linien nie etwas zu tun gehabt.
 //

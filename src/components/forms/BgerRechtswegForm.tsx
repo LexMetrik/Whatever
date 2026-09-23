@@ -27,7 +27,7 @@ import {
 
 // ─── BGer-Rechtsweg-Form (BGG) — FAHRPLAN-BGER-RECHTSWEG R-2 ────────────────
 // Reine Darstellung (§3): Weg-Weiche + Eingaben; gerechnet wird in
-// lib/bgerRechtsweg.ts. Aufbau nach DESIGN-REGLEMENT-RECHNER R4.
+// lib/bgerRechtsweg.ts. Aufbau nach DESIGN-REGLEMENT §R-4.
 
 const WEGE: { code: BgerWeg; label: string; sub: string }[] = [
   { code: 'zivil', label: 'Zivilsache', sub: 'Beschwerde in Zivilsachen (Art. 72 ff. BGG) – inkl. SchKG-Entscheide der Gerichte' },

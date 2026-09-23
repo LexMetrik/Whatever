@@ -32,7 +32,7 @@ import {
 // gehört zu H4 (dort werden die B-Specs geschlossen umgehängt) und wird hier NICHT
 // vorgezogen.
 //
-// R5 (W2·5d G1 / DESIGN-REGLEMENT-NORMTEXT §Typo-Skala): die Lesespalte hält ein
+// R5 (W2·5d G1 / DESIGN-REGLEMENT §N-4b Lese-Typografie): die Lesespalte hält ein
 // komfortables Zeilenmass — Desktop ≤ 80 ch @ 1440px (Herleitung der Zahl unten,
 // «DIE 80-ch-SCHWELLE»), Mobil hinreichend breit @ 390px.
 // Der frühere Ist-Fehler: arbitrary max-w-[52/56rem] (zu breit) + auf Mobil ~16 ch
@@ -391,7 +391,7 @@ test.describe('S2 · Schalter-Rundlauf ist verlustfrei (A1-konform)', () => {
 //    21.8.2026, Auftrag David «gesetzestext … breiter») ──────────────────────
 //
 // Die Schwelle stand hier bis 21.8.2026 auf 75 (HAUSdecke,
-// DESIGN-REGLEMENT-NORMTEXT §Typo-Skala) — ENGER als die WCAG-Decke (SC 1.4.8
+// DESIGN-REGLEMENT §N-4b Lese-Typografie) — ENGER als die WCAG-Decke (SC 1.4.8
 // = 80 ch, die der S2-Block oben an drei Breiten prüft). Mit F3 = V2 (17 px)
 // gemessen war sie schon ohne LESEMASS_MAX knapp: ZGB 68 · OR 71 · StPO 73 ·
 // VMWG 74 · StGB 77 ch — VMWG mit 1 ch Luft, StGB (nicht in `ERLASSE`) DARÜBER.

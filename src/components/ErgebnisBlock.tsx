@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { ErgebnisSprung, LiveHeader } from './vorlagen/ui';
 
-// ─── Geteilter Ergebnisblock-Rahmen (DESIGN-REGLEMENT-RECHNER R4) ───────────
+// ─── Geteilter Ergebnisblock-Rahmen (DESIGN-REGLEMENT §R-4) ─────────────────
 // EIN Rahmen für jedes Rechner-Ergebnis: Sprungmarke (mobil), Live-Hinweis,
 // Einblendung und EINE aria-live-Region. Vorher trugen die Formulare diese
 // vier Stücke in wechselnden Teilmengen (Audit 11.6.2026: Sprung fehlte in

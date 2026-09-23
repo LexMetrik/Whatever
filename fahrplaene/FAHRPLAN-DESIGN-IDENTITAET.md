@@ -34,7 +34,7 @@ Golden byte-gleich (Token-Schicht berührt keine Ausgaben); Schrift-Lizenzen off
 3. **Kanten statt Kissen:** Radien auf `--radius-sm` (≤ 4 px), Trennung über Linien statt
    Flächen-Tönung; Schatten nur für schwebende Ebenen (Menüs, Dialoge).
 4. **Text-Schrift mit Charakter:** Serife (OFL: Source Serif 4 · Literata · Newsreader) für
-   Normtext und Entscheide (`DESIGN-REGLEMENT-NORMTEXT.md` nachziehen), Grotesk nur für
+   Normtext und Entscheide (`DESIGN-REGLEMENT.md` §N nachziehen), Grotesk nur für
    Bedienelemente. Lesemass (CPL, Zeilenhöhe) neu messen.
 5. **Ein Marken-Motiv:** Siegel + Skalenstrich als einziges wiederkehrendes Zeichen, in der
    neuen Akzentfarbe (Logo.tsx, Aktivmarke Sidebar).
@@ -338,7 +338,7 @@ Register-Striche, Listen statt Kacheln; sichtbare Slogans weg.
 *Dateien (~12):* `gesetz-leser/v3/{LeserRahmenV3,rahmenSpalten,LeserLesespalte,LeserKopf,
 LeserSeitenleiste,leserGeometrie}` · `parts/{ArtikelLeser,BezuegeZeile,ErlassLeserKopf}` ·
 `components/normtext/ArtikelBody.tsx` (nur Typo-Klassen) · `leserSchrift.ts` ·
-`DESIGN-REGLEMENT-NORMTEXT.md`.
+`DESIGN-REGLEMENT.md` §N.
 *TABU:* `bezuegeLaden.ts`, `bezugAuswahl.ts`, `gliederungsModell.ts`, jede Extraktions-,
 Sprung- und Suchlogik, `normalisiereTarifText()`. **Keine neue Bezüge-Logik** ((e)).
 *Wächter:* `leser-schriftskala` · `leser-typo-tokens` · `check:golden-normtext` (byte-gleich).
@@ -546,7 +546,7 @@ Fassung soll nur ‹gilt seit XXX› zeigen, erst beim Aufklappen erscheinen die
 die z. B. nur eine SR-Nummer enthalten, müssen ebenfalls weg sein, wenn Fussnoten abgewählt sind;
 alles sauberer, übersichtlicher, besser bedienbar.» Dazu die offenen Nachzüge aus §8 (D45, Nr.
 13/14, LM-197-Anteil) und die Befunde C1–C4 der Sichtung 11.9.2026 (Materialien-Spec §11 veraltet,
-`DESIGN-REGLEMENT-NORMTEXT.md` veraltet, Komponentenname «BezuegeKopf»).
+`DESIGN-REGLEMENT.md` §N veraltet, Komponentenname «BezuegeKopf»).
 
 **Ausgangslage (Code, Stand main 7f87ed0bb):** Mount `src/pages/gesetz-leser/parts/ArtikelLeser.tsx:697-702`;
 Container `parts/BezuegeKopf.tsx` (Markup `.lr7-bez-zeile` :207-211, Aufklapp-Block :213-236);

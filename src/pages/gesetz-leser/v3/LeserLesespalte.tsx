@@ -214,7 +214,7 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
     // des ZGB (Art. 105/125/208/416) bekamen die engste Spalte.
     //
     // NEU trägt die Tiefe allein die Zwischen-Überschrift (Typo-Rang 1 der
-    // Rangfolge DESIGN-REGLEMENT-NORMTEXT §4b) — der Wortlaut selbst steht auf
+    // Rangfolge DESIGN-REGLEMENT §N-4b) — der Wortlaut selbst steht auf
     // EINER Kante, über alle Gliederungstiefen, Desktop wie mobil, wie bei
     // Fedlex. Die ABSATZ-Rinne (hängende Absatznummern, `pl-9 -indent-9` in
     // `ArtikelBody`) ist davon unberührt: sie ist amtliche Absatz-Auszeichnung,

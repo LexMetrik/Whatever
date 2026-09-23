@@ -1,27 +1,43 @@
-# Design-Reglement (Dach) — die site-weiten Gestaltungsregeln von Lexmetrik
+# Design-Reglement — die Gestaltungsregeln von LexMetrik
+
+Ein Reglement für die ganze Webseite, **konsolidiert 23.9.2026** aus fünf Dateien
+(`W2·29-WERKBANK-TOKENS`, Rats-Auflage 2, `fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md`
+§2/§4): diesem Dach und den vier Domänen-Reglementen Normtext, Rechner,
+Rechtsprechung und Vorlagen. Deren Wortlaut steht in Teil II; datierte Messreihen,
+Audits und der Wortlaut aufgehobener Regeln stehen wörtlich in
+`archiv/DESIGN-REGLEMENT-BELEGE-2026.md`.
 
 Stand: 25.6.2026 (Auftrag David: «die Erkenntnisse aus der Legal-Design-
 Recherche sollen ins Projekt einfliessen — daraus Design-Regeln erstellen, die
 für die ganze Webseite gelten»). Geltungsbereich: **die gesamte Webseite** —
 jede Seite, jede Komponente, jeder generierte Text, jeder Output.
 
-Dieses Reglement ist die **Dach-Schicht** über den drei domänenspezifischen
-Reglementen. Die hängen darunter und konkretisieren es für ihren Bereich:
+**Aufbau.** Teil I (A–G) gilt site-weit. Teil II hält die vier Domänen, jede mit
+Präfix in der §-Nummer: `§N-…` Normtext (Gesetzesdarstellung), `§R-…` Rechner,
+`§J-…` Rechtsprechung, `§V-…` Vorlagen. Bei Konflikt gewinnt die Domäne *innerhalb
+ihres Bereichs*; alles andere folgt Teil I. Alt-Verweise auf die vier früheren
+Dateien und auf aufgehobene Regeln löst die §-Konkordanz am Ende von Teil I auf.
+Nackte §-Verweise im übernommenen Domänen-Wortlaut lösen auf wie in der
+Ursprungsdatei.
 
-- `DESIGN-REGLEMENT-RECHNER.md` — Aufbau jeder Rechner-/Engine-UI
-- `DESIGN-REGLEMENT-RECHTSPRECHUNG.md` — Schriftbild der Entscheid-Anzeige
-- `DESIGN-REGLEMENT-VORLAGEN.md` — Schriftbild der Dokument-Outputs
-- `DESIGN-REGLEMENT-NORMTEXT.md` — Gesetzesdarstellung (≥ Fedlex-Fundiertheit)
+**Die Werte stehen in `design/tokens.json`, nicht hier.** Seit dem 22.9.2026 ist
+die Datei die eine Token-Quelle (Farben hell/dunkel, Typo-Skala, Abstände,
+Radien, Schatten, Schichtung); `npm run gen:tokens` erzeugt daraus die
+Marker-Blöcke in `src/index.css`, `tailwind.tokens.generated.js` und die
+Typo-Skala in `tailwind.config.js`, `npm run check:tokens-drift` hält Quelle und
+Projektionen deckungsgleich. Das Feld `usage` jedes Tokens trägt seine Rolle und
+Herleitung. Dieses Reglement kommentiert die Token-Datei — es wiederholt keine
+Werte (CLAUDE.md §5) und **erfindet keine Magic-Numbers**; wo früher eine
+Wert-Tabelle stand, steht «→ `design/tokens.json` `<name>`».
 
-Bei Konflikt gewinnt das speziellere Reglement *innerhalb seiner Domäne*; alles
-andere folgt diesem Dach. Neue Domänen-Reglemente verweisen zurück hierher.
-
-**Das Verbindliche ist der Code.** Tokens leben in `src/index.css` (`:root`,
-«Designsystem §2») und `tailwind.config.js` (Typo-Skala, Farben, Raster, Radien,
-Motion). Dieses Reglement **erfindet keine neuen Magic-Numbers** — es bindet an
-die bestehenden Tokens und hält das *Warum* + die Soll-Werte fest.
+**Lehre 22.9.2026 (§17, Anlass T1 #981):** Der Design-System-Export ist nicht
+rundlauf-fest — er löst `var()`-Aliase zu Hex auf und erfindet Dunkel-Werte
+(Beleg: `ring`, 22.9.2026). Quelle ist `design/tokens.json`; ein Export ist nur
+Vorschlag und wird Token für Token gegen den Code re-synchronisiert.
 
 ---
+
+# Teil I · Dach (site-weit)
 
 ## Woher die Regeln kommen (Evidenzlage)
 
@@ -192,51 +208,38 @@ passen), sobald Lexmetrik mehrsprachig wächst.
 
 Freigabe David 6.9.2026, Referenzbilder `abnahme/design-identitaet/vorschlag-
 freigegeben.html` (Leser + Inhaltsverzeichnis) und `pult-freigegeben.html`
-(Startseite). **Massgeblich sind die Token in `src/index.css`, nicht dieser
-Text** — F0 hält fest, welche Rolle jeder Wert trägt. Was hier steht, überschreibt
-jede ältere Aussage dieses Reglements über Farbe, Schrift und Form; die abgelösten
-Sätze sind unten als AUFGEHOBEN gekennzeichnet, nicht gelöscht (Muster
-`DESIGN-REGLEMENT-NORMTEXT.md` §4b-A).
+(Startseite). **Massgeblich sind die Werte in `design/tokens.json`, nicht dieser
+Text** (bis 22.9.2026: die Token in `src/index.css`) — F0 hält fest, welche Rolle
+jeder Wert trägt. Was hier steht, überschreibt jede ältere Aussage dieses
+Reglements über Farbe, Schrift und Form; die abgelösten Sätze stehen seit der
+Konsolidierung als Einzeiler in der §-Konkordanz, ihr Wortlaut im Archiv.
 
 **F0.1 — Papier und Tinte.** Zwei Flächen-Achsen, beide fast chromafrei; die
 Trennung im Bild läuft über **Linien, nicht über Flächentönung**. Die
 Flächen-L-Leiter `well < paper < surface < paper-raised` bleibt harter FAIL im
-Tor (F2b Ziff. 4). Ist-Werte (D12 «Lesekomfort», 6.9.2026):
+Tor (F2b Ziff. 4). Werte (D12 «Lesekomfort», 6.9.2026) → `design/tokens.json`
+`paper`, `paper-raised`, `surface`, `well`/`paper-sunken`, `ink-900`, `ink-600`,
+`rule` (= `ink-900`), `rule-soft`.
 
-| Rolle | hell | dunkel |
-|---|---|---|
-| `--paper` (Blatt) | `#FAF7F2` | `#1B1917` |
-| `--paper-raised` (schwebende Ebene) | `#FFFFFF` | `#282521` |
-| `--surface` (Karten/Panels) | `#FCFAF6` | `#201E1B` |
-| `--well`/`--paper-sunken` (Feld) | `#F3F0EA` | `#131211` |
-| `--ink-900` (Fliesstext-Tinte) | `#25231F` | `#E2E0DC` |
-| `--ink-600` (Sekundär) | `#5C564A` | `#A59E90` |
-| `--rule` (2-px-Kante) | `= --ink-900` | `= --ink-900` |
-| `--rule-soft` (1-px-Zeilentrenner) | `#DDDAD4` | `#35332F` |
-
-Die Tinte ist **bewusst nicht maximal dunkel**: `--ink-fixed-dark` `#25231F`
+Die Tinte ist **bewusst nicht maximal dunkel**: `--ink-fixed-dark`
 misst 14.68:1 auf Papier. Maximalkontrast (~17:1) erzeugt am Bildschirm Halation;
 Zielband für Langlese-Fliesstext 12–15:1 (D12, Belege in
 `abnahme/design-identitaet/KONTRAST-R1.md` Nachtrag D12). Reinschwarz/Reinweiss
 als *Lesegrund* bleibt ausgeschlossen (§G d).
 
-**F0.2 — Vier Registerfarben, sonst keine Farbe.** Je ein stumpfer Ton pro
-Register der Sammlung, als **Strich, Reiter-Unterkante und Randmarke** — nie als
-Fläche unter Fliesstext, nie allein bedeutungstragend (F2/B3):
-
-| Register | Token | hell | dunkel |
-|---|---|---|---|
-| Gesetze | `--reg-g` | `#1D4E89` | `#8FB8F0` |
-| Rechtsprechung | `--reg-r` | `#7A1F2B` | `#E39AA6` |
-| Materialien | `--reg-m` | `#2F7A3E` | `#9AD489` |
-| Werkzeuge | `--reg-w` | `#8F5E0E` | `#E6B95A` |
-
-Alle sechzehn Register-Paare (vier Töne × vier Flächen) halten ≥ 4.5:1 in beiden
-Modi und sind sämtlich Pflichtpaare im Tor (Messreihe: `KONTRAST-R1.md` D12.4).
-*Abweichung vom Fahrplan, datiert vermerkt (6.9.2026):* `FAHRPLAN-DESIGN-
-IDENTITAET.md` §5 nennt `#1F3A5F` · `#7A1F2B` · `#4E6B3A` · `#8A6A1F`; gebaut sind
-die oben stehenden Werte — Davids Nachtrag 6.9.2026 «Registerfarben eine Stufe
-kräftiger, Rot dezent» ging der Prosa vor (lebendige Spec, David 15.8.2026).
+**F0.2 — Vier Registerfarben (Fassung 22.9.2026).** Als Strich, Reiter-Unterkante
+und Randmarke (`--reg-g/r/m/w`) UND als Fläche — ausschliesslich über die
+Flächen-Token `--reg-*-flaeche` (14 % Registerfarbe auf Papier, beide Modi; Werte
+und Rezept: → `design/tokens.json` `reg-g` … `reg-w`, `reg-g-flaeche` …
+`reg-w-flaeche`). Auf einer Fläche steht Tinte (`ink-*`), nie die Registerfarbe
+selbst als Text (gemessen 22.9.2026, hell: `reg-m` 4.10:1 und `reg-w` 4.30:1 auf
+der eigenen Fläche < 4.5). Nie allein bedeutungstragend (F2/B3); im
+Normtext-Körper gilt weiter §N-4b-B (farbfrei). Kontrast-Schwellen unverändert;
+die Paare — Registerfarbe auf den vier Flächen, Tinte und Registerstrich auf den
+vier Flächen-Token — sind Pflichtpaare im Tor `check:farbwelt`
+(`scripts/farbwelt-tabellen.ts`). Entscheid David 22.9.2026 («Farbe als Fläche:
+ja», `FAHRPLAN-WERKBANK-UMBAU.md` §4 Ziff. 3), zuvor «nie als Fläche» (6.9.2026;
+Wortlaut samt der datierten Ton-Abweichung vom Fahrplan: Archiv).
 
 **F0.3 — Rollen-Schicht: der Akzent ist die Tinte.** Die Messing-Skala
 `--brass-100…800` besteht als Werte-Träger fort, ist aber **neutral** geworden;
@@ -245,7 +248,7 @@ bleibt der Zugriffsweg (`--accent-text` = `--brass-700` = Tinte, `--accent-solid
 = `--brass-500`, `--focus` = `--brass-700` hell / `--brass-500` dunkel).
 Der Klassenname `*-brass-*` lügt damit bewusst bis zum Umbenennungs-Sweep — **die
 Werte in `index.css` sind die Wahrheit, nicht der Name**. Status-Semantik
-`sage`/`slate`/`warn`/`danger` bleibt unverändert gültig (B3, §4b-B).
+`sage`/`slate`/`warn`/`danger` bleibt unverändert gültig (B3, §N-4b-B).
 
 **F0.4 — Zwei Stimmen: Literata und Archivo.** `--font-serif` **Literata**
 (opsz-Achse geladen, `font-optical-sizing:auto`, Lesegewicht `--lese-gewicht:450`)
@@ -258,7 +261,7 @@ Familien OFL, self-hosted über `@fontsource-variable` (kein Google-Fonts-Reques
 zur Laufzeit); metrik-angepasste Fallbacks (`Archivo Fallback`/`Literata Fallback`/
 `Literata Times Fallback`, gemessen mit `scripts/gen-font-fallbacks.ts`) halten den
 Zeilenkasten CLS-frei, solange der Webfont lädt. **Keine dritte Schrift** (§15).
-Leser-Fliesstext 18 px / 1.62 (`DESIGN-REGLEMENT-NORMTEXT.md` §4b).
+Leser-Fliesstext 18 px / 1.62 (§N-4b).
 
 **F0.5 — Form: Kanten statt Kissen.** Alle fünf Radius-Token stehen auf `0px`
 (`--radius-sm…2xl`); die Skala bleibt als EIN Ort bestehen, damit die Konsumenten
@@ -323,11 +326,12 @@ ausdrücklich im Markup. Ein Link, den nur die Farbe ausweist, ist kein Link
 
 **F0.10 — Was AUFGEHOBEN ist.** Die Creme-Gold-/Messing-Welt (Brass als Marke,
 Wärme-Dramaturgie, Geist/Geist Mono/Source Serif 4, Versal-Overlines, gerundete
-Kanten) gilt seit dem 6.9.2026 nicht mehr. Nicht gelöscht, sondern mit
-AUFGEHOBEN-Vermerk am Ort belassen, damit Alt-Verweise auflösen: **F5 · G a ·
-G c · G d · G e-Zusatz · G f · G g · G h**. Die datierten Messreihen der
-F2b-Nachträge D-3/D-4/D-5/QS-UI-8a bleiben wörtlich stehen — abgelöst ist ihr
-Geltungsanspruch, nicht ihre Richtigkeit (Belege altern nicht).
+Kanten) gilt seit dem 6.9.2026 nicht mehr. Betroffen sind **F5 · G a · G c · G d ·
+G e-Zusatz · G f · G g · G h**; am Ort steht nur noch die geltende Fassung, je eine
+Zeile «aufgehoben» in der §-Konkordanz, der Wortlaut im Archiv (konsolidiert
+23.9.2026). Dort stehen auch die datierten Messreihen der F2b-Nachträge
+D-3/D-4/D-5/QS-UI-8a wörtlich — abgelöst ist ihr Geltungsanspruch, nicht ihre
+Richtigkeit (Belege altern nicht).
 
 ---
 
@@ -362,11 +366,7 @@ fehlt still. (Verzahnt mit C2: leeres Formular zeigt noch keinen Fehler.)
 Rechner/Generatoren/Tabellen/UI; «Lese» (**Literata**, ruhige Lesespalte) für
 Gesetzes-/Rechtsprechungs-Volltext **und die getragenen Titel** (Begrüssung,
 Randtitel, H1 der Leser-Köpfe). Beide aus der einen verdichteten Skala (Block B2).
-*AUFGEHOBEN 6.9.2026 (W2·24-DESIGN-IDENTITAET R1/R3):* der frühere Satz
-«expressive Lesestile gehören NICHT in die Produkt-UI» und die Familien Geist /
-Geist Mono / Source Serif 4. Die Sammlung setzt Literata bewusst auch ausserhalb
-des Volltexts — als Titel- und Begrüssungsstimme, nie als Bedienschrift.
-Massgeblich ist F0.4.
+Massgeblich ist F0.4 (der aufgehobene Zusatz vom 6.9.2026: Konkordanz).
 
 **F6 — Politur & Fehlerfreiheit sind Trust, nicht Kosmetik.** Sichtbare
 Kleinfehler — Typos, tote Links, **stille No-op-Klassen**, inkonsistente
@@ -446,29 +446,12 @@ prüft der Orchestrator separat). Vier Klassen:
    je hell+dunkel. Quelle sind die dokumentierten Paar-Listen der CSS-Kommentare
    (ink-600/500-Basistext, `--placeholder`, brass-700-Text, brass-800/brass-100,
    Status-Badge-Text auf `-bg`, `--focus`-Ring, `lc-akzent-*`-Oberkanten).
-2. **Referenzwerte (harter FAIL bei Drift > ±0.06 — C-1/C-2/C-3, §4b-B):**
-   dokumentierte Zahlen dürfen nie stillschweigend falsch werden (D3/F6). Bei
-   Verschiebung neu messen und HIER + in `DESIGN-REGLEMENT-NORMTEXT §4b-B`
-   nachziehen:
-
-   | Rolle | Tick/Text auf `--well` | hell | dunkel |
-   |---|---|---|---|
-   | C-1 `lc-chip-entscheid` | slate-500 | 4.86 | 3.38 |
-   | C-2 Currency-Chip warn | warn-700 | 5.30 | 9.20 |
-   | C-3 Akzent-Tick (= Tinte) | brass-700 | 13.79 | 14.19 |
-
-   **Nachgezogen 6.9.2026 (W2·24 R1 + D12).** Die Zahlen stammen aus dem Tor-Lauf
-   (`npm run check:farbwelt`, dokumentiert in `scripts/farbwelt-tabellen.ts`
-   `REFERENZ`), nicht aus einer Schätzung — dort steht auch die Herkunftskette je
-   Zeile. Herkunft, die weiter gilt (§2b, Belege altern nicht): C-1 D-5 5.03/3.47 →
-   R1 4.86/3.47 → D12 4.86/3.38 · C-2 D-5 5.48/9.43 → R1 5.29/9.49 → D12 5.30/9.20 ·
-   C-3 D-5 5.13/10.48 (damals Messing) → R1 16.02/16.49 → D12 13.79/14.19. Der
-   Sprung bei C-3 ist keine Drift, sondern der Rollenwechsel: **brass-700 IST seit
-   R1 die Tinte** (F0.3).
-
-   Fixpunkte `--paper` (deklariert versetzt, nicht entkernt): hell `#FAF7F2`
-   (D12; R1 `#FBFBFB`, davor A38 `#FCFAF6`, davor `#FAF8F2`) / dunkel `#1B1917`
-   (D12; R1 `#151515`, davor `#16150F`).
+2. **Referenzwerte (harter FAIL bei Drift > ±0.06 — C-1/C-2/C-3):**
+   dokumentierte Zahlen dürfen nie stillschweigend falsch werden (D3/F6). Die
+   Tabelle samt Herkunftskette steht **einmal**, in §N-4b-B (bis 23.9.2026
+   doppelt hier und dort); das Tor meldet Drift gegen genau diese Stelle. Der
+   Fixpunkt `--paper` → `design/tokens.json` `paper`; die frühere
+   Werte-Kette (D12 ← R1 ← A38) steht im Archiv.
 3. **Bekannte Risse (WARNUNG + FAIL nur bei Verschlechterung — D-1-Input):**
    heute unter der Schwelle liegende Paare als Baseline-Guard, damit das Tor auf
    dem IST-Stand grün ist, ohne die Risse zu verstecken:
@@ -488,142 +471,26 @@ prüft der Orchestrator separat). Vier Klassen:
    C ≤ hell −10 %) = WARNUNG. **APCA-Spalte NUR beratend** (Lc), nie Fail —
    WCAG 2.2 bleibt das Gate.
 
-**F2b-Nachtrag D-3 (12.7.2026) — color-mix `in srgb` → `in oklab` (Befund 36,
-FAHRPLAN-DESIGN-WAERME D-3).** Alle 19 `color-mix`-Rezepte in `src/index.css`
-interpolieren in **oklab** (srgb frisst bei 10–18 %-Tönungen Farbigkeit —
-Status-Flächen wurden grauer/kälter als das Rezept verspricht). Neu gemessen
-(deterministisch, culori, hell+dunkel):
+**F2b-Nachträge (D-3 12.7. · D-4 13.7. · D-5/A38 16.7. · QS-UI 8a 4.8.2026) —
+Messreihen im Archiv, geltende Regeln hier.** Die Vorher/Nachher-Tabellen stehen
+wörtlich in `archiv/DESIGN-REGLEMENT-BELEGE-2026.md`. Weiter gilt:
 
-- **Referenzwerte C-1/C-2/C-3 (Tabelle oben): UNVERÄNDERT** — alle drei Paare
-  sind Voll-Token auf dem soliden `--well`, kein color-mix im Pfad
-  (vorher = nachher: 4.81/3.47 · 5.24/9.43 · 4.91/10.48).
-- **Mixe mit `transparent` (15 der 19 Stellen — Haarlinien `--line`/
-  `--line-strong`/`--rule-*` (und das am 16.8.2026 entfernte
-  `--guide-gliederung`), `lc-glass`, Badge-Outlines,
-  Schraffur, brass-Unterstreichung): gerendert BYTE-IDENTISCH** — bei
-  premultiplied alpha trägt der transparente Endpunkt kein Farbgewicht, die
-  Interpolation ist raumunabhängig.
-- **Sichtbar verschieben sich NUR die vier `-bg`-Flächen** (wärmer/chromatischer,
-  Text = `-700` bleibt überall ≥ 5.1:1):
-
-  | Rezept | hell alt→neu | K(-700) alt→neu | dunkel alt→neu | K(-700) alt→neu |
-  |---|---|---|---|---|
-  | `--sage-bg` | `#EBEBE3`→`#EAEBE2` | 5.81→5.77 | `#23271C`→`#22251B` | 8.25→8.44 |
-  | `--slate-bg` | `#EAEAE5`→`#E9E9E5` | 6.58→6.52 | `#222421`→`#21231F` | 7.63→7.77 |
-  | `--warn-bg` | `#F4EBDC`→`#F5EBDE` | 5.11→5.12 | `#352711`→`#312515` | 7.12→7.32 |
-  | `--danger-bg` | `#F0E5DF`→`#F2E5DD` | 7.55→7.54 | `#2E1D15`→`#2C1D15` | 6.67→6.68 |
-
-  `lc-badge-entwurf`-Text (warn-700 auf transparenter Fläche): 5.87/5.67 hell ·
-  8.47/9.00 dunkel (surface/paper) — unberührt vom Raumwechsel.
-  Alle 46 farbwelt-Pflichtpaare bleiben ≥ Schwellen; kein Guard musste bewegt
-  werden. Neue Rezepte schreiben `color-mix(in oklab, …)`; `in srgb` ist für
-  Farb-Rezepte nicht mehr zulässig (Ausnahme: keine bekannt).
-
-**F2b-Nachtrag D-4 (13.7.2026) — Ink-Wärme: EINE Hue-Normalisierung der Grau-Achse
-(FAHRPLAN-DESIGN-WAERME D-4, Befunde 3+34).** Die ink-Rampe (900…300) + `--placeholder`
-sind in beiden Modi (16 Werte) in OKLCH auf **EINEN Ziel-Hue 88°** (brass-verwandt,
-Radix «saturated gray closest to accent») normalisiert; hell lag die Achse zuvor bei
-~107° (grün-gelb), dunkel bei 84–90° gestreut. **L gehalten** (WCAG-Näherung, alle
-Werte deterministisch mit culori gemessen), Chroma als flache Glocke (C≈0.008 an den
-Enden, ~0.012–0.015 in den Mitten 600–400). Hue-Drift/L-Monotonie sind für `ink` jetzt
-**harter FAIL** im Tor (Span 1.3° hell / 1.2° dunkel). Einzige bewusste L-Abweichung:
-`ink-500` hell −0.007 L, damit `ink-500/well` die 4.5:1 erreicht (Riss geheilt).
-
-- **Kontraste (culori, hell/dunkel, ≥-Schwelle-Text 4.5:1 = Pflicht):**
-
-  | Rolle | hell alt→neu (paper·surface·well) | dunkel alt→neu (paper·surface·well) |
-  |---|---|---|
-  | ink-600 (Sekundär) | 7.20·7.44·6.65 → **7.22·7.47·6.67** | 8.27·7.79·8.67 → **8.26·7.78·8.66** |
-  | ink-500 (Tertiär) | 4.85·5.01·**4.48** → **5.00·5.17·4.62** | 5.52·5.20·5.79 → **5.52·5.20·5.79** |
-  | `--placeholder` | 5.14·5.32·**4.75** → **5.15·5.33·4.76** | 4.98·4.69·5.22 → **4.97·4.68·5.21** |
-
-  ink-500/well hell überschreitet neu 4.5:1 (**4.62**, vorher 4.48 = Riss) → als
-  WCAG-Pflichtpaar geführt; `--placeholder`/well bleibt ≥4.5:1 (4.76 hell / 5.21
-  dunkel). ink-400/ink-300 sind Haarlinien-/Deko-Töne (kein 3:1-Textanspruch, §4b).
-  Haarlinien (`--line`/`--rule-*`) erben die Wärme automatisch über die
-  color-mix-Rezepte auf `var(--ink-900)`. `--ink-fixed-dark` (Solitär, speist hell
-  ink-900 UND `--auf-gold`) wanderte mit EINEM Wert `#1A1A17`→`#1C1A15`; `--auf-gold`
-  auf `brass-300` bleibt 10.71:1.
-
-**F2b-Nachtrag D-5 (16.7.2026) — Flächen-Wärme: Papier-Treppe HELLER + WEISSER
-(FAHRPLAN-DESIGN-WAERME D-5, Befunde 2+35) mit DAVID-DIREKTIVE A38.** A38 (wörtlich
-«ausserdem mache die ganze lexmetrik webseite heller uns weisser»,
-`docs/ux-audit-2026-07/ANMERKUNGEN-DAVID-2026-07-16.md` Nachtrag) **übersteuert die
-D-5-Spec-Zielwerte**: die Papier-Treppe wird mit hellerer, weisserer Basis gebaut.
-Die Treppen-MECHANIK der Spec bleibt (gestufte Flächen-Rollen, EINE Papier-Achse
-Hue ~90° = brass-/ink-konsistent wie D-4, L strikt steigend `well<paper<surface<raised`,
-Flexoki-Nuance tiefere Fläche = eine Spur mehr Chroma); **geändert** sind nur die
-Zielwerte: Chroma site-weit ~30 % gesenkt (Wärme bleibt feine NUANCE, keine sichtbar
-getönte Fläche mehr), L angehoben. **Nur `:root` (HELL) — DUNKEL bleibt unberührt**
-(A38 betrifft die helle Fläche; D-6 kommt separat). Alle Werte deterministisch in
-OKLCH entworfen + mit culori gemessen (F2):
-
-- **Flächen-Token (hell):**
-
-  | Token | alt → neu | L alt→neu | C alt→neu |
-  |---|---|---|---|
-  | `--paper` | `#FAF8F2`→`#FCFAF6` | 0.979→0.986 | 0.0082→0.0057 |
-  | `--paper-raised` | `#FEFDFA`→`#FFFEFC` | 0.994→0.997 | 0.0041→0.0028 |
-  | `--paper-sunken`/`--well` | `#F2EFE6`→`#F6F4EE` | 0.952→0.967 | 0.0124→0.0082 |
-  | `--surface` | `#FDFCF7`→`#FEFCFA` | 0.991→0.992 | 0.0067→0.0034 |
-
-  `--paper-raised` ist nun nahezu weiss, aber **nicht `#FFFFFF`** (Reinweiss-
-  Invariante d). Hue-Ausreisser von `--surface` (97°) auf die Papier-Achse angeglichen.
-- **Kontrast-Effekt = sichere Richtung:** hellere Hintergründe HEBEN jeden
-  Dunkeltext-Kontrast — alle Hell-Pflichtpaare steigen, kein AA-Riss. Gemessen (culori,
-  fg auf neuem Grund): ink-500 well/paper/surface **4.83·5.10·5.19** (vorher
-  4.62·5.00·5.17) · `--placeholder`/well **4.98** (4.76) · ink-600/well **6.98** (6.67).
-  Referenzwerte C-1/C-2/C-3 hell (Tabelle oben) 4.81→**5.03** · 5.24→**5.48** ·
-  4.91→**5.13** (dunkel unverändert). Status-Badge-Text auf `-bg` (sage/slate/warn/
-  danger-700) steigt ebenfalls (hellere `paper`-Basis der `-bg`-Mixe).
-- **Tor `check:farbwelt`:** Fixpunkt-Hell auf `#FCFAF6` + Referenz-Hell-Werte
-  deklariert nachgezogen (scharf, nicht entkernt); 48 WCAG-Pflichtpaare hell+dunkel
-  grün, Flächen-L-Leiter beide Modi grün. golden byte-gleich (reine CSS-Token). Die
-  8 beratenden Warnungen (brass-Chroma, danger-Riss) sind Bestand, unverändert.
-
-**F2b-Nachtrag QS-UI 8a (4.8.2026) — Abdeckung statt neuer Schwellen
-(`FAHRPLAN-UI-QUALITAET.md` §4, Verschärfung Stufe 1).** Keine Schwelle und
-keine Regel ändert sich; geändert hat sich, **wie viel** von der Oberfläche F2
-überhaupt misst. Das Audit fand drei Lücken, die alle drei einen Verstoss stumm
-hätten passieren lassen — die Pflichtpaare wachsen darum von 48 auf 72
-(hell+dunkel):
-
-1. **`ink-900` war in keinem Pflichtpaar.** Der tragende Fliesstext-Ton der
-   ganzen App war ungeprüft (nur die Sekundär-/Tertiär-Tiers ink-600/500 waren
-   es). Neu gegatet auf allen vier Flächen: paper 16.68·14.80 · surface
-   16.99·13.94 · well 15.81·15.52 · paper-raised 17.25·13.50 (hell·dunkel).
-2. **Die Flächen-Rolle `--paper-raised` war ungeprüft.** Das Tor kannte nur
-   paper/surface/well, obwohl `bg-paper-raised` an 283 Stellen steht — Popover,
-   Dialog, Drawer, Menü, also die Fläche, auf der die Navigation stattfindet.
-   Neu gegatet: ink-600 7.61·7.53 · ink-500 5.27·5.04 · brass-700 5.60·9.11 ·
-   `--focus`-Ring 5.60·5.98.
-3. **Status-Kanten wurden auf `surface` gemessen statt auf ihrer eigenen
-   Tönungsfläche.** `.lc-notice-warn`/`-danger` zeichnen ihre Kante auf
-   `--warn-bg`/`--danger-bg` — der strengere Grund. Neu gegatet:
-   warn-line/warn-bg 3.26·3.95 · danger-line/danger-bg 5.54·6.69 ·
-   sage-line/sage-bg 4.02·8.44 · slate-line/slate-bg 4.63·7.77.
-
-Möglich wurde Punkt 3 erst durch **`QS-UI-WARNLINE`** (§11 desselben Fahrplans):
-`--warn-line` lag mit 3.008:1 nur 0.008 über der 3:1-Schwelle für Nicht-Text
-(WCAG 2.2 SC 1.4.11) — ein Tor auf dieser Messerschneide wäre bei der nächsten
-Token-Rundung gekippt. Der Token ist deshalb als **einziger** Linien-Ton von
-seiner `-500`-Mitte entkoppelt und um OKLCH **L −0.020** abgedunkelt
-(`#C07A1A`→`#B9740D`, Hue/Chroma gehalten); `--warn-500` selbst bleibt
-unverändert, weil es `--warn-bg`/`--warn-solid` speist. Sichtbare Wirkung: die
-3-px-Kante des Warn-Hinweises wird eine Spur tiefer — eine deklarierte,
-flip-reversible Darstellungsänderung.
-
-**Bewusst NICHT aufgenommen** (§8 — die Lücke steht sichtbar statt still):
-`placeholder/paper-raised` dunkel 4.53 gegen die 4.5-Schwelle (derselbe
-Messer-Rand, und der Platzhalter lebt ohnehin auf `--well`), sowie
-`brass-line/paper` hell 2.98 — für das Paar fand das Audit keinen Konsumenten
-(`.lc-notice`/`.lc-akzent-brass` zeichnen auf `--surface`), ein Riss-Eintrag
-ohne belegten Call-Site wäre ein erfundener Befund (§7).
-
-**Abdeckung von `axe` analog:** dunkel liefen bisher drei Prüfpunkte, hell
-dreizehn. Alle Hauptrouten laufen jetzt in **beiden** Modi (`e2e/a11y.e2e.ts`,
-Block «Dunkelmodus flächendeckend»). Belegt an einer injizierten
-Dunkel-Regression: 3 neue Dunkel-Prüfpunkte rot, ihre 7 Hell-Zwillinge grün.
+- **D-3:** Alle `color-mix`-Rezepte interpolieren in **oklab**. Neue Rezepte
+  schreiben `color-mix(in oklab, …)`; `in srgb` ist für Farb-Rezepte nicht mehr
+  zulässig (Ausnahme: keine bekannt).
+- **D-4:** Hue-Drift und L-Monotonie der ink-Rampe (900…300 + `--placeholder`)
+  sind harter FAIL (Ziff. 4); die Werte → `design/tokens.json`.
+- **D-5/A38:** die Mechanik der Papier-Treppe (gestufte Flächen-Rollen, EINE
+  Papier-Achse, L strikt steigend `well<paper<surface<raised`) gilt; ihre Werte
+  hat D12 (6.9.2026) abgelöst → `design/tokens.json`.
+- **QS-UI 8a:** `ink-900` und die Fläche `--paper-raised` sind Pflichtpaare,
+  Status-Kanten werden auf ihrer eigenen Tönungsfläche gemessen, axe läuft auf
+  allen Hauptrouten hell UND dunkel (`e2e/a11y.e2e.ts`, Block «Dunkelmodus
+  flächendeckend»). `--warn-line` ist als einziger Linien-Ton von seiner
+  `-500`-Mitte entkoppelt (`QS-UI-WARNLINE`) → `design/tokens.json` `warn-line`.
+  **Bewusst NICHT aufgenommen** (§8 — die Lücke steht sichtbar statt still):
+  `placeholder/paper-raised` dunkel und `brass-line/paper` hell; Begründung im
+  Archiv.
 
 **F3-Präzisierung (gemessen, keine neue Regel).** Tailwinds Utility
 `outline-none` erzeugt `outline: 2px solid transparent` — eine Outline in Alpha
@@ -646,11 +513,8 @@ ein reiner `:root`-Eingriff. Basis-Stufen (`brass-700`, `sage-500`, …) sind f�
 **neue** Komponenten privat; Bestand migriert opportunistisch (kein Riesen-Diff).
 
 **a — AUFGEHOBEN 6.9.2026 (W2·24-DESIGN-IDENTITAET R1)** · früher «Brass ist
-Signal, nicht Tapete». Es gibt keine Messing-Fläche mehr, die man sparsam
-einsetzen könnte — die Skala ist neutral (F0.3). *Der Wortlaut für Alt-Verweise:
-grosse Messing-Flächen blieben dem semantisch Massgeblichen vorbehalten
-(Marke/Wortlaut-Referenz, §4b-B).* **Der Squint-Test bleibt als Ritual gültig**,
-nur mit neuem Gegenstand: kneift man die Augen zu, darf allein die
+Signal, nicht Tapete» (Wortlaut: Archiv). **Der Squint-Test bleibt als Ritual
+gültig**, nur mit neuem Gegenstand: kneift man die Augen zu, darf allein die
 **Registerfarbe** leuchten, und nur dort, wo sie ein Register benennt (F0.2).
 
 **b — Ton vor Schatten.** Erhebung primär über Flächenton (`--paper`→`--surface`
@@ -660,11 +524,8 @@ Doppelsignal bleibt), aber die Regel: **Tiefe = Stufe + Border, nie Schatten
 allein.**
 
 **c — AUFGEHOBEN 6.9.2026 (W2·24-DESIGN-IDENTITAET R1)** · früher
-«Temperatur-Dramaturgie» (warm empfangen auf Startseite/Rubriken, neutral-kühl
-prüfen bei Entscheid/Rechner/Fristen; gravierte Brass-Linie und Regeste-Box als
-Motiv-Rhythmus). Die Sammlung kennt **eine** Fläche über die ganze Seite; sie
-wechselt ihre Temperatur nicht nach Route. Die verbliebene Wärme ist eine
-Lesekomfort-Tönung des Papiers (D12, F0.1), keine Dramaturgie.
+«Temperatur-Dramaturgie» (Wortlaut: Archiv). Die Sammlung kennt **eine** Fläche
+über die ganze Seite; sie wechselt ihre Temperatur nicht nach Route.
 
 **d — Reinweiss-Invariante (im Gate) — Fassung 6.9.2026.** Kein `#FFFFFF`/
 `bg-white` **als Lese- oder Arbeitsfläche**; Flächen kommen aus den Rollen
@@ -690,32 +551,10 @@ liegen im Gesetzes-Reader (`gesetz-leser/*`) und der Rechtsprechung
 (`RegesteBlock`/`EntscheidBody`/`EntscheidKarte`) — **null** Produkt-UI. Keine
 dritte Schrift (§15). Regel erfüllt, keine Code-Änderung nötig.
 
-*Zusatz 29.8.2026 — GEGENSTANDSLOS seit 6.9.2026 (W2·24-DESIGN-IDENTITAET R1).*
-`.lc-overline` setzt seither `var(--font-sans)` (Archivo) und `text-transform:
-none`; es gibt kein Mono-Etikett und keinen Versal-Etikett mehr, also auch keinen
-Konflikt mehr aufzulösen (F0.4/F0.7). Die Abgrenzung «Etikett wird gescannt, Satz
-wird gelesen» bleibt als **Denkfigur** brauchbar, sie trägt nur keine Schriftwahl
-mehr. Wortlaut für Alt-Verweise:
-
-*Zusatz 29.8.2026 (Entscheid David, Antwort 3 «Regel»; Review-Befund T6).* Der
-Design-Qualitäts-Pass fand, dass Mono nicht nur Zahlen trägt: `.lc-overline`
-setzt `font-mono` und erscheint 260× im Code (gemessen 29.8.2026, grep über src/) — mit **Wörtern** darin
-(«RECHTSSAMMLUNG SCHWEIZ», «GLIEDERUNG», «ERFASSUNGSGRAD»). Formal ein Verstoss
-gegen «Mono nur Zahlen/Aktenzeichen». Zur Wahl standen: die ~600 Vorkommen
-umstellen oder die Regel schärfen. **David hat die Regel gewählt.** Sie lautet
-daher jetzt:
-
-> Mono trägt **Zahlen, Aktenzeichen und kleine STRUKTUR-ETIKETTEN**
-> (`.lc-overline`, Chip-Labels) — also Wörter, die eine Fläche *beschriften*,
-> nicht Wörter, die man *liest*.
-
-Die Grenze ist nicht die Wortart, sondern die Funktion: ein Etikett benennt eine
-Region (Overline über einer Sektion, Label an einem Chip) und wird gescannt; ein
-Satz wird gelesen und bleibt Sans bzw. — bei zitierfähigem Quelltext — Serif.
-Fliesstext, Lead-Absätze, Bildunterschriften und Hilfetexte gehören **nie** in
-die Mono-Stimme, auch nicht kurze. Beleg für die Abgrenzung am lebenden Objekt:
-`SchweizKarte.tsx` trägt das Overline «Erfassungsgrad» in Mono, den Zusatz
-«3 Erlasse · dünn» der Bildunterschrift dagegen bewusst nicht.
+*Zusatz 29.8.2026 («Mono trägt Struktur-Etiketten», Entscheid David) —
+GEGENSTANDSLOS seit 6.9.2026:* `.lc-overline` setzt Archivo ohne Versalien
+(F0.4/F0.7). Die Denkfigur «Etikett wird gescannt, Satz wird gelesen» bleibt
+brauchbar, sie trägt nur keine Schriftwahl mehr. Wortlaut: Archiv.
 
 **f — Linien-Rollen, Textur-NEIN — Fassung 6.9.2026.** *Haarlinien* (`--line`,
 `--line-strong`, `--rule-artikel`, `--rule-struktur`) sind weiterhin immer
@@ -739,7 +578,7 @@ Ziel. Der Rest-Wärmegrad des Papiers ist heute eine gemessene
 Blendungs-Entscheidung (D12), keine Signatur.
 
 **h — Navy-Fussnote — Fassung 6.9.2026.** `slate` bleibt der neutrale
-Entscheid-/Referenz-Semantikton (§4b-B), **nie** eine Markenfläche — dieser Satz
+Entscheid-/Referenz-Semantikton (§N-4b-B), **nie** eine Markenfläche — dieser Satz
 gilt unverändert. *AUFGEHOBEN 6.9.2026 (W2·24 R1):* der Schlusssatz «brass bleibt
 die Marke». Es gibt keine Markenfarbe mehr; die Identität trägt die Typografie
 (Literata/Archivo) und der Register-Strich (F0.2/F0.4). Die dahinterliegende
@@ -750,7 +589,7 @@ Kennfarbe des Registers «Gesetze», nicht die der Marke.
 (Materialien-Kennfarbe **und** ok/Live-Zustand). Aufgelöst: die Zustands-Rolle
 **`--ok-*`** (wertidentisch zu sage, semantisch getrennt) trägt Status; die drei
 namentlichen Sites `lc-badge-ok`/`lc-live`/`lc-termin-ring` sind darauf migriert
-(§4b-B-i). `sage` bleibt Materialien-Familie + bibliografische Currency
+(§N-4b-B). `sage` bleibt Materialien-Familie + bibliografische Currency
 (`lc-punkt-material`, `lc-chip-geltend`). Eine Status-Einfärbung ist damit nicht
 mehr zweideutig.
 
@@ -758,99 +597,6 @@ mehr zweideutig.
 folgt EINER Regel: **eine Flexoki-Stufe «tiefer»** (mehr Chroma, weniger
 Lightness) — die Rollen `--accent-hover`/`--accent-bg-hover` kapseln das.
 Verhindert Patchwork bei künftigen Interaktions-Feinschliffen.
-
-## Audit: Stand der Webseite gegen dieses Reglement
-
-Code-Audit 25.6.2026 (adversarial, read-only). Gesamtbild: **Die Webseite
-erfüllt das Reglement schon weitgehend** — Token-Disziplin bei Farben/Abständen,
-Lesespalte, Status-Familien, leeres-Formular-Muster, Icon-Set, Überblick→
-Drilldown und ALL-CAPS sind sauber. Die Lücken sind eng umrissen: **Typografie-
-Magic-Numbers in den Leser-Komponenten**, **fehlende maschinelle Erzwingung**
-(E1) und **Stand/Link nicht an jedem Einzelwert** (D1).
-
-**Nachtrag 25.6. (Umsetzung, Auftrag «1–5 machen»):** #1–#4 umgesetzt — Off-
-Scale-Typo byte-identisch auf `--fs-*`-Tokens (B2/D2), `fontSize:'10px'`→
-`text-micro` (#3), und die Token-Schranke `check:design-tokens` ist scharf
-(E1, in `npm run check`/gate). #5 (D1) wurde verifiziert und ist **bereits
-erfüllt** (typ-erzwungene `TarifQuelle`) — keine Änderung, da Erfinden von
-Provenienz §7 verletzt hätte. B2/D2/E1 sind damit maschinell abgesichert.
-
-| Regel | Status | Kern-Beleg | Befund |
-|---|---|---|---|
-| A1/A3 Sprache (UI) | n. i. Code prüfbar | — | Manuell/Stichprobe; siehe A2b |
-| A2 kein ALL-CAPS-Block | ✅ erfüllt | `ui.tsx:395` (13× uppercase, alle Labels) | Nur Overlines/Badges in Versalien |
-| A2b generierte Texte | 🟡 teilweise (Stichprobe) | `arbeitsvertrag.ts:245,287`; `handelsreisendenvertrag.ts` | Vereinzelt lange Schachtelsätze + Passiv; teils gesetzesnah gewollt |
-| A4 kein Lesbarkeits-Score | ✅ erfüllt | (keine Score-Anzeige gefunden) | Wird nirgends als Gütesiegel gezeigt |
-| B1 Verdikt zuerst | ✅ erfüllt | Rechner-Reglement R1 | Site-weit gelebt |
-| B2 Typo-Skala | 🟡 teilweise | `GesetzLeser.tsx:144–233`; `EntscheidBody.tsx:16` | Skala überwiegend genutzt (`text-xs` gültig), aber Leser brechen sie: 22× `text-[…rem]` + 6× `text-sm/base` + 7× inline `fontSize` |
-| B2b Lesespalte | ✅ erfüllt | 38× `max-w-reading` | Fliesstext in 40rem; einzige Ausnahme bewusst das 2-spaltige Normtext-Layout |
-| B3 Status-Farben | ✅ erfüllt | `tailwind.config.js:22–26`, 0 Ad-hoc | Kein red/green/amber/Hex/rgb in tsx; Inline nur `var(--…)` |
-| B3b Icon-System | ✅ erfüllt (kl. Mischung) | `src/components/Icon.tsx` | Eigen-Set, keine Fremdlib; nur UI-Chrome nutzt Unicode-Glyphen (✕/☰/▾) |
-| C1 Überblick→Drilldown | ✅ erfüllt | `Startseite.tsx` + `src/components/start/*` | Cockpit → Detailseiten |
-| C2 leeres Formular ohne Fehler | ✅ erfüllt | `ui.tsx:372` `BeruehrtRahmen`, `:392` `FehlerBox` | Fehler erst nach «berührt»; 15 Forms gewrappt |
-| C3 Warum-Layer | ✅ erfüllt | Rechner-Reglement R | «Was gilt → warum» durchgängig |
-| D1 Norm + Link + Stand | ✅ erfüllt (verifiziert 25.6.) | `prozesskosten.ts:98-103` `TarifQuelle` (stand/quelleUrl = Pflicht) | Tarif-/Rechenwerte tragen Quelle+Stand+Link **typ-erzwungen**; bare `norm`-Zitate sind NormLinks, die die Provenienz des verlinkten Erlasses erben (kein Duplikat nötig). Audit-Heuristik (51 vs 750) war by-design, kein echter Mangel. |
-| D2 keine Magic-Numbers | 🟡 teilweise | `ErgebnisAnzeige.tsx:137` (`fontSize:'10px'`) | Farben/Abstände token-rein; Restmenge = die Typo-Magic-Numbers aus B2 |
-| D3 Status-Marker ehrlich | ✅ erfüllt | `verified` 177× in `src/lib` | Recherche/geprüft sichtbar |
-| E1 in Code erzwungen | 🟠 offen | `eslint.config.js` (nur §2-Determinismus) | KEINE Schranke gegen `text-sm`/Arbitrary-`text-[…]`/Ad-hoc-Farben — B2/D2 sind reine Disziplin |
-| E2 CH-Evidenz-Vorbehalt | ✅ erfüllt | dieses Reglement | Explizit markiert |
-| E3 Mehrsprachigkeit | n. i. Code prüfbar | — | Erst relevant bei DE/FR/IT-Ausbau |
-
-### Offene Punkte (separate Freigabe — in diesem Durchgang NICHT umgesetzt)
-
-1. **E1-Schranke bauen** — ESLint-Regel (`no-restricted-syntax` für
-   className-Literale) + ggf. Gate-Test gegen `text-sm`/`text-lg`/
-   `text-[…px|rem]`/Ad-hoc-Farben. Macht B2/D2 aus Disziplin zu Erzwingung;
-   `eslint.config.js` hat das Muster (Determinismus-Block) schon.
-2. **`GesetzLeser.tsx` auf Skala ziehen** — `:144,145,148,160,182,186,221,233`
-   (`text-[1.3rem]…[0.6rem]`) + `text-sm` `:231,520,751`. Nutzerwählbare
-   Lesegrösse (`--rsp-fs`) als Token/CSS-Var dokumentieren, freie Headings auf
-   die Skala.
-3. **`ErgebnisAnzeige.tsx:137`** — `fontSize:'10px'` liegt UNTER `micro` (11px);
-   auf `text-micro` o. ä. heben.
-4. **`EntscheidBody.tsx:16,48,112` + `EntscheidLeser.tsx:243,363`** — off-scale
-   `text-[…rem]`; wenn nutzerwählbar, als CSS-Var dokumentieren statt frei.
-5. ~~D1 Stand+Link nachziehen~~ — **verifiziert 25.6., bereits erfüllt, keine
-   Änderung (§7).** Die Audit-Kandidaten prozesskosten/grundbuchgebuehren tragen
-   `stand`+`quelleUrl` **typ-erzwungen** (`TarifQuelle`, nicht-optional →
-   `prozesskosten.ts:98-103`, gerendert in `grundbuchgebuehren.ts:114-123`). Die
-   Korpus-Metrik (norm 750× vs stand 51×) ist by-design: `norm`-Zitate sind
-   NormLinks auf den in-app-Erlass (mit eigenem Stand), kein dupliziertes
-   stand/url nötig. Provenienz zu erfinden wäre ein §7-Verstoss — daher bewusst
-   keine Code-Änderung. (Ein echter D1-Sweep über ALLE Engines bliebe ein
-   separater, verifiziert-zu-belegender Auftrag — nichts Fabrizierbares.)
-
-> Reine Disziplin-Befunde (A2b) und domänenbedingte Ausnahmen (2-spaltiges
-> Normtext-Layout, Druckbild-`em`-Grössen in `vorschauStil.ts`) sind bewusst
-> KEINE Pflicht-Fixes, sondern dokumentierte, vertretbare Abweichungen.
-
-### Nachtrag 6.9.2026 — Stand gegen die Handschrift «Sammlung» (W2·24)
-
-Der Audit oben misst den Stand vom 25.6.2026 gegen das damalige Reglement; seine
-Zeilen bleiben als Beleg für ihren Stand stehen (§2b). Was die Runden R1–R12 des
-Schrittes `W2·24-DESIGN-IDENTITAET` gegen F0 verändert haben, in Kurzform — die
-Belege liegen je Runde unter `abnahme/design-identitaet/` (Protokolle, Screens
-hell+dunkel @1440/@390, Split-View), die Messreihen in `KONTRAST-R1.md`
-(inkl. Nachtrag D12) und `PERF-LESER.md`:
-
-| F0-Regel | Stand 6.9.2026 | Beleg |
-|---|---|---|
-| F0.1 Papier/Tinte | ✅ gebaut (`:root` + `html.dark`, ein Ort) | `check:farbwelt` grün, 146 WCAG-Pflichtpaare hell+dunkel |
-| F0.2 Registerfarben | ✅ gebaut, alle 16 Paare ≥ 4.5:1 | `KONTRAST-R1.md` D12.4 |
-| F0.3 Akzent = Tinte | 🟡 Werte gebaut, **Klassennamen `*-brass-*` stehen noch** (202 Konsumenten) | Fahrplan §6 (b); Umbenennung = eigener Sweep |
-| F0.4 Literata/Archivo | ✅ gebaut, self-hosted, opsz geladen | `check:perf-budget` grün, entry 59.7 KB / 60.0 KB |
-| F0.5 Radien 0 / ein Schatten | 🟡 Radien 0 gebaut; `rounded-full` (46 Fundstellen) bewusst offen | `--radius-*` = 0px in `index.css` |
-| F0.6 Linien statt Flächen | ✅ gebaut (`--rule`/`--rule-soft` + Konsumenten) | `check:linien-kanon` |
-| F0.7 Etiketten ohne Versalien | ✅ gebaut an der Klasse `.lc-overline` | `--tracking-overline: 0em` |
-| F0.8 Links unterstrichen | ✅ Regel steht einmal, Wächter rot beweisbar | `e2e/leser-links-p3.e2e.ts` |
-| F0.9 Menü-Anatomie | 🟠 offen: `.lc-schwebeflaeche` trägt noch `shadow-lg` | R11-Auflage R6/R7 |
-| A6 Sprach-Diät | 🟡 Runde R7 «Beschriftungen» geplant, nicht abgeschlossen | BEFUNDE §R7 |
-
-**Budget-Entscheid (§15, David 19.9.2026: «Kopfbereich budget heben»):** die
-Erstlast stand bei **59.7 KB von 60.0 KB** (99.5 %); das Entry-Budget ist auf
-**70 KB** gehoben (`scripts/check-perf-budget.ts`). Lazy-Laden weiterer Kopf-Teile
-ist damit nicht mehr Pflicht, bleibt aber der bessere Weg, wo er ohne
-Logikverlust geht.
 
 ---
 
@@ -887,3 +633,1523 @@ Zwei Fallen beim Auflösen:
 Verweise werden **nicht umgeschrieben** — die Anker-Logik hält die alten Nummern
 stabil, diese Tabelle löst sie auf (gleiches Muster: Skill `auftrag` Ziff. 9 für
 §14.x, Skill `refactoring` Ziff. 8 für §6.x, Skill `perf` für §15.x).
+
+**Domänen-Abbildung (Konsolidierung 23.9.2026).** Verweise auf die vier früheren
+Dateien lösen so auf:
+
+| Alt | Neu (Teil II) |
+|---|---|
+| `DESIGN-REGLEMENT-NORMTEXT.md` L0 · §1 … §8 · §4a … §4c · §5a | **§N-L0** · **§N-1** … **§N-8** · **§N-4a** … **§N-4c** · **§N-5a** |
+| `DESIGN-REGLEMENT-RECHNER.md` R1 … R14 | **§R-1** … **§R-14** |
+| `DESIGN-REGLEMENT-RECHTSPRECHUNG.md` R1 … R23 · A3-Regeln | **§J-R1** … **§J-R23** · **§J-A3** |
+| `DESIGN-REGLEMENT-VORLAGEN.md` V1 … V7 | **§V-1** … **§V-7** |
+| Zeilennummern (`…-NORMTEXT.md:405ff` u. ä.) in datierten Dokumenten | lösen im Stand `main@dc93425d9` der Ursprungsdatei auf, nicht hier |
+| `DESIGN-REGLEMENT.md` «Audit»-Tabelle (§B2-/§B2b-Zeile …), §F2b-Nachtrag D-3/D-4/D-5/QS-UI 8a | `archiv/DESIGN-REGLEMENT-BELEGE-2026.md` (wörtlich) |
+
+**Aufgehobene Regeln — je eine Zeile, Wortlaut im Archiv.**
+
+| Regel | aufgehoben | Grund / Nachfolge |
+|---|---|---|
+| F0.1-Wert-Tabelle, F2b-Referenz-Doppel | 23.9.2026 | Werte → `design/tokens.json`; Referenz nur noch §N-4b-B (§5) |
+| F0.2 «nie als Fläche» (samt Ton-Tabelle) | 22.9.2026 | Entscheid David «Farbe als Fläche: ja» → F0.2 neu |
+| F5-Zusatz (Geist/Source Serif 4; «expressive Lesestile nicht in der Produkt-UI») | 6.9.2026 | W2·24 R1/R3 → F0.4 |
+| G a «Brass ist Signal, nicht Tapete» | 6.9.2026 | Messing-Skala neutral (F0.3); Squint-Test bleibt |
+| G c «Temperatur-Dramaturgie» | 6.9.2026 | eine Fläche über die ganze Seite (F0.1) |
+| G e-Zusatz 29.8.2026 «Mono trägt Struktur-Etiketten» | gegenstandslos 6.9.2026 | `.lc-overline` = Archivo ohne Versalien (F0.4/F0.7) |
+| §N-4b-A Gliederungslinie | 16.8.2026 | dreimal verworfen; Übersicht trägt die Seitenleiste mit Gliederungsbaum |
+| §N-4b-C Tiefen-Einzug, Einzug-Skala | 29.8.2026 | EINE linke Textkante (geltende Fassung §N-4b-C) |
+| §N-4b Brass als dritte Kanten-Sprache · Source Serif 4 · Versal-Marginalie | 6.9.2026 | Tinte/Registerfarbe · Literata · Gewicht + Tinten-Tier (Vermerk bleibt am Ort) |
+| §N-4b-B Zeile «brass» | 6.9.2026 | vier Registerfarben (Wortlaut bleibt am Ort) |
+| §N-4c Schalter «Linien» | 16.8.2026 | mit der Gliederungslinie entfallen |
+| §J-R1/R2/R8 Juni-Werte `max-w-[56rem]`, `text-[1.08rem]`, `text-[1.1rem]`; §R-1 `rounded-2xl` | 23.9.2026 | auf den Ist-Code korrigiert (Befunde Design-System-Bau 22.9.2026 Nr. 2/3) |
+
+---
+
+# Teil II · Domänen
+
+## N · Normtext — die Gesetzesdarstellung
+
+*Ehemals `DESIGN-REGLEMENT-NORMTEXT.md`, konsolidiert 23.9.2026 (W2·29-WERKBANK-TOKENS, Rats-Auflage 2).*
+
+Stand: 28.6.2026, erweitert 4.7.2026 (W2·5d G1). Auftrag David: «baue ein
+fundiertes Regelwerk für die Darstellung von Bundesgesetzen und Verordnungen; es
+soll mindestens die Qualitätserfordernisse von Fedlex haben». Geltungsbereich
+**erweitert auf alle Gesetze (Bund + Kanton + International)**: **die Anzeige von
+Gesetzes-/Normtext** im Gesetzleser (`src/pages/gesetz-leser/*`,
+`src/components/normtext/*`, `src/lib/normtext/*`) und die Extraktion, die ihn
+speist (`scripts/normtext*`). Detail-/Bau-Spec der UX-Reform:
+`fahrplaene/FAHRPLAN-GESETZES-UX.md`.
+
+Evidenz: das Fedlex-Datenmodell selbst (gecachte amtliche Konsolidierungs-HTMLs
+unter `/tmp/*.html`, Struktur `div#preface` / `div#preamble` / `article` /
+`div.dispositions` / `div.annex` / `div.footnotes`) sowie das
+Vollständigkeits-Audit `AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md` (33 Lücken
+bestätigt). Umbau-Plan: `fahrplaene/FAHRPLAN-NORMTEXT-DARSTELLUNG.md`.
+
+### §N-L0 · Leitsatz (steht über allem)
+
+> **LexMetrik bietet eine Gesetzesdarstellung, die *gleich fundiert* ist wie
+> Fedlex — kein Informationsverlust, amtstreu — aber *nützlicher und
+> praxistauglicher* als Fedlex und andere Konkurrenten.**
+
+Daraus folgt die Tiefen-Steuerung jeder Entscheidung:
+
+1. **Fedlex ist die Untergrenze der Fundiertheit, nicht das Ziel.** Was Fedlex
+   für einen Erlass zeigt, *muss* bei uns abbildbar sein (oder ehrlich als
+   «nicht abgebildet» markiert — nie still weggelassen).
+2. **Bei der Darstellung dürfen/sollen wir Fedlex übertreffen** — ruhigeres
+   Schriftbild, lückenloser Sprung-Index, interne Verzahnung (Norm→Norm), aber
+   nie auf Kosten der Amtstreue.
+3. **Reihenfolge der Tiefe:** zuerst was die Norm *fundierter/korrekter/
+   vollständiger* macht, dann *Nutzen-Vorsprung*, zuletzt Kosmetik.
+
+### §N-1 · Wortlaut ist unantastbar (oberste Invariante)
+
+- Der **amtliche Wortlaut wird nie verändert** — wir normalisieren nur die
+  *Darstellung* (Einzug, Marker-Position, Strich-Logik, Abstände).
+- **Konkretisierung Tarif-/Anhangtext** (Freigabe David 17.6.2026, bestätigt
+  Chat 4.8.2026): In Tarif- und Anhangtext dürfen fehlende **Trenn-Leerzeichen**
+  zwischen Buchstabe↔Ziffer und ‰↔Ziffer für die Darstellung eingefügt werden —
+  das ist Typografie-Reparatur der Extraktion, kein Wortlaut-Eingriff. Kein
+  Zeichen des amtlichen Texts wird entfernt, ersetzt oder umgestellt.
+  Umsetzung: `normalisiereTarifText()` in `src/components/normtext/ArtikelBody.tsx`.
+- Eine Darstellungs-/Extraktions-Änderung, die den Sinn verschiebt, ist ein
+  Bug, kein Feature. **Falsche Zitate sind schlimmer als gar keine.** Beispiel:
+  verlorene Verschachtelungstiefe einer Aufzählung (Ziff. oben / lit. unten)
+  erzeugt falsche Fundstellen → §1-Verletzung, höchste Priorität.
+- **Plausibel-falsche interne Links sind schlimmer als tote.** Ein Verweis, der
+  auf den falschen Artikel zeigt (z. B. VO-Selbstverweis statt Trägergesetz),
+  wird unterdrückt, bevor er falsch verlinkt wird.
+
+### §N-2 · Vollständigkeit gegen Fedlex (Fundiertheits-Floor)
+
+Ein Bundeserlass besteht aus mehr als seinen Artikeln. Folgende Fedlex-Regionen
+**gehören zur Norm** und dürfen nicht still fehlen:
+
+| Region | Fedlex-Element | Status-Soll |
+|---|---|---|
+| Erlass-Kopf | `div#preface` (SR-Nr, Titel, **Erlassdatum «vom …»**, Stand, Kopf-Fussnoten) | abbilden |
+| Ingress/Präambel | `div#preamble` (Erlassformel «… beschliesst:/verordnet:», bei BV materielle Präambel) + deren Fussnoten | abbilden |
+| Artikel | `article` (Absätze, Aufzählungen mit **korrekter Verschachtelung**, Tabellen, Bilder/Formeln) | abbilden |
+| Schluss-/Übergangsbest. | `div.dispositions` (datierte UeB-Blöcke; ZGB-Schlusstitel = 178 Art.) | abbilden *(B2)* |
+| Anhänge | `div.annex` (Anhang 1, 2 … mit Tabellen/Verzeichnissen) | abbilden *(B2)* |
+| Fussnoten-Apparat | `div.footnotes` (Quell-/Änderungsvermerke, AS/BBl-Zitate, **Hervorhebungen**) | abbilden |
+
+**Markier-Pflicht (§8):** Was wir (noch) nicht abbilden, wird sichtbar als
+solches markiert — nie als Vollständigkeit ausgegeben.
+
+### §N-3 · EINE Quelle (Snapshot + Sidecar)
+
+- Der **Normtext-Index** (`golden/normtext-snapshot.json` / `public/normtext/
+  bund/*.json`) ist die *eine* Quelle des Wortlauts. Keine zweite Wortlaut-Quelle.
+- **Anreicherungen, die den Wortlaut nicht verändern** (Erlass-Kopf/Ingress,
+  Fussnoten-Hervorhebung, Wort-Offsets der Marker), liegen als **Sidecar** neben
+  dem Index → der Index bleibt byte-gleich. Nur echter Normtext-Zuwachs
+  (Verschachtelungstiefe, Tabellen-Köpfe, Bilder, doppelte-ID, neue
+  Schluss-/Anhang-Einträge) verändert den Index **bewusst**.
+
+### §N-4 · Darstellungsregeln (wo wir Fedlex erreichen + übertreffen)
+
+- **Gliederung/Sprung-Index lückenlos.** Der TOC zeigt **alle** Randtitel einer
+  Ebene — auch Blatt-Knoten ohne Unterknoten (Fedlex-Übertreffer: keine
+  löchrige Buchstabenfolge wie «B, C, E»; ZGB-Einleitung muss A–E zeigen). Die
+  Wurzel (`randtitelKnoten`) speist TOC **und** Fliesstext-Überschrift — Blatt-
+  Randtitel im TOC nie mit der Artikel-eigenen Sachüberschrift doppeln.
+- **Zusammengehörigkeit einheitlich.** Die Gruppierungs-Striche (zeigen, dass
+  Artikel zusammengehören) folgen *einer* Logik — gleicher Strich überall, kein
+  Mal-ja-mal-nein zwischen Knoten- und Blatt-Randtiteln. **(David 29.6.):** die
+  Striche müssen **bei jedem Bund-Gesetz** vorhanden sein (Quelle: `<section …/lvl_…>`
+  + `aria-level`, OR-Wurzel `part_`) — heute fehlen sie bei einigen. Zusätzlich ein
+  **An/Aus-Umschalter pro Gesetz** (zustandslos), ob die Striche angezeigt werden.
+- **Einheitliche linke Textkante.** Der Einzug ist gleich, ob ein Artikel
+  nummerierte Absätze hat oder nur einen Block (`absatz=null`) — keine
+  springende Textkante zwischen Artikeln. **Seit dem 29.8.2026 gilt das nicht
+  mehr nur zwischen Artikeln, sondern über den ganzen Erlass** (§4b-C).
+- **Aufgehobene Artikel: schlicht statt verspielt.** Ein voll aufgehobener
+  Artikel zeigt als **dezente, immer sichtbare Statuszeile «· aufgehoben»** seinen
+  Zustand (das *ist* der Artikelzustand, §2). Die amtliche **Aufhebungs-Zitatzeile**
+  («Aufgehoben durch … [AS …]») ist eine Änderungs-Fussnote und steht — wie jede
+  andere Fussnote — **hinter dem Fussnoten-Schalter, erst auf Klick** (Entscheid
+  David 29.6.: einheitliches Fussnoten-Verhalten; vorher war sie bei Aufhebungen
+  als einzige standardmässig offen). Kein eigener Accordion-Apparat je Artikel —
+  derselbe Schalter wie überall. Ruhig, aber vollständig.
+- **Fussnoten wie Fedlex.** Platzierung + Abstand folgen dem Fedlex-Ist
+  (einheitlich, kein Mal-Abstand-mal-keiner); Hervorhebungen (fett/kursiv) im
+  Fussnotentext bleiben erhalten.
+- **Änderungsstatus ruhig.** Der Änderungsvermerk je Bestimmung («Eingefügt
+  durch / Fassung gemäss / in Kraft seit / AS …») bleibt **hinter dem Fussnoten-
+  Schalter** (David-Entscheid 28.6.: ruhiges Schriftbild > Oberflächen-
+  Fundiertheit; der Inhalt ist da, auf Klick). **Einheitlich (David 29.6.):** auch
+  die *Aufhebungs*-Zitatzeile («Aufgehoben durch … AS …») steht hinter dem Schalter;
+  einzig die **Statuszeile «· aufgehoben»** bleibt immer sichtbar (sie *ist* der
+  Artikelzustand, nicht die Fussnote).
+
+#### §N-4a · Suche, Gliederung & Tabellen (QA-Sweep David 29.6.2026)
+
+Detailplan: `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md` (M4/M5/M7/M8/M10).
+
+- **Suche ↔ Gliederung responsiv (M4/M5/M7).** Über alle Breakpoints: die Gliederung
+  darf das **Suchfeld und die gefundenen Artikel nicht verdecken** (schmaler Viewport →
+  Drawer/Overlay statt Überlagerung). Gliederung + Suche schliessen **kompakt an den
+  Header** an (keine lose Lücke). Nach einer Suche springt der Treffer **vollständig
+  sichtbar** an — nie unter den Sticky-Header geschoben/oben abgeschnitten (Scroll-Offset).
+- **Treffer-Hervorhebung (M8).** Der im Gesetzes-Suchfeld gesuchte Begriff wird **im
+  Normtext markiert** (sichtbares Highlight), nicht nur per Sprung angezeigt.
+- **Tabellen-Layout (M10, → Tabellen-Regelwerk T-C/T-D).** Renderer ist **dumme Projektion**
+  von `spalten.length`; Ausrichtung folgt dem **Spaltentyp** (Text/Bereich links,
+  Zahl/Betrag rechts mit `tabular-nums`), **einheitlich pro Spalte** — kein zellweises
+  Alternieren. Staffel-Spanne erscheint als **eine** linksbündige Zelle («über 100 bis
+  500»), keine Phantom-Leerspalte. Mobil seitlich scrollbar (Zahlen brechen nicht um),
+  ARIA-Tabellensemantik vollständig (Kopf↔Zelle), Kontrast/Fokus über Tokens (§13/F).
+  Tausender-Apostroph/Währung sind **Anzeige**, nie im Snapshot (§7).
+
+#### §N-4a-D28 · Die Erlass-Suche steht oben am Gesetz (David 6.9.2026)
+
+**Der Ort ist Regel, nicht Geschmack.** Bis zum 6.9.2026 hatte das Such-/Sprungfeld
+zwei Wohnorte — die Gliederungs-Spalte, solange sie stand, und den klebenden
+Kopf-Block, sobald man sie einklappte. David dazu, wörtlich: «die suchleiste im
+gesetz, welche sich oben an der gliederung befindet, will ich oben am gesetz —
+dann verschiebt sie sich auch nicht, wenn gliederung eingeklappt ist; achte
+darauf, dass dann das gleiche gilt.»
+
+1. **Ein Feld, ein Ort.** Die Erlass-interne Suche liegt in JEDER Lage im
+   klebenden Kopf-Block des Lesers (`v3/SuchZone.tsx`) — Desktop, Pane, Handy,
+   Gliederung offen oder zu. Die Gliederungs-Seitenleiste trägt nur die
+   Gliederung. Einzige Ausnahme: im modalen Gliederungs-Sheet steht das Feld in
+   dessen Kopf, weil der Fokus den Dialog nicht verlassen darf (WCAG 2.4.3) —
+   die Zone gibt es solange her, es bleibt bei **einem** Feld im DOM.
+2. **Beim Klappen verschiebt sich im Kopf nichts.** Δx = Δy = 0 für Erlass-Suche,
+   Kopf-Zone, Kopf-Griffe und Ansicht-Menü, wenn die Gliederung ein- oder
+   ausklappt; nur die Textspalte ändert Lage und Breite. Der Kopf-Block liegt
+   über der ganzen Rahmenbreite — die Zusage ist damit strukturell erfüllt und
+   zusätzlich gemessen (`e2e/leser-klapp-sonde.e2e.ts`). Beim Ein-/Ausblenden der
+   APP-Seitenleiste rückt der ganze Inhalt mit; dort gilt die Zusage **relativ
+   zum Leser-Rahmen**, nicht absolut.
+3. **Das Feld ist ein Feld, keine Wand.** Es wird auf `max-w-reading` (40 rem)
+   gedeckelt — dieselbe Token-Breite wie die Lesespalte. Ohne Deckel erbt es die
+   Rahmenbreite (gemessen 1072 px @1440).
+4. **Zähler und Treffer-Schritt stehen in einer Zeile.** «N Artikel · M
+   Fundstellen» und die Griffe ‹ › bedienen dieselbe Fundstellen-Folge wie ↑↓ im
+   Feld und die Pfeile im Kopf der Trefferliste. Steht die Trefferliste bereits
+   als Spalte daneben, **schweigt die Zone** — Zahlen und Schritt stehen dort,
+   und zwei gleiche Listen übereinander sind ein §5-Bruch.
+5. **Der Druck kennt keine Suchleiste.** Die ganze Zone fällt im Ausdruck, nicht
+   nur ihre Knöpfe.
+
+**Und die Ortsangabe steht genau einmal (D27).** Die Kopfzeile des Lesers trägt
+keine Brotkrume und keinen laufenden Artikel mehr: der Ort steht im Reiter, den
+der Scroll-Spy über `aktualisiereTabArtikel` (`lib/tabs.ts`) live führt; der
+Erlass-Kontext steht im Titelblatt und als Kennung im Kopf; der Rücksprung steht
+in der Hauptnavigation. Wer eine dieser Angaben ein zweites Mal in den Kopf
+zurückholt, baut die Doppelkrume wieder auf, die der Entscheid vom 17.8.2026
+abgeschafft hat. Protokoll mit Messreihen: `abnahme/design-identitaet/R6D.md`.
+
+#### §N-4b · Linien-Kanon & Lese-Typografie (W2·5d G1, 4.7.2026)
+
+Leitprinzip (aus Fedlex-Messung + SotA doppelt belegt): **Ruhe durch Reduktion.
+Hierarchie über Typo-Abstufung, NICHT über Linien und NICHT über Einzug.** Der
+Fliesstext ist der Held; die Struktur flüstert (Gegen-Lehre zu Fedlex, wo «die
+Struktur schreit, der Rechtstext flüstert»). Rangfolge verbindlich: **Typo
+(Gewicht/Grösse) trägt die Tiefe allein. Einzug, Linien, Farbe, Boxen nie.**
+Der frühere zweite Rang «Einzug» ist am **29.8.2026** gestrichen (§4b-C), der
+frühere dritte «eine dezente Guide-Linie» am 16.8.2026 (§4b-A).
+
+**EINE Linien-Sprache — genau ZWEI benannte Rollen, sonst keine.** Vorher wurden
+für strukturgleiche Trenner 4–6 Ad-hoc-Opazitäten desselben `--line` frei gewählt
+(Artikel `/70`, Sektion voll|`/50`, Guide `/60`, Tabellenzeile/Fussnoten `/50–60`)
+und bis zu ~6 parallele 1px-Linien stapelten sich («Barcode/Gleisbett», ZGB
+Art. 684 / OR Art. 319). Neu (Tokens in `src/index.css` `:root` **und**
+`html.dark`, abgebildet in `tailwind.config.js`):
+
+| Rolle | Klasse | CSS-Var (hell / dunkel) | Wo (strukturell) |
+|---|---|---|---|
+| **Artikel-Trenner** (fein) | `border-t border-rule-artikel` | `--rule-artikel` (10 % / 14 %) | Artikel-Kopf, Tabellenzeilen, Fussnoten-Trenner |
+| **Struktur-Trenner** (oberste Sektionen Teil/Titel/Abschnitt, eine Spur kräftiger) | `border-t/-b border-rule-struktur` | `--rule-struktur` (14 % / 20 %) | Sektionskopf ebene ≤ 1, Ingress |
+
+Harte Regeln:
+1. **KEINE vertikale Guide-Linie** (16.8.2026, §4b-A; früher: höchstens EINE
+   Linie auf einer aufbau-abhängigen Ebene). Der Rollen-Token
+   `--guide-gliederung` ist entfernt. **Und kein Tiefen-Einzug** (29.8.2026,
+   §4b-C): die Tiefe trägt allein die Zwischen-Überschrift.
+2. **Innere Sektionen (ebene ≥ 2) und randtitel-promotete Knoten** («A.», «II.»)
+   tragen **keine** Horizontal-Linie (die frühere feine ebene-2-Linie entfällt);
+   ihre Tiefe trägt die Typo.
+3. **Marker-Scope + Chrome-Ausnahme:** die zwei Rollen gelten NUR an den mit
+   `data-normtext-linie` markierten strukturellen Containern. Chrome-Borders
+   (Such-Boxen, Buttons, Drawer, Nav, Fussnoten-Popover, Tabellen-**Aussenbox**)
+   sind eine eigene, ausdrücklich ausgenommene Sprache — sie bleiben `border-line`
+   bzw. tragen die zwei soliden Trenner des Dachs (`--rule-soft` 1 px,
+   `--rule` 2 px, `DESIGN-REGLEMENT.md` F0.6), nie mit der Normtext-Linien-Sprache
+   vermischt. *AUFGEHOBEN 6.9.2026 (W2·24-DESIGN-IDENTITAET R1):* die frühere
+   dritte Sprache «**Brass** (Ziel-/Zitat-Kanten, Fussnoten-Links)». Die
+   Messing-Skala ist neutral geworden und trägt keine eigene Kanten-Sprache mehr;
+   was dort Brass hiess, ist heute Tinte bzw. Registerfarbe (Dach F0.3).
+
+**Einzug-Skala — AUFGEHOBEN am 29.8.2026, s. §4b-C.** Hier stand die Skala
+(`einzug` 20 px/Stufe, `einzug-mobil` 12 px, gedeckelt bei 5 Stufen). Die Tokens
+sind aus `tailwind.config.js` entfernt, der Wortlaut steht auf **einer** linken
+Kante.
+
+**Lese-Typografie.** Lesespalte **hart auf einem benannten Token**, nie arbitrary
+`max-w-[…rem]` (R2). Seit dem 29.8.2026 sind es ZWEI Deckel, der schmalere
+gewinnt: der Pixel-Deckel `--leser-lesemass-max` (45 rem, 21.8.2026) und der
+Zeichen-Deckel `--leser-zeilenmass` (~70 Zeichen, §4b-C). Fliesstext 18px Serif (über Fedlex 14px),
+gedämpft `text-ink-800`, Flatterrand (nie Blocksatz). Die Serife ist seit dem
+6.9.2026 **Literata** mit geladener `opsz`-Achse (`font-optical-sizing: auto`) und
+dem Lesegewicht `--lese-gewicht: 450` — Bildschirm-Serifen brauchen optische Grösse
+und etwas mehr Gewicht (D12, Belege in `abnahme/design-identitaet/KONTRAST-R1.md`
+Nachtrag D12). *AUFGEHOBEN am 6.9.2026:* Source Serif 4 als Lese-Serife.
+**`hyphens: manual`** (nicht
+`auto`) auf dem Normtext-Body — die deutsche Auto-Silbentrennung an schmalen
+Spalten war der sichtbare «Ge-werbes»-Treiber; `[overflow-wrap:anywhere]` bleibt
+der Overflow-Schutz für lange Komposita. **Randtitel-Hierarchie:** Blatt/Sach-
+überschrift `font-semibold text-ink-800`, oberste Marginalie `text-ink-500`,
+dazwischen `text-ink-600`. *AUFGEHOBEN 6.9.2026 (W2·24 R1, Dach F0.7):* `uppercase
+tracking-wide` an der obersten Marginalie — es gibt in der Sammlung keine
+Versal-Etiketten mehr; die Hierarchie trägt allein Gewicht und Tinten-Tier.
+Mehrzeilige Randtitel mit
+**Hänge-Einzug-Schutz** (`text-indent:-1em` + `pl-[1em]`) gegen den Fedlex-AVOID
+«1. Im / Allgemeinen».
+
+**Artikelform im Leser (W2·24-R6b, 6.9.2026 — löst den dreispaltigen Satzspiegel
+aus R4/R6 ab).** Auftrag David, wörtlich: «der platz rechts und links neben dem
+gesetz für bspw. rechner oder fassung nimmt viel platz vom gesetzestext weg.»
+Die beiden Randspuren (Marginalie 150 px links, Randnotizen 210 px rechts, dazu
+zwei Rinnen à 36 px = **432 px**) sind **ersatzlos gefallen**. Es bleiben ZWEI
+Formen, gerechnet in `pages/gesetz-leser/v3/satzspiegel.ts` und am DOM als
+`data-lr-spiegel` ablesbar:
+
+* `zeile` — Ist-Form: Randtitel als Zeile über der Artikelnummer, Beiwerk unter
+  dem Wortlaut. Gilt im Pane (beide Hälften des Split-Views tragen dieselbe
+  Form), auf schmalen Flächen, in der Trefferliste und ohne Rahmen-Provider.
+* `breit` — ab **28 rem** Lese-Zelle in Spalten-Lage: der Randtitel steht als
+  kursive Literata-Zeile IM ARTIKELKOPF über der Artikelnummer, das Fassungs-
+  datum klein daneben (`.lr7-kopf`); der Kopf trägt seit D40 (#761, 7.9.2026)
+  **keine** Bezüge mehr.
+
+**Funktionszeile am Artikelende** (D34/D40, seit W2·26 in Überarbeitung — Zielbild
+`FAHRPLAN-DESIGN-IDENTITAET.md` §9): EINE aufklappbare Zeile mit Registerfarben-Marken
+(`.lr7-bez`, `parts/BezuegeKopf.tsx`, künftig `Funktionszeile.tsx`) je Artikel, unabhängig
+von `zeile`/`breit` — beide Satzspiegel-Formen tragen dieselbe Zeile am Artikelfuss statt im
+Kopf. Zustand lokal per `useState` (kein `<details>`, kein `localStorage`-Merker — jeder
+Artikel startet beim Laden zu, D35). Die Rubriken (Fassung · Entscheide · Materialien ·
+Verweise · Rechner) sind im Ansicht-Menü **einzeln** abwählbar (`leserOptionen.ts`,
+`v3/LeserRubrikenWahl.tsx`); eine offene Rubrik zeigt ihren Inhalt im selben Aufklapp-Block —
+nie zwei Blöcke zugleich (§5).
+
+Das Gewicht des Randtitel-Blatts bleibt die Ä7-Stufe (13 px semibold ink-800);
+kursiv und Serife kommen aus der Form, das Gewicht aus dem Entscheid. Im DRUCK
+trägt der Kopf den Randtitel, die Funktionszeile ist ausgeblendet (`print:hidden`).
+
+**Grösse und Zeilenhöhe des Fliesstexts: 18 px / 1.62** (`leser-text` in
+`tailwind.config.js`). Die Zeilenhöhe stammt aus dem freigegebenen Referenzbild
+`abnahme/design-identitaet/vorschlag-freigegeben.html` (`.norm { font-size:17px;
+line-height:1.62 }`, seit 6.9.2026; davor 1.55). Die GRÖSSE steht seit W2·24-R6c
+(6.9.2026) auf 18 px — D20 (c), Auftrag David: der Satzspiegel ohne Randspuren
+gibt dem Lesetext die Breite, und der Lesekomfort (D12) verlangt die Stufe
+darüber. Sie hängt an DREI Orten zusammen und darf nirgends einzeln wandern:
+`tailwind.config.js` (`leser-text` = 1.125 rem), `src/index.css` (Block
+LESER-SCHRIFTSKALA: die Reglerstufen 1.215 / 1.3275 / 1.4625 rem, Faktoren
+1.08 / 1.18 / 1.30) und `src/pages/gesetz-leser/leserSchrift.ts` (`SCHRIFT_REM`,
+Anzeigewerte 100 · 108 · 118 · 130 %). `src/tests/leser-schriftskala.test.ts`
+hält die drei gegeneinander. Die Zahl steht in der
+Typo-STUFE und nie im Markup — `src/tests/leser-typo-tokens.test.ts` verbietet
+jedes `leading-…` am Fliesstext. WCAG 1.4.8 gemessen am gebauten Stand
+(6.9.2026, Methode `e2e/leser-lesemass.e2e.ts`): lh 1.62 ≥ 1.5, Zeilenmass
+OR 64 · StPO 64 · ZGB 64 · SchKG 63 · ZPO 62 · BS-640.100 56 Zeichen im
+Satzspiegel @1400 (Decke 80, Hausgrenze 75) — Messung VOR R6c, s. die Messreihe
+in §4b-C für den Stand mit 18 px.
+
+**Maschinell gegated:** R1 `check:linien-kanon` (marker-scoped, in `npm run gate`),
+R2 eslint (`no-restricted-syntax` gegen arbitrary `max-w-[…rem]` im Reader), R5
+als Playwright-e2e (`leser-lesemass.e2e.ts`: WCAG-Decke ≤ 80 ch an drei Breiten,
+Haus-Spanne 65–72 ch @ 1440 und @1280 an sechs Erlassen [Block T-1C], Mobil-Boden ≥ 31 ch /
+kein horizontaler Overflow @ 390);
+`leser-ohne-gliederungslinie.e2e.ts` hält fest, dass **keine** Guide-Linie
+zurückkommt und **kein** Tiefen-Einzug — samt der Wirkungs-Gegenprobe «genau
+EINE linke Textkante und EINE Textkörperbreite je Seite» (R4 «≤ 1 Guide je
+Artikel» ist gegenstandslos und entfallen). **`golden/lexmetrik-golden.json` bleibt byte-gleich**
+(der Reader liegt nicht in der Engine-Golden-Matrix); der amtliche **Wortlaut ist
+unangetastet** (§1, Text-Extraktion vorher/nachher byte-gleich) — geändert sind
+ausschliesslich Klassen/Attribute.
+
+#### §N-4b-A · Gliederungslinie — AUFGEHOBEN (Rückbau V1, 16.8.2026)
+
+**Es gibt im Lesetext keine vertikale Gliederungslinie mehr, und es soll auch
+keine vierte geben.** Dieser Abschnitt regelte von Juli bis Mitte August 2026,
+*wann* der Reader den Guide zeigt (Auto-Default aus Gliederungstiefe + Artikel-
+Dichte, `linienProfil()`, `data-guide-auto`, K11-Tri-State-Schalter «Linien»).
+Er ist mit dem Feature aufgehoben — der Wortlaut steht in
+`archiv/FAHRPLAN-GESETZES-UX-erledigt.md` und in der Fassungs-Historie.
+
+**Der datierte Anlass** — die Linie wurde dreimal gebaut und dreimal von David live
+verworfen (5.7., 12.7., 3.8.2026), weil eine einzelne Linie «viele Ebenen»
+strukturell nicht abbilden kann — steht samt Davids Wortlaut und dem Entscheid
+vom 13.8.2026 (V1 Rückbau) wörtlich im Archiv. Vor jedem vierten Anlauf lesen
+(Chesterton).
+
+**Was die Aufgabe stattdessen trägt:** im Fliesstext die Typo (§4b Rang 1; der
+Einzug, den dieser Absatz bis zum 29.8.2026 als Rang 2 mitnannte, ist mit §4b-C
+ebenfalls fort); für die Übersicht «wo bin ich in
+der Struktur» die Seitenleiste mit Gliederungsbaum, Scroll-Spy und Sprungziel
+(`W2·19-GLIEDERUNG`, live seit 13.8.2026) — ein dafür gebautes, mächtigeres
+Werkzeug als eine Linie am Spaltenrand.
+
+**Maschinell gegated:** `check:linien-kanon` prüft nur noch die Linien-SPRACHE
+(Teil A: zwei Rollen-Tokens, kein Ad-hoc `border-line` an markierten Containern);
+das frühere Teil B (Aufbau-Regelwerk) wurde **gestrichen statt umgebaut**, weil
+sein Gegenstand nicht mehr existiert und es nicht mehr rot werden könnte (§6.7).
+Dass die Linie wegbleibt, hält `e2e/leser-ohne-gliederungslinie.e2e.ts` fest —
+seit dem 29.8.2026 zusammen mit der Gegenprobe, dass auch der Einzug wegbleibt
+und der Lesetext auf EINER Kante steht (§4b-C).
+
+#### §N-4b-C · Tiefen-Einzug — AUFGEHOBEN, EINE linke Textkante (Entscheid David 29.8.2026)
+
+**Der Wortlaut steht auf EINER linken Kante — über alle Gliederungstiefen, alle
+Erlasse, Desktop wie mobil.** Die Tiefe trägt allein die Zwischen-Überschrift.
+
+**Entscheid David 29.8.2026, wörtlich:** *«wichtige änderung … im gesetz die
+staffelung aufzuheben. es soll alles auf der selben höhe stehen. … analog zu
+fedlex»*. Damit ist die Regel «Tiefe ausschliesslich über Einzug» (§4b Rang 2,
+W2·5d G1 / V2·L-1) aufgehoben — ersetzt, nicht ergänzt.
+
+**Was der Einzug tatsächlich tat** (gemessen 29.8.2026, alle gerenderten
+`.max-w-normtext` je Erlass): weil die Gliederungs-`section`s INEINANDER
+stecken, summierten sich die 20-px-Stufen (mobil 12 px).
+
+*(Messtabelle Textkanten/Textkörperbreiten je Erlass, 29.8.2026: Archiv.)*
+
+Der Effekt lief der Lesbarkeit zuwider: **je tiefer eine Bestimmung in der
+Kodifikation steht, desto schmaler wurde sie gesetzt** — die dichtesten Stellen
+des ZGB (Art. 105/125/208/416) bekamen die engste Spalte. Nach dem Rückbau hat
+jeder Erlass **genau eine** Kante und eine Breite.
+
+**Nicht betroffen — bewusst:**
+
+- Die **Absatz-Rinne** (`pl-9 -indent-9`, hängende Absatznummern in
+  `ArtikelBody`): amtliche Absatz-Auszeichnung, keine Gliederungstiefe.
+- Die **Gliederungs-Seitenleiste** (`SektionBaumTOC`): dort ist die Einrückung
+  ein Navigations-Baum, kein Fliesstext.
+- Der **Hänge-Einzug-Schutz** mehrzeiliger Randtitel (§4b «Lese-Typografie»).
+
+**Gebündelt entschieden (Variante 1C): Zeilenmass-Deckel ~70 Zeichen** (bis
+W2·24-R6c 68).** Mit
+einer Kante läuft jeder Erlass an denselben Pixel-Deckel, das Zeilenmass stieg
+gemessen auf 69–74 Zeichen. Der Textkörper trägt darum einen zweiten, in
+ZEICHEN rechnenden Deckel (`--leser-zeilenmass`, `src/index.css`); der
+schmalere der beiden gewinnt. Die Zahl ist ch-basiert hergeleitet: 1 CSS-`ch`
+misst in der Lese-Serife 0.5078 em, das mittlere Prosa-Zeichen 0.4805 em
+(Schlechtfall der Stichprobe). Der Deckel hängt an `--lm-leser-schrift` und
+**skaliert darum mit jeder Schriftstufe**.
+
+**W2·24-R6c: 68 → 70.** D20 (c) gibt die Spanne **65–72 CPL** vor. Die Konstante
+RECHNET, das Tor MISST — und misst systematisch tiefer, weil
+`--leser-zeichenbreite` am Schlechtfall kalibriert ist. Mit 68 lag die gemessene
+Untergrenze nach R6b bei 63 ch, also unter der Spanne (R6-NACHZUG §4). 70 hebt
+die Rechengrösse, nicht die Messmethode.
+
+*(Messreihe @1440 in vier Ständen — Staffelung, eine Kante, Deckel 68, Deckel 70: Archiv.)*
+
+Die WCAG-Decke SC 1.4.8 (≤ 80 ch) bleibt mit ≥ 12 ch Reserve gehalten. @1280
+misst dieselbe Reihe (Textkörper 641 statt 640 px). BS-640.100 liegt bei 56 ch,
+obwohl seine Spalte gleich breit ist: die Methode rechnet `Textlänge /
+Zeilenkästen`, und kantonale §-Absätze enden häufig mit einer halb gefüllten
+Zeile — die Zahl beschreibt dort die Absatzform, nicht den Satzspiegel, und
+trägt deshalb keine Untergrenze (§8).
+
+Mobil @390 greift der Deckel nicht (641 px > Viewport); die Spalte bleibt bei
+350 px. Mit 18 px stehen dort **ZGB 37 · OR 35 · VMWG 32 · StGB 41 · StPO 34 ·
+BS-640.100 33 ch** — je nach Erlass 0–3 ch weniger als mit 17 px. Das ist keine
+Verschlechterung, sondern der Preis der grösseren Type auf physikalisch
+unveränderter Breite; der Mobil-Boden folgt der Messung (34 → 31 ch,
+Schlechtfall VMWG 32 minus 1 ch Reserve).
+
+**Maschinell gegated:** `e2e/leser-lesemass.e2e.ts` Block **T-1C** (sechs Erlasse
+× zwei Fenster @1440 und @1280: genau eine Kante, eine Breite, **65–72 ch** —
+BS-640.100 ohne Untergrenze, s. o. — plus die erwartete Textkörperbreite) und
+der Mobil-Boden ≥ 31 ch; `e2e/leser-ohne-gliederungslinie.e2e.ts` Ziff. 3
+(keine Sektion mit `padding-left` **und** die Wirkungs-Gegenprobe). Beide
+Wächter wurden am 29.8.2026 je einmal rot gezeigt (§6.7; Rot-Beweis im Commit
+`test(leser): Wächter der einen Textkante deklariert nachgeführt`).
+Die Tokens `einzug` / `einzug-mobil` sind aus `tailwind.config.js` **entfernt**
+(§17 «gestrichen statt bewacht» — sie hatten genau einen Verbraucher).
+
+#### §N-4b-B · Farb-Wörterbuch der Referenzschicht (W2·5d V2·C-1, 10.7.2026, David «go zu allem»)
+
+Grundsatz (David 10.7.2026, unverändert gültig): **Farbe NUR auf der Referenz-/
+Verzahnungsschicht** (Chips, Badges, Kopf) — der **Normtext-Körper bleibt
+farbfrei** (Rangfolge §4b: die Typo trägt die Tiefe allein; kein Ton im
+Lesefluss). Das Wörterbuch ist EIN Entscheid je Farbe — kein Ton trägt zwei
+Bedeutungen.
+
+**Nachzug 6.9.2026 (W2·24-DESIGN-IDENTITAET R1, Dach `DESIGN-REGLEMENT.md` F0.2/
+F0.3) — die Zeile «brass» ist ersetzt, die drei übrigen gelten unverändert.**
+Der Referenzschicht stehen seither **vier Registerfarben** als einzige Farbe zur
+Verfügung, je eine pro Register der Sammlung; die Messing-Skala ist neutral
+geworden und trägt keine eigene Bedeutung mehr:
+
+| Register | Token | hell | dunkel | Trägt sie |
+| --- | --- | --- | --- | --- |
+| Gesetze | `--reg-g` | `#1D4E89` | `#8FB8F0` | Norm-Kanten und -Punkte, Reiter-Strich Gesetze, Kantonskarten-Marke (`--karte-marke`) |
+| Rechtsprechung | `--reg-r` | `#7A1F2B` | `#E39AA6` | Entscheid-Kanten, Reiter-Strich Rechtsprechung, Bezugs-Marke `r` |
+| Materialien | `--reg-m` | `#2F7A3E` | `#9AD489` | Materialien-Kanten, Reiter-Strich, Bezugs-Marke `m` |
+| Werkzeuge | `--reg-w` | `#8F5E0E` | `#E6B95A` | Rechner/Vorlagen-Kanten, Wahl-Kachel-Strich, Bezugs-Marke `w` |
+
+Sie stehen als **Strich, Reiter-Unterkante und Randmarke**, nie als Fläche unter
+Fliesstext, und tragen nie allein Bedeutung (`aria-hidden`, Wortlabel daneben —
+§13/F2, WCAG 1.4.1). Alle sechzehn Paare (vier Töne × vier Flächen) halten
+≥ 4.5:1 in beiden Modi und sind sämtlich Pflichtpaare im Tor; Messreihe
+`abnahme/design-identitaet/KONTRAST-R1.md` D12.4.
+
+*AUFGEHOBEN 6.9.2026:* die Zeile **brass** («Marke / Hervorhebung /
+Wortlaut-Referenz»). Ihre Träger — Norm-KantenChip-Tick, ★-Leitentscheid-Glyph
+(seit R11/D23 als **Wort** «Leitentscheid», nicht als Glyphe), Verweis-Links,
+`lc-punkt`, NormChip-Hover, Norm-Familien-Punkt — bestehen fort, färben aber über
+die neutrale Skala bzw. über `--reg-g` um. Der Wortlaut bleibt unten stehen,
+damit Alt-Verweise auflösen; **als geltende Regel ist er ersetzt.**
+
+| Ton | Bedeutung (die EINE) | Trägt sie |
+| --- | --- | --- |
+| **brass** (Messing) | Marke / Hervorhebung / Wortlaut-Referenz. Kein Rechtsstatus-Urteil. | Norm-KantenChip-Tick (`kategorie='norm'`, Default), ★-Leitentscheid-Glyph, Verweis-Links, Verweise-Overline-Punkt (`lc-punkt`, V2·C-2 — auf `--paper` in brass-600, s. u.), NormChip (Pillen-Default inkl. `hover:border-brass-400`, V2·C-3), Familien-Punkt der Norm-Gruppen (`punkt='norm'` an `KontextGruppe`, V2·C-3) |
+| **slate** | **Neutraler Referenz-/Sekundärton** — maschinell/prozedural, ohne Wertung. Kein Rechtsstatus-Urteil, insbesondere **NICHT** «ungeprüft/in Vorbereitung». | Rechtsprechungs-KantenChip-Tick (`kategorie='entscheid'`: Leitfälle + zitierte Entscheide), Leitfälle-Overline-Punkt (`lc-punkt-entscheid`, V2·C-2), soft-Badges «maschinell»/«nur Verweis» (`lc-badge-soft`), Familien-Punkt der Entscheid-Gruppen (`punkt='entscheid'`, V2·C-3) |
+| **slate-Umriss** (`lc-badge-geplant`) | **Status «geplant/in Vorbereitung»** (Status-Modell §8) — Umriss-Form wie die Entwurf-Marke, Ton neutral. *Entscheid David 31.8.2026 (W2·19/D-5, wörtlich «umriss grau»): schliesst die Lücke — vorher trugen fünf Stellen den Status in soft-Füllung bzw. warn-Umriss, beide von diesem Wörterbuch ausgeschlossen.* Kanonischer Wortlaut «In Vorbereitung». | `lc-badge-geplant` (Katalog, Zuständigkeits-Weichen, Vorlagen-Sprung, Sprachumschalter); Wächter: `design-konsistenz-chips-marken` |
+| **warn** | Echter Fassungs-/Sachvorbehalt (eine Warnung, keine Ampel-Wertung des Entscheids). | Revisions-↻-Glyph (`glyphTon: text-warn-700`), Currency-Chip-Tick «nächste Fassung ab …» (`lc-chip-vorbehalt`, V2·C-2 — angekündigt, noch nicht in Kraft) |
+| **sage** | **Materialien-Familie** (Botschaften/Vernehmlassungen/amtliche Soft-Law-Publikationen — kein Gesetzesrang) + Currency «geltend geprüft am … (maschinell)» — beides neutrale, maschinell-bibliografische Einordnung, KEIN Rechtsstatus-Urteil («(maschinell)»-Wording bleibt tragend, §7/§8). | Currency-Chip-Tick `lc-chip-geltend` (V2·C-2), Familien-Punkt der Materialien-Gruppen (`lc-punkt-material` via `punkt='material'`, V2·C-3: Entstehungsgeschichte/Botschaften, Vernehmlassungen, Amtliche Materialien) |
+
+**slate-Doppelbelegung aufgelöst (David-Entscheid §3 Ziff. 3):** slate war latent
+sowohl «Rechtsprechungs-Kante» als auch «ungeprüft/in-Vorbereitung-Status». Fixiert:
+slate bedeutet ausschliesslich **neutrale, maschinell-prozedurale Referenzinformation
+ohne Wertung** — beide Vorkommen (Entscheid-Chip UND soft-Badge) teilen genau diese
+eine Semantik. Der einzige quasi-Status-Gebrauch (Revision) wandert nach **warn** und
+verlässt damit slate. brass bleibt die Marke/Hervorhebung, nie ein Rechtsstatus (R16).
+
+**Anatomie unverändert (§6/R6):** *(Messwerte dieses Absatzes = Stand 10.7.2026
+bis 16.7.2026; die Ist-Zahlen stehen in der Tabelle darunter.)* Die
+`kategorie`-Prop am `KantenChip` tauscht NUR
+den Tick (`border-left-color`) und die Hover-Utilities; Form/Token/Grösse bleiben →
+**CLS 0**, keine Layout-Verschiebung. Der Default `'norm'` emittiert die unveränderte
+brass-Klassenzeile ⇒ Grundzustand **byte-gleich** (`golden:vergleich` IDENTISCH; die
+zitierten Normen im KontextPanel bleiben brass). Kontrast als Gate gemessen
+(WCAG 1.4.11 ≥ 3:1 für den Tick, 1.4.3 ≥ 4.5:1 für Glyphen) — **Ist-Werte
+nachgezogen 6.9.2026 aus dem Tor-Lauf `npm run check:farbwelt`** (dokumentiert in
+`scripts/farbwelt-tabellen.ts` `REFERENZ`; das Tor meldet «Referenz-Drift …
+Zahl in DESIGN-REGLEMENT §N-4b-B nachziehen», wenn diese Tabelle von der
+Messung abweicht — sie ist also gegatet, nicht Prosa):
+
+| | Rolle | Tick/Glyphe auf `--well` | hell | dunkel |
+|---|---|---|---:|---:|
+| **C-1** | Rechtsprechungs-Tick `lc-chip-entscheid` | slate-500 | **4.86** | **3.38** |
+| **C-2** | Currency-Chip «nächste Fassung ab …» | warn-700 | **5.30** | **9.20** |
+| **C-3** | Akzent-Tick (**= Tinte**, früher Messing-★) | brass-700 | **13.79** | **14.19** |
+
+Herkunft der Zahlen (Belege altern nicht, sie werden ergänzt): C-1 D-5 5.03/3.47 →
+R1 4.86/3.47 → D12 4.86/3.38 · C-2 D-5 5.48/9.43 → R1 5.29/9.49 → D12 5.30/9.20 ·
+C-3 D-5 5.13/10.48 (damals Messing auf hellerem Well) → R1 16.02/16.49 → D12
+13.79/14.19. Der Sprung bei C-3 ist **kein Messfehler und keine Drift**, sondern
+der Rollenwechsel: `--brass-700` zeigt seit R1 per `var()` auf die Tinte
+`--ink-fixed-dark`.
+*(D-5/A38, 16.7.: die HELL-Werte stiegen damals [4.81→5.03 · 5.24→5.48 ·
+4.91→5.13], weil `--well` heller/weisser wurde [#F2EFE6→#F6F4EE]; DUNKEL
+unverändert — s. `archiv/DESIGN-REGLEMENT-BELEGE-2026.md`, F2b-Nachtrag D-5.)*
+`--slate-500` wird in `html.dark` bewusst NICHT überschrieben (Tick-Kontrast bleibt
+gehalten). **Gegated:** `verzahnung.test` (Default byte-identisch, Entscheid-Slate,
+↻-warn), Golden byte-gleich. **D-3-Neu-Messung (12.7.2026, color-mix srgb→oklab):
+alle drei Referenzpaare UNVERÄNDERT** (Voll-Token auf solidem `--well`, kein
+color-mix im Pfad); Details + `-bg`-Verschiebung im Archiv (F2b-Nachtrag D-3).
+
+**V2·C-2 (Farb-Wörterbuch Teil 2, 11.7.2026, David «go zu allem») — zwei weitere
+Bausteine, gleiche Anatomie-Disziplin (nur Tick/Punkt-Farbe, CLS 0):**
+
+1. **Overline-Farbpunkte** ordnen die Referenzzeilen ihrer Farbfamilie zu:
+   «Leitfälle» trägt den slate-Punkt (`lc-punkt-entscheid` = Rechtsprechung, deckt
+   sich mit dem Entscheid-Chip-Tick), «Verweise» den brass-Punkt (`lc-punkt` = Norm).
+   Der Punkt ist **redundant zum daneben stehenden Wortlabel** (`aria-hidden`, Farbe
+   trägt NIE allein, §13/F2) und sitzt auf `--paper` statt `--well` — darum brass-**600**
+   (nicht -500 wie der Chip-Tick auf well), damit die Füllung ≥3:1 hält.
+2. **Currency-Chip-Tonung** gibt dem Fedlex-Freshness-Beweis Status-Semantik über den
+   Tick: sage «geltend geprüft am … (maschinell)» (`lc-chip-geltend`) — neutral,
+   maschinell, **kein Rechtsstatus-Urteil**; warn «nächste Fassung ab …»
+   (`lc-chip-vorbehalt`) — echter Fassungsvorbehalt (angekündigt, noch nicht in
+   Kraft). Das «(maschinell)»-Wortfeld bleibt tragend (§7/§8: keine
+   fachliche-Abnahme-Suggestion). `--sage-500`/`--warn-500` in `html.dark` bewusst
+   NICHT überschrieben.
+
+Kontrast als Gate gemessen (WCAG 1.4.11 ≥3:1, Light+Dark, Desktop+Mobil@390,
+Playwright): slate-Leitfälle-Punkt **5.21** hell / **3.31** dunkel; brass-600-
+Verweise-Punkt **3.71** / **11.74**; sage-geltend-Tick **4.14** / **4.03**;
+warn-vorbehalt-Tick **3.02** / **5.52** — alle ≥ Schwelle. **Gegated:**
+`v2-c2-farbwoerterbuch.test` (Leitfälle-slate-Punkt, geltend-sage + «(maschinell)» +
+kein «gegengeprüft/verifiziert», vorbehalt-warn, leer ⇒ kein toter Marker), Golden
+byte-gleich. Gegenprüfung n/a (reines UI).
+
+**V2·C-3 (Farb-Wörterbuch ABSCHLUSS, 11.7.2026) — das Wörterbuch ist damit
+komplett; jede weitere Farbträger-Erweiterung MUSS sich in eine der vier Zeilen
+oben einordnen (EIN Entscheid je Farbe), sonst neuer David-Entscheid:**
+
+1. **Materialien-Familie = sage:** die Referenzgruppen-Überschriften
+   (`KontextGruppe`, `punkt`-Prop `'norm'|'entscheid'|'material'`) tragen den
+   Familien-Punkt ihrer Farbfamilie — Materialien-Gruppen (Entstehungsgeschichte/
+   Botschaften, Vernehmlassungen, Amtliche Materialien; auch VerweisKontext) den
+   **sage**-Punkt (`lc-punkt-material`), Entscheid-Gruppen slate, Norm-Gruppen
+   brass. Ohne `punkt`-Prop KEIN Punkt (Werkzeuge/Revisionen bleiben neutral).
+   Redundant zum Gruppentitel (`aria-hidden`, Farbe trägt NIE allein, §13/F2);
+   `--sage-500` in `html.dark` bewusst NICHT überschrieben.
+2. **NormChip-Verweisfarbe:** der Pillen-Default (`CHIP_LINK_CLASS`) trägt neu
+   `hover:border-brass-400` — vorher der EINZIGE Norm-Chip ohne den brass-
+   Hover-Border; jetzt EINE brass-Hover-Anatomie für die ganze Norm-Familie
+   (KantenChip 'norm', rechtsprechung/NormChip, MassgebendeGesetze, NormChip).
+   SSR-Assertions (`normLinkSsr.test`) deklariert nachgezogen (§6.3).
+
+Kontrast als Gate gemessen (WCAG 1.4.11 ≥3:1, Light+Dark, Desktop+Mobil@390,
+Playwright, auf `--paper`): sage-Punkt **4.48** hell / **3.84** dunkel;
+slate-Punkt **5.21** / **3.31**; brass-600-Punkt **3.71** / **11.74** — alle
+≥ Schwelle. CLS 0 (Punkt inline im Gruppen-h3, kein separater async-Mount;
+Chip-Änderung hover-only). **Gegated:** `v2-c3-farbwoerterbuch.test` (Familien-
+Punkt je Kategorie + Fremdfamilien-Ausschluss + neutral ohne Prop + NormChip-
+brass-Hover), Golden byte-gleich. Gegenprüfung n/a (reines UI). §7-Befund
+offengelegt: die frühere Annahme «0 lc-chip im prerenderten HTML» stimmt für
+Rechner-/Vorlagen-Routen nicht (NormChip ist dort prerendert) — unschädlich,
+Prerender wird je Deploy neu gebaut.
+
+#### §N-4c · Leser-Darstellungsoptionen (W2·5d G2a, 4.7.2026; U-KOPF/A1+A4, 5.7.2026; V2·B-1/B-2/K-2, 11.7.2026)
+
+**V2-Nachtrag (David 10.7.2026, überstimmt «genau drei Toggles»):** es waren
+danach **vier** persistente, rein visuelle Umschalter im «Ansicht»-Dropdown —
+**Linien · Fussnoten · Verweise · Entscheide** — plus ein JS-Filter **Zeitraum**
+und, im aktionen-Slot, ein prominenter **Fussnoten-Chip**. Heute sind es **zwei**:
+«Entscheide» wanderte am 28.7.2026 ins Dropdown «Rechtsprechung ▾» (W2·7-BEZUG/B4),
+und **«Linien» ist am 16.8.2026 mit der Gliederungslinie ersatzlos entfallen**
+(§4b-A). Die «genau drei»-Fassung von
+§3.1/§10.5 (UX) ist damit ausdrücklich überstimmt (A22/A23). Details am Ende von §4c.
+
+Die ursprünglich drei persistenten, **rein visuellen** Lese-Umschalter (Auftrag
+David): ~~**Linien** (Gliederungs-Guide entfallen 16.8.2026, der Einzug am
+29.8.2026, §4b-C)~~,
+**Fussnoten** (Marker + Apparat sichtbar/verschwunden), **Verweise**
+(Verweis-Link-Unterstreichung). Sie
+liegen seit U-KOPF/A4 (David 5.7.2026) in **einem «Ansicht»-Dropdown im aktionen-
+Slot des `ErlassLeserKopf`** (die frühere G2a-Chip-Leiste entfällt; Details im
+U-KOPF-Nachtrag unten). Verbindliche Bau-Regeln:
+
+1. **Mechanik = `data-*`-Attribut am `<html>` + CSS, kein React-State im
+   Artikel-Baum.** Store `src/pages/gesetz-leser/leserOptionen.ts` setzt
+   `data-fussnoten/-verweise/-leitfaelle` **imperativ** (Vorbild `components/thema.ts`);
+   Umschalten rendert nur die Switch-Buttons neu, nie die Artikelliste (§15). Die
+   CSS-Regeln stehen in `src/index.css`, **auf `.lc-leser` gescopt** (nur der
+   Reader, nicht das Norm-Popover der Rechner).
+2. **Pre-Paint CSP-konform.** Angewandt in `main.tsx` VOR `createRoot` (analog
+   Thema/Schriftskala) — **kein Inline-Script** (`script-src 'self'`, vercel.json
+   verbietet es). Persistenz in localStorage `lm.leser.optionen`.
+3. **Default = 'an' = heutige Darstellung** ⇒ `data-*="an"` ist ein CSS-No-op ⇒
+   Grundzustand **byte-gleich** (R6, `golden:vergleich` IDENTISCH). Der frühere
+   `data-linien="aus"`-Zweig, der Guide + Einzug ausblendete, ist mit der
+   Gliederungslinie entfallen (§4b-A); die Einzug-Klassen, die er schaltete, gibt
+   es seit dem 29.8.2026 überhaupt nicht mehr (§4b-C).
+4. **Fussnoten-«AUS» lässt Marker + Apparat VERSCHWINDEN** (U-KOPF/A1, David
+   5.7.2026 — überstimmt die frühere R9-Dämpfungs-Regel; s. U-KOPF-Nachtrag).
+   `display:none` am Marker-Cluster (`button[aria-label^="Fussnote"]`,
+   `[data-fn-marker]`) und am Apparat (`[data-fn-apparat]`); der Fussnotentext
+   bleibt im DOM (`#fn-…`), «AN» stellt alles wieder her. Der **Normtext** ist NIE
+   betroffen und bleibt stets durchsuchbar. **Verweise-«AUS»** unterdrückt nur die
+   Unterstreichung; Farbe und Anker/Funktion bleiben.
+5. **Global ⇒ beide Reader-Instanzen** (Einzelansicht + jedes Split-View-Pane)
+   folgen einer Wahl ohne Re-Render. a11y: echte `role="switch" aria-checked`,
+   sichtbarer Fokus über die globale `:focus-visible`-Outline.
+
+**Gegated:** e2e `leser-optionen` (R6 + A1-Verschwinden positiv+negativ + CLS 0 +
+Persistenz/Reload) + `leser-kopf-a9` (A9-Throttle) + `golden:vergleich` byte-gleich.
+
+**G2b-Ergänzung (4.7.2026) — Fussnoten-Unifizierung umgesetzt:** Es gibt jetzt
+**EINE** Fussnoten-Bedienung: der `data-fussnoten`-Options-Toggle. Der frühere
+`fussnotenAuf`-React-Schalter (Such-Leiste) ist **entfernt**. Marker UND Apparat
+(Artikelfuss-/Kopf-/Sektions-Fussnoten, Aufhebungsnotiz) liegen **IMMER im DOM**
+(nur an `artOffen` gebunden). **Default AN.** Der **Linien**-Default ist mit
+U-LINIEN/A8 aufbau-basiert festgelegt (§4b-A) — er löst den zwischenzeitlich
+grundart-abhängigen G3a/K11-Default ab.
+
+**U-KOPF-Nachtrag (5.7.2026, David-Entscheide) — deklarierte fachliche Änderungen:**
+
+- **A1 — Fussnoten-«AUS» = VERSCHWINDEN (überstimmt R9/K5).** Davids Entscheid
+  («die fussnoten sollen nicht abdunkeln wenn nicht angewählt sondern
+  verschwinden») ersetzt die frühere Regel «AUS dämpft nur, versteckt nie». Neue
+  R9: **«AUS» entfernt Marker + Apparat visuell** (`display:none` an
+  `button[aria-label^="Fussnote"]`, `[data-fn-marker]`, `[data-fn-apparat]`); der
+  **Fussnotentext bleibt im DOM** (`#fn-…`-Quellblöcke), «AN» stellt Sicht + Ctrl+F
+  vollständig wieder her. **Trade-off** (bewusst, David): die Marker-Ziffern +
+  Apparat-Texte verlassen bei AUS Ctrl+F/Screenreader — **NUR sie, nie der
+  Normtext** (die amtliche Substanz des Artikels ist unberührt und stets
+  durchsuchbar). **Print-Verhalten: folgt dem Toggle** — bei AUS wird der Apparat
+  auch im Ausdruck weggelassen (`display:none` wirkt in `@media print`
+  gleichermassen); bei AN wird er gedruckt. **CLS:** der Toggle ist
+  nutzer-initiiert ⇒ der Reflow liegt binnen 500 ms nach dem Klick
+  (input-exkludiert) ⇒ kein CLS-Beitrag (e2e-belegt). Default AN emittiert keine
+  Regel ⇒ byte-gleich (R6).
+- **A4 — «Ansicht»-Dropdown statt Chip-Leiste.** Die drei Switches liegen in einem
+  Dropdown im aktionen-Slot des `ErlassLeserKopf` (`LeserAnsichtMenu.tsx`). **A11y:
+  ehrliche Disclosure, KEIN `role=menu`** (Switches sind Formular-Steuerelemente —
+  ein Menü verspräche eine Pfeiltasten-Bedienung, die es nicht gibt; gleiche Lehre
+  wie `SprachUmschalter`): Trigger «Ansicht» mit `aria-expanded` + `aria-controls`,
+  Panel = `role="group" aria-label="Darstellungsoptionen"`. **Fokus-Falle + Escape +
+  Fokus-Rückgabe** an den Auslöser via `useDialogFokus`; pointerdown-ausserhalb
+  schliesst. Panel **absolut positioniert ⇒ kein Layout-Shift der Seite**.
+  Persistenz-/Pre-Paint-Mechanik unverändert darunter. **pdf-embed** trägt bewusst
+  KEIN Ansicht-Dropdown (keine toten Steuerelemente, G2b/§13 F4).
+- **A3 — Positions-Leiste = echte Breadcrumbs.** Der Sticky-`SektionKontextKopf`
+  ist zu klickbaren Breadcrumbs aufgelöst (`nav[aria-label]` > `ol`/`li`, jedes
+  Glied ein Button → `springeZuSektion`, letztes Glied `aria-current="location"`).
+  Datenquelle bleibt die vorhandene Scroll-Spy-State (kein neuer Observer, §15).
+  Overflow-/Mobil-Kürzung rein per CSS (Label `truncate`, `nav` `overflow-hidden`,
+  mittlere Glieder `hidden sm:inline-flex` + «…»-Platzhalter). Der Sticky-Positions-
+  Kopf bleibt — wie bisher — ein **≥ 1024px-2-Spalten-Feature** (mobil keine
+  Positionsleiste).
+
+**V2-Nachtrag (David 10.7.2026 «go zu allem», koordinierter Kopf-PR 11.7.2026) —
+deklarierte Erweiterungen (überstimmen «genau drei Toggles»):**
+
+- **B-1 — 4. Toggle «Entscheide» (Default AN).** Blendet die verlinkten BGE-Leitfall-
+  Zeilen aus — **reine Referenzschicht, der Normtext ist NIE betroffen.** Mechanik =
+  data-* + CSS wie die anderen Toggles: `leserOptionen.ts`-Feld `leitfaelle`,
+  `html[data-leitfaelle="aus"] .lc-leser [data-leitfall-zeile]{display:none}`
+  (Marker `data-leitfall-zeile` an `LeitfallZeile`). Default 'an' ⇒ CSS-No-op ⇒
+  byte-gleich (R6); kein React-Re-Render (§15).
+- **B-2 — Zeitraum-Filter «alle · 20 · 10 · 5 J.» (Default alle).** KEIN data-*-
+  Toggle, sondern JS-Filter der client-only-`LeitfallZeile` über `r.datum` (jahr-
+  genau, Q1/Bandjahr-sicher; unparsbares Datum konservativ behalten, §8) VOR der
+  Sichtbarkeits-Kappung (`LEITFAELLE_SICHTBAR` 5→**10**, David 10.7.). Abo über
+  **Primitiv-Selektor `useLeitfallZeitraum()`** (nur der String ⇒ Zeilen rendern nur
+  bei echter Zeitraum-Änderung, nicht bei jedem anderen Toggle — §15-Zusage bewiesen).
+  §8: eine voll weggefilterte Zeile verschwindet NICHT kommentarlos, sondern zeigt
+  «n ältere ausgeblendet · alle zeigen» (klickbar). A11y: `role="group"`, Buttons mit
+  `aria-pressed` (kein `radiogroup` → keine unerfüllte Pfeiltasten-Erwartung).
+- **K-2 — Fussnoten-Chip im aktionen-Slot (`LeserFussnotenChip`).** Prominentes
+  KOPF-SIGNAL «❡ N Fussnoten» (N = Summe der Sidecar-Fussnoten) UND **echter Toggle**
+  (aria-pressed) auf denselben `fussnoten`-Wert wie der Dropdown-Schalter; beim
+  **Einschalten** springt er zum Apparat (erst einschalten, dann `scrollIntoView` des
+  ersten `[data-fn-marker]` — nie in ein display:none-Ziel). `N===0`/Sidecar noch
+  nicht geladen ⇒ kein Chip (CLS-schonend, e2e-gemessen CLS 0).
+- **Slot-Layout (U-PDF, EINMALIG):** Reihenfolge **Ansicht · Fussnoten · In neuem
+  Reiter · Download**; das Ansicht-Dropdown öffnet mobil-sicher rechtsbündig
+  (`right-0 sm:left-0`).
+
+### §N-5 · Verzahnung (der Burggraben, Fedlex-Übertreffer)
+
+- **Norm → Norm intern.** Ein SR-Verweis in Fussnote/Fliesstext, dessen
+  Zielerlass wir im Volltext haben, verlinkt **intern** auf den LexMetrik-Leser
+  (`/gesetze/bund/<KEY>#art_<N>`) — man bleibt im Werkzeug. Nur wo wir den
+  Erlass nicht haben, bleibt der **Fedlex-Link als ehrlicher Fallback**.
+- **Quelle für «haben wir den Erlass?»** ist das Register (§3, eine Quelle) —
+  kein zweiter Pfad.
+- **Stand-Transparenz (§8).** Solange nur ein Geltungsstand existiert (bis
+  Versionierung, B3), kann der intern gezeigte Stand vom zitierten abweichen →
+  der Stand wird transparent markiert, nicht stillschweigend gleichgesetzt.
+
+#### §N-5a · Inline-Verweis-Linker: Plural, Präambel, Popover-Struktur (W2·5d U-VERWEIS / A7+A10+A11+A13, 10.7.2026)
+
+1. **Plural-Aufzählungen werden gliedweise verlinkt (A10).** Die Öffner
+   «Artikeln N …» (Dativ-Plural) und «die|der Artikel N, M …» (Letzteres nur bei
+   ≥ 2 Gliedern oder Gesetz-Signal) zerlegt `artikelnPluralVerweise` (fedlex.ts)
+   deterministisch in Einzel-Glieder; jedes Glied ist ein eigener Link, die
+   Anzeige bleibt der exakte Quelltext (§1). **Bounded:** die Passus-Kette ist
+   typ-treu (SINGULAR-Schlüsselwort «Absatz/Buchstabe/Ziffer/Satz» = genau EIN
+   Wert; Plural-Form und Abkürzungen = Wertliste mit Glied-Kopf-Guard); die Kette
+   bricht an allem, was kein «Konnektor + Zahl» ist — nie über den Fliesstext
+   hinaus (Referenzfall MWSTG Art. 5 = genau 5 Links art_31/35/37/38/45).
+2. **Auflösungs-Modi mit §1-Vorrang.** Gesetz-Signal am Aufzählungs-Ende
+   (Rangfolge: Klammer-Kürzel ∈ FEDLEX > kuratierter Genitiv-Kurztitel > bare
+   Kürzel ∈ FEDLEX) ⇒ alle Glieder aufs Fremdgesetz. UNTERDRÜCKT (kein Link, nie
+   ein geratener) wird bei: unbekanntem Klammer-Kürzel («(Code civil)»),
+   unauflösbarem ausgeschriebenem Fremdnamen («des Bundesgesetzes vom …»),
+   unbekanntem bare Kürzel («BGSA»), nicht parsebarem Glied («42octies»). Ohne
+   Signal = Self; Self-Glieder linken nur, wenn das Token im eigenen Erlass
+   existiert (§8, kein toter Link).
+3. **Genitiv-Map ist KURATIERT, nie generisch (A11).** `GENITIV_GESETZ`
+   (fedlex.ts) enthält nur eindeutige amtliche Kurztitel-Genitive («der
+   Bundesverfassung»→BV, «des Strafgesetzbuches»→StGB …), jeder Eintrag gegen den
+   amtlichen Kurztitel belegt; generische Wendungen («des Bundesgesetzes», «der
+   Verordnung») bleiben BEWUSST ohne Eintrag. Soft-Hyphens (U+00AD) der
+   Fedlex-Texte werden toleriert.
+4. **aBV-Schutz im Ingress (A11, §1).** Der Ingress ist historisch (wird amtlich
+   nie nachgeführt): Erlasse vor 2000 zitieren dort die BV von 1874 — «Artikel 26
+   der Bundesverfassung» im ArG (1964) meint aBV 26, nicht die heutige
+   Eigentumsgarantie. Präambel-Zeilen laufen darum NUR bei parsebarem Erlassdatum
+   ≥ 2000 durch den Linker (`ingressVerlinkbar`, parts.tsx); sonst reiner Text.
+   Artikel-FLIESSTEXT ist ungegated (BV-Zitate werden dort bei Revisionen
+   amtlich nachgeführt; Belege ASYLG 121a, RVOG 184).
+5. **Verweis-Popover ist strukturiert (A7):** Artikel-Wortlaut → Provenienz-Fuss
+   (§7 a–d) → «Wird zitiert von · Massgebliche Entscheide» → klar abgetrennt
+   «Legt aus · Amtliche Materialien» (`VerweisKontext`, wiederverwendete
+   Verzahnungs-Grammatik: KontextGruppe-Hülle, Richtungs-Label als Text,
+   StatusBadge-Vokabular). Kompakt Top-3 + Zähler + «Alle n»-Link; lazy aus den
+   erlass-lokalen Shards (geteilte Promise-Caches, §15.3); ANS ENDE des Popovers
+   angehängt ⇒ CLS 0 by construction.
+6. **Materialien-Dichte-Regel (A13):** artikelscharfe Kanten prominent zuerst
+   (Fundstellen-Sublabel, Behörden-Kürzel, Dokument-Stand); reine
+   Erlass-Ebene-Kanten dezenter hinter dem Zähler («n Dokumente auf
+   Erlass-Ebene», `<details>` — tastatur-/CLS-fest). Keine Chip-Wüste.
+
+**Gegated:** Unit `fedlex.test.ts` (Plural-Grammatik + Negativfälle + Genitiv-Map)
++ `normText.test.tsx` (SSR-Linkmengen, MWSTG-Regressionsfall) + `verweis-kontext.test.ts`
++ e2e `verweis-u` (P2-Beweise, A9-Throttle, aBV-Negativfall) — Risiko-Pfad ⇒
+`check:gegenpruefung`.
+
+### §N-6 · Verweis-Ziele werden nicht geraten
+
+Linkziele kommen aus dem, was Fedlex tatsächlich kodiert / aus dem Register —
+**nie aus einer Render-Zeit-Heuristik**, die «Artikel N» reflexhaft auf den
+gerade gelesenen Erlass auflöst. In einer Verordnung verweist «Artikel N» fast
+immer aufs **Trägergesetz** (BGerR → BGG), nicht auf sich selbst. Bis das
+positive Trägergesetz-Routing als verifizierte Datenaufgabe steht, werden
+falsche Selbstverweise **unterdrückt** (§1: lieber kein Link als ein falscher).
+
+### §N-7 · Golden-Regel (zwei Welten strikt trennen)
+
+- **`golden/lexmetrik-golden.json` (Engine/Rechtslogik) ist TABU** und muss über
+  den *ganzen* Batch **byte-gleich** bleiben (`golden:vergleich` = IDENTISCH =
+  Beweis, dass die Rechtslogik unberührt ist). **Bricht er, ist man versehentlich
+  in eine Engine gelaufen → sofort STOPP, nie das Tor aufweichen.**
+- **`golden/normtext-snapshot.json` (Daten-Index)** wird bei bewusstem Normtext-
+  Zuwachs **regeneriert und neu gesegnet** (self-consistent sha, kein externer
+  Erwartungswert) — **mit adversarialer Gegenprüfung** und **genau einer**
+  Re-Segnung pro Batch (alle golden-brechenden Änderungen zuerst landen, dann ein
+  Regen-Block, dann ein Pathspec-Commit; `--stat`-Dateizahl gegen die add-Liste).
+- **Sidecar-Anreicherungen (§3) brechen den Index nicht** → bleiben byte-gleich.
+
+### §N-8 · Keine stillen Lücken
+
+Jede nicht abgebildete Information ist **sichtbar markiert** (z. B. «maschinell»,
+«nicht abgebildet», «Stand abweichend»). Kein `verified`/«vollständig» ohne
+Deckung. Bilder, die wir als Bild zeigen (math. Formeln liefert Fedlex als
+Bild), bleiben Bild — kein erfundenes OCR/LaTeX, ehrlich dokumentiert.
+
+### §N · Was bewusst NICHT gilt (Audit-widerlegt)
+
+Diese im Audit geprüften Punkte sind **kein** Defizit und werden **nicht**
+gebaut: Titel-`<br>`-Plättung, Absatz-`<p>`-in-`<table>`-Verschlucken, «Fussnoten-
+Apparat per Default aus» (galt bis W2·5d — **abgelöst durch die G2b-Fussnoten-
+Unifizierung §4c: Marker/Apparat liegen jetzt immer im DOM, Default AN; «AUS»
+lässt sie seit U-KOPF/A1 VERSCHWINDEN (display:none), der Normtext bleibt stets
+durchsuchbar**), volle
+`rowspan`-Logik (rowspan/verschachtelte
+Tabelle → ehrlicher Text-Fallback), «N.—»-Spacing,
+`art-`-vs-`art_`-Anker, «Deeplink vom Renderer verworfen» (wird genutzt). Details:
+`AUDIT-FEDLEX-DARSTELLUNG-2026-06-28.md`, Abschnitt «Widerlegt».
+
+> **Korrektur 29.6.2026 (verifiziert gg. Filestore-HTML):** Der Audit-Schluss
+> «`<th>`-Tabellen brauchen kein `colspan` (Kopf+Daten tragen dasselbe)» ist an
+> **GebV SchKG Art. 20 falsifiziert** — dort trägt **nur der Kopf** `colspan="3"`,
+> die 6 Datenzellen sind colspan-los → Kopf 2 ≠ Zeile 6 = zerrissen. Neue Regel:
+> `colspan` wird in **beiden** Markup-Varianten expandiert und die Staffel-Spanne zu
+> einer logischen Zelle verdichtet (Tabellen-Regelwerk T-A2/T-A3/T-A6 in
+> `archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md`). Nur `rowspan`/Verschachtelung bleibt Fallback.
+
+## R · Rechner — verbindlicher Aufbau jeder Engine-UI
+
+*Ehemals `DESIGN-REGLEMENT-RECHNER.md`, konsolidiert 23.9.2026 (W2·29-WERKBANK-TOKENS, Rats-Auflage 2). Die Regel-Codes R1–R14 dieser Domäne = §R-1 … §R-14.*
+
+Stand: 11.6.2026 (Auftrag David 10.6.2026 spätnachts: «Regeln für den
+Designaufbau von Engines aufstellen, sodass es eine übersichtliche und
+einheitliche Struktur hat und die Reihenfolge der Webseite von oben nach
+unten Sinn ergibt»). Geltungsbereich: alle Rechner-Seiten und ihre
+Formulare (`src/pages/Rechner*.tsx`, `src/components/forms/*`).
+Vorlagen-Wizards folgen ihrem eigenen Muster (Stepper/Dokumentmappe) und
+sind hier nur dort erfasst, wo sie Rechner-Bausteine wiederverwenden.
+
+Leitidee (Design-Haltung): **Das Verdikt zuerst, die Herleitung auf
+Abruf, die Pflichten sichtbar.** Eine Anwältin, die den Rechner zum
+zehnten Mal nutzt, findet jeden Baustein an derselben Stelle; wer ihn
+zum ersten Mal nutzt, liest die Seite von oben nach unten als Fall:
+Worum geht es → Was gebe ich ein → Was gilt → Warum gilt es → Was
+nehme ich mit (PDF/Termin/Link).
+
+### §R-1 · Seiten-Skelett (Reihenfolge fix)
+
+```
+1. RechnerKopf            (h1, Kategorie, Norm-Chips — immer)
+2. TagerechnerRueckverweis (nur nach R2)
+3. Werkzeug-Karte          (Card, components/ui/Card.tsx: border-y border-rule-soft p-6 sm:p-8)
+   └── genau EIN Formular (bzw. Tab-Weiche über Teil-Formulare)
+4. EreignisFristenSektion  (nur nach R9)
+5. Themen-Einstieg         (Vorlagen-Direktlinks, nur nach R10)
+```
+
+*Ziff. 3 korrigiert 23.9.2026 auf den Ist-Code (Befund Design-System-Bau Nr. 3):
+die Karte ist seit dem U2-Nachzug 6.9.2026 der Baustein `Card` ohne
+Seitenrahmen und Füllung; `rounded-2xl` war mit R1 (`--radius-2xl: 0px`)
+wirkungslos und fiel weg. Juni-Wortlaut: Archiv.*
+
+Keine weiteren freien Blöcke auf Seitenebene. Seiten-Sonderfälle:
+Tagerechner (Schnellrechner + Preset-Suche + Regime-Tabs, FE-1/FE-2)
+und Zuständigkeit (Rechtsweg-Tabs mit Kopf-Override, S-3) sind
+disponierte Ausnahmen — innerhalb ihrer Teil-Formulare gilt R3 ff.
+unverändert.
+
+### §R-2 · Rückverweis-Regel
+
+Den `TagerechnerRueckverweis` tragen genau die **materiellen
+Fristen-Spezialrechner**, deren einfache Fälle (Datum + feste Länge,
+kein Regime) der Tagerechner abdeckt: Kündigung, Erb-Fristen,
+Mietrecht, Verjährung, Gewährleistung (FE-4-Entscheid). Verfahrens-
+Regime-Rechner (ZPO, SchKG) tragen ihn NICHT — ihre Fälle sind nie
+regime-frei, und sie sind selbst als Tab im Tagerechner erreichbar.
+Beträge-/Zuständigkeits-Rechner tragen ihn nicht.
+
+### §R-3 · Formular-Skelett (Reihenfolge fix)
+
+```
+1. PflichtDisclaimer       (kurz + text, R7 — immer zuoberst)
+2. Anwendungsfall/Preset   (SelectionGrid · Tabs · Vorlage-Dropdown — falls vorhanden)
+3. Eingabe-Felder          (grid sm:grid-cols-2 gap-4, Field-Wrapper)
+4. Optionale Funktionen    (EIN Akkordeon «Optionale Funktionen (…)» — falls vorhanden)
+5. FehlerBox               (R8 — einzige Fehlerdarstellung)
+6. Ergebnisblock           (R4 — nur wenn ein Ergebnis vorliegt)
+```
+
+Beispiel-Chips (`BeispielChips`) stehen, wo vorhanden, zwischen 2 und 3.
+Das Aktenzeichen ist KEIN Eingabefeld des Falls, sondern Teil der
+Mitnahme — es steht im Ergebnisblock (R4 Ziff. 5), nicht bei den
+Eingaben.
+
+### §R-4 · Ergebnisblock-Skelett (Reihenfolge fix)
+
+Der Ergebnisblock hat überall denselben Rahmen und dieselbe innere
+Reihenfolge — vom Verdikt zur Mitnahme:
+
+```
+<ErgebnisBlock>            (geteilter Rahmen: id, lc-reveal, aria-live,
+                            ErgebnisSprung, LiveHeader — §10-Baustein)
+  1. EckdatenKacheln        (max. 3 wichtigste Werte; die Kachel des
+                            MASSGEBLICHEN Werts — i. d. R. Fristende bzw.
+                            Hauptbetrag — trägt die Messing-Oberkante,
+                            EckdatenKachel akzent)
+  2. ErgebnisAnzeige        (Status-Verdikt → Vorbehalte → Rechenweg →
+                            Annahmen → Normverweise → Volltext-Disclaimer)
+  3. Visualisierung         (FristenKalender · Timeline — falls vorhanden)
+  4. BegruendungAbsatz      (zitierfähiger Fliesstext, R6)
+  5. AktenzeichenFeld       (Mandats-Referenz für PDF/ICS)
+  6. Export-Zeile           (R5)
+  7. Quellen-Mikrozeile     (text-micro, nur wo eine amtliche Datenquelle
+                            genannt werden muss, z. B. BFS/LIK)
+</ErgebnisBlock>
+```
+
+Begründung der Reihenfolge: Eckdaten beantworten die Frage («wann/wie
+viel»), die ErgebnisAnzeige trägt das rechtliche Verdikt samt
+Vorbehalten — beides VOR jeder abgeleiteten Ansicht (Kalender,
+Timeline). Die Mitnahme (Aktenzeichen → Exporte) schliesst den Block:
+erst referenzieren, dann exportieren.
+
+`ErgebnisBlock`-ids: Standard `lc-ergebnis`; Formulare, die gemeinsam
+auf einer Seite gerendert werden können (Tagerechner-Teilformulare,
+Kombinierte Ansicht), tragen eindeutige Suffixe (`lc-ergebnis-zpo`, …).
+
+**Akzent-Oberkante — zwei Farben, EINE Anatomie** (ergänzt 31.8.2026,
+Design-Konsistenz R2-F/F1-5). Die 3 px starke Oberkante kommt immer aus
+einer CSS-Klasse, nie aus einem inline `border-t-[3px]`:
+
+| Klasse | Bedeutung | Beispiel |
+|---|---|---|
+| `.lc-akzent-brass` | massgeblicher Wert | frühere Verjährungsfrist, Hauptbetrag |
+| `.lc-akzent-danger` | Sperre / kein statthaftes Rechtsmittel | «NICHTIG» (Art. 336c OR), `statthaft === 'keines'` |
+
+Die FARBE trägt die Bedeutung, die Stelle ist immer dieselbe. Nur in der
+Klasse hält der Ton im Dunkelmodus (`--brass-line` / `--danger-line`,
+`src/index.css`); handgesetzte Utilities greifen dort an der
+Theme-Umschaltung vorbei. Anlass: sechs handgebaute `border-t-[3px]` in
+vier Dateien, davon eine (`VerjaehrungForm`), die zusätzlich alle vier
+Kanten einfärbte. Bewacht von `src/tests/listen-editor-r2f.test.tsx`.
+
+### §R-5 · Export-Zeile
+
+Reihenfolge fix: **PDF → ICS → Teilen** (vom Dokument über den Termin
+zum Link), als eine Zeile `flex flex-wrap items-center gap-3`. Es gibt
+keine Exporte ausserhalb dieser Zeile (Ausnahme: ICS je Einzelfrist in
+Fristen-Tabellen wie `EreignisFristenSektion`/`FristenKalender`).
+Jeder Rechner mit PDF-Export hat ein `AktenzeichenFeld` (R4 Ziff. 5).
+
+### §R-6 · Wiedergabe der Rechtsinformation (Hierarchie fix)
+
+1. **Verdikt** — Status-Badge + Hauptsatz (ErgebnisAnzeige-Kopf). Der
+   Hauptsatz ist ein vollständiger deutscher Satz aus der Engine.
+2. **Vorbehalte/Warnungen** — direkt unter dem Verdikt; bei Status
+   ≠ ok standardmässig aufgeklappt (A6). Warnungen sind nie weiter vom
+   Verdikt entfernt als eine Bildschirmhöhe.
+3. **Rechenweg** — einklappbar, Schritt = Beschreibung + Zwischen-
+   ergebnis + Normen des Schritts. Vollständig, nie gekürzt.
+4. **Annahmen** — einklappbar; jede methodische Annahme der Engine
+   erscheint hier (§8: nichts wegglätten).
+5. **Normverweise** — ausschliesslich als `NormLink`-Chips (Fedlex),
+   nie als blosser Text; Rechtsprechung über `RechtsprechungAnker/-Text`
+   mit Verifikations-Vorbehalt.
+6. **BegruendungAbsatz** — EIN zitierfähiger Fliesstext-Absatz aus
+   `lib/begruendung.ts` für Aktennotiz/Rechtsschrift, nach der
+   Visualisierung.
+
+Behörden-Auflösungen (Zuständigkeit, Schlichtung): jede aufgelöste
+Stelle trägt einen amtlichen Link; KEINE Quelle-/Status-Fusszeilen in
+Auflösungs-UIs (Anweisung David 10.6.2026).
+
+### §R-7 · Disclaimer-Zweistufigkeit
+
+Jedes Formular beginnt mit `PflichtDisclaimer` und übergibt BEIDE
+Stufen: `kurz` (ein Satz, rechtsgebietsspezifisch: was wird gerechnet,
+was bleibt zu prüfen) und `text` (Volltext). Derselbe Volltext geht in
+die PDF-Konfiguration. Der domänenneutrale Standardtext der
+ErgebnisAnzeige bleibt deren Fussbereich (kein Cross-Domain-Bleed).
+
+### §R-8 · Fehleranzeige
+
+Eingabe-/Berechnungsfehler erscheinen ausschliesslich über `FehlerBox`
+(role=alert), zwischen Eingaben und Ergebnisblock. Keine ad-hoc
+`lc-notice-danger`-Absätze für Eingabefehler. (Fachliche Hard-Stops
+der Engine — Status `nichtig`/`unzulaessig` — sind KEINE Fehler: sie
+laufen als Verdikt durch die ErgebnisAnzeige.)
+
+### §R-9 · Ereignis-Fristen-Regel
+
+Die `EreignisFristenSektion` (ein Anlass → mehrere Fristen) steht auf
+der Seite des Rechners, der das auslösende Ereignis berechnet
+(S-5c-Verteilung): ZPO (Zivilentscheid, Klagebewilligung), SchKG
+(Zahlungsbefehl), Erb-Fristen (Erbgang), Kündigung (Art. 336b OR).
+Neue Ereignisse folgen derselben Regel — kein zentraler Fristenspiegel.
+
+### §R-10 · Themen-Einstieg
+
+Wo zum Rechner passende Vorlagen existieren, steht NACH der
+Werkzeug-Karte genau ein Themen-Einstieg über die geteilte Komponente
+`ThemenEinstieg` (Label + Direktlinks). Keine frei formatierten
+Link-Absätze auf Seitenebene.
+
+### §R-11 · Typografie/Token (Kurzfassung; Werte: `design/tokens.json`)
+
+- Überschriften: h1 nur im RechnerKopf; Abschnitts-Beschriftungen als
+  `lc-overline`; Ergebnis-Titel als h3 (ErgebnisAnzeige).
+- Werte/Daten/Beträge im `num`-Schnitt (Tabellenziffern); Boxen nur
+  über die `lc-*`-Klassen (card/tile/panel/notice/badge/chip);
+  Tailwind-Defaults `text-sm`/`text-lg` sind verboten.
+- Hinweis-Boxen: `lc-notice` (neutral) · `lc-notice-warn` (Vorbehalt) ·
+  `lc-notice-danger` (Blocker) — Tonalität nie über freie Farben.
+
+### §R-12 · Ausnahmen (abschliessend)
+
+- **EinfacheFristForm** (Tagerechner-Schnellrechner, S-5a): bewusst
+  minimal — keine Eckdaten-Kacheln, kein PDF (sein PDF-Fall ist der
+  jeweilige Regime-Rechner). Er trägt aber denselben Ergebnis-Rahmen.
+  Sein Block `lc-ergebnis-einfach` ist damit der einzige ohne
+  ErgebnisAnzeige; das Tor `e2e/qsui-hierarchie.e2e.ts` führt genau
+  diese id in seiner Ausnahmeliste (zwei Orte, eine Regel — wer eine
+  weitere Ausnahme baut, trägt sie in beiden nach).
+- **EreignisFristenSektion**: Tabellenmuster (je Frist eine Zeile mit
+  ICS), kein ErgebnisAnzeige-Verdikt — sie listet, sie urteilt nicht.
+- **Zuständigkeits-Trio** (zivil/schkg/straf): Wizard-Schritte statt
+  einem Eingabe-Grid; ab dem Ergebnisblock gilt R4 unverändert.
+
+### §R-13 · Leerzustand des Ergebnisplatzes
+
+Ein Rechner, der ohne Eingabe kein Ergebnis zeigen kann, zeigt an
+dessen Stelle den geteilten `ErgebnisPlatzhalter` (`vorlagen/ui`):
+Overline «Ergebnis» + ein Satz, welche Eingabe fehlt und was danach
+erscheint. Er reserviert die Fläche (CLS, §15.2) und zeigt vor der
+ersten Eingabe keinen Fehler (C2). Der Satz ist reine Navigation — er
+nennt keine Frist, keinen Schwellenwert, kein Ergebnis (§3).
+
+Nicht betroffen sind Wizards, deren Ergebnis ein eigener Schritt ist
+(Zuständigkeits-Trio): dort trägt der Schritt selbst die Ansage.
+
+### §R-14 · Repeater = ListenEditor
+
+Jede wiederholbare Eingabezeile — Rechtsbegehren, Kinder, Beilagen,
+Sperrereignisse, Gründer:innen, Teilzahlungen — kommt aus dem geteilten
+`ListenEditor` (`src/components/vorlagen/ui.tsx`), nie aus einem
+handgebauten `map()` mit eigenem Knopf:
+
+- **Behälter je Eintrag:** `lc-panel p-3` (kein `lc-card`, kein nacktes
+  `border border-line`, kein behälterloses `flex`).
+- **Kopfzeile je Eintrag:** Overline «‹Element› N», rechts der
+  Entfernen-Link.
+- **Entfernen:** roter Text-Link, klein, Wortlaut **«entfernen»** —
+  nicht «Entfernen», nicht «✕», nicht `lc-btn-ghost`.
+- **Hinzufügen:** `lc-btn-outline lc-btn-sm` mit **«+ ‹Element›»**,
+  UNTER der Liste. Kein «hinzufügen» im Text: das Pluszeichen sagt die
+  Handlung bereits.
+- Mindest-/Höchstzahl von Einträgen ist eine Zahl am Baustein
+  (`mindestens`/`hoechstens`), keine eigene Bedingung um den Knopf —
+  und nie ein Knopf, der still nichts tut (§8).
+
+Ergänzt 31.8.2026 (Design-Konsistenz R2-F/F1-9): Das Reglement schwieg
+zu Repeatern, und entsprechend standen 43 Hinzufügen-Knöpfe in 20
+Dateien in drei Optiken, zwei Beschriftungsgrammatiken und vier
+Entfernen-Formen nebeneinander. Bewacht von
+`src/tests/listen-editor-r2f.test.tsx`.
+
+### §R · Prüfung
+
+Jeder neue oder geänderte Rechner besteht vor dem Commit die
+Checkliste R1–R14 (Bau-Begleitpflicht im WACHSTUM-REGLEMENT, Ziff. 4
+«Rahmen vorhanden»). Verstösse, die sich fachlich begründen, werden im
+Code an Ort kommentiert und hier als Ausnahme (R12) nachgeführt —
+stille Abweichungen sind Bugs.
+
+**Gegatet seit QS-UI 8b (4.8.2026):** `e2e/qsui-hierarchie.e2e.ts` misst
+auf 14 Rechner-Flächen × 2 Breiten fünf Punkte dieser Checkliste, die
+bis dahin nur auf Sichtprüfung beruhten — R4 Ziff. 2 (Verdikt vor
+Herleitung und vor jeder abgeleiteten Ansicht), R6 Ziff. 2 (Vorbehalte
+nahe am Verdikt), B2 (Lesespalte für Fliesstext im Ergebnisblock), die
+Erreichbarkeit der Sprungmarke auf jeder Breite und ihr Fernbleiben im
+Ausdruck. Der Anlass war ein realer Verstoss, den vier Monate
+Sichtprüfung nicht gefunden hatten: `ErbteilungForm` schob Tabelle und
+Quoten-Balken zwischen Eckdaten und Verdikt (gemessen 666 px Abstand
+gegen 243–283 px auf allen anderen Flächen).
+
+Was der §6.7-Rot-Beweis für jeden der fünf Punkte **genau** zeigt (bewusst eng
+formuliert; 4.8.2026): wörtlich im Archiv.
+
+## J · Rechtsprechung — Schriftbild der Entscheid-Anzeige
+
+*Ehemals `DESIGN-REGLEMENT-RECHTSPRECHUNG.md` («Darstellungs-Reglement Rechtsprechung»), konsolidiert 23.9.2026 (W2·29-WERKBANK-TOKENS, Rats-Auflage 2). Die Regel-Codes R1–R23 dieser Domäne = §J-R1 … §J-R23, die Regeln zu nicht amtlich publizierten Urteilen = §J-A3.*
+
+Stand: 23.6.2026. Geltungsbereich: die Rechtsprechungs-Rubrik (Übersicht
+`/rechtsprechung` + Reader `/rechtsprechung/:key`). Schwester zu
+§R (Rechner-Seiten) und §V
+(Dokument-Outputs).
+
+**Das Verbindliche ist der Code** (`src/pages/EntscheidLeser.tsx`,
+`src/components/rechtsprechung/EntscheidBody.tsx`, `…/EntscheidKarte.tsx`,
+`…/EntscheidFilter.tsx`); diese Notiz hält das *Warum* + die belegten Sollwerte
+fest. Token-Quelle ist `design/tokens.json` (Typo-Skala, `--font-serif/sans`;
+`maxWidth.reading` in `tailwind.config.js`) — dieses Reglement erfindet keine
+neuen Magic-Numbers, sondern bindet an bestehende Tokens.
+
+Leitidee: **Der Entscheid-Reader bildet die amtliche Gliderung treu ab
+(Regeste → Sachverhalt → Erwägungen → Dispositiv), liest sich wie ein gutes
+Buch und zitiert sich wie ein Kommentar.** Treue zur amtlichen Quelle (§7/§8)
+schlägt jede Politur.
+
+### §J-0 · Evidenzlage (Kurzfassung; Recherche 23.6.2026 wörtlich im Archiv)
+
+Recherche 23.6.2026, Primärquellen verifiziert. Zwei Befunde sind tragend:
+
+1. **Die führenden Schweizer Anzeigen sind typografisch schwach.** bger.ch und
+   entscheidsuche.ch (`/docs/`) rendern den amtlichen Rohtext in **Times, 16px,
+   volle Fensterbreite, ohne Lesespalten-Begrenzung** — Zeilenlängen weit über
+   dem lesbaren Mass. entscheidsuche.chs eigener Viewer (`/dok/`) nutzt Open
+   Sans 16px/1.5; Weblaw/Lawsearch (frei über bvger.weblaw.ch) ist mit
+   **Poppins 16px/1.75, ~545px Lesespalte, linksbündig** die mit Abstand
+   beste Lesetypografie im CH-Feld. Schlussfolgerung: **eine bewusst gesetzte
+   Lesespalte + ruhiger Body schlägt die amtlichen Anzeigen** — das ist der
+   leicht erreichbare Vorsprung.
+2. **Kein ECLI für Schweizer Gerichte.** ECLI ist ein EU-System; die Schweiz
+   verwendet es amtlich nicht. Zitiert wird **BGE/ATF + Band + Teil (röm.) +
+   Seite + E.** (`BGE 145 III 72 E. 2.3`), unpubliziert per Aktenzeichen
+   (`BGer 6B_1293/2023 vom …`). **Nie eine ECLI:CH:BGER-Form erfinden.**
+   (Quellen: corporate-law-club.ch, Wikipedia «Entscheidungen des
+   Schweizerischen Bundesgerichts», Abwesenheit über bger.ch/entscheidsuche/
+   Weblaw bestätigt.)
+
+Die Quellen hinter den Sollwerten (Lese-Typografie, Randziffern, Referenz-Anzeigen
+DE/Intl) nennt jede Regel in ihrer «*Quelle:*»-Zeile.
+
+### §J-R · Die Gestaltungsregeln (priorisiert)
+
+Priorität: **P0** = Lesbarkeits-Fundament (sofort), **P1** = Zitier-/Navigations-
+Handwerk, **P2** = Ausbau/Differenzierer. Jede Regel: Sollwert · Begründung/Quelle.
+
+#### P0 — Lese-Fundament
+
+**§J-R1 · Lesespalte 60–75 Zeichen (Body), nicht breiter.**
+Body-Container auf eine Mass-begrenzte Spalte (~`38–42rem`, Ziel ~66 ch): im
+Ist-Code `max-w-reading` (40rem) am Reader-Body (`EntscheidLeser.tsx`). *Korrigiert
+23.9.2026 auf den Ist-Code: die Juni-Fassung beschrieb den damaligen Befund
+`max-w-[56rem]` (zu breit) und forderte die Rücknahme — erledigt; Wortlaut: Archiv.*
+*Quelle:* Bringhurst/Butterick/Baymard 50–75 ch; WCAG 1.4.8 Kappe 80.
+
+**§J-R2 · Body Serif, 1.08–1.125rem, Zeilenhöhe 1.7.**
+Ist (`EntscheidBody.tsx`): `font-serif text-[length:var(--rsp-fs,1.08rem)]
+leading-[1.7]` — die Grösse ist die Leser-Stufe `--rsp-fs` (R17,
+`leseGroesse.ts` `FS_STUFEN`), Grundstufe 1.08rem (korrigiert 23.9.2026; der
+Juni-Wortlaut `text-[1.08rem]` beschrieb den Stand vor R17). Serif ist für langen
+juristischen Lesefluss legitim (NN/g: «Bildschirm = Sans» ist überholt) und
+hebt den Reader gegen die Sans-lastigen Anbieter ab. 1.7 liegt über dem
+WCAG-Boden 1.5. *Quelle:* NN/g Serif/Sans; WCAG 1.4.12; Butterick.
+
+**§J-R3 · Linksbündig, nicht Blocksatz.**
+Kein `text-justify` (CSS-Blocksatz ohne Silbentrennung reisst Wortlücken auf).
+Weblaw/Lawsearch — die beste CH-Anzeige — ist bewusst linksbündig.
+*Quelle:* Weblaw-DOM; Lesetypografie-Konsens.
+
+**§J-R4 · Kontrast ≥ 4.5:1, 200 %-Zoom tragfähig.**
+Body-Ink gegen Paper ≥ 4.5:1, gedämpfte Meta/Randziffern ≥ 4.5:1 (nicht nur
+«sieht grau genug aus»). Layout muss 200 % Zoom + Nutzer-Text-Spacing
+(line-height 1.5, Wortabstand) überstehen — keine festen Höhen, die clippen.
+*Quelle:* WCAG 1.4.3 / 1.4.4 / 1.4.12 (normativ, Werte nicht runden).
+
+**§J-R5 · Absatzabstand ≥ 2× Schriftgrad.**
+Zwischen Blöcken/Absätzen sichtbarer Abstand (aktuell `space-y-4` ≈ 1rem — bei
+1.08rem Body grenzwertig; auf ~1.4–1.6rem zwischen Erwägungs-Blöcken gehen).
+*Quelle:* WCAG 1.4.12.
+
+#### P1 — Zitier- & Navigations-Handwerk
+
+**§J-R6 · Erwägungs-Ziffern als Randmarke links, `tabular-nums`, hierarchisch eingerückt.**
+Beibehalten + härten: Grid `[5rem_minmax(0,1fr)]`, Marke rechtsbündig im Gutter,
+`num`/`tabular-nums`, Einrückung nach Tiefe. Die Marke ist die **amtliche
+Zitiereinheit** (`E. 2.3`) — sie muss fluchten und stabil sein. Auf Mobil
+(< `lg`) kollabiert sie vor den Absatz (bereits so) — Tufte-konformer
+Pflicht-Fallback. *Quelle:* Wikipedia «Randnummer»; BVerfG-Konvention; Tufte-CSS
+≤ 760px-Kollaps; `tabular-nums` (MDN).
+
+**§J-R7 · Jede Erwägung ist ein Anker + Pin-Cite-Permalink.**
+Jeder Erwägungs-Block bekommt eine stabile `id` (z. B. `e-2-3`) und einen
+kopierbaren Permalink (Hover-§-Symbol → `…/:key#e-2-3`). Das ist der Pin-Cite,
+den Juristen erwarten (CourtListener-Seitenmarken; BVerfG-Rn.; «pincite = Rn.»).
+**Stabilität ist Pflicht:** Nummerierung folgt der amtlichen Erwägung, nie einer
+selbst gezählten Reihenfolge (openjur-Offset-Falle). *Quelle:* CourtListener
+2025; tarlton.law «pincites»; openjur-Kritik.
+
+**§J-R8 · Regeste als abgesetzter Block, Serif 1.1rem/1.7, mit Quellennennung.**
+Beibehalten (`lc-highlight`, `font-serif text-body-l leading-[1.7]` —
+Skalen-Stufe statt des Juni-Werts `text-[1.1rem]`, korrigiert 23.9.2026 auf
+`RegesteBlock.tsx`; Quellenzeile). Die Regeste ist redaktioneller Leitsatz, optisch klar vom
+Urteilstext getrennt — wie BVerfG (Top-Block) und juris (Leitsatz vs.
+Orientierungssatz). Quelle der Regeste IMMER ausweisen (§8). *Quelle:* BVerfG;
+juris; bger.ch `id="regeste"`.
+
+**§J-R9 · Sticky Sprung-Navigation = amtliche Gliederung.**
+Beibehalten: sticky Chip-Leiste Regeste · Sachverhalt · Erwägungen · Dispositiv,
+nur tatsächlich vorhandene Ziele, `scroll-mt`/`scroll-margin-top` gegen
+Verdeckung. *Quelle:* CourtListener `#opinion-toc`; BVerfG-Inhaltsverzeichnis;
+NN/g In-Page-Links (sticky braucht scroll-margin).
+
+**§J-R10 · Zitierung im Kopf, BGE/BGer-Form, `num`/`tabular-nums`, KEIN ECLI.**
+H1 = amtliche Zitierung (`BGE 145 III 72` bzw. `BGer 6B_1293/2023`),
+Datum/Band als `num`. **Keine ECLI:CH-Form** generieren oder anzeigen.
+*Quelle:* corporate-law-club.ch; Wikipedia BGE; ECLI-Abwesenheit CH.
+
+**§J-R11 · Genannte Bundesnormen inline verlinkt, nur bei eindeutiger Auflösung.**
+Beibehalten (`NormText` → Gesetzessammlung). Regel wie dejure/eyecite: **Link
+nur, wenn das Ziel existiert** — kein Link ins Leere. Norm-Kurzinfo im
+`title`/Tooltip ist der dejure-Mehrwert (P2). *Quelle:* dejure «Vernetzung»;
+eyecite `annotate()` bei eindeutiger Auflösung.
+
+**§J-R12 · «Kopieren mit Fundstelle».**
+Knopf, der markierten Text + automatische, korrekte CH-Zitierung
+(`… , E. 2.3, in: LexMetrik`) liefert; pro Erwägung «Fundstelle kopieren».
+Auto-Zitat NICHT blind vertrauen — Norm/Stelle bleibt verifizier-/editierbar
+(Davids «Norm + Link + Stand»). *Quelle:* Westlaw «Copy with Reference»; Lexis;
+citeblog (Auto-Zitate unzuverlässig).
+
+**§J-R13 · Amtliche Seitenmarken inline erhalten (wenn in der Quelle).**
+Liegt im Rohtext eine Seitenmarke (`BGE 142 III 210 S. 211`), inline als kleine,
+gedämpfte Marke erhalten — sie ist der klassische Pin-Cite der amtlichen
+Sammlung. *Quelle:* bger.ch (verifiziert); CourtListener Star-Pagination.
+
+#### P1 — Übersicht (Karten + Filter)
+
+**§J-R14 · Entscheid-Karte: Anker · Gericht · Datum · Sachgebiet · Kurzregeste · Status-Chip.**
+Beibehalten + ergänzen: BGE-Referenz/Aktenzeichen als Anker (`num`), Gericht,
+Datum, Sachgebiet, Kurzregeste (`line-clamp-3`), Norm-Chips. Ergänzen:
+**Status-/Treatment-Chip** (s. R16) und sichtbar, ob maschinell erfasst (§8).
+*Quelle:* entscheidsuche-Felder (court/canton/date/abstract); vLex-Karte.
+
+**§J-R15 · Facetten: Kanton → Gericht (Hierarchie) + Datum + Sprache + Sachgebiet, mit Trefferzahl.**
+Filter als Hierarchie (entscheidsuche-Modell), **Trefferzahl je Facette**
+(verhindert Null-Treffer-Klicks), jargonfreie Labels (Kanton/Gericht/
+Sachgebiet/Jahr). Sachgebiet auf kontrolliertem Vokabular (Jurivoc-nah), da die
+freie Quelle keine Rechtsgebiet-Facette mitliefert. Mobil: Filter-Tray über den
+Resultaten. *Quelle:* entscheidsuche-API; NN/g Faceted Search; Jurivoc (bger.ch).
+
+#### P2 — Ausbau / Differenzierer
+
+**§J-R16 · Status-Farben nach KeyCite/Shepard's-Schema.**
+Falls Entscheid-Status erfasst wird (bestätigt/relativiert/überholt):
+**grün = good law, gelb = negative Behandlung, rot = überholt/aufgehoben** —
+das mentale Modell, das Juristen schon haben. Farbe NIE allein tragend (A11y):
+immer Text-Label dazu. *Quelle:* law.uc.edu KeyCite-Markings; vLex; WCAG (Farbe
+nicht allein).
+
+**§J-R17 · Reader-Steuerung: Schriftgrösse + ruhige Lesesicht.**
+Klein gehaltener Umschalter (Schriftgrad A−/A+, optional Serif/Sans), Wert im
+Modul-Store (analog `ausgabeStil.ts`, `useSyncExternalStore` + localStorage).
+*Quelle:* vLex «Text options» / Reader view.
+
+**§J-R18 · «Maschinell erfasst»-Provenienz offen, nicht versteckt.**
+Bei automatisch extrahierten Texten/Regesten Status-Badge + Fuss-Disclaimer
+(bereits angelegt). Fehlt die Gliederung, ehrlich ausweisen statt Struktur
+vortäuschen (`EntscheidBody`-Fallback). *Quelle:* CourtListener OCR-Disclaimer;
+§8; Davids Status-Marker-Direktive.
+
+**§J-R19 · Provenienz-Fuss: massgebliche Fassung verlinkt + URG-Hinweis.**
+Beibehalten: Link zur amtlichen Quelle, «ersetzt amtliche Fassung nicht»,
+Art. 5 URG (Urteil gemeinfrei, Regeste redaktionell). *Quelle:* §7/§8; URG.
+
+**§J-R20 · Back-to-Top erst > ~4 Bildschirme, unten rechts, mit Label.**
+Bei langen Entscheiden ein ruhiger «Nach oben», nicht früher. *Quelle:* NN/g
+Back-to-Top.
+
+**§J-R21 · Mobil: keine Querscrollung, Body 16px/1.5+ erhalten, Randziffer inline.**
+< `lg`: Randziffer vor den Absatz, Sprung-Chips horizontal scrollbar (beides
+vorhanden), kein horizontaler Scroll, Spalte ~minus Gutter. *Quelle:* Tufte
+≤ 760px; WCAG Reflow 1.4.10; Weblaw-Mobiltest.
+
+**§J-R22 · Reading-Progress-Bar: NICHT einbauen (höchstens A/B).**
+Evidenz gemischt, kein etablierter Best-Practice. Weglassen. *Quelle:* uxdesign
+Pros/Cons; NN/g.
+
+#### P0 — Nachtrag Informationshierarchie (QS-UI 8b Teil 2, 4.8.2026)
+
+**§J-R23 · Das Verdikt eines Entscheids ist die Regeste — und es steht zuoberst.**
+Präzisierung zu Dach-§13.2 für diese Domäne, gemessen und gegatet am 4.8.2026
+(Messliste `fahrplaene/FAHRPLAN-UI-QUALITAET.md` §2.2, Tor
+`e2e/qsui-hierarchie.e2e.ts` I6/I7).
+
+1. **Verdikt = Regeste bzw. die als solche gekennzeichnete Zusammenfassung**
+   (R8, `[data-verdikt]`). Liefert die Quelle keine — bei kantonalen Entscheiden
+   ist `/structure` Bund-only —, tritt der erste Abschnitt des Urteilstexts an
+   ihre Stelle. Nie ein Etikett, das mehr behauptet als die Quelle trägt (R18/§8):
+   «Regeste» nur bei amtlicher Regeste, sonst «Zusammenfassung».
+2. **Die Regeste steht VOR dem Urteilstext und vor dem Provenienz-Fuss** — auch
+   auf schmalen Schirmen, wo Erwägungs-Rail und Sprungleiste vor der Lesespalte
+   liegen. Der Rail steht dort als eingeklappter Griff (eine Zeile) über dem
+   Text: eine Navigation hinter ihrem Ziel ist keine, eine aufgeklappte vor dem
+   Ziel drückt das Verdikt weg. Beides ist zu vermeiden, der Griff löst es.
+3. **Regressions-Schranke statt Wunschwert.** Gemessen über vier Entscheid-
+   Flächen: 0.56–0.62 Bildschirmhöhen Desktop, 0.68–0.83 mobil. Der Reader ist
+   damit die einzige Fläche der App, deren Verdikt auf Desktop im ersten
+   Viewport steht. Das Tor nagelt den Zustand bei 1.20 Bildschirmhöhen fest —
+   nicht als Ziel, sondern als Schwelle, ab der jemand etwas über die Regeste
+   geschoben hat.
+4. **Fliesstext hält die Lesespalte** (R1 + Dach-B2) — auch im Provenienz-Fuss
+   und im §8-Hinweis der Übersicht. Gerade die Ehrlichkeits-Zeilen sollen
+   gelesen werden; sie über die volle Breite laufen zu lassen, macht sie zur
+   Fussnote, die niemand liest.
+5. **Übersicht: Filter über den Resultaten bleibt richtig** (R15) — das ist
+   ausdrücklich das Soll und kein Hierarchie-Verstoss. Der gemessene Weg zum
+   ersten Treffer (0.89 Desktop / 1.27 mobil) ist ein Responsive-Thema
+   (`W3·14`), kein Ordnungs-Thema.
+
+*(Das Gliederungs-Gerüst «falls formalisiert» und die fünf Quick Wins vom
+23.6.2026 — R1 erledigt, R5 `space-y-4` im Ist-Code weiterhin offen — stehen wörtlich im
+Archiv.)*
+
+### §J · Prüfung (Checkliste vor Commit)
+
+1. Lesespalte gemessen 60–75 Zeichen bei Standardgrad (Desktop).
+2. Kontrast Body + alle gedämpften Elemente ≥ 4.5:1 (Tool, nicht Augenmass);
+   200 %-Zoom + Text-Spacing-Override ohne Clipping/Querscroll.
+3. Erwägungs-Anker stabil + Permalink kopierbar; Nummerierung = amtliche
+   Erwägung (kein Eigen-Zählwerk).
+4. Mobil 390px: Randziffer inline, Sprung-Chips scrollbar, kein Querscroll,
+   Body bleibt ≥ 16px/1.5.
+5. Norm-Links nur bei eindeutiger Auflösung (kein toter Link); Regeste-Quelle
+   ausgewiesen; «maschinell erfasst» sichtbar (§8).
+6. Kein ECLI; Zitierung in BGE/BGer-Form; Blocksatz aus; keine Progress-Bar.
+7. `npm run gate` + `npm run build` grün; visuelle Sichtprüfung Desktop 1280 /
+   Mobile 390 in hell und dunkel.
+8. Kein Push/Deploy ohne Davids ausdrückliches Ja (§9); fachliche Abnahme der
+   Optik durch David selbst.
+
+### §J · Umsetzungs-Entscheide (Stand 23.6.2026)
+
+- **Erwägungs-Darstellung (R6/R7 — angepasst auf Davids Wunsch):** Statt reiner
+  Randziffer wird die **amtliche BGer-Form** umgesetzt — die Erwägungs-Ziffer
+  (`E. 2.3`) steht als eigene **Kopfzeile** über ihrem Absatz, Erwägungen oberster
+  Ebene sind durch **Haarlinie + Abstand ABGETRENNT**, Unter-Erwägungen nach Tiefe
+  eingerückt. Pin-Cite-Anker/Permalink (`#e-2-3`) + `tabular-nums` bleiben erhalten.
+- **`/structure paragraph_excerpt_chars`:** OCL-Maximum ist **5000** (höher → HTTP
+  422 → kein Strukturtext). Längere Erwägungen werden bei 5000 Zeichen gekappt
+  (selten; ehrliche Minor-Truncation, sonst Fliesstext-Fallback).
+- **Kantonale Gerichte:** `/structure` ist Bund-only → kantonal greift der
+  Fliesstext-Fallback mit sichtbarem §8-Hinweis «Gliederung nicht verfügbar».
+  Eigener Pfad `public/rechtsprechung/kanton/<KT>/`.
+- **Übersicht:** klare **Bund/Kanton-Trennung** — Segment (Alle · Bundesgericht ·
+  Kantone) + beschriftete Abschnitte.
+- **Amtlicher Link** (relevancy.bger.ch) auf JEDER Karte (Fuss) + im Reader.
+- **Dispositiv:** bewusst EIN Block (OCL `dispositiv_orders` zerteilt unzuverlässig an
+  Datumsangaben „2. Dezember" → §1 kein Falsch-Split). *(aus Fix-Runde 2, 23.6.2026;
+  die übrige Fix-Runde ist ein Änderungsprotokoll und steht im Archiv)*
+
+### §J-A3 · Verbindliche Regeln: nicht amtlich publizierte Urteile (A3, Stand 27.6.2026)
+
+> **Status (§8):** verbindliche Darstellungs-Konvention, von David freigegeben
+> (F5, JETZT-MACHEN §4.5). Fachliche Einzelabnahme der Inhalte bleibt offen
+> (`verifiziert:false` / `kuratierung:'maschinell'`), Abnahme-Zeitsperre bis
+> 1.12.2026. Ein «nicht amtlich publiziertes Urteil» = jeder Entscheid mit
+> `leitcharakter !== 'leitentscheid'` (kein amtlicher BGE-Sammlungs-Auszug).
+
+1. **Identische Voll-Urteil-Struktur** wie beim Leitentscheid-Volltext: derselbe
+   Reader/`EntscheidBody` (Kopf-Block aus `kopfModell`, gegliederter Sachverhalt
+   A./B./C., E.-Erwägungen, Dispositiv). Fehlt der Quelle Struktur (kantonal:
+   `/structure` ist Bund-only), greift der ehrliche Fliesstext-Fallback mit
+   sichtbarem §8-Hinweis — die **Vorlage** bleibt identisch, nur die Datentiefe
+   variiert. *Andock:* `EntscheidLeser.tsx`, `EntscheidBody.tsx`, `kopf.ts`.
+2. **Kein Auszug/Volltext-Umschalter** — es gibt keinen amtlichen Auszug → direkt
+   Volltext. Der Tab-Umschalter erscheint ausschliesslich beim BGE mit Volltext
+   (`switcherSichtbar = gericht==='bge' && hatAuszug`). *Andock:* `EntscheidLeser.tsx`.
+3. **Regeste-Box nur bei amtlicher Regeste** (`regesteAmtlich`); sonst Überschrift
+   «Zusammenfassung» + `maschinell`-Marker, nie als «Regeste» etikettiert.
+   *Andock:* `EntscheidLeser.tsx` (Box-Label), `EntscheidZeile.tsx` («ohne amtl.
+   Regeste»).
+4. **Kein «Leitentscheid (BGE)»-Badge** → neutrale Identitäts-Kennung
+   (Gericht · Abteilung · Sachgebiet, «Urteil vom <Datum>»). Das Badge hängt
+   strikt an `leitcharakter==='leitentscheid'`. *Andock:* `EntscheidLeser.tsx`.
+5. **Übersicht: eigene Voll-Urteil-Zeile, GRUPPIERT UNTER IHRER INSTANZ**
+   (`gerichtstyp`: Bundesgericht → Bundesverwaltungs-/Bundesstrafgericht →
+   Bundespatentgericht → Kantonale Gerichte; feste Reihenfolge, nur belegte
+   Gruppen). Die **«verweis»-Karte** (vollständiges Urteil zu einem BGE) bleibt
+   der **BGE-Auszug→Volltext-Brücke** vorbehalten und erscheint in der eigenen
+   Sektion «Vollständige Urteile zu den Leitentscheiden», nie unter «Weitere».
+   *Andock:* `browse.ts` (`gruppiereNachInstanz`, `istVolltextVerweis`),
+   `Rechtsprechung.tsx`. *Tor:* `rechtsprechung-browse.test.ts`.
+6. **Status-Marker bis Davids Abnahme:** `kuratierung:'maschinell'` (UI:
+   «ungeprüft»/«maschinell erfasst»), `verifiziert:false`; massgeblich bleibt die
+   amtliche Quelle (Live-Link je Entscheid). *Andock:* `entscheide-schreiben.ts`,
+   `register.ts`, `EntscheidLeser.tsx`, `EntscheidZeile.tsx`.
+
+**Maschinell geprüft (§13/E1):** Regel 4/6 (Badge/Marker an `leitcharakter` bzw.
+`kuratierung`) sind im Render an genau diese Felder gebunden; Regel 5
+(Instanz-Gruppierung, verweis-Reservierung) ist in `rechtsprechung-browse.test.ts`
+festgenagelt; das B2-Konsistenz-Tor (`entscheid-konsistenz.test.tsx`) sichert
+Regel 1/3 je (Gericht × Sprache).
+
+## V · Vorlagen — verbindliches Schriftbild der Dokument-Outputs
+
+*Ehemals `DESIGN-REGLEMENT-VORLAGEN.md`, konsolidiert 23.9.2026 (W2·29-WERKBANK-TOKENS, Rats-Auflage 2). Die Regel-Codes V1–V7 = §V-1 … §V-7.*
+
+Stand: 18.6.2026 (Auftrag David: «schön, nutzerfreundlich, state of the art»
+für die Dokument-Outputs der Vorlagen — grundlegende Regeln **in Code
+erzwungen**, nicht nur beschrieben; Schlichtungsgesuch als erste Umsetzung).
+Geltungsbereich: alle Vorlagen-Outputs (PDF, DOCX, On-Screen-Vorschau).
+
+**Das Verbindliche ist der Code** (`src/lib/vorlagen/formatvorlagen.ts` +
+`src/components/vorlagen/vorschauStil.ts`); diese Notiz hält das *Warum* fest.
+Spiegel zu §R (das die Rechner-Seiten regelt).
+
+Leitidee: **Ein Dokument, drei Renderer, eine Quelle.** Jede Vorlage wird über
+ein rollenbasiertes Modell zusammengesetzt (`assemble()` → `DokumentAbsatz[]`);
+PDF, DOCX und Vorschau interpretieren dieselben Rollen und Muster. Eine
+Verbesserung an der geteilten Schicht färbt jede Vorlage konsistent.
+
+### §V-1 · Dokument-Anatomie (Rollen)
+
+`assemble()` (`engine.ts`) liefert Absätze mit `rolle`:
+`absender · adressat · datumzeile · betreff · rubrum · parteien · anrede ·
+schlussformel · unterschrift · default`. Geteilte Textmuster (`MUSTER`):
+nummerierte Klausel `1. …` (hängender Einzug), `– `-Unterpunkt, Strichzeile
+`______` (gezeichnete Unterschriftslinie), Rubrum-Parteirolle `— … —`.
+
+**Der Assemble-Text ist die SSoT des Inhalts** (golden-gegated, §6). Renderer
+dürfen ihn nur DARSTELLEN, nie verändern. Anzeige-Transformationen (z. B.
+`rolleLabel`: «— klagende Partei —» → «klagende Partei») sind erlaubt, weil
+sie den Assemble-Text nicht anfassen.
+
+### §V-2 · Eine Quelle, drei Einheiten-Sichten (das «Reglement in Code»)
+
+Alle Masse/Typografie liegen an EINER Stelle (`formatvorlagen.ts`), bewusst in
+drei nebeneinander gepflegten Einheiten-Sichten — NICHT auseinander abgeleitet:
+
+| Sicht | Einheit | Renderer | Wo |
+|---|---|---|---|
+| `FORMAT_TYPOGRAFIE` | mm + `docx:{}` (twips) | format-abhängige Typografie (Brot/Zeile/Ränder/Titel) | lib |
+| `ROLLEN_PDF` | mm / pt | PDF-Rollen-Abstände + Einzüge | lib |
+| `ROLLEN_DOCX` | twips / half-points | DOCX-Rollen-Abstände + Einzüge | lib |
+| `VORSCHAU` | rem / em | On-Screen-«Papier» | `components/vorlagen/vorschauStil.ts` |
+
+**Warum keine Projektion (eine Einheit → Rest gerechnet):**
+- mm → twips wäre falsch: die Word-Masse sind seit jeher eigenständig auf das
+  Word-Schriftbild getunt (Adressblock 10 mm im PDF vs. 300 twips ≈ 5.3 mm im
+  DOCX). Eine Umrechnung hätte das DOCX-Schriftbild verändert (§6-Bruch).
+- mm → rem wäre unstimmig: das Vorschau-«Papier» ist CONTAINER-RELATIV
+  (responsiv), nicht mm-skaliert — ein in mm projizierter Einzug passte nicht
+  zur container-breiten Seite.
+
+Die drei Sichten werden **im Gleichschritt** gepflegt: wer den Rhythmus eines
+Dokuments ändert, fasst alle drei an. Geteilt wird nur, was wirklich dasselbe
+ist (z. B. `betreffGroesse`: pt; DOCX = 2× als Half-Points; `rolleLabel`).
+
+### §V-3 · §3-Grenze: lib gibt Zahlen, Components machen CSS
+
+`src/lib/` enthält nur MASSZAHLEN (mm, twips, rem als Zahl) + den neutralen
+`rolleLabel` — keine Tailwind-/CSS-Strings. Die Übersetzung in `className`/
+`style` lebt in der Komponentenschicht (`vorschauStil.ts`, `wizard.tsx`).
+Die Renderer in `src/lib/vorlagen/vorlagenPdf.ts` / `vorlagenDocx.ts` nehmen
+`stil` als reinen Parameter — keine UI-Abhängigkeit.
+
+### §V-4 · Schriftbild-Handwerk (gilt in beiden Stilen)
+
+- **Tabellarische Ziffern**: Beträge/Daten/Nummern fluchten. Vorschau via
+  `font-variant-numeric: tabular-nums` (Sans — NIE die Monospace-`.num`-Klasse,
+  die den Fliesstext bräche). PDF/Helvetica und DOCX/Arial haben ohnehin
+  gleich breite Ziffern.
+- **Ruhige Hierarchie**: fetter Betreff + Haarlinie; scanbarer, hängend
+  eingezogener Begehrensblock; klarer Unterschriftsblock.
+- **Schweizer Eingabe-Konvention**: Adressblock oben links (fensterkuvert-
+  tauglich), Ort/Datum rechts, breiter Korrekturrand rechts (`eingabe`).
+- **Ehrlichkeit (§8)**: Status/Disclaimer ruhig im Output; keine Politur, die
+  den Prüfstand verschleiert.
+
+### §V-5 · Ausgabe-Stil: nüchtern ⇄ modern (`AusgabeStil`)
+
+Eine Stilwahl, die auf alle drei Renderer KOHÄRENT wirkt (Vorschau = PDF =
+DOCX). Differenzierer ist die Rubrum-Parteirolle (visuelle Signatur):
+
+- **nuechtern** — klassisch-gerichtstauglich: `— klagende Partei —` zentriert.
+- **modern** — Variante A «Dokument-Handwerk»: ruhiges, gesperrtes Versal-Label
+  (Em-Striche entfallen, `rolleLabel`).
+
+V4-Handwerk (Tabellarik, Hierarchie, Begehrensblock) gilt in BEIDEN Stilen.
+Wahl liegt im Modul-Store `ausgabeStil.ts` (`useSyncExternalStore`,
+localStorage, Default `modern`) — Vorschau UND beide Export-Knöpfe lesen
+denselben Wert ohne Props-Plumbing. UI: `StilUmschalter` im Vorschaukopf.
+
+### §V-6 · Verhaltensneutralität (§6) — was sich NIE ändern darf
+
+Das Schriftbild ist Darstellung; der **Inhalt** ist es nicht. `assemble()`,
+Schemas, Bausteine, Texte bleiben unberührt → `npm run golden:vergleich`
+byte-gleich. Reine Token-Umstellungen (Magic-Numbers → benannte Tokens mit
+identischem Wert) werden mit einem datums-/ID-bereinigten Render-Vergleich
+(PDF-Operatoren + DOCX `document.xml`) als byte-gleich bewiesen.
+
+### §V-7 · Informationshierarchie: das Dokument ist das Verdikt (QS-UI 8b Teil 2, 4.8.2026)
+
+Präzisierung zu Dach-§13.2 («Verdikt zuerst, Warum auf Abruf») für diese Domäne. Sie hält
+fest, was der Hierarchie-Pass vom 4.8.2026 gemessen und gegatet hat; Messliste und
+Begründungen in `fahrplaene/FAHRPLAN-UI-QUALITAET.md` §2.2, Tor `e2e/qsui-hierarchie.e2e.ts`
+(I8–I10, A9).
+
+1. **Verdikt = das Dokument, nicht das Formular.** Aus V1 folgt unmittelbar: das Produkt
+   dieser Rubrik ist der fertige Text, nicht die Eingabestrecke. Die Vorschau ist darum
+   kein Beiwerk, sondern die Antwort der Seite.
+2. **Die Stelle des Dokuments ist nie leer.** Steht noch kein Dokument (fehlende Angaben,
+   fachlicher Blocker), steht dort ein Platzhalter — der geteilte `ErgebnisPlatzhalter`
+   (`components/vorlagen/ui.tsx`, `titel="Dokumente"`) oder ein reicherer Leerzustand, der
+   zusätzlich die offenen Blocker nennt (so `/vorlagen/ag-gruendung`). Auf schmalen
+   Schirmen, wo der Vorschau-Block eingeklappt ist, ist der beschriftete Griff die Stelle.
+   Nie nichts: wer nicht sieht, dass dort etwas erscheint, wartet nicht darauf.
+3. **Ist das Dokument nicht im Bild und rückt es nicht von selbst hinein, gibt es eine
+   Abkürzung.** «Von selbst» heisst: die klebende Vorschau-Spalte auf breiten Schirmen —
+   dort wäre eine schwebende Marke ein Zeiger auf ohnehin Sichtbares. Sonst gilt die
+   geteilte `ErgebnisSprung`-Marke der Rechner-Domäne, mit eigenem Label («↓ Dokumente»),
+   **nicht** eine zweite Bauform (§10).
+4. **Die Formvorschrift steht im ersten Viewport.** Das Form-Badge im Kopf (V4
+   «Ehrlichkeit») trägt die Aussage, die über die Gültigkeit entscheidet — «Eigenhändig
+   abzuschreiben», «Papierform · eigenhändig unterzeichnen». Sie darf gedämpft sein, aber
+   nie hinter der Eingabestrecke stehen. Gemessen über alle 30 Routen: 0.46–0.88
+   Bildschirmhöhen.
+5. **Warnungen werden nie weggeschaltet.** Ein Rahmen, der Engine-Warnungen nur auf Opt-in
+   rendert, ist gegen §8 gebaut, auch wenn heute keine Engine welche liefert — die erste,
+   die es tut, verschwände still. `VorlagenSeite` rendert `gates.warnungen` darum
+   bedingungslos (Opt-in `zeigeWarnungen` entfernt 4.8.2026).
+6. **Fliesstext hält die Lesespalte** (Dach-B2/D-1.5). Ausgenommen ist das Vorschau-
+   «Papier»: dessen Mass regelt V2, nicht die Lesespalte der App.
+
+### §V · Prüfung (Checkliste vor Commit)
+
+1. `npm run golden:vergleich` byte-gleich (Inhalt unberührt — Hauptbeweis §6).
+2. `npm run gate` (tsc · vitest · golden · lint · check) + `npm run build` grün.
+3. Keine hartkodierten Abstände mehr auf Rollen-Elementen der Vorschau
+   (grep `mb-/mt-/w-/pl-` → nur strukturelle Utilities übrig).
+4. Visuelle Sichtprüfung Vorschau (Desktop 1280 / Mobile 390) + je ein PDF +
+   DOCX pro Format, in BEIDEN Stilen geöffnet und beurteilt.
+5. Struktur-Tests, die altes DOM festschreiben, werden DEKLARIERT angepasst
+   (§6 Ziff. 3, eigener begründeter Schritt) — nie stillschweigend aufgeweicht.
+6. Kein Push/Deploy ohne Davids ausdrückliches Ja (§9); fachliche Abnahme der
+   Optik durch David selbst (Ausprobieren).

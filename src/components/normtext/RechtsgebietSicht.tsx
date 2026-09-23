@@ -70,7 +70,7 @@ function ThemaKarte({ t, proKey }: { t: RechtsgebietThema; proKey: Map<string, B
               damit den SLATE-Ton. Das Farb-Wörterbuch schliesst genau das aus —
               slate bedeutet ausschliesslich «neutrale, maschinell-prozedurale
               Referenzinformation ohne Wertung» und ausdrücklich NICHT
-              «ungeprüft/in Vorbereitung» (DESIGN-REGLEMENT-NORMTEXT.md:337 ff.,
+              «ungeprüft/in Vorbereitung» (DESIGN-REGLEMENT.md §N-4b-B,
               aufgelöste slate-Doppelbelegung). Der Prüfstands-Zustand «Entwurf»
               hat seine eigene, hausweit einzige Marke: `lc-badge-entwurf`
               (index.css:1482 — sie @applyt `lc-badge` bereits selbst, darum hier

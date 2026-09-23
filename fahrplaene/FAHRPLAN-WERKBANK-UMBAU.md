@@ -117,6 +117,16 @@ seit 5.9.2026 live (`a66421362`).
 3. **Farbe als Fläche: ja.** Reglement F0.2 («nie als Fläche») wird im Tokens-Schritt geändert,
    `check:farbwelt` auf die Flächen-Regel umgestellt — Kontrast-Schwellen bleiben unverändert.
 
+**Stand 23.9.2026 — Schritt gebaut in zwei PRs.** T1 Code **#981** (`feat/w229-werkbank-tokens`):
+`design/tokens.json` als eine Quelle, `npm run gen:tokens`, Tor `check:tokens-drift`, vier
+Flächen-Token `--reg-*-flaeche` mit Pflichtpaaren in `check:farbwelt`. T2 Doku
+(`docs/w229-tokens-reglement`, setzt #981 voraus): die fünf Reglemente sind **ein**
+`DESIGN-REGLEMENT.md` (Teil I Dach, Teil II §N/§R/§J/§V), datierte Belege in
+`archiv/DESIGN-REGLEMENT-BELEGE-2026.md`, F0.2 in der Fassung «Farbe als Fläche». Die
+Schrumpfungs-Vorgabe ≥ 40 % ist **nicht** erreicht (Zahlen im T2-PR): die Normtext-Regeln
+§N-4b/§N-4b-B/§N-4c bleiben wörtlich (Rechtsdarstellung), weiteres Kürzen hiesse Regeln streichen
+— das bleibt ein Entscheid, kein Konsolidierungs-Nebeneffekt.
+
 ## §5 · Die fünf Rubrik-Schritte
 
 Reihenfolge nach Produktwert, Dep-Kette
@@ -160,13 +170,13 @@ Rechtslogik, Korpus oder Prüfstrasse betrifft, bleibt. Datierte Belege altern n
 |---|---|---|---|
 | Schritt `W2·11-DESIGN` (Design-Wärme) | ganzer Umbau — die Brass-Wärme ist Gegenstand des Token-Tauschs | wörtlich in `ROADMAP-CHRONIK.md`, Schritt gestrichen | **jetzt** |
 | `fahrplaene/FAHRPLAN-DESIGN-WAERME.md` | dito | `git mv` nach `archiv/`, Index-Zeile in `archiv/README.md` | **jetzt** |
-| `public/icons.svg` (5 KB Sprite) | schon heute ohne Gegenstand — **0 Verweise repo-weit** (Sonde 22.9.2026) | löschen | TOR (dieser PR ist doku-only) |
-| Doppelte Rechner-Metadaten `src/lib/calculators.ts` ↔ `startseiteConfig.ts` | TOR (c) | eine Quelle, die andere löschen | TOR |
-| Die fünf `DESIGN-REGLEMENT*.md` (159 KB) | TOKENS — `tokens.json` ist die Quelle | auf **ein** Reglement konsolidieren; die Normtext-Darstellungsregeln (Tabellen T-A…T-F, `p`-Klassen) bleiben — Rechtsdarstellung, nicht Hülle | TOKENS |
-| `.claude/rules/design.md` | TOKENS | auf das eine Reglement nachziehen (zählt zur Steuerfläche — Rückbau, nicht Zuwachs) | TOKENS |
+| `public/icons.svg` (5 KB Sprite) | schon heute ohne Gegenstand — **0 Verweise repo-weit** (Sonde 22.9.2026) | löschen | **erledigt 22.9.2026, PR #979** |
+| Doppelte Rechner-Metadaten `src/lib/calculators.ts` ↔ `startseiteConfig.ts` | TOR (c) | eine Quelle, die andere löschen | **erledigt 22.9.2026, PR #979** |
+| Die fünf `DESIGN-REGLEMENT*.md` (159 KB) | TOKENS — `tokens.json` ist die Quelle | auf **ein** Reglement konsolidieren; die Normtext-Darstellungsregeln (Tabellen T-A…T-F, `p`-Klassen) bleiben — Rechtsdarstellung, nicht Hülle | **erledigt 23.9.2026, PR #981 (Token-Quelle) + T2 `docs/w229-tokens-reglement`** |
+| `.claude/rules/design.md` | TOKENS | auf das eine Reglement nachziehen (zählt zur Steuerfläche — Rückbau, nicht Zuwachs) | **erledigt 23.9.2026, T2** (Zeilenzahl gleich, Z. 10–12 offen — s. T2-PR) |
 | Alt-Blöcke in `src/index.css` (4 799 Z.) · ungenutzte Teile `tailwind.config.js` (429 Z.) | jede Rubrik löst ihren Teil ab | rubrikweise löschen, Rest bei REST; `check:sediment` (a) ist der Nachweis | je Rubrik |
 | `FAHRPLAN-LESER-V3.md` + `W2·5m-LESER-V3` («Hülle neu, Kern unangetastet») | LESER — dasselbe Ziel, anderer Weg | Posten unter LESER, Schritt in die Chronik, Fahrplan ins Archiv | LESER |
-| `FAHRPLAN-SPLIT-VIEW.md` · `FAHRPLAN-GESETZES-UX.md` (beide ohne lebenden Schritt) | LESER | prüfen, was noch Referenz ist (`DESIGN-REGLEMENT-NORMTEXT.md` zeigt auf GESETZES-UX), Rest ins Archiv | LESER |
+| `FAHRPLAN-SPLIT-VIEW.md` · `FAHRPLAN-GESETZES-UX.md` (beide ohne lebenden Schritt) | LESER | prüfen, was noch Referenz ist (`DESIGN-REGLEMENT.md` §N zeigt auf GESETZES-UX), Rest ins Archiv | LESER |
 | `FAHRPLAN-UI-BEFUNDE.md` (210 Befunde an der alten Hülle) + `W2·17-UI-BEFUNDE` | jede Rubrik löst ihre Befunde ab | je Rubrik abhaken oder als gegenstandslos in die Chronik; Rest ins Archiv | je Rubrik, Schluss REST |
 | `FAHRPLAN-UI-QUALITAET.md` + `QS-UI` · `FAHRPLAN-DESIGN-KONSISTENZ.md` + `W2·19-DESIGN-KONSISTENZ` | der Umbau stellt gleiche Dinge gleich dar — das **ist** die Konsistenz-Arbeit | absorbieren, Schritte in die Chronik, Fahrpläne ins Archiv | REST |
 | `FAHRPLAN-DESIGN-IDENTITAET.md` §8-Reste + `W2·24-C` | KATALOGE / REST | Posten unter die Rubrik, Rest ins Archiv. **`W2·24-PERF-REST` bleibt** — CLS/Mount ist §15, keine Hülle | KATALOGE / REST |

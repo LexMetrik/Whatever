@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
-// ─── Themen-Einstieg unter der Werkzeug-Karte (DESIGN-REGLEMENT-RECHNER R10) ─
+// ─── Themen-Einstieg unter der Werkzeug-Karte (DESIGN-REGLEMENT §R-10) ─────
 // Direktlinks vom Rechner zu den passenden Vorlagen (Konsolidierung 7.6.2026
 // E3: Einträge ohne eigene Katalog-Karte sind HIER erreichbar). Vorher als
 // frei formatierte Absätze in den Seiten dupliziert.

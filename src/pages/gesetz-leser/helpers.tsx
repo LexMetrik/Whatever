@@ -575,8 +575,8 @@ export function fnTextMitLinks(fn: Fussnote): ReactNode {
 //     lungsfähigkeit» mal fett, mal klein). Reine Darstellung (§3), zur Laufzeit
 //     abgeleitet aus Delta-Offset + Position (kein Massen-Regen, F3).
 export function margStufeStil(level: number, istBlatt: boolean): string {
-  // Hängender-Einzug-Schutz (W2·5d G1 / DESIGN-REGLEMENT-NORMTEXT §Randtitel-
-  // Hierarchie): mehrzeilige Randtitel («1. Im Allgemeinen») brechen sonst als
+  // Hängender-Einzug-Schutz (W2·5d G1 / DESIGN-REGLEMENT §N-4b
+  // Randtitel-Hierarchie): mehrzeilige Randtitel («1. Im Allgemeinen») brechen sonst als
   // «1. Im / Allgemeinen» — die Fortsetzungszeile rückt via text-indent:-1em +
   // pl-[1em] auf die Titel-Startspalte ein (Fedlex-AVOID). Reine Darstellung (§3).
   const hang = '[text-indent:-1em] pl-[1em]';
