@@ -3,6 +3,11 @@ import { renderToString } from 'react-dom/server';
 import { ArtikelBody } from '../components/normtext/ArtikelBody';
 import { trenneAenderungshistorie, labelMitBereich, absatzMarke } from '../lib/normtext/darstellung';
 import type { NormSnapshot } from '../lib/normtext/typen';
+// Kern-Probe (Block am Dateiende, S0 23.9.2026):
+import { renderToStaticMarkup } from 'react-dom/server';
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 // ArtikelBody ist die aus NormPopover extrahierte Render-Komponente. Die
 // Byte-Gleichheit gegenüber dem alten Popover-Body sichert NormPopover.test.tsx
@@ -489,4 +494,108 @@ describe('M6 — Fremdgesetz-Chapeau unterdrückt falsche bare-Self-Links', () =
     );
     expect(out).toContain('#art-52'); // korrekter Self-Link
   });
+});
+
+// ── KERN-PROBE · Normtext-Körper byte-genau (W2·29-WERKBANK-LESER S0, 23.9.2026) ──
+// WOFÜR: Der Werkbank-Umbau des Lesers (Fahrplan FAHRPLAN-WERKBANK-UMBAU §5a,
+// S1–S5) darf den Normtext-KERN nicht berühren (`src/components/normtext/
+// {ArtikelBody*,ArtikelTabellen,BildElemente,tarifText,wortverbinder}`). Das
+// Golden (`golden/lexmetrik-golden.json`) deckt nur Rechner/Vorlagen, der
+// Normtext-Snapshot nur Daten — für den gerenderten Körper gab es kein
+// Instrument. Diese Probe rendert eine FESTE Stichprobe aus dem echten Korpus
+// so, wie der Leser sie aufruft (`parts/ArtikelLeser.tsx`: autolink,
+// zitierKontext, artikelAufgehoben, Lesesicht-Klassen), und hält zwei Hashes
+// je Fall fest:
+//   voll     = sha256 des vollständigen Markups (jede Klasse, jedes Zeichen);
+//   struktur = sha256 des Markups OHNE class-Attribute (Elemente, Attribute,
+//              Wortlaut) — ein reiner Klassen-Tausch lässt ihn stehen.
+// Ändert sich ein Hash, ist das eine Änderung am Normtext-Körper: nie still
+// nachführen (§6.3), sondern deklariert und begründet — oder den Umbau
+// zurücknehmen. Korpus-Nachzüge (neuer Snapshot) ändern die Hashes legitim;
+// dann steht der Nachzug im selben Commit (Korpus-Datei + neue Konstante).
+//
+// STICHPROBE (gewählt per Skript über public/normtext/{bund,kanton}/*.json,
+// sortiert, erster Treffer je Klasse — Beleg im Commit-Body S0-B). Die
+// Tabellen-Fälle bilden die Regel-Familien des Tabellen-Regelwerks T-A…T-F
+// (archiv/FAHRPLAN-GESETZESDARSTELLUNG-BUND.md, Anhang 1) auf je einen
+// gerenderten Korpus-Fall ab.
+// `anker` = Werttreue-Stichwort (T-F7-Geist): die Probe rendert wirklich den
+// Fall und nicht etwa eine Fehl- oder Leerseite.
+type KernFall = { fall: string; ebene: 'bund' | 'kanton'; datei: string; artikel: string; label: string; kuerzel: string; anker: string };
+const KERN_STICHPROBE: KernFall[] = [
+  { fall: 'OR Art. 257d (Prosa, zwei Absätze)', ebene: 'bund', datei: 'OR', artikel: '257_d', label: 'Art. 257d', kuerzel: 'OR', anker: 'Ist der Mieter nach der Übernahme der Sache' },
+  { fall: 'T-A Staffel-Spanne verdichtet (bereich)', ebene: 'bund', datei: 'AHVV', artikel: '28', label: 'Art. 28', kuerzel: 'AHVV', anker: 'role="columnheader"' },
+  { fall: 'T-B mehrspaltig, ≥3 Zahlspalten', ebene: 'bund', datei: 'AHVG', artikel: '40_c', label: 'Art. 40c', kuerzel: 'AHVG', anker: 'role="columnheader"' },
+  { fall: 'T-C Einzel-Leerzelle bleibt (T-C7)', ebene: 'bund', datei: 'AHVV', artikel: '52_d', label: 'Art. 52d', kuerzel: 'AHVV', anker: 'role="columnheader"' },
+  { fall: 'T-D kopflos (T-D6)', ebene: 'bund', datei: 'ASYLV1', artikel: 'annex_2', label: 'Anhang 2', kuerzel: 'AsylV 1', anker: 'Verfolgungssichere Heimat- oder Herkunftsstaaten' },
+  { fall: 'T-E Alt-Form ohne Spalten-Vektor (Rückfallpfad)', ebene: 'bund', datei: 'AHVV', artikel: '52', label: 'Art. 52', kuerzel: 'AHVV', anker: 'role="table"' },
+  { fall: 'T-F Leitfall GebV SchKG Art. 20 (T-F4)', ebene: 'bund', datei: 'GEBV_SCHKG', artikel: '20', label: 'Art. 20', kuerzel: 'GebV SchKG', anker: 'über 100 bis 500' },
+  { fall: 'T-B5 Kurzform tabelle (Kanton)', ebene: 'kanton', datei: 'SG-2808', artikel: '7', label: 'Art. 7', kuerzel: 'SG 2808', anker: 'Die Entscheidgebühren betragen:' },
+  { fall: 'Formelbild (DBG Art. 22)', ebene: 'bund', datei: 'DBG', artikel: '22', label: 'Art. 22', kuerzel: 'DBG', anker: '<figure' },
+  { fall: 'aufgehoben (ganzer Artikel)', ebene: 'bund', datei: 'AHVG', artikel: '17', label: 'Art. 17', kuerzel: 'AHVG', anker: 'aufgehoben' },
+  { fall: 'leer, ungeklärt (Kanton, nicht aufgehoben)', ebene: 'kanton', datei: 'BS-153.100', artikel: '53', label: '§ 53', kuerzel: 'BS 153.100', anker: 'kein Text im Snapshot' },
+  { fall: 'Kantonsartikel (Absätze + Items)', ebene: 'kanton', datei: 'AG-291.150', artikel: '3', label: '§ 3', kuerzel: 'AG 291.150', anker: 'Die Grundentschädigung für die Vertretung' },
+];
+
+// EINGEFROREN (Gegenprüfung #984, 23.9.2026): die 12 Eingaben sind eine
+// Fixture (`fixtures/kern-probe-artikel.json`, Extraktion 23.9.2026 aus dem
+// damaligen public/normtext-Korpus) statt ein Live-Zugriff auf
+// public/normtext/**. Grund: ein Fedlex-Frische-Lauf (z.B. OR 1.10.2026,
+// AHVG/AHVV/DBG angekündigt) ändert die Korpus-Daten und kippt damit die
+// Hashes — ein reiner Darstellungs-Wächter darf nicht an Datenfrische
+// hängen (Datenwahrheit bewacht `check:golden-normtext` + der
+// Normtext-Korpus-Test, nicht diese Probe). Bei einer GEWOLLTEN
+// Darstellungsänderung (ArtikelBody/ArtikelTabellen/BildElemente/
+// tarifText/wortverbinder): Fixture unverändert lassen, nur die Hashes in
+// KERN_ERWARTET neu ziehen (Test einmal laufen lassen, `toEqual`-Diff
+// übernehmen) und die Änderung im Commit begründen (§6.3).
+type KernFixtureEintrag = {
+  fall: string;
+  meta: { erlass: string; korpusDatei: string; artikelToken: string; stand: string; abgerufen: string; extrahiertAm: string };
+  eintrag: { artikel: string; bloecke: NormSnapshot['bloecke']; aufgehoben?: true; stand: string };
+};
+const KERN_FIXTURE: KernFixtureEintrag[] = JSON.parse(
+  readFileSync(join(process.cwd(), 'src', 'tests', 'fixtures', 'kern-probe-artikel.json'), 'utf8'),
+);
+const kernFixtureNachFall = new Map(KERN_FIXTURE.map((x) => [x.fall, x]));
+
+function kernMarkup(f: KernFall): string {
+  const fix = kernFixtureNachFall.get(f.fall);
+  if (!fix) throw new Error(`Kern-Probe: ${f.fall} fehlt in fixtures/kern-probe-artikel.json`);
+  const e = fix.eintrag;
+  return renderToStaticMarkup(
+    <ArtikelBody bloecke={e.bloecke} artikel={e.artikel} passus={{ absatz: null }} autolink
+      artikelAufgehoben={e.aufgehoben === true}
+      zitierKontext={{ artikelLabel: f.label, kuerzel: f.kuerzel, fassung: e.stand, permalinkBasis: `/gesetze/${f.ebene}/${f.datei}#art-${e.artikel}` }}
+      className="space-y-3.5 font-serif text-leser-text text-ink-800" />,
+  );
+}
+const kernSha = (s: string) => createHash('sha256').update(s).digest('hex');
+const ohneKlassen = (s: string) => s.replace(/ class="[^"]*"/g, '');
+
+/** Erwartete Hashes [voll, struktur] je Fall — erzeugt 23.9.2026 auf dem
+ *  Korpus-Stand des Commits S0-B (origin/main). */
+const KERN_ERWARTET: Record<string, [string, string]> = {
+  'OR Art. 257d (Prosa, zwei Absätze)': ['80c4117233e44537634636109af2975cd648d2acc82ffee28cd17dfc7868265f', '3781a2a8bb5f7c1daa9c37d11b4f302e27f2be3ec899ec2e3682c79387caf27e'],
+  'T-A Staffel-Spanne verdichtet (bereich)': ['df91cbbf96992924c491b9601383234e0fcfc0628437a788115fdbdea1188339', 'ec2a8721ce88f5d6c910a387a13aff7057270edf91f752ce5560d3b97d2005f9'],
+  'T-B mehrspaltig, ≥3 Zahlspalten': ['fb6708751ad0c9d578f668e86dd3dda4da8371bad0e485681faca86d1f8c8f7d', '1f2b0a7ddf4230f0d1e8ae2c070f0c7ff1d3d99164a536799d6f2bc9ee2f19dd'],
+  'T-C Einzel-Leerzelle bleibt (T-C7)': ['1be2f0869943e633e460105d1f8c3d259cb99f76eff0c8b189192991589eab2d', '6740acc8ce7e3df0523dd5dbbe35cb814f28ed4c460f00f82a6de5ea8e2d0fde'],
+  'T-D kopflos (T-D6)': ['1fbc23a33acd46c027f33cb489b1272aacf35fd10e5a7c85630a4ba07b2b04f4', '7249f22f596b249a3a532480e15bea9273d2d1c05c42b6ad2b0bef904c35bd72'],
+  'T-E Alt-Form ohne Spalten-Vektor (Rückfallpfad)': ['de9e9d5c14d396e1ea93bff3a3e6dcc6985f7372cf77497c1b9b3b95b4e7eaa5', '7c1673da257ee42152116168dc9cf8fbf6b58bfde0180cf89fe914fc038700ef'],
+  'T-F Leitfall GebV SchKG Art. 20 (T-F4)': ['2a353abb5a3aa8037bde36b36caab7d1f9b36d05b83efad0f7eab9626ead5faf', 'eb72abb30e66fb45f96e0ceef22f67955d5e579fcea1053ff76f0eb89c004c31'],
+  'T-B5 Kurzform tabelle (Kanton)': ['adb4bc97974243eb3e51d199e590604cfdcc2918b36425450d44cad85c64f977', 'ad119a6f2413cb360f9570634315a99d7b3d075cd2ce7b220c1d670cc88b8be5'],
+  'Formelbild (DBG Art. 22)': ['2dcfb0e99eaaed263e2e3d64df3812fffe0b961a85962be1069a4965374b2c2e', '63c572a17754ba935d4bbb1dd3099e5881fab13ca6797d2d72ed3c91be7c8346'],
+  'aufgehoben (ganzer Artikel)': ['ccb9a533dab7cb8e116602b12048386d2e5421a81c30b26d0bf50ac621d194f8', '0bb7a81471bf6b806a44ee8102ca716f7053db3c43116dc6da5035acf455d79e'],
+  'leer, ungeklärt (Kanton, nicht aufgehoben)': ['e36083544edc02902c2a3d9dbde46e80a12674334d556e00c83976c5a274046f', '24fbe7f50467e80e7215a0ac27186ced52b8557f55b60c74dd81f63c7b5d0f5b'],
+  'Kantonsartikel (Absätze + Items)': ['1262314cb8c446e7feecb1a785f887de7863a1530b2296dbaf6882f741d8b0dd', 'cca846fd3519f717dc83252091bc3b4afedabd4e77cf27da200cd0cd2a1bceb9'],
+};
+
+describe('Kern-Probe · Normtext-Körper byte-genau (S0)', () => {
+  for (const f of KERN_STICHPROBE) {
+    it(`${f.fall} — ${f.kuerzel} ${f.label}`, () => {
+      const markup = kernMarkup(f);
+      expect(markup).toContain(f.anker);
+      expect([kernSha(markup), kernSha(ohneKlassen(markup))]).toEqual(KERN_ERWARTET[f.fall]);
+    });
+  }
 });

@@ -11,6 +11,7 @@ import { fehlerSammeln } from './helpers/fehlerSammeln'
 import { clsBeobachtenInstallieren, clsAuslesen } from './helpers/cls'
 import { kopfSucheOeffnen, sprungZeile } from './helpers/kopfSuche'
 import { OR_LESER_FRIST } from './helpers/orLeser'
+import { warteAufSuchindex } from './helpers/warteAufSuchindex'
 
 // CI-Härtung 19.7.2026 (BEFUND 3b): die Sprung-Tests warten per 20-s-Latch auf den
 // EINMAL-Load des ~4-MB-Artikel-Index (P3 u. a.). Auf dem 2-vCPU-Runner unter
@@ -53,6 +54,19 @@ test.describe.configure({ timeout: 150_000 })
 // Rot-Rezept an EINER Stelle, `helpers/kopfSuche.ts`). Die Gruppen-Überschrift
 // «Norm-Sprung»/«Entscheid-Sprung» bleibt unverändert mitgeprüft, ebenso die
 // Reihenfolge (oberster Treffer) und der Sprung selbst (Enter → URL).
+
+// ── W2·29-WERKBANK-LESER S0 (23.9.2026) · ENTSCHEID-SPRUNG WARTET AUF DEN INDEX ─
+// DEKLARIERTE TEST-INFRASTRUKTUR, KEIN Assertion-Change (§6.3): die drei
+// BGE-Fälle unten warten nach der Eingabe auf den geladenen Such-Index
+// (`helpers/warteAufSuchindex.ts`, Zustand statt Uhr), bevor sie die
+// Sprung-Zeile bzw. «nicht im Bestand» prüfen. Wurzel: der BGE-Parser braucht
+// das NACHGELADENE Entscheid-Manifest (`useUniversalSuche.ts`, `bgeIndex`);
+// solange es lädt, meldet die Gruppe ehrlich `laedt` (§8, Produkt korrekt) —
+// die Sonde gab dem aber nur die 10-s-Default-Frist. Lauf 35779952911 riss
+// genau dort (Z. ~117, «152 II 19»). Budget der Index-Wartung =
+// `OR_LESER_FRIST`: gemessen bis ~50 s bei 10× CPU-Drossel/8 Worker (n=60),
+// Test-Budget 150 s (oben). Norm-Sprünge (OR/ABRG) brauchen nur das
+// Gesetzes-Manifest und rissen in derselben Messung nie — unverändert.
 
 // Die eine, überall sichtbare Kopf-Suchleiste (ARIA-Combobox).
 const sucheFeld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ })
@@ -99,6 +113,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     const feld = sucheFeld(page)
     await feld.click()
     await feld.fill('BGE 152 II 19')
+    await warteAufSuchindex(page, OR_LESER_FRIST)
     const box = listbox(page)
     await expect(box).toBeVisible()
     await expect(box.getByText('Entscheid-Sprung', { exact: true })).toBeVisible()
@@ -114,6 +129,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     const feld = sucheFeld(page)
     await feld.click()
     await feld.fill('152 II 19')
+    await warteAufSuchindex(page, OR_LESER_FRIST)
     await expect(sprungZeile(page)).toBeVisible()
     await feld.press('Enter')
     await expect(page).toHaveURL(/\/rechtsprechung\/bge_152_II_19$/)
@@ -124,6 +140,7 @@ test.describe('Norm-Sprung in der normalen Suchleiste (A5)', () => {
     const feld = sucheFeld(page)
     await feld.click()
     await feld.fill('BGE 1 I 1')
+    await warteAufSuchindex(page, OR_LESER_FRIST)
     const box = listbox(page)
     await expect(box.getByText(/nicht im Bestand/)).toBeVisible()
     // A40 (David 16.7.2026): EHRLICHER Such-Link statt konstruiertem highlight_docid-

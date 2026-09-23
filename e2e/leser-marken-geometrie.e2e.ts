@@ -49,9 +49,12 @@ import { test, expect, type Page } from '@playwright/test'
 // den Bruch nicht. Herleitung, ausgeschlossene Alternativen (`overflow-wrap`) und
 // der Gegenbeweis über DOM-Chirurgie stehen an `FnRef` in `ArtikelBody.tsx`.
 //
-// ROT ZU BEKOMMEN (§6.7): am Marker-Träger in `ArtikelBody.tsx` (`FnRef`)
-// `whitespace-nowrap` entfernen ODER den `{WJ}` innerhalb des Trägers löschen —
-// beides führt die Waisen zurück. Einmal gesehen: StGB 13, StPO 8.
+// ROT ZU BEKOMMEN (§6.7): im WAISEN_ZAEHLER vorab `[data-fn-ref]{display:block}`
+// einspielen → StPO 242 von 276 Waisen (alte und neue Messung identisch, 23.9.2026).
+// Die frühere Anleitung (Träger ohne `whitespace-nowrap` bzw. ohne inneren `{WJ}`,
+// 17.8.2026: StGB 13, StPO 8) wird seither NICHT mehr rot — nachgemessen 23.9.2026
+// mit beiden Messungen, auch mit beiden Eingriffen zugleich; der äussere `{WJ}` an
+// den Aufrufstellen hält die Marke inzwischen allein am Wort.
 //
 // Die Waisen-Zählung ist dieselbe Methode wie im Prüfer-Skript: für jede Marke
 // den unmittelbar vorausgehenden nicht-leeren Textknoten nehmen, dessen LETZTE
@@ -59,36 +62,43 @@ import { test, expect, type Page } from '@playwright/test'
 // rechtem Ende sitzt. Toleranzen (3 px / 4 px) fangen Subpixel-Rundung und die
 // Hochstellung ab.
 
+// LINEAR (Flacker-Wurzel 23.9.2026, Queue-Lauf 35804826179: StGB lief ins 270-s-Limit):
+// früher je Artikel scrollIntoView + 12 ms Pause und je Marke ein TreeWalker ab
+// Artikelbeginn — ~600 Pausen und quadratisch viele Knotenbesuche. Jetzt einmal
+// `content-visibility` abschalten (gleiche Geometrie wie sichtbar gerendert) und
+// je Artikel EIN Durchgang in Dokumentreihenfolge; «davor» ist wie bisher der
+// letzte nicht-leere Textknoten vor der Marke (Text früherer Marken zählt mit).
 const WAISEN_ZAEHLER = async (page: Page) => page.evaluate(async () => {
+  const stil = document.createElement('style')
+  stil.textContent = '.nt-art-cv{content-visibility:visible!important}'
+  document.head.appendChild(stil)
+  await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)))
   const waisen: string[] = []
   let tot = 0
   for (const art of Array.from(document.querySelectorAll('[id^="art-"]'))) {
-    // Ohne Sichtbarmachen misst `content-visibility: auto` nicht (übersprungene
-    // Artikel liefern nur ihre Ersatzhöhe).
-    art.scrollIntoView()
-    await new Promise((r) => setTimeout(r, 12))
-    for (const marke of Array.from(art.querySelectorAll('[data-fn-ref]'))) {
-      tot++
-      const walker = document.createTreeWalker(art, NodeFilter.SHOW_TEXT)
-      let davor: Text | null = null
-      let n: Node | null
-      while ((n = walker.nextNode())) {
-        if (marke.compareDocumentPosition(n) & Node.DOCUMENT_POSITION_PRECEDING) {
-          // Wort-Verbinder und Leerraum zählen nicht als Text.
-          if ((n.textContent ?? '').replace(/[⁠\s]/g, '').length) davor = n as Text
-        } else break
+    const walker = document.createTreeWalker(art, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT)
+    let davor: Text | null = null
+    let n: Node | null
+    while ((n = walker.nextNode())) {
+      if (n.nodeType === Node.TEXT_NODE) {
+        // Wort-Verbinder und Leerraum zählen nicht als Text.
+        if ((n.textContent ?? '').replace(/[⁠\s]/g, '').length) davor = n as Text
+        continue
       }
+      if (!(n as Element).hasAttribute('data-fn-ref')) continue
+      tot++
       if (davor == null) continue
       const r = document.createRange()
       r.selectNodeContents(davor)
       const kisten = r.getClientRects()
       const letzte = kisten[kisten.length - 1]
-      const m = marke.getBoundingClientRect()
+      const m = (n as Element).getBoundingClientRect()
       if (letzte && m.top >= letzte.bottom - 3 && m.left < letzte.right - 4) {
-        waisen.push(`${art.id}:${marke.textContent}`)
+        waisen.push(`${art.id}:${n.textContent}`)
       }
     }
   }
+  stil.remove()
   return { tot, n: waisen.length, beispiele: waisen.slice(0, 8) }
 })
 
