@@ -419,14 +419,16 @@ describe('§8-Ratsche K0: geplante Karten stehen als «In Vorbereitung», nie al
 // das VorlagenRegister auf /vorlagen zeigt nur echte Vorlagen — der Zitierer
 // stand auf KEINER Katalogseite, zählte aber im Kopf «23 Rechner» (Register:
 // 22 Links) und im /vorlagen-Fuss («27 verfügbar» bei Kopf 26). Entscheid
-// David 23.9.2026 (Chat): «zitierer auf /rechner zeigen».
+// David 23.9.2026 (Chat): «zitierer auf /rechner zeigen». Den /vorlagen-Fuss
+// hat K5 (#999) parallel behoben; sein Wächter ist zaehler-eine-quelle.test.tsx
+// (Fall c) — hier darum nicht doppelt.
 //
 // Invariante: jede verfügbare Rechner-Karte steht als Link im /rechner-
 // Register; eine Rechner-Karte in der Oberkategorie `vorlagen` ist nur als
 // ausdrücklich geführtes, GEPLANTES Vorlagen-Werkzeug zulässig (dann steht sie
 // im «In Vorbereitung»-Block auf /vorlagen, Ratsche K0 oben) — eine verfügbare
-// wäre auf beiden Seiten unsichtbar. Und beide Seiten zählen im Register
-// dasselbe wie im Kopf (STARTSEITE_ZAEHLER, §5/§8).
+// wäre auf beiden Seiten unsichtbar. Und /rechner zählt im Register dasselbe
+// wie im Kopf (STARTSEITE_ZAEHLER, §5/§8).
 describe('K8: jede Rechner-Karte steht auf einer Katalogseite, Kopf = Register', () => {
   /** Rechner-Karten (modus 'rechner') der Oberkategorie `vorlagen` — ausdrücklich geführt. */
   const VORLAGEN_WERKZEUGE = ['checklisten', 'mandatsaufnahme'];
@@ -449,14 +451,5 @@ describe('K8: jede Rechner-Karte steht auf einer Katalogseite, Kopf = Register',
     const rechnerLinks = [...links].filter((h) => h.startsWith('/rechner/'));
     expect(rechnerLinks.length).toBe(STARTSEITE_ZAEHLER.rechner);
     expect(rechnerHtml()).toContain(`${STARTSEITE_ZAEHLER.rechner} Rechner nach Rechtsgebiet`);
-  });
-
-  it('/vorlagen: Fuss-Zähler «N verfügbar» = Kopf = Register-Links', () => {
-    const html = vorlagenHtml();
-    const fuss = dom(html).querySelector('.ub-filter-fuss .num')?.textContent?.trim();
-    expect(fuss).toBe(`${STARTSEITE_ZAEHLER.vorlagen} verfügbar`);
-    expect(html).toContain(`${STARTSEITE_ZAEHLER.vorlagen} Vorlagen, nach Rechtsgebiet filterbar`);
-    const vorlagenLinks = [...registerLinks(html)].filter((h) => h.startsWith('/vorlagen/'));
-    expect(vorlagenLinks.length).toBe(STARTSEITE_ZAEHLER.vorlagen);
   });
 });
