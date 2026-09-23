@@ -518,7 +518,8 @@ Umschichtung 20.9.2026 (2)):*
   (a) A3 Kachel-Höhen (zur David-Abnahme geflaggt); (b) globaler Schalter «aufgehobene Normen
   ausblenden» nie gebaut. Abhaken bleibt David-Entscheid.
   **Detail:** [FAHRPLAN-ARCHIV-RESTPUNKTE.md](fahrplaene/FAHRPLAN-ARCHIV-RESTPUNKTE.md) §20.
-  **(a) fällt mit `W2·29-WERKBANK-KATALOGE`**; (b) ist eine Funktion und bleibt hier.
+  **(a) fällt mit `W2·29-WERKBANK-RECHNER`** (Gegenstand Betreibungskosten-Formular, Planung
+  23.9.2026); (b) ist eine Funktion und bleibt hier.
 
 - [ ] **Bedienungsanleitung / Onboarding** *(`W2·16-ANLEITUNG`, §14-Intake 20.7.2026, bewusst spät)*
   <!-- @meta id: W2·16-ANLEITUNG · status: ready · blocker: null · dep: [W2·16-INVENTAR] · feld: design · fahrplan: fahrplaene/FAHRPLAN-UI-QUALITAET.md -->
