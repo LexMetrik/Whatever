@@ -10,7 +10,7 @@ import {
 // `gewicht` aus dem Shard), Rest hinter «+n weitere». V2·B-2 (David 10.7.2026,
 // «auch mehr als fünf»): Kappung von 5 auf 10 angehoben; below-fold, kein
 // Normtext-Re-Render (§15). Bewusst klein, kein Panel.
-export const LEITFAELLE_SICHTBAR = 10;
+const LEITFAELLE_SICHTBAR = 10;
 
 // «Leitfälle zu diesem Artikel» (FAHRPLAN-DATENHALTUNG §11.2, Weiche B): Chip-Zeile
 // analog «Verweise». V1a-Endzustand (CI-Befund W2·7-VZUI, 3 Iterationen): die Zeile

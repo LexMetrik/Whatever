@@ -152,7 +152,7 @@ export const FUSS_RUBRIKEN: readonly FussRubrik[] = ['f', 'r', 'm', 'g', 'w', 'a
  * Schalter («Fussnoten-Apparat»), keine Nebenwirkung dieser Wahl.
  */
 export type VermerkeWahl = 'fassung' | 'fussnoten' | 'aus';
-export const VERMERKE_WAHLEN: readonly VermerkeWahl[] = ['fassung', 'fussnoten', 'aus'];
+const VERMERKE_WAHLEN: readonly VermerkeWahl[] = ['fassung', 'fussnoten', 'aus'];
 
 export interface LeserOptionen {
   /** D35-F3 · die dreiwertige Aenderungs-Wahl → `html[data-vermerke]`. */
@@ -742,6 +742,11 @@ function getAnsichtSnapshot(): LeserModus {
  * und von der Sonde `src/tests/leser-einzelmodus-speicher.test.ts`, die den
  * Bestands-Speicher prüft — den Fall, der im Browser nicht mehr nachstellbar
  * ist, sobald er einmal überschrieben wurde.
+ *
+ * @dynimport Die Sonde lädt per `await import(...)` + `vi.resetModules()`
+ * (frischer Modul-Stand je Fall) und destrukturiert den Getter aus dem
+ * Rückgabewert — für knips statische Analyse unsichtbar (check:sediment (d),
+ * W2·29-WERKBANK-EXPORTE, 22.9.2026; Tag-Ausnahme `tags: ["-dynimport"]`).
  */
 export function holeLeserAnsicht(): LeserModus {
   return aktuellAnsicht;

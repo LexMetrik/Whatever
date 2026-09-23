@@ -244,27 +244,3 @@ export interface BezugsBilanz {
   erlasseGesamt: number;
 }
 
-let bilanzPromise: Promise<BezugsBilanz | null> | null = null;
-
-/**
- * Bilanz laden — EIN Fetch je Sitzung, gecacht wie die Shards. Fehlschläge
- * werden NICHT gecacht (gleiche Härtung wie `ladeBezugsShard`): ohne die Datei
- * zeigt das Dropdown die korpusweite Zahl schlicht nicht, statt eine falsche zu
- * zeigen — aber der nächste Versuch soll sie wieder holen dürfen.
- */
-export async function ladeBezugsBilanz(): Promise<BezugsBilanz | null> {
-  if (!bilanzPromise) {
-    bilanzPromise = (async () => {
-      try {
-        const res = await fetch('/rechtsprechung/bezuege-bilanz.json');
-        if (res.status === 404) return null;
-        if (!res.ok) { bilanzPromise = null; return null; }
-        return (await res.json()) as BezugsBilanz;
-      } catch {
-        bilanzPromise = null;
-        return null;
-      }
-    })();
-  }
-  return bilanzPromise;
-}

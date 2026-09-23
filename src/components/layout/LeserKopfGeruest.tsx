@@ -76,7 +76,7 @@ function Segmente({ teile }: { teile: ReactNode[] }) {
 // reichere der beiden): Herkunft in der Overline-Farbe, Art gedämpft,
 // Sachgebiet in Brass. Farbe trägt hier NIE allein — die Reihenfolge steht
 // fest, und jedes Glied ist ausgeschriebenes Wort (DESIGN-REGLEMENT B3/F2).
-export type OverlineRolle = 'herkunft' | 'art' | 'sachgebiet';
+type OverlineRolle = 'herkunft' | 'art' | 'sachgebiet';
 
 export type OverlineGlied = {
   text: string;

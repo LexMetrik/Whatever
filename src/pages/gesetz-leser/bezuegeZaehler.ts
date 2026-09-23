@@ -38,7 +38,7 @@ import { ladeBezuegeZaehler, type ZaehlBlock } from '../../lib/normtext/browse';
 import { normArtikelToken } from '../../lib/rechtsprechung/norm-index';
 
 /** Zahlen EINES Artikels. */
-export interface ArtikelZaehler {
+interface ArtikelZaehler {
   /** Entscheide an diesem Artikel, ohne UI-Filter (die Bezugsgrösse, §8). */
   entscheide: number;
   /** Verschiedene Materialien-Dokumente an diesem Artikel. */

@@ -86,7 +86,7 @@ const BLOCK_ORDNUNG: ReadonlyArray<BezugsMarke['reg']> = ['f', 'g', 'r', 'm', 'w
  * In der ZEILE am Artikelende (Gesamtansicht) bleibt die Rubrik unangetastet:
  * dieser Schritt liefert eine zweite Gestalt aus, er nimmt keine bestehende weg.
  */
-export const RECHTSPRECHUNG_BLOCK_FREI = false;
+const RECHTSPRECHUNG_BLOCK_FREI = false;
 
 /** Was ein Block im Titel trägt: «3 Fassungen», «6 Verweise», «1 Rechner». */
 function blockTitel(m: BezugsMarke): string {

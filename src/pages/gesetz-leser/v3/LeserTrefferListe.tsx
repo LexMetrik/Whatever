@@ -31,7 +31,7 @@ import { zaehlform, type BestimmungsWort } from './erlassAnsicht';
 // sonst zählte ein Begriff seine eigenen Ausschnitte mit (Bug-Check 4.8.2026).
 
 /** Wie viele ARTIKEL-Köpfe auf einmal gemalt werden (Erbe B10, Herleitung dort). */
-export const TREFFER_DECKEL = 200;
+const TREFFER_DECKEL = 200;
 
 /**
  * Wie viele Fundstellen-Zeilen ein aufgeklappter Artikel höchstens zeigt.
@@ -42,7 +42,7 @@ export const TREFFER_DECKEL = 200;
  * liest. Der Kopf nennt weiter die volle Zahl, und die ↑↓-Navigation läuft
  * unverändert über alle — es verschwindet keine Information (§8).
  */
-export const STELLEN_DECKEL = 40;
+const STELLEN_DECKEL = 40;
 
 export interface LeserTrefferListeProps {
   treffer: LeserTreffer[];

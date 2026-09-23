@@ -13,7 +13,7 @@ import type { RohFund } from './abschnittMessung'
 const HIER = dirname(fileURLToPath(import.meta.url))
 const ALLOW_PFAD = join(HIER, '..', 'kein-abschnitt.allow.json')
 
-export interface AllowlistEintrag {
+interface AllowlistEintrag {
   route: string
   viewport: string
   modus: string
@@ -35,7 +35,7 @@ function schluessel(f: { route: string; viewport: string; modus: string; kategor
 
 let geladen: AllowlistEintrag[] | null = null
 
-export function allowlistLesen(): AllowlistEintrag[] {
+function allowlistLesen(): AllowlistEintrag[] {
   if (geladen) return geladen
   const roh = JSON.parse(readFileSync(ALLOW_PFAD, 'utf8'))
   if (!Array.isArray(roh.eintraege)) throw new Error('kein-abschnitt.allow.json: Feld "eintraege" fehlt oder ist kein Array')

@@ -15,7 +15,6 @@ import type { Rechtsgebiet, Sprache } from '../normtext/register';
 import type { VerfahrensEreignis } from './verfahren';
 
 export type { Rechtsgebiet, Sprache };
-export type { VerfahrensEreignis, VerfahrensTyp } from './verfahren';
 
 // ── Status der In-App-Sicht ──────────────────────────────────────────────────
 // 'nur-live-link' = nur Link zur amtlichen Quelle (kein gespeicherter Inhalt);

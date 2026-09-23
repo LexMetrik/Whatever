@@ -20,7 +20,7 @@ import type React from 'react';
  *  sie nur konsumieren (§5; vormals in `start/Satzspiegel`, R3). */
 export type Register = 'g' | 'r' | 'm' | 'w';
 
-export type StartModulId = 'systematik' | 'kantone' | 'frist' | 'entscheide' | 'behoerden';
+type StartModulId = 'systematik' | 'kantone' | 'frist' | 'entscheide' | 'behoerden';
 
 /** Was jedes Modul von seinem Rahmen erfährt. */
 export interface StartModulProps {

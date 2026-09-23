@@ -39,4 +39,3 @@ export {
   bestimmeRechtsmittel,
   rechtsmittelBericht,
 } from './zustaendigkeit/rechtsmittel';
-export type { RechtsmittelErgebnis } from './zustaendigkeit/rechtsmittel';

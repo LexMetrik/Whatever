@@ -54,7 +54,7 @@ function istZiffer(z: string | undefined): boolean {
 }
 
 /** Tausendertrenner aus dem Vergleich nehmen; `karte` bildet nach roh zurück. */
-export function falteZahlgruppen(text: string): { gefaltet: string; karte: number[] } {
+function falteZahlgruppen(text: string): { gefaltet: string; karte: number[] } {
   let gefaltet = '';
   const karte: number[] = [];
   for (let i = 0; i < text.length; i++) {
@@ -143,7 +143,7 @@ export const SUCH_META = 'data-such-meta';
  * Ziffern-Suchen nicht haltbar, und eine Markierung auf einer hochgestellten
  * Verweisziffer sagt dem Leser ohnehin nichts (§8).
  */
-export const FN_MARKER = 'data-fn-marker';
+const FN_MARKER = 'data-fn-marker';
 
 /**
  * Marker-Erkennung, exakt wie index.css sie führt.
@@ -243,24 +243,6 @@ export function sammleTrefferRanges(container: HTMLElement | null, begriff: stri
     }
   }
   return ranges;
-}
-
-/**
- * Fundstellen je Artikel-Token, gruppiert aus einer `sammleTrefferRanges`-Menge
- * über den nächstgelegenen `<article id="art-…">`-Vorfahren (R1: Trefferzahl je
- * Artikel). Ranges ausserhalb eines Artikels (Listen-Kopf o. Ä.) zählen nicht.
- */
-export function trefferProArtikel(ranges: readonly Range[]): Map<string, number> {
-  const map = new Map<string, number>();
-  for (const r of ranges) {
-    const start = r.startContainer;
-    const el = start.nodeType === 1 ? (start as Element) : start.parentElement;
-    const art = el?.closest('article[id^="art-"]');
-    if (!art) continue;
-    const token = art.id.slice('art-'.length);
-    map.set(token, (map.get(token) ?? 0) + 1);
-  }
-  return map;
 }
 
 // ═══ QS-UI-HIGHLIGHT · EINE Registry-Position, mehrere Leser-Instanzen ═══════

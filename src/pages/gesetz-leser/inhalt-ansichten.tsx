@@ -43,7 +43,7 @@ export function LadeAnzeige() {
 // Massgeblich bleibt die amtliche Fassung (sichtbarer Live-Link, §7/§8 — Nomen
 // aus `lib/benennung`, B-6-Nachzug R2-A 31.8.2026); Drift-
 // Tor: check:pdf (offline Integrität + netz Drift & geltende Konsolidierung).
-export function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
+function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
   erlass: BrowseErlass;
   currency: CurrencyMap | null;
   kopf: ErlassKopf | null;
@@ -142,7 +142,7 @@ export function PdfEmbedAnsicht({ erlass, currency, kopf, internRefs }: {
 // §2.2⑧, Referenz DSGVO). Massgeblich bleibt die amtliche Fassung (§7/§8,
 // B-6-Nachzug R2-A). Reine
 // Darstellung; eintraege bleibt null (darum VOR dem Lade-Guard unten).
-export function LiveVerweisAnsicht({ erlass, currency }: {
+function LiveVerweisAnsicht({ erlass, currency }: {
   erlass: BrowseErlass;
   currency: CurrencyMap | null;
 }) {

@@ -16,5 +16,10 @@
   "ignore": [
     "**/*.generated.ts"
   ],
-  "includeEntryExports": false
+  "includeEntryExports": false,
+  "tags": [
+    "-textsonde",
+    "-dynimport",
+    "-inlinetyp"
+  ]
 }

@@ -42,6 +42,11 @@ import { useEffect, useRef, useState } from 'react';
  * KONNTEN ihn nicht verwenden. Darum nimmt `kopieren()` den Text jetzt auch
  * beim Aufruf entgegen; die Konstante bleibt exportiert, weil Tests und
  * Wächter sie zitieren.
+ *
+ * @textsonde `eingabe-bausteine-r2e.test.tsx` prüft den Literal-String
+ * `export const KOPIER_DAUER_MS` im Quelltext (kein Import) — für knip
+ * unsichtbar (check:sediment (d), W2·29-WERKBANK-EXPORTE, 22.9.2026;
+ * Tag-Ausnahme `tags: ["-textsonde"]` in knip.json).
  */
 export const KOPIER_DAUER_MS = 1600;
 

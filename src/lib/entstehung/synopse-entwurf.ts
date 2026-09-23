@@ -21,7 +21,7 @@
 // §3 Schichtentrennung: Typen + Lazy-Loader. Keine UI, keine Rechtslogik.
 
 /** Wie das Parlament einen Entwurfs-Artikel angefasst hat. */
-export type EntwurfArt =
+type EntwurfArt =
   /** Label in beiden Dokumenten, Wortlaut verschieden. */
   | 'geaendert'
   /** Label nur im Entwurf — gestrichen ODER im Beschluss anders betitelt (§8). */
@@ -43,7 +43,7 @@ export interface EntwurfArtikel {
 }
 
 /** Ein ausgewertetes BBl-Dokument (Quell-Beleg, §7 a–d). */
-export interface EntwurfDokument {
+interface EntwurfDokument {
   /** ELI-Kurzform, z. B. «fga/2025/1529». */
   fga: string;
   /** Filestore-URL des ausgewerteten HTML (aus `isExemplifiedBy`, nie konstruiert). */

@@ -360,10 +360,6 @@ export const KUERZEL_SCHREIBWEISEN: ReadonlyArray<readonly [string, FedlexGesetz
   ['BGÖ', 'BGOE'], ['BöB', 'BOEB'], ['PüG', 'PUEG'], ['EAUe', 'EAUE'],
 ];
 
-export function schreibweiseZuKey(schreibweise: string): FedlexGesetz | null {
-  return KUERZEL_SCHREIBWEISEN.find(([s]) => s === schreibweise)?.[1] ?? null;
-}
-
 // ─── V-5 · Erlassdatum je Ziel-Erlass (Zeit-Kante, Fix-Runde 1 zu W2·20) ──────
 //
 // PROBLEM (Gegenprüfung 1.9.2026, Blocker 2): Die Zitier-Konvention nennt den
@@ -666,7 +662,7 @@ export const KUERZEL_NUR_BUND: ReadonlySet<FedlexGesetz> = new Set<FedlexGesetz>
 //     Anwendung», «… gemäss Artikel 11 AHVG Anspruch …»). Die Regel hätte 57
 //     richtige Links gekostet, um 3 falsche zu heilen (§1 schneidet in beide
 //     Richtungen: ein fehlender Link ist auch ein Mangel).
-export const KUERZEL_ZUSATZ_SPERRE: readonly string[] = ['Inland', 'Ausland'];
+const KUERZEL_ZUSATZ_SPERRE: readonly string[] = ['Inland', 'Ausland'];
 
 const ZUSATZWORT_RE = new RegExp('^\\s+(?:' + KUERZEL_ZUSATZ_SPERRE.join('|') + ')\\b');
 

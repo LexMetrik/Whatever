@@ -64,7 +64,7 @@ export const BEREICHE: Bereich[] = NAVIGATION.flatMap((a) => {
 // und das Siegel (`Logo.tsx`) unverändert.
 
 /** Bereich eines Pfades — oder null (Start, Meta-Seiten, Unbekanntes). */
-export function bereichVonPfad(pfad: string): Bereich | null {
+function bereichVonPfad(pfad: string): Bereich | null {
   const p = pfad.split('?')[0].split('#')[0];
   for (const b of BEREICHE) {
     if (p === b.praefix || p.startsWith(`${b.praefix}/`)) return b;

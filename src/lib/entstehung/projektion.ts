@@ -149,8 +149,3 @@ export function ladeEntstehungProjektion(erlassKey: string): Promise<EntstehungP
   cache.set(erlassKey, p);
   return p;
 }
-
-/** Nur für Tests: Cache leeren (isolierte Fälle). */
-export function _leereProjektionsCache(): void {
-  cache.clear();
-}

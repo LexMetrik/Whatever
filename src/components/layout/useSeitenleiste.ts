@@ -126,7 +126,7 @@ function ladeEingeklappt(): boolean | null {
 // ab dem ersten Frame die volle Breite. Der erste Client-Render liest
 // localStorage synchron (kein Hydrations-Mismatch, s. Kopf dieser Datei), also
 // springt auch bei getroffener Wahl nichts nach.
-export const VORGABE_EINGEKLAPPT = true;
+const VORGABE_EINGEKLAPPT = true;
 
 export interface SeitenleisteLayout {
   breite: number;

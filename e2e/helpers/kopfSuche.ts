@@ -14,7 +14,7 @@ import { expect, type Page } from '@playwright/test'
 // aufrufenden Wächter ihre eigene Zusage messen, und besteht dabei darauf, dass
 // das Feld danach WIRKLICH den Fokus trägt. Eine tote Lupe (Knopf da, Feld ohne
 // Fokus) lässt ihn scheitern — nicht erst die Assertion des Aufrufers.
-export const kopfSuchFeld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ })
+const kopfSuchFeld = (page: Page) => page.getByRole('combobox', { name: /LexMetrik durchsuchen/ })
 
 const kopfLupe = (page: Page) => page.locator('header.sticky [data-suche-lupe]')
 
@@ -55,7 +55,7 @@ export async function kopfSucheOeffnen(page: Page, timeout = 20_000) {
 //
 // ROT ZU BEKOMMEN (§6.7): in `SuchResultate.tsx` das `{sprung && <span …>↵`
 // streichen ⇒ jeder Sprung-Wächter (norm-sprung, gesetze-ia-v2-walks) reisst.
-export const sucheListbox = (page: Page) => page.getByRole('listbox', { name: 'Suchtreffer' })
+const sucheListbox = (page: Page) => page.getByRole('listbox', { name: 'Suchtreffer' })
 
 /** Die Zeile, die «Enter springt direkt» verspricht — an ihrem «↵»-Griff. */
 export const sprungZeile = (page: Page) => sucheListbox(page).getByRole('option').filter({ hasText: '↵' })

@@ -65,15 +65,15 @@ export const VERTRETUNGS_ZEICHNUNGS_OPTIONEN: { id: AgVertretungsZeichnungsArt; 
 // Defaults auffüllen, falsche Typen verwerfen — nie ungeprüft in den State).
 export const STORAGE_KEY = 'lexmetrik:ag-gruendung:v1';
 
-export const txt = (v: unknown, def: string) => (typeof v === 'string' ? v : def);
-export const bool = (v: unknown, def: boolean) => (typeof v === 'boolean' ? v : def);
-export const wahl = <T extends string>(v: unknown, erlaubt: readonly T[], def: T): T =>
+const txt = (v: unknown, def: string) => (typeof v === 'string' ? v : def);
+const bool = (v: unknown, def: boolean) => (typeof v === 'boolean' ? v : def);
+const wahl = <T extends string>(v: unknown, erlaubt: readonly T[], def: T): T =>
   typeof v === 'string' && (erlaubt as readonly string[]).includes(v) ? (v as T) : def;
 
 /** Array-Hydration: nur Objekt-Zeilen übernehmen, je Feld der Vorlage den
  *  gespeicherten Wert nur bei passendem Typ (Wahl-Felder nur bei erlaubtem
  *  Wert) — sonst Default; keys werden NEU vergeben (1…n je Liste). */
-export function zeilenGuard<T extends Record<string, string | boolean | undefined>>(
+function zeilenGuard<T extends Record<string, string | boolean | undefined>>(
   roh: unknown,
   vorlage: Required<T>,
   wahlFelder: Partial<Record<keyof T, readonly string[]>> = {},
@@ -241,16 +241,16 @@ export function migriereAgStand(geladen: AgStand): AgStand {
   };
 }
 
-export const GRUENDER_LEER: Required<AgGruenderZeile> = { name: '', angaben: '', anzahl: '', liberierung: '' };
-export const VR_LEER: Required<AgVrZeile> = {
+const GRUENDER_LEER: Required<AgGruenderZeile> = { name: '', angaben: '', anzahl: '', liberierung: '' };
+const VR_LEER: Required<AgVrZeile> = {
   name: '', herkunft: '', wohnort: '', adresse: '', praesident: false,
   zeichnungsArt: 'einzelunterschrift', annahmeInUrkunde: false,
 };
-export const VERTRETUNG_LEER: Required<AgVertretungsZeile> = { name: '', funktion: '', zeichnungsArt: 'kollektivzuzweien' };
-export const SACHEINLAGE_LEER: Required<AgSacheinlageZeile> = {
+const VERTRETUNG_LEER: Required<AgVertretungsZeile> = { name: '', funktion: '', zeichnungsArt: 'kollektivzuzweien' };
+const SACHEINLAGE_LEER: Required<AgSacheinlageZeile> = {
   typ: 'sachgesamtheit', bezeichnung: '', belegDatum: '', wertChf: '', grundstueck: false,
   einlegerName: '', aktienAnzahl: '', gutschriftChf: '', zustand: '',
   imHrEingetragen: false, cheNr: '', aktivenChf: '', passivenChf: '', rueckwirkungDatum: '',
 };
-export const VERRECHNUNG_LEER: Required<AgVerrechnungZeile> = { glaeubigerName: '', forderungChf: '', aktienAnzahl: '', begruendungTxt: '' };
-export const VORTEIL_LEER: Required<AgVorteilZeile> = { beguenstigter: '', inhalt: '', wertChf: '', begruendungTxt: '' };
+const VERRECHNUNG_LEER: Required<AgVerrechnungZeile> = { glaeubigerName: '', forderungChf: '', aktienAnzahl: '', begruendungTxt: '' };
+const VORTEIL_LEER: Required<AgVorteilZeile> = { beguenstigter: '', inhalt: '', wertChf: '', begruendungTxt: '' };

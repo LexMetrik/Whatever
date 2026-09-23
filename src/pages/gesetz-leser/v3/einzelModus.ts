@@ -26,7 +26,7 @@ import { MODUS_PARAM, MODUS_VORGABE, type LeserModus } from './leserModus';
 // Importe, weil der Options-Store im ENTRY-Chunk liegt und sonst diese ganze
 // Datei mitzöge (Herleitung und Messung dort). Hier re-exportiert, damit die
 // Aufrufer EINE Adresse haben (§5).
-export { MODUS_PARAM, MODUS_VORGABE, type LeserModus } from './leserModus';
+export { MODUS_VORGABE, type LeserModus } from './leserModus';
 
 /**
  * Was die Adresse über den Modus sagt — `null`, wenn sie nichts dazu sagt.

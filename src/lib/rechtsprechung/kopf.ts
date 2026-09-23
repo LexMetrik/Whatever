@@ -22,7 +22,7 @@ export type KopfLabelKey = RubrumFeld;
 /** Feste Reihenfolge der Rubrum-Zeilen im Kopf (amtliche Rubrum-Folge, Art. 112 BGG). */
 const RUBRUM_ORDER: KopfLabelKey[] = ['gegenstand', 'parteien', 'vorinstanz', 'besetzung'];
 
-export interface KopfRubrumZeile {
+interface KopfRubrumZeile {
   label: KopfLabelKey;
   wert: string;
 }

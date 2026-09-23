@@ -59,7 +59,7 @@ export const GEBIETE: ReadonlyArray<{ id: Rechtsgebiet; label: string }> = [
  * plötzlich das ganze Korpus). Der Alias ist reine EINGABE-Toleranz: er wird
  * nie geschrieben, erscheint in keiner Facette und in keinem Zähler.
  */
-export const ALT_GEBIET_ALIAS: Readonly<Record<string, readonly Rechtsgebiet[]>> = {
+const ALT_GEBIET_ALIAS: Readonly<Record<string, readonly Rechtsgebiet[]>> = {
   'sozial-abgaben': ['steuern', 'sozialversicherung'],
 };
 

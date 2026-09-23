@@ -37,7 +37,7 @@ export type EinfacheFristEingaben = {
 // Link geteilte 20-Tage-Frist unten auf den 10-Tage-Default (§1), und ein
 // frisch geöffnetes Voll-Formular startet trotzdem kohärent mit den oben
 // sichtbaren Werten statt mit seinem veralteten Beispiel-Default.
-export type EinfacheFristFeld = 'start' | 'laenge' | 'einheit' | 'kanton';
+type EinfacheFristFeld = 'start' | 'laenge' | 'einheit' | 'kanton';
 export type EinfacheFristMeldung = {
   ferien: Ferien;
   werte: Pick<EinfacheFristEingaben, EinfacheFristFeld>;

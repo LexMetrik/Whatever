@@ -132,7 +132,7 @@ const PRAEFIX_FENSTER = 40;
  * jede fremd-adressierte Klausel konservativ (§1 — lieber kein Datum als ein
  * fremdes), was ohne Not Daten kostet.
  */
-export function extrahiereFussnotenRevision(text: string, hostToken?: string): ArtikelRevision | null {
+function extrahiereFussnotenRevision(text: string, hostToken?: string): ArtikelRevision | null {
   let best: ArtikelRevision | null = null;
   TRIGGER_RE.lastIndex = 0;
   let tm: RegExpExecArray | null;

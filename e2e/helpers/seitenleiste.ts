@@ -21,7 +21,7 @@ import { expect, type Page } from '@playwright/test'
 // «Navigation öffnen» auf. Der Schalter im Titelblatt ist selbst `hidden lg:…`.
 
 /** Die persistente App-Seitenleiste (nicht die V3-Gliederung des Lesers). */
-export const appSeitenleiste = (page: Page) => page.locator('aside[data-app-seitenleiste]')
+const appSeitenleiste = (page: Page) => page.locator('aside[data-app-seitenleiste]')
 
 /** Der Schalter im Titelblatt — konstanter Name, Zustand in `aria-pressed`. */
 export const seitenleistenSchalter = (page: Page) =>
@@ -40,13 +40,4 @@ export async function seitenleisteOeffnen(page: Page, timeout = 20_000) {
   if ((await leiste.count()) === 0) await schalter.click()
   await expect(leiste).toBeVisible({ timeout })
   return leiste
-}
-
-/** Gegenstück — klappt die Leiste ein (für Sonden, die den Zustand kippen). */
-export async function seitenleisteSchliessen(page: Page, timeout = 20_000) {
-  const leiste = appSeitenleiste(page)
-  const schalter = seitenleistenSchalter(page)
-  await expect(schalter).toBeVisible({ timeout })
-  if ((await leiste.count()) > 0) await schalter.click()
-  await expect(leiste).toHaveCount(0, { timeout })
 }

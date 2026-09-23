@@ -31,7 +31,7 @@
 import { istRecord, pruefeJson, type JsonPruefer } from '../../data/jsonSchutz';
 import { namensKandidaten } from '../../data/schlichtung/zhAmt';
 
-export interface BeAnschrift { adresse: string; plzOrt: string }
+interface BeAnschrift { adresse: string; plzOrt: string }
 export interface BeStaatsanwaltschaft { region: string; name: string; adresse: string; plzOrt: string }
 
 /** Auflösung für eine Gemeinde. */
@@ -77,7 +77,7 @@ const istAnschrift = (w: unknown): boolean =>
 
 /** Strukturprüfer (§ QS-CODE-AUSSENKANTEN): fängt Generator-Drift zur Ladezeit,
  *  statt still auf null zurückzufallen. */
-export const BE_SPRENGEL_PRUEFER: JsonPruefer = {
+const BE_SPRENGEL_PRUEFER: JsonPruefer = {
   quelle: 'zustaendigkeit/beSprengel.json',
   wurzel: (w) => {
     if (!istRecord(w)) return 'Wurzel ist kein Objekt';

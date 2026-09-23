@@ -36,20 +36,7 @@
 // Keine Assertion gelockert — nach wie vor `toBeVisible`, dieselbe Sachaussage
 // (`#art-1` bzw. der Ziel-Anker steht im DOM und ist sichtbar). Der Timeout
 // greift nur bei Überschreitung und bremst grüne Läufe nicht.
-import { expect, type Page } from '@playwright/test'
-
 /** Budget für Wartepunkte, die auf den geladenen/hydratisierten OR-Leser
  *  warten (Rot-/Grün-Beweis oben). Ersetzt die bisherigen Datei-lokalen
  *  Konstanten (30 s / 45 s) durch EINEN Wert. */
 export const OR_LESER_FRIST = 60_000
-
-/** Wartet, bis der OR-Reader die prerenderte Hülle ersetzt hat: `#art-1` (oder
- *  ein anderer Ziel-Anker nach einem Norm-Sprung) ist das Client-Takeover-
- *  Signal für `/gesetze/bund/OR`. */
-export async function warteOrGeladen(
-  page: Page,
-  anker = 'art-1',
-  timeout = OR_LESER_FRIST,
-): Promise<void> {
-  await expect(page.locator(`#${anker}`)).toBeVisible({ timeout })
-}

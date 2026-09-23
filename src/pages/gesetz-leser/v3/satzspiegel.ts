@@ -48,7 +48,7 @@ import { createContext, useContext } from 'react';
  * hiesse, zwei Entscheide aneinanderzubinden, die getrennt wandern dürfen (§5
  * gilt für EINEN Fachinhalt, nicht für zwei gleich grosse Zahlen).
  */
-export const SPIEGEL_MIN_BREIT = 28;
+const SPIEGEL_MIN_BREIT = 28;
 
 /** Form, in der ein Artikel gesetzt wird. */
 export type Satzspiegel =

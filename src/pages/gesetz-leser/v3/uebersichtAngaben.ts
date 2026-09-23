@@ -103,7 +103,7 @@ import { datumsAngabe } from './datumsForm';
 // Klartext. Belege: `docs/ux-audit-2026-07/reader/leser-v3-h4/aesthetik-live-2026-08-18.md`.
 
 /** Eine Zeile der Label/Wert-Liste. `label` ist die Sprache, `id` der Anker. */
-export interface UebersichtZeile {
+interface UebersichtZeile {
   /** Stabile Kennung für React-Key und Sonde — nie der Label-Text: der ist
    *  Sprache und darf sich ändern, ohne einen Wächter zu brechen. */
   id: string;
@@ -117,7 +117,7 @@ export interface UebersichtZeile {
 
 /** Ein amtliches Ziel. Getrennt von den Zeilen, weil die Skizze 4e Fakten und
  *  Aktionen ausdrücklich trennt — und weil ein Link kein Wert ist. */
-export interface UebersichtLink {
+interface UebersichtLink {
   id: string;
   label: string;
   href: string;

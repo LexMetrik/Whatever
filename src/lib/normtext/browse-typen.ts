@@ -80,7 +80,7 @@ export interface SachgebietKanton {
   unter?: SystematikEbene;
 }
 
-export interface SystematikEbene {
+interface SystematikEbene {
   /** Amtliche Gliederungsnummer ('1', '15', 'BeE'). */
   nummer: string;
   /** Amtliche Bezeichnung der Gliederungsstufe. */

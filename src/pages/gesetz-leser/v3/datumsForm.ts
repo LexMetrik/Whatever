@@ -45,7 +45,7 @@ const MONATE: Readonly<Record<string, number>> = Object.freeze({
 const WORTDATUM = /^(\d{1,2})\.\s*([A-Za-zÀ-ÿ]+)\s+(\d{4})$/;
 const ZIFFERNDATUM = /^(\d{1,2})\.(\d{1,2})\.(\d{4})$/;
 
-export function numerischesDatum(wert: string): string | null {
+function numerischesDatum(wert: string): string | null {
   const z = ZIFFERNDATUM.exec(wert);
   if (z) return baueDatum(Number(z[1]), Number(z[2]), z[3]);
   const w = WORTDATUM.exec(wert);

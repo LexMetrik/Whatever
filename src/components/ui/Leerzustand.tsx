@@ -36,7 +36,7 @@ import { Link } from 'react-router-dom';
  *  einen Baustein). Zwei Formen, je nach Wirkung: `onKlick` setzt einen
  *  lokalen Zustand zurück (Knopf); `href` verlässt die Seite (Link, R6-B:
  *  fehlt ein Rücksetzer, ist der einzig ehrliche Ausweg eine Navigation). */
-export type LeerzustandWeiterweg = {
+type LeerzustandWeiterweg = {
   /** Beschriftung im Imperativ, ohne Fragezeichen («Filter zurücksetzen»). */
   text: string;
 } & ({ onKlick: () => void; href?: never } | { href: string; onKlick?: never });

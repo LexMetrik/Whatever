@@ -291,11 +291,11 @@ export function quellLueckenFuerArtikel(
 // ═══ 3 · Der Diff ════════════════════════════════════════════════════════════
 
 /** Ein Stück Wortlaut mit seiner Rolle im Vergleich. */
-export type DiffMarke = 'gleich' | 'weg' | 'neu';
+type DiffMarke = 'gleich' | 'weg' | 'neu';
 export interface DiffStueck { marke: DiffMarke; text: string }
 
 /** Wie eine Zeile der Synopse zu lesen ist. */
-export type ZeilenArt = 'gleich' | 'geaendert' | 'entfernt' | 'eingefuegt';
+type ZeilenArt = 'gleich' | 'geaendert' | 'entfernt' | 'eingefuegt';
 
 /** Eine Zeile der Gegenüberstellung (ein Absatz, eine Ziffer, ein Buchstabe). */
 export interface SynopseZeile {
@@ -423,7 +423,7 @@ function lcs<T>(a: readonly T[], b: readonly T[], gleich: (x: T, y: T) => boolea
 export const AEHNLICH_MIN = 0.35;
 
 /** Obergrenze für den Wort-Diff je Block; darüber wird eskaliert (§15: O(n·m)). */
-export const WORT_DECKEL = 600;
+const WORT_DECKEL = 600;
 
 /** Wort-Diff zweier Wortlaute. Verkettung der Stücke je Seite = das Original. */
 export function wortDiff(alt: string, neu: string): { alt: DiffStueck[]; neu: DiffStueck[] } {

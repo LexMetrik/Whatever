@@ -13,9 +13,10 @@
 // je Erlass zweistellig kurz ist (OR: 22 Kanten).
 //
 // KEINE ZWEITE WAHRHEIT (§5): die Zuordnung «Artikelnummer → Werkzeuge» ist
-// dieselbe, die `useArtikelKontext` (artikelKontext.ts) für das Panel bildet —
-// Hauptnummer aus dem Token, dann die erste Kante, deren Bereich sie enthält.
-// Sie steht hier nur EINMAL formuliert und wird von beiden gelesen.
+// dieselbe, die die Panels (`v3/PanelAnwendung.tsx`, `KontextPanel.tsx`) über
+// `artikelWerkzeugGruppen` (lib/normtext/werkzeuge.ts) bilden — Hauptnummer aus
+// dem Token, dann die erste Kante, deren Bereich sie enthält. (Der frühere
+// Zweitleser `useArtikelKontext` fiel 23.9.2026 ohne Aufrufer weg, W2·29-WERKBANK-EXPORTE.)
 //
 // WARUM EIN CACHE: `artikelWerkzeugGruppen` filtert und sortiert die ganze
 // Kantentabelle. Der Leser fragt EINMAL JE ARTIKEL — im OR also 1686-mal für
@@ -33,7 +34,7 @@ const gruppenCache = new Map<string, ArtikelWerkzeugGruppe[]>();
  * Wortgleich zur Ableitung in `artikelKontext.ts`; Sub-Artikel fallen auf ihre
  * Hauptnummer, weil die Kantentabelle so definiert ist (dort dokumentiert).
  */
-export function hauptNummer(token: string): number | null {
+function hauptNummer(token: string): number | null {
   const m = /^(\d+)/.exec(token);
   return m ? Number(m[1]) : null;
 }
