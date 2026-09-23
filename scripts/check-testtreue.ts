@@ -2,7 +2,8 @@
 // Regel, Grenzen und Klassifizierer: testtreue-kern.ts (dort testbar ohne git).
 // Muster wie check-merge-schutz.ts: merge-base(origin/main)..HEAD, kein stiller Skip.
 import { execFileSync } from 'node:child_process';
-import { findeVerstoesse, type CommitInfo } from './testtreue-kern';
+import { readFileSync } from 'node:fs';
+import { findeVerstoesse, squashMeldung, type CommitInfo } from './testtreue-kern';
 
 function git(args: string[]): string {
   return execFileSync('git', args, {
@@ -34,6 +35,11 @@ const commits: CommitInfo[] = shas.map((sha) => {
 });
 
 const verstoesse = findeVerstoesse(commits);
+
+// PR-Lauf: den künftigen Squash-Commit der Merge-Queue mitprüfen (Kern: squashMeldung).
+const squash = squashMeldung(process.env, (p) => readFileSync(p, 'utf8'), commits);
+if (squash && verstoesse.length === 0) raus(1, squash);
+
 if (verstoesse.length === 0) {
   raus(0, `check:testtreue grün — ${commits.length} Commit(s) im Bereich ${basis.slice(0, 8)}..HEAD, ` +
     `kein als 'refactor' deklarierter Commit ändert Tests (§6.3).`);

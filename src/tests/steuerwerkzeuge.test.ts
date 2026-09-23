@@ -10,6 +10,8 @@ import {
   type CommitInfo,
   findeVerstoesse,
   istRefactorCommit,
+  squashVerstoss,
+  squashMeldung,
   istTestDatei,
 } from '../../scripts/testtreue-kern';
 import {
@@ -561,5 +563,29 @@ describe('Bash↔TS-Parität — alle Literale, echtes grep -E, drei Zweige (19.
     expect(doku.map((t) => t[1]).sort()).toEqual(soll);
     expect(doku.every((t) => t[1] === t[2])).toBe(true);
     expect(fern.map((t) => t[1]).sort()).toEqual(soll);
+  });
+});
+
+describe('check:testtreue — Squash-Commit der Merge-Queue (PR-Titel)', () => {
+  const c = (betreff: string, dateien: string[]) => ({ sha: 'x', betreff, dateien });
+  it('refactor-Titel + deklarierter test-Commit ⇒ Verstoss (Beleg #1023)', () => {
+    const v = squashVerstoss('refactor(vorlagen): V2d+V2e', [
+      c('refactor(vorlagen): V2d', ['src/pages/A.tsx']),
+      c('test(vorlagen): Schwelle', ['src/tests/design-r9-fehlerbox-baustein.test.ts']),
+    ]);
+    expect(v?.testDateien).toEqual(['src/tests/design-r9-fehlerbox-baustein.test.ts']);
+  });
+  it('feat-Titel mit Test-Änderung ⇒ kein Verstoss', () => {
+    expect(squashVerstoss('feat(vorlagen): x', [c('test: y', ['e2e/a.e2e.ts'])])).toBeNull();
+  });
+  it('refactor-Titel ohne Test-Dateien ⇒ kein Verstoss', () => {
+    expect(squashVerstoss('refactor: x', [c('refactor: y', ['src/lib/a.ts'])])).toBeNull();
+  });
+  it('Ereignis: nur im pull_request-Lauf, sonst stumm', () => {
+    const lies = () => JSON.stringify({ pull_request: { title: 'refactor: x' } });
+    const cs = [c('test: y', ['src/tests/a.test.ts'])];
+    expect(squashMeldung({ GITHUB_EVENT_NAME: 'pull_request', GITHUB_EVENT_PATH: 'e' }, lies, cs)).toMatch(/Squash/);
+    expect(squashMeldung({ GITHUB_EVENT_NAME: 'merge_group', GITHUB_EVENT_PATH: 'e' }, lies, cs)).toBeNull();
+    expect(squashMeldung({}, lies, cs)).toBeNull();
   });
 });
