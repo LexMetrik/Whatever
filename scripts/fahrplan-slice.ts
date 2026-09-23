@@ -11,7 +11,7 @@
 //   npm run fahrplan -- fahrplaene/FAHRPLAN-TOKEN-OEKONOMIE.md §3 §8   → Kopf + §0/Stand + §3 + §8
 //   npm run fahrplan -- fahrplaene/FAHRPLAN-GESETZES-UX.md 10.7        → Unter-§ (### 10.7)
 //   npm run fahrplan -- fahrplaene/FAHRPLAN-X.md                       → nur Kopf + §0 + ToC
-//   npm run fahrplan -- fahrplaene/FAHRPLAN-SPLIT-VIEW.md "§STRANG B"  → mehrwortiger Zeiger
+//   npm run fahrplan -- archiv/fahrplaene/FAHRPLAN-SPLIT-VIEW.md "§STRANG B"  → mehrwortiger Zeiger
 //   npm run fahrplan -- FAHRPLAN-PERFORMANCE.md 1                      → barer Name wird aufgelöst
 import { readFileSync } from 'node:fs';
 import { SUCHORTE, aufloesenDatei, slice } from './fahrplanSlicerKern';

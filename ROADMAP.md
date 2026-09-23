@@ -123,18 +123,6 @@ david-design-entscheide: ENTSCHIEDEN — David 22.9.2026 (Chat): (1) Seitenleist
   im selben PR, e2e-Selektoren ziehen mit; drei Sessions, sonst zurückstellen.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
 
-- [ ] **Gesetz-Leser V3 — Hülle neu, Kern unangetastet** *(`W2·5m-LESER-V3`, Auftrag David 16.8.2026)*
-  <!-- @meta id: W2·5m-LESER-V3 · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-LESER-V3.md -->
-  Ziel: Leser-Oberfläche nach Apple-HIG-Prinzipien radikal vereinfacht; Kern (`ArtikelBody`,
-  `ArtikelLeser`, Datenlogik) unangetastet, Golden byte-gleich. **H1–H5 und S1–S4 sind seit
-  21.8.2026 vollständig** (Chronik; S-Buchung nachgeholt 15.9.2026). **Offen und damit neues
-  Fertig-Kriterium:** die drei Deckel-/Schnitt-Posten (Wortlaut im Fahrplan §16), Einzelartikel E3 samt
-  Rechtsprechungs-Block und der Fassungs-Diff-Tab.
-  **Detail:** [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) (Kurzfassung zuoberst; Kap. 7 Etappen H1–H5/S1–S4, Kap. 9 Fragen F1–F6).
-  **Offene Unterpunkte im Wortlaut** (verlagert 20.9.2026, Entscheid David): [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) §16 — die drei Deckel-/Schnitt-Posten und die Gliederungs-Nebenfunde.
-  **Wird durch `W2·29-WERKBANK-LESER` abgelöst** (gleiches Ziel, anderer Weg) — Posten dort
-  abarbeiten (Fahrplan Werkbank-Umbau §7); bis dahin unverändert baubar.
-
 - [ ] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`; Phase 2, Entscheid 14.9.2026)*
   <!-- @meta id: W2·13-KANTONE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
   Hier die NICHT-Risiko-Einheiten (reine Darstellung/Suche/Anzeige); Extraktion & Daten liegen in

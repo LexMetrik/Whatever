@@ -5441,3 +5441,48 @@ Titels» **bewusst NICHT** in der Gliederungs-Leiste (Alt-Kuration A36); es sind
 Alt-Fassungen, die im Lesetext weiterhin vorhanden und verlinkbar bleiben. Die Vorgabe vom
 13.8.2026 («Artikel-Ebene in allen Gesetzen») ist sonst korpusweit erfüllt. Derselbe Vermerk steht
 im Bibliothek-Eintrag Ziff. 20.
+
+## Ablösung 23.9.2026 (Werkbank-Umbau, LESER S5) — `W2·5m-LESER-V3` gestrichen (Wortlaut)
+
+**Begründung.** `W2·29-WERKBANK-LESER` hat dasselbe Ziel auf anderem Weg erreicht (Hülle
+neu im Werkbank-Design, Normtext-Kern byte-gleich — Kern-Probe `src/tests/ArtikelBody.test.tsx`);
+FAHRPLAN-WERKBANK-UMBAU §5a Ziff. 5 und §7 (Zeile «`FAHRPLAN-LESER-V3.md` + `W2·5m-LESER-V3`»)
+verlangen «Posten unter LESER, Schritt in die Chronik, Fahrplan ins Archiv». Vollzogen in der
+letzten Leser-Scheibe S5 (Branch `feat/w229-werkbank-leser-s5`). Der Fahrplan liegt jetzt in
+`archiv/FAHRPLAN-LESER-V3.md` (die gleichnamige Auslagerungs-Datei `archiv/fahrplaene/FAHRPLAN-LESER-V3.md`
+bleibt unverändert daneben). Mitgezogen: `FAHRPLAN-SPLIT-VIEW.md` nach `archiv/` (ohne lebenden
+Schritt; der offene Rest lebt als Posten `plan/posten/2026-06-29-multi-pane-split-view.md` unter
+`W3-AUSBAU` weiter und zeigt auf das Archiv).
+
+**Verbleib der offenen Zeilen aus FAHRPLAN-LESER-V3 §16 und der Posten des Schrittes:**
+
+| Zeile / Posten | Verbleib |
+|---|---|
+| `leserV3Modell.ts` 420/420 + `uebersichtAngaben.ts` schneiden | `uebersichtAngaben.ts` erledigt (S2, 417 → 223); Rest (Adapter 419/420 verhaltenstragend, Satz «inzwischen in Kraft» nach `erlassKopfText.ts`) → Posten `2026-09-23-adapter-leserv3modell-ts-schneiden-…` unter `W2·29-WERKBANK-REST` |
+| `ArtikelLeser.tsx` ca. Z. 621, Kommentar `data-such-meta` | erledigt S5 (Ergänzungs-Satz im Kommentar, §2b) |
+| `NormText.tsx` 795/800 | Posten `2026-09-23-normtext-tsx-795-800-…` unter `W2·29-WERKBANK-REST` |
+| 8 Artikel ohne eigene Gliederungszeile | Posten `2026-09-23-8-artikel-ohne-…` unter `W2·27-BUND-FERTIG` |
+| Struktur-Extraktor HTML statt XML (Risikopfad) | Posten `2026-09-23-struktur-extraktor-…` unter `W2·27-BUND-FERTIG` |
+| CLS-Flake `leser-funktionszeile-zaehler.e2e.ts:80` | Posten `2026-09-23-cls-flake-…` unter `W2·24-PERF-REST` (CLS/Mount ist §15) |
+| Bezugslinien-Orakel in zwei Specs | erledigt S3 (`e2e/helpers/bezugslinie.ts`, PR #988) |
+| Stop-and-go-Wächter | erledigt S3 (F1 pausenlos, PR #988) |
+| Empfindlichkeitsgrenze der Rückstands-Sonde | kein Mangel, reine Dokumentation — steht als Warnung im Test-Kommentar; ohne Posten geschlossen |
+| Akkordeon nur bei Scroll-Ruhe | Posten `2026-09-23-akkordeon-klappt-…` unter `W2·29-WERKBANK-REST` |
+| `w224-d35-f2-kopf.e2e.ts:96` unter Last | Posten `2026-09-23-w224-d35-f2-kopf-…` unter `W2·29-WERKBANK-REST` |
+| Posten «Einzelartikel-Ansicht E3» (Druck/Export, Rechtsprechungs-Block) | umgehängt an `W2·29-WERKBANK-REST` (E3 Druck → REST, §5a Ziff. 5) |
+| Posten «Fassungs-Diff-Tab» | umgehängt an den eigenen Schritt `W2·5g-ZEIT` «Norm-Zeitmaschine + Fassungs-Diff» |
+| Posten «Gliederung: Standort sichtbar, Mitlaufen, Auf/Zu» | geschlossen (Auf/Zu ✅ 19.9.2026, Mitlaufen ✅ 18.9.2026) → `archiv/posten/` |
+
+Wortlaut des gestrichenen Schrittes:
+
+- [ ] **Gesetz-Leser V3 — Hülle neu, Kern unangetastet** *(`W2·5m-LESER-V3`, Auftrag David 16.8.2026)*
+  <!-- @meta id: W2·5m-LESER-V3 · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-LESER-V3.md -->
+  Ziel: Leser-Oberfläche nach Apple-HIG-Prinzipien radikal vereinfacht; Kern (`ArtikelBody`,
+  `ArtikelLeser`, Datenlogik) unangetastet, Golden byte-gleich. **H1–H5 und S1–S4 sind seit
+  21.8.2026 vollständig** (Chronik; S-Buchung nachgeholt 15.9.2026). **Offen und damit neues
+  Fertig-Kriterium:** die drei Deckel-/Schnitt-Posten (Wortlaut im Fahrplan §16), Einzelartikel E3 samt
+  Rechtsprechungs-Block und der Fassungs-Diff-Tab.
+  **Detail:** [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) (Kurzfassung zuoberst; Kap. 7 Etappen H1–H5/S1–S4, Kap. 9 Fragen F1–F6).
+  **Offene Unterpunkte im Wortlaut** (verlagert 20.9.2026, Entscheid David): [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) §16 — die drei Deckel-/Schnitt-Posten und die Gliederungs-Nebenfunde.
+  **Wird durch `W2·29-WERKBANK-LESER` abgelöst** (gleiches Ziel, anderer Weg) — Posten dort
+  abarbeiten (Fahrplan Werkbank-Umbau §7); bis dahin unverändert baubar.

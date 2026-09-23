@@ -5,6 +5,11 @@ Ist-Inventar (main @ d6faa05c5), Referenz-/HIG-Recherche, Standausweis-Prüfung,
 A–E + R1–R3 + Advocatus, Council-Verdikt (Option III Hybrid, 14 Plan-Änderungen).
 Entwurfsfassung liegt im Scratchpad (`04-plan-leser-v3.md`) und ist damit **abgelöst**.
 
+> **ARCHIVIERT 23.9.2026 (W2·29-WERKBANK-LESER S5).** Der Schritt `W2·5m-LESER-V3` ist durch
+> `W2·29-WERKBANK-LESER` abgelöst (gleiches Ziel, anderer Weg; FAHRPLAN-WERKBANK-UMBAU §5a/§7) —
+> Wortlaut und Verbleib jeder offenen §16-Zeile: `ROADMAP-CHRONIK.md`, «Ablösung 23.9.2026».
+> Der Text unten ist der Stand bei Archivierung, nicht nachgeführt (§2b).
+
 > Roadmap-Zeiger: Dach-Schritt `W2·5m-LESER-V3` (ROADMAP.md, `fahrplan:` verlinkt). **Status 15.9.2026: `ready`, kein Blocker** — Davids Go (`david-go-leser-v3`) ist am 16.8.2026 erteilt und die Sperre damit erledigt; H1–H5 und S1–S4 sind vollzogen. Offen sind nur noch Deckel-/Schnitt-Posten, Einzelartikel E3 samt Rechtsprechungs-Block und der Fassungs-Diff-Tab (an M16 gekoppelt).
 
 ---
@@ -718,6 +723,10 @@ Herkunft: `ROADMAP.md`, Dach-Schritt `W2·5m-LESER-V3`. Der Plan riss am 20.9.20
 und der Zeiger, die Unterpunkt-Listen wandern in den verlinkten Fahrplan. **Wortlaut
 byte-genau übernommen, nichts zusammengefasst** (~40 % Retrieval-Verlust). Belege altern
 nicht: datierte Mess- und Reproduktionsangaben werden hier nie nachgeführt, nur ergänzt.
+
+**ERGÄNZUNG 23.9.2026 (W2·29-WERKBANK-LESER S5, Archivierung):** die offenen Zeilen unten sind
+als Posten an lebende Schritte umgebucht (`plan/posten/2026-09-23-*`) bzw. in S5 erledigt
+(`ArtikelLeser.tsx`-Kommentar) — Tabelle «was wohin» in `ROADMAP-CHRONIK.md`, «Ablösung 23.9.2026».
 
 Die drei Deckel-/Schnitt-Posten, die das Fertig-Kriterium des Schrittes nennt, stehen als
 erste drei offene Zeilen unten; die Gliederungs-Nebenfunde folgen als eingerückte Gruppe
