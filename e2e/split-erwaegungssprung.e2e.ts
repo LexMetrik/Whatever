@@ -37,7 +37,7 @@
 // Begründung dort). Schranken und Aussagen unverändert (§6.3).
 import { test, expect, type Page, type Locator } from '@playwright/test'
 import { panelAufziehen } from './helpers/panelOeffnen'
-import { warteSichtbar } from './helpers/warteSichtbar'
+import { warteSichtbar, warteImViewport } from './helpers/warteSichtbar'
 
 const ZIEL = '#e-2-3-1'
 const CHIP = 'a[href*="bge_151_III_377"]'
@@ -97,7 +97,7 @@ test('Rückweg (F7): «zurück» führt aus dem Entscheid ins Gesetz an den Arti
   const chip = page.locator('[data-v3-panel]').locator(CHIP).first()
   await warteSichtbar(chip, 20_000)
   await chip.click()                                    // Hauptfenster-Navigation
-  await expect(page.locator(ZIEL)).toBeInViewport({ timeout: 20_000 })
+  await warteImViewport(page.locator(ZIEL), 20_000)
   await expect(page).toHaveURL(/norm=/)
 
   await page.goBack()

@@ -31,9 +31,12 @@
 // und rendert höchstens dessen eigenen Teilbaum (Tiefe 1), nicht den Body.
 //
 // WANN NEHMEN: für Elemente, die erst NACH einer Aktion auf einer Seite mit
-// grossem DOM erscheinen (Erlass im Leser, Split mit Erlass). Für Elemente, die
-// schon stehen und nur ihren Zustand ändern (`toBeInViewport`, `toHaveText`),
-// greift der Body-Snapshot nicht — dort bleibt `expect` richtig.
+// grossem DOM erscheinen (Erlass im Leser, Split mit Erlass — auch nach einer
+// Hauptfenster-Navigation: die Werkbank hält den Erlass-Reiter montiert, das
+// DOM bleibt gross; gemessen 53 998 Knoten / 1277 `#art-…` auf
+// `/rechtsprechung/bge_151_III_377` nach dem Chip-Klick aus dem ZGB). Für
+// Elemente, die schon stehen und nur ihren Zustand ändern, greift der
+// Body-Snapshot nicht — dort bleibt ein gewöhnliches `expect` richtig.
 import { expect, type Locator } from '@playwright/test'
 
 /** Wartet, bis `ziel` sichtbar ist, und bestätigt es per `expect`.
@@ -41,4 +44,13 @@ import { expect, type Locator } from '@playwright/test'
 export async function warteSichtbar(ziel: Locator, timeout: number): Promise<void> {
   await ziel.waitFor({ state: 'visible', timeout })
   await expect(ziel).toBeVisible()
+}
+
+/** Wartet, bis `ziel` im DOM steht, und prüft dann `toBeInViewport` — beides
+ *  zusammen innerhalb DERSELBEN Schranke `timeout` (Frist, nicht Summe: die
+ *  Aufrufstelle hatte vorher ein einziges `toBeInViewport({ timeout })`). */
+export async function warteImViewport(ziel: Locator, timeout: number): Promise<void> {
+  const frist = Date.now() + timeout
+  await ziel.waitFor({ state: 'attached', timeout })
+  await expect(ziel).toBeInViewport({ timeout: Math.max(1, frist - Date.now()) })
 }
