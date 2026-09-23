@@ -7,6 +7,10 @@ import { RechnerUebersicht } from '../pages/RechnerUebersicht';
 import { VorlagenUebersicht } from '../pages/VorlagenUebersicht';
 import { HeaderSuche } from '../components/layout/HeaderSuche';
 import { IMMER, TAGESZEITEN } from '../lib/begruessungen';
+import { parseHTML } from 'linkedom';
+import { KATALOG_KARTEN } from '../lib/startseiteConfig';
+import { kartenDerKategorie } from '../lib/katalogKategorie';
+import { OBERKATEGORIEN, type OberkategorieId } from '../lib/oberkategorien';
 
 /** Alle möglichen Grüsse — für den H1-Inhaltstest unten (D39). */
 const ALLE_GRUESSE = [...IMMER, ...TAGESZEITEN.flatMap((t) => t.pool)];
@@ -326,4 +330,73 @@ describe('Kombinierter Fristenrechner (Auftrag 5.6.2026)', () => {
     expect(html).toContain('In welchem Verfahren läuft die Frist?');
     expect(html).toContain('Weiss nicht?');
   });
+});
+
+// ─── §8-Ratsche K0 (W2·29-WERKBANK-KATALOGE, 23.9.2026) ─────────────────────
+//
+// Jede GEPLANTE Karte (status 'geplant') der beiden Kataloge erscheint im
+// Render genau einmal als «In Vorbereitung» — entweder als Titel im
+// «In Vorbereitung (N)»-Aufklappblock oder als Zeile mit der
+// `lc-badge-geplant`-Marke (Rechtsweg-Felder) — und NIE als verlinktes
+// Werkzeug. Die Soll-Menge kommt aus der Quelle (KATALOG_KARTEN je
+// Oberkategorie, §5), nicht aus einem Literal: wächst oder schrumpft der
+// Katalog, zieht die Ratsche mit. Wächter gegen den Umbau KATALOGE (K1 ff.),
+// der die Register-Anatomie neu schreibt. Stand 23.9.2026 (gezählt per
+// vite-node über KATALOG_KARTEN × kartenDerKategorie): /rechner 37
+// (zustaendigkeiten 3, fristen 12, gebuehren 22), /vorlagen 44.
+describe('§8-Ratsche K0: geplante Karten stehen als «In Vorbereitung», nie als Werkzeug', () => {
+  const geplantIn = (kats: OberkategorieId[]) =>
+    kats.flatMap((kat) => kartenDerKategorie(KATALOG_KARTEN, kat)).filter((k) => k.status === 'geplant');
+
+  /** Titel, die der Render als «In Vorbereitung» kennzeichnet, plus alle Link-Titel. */
+  function kennzeichnung(html: string) {
+    const { document } = parseHTML(`<!doctype html><html><body>${html}</body></html>`);
+    const vorbereitet: string[] = [];
+    let summenZahl = 0;
+    // (a) Aufklappblock: <summary>In Vorbereitung (N)</summary><p><span>Titel</span>…</p>
+    for (const d of document.querySelectorAll('details')) {
+      const s = d.querySelector('summary')?.textContent?.trim() ?? '';
+      const m = /^In Vorbereitung \((\d+)\)$/.exec(s);
+      if (!m) continue;
+      summenZahl += Number(m[1]);
+      for (const span of d.querySelectorAll('p > span')) {
+        vorbereitet.push((span.textContent ?? '').replace(/^ · /, '').trim());
+      }
+    }
+    // (b) Zeile mit Marke: .lc-card mit .lc-badge-geplant; Titel = font-medium-Span.
+    let markenInLinks = 0;
+    for (const b of document.querySelectorAll('.lc-badge-geplant')) {
+      expect(b.textContent).toBe('In Vorbereitung');
+      if (b.closest('a')) markenInLinks++;
+      const titel = b.closest('.lc-card')?.querySelector('span.font-medium')?.textContent?.trim();
+      vorbereitet.push(titel ?? '(Marke ohne Karten-Titel)');
+      summenZahl++;
+    }
+    const linkTitel = [...document.querySelectorAll('a')].map((a) =>
+      (a.querySelector('span.font-medium')?.textContent ?? a.textContent ?? '').trim());
+    return { vorbereitet, summenZahl, markenInLinks, linkTitel };
+  }
+
+  const faelle: { seite: string; html: () => string; kats: OberkategorieId[] }[] = [
+    { seite: '/rechner', html: rechnerHtml, kats: OBERKATEGORIEN.map((k) => k.id).filter((id) => id !== 'vorlagen') },
+    { seite: '/vorlagen', html: vorlagenHtml, kats: ['vorlagen'] },
+  ];
+
+  for (const { seite, html, kats } of faelle) {
+    it(`${seite}: jede geplante Karte genau einmal «In Vorbereitung», keine verlinkt`, () => {
+      const soll = geplantIn(kats);
+      expect(soll.length).toBeGreaterThan(0); // Ratsche muss etwas zu prüfen haben (§6.7)
+      const sollTitel = soll.map((k) => k.title).sort((a, b) => a.localeCompare(b, 'de'));
+      const { vorbereitet, summenZahl, markenInLinks, linkTitel } = kennzeichnung(html());
+      // Zahl: Summe der «(N)»-Zähler + Marken = Soll aus der Quelle.
+      expect(summenZahl).toBe(soll.length);
+      // Menge: exakt die geplanten Titel, jeder genau einmal.
+      expect([...vorbereitet].sort((a, b) => a.localeCompare(b, 'de'))).toEqual(sollTitel);
+      // Nie als fertiges Werkzeug: keine Marke in einem Link, kein Link-Titel = geplanter Titel.
+      expect(markenInLinks).toBe(0);
+      expect(soll.filter((k) => k.href)).toEqual([]);
+      const verlinktGeplant = linkTitel.filter((t) => sollTitel.includes(t));
+      expect(verlinktGeplant).toEqual([]);
+    });
+  }
 });
