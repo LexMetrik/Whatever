@@ -8,7 +8,6 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import type { NormSnapshotDatei } from '../lib/normtext/typen';
 
 // ArtikelBody ist die aus NormPopover extrahierte Render-Komponente. Die
 // Byte-Gleichheit gegenüber dem alten Popover-Body sichert NormPopover.test.tsx
@@ -538,13 +537,32 @@ const KERN_STICHPROBE: KernFall[] = [
   { fall: 'Kantonsartikel (Absätze + Items)', ebene: 'kanton', datei: 'AG-291.150', artikel: '3', label: '§ 3', kuerzel: 'AG 291.150', anker: 'Die Grundentschädigung für die Vertretung' },
 ];
 
-const korpusCache = new Map<string, NormSnapshotDatei>();
+// EINGEFROREN (Gegenprüfung #984, 23.9.2026): die 12 Eingaben sind eine
+// Fixture (`fixtures/kern-probe-artikel.json`, Extraktion 23.9.2026 aus dem
+// damaligen public/normtext-Korpus) statt ein Live-Zugriff auf
+// public/normtext/**. Grund: ein Fedlex-Frische-Lauf (z.B. OR 1.10.2026,
+// AHVG/AHVV/DBG angekündigt) ändert die Korpus-Daten und kippt damit die
+// Hashes — ein reiner Darstellungs-Wächter darf nicht an Datenfrische
+// hängen (Datenwahrheit bewacht `check:golden-normtext` + der
+// Normtext-Korpus-Test, nicht diese Probe). Bei einer GEWOLLTEN
+// Darstellungsänderung (ArtikelBody/ArtikelTabellen/BildElemente/
+// tarifText/wortverbinder): Fixture unverändert lassen, nur die Hashes in
+// KERN_ERWARTET neu ziehen (Test einmal laufen lassen, `toEqual`-Diff
+// übernehmen) und die Änderung im Commit begründen (§6.3).
+type KernFixtureEintrag = {
+  fall: string;
+  meta: { erlass: string; korpusDatei: string; artikelToken: string; stand: string; abgerufen: string; extrahiertAm: string };
+  eintrag: { artikel: string; bloecke: NormSnapshot['bloecke']; aufgehoben?: true; stand: string };
+};
+const KERN_FIXTURE: KernFixtureEintrag[] = JSON.parse(
+  readFileSync(join(process.cwd(), 'src', 'tests', 'fixtures', 'kern-probe-artikel.json'), 'utf8'),
+);
+const kernFixtureNachFall = new Map(KERN_FIXTURE.map((x) => [x.fall, x]));
+
 function kernMarkup(f: KernFall): string {
-  const pfad = join(process.cwd(), 'public', 'normtext', f.ebene, `${f.datei}.json`);
-  let datei = korpusCache.get(pfad);
-  if (!datei) { datei = JSON.parse(readFileSync(pfad, 'utf8')) as NormSnapshotDatei; korpusCache.set(pfad, datei); }
-  const e = datei.eintraege.find((x) => x.artikel === f.artikel);
-  if (!e) throw new Error(`Kern-Probe: ${f.datei} ${f.artikel} fehlt im Korpus`);
+  const fix = kernFixtureNachFall.get(f.fall);
+  if (!fix) throw new Error(`Kern-Probe: ${f.fall} fehlt in fixtures/kern-probe-artikel.json`);
+  const e = fix.eintrag;
   return renderToStaticMarkup(
     <ArtikelBody bloecke={e.bloecke} artikel={e.artikel} passus={{ absatz: null }} autolink
       artikelAufgehoben={e.aufgehoben === true}

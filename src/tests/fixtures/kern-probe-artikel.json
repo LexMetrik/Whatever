@@ -1,0 +1,1083 @@
+[
+  {
+    "fall": "OR Art. 257d (Prosa, zwei Absätze)",
+    "meta": {
+      "erlass": "OR",
+      "korpusDatei": "bund/OR.json",
+      "artikelToken": "257_d",
+      "stand": "2026-01-01",
+      "abgerufen": "2026-09-14",
+      "extrahiertAm": "2026-09-23"
+    },
+    "eintrag": {
+      "artikel": "257_d",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Ist der Mieter nach der Übernahme der Sache mit der Zahlung fälliger Mietzinse oder Nebenkosten im Rückstand, so kann ihm der Vermieter schriftlich eine Zahlungsfrist setzen und ihm androhen, dass bei unbenütztem Ablauf der Frist das Mietverhältnis gekündigt werde. Diese Frist beträgt mindestens zehn Tage, bei Wohn- und Geschäftsräumen mindestens 30 Tage."
+        },
+        {
+          "absatz": "2",
+          "text": "Bezahlt der Mieter innert der gesetzten Frist nicht, so kann der Vermieter fristlos, bei Wohn- und Geschäftsräumen mit einer Frist von mindestens 30 Tagen auf Ende eines Monats kündigen."
+        }
+      ],
+      "stand": "2026-01-01"
+    }
+  },
+  {
+    "fall": "T-A Staffel-Spanne verdichtet (bereich)",
+    "meta": {
+      "erlass": "AHVV",
+      "korpusDatei": "bund/AHVV.json",
+      "artikelToken": "28",
+      "stand": "2026-01-01",
+      "abgerufen": "2026-09-14",
+      "extrahiertAm": "2026-09-23"
+    },
+    "eintrag": {
+      "artikel": "28",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Beiträge der Nichterwerbstätigen, für die nicht der jährliche Mindestbeitrag von 435 Franken (Art. 10 Abs. 2 AHVG) vorgesehen ist, bemessen sich aufgrund ihres Vermögens und ihres Renteneinkommens. Nicht zum Renteneinkommen gehören die Renten nach den Artikeln 36 und 39 IVG. Die Beiträge werden wie folgt berechnet:"
+        },
+        {
+          "absatz": null,
+          "text": "",
+          "mehrspaltig": {
+            "spalten": [
+              {
+                "typ": "bereich",
+                "titel": "Vermögen bzw. mit 20 multipliziertes jährliches Renteneinkommen Franken"
+              },
+              {
+                "typ": "zahl",
+                "titel": "Jahresbeitrag Franken"
+              },
+              {
+                "typ": "text",
+                "titel": "Zuschlag für jede weitere Stufe von 50 000 Franken Vermögen bzw. mit 20 multipliziertes jährliches Renteneinkommen Franken"
+              }
+            ],
+            "zeilen": [
+              [
+                "bis 350 000",
+                "435",
+                "–"
+              ],
+              [
+                "ab 350 000",
+                "522",
+                "87"
+              ],
+              [
+                "ab 1 750 000",
+                "2958",
+                "130.50"
+              ],
+              [
+                "ab 8 950 000",
+                "21 750",
+                "–."
+              ]
+            ]
+          }
+        },
+        {
+          "absatz": "2",
+          "text": "Verfügt eine nichterwerbstätige Person gleichzeitig über Vermögen und Renteneinkommen, so wird der mit 20 multiplizierte jährliche Rentenbetrag zum Vermögen hinzugerechnet."
+        },
+        {
+          "absatz": "3",
+          "text": "Für die Berechnung des Beitrages ist das Vermögen einschliesslich des mit 20 multiplizierten jährlichen Rentenbetrages auf die nächsttiefere Vermögensstufe abzurunden."
+        },
+        {
+          "absatz": "4",
+          "text": "Ist eine verheiratete Person als Nichterwerbstätige beitragspflichtig, so bemessen sich ihre Beiträge aufgrund der Hälfte des ehelichen Vermögens und Renteneinkommens. Dies gilt ebenfalls für das ganze Kalenderjahr der Heirat. Im ganzen Kalenderjahr der Scheidung bemessen sich die Beiträge nach Absatz 1. Dasselbe gilt für die Zeit nach der Verwitwung."
+        },
+        {
+          "absatz": "4bis",
+          "text": "…"
+        },
+        {
+          "absatz": "5",
+          "text": "Nichterwerbstätige Ehegatten, deren Beiträge nicht als bezahlt gelten (Art. 3 Abs. 3 AHVG), haben sich bei der zuständigen Ausgleichskasse zu melden."
+        },
+        {
+          "absatz": "6",
+          "text": "Nichterwerbstätige, die Leistungen nach dem Bundesgesetz vom 6. Oktober 2006 über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung oder nach dem Bundesgesetz vom 19. Juni 2020 über Überbrückungsleistungen für ältere Arbeitslose beziehen, bezahlen den Mindestbeitrag."
+        }
+      ],
+      "stand": "2026-01-01"
+    }
+  },
+  {
+    "fall": "T-B mehrspaltig, ≥3 Zahlspalten",
+    "meta": {
+      "erlass": "AHVG",
+      "korpusDatei": "bund/AHVG.json",
+      "artikelToken": "40_c",
+      "stand": "2026-01-01",
+      "abgerufen": "2026-09-14",
+      "extrahiertAm": "2026-09-23"
+    },
+    "eintrag": {
+      "artikel": "40_c",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Frauen der Übergangsgeneration können die Rente nach den Modalitäten der Artikel 40 und 40b ab dem vollendeten 62. Altersjahr vorbeziehen. Für sie werden folgende Kürzungssätze auf die vorbezogenen Altersrenten angewendet:"
+        },
+        {
+          "absatz": null,
+          "text": "",
+          "mehrspaltig": {
+            "spalten": [
+              {
+                "typ": "zahl",
+                "titel": "Vorbezugsjahre"
+              },
+              {
+                "typ": "zahl",
+                "titel": "Kürzungssatz in %, wenn das massgebende durchschnittliche Jahreseinkommen tiefer als oder gleich hoch ist wie der Betrag der vierfachen minimalen jährlichen Altersrente nach Art. 34"
+              },
+              {
+                "typ": "zahl",
+                "titel": "Kürzungssatz in %, wenn das massgebende durchschnittliche Jahreseinkommen höher als der Betrag der vierfachen minimalen jährlichen Altersrente nach Art. 34, aber tiefer als oder gleich hoch ist wie der Betrag der fünffachen minimalen jährlichen Altersrente nach Art. 34"
+              },
+              {
+                "typ": "zahl",
+                "titel": "Kürzungssatz in %, wenn das massgebende durchschnittliche Jahreseinkommen höher ist als der Betrag der fünffachen minimalen jährlichen Altersrente nach Art. 34"
+              }
+            ],
+            "zeilen": [
+              [
+                "1",
+                "0",
+                "2,5",
+                "3,5"
+              ],
+              [
+                "2",
+                "2",
+                "4,5",
+                "6,5"
+              ],
+              [
+                "3",
+                "3",
+                "6,5",
+                "10,5"
+              ]
+            ]
+          }
+        }
+      ],
+      "stand": "2026-01-01"
+    }
+  },
+  {
+    "fall": "T-C Einzel-Leerzelle bleibt (T-C7)",
+    "meta": {
+      "erlass": "AHVV",
+      "korpusDatei": "bund/AHVV.json",
+      "artikelToken": "52_d",
+      "stand": "2026-01-01",
+      "abgerufen": "2026-09-14",
+      "extrahiertAm": "2026-09-23"
+    },
+    "eintrag": {
+      "artikel": "52_d",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Für fehlende Beitragsjahre vor dem 1. Januar 1979 werden einer Person, welche nach Artikel 1a oder 2 AHVG versichert war oder sich hätte versichern können, folgende Beitragsjahre zusätzlich angerechnet:"
+        },
+        {
+          "absatz": null,
+          "text": "",
+          "mehrspaltig": {
+            "spalten": [
+              {
+                "typ": "text",
+                "titel": "Bei vollen Beitragsjahren des Versicherten von"
+              },
+              {
+                "typ": "zahl",
+                "titel": "bis"
+              },
+              {
+                "typ": "zahl",
+                "titel": "Zusätzlich anrechenbare Beitragsjahre bis zu"
+              }
+            ],
+            "zeilen": [
+              [
+                "20",
+                "26",
+                "1"
+              ],
+              [
+                "27",
+                "33",
+                "2"
+              ],
+              [
+                "ab 34",
+                "",
+                "3"
+              ]
+            ]
+          }
+        }
+      ],
+      "stand": "2026-01-01"
+    }
+  },
+  {
+    "fall": "T-D kopflos (T-D6)",
+    "meta": {
+      "erlass": "AsylV 1",
+      "korpusDatei": "bund/ASYLV1.json",
+      "artikelToken": "annex_2",
+      "stand": "2026-06-12",
+      "abgerufen": "2026-09-14",
+      "extrahiertAm": "2026-09-23"
+    },
+    "eintrag": {
+      "artikel": "annex_2",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "(Art. 2)"
+        },
+        {
+          "absatz": null,
+          "text": "Verfolgungssichere Heimat- oder Herkunftsstaaten",
+          "titel": 2
+        },
+        {
+          "absatz": null,
+          "text": "",
+          "mehrspaltig": {
+            "spalten": [
+              {
+                "typ": "text",
+                "titel": ""
+              },
+              {
+                "typ": "text",
+                "titel": ""
+              }
+            ],
+            "zeilen": [
+              [
+                "Albanien",
+                "Niederlande"
+              ],
+              [
+                "Belgien",
+                "Nordmazedonien"
+              ],
+              [
+                "Bosnien und Herzegowina",
+                "Norwegen"
+              ],
+              [
+                "Bulgarien",
+                "Österreich"
+              ],
+              [
+                "Dänemark",
+                "Polen"
+              ],
+              [
+                "Deutschland",
+                "Portugal"
+              ],
+              [
+                "Estland",
+                "Rumänien"
+              ],
+              [
+                "Finnland",
+                "Schweden"
+              ],
+              [
+                "Frankreich",
+                "Senegal"
+              ],
+              [
+                "Georgien",
+                "Serbien"
+              ],
+              [
+                "Ghana",
+                "Slowakei"
+              ],
+              [
+                "Griechenland",
+                "Slowenien"
+              ],
+              [
+                "Indien",
+                "Spanien"
+              ],
+              [
+                "Irland",
+                "Tschechien"
+              ],
+              [
+                "Island",
+                "Ungarn"
+              ],
+              [
+                "Italien",
+                "Vereinigtes Königreich"
+              ],
+              [
+                "Kosovo",
+                "Zypern"
+              ],
+              [
+                "Kroatien",
+                ""
+              ],
+              [
+                "Lettland",
+                ""
+              ],
+              [
+                "Liechtenstein",
+                ""
+              ],
+              [
+                "Litauen",
+                ""
+              ],
+              [
+                "Luxemburg",
+                ""
+              ],
+              [
+                "Malta",
+                ""
+              ],
+              [
+                "Moldau (ohne Transnistrien)",
+                ""
+              ],
+              [
+                "Mongolei",
+                ""
+              ],
+              [
+                "Montenegro",
+                ""
+              ]
+            ]
+          }
+        }
+      ],
+      "stand": "2026-06-12"
+    }
+  },
+  {
+    "fall": "T-E Alt-Form ohne Spalten-Vektor (Rückfallpfad)",
+    "meta": {
+      "erlass": "AHVV",
+      "korpusDatei": "bund/AHVV.json",
+      "artikelToken": "52",
+      "stand": "2026-01-01",
+      "abgerufen": "2026-09-14",
+      "extrahiertAm": "2026-09-23"
+    },
+    "eintrag": {
+      "artikel": "52",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Teilrenten betragen in Prozenten der Vollrente:"
+        },
+        {
+          "absatz": null,
+          "text": "",
+          "mehrspaltig": {
+            "kopf": [
+              "von mindestens",
+              "aber weniger als",
+              "",
+              ""
+            ],
+            "zeilen": [
+              [
+                "",
+                "2,28",
+                "2,27",
+                "1"
+              ],
+              [
+                "2,28",
+                "4,55",
+                "4,55",
+                "2"
+              ],
+              [
+                "4,55",
+                "6,82",
+                "6,82",
+                "3"
+              ],
+              [
+                "6,82",
+                "9,10",
+                "9,09",
+                "4"
+              ],
+              [
+                "9,10",
+                "11,37",
+                "11,36",
+                "5"
+              ],
+              [
+                "11,37",
+                "13,64",
+                "13,64",
+                "6"
+              ],
+              [
+                "13,64",
+                "15,91",
+                "15,91",
+                "7"
+              ],
+              [
+                "15,91",
+                "18,19",
+                "18,18",
+                "8"
+              ],
+              [
+                "18,19",
+                "20,46",
+                "20,45",
+                "9"
+              ],
+              [
+                "20,46",
+                "22,73",
+                "22,73",
+                "10"
+              ],
+              [
+                "22,73",
+                "25,01",
+                "25,00",
+                "11"
+              ],
+              [
+                "25,01",
+                "27,28",
+                "27,27",
+                "12"
+              ],
+              [
+                "27,28",
+                "29,55",
+                "29,55",
+                "13"
+              ],
+              [
+                "29,55",
+                "31,82",
+                "31,82",
+                "14"
+              ],
+              [
+                "31,82",
+                "34,10",
+                "34,09",
+                "15"
+              ],
+              [
+                "34,10",
+                "36,37",
+                "36,36",
+                "16"
+              ],
+              [
+                "36,37",
+                "38,64",
+                "38,64",
+                "17"
+              ],
+              [
+                "38,64",
+                "40,91",
+                "40,91",
+                "18"
+              ],
+              [
+                "40,91",
+                "43,19",
+                "43,18",
+                "19"
+              ],
+              [
+                "43,19",
+                "45,46",
+                "45,45",
+                "20"
+              ],
+              [
+                "45,46",
+                "47,73",
+                "47,73",
+                "21"
+              ],
+              [
+                "47,73",
+                "50,01",
+                "50,00",
+                "22"
+              ],
+              [
+                "50,01",
+                "52,28",
+                "52,27",
+                "23"
+              ],
+              [
+                "52,28",
+                "54,55",
+                "54,55",
+                "24"
+              ],
+              [
+                "54,55",
+                "56,82",
+                "56,82",
+                "25"
+              ],
+              [
+                "56,82",
+                "59,10",
+                "59,09",
+                "26"
+              ],
+              [
+                "59,10",
+                "61,37",
+                "61,36",
+                "27"
+              ],
+              [
+                "61,37",
+                "63,64",
+                "63,64",
+                "28"
+              ],
+              [
+                "63,64",
+                "65,91",
+                "65,91",
+                "29"
+              ],
+              [
+                "65,91",
+                "68,19",
+                "68,18",
+                "30"
+              ],
+              [
+                "68,19",
+                "70,46",
+                "70,45",
+                "31"
+              ],
+              [
+                "70,46",
+                "72,73",
+                "72,73",
+                "32"
+              ],
+              [
+                "72,73",
+                "75,01",
+                "75,00",
+                "33"
+              ],
+              [
+                "75,01",
+                "77,28",
+                "77,27",
+                "34"
+              ],
+              [
+                "77,28",
+                "79,55",
+                "79,55",
+                "35"
+              ],
+              [
+                "79,55",
+                "81,82",
+                "81,82",
+                "36"
+              ],
+              [
+                "81,82",
+                "84,10",
+                "84,09",
+                "37"
+              ],
+              [
+                "84,10",
+                "86,37",
+                "86,36",
+                "38"
+              ],
+              [
+                "86,37",
+                "88,64",
+                "88,64",
+                "39"
+              ],
+              [
+                "88,64",
+                "90,91",
+                "90,91",
+                "40"
+              ],
+              [
+                "90,91",
+                "93,19",
+                "93,18",
+                "41"
+              ],
+              [
+                "93,19",
+                "95,46",
+                "95,45",
+                "42"
+              ],
+              [
+                "95,46",
+                "97,73",
+                "97,73",
+                "43"
+              ],
+              [
+                "97,73",
+                "100,00",
+                "100,00",
+                "44"
+              ]
+            ]
+          }
+        },
+        {
+          "absatz": "1bis",
+          "text": "Das BSV erlässt Vorschriften über die Abstufung der Teilrenten beim Rentenvorbezug. Massgebend ist das Verhältnis zwischen den vollen Beitragsjahren des Versicherten zum Zeitpunkt des Rentenvorbezugs und denjenigen seines Jahrgangs bei Erreichen des Referenzalters."
+        },
+        {
+          "absatz": "2",
+          "text": "Beträgt das Verhältnis zwischen den vollen Beitragsjahren des Versicherten und denen seines Jahrganges mindestens 97,73 Prozent, so wird die Vollrente gewährt."
+        },
+        {
+          "absatz": "3",
+          "text": "und 4 …"
+        }
+      ],
+      "stand": "2026-01-01"
+    }
+  },
+  {
+    "fall": "T-F Leitfall GebV SchKG Art. 20 (T-F4)",
+    "meta": {
+      "erlass": "GebV SchKG",
+      "korpusDatei": "bund/GEBV_SCHKG.json",
+      "artikelToken": "20",
+      "stand": "2026-01-01",
+      "abgerufen": "2026-09-14",
+      "extrahiertAm": "2026-09-23"
+    },
+    "eintrag": {
+      "artikel": "20",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Gebühr für den Vollzug einer Pfändung, einschliesslich Abfassung der Pfändungsurkunde, bemisst sich nach der Forderung und beträgt:"
+        },
+        {
+          "absatz": null,
+          "text": "",
+          "mehrspaltig": {
+            "spalten": [
+              {
+                "typ": "bereich",
+                "titel": "Forderung/Franken"
+              },
+              {
+                "typ": "betrag",
+                "titel": "Gebühr/Franken"
+              }
+            ],
+            "zeilen": [
+              [
+                "bis 100",
+                "10.–"
+              ],
+              [
+                "über 100 bis 500",
+                "25.–"
+              ],
+              [
+                "über 500 bis 1 000",
+                "45.–"
+              ],
+              [
+                "über 1 000 bis 10 000",
+                "65.–"
+              ],
+              [
+                "über 10 000 bis 100 000",
+                "90.–"
+              ],
+              [
+                "über 100 000 bis 1 000 000",
+                "190.–"
+              ],
+              [
+                "über 1 000 000",
+                "400.–"
+              ]
+            ]
+          }
+        },
+        {
+          "absatz": "2",
+          "text": "Die Gebühr für eine fruchtlose Pfändung beträgt die Hälfte der Gebühr nach Absatz 1, jedoch mindestens 10 Franken. Für einen erfolglosen Pfändungsversuch beträgt die Gebühr 10 Franken."
+        },
+        {
+          "absatz": "3",
+          "text": "Erfordert der Vollzug mehr als eine Stunde, so erhöht sich die Gebühr um 40 Franken für jede weitere halbe Stunde."
+        },
+        {
+          "absatz": "4",
+          "text": "Die Gebühr für die Protokollierung des Fortsetzungsbegehrens, das infolge Zahlung, Rückzug des Fortsetzungsbegehrens, Einstellung oder Aufhebung der Betreibung zu keiner Pfändung führt, beträgt 5 Franken."
+        }
+      ],
+      "stand": "2026-01-01"
+    }
+  },
+  {
+    "fall": "T-B5 Kurzform tabelle (Kanton)",
+    "meta": {
+      "erlass": "SG 2808",
+      "korpusDatei": "kanton/SG-2808.json",
+      "artikelToken": "7",
+      "stand": "2012-03-01",
+      "abgerufen": "2026-08-29",
+      "extrahiertAm": "2026-09-23"
+    },
+    "eintrag": {
+      "artikel": "7",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "Entscheidgebühren"
+        },
+        {
+          "absatz": "1",
+          "text": "",
+          "tabelle": [
+            {
+              "beschreibung": "Die Entscheidgebühren betragen: 1 Verwaltungsrekurskommission und Versicherungsgericht 11 Einzelrichterin oder Einzelrichter; Präsidentin oder Präsident 111 Zwischenentscheid, verfahrensleitende Verfügung, Abschreibungsverfügung und Ähnliches",
+              "betrag": "200.– bis 2 000.–"
+            },
+            {
+              "beschreibung": "112 Endentscheid",
+              "betrag": "400.– bis 4 000.–"
+            },
+            {
+              "beschreibung": "12 Abteilung oder Kammer 121 Zwischenentscheid, verfahrensleitende Verfügungen und Ähnliches",
+              "betrag": "300.– bis 3 000.–"
+            },
+            {
+              "beschreibung": "122 Endentscheid",
+              "betrag": "500.– bis 15 000.–"
+            },
+            {
+              "beschreibung": "2 Verwaltungsgericht 21 Einzelrichterin oder Einzelrichter; Präsidentin oder Präsident 211 Zwischenentscheid, verfahrensleitende Verfügung, Abschreibungsverfügung und Ähnliches",
+              "betrag": "200.– bis 2 000.–"
+            },
+            {
+              "beschreibung": "212 Endentscheid",
+              "betrag": "400.– bis 4 000.–"
+            },
+            {
+              "beschreibung": "22 Gericht 221 Zwischenentscheid, verfahrensleitende Verfügung und Ähnliches",
+              "betrag": "300.– bis 3 000.–"
+            },
+            {
+              "beschreibung": "222 Endentscheid",
+              "betrag": "500.– bis 15 000.–"
+            },
+            {
+              "beschreibung": "3 Anwaltskammer 31 Präsidentin oder Präsident 311 Zwischenentscheid, verfahrensleitende Verfügung und Ähnliches",
+              "betrag": "200.– bis 2 000.–"
+            },
+            {
+              "beschreibung": "312 Endentscheid",
+              "betrag": "400.– bis 4 000.–"
+            },
+            {
+              "beschreibung": "32 Kammer 321 Zwischenentscheid, verfahrensleitende Verfügung und Ähnliches",
+              "betrag": "300.– bis 3 000.–"
+            },
+            {
+              "beschreibung": "322 Endentscheid",
+              "betrag": "500.– bis 6 000.–"
+            }
+          ]
+        },
+        {
+          "absatz": null,
+          "text": "3. Behörden der Zivilgerichtsbarkeit"
+        }
+      ],
+      "stand": "2012-03-01"
+    }
+  },
+  {
+    "fall": "Formelbild (DBG Art. 22)",
+    "meta": {
+      "erlass": "DBG",
+      "korpusDatei": "bund/DBG.json",
+      "artikelToken": "22",
+      "stand": "2026-09-02",
+      "abgerufen": "2026-09-14",
+      "extrahiertAm": "2026-09-23"
+    },
+    "eintrag": {
+      "artikel": "22",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Steuerbar sind alle Einkünfte aus der Alters-, Hinterlassenen- und Invalidenversicherung, aus Einrichtungen der beruflichen Vorsorge und aus anerkannten Formen der gebundenen Selbstvorsorge, mit Einschluss der Kapitalabfindungen und Rückzahlungen von Einlagen, Prämien und Beiträgen."
+        },
+        {
+          "absatz": "2",
+          "text": "Als Einkünfte aus der beruflichen Vorsorge gelten insbesondere Leistungen aus Vorsorgekassen, aus Spar- und Gruppenversicherungen sowie aus Freizügigkeitspolicen."
+        },
+        {
+          "absatz": "3",
+          "text": "Leibrentenversicherungen sowie Leibrenten- und Verpfründungsverträge sind im Umfang ihres Ertragsanteils steuerbar. Dieser bestimmt sich wie folgt:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "Bei garantierten Leistungen aus Leibrentenversicherungen, die dem Versicherungsvertragsgesetz vom 2. April 1908 (VVG) unterstehen, ist der im Zeitpunkt des Vertragsabschlusses auf der Grundlage von Artikel 36 Absatz 1 des Versicherungsaufsichtsgesetzes vom 17. Dezember 2004 bestimmte maximale technische Zinssatz (m) während der gesamten Vertragsdauer massgebend:"
+            },
+            {
+              "marke": "1",
+              "text": "Ist dieser Zinssatz grösser als null, so berechnet sich der Ertragsanteil, auf den nächstliegenden ganzen Prozentwert auf- oder abgerundet, wie folgt:",
+              "tiefe": 1
+            }
+          ]
+        },
+        {
+          "absatz": null,
+          "text": "",
+          "bild": {
+            "datei": "bilder/dbg/image1.png",
+            "alt": "Amtliche Abbildung",
+            "breite": 58,
+            "hoehe": 7,
+            "formel": true,
+            "sha": "bf98d7c9aa6b64865e886366cb7b9e64ead15238688c89bfa709e460e143003a"
+          },
+          "items": [
+            {
+              "marke": "2",
+              "text": "Ist dieser Zinssatz negativ oder null, so beträgt der Ertragsanteil null Prozent.",
+              "tiefe": 1
+            },
+            {
+              "marke": "b",
+              "text": "Bei Überschussleistungen aus Leibrentenversicherungen, die dem VVG unterstehen, entspricht der Ertragsanteil 70 Prozent dieser Leistungen."
+            },
+            {
+              "marke": "c",
+              "text": "Bei Leistungen aus ausländischen Leibrentenversicherungen, aus Leibrenten- und aus Verpfründungsverträgen ist die Höhe der um 0,5 Prozentpunkte erhöhten annualisierten Rendite zehnjähriger Bundesobligationen (r) während des betreffenden Steuerjahres und der neun vorangegangenen Jahre massgebend:"
+            },
+            {
+              "marke": "1",
+              "text": "Ist diese Rendite grösser als null, so berechnet sich der Ertragsanteil, auf den nächstliegenden ganzen Prozentwert auf- oder abgerundet, wie folgt:",
+              "tiefe": 1
+            }
+          ]
+        },
+        {
+          "absatz": null,
+          "text": "",
+          "bild": {
+            "datei": "bilder/dbg/image2.png",
+            "alt": "Amtliche Abbildung",
+            "breite": 58,
+            "hoehe": 8,
+            "formel": true,
+            "sha": "5c0f13dd40402c2cc0a99f03c80e08916483fd765791fa6304663ddbe3d7b0d1"
+          },
+          "items": [
+            {
+              "marke": "2",
+              "text": "Ist diese Rendite negativ oder null, so beträgt der Ertragsanteil null Prozent.",
+              "tiefe": 1
+            }
+          ]
+        },
+        {
+          "absatz": "4",
+          "text": "Artikel 24 Buchstabe b bleibt vorbehalten."
+        }
+      ],
+      "stand": "2026-09-02"
+    }
+  },
+  {
+    "fall": "aufgehoben (ganzer Artikel)",
+    "meta": {
+      "erlass": "AHVG",
+      "korpusDatei": "bund/AHVG.json",
+      "artikelToken": "17",
+      "stand": "2026-01-01",
+      "abgerufen": "2026-09-14",
+      "extrahiertAm": "2026-09-23"
+    },
+    "eintrag": {
+      "artikel": "17",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": "…"
+        }
+      ],
+      "aufgehoben": true,
+      "stand": "2026-01-01"
+    }
+  },
+  {
+    "fall": "leer, ungeklärt (Kanton, nicht aufgehoben)",
+    "meta": {
+      "erlass": "BS 153.100",
+      "korpusDatei": "kanton/BS-153.100.json",
+      "artikelToken": "53",
+      "stand": "2021-01-01",
+      "abgerufen": "2026-07-27",
+      "extrahiertAm": "2026-09-23"
+    },
+    "eintrag": {
+      "artikel": "53",
+      "bloecke": [
+        {
+          "absatz": null,
+          "text": ""
+        }
+      ],
+      "stand": "2021-01-01"
+    }
+  },
+  {
+    "fall": "Kantonsartikel (Absätze + Items)",
+    "meta": {
+      "erlass": "AG 291.150",
+      "korpusDatei": "kanton/AG-291.150.json",
+      "artikelToken": "3",
+      "stand": "2024-01-01",
+      "abgerufen": "2026-09-06",
+      "extrahiertAm": "2026-09-23"
+    },
+    "eintrag": {
+      "artikel": "3",
+      "bloecke": [
+        {
+          "absatz": "1",
+          "text": "Die Grundentschädigung für die Vertretung und Verbeiständung einer Partei im ordentlichen und im vereinfachten Verfahren sowie im Scheidungsverfahren einschliesslich die Beratung und Vertretung im Schlichtungsverfahren beträgt:",
+          "items": [
+            {
+              "marke": "a",
+              "text": "in vermögensrechtlichen Streitsachen:"
+            },
+            {
+              "marke": "1",
+              "text": "Streitwert bis Fr. 6'160.– Fr. 1'110.– + 22,0 % des Strw."
+            },
+            {
+              "marke": "2",
+              "text": "Streitwert über 6'160.– bis 12'300.– Fr. 1'230.– + 20,0 % des Strw."
+            },
+            {
+              "marke": "3",
+              "text": "Streitwert über 12'300.– bis 24'600.– Fr. 1'850.– + 15,0 % des Strw."
+            },
+            {
+              "marke": "4",
+              "text": "Streitwert über 24'600.– bis 49'300.– Fr. 2'590.– + 12,0 % des Strw."
+            },
+            {
+              "marke": "5",
+              "text": "Streitwert über 49'300.– bis 98'600.– Fr. 4'070.– + 9,0 % des Strw."
+            },
+            {
+              "marke": "6",
+              "text": "Streitwert über 98'600.– bis 184'800.– Fr. 6'530.– + 6,4 % des Strw."
+            },
+            {
+              "marke": "7",
+              "text": "Streitwert über 184'800.– bis 369'600.– Fr. 10'230.– + 4,4 % des Strw."
+            },
+            {
+              "marke": "8",
+              "text": "Streitwert über 369'600.– bis 739'200.– Fr. 14'300.– + 3,3 % des Strw."
+            },
+            {
+              "marke": "9",
+              "text": "Streitwert über 739'200.– bis 1'478'400.– Fr. 20'240.– + 2,5 % des Strw."
+            },
+            {
+              "marke": "10",
+              "text": "Streitwert über 1'478'400.– bis 3'080'000.– Fr. 29'040.– + 1,9 % des Strw."
+            },
+            {
+              "marke": "11",
+              "text": "Streitwert über 3'080'000.– bis 6'160'000.– Fr. 44'440.– + 1,4 % des Strw."
+            },
+            {
+              "marke": "12",
+              "text": "über 6'160'000.– Fr. 69'080.– + 1,0 % des Strw."
+            },
+            {
+              "marke": "b",
+              "text": "in Verfahren, die das Vermögen der Parteien weder direkt noch indirekt beeinflussen: nach dem mutmasslichen Aufwand des Anwaltes, nach der Bedeutung und der Schwierigkeit des Falles Fr. 1'210.– bis Fr. 14'740.–."
+            },
+            {
+              "marke": "c",
+              "text": "Sind im gleichen Verfahren vermögensrechtliche und nicht vermögensrechtliche Ansprüche zu beurteilen, ist die höhere Grundentschädigung massgebend."
+            },
+            {
+              "marke": "d",
+              "text": "Die Festsetzung familienrechtlicher Unterhalts- und Unterstützungsbeiträge sowie partnerschaftsrechtlicher Unterhaltsbeiträge und der Vorsorgeausgleich bei Scheidung und bei Auflösung der eingetragenen Partnerschaft gelten als nicht vermögensrechtliche Streitsachen. Für güterrechtliche Ansprüche gelten dagegen die Litera a und c."
+            }
+          ]
+        },
+        {
+          "absatz": "2",
+          "text": "Im Vollstreckungsverfahren beträgt die Grundentschädigung 10–50 % der Ansätze gemäss Absatz 1. In den übrigen summarischen Verfahren sowie in einfachen Gesuchssachen beträgt die Grundentschädigung 25–100 % der Ansätze gemäss Absatz 1."
+        }
+      ],
+      "stand": "2024-01-01"
+    }
+  }
+]

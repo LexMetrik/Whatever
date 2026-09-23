@@ -188,10 +188,14 @@ NICHT bauen (Board > Produkt): «Entscheide zu den Artikeln auf dieser Seite» m
 - **S0 Prüfstrasse vorab** (`feld: betrieb`, unsichtbar): Flacker-Fixes (Ziff. 4); Kern-Probe als
   ERWEITERUNG `src/tests/ArtikelBody.test.tsx` (kein neues Tor): `renderToStaticMarkup` über feste
   Stichprobe (OR 257d, je ein Fall T-A…T-F, Formelbild, «aufgehoben», «leer, ungeklärt»,
-  Kantonsartikel), zwei Hashes (mit/ohne class-Attribute). Zaunliste im PR-Body:
+  Kantonsartikel), zwei Hashes (mit/ohne class-Attribute). Stichprobe eingefroren als Fixture
+  (Gegenprüfung #984, 23.9.2026): `src/tests/fixtures/kern-probe-artikel.json`, damit ein
+  Fedlex-Frische-Lauf (OR 1.10.2026, AHVG/AHVV/DBG angekündigt) die Hashes nicht kippt. Zaunliste
+  im PR-Body:
   `git diff --stat origin/main -- src/components/normtext/{ArtikelBody*,ArtikelTabellen.tsx,BildElemente.tsx,tarifText.ts,wortverbinder.ts} src/lib/normtext/`
-  leer. Sonden `leser-suche-a35-a40-a41`, `norm-sprung`, `helpers/leserBereit.ts`. Rot-Beweis:
-  Kern-Probe rot (vertauschte p-Klasse); Flackerer rot→grün je n=20 unter Last. dep keine.
+  leer. Sonden `leser-suche-a35-a40-a41`, `norm-sprung`, `helpers/leserBereit.ts` (geprüft,
+  verworfen). Rot-Beweis: Kern-Probe rot (vertauschte p-Klasse); Flackerer rot→grün je n=20 unter
+  Last. dep keine.
 - **S1 Artikel-Rahmen, Lesespalte, Funktionszeile:** Klassen-/Token-Tausch in
   parts/ArtikelLeser.kopfteile, Funktionszeile, BezuegeZeile, ArtikelAktionen, .bezuegeFuss,
   ArtikelHistorie, SektionKopf, v3/LeserLesespalte, LeserLeseZeile; ArtikelLeser.tsx nur Klassen
