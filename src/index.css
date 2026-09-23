@@ -4237,8 +4237,18 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
    Die ANDERE Fundstelle, `ui/FacettenGruppe.tsx`, setzt KEINE Schrift-Utility
    (`className="fc-schalter"`) und bekommt weiter 13 px/500 — /rechtsprechung
    und /suche sind unberührt (nachgemessen, Bericht 21.9.2026). */
+/* ─── K6 (W2·29-WERKBANK-KATALOGE, 23.9.2026) · RUHE IN INK-600, WAHL IN 600 ──
+   Board «Unter-Suche»: der ruhende Schalter steht in ink-600 statt ink-500
+   (mehr Kontrast, beide Themes), der gewählte trägt zum ✓ und zum Strich das
+   Gewicht 600. Das Gewicht sitzt IN der Schicht (wie die Typo oben): eine
+   Aufrufstelle mit Schrift-Utility behält ihr Gewicht — `leser/MarkenSchalter`
+   (`font-normal`) bleibt gedrückt wie ungedrückt normal. */
 @layer components {
   .fc-schalter { font-size: 0.8125rem; line-height: 1.5; font-weight: 500; }
+  /* `:where()` hält die Spezifität bei EINER Klasse — Tailwinds `@layer` ist
+     keine native Kaskadenschicht, ohne `:where` schlüge `[aria-pressed]`
+     (0,2,0) das `font-normal` (0,1,0) des MarkenSchalters (gemessen: 600). */
+  .fc-schalter:where([aria-pressed="true"]) { font-weight: 600; }
 }
 .fc-schalter {
   appearance: none; background: none; border: 0; border-radius: 0;
@@ -4247,7 +4257,7 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
   padding: 0.25rem 0;
   cursor: pointer;
   font-family: var(--font-sans), system-ui, sans-serif;
-  color: var(--ink-500);
+  color: var(--ink-600);
   border-bottom: 2px solid transparent;
   transition: color .15s, border-color .15s;
 }

@@ -109,7 +109,7 @@ export function Suche() {
           />
           {wert && (
             <button type="button" onClick={() => setze('')} aria-label="Suche leeren"
-              className="absolute right-3 top-1/2 -translate-y-1/2 inline-flex h-7 w-7 items-center justify-center rounded-md text-ink-500 transition-colors hover:text-brass-700">
+              className="absolute right-0 top-1/2 -translate-y-1/2 inline-flex h-11 w-11 items-center justify-center text-ink-600 transition-colors hover:text-ink-900">
               <span aria-hidden className="lc-griff-glyph">✕</span>
             </button>
           )}
@@ -147,13 +147,13 @@ export function Suche() {
 
       {q === ''
         ? (
-          <div className="lc-notice max-w-reading">
+          <div className="max-w-reading border-t border-rule-soft pt-3">
             <p className="lc-overline mb-1">Tipp</p>
             <p className="text-body-s leading-relaxed text-ink-600">
               Geben Sie einen Begriff, ein Stichwort oder eine Norm ein. Ein Norm-Kürzel
               («OR 257d») oder ein BGE-Zitat («BGE 152 I 65») springt direkt zur Fundstelle;
               ein Alltagsbegriff («Miete», «Verjährung») findet die einschlägigen Artikel.{' '}
-              <Link to="/abdeckung" className="text-brass-700 no-underline hover:text-brass-600">Was ist durchsuchbar? →</Link>
+              <Link to="/abdeckung" className="text-ink-700 underline hover:text-ink-900">Was ist durchsuchbar? →</Link>
             </p>
           </div>
         )

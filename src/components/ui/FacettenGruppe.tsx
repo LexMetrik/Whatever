@@ -106,8 +106,10 @@ export function FacettenGruppe({ label, gruppenLabel, optionen, register = 'g' }
               bleiben wie sie sind; sie waren nie das Problem.
               ink-600 (nicht ink-500): 12px-Ziffer auf --well ≥4.5:1 (R4/WCAG
               1.4.3, Werte nicht runden — ink-500 lag bei 4.47:1). Aktiv erbt
-              ink-900 (`.fc-schalter[aria-pressed="true"]`, index.css). */}
-          {o.text}{' '}<span className={`num ml-1 ${o.aktiv ? '' : 'text-ink-600'}`}>{zahlGruppiert(o.n)}</span>
+              ink-900 (`.fc-schalter[aria-pressed="true"]`, index.css).
+              K6 (W2·29, 23.9.2026): der Schalter selbst ruht seither in
+              ink-600 — die Zahl erbt seine Tinte, die Sonderklasse entfällt. */}
+          {o.text}{' '}<span className="num ml-1">{zahlGruppiert(o.n)}</span>
         </button>
       ))}
     </div>
