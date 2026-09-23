@@ -9,6 +9,7 @@ import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, GruppenTitel, inputCls } from '../components/vorlagen/ui';
 import { SelectionGrid, type SelectionItem } from '../components/ui/SelectionGrid';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 
 // ─── Vorlagen-Wizard: Patientenverfügung (Art. 370–373 ZGB) ─────────────────
@@ -241,6 +242,7 @@ function fehlerEingabe(a: PvAntworten, i: number): string[] {
 // bestaetigt = GATE_1: Urteilsfähigkeit + Form verstanden
 const CONFIG: VorlagenSeitenConfig<PvAntworten, PvZ> = {
   cardId: 'patientenverfuegung',
+  musterdaten: MUSTER.patientenverfuegung,
   defaults: PV_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   normalisieren: (g) => ({

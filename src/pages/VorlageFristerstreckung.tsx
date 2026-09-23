@@ -8,6 +8,7 @@ import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
 import { istIsoDatum } from '../components/vorlagen/seiteHelfer';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 
 // ─── Vorlagen-Wizard: Fristerstreckungsgesuch (Art. 144 ZPO) ────────────────
 // P1-Vorlage der Wettbewerbsanalyse 12.6.2026 (FAHRPLAN-VORLAGEN-AUSBAU V2).
@@ -134,6 +135,7 @@ function fehlerEingabe(a: FeAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<FeAntworten> = {
   cardId: 'fristerstreckungsgesuch',
+  musterdaten: MUSTER.fristerstreckungsgesuch,
   defaults: FE_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   zusammenstellen: feZusammenstellen,

@@ -8,6 +8,7 @@ import type { PdfBanner } from '../lib/vorlagen/banner';
 import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { istIsoDatum } from '../components/vorlagen/seiteHelfer';
 
 // ─── Vorlagen-Wizard: Nichtbekanntgabe Betreibung (Art. 8a III lit. d SchKG) ─
@@ -106,6 +107,7 @@ function fehlerEingabe(a: NbAntworten, schritt: number, gates: { blocker: string
 
 const CONFIG: VorlagenSeitenConfig<NbAntworten> = {
   cardId: 'nichtbekanntgabe-betreibung',
+  musterdaten: MUSTER['nichtbekanntgabe-betreibung'],
   defaults: NB_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   zusammenstellen: nbZusammenstellen,

@@ -9,6 +9,7 @@ import { Checkbox, Field, GruppenTitel, inputCls } from '../components/vorlagen/
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 
 // ─── Vorlagen-Wizard: Heimarbeitsvertrag (Art. 351–354 OR) ──────────────────
 // Sonderregime mit eigenem Schema (lib/vorlagen/heimarbeitsvertrag.ts).
@@ -118,6 +119,7 @@ function fehlerEingabe(a: HaAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<HaAntworten, HaZ> = {
   cardId: 'arbeitsvertrag',
+  musterdaten: MUSTER.heimarbeitsvertrag,
   defaults: HA_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   // Ist-Zustand vor dem Umzug (§6): kein Profil-Prefill, Detailgrad-Default

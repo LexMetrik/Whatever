@@ -10,6 +10,7 @@ import { Checkbox, Field, ListenEditor, NICHT_GESPEICHERT_HINWEIS, inputCls } fr
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { GerichtsWahlBlock } from '../components/vorlagen/GerichtsWahlBlock';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 
 // ─── Vorlagen-Wizard: Gemeinsames Scheidungsbegehren (Art. 285/286 ZPO) ─────
 // Zweite Musterklagen-Maske Familienrecht (Bauspez. §3.2). Weiche
@@ -180,6 +181,7 @@ const fehlerEingabe = (a: SbAntworten, schritt: number): string[] =>
 // Ort/Datum ohne Feld-Fehler, kompakte Vorschau.
 const CONFIG: VorlagenSeitenConfig<SbAntworten> = {
   cardId: 'scheidungsbegehren-gemeinsam',
+  musterdaten: MUSTER['scheidungsbegehren-gemeinsam'],
   defaults: SB_DEFAULTS,
   zusammenstellen: (a) => ({ ergebnis: sbZusammenstellen(a) }),
   pruefeGates: (a) => ({ blocker: sbMaengel(a).map((m) => m.text), warnungen: [], hinweise: [] }),

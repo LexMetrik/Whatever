@@ -15,6 +15,7 @@ import { ZefixSuche } from '../components/vorlagen/ZefixSuche';
 import { uidGueltig, uidNormalisieren } from '../lib/uid';
 import { kvPrefillLesen } from '../lib/vorlagen/klageVereinfacht';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 
 // ─── Vorlagen-Wizard: Klage im vereinfachten Verfahren (BS-Pilot) ───────────
@@ -375,6 +376,7 @@ const stoppVon = (a: KvAnswers): boolean => {
 // (ortDatumImPruefen: false); Kanton in der Overline; kompakte Vorschau.
 const CONFIG: VorlagenSeitenConfig<KvAnswers> = {
   cardId: 'klage-vereinfacht',
+  musterdaten: MUSTER['klage-vereinfacht'],
   defaults: KV_DEFAULTS,
   // Prefill-Brücke 2.1b (Zuständigkeits-Wizard): Materie + Streitwert
   // vorbefüllt, voll editierbar; SSR-sicher via try/catch.

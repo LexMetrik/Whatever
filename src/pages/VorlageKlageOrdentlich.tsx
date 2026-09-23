@@ -13,6 +13,7 @@ import { Checkbox, Field, GruppenTitel, ListenEditor, NICHT_GESPEICHERT_HINWEIS,
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { GerichtsWahlBlock } from '../components/vorlagen/GerichtsWahlBlock';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 
 // ─── Vorlagen-Wizard: Klage im ordentlichen Verfahren (alle Kantone) ─────────
@@ -337,6 +338,7 @@ const fehlerEingabe = (a: KoAnswers, schritt: number): string[] =>
 // Kanton in der Overline; kompakte Vorschau.
 const CONFIG: VorlagenSeitenConfig<KoAnswers> = {
   cardId: 'klage-ordentlich',
+  musterdaten: MUSTER['klage-ordentlich'],
   defaults: KO_DEFAULTS,
   defaultsZusatz: () => { try { return koPrefillLesen(window.location.search) ?? {}; } catch { return {}; } },
   zusammenstellen: (a) => ({ ergebnis: koZusammenstellen(a) }),

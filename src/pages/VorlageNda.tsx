@@ -8,6 +8,7 @@ import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 
 // ─── Vorlagen-Wizard: Geheimhaltungsvereinbarung (NDA) ──────────────────────
@@ -141,6 +142,7 @@ function fehlerEingabe(a: NdaAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<NdaAntworten> = {
   cardId: 'nda',
+  musterdaten: MUSTER.nda,
   defaults: NDA_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   zusammenstellen: ndaZusammenstellen,

@@ -10,6 +10,7 @@ import { BetragsFeld } from '../components/BetragsFeld';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { istIsoDatum } from '../components/vorlagen/seiteHelfer';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 
@@ -156,6 +157,7 @@ function fehlerEingabe(a: AfAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<AfAntworten> = {
   cardId: 'auftrag',
+  musterdaten: MUSTER.auftrag,
   defaults: AF_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   zusammenstellen: afZusammenstellen,

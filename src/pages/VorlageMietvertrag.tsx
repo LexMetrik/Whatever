@@ -14,6 +14,7 @@ import { Checkbox, Field, GruppenTitel, inputCls, ListenEditor, NormLink } from 
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { VariantenKopf } from '../components/vorlagen/VariantenKopf';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { KANTONE } from '../lib/kantone';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 
@@ -415,6 +416,7 @@ function fehlerEingabe(a: MvAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<MvAntworten, MvZ> = {
   cardId: 'mietvertrag-wohnen',
+  musterdaten: MUSTER['mietvertrag-wohnen'],
   defaults: MV_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   normalisieren: (g) => ({

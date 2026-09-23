@@ -10,6 +10,7 @@ import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, inputCls } from '../components/vorlagen/ui';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
+import { MUSTER } from '../components/vorlagen/musterdaten';
 import { istIsoDatum } from '../components/vorlagen/seiteHelfer';
 
 // ─── Vorlagen-Wizard: Verjährungsverzichtserklärung (Art. 141 OR) ───────────
@@ -107,6 +108,7 @@ function fehlerEingabe(a: VvAntworten, schritt: number): string[] {
 
 const CONFIG: VorlagenSeitenConfig<VvAntworten> = {
   cardId: 'verjaehrungsverzicht',
+  musterdaten: MUSTER.verjaehrungsverzicht,
   defaults: VV_DEFAULTS,
   speicherKey: SPEICHER_KEY,
   zusammenstellen: vvZusammenstellen,
