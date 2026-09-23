@@ -1,7 +1,7 @@
 import { AbrufFehler } from '../ui/AbrufFehler';
 import { Datum } from '../ui/Datum';
 import { fedlexLokalisiert, type Locale } from '../locale';
-import { revisionTitel, type RevisionBezug } from '../../lib/normtext/revisionen';
+import { revisionSchluessel, revisionTitel, type RevisionBezug } from '../../lib/normtext/revisionen';
 import { IN_KRAFT_FUER_CH_LABEL, datumCh } from '../../lib/normtext/erlassKopfText';
 import { aenderungZeitbezug } from '../../pages/gesetz-leser/zukunftsfassungen';
 import type { BotschaftBezug } from '../../lib/materialien/botschaften';
@@ -80,7 +80,7 @@ export function RevisionenGruppe({ revFehler, revAenderungen, revMarker, botscha
               const titel = revisionTitel(r, locale as 'de' | 'fr' | 'it');
               const bot = r.botschaftKey ? botschaftNachKey.get(r.botschaftKey) : undefined;
               return (
-                <li key={r.ocUri} className="text-body-s">
+                <li key={revisionSchluessel(r)} className="text-body-s">
                   <a href={fedlexLokalisiert(r.quelleUrl, locale)} target="_blank" rel="noopener noreferrer"
                     className="no-underline hover:text-brass-700">
                     {/* Finding 4b, zweite Stufe (W2·18-FEHLERBUCH): bei den (whitelisteten)
