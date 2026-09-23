@@ -61,14 +61,8 @@ export function LeserLeseZeile({
         ? // gap-5 statt gap-8 (Auftrag David 29.8.2026: «weniger Abstand Gesetz ↔
           // Gliederung») — muss mit SPUR_ABSTAND in rahmenSpalten.ts übereinstimmen.
           //
-          // E-4 (Design-Konsistenz 31.8.2026): `duration-200 ease-out` waren die
-          // letzten rohen Motion-Werte der Darstellungsschicht — 200 ms lag
-          // neben der Haus-Stufe `--dur-slow` (220 ms), und `ease-out` neben der
-          // EINEN Kurve `--ease`. Beide Token kommen aus src/index.css
-          // (D-1.7 Motion-Dedup, tailwind.config transitionDuration/
-          // transitionTimingFunction). `ease-out` fällt ERSATZLOS weg: die
-          // `transition-[…]`-Utility setzt bereits die Default-Kurve, und die
-          // ist in der Config auf `var(--ease)` gelegt.
+          // E-4 (31.8.2026): Dauer und Kurve kommen aus den Motion-Token
+          // (`duration-slow`, Default-Kurve = `var(--ease)`), nie roh.
           'grid gap-5 motion-safe:transition-[grid-template-columns] motion-safe:duration-slow'
         : ''}
       style={bild.spalten ? { gridTemplateColumns: bild.spalten } : undefined}>
@@ -98,52 +92,23 @@ export function LeserLeseZeile({
               ? 'calc(100vh - var(--nt-stick) - 1.5rem)'
               : 'calc(100dvh - var(--leser-kopf-h) - var(--leser-sub-h) - 1rem)',
           }}>
-          {/* D32 (7.9.2026): der Griff «‹ Gliederung ausblenden» stand hier als
-              eigene 28-px-Zeile über der Gliederung. Er ist in den linken
-              Streifen der Kopfzeile gezogen (`./LeserKopf`, `gliederungGriff`),
-              der seit D32 genau die Breite dieser Spur hat und sonst leer
-              stünde — Beschriftung, Ä12-Herleitung und `aria-expanded`
-              unverändert mitgenommen, nur der Ort ist neu. Folge, gewollt und
-              in den Bildbogen aufgenommen: die Gliederung beginnt 28 px höher. */}
+          {/* D32 (7.9.2026): der Griff «‹ Gliederung ausblenden» steht im
+              linken Streifen der Kopfzeile (`./LeserKopf`), nicht mehr hier. */}
           {leiste}
         </aside>
       )}
 
-      {/* Rechte Zelle: Erlass-Kopf UND Lesespalte. Der Erlass-Kopf lief bis H1
-          über die VOLLE Breite und schob die Seitenleiste bei 1440 px unter die
-          Falz — obwohl sie in V3 die Hauptnavigation ist.
-
-          Auftrag David 21.8.2026 · SCROLL-BLUR: eine dezente Verlaufskante am
-          Kopf-Unterrand (wo `--nt-stick` endet) und am unteren Viewport-Rand,
-          damit Text sanft unter dem klebenden Kopf verschwindet statt hart zu
-          schneiden — wie in Chat-Oberflächen. Reines CSS, keine Scroll-Handler
-          (§15): `position: sticky` folgt automatisch dem jeweils NÄHEREN
-          Scroll-Container — dem Fenster in der Einzelansicht, dem
-          `overflow-y-auto`-Pane im Split-View (`components/layout/Shell.tsx`)
-          — ohne dass diese Datei wissen muss, welcher Fall gerade gilt.
-          `h-0` an den beiden äusseren Trägern: sie nehmen im Fluss KEINEN Platz
-          ein (kein CLS, keine zusätzliche Lücke in `space-y-5`) — der sichtbare
-          Streifen ist ein `overflow-visible`-Kind, das aus der Null-Höhe heraus
-          über den scrollenden Text ragt. Eigene Ebene AUSSERHALB von
-          `LeserLesespalte` (PX-gesperrt, s. dort) — kein Byte dort angefasst.
-          `bg-paper`: dieselbe opake Fläche wie der klebende Kopf
-          (`LeserKopf.tsx`), also nahtlos; Token statt Hex, beide Themes über
-          die CSS-Variable `--paper`. `print:hidden`: im Druck nur Ballast.
-
-          Auftrag David 21.8.2026 · DEZENTER: die erste Fassung wirkte zu
-          kräftig — Höhe halbiert (h-8 → h-4, 32px → 16px) UND die
-          Startdeckung abgeschwächt (`from-paper` volldeckend →
-          `from-paper/70`, Opacity-Modifier auf demselben Token, Tailwind
-          3.4 löst ihn per `color-mix()` auf — Beleg-Präzedenz
-          `EntscheidLeser.tsx` `bg-paper/95`, `SuchBereichWahl.tsx`
-          `bg-paper/60`). `-mt-4` zieht mit der neuen Höhe mit, sonst
-          verschöbe sich der untere Streifen vom Viewport-Rand weg. */}
-      {/* W2·24-R4 · der Satzspiegel-Anker sitzt AN DER LESE-ZELLE, nicht am
-          Leser-Wurzelelement: die Ausbaustufe ist eine Aussage über DIESE
-          Fläche (`bild.satzspiegel` ist aus ihrer Breite gerechnet), und der
-          Kontext daneben reicht sie an `parts/ArtikelLeser` weiter. Beides
-          zusammen an einem Ort — `index.css` (Block «SATZSPIEGEL») und
-          `ArtikelLeser` lesen dieselbe Quelle. */}
+      {/* Rechte Zelle: Erlass-Kopf UND Lesespalte (seit H1 nicht mehr über die
+          volle Breite — sonst rutschte die Seitenleiste @1440 unter die Falz).
+          SCROLL-BLUR (Auftrag David 21.8.2026, «dezenter» nachgezogen): je eine
+          16-px-Verlaufskante am Kopf-Unterrand und am unteren Rand, reines CSS
+          (§15) — `sticky` folgt dem jeweils näheren Scroll-Container (Fenster
+          oder Pane). Die Träger sind `h-0` (kein Platz, kein CLS), `bg-paper`
+          wie der klebende Kopf, im Druck ausgeblendet.
+          Der Satzspiegel (`bild.satzspiegel`, aus der Breite DIESER Zelle
+          gerechnet) geht als Kontext an `parts/ArtikelLeser`; `data-lr-spiegel`
+          hat seit R6c keinen CSS-Leser mehr und bleibt als Sonden-Anker
+          (`leser-klapp-sonde`, `leser-v3-kontext-cls`, `w224-leser-d32-d33`). */}
       <SatzspiegelKontext.Provider value={bild.satzspiegel}>
       <div className="relative min-w-0" data-lr-spiegel={bild.satzspiegel}>
         {/* D33 (7.9.2026): die Panel-Zone steht IN der Lese-Zelle, nicht neben

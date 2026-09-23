@@ -253,36 +253,16 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
   // nur ihr Sonst-Zweig war) ist ersatzlos gefallen. Kein Ladepfad, kein Netz —
   // ein Nachschlag in einer statischen Tabelle je Artikel (§15).
   const werkzeuge = werkzeugeAmArtikel(erlass?.key, e.artikel);
-  // ── W2·24-D40 (David 7.9.2026) · DER FASSUNGS-SLOT IM KOPF IST GEFALLEN ──
-  // Wörtlich: «und wieso ist fassung nicht auch unten am artikel?». Hier stand
-  // bis D40 `histImKopf`/`histSlot` — der Slot `[data-hist-slot]` mit «Gilt
-  // seit … ▸», in der Breitform neben dem Randtitel (`.lr7-fassung`), in der
-  // Zeilenform im Beiwerk. Beide Orte sind ERSATZLOS gelöscht, nicht bewacht
-  // (§17-Gegengewicht): die Auskunft ist jetzt die Rubrik «Fassung» der
-  // Funktionszeile am Artikelende, wo alle anderen artikelbezogenen Rubriken
-  // seit D34/D35 stehen (`./ArtikelLeser.bezuegeFuss.tsx`, Marke `reg: 'f'`).
-  //
-  // MIT DEM SLOT FÄLLT SEINE RESERVE (`mt-4 min-h-beiwerk`, §15.2/Ä26, und die
-  // `:empty`-Zeilenbox aus W2·24-CI). Sie fing einen idle eintreffenden Shard
-  // ab, der jetzt nichts mehr im Lesekörper aufblendet: die Zeitleiste rendert
-  // erst auf Klick, die Marke wächst in eine Zeile hinein, die ohnehin auf die
-  // Zähl-Datei wartet. Eine Reservierung ohne Gegenstand wäre die Phantom-Lücke,
-  // gegen die Ä26 sie überhaupt artikelweise gemacht hat (§8).
-  //
-  // WAS DER DRUCK BEHÄLT, steht unten in der Beiwerk-Zone (`[data-hist-druck]`).
-  //
-  // Der Randtitel steht seit dem §6.6-Split (W2·24-F) als Bauteil in
-  // `./ArtikelLeser.kopfteile` — beide Satzspiegel-Formen zeigen DASSELBE
-  // Markup an zwei verschiedenen Orten, und genau darum ist es ein Bauteil
-  // (Herleitung dort). Hier bleibt er ein Wert, weil jede Form ihn an ihrer
-  // eigenen Stelle einsetzt.
-  /** Trägt die Randtitel-Zeile der ZEILENFORM überhaupt etwas? Ohne das stünde
-   *  der Registerfarben-Strich als Balken über einer leeren Zeile — Lärm statt
-   *  Gliederung. In React entschieden und nicht per `:has()`: eine
-   *  `:has()`-Regel über 1686 Artikel ist genau die Bauart, die
-   *  W2·19-GLIEDERUNG/F1 als Scroll-Bremse nachgewiesen hat.
-   *  Wertgleich mit der Null-Bedingung von `RandTitel` — die Breitform prüft
-   *  darum ebenfalls hiergegen (§6-Split W2·24-F, Herleitung dort). */
+  // D40 (David 7.9.2026): der Fassungs-Slot im Kopf ist ersatzlos gefallen;
+  // die Auskunft ist die Rubrik «Fassung» der Funktionszeile am Artikelende
+  // (`./ArtikelLeser.bezuegeFuss.tsx`), der Druck behält sie unten in
+  // `[data-hist-druck]`. Der Randtitel ist seit W2·24-F ein Bauteil
+  // (`./ArtikelLeser.kopfteile`); hier bleibt er ein Wert, weil jede
+  // Satzspiegel-Form ihn an ihrer eigenen Stelle einsetzt.
+  /** Trägt der Randtitel überhaupt etwas? Ohne das wäre der Artikelkopf der
+   *  Breitform ein leerer Kasten (§8). In React entschieden, nicht per `:has()`
+   *  (über 1686 Artikel eine Scroll-Bremse, W2·19-GLIEDERUNG/F1). Wertgleich
+   *  mit der Null-Bedingung von `RandTitel`. */
   const randInhalt = (marg != null && marg.length > 0) || !!e.titel;
   const randTitel = (
     <RandTitel marg={marg} margBasis={margBasis} titel={e.titel} artikel={e.artikel}
@@ -299,73 +279,30 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
       // Scrollbalken wird proportional. `content-visibility:auto` (Klasse) bleibt;
       // reiner Platzhalter-Schätzwert, kein DOM-/Inhalts-Eingriff (§15/1).
       style={{ containIntrinsicSize: `auto ${schaetzeArtikelHoehe(e)}px` }}
-      // ─── W2·19-GLIEDERUNG / F1: Hover-Spotlight ERSATZLOS entfernt ──────────
-      // WAR: `transition duration-200 group-has-[[data-lese]:hover]/lese:opacity-80
-      //       has-[[data-lese]:hover]:!opacity-100 has-[[data-lese]:hover]:z-[5]`
-      // (Commit 820db9dc1, 18.6.2026 — «andere Artikel dimmen», Davids Wunsch).
-      //
-      // WARUM WEG (Messung, bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md):
-      // die Kette hing an JEDEM der 1686 <article> des OR. Jedes Hover-Kippen beim
-      // Scrollen startete 1686 gleichzeitige Opazitäts-Transitionen (4 Ereignisse je
-      // Element) — gemessen 142 208 Transition-Ereignisse je 60-Schritt-Scroll,
-      // React-Root-Dispatcher 284 499 Aufrufe/7 s. Anteil an der Blockierzeit ~78 %
-      // (U1); die verbleibenden ~20 % (U2) sind die `:has()`-Invalidierung über die
-      // ganze Lesespalte, die mit der Kette ebenfalls entfällt. Belegte Wirkung:
-      // Frame-Median 33.3 → 16.7 ms (30 → 60 fps) @1×, TBT @4× 8845–9003 ms →
-      // Boden 283–297 ms (Maus-am-Rand-Referenzmessung).
-      //
-      // ERSATZLOS auf Entscheid David 8.8.2026 abends: «der Dimm-Effekt kann auch weg
-      // — Gliederung ist wichtiger». Damit entfällt auch der im Dossier aufgeschobene
-      // Scrim-Ersatz (F1b); es wird KEIN anderes Mittel eingesetzt.
-      //
-      // WAS BLEIBT: `group` (der Aktions-Slot der Kopfzeile hängt mit
-      // `group-hover:opacity-100` daran, s. u.), `relative z-base` (unveränderte
-      // Stapelordnung des Ruhezustands — nur der Hover-Sprung auf z-[5] fällt weg;
-      // `z-base` = C3-Rolle für den Wert 0, s. index.css bei --z-base).
-      // §15-Logikverlust: keiner — reine Darstellung (§3), Normtext, Anker, Ctrl+F,
-      // Druck und Golden-Ausgaben sind unberührt.
-      className={`lr-satz nt-art-cv group relative z-base nt-anker border-t ${istAnhang ? 'border-rule-struktur pt-9 mt-9' : 'border-rule-artikel pt-7 mt-7'} first:border-t-0 first:mt-0 first:pt-0`}>
-      {/* ═══ W2·24-R6b · DER ARTIKEL: KOPF · WORTLAUT · BEIWERK ═════════════
-          Bis R6 lagen hier drei Grid-Spalten (Marginalie · Text · Randnotizen).
-          Beide Randspuren sind gefallen (Auftrag David 6.9.2026, Herleitung in
-          `../v3/satzspiegel.ts`); übrig bleibt der EINE Fluss, den die
-          Zeilenform immer schon hatte — nur trägt der Artikelkopf in der
-          Breitform jetzt den Randtitel, das Fassungsdatum und die Bezüge-Zeile.
-
-          Die Zeilenform ist damit unverändert: Randtitel als Zeile über der
-          Artikelnummer (Auftrag David 26.6.2026 — Fedlex-Stil; bleibt auch bei
-          eingeklapptem/aufgehobenem Artikel sichtbar), Beiwerk unter dem
-          Wortlaut. */}
-      {!kopfForm && (
-        <div className="lr-rand">
-          {/* Registerfarben-Strich: ausserhalb der Randspalte 0 px hoch
-              (`index.css`, `.lr-reg`) — er darf die Zeilenform nicht um eine
-              Zeile verschieben. */}
-          {randInhalt && <span aria-hidden className="lr-reg" />}
-          {randTitel}
-        </div>
-      )}
-      <div className="lr-text">
-        {/* ── (a) BREITFORM: Randtitel + Fassungsdatum ÜBER der Artikelnummer ──
-            Auftrag David 6.9.2026: der Randtitel als kursive Literata-Zeile im
-            Artikelkopf, das Fassungsdatum klein daneben. Beides stand bis R6
-            links in einer 150-px-Spalte, die dem Text die Breite nahm. Der
-            Fassungs-Slot wandert MIT SEINER RESERVE (`min-h-beiwerk`), damit der
-            späte Shard-Resolve weiter reservierten Platz füllt statt zu schieben
-            (§15.2). */}
-        {/* W2·24-F: `randInhalt` statt `randTitel` — seit dem §6.6-Split ist der
-            Randtitel ein Bauteil und damit immer ein Element; die Frage «steht
-            überhaupt etwas darin?» beantwortet der Wert, den die Zeilenform
-            oben ohnehin schon bildet (wertgleich mit der Null-Bedingung von
-            `RandTitel`). */}
-        {/* D40: die Bedingung ist wieder die EINE Frage «trägt der Randtitel
-            etwas?». Die beiden anderen Glieder (`fussAnzeige.length > 0 ||
-            historie`) standen nur dafür da, den Fassungs-Slot daneben zu
-            tragen — mit ihm sind sie gefallen; ohne Randtitel wäre der Kopf
-            sonst ein leerer Kasten (§8/§13). */}
+      // W2·19-GLIEDERUNG/F1: das Hover-Spotlight («andere Artikel dimmen») ist
+      // ersatzlos entfernt (Entscheid David 8.8.2026; Messung
+      // `bibliothek/betrieb/gliederung-perf-diagnose-2026-08-08.md`: 1686
+      // gleichzeitige Transitionen je Hover-Kippen, Frame-Median 33 → 17 ms).
+      // `group` bleibt für den Aktions-Slot, `relative z-base` für die
+      // Stapelordnung des Ruhezustands.
+      className={`nt-art-cv group relative z-base nt-anker border-t ${istAnhang ? 'border-rule-struktur pt-9 mt-9' : 'border-rule-artikel pt-7 mt-7'} first:border-t-0 first:mt-0 first:pt-0`}>
+      {/* DER ARTIKEL: KOPF · WORTLAUT · BEIWERK (W2·24-R6b, David 6.9.2026:
+          die Randspuren links/rechts sind gefallen, ein Fluss). Zeilenform:
+          Randtitel als Zeile über der Artikelnummer (Fedlex-Stil, David
+          26.6.2026; auch bei eingeklapptem/aufgehobenem Artikel sichtbar),
+          Beiwerk unter dem Wortlaut. */}
+      {!kopfForm && <div>{randTitel}</div>}
+      {/* `.lr-text` ist Sonden-Anker (Textspalte, `leser-marken-geometrie`);
+          `min-w-0`: ein langes Wort sprengt sonst das Raster. */}
+      <div className="lr-text min-w-0">
+        {/* BREITFORM (Inventar 2.3.3): der Randtitel über der Artikelnummer,
+            seine Sachüberschrift (`.lr-blatt`) kursiv in der Lese-Serife —
+            Familie und Schnitt kommen von hier, das Gewicht bleibt beim
+            Randtitel (`margStufeStil`, eine Rolle, ein Gewicht, §5). Die
+            Baseline-Zeile hält die gemessene Kopfhöhe. */}
         {kopfForm && randInhalt && (
-          <div className="lr7-kopf">
-            <div className="lr7-kopf-titel">{randTitel}</div>
+          <div className="mb-0.5 flex items-baseline">
+            <div className="min-w-0 [&_.lr-blatt]:font-serif [&_.lr-blatt]:italic">{randTitel}</div>
           </div>
         )}
         {/* Kopfzeile des Artikels: «Art. N» als Anker über dem Fliesstext. */}
@@ -403,7 +340,7 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                   // des Klapp-Knopfes, gemessen 2.28:1 hell / 2.34:1 dunkel
                   // gegen `--paper`, unter der F2-Schwelle 3:1 für Nicht-Text.
                   // Herleitung ausführlich am Zwilling in `SektionBaumTOC.tsx`.
-                  className="inline-flex w-4 shrink-0 justify-center text-micro text-ink-500 hover:text-brass-700">{artOffen ? '▾' : '▸'}</button>}
+                  className="inline-flex w-4 shrink-0 justify-center text-micro text-ink-500 hover:text-ink-900">{artOffen ? '▾' : '▸'}</button>}
             {/* Anhang/Protokoll (③/⑤): «Anhang N»/«Protokoll N …» als Struktur-
                 Überschrift (font-display, Titel-Grösse) statt als Artikelnummer
                 (num/bold) — es ist ein Block-Titel, keine zitierbare Bestimmung. */}
@@ -415,12 +352,12 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               <button type="button" onClick={() => onSpringe(e.artikel)}
                 title="Im Volltext zu diesem Artikel springen"
                 className={istAnhang
-                  ? 'font-display text-h3 font-semibold text-ink-900 hover:text-brass-700 text-left'
-                  : `num text-base font-bold tracking-wide hover:text-brass-700 text-left ${ohneWortlaut ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</button>
+                  ? 'font-display text-h3 font-semibold text-ink-900 hover:text-ink-900 text-left'
+                  : `num text-base font-semibold hover:text-ink-900 text-left ${ohneWortlaut ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</button>
             ) : (
               <a href={`#art-${e.artikel}`} className={istAnhang
-                ? 'font-display text-h3 font-semibold text-ink-900 hover:text-brass-700 no-underline'
-                : `num text-base font-bold tracking-wide hover:text-brass-700 no-underline ${ohneWortlaut ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</a>
+                ? 'font-display text-h3 font-semibold text-ink-900 hover:text-ink-900 no-underline'
+                : `num text-base font-semibold hover:text-ink-900 no-underline ${ohneWortlaut ? 'text-ink-500 font-normal' : 'text-ink-900'}`}>{label}</a>
             )}{fnMarker}
             </span>
             {/* aufgehoben gedämpft, aber ink-500 (WCAG 4.5:1 hell+dunkel) statt
@@ -444,20 +381,9 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
                 Artikelnummer daneben trägt in diesem Modus aus demselben Grund
                 schon einen `<button>` statt eines Ankers. */}
             {!imTreffer && nachbarn && <ArtikelNachbarn nachbarn={nachbarn} adresse={nachbarnAdresse} />}
-            {/* ── W2·24-D35-F1 (David 7.9.2026) · HIER STANDEN DIE AKTIONEN ──
-                «Zitat · Link · Amtliche Fassung ↗» sassen rechtsbündig in
-                dieser Kopfzeile — und trugen `opacity-0` bis Hover, Fokus oder
-                Touch (gemessen 7.9.2026: Deckkraft 0). Mit dem Variante-A-
-                Entscheid stehen sie am ARTIKELENDE in der Funktionszeile,
-                dauerhaft sichtbar (`./ArtikelAktionen.tsx`, eingehängt unten am
-                `<ArtikelBezuegeFuss aktionen=…>`).
-
-                ERSATZLOS gelöscht, nicht zusätzlich gebaut (§5/§17-Gegengewicht):
-                zwei Orte für dieselbe Aktion wären genau die Dopplung, die D35
-                abräumt. Mit der Zeile fällt auch ihr `data-such-meta`-Bedarf
-                weg — die Suche kann in dieser Kopfzeile keine unsichtbaren
-                Fundstellen mehr malen (Bug-Check B1, 4.8.2026), weil hier keine
-                Bedienwörter mehr stehen. */}
+            {/* D35-F1 (David 7.9.2026): die Aktionen «Zitat · Link · Amtliche
+                Fassung ↗» stehen nicht mehr hier (dort unter `opacity-0`),
+                sondern am Artikelende in der Funktionszeile. */}
             {/* Amtliche Aufhebungsnotiz (eigene Zeile, dezent eingerückt) — M2: erst
                 auf Klick (hinter dem Fussnoten-Schalter), wie jede andere Fussnote.
                 Die Statuszeile oben bleibt unabhängig immer sichtbar. */}
@@ -549,146 +475,26 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
               klick-getrieben, liegt binnen 500 ms nach der Eingabe und ist damit per
               Definition kein unerwarteter Sprung. Zahlen im Vollzugsvermerk S2. */}
           <div data-beiwerk>
-          {/* ── W2·24-D34 · WAS HIER NICHT MEHR STEHT ───────────────────────
-              Bis D33 trug das Beiwerk der ZEILENFORM einen ZWEITEN Artikelfuss:
-              eine offene Verweis-Chip-Reihe und daneben die unbedingte
-              Rechtsprechungs-Zeile (`BezuegeZeile`, sonst `LeitfallZeile`).
-              Derselbe Fachinhalt wie die Rubriken «Verweise» und «Entscheide»
-              der Breitform — nur in anderer Gestalt, an anderem Ort und aus
-              einer anderen Prop: zwei Wahrheiten am selben Artikel (§5).
-
-              Beide Blöcke sind mit D34 ERSATZLOS gelöscht, nicht bewacht
-              (§17-Gegengewicht). Verweise, Entscheide, Materialien und Rechner
-              stehen in BEIDEN Formen im EINEN Bezüge-Fuss unter diesem Block
-              (`ArtikelBezuegeFuss`, ganz unten) — und erst auf Aufklappen.
-
-              NEBENWIRKUNG, ausdrücklich erwünscht: Pos. 12 kann es baulich
-              nicht mehr geben. Die gelöschte Zeile war die Stelle, an der der
-              eintreffende Bezugs-Shard @390 in den Lesekörper hineinwuchs
-              (gemessen an der StPO, Artikel-y 1385→1493→…; `leser-v3-kontext-
-              cls` (b)). Ein geschlossenes `<details>` legt seinen Inhalt nicht
-              ins Layout — die Zusage hängt jetzt an der Bauart, nicht mehr an
-              der Disziplin, eine Prop wegzulassen. */}
-          {/* ═══ W2·24-D40 (David 7.9.2026) · WAS HIER NOCH STEHT: DER DRUCK ═══
-              Wörtlich: «und wieso ist fassung nicht auch unten am artikel?».
-              Auf dem BILDSCHIRM steht die Fassungs-Auskunft seither in der
-              Funktionszeile am Artikelende, als Rubrik «3 Fassungen ›» neben den
-              anderen (`./ArtikelLeser.bezuegeFuss.tsx`). Der reservierte Slot
-              `[data-hist-slot]`, den die Absätze darunter beschreiben, gibt es
-              nicht mehr — weder hier noch im Kopf.
-
-              AUF DEM PAPIER ÄNDERT SICH NICHTS, und das ist der Grund für dieses
-              Element. Die Funktionszeile ist `print:hidden` (sie ist Bedienung,
-              `./Funktionszeile.tsx`); ihr die Fassung zu überlassen hiesse, dem
-              Ausdruck den Stand des Artikels zu nehmen — die Auskunft, die ein
-              Aktenstück am dringendsten braucht (§8, dieselbe Sorge wie die
-              Stand-Zeile im Erlass-Kopf, `e2e/druck-fundstellen-z2`).
-
-              KEINE ZWEITE WAHRHEIT (§5): es ist DIESELBE Komponente mit
-              DENSELBEN Daten, nur eine zweite Projektion — Bildschirm auf Klick,
-              Papier immer. Und es ist BYTE-GLEICH zu dem, was der Drucker bis
-              D40 bekam: dort war die Zeitleiste zugeklappt, also stand auch nur
-              das Badge «Fassung · Gilt seit …» auf dem Blatt (`zeitleiste`
-              bleibt darum aus, §2b — der Druckstand wird gehalten, nicht
-              nachgeführt).
-
-              KOSTET NICHTS ZUSÄTZLICH: die Komponente wurde bis D40 an genau
-              dieser Stelle für JEDEN Artikel gerendert. `hidden print:block` ist
-              `display:none` am Bildschirm — kein Layout, kein Paint, keine
-              Reserve (die 24-px-Reserve ist mit dem Slot gefallen, s. o.).
-              Die Dreier-Wahl greift weiter (`html[data-vermerke]` auf
-              `[data-hist-druck]`, `src/index.css`): sie stand schon bisher
-              ausserhalb von `@media screen`, weil der Fassungs-Slot ABGELEITET
-              ist und der Wahl auch im Druck folgt. */}
+          {/* D34/D40 (David 7.9.2026): Verweise, Entscheide, Materialien, Rechner
+              und die Fassung stehen in BEIDEN Formen im EINEN Bezüge-Fuss unten
+              (`ArtikelBezuegeFuss`), erst auf Aufklappen — der frühere zweite
+              Artikelfuss der Zeilenform und der Fassungs-Slot samt Reserve
+              (`min-h-beiwerk`) sind ersatzlos gefallen.
+              DER DRUCK behält die Fassung: die Funktionszeile ist `print:hidden`,
+              und ein Aktenstück braucht den Stand des Artikels (§8,
+              `e2e/druck-fundstellen-z2`). Dieselbe Komponente mit denselben
+              Daten, Bildschirm auf Klick, Papier immer — byte-gleich zum
+              Druckstand vor D40 (nur das Badge, `zeitleiste` bleibt aus).
+              `hidden print:block`: am Bildschirm kein Layout, keine Reserve. Die
+              Dreier-Wahl `html[data-vermerke]` greift auch im Druck
+              (`src/index.css`). KEIN `data-such-meta` mehr (Nachtrag S1,
+              23.9.2026, zum Posten «Z. 621»: der Kommentar hier behauptete es
+              noch seit D40; folgenlos, weil der Such-Walker `display:none`
+              abschneidet). Die Belege des gefallenen Slots (Messungen 20.7. und
+              17.8.2026, S1/S2/Ä26) stehen in der Versionsgeschichte dieser Datei. */}
           <div data-hist-druck className="hidden print:block">
             <ArtikelHistorieZeile historie={historie} />
           </div>
-          {/* ── WAS HIER BIS D40 STAND (§0 Ziff. 2b: ERGÄNZT, nicht ────────────
-              nachgeführt). Die folgenden Absätze beschreiben den reservierten
-              Fassungs-Slot und seine Messungen vom 20.7./17.8.2026. Sie bleiben
-              Wort für Wort stehen: sie belegen, warum die Reserve gebaut wurde
-              und was sie gemessen verhindert hat. Der Slot selbst ist mit D40
-              gefallen (Herleitung oben), die Belege altern nicht. */}
-          {/* G-HIST-UI: «Gilt seit»-Badge + aufklappbare Fassungs-Timeline dieses
-              Artikels (aus dem erlass-lokalen Historie-Shard, idle geladen). Am
-              Artikel-Fuss wie Verweise/Leitfälle. §15.2: der Slot steht ab dem
-              ERSTEN Render und reserviert die eine Chip-Zeile (`min-h-beiwerk`,
-              Token — gemessen exakt 24 px, deterministisch über alle Artikel), damit
-              der idle-Shard-Resolve reservierten Platz FÜLLT statt sichtbare Artikel
-              zu schieben (Messung 20.7.: sonst CLS 0.0227 statt 0.0002 unter 6×). Der
-              Aussenabstand sitzt hier am Slot, nicht in der Zeile — sonst fallen
-              reservierte und gefüllte Höhe auseinander. */}
-          {/* S8: «Gilt seit»-Badge und Fassungs-Timeline sind abgeleitete
-              Metadaten, kein Wortlaut (§4.4) — `data-such-meta`.
-
-              S1 (Kap. 4f, Befund K4): der Slot trägt `data-hist-slot`, damit der
-              Schalter «Änderungsvermerke» ihn MIT ausblenden kann. Bis S1 hing die
-              «Fassung»-Zeile an gar keinem Schalter — bei «Änderungsvermerke aus»
-              blieb die Fassungshistorie als einzige Historie-Spur im Lesetext
-              stehen. Ausgeblendet wird der SLOT, nicht nur die Zeile darin: sonst
-              bliebe seine reservierte Höhe (`mt-4 min-h-beiwerk` = 16+24 px) als
-              Phantom-Lücke unter jedem Artikel zurück, und «aus» hätte doch eine
-              Spur hinterlassen. Der Inhalt bleibt im DOM (A1-Mechanik, David
-              5.7.2026: `display:none`, nie gelöscht) und «an» stellt ihn
-              vollständig wieder her.
-
-              S2 · Ä26 (Phantom-Lücke, Ästhetik-Prüfer 17.8.2026): die Reservierung
-              stand bisher unter JEDEM Artikel JEDES Erlasses — auch dort, wo nie eine
-              Fassungs-Zeile eintreffen kann (auf BS-640.100 sind das 292 von 292).
-              Sie folgt jetzt dem Datenmodell, und zwar ARTIKELWEISE.
-
-              DIE FRAGE, die die Reservierung stellen MUSS: «kann in DIESEM Slot je
-              eine Fassungs-Zeile eintreffen?» Sie ist am Datenmodell exakt
-              beantwortbar, weil der Erzeuger sie selbst so stellt:
-              `scripts/normtext/historie-generieren.ts` baut die Shard-Einträge
-              AUSSCHLIESSLICH aus den gespeicherten Fussnoten des jeweiligen Artikels
-              (`artikel[<token>].fussnoten` → `baueArtikelHistorie`). Ein Artikel ohne
-              Fussnote kann darum keinen Eintrag bekommen — das ist eine
-              GENERATOR-INVARIANTE, keine Korpus-Zufälligkeit. Empirisch gegengeprüft
-              (17.8.2026, alle 209 Shards gegen alle Struktur-Sidecars): 24 511
-              Artikel, 13 093 mit Historie-Eintrag, davon **0** ohne Fussnote.
-
-              KEINE EBENEN-WEICHE. Ein früherer S2-Zwischenstand hing die Reserve an
-              `erlass.ebene === 'bund'`. Das traf den Korpus von heute (209 Shards,
-              alle Bund — der Generator liest nur `struktur/bund`), war aber ein
-              ERLASS-SONDERPFAD in einer Komponente, die erlass-neutral rendern soll:
-              die Eigenschaft heisst «kann eine Fassungs-Zeile tragen», nicht «ist
-              Bundesrecht». Genau diesen Fehler hat S1-B3 an derselben Mechanik schon
-              einmal vermieden (`zaehleAenderungsvermerke`, berechnungen.ts: «das
-              entscheidet das DATENMODELL, nicht die Herkunft»); wäre `ebene`
-              stehengeblieben, hätte der Tag, an dem der Generator Kantonsrecht
-              aufnimmt, eine stille Phantom-Lücke erzeugt statt eines Testfehlers.
-
-              WARUM ARTIKELWEISE UND NICHT ERLASSWEISE: die Shard-Existenz (404 vs.
-              Treffer) ist erst NACH dem idle-Fetch bekannt — also genau dann, wenn
-              die Zeile schon eintrifft. Eine Reserve, die auf diese Antwort wartet,
-              käme zu spät und müsste bei 404 wieder einfallen (ein Sprung nach oben,
-              den es heute nicht gibt). Die Fussnoten dagegen kommen mit dem
-              Struktur-Sidecar, aus dem auch der Apparat direkt darunter rendert
-              (`fussAnzeige`, s. u.) — Reserve und Apparat erscheinen im SELBEN Paint,
-              der spätere Shard-Resolve füllt nur noch. Die Reserve ist damit
-              MONOTON: sie verschwindet nie wieder.
-
-              `historie` steht als zweite Bedingung im ODER, obwohl die Invariante ihn
-              überflüssig macht: träfe je ein Eintrag ohne Fussnote ein, bekäme der
-              Slot trotzdem seinen Boden. Die Regel kann so nur überreservieren, nie
-              einen Sprung durchlassen (§1 — lieber die Prüfung verdoppeln).
-
-              WIRKUNG, gemessen (17.8.2026): korpusweit reservieren 17 547 statt
-              25 403 Artikel (−31 %); auf BS-640.100 fallen 278 von 292 Slots weg
-              (95 %), auf dem OR 1092 von 1686, auf der StPO 346 von 480.
-              REST-ÜBERRESERVIERUNG, benannt statt versteckt: 4454 Artikel tragen
-              Fussnoten, aber keinen Eintrag (25 % der reservierenden) — darunter die
-              14 Fussnoten-Artikel von BS-640.100, für die es heute gar keinen Shard
-              geben kann. Das enger zu ziehen bräuchte ein Shard-Manifest im
-              Prerender-Pfad (eigener Schritt, Datenhaltung). VERWORFEN als engere
-              Regel: «Artikel trägt eine `kl:'A'`-Fussnote» reserviert nur 13 046,
-              verfehlt aber 182 Artikel MIT Eintrag (u. a. ZGB Art. 159, 181, 451) —
-              unsound, das wären 182 echte Sprünge.
-
-              Der Token heisst seit S2 `min-h-beiwerk` (Wert unverändert 1.5 rem = die
-              gemessenen 24 px der einen Chip-Zeile): er reserviert den Boden der
-              Beiwerk-Zone, nicht «eine Historie-Zeile». */}
           {/* Fussnoten (Änderungs-/Quellenhistorie, AS/BBl klickbar). W2·5d G2b:
               der Apparat liegt IMMER im DOM (Ctrl+F/Print/Screenreader, R9/§8);
               der data-fussnoten-CSS-Toggle dämpft ihn bei «AUS» (data-fn-apparat),
@@ -744,25 +550,10 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
           </div>{/* /data-beiwerk */}
         </div>
         )}
-        {/* ═══ W2·24-D34 · DER BEZÜGE-FUSS ═══════════════════════════════════
-            Auftrag David 7.9.2026, wörtlich: «das mit den bezügen soll unten an
-            den artikel und nicht direkt nach der artikel nummer». Die Zeile
-            steht darum HIER: unter dem letzten Absatz und dem Fussnoten-Apparat,
-            vor dem nächsten Artikel. Eine feine Trennlinie darüber (`.lr7-bez`,
-            `--rule-soft`) sagt «gehört noch zu diesem Artikel, ist aber nicht
-            mehr sein Wortlaut» — eine Linie, keine Fläche (F0.6).
-
-            EIN Baustein für BEIDE Formen (§5). Bis D33 hatte die Breitform ihn
-            unter dem Artikelkopf und die Zeilenform einen eigenen, anders
-            gestalteten Fuss im Beiwerk; beide Stellen sind gelöscht, `kopfForm`
-            entscheidet über die Bezüge nichts mehr.
-
-            AUSSERHALB von `artOffen`, genau wie die Kopf-Variante vorher: der
-            Apparat gehört zum Artikel, nicht zu seinem entfalteten Wortlaut —
-            ein eingeklappter (typisch: aufgehobener) Artikel behält seine
-            Bezüge-Zeile, und sie steht dann direkt unter dem Kopf, weil es
-            dazwischen nichts gibt. Im Druck bleibt sie ausgeblendet
-            (`print:hidden` in `Funktionszeile.tsx`). */}
+        {/* DER BEZÜGE-FUSS (D34, David 7.9.2026: «das mit den bezügen soll unten
+            an den artikel»): unter dem letzten Absatz und dem Fussnoten-Apparat,
+            EIN Baustein für beide Formen (§5). AUSSERHALB von `artOffen`: ein
+            eingeklappter Artikel behält seine Zeile. */}
         <ArtikelBezuegeFuss bezuege={bezuege} bezuegeImFuss={bezuegeImFuss}
           erlassKey={erlass?.key} artikel={e.artikel} snapshot={e}
           historie={historie} leitfaelle={leitfaelle} materialien={materialien} verweise={verweise}

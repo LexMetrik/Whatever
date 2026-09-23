@@ -18,64 +18,25 @@ import type { NormSnapshot } from '../../../lib/normtext/typen';
 
 // ═══ Der BEZÜGE-FUSS des Artikels — EIN Baustein für BEIDE Formen ═══════════
 //
-// §6.6-Split aus `./ArtikelLeser.tsx` (W2·24-F, 7.9.2026 — 866 Zeilen gegen
-// die Schwelle 800). Herausgelöst sind die vier Rubriken (Entscheide ·
-// Materialien · Verweise · Rechnen) samt der Zahlen-Zeile, aus der sie
-// aufklappen.
+// Diese Datei RECHNET die Rubriken (Fassung · Entscheide · Materialien ·
+// Verweise · Rechnen) und liefert je Rubrik den Inhalt, den ihr Griff
+// aufklappt; die Zeile selbst (Griffe, Zustand, Aktions-Slot) steht in
+// `./Funktionszeile.tsx`, im Einzelmodus das Dossier (`./ArtikelDossier.tsx`).
+// Entscheide dazu (Wortlaut und Herleitung in der Versionsgeschichte der
+// Datei): D34 (David 7.9.2026) — die Zeile steht am ARTIKELENDE, nicht unter
+// der Artikelnummer, und ist in beiden Satzspiegel-Formen DIESER eine Baustein
+// (§5); D35-F1 — jede Rubrik klappt einzeln und nur auf Klick auf, eine
+// zugeklappte Rubrik rendert ihren Inhalt gar nicht; D40 — die Fassung ist die
+// erste Rubrik (`historie`, Buchstabe `f`).
 //
-// ── W2·24-D34 (David 7.9.2026) · DIE ZEILE STEHT AM ARTIKELENDE ────────────
-// Wörtlich: «das mit den bezügen soll unten an den artikel und nicht direkt
-// nach der artikel nummer». Bis D33 sass die Zeile direkt unter der
-// Artikelnummer (Breitform, `kopfForm`) — dort trennte sie die Überschrift von
-// ihrem eigenen Wortlaut. Sie steht jetzt UNTER dem letzten Absatz und dem
-// Fussnoten-Apparat, vor dem nächsten Artikel, mit einer feinen Trennlinie
-// darüber (Linien statt Flächen, F0.6). Im Druck bleibt sie ausgeblendet.
-//
-// DAMIT FÄLLT DIE ZWEITE STELLE. Bis D33 hatte die ZEILENFORM (@390, Pane,
-// Trefferliste) einen EIGENEN Artikelfuss im Beiwerk der Hauptdatei: eine
-// offene Verweis-Chip-Reihe und daneben `BezuegeZeile`/`LeitfallZeile` als
-// zweiter Konsument derselben Bezugsdaten. Zwei Orte, zwei Gestalten, ein
-// Fachinhalt — genau die zweite Wahrheit, die §5 verbietet. Beide Orte sind
-// jetzt DIESER Baustein; die Form entscheidet nichts mehr (kein `kopfForm`-
-// Aufhänger). Der alte Zweig ist ersatzlos gelöscht, nicht bewacht
-// (§17-Gegengewicht).
-//
-// NEBENWIRKUNG, die ausdrücklich erwünscht ist: die Verweis-Chips und die
-// Entscheid-Liste stehen in beiden Formen nur noch INNERHALB des `<details>`.
-// Ein geschlossenes `<details>` legt seinen Inhalt nicht ins Layout — die
-// unbedingte Fuss-Zeile der Zeilenform, die beim Eintreffen des Shards in den
-// Lesekörper hineinwuchs (Pos. 12, `e2e/leser-v3-kontext-cls` (b)), kann es
-// darum baulich nicht mehr geben.
-//
-// ── W2·24-D35-F1 (David 7.9.2026) · DIE ZEILE WIRD ZUR FUNKTIONSZEILE ──────
-// Wörtlich, Nachtrag zum Variante-A-Entscheid: «das alles soll dann nur auf
-// klick aufklappbar sein». Diese Datei RECHNET die Zahlen und liefert je Rubrik
-// den Inhalt, den ihr Griff aufklappt; die Zeile selbst (Griffe, Zustand,
-// Aktions-Slot) steht in `./Funktionszeile.tsx`. Neu ist der Slot `aktionen`: die
-// Artikel-Aktionen «Zitat · Link · Amtliche Fassung ↗» stehen seither RECHTS
-// in derselben Zeile und dauerhaft sichtbar, statt in der Artikel-Kopfzeile
-// unter `opacity-0` (Herleitung in `./ArtikelAktionen.tsx`; eine vierte
-// Aktion «⧉ Artikel daneben» stand hier testweise und ist mit D44, David
-// 7.9.2026, ersatzlos gestrichen).
-//
-// ── W2·24-D40 (David 7.9.2026) · DIE FASSUNG KOMMT DAZU ────────────────────
-// Wörtlich: «und wieso ist fassung nicht auch unten am artikel?». Diese Datei
-// bekommt dafür EINE neue Prop (`historie`) und baut daraus die erste Marke der
-// Zeile; die Zeile selbst hat davon nur den Buchstaben `f` erfahren
-// (`./Funktionszeile.tsx`). Der Kopf-Slot, an dem die Auskunft bis D40 hing, ist
-// ersatzlos gefallen — nicht zusätzlich bewacht (§17-Gegengewicht). Herleitung
-// von Zahl, Inhalt und Registerfarbe steht unten an der Marke selbst.
-//
-// Der D34-Satz über das geschlossene `<details>` gilt für seinen Stand
-// unverändert weiter (§2b) — der Bau ist seit D35-F1 noch strenger: eine
-// zugeklappte Rubrik rendert ihren Inhalt GAR NICHT (bedingtes Rendern statt
-// versteckter Box). Sie kann also weder Layout noch Ladung auslösen.
-//
-// VERHALTENSNEUTRAL (§6) gegenüber D33 im INHALT: Markup, Reihenfolge, Klassen
-// und die Rechnung der Marken sind unverändert; verändert sind der ORT und die
-// Namen der von aussen kommenden Werte (`onBezuegeOeffnen` → `onOeffnen`,
-// `bezuegeLaedt && !bezuege` → `laedt`). Golden-Beweis über
-// `npm run golden:vergleich` und `check:golden-normtext`.
+// W2·29-WERKBANK-LESER S1 (23.9.2026): die Listenform der Rubriken
+// «Materialien» und «Rechnen» steht als Token-Utility hier (`LISTE`, `ART`),
+// nicht mehr als `.lr6-notiz-*` in `src/index.css`.
+
+/** Eine Rubrik-Liste: ein Titel je Zeile, darunter leise seine Art (D30 —
+ *  «Materialien» und «Rechnen» sind EINE Anatomie, §5). */
+const LISTE = 'm-0 grid list-none gap-1 pl-2.5 font-sans text-leser-rand [&>li]:grid';
+const ART = 'text-micro text-ink-500';
 
 export function ArtikelBezuegeFuss({
   bezuege, bezuegeImFuss, historie, leitfaelle, materialien, verweise, werkzeuge, zaehler,
@@ -270,7 +231,7 @@ export function ArtikelBezuegeFuss({
       nebenGriff: onImBlatt
         ? (
           <button type="button" onClick={onImBlatt}
-            className="lc-btn-mini lr7-bez-nebengriff text-micro text-ink-500 hover:text-brass-700"
+            className="lc-btn-mini mt-2 text-micro text-ink-500 hover:text-ink-900"
             /* WCAG 4.1.2 · derselbe Massstab wie an den Rubrik-Griffen: auf
                einer Seite mit 1686 Artikeln ist «im Blatt öffnen» allein in der
                Knopfliste eines Screenreaders nicht auffindbar. */
@@ -300,11 +261,11 @@ export function ArtikelBezuegeFuss({
         ? (
           <>
             <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Materialien</span>
-            <ul className="lr6-notiz-liste">
+            <ul className={LISTE}>
               {materialien.map((mat) => (
                 <li key={mat.key} data-bez-material>
                   <Link to={mat.pfad}>{mat.titel}</Link>
-                  <span className="lr6-notiz-art">
+                  <span className={ART}>
                     {mat.behoerdeKuerzel} {mat.doktypLabel}{mat.sublabel ? ` · ${mat.sublabel}` : ''}
                   </span>
                 </li>
@@ -347,13 +308,13 @@ export function ArtikelBezuegeFuss({
       inhalt: (
         <>
           <span className="lc-overline mr-1"><span className="lc-punkt" aria-hidden />Rechnen</span>
-          <ul className="lr6-notiz-liste">
+          <ul className={LISTE}>
             {werkzeuge.map((w) => (
               <li key={w.id}>
                 <Link to={w.href}>{w.titel}</Link>
                 {/* Art des Werkzeugs: ein Rechner rechnet, eine Vorlage
                     füllt ein Dokument — für die Auswahl der Unterschied. */}
-                <span className="lr6-notiz-art">{w.modus === 'vorlage' ? 'Vorlage' : 'Rechner'}</span>
+                <span className={ART}>{w.modus === 'vorlage' ? 'Vorlage' : 'Rechner'}</span>
               </li>
             ))}
           </ul>

@@ -2,43 +2,18 @@ import { FnRef } from '../../../components/normtext/ArtikelBody';
 import { WJ } from '../../../components/normtext/wortverbinder';
 import { margStufeStil, margLabel } from '../helpers';
 
-// ═══ Die zwei KOPFTEILE des Artikels: Randtitel und Fassungs-Slot ═══════════
+// ═══ Der RANDTITEL des Artikels (Inventar 2.3.3) ═══════════════════════════
 //
-// §6.6-Split aus `./ArtikelLeser.tsx` (W2·24-F, 7.9.2026 — die Datei stand bei
-// 866 Zeilen gegen die Schwelle 800). Herausgelöst ist genau das, was BEIDE
-// Satzspiegel-Formen an ZWEI verschiedenen Orten zeigen und was der Artikel
-// deshalb ohnehin als Wert herumreicht:
-//   · der RANDTITEL — in der Zeilenform als Zeile über «Art. N» (`lr-rand`),
-//     in der Breitform im Artikelkopf (`lr7-kopf-titel`);
-//   · der FASSUNGS-SLOT — in der Zeilenform im Beiwerk, in der Breitform
-//     neben dem Randtitel (`lr7-fassung`).
-// Das Markup ist in beiden Formen DASSELBE (§5: eine Quelle für die
-// Stufen-Stimme); nur der Ort wechselt. Genau darum sind es Bauteile und keine
-// zwei Zweige.
+// §6.6-Split aus `./ArtikelLeser.tsx` (W2·24-F, 7.9.2026): beide Satzspiegel-
+// Formen zeigen DASSELBE Markup an zwei Orten — die Zeilenform als Zeile über
+// «Art. N», die Breitform im Artikelkopf (§5: eine Quelle für die Stufen-Stimme).
+// Der zweite Kopfteil, der Fassungs-Slot, ist mit D40 (7.9.2026) ersatzlos
+// gefallen: die Fassung ist eine Rubrik der Funktionszeile. Der Dateiname
+// bleibt, weil datierte Belege auf ihn zeigen (§0 Ziff. 2b).
 //
-// VERHALTENSNEUTRAL (§6): Wortlaut, Klassen, Attribute und Reihenfolge sind
-// unverändert übernommen — die Namen der Werte sind zu Prop-Namen geworden
-// (`e.titel` → `titel`, `e.artikel` → `artikel`, `artOffen` → `markerOffen`,
-// `histImKopf` → `imKopf`, `fussAnzeige.length > 0 || historie` →
-// `reserviert`). React fügt kein Wrapper-Element ein; der Golden-Beweis läuft
-// über `npm run golden:vergleich` und `check:golden-normtext`.
-//
-// KEIN PRÄDIKAT «hat der Randtitel Inhalt?» hier: die Zeilenform stellt die
-// Frage schon selbst (`randInhalt` in `./ArtikelLeser.tsx`, für den
-// Registerfarben-Strich), und eine zweite Funktion daneben verstiesse gegen
-// die Fast-Refresh-Regel dieser Datei (nur Komponenten exportieren).
-
-// ── W2·24-D40 (David 7.9.2026) · HIER STAND `HistSlot` ─────────────────────
-// Wörtlich: «und wieso ist fassung nicht auch unten am artikel?». Der Slot
-// `[data-hist-slot]` — «Gilt seit … ▸» plus Zeitleiste, mit seiner 24-px-Reserve
-// (`min-h-beiwerk`) und der `SUCH_META`-Kennung — ist ERSATZLOS gelöscht, nicht
-// bewacht (§17-Gegengewicht). Die Auskunft ist seither eine Rubrik der
-// Funktionszeile am Artikelende (`./ArtikelLeser.bezuegeFuss.tsx`, `reg: 'f'`),
-// der Druck bekommt sie aus `./ArtikelLeser.tsx` (`[data-hist-druck]`).
-//
-// DER DATEINAME BLEIBT «kopfteile», obwohl nur noch EIN Bauteil darin steht:
-// ein Umbenennen führte datierte Belege nach, statt sie stehenzulassen
-// (§0 Ziff. 2b) — der §6.6-Split von W2·24-F ist mit dieser Datei belegt.
+// KEIN PRÄDIKAT «hat der Randtitel Inhalt?» hier: die Frage stellt
+// `./ArtikelLeser.tsx` selbst (`randInhalt`), und diese Datei exportiert nur
+// Komponenten (Fast-Refresh-Regel).
 
 /** Die Randtitel selbst — in beiden Formen DASSELBE Markup, nur an einem
  *  anderen Ort (§5: eine Quelle für die Stufen-Stimme, `helpers.tsx`). */
@@ -57,8 +32,9 @@ export function RandTitel({ marg, margBasis, titel, artikel, markerOffen, fnProS
     <div className="mb-1 space-y-0.5 font-serif leading-snug">
       {marg.map((m, i) => (
         // `lr-blatt` markiert die unterste Stufe (die Sachüberschrift des
-        // Artikels). Nur sie wird in der Breitform zur kursiven Serifen-Zeile;
-        // die Vorfahren-Stufen bleiben Grotesk.
+        // Artikels). Nur sie wird in der Breitform zur kursiven Serifen-Zeile
+        // (die Regel sitzt am Artikelkopf in `./ArtikelLeser.tsx`); die
+        // Vorfahren-Stufen bleiben Grotesk.
         <div key={i} className={`${margStufeStil((margBasis ?? 0) + i, i === marg.length - 1)}${i === marg.length - 1 ? ' lr-blatt' : ''}`}>
           {/* A30: bis/ter-Suffix des Enumerators hochgestellt (margLabel). */}
           {margLabel(m)}
