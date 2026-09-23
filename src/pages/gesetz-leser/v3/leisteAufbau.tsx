@@ -85,7 +85,9 @@ export function gliederungsSheetAufbau(a: {
 // der einzige Weg. BEWACHT: `e2e/leser-v3-h4-gliederungswege` (c)/(c2).
 // SENKRECHTER ECHTER TEXT statt «Gl.»: `writing-mode` dreht Text, er bleibt
 // vorlesbar und durchsuchbar (Design-Grundlage Kap. 6).
-export function LeserGliederungSchiene({ onAuf }: { onAuf: () => void }) {
+// Eine Funktion statt einer Komponente wie die beiden Schwestern oben — die
+// Datei exportiert nur Aufbau-Funktionen (`react-refresh/only-export-components`).
+export function schieneAufbau(onAuf: () => void): ReactNode {
   return (
     <div className="sticky self-start" style={{ top: 'var(--nt-stick)' }}>
       <button type="button" data-v3-gliederung-schiene
