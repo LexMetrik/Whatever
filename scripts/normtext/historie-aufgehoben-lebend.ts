@@ -15,6 +15,15 @@
 // Blöcken/Items. Der Text-Shard ist die unabhängige zweite Quelle: er kommt aus
 // dem Artikel-KÖRPER, die Historie aus der Fussnoten-Prosa.
 //
+// GRENZE der Unabhängigkeit (offengelegt): der Generator nutzt `lebenderText`
+// seit RL-11 auch selbst als Tie-Breaker für den im Sidecar mehrdeutigen
+// Kopf-Anker («Art. N …[Fn]» Sachüberschrift vs. «Art. N[Fn]» Artikel; 4 Fälle
+// am 23.9.2026). Für diese Klasse ist das Tor ein Konsistenz-Wächter, kein
+// unabhängiger Zweitbeweis; alle übrigen Regeln (Körper-Anker, Teil-Skopus,
+// spätere Fassung, Gliederungs-Titel) entscheiden allein aus der Fussnote und
+// werden hier unabhängig geprüft. Rot-Beweis §6.7 am 23.9.2026 vor dem Fix:
+// 83 von 1305 Artikeln rot.
+//
 // Eingehängt in `check:historie` (historie-generieren.ts --check) — läuft damit
 // in CI (ci.yml, Schritt mit check:historie) und in check:seriell.
 
@@ -52,7 +61,7 @@ export function lebenderText(e: TextEintrag): string {
 }
 
 /** Artikel-Token wie im Struktur-/Historie-Schlüssel (identisch zu ankerZuToken). */
-function tokenAusId(id: string): string {
+export function tokenAusId(id: string): string {
   const anker = id.replace(/^bund\/[^/]+\//, '');
   return anker.startsWith('art_') ? anker.slice(4) : anker.replace(/\//g, '_');
 }

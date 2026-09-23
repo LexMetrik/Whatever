@@ -24,7 +24,7 @@ import {
   type FnEingang,
   type ArtikelHistorie,
 } from '../../src/lib/normtext/historie-parse.ts';
-import { pruefeAufgehobenLebend, LEBEND_SCHWELLE } from './historie-aufgehoben-lebend.ts';
+import { pruefeAufgehobenLebend, LEBEND_SCHWELLE, lebenderText, tokenAusId } from './historie-aufgehoben-lebend.ts';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const QUELLE = resolve(wurzel, 'public/normtext/struktur/bund');
@@ -55,7 +55,19 @@ interface Korpus extends Abdeckung {
  * Ein Erlass-Sidecar → deterministischer Shard-String (Token sortiert) + Zählwerk.
  * Rückgabe null, wenn der Erlass weder ein Ereignis noch ein Residuum trägt.
  */
+/** RL-11: Artikel-Token → «Körper trägt lebenden Normtext» aus dem Text-Shard
+ *  (public/normtext/bund/<ERLASS>.json); fehlender Shard/Eintrag = unbekannt. */
+function koerperLebendIndex(erlass: string): Map<string, boolean> {
+  const m = new Map<string, boolean>();
+  const pfad = resolve(TEXT, `${erlass}.json`);
+  if (!existsSync(pfad)) return m;
+  const doc = JSON.parse(readFileSync(pfad, 'utf8')) as { eintraege?: Array<{ id: string; bloecke?: [] }> };
+  for (const e of doc.eintraege ?? []) m.set(tokenAusId(e.id), lebenderText(e).length > LEBEND_SCHWELLE);
+  return m;
+}
+
 function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abdeckung; artikelMitHistorie: number; ereignisse: number; ereignisseDatiert: number } | null {
+  const lebend = koerperLebendIndex(erlass);
   const artikel: Record<string, ArtikelHistorie> = {};
   const residuum: Array<{ token: string; nr: string; roh: string }> = [];
   const abdeckung: Abdeckung = { fussnoten: 0, ereignis: 0, referenz: 0, unparsed: 0 };
@@ -67,7 +79,7 @@ function baueShard(erlass: string, doc: Sidecar): { json: string; abdeckung: Abd
     const fussnoten = doc.artikel![token].fussnoten ?? [];
     if (fussnoten.length === 0) continue;
     abdeckung.fussnoten += fussnoten.length;
-    const { historie, unparsed, refCount, ereignisFnCount } = baueArtikelHistorie(fussnoten);
+    const { historie, unparsed, refCount, ereignisFnCount } = baueArtikelHistorie(fussnoten, { koerperLebend: lebend.get(token) });
     abdeckung.ereignis += ereignisFnCount;
     abdeckung.referenz += refCount;
     abdeckung.unparsed += unparsed.length;

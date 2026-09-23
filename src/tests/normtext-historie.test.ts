@@ -253,4 +253,28 @@ describe('baueArtikelHistorie — RL-11 «Aufgehoben seit» nur bei echter Artik
     ]);
     expect(historie?.aufgehobenSeit).toBe('2001-01-01');
   });
+
+  it('Gegenprobe OR Art. 858 (SR 220): spätere Fussnote am GLIEDERUNGS-Titel (sektion) widerlegt die Aufhebung NICHT', () => {
+    const { historie } = baueArtikelHistorie([
+      fn('Aufgehoben durch Ziff. I 3 des BG vom 23. Dez. 2011 (Rechnungslegungsrecht), mit Wirkung seit 1. Jan. 2013 (AS 2012 6679; BBl 2008 1589).'),
+      fn('Ausdruck gemäss Ziff. I des BG vom 19. Juni 2020 (Aktienrecht), in Kraft seit 1. Jan. 2023 (AS 2020 4005; 2022 109; BBl 2017 399). Diese Änd. wurde in den in der AS genannten Bestimmungen vorgenommen.', { sektion: 'III. Allfällige Rechte auf den Jahresgewinn' }),
+    ]);
+    expect(historie?.aufgehobenSeit).toBe('2013-01-01');
+  });
+
+  it('MVG Art. 104 (SR 833.1): Aufhebung am Gliederungs-Titel (sektion, 2021) zählt nicht — Artikel aufgehoben seit 2007', () => {
+    const { historie } = baueArtikelHistorie([
+      fn('Aufgehoben durch Anhang Ziff. 112 des Verwaltungsgerichtsgesetzes vom 17. Juni 2005, mit Wirkung seit 1. Jan. 2007 (AS 2006 2197 1069; BBl 2001 4202).'),
+      fn('Aufgehoben durch Anhang Ziff. 7 des BG vom 21. Juni 2019, mit Wirkung seit 1. Jan. 2021 (AS 2020 5137; BBl 2018 1607).', { sektion: '3. Abschnitt: …' }),
+    ]);
+    expect(historie?.aufgehobenSeit).toBe('2007-01-01');
+  });
+
+  it('ParlG Art. 55 (SR 171.10): Kopf-Fussnote «Art. 55 …[Fn]» ohne spätere Fassung — Körper lebend ⇒ Sachüberschrift, kein aufgehobenSeit', () => {
+    const fussnoten = [fn('Aufgehoben durch Ziff. I des BG vom 3. Okt. 2008, mit Wirkung seit 2. März 2009 (AS 2009 725; BBl 2008 1869, 3177).')];
+    expect(baueArtikelHistorie(fussnoten, { koerperLebend: true }).historie?.aufgehobenSeit).toBeUndefined();
+    // Ohne Körper-Signal ist der Kopf-Anker mehrdeutig → bisherige Lesart (Artikelaufhebung).
+    expect(baueArtikelHistorie(fussnoten).historie?.aufgehobenSeit).toBe('2009-03-02');
+    expect(baueArtikelHistorie(fussnoten, { koerperLebend: false }).historie?.aufgehobenSeit).toBe('2009-03-02');
+  });
 });

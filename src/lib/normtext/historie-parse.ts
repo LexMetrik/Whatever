@@ -39,6 +39,12 @@ export interface FnEingang {
    *  einem absatzlosen KÖRPER-Block steht (z. B. «2–3 …», Ziffer «1.» ohne Absatz-
    *  <sup>) — also NICHT im Artikelkopf (<h6>: Nummer/Sachüberschrift). */
   absatzIndex?: number | null;
+  /** Wortgenaue Marker-Position (fussnoten-offsets.ts) — wird NUR für Marker im
+   *  Artikel-KÖRPER berechnet (Zuschnitt ohne Kopf-<h6>); gesetzt ⇒ Körper-Anker. */
+  pos?: unknown;
+  /** Gesetzt, wenn die Fussnote an einem GLIEDERUNGS-Titel vor dem Artikel hängt
+   *  («section-heading-footnote», fussnoten-extrahiere.ts) — nicht am Artikel selbst. */
+  sektion?: string | null;
 }
 
 /** Ereignistyp einer amtlichen Änderungs-Fussnote. */
@@ -321,6 +327,12 @@ export interface ArtikelHistorie {
  */
 export function baueArtikelHistorie(
   fussnoten: ReadonlyArray<FnEingang> | undefined,
+  opts: {
+    /** true = der Text-Shard (amtliche konsolidierte Fassung) trägt lebenden
+     *  Normtext im Artikel-KÖRPER (Kriterium: scripts/normtext/historie-
+     *  aufgehoben-lebend.ts). undefined = unbekannt (kein Text-Eintrag). */
+    koerperLebend?: boolean;
+  } = {},
 ): { historie: ArtikelHistorie | null; unparsed: FnEingang[]; refCount: number; ereignisFnCount: number } {
   const ereignisse: HistorieEreignis[] = [];
   const unparsed: FnEingang[] = [];
@@ -342,13 +354,65 @@ export function baueArtikelHistorie(
     if (e.datum && GILT_TYPEN.has(e.typ)) {
       if (!giltSeit || e.datum > giltSeit) giltSeit = e.datum;
     }
-    // Ganz-Artikel-Aufhebung: Aufhebungs-Ereignis auf Artikelebene (kein Absatz-/Item-Skopus).
-    if (e.typ === 'aufgehoben' && e.datum && e.absatz == null && e.item == null) {
-      if (!aufgehobenSeit || e.datum > aufgehobenSeit) aufgehobenSeit = e.datum;
+  }
+  // Ganz-Artikel-Aufhebung (RL-11, Befund R2-01): nur Aufhebungs-Ereignisse aus
+  // Fussnoten, deren Marker im Artikelkopf steht und deren Prosa keinen Teil-Skopus
+  // nennt (artikelAufhebungMoeglich).
+  for (const fn of fussnoten ?? []) {
+    if (!artikelAufhebungMoeglich(fn)) continue;
+    for (const e of parseFussnoteHistorie(fn).ereignisse) {
+      if (e.typ === 'aufgehoben' && e.datum && (!aufgehobenSeit || e.datum > aufgehobenSeit)) aufgehobenSeit = e.datum;
     }
   }
+  // Spätere (oder gleichtägige) Textänderung irgendwo im Artikel widerlegt die
+  // Ganzaufhebung: ein aufgehobener Artikel trägt keinen Text, der danach neu
+  // gefasst oder eingefügt werden könnte. Fälle: Aufhebung der Sachüberschrift «…»
+  // (Marker im <h6> hinter dem Titel, im Sidecar nicht vom Nummern-Marker
+  // unterscheidbar) mit Neufassung der Absätze — AVIG Art. 60, EOG Art. 1a,
+  // BBV Art. 66 — sowie Wiedereinfügung nach Aufhebung.
+  // Massgeblich sind nur Fussnoten des Artikels selbst — nicht die eines
+  // vorangehenden Gliederungs-Titels (`sektion`, z. B. OR Art. 858: «Ausdruck
+  // gemäss … 2023» am Titel «III. Allfällige Rechte …» vor dem 2013 aufgehobenen Artikel).
+  if (aufgehobenSeit) {
+    for (const fn of fussnoten ?? []) {
+      if (fn.sektion) continue;
+      for (const e of parseFussnoteHistorie(fn).ereignisse) {
+        if (e.datum && GILT_TYPEN.has(e.typ) && e.datum >= aufgehobenSeit) { aufgehobenSeit = undefined; break; }
+      }
+      if (!aufgehobenSeit) break;
+    }
+  }
+  // Rest-Mehrdeutigkeit des Kopf-Ankers: «<b>Art. 55</b> …[Fn]» (Sachüberschrift
+  // aufgehoben) und «<b>Art. 48</b>[Fn]» (Artikel aufgehoben) stehen beide im <h6>;
+  // das Struktur-Sidecar hält den Unter-Ort (Nummer vs. Sachüberschrift) nicht fest.
+  // Trägt der Artikel-Körper der amtlichen Fassung lebenden Normtext, kann die
+  // Kopf-Fussnote nur die Sachüberschrift betreffen (PARLG Art. 55, BPV Art. 113,
+  // AIG Art. 112, VTS Art. 124 — Fedlex-HTML 23.9.2026). Wurzel-Fix (Sidecar-
+  // Feld für den Kopf-Unter-Ort) siehe ROADMAP RL-11-Nachzug.
+  if (aufgehobenSeit && opts.koerperLebend === true) aufgehobenSeit = undefined;
 
   const historie: ArtikelHistorie = { giltSeit, ereignisse };
   if (aufgehobenSeit) historie.aufgehobenSeit = aufgehobenSeit;
   return { historie, unparsed, refCount, ereignisFnCount };
+}
+
+/**
+ * Kann diese Fussnote eine GANZ-Artikel-Aufhebung tragen? (RL-11, Befund R2-01)
+ *
+ * Nein, wenn ihr Anker-Ort im Artikel-KÖRPER liegt — nummerierter Absatz
+ * (`absatz`), lit./Ziff.-Item (`item`) oder absatzloser Körper-Block
+ * (`absatzIndex`, z. B. AVIG Art. 45 «2–3 …», MStG Art. 145 Ziff. 2) bzw. eine
+ * Körper-Position (`pos`, z. B. HRegV Art. 171 «a. und b. …» in einer Liste
+ * ohne Marke) —, wenn sie an einem vorangehenden Gliederungs-Titel hängt
+ * (`sektion`), oder wenn
+ * die Prosa die Aufhebung selbst auf einen Teil beschränkt («Gliederungstitel/
+ * Satz/Satzteil/Zweiter Absatz/Note … aufgehoben durch»). Die klein geschriebene
+ * Mittelform «… aufgehoben durch/in/gemäss» tritt im Bund-Korpus ausschliesslich
+ * mit einem solchen Skopus-Subjekt davor auf (gemessen 23.9.2026: 66 von 66
+ * Fussnoten, jq über public/normtext/struktur/bund/*.json); die Ganzaufhebung
+ * lautet amtlich stets «Aufgehoben durch …».
+ */
+function artikelAufhebungMoeglich(fn: FnEingang): boolean {
+  if (fn.absatz != null || fn.item != null || fn.absatzIndex != null || fn.pos != null || fn.sektion) return false;
+  return !/\baufgehoben (?:durch|in|gemäss)\b/.test(normalisiere(fn.text ?? ''));
 }
