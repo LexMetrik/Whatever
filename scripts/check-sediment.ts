@@ -1,76 +1,33 @@
 /**
- * check:sediment — Wache gegen drei Sediment-Gattungen (W2·29-WERKBANK-TOR).
+ * check:sediment — Wache gegen vier Sediment-Gattungen (W2·29-WERKBANK-TOR/-EXPORTE).
  *
- * 22.9.2026 · ANLASS · FAHRPLAN-WERKBANK-UMBAU §3, Rats-Verdikt Auflage 3.
- * Der Werkbank-Umbau legt Rubrik für Rubrik ein neues Aussehen an Ort — und
- * jede solche Runde produziert Rückstand: eine CSS-Regel, deren Konsument
- * gelöscht wurde; ein Modul, das niemand mehr importiert; ein Metadaten-Feld,
- * das neben dem Katalog weiterlebt. Für keine der drei Gattungen gab es eine
- * Wache. Der Umbau darf nicht dieselbe Schicht neu ablagern, die er abträgt.
+ * Anlass (22.9.2026, FAHRPLAN-WERKBANK-UMBAU §3, Rats-Auflage 3): jede Umbau-Runde
+ * hinterlässt Rückstand. KEINE Baseline, KEINE Ausnahmeliste, KEIN Warnung-statt-Fail —
+ * was rot ist, wird im selben PR gefixt. Geschichte (Regex→postcss, 114 statt 115):
+ * PRs #979 und #982.
  *
- * Auflage 3 des Rats ist Teil dieses Tors: KEINE Baseline, KEINE Ausnahme-
- * liste, KEIN Warnung-statt-Fail. Was heute rot ist, wird im selben PR gefixt.
- * Ein Tor mit Bestandsschutz hätte genau das sedimentiert, was es misst.
+ * PRÜFUNGEN (je ≥ 1 Fund ⇒ Exit 1):
+ *   (a) TOTE CSS-KLASSEN in `src/index.css`: Census per postcss über alle Regeln in
+ *       allen Tiefen (`@layer`/`@media`/`@container`/`@supports`, `:is(…)`; `@apply`
+ *       ist keine Definition). Verwender = Treffer MIT WORTGRENZE (§7, `lc-btn` zählt
+ *       nicht in `lc-btn-sm`) in `src/**` ohne `src/tests/**`, in `scripts/**`
+ *       (Generatoren emittieren Klassen) und `index.html`; `src/index.css` belegt
+ *       sich nicht selbst. Alle Präfixe.
+ *   (b) VERWAISTE MODULE — knip wird nicht nachgebaut (§17: keine Doppelwache);
+ *       gewertet wird die geparste `files`-Liste, nicht knips Exit-Code.
+ *   (c) DOPPELTE RECHNER-METADATEN — Katalog (`startseiteConfig` → KARTEN) ist die
+ *       Quelle (§5). (c1) jeder Rechner aus `CALCULATORS` byte-gleich zu seiner
+ *       Katalog-Karte (Titel, Kategorie, Kurzbeschrieb, Normen, Status); (c2) keine
+ *       String-Literale in Metadaten-Position in `src/lib/calculators.ts` — der
+ *       eigentliche Zaun. Mehrdeutige Slugs brauchen `KANON_KARTE_JE_SLUG`; fehlt
+ *       der Eintrag oder zeigt er ins Leere, ist das ein Fund.
+ *   (d) UNGENUTZTE EXPORTE — derselbe knip-Lauf (`--include files,exports,types`).
+ *       Ein Test-Import eines Produktiv-Exports zählt als Verwendung; Exporte
+ *       innerhalb `src/tests/**` zählt (d) nicht. Keine Fassaden-`entry` in
+ *       knip.json (Gegenprüfung #982: pauschale Freistellung).
  *
- * PRÜFUNGEN (alle vier ≥ 1 Fund ⇒ Exit 1):
- *   (a) TOTE CSS-KLASSEN in `src/index.css`. Census aller Klassenselektoren
- *       per postcss (`postcss.parse` + `root.walkRules`, wie in
- *       `check-design-tokens.ts` und `src/tests/scroll-rand-b8.test.ts`
- *       vorgemacht) über ALLE Regeln in ALLEN Tiefen (`@layer`, `@media`,
- *       `@container`, `@supports`, verschachtelt und in `:is(…)`);
- *       `@apply`-Argumente sind KEINE Definitionen und werden von
- *       `walkRules` gar nicht erst besucht. Verwender = Treffer MIT
- *       WORTGRENZE (`lc-btn` zählt nicht in `lc-btn-sm`, §7 «Identitäts-
- *       Treffer, nie Substring-Präsenz») in `src/**` ohne `src/tests/**`, in
- *       `scripts/**` (Prerender/Generatoren emittieren Klassen in Artefakte)
- *       und in `index.html`. Ein Treffer nur in `src/index.css` selbst zählt
- *       nicht — eine Regel belegt sich nicht selbst. Umfang: ALLE Präfixe,
- *       nicht nur `lc-`/`lr7-` (gemessen 22.9.2026 nach Umstellung auf
- *       postcss: 202 Klassen — Gegenprüfung PR #979 zeigte, dass die
- *       vormalige `;`/`}`-Anker-Regex die erste Regel direkt nach der
- *       öffnenden Klammer eines `@layer`/`@media`/`@container`-Blocks
- *       übersah, sobald ihr nur Kommentare/Whitespace vorausgingen — 199
- *       statt 202, drei Klassen (`lc-ziffern`, `tb-raster-2`,
- *       `lr8-erlasssuche`) blieben für das Tor unsichtbar. Die Voll-Messung
- *       ist tragbar, also wird sie gemacht).
- *   (b) VERWAISTE MODULE. knip wird NICHT nachgebaut (§17-Gegengewicht: keine
- *       Doppelwache) — das Tor ruft die vorhandene Installation auf und wertet
- *       ihre `files`-Liste (derselbe Lauf bedient auch (d), s. u.).
- *       `report:tot` (knip --no-exit-code) bleibt daneben bestehen: es meldet
- *       dieselben Gattungen ohne Zaunwirkung. Der Exit-Code von knip ist hier
- *       NICHT die Wahrheit (knip endet bei Funden mit 1) — gewertet wird die
- *       geparste Liste.
- *   (c) DOPPELTE RECHNER-METADATEN. Der Katalog (`startseiteConfig` → KARTEN)
- *       ist Single Source of Truth (§5). Zwei Teile:
- *       (c1) Jeder Rechner aus `CALCULATORS` muss in Titel, Kategorie,
- *            Kurzbeschrieb, Normen und Status byte-gleich mit seiner
- *            kanonischen Katalog-Karte sein.
- *       (c2) `src/lib/calculators.ts` enthält keine String-Literale in
- *            Metadaten-Position. Das ist der eigentliche Zaun: nach dem Umbau
- *            ist (c1) per Konstruktion grün, (c2) bleibt der Wächter gegen ein
- *            erneut von Hand gepflegtes Zweitregister.
- *       Mehrdeutige Slugs (mehrere Karten teilen sich eine Rechner-Seite)
- *       brauchen einen Eintrag in `KANON_KARTE_JE_SLUG` (exportiert aus
- *       `src/lib/calculators.ts`); fehlt er oder zeigt er ins Leere, ist das
- *       ein Fund — so kann die Abbildung nicht still veralten.
- *   (d) UNGENUTZTE EXPORTE. 22.9.2026 · Go David, Grundregel Umbau: wenn
- *       möglich aufräumen. Gleicher knip-Lauf wie (b), EIN Aufruf
- *       (`--include files,exports,types`): Funktionen, Konstanten und
- *       Typen, die exportiert, aber von keiner anderen Datei importiert
- *       werden. knip zählt `src/tests/**` als Projekt — ein Test-Import
- *       eines PRODUKTIV-Exports zählt als Verwendung; erscheint er
- *       trotzdem, ist knip.json zu prüfen, nicht der Export zu löschen.
- *       Ungenutzte Exporte INNERHALB `src/tests/**` selbst zählt (d) NICHT
- *       — Testhilfsdateien bleiben TABU für dieses Tor (Bau-Auftrag
- *       W2·29-WERKBANK-EXPORTE), Aufräumen dort ist ein eigener Schritt.
- *       Geburtsbeweis: rot 114 (Commit 42a45c2c6), nicht 84+43-12=115 wie
- *       zuvor vorgerechnet — nachgemessen 23.9.2026.
- *
- * DETERMINISMUS (§2): kein Netz, keine Uhr, kein Zufall. Gelesen werden
- * ausschliesslich Dateien des Arbeitsbaums; knip ist statische Analyse.
- *
- * Lauf: `npm run check:sediment` (Teil von `check:seriell`; PR-Deckung in
- * `.github/workflows/ci.yml`, Job «Offline-Tore»).
+ * DETERMINISMUS (§2): kein Netz, keine Uhr, kein Zufall; nur Arbeitsbaum + statische
+ * Analyse. Lauf: `npm run check:sediment` (Teil von `check:seriell`, CI «Offline-Tore»).
  */
 import { spawnSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
