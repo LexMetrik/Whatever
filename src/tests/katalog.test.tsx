@@ -8,9 +8,10 @@ import { VorlagenUebersicht } from '../pages/VorlagenUebersicht';
 import { HeaderSuche } from '../components/layout/HeaderSuche';
 import { IMMER, TAGESZEITEN } from '../lib/begruessungen';
 import { parseHTML } from 'linkedom';
-import { KATALOG_KARTEN } from '../lib/startseiteConfig';
+import { KATALOG_KARTEN, istVerfuegbar } from '../lib/startseiteConfig';
 import { kartenDerKategorie } from '../lib/katalogKategorie';
-import { OBERKATEGORIEN, type OberkategorieId } from '../lib/oberkategorien';
+import { OBERKATEGORIEN, kategorieFuer, type OberkategorieId } from '../lib/oberkategorien';
+import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
 
 /** Alle möglichen Grüsse — für den H1-Inhaltstest unten (D39). */
 const ALLE_GRUESSE = [...IMMER, ...TAGESZEITEN.flatMap((t) => t.pool)];
@@ -120,7 +121,13 @@ describe('Rechner-Übersicht /rechner (UI-Welle: Ersatz fürs Katalog-Deckblatt,
     expect(fristenAbschnitt.indexOf('Fristenrechner')).toBeLessThan(fristenAbschnitt.indexOf('Gewährleistung'));
     // Fristenspiegel aufgelöst; keine gleichrangige Mischliste
     expect(html).not.toContain('Fristenspiegel');
-    expect(html).not.toContain('Weitere Werkzeuge');
+    // DEKLARIERT (§6.3, K8 W2·29-WERKBANK-KATALOGE, Entscheid David 23.9.2026
+    // «zitierer auf /rechner zeigen»): der Amtliche Zitierer steht jetzt als
+    // «Weitere Werkzeuge»-Zeile in der Zuständigkeits-Sektion (oberhalb der
+    // Fristen). Die Zusicherung gilt darum ab dem Fristen-Register (Fristen +
+    // Gebühren) statt seitenweit — ihr Gegenstand, keine Mischliste im
+    // Fristen-Register, ist unverändert.
+    expect(fristenAbschnitt).not.toContain('Weitere Werkzeuge');
   });
 
   it('Zuständigkeiten- + Gebühren-Sektion tragen ihre Werkzeuge; Ehrlichkeit (§8) bleibt', () => {
@@ -402,4 +409,47 @@ describe('§8-Ratsche K0: geplante Karten stehen als «In Vorbereitung», nie al
       expect(verlinktGeplant).toEqual([]);
     });
   }
+});
+
+// ─── K8 Sichtbarkeit (W2·29-WERKBANK-KATALOGE, Entscheid David 23.9.2026) ───
+//
+// Befund 23.9.2026 (gemessen per vite-node, Render von /rechner und /vorlagen):
+// die Karte `gerichtszitat` (modus 'rechner', status 'entwurf') war der
+// Oberkategorie `vorlagen` zugeordnet. /rechner blendet `vorlagen` aus, und
+// das VorlagenRegister auf /vorlagen zeigt nur echte Vorlagen — der Zitierer
+// stand auf KEINER Katalogseite, zählte aber im Kopf «23 Rechner» (Register:
+// 22 Links) und im /vorlagen-Fuss («27 verfügbar» bei Kopf 26). Entscheid
+// David 23.9.2026 (Chat): «zitierer auf /rechner zeigen». Den /vorlagen-Fuss
+// hat K5 (#999) parallel behoben; sein Wächter ist zaehler-eine-quelle.test.tsx
+// (Fall c) — hier darum nicht doppelt.
+//
+// Invariante: jede verfügbare Rechner-Karte steht als Link im /rechner-
+// Register; eine Rechner-Karte in der Oberkategorie `vorlagen` ist nur als
+// ausdrücklich geführtes, GEPLANTES Vorlagen-Werkzeug zulässig (dann steht sie
+// im «In Vorbereitung»-Block auf /vorlagen, Ratsche K0 oben) — eine verfügbare
+// wäre auf beiden Seiten unsichtbar. Und /rechner zählt im Register dasselbe
+// wie im Kopf (STARTSEITE_ZAEHLER, §5/§8).
+describe('K8: jede Rechner-Karte steht auf einer Katalogseite, Kopf = Register', () => {
+  /** Rechner-Karten (modus 'rechner') der Oberkategorie `vorlagen` — ausdrücklich geführt. */
+  const VORLAGEN_WERKZEUGE = ['checklisten', 'mandatsaufnahme'];
+
+  const dom = (html: string) => parseHTML(`<!doctype html><html><body>${html}</body></html>`).document;
+  const registerLinks = (html: string) => new Set(
+    [...dom(html).querySelectorAll('section[id^="register-"] a[href]')].map((a) => a.getAttribute('href')!),
+  );
+
+  it('Rechner-Karten bei `vorlagen` sind genau die geführten Vorlagen-Werkzeuge, alle geplant', () => {
+    const beiVorlagen = KATALOG_KARTEN.filter((k) => k.modus === 'rechner' && kategorieFuer(k) === 'vorlagen');
+    expect(beiVorlagen.map((k) => k.id).sort()).toEqual([...VORLAGEN_WERKZEUGE].sort());
+    expect(beiVorlagen.filter((k) => istVerfuegbar(k)).map((k) => k.id)).toEqual([]);
+  });
+
+  it('/rechner: jede verfügbare Rechner-Karte als Link im Register, Anzahl = Kopf', () => {
+    const soll = KATALOG_KARTEN.filter((k) => k.modus === 'rechner' && istVerfuegbar(k) && k.href);
+    const links = registerLinks(rechnerHtml());
+    expect(soll.filter((k) => !links.has(k.href!)).map((k) => k.id)).toEqual([]);
+    const rechnerLinks = [...links].filter((h) => h.startsWith('/rechner/'));
+    expect(rechnerLinks.length).toBe(STARTSEITE_ZAEHLER.rechner);
+    expect(rechnerHtml()).toContain(`${STARTSEITE_ZAEHLER.rechner} Rechner nach Rechtsgebiet`);
+  });
 });

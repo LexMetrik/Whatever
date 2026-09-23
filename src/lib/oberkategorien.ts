@@ -41,8 +41,17 @@ const WERKZEUG_KATEGORIE: Record<string, OberkategorieId> = {
   checklisten: 'vorlagen',
   mandatsaufnahme: 'vorlagen',
   // Gerichts-Baustein-Set (ROADMAP W2·7): der amtliche Zitierer ist ein
-  // Text-/Schriftsatz-Baustein, Geschwister der Rubrum-Vorlage.
-  gerichtszitat: 'vorlagen',
+  // Text-/Schriftsatz-Baustein, Geschwister der Rubrum-Vorlage. Bis 23.9.2026
+  // hier 'vorlagen' — damit stand er auf KEINER Katalogseite (/rechner blendet
+  // `vorlagen` aus, das VorlagenRegister zeigt nur modus 'vorlage'), zählte
+  // aber im Kopf «23 Rechner». Entscheid David 23.9.2026: auf /rechner
+  // (K8 W2·29-WERKBANK-KATALOGE). Zuständigkeiten statt Fristen/Gebühren: die
+  // einzige Rechner-Oberkategorie mit Gerichts-Bezug («welches Gericht …,
+  // welches Rechtsmittel»), und ihr Register führt Nicht-Feld-Karten als
+  // «Weitere Werkzeuge». Das Fristen-Register hängte unzugeordnete Karten
+  // unter «Materielle Fristen» (sachlich falsch), das Gebühren-Register zeigt
+  // Karten ohne Rubrik gar nicht (gebuehrenRubrik → null).
+  gerichtszitat: 'zustaendigkeiten',
 };
 
 export function kategorieFuer(karte: CalculatorCard): OberkategorieId | null {
