@@ -24,8 +24,8 @@ import { getProfil, getVorlagenDetailgrad } from '../../lib/einstellungen';
 // der Config-Datei der Seite — eine generische Abstraktion über fachlich
 // verschiedene Felder wäre §1-widrig. KEINE Rechtslogik hier: zusammenstellen/
 // pruefeGates/Normtexte kommen als fertige Funktionsreferenzen aus src/lib.
-// Opt-in nur für LINEARE Standard-Briefe; Seiten mit Toggles, dynamischen
-// Labels, berechneten Live-Hinweisen oder Sonder-Props bleiben handgeschrieben.
+// Opt-in für lineare Wizards; seit W2·29-WERKBANK-VORLAGEN §5c ziehen auch Seiten
+// mit Live-Kacheln und Sonder-Props um — über die optionalen Slots unten.
 //
 // QS-CODE-ENTDOPPLUNG D1 (Tranche 1) — vier rückwärtskompatible Erweiterungen,
 // damit sechs weitere Seiten hier landen konnten. Die fünf Pilot-Seiten ändern
@@ -42,18 +42,10 @@ import { getProfil, getVorlagenDetailgrad } from '../../lib/einstellungen';
 // läuft nur auf den Eingabe-Schritten, der Hook wechselte die Hook-Reihenfolge
 // je Schritt. Braucht ein Schritt einen Hook, rendert `eingabeInhalt` eine
 // Komponente der Seite (`<EingabeSchritt ctx schritt />`), die ihn aufruft.
-//
-// W2·29-WERKBANK-VORLAGEN V2a — fünf optionale Slots für die handgeschriebenen
-// Seiten (Kündigungen); alle per Default deckungsgleich mit dem bisherigen
-// Verhalten, die elf Bestands-Seiten ändern sich um null Zeichen. Die Slots
-// tragen Darstellung bzw. Zustands-Hygiene, NIE Fachlogik:
-//   • `normalisieren` — Hydration-Absicherung, durchgereicht an useWizardState,
-//   • `profilPrefill` — false, wo die Seite die Absender-Felder vor dem Umzug
-//     nicht aus dem Profil vorbelegte (Arbeitgeber-Kündigung: Absender ist die
-//     Firma, nicht die nutzende Person),
-//   • `blockerKasten` — die «Export gesperrt»-Box über den Warnungen,
-//   • `pruefenZusatz` — Block zwischen Hinweisen und Ort/Datum (Endtermin-Kachel),
-//   • `bestaetigung` auch als Funktion (Bullets, die von Antworten abhängen).
+// W2·29-WERKBANK-VORLAGEN V2a — fünf optionale Slots (normalisieren,
+// profilPrefill, blockerKasten, pruefenZusatz, bestaetigung als Funktion), je
+// per Default deckungsgleich mit dem bisherigen Verhalten: Darstellung bzw.
+// Zustands-Hygiene, NIE Fachlogik.
 
 /** Einheitliche Gate-Form aller Vorlagen-Engines. */
 type VorlagenGates = { blocker: string[]; warnungen: string[]; hinweise: string[] };
