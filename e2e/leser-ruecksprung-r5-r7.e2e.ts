@@ -243,10 +243,26 @@ test.describe('R7 — Deep-Link-Skeleton', () => {
     // Darum dasselbe Mittel, das die Specs für Layout-Shifts nutzen: ein
     // rAF-Sampler ab Dokumentstart protokolliert JEDEN Frame mit; ausgewertet
     // wird hinterher aus dem Protokoll. Deterministisch statt zufallsabhängig.
+    //
+    // §6.3-DEKLARATION (W2·29 S5, 23.9.2026) · STANDZEIT PER DOM, NICHT PER FRAME.
+    // CI-Lauf 35461250166 (Shard 1/4, 19.9.2026) scheiterte mit «Overlay-Frames
+    // 2»: der Sampler zählt nur GEMALTE Frames, und während der Reader seinen
+    // Text in langen Tasks aufbaut, malt der 2-vCPU-Runner keine — das Overlay
+    // stand, der Zähler sah es zweimal. Gemessen wurde die Bildrate, nicht die
+    // Zusage. Die Standzeit kommt darum aus dem DOM (MutationObserver: erstes
+    // Erscheinen bis Verschwinden der Ansage); die Frames bleiben für die
+    // Deckungs-Prüfung (mindestens einer). Rot-Beweis im Commit-Body.
     await page.addInitScript(() => {
       interface P { t: number; top: number; bottom: number; vh: number; scrollY: number }
-      const w = window as unknown as { __r7: P[] };
-      w.__r7 = [];
+      const w = window as unknown as { __r7: P[]; __r7an: number | null; __r7aus: number | null };
+      w.__r7 = []; w.__r7an = null; w.__r7aus = null;
+      const steht = () => Array.from(document.querySelectorAll('[role="status"]'))
+        .some((e) => /Springe zu/.test(e.textContent ?? ''));
+      new MutationObserver(() => {
+        const s = steht();
+        if (s && w.__r7an === null) w.__r7an = performance.now();
+        if (!s && w.__r7an !== null && w.__r7aus === null) w.__r7aus = performance.now();
+      }).observe(document, { childList: true, subtree: true, characterData: true });
       const tick = () => {
         const el = Array.from(document.querySelectorAll('[role="status"]'))
           .find((e) => /Springe zu/.test(e.textContent ?? ''));
@@ -275,11 +291,16 @@ test.describe('R7 — Deep-Link-Skeleton', () => {
     await expect(overlay).toHaveCount(0, { timeout: 25000 });
 
     interface P { t: number; top: number; bottom: number; vh: number; scrollY: number }
-    const proben: P[] = await page.evaluate(() => (window as unknown as { __r7: P[] }).__r7);
-    const dauerMs = proben.length ? proben[proben.length - 1].t - proben[0].t : 0;
+    const { proben, an, aus } = await page.evaluate(() => {
+      const w = window as unknown as { __r7: P[]; __r7an: number | null; __r7aus: number | null };
+      return { proben: w.__r7, an: w.__r7an, aus: w.__r7aus };
+    });
     // Es stand überhaupt — und zwar spürbar lang, nicht für einen Frame.
-    expect(proben.length, `Overlay-Frames ${proben.length}`).toBeGreaterThan(3);
+    expect(an, 'Overlay ist erschienen').not.toBeNull();
+    expect(aus, 'Overlay ist wieder verschwunden').not.toBeNull();
+    const dauerMs = Math.round((aus as number) - (an as number));
     expect(dauerMs, `Overlay-Standzeit ${dauerMs} ms`).toBeGreaterThan(300);
+    expect(proben.length, `Overlay-Frames ${proben.length}`).toBeGreaterThan(0);
     // …und in JEDEM dieser Frames deckte es den Lesebereich ab. Genau das ist die
     // Behauptung von R7: statt des Dokumentanfangs steht dort die Zielansage.
     const schlecht = proben.filter((p) => !(p.top < p.vh * 0.4 && p.bottom > p.vh * 0.5));
