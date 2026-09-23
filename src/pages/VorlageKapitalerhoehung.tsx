@@ -1,9 +1,9 @@
 import { useMemo, useRef, useState } from 'react';
 import { NormText } from '../components/NormText';
-import { Checkbox, ErgebnisSprung, Field, inputCls, ListenEditor } from '../components/vorlagen/ui';
+import { Checkbox, Field, inputCls, ListenEditor } from '../components/vorlagen/ui';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { DatumsFeld } from '../components/DatumsFeld';
-import { MappenAbschnitt, MappenAnsicht, MappenGates, MappenKopf, NotariatsHinweis, HrAmtHinweis } from '../components/vorlagen/Dokumentmappe';
+import { MappenAbschnitt, MappenAnsicht, MappenGates, MappenSeite, NotariatsHinweis, HrAmtHinweis } from '../components/vorlagen/Dokumentmappe';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import {
   keDokumentmappe,
@@ -16,7 +16,6 @@ import {
   type KeKlausel,
 } from '../lib/vorlagen/kapitalerhoehung';
 import { KANTONE } from '../lib/kantone';
-import { PflichtDisclaimer } from '../components/PflichtDisclaimer';
 import { karte } from '../lib/startseiteConfig';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 
@@ -47,10 +46,6 @@ const KLAUSELN: { id: KeKlausel; label: string }[] = [
 
 export function VorlageKapitalerhoehung() {
   const card = karte('kapitalerhoehung');
-  // «Kein Eingabefehler vor der ersten Eingabe» (Grundsatz David 14.6.2026):
-  // bis zur ersten Eingabe stehen die Blocker der Mappe neutral (MappenGates).
-  const [beruehrt, setBeruehrt] = useState(false);
-  const merke = () => { if (!beruehrt) setBeruehrt(true); };
 
   const [rechtsform, setRechtsform] = useState<KeRechtsform>('ag');
   const [einlageArt, setEinlageArt] = useState<KeEinlageArt>('bar');
@@ -102,17 +97,13 @@ export function VorlageKapitalerhoehung() {
   const pk = usePaneKlasse();
 
   return (
-    <div className="space-y-6" onInput={merke} onChange={merke}>
-      <MappenKopf karte={card} titel="Kapitalerhöhung (AG / GmbH)" badge="Beschluss-Urkunden als Entwurf"
+    <MappenSeite karte={card} titel="Kapitalerhöhung (AG / GmbH)" badge="Beschluss-Urkunden als Entwurf"
         intro={<>
           Ordentliche Kapitalerhöhung gegen Bareinlage: Erhöhungsbeschluss und Feststellungs-Urkunde
           mit Statutenänderung entstehen als ENTWURF für die Urkundsperson (öffentliche Beurkundung
           bleibt zwingend); Zeichnungsscheine, Kapitalerhöhungsbericht und Handelsregister-Anmeldung
           druckfertig. Achtung Verfall: Anmeldung innert sechs Monaten nach dem Beschluss.
-        </>} />
-
-      <PflichtDisclaimer />
-
+        </>}>
       <MappenAbschnitt className="space-y-5">
         <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-4', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-4')}>
           <Field label="Rechtsform">
@@ -262,20 +253,12 @@ export function VorlageKapitalerhoehung() {
           </Field>
         </div>
 
-        <MappenGates gates={mappe.gates} beruehrt={beruehrt} />
+        <MappenGates gates={mappe.gates} />
 
         <MappenAnsicht dokumente={mappe.dokumente} docxErlaubt={docxErlaubt}
           startDokId="gv-beschluss" bannerEntwurf={BANNER_ENTWURF}
           bannerFertig={BANNER_FERTIG} />
       </MappenAbschnitt>
-
-      {/* Abkürzung zum Verdikt (QS-UI 8b Teil 2). Diese Fläche misst 2'501 px
-          Desktop / 4'511 px mobil; der Dokumentblock liegt an ihrem Fuss und war
-          über KEINE Marke erreichbar — anders als jede Wizard-Vorlage, die den
-          «Vorschau ↓»-Knopf trägt. Gleiche Fehlerklasse wie das `sm:hidden` der
-          Rechner-Sprungmarke in Teil 1: die Abkürzung existierte, nur nicht hier.
-          Es ist DIESELBE `ErgebnisSprung`-Marke (§10), nicht eine zweite. */}
-      <ErgebnisSprung zielId="vorlagen-dokumente" label="↓ Dokumente" />
-    </div>
+    </MappenSeite>
   );
 }

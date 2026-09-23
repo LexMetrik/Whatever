@@ -5,12 +5,11 @@ import {
   type GmbhStatutKlausel,
   type Phase,
 } from '../lib/gruendungsunterlagen';
-import { Checkbox, ErgebnisSprung, Field, inputCls, NormLink } from '../components/vorlagen/ui';
+import { Checkbox, Field, inputCls, NormLink } from '../components/vorlagen/ui';
 import { BetragsFeld } from '../components/BetragsFeld';
 import { NormText } from '../components/NormText';
 import { GmbhDokumentmappe } from '../components/vorlagen/GmbhDokumentmappe';
-import { KostenBundZeilen, MappenAbschnitt, MappenCheckliste, MappenKopf } from '../components/vorlagen/Dokumentmappe';
-import { PflichtDisclaimer } from '../components/PflichtDisclaimer';
+import { KostenBundZeilen, MappenAbschnitt, MappenCheckliste, MappenSeite } from '../components/vorlagen/Dokumentmappe';
 import { karte } from '../lib/startseiteConfig';
 import { usePaneKlasse } from '../components/layout/PaneKontext';
 
@@ -41,10 +40,6 @@ const KLAUSELN: { id: GmbhStatutKlausel; label: string }[] = [
 export function VorlageGmbhGruendung() {
   const card = karte('gmbh-gruendung');
   const pk = usePaneKlasse();
-  // «Kein Eingabefehler vor der ersten Eingabe» (Grundsatz David 14.6.2026):
-  // bis zur ersten Eingabe stehen die Blocker der Mappe neutral (MappenGates).
-  const [beruehrt, setBeruehrt] = useState(false);
-  const merke = () => { if (!beruehrt) setBeruehrt(true); };
 
   const [einlageArt, setEinlageArt] = useState<EinlageArt>('bar');
   const [besondereVorteile, setBesondereVorteile] = useState(false);
@@ -87,8 +82,7 @@ export function VorlageGmbhGruendung() {
     setKlauseln((alt) => (alt.includes(k) ? alt.filter((x) => x !== k) : [...alt, k]));
 
   return (
-    <div className="space-y-6" onInput={merke} onChange={merke}>
-      <MappenKopf karte={card} titel="GmbH-Gründungsunterlagen"
+    <MappenSeite karte={card} titel="GmbH-Gründungsunterlagen"
         badge="Checkliste + Dokumentmappe (Urkunde als Entwurf)"
         intro={<>
           Checkliste UND Dokumentmappe: Die Checkliste leitet die registerrechtlich verlangten
@@ -97,10 +91,7 @@ export function VorlageGmbhGruendung() {
           Dokumente direkt — Statuten und Errichtungsakt als ENTWURF für die Urkundsperson
           (die öffentliche Beurkundung bleibt zwingend), Wahlannahme-/Domizilerklärungen,
           Beschlüsse und die Handelsregister-Anmeldung druckfertig.
-        </>} />
-
-      <PflichtDisclaimer />
-
+        </>}>
       <MappenAbschnitt titel="Gründungs-Konstellation" className="space-y-4">
         <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-4', 'grid grid-cols-1 @xl/pane:grid-cols-3 gap-4')}>
           <Field label="Liberierung">
@@ -187,15 +178,8 @@ export function VorlageGmbhGruendung() {
       </MappenAbschnitt>
 
       {/* Ausbaustufe 9b (7.6.2026): Volldokumente aus denselben Weichen */}
-      <GmbhDokumentmappe weichen={eingaben} beruehrt={beruehrt}
+      <GmbhDokumentmappe weichen={eingaben}
         docxErlaubt={card?.modus === 'vorlage' && (card.output?.includes('docx') ?? false)} />
-
-      {/* Abkürzung zum Verdikt (QS-UI 8b Teil 2). Diese Fläche ist die höchste der
-          Vorlagen-Rubrik — 4'537 px Desktop / 7'894 px mobil — und der Dokumentblock
-          steht ganz unten. Eine Marke gab es hier als einziger Vorlagen-Fläche mit
-          Dokument-Ausgabe gar nicht (gemessen über alle 30 Routen). Dieselbe
-          `ErgebnisSprung`-Marke wie auf den Rechnern (§10). */}
-      <ErgebnisSprung zielId="vorlagen-dokumente" label="↓ Dokumente" />
-    </div>
+    </MappenSeite>
   );
 }

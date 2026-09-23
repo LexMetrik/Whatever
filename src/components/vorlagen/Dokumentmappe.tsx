@@ -1,7 +1,8 @@
-import { useId, useState, type ReactNode } from 'react';
+import { createContext, useContext, useId, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { VorschauPanel, ExportLeiste } from './wizard';
-import { ErgebnisPlatzhalter, GruppenTitel, NormLink } from './ui';
+import { ErgebnisPlatzhalter, ErgebnisSprung, GruppenTitel, NormLink } from './ui';
+import { PflichtDisclaimer } from '../PflichtDisclaimer';
 import { WerkzeugKopf } from '../layout/WerkzeugKopf';
 import { useLocale, fedlexLokalisiert } from '../locale';
 import { useKopieren } from '../useKopieren';
@@ -21,34 +22,52 @@ import type { Kanton } from '../../types/legal';
 // verschiedenen Banner-TEXTE und sämtliche Formularfelder bleiben bei den
 // jeweiligen Konsumenten.
 //
-// W2·29-WERKBANK-VORLAGEN V3: die Mappen tragen den Vorlagen-Rahmen der V1 —
-// Kopf als `layout/WerkzeugKopf` (Band im Werkzeug-Register), Abschnitte als
-// Linien statt Karten (F0.6, dieselbe Anatomie wie die Formular-Karte des
-// Wizards), Dokument-Reiter auf der Registerfläche `--reg-w-flaeche` mit der
-// `--reg-w`-Kante am aktiven Reiter. Checkliste und Kosten-Zeilen standen in
-// GmbH- und AG-Mappe zeichengleich doppelt — sie leben jetzt hier.
+// W2·29-WERKBANK-VORLAGEN V3: Rahmen der V1 auch für die Mappen — Kopf als
+// `layout/WerkzeugKopf`, Abschnitte als Linien statt Karten (F0.6), Reiter auf
+// `--reg-w-flaeche`. Checkliste und Kosten-Zeilen standen in GmbH- und AG-Mappe
+// zeichengleich doppelt. Amts-Links unterstrichen (F0.8; axe
+// `link-in-text-block` serious auf GmbH/Kapitalerhöhung, hell+dunkel, V3 23.9.2026).
 
-/** Kopf einer Mappe: Rückweg, Band (Overline «{Rechtsgebiet} · Vorlage»,
- *  Titel, Formvorschrift als Etikett mit Tor-Griff `data-formgate`),
- *  Einleitung, Norm-Chips der Karte — derselbe Kopf wie im Wizard-Rahmen. */
-export function MappenKopf({ karte: card, titel, badge, intro }: {
+/** «Kein Eingabefehler vor der ersten Eingabe» (Grundsatz David 14.6.2026).
+ *  Default `true`: ausserhalb von `MappenSeite` (AG-Wizard) wie bisher. */
+const BeruehrtKontext = createContext(true);
+
+/** Gerüst der Mappen ohne Wizard (GmbH, Kapitalerhöhung): Kopf mit Rückweg,
+ *  Band (Overline «{Rechtsgebiet} · Vorlage», Formvorschrift als Etikett mit
+ *  Tor-Griff `data-formgate`), Einleitung, Norm-Chips; Disclaimer; am Fuss die
+ *  Sprungmarke zu den Dokumenten. Die Marke (QS-UI 8b Teil 2) kompensiert die
+ *  konstruktionsbedingte Tiefe: gemessen 4'537 px Desktop / 7'894 px mobil
+ *  (GmbH, die höchste Fläche der Rubrik, als einzige Dokument-Fläche ohne Marke)
+ *  und 2'501 / 4'511 px (Kapitalerhöhung, über KEINE Marke erreichbar) —
+ *  dieselbe `ErgebnisSprung`-Marke wie auf den Rechnern (§10). */
+export function MappenSeite({ karte: card, titel, badge, intro, children }: {
   karte: ReturnType<typeof karte> | undefined;
   titel: string;
   badge: string;
   intro: ReactNode;
+  children: ReactNode;
 }) {
   const { locale } = useLocale();
+  const [beruehrt, setBeruehrt] = useState(false);
+  const merke = () => { if (!beruehrt) setBeruehrt(true); };
   return (
-    <WerkzeugKopf overline={`${card?.rechtsgebiet ?? 'Gesellschaftsrecht'} · Vorlage`} titel={titel}
-      etikett={<span data-formgate className="lc-badge lc-badge-warn">{badge}</span>}
-      vorspann={(
-        <Link to="/" className="inline-flex items-center gap-2 no-underline text-body-s font-medium text-brass-700 hover:text-brass-600">
-          <span aria-hidden className="inline-flex items-center justify-center w-7 h-7 border border-line bg-surface">←</span>
-          Zurück zum Katalog
-        </Link>
-      )}
-      intro={intro}
-      normen={(card?.norms ?? []).map((n) => ({ artikel: n.label, href: fedlexLokalisiert(n.url, locale) }))} />
+    <BeruehrtKontext.Provider value={beruehrt}>
+      <div className="space-y-6" onInput={merke} onChange={merke}>
+        <WerkzeugKopf overline={`${card?.rechtsgebiet ?? 'Gesellschaftsrecht'} · Vorlage`} titel={titel}
+          etikett={<span data-formgate className="lc-badge lc-badge-warn">{badge}</span>}
+          vorspann={(
+            <Link to="/" className="inline-flex items-center gap-2 no-underline text-body-s font-medium text-brass-700 hover:text-brass-600">
+              <span aria-hidden className="inline-flex items-center justify-center w-7 h-7 border border-line bg-surface">←</span>
+              Zurück zum Katalog
+            </Link>
+          )}
+          intro={intro}
+          normen={(card?.norms ?? []).map((n) => ({ artikel: n.label, href: fedlexLokalisiert(n.url, locale) }))} />
+        <PflichtDisclaimer />
+        {children}
+        <ErgebnisSprung zielId="vorlagen-dokumente" label="↓ Dokumente" />
+      </div>
+    </BeruehrtKontext.Provider>
   );
 }
 
@@ -76,8 +95,7 @@ export function MappenAbschnitt({ titel, lead, className = 'space-y-3', children
 const ERSTELLER_LABEL = { gruender: 'Gründer:innen', notariat: 'Notariat', bank: 'Bank', revisor: 'Revisor:in' } as const;
 type Unterlage = ReturnType<typeof gmbhGruendungsunterlagen>['unterlagen'][number];
 
-/** Unterlagenliste nach Verfahrensphase (Inventar 5.5): je Beleg Norm und
- *  Ersteller-Etikett. Phasen-Texte kommen von der Seite (GmbH ≠ AG). */
+/** Unterlagenliste nach Phase (Inventar 5.5); Phasen-Texte von der Seite. */
 export function MappenCheckliste({ phasen, unterlagen }: {
   phasen: readonly { id: Phase; titel: string; lead: string }[];
   unterlagen: readonly Unterlage[];
@@ -111,8 +129,7 @@ export function MappenCheckliste({ phasen, unterlagen }: {
 
 const CHF = new Intl.NumberFormat('de-CH', { style: 'currency', currency: 'CHF', maximumFractionDigits: 0 });
 
-/** Die Bundes-Kostenzeilen der Kapitalgesellschaften (GmbH und AG gleich):
- *  Handelsregister-Gebühr und — wo geschuldet — Emissionsabgabe. */
+/** Bundes-Kostenzeilen der Kapitalgesellschaften (GmbH und AG gleich). */
 export function KostenBundZeilen({ emissionsabgabeChf }: { emissionsabgabeChf: number | null }) {
   return (
     <>
@@ -137,7 +154,7 @@ export function NotariatsHinweis({ kanton }: { kanton: string }) {
       <p className="text-body-s text-ink-700 max-w-reading">
         <span className="font-medium text-ink-900">Beurkundung im Kanton {kanton}:</span>{' '}
         {NOTARIAT_SYSTEM_LABEL[n.system]} —{' '}
-        <a href={n.url} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:text-brass-600">{n.stelle}</a>
+        <a href={n.url} target="_blank" rel="noopener noreferrer" className="text-brass-700 underline underline-offset-2 hover:text-brass-600">{n.stelle}</a>
         {!n.urlBelegt && <span className="text-warn-700"> (Angabe ohne Gewähr)</span>}
       </p>
       {n.hinweis && <p className="text-xs text-warn-700 max-w-reading"><NormText text={n.hinweis} /></p>}
@@ -155,7 +172,7 @@ export function HrAmtHinweis({ kanton }: { kanton: string }) {
     <div className="lc-notice space-y-1">
       <p className="text-body-s text-ink-700 max-w-reading">
         <span className="font-medium text-ink-900">Anmeldung beim Handelsregisteramt ({kanton}):</span>{' '}
-        <a href={a.url} target="_blank" rel="noopener noreferrer" className="text-brass-700 hover:text-brass-600">{a.name}</a>
+        <a href={a.url} target="_blank" rel="noopener noreferrer" className="text-brass-700 underline underline-offset-2 hover:text-brass-600">{a.name}</a>
         {`, ${a.strasse}, ${a.plzOrt} · ${a.telefon}`}
       </p>
       {a.hinweis && <p className="text-xs text-ink-500 max-w-reading"><NormText text={a.hinweis} /></p>}
@@ -171,16 +188,10 @@ export function HrAmtHinweis({ kanton }: { kanton: string }) {
  *  Lesespalte (gemessen auf `/vorlagen/gmbh-gruendung` und `/vorlagen/kapitalerhoehung`,
  *  1280×800). `data-vorbehalte` ist derselbe Tor-Griff wie auf den Rechner-Flächen.
  *
- *  V3 (Werkbank-Stil wie `PruefBefund`): EINE Box je Art, Zeilen mit
- *  Haarlinien statt je Warnung ein eigener Kasten (F0.6). Grundsatz David
- *  (14.6.2026, «kein Eingabefehler vor der ersten Eingabe»): solange die
- *  Seite unberührt ist, stehen die Blocker als neutrale Liste da — dieselben
- *  Texte, aber kein Danger-Ton und kein `role="alert"`; erst nach der ersten
- *  Eingabe werden sie zur Fehlermeldung. `beruehrt` fehlt = wie bisher. */
-export function MappenGates({ gates, beruehrt = true }: {
-  gates: { blocker: string[]; warnungen: string[] };
-  beruehrt?: boolean;
-}) {
+ *  V3 (Werkbank-Stil wie `PruefBefund`): eine Box je Art, Zeilen mit Haarlinien
+ *  (F0.6). Unberührte Seite: Blocker neutral, ohne Danger-Ton und `role`. */
+export function MappenGates({ gates }: { gates: { blocker: string[]; warnungen: string[] } }) {
+  const beruehrt = useContext(BeruehrtKontext);
   const zeilen = (texte: string[], linie: string) => (
     <ul>
       {texte.map((t, i) => (
@@ -274,11 +285,8 @@ export function MappenAnsicht({ dokumente, bannerEntwurf, bannerFertig = BANNER_
     <>
       {/* `id`/`data-dokument-platz` an DERSELBEN Stelle wie im Leerzustand: das
           Sprungziel darf sich nicht verschieben, sobald die Dokumente entstehen. */}
-      {/* V3: Reiter-Satz auf der Registerfläche (F0.2: Fläche nur über
-          `--reg-w-flaeche`, Tinte darauf); der Reiter ist der Haus-Baustein
-          `.lc-tab`, `data-reg="w"` färbt die Kante des aktiven Reiters im
-          Werkzeug-Register (index.css, neben `.lc-tab`). Umbruch statt
-          Querscroll: eine Mappe zeigt alle ihre Dokumente auf einen Blick. */}
+      {/* V3: Registerfläche (F0.2), Haus-Reiter `.lc-tab` mit `data-reg="w"`
+          (Kante im Register); Umbruch statt Querscroll — alle Dokumente sichtbar. */}
       <div id={zielId} data-dokument-platz className="flex flex-wrap gap-x-4 bg-reg-w-flaeche px-3 scroll-mt-24" role="tablist" aria-label="Dokumente der Mappe">
         {dokumente.map((d, i) => {
           const aktiv = d.id === dok.id;

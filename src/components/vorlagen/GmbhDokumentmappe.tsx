@@ -34,11 +34,9 @@ const ZEICHNUNGS_OPTIONEN: { id: GmbhZeichnungsArt; label: string }[] = [
   { id: 'kollektivzuzweien', label: 'Kollektivunterschrift zu zweien' },
 ];
 
-export function GmbhDokumentmappe({ weichen, docxErlaubt, beruehrt }: {
+export function GmbhDokumentmappe({ weichen, docxErlaubt }: {
   weichen: GmbhGruendungEingaben;
   docxErlaubt: boolean;
-  /** Seite schon bedient? Steuert nur den Ton der Blocker (MappenGates). */
-  beruehrt: boolean;
 }) {
   // Identität & Parameter (Weichen kommen als Props von der Checkliste)
   const [firma, setFirma] = useState('');
@@ -342,7 +340,7 @@ export function GmbhDokumentmappe({ weichen, docxErlaubt, beruehrt }: {
         label="Statutarische Grundlage für virtuelle/hybride Gesellschafterversammlungen (Art. 805 Abs. 5 Ziff. 2bis OR)"
       />
 
-      <MappenGates gates={mappe.gates} beruehrt={beruehrt} />
+      <MappenGates gates={mappe.gates} />
 
       <MappenAnsicht dokumente={mappe.dokumente} docxErlaubt={docxErlaubt}
         startDokId="statuten" bannerEntwurf={BANNER_ENTWURF} />
