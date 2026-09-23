@@ -363,12 +363,15 @@ describe('§8-Ratsche K0: geplante Karten stehen als «In Vorbereitung», nie al
         vorbereitet.push((span.textContent ?? '').replace(/^ · /, '').trim());
       }
     }
-    // (b) Zeile mit Marke: .lc-card mit .lc-badge-geplant; Titel = font-medium-Span.
+    // (b) Zeile mit Marke: .kt-zeile mit .lc-badge-geplant; Titel = font-medium-Span.
+    //     DEKLARIERT (§6.3, K4 23.9.2026): der Zeilen-Behälter heisst seit K4
+    //     `.kt-zeile` statt `.lc-card` (Zeilen statt Karten) — die Zusicherung
+    //     ist unverändert, nur der Anker zieht mit der Hülle um.
     let markenInLinks = 0;
     for (const b of document.querySelectorAll('.lc-badge-geplant')) {
       expect(b.textContent).toBe('In Vorbereitung');
       if (b.closest('a')) markenInLinks++;
-      const titel = b.closest('.lc-card')?.querySelector('span.font-medium')?.textContent?.trim();
+      const titel = b.closest('.kt-zeile')?.querySelector('span.font-medium')?.textContent?.trim();
       vorbereitet.push(titel ?? '(Marke ohne Karten-Titel)');
       summenZahl++;
     }

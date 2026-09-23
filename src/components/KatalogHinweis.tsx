@@ -3,21 +3,23 @@ import { SITE_KURZFORM } from '../lib/seo';
 
 // Gemeinsamer Fuss der Rechner-/Vorlagen-Übersicht (vormals inline in
 // Recherche.tsx): Methodik-Zeile + Pflichthinweis (§8). Reine Darstellung;
-// die Langtexte leben auf /methodik (SSoT, §5).
+// die Langtexte leben auf /methodik (SSoT, §5). K4 (W2·29-WERKBANK-KATALOGE):
+// zwei Spalten im Fuss (`.kt-fuss`) statt Hinweis-Kästen mit Messingkante;
+// der Methodik-Link im Registerton (`.kt-weiter`).
 export function KatalogHinweis() {
   return (
     <>
-      <section className="lc-notice flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+      <section className="space-y-2">
         <p className="text-body-s text-ink-600">
           <span className="font-medium text-ink-900">So rechnet LexMetrik:</span>{' '}
           {SITE_KURZFORM}
         </p>
-        <Link to="/methodik" className="text-body-s font-medium text-brass-700 hover:text-brass-600 no-underline whitespace-nowrap">
+        <Link to="/methodik" className="kt-weiter text-body-s font-medium no-underline whitespace-nowrap">
           Zur Methodik →
         </Link>
       </section>
 
-      <section className="lc-notice">
+      <section>
         <p className="lc-overline mb-1">Rechtlicher Hinweis</p>
         <p className="text-body-s text-ink-600 max-w-reading">
           Alle Rechner liefern automatisierte Orientierungsberechnungen und keine Rechtsberatung. Massgeblich

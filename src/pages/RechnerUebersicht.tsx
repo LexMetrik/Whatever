@@ -10,7 +10,7 @@ import { SeitenKopf } from '../components/layout/SeitenKopf';
 import { EntwurfLegende } from '../components/EntwurfLegende';
 import { Leerzustand } from '../components/ui/Leerzustand';
 import { ZweiachsigerEinstieg } from '../components/ZweiachsigerEinstieg';
-import { Zeiterfassung } from '../components/start/Zeiterfassung';
+import { Zeiterfassung } from './rechner-teile/Zeiterfassung';
 import { STARTSEITE_ZAEHLER } from '../data/startseiteZaehler.generated';
 
 // ─── Rechner-Übersicht (/rechner) — UI-Welle, Ersatz für /recherche ─────────
@@ -57,50 +57,55 @@ export function RechnerUebersicht() {
         ausgabe={`${STARTSEITE_ZAEHLER.rechner} Rechner nach Rechtsgebiet und nach Aufgabe`}
       />
 
-      {/* D22 Ziff. 2 — EINE Filterzeile über die volle Inhaltsbreite (Label über
-          Feld), gleiche Anatomie wie auf /gesetze und /materialien. Das
-          `aria-label` ist entfallen: der sichtbare Text IST der zugängliche
-          Name (WCAG 2.5.3), zwei Namen für dasselbe Feld sind einer zu viel. */}
-      <div className="ub-filter">
-        <label htmlFor="rechner-filter" className="lc-overline">Filtern</label>
-        <input id="rechner-filter" type="search" value={filter}
-          onChange={(e) => setFilter(e.target.value)}
-          placeholder="Titel, Rechtsgebiet oder Norm …"
-          className="lc-input h-9 py-0 text-body-s w-full" />
-        <EntwurfLegende />
-      </div>
-
-      {!gefiltert && <ZweiachsigerEinstieg />}
-
-      {kategorien.map((kat) => (
-        <KategorieSektion key={kat.id} kat={kat} karten={kartenDerKategorie(karten, kat.id)} alleOffen={gefiltert} />
-      ))}
-
-      {gefiltert && kategorien.length === 0 && (
-        <div className="py-6">
-          {/* D-7 (R3-α, 31.8.2026): handgezeichneter Absatz + eigener Knopf →
-              der EINE Baustein; Wortlaut und Wirkung unverändert. */}
-          <Leerzustand art="filter" text={`Kein Rechner für «${q}» gefunden.`}
-            weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => setFilter('') }} />
+      {/* K4 (W2·29-WERKBANK-KATALOGE, 23.9.2026, Board «Unter-Rechner-
+          Katalog»): Filter, Einstieg und Register liegen in EINEM Raster
+          (`.kt-werkbank`, index.css) — ab 1100 px steht der Einstieg als
+          Seitenspalte links, darunter wie bisher gestapelt. Die DOM-Reihenfolge
+          (Filter → Einstieg → Register) und damit die Tab-Folge bleibt. */}
+      <div className="kt-werkbank">
+        {/* D22 Ziff. 2 — EINE Filterzeile über die volle Inhaltsbreite (Label über
+            Feld). Der sichtbare Text IST der zugängliche Name (WCAG 2.5.3). */}
+        <div className="ub-filter">
+          <label htmlFor="rechner-filter" className="lc-overline">Filtern</label>
+          <input id="rechner-filter" type="search" value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            placeholder="Titel, Rechtsgebiet oder Norm …"
+            className="lc-input h-9 py-0 text-body-s w-full" />
+          <EntwurfLegende />
         </div>
-      )}
 
-      {/* Werkzeuge/Kontext nur in der ungefilterten Vollansicht — im Filter-Modus
-          zählt die knappe Trefferliste. */}
-      {!gefiltert && (
-        <>
-          {/* Werkzeuge: die Zeiterfassung wohnt seit Startseite V3 (§3) hier unten
-              statt auf der Startseite — Komponente unverändert, gleiche Selbst-
-              Höhe wie zuvor (CLS-neutral). */}
-          <section className="space-y-2.5" aria-labelledby="werkzeuge-titel">
-            <h2 id="werkzeuge-titel" className="lc-overline">Werkzeuge</h2>
-            <Zeiterfassung />
-          </section>
+        {!gefiltert && <ZweiachsigerEinstieg />}
 
-          <MassgebendeGesetze modus="rechner" />
-          <KatalogHinweis />
-        </>
-      )}
+        <div className="min-w-0 space-y-6">
+          {kategorien.map((kat) => (
+            <KategorieSektion key={kat.id} kat={kat} karten={kartenDerKategorie(karten, kat.id)} alleOffen={gefiltert} />
+          ))}
+
+          {gefiltert && kategorien.length === 0 && (
+            <div className="py-6">
+              {/* D-7 (R3-α, 31.8.2026): der EINE Leerzustand-Baustein. */}
+              <Leerzustand art="filter" text={`Kein Rechner für «${q}» gefunden.`}
+                weiterweg={{ text: 'Filter zurücksetzen', onKlick: () => setFilter('') }} />
+            </div>
+          )}
+
+          {/* Werkzeuge/Kontext nur in der ungefilterten Vollansicht — im Filter-
+              Modus zählt die knappe Trefferliste. Die Zeiterfassung wohnt seit
+              Startseite V3 hier (K4: Datei zum einzigen Verwender gezogen). */}
+          {!gefiltert && (
+            <>
+              <section className="space-y-2.5" aria-labelledby="werkzeuge-titel">
+                <h2 id="werkzeuge-titel" className="lc-overline">Werkzeuge</h2>
+                <Zeiterfassung />
+              </section>
+              <div className="kt-fuss">
+                <MassgebendeGesetze modus="rechner" />
+                <KatalogHinweis />
+              </div>
+            </>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
