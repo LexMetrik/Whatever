@@ -36,10 +36,10 @@ function Segment<T extends string>({ wert, optionen, onWahl, label }: {
 
 function Zeile({ titel, hinweis, children }: { titel: string; hinweis?: string; children: React.ReactNode }) {
   return (
-    <div className="space-y-1.5 border-t border-line pt-5 first:border-t-0 first:pt-0">
-      <p className="text-body-s font-medium text-ink-800">{titel}</p>
+    <div className="es-zeile space-y-1.5">
+      <p className="text-body-s font-semibold text-ink-900">{titel}</p>
       {hinweis && <p className="text-xs text-ink-500 max-w-reading">{hinweis}</p>}
-      <div className="pt-1">{children}</div>
+      <div className="pt-1.5">{children}</div>
     </div>
   );
 }
@@ -107,11 +107,16 @@ export function Einstellungen() {
     // Arbitrary-Wert weniger im Design-System (§13/design.md: Tokens statt
     // Rohwerten).
     //
+    // W2·29-WERKBANK-KATALOGE K5 (23.9.2026, Board «Unter-Einstellungen»): die
+    // Gruppen stehen ab 1100 px in ZWEI Spalten (`.es-raster`, index.css) —
+    // jede Spalte bleibt unter der Lesebreite; der Deckel des Shells trägt die
+    // Seite wie die Übersichten. Karten weichen der Tinten-Linie (`.es-gruppe`).
+    //
     // NICHT geändert, weil Kanon und kein Defekt: der dritte Teil des Befundes
     // («der Fliesstextblock der Startseite ist schmaler als alles darüber»). Die
     // Lesespalte unter breiteren Modulen ist die gewollte Satzbreite (§13.2,
     // dieselbe Herleitung wie Responsive-Audit D3 in pages/Methodik.tsx).
-    <div className="max-w-reading space-y-8">
+    <div className="space-y-6">
       {/* ── G9/G17 (Gesamtprüfung 6.9.2026) · DIESELBE KOPF-ANATOMIE ────────
           H1 zuerst, darunter EINE Zeile aus dem Bestand — die Form aller
           Übersichten (`layout/SeitenKopf`, D22). Overline und Ablesekante
@@ -124,7 +129,9 @@ export function Einstellungen() {
       <SeitenKopf titel="Einstellungen"
         ausgabe="Standardwerte für die ganze Seite — lokal in diesem Browser gespeichert, nie übermittelt." />
 
-      <section className="lc-card p-5 sm:p-6 space-y-5">
+      <div className="es-raster">
+
+      <section className="es-gruppe">
         <Zeile titel="Standard-Kanton" hinweis="Wird in Fristen- und Gebührenrechnern vorgewählt (ein Permalink oder eine eigene Wahl im Formular geht weiter vor).">
           <select aria-label="Standard-Kanton" value={e.standardKanton}
             onChange={(ev) => setzeEinstellung('standardKanton', ev.target.value as Kanton)}
@@ -145,7 +152,7 @@ export function Einstellungen() {
         </Zeile>
       </section>
 
-      <section className="lc-card p-5 sm:p-6 space-y-5">
+      <section className="es-gruppe">
         <Zeile titel="Schriftgrösse — ganze Seite"
           hinweis="Vergrössert Schrift und Abstände der ganzen Anwendung (der Gesetzestext hat im Leser-Menü «Ansicht» zusätzlich einen eigenen Regler). Die Wahl gilt sofort und bleibt in diesem Browser gespeichert.">
           {/* role="group" + sichtbares Scope-Wort bleiben am Aufrufer (Baustein
@@ -174,7 +181,7 @@ export function Einstellungen() {
         </Zeile>
       </section>
 
-      <section className="lc-card p-5 sm:p-6 space-y-5">
+      <section className="es-gruppe">
         <Zeile titel="Vorlagen — Detailgrad" hinweis="Standardumfang neuer Vorlagen (eine Wahl im Wizard geht weiter vor).">
           <Segment label="Detailgrad" wert={e.vorlagenDetailgrad}
             onWahl={(id) => setzeEinstellung('vorlagenDetailgrad', id)} optionen={DETAILGRAD_OPTIONEN} />
@@ -188,7 +195,7 @@ export function Einstellungen() {
         </Zeile>
       </section>
 
-      <section className="lc-card p-5 sm:p-6 space-y-5">
+      <section className="es-gruppe">
         <Zeile titel="Rechtsprechung — Trefferliste" hinweis="Wirkt beim nächsten Öffnen der Rechtsprechungs-Übersicht.">
           <Segment label="Trefferliste" wert={dichte}
             onWahl={(id) => { setDichte(id); schreibeKey(DICHTE_KEY, id); }}
@@ -201,7 +208,7 @@ export function Einstellungen() {
         </Zeile>
       </section>
 
-      <section className="lc-card p-5 sm:p-6 space-y-3">
+      <section className="es-gruppe">
         <Zeile titel="Zurücksetzen" hinweis="Löscht alle gespeicherten Einstellungen, offenen Reiter, Favoriten und Vorlagen-Entwürfe in diesem Browser.">
           <button type="button" onClick={reset}
             className="rounded-lg border border-danger-line bg-surface px-3.5 py-2 text-body-s font-medium text-danger-700 transition-colors hover:bg-danger-bg">
@@ -209,6 +216,7 @@ export function Einstellungen() {
           </button>
         </Zeile>
       </section>
+      </div>
     </div>
   );
 }
