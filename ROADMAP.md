@@ -442,8 +442,8 @@ Umschichtung 20.9.2026 (2)):*
   Grenzen: Status-Modell bleibt sichtbar (§8), Löschpflicht im selben PR, Löschbilanz ≥ 50 %.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
 
-- [ ] **Werkbank-Umbau: Grundton — Werkbank-Hintergrund und Rundungen für alle Seiten** *(`W2·29-WERKBANK-GRUNDTON`, David 23.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-GRUNDTON · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [x] **Werkbank-Umbau: Grundton — Werkbank-Hintergrund und Rundungen für alle Seiten** *(`W2·29-WERKBANK-GRUNDTON`, David 23.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-GRUNDTON · status: done · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: Grundregel des Umbaus in `design/tokens.json` — Hintergrund wie Werkbank, Radius-Skala.
   Grenzen: Kontrast-Tore grün, Normtext gerade, Golden byte-gleich.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.

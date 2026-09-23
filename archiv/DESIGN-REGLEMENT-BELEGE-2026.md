@@ -739,3 +739,14 @@ Falls dieses Dokument später formalisiert/erweitert wird, diese Abschnitte:
 - **Offen/bewusst später:** Dispositiv-Liste (sichere Split-Heuristik), Sachverhalt-
   Sublabel-Absätze, Status-/Treatment-Farben (R16), Reader-Steuerung (R17), Facetten-
   Trefferzahlen + CH-Datumsformat im Filter (R15), Datums-Plausibilität (1 GR-Zukunftsdatum).
+
+## F0.5 «Kanten statt Kissen» — Wortlaut bis 23.9.2026 (abgelöst durch W2·29-WERKBANK-GRUNDTON)
+
+**F0.5 — Form: Kanten statt Kissen.** Alle fünf Radius-Token stehen auf `0px`
+(`--radius-sm…2xl`); die Skala bleibt als EIN Ort bestehen, damit die Konsumenten
+ohne Edit umfärben. **Ausnahme:** echte Punkte, Marken und Avatare ≤ 12 px bleiben
+rund (`rounded-full`). **Schatten:** `--shadow-sm`/`--shadow-md` sind `none`; es
+gibt genau einen Schatten, `--shadow-lg`, und er gehört ausschliesslich der
+**schwebenden Ebene** — Menü, Dialog, Popover, getragen von `.lc-schwebeflaeche`.
+Was an einem Feld hängt, schwebt nicht und trägt weder Schatten noch Radius
+(`.lc-suchpanel-huelle`, D23). Kein `lc-glass`.

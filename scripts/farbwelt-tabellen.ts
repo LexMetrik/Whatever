@@ -206,6 +206,9 @@ export const PFLICHT: Paar[] = [
   //   reg-r-flaeche  ink-900 11.40·10.70 · ink-600 5.29·5.30 · reg-r 7.41·6.34
   //   reg-m-flaeche  ink-900 12.17·10.37 · ink-600 5.65·5.14 · reg-m 4.10·7.91
   //   reg-w-flaeche  ink-900 12.13·10.46 · ink-600 5.63·5.18 · reg-w 4.30·7.52
+  // GRUNDTON 23.9.2026 (paper hell #FDFCFA, Flächen neu gerechnet), hell:
+  //   reg-g-flaeche  ink-900 12.12 · reg-g 6.48 · reg-r-flaeche 11.84 · 7.70
+  //   reg-m-flaeche  ink-900 12.61 · reg-m 4.25 · reg-w-flaeche 12.59 · 4.46
   // Die knappsten Werte sind die Registerfarbe auf ihrer eigenen Fläche im
   // HELLEN (4.10 / 4.30 gegen 3:1) — dort entscheidet eine Verschiebung von
   // `paper` oder der Registerfarbe zuerst, und genau dort greift das Tor.
@@ -247,9 +250,9 @@ export const REF_TOL = 0.06;
 // Herkunft in dieser Quelle-Spalte stehen — ein datierter Beleg altert nicht,
 // er wird ergaenzt (§2b).
 export const REFERENZ: Ref[] = [
-  { fg: 'slate-500', bg: 'well', hell: 4.86, dunkel: 3.38, quelle: 'C-1 lc-chip-entscheid Tick (§4b-B; D-5 war 5.03 → R1 4.86/3.47 → D12 4.86/3.38)' },
-  { fg: 'warn-700', bg: 'well', hell: 5.30, dunkel: 9.20, quelle: 'C-2 Currency-Chip warn (§4b-B; D-5 war 5.48/9.43 → R1 5.29/9.49 → D12 5.30/9.20)' },
-  { fg: 'brass-700', bg: 'well', hell: 13.79, dunkel: 14.19, quelle: 'C-3 Akzent-Tick = Tinte (D-5 war 5.13/10.48 Messing → R1 16.02/16.49 → D12 13.79/14.19)' },
+  { fg: 'slate-500', bg: 'well', hell: 5.04, dunkel: 3.38, quelle: 'C-1 lc-chip-entscheid Tick (§4b-B; D-5 war 5.03 → R1 4.86/3.47 → D12 4.86/3.38 → GRUNDTON 5.04/3.38)' },
+  { fg: 'warn-700', bg: 'well', hell: 5.49, dunkel: 9.20, quelle: 'C-2 Currency-Chip warn (§4b-B; D-5 war 5.48/9.43 → R1 5.29/9.49 → D12 5.30/9.20 → GRUNDTON 5.49/9.20)' },
+  { fg: 'brass-700', bg: 'well', hell: 14.28, dunkel: 14.19, quelle: 'C-3 Akzent-Tick = Tinte (D-5 war 5.13/10.48 Messing → R1 16.02/16.49 → D12 13.79/14.19 → GRUNDTON 14.28/14.19)' },
 ];
 
 // (Fixpunkt) --paper hell/dunkel sind unantastbare Anker (Fixpunkt 1).
@@ -271,7 +274,7 @@ export const REFERENZ: Ref[] = [
 // weg. Die R1-Zahlen bleiben als Herkunft im Kommentar stehen (§2b), sie sind
 // nicht falsch geworden, sondern abgeloest.
 export const FIXPUNKT: { token: string; mode: Mode; soll: string }[] = [
-  { token: 'paper', mode: 'hell', soll: '#FAF7F2' },
+  { token: 'paper', mode: 'hell', soll: '#FDFCFA' }, // W2·29-WERKBANK-GRUNDTON 23.9.2026 (David: Hintergrund wie Werkbank), vorher #FAF7F2
   { token: 'paper', mode: 'dunkel', soll: '#1B1917' },
 ];
 

@@ -150,6 +150,8 @@ export function NormPopover({ snapshot, passus, sachtitel, alsDialog = true, onC
         artikel={snapshot.artikel}
         passus={passus}
         passusRef={passusRef}
+        /* W2·29-WERKBANK-GRUNDTON: Marker für «Normtext-Körper gerade» (index.css); Rest = Vorgabe aus ArtikelBody */
+        className="lc-normtext-koerper px-5 py-4 space-y-2.5"
       />
 
       {/* Fuss: In Kraft seit · Live-Link zur geltenden Fassung · Disclaimer (§8). */}
