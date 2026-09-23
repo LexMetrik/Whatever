@@ -117,7 +117,7 @@ seit 5.9.2026 live (`a66421362`).
    Materialien · Werkzeuge); die Zahl kommt aus dem generierten Zähler
    (`startseiteZaehler.generated.ts`, heute 23 Rechner-Karten + 26 Vorlagen im Register = 49),
    Unterzeile aus derselben Quelle, nie von Hand (§5/§8). Umsetzung im Schritt, der die
-   Startseite anfasst (REST), nicht hier.
+   Startseite anfasst — **seit 23.9.2026 KATALOGE statt REST** (§5, Entscheid David 23.9.2026).
 3. **Farbe als Fläche: ja.** Reglement F0.2 («nie als Fläche») wird im Tokens-Schritt geändert,
    `check:farbwelt` auf die Flächen-Regel umgestellt — Kontrast-Schwellen bleiben unverändert.
 
@@ -139,10 +139,16 @@ Reihenfolge nach Produktwert, Dep-Kette
 | Schritt | `feld:` | Abnahmeliste (Inventar) | Richtung (Boards) | Grenzen |
 |---|---|---|---|---|
 | **`W2·29-WERKBANK-LESER`** — Gesetzes-Leser, grösster Korpus | `leser` | Abschnitt 2 (ganz) | Gesetz (ein Artikel) · Fliesstext, Erlass-Blatt offen/zu | **Normtext-Körper bleibt golden byte-gleich**; Fassungen, Revisionen, Verknüpfungen ziehen mit, werden nicht umgebaut |
-| **`W2·29-WERKBANK-KATALOGE`** — die vier Kataloge | `design` | 2.2 · 3.2 · 4.2 · 5.2 | vier Katalog-Boards + Suche · Abdeckung · Einstellungen | Status-Modell sichtbar (§8); Kantons-Auswahl mit Schweizkarte hat kein Board — Session entscheidet |
+| **`W2·29-WERKBANK-KATALOGE`** — die vier Kataloge | `design` | 2.2 · 3.2 · 4.2 · 5.2 · 1.2 Startseite (seit 23.9.) | vier Katalog-Boards + Suche · Abdeckung · Einstellungen · Main | Status-Modell sichtbar (§8); Kantons-Auswahl mit Schweizkarte hat kein Board — Session entscheidet |
 | **`W2·29-WERKBANK-VORLAGEN`** — ein Assistenten-Rahmen, dann die 30 | `werkzeuge` | 5.3 · 5.4 · 5.5 | Vorlage Arbeitsvertrag (Schritt 4 von 7) | Rahmen **aus den bestehenden** `src/lib/vorlagen/*Schemas.ts`, kein zweites Schema-Modell; PDF und DOCX aus demselben Assemble-Ergebnis (§5); die 42 geplanten fallen danach aus demselben Rahmen |
 | **`W2·29-WERKBANK-RECHNER`** — die 20 einzeln | `werkzeuge` | 4.3 · 4.4 | Fristenrechner ZPO | Gemeinsamer Rahmen **nur** für Kopf, Ergebnisblock, Exportleiste. **Rechenfälle nie abstrahiert (§1)** — 20 Rechner bleiben 20 Handgriffe |
 | **`W2·29-WERKBANK-REST`** — Rest und Rückbau | `design` | 1.5 · 1.6 · 3.3–3.7 · 6 | Entscheid · Materialien | Entscheid-Leser, Materialien, statische Seiten, mobile Breite, Druckansicht; **hier fallen die letzten Alt-Stylesheet-Reste und die abgelösten Reglemente** (§7) |
+
+**Nachtrag 23.9.2026 (Entscheid David, Chat, Option A):** Startseite aus REST in KATALOGE geholt
+(vier Kacheln mit denselben Karten-Bauteilen wie die Kataloge, als letzte Scheibe), KATALOGE parallel
+zu LESER — dep `[W2·29-WERKBANK-LESER]` aufgehoben; die Sessions stimmen Sperrflächen (geteilte
+Such-Bauteile bis LESER-S4) und Merge-Queue (LESER hat Vorrang) direkt ab. Die übrige Kette bleibt
+seriell.
 
 **Definition of Done jedes Rubrik-Schritts** (zusätzlich zu Skill `auftrag` Ziff. 4): **«Rückbau-
 Liste dieses Schritts abgearbeitet (Dateien gelöscht, Posten/Schritte in die Chronik, Fahrpläne

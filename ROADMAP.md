@@ -446,10 +446,11 @@ Umschichtung 20.9.2026 (2)):*
   auslagern, soweit sinnvoll»; erster Fall: 549 UX-Audit-Screenshots, 130 MB, PR dieser Zeile).
   Grenzen: `bibliothek/` (Tor `check:bibliothek`) und Norm-Belege bleiben im Repo.
 
-- [ ] **Werkbank-Umbau Schritt 3: die vier Kataloge** *(`W2·29-WERKBANK-KATALOGE`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-KATALOGE · status: ready · blocker: null · dep: [W2·29-WERKBANK-LESER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+- [~] **Werkbank-Umbau Schritt 3: die vier Kataloge** *(`W2·29-WERKBANK-KATALOGE`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-KATALOGE · status: wip · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: Gesetze-, Rechtsprechungs-, Rechner- und Vorlagen-Katalog samt Suche, Abdeckung und
   Einstellungen auf die Werkbank umziehen; Abnahmeliste sind die Inventar-Abschnitte 2.2/3.2/4.2/5.2.
+  Seit 23.9.2026 auch die Startseite (1.2, vier Kacheln) und parallel zu LESER (Entscheid David).
   Grenzen: Status-Modell bleibt sichtbar (§8), Löschpflicht im selben PR, Löschbilanz ≥ 50 %.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
 
