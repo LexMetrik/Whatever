@@ -2577,25 +2577,30 @@
   }
   .lc-kopf-aktionen .lc-chip:hover,
   .lc-kopf-aktionen .lc-chip:focus-visible { text-decoration: underline; }
-  /* ─── Titelblatt-Band (W2·29-WERKBANK-LESER S2, 23.9.2026) ─────────────────
-     Die Identität des Erlasses (Overline · Titel · Fakten) auf der Register-
-     fläche «Gesetze» — Entscheid «Farbe als Fläche» (David 22.9.2026), oben die
-     Registerfarbe als 2-px-Strich. Die Fläche trägt nur Tinte, die dort 4.5:1
-     hält: `--ink-500` wird INNERHALB des Bandes auf `--ink-600` gehoben
-     (gemessen 23.9.2026 auf reg-g-flaeche: ink-500 4.22 hell / 4.24 dunkel,
-     ink-600 5.38 / 5.25). Stand, Warnung (warn-700 4.45 auf der Fläche) und
-     Aktionen stehen darum darunter auf dem Papier (`layout/LeserKopfGeruest`). */
   /* Die klebende Leser-Kopfzeile (`v3/LeserKopf`) schliesst mit der 2-px-
-     Tintenlinie `--rule` wie die Topbar — als `::after` INNERHALB der Box statt
-     als Border: der Block bleibt so hoch wie `--leser-v3-kopf-block-h`, aus dem
-     `--nt-stick` rechnet (vorher lag die 1-px-Border ausserhalb der Rechnung),
-     und kein Kind mit eigener Fläche (Such-Zone) kann die Linie verdecken. */
+     Tintenlinie `--rule` wie die Topbar (W2·29-WERKBANK-LESER S2, 23.9.2026) —
+     als `::after` INNERHALB der Box statt als Border: der Block bleibt so hoch
+     wie `--leser-v3-kopf-block-h`, aus dem `--nt-stick` rechnet (vorher lag die
+     1-px-Border ausserhalb der Rechnung), und kein Kind mit eigener Fläche
+     (Such-Zone) kann die Linie verdecken. */
   .lc-leser-kopfzeile::after {
     content: ''; position: absolute; left: 0; right: 0; bottom: 0;
     height: 2px; background: var(--rule); pointer-events: none;
   }
+  /* ─── Titelblatt-Band (W2·29-WERKBANK-LESER S2, 23.9.2026) ─────────────────
+     Die Identität des Erlasses (Overline · Titel · Fakten) auf der Register-
+     fläche «Gesetze» — Entscheid «Farbe als Fläche» (David 22.9.2026), oben die
+     Registerfarbe als 2-px-Strich. Die Fläche trägt nur Tinte, die dort 4.5:1
+     hält: was sonst `ink-500` setzt (Overline, Fakten, Art-Glied), steht im
+     Band eine Stufe dunkler auf `ink-600` (gemessen 23.9.2026 auf
+     reg-g-flaeche: ink-500 4.22 hell / 4.24 dunkel, ink-600 5.38 / 5.25 —
+     Pflichtpaar in `check:farbwelt`). Als Farb-Regel, nicht als Umdefinition
+     von `--ink-500`: Token-Werte stehen nur zwischen den Generator-Markern
+     (`check:tokens-drift` Wache 3); die Regel steht UNGESCHICHTET unten bei
+     «③ Die Kopf-Etiketten des Lesers», weil sie die Utility `text-ink-500`
+     schlagen muss. Stand, Warnung (warn-700 4.45 auf der Fläche) und Aktionen
+     stehen darum darunter auf dem Papier. */
   .lc-titelblatt-band {
-    --ink-500: var(--ink-600);
     background: var(--reg-g-flaeche);
     border-top: 2px solid var(--reg-g);
     padding: 0.875rem 1rem 1rem;
@@ -2931,8 +2936,12 @@
      die 1-px-Unterkante, die im Referenzbild jeden Textknopf trägt. Der
      Ruhezustand ist damit eine Linie statt einer Fläche; der HOVER behält seine
      eingespielte Grammatik (Fläche `--well` + wärmere Tinte, §G-j) — dort ist
-     die Fläche eine Zustandsauskunft und keine Dauer-Anatomie. */
-  .lc-leiste-griff-fest { color: var(--ink-700); padding: 0 6px; border-bottom: 1px solid var(--rule-soft); border-radius: 0; }
+     die Fläche eine Zustandsauskunft und keine Dauer-Anatomie.
+     W2·29-WERKBANK-LESER S2 (23.9.2026): Ruhe-Tinte `ink-900` statt `ink-700`
+     — die Werkbank-Kopfzeile setzt ihre Griffe in der Tinte der Kennung davor
+     (Board «Fliesstext-Blatt»); Grösse, Polster und Unterkante unverändert,
+     damit kein Griff breiter wird (Zeile @390, Tap-Ziel F2-6). */
+  .lc-leiste-griff-fest { color: var(--ink-900); padding: 0 6px; border-bottom: 1px solid var(--rule-soft); border-radius: 0; }
   .lc-leiste-griff-fest:hover { background: var(--well); color: var(--brass-700); border-bottom-color: var(--brass-500); }
   /* KOMFORT-Stufe des Griffs (F2-6): auf dem Handy-Zuschnitt, wo der Finger das
      einzige Werkzeug ist, hebt sie die Untergrenze vom WCAG-2.5.8-Minimum
@@ -4681,6 +4690,12 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
   font-style: italic;
   letter-spacing: 0;
 }
+
+/* ③b Im Titelblatt-Band (`.lc-titelblatt-band`, Herleitung dort) trägt die
+   Fläche `ink-500` nicht mit 4.5:1 — was sonst in ink-500 steht (Fakten,
+   Art-Glied der Overline), steht dort in ink-600. Ungeschichtet, damit es die
+   Utility schlägt; die Overline selbst färbt ③ (reg-marke, 6.2:1 auf der Fläche). */
+.lc-titelblatt-band .text-ink-500 { color: var(--ink-600); }
 
 /* ④ Die Zähler-Marke der Rubrik-Kacheln (`ui/RubrikKachel`, Herleitung dort). */
 .lc-route[data-reg] .lc-zaehler-marke { color: var(--reg-marke); }
