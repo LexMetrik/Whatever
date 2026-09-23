@@ -1,4 +1,4 @@
-import { useMemo, type ReactNode } from 'react';
+import { useMemo, useState, type ReactNode } from 'react';
 import { DatumsFeld } from '../DatumsFeld';
 import { Checkbox, Field, inputCls } from './ui';
 import { NormText } from '../NormText';
@@ -46,6 +46,9 @@ import { getProfil, getVorlagenDetailgrad } from '../../lib/einstellungen';
 // profilPrefill, blockerKasten, pruefenZusatz, bestaetigung als Funktion), je
 // per Default deckungsgleich mit dem bisherigen Verhalten: Darstellung bzw.
 // Zustands-Hygiene, NIE Fachlogik.
+// V2c (Verträge) — drei weitere optionale Slots (detailgradAusEinstellungen,
+// vorauswahl, pruefenFuss) und zwei Erweiterungen (blockerKasten mit eigener
+// Überschrift, ortFehler optional), wieder je per Default deckungsgleich.
 
 /** Einheitliche Gate-Form aller Vorlagen-Engines. */
 type VorlagenGates = { blocker: string[]; warnungen: string[]; hinweise: string[] };
@@ -80,6 +83,15 @@ export interface VorlagenSeitenConfig<
   normalisieren?: (geladen: T) => T;
   /** Profil-Prefill der Absender-Felder (Default true). */
   profilPrefill?: boolean;
+  /** Globalen Vorlagen-Detailgrad (Einstellungen) als Default übernehmen,
+   *  wenn das Schema `detailgrad` führt (Default true). false = der Default
+   *  des Schemas gilt (Ist-Zustand der Vertrags-Seiten). */
+  detailgradAusEinstellungen?: boolean;
+  /** Vorauswahl aus der Adresse (z. B. `#untermiete`): läuft beim ersten
+   *  Render und bei jedem Wechsel von `schluessel` genau einmal, während des
+   *  Renderns (React-Muster «adjusting state», kein Effect). `anwenden`
+   *  liefert die zu setzenden Felder oder undefined. */
+  vorauswahl?: { schluessel: string; anwenden: (a: T) => Partial<T> | undefined };
   schritte: readonly { id: string; label: string }[];
   // Rahmen-Kopf
   overlineFallback: string;       // Rechtsgebiet-Fallback, falls Karte fehlt
@@ -99,8 +111,8 @@ export interface VorlagenSeitenConfig<
   fehlerEingabe: (a: T, schritt: number, gates: VorlagenGates) => string[];
   // «pruefen»-Schritt
   /** «Export gesperrt»-Box (role=alert) mit den gates.blocker oben im
-   *  Prüfen-Schritt (Default false). */
-  blockerKasten?: boolean;
+   *  Prüfen-Schritt (Default false). Ein String ersetzt die Überschrift. */
+  blockerKasten?: boolean | string;
   /** Seiten-Block zwischen den Hinweisen und Ort/Datum (z. B. Endtermin-
    *  Kachel aus `ctx.z`). */
   pruefenZusatz?: (ctx: SeiteCtx<T, Z>) => ReactNode;
@@ -110,7 +122,9 @@ export interface VorlagenSeitenConfig<
   blockerImLetztenSchritt?: boolean;
   ortDatumLabel: string;
   ortPlaceholder: string;
-  ortFehler: string;
+  /** Fehlertext bei leerem Ort. Fehlt er, ist der Ort keine Pflichtangabe
+   *  (kein Eintrag in Fehlerbox/Sammel-Befund, kein aria-invalid). */
+  ortFehler?: string;
   datumFehler: string;
   /** Inhalt der lc-highlight-Sektion ÜBER der Bestätigungs-Checkbox. Als
    *  Funktion, wenn ein Bullet von den Antworten abhängt. */
@@ -123,6 +137,8 @@ export interface VorlagenSeitenConfig<
    *  zu verkleinern (§6). Die Vereinheitlichung ist eine SICHTBARE Änderung und
    *  gehört in einen eigenen, deklarierten Schritt (W2·17-UI-BEFUNDE-B10). */
   bestaetigungLabelCls?: string;
+  /** Block UNTER der Export-Leiste (z. B. «Offene Verifikationen»). */
+  pruefenFuss?: ReactNode;
   // Export
   banner: PdfBanner;
   dateiBasis: string;             // z. B. 'Abtretungserklaerung' → .pdf/.docx
@@ -149,11 +165,19 @@ export function VorlagenSeite<
   })();
   // Globaler Vorlagen-Detailgrad (Einstellungen) als Default, wenn die Vorlage das
   // Feld führt — ein gespeicherter Wizard-Stand oder eine Wizard-Wahl gewinnt weiter.
-  const defaults = 'detailgrad' in config.defaults
+  const defaults = config.detailgradAusEinstellungen !== false && 'detailgrad' in config.defaults
     ? { ...config.defaults, detailgrad: getVorlagenDetailgrad() }
     : config.defaults;
   const { a, set, schritt, setSchritt, bestaetigt, setBestaetigt, kopiert, kopieren, zuruecksetzen } =
     useWizardState<T>({ defaults, speicherKey: config.speicherKey, normalisieren: config.normalisieren, prefill });
+
+  // Vorauswahl aus der Adresse — «adjusting state» während des Renderns.
+  const [vorauswahlStand, setVorauswahlStand] = useState<string | null>(null);
+  if (config.vorauswahl && vorauswahlStand !== config.vorauswahl.schluessel) {
+    setVorauswahlStand(config.vorauswahl.schluessel);
+    const patch = config.vorauswahl.anwenden(a);
+    if (patch) for (const k of Object.keys(patch) as (keyof T)[]) set(k, patch[k] as T[keyof T]);
+  }
 
   const z = useMemo(() => config.zusammenstellen(a), [a, config]);
   const { ergebnis } = z;
@@ -165,7 +189,7 @@ export function VorlagenSeite<
   const fehlerImSchritt = (i: number): string[] => {
     if (i !== letzter) return config.fehlerEingabe(a, i, gates);
     const f: string[] = [];
-    if (!a.ort.trim()) f.push(config.ortFehler);
+    if (config.ortFehler && !a.ort.trim()) f.push(config.ortFehler);
     if (!istIsoDatum(a.datum)) f.push(config.datumFehler);
     if (config.blockerImLetztenSchritt !== false) f.push(...gates.blocker);
     return f;
@@ -175,14 +199,14 @@ export function VorlagenSeite<
   const docxZiel = (label: string) =>
     docxAktiv(card) ? { label, banner: config.banner, dateiName: `${config.dateiBasis}.docx` } : undefined;
 
-  const ortFehlt = a.ort.trim() ? '' : config.ortFehler;
+  const ortFehlt = !config.ortFehler || a.ort.trim() ? '' : config.ortFehler;
   const datumFehlt = istIsoDatum(a.datum) ? '' : config.datumFehler;
 
   const pruefenInhalt = (
     <div className="space-y-5">
       {config.blockerKasten && gates.blocker.length > 0 && (
         <div role="alert" className="lc-notice-danger space-y-1">
-          <p className="lc-overline text-danger-700 mb-1">Export gesperrt</p>
+          <p className="lc-overline text-danger-700 mb-1">{typeof config.blockerKasten === 'string' ? config.blockerKasten : 'Export gesperrt'}</p>
           {gates.blocker.map((b, i) => <p key={i} className="text-body-s text-danger-700">• <NormText text={b} /></p>)}
         </div>
       )}
@@ -232,6 +256,7 @@ export function VorlagenSeite<
         kopiert={kopiert} onKopieren={kopieren}
         pdf={{ label: config.pdfLabel, banner: config.banner, dateiName: `${config.dateiBasis}.pdf` }}
         docx={docxZiel(config.docxLabel)} />
+      {config.pruefenFuss}
     </div>
   );
 
