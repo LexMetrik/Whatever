@@ -61,7 +61,8 @@ const bereiche = (page: Page) => page.getByRole('navigation', { name: 'Bereiche 
  *  `page.evaluate`-Messungen braucht es diesen Riegel. */
 async function pultBereit(page: Page): Promise<void> {
   await expect(page.locator('[data-pult-modul]')).toHaveCount(5)
-  await expect(bereiche(page).getByRole('link')).toHaveCount(5)
+  // K7 (§6.3, deklariert, Entscheid David 22.9.2026): vier Rubrik-Kacheln statt fünf Bereiche.
+  await expect(bereiche(page).getByRole('link')).toHaveCount(4)
 }
 
 test.describe('R10 · Werkseinstellung und Bereichs-Reihe', () => {
@@ -77,33 +78,69 @@ test.describe('R10 · Werkseinstellung und Bereichs-Reihe', () => {
     }
   })
 
-  test('die fünf Bereiche stehen in einer Reihe und tragen gemessene Zahlen (§8)', async ({ page }) => {
+  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-KATALOGE K7, §6.3): fünf Bereiche →
+  // vier Rubrik-Kacheln; «Rechner» und «Vorlagen» sind EINE Kachel «Werkzeuge».
+  test('die vier Rubriken stehen in einer Reihe und tragen gemessene Zahlen (§8)', async ({ page }) => {
     await page.goto('/')
     await pultBereit(page)
     const felder = bereiche(page).getByRole('link')
-    for (const [i, name] of ['Gesetze', 'Rechtsprechung', 'Materialien', 'Rechner', 'Vorlagen'].entries()) {
+    for (const [i, name] of ['Gesetze', 'Rechtsprechung', 'Materialien', 'Werkzeuge'].entries()) {
       await expect(felder.nth(i)).toContainText(name)
       // Jede Zahl ist eine echte, positive Zahl — kein Platzhalter, kein «—».
       const text = (await felder.nth(i).innerText()).replace(/’|'/g, '')
       expect(text, `${name}: Zahl`).toMatch(/\d/)
     }
-    // Alle fünf auf derselben Zeile (eine Reihe, @1440) — geprüft an der
+    // Alle vier auf derselben Zeile (eine Reihe, @1440) — geprüft an der
     // Oberkante, nicht an der Spaltenzahl der CSS-Klasse.
     const oben = await felder.evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().top)))
     expect(new Set(oben).size, `Oberkanten: ${oben.join(', ')}`).toBe(1)
   })
 
-  test('@390 stehen die Bereiche zweispaltig', async ({ page }) => {
-    await page.setViewportSize({ width: 390, height: 844 })
-    await page.goto('/')
-    await pultBereit(page)
-    const felder = bereiche(page).getByRole('link')
-    const links = await felder.evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().left)))
-    expect(new Set(links).size, `linke Kanten: ${links.join(', ')}`).toBe(2)
-    // Und die Seite bläht sich nicht auf.
-    const breite = await page.evaluate(() => document.documentElement.scrollWidth)
-    expect(breite).toBeLessThanOrEqual(390)
-  })
+  // DEKLARIERTE ANPASSUNG (§6.3, K7-Nachzug Sichtprüfung 23.9.2026): @390
+  // zweispaltig → EINSPALTIG. Zweispaltig blieben ~130 px Satzbreite je Kachel,
+  // «Rechtsprechung» wurde getrennt («Rechtspre-chung»). Zusätzlich gesichert:
+  // kein Kacheltitel trennt oder bricht (eine Zeile, `hyphens` nicht `auto`).
+  // Ab 480 px bleibt es zweispaltig (geprüft am zweiten Viewport).
+  for (const [breite, spalten] of [[390, 1], [480, 2]] as const) {
+    test(`@${breite} stehen die Rubriken ${spalten === 1 ? 'einspaltig' : 'zweispaltig'}, Titel ungetrennt`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: 844 })
+      await page.goto('/')
+      await pultBereit(page)
+      const felder = bereiche(page).getByRole('link')
+      const links = await felder.evaluateAll((els) => els.map((e) => Math.round(e.getBoundingClientRect().left)))
+      expect(new Set(links).size, `linke Kanten: ${links.join(', ')}`).toBe(spalten)
+      const titel = await felder.evaluateAll((els) => els.map((e) => {
+        const t = e.querySelector<HTMLElement>('.text-h3')!
+        const innen = (t.firstElementChild as HTMLElement | null) ?? t
+        const zeilen = Math.round(t.getBoundingClientRect().height / parseFloat(getComputedStyle(t).lineHeight))
+        return `${t.textContent}:${zeilen}:${getComputedStyle(innen).hyphens}`
+      }))
+      for (const eintrag of titel) expect(eintrag, 'Titel: eine Zeile, keine Silbentrennung').toMatch(/^[^:]+:1:(?!auto)/)
+      // Und die Seite bläht sich nicht auf.
+      const weite = await page.evaluate(() => document.documentElement.scrollWidth)
+      expect(weite).toBeLessThanOrEqual(breite)
+    })
+  }
+
+  // K7-NACHZUG (Sichtprüfung 23.9.2026): unter den Kacheln klafften 96 px —
+  // `gap-y-9` (36) + leere Zuletzt-Reserve `min-h-beiwerk` (24) + `gap-y-9`
+  // (36). Soll: der Abschnittsabstand der Seite (36 px), die Reserve bleibt.
+  // Gemessen wird Kachel-Unterkante → Oberkante der Modul-Linie, leer (Prerender-
+  // Fall, erster Besuch) an beiden Breiten.
+  for (const breite of [1280, 390]) {
+    test(`@${breite}: Kacheln → erstes Modul im Abschnittsabstand, nicht doppelt`, async ({ page }) => {
+      await page.setViewportSize({ width: breite, height: 900 })
+      await page.goto('/')
+      await pultBereit(page)
+      const luecke = await page.evaluate(() => {
+        const nav = document.querySelector('nav[aria-label="Bereiche der Sammlung"]')!
+        const modul = document.querySelector('[data-pult-modul]')!.parentElement!
+        return Math.round(modul.getBoundingClientRect().top - nav.getBoundingClientRect().bottom)
+      })
+      expect(luecke, `Lücke ${luecke} px`).toBeLessThanOrEqual(40)
+      expect(luecke, `Lücke ${luecke} px`).toBeGreaterThanOrEqual(24)
+    })
+  }
 })
 
 test.describe('R10 · eigener Zustand', () => {

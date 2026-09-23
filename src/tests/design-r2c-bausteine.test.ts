@@ -129,11 +129,16 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
     expect(gesetze, 'Gesetze: eigener Zahl-Kopf').not.toMatch(eigenerZahlKopf);
   });
 
-  it('die Startseite trägt gar keine Kachel-Optik mehr', () => {
-    // R3: weder der Baustein noch das alte `lc-tile`-Rezept stehen auf «/».
-    for (const rel of ['pages/Startseite.tsx', 'lib/startseiteModule.tsx']) {
-      expect(lies(rel), `${rel}: keine RubrikKachel`).not.toContain('<RubrikKachel');
-    }
+  // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-KATALOGE K7, Entscheid David
+  // 22.9.2026, §6.3): «/» trägt wieder Kacheln — die vier Rubriken über DEN
+  // Baustein `ui/RubrikKachel`, direkt in `pages/Startseite.tsx`. Die Regel
+  // «Kachel-Anatomie genau einmal» wird dadurch SCHÄRFER geprüft (zweiter
+  // Konsument), nicht schwächer: die Start-Bausteine und das Modul-Registry
+  // dürfen weiterhin keine eigene Kachel und kein `lc-tile` führen.
+  it('die Startseite konsumiert `ui/RubrikKachel`, die Start-Bausteine keine eigene Kachel', () => {
+    expect(lies('pages/Startseite.tsx'), 'Startseite: rendert den Baustein').toContain('<RubrikKachel');
+    expect(lies('pages/Startseite.tsx'), 'Startseite: kein lc-tile').not.toContain('lc-tile');
+    expect(lies('lib/startseiteModule.tsx'), 'Modul-Registry: keine RubrikKachel').not.toContain('<RubrikKachel');
     const startDateien = alleQuellen().filter((d) => d.includes('/components/start/'));
     expect(startDateien.length, 'Startseiten-Bausteine gefunden').toBeGreaterThan(0);
     for (const d of startDateien) {
@@ -165,7 +170,9 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
     // Ort geprüft. Die Ausdrücke bleiben scharf: die Negativ-Kontrolle darüber
     // und `not.toContain('im Volltext')` unten fallen weiterhin auf jede
     // Abschwächung.
-    const bereiche = lies('components/start/BereichsReihe.tsx');
+    // K7 (§6.3, deklariert): die Bereichs-Reihe ist in die vier Rubrik-Kacheln
+    // von `pages/Startseite.tsx` gewandert — gleicher Prüfpunkt, neuer Ort.
+    const bereiche = lies('pages/Startseite.tsx');
     const bund = lies('components/start/SystematikListe.tsx');
     const kantone = lies('components/start/KantoneRaster.tsx');
     const entscheide = lies('components/start/EntscheideListe.tsx');
@@ -176,7 +183,9 @@ describe('C-5 · Einstiegs-Kacheln laufen über EINEN Baustein', () => {
       .toMatch(/Entscheide im Volltext/);
     expect(bereiche, 'Bereich Materialien: «erfasst», nie «Volltext»')
       .toMatch(/amtliche Materialien erfasst/);
-    expect(bund, 'Bund-Modul: Zähler mit Scope').toMatch(/erfasste Volltext \({nf\(z\.gesetzeBundVolltext\)} Erlasse\)/);
+    // K7 (§6.3, deklariert): der Fuss nennt Bundesrecht und Staatsverträge
+    // getrennt statt der Mischzahl — der Ausdruck ist schärfer, nicht weicher.
+    expect(bund, 'Bund-Modul: Zähler mit Scope').toMatch(/erfasste Volltext \({nf\(z\.gesetzeBundesrechtVolltext\)} Erlasse\s+des Bundesrechts und {nf\(z\.gesetzeInternationalVolltext\)} Staatsverträge\)/);
     expect(kantone, 'Kanton-Modul: Zähler mit Scope').toMatch(/Erlasse im Volltext/);
     expect(entscheide, 'Entscheide-Modul: Zähler mit Scope').toMatch(/Entscheide im Volltext/);
     expect(materialien, 'Materialien: «erfasst», nie «Volltext»').toMatch(/Materialien erfasst/);
