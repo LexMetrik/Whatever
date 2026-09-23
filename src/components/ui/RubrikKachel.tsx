@@ -48,7 +48,9 @@ export function RubrikKachel({ reg, ziel, onWahl, zahl, einheit, titel, nutzen, 
   /** Zusatz unter der Unterzeile (z. B. Erfassungsgrad-Legende). */
   extra?: ReactNode;
 }) {
-  const klasse = `group flex flex-col gap-1.5 border-t-2 p-5 text-left no-underline ${REGISTER_KLASSE[reg]}`;
+  // `[&_.text-ink-500]:text-ink-600`: Zusatz-Tinte im `extra`-Slot hebt auf der
+  // Fläche eine Stufe (ink-500 4.22:1 auf `reg-g-flaeche` < AA; S2 ③b).
+  const klasse = `group flex flex-col gap-1.5 border-t-2 p-5 text-left no-underline [&_.text-ink-500]:text-ink-600 ${REGISTER_KLASSE[reg]}`;
   const inhalt = (
     <>
       {zahl !== undefined && (
