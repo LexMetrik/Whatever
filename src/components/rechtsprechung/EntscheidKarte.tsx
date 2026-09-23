@@ -16,6 +16,10 @@ import { StatusBadge } from '../verzahnung/StatusBadge';
 // Inhaltsmodell wäre (Begründung dort). Die Chip-Grammatik macht die Aktions-
 // Form darum an der ROLLE fest, nicht am Tag (LM-044/N1, index.css).
 
+/** Thema-Absatz aller vier Varianten (LM-036 `min-h-[2lh]` s. u.); Hover
+ *  unterstreicht ihn — die Karte ist als Ganzes der Link (K3). */
+const THEMA = 'mt-2 leading-snug line-clamp-2 min-h-[2lh] underline-offset-2 group-hover:underline';
+
 export function EntscheidKarte({ e, onNorm }: {
   e: BrowseEntscheid;
   onNorm: (k: string) => void;
@@ -30,13 +34,14 @@ export function EntscheidKarte({ e, onNorm }: {
   const ziel = verweis
     ? `/rechtsprechung/${encodeURIComponent(verweis.zielKey)}?ansicht=voll`
     : `/rechtsprechung/${encodeURIComponent(e.key)}`;
-  // `data-aktiv`: die Hover-Grammatik der Karten liegt seit C-3 (31.8.2026) als
-  // EINE Regel in `index.css` und greift am ELEMENT (`a`/`button`). Diese Karte
-  // ist klickbar, aber ein <div> — der Stretched-Link liegt innen, damit die
-  // Norm-Chips seine Geschwister bleiben. Das Attribut ist die eine erklärte
-  // Ausnahme, kein zweiter Hover-Weg.
+  // Werkbank K3 (23.9.2026): Hover = Fläche `--well` + unterstrichenes Thema
+  // (wie die Erlass-Zeile `.tb-link`, K2) statt der Messing-Kante. Damit
+  // entfällt `data-aktiv`, die Ausnahme dieser Karte in der C-3-Regel
+  // (`index.css`), die nur noch Messing färbte. Identität und Sachgebiet im
+  // Registerton «r»; die Trennung Lesebereich/Metazeile ist eine Haarlinie
+  // statt des Messing-Balkens `scale-rule-sm`.
   return (
-    <div data-aktiv className="lc-card group flex h-full flex-col p-4">
+    <div className="lc-card group flex h-full flex-col p-4 lc-hover-flaeche">
       {/* Lese-Bereich (klickbar). flex-1 schiebt den Fuss auf gleiche Höhe.
           Stretched-Link: der Link deckt die ganze Lesefläche per ::after ab, die
           Norm-Chips liegen als GESCHWISTER darüber (relative) — so ist der
@@ -44,13 +49,15 @@ export function EntscheidKarte({ e, onNorm }: {
           die ganze Fläche bleibt aber klickbar. */}
       <div className="relative flex flex-1 flex-col">
       <Link to={ziel} className="block no-underline after:absolute after:inset-0 after:content-['']" data-quarantaene={e.quarantaene}>
-        {/* Statuszeile: Gebiet + Leit-Marker links, Status rechts. */}
-        <div className="flex items-center justify-between gap-2 text-micro">
+        {/* Statuszeile: Gebiet + Leit-Marker links, Status rechts. K3: bricht
+            um — @390 lief «Volltext nicht verfügbar» + «maschinell» über den
+            Kartenrand (auf main gesehen 23.9.2026, «maschinell» abgeschnitten). */}
+        <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-micro">
           <span className="flex items-center gap-2">
             {verweis
               ? <span className="lc-badge lc-badge-soft">Vollständiges Urteil</span>
               : leit && <span className="lc-badge lc-badge-ok">Leitentscheid</span>}
-            <span className="lc-overline text-brass-700" title={e.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}>{GEBIET_LABEL[e.sachgebiet]}</span>
+            <span className="lc-overline text-reg-r" title={e.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}>{GEBIET_LABEL[e.sachgebiet]}</span>
           </span>
           <span className="flex shrink-0 items-center gap-1.5">
             {/* D3 (Gegenprüfungs-Auflage 12.9.2026, PR #816): ein quarantänierter
@@ -93,14 +100,14 @@ export function EntscheidKarte({ e, onNorm }: {
         {/* THEMA — Leitelement. Verweis: klarer Bezug zum BGE; sonst echte Regeste in
             Serif (Lesebild), Synth in Sans. */}
         {verweis
-          ? <p className="mt-2 text-body-s text-ink-700 leading-snug line-clamp-2 min-h-[2lh]">Vollständiges Urteil zu <span className="num">BGE {verweis.bgeReferenz}</span></p>
+          ? <p className={`${THEMA} text-body-s text-ink-700`}>Vollständiges Urteil zu <span className="num">BGE {verweis.bgeReferenz}</span></p>
           : synth
-            ? <p className="mt-2 text-body-s text-ink-700 leading-snug line-clamp-2 min-h-[2lh]">{themaText(e)}</p>
+            ? <p className={`${THEMA} text-body-s text-ink-700`}>{themaText(e)}</p>
             : betreff
               /* Amtlicher Betreff: verbindlicher Text (font-medium, ink-900), aber
                  Sans statt der Serifen-Regeste-Optik — ehrlich unterscheidbar (§8). */
-              ? <p className="mt-2 text-body-s font-medium text-ink-900 leading-snug line-clamp-2 min-h-[2lh]">{themaText(e)}</p>
-              : <p className="mt-2 font-serif text-body-l text-ink-900 leading-snug line-clamp-2 min-h-[2lh]">{themaText(e)}</p>}
+              ? <p className={`${THEMA} text-body-s font-medium text-ink-900`}>{themaText(e)}</p>
+              : <p className={`${THEMA} font-serif text-body-l text-ink-900`}>{themaText(e)}</p>}
 
       </Link>
 
@@ -126,14 +133,12 @@ export function EntscheidKarte({ e, onNorm }: {
       )}
       </div>
 
-      <div className="scale-rule-sm mt-3" aria-hidden />
-
-      {/* Metazeile (gedämpft) + amtliche Fassung. */}
-      <div className="mt-2.5 flex items-end justify-between gap-3">
+            {/* Metazeile (gedämpft) + amtliche Fassung. */}
+      <div className="mt-3 flex items-end justify-between gap-3 border-t border-rule-soft pt-2.5">
         <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs text-ink-500">
           {/* Identität führend: amtliche BGE-Zitierung (erkannt/zitierbar) hervorgehoben,
               sonst das Aktenzeichen gedämpft. */}
-          <span className={`num ${istBge(e) ? 'font-medium text-brass-700' : 'text-ink-500'}`}>{hauptIdentitaet(e)}</span>
+          <span className={`num ${istBge(e) ? 'font-medium text-reg-r' : 'text-ink-500'}`}>{hauptIdentitaet(e)}</span>
           <span className="text-ink-300" aria-hidden>·</span>
           <span>{e.gerichtName}</span>
           <span className="text-ink-300" aria-hidden>·</span>
@@ -151,7 +156,7 @@ export function EntscheidKarte({ e, onNorm }: {
           {e.sprache !== 'de' && <span className="lc-badge lc-badge-soft" title={spracheBadgeTitel(e.sprache)}>{e.sprache}</span>}
         </div>
         <a href={e.quelleUrl} target="_blank" rel="noopener noreferrer"
-          className="shrink-0 text-xs text-ink-500 no-underline hover:text-brass-700"
+          className="shrink-0 text-xs text-ink-500 no-underline hover:text-ink-900"
           title="Amtliche Fassung beim Gericht öffnen">
           ↗ amtlich
         </a>

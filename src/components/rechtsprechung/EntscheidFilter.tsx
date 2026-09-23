@@ -268,9 +268,10 @@ export function EntscheidFilter({
           Neuladen wie Dichte und Sortierung (LM-206: keine stille Teil-Wieder-
           herstellung mehr). Gesteuert, nicht `defaultOpen`: sonst liefe der
           gespeicherte Wert dem DOM-Zustand hinterher. */}
-      <details className="lc-card px-4 py-2.5" open={klappeOffen}
+      {/* K3: Haarlinien-Rahmen, Beschriftung in Tinte statt Messing. */}
+      <details className="border border-rule-soft px-4 py-2.5" open={klappeOffen}
         onToggle={(e) => onKlappe((e.currentTarget as HTMLDetailsElement).open)}>
-        <summary className="cursor-pointer select-none text-body-s font-medium text-brass-700">Erweiterte Filter</summary>
+        <summary className="cursor-pointer select-none text-body-s font-medium text-ink-700 hover:text-ink-900">Erweiterte Filter</summary>
         {/* Kanton/Bund («Gemeinwesen») und Sprache stehen jetzt als Facetten-Leiste
             oben — hier nur die Langläufer (Gericht, Datum). */}
         <div className="mt-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
@@ -338,7 +339,7 @@ export function EntscheidFilter({
         <div className="lc-chip-zeile flex flex-wrap items-center gap-1.5">
           {aktiveChips.map((c) => (
             <button key={c.key} type="button" onClick={c.loesche}
-              className="lc-chip inline-flex items-center gap-1 hover:border-brass-400 hover:text-brass-700"
+              className="lc-chip inline-flex items-center gap-1 border-l-reg-r hover:text-ink-900"
               title="Filter entfernen">
               {c.label}<span aria-hidden>×</span>
             </button>
@@ -354,7 +355,7 @@ export function EntscheidFilter({
               `--tap-ziel` als Mindesthöhe, ohne die Chip-Zeile zu sprengen;
               die leise Stimme (text-xs, Messing) bleibt. */}
           <button type="button" onClick={zuruecksetzen}
-            className="lc-btn-mini text-xs font-medium text-brass-700 hover:text-brass-600">
+            className="lc-btn-mini text-xs font-medium text-ink-700 hover:border-line-strong hover:bg-transparent hover:text-ink-900">
             zurücksetzen
           </button>
         </div>
