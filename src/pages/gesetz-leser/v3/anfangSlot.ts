@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext } from 'react';
 
 // ─── Ä94 (H4-Nachzug 18.8.2026) · WO «↑ ANFANG» STEHT, WENN DIE LEISTE SCHWEIGT ─
 //
@@ -43,11 +43,9 @@ import { createContext, useContext } from 'react';
 // Bequemlichkeit: er berührt `LeserSeitenleiste.tsx` und `TrefferLeiste.tsx`,
 // und an der Seitenleiste bauen am 7.9.2026 zwei parallele Einheiten (D36/D37).
 // §0 Ziff. 5 — kein Doppelbau. Der Rückbau ist als Nachzug übergeben.
+// W2·29 S4 (23.9.2026): Verbraucher-Seite zurückgebaut (`useAnfangSlot`,
+// TrefferLeiste, LeserTrefferListe). Offen: der Provider in `LeserSeitenleiste`
+// und diese Datei — S3-Fläche im Parallelbau, darum dort.
 
 /** Der abgegebene «↑ Anfang»-Knopf: `null` = die Leiste zeigt ihn selbst. */
 export const AnfangSlot = createContext<(() => void) | null>(null);
-
-/** Nimmt den abgegebenen Knopf an — `null`, wenn keiner abgegeben wurde. */
-export function useAnfangSlot(): (() => void) | null {
-  return useContext(AnfangSlot);
-}

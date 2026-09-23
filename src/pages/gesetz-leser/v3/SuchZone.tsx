@@ -69,6 +69,9 @@ export const SUCH_H_RUHE = '2.75rem';
 /** Höhe mit laufender Suche (Feld + Zähler-Zeile `min-h-5` + `gap-1`). */
 export const SUCH_H_AKTIV = '4.25rem';
 
+/** W2·29 S4 (Werkbank): ‹ › eckig mit Linie; 20 px wie die Zeile (Höhe bleibt). */
+const SCHRITT = 'inline-flex h-5 w-5 items-center justify-center border border-line bg-paper leading-none text-ink-900 transition-colors lc-hover-flaeche';
+
 export function SuchZone({
   suchFeld, sucheAktiv, bestimmungen, fundstellen, bestimmungsWort, onListe,
   onVor, onZurueck, listeSteht, markenSchalter,
@@ -133,13 +136,10 @@ export function SuchZone({
   markenSchalter?: ReactNode;
 }) {
   return (
-    // `lr8-erlasssuche`: der Anschluss für die eine Druck-Regel (D28, «Druck
-    // ohne Feld»). Sie steht in `index.css` und nicht hier, weil `@media print`
-    // keine Prop ist — und sie greift an DIESER Zone statt am Feld, damit auch
-    // die Zähler-Zeile und die Griffe daneben aus der Kanzlei-Akte fallen. Der
-    // Pauschal-Selektor des Druck-Blocks (`button`) hätte nur die Griffe
-    // erwischt und das Eingabefeld samt Zahlen stehen lassen.
-    <div data-v3-such-zone className="lr8-erlasssuche flex flex-col justify-start gap-1 pb-2"
+    // D28 «Druck ohne Feld»: `print:hidden` an der ZONE, nicht am Feld — auch
+    // Zähler-Zeile und Griffe fallen aus der Kanzlei-Akte (W2·29 S4: vorher die
+    // eine Druck-Regel in index.css, jetzt am Markup).
+    <div data-v3-such-zone className="flex flex-col justify-start gap-1 pb-2 print:hidden"
       style={{ height: 'var(--leser-v3-such-h)' }}>
       {/* ── D28 · DAS FELD IST EIN FELD, KEINE WAND ──────────────────────────
           GEMESSEN 6.9.2026 @1440 (STPO, Preview 4372) nach dem Umzug: das
@@ -195,13 +195,13 @@ export function SuchZone({
               68 px festgeschrieben (Feld 32 + gap 4 + Zeile 24 + pb 8), eine
               zweite Zeile verstellte den Sprung-Offset jedes Ankers (LM-003). */}
           <button type="button" data-v3-treffer-weg onClick={onListe}
-            className="flex min-w-0 flex-1 items-center gap-1 overflow-hidden whitespace-nowrap rounded-sm text-left text-micro text-ink-600 transition-colors hover:text-brass-700">
+            className="flex min-w-0 flex-1 items-center gap-1 overflow-hidden whitespace-nowrap text-left text-micro text-ink-600 transition-colors hover:text-ink-900">
             <span className="num">{bestimmungen}</span>
             <span>{zaehlform(bestimmungen, bestimmungsWort)}</span>
             <span aria-hidden className="text-ink-300">·</span>
             <span className="num">{fundstellen}</span>
             <span>{fundstellen === 1 ? 'Fundstelle' : 'Fundstellen'}</span>
-            <span aria-hidden className="ml-auto shrink-0 truncate">
+            <span aria-hidden className="ml-auto shrink-0 truncate text-brass-700">
               <span className="hidden sm:inline">Treffer anzeigen</span>
               <span className="sm:hidden">Liste</span> →
             </span>
@@ -211,12 +211,12 @@ export function SuchZone({
             <span data-v3-treffer-schritt className="flex shrink-0 items-center gap-0.5">
               <button type="button" data-v3-treffer-zurueck onClick={onZurueck}
                 aria-label="Vorherige Fundstelle" title="Vorherige Fundstelle (↑)"
-                className="lr8-erlasssuche-schritt">
+                className={SCHRITT}>
                 <span aria-hidden>‹</span>
               </button>
               <button type="button" data-v3-treffer-vor onClick={onVor}
                 aria-label="Nächste Fundstelle" title="Nächste Fundstelle (↓ oder ↵)"
-                className="lr8-erlasssuche-schritt">
+                className={SCHRITT}>
                 <span aria-hidden>›</span>
               </button>
             </span>

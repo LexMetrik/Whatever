@@ -61,6 +61,15 @@ async function gliederungZu(page: Page): Promise<void> {
   await expect(page.locator('[data-v3-aside]')).toHaveCount(0)
   // POSITIV-Vorbedingung: die Spalte ist weg, das Feld ist trotzdem da (Ä19).
   await expect(page.locator('[data-v3-such-zone] input')).toHaveCount(1)
+  // «Zu» ist erst, wenn der Satzspiegel STEHT: die Lese-Zeile gleitet 220 ms
+  // (`transition-[grid-template-columns]`, `./LeserLeseZeile`) von x 553 auf
+  // 427. Ohne dieses Warten mass (e) `vorher` mitten im Gleiten — GEMESSEN
+  // 23.9.2026: CI 19/19 Erstversuche rot mit x ∈ {429 … 472} → 427 (genau die
+  // rAF-Kurve der Transition), lokal mit `--trace=off` 20/20 rot; der Retry
+  // war nur grün, weil die Trace-Aufzeichnung jeden Schritt verlangsamt.
+  await page.evaluate(() => Promise.all(document.getAnimations()
+    .filter((a) => a instanceof CSSTransition && a.transitionProperty === 'grid-template-columns')
+    .map((a) => a.finished.catch(() => undefined))))
 }
 
 /**

@@ -3879,20 +3879,6 @@
      helle Tinte) → EINE Regel trägt AA in beiden Themes (§13/F2), kein Override. */
   ::highlight(lc-such-treffer) { background-color: var(--brass-200); color: var(--ink-900); }
 
-  /* W2·19-GLIEDERUNG/S8 (Bau-Spec §4.3): der Textausschnitt in der Trefferliste
-     der Seitenleiste hebt den Begriff «in brass-200-Optik wie
-     ::highlight(lc-such-treffer)» hervor — hier als echtes <mark>, weil der
-     Ausschnitt aus den QUELL-Strings gebaut wird (kein DOM-Range, also keine
-     Highlight-API). Bewusst DIESELBEN zwei Variablen wie die Regel darüber: der
-     Leser soll dieselbe Markierung in der Liste und im Wortlaut wiedererkennen,
-     und beide kippen mit html.dark gemeinsam (§13/F2, AA in beiden Themes).
-     Der UA-Default von <mark> (Gelb auf Schwarz) wird damit vollständig
-     ersetzt — sonst stünde ein haus-fremdes Gelb in der Leiste. */
-  .lc-such-ausschnitt mark {
-    background-color: var(--brass-200); color: var(--ink-900);
-    border-radius: .125rem; padding: 0 .0625rem;
-  }
-
   .lc-live { display: inline-flex; align-items: center; gap: .4rem; }
   /* F1: Live-Punkt = Zustand «live/ok» → --ok-Rolle (wertidentisch zu sage). */
   .lc-live::before {
@@ -4407,44 +4393,6 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
 .fc-zeile[data-reg="r"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-r); }
 .fc-zeile[data-reg="m"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-m); }
 .fc-zeile[data-reg="w"] .fc-schalter[aria-pressed="true"] { border-bottom-color: var(--reg-w); }
-
-/* ═══ R6d/D28 · DIE ERLASS-SUCHE IM LESER-KOPF ═══════════════════════════════
-   David 6.9.2026: «die suchleiste im gesetz … will ich oben am gesetz». Das
-   Feld selbst ist unverändert `.lc-input .lc-v3-feld` (Unterstrich-Anatomie
-   R3-F3) — hier stehen nur die zwei Griffe, die D28 zusätzlich verlangt
-   («Treffer-Navigation ‹ › und Zähler in derselben Zeile»).
-
-   REGISTERFARBE GESETZE (`--reg-g`), nicht Messing: die Zone gehört sichtbar
-   zum Register, in dem man liest — dieselbe Zuordnung, die die Reiter und die
-   Bezugs-Marken tragen (`.lr7-bez-marke[data-reg="g"]`, `.tb-raster`). Die
-   Ruhefarbe bleibt `--ink-500`: eine Navigations-Hilfe, die im Ruhezustand
-   farbig leuchtet, zöge den Blick vom Gesetzestext ab (Design-Grundlage Kap. 8).
-   20 px hoch wie die Zähler-Zeile daneben (`min-h-5`) — die Zeile wächst durch
-   die Griffe NICHT, `--leser-v3-such-h` bleibt Zeichen für Zeichen dieselbe. */
-.lr8-erlasssuche-schritt {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 9999px;
-  color: var(--ink-500);
-  line-height: 1;
-  transition: color 120ms ease, background-color 120ms ease;
-}
-.lr8-erlasssuche-schritt:hover { color: var(--reg-g); background: var(--well); }
-.lr8-erlasssuche-schritt:focus-visible { color: var(--reg-g); }
-
-/* D28 · «Druck ohne Feld». Eine Suchleiste auf Papier ist ein Bedienelement
-   ohne Bedienung — dieselbe Begründung, mit der der Druck-Block oben
-   `nav`/`button`/`.lc-btn*` fallen lässt. Die Zone fällt GANZ (Feld, Zähler,
-   Schritt-Griffe), nicht nur ihre Knöpfe: der Pauschal-Selektor `button` hätte
-   das Eingabefeld und die Trefferzahlen stehen gelassen.
-   Ungeschichtet am Dateiende und darum stärker als jede Layer-Regel — hier ist
-   das erwünscht, es gibt genau eine Aussage über diese Zone im Druck. */
-@media print {
-  .lr8-erlasssuche { display: none !important; }
-}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    GB · «LEBEN»: REGISTERFARBE, SERIFEN-AKZENT, LINIEN STATT KÄSTEN

@@ -95,6 +95,11 @@ export function SuchSprungFeld({
   return (
     <div data-v3-suchsprung className="space-y-1">
       <div className="relative">
+        {/* W2·29 S4 (Werkbank): Lupe im Unterstrich-Feld, reine Zier. */}
+        <svg aria-hidden focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7}
+          strokeLinecap="round" className="pointer-events-none absolute left-0.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-ink-600">
+          <path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14Z M16.5 16.5 21 21" />
+        </svg>
         <input
           ref={ref}
           // ── Ä16 (H2b) · EINE LÖSCHUNG, NICHT ZWEI ───────────────────────────
@@ -166,17 +171,9 @@ export function SuchSprungFeld({
           // `pr-16` bzw. `pr-8`: Platz für ✕ und ⌘K, damit lange Eingaben nicht
           // unter den Bedienzeichen verschwinden.
           //
-          // ── Ä14 (H2b) · EIN 2-px-RING IN DER FOKUS-ROLLE ─────────────────────
-          // `.lc-input` setzt im Fokus DREI Dinge zugleich: Rahmenfarbe auf
-          // `brass-600`, dazu `--ring` = `0 0 0 2px var(--surface), 0 0 0 4px
-          // var(--focus)` — gemessen also ein 2-px-Papier-Saum PLUS ein 2-px-
-          // Messingring PLUS eine dritte Kante am Feldrahmen. Auf einem 32-px-Feld
-          // in einer 280-px-Leiste ist das die auffälligste Fläche des ganzen
-          // Lesers. `.lc-v3-feld` ersetzt den Doppelring durch EINEN 2-px-Ring in
-          // der Rolle `focus` (Design-Grundlage Kap. 4) — nicht weniger sichtbar,
-          // nur einmal. Eigene Klasse statt Änderung an `.lc-input`: das Feld ist
-          // V3-Bestand, `.lc-input` trägt die ganze App (FL-4).
-          className={`lc-input lc-v3-feld h-8 w-full min-w-0 py-0 pl-2.5 text-body-s ${wert !== '' ? 'pr-16 sm:pr-20' : 'pr-8 sm:pr-10'}`}
+          // Ä14 (H2b): `.lc-input` allein malte im Fokus drei Kanten (Rahmen brass-600
+          // + Doppelring `--ring`); `.lc-v3-feld` (index.css) setzt EINEN Ring (FL-4).
+          className={`lc-input lc-v3-feld h-8 w-full min-w-0 py-0 pl-6 text-body-s ${wert !== '' ? 'pr-16 sm:pr-20' : 'pr-8 sm:pr-10'}`}
         />
         {/* R6-C (5.9.2026): die Glyphe kam aus `text-body-s leading-none` und
             stand damit als EINZIGE der drei «Suche leeren»-Flächen in 14 px —
@@ -184,7 +181,7 @@ export function SuchSprungFeld({
             `start/UniversalSuche` und `pages/Suche` (gleiche Handlung, gleicher
             `aria-label`, 2:1 für 16 px). Jetzt `.lc-griff-glyph`, dieselbe
             Gestalt wie am `ui/SchliessKnopf`. Die BOX bleibt, wo sie ist
-            (24×24, rund) — sie gehört der Zeile, hier einem `h-8`-Feld mit
+            (24×24; rund bis W2·29 S4, seither eckig) — sie gehört der Zeile, hier einem `h-8`-Feld mit
             ⌘K-Nachbarn; das ist dieselbe Trennung, die der Schliess-Baustein
             deklariert (Glyphe geteilt, Box der Umgebung). */}
         {/* ✕ — sichtbar und mit Namen. Es ist seit Ä16 (H2b) das EINZIGE: das
@@ -199,7 +196,7 @@ export function SuchSprungFeld({
             onClick={() => { setzeWert(''); ref.current?.focus(); }}
             aria-label="Suche leeren"
             title="Suche leeren (Esc)"
-            className="absolute right-6 top-1/2 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full text-ink-500 transition-colors lc-hover-flaeche hover:text-brass-700 sm:right-8">
+            className="absolute right-6 top-1/2 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center text-ink-600 transition-colors lc-hover-flaeche hover:text-ink-900 sm:right-9">
             <span aria-hidden className="lc-griff-glyph">✕</span>
           </button>
         )}
@@ -211,15 +208,15 @@ export function SuchSprungFeld({
             `color-contrast`, serious. Dieselbe Klasse wie W3.6 (25.6.2026) und
             der Menü-Befund vom 26.7.2026; `aria-hidden` hilft nicht, das Zeichen
             ist ja zu sehen. */}
-        <kbd aria-hidden className="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 select-none text-micro text-ink-500 sm:block">⌘K</kbd>
+        <kbd aria-hidden className="pointer-events-none absolute right-1 top-1/2 hidden -translate-y-1/2 select-none border border-line px-1 text-micro leading-4 text-ink-600 sm:block">⌘K</kbd>
       </div>
       {token && (
         <button type="button" id="v3-sprung-hinweis" data-v3-sprung-hinweis
           onClick={() => onSprung(token)}
-          className="flex w-full items-center gap-1.5 rounded-sm px-2 py-1 text-left text-body-s text-brass-700 transition-colors hover:bg-brass-100/50">
+          className="flex w-full items-center gap-1.5 border-b border-line px-2 py-1 text-left text-body-s text-brass-700 transition-colors lc-hover-flaeche">
           <span aria-hidden>→</span>
           <span>Zu <span className="num font-medium">{wert.trim()}</span> springen</span>
-          <kbd aria-hidden className="ml-auto hidden text-micro text-ink-500 sm:block">↵</kbd>
+          <kbd aria-hidden className="ml-auto hidden text-micro text-ink-600 sm:block">↵</kbd>
         </button>
       )}
     </div>
