@@ -29,25 +29,47 @@ import type { Bezug } from '../../../lib/rechtsprechung/bezuege';
 // `lib/rechtsprechung/bezuege`. H3 verschiebt den ZEITPUNKT und den ORT der
 // Darstellung, nicht die Rechnung (§5).
 
-export type PanelReiter = 'entscheide' | 'aenderungen' | 'materialien' | 'anwendung';
+export type PanelReiter = 'entscheide' | 'aenderungen' | 'materialien' | 'erlaeuterungen' | 'werkzeuge';
 
 /** Reiter-Ordnung UND Beschriftung aus EINER Quelle (§5): ein Reiter, der hier
  *  fehlt, existiert nirgends; einer, der hier steht, ist überall gleich benannt.
  *  Reihenfolge = die Reihenfolge der Fragen am Gesetzesartikel: wie wird er
  *  ausgelegt (Entscheide) · wie ist er geworden (Änderungen) · woher kommt er
- *  (Materialien) · wie wendet man ihn an (Anwendung).
+ *  (Materialien) · wie liest ihn die Verwaltung (Erläuterungen) · womit rechnet
+ *  man ihn (Werkzeuge).
  *
- *  DER VIERTE STEHT HINTEN, NICHT NEBEN «ENTSCHEIDE» (W2·7-VZUI, 31.8.2026):
- *  fachlich stünde «Anwendung» der Auslegung am nächsten, die Reihe wäre dann
- *  aber nicht mehr die Frage-Chronologie, die sie erklärt — und ein Umsortieren
- *  verschöbe den Pfeiltasten-Weg, den `leser-v3-panel-facetten` (b) als Zusage
- *  misst. Der Zuwachs kostet damit nichts an bestehender Bedienung. */
+ *  ── S6 · FÜNF STATT VIER (Entscheid David 23.9.2026, AN-11) ──────────────
+ *  Bis hierher stand an vierter Stelle «Anwendung» — Behörden-Ressourcen UND
+ *  Rechner in einem Reiter (W2·7-VZUI, 31.8.2026). David, wörtlich: «es soll
+ *  werkzeuge und behördliche erläuterungen heissen. nicht dass es mit
+ *  materialien verwechselt wird die gesetzgebung darstellen», auf Nachfrage
+ *  «Zwei eigene Reiter». Darum: «Materialien» ist NUR Gesetzgebung
+ *  (Botschaften, Vernehmlassungen, kantonale Ratschläge), «Erläuterungen» die
+ *  Verwaltungspraxis ohne Gesetzesrang, «Werkzeuge» die Rechner/Vorlagen
+ *  dieses Hauses. Die Beleg-Zeile oben («Der vierte steht hinten», 31.8.2026)
+ *  gilt für ihren Stand; die beiden neuen stehen aus demselben Grund hinten —
+ *  der Pfeiltasten-Weg der ersten drei bleibt unverändert. */
 export const PANEL_REITER: readonly { id: PanelReiter; label: string }[] = [
   { id: 'entscheide', label: 'Entscheide' },
   { id: 'aenderungen', label: 'Änderungen' },
   { id: 'materialien', label: 'Materialien' },
-  { id: 'anwendung', label: 'Anwendung' },
+  { id: 'erlaeuterungen', label: 'Erläuterungen' },
+  { id: 'werkzeuge', label: 'Werkzeuge' },
 ];
+
+/**
+ * Ein gespeicherter oder übergebener Reiter-Wert → gültiger Reiter oder `null`.
+ *
+ * S6: die Reiter-id «anwendung» ist entfallen. Ein Wert, der sie noch trägt
+ * (Sitzungs-Speicher, alter Link), fällt auf ihren Nachfolger für die
+ * Behörden-Ressourcen, «erlaeuterungen» — nie auf einen Reiter, den es nicht
+ * gibt. Alles andere Unbekannte ergibt `null`; der Aufrufer nimmt dann seine
+ * Vorgabe (§8: kein geratener Reiter).
+ */
+export function alsPanelReiter(wert: unknown): PanelReiter | null {
+  if (wert === 'anwendung') return 'erlaeuterungen';
+  return PANEL_REITER.find((r) => r.id === wert)?.id ?? null;
+}
 
 /**
  * Erklärender Titel eines Reiters — ERLASS-NEUTRAL (H3-Nachzug C1).
@@ -58,12 +80,19 @@ export const PANEL_REITER: readonly { id: PanelReiter; label: string }[] = [
  * damit vom Erlass abhängt, ist er eine Funktion und kein Feld: ein Feld hätte
  * verlangt, die Tabelle je Erlass neu zu bauen — und die Reiter-ORDNUNG hängt
  * nicht am Erlass (§5, eine Quelle je Frage).
+ *
+ * S6: jeder Zweig nennt seinen Reiter ausdrücklich — kein `return` ohne
+ * Bedingung, das einen vergessenen Reiter still mit einem fremden Titel
+ * versähe (der `switch` ist erschöpfend, `tsc -b` meldet eine Lücke).
  */
 export function reiterTitel(id: PanelReiter, wort: BestimmungsWort): string {
-  if (id === 'entscheide') return `Gerichtsentscheide zu ${bestimmungDativ(wort)}`;
-  if (id === 'aenderungen') return 'Änderungserlasse dieses Erlasses';
-  if (id === 'materialien') return 'Botschaften und Vernehmlassungen zu diesem Erlass';
-  return 'Behörden-Ressourcen und Werkzeuge zu diesem Erlass';
+  switch (id) {
+    case 'entscheide': return `Gerichtsentscheide zu ${bestimmungDativ(wort)}`;
+    case 'aenderungen': return 'Änderungserlasse dieses Erlasses';
+    case 'materialien': return 'Gesetzgebungsmaterialien zu diesem Erlass';
+    case 'erlaeuterungen': return 'Behördliche Erläuterungen zu diesem Erlass';
+    case 'werkzeuge': return 'Rechner und Vorlagen zu diesem Erlass';
+  }
 }
 
 /**
@@ -124,8 +153,8 @@ export const OEFFNER_WORT = 'Erlass-Blatt';
  * Bis D35-F2 hiess er «Rechtsprechung und Kontext zu Art. 271 öffnen — 24
  * Entscheide»: er nannte die Artikel-Zahl, also genau das, was der Griff jetzt
  * nicht mehr behauptet. Ein Screenreader hörte damit die Zahl weiterhin doppelt
- * (hier und an der Funktionszeile). Er nennt jetzt die vier Reiter des Blattes
- * und keine Zahl — die Zahl steht an genau einem Ort, und das ist die
+ * (hier und an der Funktionszeile). Er nennt jetzt die Reiter des Blattes
+ * (seit S6 fünf) und keine Zahl — die Zahl steht an genau einem Ort, und das ist die
  * Funktionszeile des Artikels.
  */
 export const OEFFNER_NAME = `${OEFFNER_WORT} — ${aufzaehlung(PANEL_REITER.map((r) => r.label))}`;
@@ -221,9 +250,6 @@ export interface PanelZustand {
   reiter: PanelReiter;
   setReiter: (r: PanelReiter) => void;
   oeffne: (r?: PanelReiter) => void;
-  /** D35-F2 · `oeffne('entscheide')` als REFERENZ-STABILER Griff — der
-   *  Sekundär-Weg «im Blatt öffnen ›» der Funktionszeile hängt daran. */
-  oeffneEntscheide: () => void;
   schliesse: () => void;
   umschalten: () => void;
   /**
@@ -267,12 +293,15 @@ export function usePanelZustand(): PanelZustand {
     });
   }, []);
 
-  // D35-F2 · EIN STABILER GRIFF FÜR DIE FUNKTIONSZEILE. `oeffne` bekommt seinen
-  // Reiter hier, nicht am Aufrufer: ein dort gebautes `() => oeffne('…')` wäre
-  // bei jedem Render des Rahmens eine neue Funktion und risse die
-  // `memo`-Schranke von `parts/ArtikelLeser` über alle 1686 Artikel (§15).
-  const oeffneEntscheide = useCallback(() => oeffne('entscheide'), [oeffne]);
-  return { offen, jeGeoeffnet, reiter, setReiter, oeffne, oeffneEntscheide, schliesse, umschalten, weckeDaten };
+  // D35-F2 · EIN STABILER GRIFF FÜR DIE FUNKTIONSZEILE. Bis S6 stand hier
+  // `oeffneEntscheide = useCallback(() => oeffne('entscheide'))` — ein am
+  // Aufrufer gebautes `() => oeffne('…')` wäre bei jedem Render des Rahmens
+  // eine neue Funktion und risse die `memo`-Schranke von `parts/ArtikelLeser`
+  // über alle 1686 Artikel (§15). Seit S6 öffnet die Funktionszeile DREI
+  // Reiter (Entscheide, Erläuterungen, Werkzeuge); sie bekommt darum `oeffne`
+  // selbst, das über `useCallback([])` bereits referenz-stabil ist, und nennt
+  // den Reiter beim Klick.
+  return { offen, jeGeoeffnet, reiter, setReiter, oeffne, schliesse, umschalten, weckeDaten };
 }
 
 /**

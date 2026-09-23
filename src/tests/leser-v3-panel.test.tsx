@@ -133,8 +133,12 @@ describe('PANEL_REITER — eine Quelle für Ordnung und Beschriftung', () => {
   // (Herleitung im Kopf von `PanelAnwendung.tsx`). Er steht HINTEN: die Reihe
   // bleibt damit die Frage-Chronologie, und der Pfeiltasten-Weg der drei
   // bestehenden Reiter ist unverändert.
-  it('genau vier, in der Reihenfolge der Fragen am Artikel', () => {
-    expect(PANEL_REITER.map((r) => r.id)).toEqual(['entscheide', 'aenderungen', 'materialien', 'anwendung']);
+  // §6.3-DEKLARATION (S6, 23.9.2026): gewollte Produktänderung — Entscheid
+  // David 23.9.2026 (AN-11): «Anwendung» wird in «Erläuterungen» und
+  // «Werkzeuge» geteilt, fünf Reiter. Die ersten drei und ihr Pfeiltasten-Weg
+  // bleiben unverändert; die Zusage «Ordnung = Frage-Chronologie» gilt weiter.
+  it('genau fünf, in der Reihenfolge der Fragen am Artikel', () => {
+    expect(PANEL_REITER.map((r) => r.id)).toEqual(['entscheide', 'aenderungen', 'materialien', 'erlaeuterungen', 'werkzeuge']);
   });
 
   it('jeder Reiter trägt Label UND erklärenden Titel (kein nackter Kurzname)', () => {
@@ -151,7 +155,9 @@ describe('PANEL_REITER — eine Quelle für Ordnung und Beschriftung', () => {
   it('jeder Reiter hat SEINEN eigenen Titel (kein still geerbter Default)', () => {
     const titel = PANEL_REITER.map((r) => reiterTitel(r.id, 'Artikel'));
     expect(new Set(titel).size, titel.join(' | ')).toBe(PANEL_REITER.length);
-    expect(reiterTitel('anwendung', 'Artikel')).toBe('Behörden-Ressourcen und Werkzeuge zu diesem Erlass');
+    // S6 (deklariert, s. o.): der Anwendungs-Titel ist mit seinem Reiter entfallen.
+    expect(reiterTitel('erlaeuterungen', 'Artikel')).toBe('Behördliche Erläuterungen zu diesem Erlass');
+    expect(reiterTitel('werkzeuge', 'Artikel')).toBe('Rechner und Vorlagen zu diesem Erlass');
   });
 
   // C1 (H3-Nachzug): der Titel des Entscheid-Reiters trug «zu diesem Artikel» als

@@ -32,15 +32,26 @@ import { QuellLink } from './QuellLink';
 //
 // Reine Darstellungsschicht (§1/§3): der Baustein weiss nicht, WARUM der Abruf
 // fehlschlug, und entscheidet nichts.
-export function AbrufFehler({ gegenstand, mehrzahl = false, href, className, daten }: {
+export function AbrufFehler({ gegenstand, mehrzahl = false, href, linkName, onErneut, className, daten }: {
   /** Was nicht geladen werden konnte, im Nominativ und so, wie die Fläche es
    *  überschreibt («Materialien», «Änderungsverlauf»). */
   gegenstand: string;
   /** `true` = «konnten», Vorgabe «konnte». Ausdrücklich, nicht geraten. */
   mehrzahl?: boolean;
   /** Amtliche Quelle, auf die stattdessen verwiesen wird — so genau, wie der
-   *  Aufrufer sie kennt (die Fassung des Erlasses, sonst das Portal). */
-  href: string;
+   *  Aufrufer sie kennt (die Fassung des Erlasses, sonst das Portal).
+   *  S6 (M-8/AN-4, 23.9.2026): OPTIONAL. Wo es keine EINE amtliche Quelle
+   *  gibt (behördliche Erläuterungen von neun Behörden), ist ein Link auf die
+   *  Fassung des Erlasses kein Ausweg, sondern ein falsches Ziel — dann endet
+   *  der Satz ohne Quellenangabe. */
+  href?: string;
+  /** S6 · Name des Links, wenn das Ziel NICHT «die amtliche Fassung dieses
+   *  Dokuments» ist (Befund M-8: «Amtliche Fassung ↗» führte am Reiter
+   *  «Materialien» zum Gesetz statt zu den Materialien). Ohne Angabe der Kanon. */
+  linkName?: string;
+  /** S6 · «Erneut laden»: die Lader cachen einen Fehlschlag nicht; der Griff
+   *  stösst sie noch einmal an. Ohne Angabe kein Knopf. */
+  onErneut?: () => void;
   /** Zusätzliche Klassen des Absatzes (Polsterung, Marker-Attribute der
    *  Fläche); Ton und Schriftgrad gehören dem Baustein. */
   className?: string;
@@ -48,14 +59,20 @@ export function AbrufFehler({ gegenstand, mehrzahl = false, href, className, dat
    *  Sie gehören dem Aufrufer, nicht dem Baustein. */
   daten?: Record<string, string>;
 }) {
+  const verb = mehrzahl ? 'konnten' : 'konnte';
   return (
     <p {...daten} className={`text-body-s text-warn-700${className ? ` ${className}` : ''}`}>
       {/* EINE Zeichenkette und nicht «{gegenstand} konnte …»: `renderToString`
           setzt zwischen zwei Textknoten ein `<!-- -->`, und der Satz landet so
           zerschnitten in jeder SSR-Zeichenketten-Sonde (dieselbe Falle notiert
           `ui/QuellLink` für den Kanon-Namen). */}
-      {`${gegenstand} ${mehrzahl ? 'konnten' : 'konnte'} nicht geladen werden. Amtliche Quelle: `}
-      <QuellLink href={href} />
+      {href
+        ? <>{`${gegenstand} ${verb} nicht geladen werden. Amtliche Quelle: `}<QuellLink href={href}>{linkName}</QuellLink></>
+        : `${gegenstand} ${verb} nicht geladen werden.`}
+      {onErneut && (
+        <>{' '}<button type="button" onClick={onErneut} data-abruf-erneut
+          className="lc-link text-brass-700 hover:text-brass-800">Erneut laden</button></>
+      )}
     </p>
   );
 }

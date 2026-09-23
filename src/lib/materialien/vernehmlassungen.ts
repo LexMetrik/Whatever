@@ -115,13 +115,37 @@ export async function vernehmlassungenFuer(
   return out.map((v) => ({ ...v, ...titelUebersetzung(v.key, locale, i18n) }));
 }
 
-/** Deutsche Anzeige-Labels der Status (UI, keine Rechtslogik). */
+/**
+ * Deutsche Anzeige-Labels der Status (UI, keine Rechtslogik) — WÖRTLICH das
+ * amtliche Vokabular.
+ *
+ * S6 · Befund M-2 (23.9.2026): hier standen eigene Kurzformen, und zwei davon
+ * sagten das Gegenteil des amtlichen Sinns — Status 4 hiess «abgeschlossen
+ * (Ergebnisbericht)», als läge der Bericht vor; amtlich heisst er «abwarten
+ * Ergebnisbericht». Seither 1:1 die `skos:prefLabel` (de) von
+ * https://fedlex.data.admin.ch/vocabulary/consultation-status/0 … /6,
+ * abgefragt über https://fedlex.data.admin.ch/sparqlendpoint am 23.9.2026
+ * (Abfrage: `?s skos:prefLabel ?l FILTER(lang(?l)="de")` über die sieben
+ * Begriffe). Nicht kürzen: eine Kurzform ist die Stelle, an der der Sinn
+ * kippte.
+ */
 export const VERNEHMLASSUNG_STATUS_LABEL: Record<VernehmlassungStatus, string> = {
-  'in-vorbereitung': 'in Vorbereitung',
-  geplant: 'geplant',
-  laufend: 'läuft',
-  'abgeschlossen-stellungnahmen': 'abgeschlossen (Stellungnahmen)',
-  'abgeschlossen-bericht': 'abgeschlossen (Ergebnisbericht)',
-  abgeschlossen: 'abgeschlossen',
-  zurueckgezogen: 'zurückgezogen',
+  'in-vorbereitung': 'In Vorbereitung',
+  geplant: 'Geplant',
+  laufend: 'Laufend',
+  'abgeschlossen-stellungnahmen': 'Abgeschlossen – abwarten Stellungnahmen und/oder des Ergebnisberichts',
+  'abgeschlossen-bericht': 'Abgeschlossen – abwarten Ergebnisbericht',
+  abgeschlossen: 'Abgeschlossen',
+  zurueckgezogen: 'Zurückgezogen',
 };
+
+/**
+ * S6 · Befund M-1: Welche Verfahren sind «in Arbeit»? Nur die, deren Anhörung
+ * läuft oder noch bevorsteht (amtlich 0–2). Abgeschlossene (3–5) und
+ * zurückgezogene (6) Verfahren sind Geschichte des Erlasses, nicht seine
+ * Baustelle — unter «In Arbeit» gezählt hätten sie an OR 33 laufende
+ * Verfahren behauptet, wo es null gab.
+ */
+export function vernehmlassungInArbeit(status: VernehmlassungStatus): boolean {
+  return status === 'laufend' || status === 'geplant' || status === 'in-vorbereitung';
+}

@@ -1,4 +1,5 @@
 import { useMemo, type ReactNode } from 'react';
+import type { ImBlattReiter } from '../parts/ArtikelLeser.bezuegeFuss';
 import { Link } from 'react-router-dom';
 import type { Sektion } from '../../../lib/normtext/browse';
 import { verifizierLinkSektion } from '../../../lib/normtext/verifikationslink';
@@ -72,10 +73,11 @@ export function LeserLesespalte({ m, bezuege, weckeBezuege, oeffneBlatt, bezuege
   bezuege?: PanelBezuege;
   /** D30 · Aufklappen der Bezüge-Zeile ⇒ Nachladen armieren (`weckeDaten`). */
   weckeBezuege?: () => void;
-  /** D35-F2 · «im Blatt öffnen ›» der Rubrik «Entscheide» — referenz-stabil aus
-   *  `./panelModell` (`oeffneEntscheide`), sonst fiele die `memo`-Schranke von
-   *  `parts/ArtikelLeser` über alle Artikel (§15). */
-  oeffneBlatt?: () => void;
+  /** D35-F2 · «im Blatt öffnen ›» der Funktionszeile — referenz-stabil aus
+   *  `./panelModell` (`oeffne`, seit S6 mit dem Ziel-Reiter als Argument),
+   *  sonst fiele die `memo`-Schranke von `parts/ArtikelLeser` über alle
+   *  Artikel (§15). */
+  oeffneBlatt?: (reiter: ImBlattReiter) => void;
   /** D30 · ist bereits jemand nach den Daten gefragt worden? Steuert die
    *  Skelett-Zeile «lädt …» UND das Laden der Materialien. */
   bezuegeGeweckt?: boolean;

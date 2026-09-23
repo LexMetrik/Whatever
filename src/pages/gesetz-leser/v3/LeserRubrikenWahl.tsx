@@ -65,9 +65,11 @@ const RUBRIKEN: ReadonlyArray<{ id: FussRubrik; label: string; titel: (dativ: st
     titel: (d) => `Fassungsstand und Zeitleiste zu ${d} in der Zeile am Ende zeigen`,
   },
   { id: 'r', label: 'Entscheide', titel: (d) => `Gerichtsentscheide zu ${d} in der Zeile am Ende zeigen` },
-  { id: 'm', label: 'Materialien', titel: (d) => `Botschaften und Vernehmlassungen zu ${d} in der Zeile am Ende zeigen` },
+  // S6 (AN-10): der Titel versprach Botschaften — die Rubrik zeigt aber
+  // Kreisschreiben, Wegleitungen und Leitfäden; Name wie der Blatt-Reiter.
+  { id: 'm', label: 'Erläuterungen', titel: (d) => `Behördliche Erläuterungen (Kreisschreiben, Wegleitungen) zu ${d} in der Zeile am Ende zeigen` },
   { id: 'g', label: 'Verweise', titel: (d) => `Die in ${d} genannten Normverweise in der Zeile am Ende zeigen` },
-  { id: 'w', label: 'Rechner', titel: (d) => `Rechner und Vorlagen zu ${d} in der Zeile am Ende zeigen` },
+  { id: 'w', label: 'Werkzeuge', titel: (d) => `Rechner und Vorlagen zu ${d} in der Zeile am Ende zeigen` },
   {
     id: 'a',
     label: 'Aktionen',

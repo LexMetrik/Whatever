@@ -4,13 +4,20 @@ import { OEFFNER_WORT, PANEL_REITER, normZitat, reiterTitel, type PanelReiter } 
 import { SchliessKnopf } from '../../../components/ui/SchliessKnopf';
 
 /** Register je Reiter (W2·29 S5): Entscheide = Rechtsprechung, Änderungen =
- *  Gesetze, Materialien = Materialien, Anwendung = Werkzeuge. Volle
- *  Klassen-Literale, damit Tailwind sie findet. */
+ *  Gesetze, Materialien = Materialien, Werkzeuge = Werkzeuge. Volle
+ *  Klassen-Literale, damit Tailwind sie findet.
+ *  S6: «Erläuterungen» trägt das Register `m` — es ist dasselbe Register wie
+ *  die Rubrik «Materialien» des Hauses (`/materialien`), in der die
+ *  Behördenpublikationen katalogisiert sind, und dieselbe Farbe wie ihre
+ *  Rubrik am Artikelende (`data-reg="m"`). Ein fünftes Register gibt
+ *  `design/tokens.json` nicht her, und eines zu erfinden wäre ein Token
+ *  ausserhalb der Quelle. */
 const REITER_REGISTER: Readonly<Record<PanelReiter, string>> = {
   entscheide: 'border-reg-r bg-reg-r-flaeche',
   aenderungen: 'border-reg-g bg-reg-g-flaeche',
   materialien: 'border-reg-m bg-reg-m-flaeche',
-  anwendung: 'border-reg-w bg-reg-w-flaeche',
+  erlaeuterungen: 'border-reg-m bg-reg-m-flaeche',
+  werkzeuge: 'border-reg-w bg-reg-w-flaeche',
 };
 
 // ─── Das Panel selbst: EIN Ort, VIER Reiter (FAHRPLAN-LESER-V3 Kap. 4d, H3) ───
@@ -25,7 +32,9 @@ const REITER_REGISTER: Readonly<Record<PanelReiter, string>> = {
 // `PanelMaterialien` / `PanelAnwendung` — und nur die. Wer einen weiteren Reiter
 // braucht, ergänzt `PANEL_REITER` und übergibt einen weiteren Eintrag in
 // `inhalt`. H3 baute drei; der vierte («Anwendung») kam mit W2·7-VZUI dazu und
-// hat genau diesen Weg genommen — die Hülle blieb dabei unverändert.
+// hat genau diesen Weg genommen — die Hülle blieb dabei unverändert. S6
+// (23.9.2026) teilte ihn in «Erläuterungen» und «Werkzeuge»: fünf Reiter,
+// derselbe Weg (Tafeln: `PanelErlaeuterungen`, `PanelWerkzeuge`).
 //
 // ── ECHTE REITER, ALSO ECHTE PFEILTASTEN (W3C ARIA APG «Tabs») ──────────────
 // Anders als bei den Dropdowns des Lesers (dort «ehrliche Disclosure», KEIN

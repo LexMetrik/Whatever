@@ -21,7 +21,7 @@ import type { ArtikelBezuege } from '../bezuegeLaden';
 import { werkzeugeAmArtikel } from '../randNotizWerkzeuge';
 import { RandTitel } from './ArtikelLeser.kopfteile';
 import { ArtikelHistorieZeile } from './ArtikelHistorie';
-import { ArtikelBezuegeFuss } from './ArtikelLeser.bezuegeFuss';
+import { ArtikelBezuegeFuss, type ImBlattReiter } from './ArtikelLeser.bezuegeFuss';
 import { ArtikelAktionen } from './ArtikelAktionen';
 import { ArtikelNachbarn } from './ArtikelNachbarn';
 import type { ArtikelNachbarn as NachbarnAmArtikel } from '../v3/nachbarArtikel';
@@ -133,11 +133,11 @@ export const ArtikelLeser = memo(function ArtikelLeser({ e, erlass, basisPfad, f
    *  bestehenden Ladepfad (`v3/panelModell.ts` → `weckeDaten`). Ohne die Prop
    *  bleibt die Zeile, was sie war (Ist-Hülle, Tests, Druck). */
   onBezuegeOeffnen?: () => void;
-  /** D35-F2 · «im Blatt öffnen ›» in der aufgeklappten Rubrik «Entscheide»
-   *  (Herleitung in `./ArtikelLeser.bezuegeFuss.tsx`). MUSS referenz-stabil
-   *  sein — diese Komponente ist `memo`, und 1686 neue Funktionen je Render des
-   *  Rahmens hoben die Schranke auf (§15, `../v3/panelModell.oeffneEntscheide`). */
-  onImBlatt?: () => void;
+  /** D35-F2 · «im Blatt öffnen ›» in den aufgeklappten Rubriken (Herleitung in
+   *  `./ArtikelLeser.bezuegeFuss.tsx`). MUSS referenz-stabil sein — diese
+   *  Komponente ist `memo`, und 1686 neue Funktionen je Render des Rahmens
+   *  hoben die Schranke auf (§15, `../v3/panelModell.oeffne`). */
+  onImBlatt?: (reiter: ImBlattReiter) => void;
   /** D30 · der Apparat ist unterwegs ⇒ Skelett-Zeile «lädt …» statt Leere. */
   bezuegeLaedt?: boolean;
   /** Revision r(a) dieses Artikels (§V1c) — an die LeitfallZeile durchgereicht. */

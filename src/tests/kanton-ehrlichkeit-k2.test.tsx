@@ -30,7 +30,7 @@ import { ErlassLeserKopf } from '../pages/gesetz-leser/parts/ErlassLeserKopf';
 import { GELTUNG_UNGEPRUEFT_SATZ, STAND_UNBEKANNT } from '../lib/normtext/erlassKopfText';
 import { PanelEntscheide } from '../pages/gesetz-leser/v3/PanelEntscheide';
 import { PanelMaterialien } from '../pages/gesetz-leser/v3/PanelMaterialien';
-import { PanelAnwendung } from '../pages/gesetz-leser/v3/PanelAnwendung';
+import { PanelErlaeuterungen } from '../pages/gesetz-leser/v3/PanelErlaeuterungen';
 import { KantonSystematik } from '../pages/gesetze-teile/KantonSystematik';
 import type { BrowseErlass } from '../lib/normtext/browse-typen';
 import type { CurrencyEintrag } from '../lib/normtext/browse';
@@ -163,23 +163,29 @@ describe('B2/F37 — der Leerzustand nennt bei Kanton die Abdeckungs-Lücke', ()
     expect(html).not.toContain('Kantonale Erlasse sind erst teilweise verknüpft');
   });
 
-  it('Materialien · Kanton nennt die Bundes-Beschränkung der Sammlung', () => {
-    const leer = { fertig: true as const, wert: { botschaften: [], vernehmlassungen: [] } };
-    const kant = renderToString(<PanelMaterialien stand={leer} quelleUrl="https://x" ebene="kanton" />);
-    const bundHtml = renderToString(<PanelMaterialien stand={leer} quelleUrl="https://x" ebene="bund" />);
-    expect(kant).toContain('kein amtliches Material erfasst');
-    expect(kant).toContain('nur Bundeserlasse');
-    expect(bundHtml).not.toContain('nur Bundeserlasse');
+  // §6.3-DEKLARATION (S6, 23.9.2026, Befund M-3/B-4): die Sammlung führt seit
+  // dem BS-Import die Grossratsgeschäfte Basel-Stadt (`register.json`, 117
+  // Einträge) — «nur Bundeserlasse» war damit falsch. Der Zusatz nennt jetzt
+  // die tatsächliche Abdeckung; die Zusage «Kanton nennt die Lücke, Bund
+  // nicht» bleibt dieselbe. Reiter «Materialien» heisst seither NUR
+  // Gesetzgebung, darum «Gesetzgebungsmaterial».
+  it('Materialien · Kanton nennt die Abdeckung der Sammlung', () => {
+    const leer = { fertig: true as const, wert: { botschaften: [], vernehmlassungen: [], kanton: [], erzeugt: null } };
+    const kant = renderToString(<PanelMaterialien stand={leer} ebene="kanton" />);
+    const bundHtml = renderToString(<PanelMaterialien stand={leer} ebene="bund" />);
+    expect(kant).toContain('kein Gesetzgebungsmaterial erfasst');
+    expect(kant).toContain('nur für Basel-Stadt');
+    expect(bundHtml).not.toContain('nur für Basel-Stadt');
   });
 
-  it('Anwendung · Kanton nennt die Bundes-Beschränkung der Behörden-Ressourcen', () => {
-    const leer = { fertig: true as const, wert: [] };
-    const kant = renderToString(
-      <MemoryRouter><PanelAnwendung softLaw={leer} erlassKey={kantonal.key} ebene="kanton" /></MemoryRouter>,
-    );
-    const bundHtml = renderToString(
-      <MemoryRouter><PanelAnwendung softLaw={leer} erlassKey="__ohne_werkzeuge__" ebene="bund" /></MemoryRouter>,
-    );
+  // §6.3-DEKLARATION (S6, 23.9.2026, Entscheid David AN-11): der Reiter
+  // «Anwendung» ist in «Erläuterungen» und «Werkzeuge» geteilt; die
+  // Behörden-Ressourcen und ihr Kanton-Zusatz stehen im Reiter
+  // «Erläuterungen». Zusage unverändert: Kanton nennt die Bundes-Beschränkung.
+  it('Erläuterungen · Kanton nennt die Bundes-Beschränkung der Behörden-Ressourcen', () => {
+    const leer = { fertig: true as const, wert: { liste: [], erzeugt: '2026-09-18' } };
+    const kant = renderToString(<MemoryRouter><PanelErlaeuterungen stand={leer} ebene="kanton" /></MemoryRouter>);
+    const bundHtml = renderToString(<MemoryRouter><PanelErlaeuterungen stand={leer} ebene="bund" /></MemoryRouter>);
     expect(kant).toContain('nur zu Bundeserlassen');
     expect(bundHtml).not.toContain('nur zu Bundeserlassen');
   });
