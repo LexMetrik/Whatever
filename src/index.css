@@ -4252,7 +4252,10 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
    (`font-normal`) bleibt gedrückt wie ungedrückt normal. */
 @layer components {
   .fc-schalter { font-size: 0.8125rem; line-height: 1.5; font-weight: 500; }
-  .fc-schalter[aria-pressed="true"] { font-weight: 600; }
+  /* `:where()` hält die Spezifität bei EINER Klasse — Tailwinds `@layer` ist
+     keine native Kaskadenschicht, ohne `:where` schlüge `[aria-pressed]`
+     (0,2,0) das `font-normal` (0,1,0) des MarkenSchalters (gemessen: 600). */
+  .fc-schalter:where([aria-pressed="true"]) { font-weight: 600; }
 }
 .fc-schalter {
   appearance: none; background: none; border: 0; border-radius: 0;
