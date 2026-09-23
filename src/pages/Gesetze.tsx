@@ -8,8 +8,9 @@ import { InternationalRubriken } from '../components/normtext/InternationalRubri
 import { RechtsgebietSicht } from '../components/normtext/RechtsgebietSicht';
 import {
   GliederungUmschalter, RelevanzGitter, KantonRelevanzListe,
-  KantonGebietGruppen, IntlRechtsgebietSicht,
+  KantonGebietGruppen, IntlRechtsgebietSicht, SchalterGruppe,
 } from '../components/normtext/GesetzeGliederung';
+import { ErlassTabelle } from '../components/normtext/ErlassKarte';
 import { loeseGliederung, speichereGliederung, type Gliederung } from '../lib/normtext/gliederung';
 import {
   ladeBrowseManifest, ladeKantonSystematik, gruppiereNachKanton, filtern,
@@ -31,7 +32,6 @@ import { RubrikKachel } from '../components/ui/RubrikKachel';
 import { AMTLICHE_FASSUNG_NOMEN } from '../lib/benennung';
 // H-10 (§6.6 billig, B27): BundSystematik/KantonSystematik/KantonAuswahl
 // (+Kachel) als reiner Move nach gesetze-teile/ — Props/Verhalten unverändert.
-import { Gitter } from './gesetze-teile/geteilt';
 import { BundSystematik } from './gesetze-teile/BundSystematik';
 import { KantonSystematik } from './gesetze-teile/KantonSystematik';
 import { KantonAuswahl } from './gesetze-teile/KantonAuswahl';
@@ -64,43 +64,15 @@ const nf = (n: number) => n.toLocaleString('de-CH');
 
 type Ebene = 'bund' | 'kanton' | 'international';
 
-// ─── D22 (David 6.9.2026) · DIE EBENE IST EINE FACETTE, KEIN KASTEN ──────────
-//
-// Hier stand die Segmented-Control aus `ui/Tabs` — eine Leiste mit Rahmen,
-// Radius, Fläche und Schatten am aktiven Reiter, die nur nach Säulen-Wahl
-// erschien und daneben einen zweiten Knopf «← Übersicht» brauchte, um wieder
-// herauszukommen. Zwei Bedienelemente für EINE Achse, beide als Kästen.
-// Neu: vier Text-Schalter (`.ub-schalter`) unter dem Filterfeld — «Alle» ist
-// der Landeplatz, die drei anderen die Säulen. Der Zustand steht als
-// Unterstrich in der Registerfarbe, nicht als Kasten.
-//
-// `aria-pressed` statt `role=tab`: die Schalter sind IMMER sichtbar, das
-// zugehörige Panel rendert aber nur nach einer Wahl. Ein `role=tab` mit
-// `aria-controls` auf eine dann fehlende `id` wäre ein gebrochenes
-// ARIA-Versprechen (§8) — gedrückte Schalter sagen dasselbe ohne die Zusage.
-// `ui/Tabs` bleibt unangetastet: die Kasten-Anatomie ist dort für Reiter
-// richtig; hier wird gefiltert, nicht geblättert.
-function EbenenSchalter({ aktiv, onWahl, onAlle }: {
-  aktiv: Ebene | null; onWahl: (e: Ebene) => void; onAlle: () => void;
-}) {
-  const opt: { id: Ebene | null; label: string }[] = [
-    { id: null, label: 'Alle' },
-    { id: 'bund', label: 'Bund' },
-    { id: 'kanton', label: 'Kantone' },
-    { id: 'international', label: 'International' },
-  ];
-  return (
-    <div role="group" aria-label="Ebene" className="flex flex-wrap items-baseline gap-x-5 gap-y-1 print:hidden">
-      {opt.map((o) => (
-        <button key={o.id ?? 'alle'} type="button" className="ub-schalter"
-          aria-pressed={aktiv === o.id}
-          onClick={() => (o.id === null ? onAlle() : onWahl(o.id))}>
-          {o.label}
-        </button>
-      ))}
-    </div>
-  );
-}
+// D22 (David 6.9.2026) · DIE EBENE IST EINE FACETTE, KEIN KASTEN: vier
+// Text-Schalter statt Segmented-Control + «← Übersicht». «Alle» ist der
+// Landeplatz. `aria-pressed` statt `role=tab`: das Panel rendert erst nach einer
+// Wahl — ein `aria-controls` auf eine dann fehlende `id` wäre ein gebrochenes
+// ARIA-Versprechen (§8).
+const EBENEN: readonly { id: Ebene | null; label: string }[] = [
+  { id: null, label: 'Alle' }, { id: 'bund', label: 'Bund' },
+  { id: 'kanton', label: 'Kantone' }, { id: 'international', label: 'International' },
+];
 
 // D6 (W2·24-Funktions-Inventar, Befund 6./7.9.2026): bei aktivem Filter blieb
 // die Zeile stehen und stand ÜBER den echten Treffern (§1: kein Rechtsschluss,
@@ -145,20 +117,8 @@ function Einstieg({ bund, bundArtikel, kantone, kantonErlasse, international, on
   ];
   return (
     <div className="space-y-6">
-      {/* ── D22 Ziff. 3 (David 6.9.2026) · DIE DRITTE SUCHE IST WEG ────────────
-          Hier stand ein Kasten (Rahmen + Füllung + Lupe + ⌘K-Kürzel) mit den
-          Zeilen «Direkt zum Artikel springen — z. B. «OR 257d»» und «oder
-          Stichwort suchen über Gesetze, Rechtsprechung und Werkzeuge». Er war
-          das dritte Suchangebot auf derselben Seite (Kopf-Suche, Filterfeld,
-          dieser Kasten) und tat selbst nichts: sein Klick fokussierte bloss die
-          Kopf-Suche (`lm:suche-fokus`).
-          NICHTS GEHT VERLOREN — der Norm-Sprung IST die Kopf-Suche (A5, David
-          5.7.2026: keine eigene Palette mehr). Sie steht auf jeder Route, hört
-          auf «/» und ⌘K/Ctrl-K und trägt die Sprung-Gruppe als obersten
-          Treffer; der Hinweis darauf steht jetzt als Halbsatz an der Filterzeile
-          (`gesetze-filter-scope`), nicht als eigener Kasten. Beweis, dass der
-          Weg trägt: `e2e/norm-sprung.e2e.ts` («OR 257d» → Art. 257d OR ab
-          /gesetze, ohne den Kasten). */}
+      {/* D22 Ziff. 3: der frühere Sprung-Kasten (dritte Suche) ist weg — der
+          Norm-Sprung IST die Kopf-Suche (A5); Beweis `e2e/norm-sprung.e2e.ts`. */}
       <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @2xl/pane:grid-cols-3 gap-3')}>
         {/* C-5 (31.8.2026): die Kachel-Anatomie liegt in `ui/RubrikKachel`;
             seit W2·29 K1 trägt sie das Register als Fläche (`reg`). */}
@@ -394,7 +354,8 @@ export function Gesetze() {
               Erklärung. */}
         </p>
         <div className="mt-1">
-          <EbenenSchalter aktiv={gewaehlt} onWahl={setzeEbene} onAlle={zurUebersicht} />
+          <SchalterGruppe name="Ebene" optionen={EBENEN} wert={gewaehlt} className="print:hidden"
+            onWahl={(e) => (e === null ? zurUebersicht() : setzeEbene(e))} />
         </div>
       </div>
 
@@ -497,25 +458,20 @@ export function Gesetze() {
                 <p className="text-body-s text-ink-500"><span className="num">{treffer.length}</span> Treffer für «{suche.trim()}»</p>
                 {bund.length > 0 && (
                   <section className="space-y-3">
-                    {/* C-7 (31.8.2026): hier stand «Bund · 12» — der
-                        Mittelpunkt ist ein Trennzeichen ohne Aussage, die Zahl
-                        steht ohnehin allein in ihrem Slot. Nackte Zahl ist der
-                        hausweite Kanon (Zählung 12:6:4:2), und der Kopf trägt
-                        jetzt auch die Haarlinie der übrigen Gruppenköpfe. */}
                     <GruppenKopf stufe={2} titel="Bund" zahl={bund.length} />
-                    <Gitter erlasse={bund} />
+                    <ErlassTabelle erlasse={bund} voll beschriftung="Bund — Kürzel, Titel, Angaben" />
                   </section>
                 )}
                 {gruppiereNachKanton(kant).map((g) => (
                   <section key={g.kanton} className="space-y-3">
                     <GruppenKopf stufe={2} titel={`Kanton ${g.kanton}`} zahl={g.erlasse.length} />
-                    <Gitter erlasse={g.erlasse} />
+                    <ErlassTabelle erlasse={g.erlasse} voll beschriftung={`Kanton ${g.kanton} — Nummer, Titel, Angaben`} />
                   </section>
                 ))}
                 {intl.length > 0 && (
                   <section className="space-y-3">
                     <GruppenKopf stufe={2} titel="International" zahl={intl.length} />
-                    <Gitter erlasse={intl} />
+                    <ErlassTabelle erlasse={intl} voll beschriftung="International — Kürzel, Titel, Angaben" />
                   </section>
                 )}
                 {treffer.length === 0 && (
@@ -527,8 +483,8 @@ export function Gesetze() {
                       <p className="text-body-s text-ink-700">Kein Treffer für «{suche.trim()}» in {KANTON_NAMEN[kanton] ?? kanton}.</p>
                       <p className="text-xs text-ink-500">
                         <span className="num text-ink-700">{kantonAnzahl.get(kanton) ?? 0}</span> {(kantonAnzahl.get(kanton) ?? 0) === 1 ? 'Erlass' : 'Erlasse'} in diesem Kanton erfasst — die vollständige kantonale Sammlung:{' '}
-                        <a href="https://www.lexfind.ch" target="_blank" rel="noopener noreferrer" className="text-brass-700 no-underline hover:text-brass-600">lexfind ↗</a>{' · '}
-                        <Link to="/abdeckung" className="text-brass-700 no-underline hover:text-brass-600">Was ist durchsuchbar</Link>
+                        <a href="https://www.lexfind.ch" target="_blank" rel="noopener noreferrer" className="text-ink-700 underline underline-offset-2 hover:text-ink-900">lexfind ↗</a>{' · '}
+                        <Link to="/abdeckung" className="text-ink-700 underline underline-offset-2 hover:text-ink-900">Was ist durchsuchbar</Link>
                       </p>
                     </div>
                   ) : (
@@ -545,14 +501,8 @@ export function Gesetze() {
             );
           })()}
 
-          {/* Ein Tab-Panel pro Ebene (nur das aktive rendert); id/aria-labelledby
-              folgen der aktiven Ebene und verbinden es mit dem gewählten Tab.
-              Erst NACH Säulen-Wahl (gewaehlt !== null) — davor trägt der Landeplatz. */}
-          {/* D22: hier stand `role=tabpanel` + `aria-labelledby` auf die Reiter
-              der Segmented-Control. Die Ebene ist jetzt eine Facette mit
-              gedrückten Text-Schaltern (s. `EbenenSchalter`) — ein Panel ohne
-              Reiter darf die Rolle nicht behalten, sonst verspricht es eine
-              Beziehung, die es nicht mehr gibt (§8). */}
+          {/* Ein Panel pro Ebene, erst NACH Säulen-Wahl (davor der Landeplatz). */}
+          {/* D22: kein `role=tabpanel` — ohne Reiter kein versprochener Bezug (§8). */}
           {!suche.trim() && gewaehlt !== null && (
           <div>
           {ebene === 'bund' && (
@@ -571,19 +521,8 @@ export function Gesetze() {
               ? <Leerzustand art="bestand" text="Kein Erlass gefunden." />
               : (
                 <div className="space-y-4">
-                  {/* A15 — Gliederungs-Umschalter (dieselbe Bedienung auf allen Säulen).
-                      ── LM-143 (W2·17-UI-BEFUNDE/B16) · ERKLÄRUNG UND UMSCHALTER
-                      STEHEN BEIEINANDER. Die Hülle stand auf `justify-end`.
-                      Gemessen 4.9.2026 @1440 auf /gesetze?ebene=bund (Preview von
-                      origin/main): der Umschalter «Relevanz · Systematisch ·
-                      Rechtsgebiet» klebte rechts bei x = 1076–1384, der Satz, der
-                      genau diese Wahl erklärt (`RelevanzHinweis` als erstes Kind
-                      der gewählten Sicht), begann links bei x = 333 und 145 px
-                      tiefer — Bedienelement und Erklärung diagonal über die Seite
-                      verteilt. Linksbündig fluchten sie an derselben Kante und
-                      stehen unmittelbar übereinander. Die drei Säulen (Bund,
-                      International, Kanton) tragen dieselbe Änderung — «dieselbe
-                      Bedienung auf allen Säulen» gilt auch für ihre Stellung. */}
+                  {/* A15 — Gliederungs-Umschalter, linksbündig über seiner Erklärung
+                      (LM-143, 4.9.2026: rechtsbündig stand er diagonal zu ihr). */}
                   <div className="flex justify-start">
                     <GliederungUmschalter wert={gliederung} onWahl={setzeGliederung} />
                   </div>
@@ -625,7 +564,7 @@ export function Gesetze() {
                 <>
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
                     <button type="button" onClick={() => setzeKanton(null)}
-                      className="inline-flex items-center gap-1.5 text-body-s font-medium text-brass-700 hover:text-brass-600 transition-colors">
+                      className="inline-flex items-center gap-1.5 text-body-s font-medium text-ink-700 underline decoration-1 underline-offset-4 hover:text-ink-900">
                       <KantonWappen kanton={kanton} className="h-5 w-4" />
                       ← Alle Kantone
                     </button>
@@ -641,8 +580,8 @@ export function Gesetze() {
                         return (
                           <button type="button" key={k} onClick={() => setzeKanton(k)} aria-pressed={kanton === k}
                             aria-label={`${KANTON_NAMEN[k] ?? k} — ${n} ${n === 1 ? 'Erlass' : 'Erlasse'}, ${STUFE_WORT[g.stufe]}`}
-                            className={`inline-flex items-baseline gap-1 rounded px-1.5 py-0.5 text-xs font-medium transition-colors ${
-                              kanton === k ? 'bg-brass-100 text-brass-800' : 'text-ink-500 lc-hover-flaeche hover:text-brass-700'
+                            className={`inline-flex items-baseline gap-1 px-1.5 py-0.5 text-xs font-medium transition-colors ${
+                              kanton === k ? 'bg-reg-g-flaeche text-ink-900' : 'text-ink-600 lc-hover-flaeche hover:text-ink-900'
                             }`}>
                             <span className="num">{k}</span>
                             {/* Zahl erbt die (kontrast-geprüfte) Pill-Textfarbe —
@@ -653,7 +592,7 @@ export function Gesetze() {
                       })}
                     </div>
                   </div>
-                  <section className="lc-card p-5 sm:p-6 space-y-5 scroll-mt-24">
+                  <section className="border-t-2 border-reg-g pt-4 space-y-5 scroll-mt-24">
                     {/* IA-2 Erfassungs-Kopf (§11.1 / K-2c): «n Erlasse erfasst — [Wort]»
                         + Weiterweg zur amtlichen Sammlung (lexfind) + /abdeckung. Für
                         dünne Kantone IST diese Zeile der Lücken-Hinweis (nie Sackgasse,
@@ -662,7 +601,7 @@ export function Gesetze() {
                     {(() => {
                       const gesamt = kantonAnzahl.get(kanton) ?? 0;
                       return (
-                        <div className="border-b border-line pb-3 space-y-2">
+                        <div className="border-b border-rule-soft pb-3 space-y-2">
                           <div className="flex items-center gap-3">
                             <KantonWappen kanton={kanton} className="h-11 w-10" />
                             <span className="flex flex-col">
@@ -680,12 +619,12 @@ export function Gesetze() {
                             <span>
                               Vollständigkeit:{' '}
                               <a href="https://www.lexfind.ch" target="_blank" rel="noopener noreferrer"
-                                className="text-brass-700 no-underline hover:text-brass-600">
+                                className="text-ink-700 underline underline-offset-2 hover:text-ink-900">
                                 Kantonale Gesetzessammlungen (lexfind) ↗
                               </a>
                             </span>
                             <span aria-hidden className="text-ink-300">·</span>
-                            <Link to="/abdeckung" className="text-brass-700 no-underline hover:text-brass-600">Was ist durchsuchbar</Link>
+                            <Link to="/abdeckung" className="text-ink-700 underline underline-offset-2 hover:text-ink-900">Was ist durchsuchbar</Link>
                           </div>
                         </div>
                       );

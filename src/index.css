@@ -4106,103 +4106,76 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
 }
 .ub-kern a:hover { text-decoration-thickness: 2px; }
 
-/* ═══ W2·24-R12B · LISTEN-TABELLE (Präfix `.tb-`, additiv am Dateiende) ═══════
-   D24 (David 6.9.2026, Bild Kantons-Erlassliste BS «Relevanz»): «das hier soll
-   tabellarisch aufgebaut sein sodass beide spalten jeweils zeile auf selber
-   höhe haben».
-   GEMESSEN vorher (Preview `dist`, /gesetze?ebene=kanton&kt=BS&gliederung=
-   relevanz, 859 Erlasse): zwei unabhängige CSS-`columns`-Fragmente, Zeile i
-   links gegen Zeile i rechts @1440 bis 105 px versetzt, @1280 bis 126 px.
-   Der Ersatz ist EIN Raster über beide Spalten: die Zeile ist eine GRID-Zeile,
-   links und rechts also dieselbe — gleich hoch by construction. Gefüllt wird
-   spaltenweise (`grid-auto-flow: column` + explizite Zeilenzahl), damit die
-   Leserichtung aus LM-141 (erst links ganz hinunter, dann rechts) bleibt.
-   Die Umschaltung ein-/zweispaltig hängt an einer CONTAINER-Abfrage, nicht an
-   der Fensterbreite: dieselbe Liste steht auch in der halben Pane-Breite
-   (`PaneKontext`), und dort ist die Fensterbreite die falsche Auskunft.
-   Additiv am Dateiende — an `index.css` bauen in dieser Runde mehrere Agenten
-   (dieselbe Begründung wie beim `.ub-`-Block darüber). Fällt der Block weg,
-   steht dieselbe Liste ungestylt, aber vollständig da. */
-
+/* ═══ ERLASS-TABELLE `ui/ListenTabelle` (Präfix `.tb-`) ═══════════════════════
+   D24 (David 6.9.2026): EIN Raster über beide Spalten, Zeile i links = Zeile i
+   rechts (vorher bis 126 px versetzt), spaltenweise gefüllt (LM-141); die
+   Umschaltung hängt an der CONTAINER-Breite (dieselbe Liste steht auch in der
+   halben Pane-Breite). W2·29-WERKBANK-KATALOGE K2 (23.9.2026, Board «Unter-
+   Gesetze-Katalog»): Haarlinien waagrecht ohne Registerkante am Block, Hover
+   Fläche `--well` + Titel-Unterstrich statt Messing; `.tb-voll` trägt die
+   frühere Erlass-Karte (Kürzel in der Lesestimme, 2-px-Registermarke, Meta
+   bricht um, einspaltig). */
 .tb-huelle { container-type: inline-size; }
-
 .tb-raster {
   display: grid;
-  grid-auto-flow: row;
   grid-template-columns: minmax(0, 1fr);
-  margin: 0;
-  padding: 0 0 0 0.75rem;
-  list-style: none;
-  /* Registerfarbe der Domäne als linke Kante des Listenblocks — dieselbe
-     Marke, die die Seitenleiste führt. Innerhalb der Liste bleiben die
-     Haarlinien waagrecht (Referenzbild `.syst`/`.liste`). */
-  border-left: 2px solid var(--reg-g);
+  margin: 0; padding: 0; list-style: none;
   border-top: 1px solid var(--rule-soft);
 }
-.tb-raster[data-reg="r"] { border-left-color: var(--reg-r); }
-.tb-raster[data-reg="m"] { border-left-color: var(--reg-m); }
-.tb-raster[data-reg="w"] { border-left-color: var(--reg-w); }
-
-/* Die Zeile ist das Grid-Kind: sie füllt die Rasterzeile (Default `stretch`),
-   darum sitzt ihre Haarlinie auf der Unterkante der ZEILE, nicht auf der
-   Unterkante ihres Inhalts — links und rechts also auf derselben Linie. */
-.tb-zeile {
-  display: grid;
-  min-width: 0;
-  border-bottom: 1px solid var(--rule-soft);
-}
-
+/* Die Zeile füllt die Rasterzeile — ihre Haarlinie sitzt auf der Unterkante
+   der ZEILE, links und rechts also auf derselben Linie. */
+.tb-zeile { display: grid; min-width: 0; border-bottom: 1px solid var(--rule-soft); }
 .tb-link {
-  display: grid;
-  align-content: start;
+  display: grid; align-content: start;
   gap: 0 0.75rem;
   padding: 0.375rem 0.5rem;
-  /* Schmal: Nummer und Meta teilen die erste Zeile, der Titel steht darunter —
-     kein H-Overflow @390, keine Quetschspalte von 7 rem. */
+  /* Schmal: Nummer und Meta teilen die erste Zeile, der Titel steht darunter. */
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas: "nr meta" "titel titel";
   color: var(--ink-700);
   text-decoration: none;
   transition: background-color .15s, color .15s;
 }
-.tb-link:hover { background-color: var(--well); color: var(--brass-700); }
+.tb-link:hover { background-color: var(--well); color: var(--ink-900); }
+.tb-link:hover .tb-titel { text-decoration: underline; text-underline-offset: 3px; }
 .tb-link:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
-
-.tb-nr {
-  grid-area: nr;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: var(--ink-500);
-  overflow-wrap: anywhere;
-}
+.tb-nr { grid-area: nr; font-size: 0.75rem; line-height: 1.5; color: var(--ink-500); overflow-wrap: anywhere; }
+/* Zwei Zeilen: der volle Wortlaut steht im `title` (§8). */
 .tb-titel {
-  grid-area: titel;
-  min-width: 0;
-  font-size: 0.875rem;
-  line-height: 1.45;
-  /* Zwei Zeilen: der volle Wortlaut bleibt über `title` erreichbar (§8), aber
-     ein einzelner 276-Zeichen-Titel diktiert nicht mehr die Zeilenhöhe. */
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  overflow: hidden;
-  overflow-wrap: anywhere;
+  grid-area: titel; min-width: 0;
+  font-size: 0.875rem; line-height: 1.45;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2;
+  overflow: hidden; overflow-wrap: anywhere;
 }
 .tb-meta {
-  grid-area: meta;
-  justify-self: end;
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0 0.5rem;
+  grid-area: meta; justify-self: end;
+  display: inline-flex; align-items: baseline; gap: 0 0.5rem;
   white-space: nowrap;
-  font-size: 0.75rem;
-  line-height: 1.5;
-  color: var(--ink-500);
+  font-size: 0.75rem; line-height: 1.5; color: var(--ink-500);
 }
-/* «↗» = führt aus der App hinaus (amtliche Fremdquelle) — dieselbe Glyphe und
-   dieselbe Farbe wie an den Quell-Links (§8). */
-.tb-extern { color: var(--brass-700); }
+/* «↗» = führt aus der App hinaus (amtliche Fremdquelle, §8). */
+.tb-extern { color: var(--reg-g); }
+
+/* Volle Dichte: Kürzel · Titel · alle Angaben. Schmal gestapelt, die Meta
+   bricht um (fünf Angaben passen @390 nicht in eine Zeile). */
+.tb-voll .tb-link {
+  position: relative;
+  padding: 0.625rem 0.5rem 0.625rem 0.875rem;
+  gap: 0.125rem 1rem;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "nr" "titel" "meta";
+}
+.tb-voll .tb-link::before {
+  content: ""; position: absolute; left: 0; top: 0.8rem;
+  width: 2px; height: 1.125rem; background: var(--reg-g);
+}
+.tb-voll .tb-nr {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.0625rem; line-height: 1.35; font-weight: 600;
+  color: var(--ink-900); overflow-wrap: break-word;
+}
+.tb-voll .tb-titel { color: var(--ink-700); }
+.tb-voll .tb-meta { justify-self: start; flex-wrap: wrap; white-space: normal; gap: 0.25rem 0.75rem; }
 
 /* Ab dieser CONTAINER-Breite trägt die Zeile alle drei Spuren nebeneinander. */
 @container (width >= 30rem) {
@@ -4210,11 +4183,20 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
     grid-template-columns: var(--tb-nr, 5.5rem) minmax(0, 1fr) auto;
     grid-template-areas: "nr titel meta";
   }
+  .tb-voll .tb-link {
+    grid-template-columns: var(--tb-nr, 7.5rem) minmax(0, 1fr);
+    grid-template-areas: "nr titel" ". meta";
+  }
+}
+@container (width >= 56rem) {
+  .tb-voll .tb-link {
+    grid-template-columns: var(--tb-nr, 7.5rem) minmax(0, 1fr) auto;
+    grid-template-areas: "nr titel meta";
+  }
+  .tb-voll .tb-meta { justify-self: end; }
 }
 
-/* Zwei Spalten erst, wenn beide Spalten je ~29 rem tragen (≈ Fenster 1280 px
-   auf der Übersichtsbreite). Darunter bleibt die Liste einspaltig in voller
-   Breite — Lesbarkeit vor Dichte (D24). */
+/* Zwei Spalten erst, wenn beide je ~29 rem tragen (≈ Fenster 1280 px). */
 @container (width >= 60rem) {
   .tb-raster-2 {
     grid-auto-flow: column;

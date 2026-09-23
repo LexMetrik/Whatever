@@ -2,10 +2,11 @@
 import { useState } from 'react';
 import { SYSTEMATIK } from '../../lib/normtext/systematik';
 import { type BrowseErlass } from '../../lib/normtext/browse-typen';
-import { Kategorie, GruppenInhalt, Gitter } from './geteilt';
+import { Kategorie, GruppenInhalt } from './geteilt';
+import { ErlassTabelle } from '../../components/normtext/ErlassKarte';
 
 // Bund-Erlasse nach der funktionalen Systematik (systematik.ts): aufklappbare
-// Kategorien (geläufige offen), Untergruppen, Leitgesetze als Karten +
+// Kategorien, Untergruppen, Leitgesetze in voller Dichte +
 // Verordnungen dezent. «Alle auf-/zuklappen»; «Weitere Erlasse» fängt alles ein,
 // was keiner Gruppe zugeordnet ist (nie ein Verlust).
 export function BundSystematik({ erlasse, hashOffen }: { erlasse: BrowseErlass[]; hashOffen?: string | null }) {
@@ -42,7 +43,7 @@ export function BundSystematik({ erlasse, hashOffen }: { erlasse: BrowseErlass[]
     <div className="space-y-3">
       <div className="flex justify-end">
         <button type="button" onClick={toggleAlle}
-          className="text-body-s font-medium text-brass-700 hover:text-brass-600 transition-colors">
+          className="text-body-s font-medium text-reg-g underline decoration-1 underline-offset-4 hover:decoration-2">
           {alleOffen ? 'Alle einklappen' : 'Alle aufklappen'}
         </button>
       </div>
@@ -50,7 +51,7 @@ export function BundSystematik({ erlasse, hashOffen }: { erlasse: BrowseErlass[]
         <Kategorie key={kat.id} id={`sys-${kat.id}`} offen={offen.has(kat.id)} onToggle={() => toggle(kat.id)} anzahl={kat.anzahl}
           kopf={
             <span className="flex items-baseline gap-2.5">
-              <span aria-hidden className="font-display text-h3 leading-none text-brass-700">{kat.nr}</span>
+              <span aria-hidden className="num font-display text-h3 leading-none text-reg-g">{kat.nr}</span>
               <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight">{kat.titel}</span>
             </span>
           }>
@@ -61,7 +62,7 @@ export function BundSystematik({ erlasse, hashOffen }: { erlasse: BrowseErlass[]
       {weitere.length > 0 && (
         <Kategorie anzahl={weitere.length} offen={offen.has('weitere')} onToggle={() => toggle('weitere')}
           kopf={<span className="font-sans font-medium text-ink-700 text-body-l">Weitere Erlasse</span>}>
-          <Gitter erlasse={weitere} />
+          <ErlassTabelle erlasse={weitere} voll beschriftung="Weitere Erlasse — Kürzel, Titel, Angaben" />
         </Kategorie>
       )}
     </div>

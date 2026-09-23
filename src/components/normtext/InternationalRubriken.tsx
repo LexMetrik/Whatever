@@ -1,4 +1,4 @@
-import { ErlassKarte } from './ErlassKarte';
+import { ErlassTabelle } from './ErlassKarte';
 import { GruppenKopf } from '../ui/GruppenKopf';
 import { Leerzustand } from '../ui/Leerzustand';
 import type { BrowseErlass } from '../../lib/normtext/browse-typen';
@@ -7,7 +7,7 @@ import { INTERNATIONAL_GRUPPEN } from '../../lib/normtext/international-rubriken
 // ─── Geteilte Darstellung der International-Rubriken (§5) ────────────────────
 //
 // Gruppiert die international-Erlasse (Staatsverträge SR 0.* + EU-Verordnungen)
-// in sachliche Rubriken und rendert sie als Karten-Gitter. Seit IA-6 Stufe 2
+// in sachliche Rubriken und rendert sie als Erlass-Tabelle (K2). Seit IA-6 Stufe 2
 // (§11.8 Y-C) nur noch EIN Einsatzort: die Säule /gesetze?ebene=international
 // (die frühere Alias-Seite /international ist zum Redirect aufgelöst). Reine
 // Darstellung (§3) — keine Rechtslogik; alle Einträge sind nur-live-link
@@ -16,14 +16,6 @@ import { INTERNATIONAL_GRUPPEN } from '../../lib/normtext/international-rubriken
 // Die Rubrik-Gliederung selbst (ids/Titel/Keys) liegt als Daten in
 // `lib/normtext/international-rubriken.ts` — dieselbe Quelle, gegen die das
 // Anker-Tor des /international-Redirects seine Ziele prüft (§5/§7).
-
-function Gitter({ erlasse }: { erlasse: BrowseErlass[] }) {
-  return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-      {erlasse.map((e) => <ErlassKarte key={e.key} e={e} />)}
-    </div>
-  );
-}
 
 export function InternationalRubriken({ erlasse }: { erlasse: BrowseErlass[] }) {
   const proKey = new Map(erlasse.map((e) => [e.key, e]));
@@ -50,13 +42,13 @@ export function InternationalRubriken({ erlasse }: { erlasse: BrowseErlass[] }) 
             <GruppenKopf stufe={2} titel={g.titel} zahl={g.items.length} />
             <p className="text-body-s text-ink-500 max-w-reading">{g.lede}</p>
           </div>
-          <Gitter erlasse={g.items} />
+          <ErlassTabelle erlasse={g.items} voll beschriftung={`${g.titel} — Kürzel, Titel, Angaben`} />
         </section>
       ))}
       {weitere.length > 0 && (
         <section className="space-y-3">
           <GruppenKopf stufe={2} titel="Weitere" />
-          <Gitter erlasse={weitere} />
+          <ErlassTabelle erlasse={weitere} voll beschriftung="Weitere — Kürzel, Titel, Angaben" />
         </section>
       )}
     </div>

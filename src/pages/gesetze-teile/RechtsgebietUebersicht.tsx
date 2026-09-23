@@ -45,20 +45,10 @@ export function RechtsgebietUebersicht({ erlasse }: { erlasse: BrowseErlass[] })
         {gruppen.map((g) => (
           <div key={g.gebiet} className="space-y-2">
             <GruppenKopf titel={g.label} zahl={g.erlasse.length} />
-            {/* ── D24 (David 6.9.2026) · DER L6-RESTPUNKT IST HIER GELÖST ────
-                L6 (29.8.2026) hatte den Zeilen-Gap gesetzt und ausdrücklich
-                offengelassen: «die Metazeilen fluchten weiterhin nicht auf
-                einer Linie — Ursache sind ein- vs. zweizeilige Titel, das löst
-                kein Gap, sondern nur eine feste Titelhöhe». Genau das tut
-                `ui/ListenTabelle`: gemeinsame Spaltenspuren, Titel auf zwei
-                Zeilen gekappt (voller Wortlaut im `title`, §8), Zeile i in
-                beiden Spalten dieselbe Grid-Zeile.
-                Die frühere Variante `leitgesetz` von `ErlassZeile` entfällt
-                dabei ersatzlos: ihre Umkehrung «Titel führt, Kürzel sekundär»
-                IST die Spaltenordnung der Tabelle (§5/§10-Rückbau). */}
-            <ErlassTabelle erlasse={g.erlasse} art="bund"
+            {/* D24 löst den L6-Restpunkt (Metazeilen fluchten): gemeinsame
+                Spuren in `ui/ListenTabelle`, Titel auf zwei Zeilen gekappt. */}
+            <ErlassTabelle erlasse={g.erlasse}
               beschriftung={`${g.label} — Kürzel, Titel, SR-Nummer`} />
-
           </div>
         ))}
       </div>

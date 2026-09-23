@@ -118,7 +118,7 @@ export function KantonSystematik(
       )}
       <div className="flex justify-end">
         <button type="button" onClick={toggleAlle}
-          className="text-body-s font-medium text-brass-700 hover:text-brass-600 transition-colors">
+          className="text-body-s font-medium text-reg-g underline decoration-1 underline-offset-4 hover:decoration-2">
           {alleOffen ? 'Alle einklappen' : 'Alle aufklappen'}
         </button>
       </div>
@@ -127,7 +127,7 @@ export function KantonSystematik(
           kopf={
             g.amtlich ? (
               <span className="flex items-baseline gap-2.5 min-w-0">
-                <span aria-hidden className="num font-display text-h3 leading-none text-brass-700 shrink-0">{g.top}</span>
+                <span aria-hidden className="num font-display text-h3 leading-none text-reg-g shrink-0">{g.top}</span>
                 {/* N10: nicht hart einzeilig kürzen (lange Sachgebietstitel werden auf
                     Mobil sonst abgeschnitten) — bis zu zwei Zeilen, dann erst ellipsis. */}
                 <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight line-clamp-2">{g.titel}</span>
@@ -152,17 +152,10 @@ export function KantonSystematik(
                     CSS-Regel erzeugt). */}
                 {u.titel && (
                   <GruppenKopf stufe={4} titel={u.titel} zahl={u.items.length}
-                    marke={<span aria-hidden className="num text-xs text-brass-700 shrink-0">{u.sub}</span>} />
+                    marke={<span aria-hidden className="num text-xs text-reg-g shrink-0">{u.sub}</span>} />
                 )}
-                {/* ── D24 (David 6.9.2026) · EINE TABELLE STATT `columns` ────────
-                    Hier stand `lc-listenspalten columns-1 sm:columns-2` mit je
-                    einer `SysZeile`. Zwei CSS-`columns`-Fragmente heissen zwei
-                    unabhängige Zeilenfolgen — GEMESSEN am 6.9.2026 auf
-                    /gesetze?ebene=kanton&kt=BS bis 105 px Versatz @1440 und
-                    126 px @1280 zwischen Zeile i links und Zeile i rechts.
-                    `ui/ListenTabelle` legt EIN Raster über beide Spalten und
-                    füllt es weiter spaltenweise (Leserichtung LM-141 bleibt). */}
-                <ErlassTabelle erlasse={u.items} art="kanton"
+                {/* D24: EIN Raster über beide Spalten (s. `ui/ListenTabelle`). */}
+                <ErlassTabelle erlasse={u.items}
                   beschriftung={`${u.titel || g.titel} — Nummer, Titel, Umfang`} />
               </section>
             ))}
