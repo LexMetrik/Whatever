@@ -207,9 +207,16 @@ export const PRESETS_SCHKG: SchkgPreset[] = [
   { key: 'beschwerde_aufsicht', phase: 'rechtsmittel', label: 'Beschwerde an Aufsichtsbehörde – 10 Tage', norm: 'Art. 17 Abs. 2 SchKG',
     einheit: 'tage', laenge: 10, modus: 'schkg_betreibungsferien', fristnatur: 'beschwerdefrist', ausloeser: 'Kenntnis der Verfügung',
     hinweis: 'Aufsichtsbeschwerde: ZPO-Stillstand gilt NICHT (Art. 145 Abs. 4 Satz 2 ZPO); Art. 63 SchKG nur, wenn eine Betreibungshandlung angefochten wird. Rechtsverweigerung/-verzögerung jederzeit (Art. 17 Abs. 3).', verweise: ['BGE_141_III_170'] },
+  // RL-05 / Befund F2-01 (Prüfung Rechtslogik 23.9.2026, deklarierte fachliche
+  // Änderung): vorher modus 'schkg_betreibungsferien' → Art.-63-Verlängerung
+  // eingerechnet (Eröffnung 10.7.2026 ZH: 05.08. statt 20.07.2026). Art. 63
+  // SchKG gilt nur für Fristen, die eine Betreibungshandlung (Art. 56) auslöst;
+  // der Entscheid der Aufsichtsbehörde ist i.d.R. keine (BGer 5A_730/2023 vom
+  // 21.11.2023 E. 3.2–3.4). Werktagsregel (Art. 31 SchKG i.V.m. Art. 142 Abs. 3
+  // ZPO) bleibt über modus 'kein' erhalten.
   { key: 'weiterzug_ab', phase: 'rechtsmittel', label: 'Weiterzug an obere Aufsichtsbehörde – 10 Tage', norm: 'Art. 18 Abs. 1 SchKG',
-    einheit: 'tage', laenge: 10, modus: 'schkg_betreibungsferien', fristnatur: 'beschwerdefrist', ausloeser: 'Eröffnung des Entscheids',
-    hinweis: 'Entscheide der Aufsichtsbehörde sind i.d.R. keine Betreibungshandlung → keine Verlängerung nach Art. 63 SchKG.', verweise: ['BGer_5A_730_2023'] },
+    einheit: 'tage', laenge: 10, modus: 'kein', fristnatur: 'beschwerdefrist', ausloeser: 'Eröffnung des Entscheids',
+    hinweis: 'Entscheide der Aufsichtsbehörde sind i.d.R. keine Betreibungshandlung → keine Verlängerung nach Art. 63 SchKG (auch nicht in den Betreibungsferien). Ausnahme: ordnet der Entscheid selbst eine Betreibungshandlung an (oder schreibt sie dem Amt vor), gilt Art. 63 SchKG (BGer 5A_730/2023 E. 3.2–3.4).', verweise: ['BGer_5A_730_2023'] },
   { key: 'beschwerde_bger', phase: 'rechtsmittel', label: 'Beschwerde ans Bundesgericht – 10 Tage', norm: 'Art. 19 SchKG i.V.m. Art. 100 Abs. 2 lit. a BGG',
     einheit: 'tage', laenge: 10, modus: 'kein', fristnatur: 'beschwerdefrist', ausloeser: 'Eröffnung des Endentscheids',
     hinweis: 'BGG-Fristen folgen dem Stillstand nach Art. 46 BGG (eigener Kalender) – dieser Rechner bildet ihn NICHT ab; im Einzelfall prüfen.' },
