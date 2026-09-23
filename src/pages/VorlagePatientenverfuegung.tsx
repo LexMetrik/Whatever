@@ -253,7 +253,7 @@ const CONFIG: VorlagenSeitenConfig<PvAntworten, PvZ> = {
   zusammenstellen: (a) => ({ ergebnis: pvZusammenstellen(a) }),
   pruefeGates: (a) => pruefePvGates(a),
   schritte: SCHRITTE,
-  overlineFallback: 'Familie',
+  overlineFallback: 'Vorsorge & Erwachsenenschutz',
   titel: 'Patientenverfügung',
   intro: 'Legen Sie fest, welchen medizinischen Massnahmen Sie im Fall Ihrer Urteilsunfähigkeit zustimmen – aus festen, strukturierten Bausteinen, ohne Sprachmodell. Widersprüche zwischen Therapieziel und Massnahmen werden geprüft, nie still aufgelöst.',
   badge: 'Handschriftlich datieren & unterschreiben',

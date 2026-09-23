@@ -3170,6 +3170,19 @@ wortgleich direkt auf. **Die drei Dokumentmappen** (GmbH-Gründung, AG-Gründung
 Kapitalerhöhung) laufen **nicht** über den Wizard-Rahmen, sondern über eine eigene
 Mappen-Ansicht (5.5).
 
+> **Nachtrag 23.9.2026 (W2·29-WERKBANK-VORLAGEN V4).** Die Zahl «22 der 30» oben
+> stimmte schon bei der Planung am 23.9.2026 nicht (Code: 11 Seiten, darunter
+> Mahnung). Seit den Migrations-Scheiben V2a–V2e laufen **alle 29 Wizard-Seiten**
+> über die Orchestrierungs-Seite (`components/vorlagen/VorlagenSeite.tsx`); die
+> «handgeschriebene» Liste oben ist damit leer — die Sonderformen (Schalter,
+> Form-Weiche, Mängel-Listen, Stopp-Fall) tragen optionale Slots, deren Inventar
+> im Kopf von `VorlagenSeite.tsx` steht. Ausserhalb bleiben die
+> Vermieter-Checkliste (kein Wizard, 5.4.24) und die drei Mappen (5.5). Zu den
+> Mappen korrigiert: die **AG-Gründung** läuft über den Wizard-Rahmen
+> (`VorlagenWizardRahmen`, sechs Schritte, Mappe im letzten Schritt); GmbH-Gründung
+> und Kapitalerhöhung sind Mappen-Ansichten ohne Wizard. Der Kopf aller Vorlagen
+> ist seit V1/V4 `layout/WerkzeugKopf` (Titelblatt-Band im Register «Werkzeuge»).
+
 #### 5.3.1 Kopf (immer gleich)
 
 1. Link **«← Zurück zum Katalog»** (Standardziel `/vorlagen`).
@@ -3914,7 +3927,9 @@ Miet-Themenseiten sowie Cross-Links.
 ### 5.5 Sonderfall: Gesellschaftsrecht — Gründungs- und Kapitalmassnahmen-Mappen
 
 Die drei Vorlagen dieser Gruppe sind **keine Wizards** (kein Wizard-Rahmen, keine
-Schrittleiste, keine Schritte). Sie sind **Checkliste + Dokumentmappe**: eine **einzige**
+Schrittleiste, keine Schritte). *(Korrektur 23.9.2026, W2·29-WERKBANK-VORLAGEN V4: gilt
+nur für GmbH-Gründung und Kapitalerhöhung — die AG-Gründung ist ein Wizard im
+`VorlagenWizardRahmen` mit der Mappe im letzten Schritt, siehe 5.5.2.)* Sie sind **Checkliste + Dokumentmappe**: eine **einzige**
 Eingabemaske mit fachlichen Weichen, darunter eine Unterlagenliste nach
 Verfahrensphase und ein Reiter-Satz mehrerer live generierter Dokumente.
 

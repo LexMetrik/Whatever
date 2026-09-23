@@ -27,47 +27,38 @@ import { getProfil, getVorlagenDetailgrad } from '../../lib/einstellungen';
 // Opt-in für lineare Wizards; seit W2·29-WERKBANK-VORLAGEN §5c ziehen auch Seiten
 // mit Live-Kacheln und Sonder-Props um — über die optionalen Slots unten.
 //
-// QS-CODE-ENTDOPPLUNG D1 (Tranche 1) — vier rückwärtskompatible Erweiterungen,
-// damit sechs weitere Seiten hier landen konnten. Die fünf Pilot-Seiten ändern
-// sich dadurch um exakt null Zeichen (alle vier sind optional bzw. per Default
-// deckungsgleich mit dem bisherigen Verhalten):
-//   • Typparameter `Z` — `zusammenstellen` darf neben `ergebnis` Rechenwerte
-//     liefern (Beendigungsdatum, Rückzahlungsfrist); sie erreichen Gates und
-//     Eingabe-Schritte über `ctx.z`, statt die Engine ein zweites Mal zu fahren.
-//   • `kopfSchalter` — der VariantenKopf (Untertyp/Detailgrad) über dem Stepper.
-//   • `fussnote` — durchgereicht an VorlagenWizardRahmen (Themen-Brücke).
-//   • `bestaetigungLabelCls` — hält die vorgefundene Trefferfläche der
-//     Bestätigungs-Zeile byte-gleich (siehe Feld-Kommentar).
-// Ein Hook (z. B. usePaneKlasse) gehört NICHT direkt in `eingabeInhalt` — es
-// läuft nur auf den Eingabe-Schritten, der Hook wechselte die Hook-Reihenfolge
-// je Schritt. Braucht ein Schritt einen Hook, rendert `eingabeInhalt` eine
-// Komponente der Seite (`<EingabeSchritt ctx schritt />`), die ihn aufruft.
-// W2·29-WERKBANK-VORLAGEN V2a — fünf optionale Slots (normalisieren,
-// profilPrefill, blockerKasten, pruefenZusatz, bestaetigung als Funktion), je
-// per Default deckungsgleich mit dem bisherigen Verhalten: Darstellung bzw.
-// Zustands-Hygiene, NIE Fachlogik.
-// V2c (Verträge) — drei weitere optionale Slots (detailgradAusEinstellungen,
-// vorauswahl, pruefenFuss) und zwei Erweiterungen (blockerKasten mit eigener
-// Überschrift, ortFehler optional), wieder je per Default deckungsgleich.
-// V2b (Familie/Klagen) — Slots für die Mängel-gesteuerten Eingaben ohne
-// Speicher: speicherKey/datumFehler optional, defaultsZusatz (Adress-Prefill,
-// je Render gelesen wie zuvor inline), fehlerEingabeImLetztenSchritt,
-// overlineZusatz, weiterDeaktiviert, vorschauKompakt, vorschauErsatz,
-// direktExportBlocker, pruefenFuss als Funktion.
-// V2d (Vorsorge/Vollmacht/Testament) — optionale Slots blockerEinzeln,
-// docxSperre, vorschauExtra; banner/dateiBasis/pdfLabel/docxLabel/
-// bestaetigungLabel dürfen Funktionen der Antworten sein; ctx trägt setA.
-// Die Typschranke `T` verlangt ort/datum nicht mehr (Testament führt
-// ortErrichtung/datumErrichtung) — gelesen werden sie nur, solange
-// ortDatumImPruefen nicht false ist.
-// V2b+V2d zusammengeführt (23.9.2026): EIN Slot `ortDatumImPruefen` (V2b hiess
-// er `ortDatumFeld`) blendet Raster UND Ort-/Datums-Fehler aus; `datumFehler`
-// fehlt = Datum keine Pflicht (wie `ortFehler`). Alle Slots per Default
-// deckungsgleich mit dem bisherigen Verhalten der übrigen Nutzer.
-// V2e (Schlichtungsgesuch BS) — fünf optionale Slots für eine Seite ohne
-// Bestätigung, ohne Schritt-Fehlerbox und mit Stopp-Fall (Art. 198 ZPO):
-// fehlerBox, pruefBefund, ohneBestaetigung, exportLeiste,
-// vorschauNichtAufgenommen — je per Default deckungsgleich, reine Darstellung.
+// Slot-Inventar (V4, 23.9.2026 — gezählt über die 29 Konfigurationen):
+// Jeder optionale Slot ist per Default deckungsgleich mit dem Verhalten der
+// Seiten, die ihn nicht setzen; Slots sind Darstellung bzw. Zustands-Hygiene,
+// NIE Fachlogik. Entstehung: QS-CODE-ENTDOPPLUNG D1 (Typparameter `Z`,
+// kopfSchalter, fussnote, bestaetigungLabelCls), dann W2·29-WERKBANK-VORLAGEN
+// V2a–V2e (Rest) — Einzelheiten im git-Verlauf dieser Datei.
+//   • Zustand:   speicherKey (23) · defaultsZusatz (3) · normalisieren (8) ·
+//                profilPrefill (13) · detailgradAusEinstellungen (5) · vorauswahl (1)
+//   • Kopf:      kopfSchalter (9) · overlineZusatz (3) · fussnote (7)
+//   • Schritte:  fehlerEingabeImLetztenSchritt (6) · fehlerBox (1) ·
+//                pruefBefund (1) · weiterDeaktiviert (2)
+//   • Prüfen:    blockerKasten (7) · blockerEinzeln (3) · pruefenZusatz (8) ·
+//                blockerImLetztenSchritt (14) · ortDatumImPruefen (7) ·
+//                ortDatumLabel/ortPlaceholder (22) · ortFehler (14) ·
+//                datumFehler (19) · ohneBestaetigung (1) ·
+//                bestaetigungLabelCls (23) · exportLeiste (1) · pruefenFuss (9)
+//   • Vorschau:  vorschauKompakt (6) · vorschauErsatz (2) ·
+//                direktExportBlocker (3) · vorschauExtra (1) ·
+//                vorschauNichtAufgenommen (1)
+//   • Export:    docxSperre (2); banner/dateiBasis/pdfLabel/docxLabel/
+//                bestaetigungLabel wahlweise als Funktion der Antworten
+// Kein Slot ist tot. blockerKasten (EINE Sammelbox) und blockerEinzeln (je
+// Blocker eine Box) sind keine Doppelung: zwei vorgefundene DOM-Formen. Die
+// Einzel-Nutzer (fehlerBox, pruefBefund, ohneBestaetigung, exportLeiste,
+// vorschauNichtAufgenommen: Schlichtungsgesuch BS) bleiben, bis eine SICHTBARE,
+// deklarierte Angleichung die Sonderform der Seite aufhebt — ein Streichen
+// hier wäre eine Verhaltensänderung im Rückbau (§6).
+// Hook-Regel: Ein Hook (z. B. usePaneKlasse) gehört NICHT direkt in
+// `eingabeInhalt` — es läuft nur auf den Eingabe-Schritten, der Hook wechselte
+// die Hook-Reihenfolge je Schritt. Braucht ein Schritt einen Hook, rendert
+// `eingabeInhalt` eine Komponente der Seite (`<EingabeSchritt ctx schritt />`),
+// die ihn aufruft.
 
 /** Einheitliche Gate-Form aller Vorlagen-Engines. */
 type VorlagenGates = { blocker: string[]; warnungen: string[]; hinweise: string[] };
