@@ -35,6 +35,10 @@ export interface FnEingang {
   links?: FnLink[];
   absatz?: string | null;
   item?: string | null;
+  /** Anker-Ort (Sidecar, fussnoten-extrahiere.ts A31a): gesetzt, wenn der Marker in
+   *  einem absatzlosen KÖRPER-Block steht (z. B. «2–3 …», Ziffer «1.» ohne Absatz-
+   *  <sup>) — also NICHT im Artikelkopf (<h6>: Nummer/Sachüberschrift). */
+  absatzIndex?: number | null;
 }
 
 /** Ereignistyp einer amtlichen Änderungs-Fussnote. */

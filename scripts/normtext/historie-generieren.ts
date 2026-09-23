@@ -24,10 +24,12 @@ import {
   type FnEingang,
   type ArtikelHistorie,
 } from '../../src/lib/normtext/historie-parse.ts';
+import { pruefeAufgehobenLebend, LEBEND_SCHWELLE } from './historie-aufgehoben-lebend.ts';
 
 const wurzel = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const QUELLE = resolve(wurzel, 'public/normtext/struktur/bund');
 const ZIEL = resolve(wurzel, 'public/normtext/historie');
+const TEXT = resolve(wurzel, 'public/normtext/bund');
 
 interface Sidecar {
   artikel?: Record<string, { fussnoten?: FnEingang[] }>;
@@ -156,6 +158,18 @@ if (!process.env.VITEST) {
     }
     for (const uebrig of vorhanden) { console.error(`check:historie: ${uebrig}.json ist verwaist (keine Quelle).`); drift = true; }
     if (drift) { console.error('→ `npm run gen:historie` ausführen und committen.'); process.exit(1); }
+    // RL-11 (R2-01): «aufgehobenSeit» nur ohne lebenden Normtext im Text-Shard.
+    const parsed = new Map([...shards].map(([k, v]) => [k, JSON.parse(v) as { artikel?: Record<string, ArtikelHistorie> }]));
+    const { befunde, geprueft, ohneText } = pruefeAufgehobenLebend(parsed, TEXT);
+    if (befunde.length > 0) {
+      console.error(
+        `check:historie ROT — ${befunde.length} von ${geprueft} Artikeln mit «aufgehobenSeit» tragen lebenden Normtext ` +
+          `(> ${LEBEND_SCHWELLE} Zeichen) im Text-Shard:`,
+      );
+      for (const b of befunde) console.error(`  ${b.erlass} Art. ${b.token} aufgehobenSeit=${b.aufgehobenSeit} (${b.zeichen} Z.) «${b.auszug}»`);
+      process.exit(1);
+    }
+    console.log(`check:historie: ${geprueft} Artikel mit «aufgehobenSeit» ohne lebenden Normtext (${ohneText} ohne Text-Eintrag).`);
     console.log(`check:historie: ${shards.size} Shards synchron mit den Struktur-Sidecars.`);
   } else {
     rmSync(ZIEL, { recursive: true, force: true }); // verwaiste Shards entfernen (kein toter Rest)
