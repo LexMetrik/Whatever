@@ -32,7 +32,7 @@ import type { Status } from '../../../lib/startseiteConfigTypen';
 // (Art. 324 statt 324a, ArG → Lohnfortzahlung) ist Welle 2 (Daten).
 
 /** Ein Artikelbereich, zu dem ein Werkzeug passt — mit seinem fachlichen Beleg. */
-export interface WerkzeugArtikel {
+interface WerkzeugArtikel {
   /** «Art. 60» bzw. «Art. 127–142». */
   label: string;
   von: number;

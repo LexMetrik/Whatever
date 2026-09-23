@@ -17,7 +17,7 @@ import type { BrowseMaterial, DoktypId, MaterialManifest } from './typen';
 
 /** Die Dokumenttypen der kantonalen Gesetzgebung — Vorlagen und Berichte an das
  *  Parlament, also das kantonale Gegenstück zur Botschaft des Bundesrates. */
-export const KANTONALE_GESETZGEBUNG: ReadonlySet<DoktypId> = new Set<DoktypId>(['ratschlag', 'gr-bericht', 'gr-initiative']);
+const KANTONALE_GESETZGEBUNG: ReadonlySet<DoktypId> = new Set<DoktypId>(['ratschlag', 'gr-bericht', 'gr-initiative']);
 
 /** Anzeige-Form eines kantonalen Parlamentsgeschäfts. */
 export interface KantonalesGeschaeft {
@@ -51,7 +51,7 @@ function vergleiche(a: KantonalesGeschaeft, b: KantonalesGeschaeft): number {
 }
 
 /** Rein, ohne Netz: der erlassKey→Geschäfte-Index eines Manifests (neu → alt). */
-export function baueKantonsIndex(manifest: MaterialManifest): Map<string, KantonalesGeschaeft[]> {
+function baueKantonsIndex(manifest: MaterialManifest): Map<string, KantonalesGeschaeft[]> {
   const index = new Map<string, KantonalesGeschaeft[]>();
   for (const m of manifest.materialien) {
     if (!KANTONALE_GESETZGEBUNG.has(m.doktyp)) continue;
