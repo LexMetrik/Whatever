@@ -214,7 +214,9 @@ Klick auf jeden Link navigiert. Keine eigenen Tastenkürzel für die Startseite
 - **Gespeichert/verändert:** Weichen Modul-Reihenfolge oder An/Aus-Zustand von der
   Werkseinstellung ab, wird die «Werkseinstellung»-Zeile im Blatt zum aktiven
   Rücksetz-Knopf.
-- **Mobil vs. Desktop:** Rubrik-Kacheln 2 → 4 Spalten (390/1024 px),
+- **Mobil vs. Desktop:** Rubrik-Kacheln 1 → 2 → 4 Spalten (unter 480 px
+  einspaltig, ab 480 / 1024 px; Titel nie silbengetrennt — K7-Nachzug
+  23.9.2026),
   Kantone-Raster 3 → 6 → 9 Spalten, Modul-Kopfspalte erst ab dem grossen
   Breakpoint zweispaltig (13 rem + Inhalt), darunter gestapelt.
 - **Server/Prerender:** Der Build hat kein `localStorage` — ausgeliefert wird immer
