@@ -3466,7 +3466,8 @@
      ist kein Kasten, sondern das Zeichen, das den Hinweis vom Fliesstext
      abhebt. Die Status-Varianten darunter behalten ihre Füllung — dort trägt
      die Farbe eine Bedeutung (§13/F2: Warnung/Gefahr), nicht eine Kante. */
-  .lc-notice { @apply rounded-md text-ink-600; background: transparent; border-left: 3px solid var(--brass-line); padding: 12px 16px; }
+  /* GRUNDTON 23.9.2026 (Gegenprüfung Ziff. 3): der 3-px-Randstrich ist ein Registerstrich → gerade, nicht die Knopf-Stufe. */
+  .lc-notice { @apply rounded-none text-ink-600; background: transparent; border-left: 3px solid var(--brass-line); padding: 12px 16px; }
   .lc-notice-warn { @apply lc-notice bg-warn-bg text-warn-700; border-left-color: var(--warn-line); }
   .lc-notice-danger { @apply lc-notice bg-danger-bg text-danger-700; border-left-color: var(--danger-line); }
 
