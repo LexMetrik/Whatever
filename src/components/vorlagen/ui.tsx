@@ -266,7 +266,12 @@ export function NormLink({ artikel, title, bemerkung }: { artikel: string; title
   );
 }
 
-// Stepper-Leiste (klickbar bis zum erreichten Schritt)
+// Stepper-Leiste (klickbar bis zum erreichten Schritt).
+// W2·29-WERKBANK-VORLAGEN V1: eine REITERZEILE (Board «Unter-Vorlage-Wizard») —
+// Haarlinie unter der Zeile, der aktive Schritt trägt die 2-px-Unterkante im
+// Werkzeug-Register (`--reg-w`), erledigte Schritte das ✓ in derselben Farbe
+// (Glyphe = Form, nicht Farbe allein: F2/B3). Kein Gewichtswechsel am aktiven
+// Reiter — die Zeile darf beim Umschalten nicht springen (wie `.ub-schalter`).
 export function Stepper({ schritte, aktiv, onWechsel }: {
   schritte: readonly { id: string; label: string }[];
   aktiv: number;
@@ -275,8 +280,7 @@ export function Stepper({ schritte, aktiv, onWechsel }: {
   const anteil = (aktiv + 1) / schritte.length;
   return (
     <nav aria-label="Schritte">
-      {/* Mobile: kompakter Fortschritt statt Chip-Wolke (bei 7 Schritten sonst
-          eine mehrzeilige Wolke ohne Fortschrittsgefühl, Redesign E6). */}
+      {/* Mobile: kompakter Fortschritt statt Reiter-Wolke (Redesign E6). */}
       <div className="sm:hidden space-y-1.5">
         <div className="flex items-baseline justify-between gap-3">
           <span className="lc-overline shrink-0">Schritt <span className="num">{aktiv + 1}</span>/<span className="num">{schritte.length}</span></span>
@@ -284,65 +288,31 @@ export function Stepper({ schritte, aktiv, onWechsel }: {
         </div>
         <div className="h-1 bg-well overflow-hidden"
           role="progressbar" aria-valuenow={aktiv + 1} aria-valuemin={1} aria-valuemax={schritte.length}>
-          <div className="h-full bg-brass-500 origin-left transition-transform motion-reduce:transition-none" style={{ transform: `scaleX(${anteil})` }} />
+          <div className="h-full bg-reg-w origin-left transition-transform motion-reduce:transition-none" style={{ transform: `scaleX(${anteil})` }} />
         </div>
       </div>
-      {/* Desktop: klickbare Schritt-Chips.
-          R5-F2 (6.9.2026, D6): `flex-wrap` liess bei 7 Schritten den letzten
-          («Prüfen & Download») unter die Zeile fallen, sobald die Fläche schmaler
-          als ~1250 px war (Pane, 1024, gezoomt) — eine zweizeilige Leiste liest
-          sich wie zwei Gruppen. Eine Schrittfolge ist EINE Zeile: statt Umbruch
-          jetzt waagrechter Scroll mit sichtbarem Rand (`lc-scrollrand-x`, die
-          Haus-Affordanz für jeden Scroller). */}
-      <div className="hidden sm:flex gap-x-1 overflow-x-auto lc-scrollrand-x">
+      {/* Desktop: EINE Zeile; bei Platzmangel waagrechter Scroll mit Rand
+          (`lc-scrollrand-x`) statt Umbruch — eine zweizeilige Leiste liest
+          sich wie zwei Gruppen (R5-F2/D6). */}
+      <div className="hidden sm:flex gap-x-0.5 overflow-x-auto lc-scrollrand-x border-b border-line">
         {schritte.map((s, i) => {
           const erledigt = i < aktiv;
           const istAktiv = i === aktiv;
           return (
             <button key={s.id} type="button" onClick={() => i <= aktiv && onWechsel(i)}
               aria-current={istAktiv ? 'step' : undefined}
-              // ── LM-058 (B15, 4.9.2026) · ERREICHBARKEIT WIRD GESAGT ─────────
-              // GEMESSEN vor dem Bau auf `/rechner/zustaendigkeit` @1440
-              // (Schritt 1 aktiv): die Schritte 2-6 trugen `disabled=false`,
-              // `aria-disabled=null`, `cursor: default` und keinen `title` —
-              // der Klick lief still ins Leere (`i <= aktiv` fing ihn ab), und
-              // weder Maus noch Screenreader erfuhren, warum. Der halbe Befund
-              // war schon überholt (Fortschritt IST dargestellt: ✓-Kreise,
-              // aktiver Ring, mobile `role=progressbar`), diese Hälfte nicht.
-              // BEWUSST `aria-disabled` statt `disabled`: `disabled` nähme den
-              // Schritt aus der Tabreihenfolge und änderte damit die BEDIENUNG;
-              // hier ändert sich nur, was die Leiste über sich sagt (§3). Die
-              // Klick-Sperre bleibt Wort für Wort dieselbe.
+              // LM-058 (B15): Unerreichbarkeit wird GESAGT (`aria-disabled` +
+              // `title`), nicht mit `disabled` erzwungen — das nähme den Reiter
+              // aus der Tabreihenfolge und änderte die Bedienung (§3).
               aria-disabled={i > aktiv ? true : undefined}
               title={i > aktiv ? 'Noch nicht erreichbar — vorherige Schritte zuerst ausfüllen' : undefined}
-              // R5-F2/V5 (6.9.2026): der aktive Schritt war ein Kasten
-              // (Rahmen + Radius + eigene Füllung + Schatten-Utility). Im
-              // Zielbild markiert eine LINIE die Stelle, an der man steht —
-              // Radius und Fläche fallen weg, der Unterstrich trägt den
-              // Zustand. Klickverhalten, ARIA und Reihenfolge unverändert.
-              className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap border-b-2 px-2.5 py-1.5 text-xs font-medium transition-colors ${
-                istAktiv ? 'border-rule text-ink-900'
-                : erledigt ? 'border-transparent text-ink-700 hover:border-line-strong'
-                : 'border-transparent text-ink-500 cursor-not-allowed'
+              className={`-mb-px inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap border-b-2 px-3 py-2 text-xs font-medium transition-colors ${
+                istAktiv ? 'border-reg-w text-ink-900'
+                : erledigt ? 'border-transparent text-ink-900 hover:border-line-strong'
+                : 'border-transparent text-ink-600 cursor-not-allowed'
               }`}>
-              {/* ── GB-21 (W2·24, Befund G21, 7.9.2026) · DIE NUMMER STEHT IN DER ZEILE
-                  GEMESSEN im ersten Bild der Vorlage @1440: 7 ×
-                  `span.num.inline-flex.h-5` — sieben Kästchen in einer Leiste,
-                  die ihren Zustand seit R5-F2/V5 ohnehin über den UNTERSTRICH
-                  trägt (`border-b-2`, Kommentar oben). Das Kästchen war also das
-                  zweite Signal für dieselbe Sache, in der Form, die F0.6 gerade
-                  abschafft — und die Marke war «kantig» nur noch, weil der
-                  Radius weg war, ein Kasten blieb sie. §17-Gegengewicht: wer
-                  addiert, streicht zuerst die Stelle, die dieselbe Sorge schon
-                  trägt.
-                  NEU: die Ziffer steht blank in der Zeile. Der ERLEDIGT-Zustand
-                  bleibt am ✓ (Glyphe = Form, nicht Farbe), der AKTIVE an der
-                  Tinte — beide Aussagen bleiben also erhalten, nur ohne Rahmen
-                  und ohne Fläche. Höhe/Abstände der Leiste unverändert (die
-                  Marke war 20 px hoch in einer 30-px-Zeile) ⇒ CLS 0. */}
-              <span className={`num text-micro ${
-                erledigt ? 'text-ink-900' : istAktiv ? 'text-ink-900' : 'text-ink-500'
-              }`}>{erledigt ? '✓' : i + 1}</span>
+              {/* GB-21: Ziffer blank in der Zeile, kein Kästchen; erledigt = ✓. */}
+              <span className={`num ${istAktiv || erledigt ? 'text-reg-w' : ''}`}>{erledigt ? '✓' : i + 1}</span>
               {s.label}
             </button>
           );

@@ -4,12 +4,11 @@ import { FehlerBox, KopierButton, NormLink, Stepper } from './ui';
 import { PruefBefund } from './PruefBefund';
 import { befundZahl, sammleBefunde } from './seiteHelfer';
 import { useZielSichtbar } from './useZielSichtbar';
-import { NormChip } from './NormChip';
 import { PassendeRechner } from './PassendeRechner';
 import { NormText } from '../NormText';
 import { useLocale, fedlexLokalisiert } from '../locale';
 import { usePaneKlasse } from '../layout/PaneKontext';
-import { SeitenTitel } from '../ui/SeitenTitel';
+import { WerkzeugKopf } from '../layout/WerkzeugKopf';
 import { dokumentAlsText } from '../../lib/vorlagen/vorlagenText';
 import type { AssembleErgebnis } from '../../lib/vorlagen/engine';
 import { AUSGABE_LABEL, MUSTER, rolleLabel, type AusgabeStil } from '../../lib/vorlagen/formatvorlagen';
@@ -26,19 +25,14 @@ import type { PdfBanner } from '../../lib/vorlagen/banner';
 // (PDF lazy, DOCX lazy, Text kopieren). Eine neue Vorlage liefert nur noch
 // Schema, Schritte und Schritt-Inhalte – KEINE Fachlogik hier (§3).
 
-// ── D5 (W2·24) · Zahl der offenen Pflichtangaben als Kontext ────────────────
-// Der Prüf-Befund entsteht im RAHMEN (nur er kennt alle Schritte), gebraucht
-// wird er in der ExportLeiste — und die rendert jede Seite selbst, an ~19
-// Stellen. Ein Prop hätte 19 Seiten anfassen müssen, ohne dass eine davon
-// etwas dazu weiss; der Kontext hält die Kopplung an EINER Stelle (dieselbe
-// Bauart wie `BeruehrtContext` in ui.tsx). Default 0 = «nichts bekannt» —
-// ExportLeisten ausserhalb eines Wizards (Dokumentmappe) verhalten sich damit
-// unverändert.
+// D5 (W2·24): Zahl der offenen Pflichtangaben. Der Befund entsteht im RAHMEN
+// (nur er kennt alle Schritte), gebraucht wird er in der ExportLeiste, die jede
+// Seite selbst rendert — der Kontext hält die Kopplung an EINER Stelle.
+// Default 0 = «nichts bekannt» (ExportLeisten ausserhalb eines Wizards).
 const OffeneAngabenContext = createContext(0);
 
 export function VorlagenWizardRahmen({
-  // W2·10-UI-NAV/N0a: «Zurück zum Katalog» führte auf «/» (Startseite) statt
-  // auf die Vorlagen-Übersicht — Default ans Label angeglichen (/vorlagen).
+  // N0a: der Rückweg zeigt auf die Übersicht, die sein Label nennt.
   zurueckHref = '/vorlagen', overline, titel, intro, norms, badge,
   fussnote, zuruecksetzen, schritte, schritt, setSchritt, fehler, fehlerJeSchritt,
   weiterDeaktiviert, inhalt, vorschau, kopfSchalter,
@@ -58,12 +52,9 @@ export function VorlagenWizardRahmen({
   setSchritt: Dispatch<SetStateAction<number>>;
   fehler?: string[];
   /** D5 (W2·24): dieselbe Auskunft wie `fehler`, aber für JEDEN Schritt —
-   *  damit der letzte Schritt («Prüfen & Download») prüfen kann, was die
-   *  Eingabe-Schritte offen gelassen haben. Die Seite reicht ihre vorhandene
-   *  Fehlerfunktion durch (`fehlerImSchritt` bzw. `maengel`-Filter); NEUE
-   *  Fachlogik entsteht dabei keine (§3). Fehlt die Prop, bleibt der Rahmen
-   *  zeichengleich zum Stand vor D5 — der Wächter `wizard-pruefschritt-d5`
-   *  hält fest, welche Flächen sie führen müssen. */
+   *  der letzte Schritt prüft damit, was die Eingabe-Schritte offen liessen.
+   *  Keine neue Fachlogik (§3); welche Flächen sie führen müssen, hält der
+   *  Wächter `wizard-pruefschritt-d5` fest. */
   fehlerJeSchritt?: (schritt: number) => string[];
   /** Default: fehler vorhanden. Überschreibbar (z. B. Stopp-Karten). */
   weiterDeaktiviert?: boolean;
@@ -75,62 +66,40 @@ export function VorlagenWizardRahmen({
 }) {
   const { locale } = useLocale();
   const weiterAus = weiterDeaktiviert ?? (fehler != null && fehler.length > 0);
-  // Grundsatz David (14.6.2026): im leeren Anfangszustand keine Eingabefehler
-  // zeigen — die Fehlerbox erscheint erst, nachdem der Nutzer etwas eingegeben
-  // hat («berührt»). Der «Weiter»-Button bleibt bei leeren Pflichtfeldern
-  // weiterhin deaktiviert (weiterAus oben), nur die MELDUNG wird zurückgehalten.
+  // Grundsatz David (14.6.2026): kein Eingabefehler vor der ersten Eingabe —
+  // die Fehlerbox erscheint erst «berührt»; «Weiter» bleibt trotzdem gesperrt.
   const [beruehrt, setBeruehrt] = useState(false);
   const merkeEingabe = () => { if (!beruehrt) setBeruehrt(true); };
 
-  // ── D5 (W2·24) · der «Prüfen»-Schritt prüft ───────────────────────────────
-  // Nur im LETZTEN Schritt und nur, wenn die Seite ihre Fehlerfunktion
-  // durchreicht. Der Befund erscheint dort OHNE `beruehrt`-Vorbehalt: wer den
-  // Prüfen-Schritt aufruft, hat um die Prüfung gebeten — der
-  // Zurückhalte-Grundsatz David (14.6.2026) schützt den leeren ANFANGSzustand
-  // der Eingabe-Schritte, nicht das Ergebnis einer angeforderten Prüfung.
+  // D5: der «Prüfen»-Schritt prüft — nur im LETZTEN Schritt, OHNE
+  // `beruehrt`-Vorbehalt (wer ihn aufruft, hat um die Prüfung gebeten; der
+  // Grundsatz schützt den leeren Anfangszustand, nicht eine angeforderte
+  // Prüfung). Kein useMemo: `fehlerJeSchritt` ist je Render eine neue Closure.
   const letzterSchrittIdx = schritte.length - 1;
-  // Kein useMemo: die Seiten reichen eine bei jedem Render neu erzeugte
-  // Closure durch (`fehlerImSchritt`), ein Memo daran wäre nie ein Treffer —
-  // und `sammleBefunde` ist ein Durchlauf über < 10 reine Funktionsaufrufe.
   const imPruefSchritt = !!fehlerJeSchritt && schritt === letzterSchrittIdx;
   const befunde = imPruefSchritt ? sammleBefunde(schritte, fehlerJeSchritt!) : [];
   const offeneAngaben = befundZahl(befunde);
-  // Sprung aus der Sammelliste in den Schritt mit der Lücke: dort greift dann
-  // die gewohnte FehlerBox — darum `beruehrt` setzen, sonst landet man in
-  // einem Schritt, der schweigt. Fokus auf die Schritt-Überschrift, damit
-  // Tastatur und Screenreader dem Sprung folgen (der `key={schritt}`-Remount
-  // lässt die Ref-Callback beim Ankommen feuern).
+  // Sprung in den Schritt mit der Lücke: `beruehrt` setzen (sonst schweigt
+  // dort die FehlerBox), Fokus auf die Schritt-Überschrift (der
+  // `key={schritt}`-Remount lässt die Ref-Callback beim Ankommen feuern).
   const springFokus = useRef(false);
   const springeZuSchritt = (i: number) => { setBeruehrt(true); springFokus.current = true; setSchritt(i); };
   const titelRef = (el: HTMLHeadingElement | null) => {
     if (el && springFokus.current) { springFokus.current = false; el.focus(); }
   };
-  // Split-View E: Formular‖Vorschau-Split nach PANE-Breite (md→@3xl/pane), damit
-  // der Wizard in einem schmalen Pane nicht zweispaltig gequetscht wird. Ausserhalb
-  // eines Panes byte-gleich (Viewport-md:).
+  // Split-View E: Formular‖Vorschau-Split nach PANE-Breite (md→@3xl/pane).
   const pk = usePaneKlasse();
 
-  // Mobile Live-Vorschau (Redesign E6): sie ist das Kernversprechen, war aber
-  // auf dem Telefon in allen Eingabe-Schritten zugeklappt. Jetzt steuerbar +
-  // automatisch offen, sobald der Prüfen-Schritt erreicht ist (Render-Phasen-
-  // Abgleich statt Effect — lint-konform).
+  // Mobile Live-Vorschau (Redesign E6): steuerbar und automatisch offen im
+  // Prüfen-Schritt (Render-Phasen-Abgleich statt Effect).
   const [vorschauOffen, setVorschauOffen] = useState(false);
   const [letzterSchritt, setLetzterSchritt] = useState(schritt);
   if (schritt !== letzterSchritt) {
     setLetzterSchritt(schritt);
     if (schritt === schritte.length - 1 && !vorschauOffen) setVorschauOffen(true);
   }
-  // LM-084 (W2·17-UI-BEFUNDE B10, 4.9.2026): dieser Knopf war der einzige
-  // schwebende Sprung-Knopf OHNE Ausblende-Regel — er blieb auch dann über dem
-  // Inhalt stehen, wenn sein Ziel schon im Bild war (gemessen 390 px,
-  // `/vorlagen/nda`: Vorschau-Griff bei y=580, Knopf unverändert sichtbar über
-  // dem Inhalt darunter). Die Schwester-Marke `ErgebnisSprung` blendet seit W5
-  // (11.7.2026) genau dafür aus; der Wizard bekommt dieselbe Regel aus
-  // demselben Haken statt einer Kopie (§5/§10). Nicht reproduzierbar waren die
-  // übrigen Teile des Befunds: der Knopf ist `fixed` (nicht absolut), hält mit
-  // `right-4` einen Sicherheitsabstand und liegt bei 390 px vollständig im
-  // Viewport (gemessen x=266..374). §3: reine Darstellung — die Sprungfunktion
-  // selbst und das `pb-20` der Boden-Polsterung bleiben unberührt.
+  // LM-084: der schwebende «Vorschau ↓»-Knopf blendet sich aus, sobald sein
+  // Ziel im Bild ist — derselbe Haken wie an `ErgebnisSprung` (§5/§10).
   const vorschauImBild = useZielSichtbar('wizard-vorschau');
   const zurVorschau = () => {
     setVorschauOffen(true);
@@ -139,70 +108,34 @@ export function VorlagenWizardRahmen({
   };
 
   return (
-    // D5: `inhalt`/`vorschau` sind zwar AUSSEN erzeugte Knoten, werden aber
-    // HIER gerendert — React-Kontext folgt dem Render-Baum, die ExportLeiste
-    // der Seite liest die Zahl also ohne Props-Plumbing.
+    // D5: `inhalt`/`vorschau` werden HIER gerendert — der Kontext folgt dem
+    // Render-Baum, die ExportLeiste der Seite liest die Zahl ohne Props.
     <OffeneAngabenContext.Provider value={offeneAngaben}>
     {/* pb-20 mobil (Auftrag David 25.6.2026): der schwebende «Vorschau ↓»-FAB
         (fixed bottom-4 right-4) deckte sonst die letzten Felder / den Weiter-
         Knopf zu — die Boden-Polsterung lässt sie frei darüber scrollen. */}
-    <div className={`space-y-6 pb-20 ${pk('md:pb-0', '@3xl/pane:pb-0')}`}>
-      {/* Kopf */}
-      <div className="space-y-3">
-        <Link to={zurueckHref} className="inline-flex items-center gap-2 no-underline text-body-s font-medium text-brass-700 hover:text-brass-600">
-          <span aria-hidden className="inline-flex items-center justify-center w-7 h-7 border border-line bg-surface">←</span>
-          Zurück zum Katalog
-        </Link>
-        {/* ── FD-R8 (W2·24, 7.9.2026) · ETIKETTEN-ZEILE ────────────────────────
-            Overline UND Formvorschrift stehen in EINER Zeile. Beide sind
-            Etiketten der Vorlage («Arbeit · Vorlage» = Einordnung,
-            «Beidseitig zu unterzeichnen» = Formvorschrift), und die
-            Overline-Zeile hatte @1280 rund 1'100 px leer neben sich.
-            WARUM HIER: GB-21 hat das Badge zu Recht aus der Norm-Chip-Reihe
-            geholt (gefuellter Warn-Kasten unter unterstrichenen Normlinks =
-            zwei Grammatiken in einer Zeile). Es bekam dabei aber eine EIGENE
-            Zeile im `space-y-3`-Stapel, und die kostete 38.19 px ueber dem
-            Dokument — gemessen @1280x800 auf /vorlagen/arbeitsvertrag: die
-            Stelle des Dokuments rueckte von 964.4 auf 1002.6 px, also von
-            1.2055 auf 1.2533 Bildschirmhoehen. Genau diese Schranke haelt
-            `qsui-hierarchie` I8 bei 1.25 (Kommentar dort: Luft ueber dem
-            Maximum 0.038) — das Tor hat gemeldet, wofuer es gebaut ist.
-            GB-21 bleibt vollstaendig gewahrt: das Badge ist jetzt NOCH
-            weiter von der Chip-Reihe weg, die warn-Fuellung und die Lage im
-            ersten Viewport (§8, Tor-Griff `data-formgate`) sind unberuehrt.
-            GEMESSEN NACHHER (dieselbe Sonde, 3 Flaechen x 2 Breiten): -34.19 px
-            auf JEDER Wizard-Vorlage, arbeitsvertrag 1.2105 — unter dem Wert
-            1.212, auf dem die Schranke 1.25 aufsetzt. Die Schranke bleibt
-            darum unangetastet (keine §6.3-Aenderung an ihr). */}
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-          <p className="lc-overline">{overline}</p>
-          <span data-formgate className="lc-badge lc-badge-warn">{badge}</span>
-        </div>
-        {/* overflow-wrap/hyphens: lange Komposita (z.B. «Geheimhaltungsvereinbarung»)
-            sprengten den Titel bei 360px → 12px horizontaler Seiten-Overflow
-            (Befund David 25.6.2026, nda). Brechen statt überlaufen. */}
-        {/* A-1: EIN Titel-Baustein (`ui/SeitenTitel`); die Umbruch-Regeln bleiben
-            hier, weil sie diesem Titel gehören (lange Komposita), nicht der
-            Titel-Anatomie. */}
-        {/* V2 (R5-F2, 6.9.2026): `stimme="serif"` — der Vorlagen-Titel ist
-            Lesetext, nicht Bedienelement (§5: Literata für alles Gelesene).
-            Der Baustein trägt die Stimme bereits; sie war hier nur nie gewählt.
-            Der Lead folgt ihm (Fliesstext); Chips, Knöpfe, Stepper bleiben
-            Archivo — die UI-Hülle wechselt die Schrift NICHT. */}
-        <SeitenTitel stimme="serif" className="[overflow-wrap:anywhere] hyphens-auto">{titel}</SeitenTitel>
-        <p className="font-serif text-body-l text-ink-600 max-w-reading">{intro}</p>
-        {/* lc-chip-zeile (LM-044/N1): Norm-Chips sind <a> (unterstrichen); der
-            Status-Badge daneben liegt auf der lc-badge-Achse (Pille, kein Tick)
-            und bleibt von der Chip-Grammatik unberührt. */}
-        <div className="lc-chip-zeile flex flex-wrap items-center gap-1.5">
-          {norms.map((n) => (
-            <NormChip key={n.label} artikel={n.label} hrefOverride={fedlexLokalisiert(n.url, locale)} />
-          ))}
-        </div>
-        {/* V6 (W2·10-UI-NAV): Weg zum passenden Rechner — «Frist zuerst
-            rechnen». Rendert nur, wenn die Registry für DIESE Vorlage eine
-            Rechner-Kante führt; sonst gibt die Komponente null zurück und der
-            Kopf bleibt byte-gleich. */}
+    {/* `space-y-4`: Kopf, Schalter, Reiterzeile und Arbeitsfläche rücken wie
+        im Board zusammen (V1) — das Band kostet sonst die Luft über dem
+        Dokument (qsui-hierarchie I8). */}
+    <div className={`space-y-4 pb-20 ${pk('md:pb-0', '@3xl/pane:pb-0')}`}>
+      {/* Kopf: Titelblatt-Band (`layout/WerkzeugKopf`). Die Formvorschrift
+          steht als Etikett im Band — Tor-Griff `data-formgate`, warn-gefüllt
+          und im ersten Viewport (§8, qsui-hierarchie I10). */}
+      <WerkzeugKopf overline={overline} titel={titel}
+        // Lange Komposita («Geheimhaltungsvereinbarung») sprengten bei 360 px
+        // den Titel (12 px Seiten-Overflow, Befund David 25.6.2026): brechen.
+        titelKlasse="[overflow-wrap:anywhere] hyphens-auto"
+        etikett={<span data-formgate className="lc-badge lc-badge-warn">{badge}</span>}
+        vorspann={(
+          <Link to={zurueckHref} className="inline-flex items-center gap-2 no-underline text-body-s font-medium text-brass-700 hover:text-brass-600">
+            <span aria-hidden className="inline-flex items-center justify-center w-7 h-7 border border-line bg-surface">←</span>
+            Zurück zum Katalog
+          </Link>
+        )}
+        intro={intro}
+        normen={norms.map((n) => ({ artikel: n.label, href: fedlexLokalisiert(n.url, locale) }))}>
+        {/* V6 (W2·10-UI-NAV): Weg zum passenden Rechner — rendert nur, wenn die
+            Registry für DIESE Vorlage eine Rechner-Kante führt. */}
         <PassendeRechner />
         {(zuruecksetzen || fussnote) && (
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2 pt-1">
@@ -213,23 +146,15 @@ export function VorlagenWizardRahmen({
                 ↺ Eingaben zurücksetzen
               </button>
             )}
-            {/* B2/D-1.5 (QS-UI 8b Teil 2): Der Speicher-Hinweis lief mit 976 px über
-                die volle Spaltenbreite — gemessen auf 24 Vorlagen-Flächen. Prosa hält
-                die Lesespalte; Kacheln und Tabellen bleiben unbegrenzt.
-                LM-125 (W2·17-UI-BEFUNDE-B9, 4.9.2026): `max-w-reading` (40rem) ist das
-                Mass der 16-px-Prosa, nicht das der Feinschrift. Auf der 12-px-Stufe
-                mass dieser Hinweis @1440 110 ch/Zeile (2 Zeilen à 640 px) — über der
-                WCAG-Decke SC 1.4.8 (80 ch). `max-w-kleintext` ist die
-                Feinschrift-Spalte des Hauses (Herleitung am Token in
-                `tailwind.config.js`); dieselbe Messung und dasselbe Mittel wie T2
-                (`kontext/KontextGruppe`, Hinweis-Slot) und T3 (`ArtikelLeser`,
-                Fussnotenapparat), beide 29.8.2026. */}
+            {/* Feinschrift-Spalte `max-w-kleintext` statt `max-w-reading`:
+                @1440 lief der Hinweis sonst mit 110 ch/Zeile über die
+                WCAG-Decke SC 1.4.8 (LM-125). */}
             <p className="text-xs text-ink-500 max-w-kleintext">
               {fussnote ?? 'Ihre Eingaben verlassen den Browser nicht, werden aber lokal auf diesem Gerät zwischengespeichert und bleiben nach dem Schliessen erhalten — auf geteilten oder fremden Rechnern bitte «Eingaben zurücksetzen».'}
             </p>
           </div>
         )}
-      </div>
+      </WerkzeugKopf>
 
       {/* Kopf-Schalter (Detailgrad/Untertyp) – optional, vor dem Stepper */}
       {kopfSchalter}
@@ -237,34 +162,14 @@ export function VorlagenWizardRahmen({
       {/* Stepper */}
       <Stepper schritte={schritte} aktiv={schritt} onWechsel={setSchritt} />
 
-      {/* Zweispaltig: Formular links, klebende Vorschau rechts;
-          mobil einspaltig mit einklappbarer Vorschau.
-          ── W2·24-DESIGN-IDENTITAET R5-F2 (6.9.2026) · V1/D6 ─────────────
-          Vorgänger-Kommentar (R6-D1, 5.9.2026) behauptete für `md:justify-center`
-          «0 px Leerfläche». Nachgemessen (Skript `.scratch/f2-leer.mjs`, Band-Scan
-          über die linke Grid-Hälfte, @1440×900, dist von HEAD 0834cbd7b): die
-          Zentrierung hat die eine Lücke UNTER der Karte in zwei halb so grosse
-          Lücken über UND unter ihr übersetzt — `/vorlagen/mietvertrag` 1180 px,
-          `/vorlagen/arbeitsvertrag` 1175 px, `/vorlagen/nda` 802 px. Der Grund
-          liegt eine Ebene höher: die Vorschau-Spalte trägt das GANZE Dokument
-          (2–3 Bildschirmhöhen), das Grid streckt die Formular-Zelle auf diese
-          Höhe, und `md:sticky` blieb wirkungslos, weil ein Sticky-Element, das
-          höher ist als der Viewport, nie klebt.
-          Der Fix setzt an der Ursache an, nicht an der Ausrichtung:
-          (a) `items-start` — die Karte schlägt oben an (Lücke über der Karte 0);
-          (b) die klebende Vorschau bekommt eine Viewport-Decke mit eigenem
-              Scroller (`max-h`/`overflow-y-auto`) — damit klebt sie wirklich UND
-              die Grid-Zeile ist auf eine Bildschirmhöhe gedeckelt statt auf die
-              Dokumentlänge. Rest-Weissraum neben der Karte = Spaltendifferenz
-              innerhalb EINES Bildschirms, gemessen in `abnahme/design-identitaet/
-              R5-F2.md`. */}
+      {/* Zweispaltig: Formular links, klebende Vorschau rechts; mobil
+          einspaltig mit einklappbarer Vorschau. `items-start`: die Karte
+          schlägt oben an — die Zeilenhöhe bemisst die Formular-Spalte, nicht
+          das Dokument (R5-F2/V1, Messung `abnahme/design-identitaet/R5-F2.md`). */}
       <div data-wizard-grid className={`grid grid-cols-1 items-start ${pk('md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]', '@3xl/pane:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]')} gap-6 ${pk('md:gap-8', '@3xl/pane:gap-8')}`}>
         <div className="flex min-w-0 flex-col">
-        {/* V3 (R5-F2): kein 4-seitiger Kasten mehr — Zielbild «Linien statt
-            Flächen» (§5). Die Formularstrecke trägt eine harte Kopflinie (2 px
-            `--rule`) und eine weiche Schlusslinie (1 px `--rule-soft`); Füllung,
-            Radius und Seitenkanten fallen weg. `data-formular-karte` ist der
-            Messgriff des Leerflächen-Skripts. */}
+        {/* Formularstrecke: Linien statt Kasten (R5-F2/V3) — 2 px `--rule`
+            oben, 1 px `--rule-soft` unten. `data-formular-karte` = Messgriff. */}
         <div data-formular-karte className="border-t-2 border-b border-t-rule border-b-rule-soft pt-5 pb-6 space-y-5"
           onInput={merkeEingabe} onChange={merkeEingabe}>
           {/* key={schritt}: re-mountet den Schrittinhalt → dezenter Einblende-
@@ -286,14 +191,8 @@ export function VorlagenWizardRahmen({
           {beruehrt && fehler != null && <FehlerBox fehler={fehler} />}
 
           <div className="flex items-end justify-between gap-3 pt-2 border-t border-line">
-            {/* LM-094 (W2·17-UI-BEFUNDE B17, 4.9.2026): «← Zurück» war
-                `lc-btn-ghost` — reiner Text ohne Fläche und ohne Rahmen neben
-                dem gefüllten «Weiter →». Die beiden Navigationsknöpfe EINES
-                Assistenten lasen sich dadurch nicht als Paar. Outline neben
-                Primär: gleiche Anatomie und Höhe, verschiedene Gewichtung —
-                die Rangfolge bleibt, die Zusammengehörigkeit wird sichtbar.
-                Der Deaktiviert-Zustand kommt aus dem Token (`index.css`,
-                `.lc-btn*:disabled`), nicht aus einer Utility hier. */}
+            {/* LM-094: Outline neben Primär — die beiden Navigationsknöpfe
+                lesen sich als Paar, die Rangfolge bleibt. */}
             <button type="button" onClick={() => setSchritt((s) => Math.max(0, s - 1))}
               disabled={schritt === 0} className="lc-btn-outline">← Zurück</button>
             {schritt < schritte.length - 1 && (
@@ -318,51 +217,23 @@ export function VorlagenWizardRahmen({
             zweimal platziert (kein Remount, wie bisheriger Funktionsaufruf) */}
         <details id="wizard-vorschau" className={`${pk('md:hidden', '@3xl/pane:hidden')} bg-surface border border-line scroll-mt-24`}
           open={vorschauOffen} onToggle={(e) => setVorschauOffen((e.currentTarget as HTMLDetailsElement).open)}>
-          {/* `data-dokument-platz`: Auf schmalen Schirmen ist das Dokument
-              zugeklappt — die STELLE des Dokuments ist dann dieser beschriftete
-              Griff. Das Tor (qsui-hierarchie I8) prüft, dass an der Stelle des
-              Verdikts immer etwas steht: das Dokument, ein Platzhalter oder ein
-              benannter Griff — nie nichts. */}
-          {/* LM-060 (B15, 4.9.2026): hier standen ZWEI Klappmarken. Diese
-              Summary zeichnete ihr eigenes ▾ und schaltete den nativen Marker
-              ab — die App-weite `details > summary::after`-Regel (index.css)
-              hängte ihr «▸» aber weiterhin als drittes Flex-Kind ganz rechts
-              an. GEMESSEN @640 (bei 1440 ist die Klappe `md:hidden`):
-              `::after` = "  ▸" UND ein Textknoten «▾» in derselben Summary.
-              Der Rückbau IST der Fix (§17): eigenes Zeichen und die beiden
-              Marker-Abschaltungen fallen weg, das EINE Zeichen kommt aus der
-              geteilten Regel — dort rechtsbündig und drehend. */}
+          {/* `data-dokument-platz`: auf schmalen Schirmen ist dieser Griff die
+              STELLE des Dokuments (qsui-hierarchie I8: nie nichts). Die
+              Klappmarke kommt allein aus der geteilten `summary::after`-Regel
+              (LM-060: keine zweite Marke). */}
           <summary data-dokument-platz className="cursor-pointer select-none px-4 py-3 text-body-s font-medium text-ink-700">
             <span>Vorschau & Bausteinprotokoll</span>
           </summary>
           <div className="px-4 pb-4">{vorschau}</div>
         </details>
-        {/* R5-F2 (V1-Ursache, 6.9.2026): Die Vorschau-Spalte war so hoch wie das
-            ganze Dokument — `sticky` blieb wirkungslos (ein Sticky-Kasten, der
-            höher als der Viewport ist, klebt nie) und die Grid-Zeile wuchs auf
-            Dokumentlänge, was die Formular-Spalte leer mitzog. Deckel auf eine
-            Bildschirmhöhe + eigener Scroller: die Vorschau klebt jetzt wirklich,
-            das Dokument bleibt vollständig lesbar (Scroll im Panel), und die
-            Zeilenhöhe ist gedeckelt. `tabIndex`/`aria-label`: ein scrollbarer
-            Bereich muss per Tastatur erreichbar und benannt sein
-            (axe `scrollable-region-focusable`). */}
-        {/* Die Vorschau-Zelle trägt ihren Inhalt ABSOLUT: ein absolut
-            positioniertes Kind zählt bei der Zeilenhöhe nicht mit, also bemisst
-            sich die Grid-Zeile allein an der Formular-Spalte (plus einem
-            Mindestmass, damit das Dokument bei sehr kurzen Schritten nicht zum
-            Guckloch wird). Genau das ist der Kern von V1: vorher bestimmte das
-            2–3 Bildschirme hohe Dokument die Zeilenhöhe und zog die kurze
-            Formular-Spalte als Weissfläche mit. Der innere Kasten füllt die
-            Zelle (`inset-0`), klebt im Bild (`sticky`) und deckelt sich auf
-            Bildschirmhöhe ODER Zellenhöhe — je nachdem, was kleiner ist, damit
-            er nie über die Zeile hinausläuft.
-            `print:`-Kette: im Ausdruck fällt die ganze Mechanik weg, sonst
-            druckte sich nur der sichtbare Ausschnitt (Funktionsverlust).
-            KEIN `lc-scrollrand-y`: die Haus-Affordanz malt einen Farbverlauf auf
-            den HINTERGRUND des Scrollers — das Dokument-Blatt (`bg-paper-raised`,
-            volle Breite) liegt darüber und deckt ihn vollständig zu. Die Marke
-            wäre hier eine Klasse ohne Wirkung; die Affordanz trägt der
-            angeschnittene Text plus die native Bildlaufleiste. */}
+        {/* R5-F2/V1: die Vorschau-Zelle trägt ihren Inhalt ABSOLUT (zählt bei
+            der Zeilenhöhe nicht mit; `min-h` gegen das Guckloch bei kurzen
+            Schritten). Der innere Kasten klebt (`sticky`) und deckelt sich
+            auf Bildschirm- ODER Zellenhöhe, mit eigenem Scroller —
+            `tabIndex`/`aria-label`, weil ein Scroller erreichbar und benannt
+            sein muss (axe `scrollable-region-focusable`). `print:` hebt die
+            Mechanik auf, sonst druckte nur der Ausschnitt. Kein
+            `lc-scrollrand-y`: das Blatt deckte dessen Verlauf zu. */}
         <div className={pk(
           'hidden md:block md:relative md:self-stretch md:min-h-[26rem]',
           'hidden @3xl/pane:block @3xl/pane:relative @3xl/pane:self-stretch @3xl/pane:min-h-[26rem]')}>
@@ -377,22 +248,10 @@ export function VorlagenWizardRahmen({
         </div>
       </div>
 
-      {/* Mobile: Sprung zur Live-Vorschau — der Kernnutzen («was du siehst,
-          kommt raus») soll auch beim Tippen erreichbar sein, nicht erst im
-          letzten Schritt. */}
-      {/* Schwebender Sprung-Knopf zur Live-Vorschau (mobil). Solide, pillen-
-          förmig und mit kräftigem Schatten — bewusst KEIN Messing-Rahmen auf
-          bg-surface mehr: die frühere lc-btn-outline-Optik glich exakt einer
-          (selektierten) Vertragstyp-Kachel und las sich beim initialen Scroll,
-          wo der Knopf über dem Vertragstyp-Raster schwebt, wie eine defekte
-          Untertyp-Kachel (Responsive-Audit D1). Als gefülltes Pill ist er
-          eindeutig ein schwebender Aktions-Knopf, keine Karte. */}
-      {/* `data-verdikt-sprung`: derselbe Tor-Griff wie an der Rechner-Sprungmarke
-          (`ErgebnisSprung`) — eine Abkürzung zum Verdikt, zwei Bauformen, EIN Griff.
-          `print:hidden` aus derselben Fehlerklasse wie B1 in Teil 1: das Element ist
-          viewport-`fixed` und läge im Ausdruck sonst auf jeder Seite über dem Inhalt.
-          Der globale Druckblock greift hier zwar (es IST ein <button>), aber die
-          Utility am Element überlebt jede künftige Umformulierung des Blocks. */}
+      {/* Mobil: schwebender Sprung zur Live-Vorschau — gefülltes Pill, damit
+          er nicht wie eine gewählte Kachel liest (Responsive-Audit D1).
+          `data-verdikt-sprung`: derselbe Tor-Griff wie `ErgebnisSprung`.
+          `print:hidden`: `fixed` läge im Ausdruck auf jeder Seite. */}
       {!vorschauImBild && (
         <button type="button" onClick={zurVorschau} data-verdikt-sprung
           className={`${pk('md:hidden', '@3xl/pane:hidden')} print:hidden fixed bottom-4 right-4 z-dropdown lc-btn-primary lc-btn-sm px-4 shadow-lg`}>
@@ -578,11 +437,7 @@ function DirektExportZeile({ ergebnis, pdf, docx, blocker }: {
 // Wirkt zugleich auf Vorschau UND Export (geteilter Store, ausgabeStil.ts).
 function StilUmschalter({ stil }: { stil: AusgabeStil }) {
   return (
-    // R5-F2 (6.9.2026): Segment-Kasten (Rahmen + Radius + Füllung für den
-    // aktiven Reiter) → zwei Textknöpfe, die Wahl trägt der Unterstrich (§5:
-    // Linien statt Flächen, Links/Wahlen unterstrichen). Zustand, Reihenfolge,
-    // `aria-pressed`, Titel-Erklärungen und der Aufruf von `setAusgabeStil`
-    // bleiben Wort für Wort — nur die Anatomie wechselt (§3).
+    // Zwei Textknöpfe, die Wahl trägt der Unterstrich (R5-F2, §5).
     <div className="inline-flex shrink-0 items-center gap-3 text-xs" role="group" aria-label="Ausgabe-Stil">
       {(['nuechtern', 'modern'] as const).map((s) => (
         <button key={s} type="button"
@@ -619,15 +474,10 @@ export function VorschauPanel({ ergebnis, kompakt, extra, nichtAufgenommen, dire
   const stil = stilOverride ?? stilStore;
   return (
     <div className="space-y-4">
-      {/* Live-Vorschau als «Papier» – interpretiert dieselben Formatvorlagen
-          (format + Absatz-Rollen) wie PDF und DOCX; der Stil-Umschalter wirkt
-          identisch auf Vorschau und Export. */}
-      {/* `data-dokument`: Tor-Griff (qsui-hierarchie I8/I9) — DAS ist auf einer
-          Vorlagen-Fläche das Verdikt: das fertige Dokument, nicht die Eingabe. */}
-      {/* `rounded-lg shadow-md` entfernt (R5-F2): `--radius-*` steht seit R1 auf
-          0 und `--shadow-md` auf `none` — die beiden Utilities waren wirkungslos
-          und lasen sich beim Nachschlagen wie eine Absicht. Das Blatt bleibt ein
-          Blatt (Fläche + Kante), das ist im Zielbild das Dokument selbst. */}
+      {/* Live-Vorschau als «Papier» — dieselben Formatvorlagen wie PDF und
+          DOCX; das Blatt bleibt Blatt (Fläche + Kante), auch im Werkbank-Kleid.
+          `data-dokument`: Tor-Griff (qsui-hierarchie I8/I9) — das Verdikt einer
+          Vorlagen-Fläche ist das fertige Dokument. */}
       <section data-dokument aria-label="Vorschau" className="bg-paper-raised border border-line p-5 sm:p-9">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
           <p className="lc-overline">
@@ -711,12 +561,10 @@ export function ExportLeiste({ ergebnis, deaktiviert, kopiert, onKopieren, pdf, 
   // ganzen Dokuments sonst bei jedem Render mit (§15) — darum memoisiert.
   const kopierText = useMemo(() => dokumentAlsText(ergebnis), [ergebnis]);
 
-  // ── D5 (W2·24) · EINMAL nachfragen, nie sperren ───────────────────────────
-  // Der Knopf bleibt aktiv (Daueranweisung David 12.6.2026: jede Vorlage ist
-  // jederzeit herunterladbar). Fehlen Pflichtangaben, fängt der ERSTE Klick
-  // die Aktion ab und stellt die Rückfrage; wer sie bejaht, exportiert — und
-  // wird in dieser Sitzung nicht noch einmal gefragt (`gefragt`). Gesperrt
-  // bleibt weiterhin nur `deaktiviert` (fachliche Blocker / Bestätigung).
+  // D5: EINMAL nachfragen, nie sperren (Daueranweisung David 12.6.2026: jede
+  // Vorlage ist jederzeit herunterladbar). Fehlen Pflichtangaben, fängt der
+  // erste Klick die Aktion für eine Rückfrage ab; gesperrt bleibt nur
+  // `deaktiviert` (fachliche Blocker / Bestätigung).
   const offen = useContext(OffeneAngabenContext);
   const [rueckfrage, setRueckfrage] = useState<null | (() => void)>(null);
   const [gefragt, setGefragt] = useState(false);
@@ -741,11 +589,8 @@ export function ExportLeiste({ ergebnis, deaktiviert, kopiert, onKopieren, pdf, 
             {docx.label}
           </button>
         )}
-        {/* R2-E/F1-10: der geteilte KopierButton. Zustand und Auslöser bleiben
-            beim Aufrufer (`useVorlage` hält `kopiert` für die ganze Seite) —
-            darum der gesteuerte Modus. Die Grösse bleibt bewusst `lc-btn-outline`
-            ohne `lc-btn-sm`: dieser Knopf steht in EINER Reihe mit dem
-            PDF-/DOCX-Export und muss deren Höhe halten. */}
+        {/* R2-E: der geteilte KopierButton, gesteuert (`useVorlage` hält
+            `kopiert`); ohne `lc-btn-sm`, er hält die Höhe der Export-Knöpfe. */}
         <KopierButton text={kopierText} gegenstand="Text"
           className="lc-btn-outline" disabled={deaktiviert}
           kopiert={kopiert} onKopieren={onKopieren} />

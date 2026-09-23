@@ -96,7 +96,7 @@ const PILLE_HITBOX =
   + 'after:h-[var(--tap-ziel-komfort)] after:min-w-[var(--tap-ziel-komfort)] after:w-full after:content-[""]';
 
 export function SelectionGrid<T extends string>({
-  items, value, onSelect, className, variant = 'kachel', gruppenLabel,
+  items, value, onSelect, className, variant = 'kachel', gruppenLabel, reg,
 }: {
   items: readonly SelectionItem<T>[];
   /** Aktueller Wert; darf breiter sein als die Item-Codes (z. B. ein
@@ -110,6 +110,12 @@ export function SelectionGrid<T extends string>({
   variant?: 'kachel' | 'pille';
   /** Setzt `role="group"` + `aria-label` am Container (Pillen-Reihen tragen das). */
   gruppenLabel?: string;
+  /** W2·29-WERKBANK-VORLAGEN V1 (nur `kachel`): Segment-Kachel des Werkbank-
+      Boards — 3-px-REGISTERSTRICH oben (ruhend Haarlinien-Ton, gewählt
+      `--reg-w`) statt Haarlinie + Innenstrich links. Ohne Prop: unverändert.
+      Heute nur das Werkzeug-Register; ein weiteres bekommt seine Zeile in
+      `index.css`, wenn ein Konsument es braucht. */
+  reg?: 'w';
 }) {
   const pille = variant === 'pille';
   return (
@@ -126,6 +132,7 @@ export function SelectionGrid<T extends string>({
             disabled={it.disabled}
             title={it.titel}
             data-selection-pille={pille ? '' : undefined}
+            data-reg={pille ? undefined : reg}
             onClick={() => !it.disabled && onSelect(it.code)}
             aria-pressed={aktiv}
             className={pille
