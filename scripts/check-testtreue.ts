@@ -2,7 +2,8 @@
 // Regel, Grenzen und Klassifizierer: testtreue-kern.ts (dort testbar ohne git).
 // Muster wie check-merge-schutz.ts: merge-base(origin/main)..HEAD, kein stiller Skip.
 import { execFileSync } from 'node:child_process';
-import { findeVerstoesse, type CommitInfo } from './testtreue-kern';
+import { readFileSync } from 'node:fs';
+import { findeVerstoesse, squashVerstoss, type CommitInfo } from './testtreue-kern';
 
 function git(args: string[]): string {
   return execFileSync('git', args, {
@@ -34,6 +35,31 @@ const commits: CommitInfo[] = shas.map((sha) => {
 });
 
 const verstoesse = findeVerstoesse(commits);
+
+// PR-Lauf: den künftigen Squash-Commit der Merge-Queue mitprüfen (Betreff =
+// PR-Titel). Nur im `pull_request`-Ereignis vorhanden; lokal und im
+// `merge_group`-Lauf (dort IST HEAD der Squash-Commit) entfällt der Zusatz.
+function prTitel(): string | undefined {
+  const pfad = process.env.GITHUB_EVENT_PATH;
+  if (!pfad || process.env.GITHUB_EVENT_NAME !== 'pull_request') return undefined;
+  try {
+    return (JSON.parse(readFileSync(pfad, 'utf8')) as { pull_request?: { title?: string } }).pull_request?.title;
+  } catch {
+    return undefined;
+  }
+}
+const titel = prTitel();
+const squash = titel ? squashVerstoss(titel, commits) : null;
+if (squash && verstoesse.length === 0) {
+  raus(1,
+    `check:testtreue ROT — §6.3 (Squash): der PR-Titel «${titel!.slice(0, 70)}» ist als 'refactor'\n` +
+    `  deklariert, der PR ändert aber Test-Dateien:\n` +
+    squash.testDateien.slice(0, 6).map((t) => `      ${t}`).join('\n') + '\n\n' +
+    `  Die Merge-Queue landet SQUASH mit dem PR-Titel als Betreff — der Commit auf main\n` +
+    `  wäre ein 'refactor', der Tests ändert, und fiele im merge_group-Lauf durch.\n` +
+    `  PR-Titel-Typ ändern (feat/fix/test), dann den PR-Lauf neu starten (Titel-Änderung\n` +
+    `  allein startet ihn nicht). Beleg: Queue-Rauswurf #1023, 23.9.2026.`);
+}
 if (verstoesse.length === 0) {
   raus(0, `check:testtreue grün — ${commits.length} Commit(s) im Bereich ${basis.slice(0, 8)}..HEAD, ` +
     `kein als 'refactor' deklarierter Commit ändert Tests (§6.3).`);

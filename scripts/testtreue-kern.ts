@@ -52,3 +52,16 @@ export function findeVerstoesse(commits: CommitInfo[]): Verstoss[] {
   }
   return verstoesse;
 }
+
+/** Squash-Falle (Queue-Rauswurf #1023, merge_group 35912532181, 23.9.2026):
+ *  Die Merge-Queue landet SQUASH — der eine Commit auf main trägt den
+ *  PR-TITEL als Betreff und ALLE Dateien des PRs. Einzel-Commits, die eine
+ *  Test-Änderung sauber als `test(…)` deklarieren, retten den PR dann nicht:
+ *  heisst der Titel `refactor(…)`, ist der Squash-Commit ein Verstoss, und das
+ *  Tor schlägt erst im `merge_group`-Lauf an (~10 min Queue-Zeit verloren).
+ *  Diese Prüfung bildet den künftigen Squash-Commit schon im PR-Lauf nach. */
+export function squashVerstoss(prTitel: string, commits: CommitInfo[]): Verstoss | null {
+  const dateien = [...new Set(commits.flatMap((c) => c.dateien))];
+  const [v] = findeVerstoesse([{ sha: 'PR-Titel', betreff: prTitel, dateien }]);
+  return v ?? null;
+}
