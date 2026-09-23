@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { usePaneKlasse } from '../layout/PaneKontext';
-import { GRUSS_DATEN_JSON, GRUSS_SKRIPT, useHeute } from './Begruessung';
+import { usePaneKlasse, usePaneKontext } from '../layout/PaneKontext';
+import { GRUSS_ANKER_ID, GRUSS_DATEN_JSON, GRUSS_SKRIPT, useHeute } from './Begruessung';
 
 // ─── Erste Ebene des Pults: die Begrüssung (W2·24-R10, D18, D39) ───────────
 //
@@ -77,6 +77,7 @@ import { GRUSS_DATEN_JSON, GRUSS_SKRIPT, useHeute } from './Begruessung';
 export function SuchBlock() {
   const { gruss, wochentag, datum, uhrzeit } = useHeute();
   const pk = usePaneKlasse();
+  const { imPane } = usePaneKontext();
   const navigate = useNavigate();
   const [params] = useSearchParams();
   const q = params.get('q') ?? '';
@@ -115,7 +116,11 @@ export function SuchBlock() {
           statt erst beim Erscheinen der echten Zeit zu öffnen — kein CLS
           (§15). Datum trägt ebenfalls `suppressHydrationWarning` (Build- vs.
           Client-Tag). */}
-      <p className="num mt-1.5 font-sans text-xs text-ink-500">
+      {/* id = Anker der Render-Sperre (`GRUSS_ANKER_ID`, Herleitung in
+          `Begruessung.tsx`): muss das Element DIREKT hinter dem Wahl-Skript
+          tragen. Im Pane nicht — dort läuft kein Skript, und die id bliebe
+          sonst neben der Hauptseite doppelt im Dokument. */}
+      <p id={imPane ? undefined : GRUSS_ANKER_ID} className="num mt-1.5 font-sans text-xs text-ink-500">
         <span suppressHydrationWarning>{wochentag}, {datum}</span>
         <span suppressHydrationWarning style={{ visibility: uhrzeit ? 'visible' : 'hidden' }}>
           {' '}· {uhrzeit ?? '00:00'}

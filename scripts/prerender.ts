@@ -44,7 +44,7 @@ import type { BrowseEntscheid } from '../src/lib/rechtsprechung/register';
 import type { EntscheidSnapshotDatei } from '../src/lib/rechtsprechung/typen';
 import type { BrowseMaterial } from '../src/lib/materialien/typen';
 import { renderRoute } from '../src/entry-server';
-import { GRUSS_DATEN_JSON, GRUSS_SKRIPT } from '../src/components/start/Begruessung';
+import { GRUSS_ANKER_ID, GRUSS_DATEN_JSON, GRUSS_SKRIPT } from '../src/components/start/Begruessung';
 
 // Deklarierter Routen-Zähler (wie die Katalog-Zähler in den Tests): bei neuen
 // Karten/Seiten bewusst im selben Commit nachführen.
@@ -77,6 +77,21 @@ const GRUSS_SKRIPTE = [
   `<script data-gruss="wahl">${GRUSS_SKRIPT}</script>`,
 ];
 const ohneGrussSkripte = (html: string) => GRUSS_SKRIPTE.reduce((h, s) => h.split(s).join(''), html);
+// Render-Sperre bis nach dem Wahl-Skript (K9, 23.9.2026 — Herleitung und
+// Messung bei `GRUSS_ANKER_ID` in `Begruessung.tsx`): trägt eine Seite das
+// Wahl-Skript, malt der Browser nichts, bevor das Anker-Element dahinter
+// geparst ist — sonst kann ein Frame mit dem Build-Gruss vor dem Skript
+// laufen. Der Anker MUSS hinter dem Skript stehen; fehlt er, bräche der Build
+// hier ab, statt die Seite bis zum Parse-Ende gesperrt auszuliefern.
+function grussRenderSperre(inhalt: string, kontext: string): string {
+  const skriptPos = inhalt.indexOf(GRUSS_SKRIPTE[1]);
+  if (skriptPos < 0) return '';
+  const ankerPos = inhalt.indexOf(`id="${GRUSS_ANKER_ID}"`);
+  if (ankerPos < skriptPos) {
+    throw new Error(`Gruss-Anker #${GRUSS_ANKER_ID} fehlt hinter dem Wahl-Skript (${kontext}) — Render-Sperre ohne Ziel`);
+  }
+  return `    <link rel="expect" href="#${GRUSS_ANKER_ID}" blocking="render" />\n`;
+}
 
 const template = readFileSync(join(DIST, 'index.html'), 'utf8');
 if (!template.includes(ROOT_MARKER)) {
@@ -142,7 +157,7 @@ function rendereTemplate(
     .join('');
   out = out.replace(
     '</head>',
-    `${preloadTags}    <link rel="canonical" href="${meta.canonical}" />\n${ldTag}  </head>`,
+    `${preloadTags}${grussRenderSperre(inhalt, kontext)}    <link rel="canonical" href="${meta.canonical}" />\n${ldTag}  </head>`,
   );
   return out.replace(ROOT_MARKER, () => `<div id="root">${inhalt}</div>`);
 }

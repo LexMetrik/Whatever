@@ -168,6 +168,45 @@ test.describe('D39 · Begrüssung als Kopf', () => {
 // Hash in vercel.json um ein Zeichen verfälscht ⇒ Unit-Test UND der CSP-Fall
 // unten rot («script-src-elem inline»). Grün danach 40/40 (`--repeat-each=8`,
 // 5 Worker, warm).
+// ─── Frame-Protokoll statt FCP-Vergleich (K9, 23.9.2026) ───────────────────
+//
+// Bis 23.9.2026 prüfte der Kein-Tausch-Fall «Skript-Gruss-Zeit ≤ FCP». Das war
+// doppelt unscharf: (1) Chromium liefert `first-contentful-paint` auf 4 ms
+// VERGRÖBERT (lokal 150/150 Messwerte Vielfache von 4, auch der CI-Wert 188),
+// die MutationObserver-Zeit aber auf 0.1 ms — eine Marge unter 4 ms war damit
+// Münzwurf (CI-Lauf 35877640481: Skript @189.9 gegen FCP 188, 1 Retry grün);
+// (2) FCP ist die PRÄSENTATIONS-Zeit des Frames, nicht der Moment, in dem er
+// gemalt wurde — gemessen (Stylesheet +150 ms, CPU 4×) malte der erste Frame
+// bei ~170 ms den Build-Gruss, das Skript lief danach, FCP kam erst ~220 ms:
+// der Fall blieb GRÜN, obwohl der falsche Gruss gemalt war.
+// Jetzt: ein requestAnimationFrame-Protokoll hält in JEDEM Rendering-Durchgang
+// den h1-Text fest. rAF läuft im selben Durchgang direkt vor Stil/Layout/Paint
+// und NICHT, solange das Dokument render-blockiert ist (HTML-Standard «update
+// the rendering»; gemessen: erster rAF stets nach dem Stylesheet-Ende). Zeigt
+// kein Frame je einen anderen Gruss als den des Skripts, hat der Browser auch
+// keinen anderen gemalt — ohne Zeitvergleich, ohne Vergröberung.
+type Frame = { t: string | null; zeit: number }
+
+async function frameProtokoll(page: Page): Promise<void> {
+  await page.addInitScript(() => {
+    const w = window as unknown as { __frames: { t: string | null; zeit: number }[] }
+    w.__frames = []
+    const tick = () => {
+      w.__frames.push({ t: document.querySelector('main h1')?.textContent ?? null, zeit: performance.now() })
+      if (w.__frames.length < 300) requestAnimationFrame(tick)
+    }
+    requestAnimationFrame(tick)
+  })
+}
+
+/** Frames, die eine h1 mit einem ANDEREN Text als dem Skript-Gruss zeigten
+ *  (`null` = h1 kurz weg beim render-then-replace: kein Tausch). */
+function fremdeFrames(frames: Frame[], gezogen: string | undefined): Frame[] {
+  return frames.filter((f) => f.t !== null && f.t !== gezogen)
+}
+
+const bildFrames = (frames: Frame[]) => frames.slice(0, 6).map((f) => `${f.t}@${Math.round(f.zeit)}`).join(' → ')
+
 test.describe('Gruss pro Besuch (Entscheid David 16.9.2026 «a»)', () => {
   /** Math.random fest (bzw. als Folge) — VOR jedem Seitenskript. */
   async function zufallFest(page: Page, werte: number[]): Promise<void> {
@@ -215,6 +254,7 @@ test.describe('Gruss pro Besuch (Entscheid David 16.9.2026 «a»)', () => {
         if (t !== zuletzt) { w.__grussLog.push({ t, zeit: performance.now() }); zuletzt = t }
       }).observe(document, { subtree: true, childList: true, characterData: true })
     })
+    await frameProtokoll(page)
     // OHNE `page.clock`: die virtuelle Uhr ersetzt auch `performance` — die
     // Paint-Einträge fehlten dann (gemessen 16.9.2026: FCP `undefined`), und
     // für diese Zusage ist die Stunde egal.
@@ -222,10 +262,10 @@ test.describe('Gruss pro Besuch (Entscheid David 16.9.2026 «a»)', () => {
     // App gebootet: die Uhrzeit kommt erst aus dem Mount-Effekt.
     await expect(kopfBlock(page).locator('p').first()).toHaveText(/\d{2}:\d{2}$/)
     await page.waitForTimeout(500)
-    const { log, gezogen, fcp, ende } = await page.evaluate(() => ({
+    const { log, gezogen, frames, ende } = await page.evaluate(() => ({
       log: (window as unknown as { __grussLog: { t: string | null; zeit: number }[] }).__grussLog,
       gezogen: (window as unknown as { __lexmetrikGruss?: string }).__lexmetrikGruss,
-      fcp: performance.getEntriesByName('first-contentful-paint')[0]?.startTime,
+      frames: (window as unknown as { __frames: { t: string | null; zeit: number }[] }).__frames,
       ende: document.querySelector('main h1')?.textContent,
     }))
     const bild = log.map((e) => `${e.t}@${Math.round(e.zeit)}`).join(' → ')
@@ -238,9 +278,74 @@ test.describe('Gruss pro Besuch (Entscheid David 16.9.2026 «a»)', () => {
     expect(erst, bild).toBeGreaterThanOrEqual(0)
     const danach = log.slice(erst).filter((e) => e.t !== null && e.t !== gezogen)
     expect(danach, `Tausch nach dem Skript-Gruss · ${bild}`).toEqual([])
-    // … und er stand VOR dem ersten Paint.
-    expect(fcp, 'first-contentful-paint fehlt').toBeTruthy()
-    expect(log[erst].zeit, `Skript-Gruss erst nach FCP ${fcp} · ${bild}`).toBeLessThanOrEqual(fcp!)
+    // … und er stand VOR dem ersten Paint: kein Rendering-Durchgang zeigte je
+    // einen anderen Gruss (Frame-Protokoll oben), und mindestens einer zeigte
+    // den Skript-Gruss (sonst wäre die Aussage leer).
+    expect(fremdeFrames(frames, gezogen), `Frame mit fremdem Gruss · ${bildFrames(frames)}`).toEqual([])
+    expect(frames.some((f) => f.t === gezogen), `kein Frame mit dem Skript-Gruss · ${bildFrames(frames)}`).toBe(true)
+  })
+
+  // ─── Render-Sperre bis nach dem Wahl-Skript (K9, 23.9.2026) ──────────────
+  // Wurzel des CI-Flackerns (Lauf 35877640481): das Wahl-Skript wartet auf das
+  // noch ladende Stylesheet; trifft es ein, kann Chromium einen Frame malen,
+  // BEVOR die nachgereichte Skript-Aufgabe läuft — der Build-Gruss ist dann
+  // einen Frame lang zu sehen. Gemessen 23.9.2026 (Frame-Protokoll, Stylesheet
+  // +150 ms, CPU 4×, n=30): 6/30 (main vor K7), 4/30 bzw. 3/30 (K7) Ladevorgänge
+  // mit einem Frame «Benvenuti a tutti.» (Build-Gruss); mit der Sperre 0/60
+  // und 0/30. Fix: `<link rel="expect" href="#…" blocking="render">` im <head>
+  // (`scripts/prerender.ts`), Anker = die Datumszeile hinter dem Skript
+  // (`GRUSS_ANKER_ID`, `Begruessung.tsx`).
+  //
+  // ROT-PROBE (§6.7, 23.9.2026), gegen den Build OHNE Sperre (Stand K7,
+  // 908d34ff4): Struktur-Fall rot mit «rel=expect fehlt im <head> der
+  // Startseite»; Verhaltens-Fall rot in 12/20 (`--repeat-each=20 --workers=1
+  // --retries=0`, load 1.8→3.4) mit «Frame mit dem Build-Gruss · Lauf 4:
+  // Benvenuti a tutti.@170 → Herzlich willkommen.@223 → …». Anker entfernt
+  // (id nur noch im Pane): der Prerender bricht ab («Gruss-Anker
+  // #gruss-gezogen fehlt hinter dem Wahl-Skript»). MIT Sperre: ganze Datei
+  // 280/280 (`--repeat-each=20 --workers=1`, load 2.8→5.3) und dieser Block
+  // 160/160 (`--workers=4`, load bis 11.5).
+  test('Render-Sperre im Prerender-HTML: <link rel=expect blocking=render> zielt auf ein Element HINTER dem Wahl-Skript', async ({ page }) => {
+    const antwort = await page.goto('/')
+    const html = (await antwort?.text()) ?? ''
+    const kopf = html.slice(0, html.indexOf('<body'))
+    const link = kopf.match(/<link rel="expect" href="#([\w-]+)" blocking="render" \/>/)
+    expect(link, 'rel=expect fehlt im <head> der Startseite').not.toBeNull()
+    const anker = link![1]
+    const skript = html.indexOf('<script data-gruss="wahl">')
+    expect(skript, 'Wahl-Skript fehlt').toBeGreaterThan(0)
+    const ankerPos = [...html.matchAll(new RegExp(`id="${anker}"`, 'g'))].map((m) => m.index)
+    expect(ankerPos, `Anker #${anker} genau einmal`).toHaveLength(1)
+    expect(ankerPos[0]!, `Anker #${anker} steht hinter dem Wahl-Skript`).toBeGreaterThan(skript)
+  })
+
+  test('kein Frame mit dem Build-Gruss, auch wenn das Stylesheet spät eintrifft (CPU 4×)', async ({ browser }) => {
+    // Genau die CI-Lage, reproduzierbar: das Stylesheet kommt erst an, wenn der
+    // Parser längst an der h1 steht, und die CPU ist knapp. Fünf frische
+    // Kontexte je Lauf (ohne Sperre traf es ~15 % der Ladevorgänge, s. oben).
+    const befunde: string[] = []
+    for (let i = 0; i < 5; i++) {
+      const kontext = await browser.newContext()
+      const page = await kontext.newPage()
+      const cdp = await kontext.newCDPSession(page)
+      await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 })
+      await page.route(/\.css$/, async (route) => {
+        await new Promise((r) => setTimeout(r, 150))
+        await route.continue()
+      })
+      await frameProtokoll(page)
+      await page.goto('/')
+      await expect(kopfBlock(page).locator('p').first()).toHaveText(/\d{2}:\d{2}$/)
+      const { gezogen, frames } = await page.evaluate(() => ({
+        gezogen: (window as unknown as { __lexmetrikGruss?: string }).__lexmetrikGruss,
+        frames: (window as unknown as { __frames: { t: string | null; zeit: number }[] }).__frames,
+      }))
+      expect(gezogen, 'Inline-Skript lief nicht').toBeTruthy()
+      expect(frames.length, 'Frame-Protokoll leer').toBeGreaterThan(0)
+      if (fremdeFrames(frames, gezogen).length > 0) befunde.push(`Lauf ${i + 1}: ${bildFrames(frames)}`)
+      await kontext.close()
+    }
+    expect(befunde, `Frame mit dem Build-Gruss · ${befunde.join(' | ')}`).toEqual([])
   })
 
   // NACHZUG GEGENPRÜFUNG #899 (17.9.2026): das Inline-Skript läuft nur beim
