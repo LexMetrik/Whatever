@@ -377,6 +377,12 @@ geteilt → Änderung nur per Prop.
   Mappen: `#mappe-beispiel` angleichen. V0-Fixture = deklarierte Änderung (neuer Knopf).
   Liegt der SSoT-Ort in `src/lib/vorlagen` oder berührt er `startseiteVorlagen*`:
   Risikopfad → Gegenprüfung vor dem Einreihen.
+  *Stand 23.9.2026 (V5 gebaut):* SSoT = `src/components/vorlagen/musterdaten.ts` (nur
+  `import type`, §15) + `musterdaten-mappen.ts` (Mappen, Engine-Import) — kein Risikopfad.
+  Die Golden-Eingaben taugen nicht als Demo («A»/«B», inline); der Wächter
+  `vorlagen-musterdaten.test.ts` beweist stattdessen je Vorlage den Durchlauf ohne Blocker
+  (mit Gegenprobe). V0-Fixture unverändert (der Knopf ist kein eingefrorenes Merkmal). AG:
+  eigener Demo-Knopf entfällt, Rahmen-Knopf ersetzt den ganzen Stand (vorher Teil-Update).
 
 **Nicht bauen:** «44», Status-Zeile «Ausgabe als PDF und Word» (Testament: kein DOCX),
 Seitenleisten-Baum, Board-Hex (Token gilt), gemeinsame Exportleiste (erst RECHNER).
