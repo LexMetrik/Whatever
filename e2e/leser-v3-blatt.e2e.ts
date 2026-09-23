@@ -265,6 +265,10 @@ test.describe('Ä32/B11 — das Blatt zeigt und benennt, was es zeigt', () => {
 // der Knopf ganz: (f) meldet 0 statt 1. In `v3/LeserTrefferListe.tsx` am
 // Randtitel `line-clamp-2` gegen `truncate` tauschen bzw. `einzeilig` am
 // Kopf-Schnipsel weglassen ⇒ (g) rot. So gemessen.
+// ERGÄNZUNG W2·29 S3 (23.9.2026): der Schalter `baumKnoepfe` ist gestrichen
+// (D38-Rückbau). Der Weg zu (f)-rot heisst seither: den `data-v3-alle`-Knopf in
+// `v3/LeserSeitenleiste.tsx` weglassen ⇒ Zone A trägt 1 statt ≥ 2 Knöpfe
+// (abgeleitet, nicht nachgemessen).
 test.describe('Ä94/Ä96 — die Werkzeugzeile trägt etwas, der Randtitel bleibt ganz', () => {
   test('(f) @390: «↑ Anfang» steht genau einmal, und keine klebende Zeile steht leer', async ({ page }) => {
     const fehler = fehlerSammeln(page)
