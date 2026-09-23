@@ -121,7 +121,7 @@ david-design-entscheide: ENTSCHIEDEN — David 22.9.2026 (Chat): (1) Seitenleist
   ist Abschnitt 2 des Funktions-Inventars (jede Fläche, jedes Feld, jeder Zustand). Grenzen:
   **Normtext-Körper golden byte-gleich**, Rechen-/Datenlogik unangetastet, alte Komponente fällt
   im selben PR, e2e-Selektoren ziehen mit; drei Sessions, sonst zurückstellen.
-  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5, Scheiben §5c.
 
 - [ ] **Kantonale Gesetze — Darstellung & Suche** *(`W2·13-KANTONE`, Auftrag David 12.7.2026, `[OF]`; Phase 2, Entscheid 14.9.2026)*
   <!-- @meta id: W2·13-KANTONE · status: ready · blocker: null · dep: [] · feld: leser · fahrplan: fahrplaene/FAHRPLAN-KANTONE.md -->
@@ -518,9 +518,9 @@ Umschichtung 20.9.2026 (2)):*
 
 ## Werkzeuge — Rechner & Vorlagen  *(`feld: werkzeuge`)*
 
-- [ ] **Werkbank-Umbau Schritt 4: Vorlagen-Rahmen, dann die 30 Vorlagen** *(`W2·29-WERKBANK-VORLAGEN`, Go David 22.9.2026)*
-  <!-- @meta id: W2·29-WERKBANK-VORLAGEN · status: ready · blocker: null · dep: [W2·29-WERKBANK-KATALOGE] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
-  Ziel: **ein** gemeinsamer Assistenten-Rahmen aus den bestehenden `src/lib/vorlagen/*Schemas.ts`,
+- [~] **Werkbank-Umbau Schritt 4: Vorlagen-Rahmen, dann die 30 Vorlagen** *(`W2·29-WERKBANK-VORLAGEN`, Go David 22.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-VORLAGEN · status: wip · blocker: null · dep: [W2·29-WERKBANK-KATALOGE] · feld: werkzeuge · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: **ein** gemeinsamer Assistenten-Rahmen aus den bestehenden Vorlagen-Modulen in `src/lib/vorlagen/`,
   darauf die 30 Vorlagen; die 42 geplanten fallen danach aus demselben Rahmen. Grenzen: kein
   zweites Schema-Modell (§5), PDF und DOCX aus demselben Assemble-Ergebnis, Golden byte-gleich.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
