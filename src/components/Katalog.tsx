@@ -12,32 +12,27 @@ import { GruppenKopf } from './ui/GruppenKopf';
 import { TrefferZeile, TREFFER_ZEILE_RAHMEN } from './ui/TrefferZeile';
 import { Leerzustand } from './ui/Leerzustand';
 
-// Register-Bausteine der Rubrik-Übersichten (Auftrag David 10.6.2026, Struktur;
-// UI-Welle: neuer Ort /rechner + /vorlagen). Eine Oberkategorie wird als
-// vollständige Sektion gerendert (KategorieSektion, unten exportiert); die
-// Übersichtsseiten reihen die für sie passenden Kategorien aneinander.
-// Praxistauglichkeits-Leitsätze:
-//  1. KLICKTIEFE 1: Verfügbare Werkzeuge stehen DIREKT als Link-Zeilen in
-//     ihrer Kategorie (vorher Gebiets-Kachel → Panel → Karte).
-//  2. PRAXIS-RANG STATT GEBIETS-GRUPPEN (Auftrag David 10.6.2026 «teile das
-//     UI weiter nach dem Praxis-Gebrauch auf»): je Kategorie eine geordnete
-//     Liste, Alltags-Werkzeuge zuoberst (lib/praxisRang.ts); das Rechtsgebiet
-//     als dezentes Sub-Label IN der Zeile.
-//  3. EHRLICH OHNE BALLAST (§8): Geplante Karten je Kategorie hinter einer
-//     kompakten «In Vorbereitung (N)»-Aufklappzeile; Entwurf-Badges an jeder
-//     Zeile. Die Suche liegt seit der UI-Welle im Header-Dropdown.
-// Die Kategorie-Zuordnung liegt in lib/katalogKategorie.ts (§3/§5).
+// Register-Bausteine der Rubrik-Übersichten /rechner + /vorlagen (Auftrag
+// David 10.6.2026): eine Oberkategorie = eine vollständige Sektion
+// (`KategorieSektion`). Leitsätze: Klicktiefe 1 (verfügbare Werkzeuge direkt
+// als Link-Zeile), Praxis-Rang vor Gebiet (lib/praxisRang.ts, Rechtsgebiet als
+// Sub-Label), ehrlich ohne Ballast (§8: Geplantes hinter «In Vorbereitung (N)»,
+// Entwurf-Marke an jeder Zeile). Zuordnung: lib/katalogKategorie.ts (§3/§5).
+//
+// W2·29-WERKBANK-KATALOGE K4 (23.9.2026, Boards «Unter-Rechner-Katalog»/
+// «Unter-Vorlagen»): ZEILEN STATT KARTEN. Die Zeile ist ein Streifen mit
+// Haarlinie oben (`.kt-zeile`, index.css) im Raster `.kt-raster`; die
+// verlinkte trägt vor dem Titel den 3-px-Strich im Register der Route — die
+// geplante nicht (sie ist kein Werkzeug, §8). Der Sektionskopf trägt den
+// 2-px-Registerstrich des Titelblatt-Bands (`.kt-kopf`). Messing entfällt.
+
+/** Raster der Zeilen — EINE Stelle statt sieben gleicher Klassenketten. */
+const RASTER = 'kt-raster';
 
 // ─── Werkzeug-Zeile: Direktlink (Klicktiefe 1); Status ehrlich als Badge ────
-
-// Geteilte Listen-Zeile (Redesign #1): EIN Karten-Zeilen-Muster für Werkzeuge
-// und Fristen-Regime (vorher WerkzeugZeile + FristenRegimeZeile, fast wortgleich).
-//  zeigeGeplant – «In Vorbereitung»-Badge mitzeigen (sonst nur Entwurf)
-// C-4 (31.8.2026): die Zeilen-ANATOMIE (Titel/Untertitel/Marke/Pfeil) liegt seit
-// Runde 2 in `ui/TrefferZeile` — dieselbe wie im Such-Panel. Hier bleibt nur der
-// BEHÄLTER (Karte) und die Statuslogik. Der frühere Schalter `subWrap` ist
-// entfallen: der Baustein kappt das Sub-Label nie mehr hart, er lässt zwei
-// Zeilen zu (§8, Herleitung im Baustein).
+//  zeigeGeplant – «In Vorbereitung»-Marke mitzeigen (sonst nur Entwurf).
+// Die Anatomie (Titel/Untertitel/Marke/Pfeil) kommt aus `ui/TrefferZeile`
+// (C-4); hier stehen nur der Behälter und die Statuslogik.
 function ListenZeile({ k, subLabel, zeigeGeplant }: { k: CalculatorCard; subLabel?: string; zeigeGeplant?: boolean }) {
   const aktiv = istAktiv(k.status) && !!k.href;
   const inhalt = (
@@ -57,14 +52,11 @@ function ListenZeile({ k, subLabel, zeigeGeplant }: { k: CalculatorCard; subLabe
       ) : undefined}
     />
   );
-  // C-3 (31.8.2026): der Lift (`hover:shadow-lg hover:-translate-y-0.5`) ist
-  // entfallen — Karten-Hover läuft hausweit über die Farbstufe, als EINE Regel
-  // an `.lc-card` (index.css). Damit fällt auch der eigene Transition-Ausdruck
-  // samt `motion-reduce`-Rücknahme weg: ohne Transform bleibt nur der
-  // Farbübergang, den die Regel selbst mitbringt.
-  const klasse = `lc-card text-left px-4 py-3 bg-surface no-underline ${TREFFER_ZEILE_RAHMEN}`;
+  // Hover: die EINE neutrale Zeilen-Fläche (R5-D, `.lc-hover-flaeche`) — nur
+  // an der verlinkten Zeile; die geplante bleibt still (kein Ziel, §8).
+  const klasse = `kt-zeile ${TREFFER_ZEILE_RAHMEN}`;
   return aktiv ? (
-    <Link to={k.href!} className={klasse}>{inhalt}</Link>
+    <Link to={k.href!} className={`${klasse} lc-hover-flaeche`}>{inhalt}</Link>
   ) : (
     <div className={klasse}>{inhalt}</div>
   );
@@ -79,22 +71,23 @@ function ListenZeile({ k, subLabel, zeigeGeplant }: { k: CalculatorCard; subLabe
 // Erbrecht), je mit Ein-Satz-WARUM. Daten/Texte: lib/fristenKategorie.ts
 // (fachliche Aussagen, Abnahme David offen).
 
+// K4: der Haupteinstieg ist eine breite Zeile (`.kt-haupt`, Registerstrich
+// links), keine Kachel — der Untertitel läuft ungekappt (§8, anders als die
+// TrefferZeile mit ihrer Zwei-Zeilen-Kappung).
 function FristenHauptKarte({ k, untertitel }: { k: CalculatorCard; untertitel: string }) {
   return (
-    <Link to={k.href!}
-      className="lc-card p-5 sm:p-6 flex flex-col gap-2 min-w-0 bg-surface no-underline group">
+    <Link to={k.href!} className="kt-haupt lc-hover-flaeche group flex min-w-0 flex-col gap-1 no-underline">
       <span className="flex items-baseline gap-3">
-        <span className="font-sans font-semibold text-ink-900 text-h3 leading-snug group-hover:text-brass-700 transition-colors">{sansAmp(k.title)}</span>
-        <span aria-hidden className="ml-auto text-brass-700 leading-none">→</span>
+        <span className="font-sans font-semibold text-ink-900 text-h3 leading-snug underline-offset-4 group-hover:underline">{sansAmp(k.title)}</span>
+        {k.status === 'entwurf' && (
+          <span className="lc-badge-entwurf" title="erstellt, fachlich noch nicht geprüft">Entwurf</span>
+        )}
+        <span aria-hidden className="ml-auto text-ink-500 leading-none">→</span>
       </span>
       <span className="text-body-s text-ink-600 leading-relaxed">{untertitel}</span>
-      {k.status === 'entwurf' && (
-        <span><span className="lc-badge-entwurf" title="erstellt, fachlich noch nicht geprüft">Entwurf</span></span>
-      )}
     </Link>
   );
 }
-
 
 function FristenRegister({ karten }: { karten: CalculatorCard[] }) {
   const byId = new Map(karten.map((k) => [k.id, k]));
@@ -115,7 +108,7 @@ function FristenRegister({ karten }: { karten: CalculatorCard[] }) {
       <div className="space-y-2">
         <GruppenKopf titel={titel} />
         <p className="text-body-s text-ink-500 max-w-reading">{lede}</p>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
+        <div className={RASTER}>
           {zeilen.map((r) => <ListenZeile key={r.id} k={r.k} subLabel={r.warum ?? r.k.rechtsgebiet} />)}
           {extra.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} />)}
         </div>
@@ -130,9 +123,7 @@ function FristenRegister({ karten }: { karten: CalculatorCard[] }) {
       {haupt.length > 0 && (
         <div className="space-y-2">
           <GruppenKopf titel="Fristen berechnen" />
-          <div className="grid grid-cols-1 gap-3">
-            {haupt.map((h) => <FristenHauptKarte key={h.id} k={h.k} untertitel={h.untertitel} />)}
-          </div>
+          {haupt.map((h) => <FristenHauptKarte key={h.id} k={h.k} untertitel={h.untertitel} />)}
         </div>
       )}
       {rubrik('Prozessuale Fristen',
@@ -167,7 +158,7 @@ function ZustaendigkeitRegister({ karten }: { karten: CalculatorCard[] }) {
       {felder.length > 0 && (
         <div className="space-y-2">
           <GruppenKopf titel="Rechtswege" />
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
+          <div className={RASTER}>
             {felder.map((f) => <ListenZeile key={f.id} k={f.k} subLabel={f.untertitel} zeigeGeplant />)}
           </div>
         </div>
@@ -176,7 +167,7 @@ function ZustaendigkeitRegister({ karten }: { karten: CalculatorCard[] }) {
         <div className="space-y-2">
           {/* C-7 (31.8.2026): «(n)» → nackte Zahl (Kanon 12:6:4:2). */}
           <GruppenKopf titel="Weitere Werkzeuge" zahl={weitere.length} />
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
+          <div className={RASTER}>
             {weitere.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} />)}
           </div>
         </div>
@@ -209,7 +200,7 @@ function GebuehrenRegister({ karten, sortiert }: {
           <div key={r.id} className="space-y-2">
             <GruppenKopf titel={r.titel} zahl={xs.length} />
             <p className="text-body-s text-ink-500 max-w-reading">{r.lede}</p>
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
+            <div className={RASTER}>
               {xs.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} />)}
             </div>
           </div>
@@ -240,7 +231,7 @@ function VorlagenRegister({ karten }: { karten: CalculatorCard[] }) {
     .filter((g) => g.verf.length > 0);
 
   const zeilen = (xs: VorlageCard[], subLabel?: (v: VorlageCard) => string | undefined) => (
-    <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
+    <div className={RASTER}>
       {xs.map((v) => <ListenZeile key={v.id} k={v} subLabel={subLabel?.(v) ?? v.rechtsgebiet} />)}
     </div>
   );
@@ -313,7 +304,7 @@ function VorlagenRegister({ karten }: { karten: CalculatorCard[] }) {
 
 // ─── Registerteil: eine Oberkategorie mit Gebiets-Gruppen + Geplant-Zeile ───
 
-export function KategorieSektion({ kat, karten, onZurueck, ohneKopf, alleOffen }: { kat: Oberkategorie; karten: CalculatorCard[]; onZurueck?: () => void; ohneKopf?: boolean; alleOffen?: boolean }) {
+export function KategorieSektion({ kat, karten, ohneKopf, alleOffen }: { kat: Oberkategorie; karten: CalculatorCard[]; ohneKopf?: boolean; alleOffen?: boolean }) {
   const [params, setParams] = useSearchParams();
   // Übersichtlichkeits-Politur (Auftrag David 10.6.2026): ZWEI ruhige
   // Gebrauchs-Ebenen statt einer Mischliste — «Alltag» (Praxis-Rang 1)
@@ -369,13 +360,7 @@ export function KategorieSektion({ kat, karten, onZurueck, ohneKopf, alleOffen }
       {/* Eigener Kopf nur, wenn die Seite nicht schon einen trägt (ohneKopf=true
           auf /vorlagen: der SeitenKopf führt bereits Titel + Intro → kein Doppelkopf). */}
       {!ohneKopf && (
-        <div className="space-y-1.5 pt-2">
-          {onZurueck && (
-            <button type="button" onClick={onZurueck}
-              className="text-body-s font-medium text-ink-500 hover:text-brass-700 transition-colors">
-              ← Alle Kategorien
-            </button>
-          )}
+        <div className="kt-kopf space-y-1.5">
           {/* C-7-AUSNAHME, bewusst NICHT auf `GruppenKopf`/nackte Zahl gezogen
               (31.8.2026): Dies ist der SEKTIONS-Kopf einer Kategorie, kein
               Gruppenkopf — die Sektion darunter enthält neben den `verfuegbar`-
@@ -384,14 +369,16 @@ export function KategorieSektion({ kat, karten, onZurueck, ohneKopf, alleOffen }
               eine falsche Aussage über deren Umfang machen. «verfügbar» ist an
               dieser Stelle ein Ehrlichkeitswort (§8), keine Schreibvariante des
               Zählers — es bleibt. Ebenso die Sans-Stimme: ein Kategorie-Kopf
-              ist die Seiten-Überschrift, kein Struktur-Etikett (§G-e). */}
+              ist die Seiten-Überschrift, kein Struktur-Etikett (§G-e).
+              K4: die Zahl in Tinte statt Messing; die Registerkante trägt
+              `.kt-kopf` (2-px-Strich oben). */}
           <div className="flex items-baseline gap-4">
             <h2 id={`register-titel-${kat.id}`} className="whitespace-nowrap">
               <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight">{kat.titel}</span>
             </h2>
             <span aria-hidden className="flex-1 h-px bg-line" />
             <span className="lc-overline num whitespace-nowrap">
-              <span className="text-brass-700">{verfuegbar.length}</span> verfügbar
+              <span className="text-ink-900">{verfuegbar.length}</span> verfügbar
             </span>
           </div>
           <p className="text-body-s text-ink-500 max-w-reading">{kat.lede}</p>
@@ -426,7 +413,7 @@ export function KategorieSektion({ kat, karten, onZurueck, ohneKopf, alleOffen }
           </select>
           <p id={`vorlagen-filter-scope-${kat.id}`} className="ub-filter-fuss min-h-5">
             <span>Rechtsgebiet dieser Vorlagen · Gesetzes- und Entscheidtext über die Suche oben</span>
-            <span className="num"><span className="text-brass-700">{verfuegbar.length}</span> verfügbar</span>
+            <span className="num"><span className="text-ink-900">{verfuegbar.length}</span> verfügbar</span>
           </p>
         </div>
       )}
@@ -457,7 +444,7 @@ export function KategorieSektion({ kat, karten, onZurueck, ohneKopf, alleOffen }
           {alltag.length > 0 && (
             <div className="space-y-2">
               <GruppenKopf titel="Alltag" />
-              <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
+              <div className={RASTER}>
                 {alltag.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} />)}
               </div>
             </div>
@@ -465,7 +452,7 @@ export function KategorieSektion({ kat, karten, onZurueck, ohneKopf, alleOffen }
           {weitere.length > 0 && (
             <div className="space-y-2">
               <GruppenKopf titel={alltag.length > 0 ? 'Weitere Werkzeuge' : 'Werkzeuge'} zahl={weitere.length} />
-              <div className="grid grid-cols-[repeat(auto-fill,minmax(min(380px,100%),1fr))] gap-3">
+              <div className={RASTER}>
                 {weitere.map((k) => <ListenZeile key={k.id} k={k} subLabel={k.rechtsgebiet} />)}
               </div>
             </div>
@@ -480,7 +467,7 @@ export function KategorieSektion({ kat, karten, onZurueck, ohneKopf, alleOffen }
             — GEMESSEN auf `/vorlagen` @1440 trug diese Summary das eigene ▸ UND
             das «▸» der App-weiten Regel. Nur noch das geteilte Zeichen. */
         <details open={alleOffen || undefined}>
-          <summary className="cursor-pointer text-body-s text-ink-500 hover:text-brass-700 transition-colors select-none">
+          <summary className="cursor-pointer text-body-s text-ink-500 hover:text-ink-900 transition-colors select-none">
             In Vorbereitung <span className="num">({geplant.length})</span>
           </summary>
           <p className="text-body-s text-ink-500 leading-relaxed pt-2 pl-4">

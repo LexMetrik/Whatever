@@ -4780,3 +4780,79 @@ html[data-fuss-aus="frmgwa"] .lc-leser .lr7-bez {
   display: grid;
   gap: 0.125rem;
 }
+
+/* ═══ W2·29-WERKBANK-KATALOGE K4 · RECHNER-/VORLAGEN-KATALOG (Präfix `.kt-`) ═══
+   Boards «Unter-Rechner-Katalog» / «Unter-Vorlagen» (Richtung, nicht
+   Pflichtenheft), Konsumenten `components/Katalog.tsx`,
+   `ZweiachsigerEinstieg.tsx`, `KatalogHinweis.tsx`, `pages/Rechner-/
+   VorlagenUebersicht.tsx`. ZEILEN STATT KARTEN: Haarlinie oben, verlinkte Zeile
+   mit 3-px-Strich im Register der Route vor dem Titel (die geplante ohne —
+   sie ist kein Werkzeug, §8), Sektionskopf mit dem 2-px-Registerstrich des
+   Titelblatt-Bands (K1). Nur Tinte und Registerton, kein Messing (F0.2);
+   reg-w auf --paper 5.21:1 hell / 9.56:1 dunkel (KONTRAST-R1 §D12). */
+.kt-raster {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
+  column-gap: 1.625rem;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.kt-zeile {
+  min-height: 44px;
+  padding: 0.5rem 0.25rem 0.5rem 0;
+  border-top: 1px solid var(--rule-soft);
+  text-align: left;
+  text-decoration: none;
+}
+/* Der Strich-Platz steht an JEDER Zeile (Titel fluchten), gefüllt nur an der
+   verlinkten. */
+.kt-zeile::before { content: ''; flex: none; width: 3px; height: 12px; }
+a.kt-zeile::before { background: var(--reg-marke, var(--ink-500)); }
+
+/* Haupteinstieg (Fristenrechner): breite Zeile, Registerstrich links als
+   Innenschatten — der Inhalt rückt nicht (dieselbe Wahl wie `.lc-wahl-kachel`). */
+.kt-haupt {
+  padding: 0.625rem 0.25rem 0.75rem 0.875rem;
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  box-shadow: inset 3px 0 0 var(--reg-marke, var(--ink-500));
+}
+
+/* Sektionskopf einer Oberkategorie. */
+.kt-kopf { border-top: 2px solid var(--reg-marke, var(--rule)); padding-top: 0.5rem; }
+
+/* Filter · Einstieg · Register in EINEM Raster. Ab 1100 px steht der Einstieg
+   als Seitenspalte links über beide Zeilen; die DOM-Folge bleibt (Filter →
+   Einstieg → Register). Die zweite Zeile ist `1fr`: ein Element, das über eine
+   flexible Spur greift, verteilt seine Höhe nur auf diese — die Filterzeile
+   wächst nicht mit der Einstiegs-Spalte. */
+.kt-werkbank { display: grid; row-gap: 1.5rem; }
+@media (min-width: 1100px) {
+  .kt-werkbank:has(> .kt-einstieg) {
+    grid-template-columns: 252px minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    column-gap: 1.5rem;
+  }
+  .kt-werkbank > .kt-einstieg {
+    grid-column: 1; grid-row: 1 / span 2; align-self: start;
+    border-right: 1px solid var(--rule-soft); padding-right: 1.375rem;
+  }
+  .kt-werkbank:has(> .kt-einstieg) > :not(.kt-einstieg) { grid-column: 2; }
+}
+
+/* Einstieg nach Rechtsgebiet: Klapp-Zeilen mit Haarlinie; zweispaltig von
+   640 bis 1099 px, in der Seitenspalte einspaltig. Links im Registerton ohne
+   Strich (F0.8, Listen-Link), Hover in Tinte. */
+.kt-gebiete { display: grid; column-gap: 1.625rem; border-bottom: 1px solid var(--rule-soft); }
+.kt-gebiete > details { border-top: 1px solid var(--rule-soft); padding: 0.5rem 0; }
+@media (min-width: 640px) and (max-width: 1099px) {
+  .kt-gebiete { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.kt-einstieg a, .kt-weiter { color: var(--reg-marke, var(--ink-900)); transition: color .15s; }
+.kt-einstieg a:hover, .kt-weiter:hover { color: var(--ink-900); }
+
+/* Fuss der Übersichten: Spalten mit Haarlinie statt gestapelter Hinweis-Kästen. */
+.kt-fuss {
+  display: grid; gap: 1.5rem; align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+}
+.kt-fuss > section { border-top: 1px solid var(--rule-soft); padding-top: 0.75rem; }

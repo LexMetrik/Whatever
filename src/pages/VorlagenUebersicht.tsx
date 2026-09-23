@@ -39,8 +39,12 @@ export function VorlagenUebersicht() {
 
       <KategorieSektion kat={VORLAGEN_KATEGORIE} karten={kartenDerKategorie(KATALOG_KARTEN, 'vorlagen')} ohneKopf />
 
-      <MassgebendeGesetze modus="vorlage" />
-      <KatalogHinweis />
+      {/* K4: der Fuss als Spalten mit Haarlinie (`.kt-fuss`) statt gestapelter
+          Hinweis-Kästen (Board «Unter-Vorlagen»). */}
+      <div className="kt-fuss">
+        <MassgebendeGesetze modus="vorlage" />
+        <KatalogHinweis />
+      </div>
     </div>
   );
 }

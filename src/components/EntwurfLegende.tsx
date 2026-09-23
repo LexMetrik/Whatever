@@ -36,7 +36,7 @@ export function EntwurfLegende() {
         aria-describedby={offen ? id : undefined}
         aria-expanded={offen}
         onClick={() => setOffen((v) => !v)}
-        className="cursor-help underline decoration-dotted decoration-ink-300 underline-offset-2 hover:decoration-brass-500"
+        className="cursor-help underline decoration-dotted decoration-ink-300 underline-offset-2 hover:decoration-ink-500"
       >
         erstellt, fachlich noch nicht geprüft
       </button>
