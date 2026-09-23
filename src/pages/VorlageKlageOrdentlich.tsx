@@ -333,7 +333,7 @@ const fehlerEingabe = (a: KoAnswers, schritt: number): string[] =>
 // (auch im letzten Schritt) und als Export-Gate der ExportLeiste — der
 // Direkt-Export der Vorschau war NICHT an die Mängel gebunden
 // (direktExportBlocker: false). Mängel-Kästen und Hinweise im Ist-Format
-// (pruefenZusatz); Ort/Datum erfasst der Schritt «Beilagen» (ortDatumFeld: false);
+// (pruefenZusatz); Ort/Datum erfasst der Schritt «Beilagen» (ortDatumImPruefen: false);
 // Kanton in der Overline; kompakte Vorschau.
 const CONFIG: VorlagenSeitenConfig<KoAnswers> = {
   cardId: 'klage-ordentlich',
@@ -361,9 +361,7 @@ const CONFIG: VorlagenSeitenConfig<KoAnswers> = {
       {koHinweise(a).map((h, i) => <div key={i} className="lc-notice text-body-s">{h}</div>)}
     </>
   ),
-  ortDatumFeld: false,
-  ortDatumLabel: '',
-  ortPlaceholder: '',
+  ortDatumImPruefen: false,
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Form & Einreichung</p>
