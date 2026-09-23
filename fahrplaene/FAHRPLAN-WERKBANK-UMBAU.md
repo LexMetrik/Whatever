@@ -381,8 +381,18 @@ bis zum Ziel: Gesetze → Bund (Rechtsgebiet → Erlassliste) | Kantone (Landesk
 Rechtsprechung, Materialien → sofort Suche · Werkzeuge → Rechner | Vorlagen → Liste. Jede Stufe
 eine Adresse, Browser-Zurück = eine Stufe. Animation «natürlich, nicht ruckeln»: `clip-path`-
 Aufdeckung + Farbschicht mit Kachel-Gesicht, `cubic-bezier(.2,0,0,1)`, 450/350 ms, nur Compositor,
-`prefers-reduced-motion`; Handy Vollbild-Blatt. Suchdaten erst beim Öffnen (§15). Offen: Zähler
-Vorlagen 26 ↔ Katalog 30; Ort des internationalen Rechts.
+`prefers-reduced-motion`; Handy Vollbild-Blatt. Suchdaten erst beim Öffnen (§15).
+*Geklärt 23.9.2026 (GRUNDTON-Session):* **Internationales Recht** = dritte Wahl «Bund · Kantone ·
+International» (Auswahlfrage David «Dritte Wahl», → Liste der Staatsverträge) · **Zähler Vorlagen 26
+bleibt**: 30 = `ALLE_KARTEN`, 26 = `KATALOG_KARTEN`; die vier Kündigungen sind `imKatalog: false`
+(E3, Einstieg über die Miet-/Arbeits-Themen) — Kachel-Zahl = Einträge der Liste (§8).
+
+**GRUNDTON gebaut (23.9.2026):** `paper` hell `#FDFCFA`, `surface` `#FEFDFB` (Leiter), `paper-sunken`/
+`well` `#F6F4F0`, `reg-*-flaeche` hell neu gerechnet; Radius `sm 4 · md 8 · lg 10 · xl/2xl 14`
+(`rounded` Marken · `rounded-md` Knöpfe/Zeilen · `rounded-lg` Karten/Schwebeflächen · `rounded-xl`
+Flächen/Kacheln/Blätter). Gerade per Regel: `.lc-chip`, `.lc-notice` (Registerstriche), `.lc-input`
+(Unterstrich-Anatomie), Linien-Karten `.lc-card/.lc-tile/.lc-panel`, und der Normtext-Körper per
+CSS-Scope `[data-lese]`/`.lc-normtext-koerper` (Markup byte-bewacht, `ArtikelBody.test` Kern-Probe).
 
 ## §6 · Prüfen und Frühsignale
 
