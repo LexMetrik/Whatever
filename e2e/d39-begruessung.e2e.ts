@@ -296,10 +296,15 @@ test.describe('Gruss pro Besuch (Entscheid David 16.9.2026 «a»)', () => {
   // (`scripts/prerender.ts`), Anker = die Datumszeile hinter dem Skript
   // (`GRUSS_ANKER_ID`, `Begruessung.tsx`).
   //
-  // ROT-PROBE (§6.7, 23.9.2026): Link-Zeile im Prerender auskommentiert ⇒
-  // Struktur-Fall rot («rel=expect fehlt»), Verhaltens-Fall rot in 9/20
-  // (`--repeat-each=20 --workers=1`, lokal unter Last) mit «Frame mit dem
-  // Build-Gruss · Benvenuti a tutti.@171 → …»; mit Sperre 20/20 grün.
+  // ROT-PROBE (§6.7, 23.9.2026), gegen den Build OHNE Sperre (Stand K7,
+  // 908d34ff4): Struktur-Fall rot mit «rel=expect fehlt im <head> der
+  // Startseite»; Verhaltens-Fall rot in 12/20 (`--repeat-each=20 --workers=1
+  // --retries=0`, load 1.8→3.4) mit «Frame mit dem Build-Gruss · Lauf 4:
+  // Benvenuti a tutti.@170 → Herzlich willkommen.@223 → …». Anker entfernt
+  // (id nur noch im Pane): der Prerender bricht ab («Gruss-Anker
+  // #gruss-gezogen fehlt hinter dem Wahl-Skript»). MIT Sperre: ganze Datei
+  // 280/280 (`--repeat-each=20 --workers=1`, load 2.8→5.3) und dieser Block
+  // 160/160 (`--workers=4`, load bis 11.5).
   test('Render-Sperre im Prerender-HTML: <link rel=expect blocking=render> zielt auf ein Element HINTER dem Wahl-Skript', async ({ page }) => {
     const antwort = await page.goto('/')
     const html = (await antwort?.text()) ?? ''
