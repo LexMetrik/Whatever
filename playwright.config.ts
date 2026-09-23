@@ -4,6 +4,13 @@
 // Specs heissen *.e2e.ts, damit Vitest sie nicht aufsammelt.
 import { defineConfig } from '@playwright/test'
 import { createHash } from 'node:crypto'
+// Locator-Assertions warten per `locator.waitFor()` vor, statt in JEDEM Poll einen
+// Aria-Snapshot des ganzen Dokuments zu rechnen (Playwright 1.60, auf grossen
+// Erlassen Sekunden je Poll im Seiten-Hauptthread → Flacker). Wirkt auf jedes
+// `expect` aus '@playwright/test' in allen Workern — Specs importieren wie
+// bisher direkt von dort. Mechanismus, Grenzen und Stolperdraht:
+// e2e/helpers/expectVorwarten.ts · e2e/expect-vorwarten.e2e.ts.
+import './e2e/helpers/expectVorwarten'
 
 // ── Port-Wahl (§17-Wurzelfix, Vorfall 4.8.2026) ──────────────────────────────
 // Bisher: fester Default 4317 + `reuseExistingServer: !CI`. In Parallel-Sessions
