@@ -3,7 +3,7 @@ import { DatumsFeld } from '../DatumsFeld';
 import { Checkbox, Field, inputCls } from './ui';
 import { NormText } from '../NormText';
 import { useWizardState } from './useWizardState';
-import { VorlagenWizardRahmen, VorschauPanel, ExportLeiste } from './wizard';
+import { VorlagenWizardRahmen, VorschauPanel, ExportLeiste, musterdatenAnwenden } from './wizard';
 import { karte } from '../../lib/startseiteConfig';
 import { docxAktiv, istIsoDatum } from './seiteHelfer';
 import type { AssembleErgebnis } from '../../lib/vorlagen/engine';
@@ -48,6 +48,8 @@ import { getProfil, getVorlagenDetailgrad } from '../../lib/einstellungen';
 //                vorschauNichtAufgenommen (1)
 //   • Export:    docxSperre (2); banner/dateiBasis/pdfLabel/docxLabel/
 //                bestaetigungLabel wahlweise als Funktion der Antworten
+//   • Kopf (V5): musterdaten (29) — «Mit Musterdaten füllen», Daten aus
+//                `./musterdaten.ts` (eine Quelle, §5)
 // Kein Slot ist tot. blockerKasten (EINE Sammelbox) und blockerEinzeln (je
 // Blocker eine Box) sind keine Doppelung: zwei vorgefundene DOM-Formen. Die
 // Einzel-Nutzer (fehlerBox, pruefBefund, ohneBestaetigung, exportLeiste,
@@ -117,6 +119,11 @@ export interface VorlagenSeitenConfig<
    *  Renderns (React-Muster «adjusting state», kein Effect). `anwenden`
    *  liefert die zu setzenden Felder oder undefined. */
   vorauswahl?: { schluessel: string; anwenden: (a: T) => Partial<T> | undefined };
+  /** V5 (W2·29-WERKBANK-VORLAGEN): fiktiver, fachlich stimmiger Datensatz aus
+   *  `musterdaten.ts`. Der Knopf ersetzt den Stand vollständig durch
+   *  `{ ...defaults, ...musterdaten() }` (Nachfrage, wenn schon eingegeben);
+   *  Schritt bleibt, die Bestätigung bleibt aus. */
+  musterdaten?: () => Partial<T>;
   schritte: readonly { id: string; label: string }[];
   // Rahmen-Kopf
   overlineFallback: string;       // Rechtsgebiet-Fallback, falls Karte fehlt
@@ -247,6 +254,18 @@ export function VorlagenSeite<
   const { a, setA, set, schritt, setSchritt, bestaetigt, setBestaetigt, kopiert, kopieren, zuruecksetzen } =
     useWizardState<T>({ defaults, speicherKey: config.speicherKey, normalisieren: config.normalisieren, prefill });
 
+  // V5: «eigene Eingaben» = der Stand weicht vom Leerstand der Seite ab
+  // (Defaults samt Profil-Prefill, dieselbe Füll-Regel wie useWizardState).
+  const musterFuellen = config.musterdaten ? () => {
+    const leer = { ...defaults } as Record<string, unknown>;
+    const pf = (prefill ?? {}) as Record<string, unknown>;
+    for (const k in pf) if ((leer[k] === undefined || leer[k] === '') && pf[k]) leer[k] = pf[k];
+    musterdatenAnwenden(JSON.stringify(a) !== JSON.stringify(leer), () => {
+      setA({ ...defaults, ...config.musterdaten!() });
+      setBestaetigt(false);
+    });
+  } : undefined;
+
   // Vorauswahl aus der Adresse — «adjusting state» während des Renderns.
   const [vorauswahlStand, setVorauswahlStand] = useState<string | null>(null);
   if (config.vorauswahl && vorauswahlStand !== config.vorauswahl.schluessel) {
@@ -363,6 +382,7 @@ export function VorlagenSeite<
       norms={card?.norms ?? []}
       badge={config.badge}
       zuruecksetzen={zuruecksetzen}
+      musterdaten={musterFuellen}
       schritte={config.schritte} schritt={schritt} setSchritt={setSchritt}
       fehler={config.fehlerBox === false ? undefined : fehler}
       fehlerJeSchritt={config.pruefBefund?.(ctx) === false ? undefined : fehlerImSchritt}

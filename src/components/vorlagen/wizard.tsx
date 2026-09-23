@@ -31,11 +31,20 @@ import type { PdfBanner } from '../../lib/vorlagen/banner';
 // Default 0 = «nichts bekannt» (ExportLeisten ausserhalb eines Wizards).
 const OffeneAngabenContext = createContext(0);
 
+/** V5 (W2·29-WERKBANK-VORLAGEN): EINE Nachfrage-Regel für alle
+ *  Musterdaten-Knöpfe (Wizard-Seiten, AG-Wizard, Mappen). Hat die Person
+ *  schon etwas eingegeben, wird vor dem Ersetzen gefragt; sonst wird sofort
+ *  gefüllt. Reine Zustands-Hygiene, keine Fachlogik (§3). */
+export function musterdatenAnwenden(eigeneEingaben: boolean, anwenden: () => void): void {
+  if (eigeneEingaben && !window.confirm('Eigene Eingaben durch Musterdaten ersetzen?')) return;
+  anwenden();
+}
+
 export function VorlagenWizardRahmen({
   // N0a: der Rückweg zeigt auf die Übersicht, die sein Label nennt.
   zurueckHref = '/vorlagen', overline, titel, intro, norms, badge,
   fussnote, zuruecksetzen, schritte, schritt, setSchritt, fehler, fehlerJeSchritt,
-  weiterDeaktiviert, inhalt, vorschau, kopfSchalter,
+  weiterDeaktiviert, inhalt, vorschau, kopfSchalter, musterdaten,
 }: {
   zurueckHref?: string;
   overline: string;
@@ -63,6 +72,10 @@ export function VorlagenWizardRahmen({
   /** Optionaler Kopf-Schalter (Detailgrad/Untertyp, FAHRPLAN-VERTRAGS-VARIANTEN
    *  P0) – wird zwischen Kopf und Stepper gerendert. Reine Darstellung (§3). */
   kopfSchalter?: ReactNode;
+  /** V5 (W2·29-WERKBANK-VORLAGEN): «Mit Musterdaten füllen» neben
+   *  «Eingaben zurücksetzen». Die Seite liefert den Füller samt Nachfrage
+   *  (`musterdatenAnwenden`); der Rahmen rendert nur den Knopf (§3). */
+  musterdaten?: () => void;
 }) {
   const { locale } = useLocale();
   const weiterAus = weiterDeaktiviert ?? (fehler != null && fehler.length > 0);
@@ -137,8 +150,13 @@ export function VorlagenWizardRahmen({
         {/* V6 (W2·10-UI-NAV): Weg zum passenden Rechner — rendert nur, wenn die
             Registry für DIESE Vorlage eine Rechner-Kante führt. */}
         <PassendeRechner />
-        {(zuruecksetzen || fussnote) && (
+        {(zuruecksetzen || fussnote || musterdaten) && (
           <div className="flex flex-wrap items-center gap-x-3 gap-y-2 pt-1">
+            {musterdaten && (
+              <button type="button" onClick={musterdaten} className="lc-btn-outline lc-btn-sm">
+                Mit Musterdaten füllen
+              </button>
+            )}
             {zuruecksetzen && (
               <button type="button"
                 onClick={() => { if (window.confirm('Alle Eingaben dieser Vorlage zurücksetzen?')) { zuruecksetzen(); setBeruehrt(false); } }}
