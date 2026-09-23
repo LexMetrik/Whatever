@@ -109,9 +109,9 @@ describe('C4-1 · die Fehlerbox hat EINE Bauform', () => {
     // Negativ-Kontrolle: der Sweep hat die Aufrufstellen überhaupt gesehen. Ohne
     // sie wäre dieser Test grün, sobald der Baustein ausgebaut wird (§6.7).
     // 23.9.2026 W2·29-WERKBANK-VORLAGEN V2b/V2d: Blocker-Boxen der Vorlagen im
-    // Rahmen gebündelt (gemessen 18 Aufrufstellen, vorher ≥ 20); Schwelle auf 10
-    // gesenkt. Kontrolle bleibt Sweep-Sichtprüfung (§6.7).
-    expect(gefunden, 'der Baustein hat Aufrufstellen').toBeGreaterThanOrEqual(10);
+    // Rahmen gebündelt (gemessen 18 Aufrufstellen, vorher ≥ 20); Schwelle auf 15
+    // gesenkt, Puffer 3 (Gegenprüfung: 10 zu locker).
+    expect(gefunden, 'der Baustein hat Aufrufstellen').toBeGreaterThanOrEqual(15);
   });
 
   it('ROT-BEWEIS: der Ausdruck erkennt alle fünf Bauformen, die vor R9-2 im Repo standen', () => {
