@@ -1,12 +1,12 @@
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
 import { fedlexLokalisiert, type Locale } from '../../../components/locale';
-import { revisionSchluessel, revisionTitel, type RevisionAnsicht, type RevisionBezug } from '../../../lib/normtext/revisionen';
+import { revisionTitel, type RevisionAnsicht } from '../../../lib/normtext/revisionen';
 import { IN_KRAFT_FUER_CH_LABEL } from '../../../lib/normtext/erlassKopfText';
 import type { ErlassAufhebung } from '../../../lib/normtext/aufhebungen';
 import type { BotschaftBezug } from '../../../lib/materialien/botschaften';
 import type { ArtikelRevision } from '../../../lib/verzahnung/artikel-revisionen';
 import { aenderungZeitbezug, type AenderungZeitbezug } from '../zukunftsfassungen';
-import { aufhebungsBezug, trifftArtikel } from './aenderungModell';
+import { aufhebungsBezug, trifftArtikel, wirkungsMarken, zeilenSchluessel, type RevisionZeile } from './aenderungModell';
 import type { Geladen } from './panelKontextLaden';
 
 // ─── Reiter «Änderungen» (H3) ────────────────────────────────────────────────
@@ -138,15 +138,27 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
   // übrigen bleiben in Sidecar-Reihenfolge (neu → alt).
   // AE-6: nach der Aufhebung Liegendes steht in einer eigenen Gruppe — und
   // dort ohne Zeitbezug-Aussage über DIESEN Text (er gilt nicht mehr).
-  const nachAufhebung = revisionen.filter((r) => aufhebungsBezug(r, aufhebung) !== null);
-  const zeilen = revisionen.filter((r) => aufhebungsBezug(r, aufhebung) === null)
+  // ERGÄNZT S6 (#1001): neue Sidecars tragen `wirkungen` — eine «vollständige
+  // Aufhebung» steht dort auch ohne Eintrag in `lib/normtext/aufhebungen.ts`.
+  const alle: readonly RevisionZeile[] = revisionen;
+  const nachAufhebung = alle.filter((r) => aufhebungsBezug(r, aufhebung) !== null);
+  const zeilen = alle.filter((r) => aufhebungsBezug(r, aufhebung) === null)
     .map((r) => ({ r, bezug: aenderungZeitbezug(r, stichtag) }));
+  // AE-8: gestaffelt in Kraft gesetzte Erlasse (#1001, `etappen`) stehen mit
+  // derselben AS-Fundstelle mehrfach da — markiert wird dann die Etappe, deren
+  // Datum der Artikel-Shard nennt; findet sich keine, alle mit der Fundstelle.
+  const amArtikel = new Set<string>();
+  if (artikel) {
+    const gleicheAs = zeilen.filter((z) => trifftArtikel(z.r, artikel.revision));
+    const gleichesDatum = gleicheAs.filter((z) => z.r.dateEntryInForce === artikel.revision.iso);
+    for (const z of gleichesDatum.length > 0 ? gleichesDatum : gleicheAs) amArtikel.add(zeilenSchluessel(z.r));
+  }
   const kuenftig = zeilen.filter((z) => z.bezug === 'kuenftig')
     .sort((a, b) => (a.r.dateEntryInForce < b.r.dateEntryInForce ? -1 : a.r.dateEntryInForce > b.r.dateEntryInForce ? 1 : 0));
   const uebrige = zeilen.filter((z) => z.bezug !== 'kuenftig');
-  const zeile = (r: RevisionBezug, bezug: AenderungZeitbezug) => (
-    <AenderungZeile key={revisionSchluessel(r)} r={r} bezug={bezug} locale={locale}
-      amArtikel={artikel && trifftArtikel(r, artikel.revision) ? artikel.label : null}
+  const zeile = (r: RevisionZeile, bezug: AenderungZeitbezug) => (
+    <AenderungZeile key={zeilenSchluessel(r)} r={r} bezug={bezug} locale={locale}
+      amArtikel={artikel && amArtikel.has(zeilenSchluessel(r)) ? artikel.label : null}
       botschaft={r.botschaftKey ? botschaftNachKey?.get(r.botschaftKey) : undefined} />
   );
   return (
@@ -180,17 +192,19 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
           <ul>{uebrige.map((z) => zeile(z.r, z.bezug))}</ul>
         </section>
       )}
-      {aufhebung && nachAufhebung.length > 0 && (
+      {nachAufhebung.length > 0 && (
         <section data-v3-panel-aenderungen-aufhebung>
           <p className="border-t border-line pb-1 pt-2 text-micro font-medium text-ink-700">
-            Nach der Aufhebung <span className="num font-normal text-ink-500">· aufgehoben seit {datumAnzeige(aufhebung.seit)}</span>
+            {aufhebung
+              ? <>Nach der Aufhebung <span className="num font-normal text-ink-500">· aufgehoben seit {datumAnzeige(aufhebung.seit)}</span></>
+              : 'Aufhebung'}
           </p>
           <ul>
             {nachAufhebung.map((r) => (
-              <li key={revisionSchluessel(r)} data-v3-panel-aenderung data-v3-panel-aenderung-bezug="nach-aufhebung"
+              <li key={zeilenSchluessel(r)} data-v3-panel-aenderung data-v3-panel-aenderung-bezug="nach-aufhebung"
                 className="border-l-2 border-t border-line border-l-line py-2 pl-2.5">
                 <span className="text-body-s font-medium text-ink-700">
-                  {aufhebungsBezug(r, aufhebung) === 'nachfolger' ? 'Nachfolge-Erlass' : 'Betrifft nicht mehr diesen Erlass'}
+                  {AUFHEBUNGS_TEXT[aufhebungsBezug(r, aufhebung) ?? 'nach-aufhebung']}
                 </span>
                 {r.roFundstelle && <span className="num ml-2 text-micro text-ink-500">{r.roFundstelle}</span>}
                 <span className="mt-0.5 block text-micro leading-snug text-ink-600">
@@ -203,23 +217,34 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag, ebene, aufhebung,
           </ul>
         </section>
       )}
+      {/* ERGÄNZT S6 (#1001): der Marker heisst seit Pfad (c) «Fassung ohne
+          zugeordneten Erlass» — so richtig für ALTE Sidecars (dort «Änderung
+          über einen Sammelerlass», erfasst nur das Datum) wie für NEUE (eine
+          Fassung, der Fedlex keinen ändernden Erlass zuordnet). «Sammelerlass»
+          behauptete eine Ursache, die der Marker nicht belegt (§8). */}
       {hatSammelerlass && (
         <p data-v3-panel-sammelerlass-hinweis className="border-t border-line pt-1.5 text-micro leading-snug text-ink-600">
-          «Sammelerlass» heisst: die Änderung kam über einen Erlass, der mehrere
-          Gesetze zugleich ändert — erfasst ist davon nur das Datum.
+          «Fassung ohne zugeordneten Erlass» heisst: an diesem Datum gilt eine
+          neue Fassung, ein ändernder Erlass ist ihr in den Daten nicht zugeordnet
+          (etwa ein Sammelerlass) — erfasst ist nur das Datum.
         </p>
       )}
     </div>
   );
 }
 
+const AUFHEBUNGS_TEXT: Readonly<Record<'nachfolger' | 'aufhebend' | 'nach-aufhebung', string>> = {
+  nachfolger: 'Nachfolge-Erlass',
+  aufhebend: 'Hebt diesen Erlass auf',
+  'nach-aufhebung': 'Betrifft nicht mehr diesen Erlass',
+};
 
 function sprache(locale: Locale): 'de' | 'fr' | 'it' {
   return locale === 'fr' || locale === 'it' ? locale : 'de';
 }
 
 function AenderungZeile({ r, bezug, amArtikel, botschaft, locale }: {
-  r: RevisionBezug; bezug: AenderungZeitbezug;
+  r: RevisionZeile; bezug: AenderungZeitbezug;
   /** Label des gelesenen Artikels, wenn diese Zeile seine letzte Änderung ist. */
   amArtikel: string | null;
   botschaft?: BotschaftBezug;
@@ -254,8 +279,12 @@ function AenderungZeile({ r, bezug, amArtikel, botschaft, locale }: {
         {/* C2 (H3-Nachzug) bleibt gültig: KEIN «anderer SR» — SR-Nummern
             führt nur das Bundesrecht, die Zeile steht auch am Kanton. */}
         {marker && (
-          <span data-v3-panel-sammelerlass className="text-micro text-ink-500">Sammelerlass</span>
+          <span data-v3-panel-sammelerlass className="text-micro text-ink-500">Fassung ohne zugeordneten Erlass</span>
         )}
+        {/* #1001 · amtliche Auswirkungs-Art, wo sie keine gewöhnliche Änderung ist. */}
+        {wirkungsMarken(r).map((w) => (
+          <span key={w} data-v3-panel-aenderung-wirkung className="text-micro text-ink-500">{w}</span>
+        ))}
         {amArtikel && <span className="text-micro font-medium text-ink-800">betrifft {amArtikel}</span>}
       </span>
       {bezug === 'inKraftOffen' && (
@@ -265,6 +294,20 @@ function AenderungZeile({ r, bezug, amArtikel, botschaft, locale }: {
       )}
       {bezug === 'unbestimmt' && (
         <span className="mt-0.5 block text-micro leading-snug text-ink-600">im hier gezeigten Text noch nicht eingearbeitet</span>
+      )}
+      {/* #1001 · gestaffeltes Inkrafttreten: jede Etappe ist eine eigene Zeile —
+          die Zeile nennt alle Daten, damit die Wiederholung erklärt ist. */}
+      {r.etappen && r.etappen.length > 1 && (
+        <span data-v3-panel-aenderung-etappen className="num mt-0.5 block text-micro text-ink-500">
+          {`gestaffelt in Kraft: ${r.etappen.map((d) => datumAnzeige(d)).join(' · ')}`}
+        </span>
+      )}
+      {/* #1001 · §8: das Datum stammt vom ändernden Erlass, nicht von einer
+          eigenen Auswirkung auf diesen — es kann für diesen Erlass abweichen. */}
+      {r.datumAusErlass && (
+        <span data-v3-panel-aenderung-datum-erlass className="mt-0.5 block text-micro text-ink-500">
+          Datum = Inkrafttreten des ändernden Erlasses; für diesen Erlass kann es abweichen.
+        </span>
       )}
       {/* Ä121: die Zeile entsteht nur, wenn sie etwas zu sagen hat. Beim
           Sammelerlass-Marker gibt es keinen Titel — dort blieb bis

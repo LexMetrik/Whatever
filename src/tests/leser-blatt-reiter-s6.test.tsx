@@ -228,3 +228,38 @@ describe('Reiter «Änderungen» — Schärfung', () => {
     expect(kanton).not.toContain('nicht erreichbar');
   });
 });
+
+// ─── Vorwärts-verträglich mit den Pfad-(c)-Sidecars (#1001, Hinweis Haupt-Session) ─
+// Alle Felder optional: die Anzeige muss mit alten UND neuen Sidecars stimmen.
+describe('Reiter «Änderungen» — neue Sidecar-Felder (#1001), optional gelesen', () => {
+  const OC = 'https://fedlex.data.admin.ch/eli/oc/2020/4005';
+  const E1 = { ...rev({ dateEntryInForce: '2021-01-01', ocUri: OC, roFundstelle: 'AS 2020 4005' }), etappen: ['2021-01-01', '2023-01-01'] };
+  const E2 = { ...rev({ dateEntryInForce: '2023-01-01', ocUri: OC, roFundstelle: 'AS 2020 4005' }), etappen: ['2021-01-01', '2023-01-01'] };
+  it('gestaffelte Etappen: beide Zeilen stehen, jede nennt die Etappen', () => {
+    const html = aenderungen([E2, E1]);
+    expect((html.match(/data-v3-panel-aenderung-etappen/g) ?? []).length).toBe(2);
+    expect(html).toContain('gestaffelt in Kraft: 01.01.2021 · 01.01.2023');
+  });
+  it('AE-8 mit Etappen: markiert wird die Etappe mit dem Datum des Artikel-Shards', () => {
+    const html = aenderungen([E2, E1], { artikel: { label: 'Art. 1', revision: { iso: '2023-01-01', as: 'AS 2020 4005' } } });
+    expect((html.match(/data-v3-panel-aenderung-artikel=""/g) ?? []).length).toBe(1);
+  });
+  it('Wirkung «Berichtigung» als Marke; «vollständige Aufhebung» auch ohne Register-Eintrag', () => {
+    const html = aenderungen([
+      { ...rev({ dateEntryInForce: '2016-08-23' }), wirkungen: ['berichtigung'] },
+      { ...rev({ dateEntryInForce: '2026-03-01', nichtKonsolidiert: true }), wirkungen: ['vollstaendige-aufhebung'] },
+    ]);
+    expect(html).toContain('Berichtigung');
+    expect(html).toContain('Hebt diesen Erlass auf');
+    expect(html).not.toContain('in Kraft seit 01.03.2026, im hier gezeigten Text');
+  });
+  it('datumAusErlass: §8-Hinweis, dass das Datum abweichen kann', () => {
+    const html = aenderungen([{ ...rev({ dateEntryInForce: '2019-01-01' }), datumAusErlass: true }]);
+    expect(html).toContain('Inkrafttreten des ändernden Erlasses');
+  });
+  it('Marker heisst «Fassung ohne zugeordneten Erlass» (richtig für alte und neue Sidecars)', () => {
+    const html = aenderungen([rev({ art: 'sammelerlass-marker', dateEntryInForce: '2013-01-01', titelDe: undefined })]);
+    expect(html).toContain('Fassung ohne zugeordneten Erlass');
+    expect(html).not.toMatch(/>Sammelerlass</);
+  });
+});

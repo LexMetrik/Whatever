@@ -1,4 +1,47 @@
 import type { RevisionBezug } from '../../../lib/normtext/revisionen';
+
+/**
+ * Felder, die der Revisions-Generator seit Pfad (c) (S6-D1, PR #1001) schreibt —
+ * hier OPTIONAL gelesen, damit die Anzeige mit alten UND neuen Sidecars stimmt
+ * (Landereihenfolge egal). Semantik: `scripts/normtext/revisionen-generieren.ts`
+ * (`RevisionEintrag`) auf dem #1001-Stand. Entfällt, sobald `RevisionBezug`
+ * die Felder selbst trägt.
+ */
+export type RevisionZeile = RevisionBezug & {
+  wirkungen?: string[] | null;
+  etappen?: string[] | null;
+  datumAusErlass?: boolean | null;
+};
+
+/** React-/Dedupe-Schlüssel — wörtlich die Regel von `revisionSchluessel`
+ *  (#1001): gestaffelt in Kraft gesetzte Erlasse stehen je Etappe mit
+ *  DEMSELBEN `ocUri`; ein Schlüssel nur aus `ocUri` kollidierte. */
+export function zeilenSchluessel(r: Pick<RevisionBezug, 'art' | 'ocUri' | 'dateEntryInForce'>): string {
+  return `${r.ocUri ?? r.art}@${r.dateEntryInForce}`;
+}
+
+/** Amtliche Bezeichnungen der Fedlex-Auswirkungs-Typen (`vocabulary/impact-type`,
+ *  `skos:prefLabel`@de — Zuordnung wie `WIRKUNG_NACH_TYP` in
+ *  `scripts/normtext/revisionen-auswirkungen.ts` auf dem #1001-Stand). Ein
+ *  unbekannter Schlüssel wird NICHT angezeigt (keine erfundene Bezeichnung). */
+export const WIRKUNG_LABEL: Readonly<Record<string, string>> = {
+  aenderung: 'Änderung',
+  aufhebung: 'Aufhebung',
+  'vollstaendige-aufhebung': 'Vollständige Aufhebung',
+  inkrafttreten: 'Inkrafttreten',
+  teilinkraftsetzung: 'Teilinkraftsetzung',
+  berichtigung: 'Berichtigung',
+  genehmigung: 'Genehmigung',
+  verlaengerung: 'Verlängerung',
+  geltungsbereich: 'Geltungsbereich',
+  'zweite-fundstelle': '2. Fundstelle',
+};
+
+/** Die Wirkungen einer Zeile, die eine eigene Marke verdienen: alles ausser
+ *  der gewöhnlichen «Änderung» (die ist der Normalfall der Liste). */
+export function wirkungsMarken(r: RevisionZeile): string[] {
+  return (r.wirkungen ?? []).filter((w) => w !== 'aenderung').map((w) => WIRKUNG_LABEL[w]).filter((l): l is string => !!l);
+}
 import type { ErlassAufhebung } from '../../../lib/normtext/aufhebungen';
 import type { ArtikelRevision } from '../../../lib/verzahnung/artikel-revisionen';
 
@@ -26,12 +69,15 @@ function ocVonCc(eli: string): string | null {
  * `null` = gewöhnliche Änderung. ISO-Daten vergleichen lexikografisch (§2).
  */
 export function aufhebungsBezug(
-  r: Pick<RevisionBezug, 'dateEntryInForce' | 'ocUri'>,
+  r: Pick<RevisionZeile, 'dateEntryInForce' | 'ocUri' | 'wirkungen'>,
   aufhebung: ErlassAufhebung | undefined,
-): 'nachfolger' | 'nach-aufhebung' | null {
-  if (!aufhebung) return null;
-  const oc = aufhebung.nachfolger ? ocVonCc(aufhebung.nachfolger.eli) : null;
+): 'nachfolger' | 'aufhebend' | 'nach-aufhebung' | null {
+  const oc = aufhebung?.nachfolger ? ocVonCc(aufhebung.nachfolger.eli) : null;
   if (oc && r.ocUri?.endsWith(oc)) return 'nachfolger';
+  // Neue Sidecars (#1001) tragen die amtliche Wirkung selbst — auch dort, wo
+  // `lib/normtext/aufhebungen.ts` (noch) keine Aufhebung deklariert.
+  if (r.wirkungen?.includes('vollstaendige-aufhebung')) return 'aufhebend';
+  if (!aufhebung) return null;
   return r.dateEntryInForce >= aufhebung.seit ? 'nach-aufhebung' : null;
 }
 
