@@ -493,6 +493,25 @@ describe('baueRevisionen — Pfad (c) Auswirkungen (S6-D1, AE-2..AE-5)', () => {
     expect(s.revisionen.map((r) => [r.ocUri, r.dateEntryInForce])).toEqual([[OC('2022/698'), '2023-01-23']]);
   });
 
+  it('Auswirkungsdatum NACH der einarbeitenden Fassung erzeugt keine Etappe (AVIG/AS 1991 2125 «2023», AHVG/AS 1965 537 «2066»)', () => {
+    const k: RevisionsKontext = {
+      abstractEli: 'cc/63/837_843_843', basicAct: OC('63/837_843_843'), inkrafttreten: '1948-01-01',
+      auswirkungen: [
+        { oc: OC('1965/537_541_535'), typ: 1, datum: '1966-01-01', fassung: '1966-01-01' },
+        { oc: OC('1965/537_541_535'), typ: 2, datum: '2066-01-01', fassung: '2021-01-01' }, // Widerspruch
+        { oc: OC('2020/713'), typ: 1, datum: '2020-09-26', fassung: '2021-03-20' }, // Fassung danach: bleibt (Nachkonsolidierung/rückwirkend)
+        { oc: OC('2099/1'), typ: 1, datum: '2030-01-01', fassung: '2021-01-01' }, // nur widersprüchlich datiert → Eigen-Datum
+      ],
+      ocStamm: { [OC('2099/1')]: { dateForce: '2029-01-01' } },
+    };
+    const s = baueRevisionen({ key: 'AHVG', sr: '831.10' }, [], [], '2026-01-01', new Map(), '2026-09-23', new Set(), new Map(), k);
+    expect(s.revisionen.map((r) => [r.ocUri, r.dateEntryInForce, r.etappen])).toEqual([
+      [OC('2099/1'), '2029-01-01', undefined],
+      [OC('2020/713'), '2020-09-26', undefined],
+      [OC('1965/537_541_535'), '1966-01-01', undefined],
+    ]);
+  });
+
   it('unbekannter Auswirkungs-Typ bricht ab (nie still einsortieren)', () => {
     expect(wirkungAusTyp(1)).toBe('aenderung');
     expect(() => wirkungAusTyp(99)).toThrow(/impact-type.99/);
