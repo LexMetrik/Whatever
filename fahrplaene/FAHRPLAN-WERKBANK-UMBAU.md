@@ -1,8 +1,8 @@
 # FAHRPLAN — Werkbank-Umbau: das neue Design an Ort, Rubrik für Rubrik
 <!-- @lagebild name: Werkbank-Umbau · zweck: Die Website bekommt das Aussehen des Werkbank-Entwurfs — eine Rubrik nach der anderen, und die alte Hülle wird dabei jedes Mal gelöscht. -->
 
-> **ROADMAP-Dach:** sieben Schritte `W2·29-WERKBANK-*` (TOR · TOKENS · LESER · KATALOGE ·
-> VORLAGEN · RECHNER · REST), Trailer `Roadmap: W2·29-WERKBANK-<X>`. Serielle `dep`-Kette —
+> **ROADMAP-Dach:** neun Schritte `W2·29-WERKBANK-*` (TOR · TOKENS · LESER · KATALOGE ·
+> VORLAGEN · RECHNER · REST, dazu parallel GRUNDTON · START), Trailer `Roadmap: W2·29-WERKBANK-<X>`. Serielle `dep`-Kette —
 > Grund in §2 (Abbruchkriterium).
 
 ## §1 · Anlass und Entscheid (22.9.2026)
@@ -134,7 +134,7 @@ Schrumpfungs-Vorgabe ≥ 40 % ist **nicht** erreicht (Zahlen im T2-PR): die Norm
 ## §5 · Die fünf Rubrik-Schritte
 
 Reihenfolge nach Produktwert, Dep-Kette
-`TOR → TOKENS → LESER → KATALOGE → VORLAGEN → RECHNER → REST`.
+`TOR → TOKENS → LESER → KATALOGE → VORLAGEN → RECHNER → REST`; parallel `GRUNDTON → START` (§5d, David 23.9.: «beginne dann gleich»).
 
 | Schritt | `feld:` | Abnahmeliste (Inventar) | Richtung (Boards) | Grenzen |
 |---|---|---|---|---|
@@ -364,6 +364,25 @@ geteilt → Änderung nur per Prop.
 
 **Nicht bauen:** «44», Status-Zeile «Ausgabe als PDF und Word» (Testament: kein DOCX),
 Seitenleisten-Baum, Board-Hex (Token gilt), gemeinsame Exportleiste (erst RECHNER).
+
+## §5d · GRUNDTON + START — aufklappende Startseite (Entscheide David 23.9.2026)
+
+Prototyp (klickbar): https://claude.ai/artifact/JnPeKNP1cu2TRhjErP8vck · volle Spec mit Davids
+Wortlaut: `~/Documents/David/03_Projekte/LexMetrik/start-prototyp/SPEC-START-UND-GRUNDTON.md`.
+
+**`W2·29-WERKBANK-GRUNDTON`** (David: «als grundregel für den gesamten umbau»): `paper` hell `#FDFCFA` wie Board
+«Main» (dunkel gleich), `reg-*-flaeche` neu rechnen + `check:farbwelt`; Radien 14 Flächen · 10
+Karten/Felder · 8 Knöpfe/Zeilen · Chips Pille, «modern, aber nicht trashy»; Linien, Listen,
+Normtext gerade. «Kanten statt Kissen» im Reglement datiert ablösen.
+
+**`W2·29-WERKBANK-START`:** 2×2-Kacheln (Flächenton, Zahl aus dem Zähler, **keine** Linkzeilen), darunter «Neueste
+Entscheide», rechts «Zuletzt» + «Schnellwerkzeug». Klick → Kachel wächst **nur übers Kachelfeld**
+bis zum Ziel: Gesetze → Bund (Rechtsgebiet → Erlassliste) | Kantone (Landeskarte → Erlassliste) ·
+Rechtsprechung, Materialien → sofort Suche · Werkzeuge → Rechner | Vorlagen → Liste. Jede Stufe
+eine Adresse, Browser-Zurück = eine Stufe. Animation «natürlich, nicht ruckeln»: `clip-path`-
+Aufdeckung + Farbschicht mit Kachel-Gesicht, `cubic-bezier(.2,0,0,1)`, 450/350 ms, nur Compositor,
+`prefers-reduced-motion`; Handy Vollbild-Blatt. Suchdaten erst beim Öffnen (§15). Offen: Zähler
+Vorlagen 26 ↔ Katalog 30; Ort des internationalen Rechts.
 
 ## §6 · Prüfen und Frühsignale
 

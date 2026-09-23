@@ -442,6 +442,18 @@ Umschichtung 20.9.2026 (2)):*
   Grenzen: Status-Modell bleibt sichtbar (§8), Löschpflicht im selben PR, Löschbilanz ≥ 50 %.
   **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5.
 
+- [ ] **Werkbank-Umbau: Grundton — Werkbank-Hintergrund und Rundungen für alle Seiten** *(`W2·29-WERKBANK-GRUNDTON`, David 23.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-GRUNDTON · status: ready · blocker: null · dep: [] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: Grundregel des Umbaus in `design/tokens.json` — Hintergrund wie Werkbank, Radius-Skala.
+  Grenzen: Kontrast-Tore grün, Normtext gerade, Golden byte-gleich.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
+
+- [ ] **Werkbank-Umbau: neue Startseite mit aufklappenden Kacheln** *(`W2·29-WERKBANK-START`, Prototyp + Go David 23.9.2026)*
+  <!-- @meta id: W2·29-WERKBANK-START · status: ready · blocker: null · dep: [W2·29-WERKBANK-GRUNDTON] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
+  Ziel: vier Kacheln, die vor Ort aufklappen und bis zum Erlass bzw. Werkzeug führen.
+  Grenzen: Zahlen nur aus dem Zähler (§8), Suchdaten erst beim Öffnen (§15), Löschpflicht.
+  **Detail:** [FAHRPLAN-WERKBANK-UMBAU.md](fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md) §5d.
+
 - [ ] **Werkbank-Umbau Schritt 6: Rest und Rückbau** *(`W2·29-WERKBANK-REST`, Go David 22.9.2026)*
   <!-- @meta id: W2·29-WERKBANK-REST · status: ready · blocker: null · dep: [W2·29-WERKBANK-RECHNER] · feld: design · fahrplan: fahrplaene/FAHRPLAN-WERKBANK-UMBAU.md -->
   Ziel: Entscheid-Leser, Materialien, statische Seiten, mobile Breite und Druckansicht umziehen —
