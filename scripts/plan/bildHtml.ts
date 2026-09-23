@@ -407,7 +407,7 @@ export const FELD_PFADE: Record<string, readonly string[]> = {
   design: ['src/index.css', 'tailwind.config.js', 'DESIGN-REGLEMENT.md', 'src/components'],
   werkzeuge: ['src/lib', 'src/pages'],
   betrieb: ['.github', 'scripts/plan', '.claude'],
-  rechtslogik: ['src/lib/vorlagen', 'src/lib/tarif', 'src/data/tarif', 'src/lib/fristenspiegel'],
+  rechtslogik: ['src/lib', 'src/data'],
 };
 
 /** Pfad-Anker eines Baufelds; leer bei fehlendem oder unbekanntem Feld (§8: nichts raten). */
