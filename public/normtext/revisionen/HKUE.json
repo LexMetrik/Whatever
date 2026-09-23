@@ -1,8 +1,8 @@
 {
   "erlassKey": "HKUE",
   "sr": "0.211.230.02",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l’enlèvement international d’enfants",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/287/de",
-      "sha": "ea92e7f4fd9b1951bec3987da29c4ba5bd81993d6adca80d06d21c38c25c8024"
+      "sha": "2945aab36a46a6628830380b76d162c5c178eac8f1f85d2b204babe19c14faa2"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,12 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale di minori",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/685/de",
-      "sha": "5b7c015a59818f0a253abbea6e34f8841ee69a475020a0ce54031d527fe672d7"
+      "sha": "1467aea33db21c010cb72330ea6c07cd1aaa07b3f53cd8190b98d1f64f112ced"
     },
     {
       "art": "aenderung",
@@ -37,8 +44,12 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/197/de",
-      "sha": "26a75a60bb4d31fe9b708ca9ac20cad681f125b62c45541c47fcdd8f6bddc59c"
+      "sha": "5a7ea6721974b2f4a7fc3acfe3c42064a759a4c1ebae88913adeb20ceeb48765"
     },
     {
       "art": "aenderung",
@@ -49,8 +60,12 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/181/de",
-      "sha": "9f6fa01c578042945934c5bd44ac43f4a0fee8326f044eb8df366e6ab14b9ca0"
+      "sha": "d1abade8b72f2778d2df8a85d44c6dad6dac478ab390e79469c8e361fe01e989"
     },
     {
       "art": "aenderung",
@@ -61,8 +76,12 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/211/de",
-      "sha": "e52aaca7359f0f1ca6e7738d7596c5ed2d4fecb17842f614956841cf8483b15a"
+      "sha": "b169f6feda567cf82484e5276f2b072e66cc1a055b072fa9af6f38e74e25ab82"
     },
     {
       "art": "aenderung",
@@ -73,8 +92,12 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/213/de",
-      "sha": "20a2e5950d4fb24b64caa49e9488163028902c3418c568ac3ad3b63b9b879a01"
+      "sha": "1c54e7f152011791db846630458cbdf428d791ed67b191cc4ab67d70351c064a"
     },
     {
       "art": "aenderung",
@@ -85,8 +108,12 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/9/de",
-      "sha": "a8507ee65f873152b8535f6d72d9ca5e0f354b137b05df97e72897ecd011c768"
+      "sha": "5c4ee6d0eb338c31358d609122e113b143ee93e23f55beb0a10422968257655f"
     },
     {
       "art": "aenderung",
@@ -97,8 +124,12 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/642/de",
-      "sha": "d39031adbf260c0c31e52bc47a4b708d1d718cd8af8004ec022d95a813b72346"
+      "sha": "13531a1c6d366b73ede3b4620fe5858fed65a9e89837adbf15628389561708d6"
     },
     {
       "art": "aenderung",
@@ -109,8 +140,12 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/236/de",
-      "sha": "75b2087c85261081ac98a004910edc5580e212f988782da0e609cbf470f83905"
+      "sha": "da96d1691336d61a18e37078924eb020a6a038a93bf787e78acb135546be77f5"
     },
     {
       "art": "aenderung",
@@ -121,8 +156,12 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale di minori",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/497/de",
-      "sha": "5a7faa042588a64b47df8b59352772428f4e7baee5328120b47f92c08a825be8"
+      "sha": "783325c9ed066ab201481adf3d3ae4439ce98cd703114326062853955a203714"
     },
     {
       "art": "aenderung",
@@ -133,8 +172,11 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale di minori",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/380/de",
-      "sha": "6b33eb5390f1cfb818914667e171f0e73c5db6ff991d30ec2828ccb29764c9af"
+      "sha": "aeec65ef38aa37114ee257f57140d990002c6511e0556cf34199abe35772df4f"
     },
     {
       "art": "aenderung",
@@ -145,8 +187,12 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung (mit Beilage und Verzeichnis)",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants (avec annexe et liste)",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori (con Allegato e Lista)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/539/de",
-      "sha": "f20f012d60690264e5db1b2a6f79df982afc53c78f39fc6e3759fce1d1488b85"
+      "sha": "c56222986a7fc988668918cfbbba8f13bacc7c63e7a2f936fd3d4048b82d366b"
     },
     {
       "art": "aenderung",
@@ -157,21 +203,147 @@
       "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung (mit Beilage)",
       "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants (avec annexe)",
       "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori (con allegato)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/543/de",
-      "sha": "cc1fcc07bf77b7580907b96c69ecd36357fe8678a10f5edb62ca8f3dc0764ccc"
+      "sha": "3467819ae93d406e7e63eb91b3f77f888e05749bd724b00d42a3ae85158a4c2a"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1984-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1694_1694_1694",
-      "dateDocument": "1980-10-25",
-      "roFundstelle": "AS 1983 1694",
-      "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung (mit Beilage und Verzeichnis)",
-      "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants (CLaH 80) (avec annexe et liste)",
-      "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori (con all. e lista)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1694_1694_1694/de",
-      "sha": "9a37db3643a1d873a2cd0ebf8aeef6c0a0fce8019692b6fac0851b09fd8ed9b1"
+      "dateEntryInForce": "1994-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2269_2269_2269",
+      "dateDocument": "1994-10-01",
+      "roFundstelle": "AS 1994 2269",
+      "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
+      "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
+      "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2269_2269_2269/de",
+      "sha": "291e6a70847bb049f93e6fe53c58b1e5ce6e4d9865dbe01df98d160fb65a774c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1609_1609_1609",
+      "dateDocument": "1992-09-01",
+      "roFundstelle": "AS 1992 1609",
+      "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
+      "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
+      "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1609_1609_1609/de",
+      "sha": "8d9ee4c80d607dfca11ea6795c2d15df78e0e40eebc09be39261fd5616fadda7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-03-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/635_635_635",
+      "dateDocument": "1992-03-15",
+      "roFundstelle": "AS 1992 635",
+      "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
+      "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
+      "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/635_635_635/de",
+      "sha": "581dfadcd1713abd4a03eb89f45abd540ee0d7dcf6b7bf154aca0bc109bf9138"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/939_939_939",
+      "dateDocument": "1991-04-01",
+      "roFundstelle": "AS 1991 939",
+      "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
+      "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
+      "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/939_939_939/de",
+      "sha": "f172a6c112086724ca766bee6016a1cc7195ebcf50b0d21d44aab8c41e6bf743"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/687_687_687",
+      "dateDocument": "1990-05-01",
+      "roFundstelle": "AS 1990 687",
+      "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung, Änderung",
+      "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants, Modification",
+      "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/687_687_687/de",
+      "sha": "918081c831e584b876365cdc60e93eab7f2cdad83ee805add8226e038d96384e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/2021_2021_2021",
+      "dateDocument": "1988-12-01",
+      "roFundstelle": "AS 1988 2021",
+      "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung, Änderung",
+      "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants, Modification",
+      "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/2021_2021_2021/de",
+      "sha": "df91db8db7aa4f80531dbe35fe46a514f53dbbd0ec054b640d01f3b3f08d05b4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/494_494_494",
+      "dateDocument": "1987-04-01",
+      "roFundstelle": "AS 1987 494",
+      "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung, Änderung",
+      "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants, Modification",
+      "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/494_494_494/de",
+      "sha": "4163924ba6ca7480709bf0045102f99b54aedfcb7b6b1a683520dcbeeeaf207b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/1900_1900_1900",
+      "dateDocument": "1986-11-01",
+      "roFundstelle": "AS 1986 1900",
+      "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung, Änderung",
+      "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants, Modification",
+      "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/1900_1900_1900/de",
+      "sha": "d460f5e9edee8f910de9fe87b284dd08424396edeec932fd5e3ca563ff9672a9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/75_75_75",
+      "dateDocument": "1985-02-01",
+      "roFundstelle": "AS 1985 75",
+      "titelDe": "Übereinkommen vom 25. Oktober 1980 über die zivilrechtlichen Aspekte internationaler Kindesentführung",
+      "titelFr": "Convention du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
+      "titelIt": "Convenzione del 25 ottobre 1980 sugli aspetti civili del rapimento internazionale dei minori",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/75_75_75/de",
+      "sha": "1186edbb6e717896ad759b7420f34627ca9523ae4f069cbc48c96b86526f3496"
     }
   ],
-  "sha": "2c46e900cd9af85766ca507587ce4010de723b4b56ccb90574d071c7c97ba5f0"
+  "sha": "43bd76172561e403f80cdb11d89bd8b05310ef80ffecbc6adcd67e03c8839188"
 }

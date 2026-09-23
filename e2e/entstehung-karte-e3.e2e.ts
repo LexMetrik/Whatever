@@ -167,9 +167,19 @@ test.describe('W2·6c-E3 · Entstehung am Artikel', () => {
   test('(c) ohne erfasste Entstehung sagt die Karte genau das', async ({ page }) => {
     // BGBM führt eine Fassungshistorie, aber keine erfasste Änderung
     // (`public/materialien/entstehung/BGBM.json` existiert nicht, 11.9.2026).
-    await oeffneArtikel(page, '/gesetze/bund/BGBM', '2');
-    await page.locator(`#art-2 ${F_MARKE}`).click();
-    const block = page.locator(`#art-2 ${F_BLOCK}`);
+    // Fixture-Wechsel 23.9.2026 (PR #1001, Fedlex-Rechtsanalyse der
+    // Änderungsliste): BGBM.json existiert jetzt — Art. 2 trifft mit
+    // AS 2024 376 (oc/2024/376) eine erfasste Änderung und zeigt «1 von 5».
+    // Eine Bundes-Historie OHNE Entstehungsdatei gibt es nicht mehr (gemessen
+    // 23.9.2026: `comm -23` historie/ vs. entstehung/ = EAUE, HEUE, HKSUE96,
+    // UNO_BRK — alle ohne Artikel mit Ereignis). Geprüft wird deshalb derselbe
+    // Satz über den zweiten Zweig derselben Bedingung (`mitAenderung === 0`):
+    // BGBM Art. 3 trägt ein einziges Ereignis (AS 2006 2363, Fussnote ohne
+    // oc-URI), das keine erfasste Änderung trifft — der Artikel hat also eine
+    // Fassungshistorie, aber keine erfasste Entstehung.
+    await oeffneArtikel(page, '/gesetze/bund/BGBM', '3');
+    await page.locator(`#art-3 ${F_MARKE}`).click();
+    const block = page.locator(`#art-3 ${F_BLOCK}`);
     await expect(block).toBeVisible();
     // Die Zeitleiste steht unverändert — nur die Entstehung fehlt.
     await expect(block.locator('[data-historie-zeile]')).toHaveCount(1);

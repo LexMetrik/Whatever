@@ -2455,5 +2455,638 @@
     "2026-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1993/3080_3080_3080",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1993/3080_3080_3080",
+    "inkrafttreten": "1994-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/3080_3080_3080",
+        "typ": 5,
+        "datum": "1994-01-01",
+        "fassung": "1994-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/1400_1400_1400",
+        "typ": 1,
+        "datum": "1994-07-01",
+        "fassung": "1994-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/1826_1826_1826",
+        "typ": 6,
+        "datum": "1994-01-01",
+        "fassung": "1994-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/2485_2485_2485",
+        "typ": 1,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/3867_3867_3867",
+        "typ": 1,
+        "datum": "1996-01-01",
+        "fassung": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2685_2685_2685",
+        "typ": 1,
+        "datum": "1996-10-01",
+        "fassung": "1996-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2955_2955_2955",
+        "typ": 1,
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2751_2751_2751",
+        "typ": 1,
+        "datum": "1998-01-01",
+        "fassung": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2751_2751_2751",
+        "typ": 2,
+        "datum": "1998-01-01",
+        "fassung": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/2680_2680_2680",
+        "typ": 1,
+        "datum": "1999-01-01",
+        "fassung": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/342",
+        "typ": 1,
+        "datum": "1999-06-01",
+        "fassung": "1999-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/427",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/445",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/514",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/514",
+        "typ": 2,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/561",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/141",
+        "typ": 1,
+        "datum": "2002-05-01",
+        "fassung": "2002-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/517",
+        "typ": 1,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/617",
+        "typ": 1,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/617",
+        "typ": 2,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/300",
+        "typ": 1,
+        "datum": "2003-07-01",
+        "fassung": "2003-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/564",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/678",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/754",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/689",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/786",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/473",
+        "typ": 1,
+        "datum": "2005-07-01",
+        "fassung": "2005-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/473",
+        "typ": 2,
+        "datum": "2005-07-01",
+        "fassung": "2005-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/773",
+        "typ": 1,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/698",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 2,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/931",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/730",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/610",
+        "typ": 1,
+        "datum": "2010-01-01",
+        "fassung": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/790",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/869",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/709",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/665",
+        "typ": 1,
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/25",
+        "typ": 1,
+        "datum": "2015-02-01",
+        "fassung": "2015-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/724",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/725",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/705",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/705",
+        "typ": 2,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/810",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/669",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/670",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/619",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/888",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/918",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/949",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/655",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/633",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/705",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/814",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/506",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/679",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/660",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/698",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/273",
+        "typ": 1,
+        "datum": "2025-06-01",
+        "fassung": "2025-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/763",
+        "typ": 1,
+        "datum": "2026-01-01",
+        "fassung": "2026-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1994/1400_1400_1400": {
+        "dateForce": "1994-07-01",
+        "dateDoc": "1994-06-06",
+        "roId": "RO 1994 1400",
+        "titelDe": "Verordnung über die Militärversicherung, Änderung",
+        "titelFr": "Ordonnance sur l'assurance militaire, Modification",
+        "titelIt": "Ordinanza sull'assicurazione militare, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/1826_1826_1826": {
+        "dateForce": "1994-01-01",
+        "dateDoc": "1994-08-30",
+        "roId": "RO 1994 1826",
+        "titelDe": "Verordnung über die Militärversicherung, Berichtigung (nur ital.)",
+        "titelFr": "Ordonnance sur l'assurance militaire, Errata (seulement en italien)",
+        "titelIt": "Ordinanza sull'assicurazione militare, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/2485_2485_2485": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1994-11-02",
+        "roId": "RO 1994 2485",
+        "titelDe": "Verordnung 95 vom 2. November 1994 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance 95 du 2 novembre 1994 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza 95 del 2 novembre 1994 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei salari e dei prezzi (Ordinanza sull'adeguamento AM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/3867_3867_3867": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1995-06-27",
+        "roId": "RO 1995 3867",
+        "titelDe": "Verordnung vom 27. Juni 1995 über die Krankenversicherung (KVV)",
+        "titelFr": "Ordonnance du 27 juin 1995 sur l'assurance-maladie (OAMal)",
+        "titelIt": "Ordinanza del 27 giugno 1995 sull'assicurazione malattie (OAMal)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/2685_2685_2685": {
+        "dateForce": "1996-10-01",
+        "dateDoc": "1996-09-11",
+        "roId": "RO 1996 2685",
+        "titelDe": "Verordnung vom 11. September 1996 über den zivilen Ersatzdienst (Zivildienstverordnung, ZDV)",
+        "titelFr": "Ordonnance du 11 septembre 1996 sur le service civil (OSCi)",
+        "titelIt": "Ordinanza dell'11 settembre 1996 sul servizio civile (OSCi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/2955_2955_2955": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-10-30",
+        "roId": "RO 1996 2955",
+        "titelDe": "Verordnung 97 vom 30. Oktober 1996 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance 97 du 30 octobre 1996 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza 97 del 30 ottobre 1996 sull'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei salari e dei prezzi (Ordinanza AM sull'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2751_2751_2751": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-11-19",
+        "roId": "RO 1997 2751",
+        "titelDe": "Verordnung über die Militärversicherung (MVV), Änderung",
+        "titelFr": "Ordonnance sur l'assurance militaire (OAM), Modification",
+        "titelIt": "Ordinanza sull'assicurazione militare (OAM), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/2680_2680_2680": {
+        "dateForce": "1999-01-01",
+        "dateDoc": "1998-11-11",
+        "roId": "RO 1998 2680",
+        "titelDe": "Verordnung 99 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance 99 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza 99 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei salari e dei prezzi (Ordinanza AM concernente l'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/445": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "2000-11-08",
+        "roId": "RO 2000 2696",
+        "titelDe": "Verordnung 01 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance 01 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza 01 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei salari e dei prezzi (Ordinanza AM concernente l'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/141": {
+        "dateForce": "2002-05-01",
+        "dateDoc": "2002-04-10",
+        "roId": "RO 2002 723",
+        "titelDe": "Verordnung über die Rekrutierung (VREK)",
+        "titelFr": "Ordonnance sur le recrutement (OREC)",
+        "titelIt": "Ordinanza sul reclutamento (OREC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/517": {
+        "dateForce": "2003-01-01",
+        "dateDoc": "2002-10-23",
+        "roId": "RO 2002 3483",
+        "titelDe": "Verordnung 03 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance 03 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza 03 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei salari e dei prezzi (Ordinanza AM concernente l'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/678": {
+        "dateForce": "2004-01-01",
+        "dateDoc": "2003-11-26",
+        "roId": "RO 2003 4599",
+        "titelDe": "Verordnung über die vordienstliche Ausbildung (VAusb)",
+        "titelFr": "Ordonnance concernant l'instruction prémilitaire (OInstr prém)",
+        "titelIt": "Ordinanza concernente l'istruzione premilitare (OISP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/754": {
+        "dateForce": "2004-01-01",
+        "dateDoc": "2003-12-05",
+        "roId": "RO 2003 5119",
+        "titelDe": "Verordnung über das Schiesswesen ausser Dienst (Schiessverordnung)",
+        "titelFr": "Ordonnance sur le tir hors du service (Ordonnance sur le tir)",
+        "titelIt": "Ordinanza sul tiro fuori del servizio (Ordinanza sul tiro)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/689": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2004-10-27",
+        "roId": "RO 2004 4545",
+        "titelDe": "Verordnung 05 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance 05 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza 05 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei salari e dei premi (Ordinanza AM concernente l'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/698": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-11-01",
+        "roId": "RO 2006 4555",
+        "titelDe": "Verordnung 07 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance 07 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza 07 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/725": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-11-08",
+        "roId": "RO 2006 4705",
+        "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+        "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/633": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-08-22",
+        "roId": "RO 2007 4477",
+        "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/730": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2008-10-29",
+        "roId": "RO 2008 5193",
+        "titelDe": "Verordnung 09 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance 09 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza 09 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/790": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-11-17",
+        "roId": "RO 2010 5527",
+        "titelDe": "Verordnung 11 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance 11 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza 11 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/869": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-11-30",
+        "roId": "RO 2012 7167",
+        "titelDe": "Verordnung 13 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance 13 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza 13 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/665": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-11-05",
+        "roId": "RO 2014 3893",
+        "titelDe": "Verordnung 15 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance 15 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza 15 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/25": {
+        "dateForce": "2015-02-01",
+        "dateDoc": "2014-12-17",
+        "roId": "RO 2015 195",
+        "titelDe": "Verordnung über den Zivilschutz (Zivilschutzverordnung, ZSV)",
+        "titelFr": "Ordonnance sur la protection civile (OPCi)",
+        "titelIt": "Ordinanza sulla protezione civile (OPCi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/724": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-11-09",
+        "roId": "RO 2016 4393",
+        "titelDe": "Verordnung über die Unfallversicherung (UVV)",
+        "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
+        "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/725": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-11-09",
+        "roId": "RO 2016 4417",
+        "titelDe": "Verordnung 17 über die Anpassung der Leistungen der Militärversicherung an die Lohn-und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance 17 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza 17 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/810": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-11-22",
+        "roId": "RO 2017 7405",
+        "titelDe": "Verordnung über die Militärdienstpflicht (VMDP)",
+        "titelFr": "Ordonnance sur les obligations militaires (OMi)",
+        "titelIt": "Ordinanza concernente l'obbligo di prestare servizio militare (OOPSM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/670": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-10-31",
+        "roId": "RO 2018 4147",
+        "titelDe": "Verordnung über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/888": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-11-11",
+        "roId": "RO 2020 5031",
+        "titelDe": "Verordnung über den Zivilschutz (Zivilschutzverordnung, ZSV)",
+        "titelFr": "Ordonnance sur la protection civile (OPCi)",
+        "titelIt": "Ordinanza sulla protezione civile (OPCi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/949": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-11-25",
+        "roId": "RO 2020 5443",
+        "titelDe": "Verordnung über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+        "titelIt": "Ordinanza concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/705": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-11-16",
+        "titelDe": "Verordnung vom 16. November 2022 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung\n(MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance du 16 novembre 2022 sur l’adaptation des prestations de l’assurance militaire à l’évolution des salaires et des prix\n(Ordonnance AM sur l’adaptation)",
+        "titelIt": "Ordinanza del 16 novembre 2022 concernente l’adeguamento delle prestazioni dell’assicurazione militare all’evoluzione dei prezzi e dei salari\n(Ordinanza AM concernente l’adeguamento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/814": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-11-23",
+        "titelDe": "Verordnung über die Krankenversicherung (KVV)",
+        "titelFr": "Ordonnance sur l’assurance-maladie (OAMal)",
+        "titelIt": "Ordinanza sull’assicurazione malattie (OAMal)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/506": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-08-30",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/698": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-11-20",
+        "titelDe": "Verordnung vom 20. November 2024 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+        "titelFr": "Ordonnance du 20 novembre 2024 sur l’adaptation des prestations de l’assurance militaire à l’évolution des salaires et des prix (Ordonnance AM sur l’adaptation)",
+        "titelIt": "Ordinanza del 20 novembre 2024 concernente l’adeguamento delle prestazioni dell’assicurazione militare all’evoluzione dei prezzi e dei salari (Ordinanza AM concernente l’adeguamento)"
+      }
+    }
+  }
 }

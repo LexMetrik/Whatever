@@ -1490,5 +1490,184 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2000/243",
       "zielFundstelle": "AS 2000 1581"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2000/243",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2000/243",
+    "inkrafttreten": "2000-08-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/243",
+        "typ": 5,
+        "datum": "2000-08-01",
+        "fassung": "2000-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/200",
+        "typ": 1,
+        "datum": "2002-06-01",
+        "fassung": "2002-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/277",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 2,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/692",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/692",
+        "typ": 2,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/725",
+        "typ": 1,
+        "datum": "2008-12-01",
+        "fassung": "2008-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/292",
+        "typ": 1,
+        "datum": "2009-06-01",
+        "fassung": "2009-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/414",
+        "typ": 1,
+        "datum": "2010-08-01",
+        "fassung": "2010-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/455",
+        "typ": 1,
+        "datum": "2011-08-01",
+        "fassung": "2011-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/455",
+        "typ": 2,
+        "datum": "2011-08-01",
+        "fassung": "2011-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/227",
+        "typ": 1,
+        "datum": "2014-06-01",
+        "fassung": "2014-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/787",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/754",
+        "typ": 1,
+        "datum": "2020-11-01",
+        "fassung": "2020-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/543",
+        "typ": 1,
+        "datum": "2021-11-01",
+        "fassung": "2021-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/100",
+        "typ": 1,
+        "datum": "2022-04-01",
+        "fassung": "2022-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/158",
+        "typ": 6,
+        "datum": "2022-03-10",
+        "fassung": "2022-03-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/105",
+        "typ": 1,
+        "datum": "2024-04-01",
+        "fassung": "2024-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/316",
+        "typ": 1,
+        "datum": "2024-09-01",
+        "fassung": "2024-09-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2007/633": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-08-22",
+        "roId": "RO 2007 4477",
+        "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/692": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-09-28",
+        "roId": "RO 2007 4959",
+        "titelDe": "Verordnung 5 zum Arbeitsgesetz (Jugendarbeitsschutzverordnung, ArGV 5) ",
+        "titelFr": "Ordonnance 5 relative à la loi sur le travail (Ordonnance sur la protection des jeunes travailleurs, OLT 5)",
+        "titelIt": "Ordinanza 5 concernente la legge sul lavoro (Ordinanza sulla protezione dei giovani lavoratori, OLL 5)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/418": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 3631",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+        "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/543": {
+        "dateForce": "2021-11-01",
+        "dateDoc": "2021-09-01",
+        "titelDe": "Verordnung 2 zum Arbeitsgesetz (ArGV 2) (Sonderbestimmungen für bestimmte Gruppen von Betrieben oder Arbeitnehmern und Arbeitnehmerinnen)",
+        "titelFr": "Ordonnance 2 relative à la loi sur le travail (OLT 2) (Dispositions spéciales pour certaines catégories d’entreprises ou de travailleurs)",
+        "titelIt": "Ordinanza 2 concernente la legge sul lavoro (OLL 2) (Disposizioni speciali per determinate categorie di aziende e di lavoratori)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/568": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2022-08-31",
+        "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+        "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+        "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)"
+      }
+    }
   }
 }

@@ -1,14 +1,43 @@
 {
   "erlassKey": "RPV",
   "sr": "700.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2026-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/488",
+      "dateDocument": "2026-09-18",
+      "roFundstelle": "AS 2026 488",
+      "titelDe": "Verordnung über das Bundesinventar der schützenswerten Ortsbilder der Schweiz (VISOS)",
+      "titelFr": "Ordonnance concernant l’Inventaire fédéral des sites construits à protéger en Suisse (OISOS)",
+      "titelIt": "Ordinanza riguardante l’inventario federale degli insediamenti svizzeri da proteggere (OISOS)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/488/de",
+      "sha": "a7f31eed0b66e7fcaca69aa442795094ee7241edee25cbb4dae555086c622755"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2026-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/700.1",
-      "sha": "2b19d79e3d46588510bff2120b420177208a3a4949436a67d878c8b305b276de"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/659",
+      "dateDocument": "2025-10-15",
+      "roFundstelle": "AS 2025 659",
+      "titelDe": "Raumplanungsverordnung (RPV)",
+      "titelFr": "Ordonnance sur l’aménagement du territoire (OAT)",
+      "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-01-01",
+        "2026-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/659/de",
+      "sha": "22276464c96f134a73ef194770f5a04e4f4681b0d856e9bad8a94b37f5c32004"
     },
     {
       "art": "aenderung",
@@ -19,8 +48,11 @@
       "titelDe": "Raumplanungsverordnung (RPV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur l’aménagement du territoire (OAT). Erratum",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/227/de",
-      "sha": "5d8edf47c882f49a2728c35b0043632a244ea910de82bf9e2d255c9b5d3ff264"
+      "sha": "880b37ceafd6dd87415a86505286a886da11f33a12d88c6795b8a8015ba8dc99"
     },
     {
       "art": "aenderung",
@@ -31,8 +63,15 @@
       "titelDe": "Raumplanungsverordnung (RPV)",
       "titelFr": "Ordonnance sur l’aménagement du territoire (OAT)",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-01-01",
+        "2026-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/659/de",
-      "sha": "497aa64641b18de4c433cf9b0e0b257ac0d81cd618fb8329b15e96ae422b56c7"
+      "sha": "c0602db30e3c5d5c415f398643910e10bcbd6daabfce9fd2c1a88af133f6c63a"
     },
     {
       "art": "aenderung",
@@ -43,8 +82,11 @@
       "titelDe": "Raumplanungsverordnung (RPV). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur l’aménagement du territoire (OAT). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/762/de",
-      "sha": "854f5c9931c1a586634e8177d1f31d0fc81d2d9b1376bb90c449f24988e7aed0"
+      "sha": "8d6417f0765f4bd127e96404d30b32350cbcf5122f13c338ca324ad488a7c935"
     },
     {
       "art": "aenderung",
@@ -55,8 +97,11 @@
       "titelDe": "Raumplanungsverordnung (RPV)",
       "titelFr": "Ordonnance sur l’aménagement du territoire (OAT)",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/357/de",
-      "sha": "1e54cdf6774d823b1ce2d2769db2359821fa6562530bcaca77e083f1485ef299"
+      "sha": "0a60292f15cbd0d195db750122b97d32e0d2e543eb81860f1907c07af2fd184e"
     },
     {
       "art": "aenderung",
@@ -67,8 +112,11 @@
       "titelDe": "Raumplanungsverordnung (RPV)",
       "titelFr": "Ordonnance sur l'aménagement du territoire (OAT)",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/1010/de",
-      "sha": "84a55c07fd29940307df5ab37a1f7130458054f8c68e3fdb64b61e1f96ad8304"
+      "sha": "0533a160746630c02057180b824159fc17c52b2f8ad847d8b0279052a1e01069"
     },
     {
       "art": "aenderung",
@@ -79,8 +127,11 @@
       "titelDe": "Raumplanungsverordnung (RPV)",
       "titelFr": "Ordonnance sur l'aménagement du territoire (OAT)",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/333/de",
-      "sha": "276a52535c2275f3690e4724ae1c79fc59f3a787b19c1095cb4eb9065358fa18"
+      "sha": "f85725ddc42eb8a4bc3bf50bef3849fdd2e5b76befadb55cae362dcfd18b9357"
     },
     {
       "art": "aenderung",
@@ -91,8 +142,11 @@
       "titelDe": "Raumplanungsverordnung (RPV)",
       "titelFr": "Ordonnance sur l'aménagement du territoire (OAT)",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/67/de",
-      "sha": "0af83f588d5f9b081ac36663123df09ad8ac332041faadd8c5380dfd31fb80c3"
+      "sha": "c8ad000eecc38b8af8bb5b7d3608f3637b9e8e076d26375b238cde66cc724e3b"
     },
     {
       "art": "aenderung",
@@ -103,8 +157,11 @@
       "titelDe": "Raumplanungsverordnung (RPV)",
       "titelFr": "Ordonnance sur l'aménagement du territoire (OAT)",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/654/de",
-      "sha": "2a4a5446b4e089ef5d77cb43091fa3290a2f4e0f0f9335adf0b6d9d162a3dcc8"
+      "sha": "458da2ad96effbcb49aabd4a90c95344388573d669b78ef8d27b5631edbb27cc"
     },
     {
       "art": "aenderung",
@@ -115,20 +172,56 @@
       "titelDe": "Raumplanungsverordnung (RPV)",
       "titelFr": "Ordonnance sur l'aménagement du territoire (OAT)",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/252/de",
-      "sha": "7e6d3badcfd7c5ab8c7abe43cd8452e1709d72ece9c46832801de0f59f687967"
+      "sha": "fb69558545336a6b7898149fc761f0a0a88611bce3855574939b57aca5684763"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/700.1",
-      "sha": "47347cf4b651c68ddbea2f74004e10c77358ca29f8b70a56f71acef54062df68"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/887",
+      "dateDocument": "2015-12-04",
+      "roFundstelle": "AS 2015 5669",
+      "titelDe": "Zweitwohnungsverordnung (ZWV)",
+      "titelFr": "Ordonnance sur les résidences secondaires (ORSec)",
+      "titelIt": "Ordinanza sulle abitazioni secondarie (OASec)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/887/de",
+      "sha": "dfc5dbd43049fb8bcfb8bcff0adf5d6133d24525b37f7d27bef382040b21ed57"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/700.1",
-      "sha": "8de72ae6ef15d8a9b16eef22fab78bbdadde633cf518822e2a28a40d772a6805"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/616",
+      "dateDocument": "2014-10-29",
+      "roFundstelle": "AS 2014 3555",
+      "titelDe": "Verordnung über den Schutz der Kulturgüter bei bewaffneten Konflikten, bei Katastrophen und in Notlagen (KGSV)",
+      "titelFr": "Ordonnance sur la protection des biens culturels en cas de conflit armé, de catastrophe ou de situation d'urgence (OPBC)",
+      "titelIt": "Ordinanza sulla protezione dei beni culturali in caso di conflitti armati, catastrofi e situazioni d'emergenza (OPBC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/616/de",
+      "sha": "5a36e1d48c1e67d90c0a72f2d20d048cb3c49d92344288bb33bbdaa33480e6d1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/669",
+      "dateDocument": "2014-10-29",
+      "roFundstelle": "AS 2014 3909",
+      "titelDe": "Verordnung über die Direktzahlungen an die Landwirtschaft (Direktzahlungsverordnung, DZV)",
+      "titelFr": "Ordonnance sur les paiements directs versés dans l'agriculture (Ordonnance sur les paiements directs, OPD)",
+      "titelIt": "Ordinanza concernente i pagamenti diretti all'agricoltura (Ordinanza sui pagamenti diretti, OPD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/669/de",
+      "sha": "13b3765a32cd97d1f815770de3a7f2573301dd4a206f05b76a00b83cf8c89cc8"
     },
     {
       "art": "aenderung",
@@ -139,20 +232,57 @@
       "titelDe": "Raumplanungsverordnung (RPV)",
       "titelFr": "Ordonnance sur l'aménagement du territoire (OAT)",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/199/de",
-      "sha": "58e2567d1a43f9addbadb85ee473fd43e2324b6441f28c7dfb47c31d0e2a6bcf"
+      "sha": "04cc74332bc2fc77e33135c1fdf38306855c8a6dd2203465095a086c4ff80503"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/700.1",
-      "sha": "a0e02774c33d052bb903747f2c1be5214b3fa3155829fb8829d80a39bbf3ffe3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/765",
+      "dateDocument": "2013-10-23",
+      "roFundstelle": "AS 2013 4145",
+      "titelDe": "Verordnung über die Direktzahlungen an die Landwirtschaft (Direktzahlungsverordnung, DZV)",
+      "titelFr": "Ordonnance sur les paiements directs versés dans l'agriculture (Ordonnance sur les paiements directs, OPD)",
+      "titelIt": "Ordinanza concernente i pagamenti diretti all'agricolt ura (Ordinanza sui pagamenti diretti, OPD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/765/de",
+      "sha": "43c9e803093fbed2769f48d498b09b87bcd8d43c3756eb83ea9886574e3e538c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/700.1",
-      "sha": "024f94a33cffe3e117101f14eb41ab8aa899a219f5985256a3b3df8674327558"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3631",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/418/de",
+      "sha": "cc366b052f45678f6292fa3ed75ee05d752a3862952f1b32edfc0aaf66630b2f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/556",
+      "dateDocument": "2012-08-22",
+      "roFundstelle": "AS 2012 4583",
+      "titelDe": "Verordnung über Zweitwohnungen",
+      "titelFr": "Ordonnance sur les résidences secondaires",
+      "titelIt": "Ordinanza sulle abitazioni secondarie",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/556/de",
+      "sha": "d8acfe98eb7665169ec0dcb520ce98edc563353fb0c73999ec6e2c87f1053b97"
     },
     {
       "art": "aenderung",
@@ -163,14 +293,26 @@
       "titelDe": "Raumplanungsverordnung (RPV)",
       "titelFr": "Ordonnance sur l'aménagement du territoire (OAT)",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/641/de",
-      "sha": "200d6d7b2b24c837e520ba68ca4463c78c85fcbcc593fdeca9e5d900966cb7c9"
+      "sha": "b4edb506048da821eb95cfc56039869a2924de411ed182d2085fe0c2b5cd0789"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/700.1",
-      "sha": "1f6ef66f3c80f25f4d0fa3b3c05394d6b859abae6765b2a0faa36c20f4286e83"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/429",
+      "dateDocument": "2009-06-24",
+      "roFundstelle": "AS 2009 3507",
+      "titelDe": "Verordnung über das Plangenehmigungsverfahren für elektrische Anlagen (VPeA)",
+      "titelFr": "Ordonnance sur la procédure d'approbation des plans d'installations électriques (OPIE)",
+      "titelIt": "Ordinanza sulla procedura d'approvazione dei piani di impianti elettrici (OPIE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/429/de",
+      "sha": "309bebf97ad27d45a246ce271ce2fb247455fee74893d674a5ba37e6b7053570"
     },
     {
       "art": "aenderung",
@@ -181,20 +323,41 @@
       "titelDe": "Raumplanungsverordnung (RPV)",
       "titelFr": "Ordonnance sur l'aménagement du territoire (OAT)",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/453/de",
-      "sha": "56d8d6797430103fde3bd0981247d66ad82864707a6d05feb101f46fee3a1e9a"
+      "sha": "514b17904044a053be1702df2a9b7b1969146f7dba1453fb33273faf16c9a794"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/700.1",
-      "sha": "7a584e5da6dbd885f406d76fc9f635cd83b9eb6ad2efbe728f0857d5c0f990c7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4705",
+      "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "sha": "509e7b22613546560d1e36883c9ec32fce8a8368a2969478863a0cb4a567bbfd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/700.1",
-      "sha": "42b21e6e74d70b821ff58ed81f2a90d7c7d71b123aa3ff6c7cf0460c6309b1d9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/718",
+      "dateDocument": "2003-11-26",
+      "roFundstelle": "AS 2003 4873",
+      "titelDe": "Verordnung über landwirtschaftliche Begriffe und die Anerkennung von Betriebsformen (Landwirtschaftliche Begriffsverordnung, LBV)",
+      "titelFr": "Ordonnance sur la terminologie agricole et la reconnaissance des formes d'exploitation (Ordonnance sur la terminologie agricole, OTerm)",
+      "titelIt": "Ordinanza sulla terminologia agricola e sul riconoscimento delle forme di azienda (Ordinanza sulla terminologia agricola, OTerm)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/718/de",
+      "sha": "807c9df8120f88bb88dfca3f7699852d9c2538107a7a1193a605b1d0811e355e"
     },
     {
       "art": "aenderung",
@@ -205,69 +368,12 @@
       "titelDe": "Raumplanungsverordnung (RPV)",
       "titelFr": "Ordonnance sur l'aménagement du territoire (OAT)",
       "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/236/de",
-      "sha": "78dc3c613f269651b75cdff31b4b198a2c50ecf87580bec9c0337b0b1b1da787"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2000-09-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/310",
-      "dateDocument": "2000-06-28",
-      "roFundstelle": "AS 2000 2047",
-      "titelDe": "Raumplanungsverordnung (RPV)",
-      "titelFr": "Ordonnance sur l'aménagement du territoire (OAT)",
-      "titelIt": "Ordinanza sulla pianificazione del territorio (OPT)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/310/de",
-      "sha": "aa031b9bfa22cf300fa93c0cb5cbda029e42a905be1049c2ba81b40b5d951cf0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1989-10-20",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/1985_1985_1985",
-      "dateDocument": "1989-10-02",
-      "roFundstelle": "AS 1989 1985",
-      "titelDe": "Verordnung vom 2. Oktober 1989 über die Raumplanung (RPV)",
-      "titelFr": "Ordonnance du 2 octobre 1989 sur l'aménagement du territoire (OAT)",
-      "titelIt": "Ordinanza del 2 ottobre 1989 sulla pianificazione del territorio (OPT)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/1985_1985_1985/de",
-      "sha": "45db2fcf28f8a3da7f73768774acb453415b04738fe6ee8b2dd6b7ca33d99fe0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1986-05-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/626_626_626",
-      "dateDocument": "1986-03-26",
-      "roFundstelle": "AS 1986 626",
-      "titelDe": "Verordnung vom 26. März 1986 über die Raumplanung",
-      "titelFr": "Ordonnance du 26 mars 1989 sur l'aménagement du territoire",
-      "titelIt": "Ordinanza del 26 marzo 1986 sulla pianificazione del territorio",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/626_626_626/de",
-      "sha": "cf64516c3151b8113829b633082fa85deacd51e8a95b75b00fd2302a167820bb"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1981-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1981/1410_1410_1410",
-      "dateDocument": "1981-08-26",
-      "roFundstelle": "AS 1981 1410",
-      "titelDe": "Verordnung vom 26. August 1981 über die Raumplanung",
-      "titelFr": "Ordonnance du 26 août 1981 sur l'aménagement du territoire",
-      "titelIt": "Ordinanza del 26 agosto 1981 sulla pianificazione del territorio",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1981/1410_1410_1410/de",
-      "sha": "af14c6401f6c6dc2f8e88ba3cdd3504f5dbdec2f089a2eb8a2d2ef5fde26e3a7"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1972-03-29",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/686_694_618",
-      "dateDocument": "1972-03-29",
-      "roFundstelle": "AS 1972 686",
-      "titelDe": "Vollziehungsverordnung vom 29. März 1972 zum Bundesbeschluss vom 29. März 1972 über dringliche Massnahmen auf dem Gebiete der Raumplanung",
-      "titelFr": "Ordonnance d'exécution du 29 mars 1972 de l'arrêté fédéral instituant des mesures urgentes en matière d'aménagement du territoire",
-      "titelIt": "Ordinanza d'esecuzione del 29 marzo 1972 del decreto federale su alcuni provvedimenti urgenti nell'ambito della pianificazione del territorio",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/686_694_618/de",
-      "sha": "45d3a4eafa31c276eef2073789be0ed6b339dbf1c411e2aea76a40a8a50d658c"
+      "sha": "f8421ef5c595a2cca841a601a1b0ea07a9e83c17918ba77e72107fb67f593b45"
     }
   ],
-  "sha": "4e2fefd3bfee99f1acaa11e762330f372aeb4b07d5f525122575dbd6f23cf940"
+  "sha": "df810a1491beda53b0cbdb35f3e2a143df0a91a6567eeae9887f6bde03acca55"
 }

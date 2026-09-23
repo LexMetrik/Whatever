@@ -1,8 +1,8 @@
 {
   "erlassKey": "CHEMV",
   "sr": "813.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,14 +13,26 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim). Erratum",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/176/de",
-      "sha": "1f74a4f5631058b1fe3040480761669a8de7eda3950f51f6d497ad9b347adb07"
+      "sha": "354594aa1ebbce445dc7afb5e49a49b0fab8d92c96ba43127ef09e45ab0827ee"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/813.11",
-      "sha": "5de634423c2c20cbea766470e11975073c43673f1d70ad32cd1e4fb8405cc8f3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/565",
+      "dateDocument": "2025-08-20",
+      "roFundstelle": "AS 2025 565",
+      "titelDe": "Pflanzenschutzmittelverordnung vom 20. August 2025 (PSMV)",
+      "titelFr": "Ordonnance du 20 août 2025 sur les produits phytosanitaires (OPPh)",
+      "titelIt": "Ordinanza del 20 agosto 2025 sui prodotti fitosanitari (OPF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/565/de",
+      "sha": "b81539a4500681fe57830455c65e64492c5350947878ab6b1bbcb7514eb54069"
     },
     {
       "art": "aenderung",
@@ -31,8 +43,11 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/506/de",
-      "sha": "b9554141ab364fcc2779ba8744d11fcaa08643c3fc120c9c5695660b7bff19f6"
+      "sha": "4000ecf5f6065e7e21f9b12cd738cd745391e687e2e4bf5e169996b12cc58b1b"
     },
     {
       "art": "aenderung",
@@ -43,14 +58,26 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, Ochim). Erratum",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/536/de",
-      "sha": "719864866e93c36a17ea59bf6f937b4c83825f7bd322a0cb5dbc1a4a2e4f5a65"
+      "sha": "7653bd2483f36322629e5fe585de67dc102c61e68a5fd89f5cf342ad629912a0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/813.11",
-      "sha": "9eca2b9241f779a599ddf9323328591a730f7fe5eef559eadc09002d46d80218"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/491",
+      "dateDocument": "2024-08-28",
+      "roFundstelle": "AS 2024 491",
+      "titelDe": "Verordnung vom 28. August 2024 über Tabakprodukte und elektronische Zigaretten (Tabakprodukteverordnung, TabPV)",
+      "titelFr": "Ordonnance du 28 août 2024 sur les produits du tabac et les cigarettes électroniques (Ordonnance sur les produits du tabac, OPTab)",
+      "titelIt": "Ordinanza del 28 agosto 2024 sui prodotti del tabacco e sulle sigarette elettroniche (Ordinanza sui prodotti del tabacco, OPTab)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/491/de",
+      "sha": "dade48ffc186690fbc7255d9da5e033ec5d855b3b778f4819c702f1db3523df0"
     },
     {
       "art": "aenderung",
@@ -61,14 +88,41 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/404/de",
-      "sha": "daf60e81c0c9b5761304569543e2037d275813617512a1faed813b9c9b2485a1"
+      "sha": "f075f435b51f9ca69d23fdc1de9953c5ea87d864c34ceda3ed9cec3ccd32d328"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/813.11",
-      "sha": "e121e41ebdc9259fe4af9b66f24d02a1489723123183895e33dc38d16a467909"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/709",
+      "dateDocument": "2023-11-15",
+      "roFundstelle": "AS 2023 709",
+      "titelDe": "Verordnung über das Inverkehrbringen von und den Umgang mit Biozidprodukten (Biozidprodukteverordnung, VBP)",
+      "titelFr": "Ordonnance concernant la mise sur le marché et l’utilisation des produits biocides (Ordonnance sur les produits biocides, OPBio)",
+      "titelIt": "Ordinanza concernente l’immissione sul mercato e l’utilizzazione di biocidi (Ordinanza sui biocidi, OBioc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/709/de",
+      "sha": "dd25d8bdaab08d7d120f2bbb96ece1c4d50480971d57b6c33fe2e552a2412355"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/711",
+      "dateDocument": "2023-11-01",
+      "roFundstelle": "AS 2023 711",
+      "titelDe": "Verordnung vom 1. November 2023 über das Inverkehrbringen von Düngern (Düngerverordnung, DüV)",
+      "titelFr": "Ordonnance du 1er novembre 2023 sur la mise en circulation des engrais (Ordonnance sur les engrais, OEng)",
+      "titelIt": "Ordinanza del 1° novembre 2023 sulla messa in commercio di concimi (Ordinanza sui concimi, OCon)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/711/de",
+      "sha": "fc8b7061e15e6ab3ab155610508f30c9374cfa14887bc7a0fd6bed572786e51f"
     },
     {
       "art": "aenderung",
@@ -79,8 +133,11 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/517/de",
-      "sha": "6fed99f5b53e7b62206a8870c148dc0138d4783cbf0c591aff760503462fb73f"
+      "sha": "128ae8683d0cf60b02fa015728f9d6fa16ef33dad4580df5786dfcd31215200e"
     },
     {
       "art": "aenderung",
@@ -91,8 +148,11 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV). Berichtigung (Betrifft nur den französischen und italienischen Text)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim). Erratum",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/193/de",
-      "sha": "c933ac4b2c02f083cece8a10f8172fbc5a9d78f40b8b70a663ef836abef8da27"
+      "sha": "e9654e21e360d0275c8229e3cbd80f4e6967babfb6f26097fd5756550d434bbe"
     },
     {
       "art": "aenderung",
@@ -103,8 +163,11 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/444/de",
-      "sha": "93bbe9e4c3e4bff5c58fc85fe5b881454f701bf32d06d610a14f016df752f52d"
+      "sha": "bd03205e0b3990397b9b5a29c60f9ec126d0ea0643fa015ac6146b62457fa494"
     },
     {
       "art": "aenderung",
@@ -115,8 +178,11 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim). Erratum",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/273/de",
-      "sha": "79c7aa5b6aa9ba3b32535f88241099e3e1652ce7cf99e890b456bbded6246a05"
+      "sha": "57e30e2d5f93a037f6cc7807e01ee04bc84eef1aa73669bfc0dae0e8fbb95d06"
     },
     {
       "art": "aenderung",
@@ -127,8 +193,12 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/220/de",
-      "sha": "be0daf006d64d437c7dba7a06db37f352d015109f2b9a74251a1615acd268c9e"
+      "sha": "9b1e274ebc024ac3601d70bc947386bd25996f521ce7a6a289414c860483feeb"
     },
     {
       "art": "aenderung",
@@ -139,14 +209,30 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/927/de",
-      "sha": "b04636b4b0484f677b526ea5f7b3ee999e30b8b6e50551deb8cf01d1039dad7a"
+      "sha": "a502b469df48229bc7b31535af97e7bc50f52ea71c4f2cf94514d1b84b98bb60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/813.11",
-      "sha": "7c9222c62435b91b30492c04c9234b7aab817be14d3c5c481c6f155740ebae12"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/891",
+      "dateDocument": "2020-11-18",
+      "roFundstelle": "AS 2020 5125",
+      "titelDe": "Verordnung über das Inverkehrbringen von und den Umgang mit Biozidprodukten (Biozidprodukteverordnung, VBP)",
+      "titelFr": "Ordonnance concernant la mise sur le marché et l'utilisation des produits biocides (Ordonnance sur les produits biocides, OPBio)",
+      "titelIt": "Ordinanza concernente l'immissione sul mercato e l'utilizzazione di biocidi (Ordinanza sui biocidi, OBioc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-12-15",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/891/de",
+      "sha": "064a13a8743c8d8baa1a8e70a6087636808b61fd768cf4024c2d39718c7848c0"
     },
     {
       "art": "aenderung",
@@ -157,8 +243,30 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/487/de",
-      "sha": "f75dd45981e51ef7d3418d3cbefb6157e0376c36d0534027dcf3d2f28da828cd"
+      "sha": "636995e5b8fb239242f44b70f35034809b6344d97c425dda54ead694842dc971"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-12-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/891",
+      "dateDocument": "2020-11-18",
+      "roFundstelle": "AS 2020 5125",
+      "titelDe": "Verordnung über das Inverkehrbringen von und den Umgang mit Biozidprodukten (Biozidprodukteverordnung, VBP)",
+      "titelFr": "Ordonnance concernant la mise sur le marché et l'utilisation des produits biocides (Ordonnance sur les produits biocides, OPBio)",
+      "titelIt": "Ordinanza concernente l'immissione sul mercato e l'utilizzazione di biocidi (Ordinanza sui biocidi, OBioc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-12-15",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/891/de",
+      "sha": "48f8d02576ab4412e06dbe71d29af49e50820c8f2752323d1821f28134363d65"
     },
     {
       "art": "aenderung",
@@ -169,8 +277,11 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/915/de",
-      "sha": "9d54603b06c9dc81bc394fb519f6aebf512ae41a15f424d0e5dcbf96eb03ee8c"
+      "sha": "de0dafa5a304c3a04573d8ccb5cf20cf6e9371105d7076015a736e441165b79a"
     },
     {
       "art": "aenderung",
@@ -181,8 +292,11 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/134/de",
-      "sha": "aad26b3b207226a36479d88f9d6741037b996381f1fa0b1ddfe15658393c9e07"
+      "sha": "c9a53522bde66ce115e68bde2c5b86c3d79362a72003cee7a9c83cd21946d5b6"
     },
     {
       "art": "aenderung",
@@ -193,8 +307,11 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/353/de",
-      "sha": "08d7a137e0f58fe6193b90dfe8b1dedd535f7b0c12c244a4027d7364e9778e12"
+      "sha": "d8005eafb8cb23b34ad680c81160ac5aafa3aa57e441c9f5626170ae73abf790"
     },
     {
       "art": "aenderung",
@@ -205,14 +322,26 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim) (Concerne soltanto i testi francese e tedesco)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/318/de",
-      "sha": "b5a3bf655012f31410b5e632a5b5a390797ade6abeed40e2caa8f6bf14263478"
+      "sha": "b341b8b7f6d2a0928049042c742237b7baa9542fd1688716abf826a1654995cd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/813.11",
-      "sha": "982dc29be0f3963328df4fc755a0281d45cfbf8df346a339e6eeeca6b8fb3a61"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/289",
+      "dateDocument": "2019-04-17",
+      "roFundstelle": "AS 2019 1495",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/289/de",
+      "sha": "d73dc4c0cdd9941aca600f6ad19e5215d3fd0662b67388faa9bddee0018267c5"
     },
     {
       "art": "aenderung",
@@ -223,8 +352,11 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/657/de",
-      "sha": "e3c1538e8cc3107d0a60c1ed629723c1d76adeefa0b26ec58bf91258c626dc63"
+      "sha": "cb60e738eb1bc9c87960b8831cebd6e713c84d558f3f381b70ffeb53d20d8fb6"
     },
     {
       "art": "aenderung",
@@ -235,8 +367,11 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, Ochim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/102/de",
-      "sha": "8f18e8a035b59b1778f892d61331bf1abe4da58764f022c9707c58f53668547b"
+      "sha": "d82a9bb35b878509e312b0234c1711a5574f913c0f23182aef746b8ba303d76b"
     },
     {
       "art": "aenderung",
@@ -247,14 +382,26 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/85/de",
-      "sha": "9e7fc3804c15d0599cdfcb0b7738f7c283425cf348e0721070802d4d2fc53a57"
+      "sha": "6712de06c6feeff28d2852bde2f5c8c80806ba876916498387aad54fd951bfd0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/813.11",
-      "sha": "e02febeccd01ac4e69a936e7c20b47e941ecdfedc5ed32041c7830e6e43282f7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/247",
+      "dateDocument": "2017-03-22",
+      "roFundstelle": "AS 2017 2593",
+      "titelDe": "Verordnung zum Rotterdamer Übereinkommen über das Verfahren der vorherigen Zustimmung nach Inkenntnissetzung für bestimmte Chemikalien im internationalen Handel (PIC-Verordnung, ChemPICV)",
+      "titelFr": "Ordonnance relative à la Convention de Rotterdam sur la procédure de consentement préalable en connaissance de cause applicable à certains produits chimiques qui font l'objet d'un commerce international (Ordonnance PIC, OPICChim)",
+      "titelIt": "Ordinanza relativa alla Convenzione di Rotterdam sulla procedura di assenso preliminare in conoscenza di causa per taluni prodotti chimici nel commercio internazionale (Ordinanza PIC, OPICChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/247/de",
+      "sha": "748c65213008e5f9ca72e4aed55fcdd0803b2ec20e47d38c276e58e9dce8a069"
     },
     {
       "art": "aenderung",
@@ -265,20 +412,41 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/670/de",
-      "sha": "a9b98f20c024cf1832f5ca90612cec409447ed36edd990994b86c40aa400880d"
+      "sha": "f633475551ba6c5b40d5785048c942d97d745df0ba33f5754704c6e8c9d939ba"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/813.11",
-      "sha": "eb3bfc877387c15d47f2f8e9b8bd8bcb5b2c6f03644c917e069b91e7d0424ee1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/39",
+      "dateDocument": "2015-12-11",
+      "roFundstelle": "AS 2016 277",
+      "titelDe": "Verordnung vom 11. Dezember 2015 über den Zugang zu genetischen Ressourcen und die ausgewogene und gerechte Aufteilung der sich aus ihrer Nutzung ergebenden Vorteile (Nagoya-Verordnung, NagV)",
+      "titelFr": "Ordonnance du 11 décembre 2015 sur l'accès aux ressources génétiques et le partage juste et équitable des avantages découlant de leur utilisation (Ordonnance de Nagoya, ONag)",
+      "titelIt": "Ordinanza del 15 dicembre 2015 sull'accesso alle risorse genetiche e la giusta ed equa condivisione dei benefici derivanti dalla loro utilizzazione (Ordinanza di Nagoya, ONag)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/39/de",
+      "sha": "15dbdac4b8a80b66c542f95a0e7618dc5fb9f772e805f8b86ef6a398c68f7a19"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/813.11",
-      "sha": "a71c089daed7bcc586be3f144a2bc7894426bb7a2caf55ba5c0de15ad537528e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/891",
+      "dateDocument": "2015-12-04",
+      "roFundstelle": "AS 2015 5699",
+      "titelDe": "Verordnung über die Vermeidung und die Entsorgung von Abfällen (Abfallverordnung, VVEA)",
+      "titelFr": "Ordonnance sur la limitation et l'élimination des déchets (Ordonnance sur les déchets, OLED)",
+      "titelIt": "Ordinanza sulla prevenzione e lo smaltimento dei rifiuti (Ordinanza sui rifiuti, OPSR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/891/de",
+      "sha": "a3eb5cb57a2400e8c6b3eaaae28dcfeda24c1967897c7d90a12ff01e3e78b022"
     },
     {
       "art": "aenderung",
@@ -289,8 +457,11 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/736/de",
-      "sha": "498415378b221c81e403d73fd1ff6b6c181219af9d0ba6693500e85f950da0f2"
+      "sha": "d056c68f4b043becd78ff913b6670ef65fd803a7a8927186cd9eb38da67a87ce"
     },
     {
       "art": "aenderung",
@@ -301,165 +472,12 @@
       "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
       "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
       "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/568/de",
-      "sha": "834a66e5944ade90b354bd79994066aab25683cfbdff85e1c0739957635a02a0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/366",
-      "dateDocument": "2015-06-05",
-      "roFundstelle": "AS 2015 1903",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/366/de",
-      "sha": "7040a38974d68b148351106f89a88df3b44d707cd898e9083218508829aaecd9"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2014-12-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/661",
-      "dateDocument": "2014-11-17",
-      "roFundstelle": "AS 2014 3857",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/661/de",
-      "sha": "11dd88168f7199f21b3e643b33229fafdfa9ee561c0c484486797cf0b9f99ef8"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2013-08-20",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/544",
-      "dateDocument": "2013-08-20",
-      "roFundstelle": "AS 2013 2673",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV) (Betrifft nur den italienischen Text)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim) (Ne concerne que le texte italien)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/544/de",
-      "sha": "71d637172a12d7a2ee7d6f6eaa74fb62577fb5b0689a9dda96331739701c7d32"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2013-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/490",
-      "dateDocument": "2013-06-28",
-      "roFundstelle": "AS 2013 2327",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/490/de",
-      "sha": "1786aaee2c3b6c104c32f9f0266b63f7a2eaf6b45a17b460e5f36586c019816c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2013-01-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/23",
-      "dateDocument": "2013-01-15",
-      "roFundstelle": "AS 2013 201",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/23/de",
-      "sha": "757b6d6efdfea395b22cc63e6a0cdf09f091f5d6684a0a9645a9feb3ab3a3b59"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2012-12-04",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/804",
-      "dateDocument": "2012-12-04",
-      "roFundstelle": "AS 2012 6659",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV) (Betrifft nur den italienischen Text)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim) (Ne concerne que le texte italien)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/804/de",
-      "sha": "3f4d8133cffbf4ff8676adf6e7500e07659388b85bea51481de5fc28a2577659"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2012-12-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/724",
-      "dateDocument": "2012-11-07",
-      "roFundstelle": "AS 2012 6103",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/724/de",
-      "sha": "9400a1db4b279442fe32833093523902b39df9e7f2840ca61db171280c0e1151"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2010-12-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/750",
-      "dateDocument": "2010-11-10",
-      "roFundstelle": "AS 2010 5223",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/750/de",
-      "sha": "8a76ecaa83896615d10f6d76d9f25555e94902fb1dc2b71b20696c84c7fc95a3"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2009-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/132",
-      "dateDocument": "2009-02-24",
-      "roFundstelle": "AS 2009 805",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/132/de",
-      "sha": "a0410689a71250ba2bc605f1a431c66b0968cde9d2a2b33f35d8103d81925acf"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2009-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/183",
-      "dateDocument": "2009-03-24",
-      "roFundstelle": "AS 2009 1135",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim) (Ne concerne que le texte allemand)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim) (Concerne solo il testo tedesco)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/183/de",
-      "sha": "9aab88cb8b91f50418e36137dc57914bbdc18ae5fdd901bc245b4de688fa88ca"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2009-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/73",
-      "dateDocument": "2009-01-14",
-      "roFundstelle": "AS 2009 401",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/73/de",
-      "sha": "6ef2dc29961df16f28e7719ae0944bf740927ca40ff49dc65fcf9a5393fec9a8"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2007-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/152",
-      "dateDocument": "2007-02-28",
-      "roFundstelle": "AS 2007 821",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/152/de",
-      "sha": "dfc8319f6190e0e78b06d62a01b44fc958fa71b26807cc068c4259f4064618d8"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2005-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/466",
-      "dateDocument": "2005-05-18",
-      "roFundstelle": "AS 2005 2721",
-      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
-      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
-      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/466/de",
-      "sha": "eae7e95901e7fa257b96c28c616c278cf13f8f36ab9cd263ec08cfacd884b889"
+      "sha": "fc07978820048020e61aafbaf03c02bb1d0ac7cd2ed4ff329cf8e2f7d699148f"
     }
   ],
-  "sha": "81d9d1fba49cbf05fc0518b36e67bf93b24f4cfebaa832cea3fb140a0e498510"
+  "sha": "2e3f4a38421423291943b3d8b6107156d79429c9743bf9f60619407ea4ef2e9f"
 }

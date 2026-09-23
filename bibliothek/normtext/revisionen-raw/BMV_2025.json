@@ -1119,5 +1119,19 @@
     "2026-03-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2025/408",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2025/408",
+    "inkrafttreten": "2026-03-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/408",
+        "typ": 5,
+        "datum": "2026-03-01",
+        "fassung": "2026-03-01"
+      }
+    ],
+    "ocStamm": {}
+  }
 }

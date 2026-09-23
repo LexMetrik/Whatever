@@ -267,5 +267,162 @@
     "2011-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1977/862_862_862",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1977/862_862_862",
+    "inkrafttreten": "1977-06-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1977/862_862_862",
+        "typ": 5,
+        "datum": "1977-06-01",
+        "fassung": "1977-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/269_269_269",
+        "typ": 1,
+        "datum": "1983-04-05",
+        "fassung": "1983-04-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/1776_1776_1776",
+        "typ": 1,
+        "datum": "1989-01-01",
+        "fassung": "1989-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288",
+        "typ": 1,
+        "datum": "1992-02-15",
+        "fassung": "1992-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+        "typ": 2,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 2,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 1,
+        "datum": "2008-08-01",
+        "fassung": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/526",
+        "typ": 1,
+        "datum": "2008-09-01",
+        "fassung": "2008-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/526",
+        "typ": 2,
+        "datum": "2008-09-01",
+        "fassung": "2008-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 2,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1983/269_269_269": {
+        "dateForce": "1983-04-05",
+        "dateDoc": "1980-10-10",
+        "roId": "RO 1983 269",
+        "titelDe": "Sortenschutzgesetz, Änderung",
+        "titelFr": "Loi fédérale sur la protection des obtentions végétales, Modification",
+        "titelIt": "Legge federale sulla protezione delle nuove piante, modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1988/1776_1776_1776": {
+        "dateForce": "1989-01-01",
+        "dateDoc": "1987-12-18",
+        "roId": "RO 1988 1776",
+        "titelDe": "Bundesgesetz vom 18. Dezember 1987 über das Internationale Privatrecht (IPRG)",
+        "titelFr": "Loi fédérale du 18 décembre 1987 sur le droit international privé (LDIP)",
+        "titelIt": "Legge federale del 18 dicembre 1987 sul diritto internazionale privato (LDIP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288": {
+        "dateForce": "1992-02-15",
+        "dateDoc": "1991-10-04",
+        "roId": "RO 1992 288",
+        "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege, Änderung",
+        "titelFr": "Loi fédérale d'organisation judiciaire, Modification",
+        "titelIt": "Legge federale sull'organizzazione giudiziari, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/374": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 2355",
+        "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+        "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+        "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/549": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2006 3459",
+        "titelDe": "Schweizerisches Strafgesetzbuch",
+        "titelFr": "Code pénal suisse",
+        "titelIt": "Codice penale svizzero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/447": {
+        "dateForce": "2008-08-01",
+        "dateDoc": "2008-03-20",
+        "roId": "RO 2008 3437",
+        "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/262": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2010 1739",
+        "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+        "titelFr": "Code de procédure civile (CPC)",
+        "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)"
+      }
+    }
+  }
 }

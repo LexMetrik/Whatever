@@ -1,14 +1,24 @@
 {
   "erlassKey": "BUEG",
   "sr": "141.0",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/141.0",
-      "sha": "07dbbd0dd644ecf728f16ec199727152ab38f01a5ad122152e7a1da008959e15"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
       "art": "aenderung",
@@ -19,8 +29,11 @@
       "titelDe": "Bundesgesetz über das Schweizer Bürgerrecht (Bürgerrechtsgesetz; BüG) (Erleichterte Einbürgerung von Personen der dritten Ausländergeneration) (Betrifft nur den französischen und den italienischen Text)",
       "titelFr": "Loi sur la nationalité suisse (LN) (Naturalisation facilitée des étrangers de la troisième génération)",
       "titelIt": "Legge federale sulla cittadinanza svizzera (Legge sulla cittadinanza, LCit) (Naturalizzazione agevolata degli stranieri della terza generazione)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/387/de",
-      "sha": "836a70c84d612aef29a2ed0cde1b882c9ca407ee301647544994e0d1bdc64e77"
+      "sha": "ebde56e49b0cba8c989ed675e4c8cceddee8fb27f031742220941c65d5018a2f"
     },
     {
       "art": "aenderung",
@@ -31,84 +44,12 @@
       "titelDe": "Bundesgesetz über das Schweizer Bürgerrecht (Bürgerrechtsgesetz; BüG) (Erleichterte Einbürgerung von Personen der dritten Ausländergeneration)",
       "titelFr": "Loi sur la nationalité suisse (LN) (Naturalisation facilitée des étrangers de la troisième génération)",
       "titelIt": "Legge federale sulla cittadinanza svizzera (Legge sulla cittadinanza, LCit) (Naturalizzazione agevolata degli stranieri della terza generazione)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/61/de",
-      "sha": "dea1572ce25e11c86a4ed809b08a438ecefc1c01df84bf12d3388c8c8a349166"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2018-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/404",
-      "dateDocument": "2014-06-20",
-      "roFundstelle": "AS 2016 2561",
-      "titelDe": "Bundesgesetz über das Schweizer Bürgerrecht (Bürgerrechtsgesetz, BüG)",
-      "titelFr": "Loi sur la nationalité suisse (LN)",
-      "titelIt": "Legge federale sulla cittadinanza svizzera (Legge sulla cittadinanza, LCit)",
-      "botschaftKey": "BOTSCHAFT-2011-422",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/404/de",
-      "sha": "b52ff977467e37783915d6ac787c03556fe75ba78ab648ae6d2cf0e7ed49d453"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2011-03-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/56",
-      "dateDocument": "2009-09-25",
-      "roFundstelle": "AS 2011 347",
-      "titelDe": "Bundesgesetz über Erwerb und Verlust des Schweizer Bürgerrechts (Bürgerrechtsgesetz, BüG) (Fristausdehnung für die Nichtigerklärung)",
-      "titelFr": "Loi fédérale sur l'acquisition et la perte de la nationalité suisse (Loi sur la nationalité, LN) (Prolongation du délai d'annulation de la naturalisation)",
-      "titelIt": "Legge federale sull'acquisto e la perdita della cittadinanza svizzera (Legge sulla cittadinanza, LCit) (Prolungamento del termine di annullamento)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/56/de",
-      "sha": "808d978d80c98688f2d88a8b332d3fb344b5c2b3dde76f679b70a4a5cd71c770"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2009-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/816",
-      "dateDocument": "2007-12-21",
-      "roFundstelle": "AS 2008 5911",
-      "titelDe": "Bundesgesetz über Erwerb und Verlust des Schweizer Bürgerrechts (Bürgerrechtsgesetz, BüG) (Verfahren im Kanton/Beschwerde vor einem kantonalen Gericht)",
-      "titelFr": "Loi fédérale sur l'acquisition et la perte de la nationalité suisse (Loi sur la nationalité, LN) (Procédure cantonale/Recours devant un tribunal cantonal)",
-      "titelIt": "Legge federale sull'acquisto e la perdita della cittadinanza svizzera (Legge sulla cittadinanza, LCit) (Procedura nel Cantone/Ricorso dinanzi a un tribunale cantonale)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/816/de",
-      "sha": "d8ec2e34386f9719e2f7646d09c69f16eb7a9f8e979ab1bf7bc7024f7e96eb3d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/723",
-      "dateDocument": "2003-10-03",
-      "roFundstelle": "AS 2005 5233",
-      "titelDe": "Bundesgesetz über Erwerb und Verlust des Schweizer Bürgerrechts (Bürgerrechtsgesetz, BüG)",
-      "titelFr": "Loi fédérale sur l'acquisition et la perte de la nationalité suisse (Loi sur la nationalité, LN)",
-      "titelIt": "Legge federale sull'acquisto e la perdita della cittadinanza svizzera (Legge sulla cittadinanza, LCit)",
-      "botschaftKey": "BOTSCHAFT-2002-259",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/723/de",
-      "sha": "a1536139711bf4255b2279c9cc196649c6a47d611a1ec4341178205c246cac58"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2000-09-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/293",
-      "dateDocument": "2000-03-24",
-      "roFundstelle": "AS 2000 1891",
-      "titelDe": "Bundesgesetz über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
-      "titelFr": "Loi fédérale sur la création et l'adaptation de bases légales concernant le traitement de données personnelles",
-      "titelIt": "Legge federale concernente l'istituzione e l'adeguamento di basi legali per il trattamento di dati personali",
-      "botschaftKey": "BOTSCHAFT-1999-1_9005_8381_7979",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/293/de",
-      "sha": "fa7ed3c852a90ae0d0ef4b5ad3689c374e2a55c3fd859f64a96d6b1998a40fa5"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1953-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1952/1087_1115_1119",
-      "dateDocument": "1952-09-29",
-      "roFundstelle": "AS 1952 1087",
-      "titelDe": "Bundesgesetz vom 29. September 1952 über Erwerb und Verlust des Schweizer Bürgerrechts (Bürgerrechtsgesetz, BüG)",
-      "titelFr": "Loi fédérale du 29 septembre 1952 sur l'acquisition et la perte de la nationalité suisse (Loi sur la nationalité, LN)",
-      "titelIt": "Legge federale del 29 settembre 1952 su l'acquisto e la perdita della cittadinanza svizzera (Legge sulla cittadinanza, LCit)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1952/1087_1115_1119/de",
-      "sha": "3bb47576ea269e5815380b915c54b759bae8a26786a08db35f1468743755f55a"
+      "sha": "60d2cdc19bfb7440907aee72ff1dbcc1a823df412ac8095a3125028d7fd7b720"
     }
   ],
-  "sha": "56d93aa0115f379a458756a28066d3530c52d4320075e66c6b4e8056c221212c"
+  "sha": "93ff4835cf22782dd1014d59e6612e0a3260a0aac1c15e424b6ddfcfef59bf46"
 }

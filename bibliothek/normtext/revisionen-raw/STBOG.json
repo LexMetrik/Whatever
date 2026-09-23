@@ -693,5 +693,155 @@
     "2024-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2010/444",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2010/444",
+    "inkrafttreten": "2011-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/444",
+        "typ": 5,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/57",
+        "typ": 1,
+        "datum": "2011-03-01",
+        "fassung": "2011-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+        "typ": 1,
+        "datum": "2011-12-05",
+        "fassung": "2011-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+        "typ": 2,
+        "datum": "2011-12-05",
+        "fassung": "2011-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/159",
+        "typ": 1,
+        "datum": "2012-04-01",
+        "fassung": "2012-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/657",
+        "typ": 1,
+        "datum": "2012-12-01",
+        "fassung": "2012-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/380",
+        "typ": 1,
+        "datum": "2016-10-01",
+        "fassung": "2016-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/624",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/795",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/254",
+        "typ": 1,
+        "datum": "2023-07-01",
+        "fassung": "2023-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2011/663": {
+        "dateForce": "2011-12-05",
+        "dateDoc": "2011-06-17",
+        "roId": "RO 2011 4627",
+        "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Gesuche um Aufhebung der Immunität)",
+        "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Examen des requêtes visant à lever l'immunité)",
+        "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Richieste di soppressione dell'immunità)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/159": {
+        "dateForce": "2012-04-01",
+        "dateDoc": "2010-10-01",
+        "roId": "RO 2012 941",
+        "titelDe": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG) (Datenschutz bei der Benutzung der elektronischen Infrastruktur)",
+        "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA) (Protection des données lors de l'utilisation de l'infrastructure électronique)",
+        "titelIt": "Legge sull'organizzazione del Governo e dell'Amministrazione (LOGA) (Protezione dei dati derivanti dall'utilizzazione dell'infrastruttura elettronica)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/657": {
+        "dateForce": "2012-12-01",
+        "dateDoc": "2012-03-16",
+        "roId": "RO 2012 5647",
+        "titelDe": "Bundesgesetz über die Änderung des Höchstalters für Richter und Richterinnen des Bundesstrafgerichts, des Bundesverwaltungsgerichts und des Bundespatentgerichts",
+        "titelFr": "Loi fédérale sur l'augmentation de l'âge maximal des juges du Tribunal pénal fédéral, du Tribunal administratif fédéral et du Tribunal fédéral des brevets",
+        "titelIt": "Legge federale sull'innalzamento dell'età massima dei giudici del Tribunale penale federale, del Tribunale amministrativo federale e del Tribunale federale dei brevetti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/132": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2016 689",
+        "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+        "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+        "titelIt": "Legge federale sulla formazione continua (LFCo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/380": {
+        "dateForce": "2016-10-01",
+        "dateDoc": "2015-03-20",
+        "roId": "RO 2016 2329",
+        "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+        "titelFr": "Code pénal et code pénal militaire (Mise en uvre de l'art. 121, al. 3 à 6, Cst. relatif au renvoi des étrangers criminels)",
+        "titelIt": "Codice penale svizzero e Codice penale militare (Attuazione dell'art. 121 cpv. 36 Cost. sull'espulsione di stranieri che commettono reati)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/795": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2017-09-29",
+        "roId": "RO 2018 5103",
+        "titelDe": "Bundesgesetz über Geldspiele (Geldspielgesetz, BGS)",
+        "titelFr": "Loi fédérale sur les jeux d'argent (LJAr)",
+        "titelIt": "Legge federale sui giochi in denaro (LGD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/748": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-06-19",
+        "roId": "RO 2020 4085",
+        "titelDe": "Bundesgesetz über die Enteignung (EntG)",
+        "titelFr": "Loi fédérale sur l'expropriation (LEx)",
+        "titelIt": "Legge federale sull'espropriazione (LEspr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/468": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2022-06-17",
+        "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+        "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+        "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)"
+      }
+    }
+  }
 }

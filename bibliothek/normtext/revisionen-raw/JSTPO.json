@@ -154,5 +154,66 @@
     "2025-07-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2010/226",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2010/226",
+    "inkrafttreten": "2011-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/226",
+        "typ": 5,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/355",
+        "typ": 1,
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+        "typ": 1,
+        "datum": "2025-07-01",
+        "fassung": "2025-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/490",
+        "typ": 5,
+        "datum": "2025-07-01",
+        "fassung": "2025-07-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2014/355": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2013-12-13",
+        "roId": "RO 2014 2055",
+        "titelDe": "Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+        "titelFr": "Loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs)",
+        "titelIt": "Legge federale sull&#700;interdizione di esercitare un&#700;attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/468": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2022-06-17",
+        "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+        "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+        "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/490": {
+        "dateForce": "2025-07-01",
+        "dateDoc": "2024-09-04",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 17. Juni 2022 der Strafprozessordnung",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 17 juin 2022 du code de procédure pénale",
+        "titelIt": "Ordinanza sull’entrata in vigore integrale della modifica del 17 giugno 2022 del Codice di procedura penale"
+      }
+    }
+  }
 }

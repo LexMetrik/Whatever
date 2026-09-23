@@ -1,8 +1,8 @@
 {
   "erlassKey": "EPV",
   "sr": "818.101.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,14 +13,68 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/669/de",
-      "sha": "a6f370a42ce83296a668413318f7c4585cad5ac70c2ae9d02af629823d05f820"
+      "sha": "37c609740ab7b8d50b5a046b854e3bd63b36819de3cf182c08f602a5601115c3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101.1",
-      "sha": "8b9a21ce668055453457a95775dd7a5387c97955f20923a3f2faa37a0c25f9e9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/791",
+      "dateDocument": "2023-11-29",
+      "roFundstelle": "AS 2023 791",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2024-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/791/de",
+      "sha": "13c120dc9a6ae62353a19bf35aa0c016e9fa64a0f498303704a5e227e90ff8c5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/467",
+      "dateDocument": "2022-08-24",
+      "roFundstelle": "AS 2022 467",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-09-01",
+        "2024-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/467/de",
+      "sha": "23e656e98ae3c9a145e11044cc5dc3be3a64dad522bd399df2af47d1afad026c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/835",
+      "dateDocument": "2022-12-16",
+      "roFundstelle": "AS 2022 835",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2024-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/835/de",
+      "sha": "caf5948b820c7c18b6b2fb7f2e63468a861a67012c0051280cc4e3c9796e0e93"
     },
     {
       "art": "aenderung",
@@ -31,8 +85,11 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/790/de",
-      "sha": "1d28980120092132dbbb2c7b4e0ed0363a8cddb2c9bcf8f9bf2913a0aff31f6e"
+      "sha": "10e548c4720719821553df0543301cc1bd5dc8e0020bb659996d40808615c9ac"
     },
     {
       "art": "aenderung",
@@ -43,20 +100,99 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2024-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/791/de",
-      "sha": "e5c963dd56e08ac9a818f828f410c79b17735e27840a23b94840ba21439842ac"
+      "sha": "2de8567910cba7673b9f58c8140299d0e2547c4f2d4a75e602f364f902f16573"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101.1",
-      "sha": "29e446b2754e967c2cf4c70e33fcd4f980a0979aa3d1d10d08955365ee6cb0c5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101.1",
-      "sha": "bb2c5a3d12abb598d75e342f3d2bfbb5576ead261396b48e34074893a3353dad"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/133",
+      "dateDocument": "2023-03-03",
+      "roFundstelle": "AS 2023 133",
+      "titelDe": "Verordnung über die militärischen Informationssysteme (MIV)",
+      "titelFr": "Ordonnance sur les systèmes d’information de l’armée (OSIAr)",
+      "titelIt": "Ordinanza sui sistemi d’informazione militari (OSIM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/133/de",
+      "sha": "948f2aa9673b7ee97d709607c2996d0d17c3fe37cc5fca930dd0aa730f5bf14d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/825",
+      "dateDocument": "2021-12-03",
+      "roFundstelle": "AS 2021 825",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/825/de",
+      "sha": "d01e83b559162671b3e9b2a7e1a4848c3a4595668576bad19e3d2f468940b9b9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/345",
+      "dateDocument": "2022-06-10",
+      "roFundstelle": "AS 2022 345",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-05-20",
+        "2022-06-11",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/345/de",
+      "sha": "49348fe2db27a55c92ba821b35dda3393fb942f02b493af1b61d7a345c55769d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/570",
+      "dateDocument": "2022-09-23",
+      "roFundstelle": "AS 2022 570",
+      "titelDe": "Verordnung über den Koordinierten Sanitätsdienst (VKSD)",
+      "titelFr": "Ordonnance sur le Service sanitaire coordonné (OSSC)",
+      "titelIt": "Ordinanza sul servizio sanitario coordinato (OSSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/570/de",
+      "sha": "eb7987196e901659a6c66e9ef8a22f0ee4828e64c25692b056d4a7ea6766972f"
     },
     {
       "art": "aenderung",
@@ -67,8 +203,15 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2024-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/835/de",
-      "sha": "61261c7b22dc01631e3bb1c7fef2132c06aa48602ee3779da27768fbba26c097"
+      "sha": "537a2897c8b972b05d347e99f41699731e9a7f964ef7613f6444c992526ae397"
     },
     {
       "art": "aenderung",
@@ -79,14 +222,34 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-09-01",
+        "2024-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/467/de",
-      "sha": "14dc5f9fe58382d46a6247c628e60c5c58d164c60ee0e56e426d9e899bbbd93e"
+      "sha": "57172986d28961b36286b5f4c6f0b892e255941da80b45ea02e9ced4324fcfd0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101.1",
-      "sha": "16042b35d1da91e88f939033ef0426e48eef0c98dc8c5689324601120015412d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/852",
+      "dateDocument": "2020-11-18",
+      "roFundstelle": "AS 2020 4733",
+      "titelDe": "Verordnung über das Proximity-Tracing-System für das Coronavirus Sars-CoV-2 (VPTS)",
+      "titelFr": "Ordonnance sur le système de traçage de proximité pour le coronavirus Sars-CoV-2 (OSTP)",
+      "titelIt": "Ordinanza sul sistema di tracciamento della prossimità per il coronavirus SARS-CoV-2 (OSTP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-11-19",
+        "2022-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/852/de",
+      "sha": "c389633dbb19a21828b1b8390a930aff7f29a254f0a82b28777357f671c3d0ed"
     },
     {
       "art": "aenderung",
@@ -97,20 +260,51 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-05-20",
+        "2022-06-11",
+        "2023-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/345/de",
-      "sha": "925c8d6af9ce95f5e6abdfb777c916e3cb5fb98837a1a483683fe46a881d1c9e"
+      "sha": "658a991ce53dd2280530adf2b3349ace43ea805f6aed0d84f1f6adf3b1f4cd15"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-05-20",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101.1",
-      "sha": "8a71b70b3cc044ca665055e31ccfe0f84637389dfbe12e65d12e2d89da55c794"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/345",
+      "dateDocument": "2022-06-10",
+      "roFundstelle": "AS 2022 345",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-05-20",
+        "2022-06-11",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/345/de",
+      "sha": "dfb3e526f9c7a86ec8ade48e06dc1e29bccf3c364198090301915840b87fa73c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101.1",
-      "sha": "bdc0b7d7260a39482d45e924646bf382bf31fda7c6f3d5f5eac2b06d7f8df8d2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/207",
+      "dateDocument": "2022-03-30",
+      "roFundstelle": "AS 2022 207",
+      "titelDe": "Verordnung vom 30. März 2022 über die Einstellung des Proximity-Tracing-Systems für das Coronavirus Sars-CoV-2 und des Systems zur Benachrichtigung über eine mögliche Ansteckung mit dem Coronavirus Sars-CoV-2 an Veranstaltungen",
+      "titelFr": "Ordonnance du 30 mars 2022 sur l’arrêt du système de traçage de proximité pour le coronavirus SARS-CoV-2 et du système visant à informer d’une infection possible au coronavirus SARS-CoV-2 lors de manifestations",
+      "titelIt": "Ordinanza del 30 marzo 2022 sulla sospensione del sistema di tracciamento della prossimità per il coronavirus SARS-CoV-2 e del sistema di segnalazione di un possibile contagio da coronavirus SARS CoV-2 durante una manifestazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/207/de",
+      "sha": "d156b0902a1e5b99fb086f808030d3c80b9a91fa0f192c9827317065203f459b"
     },
     {
       "art": "aenderung",
@@ -121,8 +315,123 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV) (Übernahme der Kosten von Covid-19-Arzneimitteln)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp) (Prise en charge des coûts des médicaments utilisés pour le traitement du COVID-19)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp) (Assunzione dei costi dei medicamenti COVID-19)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/95/de",
-      "sha": "b7bf5b8f0c4ba119183ac875200b2cc16d5edaade9c27eed78e3a83cff29f58d"
+      "sha": "8a5f3bf6c87b6a9e8eab775fd35dd12af3cc63c92d475473cbe63239e1cee3e6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/506",
+      "dateDocument": "2021-08-25",
+      "roFundstelle": "AS 2021 506",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-09-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/506/de",
+      "sha": "313964c39148a6aaa319299ab94683d4c0088ad780f7ee33845732db0638b202"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/53",
+      "dateDocument": "2021-01-27",
+      "roFundstelle": "AS 2021 53",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell'essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-02-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/53/de",
+      "sha": "d75eecb2a114821368e4652e602ffb611e30d7215675553a84680c77379a3e1f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/563",
+      "dateDocument": "2021-09-17",
+      "roFundstelle": "AS 2021 563",
+      "titelDe": "Verordnung über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) im Bereich des internationalen Personenverkehrs (Covid-19-Verordnung Massnahmen im Bereich des internationalen Personenverkehrs)",
+      "titelFr": "Ordonnance sur les mesures destinées à lutter contre le coronavirus (COVID-19) dans le domaine du transport international de voyageurs (Ordonnance COVID-19 mesures dans le domaine du transport international de voyageurs)",
+      "titelIt": "Ordinanza sui provvedimenti per combattere il coronavirus (COVID-19) nel settore del traffico internazionale viaggiatori (Ordinanza COVID-19 provvedimenti nel settore del traffico internazionale viaggiatori)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-09-01",
+        "2021-09-20",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/563/de",
+      "sha": "fc1a15ee19c22f5bb8f836916823d81f7042404fe716f2ebf2f9d1c549ed515e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/648",
+      "dateDocument": "2021-11-03",
+      "roFundstelle": "AS 2021 648",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-11-04",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/648/de",
+      "sha": "b41bcfd9c81e9a85c7489421d1a68e208b4ddb0225a2a62be651742907fadbee"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/66",
+      "dateDocument": "2021-02-03",
+      "roFundstelle": "AS 2021 66",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-04",
+        "2021-02-04",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/66/de",
+      "sha": "12bd80cee75d1000f579013fdbd0fe290938bc5884a4bf6e15fee947494964a0"
     },
     {
       "art": "aenderung",
@@ -133,8 +442,15 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2023-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/825/de",
-      "sha": "81aeac351ac9fc1eda140c7fdc5248e38ba912a4d68e53cff99ee80b54c2cd5c"
+      "sha": "2ea13d66bc04c138b799b585e6c7893b1d53fe09f74d730972b85b40891524ec"
     },
     {
       "art": "aenderung",
@@ -145,14 +461,54 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-11-04",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/648/de",
-      "sha": "bdbe1308aab84f5ca56894ef7946042435a4a4c9d8929ac0f68d66f92b276f38"
+      "sha": "131d3fb35a75a54e8f191d76ee1943db258e9621a235850c8feca0ca780198ba"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-09-20",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101.1",
-      "sha": "e4d8209b2ac4e081467629c6c8d089544b13963926bbd4d391e8d54cf169a64c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/563",
+      "dateDocument": "2021-09-17",
+      "roFundstelle": "AS 2021 563",
+      "titelDe": "Verordnung über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) im Bereich des internationalen Personenverkehrs (Covid-19-Verordnung Massnahmen im Bereich des internationalen Personenverkehrs)",
+      "titelFr": "Ordonnance sur les mesures destinées à lutter contre le coronavirus (COVID-19) dans le domaine du transport international de voyageurs (Ordonnance COVID-19 mesures dans le domaine du transport international de voyageurs)",
+      "titelIt": "Ordinanza sui provvedimenti per combattere il coronavirus (COVID-19) nel settore del traffico internazionale viaggiatori (Ordinanza COVID-19 provvedimenti nel settore del traffico internazionale viaggiatori)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-09-01",
+        "2021-09-20",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/563/de",
+      "sha": "6819d86872d7ff283b63145007b9b2484c0b52105938b673d5aaeb4571e312cb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/377",
+      "dateDocument": "2021-06-23",
+      "roFundstelle": "AS 2021 377",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-06-01",
+        "2021-09-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/377/de",
+      "sha": "3b2387bc4e244e92c6c8c1ae9490b2b96e90e2eaeea33f553c2e108593b6b454"
     },
     {
       "art": "aenderung",
@@ -163,8 +519,35 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-09-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/506/de",
-      "sha": "4ca4fd2f3427809020af1d9ec9f39edf49275911e39ddcd3d88a74bab077eb14"
+      "sha": "12d370fa3ec7dc96c6cbc4f0987b7dd6e7e67b62bcf317554ecc39f6c8af979b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/563",
+      "dateDocument": "2021-09-17",
+      "roFundstelle": "AS 2021 563",
+      "titelDe": "Verordnung über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) im Bereich des internationalen Personenverkehrs (Covid-19-Verordnung Massnahmen im Bereich des internationalen Personenverkehrs)",
+      "titelFr": "Ordonnance sur les mesures destinées à lutter contre le coronavirus (COVID-19) dans le domaine du transport international de voyageurs (Ordonnance COVID-19 mesures dans le domaine du transport international de voyageurs)",
+      "titelIt": "Ordinanza sui provvedimenti per combattere il coronavirus (COVID-19) nel settore del traffico internazionale viaggiatori (Ordinanza COVID-19 provvedimenti nel settore del traffico internazionale viaggiatori)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-09-01",
+        "2021-09-20",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/563/de",
+      "sha": "dda4ae044e034cc3a1f4a9a7adbe1e43398093644f1f14dd5e71b1979f720eaa"
     },
     {
       "art": "aenderung",
@@ -175,8 +558,15 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-06-01",
+        "2021-09-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/377/de",
-      "sha": "47cb71e7a579de89db1f0ea6e77f29cac2c4902aefaf00e198dfd2ba0fcccb74"
+      "sha": "28c6bca67d08e63ae142b12f9febccad44d0df819c0b909abc3ce89d34ddec95"
     },
     {
       "art": "aenderung",
@@ -187,14 +577,31 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/156/de",
-      "sha": "39822d68a53bbc77219e142333c7967e1c241ede278cb3d17ef98da595401731"
+      "sha": "e88457c051cf2ee357141c517cc6e9aa80289401b4d8046717c4c74cfa180ac1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-02-04",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101.1",
-      "sha": "cc337eb8a3c6b7c472dc209656ffc2f1bef9f76e36405e95e868aafc2549e6e9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/66",
+      "dateDocument": "2021-02-03",
+      "roFundstelle": "AS 2021 66",
+      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
+      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
+      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-04",
+        "2021-02-04",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/66/de",
+      "sha": "2da81d59cf5d4667eaf781e9f85c42f85578eadab0ad719132733c64541f8446"
     },
     {
       "art": "aenderung",
@@ -205,8 +612,15 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell'essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-02-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/53/de",
-      "sha": "378e851662507fd118426f8416cf3e91d7938eb43de9b3cdc170378260be9b63"
+      "sha": "3814881577bd5539ab9954ab95d26421fca66001abe92c379e5a3a7cf440dfad"
     },
     {
       "art": "aenderung",
@@ -217,33 +631,51 @@
       "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
       "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l’homme (Ordonnance sur les épidémies, OEp)",
       "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell’essere umano (Ordinanza sulle epidemie, OEp)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-04",
+        "2021-02-04",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/66/de",
-      "sha": "cd9355bb780f94fe0d756ad7eb686b32501dda263414859ac28dfbbc241d24ef"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2020-11-19",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101.1",
-      "sha": "cc2c6ea8bbfbf57880bb54c54f8a58ae92895e088a4fe9ea5b909ed409df3e94"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2019-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101.1",
-      "sha": "52a362d956ec0dce553d8ae874935ba2c617df8e2b392e73996945728d9bd877"
+      "sha": "514d29ea5de8eb598420c5bef3072fabe1a881d808a088593918e92d051dc7c1"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2016-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/298",
-      "dateDocument": "2015-04-29",
-      "roFundstelle": "AS 2015 1463",
-      "titelDe": "Verordnung über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemienverordnung, EpV)",
-      "titelFr": "Ordonnance sur la lutte contre les maladies transmissibles de l'homme (Ordonnance sur les épidémies, OEp)",
-      "titelIt": "Ordinanza concernente la lotta contro le malattie trasmissibili dell'essere umano (Ordinanza sulle epidemie, OEp)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/298/de",
-      "sha": "02e8c1ed8d6c998a9101b6ba1375b7c3bb6bade3f6d4cd16ccd98a5e37714453"
+      "dateEntryInForce": "2020-11-19",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/852",
+      "dateDocument": "2020-11-18",
+      "roFundstelle": "AS 2020 4733",
+      "titelDe": "Verordnung über das Proximity-Tracing-System für das Coronavirus Sars-CoV-2 (VPTS)",
+      "titelFr": "Ordonnance sur le système de traçage de proximité pour le coronavirus Sars-CoV-2 (OSTP)",
+      "titelIt": "Ordinanza sul sistema di tracciamento della prossimità per il coronavirus SARS-CoV-2 (OSTP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-11-19",
+        "2022-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/852/de",
+      "sha": "5667558337e37e492f1de589814d18b6703306091f4745a453e25297372f7ca1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/439",
+      "dateDocument": "2018-06-08",
+      "roFundstelle": "AS 2018 2857",
+      "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
+      "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
+      "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/439/de",
+      "sha": "0036d533e9bfc7cdc68a66164a6ee2d07c4865ebedd01c822ffdc34423f9d0de"
     }
   ],
-  "sha": "6fb90bfee374652fa4099cd42a01b84faa281fa59a56581b10b1adfa133dea56"
+  "sha": "6fb9d1abf07b1dba71dd79436b53df8613ff9cc81343e13e553449346a49ec02"
 }

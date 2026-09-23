@@ -1,8 +1,8 @@
 {
   "erlassKey": "CMR",
   "sr": "0.741.611",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,27 @@
       "titelDe": "Übereinkommen vom 19. Mai 1956 über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
       "titelFr": "Convention du 19 mai 1956 relative au contrat de transport international de marchandises par route (CMR)",
       "titelIt": "Convenzione del 19 maggio 1956 concernente il contratto di trasporto internazionale di merci su strada (CMR)",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/150/de",
-      "sha": "fc24b4bbe07f2296eef22c7ff9dde003d377d3fc1b837350e441231f17088f2c"
+      "sha": "59b4d47f67aa3e734ee85ada85ffee8986d0ad7ac6b5e3ade22ebb69330a4c33"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-09-11",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/705",
+      "dateDocument": "2020-09-11",
+      "roFundstelle": "AS 2020 3817",
+      "titelDe": "Protokoll vom 5. Juli 1978 zum Übereinkommen über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
+      "titelFr": "Protocole du 5 juillet 1978 à la Convention relative au contrat de transport international de marchandises par route (CMR)",
+      "titelIt": "Protocollo del 5 luglio 1978 alla Convenzione relativa al contratto di trasporto internazionale di merci su strada (CMR)",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/705/de",
+      "sha": "ffe9d53949cf38f249ae33d76bafa9cdca2f0fdb7cc1fa5984823d65501af64c"
     },
     {
       "art": "aenderung",
@@ -25,8 +44,12 @@
       "titelDe": "Übereinkommen vom 19. Mai 1956 über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
       "titelFr": "Convention du 19 mai 1956 relative au contrat de transport international de marchandises par route (CMR)",
       "titelIt": "Convenzione del 19 maggio 1956 concernente il contratto di trasporto internazionale di merci su strada (CMR)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/584/de",
-      "sha": "a05a901b550c7e6658ab0dad9bfd307b368237778b4703d501f2f6eaeb9300bf"
+      "sha": "22e1e082775e164e8b9174b850443a23c87a65ad88e1b9f13d5277025b4db15f"
     },
     {
       "art": "aenderung",
@@ -37,8 +60,12 @@
       "titelDe": "Übereinkommen vom 19. Mai 1956 über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
       "titelFr": "Convention du 19 mai 1956 relative au contrat de transport international de marchandises par route (CMR)",
       "titelIt": "Convenzione del 19 maggio 1956 concernente il contratto di trasporto internazionale di merci su strada (CMR)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/604/de",
-      "sha": "a92fee6cab41ea15877a6b33ba6150fb9a6a95374c5a7de7ceeed7d63fa5d544"
+      "sha": "f5b9560a75dbf0510d54c0dce7cdd3758b661e16455881de9dae59f77071bd88"
     },
     {
       "art": "aenderung",
@@ -49,21 +76,108 @@
       "titelDe": "Übereinkommen vom 19. Mai 1956 über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
       "titelFr": "Convention du 19 mai 1956 relative au contrat de transport international de marchandises par route (CMR)",
       "titelIt": "Convenzione del 19 maggio 1956 concernente il contratto di trasporto internazionale di merci su strada (CMR)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/360/de",
-      "sha": "85423a2e1934f0d70c8d0cf5a8fb60159a90cca59d8b0b13253da2c3ac0e8796"
+      "sha": "1ea883b4a92f95ea618b3f474d249ade0ea58d15dd40e6459af897479526cef3"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1970-05-28",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1970/851_851_851",
-      "dateDocument": "1956-05-19",
-      "roFundstelle": "AS 1970 851",
-      "titelDe": "Übereinkommen vom 19. Mai 1956 über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR) (mit Unterzeichnungsprotokoll)",
-      "titelFr": "Convention du 19 mai 1956 relative au contrat de transport international de marchandises par route (CMR) (avec prot. de signature)",
-      "titelIt": "Convenzione del 19 maggio 1956 concernente il contratto di trasporto internazionale di merci su strada (CMR) (con Protocollo di firma)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1970/851_851_851/de",
-      "sha": "7de01d6fc45e6f0da5534bd8434e35a9b65ef380d68e33db537d42b1439609ae"
+      "dateEntryInForce": "1991-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/2270_2270_2270",
+      "dateDocument": "1991-10-01",
+      "roFundstelle": "AS 1991 2270",
+      "titelDe": "Übereinkommen vom 19. Mai 1956 über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
+      "titelFr": "Convention du 19 mai 1956 relative au contrat de transport international de marchandises par route (CMR)",
+      "titelIt": "Convenzione del 19 maggio 1956 concernente il contratto di trasporto internazionale di merci su strada (CMR)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/2270_2270_2270/de",
+      "sha": "25549570344916112bee755c39ecd97480f2e114adbd92a2ed0a1b55b561712a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/1770_1770_1770",
+      "dateDocument": "1990-10-01",
+      "roFundstelle": "AS 1990 1770",
+      "titelDe": "Übereinkommen vom 19. Mai 1956 über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
+      "titelFr": "Convention du 19 mai 1956 relative au contrat de transport international de marchandises par route (CMR)",
+      "titelIt": "Convenzione del 19 maggio 1956 concernente il contratto di trasporto internazionale di merci su strada (CMR)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/1770_1770_1770/de",
+      "sha": "622a1f3515ef7c34a0d1b353a6fea690d17fa862a76e764b4a72ba1f30edecb6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-08",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1933_1933_1933",
+      "dateDocument": "1978-07-05",
+      "roFundstelle": "AS 1983 1933",
+      "titelDe": "Protokoll vom 5. Juli 1978 zum Übereinkommen über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
+      "titelFr": "Protocole du 5 juillet 1978 à la Convention relative au contrat de transport international de marchandises par route (CMR)",
+      "titelIt": "Protocollo del 5 luglio 1978 alla Convenzione relativa al contratto di trasporto internazionale di merci su strada (CMR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1933_1933_1933/de",
+      "sha": "befca282c285035ee9527e6f926683f52fdbbf7bebd6eaef2deff95957912aa3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1932_1932_1932",
+      "dateDocument": "1984-01-01",
+      "roFundstelle": "AS 1983 1932",
+      "titelDe": "Übereinkommen vom 19. Mai 1956 über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
+      "titelFr": "Convention du 19 mai 1956 relative au contrat de transport international de marchandises par route (CMR)",
+      "titelIt": "Convenzione del 19 maggio 1956 concernente il contratto di trasporto internazionale di merci su strada (CMR)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1932_1932_1932/de",
+      "sha": "950ad135fd52ece6039c7ea809f42e51da3b2a24a0b28c09b92d8bd92bd56056"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-07-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1981/1012_1012_1012",
+      "dateDocument": "1981-07-15",
+      "roFundstelle": "AS 1981 1012",
+      "titelDe": "Übereinkommen vom 19. Mai 1956 über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
+      "titelFr": "Convention du 19 mai 1956 relative au contrat de transport international de marchandises par route (CMR)",
+      "titelIt": "Convenzione del 19 maggio 1956 concernente il contratto di trasporto internazionale di merci su strada (CMR)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1981/1012_1012_1012/de",
+      "sha": "872f4a27dacd100cf4fb193edebdc8e764b247b7dbf66a8cc09f4f1e9f6b0a8c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/1776_1776_1776",
+      "dateDocument": "1973-12-01",
+      "roFundstelle": "AS 1973 1776",
+      "titelDe": "Übereinkommen vom 19. Mai 1956 über den Beförderungsvertrag im internationalen Strassengüterverkehr (CMR)",
+      "titelFr": "Convention du 19 mai 1956 relative au contrat de transport international de marchandises par route (CMR)",
+      "titelIt": "Convenzione del 19 maggio 1956 concernente il contratto di trasporto internazionale di merci su strada (CMR)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/1776_1776_1776/de",
+      "sha": "af1fc0e82e0df3f17ce8f41e391bcf277755258f2f10c154dfb73e6b14ffd9e7"
     }
   ],
-  "sha": "625c7472f33d8c7d0102f082209d663ca4aee71035f4cce7a3d1e5ffd7049050"
+  "sha": "daa37a58007b3f3593880c05e5dce8cf879ab5915e53442cd85e85c41fe27f75"
 }

@@ -1,9 +1,28 @@
 {
   "erlassKey": "USG",
   "sr": "814.01",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/648",
+      "dateDocument": "2024-03-15",
+      "roFundstelle": "AS 2024 648",
+      "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
+      "titelFr": "Loi fédérale sur la protection de l’environnement (Loi sur la protection de l’environnement, LPE)",
+      "titelIt": "Legge federale sulla protezione dell’ambiente (Legge sulla protezione dell’ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-01-01",
+        "2026-08-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/648/de",
+      "sha": "c825e5f7a944f9879952d3ad5a5ca51b2e88582bdb6e2317bd3a4b325f4182d3"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2026-08-01",
@@ -13,8 +32,31 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 15. März 2024 des Umweltschutzgesetzes",
       "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 15 mars 2024 de la loi sur la protection de l’environnement",
       "titelIt": "Ordinanza concernente un’entrata in vigore parziale della modifica del 15 marzo 2024 della legge sulla protezione dell’ambiente",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/356/de",
-      "sha": "cf9149d933b5ba4da89f0723a743bc38ff76d3d6f4a9a1ebcfa8e57d52c6f08e"
+      "sha": "948d5c535a0c88ad8cb944671abc9f21cd79e30a9dfe6fe176ba58720d837807"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/178",
+      "dateDocument": "2024-09-27",
+      "roFundstelle": "AS 2025 178",
+      "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
+      "titelFr": "Loi fédérale sur la protection de l’environnement (Loi sur la protection de l’environnement, LPE)",
+      "titelIt": "Legge federale sulla protezione dell’ambiente (Legge sulla protezione dell’ambiente, LPAmb)",
+      "botschaftKey": "BOTSCHAFT-2023-239",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-04-01",
+        "2026-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/178/de",
+      "sha": "1935aef0059663046b7a7b13c756be4545ad70d327c1d653a79fbc40c20ebcb7"
     },
     {
       "art": "aenderung",
@@ -25,8 +67,11 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 27. September 2024 des Umweltschutzgesetzes",
       "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 27 septembre 2024 de la loi sur la protection de l’environnement",
       "titelIt": "Ordinanza concernente l’entrata in vigore integrale della modifica del 27 settembre 2024 della legge sulla protezione dell’ambiente",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/113/de",
-      "sha": "3160e185c46a906f72af980e7c6c4805e95a372b414248dc0dce83154044bcde"
+      "sha": "ba20e944057a0aed25073b2a82ce9bbc0e00836e0f9b45f2bbe541c9812b50af"
     },
     {
       "art": "aenderung",
@@ -38,8 +83,50 @@
       "titelFr": "Loi fédérale sur la protection de l’environnement (Loi sur la protection de l’environnement, LPE)",
       "titelIt": "Legge federale sulla protezione dell’ambiente (Legge sulla protezione dell’ambiente, LPAmb)",
       "botschaftKey": "BOTSCHAFT-2023-239",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2025-04-01",
+        "2026-04-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/178/de",
-      "sha": "65a91b2482619821b3ad5ebd7e77282b1b216f3d6390596b32131ff177be78df"
+      "sha": "a8b7ab30bbc69aa385d5a01b10c1a635a494ccb86653b80528b30336018791b3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/262",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2022 262",
+      "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
+      "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
+      "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2025-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/262/de",
+      "sha": "6ad2a99bc16cc656008e33e59213635ff31e762704f11ac9341a2dde056e6ea6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/376",
+      "dateDocument": "2024-03-15",
+      "roFundstelle": "AS 2024 376",
+      "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
+      "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
+      "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/376/de",
+      "sha": "f4471d737e662604575d347aee9039fca75f788855fa60d472fa23f2f2a43df1"
     },
     {
       "art": "aenderung",
@@ -50,14 +137,68 @@
       "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
       "titelFr": "Loi fédérale sur la protection de l’environnement (Loi sur la protection de l’environnement, LPE)",
       "titelIt": "Legge federale sulla protezione dell’ambiente (Legge sulla protezione dell’ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-01-01",
+        "2026-08-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/648/de",
-      "sha": "01105120f4e5199c94cb565116afc3919e70a331058d5834e190662bd5abd60a"
+      "sha": "744554c447c84985cfeb952614dde1d5fc25d1b31ba3983e1f022256821180db"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "d215c99a737d629f2215c7a53baace3572c48a67a6c329aca317c54a8f90eb3e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/243",
+      "dateDocument": "2019-12-20",
+      "roFundstelle": "AS 2020 1269",
+      "titelDe": "Bundesgesetz über die Verlängerung der Befristung der Steuererleichterungen für Erdgas, Flüssiggas und biogene Treibstoffe und über die Änderung des Bundesgesetzes über die Reduktion der CO2-Emissionen",
+      "titelFr": "Loi fédérale sur la reconduction des allégements fiscaux accordés pour le gaz naturel, le gaz liquide et les biocarburants et sur la modification de la loi sur le CO2",
+      "titelIt": "Legge federale che proroga i termini delle agevolazioni fiscali per il gas naturale, il gas liquido e i biocarburanti e che modifica la legge sul CO2",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2024-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/243/de",
+      "sha": "044ec97cba5cef4e7d3fb8e78be0d1d5f3dde1bd1d0213565424219f8d60202a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/262",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2022 262",
+      "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
+      "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
+      "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2025-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/262/de",
+      "sha": "a5b74af05b0386e9e01abf57829375075d986fc77faefb5c3cae3373bf8613c4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+      "dateDocument": "2020-06-12",
+      "roFundstelle": "AS 2020 2743",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Ordonnance sur l'adaptation de lois à la suite de la modification de la désignation de l'Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Ordinanza sull'adeguamento di leggi in seguito al cambiamento della designazione dell'Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/498/de",
+      "sha": "624c9747c49a2b2de0386a2d0d50f3939887b89f337dadf4828f42762c9888d5"
     },
     {
       "art": "aenderung",
@@ -69,20 +210,80 @@
       "titelFr": "Loi fédérale sur la protection de l’environnement (Loi sur la protection de l’environnement, LPE)",
       "titelIt": "Legge federale sulla protezione dell’ambiente (Legge sulla protezione dell’ambiente, LPAmb)",
       "botschaftKey": "BOTSCHAFT-2019-275",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/614/de",
-      "sha": "e5eef9fc7b9c5c141739a831a0d8fd1187e7832168895f80c7877a46a7d15a5f"
+      "sha": "065fc1ac8997d9386320681c5aa48e1a0671d3ea473fe2e328a4af5e44c16a95"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/654",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2021 654",
+      "titelDe": "Bundesgesetz vom 19. März 2021 über administrative Erleichterungen und eine Entlastung des Bundeshaushalts",
+      "titelFr": "Loi fédérale du 19 mars 2021 sur des allégements administratifs et des mesures destinées à soulager les finances fédérales",
+      "titelIt": "Legge federale del 19 marzo 2021 concernente agevolazioni amministrative e misure di sgravio del bilancio della Confederazione",
+      "wirkungen": [
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/654/de",
+      "sha": "e02f2f1b45be48d9c0f9fd73b200f09e3134ba776f03f315977b43b7dc8700ce"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "cb718647159ecabfbcba2ed16c46a8c37c5b7a17a0f2996aa24bad3d254f0ae0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4085",
+      "titelDe": "Bundesgesetz über die Enteignung (EntG)",
+      "titelFr": "Loi fédérale sur l'expropriation (LEx)",
+      "titelIt": "Legge federale sull'espropriazione (LEspr)",
+      "botschaftKey": "BOTSCHAFT-2018-1660",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
+      "sha": "755d7ab8f701a74d9c35734df95434bb6a7726c3a351394536cd36bbc06c639a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "e5457da7eabd2a5ec8f914beb985b603c3945057989b19beae4ae1a74c6c4f82"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/425",
+      "dateDocument": "2014-03-21",
+      "roFundstelle": "AS 2016 2661",
+      "titelDe": "Mineralölsteuergesetz (MinöStG)",
+      "titelFr": "Loi sur l'imposition des huiles minérales (Limpmin)",
+      "titelIt": "Legge federale sull'imposizione degli oli minerali (LIOm)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-08-01",
+        "2020-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/425/de",
+      "sha": "9f6390a99f2430e68a4fae5d9e2ca395d42d0b03c7f4c27f62cbee6db9f4c268"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/243",
+      "dateDocument": "2019-12-20",
+      "roFundstelle": "AS 2020 1269",
+      "titelDe": "Bundesgesetz über die Verlängerung der Befristung der Steuererleichterungen für Erdgas, Flüssiggas und biogene Treibstoffe und über die Änderung des Bundesgesetzes über die Reduktion der CO2-Emissionen",
+      "titelFr": "Loi fédérale sur la reconduction des allégements fiscaux accordés pour le gaz naturel, le gaz liquide et les biocarburants et sur la modification de la loi sur le CO2",
+      "titelIt": "Legge federale che proroga i termini delle agevolazioni fiscali per il gas naturale, il gas liquido e i biocarburanti e che modifica la legge sul CO2",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2024-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/243/de",
+      "sha": "879a5c72512fb511f1c42c13046bf20b7ca97fcfdb1535ae383e6c16ec614200"
     },
     {
       "art": "aenderung",
@@ -93,32 +294,67 @@
       "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz; USG)",
       "titelFr": "Loi fédérale sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
       "titelIt": "Legge federale sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/96/de",
-      "sha": "8ac8be71cb9766bfa760bbfa3e01ee513a8154f1b0b83caef7054b0cb3fca9bd"
+      "sha": "0dd88b655a3d3a732cbf0c243595512846bdf41e1045f444f3b5cde11bfcae90"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2019-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "9e238669600dcced9ab3b9430110cc4805b540e86f3d5a120b52257baf3d5b07"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1984/1122_1122_1122/20190701/de",
+      "sha": "1ed7a15778a5df64d39974bc1b426860a30e415cb2120ed20927865aa0777c89"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "5f2bcc073d2f0ce11ef9a1305ccd73fe853943df3addcc6e4537988fd8b75096"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/573",
+      "dateDocument": "2017-03-17",
+      "roFundstelle": "AS 2017 5205",
+      "titelDe": "Bundesgesetz über das Stabilisierungsprogramm 20172019",
+      "titelFr": "Loi fédérale sur le programme de stabilisation 20172019",
+      "titelIt": "Legge federale sul programma di stabilizzazione 20172019",
+      "botschaftKey": "BOTSCHAFT-2016-1047",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/573/de",
+      "sha": "ffd8c0fcb5002f60a673f4449bdf2ca42b05a3df6ae3b479e26da773793c5b33"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "775e80d97a630f946b13208ac2d832cd9991141aac9bd60a5ba9bc378d80400c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "a185bb874e0ba4e44301f51717473e6e42c06935d1e2395afc457ebc66e5f9d3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/425",
+      "dateDocument": "2014-03-21",
+      "roFundstelle": "AS 2016 2661",
+      "titelDe": "Mineralölsteuergesetz (MinöStG)",
+      "titelFr": "Loi sur l'imposition des huiles minérales (Limpmin)",
+      "titelIt": "Legge federale sull'imposizione degli oli minerali (LIOm)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-08-01",
+        "2020-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/425/de",
+      "sha": "6d51e77cdc3e6ccf3ca403a082d17b30aa3482f8674ddc437127882ad265c8d5"
     },
     {
       "art": "aenderung",
@@ -129,14 +365,30 @@
       "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
       "titelFr": "Loi fédérale sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
       "titelIt": "Legge federale sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/164/de",
-      "sha": "74751bb678cc53e8976e3ad86a8818c0219ccdc6cf01171b309726dd5ce68fef"
+      "sha": "ecdb41d60cfbbc4f5c49afeee6dd85b2e1c642024acc2ec748412b8275104513"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "60b5570f8bf234ef09773cd2b5033a9c143e87f3dedc5e165d3185a88cfc193e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/618",
+      "dateDocument": "2013-03-22",
+      "roFundstelle": "AS 2013 3241",
+      "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
+      "titelFr": "Loi fédérale sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
+      "titelIt": "Legge federale sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-11-01",
+        "2014-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/618/de",
+      "sha": "eb16d3a6fde5ce439abe2577dfd111ef087dbfd24f30ba2a398f76f5ba2cdca3"
     },
     {
       "art": "aenderung",
@@ -148,8 +400,11 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la convention d'Aarhus et de son amendement",
       "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione di Aarhus e il suo emendamento",
       "botschaftKey": "BOTSCHAFT-2012-596",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/234/de",
-      "sha": "439958345349c4a88bc589397dc71f1f5a33f090c8f2ecb1fbc42acd2ca08a19"
+      "sha": "fa1c87fcd9a0c2edd04b60d2fcaba42e8287299b9c2694c79c0966da1d6942f1"
     },
     {
       "art": "aenderung",
@@ -160,14 +415,30 @@
       "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
       "titelFr": "Loi fédérale sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
       "titelIt": "Legge federale sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-11-01",
+        "2014-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/618/de",
-      "sha": "2d2e008cea378992fd329b6bf537beae5026ff50cf381560344222e3ce721843"
+      "sha": "8ce55ab994d67aba3f3a8fad0304c3a7a2e2e67a59e64acb85ea69238adff8a2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "88f2a53e286ce49b36f111468f23ab1041bb103e4716723413d16676d9943bac"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/434",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2010 3233",
+      "titelDe": "Bundesgesetz über die Gentechnik im Ausserhumanbereich (Gentechnikgesetz, GTG)",
+      "titelFr": "Loi fédérale sur l'application du génie génétique au domaine non humain (Loi sur le génie génétique, LGG)",
+      "titelIt": "Legge federale sull'ingegneria genetica nel settore non umano (Legge sull'ingegneria genetica, LIG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/434/de",
+      "sha": "fdfacdc3afb7ebe0d2b5cf44c06ed044c5e10e8b67dd04af209d0025282aaa80"
     },
     {
       "art": "aenderung",
@@ -178,26 +449,57 @@
       "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG) (Abgeltungsansprüche bei Sanierungen von Schiessanlagen)",
       "titelFr": "Loi fédérale sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE) (Indemnisation pour l'assainissement de stands de tir)",
       "titelIt": "Legge federale sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb) (Indennità per il risanamento di impianti di tiro)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/556/de",
-      "sha": "ce090d36e1fc6384931efa62c5841c7cff7c68e7611c366c59a9465024d9b2ed"
+      "sha": "784c8dc6719650d09b4ae6ecf26c7240c71848fcae1f38797aec493ded3ca3fe"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "519473718b198761d2a2eb1966e5dd2276cddfbb8bf5676fe1e44780cfa62675"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "8e8a9e4d751b5f59a4b39cebfa70ebaffee0c426ae09a654846b55c7a3446687"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "0e96e51715ca29796d4c83ec830661bd604cd914ae49f34468a9ce20a9201523"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/327",
+      "dateDocument": "2007-12-21",
+      "roFundstelle": "AS 2008 2265",
+      "titelDe": "Bundesgesetz über die Aufhebung und die Vereinfachung von Bewilligungsverfahren",
+      "titelFr": "Loi fédérale sur la suppression et la simplification de procédures d'autorisation",
+      "titelIt": "Legge federale sulla soppressione e la semplificazione delle procedure d'autorizzazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/327/de",
+      "sha": "87bda8080dcbbfd8b81fbf37d7bd4301842b789b272502f77bd69f41d1cb50d5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "f6679eaaa51324501233c64a913ed0f02a9019eb06670f14d0dfa7cb60e9d9f8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5779",
+      "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+      "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)",
+      "botschaftKey": "BOTSCHAFT-2005-976",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
     },
     {
       "art": "aenderung",
@@ -208,8 +510,11 @@
       "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
       "titelFr": "Loi fédérale sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
       "titelIt": "Legge federale sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/357/de",
-      "sha": "cd574445f563a0b510bae49db90e7dbe8b3c7a4da69343f7f938e39341f7cc6e"
+      "sha": "4c89faaf16062ba056e6b227dec8550b93c0d082a05ec8ca15006161e330fc41"
     },
     {
       "art": "aenderung",
@@ -220,14 +525,27 @@
       "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
       "titelFr": "Loi fédérale sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
       "titelIt": "Legge federale sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/288/de",
-      "sha": "7dcbc13e41cc59268eda5c50355a9c86241660464fe4baaebaf0b72561ef523e"
+      "sha": "8bb5c1ebb578a7a39d1086521bc932c318a479ae06c7701a70844720b91eb4bc"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "5bae319ecd129c8983eb11be455131f810bc1caaf14605c30d3f2bcbc86940cd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     },
     {
       "art": "aenderung",
@@ -238,14 +556,41 @@
       "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
       "titelFr": "Loi fédérale sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
       "titelIt": "Legge federale sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/410/de",
-      "sha": "56bc0e95c8291aaccb8048da965b0fee53ff7fd19e511dbc5f41b970c55753d8"
+      "sha": "16fefd16482c7f8b83c25d12f4f371bb92f0973851d3f4a8485dd50d817bd4fb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "c486e12004c5af723a25d372a0a88325054d504baf21dbb50b29ef8e708194cf"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/542",
+      "dateDocument": "2005-03-18",
+      "roFundstelle": "AS 2005 4099",
+      "titelDe": "Bundesgesetz über das Vernehmlassungsverfahren (Vernehmlassungsgesetz, VlG)",
+      "titelFr": "Loi fédérale sur la procédure de consultation (Loi sur la consultation, LCo)",
+      "titelIt": "Legge federale sulla procedura di consultazione (Legge sulla consultazione, LCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/542/de",
+      "sha": "1c6b3aa9a50cdddd534d4beb4252f9ca45c0a5a0f598d244af0934a2323f6f40"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/388",
+      "dateDocument": "2005-05-18",
+      "roFundstelle": "AS 2005 2293",
+      "titelDe": "Verordnung über die vollständige Inkraftsetzung des Chemikaliengesetzes",
+      "titelFr": "Ordonnance sur la mise en vigueur intégrale de la loi sur les produits chimiques",
+      "titelIt": "Ordinanza sull'entrata in vigore integrale della legge sui prodotti chimici",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/388/de",
+      "sha": "badf2258001636d2f4ae7c91529b1ce278214f61f712c6e93c3d1e1e2ab0b6d1"
     },
     {
       "art": "aenderung",
@@ -256,20 +601,42 @@
       "titelDe": "Verordnung über die Inkraftsetzung von Artikel 54 Absatz 2 zweiter Satz des Umweltschutzgesetzes",
       "titelFr": "Ordonnance concernant l'entrée en vigueur de l'art. 54, al. 2, 2e phrase de la loi sur la protection de l'environnement",
       "titelIt": "Ordinanza concernente l'entrata in vigore dell'articolo 54 capoverso 2 secondo periodo della legge sulla protezione dell'ambiente",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/448/de",
-      "sha": "92f07d311fa748907e85187777e2a35bc2f42626bab962c13f968f0a9a9ed76c"
+      "sha": "d3e6a420655997265813171cf236ca3f1c75b23e5b1facb4a62a68707490019a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "62708f1acc224dc2d92ead876f75ddcd2cf7988c45de92b398bfc8f4ac9035bd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/724",
+      "dateDocument": "2000-12-15",
+      "roFundstelle": "AS 2004 4763",
+      "titelDe": "Bundesgesetz über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikaliengesetz, ChemG)",
+      "titelFr": "Loi fédérale sur la protection contre les substances et les préparations dangereuses (Loi sur les produits chimiques, LChim)",
+      "titelIt": "Legge federale sulla protezione contro le sostanze e i preparati pericolosi (Legge sui prodotti chimici, LPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/724/de",
+      "sha": "a41bfb37084f93b0cf9a05bf348127258bd32b76706977300e5dbbbdf386b588"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-12-20",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "e90eedcce488df3a7fe55c937ab49c65217d8149d6a162c2a2248cd1b889a519"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/200",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2004 1633",
+      "titelDe": "Bundesgesetz über das Entlastungsprogramm 2003",
+      "titelFr": "Loi fédérale sur le programme d'allégement budgétaire 2003",
+      "titelIt": "Legge federale sul programma di sgravio 2003",
+      "botschaftKey": "BOTSCHAFT-2003-887",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/200/de",
+      "sha": "3fb583e83a9a807dd1eaf7af1dc6deb32dd66491c86cb628e0f235cf0c370f7e"
     },
     {
       "art": "aenderung",
@@ -281,8 +648,11 @@
       "titelFr": "Loi fédérale sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
       "titelIt": "Legge federale sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
       "botschaftKey": "BOTSCHAFT-2002-1272",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/597/de",
-      "sha": "5b9ce07c24d8c9b5b26138468c6c99b7d8c434036b791cda1fcfbf761deb5c3f"
+      "sha": "3bd0a9f3908bd56971554af321d513d75693c104c54fffa10deb0b33bb9c9897"
     },
     {
       "art": "aenderung",
@@ -294,8 +664,26 @@
       "titelFr": "Loi fédérale sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
       "titelIt": "Legge federale sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
       "botschaftKey": "BOTSCHAFT-2002-1014",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/624/de",
-      "sha": "97f612dc75b4f8427aa351b558154d9bb6856eabe45ae5679feb91602f38f17b"
+      "sha": "967a984418796ee943b240d61ccf3e10f89258c6b95a9424a6aa4d3c90ba217b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2004-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/705",
+      "dateDocument": "2003-03-21",
+      "roFundstelle": "AS 2003 4803",
+      "titelDe": "Bundesgesetz über die Gentechnik im Ausserhumanbereich (Gentechnikgesetz, GTG)",
+      "titelFr": "Loi fédérale sur l'application du génie génétique au domaine non humain (Loi sur le génie génétique, LGG)",
+      "titelIt": "Legge federale sull'ingegneria genetica nel settore non umano (Legge sull'ingegneria genetica, LIG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/705/de",
+      "sha": "ce7d34c3a0df76c4571ca13f3fa046795e3e6eebd517c544fde526b363059797"
     },
     {
       "art": "aenderung",
@@ -307,33 +695,177 @@
       "titelFr": "Loi fédérale sur les mesures urgentes découlant du programme d'allégement budgétaire 2003",
       "titelIt": "Legge federale sulle misure urgenti del programma di sgravio 2003",
       "botschaftKey": "BOTSCHAFT-2003-887",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/767/de",
-      "sha": "feeed67c52df7be16b1107d4593175e2447d86c7db7cd7c9084be341bebfb614"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2002-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "b4f3a3b53a3976f17cc2ab487691a4c10647d75e2fd0a73d1ceaa009077fc48e"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.01",
-      "sha": "ad2a595a43c307d78b44f93ceb4a2354991807291ee90ebc0ca130da121970ff"
+      "sha": "9f43e71fa06efcb091d63c8b7cdbf4c741520c3a4393b48663bd34c76e2074d7"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1985-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/1122_1122_1122",
-      "dateDocument": "1983-10-07",
-      "roFundstelle": "AS 1984 1122",
-      "titelDe": "Bundesgesetz vom 7. Oktober 1983 über den Umweltschutz (Umweltschutzgesetz, USG)",
-      "titelFr": "Loi fédérale du 7 octobre 1983 sur la protection de l'environnement (Loi sur la protection de l'environnement, LPE)",
-      "titelIt": "Legge federale del 7 ottobre 1983 sulla protezione dell'ambiente (Legge sulla protezione dell'ambiente, LPAmb)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/1122_1122_1122/de",
-      "sha": "5dbbe0fca13017ff1bbe08becebf39dab36de1acdd75510495d3e5aa4ac12b08"
+      "dateEntryInForce": "2002-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/422",
+      "dateDocument": "2000-12-15",
+      "roFundstelle": "AS 2001 2790",
+      "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
+      "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
+      "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/422/de",
+      "sha": "7b9bfc47320bec2e031a569a48d5a9122962f6f67c362fe56c0810a675363c6d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+      "dateDocument": "1999-06-18",
+      "roFundstelle": "AS 1999 3071",
+      "titelDe": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de décision",
+      "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/472/de",
+      "sha": "a761a13e4eb553ad8499c948314b636504a456552288bf53322b10820bcae446"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243",
+      "dateDocument": "1997-06-20",
+      "roFundstelle": "AS 1997 2243",
+      "titelDe": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG), Änderung",
+      "titelFr": "Loi fédérale sur la protection des eaux (LEaux), Modification",
+      "titelIt": "Legge federale sulla protezione delle acque (LPAc), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2243_2243_2243/de",
+      "sha": "5e7c0ce6bc98344a6730ebf2c80eabd0688b39be37f56deb0aefb33592a274f2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155",
+      "dateDocument": "1995-12-21",
+      "roFundstelle": "AS 1997 1155",
+      "titelDe": "Umweltschutzgesetz, Änderung",
+      "titelFr": "Loi fédérale sur la protection de l'environnement, Modification",
+      "titelIt": "Legge sulla protezione dell'ambiente, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/1155_1155_1155/de",
+      "sha": "7c28c89ca15ffa20f66597fda16d3d213c9cbfda123cac7f3f9602fdcd521afb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3371_3371_3371",
+      "dateDocument": "1996-06-21",
+      "roFundstelle": "AS 1996 3371",
+      "titelDe": "Mineralölsteuergesetz vom 21. Juni 1996 (MinöStG)",
+      "titelFr": "Loi du 21 juin 1996 sur l'imposition des huiles minérales (Limpmin)",
+      "titelIt": "Legge federale del 21 giugno 1996 sull'imposizione degli oli minerali (LIOm)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3371_3371_3371/de",
+      "sha": "4f009b5d25f937301f1e5e0c7d6c8f381bbc51faacf67ba2783bb3abe279a2eb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1725_1725_1725",
+      "dateDocument": "1995-10-06",
+      "roFundstelle": "AS 1996 1725",
+      "titelDe": "Bundesgesetz vom 6. Oktober 1995 über die technischen Handelshemmnisse (THG)",
+      "titelFr": "Loi fédérale du 6 octobre 1995 sur les entraves techniques au commerce (LETC)",
+      "titelIt": "Legge federale del 6 ottobre 1995 sugli ostacoli tecnici al commercio (LOTC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1725_1725_1725/de",
+      "sha": "f6cfb93bbe3e97903f4a5a872569482034aa76c7c8ab255930ce0405b4fc51bd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/208_208_208",
+      "dateDocument": "1996-01-10",
+      "roFundstelle": "AS 1996 208",
+      "titelDe": "Verordnung vom 10. Januar 1996 die Bereinigung der Abkürzungen von Erlasstiteln",
+      "titelFr": "Ordonnance du 10 janvier 1996 modifiant les abréviations des titres de divers actes législatifs",
+      "titelIt": "Ordinanza del 10 gennaio 1996 che rettifica alcune abbreviazioni di titoli di atti normativi",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/208_208_208/de",
+      "sha": "216def33f6ed3c1dd80d33baba746c372d724e2e8b7749bf6560ed82adc56a49"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/214_214_214",
+      "dateDocument": "1995-03-24",
+      "roFundstelle": "AS 1996 214",
+      "titelDe": "Bundesgesetz über den Natur- und Heimatschutz, Änderung",
+      "titelFr": "Loi fédérale sur la protection de la nature et du paysage, Modification",
+      "titelIt": "Legge federale sulla protezione della natura e del paesaggio, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/214_214_214/de",
+      "sha": "c1a1798ec1b42e400473b942d85db2c9ac58635d291e68be837104da313c11e9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1933_1933_1933",
+      "dateDocument": "1991-03-22",
+      "roFundstelle": "AS 1994 1933",
+      "titelDe": "Strahlenschutzgesetz vom 22. März 1991 (StSG)",
+      "titelFr": "Loi du 22 mars 1991 sur la radioprotection (LRaP)",
+      "titelIt": "Legge federale del 22 marzo 1991 sulla radioprotezione (LRaP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1933_1933_1933/de",
+      "sha": "914487645d0259c6254337fc3f8b7ef6b15693fc8b2b85a65b4cec7769742eca"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1860_1860_1860",
+      "dateDocument": "1991-01-24",
+      "roFundstelle": "AS 1992 1860",
+      "titelDe": "Bundesgesetz vom 24. Januar 1991 über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG)",
+      "titelFr": "Loi fédérale du 24 janvier 1991 sur la protection des eaux (LEaux)",
+      "titelIt": "Legge federale del 24 gennaio 1991 sulla protezione delle acque (LPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1860_1860_1860/de",
+      "sha": "91141247ec612a55806a39d2a98b0ba3d2213a2649aef0259f468f96fe26a7d7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/857_857_857",
+      "dateDocument": "1990-10-05",
+      "roFundstelle": "AS 1991 857",
+      "titelDe": "Bundesgesetz vom 5. Oktober 1990 über Finanzhilfen und Abgeltungen (Subventionsgesetz, SuG)",
+      "titelFr": "Loi fédérale du 5 octobre 1990 sur les aides financières et les indemnités (Loi sur les subventions, LSu)",
+      "titelIt": "Legge federale del 5 ottobre 1990 sugli aiuti finanziari e le indennità (Legge sui sussidi, LSu)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/857_857_857/de",
+      "sha": "a22514f69bf61125bc291c91569f6fd4a0215ca3a135ab2823eebd1dad2e48d3"
     }
   ],
-  "sha": "a80ee154ac81b19ab8e88f9abaf6e611ee184890b4fe759bbd78037848c6641d"
+  "sha": "02e011fce3174d9eeadf7ad5b3d6170e12734ff62603b8d744efcd428f72488e"
 }

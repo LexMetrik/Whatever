@@ -1,8 +1,8 @@
 {
   "erlassKey": "BBV",
   "sr": "412.101",
-  "abgerufen": "2026-09-18",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,8 +14,11 @@
       "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
       "titelIt": "Ordinanza sulla formazione professionale (OFPr)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/471/de",
-      "sha": "7c75a31893a77b527cac3281bc31571bd8002091691eb3f35936b1d3014f0ef2"
+      "sha": "8d79252968dbf92c6197aca5b20be477499d846889910fc8e3e45f06d1bb7636"
     },
     {
       "art": "aenderung",
@@ -27,8 +30,12 @@
       "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
       "titelIt": "Ordinanza sulla formazione professionale (OFPr)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/359/de",
-      "sha": "b958511ac49ff4206c9776dba27b5483b0f4c1f5c5e6d433e027f09439fb39d4"
+      "sha": "572352e852766fd2f931c8ff3460ca2d56426c443138aef8ad6acecb4f673d4d"
     },
     {
       "art": "aenderung",
@@ -39,8 +46,11 @@
       "titelDe": "Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)",
       "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
       "titelIt": "Ordinanza sulla formazione professionale (OFPr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/82/de",
-      "sha": "1b247f82320bb9465f3ba842f86fac97ecfce4b90387bdf2dd417d965d3a301b"
+      "sha": "3e220dd24c602638aa8f55baead4ac87a35bcaf7a2293d313d06c1b1c3a5d68c"
     },
     {
       "art": "aenderung",
@@ -51,14 +61,26 @@
       "titelDe": "Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)",
       "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
       "titelIt": "Ordinanza sulla formazione professionale (OFPr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/217/de",
-      "sha": "ae8c123d131987580cedc0417ea94c050b1c78854c7db04a0fcb91bc22bcb7be"
+      "sha": "1c59cc109875f0eb23e016f5f0dc6babe40cf98c6631a613b58fc075e2d4637d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.101",
-      "sha": "4261eaed91095321aa43dcaac90e1ae05b9457d5293c2c8cb686d0def0b90e2a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/165",
+      "dateDocument": "2022-02-23",
+      "roFundstelle": "AS 2022 165",
+      "titelDe": "Verordnung vom 23. Februar 2022 über die internationale Zusammenarbeit und Mobilität in der Bildung (VIZMB)",
+      "titelFr": "Ordonnance du 23 février 2022 sur la coopération et la mobilité internationales en matière de formation (OCMIF)",
+      "titelIt": "Ordinanza del 23 febbraio 2022 sulla cooperazione e la mobilità internazionali in materia di formazione (OCMIF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/165/de",
+      "sha": "d86026bddb4b12fbf58021297e45ece31a85e6734c56ca3e325882f63d9863fb"
     },
     {
       "art": "aenderung",
@@ -69,14 +91,42 @@
       "titelDe": "Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur la formation professionnelle (OFPr). Erratum",
       "titelIt": "Ordinanza sulla formazione professionale (OFPr). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/74/de",
-      "sha": "6c88481587904482b010defb644d339757a95df2950fca9304ff8051eea1f3a3"
+      "sha": "f43d3cee945ce24a85b559ac1a16163a75c159ef6db1cffff9ac2e00206afadd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.101",
-      "sha": "4db53551d34d5eedfdfa85f50e84487586421d42c9f93a13c8830db4509ac21c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/23",
+      "dateDocument": "2018-12-14",
+      "roFundstelle": "AS 2019 155",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "titelFr": "Ordonnance sur l'organisation du gouvernement et de l'administration (OLOGA)",
+      "titelIt": "Ordinanza sull'organizzazione del Governo e dell'Amministrazione (OLOGA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/23/de",
+      "sha": "d4b5749d00f68153596d897767abb7d762d47d9db1d2c7a7aa950c65c3c3ca73"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/502",
+      "dateDocument": "2017-04-26",
+      "roFundstelle": "AS 2017 4261",
+      "titelDe": "Strahlenschutzverordnung (StSV)",
+      "titelFr": "Ordonnance sur la radioprotection (ORaP)",
+      "titelIt": "Ordinanza sulla radioprotezione (ORaP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/502/de",
+      "sha": "d770c636e96aa12029003891038ca66b7c877080695f68590a703daffa55489e"
     },
     {
       "art": "aenderung",
@@ -87,14 +137,27 @@
       "titelDe": "Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)",
       "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
       "titelIt": "Ordinanza sulla formazione professionale (Ordinanza sulla formazione professionale, OFPr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/565/de",
-      "sha": "43dd1863e2b854128a0ceadbeb556bcaaf367cae1308511f5d54121eae2afdb9"
+      "sha": "7aaa352ef3c132a3ce983f59dfa78073ab41cd7ee9ae51a340524f36e3b36ce6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.101",
-      "sha": "398234b12e0a99502b4ca42dc9e879150e81417fc9a75318dc25959191d3fc39"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/812",
+      "dateDocument": "2016-12-21",
+      "roFundstelle": "AS 2016 5113",
+      "titelDe": "Verordnung über die schrittweise Einführung des freien Personenverkehrs zwischen der Schweizerischen Eidgenossenschaft und der Europäischen Union und deren Mitgliedstaaten sowie unter den Mitgliedstaaten der Europäischen Freihandelsassoziation",
+      "titelFr": "Ordonnance sur l'introduction progressive de la libre circulation des personnes entre, d'une part, la Confédération suisse et, d'autre part, l'Union européenne et ses Etats membres, ainsi qu'entre les Etats membres de l'Association européenne de libre-échange",
+      "titelIt": "Ordinanza concernente l'introduzione graduale della libera circolazione delle persone tra la Confederazione Svizzera e l'Unione europea e i suoi Stati membri nonché gli Stati membri dell'Associazione europea di libero scambio",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/812/de",
+      "sha": "2edf8d2a42c754f445d5d902bf00aac073589413b752670168911a93816509d7"
     },
     {
       "art": "aenderung",
@@ -105,14 +168,27 @@
       "titelDe": "Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)",
       "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
       "titelIt": "Ordinanza sulla formazione professionale (OFPr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/637/de",
-      "sha": "6f028e582ef78de82fbe151abfa06ed244121964e631e8190b5a71daa067ac05"
+      "sha": "91fa902be84a1d23fad4f16ce6051cec93ba5840c8f2ecfe04002571ec366f6c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.101",
-      "sha": "b0f52d1e659ed1612cdfcb7ff1d2f3168108344f2b5cf5d3c3b1393ad0d77272"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/692",
+      "dateDocument": "2014-11-12",
+      "roFundstelle": "AS 2014 4137",
+      "titelDe": "Verordnung zum Hochschulförderungs- und -koordinationsgesetz (V-HFKG)",
+      "titelFr": "Ordonnance relative à la loi sur l'encouragement et la coordination des hautes écoles (O-LEHE)",
+      "titelIt": "Ordinanza concernente la legge sulla promozione e sul coordinamento del settore universitario svizzero (O-LPSU)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/692/de",
+      "sha": "5a78abbef2f960fe8503d24653d18d25670d0c2cd5ef969f3a1d2cfe945c786a"
     },
     {
       "art": "aenderung",
@@ -123,8 +199,26 @@
       "titelDe": "Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)",
       "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
       "titelIt": "Ordinanza sulla formazione professionale (OFPr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/334/de",
-      "sha": "de9cdaf5644a506c47490d9a6e10921676f8b15f124a3a307799fa530b504462"
+      "sha": "eb6e9745b534dcd8ec4db5b34464973d7036df8c3f55a1e7dddf23cb777cc3e9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3631",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/418/de",
+      "sha": "cc366b052f45678f6292fa3ed75ee05d752a3862952f1b32edfc0aaf66630b2f"
     },
     {
       "art": "aenderung",
@@ -135,20 +229,41 @@
       "titelDe": "Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)",
       "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
       "titelIt": "Ordinanza sulla formazione professionale (OFPr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/773/de",
-      "sha": "92426afdb4fc35a8b9932726cbebdeaca95b4de277f08422de734f137480c578"
+      "sha": "35bac16c6b8b442e9aaf28ed537991cb026fe3ceab9a63982c606e245428d767"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.101",
-      "sha": "40024b3ef5de2b54925db4a1d46d3a2c8b449ef9614fc61f4e23f06fc0c3d49c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/461",
+      "dateDocument": "2012-05-23",
+      "roFundstelle": "AS 2012 3967",
+      "titelDe": "Verordnung über die Förderung von Sport und Bewegung (Sportförderungsverordnung, SpoFöV)",
+      "titelFr": "Ordonnance sur l'encouragement du sport et de l'activité physique (Ordonnance sur l'encouragement du sport, OESp)",
+      "titelIt": "Ordinanza sulla promozione dello sport e dell'attività fisica (Ordinanza sulla promozione dello sport, OPSpo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/461/de",
+      "sha": "58150514f79e2142a53dd3a92c40177e0677e80fe648233b7b688da128e53a0b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.101",
-      "sha": "68a3e526bbf094e9381c63a78a38367db44dc16935ea996601c2b4548c587385"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/752",
+      "dateDocument": "2011-11-09",
+      "roFundstelle": "AS 2011 5227",
+      "titelDe": "Verordnung über die Anpassung rechtlicher Bestimmungen infolge der Überprüfung der ausserparlamentarischen Kommissionen",
+      "titelFr": "Ordonnance sur l'adaptation de dispositions juridiques à la suite du réexamen des commissions extraparlementaires",
+      "titelIt": "Ordinanza che adegua le disposizioni legali in seguito alla verifica delle commissioni extraparlamentari",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/752/de",
+      "sha": "2a27525b0bbf89719987df34bfb8d18072175c302c6f9ebe2d5ddf7f20c37dcf"
     },
     {
       "art": "aenderung",
@@ -159,14 +274,41 @@
       "titelDe": "Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)",
       "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
       "titelIt": "Ordinanza sulla formazione professionale (OFPr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/864/de",
-      "sha": "ad38b96fedc21413a1ece69c04a5f601d2de8e993e955d327adc06060222869e"
+      "sha": "717c1b6332d47a6dab0ba01c01386b698db625eaa0862824f18a70c7505da0ce"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.101",
-      "sha": "8071ae59ab3b014f8cbd4f994a51922ef7cb4dd430a0796796a64a6f27aa345a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/423",
+      "dateDocument": "2009-06-24",
+      "roFundstelle": "AS 2009 3447",
+      "titelDe": "Verordnung über die eidgenössische Berufsmaturität (Berufsmaturitätsverordnung, BMV)",
+      "titelFr": "Ordonnance sur la maturité professionnelle fédérale (OMPr)",
+      "titelIt": "Ordinanza sulla maturità professionale federale (Ordinanza sulla maturità professionale, OMPr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/423/de",
+      "sha": "514d60e1b04e43f6842e9c3da2e1e0082f84cf564355f56ed992390f470df8d3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/778",
+      "dateDocument": "2007-10-24",
+      "roFundstelle": "AS 2007 5651",
+      "titelDe": "Strahlenschutzverordnung (StSV)",
+      "titelFr": "Ordonnance sur la radioprotection (ORaP)",
+      "titelIt": "Ordinanza sulla radioprotezione (ORaP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/778/de",
+      "sha": "6b8b9fda34c4d64067436a687fff9f0e92b678dfdcc964edf2f058e5b6c72082"
     },
     {
       "art": "aenderung",
@@ -177,57 +319,42 @@
       "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
       "titelFr": "Ordonnance sur les adaptations des ordonnances touchées par la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons",
       "titelIt": "Ordinanza che adegua il diritto regolamentare alla Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/789/de",
-      "sha": "2c0b72ea1f35c8f9b9af4d099ac6ae156b00a1a6e64f00f30febb5dead661253"
+      "sha": "9cd737a7642fa729a8d54b717b8c49459a3002a64f32d5088a08e6713cae5308"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.101",
-      "sha": "8fdb2f8c4f7c8bb6f5ecd3b7c7da14587db47667e13dc7841ee766f989f88529"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/404",
+      "dateDocument": "2006-06-16",
+      "roFundstelle": "AS 2006 2639",
+      "titelDe": "Verordnung über die Gebühren im Aufgabenbereich des Staatssekretariates für Bildung, Forschung und Innovation (Gebührenverordnung SBFI, GebV-SBFI)",
+      "titelFr": "Ordonnance sur les émoluments perçus dans le domaine du Secrétariat d'Etat à la formation, à la recherche et à l'innovation (Ordonnance sur les émoluments du SEFRI, OEmol-SEFRI)",
+      "titelIt": "Ordinanza sugli emolumenti riguardanti il campo d'attività della Segreteria di Stato per la formazione, la ricerca e l'innovazione (Ordinanza sugli emolumenti SEFRI, OEm-SEFRI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/404/de",
+      "sha": "069049b4d276788d7d21f5aae354d862d6ef84b96df7a5094f925435546f651b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-10-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/412.101",
-      "sha": "39ffd9592337953c325e9bae7332c0956a4f8387224040efeea93d405cf5f850"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2004-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/748",
-      "dateDocument": "2003-11-19",
-      "roFundstelle": "AS 2003 5047",
-      "titelDe": "Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)",
-      "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
-      "titelIt": "Ordinanza sulla formazione professionale (OFPr)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/748/de",
-      "sha": "229292e2a552d80d66bedd16d95345618ada4bbac3e974e89fd7b78a4e0d6d4f"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1980-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1979/1712_1712_1712",
-      "dateDocument": "1979-11-07",
-      "roFundstelle": "AS 1979 1712",
-      "titelDe": "Verordnung vom 7. November 1979 über die Berufsbildung (BBV)",
-      "titelFr": "Ordonnance du 7 novembre 1979 sur la formation professionnelle (OFPr)",
-      "titelIt": "Ordinanza del 7 novembre 1979 sulla formazione professionale (OFP)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/1712_1712_1712/de",
-      "sha": "033b83a9860c332038d194ff30d332bbbc7c44d0c6f38232fb223b3b886c002d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1965-04-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1965/345_350_346",
-      "dateDocument": "1965-03-30",
-      "roFundstelle": "AS 1965 345",
-      "titelDe": "Verordnung vom 30. März 1965 zum Bundesgesetz über die Berufsbildung",
-      "titelFr": "Ordonnance d'exécution du 30 mars 1965 de la loi fédérale sur la formation professionnelle",
-      "titelIt": "Ordinanza d'esecuzione del 30 marzo 1965 della legge federale sulla formazione professionale",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1965/345_350_346/de",
-      "sha": "f8ebaddc01f04049e99651e998725d39cec3858521c30d053391259554313595"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/608",
+      "dateDocument": "2005-09-14",
+      "roFundstelle": "AS 2005 4645",
+      "titelDe": "Verordnung über Aufbau und Führung von Fachhochschulen (Fachhochschulverordnung, FHSV)",
+      "titelFr": "Ordonnance relative à la création et à la gestion des hautes écoles spécialisées (Ordonnance sur les hautes écoles spécialisées, OHES)",
+      "titelIt": "Ordinanza sull'istituzione e la gestione delle scuole universitarie professionali (Ordinanza sulle scuole universitarie professionali, OSUP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/608/de",
+      "sha": "a774a1844455a4deccb1e818cfc25ddff0a406a3b03b03f22227a43511bdf022"
     }
   ],
-  "sha": "9a319b753dc5e51a98bfed8dac8fc146dfbfcb682c103793002d4ff191db9d1a"
+  "sha": "57c7e8132b71725fb07bfb17ec2ba099bb45e8e8836fdcf836a8227dbbf64140"
 }

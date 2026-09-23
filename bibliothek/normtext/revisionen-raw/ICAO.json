@@ -2221,5 +2221,573 @@
     "2026-06-12"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/63/1377_1378_1381",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/63/1377_1378_1381",
+    "inkrafttreten": "1947-04-04",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1971/1301_1296_1296",
+        "typ": 1,
+        "datum": "1969-01-22",
+        "fassung": "1969-01-22"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1972/860_872_791",
+        "typ": 1,
+        "datum": "1972-04-20",
+        "fassung": "1972-04-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1973/1616_1616_1616",
+        "typ": 1,
+        "datum": "1973-08-01",
+        "fassung": "1973-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1973/1616_1616_1616",
+        "typ": 9,
+        "datum": "1973-08-01",
+        "fassung": "1973-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1973/2253_2253_2253",
+        "typ": 3,
+        "datum": "1972-06-29",
+        "fassung": "2019-06-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1973/2254_2254_2254",
+        "typ": 1,
+        "datum": "1973-01-16",
+        "fassung": "1973-01-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/1552_1551_1551",
+        "typ": 1,
+        "datum": "1974-12-19",
+        "fassung": "1974-12-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/1552_1551_1551",
+        "typ": 9,
+        "datum": "1974-12-19",
+        "fassung": "1974-12-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/496_496_496",
+        "typ": 1,
+        "datum": "1976-01-14",
+        "fassung": "1976-01-14"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/496_496_496",
+        "typ": 9,
+        "datum": "1976-01-14",
+        "fassung": "1976-01-14"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1977/1299_1299_1299",
+        "typ": 1,
+        "datum": "1977-06-01",
+        "fassung": "1977-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1977/1299_1299_1299",
+        "typ": 9,
+        "datum": "1977-06-01",
+        "fassung": "1977-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/190_190_190",
+        "typ": 1,
+        "datum": "1977-12-15",
+        "fassung": "1977-12-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/190_190_190",
+        "typ": 9,
+        "datum": "1977-12-15",
+        "fassung": "1977-12-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1980/417_417_417",
+        "typ": 3,
+        "datum": "1975-12-17",
+        "fassung": "2019-06-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1980/418_418_418",
+        "typ": 1,
+        "datum": "1980-02-15",
+        "fassung": "1980-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1980/418_418_418",
+        "typ": 9,
+        "datum": "1980-02-15",
+        "fassung": "1980-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1981/1438_1438_1438",
+        "typ": 1,
+        "datum": "1981-09-01",
+        "fassung": "1981-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1981/1438_1438_1438",
+        "typ": 9,
+        "datum": "1981-09-01",
+        "fassung": "1981-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/771_771_771",
+        "typ": 1,
+        "datum": "1985-06-01",
+        "fassung": "1985-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/771_771_771",
+        "typ": 9,
+        "datum": "1985-06-01",
+        "fassung": "1985-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/1073_1073_1073",
+        "typ": 1,
+        "datum": "1987-09-01",
+        "fassung": "1987-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/1073_1073_1073",
+        "typ": 9,
+        "datum": "1987-09-01",
+        "fassung": "1987-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/859_859_859",
+        "typ": 1,
+        "datum": "1989-05-01",
+        "fassung": "1989-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/859_859_859",
+        "typ": 9,
+        "datum": "1989-05-01",
+        "fassung": "1989-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/1566_1566_1566",
+        "typ": 1,
+        "datum": "1990-09-01",
+        "fassung": "1990-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/1566_1566_1566",
+        "typ": 9,
+        "datum": "1990-09-01",
+        "fassung": "1990-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/424",
+        "typ": 1,
+        "datum": "1999-11-04",
+        "fassung": "1999-11-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/425",
+        "typ": 1,
+        "datum": "1999-11-04",
+        "fassung": "1999-11-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/356",
+        "typ": 1,
+        "datum": "2002-07-15",
+        "fassung": "2002-07-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/396",
+        "typ": 1,
+        "datum": "2002-04-15",
+        "fassung": "2002-04-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/577",
+        "typ": 3,
+        "datum": "1979-12-12",
+        "fassung": "2019-06-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/578",
+        "typ": 3,
+        "datum": "1984-11-26",
+        "fassung": "2019-06-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/579",
+        "typ": 3,
+        "datum": "1985-12-02",
+        "fassung": "2019-06-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/580",
+        "typ": 1,
+        "datum": "1997-06-20",
+        "fassung": "1997-06-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/580",
+        "typ": 1,
+        "datum": "1998-10-01",
+        "fassung": "1998-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/580",
+        "typ": 1,
+        "datum": "1998-10-01",
+        "fassung": "2019-06-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/580",
+        "typ": 1,
+        "datum": "1999-08-17",
+        "fassung": "1999-08-17"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/580",
+        "typ": 1,
+        "datum": "2002-11-28",
+        "fassung": "2002-11-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/580",
+        "typ": 1,
+        "datum": "2002-11-28",
+        "fassung": "2019-06-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/580",
+        "typ": 1,
+        "datum": "2004-03-26",
+        "fassung": "2004-03-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/580",
+        "typ": 9,
+        "datum": "1997-06-20",
+        "fassung": "1997-06-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/484",
+        "typ": 1,
+        "datum": "2005-04-18",
+        "fassung": "2005-04-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/22",
+        "typ": 1,
+        "datum": "2005-07-11",
+        "fassung": "2005-07-11"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/238",
+        "typ": 1,
+        "datum": "2008-03-14",
+        "fassung": "2008-03-14"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/238",
+        "typ": 9,
+        "datum": "2008-03-14",
+        "fassung": "2008-03-14"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/410",
+        "typ": 1,
+        "datum": "2005-07-11",
+        "fassung": "2005-07-11"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/501",
+        "typ": 1,
+        "datum": "2010-11-18",
+        "fassung": "2010-11-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/459",
+        "typ": 1,
+        "datum": "2014-08-12",
+        "fassung": "2014-08-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/459",
+        "typ": 9,
+        "datum": "2014-08-12",
+        "fassung": "2014-08-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/264",
+        "typ": 1,
+        "datum": "2016-02-25",
+        "fassung": "2016-02-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/637",
+        "typ": 1,
+        "datum": "2016-02-25",
+        "fassung": "2016-02-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/764",
+        "typ": 1,
+        "datum": "2016-11-10",
+        "fassung": "2016-11-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/404",
+        "typ": 1,
+        "datum": "2017-04-27",
+        "fassung": "2017-04-27"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/712",
+        "typ": 1,
+        "datum": "2017-08-03",
+        "fassung": "2017-08-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/813",
+        "typ": 1,
+        "datum": "2018-11-08",
+        "fassung": "2018-11-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/443",
+        "typ": 1,
+        "datum": "2019-06-18",
+        "fassung": "2019-06-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/443",
+        "typ": 9,
+        "datum": "2019-06-18",
+        "fassung": "2019-06-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/624",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/112",
+        "typ": 1,
+        "datum": "2023-11-02",
+        "fassung": "2023-11-02"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/244",
+        "typ": 9,
+        "datum": "2024-05-29",
+        "fassung": "2024-05-29"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/768",
+        "typ": 1,
+        "datum": "2024-11-28",
+        "fassung": "2024-11-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/349",
+        "typ": 1,
+        "datum": "2026-06-12",
+        "fassung": "2026-06-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/350",
+        "typ": 1,
+        "datum": "2026-06-12",
+        "fassung": "2026-06-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/40",
+        "typ": 1,
+        "datum": "2025-11-27",
+        "fassung": "2025-11-27"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/63/1377_1378_1381",
+        "typ": 5,
+        "datum": "1947-04-04",
+        "fassung": "1947-04-04"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1971/1301_1296_1296": {
+        "dateForce": "1969-01-22",
+        "dateDoc": "1968-09-24",
+        "roId": "RO 1971 1296",
+        "titelDe": "Protokoll vom 24. September 1968 betreffend den authentischen dreisprachigen Wortlaut des Übereinkommens über die internationale Zivilluftfahrt (Chicago, 1944)",
+        "titelFr": "Protocole du 24 septembre 1968 concernant le texte authentique trilingue de la Convention relative à l'Aviation civile internationale (Chicago, 1944)",
+        "titelIt": "Protocollo del 24 settembre 1968 concernente il testo autentico trilingue della Convenzione relativa all'aviazione civile internazionale (Chicago, 1944)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1972/860_872_791": {
+        "dateForce": "1972-04-20",
+        "dateDoc": "1972-04-20",
+        "roId": "RO 1972 872",
+        "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+        "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+        "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1973/1616_1616_1616": {
+        "dateForce": "1973-08-01",
+        "dateDoc": "1973-08-01",
+        "roId": "RO 1973 1616",
+        "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+        "titelFr": "Convention du 7 décembre 1944 relative à l'Aviation civile internationale",
+        "titelIt": "Convenzione del 7 dicembre 1944 relativa all'Aviazione civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1973/2253_2253_2253": {
+        "dateDoc": "1972-06-29",
+        "roId": "RO 1973 2253",
+        "titelDe": "Bundesbeschluss vom 29. Juni 1972 über die Genehmigung von zwei Protokollen betreffen Änderung des Übereinkommens über die internationale ZivilLuftfahrt",
+        "titelFr": "Arrêté fédéral du 29 juin 1972 approuvant deux protocoles qui portent amendement de la Convention relative à l'aviation civile internationale",
+        "titelIt": "Decreto federale del 29 giugno 1972 che approva due protocolli emendanti la convenzione relativa alla navigazione aerea civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1973/2254_2254_2254": {
+        "dateForce": "1973-01-16",
+        "dateDoc": "1971-03-12",
+        "roId": "RO 1973 2254",
+        "titelDe": "Protokoll betreffend eine Änderung des Übereinkommens über die internationale Zivilluftfahrt vom 7. Dezember 1944, Änderung",
+        "titelFr": "Protocole portant amendement à la Convention relative à l'Aviation civile internationale du 7 décembre 1944, Modification",
+        "titelIt": "Protocollo emendante l'articolo 50 della convenzione relativa alla navigazione aerea civile internazionale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1975/1552_1551_1551": {
+        "dateForce": "1974-12-19",
+        "dateDoc": "1971-07-07",
+        "roId": "RO 1975 1551",
+        "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt, Änderung",
+        "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale, Modification",
+        "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1976/496_496_496": {
+        "dateForce": "1976-01-14",
+        "dateDoc": "1962-09-15",
+        "roId": "RO 1976 496",
+        "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt, Änderung",
+        "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale, Modification",
+        "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1977/1299_1299_1299": {
+        "dateForce": "1977-06-01",
+        "dateDoc": "1977-06-01",
+        "roId": "RO 1977 1299",
+        "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+        "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+        "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1978/190_190_190": {
+        "dateForce": "1977-12-15",
+        "dateDoc": "1977-12-15",
+        "roId": "RO 1978 190",
+        "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+        "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+        "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1980/417_417_417": {
+        "dateDoc": "1975-12-17",
+        "roId": "RO 1980 417",
+        "titelDe": "Bundesbeschluss vom 17. Dezember 1975 über ein Protokoll betreffend Änderung des Übereinkommens über die internationale Zvillulftfahrt",
+        "titelFr": "Arrêté fédéral du 17 décembre 1975 approuvant un protocole qui porte amendement de la Convention relative à l'aviation civile internationale",
+        "titelIt": "Decreto federale del 17 dicembre 1975 che approva un protocollo emendante la Convenzione relativa all'aviazione civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1980/418_418_418": {
+        "dateForce": "1980-02-15",
+        "dateDoc": "1975-12-17",
+        "roId": "RO 1980 418",
+        "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt, Änderung",
+        "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale, Modification",
+        "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1981/1438_1438_1438": {
+        "dateForce": "1981-09-01",
+        "dateDoc": "1981-09-01",
+        "roId": "RO 1981 1438",
+        "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+        "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+        "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1985/771_771_771": {
+        "dateForce": "1985-06-01",
+        "dateDoc": "1985-06-01",
+        "roId": "RO 1985 771",
+        "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+        "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+        "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/1073_1073_1073": {
+        "dateForce": "1987-09-01",
+        "dateDoc": "1987-09-01",
+        "roId": "RO 1987 1073",
+        "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+        "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+        "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/859_859_859": {
+        "dateForce": "1989-05-01",
+        "dateDoc": "1989-05-16",
+        "roId": "RO 1989 859",
+        "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+        "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+        "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1990/1566_1566_1566": {
+        "dateForce": "1990-09-01",
+        "dateDoc": "1990-09-01",
+        "roId": "RO 1990 1566",
+        "titelDe": "Übereinkommen vom 7. Dezember 1944 über die internationale Zivilluftfahrt",
+        "titelFr": "Convention du 7 décembre 1944 relative à l'aviation civile internationale",
+        "titelIt": "Convenzione del 7 dicembre 1944 relativa all'aviazione civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/356": {
+        "dateForce": "2002-07-15",
+        "dateDoc": "2002-03-01",
+        "roId": "RO 2002 2604",
+        "titelDe": "Verordnung über die Luftfahrt (Luftfahrtverordnung, LFV)",
+        "titelFr": "Ordonnance sur l'aviation (OSAv)",
+        "titelIt": "Ordinanza sulla navigazione aerea (ONA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/396": {
+        "dateForce": "2002-04-15",
+        "dateDoc": "2002-09-03",
+        "roId": "RO 2002 2726",
+        "titelDe": "Verordnung über die Luftfahrt (Luftfahrtverordnung, LFV)",
+        "titelFr": "Ordonnance sur l'aviation (OSAv)",
+        "titelIt": "Ordinanza sulla navigazione aerea (ONA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/577": {
+        "dateDoc": "1979-12-12",
+        "roId": "RO 2004 3993",
+        "titelDe": "Bundesbeschluss\t betreffend ein Protokoll zur Änderung des Übereinkommens über die internationale Zivilluftfahrt",
+        "titelFr": "Arrêté fédéral approuvant un protocole qui porte amendement de la Convention relative à l'aviation civile internationale",
+        "titelIt": "Decreto federale che approva un protocollo emendante la Convenzione relativa all'aviazione civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/578": {
+        "dateDoc": "1984-11-26",
+        "roId": "RO 2004 3995",
+        "titelDe": "Bundesbeschluss\t zur Änderung des Übereinkommens über die internationale Zivilluftfahrt",
+        "titelFr": "Arrêté fédéral approuvant un protocole qui porte amendement de la Convention relative à l'aviation civile internationale",
+        "titelIt": "Decreto federale che approva un protocollo di emendamento della Convenzione relativa all'aviazione civile internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/579": {
+        "dateDoc": "1985-12-02",
+        "roId": "RO 2004 3997",
+        "titelDe": "Bundesbeschluss\t zur Änderung des Übereinkommens über die internationale Zivilluftfahrt",
+        "titelFr": "Arrêté fédéral portant approbation d'un amendement à la Convention relative à l'aviation civile internationale",
+        "titelIt": "Decreto federale concernente un emendamento della Convenzione relativa all'aviazione civile internazionale"
+      }
+    }
+  }
 }

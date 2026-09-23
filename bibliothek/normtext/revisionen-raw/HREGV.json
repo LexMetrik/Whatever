@@ -955,5 +955,257 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2022/114",
       "zielFundstelle": "AS 2022 114"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2007/686",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2007/686",
+    "inkrafttreten": "2008-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/686",
+        "typ": 5,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/460",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/667",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/81",
+        "typ": 1,
+        "datum": "2011-04-01",
+        "fassung": "2011-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/708",
+        "typ": 1,
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/791",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/304",
+        "typ": 1,
+        "datum": "2016-07-01",
+        "fassung": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/753",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/797",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/29",
+        "typ": 1,
+        "datum": "2018-02-01",
+        "fassung": "2018-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/29",
+        "typ": 2,
+        "datum": "2018-02-01",
+        "fassung": "2018-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/179",
+        "typ": 1,
+        "datum": "2020-04-01",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/179",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/179",
+        "typ": 2,
+        "datum": "2020-04-01",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/800",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/114",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/114",
+        "typ": 2,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/552",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/634",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/234",
+        "typ": 6,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/349",
+        "typ": 6,
+        "datum": "2024-07-10",
+        "fassung": "2024-07-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/73",
+        "typ": 1,
+        "datum": "2024-03-01",
+        "fassung": "2024-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/364",
+        "typ": 1,
+        "datum": "2026-10-01",
+        "fassung": "2026-10-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2011/460": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-06-22",
+        "roId": "RO 2011 3425",
+        "titelDe": "Verordnung über die Aufsicht in der beruflichen Vorsorge (BVV 1)",
+        "titelFr": "Ordonnance sur la surveillance dans la prévoyance professionnelle (OPP 1)",
+        "titelIt": "Ordinanza concernente la vigilanza nella previdenza professionale (OPP 1)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/667": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-09-23",
+        "roId": "RO 2011 4659",
+        "titelDe": "Grundbuchverordnung (GBV)",
+        "titelFr": "Ordonnance sur le registre foncier (ORF)",
+        "titelIt": "Ordinanza sul registro fondiario (ORF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/81": {
+        "dateForce": "2011-04-01",
+        "dateDoc": "2011-01-26",
+        "roId": "RO 2011 533",
+        "titelDe": "Verordnung über die Unternehmens-Identifikationsnummer (UIDV)",
+        "titelFr": "Ordonnance sur le numéro d'identification des entreprises (OIDE)",
+        "titelIt": "Ordinanza sul numero d'identificazione delle imprese (OIDI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/708": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-11-05",
+        "roId": "RO 2014 4295",
+        "titelDe": "Finanzmarktprüfverordnung (FINMA-PV)",
+        "titelFr": "Ordonnance sur les audits des marchés financiers (OA-FINMA)",
+        "titelIt": "Ordinanza sugli audit dei mercati finanziari (OA-FINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/791": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-11-11",
+        "roId": "RO 2015 4819",
+        "titelDe": "Verordnung über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereiverordnung, GwV)",
+        "titelFr": "Ordonnance sur la lutte contre le blanchiment d'argent et le financement du terrorisme (Ordonnance sur le blanchiment d'argent, OBA)",
+        "titelIt": "Ordinanza relativa alla lotta contro il riciclaggio di denaro e il finanziamento del terrorismo (Ordinanza sul riciclaggio di denaro, ORD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/753": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-11-23",
+        "roId": "RO 2016 4667",
+        "titelDe": "Verordnung über Zertifizierungsdienste im Bereich der elektronischen Signatur und anderer Anwendungen digitaler Zertifikate (Verordnung über die elektronische Signatur, VZertES)",
+        "titelFr": "Ordonnance sur les services de certification dans le domaine de la signature électronique et des autres applications des certificats numériques (Ordonnance sur la signature électronique, OSCSE)",
+        "titelIt": "Ordinanza sui servizi di certificazione nel campo della firma elettronica e di altre applicazioni di certificati digitali (Ordinanza sulla firma elettronica, OFiEle)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/797": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-11-22",
+        "roId": "RO 2017 7319",
+        "titelDe": "Verordnung über das Schweizerische Handelsamtsblatt (Verordnung SHAB)",
+        "titelFr": "Ordonnance sur la Feuille officielle suisse du commerce (Ordonnance FOSC)",
+        "titelIt": "Ordinanza sul Foglio ufficiale svizzero di commercio (Ordinanza FUSC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/29": {
+        "dateForce": "2018-02-01",
+        "dateDoc": "2017-12-08",
+        "roId": "RO 2018 89",
+        "titelDe": "Verordnung über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen (EÖBV)",
+        "titelFr": "Ordonnance sur l'établissement d'actes authentiques électroniques et la légalisation électronique (OAAE)",
+        "titelIt": "Ordinanza sulla realizzazione di atti pubblici e autenticazioni in forma elettronica (OAPuE)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/800": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-11-17",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/552": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-08-31",
+        "titelDe": "Verordnung über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereiverordnung, GwV)",
+        "titelFr": "Ordonnance sur la lutte contre le blanchiment d’argent et le financement du terrorisme (Ordonnance sur le blanchiment d’argent, OBA)",
+        "titelIt": "Ordinanza relativa alla lotta contro il riciclaggio di denaro e il finanziamento del terrorismo (Ordinanza sul riciclaggio di denaro, ORD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/568": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2022-08-31",
+        "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+        "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+        "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/73": {
+        "dateForce": "2024-03-01",
+        "dateDoc": "2024-01-31",
+        "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+        "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+        "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/364": {
+        "dateForce": "2026-10-01",
+        "dateDoc": "2026-06-12",
+        "titelDe": "Verordnung vom 12. Juni 2026 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPV)",
+        "titelFr": "Ordonnance du 12 juin 2026 sur la transparence des personnes morales et l’identification des ayants droit économiques (Ordonnance sur la transparence des personnes morales, OTPM)",
+        "titelIt": "Ordinanza del 12 giugno 2026 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Ordinanza sulla trasparenza delle persone giuridiche, OTPG)"
+      }
+    }
   }
 }

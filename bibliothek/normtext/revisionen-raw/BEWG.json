@@ -586,5 +586,191 @@
     "2023-07-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1984/1148_1148_1148",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1984/1148_1148_1148",
+    "inkrafttreten": "1985-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/1148_1148_1148",
+        "typ": 5,
+        "datum": "1985-01-01",
+        "fassung": "1985-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2086_2086_2086",
+        "typ": 1,
+        "datum": "1997-10-01",
+        "fassung": "1997-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/139",
+        "typ": 1,
+        "datum": "2002-06-01",
+        "fassung": "2002-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/140",
+        "typ": 1,
+        "datum": "2002-06-01",
+        "fassung": "2002-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/325",
+        "typ": 1,
+        "datum": "2002-09-01",
+        "fassung": "2002-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/204",
+        "typ": 1,
+        "datum": "2005-04-01",
+        "fassung": "2005-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/860",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/116",
+        "typ": 1,
+        "datum": "2013-03-01",
+        "fassung": "2013-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/85",
+        "typ": 1,
+        "datum": "2021-03-01",
+        "fassung": "2021-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/254",
+        "typ": 1,
+        "datum": "2023-07-01",
+        "fassung": "2023-07-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1997/2086_2086_2086": {
+        "dateForce": "1997-10-01",
+        "dateDoc": "1997-04-30",
+        "roId": "RO 1997 2086",
+        "titelDe": "Bundesgesetz über den Erwerb von Grundstücken durch Personen im Ausland (BewG), Änderung",
+        "titelFr": "Loi fédérale sur l'acquisition d'immeubles par des personnes à l'étranger (LFAIE), Modification",
+        "titelIt": "Legge federale sull'acquisto di fondi da parte di persone all'estero (LAFE), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/374": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 2355",
+        "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+        "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+        "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/139": {
+        "dateForce": "2002-06-01",
+        "dateDoc": "2001-12-14",
+        "roId": "RO 2002 685",
+        "titelDe": "Bundesgesetz betreffend die Bestimmungen über die Personenfreizügigkeit im Abkommen vom 21. Juni 2001 zur Änderung des Übereinkommens vom 4. Januar 1960 zur Errichtung der Europäischen Freihandelsassoziation (EFTA)",
+        "titelFr": "Loi fédérale relative aux dispositions concernant la libre circulation des personnes de l'Accord du 21 juin 2001 amendant la Convention du 4 janvier 1960 instituant l'Association européenne de libre-échange (AELE)",
+        "titelIt": "Legge federale relativa alle disposizioni concernenti la libera circolazione delle persone dell'Accordo del 21 giugno 2001 di emendamento della Convenzione del 4 gennaio 1960 istitutiva dell'Associazione europea di libero scambio (AELS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/140": {
+        "dateForce": "2002-06-01",
+        "dateDoc": "1999-10-08",
+        "roId": "RO 2002 701",
+        "titelDe": "Bundesgesetz zum Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits über die Freizügigkeit",
+        "titelFr": "Loi fédérale sur l'Accord entre, d'une part, la Confédération suisse et, d'autre part, la Communauté Européenne et ses Etats membres sur la libre circulation des personnes",
+        "titelIt": "Legge federale concernente l'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/782": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2004-06-18",
+        "roId": "RO 2005 5685",
+        "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+        "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+        "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/549": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2006 3459",
+        "titelDe": "Schweizerisches Strafgesetzbuch",
+        "titelFr": "Code pénal suisse",
+        "titelIt": "Codice penale svizzero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/860": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2007 6637",
+        "titelDe": "Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatgesetz, GSG)",
+        "titelFr": "Loi fédérale sur les privilèges, les immunités et les facilités, ainsi que sur les aides financières accordés par la Suisse en tant qu'Etat hôte (Loi sur l'Etat hôte, LEH)",
+        "titelIt": "Legge federale sui privilegi, le immunità e le facilitazioni, nonché sugli aiuti finanziari accordati dalla Svizzera quale Stato ospite (Legge sullo Stato ospite, LSO)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/267": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2007-10-05",
+        "roId": "RO 2010 1881",
+        "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+        "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+        "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/116": {
+        "dateForce": "2013-03-01",
+        "dateDoc": "2012-09-28",
+        "roId": "RO 2013 585",
+        "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+        "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+        "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/254": {
+        "dateForce": "2023-07-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
+        "titelFr": "Loi fédérale du 17 décembre 2021 sur l’adaptation du droit pénal accessoire au droit des sanctions modifié",
+        "titelIt": "Legge federale del 17 dicembre 2021 che adegua il diritto penale accessorio alla nuova disciplina delle sanzioni"
+      }
+    }
+  }
 }

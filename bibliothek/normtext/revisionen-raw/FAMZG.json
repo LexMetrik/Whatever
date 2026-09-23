@@ -627,5 +627,170 @@
     "2026-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2008/51",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2008/51",
+    "inkrafttreten": "2009-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/51",
+        "typ": 5,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/51",
+        "typ": 30,
+        "datum": "2007-03-01",
+        "fassung": "2007-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/296",
+        "typ": 1,
+        "datum": "2009-06-01",
+        "fassung": "2009-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/636",
+        "typ": 1,
+        "datum": "2010-10-15",
+        "fassung": "2010-10-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/567",
+        "typ": 1,
+        "datum": "2011-09-01",
+        "fassung": "2011-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/718",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/718",
+        "typ": 5,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/425",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/595",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/502",
+        "typ": 1,
+        "datum": "2020-08-01",
+        "fassung": "2020-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/892",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/688",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/493",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/681",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/770",
+        "typ": 1,
+        "datum": "2026-01-01",
+        "fassung": "2026-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2009/296": {
+        "dateForce": "2009-06-01",
+        "dateDoc": "2008-06-13",
+        "roId": "RO 2009 2411",
+        "titelDe": "Bundesbeschluss über die Genehmigung der Weiterführung des Freizügigkeitsabkommens zwischen der Schweiz und der Europäischen Gemeinschaft und ihren Mitgliedstaaten sowie über die Genehmigung und die Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf Bulgarien und Rumänien",
+        "titelFr": "Arrêté fédéral portant approbation de la reconduction de l'accord entre la Suisse et la Communauté européenne et ses Etats membres sur la libre circulation des personnes, ainsi qu'approbation et mise en uvre du protocole visant à étendre l'accord sur la libre circulation à la Bulgarie et à la Roumanie",
+        "titelIt": "Decreto federale che approva il rinnovo dell'Accordo tra la Svizzera e la Comunità europea ed i suoi Stati membri sulla libera circolazione delle persone e approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Bulgaria e alla Romania dell'Accordo sulla libera circolazione delle persone"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/425": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2016-06-17",
+        "roId": "RO 2017 3699",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Adoption)",
+        "titelFr": "Code civil suisse (Droit de l'adoption)",
+        "titelIt": "Codice civile svizzero (Adozione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/595": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-03-17",
+        "roId": "RO 2017 5521",
+        "titelDe": "Bundesgesetz über Massnahmen zur Bekämpfung der Schwarzarbeit (Bundesgesetz gegen die Schwarzarbeit, BGSA)",
+        "titelFr": "Loi fédérale concernant des mesures en matière de lutte contre le travail au noir (Loi sur le travail au noir, LTN)",
+        "titelIt": "Legge federale concernente i provvedimenti in materia di lotta contro il lavoro nero (Legge contro il lavoro nero, LLN)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/892": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2019-06-21",
+        "roId": "RO 2020 5137",
+        "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+        "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
+        "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/758": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2020-12-18",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+        "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+        "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/688": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2022-06-17",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Modernisierung der Aufsicht)",
+        "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Modernisation de la surveillance)",
+        "titelIt": "Legge federale su l’assicurazione per la vecchiaia e per i superstiti (LAVS) (Modernizzazione della vigilanza)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/493": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-08-28",
+        "titelDe": "Verordnung vom 28. August 2024 über die Anpassung der Familienzulagen an die Preisentwicklung",
+        "titelFr": "Ordonnance du 28 août 2024 sur les adaptations à l’évolution des prix dans le régime des allocations familiales",
+        "titelIt": "Ordinanza del 28 agosto 2024 sull’adeguamento degli assegni familiari all’evoluzione dei prezzi"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/681": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-06-14",
+        "titelDe": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzgesetz, EOG) (Digitalisierung in der Erwerbsersatzordnung)",
+        "titelFr": "Loi fédérale sur les allocations pour perte de gain (LAPG) (Numérisation dans le régime des APG)",
+        "titelIt": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG) (Digitalizzazione nell’ordinamento delle indennità di perdita di guadagno)"
+      }
+    }
+  }
 }

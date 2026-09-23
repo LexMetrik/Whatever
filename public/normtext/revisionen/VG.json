@@ -1,100 +1,363 @@
 {
   "erlassKey": "VG",
   "sr": "170.32",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/96",
+      "dateDocument": "2025-06-20",
+      "roFundstelle": "AS 2026 96",
+      "titelDe": "Bundespersonalgesetz (BPG)",
+      "titelFr": "Loi sur le personnel de la Confédération (LPers)",
+      "titelIt": "Legge sul personale federale (LPers)",
+      "botschaftKey": "BOTSCHAFT-2024-2316",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "c83c70b1190114a104c195568fd66b610fcb2f6f15f7d6316f452545b2ccb291"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/96/de",
+      "sha": "48ffc9b0568182834050d0486b0e995db770e8d2b569344174d11f70d4111720"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-06-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "436853d770ddfb0185e9606c89edd569cc609ae749cc0284ff55b666973c5372"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/347",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2025 347",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnungen (EU) 2019/817 und (EU) 2019/818 zur Errichtung eines Rahmens für die Interoperabilität zwischen EU Informationssystemen (Weiterentwicklungen des Schengen-Besitzstands)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en œuvre des échanges de notes entre la Suisse et l’UE concernant la reprise des règlements (UE) 2019/817 et (UE) 2019/818 relatifs à l’établissement d’un cadre pour l’interopérabilité des systèmes d’information de l’UE (Développements de l’acquis de Schengen)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli scambi di note tra la Svizzera e l’UE concernenti il recepimento dei regolamenti (UE) 2019/817 e (UE) 2019/818 che istituiscono un quadro per l’interoperabilità tra i sistemi di informazione dell’UE (Sviluppi dell’acquis di Schengen)",
+      "botschaftKey": "BOTSCHAFT-2020-2064",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/347/de",
+      "sha": "6e5a29364f2b66437afe0441bf848faeaa64149306ecbf25ad19b400000d6dfd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "3d06ff010564ebe98242e203e32aaa2a769a8ad5417142a415afa85a0bb7699a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5343",
+      "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+      "titelFr": "Code des obligations (Révision du droit de la prescription)",
+      "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)",
+      "botschaftKey": "BOTSCHAFT-2014-65",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/807/de",
+      "sha": "8bb33e0c1d48975d7ada40ab2036925b1263bee7d12a3ab485ddb99cae3c4fca"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-12-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "84bdc3cf55a4de36b217d43c2d85acd52ff5b7b40f7af673277ed9b5c3099a61"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2011 4627",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Gesuche um Aufhebung der Immunität)",
+      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Examen des requêtes visant à lever l'immunité)",
+      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Richieste di soppressione dell'immunità)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/663/de",
+      "sha": "e0c7c175b02cbad68c498f3f9e16705236c1a2f5762fb89bcfefa3d2ae2e6d90"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2011-06-17",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "44c8a6c89f1c04f9931ca54abcebb5244993ae9c138d5b2b3ecbf25346096212"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "ec9f72fe0a9240d87c198e47df14f7a99a8839079dde9526fe9f8272aeb42152"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2010-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "f54ce7edf76b455c5b345a542dae448c571c650febf46da42b46e36595cb422e"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2008-12-12",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "380cd271d2650ca139fc2676c7c99d31e68e2ca4ac519b4c37247fec0b52ca23"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "17c7010da7ab01ee719edc69f8ae00317d6526b7e1b8fe94f00a8b105a214ff7"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2003-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "84098cb4c7edf70badbe45906ccbb2f22609ae7f9cdcaac1f413124c2efac852"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2003-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "8b300f53cd088a012eea5ebe6c6682486fc7de60f83c51471262edd31e031a09"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "28b2be8dd1b55c17814fc88cd631a5fa608ef9917e610ae5e329d0e5f2aec529"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/170.32",
-      "sha": "aad6da981d3e905377566773d1c5eed5c5555c6bc570be44220f7989a452169d"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1958/1413_1483_1489/20110617/de",
+      "sha": "114c79184bf74b974e3d0633f76588322f5013a6c119f4e51493d56aafa6a563"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1959-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1958/1413_1483_1489",
-      "dateDocument": "1958-03-14",
-      "roFundstelle": "AS 1958 1413",
-      "titelDe": "Bundesgesetz vom 14. März 1958 über die Verantwortlichkeit des Bundes sowie seiner Behördemitglieder und Beamten (Verantwortlichkeitsgesetz, VG)",
-      "titelFr": "Loi fédérale du 14 mars 1958 sur la responsabilité de la Confédération, des membres de ses autorités et de ses fonctionnaires (Loi sur la responsabilité, LRCF)",
-      "titelIt": "Legge federale del 14 marzo 1958 su la responsabilità della Confederazione, dei membri delle autorità federali e dei funzionari federali (Legge sulla responsabilità, LResp)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1958/1413_1483_1489/de",
-      "sha": "9cee8f4a3060600ac91edf5ad46f8b517d3aacf43f4af0885aee560a7557bd45"
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2010 1881",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2006-124",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "sha": "f58abceb941cc313b81bd4ceaf09349034ef2aa8c587d97b8a4f8b48412650e1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/444",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2010 3267",
+      "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP)",
+      "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)",
+      "botschaftKey": "BOTSCHAFT-2008-1395",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/444/de",
+      "sha": "1d4a18440318e3101df97f15e78fe5f08fdb1d73657f6e95e38df0390ca31b3a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2010-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/679",
+      "dateDocument": "2009-03-20",
+      "roFundstelle": "AS 2009 5597",
+      "titelDe": "Bundesgesetz über die Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
+      "titelFr": "Loi sur la réforme des chemins de fer 2 (Révision des actes normatifs relatifs aux transports publics)",
+      "titelIt": "Legge federale sulla Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)",
+      "botschaftKey": "BOTSCHAFT-2007-425",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/679/de",
+      "sha": "c22c07799150a0df60e5545f52d4cfc630ae521ba82ca58b5270b77e3a5ae969"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-12-12",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/112",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2008 447",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2008-03-01",
+        "2008-12-12"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/112/de",
+      "sha": "12878a857233b54f8f22f27f0ecfcccae92ee7a1431f31159984bc4ca62d890e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-12-12",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/755",
+      "dateDocument": "2008-11-26",
+      "roFundstelle": "AS 2008 5405",
+      "titelDe": "Verordnung über die vollständige Inkraftsetzung des Bundesbeschlusses über die Genehmigung und die Umsetzung der bilateralen Abkommen über die Assoziierung an Schengen und an Dublin sowie die Inkraftsetzung weiterer in Umsetzung von Schengen/Dublin erlassener Bundesgesetze",
+      "titelFr": "Ordonnance sur l'entrée en vigueur totale de l'arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin et sur l'entrée en vigueur d'autres lois fédérales mettant en uvre Schengen et Dublin",
+      "titelIt": "Ordinanza sull'entrata in vigore completa del decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino nonché sull'entrata in vigore di altre leggi federali adottate in attuazione di Schengen/Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/755/de",
+      "sha": "c236283509c7d23c2b70cda8a086fe890379084985d52deaa5b5292a47bd295a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/112",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2008 447",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2008-03-01",
+        "2008-12-12"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/112/de",
+      "sha": "847ec228ee177bba279a2b74b54e5e8400baf384f0898e1f1cb4b30b76994eec"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2003-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/510",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2003 3543",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
+      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
+      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/510/de",
+      "sha": "29936f5adbf1777cd0c7bededab6a5081b3e349945cd1b6367d9dfb43bd56128"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2003-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/314",
+      "dateDocument": "2002-10-04",
+      "roFundstelle": "AS 2003 2133",
+      "titelDe": "Bundesgesetz über das Bundesstrafgericht (Strafgerichtsgesetz, SGG)",
+      "titelFr": "Loi fédérale sur le Tribunal pénal fédéral (LTPF)",
+      "titelIt": "Legge sul Tribunale penale federale (LTPF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/314/de",
+      "sha": "c357f1d64c71322dc752ae35011b08e755673f591753f2ce86a6278de5394793"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/453",
+      "dateDocument": "2000-06-23",
+      "roFundstelle": "AS 2000 2719",
+      "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege (Bundesrechtspflegegesetz, OG)",
+      "titelFr": "Loi fédérale d'organisation judiciaire (Organisation judiciaire, OJ)",
+      "titelIt": "Legge federale sull'organizzazione giudiziaria (Organizzazione giudiziaria, OG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/453/de",
+      "sha": "15dc5b9f841724b21340f7b13a6f78d5e86a379f6cd0ff1a6141ca48e151017c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/54",
+      "dateDocument": "1999-10-08",
+      "roFundstelle": "AS 2000 273",
+      "titelDe": "Bundesgesetz über den Geschäftsverkehr der Bundesversammlung sowie über die Form, die Bekanntmachung und das Inkrafttreten ihrer Erlasse (Geschäftsverkehrsgesetz) (Anpassungen an die neue Bundesverfassung)",
+      "titelFr": "Loi fédérale sur la procédure de l'Assemblée fédérale ainsi que sur la forme, la publication et l'entrée en vigueur des actes législatifs (Loi sur les rapports entre les conseils) (Adaptations à la nouvelle Constitution)",
+      "titelIt": "Legge federale concernente la procedura dell'Assemblea federale e la forma, la pubblicazione, l'entrata in vigore dei suoi atti (Legge sui rapporti fra i Consigli) (Adeguamento alla nuova Costituzione federale)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/54/de",
+      "sha": "fdb082af134ac76436dc136571f0bcf094471effd3ddb4397eb882fd3c2eedd9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2452_2452_2452",
+      "dateDocument": "1997-04-30",
+      "roFundstelle": "AS 1997 2452",
+      "titelDe": "Postgesetz vom 30. April 1997 (PG)",
+      "titelFr": "Loi fédérale du 30 avril 1997 sur la poste (LPO)",
+      "titelIt": "Legge del 30 aprile 1997 sulle poste (LPO)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2452_2452_2452/de",
+      "sha": "1adbcb3f7edc7a2ad2e4acc227fc75862c3dcc597cb1d979ce0ed69936ec1dbd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/2868_2868_2868",
+      "dateDocument": "1995-10-06",
+      "roFundstelle": "AS 1996 2868",
+      "titelDe": "Geschäftsverkehrsgesetz, Änderung",
+      "titelFr": "Loi sur les rapports entre les conseils, Modification",
+      "titelIt": "Legge sui rapporti fra i Consigli, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/2868_2868_2868/de",
+      "sha": "1fa0efef7793c9b9ee48961a7ec313094b3b8f99a776163bc582b9df221a4664"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/901_901_901",
+      "dateDocument": "1993-02-03",
+      "roFundstelle": "AS 1993 901",
+      "titelDe": "Verordnung vom 3. Februar 1993 über Vorinstanzen des Bundesgerichts und des Eidgenössischen Versicherungsgerichts",
+      "titelFr": "Ordonnance du 3 février 1993 sur les autorités dont les décisions peuvent être déférées au Tribunal fédéral ou au Tribunal fédéral des assurances",
+      "titelIt": "Ordinanza del 3 febbraio 1993 sulle autorità le cui decisioni possono essere deferite al Tribunale federale e al Tribunale federale delle assicurazioni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/901_901_901/de",
+      "sha": "93b2653dfea3f2d603c15bb916f14705277a42b022bd87710a0875188b52cb38"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288",
+      "dateDocument": "1991-10-04",
+      "roFundstelle": "AS 1992 288",
+      "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege, Änderung",
+      "titelFr": "Loi fédérale d'organisation judiciaire, Modification",
+      "titelIt": "Legge federale sull'organizzazione giudiziari, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/288_288_288/de",
+      "sha": "0c5574a100dad5b72cbeba99589bf267f0999e850fb4637d013b4edba523c554"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/932_932_932",
+      "dateDocument": "1986-12-19",
+      "roFundstelle": "AS 1987 932",
+      "titelDe": "Bundesgesetz über das Dienstverhältnis der Bundesbeamten, Änderung",
+      "titelFr": "Loi fédérale sur le statut des fonctionnaires, Modification",
+      "titelIt": "Legge federale sull'ordinamento dei funzionari federali, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/932_932_932/de",
+      "sha": "e10d008fcdafa17de0c0b287c241a88482d608d1d5cc403dac3a3d67331e61c2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/778_778_778",
+      "dateDocument": "1983-12-16",
+      "roFundstelle": "AS 1984 778",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Persönlichkeitsschutz: Art. 28 ZGB und Art. 49 OR), Änderung",
+      "titelFr": "Code civil suisse (Protection de la personnalité: art. 28 CC et 49 CO), Modification",
+      "titelIt": "Codice civile svizzero (Protezione della personalità: art 28 CC e 49 CO, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/778_778_778/de",
+      "sha": "47bba09680f43a9879cb2e2cb24f1bf2a2831c75e191b8f222fcc82cf547eb59"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/925_925_925",
+      "dateDocument": "1972-10-06",
+      "roFundstelle": "AS 1973 925",
+      "titelDe": "Bundesgesetz vom 6. Oktober 1972 über die Änderung von Bestimmungen betreffend das Post-, Telefon- und Telegrafengeheimnis und die Immunität",
+      "titelFr": "Loi fédérale du 6 octobre 1972 modifiant des dispositions relatives au secret postal, téléphonique et télégraphique, ainsi qu'à l'immunité",
+      "titelIt": "Legge federale del 6 ottobre 1972 che modifica disposizioni concernenti il segreto postale, telefonico e telegrafico come anche l'immunità",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/925_925_925/de",
+      "sha": "c3c144ec60e4ae55284808cbd5077eae53fa03334cc8f57fdd9c4a23bd4b1e00"
     }
   ],
-  "sha": "85594245484d022eddcf475a24ad2fbe105b3651ec25d038952a50f347d65d88"
+  "sha": "f3efca7dd7a993fc45e4ae779b8401fb064f076d422c32c822494e1efdab4970"
 }

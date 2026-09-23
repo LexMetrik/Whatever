@@ -1,26 +1,88 @@
 {
   "erlassKey": "FZG",
   "sr": "831.42",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "06afd89229811261c647ca310f77663b4b550028cf12a185e581a38dc79f0f45"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/355",
+      "dateDocument": "2022-03-18",
+      "roFundstelle": "AS 2023 355",
+      "titelDe": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
+      "titelFr": "Loi fédérale sur la surveillance des entreprises d’assurance (Loi sur la surveillance des assurances, LSA)",
+      "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)",
+      "botschaftKey": "BOTSCHAFT-2020-2421",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/355/de",
+      "sha": "660772b412724c638603fef7239599c520acd86291b6e3297f373af5c03143f2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/92",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 92",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (AHV 21)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (AVS 21)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (AVS 21)",
+      "botschaftKey": "BOTSCHAFT-2019-2267",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/92/de",
+      "sha": "be5abf75dc966d36808e8c840961bdbca32ac150b669f9624bc2cb14338ebca2"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "a2262608a02b51192a541993f4ce3ecdd313130bddf1319c4a807946e055e1af"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/3",
+      "dateDocument": "2019-12-06",
+      "roFundstelle": "AS 2020 5",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 20. März 2015 des Zivilgesetzbuches (Kindesunterhalt)",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 20 mars 2015 du code civil (Entretien de l'enfant)",
+      "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 20 marzo 2015 del Codice civile (Mantenimento del figlio)",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/3/de",
+      "sha": "92a9fdab123ff44276d39a69fc663d2fc570389265073f5072f1e40042a93a56"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 758",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)",
+      "botschaftKey": "BOTSCHAFT-2019-2681",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "sha": "d143bea67843dc3613920d57cf6420b9b1a8a774515b3b3b47dcf6e8767e65f3"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "0661f849df3f458e3a8457dfe79b307fcc7619c834eac87025d8460333cabb3f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/892",
+      "dateDocument": "2019-06-21",
+      "roFundstelle": "AS 2020 5137",
+      "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+      "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
+      "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)",
+      "botschaftKey": "BOTSCHAFT-2018-671",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/892/de",
+      "sha": "38cbac33c69962fff073dc6eec2959b44b5f08600c33cc650d52c19bbe769505"
     },
     {
       "art": "aenderung",
@@ -32,26 +94,165 @@
       "titelFr": "Loi fédérale sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Loi sur le libre passage, LFLP)",
       "titelIt": "Legge federale sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Legge sul libero passaggio, LFLP)",
       "botschaftKey": "BOTSCHAFT-2015-311",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/542/de",
-      "sha": "66028a03b692737158c8e161f3fb85c4ed990cbf5a546f8a14e41da69264c3f1"
+      "sha": "68daacefbae7fc107b503d77c333a01bb545f905d0f2923385c76d22bef41f3f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "90b1f65d0757d0c8b5e2ed7359b53e632bca8394c225a5119b909d73b52a6e0f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/728",
+      "dateDocument": "2015-03-20",
+      "roFundstelle": "AS 2015 4299",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Kindesunterhalt)",
+      "titelFr": "Code civil suisse (Entretien de l'enfant)",
+      "titelIt": "Codice civile svizzero (Mantenimento del figlio)",
+      "botschaftKey": "BOTSCHAFT-2014-98",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/728/de",
+      "sha": "7e6024954beed8b6225f3f2ab8e2361b6a678d692adcce3b928dd3c7351174f5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/379",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2016 2313",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Vorsorgeausgleich bei Scheidung)",
+      "titelFr": "Code civil suisse (Partage de la prévoyance professionnelle en cas de divorce)",
+      "titelIt": "Codice civile svizzero (Conguaglio della previdenza professionale in caso di divorzio)",
+      "botschaftKey": "BOTSCHAFT-2013-942",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/379/de",
+      "sha": "74e550ca63cd1b999e131b04803f11f7ca5149f62b6cee6f29b479f1fd298d6a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/828",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2016 5233",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Protokolls zum Freizügigkeitsabkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits betreffend die Ausdehnung auf die Republik Kroatien",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'accord sur la libre circulation des personnes entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, concernant l'extension à la République de Croatie",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Croazia dell'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-2016-467",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/828/de",
+      "sha": "bb90556bcbac556ce4680f1e92fa83291e88f8600accc1894dc289b9650c8aa5"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "8d1c39ed9816d846a7710e50aa8063328db7be09ad7c150763d47806e1c917e8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/457",
+      "dateDocument": "2010-12-17",
+      "roFundstelle": "AS 2011 3385",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (Financement des institutions de prévoyance de corporations de droit public)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (Finanziamento degli istituti di previdenza degli enti di diritto pubblico)",
+      "botschaftKey": "BOTSCHAFT-2008-1439",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/457/de",
+      "sha": "e008a74951aba17031951f5f6588034908a3d9f75a8dd8f558ac3fb61a8deab9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/458",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2011 3393",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Strukturreform)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (Réforme structurelle)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (Riforma strutturale)",
+      "botschaftKey": "BOTSCHAFT-2007-788",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-08-01",
+        "2012-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/458/de",
+      "sha": "ff59a976ff752fd15226b690c968c48090c2fc6bcf4ad0056d4cc98adcf533d2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/799",
+      "dateDocument": "2011-03-18",
+      "roFundstelle": "AS 2011 5659",
+      "titelDe": "Bundesgesetz über die Invalidenversicherung (IVG) (6. IV-Revision, erstes Massnahmenpaket)",
+      "titelFr": "Loi fédérale sur l'assurance-invalidité (LAI) (6e révision de l'AI, premier volet)",
+      "titelIt": "Legge federale sull'assicurazione per l'invalidità (LAI) (6a revisione AI, primo pacchetto di misure)",
+      "botschaftKey": "BOTSCHAFT-2010-340",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/799/de",
+      "sha": "9ecadd81ba60268e9daffb6be086403993ddb1cb58d408b6ccc5d0aea02ee330"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/458",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2011 3393",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Strukturreform)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (Réforme structurelle)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (Riforma strutturale)",
+      "botschaftKey": "BOTSCHAFT-2007-788",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-08-01",
+        "2012-01-01"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/458/de",
+      "sha": "12370a6d7b56b478f0630131104d2267e3dbbb3ec0b9b0f9d581f041c5806ab7"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "8a4ab14502e5664cb51a64e6a67c4b1367949c60e245f7cb2da5a9a89a21554e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "4e049f3ec1d7b48f85303a681b41203371425d289e3653e8f2647c00a4aff76d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/622",
+      "dateDocument": "2009-12-11",
+      "roFundstelle": "AS 2010 4427",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Massnahmen zur Erleichterung der Arbeitsmarktbeteiligung älterer Arbeitnehmender)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (Mesures destinées à faciliter la participation des travailleurs âgés au marché de l'emploi)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (Misure per agevolare la partecipazione al mercato del lavoro dei lavoratori anziani)",
+      "botschaftKey": "BOTSCHAFT-2007-788",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/622/de",
+      "sha": "f01a1925715ccad65c25d9a59f809cca00174e18543604743a503f698e445471"
     },
     {
       "art": "aenderung",
@@ -62,50 +263,174 @@
       "titelDe": "Bundesgesetz über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsgesetz, FZG)",
       "titelFr": "Loi fédérale sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Loi sur le libre passage, LFLP)",
       "titelIt": "Legge federale sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Legge sul libero passaggio, LFLP)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/609/de",
-      "sha": "c42e5c6bcfe2a4e06d7057e824688c0a8e5a7f8d92bd4fd7b65845422d5bd26c"
+      "sha": "c763e4a5232cdf27a75d46bcb5fc72111c3ff5049193f132d38c6c6da8a81caf"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "b9e285667fc09c21677b495e83cdef3ea5784ae03346a60fa276951cc03c00e1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/296",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2009 2411",
+      "titelDe": "Bundesbeschluss über die Genehmigung der Weiterführung des Freizügigkeitsabkommens zwischen der Schweiz und der Europäischen Gemeinschaft und ihren Mitgliedstaaten sowie über die Genehmigung und die Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf Bulgarien und Rumänien",
+      "titelFr": "Arrêté fédéral portant approbation de la reconduction de l'accord entre la Suisse et la Communauté européenne et ses Etats membres sur la libre circulation des personnes, ainsi qu'approbation et mise en uvre du protocole visant à étendre l'accord sur la libre circulation à la Bulgarie et à la Roumanie",
+      "titelIt": "Decreto federale che approva il rinnovo dell'Accordo tra la Svizzera e la Comunità europea ed i suoi Stati membri sulla libera circolazione delle persone e approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Bulgaria e alla Romania dell'Accordo sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-2008-472",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/296/de",
+      "sha": "e07086feffd5384b9382e60148cdf60e8e4f923f8b7078dfc66273593ff33371"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "90b7cd1baead85dc66f93f5345562d9e8fcd4535c890121d2f1c32d5378b2cff"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "8e8a9e4d751b5f59a4b39cebfa70ebaffee0c426ae09a654846b55c7a3446687"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "2b1bcfed7692d50afdb0dcc04f67b27e80e51ac9386dddec1b9eda0d7a739b41"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/747",
+      "dateDocument": "2006-06-23",
+      "roFundstelle": "AS 2007 5259",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Neue AHV-Versichertennummer)",
+      "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Nouveau numéro d'assuré AVS)",
+      "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Nuovo numero d'assicurato dell'AVS)",
+      "botschaftKey": "BOTSCHAFT-2006-52",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/747/de",
+      "sha": "c598ef37bb15cbed37724779fb3cdf4f7ee5459d0057f7498ef7d645fa90749b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "c2c82b47be1c8c5dec34e905a737819c4578c3530346c04efdd5d2becd3135cd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "5baa9499c37809c0705f65c5961511c8a2b153a3d5e2519289bf9d2e7fb44c7d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/178",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2006 979",
+      "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf die neuen EG-Mitgliedstaaten zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits sowie über die Genehmigung der Revision der flankierenden Massnahmen zur Personenfreizügigkeit",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'extension de l'accord entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, sur la libre circulation des personnes aux nouveaux Etats membres de la Communauté européenne et portant approbation de la révision des mesures d'accompagnement concernant la libre circulation des personnes",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero, mediante revisione delle misure collaterali, il Protocollo concluso con la Comunità europea e i suoi Stati membri relativo all'estensione dell'Accordo sulla libera circolazione delle persone ai nuovi Stati membri della Comunità europea",
+      "botschaftKey": "BOTSCHAFT-2004-1081",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/178/de",
+      "sha": "fb28e531ac518999edb18c74ef49b103f3639306177d1a467c84970b57cf997b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "22ac12d1cb2346d910ccb0dc860913dd8be4bf65beafda2a216d24d26cd034cf"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/207",
+      "dateDocument": "2003-10-03",
+      "roFundstelle": "AS 2004 1677",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (1. BVG-Revision)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle, vieillesse, survivants et invalidité (LPP) (1re révision LPP)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (1a revisione della LPP)",
+      "botschaftKey": "BOTSCHAFT-2000-555",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/207/de",
+      "sha": "36c16958a0bc7a6815be2ccfca68c1104ff739f86812bf6242738dab5eeb886c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/711",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2004 4635",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP)",
+      "botschaftKey": "BOTSCHAFT-2003-1054",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/711/de",
+      "sha": "a2fd0bffa87b3ce2a0266996df7b706a360df0eb6525b0162e4ef45719725db2"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2002-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "05afbc3153e9434565ec1d8e963cebb0c64b8d3f5fd3db930567f9ab2657090b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/139",
+      "dateDocument": "2001-12-14",
+      "roFundstelle": "AS 2002 685",
+      "titelDe": "Bundesgesetz betreffend die Bestimmungen über die Personenfreizügigkeit im Abkommen vom 21. Juni 2001 zur Änderung des Übereinkommens vom 4. Januar 1960 zur Errichtung der Europäischen Freihandelsassoziation (EFTA)",
+      "titelFr": "Loi fédérale relative aux dispositions concernant la libre circulation des personnes de l'Accord du 21 juin 2001 amendant la Convention du 4 janvier 1960 instituant l'Association européenne de libre-échange (AELE)",
+      "titelIt": "Legge federale relativa alle disposizioni concernenti la libera circolazione delle persone dell'Accordo del 21 giugno 2001 di emendamento della Convenzione del 4 gennaio 1960 istitutiva dell'Associazione europea di libero scambio (AELS)",
+      "botschaftKey": "BOTSCHAFT-2001-845",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/139/de",
+      "sha": "9b1cb134a5494190b5b8d52140c0397ba4e22e4afb1b4de50ad6f6bd826dc012"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/140",
+      "dateDocument": "1999-10-08",
+      "roFundstelle": "AS 2002 701",
+      "titelDe": "Bundesgesetz zum Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits über die Freizügigkeit",
+      "titelFr": "Loi fédérale sur l'Accord entre, d'une part, la Confédération suisse et, d'autre part, la Communauté Européenne et ses Etats membres sur la libre circulation des personnes",
+      "titelIt": "Legge federale concernente l'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-1999-1_6128_5440_5092",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/140/de",
+      "sha": "e4ce2f0929fb8e04d07c4a4b0eb1633812a9b364fdeba53e410b4c9c86c8fc40"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/363",
+      "dateDocument": "1999-03-19",
+      "roFundstelle": "AS 1999 2374",
+      "titelDe": "Bundesgesetz über das Stabilisierungsprogramm 1998",
+      "titelFr": "Loi fédérale sur le programme de stabilisation 1998",
+      "titelIt": "Legge federale sul programma di stabilizzazione 1998",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1999-03-19",
+        "2001-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/363/de",
+      "sha": "beac27d526af11f2653ed8523d8ee32363362226772a51803bfad95f03a9cf66"
     },
     {
       "art": "aenderung",
@@ -117,14 +442,26 @@
       "titelFr": "Loi fédérale sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Loi sur le libre passage, LFLP)",
       "titelIt": "Legge federale sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Legge sul libero passaggio, LFLP)",
       "botschaftKey": "BOTSCHAFT-2000-99",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/443/de",
-      "sha": "f4bed1660f6ae407e0b4b30620dbc5977e7454938d7771ba52dcc494a7b7f096"
+      "sha": "0f8e26a0de9103f4ee529bda74fa56770634a2c0e107a186b872041ff0b0a497"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.42",
-      "sha": "ecfdfd280d1b7b55dc62ae6faf50fb1b90fdaac5be1b7884d2dd437c2d8576de"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/149",
+      "dateDocument": "1998-06-26",
+      "roFundstelle": "AS 1999 1118",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Personenstand, Eheschliessung, Scheidung, Kindsrecht, Verwandtenunterstützungspflicht, Heimstätten, Vormundschaft, Ehevermittlung)",
+      "titelFr": "Code civil suisse (état civil, conclusion du mariage et divorce, filiation, dette alimentaire, asiles de famille, tutelle et courtage matrimonial)",
+      "titelIt": "Codice civile svizzero (stato civile, matrimonio, divorzio, diritto di filiazione, obbligo di assistenza fra parenti, asili di famiglia, tutela, mediazione matrimonile)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/149/de",
+      "sha": "fe9ff6ec289ec984dcef938a969d0bd5a67aad7be85e1362b3fb2edb8560c62a"
     },
     {
       "art": "aenderung",
@@ -135,21 +472,31 @@
       "titelDe": "Bundesgesetz über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsgesetz, FZG)",
       "titelFr": "Loi fédérale sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (loi sur le libre passage, LFLP)",
       "titelIt": "Legge federale sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Legge sul libero passaggio, LFLP)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/199/de",
-      "sha": "a105dce35ab7f07eac41751886e70132b900ae6ebd7465cc34d108a4709698e4"
+      "sha": "ccd538d460c6a98dda52e0f5aae6186ea03a2f0cc385d5891190d8bff883c5f8"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1995-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2386_2386_2386",
-      "dateDocument": "1993-12-17",
-      "roFundstelle": "AS 1994 2386",
-      "titelDe": "Bundesgesetz vom 17. Dezember 1993 über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsgesetz, FZG)",
-      "titelFr": "Loi fédérale du 17 décembre 1993 sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Loi sur le libre passage, LFLP)",
-      "titelIt": "Legge federale del 17 dicembre 1993 sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Legge sul libero passaggio, LFLP)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2386_2386_2386/de",
-      "sha": "54112ac9778812162fcf0a9e784e15794aed345e2496b3e1aa5d847cbc71206c"
+      "dateEntryInForce": "1999-03-19",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/363",
+      "dateDocument": "1999-03-19",
+      "roFundstelle": "AS 1999 2374",
+      "titelDe": "Bundesgesetz über das Stabilisierungsprogramm 1998",
+      "titelFr": "Loi fédérale sur le programme de stabilisation 1998",
+      "titelIt": "Legge federale sul programma di stabilizzazione 1998",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1999-03-19",
+        "2001-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/363/de",
+      "sha": "9619c80d7312317a08704fb2e7bfa275dc447760eecc309f1e2eadb20756fcb2"
     }
   ],
-  "sha": "2a806e4490331a8e76f4c03cd44fcc5a73f67dc99da8e1be073b83da34bc47fa"
+  "sha": "7d7fb4f1b0f733770b9c654e3cf2f4491e289d921004cec3151b42845561f807"
 }

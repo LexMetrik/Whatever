@@ -1,81 +1,245 @@
 {
   "erlassKey": "FINMAG",
   "sr": "956.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/96",
+      "dateDocument": "2025-06-20",
+      "roFundstelle": "AS 2026 96",
+      "titelDe": "Bundespersonalgesetz (BPG)",
+      "titelFr": "Loi sur le personnel de la Confédération (LPers)",
+      "titelIt": "Legge sul personale federale (LPers)",
+      "botschaftKey": "BOTSCHAFT-2024-2316",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.1",
-      "sha": "5cb83e45971f40a7fd4472fa9f9a8c52fed2c3e62b709f36f4f0b35cdc9c1abc"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/96/de",
+      "sha": "48ffc9b0568182834050d0486b0e995db770e8d2b569344174d11f70d4111720"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.1",
-      "sha": "e4cb1c79621860484956f1e94a37daac609e9aa5dacb889dd9e993a5b66e986f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/257",
+      "dateDocument": "2023-09-29",
+      "roFundstelle": "AS 2024 257",
+      "titelDe": "Bundesgesetz über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG) (Einführung einer Meldepflicht für Cyberangriffe auf kritische Infrastrukturen)",
+      "titelFr": "Loi fédérale sur la sécurité de l’information au sein de la Confédération (Loi sur la sécurité de l’information, LSI) (Mise en place d’une obligation de signaler les cyberattaques contre les infrastructures critiques)",
+      "titelIt": "Legge federale sulla sicurezza delle informazioni in seno alla Confederazione (Legge sulla sicurezza delle informazioni, LSIn) (Introduzione dell’obbligo di segnalare ciberattacchi a infrastrutture critiche)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/257/de",
+      "sha": "a1c3a7efca393b197712bebbc3dfa61e9fbdd32fe1506fe658a6eabd08a4ba2e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2025-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/168",
+      "dateDocument": "2025-03-07",
+      "roFundstelle": "AS 2025 168",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung des Nationalen Zentrums für Cybersicherheit (NCSC) in Bundesamt für Cybersicherheit (BACS)",
+      "titelFr": "Ordonnance concernant l’adaptation de dispositions légales à la suite du changement de nom du Centre national pour la cybersécurité (NCSC) en Office fédéral de la cybersécurité (OFCS)",
+      "titelIt": "Ordinanza sull’adeguamento di leggi in seguito al cambiamento della designazione del Centro nazionale per la cibersicurezza (NCSC) in Ufficio federale della cibersicurezza (UFCS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/168/de",
+      "sha": "1839ff020ed14c4caaa05b3856969fde5f0b0cd80736b1a62326edc7298de4eb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/173",
+      "dateDocument": "2025-03-18",
+      "roFundstelle": "AS 2025 173",
+      "titelDe": "Mitteilung über die Inkraftsetzung der Änderung vom 29. September 2023 des Informationssicherheitsgesetzes",
+      "titelFr": "Communication concernant la mise en vigueur de la modification du 29 septembre 2023 de la loi sur la sécurité de l’information",
+      "titelIt": "Comunicazione sull’entrata in vigore della modifica del 29 settembre 2023 della legge sulla sicurezza delle informazioni",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/173/de",
+      "sha": "dc0a36d3bf337ebf063dc476b03450f4f2b090a8e2aa8f6dde25673d2314012b"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2024-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.1",
-      "sha": "8e46937994e5ca494ece1a004453505669bf1ba6fc95e01ed0dea76d29b9b5eb"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/53",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2024 53",
+      "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+      "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+      "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
+      "botschaftKey": "BOTSCHAFT-2020-1852",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/53/de",
+      "sha": "2db0e6aeb1ce8c2a1ecd7eba393e53c410763dc1f166a3ee59dd19f8b2792718"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.1",
-      "sha": "7b0f692453e828994849f973c741eb3a3c5b980b7979a9e88277ba99f0887c9d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/355",
+      "dateDocument": "2022-03-18",
+      "roFundstelle": "AS 2023 355",
+      "titelDe": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
+      "titelFr": "Loi fédérale sur la surveillance des entreprises d’assurance (Loi sur la surveillance des assurances, LSA)",
+      "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)",
+      "botschaftKey": "BOTSCHAFT-2020-2421",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/355/de",
+      "sha": "660772b412724c638603fef7239599c520acd86291b6e3297f373af5c03143f2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.1",
-      "sha": "e2e9f74a00934f418805311364618fb88c1aa84fc5ae6dd6c5036453b959e5d5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.1",
-      "sha": "c34b9495e498e79f011e33ed8e48d7e21317817c68fc84358f89eebbe8c409ad"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/656",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2021 656",
+      "titelDe": "Bundesgesetz über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereigesetz, GwG)",
+      "titelFr": "Loi fédérale concernant la lutte contre le blanchiment d’argent et le financement du terrorisme (Loi sur le blanchiment d’argent, LBA)",
+      "titelIt": "Legge federale relativa alla lotta contro il riciclaggio di denaro e il finanziamento del terrorismo (Legge sul riciclaggio di denaro, LRD)",
+      "botschaftKey": "BOTSCHAFT-2019-1932",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/656/de",
+      "sha": "549c8d160ac569a8b8f3f2924bbcccfcf79f71d69b77adb16fc13195246ac549"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.1",
-      "sha": "e4102088bb990b17190d7fc34bf1aa10f3ea6dc6e118c54739526759ee79f5a4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/758",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2019 4417",
+      "titelDe": "Bundesgesetz über die Finanzdienstleistungen (Finanzdienstleistungsgesetz, FIDLEG)",
+      "titelFr": "Loi fédérale sur les services financiers (LSFin)",
+      "titelIt": "Legge federale sui servizi finanziari (Legge sui servizi finanziari, LSerFi)",
+      "botschaftKey": "BOTSCHAFT-2015-2141",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/758/de",
+      "sha": "419b09f40b3d3ec14187e3182b7489989e27d120c74535b6de607b937fa95790"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4631",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi fédérale sur les établissements financiers",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge sugli istituti finanziari",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/762/de",
+      "sha": "f5b929fddfb67e28bdb23ec97a2a84df7d4320d67c499a432b94fd25cc350b46"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.1",
-      "sha": "32f9c3ce936c3ed55e1378dc73ee7185d0e64122e546bbdb37a3000e3838d5e8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5247",
+      "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+      "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+      "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)",
+      "botschaftKey": "BOTSCHAFT-2015-2141",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
+      "sha": "8e1ca7ab79864d0b7ecc9088fb3a512427c930bafc4af6e66884c4ca1d39c2d5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.1",
-      "sha": "180e3167fee5e0c48f49df50b6877213066027bd69a4208928ef7c82f6ba0361"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2015 5339",
+      "titelDe": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+      "titelFr": "Loi fédérale sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Loi sur l'infrastructure des marchés financiers, LIMF)",
+      "titelIt": "Legge federale sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Legge sull'infrastruttura finanziaria, LInFi)",
+      "botschaftKey": "BOTSCHAFT-2014-1633",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/853/de",
+      "sha": "801014a32710a891a31735ec84bdf8229f798d6f7bd305395c42b8849d95c02e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.1",
-      "sha": "fcab242c4166ad818d52a28b305c2675ad9a9fb61baae3808e8c380d32e20193"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/685",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2014 4073",
+      "titelDe": "Bundesgesetz über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsgesetz) (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften)",
+      "titelFr": "Loi fédérale sur l'agrément et la surveillance des réviseurs (Loi sur la surveillance de la révision) (Concentration de la surveillance des entreprises de révision et des sociétés d'audit)",
+      "titelIt": "Legge federale sull'abilitazione e la sorveglianza dei revisori (Legge sui revisori) (Concentrazione della sorveglianza sulle imprese di revisione e sulle società di audit)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/685/de",
+      "sha": "08673c2035efa577a201eb1a0bf43cb3111faaefbb16a0d0743e42dfe737ce02"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.1",
-      "sha": "999f235ddcb2b617bfc29e83d06a18723c48417c4fff47b4561114fa505c8822"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/352",
+      "dateDocument": "2012-12-14",
+      "roFundstelle": "AS 2013 1493",
+      "titelDe": "Bundespersonalgesetz (BPG)",
+      "titelFr": "Loi sur le personnel de la Confédération (LPers)",
+      "titelIt": "Legge sul personale federale (LPers)",
+      "botschaftKey": "BOTSCHAFT-2011-1076",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/352/de",
+      "sha": "fc63566c192ca5e85f2b5d353474da486cf6859c36456c9907a5b222c17d34a4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-12-20",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/956.1",
-      "sha": "08b4171f812eedd88ba367e9f6a40da10a72708e022f898390dace66af7251a1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/6",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2013 27",
+      "titelDe": "Bundesgesetz über die internationale Quellenbesteuerung (IQG)",
+      "titelFr": "Loi fédérale sur l'imposition internationale à la source (LISint)",
+      "titelIt": "Legge federale sull'imposizione alla fonte in ambito internazionale (LIFI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/6/de",
+      "sha": "687c1eeed0fd9caa83a8c33e4dd831957648e11123816fd4e0a485e3375ec056"
     },
     {
       "art": "aenderung",
@@ -86,34 +250,13 @@
       "titelDe": "Verordnung über die vollständige Inkraftsetzung des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007",
       "titelFr": "Ordonnance sur la mise en vigueur intégrale de la loi du 22 juin 2007 sur la surveillance des marchés financiers",
       "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge del 22 giugno 2007 sulla vigilanza dei mercati finanziari",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/735/de",
-      "sha": "bca0199d527faa120adf20904feb83e372803b13355e2c37a48cd4ccc1783555"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2009-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/736",
-      "dateDocument": "2007-06-22",
-      "roFundstelle": "AS 2008 5207",
-      "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
-      "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
-      "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)",
-      "botschaftKey": "BOTSCHAFT-2006-303",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/736/de",
-      "sha": "ece43457387f29bc2e9b4688d4d4a3c7dcee06947642c8afa3263f4f49f132b7"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/68",
-      "dateDocument": "2008-01-16",
-      "roFundstelle": "AS 2008 269",
-      "titelDe": "Verordnung über die vorzeitige Inkraftsetzung von organisatorischen Bestimmungen des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007",
-      "titelFr": "Ordonnance sur la mise en vigueur anticipée de dispositions organisationnelles de la loi du 22 juin 2007 sur la surveillance des marchés financiers",
-      "titelIt": "Ordinanza concernente l'entrata in vigore anticipata di disposizioni organizzative della legge del 22 giugno 2007 sulla vigilanza dei mercati finanziari",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/68/de",
-      "sha": "c30e1c4ce30b7412e31bf60c3e07d37fce3295fdfc3a5498e5ffbeb5d2933939"
+      "sha": "383312373f478fda0fa779114cb3d9c40a9638ad9e19dd01d2dbfb17334e006e"
     }
   ],
-  "sha": "fddc1eaf07b212b3f3e9da8e35df6b03bddff2c821502e5ecbf68eae863df820"
+  "sha": "22b120fd3770c4fcb5bfc97472e3f827ecb9439fcce85ea6e26f3b8c32124472"
 }

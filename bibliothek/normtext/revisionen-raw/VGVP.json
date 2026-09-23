@@ -187,5 +187,94 @@
     "2022-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2000/299",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2000/299",
+    "inkrafttreten": "2001-01-01",
+    "aufhebung": "2027-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/299",
+        "typ": 5,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/359",
+        "typ": 1,
+        "datum": "2002-01-01",
+        "fassung": "2002-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/633",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/358",
+        "typ": 27,
+        "datum": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2001/359": {
+        "dateForce": "2002-01-01",
+        "dateDoc": "2001-09-07",
+        "roId": "RO 2001 2450",
+        "titelDe": "Verordnung über die Höhe der vorgezogenen Entsorgungsgebühr für Getränkeverpackungen aus Glas",
+        "titelFr": "Ordonnance relative au montant de la taxe d'élimination anticipée sur les bouteilles en verre pour boissons",
+        "titelIt": "Ordinanza relativa all'ammontare della tassa di smaltimento anticipata sugli imballaggi per bevande in vetro"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/725": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-11-08",
+        "roId": "RO 2006 4705",
+        "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+        "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/633": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-08-22",
+        "roId": "RO 2007 4477",
+        "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/589": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-10-01",
+        "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/633": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-10-20",
+        "titelDe": "Verordnung vom 20. Oktober 2021 über die Rückgabe, die Rücknahme und die Entsorgung elektrischer und elektronischer Geräte (VREG)",
+        "titelFr": "Ordonnance du 20 octobre 2021 sur la restitution, la reprise et l’élimination des appareils électriques et électroniques (OREA)",
+        "titelIt": "Ordinanza del 20 ottobre 2021 concernente la restituzione, la ripresa e lo smaltimento degli apparecchi elettrici ed elettronici (ORSAE)"
+      }
+    }
+  }
 }

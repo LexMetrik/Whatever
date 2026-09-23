@@ -1711,5 +1711,779 @@
     "2026-08-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1984/1122_1122_1122",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1984/1122_1122_1122",
+    "inkrafttreten": "1985-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/1122_1122_1122",
+        "typ": 5,
+        "datum": "1985-01-01",
+        "fassung": "1985-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/857_857_857",
+        "typ": 1,
+        "datum": "1991-04-01",
+        "fassung": "1991-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/857_857_857",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "1991-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/1860_1860_1860",
+        "typ": 1,
+        "datum": "1992-11-01",
+        "fassung": "1992-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/1933_1933_1933",
+        "typ": 1,
+        "datum": "1994-10-01",
+        "fassung": "1994-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1725_1725_1725",
+        "typ": 1,
+        "datum": "1996-07-01",
+        "fassung": "1996-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1725_1725_1725",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "1996-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/208_208_208",
+        "typ": 1,
+        "datum": "1996-02-01",
+        "fassung": "1996-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/208_208_208",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "1996-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/214_214_214",
+        "typ": 1,
+        "datum": "1996-02-01",
+        "fassung": "1996-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/3371_3371_3371",
+        "typ": 1,
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/3371_3371_3371",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155",
+        "typ": 1,
+        "datum": "1997-07-01",
+        "fassung": "1997-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "1997-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243",
+        "typ": 1,
+        "datum": "1997-11-01",
+        "fassung": "1997-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "1997-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+        "typ": 1,
+        "datum": "2000-01-01",
+        "fassung": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/422",
+        "typ": 1,
+        "datum": "2002-01-01",
+        "fassung": "2002-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/597",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/597",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/624",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/624",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/705",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/705",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/767",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/200",
+        "typ": 1,
+        "datum": "2004-12-20",
+        "fassung": "2004-12-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/724",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/724",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/388",
+        "typ": 1,
+        "datum": "2005-08-01",
+        "fassung": "2005-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/388",
+        "typ": 5,
+        "datum": "2024-01-01",
+        "fassung": "2005-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/448",
+        "typ": 1,
+        "datum": "2005-08-01",
+        "fassung": "2005-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/542",
+        "typ": 1,
+        "datum": "2005-09-01",
+        "fassung": "2005-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/542",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2005-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/410",
+        "typ": 1,
+        "datum": "2006-11-01",
+        "fassung": "2006-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/410",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2006-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/357",
+        "typ": 1,
+        "datum": "2007-07-01",
+        "fassung": "2007-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/357",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2007-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/357",
+        "typ": 2,
+        "datum": "2024-01-01",
+        "fassung": "2007-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/327",
+        "typ": 1,
+        "datum": "2008-06-01",
+        "fassung": "2008-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/327",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2008-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 1,
+        "datum": "2008-08-01",
+        "fassung": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/556",
+        "typ": 1,
+        "datum": "2009-10-01",
+        "fassung": "2009-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/556",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2009-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/434",
+        "typ": 1,
+        "datum": "2010-08-01",
+        "fassung": "2010-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/434",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2010-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/288",
+        "typ": 6,
+        "datum": "2007-07-01",
+        "fassung": "2007-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/288",
+        "typ": 6,
+        "datum": "2024-01-01",
+        "fassung": "2007-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/618",
+        "typ": 1,
+        "datum": "2013-11-01",
+        "fassung": "2013-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/618",
+        "typ": 1,
+        "datum": "2014-07-01",
+        "fassung": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/618",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2013-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/234",
+        "typ": 1,
+        "datum": "2014-06-01",
+        "fassung": "2014-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/234",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2014-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/234",
+        "typ": 2,
+        "datum": "2024-01-01",
+        "fassung": "2014-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/164",
+        "typ": 1,
+        "datum": "2015-04-01",
+        "fassung": "2015-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/164",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2015-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/425",
+        "typ": 1,
+        "datum": "2016-08-01",
+        "fassung": "2016-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/425",
+        "typ": 1,
+        "datum": "2020-07-01",
+        "fassung": "2020-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/573",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/573",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/243",
+        "typ": 1,
+        "datum": "2020-07-01",
+        "fassung": "2020-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/243",
+        "typ": 1,
+        "datum": "2020-07-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/243",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/96",
+        "typ": 1,
+        "datum": "2020-03-01",
+        "fassung": "2020-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/96",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2020-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/614",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/654",
+        "typ": 2,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/262",
+        "typ": 7,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/262",
+        "typ": 7,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/376",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/648",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/648",
+        "typ": 1,
+        "datum": "2026-08-01",
+        "fassung": "2026-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/178",
+        "typ": 1,
+        "datum": "2025-04-01",
+        "fassung": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/178",
+        "typ": 1,
+        "datum": "2026-04-01",
+        "fassung": "2026-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/178",
+        "typ": 2,
+        "datum": "2025-04-01",
+        "fassung": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/113",
+        "typ": 5,
+        "datum": "2026-04-01",
+        "fassung": "2026-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/356",
+        "typ": 5,
+        "datum": "2026-08-01",
+        "fassung": "2026-08-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1991/857_857_857": {
+        "dateForce": "1991-04-01",
+        "dateDoc": "1990-10-05",
+        "roId": "RO 1991 857",
+        "titelDe": "Bundesgesetz vom 5. Oktober 1990 über Finanzhilfen und Abgeltungen (Subventionsgesetz, SuG)",
+        "titelFr": "Loi fédérale du 5 octobre 1990 sur les aides financières et les indemnités (Loi sur les subventions, LSu)",
+        "titelIt": "Legge federale del 5 ottobre 1990 sugli aiuti finanziari e le indennità (Legge sui sussidi, LSu)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/1860_1860_1860": {
+        "dateForce": "1992-11-01",
+        "dateDoc": "1991-01-24",
+        "roId": "RO 1992 1860",
+        "titelDe": "Bundesgesetz vom 24. Januar 1991 über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG)",
+        "titelFr": "Loi fédérale du 24 janvier 1991 sur la protection des eaux (LEaux)",
+        "titelIt": "Legge federale del 24 gennaio 1991 sulla protezione delle acque (LPAc)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/1933_1933_1933": {
+        "dateForce": "1994-10-01",
+        "dateDoc": "1991-03-22",
+        "roId": "RO 1994 1933",
+        "titelDe": "Strahlenschutzgesetz vom 22. März 1991 (StSG)",
+        "titelFr": "Loi du 22 mars 1991 sur la radioprotection (LRaP)",
+        "titelIt": "Legge federale del 22 marzo 1991 sulla radioprotezione (LRaP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/1725_1725_1725": {
+        "dateForce": "1996-07-01",
+        "dateDoc": "1995-10-06",
+        "roId": "RO 1996 1725",
+        "titelDe": "Bundesgesetz vom 6. Oktober 1995 über die technischen Handelshemmnisse (THG)",
+        "titelFr": "Loi fédérale du 6 octobre 1995 sur les entraves techniques au commerce (LETC)",
+        "titelIt": "Legge federale del 6 ottobre 1995 sugli ostacoli tecnici al commercio (LOTC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/208_208_208": {
+        "dateForce": "1996-02-01",
+        "dateDoc": "1996-01-10",
+        "roId": "RO 1996 208",
+        "titelDe": "Verordnung vom 10. Januar 1996 die Bereinigung der Abkürzungen von Erlasstiteln",
+        "titelFr": "Ordonnance du 10 janvier 1996 modifiant les abréviations des titres de divers actes législatifs",
+        "titelIt": "Ordinanza del 10 gennaio 1996 che rettifica alcune abbreviazioni di titoli di atti normativi"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/214_214_214": {
+        "dateForce": "1996-02-01",
+        "dateDoc": "1995-03-24",
+        "roId": "RO 1996 214",
+        "titelDe": "Bundesgesetz über den Natur- und Heimatschutz, Änderung",
+        "titelFr": "Loi fédérale sur la protection de la nature et du paysage, Modification",
+        "titelIt": "Legge federale sulla protezione della natura e del paesaggio, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/3371_3371_3371": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-06-21",
+        "roId": "RO 1996 3371",
+        "titelDe": "Mineralölsteuergesetz vom 21. Juni 1996 (MinöStG)",
+        "titelFr": "Loi du 21 juin 1996 sur l'imposition des huiles minérales (Limpmin)",
+        "titelIt": "Legge federale del 21 giugno 1996 sull'imposizione degli oli minerali (LIOm)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/1155_1155_1155": {
+        "dateForce": "1997-07-01",
+        "dateDoc": "1995-12-21",
+        "roId": "RO 1997 1155",
+        "titelDe": "Umweltschutzgesetz, Änderung",
+        "titelFr": "Loi fédérale sur la protection de l'environnement, Modification",
+        "titelIt": "Legge sulla protezione dell'ambiente, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2243_2243_2243": {
+        "dateForce": "1997-11-01",
+        "dateDoc": "1997-06-20",
+        "roId": "RO 1997 2243",
+        "titelDe": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG), Änderung",
+        "titelFr": "Loi fédérale sur la protection des eaux (LEaux), Modification",
+        "titelIt": "Legge federale sulla protezione delle acque (LPAc), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1999/472": {
+        "dateForce": "2000-01-01",
+        "dateDoc": "1999-06-18",
+        "roId": "RO 1999 3071",
+        "titelDe": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+        "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de décision",
+        "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2001/422": {
+        "dateForce": "2002-01-01",
+        "dateDoc": "2000-12-15",
+        "roId": "RO 2001 2790",
+        "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
+        "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
+        "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/705": {
+        "dateForce": "2004-01-01",
+        "dateDoc": "2003-03-21",
+        "roId": "RO 2003 4803",
+        "titelDe": "Bundesgesetz über die Gentechnik im Ausserhumanbereich (Gentechnikgesetz, GTG)",
+        "titelFr": "Loi fédérale sur l'application du génie génétique au domaine non humain (Loi sur le génie génétique, LGG)",
+        "titelIt": "Legge federale sull'ingegneria genetica nel settore non umano (Legge sull'ingegneria genetica, LIG)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/200": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2003-12-19",
+        "roId": "RO 2004 1633",
+        "titelDe": "Bundesgesetz über das Entlastungsprogramm 2003",
+        "titelFr": "Loi fédérale sur le programme d'allégement budgétaire 2003",
+        "titelIt": "Legge federale sul programma di sgravio 2003"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/724": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2000-12-15",
+        "roId": "RO 2004 4763",
+        "titelDe": "Bundesgesetz über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikaliengesetz, ChemG)",
+        "titelFr": "Loi fédérale sur la protection contre les substances et les préparations dangereuses (Loi sur les produits chimiques, LChim)",
+        "titelIt": "Legge federale sulla protezione contro le sostanze e i preparati pericolosi (Legge sui prodotti chimici, LPChim)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/388": {
+        "dateForce": "2005-08-01",
+        "dateDoc": "2005-05-18",
+        "roId": "RO 2005 2293",
+        "titelDe": "Verordnung über die vollständige Inkraftsetzung des Chemikaliengesetzes",
+        "titelFr": "Ordonnance sur la mise en vigueur intégrale de la loi sur les produits chimiques",
+        "titelIt": "Ordinanza sull'entrata in vigore integrale della legge sui prodotti chimici"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/542": {
+        "dateForce": "2005-09-01",
+        "dateDoc": "2005-03-18",
+        "roId": "RO 2005 4099",
+        "titelDe": "Bundesgesetz über das Vernehmlassungsverfahren (Vernehmlassungsgesetz, VlG)",
+        "titelFr": "Loi fédérale sur la procédure de consultation (Loi sur la consultation, LCo)",
+        "titelIt": "Legge federale sulla procedura di consultazione (Legge sulla consultazione, LCo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/787": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2006-10-06",
+        "roId": "RO 2007 5779",
+        "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+        "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+        "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/327": {
+        "dateForce": "2008-06-01",
+        "dateDoc": "2007-12-21",
+        "roId": "RO 2008 2265",
+        "titelDe": "Bundesgesetz über die Aufhebung und die Vereinfachung von Bewilligungsverfahren",
+        "titelFr": "Loi fédérale sur la suppression et la simplification de procédures d'autorisation",
+        "titelIt": "Legge federale sulla soppressione e la semplificazione delle procedure d'autorizzazione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/447": {
+        "dateForce": "2008-08-01",
+        "dateDoc": "2008-03-20",
+        "roId": "RO 2008 3437",
+        "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/434": {
+        "dateForce": "2010-08-01",
+        "dateDoc": "2010-03-19",
+        "roId": "RO 2010 3233",
+        "titelDe": "Bundesgesetz über die Gentechnik im Ausserhumanbereich (Gentechnikgesetz, GTG)",
+        "titelFr": "Loi fédérale sur l'application du génie génétique au domaine non humain (Loi sur le génie génétique, LGG)",
+        "titelIt": "Legge federale sull'ingegneria genetica nel settore non umano (Legge sull'ingegneria genetica, LIG)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/132": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2016 689",
+        "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+        "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+        "titelIt": "Legge federale sulla formazione continua (LFCo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/425": {
+        "dateForce": "2016-08-01",
+        "dateDoc": "2014-03-21",
+        "roId": "RO 2016 2661",
+        "titelDe": "Mineralölsteuergesetz (MinöStG)",
+        "titelFr": "Loi sur l'imposition des huiles minérales (Limpmin)",
+        "titelIt": "Legge federale sull'imposizione degli oli minerali (LIOm)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/573": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-03-17",
+        "roId": "RO 2017 5205",
+        "titelDe": "Bundesgesetz über das Stabilisierungsprogramm 20172019",
+        "titelFr": "Loi fédérale sur le programme de stabilisation 20172019",
+        "titelIt": "Legge federale sul programma di stabilizzazione 20172019"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/243": {
+        "dateForce": "2019-07-01",
+        "dateDoc": "2019-12-20",
+        "roId": "RO 2020 1269",
+        "titelDe": "Bundesgesetz über die Verlängerung der Befristung der Steuererleichterungen für Erdgas, Flüssiggas und biogene Treibstoffe und über die Änderung des Bundesgesetzes über die Reduktion der CO<sub>2</sub>-Emissionen",
+        "titelFr": "Loi fédérale sur la reconduction des allégements fiscaux accordés pour le gaz naturel, le gaz liquide et les biocarburants et sur la modification de la loi sur le CO<sub>2</sub>",
+        "titelIt": "Legge federale che proroga i termini delle agevolazioni fiscali per il gas naturale, il gas liquido e i biocarburanti e che modifica la legge sul CO<sub>2</sub>"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/498": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2020-06-12",
+        "roId": "RO 2020 2743",
+        "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Ordonnance sur l'adaptation de lois à la suite de la modification de la désignation de l'Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Ordinanza sull'adeguamento di leggi in seguito al cambiamento della designazione dell'Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/748": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-06-19",
+        "roId": "RO 2020 4085",
+        "titelDe": "Bundesgesetz über die Enteignung (EntG)",
+        "titelFr": "Loi fédérale sur l'expropriation (LEx)",
+        "titelIt": "Legge federale sull'espropriazione (LEspr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/654": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-03-19",
+        "titelDe": "Bundesgesetz vom 19. März 2021 über administrative Erleichterungen und eine Entlastung des Bundeshaushalts",
+        "titelFr": "Loi fédérale du 19 mars 2021 sur des allégements administratifs et des mesures destinées à soulager les finances fédérales",
+        "titelIt": "Legge federale del 19 marzo 2021 concernente agevolazioni amministrative e misure di sgravio del bilancio della Confederazione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/262": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
+        "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
+        "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/376": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-03-15",
+        "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
+        "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
+        "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)"
+      }
+    }
+  }
 }

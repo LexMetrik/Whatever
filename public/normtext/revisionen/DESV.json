@@ -1,8 +1,8 @@
 {
   "erlassKey": "DESV",
   "sr": "232.121",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,14 +14,26 @@
       "titelFr": "Ordonnance sur la protection des designs (Ordonnance sur les designs, ODes)",
       "titelIt": "Ordinanza sulla protezione del design (Ordinanza sul design, ODes)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/290/de",
-      "sha": "886d9e5f0f539f308223abe1c771d6791be85622fb39b9ca611a7b541e6947ba"
+      "sha": "8e5e6dd39d0d130628d926ae2fc26f7bb59b08dfcccf082672f951f0bb27739b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.121",
-      "sha": "4cdcbbc2df2d799e0df4fe7da9704ad1bbf4fa6fd136ae3681c278174f94dcb5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/376",
+      "dateDocument": "2025-05-14",
+      "roFundstelle": "AS 2025 376",
+      "titelDe": "Verordnung über die Einführung eines vereinfachten Verfahrens zur Vernichtung von Kleinsendungen im Immaterialgüterrecht",
+      "titelFr": "Ordonnance sur l’introduction d’une procédure simplifiée de destruction de petits envois dans le droit de la propriété intellectuelle",
+      "titelIt": "Ordinanza che introduce una procedura semplificata per la distruzione di piccoli invii nel diritto della proprietà intellettuale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/376/de",
+      "sha": "40938d7a69a55fd9a966a19136a24796386cfa453d6b48669a657f49cc8b15a3"
     },
     {
       "art": "aenderung",
@@ -32,14 +44,26 @@
       "titelDe": "Verordnung über den Schutz von Design (Designverordnung, DesV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur la protection des designs (Ordonnance sur les designs, ODes). Erratum",
       "titelIt": "Ordinanza sulla protezione del design (Ordinanza sul design, ODes). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/230/de",
-      "sha": "a42e96010967682217a8e731d6a9c57d613e95ce8634cac3258fc1be697a9c63"
+      "sha": "c77930d9074b0e2fdec7635417c7cabe8a7acf426def688f4d9448400e8c86d5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.121",
-      "sha": "93b3018dd655748c0008bb84598b50accd6be1a463f4c7c3a77350d8cebc9eb4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
     },
     {
       "art": "aenderung",
@@ -50,20 +74,32 @@
       "titelDe": "Verordnung über den Schutz von Design (Designverordnung, DesV)",
       "titelFr": "Ordonnance sur la protection des designs (Ordonnance sur les designs, ODes)",
       "titelIt": "Ordinanza sulla protezione del design (Ordinanza sul design, ODes)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/775/de",
-      "sha": "e5144ed441b9fd83355043ec94bfae1fdec2c3b26bd483565a712067d1ea7f97"
+      "sha": "fa2e2c1996a3dee3b7a9e1058e3feca750a2648940f2e21a54715d3a9d4f3d78"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2016-12-02",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.121",
-      "sha": "a219b28e929c4ba29473dfa2dba957d4194bb5f90b0ad5042b1c9725dd836f6f"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2002/183/20161202/de",
+      "sha": "ba2087c6387b8a603b9afcda944e7ba31cd7be827e4a7a02bd5ae5f4eb2a8e46"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.121",
-      "sha": "8fa51919690f423b6494faeaee5b7ef4a86ede83bb24d5c03d2336184228d66b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/354",
+      "dateDocument": "2014-06-06",
+      "roFundstelle": "AS 2014 2051",
+      "titelDe": "Verordnung über die Ordnungsfristen im Zuständigkeitsbereich der Eidgenössischen Zollverwaltung",
+      "titelFr": "Ordonnance sur la fixation de délais d'ordre dans le domaine de l'Administration fédérale des douanes",
+      "titelIt": "Ordinanza sui termini ordinatori nell'ambito di competenza dell'Amministrazione federale delle dogane",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/354/de",
+      "sha": "cbd32507798afbb27a74977e46641b7452c2c3551ecdf44a229bf17c071d3fb0"
     },
     {
       "art": "aenderung",
@@ -74,8 +110,11 @@
       "titelDe": "Verordnung über den Schutz von Design (Designverordnung, DesV)",
       "titelFr": "Ordonnance sur la protection des designs (Ordonnance sur les designs, ODes)",
       "titelIt": "Ordinanza sulla protezione del design (Ordinanza sul design, ODes)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/308/de",
-      "sha": "b60075b4eb7fc8c899071aaf506f6ca5b849c86de85c349f06d9ab9b535d749c"
+      "sha": "9741669fbf3be55ce9a5cd0cb8907a1879300dd6aaa15f37eb409790eb02f89b"
     },
     {
       "art": "aenderung",
@@ -86,8 +125,12 @@
       "titelDe": "Verordnung über den Schutz von Design (Designverordnung, DesV)",
       "titelFr": "Ordonnance sur la protection des designs (Ordonnance sur les designs, ODes)",
       "titelIt": "Ordinanza sulla protezione del design (Ordinanza sul design, ODes)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/277/de",
-      "sha": "04c19f81ec1f1fd190913a1e0dd50b9693ed60b3bb1f1a9bf4e3a07d31d93055"
+      "sha": "9dae91b4641029a3be1feb3d137ef3366affef7dcc8136d2fb916faeeb5121db"
     },
     {
       "art": "aenderung",
@@ -98,14 +141,26 @@
       "titelDe": "Verordnung über den Schutz von Design (Designverordnung, DesV)",
       "titelFr": "Ordonnance sur la protection des designs (Ordonnance sur les designs, ODes)",
       "titelIt": "Ordinanza sulla protezione del Design (Ordinanza sul design, ODes)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/365/de",
-      "sha": "1f41f194b7db79f41f5a6ed249e7e50184d76ecf4fce8eb733889bbd29e492d1"
+      "sha": "f2e08f7494f7807d8570390be614ca371f6ade8fd99328107f268ea3daa50fb2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.121",
-      "sha": "3e479ec4bc025403db074a46e52e9fe5be3a52ce316d9adda02355bd2c72e0b1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/250",
+      "dateDocument": "2006-11-01",
+      "roFundstelle": "AS 2007 1469",
+      "titelDe": "Zollverordnung (ZV)",
+      "titelFr": "Ordonnance sur les douanes (OD)",
+      "titelIt": "Ordinanza sulle dogane (OD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/250/de",
+      "sha": "d2113a1186c90ab946018f502f4631d6cd830fbc87fa71a4ab6896829104ecfa"
     },
     {
       "art": "aenderung",
@@ -116,8 +171,12 @@
       "titelDe": "Verordnung über den Schutz von Design (Designverordnung, DesV)",
       "titelFr": "Ordonnance sur la protection des designs (Ordonnance sur les designs, ODes)",
       "titelIt": "Ordinanza sulla protezione del design (Ordinanza sul design, ODes)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/690/de",
-      "sha": "7e91b4c85566f0eba34e65930cfaa73b93e89f79c44373ce991a4e4af2eeb37c"
+      "sha": "3a34990b78f213d5a0d2e5de1775cbb35d36f2c66631b086a322a1beea7a6216"
     },
     {
       "art": "aenderung",
@@ -128,33 +187,12 @@
       "titelDe": "Verordnung über den Schutz von Design (Designverordnung, DesV)",
       "titelFr": "Ordonnance sur la protection des designs (Ordonnance sur les designs, ODes)",
       "titelIt": "Ordinanza sulla protezione del design (Ordinanza sul design, ODes)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/769/de",
-      "sha": "e4a649273dfd984842bfb22e5afc008fd801dc77ff9159a15e2bc2dee2587fd3"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2002-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/183",
-      "dateDocument": "2002-03-08",
-      "roFundstelle": "AS 2002 1122",
-      "titelDe": "Verordnung über den Schutz von Design (Designverordnung, DesV)",
-      "titelFr": "Ordonnance sur la protection des designs (Ordonnance sur les designs, ODes)",
-      "titelIt": "Ordinanza sulla protezione del design (Ordinanza sul design, ODes)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/183/de",
-      "sha": "d4841247323947f4acbd45fc90e9497cdbfed0e820c6309f2b1df24130bfe87d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1900-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/18/138_135_140",
-      "dateDocument": "1900-07-27",
-      "roFundstelle": "AS 18 138",
-      "titelDe": "Verordnung vom 27. Juli 1900 über die gewerblichen Muster und Modelle (MMV)",
-      "titelFr": "Ordonnance du 27 juillet 1900 sur les dessins et modèles industriels (ODMI)",
-      "titelIt": "Ordinanza del 27 luglio 1900 sui disegni e modelli industriali (ODMI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/18/138_135_140/de",
-      "sha": "91c1e7c518bff7fe86c58eff0e1fa68b5cbe85886c86ae2e555878f96635d5b7"
+      "sha": "cc68c4d704cdc2a2341233131e767a34469c1c7b3001ba1d50a769e81b8c3d5b"
     }
   ],
-  "sha": "bee5c76297f8b6913d743c06d70ec9e70360ee82633af4c4d3028ca992cd34c0"
+  "sha": "15d5a34a9dca3f4186b00c6eb2957a8389b8ee1e6953b9e0fe58b589b0acd8cd"
 }

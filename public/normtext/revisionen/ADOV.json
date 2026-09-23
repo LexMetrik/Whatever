@@ -1,26 +1,23 @@
 {
   "erlassKey": "ADOV",
   "sr": "211.221.36",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.221.36",
-      "sha": "2ad4033696b6f5959f5b3ea855041252c005e2ecc987d947737a79c5e3e10909"
-    },
-    {
       "art": "aenderung",
-      "dateEntryInForce": "2012-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/505",
-      "dateDocument": "2011-06-29",
-      "roFundstelle": "AS 2011 3637",
-      "titelDe": "Verordnung über die Adoption (Adoptionsverordnung, AdoV)",
-      "titelFr": "Ordonnance sur l'adoption (OAdo)",
-      "titelIt": "Ordinanza sull'adozione (OAdoz)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/505/de",
-      "sha": "17339925db5d69c6edbb2a295e794de0466bd117375ae16cb04fe91a054a7aa1"
+      "dateEntryInForce": "2023-01-23",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+      "dateDocument": "2022-10-19",
+      "roFundstelle": "AS 2022 698",
+      "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+      "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+      "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/698/de",
+      "sha": "2478029947e15351be1465545817e1af2f94c81ff2ca66a39af9bbb085525412"
     },
     {
       "art": "aenderung",
@@ -31,33 +28,28 @@
       "titelDe": "Verordnung über die Adoption (Adoptionsverordnung, AdoV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur l'adoption (OAdo) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sull'adozione (OAdoz)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/601/de",
-      "sha": "46d177c59652ab00f31bf6612e2d188b921acd94aa11711903a2b84b3ec0e435"
+      "sha": "e094823ea2bb791394428b6054ed0b132bf7ae30f4d3d1d261e02642195f72f7"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2003-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/671",
-      "dateDocument": "2002-11-29",
-      "roFundstelle": "AS 2002 4160",
-      "titelDe": "Verordnung über die Adoptionsvermittlung (VAdoV)",
-      "titelFr": "Ordonnance sur l'activité d'intermédiaire en vue de l'adoption (Oaiad)",
-      "titelIt": "Ordinanza sul collocamento in vista d'adozione (OCAdo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/671/de",
-      "sha": "5867e4572e069b5f7f20434958fddc3201d5872efe051960b33b4f56e015626e"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1973-04-16",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/628_628_628",
-      "dateDocument": "1973-03-28",
-      "roFundstelle": "AS 1973 628",
-      "titelDe": "Verordnung vom 28. März 1973 über die Adoptionsvermittlung",
-      "titelFr": "Ordonnance du 28 mars 1973 sur l'activité d'intermédiaire en vue de l'adoption",
-      "titelIt": "Ordinanza del 28 marzo 1973 sul collocamento in vista d'adozione",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/628_628_628/de",
-      "sha": "7690dfb86aafdb50b16ef66967197b4008cbac326322952fdea24723c7e3b672"
+      "dateEntryInForce": "2011-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/598",
+      "dateDocument": "2009-08-20",
+      "roFundstelle": "AS 2011 4367",
+      "titelDe": "Abkommen zwischen der Schweizerischen Eidgenossenschaft und der Bundesrepublik Deutschland über die Wehrpflicht der Doppelbürger/Doppelstaater (mit Anlagen und Prot.)",
+      "titelFr": "Convention entre la Confédération suisse et la République fédérale d'Allemagne relative au service militaire des double nationaux (avec annexes et prot.)",
+      "titelIt": "Convenzione tra la Confederazione Svizzera e la Repubblica federale di Germania concernente l'obbligo di prestare servizio militare delle persone con doppia cittadinanza (con all. e prot.)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/598/de",
+      "sha": "210781ef3f078eead2afca88e3bb08bc91b87c15ff8c2eab184c1406035f2d19"
     }
   ],
-  "sha": "43b4c6f9fc8bdbcc4dfb0d34bffe7f2523ce983fd0c0c848beef3bd92129b232"
+  "sha": "35d110665788c4b4df6f45223c1699569eafbe58f10c893d6159c9f3b1aa1a37"
 }

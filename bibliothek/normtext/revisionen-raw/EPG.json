@@ -879,5 +879,128 @@
     "2025-08-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2015/297",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2015/297",
+    "inkrafttreten": "2016-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/297",
+        "typ": 5,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+        "typ": 1,
+        "datum": "2022-07-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/437",
+        "typ": 1,
+        "datum": "2020-06-25",
+        "fassung": "2020-06-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/437",
+        "typ": 1,
+        "datum": "2022-07-01",
+        "fassung": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/492",
+        "typ": 6,
+        "datum": "2020-06-25",
+        "fassung": "2020-06-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/492",
+        "typ": 6,
+        "datum": "2022-07-01",
+        "fassung": "2020-06-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/878",
+        "typ": 7,
+        "datum": "2021-12-18",
+        "fassung": "2021-12-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/878",
+        "typ": 7,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/817",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/817",
+        "typ": 1,
+        "datum": "2024-07-01",
+        "fassung": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/421",
+        "typ": 1,
+        "datum": "2025-08-01",
+        "fassung": "2025-08-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2016/132": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2016 689",
+        "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+        "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+        "titelIt": "Legge federale sulla formazione continua (LFCo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/878": {
+        "dateForce": "2021-12-18",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (Covid-19-Gesetz)",
+        "titelFr": "Loi fédérale sur les bases légales des ordonnances du Conseil fédéral visant à surmonter l’épidémie de COVID-19 (Loi COVID-19)",
+        "titelIt": "Legge federale sulle basi legali delle ordinanze del Consiglio federale volte a far fronte all’epidemia di COVID-19 (Legge COVID-19)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/817": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-12-16",
+        "titelDe": "Bundesgesetz über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (Covid-19-Gesetz)",
+        "titelFr": "Loi fédérale sur les bases légales des ordonnances du Conseil fédéral visant à surmonter l’épidémie de COVID-19 (Loi COVID-19)",
+        "titelIt": "Legge federale sulle basi legali delle ordinanze del Consiglio federale volte a far fronte all’epidemia di COVID-19 (Legge COVID-19)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/421": {
+        "dateForce": "2025-08-01",
+        "dateDoc": "2023-09-29",
+        "titelDe": "Bundesgesetz über die Transplantation von Organen, Geweben und Zellen (Transplantationsgesetz)",
+        "titelFr": "Loi fédérale sur la transplantation d’organes, de tissus et de cellules (Loi sur la transplantation)",
+        "titelIt": "Legge federale sul trapianto di organi, tessuti e cellule (Legge sui trapianti)"
+      }
+    }
+  }
 }

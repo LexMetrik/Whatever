@@ -700,5 +700,123 @@
     "2023-01-23"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1977/1931_1931_1931",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1977/1931_1931_1931",
+    "inkrafttreten": "1978-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1977/1931_1931_1931",
+        "typ": 5,
+        "datum": "1978-01-01",
+        "fassung": "1978-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/54_54_54",
+        "typ": 1,
+        "datum": "1989-01-01",
+        "fassung": "1989-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/672",
+        "typ": 1,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/672",
+        "typ": 2,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/78",
+        "typ": 6,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/773",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/505",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/505",
+        "typ": 2,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/676",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/676",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/392",
+        "typ": 6,
+        "datum": "2017-06-20",
+        "fassung": "2017-06-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+        "typ": 1,
+        "datum": "2023-01-23",
+        "fassung": "2023-01-23"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1989/54_54_54": {
+        "dateForce": "1989-01-01",
+        "dateDoc": "1988-12-21",
+        "roId": "RO 1989 54",
+        "titelDe": "Verordnung über die Aufnahme von Pflegekindern, Änderung",
+        "titelFr": "Ordonnance réglant le placement d'enfants, Modification",
+        "titelIt": "Ordinanza sull'affiliazione, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/549": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2006 3459",
+        "titelDe": "Schweizerisches Strafgesetzbuch",
+        "titelFr": "Code pénal suisse",
+        "titelIt": "Codice penale svizzero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/505": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-06-29",
+        "roId": "RO 2011 3637",
+        "titelDe": "Verordnung über die Adoption (Adoptionsverordnung, AdoV)",
+        "titelFr": "Ordonnance sur l'adoption (OAdo)",
+        "titelIt": "Ordinanza sull'adozione (OAdoz)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/698": {
+        "dateForce": "2023-01-23",
+        "dateDoc": "2022-10-19",
+        "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+        "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+        "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)"
+      }
+    }
+  }
 }

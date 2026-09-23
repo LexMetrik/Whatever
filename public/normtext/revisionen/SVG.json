@@ -1,9 +1,31 @@
 {
   "erlassKey": "SVG",
   "sr": "741.01",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/453",
+      "dateDocument": "2023-03-17",
+      "roFundstelle": "AS 2023 453",
+      "titelDe": "Strassenverkehrsgesetz (SVG)",
+      "titelFr": "Loi fédérale sur la circulation routière (LCR)",
+      "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-10-01",
+        "2024-05-01",
+        "2025-03-01",
+        "2025-04-01",
+        "2026-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/453/de",
+      "sha": "8c5366ee051a448157c0b19d55ab841184b97b29700fa1ed6fc89df809ce6d5e"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2026-07-01",
@@ -13,8 +35,33 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 17. März 2023 des Strassenverkehrsgesetzes",
       "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 17 mars 2023 de la loi fédérale sur la circulation routière",
       "titelIt": "Ordinanza concernente un’entrata in vigore parziale della modifica del 17 marzo 2023 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/225/de",
-      "sha": "bcdae26e4ddcace6e95dcd0b215b86664a759c80026bebd7cc15ebd13b738434"
+      "sha": "0aba759ff00b8c5fc52711db443d2cb432509bdaf972b74e74223e873aaf370b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/453",
+      "dateDocument": "2023-03-17",
+      "roFundstelle": "AS 2023 453",
+      "titelDe": "Strassenverkehrsgesetz (SVG)",
+      "titelFr": "Loi fédérale sur la circulation routière (LCR)",
+      "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-10-01",
+        "2024-05-01",
+        "2025-03-01",
+        "2025-04-01",
+        "2026-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/453/de",
+      "sha": "8e0bc0d282c5c4e3471cc820998ee301f6ab7a73c38d2e73cedbd0b96d30837c"
     },
     {
       "art": "aenderung",
@@ -25,8 +72,33 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 17. März 2023 des Strassenverkehrsgesetzes",
       "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 17 mars 2023 de la loi fédérale sur la circulation routière",
       "titelIt": "Ordinanza su un’entrata in vigore parziale della modifica del 17 marzo 2023 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/548/de",
-      "sha": "dde2b62bff447282b5146f9de22851a356ca5e9829ef5a2d5e1d0eb89f2cb8dc"
+      "sha": "1a97f0fd4cf6cedc98313d7196f15aef150c0499d3ff0ac21f470fb75ed34935"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/453",
+      "dateDocument": "2023-03-17",
+      "roFundstelle": "AS 2023 453",
+      "titelDe": "Strassenverkehrsgesetz (SVG)",
+      "titelFr": "Loi fédérale sur la circulation routière (LCR)",
+      "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-10-01",
+        "2024-05-01",
+        "2025-03-01",
+        "2025-04-01",
+        "2026-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/453/de",
+      "sha": "60f02a8d5c734d092bfa607c3c647ff80cbcb2a7912f94615c8b0b5f24093642"
     },
     {
       "art": "aenderung",
@@ -37,20 +109,64 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 17. März 2023 des Strassenverkehrsgesetzes",
       "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 17 mars 2023 de la loi fédérale sur la circulation routière",
       "titelIt": "Ordinanza su un’entrata in vigore parziale della modifica del 17 marzo 2023 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/49/de",
-      "sha": "370025c5ed80aefbf3c34dc46693040048cdf22b957677ae66ef49e3c4bf9df8"
+      "sha": "42172f1f7a8e675ae6c25b4ba91e71254208d49aabe807f7a692de1d55851435"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "7fb06c68d286a8a9a8930b16765c9751809c4fa3c688b776096613d2e338139e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/453",
+      "dateDocument": "2023-03-17",
+      "roFundstelle": "AS 2023 453",
+      "titelDe": "Strassenverkehrsgesetz (SVG)",
+      "titelFr": "Loi fédérale sur la circulation routière (LCR)",
+      "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-10-01",
+        "2024-05-01",
+        "2025-03-01",
+        "2025-04-01",
+        "2026-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/453/de",
+      "sha": "1e49ff45c9dd863255413dacee41315740b56f9c10298fe90c8bee5ac2b4b59d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2024-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/131",
+      "dateDocument": "2023-03-17",
+      "roFundstelle": "AS 2024 131",
+      "titelDe": "Bundesgesetz über eine leistungsabhängige Schwerverkehrsabgabe (Schwerverkehrsabgabegesetz, SVAG)",
+      "titelFr": "Loi fédérale concernant une redevance sur le trafic des poids lourds liée aux prestations (Loi relative à une redevance sur le trafic des poids lourds, LRPL)",
+      "titelIt": "Legge federale concernente una tassa sul traffico pesante commisurata alle prestazioni (Legge sul traffico pesante, LTTP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/131/de",
+      "sha": "c4b9629a2b6757f4ac8aaf11a4cc193e3aa2d9935c71fab032cb43f3168df23c"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "16a3edf76e54ccbab08d2bfb222ce117355e230ab6318007b03736475efa7b27"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/355",
+      "dateDocument": "2022-03-18",
+      "roFundstelle": "AS 2023 355",
+      "titelDe": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
+      "titelFr": "Loi fédérale sur la surveillance des entreprises d’assurance (Loi sur la surveillance des assurances, LSA)",
+      "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)",
+      "botschaftKey": "BOTSCHAFT-2020-2421",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/355/de",
+      "sha": "660772b412724c638603fef7239599c520acd86291b6e3297f373af5c03143f2"
     },
     {
       "art": "aenderung",
@@ -61,26 +177,67 @@
       "titelDe": "Strassenverkehrsgesetz (SVG)",
       "titelFr": "Loi fédérale sur la circulation routière (LCR)",
       "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2023-10-01",
+        "2024-05-01",
+        "2025-03-01",
+        "2025-04-01",
+        "2026-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/453/de",
-      "sha": "85c5c1c9455653acd0a9484a92e84e2707494d043767f89845a58130912b3376"
+      "sha": "33bc671a304872112c12704fb643380aedb4bc756ed8f84abea2d706c050d401"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "9059928967f55171acc9869bc058ad56d705de9d7b7ba56db2db1265b2978813"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "192879fbb81b30375fefd5ab8b066716d5ba87573b5b63edf4db55a728b361b5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 259",
+      "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+      "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
+      "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene",
+      "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
+      "sha": "64e1e609ccf5d5a5532e3f42aec1fd1e1c0d6c9345913a92606b4f68339c0b0d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "0595bbf6b1f9add2ae20a26201e5a693e745df67007499c12a76d9d2c6d00f43"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5343",
+      "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+      "titelFr": "Code des obligations (Révision du droit de la prescription)",
+      "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)",
+      "botschaftKey": "BOTSCHAFT-2014-65",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/807/de",
+      "sha": "8bb33e0c1d48975d7ada40ab2036925b1263bee7d12a3ab485ddb99cae3c4fca"
     },
     {
       "art": "aenderung",
@@ -91,8 +248,11 @@
       "titelDe": "Strassenverkehrsgesetz (SVG)",
       "titelFr": "Loi fédérale sur la circulation routière (LCR)",
       "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/425/de",
-      "sha": "7accc83a52a937a4edd45e2e5b845af86d5688b00f9e94f5d8a9c79f92dc8eaf"
+      "sha": "95c96e8f605373737b8f78bd6320f6cbcda9ed823fb3e74619411c9931727b5e"
     },
     {
       "art": "aenderung",
@@ -103,26 +263,60 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 15. Juni 2012 des Strassenverkehrsgesetzes",
       "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 15 juin 2012 de la loi fédérale sur la circulation routière",
       "titelIt": "Ordinanza concernente un'entrata in vigore parziale della modifica del 15 giugno 2012 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/781/de",
-      "sha": "0824702e61cf21bbe7cfa8c9f00242abbaa6c4149768d22297ec0140dcc6c5f5"
+      "sha": "c5470b30d52786e9a4b730ed6f3068abdcd36ac01a406053445b396ea78e9f0f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-05-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "b4e660c33d204725bdbaa3c640dbeca841491d30e56b4c054bd6ec021e888a35"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/271",
+      "dateDocument": "2018-04-06",
+      "roFundstelle": "AS 2018 1811",
+      "titelDe": "Mitteilung über die Änderung der Teilinkraftsetzung des Energiegesetzes",
+      "titelFr": "Communication concernant la modification de la mise en vigueur partielle de la loi sur l'énergie",
+      "titelIt": "Comunicazione sulla modifica dell'entrata in vigore parziale della legge federale sull'energia",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten",
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/271/de",
+      "sha": "50efb49f15057b2aa9d43e9d9f0a62f4c08c1624ad5e17e343bc7075547e5186"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "925c51ee24b79b2634b46dc11f871a590f7d0c6b7a41eb65911de5908bd7373e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/762",
+      "dateDocument": "2016-09-30",
+      "roFundstelle": "AS 2017 6839",
+      "titelDe": "Energiegesetz (EnG)",
+      "titelFr": "Loi sur l'énergie (LEne)",
+      "titelIt": "Legge federale sull'energia (LEne)",
+      "botschaftKey": "BOTSCHAFT-2013-1476",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/762/de",
+      "sha": "f21a467146f8fb3f00beafa6be5007ae61849c7405c2503e25a73408f0325114"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "b9f588e3fde00c6bc041f7806a4d4ac78ac138da297e9fe35013352a2a665033"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2017 4095",
+      "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG)",
+      "titelFr": "Loi fédérale sur le renseignement (LRens)",
+      "titelIt": "Legge federale sulle attività informative (LAIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/494/de",
+      "sha": "203aa9b6f92a450dd04dddb9144f4d3490ab38dfa1ab0e6274c5bd1d0cc77027"
     },
     {
       "art": "aenderung",
@@ -133,14 +327,27 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 15. Juni 2012 des Strassenverkehrsgesetzes",
       "titelFr": "Ordonnance concernant l'entrée en vigueur partielle de la modification du 15 juin 2012 de la loi fédérale sur la circulation routière",
       "titelIt": "Ordinanza concernente un'entrata in vigore parziale della modifica del 15 giugno 2012 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/489/de",
-      "sha": "8bd7ac323effcc50ac64544bdacdcb5f78bb7a1d6ef6946d60d0488cae6fd13f"
+      "sha": "702ad8c1f632d3a064d24a732d1417f9dc3d3ae6cfe60c2a48ced34d5d8cb170"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "f61cfe986c721679261cec2b57d481f774a5e9ac9a2b824b0bb1c11477b2896e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/391",
+      "dateDocument": "2016-03-18",
+      "roFundstelle": "AS 2016 2429",
+      "titelDe": "Zollgesetz (ZG)",
+      "titelFr": "Loi sur les douanes (LD)",
+      "titelIt": "Legge sulle dogane (LD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/391/de",
+      "sha": "646c45f684927ad99f88bde2dfb023aba1064e8cc9599385a8c08bf6f9dc197e"
     },
     {
       "art": "aenderung",
@@ -151,8 +358,27 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 15. Juni 2012 des Strassenverkehrsgesetzes",
       "titelFr": "Ordonnance concernant l'entrée en vigueur partielle de la modification du 15 juin 2012 de la loi fédérale sur la circulation routière",
       "titelIt": "Ordinanza concernente un'entrata in vigore parziale della modifica del 15 giugno 2012 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/488/de",
-      "sha": "df1c2e8eb8992b2cc13b26a0889fbd31ed2db9906c06628e4be88c4abea3db0b"
+      "sha": "b8e04f852b9630e7578474cad088422f32f7db0bcf779824a837e90661a28136"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/328",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2016 1845",
+      "titelDe": "Bundesgesetz über den Gütertransport durch Bahn- und Schifffahrtsunternehmen (Gütertransportgesetz, GüTG)",
+      "titelFr": "Loi fédérale sur le transport de marchandises par des entreprises de chemin de fer ou de navigation (Loi sur le transport de marchandises, LTM)",
+      "titelIt": "Legge federale sul trasporto di merci da parte di imprese ferroviarie e di navigazione (Legge sul trasporto di merci, LTM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/328/de",
+      "sha": "e64fb2ea757780a209fe916fc37b929bcdd77507a63cb02da2691833f058a785"
     },
     {
       "art": "aenderung",
@@ -163,8 +389,11 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 15. Juni 2012 des Strassenverkehrsgesetzes",
       "titelFr": "Ordonnance concernant l'entrée en vigueur partielle de la modification du 15 juin 2012 de la loi fédérale sur la circulation routière",
       "titelIt": "Ordinanza concernente un'entrata in vigore parziale della modifica del 15 giugno 2012 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/376/de",
-      "sha": "e0dc5bd3494044dd05f277c68b99b48ee6207595589d17b8c17ec4377765b030"
+      "sha": "8546880d832c97a8ad8f13a38a9db004dd3b945ced8ad6d4dbc12d4f671db10c"
     },
     {
       "art": "aenderung",
@@ -175,20 +404,51 @@
       "titelDe": "Strassenverkehrsgesetz (SVG)",
       "titelFr": "Loi fédérale du 19 décembre 1958 sur la circulation routière (LRC)",
       "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/288/de",
-      "sha": "acfb1d6a5e97327c7915f77e0d0a5c897cbb8948510fd05fa6f2cee88219d311"
+      "sha": "6a8cb5e1b7782d785c4f3ec208e04ee90aab090091e49b59823a089a4aaaed25"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "20756c366c27bbc5eb7d054f084aa3b48e575a46c9a5904ce3f6ebe76441ba7d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/821",
+      "dateDocument": "2013-11-29",
+      "roFundstelle": "AS 2013 4669",
+      "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 15. Juni 2012 des Strassenverkehrsgesetzes",
+      "titelFr": "Ordonnance concernant l'entrée en vigueur partielle de la modification du 15 juin 2012 de la loi fédérale sur la circulation routière",
+      "titelIt": "Ordinanza su un'entrata in vigore parziale della modifica del 15 giugno 2012 della legge federale ulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2014-07-01",
+        "2015-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/821/de",
+      "sha": "a86d342041b43b9809a87dcbcb40315766ed6f396bb8a17557cd33ddac2a4ed5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "f1df4f01e77c27b36b79e7cee8f1dac43f4fbf99bc95c70d4db8c134478d27a1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/821",
+      "dateDocument": "2013-11-29",
+      "roFundstelle": "AS 2013 4669",
+      "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 15. Juni 2012 des Strassenverkehrsgesetzes",
+      "titelFr": "Ordonnance concernant l'entrée en vigueur partielle de la modification du 15 juin 2012 de la loi fédérale sur la circulation routière",
+      "titelIt": "Ordinanza su un'entrata in vigore parziale della modifica del 15 giugno 2012 della legge federale ulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2014-07-01",
+        "2015-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/821/de",
+      "sha": "1867d948485a28da4680d05db0c72afcece88db63390fa61eb3885ac671cb2a6"
     },
     {
       "art": "aenderung",
@@ -199,14 +459,26 @@
       "titelDe": "Strassenverkehrsgesetz (SVG) (Betrifft nur den französischen Text)",
       "titelFr": "Loi fédérale sur la circulation routière (LCR)",
       "titelIt": "Legge federale sulla circolazione stradale (LCStr) (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/293/de",
-      "sha": "e7dad185df3006fec0604032aec9db8e421673508276394093b13556a08002d5"
+      "sha": "d8847f67d8408717690e0546d8e1419e59b203c855132b8d5a5d721c1a38a0d5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "32f4706af4cb3a51369abe0148e28e7f382550930819b787f38b78e1b7fae823"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/242",
+      "dateDocument": "2013-12-13",
+      "roFundstelle": "AS 2014 1111",
+      "titelDe": "Bundesgesetz über den Bau und die Finanzierung eines 4-Meter-Korridors auf den Zulaufstrecken zur NEAT (4-Meter-Korridor-Gesetz)",
+      "titelFr": "Loi fédérale sur la construction et le financement d'un corridor de 4 m sur les tronçons d'accès aux NLFA (Loi sur le corridor de 4 m)",
+      "titelIt": "Legge federale sulla realizzazione e il finanziamento di un corridoio di quattro metri sulle tratte di accesso alla NFTA (Legge sul corridoio di quattro metri)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/242/de",
+      "sha": "ca1bd80e5aaaf8ce14e796596ecc9db40acc98cac27a695f113dcfafa57232ea"
     },
     {
       "art": "aenderung",
@@ -217,8 +489,17 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 15. Juni 2012 des Strassenverkehrsgesetzes",
       "titelFr": "Ordonnance concernant l'entrée en vigueur partielle de la modification du 15 juin 2012 de la loi fédérale sur la circulation routière",
       "titelIt": "Ordinanza su un'entrata in vigore parziale della modifica del 15 giugno 2012 della legge federale ulla circolazione stradale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2014-07-01",
+        "2015-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/821/de",
-      "sha": "73eec156b970f826c6670aa3072fadb22f957a86162024431ec9b08969657721"
+      "sha": "6dd812f325a40a99f2619afd793fbe25da5d879bea1f44cdbdb6d0a098f7ae0f"
     },
     {
       "art": "aenderung",
@@ -229,14 +510,31 @@
       "titelDe": "Strassenverkehrsgesetz (SVG)",
       "titelFr": "Loi fédérale sur la circulation routière (LCR) (Ne concerne que les textes allemand et italien)",
       "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/891/de",
-      "sha": "f8418be6d3dbff4e463f769a64d86804a311454cef2c22f86ba1aa3fa90f1798"
+      "sha": "2d97122354430d8d2bc6c3b9ecb7199e8962415f167d51a8140bc112a6217c5c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "98da7c23ab9acd3cd2056277debb70b6e2c45c3ac960c2777693ed62dabe8f6b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/744",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 6291",
+      "titelDe": "Strassenverkehrsgesetz (SVG)",
+      "titelFr": "Loi fédérale sur la circulation routière (LCR)",
+      "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
+      "botschaftKey": "BOTSCHAFT-2010-1610",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2013-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/744/de",
+      "sha": "e48c4f793cc58e35795cc0452b5ea622392cbfcb45047fa6fcaa97e9118cd4a5"
     },
     {
       "art": "aenderung",
@@ -248,14 +546,32 @@
       "titelFr": "Loi fédérale sur la circulation routière (LCR)",
       "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
       "botschaftKey": "BOTSCHAFT-2010-1610",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2013-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/744/de",
-      "sha": "fa9b9b387e4c384f4aee7fd2a741c0400999afb34ab506958f38abe42e6d779c"
+      "sha": "32f70991e77adbf8dd1a18cb5e081d46be64c31db8e5e699821209be15912354"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "ba7ad94228e3a1a5a082a03c002721fc7efdf23f483e666c3e239c3775a88e17"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/23",
+      "dateDocument": "2011-03-18",
+      "roFundstelle": "AS 2012 351",
+      "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
+      "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
+      "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)",
+      "botschaftKey": "BOTSCHAFT-2010-181",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/23/de",
+      "sha": "999b0c16911f111c2c5a57420dbe95bfa6dcfc63f89ddaf4437147549ef02ec3"
     },
     {
       "art": "aenderung",
@@ -266,8 +582,11 @@
       "titelDe": "Strassenverkehrsgesetz (SVG)",
       "titelFr": "Loi fédérale sur la circulation routière (LCR)",
       "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/428/de",
-      "sha": "5f8c0a9fc365e98aa7e23ab3999ae6d66e38571fe5f176623f1095835430af35"
+      "sha": "3c16a1d89614e68c1ae778943d39cf21f16f16025f7c08dae1adc6defa191779"
     },
     {
       "art": "aenderung",
@@ -278,32 +597,120 @@
       "titelDe": "Strassenverkehrsgesetz (SVG)",
       "titelFr": "Loi fédérale sur la circulation routière (LCR)",
       "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/710/de",
-      "sha": "dc73a4d031529ae25096f4fb7bf25e75c5d5057b72d686b6f189d27f10fe5738"
+      "sha": "cb5ab86264a1153545fcba3b3b125a3c3b3590e8202c9e4291e56cd4a86d1385"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "842a0048ccfe52c63fd92f8173e76650cd8c15379a6672e40f975a44eecc063a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "a2f3404021afc248e0ad4014cc8fb9ed953c1501058b179835de293c00dad3ad"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2010 1881",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2006-124",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "sha": "f58abceb941cc313b81bd4ceaf09349034ef2aa8c587d97b8a4f8b48412650e1"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2010-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "ecbcca3180f74ba57ab7b693a50a3bc353c14843f797f71582abc2a83e5b5ba5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/347",
+      "dateDocument": "2009-06-12",
+      "roFundstelle": "AS 2010 2573",
+      "titelDe": "Bundesgesetz über die Produktesicherheit (PrSG)",
+      "titelFr": "Loi fédérale sur la sécurité des produits (LSPro)",
+      "titelIt": "Legge federale sulla sicurezza dei prodotti (LSPro)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/347/de",
+      "sha": "5d2b1f8d44979dd203cca99833069d9bab744b2aee33e14dfdaf64dd50ede157"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "f37cbcd82caeb75d7b714f029b31fe4cd1a99536e84843d2742f4d8b06b1e602"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/679",
+      "dateDocument": "2009-03-20",
+      "roFundstelle": "AS 2009 5597",
+      "titelDe": "Bundesgesetz über die Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
+      "titelFr": "Loi sur la réforme des chemins de fer 2 (Révision des actes normatifs relatifs aux transports publics)",
+      "titelIt": "Legge federale sulla Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)",
+      "botschaftKey": "BOTSCHAFT-2007-425",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/679/de",
+      "sha": "c22c07799150a0df60e5545f52d4cfc630ae521ba82ca58b5270b77e3a5ae969"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2010-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/846",
+      "dateDocument": "2009-12-04",
+      "roFundstelle": "AS 2009 6921",
+      "titelDe": "Verordnung über die Anpassung gesetzlicher Bestimmungen infolge der Schaffung des Nachrichtendienstes des Bundes",
+      "titelFr": "Ordonnance concernant l'adaptation de dispositions légales à la suite de la création du Service de renseignement de la Confédération",
+      "titelIt": "Ordinanza sull'adeguamento di disposizioni legali in seguito all'istituzione del Servizio delle attività informative della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/846/de",
+      "sha": "3dfbdeff6bc7388dfd4875009a5e47b60cd39cde19da399aad5f29efcb0e4374"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "b374f5fc164773818a9ed6467d781d398eb5eb83c3b3ad4b2a7b981bcf551eaa"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2008 5207",
+      "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+      "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+      "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)",
+      "botschaftKey": "BOTSCHAFT-2006-303",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/736/de",
+      "sha": "a49275dd1e695a08626c44f542a93882136ca75eb114782b1d3d566c8e97872c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2009-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/853",
+      "dateDocument": "2008-12-12",
+      "roFundstelle": "AS 2008 6261",
+      "titelDe": "Verordnung über die Anpassung gesetzlicher Bestimmungen infolge Überführung der nachrichtendienstlichen Teile des Dienstes für Analyse und Prävention zum VBS",
+      "titelFr": "Ordonnance sur l'adaptation des dispositions légales suite au transfert des unités de renseignements du Service d'analyse et de prévention au DDPS",
+      "titelIt": "Ordinanza sull'adeguamento delle disposizioni legali in seguito al trasferimento delle unità di informazioni del Servizio di analisi e prevenzione nel DDPS",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/853/de",
+      "sha": "8af2e0bea5c781f8dabf6286e79b395e1ea7034e315272a699c8ae9e4eea5032"
     },
     {
       "art": "aenderung",
@@ -315,38 +722,123 @@
       "titelFr": "Loi fédérale sur la circulation routière (LCR)",
       "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
       "botschaftKey": "BOTSCHAFT-2007-1189",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/530/de",
-      "sha": "e6d7a285bdbd9573e5a57ba39ce791fc1b808610ebeeff718d33c6398578b0d7"
+      "sha": "711cbe11ad5856e7da7a50601299da7fbff9407d716d02801e99213f2bc1c64d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "7284263e8697b2157dbdb12e35764d4339f106d5ec47dc3afbec0a420875b084"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/189",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2008 765",
+      "titelDe": "Bundesgesetz über Massnahmen zur Verbesserung der Verfahren im Bereich der leistungsabhängigen Schwerverkehrsabgabe",
+      "titelFr": "Loi fédérale sur des mesures visant à améliorer les procédures liées à une redevance sur le trafic des poids lourds liée aux prestations",
+      "titelIt": "Legge federale concernente misure atte a migliorare le procedure nell'ambito della tassa sul traffico pesante commisurata alle prestazioni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/189/de",
+      "sha": "2cf6e3d56e063caf1a54032ce06de9b0cb1432be17012ba4512392493f48f0de"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "44446ff2fe2b3d7212beaa7bd0b76490b9c44022e988a62766f3a419d27508b7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5779",
+      "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+      "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)",
+      "botschaftKey": "BOTSCHAFT-2005-976",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "87b3b3b19bcbddc352dbd0e16b6c82ff44500eb8165ed52987ddf2ae441e45fb"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/249",
+      "dateDocument": "2005-03-18",
+      "roFundstelle": "AS 2007 1411",
+      "titelDe": "Zollgesetz (ZG)",
+      "titelFr": "Loi sur les douanes (LD)",
+      "titelIt": "Legge sulle dogane (LD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/249/de",
+      "sha": "fb5f4289cf5ed36ff858bd8d2b43c519ebb3ca440b0262ef02fa8829058a0658"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "28d9c89e59c56e925d7352ff521604f8f077a9addb35d88c209b361c29b784b6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2005-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "440d8b8d4d6c6ad0aa2816fd6a35ef197e591765620376b8e39f8a84f133a2a8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/778",
+      "dateDocument": "2004-10-27",
+      "roFundstelle": "AS 2004 5053",
+      "titelDe": "Verordnung über die vollständige Inkraftsetzung der Änderung vom 14. Dezember 2001 des Strassenverkehrsgesetzes",
+      "titelFr": "Ordonnance concernant la mise en vigueur complète de la modification du 14 décembre 2001 de la loi fédérale sur la circulation routière",
+      "titelIt": "Ordinanza concernente l'entrata in vigore completa della modifica del 14 dicembre 2001 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2005-02-01",
+        "2005-12-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/778/de",
+      "sha": "555e882e52859f714a2d407480c83385f6bde0d80f9d5de16516ca1e9922a23b"
     },
     {
       "art": "aenderung",
@@ -357,8 +849,16 @@
       "titelDe": "Verordnung über die vollständige Inkraftsetzung der Änderung vom 14. Dezember 2001 des Strassenverkehrsgesetzes",
       "titelFr": "Ordonnance concernant la mise en vigueur complète de la modification du 14 décembre 2001 de la loi fédérale sur la circulation routière",
       "titelIt": "Ordinanza concernente l'entrata in vigore completa della modifica del 14 dicembre 2001 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "etappen": [
+        "2005-02-01",
+        "2005-12-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/778/de",
-      "sha": "03e178f55e51dcc7a7d606c5c635606b09c71b599a6ebd4fae8e492d1c3eb6f4"
+      "sha": "8533254aa08dfca4d678af00168489b65ee3d4563e7b3e84aebe5b18d146e37d"
     },
     {
       "art": "aenderung",
@@ -369,8 +869,12 @@
       "titelDe": "Verordnung über die Inkraftsetzung von weiteren Bestimmungen der Änderung vom 14. Dezember 2001 des Strassenverkehrsgesetzes",
       "titelFr": "Ordonnance concernant la mise en vigueur d'autres dispositions da la modification du 14 décembre 2001 de la loi fédérale sur la circulation routière",
       "titelIt": "Ordinanza concernente la messa in vigore di altre disposizioni della modifica del 14 dicembre 2001 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/350/de",
-      "sha": "fc0934cb8e7ae2f6cc76e62bd21ef8305b298e5352c92ad77d9c2b791db47a85"
+      "sha": "2d494312a195f390ab9387554319cf069ea66ada12fbdf8b5cc86c83e90040e3"
     },
     {
       "art": "aenderung",
@@ -381,14 +885,27 @@
       "titelDe": "Verordnung über die Inkraftsetzung der Änderung des Artikels 67 Absätze 3 und 4 des Strassenverkehrkehrsgesetzes",
       "titelFr": "Ordonnance concernant la mise en vigueur de la modification de l'art. 67, al. 3 et 4, de la loi fédérale sur la circulation routière",
       "titelIt": "Ordinanza sulla messa in vigore della modifica dell'art. 67 cpv. 3 e 4 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/56/de",
-      "sha": "d65e543367cf752bf154083e5858b17a06aaf93af762c8218b1a89e838606088"
+      "sha": "4464a6ba225e06f7b910e039600e8df3e09811fc9ff2fdd8a8158f2b318cb890"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "a041b989cf2511cf707e8f5ece704379cb2eae4671318a0ccde1de053805c369"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/667",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2003 4487",
+      "titelDe": "Bundesgesetz über die Beseitigung von Benachteiligungen von Menschen mit Behinderungen (Behindertengleichstellungsgesetz, BehiG)",
+      "titelFr": "Loi fédérale sur l'élimination des inégalités frappant les personnes handicapées (Loi sur l'égalité pour les handicapés, LHand)",
+      "titelIt": "Legge federale sull'eliminazione di svantaggi nei confronti dei disabili (Legge sui disabili, LDis)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/667/de",
+      "sha": "5cb9bd1520c9cbd1b1190f67a228f3164e9edbb3b6c140c06cbbf689f715848f"
     },
     {
       "art": "aenderung",
@@ -399,14 +916,31 @@
       "titelDe": "Verordnung über die vollständige Inkraftsetzung der Änderungen vom 18. Juni 1999 und 4. Oktober 2002 des Strassenverkehrsgesetzes",
       "titelFr": "Ordonnance concernant la mise en vigueur intégrale des modifications des 18 juin 1999 et 4 octobre 2002 de la loi fédérale sur la circulation routière",
       "titelIt": "Ordinanza concernente l'entrata in vigore delle modifiche del 18 giugno 1999 e del 4 ottobre 2002 della legge sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/468/de",
-      "sha": "c98e05eeb4cb01ab9389941b1f6e72fa80e44da4697491ac2a9e1446956a4bec"
+      "sha": "89ae0369360aa1ca0944246809ed16d04bd651def1c13675f0a172dea00279e7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.01",
-      "sha": "11dd4447dc2bade38ab3f7e8393d74dc59a1e6131ad1b2e79dc6b086abbaa78f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/408",
+      "dateDocument": "2001-12-14",
+      "roFundstelle": "AS 2002 2767",
+      "titelDe": "Strassenverkehrsgesetz (SVG)",
+      "titelFr": "Loi fédérale sur la circulation routière (LCR)",
+      "titelIt": "Legge sulla circolazione stradale (LCStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2003-01-01",
+        "2003-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/408/de",
+      "sha": "8a19caa9ee617a3c43500c201779e975fdfcaf89de614d77cb280c0109c3c836"
     },
     {
       "art": "aenderung",
@@ -418,8 +952,12 @@
       "titelFr": "Loi fédérale sur la circulation routière (LCR)",
       "titelIt": "Legge federale sulla circolazione stradale (LCStr)",
       "botschaftKey": "BOTSCHAFT-2002-692",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/30/de",
-      "sha": "f499a5912563032d5708d5f5779bc006c0b858d3bb8a9de6d3b05429a3dd9699"
+      "sha": "111d8057123320222930f77f6a145bc6a49984991a8c0e91116958f597ff5378"
     },
     {
       "art": "aenderung",
@@ -430,8 +968,46 @@
       "titelDe": "Strassenverkehrsgesetz (SVG)",
       "titelFr": "Loi fédérale sur la circulation routière (LCR)",
       "titelIt": "Legge sulla circolazione stradale (LCStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2003-01-01",
+        "2003-04-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/408/de",
-      "sha": "71e6951c27788a58d303013b56771c0a24e996102204741ac9c38ea333c9989c"
+      "sha": "342528c102f4cf05070a7f4b0a014675081f583eb4a30bf45234c7b4bc7b5980"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2003-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/510",
+      "dateDocument": "2000-10-06",
+      "roFundstelle": "AS 2002 3371",
+      "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+      "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
+      "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/510/de",
+      "sha": "65f85906c8d461467e18c9e6ca34710c01694a983121b53ad5a65f48fa0e5bc9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "0315f070905114e706498f35ffee0312d3de77a82d0be616c329cf3cff07dee4"
     },
     {
       "art": "aenderung",
@@ -442,8 +1018,26 @@
       "titelDe": "Strassenverkehrsgesetz (Register für Fahrzeuge und Fahrzeughalter sowie für Administrativmassnahmen gegen Fahrzeugführer)",
       "titelFr": "Loi fédérale sur la circulation routière (Registre des véhicules et des détenteurs de véhicules et registre des mesures administratives frappant les conducteurs de véhicules)",
       "titelIt": "Legge federale sulla circolazione stradale (Registro dei veicoli e dei detentori nonché delle misure amministrative contro i conducenti dei veicoli)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/472/de",
-      "sha": "cb1ef225e0a7aabfd8a10fa52e9cf4cee4cc8ab6a59998f72c510b3ff5fe8fb8"
+      "sha": "e0bab195d25e0f2aa2829c9897e1856245ee3b5eff94935fb263e60d710776bf"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/495",
+      "dateDocument": "1999-10-08",
+      "roFundstelle": "AS 2000 2864",
+      "titelDe": "Bundesgesetz zur Verlagerung von alpenquerendem Güterschwerverkehr auf die Schiene (Verkehrsverlagerungsgesetz)",
+      "titelFr": "Loi fédérale visant à transférer sur le rail le trafic de marchandises à travers les Alpes (Loi sur le transfert du trafic)",
+      "titelIt": "Legge federale concernente il trasferimento su ferrovia del traffico merci pesante attraverso le Alpi (Legge sul trasferimento del traffico)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/495/de",
+      "sha": "30b6cf7df15529c05845c9f1e0adfb8c8278757fb7037b99e1fe51ec4842ab7f"
     },
     {
       "art": "aenderung",
@@ -455,8 +1049,11 @@
       "titelFr": "Loi fédérale concernant l'accord entre la Confédération suisse et la Communauté européenne sur le transport de marchandises et de voyageurs par rail et par route",
       "titelIt": "Legge federale concernente l'Accordo fra la Confederazione Svizzera e la Comunità europea sul trasporto di merci e di passeggeri su strada e per ferrovia",
       "botschaftKey": "BOTSCHAFT-1999-1_6128_5440_5092",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/497/de",
-      "sha": "6ac1fe25e5b3458d04d042198883a451fd1f0fc74d6b9e306b913bdf18ea779b"
+      "sha": "75aad8a34deca567cdc6afaa95d3bbf0c4915afe3851e06b0a9de2216a50e6fd"
     },
     {
       "art": "aenderung",
@@ -467,21 +1064,535 @@
       "titelDe": "Strassenverkehrsgesetz (Register für Fahrzeuge und Fahrzeughalter sowie für Administrativmassnahmen gegen Fahrzeugführer)",
       "titelFr": "Loi fédérale sur la circulation routière (Registre des véhicules et des détenteurs de véhicules et registre des mesures administratives frappant les conducteurs de véhicules)",
       "titelIt": "Legge federale sulla circolazione stradale (Registro dei veicoli e dei detentori nonché delle misure amministrative contro i conducenti di veicoli)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/566/de",
-      "sha": "dfbd0d5456137e2820400a1a0dbc9d1e04c0f13fe51184e6a417c7eb7802574c"
+      "sha": "5d76e544abdaee9e661d37d18aa1e14759975f54856c1fca0a13604c3358c8ed"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1959-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1959/679_705_685",
-      "dateDocument": "1958-12-19",
-      "roFundstelle": "AS 1959 679",
-      "titelDe": "Strassenverkehrsgesetz vom 19. Dezember 1958 (SVG)",
-      "titelFr": "Loi fédérale du 19 décembre 1958 sur la circulation routière (LCR)",
-      "titelIt": "Legge federale del 19 dicembre 1958 sulla circolazione stradale (LCStr)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1959/679_705_685/de",
-      "sha": "f5d17c78906cbdfde9bcc40129a91432605e36201ef5736e55314e44f98ac88c"
+      "dateEntryInForce": "1998-05-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1438_1438_1438",
+      "dateDocument": "1997-12-19",
+      "roFundstelle": "AS 1998 1438",
+      "titelDe": "Strassenverkehrsgesetz (SVG), Änderung",
+      "titelFr": "Loi fédérale sur la circulation routière (LCR), Modification",
+      "titelIt": "Legge federale sulla circolazione stradale (LCStr), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1438_1438_1438/de",
+      "sha": "7f50751707fb5cdb1b1a09eb61e591868c447ef27cf11cf3356b78a6a4d58799"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2465_2465_2465",
+      "dateDocument": "1997-04-30",
+      "roFundstelle": "AS 1997 2465",
+      "titelDe": "Bundesgesetz vom 30. April 1997 über die Organisation der Postunternehmung des Bundes (Postorganisationsgesetz, POG)",
+      "titelFr": "Loi fédérale du 30 avril 1997 sur l'organisation de l'entreprise fédérale de la poste (Loi sur l'organisation de la Poste, LOP)",
+      "titelIt": "Legge federale del 30 aprile 1997 sull'organizzazione dell'azienda delle poste della Confederazione (Legge sull'organizzazione delle poste, LOP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2465_2465_2465/de",
+      "sha": "1c531c943780a259f85322fd1b6d710c0de36b4b65ceb60d2d1cbcc39ff37272"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1794_1794_1794",
+      "dateDocument": "1998-06-22",
+      "roFundstelle": "AS 1998 1794",
+      "titelDe": "Verordnung über die Anpassung von Zuständigkeitsbestimmungen in Bundesgesetzen im Bereich des Strassenverkehrs, Änderung",
+      "titelFr": "Ordonnance concernant l'adaption des règles de compétences dans les lois fédérales relatives à la circulation routières, Modification",
+      "titelIt": "Ordinanza concernente l'adeguamento delle disposizioni attributive di competenza nelle leggi federali in materia di circulazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1794_1794_1794/de",
+      "sha": "78112b0d52787d8ab7815b2a9d7b0f3077bf91fe3de4bf3d1f2f6aa7ca850d8a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3045_3045_3045",
+      "dateDocument": "1996-06-21",
+      "roFundstelle": "AS 1996 3045",
+      "titelDe": "Automobilsteuergesetz vom 21. Juni 1996 (AStG)",
+      "titelFr": "Loi fédérale du 21 juin 1996 sur l'imposition des véhicules automobiles (Limpauto)",
+      "titelIt": "Legge federale del 21 giugno 1996 sull'imposizione degli autoveicoli (LIAut)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3045_3045_3045/de",
+      "sha": "77091d21873435f237db7fa90983bb48f2f8f4d88a14cd21f576d873c868241c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1075_1075_1075",
+      "dateDocument": "1995-10-06",
+      "roFundstelle": "AS 1996 1075",
+      "titelDe": "Bundesgesetz über Ordnungsbussen im Strassenverkehr, Änderung",
+      "titelFr": "Loi fédérale sur les amendes d'ordre infligées aux usagers de la route, Modification",
+      "titelIt": "Legge federale concernente le multe disciplinari inflitte agli utenti della strada, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1075_1075_1075/de",
+      "sha": "145dbc8defe03093e7fa3a97778348dd4cc4929dd4adca264fa76244566b1af6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/5462_5462_5462",
+      "dateDocument": "1995-06-23",
+      "roFundstelle": "AS 1995 5462",
+      "titelDe": "Strassenverkehrsgesetz (SVG), Änderung",
+      "titelFr": "Loi sur la circulation routière (LCR), Modification",
+      "titelIt": "Legge federale sulla circolazione stradale (LCStr), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/5462_5462_5462/de",
+      "sha": "fda92eeaf80c43927c3c3dc93828da62dd3901cbd8f058ccc8308aae9733dc18"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/815_815_815",
+      "dateDocument": "1994-03-07",
+      "roFundstelle": "AS 1994 815",
+      "titelDe": "Verordnung vom 7. März 1994 über die vollständige Inkraftsetzung der Änderung des Strassenverkehrsgesetzes",
+      "titelFr": "Ordonnance du 7 mars 1994 sur la mise en vigeur intégrale de la modification de la loi sur la circulation routière",
+      "titelIt": "Ordinanza del 7 marzo 1994 sull'entrata in vigore integrale della modifica della legge sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/815_815_815/de",
+      "sha": "b7189d9230231e6ba918d7b0ae7ae7e9b02ce51a3e1e08eb9914fbcd47ed21f3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/3043_3043_3043",
+      "dateDocument": "1992-06-19",
+      "roFundstelle": "AS 1993 3043",
+      "titelDe": "Bundesgesetz vom 19. Juni 1992 über die Militärversicherung (MVG)",
+      "titelFr": "Loi fédérale du 19 juin 1992 sur l'assurance militaire (LAM)",
+      "titelIt": "Legge federale del 19 giugno 1992 sull'assicurazione militare (LAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/3043_3043_3043/de",
+      "sha": "79c7f86d4ed26f5874b3a3e1addec77ba41aa9821115dbf3539937d335ecdaed"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/3330_3330_3330",
+      "dateDocument": "1993-06-18",
+      "roFundstelle": "AS 1993 3330",
+      "titelDe": "Strassenverkehrsgesetz (SVG), Änderung",
+      "titelFr": "Loi fédérale sur la circulation routière (LCR), Modification",
+      "titelIt": "Legge federale sulla circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/3330_3330_3330/de",
+      "sha": "170ed3acf7d0a4ab73aaf65f2b6c286dd5261a881e3fa5f5bb57bf20cd78267c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/325_325_325",
+      "dateDocument": "1992-10-09",
+      "roFundstelle": "AS 1993 325",
+      "titelDe": "Bundesgesetz vom 9. Oktober 1992 über den Abbau von Finanzhilfen und Abgeltungen",
+      "titelFr": "Loi fédérale du 9 octobre 1992 sur la réduction d'aides financières et d'indemnités",
+      "titelIt": "Legge federale del 9 ottobre 1992 concernente la riduzione di aiuti finanziari e di indennità",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/325_325_325/de",
+      "sha": "23d692fe5b384c73712069d62418bc221669aac65456dca0e5c9a4dd38ee56bb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-03-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/534_534_534",
+      "dateDocument": "1991-03-22",
+      "roFundstelle": "AS 1992 534",
+      "titelDe": "Bundesgesetz über den Strassenverkehr, Änderung",
+      "titelFr": "Loi fédérale sur la circulation routière, Modification",
+      "titelIt": "Legge federale sulla circolazione stradale (LCStr), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/534_534_534/de",
+      "sha": "e8f0f1af4c41d4178e8ff4cd978349522f4bf3374d2325feb24a7fd9b805b268"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/71_71_71",
+      "dateDocument": "1989-10-06",
+      "roFundstelle": "AS 1991 71",
+      "titelDe": "Bundesgesetz über den Strassenverkehr, Änderung",
+      "titelFr": "Loi fédérale sur la circulation routière (LCR), Modification",
+      "titelIt": "Legge federale sulla circolazione stradale (LCS), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/71_71_71/de",
+      "sha": "c2414146a366f331e6af1968ca2dbd5d41060bd12595db9011cc6b45b469fa53"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/78_78_78",
+      "dateDocument": "1990-12-03",
+      "roFundstelle": "AS 1991 78",
+      "titelDe": "Verordnung vom 3. Dezember 1990 über die Änderung und Aufhebung von Erlassen des Strassenverkehrs infolge der Revision vom 6. Oktober 1989 des Bundesgesetzes über die Strassenverkehr",
+      "titelFr": "Ordonnance du 3 décembre 1990 concernant la modification et l'abrogation d'actes législatifs portant sur la circulation routière, suite à la révision du 6 octobre 1989 de la loi fédérale sur la circulation routière",
+      "titelIt": "Ordinanza del 3 dicembre 1990 concernente la modifica e l'abrogazione di atti normativi della circolazione stradale, in seguito alla revisione dell 6 ottobre 1989 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/78_78_78/de",
+      "sha": "7d09a75ab75f006c3a00f9c18d65d29911355b95dae41bbfc0a57075bbc376e0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/1776_1776_1776",
+      "dateDocument": "1987-12-18",
+      "roFundstelle": "AS 1988 1776",
+      "titelDe": "Bundesgesetz vom 18. Dezember 1987 über das Internationale Privatrecht (IPRG)",
+      "titelFr": "Loi fédérale du 18 décembre 1987 sur le droit international privé (LDIP)",
+      "titelIt": "Legge federale del 18 dicembre 1987 sul diritto internazionale privato (LDIP)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/1776_1776_1776/de",
+      "sha": "89eb7f6df11258363f3eba77c2711545e0e48b17c209cc773ea8b49b1f0e8dc1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/1974_1974_1974",
+      "dateDocument": "1985-10-04",
+      "roFundstelle": "AS 1986 1974",
+      "titelDe": "Bundesgesetz vom 4. Oktober 1985 über den Transport im öffentlichen Verkehr (Transportgesetz, TG)",
+      "titelFr": "Loi fédérale du 4 octobre 1985 sur les transports publics (LTP)",
+      "titelIt": "Legge federale del 4 ottobre 1985 sul trasporto pubblico (LTP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/1974_1974_1974/de",
+      "sha": "83df82fbad8aebef7a7a885ba93ff664921f356043ef2dd277848d0f208f8777"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/808_808_808",
+      "dateDocument": "1984-03-23",
+      "roFundstelle": "AS 1984 808",
+      "titelDe": "Bundesgesetz über den Strassenverkehr, Änderung",
+      "titelFr": "Loi fédérale sur la circulation routière, Modification",
+      "titelIt": "Legge federale sulla circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/808_808_808/de",
+      "sha": "4fdf6168bde016737a8c5bbe3eedee547a8031f9bd27293632c9b8b2a77b6f16"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/1676_1676_1676",
+      "dateDocument": "1981-03-20",
+      "roFundstelle": "AS 1982 1676",
+      "titelDe": "Bundesgesetz vom 20. März 1981 über die Unfallversicherung (UVG)",
+      "titelFr": "Loi fédérale du 20 mars 1981 sur l'assurance-accidents (LAA)",
+      "titelIt": "Legge federale del 20 marzo 1981 sull'assicurazione contro gli infortuni (LAINF)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/1676_1676_1676/de",
+      "sha": "e5699ef1864632d01edbf10dbbe0e754e3130e5b6e364da291246cbcfbd00ab4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1981/505_505_505",
+      "dateDocument": "1980-03-21",
+      "roFundstelle": "AS 1981 505",
+      "titelDe": "Bundesgesetz über den Strassenverkehr, Änderung",
+      "titelFr": "Loi fédérale sur la circulation routière, Modification",
+      "titelIt": "Legge federale sulla circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1981/505_505_505/de",
+      "sha": "0a4afa30ec066905e3cbf1dc5df088903ed76178157e9d2d502191aa10743690"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/1509_1509_1509",
+      "dateDocument": "1980-06-20",
+      "roFundstelle": "AS 1980 1509",
+      "titelDe": "Bundesgesetz über den Strassenverkehr, Änderung",
+      "titelFr": "Loi sur la circulation routière, Modification",
+      "titelIt": "Legge federale sulla circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/1509_1509_1509/de",
+      "sha": "a7fd268b935026ba10482a8a2ce1e1fc117536240ade18b08eb05878376dffb8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1980-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1979/1583_1583_1583",
+      "dateDocument": "1979-11-14",
+      "roFundstelle": "AS 1979 1583",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/1583_1583_1583/de",
+      "sha": "e0e83014cebfe80a64799607c7df120711661eb05f3960007a7b7f10a1d88375"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/2810_2810_2810",
+      "dateDocument": "1976-12-22",
+      "roFundstelle": "AS 1976 2810",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/2810_2810_2810/de",
+      "sha": "445c410e25da7c88be7bedcc5a4f676e611f34757f2ca264eda4ac6aa6922bfd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857",
+      "dateDocument": "1975-10-15",
+      "roFundstelle": "AS 1975 1857",
+      "titelDe": "Verordnung über Haftpflicht und Versicherungen im Strassenverkehr, Änderung",
+      "titelFr": "Ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière, Modification",
+      "titelIt": "Ordinanza concernente la responsabilità civile e l'assicurazione in materia di circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/1857_1857_1857/de",
+      "sha": "31596824e832933942d9fcfaeed575049343375b203588683d057e92b894efea"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1975-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/1257_1257_1257",
+      "dateDocument": "1975-03-20",
+      "roFundstelle": "AS 1975 1257",
+      "titelDe": "Bundesgesetz über den Strassenverkehr, Änderung",
+      "titelFr": "Loi fédérale sur la circulation routière, Modification",
+      "titelIt": "Legge federale sulla circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/1257_1257_1257/de",
+      "sha": "0895243b2e253c181025f6728a07cc98c2cfc5c05ea19a8494eaf897742ab7a2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1975-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/1268_1268_1268",
+      "dateDocument": "1975-07-02",
+      "roFundstelle": "AS 1975 1268",
+      "titelDe": "Bundesratsbeschluss vom 2. Juli 1975 über die Inkraftsetzung von geänderten Bestimmungen des Strassenverkehrsgesetzes",
+      "titelFr": "Arrêté du Conseil fédéral du 2 juillet 1975 concernant l'entrée en vigueur de dispositions modifiées de la loi sur la circulation routière",
+      "titelIt": "Decreto del Consiglio federale del 2 luglio 1975 concernente l'entrata in vigore delle disposizioni modificate della legge sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/1268_1268_1268/de",
+      "sha": "75771453a257b33324d25d580e8b255fe4454eee1f2bb6e496f6476720fbb8a3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/1605_1636_1809",
+      "dateDocument": "1972-03-09",
+      "roFundstelle": "AS 1972 1605",
+      "titelDe": "Bundesgesetz betreffend Änderung des Bundesgesetzes über den Strassenverkehr",
+      "titelFr": "Loi fédérale modifiant la loi sur la circulation routière",
+      "titelIt": "Legge federale che modifica quella sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/1605_1636_1809/de",
+      "sha": "659495defc964fb67028e509e021f51ac6ad7474c5bee4d4a5c81f946838dfda"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1967-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1967/1114_1154_1147",
+      "dateDocument": "1967-03-16",
+      "roFundstelle": "AS 1967 1114",
+      "titelDe": "Bundesgesetz betreffend die Änderung des Bundesgesetzes über den Strassenverkehr",
+      "titelFr": "Loi fédérale complétant la loi sur la circulation routière",
+      "titelIt": "Legge federale che modifica quella sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1967/1114_1154_1147/de",
+      "sha": "6e6631173f94b89a80b581ec5cb1629eef31666fa4a8625ad52905317f383398"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1967-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1966/1493_1543_1531",
+      "dateDocument": "1966-11-22",
+      "roFundstelle": "AS 1966 1493",
+      "titelDe": "Bundesratsbeschluss vom 22. November 1966 über die Typenprüfung von Fahrzeugen und Fahrzeugteilen sowie die Nachprüfung von Fahrzeugen",
+      "titelFr": "Arrêté du Conseil fédéral du 22 novembre 1966 concernant l'expertise des types de véhicules et de leurs accessoires, ainsi que le contrôle subséquent des véhicules",
+      "titelIt": "Decreto del Consiglio federale del 22 novembre 1966 concernente l'esame del tipo per i veicoli e le parti di veicolo e l'esame successivo dei veicoli",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1966/1493_1543_1531/de",
+      "sha": "c8529a4ddb67eb375383e23da38e71cadbb3ce81fe8110651a6c4df31543ea95"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1963-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1962/1362_1407_1417",
+      "dateDocument": "1961-06-23",
+      "roFundstelle": "AS 1962 1362",
+      "titelDe": "Bundesgesetz betreffend Änderung des Bundesgesetzes über den Strassenverkehr",
+      "titelFr": "Loi fédérale modifiant la loi sur la circulation routière",
+      "titelIt": "Legge federale che modifica quella sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1962/1362_1407_1417/de",
+      "sha": "9afd7c4e29f488857f397056e5f4a90ce1adfe5db213f813c7077b559ac30d9b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1963-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1962/1364_1409_1420",
+      "dateDocument": "1962-11-13",
+      "roFundstelle": "AS 1962 1364",
+      "titelDe": "Verkehrsregelnverordnung vom 13. November 1962 (VRV)",
+      "titelFr": "Ordonnance du 13 novembre 1962 sur les règles de la circulation routière (OCR)",
+      "titelIt": "Ordinanza del 13 novembre 1962 sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1962/1364_1409_1420/de",
+      "sha": "cec83347ee73d0ae41ce53ee19a6602f14c2d776c949b74dcd67d944bc9c4da4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1960-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1960/1308_1365_1365",
+      "dateDocument": "1960-11-08",
+      "roFundstelle": "AS 1960 1308",
+      "titelDe": "Bundesratsbeschluss vom 8. November 1960 über die Gestaltung der Ausweise für Motorfahrzeuge und ihre Führer",
+      "titelFr": "Arrêté du Conseil fédéral du 8 novembre 1960 concernant la forme des permis pour véhicules automobiles et pour leurs conducteurs",
+      "titelIt": "Decreto del Consiglio federale del 8 novembre 1960 concernente la forma delle licenze per i veicoli a motore e per i loro conducenti",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1960/1308_1365_1365/de",
+      "sha": "eb3f74437408854a44c6675fa205ce20516f2ef0e726c897d7266c97d49c377f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1960-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1960/1157_1209_1205",
+      "dateDocument": "1960-10-21",
+      "roFundstelle": "AS 1960 1157",
+      "titelDe": "Bundesratsbeschluss vom 21. Oktober 1960 über Masse und Gewichte der Motorwagen und Anhänger sowie über Sattelmotorfahrzeuge",
+      "titelFr": "Arrêté du Conseil fédéral du 21 octobre 1960 concernant les dimensions et le poids des voitures automobiles et des remorques ainsi que les véhicules articulés",
+      "titelIt": "Decreto del Consiglio federale del 21 ottobre 1960 concernente le dimensioni e il peso degli autoveicoli e dei rimorchi e gli autoveicoli articolati",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1960/1157_1209_1205/de",
+      "sha": "e587dc132333c6af4da3bd6cfaaf48465367c13bba2561a3fffc50176b130f2c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1960-06-21",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1960/525_569_555",
+      "dateDocument": "1960-03-08",
+      "roFundstelle": "AS 1960 525",
+      "titelDe": "Bundesgesetz vom 8. März 1960 über die Nationalstrassen (NSG)",
+      "titelFr": "Loi fédérale du 8 mars 1960 sur les routes nationales (LRN)",
+      "titelIt": "Legge federale dell'8 marzo 1960 sulle strade nazionali (LSN)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1960/525_569_555/de",
+      "sha": "7bd7bf87ab0a5cfb50209fc67876ad967f271c68c68018e5727d0f02e07e910c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1960-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1959/858_888_876",
+      "dateDocument": "1959-06-19",
+      "roFundstelle": "AS 1959 858",
+      "titelDe": "Bundesgesetz betreffend Änderung verschiedener Bestimmungen auf dem Gebiete der Unfallversicherung",
+      "titelFr": "Loi fédérale modifiant diverses dispositions en matière d'assurance-accidents",
+      "titelIt": "Legge federale che modifica alcune disposizioni sull'assicurazione contro gli infortuni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1959/858_888_876/de",
+      "sha": "af9771ded2a00c386e8df28b9f81930b30704b6131afab63d61d088e3af933f0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1959-11-20",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1959/1271_1321_1317",
+      "dateDocument": "1959-11-20",
+      "roFundstelle": "AS 1959 1271",
+      "titelDe": "Verkehrsversicherungsverordnung vom 20. November 1959 (VVV)",
+      "titelFr": "Ordonnance du 20 novembre 1959 sur l'assurance des véhicules (OAV)",
+      "titelIt": "Ordinanza del 20 novembre 1959 sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1959/1271_1321_1317/de",
+      "sha": "e0443016052f172e48eb39b77a0cbb37623729c1a7d239bc3ddef800da2ab60b"
     }
   ],
-  "sha": "fa42186f77da536446946a38f32037730c681f415dfd5f72c785b4c286aabec2"
+  "sha": "5f73c2090607d3a225e409777d7a82d954a239aed89b5dec80063544157491eb"
 }

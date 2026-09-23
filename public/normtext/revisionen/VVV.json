@@ -1,8 +1,8 @@
 {
   "erlassKey": "VVV",
   "sr": "741.31",
-  "abgerufen": "2026-09-12",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l’assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull’assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/645/de",
-      "sha": "2fc7ce3ae6e7b3c89cb885fc08f892f18209e90c435b91b6ac953cd7821a7201"
+      "sha": "d871da40036aa601232cd86f10bca39b4a49b40be451d5900313242fe0a6b978"
     },
     {
       "art": "aenderung",
@@ -25,14 +28,26 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur l’assurance des véhicules (OAV). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sull’assicurazione dei veicoli (OAV). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/687/de",
-      "sha": "52090fd68320e082191c739dc711da0e2175d3a5713b4a59fccc9f921f476da5"
+      "sha": "5cff4d07ecac0704a66138cde0a9e138312e00e8709cc712ac5d962835c4554c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.31",
-      "sha": "1b99730408acad5ff704fdeeae3203697a46e104710f19995995a1973d26a09a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/150",
+      "dateDocument": "2024-03-27",
+      "roFundstelle": "AS 2024 150",
+      "titelDe": "Verordnung vom 27. März 2024 über die Schwerverkehrsabgabe (Schwerverkehrsabgabeverordnung, SVAV)",
+      "titelFr": "Ordonnance du 27 mars 2024 concernant la redevance sur le trafic des poids lourds (ORPL)",
+      "titelIt": "Ordinanza del 27 marzo 2024 concernente la tassa sul traffico pesante (Ordinanza sul traffico pesante, OTTP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/150/de",
+      "sha": "dda0273dc490a6ecc3fa160f4f67fe0cfbf22b3cbd027ba139a67208ea55cd28"
     },
     {
       "art": "aenderung",
@@ -43,20 +58,41 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l’assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull’assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/29/de",
-      "sha": "e7b72f3139a8616e0bc1d723f61635469471045c500282219e4574ac1453cdc5"
+      "sha": "32e7ca300cbfb89aaab170f92eb8da40d51436fa62396e8f1c6e9f44aa4982e7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.31",
-      "sha": "d27fb26e0e235a9a8f153e20a4f7f74643a1ee8626f8235b8bd625dfce8be03a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/356",
+      "dateDocument": "2023-06-02",
+      "roFundstelle": "AS 2023 356",
+      "titelDe": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)",
+      "titelFr": "Ordonnance sur la surveillance des entreprises d’assurance privées (Ordonnance sur la surveillance, OS)",
+      "titelIt": "Ordinanza sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/356/de",
+      "sha": "2ceff150679a94e2131dbd69a2bcf35646058745720bee68f16acf186cca7c2f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.31",
-      "sha": "6b1045c0f1c5ec0a820f6eb254ad5f2ae4c3a1c9407b3983492079c50e72788e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
     },
     {
       "art": "aenderung",
@@ -69,8 +105,11 @@
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV). Correzione",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 1995 4425, das unter SR 741.41 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/578/de",
-      "sha": "e6165894c6dbbbd55cd221f50681fbe44517e77523bb08249876a24b5918933d"
+      "sha": "fdd8b51512ca91e82d166fbbb4f79474553588c59e292fb58d72b44a0a9df817"
     },
     {
       "art": "aenderung",
@@ -81,14 +120,26 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/43/de",
-      "sha": "a7bdcdc59e483e8665380998f136a1c5eb34fc083552072d7d4911ee632ec2b1"
+      "sha": "fa763476633b18d6ac82a95884d7ed57d775b2b452945f6866890edf410a6614"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.31",
-      "sha": "41769903a02a3b96a0fa09826e9c93a62c93c47f100861ef6f1202800f943c4b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/783",
+      "dateDocument": "2018-11-30",
+      "roFundstelle": "AS 2018 4997",
+      "titelDe": "Verordnung über das Informationssystem Verkehrszulassung (IVZV)",
+      "titelFr": "Ordonnance sur le système d'information relatif à l'admission à la circulation (OSIAC)",
+      "titelIt": "Ordinanza concernente il sistema d'informazione sull'ammissione alla circolazione (OSIAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/783/de",
+      "sha": "4f5428535d118788060264ba841a2b198d8aed2bc9afe7c2acf8a507e624ea9e"
     },
     {
       "art": "aenderung",
@@ -99,8 +150,12 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/643/de",
-      "sha": "756b5557be92a00c51c66a566f707c8dcc453df92739560c7a6378e2342c41b2"
+      "sha": "31b55f85acfbb1caf0bcb0756afbac06b1fe6c44c0e758737d477a51a01961d0"
     },
     {
       "art": "aenderung",
@@ -111,8 +166,11 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/276/de",
-      "sha": "4012a5be9b3ba5011d141b466394490c1cff44695319271c4b7fd64ed2dc11bf"
+      "sha": "edf5c197bdfcd86062b179bea29f2b962386dd2bf3deb74251b9318ae59c3114"
     },
     {
       "art": "aenderung",
@@ -123,8 +181,11 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/66/de",
-      "sha": "f00566f3fbc7a37ece86fdfb5605a2b77bd8de3dace80f23d876bd45cd060ef5"
+      "sha": "14b8b5c634271f887750979943abd364b92b618890b6132724173da02fa5d1bb"
     },
     {
       "art": "aenderung",
@@ -135,8 +196,11 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/826/de",
-      "sha": "a795ef9ab6424c433a7814c12590eebd0d7f477a80a7e08a604ac5e297b8a1ab"
+      "sha": "f352badba8aa463c2e9ad45971ed5b642d7c82bbe415bab54d93b3417ca85fb6"
     },
     {
       "art": "aenderung",
@@ -147,8 +211,12 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/713/de",
-      "sha": "0a1afa5c7a15fc5d85723917be5e461122e8e0d290398ccd9bd4a2fa0ee2a59c"
+      "sha": "b4ea1f1d66cfc4d1bfa84c3e22126c05bf44c630763486748df3255dfc6b2bf9"
     },
     {
       "art": "aenderung",
@@ -159,14 +227,26 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/704/de",
-      "sha": "683b7b051830310469153ad6a0f979be55167030ee48ed2fcaaeabc3e24a0648"
+      "sha": "d071da0c423e836b58331238371988a538f0c42a4876cede8317fac7e858d45a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-12-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.31",
-      "sha": "f9a034ab38e15101315e5d2cbb46a2dbf2b951ddf6ddf46a2383c0b775060e82"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/694",
+      "dateDocument": "2008-10-15",
+      "roFundstelle": "AS 2008 4943",
+      "titelDe": "Verordnung über die Anpassungen an das Bundesgesetz über die polizeilichen Informationssysteme des Bundes",
+      "titelFr": "Ordonnance sur les adaptations découlant de la loi fédérale sur les systèmes d'information de police de la Confédération",
+      "titelIt": "Ordinanza sugli adeguamenti alla legge federale sui sistemi d'informazione di polizia della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/694/de",
+      "sha": "fd3c4faefc694cc551cd718ddc685f1c630c0e6e5330d9947609877d81520e98"
     },
     {
       "art": "aenderung",
@@ -177,8 +257,12 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/299/de",
-      "sha": "be72e81bd184054ebaa7d8d466f502ebf2c6d06a375bced23738482f3a63be27"
+      "sha": "0a0a2f15ec6aa5afd1e18fafc855a86b7f4368bb1d5d9adec921e6ba8c4ecdfb"
     },
     {
       "art": "aenderung",
@@ -189,20 +273,46 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/21/de",
-      "sha": "411e26fd48d03a8cbca4b092602e6889402716a4c55b610b7cdb73ee8a5bb752"
+      "sha": "c407bb7a76d81ff83e65944f51ced231598d7b5470bddbe82b324c90369f1a2d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.31",
-      "sha": "d82c215904eb7e21bd8f9630ca1099aefcdad0b374e2bd54381cf785660d4d07"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/163",
+      "dateDocument": "2005-02-23",
+      "roFundstelle": "AS 2005 1167",
+      "titelDe": "Verordnung über die Fahrzeuge des Bundes und ihre Führer und Führerinnen (VFBF)",
+      "titelFr": "Ordonnance concernant les véhicules automobiles de la Confédération et leurs conducteurs (OVCC)",
+      "titelIt": "Ordinanza concernente i veicoli della Confederazione e i loro conducenti (OVCC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/163/de",
+      "sha": "4c306ab66afe6ee6431cd62ad1741c5c1cf5330382c8c0b7881627c890a55af2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.31",
-      "sha": "1ead532c3e3d2c2d0e2a66308031204baded6220bb0ddbc4135e45de828bccc1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/57",
+      "dateDocument": "2004-01-14",
+      "roFundstelle": "AS 2004 649",
+      "titelDe": "Verkehrsversicherungsverordnung (VVV)",
+      "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
+      "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-03-01",
+        "2005-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/57/de",
+      "sha": "c3b882e70ff1be215dee9de2e4fc0056673ca30bdd1fd97d784346fe9e4ac127"
     },
     {
       "art": "aenderung",
@@ -213,8 +323,15 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-03-01",
+        "2005-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/57/de",
-      "sha": "a8650b5c692f54d5b074ea4cab5b12146a77331838b17c2080c79e4f12fe4900"
+      "sha": "8919b0c6c7b08a454ad6f816abe18a2e4e7597dc71ed1d71fc41dece7b9c42ee"
     },
     {
       "art": "aenderung",
@@ -225,8 +342,11 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurances des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/483/de",
-      "sha": "581297f422b9dc9bfe74859047b2fa50252244a3701823616ffcea77756d520c"
+      "sha": "75bd1973b0e7c65b3b26c80952d5c9c4d68026e4521c0a1da1959c421a7422c2"
     },
     {
       "art": "aenderung",
@@ -237,8 +357,12 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/15/de",
-      "sha": "95a0472fb41e3c401463834efbc714d1ea393986332b035e4af9237451e6e577"
+      "sha": "c24275c843b00c586fa5df259c32d5ea6e6e4221a83912906f59bb084db096be"
     },
     {
       "art": "aenderung",
@@ -249,8 +373,11 @@
       "titelDe": "Verkehrsversicherungsverordnung vom 20. November 1959 (VVV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance du 20 novembre 1959 sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza del 20 novembre 1959 sull'assicurazione dei veicoli (OAV) (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/199/de",
-      "sha": "7559d057d7d2bf0f3c98dab6e617c75f35a914ae0d0fa6efeeaa0b086b4a9bb5"
+      "sha": "e560a84dbbeb8e6c241b9b6029e50ac38618dcdd3bbcc2d5b495cb033dddc1a1"
     },
     {
       "art": "aenderung",
@@ -261,14 +388,26 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV) (Betrifft nur den französischen und italienischen Text)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/725/de",
-      "sha": "76b8a136ff328bd0f00a532aed6dce0d1c2fa07333f338e41dbb71ad12b4b658"
+      "sha": "896c7c7451979dd3237cfc2c9697a0c7c33e96298ea279d7fc73d65f56f2d89b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.31",
-      "sha": "e32d8292ed2563e276d31cd98c6eaa9e0d7642ada99cff18a2ec851d757cf515"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/685",
+      "dateDocument": "2002-11-29",
+      "roFundstelle": "AS 2002 4212",
+      "titelDe": "Verordnung über die Beförderung gefährlicher Güter auf der Strasse (SDR)",
+      "titelFr": "Ordonnance relative au transport des marchandises dangereuses par route (SDR)",
+      "titelIt": "Ordinanza concernente il trasporto di merci pericolose su strada (SDR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/685/de",
+      "sha": "e857d383378238ef3c264e75190bb91853dd6997d8ca7e15cdb59df664c7bc1f"
     },
     {
       "art": "aenderung",
@@ -279,8 +418,11 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/193/de",
-      "sha": "baecc19700a5fba1be3c30e5dfb440e5fb4a73c06a206f4f2aaee5970e1e87b9"
+      "sha": "1873c922efa3f6da31b12b102836639b81865e71bee147590a28cc68868b1fd4"
     },
     {
       "art": "aenderung",
@@ -291,14 +433,158 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV)",
       "titelFr": "Ordonnance sur l'assurance des véhicules (OAV)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/473/de",
-      "sha": "11031cbf7d5505fb11a6e9f2564ba3c3643a90ead18869cfd4ad11d5dac36688"
+      "sha": "78f9e7cb936e8e53e31e36663087b0cb9377e4a29ead297500fb7539e2dfafc7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.31",
-      "sha": "f5c222824e683facdb52c6b64457d75f3ef4e52bb2c13876d68ac3e8544b89e1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/44",
+      "dateDocument": "1999-12-06",
+      "roFundstelle": "AS 2000 243",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Umwelt, Verkehr, Energie und Kommunikation (OV-UVEK)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'environnement, des transports, de l'énergie et de la communication (Org DETEC)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'ambiente, dei trasporti, dell'energia e delle comunicazioni (Org-DATEC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/44/de",
+      "sha": "c917027a41f7a85d74dec8a0678223b0752e09ba0152402a5ba9d04e70bf54f2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/2352_2352_2352",
+      "dateDocument": "1998-09-02",
+      "roFundstelle": "AS 1998 2352",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2352_2352_2352/de",
+      "sha": "9b3b870aaa325ba5e81672128f3a226e6e3fafdada029bc673093d10f89b5d15"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1188_1188_1188",
+      "dateDocument": "1998-03-25",
+      "roFundstelle": "AS 1998 1188",
+      "titelDe": "Verordnung über die Arbeits- und Ruhezeit der Führer von leichten Motorwagen zum gewerbsmässigen Personentransport (ARV 2), Änderung",
+      "titelFr": "Ordonnance sur la durée du travail et du repos des conducteurs de voitures automobiles légères affectées au transport professionnel de personnes (OTR 2), Modification",
+      "titelIt": "Ordinanza sulla durata del lavoro e di riposo dei conducenti di veicoli leggeri per il trasporto professionale di persone (OLR2), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1188_1188_1188/de",
+      "sha": "13f77a89140bbb72ad49b2c9341f836abf0d816e9838c07dc1c7f50e2a89dd0e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779",
+      "dateDocument": "1997-12-01",
+      "roFundstelle": "AS 1997 2779",
+      "titelDe": "Verordnung vom 1. Dezember 1997 über die Aufhebung und die Änderung von Verordnungen aufgrund der PTT-Reform",
+      "titelFr": "Ordonnance du 1er décembre 1997 concernant l'abrogation et la modification d'ordonnances découlant de la réforme des PTT",
+      "titelIt": "Ordinanza del 1° dicembre 1997 sull'abrogazione e la modifica di ordinanze in base alla riforma delle PTT",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2779_2779_2779/de",
+      "sha": "8c82ad789eb881f2709a96996131caef459a4be76042349064b95578ba64faa9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1796_1796_1796",
+      "dateDocument": "1998-06-22",
+      "roFundstelle": "AS 1998 1796",
+      "titelDe": "Verordnung vom 22. Juni 1998 über die Anpassung von Zuständigkeitsbestimmungen in Verordnungen und Bundesratsbeschlüssen im Bereich des Strassenverkehrs, Änderung",
+      "titelFr": "Ordonnance du 22 juin 1998 concernant l'adaptation des règles de compétence dans les ordonnances et les arrêtés du Conseil fédéral relatifs à la circulation routière, Modification",
+      "titelIt": "Ordinanza del 22 giugno 1998 concernente l'adeguamento delle disposizioni attributive di competenza nelle ordinanze e nei decreti del Consiglio federale in materia di circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1796_1796_1796/de",
+      "sha": "34dafd443ac5ceffed37758c88ed29d610b20de87d517fa6e5e34bbdf7f3bbc7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3058_3058_3058",
+      "dateDocument": "1996-11-20",
+      "roFundstelle": "AS 1996 3058",
+      "titelDe": "Automobilsteuerverordnung vom 20. November 1996 (AStV)",
+      "titelFr": "Ordonnance du 20 novembre 1996 sur l'imposition des véhicules automobiles (Oimpauto)",
+      "titelIt": "Ordinanza del 20 novembre 1996 sull'imposizione degli autoveicoli (OIAut)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3058_3058_3058/de",
+      "sha": "7a3a5b7695d1070c24a40e9a71a4d48eaccdab226b9dcb0f864cff1e3b835dd5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/5465_5465_5465",
+      "dateDocument": "1995-11-22",
+      "roFundstelle": "AS 1995 5465",
+      "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+      "titelIt": "Ordinanza dsull'assicurazione dei veicoli (OAV), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/5465_5465_5465/de",
+      "sha": "16da9f0f478d09ebcb761463f3f11224d24d2ee57ecc5192e095028389f47688"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/_1022_",
+      "dateDocument": "1996-02-12",
+      "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Errata",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/_1022_/de",
+      "sha": "01d260ae30964bf3ed61f14059e73616ee131efec08abe32677cdd7f2c15e7f3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/4425_4425_4425",
+      "dateDocument": "1995-06-19",
+      "roFundstelle": "AS 1995 4425",
+      "titelDe": "Verordnung vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance du 19 juin 1995 concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza del 19 giugno 1995 concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/4425_4425_4425/de",
+      "sha": "ae1ac59c320f119a06c15476fc461760d2213a9cd4ea0de1ab7315b2022425f4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1338_1338_1338",
+      "dateDocument": "1992-07-01",
+      "roFundstelle": "AS 1992 1338",
+      "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+      "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1338_1338_1338/de",
+      "sha": "239ee95dcf93e0df80af595dcfde1eec9fec99637faa41ee9a4eb8ea717a511e"
     },
     {
       "art": "aenderung",
@@ -309,21 +595,254 @@
       "titelDe": "Verkehrsversicherungsverordnung (VVV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance du 20 novembre 1959 sur l'assurance des véhicules (OAV) (Ne concerne que le text italien)",
       "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/79/de",
-      "sha": "b05bf841b6c6fd2ad50bd1a19a06681ca3df10f140ce3f15f6ec911389f5abb1"
+      "sha": "db52b1d9cab522727252977f091dba1464afc4888fdd55b194fdc0758dd516ba"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1959-11-20",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1959/1271_1321_1317",
-      "dateDocument": "1959-11-20",
-      "roFundstelle": "AS 1959 1271",
-      "titelDe": "Verkehrsversicherungsverordnung vom 20. November 1959 (VVV)",
-      "titelFr": "Ordonnance du 20 novembre 1959 sur l'assurance des véhicules (OAV)",
-      "titelIt": "Ordinanza del 20 novembre 1959 sull'assicurazione dei veicoli (OAV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1959/1271_1321_1317/de",
-      "sha": "14aac9edbe4f3af12e3cc62c81bcc31db31c9c0620c397a529cd29b859b717ef"
+      "dateEntryInForce": "1992-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/536_536_536",
+      "dateDocument": "1992-02-19",
+      "roFundstelle": "AS 1992 536",
+      "titelDe": "Verordnung über Bau und Ausrüstung der Strassenfahrzeuge (BAV), Änderung",
+      "titelFr": "Ordonnance sur la construction et l'équipement des véhicules routiers (OCE), Modification",
+      "titelIt": "Ordinanza concernente la costruzione e l'equipaggiamento dei veicoli stradali (OCE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/536_536_536/de",
+      "sha": "571aef8cef5fbbd3ad4c781432ce9d5f0a49e58b26caa15370795818655a9fec"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/1189_1189_1189",
+      "dateDocument": "1989-05-24",
+      "roFundstelle": "AS 1989 1189",
+      "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+      "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/1189_1189_1189/de",
+      "sha": "3760f75508ced50c66ddc7026345c1b4865996dab77ca5d9c228319872e6024c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/112_112_112",
+      "dateDocument": "1997-01-06",
+      "roFundstelle": "AS 1997 112",
+      "titelDe": "Verkehrsversicherungsverordnung (VVV), Berichtigung",
+      "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Errata",
+      "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/112_112_112/de",
+      "sha": "5f22f207143612c743f5d3b10a5dacd988721fa487588793e59de5bbe898d173"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/1350_1350_",
+      "dateDocument": "1987-10-05",
+      "roFundstelle": "AS 1987 1350",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV), Berichtigung",
+      "titelFr": "Ordonnance sur l'admission des personnes et des véhicules à la circulation routière (OAC), Errata",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/1350_1350_/de",
+      "sha": "b86f5a429706b3d92876824de09e2e157cead568653b3e7e860329ef5b5ed35c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/628_628_628",
+      "dateDocument": "1987-04-15",
+      "roFundstelle": "AS 1987 628",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (VZV), Änderung",
+      "titelFr": "Ordonnance réglant l'admission des personnes et des véhicules à la circulation routière (OAC), Modification",
+      "titelIt": "Ordinanza sull'ammissione alla circolazione di persone e veicoli (OAC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/628_628_628/de",
+      "sha": "5b85784a052da0bd231b07bf0c12ce0d942bc283794f6767ea0c97cbe6f73930"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/1832_1832_1832",
+      "dateDocument": "1986-09-17",
+      "roFundstelle": "AS 1986 1832",
+      "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+      "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/1832_1832_1832/de",
+      "sha": "ca27a68215c92b7d5f2637742b9fcb411f101127b23ab14dcc6c72b1eb731035"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1655_1655_1655",
+      "dateDocument": "1983-10-19",
+      "roFundstelle": "AS 1983 1655",
+      "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+      "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1655_1655_1655/de",
+      "sha": "a35bb2f24ce4e2e23d4b0d09ff25b9057840d467ecd11fc0a467210833cbc0cf"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/535_535_535",
+      "dateDocument": "1982-04-07",
+      "roFundstelle": "AS 1982 535",
+      "titelDe": "Verkehrsversicherungsverordnung (VVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance des véhicules (OAV), Modification",
+      "titelIt": "Ordinanza sull'assicurazione dei veicoli (OAV), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/535_535_535/de",
+      "sha": "904cad38a74fc6d1ed70f7f7066eb50af67996c847a3d5d8373a2d1de841a622"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/1511_1511_1511",
+      "dateDocument": "1980-10-06",
+      "roFundstelle": "AS 1980 1511",
+      "titelDe": "Verordnung über Haftpflicht und Versicherungen im Strassenverkehr, Änderung",
+      "titelFr": "Ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière, Modification",
+      "titelIt": "Ordinanza concernente la responsabilità civile e l'assicurazione in materia di circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/1511_1511_1511/de",
+      "sha": "5e8c63451b8f2b2bc295273072807ef64e1d9a8d7d1d64c374e0ba67f1c1de6d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/2423_2423_2423",
+      "dateDocument": "1976-10-27",
+      "roFundstelle": "AS 1976 2423",
+      "titelDe": "Verordnung vom 27. Oktober 1976 über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
+      "titelFr": "Ordonnance du 27 octobre 1976 réglant l'admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l'admission à la circulation routière, OAC)",
+      "titelIt": "Ordinanza del 27 ottobre 1976 sull'ammissione alla circolazione di persone e veicoli (Ordinanza sull'ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/2423_2423_2423/de",
+      "sha": "6e7c6c78ffaaf703ba28ebe0914c947dd1f15aff769078c9108c07b7d968cb80"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/1857_1857_1857",
+      "dateDocument": "1975-10-15",
+      "roFundstelle": "AS 1975 1857",
+      "titelDe": "Verordnung über Haftpflicht und Versicherungen im Strassenverkehr, Änderung",
+      "titelFr": "Ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière, Modification",
+      "titelIt": "Ordinanza concernente la responsabilità civile e l'assicurazione in materia di circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/1857_1857_1857/de",
+      "sha": "78ff9b7bc8949272d7f04ea26ead6de438eb94afddc31fc204fa1c278ba3059d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1968-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1967/1295_1336_1329",
+      "dateDocument": "1967-09-05",
+      "roFundstelle": "AS 1967 1295",
+      "titelDe": "Bundesratsbeschluss betreffend die Änderung der Verordnung über die Haftpflicht und Versicherungen im Strassenverkehr",
+      "titelFr": "Arrêté du Conseil fédéral modifiant l'ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière",
+      "titelIt": "Decreto del Consiglio fedrale che modifica l'ordinanza concernente la repsonsibiltà civile e l'assicurazione in materia di circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1967/1295_1336_1329/de",
+      "sha": "5582fa8c8d518202596f09221a9bc60de11f24e936d8f979e20b662867a81eb3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1968-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1967/1588_1636_",
+      "dateDocument": "1967-11-06",
+      "roFundstelle": "AS 1967 1588",
+      "titelDe": "Bundesratsbeschluss betreffend die Änderung der Verordnung über die Haftpflicht und Versicherungen im Strassenverkehr, Berichtigung",
+      "titelFr": "Arrêté du Conseil fédéral modifiant l'ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière, Errata",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1967/1588_1636_/de",
+      "sha": "846b394a33cb9f1b28da99ec108557faa9e77ff7b4a127ca61bf081d2b7a11b6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1968-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1967/_1532_",
+      "dateDocument": "1967-10-18",
+      "titelFr": "Arrêté du Conseil fédéral modifiant l'ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière, Errata",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1967/_1532_/de",
+      "sha": "c9056d27a8634d099188338b1f019818b6b9338a0fe01196622253eaff401461"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1968-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/__1360",
+      "dateDocument": "1971-09-24",
+      "titelIt": "Decreto del Consiglio federale concernente i maestri conducenti e le scuole di guida, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/__1360/de",
+      "sha": "feaca04f66a6fff27453a0a23a38bf0e997953ab200b5df90f485211eed25184"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1968-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/_648_",
+      "dateDocument": "1972-03-07",
+      "titelFr": "Arrêté du Conseil fédéral modifiant l'ordonnance sur la responsabilité civile et l'assurance en matière de cirulation routière, Errata",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/_648_/de",
+      "sha": "7951e2458c0f36e63275002b155d6b6a4674b2e84e8b8f25ce8a25d4ce116f5f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1968-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/__532",
+      "dateDocument": "1972-03-10",
+      "titelIt": "Ordinanza d'esecuzione II della legge federale sul servizio delle poste, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/__532/de",
+      "sha": "665ba66cdb86cf56f7b57f7af0d252603f3a6597760af8514a5a22e812c16504"
     }
   ],
-  "sha": "c406293aed16ae496f64632ca45997dfd073daafdd1ac824917ba32e7536e879"
+  "sha": "c1228f4aaee74a752be01be5c0654c3561be54b6e015b7de62fc31c6e4ea73f9"
 }

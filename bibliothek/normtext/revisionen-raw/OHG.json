@@ -547,5 +547,107 @@
     "2025-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2008/232",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2008/232",
+    "inkrafttreten": "2009-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/232",
+        "typ": 5,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/197",
+        "typ": 6,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+        "typ": 2,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/444",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/450",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+        "typ": 1,
+        "datum": "2019-11-06",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/163",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2010/267": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2007-10-05",
+        "roId": "RO 2010 1881",
+        "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+        "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+        "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/444": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-03-19",
+        "roId": "RO 2010 3267",
+        "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+        "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP)",
+        "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/450": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2017-12-15",
+        "roId": "RO 2018 2947",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Kindesschutz)",
+        "titelFr": "Code civil suisse (Protection de l'enfant)",
+        "titelIt": "Codice civile svizzero (Protezione dei minorenni)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/763": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-06",
+        "roId": "RO 2019 4633",
+        "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+        "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+        "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/468": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2022-06-17",
+        "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+        "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+        "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)"
+      }
+    }
+  }
 }

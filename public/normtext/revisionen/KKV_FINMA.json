@@ -1,63 +1,25 @@
 {
   "erlassKey": "KKV_FINMA",
   "sr": "951.312",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.312",
-      "sha": "05e62d83ef2230cb2c778ae380d007cf6d7cec5768611a458dbd2ea6fd19208f"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/707",
-      "dateDocument": "2014-08-27",
-      "roFundstelle": "AS 2014 4237",
-      "titelDe": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung-FINMA, KKV-FINMA)",
-      "titelFr": "Ordonnance de l'Autorité fédérale de surveillance des marchés financiers sur les placements collectifs de capitaux (Ordonnance de la FINMA sur les placements collectifs, OPC-FINMA)",
-      "titelIt": "Ordinanza dell'Autorità federale di vigilanza sui mercati finanziari sugli investimenti collettivi di capitale (Ordinanza FINMA sugli investimenti collettivi, OICol-FINMA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/707/de",
-      "sha": "72e1e2cae84b60ed2bed8727bf51143cade6b29756e2669ff649f67c01b66c13"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2009-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/776",
-      "dateDocument": "2008-11-20",
-      "roFundstelle": "AS 2008 5613",
-      "titelDe": "Verordnung über die Anpassung von Behördenverordnungen an das Finanzmarktaufsichtsgesetz",
-      "titelFr": "Ordonnance sur l'adaptation d'ordonnances arrêtées par les autorités à la loi sur l'Autorité fédérale de surveillance des marchés financiers",
-      "titelIt": "Ordinanza che adegua alcune ordinanze alle disposizioni della legge sulla vigilanza dei mercati finanziari",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/776/de",
-      "sha": "2f01624f7f624d276e90e3e62399033742215f90607df9b9b37bf5f1a011117f"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2007-02-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/66",
-      "dateDocument": "2006-12-21",
-      "roFundstelle": "AS 2007 301",
-      "titelDe": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung-FINMA, KKV-FINMA)",
-      "titelFr": "Ordonnance de l'Autorité fédérale de surveillance des marchés financiers sur les placements collectifs de capitaux (Ordonnance de la FINMA sur les placements collectifs, OPC-FINMA)",
-      "titelIt": "Ordinanza dell'Autorità federale di vigilanza sui mercati finanziari sugli investimenti collettivi di capitale (Ordinanza FINMA sugli investimenti collettivi, OICol-FINMA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/66/de",
-      "sha": "f85885141ffc9237323b81b89fc489e4021f4daf65e01a6a088359ad8697712d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1971-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/141_145_145",
-      "dateDocument": "1971-01-13",
-      "roFundstelle": "AS 1971 141",
-      "titelDe": "Verordnung vom 13. Januar 1971 über die ausländischen Anlagefonds",
-      "titelFr": "Ordonnance du 13 janvier 1971 sur les fonds de placement étrangers",
-      "titelIt": "Ordinanza del 13 gennaio 1971 sui fondi d'investimento stranieri",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/141_145_145/de",
-      "sha": "fb4cc6e36ee248448951e8656592c30dce57b1fada244afc58f141642cb9ffaa"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/922",
+      "dateDocument": "2020-11-04",
+      "roFundstelle": "AS 2020 5327",
+      "titelDe": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Finanzinstitute (Finanzinstitutsverordnung-FINMA, FINIV-FINMA)",
+      "titelFr": "Ordonnance de l'Autorité fédérale de surveillance des marchés financiers sur les établissements financiers (Ordonnance de la FINMA sur les établissements financiers, OEFin-FINMA)",
+      "titelIt": "Ordinanza dell'Autorità federale di vigilanza sui mercati finanziari sugli istituti finanziari (Ordinanza FINMA sugli istituti finanziari, OIsFi-FINMA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/922/de",
+      "sha": "8451aa6fe58902c59619fd433cea3dbe947bf6137012054716b227dc3498ba5f"
     }
   ],
-  "sha": "dd2c371efa598b802067c88a9123ca9fee9b5fce00c65583ad070e41b8a9d2f7"
+  "sha": "b3610fd94f1c8324288414ed5a368366ad8cc09d19ad945ad7ac3f5d4e9e207b"
 }

@@ -1,9 +1,24 @@
 {
   "erlassKey": "BGFA",
   "sr": "935.61",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/477",
+      "dateDocument": "2024-09-27",
+      "roFundstelle": "AS 2025 477",
+      "titelDe": "Bundesgesetz vom 27. September 2024 über den Abschluss internationaler Verträge über die Anerkennung von Berufsqualifikationen",
+      "titelFr": "Loi fédérale du 27 septembre 2024 sur la conclusion de traités internationaux en matière de reconnaissance des qualifications professionnelles",
+      "titelIt": "Legge federale del 27 settembre 2024 concernente la conclusione di trattati internazionali sul riconoscimento delle qualifiche professionali",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/477/de",
+      "sha": "3ece5f5f97d6d2adf7d76e0f541de8e9c5a9a6b6333e5440b485b69fc2629b14"
+    },
     {
       "art": "aenderung",
       "dateEntryInForce": "2025-07-01",
@@ -14,38 +29,89 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en œuvre (modification de la loi sur les avocats) de l’Accord entre la Suisse et le Royaume Uni en matière de reconnaissance des qualifications professionnelles",
       "titelIt": "Decreto federale che approva l’Accordo tra la Svizzera e il Regno Unito sul riconoscimento delle qualifiche professionali e lo traspone nel diritto svizzero (modifica della legge sugli avvocati)",
       "botschaftKey": "BOTSCHAFT-2024-460",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/478/de",
-      "sha": "c01f09938a8e7816b9e37b2a7b3088584ac88ca38b5f25b7a2678b032c8095b7"
+      "sha": "f4790ad68b6867eae33ef23ffe65e496a790a098e7b4a390d70f2e0c3b16184f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/935.61",
-      "sha": "2901d02a7d3e9747f5538c28e47f7b5257f6435368d6376350cc188161974c2f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/600",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2022 600",
+      "titelDe": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+      "titelFr": "Loi fédérale du 17 juin 2016 sur le casier judiciaire informatique VOSTRA (Loi sur le casier judiciaire, LCJ)",
+      "titelIt": "Legge federale del 17 giugno 2016 sul casellario giudiziale informatizzato VOSTRA (Legge sul casellario giudiziale, LCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/600/de",
+      "sha": "cd12ddde437ec2a9b67ddf99aadb862609576fec0fa815a643700a241b6e81d1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/935.61",
-      "sha": "e1623eab8cad6c14ae1fd52227e408543eb5d92ff2729e58cd95660d77ccd5fe"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/85",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 85",
+      "titelDe": "Bundesbeschluss vom 25. September 2020 über die Genehmigung und die Umsetzung des Abkommens zwischen der Schweiz und dem Vereinigten Königreich über die Rechte der Bürgerinnen und Bürger infolge des Austritts des Vereinigten Königreichs aus der Europäischen Union und des Wegfalls des Freizügigkeitsabkommens",
+      "titelFr": "Arrêté fédéral du 25 septembre 2020 portant approbation et mise en œuvre de l’Accord entre la Suisse et le Royaume-Uni relatif aux droits des citoyens à la suite du retrait du Royaume-Uni de l’Union européenne et de la fin de l’applicabilité de l’accord sur la libre circulation des personnes",
+      "titelIt": "Decreto federale del 25 settembre 2020 che approva e traspone nel diritto svizzero l’Accordo tra la Svizzera e il Regno Unito sui diritti dei cittadini in seguito al recesso del Regno Unito dall’Unione europea e dall’Accordo sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-2020-226",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/85/de",
+      "sha": "e3e33bc604a2074cbcf608966c0ca992017ae551520ec631525a271e4e638b5d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/935.61",
-      "sha": "4cf53aea698b895b286feab42f62a006639f0a7556e683456cd0b995e6901988"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/828",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2016 5233",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Protokolls zum Freizügigkeitsabkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits betreffend die Ausdehnung auf die Republik Kroatien",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'accord sur la libre circulation des personnes entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, concernant l'extension à la République de Croatie",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Croazia dell'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-2016-467",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/828/de",
+      "sha": "bb90556bcbac556ce4680f1e92fa83291e88f8600accc1894dc289b9650c8aa5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/935.61",
-      "sha": "e12d0b2e6d24eb1f40d59d8a81e9424f4e0490727bc6bf6030f52ee57e24e299"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/705",
+      "dateDocument": "2010-06-18",
+      "roFundstelle": "AS 2010 4989",
+      "titelDe": "Bundesgesetz über die Unternehmens-Identifikationsnummer (UIDG)",
+      "titelFr": "Loi fédérale sur le numéro d'identification des entreprises (LIDE)",
+      "titelIt": "Legge federale sul numero d'identificazione delle imprese (LIDI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/705/de",
+      "sha": "c433659b173cb31edcdcbbbcaeb6e15a51a8231936bee074bf79d151d1491fc6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/935.61",
-      "sha": "c5976d43c708cc75a7c95c8b5c79015db43d1e213d4f85618bf8e1128166c078"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/296",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2009 2411",
+      "titelDe": "Bundesbeschluss über die Genehmigung der Weiterführung des Freizügigkeitsabkommens zwischen der Schweiz und der Europäischen Gemeinschaft und ihren Mitgliedstaaten sowie über die Genehmigung und die Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf Bulgarien und Rumänien",
+      "titelFr": "Arrêté fédéral portant approbation de la reconduction de l'accord entre la Suisse et la Communauté européenne et ses Etats membres sur la libre circulation des personnes, ainsi qu'approbation et mise en uvre du protocole visant à étendre l'accord sur la libre circulation à la Bulgarie et à la Roumanie",
+      "titelIt": "Decreto federale che approva il rinnovo dell'Accordo tra la Svizzera e la Comunità europea ed i suoi Stati membri sulla libera circolazione delle persone e approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Bulgaria e alla Romania dell'Accordo sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-2008-472",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/296/de",
+      "sha": "e07086feffd5384b9382e60148cdf60e8e4f923f8b7078dfc66273593ff33371"
     },
     {
       "art": "aenderung",
@@ -57,8 +123,11 @@
       "titelFr": "Loi fédérale sur la libre circulation des avocats (Loi sur les avocats, LLCA)",
       "titelIt": "Legge federale sulla libera circolazione degli avvocati (Legge sugli avvocati, LLCA)",
       "botschaftKey": "BOTSCHAFT-2005-1029",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/668/de",
-      "sha": "c98bf6aa1b53a9cddb976c5c537a001e74fd5809d2a3bdfea004cb1be7e3151a"
+      "sha": "90c7acdefddd756a8992f04241213069a22169ad17e285c7de7ad8765e218c85"
     },
     {
       "art": "aenderung",
@@ -69,14 +138,27 @@
       "titelDe": "Bundesgesetz über die Freizügigkeit der Anwältinnen und Anwälte (Anwaltsgesetz, BGFA) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur la libre circulation des avocats (Loi sur les avocats, LLCA) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sulla libera circolazione degli avvocati (Legge sugli avvocati, LLCA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/378/de",
-      "sha": "06822c7eb5d733775bd9a2467816a9865a43a84c42e469ef401a6466c7643c65"
+      "sha": "8f1c7fbf698aafb84e4219aabfe6c9297088c21a34e5482ab1185000e8bad853"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/935.61",
-      "sha": "0f5e7a1a6ada09ff33eb75bd734006f4fcd53b66dbc4699e247beddae185987c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/178",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2006 979",
+      "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf die neuen EG-Mitgliedstaaten zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits sowie über die Genehmigung der Revision der flankierenden Massnahmen zur Personenfreizügigkeit",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'extension de l'accord entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, sur la libre circulation des personnes aux nouveaux Etats membres de la Communauté européenne et portant approbation de la révision des mesures d'accompagnement concernant la libre circulation des personnes",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero, mediante revisione delle misure collaterali, il Protocollo concluso con la Comunità europea e i suoi Stati membri relativo all'estensione dell'Accordo sulla libera circolazione delle persone ai nuovi Stati membri della Comunità europea",
+      "botschaftKey": "BOTSCHAFT-2004-1081",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/178/de",
+      "sha": "fb28e531ac518999edb18c74ef49b103f3639306177d1a467c84970b57cf997b"
     },
     {
       "art": "aenderung",
@@ -88,22 +170,12 @@
       "titelFr": "Loi fédérale sur la libre circulation des avocats (Loi sur les avocats, LLCA)",
       "titelIt": "Legge federale sulla libera circolazione degli avvocati (Legge sugli avvocati, LLCA)",
       "botschaftKey": "BOTSCHAFT-2002-337",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/318/de",
-      "sha": "814a83280f65dfc65c1c80a6d9dfba10efe222d18195e369fa811fbb8d83b072"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2002-06-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/153",
-      "dateDocument": "2000-06-23",
-      "roFundstelle": "AS 2002 863",
-      "titelDe": "Bundesgesetz über die Freizügigkeit der Anwältinnen und Anwälte (Anwaltsgesetz, BGFA)",
-      "titelFr": "Loi fédérale sur la libre circulation des avocats (Loi sur les avocats, LLCA)",
-      "titelIt": "Legge federale sulla libera circolazione degli avvocati (Legge sugli avvocati, LLCA)",
-      "botschaftKey": "BOTSCHAFT-1999-1_6013_5331_4983",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/153/de",
-      "sha": "0d9c5df7b06eeb9b83f3546178d5dd83c17bb5e0c25dce44ece70a2fb3385ee2"
+      "sha": "c5e05c2105722f75d7a792d76b9db7cc3973685654ccd65b2ce63fbc88f472e9"
     }
   ],
-  "sha": "b0910c4c389ba7a6f2a287ad887e7f06ba3f11598fafc22b2dc070f2f09e68ac"
+  "sha": "d801c58f02d1692e765cdb3ff8894661bc09610f362ff7cb937f65c44d62aa72"
 }

@@ -41,6 +41,32 @@
  * Datum sieht. Cross-Check: wo (a) einen Stand ohne passenden (b)-Erlass zeigt →
  * synthetischer «sammelerlass-marker» statt stiller Lücke.
  *
+ * ── Pfad (c) Rechtsanalyse «Auswirkungen» (S6-D1, W2·29-WERKBANK-LESER, 23.9.2026) ──
+ * ERGÄNZT 23.9.2026 (die Absätze oben bleiben als Stand 10.7.2026 stehen). Pfad (b)
+ * allein erzeugte vier gemessene Fehlerklassen (Befunde AE-2..AE-5, Ist-Messung
+ * 23.9.2026 über 231 Sidecars): (AE-3) 359 Einträge in 107 Sidecars VOR dem
+ * Inkrafttreten des geltenden Erlasses — Änderungen von VORGÄNGER-Erlassen gleicher SR
+ * (ZPO ← GestG AS 2000 2355) und der Stammerlass selbst; (AE-4) Sammelerlass-Änderungen
+ * nur als Datums-Marker und nur, wo am selben Tag kein (b)-Erlass lag; (AE-5) gestaffelte
+ * Inkrafttreten (OR 1.5.2021 = AS 2019 3161) als «Sammelerlass»; (AE-2) 1978 Marker-
+ * Links auf `/eli/cc/<SR>` (Fedlex «page-not-found»).
+ *
+ * Die höchste strukturierte Quelle dafür ist Fedlex' eigene Rechtsanalyse (live
+ * erhoben 23.9.2026): `<oc>/legal-analysis/LegalResourceImpact/<n>` mit
+ *   jolux:impactFromLegalResource  <oc>/<teil>        (ändernder Erlass bzw. dessen Ziffer)
+ *   jolux:impactToLegalResource    <cc-Abstract>/<teil> (Artikel/`text` DIESES Erlasses;
+ *                                  jeder Teil ist `legalResourceSubdivisionIsPartOf` Abstract —
+ *                                  am OR 997 Auswirkungen, Präfix-Zählung == Teil-Join)
+ *   jolux:legalResourceImpactHasType  vocabulary/impact-type/<n>  (1 Änderung, 2 Aufhebung …)
+ *   jolux:legalResourceImpactHasDateEntryInForce  Inkrafttreten DIESER Auswirkung
+ * Weil das Ziel das Abstract DES GELTENDEN Erlasses ist, gehören Vorgänger-Erlasse
+ * gleicher SR (anderes Abstract) nicht dazu; Sammelerlasse anderer SR schon; und je
+ * Auswirkung steht das eigene Inkrafttretensdatum (Etappen). Pfad (b) bleibt als
+ * Ergänzung für Erlasse, die Fedlex (noch) keiner Auswirkung zuordnet (gemessen: 11 von
+ * 3232, u. a. künftige wie PatV AS 2026 338), jetzt aber begrenzt auf das Geltungsfenster
+ * [Inkrafttreten, Aufhebung] des Abstracts; der Stammerlass (`jolux:basicAct`) ist
+ * nie ein Eintrag. Detail und Messreihe: `baueRevisionen`, Kontext `RevisionsKontext`.
+ *
  * §2/§0b Regel 5: reine parse-Funktionen (baueRevisionen, injizierbar/testbar) getrennt
  * vom Fetch/Writer (revisionen-generieren-run.ts); --datum aus der Shell, kein Date.now.
  * Aufruf: npm run normtext:revisionen -- --datum=$(date +%F) [--nur=DSG,OR]
@@ -49,13 +75,15 @@ import { createHash } from 'node:crypto';
 import { sparqlBatch, sparqlSelect, type SparqlBinding, type FetchImpl } from '../fedlex-sparql.ts';
 import { ERLASS_REGISTER } from '../../src/lib/normtext/register.ts';
 import { BOTSCHAFTEN } from '../../src/lib/materialien/botschaften.generated.ts';
+import {
+  LANG, WIRKUNGEN, wirkungAusTyp, inkrafttretenDerAuswirkung, fassungsUrl,
+  type Wirkung, type RevisionsKontext,
+} from './revisionen-auswirkungen.ts';
+// Pfad (c) lebt seit 23.9.2026 in revisionen-auswirkungen.ts (§6.6-Schlankheit); die
+// Re-Exporte halten die bestehenden Importpfade (Runner, check:revisionen, Tests) stabil.
+export * from './revisionen-auswirkungen.ts';
 
 const NOTATION_TYPE = '<https://fedlex.data.admin.ch/vocabulary/notation-type/id-systematique>';
-const LANG = {
-  de: '<http://publications.europa.eu/resource/authority/language/DEU>',
-  fr: '<http://publications.europa.eu/resource/authority/language/FRA>',
-  it: '<http://publications.europa.eu/resource/authority/language/ITA>',
-};
 
 /** Grundmenge: Bund-Volltext-Erlasse (register.json, ebene=bund & status=snapshot). */
 export interface ErlassMeta { key: string; sr: string; }
@@ -134,7 +162,25 @@ export interface RevisionEintrag {
    *  («angewendet ab») liegt UND vom Konsolidierungstext bezeugt ist — nur art='aenderung',
    *  nur für die whitelisteten ocUris (kein generischer Switch, s. Docstring dort). */
   dateInKraftFuerCh?: string;
-  /** Fedlex-Live-Link auf den AS-Text (art='aenderung') bzw. die amtliche Sammlung. */
+  /** Pfad (c): die amtlichen Auswirkungs-Typen dieses Erlasses auf DIESES Erlass zum
+   *  Datum `dateEntryInForce` (Fedlex `vocabulary/impact-type`, feste Reihenfolge
+   *  `WIRKUNGEN`). Fehlt, wenn der Eintrag nur aus Pfad (b) stammt (Fedlex ordnet ihm
+   *  keine Auswirkung zu — dann keine Aussage, §8). */
+  wirkungen?: Wirkung[];
+  /** Pfad (c): ALLE Inkrafttretensdaten dieses Änderungserlasses für dieses Erlass,
+   *  aufsteigend — nur gesetzt, wenn es mehr als eines sind (gestaffeltes Inkrafttreten,
+   *  AE-5). Jede Etappe ist ein eigener Eintrag mit demselben `ocUri`. */
+  etappen?: string[];
+  /** Pfad (c), §8: `true`, wenn `dateEntryInForce` NICHT das Inkrafttreten einer eigenen
+   *  Auswirkung auf dieses Erlass ist, sondern das (erste) Inkrafttreten des ändernden
+   *  Erlasses selbst — weil Fedlex der Auswirkung kein brauchbares Datum gibt (Beschluss-
+   *  datum, undatiert, widersprüchlich) oder der Eintrag nur aus Pfad (b) stammt. Das Datum
+   *  kann dann für DIESES Erlass abweichen (Beleg 23.9.2026: ZPO ← FINIG AS 2018 5247,
+   *  Auswirkung «2018-06-15» = Beschluss, FINIG in Kraft ab 2019-01-01, ZPO-Fassung erst
+   *  2020-01-01). Nur mit Pfad-(c)-Kontext gesetzt. */
+  datumAusErlass?: boolean;
+  /** Fedlex-Live-Link auf den AS-Text (art='aenderung') bzw. — beim Marker — auf die
+   *  Fassung dieses Datums (`/eli/cc/<abstract>/<YYYYMMDD>/de`, AE-2). */
   quelleUrl: string;
   /** sha-256 über die Identitätsfelder (Drift-Token, §7d). */
   sha: string;
@@ -153,10 +199,18 @@ export interface RevisionSidecar {
   sha: string;
 }
 
-const REICHWEITE =
-  'Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich ' +
-  'bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse ' +
-  'anderer SR sind als Marker gekennzeichnet.';
+// AE-4 (23.9.2026): der frühere Satz «Änderungen über Sammelerlasse anderer SR sind als
+// Marker gekennzeichnet» war falsch — ein Marker entstand nur an Daten OHNE eigenen
+// (b)-Eintrag, Sammelerlasse am selben Tag fehlten still (OR: AS 2022 468, 2022 732,
+// 2021 758). Seit Pfad (c) stehen Sammelerlasse als eigene Einträge; der Marker bleibt
+// nur für Fassungen, denen Fedlex keinen Erlass zuordnet.
+export const REICHWEITE =
+  'Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex ' +
+  'diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere ' +
+  'Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht ' +
+  'je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker ' +
+  'gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).';
+
 
 // Sammelerlass-Marker (Pfad-(a)-Geltungsstände ohne primären oc-Erlass) NUR ab dieser
 // Grenze — sie ist die dokumentierte Verlässlichkeits-Schwelle (§8 «ab ~2000»). Frühere
@@ -319,19 +373,36 @@ function shaEintrag(e: Omit<RevisionEintrag, 'sha'>): string {
   // hätte JEDE sha im Korpus verändert).
   if (e.plausibilitaet) felder.push(e.plausibilitaet, e.plausibilitaetsGrund ?? '');
   if (e.dateInKraftFuerCh) felder.push(e.dateInKraftFuerCh);
+  // Pfad (c), 23.9.2026 — ebenfalls nur additiv bei gesetztem Feld (gleiche Begründung).
+  if (e.wirkungen) felder.push(`w:${e.wirkungen.join(',')}`);
+  if (e.etappen) felder.push(`e:${e.etappen.join(',')}`);
+  if (e.datumAusErlass) felder.push('d:erlass');
   return createHash('sha256').update(felder.join('|'), 'utf8').digest('hex');
 }
 
 /**
  * REINE parse-Funktion (§2, testbar): Pfad-(b)-Bindings + Pfad-(a)-Geltungsstände (des
- * gepinnten Abstracts) + Korpus-Stand → deterministisch sortierte Timeline EINES Erlasses.
- * - dedupe je oc (min dateEntryInForce = erstes Inkrafttreten; Sprachen kollabieren);
- * - RO-Fundstelle aus oc-URI; Botschafts-Join über ocUri-Index;
+ * gepinnten Abstracts) + Pfad-(c)-Auswirkungen (`kontext`) + Korpus-Stand → deterministisch
+ * sortierte Timeline EINES Erlasses.
+ * - Pfad (c), wenn `kontext` da ist (Generator-Normalfall seit 23.9.2026): je ändernder oc
+ *   und je Inkrafttretensdatum SEINER Auswirkungen auf dieses Abstract ein Eintrag (AE-4/AE-5);
+ *   `wirkungen` = die amtlichen Typen an diesem Datum; `etappen` bei mehr als einem Datum.
+ *   Undatierte Auswirkungen zählen nur, wenn der oc KEINE datierte hat — dann gilt sein
+ *   eigenes `dateEntryInForce` (Pfad b bzw. `ocStamm`); fehlt auch das, kein Eintrag (nie
+ *   ein Datum erfinden, §7).
+ * - Pfad (b) ergänzt oc ohne Auswirkung, aber NUR im Geltungsfenster des Abstracts
+ *   [`inkrafttreten`, `aufhebung`] (AE-3: Vorgänger-Erlasse gleicher SR fallen heraus);
+ *   dedupe je oc (min dateEntryInForce; Sprachen kollabieren). Ohne `kontext` (Alt-Aufruf,
+ *   Tests) bleibt Pfad (b) ungefiltert wie bis 22.9.2026.
+ * - Der Stammerlass (`kontext.basicAct`) ist nie ein Eintrag (AE-3).
+ * - RO-Fundstelle aus oc-URI/historicalId; Botschafts-Join über ocUri-Index;
  * - nichtKonsolidiert wenn dateEntryInForce > korpusStand UND die oc-URI NICHT bereits im
  *   Konsolidierungstext zitiert ist (Finding 4, verfeinert um Finding 4b: `belegteOcs`,
  *   ausserhalb ermittelt via `belegtImXml` — s. dort);
- * - Pfad-(a)-Cross-Check: Geltungsstände ohne (b)-Erlass → sammelerlass-marker (§8).
- * Kein Netz, kein Date.now — `belegteOcs` wird injiziert (Netz-Schritt lebt im Runner).
+ * - Pfad-(a)-Cross-Check: Geltungsstände ohne Eintrag gleichen Datums → Marker, verlinkt
+ *   auf DIESE Fassung (`fassungsUrl`, AE-2). Ohne `kontext.abstractEli` kein gültiger Link →
+ *   Abbruch statt toter Link.
+ * Kein Netz, kein Date.now — `belegteOcs`/`kontext` werden injiziert (Netz lebt im Runner).
  */
 export function baueRevisionen(
   erlass: ErlassMeta,
@@ -342,6 +413,7 @@ export function baueRevisionen(
   abgerufen: string,
   belegteOcs: ReadonlySet<string> = new Set(),
   rectifiesInfoProOc: ReadonlyMap<string, RectifiesInfo> = new Map(),
+  kontext?: RevisionsKontext,
 ): RevisionSidecar {
   interface Roh {
     oc: string; dateForce: string; dateDoc?: string; roId?: string; de?: string; fr?: string; it?: string;
@@ -362,11 +434,79 @@ export function baueRevisionen(
     if (!r.it && b.titleIt?.value) r.it = b.titleIt.value;
   }
 
+  // ── Zeilen bestimmen: je (oc, Datum) die Wirkungen ──────────────────────────────
+  // Map oc → Map datum → Set<Wirkung> (leeres Set = Pfad (b) ohne Auswirkungs-Aussage).
+  const zeilen = new Map<string, Map<string, Set<Wirkung>>>();
+  // Daten, die als Erfassungsartefakt erkannt sind (Auswirkungsdatum NACH der einarbeitenden
+  // Fassung, s. unten) — an ihnen entsteht auch kein Marker (s. Pfad-(a)-Cross-Check).
+  const artefaktDaten = new Set<string>();
+  // (oc|datum)-Paare, deren Datum NICHT aus einer eigenen Auswirkung stammt, sondern aus dem
+  // Inkrafttreten des ändernden Erlasses (Ersatz für Beschluss-/undatierte/widersprüchliche
+  // Auswirkungsdaten, Pfad-(b)-Einträge) → `datumAusErlass` (§8, s. RevisionEintrag).
+  const ausErlass = new Set<string>();
+  const basicAct = kontext?.basicAct;
+  if (kontext) {
+    const fassungsDaten = new Set(aStaende);
+    const datiert = new Map<string, Map<string, Set<Wirkung>>>();
+    const undatiert = new Map<string, Set<Wirkung>>();
+    const echt = new Set<string>(); // (oc|datum) mit eigener, widerspruchsfreier Auswirkung
+    for (const a of kontext.auswirkungen) {
+      if (a.oc === basicAct) continue;
+      const w = wirkungAusTyp(a.typ);
+      // Widerspruch Auswirkungsdatum ↔ einarbeitende Fassung (Messung 23.9.2026 über 15 515
+      // Roh-Auswirkungen: 14 643 gleich, 614 mit Fassung VOR dem Datum, 126 danach, 81 ohne
+      // Fassung, 51 undatiert). Eine Fassung kann keine Änderung enthalten, die erst NACH ihr
+      // in Kraft tritt — das Datum ist dann ein Erfassungsartefakt: AVIG ← AS 1991 2125 u. v. a.
+      // tragen eine zweite «Etappe» 2023-01-01, eingearbeitet aber in die Fassung 1992-01-01;
+      // AHVG ← AS 1965 537 (oc/1965/537_541_535, Auswirkung 12) «2066-01-01», eingearbeitet in
+      // 2021-01-01. Solche Daten erzeugen KEINE Etappe; die Auswirkung zählt wie eine
+      // undatierte (nie ein Datum erfinden, §7). Der umgekehrte Fall (Fassung NACH dem Datum)
+      // bleibt: rückwirkende Inkraftsetzung und Nachkonsolidierung sind echt.
+      const widerspruch = !!(a.datum && a.fassung && a.fassung < a.datum);
+      if (widerspruch) artefaktDaten.add(a.datum!);
+      if (a.datum && !widerspruch) {
+        const datum = inkrafttretenDerAuswirkung(a.datum, proOc.get(a.oc) ?? kontext.ocStamm[a.oc], fassungsDaten);
+        if (datum !== a.datum) ausErlass.add(`${a.oc}|${datum}`); else echt.add(`${a.oc}|${datum}`);
+        const proDatum = datiert.get(a.oc) ?? new Map<string, Set<Wirkung>>();
+        const s = proDatum.get(datum) ?? new Set<Wirkung>();
+        s.add(w); proDatum.set(datum, s); datiert.set(a.oc, proDatum);
+      } else {
+        const s = undatiert.get(a.oc) ?? new Set<Wirkung>();
+        s.add(w); undatiert.set(a.oc, s);
+      }
+    }
+    for (const [oc, proDatum] of datiert) zeilen.set(oc, proDatum);
+    for (const [oc, w] of undatiert) {
+      if (zeilen.has(oc)) continue; // datierte Auswirkungen gehen vor
+      const eigen = proOc.get(oc)?.dateForce ?? kontext.ocStamm[oc]?.dateForce;
+      if (!eigen) continue; // kein amtliches Datum → kein Eintrag (nie erfinden, §7)
+      zeilen.set(oc, new Map([[eigen, w]]));
+      ausErlass.add(`${oc}|${eigen}`);
+    }
+    for (const r of proOc.values()) {
+      if (zeilen.has(r.oc) || r.oc === basicAct) continue;
+      if (kontext.inkrafttreten && r.dateForce < kontext.inkrafttreten) continue; // Vorgänger gleicher SR (AE-3)
+      if (kontext.aufhebung && r.dateForce > kontext.aufhebung) continue; // Nachfolger gleicher SR (AE-6)
+      zeilen.set(r.oc, new Map([[r.dateForce, new Set<Wirkung>()]]));
+      ausErlass.add(`${r.oc}|${r.dateForce}`);
+    }
+    for (const k of echt) ausErlass.delete(k); // eine echte Auswirkung am selben Datum geht vor
+  } else {
+    for (const r of proOc.values()) zeilen.set(r.oc, new Map([[r.dateForce, new Set<Wirkung>()]]));
+  }
+
   const eintraege: RevisionEintrag[] = [];
   const bStaende = new Set<string>();
-  for (const r of proOc.values()) {
-    bStaende.add(r.dateForce);
-    const botschaftKey = ocZuBotschaft.get(r.oc);
+  for (const [oc, proDatum] of zeilen) {
+    const r = proOc.get(oc);
+    const stamm = kontext?.ocStamm[oc];
+    const dateDoc = r?.dateDoc ?? stamm?.dateDoc;
+    const roId = r?.roId ?? stamm?.roId;
+    const de = r?.de ?? stamm?.titelDe;
+    const fr = r?.fr ?? stamm?.titelFr;
+    const it = r?.it ?? stamm?.titelIt;
+    const daten = [...proDatum.keys()].sort();
+    const botschaftKey = ocZuBotschaft.get(oc);
     // §8-Marker (Gegenprüfung #703, korrigiert nach Gegenprüfung PR #827 Auflage f — s.
     // Docstring `RevisionEintrag.plausibilitaet`): `rectifiesInfoProOc` trägt bereits NUR
     // aufgelöste, deterministisch (kleinste SR-Notation bzw. -Ziel-URI) ausgewählte
@@ -375,35 +515,42 @@ export function baueRevisionen(
     // Tripel selbst (Verknüpfung + Ziel-SR/-Fundstelle), OHNE Interpretation («erstpubliziert»,
     // «Anhangs-Änderung») — der SKV-Fall (AS 2025 686, s. Docstring) zeigt live, dass die
     // Verknüpfung selbst ein Fedlex-Datenfehler sein kann.
-    const info = rectifiesInfoProOc.get(r.oc);
+    const info = rectifiesInfoProOc.get(oc);
     const fremdesAsDokument = info !== undefined && info.fremdeSr !== erlass.sr;
-    // Finding 4b, zweite Stufe: NUR aus der Whitelist, NUR wenn das Datum tatsächlich VOR
-    // dateEntryInForce liegt (sonst wäre «in Kraft seit» nach «angewendet ab» widersinnig —
-    // ein Schutz gegen einen künftigen Whitelist-Tippfehler, §7).
-    const inKraftFuerCh = IN_KRAFT_FUER_CH_WHITELIST.get(r.oc);
-    const dateInKraftFuerCh = inKraftFuerCh && inKraftFuerCh < r.dateForce ? inKraftFuerCh : undefined;
-    const roh: Omit<RevisionEintrag, 'sha'> = {
-      art: 'aenderung',
-      dateEntryInForce: r.dateForce,
-      ocUri: r.oc,
-      dateDocument: r.dateDoc?.slice(0, 10),
-      roFundstelle: fundstelle(r.oc, r.roId),
-      titelDe: r.de ? titelText(r.de) : undefined,
-      titelFr: r.fr ? titelText(r.fr) : undefined,
-      titelIt: r.it ? titelText(r.it) : undefined,
-      botschaftKey,
-      nichtKonsolidiert: (r.dateForce > korpusStand && !belegteOcs.has(r.oc)) ? true : undefined,
-      plausibilitaet: fremdesAsDokument ? 'berichtigung-fremdes-as-dokument' : undefined,
-      plausibilitaetsGrund: fremdesAsDokument
-        ? `Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument `
-          + `${info.zielFundstelle ?? info.zielOc}, das unter SR ${info.fremdeSr} klassiert ist `
-          + '— häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert '
-          + 'wurde; massgeblich ist die amtliche Sammlung (§7/§8).'
-        : undefined,
-      dateInKraftFuerCh,
-      quelleUrl: liveLink(r.oc),
-    };
-    eintraege.push({ ...roh, sha: shaEintrag(roh) });
+    for (const datum of daten) {
+      bStaende.add(datum);
+      const wirkungen = [...proDatum.get(datum)!].sort((x, y) => WIRKUNGEN.indexOf(x) - WIRKUNGEN.indexOf(y));
+      // Finding 4b, zweite Stufe: NUR aus der Whitelist, NUR wenn das Datum tatsächlich VOR
+      // dateEntryInForce liegt (sonst wäre «in Kraft seit» nach «angewendet ab» widersinnig —
+      // ein Schutz gegen einen künftigen Whitelist-Tippfehler, §7).
+      const inKraftFuerCh = IN_KRAFT_FUER_CH_WHITELIST.get(oc);
+      const dateInKraftFuerCh = inKraftFuerCh && inKraftFuerCh < datum ? inKraftFuerCh : undefined;
+      const roh: Omit<RevisionEintrag, 'sha'> = {
+        art: 'aenderung',
+        dateEntryInForce: datum,
+        ocUri: oc,
+        dateDocument: dateDoc?.slice(0, 10),
+        roFundstelle: fundstelle(oc, roId),
+        titelDe: de ? titelText(de) : undefined,
+        titelFr: fr ? titelText(fr) : undefined,
+        titelIt: it ? titelText(it) : undefined,
+        botschaftKey,
+        nichtKonsolidiert: (datum > korpusStand && !belegteOcs.has(oc)) ? true : undefined,
+        plausibilitaet: fremdesAsDokument ? 'berichtigung-fremdes-as-dokument' : undefined,
+        plausibilitaetsGrund: fremdesAsDokument
+          ? `Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument `
+            + `${info.zielFundstelle ?? info.zielOc}, das unter SR ${info.fremdeSr} klassiert ist `
+            + '— häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert '
+            + 'wurde; massgeblich ist die amtliche Sammlung (§7/§8).'
+          : undefined,
+        dateInKraftFuerCh,
+        wirkungen: wirkungen.length ? wirkungen : undefined,
+        etappen: daten.length > 1 ? daten : undefined,
+        datumAusErlass: ausErlass.has(`${oc}|${datum}`) ? true : undefined,
+        quelleUrl: liveLink(oc),
+      };
+      eintraege.push({ ...roh, sha: shaEintrag(roh) });
+    }
   }
 
   // Finding 4b, zweite Stufe: Pfad-(a)-Stände, die bereits als `dateInKraftFuerCh` auf einer
@@ -414,20 +561,36 @@ export function baueRevisionen(
     eintraege.map((e) => e.dateInKraftFuerCh).filter((d): d is string => !!d),
   );
 
-  // Pfad-(a)-Cross-Check: Geltungsstände des gepinnten Abstracts ohne passenden (b)-Erlass
-  // → Mantel-/Sammelerlass-Änderung (§8-Marker, nie stille Lücke). Nur Stände, die NACH dem
-  // ältesten (b)-Erlass liegen (frühere Stände = Erstpublikation, kein «weiterer» Erlass).
+  // Pfad-(a)-Cross-Check: Geltungsstände des gepinnten Abstracts ohne Eintrag gleichen
+  // Datums → Marker (§8, nie stille Lücke). Nur Stände, die NACH dem ältesten Eintrag liegen
+  // (frühere Stände = Erstpublikation, kein «weiterer» Erlass).
   const aeltesterB = [...bStaende].sort()[0];
-  for (const stand of new Set(aStaende)) {
+  for (const stand of [...new Set(aStaende)].sort()) {
     if (bStaende.has(stand)) continue;
     if (aeltesterB && stand < aeltesterB) continue;
+    // Seit der Stammerlass kein Eintrag mehr ist (AE-3), trägt `aeltesterB` die Erstfassung
+    // nicht mehr: die Fassung zum Inkrafttreten des Abstracts ist die Erstpublikation, keine
+    // Änderung (Rot-Beleg 23.9.2026: GebV-HReg, einziger Stand 2021-01-01 = Inkrafttreten,
+    // wurde ohne diese Zeile zum Marker).
+    if (kontext?.inkrafttreten && stand <= kontext.inkrafttreten) continue;
     if (stand < MARKER_CUTOFF) continue; // unterhalb der Verlässlichkeits-Schwelle (§8)
     if (belegteFruehereDaten.has(stand)) continue; // bereits als dateInKraftFuerCh gezeigt
+    // Eine Fassung an einem als Artefakt erkannten Auswirkungsdatum ist KEINE «Fassung ohne
+    // zugeordneten Änderungserlass» — Fedlex ordnet sie zu, nur mit widersprüchlichem Datum.
+    // Beleg 23.9.2026: AHVG trägt eine Fassung 2066-01-01 (dateApplicability), erzeugt von
+    // der Auswirkung oc/1965/537_541_535 «2066-01-01», eingearbeitet 2021-01-01; als Marker
+    // hiesse sie «tritt am 01.01.2066 in Kraft». Fedlex-Datenfehler, bleibt dort gemeldet (§8).
+    if (artefaktDaten.has(stand)) continue;
+    if (!kontext?.abstractEli) {
+      // AE-2: bis 22.9.2026 hier `https://www.fedlex.admin.ch/eli/cc/${erlass.sr}` — die SR-
+      // Nummer ist kein ELI-Pfad (Fedlex «page-not-found», 1978 Links in 196 Sidecars).
+      throw new Error(`baueRevisionen(${erlass.key}): Marker ${stand} ohne Abstract-ELI — kein gültiger Fedlex-Link möglich.`);
+    }
     const roh: Omit<RevisionEintrag, 'sha'> = {
       art: 'sammelerlass-marker',
       dateEntryInForce: stand,
       nichtKonsolidiert: stand > korpusStand ? true : undefined,
-      quelleUrl: `https://www.fedlex.admin.ch/eli/cc/${erlass.sr}`,
+      quelleUrl: fassungsUrl(kontext.abstractEli, stand),
     };
     eintraege.push({ ...roh, sha: shaEintrag(roh) });
   }

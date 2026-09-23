@@ -406,5 +406,87 @@
     "2023-09-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2002/593",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2002/593",
+    "inkrafttreten": "2003-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/593",
+        "typ": 5,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/689",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/690",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/796",
+        "typ": 1,
+        "datum": "2017-11-29",
+        "fassung": "2019-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+        "typ": 1,
+        "datum": "2018-06-15",
+        "fassung": "2019-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+        "typ": 1,
+        "datum": "2019-04-01",
+        "fassung": "2019-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2015/689": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-06-19",
+        "roId": "RO 2015 4107",
+        "titelDe": "Obligationenrecht (Revision des Widerrufsrechts)",
+        "titelFr": "Code des obligations (Révision du droit de révocation)",
+        "titelIt": "Codice delle obbligazioni (Revisione del diritto di revoca)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/796": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-11-29",
+        "roId": "RO 2017 7317",
+        "titelDe": "Verordnung des EJPD über den Höchstzinssatz für Konsumkredite",
+        "titelFr": "Ordonnance du DFJP sur le taux d'intérêt maximal pour les crédits à la consommation",
+        "titelIt": "Ordinanza del DFGP sul tasso d'interesse massimo per i crediti al consumo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/801": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-06-15",
+        "roId": "RO 2018 5247",
+        "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+        "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+        "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      }
+    }
+  }
 }

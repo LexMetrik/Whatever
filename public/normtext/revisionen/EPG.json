@@ -1,44 +1,135 @@
 {
   "erlassKey": "EPG",
   "sr": "818.101",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101",
-      "sha": "058275dd5b2cbed20403c9bf9942ef678cce581ab06a28e165fc19ecd79fec1e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/421",
+      "dateDocument": "2023-09-29",
+      "roFundstelle": "AS 2025 421",
+      "titelDe": "Bundesgesetz über die Transplantation von Organen, Geweben und Zellen (Transplantationsgesetz)",
+      "titelFr": "Loi fédérale sur la transplantation d’organes, de tissus et de cellules (Loi sur la transplantation)",
+      "titelIt": "Legge federale sul trapianto di organi, tessuti e cellule (Legge sui trapianti)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/421/de",
+      "sha": "0fd3fb261698ff00d20a23aab42d2bf5280e86662ce1761b24e76da4a19a8f89"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101",
-      "sha": "65662aca3aa57d523a63e45c266b325a82aa775d2b8eae212b8d65194db6b296"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/817",
+      "dateDocument": "2022-12-16",
+      "roFundstelle": "AS 2022 817",
+      "titelDe": "Bundesgesetz über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (Covid-19-Gesetz)",
+      "titelFr": "Loi fédérale sur les bases légales des ordonnances du Conseil fédéral visant à surmonter l’épidémie de COVID-19 (Loi COVID-19)",
+      "titelIt": "Legge federale sulle basi legali delle ordinanze del Consiglio federale volte a far fronte all’epidemia di COVID-19 (Legge COVID-19)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2024-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/817/de",
+      "sha": "bd22784941759ca4fe1031db4fa8654465c650da6eff29ebc60b76512992b5be"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101",
-      "sha": "dd05775618b2a093e05a6b2a8f6c6b24ed1cc2175e2921317e2d6cf7211ce640"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101",
-      "sha": "60b95d296ec03868eed8cc12f71ad56f6eb27e861bffb02fce6375627bbad00f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/878",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2021 878",
+      "titelDe": "Bundesgesetz über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (Covid-19-Gesetz)",
+      "titelFr": "Loi fédérale sur les bases légales des ordonnances du Conseil fédéral visant à surmonter l’épidémie de COVID-19 (Loi COVID-19)",
+      "titelIt": "Legge federale sulle basi legali delle ordinanze del Consiglio federale volte a far fronte all’epidemia di COVID-19 (Legge COVID-19)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2021-12-18",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/878/de",
+      "sha": "41f1b7eb199f5c406dfb7a38c3521aeedb19d5094d6df7a091347199ba550d5d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/817",
+      "dateDocument": "2022-12-16",
+      "roFundstelle": "AS 2022 817",
+      "titelDe": "Bundesgesetz über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (Covid-19-Gesetz)",
+      "titelFr": "Loi fédérale sur les bases légales des ordonnances du Conseil fédéral visant à surmonter l’épidémie de COVID-19 (Loi COVID-19)",
+      "titelIt": "Legge federale sulle basi legali delle ordinanze del Consiglio federale volte a far fronte all’epidemia di COVID-19 (Legge COVID-19)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2024-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/817/de",
+      "sha": "cc9eda2739b09f1527fb7e6178240a2576916ab59a2c5b6e3fc31cbb5d6dcc9e"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2022-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101",
-      "sha": "7f6fa8fd57a16d7a8f36823a1caaeff58bc275eacce509db26f7b4fa47ee1638"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/437",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 2191",
+      "titelDe": "Bundesgesetz über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemiengesetz, EpG)",
+      "titelFr": "Loi fédérale sur la lutte contre les maladies transmissibles de l'homme (Loi sur les épidémies, LEp)",
+      "titelIt": "Legge federale sulla lotta contro le malattie trasmissibili dell'essere umano (Legge sulle epidemie, LEp)",
+      "botschaftKey": "BOTSCHAFT-2020-1024",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-06-25",
+        "2022-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/437/de",
+      "sha": "651bdf7ed1e90fcb7ea48f800b927c18ed47da0b91848ddae36c11c7221bf685"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-12-18",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101",
-      "sha": "73546e8980877fab9c4301869c454c114b147bf7441911b74656de9d4d366a70"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/878",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2021 878",
+      "titelDe": "Bundesgesetz über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (Covid-19-Gesetz)",
+      "titelFr": "Loi fédérale sur les bases légales des ordonnances du Conseil fédéral visant à surmonter l’épidémie de COVID-19 (Loi COVID-19)",
+      "titelIt": "Legge federale sulle basi legali delle ordinanze del Consiglio federale volte a far fronte all’epidemia di COVID-19 (Legge COVID-19)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2021-12-18",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/878/de",
+      "sha": "3eee17cb34b79827a154e3d53ac68ea036bc01dd7aafef1183e374c44ae798ff"
     },
     {
       "art": "aenderung",
@@ -50,8 +141,15 @@
       "titelFr": "Loi fédérale sur la lutte contre les maladies transmissibles de l'homme (Loi sur les épidémies, LEp)",
       "titelIt": "Legge federale sulla lotta contro le malattie trasmissibili dell'essere umano (Legge sulle epidemie, LEp)",
       "botschaftKey": "BOTSCHAFT-2020-1024",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-06-25",
+        "2022-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/437/de",
-      "sha": "bee9067b7d6d397144ad151577eb11c825260069780d0144281f716b1f5d84ea"
+      "sha": "2d578ca8b028af266600babb5922c26553f23f0c9ca2313903bf7b88b64a5188"
     },
     {
       "art": "aenderung",
@@ -62,78 +160,27 @@
       "titelDe": "Bundesgesetz über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemiengesetz, EpG)",
       "titelFr": "Loi fédérale sur la lutte contre les maladies transmissibles de l'homme (Loi sur les épidémies, LEp)",
       "titelIt": "Legge federale sulla lotta contro le malattie trasmissibili dell'essere umano (Legge sulle epidemie, LEp)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/492/de",
-      "sha": "8b9b8587dbec9c41e92f18db8a0caca6d271d32258118607f7766534b9864510"
+      "sha": "c132c441dd53dade35774298785699dd80f849ebbb155e35bfead90559356cd5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/818.101",
-      "sha": "3606466726792829cf5869cd5bb80fe7c01e49d6692fcdfd3827458c945fbddd"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2016-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/297",
-      "dateDocument": "2012-09-28",
-      "roFundstelle": "AS 2015 1435",
-      "titelDe": "Bundesgesetz über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemiengesetz, EpG)",
-      "titelFr": "Loi fédérale sur la lutte contre les maladies transmissibles de l'homme (Loi sur les épidémies, LEp)",
-      "titelIt": "Legge federale sulla lotta contro le malattie trasmissibili dell'essere umano (Legge sulle epidemie, LEp)",
-      "botschaftKey": "BOTSCHAFT-2011-43",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/297/de",
-      "sha": "63944586b7fffcf0f2dca60b29f8205d0c21d43b2874a53f108c975367a65021"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2013-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/890",
-      "dateDocument": "2012-12-14",
-      "roFundstelle": "AS 2012 7281",
-      "titelDe": "Epidemiengesetz (Versorgung der Bevölkerung mit Heilmitteln)",
-      "titelFr": "Loi sur les épidémies (Approvisionnement de la population en produits thérapeutiques)",
-      "titelIt": "Legge sulle epidemie (Approvvigionamento della popolazione con agenti terapeutici)",
-      "botschaftKey": "BOTSCHAFT-2012-1603",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/890/de",
-      "sha": "7a50fb56e141b4fd8bf24fd12d0e9f68bcd34ae0c6e5bfef42e0f335f41ccad6"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-10-07",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/608",
-      "dateDocument": "2006-10-06",
-      "roFundstelle": "AS 2006 4137",
-      "titelDe": "Epidemiengesetz (Versorgung der Bevölkerung mit Heilmitteln)",
-      "titelFr": "Loi sur les épidémies (Approvisionnement de la population en produits thérapeutiques)",
-      "titelIt": "Legge sulle epidemie (Approvvigionamento della popolazione con agenti terapeutici)",
-      "botschaftKey": "BOTSCHAFT-2006-666",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/608/de",
-      "sha": "1928e39ec8e728219f36065584749a9e88f9f2fe0e20f167ff6e50825b9287c2"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1974-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1974/1071_1071_1071",
-      "dateDocument": "1970-12-18",
-      "roFundstelle": "AS 1974 1071",
-      "titelDe": "Bundesgesetz vom 18. Dezember 1970 über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemiengesetz)",
-      "titelFr": "Loi fédérale du 18 décembre 1970 sur la lutte contre les maladies transmissibles de l'homme (Loi sur les épidémies)",
-      "titelIt": "Legge federale del 18 dicembre 1970 per la lotta contro le malattie trasmissibili dell'uomo (Legge sulle epidemie)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1974/1071_1071_1071/de",
-      "sha": "43d4d8e6322806a35bc8fc1630283a22f0e2a1271a6f3f0d6b37dae7f510be77"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1947-05-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/63/354_358_361",
-      "dateDocument": "1947-04-22",
-      "roFundstelle": "AS 63 354",
-      "titelDe": "Bundesratsbeschluss über die Anwendung des BG betreffend Massnahmen gegen gemeingefährliche Epidemien auf andere übertragbare Krankheiten",
-      "titelFr": "Arrêté du Conseil fédéral réglant l'application de la LF concernant les mesures à prendre contre les épidemies offrant un danger général à d'autres maladies transmissibles",
-      "titelIt": "Decreto del Consiglio federale che regola l'applicazione della LF sulle misure da prendersi contro le epidemie di pericolo generale ed altre malattie transmissibili",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/63/354_358_361/de",
-      "sha": "9dac784b1485ac7678b5d802f84fe4fc1c0f2774c9e5b2800adb8ad0448c87a5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     }
   ],
-  "sha": "41cff145c7841318850cd03607b43346b395e6a1101b05451397c1964d3328d1"
+  "sha": "f30e23f4ecaaf6663cefda81181b712be84d5ed0b76a358ff116c75a5afee902"
 }

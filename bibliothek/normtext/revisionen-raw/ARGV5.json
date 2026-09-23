@@ -403,5 +403,58 @@
     "2024-04-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2007/692",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2007/692",
+    "inkrafttreten": "2008-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/692",
+        "typ": 5,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/375",
+        "typ": 1,
+        "datum": "2014-08-01",
+        "fassung": "2014-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/275",
+        "typ": 1,
+        "datum": "2018-07-01",
+        "fassung": "2018-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/93",
+        "typ": 1,
+        "datum": "2024-04-01",
+        "fassung": "2024-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/93",
+        "typ": 2,
+        "datum": "2024-04-01",
+        "fassung": "2024-04-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2012/418": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 3631",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+        "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti"
+      }
+    }
+  }
 }

@@ -1,15 +1,26 @@
 {
   "erlassKey": "CO2_GESETZ",
   "sr": "641.71",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/393",
+      "dateDocument": "2026-03-20",
+      "roFundstelle": "AS 2026 393",
+      "titelDe": "Bundesgesetz über das Entlastungspaket 2027 für den Bundeshaushalt",
+      "titelFr": "Loi fédérale sur le programme d’allégement budgétaire 2027",
+      "titelIt": "Legge federale sul programma di sgravio 2027 delle finanze federali",
+      "botschaftKey": "BOTSCHAFT-2025-3067",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.71",
-      "sha": "d76015802061fe405ab7b6045c633a23d5cb4e3230fc46dd9305aabc2573c155"
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/393/de",
+      "sha": "2e71820553fe40f00cad343eb7f746e099bc251a21d0e74b06cb93571b0219dc"
     },
     {
       "art": "aenderung",
@@ -20,8 +31,27 @@
       "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
       "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
       "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/376/de",
-      "sha": "c65736d4abf0ac420641bd6bd2ff403e4ed34fa9c3e0334cdf9c2b3d2ac44ba2"
+      "sha": "34937ed0f61b3f2dfbb0e98422274264538520802ff54ea8fd24003414ead115"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+      "dateDocument": "2020-06-12",
+      "roFundstelle": "AS 2020 2743",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Ordonnance sur l'adaptation de lois à la suite de la modification de la désignation de l'Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Ordinanza sull'adeguamento di leggi in seguito al cambiamento della designazione dell'Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/498/de",
+      "sha": "624c9747c49a2b2de0386a2d0d50f3939887b89f337dadf4828f42762c9888d5"
     },
     {
       "art": "aenderung",
@@ -32,14 +62,26 @@
       "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
       "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
       "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/262/de",
-      "sha": "f9696f2dad800d26cff45cefd108557ecb513ea834a10754bf176a5cb84e9db5"
+      "sha": "e60bb116c01e413cd5bf6e779e67bb30eb3184f064b3e63b8f8b58ff25b3e9fc"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.71",
-      "sha": "db86b455a3f25cbe6a9525bfe16482f065ecaca90738f5a2be8d68ff1e30e43a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/243",
+      "dateDocument": "2019-12-20",
+      "roFundstelle": "AS 2020 1269",
+      "titelDe": "Bundesgesetz über die Verlängerung der Befristung der Steuererleichterungen für Erdgas, Flüssiggas und biogene Treibstoffe und über die Änderung des Bundesgesetzes über die Reduktion der CO2-Emissionen",
+      "titelFr": "Loi fédérale sur la reconduction des allégements fiscaux accordés pour le gaz naturel, le gaz liquide et les biocarburants et sur la modification de la loi sur le CO2",
+      "titelIt": "Legge federale che proroga i termini delle agevolazioni fiscali per il gas naturale, il gas liquido e i biocarburanti e che modifica la legge sul CO2",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/243/de",
+      "sha": "d973d346033366bee4746a09087b02d7d953a91189f6f35d64c7391949b629f6"
     },
     {
       "art": "aenderung",
@@ -51,78 +93,44 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre (modification de la loi sur le CO2) de l'Accord conclu entre la Suisse et l'Union européenne sur le couplage de leurs systèmes d'échange de quotas d'émission",
       "titelIt": "Decreto federale che approva l'Accordo tra la Svizzera e l'Unione europea sul collegamento dei rispettivi sistemi di scambio di quote di emissioni di gas a effetto serra e lo traspone nel diritto svizzero (modifica della legge sul COsub>2)",
       "botschaftKey": "BOTSCHAFT-2018-109",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/752/de",
-      "sha": "b94eb4cbb7f3a8f636119ad9f142b614d1188c1a7c8ad1b017607d63e4b8cbf4"
+      "sha": "da07ee8f5fa97a52c308b166f0ae040d063c7b163629dba65f1bd4744cd0961f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/641.71",
-      "sha": "5e0b348afcca05f47090966ff815480aaea781a1e552b713c19dadebddd85b9d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/761",
+      "dateDocument": "2016-09-30",
+      "roFundstelle": "AS 2017 6825",
+      "titelDe": "Bundesgesetz über den Fonds für die Nationalstrassen und den Agglomerationsverkehr (NAFG)",
+      "titelFr": "Loi fédérale sur le fonds pour les routes nationales et pour le trafic d'agglomération (LFORTA)",
+      "titelIt": "Legge federale concernente il Fondo per le strade nazionali e il traffico d'agglomerato (LFOSTRA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/761/de",
+      "sha": "9ac09f020326a7f2474f42404944bec12a328588e412cca5e6084eef287c48a5"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2013-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/855",
-      "dateDocument": "2011-12-23",
-      "roFundstelle": "AS 2012 6989",
-      "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
-      "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
-      "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)",
-      "botschaftKey": "BOTSCHAFT-2009-1323",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/855/de",
-      "sha": "26926b42cd2171bd3d7751894a3bfe2792a1b3916e3ab225dd8ce842c37182c2"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2012-05-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/23",
-      "dateDocument": "2011-03-18",
-      "roFundstelle": "AS 2012 351",
-      "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
-      "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
-      "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)",
-      "botschaftKey": "BOTSCHAFT-2010-181",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/23/de",
-      "sha": "55a3a0dc3c2bd4fc659ba2547d738a4e21ee0525b75373b385b3c36ddbe5ccbd"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2011-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/5",
-      "dateDocument": "2010-06-18",
-      "roFundstelle": "AS 2011 13",
-      "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
-      "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
-      "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)",
-      "botschaftKey": "BOTSCHAFT-2008-1554",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/5/de",
-      "sha": "30079919a1280442b45f60e256f03757b81d2455d6c307de19dcff1b82001bdb"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2010-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/152",
-      "dateDocument": "2009-06-12",
-      "roFundstelle": "AS 2010 951",
-      "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz) (Anreize für energetisch wirksame Massnahmen im Gebäudebereich)",
-      "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2) (Mesures incitatives visant à encourager les économies d'énergie dans le bâtiment)",
-      "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2) (Incentivi per l'adozione di misure di efficienza energetica negli edifici)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/152/de",
-      "sha": "10dc5817323bd1f0bd0740683a1d93509371431b3002938e5ef5c1494c639b31"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2000-05-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/148",
-      "dateDocument": "1999-10-08",
-      "roFundstelle": "AS 2000 979",
-      "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
-      "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
-      "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/148/de",
-      "sha": "5410b6f79807cca46fea26c7c436c4d3964057e1cfa64e49dc95d91e6169bac0"
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/762",
+      "dateDocument": "2016-09-30",
+      "roFundstelle": "AS 2017 6839",
+      "titelDe": "Energiegesetz (EnG)",
+      "titelFr": "Loi sur l'énergie (LEne)",
+      "titelIt": "Legge federale sull'energia (LEne)",
+      "botschaftKey": "BOTSCHAFT-2013-1476",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/762/de",
+      "sha": "f21a467146f8fb3f00beafa6be5007ae61849c7405c2503e25a73408f0325114"
     }
   ],
-  "sha": "df0bd26af54d018b445d5498d0ce6e4d7c6b8f6f3d96f794bf52f9c3202a2eaa"
+  "sha": "c9a5b9d605a214386a2a0d67fbdbfd390603e2912b25029691d5cdc72ece4edf"
 }

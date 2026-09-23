@@ -1,22 +1,49 @@
 {
   "erlassKey": "VTS",
   "sr": "741.41",
-  "abgerufen": "2026-09-14",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2031-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/14",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2022 14",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "2d518667d63cc31e3400ecc607806f91907355fa2e9db9ad226066cda02a254b"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-04-01",
+        "2024-04-01",
+        "2031-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/14/de",
+      "sha": "2aa8e66977efbf5430a436a098a794f72c473abce261cecf8bff88dcf4efa51f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2028-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/454",
+      "dateDocument": "2026-08-19",
+      "roFundstelle": "AS 2026 454",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "2a0144392216e1ce42edf4a4338fec81339b84cf3e8ec2bbb81d331233cac585"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-10-01",
+        "2028-02-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/454/de",
+      "sha": "f259072a206b74e90635dea6aa393e8bc030df5c26c29058133127f9948fc7a5"
     },
     {
       "art": "aenderung",
@@ -28,14 +55,30 @@
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-10-01",
+        "2028-02-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/454/de",
-      "sha": "929852b156738530353173d0e7311bb231eba94488ff79ffa16e8404a556aae9"
+      "sha": "0e21dd9cacef634506f0eedfeddb42ec3e5f67563d3d4c7a0d5744d3fe074ecb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "9ce81f9bb784a9c0078baabb729be55c01841e1c590adec359105e38159d0ed3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/226",
+      "dateDocument": "2026-05-06",
+      "roFundstelle": "AS 2026 226",
+      "titelDe": "Verkehrsregelnverordnung (VRV)",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/226/de",
+      "sha": "75858c993b85f5f90ec5dedacd52d9036ee8bb26470a34b211859b2e2f344185"
     },
     {
       "art": "aenderung",
@@ -46,8 +89,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS). Berichtigung",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV). Erratum",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/181/de",
-      "sha": "f5e3b715d23a997327694cdf85dfb4c95ae8112295c380ae264fb4116f07fa21"
+      "sha": "21bd66ca3e785414af8e780ce66b76636981a42d07c92e7c43fcda2b0a60efe9"
     },
     {
       "art": "aenderung",
@@ -58,8 +104,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/646/de",
-      "sha": "990c89fd222c26203846c0e3ed2a7f94515b63a39070eb68b99482d95fa807b0"
+      "sha": "6622e7ee87833d690a955fb717ba1dfbf645fa11404b6a22373d887a6c381cc0"
     },
     {
       "art": "aenderung",
@@ -70,8 +119,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/665/de",
-      "sha": "c494ab75c18652cbb23c7430687d0d350b2a99d1bbc9aa773540c37c70fdffc4"
+      "sha": "95d0091f73dca25b9144fa05356f55127595df0b8e8cc4a844af59a08e951ce0"
     },
     {
       "art": "aenderung",
@@ -82,8 +134,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/691/de",
-      "sha": "4755f4e4f328fd2fa99a562336b8ae523be07206e8eeee0a4204d3bc6c24151e"
+      "sha": "60ec908da1ba62fe1982bb2e3d34ce5e5a4438e64558c6ab94655e9e2b95eece"
     },
     {
       "art": "aenderung",
@@ -94,8 +149,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/28/de",
-      "sha": "96e78858a988e38c718092a69b57b57ce21247a0c08f1e26674a80886f4c1329"
+      "sha": "5369fddabac430aeb2828d4056ce2c87a365dd666bf8ca5a6f1922a6fb7c7af9"
     },
     {
       "art": "aenderung",
@@ -106,20 +164,41 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/70/de",
-      "sha": "8e9b9e76e7917f0611c12ca1a8fed69c4ac7096fc562651e803d0063148dfe4b"
+      "sha": "9554c0131e3673314b08e82d72d8525fe9c667d8f4f21606676bb8e471e6211f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "198a5cd50758ce6fa3288c08f894659524a5555b755281b52b515abd3e1becf8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/549",
+      "dateDocument": "2024-09-20",
+      "roFundstelle": "AS 2024 549",
+      "titelDe": "Verordnung vom 20. September 2024 über die Kompetenzen des UVEK und des ASTRA im Zusammenhang mit der Änderung von völkerrechtlichen Verträgen im Strassenverkehrsrecht (VKVöV)",
+      "titelFr": "Ordonnance du 20 septembre 2024 sur les compétences déléguées au DETEC et à l’OFROU d’amender des traités internationaux en matière de droit de la circulation routière (OCTrI)",
+      "titelIt": "Ordinanza del 20 settembre 2024 sulle competenze del DATEC e dell’USTRA relative alla modifica di trattati internazionali in materia di diritto della circolazione stradale (OCTrIn)",
+      "wirkungen": [
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/549/de",
+      "sha": "39329109c7cfa296ba3bef87409c39ea219eb273688c3b24a39cf4999913125a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "3f9a4c07bd13605a687fa6703906e3df3b66727210698eef4f175c53611d82c3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/50",
+      "dateDocument": "2024-12-13",
+      "roFundstelle": "AS 2025 50",
+      "titelDe": "Verordnung vom 13. Dezember 2024 über das automatisierte Fahren (VAF)",
+      "titelFr": "Ordonnance du 13 décembre 2024 sur la conduite automatisée (OCA)",
+      "titelIt": "Ordinanza del 13 dicembre 2024 sulla guida automatizzata (OGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/50/de",
+      "sha": "ab2ba9a2ab9f2e9f58187dc078cc51777d9c9c1f613c3eaa88a2ead9bd3bb58b"
     },
     {
       "art": "aenderung",
@@ -130,20 +209,26 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/608/de",
-      "sha": "97f462d984f9a80ba67beef29428b5f526ba5731635dbe558aca81182aacde55"
+      "sha": "bd49e3503d72f6f6942cdb5589b9c3aa1f64d6b09ca3cb553a21f0829435c366"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2024-11-15",
+      "dateEntryInForce": "2025-01-01",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/645",
       "dateDocument": "2024-11-15",
       "roFundstelle": "AS 2024 645",
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/645/de",
-      "sha": "69212167b074c3e5d3e20b61886cfdfbf38db239c62565f57fb81ced0af3c14d"
+      "sha": "ba2acf241b98d1ee11daf844dee34e9a78cf1e97c0fa0af5958930f69618fbb3"
     },
     {
       "art": "aenderung",
@@ -154,8 +239,31 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/403/de",
-      "sha": "25a8fa5cf6802f3b98c607e85d87c0f49e6605fb9894893556984bf3be9aa61e"
+      "sha": "0c76c6491970dccf70b32f8ac623f053d62221b83af4087cf1f833f96c1116f0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/14",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2022 14",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-04-01",
+        "2024-04-01",
+        "2031-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/14/de",
+      "sha": "1d9b25596181c91afd46b5c24aa26b69583d47f15812dc2d34d9738945972920"
     },
     {
       "art": "aenderung",
@@ -166,8 +274,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/30/de",
-      "sha": "f103b6bf206dac83eb49887718e0e56a1087493fc7d1f8c6b1903dacd9045dfc"
+      "sha": "e7d1fa03d0935e61ec2de1745fe8b66c4c31eca424f010b454b647ecbc109eb0"
     },
     {
       "art": "aenderung",
@@ -178,14 +289,26 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/327/de",
-      "sha": "2c2d2d5be068f1e8ab58dfbe2c3271bfa42e7620593478a213fbb500cf8830b3"
+      "sha": "3571eb3f946186a76c49a166c3a03963889a9119a2116d98f4f144fd6db878bd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "bd95099cbb73314455595c588ad9e68b77eed9f92a427e071c8d7536fcca043e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/311",
+      "dateDocument": "2022-05-04",
+      "roFundstelle": "AS 2022 311",
+      "titelDe": "Verordnung über die Reduktion der CO2-Emissionen (CO2-Verordnung)",
+      "titelFr": "Ordonnance sur la réduction des émissions de CO2 (Ordonnance sur le CO2)",
+      "titelIt": "Ordinanza sulla riduzione delle emissioni di CO2 (Ordinanza sul CO2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/311/de",
+      "sha": "2eb5b5950476eee8d8a82d45e733ad3199a8699218ea2e321906560973f8ddfe"
     },
     {
       "art": "aenderung",
@@ -196,20 +319,50 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-04-01",
+        "2024-04-01",
+        "2031-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/14/de",
-      "sha": "c5df6ee937a29f26c00cdb4917e426e4156b1eb4281ead0280ae8e408674ae3d"
+      "sha": "932597ac1dae39c23c0f21f4a7ec6bf805cb3a1ecea3319d8ec421d7e7e39bf8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "49aff60cde2dd176d0fa93669f6ecc8772a6d8467c586be5d5caf623ea87e2fc"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "49f4f0627f306fa03a05f72db2b4e6ed7330f3293341d4ec93cbb2e43ac91e37"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/44",
+      "dateDocument": "2018-11-21",
+      "roFundstelle": "AS 2019 253",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-02-01",
+        "2019-05-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/44/de",
+      "sha": "6d8949a747a4ae613572408d2cef2b2211a2836edcc5a200cb64a0cb6ddc4490"
     },
     {
       "art": "aenderung",
@@ -220,8 +373,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/119/de",
-      "sha": "64567deca187a2086638586e9949e0d5bff70a4df3e566e64c8ac1f56b5783d4"
+      "sha": "c5ec9d532134f2a585e829d91cc1c1d7ec99fe7ecba5231c832f0d1281b35b6e"
     },
     {
       "art": "aenderung",
@@ -232,8 +388,16 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2019-02-01",
+        "2019-05-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/44/de",
-      "sha": "1d4d2b5b8d1800512af1df59e81a798637c6f424cc900c93dc1f0e5a70c186ff"
+      "sha": "12a1397b28794f734d3d726eff6e3f907970688b6486440045527cece9028049"
     },
     {
       "art": "aenderung",
@@ -244,14 +408,30 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/389/de",
-      "sha": "f8c58efbc5c0565b834d359af2d4f91b3dfec668d840341654d43ce0714c9817"
+      "sha": "663eecbd9fc33fe3817e98fcfbe5c02aa2c9b6ae4898de5e818a2bccec8db023"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "a28033afec39c982c8b617caed9572bf0e0a4314abebaf7e05def1b16b6d2b8f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/819",
+      "dateDocument": "2016-11-16",
+      "roFundstelle": "AS 2016 5133",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2017-01-15",
+        "2017-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/819/de",
+      "sha": "d282b3ab67576c007578220536c1233e51454ceea11fc48b47ebcd687ea86105"
     },
     {
       "art": "aenderung",
@@ -262,26 +442,60 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/263/de",
-      "sha": "3ccbfd74935f43f463e3d7a83bc782b9e650ef7e1b9b6bbb2653e111420c9676"
+      "sha": "17c0f1916e26886645422b879457245205a2fbb13cb8d46ef920560649109b95"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-04-04",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "090e56a000afa35d5b5eed12900951c4dc2ca1de6b556a1f7f238720cd376987"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/214",
+      "dateDocument": "2017-04-04",
+      "roFundstelle": "AS 2017 2291",
+      "titelDe": "Verordnung über die Verhütung von Unfällen und Berufskrankheiten (Verordnung über die Unfallverhütung, VUV) (Betrifft nur den italienischen Text)",
+      "titelFr": "Ordonnance sur la prévention des accidents et des maladies professionnelles (Ordonnance sur la prévention des accidents, OPA) (Ne concerne que le texte italien)",
+      "titelIt": "Ordinanza sulla prevenzione degli infortuni e delle malattie professionali (Ordinanza sulla prevenzione degli infortuni, OPI)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/214/de",
+      "sha": "8e57c0c06c09a1206dfc31a627dcdc16b323130344283585a875a78b6f3bba63"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "34dce47586378b15d2ebc07959e5fd04476bb1dfb2d0f6ee50b8a11a8c8abc62"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/170",
+      "dateDocument": "2017-02-22",
+      "roFundstelle": "AS 2017 1657",
+      "titelDe": "Verordnung über die Verhütung von Unfällen und Berufskrankheiten (Verordnung über die Unfallverhütung, VUV)",
+      "titelFr": "Ordonnance sur la prévention des accidents et des maladies professionnelles (Ordonnance sur la prévention des accidents, OPA)",
+      "titelIt": "Ordinanza sulla prevenzione degli infortuni e delle malattie professionali (Ordinanza sulla prevenzione degli infortuni, OPI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/170/de",
+      "sha": "e7d1cde1fff7e6a4ca05a3c5a04f5ffe8e474a794520a51c4a791803bff6cc2a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "53905339e538e03ef4001e1038dd548e95b123b777d8b0e54f4511970aa22a70"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/67",
+      "dateDocument": "2015-01-21",
+      "roFundstelle": "AS 2015 465",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-04-01",
+        "2017-02-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/67/de",
+      "sha": "9248e317e52756cfe826fa425c73787bf4c9ce7177e41817151be9d5d7525f83"
     },
     {
       "art": "aenderung",
@@ -292,8 +506,16 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2017-01-15",
+        "2017-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/819/de",
-      "sha": "a008a1c0d84e3664b39ec6a53f388f28673e588c993eb23ce9cae3f2f2584024"
+      "sha": "4764df4df2766a76edd94d586b7c0ed8c024c4069e845e9420ce7277151400fc"
     },
     {
       "art": "aenderung",
@@ -304,8 +526,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/462/de",
-      "sha": "1b75b785fd1ee3313f02077e9eabf2de0ab7449558c3441d1c9ed74eb11af557"
+      "sha": "bd37c960c7a031393f5cd8e43e3ed25a18295c0f7bb69116c7e70251c20ee4de"
     },
     {
       "art": "aenderung",
@@ -316,8 +541,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/277/de",
-      "sha": "f22a044057acacab84b7222180a8a8770fac5f0d508848d466145e8a99dfbda2"
+      "sha": "1688c174edf98ee556dd695a45ccce16d764077dc1523336124975471edba130"
     },
     {
       "art": "aenderung",
@@ -328,8 +556,15 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-04-01",
+        "2017-02-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/67/de",
-      "sha": "8b0aa7d842b0b534aac73b14abc8c8aa12fa4e007921009a997226644e6775c2"
+      "sha": "a047d2df17de5ea7aa94d88d988a0ff6357f5b6cfeb9ad9eb9871b625429155f"
     },
     {
       "art": "aenderung",
@@ -340,8 +575,26 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/827/de",
-      "sha": "28a9e9114a98cfa29bf7a3e55a589ecd964f4d32fa4132a62237b49cb3ef4841"
+      "sha": "fbd09252d9be554ddef8234928c8811707e4f012892587a95dbe3dd27000ad21"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/857",
+      "dateDocument": "2012-12-07",
+      "roFundstelle": "AS 2012 7065",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen an die neuen gesetzlichen Grundlagen im Messwesen",
+      "titelFr": "Ordonnance relative à l'adaptation d'ordonnances aux nouvelles bases légales en métrologie",
+      "titelIt": "Ordinanza che adegua ordinanze alle nuove basi legali in materia di metrologia",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/857/de",
+      "sha": "a033fb13a33d2fe7309dfba61e05373c5e2af23330a8bf5e8aa3ca01f026593e"
     },
     {
       "art": "aenderung",
@@ -352,8 +605,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/860/de",
-      "sha": "d53fd5829d9287e3c7e4f75d0d87e1078538e29826db4f1b8e05cce98b19dfb6"
+      "sha": "189447523d5ca6955e350ac7367cb07fc97312f4172fd1925ca7d3dc4eaa875d"
     },
     {
       "art": "aenderung",
@@ -364,8 +620,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/261/de",
-      "sha": "5043fc85cf8efe73577b1a598e603630131ba1002093e5042f6bc2182e5cd4e0"
+      "sha": "15cccd4e4007b971f68f4f8f8090183bbc300c5d65e6fab15abd248352acf9af"
     },
     {
       "art": "aenderung",
@@ -376,8 +635,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/714/de",
-      "sha": "05e28c73dd0edf34fc6e9589e82b60dd39eb33922bb1413ba3a3bdd3abe15b5b"
+      "sha": "57bda2c4bf6a0e9ef4eec364bb1c37d512059561ad5a004c5e2933ef37d12b6a"
     },
     {
       "art": "aenderung",
@@ -388,8 +650,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/432/de",
-      "sha": "9d558fa67bf789586197831b1336583afa81c5bbbc409cd4ebd57cdeda41e7f1"
+      "sha": "c52f9dafdec778e9fae31f64e289798acbc69eee1e40f1b7faa6e50e69ca1bc8"
     },
     {
       "art": "aenderung",
@@ -400,14 +665,26 @@
       "titelDe": "Verordnung über die Änderung von Bestimmungen über Messmittel für die Schallmessung",
       "titelFr": "Ordonnance portant modification de certaines dispositions concernant les instruments de mesure des émissions sonores",
       "titelIt": "Ordinanza concernente la modifica di determinate disposizioni riguardanti gli strumenti di misurazione delle immissioni sonore",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/635/de",
-      "sha": "21924685a8e8f255fc26d5e830d25f4c6d56ca741b2f5261516ae140f811db78"
+      "sha": "a34a11adb7bf8e8600397aa4852b3067e703f5f245e11669b56b820ae913e508"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "3870a235af42570e17035f177b558e84037b92c53bc09c0ace59bd0055efc896"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/358",
+      "dateDocument": "2010-06-11",
+      "roFundstelle": "AS 2010 2749",
+      "titelDe": "Verordnung zur Bereinigung des sektoriellen Verordnungsrechts im Bereich Produktesicherheit",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances sectorielles dans le domaine de la sécurité des produits",
+      "titelIt": "Ordinanza che adegua le ordinanze settoriali in materia di sicurezza dei prodotti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/358/de",
+      "sha": "0abbc928d31e400a8e32154394b7cee1984c7bc1a4867e323fb3245d6eb2dff5"
     },
     {
       "art": "aenderung",
@@ -418,8 +695,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/696/de",
-      "sha": "775b7081b58c14a109d40aafe55c95cfcc7f86e26f2a5e6d1e0cff475f41b51f"
+      "sha": "99051267d9366307459fd83bbdb751c28a621ba965b81a773bf8a4d6e17b16b1"
     },
     {
       "art": "aenderung",
@@ -430,8 +710,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV) (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/137/de",
-      "sha": "caf3acb85ac2081af93ecc740db61821507a098ba570672099cbd8ad7d8127d9"
+      "sha": "94223dae4f10698fdc501f767032857c01ab9e25044f126142ba506d019d9182"
     },
     {
       "art": "aenderung",
@@ -442,8 +725,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/768/de",
-      "sha": "2f31cb1213ae6dbfd40a4e1488518a56a2eb0038d143ad5ea174f623be4ae9cb"
+      "sha": "794e24574d1e0d989755c3e3ef15054c2dd23abbd5fa96f03c5c5874aaacf63d"
     },
     {
       "art": "aenderung",
@@ -454,8 +740,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/95/de",
-      "sha": "20637d7db4825a9550bc9a436377e774ae51a1e236cbcd26fd30bb4f78a22a3e"
+      "sha": "de204f38c2300778e6c72874a59e4fbef9f85a19b50c954dbe2b8edb3652f220"
     },
     {
       "art": "aenderung",
@@ -466,14 +755,27 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/300/de",
-      "sha": "7a7060b7d724147eb813637d3b4fb5a87d1586228fc5efadfd66fa0c6e864d23"
+      "sha": "ab39cda9fd7b5138abc1d400ae53c7c5b62474d6b5c2768d47f2a2e33215ac41"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "cf0ee95e802b68ad921c22a535e41eacb7e76dc21b38e822940934faed75e04c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/250",
+      "dateDocument": "2006-11-01",
+      "roFundstelle": "AS 2007 1469",
+      "titelDe": "Zollverordnung (ZV)",
+      "titelFr": "Ordonnance sur les douanes (OD)",
+      "titelIt": "Ordinanza sulle dogane (OD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/250/de",
+      "sha": "d2113a1186c90ab946018f502f4631d6cd830fbc87fa71a4ab6896829104ecfa"
     },
     {
       "art": "aenderung",
@@ -484,8 +786,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/22/de",
-      "sha": "2e08b194053a1922624624775244aa865dccdb9214f3240f093cea4bb481d400"
+      "sha": "99fa6ae817d2e99b6572e8968e18edadfd517f6eeaa876228cca624517b66772"
     },
     {
       "art": "aenderung",
@@ -496,8 +801,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/262/de",
-      "sha": "4c5bd3f8fedc2a9eb86939ee29ccf17e39300f9046ee6c6a4014ecf6088e7ee5"
+      "sha": "70462a5946d7023795a008cec73a9d59ae0fe55b973486afa9398aed9e8a9f2a"
     },
     {
       "art": "aenderung",
@@ -508,8 +816,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/540/de",
-      "sha": "f52d8363383150e2e190bbe7500d1e019bc83a2c88856c44e21803d8c9b8d798"
+      "sha": "d9894788d9201f00dd9162e250a404cdcf0c994c1d101e70be15d06c7ba407c8"
     },
     {
       "art": "aenderung",
@@ -520,8 +831,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/583/de",
-      "sha": "44fe8527ca2cbf047be9376f89997d32878417791aa000c297e170a082ed4d38"
+      "sha": "8ac2313e1f15ca28d0210276bc17db5530fd0bcd7dd7d081c8a126c4e9198596"
     },
     {
       "art": "aenderung",
@@ -532,14 +846,27 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/545/de",
-      "sha": "faec25ccfd49e2e3f8d0d908be892f2f67a30a0e6171ad8a0f81e5167154566a"
+      "sha": "a65d1b3ddd60c73e618ee7979efdb1919f4e1c70d96ebe98c44d4b6666bdafaf"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "74188ecb216680ef4a6ed936dcd1c93a3b33f42378ed3b7c61e6c95fa4ebb3a4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/163",
+      "dateDocument": "2005-02-23",
+      "roFundstelle": "AS 2005 1167",
+      "titelDe": "Verordnung über die Fahrzeuge des Bundes und ihre Führer und Führerinnen (VFBF)",
+      "titelFr": "Ordonnance concernant les véhicules automobiles de la Confédération et leurs conducteurs (OVCC)",
+      "titelIt": "Ordinanza concernente i veicoli della Confederazione e i loro conducenti (OVCC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/163/de",
+      "sha": "4c306ab66afe6ee6431cd62ad1741c5c1cf5330382c8c0b7881627c890a55af2"
     },
     {
       "art": "aenderung",
@@ -550,8 +877,30 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/473/de",
-      "sha": "a437a0512ab6abb18cd48c5a4b5eb53611b20374c6a0ae0ff7b5593548dbf98b"
+      "sha": "efc23d5a68e16c8636b8ee9c588b0bebdbaa9dcfbb4074505d1614313649f40f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2004-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/195",
+      "dateDocument": "2001-06-15",
+      "roFundstelle": "AS 2002 1181",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2002-06-01",
+        "2004-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/195/de",
+      "sha": "d22cd97fce0958dbfd1b6eca1a3af2efb006bf570e2248b871a955358d21cf11"
     },
     {
       "art": "aenderung",
@@ -562,8 +911,11 @@
       "titelDe": "Verordnung vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge (VTS) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance du 19 juin 1995 concernant les exigences techniques requises pour les véhicules routiers (OETV) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza del 19 giugno 1995 concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/71/de",
-      "sha": "986c167d069b696bec2f3c1226ee19a0801e416f54794f34cc4777639931a656"
+      "sha": "1ae659b6553912e0649fea64623f07b046ae0634e44e55c4fa31db3f5c274f71"
     },
     {
       "art": "aenderung",
@@ -574,8 +926,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/58/de",
-      "sha": "b9c42ce05780196f77d72117d813cf304344a9183cfb7b992b391deaa87c72bc"
+      "sha": "6539c78d6ddc8d2d9fc9477eeeb171c37b420b75e3bb8a54054b5ff9ff2b9961"
     },
     {
       "art": "aenderung",
@@ -586,8 +941,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/271/de",
-      "sha": "72a55d4c56ea52f5f1d216edf91a072bec67a94319607c4744ac2ee34a3b939f"
+      "sha": "c5f83119966f3b05ca01fc1ddeb33abd776fdb624f795458ffb28e2238a5e5fe"
     },
     {
       "art": "aenderung",
@@ -598,8 +956,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/484/de",
-      "sha": "b4f8766a06ddcf468cade79341bb650329c45f788e954352777f16c7cebb25e4"
+      "sha": "6061fd89f054b4964faadb99ea6b595bf45641be0806fc3a8a66b7466ba7e9a8"
     },
     {
       "art": "aenderung",
@@ -610,8 +971,30 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2002-10-01",
+        "2003-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/485/de",
-      "sha": "3dcb30c19a005ec01b107503a8ef7dceab2d6c8ab589cecd2d4de688673c15c6"
+      "sha": "6b8446b91c7cbe4a01a125f41fc1fc95606e480e430eb1cb71bf20dd33bfad94"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2003-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/685",
+      "dateDocument": "2002-11-29",
+      "roFundstelle": "AS 2002 4212",
+      "titelDe": "Verordnung über die Beförderung gefährlicher Güter auf der Strasse (SDR)",
+      "titelFr": "Ordonnance relative au transport des marchandises dangereuses par route (SDR)",
+      "titelIt": "Ordinanza concernente il trasporto di merci pericolose su strada (SDR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/685/de",
+      "sha": "e857d383378238ef3c264e75190bb91853dd6997d8ca7e15cdb59df664c7bc1f"
     },
     {
       "art": "aenderung",
@@ -622,14 +1005,45 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/535/de",
-      "sha": "0d24144fa62f48669a5a117c927119622fcc530fa195f15d51f893d5f9c5f45d"
+      "sha": "ffa6275e191167def5ae75dc00f7597c0e324419736def429dc91a43d10ec88c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.41",
-      "sha": "6a8a239fc2c661b092256dfd2c436b3ffe1b178f2dacfaef732c3f712efcc2cb"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/435",
+      "dateDocument": "2002-09-04",
+      "roFundstelle": "AS 2002 3005",
+      "titelDe": "Energieverordnung (EnV)",
+      "titelFr": "Ordonnance sur l'énergie (OEne)",
+      "titelIt": "Ordinanza sull'energia (OEn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/435/de",
+      "sha": "ad0a2124a4bf40eb31b931afe61c0ac81954464881043dd7ba7f1182ed2417a0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/485",
+      "dateDocument": "2002-08-21",
+      "roFundstelle": "AS 2002 3218",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2002-10-01",
+        "2003-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/485/de",
+      "sha": "e3d951218976a2e3baf76c13871f3999475a5edd9e696e603d5c4a457045d0c2"
     },
     {
       "art": "aenderung",
@@ -640,8 +1054,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/471/de",
-      "sha": "62899a49f852943c349c46810325ef1a631d85329c031c8baa3dccd6a047c374"
+      "sha": "46982f3fd99ddae2a16d0bcc55ccac56a69ae9fdd1bfb3b33eeca6c385e80888"
     },
     {
       "art": "aenderung",
@@ -652,8 +1069,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/290/de",
-      "sha": "90ccd781156645092eae1c73f9be50d3f18fb9047807d4f98f17190bf3b3f605"
+      "sha": "37c6ab973adcd7e129a85e499ae23284685cbde4f4babf1a068479e0f25f0e65"
     },
     {
       "art": "aenderung",
@@ -664,8 +1084,15 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2002-06-01",
+        "2004-06-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/195/de",
-      "sha": "c144b39c36974981e12f0418c74621c55f8699d3775aa4f8ed2f40f721c76848"
+      "sha": "015042aae8ea00ff00273ecad65a2325ad561c9e76f9e7f3c67dd211ade31e09"
     },
     {
       "art": "aenderung",
@@ -676,8 +1103,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/501/de",
-      "sha": "ee32262b01df9890d5df434199e36b5562c441118cdb1b97e309e43058bf3ac8"
+      "sha": "bf29ae6a9847014f60c9144e8163902d13006f7da5dc4eea7c093b05d4ccf60c"
     },
     {
       "art": "aenderung",
@@ -688,8 +1118,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers(OETV)",
       "titelIt": "Ordinanza concernente le esigenze technice per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/389/de",
-      "sha": "3b3a5a3b35c6f087f0c3e0227d35fd92d673a541d1e37a1edc5bdc5f7f1b7930"
+      "sha": "fa179fa11dbac472f159066e4d145c86cbd9059a0f905b97f592ab57e7bf6763"
     },
     {
       "art": "aenderung",
@@ -700,8 +1133,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/362/de",
-      "sha": "8650d8333b03a38ce3a1ca7e8d3ee4edea48000b57eb1bc12eb63d95780c0d17"
+      "sha": "eddd01ca54f8bc3bce17bab5fab19074a040f7c857f3f0831d13fd4b9775448d"
     },
     {
       "art": "aenderung",
@@ -712,8 +1148,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/161/de",
-      "sha": "b754f6c101486560a28f21d7ed9391ff1d93ff5d1bf6641e1845581b40e4ff6f"
+      "sha": "643164f5879bec76bedad6a144d4eecde33d058ef27c9a98c52475ede057fb8c"
     },
     {
       "art": "aenderung",
@@ -724,8 +1163,11 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/384/de",
-      "sha": "d0e3755c082edc976d724ec09f39317fb090cd0ac2760be30a77ef0d14462a11"
+      "sha": "01e8a9ec6ea6c25b39c385235f6a5c605619d05f073c65acc9e3b80340c63a23"
     },
     {
       "art": "aenderung",
@@ -736,33 +1178,87 @@
       "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
       "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
       "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2352_2352_2352/de",
-      "sha": "f2dd7f1424c9b4a30b093a90644b779ea35aecb2714eb54de77972809483d8b0"
+      "sha": "9b3b870aaa325ba5e81672128f3a226e6e3fafdada029bc673093d10f89b5d15"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1995-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/4425_4425_4425",
-      "dateDocument": "1995-06-19",
-      "roFundstelle": "AS 1995 4425",
-      "titelDe": "Verordnung vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
-      "titelFr": "Ordonnance du 19 juin 1995 concernant les exigences techniques requises pour les véhicules routiers (OETV)",
-      "titelIt": "Ordinanza del 19 giugno 1995 concernente le esigenze tecniche per i veicoli stradali (OETV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/4425_4425_4425/de",
-      "sha": "8d72831d61c89fdec4690ee0da28270b27a982b5fe2ef2e45928acc65b69241d"
+      "dateEntryInForce": "1998-05-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1465_1465_1465",
+      "dateDocument": "1998-05-06",
+      "roFundstelle": "AS 1998 1465",
+      "titelDe": "Verkehrsregelnverordnung (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1465_1465_1465/de",
+      "sha": "c1d23dda6e5c3057881039f0ff42e01ffb7780c22f46a811fdb221800a73bcce"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1969-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1969/821_841_839",
-      "dateDocument": "1969-08-27",
-      "roFundstelle": "AS 1969 821",
-      "titelDe": "Verordnung vom 27. August 1969 über Bau und Ausrüstung der Strassenfahrzeuge (BAV)",
-      "titelFr": "Ordonnance du 28 août 1969 sur la construction et l'équipement des véhicules routiers (OCE)",
-      "titelIt": "Ordinanza del 27 agosto 1969 concernente la costruzione e l'equipaggiamento dei veicoli stradali (OCE)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1969/821_841_839/de",
-      "sha": "c3ea467df9b0ba720d3d121add5906f26c71599d2e7fad9394693f16a15a1009"
+      "dateEntryInForce": "1998-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1188_1188_1188",
+      "dateDocument": "1998-03-25",
+      "roFundstelle": "AS 1998 1188",
+      "titelDe": "Verordnung über die Arbeits- und Ruhezeit der Führer von leichten Motorwagen zum gewerbsmässigen Personentransport (ARV 2), Änderung",
+      "titelFr": "Ordonnance sur la durée du travail et du repos des conducteurs de voitures automobiles légères affectées au transport professionnel de personnes (OTR 2), Modification",
+      "titelIt": "Ordinanza sulla durata del lavoro e di riposo dei conducenti di veicoli leggeri per il trasporto professionale di persone (OLR2), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1188_1188_1188/de",
+      "sha": "13f77a89140bbb72ad49b2c9341f836abf0d816e9838c07dc1c7f50e2a89dd0e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1796_1796_1796",
+      "dateDocument": "1998-06-22",
+      "roFundstelle": "AS 1998 1796",
+      "titelDe": "Verordnung vom 22. Juni 1998 über die Anpassung von Zuständigkeitsbestimmungen in Verordnungen und Bundesratsbeschlüssen im Bereich des Strassenverkehrs, Änderung",
+      "titelFr": "Ordonnance du 22 juin 1998 concernant l'adaptation des règles de compétence dans les ordonnances et les arrêtés du Conseil fédéral relatifs à la circulation routière, Modification",
+      "titelIt": "Ordinanza del 22 giugno 1998 concernente l'adeguamento delle disposizioni attributive di competenza nelle ordinanze e nei decreti del Consiglio federale in materia di circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1796_1796_1796/de",
+      "sha": "34dafd443ac5ceffed37758c88ed29d610b20de87d517fa6e5e34bbdf7f3bbc7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2404_2404_2404",
+      "dateDocument": "1997-10-22",
+      "roFundstelle": "AS 1997 2404",
+      "titelDe": "Verkehrsregelnverordnung (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2404_2404_2404/de",
+      "sha": "7b8439d769439e9d15f073d299f26d1f06690de6e3ec317fd9872533f927da0f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/1228_1228_1228",
+      "dateDocument": "1997-04-21",
+      "roFundstelle": "AS 1997 1228",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS), Änderung",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV), Modification",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/1228_1228_1228/de",
+      "sha": "7ceac879d2407babf6a4986253d3cb9db10b021cbac8a780f06f99760300c67f"
     }
   ],
-  "sha": "b39ad50565f403d3f1b46d90b8064666d9a61ad122752f866425b7fd5d3e020c"
+  "sha": "fb33a4549eb7629b8f10aa42adeb9a2bd529a1a9c8e8986dc39a85812173c6c7"
 }

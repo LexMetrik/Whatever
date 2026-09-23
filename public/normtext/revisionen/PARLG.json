@@ -1,15 +1,45 @@
 {
   "erlassKey": "PARLG",
   "sr": "171.10",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/393",
+      "dateDocument": "2026-03-20",
+      "roFundstelle": "AS 2026 393",
+      "titelDe": "Bundesgesetz über das Entlastungspaket 2027 für den Bundeshaushalt",
+      "titelFr": "Loi fédérale sur le programme d’allégement budgétaire 2027",
+      "titelIt": "Legge federale sul programma di sgravio 2027 delle finanze federali",
+      "botschaftKey": "BOTSCHAFT-2025-3067",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "e6122ff259e1dba2a7cfe16c204318e2f7c74db17d275fcc882fc8d997624201"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/393/de",
+      "sha": "580296923072e950580671257683fa5db3fedbc7765d70afb43b4e68e49a6694"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-03-02",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/483",
+      "dateDocument": "2023-03-17",
+      "roFundstelle": "AS 2023 483",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Verbesserungen der Funktionsweise des Parlamentes, insbesondere in Krisensituationen)",
+      "titelFr": "Loi fédérale sur l’Assemblée fédérale (Loi sur le Parlement, LParl) (Amélioration du fonctionnement du Parlement, notamment en situation de crise)",
+      "titelIt": "Legge federale sull’Assemblea federale (Legge sul Parlamento, LParl) (Miglioramenti del funzionamento del Parlamento, in particolare in situazioni di crisi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-12-04",
+        "2024-12-02",
+        "2026-03-02"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/483/de",
+      "sha": "c5ead0f8cad39b9b93981b9f1ad2a5b3b111952a7a2ac7dc75ab62b668d32a14"
     },
     {
       "art": "aenderung",
@@ -20,8 +50,11 @@
       "titelDe": "Mitteilung über eine Teilinkraftsetzung der Änderung des Parlamentsgesetzes",
       "titelFr": "Communication concernant la mise en vigueur partielle de la modification de la loi sur le Parlement",
       "titelIt": "Comunicazione sull’entrata in vigore parziale della modifica della legge sul Parlamento",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/78/de",
-      "sha": "93ec2a0bfd36da42526a3bd4162ca9acefc3f5ca0f4f63525f3cf222296648a2"
+      "sha": "8f1a1c49f9275b3532947d42832ace9a22669a59ccd7900788ebe951a539f30b"
     },
     {
       "art": "aenderung",
@@ -32,8 +65,31 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Einreichung von Vorstössen und parlamentarischen Initiativen)",
       "titelFr": "Loi fédérale sur l’Assemblée fédérale (Loi sur le Parlement, LParl) (Dépôt des interventions et initiatives parlementaires)",
       "titelIt": "Legge federale sull’Assemblea federale (Legge sul Parlamento, LParl) (Presentazione di interventi e iniziative parlamentari)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/530/de",
-      "sha": "c67f0646c21ef6ae768f7cab2b307ecb37fb773204f1096ba37176f8ef83b950"
+      "sha": "705f8cbceb9dfa52d7b3e14d54601ef194ae06b76cfd0a857a021e4061f8bcdd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-12-02",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/483",
+      "dateDocument": "2023-03-17",
+      "roFundstelle": "AS 2023 483",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Verbesserungen der Funktionsweise des Parlamentes, insbesondere in Krisensituationen)",
+      "titelFr": "Loi fédérale sur l’Assemblée fédérale (Loi sur le Parlement, LParl) (Amélioration du fonctionnement du Parlement, notamment en situation de crise)",
+      "titelIt": "Legge federale sull’Assemblea federale (Legge sul Parlamento, LParl) (Miglioramenti del funzionamento del Parlamento, in particolare in situazioni di crisi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-12-04",
+        "2024-12-02",
+        "2026-03-02"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/483/de",
+      "sha": "206e41800a95ae3c67738e1d83bbcebebf9be4a25bd4b5d3f2fe6dca443d45fd"
     },
     {
       "art": "aenderung",
@@ -44,14 +100,26 @@
       "titelDe": "Mitteilung über eine Teilinkraftsetzung der Änderung des Parlamentsgesetzes",
       "titelFr": "Communication concernant la mise en vigueur partielle de la loi sur le Parlement",
       "titelIt": "Comunicazione sull’entrata in vigore parziale della modifica della legge sul Parlamento",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/675/de",
-      "sha": "f341fe95873001c1dd558ee54275e01200ab535873219207ece519db5d5ffd9a"
+      "sha": "3f6ec2afba349c68f6f0cc46a5751aa625900666c2a5ade91977433595840b33"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "f6c25b9a83e9e489577cb42654f26731579a04899455ba43580a9741056ad2f8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/118",
+      "dateDocument": "2023-09-29",
+      "roFundstelle": "AS 2024 118",
+      "titelDe": "Bundesgesetz vom 29. September 2023 über die Entlastung der Unternehmen von Regulierungskosten (Unternehmensentlastungsgesetz, UEG)",
+      "titelFr": "Loi fédérale du 29 septembre 2023 sur l’allégement des coûts de la réglementation pour les entreprises (LACRE)",
+      "titelIt": "Legge federale del 29 settembre 2023 sullo sgravio delle imprese dai costi della regolamentazione (Legge sullo sgravio delle imprese, LSgrI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/118/de",
+      "sha": "e662e1be668badb8a732ba2ff2170c95467a229bd331a05a5769167913fad985"
     },
     {
       "art": "aenderung",
@@ -62,14 +130,30 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Budgetberatung)",
       "titelFr": "Loi fédérale sur l’Assemblée fédérale (Loi sur le Parlement, LParl) (Examen du budget)",
       "titelIt": "Legge federale sull’Assemblea federale (Legge sul Parlamento, LParl) (Esame preliminare del preventivo)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/450/de",
-      "sha": "582a791ba1efbfd46fac43a09c93e2ccabf378f2455e8e723fea489f223ecf4a"
+      "sha": "3f5da65c13fb5f2ce3f195a71d1a02e832fd07f183cf1a21b7601466717aec52"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "589717f4f44ac534f04e64a5d2d6480cde6d86ca3f24a6991c8934206f3ec945"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/817",
+      "dateDocument": "2022-12-16",
+      "roFundstelle": "AS 2022 817",
+      "titelDe": "Bundesgesetz über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (Covid-19-Gesetz)",
+      "titelFr": "Loi fédérale sur les bases légales des ordonnances du Conseil fédéral visant à surmonter l’épidémie de COVID-19 (Loi COVID-19)",
+      "titelIt": "Legge federale sulle basi legali delle ordinanze del Consiglio federale volte a far fronte all’epidemia di COVID-19 (Legge COVID-19)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2024-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/817/de",
+      "sha": "9cd94fd8f88cbee0e32a06ddd61c2f52e260aebad5eebccb719fb1c4e09fcc93"
     },
     {
       "art": "aenderung",
@@ -80,14 +164,27 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Planungsbericht)",
       "titelFr": "Loi sur l’Assemblée fédérale (Loi sur le Parlement, LParl) (Rapport de planification)",
       "titelIt": "Legge federale sull’Assemblea federale (Legge sul Parlamento, LParl) (Rapporto d’indirizzo)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/200/de",
-      "sha": "9a61dee1460a5093b2426cf45319de4a0e81ca3d3e5aaddd7cbd495094eb572b"
+      "sha": "7101739b194c54f11e46bb635c57381d58d8194c8c7642b7ebafdb096eee0067"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "f30c44cbafefb92af69f94e360680812a71ece0693f6607f6276f646ab586ca8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 468",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2019-2368",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/468/de",
+      "sha": "4b9e33a8ad3ab55a2c54e2ab4657c445a2f90d1980ef0b657c5fd644f1b0b630"
     },
     {
       "art": "aenderung",
@@ -98,26 +195,85 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Verbesserungen der Funktionsweise des Parlamentes, insbesondere in Krisensituationen)",
       "titelFr": "Loi fédérale sur l’Assemblée fédérale (Loi sur le Parlement, LParl) (Amélioration du fonctionnement du Parlement, notamment en situation de crise)",
       "titelIt": "Legge federale sull’Assemblea federale (Legge sul Parlamento, LParl) (Miglioramenti del funzionamento del Parlamento, in particolare in situazioni di crisi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-12-04",
+        "2024-12-02",
+        "2026-03-02"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/483/de",
-      "sha": "77a852ab20e41ffe8a103ce8b99d2651b04808759b0450c3b23c6d97f2d07d87"
+      "sha": "58a59b5af833768b3c43d33d9a1046127222e540e7ae702907a594e747856452"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "87eed194bf4e00463124d52bc37541d94f41dc8ff9c5d6d2b89395b016900529"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "72ae997fe390f2e4f47d66067daba8478af429981c56380127ae960fffa9941a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/588",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 588",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Covid-19-Zertifikatspflicht im Parlamentsgebäude)",
+      "titelFr": "Loi sur l’Assemblée fédérale (Loi sur le Parlement, LParl) (Obligation de présenter un certificat COVID-19 pour accéder au Palais du Parlement)",
+      "titelIt": "Legge federale sull’Assemblea federale (Legge sul Parlamento, LParl) (Obbligo del certificato COVID-19 nel Palazzo del Parlamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-10-02",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/588/de",
+      "sha": "b07309015042c901f2f5a197bf50d473f7cbe079eb644ffedf4c01a8e7d8008a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/817",
+      "dateDocument": "2022-12-16",
+      "roFundstelle": "AS 2022 817",
+      "titelDe": "Bundesgesetz über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (Covid-19-Gesetz)",
+      "titelFr": "Loi fédérale sur les bases légales des ordonnances du Conseil fédéral visant à surmonter l’épidémie de COVID-19 (Loi COVID-19)",
+      "titelIt": "Legge federale sulle basi legali delle ordinanze del Consiglio federale volte a far fronte all’epidemia di COVID-19 (Legge COVID-19)",
+      "wirkungen": [
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2024-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/817/de",
+      "sha": "a7b806bcdfc23a4494e0ede5160432baaa7f662a1025edb7619cc8fb7f5dd3b8"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-12-18",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "a231b7e4a592694d00324085c574c793af50e1843f136b3bddbeeb0cb87c7719"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/878",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2021 878",
+      "titelDe": "Bundesgesetz über die gesetzlichen Grundlagen für Verordnungen des Bundesrates zur Bewältigung der Covid-19-Epidemie (Covid-19-Gesetz)",
+      "titelFr": "Loi fédérale sur les bases légales des ordonnances du Conseil fédéral visant à surmonter l’épidémie de COVID-19 (Loi COVID-19)",
+      "titelIt": "Legge federale sulle basi legali delle ordinanze del Consiglio federale volte a far fronte all’epidemia di COVID-19 (Legge COVID-19)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/878/de",
+      "sha": "2a18b2b40ec82b0b4df796cbb29e0db7badaaaa495cd14e49278a7490cea61a3"
     },
     {
       "art": "aenderung",
@@ -128,8 +284,30 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Differenzbereinigungsverfahren bei Motionen)",
       "titelFr": "Loi sur l’Assemblée fédérale (Loi sur le Parlement, LParl) (Procédure d’élimination des divergences pour les motions)",
       "titelIt": "Legge federale sull’Assemblea federale (Legge sul Parlamento, LParl) (Procedura di appianamento delle divergenze per le mozioni)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/612/de",
-      "sha": "bf5edc903a583f06a2c3c57023966081c8e3710eba5dee855dc731185784acd5"
+      "sha": "e30e50d4cb801cd33bf9d56ddfc36456bcc9628def1e1e3619acee2f99b287df"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-10-02",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/930",
+      "dateDocument": "2020-12-10",
+      "roFundstelle": "AS 2020 5375",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Covid-19: Teilnahme an Abstimmungen im Nationalrat; Unterbruch oder Verschiebung der Session)",
+      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (COVID-19: participation aux votes du Conseil national; interruption ou report de la session)",
+      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (COVID-19: partecipazione a votazioni nel Consiglio nazionale; interruzione o differimento della sessione)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-12-11",
+        "2021-10-02"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/930/de",
+      "sha": "a09e6e17b459746f564739b30cb85f9f328c2966927168350ba5790296754a48"
     },
     {
       "art": "aenderung",
@@ -140,8 +318,15 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Covid-19-Zertifikatspflicht im Parlamentsgebäude)",
       "titelFr": "Loi sur l’Assemblée fédérale (Loi sur le Parlement, LParl) (Obligation de présenter un certificat COVID-19 pour accéder au Palais du Parlement)",
       "titelIt": "Legge federale sull’Assemblea federale (Legge sul Parlamento, LParl) (Obbligo del certificato COVID-19 nel Palazzo del Parlamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-10-02",
+        "2023-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/588/de",
-      "sha": "8da21bca5694d5f69cdb9727578ec9b39e4be9dd614372531061ff58cd333f52"
+      "sha": "c7c6d5988eed2f5b0a0a84f2f482aa308dff48ccb51c10c20dd814d1d77214f3"
     },
     {
       "art": "aenderung",
@@ -152,8 +337,34 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Covid-19: Teilnahme an Abstimmungen im Nationalrat; Unterbruch oder Verschiebung der Session)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (COVID-19: participation aux votes du Conseil national; interruption ou report de la session)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (COVID-19: partecipazione a votazioni nel Consiglio nazionale; interruzione o differimento della sessione)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-12-11",
+        "2021-10-02"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/930/de",
-      "sha": "0ff6bf315ef7dd8a1ffe90b098a6931a40c76320704725be2a64e5e52d844fb9"
+      "sha": "ee9625f2fc2607dfe6960f3a058dda66d0388407133cae06aa09ff3e96d2fb61"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-12-02",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/562",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 3461",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Verschiedene Änderungen des Parlamentsrechts)",
+      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Modifications diverses du droit parlementaire)",
+      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Diverse modifiche del diritto parlamentare)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-11-26",
+        "2019-12-02"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/562/de",
+      "sha": "71ba2dd655bbbcc050cb24cf926c9290c9dfdd2a979e4ebaa69be151dcca136d"
     },
     {
       "art": "aenderung",
@@ -164,8 +375,11 @@
       "titelDe": "Bundesgesetz über die Zuständigkeiten für den Abschluss, die Änderung und die Kündigung völkerrechtlicher Verträge",
       "titelFr": "Loi fédérale sur les compétences en matière de conclusion, de modification et de dénonciation des traités internationaux",
       "titelIt": "Legge federale sulle competenze di concludere, modificare e denunciare trattati internazionali",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/575/de",
-      "sha": "70553236747df26200562fea0ebef03333fb858c7d3b9942842cc458c1903f73"
+      "sha": "b2f1f7ac9b9caa678f712199d3df115d020536a080365b2d257aef1bc00ffd6c"
     },
     {
       "art": "aenderung",
@@ -176,8 +390,15 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Verschiedene Änderungen des Parlamentsrechts)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Modifications diverses du droit parlementaire)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Diverse modifiche del diritto parlamentare)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-11-26",
+        "2019-12-02"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/562/de",
-      "sha": "a281a6d7fef9d4029c61f1bcfa19bb79ccec3127b287707cc40ecb278c2f786a"
+      "sha": "cff45b4457281a685951ec47d2ca9a8ac63e2cc3708e1c7ee38cc34d0ecfd924"
     },
     {
       "art": "aenderung",
@@ -188,8 +409,11 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Zeitgemässe Informations- und Dokumentationsangebote des Parlamentes)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Offres modernes d'information et de documentation du Parlement)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Offerte d'informazione e di documentazione del Parlamento al passo con i tempi)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/582/de",
-      "sha": "4493af1f82f8ff5f13803f554ae05782160db2248d8a24c3968769fab0df9161"
+      "sha": "33fe39bddc0c4757bfb4b398b79f5be71ae0f6a0e8c5ac5cd906d4619277a0ec"
     },
     {
       "art": "aenderung",
@@ -200,8 +424,11 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Betrifft nur den französischen Text)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/126/de",
-      "sha": "7626309680e347ed60a3fc1fed947ce6a3018493e0acdb17e63d8217a42cfb5c"
+      "sha": "651fa4ec8f45a812e156e92116563743a46c6f85bcd6aaf66f7c11cd8c7a4743"
     },
     {
       "art": "aenderung",
@@ -212,32 +439,80 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/125/de",
-      "sha": "ffd188d9c774978dfcadeca02b6b992fece6f8e3b0eed8e77fbdfaa3eda1134c"
+      "sha": "10fcb354b05ba4e0f22ad3bc89899a14c97f2adbced2e765ee18ca4ae48e0a08"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "ca56328933dac9a67649423ac46bbdc7c2ce7aaa978fe3c5ac3b7f0b3690e129"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/312",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 1583",
+      "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG) (Neues Führungsmodell für die Bundesverwaltung, NFB)",
+      "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC) (Nouveau modèle de gestion de l'administration fédérale, NMG)",
+      "titelIt": "Legge federale sulle finanze della Confederazione (LFC) (Nuovo modello di gestione dell'Amministrazione federale, NMG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-07-01",
+        "2016-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/312/de",
+      "sha": "3d23ded3c7c59102c8bb48bfa3b33bea81fe8ec43a75ebf9a3c2de62bf99021b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-11-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "03a777db1fbcb53fee9f55a46c486720f98cc641f1c712ba2c3c543313ab579f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/653",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 3857",
+      "titelDe": "Bundesgesetz über Schweizer Personen und Institutionen im Ausland (Auslandschweizergesetz, ASG)",
+      "titelFr": "Loi fédérale sur les personnes et les institutions suisses à l'étranger (Loi sur les Suisses de l'étranger, LSEtr)",
+      "titelIt": "Legge federale concernente persone e istituzioni svizzere all'estero (Legge sugli Svizzeri all'estero, LSEst)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/653/de",
+      "sha": "322a701493e1d26b188cf0e7887c149831ccff568c5a9c7bc44fb0091e808527"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "51638b461ebc81ac38d4327e947a22a642ddc5f8537d12ad981d2d8808b500d4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/312",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 1583",
+      "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG) (Neues Führungsmodell für die Bundesverwaltung, NFB)",
+      "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC) (Nouveau modèle de gestion de l'administration fédérale, NMG)",
+      "titelIt": "Legge federale sulle finanze della Confederazione (LFC) (Nuovo modello di gestione dell'Amministrazione federale, NMG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-07-01",
+        "2016-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/312/de",
+      "sha": "2739c806119e83c6db67d96178cc340c4bc45b42d3ed5a0bc38dfc51fe1d29dc"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "63fdd5d47a7ef926330c0c151f5a8a11d859d8a0af38a7065a80e212e14e33e6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/177",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 969",
+      "titelDe": "Bundesgesetz über die Kompetenz zum Abschluss völkerrechtlicher Verträge von beschränkter Tragweite und über die vorläufige Anwendung völkerrechtlicher Verträge (Änderung des Regierungs- und Verwaltungsorganisationsgesetzes und des Parlamentsgesetzes)",
+      "titelFr": "Loi fédérale sur la compétence de conclure des traités internationaux de portée mineure et sur l'application provisoire des traités internationaux (Modification de la loi sur l'organisation du gouvernement et de l'administration et de la loi sur le Parlement)",
+      "titelIt": "Legge federale sulla competenza di concludere trattati internazionali di portata limitata e sull'applicazione provvisoria dei trattati internazionali (Modifica della legge sull'organizzazione del Governo e dell'Amministrazione e della legge sul Parlamento)",
+      "botschaftKey": "BOTSCHAFT-2012-1138",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/177/de",
+      "sha": "4c24a9c41be3ae0b8afe8378d37a2f0420a256bb61b18212719a5ba04884157d"
     },
     {
       "art": "aenderung",
@@ -248,8 +523,11 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Verbesserungen der Organisation und der Verfahren des Parlamentes)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Amélioration de l'organisation et des procédures du Parlement)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Miglioramento dell'organizzazione e delle procedure del Parlamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/689/de",
-      "sha": "15090a0578d2dab6f85053b9c13bc553c59a091b2de77eaa850e06081049cf9c"
+      "sha": "a6823b99ab42a5ef4504365cfd3af373d346b0154cd92ab745c34be8b44df0cd"
     },
     {
       "art": "aenderung",
@@ -260,8 +538,11 @@
       "titelDe": "Bundesgesetz über die Mitwirkung der Bundesversammlung bei der Steuerung der verselbstständigten Einheiten",
       "titelFr": "Loi fédérale relative à la participation de l'Assemblée fédérale au pilotage des entités devenues autonomes",
       "titelIt": "Legge federale sulla partecipazione dell'Assemblea federale alla determinazione dell'orientamento strategico delle unità rese autonome",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/807/de",
-      "sha": "d950ffeb0242d94b29c8e81347ca570659092c77029dfe2188a11b1334ded38c"
+      "sha": "75fea0f758ad76d5cb5d146aa54cccac48ad3d134d46ded710fc1d7519b4d2d0"
     },
     {
       "art": "aenderung",
@@ -272,8 +553,11 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Gesuche um Aufhebung der Immunität)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Examen des requêtes visant à lever l'immunité)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Richieste di soppressione dell'immunità)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/663/de",
-      "sha": "97807d40d1267c1241b9bf037c082cb39ade38eed18af3db1c9eefcf9bff1eda"
+      "sha": "e0c7c175b02cbad68c498f3f9e16705236c1a2f5762fb89bcfefa3d2ae2e6d90"
     },
     {
       "art": "aenderung",
@@ -284,8 +568,11 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Präzisierung der Informationsrechte der Aufsichtskommissionen)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Précision du droit à l'information des commissions de surveillance)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Precisazione dei diritti d'informazione delle commissioni di vigilanza)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/633/de",
-      "sha": "e0106d8539244f007229fa10714bb94a76d73475c26953e566e21551e2dbd289"
+      "sha": "288f375ae20d72b27c99095c227172f1dd0497e90ca5032f66e99efba284ba3e"
     },
     {
       "art": "aenderung",
@@ -296,20 +583,42 @@
       "titelDe": "Bundesgesetz über die Wahrung von Demokratie, Rechtsstaat und Handlungsfähigkeit in ausserordentlichen Lagen",
       "titelFr": "Loi fédérale sur la sauvegarde de la démocratie, de l'Etat de droit et de la capacité d'action dans les situations extraordinaires",
       "titelIt": "Legge federale concernente la salvaguardia della democrazia, dello Stato di diritto e della capacità di agire in situazioni straordinarie",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/210/de",
-      "sha": "4adbd8c1d09c5bafa9196ae45736fa3379777c54a867261c5342bbab8fc3175c"
+      "sha": "5a230797dee6c1a5c5018510d55757687f096955ae822880cf71bb8b298db12c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "cd36ed66673af989b32745ad32e6121a389e0fca7717e3db3b320329197199ac"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/444",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2010 3267",
+      "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP)",
+      "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)",
+      "botschaftKey": "BOTSCHAFT-2008-1395",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/444/de",
+      "sha": "1d4a18440318e3101df97f15e78fe5f08fdb1d73657f6e95e38df0390ca31b3a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "5a0ff4266776aa4e71b0f089dc6ed46fdd73301f5d1313747841eeaf33ca9e54"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/35",
+      "dateDocument": "2009-09-25",
+      "roFundstelle": "AS 2010 271",
+      "titelDe": "Bundesgesetz über die politischen Rechte (Bedingter Rückzug einer Volksinitiative)",
+      "titelFr": "Loi fédérale sur les droits politiques (Retrait conditionnel d'une initiative populaire)",
+      "titelIt": "Legge federale sui diritti politici (Ritiro condizionato di un'iniziativa popolare)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/35/de",
+      "sha": "32c36d1da925f69c11bff73664ae4b7127b22ba7530b024fe9620d8835c68c7e"
     },
     {
       "art": "aenderung",
@@ -320,8 +629,12 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Parlamentsrecht. Verschiedene Änderungen)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Droit parlementaire. Modifications diverses)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Diritto parlamentare. Diverse modifiche)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/124/de",
-      "sha": "6e6d9fbac22c021b274cea7a13af0cdef5416401bdf6583ebbdbe2158436d68a"
+      "sha": "462fcd34296b353a8f8d2a4df9346be6447226a6d33624f2cf9e616bdbb415ac"
     },
     {
       "art": "aenderung",
@@ -332,8 +645,11 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Geschäftsbericht des Bundesrates)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Rapport de gestion du Conseil fédéral)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Rapporto di gestione del Consiglio federale)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/115/de",
-      "sha": "acfdd84c737a283f17a66f69610eaf1bf44d0b0d4ebd4bfa79732032e689d71c"
+      "sha": "dc263ef9ab81858d1741449564fdb6587df9647660716b6eb9549f624be7066b"
     },
     {
       "art": "aenderung",
@@ -344,8 +660,11 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Verbindliche Wirkung der Motion)",
       "titelFr": "Loi fédérale sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Caractère contraignant de la motion)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Effetto vincolante della mozione)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/303/de",
-      "sha": "43ec6dee026d8d26c600dd4a0a5d1a914b7127e1375773963a2b9b676efef23c"
+      "sha": "e556b5a1429aa4393690f307ae4bf32e9a020572804f22a28c1cae0fe7edc30f"
     },
     {
       "art": "aenderung",
@@ -357,8 +676,11 @@
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl)",
       "botschaftKey": "BOTSCHAFT-2006-1010",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/550/de",
-      "sha": "8b89c96075a3516b857272003457547d3cfc5fe4734ec5070993801348931faa"
+      "sha": "b1c8965173b4ebb1a5d676c71dce64f4f3b24035a92154bdf5682e10007ea465"
     },
     {
       "art": "aenderung",
@@ -369,32 +691,72 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Legislaturplanung)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Programme de la législature)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Programma di legislatura)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/740/de",
-      "sha": "f37076a623b220f799b1590524a7e07432b7540f96c4f0b30644f271a6576580"
+      "sha": "e26f3a9ddfb4ee1dbb2ee694e4680d76c5befc888ecd497cabb87548d84b7992"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "3ffaa8357b667d6a1e655507a9f6b2362a02c2a5304bbb3893d1ffea695ef85a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/224",
+      "dateDocument": "2005-10-07",
+      "roFundstelle": "AS 2006 1265",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG)",
+      "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA)",
+      "titelIt": "Legge federale sull'organizzazione del Governo e dell'Amministrazione (LOGA)",
+      "botschaftKey": "BOTSCHAFT-2004-1239",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/224/de",
+      "sha": "541f8295068dbe956bb01e47040043f79624cb7c17a449da8c942de587723843"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "6f1dda6cb9fb2ae905dbfc3b1daa42bfd647a99c067cde4c52fa033a65a0ef8c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/227",
+      "dateDocument": "2005-10-07",
+      "roFundstelle": "AS 2006 1275",
+      "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG)",
+      "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC)",
+      "titelIt": "Legge federale sulle finanze della Confederazione (LFC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/227/de",
+      "sha": "494f06c27308fa20f197ca049e2c9783c1d3469b2cb116a0eef145b9db90036a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "ebbedc5d10527ef097e695cab6e8b54c697eeff39832421ae1d59b955f8c0fe5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/599",
+      "dateDocument": "2005-03-18",
+      "roFundstelle": "AS 2005 4603",
+      "titelDe": "Bundesgesetz über den Aufbau des Bundesverwaltungsgerichts",
+      "titelFr": "Loi fédérale concernant la mise en place du Tribunal administratif fédéral",
+      "titelIt": "Legge federale sull'istituzione del Tribunale amministrativo federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/599/de",
+      "sha": "35e2400103d7aead36b5b88936ca81419b460b08ccf7b9e2b219f13fe6bf3323"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/171.10",
-      "sha": "e5b55cf0e5d701c87db9d923eb4f1418dfb90834f13358e8791c2e00f01fafcf"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/542",
+      "dateDocument": "2005-03-18",
+      "roFundstelle": "AS 2005 4099",
+      "titelDe": "Bundesgesetz über das Vernehmlassungsverfahren (Vernehmlassungsgesetz, VlG)",
+      "titelFr": "Loi fédérale sur la procédure de consultation (Loi sur la consultation, LCo)",
+      "titelIt": "Legge federale sulla procedura di consultazione (Legge sulla consultazione, LCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/542/de",
+      "sha": "1c6b3aa9a50cdddd534d4beb4252f9ca45c0a5a0f598d244af0934a2323f6f40"
     },
     {
       "art": "aenderung",
@@ -405,8 +767,11 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/645/de",
-      "sha": "0e73adc616faa6c5ee7039e7c05e00b0cfce0350e78aaebfdc52284dcbdf68a2"
+      "sha": "0673e1b8ded25c1239f2bb35aa091e62bb713508d83fb91ccfd24d4fa096c0ee"
     },
     {
       "art": "aenderung",
@@ -417,20 +782,26 @@
       "titelDe": "Bundesgesetz über die vorläufige Anwendung von völkerrechtlichen Verträgen",
       "titelFr": "Loi fédérale sur l'application à titre provisoire de traités internationaux",
       "titelIt": "Legge federale sull'applicazione provvisoria di trattati internazionali",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/184/de",
-      "sha": "967746bc28e78d7fe536e4929f06aae7aa443f0366424985dcca0e02c750b2ed"
+      "sha": "1bf1e2429fc114a083c38e7626d6ae75bcf06c0fca71eb017895eefb31dca72f"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2003-12-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/510",
+      "dateEntryInForce": "2003-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/310",
       "dateDocument": "2002-12-13",
-      "roFundstelle": "AS 2003 3543",
-      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
-      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
-      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/510/de",
-      "sha": "42c1d105edc7aa72aa6638398843e2e5b3d712bb8d6383ae2b346571952f2102"
+      "roFundstelle": "AS 2003 2119",
+      "titelDe": "Bundesgesetz über den Geschäftsverkehr der Bundesversammlung sowie über die Form, die Bekanntmachung und das Inkrafttreten ihrer Erlasse (Geschäftsverkehrsgesetz)",
+      "titelFr": "Loi fédérale sur la procédure de l'Assemblée fédérale ainsi que sur la forme, la publication et l'entrée en vigueur des actes législatifs (Loi sur les rapports entre les conseils)",
+      "titelIt": "Legge federale concernente la procedura dell'Assemblea federale e la forma, la pubblicazione, l'entrata in vigore dei suoi atti (Legge sui rapporti fra i Consigli)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/310/de",
+      "sha": "fd4e4f90a0772bf3c5202c9e62a72d2ae8c80df0827f5a1f561755496b2f1f72"
     },
     {
       "art": "aenderung",
@@ -441,9 +812,12 @@
       "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Betrifft nur den französischen Text)",
       "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
       "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/894/de",
-      "sha": "52065c35070eaaaf2f941671551ab6a4c7e268f8244784f50a58330360164a28"
+      "sha": "52bb5c80e95a73960f447b18d7006a0be95b40178760c6f0d21d21bfcb1a613e"
     }
   ],
-  "sha": "e6dffe39e780d58a9db613f4f4814d9cb902b32cd0843ae8a3b8ee96ef11e39b"
+  "sha": "8a3f31a846b1ee9a0038126c85598e30ce256fb55207fca8a8550c6b66a437bf"
 }

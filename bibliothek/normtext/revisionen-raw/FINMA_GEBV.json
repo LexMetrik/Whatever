@@ -488,5 +488,203 @@
     "2027-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2008/749",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2008/749",
+    "inkrafttreten": "2009-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/749",
+        "typ": 5,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/224",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/799",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/834",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/117",
+        "typ": 1,
+        "datum": "2013-03-01",
+        "fassung": "2013-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/708",
+        "typ": 1,
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/708",
+        "typ": 1,
+        "datum": "2015-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/708",
+        "typ": 2,
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/708",
+        "typ": 2,
+        "datum": "2015-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+        "typ": 2,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/799",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+        "typ": 2,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/400",
+        "typ": 1,
+        "datum": "2021-08-01",
+        "fassung": "2021-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/804",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/356",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/73",
+        "typ": 1,
+        "datum": "2024-03-01",
+        "fassung": "2024-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/207",
+        "typ": 1,
+        "datum": "2027-01-01",
+        "fassung": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2013/117": {
+        "dateForce": "2013-03-01",
+        "dateDoc": "2013-02-13",
+        "roId": "RO 2013 607",
+        "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+        "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+        "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/708": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-11-05",
+        "roId": "RO 2014 4295",
+        "titelDe": "Finanzmarktprüfverordnung (FINMA-PV)",
+        "titelFr": "Ordonnance sur les audits des marchés financiers (OA-FINMA)",
+        "titelIt": "Ordinanza sugli audit dei mercati finanziari (OA-FINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/854": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-11-25",
+        "roId": "RO 2015 5413",
+        "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+        "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
+        "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/799": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-11-30",
+        "roId": "RO 2018 5229",
+        "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+        "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
+        "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/763": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-06",
+        "roId": "RO 2019 4633",
+        "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+        "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+        "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/400": {
+        "dateForce": "2021-08-01",
+        "dateDoc": "2021-06-18",
+        "titelDe": "Verordnung vom 18. Juni 2021 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+        "titelFr": "Ordonnance du 18 juin 2021 sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+        "titelIt": "Ordinanza del 18 giugno 2021 sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/804": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-11-23",
+        "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+        "titelFr": "Ordonnance sur les banques et les caisses d’épargne (Ordonnance sur les banques, OB)",
+        "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/356": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-06-02",
+        "titelDe": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)",
+        "titelFr": "Ordonnance sur la surveillance des entreprises d’assurance privées (Ordonnance sur la surveillance, OS)",
+        "titelIt": "Ordinanza sulla sorveglianza delle imprese di assicurazione private (Ordinanza sulla sorveglianza, OS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/73": {
+        "dateForce": "2024-03-01",
+        "dateDoc": "2024-01-31",
+        "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+        "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+        "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/207": {
+        "dateForce": "2027-01-01",
+        "dateDoc": "2026-04-22",
+        "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV)",
+        "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
+        "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP)"
+      }
+    }
+  }
 }

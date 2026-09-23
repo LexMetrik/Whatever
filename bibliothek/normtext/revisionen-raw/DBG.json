@@ -3710,5 +3710,1096 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/1996/1445_1445_1445",
       "zielFundstelle": "AS 1996 1445"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1991/1184_1184_1184",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1991/1184_1184_1184",
+    "inkrafttreten": "1995-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/1184_1184_1184",
+        "typ": 5,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/__2106",
+        "typ": 6,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/__2106",
+        "typ": 6,
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/1818_1818_1818",
+        "typ": 6,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/1818_1818_1818",
+        "typ": 6,
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227",
+        "typ": 1,
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1445_1445_1445",
+        "typ": 1,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1445_1445_1445",
+        "typ": 6,
+        "datum": "1995-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1449_1449_1449",
+        "typ": 1,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1445_1445_1445",
+        "typ": 1,
+        "datum": "1996-10-01",
+        "fassung": "1996-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2465_2465_2465",
+        "typ": 1,
+        "datum": "1998-01-01",
+        "fassung": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/669_669_669",
+        "typ": 1,
+        "datum": "1998-01-01",
+        "fassung": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/669_669_669",
+        "typ": 2,
+        "datum": "1998-01-01",
+        "fassung": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/177",
+        "typ": 1,
+        "datum": "1999-01-01",
+        "fassung": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/363",
+        "typ": 1,
+        "datum": "1999-01-01",
+        "fassung": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/363",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/118",
+        "typ": 1,
+        "datum": "2000-04-01",
+        "fassung": "2000-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/293",
+        "typ": 1,
+        "datum": "2000-09-01",
+        "fassung": "2000-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/330",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/63",
+        "typ": 1,
+        "datum": "2000-01-01",
+        "fassung": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/155",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/170",
+        "typ": 1,
+        "datum": "2002-06-01",
+        "fassung": "2002-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/667",
+        "typ": 1,
+        "datum": "2002-12-13",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/667",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/320",
+        "typ": 1,
+        "datum": "2004-07-01",
+        "fassung": "2004-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/711",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/133",
+        "typ": 1,
+        "datum": "2005-03-01",
+        "fassung": "2005-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/133",
+        "typ": 2,
+        "datum": "2005-03-01",
+        "fassung": "2005-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/591",
+        "typ": 1,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/218",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/760",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/822",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/128",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/400",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/685",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/71",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/747",
+        "typ": 1,
+        "datum": "2007-12-01",
+        "fassung": "2007-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/860",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/112",
+        "typ": 1,
+        "datum": "2008-03-01",
+        "fassung": "2008-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/397",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/397",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/618",
+        "typ": 1,
+        "datum": "2010-01-01",
+        "fassung": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/218",
+        "typ": 1,
+        "datum": "2010-01-01",
+        "fassung": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/679",
+        "typ": 1,
+        "datum": "2010-01-01",
+        "fassung": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/58",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/59",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/60",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/634",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/427",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/626",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/700",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/700",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/71",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/810",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/155",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/155",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/315",
+        "typ": 1,
+        "datum": "2012-12-14",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/315",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/504",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/504",
+        "typ": 2,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/589",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/240",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/106",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/143",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/143",
+        "typ": 2,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/3",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/557",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/557",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/308",
+        "typ": 1,
+        "datum": "2017-06-01",
+        "fassung": "2017-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/762",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/762",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/272",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/272",
+        "typ": 2,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/795",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/225",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/447",
+        "typ": 1,
+        "datum": "2018-09-28",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/448",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/448",
+        "typ": 5,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/660",
+        "typ": 6,
+        "datum": "2020-09-01",
+        "fassung": "2020-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/746",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/890",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/373",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2021-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/673",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/109",
+        "typ": 5,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/112",
+        "typ": 6,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/120",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/575",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/732",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/38",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/493",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/628",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/215",
+        "typ": 6,
+        "datum": "2024-05-16",
+        "fassung": "2024-05-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/479",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/53",
+        "typ": 1,
+        "datum": "2024-03-01",
+        "fassung": "2024-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/573",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/579",
+        "typ": 1,
+        "datum": "2026-01-01",
+        "fassung": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/621",
+        "typ": 6,
+        "datum": "2026-01-01",
+        "fassung": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/213",
+        "typ": 1,
+        "datum": "2029-01-01",
+        "fassung": "2029-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/425",
+        "typ": 1,
+        "datum": "2027-01-01",
+        "fassung": "2027-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/448",
+        "typ": 6,
+        "datum": "2026-09-02",
+        "fassung": "2026-09-02"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/482",
+        "typ": 1,
+        "datum": "2028-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/486",
+        "typ": 1,
+        "datum": "2027-01-01",
+        "fassung": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1991/__2106": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1991-10-01",
+        "titelIt": "Correzione: Legge federale sull'imposta federale diretta"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/1818_1818_1818": {
+        "dateForce": "1993-01-01",
+        "dateDoc": "1992-10-13",
+        "roId": "RO 1992 1818",
+        "titelDe": "Bundesgesetz über die Harmonisierung der direkten Steuern der Kantone und Gemeinden, Berichtigung (nur ital.)",
+        "titelFr": "Loi fédérale sur l'harmonisation des impôts directs des cantons et des communes, Errata (seulement en italien)",
+        "titelIt": "Legge federale sull'armonizzazione delle imposte dirette dei Cantoni e dei Comuni, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1994-12-16",
+        "roId": "RO 1995 1227",
+        "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs, Änderung",
+        "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite, Modification",
+        "titelIt": "Legge federale sulla esecuzione e sul fallimento, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/1445_1445_1445": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1994-10-07",
+        "roId": "RO 1995 1445",
+        "titelDe": "Bundesgesetz über die direkte Bundessteuer (DBG) (Art. 20 Abs. 1 Bst. <i>a</i> und Art. 205<i>a</i>), Änderung",
+        "titelFr": "Loi fédérale sur l'impôt fédéral direct (LIFD) (Art. 20. 1<sup>er</sup> al., let. a et 205<i>a</i>), Modification",
+        "titelIt": "Legge federale sull'imposta federale diretta (LIFD) (art. 20 cpv.1 lett. a e art. 205<i>a</i>), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/1449_1449_1449": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1994-10-07",
+        "roId": "RO 1995 1449",
+        "titelDe": "Bundesgesetz über die direkte Bundessteuer (DBG) (Art. 75) und Bundesgesetz über die Harmonisierung der direkten Steuern der Kantone und Gemeinden (StHG) (Art. 29 und 29<i>a</i>), Änderung",
+        "titelFr": "Loi fédérale sur l'impôt fédéral direct (LIFD) (Art. 75). Loi fédérale sur l'harmonisation des impôts directs des cantons et des communes (LHID) (Art. 29 et 29<i>a</i>), Modification",
+        "titelIt": "Legge federale sull'imposta federale diretta (LIFD) (art. 75) e Legge federale sull'armonizzazione delle imposte dirette dei Cantoni e dei Comuni (LAID) (art. 29 e 29<i>a</i>), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/1445_1445_1445": {
+        "dateForce": "1996-10-01",
+        "dateDoc": "1995-10-06",
+        "roId": "RO 1996 1445",
+        "titelDe": "Bundesgesetz vom 6. Oktober 1995 über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+        "titelFr": "Loi fédérale du 6 octobre 1995 sur le service civil (LSC)",
+        "titelIt": "Legge federale del 6 ottobre 1995 sul servizio civile sostitutivo (Legge sul servizio civile, LSC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2465_2465_2465": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-04-30",
+        "roId": "RO 1997 2465",
+        "titelDe": "Bundesgesetz vom 30. April 1997 über die Organisation der Postunternehmung des Bundes (Postorganisationsgesetz, POG)",
+        "titelFr": "Loi fédérale du 30 avril 1997 sur l'organisation de l'entreprise fédérale de la poste (Loi sur l'organisation de la Poste, LOP)",
+        "titelIt": "Legge federale del 30 aprile 1997 sull'organizzazione dell'azienda delle poste della Confederazione (Legge sull'organizzazione delle poste, LOP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/669_669_669": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-10-10",
+        "roId": "RO 1998 669",
+        "titelDe": "Bundesgesetz vom 10. Oktober 1997 über die Reform der Unternehmensbesteuerung 1997",
+        "titelFr": "Loi fédérale du 10 octobre 1997 sur la réforme 1997 de l'imposition des sociétés",
+        "titelIt": "Legge federale del 10 ottobre 1997 sulla riforma 1997 dell'imposizione delle imprese"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1999/363": {
+        "dateForce": "1999-01-01",
+        "dateDoc": "1999-03-19",
+        "roId": "RO 1999 2374",
+        "titelDe": "Bundesgesetz über das Stabilisierungsprogramm 1998",
+        "titelFr": "Loi fédérale sur le programme de stabilisation 1998",
+        "titelIt": "Legge federale sul programma di stabilizzazione 1998"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/118": {
+        "dateForce": "2000-04-01",
+        "dateDoc": "1998-12-18",
+        "roId": "RO 2000 677",
+        "titelDe": "Bundesgesetz über Glücksspiele und Spielbanken (Spielbankengesetz, SBG)",
+        "titelFr": "Loi fédérale sur les jeux de hasard et les maisons de jeu (Loi sur les maisons de jeu, LMJ)",
+        "titelIt": "Legge federale sul gioco d'azzardo e sulle case da gioco (Legge sulle case da gioco, LCG)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/293": {
+        "dateForce": "2000-09-01",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 1891",
+        "titelDe": "Bundesgesetz über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+        "titelFr": "Loi fédérale sur la création et l'adaptation de bases légales concernant le traitement de données personnelles",
+        "titelIt": "Legge federale concernente l'istituzione e l'adeguamento di basi legali per il trattamento di dati personali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/170": {
+        "dateForce": "2002-06-01",
+        "dateDoc": "1999-12-22",
+        "roId": "RO 2002 949",
+        "titelDe": "Obligationenrecht (Die kaufmännische Buchführung)",
+        "titelFr": "Code des obligations (De la comptabilité commerciale)",
+        "titelIt": "Codice delle obbligazioni (Della contabilità commerciale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/667": {
+        "dateForce": "2004-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2003 4487",
+        "titelDe": "Bundesgesetz über die Beseitigung von Benachteiligungen von Menschen mit Behinderungen (Behindertengleichstellungsgesetz, BehiG)",
+        "titelFr": "Loi fédérale sur l'élimination des inégalités frappant les personnes handicapées (Loi sur l'égalité pour les handicapés, LHand)",
+        "titelIt": "Legge federale sull'eliminazione di svantaggi nei confronti dei disabili (Legge sui disabili, LDis)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/320": {
+        "dateForce": "2004-07-01",
+        "dateDoc": "2003-10-03",
+        "roId": "RO 2004 2617",
+        "titelDe": "Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung (Fusionsgesetz, FusG)",
+        "titelFr": "Loi fédérale sur la fusion, la scission, la transformation et le transfert de patrimoine (Loi sur la fusion, LFus)",
+        "titelIt": "Legge federale sulla fusione, la scissione, la trasformazione e il trasferimento di patrimonio (Legge sulla fusione, LFus)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/711": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2004-06-18",
+        "roId": "RO 2004 4635",
+        "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
+        "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP)",
+        "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/591": {
+        "dateForce": "2006-01-01",
+        "dateDoc": "2004-10-08",
+        "roId": "RO 2005 4545",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Stiftungsrecht)",
+        "titelFr": "Code civil suisse (Droit des fondations)",
+        "titelIt": "Codice civile svizzero (Diritto delle fondazioni)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/782": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2004-06-18",
+        "roId": "RO 2005 5685",
+        "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+        "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+        "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/218": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 1205",
+        "titelDe": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+        "titelFr": "Loi sur le Tribunal fédéral (LTF)",
+        "titelIt": "Legge sul Tribunale federale (LTF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/822": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-06-23",
+        "roId": "RO 2006 5379",
+        "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+        "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+        "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/685": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2005-12-16",
+        "roId": "RO 2007 4791",
+        "titelDe": "Obligationenrecht (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht) (OR)",
+        "titelFr": "Code des obligations (Droit de la société à responsabilité limitée; adaptation des droits de la société anonyme, de la société coopérative, du registre du commerce et des raisons de commerce) (CO)",
+        "titelIt": "Codice delle obbligazioni (Diritto della società a garanzia limitata; adeguamento del diritto della società anonima, della società cooperativa, del registro di commercio e delle ditte commerciali) (CO)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/71": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2007 359",
+        "titelDe": "Bundesgesetz über Massnahmen zur Bekämpfung der Schwarzarbeit (Bundesgesetz gegen die Schwarzarbeit, BGSA)",
+        "titelFr": "Loi fédérale concernant des mesures en matière de lutte contre le travail au noir (Loi sur le travail au noir, LTN)",
+        "titelIt": "Legge federale concernente i provvedimenti in materia di lotta contro il lavoro nero (Legge contro il lavoro nero, LLN)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/747": {
+        "dateForce": "2007-12-01",
+        "dateDoc": "2006-06-23",
+        "roId": "RO 2007 5259",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Neue AHV-Versichertennummer)",
+        "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Nouveau numéro d'assuré AVS)",
+        "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Nuovo numero d'assicurato dell'AVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/787": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2006-10-06",
+        "roId": "RO 2007 5779",
+        "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+        "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+        "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/860": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2007 6637",
+        "titelDe": "Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatgesetz, GSG)",
+        "titelFr": "Loi fédérale sur les privilèges, les immunités et les facilités, ainsi que sur les aides financières accordés par la Suisse en tant qu'Etat hôte (Loi sur l'Etat hôte, LEH)",
+        "titelIt": "Legge federale sui privilegi, le immunità e le facilitazioni, nonché sugli aiuti finanziari accordati dalla Svizzera quale Stato ospite (Legge sullo Stato ospite, LSO)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/112": {
+        "dateForce": "2008-03-01",
+        "dateDoc": "2004-12-17",
+        "roId": "RO 2008 447",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/397": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2007-03-23",
+        "roId": "RO 2008 2893",
+        "titelDe": "Bundesgesetz über die Verbesserung der steuerlichen Rahmenbedingungen für unternehmerische Tätigkeiten und Investitionen (Unternehmenssteuerreformgesetz II)",
+        "titelFr": "Loi fédérale sur l'amélioration des conditions fiscales applicables aux activités entrepreneuriales et aux investissements (Loi sur la réforme de l'imposition des entreprises II)",
+        "titelIt": "Legge federale sul miglioramento delle condizioni quadro fiscali per le attività e gli investimenti imprenditoriali (Legge sulla riforma II dell'imposizione delle imprese)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/679": {
+        "dateForce": "2010-01-01",
+        "dateDoc": "2009-03-20",
+        "roId": "RO 2009 5597",
+        "titelDe": "Bundesgesetz über die Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
+        "titelFr": "Loi sur la réforme des chemins de fer 2 (Révision des actes normatifs relatifs aux transports publics)",
+        "titelIt": "Legge federale sulla Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/267": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2007-10-05",
+        "roId": "RO 2010 1881",
+        "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+        "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+        "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/634": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-09-28",
+        "roId": "RO 2010 4483",
+        "titelDe": "Verordnung des EFD über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer für das Steuerjahr 2011 (Verordnung über die kalte Progression, VKP)",
+        "titelFr": "Ordonnance du DFF sur la compensation des effets de la progression à froid pour les personnes physiques en matière d'impôt fédéral direct pour l'année fiscale 2011 (Ordonnance sur la progression à froid, OPFr)",
+        "titelIt": "Ordinanza del DFF sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta per l'anno fiscale 2011 (Ordinanza sulla progressione a freddo, OPFr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/114": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2011 725",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+        "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+        "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/626": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-09-22",
+        "roId": "RO 2011 4503",
+        "titelDe": "Verordnung des EFD über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer für das Steuerjahr 2012 (Verordnung über die kalte Progression, VKP)",
+        "titelFr": "Ordonnance du DFF sur la compensation des effets de la progression à froid pour les personnes physiques en matière d'impôt fédéral direct pour l'année fiscale 2012 (Ordonnance sur la progression à froid, OPFr)",
+        "titelIt": "Ordinanza del DFF sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta per l'anno fiscale 2012 (Ordinanza sulla progressione a freddo, OPFr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/810": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2011-12-23",
+        "roId": "RO 2012 6679",
+        "titelDe": "Obligationenrecht (Rechnungslegungsrecht)",
+        "titelFr": "Code des obligations (Droit comptable)",
+        "titelIt": "Codice delle obbligazioni (Diritto contabile)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/589": {
+        "dateForce": "2014-01-01",
+        "dateDoc": "2013-09-02",
+        "roId": "RO 2013 3027",
+        "titelDe": "Verordnung des EFD über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP)",
+        "titelFr": "Ordonnance du DFF sur la compensation des effets de la progression à froid pour les personnes physiques en matière d'impôt fédéral direct (Ordonnance sur la progression à froid, OPFr)",
+        "titelIt": "Ordinanza del DFF sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/3": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2015 9",
+        "titelDe": "Bundesgesetz über eine Neuregelung des Steuererlasses (Steuererlassgesetz)",
+        "titelFr": "Loi fédérale relative à la nouvelle réglementation concernant la remise de l'impôt (Loi sur la remise de l'impôt)",
+        "titelIt": "Legge federale concernente la nuova disciplina del condono dell'imposta (Legge sul condono dell'imposta)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/132": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2016 689",
+        "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+        "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+        "titelIt": "Legge federale sulla formazione continua (LFCo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/308": {
+        "dateForce": "2017-06-01",
+        "dateDoc": "2016-06-17",
+        "roId": "RO 2017 3097",
+        "titelDe": "Bundesgesetz über die wirtschaftliche Landesversorgung (Landesversorgungsgesetz, LVG)",
+        "titelFr": "Loi fédérale sur l'approvisionnement économique du pays (Loi sur l'approvisionnement du pays, LAP)",
+        "titelIt": "Legge federale sull'approvvigionamento economico del Paese (Legge sull'approvvigionamento del Paese, LAP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/762": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2016-09-30",
+        "roId": "RO 2017 6839",
+        "titelDe": "Energiegesetz (EnG)",
+        "titelFr": "Loi sur l'énergie (LEne)",
+        "titelIt": "Legge federale sull'energia (LEne)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/795": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2017-09-29",
+        "roId": "RO 2018 5103",
+        "titelDe": "Bundesgesetz über Geldspiele (Geldspielgesetz, BGS)",
+        "titelFr": "Loi fédérale sur les jeux d'argent (LJAr)",
+        "titelIt": "Legge federale sui giochi in denaro (LGD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/447": {
+        "dateForce": "2019-07-09",
+        "dateDoc": "2018-09-28",
+        "roId": "RO 2019 2395",
+        "titelDe": "Bundesgesetz über die Steuerreform und die AHV-Finanzierung (STAF)",
+        "titelFr": "Loi fédérale relative à la réforme fiscale et au financement de l'AVS (RFFA)",
+        "titelIt": "Legge federale concernente la riforma fiscale e il finanziamento dell'AVS (RFFA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/448": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-06-14",
+        "roId": "RO 2019 2413",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Bundesgesetzes vom 28. September 2018 über die Steuerreform und die AHV-Finanzierung",
+        "titelFr": "Ordonnance portant dernière mise en œuvre partielle de la loi fédérale du 28 septembre 2018 relative à la réforme fiscale et au financement de l'AVS",
+        "titelIt": "Ordinanza sull'entrata in vigore integrale della legge federale del 28 settembre 2018 concernente la riforma fiscale e il finanziamento dell'AVS "
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/746": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-06-19",
+        "roId": "RO 2020 4005",
+        "titelDe": "Obligationenrecht (Aktienrecht)",
+        "titelFr": "Code des obligations (Droit de la société anonyme)",
+        "titelIt": "Codice delle obbligazioni (Diritto della società anonima)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/373": {
+        "dateForce": "2021-07-01",
+        "dateDoc": "2020-06-19",
+        "titelDe": "Bundesgesetz vom 19. Juni 2020 über Überbrückungsleistungen für ältere Arbeitslose (ÜLG)",
+        "titelFr": "Loi fédérale du 19 juin 2020 sur les prestations transitoires pour les chômeurs âgés (LPtra)",
+        "titelIt": "Legge federale del 19 giugno 2020 sulle prestazioni transitorie per i disoccupati anziani (LPTD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/673": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-06-18",
+        "titelDe": "Bundesgesetz vom 18. Juni 2021 über elektronische Verfahren im Steuerbereich",
+        "titelFr": "Loi fédérale du 18 juin 2021 sur les procédures électroniques en matière d’impôts",
+        "titelIt": "Legge federale del 18 giugno 2021 sulle procedure elettroniche in ambito fiscale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/758": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2020-12-18",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+        "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+        "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/109": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-02-02",
+        "titelDe": "Verordnung vom 2. Februar 2022 über die abschliessende Inkraftsetzung der Änderung vom 19. Juni 2020 des Obligationenrechts (Aktienrecht)",
+        "titelFr": "Ordonnance du 2 février 2022 portant dernière mise en vigueur partielle de la modification du 19 juin 2020 du code des obligations (Droit de la société anonyme)",
+        "titelIt": "Ordinanza del 2 febbraio 2022 sull’entrata in vigore integrale della modifica del 19 giugno 2020 del Codice delle obbligazioni (Diritto della società anonima)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/575": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-09-16",
+        "titelDe": "Verordnung des EFD vom 16. September 2022 über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP)",
+        "titelFr": "Ordonnance du DFF du 16 septembre 2022 sur la compensation des effets de la progression à froid pour les personnes physiques en matière d’impôt fédéral direct (Ordonnance sur la progression à froid, OPFr)",
+        "titelIt": "Ordinanza del DFF del 16 settembre 2022 sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/732": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Insolvenz und Einlagensicherung)",
+        "titelFr": "Loi fédérale sur les banques et les caisses d’épargne (Loi sur les banques, LB) (Insolvabilité et garantie des dépôts)",
+        "titelIt": "Legge federale sulle banche e le casse di risparmio (Legge sulle banche, LBCR) (Insolvenza e garanzia dei depositi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/493": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-09-01",
+        "titelDe": "Verordnung des EFD vom 1. September 2023 über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP)",
+        "titelFr": "Ordonnance du DFF du 1er septembre 2023 sur la compensation des effets de la progression à froid pour les personnes physiques en matière d’impôt fédéral direct (Ordonnance sur la progression à froid, OPFr)",
+        "titelIt": "Ordinanza del DFF del 1° settembre 2023 sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/628": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2022-03-18",
+        "titelDe": "Bundesgesetz über die Bekämpfung des missbräuchlichen Konkurses (Änderung des Obligationenrechts, des Bundesgesetzes über Schuldbetreibung und Konkurs, des Strafgesetzbuches, des Militärstrafgesetzes, des Strafregistergesetzes und des Bundesgesetzes über die direkte Bundessteuer)",
+        "titelFr": "Loi fédérale sur la lutte contre l’usage abusif de la faillite (Modification du code des obligations, de la loi fédérale sur la poursuite pour dettes et la faillite, du code pénal, du code pénal militaire, de la loi sur le casier judiciaire et de la loi fédérale sur l’impôt fédéral direct)",
+        "titelIt": "Legge federale sulla lotta contro l’abuso del fallimento (Modifica del Codice delle obbligazioni, della legge federale sulla esecuzione e sul fallimento, del Codice penale, del Codice penale militare, della legge sul casellario giudiziale e della legge federale sull’imposta federale diretta)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/479": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-08-22",
+        "titelDe": "Verordnung des EFD vom 22. August 2024 über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP)",
+        "titelFr": "Ordonnance du DFF du 22 août 2024 sur la compensation des effets de la progression à froid pour les personnes physiques en matière d’impôt fédéral direct (Ordonnance sur la progression à froid, OPFr)",
+        "titelIt": "Ordinanza del DFF del 22 agosto 2024 sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/53": {
+        "dateForce": "2024-03-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+        "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+        "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/579": {
+        "dateForce": "2026-01-01",
+        "dateDoc": "2025-09-10",
+        "titelDe": "Verordnung des EFD vom 10. September 2025 über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP)",
+        "titelFr": "Ordonnance du DFF du 10 septembre 2025 sur la compensation des effets de la progression à froid pour les personnes physiques en matière d’impôt fédéral direct (Ordonnance sur la progression à froid, OPFr)",
+        "titelIt": "Ordinanza del DFF del 10 settembre 2025 sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/621": {
+        "dateForce": "2026-01-01",
+        "dateDoc": "2025-10-17",
+        "titelDe": "Verordnung des EFD vom 10. September 2025 über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP). Berichtigung",
+        "titelFr": "Ordonnance du DFF du 10 septembre 2025 sur la compensation des effets de la progression à froid pour les personnes physiques en matière d’impôt fédéral direct (Ordonnance sur la progression à froid, OPFr). Erratum",
+        "titelIt": "Ordinanza del DFF del 10 settembre 2025 sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr). Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/425": {
+        "dateForce": "2027-01-01",
+        "dateDoc": "2025-12-19",
+        "titelDe": "Bundesgesetz vom 19. Dezember 2025 über den internationalen automatischen Informationsaustausch betreffend Lohndaten (AIALG)",
+        "titelFr": "Loi fédérale du 19 décembre 2025 sur l’échange international automatique de renseignements concernant les données salariales (LEADS)",
+        "titelIt": "Legge federale del 19 dicembre 2025 sullo scambio automatico internazionale di informazioni relative ai dati salariali (LSADS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/486": {
+        "dateForce": "2027-01-01",
+        "dateDoc": "2026-09-11",
+        "titelDe": "Verordnung des EFD vom 11. September 2026 über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP)",
+        "titelFr": "Ordonnance du DFF du 11 septembre 2026 sur la compensation des effets de la progression à froid pour les personnes physiques en matière d’impôt fédéral direct (Ordonnance sur la progression à froid, OPFr)",
+        "titelIt": "Ordinanza del DFF dell'11 settembre 2026 sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr)"
+      }
+    }
   }
 }

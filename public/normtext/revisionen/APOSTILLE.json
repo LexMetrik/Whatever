@@ -1,8 +1,8 @@
 {
   "erlassKey": "APOSTILLE",
   "sr": "0.172.030.4",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,12 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l’exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/487/de",
-      "sha": "a46e8a7f6dee2c36622a5b21e3a41a72df1850d465f149a5005dff555ae39e72"
+      "sha": "97bf5ddc16fea8241219fa3e14e2261042737ef637a5c8818721c2aad7614134"
     },
     {
       "art": "aenderung",
@@ -25,8 +29,11 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/443/de",
-      "sha": "b556f4450ea470ec4be69f79529a58669a0d69d6d9bdfba19646ad1a64d4ea39"
+      "sha": "898bab8e21ea07c6207b5044550121526878962b4c383939ca9b5c8860bc6641"
     },
     {
       "art": "aenderung",
@@ -37,8 +44,12 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/215/de",
-      "sha": "2f444b31b91e19a75957b820986938f9a2cb7bd5cfd14d2a23454ad5cbcb7605"
+      "sha": "71376405fca4cfd4ffd72f099b63d9560f826a1d33db96f1eced1d7d8c37bc2c"
     },
     {
       "art": "aenderung",
@@ -49,8 +60,12 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/205/de",
-      "sha": "bd8eb45f085ffbffacfb43b177490dc68fbb1f150fc45da92bcdd5ff4313d8eb"
+      "sha": "44b9d01f1139a899229e12616738e381b1797066def29005a94ef9dba1a87b27"
     },
     {
       "art": "aenderung",
@@ -61,8 +76,12 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/410/de",
-      "sha": "51442fecf6423ca86f3595c60fb0f0bd523ca0af5774aafad1e2dc900db6416e"
+      "sha": "49ec6cac0d8f04d1c47e47c1501a85dfcf8f8c059b84af063199f6cbf5f646a0"
     },
     {
       "art": "aenderung",
@@ -73,8 +92,12 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/391/de",
-      "sha": "ee5acaf724ff43c2fa17edf999fd93d228f3d4bbdf7b725efa7be9cabbabf1e3"
+      "sha": "8b5223ad99278437702cb01a909ee11a394a8409f9f872255956f15a716a5ef1"
     },
     {
       "art": "aenderung",
@@ -85,8 +108,12 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/271/de",
-      "sha": "7a2f3984a84167f192e53f1957b332fdfb23b346d4b7b82a4644be4466e6b28a"
+      "sha": "68f8c67cb8e284229430c1f3b926192299843d12d0fda8c9728c14ae63c8a484"
     },
     {
       "art": "aenderung",
@@ -97,8 +124,12 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/657/de",
-      "sha": "f5fcf703ace9733f85a7ec564c2e0e051b3e45a5e2ae8fcaf59afc8fc41409c6"
+      "sha": "31bd6218588ba39dab5fa04597feaf5d9ce98a13f585e4ed369d9a9515148c65"
     },
     {
       "art": "aenderung",
@@ -109,8 +140,12 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/119/de",
-      "sha": "19da0947f480477373c06d2f0230664f2992f353f9081296b1cd01cf7710aada"
+      "sha": "32994c98f9b43c382dd0b1eefb45b7a7d131f892d09996fe5916d12ff1e0e0f8"
     },
     {
       "art": "aenderung",
@@ -121,8 +156,11 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/32/de",
-      "sha": "54d149b6475de2e3a0cf2688f348e082a7c199b8e7acc8b77e3f87448f8dc90a"
+      "sha": "6d481d9e5beaa0c49879f76bbc7ee0d9d4d7d63a6618988e7f30fd8aaf631c27"
     },
     {
       "art": "aenderung",
@@ -133,8 +171,12 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/404/de",
-      "sha": "d140b300f252c5ef0379f093607b4861542409c3c6ba24a9e43a9cd7900fa023"
+      "sha": "bd0c67552aae589c2e0e8efc64315be648ce07e5d0f26e9ee5107b23e1550436"
     },
     {
       "art": "aenderung",
@@ -145,8 +187,11 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/241/de",
-      "sha": "bc039007ce199e01179a1d10985c633ba19368f1175daed455493a7f46ca0096"
+      "sha": "3eda6d68e3d9e1e7df597c4930c8b261fa296464e0433666448d0079d17ef1e4"
     },
     {
       "art": "aenderung",
@@ -157,8 +202,12 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/87/de",
-      "sha": "c133fb3a206655d7c2ec2718928ce4fa94f8399bccbf437a3c186eec7d374ea1"
+      "sha": "2a2d010cfc11a556006e6fd720f0d75e338cf2d184a715189cad70d79eaca0c8"
     },
     {
       "art": "aenderung",
@@ -169,8 +218,12 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung (mit Anlage und Verzeichnissen) (mit Anlage und Verzeichnissen)",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers (avec annexe et listes)",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri (con allegato e elenchi)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/346/de",
-      "sha": "aeb74924fb858e091df8d452401cff21b0dbe8f3d33f1e83c8c07a8332aa2e00"
+      "sha": "f89ab1fec99f168d49356964ec3c6f9aeb8cba7310b1db5b108bbac962216f51"
     },
     {
       "art": "aenderung",
@@ -181,21 +234,266 @@
       "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
       "titelFr": "Convention du 5 octobre 1961 supprimant l'exigenc de la légalisation des actes publics étrangers",
       "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2318_2318_2318/de",
-      "sha": "6cc51a190697d08b92a30f758681afba43b52ec145ca9dd56a0aa791f8b854db"
+      "sha": "d2d44245ede7bc0cbf116c8a0fe85a1b26fa02c9363d73c0d52c5aa2bbc22567"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1973-03-11",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/348_347_349",
-      "dateDocument": "1961-10-05",
-      "roFundstelle": "AS 1973 348",
-      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung (mit Anlage und Verzeichnissen)",
-      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers (avec annexe et listes)",
-      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri (con. all. e elenchi)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/348_347_349/de",
-      "sha": "862e20f8310d3627211719b96361af7a7c60e9928b3598c5ef1473e314f83d8f"
+      "dateEntryInForce": "1993-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/973_973_973",
+      "dateDocument": "1993-03-16",
+      "roFundstelle": "AS 1993 973",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung, Änderung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers, Modification",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/973_973_973/de",
+      "sha": "e95f3d85e6058ff1b880aec897becc9e6eacb08d0346a0a0ee28812adb2491b2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-02-27",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/344_344_344",
+      "dateDocument": "1990-02-27",
+      "roFundstelle": "AS 1990 344",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung, Änderung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers, Modification",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/344_344_344/de",
+      "sha": "8eca666ec59c18c0b9f65cf43eb6826cc73e6b3d49e8a9b5531e2265457dc674"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/1177_1177_1177",
+      "dateDocument": "1988-07-19",
+      "roFundstelle": "AS 1988 1177",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung, Änderung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers, Modification",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/1177_1177_1177/de",
+      "sha": "83724ed71df0fb88890db833c25e2b64c9825e4b1953fedb42d4bf436ff1e0be"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/317_317_317",
+      "dateDocument": "1987-02-01",
+      "roFundstelle": "AS 1987 317",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung, Änderung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers, Modification",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/317_317_317/de",
+      "sha": "cd4c8b38a8c23c103b144ad1e578f545fe2ac2a855c3f5633e19a0526e4c9cb8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/175_175_175",
+      "dateDocument": "1986-01-01",
+      "roFundstelle": "AS 1986 175",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung, Änderung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers, Modification",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/175_175_175/de",
+      "sha": "9d367d1562e702a62906223e66fe1fd56fdb066ad50b850a28676b5baed3ed03"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-03-26",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/363_363_363",
+      "dateDocument": "1985-03-26",
+      "roFundstelle": "AS 1985 363",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung, Änderung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers, Modification",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/363_363_363/de",
+      "sha": "3a0e3a29b30edc42e944b77ab4965da3f622e56611a06ed7c350ccaa35e12df6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1175_1175_1175",
+      "dateDocument": "1983-09-01",
+      "roFundstelle": "AS 1983 1175",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung, Änderung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers, Modification",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1175_1175_1175/de",
+      "sha": "b87c3537ac0e4feac1843b21dbaa6754e492b355bce16f384b6086338d4bc88a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-11-30",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/2074_2074_2074",
+      "dateDocument": "1982-11-30",
+      "roFundstelle": "AS 1982 2074",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung, Änderung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers, Modification",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/2074_2074_2074/de",
+      "sha": "92c2e2d3a6e603e8b1921cc3e82a833a0aea175f19769c9328dfbdf22a6517d4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-01-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/154_154_154",
+      "dateDocument": "1982-01-15",
+      "roFundstelle": "AS 1982 154",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung, Änderung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers, Modification",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/154_154_154/de",
+      "sha": "51b8c1f7f36b795d731b9fe46e37789693b14e061bb20357722c38a1bd50c511"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1980-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/669_669_669",
+      "dateDocument": "1980-06-01",
+      "roFundstelle": "AS 1980 669",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung, Änderung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers, Modification",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/669_669_669/de",
+      "sha": "80eac617954ba3f4869745fe260235357cb459e461999f221ae0ac9394d1f6d0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/1718_1718_1718",
+      "dateDocument": "1978-01-01",
+      "roFundstelle": "AS 1978 1718",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung, Änderung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers, Modification",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/1718_1718_1718/de",
+      "sha": "744cba5f9383e7c7238d81ef263ee92a34f4d57ef3054c070d602344d6c8b363"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-02-11",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/210_210_210",
+      "dateDocument": "1978-02-11",
+      "roFundstelle": "AS 1978 210",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/210_210_210/de",
+      "sha": "a54e7f7ca70ad457a6ed98b7ce42f014aae09bce7370216b7755662b634a5d4b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-04-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/765_765_765",
+      "dateDocument": "1977-04-15",
+      "roFundstelle": "AS 1977 765",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/765_765_765/de",
+      "sha": "8fcfe074cceea6a711b8e13719e411f2a28fba2c0b7fed6daf135c3650913c21"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-02-09",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/477_477_477",
+      "dateDocument": "1976-02-09",
+      "roFundstelle": "AS 1976 477",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
+      "titelFr": "Convention du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers",
+      "titelIt": "Convenzione del 5 ottobre 1961 che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/477_477_477/de",
+      "sha": "ae96ab977e818b0e648435e2449e9eb0a52fc87da874c0e36f45ee8c461692c4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-04-30",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/1766_1766_1766",
+      "dateDocument": "1973-04-30",
+      "roFundstelle": "AS 1973 1766",
+      "titelDe": "Übereinkommen vom 5. Oktober 1961 zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung, Änderung",
+      "titelFr": "Convention internationale de La Haye du 5 octobre 1961 supprimant l'exigence de la légalisation des actes publics étrangers, Modification",
+      "titelIt": "Convenzione internazionale dell'Aja del 5 ottobre 1961, che sopprime la legalizzazione degli atti pubblici esteri, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "zweite-fundstelle"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/1766_1766_1766/de",
+      "sha": "1301a170a4a079d2d721454c0df2b5e2cee2d72d366ca5f8c6cfe8c7dfe12d1c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-04-27",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/347_346_348",
+      "dateDocument": "1972-04-27",
+      "roFundstelle": "AS 1973 347",
+      "titelDe": "Bundesbeschluss vom 27. April 1972 betreffend die Genehmigung des internationalen Haager Übereinkommens zur Befreiung ausländischer öffentlicher Urkunden von der Beglaubigung",
+      "titelFr": "Arrêté fédéral du 27 avril 1972 approuvant la Convention internationale de La Haye qui supprime l'exigence de la légalisation des actes publics étrangers",
+      "titelIt": "Decreto federale del 27 aprile 1972 che approva la convenzione internazionale dell'Aia che sopprime la legalizzazione degli atti pubblici esteri",
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/347_346_348/de",
+      "sha": "2c9183240f41ed3b2444dafd9d05fe758c5cfda5bbd0cb8dfd64e3d6703a3cf2"
     }
   ],
-  "sha": "0c96ed4c3b458b8ac4c66f1fdaebd04606d5778fc0f1acfa9521e945052d5935"
+  "sha": "6c9beed82fe381800cb5b497ebf5eea7792c924f4aa3a8cf81307d77c8076a90"
 }

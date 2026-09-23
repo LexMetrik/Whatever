@@ -1,8 +1,8 @@
 {
   "erlassKey": "ASYLV1",
   "sr": "142.311",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1)",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/264/de",
-      "sha": "f0a889d76a41e316439f669b5022ca0c63a226ffbd3771fe9b4a2b553ea50b2e"
+      "sha": "709141c43115a253a52edf3b6254a9317ac0c9167716ea694dfba0e8a3f6484c"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,12 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1)",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/199/de",
-      "sha": "119749167d005d442ada75d39af7ca9623363efb1be7723f764181dd4d251a7c"
+      "sha": "245ea1d776e20ec754809e95afb7f83da00bc5b09ea4288a5d961928af8d25d0"
     },
     {
       "art": "aenderung",
@@ -37,8 +44,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1)",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/751/de",
-      "sha": "0ee4dc505c7901f7d17528ccb29f02c9de57e6a2f37518e0695a3d0aef0fb26a"
+      "sha": "09224d32aecbdb5b8f16658a181085203649070f5beb4c079542c8cf8b00319b"
     },
     {
       "art": "aenderung",
@@ -49,8 +59,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1)",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/164/de",
-      "sha": "1f2685ec99f103e437c08006f43120823547eccc2a88a57835e7af6466c11ecf"
+      "sha": "8861100be363d641948c8d69b88b05718fcc08aa43c8d76d19f9a3109ad2c864"
     },
     {
       "art": "aenderung",
@@ -61,8 +74,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1). Erratum",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/143/de",
-      "sha": "b11f30447b3096bba90b526b0e13cc78c442b279021712e16e9d4e6a24eb5393"
+      "sha": "a8a8dceb6f658ef5ca64440f3e41386510defd7f63ceaa8adcfd40571b9c5303"
     },
     {
       "art": "aenderung",
@@ -73,8 +89,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1)",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/674/de",
-      "sha": "7643348555090e13ff4f09299f4d292af41aaabf9cbe91db61366ebef06165e6"
+      "sha": "d4ebcdd5df8cfae8b76bed33502d6a44d635b29e59078432e88c05c33aadd264"
     },
     {
       "art": "aenderung",
@@ -85,8 +104,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1). Berichtigung",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1). Erratum",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/296/de",
-      "sha": "9839e8c06ed1aa12fe3983a1590d7a5ca823abff12b0e4b7f5d652b806cd80d1"
+      "sha": "e003909e227719949fb94604001b1674d93214d5d34d7d60d70bd416dc28436b"
     },
     {
       "art": "aenderung",
@@ -97,8 +119,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1)",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/809/de",
-      "sha": "6b61868ed4cb754c41c5248ff6ac227cf8561b241d7081a7a3cb9650fe6137ed"
+      "sha": "59afed9cd76d7868612fed7cf6e06e5250dca3a68284a5e3194eb4bad06ba5a8"
     },
     {
       "art": "aenderung",
@@ -109,8 +134,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1)",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/645/de",
-      "sha": "c7f7e7911509311b4d6496d069a9111039f56fd7c8e60d12122db95b6c3f0639"
+      "sha": "41d792fafa95ec98b07f2a1b8f15bb5917d6386de265d8860ec42f8b32688223"
     },
     {
       "art": "aenderung",
@@ -121,8 +149,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1)",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/655/de",
-      "sha": "5bdfacfe6ebc8570ad0ca1c2e6b9a3e2db163a975ef4cab254704b1c27c4446f"
+      "sha": "cb209543e88ed87115f27728bb882d0691f82c5874caeb15cd82bb7fdc964b1b"
     },
     {
       "art": "aenderung",
@@ -133,8 +164,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1)",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/460/de",
-      "sha": "ffcbf1afa8e6da8a87ed78cf0b137e0f208c85b40e8eaf84d0a8512614622cd0"
+      "sha": "85775969d3dea3be574fd4cacfb86e730c468aa5118856b184bd993443059738"
     },
     {
       "art": "aenderung",
@@ -145,8 +179,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1)",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/676/de",
-      "sha": "3c03145c7cde4d552a02e36fa4c985fa2a4c92e6faff9fb53bd6b67a371dd349"
+      "sha": "ceb7088e990b7c35bf132c55aa70b31120a72a3b4c1c438b52e5e740d05fa75b"
     },
     {
       "art": "aenderung",
@@ -157,8 +194,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l’asile relative à la procédure (Ordonnance 1 sur l’asile, OA 1)",
       "titelIt": "Ordinanza 1 sull’asilo relativa a questioni procedurali (Ordinanza 1 sull’asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/205/de",
-      "sha": "438afa94b6d65f0606abf5d3c41d8aaf7febe9a1104888d9b58cd8d193603988"
+      "sha": "77f438ddec6a01a237120b56ee3e925f2544e775df9a03981357a9a5a9738828"
     },
     {
       "art": "aenderung",
@@ -169,8 +209,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/880/de",
-      "sha": "71e9f48d246272f65f8cfb976d720ce65ccde20ec7ed10fcc5b0ef48e43f52d2"
+      "sha": "7032e427fa337e46ff50ad04645640d692cfd9233a98723bc2bfe8e34fd6d111"
     },
     {
       "art": "aenderung",
@@ -181,8 +224,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/173/de",
-      "sha": "b685ceb985a6b0128492c0c2bb3021d61e577bd076ea8377f7017a630cd7674d"
+      "sha": "65307786c645d86f3121a8c43d59ad7e4cc38416573b6cb7c049cc7c71124920"
     },
     {
       "art": "aenderung",
@@ -193,14 +239,26 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/716/de",
-      "sha": "e7ad6578db89d3030c555f25592758a2fb6f597a2a019c9c3462d5bb31d55c65"
+      "sha": "0e3c2b363a5e4fb9cb92ed5e3513a4c04608e482165219579b830c39bc6bb033"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-11-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.311",
-      "sha": "669b28a52214573bad4bffd27595592f521069da797251633d56e80ebdccd899"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/555",
+      "dateDocument": "2019-09-20",
+      "roFundstelle": "AS 2019 3041",
+      "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
+      "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
+      "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/555/de",
+      "sha": "447c8451c70c066b4e7e5e238383288ed8e866689e77c342e293e08e2ab1a251"
     },
     {
       "art": "aenderung",
@@ -211,8 +269,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/514/de",
-      "sha": "9a592564d2e4d60c30c8c148364a24f6141b619c1ccfdff4946b5f5a3cb86f6b"
+      "sha": "cbc7c191bab2797a264fed94fc4d5b12a47d56e94a097294101ae4af03c63236"
     },
     {
       "art": "aenderung",
@@ -223,8 +284,12 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/439/de",
-      "sha": "c0d56c0ab8577fed014c2d8b91f17b569d16e2ca2c807d2264933fe3cfbc0590"
+      "sha": "5dcfca09e9756956265bb4479628492d737a677fd49340a25372678e5eb764d1"
     },
     {
       "art": "aenderung",
@@ -235,14 +300,60 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/309/de",
-      "sha": "6718a87fe2a99d50b5ba92d8ed7b52ec0f36db398d3ba35c70f55c5c8adeeb25"
+      "sha": "1c2b97a0e9faab5294ad45279d31964357432a6e97bca86c4521682577b6595d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2018-06-08",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/323",
+      "dateDocument": "2018-05-23",
+      "roFundstelle": "AS 2018 2285",
+      "titelDe": "Verordnung über die Arbeitsvermittlung und den Personalverleih (Arbeitsvermittlungsverordnung, AVV)",
+      "titelFr": "Ordonnance sur le service de l'emploi et la location de services (Ordonnance sur le service de l'emploi, OSE)",
+      "titelIt": "Ordinanza sul collocamento e il personale a prestito (Ordinanza sul collocamento, OC)",
+      "wirkungen": [
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/323/de",
+      "sha": "393a1fe05eb0fd3bf063e961d34f601d6c8e85c6a640f1d991a680b296df2ca5"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2017-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.311",
-      "sha": "d6a15f8280e7eaa099bff8e4d744bacebc0d4d34a3906b9f81076de7c1458453"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/100",
+      "dateDocument": "2017-02-01",
+      "roFundstelle": "AS 2017 563",
+      "titelDe": "Verordnung über die Einführung der Landesverweisung",
+      "titelFr": "Ordonnance sur la mise en uvre de l'expulsion pénale",
+      "titelIt": "Ordinanza sull'attuazione dell'espulsione giudiziaria",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/100/de",
+      "sha": "68dd55e3fda62ea868c6b04baf72396da3d4a4921a5254958cecc37fb8368661"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-09-29",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/595",
+      "dateDocument": "2013-09-04",
+      "roFundstelle": "AS 2013 3065",
+      "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
+      "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
+      "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-10-01",
+        "2015-09-29"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/595/de",
+      "sha": "86b9f7bd007866db6295fad11345c666aa2dbde8ade870c38d8b85d61804e807"
     },
     {
       "art": "aenderung",
@@ -253,8 +364,26 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/380/de",
-      "sha": "648e85d4dc5db89443dd57193d85897c72dc13bfd268ec81366ba67c009ec840"
+      "sha": "067b21edfec62a9d8f4ac235bf53c6f0c43578d5dbab1f5cbcdf9672ed6c8529"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/358",
+      "dateDocument": "2015-06-12",
+      "roFundstelle": "AS 2015 1849",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen aufgrund von Neuerungen bezüglich des Dublin/Eurodac-Besitzstands",
+      "titelFr": "Ordonnance portant adaptation d'actes en raison de nouveautés en lien avec l'acquis de Dublin/Eurodac",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze in seguito a innovazioni concernenti l'acquis di Dublino/Eurodac",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/358/de",
+      "sha": "6036c63b738b26bf1fb97009a747bf78601bd838c9b593809e4502a9cbafd898"
     },
     {
       "art": "aenderung",
@@ -265,8 +394,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/361/de",
-      "sha": "f1846fff1c6aa25d65886317b54a254b810e9b14ade1d1fe9565ded5d945cb35"
+      "sha": "3e1aa0c8055afaff88944aa456c629fa7f0069dab35e60e9b4f1f6fef6313489"
     },
     {
       "art": "aenderung",
@@ -277,14 +409,18 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/853/de",
-      "sha": "09acb165e52de9e6984901e782a950fe1ae2f86130aed5147e022413553b389b"
+      "sha": "f8a8789f1493c9ae5d66afbf5f5c39c08f7936098cc70fc583be5ad204e5ca53"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2013-12-13",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.311",
-      "sha": "3a75147acdacca1d02cc7678dc52468d3bbc9e15fc49db6b227730fd038b79b8"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/1999/359/20131213/de",
+      "sha": "a4c3ff20cc109e519aaa8804839b69194481b32f78daca404f5998800dc3cdcc"
     },
     {
       "art": "aenderung",
@@ -295,8 +431,15 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-10-01",
+        "2015-09-29"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/595/de",
-      "sha": "6c07939b04fef1303fe128bd4e2742eaf766bc784b8879744e62d87ed829cda5"
+      "sha": "cf2852994604276f11b5e661e58cee5112fd5f9703943b6fd094603c758d35d5"
     },
     {
       "art": "aenderung",
@@ -307,20 +450,42 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/818/de",
-      "sha": "dca74ab9c8bfecbd682749fbba8374bdce566225afae8903675d2a8cb5a00775"
+      "sha": "9d9781606c6615e851de01b387ff9761e7b22c5eeafb779bb06cdd0e0f8cbe71"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-12-12",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.311",
-      "sha": "32dbc2520b0ca9aed780b1859050e6085349202b6c6487d17d1af36c7ef1ef70"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/757",
+      "dateDocument": "2008-10-22",
+      "roFundstelle": "AS 2008 5421",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen im Ausländer- und Asylbereich zur Inkraftsetzung der Schengen- und Dublin-Assoziierungsabkommen",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du domaine des étrangers et de l'asile en raison de la mise en vigueur des accords d'association à Schengen et à Dublin",
+      "titelIt": "Ordinanza che adegua ordinanze del settore degli stranieri e dell'asilo a seguito della messa in vigore degli Accordi di associazione alla normativa di Schengen e di Dublino",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/757/de",
+      "sha": "c2434bac7bb4691546912a3effea4ff7fa7a70b7289a1d5dc1bf48a9bad0d0c9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-12-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.311",
-      "sha": "eed8d2bef606769d1cf450c367ac0b8587cee5253ebe6b610252f677c3936f07"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/694",
+      "dateDocument": "2008-10-15",
+      "roFundstelle": "AS 2008 4943",
+      "titelDe": "Verordnung über die Anpassungen an das Bundesgesetz über die polizeilichen Informationssysteme des Bundes",
+      "titelFr": "Ordonnance sur les adaptations découlant de la loi fédérale sur les systèmes d'information de police de la Confédération",
+      "titelIt": "Ordinanza sugli adeguamenti alla legge federale sui sistemi d'informazione di polizia della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/694/de",
+      "sha": "fd3c4faefc694cc551cd718ddc685f1c630c0e6e5330d9947609877d81520e98"
     },
     {
       "art": "aenderung",
@@ -331,14 +496,58 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/767/de",
-      "sha": "5df7628942f2463a92cd68908cbc9782305abf5d90411d7b705d13cf3599cf91"
+      "sha": "8999fa4ba8d3989f70102bd678ea041f779b5f0b4a8bcb0adaee8aed9177fcdb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.311",
-      "sha": "05299f7eaf585da21e8d2d49d8094978dd8e9454424ee4fe8fa67e4a1b402261"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4705",
+      "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "sha": "509e7b22613546560d1e36883c9ec32fce8a8368a2969478863a0cb4a567bbfd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/726",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4739",
+      "titelDe": "Verordnung über die Änderung von Verordnungen im Zusammenhang mit der teilweisen Inkraftsetzung der Änderungen vom 16. Dezember 2005 des Asylgesetzes sowie des Bundesgesetzes über die Krankenversicherung und des Bundesgesetzes über die Alters- und Hinterlassenenversicherung",
+      "titelFr": "Ordonnance sur la modification d'ordonnances liée à l'entrée en vigueur partielle des modifications du 16 décembre 2005 de la loi sur l'asile, de la loi fédérale sur l'assurance-maladie et de la loi fédérale sur l'assurance-vieillesse et survivants",
+      "titelIt": "Ordinanza concernente la modifica di ordinanze nel contesto della messa in vigore parziale delle modifiche del 16 dicembre 2005 della legge sull'asilo, della legge sull'assicurazione malattie e della legge sull'assicurazione per la vecchiaia e per i superstiti",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/726/de",
+      "sha": "1fdceef15513ebfbd27dbf0ff12c6cda014200e5cde2b008bee69050457d6172"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/755",
+      "dateDocument": "2006-11-15",
+      "roFundstelle": "AS 2006 4869",
+      "titelDe": "Verordnung über Anpassungen im Migrationsbereich im Zusammenhang mit dem Partnerschaftsgesetz",
+      "titelFr": "Ordonnance sur les modifications dans le domaine des migrations en relation avec la loi sur le partenariat",
+      "titelIt": "Ordinanza sugli adeguamenti nel settore della migrazione in relazione alla legge sull'unione domestica registrata",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/755/de",
+      "sha": "f97f8429840a122f51698f8478c396c4ff7f489020f2ae074be1ed7ae1de38d1"
     },
     {
       "art": "aenderung",
@@ -349,8 +558,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/165/de",
-      "sha": "71158a8c5bf8bcbabab80363f643a9356f335c66e114244140810c634bf70946"
+      "sha": "81f3c3e73052002e74d7f6c1a7e2863d4794cde79612e7c016a928e55b401190"
     },
     {
       "art": "aenderung",
@@ -361,8 +573,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/202/de",
-      "sha": "309b36fe67827bbc1fcd73ce0bcb1194c7290c7578c5182efb322cf5eacfdf9c"
+      "sha": "95e60d116beaf6360ff5c7979d88b1aef686a6ac85b0589f1d566646af894350"
     },
     {
       "art": "aenderung",
@@ -373,8 +588,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/302/de",
-      "sha": "90ff6590ca993ce64e467853f8f1e3cad17b1e4e1597e8256b0781cf16b0bd94"
+      "sha": "b72f0a10ddeebb6152757805b2342caa73449c2d2c0d94d617feae1bd998f69f"
     },
     {
       "art": "aenderung",
@@ -385,8 +603,11 @@
       "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/273/de",
-      "sha": "3d8db48f18914e6a7ed36a67cbc6288390bf1ed9858de60b43abefd1e1de3c47"
+      "sha": "3295b8217dd14b6832acd95e54d1afb01d5c8c7b223e5843a392a24ffe56842c"
     },
     {
       "art": "aenderung",
@@ -397,57 +618,12 @@
       "titelDe": "Asylverordnung 1 über das Asylverfahren (Asylverordnung 1, AsylV 1)",
       "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
       "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/12/de",
-      "sha": "a2c43234a4711dfaf55a4aa1cac30c7cfb1d9138ae0187a9bbf39353174a0883"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1999-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/359",
-      "dateDocument": "1999-08-11",
-      "roFundstelle": "AS 1999 2302",
-      "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
-      "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
-      "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/359/de",
-      "sha": "e239f396e26f65f4cada4363ffc5e08b6d9ff947eb3a9dddc9e4c9f63733c391"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1991-06-05",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/1138_1138_1138",
-      "dateDocument": "1991-05-22",
-      "roFundstelle": "AS 1991 1138",
-      "titelDe": "Asylverordnung 1 vom 22. Mai 1991 über Verfahrensfragen (Asylverordnung 1)",
-      "titelFr": "Ordonnance 1 du 22 mai 1991 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile)",
-      "titelIt": "Ordinanza 1 del 22 maggio 1991 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/1138_1138_1138/de",
-      "sha": "a1cfdc6afae291cfb99636ad358cb0faac6a2c013954d15e267779e958daba80"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1988-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/1680_1680_1680",
-      "dateDocument": "1987-11-25",
-      "roFundstelle": "AS 1987 1680",
-      "titelDe": "Asylverordnung vom 25. November 1987",
-      "titelFr": "Ordonnance du 25 novembre 1987 sur l'asile",
-      "titelIt": "Ordinanza del 25 novembre 1987 sull'asilo",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/1680_1680_1680/de",
-      "sha": "f191a46f06fc5b92b7dc946d34aec4387e5e1661ca7e6298d0a5fb889ea806df"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1981-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/1730_1730_1730",
-      "dateDocument": "1980-11-12",
-      "roFundstelle": "AS 1980 1730",
-      "titelDe": "Asylverordnung vom 12. November 1980",
-      "titelFr": "Ordonnance du 12 novembre 1980 sur l'asile",
-      "titelIt": "Ordinanza del 12 novembre 1980 sull'asilo",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/1730_1730_1730/de",
-      "sha": "1f139484d1f8be86a119b587d0ba77541dbbca76fd0deca35cd7c74acf87ca7e"
+      "sha": "5b6bf5ccbf21388e910aba0c97a0950975456ab97cdb4cd2a7b0ec48b033364f"
     }
   ],
-  "sha": "47a63619c0c3665aa26f2ef300b237e3a380dc43a222a844d1296efb811115e3"
+  "sha": "ea9a2e09ce94d4a62087be46431c4cfbd8b5d5e96b5432d3910e96fd89c9712d"
 }

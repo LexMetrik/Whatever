@@ -1,21 +1,41 @@
 {
   "erlassKey": "STGB",
   "sr": "311.0",
-  "abgerufen": "2026-09-12",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/323",
+      "dateDocument": "2025-09-26",
+      "roFundstelle": "AS 2026 323",
+      "titelDe": "Bundesgesetz vom 26. September 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPG)",
+      "titelFr": "Loi fédérale du 26 septembre 2025 sur la transparence des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales, LTPM)",
+      "titelIt": "Legge federale del 26 settembre 2025 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Legge sulla trasparenza delle persone giuridiche, LTPG)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "1d9904c90efc33d5a64bec62cb322dec3189b1c881d5a6241fa5211d7b691eb9"
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/323/de",
+      "sha": "59ab5e90ee0d0050561e97e116315a6781a58938cda0cf7322c948ff8bf4540b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-06-12",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "62d16503a3262af06250126fb9df16740fed8a7403fd1e826466fbd4e5793218"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/231",
+      "dateDocument": "2025-09-26",
+      "roFundstelle": "AS 2026 231",
+      "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Notenaustauschs zwischen de Schweiz und der EU betreffend die Übernahme der Verordnung (EU) 2024/1358 über die Einrichtung von Eurodac für den Abgleich biometrischer Daten (Weiterentwicklung des Dublin/Eurodac-Besitzstands)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en œuvre de l’échange de notes entre la Suisse et l’UE concernant la reprise du règlement (UE) 2024/1358 relatif à la création d’Eurodac pour la comparaison des données biométriques (Développement de l’acquis de Dublin/Eurodac)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero lo scambio di note tra la Svizzera e l’UE concernente il recepimento del regolamento (UE) 2024/1358 che istituisce l’«Eurodac» per il confronto dei dati biometrici (Sviluppo dell’acquis di Dublino/Eurodac)",
+      "botschaftKey": "BOTSCHAFT-2025-1478",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/231/de",
+      "sha": "91f9552ae46576d6123f8c8750bf028074c72a6bad3ed3f47fca5aba474d0424"
     },
     {
       "art": "aenderung",
@@ -26,20 +46,74 @@
       "titelDe": "Schweizerisches Strafgesetzbuch (Verbesserung des strafrechtlichen Schutzes vor Nachstellung)",
       "titelFr": "Code pénal suisse (Amélioration de la protection pénale contre le harcèlement)",
       "titelIt": "Codice penale svizzero (Migliore protezione penale contro gli atti persecutori)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/740/de",
-      "sha": "889f8f9072b01e445af77bd19591499e47016a670534aab07eacbc2888396704"
+      "sha": "b03bb30b7b5ee138233d25cc0b6b9e47623dce3fc06c22c058eb58e3bdfd81b1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "4db97a91aabad75604de67316f051f8736ca63add5a80f7264b01a9d551bb7f5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/348",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2025 348",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Abkommens zwischen der Schweiz und der EU zur Vertiefung der grenzüberschreitenden Zusammenarbeit (Prümer Zusammenarbeit) und des Eurodac-Protokolls zwischen der Schweiz, der EU und dem Fürstentum Liechtenstein betreffend den Zugang zu Eurodac für Gefahrenabwehr- und Strafverfolgungszwecke",
+      "titelFr": "Arrêté fédéral portant approbation et mise en œuvre de l’accord entre la Suisse et l’UE concernant l’approfondissement de la coopération transfrontalière (coopération Prüm) et du Protocole Eurodac entre la Suisse, l’UE et la Principauté de Liechtenstein concernant l’accès à Eurodac à des fins répressives",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero l’Accordo tra la Svizzera e l’UE sul potenziamento della cooperazione transfrontaliera (cooperazione Prüm) e il Protocollo tra la Svizzera, l’UE e il Principato del Liechtenstein riguardante l’accesso a Eurodac a fini di contrasto",
+      "botschaftKey": "BOTSCHAFT-2021-738",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/348/de",
+      "sha": "c94953d9d319ea372727c53f2982f7de1474b150d71dfc3c466fab922f6eafd0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2025-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/401",
+      "dateDocument": "2025-06-16",
+      "roFundstelle": "AS 2025 401",
+      "titelDe": "Mitteilung über die Inkraftsetzung von Gesetzesänderungen zur Umsetzung der Prümer Zusammenarbeit und des Eurodac-Protokolls",
+      "titelFr": "Communication relative à l’entrée en vigueur des modifications législatives visant à mettre en œuvre la coopération de Prüm et le Protocole Eurodac",
+      "titelIt": "Comunicazione relativa all’entrata in vigore delle modifiche legislative per l’attuazione della cooperazione di Prüm e del protocollo Eurodac",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/401/de",
+      "sha": "1c0aeed7dc6dceb7a53ccadbb0b973344807850ae516abd00940eeaf379dd650"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "ce7ba978fd9c54100c9c1f43b2919c1a324ddbf1bb252ad7b41ce7962e378cea"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/628",
+      "dateDocument": "2022-03-18",
+      "roFundstelle": "AS 2023 628",
+      "titelDe": "Bundesgesetz über die Bekämpfung des missbräuchlichen Konkurses (Änderung des Obligationenrechts, des Bundesgesetzes über Schuldbetreibung und Konkurs, des Strafgesetzbuches, des Militärstrafgesetzes, des Strafregistergesetzes und des Bundesgesetzes über die direkte Bundessteuer)",
+      "titelFr": "Loi fédérale sur la lutte contre l’usage abusif de la faillite (Modification du code des obligations, de la loi fédérale sur la poursuite pour dettes et la faillite, du code pénal, du code pénal militaire, de la loi sur le casier judiciaire et de la loi fédérale sur l’impôt fédéral direct)",
+      "titelIt": "Legge federale sulla lotta contro l’abuso del fallimento (Modifica del Codice delle obbligazioni, della legge federale sulla esecuzione e sul fallimento, del Codice penale, del Codice penale militare, della legge sul casellario giudiziale e della legge federale sull’imposta federale diretta)",
+      "botschaftKey": "BOTSCHAFT-2019-1847",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/628/de",
+      "sha": "e8199dc9309029d9ac64576ff4fbb45514fe6584be8b77e1e8bd662822b7742c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/590",
+      "dateDocument": "2024-06-14",
+      "roFundstelle": "AS 2024 590",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Massnahmen gegen Minderjährigenheiraten)",
+      "titelFr": "Code civil suisse (Mesures de lutte contre les mariages avec un mineur)",
+      "titelIt": "Codice civile svizzero (Misure contro i matrimoni con minorenni)",
+      "botschaftKey": "BOTSCHAFT-2023-2127",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/590/de",
+      "sha": "70f7c2cd259d525f73a86f0ed5be0d27439dd9ce3f8634f95c8124e962748f5d"
     },
     {
       "art": "aenderung",
@@ -51,14 +125,43 @@
       "titelFr": "Loi fédérale portant révision du droit pénal en matière sexuelle",
       "titelIt": "Legge federale sulla revisione del diritto penale in materia sessuale",
       "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/27/de",
-      "sha": "eaf8284f1ba13f674cfb91a4376a35e818b6487fa16e77a70546722b71fbd51e"
+      "sha": "d504f8caa390c5b3b70e69aff99a065eaa54014e4799c70bd196a0e77307b991"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "e9a2ea02ec88d820bdf9ff9906f8a006a5e7694a12340e3d08d33412eb2b2ce6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 468",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2019-2368",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/468/de",
+      "sha": "4b9e33a8ad3ab55a2c54e2ab4657c445a2f90d1980ef0b657c5fd644f1b0b630"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/650",
+      "dateDocument": "2023-11-08",
+      "roFundstelle": "AS 2023 650",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Informationssicherheitsgesetzes vom 18. Dezember 2020",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi du 18 décembre 2020 sur la sécurité de l’information",
+      "titelIt": "Ordinanza concernente l’entrata in vigore parziale della legge sulla sicurezza delle informazioni",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/650/de",
+      "sha": "7759f570a6cb64b16ed6b4fff6dde0e8a0be5f9e27ed3e357421ac51b06db230"
     },
     {
       "art": "aenderung",
@@ -71,20 +174,78 @@
       "titelIt": "Codice delle obbligazioni (Diritto della società anonima). Correzione",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 2020 4005, das unter SR 220 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/739/de",
-      "sha": "2e438f84b375d8c00f46353b82bb924ee1f6ccbe16d6346a48b56e7bfdcfb2b1"
+      "sha": "c885cc463b8fba596aeaf9715d09e2eebb8ace133e5b0b5aabaafc4ef4cbfc3e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "e6f775b6ed07c20db214523ab9035eee5e78a46b45a7d08fb55224e14918c7e7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 259",
+      "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+      "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
+      "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene",
+      "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-07-01",
+        "2023-09-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
+      "sha": "1ab89231396c1beb0eba33adeef29a95cacb0a708ab68a09011ba7c36e175790"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2023-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "700d4eb89893e9e0c3073328c9eae653162c80b880cce261e119ba86b58f6f6f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/309",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 309",
+      "titelDe": "Bundesgesetz über die Verwendung von DNA-Profilen im Strafverfahren und zur Identifizierung von unbekannten oder vermissten Personen (DNA-Profil-Gesetz)",
+      "titelFr": "Loi fédérale sur l’utilisation de profils d’ADN dans les procédures pénales et sur l’identification de personnes inconnues ou disparues (Loi sur les profils d’ADN)",
+      "titelIt": "Legge federale sull’utilizzo di profili del DNA nel procedimento penale e per l’identificazione di persone sconosciute o scomparse (Legge sui profili del DNA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/309/de",
+      "sha": "88d19c5404435c4dc403a516787d0548dd98997923b2ff8576812f50c8f3e968"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/254",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 254",
+      "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
+      "titelFr": "Loi fédérale du 17 décembre 2021 sur l’adaptation du droit pénal accessoire au droit des sanctions modifié",
+      "titelIt": "Legge federale del 17 dicembre 2021 che adegua il diritto penale accessorio alla nuova disciplina delle sanzioni",
+      "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/254/de",
+      "sha": "13932c199fa8eae4cb6c6fc6ca937831cf4e92b80a43430ce5738ac0582d8419"
     },
     {
       "art": "aenderung",
@@ -96,20 +257,238 @@
       "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
       "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene",
       "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2023-07-01",
+        "2023-09-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
-      "sha": "9c11ba560e5ef0028f6cc939b91edcf862380aa4703c55761dcb1f5b09f7002d"
+      "sha": "82bb823d0a79dfff2f0d167a6c14c57c3493e86eb47f77bc2a8470f36c3f5816"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "e76e9798cb6c75591411c34e41d88b7680e50bfcb861453a34ec0a4f10c30cc2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/603",
+      "dateDocument": "2018-03-16",
+      "roFundstelle": "AS 2018 3803",
+      "titelDe": "Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 123c BV)",
+      "titelFr": "Code pénal et code pénal militaire (Mise en uvre de l'art. 123c Cst.)",
+      "titelIt": "Codice penale e Codice penale militare (Attuazione dell'art. 123c Cost.)",
+      "botschaftKey": "BOTSCHAFT-2016-1188",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2023-01-23"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/603/de",
+      "sha": "275e84fbdb9013b78aa36f51b22ae57511bba6ffd9a6c0b0a3bd6a98a0b113ab"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-23",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/565",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 565",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über polizeiliche Massnahmen zur Bekämpfung von Terrorismus (PMT)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur les mesures policières de lutte contre le terrorisme (MPT)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulle misure di polizia per la lotta al terrorismo (MPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2022-06-01",
+        "2023-01-23"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/565/de",
+      "sha": "723b75fbe85472ceab19f7bd7496646ccbf98ed0705d2347fead30079c89e128"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-23",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/232",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2022 232",
+      "titelDe": "Bundesgesetz vom 18. Dezember 2020 über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG)",
+      "titelFr": "Loi fédérale du 18 décembre 2020 sur la sécurité de l’information au sein de la Confédération (Loi sur la sécurité de l’information, LSI)",
+      "titelIt": "Legge federale del 18 dicembre 2020 sulla sicurezza delle informazioni in seno alla Confederazione (Legge sulla sicurezza delle informazioni, LSIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2023-01-23"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/232/de",
+      "sha": "e68d4632d44353621145163bd1afc21a0e1a61e7480f5205b40ed62e01e672d7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-23",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/600",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2022 600",
+      "titelDe": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+      "titelFr": "Loi fédérale du 17 juin 2016 sur le casier judiciaire informatique VOSTRA (Loi sur le casier judiciaire, LCJ)",
+      "titelIt": "Legge federale del 17 giugno 2016 sul casellario giudiziale informatizzato VOSTRA (Legge sul casellario giudiziale, LCaGi)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/600/de",
+      "sha": "e4c4b8da34d15d939a7a1fe7e89d3560fb4dab0082f88de6ee987649dd12d596"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "82909e72a98927eaa15fc333fdb18ebbe1585749c81ccfeb838f3868fedaf233"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/746",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4005",
+      "titelDe": "Obligationenrecht (Aktienrecht)",
+      "titelFr": "Code des obligations (Droit de la société anonyme)",
+      "titelIt": "Codice delle obbligazioni (Diritto della società anonima)",
+      "botschaftKey": "BOTSCHAFT-2017-112",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/746/de",
+      "sha": "6e2a231ee542118a1a8c2fb144cd7daccaff4c42b823a6cde0b78dd20ec3c94d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/656",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2021 656",
+      "titelDe": "Bundesgesetz über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereigesetz, GwG)",
+      "titelFr": "Loi fédérale concernant la lutte contre le blanchiment d’argent et le financement du terrorisme (Loi sur le blanchiment d’argent, LBA)",
+      "titelIt": "Legge federale relativa alla lotta contro il riciclaggio di denaro e il finanziamento del terrorismo (Legge sul riciclaggio di denaro, LRD)",
+      "botschaftKey": "BOTSCHAFT-2019-1932",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/656/de",
+      "sha": "652047da9db5ab6d1aac933f76d23d8dab7830f712ab652afc0d011671221fa0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/109",
+      "dateDocument": "2022-02-02",
+      "roFundstelle": "AS 2022 109",
+      "titelDe": "Verordnung vom 2. Februar 2022 über die abschliessende Inkraftsetzung der Änderung vom 19. Juni 2020 des Obligationenrechts (Aktienrecht)",
+      "titelFr": "Ordonnance du 2 février 2022 portant dernière mise en vigueur partielle de la modification du 19 juin 2020 du code des obligations (Droit de la société anonyme)",
+      "titelIt": "Ordinanza del 2 febbraio 2022 sull’entrata in vigore integrale della modifica del 19 giugno 2020 del Codice delle obbligazioni (Diritto della società anonima)",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/109/de",
+      "sha": "13fdf620366c4fecc055ce85a455020b4ee2fe53b0794a23840ade356bb5d1f8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/110",
+      "dateDocument": "2021-05-19",
+      "roFundstelle": "AS 2022 110",
+      "titelDe": "Obligationenrecht (Aktienrecht). Berichtigung",
+      "titelFr": "Code des obligations (Droit de la société anonyme). Erratum",
+      "titelIt": "Codice delle obbligazioni (Diritto della società anonima). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/110/de",
+      "sha": "f2f0fb1984e8ecbb44f89e82249cb2321117a81e799844075c6822958c1b545a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/232",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2022 232",
+      "titelDe": "Bundesgesetz vom 18. Dezember 2020 über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG)",
+      "titelFr": "Loi fédérale du 18 décembre 2020 sur la sécurité de l’information au sein de la Confédération (Loi sur la sécurité de l’information, LSI)",
+      "titelIt": "Legge federale del 18 dicembre 2020 sulla sicurezza delle informazioni in seno alla Confederazione (Legge sulla sicurezza delle informazioni, LSIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-01-01",
+        "2023-01-23"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/232/de",
+      "sha": "bbe0635cbc6b33d3e8e6cfe85ea908c40ef7a183834357fa1a86ea9de63d5592"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/352",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 352",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über Vorläuferstoffe für explosionsfähige Stoffe (Vorläuferstoffgesetz, VSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur les précurseurs de substances explosibles (LPSE)",
+      "titelIt": "Legge federale del 25 settembre 2020 sui precursori di sostanze esplodenti (LPre)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/352/de",
+      "sha": "2aece6be41ba6435b5819f6bc9b57302c9c40af96e330c437d788662564abaac"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/551",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 551",
+      "titelDe": "Verordnung vom 31. August 2022 über die abschliessende Inkraftsetzung der Änderung vom 19. März 2021 des Geldwäschereigesetzes",
+      "titelFr": "Ordonnance du 31 août 2022 portant dernière mise en vigueur partielle de la modification du 19 mars 2021 de la loi sur le blanchiment d’argent",
+      "titelIt": "Ordinanza del 31 agosto 2022 concernente l’entrata in vigore integrale della modifica del 19 marzo 2021 della legge sul riciclaggio di denaro",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/551/de",
+      "sha": "df60b6ca802f5d7662fa0aa4ff18cde0b7de4549588b01f1ab8e374f832fdae2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/750",
+      "dateDocument": "2022-11-23",
+      "roFundstelle": "AS 2022 750",
+      "titelDe": "Verordnung über eine Teilinkraftsetzung des Informationssicherheitsgesetzes",
+      "titelFr": "Ordonnance portant mise en vigueur partielle de la loi sur la sécurité de l’information",
+      "titelIt": "Ordinanza concernente un’entrata in vigore parziale della legge sulla sicurezza delle informazioni",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/750/de",
+      "sha": "5e940067bffa0ecf16277cc39e64697cc30a1ff7c4fddc28860dc3511777a2a3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-11-22",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/365",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 365",
+      "titelDe": "Bundesbeschluss vom 18. Dezember 2020 über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Rechtsgrundlagen über die Einrichtung, den Betrieb und die Nutzung des Schengener Informationssystems (SIS) (Weiterentwicklungen des Schengen-Besitzstands)",
+      "titelFr": "Arrêté fédéral du 18 décembre 2020 portant approbation et mise en œuvre des échanges de notes entre la Suisse et l’UE concernant la reprise des bases légales concernant l’établissement, le fonctionnement et l’utilisation du système d’information Schengen (SIS) (Développements de l’acquis de Schengen)",
+      "titelIt": "Decreto federale del 18 dicembre 2020 che approva e traspone nel diritto svizzero gli scambi di note tra la Svizzera e l’UE concernenti il recepimento delle basi legali dell’istituzione, dell’esercizio e dell’uso del sistema d’informazione Schengen (SIS) (Sviluppi dell’acquis di Schengen)",
+      "botschaftKey": "BOTSCHAFT-2020-794",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-07-01",
+        "2022-11-22"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/365/de",
+      "sha": "bb0f711320371c38f7239305adc28fbdcd850facd8fc89f8240e44586e78935e"
     },
     {
       "art": "aenderung",
@@ -120,14 +499,81 @@
       "titelDe": "Verordnung vom 19. Oktober 2022 über die abschliessende Inkraftsetzung der Änderung vom 18. Dezember 2020 des Strafgesetzbuches",
       "titelFr": "Ordonnance du 19 octobre 2022 portant dernière mise en vigueur partielle de la modification du 18 décembre 2020 du code pénal",
       "titelIt": "Ordinanza del 19 ottobre 2022 concernente l’entrata in vigore integrale della modifica del 18 dicembre 2020 del Codice penale",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/638/de",
-      "sha": "7aa8ba05f2a8a0acc50c3fe47db40fbf36d87bc1968b53c90674f0d6e96a0a52"
+      "sha": "d085040ea90419d5f9aa418aa958168b7528609fe1b43007b947600663e8ee37"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "b932a46ba8c9606d305b567733b35b27bd80c0d824fcae5df90078e48d87bd6f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/565",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 565",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über polizeiliche Massnahmen zur Bekämpfung von Terrorismus (PMT)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur les mesures policières de lutte contre le terrorisme (MPT)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulle misure di polizia per la lotta al terrorismo (MPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2022-06-01",
+        "2023-01-23"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/565/de",
+      "sha": "b2cc315a1bf6260334b8641d37c3f449571d66bb05211b56e407620af7a873e6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/300",
+      "dateDocument": "2022-05-04",
+      "roFundstelle": "AS 2022 300",
+      "titelDe": "Verordnung vom 4. Mai 2022 über die abschliessende Inkraftsetzung des Bundesgesetzes über polizeiliche Massnahmen zur Bekämpfung von Terrorismus",
+      "titelFr": "Ordonnance du 4 mai 2022 portant dernière mise en vigueur partielle de la loi fédérale sur les mesures policières de lutte contre le terrorisme",
+      "titelIt": "Ordinanza del 4 maggio 2022 concernente l’entrata in vigore integrale della legge federale sulle misure di polizia per la lotta al terrorismo",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/300/de",
+      "sha": "4b0a2884396402318f7327890ec0efc2234e91f8fe63f5a8bce09050d5033be3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+      "dateDocument": "2020-06-12",
+      "roFundstelle": "AS 2020 2743",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Ordonnance sur l'adaptation de lois à la suite de la modification de la désignation de l'Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Ordinanza sull'adeguamento di leggi in seguito al cambiamento della designazione dell'Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/498/de",
+      "sha": "624c9747c49a2b2de0386a2d0d50f3939887b89f337dadf4828f42762c9888d5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/565",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 565",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über polizeiliche Massnahmen zur Bekämpfung von Terrorismus (PMT)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur les mesures policières de lutte contre le terrorisme (MPT)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulle misure di polizia per la lotta al terrorismo (MPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2022-06-01",
+        "2023-01-23"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/565/de",
+      "sha": "8a71bdb8a6e400eb39ee757b4467fd713952dae7d9cf331442b05e6eae626010"
     },
     {
       "art": "aenderung",
@@ -138,8 +584,27 @@
       "titelDe": "Verordnung vom 3. November 2021 über eine Teilinkraftsetzung des Bundesgesetzes über polizeiliche Massnahmen zur Bekämpfung von Terrorismus",
       "titelFr": "Ordonnance du 3 novembre 2021 portant mise en vigueur partielle de la loi fédérale sur les mesures policières de lutte contre le terrorisme",
       "titelIt": "Ordinanza del 3 novembre 2021 concernente l’entrata in vigore parziale della legge federale sulle misure di polizia per la lotta al terrorismo",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/672/de",
-      "sha": "f123813f05e0d5a0bb62883e8b787d606e9b585584e7a7e89096534f6214d5c5"
+      "sha": "93bd4285920196081339baf3bbe5b7f8c431e33efb3c3b6b48fce1eac90d1285"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/846",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2021 846",
+      "titelDe": "Obligationenrecht (Indirekter Gegenvorschlag zur Volksinitiative «Für verantwortungsvolle Unternehmen – zum Schutz von Mensch und Umwelt»)",
+      "titelFr": "Code des obligations (Contre-projet indirect à l’initiative populaire «Entreprises responsables – pour protéger l’être humain et l’environnement»)",
+      "titelIt": "Codice delle obbligazioni (controprogetto indiretto all’iniziativa popolare «Per imprese responsabili – a tutela dell’essere umano e dell’ambiente»)",
+      "botschaftKey": "BOTSCHAFT-2017-112",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/846/de",
+      "sha": "23541b53cb78538788f95d07bd67808f94a7fc78fe70b81cc264137b68efbc08"
     },
     {
       "art": "aenderung",
@@ -150,14 +615,62 @@
       "titelDe": "Verordnung vom 3. Dezember 2021 über eine Teilinkraftsetzung der Änderung vom 19. Juni 2020 des Obligationenrechts (Aktienrecht) (Art. 325bis des Strafgesetzbuches)",
       "titelFr": "Ordonnance du 3 décembre 2021 portant mise en vigueur partielle de la modification du 19 juin 2020 du code des obligations (Droit de la société anonyme) (Art. 325bis du code pénal)",
       "titelIt": "Ordinanza del 3 dicembre 2021 concernente un’entrata in vigore parziale della modifica del 19 giugno 2020 del Codice delle obbligazioni (Diritto della società anonima) (Art. 325bis del Codice penale)",
+      "wirkungen": [
+        "teilinkraftsetzung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/848/de",
-      "sha": "cd9cd252209fd29b199fdd5a7a14973f230794ce145cefb7d96b027b6115a7ec"
+      "sha": "8933c8edf783dee4e038adfd78ab371513dc70b5c8b9cfa85ca7444cd3afb5a7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "bf2c085af963ea62e3abffbb5fbf5071c10be6419c476c3a68d3a042f2280a6e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/360",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 360",
+      "titelDe": "Bundesbeschluss vom 25. September 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität",
+      "titelFr": "Arrêté fédéral du 25 septembre 2020 portant approbation et mise en œuvre de la Convention du Conseil de l’Europe pour la prévention du terrorisme et de son Protocole additionnel et concernant le renforcement des normes pénales contre le terrorisme et le crime organisé",
+      "titelIt": "Decreto federale del 25 settembre 2020 che approva e traspone nel diritto svizzero la Convenzione del Consiglio d’Europa per la prevenzione del terrorismo e il relativo Protocollo addizionale e potenzia il dispositivo penale contro il terrorismo e la criminalità organizzata",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/360/de",
+      "sha": "67927ec59fb049dacbaaea808f349483ee6418c81ecba6a07b881dc3511bba29"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/365",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 365",
+      "titelDe": "Bundesbeschluss vom 18. Dezember 2020 über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Rechtsgrundlagen über die Einrichtung, den Betrieb und die Nutzung des Schengener Informationssystems (SIS) (Weiterentwicklungen des Schengen-Besitzstands)",
+      "titelFr": "Arrêté fédéral du 18 décembre 2020 portant approbation et mise en œuvre des échanges de notes entre la Suisse et l’UE concernant la reprise des bases légales concernant l’établissement, le fonctionnement et l’utilisation du système d’information Schengen (SIS) (Développements de l’acquis de Schengen)",
+      "titelIt": "Decreto federale del 18 dicembre 2020 che approva e traspone nel diritto svizzero gli scambi di note tra la Svizzera e l’UE concernenti il recepimento delle basi legali dell’istituzione, dell’esercizio e dell’uso del sistema d’informazione Schengen (SIS) (Sviluppi dell’acquis di Schengen)",
+      "botschaftKey": "BOTSCHAFT-2020-794",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-07-01",
+        "2022-11-22"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/365/de",
+      "sha": "e4d1f79c0b34aeeae318b4fe2eb962926edecd0b0a71df08eddf5c59a7bab60b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/432",
+      "dateDocument": "2018-12-14",
+      "roFundstelle": "AS 2019 2273",
+      "titelDe": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen",
+      "titelFr": "Loi fédérale sur l'amélioration de la protection des victimes de violence",
+      "titelIt": "Legge federale intesa a migliorare la protezione delle vittime di violenza",
+      "botschaftKey": "BOTSCHAFT-2017-2095",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/432/de",
+      "sha": "06e1816469028686cea4f56d3fc0e720e50a5bbaa424114bc88930a24ad90f48"
     },
     {
       "art": "aenderung",
@@ -168,8 +681,11 @@
       "titelDe": "Strafgesetzbuch und Militärstrafgesetz (Diskriminierung und Aufruf zu Hass aufgrund der sexuellen Orientierung)",
       "titelFr": "Code pénal et code pénal militaire (Discrimination et incitation à la haine en raison de l'orientation sexuelle)",
       "titelIt": "Codice penale e Codice penale militare (Discriminazione e incitamento all'odio basati sull'orientamento sessuale)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/329/de",
-      "sha": "0fd0158903f0219f73a2782eb9dd93f6c48418db8a800bfd552cc1d2ed665003"
+      "sha": "f0f9455d00472b70458c61e52c25753af50fdd7f2776c5823d654de0fa3d24d6"
     },
     {
       "art": "aenderung",
@@ -180,20 +696,42 @@
       "titelDe": "Schweizerisches Strafgesetzbuch (Betrifft nur den französischen Text)",
       "titelFr": "Code pénal suisse (CP)",
       "titelIt": "Codice penale svizzero (Concerne solamente il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/118/de",
-      "sha": "a64fb096aecb56adc97749754b40ad66a6f92e940b9ca41c2a63ff30f0db6fe8"
+      "sha": "8585f24946f3b66b9487d1b8023a86005c3b50efd916731ad9a66ee884343792"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "5d0861610c7562e98d90ca94c389c0f1ad1014715e56d3092a602386e4e925f2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/16",
+      "dateDocument": "2016-09-30",
+      "roFundstelle": "AS 2020 57",
+      "titelDe": "Bundesgesetz über die Gesundheitsberufe (Gesundheitsberufegesetz, GesBG)",
+      "titelFr": "Loi fédérale sur les professions de la santé (LPSan)",
+      "titelIt": "Legge federale sulle professioni sanitarie (LPSan)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/16/de",
+      "sha": "6b3d9c94729ef33cce241d239bbbd8e5e67992d845732f4ba86e8e141dea97f5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-11-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "9bcdf2ec0dc17ba84b6c4a0d17bf2b0c41ae1ee41f1944d42fd1a0c7db0cc1f9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/583",
+      "dateDocument": "2019-06-21",
+      "roFundstelle": "AS 2019 3161",
+      "titelDe": "Bundesgesetz zur Umsetzung von Empfehlungen des Globalen Forums über Transparenz und Informationsaustausch für Steuerzwecke",
+      "titelFr": "Loi fédérale sur la mise en uvre des recommandations du Forum mondial sur la transparence et l'échange de renseignements à des fins fiscales",
+      "titelIt": "Legge federale che attua le raccomandazioni del Forum globale sulla trasparenza e sullo scambio di informazioni a fini fiscali",
+      "botschaftKey": "BOTSCHAFT-2019-18",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/583/de",
+      "sha": "3f5496cccf8d5bedeb682ef7e6d874c25d42fbcebe6af98a4729088a7c56cb82"
     },
     {
       "art": "aenderung",
@@ -204,14 +742,61 @@
       "titelDe": "Bundesgesetz über die Änderung der Wiedergutmachungsregelung (Änderung des Strafgesetzbuchs, des Jugendstrafgesetzes und des Militärstrafgesetzes)",
       "titelFr": "Loi fédérale modifiant la disposition sur la réparation (Modification du code pénal, du droit pénal des mineurs et du code pénal militaire)",
       "titelIt": "Legge federale che modifica la disciplina della riparazione (Modifica del Codice penale, del diritto penale minorile e del Codice penale militare)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/336/de",
-      "sha": "32763a325fbef31616d5e8357b47079192b6c41907ea9f91e78451f56edd21ac"
+      "sha": "d12c4d37ae7a9f06842a450514abea562eafebe29a3f48a731bd4c3ac5ee866c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "85f6341bda5dc24651a3e49f87ad1fa4f5df22a58c08bb9df170c52f4c11544f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/111",
+      "dateDocument": "2018-09-28",
+      "roFundstelle": "AS 2019 625",
+      "titelDe": "Bundesgesetz über die Umsetzung der Richtlinie (EU) 2016/680 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten zum Zwecke der Verhütung, Ermittlung, Aufdeckung oder Verfolgung von Straftaten oder der Strafvollstreckung (Weiterentwicklung des Schengen-Besitzstands)",
+      "titelFr": "Loi fédérale mettant en uvre la directive (UE) 2016/680 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel à des fins de prévention et de détection des infractions pénales, d'enquêtes et de poursuites en la matière ou d'exécution de sanctions pénales (Développement de l'acquis de Schengen)",
+      "titelIt": "Legge federale che attua la direttiva (UE) 2016/680 relativa alla protezione delle persone fisiche con riguardo al trattamento dei dati personali a fini di prevenzione, indagine, accertamento e perseguimento di reati o esecuzione di sanzioni penali (Sviluppo dell'acquis di Schengen)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/111/de",
+      "sha": "6ef34663148860e17aea5f189077c2b6da291489a05ff83c9eb408bb51672b28"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/624",
+      "dateDocument": "2017-03-17",
+      "roFundstelle": "AS 2017 5769",
+      "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG) (Schaffung einer Berufungskammer am Bundesstrafgericht)",
+      "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP) (Création d'une cour d'appel au Tribunal pénal fédéral)",
+      "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP) (Istituzione di una corte d'appello in seno al Tribunale penale federale)",
+      "botschaftKey": "BOTSCHAFT-2016-1190",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/624/de",
+      "sha": "9bda9b8922414c93cd3d60762a2a956c6b60b6490b7d3cb9a599994d14bbc8ad"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/450",
+      "dateDocument": "2017-12-15",
+      "roFundstelle": "AS 2018 2947",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Kindesschutz)",
+      "titelFr": "Code civil suisse (Protection de l'enfant)",
+      "titelIt": "Codice civile svizzero (Protezione dei minorenni)",
+      "botschaftKey": "BOTSCHAFT-2015-838",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/450/de",
+      "sha": "d245adde9cccde5a26f9c256cb38205abaa4967ec20dbba2fd846021e4fe703b"
     },
     {
       "art": "aenderung",
@@ -223,8 +808,15 @@
       "titelFr": "Code pénal et code pénal militaire (Mise en uvre de l'art. 123c Cst.)",
       "titelIt": "Codice penale e Codice penale militare (Attuazione dell'art. 123c Cost.)",
       "botschaftKey": "BOTSCHAFT-2016-1188",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2023-01-23"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/603/de",
-      "sha": "e7780fbc5b80b27ac41bc185c75531e9c3dfaf9a0eec7eecdf1beebddff00d34"
+      "sha": "206f217050f4e8042e3605e6c65c3fc64cf3a8df19c5099ea1aaac604bb3cc1b"
     },
     {
       "art": "aenderung",
@@ -235,14 +827,47 @@
       "titelDe": "Strafgesetzbuch (Veröffentlichung amtlicher geheimer Verhandlungen)",
       "titelFr": "Code pénal (Publication de débats officiels secrets)",
       "titelIt": "Codice penale (Pubblicazione di deliberazioni ufficiali segrete)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/76/de",
-      "sha": "ba0e05f54d2000e534d5be9c84c62d56b771338093bb32674b704ca4a97424de"
+      "sha": "dc514d76310d6dcf1aca3e0c4df6062ef7cf56bc26393b2b7af3c5ef3ac8c5de"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "c759d8aebeea335af01dade31b4a0898ccb19bfd74726b8eeda3e64217c69e7f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/249",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2016 1249",
+      "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Änderungen des Sanktionenrechts)",
+      "titelFr": "Code pénal suisse et code pénal militaire (Réforme du droit des sanctions)",
+      "titelIt": "Codice penale svizzero e Codice penale militare (Modifica della disciplina delle sanzioni)",
+      "botschaftKey": "BOTSCHAFT-2012-670",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-07-01",
+        "2018-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/249/de",
+      "sha": "a5433df95058874e97fdc2011015a2c75140bf5be4fbfe38b17bff53889bbed5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/215",
+      "dateDocument": "2017-03-29",
+      "roFundstelle": "AS 2017 2297",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 18. März 2016 des Militärgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur l'armée",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 18 marzo 2016 della legge militare",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/215/de",
+      "sha": "28fbb7acf22af29622115ea30bf78668a8759beac759308c357dcf1eb1553d9d"
     },
     {
       "art": "aenderung",
@@ -253,14 +878,26 @@
       "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer) (Betrifft nur den französichen Text)",
       "titelFr": "Code pénal et Code pénal militaire (Mise en uvre de l'art. 121, al. 3 à 6, Cst. relatif au renvoi des étrangers criminels)",
       "titelIt": "Codice penale svizzero e Codice penale militare (Attuazione dell'art. 121 cpv. 36 Cost. sull'espulsione di stranieri che commettono reati) (Concerne solamente il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/786/de",
-      "sha": "13af9c10d0167d03b75bc5f1b425a6a25d51db80b13851fb3969c7a80ece096c"
+      "sha": "d2919cb24bc97cd75dd2aea9352f00d9a889980e06090376097a9f0903b8eae0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "5eec46424f93d547cb736f801ca043b3ef4339864ebb80d32fb448903fc9a808"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2017 4095",
+      "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG)",
+      "titelFr": "Loi fédérale sur le renseignement (LRens)",
+      "titelIt": "Legge federale sulle attività informative (LAIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/494/de",
+      "sha": "203aa9b6f92a450dd04dddb9144f4d3490ab38dfa1ab0e6274c5bd1d0cc77027"
     },
     {
       "art": "aenderung",
@@ -271,8 +908,58 @@
       "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer) (Betrifft nur den französichen Text)",
       "titelFr": "Code pénal et code pénal militaire (Mise en uvre de l'art. 121, al. 3 à 6, Cst. relatif au renvoi des étrangers criminels)",
       "titelIt": "Codice penale svizzero e Codice penale militare (Attuazione dell'art. 121 cpv. 36 Cost. sull'espulsione di stranieri che commettono reati) (Concerne solamente il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/423/de",
-      "sha": "8ba7a3bd6324b3c411a72773b9b87f81273eeeefa2d261f24f6dbe51c5310963"
+      "sha": "2ed6b47df7e9f0ecf8f746fb38b61b9451644ea032d97360b7928f65799db488"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-05-02",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/272",
+      "dateDocument": "2017-05-02",
+      "roFundstelle": "AS 2017 2695",
+      "titelDe": "Lebensmittel- und Gebrauchsgegenständeverordnung (LGV) (Betrifft nur den italienischen Text)",
+      "titelFr": "Ordonnance sur les denrées alimentaires et les objets usuels (ODAlOUs) (Ne concerne que le texte italien)",
+      "titelIt": "Ordinanza sulle derrate alimentari e gli oggetti d'uso (ODerr)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/272/de",
+      "sha": "8a91350adbab960f3104fc2ef4aa733c4d2aee2f367c62bd4110e0acc0f296b9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/714",
+      "dateDocument": "2016-03-18",
+      "roFundstelle": "AS 2016 4277",
+      "titelDe": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+      "titelFr": "Loi fédérale sur l'armée et l'administration militaire (Loi sur l'armée, LAAM)",
+      "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)",
+      "botschaftKey": "BOTSCHAFT-2014-1566",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/714/de",
+      "sha": "0a58ab58c5f1cc12a3fcff653f447b47722ac9cf608451893ae4b93a3623be51"
     },
     {
       "art": "aenderung",
@@ -284,8 +971,11 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention internationale pour la protection de toutes les personnes contre les disparitions forcées",
       "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione internazionale per la protezione di tutte le persone dalla sparizione forzata",
       "botschaftKey": "BOTSCHAFT-2014-95",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/756/de",
-      "sha": "35b50951c9a75225bb7c458559833053963ed22f490f6ba356eb6b239c3736c5"
+      "sha": "592e4ffcfe6d1b545dee1cd25b8437188bc61d24e256d5bebc61f8f7dd78c261"
     },
     {
       "art": "aenderung",
@@ -297,8 +987,11 @@
       "titelFr": "Code pénal et code pénal militaire (Mise en uvre de l'art. 121, al. 3 à 6, Cst. relatif au renvoi des étrangers criminels)",
       "titelIt": "Codice penale svizzero e Codice penale militare (Attuazione dell'art. 121 cpv. 36 Cost. sull'espulsione di stranieri che commettono reati)",
       "botschaftKey": "BOTSCHAFT-2013-1078",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/380/de",
-      "sha": "bee811f36eacfdbe2f7058056fe05b9a30054a38528ea0bfe5397359c6633782"
+      "sha": "3617509c09b6bb33185ac6d9c4b6ea1e4ba544b1416e950dc141629aa6880802"
     },
     {
       "art": "aenderung",
@@ -310,8 +1003,16 @@
       "titelFr": "Code pénal suisse et code pénal militaire (Réforme du droit des sanctions)",
       "titelIt": "Codice penale svizzero e Codice penale militare (Modifica della disciplina delle sanzioni)",
       "botschaftKey": "BOTSCHAFT-2012-670",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2016-07-01",
+        "2018-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/249/de",
-      "sha": "dbc83604fd1b72e610dc6af0c8fc4b5e60df810da75efb2fc3594dcb570de648"
+      "sha": "125e67cc830c6d894c3adc8f0628f31a8f7c5a2e1fb5db36e7093be0e76289c5"
     },
     {
       "art": "aenderung",
@@ -323,8 +1024,11 @@
       "titelFr": "Code pénal suisse (Dispositions pénales incriminant la corruption)",
       "titelIt": "Codice penale svizzero (Disposizioni penali sulla corruzione)",
       "botschaftKey": "BOTSCHAFT-2014-787",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/257/de",
-      "sha": "e1a4fd7857eed9ba058cda7e3dcf568932ee47b3877e4d1bd0f896d3c85e3687"
+      "sha": "9784b43bde076f4167126aab1d61589f0dd99cad47c8d854d41716f7668035eb"
     },
     {
       "art": "aenderung",
@@ -336,8 +1040,62 @@
       "titelFr": "Loi fédérale concernant l'amélioration de l'échange d'informations entre les autorités au sujet des armes",
       "titelIt": "Legge federale sul miglioramento dello scambio d'informazioni tra autorità in materia di armi",
       "botschaftKey": "BOTSCHAFT-2014-67",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/326/de",
-      "sha": "e154ea3f9a4c1569c567fba4cfeba16525d9769b37a9a72cb232343f29f2b1f7"
+      "sha": "6742b92ec0edb811ab92fc1297451b5bf6658baa4a65a7fe8ea0b65ada9c5b45"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/330",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2016 1883",
+      "titelDe": "Bundesgesetz über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+      "titelFr": "Loi fédérale sur le service civil (LSC)",
+      "titelIt": "Legge federale sul servizio civile sostitutivo (Legge sul servizio civile, LSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/330/de",
+      "sha": "e391a23262fab5ef1f41c0ac039bed17c1d152f9129c768e57dd38b461e159a0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/289",
+      "dateDocument": "2014-12-12",
+      "roFundstelle": "AS 2015 1389",
+      "titelDe": "Bundesgesetz zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière",
+      "titelFr": "Loi fédérale sur la mise en uvre des recommandations du Groupe d'action financière, révisées en 2012",
+      "titelIt": "Legge federale concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria rivedute nel 2012",
+      "botschaftKey": "BOTSCHAFT-2014-100",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-07-01",
+        "2016-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/289/de",
+      "sha": "6a9d39b94458fd837d50b0046831ff9668d7555898f53bc8b1dafaee94349a82"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/297",
+      "dateDocument": "2012-09-28",
+      "roFundstelle": "AS 2015 1435",
+      "titelDe": "Bundesgesetz über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemiengesetz, EpG)",
+      "titelFr": "Loi fédérale sur la lutte contre les maladies transmissibles de l'homme (Loi sur les épidémies, LEp)",
+      "titelIt": "Legge federale sulla lotta contro le malattie trasmissibili dell'essere umano (Legge sulle epidemie, LEp)",
+      "botschaftKey": "BOTSCHAFT-2011-43",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/297/de",
+      "sha": "e5fe9930cd442f137b7ad485259fbe406b3517c842dc7db5fa749e9028e726e9"
     },
     {
       "art": "aenderung",
@@ -348,8 +1106,32 @@
       "titelDe": "Bundesgesetz über das Informationsrecht des Opfers (Änderung des Strafgesetzbuchs, des Jugendstrafgesetzes, der Strafprozessordnung und des Militärstrafprozesses)",
       "titelFr": "Loi fédérale sur le droit de la victime à être informée (Modification du code pénal, du droit pénal des mineurs, du code de procédure pénale et de la procédure pénale militaire)",
       "titelIt": "Legge federale sul diritto d'informazione delle vittime di reati (Modifica del Codice penale, del Diritto penale minorile, del Codice di procedura penale e della Procedura penale militare)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/321/de",
-      "sha": "492db6e03fa8f2df8ca0971e9a9e54c19a2a997ec84d0a0e2dc065de241c4b1b"
+      "sha": "860aff8c860f6bb0f822de11d30ec2ac285bedc65cf58c28c58a28a46e1ffdae"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/289",
+      "dateDocument": "2014-12-12",
+      "roFundstelle": "AS 2015 1389",
+      "titelDe": "Bundesgesetz zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière",
+      "titelFr": "Loi fédérale sur la mise en uvre des recommandations du Groupe d'action financière, révisées en 2012",
+      "titelIt": "Legge federale concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria rivedute nel 2012",
+      "botschaftKey": "BOTSCHAFT-2014-100",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-07-01",
+        "2016-01-01"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/289/de",
+      "sha": "77c01372740567a07264a8b41abc8786fc4150a5c2fdc235c96c7ee8e0877673"
     },
     {
       "art": "aenderung",
@@ -361,8 +1143,11 @@
       "titelFr": "Loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs)",
       "titelIt": "Legge federale sull&#700;interdizione di esercitare un&#700;attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile)",
       "botschaftKey": "BOTSCHAFT-2012-1575",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/355/de",
-      "sha": "04f31a6f9fa8468e04dc6c7bd4fb6785625d1746256b0fe245fd2e1147c9f4a8"
+      "sha": "5582fbd33f88730ebe435d724b7ae4d7044302e779c322f18912b1c0f6228c90"
     },
     {
       "art": "aenderung",
@@ -374,8 +1159,42 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la convention du Conseil de l'Europe sur la protection des enfants contre l'exploitation et les abus sexuels (convention de Lanzarote)",
       "titelIt": "Decreto federale che approva la Convenzione del Consiglio d'Europa sulla protezione dei minori contro lo sfruttamento e l'abuso sessuali (Convenzione di Lanzarote) e la traspone nel diritto svizzero",
       "botschaftKey": "BOTSCHAFT-2012-1181",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/248/de",
-      "sha": "ec0121faab29806ff7da873ed7633d94e5259b952c347731b32ab334db84509c"
+      "sha": "80b6e9984a95cc950a28c6b7973b0cfeb87c1bc46fa4a643eb3c14e345971e13"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2014-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/53",
+      "dateDocument": "2013-06-21",
+      "roFundstelle": "AS 2014 357",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Elterliche Sorge)",
+      "titelFr": "Code civil suisse (Autorité parentale)",
+      "titelIt": "Codice civile svizzero (Autorità parentale)",
+      "botschaftKey": "BOTSCHAFT-2011-1580",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/53/de",
+      "sha": "6baad60adc3cdc82e16455855069daa30c3186fac4b6a9c27bc5e01ebd2c385a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2014-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/617",
+      "dateDocument": "2011-09-30",
+      "roFundstelle": "AS 2013 3215",
+      "titelDe": "Bundesgesetz über die Forschung am Menschen (Humanforschungsgesetz, HFG)",
+      "titelFr": "Loi fédérale relative à la recherche sur l'être humain (Loi relative à la recherche sur l'être humain, LRH)",
+      "titelIt": "Legge federale concernente la ricerca sull'essere umano (Legge sulla ricerca umana, LRUm)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/617/de",
+      "sha": "f7b417b2c6bbc766402be86e350f13f0cdfc4e82dba41456c698c5b9e84518f7"
     },
     {
       "art": "aenderung",
@@ -387,26 +1206,74 @@
       "titelFr": "Code pénal. Code pénal militaire (Prorogation des délais de prescription)",
       "titelIt": "Codice penale svizzero. Codice penale militare (Prolungamento dei termini di prescrizione dell'azione penale)",
       "botschaftKey": "BOTSCHAFT-2012-1719",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/783/de",
-      "sha": "d3e3eb4e9b4e1411cc66ba09f73caf3413678770ac9f7ce71e71d47448a857e7"
+      "sha": "04d44a18b0cca584c3719e82ae94522b945a7f15bbf48af48469754fb23e9b48"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "f6cde78806325b64af8676feffbc0a23ddf4109857d91a94cadf86027f793044"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/226",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2013 1035",
+      "titelDe": "Bundesgesetz über Massnahmen gegen Zwangsheiraten",
+      "titelFr": "Loi fédérale concernant les mesures de lutte contre les mariages forcés",
+      "titelIt": "Legge federale sulle misure contro i matrimoni forzati",
+      "botschaftKey": "BOTSCHAFT-2011-292",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/226/de",
+      "sha": "00a2aa22d687f23430ffec4deb4e8b1b771aca8d6e5248876375d098ca779415"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "3b7819e5b6557b425337d67a82096c37a46ad2393a9d43439b4450b12be7604e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/250",
+      "dateDocument": "2012-09-28",
+      "roFundstelle": "AS 2013 1103",
+      "titelDe": "Bundesgesetz über die Börsen und den Effektenhandel (Börsengesetz, BEHG)",
+      "titelFr": "Loi fédérale sur les bourses et le commerce des valeurs mobilières (Loi sur les bourses, LBVM)",
+      "titelIt": "Legge federale sulle borse e il commercio di valori mobiliari (Legge sulle borse, LBVM)",
+      "botschaftKey": "BOTSCHAFT-2011-1111",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/250/de",
+      "sha": "efc5b72cab92d74b463bfa3b1af4d56e8e424742472229ea158659d9203cba9d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "b911eb1c6e84fe74f887187b94364a24c15d1878da73022a86f951c48e3860df"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/185",
+      "dateDocument": "2013-03-15",
+      "roFundstelle": "AS 2013 915",
+      "titelDe": "Verordnung über eine weitere Teilinkraftsetzung des Bundesgesetzes über die Psychologieberufe",
+      "titelFr": "Ordonnance portant nouvelle mise en vigueur partielle de la loi fédérale sur les professions relevant du domaine de la psychologie",
+      "titelIt": "Ordinanza su un'ulteriore entrata in vigore parziale della legge sulle professioni psicologiche",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/185/de",
+      "sha": "07dce0fb5e2dd49fda79c5f7d6a0fc9a95ebfdca20811142dbdea13a8b600a9d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/206",
+      "dateDocument": "2013-03-25",
+      "roFundstelle": "AS 2013 975",
+      "titelDe": "Bundesgesetz über die Psychologieberufe (Psychologieberufegesetz, PsyG)",
+      "titelFr": "Loi fédérale sur les professions relevant du domaine de la psychologie (Loi sur les professions de la psychologie, LPsy)",
+      "titelIt": "Legge federale sulle professioni psicologiche (LPPsi)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/206/de",
+      "sha": "09ca53cf511c125785faafc1bf24d2aa279169b8a1e3121dc308c62765e90658"
     },
     {
       "art": "aenderung",
@@ -417,8 +1284,47 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
       "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
       "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/176/de",
-      "sha": "d84575fb787ea22eee17cb765fe19b4a66ccf9d6a9b65c6464692bb9c2a43a03"
+      "sha": "66de9eed2a102a6d7e685bd8b0a3adebb4103b6b3cc0d79cb8f62d4f292e427d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/869",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2010 6015",
+      "titelDe": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+      "titelFr": "Loi fédérale sur l'armée et l'administration militaire (LAAM)",
+      "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)",
+      "botschaftKey": "BOTSCHAFT-2009-1057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-01-01",
+        "2013-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/869/de",
+      "sha": "76c0c78d7b857d700c5130ad07b770286dc20722882bfb0ed7e48c76dc57dfa0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
       "art": "aenderung",
@@ -429,8 +1335,30 @@
       "titelDe": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
       "titelFr": "Loi fédérale sur l'armée et l'administration militaire (Loi sur l'armée, LAAM)",
       "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/66/de",
-      "sha": "7bb8947f8601860feb48ab14cfc42e611d4cb752473196f26e6cbf1132c57425"
+      "sha": "2204a28bc2bf6abba77b15dc83cc4b73e9414a85697a352799fb69d618f35524"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/460",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2012 3953",
+      "titelDe": "Bundesgesetz über die Förderung von Sport und Bewegung (Sportförderungsgesetz, SpoFöG)",
+      "titelFr": "Loi fédérale sur l'encouragement du sport et de l'activité physique (Loi sur l'encouragement du sport, LESp)",
+      "titelIt": "Legge federale sulla promozione dello sport e dell'attività fisica (Legge sulla promozione dello sport, LPSpo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-10-01",
+        "2013-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/460/de",
+      "sha": "3164bbb24c4359f51a1c7ea857e00cee5ca12de244c6461bd0af20c44af96859"
     },
     {
       "art": "aenderung",
@@ -442,8 +1370,26 @@
       "titelFr": "Loi fédérale portant mise en uvre de l'art. 123b de la Constitution concernant l'imprescriptibilité des actes d'ordre sexuel ou pornographique commis sur des enfants impubères (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs)",
       "titelIt": "Legge federale che attua l'articolo 123b della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile)",
       "botschaftKey": "BOTSCHAFT-2011-883",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/696/de",
-      "sha": "b89a99f797c6f3735f2f3f55b9205847b8acc6731c0ad04be51aa19827cd3c2f"
+      "sha": "ff08f4b0944893b4d8835c5d8ef5af7a535973ee66dd03c42905df237634328b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/814",
+      "dateDocument": "2011-12-23",
+      "roFundstelle": "AS 2012 6715",
+      "titelDe": "Bundesgesetz über den ausserprozessualen Zeugenschutz (ZeugSG)",
+      "titelFr": "Loi fédérale sur la protection extraprocédurale des témoins (Ltém)",
+      "titelIt": "Legge federale sulla protezione extraprocessuale dei testimoni (LPTes)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/814/de",
+      "sha": "faaa77f33cc645050c8241008f318addb64b96d24d51a301b9d8737d7762c737"
     },
     {
       "art": "aenderung",
@@ -454,20 +1400,60 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
       "titelFr": "Code civil (Protection de l'adulte, droit des personnes et droit de la filiation)",
       "titelIt": "Codice civile (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/901/de",
-      "sha": "a020836e1a5ce21ec3f7557eb466ae933884d440bad22b6b5b43131d38b7d760"
+      "sha": "9084616ba5bec4606f67d154a4df924b04daa7b3718d02b9d75e4826a5fd05a4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "f198a2abe62883f9da737491a7b0f51e4f5499ff60f207d6512207e5c8143e37"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/460",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2012 3953",
+      "titelDe": "Bundesgesetz über die Förderung von Sport und Bewegung (Sportförderungsgesetz, SpoFöG)",
+      "titelFr": "Loi fédérale sur l'encouragement du sport et de l'activité physique (Loi sur l'encouragement du sport, LESp)",
+      "titelIt": "Legge federale sulla promozione dello sport e dell'attività fisica (Legge sulla promozione dello sport, LPSpo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-10-01",
+        "2013-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/460/de",
+      "sha": "02862a5d4cd7269570206e5cfc9908cd44aa59e23e8b0206bf23362bb6fd5d47"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2012-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/585",
+      "dateDocument": "2010-12-17",
+      "roFundstelle": "AS 2012 4993",
+      "titelDe": "Postgesetz (PG)",
+      "titelFr": "Loi sur la poste (LPO)",
+      "titelIt": "Legge sulle poste (LPO)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/585/de",
+      "sha": "f93587c7b8ada3b289fa0400a62243759fee1014040f39461dc692e1b0fec6b0"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2012-07-16",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "5b67a7a5c1786166612cb048833a2c8e3cf57b833a984f80e2f0d4bec80e7c36"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/428",
+      "dateDocument": "2011-12-23",
+      "roFundstelle": "AS 2012 3745",
+      "titelDe": "Bundesgesetz über Massnahmen zur Wahrung der inneren Sicherheit (BWIS)",
+      "titelFr": "Loi fédérale instituant des mesures visant au maintien de la sûreté intérieure (LMSI)",
+      "titelIt": "Legge federale sulle misure per la salvaguardia della sicurezza interna (LMSI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/428/de",
+      "sha": "2ce11e260eb2d12b647a45959b5c3265d6ca04a31ee39e6e12a6bb5601a6d2e3"
     },
     {
       "art": "aenderung",
@@ -478,8 +1464,11 @@
       "titelDe": "Schweizerisches Strafgesetzbuch",
       "titelFr": "Code pénal suisse",
       "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/310/de",
-      "sha": "dba77ecd766b4244ff6e1f0d4f00caa61d10f737145144f1881731cd4d99e497"
+      "sha": "9f29e4ff0a1f9cfa12edbf0d65428586732d022c5a9d49ddb67eb3eae27859da"
     },
     {
       "art": "aenderung",
@@ -491,20 +1480,74 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention du Conseil de l'Europe sur la cybercriminalité",
       "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione del Consiglio d'Europa sulla cibercriminalità",
       "botschaftKey": "BOTSCHAFT-2010-813",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/887/de",
-      "sha": "83665aa955fd70889627a9c4c04011cbf518f09d8122bfb73406d5fbb3c105c1"
+      "sha": "4cb16cecd9744e1d78bd7dfa50c9d22f037003358c4e97b5f4a417fb80a3bbd5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "4714d14a3630b71ab7810500fd88c3d57cac34b4b747b05ed252649c78c9da3a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/565",
+      "dateDocument": "2010-06-18",
+      "roFundstelle": "AS 2011 3961",
+      "titelDe": "Bundesgesetz über die Sicherheitsorgane der Transportunternehmen im öffentlichen Verkehr (BGST)",
+      "titelFr": "Loi fédérale sur les organes de sécurité des entreprises de transports publics (LOST)",
+      "titelIt": "Legge federale sugli organi di sicurezza delle imprese di trasporto pubblico (LFSI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/565/de",
+      "sha": "a8ff8e376cc6a9cea19dbef74cdfaad1232266de0748220026e20ced80d15651"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "c54bbe7180921fc319e732ff57b9d67b202477bdf30ad9442b4758f213dee704"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/312",
+      "dateDocument": "2009-03-20",
+      "roFundstelle": "AS 2011 2259",
+      "titelDe": "Bundesgesetz über die Patentanwältinnen und Patentanwälte (Patentanwaltsgesetz, PAG)",
+      "titelFr": "Loi sur les conseils en brevets (LCBr)",
+      "titelIt": "Legge federale sui consulenti in brevetti (Legge sui consulenti in brevetti, LCB)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/312/de",
+      "sha": "0675b537169d6cbd998288f4b7791d2551b964cb2d024a468c25439ba4d03195"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/361",
+      "dateDocument": "2011-05-25",
+      "roFundstelle": "AS 2011 2559",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 20. März 2008 des Betäubungsmittelgesetzes vom 3. Oktober 1951",
+      "titelFr": "Ordonnance sur la mise en vigueur complète de la modification du 20 mars 2008 de la loi du 3 octobre 1951 sur les stupéfiants",
+      "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 20 marzo 2008 della legge del 3 ottobre 1951 sugli stupefacenti",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/361/de",
+      "sha": "c35b6b91b79e32e14205851a8eac86ccb8400d4a494010f01f197bf0bcee36e7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2010 1881",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2006-124",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "sha": "898f9b54b3bc3f119a50ed83bc703373181617fdbcfab60c7c7a0310f042cb5b"
     },
     {
       "art": "aenderung",
@@ -516,26 +1559,123 @@
       "titelFr": "Loi fédérale portant modification de lois fédérales en vue de la mise en uvre du Statut de Rome de la Cour pénale internationale",
       "titelIt": "Legge federale sulla modifica di leggi federali per l'attuazione dello Statuto di Roma della Corte penale internazionale",
       "botschaftKey": "BOTSCHAFT-2008-807",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/704/de",
-      "sha": "905db528df1e74dfaa3a2a5f403836b001510b8a44d13e83d081512981b8d20a"
+      "sha": "7f7a8911448122255b329096c4e3893e7049874e0aa235617e84183603fd33dd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/869",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2010 6015",
+      "titelDe": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+      "titelFr": "Loi fédérale sur l'armée et l'administration militaire (LAAM)",
+      "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)",
+      "botschaftKey": "BOTSCHAFT-2009-1057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-01-01",
+        "2013-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/869/de",
+      "sha": "302b62a67bf7eb9ef77ded66377aac74794afebf5e054ad5f59a3805c223f918"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2010-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "51511a60d8b9bfa157fcd43df31c1a734c4c53b20ee87f91a15868023a7aaa41"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/464",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2010 3387",
+      "titelDe": "Bundesgesetz über die Umsetzung des Rahmenbeschlusses 2008/977/JI über den Schutz von Personendaten im Rahmen der polizeilichen und justiziellen Zusammenarbeit in Strafsachen",
+      "titelFr": "Loi fédérale portant mise en uvre de la décision-cadre 2008/977/JAI relative à la protection des données à caractère personnel traitées dans le cadre de la coopération policière et judiciaire en matière pénale",
+      "titelIt": "Legge federale che traspone nel diritto svizzero la decisione quadro 2008/977/GAI sulla protezione dei dati personali trattati nell'ambito della cooperazione giudiziaria e di polizia in materia penale",
+      "botschaftKey": "BOTSCHAFT-2009-1207",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/464/de",
+      "sha": "d8f7d7422de5dee854d2be03e34b3c364d36890d8e58fbfac94de62aed0f0660"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "908d77eda4b73394bf02ff1ac9664ee9301631d8fdc304da486e43d1d5acc3ab"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/352",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2009 2623",
+      "titelDe": "Bundesgesetz über die Betäubungsmittel und die psychotropen Stoffe (Betäubungsmittelgesetz, BetmG)",
+      "titelFr": "Loi fédérale sur les stupéfiants et les substances psychotropes (Loi sur les stupéfiants, LStup)",
+      "titelIt": "Legge federale sugli stupefacenti e sulle sostanze psicotrope (Legge sugli stupefacenti, LStup)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/352/de",
+      "sha": "f2fc1b4f9f3f9b91795032a31f9f024c1fc8cad52abbecbd1f58acb4296f7835"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2010-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/679",
+      "dateDocument": "2009-03-20",
+      "roFundstelle": "AS 2009 5597",
+      "titelDe": "Bundesgesetz über die Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
+      "titelFr": "Loi sur la réforme des chemins de fer 2 (Révision des actes normatifs relatifs aux transports publics)",
+      "titelIt": "Legge federale sulla Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)",
+      "botschaftKey": "BOTSCHAFT-2007-425",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/679/de",
+      "sha": "c22c07799150a0df60e5545f52d4cfc630ae521ba82ca58b5270b77e3a5ae969"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2010-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/823",
+      "dateDocument": "2008-10-03",
+      "roFundstelle": "AS 2009 6617",
+      "titelDe": "Bundesgesetz über die militärischen Informationssysteme (MIG)",
+      "titelFr": "Loi fédérale sur les systèmes d'information de l'armée (LSIA)",
+      "titelIt": "Legge federale sui sistemi d'informazione militari (LSIM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/823/de",
+      "sha": "3329b7664a6c6c3c2d630fad6b727a3c9c4dff16f8d965aa00e4611ea9d82f09"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2010-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/846",
+      "dateDocument": "2009-12-04",
+      "roFundstelle": "AS 2009 6921",
+      "titelDe": "Verordnung über die Anpassung gesetzlicher Bestimmungen infolge der Schaffung des Nachrichtendienstes des Bundes",
+      "titelFr": "Ordonnance concernant l'adaptation de dispositions légales à la suite de la création du Service de renseignement de la Confédération",
+      "titelIt": "Ordinanza sull'adeguamento di disposizioni legali in seguito all'istituzione del Servizio delle attività informative della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/846/de",
+      "sha": "3dfbdeff6bc7388dfd4875009a5e47b60cd39cde19da399aad5f29efcb0e4374"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2009-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "2fc41a46f55150b02b5c7610827e186f071d0b28f5b3c73c49607876f302b6be"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/172",
+      "dateDocument": "2008-10-03",
+      "roFundstelle": "AS 2009 1093",
+      "titelDe": "Bundesgesetz über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+      "titelFr": "Loi fédérale sur le service civil (LSC)",
+      "titelIt": "Legge federale sul servizio civile sostitutivo (Legge sul servizio civile, LSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/172/de",
+      "sha": "2c4be5baf22392a031817ec382de71d341a26595eefbd7fa0113d7baae33eaaa"
     },
     {
       "art": "aenderung",
@@ -547,26 +1687,76 @@
       "titelFr": "Loi fédérale sur la mise en uvre des recommandations révisées du Groupe d'action financière",
       "titelIt": "Legge federale concernente l'attuazione delle Raccomandazioni rivedute del Gruppo d'azione finanziaria",
       "botschaftKey": "BOTSCHAFT-2007-938",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/64/de",
-      "sha": "063a4338d9dfd29b9c15c5f52c463d9d044555e79bef0ffc0343210f2df5e092"
+      "sha": "c55b155b193babb685fcc3b1d6d94f2544800dfa652e270fea359115b15e2a05"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "9cdbf33c4707efe611058378f9855cda858f5cf41b4e0a01523237d900d7a410"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/853",
+      "dateDocument": "2008-12-12",
+      "roFundstelle": "AS 2008 6261",
+      "titelDe": "Verordnung über die Anpassung gesetzlicher Bestimmungen infolge Überführung der nachrichtendienstlichen Teile des Dienstes für Analyse und Prävention zum VBS",
+      "titelFr": "Ordonnance sur l'adaptation des dispositions légales suite au transfert des unités de renseignements du Service d'analyse et de prévention au DDPS",
+      "titelIt": "Ordinanza sull'adeguamento delle disposizioni legali in seguito al trasferimento delle unità di informazioni del Servizio di analisi e prevenzione nel DDPS",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/853/de",
+      "sha": "8af2e0bea5c781f8dabf6286e79b395e1ea7034e315272a699c8ae9e4eea5032"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-12-12",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "422a73438b22a9fd8de078afb4b38d778a54f78f9a46adebcc4920a0806fc546"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/112",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2008 447",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2008-03-01",
+        "2008-12-12"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/112/de",
+      "sha": "12878a857233b54f8f22f27f0ecfcccae92ee7a1431f31159984bc4ca62d890e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-12-12",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/755",
+      "dateDocument": "2008-11-26",
+      "roFundstelle": "AS 2008 5405",
+      "titelDe": "Verordnung über die vollständige Inkraftsetzung des Bundesbeschlusses über die Genehmigung und die Umsetzung der bilateralen Abkommen über die Assoziierung an Schengen und an Dublin sowie die Inkraftsetzung weiterer in Umsetzung von Schengen/Dublin erlassener Bundesgesetze",
+      "titelFr": "Ordonnance sur l'entrée en vigueur totale de l'arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin et sur l'entrée en vigueur d'autres lois fédérales mettant en uvre Schengen et Dublin",
+      "titelIt": "Ordinanza sull'entrata in vigore completa del decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino nonché sull'entrata in vigore di altre leggi federali adottate in attuazione di Schengen/Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/755/de",
+      "sha": "c236283509c7d23c2b70cda8a086fe890379084985d52deaa5b5292a47bd295a"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2008-12-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "65700b15ea121d86e6200f41623bd58162d26588d8151dcd9f69bbff7af42b7a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/698",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2008 4989",
+      "titelDe": "Bundesgesetz über die polizeilichen Informationssysteme des Bundes (BPI)",
+      "titelFr": "Loi fédérale sur les systèmes d'information de police de la Confédération (LSIP)",
+      "titelIt": "Legge federale sui sistemi d'informazione di polizia della Confederazione (LSIP)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/698/de",
+      "sha": "1c11b70df5b81c9fcf9d4e69c122ee24417b5f6d55edae73b238d1316fe890c4"
     },
     {
       "art": "aenderung",
@@ -578,8 +1768,11 @@
       "titelFr": "Code pénal",
       "titelIt": "Codice penale",
       "botschaftKey": "BOTSCHAFT-2007-65",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/631/de",
-      "sha": "1d5975b7538c022738fa30f85b1a7d8497188f382b88bc8721bb502eda8955f4"
+      "sha": "fd7a3e806a3e9a8963f3314aea8a11f2f16835f2f6b2488e4bde7d97c5410ec3"
     },
     {
       "art": "aenderung",
@@ -591,8 +1784,26 @@
       "titelFr": "Code pénal suisse (Internement à vie des délinquants extrêmement dangereux)",
       "titelIt": "Codice penale svizzero (Internamento a vita di criminali estremamente pericolosi)",
       "botschaftKey": "BOTSCHAFT-2006-104",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/413/de",
-      "sha": "eb73f33eeae8f8762137cd3612e03ee70784fbe4c2e6a75df07e3d4adcc7e9d2"
+      "sha": "5c0dcb60abb6af91d2f29164c5d1258e9988e5ec95560ca9610fd1aef061b4af"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/318",
+      "dateDocument": "2008-04-30",
+      "roFundstelle": "AS 2008 2179",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+      "titelFr": "Arrêté fédéral portant approbation et mise en œuvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/318/de",
+      "sha": "61d3a3f59516579a92837e1b2c18695f94c19a07d38089e099e44cc08a92a11d"
     },
     {
       "art": "aenderung",
@@ -603,14 +1814,96 @@
       "titelDe": "Verordnung über eine weitere teilweise Inkraftsetzung des Bundesbeschlusses über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
       "titelFr": "Ordonnance sur l'entrée en vigueur partielle de l'arrêté fédéral portant approbation et mise en oeuvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
       "titelIt": "Ordinanza sull'entrata in vigore parziale del decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/324/de",
-      "sha": "99acd8b8cc2c7b82c1c0212af6a820a787d3bea106250fc085ed7347a7536b69"
+      "sha": "169034218629c4cb4cb04aea388394f9ddbfeb27c5320fe578b5e6b0bbaa9222"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/112",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2008 447",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2008-03-01",
+        "2008-12-12"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/112/de",
+      "sha": "847ec228ee177bba279a2b74b54e5e8400baf384f0898e1f1cb4b30b76994eec"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "a366999ef1d4c0728aea95348a8215baf9afd3c21fd650d56d1d5f1e282ed7a2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/685",
+      "dateDocument": "2005-12-16",
+      "roFundstelle": "AS 2007 4791",
+      "titelDe": "Obligationenrecht (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht) (OR)",
+      "titelFr": "Code des obligations (Droit de la société à responsabilité limitée; adaptation des droits de la société anonyme, de la société coopérative, du registre du commerce et des raisons de commerce) (CO)",
+      "titelIt": "Codice delle obbligazioni (Diritto della società a garanzia limitata; adeguamento del diritto della società anonima, della società cooperativa, del registro di commercio e delle ditte commerciali) (CO)",
+      "botschaftKey": "BOTSCHAFT-2002-443",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/685/de",
+      "sha": "de3c6a1ea7514fef33cc892f7a018611c900f2aa8de2190235371b9e9d01ae00"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5779",
+      "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+      "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)",
+      "botschaftKey": "BOTSCHAFT-2005-976",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/218",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 1205",
+      "titelDe": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+      "titelFr": "Loi sur le Tribunal fédéral (LTF)",
+      "titelIt": "Legge sul Tribunale federale (LTF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/218/de",
+      "sha": "ae2b54b73191bd93986b3de4eb3e461a6561d9ab0201419344b139dd12e72de6"
     },
     {
       "art": "aenderung",
@@ -621,8 +1914,12 @@
       "titelDe": "Schweizerisches Strafgesetzbuch",
       "titelFr": "Code pénal suisse",
       "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
-      "sha": "fc03ab6889721d4ae4aa95cc0814f8e5a47ae22a0fabf6761f4ee6ca714b8c72"
+      "sha": "a3575ebbd2dca7f6d872f2e61081bfe5fdd84b0e5a958dc89eda6a140d6b1b14"
     },
     {
       "art": "aenderung",
@@ -634,8 +1931,26 @@
       "titelFr": "Code pénal suisse et code pénal militaire (Correctifs en matière de sanctions et casier judiciaire)",
       "titelIt": "Codice penale svizzero e Codice penale militare (Correttivi in materia di sanzioni e di casellario giudiziale)",
       "botschaftKey": "BOTSCHAFT-2005-735",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/550/de",
-      "sha": "f8ee1a6c13b1a3866f9ddea07a52197d4446fc76d490fd7a49ba9b3090983915"
+      "sha": "67aeded6f7f3dbfae60c4cde1543b69395f89d759d993177cf0b9aea09718923"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/551",
+      "dateDocument": "2003-06-20",
+      "roFundstelle": "AS 2006 3545",
+      "titelDe": "Bundesgesetz über das Jugendstrafrecht (Jugendstrafgesetz, JStG)",
+      "titelFr": "Loi fédérale régissant la condition pénale des mineurs (Droit pénal des mineurs, DPMin)",
+      "titelIt": "Legge federale sul diritto penale minorile (Diritto penale minorile, DPMin)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/551/de",
+      "sha": "86757a4b27f3904f6ae6475dd686994a6ab0c75617e6e7f62edc9cc8b0ca1b66"
     },
     {
       "art": "aenderung",
@@ -646,8 +1961,26 @@
       "titelDe": "Strafgesetzbuch (StGB)",
       "titelFr": "Code pénal (CP)",
       "titelIt": "Codice penale (CP)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/555/de",
-      "sha": "b13f6b2104ef3cee23929e264e5436f8b5effac16e3389814a84bac268495213"
+      "sha": "ffd80464343f08f079862de11b900c362cc412247b0ec93f8a1f55710633ed9b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/563",
+      "dateDocument": "2006-03-24",
+      "roFundstelle": "AS 2006 3703",
+      "titelDe": "Bundesgesetz über Massnahmen zur Wahrung der inneren Sicherheit (BWIS) (Gewaltpropaganda/Gewalt bei Sportveranstaltungen)",
+      "titelFr": "Loi fédérale instituant des mesures visant au maintien de la sûreté intérieure (LMSI) (Incitation à la violence et violence lors de manifestations sportives)",
+      "titelIt": "Legge federale sulle misure per la salvaguardia della sicurezza interna (LMSI) (Propaganda con incitamento alla violenza/violenza in occasione di manifestazioni sportive)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/563/de",
+      "sha": "ee60d7ac755ec6f08e33cc514bbeaafc059f178b042c8df143ec417ce1911af2"
     },
     {
       "art": "aenderung",
@@ -658,8 +1991,11 @@
       "titelDe": "Strafgesetzbuch (StGB) (Betrifft nur den französischen Text)",
       "titelFr": "Code pénal (CP)",
       "titelIt": "Codice penale (CP) (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/636/de",
-      "sha": "3fad828e9f73e78d8bdd32a712de9ed62328869b5cc646a2a11956cd82ed8fb9"
+      "sha": "700e42cca23dd044a8c81807e11de3d9e5d112268e2d189945132944b660d760"
     },
     {
       "art": "aenderung",
@@ -671,14 +2007,27 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre du Protocole facultatif du 25 mai 2000 se rapportant à la Convention relative aux droits de l'enfant, concernant la vente d'enfants, la prostitution des enfants et la pornographie mettant en scène des enfants",
       "titelIt": "Decreto federale che approva e traspone nel diritto svizzero il Protocollo facoltativo del 25 maggio 2000 alla Convenzione sui diritti del fanciullo concernente la vendita di fanciulli, la prostituzione infantile e la pedopornografia",
       "botschaftKey": "BOTSCHAFT-2005-433",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/823/de",
-      "sha": "5e398b02710854793e6c58328bb827a83f604e3caa250a5400c707c151f1e6d1"
+      "sha": "ff780526f9de96e87f36b354506277214abea5b42a535ff2337edb473a4b5bb8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "0b2a25bb6774d386c16f32bf4c089dfc1afa8f06364e3a22df0dfd27af8d6a11"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/366",
+      "dateDocument": "2005-10-07",
+      "roFundstelle": "AS 2006 2371",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Strafrechtsübereinkommens und des Zusatzprotokolls des Europarates über Korruption",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention pénale du Conseil de l'Europe sur la corruption et du Protocole additionnel à ladite convention",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione penale del Consiglio d'Europa sulla corruzione e il relativo Protocollo aggiuntivo",
+      "botschaftKey": "BOTSCHAFT-2004-1217",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/366/de",
+      "sha": "48384d59d9e5cd74f7af80f155f651a7b406e47f1354d6dbbb17ad88b6f1a301"
     },
     {
       "art": "aenderung",
@@ -690,8 +2039,11 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre de l'Accord entre la Confédération suisse et l'Office européen de police",
       "titelIt": "Decreto federale che approva e traspone nel diritto svizzero l'Accordo tra la Confederazione Svizzera e l'Ufficio europeo di polizia",
       "botschaftKey": "BOTSCHAFT-2005-131",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/180/de",
-      "sha": "b1805e1019f651bd00c4467f12d3dea63b65342dd2b374f6499a3ace7afca2b0"
+      "sha": "e350c7d12a31d8489a412373eb27445c36822bf82a4e8298196ffc8b905c4aae"
     },
     {
       "art": "aenderung",
@@ -702,32 +2054,142 @@
       "titelDe": "Verordnung über die vorzeitige Inkraftsetzung von Artikel 386 der Änderung vom 13. Dezember 2002 des Strafgesetzbuches",
       "titelFr": "Ordonnance sur la mise en vigueur anticipée de l'art. 386 de la modification du 13 décembre 2002 du code pénal",
       "titelIt": "Ordinanza sull'entrata in vigore anticipata dell'articolo 386 della modifica del 13 dicembre 2002 del Codice penale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/783/de",
-      "sha": "e0456b6d49e876dd561f215efefb1639fdc8737683952383f1378da87504cf77"
+      "sha": "26508286e57ab3a7850190d987feec48da8824a3573341cf3ca6d0e3a27a3d22"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "16acbfe1cc2dd45d6d3c3eaf6e139c27d23c7029fb643e4a55db3f28ef1cd7b6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/723",
+      "dateDocument": "2003-03-21",
+      "roFundstelle": "AS 2004 4719",
+      "titelDe": "Kernenergiegesetz (KEG)",
+      "titelFr": "Loi sur l'énergie nucléaire (LENu)",
+      "titelIt": "Legge federale sull'energia nucleare (LENu)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2005-01-01",
+        "2005-02-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/723/de",
+      "sha": "0e7bc088c3f8ef9822982d3e2d2edbc2d6120e854835ce8a72bf775fed2393e9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2005-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/822",
+      "dateDocument": "2004-12-10",
+      "roFundstelle": "AS 2004 5391",
+      "titelDe": "Verordnung über die vollständige Inkraftsetzung des Kernenergiegesetzes",
+      "titelFr": "Ordonnance concernant la mise en vigueur intégrale de la loi sur l'énergie nucléaire",
+      "titelIt": "Ordinanza concernente l'entrata in vigore completa della legge sull'energia nucleare",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/822/de",
+      "sha": "b75cf75042207a7f0edca4d6062a0fe438442ac98195d009e10d3110321f8353"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "77f2d18174a59cc8be23a2db2c2383bea82270aa71620a957b7faa1ff8ad8b46"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/177",
+      "dateDocument": "2003-06-20",
+      "roFundstelle": "AS 2004 1409",
+      "titelDe": "Bundesgesetz über die verdeckte Ermittlung (BVE)",
+      "titelFr": "Loi fédérale sur l'investigation secrète (LFIS)",
+      "titelIt": "Legge federale sull'inchiesta mascherata (LFIM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/177/de",
+      "sha": "5d2c04bcf57c9f870ae7dc9ce1dd2e179d0b307893240fddba3de46f3dc2e8d6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/715",
+      "dateDocument": "2004-11-03",
+      "roFundstelle": "AS 2004 4655",
+      "titelDe": "Verordnung über die Anpassung gesetzlicher Bestimmungen infolge der Zusammenlegung der Bundesämter IMES und BFF",
+      "titelFr": "Ordonnance relative à l'adaptation de dispositions légales à la suite de la réunion des offices fédéraux IMES et ODR",
+      "titelIt": "Ordinanza concernente l'adeguamento delle disposizioni legali in seguito alla fusione degli uffici federali IMES e UFR",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/715/de",
+      "sha": "671daa1c91f6135f400c8a06edae708ef1cf6d45755056dd40590a659df5ca0d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/723",
+      "dateDocument": "2003-03-21",
+      "roFundstelle": "AS 2004 4719",
+      "titelDe": "Kernenergiegesetz (KEG)",
+      "titelFr": "Loi sur l'énergie nucléaire (LENu)",
+      "titelIt": "Legge federale sull'energia nucleare (LENu)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2005-01-01",
+        "2005-02-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/723/de",
+      "sha": "3d8eb8cc02945634b01b041e9cb59771426bf23d7194620b137282ea42fbe941"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2004-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "a70b2829b7cc9c3a83a7aaa80c05b5e4dcb8c613bb024f5cfb19220eb0261535"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/468",
+      "dateDocument": "2004-03-19",
+      "roFundstelle": "AS 2004 3503",
+      "titelDe": "Bundesgesetz über die Teilung eingezogener Vermögenswerte (TEVG)",
+      "titelFr": "Loi fédérale sur le partage des valeurs patrimoniales confisquées (LVPC)",
+      "titelIt": "Legge federale sulla ripartizione dei valori patrimoniali confiscati (LRVC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/468/de",
+      "sha": "234c661b2a93cf88a4f3ed009ef89882c8915ec8a4bd05335a67cfdf06a7af19"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "088f9c1d05adbd4952c03a7e77192221441fb9637226a7856cb686a271887b3c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/320",
+      "dateDocument": "2003-10-03",
+      "roFundstelle": "AS 2004 2617",
+      "titelDe": "Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung (Fusionsgesetz, FusG)",
+      "titelFr": "Loi fédérale sur la fusion, la scission, la transformation et le transfert de patrimoine (Loi sur la fusion, LFus)",
+      "titelIt": "Legge federale sulla fusione, la scissione, la trasformazione e il trasferimento di patrimonio (Legge sulla fusione, LFus)",
+      "botschaftKey": "BOTSCHAFT-2000-921",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/320/de",
+      "sha": "a311043931adce9bc99decf57454d37cae3b7f03a1214dd52cb62594d11df64a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2004-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/314",
+      "dateDocument": "2002-10-04",
+      "roFundstelle": "AS 2003 2133",
+      "titelDe": "Bundesgesetz über das Bundesstrafgericht (Strafgerichtsgesetz, SGG)",
+      "titelFr": "Loi fédérale sur le Tribunal pénal fédéral (LTPF)",
+      "titelIt": "Legge sul Tribunale penale federale (LTPF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/314/de",
+      "sha": "bae027aa611e18766b3ac9b53cbf968927b831870a9c246e79b58903dd7c569b"
     },
     {
       "art": "aenderung",
@@ -738,8 +2200,11 @@
       "titelDe": "Schweizerisches Strafgesetzbuch (Strafverfolgung in der Ehe und in der Partnerschaft)",
       "titelFr": "Code pénal suisse (Poursuite des infractions entre conjoints ou partenaires)",
       "titelIt": "Codice penale svizzero (Perseguimento dei reati commessi tra coniugi o tra partner)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/176/de",
-      "sha": "19176c8ae89d5fc4442458d40eadc4d4d41ec7cd3a03cd101cfc5a92d0098468"
+      "sha": "6b8f771de471c0aba8367b127bbef960040644bab44541cd37dbb1e4305db28d"
     },
     {
       "art": "aenderung",
@@ -750,20 +2215,56 @@
       "titelDe": "Schweizerisches Strafgesetzbuch",
       "titelFr": "Code pénal suisse",
       "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/92/de",
-      "sha": "104c97dfc09d68b4e7186ba06c58612f407b1e166292aba88a918d4741d7dbdc"
+      "sha": "ae11f97d5c4274c61b4ece4246055715e4f4b23cc5958b1642f4edf2a2da8232"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "5a44b5181c168ce13df7bb2c24cd09af774a39717618196f0bac919b572a5e65"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/705",
+      "dateDocument": "2003-03-21",
+      "roFundstelle": "AS 2003 4803",
+      "titelDe": "Bundesgesetz über die Gentechnik im Ausserhumanbereich (Gentechnikgesetz, GTG)",
+      "titelFr": "Loi fédérale sur l'application du génie génétique au domaine non humain (Loi sur le génie génétique, LGG)",
+      "titelIt": "Legge federale sull'ingegneria genetica nel settore non umano (Legge sull'ingegneria genetica, LIG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/705/de",
+      "sha": "ce7d34c3a0df76c4571ca13f3fa046795e3e6eebd517c544fde526b363059797"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2004-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/710",
+      "dateDocument": "2003-03-21",
+      "roFundstelle": "AS 2003 4843",
+      "titelDe": "Bundesgesetz über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+      "titelFr": "Loi fédérale sur le service civil (LSC)",
+      "titelIt": "Legge federale sul servizio civile sostitutivo (Legge sul servizio civile, LSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/710/de",
+      "sha": "096e165733e90b21c6ba5166a3e51f9aa1a50f35d1f67cec5ea7e1466f6abc6f"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2003-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "bbb213676bad5a33ea598e2378a51cd21154472d7efc0abbaca30866e77caf5c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/510",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2003 3543",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
+      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
+      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/510/de",
+      "sha": "29936f5adbf1777cd0c7bededab6a5081b3e349945cd1b6367d9dfb43bd56128"
     },
     {
       "art": "aenderung",
@@ -775,14 +2276,26 @@
       "titelFr": "Loi fédérale concernant la modification du code pénal et de la loi fédérale sur la surveillance de la correspondance par poste et télécommunication (Financement du terrorisme)",
       "titelIt": "Legge federale che modifica il Codice penale e la legge sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (Finanziamento del terrorismo)",
       "botschaftKey": "BOTSCHAFT-2002-841",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/417/de",
-      "sha": "dc2fdde2dc46922be0923e13bf1e3981eccd53b2708143105daa17a483194f00"
+      "sha": "480cddae7fbb01c164d3c9c396d7070df5b33ae686fba2aba9883a18d5820723"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "94c74352dee279e254357daf201ee5c481564b243dbdda9b127fa04fe9136593"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/100",
+      "dateDocument": "2002-10-04",
+      "roFundstelle": "AS 2003 463",
+      "titelDe": "Zivilgesetzbuch, Obligationenrecht, Strafgesetzbuch, Bundesgesetz über Schuldbetreibung und Konkurs (Grundsatzartikel Tiere)",
+      "titelFr": "Code civil, Code des obligations, Code pénal, Loi fédérale sur la poursuite pour dettes et la faillite (Animaux)",
+      "titelIt": "Codice civile, Codice delle obbligazioni, Codice penale, Legge federale sulla esecuzione e sul fallimento (Articolo di principio sugli animali)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/100/de",
+      "sha": "e2d26460263957125774e6bd9fb9bffacc8966f10856fbc88df8fc5e7e2e1b8e"
     },
     {
       "art": "aenderung",
@@ -793,8 +2306,11 @@
       "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz. (Verjährung der Strafverfolgung)",
       "titelFr": "Code pénal suisse. Code pénal militaire. (Prescription de l'action pénale)",
       "titelIt": "Codice penale svizzero. Codice penale militare. (Prescrizione dell'azione penale)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/428/de",
-      "sha": "28a31b3a74dd3c6403a034c469234f5662dfbad8c7ff5cdd30e4b2e66c785849"
+      "sha": "6583de2488efca6503da16c2e6011bf7a7ec1146b8c8fed500570c802c3116b5"
     },
     {
       "art": "aenderung",
@@ -805,8 +2321,12 @@
       "titelDe": "Schweizerisches Strafgesetzbuch (Schwangerschaftsabbruch)",
       "titelFr": "Code pénal suisse (Interruption de grossesse)",
       "titelIt": "Codice penale svizzero (Interruzione della gravidanza)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/429/de",
-      "sha": "b832a9e0c02c0471cc24339d8ba4888859772e732832d1757296229e9f0b4eb6"
+      "sha": "3e631b03417b486c9d101f302a2d27101e91d7255238e052fb0f5a29d7eac1fa"
     },
     {
       "art": "aenderung",
@@ -818,8 +2338,11 @@
       "titelFr": "Code pénal suisse. Code pénal militaire. (Prescription de l'action pénale en général et en cas d'infractions contre l'intégrité sexuelle des enfants)",
       "titelIt": "Codice penale svizzero. Codice penale militare. (Prescrizione dell'azione penale in generale e in caso di reati sessuali commessi su fanciulli)",
       "botschaftKey": "BOTSCHAFT-2000-612",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/430/de",
-      "sha": "db3a3401e7bad757b86644f33f00d3ef865ff87d292082538600d7901dc6a33e"
+      "sha": "a6091a4ea4a6776931fbe3b303f7d84fc4a9a0b2d7c1ca77f02a2336076fd04b"
     },
     {
       "art": "aenderung",
@@ -830,8 +2353,11 @@
       "titelDe": "Schweizerisches Strafgesetzbuch. Militärgesetz",
       "titelFr": "Code pénal suisse (Ne concerne que le texte allemand)",
       "titelIt": "Codice penale svizzero (Concerne solo il testo tedesco)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/465/de",
-      "sha": "bd3bbe0bd87ec65d47edb27fed170b0de19d83dd5344aeffde31b2f955bbd925"
+      "sha": "088d244a66e09b70e122516fa2466023b33b7200dd806fef519221b73217308b"
     },
     {
       "art": "aenderung",
@@ -843,8 +2369,11 @@
       "titelFr": "Loi fédérale portant modification du code pénal et du code pénal militaire (Infractions aux dispositions sur l'administration de la justice devant les tribunaux internationaux)",
       "titelIt": "Legge federale concernente la modifica del Codice penale e del Codice penale militare (Reati contro l'amministrazione della giustizia commessi davanti a tribunali internazionali)",
       "botschaftKey": "BOTSCHAFT-2001-133",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/236/de",
-      "sha": "3188a013d4b01cc743bbdc706a55cf7b92a8b90ef31fad78d313e8b97b48f4ed"
+      "sha": "8daade18f09aa4e59dec99f9f9e201792e26c356f7872f3a925039565e304b9d"
     },
     {
       "art": "aenderung",
@@ -856,8 +2385,11 @@
       "titelFr": "Code pénal suisse (Infractions contre l'intégrité sexuelle; interdiction de la possession d'objets ou de représentations relevant de la pornographie dure relevant de la pornographie dure)",
       "titelIt": "Codice penale svizzero (Reati contro l'integrità sessuale; divieto del possesso di pornografia dura)",
       "botschaftKey": "BOTSCHAFT-2000-612",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/92/de",
-      "sha": "0fc3fe637cbaf170a817c86d9ebab8b3662ef44a165e8efc85794d89e7c2047c"
+      "sha": "0674ac405372490d43851f0aa098331480de05d8f7e846a2f1087e35fb59f196"
     },
     {
       "art": "aenderung",
@@ -868,8 +2400,11 @@
       "titelDe": "Schweizerisches Strafgesetzbuch (Strafbare Handlungen gegen die sexuelle Integrität; Verbot des Besitzes harter Pornografie) (Betrifft nur den italienischen Text)",
       "titelFr": "Code pénal suisse (Infractions contre l'intégrité sexuelle; interdiction de la possession d'objets ou de représentations relevant de la pornographie dure) (Ne concerne que le texte italien)",
       "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/104/de",
-      "sha": "be78d38cc66db29462486af345d6d4ac3908aea96f34d612fb540b9f09978298"
+      "sha": "e45717f1c461efb0ff4da251d78981cb46fe86451311c466f378efad4feb159c"
     },
     {
       "art": "aenderung",
@@ -880,8 +2415,26 @@
       "titelDe": "Schweizerisches Strafgesetzbuch (Schaffung neuer Verfahrenskompetenzen des Bundes in den Bereichen organisiertes Verbrechen und Wirtschaftskriminalität)",
       "titelFr": "Code pénal suisse (Nouvelles compétences de procédure en faveur de la Confédération dans les domaines du crime organisé et de la criminalité économique)",
       "titelIt": "Codice penale svizzero (Istituzione di nuove competenze procedurali della Confederazione nei settori della criminalità organizzata e della criminalità economica)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/459/de",
-      "sha": "be4eb8f0e5c1e42a119952bb573f3b854d05e7881338fd88139d094f037c6352"
+      "sha": "660ac4f3cdee32f9fecac828cdf564e76eb2f096f1c0e2d3bfe956b2b8162c8f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/467",
+      "dateDocument": "2000-10-06",
+      "roFundstelle": "AS 2001 3096",
+      "titelDe": "Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF)",
+      "titelFr": "Loi fédérale sur la surveillance de la correspondance par poste et télécommunication (LSCPT)",
+      "titelIt": "Legge federale sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (LSCPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/467/de",
+      "sha": "e6c3c55f2805b306c9e6fad9f680a33952edcf39f041b804dff3297209689c54"
     },
     {
       "art": "aenderung",
@@ -892,8 +2445,11 @@
       "titelDe": "Bundesgesetz über die Änderung des Strafgesetzbuches, des Militärstrafgesetzes und der Bundesstrafrechtspflege",
       "titelFr": "Loi fédérale concernant la modification du code pénal, du code pénal militaire et de la procédure pénale fédérale",
       "titelIt": "Legge federale concernente la modifica del Codice penale, del Codice penale militare e della procedura penale federale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/454/de",
-      "sha": "b4c2a117695b26095e96918849955b75a0a714f9bcaa4cad51abc85e853ef9b5"
+      "sha": "93121eb2a3807cea68a0a9073f60bb2716b03d5c1ca362b24b93ec79e0e0b632"
     },
     {
       "art": "aenderung",
@@ -904,8 +2460,11 @@
       "titelDe": "Schweizerisches Strafgesetzbuch (Informatisiertes Personennachweis-, Aktennachweis- und Verwaltungssystem im Bundesamt für Polizeiwesen)",
       "titelFr": "Code pénal suisse (Système informatisé de gestion et d'indexation de dossiers et de personnes de l'Office fédéral de la police)",
       "titelIt": "Codice penale svizzero (Sistema informatizzato di gestione e indice informatizzato delle persone e dei fascicoli in seno all'Ufficio federale di polizia)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/285/de",
-      "sha": "0f7f99e204eb5addd63199daf3e44403af6f50651218256cb3c758005eb6c9a0"
+      "sha": "f8d784f16166cdb87a52e8b2d02d9ad00bba77cc31f091c90bf2b55c7101847b"
     },
     {
       "art": "aenderung",
@@ -917,14 +2476,43 @@
       "titelFr": "Révision du droit pénal de la corruption (Modification du code pénal et du code pénale militaire)",
       "titelIt": "Revisione delle disposizioni penali in materia di corruzione (Modifica del Codice penale e del Codice penale militare)",
       "botschaftKey": "BOTSCHAFT-1999-1_5497_5045_4721",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/180/de",
-      "sha": "9cc76f2106c26a4cf56f6b81a1e5ed887276e0541ee95ba81826e8e3e35fab80"
+      "sha": "ad73cd59f90b68b6aa07f21183b8efa3a2d05a8d27374cf58b6627217d6c4924"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2000-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/186",
+      "dateDocument": "1999-12-22",
+      "roFundstelle": "AS 2000 1144",
+      "titelDe": "Bundesgesetz über die Währung und die Zahlungsmittel (WZG)",
+      "titelFr": "Loi fédérale sur l'unité monétaire et les moyens de paiement (LUMMP)",
+      "titelIt": "Legge federale sull'unità monetaria e i mezzi di pagamento (LUMP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/186/de",
+      "sha": "62b7c85ddff9d049da5df38bcd44f435c1aab145e4c2ceee398c93fd45980be0"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2000-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/311.0",
-      "sha": "da1e28c2709ec4f43bf476da695b19e5a47d6921d7c409d32b7096cd96a09ea4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/95",
+      "dateDocument": "1999-10-08",
+      "roFundstelle": "AS 2000 505",
+      "titelDe": "Bundesgesetz über die Abschaffung der Bundesassisen",
+      "titelFr": "Loi fédérale sur l'abolition des Assises fédérales",
+      "titelIt": "Legge federale concernente la sopressione delle Assise federali",
+      "botschaftKey": "BOTSCHAFT-1999-1_7922_7145_6784",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/95/de",
+      "sha": "facbd5e4c48502915e56396dea825d9ce51bd1a43790500c5f6414fba023af0b"
     },
     {
       "art": "aenderung",
@@ -935,8 +2523,161 @@
       "titelDe": "Schweizerisches Strafgesetzbuch (Automatisiertes Strafregister)",
       "titelFr": "Code pénal suisse (Casier judiciaire informatisé)",
       "titelIt": "Codice penale svizzero (Casellario giudiziale informatizzato)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/494/de",
-      "sha": "9121c3dde543aa086a2e14a258ff6455304a5e9b3d2f83792db1377a36967ad9"
+      "sha": "5d7574b0c9aef669ca1257336de4b46a0025a4fdd40822baf07f0a8fb83e564f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/2535_2535_2535",
+      "dateDocument": "1997-06-20",
+      "roFundstelle": "AS 1998 2535",
+      "titelDe": "Bundesgesetz über Waffen, Waffenzubehör und Munition (Waffengesetz, WG)",
+      "titelFr": "Loi fédérale sur les armes, les accessoires d'armes et les munitions (Loi sur les armes, LArm)",
+      "titelIt": "Legge federale sulle armi, gli accessori di armi e le munizioni (Legge sulle armi, LArm)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2535_2535_2535/de",
+      "sha": "62ab674d8bfdbb6d32d9972eea692d09e1827df8262cbb03d7e86b972b36a7b6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/852_852_852",
+      "dateDocument": "1997-10-10",
+      "roFundstelle": "AS 1998 852",
+      "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Medienstraf- und Verfahrensrecht), Änderung",
+      "titelFr": "Code pénal suisse et code pénal militaire (Droit pénal et procédure pénale des médias), Modification",
+      "titelIt": "Codice penale svizzero. Codice penale militare (Diritto penale e procedura penale dei mass media), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/852_852_852/de",
+      "sha": "9836f7eec4605e31d7eb360d61a3117a603479dc0369f0f60cf70677ad2a2823"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/892_892_892",
+      "dateDocument": "1997-10-10",
+      "roFundstelle": "AS 1998 892",
+      "titelDe": "Bundesgesetz vom 10. Oktober 1997 über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereigesetz, GwG)",
+      "titelFr": "Loi fédérale du 10 octobre 1997 concernant la lutte contre le blanchiment d'argent et le financement du terrorisme (Loi sur le blanchiment d'argent, LBA)",
+      "titelIt": "Legge federale del 10 ottobre 1997 relativa alla lotta contro il riciclaggio di denaro e il finanziamento del terrorismo (Legge sul riciclaggio di denaro, LRD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/892_892_892/de",
+      "sha": "8c5657878aba64a1345774e8e74fa7ab36f7717c4a36a340cde2e33ecae24f6f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2452_2452_2452",
+      "dateDocument": "1997-04-30",
+      "roFundstelle": "AS 1997 2452",
+      "titelDe": "Postgesetz vom 30. April 1997 (PG)",
+      "titelFr": "Loi fédérale du 30 avril 1997 sur la poste (LPO)",
+      "titelIt": "Legge del 30 aprile 1997 sulle poste (LPO)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2452_2452_2452/de",
+      "sha": "1adbcb3f7edc7a2ad2e4acc227fc75862c3dcc597cb1d979ce0ed69936ec1dbd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-10-20",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2187_2187_2187",
+      "dateDocument": "1997-04-30",
+      "roFundstelle": "AS 1997 2187",
+      "titelDe": "Fernmeldegesetz vom 30. April 1997 (FMG)",
+      "titelFr": "Loi du 30 avril 1997 sur les télécommunications (LTC)",
+      "titelIt": "Legge del 30 aprile 1997 sulle telecomunicazioni (LTC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2187_2187_2187/de",
+      "sha": "40fe85a7a1c3fdbe9cb7865e2a3cd45650f864f263781eeb9ca1afe4e465823e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/1626_1626_1626",
+      "dateDocument": "1997-03-21",
+      "roFundstelle": "AS 1997 1626",
+      "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz, Änderung",
+      "titelFr": "Code pénal suisse. Code pénal militiare, Modification",
+      "titelIt": "Codice penale svizzero. Codice penale militare, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/1626_1626_1626/de",
+      "sha": "545effad27bde6b73539d919d40845177bd8ca5f9547d0f607c18db298f878c0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/68_68_68",
+      "dateDocument": "1995-03-24",
+      "roFundstelle": "AS 1997 68",
+      "titelDe": "Bundesgesetz vom 24. März 1995 über die Börsen und den Effektenhandel (Börsengesetz, BEHG)",
+      "titelFr": "Loi fédérale du 24 mars 1995 sur les bourses et le commerce des valeurs mobilières (Loi sur les bourses, LBVM)",
+      "titelIt": "Legge federale del 24 marzo 1995 sulle borse e il commercio di valori mobiliari (Legge sulle borse, LBVM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/68_68_68/de",
+      "sha": "52d13d430a8a49f13962546f067697831b5441e8c91573c34ad7c167f2ea6578"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227",
+      "dateDocument": "1994-12-16",
+      "roFundstelle": "AS 1995 1227",
+      "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs, Änderung",
+      "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite, Modification",
+      "titelIt": "Legge federale sulla esecuzione e sul fallimento, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1227_1227_1227/de",
+      "sha": "99e4d93f4bdf2021e12b8dc9c272ee41e3aeb4b1a8d60efe7ed30c1578478804"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290",
+      "dateDocument": "1994-06-17",
+      "roFundstelle": "AS 1994 2290",
+      "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Strafbare Handlungen gegen das Vermögen und Urkundenfälschung), Änderung",
+      "titelFr": "Code pénal. Code. Pénal militaire (Infractions contre le patrimoine et faux dans les titres), Modification",
+      "titelIt": "Codice penale svizzero. Codice penale militare (Reati contro il patrimonio e falsità in atti), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2290_2290_2290/de",
+      "sha": "7a4ed63e4edc9fb827a576ef21be6245790ff9bc864987f5e1411527724f32bc"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2887_2887_2887",
+      "dateDocument": "1993-06-18",
+      "roFundstelle": "AS 1994 2887",
+      "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz, Änderung",
+      "titelFr": "Code pénal suisse. Code pénal militaire, Modification",
+      "titelIt": "Codice penale svizzero. Codice penale militare, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2887_2887_2887/de",
+      "sha": "afc596798806c6d5f07673cbd6ea80d6a4e3370897fe68ee63701b23c587d910"
     },
     {
       "art": "aenderung",
@@ -947,21 +2688,452 @@
       "titelDe": "Schweizerisches Strafgesetzbuch, Militärstrafgesetz (Betrifft nur den italienischen Text)",
       "titelFr": "Code pénal suisse, Code pénal militaire (Ne concerne que le texte italien)",
       "titelIt": "Codice penale svizzero (CP), Codice penale militare (CPM)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/162/de",
-      "sha": "6ebe28f6a12577389abee460796d7bd493aefe02a021cd31d8e25ee048b25c72"
+      "sha": "3990940899cc892d7bd4884808888bc21caf42495a6e4c7e8028a66f79a79e23"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1942-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/54/757_781_799",
-      "dateDocument": "1937-12-21",
-      "roFundstelle": "AS 54 757",
-      "titelDe": "Schweizerisches Strafgesetzbuch vom 21. Dezember 1937",
-      "titelFr": "Code pénal suisse du 21 décembre 1937",
-      "titelIt": "Codice penale svizzero del 21 dicembre 1937",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/54/757_781_799/de",
-      "sha": "a53236e340018d6df287f16d29aee7a1817a1219d43dd8da643d898de1b9e5d2"
+      "dateEntryInForce": "1994-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1614_1614_1614",
+      "dateDocument": "1994-03-18",
+      "roFundstelle": "AS 1994 1614",
+      "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Revision des Einziehungsrechts, Strafbarkeit der kriminellen Organisation, Melderecht des Financiers), Änderung",
+      "titelFr": "Code pénal suisse. Code pénal militaire (Révision du droit de la confiscation, punissabilité de l'organisation criminelle, droit de communication du financier), Modification",
+      "titelIt": "Codice penale svizzero. Codice penale militare (Revisione delle norme sulla confisca, punibilità dell'organizzazione criminale, diritto di comunicazione del finanziere), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1614_1614_1614/de",
+      "sha": "9ddaada7ba85948eb2535824da8a6961add551a24f4a9333f11877b795e71c5e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1945_1945_1945",
+      "dateDocument": "1992-06-19",
+      "roFundstelle": "AS 1993 1945",
+      "titelDe": "Bundesgesetz vom 19. Juni 1992 über den Datenschutz (DSG)",
+      "titelFr": "Loi fédérale du 19 juin 1992 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 19 giugno 1992 sulla protezione dei dati (LPD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1945_1945_1945/de",
+      "sha": "abafd3faef014c98014dacb49457170c19fc6bfcf69032a4569503dfd489f305"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1988_1988_1988",
+      "dateDocument": "1992-06-19",
+      "roFundstelle": "AS 1993 1988",
+      "titelDe": "Schweizerisches Strafgesetzbuch, Änderung",
+      "titelFr": "Code pénal suisse, Modification",
+      "titelIt": "Codice penale svizzero, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1988_1988_1988/de",
+      "sha": "a160151ca406b7b9a62d4494c0486b88d433ef27eb51f2cc673c63878584c843"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/2465_2465_2465",
+      "dateDocument": "1991-10-04",
+      "roFundstelle": "AS 1992 2465",
+      "titelDe": "Bundesgesetz vom 4. Oktober 1991 über die Hilfe an Opfer von Straftaten (Opferhilfegesetz, OHG)",
+      "titelFr": "Loi fédérale du 4 octobre 1991 sur l'aide aux victimes d'infractions (LAVI)",
+      "titelIt": "Legge federale del 4 ottobre 1991 concernente l'aiuto alle vittime di reati (LAV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/2465_2465_2465/de",
+      "sha": "bb629971097dc3aec44793f506a13aac5a064f6bc53e74a82ddfe4937d58eaa8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670",
+      "dateDocument": "1991-06-21",
+      "roFundstelle": "AS 1992 1670",
+      "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Strafbare Handlungen gegen die sexuelle Integrität), Änderung",
+      "titelFr": "Code pénal suisse. Code pénal militaire (Infraction contre l'intégrité sexuelle), Modification",
+      "titelIt": "Codice penale svizzero. Codice penale militare (Reati contro l'integrità sessuale), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1670_1670_1670/de",
+      "sha": "b212d5a33476b4e1d5105f58716bb54dcde7d36971fa72343c7bb8a706780710"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/581_581_581",
+      "dateDocument": "1991-06-21",
+      "roFundstelle": "AS 1992 581",
+      "titelDe": "Fernmeldegesetz vom 21. Juni 1991 (FMG)",
+      "titelFr": "Loi du 21 juin 1991 sur les télécommunications (LTC)",
+      "titelIt": "Legge del 21 giugno 1991 sulle telecomunicazioni (LTC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/581_581_581/de",
+      "sha": "eca41056a2430ff1bca5c153273cfa01e16b8c1c5422a6ae1794ad0bf752e257"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/2512_2512_2512",
+      "dateDocument": "1991-06-21",
+      "roFundstelle": "AS 1991 2512",
+      "titelDe": "Schweizerisches Strafgesetzbuch (Behandlung von Rauschgiftsüchtigen). Militärstrafgesetz (Disziplinarische Ahndung des Konsums geringer Mengen von Betäubungsmitteln), Änderung",
+      "titelFr": "Code pénal suisse (Traitement des toxicomanes). Code pénal militaire (Répression disciplinaire de la petite consommation de stupéfiants), Modification",
+      "titelIt": "Codice pneale svizzero (Trattamento dei tossicomani). Codice penale militare (Repressione in via disciplinare del consumo di esigue quantità di stupefacenti), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/2512_2512_2512/de",
+      "sha": "8b3f290abbdbc7a3006ed5cd09857e3c7baff1ac7e1320eb240469ca64aef203"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/1077_1077_1077",
+      "dateDocument": "1990-03-23",
+      "roFundstelle": "AS 1990 1077",
+      "titelDe": "Schweizerisches Strafgesetzbuch (Gesetzgebung über Geldwäscherei und mangelnde Sorgfalt bei Geldgeschäften), Änderung",
+      "titelFr": "Code pénal suisse (Législation sur le blanchissage d'argent et le défaut de vigilance en matière d'opérations financières), Modification",
+      "titelIt": "Codice penale svizzero (Legislazione sul riciclaggio di denaro sporco e carente diligenza in operazioni fianziarie), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/1077_1077_1077/de",
+      "sha": "a98d764e41d17745bca70475edbad7fdac9768eab7fedba25b0d5a09e949720c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/802_802_802",
+      "dateDocument": "1989-12-15",
+      "roFundstelle": "AS 1990 802",
+      "titelDe": "Obligationenrecht (Miete und Pacht), Änderung",
+      "titelFr": "Code des obligations (Bail à loyer et bail à ferme), Modification",
+      "titelIt": "Codice delle obbligazioni (Locazione e affitto), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/802_802_802/de",
+      "sha": "5c931876956ac5db2b9bf625a1fb777581d3f180e7886bbf34a6275fd495cbb9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/2449_2449_2449",
+      "dateDocument": "1989-06-23",
+      "roFundstelle": "AS 1989 2449",
+      "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Strafbare Handlungen gegen Leib und Leben und gegen die Familie), Änderung",
+      "titelFr": "Code pénal suisse. Code pénal militaire (Infractions contre la vie et l'intégrité corporelle et contre la famille), Modification",
+      "titelIt": "Codice penale svizzero. Codice penale militare (Reati contro la vita e l'integrità della persona e contro la famiglia), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/2449_2449_2449/de",
+      "sha": "13a90b7354ed450c4bebf26550f7158f052119a93aead869ee59df0fd0efddcb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/966_966_966",
+      "dateDocument": "1987-12-18",
+      "roFundstelle": "AS 1988 966",
+      "titelDe": "Schweizerisches Strafgesetzbuch, Änderung",
+      "titelFr": "Code pénal suisse, Modification",
+      "titelIt": "Codice penale svizzero, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/966_966_966/de",
+      "sha": "dfba42940de77e2e6182daf2dea51e1702a1bc1595ff3234d497ac6916f9e923"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-10-07",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1346_1346_1346",
+      "dateDocument": "1983-10-07",
+      "roFundstelle": "AS 1983 1346",
+      "titelDe": "Bundesbeschluss über eine Änderung der Übergangsbestimmungen zum Schweizerischen Strafgesetzbuch",
+      "titelFr": "Arrêté fédéral sur une modification des dispositions transitoire du code pénal suisse, Modification",
+      "titelIt": "Decreto federale su una modifica delle disposizioni transitorie del Codice penale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1346_1346_1346/de",
+      "sha": "d84e78c1546898414492607a88234f739dc55fe52128cd73d9badfb6f99bdeed"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/543_543_543",
+      "dateDocument": "1982-12-17",
+      "roFundstelle": "AS 1983 543",
+      "titelDe": "Schweizerisches Strafgesetzbuch, Änderung",
+      "titelFr": "Code pénal suisse, Modification",
+      "titelIt": "Codice penale svizzero, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/543_543_543/de",
+      "sha": "36173b53788db62d0cc189daaa11e0f6b5e644a96d9e17d713057e98fa85d565"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/846_846_846",
+      "dateDocument": "1981-03-20",
+      "roFundstelle": "AS 1982 846",
+      "titelDe": "Bundesgesetz vom 20. März 1981 über internationale Rechtshilfe in Strafsachen (Rechtshilfegesetz, IRSG)",
+      "titelFr": "Loi fédérale du 20 mars 1981 sur l'entraide internationale en matière pénale (Loi sur l'entraide pénale internationale, EIMP)",
+      "titelIt": "Legge federale del 20 marzo 1981 sull'assistenza internazionale in materia penale (Assistenza in materia penale, AIMP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/846_846_846/de",
+      "sha": "ad085f440b00274cc0e1ede9b9d3f02cdb1c1d8e5cff84113da21f2b2f55eb31"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/1530_1530_1530",
+      "dateDocument": "1981-10-09",
+      "roFundstelle": "AS 1982 1530",
+      "titelDe": "Schweizerisches Strafgesetzbuch (StGB), Änderung",
+      "titelFr": "Code pénal suisse, Modification",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/1530_1530_1530/de",
+      "sha": "451941349fa7eb6e3ecaf1bf6d60684c51a52edadf639211a74d776804d72d40"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1981/562_562_562",
+      "dateDocument": "1978-03-09",
+      "roFundstelle": "AS 1981 562",
+      "titelDe": "Tierschutzgesetz vom 9. März 1978 (TSchG)",
+      "titelFr": "Loi fédérale du 9 mars 1978 sur la protection des animaux (LPA)",
+      "titelIt": "Legge federale del 9 marzo 1978 sulla protezione degli animali (LPDA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1981/562_562_562/de",
+      "sha": "940b0c62e93033e10f475f10b75e68ec6d7e6c0978e6b3767f4ff5dd697e2270"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1979-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1979/1170_1170_1170",
+      "dateDocument": "1979-03-23",
+      "roFundstelle": "AS 1979 1170",
+      "titelDe": "Bundesgesetz vom 23. März 1979 über den Schutz der persönlichen Geheimsphäre (Änderung von Bundesgesetzen)",
+      "titelFr": "Loi fédérale du 23 mars 1979 sur la protection de la vie privée (Modification des lois fédérales)",
+      "titelIt": "Legge federale del 23 marzo 1979 sulla protezione della sfera segreta personale (Modifica di leggi federali)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/1170_1170_1170/de",
+      "sha": "baa60eb1cbf4bbd9b79d54767267831d2c574214c07ab05d1a03c163cc9941b4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/688_688_688",
+      "dateDocument": "1976-12-17",
+      "roFundstelle": "AS 1978 688",
+      "titelDe": "Bundesgesetz vom 17. Dezember 1976 über die politischen Rechte (BPR)",
+      "titelFr": "Loi fédérale du 17 décembre 1976 sur les droits politiques (LDP)",
+      "titelIt": "Legge federale del 17 dicembre 1976 sui diritti politici (LDP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/688_688_688/de",
+      "sha": "88f68547b040ca7ffedc84fcdf9cf2e1da718428dc563c13f62631deff3a03be"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1975-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1974/1857_1857_1857",
+      "dateDocument": "1974-03-22",
+      "roFundstelle": "AS 1974 1857",
+      "titelDe": "Bundesgesetz vom 22. März 1974 über das Verwaltungsstrafrecht (VStrR)",
+      "titelFr": "Loi fédérale du 22 mars 1974 sur le droit pénal administratif (DPA)",
+      "titelIt": "Legge federale del 22 marzo 1974 sul diritto penale amministrativo (DPA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1974/1857_1857_1857/de",
+      "sha": "6d633e34e43c36185903e24bc22bb7d4545ea823a51c889c26d56c972332a13d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1974-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/1840_1840_1840",
+      "dateDocument": "1973-11-13",
+      "roFundstelle": "AS 1973 1840",
+      "titelDe": "Bundesratsbeschluss vom 13. November 1973 über die Inkraftsetzung von geänderten Bestimmungen des Schweizerischen Strafgesetzbuches",
+      "titelFr": "Arrêté du Conseil fédéral du 13 novembre 1973 mettant en vigueur des dispositions modifiées du code pénal suisse",
+      "titelIt": "Decreto del Consiglio federale del 13 novembre 1973 che mette in vigore dei disposti modificati del Codice penale svizzero",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/1840_1840_1840/de",
+      "sha": "df2bc7f47ba49da1d2f38b7632d31db808b89f17e2e0c4e790e66aad2477cc77"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1971-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/777_777_777",
+      "dateDocument": "1971-03-18",
+      "roFundstelle": "AS 1971 777",
+      "titelDe": "Bundesgesetz betreffend Änderung des Schweizerischen Strafgesetzbuches",
+      "titelFr": "Loi fédérale modifiant le code pénal suisse",
+      "titelIt": "Legge federale che modifica il Codice penale svizzero",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/777_777_777/de",
+      "sha": "3120044747a26798b1e8f4dd98c9267a39b829c8b448d3b9f71d4e569f796ade"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1969-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1969/319_327_327",
+      "dateDocument": "1968-12-20",
+      "roFundstelle": "AS 1969 319",
+      "titelDe": "Bundesgesetz vom 20. Dezember 1968 betreffend Verstärkung des straflichrechtlichen Schutzes des persönlichen Geheimbereichs",
+      "titelFr": "Loi fédérale du 20 décembre 1968 renforçant la protection pénale du domaine personnel secret",
+      "titelIt": "Legge federale del 20 dicembre 1968 sul rafforzamento della protezione penale della sfera personale riservata",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1969/319_327_327/de",
+      "sha": "edeb71f82e10e8ede7b1176b4e2dd513546e51576721ab0edef959aa1b9e9791"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1967-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1967/28_29_30",
+      "dateDocument": "1966-10-06",
+      "roFundstelle": "AS 1967 28",
+      "titelDe": "Bundesgesetz vom 6. Oktober 1966 über die Änderung des Artikels 393 des Strafgesetzbuches",
+      "titelFr": "Loi fédérale del 6 octobre 1966 modifiant l'article 393 du code pénal",
+      "titelIt": "Legge federale del 6 ottobre 1966 che modifica l'articolo 393 del Codice penale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1967/28_29_30/de",
+      "sha": "083d5de5617813073e482fa386999c4b8a58dc2e36f5e6beba4eb13def46c95c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1967-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1967/29_31_32",
+      "dateDocument": "1966-10-06",
+      "roFundstelle": "AS 1967 29",
+      "titelDe": "Bundesgesetz über Bundesbeiträge an Strafvollzugs- und Erziehungsanstalten",
+      "titelFr": "Loi fédérale sur les subventions de la Confédération aux établissements servant à l'exécution des peines et mesures et aux maisons d'éducation",
+      "titelIt": "Legge federale sui sussidi federali agli stabilimenti penitenziari e alle case di educazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1967/29_31_32/de",
+      "sha": "16c02c9bddd04a371fd7daef3b1b3db232e9a9f4947aacee7ad94d6f0274a836"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1962-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1962/24_26_26",
+      "dateDocument": "1961-09-29",
+      "roFundstelle": "AS 1962 24",
+      "titelDe": "Bundesbeschluss über die Verlängerung der Frist zur Durchführung der Anstaltsreformen nach dem Strafgesetzbuch",
+      "titelFr": "Arrêté fédéral prolongeant le délai d'exécution de la réforme des établissements prescrits par le code pénal",
+      "titelIt": "Decreto federale che proroga il termine per l'esecuzione della riforma degli stabilimenti, resa necessaria dal Codice penale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1962/24_26_26/de",
+      "sha": "f33b317da54e18b1fb76514fb2512518c4f10f7a3aba5640b8d977db9ae6af6f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1951-01-05",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1951/1_1_1",
+      "dateDocument": "1950-10-05",
+      "roFundstelle": "AS 1951 1",
+      "titelDe": "Bundesgesetz betreffend Abänderung des Schweizerischen Strafgesetzbuches",
+      "titelFr": "Loi fédérale modifiant le code pénal suisse",
+      "titelIt": "Legge federale che modifica il codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1951/1_1_1/de",
+      "sha": "e9bd5bc869175156cff00e5d77f8916cb80a5327d7daeafbcd32ee80b4419637"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1949-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1948/1075_1063_1037",
+      "dateDocument": "1948-10-29",
+      "roFundstelle": "AS 1948 1075",
+      "titelDe": "Bundesratsbeschluss vom 29. Oktober 1948 betreffend Verstärkung des Staatsschutzes",
+      "titelFr": "Arrêté du Conseil fédéral du 29 octobre 1948 renforçant les dispositions pénales pour la protection de l'Etat",
+      "titelIt": "Decreto del Consiglio federale del 29 ottobre 1948 che inasprisce le disposizioni penali per la protezione dello Stato",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1948/1075_1063_1037/de",
+      "sha": "a5a34ffbeb646e7fb148665727ea4d297e533ac47b65f64cc2efc28ec41172d2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1945-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/61/1_1_1",
+      "dateDocument": "1943-09-30",
+      "roFundstelle": "AS 61 1",
+      "titelDe": "Bundesgesetz vom 30. September 1943 über den unlauteren Wettbewerb",
+      "titelFr": "Loi fédérale du 30 septembre 1943 sur la concurrence déloyale",
+      "titelIt": "Legge federale del 30 settembre 1943 sulla concorrenza sleale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/61/1_1_1/de",
+      "sha": "3b378d0adaf5560289f0643f89710412b6fca27ead8831fc61ed82b8c2d1b400"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1941-11-27",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/57/1328_1364_1408",
+      "dateDocument": "1941-11-20",
+      "roFundstelle": "AS 57 1328",
+      "titelDe": "Bundesratsbeschluss betreffend Berichtigung von Fehlern im deutschen Text des schweizerischen Strafgesetzbuches vom 21. Dezember 1937",
+      "titelFr": "Code pénal suisse, Errata",
+      "titelIt": "Codice penale svizzero, Correzioni",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/57/1328_1364_1408/de",
+      "sha": "d111fdcba23a1eefa1c540b98c66c8e8f1e2e80fdb1be45f36dcf565d0f99c1b"
     }
   ],
-  "sha": "6157654506063b733d776289545e3b9af3d43228c775d82525350e4944ee5abe"
+  "sha": "5e313abdb7d8c51b2383accc908910d8e61022e5038dcc91ef38efe99e03293e"
 }

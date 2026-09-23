@@ -1,8 +1,8 @@
 {
   "erlassKey": "UNO_ANTIFOLTER",
   "sr": "0.105",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/270/de",
-      "sha": "d388c8e9528f0b8ba44e6cf8bdda503391cadc20aa3bbc5cb62fe940e38a8bca"
+      "sha": "40a6e2ffe7027b28522c03cabdb214791a1aa8d696ae55350d8fca544ea43bd5"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/105/de",
-      "sha": "b3cec0e1da06bbf0b6a0770137f55bcc960a89088ac6843cc60b6ad229303792"
+      "sha": "09f5c5c0420dc6a7f25448fa8fb9fa68df28b0ce92b94d075041487e512b99ff"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,12 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/217/de",
-      "sha": "42e5288e6d384a6c8d5ae74dd04847244e1e7b909f8b277fee855d3fc511b960"
+      "sha": "91ce53a7a733bf462b92e5ca1369f7a978d68c6a268078e2ef510508f8d2fd14"
     },
     {
       "art": "aenderung",
@@ -49,8 +59,12 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/341/de",
-      "sha": "9015fd34e628791c389a174cddb71a27f51fd421410eedb8d482866964e23698"
+      "sha": "96943a5d7a23227e799b7f3a448e6a43f1ff587df9a94e4f14e70c328710bbdb"
     },
     {
       "art": "aenderung",
@@ -61,8 +75,12 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/441/de",
-      "sha": "af75fb13a9bdea97027be0921954e29f4c001199468f2d79b5a9aafaa17fb426"
+      "sha": "236b36e56bedfc9bb106bd8abbdd6ec9e54b0053671a652067682b190b176541"
     },
     {
       "art": "aenderung",
@@ -73,8 +91,12 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/634/de",
-      "sha": "b99ab285349171c991048cf32cc4176be8e682b4ef1ad949ab4452dcd6bdb897"
+      "sha": "eb3f784000cb3ea913266134a44d7113751753e931756bdfe4481255e8b150d8"
     },
     {
       "art": "aenderung",
@@ -85,8 +107,12 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/90/de",
-      "sha": "0bdf108027f4d29a6c7dcfc9ea3a8bbc2c583e43c6bd8ef7faac08c10bd82633"
+      "sha": "a4eab228b1135766a97bedd5cd81646a72b34a12699a826d530160e7e80ffa79"
     },
     {
       "art": "aenderung",
@@ -97,8 +123,11 @@
       "titelDe": "Übereinkommen gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention contre la torture et autres peines ou traitements cruels, inhumains ou dégradants (Ne concerne que le texte allemand)",
       "titelIt": "Convenzione contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti (Concerne solo il testo tedesco)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/693/de",
-      "sha": "666cece44d7140e951febf210cea21b6715b69e4d6a9e5de4794e1ed8d9f57ae"
+      "sha": "20871bf3bbbd10f6d2d7fef58b31e0531ed57762ca4b4b3081bf2f399008f122"
     },
     {
       "art": "aenderung",
@@ -109,8 +138,12 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/630/de",
-      "sha": "bb8ee63542207ba18b5c7f68e4a3af226a16b5fef369e403080f30e9ca7467e2"
+      "sha": "183aa705d4a289c97701314cfa5e709744b00cc7c5b760ea1093c6f8d875c5a7"
     },
     {
       "art": "aenderung",
@@ -121,8 +154,12 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/905/de",
-      "sha": "b48f7b89a0bde6d9df934af1163f7dd049b56c6e2da5833273699a565ed4d25a"
+      "sha": "4765eb22fe28e7fe9411f203d6f8097f2d100e60fa4fa2553e77dcf825da174c"
     },
     {
       "art": "aenderung",
@@ -133,8 +170,12 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/73/de",
-      "sha": "e62fcf6f5372ac987d996fcc6b2d91c34051feaf842cf61b50799abcabe9fdc6"
+      "sha": "7ffc8d6ee3879795cd87a3e984352a4484f717589a6b60d40b2b1cdacb68e0a1"
     },
     {
       "art": "aenderung",
@@ -145,8 +186,12 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/154/de",
-      "sha": "860303cf43167dbf6655174f431874eebcb7a9f62bdd388eaac1cbc4d5d54f11"
+      "sha": "15f00108ba50e878d0d6c8d2cfdd9c4552e889d2e13b218f05631b2c6275f7e8"
     },
     {
       "art": "aenderung",
@@ -157,8 +202,12 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/453/de",
-      "sha": "ebd5e14e351ad6fed3a5042583fb32fb2f5955b03bf5fc6c9f8a373b6632ed15"
+      "sha": "6bf4335acd971ad1d80f713ac0af30a01bcf65c3e8401d24278322e741dddef5"
     },
     {
       "art": "aenderung",
@@ -169,8 +218,12 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/323/de",
-      "sha": "6ea0fdd7bc6589d25426b635efee0e3e4a6d59b2a5704a8c08d7ca5e351fdb0a"
+      "sha": "6884a4fda167feb30f516b74cb01083e68c648b993bbaac23b60fdcd5f67d0c7"
     },
     {
       "art": "aenderung",
@@ -181,21 +234,109 @@
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/329/de",
-      "sha": "b6a1b407908a209b03018b9900c0765dd071af40562a13c99efe074df58e5cef"
+      "sha": "2f03f7fb8d4d9890b4c9a2a15ea560ee006ab4953914409f9281d1c171a45b3d"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1987-06-26",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/1307_1307_1307",
-      "dateDocument": "1984-12-10",
-      "roFundstelle": "AS 1987 1307",
+      "dateEntryInForce": "1993-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1901_1901_1901",
+      "dateDocument": "1993-06-01",
+      "roFundstelle": "AS 1993 1901",
       "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
       "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
       "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/1307_1307_1307/de",
-      "sha": "4c4e5bf9eb3ad5559caa4995df653cc1fda3ba5915a2bd6370c1799d542ebd21"
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1901_1901_1901/de",
+      "sha": "51fa483004998828ea020fb12acc7a49ea9bedbba7accac73ae719573f60aa40"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-03-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/660_660_660",
+      "dateDocument": "1992-03-15",
+      "roFundstelle": "AS 1992 660",
+      "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
+      "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
+      "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/660_660_660/de",
+      "sha": "e1a18418298247d18bf42eaed4abc138955c96d0bb41132d47d44adeb1dfea20"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/789_789_789",
+      "dateDocument": "1990-06-01",
+      "roFundstelle": "AS 1990 789",
+      "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
+      "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
+      "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/789_789_789/de",
+      "sha": "1f871995b396b69a2703e0def5cc72f45caa3568552a939602c96fdfdab05d3c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-10-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/2286_2286_2286",
+      "dateDocument": "1989-10-15",
+      "roFundstelle": "AS 1989 2286",
+      "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
+      "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
+      "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/2286_2286_2286/de",
+      "sha": "c3a1ba28cad85c148d1f3634b9149d0fb0d6faf3bd9d6aea4646a51f798d76fb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/280_280_280",
+      "dateDocument": "1989-03-01",
+      "roFundstelle": "AS 1989 280",
+      "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
+      "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
+      "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/280_280_280/de",
+      "sha": "e18547d013cc7a8c0aabcf48ed819f4616de6d741266e813df99ba391cb4891c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/567_567_567",
+      "dateDocument": "1988-02-01",
+      "roFundstelle": "AS 1988 567",
+      "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
+      "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
+      "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/567_567_567/de",
+      "sha": "0baea788c098ec4723c2904a6a4acd765869afcb68c6db2c71713838eb571116"
     }
   ],
-  "sha": "215ed30fe964ef9a12ad5bfa0ac971b8a9640481ab8eb7cddf315c6ba21ac19f"
+  "sha": "8a4dab2ade5d89a57801147b709022483c34cd88eb35e8bbe5ebe7f13f9527cd"
 }

@@ -2038,5 +2038,228 @@
   "belegteOcs": [
     "https://fedlex.data.admin.ch/eli/oc/2021/12"
   ],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2002/243",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2002/243",
+    "inkrafttreten": "2002-06-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/242",
+        "typ": 3,
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/243",
+        "typ": 5,
+        "datum": "2002-06-01",
+        "fassung": "2002-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/509",
+        "typ": 6,
+        "datum": "2002-06-01",
+        "fassung": "2002-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/150",
+        "typ": 1,
+        "datum": "2003-07-15",
+        "fassung": "2003-07-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/627",
+        "typ": 1,
+        "datum": "2004-04-30",
+        "fassung": "2004-04-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/178",
+        "typ": 3,
+        "datum": "2006-04-01",
+        "fassung": "2006-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/179",
+        "typ": 1,
+        "datum": "2006-04-01",
+        "fassung": "2006-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/860",
+        "typ": 1,
+        "datum": "2006-07-06",
+        "fassung": "2006-07-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/129",
+        "typ": 1,
+        "datum": "2007-06-01",
+        "fassung": "2007-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/297",
+        "typ": 1,
+        "datum": "2009-06-01",
+        "fassung": "2009-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/378",
+        "typ": 1,
+        "datum": "2009-06-01",
+        "fassung": "2009-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/581",
+        "typ": 1,
+        "datum": "2011-06-01",
+        "fassung": "2011-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/693",
+        "typ": 1,
+        "datum": "2011-11-01",
+        "fassung": "2011-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/282",
+        "typ": 1,
+        "datum": "2012-04-01",
+        "fassung": "2012-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/346",
+        "typ": 6,
+        "datum": "2012-04-01",
+        "fassung": "2012-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/523",
+        "typ": 6,
+        "datum": "2012-08-21",
+        "fassung": "2012-08-21"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/508",
+        "typ": 1,
+        "datum": "2013-09-01",
+        "fassung": "2013-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/508",
+        "typ": 3,
+        "datum": "2013-09-01",
+        "fassung": "2013-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/591",
+        "typ": 1,
+        "datum": "2013-09-01",
+        "fassung": "2013-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/591",
+        "typ": 5,
+        "datum": "2013-09-01",
+        "fassung": "2013-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/340",
+        "typ": 1,
+        "datum": "2014-06-01",
+        "fassung": "2014-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/41",
+        "typ": 1,
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/469",
+        "typ": 1,
+        "datum": "2015-06-08",
+        "fassung": "2015-06-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/828",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/828",
+        "typ": 3,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/829",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/30",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/12",
+        "typ": 1,
+        "datum": "2020-12-15",
+        "fassung": "2020-12-15"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2002/242": {
+        "dateDoc": "1999-10-08",
+        "roId": "RO 2002 1527",
+        "titelDe": "Bundesbeschluss über die Genehmigung der sektoriellen Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie gegebenenfalls ihrer Mitgliedstaaten oder der Europäischen Atomgemeinschaft andererseits",
+        "titelFr": "Arrêté fédéral portant approbation des accords sectoriels entre la Confédération suisse d'une part et, d'autre part, la Communauté européenne ainsi que, le cas échéant, ses Etats membres ou la Communauté européenne de l'énergie atomique",
+        "titelIt": "Decreto federale che approva gli accordi settoriali fra la Confederazione Svizzera da una parte e la Comunità europea nonché eventualmente i suoi Stati membri o la Comunità europea dell'energia atomica dall'altra"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/178": {
+        "dateForce": "2006-04-01",
+        "dateDoc": "2004-12-17",
+        "roId": "RO 2006 979",
+        "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf die neuen EG-Mitgliedstaaten zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits sowie über die Genehmigung der Revision der flankierenden Massnahmen zur Personenfreizügigkeit",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'extension de l'accord entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, sur la libre circulation des personnes aux nouveaux Etats membres de la Communauté européenne et portant approbation de la révision des mesures d'accompagnement concernant la libre circulation des personnes",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero, mediante revisione delle misure collaterali, il Protocollo concluso con la Comunità europea e i suoi Stati membri relativo all'estensione dell'Accordo sulla libera circolazione delle persone ai nuovi Stati membri della Comunità europea"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/297": {
+        "dateForce": "2009-06-01",
+        "dateDoc": "2008-05-27",
+        "roId": "RO 2009 2421",
+        "titelDe": "Protokoll zum Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits über die Freizügigkeit im Hinblick auf die Aufnahme der Republik Bulgarien und Rumäniens als Vertragsparteien infolge ihres Beitritts zur Europäischen Union (mit Anhängen und Erkl.)",
+        "titelFr": "Protocole à l'Accord entre la Confédération suisse, d'une part, et la Communauté européenne et ses états membres, d'autre part, sur la libre circulation des personnes, concernant la participation, en tant que parties contractantes, de la République de Bulgarie et de la Roumanie, à la suite de leur adhésion à l'Union européenne (avec annexes et décl.)",
+        "titelIt": "Protocollo all'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone, relativo alla partecipazione, in qualità di parti contraenti, della Repubblica di Bulgaria e della Romania, successivamente alla loro adesione all'Unione europea (con all. e dichiarazioni)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/523": {
+        "dateForce": "2012-08-21",
+        "dateDoc": "2012-08-21",
+        "roId": "RO 2012 4479",
+        "titelDe": "Protokoll zum Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits über die Freizügigkeit im Hinblick auf die Aufnahme der Republik Bulgarien und Rumäniens als Vertragsparteien infolge ihres Beitritts zur Europäischen Union",
+        "titelFr": "Protocole à l'Accord entre la Confédération suisse, d'une part, et la Communauté européenne et ses états membres, d'autre part, sur la libre circulation des personnes, concernant la participation, en tant que parties contractantes, de la République de Bulgarie et de la Roumanie, à la suite de leur adhésion à l'Union européenne",
+        "titelIt": "Protocollo all'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone, relativo alla partecipazione, in qualità di parti contraenti, della Repubblica di Bulgaria e della Romania, successivamente alla loro adesione all'Unione europea"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/591": {
+        "dateForce": "2013-09-01",
+        "dateDoc": "2011-09-30",
+        "roId": "RO 2013 3033",
+        "titelDe": "Beschluss Nr. 2/2011 vom 30. September 2011 des Gemischten Ausschusses EU-Schweiz, der mit Artikel 14 des Abkommens zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits über die Freizügigkeit eingesetzt wurde, über die Änderung von Anhang III (gegenseitige Anerkennung von Berufsqualifikationen)",
+        "titelFr": "Décision n<sup>o</sup> 2/2011 du 30 septembre 2011 du Comité mixte UE-Suisse institué par l'art. 14 de l'accord entre la Confédération suisse d'une part, et la Communauté européenne et ses Etats membres, d'autre part, sur la libre circulation des personnes en ce qui concerne le remplacement de l'annexe III (reconnaissance mutuelle des qualifications professionnelles)",
+        "titelIt": "Decisione n. 2/2011 del 30 settembre 2011 del Comitato misto UE-Svizzera istituito dall'articolo 14 dell'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone che modifica l'allegato III (Reciproco riconoscimento delle qualifiche professionali)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/828": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-06-17",
+        "roId": "RO 2016 5233",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Protokolls zum Freizügigkeitsabkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits betreffend die Ausdehnung auf die Republik Kroatien",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'accord sur la libre circulation des personnes entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, concernant l'extension à la République de Croatie",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Croazia dell'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone"
+      }
+    }
+  }
 }

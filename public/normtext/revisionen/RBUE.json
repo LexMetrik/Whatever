@@ -1,8 +1,8 @@
 {
   "erlassKey": "RBUE",
   "sr": "0.231.15",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Berner Übereinkunft zum Schutze von Werken der Literatur und Kunst, revidiert in Paris am 24. Juli 1971",
       "titelFr": "Convention de Berne pour la protection des œuvres littéraires et artistiques, révisée à Paris le 24 juillet 1971",
       "titelIt": "Convenzione di Berna per la protezione delle opere letterarie e artistiche, riveduta a Parigi il 24 luglio 1971",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/272/de",
-      "sha": "e03ce9f0cc9fc51559b6fa44dc35843c80a8cf44272263802f0f9611eb27b21f"
+      "sha": "94d91b9884ee553577315dd4642163ce5b70929696104b7ff6f85c4de458fce2"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Berner Übereinkunft zum Schutze von Werken der Literatur und Kunst, revidiert in Paris am 24. Juli 1971",
       "titelFr": "Convention de Berne pour la protection des œuvres littéraires et artistiques, révisée à Paris le 24 juillet 1971",
       "titelIt": "Convenzione di Berna per la protezione delle opere letterarie e artistiche, riveduta a Parigi il 24 luglio 1971",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/601/de",
-      "sha": "13836d8cb7ba1f5c165e7d99b0c81d0e07e61fa4954f7dd1138318165d1b21be"
+      "sha": "ae4efd5e734990df098a75c1e208d0c9a39b0f35bea9749e57757b180ef78238"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,12 @@
       "titelDe": "Berner Übereinkunft zum Schutze von Werken der Literatur und Kunst, revidiert in Paris am 24. Juli 1971",
       "titelFr": "Convention de Berne pour la protection des uvres littéraires et artistiques, révisée à Paris le 24 juillet 1971",
       "titelIt": "Convenzione di Berna per la protezione delle opere letterarie e artistiche, riveduta a Parigi il 24 luglio 1971",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/402/de",
-      "sha": "91813c25979cd18a7c5a0172933fff564e0a3b4b7d3228975e832e9f1548d8de"
+      "sha": "72d1fa5d26aed7544eac68868ce7f4cfa76886ab184f43114c95fbc4685e618a"
     },
     {
       "art": "aenderung",
@@ -49,8 +59,12 @@
       "titelDe": "Berner Übereinkunft zum Schutze von Werken der Literatur und Kunst, revidiert in Paris am 24. Juli 1971",
       "titelFr": "Convention de Berne pour la protection des uvres littéraires et artistiques, révisée à Paris le 24 juillet 1971",
       "titelIt": "Convenzione di Berna per la protezione delle opere letterarie e artistiche, riveduta a Parigi il 24 luglio 1971",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/573/de",
-      "sha": "79a4d3cea2c07c5afe8fc7defe2a04ac80b08cb45ac9bb6f3bfca29ccbdd6b44"
+      "sha": "9acea240a2a462c3dd47e9616e160de6a113ffa770d2f121e3cf0f81bf0445b5"
     },
     {
       "art": "aenderung",
@@ -61,8 +75,12 @@
       "titelDe": "Berner Übereinkunft zum Schutze von Werken der Literatur und Kunst, revidiert in Paris am 24. Juli 1971",
       "titelFr": "Convention de Berne pour la protection des uvres littéraires et artistiques, révisée à Paris le 24 juillet 1971",
       "titelIt": "Convenzione di Berna per la protezione delle opere letterarie e artistiche, riveduta a Parigi il 24 luglio 1971",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/88/de",
-      "sha": "f5b7d067286410ecdafa0aa85ba4a881b8896e568ab0d5b8431d1f9e7d95e544"
+      "sha": "56c58a60b36d31dc153769cb9643f4cf7a66315c2cb1244f2a7f7397f6207c4a"
     },
     {
       "art": "aenderung",
@@ -73,8 +91,12 @@
       "titelDe": "Berner Übereinkunft zum Schutze von Werken der Literatur und Kunst, revidiert in Paris am 24. Juli 1971",
       "titelFr": "Convention de Berne pour la protection des œuvres littéraires et artistiques, révisée à Paris le 24 juillet 1971",
       "titelIt": "Convenzione di Berna per la protezione delle opere letterarie e artistiche, riveduta a Parigi il 24 luglio 1971",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/310/de",
-      "sha": "a7d1fcefacc5da8dfabe10ccccd5752d501fe7c08ee0cec2eddc839ab666de9c"
+      "sha": "8623f10a3089830597e990e50a94ae892249ca4a551d0e6c55b56a49d0ce861c"
     },
     {
       "art": "aenderung",
@@ -85,8 +107,12 @@
       "titelDe": "Berner Übereinkunft zum Schutze von Werken der Literatur und Kunst revidiert in Paris am 24. Juli 1971",
       "titelFr": "Convention de Berne pour la protection des œuvres littéraires et artistiques révisée à Paris le 24 juillet 1971",
       "titelIt": "Convenzione di Berna per la protezione delle opere letterarie e artistiche riveduta a Parigi il 24 luglio 1971",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/106/de",
-      "sha": "d39d5079540115cbd2ad0b4923785efbd0c974bc20602f946445983433538594"
+      "sha": "87eff4fe4904682fcbdf7230639144f26363ed0e3e6331e6fd76c4e362765baa"
     },
     {
       "art": "aenderung",
@@ -97,21 +123,28 @@
       "titelDe": "Berner Übereinkunft zum Schutze von Werken der Literatur und Kunst revidiert in Paris am 24. Juli 1971 (mit Anhang)",
       "titelFr": "Convention de Berne pour la protection des uvres littéraires et artistiques, révisée à Paris le 24 juillet 1971 (avec annexe)",
       "titelIt": "Convenzione di Berna per la protezione delle opere letterarie e artistiche riveduta a Parigi il 24 luglio 1971 (con annesso)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/152/de",
-      "sha": "5acc951a7879cd5309d82dfecea2b0bb8ac242923dfb59ca32ee175808006fca"
+      "sha": "936824b803a5b09d23248f67d861b81a80643b352e05800992b6fcc1baedae8a"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1993-09-25",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/2659_2659_2659",
-      "dateDocument": "1971-07-24",
-      "roFundstelle": "AS 1993 2659",
-      "titelDe": "Berner Übereinkunft zum Schutze von Werken der Literatur und Kunst, revidiert in Paris am 24. Juli 1971 (mit Anhang)",
-      "titelFr": "Convention de Berne pour la protection des œuvres littéraires et artistiques, révisée à Paris le 24 juillet 1971 (avec annexe)",
-      "titelIt": "Convenzione di Berna per la protezione delle opere letterarie e artistiche, riveduta a Parigi il 24 luglio 1971 (con annesso)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/2659_2659_2659/de",
-      "sha": "17036372bd82b610260333c58acfe8a1b97bd4312275738ca0240d172a5972e4"
+      "dateEntryInForce": "1995-03-31",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1394_1394_1394",
+      "dateDocument": "1995-03-31",
+      "roFundstelle": "AS 1995 1394",
+      "titelDe": "Berner Übereinkunft zum Schutze von Werken der Literatur und Kunst revidiert in Paris am 24. Juli 1971, Änderung",
+      "titelFr": "Convention de Berne pour la protection des œuvres littéraires et artistiques, révisée à Paris le 24 juillet 1971, Modification",
+      "titelIt": "Convenzione di Berna per la protezione delle opere letterarie e artistiche riveduta a Parigi il 24 luglio 1971, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1394_1394_1394/de",
+      "sha": "160ad898b0a50bd5b66f1f1ae01c7bce59d0ed5c945524f1e98cbe4a513328de"
     }
   ],
-  "sha": "8dd6e0d8dc2d9a442f5fab22b0f9961c28f2e8902933a1efb37ae32ac7431f0a"
+  "sha": "4e76ece5d3863cff7ab0d03444aa31deedc6614d4351e21e25a0d839a228b46f"
 }

@@ -1,5 +1,5 @@
 import { datumAnzeige } from '../../../components/rechtsprechung/format';
-import { revisionTitel, type RevisionAnsicht, type RevisionBezug } from '../../../lib/normtext/revisionen';
+import { revisionSchluessel, revisionTitel, type RevisionAnsicht, type RevisionBezug } from '../../../lib/normtext/revisionen';
 import { aenderungZeitbezug, type AenderungZeitbezug } from '../zukunftsfassungen';
 import type { Geladen } from './panelKontextLaden';
 
@@ -112,7 +112,7 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag }: {
           <p className="pb-1 pt-1.5 text-micro font-medium text-ink-700">
             Noch nicht in Kraft <span className="num font-normal text-ink-500">· Stand geprüft am {datumAnzeige(stichtag)}</span>
           </p>
-          <ul>{kuenftig.map((z) => <AenderungZeile key={zeilenKey(z.r)} r={z.r} bezug={z.bezug} />)}</ul>
+          <ul>{kuenftig.map((z) => <AenderungZeile key={revisionSchluessel(z.r)} r={z.r} bezug={z.bezug} />)}</ul>
         </section>
       )}
       {uebrige.length > 0 && (
@@ -122,7 +122,7 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag }: {
               {uebrige.some((z) => z.bezug === 'unbestimmt') ? 'Übrige Änderungen' : 'In Kraft'}
             </p>
           )}
-          <ul>{uebrige.map((z) => <AenderungZeile key={zeilenKey(z.r)} r={z.r} bezug={z.bezug} />)}</ul>
+          <ul>{uebrige.map((z) => <AenderungZeile key={revisionSchluessel(z.r)} r={z.r} bezug={z.bezug} />)}</ul>
         </section>
       )}
       {hatSammelerlass && (
@@ -135,9 +135,6 @@ export function PanelAenderungen({ stand, quelleUrl, stichtag }: {
   );
 }
 
-function zeilenKey(r: RevisionBezug): string {
-  return r.ocUri ?? `${r.art}:${r.dateEntryInForce}`;
-}
 
 function AenderungZeile({ r, bezug }: { r: RevisionBezug; bezug: AenderungZeitbezug }) {
   const titel = revisionTitel(r, 'de');

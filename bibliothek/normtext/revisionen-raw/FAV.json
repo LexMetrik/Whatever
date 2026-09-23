@@ -1783,5 +1783,95 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2023/720",
       "zielFundstelle": "AS 2023 720"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2016/24",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2016/24",
+    "inkrafttreten": "2016-06-13",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/24",
+        "typ": 5,
+        "datum": "2016-06-13",
+        "fassung": "2016-06-13"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/24",
+        "typ": 30,
+        "datum": "2018-06-12",
+        "fassung": "2018-06-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/495",
+        "typ": 1,
+        "datum": "2017-09-01",
+        "fassung": "2017-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1023",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1023",
+        "typ": 1,
+        "datum": "2021-07-16",
+        "fassung": "2021-07-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/720",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/22",
+        "typ": 6,
+        "datum": "2024-01-15",
+        "fassung": "2024-01-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/415",
+        "typ": 6,
+        "datum": "2024-08-15",
+        "fassung": "2024-08-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/243",
+        "typ": 1,
+        "datum": "2028-07-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2017/495": {
+        "dateForce": "2017-09-01",
+        "dateDoc": "2017-08-16",
+        "roId": "RO 2017 4151",
+        "titelDe": "Verordnung über den Nachrichtendienst (Nachrichtendienstverordnung, NDV)",
+        "titelFr": "Ordonnance sur le service de renseignement (Ordonnance sur le renseignement, ORens)",
+        "titelIt": "Ordinanza sulle attività informative (OAIn)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/589": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-10-01",
+        "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/243": {
+        "dateForce": "2026-07-01",
+        "dateDoc": "2026-05-06",
+        "titelDe": "Verordnung über Fernmeldedienste (FDV)",
+        "titelFr": "Ordonnance sur les services de télécommunication (OST)",
+        "titelIt": "Ordinanza sui servizi di telecomunicazione (OST)"
+      }
+    }
   }
 }

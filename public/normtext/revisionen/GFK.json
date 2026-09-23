@@ -1,8 +1,8 @@
 {
   "erlassKey": "GFK",
   "sr": "0.142.30",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,12 @@
       "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
       "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
       "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/409/de",
-      "sha": "84b276fc9b9a2656285417eb70812197cf0f4d430db8764f878596cfbbc5cd9b"
+      "sha": "819a7d650d57ba1a003428a4218bce606919761142756c6b58ecefc1196ca7e8"
     },
     {
       "art": "aenderung",
@@ -25,8 +29,12 @@
       "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
       "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
       "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/307/de",
-      "sha": "65bd4615ff5104466951e5ab51abb833c93a42ebba14b178382b365458d892e1"
+      "sha": "668f5955db6fad9e45a3c669276dbc5bea40bd72e9e26281f6ea461890d0c25c"
     },
     {
       "art": "aenderung",
@@ -37,8 +45,12 @@
       "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
       "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
       "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/256/de",
-      "sha": "7cb7333b691f022eebc26892dc3bde9efdb6b0bb0751ac2ce1b5ce6178a0f0e0"
+      "sha": "50387db6e0d72312690bf99a80716e0156ff0e51f27124d06018cb3d5d6088f7"
     },
     {
       "art": "aenderung",
@@ -49,21 +61,358 @@
       "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge (mit Anhang)",
       "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés (avec annexe)",
       "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati (con allegato)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/636/de",
-      "sha": "c7ced81963298d9bf97f07e20e20ec4f4a9f26e5a77322c05657ce4dcabd3147"
+      "sha": "ca909556e50784bcc19e419572afdce54dd70b271913faa7fa35848cf25f4f56"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1955-04-21",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1955/443_461_469",
-      "dateDocument": "1951-07-28",
-      "roFundstelle": "AS 1955 443",
-      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge (mit Anhang)",
-      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés (avec annexe)",
-      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati (con. All.)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1955/443_461_469/de",
-      "sha": "be0abbfd4a8414a4ff4b8ef2ab0d35e773dba1b720335111f090cde955507f42"
+      "dateEntryInForce": "1993-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/2334_2334_2334",
+      "dateDocument": "1993-06-01",
+      "roFundstelle": "AS 1993 2334",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/2334_2334_2334/de",
+      "sha": "c46aad7a21a577a083b582f16509345099d323ec0e17d3f1d96d15452c94fa8b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/817_817_817",
+      "dateDocument": "1991-04-01",
+      "roFundstelle": "AS 1991 817",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/817_817_817/de",
+      "sha": "38819fbc50914f12ba8f2f692fa683e8772b5dff990b7c8ddf1e8025450964a8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/2434_2434_2434",
+      "dateDocument": "1989-12-01",
+      "roFundstelle": "AS 1989 2434",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/2434_2434_2434/de",
+      "sha": "b97a44ace471f3846841b00de78aa910b16e50284530f06cb9b6f46934de146b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/1554_1554_1554",
+      "dateDocument": "1988-10-01",
+      "roFundstelle": "AS 1988 1554",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/1554_1554_1554/de",
+      "sha": "8e6528971fd1337c6879befbe348a56ff1585883ac9ae127f59c89403b5a1055"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/274_274_274",
+      "dateDocument": "1987-02-01",
+      "roFundstelle": "AS 1987 274",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/274_274_274/de",
+      "sha": "6868229531f362b01786cbe522e8679824822f445d6cfcd51fa06af9a450b72f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/171_171_171",
+      "dateDocument": "1986-01-01",
+      "roFundstelle": "AS 1986 171",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/171_171_171/de",
+      "sha": "7aad1562865cd7efce8028b74e8500ba1955fcc43e35017c8ad5e26fc36f3355"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/72_72_72",
+      "dateDocument": "1985-02-01",
+      "roFundstelle": "AS 1985 72",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/72_72_72/de",
+      "sha": "a2c8c43403a34fd94a8d77d3bdea1df4978284d5766d314c8d368bf719d4cc52"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/331_331_331",
+      "dateDocument": "1984-03-01",
+      "roFundstelle": "AS 1984 331",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/331_331_331/de",
+      "sha": "5cbfe4760c1a885524ca30c16b08e66069452325517addf1b95bd5950172983e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1172_1172_1172",
+      "dateDocument": "1983-09-01",
+      "roFundstelle": "AS 1983 1172",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1172_1172_1172/de",
+      "sha": "82a8e2cec8649500b24b958aa5f54f4ca1850b52f930d39a598edcc1d4ee321c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/2068_2068_2068",
+      "dateDocument": "1983-01-01",
+      "roFundstelle": "AS 1982 2068",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/2068_2068_2068/de",
+      "sha": "649a00fcf6ada791d8a805c8ad886e27b411f7083ce60296bdfc3e834d8e8dbc"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/434_434_434",
+      "dateDocument": "1982-03-01",
+      "roFundstelle": "AS 1982 434",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/434_434_434/de",
+      "sha": "de19c175d71924b7bf962ca0a9e3e5aa3774db66a9f8cd7016b61728194fa6f9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/1746_1746_1746",
+      "dateDocument": "1978-12-14",
+      "roFundstelle": "AS 1980 1746",
+      "titelDe": "Bundesbeschluss vom 14. Dezember 1978 über den Vorbehalt zum Übereinkommen über die Rechtsstellung der Flüchtlinge, Änderung",
+      "titelFr": "Arrêté fédéral du 1 décembre 1978 concernant la réserve à la convention relative au statut des réfugiés, Modification",
+      "titelIt": "Decreto federale del 14 dicembre 1978 concernente la riserva alla convenzione sullo statuto dei rifugiati, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/1746_1746_1746/de",
+      "sha": "e8102984fb59bdd31d1c964bcf641123025ef8c7f3fd9f12e271aaaa9e299771"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1980-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/373_373_373",
+      "dateDocument": "1980-05-01",
+      "roFundstelle": "AS 1980 373",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/373_373_373/de",
+      "sha": "2b61d38bf703bac5ca74fe66c2742457c47dba161169d4762ca1b7dcc219a63e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/2847_2847_2847",
+      "dateDocument": "1976-12-01",
+      "roFundstelle": "AS 1976 2847",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/2847_2847_2847/de",
+      "sha": "81bc9e4a0b62e8e5a35c881b4c0f0aadaa20bef8305515c28e428f74e0f4e0c5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1975-09-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/1778_1778_1778",
+      "dateDocument": "1975-09-15",
+      "roFundstelle": "AS 1975 1778",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/1778_1778_1778/de",
+      "sha": "79b121db0979df4087496f2cc741da3e6a73f27e4d156e63c22f5911e6cef12c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/1878_1902_2083",
+      "dateDocument": "1972-08-01",
+      "roFundstelle": "AS 1972 1878",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/1878_1902_2083/de",
+      "sha": "2d8841214c13d5e56fca7620d14acb230800a0101d3142310f8f2098cf4e645a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-04-27",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/2317_2371_2147",
+      "dateDocument": "1972-04-27",
+      "roFundstelle": "AS 1972 2317",
+      "titelDe": "Bundesbeschluss vom 27. April 1972 betreffend die Genehmigung des Übereinkommens über die Rechtsstellung der Staatenlosen",
+      "titelFr": "Arrêté fédéral du 27 avril 1972 approuvant la convention relative au statut des apatrides",
+      "titelIt": "Decreto federale del 27 aprile 1972 che approva la convenzione sullo statuto degli apolidi",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/2317_2371_2147/de",
+      "sha": "a1b7253ca9c3414dcf72f65781165a0b83ca16f178ccec896168566b592daca8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1971-04-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/456_456_456",
+      "dateDocument": "1971-04-15",
+      "roFundstelle": "AS 1971 456",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/456_456_456/de",
+      "sha": "fb858270befbf7720d076a0cb5c0936cad76a793ab555fcdfbebc0033bc0d18f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1968-07-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1968/1194_1238_1153",
+      "dateDocument": "1968-07-15",
+      "roFundstelle": "AS 1968 1194",
+      "titelDe": "Abkommen über die Rechtsstellung der Flüchtlinge vom 28. Juli 1951",
+      "titelFr": "Convention relative au statut des réfugiés du 28 juillet 1951",
+      "titelIt": "Convenzione sullo statuto dei rifugiati del 28 luglio 1951",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1968/1194_1238_1153/de",
+      "sha": "f00229a627fe93b94193e2edbccaf29c3d3f31c425f30c0ed9b063e2b9c44a9d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1963-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1963/818_814_842",
+      "dateDocument": "1963-02-15",
+      "roFundstelle": "AS 1963 818",
+      "titelDe": "Abkommen vom 28. Juli 1951 über die Rechtsstellung der Flüchtlinge",
+      "titelFr": "Convention du 28 juillet 1951 relative au statut des réfugiés",
+      "titelIt": "Convenzione del 28 luglio 1951 sullo statuto dei rifugiati",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1963/818_814_842/de",
+      "sha": "72a4a2988d99bb3813271bdddc563113734d577bef2fd25c473c633aa401e8ac"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1963-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/__702",
+      "dateDocument": "1973-04-23",
+      "titelIt": "Convenzione sullo statuto dei rifugiati, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/__702/de",
+      "sha": "4ada54eea11859c37b594c9021610e7fcbf0d13cf2c44498544fc5a1c54846d8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1963-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1963/37_37_37",
+      "dateDocument": "1962-10-04",
+      "roFundstelle": "AS 1963 37",
+      "titelDe": "Bundesbeschluss vom 4. Oktober 1962 über die Rechtsstellung der Flüchtlinge und Staatenlosen in der Alters-, Hinterlassenen- und Invalidenversicherung",
+      "titelFr": "Arrêté fédéral du 4 octobre 1962 concernant le statut des réfugiés et des apatrides dans l'assurance-vieillesse et survivants et dans l'assurance-invalidité",
+      "titelIt": "Decreto federale del 4 ottobre 1962 sullo statuto dei rifugiati e degli apolidi nelle assicurazioni per la vecchiaia, i superstiti e per l'invalidità",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1963/37_37_37/de",
+      "sha": "48336027de10fd02e69dc30b1ffb6ff3d048fde3a6ed2b6df49fe2d654dbf5ce"
     }
   ],
-  "sha": "720ec0332f05d4db46427892637472f2830e8d122c85db15cc84367b19806b9a"
+  "sha": "034d961e279d1bc53e10d6c7c912e6a107beaafc0f791c2fd850d92f275752a9"
 }

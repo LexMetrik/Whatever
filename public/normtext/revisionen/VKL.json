@@ -1,27 +1,62 @@
 {
   "erlassKey": "VKL",
   "sr": "832.104",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2032-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/219",
+      "dateDocument": "2024-05-08",
+      "roFundstelle": "AS 2024 219",
+      "titelDe": "Verordnung vom 8. Mai 2024 über die Förderung der Ausbildung im Bereich der Pflege (Ausbildungsförderverordnung Pflege)",
+      "titelFr": "Ordonnance du 8 mai 2024 relative à l’encouragement de la formation dans le domaine des soins infirmiers",
+      "titelIt": "Ordinanza dell’8 maggio 2024 sulla promozione della formazione in cure infermieristiche",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.104",
-      "sha": "39908e7c161a29523e5d1e1c460baaa8f16288e18495ed47e00e1495ae6c78ec"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-07-01",
+        "2032-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/219/de",
+      "sha": "c617ffdfd43b248b1835ef4c74c2270a4749aa344d661717ac0450f6f9eb753a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.104",
-      "sha": "d0644d248b06510bb8cadf7a14e0b7d083f92c0343b986d9694409a2749db29f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/318",
+      "dateDocument": "2025-04-30",
+      "roFundstelle": "AS 2025 318",
+      "titelDe": "Verordnung vom 30. April 2025 über die Bundesstatistik (Bundesstatistikverordnung, BStatV)",
+      "titelFr": "Ordonnance du 30 avril 2025 sur la statistique fédérale (OStatF)",
+      "titelIt": "Ordinanza del 30 aprile 2025 sulla statistica federale (OStatF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/318/de",
+      "sha": "a0d516944978e599d214a04df26542360ff487ce10413512053a37c9f61589fe"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.104",
-      "sha": "620a15461be7e876048b7730f8b87b746a93f3f2ae2f791d1b66dc14c60975eb"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/219",
+      "dateDocument": "2024-05-08",
+      "roFundstelle": "AS 2024 219",
+      "titelDe": "Verordnung vom 8. Mai 2024 über die Förderung der Ausbildung im Bereich der Pflege (Ausbildungsförderverordnung Pflege)",
+      "titelFr": "Ordonnance du 8 mai 2024 relative à l’encouragement de la formation dans le domaine des soins infirmiers",
+      "titelIt": "Ordinanza dell’8 maggio 2024 sulla promozione della formazione in cure infermieristiche",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-07-01",
+        "2032-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/219/de",
+      "sha": "161deb3397fbfc5293e134bb6ab47fade8e2375a68e218fe699820ae6c0d8704"
     },
     {
       "art": "aenderung",
@@ -32,21 +67,13 @@
       "titelDe": "Verordnung über die Kostenermittlung und die Leistungserfassung durch Spitäler und Pflegeheime in der Krankenversicherung (VKL)",
       "titelFr": "Ordonnance sur le calcul des coûts et le classement des prestations par les hôpitaux et les établissements médico-sociaux dans l'assurance-maladie (OCP)",
       "titelIt": "Ordinanza sul calcolo dei costi e la registrazione delle prestazioni da parte degli ospedali e delle case di cura nell'assicurazione malattie (OCPre)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/709/de",
-      "sha": "b9c04d3919c63cb7427c4354dd76c6339f0f97d2d95d5172b038a892abbabf6f"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2003-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/418",
-      "dateDocument": "2002-07-03",
-      "roFundstelle": "AS 2002 2835",
-      "titelDe": "Verordnung über die Kostenermittlung und die Leistungserfassung durch Spitäler, Geburtshäuser und Pflegeheime in der Krankenversicherung (VKL)",
-      "titelFr": "Ordonnance sur le calcul des coûts et le classement des prestations par les hôpitaux, les maisons de naissance et les établissements médico-sociaux dans l'assurance-maladie (OCP)",
-      "titelIt": "Ordinanza sul calcolo dei costi e la registrazione delle prestazioni da parte degli ospedali, delle case per partorienti e delle case di cura nell'assicurazione malattie (OCPre)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/418/de",
-      "sha": "1109174fa46bb80c1632ce2549fb5224785192ea193feb0a3f40c98dbb8492c1"
+      "sha": "d84fd1784a5cdb2d6b3507873d1200a26345699b47fd8dcd36a5cccac36045b2"
     }
   ],
-  "sha": "45c24cf28091ce76bea310bd7dd38b910d4a8c6b4b483b4b4612cab7a499d265"
+  "sha": "3c053569de0bfdcec5e2342d0169f1714ad76420ba9c391d1a1d196ad519d0ed"
 }

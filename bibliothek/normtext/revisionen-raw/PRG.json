@@ -230,5 +230,25 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/1993/3152_3152_3152",
       "zielFundstelle": "AS 1993 3152"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1993/3152_3152_3152",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1993/3152_3152_3152",
+    "inkrafttreten": "1994-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/3152_3152_3152",
+        "typ": 5,
+        "datum": "1994-07-01",
+        "fassung": "1994-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/496",
+        "typ": 6,
+        "datum": "2021-08-20",
+        "fassung": "2021-08-20"
+      }
+    ],
+    "ocStamm": {}
   }
 }

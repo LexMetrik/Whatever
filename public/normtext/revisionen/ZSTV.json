@@ -1,20 +1,38 @@
 {
   "erlassKey": "ZSTV",
   "sr": "211.112.2",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.112.2",
-      "sha": "6f12749e27681c59625782959c8bd768a603427179e105761d7a9ca3a469ccf9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/318",
+      "dateDocument": "2025-04-30",
+      "roFundstelle": "AS 2025 318",
+      "titelDe": "Verordnung vom 30. April 2025 über die Bundesstatistik (Bundesstatistikverordnung, BStatV)",
+      "titelFr": "Ordonnance du 30 avril 2025 sur la statistique fédérale (OStatF)",
+      "titelIt": "Ordinanza del 30 aprile 2025 sulla statistica federale (OStatF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/318/de",
+      "sha": "a0d516944978e599d214a04df26542360ff487ce10413512053a37c9f61589fe"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.112.2",
-      "sha": "5db05dd4b7024d911376cdae2d383f298d58e2fb4d8fd62191d9a14c271cbaa0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/719",
+      "dateDocument": "2024-11-20",
+      "roFundstelle": "AS 2024 719",
+      "titelDe": "Erwerbsersatzverordnung (EOV) (Digitalisierung in der Erwerbsersatzordnung: Einführungsphase des Informationssystems)",
+      "titelFr": "Ordonnance sur les allocations pour perte de gain (OAPG) (Numérisation dans le régime des APG: phase d’introduction du système d’information)",
+      "titelIt": "Ordinanza sulle indennità di perdita di guadagno (OIPG) (Digitalizzazione nell’ordinamento delle indennità di perdita di guadagno: fase d’introduzione del sistema d’informazione)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/719/de",
+      "sha": "38710867bcf52fb3452ed2887dbe045190900a646e12d9cd719d7f767bf9aba6"
     },
     {
       "art": "aenderung",
@@ -25,8 +43,11 @@
       "titelDe": "Zivilstandsverordnung (ZStV). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur l’état civil (OEC). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sullo stato civile (OSC). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/651/de",
-      "sha": "e3e7d34f690bf433bf16c180a3909a60fd6eab75616baba7f878dd52c6debbef"
+      "sha": "d0b3a7e8f838badaeecbd3c13c5f587a8b02dd446af9edf7a65fb331f7919af8"
     },
     {
       "art": "aenderung",
@@ -37,20 +58,42 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l’état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/335/de",
-      "sha": "b164eeca0d81d5afb2da1ca78146eafa92e6cf2f782babf1bcd63c1453e880c0"
+      "sha": "dc49d5a6024454c2986ef19a441b3efb35cbab8b01ee1e613aa0a28715ea59ad"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.112.2",
-      "sha": "f7268dd0298485d57393413e5904e823f9e3269b1126500a3dc65fe726089708"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/746",
+      "dateDocument": "2023-11-22",
+      "roFundstelle": "AS 2023 746",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+      "titelFr": "Ordonnance sur l’organisation du Département fédéral de la défense, de la protection de la population et des sports (Org-DDPS)",
+      "titelIt": "Ordinanza sull’organizzazione del Dipartimento federale della difesa, della protezione della popolazione e dello sport (OOrg-DDPS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/746/de",
+      "sha": "70a58b055c7482d62cddf7ea7fb30be11a5c75103bc32f0ee20fcf14d63d6048"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.112.2",
-      "sha": "c64b1c8729671895b07f35bc97a40b934f649a15c0c3d3b75a5effdb189eeb5f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
       "art": "aenderung",
@@ -61,8 +104,12 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l’état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/243/de",
-      "sha": "66105ca623a79cfe3bb63f055a1ed8343f0a75fd59c833e8edcf5d8d7adc44ea"
+      "sha": "cbd9c7211725c8694774539b8513f9bd3555eb9e8f42e0ba57d8b1bfaeb593a7"
     },
     {
       "art": "aenderung",
@@ -73,14 +120,42 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/666/de",
-      "sha": "4216ea0d82e93b1936b63f3b9068fd9a22ab2aa55905744fc290ad1017feb655"
+      "sha": "ccbf04f0a66312db31a872a514aa7f96c88e3c9cbdf9948a5b7901bb32be3a33"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/800",
+      "dateDocument": "2021-11-17",
+      "roFundstelle": "AS 2021 800",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/800/de",
+      "sha": "01821c1c4afbc3a6add1f457b75e1324bd1fd6dd6525736c7991ab85f093a8fb"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.112.2",
-      "sha": "3b795a735a47c5b16470cd933c219936f0891ee072c233dc2c5c56f9e754087d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/132",
+      "dateDocument": "2021-02-24",
+      "roFundstelle": "AS 2021 132",
+      "titelDe": "Verordnung über den Schutz vor Cyberrisiken in der Bundesverwaltung (Cyberrisikenverordnung, CyRV)",
+      "titelFr": "Ordonnance sur la protection contre les cyberrisques dans l’administration fédérale (Ordonnance sur les cyberrisques, OPCy)",
+      "titelIt": "Ordinanza sulla protezione contro i ciber-rischi nell’Amministrazione federale (Ordinanza sui ciber-rischi, OCiber)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/132/de",
+      "sha": "d446be1d9fdcfcf9870102adf3066dc8453683cad3acc106d4bb7c92f95892da"
     },
     {
       "art": "aenderung",
@@ -91,14 +166,26 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/696/de",
-      "sha": "c438013e40f61441a63e4070b4381f791317d2d8de48715b801aeaf829e482bc"
+      "sha": "c73c70654a1064f5f26475969fbcf87dd3f237471759c5daa65f161c34efb3f2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.112.2",
-      "sha": "66d6fe29fb193c1a37622e32b162be5f4567a0f733496d100f11448b4c098e64"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/439",
+      "dateDocument": "2018-06-08",
+      "roFundstelle": "AS 2018 2857",
+      "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
+      "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
+      "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/439/de",
+      "sha": "0036d533e9bfc7cdc68a66164a6ee2d07c4865ebedd01c822ffdc34423f9d0de"
     },
     {
       "art": "aenderung",
@@ -109,8 +196,11 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/693/de",
-      "sha": "5cf02f278e6b24bb5672e7e07dbd5b976875b9b681609cadead3cacaa08bbbc2"
+      "sha": "af2ddfaa865763aaeeb4edc581eb03a8014c014f155164c08b6c1d0b12113dc9"
     },
     {
       "art": "aenderung",
@@ -121,20 +211,41 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/823/de",
-      "sha": "258fe8d74c335cc1a828a0928be41852c6b73c1ac0c1e3be6a94b5a1cca93d28"
+      "sha": "c96408f81488df300a636365b9f40055666aa9de4af8e41df27ee74802a5b7fb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.112.2",
-      "sha": "956f9bf06e1408b730261dd370b67788446a7f75acea2b1cb86c6cb7c7583c75"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/29",
+      "dateDocument": "2017-12-08",
+      "roFundstelle": "AS 2018 89",
+      "titelDe": "Verordnung über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen (EÖBV)",
+      "titelFr": "Ordonnance sur l'établissement d'actes authentiques électroniques et la légalisation électronique (OAAE)",
+      "titelIt": "Ordinanza sulla realizzazione di atti pubblici e autenticazioni in forma elettronica (OAPuE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/29/de",
+      "sha": "3bca324f0b39f9588c1f3d662d2c1494bd24df1003956d59f44855b40c6d49cd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.112.2",
-      "sha": "aa442e2fce574e4b4cc8283ec65475f404a864427c5006bdd121b578b61a9e29"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/405",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2016 2577",
+      "titelDe": "Verordnung über das Schweizer Bürgerrecht (Bürgerrechtsverordnung, BüV)",
+      "titelFr": "Ordonnance sur la nationalité suisse (Ordonnance sur la nationalité, OLN)",
+      "titelIt": "Ordinanza sulla cittadinanza svizzera (Ordinanza sulla cittadinanza, OCit)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/405/de",
+      "sha": "09625365c93a3ffe09e522ef871c20b99e9071becff93ce9b9ee505ed80307b4"
     },
     {
       "art": "aenderung",
@@ -145,8 +256,12 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/664/de",
-      "sha": "a10ed338584865b553c8183c667872bbd8d0e7510e12e0375b553e990008ea1e"
+      "sha": "2bb75d4f71ba20c6f9da442519ce5e0dc9b605d354c1d20031f84cca2e6da1b8"
     },
     {
       "art": "aenderung",
@@ -157,14 +272,30 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/811/de",
-      "sha": "38f1c7b890de7840dc05e20457c35c3245d24913467383dcf157726504a43372"
+      "sha": "692ec4c580ba8d37e77ed83505179cec9696438a416b3ff942b29b54caa0fc06"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.112.2",
-      "sha": "edd08a79219e68b3fcd99154dc839dda05b694036e71ad8302f7f2f3b1b637da"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/282",
+      "dateDocument": "2014-05-14",
+      "roFundstelle": "AS 2014 1327",
+      "titelDe": "Zivilstandsverordnung (ZStV)",
+      "titelFr": "Ordonnance sur l'état civil (OEC)",
+      "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-07-01",
+        "2015-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/282/de",
+      "sha": "c9e54fada5e41e7c124a1075cd3d39bb0850555221548b6f9fa3467d21de621b"
     },
     {
       "art": "aenderung",
@@ -175,8 +306,15 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-07-01",
+        "2015-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/282/de",
-      "sha": "700244daf73dde32f514c8a46f61ed349d785709c63d90f4b9349a6435c0e27c"
+      "sha": "84e79d4e5d6184276e5cf970646547c3236c9729d2029e78c3711c99ab3b246b"
     },
     {
       "art": "aenderung",
@@ -187,14 +325,30 @@
       "titelDe": "Zivilstandsverordnung (ZStV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/353/de",
-      "sha": "57cfb8ba8ff5a55b554c2eed832a75eb7561ddd51f8d4795f3ea48fb81eb8a48"
+      "sha": "16fd7587131318a0d2aa9c5cc1b948710672b92b9933915bb2c2dddf7e9d9cea"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.112.2",
-      "sha": "9721b44664c9c3558514cb4c365e79adf654585881479654b5ebbf68d9b2e4a4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/772",
+      "dateDocument": "2012-11-07",
+      "roFundstelle": "AS 2012 6463",
+      "titelDe": "Zivilstandsverordnung (ZStV)",
+      "titelFr": "Ordonnance sur l'état civil (OEC)",
+      "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2014-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/772/de",
+      "sha": "544f254454e14b5babbc4466b025e8186b1498301525a4c1ea34025c01d812a5"
     },
     {
       "art": "aenderung",
@@ -205,8 +359,11 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/587/de",
-      "sha": "f2770c9cb2c359e2ea0ebcd6a67d2349e9e2b1c3a403910732f8b4dc108cd2af"
+      "sha": "ee3f2b22ef840270cf6c848b686e6794790fe854ebdb59880d4481d9074819e9"
     },
     {
       "art": "aenderung",
@@ -217,8 +374,12 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/229/de",
-      "sha": "1ae1470be53e20afee0f7239d0ed2dc5937f172f0576dffb7ce5a6670ce53f17"
+      "sha": "e9cf9eb0ad6732e504a3d31c1e996605838c166f9dd9b82548dbad8d66fac411"
     },
     {
       "art": "aenderung",
@@ -229,8 +390,30 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2014-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/772/de",
-      "sha": "3654a71370ae7242ac0a0956c8c6865095e56b7b0e589d16fa1e9e01c7012a24"
+      "sha": "6c7420e71c573894a13f33a984ab50f900f902a825a37fa15102a6dffceeccd4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/410",
+      "dateDocument": "2010-06-18",
+      "roFundstelle": "AS 2010 3053",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen an die Schweizerische Zivilprozessordnung",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances au code de procédure civile",
+      "titelIt": "Ordinanza che adegua ordinanze al Codice di procedura civile",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/410/de",
+      "sha": "59678f7f825cd722b1fdf88487118ec8641c0fdb95e291da8a3a09ff408830e1"
     },
     {
       "art": "aenderung",
@@ -241,14 +424,27 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/412/de",
-      "sha": "9cc8b4fbf3d2071b62abbb74e599469313d2e47fdae1cb658ac4fd9f79a71cd4"
+      "sha": "a70f71050726b472f12809161ad7c6bdf148ba46791264807c4049cb322168fa"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.112.2",
-      "sha": "f1a5035a64bec6c08ad6331d3165a6e7752a8ce3b608faf3af7d8ca72443f2b2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/748",
+      "dateDocument": "2007-11-07",
+      "roFundstelle": "AS 2007 5271",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l'assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/748/de",
+      "sha": "d57b2313697820bb7b853c6ffa4482b663e378dced3349bfb9fab8d01b8a013b"
     },
     {
       "art": "aenderung",
@@ -259,8 +455,12 @@
       "titelDe": "Verordnung über die Aufhebung und Anpassung von Verordnungen im Rahmen der Neuordnung der ausserparlamentarischen Kommissionen",
       "titelFr": "Ordonnance concernant l'abrogation et l'adaptation d'ordonnances dans le cadre de la réorganisation des commissions extraparlementaires",
       "titelIt": "Ordinanza concernente l'abrogazione e l'adeguamento di ordinanze nell'ambito del riordinamento delle commissioni extraparlamentari",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/637/de",
-      "sha": "52c141cd2e3287ee569f0926c52f77fa3f641ea014e9d18bd5a8fc1ce6d0ea8c"
+      "sha": "400c1c13abb8590edd47281563bb8fce7f01e3cb22ea4abb0ce116681662aa40"
     },
     {
       "art": "aenderung",
@@ -271,8 +471,26 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/772/de",
-      "sha": "90e823e0b1d6cd012bb14948c16713dacecd345709fbdc7ee2c63d4737d7e744"
+      "sha": "82083a03593521f75743d36a5d38f618cf3c89ae0def1e18974adeb890e83f74"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/868",
+      "dateDocument": "2007-11-21",
+      "roFundstelle": "AS 2007 6719",
+      "titelDe": "Registerharmonisierungsverordnung (RHV)",
+      "titelFr": "Ordonnance sur l'harmonisation de registres (OHR)",
+      "titelIt": "Ordinanza sull'armonizzazione dei registri (OArRa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/868/de",
+      "sha": "33fba257b5f60ff57bc6a49b0b1324ef40a023f4b33a8eb5099fcb51c728dde9"
     },
     {
       "art": "aenderung",
@@ -283,8 +501,26 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/446/de",
-      "sha": "796f053c2413d927a1bb5cc6d552ac56d12c965cd3dd2069557edc36b2272b77"
+      "sha": "64d5bff5c16d6fc769c5ac1527ee1825d46f0badc63ef6a19d96ce7fd32a43b5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4705",
+      "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "sha": "509e7b22613546560d1e36883c9ec32fce8a8368a2969478863a0cb4a567bbfd"
     },
     {
       "art": "aenderung",
@@ -295,8 +531,11 @@
       "titelDe": "Zivilstandsverordnung (ZStV)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/781/de",
-      "sha": "c8e2e0c9c09e2184ab4a71bda10a6234bb20abaec537a99670f507d70203b6d4"
+      "sha": "fc92e8457adb79049a65da27b70b0efc16d6c7924890ee5fa60682842c5a9e49"
     },
     {
       "art": "aenderung",
@@ -307,26 +546,18 @@
       "titelDe": "Verordnung über die vollständige Inkraftsetzung der Zivilstandsverordnung vom 28. April 2004",
       "titelFr": "Ordonnance sur la mise en vigueur complète de l'ordonnance du 28 avril 2004 sur l'état civil",
       "titelIt": "Ordinanza relativa all'entrata in vigore completa dell'ordinanza del 28 aprile 2004 sullo stato civile",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/300/de",
-      "sha": "b1bb091218449178ec9863923374cefa9536860531915b81fc395b92e1cccd63"
+      "sha": "358f74fd1b438e8bbcee5523ef8589e7fbd3eb70816fed734ba0b681cfa3fc7a"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.112.2",
-      "sha": "aafa1d925e614ec24fad43556390af158394cefedec41b7ec75cdbd63cae5e1c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2004-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/362",
-      "dateDocument": "2004-04-28",
-      "roFundstelle": "AS 2004 2915",
-      "titelDe": "Zivilstandsverordnung (ZStV)",
-      "titelFr": "Ordonnance sur l'état civil (OEC)",
-      "titelIt": "Ordinanza sullo stato civile (OSC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/362/de",
-      "sha": "40ebe4b11fbf13929f601c8421e8d05e3d6818b129ab95029fc4b3778a7ac17b"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2004/362/20050101/de",
+      "sha": "e52cd3b91be00744f5b0d1b128c2efb8837baaa43391c783333cda60c9aa5c40"
     },
     {
       "art": "aenderung",
@@ -337,9 +568,12 @@
       "titelDe": "Zivilstandsverordnung (ZStV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur l'état civil (OEC)",
       "titelIt": "Ordinanza sullo stato civile (OSC) (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/761/de",
-      "sha": "9192e50256735bffa11922700fa1f2bf8116120ca1aa5897a7e5ec2c1841b050"
+      "sha": "690881f9793bd6c5d3c31eef12ac819c38fdb662397240bb7f5ba3e9c2874d19"
     }
   ],
-  "sha": "c9c8a1542d69f782d13e0cfb84b39251e0e441feda84e206c43e7dccaebd9f40"
+  "sha": "76ada6f253feb0266e096034570c66cdff0c950259d5566400cd3983bc1a127e"
 }

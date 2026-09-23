@@ -553,5 +553,236 @@
     "2025-08-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1992/2521_2521_2521",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1992/2521_2521_2521",
+    "inkrafttreten": "1993-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/2521_2521_2521",
+        "typ": 5,
+        "datum": "1993-01-01",
+        "fassung": "1993-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/325_325_325",
+        "typ": 1,
+        "datum": "1993-01-01",
+        "fassung": "1993-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+        "typ": 1,
+        "datum": "2000-01-01",
+        "fassung": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/674",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/705",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/200",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/418",
+        "typ": 1,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/418",
+        "typ": 2,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/609",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/538",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/662",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/623",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/679",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/403",
+        "typ": 1,
+        "datum": "2025-08-01",
+        "fassung": "2025-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/430",
+        "typ": 1,
+        "datum": "2025-08-01",
+        "fassung": "2025-08-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1993/325_325_325": {
+        "dateForce": "1993-01-01",
+        "dateDoc": "1992-10-09",
+        "roId": "RO 1993 325",
+        "titelDe": "Bundesgesetz vom 9. Oktober 1992 über den Abbau von Finanzhilfen und Abgeltungen",
+        "titelFr": "Loi fédérale du 9 octobre 1992 sur la réduction d'aides financières et d'indemnités",
+        "titelIt": "Legge federale del 9 ottobre 1992 concernente la riduzione di aiuti finanziari e di indennità"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1999/472": {
+        "dateForce": "2000-01-01",
+        "dateDoc": "1999-06-18",
+        "roId": "RO 1999 3071",
+        "titelDe": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+        "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de décision",
+        "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/674": {
+        "dateForce": "2004-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2003 4557",
+        "titelDe": "Bundesgesetz über die Berufsbildung (Berufsbildungsgesetz, BBG)",
+        "titelFr": "Loi fédérale sur la formation professionnelle (LFPr)",
+        "titelIt": "Legge federale sulla formazione professionale (Legge sulla formazione professionale, LFPr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/705": {
+        "dateForce": "2004-01-01",
+        "dateDoc": "2003-03-21",
+        "roId": "RO 2003 4803",
+        "titelDe": "Bundesgesetz über die Gentechnik im Ausserhumanbereich (Gentechnikgesetz, GTG)",
+        "titelFr": "Loi fédérale sur l'application du génie génétique au domaine non humain (Loi sur le génie génétique, LGG)",
+        "titelIt": "Legge federale sull'ingegneria genetica nel settore non umano (Legge sull'ingegneria genetica, LIG)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/200": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2003-12-19",
+        "roId": "RO 2004 1633",
+        "titelDe": "Bundesgesetz über das Entlastungsprogramm 2003",
+        "titelFr": "Loi fédérale sur le programme d'allégement budgétaire 2003",
+        "titelIt": "Legge federale sul programma di sgravio 2003"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/549": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2006 3459",
+        "titelDe": "Schweizerisches Strafgesetzbuch",
+        "titelFr": "Code pénal suisse",
+        "titelIt": "Codice penale svizzero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/787": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2006-10-06",
+        "roId": "RO 2007 5779",
+        "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+        "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+        "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/609": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2013-06-21",
+        "roId": "RO 2015 3631",
+        "titelDe": "Bundesgesetz über den Schutz von Marken und Herkunftsangaben (Markenschutzgesetz, MSchG)",
+        "titelFr": "Loi fédérale sur la protection des marques et des indications de provenance (Loi sur la protection des marques, LPM)",
+        "titelIt": "Legge federale sulla protezione dei marchi e delle indicazioni di provenienza (Legge sulla protezione dei marchi, LPM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/132": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2016 689",
+        "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+        "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+        "titelIt": "Legge federale sulla formazione continua (LFCo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/662": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-03-19",
+        "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG)",
+        "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC)",
+        "titelIt": "Legge federale sulle finanze della Confederazione (LFC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/623": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2023-06-16",
+        "titelDe": "Bundesgesetz über die Landwirtschaft (Landwirtschaftsgesetz, LwG)",
+        "titelFr": "Loi fédérale sur l’agriculture (Loi sur l’agriculture, LAgr)",
+        "titelIt": "Legge federale sull’agricoltura (Legge sull’agricoltura, LAgr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/679": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2023-09-29",
+        "titelDe": "Bundesgesetz über eine sichere Stromversorgung mit erneuerbaren Energien (Änderung des Energiegesetzes und des Stromversorgungsgesetzes)",
+        "titelFr": "Loi fédérale relative à un approvisionnement en électricité sûr reposant sur des énergies renouvelables (Modification de la loi sur l’énergie et de la loi sur l’approvisionnement en électricité)",
+        "titelIt": "Legge federale su un approvvigionamento elettrico sicuro con le energie rinnovabili (Modifica della legge federale sull’energia e della legge sull’approvvigionamento elettrico)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/430": {
+        "dateForce": "2025-08-01",
+        "dateDoc": "2024-03-15",
+        "titelDe": "Bundesgesetz über den Wasserbau",
+        "titelFr": "Loi fédérale sur l’aménagement des cours d’eau",
+        "titelIt": "Legge federale sulla sistemazione dei corsi d’acqua"
+      }
+    }
+  }
 }

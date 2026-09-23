@@ -29,6 +29,8 @@ export interface RevisionsQuelle {
     titelDe?: string;
     roFundstelle?: string;
     dateEntryInForce?: string;
+    /** Alle Etappen eines gestaffelt in Kraft gesetzten Erlasses (S6-D1, aufsteigend). */
+    etappen?: string[];
     botschaftKey?: string;
     quelleUrl?: string;
   }>;
@@ -105,7 +107,9 @@ export function baueProjektion(
     };
     if (r.titelDe) a.titel = r.titelDe;
     if (r.roFundstelle) a.as = r.roFundstelle;
-    if (r.dateEntryInForce) a.inkraft = r.dateEntryInForce;
+    // S6-D1 (23.9.2026): ein gestaffelter Erlass steht je Etappe im Sidecar, absteigend —
+    // die erste Nennung ist die SPÄTESTE Etappe. «inkraft» bleibt das erste Inkrafttreten.
+    if (r.dateEntryInForce) a.inkraft = r.etappen?.[0] ?? r.dateEntryInForce;
     if (r.botschaftKey && botschaften.has(r.botschaftKey)) {
       a.botschaft = r.botschaftKey;
       gebrauchteBotschaften.add(r.botschaftKey);
@@ -136,9 +140,18 @@ export function baueProjektion(
   };
 }
 
-/** Serialisierung = die ausgelieferte Byte-Folge (Determinismus-Vergleich). */
+/**
+ * Serialisierung = die ausgelieferte Byte-Folge (Determinismus-Vergleich).
+ *
+ * KOMPAKT seit 23.9.2026 (S6-D1, W2·29-WERKBANK-LESER): die Revisions-Sidecars führen seit
+ * Pfad (c) auch Sammel-/Mantelerlasse anderer SR; damit lösen 3899 statt ~1660 Fussnoten-oc
+ * auf, und die Projektion wuchs eingerückt auf 1920,8 KB über den Deckel 1536 KB
+ * (check:entstehung). Gemessen: dieselben Daten kompakt 1426,5 KB. Nutzlast statt Deckel
+ * (§15); Logikverlust-Bewertung: keiner — nur Leerraum, Inhalt und Schlüsselreihenfolge
+ * byte-identisch geparst.
+ */
 export function serialisiereProjektion(p: EntstehungProjektion): string {
-  return JSON.stringify(p, null, 2) + '\n';
+  return JSON.stringify(p) + '\n';
 }
 
 /** Verzeichnis der ausgelieferten Projektionen. */

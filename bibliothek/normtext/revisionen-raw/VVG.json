@@ -643,5 +643,287 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2020/884",
       "zielFundstelle": "AS 2020 4969"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/24/719_735_717",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/24/719_735_717",
+    "inkrafttreten": "1910-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1971/1465_1461_1461",
+        "typ": 1,
+        "datum": "1972-01-01",
+        "fassung": "1972-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1971/1465_1461_1461",
+        "typ": 1,
+        "datum": "1972-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/1836_1836_1836",
+        "typ": 1,
+        "datum": "1979-01-01",
+        "fassung": "1979-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/2184_2184_2184",
+        "typ": 1,
+        "datum": "1983-01-01",
+        "fassung": "1983-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/797_797_797",
+        "typ": 1,
+        "datum": "1985-01-01",
+        "fassung": "1985-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/3175_3175_3175",
+        "typ": 1,
+        "datum": "1994-01-01",
+        "fassung": "1994-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1328_1328_1328",
+        "typ": 1,
+        "datum": "1996-01-01",
+        "fassung": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/726",
+        "typ": 1,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/726",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/726",
+        "typ": 2,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/633",
+        "typ": 6,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/722",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/747",
+        "typ": 1,
+        "datum": "2007-12-01",
+        "fassung": "2007-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/365",
+        "typ": 1,
+        "datum": "2009-07-01",
+        "fassung": "2009-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/884",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/884",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/884",
+        "typ": 2,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/357",
+        "typ": 6,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/355",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/24/719_735_717",
+        "typ": 5,
+        "datum": "1910-01-01",
+        "fassung": "1910-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1971/1465_1461_1461": {
+        "dateForce": "1972-01-01",
+        "dateDoc": "1971-06-25",
+        "roId": "RO 1971 1461",
+        "titelDe": "Bundesgesetz vom 25. Juni 1971 über die Revision des Zehnten Titels und des Zehnten Titels<sup>bis</sup> des Obligationenrechts (Der Arbeitsvertrag)",
+        "titelFr": "Loi fédérale du 25 juin 1971 revisant les titres dixième et dixième<sup>bis</sup> du code des obligations (Du contrat de travail)",
+        "titelIt": "Legge federale del 25 giugno 1971 sulla revisione dei titoli decimo e decimo<sup>bis</sup> del Codice delle obbligazioni (Contratto di lavoro)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1978/1836_1836_1836": {
+        "dateForce": "1979-01-01",
+        "dateDoc": "1978-06-23",
+        "roId": "RO 1978 1836",
+        "titelDe": "Bundesgesetz vom 23. Juni 1978 betreffend die Aufsicht über die privaten Versicherungseinrichtungen (Versicherungsaufsichtsgesetz, VAG)",
+        "titelFr": "Loi fédérale du 23 juin 1978 sur la surveillance des institutions d'assurance privées (Loi sur la surveillance des assurances, LSA)",
+        "titelIt": "Legge federale del 23 giugno 1978 sulla sorveglianza degli istituti d'assicurazione privati (Legge sulla sorveglianza degli assicuratori, LSA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/2184_2184_2184": {
+        "dateForce": "1983-01-01",
+        "dateDoc": "1982-06-25",
+        "roId": "RO 1982 2184",
+        "titelDe": "Bundesgesetz vom 25. Juni 1982 über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+        "titelFr": "Loi fédérale du 25 juin 1982 sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Loi sur l'assurance-chômage, LACI)",
+        "titelIt": "Legge federale del 25 giugno 1982 sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Legge sull'assicurazione contro la disoccupazione, LADI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1983/797_797_797": {
+        "dateForce": "1985-01-01",
+        "dateDoc": "1982-06-25",
+        "roId": "RO 1983 797",
+        "titelDe": "Bundesgesetz vom 25. Juni 1982 über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
+        "titelFr": "Loi fédérale du 25 juin 1982 sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP)",
+        "titelIt": "Legge federale del 25 giugno 1982 sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/3175_3175_3175": {
+        "dateForce": "1994-01-01",
+        "dateDoc": "1993-06-18",
+        "roId": "RO 1993 3175",
+        "titelDe": "Bundesgesetz über den Versicherungsvertrag, Änderung",
+        "titelFr": "Loi fédérale sur le contrat d'assurance, Modification",
+        "titelIt": "Legge federale sul contratto d'assicurazione, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/1328_1328_1328": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1994-03-18",
+        "roId": "RO 1995 1328",
+        "titelDe": "Bundesgesetz vom 18. März 1994 über die Krankenversicherung (KVG)",
+        "titelFr": "Loi fédérale du 18 mars 1994 sur l'assurance-maladie (LAMal)",
+        "titelIt": "Legge federale del 18 marzo 1994 sull'assicurazione malattie (LAMal)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/374": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 2355",
+        "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+        "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+        "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/782": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2004-06-18",
+        "roId": "RO 2005 5685",
+        "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+        "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+        "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/722": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2006-10-06",
+        "roId": "RO 2007 5129",
+        "titelDe": "Bundesgesetz über die Invalidenversicherung (IVG)",
+        "titelFr": "Loi fédérale sur l'assurance-invalidité (LAI)",
+        "titelIt": "Legge federale sull'assicurazione per l'invalidità (LAI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/747": {
+        "dateForce": "2007-12-01",
+        "dateDoc": "2006-06-23",
+        "roId": "RO 2007 5259",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Neue AHV-Versichertennummer)",
+        "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Nouveau numéro d'assuré AVS)",
+        "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Nuovo numero d'assicurato dell'AVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/736": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2008 5207",
+        "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+        "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+        "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/262": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2010 1739",
+        "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+        "titelFr": "Code de procédure civile (CPC)",
+        "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/758": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2020-12-18",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+        "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+        "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/355": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2022-03-18",
+        "titelDe": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
+        "titelFr": "Loi fédérale sur la surveillance des entreprises d’assurance (Loi sur la surveillance des assurances, LSA)",
+        "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)"
+      }
+    }
   }
 }

@@ -1,9 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import {
   baueRevisionen, roFundstelleAusOc, fundstelle, liveLink, botschaftIndex, serialisiere,
-  belegtImXml, baueOcZuRectifiesSr, MARKER_CUTOFF, type ErlassMeta,
+  belegtImXml, baueOcZuRectifiesSr, MARKER_CUTOFF, fassungsUrl, ocWurzel, wirkungAusTyp,
+  inkrafttretenDerAuswirkung, REICHWEITE, type ErlassMeta, type RevisionsKontext,
 } from '../../scripts/normtext/revisionen-generieren';
-import { revisionenFuerNorm, revisionTitel, type RevisionBezug } from '../lib/normtext/revisionen';
+import { revisionenFuerNorm, revisionSchluessel, revisionTitel, type RevisionBezug } from '../lib/normtext/revisionen';
 import { istReinerDatumsChurn } from '../../scripts/normtext/churn-reset';
 import type { SparqlBinding } from '../../scripts/fedlex-sparql';
 
@@ -140,11 +141,15 @@ describe('baueRevisionen — Kern-Logik', () => {
     // Pfad-(a)-Geltungsstände: einer deckungsgleich (2020-01-01), einer Mantelerlass (2022-06-01),
     // einer VOR dem Cutoff (1998-01-01, muss ignoriert werden).
     const aStaende = ['1998-01-01', '2020-01-01', '2022-06-01'];
-    const s = baueRevisionen(ERLASS, bindings, aStaende, '2025-01-01', new Map(), '2026-07-10');
+    // S6-D1 (AE-2, 23.9.2026): ein Marker braucht das Abstract für einen gültigen Link — bis
+    // 22.9.2026 verlinkte er `/eli/cc/<SR>` (Fedlex «page-not-found»).
+    const kontext = { abstractEli: 'cc/2022/491', auswirkungen: [], ocStamm: {} };
+    const s = baueRevisionen(ERLASS, bindings, aStaende, '2025-01-01', new Map(), '2026-07-10', new Set(), new Map(), kontext);
     const marker = s.revisionen.filter((r) => r.art === 'sammelerlass-marker');
     expect(marker).toHaveLength(1);
     expect(marker[0].dateEntryInForce).toBe('2022-06-01');
     expect(marker[0].ocUri).toBeUndefined();
+    expect(marker[0].quelleUrl).toBe('https://www.fedlex.admin.ch/eli/cc/2022/491/20220601/de');
     expect(MARKER_CUTOFF).toBe('2000-01-01');
   });
 
@@ -172,7 +177,9 @@ describe('baueRevisionen — Kern-Logik', () => {
     it('lässt dateInKraftFuerCh weg, wenn die oc-URI NICHT in der Whitelist steht (kein genereller Switch) — der Marker bleibt bestehen', () => {
       const bindings = [AELTERE_BINDING, bind({ oc: OC('2020/841'), dateForce: '2021-01-01', titleDe: 'Andere Änderung' })];
       const aStaende = ['2020-12-15']; // zeitlich benachbart, aber unbelegt — bleibt eigenständiger Marker
-      const s = baueRevisionen(ERLASS, bindings, aStaende, '2025-01-01', new Map(), '2026-07-10');
+      // S6-D1 (AE-2): der Marker braucht das Abstract für seinen Fassungs-Link.
+      const kontext = { abstractEli: 'cc/2002/243', auswirkungen: [], ocStamm: {} };
+      const s = baueRevisionen(ERLASS, bindings, aStaende, '2025-01-01', new Map(), '2026-07-10', new Set(), new Map(), kontext);
       const ae = s.revisionen.find((r) => r.ocUri === OC('2020/841'));
       expect(ae?.dateInKraftFuerCh).toBeUndefined();
       expect(s.revisionen.filter((r) => r.art === 'sammelerlass-marker')).toHaveLength(1);
@@ -367,3 +374,178 @@ describe('revisionenFuerNorm — Lese-Brücke', () => {
   });
 });
 
+
+// ── S6-D1 (W2·29-WERKBANK-LESER, 23.9.2026): Pfad (c) Rechtsanalyse «Auswirkungen» ──────
+// Fixtures nach live erhobenen Fällen (Fedlex-SPARQL 23.9.2026): ZPO ← GestG AS 2000 2355
+// (Vorgänger gleicher SR, AE-3), OR ← AS 2022 732 (Sammelerlass, AE-4), OR ← AS 2020 4005
+// (Aktienrecht, Etappen 2021-01-01/2023-01-01, AE-5), Marker-Link (AE-2), GebV-HReg
+// (einziger Stand = Inkrafttreten), ZPO ← AS 2010 281 (Beschluss- statt Inkrafttretensdatum).
+describe('baueRevisionen — Pfad (c) Auswirkungen (S6-D1, AE-2..AE-5)', () => {
+  const ZPO: ErlassMeta = { key: 'ZPO', sr: '272' };
+  const OR: ErlassMeta = { key: 'OR', sr: '220' };
+  const kontextZpo: RevisionsKontext = {
+    abstractEli: 'cc/2010/262', basicAct: OC('2010/262'), inkrafttreten: '2011-01-01',
+    auswirkungen: [], ocStamm: {},
+  };
+
+  it('AE-3: nimmt weder Vorgänger-Erlasse gleicher SR noch den Stammerlass auf', () => {
+    const bindings = [
+      bind({ oc: OC('2000/2355'), dateForce: '2001-01-01', titleDe: 'GestG' }), // Vorgänger
+      bind({ oc: OC('2010/262'), dateForce: '2011-01-01', titleDe: 'ZPO' }), // Stammerlass
+      bind({ oc: OC('2024/100'), dateForce: '2025-01-01', titleDe: 'ZPO-Änderung' }),
+    ];
+    const s = baueRevisionen(ZPO, bindings, [], '2026-07-01', new Map(), '2026-09-23', new Set(), new Map(), kontextZpo);
+    expect(s.revisionen.map((r) => r.ocUri)).toEqual([OC('2024/100')]);
+  });
+
+  it('AE-3/AE-6: schliesst Pfad-(b)-Erlasse nach der Aufhebung des Abstracts aus (Nachfolger gleicher SR)', () => {
+    const bindings = [
+      bind({ oc: OC('2025/408'), dateForce: '2026-03-01', titleDe: 'Aufhebend' }),
+      bind({ oc: OC('2026/9'), dateForce: '2026-07-01', titleDe: 'Änderung der Nachfolgerin' }),
+    ];
+    const k: RevisionsKontext = { abstractEli: 'cc/2009/423', basicAct: OC('2009/423'), inkrafttreten: '2009-08-01', aufhebung: '2026-03-01', auswirkungen: [], ocStamm: {} };
+    const s = baueRevisionen({ key: 'BMV', sr: '412.103.1' }, bindings, [], '2016-08-23', new Map(), '2026-09-23', new Set(), new Map(), k);
+    expect(s.revisionen.map((r) => r.ocUri)).toEqual([OC('2025/408')]);
+  });
+
+  it('AE-4: Sammelerlass anderer SR wird eigener Eintrag mit Titel und Fundstelle, auch am Tag eines eigenen Erlasses', () => {
+    const bindings = [bind({ oc: OC('2022/109'), dateForce: '2023-01-01', titleDe: 'Inkraftsetzung' })];
+    const k: RevisionsKontext = {
+      abstractEli: 'cc/27/317_321_377', basicAct: OC('27/317_321_377'), inkrafttreten: '1912-01-01',
+      auswirkungen: [
+        { oc: OC('2022/109'), typ: 5, datum: '2023-01-01' },
+        { oc: OC('2022/732'), typ: 1, datum: '2023-01-01' },
+      ],
+      ocStamm: { [OC('2022/732')]: { dateForce: '2023-01-01', dateDoc: '2022-06-17', titelDe: 'Bankengesetz (Sammelerlass)' } },
+    };
+    const s = baueRevisionen(OR, bindings, ['2023-01-01'], '2026-01-01', new Map(), '2026-09-23', new Set(), new Map(), k);
+    const sammel = s.revisionen.find((r) => r.ocUri === OC('2022/732'));
+    expect(sammel?.art).toBe('aenderung');
+    expect(sammel?.roFundstelle).toBe('AS 2022 732');
+    expect(sammel?.titelDe).toBe('Bankengesetz (Sammelerlass)');
+    expect(sammel?.wirkungen).toEqual(['aenderung']);
+    expect(s.revisionen.find((r) => r.ocUri === OC('2022/109'))?.wirkungen).toEqual(['inkrafttreten']);
+    expect(s.revisionen.filter((r) => r.art === 'sammelerlass-marker')).toHaveLength(0);
+  });
+
+  it('AE-5: gestaffeltes Inkrafttreten = je Etappe ein Eintrag desselben Erlasses, nichtKonsolidiert je Etappe', () => {
+    const bindings = [bind({ oc: OC('2020/746'), dateForce: '2021-01-01', titleDe: 'Obligationenrecht (Aktienrecht)' })];
+    const k: RevisionsKontext = {
+      abstractEli: 'cc/27/317_321_377', basicAct: OC('27/317_321_377'), inkrafttreten: '1912-01-01',
+      auswirkungen: [
+        { oc: OC('2020/746'), typ: 1, datum: '2021-01-01' },
+        { oc: OC('2020/746'), typ: 1, datum: '2023-01-01' },
+        { oc: OC('2020/746'), typ: 2, datum: '2023-01-01' },
+      ],
+      ocStamm: {},
+    };
+    const s = baueRevisionen(OR, bindings, ['2021-01-01', '2023-01-01'], '2022-01-01', new Map(), '2026-09-23', new Set(), new Map(), k);
+    expect(s.revisionen.map((r) => [r.dateEntryInForce, r.ocUri, r.wirkungen])).toEqual([
+      ['2023-01-01', OC('2020/746'), ['aenderung', 'aufhebung']],
+      ['2021-01-01', OC('2020/746'), ['aenderung']],
+    ]);
+    for (const r of s.revisionen) expect(r.etappen).toEqual(['2021-01-01', '2023-01-01']);
+    expect(s.revisionen[0].nichtKonsolidiert).toBe(true); // 2023 > Korpus-Stand 2022
+    expect(s.revisionen[1].nichtKonsolidiert).toBeUndefined();
+    expect(s.revisionen.filter((r) => r.art === 'sammelerlass-marker')).toHaveLength(0); // kein «Sammelerlass» mehr
+    // Lese-Brücke: beide Etappen behalten unterscheidbare Schlüssel (Dedupe/React-key).
+    expect(new Set(s.revisionen.map((r) => revisionSchluessel(r))).size).toBe(2);
+  });
+
+  it('AE-2: Marker verlinkt die Fassung seines Datums, nie /eli/cc/<SR>; ohne Abstract Abbruch statt totem Link', () => {
+    const k: RevisionsKontext = { abstractEli: 'cc/27/317_321_377', inkrafttreten: '1912-01-01', auswirkungen: [], ocStamm: {} };
+    const bindings = [bind({ oc: OC('2020/1'), dateForce: '2020-01-01' })];
+    const s = baueRevisionen(OR, bindings, ['2021-05-01'], '2026-01-01', new Map(), '2026-09-23', new Set(), new Map(), k);
+    const marker = s.revisionen.filter((r) => r.art === 'sammelerlass-marker');
+    expect(marker.map((r) => r.quelleUrl)).toEqual(['https://www.fedlex.admin.ch/eli/cc/27/317_321_377/20210501/de']);
+    expect(marker[0].quelleUrl.endsWith('/eli/cc/220')).toBe(false);
+    expect(() => baueRevisionen(OR, bindings, ['2021-05-01'], '2026-01-01', new Map(), '2026-09-23')).toThrow(/Abstract-ELI/);
+    expect(fassungsUrl('cc/2010/262', '2026-07-01')).toBe('https://www.fedlex.admin.ch/eli/cc/2010/262/20260701/de');
+    expect(() => fassungsUrl('220', '2026-07-01')).toThrow();
+  });
+
+  it('die Fassung zum Inkrafttreten ist Erstpublikation, kein Marker (GebV-HReg 2021-01-01)', () => {
+    const k: RevisionsKontext = { abstractEli: 'cc/2020/180', basicAct: OC('2020/180'), inkrafttreten: '2021-01-01', auswirkungen: [], ocStamm: {} };
+    const bindings = [bind({ oc: OC('2020/180'), dateForce: '2021-01-01' })];
+    const s = baueRevisionen({ key: 'GEBV_HREG', sr: '221.411.1' }, bindings, ['2021-01-01'], '2021-01-01', new Map(), '2026-09-23', new Set(), new Map(), k);
+    expect(s.revisionen).toEqual([]);
+  });
+
+  it('Beschluss- statt Inkrafttretensdatum: nur korrigiert, wenn am Datum keine Fassung besteht', () => {
+    const oc = { dateForce: '2010-02-01', dateDoc: '2009-09-25' };
+    expect(inkrafttretenDerAuswirkung('2009-09-25', oc)).toBe('2010-02-01'); // ZPO ← AS 2010 281
+    expect(inkrafttretenDerAuswirkung('2009-09-25', oc, new Set(['2009-09-25']))).toBe('2009-09-25'); // Fassung belegt das Datum
+    expect(inkrafttretenDerAuswirkung('2021-01-01', { dateForce: '2021-03-20', dateDoc: '2021-03-19' })).toBe('2021-01-01'); // rückwirkend, bleibt
+    expect(inkrafttretenDerAuswirkung('2023-01-01', undefined)).toBe('2023-01-01');
+  });
+
+  it('undatierte Auswirkung zählt nur ohne datierte und nur mit amtlichem Eigen-Datum', () => {
+    const k: RevisionsKontext = {
+      abstractEli: 'cc/2011/505', basicAct: OC('2011/505'), inkrafttreten: '2012-01-01',
+      auswirkungen: [
+        { oc: OC('2011/598'), typ: 6 }, // undatiert, kein Eigen-Datum → kein Eintrag
+        { oc: OC('2022/698'), typ: 1 }, // undatiert, Eigen-Datum aus ocStamm
+        { oc: OC('2011/505'), typ: 5, datum: '2012-01-01' }, // Stammerlass → nie
+      ],
+      ocStamm: { [OC('2022/698')]: { dateForce: '2023-01-23' } },
+    };
+    const s = baueRevisionen({ key: 'ADOV', sr: '211.221.36' }, [], [], '2023-01-23', new Map(), '2026-09-23', new Set(), new Map(), k);
+    expect(s.revisionen.map((r) => [r.ocUri, r.dateEntryInForce])).toEqual([[OC('2022/698'), '2023-01-23']]);
+  });
+
+  it('Auswirkungsdatum NACH der einarbeitenden Fassung erzeugt keine Etappe (AVIG/AS 1991 2125 «2023», AHVG/AS 1965 537 «2066»)', () => {
+    const k: RevisionsKontext = {
+      abstractEli: 'cc/63/837_843_843', basicAct: OC('63/837_843_843'), inkrafttreten: '1948-01-01',
+      auswirkungen: [
+        { oc: OC('1965/537_541_535'), typ: 1, datum: '1966-01-01', fassung: '1966-01-01' },
+        { oc: OC('1965/537_541_535'), typ: 2, datum: '2066-01-01', fassung: '2021-01-01' }, // Widerspruch
+        { oc: OC('2020/713'), typ: 1, datum: '2020-09-26', fassung: '2021-03-20' }, // Fassung danach: bleibt (Nachkonsolidierung/rückwirkend)
+        { oc: OC('2099/1'), typ: 1, datum: '2030-01-01', fassung: '2021-01-01' }, // nur widersprüchlich datiert → Eigen-Datum
+      ],
+      ocStamm: { [OC('2099/1')]: { dateForce: '2029-01-01' } },
+    };
+    // Fedlex führt für AHVG tatsächlich eine Fassung 2066-01-01 — sie darf nicht als Marker
+    // «tritt am 01.01.2066 in Kraft» erscheinen (Artefakt-Datum, s. Generator).
+    const s = baueRevisionen({ key: 'AHVG', sr: '831.10' }, [], ['1966-01-01', '2066-01-01'], '2026-01-01', new Map(), '2026-09-23', new Set(), new Map(), k);
+    expect(s.revisionen.filter((r) => r.art === 'sammelerlass-marker')).toEqual([]);
+    expect(s.revisionen.map((r) => [r.ocUri, r.dateEntryInForce, r.etappen])).toEqual([
+      [OC('2099/1'), '2029-01-01', undefined],
+      [OC('2020/713'), '2020-09-26', undefined],
+      [OC('1965/537_541_535'), '1966-01-01', undefined],
+    ]);
+  });
+
+  it('§8 datumAusErlass: markiert Daten, die nicht aus einer eigenen Auswirkung stammen (ZPO ← FINIG AS 2018 5247)', () => {
+    const k: RevisionsKontext = {
+      abstractEli: 'cc/2010/262', basicAct: OC('2010/262'), inkrafttreten: '2011-01-01',
+      auswirkungen: [
+        { oc: OC('2018/801'), typ: 1, datum: '2018-06-15', fassung: '2021-01-01' }, // Beschlussdatum
+        { oc: OC('2024/1'), typ: 1, datum: '2025-01-01', fassung: '2025-01-01' }, // echt
+      ],
+      ocStamm: { [OC('2018/801')]: { dateForce: '2019-01-01', dateDoc: '2018-06-15' }, [OC('2024/1')]: { dateForce: '2025-01-01' } },
+    };
+    const bindings = [bind({ oc: OC('2023/5'), dateForce: '2023-07-01', titleDe: 'nur Pfad (b)' })];
+    const s = baueRevisionen(ZPO, bindings, [], '2026-07-01', new Map(), '2026-09-23', new Set(), new Map(), k);
+    expect(s.revisionen.map((r) => [r.ocUri, r.dateEntryInForce, r.datumAusErlass])).toEqual([
+      [OC('2024/1'), '2025-01-01', undefined],
+      [OC('2023/5'), '2023-07-01', true],
+      [OC('2018/801'), '2019-01-01', true],
+    ]);
+  });
+
+  it('unbekannter Auswirkungs-Typ bricht ab (nie still einsortieren)', () => {
+    expect(wirkungAusTyp(1)).toBe('aenderung');
+    expect(() => wirkungAusTyp(99)).toThrow(/impact-type.99/);
+  });
+
+  it('ocWurzel: oc-Teil-URI → oc-Erlass; alles ausserhalb eli/oc → undefined', () => {
+    expect(ocWurzel('https://fedlex.data.admin.ch/eli/oc/2020/746/lvl_I')).toBe(OC('2020/746'));
+    expect(ocWurzel('https://fedlex.data.admin.ch/eli/oc/2021/846/lvl_I%2C+III/lvl_1')).toBe(OC('2021/846'));
+    expect(ocWurzel('https://fedlex.data.admin.ch/eli/cc/27/317_321_377/art_1')).toBeUndefined();
+  });
+
+  it('AE-4: der Reichweiten-Satz behauptet keine Marker-Kennzeichnung der Sammelerlasse mehr', () => {
+    expect(REICHWEITE).not.toMatch(/Sammelerlasse anderer SR sind als Marker/);
+    expect(REICHWEITE).toMatch(/Sammel- und Mantelerlasse/);
+  });
+});

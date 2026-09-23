@@ -361,5 +361,39 @@
     "2024-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2018/29",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2018/29",
+    "inkrafttreten": "2018-02-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/29",
+        "typ": 5,
+        "datum": "2018-02-01",
+        "fassung": "2018-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/479",
+        "typ": 1,
+        "datum": "2023-10-01",
+        "fassung": "2023-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/529",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2023/529": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-08-23",
+        "titelDe": "Verordnung über die amtliche Vermessung (VAV)",
+        "titelFr": "Ordonnance sur la mensuration officielle (OMO)",
+        "titelIt": "Ordinanza concernente la misurazione ufficiale (OMU)"
+      }
+    }
+  }
 }

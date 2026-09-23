@@ -1,27 +1,58 @@
 {
   "erlassKey": "GSCHV",
   "sr": "814.201",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2028-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/287",
+      "dateDocument": "2019-04-17",
+      "roFundstelle": "AS 2019 1489",
+      "titelDe": "Gewässerschutzverordnung (GSchV)",
+      "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
+      "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "513eeaa3ca09af599a807d62909a6c706b81d00d6793ad9fba922a1f0ebcb0de"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2028-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/287/de",
+      "sha": "9a2a8a2cb3e9c6a3f38c918f8f19dc9278ea8a5336d60994e39a9f7d18158cd3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "096407bf890d4cfee6c183831c254996317874feabb6aa73a517c5b348c2cf4c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/745",
+      "dateDocument": "2025-10-29",
+      "roFundstelle": "AS 2025 745",
+      "titelDe": "Verordnung über die Vermeidung und Entsorgung von Abfällen (Abfallverordnung, VVEA)",
+      "titelFr": "Ordonnance sur la limitation et l’élimination des déchets (Ordonnance sur les déchets, OLED)",
+      "titelIt": "Ordinanza sulla prevenzione e lo smaltimento dei rifiuti (Ordinanza sui rifiuti, OPSR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/745/de",
+      "sha": "784ec241932e0c8ca0ffc04102f74c83b127e43bc73915e9c7acc58eea5f9e80"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "5fdd64b47f6160ced6a1baa2d26f4a590e73bdfe16b4354057951cbef6ea2fde"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/450",
+      "dateDocument": "2025-06-25",
+      "roFundstelle": "AS 2025 450",
+      "titelDe": "Verordnung vom 25. Juni 2025 über den Wasserbau (Wasserbauverordnung, WBV)",
+      "titelFr": "Ordonnance du 25 juin 2025 sur l’aménagement des cours d’eau (OACE)",
+      "titelIt": "Ordinanza del 25 giugno 2025 sulla sistemazione dei corsi d’acqua (OSCA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/450/de",
+      "sha": "3ef844715edf36eee85044cce9145a2e7b23dd4589642a58aeeaac0f1a064a3c"
     },
     {
       "art": "aenderung",
@@ -32,8 +63,11 @@
       "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Weiterentwicklung der Programmvereinbarungen im Umweltbereich für die Programmperiode 2025–2028",
       "titelFr": "Ordonnance concernant l’adaptation d’ordonnances au développement des conventions-programmes dans le domaine de l’environnement pour la période 2025-2028",
       "titelIt": "Ordinanza che adegua ordinanze in materia ambientale all’ulteriore sviluppo degli accordi programmatici del periodo programmatico 2025–2028",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/252/de",
-      "sha": "a5b3d420f9359ad420ccda55e5d4cfbb540effb2ed4553c3b155193387b36495"
+      "sha": "fcb2524f8b95eb9e447b937e34f7c922a498e86c0e76cab0d37cdcaf52e503cd"
     },
     {
       "art": "aenderung",
@@ -44,14 +78,45 @@
       "titelDe": "Gewässerschutzverordnung (GSchV)",
       "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
       "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/3/de",
-      "sha": "f985131feaa82d6e958b2567c2e472ca66fd809bd151d7759f9e7025e763349d"
+      "sha": "01a038b78baf28140e29197625db46cd192288e7736f8642663373a862bd467e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "f0836cb044de3587fb506fbf099d57c9808ff2d12e67b177826f16931e3170f2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/737",
+      "dateDocument": "2022-11-02",
+      "roFundstelle": "AS 2022 737",
+      "titelDe": "Verordnung über die Direktzahlungen an die Landwirtschaft (Direktzahlungsverordnung, DZV)",
+      "titelFr": "Ordonnance sur les paiements directs versés dans l’agriculture (Ordonnance sur les paiements directs, OPD)",
+      "titelIt": "Ordinanza concernente i pagamenti diretti all’agricoltura (Ordinanza sui pagamenti diretti, OPD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/737/de",
+      "sha": "eab863b2bceed05a7d2cffa8751e7c8f8923080700f886f523df698893ff5d82"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/786",
+      "dateDocument": "2015-11-04",
+      "roFundstelle": "AS 2015 4791",
+      "titelDe": "Gewässerschutzverordnung (GSchV)",
+      "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
+      "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/786/de",
+      "sha": "9e6736cb12781f7aba35f2dea36e0214b4b0238742509eb92417f307ad67c0eb"
     },
     {
       "art": "aenderung",
@@ -62,8 +127,15 @@
       "titelDe": "Gewässerschutzverordnung (GSchV)",
       "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
       "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2028-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/287/de",
-      "sha": "266b8a9bf7bd7a034477ca2f33d6a0c5755539951ae0b5a782f9cbc516d4aeb5"
+      "sha": "2640784d0d03e4cde6da5fcd0ebd20643cf8a39e42abbedde7dac8a5a422a1cf"
     },
     {
       "art": "aenderung",
@@ -74,8 +146,11 @@
       "titelDe": "Gewässerschutzverordnung (GSchV)",
       "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
       "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/97/de",
-      "sha": "ad611078d68fbb4052970936f9d844d02a839e3cdb9e119cc053eae77521e48d"
+      "sha": "a0a238ad93b33dcc69d3b4a9610088697739aea7aad2888c9db20d98f6432e3b"
     },
     {
       "art": "aenderung",
@@ -86,8 +161,11 @@
       "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Weiterentwicklung der Programmvereinbarungen im Umweltbereich für die Programmperiode 20202024",
       "titelFr": "Ordonnance sur les adaptations d'ordonnances au développement des conventions-programmes dans le domaine de l'environnement pour la période 20202024",
       "titelIt": "Ordinanza che adegua ordinanze in materia ambientale all'ulteriore sviluppo degli accordi programmatici del periodo programmatico 20202024",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/286/de",
-      "sha": "3a38c938d8c206f3a0f435464e68caeacbd73132e4fed0c73c6fae346c9db1e0"
+      "sha": "1ff6f1803e50ffa6e5eadb72af7f5dab6489616a79cb356b263a22ff657ab2a1"
     },
     {
       "art": "aenderung",
@@ -98,14 +176,26 @@
       "titelDe": "Gewässerschutzverordnung (GSchV)",
       "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
       "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/251/de",
-      "sha": "0ac577c0372f5e11ecdd23852cd2dd0fe1ffe5fb8b5b1074ca338346213f53ad"
+      "sha": "17838bde501705e9acfb607e5d7f61a9152078fea7b93455af331ec1477ba972"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "fccec4b6f3cc0dbfe0b134c237d582cff2f5041e3e1b889f165f9d5f703ce9ac"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/763",
+      "dateDocument": "2017-11-01",
+      "roFundstelle": "AS 2017 6889",
+      "titelDe": "Energieverordnung (EnV)",
+      "titelFr": "Ordonnance sur l'énergie (OEne)",
+      "titelIt": "Ordinanza sull'energia (OEn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/763/de",
+      "sha": "d5e86c6538d387a9b56111060e9bad5f04618f06b3c9fbcdc39b85f3eb132e26"
     },
     {
       "art": "aenderung",
@@ -116,8 +206,11 @@
       "titelDe": "Gewässerschutzverordnung (GSchV)",
       "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
       "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/245/de",
-      "sha": "f49bc38df9de2f597f2061f9906dae1747a45c94cf162c7c28106ace73fa829b"
+      "sha": "7ba792026cdffee61ac9741bd9b24841f67d5219470de05ae737ea8f03a60947"
     },
     {
       "art": "aenderung",
@@ -128,8 +221,11 @@
       "titelDe": "Gewässerschutzverordnung (GSchV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la protection des eaux (OEaux) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/88/de",
-      "sha": "1b07ed7972740d775243461be550ece9feb094d78b4ccbd62d8e4e0a0285632e"
+      "sha": "4205a755348dcb4e49b0ee6f96b226af3cd7ff8781159d040919e0132d3fd538"
     },
     {
       "art": "aenderung",
@@ -140,8 +236,30 @@
       "titelDe": "Gewässerschutzverordnung (GSchV)",
       "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
       "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/78/de",
-      "sha": "dd8c98baf944844d5436f59b046dd8d7b05bb06155cb8a276f0052d7cbcce51c"
+      "sha": "0dde9474e519dc322112b2da8b527b027c6ca7e399e3e76cbad68690db08a736"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/63",
+      "dateDocument": "2015-01-28",
+      "roFundstelle": "AS 2015 427",
+      "titelDe": "Verordnung über Anpassungen des Verordnungsrechts im Umweltbereich, insbesondere hinsichtlich der Programmvereinbarungen für die Programmperiode 20162019",
+      "titelFr": "Ordonnance sur les adaptations d'ordonnances dans le domaine de l'environnement, liées en particulier aux conventions-programmes à conclure pour la période allant de 2016 à 2019",
+      "titelIt": "Ordinanza che adegua ordinanze nel settore ambientale, legate in particolare agli accordi programmatici per il periodo 20162019",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-03-01",
+        "2016-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/63/de",
+      "sha": "b5f5823a57ef30a4ba7b75cf9831a76a96ce57ee937ddd45427574d139d3376e"
     },
     {
       "art": "aenderung",
@@ -152,20 +270,66 @@
       "titelDe": "Gewässerschutzverordnung (GSchV)",
       "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
       "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2021-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/786/de",
-      "sha": "1817118c174c2815416508017de75ba71792fb84b920479ebd507f356d8c434f"
+      "sha": "3fae2342745b9c9e2acf40eaa992990cdc81ce3a27c3b6d69586c6d5cf102ff8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "8b60eaf51b4c654fa5909b544e44375c9d3b824b833045a9453a7d7755246390"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/545",
+      "dateDocument": "2015-08-12",
+      "roFundstelle": "AS 2015 2903",
+      "titelDe": "Verordnung über die Umweltverträglichkeitsprüfung (UVPV)",
+      "titelFr": "Ordonnance relative à l'étude de l'impact sur l'environnement (OEIE)",
+      "titelIt": "Ordinanza concernente l'esame dell'impatto sull'ambiente (OEIA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/545/de",
+      "sha": "0f375a388e2d8905550e5d6546daf5333e3ff69e9214c77aa815e9ad9bfc9143"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2015-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/63",
+      "dateDocument": "2015-01-28",
+      "roFundstelle": "AS 2015 427",
+      "titelDe": "Verordnung über Anpassungen des Verordnungsrechts im Umweltbereich, insbesondere hinsichtlich der Programmvereinbarungen für die Programmperiode 20162019",
+      "titelFr": "Ordonnance sur les adaptations d'ordonnances dans le domaine de l'environnement, liées en particulier aux conventions-programmes à conclure pour la période allant de 2016 à 2019",
+      "titelIt": "Ordinanza che adegua ordinanze nel settore ambientale, legate in particolare agli accordi programmatici per il periodo 20162019",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-03-01",
+        "2016-01-01"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/63/de",
+      "sha": "e1e92a21fdfb957f42d8c3439a379f47a5e2ae581270a15895735bccd924e2d9"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2014-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "89d65788ca0c5cd9df728fd93af5b14ae1ac965dc55b43e9ae72b58849737753"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/765",
+      "dateDocument": "2013-10-23",
+      "roFundstelle": "AS 2013 4145",
+      "titelDe": "Verordnung über die Direktzahlungen an die Landwirtschaft (Direktzahlungsverordnung, DZV)",
+      "titelFr": "Ordonnance sur les paiements directs versés dans l'agriculture (Ordonnance sur les paiements directs, OPD)",
+      "titelIt": "Ordinanza concernente i pagamenti diretti all'agricolt ura (Ordinanza sui pagamenti diretti, OPD)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/765/de",
+      "sha": "5b65d12fe63e0729cd4f62fb9146a0fe34ebfed4b31c18ce461fe2fe4a142ab7"
     },
     {
       "art": "aenderung",
@@ -176,14 +340,26 @@
       "titelDe": "Verordnung über Anpassungen von Verordnungen im Umweltbereich",
       "titelFr": "Ordonnance sur des adaptations d'ordonnances dans le domaine de l'environnement",
       "titelIt": "Ordinanza concernente adeguamenti di ordinanze nel settore ambientale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/454/de",
-      "sha": "e17b200b88615e4fe04a1130bf1ffb94c4af0148c5396fe12936e5a88e52cd5b"
+      "sha": "f38cc105b6175a2fccc584579c8f298230cc59eaf5949f6b1978005056d72a41"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "93aff59e18861c84e8c2c2e4a06138d24d8001b8db74ecfa908715d53a3d944a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/350",
+      "dateDocument": "2011-05-25",
+      "roFundstelle": "AS 2011 2407",
+      "titelDe": "Verordnung über Höchstbestände in der Fleisch- und Eierproduktion (Höchstbestandesverordnung, HBV)",
+      "titelFr": "Ordonnance sur les effectifs maximums dans la production de viande et d'ufs (Ordonnance sur les effectifs maximums, OEM)",
+      "titelIt": "Ordinanza concernente gli effettivi massimi per la produzione di carne e di uova (Ordinanza sugli effettivi massimi, OEmax)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/350/de",
+      "sha": "e97f59c7a967b6c13756c0e776b874d21b51218098f38e5dca541524643be443"
     },
     {
       "art": "aenderung",
@@ -194,26 +370,56 @@
       "titelDe": "Gewässerschutzverordnung (GSchV)",
       "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
       "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/290/de",
-      "sha": "ba55d040004fd52fd1e9268fea1fdbe9711c86d1fc496ee8ef18a954eeefefed"
+      "sha": "f5309b4d9ac58688a035cc0702948d353d0268d02a12b84de8541a4ab0d92143"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "d8a9ea54bd5dd5b8d55f885c61345bcfb6be718672e210a94fd966017cff6518"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/841",
+      "dateDocument": "2010-10-27",
+      "roFundstelle": "AS 2010 5881",
+      "titelDe": "Verordnung über Höchstbestände in der Fleisch- und Eierproduktion (Höchstbestandesverordnung, HBV)",
+      "titelFr": "Ordonnance sur les effectifs maximums dans la production de viande et d'ufs (Ordonnance sur les effectifs maximums, OEM)",
+      "titelIt": "Ordinanza concernente gli effettivi massimi per la produzione di carne e di uova (Ordinanza sugli effettivi massimi, OEmax)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/841/de",
+      "sha": "4e8cabddb8bb83fb17d10a457c643854f7f0218534905fe9b46208b4c3493607"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "d299ad5ae4cced4a1ee25eac9e6bc77dcf609f09ea422773d37725b4b82a41f7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/389",
+      "dateDocument": "2008-05-21",
+      "roFundstelle": "AS 2008 2809",
+      "titelDe": "Verordnung über Geoinformation (Geoinformationsverordnung, GeoIV)",
+      "titelFr": "Ordonnance sur la géoinformation (OGéo)",
+      "titelIt": "Ordinanza sulla geoinformazione (OGI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/389/de",
+      "sha": "0cd321bc4ba035b495919b638851aad81963b022cf57136842a6fa84d94b9bdc"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "5bda465f75c7f92855dcd8f21b51c58687b48cdf04bdef7640d36a7961e75296"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+      "dateDocument": "2007-11-07",
+      "roFundstelle": "AS 2007 5823",
+      "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
+      "titelFr": "Ordonnance sur les adaptations des ordonnances touchées par la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons",
+      "titelIt": "Ordinanza che adegua il diritto regolamentare alla Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/789/de",
+      "sha": "9cd737a7642fa729a8d54b717b8c49459a3002a64f32d5088a08e6713cae5308"
     },
     {
       "art": "aenderung",
@@ -224,26 +430,60 @@
       "titelDe": "Gewässerschutzverordnung (GSchV)",
       "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
       "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/657/de",
-      "sha": "45ccc6cc056392d08deded4beef7924eccea0df567ec616587b52944e6d497f0"
+      "sha": "13fe4c3fc326479686bb806563ae67a361f80f18dce1050ca4aefca4a55d0664"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "9751409974eb71135abca268e7097a69b1a624b157a9df8ba9def6564093e056"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/171",
+      "dateDocument": "2003-03-26",
+      "roFundstelle": "AS 2003 940",
+      "titelDe": "Verordnung über umweltgefährdende Stoffe (Stoffverordnung, StoV)",
+      "titelFr": "Ordonnance sur les substances dangereuses pour l'environnement (Ordonnance sur les substances, Osubst)",
+      "titelIt": "Ordinanza sulle sostanze pericolose per l'ambiente (Ordinanza sulle sostanze, Osost)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2003-05-01",
+        "2006-10-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/171/de",
+      "sha": "b6e5daaeef5de304b167f1782b3b139cc964e11a57e59a49efe27bb344467164"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "166fa9ecbd96dfac3fb6b982f5586bdb7ff5b08fb99c35a9c496592896f95301"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/551",
+      "dateDocument": "2005-06-22",
+      "roFundstelle": "AS 2005 4199",
+      "titelDe": "Verordnung über den Verkehr mit Abfällen (VeVA)",
+      "titelFr": "Ordonnance sur les mouvements de déchets (OMoD)",
+      "titelIt": "Ordinanza sul traffico di rifiuti (OTRif)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/551/de",
+      "sha": "a1738d6fe5f03060bcac347daf370f32196914e3bca63f5b236472500f94e16c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "90202341a5c287860c99fa047ee1b5b680e6772f027a91f19ba46e365e3027ab"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/464",
+      "dateDocument": "2005-05-18",
+      "roFundstelle": "AS 2005 2695",
+      "titelDe": "Verordnung über die Aufhebung und Änderung von Verordnungen im Zusammenhang mit dem Inkrafttreten des Chemikaliengesetzes",
+      "titelFr": "Ordonnance sur l'abrogation et la modification du droit en vigueur du fait de la loi sur les produits chimiques",
+      "titelIt": "Ordinanza sull'abrogazione e la modifica di ordinanze in relazione con l'entrata in vigore della legge sui prodotti chimici",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/464/de",
+      "sha": "bddf6c857456d9bc3229506b620fec25aa21762bf1b9acfc28a60b685b4810e4"
     },
     {
       "art": "aenderung",
@@ -254,8 +494,31 @@
       "titelDe": "Gewässerschutzverordnung (GSchV)",
       "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
       "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/590/de",
-      "sha": "0b007a9d455da45884aad1a74c6592986f150845814f4a396452e570615912e5"
+      "sha": "225b9f4a8db174dfb9c56fcc03c615994d3d28650f8a227fb03d6b8d422806f4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2003-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/171",
+      "dateDocument": "2003-03-26",
+      "roFundstelle": "AS 2003 940",
+      "titelDe": "Verordnung über umweltgefährdende Stoffe (Stoffverordnung, StoV)",
+      "titelFr": "Ordonnance sur les substances dangereuses pour l'environnement (Ordonnance sur les substances, Osubst)",
+      "titelIt": "Ordinanza sulle sostanze pericolose per l'ambiente (Ordinanza sulle sostanze, Osost)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2003-05-01",
+        "2006-10-01"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/171/de",
+      "sha": "0f4cdd7c24faa87e6895e1831e32c9086c22184ffefe4cb62795d38db04132ed"
     },
     {
       "art": "aenderung",
@@ -266,45 +529,57 @@
       "titelDe": "Gewässerschutzverordnung (GSchV)",
       "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
       "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/477/de",
-      "sha": "17c995db4a988462f179dde8a0756fec91f48469223317f8b3efa9bd8d826213"
+      "sha": "85b72b11aba17476ce46a70484a4e4d9674415c4a586bf964ac487c172172b8e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "79d61613f12f5e0d185ed0fac970fe598724f936f254421ae5e28d48d9432150"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/105",
+      "dateDocument": "2001-01-10",
+      "roFundstelle": "AS 2001 522",
+      "titelDe": "Verordnung über das Inverkehrbringen von Düngern (Dünger-Verordnung, DüV)",
+      "titelFr": "Ordonnance sur la mise en circulation des engrais (Ordonnance sur les engrais, OEng)",
+      "titelIt": "Ordinanza sulla messa in commercio di concimi (Ordinanza sui concimi, OCon)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/105/de",
+      "sha": "33ce5e0baaa43f86ed5592bea67cff5cb139ad242fbae68f79fec0068197ac39"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.201",
-      "sha": "9edcfaa4f7c93876412c2de0d0f1805e692ac79fd3ed21b4ec24408af1176088"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/121",
+      "dateDocument": "2000-02-02",
+      "roFundstelle": "AS 2000 703",
+      "titelDe": "Verordnung zum Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "titelFr": "Ordonnance relative à la loi fédérale sur la coordination et la simplification des procédures de décision",
+      "titelIt": "Ordinanza relativa alla legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/121/de",
+      "sha": "0d6e05e1d781b007b6d107972500e52bb445f632a3259654e73aee5aed0538f9"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1999-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/2863_2863_2863",
-      "dateDocument": "1998-10-28",
-      "roFundstelle": "AS 1998 2863",
-      "titelDe": "Gewässerschutzverordnung (GSchV)",
-      "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
-      "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2863_2863_2863/de",
-      "sha": "48f803306d871dfbd3b22b1174c56fd717d5d4976241aa79b9d8a6447c44bda2"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1972-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/967_976_1138",
-      "dateDocument": "1972-06-19",
-      "roFundstelle": "AS 1972 967",
-      "titelDe": "Allgemeine Gewässerschutzverordnung vom 19. Juni 1972",
-      "titelFr": "Ordonnance générale du 19 juin 1972 sur la protection des eaux",
-      "titelIt": "Ordinanza generale del 19 giugno 1972 sulla protezione delle acque",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/967_976_1138/de",
-      "sha": "4fcdee95941a93d5d076b58b6d3dd0b5a329dfc9cafc1cc1f048b7accdfb09de"
+      "dateEntryInForce": "1999-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/321",
+      "dateDocument": "1999-06-23",
+      "roFundstelle": "AS 1999 2045",
+      "titelDe": "Verordnung über die Zulassung von Pflanzenschutzmitteln (Pflanzenschutzmittel-Verordnung)",
+      "titelFr": "Ordonnance sur l'homologation de produits phytosanitaires (Ordonnance sur les produits phytosanitaires)",
+      "titelIt": "Ordinanza concernente l'omologazione dei prodotti fitosanitari (Ordinanza sui prodotti fitosanitari)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/321/de",
+      "sha": "8a2ecdddd8fd3b44c1f01b6ff2ae837e0fe387457c5ea0e885e25829762e524a"
     }
   ],
-  "sha": "a426abd5077782d2ba9d343470503d45002d298f9772a5ce12402ee592f99799"
+  "sha": "6c39b11c3121a5b1c2c9f5ebfb3572cf1a53d1f1579bfcf51c7aef9cb163f892"
 }

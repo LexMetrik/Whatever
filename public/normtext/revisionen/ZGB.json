@@ -1,8 +1,8 @@
 {
   "erlassKey": "ZGB",
   "sr": "210",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,8 +14,11 @@
       "titelFr": "Code civil suisse (Protection contre les atteintes à la possession d’un immeuble)",
       "titelIt": "Codice civile svizzero (Protezione del possesso di fondi contro l’altrui illecita violenza)",
       "botschaftKey": "BOTSCHAFT-2024-116",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/16/de",
-      "sha": "e6c894787abd287afb50b3bed274cb5f90eecb9e6cb95a9d6c58f2183e027022"
+      "sha": "e8cab7c7e99fd3135fd641cb5fad85fca8ef5e138aacaaa104877eae6e86c32d"
     },
     {
       "art": "aenderung",
@@ -27,14 +30,27 @@
       "titelFr": "Code civil suisse (Éducation sans violence)",
       "titelIt": "Codice civile svizzero (Educazione non violenta)",
       "botschaftKey": "BOTSCHAFT-2024-2516",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/94/de",
-      "sha": "5229a2a95220c5851fd4a6a75979b5a612e5584777eb9ac2aaf6e1a4e194a827"
+      "sha": "0110fca57eec1786f6a8e0c24ef005064cc73f97e815d309435bc0816f98ed5f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "857c2475f5f384ed404a1b04e64a8d6171079266e7b4136b9177286937d35075"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/270",
+      "dateDocument": "2024-12-20",
+      "roFundstelle": "AS 2025 270",
+      "titelDe": "Obligationenrecht (Baumängel)",
+      "titelFr": "Code des obligations (Défauts de construction)",
+      "titelIt": "Codice delle obbligazioni (Difetti di costruzione)",
+      "botschaftKey": "BOTSCHAFT-2022-2743",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/270/de",
+      "sha": "b7a2805b10093e1ad13167b6b757737c54910cce81ddf91d18a481441237e8c9"
     },
     {
       "art": "aenderung",
@@ -46,8 +62,11 @@
       "titelFr": "Code civil suisse (Mesures de lutte contre les mariages avec un mineur)",
       "titelIt": "Codice civile svizzero (Misure contro i matrimoni con minorenni)",
       "botschaftKey": "BOTSCHAFT-2023-2127",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/590/de",
-      "sha": "7ed284b4a391b964206b7ea5af4ac897916fc7bb70db450ff74b001031b67e94"
+      "sha": "70f7c2cd259d525f73a86f0ed5be0d27439dd9ce3f8634f95c8124e962748f5d"
     },
     {
       "art": "aenderung",
@@ -58,8 +77,27 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Leistungen von patronalen Wohlfahrtsfonds)",
       "titelFr": "Code civil suisse (Prestations des fondations patronales de bienfaisance)",
       "titelIt": "Codice civile svizzero (Prestazioni dei fondi padronali di previdenza)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/676/de",
-      "sha": "97f1e5dc78d7f75389ecf87f27165da40d5af7edaa944a9668749810ee855f6b"
+      "sha": "1a21c8819a3704b0c0722426ba7719849b3f4b6ea70e7f2c3704649bdd12d376"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/681",
+      "dateDocument": "2024-06-14",
+      "roFundstelle": "AS 2024 681",
+      "titelDe": "Bundesgesetz über den Erwerbsersatz (Erwerbsersatzgesetz, EOG) (Digitalisierung in der Erwerbsersatzordnung)",
+      "titelFr": "Loi fédérale sur les allocations pour perte de gain (LAPG) (Numérisation dans le régime des APG)",
+      "titelIt": "Legge federale sulle indennità di perdita di guadagno (Legge sulle indennità di perdita di guadagno, LIPG) (Digitalizzazione nell’ordinamento delle indennità di perdita di guadagno)",
+      "botschaftKey": "BOTSCHAFT-2023-2245",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/681/de",
+      "sha": "c8b333a4b6e854b0ffe4bbafcaf600c70cd0a2bf597807080d50458051bd633e"
     },
     {
       "art": "aenderung",
@@ -70,8 +108,27 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Stärkung des Schweizer Stiftungsstandorts)",
       "titelFr": "Code civil (Renforcer l’attractivité de la Suisse pour les fondations)",
       "titelIt": "Codice civile (Rafforzare l’attrattiva della Svizzera per le fondazioni)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/452/de",
-      "sha": "e16f76caace2425d70157ca929e32b1734ef33584c8ff25bf52c71d70655d832"
+      "sha": "8b34896d34f585b949432678cde2286081a2f2b146549c7dc564e7c4b028a5ff"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/688",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 688",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Modernisierung der Aufsicht)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Modernisation de la surveillance)",
+      "titelIt": "Legge federale su l’assicurazione per la vecchiaia e per i superstiti (LAVS) (Modernizzazione della vigilanza)",
+      "botschaftKey": "BOTSCHAFT-2020-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/688/de",
+      "sha": "d9051c28aae4ac3b412b130c837e95e4500f0571df44855b65aff804b4a16360"
     },
     {
       "art": "aenderung",
@@ -82,20 +139,94 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Mitteilung von Erwachsenenschutzmassnahmen)",
       "titelFr": "Code civil suisse (Communication des mesures de protection de l’adulte)",
       "titelIt": "Codice civile svizzero (Comunicazione di misure di protezione degli adulti)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/84/de",
-      "sha": "710277bc2281c96ad914f61bf3713475a345a48e05bcd349d396f5abf3947ee2"
+      "sha": "61258ee18bcfb9759fb59f8de13f04c85aa3a9500dbbcbbf6d7bc4cde32f3622"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/92",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 92",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (AHV 21)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (AVS 21)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (AVS 21)",
+      "botschaftKey": "BOTSCHAFT-2019-2267",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/92/de",
+      "sha": "be5abf75dc966d36808e8c840961bdbca32ac150b669f9624bc2cb14338ebca2"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "8d1e8cc7f5b484b8a602d5881a97f67f136fe6c248b77ac5ab3400f055a6b26c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "4b3875d54bd01c702f1ffc840071de0aca2db5a6e321f9c4f474071c549bc3ad"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/600",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2022 600",
+      "titelDe": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+      "titelFr": "Loi fédérale du 17 juin 2016 sur le casier judiciaire informatique VOSTRA (Loi sur le casier judiciaire, LCJ)",
+      "titelIt": "Legge federale del 17 giugno 2016 sul casellario giudiziale informatizzato VOSTRA (Legge sul casellario giudiziale, LCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/600/de",
+      "sha": "cd12ddde437ec2a9b67ddf99aadb862609576fec0fa815a643700a241b6e81d1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/649",
+      "dateDocument": "2017-12-15",
+      "roFundstelle": "AS 2018 4017",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Beurkundung des Personenstands und Grundbuch)",
+      "titelFr": "Code civil suisse (Enregistrement de l'état civil et registre foncier)",
+      "titelIt": "Codice civile svizzero (Atti dello stato civile e registro fondiario)",
+      "botschaftKey": "BOTSCHAFT-2014-785",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/649/de",
+      "sha": "a2f03c95f8ab6e3cd2acf66e9ce8271bb0e393ca1c39ab5edbd281592c0761af"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/746",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4005",
+      "titelDe": "Obligationenrecht (Aktienrecht)",
+      "titelFr": "Code des obligations (Droit de la société anonyme)",
+      "titelIt": "Codice delle obbligazioni (Diritto della società anonima)",
+      "botschaftKey": "BOTSCHAFT-2017-112",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/746/de",
+      "sha": "6e2a231ee542118a1a8c2fb144cd7daccaff4c42b823a6cde0b78dd20ec3c94d"
     },
     {
       "art": "aenderung",
@@ -107,8 +238,27 @@
       "titelFr": "Code civil suisse (Droit des successions)",
       "titelIt": "Codice civile svizzero (Diritto successorio)",
       "botschaftKey": "BOTSCHAFT-2018-2131",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/312/de",
-      "sha": "5c8e540e2bf5f6177017fbdc9e75ec43943a61acdeb7a4899d7f67748c5aff78"
+      "sha": "f14ddc32f2792c43f9ab47198917fed71ea0cbf82052480ef4b50cd1282468a9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/656",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2021 656",
+      "titelDe": "Bundesgesetz über die Bekämpfung der Geldwäscherei und der Terrorismusfinanzierung (Geldwäschereigesetz, GwG)",
+      "titelFr": "Loi fédérale concernant la lutte contre le blanchiment d’argent et le financement du terrorisme (Loi sur le blanchiment d’argent, LBA)",
+      "titelIt": "Legge federale relativa alla lotta contro il riciclaggio di denaro e il finanziamento del terrorismo (Legge sul riciclaggio di denaro, LRD)",
+      "botschaftKey": "BOTSCHAFT-2019-1932",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/656/de",
+      "sha": "652047da9db5ab6d1aac933f76d23d8dab7830f712ab652afc0d011671221fa0"
     },
     {
       "art": "aenderung",
@@ -119,14 +269,80 @@
       "titelDe": "Verordnung vom 10. Dezember 2021 über die abschliessende Inkraftsetzung der Änderung vom 15. Dezember 2017 des Schweizerischen Zivilgesetzbuches (Beurkundung des Personenstands und Grundbuch)",
       "titelFr": "Ordonnance du 10 décembre 2021 portant dernière mise en vigueur partielle de la modification du 15 décembre 2017 du code civil suisse (Enregistrement de l’état civil et registre foncier)",
       "titelIt": "Ordinanza del 10 dicembre 2021 concernente l’entrata in vigore integrale della modifica del 15 dicembre 2017 del Codice civile svizzero (Atti dello stato civile e registro fondiario)",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/917/de",
-      "sha": "fa8edf4295e56acd7e47164ac20f5992a482cdad3383b2693428879c98e6791f"
+      "sha": "f541aca1915b1fb284bfa2eca7a61511052f677dd3ca65d99be2afd332f00761"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/109",
+      "dateDocument": "2022-02-02",
+      "roFundstelle": "AS 2022 109",
+      "titelDe": "Verordnung vom 2. Februar 2022 über die abschliessende Inkraftsetzung der Änderung vom 19. Juni 2020 des Obligationenrechts (Aktienrecht)",
+      "titelFr": "Ordonnance du 2 février 2022 portant dernière mise en vigueur partielle de la modification du 19 juin 2020 du code des obligations (Droit de la société anonyme)",
+      "titelIt": "Ordinanza del 2 febbraio 2022 sull’entrata in vigore integrale della modifica del 19 giugno 2020 del Codice delle obbligazioni (Diritto della società anonima)",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/109/de",
+      "sha": "13fdf620366c4fecc055ce85a455020b4ee2fe53b0794a23840ade356bb5d1f8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/551",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 551",
+      "titelDe": "Verordnung vom 31. August 2022 über die abschliessende Inkraftsetzung der Änderung vom 19. März 2021 des Geldwäschereigesetzes",
+      "titelFr": "Ordonnance du 31 août 2022 portant dernière mise en vigueur partielle de la modification du 19 mars 2021 de la loi sur le blanchiment d’argent",
+      "titelIt": "Ordinanza del 31 agosto 2022 concernente l’entrata in vigore integrale della modifica del 19 marzo 2021 della legge sul riciclaggio di denaro",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/551/de",
+      "sha": "df60b6ca802f5d7662fa0aa4ff18cde0b7de4549588b01f1ab8e374f832fdae2"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2022-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "c94c264d9bfa125cdc229079a82152f06deca4e2b307cc3bcbc2dc22d957e496"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/747",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 747",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Ehe für alle)",
+      "titelFr": "Code civil suisse (Mariage pour tous)",
+      "titelIt": "Codice civile svizzero (Matrimonio per tutti)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2022-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/747/de",
+      "sha": "6ae640a0d0eaea8f5d2da14c3820017d10cabe6bdf0a1fe757fa3eff46ec6a63"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/432",
+      "dateDocument": "2018-12-14",
+      "roFundstelle": "AS 2019 2273",
+      "titelDe": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen",
+      "titelFr": "Loi fédérale sur l'amélioration de la protection des victimes de violence",
+      "titelIt": "Legge federale intesa a migliorare la protezione delle vittime di violenza",
+      "botschaftKey": "BOTSCHAFT-2017-2095",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/432/de",
+      "sha": "bbe76053dd8188e07f4c05bfb8937ab6d274604bcc0458ea5a17489017906557"
     },
     {
       "art": "aenderung",
@@ -137,8 +353,12 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 20. März 2015 des Zivilgesetzbuches (Kindesunterhalt)",
       "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 20 mars 2015 du code civil (Entretien de l'enfant)",
       "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 20 marzo 2015 del Codice civile (Mantenimento del figlio)",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/3/de",
-      "sha": "a9e1681f308e91f985da1f6c64fa291b5258594e7993ef0b8d195d1e2e098ccd"
+      "sha": "92a9fdab123ff44276d39a69fc663d2fc570389265073f5072f1e40042a93a56"
     },
     {
       "art": "aenderung",
@@ -150,8 +370,11 @@
       "titelFr": "Code civil suisse (Changement de sexe à l’état civil)",
       "titelIt": "Codice civile svizzero (Cambiamento del sesso nel registro dello stato civile)",
       "botschaftKey": "BOTSCHAFT-2020-129",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/668/de",
-      "sha": "3c1ecf83a8ead7543e4ef25aaf6fb817c386e59791ea8f325c9ae34e5df99835"
+      "sha": "7aa5676d2c16154d6640645e3cd42a3b41437796c1eab4f304e1d2fda32bfd44"
     },
     {
       "art": "aenderung",
@@ -162,14 +385,47 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Ehe für alle)",
       "titelFr": "Code civil suisse (Mariage pour tous)",
       "titelIt": "Codice civile svizzero (Matrimonio per tutti)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2022-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/747/de",
-      "sha": "1ec08809a66c8d95a48848cdf325f9050facf315292bd0aca16ae05a2f515fe4"
+      "sha": "23b5e2ca461d0df2e44d38fc8e838792991e1a10d4f95b846714e922a0379f7d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 758",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)",
+      "botschaftKey": "BOTSCHAFT-2019-2681",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "sha": "d143bea67843dc3613920d57cf6420b9b1a8a774515b3b3b47dcf6e8767e65f3"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "7637aa8254298f369ffb591fab59bea19ad9006236602b3a8f8f8e72933eb84c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/178",
+      "dateDocument": "2017-03-17",
+      "roFundstelle": "AS 2020 957",
+      "titelDe": "Obligationenrecht (Handelsregisterrecht)",
+      "titelFr": "Code des obligations (Droit du registre du commerce)",
+      "titelIt": "Codice delle obbligazioni (Diritto del registro di commercio)",
+      "botschaftKey": "BOTSCHAFT-2015-956",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/178/de",
+      "sha": "570d17019d84277217c7fbd3ea09bb6d7f62f2761d7fade63c81e97eba87e113"
     },
     {
       "art": "aenderung",
@@ -181,8 +437,31 @@
       "titelFr": "Loi fédérale sur l'amélioration de la protection des victimes de violence",
       "titelIt": "Legge federale intesa a migliorare la protezione delle vittime di violenza",
       "botschaftKey": "BOTSCHAFT-2017-2095",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/432/de",
-      "sha": "7f5a4928f8483f7826a6b2def2e74a8905c7337cf79a9987b1d62b5a170ae030"
+      "sha": "d3af346ac0e37fc6b4d5a1fa03394ea15d2e9861d63ddda35730e2f46a2f24f8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5343",
+      "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+      "titelFr": "Code des obligations (Révision du droit de la prescription)",
+      "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)",
+      "botschaftKey": "BOTSCHAFT-2014-65",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/807/de",
+      "sha": "8bb33e0c1d48975d7ada40ab2036925b1263bee7d12a3ab485ddb99cae3c4fca"
     },
     {
       "art": "aenderung",
@@ -194,8 +473,11 @@
       "titelFr": "Code civil suisse",
       "titelIt": "Codice civile svizzero",
       "botschaftKey": "BOTSCHAFT-2017-1991",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/695/de",
-      "sha": "6e6ab94ae199dd7008827cf0c4ad271172d4ff5faa547be1ee24fd752b4111e4"
+      "sha": "ca8e7063d18472f1578c589ecc10ae062037ca4fac59add4dcbd05e91405730d"
     },
     {
       "art": "aenderung",
@@ -206,8 +488,11 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch",
       "titelFr": "Code civil",
       "titelIt": "Codice civile svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/423/de",
-      "sha": "c6627fd8ab2f679d80d594fe65312d1dea5b35d241142eed12ad7c04d494a2d8"
+      "sha": "7a3fbbd0097176f21b28ef7710211afc613f047a3b0beb3e1268cecef5291e23"
     },
     {
       "art": "aenderung",
@@ -219,8 +504,11 @@
       "titelFr": "Code civil suisse (Protection de l'enfant)",
       "titelIt": "Codice civile svizzero (Protezione dei minorenni)",
       "botschaftKey": "BOTSCHAFT-2015-838",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/450/de",
-      "sha": "e30a13902b8419af8ec04f00b3794053fbadf0344fd215d1fd22741c7ed05333"
+      "sha": "865d3a6262510d3b7d68ca1e41513a4bac6d1e0ae321af7c542172320904ee76"
     },
     {
       "art": "aenderung",
@@ -232,8 +520,15 @@
       "titelFr": "Code civil suisse (Enregistrement de l'état civil et registre foncier)",
       "titelIt": "Codice civile svizzero (Atti dello stato civile e registro fondiario)",
       "botschaftKey": "BOTSCHAFT-2014-785",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2023-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/649/de",
-      "sha": "d94f26e130e9c1480c129f338251495176c7087a2f628795df50fc7c7005ba9f"
+      "sha": "0c99e3abe246a1a322bcf571652bc03dea5ae10fc5d66ba13809c8c596c1ffd1"
     },
     {
       "art": "aenderung",
@@ -245,14 +540,26 @@
       "titelFr": "Code civil suisse (Droit de l'adoption)",
       "titelIt": "Codice civile svizzero (Adozione)",
       "botschaftKey": "BOTSCHAFT-2015-94",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/425/de",
-      "sha": "93dd3bcd30f01d918cba6d4d77a0718e5025199f0fe8864453543733532199be"
+      "sha": "12214447015a3177a464e06e7f635d2e45e9b0d98d635e2e163388bdcfc4d421"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "081cc6ed3b88839df00e531e392bc8f53fe53aed36c864a65b35e4781e31b58d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2017 4095",
+      "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG)",
+      "titelFr": "Loi fédérale sur le renseignement (LRens)",
+      "titelIt": "Legge federale sulle attività informative (LAIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/494/de",
+      "sha": "203aa9b6f92a450dd04dddb9144f4d3490ab38dfa1ab0e6274c5bd1d0cc77027"
     },
     {
       "art": "aenderung",
@@ -264,8 +571,11 @@
       "titelFr": "Code civil suisse (Entretien de l'enfant)",
       "titelIt": "Codice civile svizzero (Mantenimento del figlio)",
       "botschaftKey": "BOTSCHAFT-2014-98",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/728/de",
-      "sha": "5ff9f2d0e57122bf805b13bbfc026f0dc8b6d9216dd9994dba01c266de47affd"
+      "sha": "7e6024954beed8b6225f3f2ab8e2361b6a678d692adcce3b928dd3c7351174f5"
     },
     {
       "art": "aenderung",
@@ -276,8 +586,26 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Kindesunterhalt)",
       "titelFr": "Code civil suisse (Entretien de l'enfant)",
       "titelIt": "Codice civile svizzero (Mantenimento del figlio)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/822/de",
-      "sha": "a6805e3a0f7a11dd4fcf18bd3a356484f4fccd61c58946e5a14fc044d2ee317e"
+      "sha": "3113dc197a21b871445241b9d5b728dc81b94e581060db340c5746a3a00a215e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
       "art": "aenderung",
@@ -289,8 +617,26 @@
       "titelFr": "Code civil suisse (Partage de la prévoyance professionnelle en cas de divorce)",
       "titelIt": "Codice civile svizzero (Conguaglio della previdenza professionale in caso di divorzio)",
       "botschaftKey": "BOTSCHAFT-2013-942",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/379/de",
-      "sha": "91e2773f616d8b26cdae71adf37d7b218fefba61feb215f27a48fc070bec3dc8"
+      "sha": "45481f58a678492f3e658c1537fa361ed2db3aa9ed6ed57ff4ca2efb5a8bfcc9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/752",
+      "dateDocument": "2016-03-18",
+      "roFundstelle": "AS 2016 4651",
+      "titelDe": "Bundesgesetz über Zertifizierungsdienste im Bereich der elektronischen Signatur und anderer Anwendungen digitaler Zertifikate (Bundesgesetz über die elektronische Signatur)",
+      "titelFr": "Loi fédérale sur les services de certification dans le domaine de la signature électronique et des autres applications des certificats numériques (Loi sur la signature électronique)",
+      "titelIt": "Legge federale sui servizi di certificazione nel campo della firma elettronica e di altre applicazioni di certificati digitali (Legge sulla firma elettronica)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/752/de",
+      "sha": "88e70fad0ee801cf044117153574601115ebc01420a759a1edd3b782af4a04d1"
     },
     {
       "art": "aenderung",
@@ -301,18 +647,15 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Personalfürsorgestiftungen)",
       "titelFr": "Code civil suisse (Fondations de prévoyance en faveur du personnel)",
       "titelIt": "Codice civile svizzero (Fondazioni di previdenza a favore del personale)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/163/de",
-      "sha": "c680a5868bfbacd549ef31fcfafd0b4892c6d3bc85ba75dfc55890300054a068"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "65105bfe21f2b64a1a2548a86827283bedbd6bb06a4f3296a42b6fe8006d34e7"
+      "sha": "576185a6cd11e72057ba3a736ae2268b481c95428cf6b7d7db8d48e562210aa0"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2015-07-01",
+      "dateEntryInForce": "2016-01-01",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/289",
       "dateDocument": "2014-12-12",
       "roFundstelle": "AS 2015 1389",
@@ -320,8 +663,11 @@
       "titelFr": "Loi fédérale sur la mise en uvre des recommandations du Groupe d'action financière, révisées en 2012",
       "titelIt": "Legge federale concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria rivedute nel 2012",
       "botschaftKey": "BOTSCHAFT-2014-100",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/289/de",
-      "sha": "9f04340200e58e810d29c44a4f6cf66d67c1e36b857dca644d234240288d9641"
+      "sha": "168b9d5a34db07ff9542bce54db1869e4b5153023b824e5eb44d8e9f543113ff"
     },
     {
       "art": "aenderung",
@@ -333,14 +679,27 @@
       "titelFr": "Code civil suisse (Autorité parentale)",
       "titelIt": "Codice civile svizzero (Autorità parentale)",
       "botschaftKey": "BOTSCHAFT-2011-1580",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/53/de",
-      "sha": "4e05f11c8a2f73b1d9983d6a12aa7e23e6e94faaa029f4bc4a9fb8bc2ded9920"
+      "sha": "6baad60adc3cdc82e16455855069daa30c3186fac4b6a9c27bc5e01ebd2c385a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "676a5470cebcb41a6c87ebc65b57042e1c60f5e6a2cc34153f15f06646e2cb81"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/226",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2013 1035",
+      "titelDe": "Bundesgesetz über Massnahmen gegen Zwangsheiraten",
+      "titelFr": "Loi fédérale concernant les mesures de lutte contre les mariages forcés",
+      "titelIt": "Legge federale sulle misure contro i matrimoni forzati",
+      "botschaftKey": "BOTSCHAFT-2011-292",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/226/de",
+      "sha": "00a2aa22d687f23430ffec4deb4e8b1b771aca8d6e5248876375d098ca779415"
     },
     {
       "art": "aenderung",
@@ -352,8 +711,11 @@
       "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
       "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
       "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
-      "sha": "36e3414de9c3e1bfeb01882daa29127df998070aed921b3d1b0355b4f7842e0d"
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
       "art": "aenderung",
@@ -364,8 +726,11 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Name und Bürgerrecht)",
       "titelFr": "Code civil suisse (Nom et droit de cité)",
       "titelIt": "Codice civile svizzero (Cognome e cittadinanza)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/309/de",
-      "sha": "df9e4da51e2b1b6fb3efd678139e6c68cd86075db979c9d384904a8963d0015f"
+      "sha": "95ba19526a28673144b506a0c20a6ad9a1455eaece5b18855bbd93684198149f"
     },
     {
       "art": "aenderung",
@@ -376,8 +741,59 @@
       "titelDe": "Zivilgesetzbuch (Name und Bürgerrecht)",
       "titelFr": "Code civil (Nom et droit de cité)",
       "titelIt": "Codice civile (Cognome e cittadinanza)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/368/de",
-      "sha": "5e8f0e0624fd0486b62a484e3f1c16144466750e5fc754817337ea653f32a61e"
+      "sha": "8eca177d452506ba27e0d21b4da7434b93b877f11769d9666b577c344ce77c7d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/810",
+      "dateDocument": "2011-12-23",
+      "roFundstelle": "AS 2012 6679",
+      "titelDe": "Obligationenrecht (Rechnungslegungsrecht)",
+      "titelFr": "Code des obligations (Droit comptable)",
+      "titelIt": "Codice delle obbligazioni (Diritto contabile)",
+      "botschaftKey": "BOTSCHAFT-2008-416",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/810/de",
+      "sha": "d9f500388cacbd9d10f048b0664f4acb2e657db132d4941c05c562df7a07a318"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/457",
+      "dateDocument": "2010-12-17",
+      "roFundstelle": "AS 2011 3385",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (Financement des institutions de prévoyance de corporations de droit public)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (Finanziamento degli istituti di previdenza degli enti di diritto pubblico)",
+      "botschaftKey": "BOTSCHAFT-2008-1439",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/457/de",
+      "sha": "e008a74951aba17031951f5f6588034908a3d9f75a8dd8f558ac3fb61a8deab9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/458",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2011 3393",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Strukturreform)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (Réforme structurelle)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (Riforma strutturale)",
+      "botschaftKey": "BOTSCHAFT-2007-788",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/458/de",
+      "sha": "af4667f148748e35c35de09df30f8571cb947d1bced6e14f030435513d9e3461"
     },
     {
       "art": "aenderung",
@@ -389,8 +805,60 @@
       "titelFr": "Code civil suisse (Cédule hypothécaire de registre et autres modifications des droits réels)",
       "titelIt": "Codice civile svizzero (Cartella ipotecaria registrale e altre modifiche della disciplina dei diritti reali)",
       "botschaftKey": "BOTSCHAFT-2007-756",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/666/de",
-      "sha": "af781cc721fee09f3355d456fb4640f87876478d5c168d37339f1f6aa70eb454"
+      "sha": "157c14bd6c7086190980387f2d916f3d2d7f4b1c71431242e556a278b49a8d56"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/799",
+      "dateDocument": "2011-03-18",
+      "roFundstelle": "AS 2011 5659",
+      "titelDe": "Bundesgesetz über die Invalidenversicherung (IVG) (6. IV-Revision, erstes Massnahmenpaket)",
+      "titelFr": "Loi fédérale sur l'assurance-invalidité (LAI) (6e révision de l'AI, premier volet)",
+      "titelIt": "Legge federale sull'assicurazione per l'invalidità (LAI) (6a revisione AI, primo pacchetto di misure)",
+      "botschaftKey": "BOTSCHAFT-2010-340",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/799/de",
+      "sha": "9ecadd81ba60268e9daffb6be086403993ddb1cb58d408b6ccc5d0aea02ee330"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "4680b94aca04870448f933a54c75b33319b3d325b89428dcf20b5c0518e9c6aa"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2010 1881",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2006-124",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "sha": "f58abceb941cc313b81bd4ceaf09349034ef2aa8c587d97b8a4f8b48412650e1"
     },
     {
       "art": "aenderung",
@@ -401,8 +869,27 @@
       "titelDe": "Zivilgesetzbuch (ZGB) (Unterbindung von Ehen bei rechtswidrigem Aufenthalt)",
       "titelFr": "Code civil (CC) (Empêcher les mariages en cas de séjour irrégulier)",
       "titelIt": "Codice civile (CC) (Impedire la conclusione di matrimoni in caso di soggiorno irregolare)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/411/de",
-      "sha": "a65e22ce1d95eb59b870140ae69396637328b35feb7f4c6b71a5822079946570"
+      "sha": "2f09edbafc2e10b4a89e939b2490eb587329d0b14f41144c15c5bd6a754c29b0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/622",
+      "dateDocument": "2009-12-11",
+      "roFundstelle": "AS 2010 4427",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Massnahmen zur Erleichterung der Arbeitsmarktbeteiligung älterer Arbeitnehmender)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (Mesures destinées à faciliter la participation des travailleurs âgés au marché de l'emploi)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (Misure per agevolare la partecipazione al mercato del lavoro dei lavoratori anziani)",
+      "botschaftKey": "BOTSCHAFT-2007-788",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/622/de",
+      "sha": "f01a1925715ccad65c25d9a59f809cca00174e18543604743a503f698e445471"
     },
     {
       "art": "aenderung",
@@ -413,26 +900,89 @@
       "titelDe": "Zivilgesetzbuch (Bedenkzeit im Scheidungsverfahren auf gemeinsames Begehren)",
       "titelFr": "Code civil (Délai de réflexion dans la procédure de divorce sur requête commune)",
       "titelIt": "Codice civile (Periodo di riflessione nella procedura di divorzio su richiesta comune)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/37/de",
-      "sha": "d776b69fc1c4c98d868c529c6a2bba86e385a9b09b170071f14e68bd73f9199b"
+      "sha": "5c6d90e504480c9e339549a9dadb1224397511056f1931586cd3e98a02417f04"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "67f65b18a474c3c88f4306696323cd9441731dcbeb90d7f36d97c7629c9cad3e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/450",
+      "dateDocument": "2008-10-03",
+      "roFundstelle": "AS 2009 3577",
+      "titelDe": "Bundesgesetz über Bucheffekten (Bucheffektengesetz, BEG)",
+      "titelFr": "Loi fédérale sur les titres intermédiés (LTI)",
+      "titelIt": "Legge federale sui titoli contabili (Legge sui titoli contabili, LTCo)",
+      "botschaftKey": "BOTSCHAFT-2006-1228",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/450/de",
+      "sha": "148102db2b8c1194fd13d22c33ab5bb9455b67efa25fbbe6f9b9e2b71e3ab743"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-12-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "87af92dcd7b0a5d40e5f77a10ce75ef471074cb50d3ac641d3a35c48407ecc68"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/698",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2008 4989",
+      "titelDe": "Bundesgesetz über die polizeilichen Informationssysteme des Bundes (BPI)",
+      "titelFr": "Loi fédérale sur les systèmes d'information de police de la Confédération (LSIP)",
+      "titelIt": "Legge federale sui sistemi d'informazione di polizia della Confederazione (LSIP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/698/de",
+      "sha": "25747b6228748480a29360b70a6528dbad5be970741c85fe061b14ca68ea10c1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "2466c5e14c1e170d00dc8ed660808e56da7ac9dd84db66e82fc1fc1a1ec4d4bb"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/388",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2008 2793",
+      "titelDe": "Bundesgesetz über Geoinformation (Geoinformationsgesetz, GeoIG)",
+      "titelFr": "Loi fédérale sur la géoinformation (Loi sur la géoinformation, LGéo)",
+      "titelIt": "Legge federale sulla geoinformazione (Legge sulla geoinformazione, LGI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/388/de",
+      "sha": "7df3751eb6c9111575f45fcc9c8debb5b353eb5ad7cf715c87d07cc2ccac4a0e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/685",
+      "dateDocument": "2005-12-16",
+      "roFundstelle": "AS 2007 4791",
+      "titelDe": "Obligationenrecht (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht) (OR)",
+      "titelFr": "Code des obligations (Droit de la société à responsabilité limitée; adaptation des droits de la société anonyme, de la société coopérative, du registre du commerce et des raisons de commerce) (CO)",
+      "titelIt": "Codice delle obbligazioni (Diritto della società a garanzia limitata; adeguamento del diritto della società anonima, della società cooperativa, del registro di commercio e delle ditte commerciali) (CO)",
+      "botschaftKey": "BOTSCHAFT-2002-443",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/685/de",
+      "sha": "de3c6a1ea7514fef33cc892f7a018611c900f2aa8de2190235371b9e9d01ae00"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/758",
+      "dateDocument": "2005-12-16",
+      "roFundstelle": "AS 2007 5437",
+      "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG)",
+      "titelFr": "Loi fédérale sur les étrangers et l'intégration (LEI)",
+      "titelIt": "Legge federale sugli stranieri e la loro integrazione (LStrI)",
+      "botschaftKey": "BOTSCHAFT-2002-541",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/758/de",
+      "sha": "ecf671b8870bafb50a69129fea89ddcaf571ae9d168a8b5d9a103686195cc76c"
     },
     {
       "art": "aenderung",
@@ -444,14 +994,42 @@
       "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
       "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)",
       "botschaftKey": "BOTSCHAFT-2005-976",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
-      "sha": "d25301d9d56d536498efd5052c5dbb9f60bdd9d2a1288faaef7ce1347d3725be"
+      "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/867",
+      "dateDocument": "2007-11-21",
+      "roFundstelle": "AS 2007 6717",
+      "titelDe": "Verordnung über die vollständige Inkraftsetzung des Registerharmonisierungsgesetzes",
+      "titelFr": "Ordonnance sur l'entrée en vigueur totale de la loi sur l'harmonisation de registres",
+      "titelIt": "Ordinanza che mette integralmente in vigore la legge sull'armonizzazione dei registri",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/867/de",
+      "sha": "a26684d7a1fa060ec66cfa6de5be7fc930e7e34fec9d3e9c1e6efcfec1698b6a"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "592c507cf8a50b4c17ba43ce165ab1bcdeae6ed298b9e6ecffa0c860c48bede1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/747",
+      "dateDocument": "2006-06-23",
+      "roFundstelle": "AS 2007 5259",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Neue AHV-Versichertennummer)",
+      "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Nouveau numéro d'assuré AVS)",
+      "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Nuovo numero d'assicurato dell'AVS)",
+      "botschaftKey": "BOTSCHAFT-2006-52",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/747/de",
+      "sha": "c598ef37bb15cbed37724779fb3cdf4f7ee5459d0057f7498ef7d645fa90749b"
     },
     {
       "art": "aenderung",
@@ -462,20 +1040,99 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Schutz der Persönlichkeit gegen Gewalt, Drohungen oder Nachstellungen)",
       "titelFr": "Code civil suisse (Protection de la personnalité en cas de violence, de menaces ou de harcèlement)",
       "titelIt": "Codice civile svizzero (Protezione della personalità in caso di violenza, minacce o insidie)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/32/de",
-      "sha": "10434ffa78214afc8e042c469ade2dd251c1722a80e52d529a8bad0b2049ff0c"
+      "sha": "a74d6a4bb3b7e47db6a02b7d7b06da8665d9404182927db3c727757badf63b44"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "fbba1763fd080e5a3f548ca0ccf6b281d0bc7fea2d0855bd94156bfdab5223a8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/263",
+      "dateDocument": "2006-12-20",
+      "roFundstelle": "AS 2007 1803",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Wechsel der Vorsorgeeinrichtung)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP) (Changement d'institution de prévoyance)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (Cambiamento dell'istituto di previdenza)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/263/de",
+      "sha": "63c45e301d4f98464ee74e2ec07d12bee48a926ac7de297b5efecf5c44514d1c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "4a80e708718ab843697ed94d5eb49bf5d52440c54bad20182c1e3663c2457417"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2006-01-01",
+        "2007-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "e8825154a49f245b5a499d8a0de3853138f4c554c975dd2dabf5b61a5aa28118"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2006-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/619",
+      "dateDocument": "2006-06-23",
+      "roFundstelle": "AS 2006 4165",
+      "titelDe": "Bundesgesetz über die Harmonisierung der Einwohnerregister und anderer amtlicher Personenregister (Registerharmonisierungsgesetz, RHG)",
+      "titelFr": "Loi fédérale sur l'harmonisation des registres des habitants et d'autres registres officiels de personnes (Loi sur l'harmonisation de registres, LHR)",
+      "titelIt": "Legge federale sull'armonizzazione dei registri degli abitanti e di altri registri ufficiali di persone (Legge sull'armonizzazione dei registri, LArRa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/619/de",
+      "sha": "2a1308deafb0f4354bef23dd8f5c8f8465c24809527be9d951cec9de85512885"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2006-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/207",
+      "dateDocument": "2003-10-03",
+      "roFundstelle": "AS 2004 1677",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (1. BVG-Revision)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle, vieillesse, survivants et invalidité (LPP) (1re révision LPP)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (1a revisione della LPP)",
+      "botschaftKey": "BOTSCHAFT-2000-555",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-04-01",
+        "2005-01-01",
+        "2006-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/207/de",
+      "sha": "76a096259bc2082f70c3eaad7e60b4cb43b28123c3818ccf439d4b9495f08121"
     },
     {
       "art": "aenderung",
@@ -486,8 +1143,46 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Stiftungsrecht)",
       "titelFr": "Code civil suisse (Droit des fondations)",
       "titelIt": "Codice civile svizzero (Diritto delle fondazioni)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/591/de",
-      "sha": "a80269710999abc58e913a0bdae5f9c5d2934629704b8df9592a6e50913233f2"
+      "sha": "76277efb8035a26597be34a327199764cf851e8c25a1c786bffbf9c54b213ae0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2006-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2006-01-01",
+        "2007-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "f46bafac362cb6fb1d6da7a240e37b58bbafbf41a7edcfde707cb00c6a8e2ad7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/317",
+      "dateDocument": "2003-06-20",
+      "roFundstelle": "AS 2005 1869",
+      "titelDe": "Bundesgesetz über den internationalen Kulturgütertransfer (Kulturgütertransfergesetz, KGTG)",
+      "titelFr": "Loi fédérale sur le transfert international des biens culturels (Loi sur le transfert des biens culturels, LTBC)",
+      "titelIt": "Legge federale sul trasferimento internazionale dei beni culturali (Legge sul trasferimento dei beni culturali, LTBC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/317/de",
+      "sha": "28282e59ce11fcc485a3aa41dc28c313574f300fb688ef07dd28289c7fd60afc"
     },
     {
       "art": "aenderung",
@@ -498,14 +1193,63 @@
       "titelDe": "Zivilgesetzbuch (Festlegung der Beitragspflicht von Vereinsmitgliedern)",
       "titelFr": "Code civil suisse (Fixation des cotisations des membres d'associations)",
       "titelIt": "Codice civile svizzero (Determinazione dei contributi dei membri di associazioni)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/344/de",
-      "sha": "448bab91236dd3afc22e2bbdd69307b2cbcd8518b30100f858e5f88e60482a42"
+      "sha": "562ba1da59938bdc9f0c6f74d843d3d76b6956de0251bba1b45edb134e9d4be2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "58716f47b53ed1282a793528e50afe1980275c1b0549011503da50d6e1fc6286"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/207",
+      "dateDocument": "2003-10-03",
+      "roFundstelle": "AS 2004 1677",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (1. BVG-Revision)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle, vieillesse, survivants et invalidité (LPP) (1re révision LPP)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (1a revisione della LPP)",
+      "botschaftKey": "BOTSCHAFT-2000-555",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-04-01",
+        "2005-01-01",
+        "2006-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/207/de",
+      "sha": "05f3ff84c9f5ed551e54627809208e6713c84665253788a15cea27f2741d55cb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/711",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2004 4635",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP)",
+      "botschaftKey": "BOTSCHAFT-2003-1054",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/711/de",
+      "sha": "a2fd0bffa87b3ce2a0266996df7b706a360df0eb6525b0162e4ef45719725db2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/788",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2004 5085",
+      "titelDe": "Bundesgesetz über Zertifizierungsdienste im Bereich der elektronischen Signatur (Bundesgesetz über die elektronische Signatur, ZertES)",
+      "titelFr": "Loi fédérale sur les services de certification dans le domaine de la signature électronique (Loi sur la signature électronique, SCSE)",
+      "titelIt": "Legge federale sui servizi di certificazione nel campo della firma elettronica (Legge sulla firma elettronica, FiEle)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/788/de",
+      "sha": "ba58ee962299de0991747ac1bcf7a01551abd5abf26fff1b95755235eabd4f82"
     },
     {
       "art": "aenderung",
@@ -517,8 +1261,11 @@
       "titelFr": "Code civil suisse (tenue informatisée des registres de l'état civil)",
       "titelIt": "Codice civile svizzero (Gestione elettronica dei registri dello stato civile)",
       "botschaftKey": "BOTSCHAFT-2001-407",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/361/de",
-      "sha": "785fa7f9bd08653d5fafac914e872f61550b36ec419b05b038ced968623127f8"
+      "sha": "ccae0e0a3eb980cf7fd3c07cb25d7992d2e5e31cab77a752e5dd43dd84d5a7de"
     },
     {
       "art": "aenderung",
@@ -529,14 +1276,32 @@
       "titelDe": "Zivilgesetzbuch (Trennungsfrist im Scheidungsrecht)",
       "titelFr": "Code civil suisse (Délai de séparation en droit du divorce)",
       "titelIt": "Codice civile (Termine di separazione nel diritto del divorzio)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/254/de",
-      "sha": "3a0ed3c5008173d99da00cce5c85af456e29b9b2e870827a461e65bf429abddd"
+      "sha": "5a25dbc9c4ca0d4a9c127f94b442a9b96c20619b9729b0fb595debbcf1ccfb80"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "0172ce01f3a8baf88d95bc2a686ee71919061d8af67b36b8d91a87d96974e076"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/207",
+      "dateDocument": "2003-10-03",
+      "roFundstelle": "AS 2004 1677",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (1. BVG-Revision)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle, vieillesse, survivants et invalidité (LPP) (1re révision LPP)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP) (1a revisione della LPP)",
+      "botschaftKey": "BOTSCHAFT-2000-555",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-04-01",
+        "2005-01-01",
+        "2006-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/207/de",
+      "sha": "80c3bb05b70cdac72b1c4b2f5ff423e8011f094e089d88f77bf3033fc62291eb"
     },
     {
       "art": "aenderung",
@@ -548,8 +1313,11 @@
       "titelFr": "Code civil",
       "titelIt": "Codice civile",
       "botschaftKey": "BOTSCHAFT-2002-780",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/613/de",
-      "sha": "d69b3d1be27886beab268cf71004b07ee0ba846920a58bfd95abe4201c46e526"
+      "sha": "d0720a18ac19242be72fea3ffc98617df19ad7faa67f9b9960cd4395f18d79e5"
     },
     {
       "art": "aenderung",
@@ -560,14 +1328,26 @@
       "titelDe": "Zivilgesetzbuch, Obligationenrecht, Strafgesetzbuch, Bundesgesetz über Schuldbetreibung und Konkurs (Grundsatzartikel Tiere)",
       "titelFr": "Code civil, Code des obligations, Code pénal, Loi fédérale sur la poursuite pour dettes et la faillite (Animaux)",
       "titelIt": "Codice civile, Codice delle obbligazioni, Codice penale, Legge federale sulla esecuzione e sul fallimento (Articolo di principio sugli animali)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/100/de",
-      "sha": "b8b03d3474b5d720caef03a958c2082c8a52fbfa70dcaa700190fbecbf77b420"
+      "sha": "e2d26460263957125774e6bd9fb9bffacc8966f10856fbc88df8fc5e7e2e1b8e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "95e74846463b3e91ea5f6fe3756eb09c7ec8ed26cee0de65c6734c69df489267"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/639",
+      "dateDocument": "2001-06-22",
+      "roFundstelle": "AS 2002 3988",
+      "titelDe": "Bundesgesetz zum Haager Adoptionsübereinkommen und über Massnahmen zum Schutz des Kindes bei internationalen Adoptionen (BG-HAÜ)",
+      "titelFr": "Loi fédérale relative à la Convention de La Haye sur l'adoption et aux mesures de protection de l'enfant en cas d'adoption internationale (LF-CLaH)",
+      "titelIt": "Legge federale relativa alla Convenzione dell'Aia sull'adozione e a provvedimenti per la protezione del minore nelle adozioni internazionali (LF-CAA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/639/de",
+      "sha": "db48b0e15b18c4ed9f4feb0e1fa060ccf024dab7d7ce66794e5614f095b8a778"
     },
     {
       "art": "aenderung",
@@ -578,14 +1358,41 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Erbrecht des überlebenden Ehegatten)",
       "titelFr": "Code civil suisse (Droit de succession du conjoint survivant)",
       "titelIt": "Codice civile svizzero (Diritto successorio del coniuge superstite)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/57/de",
-      "sha": "f4807b29cc53afa6a0ab0cc0e2608afe4aa91d207f936e084d0be7ca0a13e328"
+      "sha": "eeeddebaffa7e739e01b8f0ed7f594bd579704cd13ecfbdc355ba514e08e3873"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/210",
-      "sha": "cdcb44ebaa14f7baa99a9426e18ef30326d7eed4d6692afd410171a551463676"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "a54e2068e85f8bc380fa08b9533774adfb99d960f1582f3a97562fc6d4b43f2b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/554",
+      "dateDocument": "1998-12-18",
+      "roFundstelle": "AS 2000 3055",
+      "titelDe": "Bundesgesetz über die medizinisch unterstützte Fortpflanzung (Fortpflanzungsmedizingesetz, FMedG)",
+      "titelFr": "Loi fédérale sur la procréation médicalement assistée (LPMA)",
+      "titelIt": "Legge federale concernente la procreazione con assistenza medica (Legge sulla medicina della procreazione, LPAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/554/de",
+      "sha": "368c16807b99b77cc2b9cf2f460ca02bef188a8d307c72fefd5fc13483be7a0f"
     },
     {
       "art": "aenderung",
@@ -596,21 +1403,499 @@
       "titelDe": "Schweizerisches Zivilgesetzbuch (Personenstand, Eheschliessung, Scheidung, Kindsrecht, Verwandtenunterstützungspflicht, Heimstätten, Vormundschaft, Ehevermittlung)",
       "titelFr": "Code civil suisse (état civil, conclusion du mariage et divorce, filiation, dette alimentaire, asiles de famille, tutelle et courtage matrimonial)",
       "titelIt": "Codice civile svizzero (stato civile, matrimonio, divorzio, diritto di filiazione, obbligo di assistenza fra parenti, asili di famiglia, tutela, mediazione matrimonile)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/149/de",
-      "sha": "89b4d6cabb0d0848285fa8a779795bd5e47b201608c178a1feef1a6ba614e8de"
+      "sha": "fe9ff6ec289ec984dcef938a969d0bd5a67aad7be85e1362b3fb2edb8560c62a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227",
+      "dateDocument": "1994-12-16",
+      "roFundstelle": "AS 1995 1227",
+      "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs, Änderung",
+      "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite, Modification",
+      "titelIt": "Legge federale sulla esecuzione e sul fallimento, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1227_1227_1227/de",
+      "sha": "99e4d93f4bdf2021e12b8dc9c272ee41e3aeb4b1a8d60efe7ed30c1578478804"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3067_3067_3067",
+      "dateDocument": "1996-06-21",
+      "roFundstelle": "AS 1996 3067",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG), Änderung",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP), Modification",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3067_3067_3067/de",
+      "sha": "990610ea29f2085fff65569e6c5f794f9b9c637b40fc997105f0559de7709d63"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1126_1126_1126",
+      "dateDocument": "1994-10-07",
+      "roFundstelle": "AS 1995 1126",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Herabsetzung des zivilrechtlichen Mündigkeits- und Ehefähigkeitsalters, Unterhaltspflicht der Eltern), Änderung",
+      "titelFr": "Code civil suisse (Abaissement de l'âge de la majorité civile et matrimoniale, obligation d'entretien des père et mère), Modification",
+      "titelIt": "Codice civile svizzero (Abbassamento della maggiore età civile e matrimomiale, obbligo di mantenimento da perte dei genitori) Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1126_1126_1126/de",
+      "sha": "09ce3596b5d5568d00b7e44c98a9398220f17ee409a642467927e61e8d43bac4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/4882_4882_4882",
+      "dateDocument": "1995-06-23",
+      "roFundstelle": "AS 1995 4882",
+      "titelDe": "Schweizerisches Zivilgesetzbuch, Änderung",
+      "titelFr": "Code civil suisse, Modification",
+      "titelIt": "Codice civile svizzero, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/4882_4882_4882/de",
+      "sha": "258ee0c65f5c03df402dd412b8e1d67dd4c0d3eda867ecb569eee814983b5c2b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2386_2386_2386",
+      "dateDocument": "1993-12-17",
+      "roFundstelle": "AS 1994 2386",
+      "titelDe": "Bundesgesetz vom 17. Dezember 1993 über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsgesetz, FZG)",
+      "titelFr": "Loi fédérale du 17 décembre 1993 sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Loi sur le libre passage, LFLP)",
+      "titelIt": "Legge federale del 17 dicembre 1993 sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Legge sul libero passaggio, LFLP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2386_2386_2386/de",
+      "sha": "2901debf4eb30833baa627d2cea49f744fe28ef3834331eb27dd8287cd0bfc00"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1404_1404_1404",
+      "dateDocument": "1991-10-04",
+      "roFundstelle": "AS 1993 1404",
+      "titelDe": "Bundesgesetz vom 4. Oktober 1991 über die Teilrevision des Zivilgesetzbuches (Immobiliarsachrecht) und des Obligationenrechts (Grundstückkauf)",
+      "titelFr": "Loi fédérale du 4 octobre 1991 sur la révision partielle du code civil (droits réels immobiliers) et du code des obligations (vente d'immeubles)",
+      "titelIt": "Legge federale del 4 ottobre 1991 sulla revisione parziale del Codice civile (Diritti reali immobiliari) e del Codice delle obbligazioni (Compera e vendita dei fondi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1404_1404_1404/de",
+      "sha": "74b415b4e50d9ed66d39092a80aca405941aebbeeaf42c3ff816e2175bd5e4f2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1410_1410_1410",
+      "dateDocument": "1991-10-04",
+      "roFundstelle": "AS 1993 1410",
+      "titelDe": "Bundesgesetz vom 4. Oktober 1991 über das bäuerliche Bodenrecht (BGBB)",
+      "titelFr": "Loi fédérale du 4 octobre 1991 sur le droit foncier rural (LDFR)",
+      "titelIt": "Legge federale del 4 ottobre 1991 sul diritto fondiario rurale (LDFR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1410_1410_1410/de",
+      "sha": "71864d02661540052b495db1b5a564a55ac73c58bd522fc14ae647b3521f3452"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/1034_1034_1034",
+      "dateDocument": "1990-03-23",
+      "roFundstelle": "AS 1991 1034",
+      "titelDe": "Bürgerrechtsgesetz, Änderung",
+      "titelFr": "Loi sur la nationalité, Modification",
+      "titelIt": "Legge sulla cittadinanza, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/1034_1034_1034/de",
+      "sha": "7eb0f659db9019fa3c0fc50dd549d16d3d26ea875b001070f2f828922c1e4a4b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/362_362_362",
+      "dateDocument": "1989-12-15",
+      "roFundstelle": "AS 1991 362",
+      "titelDe": "Bundesgesetz vom 15. Dezember 1989 über die Genehmigung kantonaler Erlasse durch den Bund",
+      "titelFr": "Loi fédérale du 15 décembre 1989 relative à l'approbation d'actes législatifs des cantons par la Confédération",
+      "titelIt": "Legge federale del 15 dicembre 1989 concernente l'approvazione di atti legislativi dei Cantoni da pare della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/362_362_362/de",
+      "sha": "2035b62181fd63cdb60d77fa6fc41da19e87c6dae7d8a52d28e08da6253eacc5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/122_122_122",
+      "dateDocument": "1984-10-05",
+      "roFundstelle": "AS 1986 122",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Wirkungen der Ehe im allgemeinen, Ehegüterrecht und Erbrecht), Änderung",
+      "titelFr": "Code civil suisse (Effets généraux du mariage, régime matrimonial et successions), Modification",
+      "titelIt": "Codice civile svizzero (Effetti del matrimonio in generale, regime dei beni fra i coniugi e diritto successorio), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/122_122_122/de",
+      "sha": "e33a2b940708f7efb42054d7cd191f196849fbce491033e75c882f3fcae82090"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/778_778_778",
+      "dateDocument": "1983-12-16",
+      "roFundstelle": "AS 1984 778",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Persönlichkeitsschutz: Art. 28 ZGB und Art. 49 OR), Änderung",
+      "titelFr": "Code civil suisse (Protection de la personnalité: art. 28 CC et 49 CO), Modification",
+      "titelIt": "Codice civile svizzero (Protezione della personalità: art 28 CC e 49 CO, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/778_778_778/de",
+      "sha": "47bba09680f43a9879cb2e2cb24f1bf2a2831c75e191b8f222fcc82cf547eb59"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/797_797_797",
+      "dateDocument": "1982-06-25",
+      "roFundstelle": "AS 1983 797",
+      "titelDe": "Bundesgesetz vom 25. Juni 1982 über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
+      "titelFr": "Loi fédérale du 25 juin 1982 sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP)",
+      "titelIt": "Legge federale del 25 giugno 1982 sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/797_797_797/de",
+      "sha": "0591938aa167b9298432f0d4653a6206d582353b3558b4f1a1e4ba3bc43d5f2e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/31_31_31",
+      "dateDocument": "1978-10-06",
+      "roFundstelle": "AS 1980 31",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Fürsorgerische Freiheitsentziehung), Änderung",
+      "titelFr": "Code civil suisse (Privation de liberté à des fins d'assistance), Modification",
+      "titelIt": "Codice civile svizzero (Privazione della libertà a scopo d'assistenza), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/31_31_31/de",
+      "sha": "a21f2cfeb762f41829b926631c828f706eb3cff384c95ef41b19ef9a434b6ca2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/__375",
+      "dateDocument": "1980-04-29",
+      "titelIt": "Codice civile svizzero (Privazione della libertà a scopo d'assistenza), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/__375/de",
+      "sha": "a5dbe0ab7aa2166f4c898d17c674e84797b39612b299fc9f37343fa49fe67e87"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/237_237_237",
+      "dateDocument": "1976-06-25",
+      "roFundstelle": "AS 1977 237",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Kindesverhältnis), Änderung",
+      "titelFr": "Code civil suisse (Filiation), Modification",
+      "titelIt": "Codice civile svizzero (Filiazione), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/237_237_237/de",
+      "sha": "28d02ed7deb0d653c7886c85746eac3bd0d0d2bdc1f3a152e68b33687e672fd2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/2819_2873_2653",
+      "dateDocument": "1972-06-30",
+      "roFundstelle": "AS 1972 2819",
+      "titelDe": "Bundesgesetz vom 30. Juni 1972 über die Änderung des Schweizerischen Zivilgesetzbuches (Adoption und Art. 321)",
+      "titelFr": "Loi fédérale du 30 juin 1972 modifiant le code civil suisse (Adoption et art. 321)",
+      "titelIt": "Legge federale del 30 giugno 1972 che modifica il Codice civile svizzero (Adozione e art. 321)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/2819_2873_2653/de",
+      "sha": "1f24197c6c2e14c4d627eddf163dfe18aa276b3779ea42f3b7b6f000c13d9394"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/92__",
+      "dateDocument": "1973-01-08",
+      "roFundstelle": "AS 1973 92",
+      "titelDe": "Bundesgesetz über die Änderung des Schweizerischen Zivilgesetzbuches, Berichtigung",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/92__/de",
+      "sha": "9e593b47650454f2667d317eddf0500bfeda17551793113ec05d21a1a53a1772"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/__642",
+      "dateDocument": "1973-04-16",
+      "titelIt": "Legge federale che modifica Codice civile svizzero (Adozione e art. 321), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/__642/de",
+      "sha": "55cd1ef463f981fe46a9fe444cd8067971ef25580e8fa3e3662539858b64c877"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/93_93_99",
+      "dateDocument": "1972-10-06",
+      "roFundstelle": "AS 1973 93",
+      "titelDe": "Bundesgesetz vom 6. Oktober 1972 über Änderungen des bäuerlichen Zivilrechtes",
+      "titelFr": "Loi fédérale du 6 octobre 1972 modifiant le droit civil rural",
+      "titelIt": "Legge federale del 6 ottobre 1972 che modifica il diritto civile rurale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/93_93_99/de",
+      "sha": "af4d2ab00194cb64cdc70353edd1a76e0d97138e174f47ce782e2caa9f3f24ef"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/1465_1461_1461",
+      "dateDocument": "1971-06-25",
+      "roFundstelle": "AS 1971 1465",
+      "titelDe": "Bundesgesetz vom 25. Juni 1971 über die Revision des Zehnten Titels und des Zehnten Titelsbis des Obligationenrechts (Der Arbeitsvertrag)",
+      "titelFr": "Loi fédérale du 25 juin 1971 revisant les titres dixième et dixièmebis du code des obligations (Du contrat de travail)",
+      "titelIt": "Legge federale del 25 giugno 1971 sulla revisione dei titoli decimo e decimobis del Codice delle obbligazioni (Contratto di lavoro)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/1465_1461_1461/de",
+      "sha": "3af2682210bd729060af6e195f8dec10419579d24e6e081a91e51ff8fb599045"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1965-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1965/445_449_443",
+      "dateDocument": "1965-03-19",
+      "roFundstelle": "AS 1965 445",
+      "titelDe": "Bundesgesetz über die Änderung der Vorschriften des Zivilgesetzbuches und des Obligationenrechtes betreffend das Baurecht und den Grundstückverkehr",
+      "titelFr": "Loi fédérale revisant les dispositions du code civil et du code des obligations sur le droit de superficie et le transfert des immeubles",
+      "titelIt": "Legge federale che modifica le disposizioni del Codice civile e del Codice delle obbligazioni concernenti il diritto di superficie e il trasferimento di fondi",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1965/445_449_443/de",
+      "sha": "a8de947cce7629688e636828a5a028eff317d55215836442206e35306792eae6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1965-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1964/993_989_1009",
+      "dateDocument": "1963-12-19",
+      "roFundstelle": "AS 1964 993",
+      "titelDe": "Bundesgesetz über die Änderung des Vierten Teils des Zivilgesetzbuches (Miteigentum und Stockwerkeigentum)",
+      "titelFr": "Loi fédérale modifiant le livre quatrième du code civil (Copropriété et propriété par étages)",
+      "titelIt": "Legge federale che modifica il libro quarto del Codice civile svizzero (Coproprietà e proprietà per piani)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1964/993_989_1009/de",
+      "sha": "ae64d5c3d94bfc7f014b9a54942b50c5a25925baf9b3ddeb3f96d9cb2bcd5113"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1958-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1958/379_389_393",
+      "dateDocument": "1958-03-21",
+      "roFundstelle": "AS 1958 379",
+      "titelDe": "Bundesgesetz vom 21. März 1958 betreffend Ergänzung des Dienstvertrags- und des Stiftungsrechts (Wohlfahrtseinrichtungen für das Personal)",
+      "titelFr": "Loi fédérale du 21 mars 1958 complétant les dispositions applicables aux contrats de travail et aux fondations (institutions de prévoyance en faveur du personnel)",
+      "titelIt": "Legge federale del 21 marzo 1958 che completa le disposizioni applicabili al contratto di lavoro e alle fondazioni (Istituzioi di previdenza a favore del lavoratore)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1958/379_389_393/de",
+      "sha": "35d60f5f19cfeea9f48ee48066365ffd272e92d795407a3ab063b39641b3032c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1954-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1953/1073_1095_1133",
+      "dateDocument": "1951-10-03",
+      "roFundstelle": "AS 1953 1073",
+      "titelDe": "Bundesgesetz vom 3. Oktober 1951 über die Förderung der Landwirtschaft und die Erhaltung des Bauernstandes (Landwirtschaftsgesetz)",
+      "titelFr": "Loi fédérale du 3 octobre 1951 sur l'amélioration de l'agriculture et le maintien de la population paysanne (Loi sur l'agriculture)",
+      "titelIt": "Legge federale del 3 ottobre 1951concernente il promovimento dell'agricoltura e la conservazione del ceto rurale (Legge sull'agricoltura)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1953/1073_1095_1133/de",
+      "sha": "282a9f73ecb92b2af82100633e5d2699da5851247e97265a7c0b8266f9a9cc81"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1953-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1952/1087_1115_1119",
+      "dateDocument": "1952-09-29",
+      "roFundstelle": "AS 1952 1087",
+      "titelDe": "Bundesgesetz vom 29. September 1952 über Erwerb und Verlust des Schweizer Bürgerrechts (Bürgerrechtsgesetz, BüG)",
+      "titelFr": "Loi fédérale du 29 septembre 1952 sur l'acquisition et la perte de la nationalité suisse (Loi sur la nationalité, LN)",
+      "titelIt": "Legge federale del 29 settembre 1952 su l'acquisto e la perdita della cittadinanza svizzera (Legge sulla cittadinanza, LCit)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1952/1087_1115_1119/de",
+      "sha": "9bdcf3a8771fab755303ec8c9d05248254473da40eff1e4a156b4e5db5953f75"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1953-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1952/403_415_419",
+      "dateDocument": "1951-06-12",
+      "roFundstelle": "AS 1952 403",
+      "titelDe": "Bundesgesetz vom 12. Juni 1951 über die Erhaltung des bäuerlichen Grundbesitzes",
+      "titelFr": "Loi fédérale du 12 juin 1951 sur le maintien de la propriété foncière rurale",
+      "titelIt": "Legge federale del 12 giugno 1951 sulla conservazione della proprietà fondiaria agricola",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1952/403_415_419/de",
+      "sha": "612a929b6c9fbaf5470e0236d93e6ec59186ad4b4ba10e0c227cadbf8ec85bad"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1952-02-22",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1952/205_206_211",
+      "dateDocument": "1952-02-22",
+      "roFundstelle": "AS 1952 205",
+      "titelDe": "Bundesratsbeschluss betreffend Aufhebung des Bundesratsbeschlusses über die Abänderung des schweizerischen Zivilgesetzbuches in bezug auf den Umfang der Sicherung im Grundpfandrecht (Art. 818)",
+      "titelFr": "Arrêté du Conseil fédéral abrogeant celui qui modifie le code civil suisse quant à l'étendue de la garantie immobilière (art. 818)",
+      "titelIt": "Decreto del Consiglio federale che abroga quello che modifica il Codice civile svizzero per quanto concerne l'estensione della garanzia nel pegno immobiliare (art. 818)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1952/205_206_211/de",
+      "sha": "1717a7e285b9b39cae2271739a3a537e3af06e18fe98a07ac5ea5d9dd33cf57f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1947-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/62/29_29_45",
+      "dateDocument": "1940-12-12",
+      "roFundstelle": "AS 62 29",
+      "titelDe": "Bundesgesetz über die Entschuldung landwirtschaftlicher Heimwesen",
+      "titelFr": "Loi fédérale sur le désendettement de domaines agricoles",
+      "titelIt": "Legge federale sullo sdebitamento di poderi agricoli",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/62/29_29_45/de",
+      "sha": "fdf2ae1ce18bd72d3ec7da283fc95b528f97c5eeddb64c95d6fe5fe9b5afc4a1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1935-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/51/117_121_129",
+      "dateDocument": "1934-11-08",
+      "roFundstelle": "AS 51 117",
+      "titelDe": "Bundesgesetz vom 8. November 1934 über die Banken und Sparkassen (Bankengesetz, BankG)",
+      "titelFr": "Loi fédérale du 8 novembre 1934 sur les banques et les caisses d'épargne (Loi sur les banques, LB)",
+      "titelIt": "Legge federale dell'8 novembre 1934 sulle banche e le casse di risparmio (Legge sulle banche, LBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/51/117_121_129/de",
+      "sha": "9b0fe2fa259216284fd322caf86b4f2ee68bb312cdddc9651b4ffec47edd13cc"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1931-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/47/109_113_57",
+      "dateDocument": "1930-06-25",
+      "roFundstelle": "AS 47 109",
+      "titelDe": "Pfandbriefgesetz vom 25. Juni 1930 (PfG)",
+      "titelFr": "Loi du 25 juin 1930 sur l'émission de lettres de gage (LLG)",
+      "titelIt": "Legge del 25 giugno 1930 sulle obbligazioni fondiarie (LOF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/47/109_113_57/de",
+      "sha": "7138db5b780c83b2d29df6d5e3a6bd976aba5c0ed69f2991cae052ee3937077c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1920-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/36/309_317_334",
+      "dateDocument": "1920-06-07",
+      "roFundstelle": "AS 36 309",
+      "titelDe": "Bundesratsbeschluss betreffend die Abänderung des schweizerischen Zivilgesetzbuches vom 10. Dez. 1907 in bezug auf den Umfang der Sicherung im Grundpfandrecht (Art. 818)",
+      "titelFr": "Arrêté du Conseil fédéral modifiant le code civil suisse quant à l'étendue de la garantie immobilière (art. 818)",
+      "titelIt": "Decreto del Consiglio federale che modifica il Codice civile svizzero del 10 dic. 1907 per quanto concerne l'estensione della garanzia nel pegno immobiliare (art. 818)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/36/309_317_334/de",
+      "sha": "311f505c37d5471c85f9ba5bedea81161ef293241363fc955e4524ed6780c58e"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1912-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/24/233_245_233",
-      "dateDocument": "1907-12-10",
-      "roFundstelle": "AS 24 233",
-      "titelDe": "Schweizerisches Zivilgesetzbuch vom 10. Dezember 1907",
-      "titelFr": "Code civil suisse du 10 décembre 1907",
-      "titelIt": "Codice civile svizzero del 10 dicembre 1907",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/24/233_245_233/de",
-      "sha": "7816624cb5380f010108eda078c0b020874c83b6c2d6d51129e0b72c73d6caf6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/27/317_321_377",
+      "dateDocument": "1911-03-30",
+      "roFundstelle": "AS 27 317",
+      "titelDe": "Bundesgesetz vom 30. März 1911 betreffend die Ergänzung des Schweizerischen Zivilgesetzbuches (Fünfter Teil: Obligationenrecht)",
+      "titelFr": "Loi fédérale du 30 mars 1911 complétant le Code civil suisse (Livre cinquième: Droit des obligations)",
+      "titelIt": "Legge federale del 30 marzo 1911 di complemento del Codice civile svizzero (Libro quinto: Diritto delle obbligazioni)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/27/317_321_377/de",
+      "sha": "4d398beb1b999406855a4f86ca82b095850e8154c67e0e2cd15db224ea56e110"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1911-04-19",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/27/207_200_263",
+      "dateDocument": "1911-04-07",
+      "roFundstelle": "AS 27 207",
+      "titelDe": "Bundesratsbeschluss betreffend Berichtigung von zwei Korrekturfehlern im deutschen Texte des schweizerischen Zivilgesetzbuches vom 10. Dezember 1907",
+      "titelFr": "Code civil suisse, Erratum",
+      "titelIt": "Codice civile svizzero, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/27/207_200_263/de",
+      "sha": "ed3a8aa1bd89e875d516bd2f2c1b9f584684e0be20c84daaf2d370b000269acc"
     }
   ],
-  "sha": "d201bb0c5c246a64a3bd9a7f38c29fc0e995768fa6375d74442a6df2d32a5a2e"
+  "sha": "0bd1b65034ae441b6323815ded129c8e87c6119c6aec717bf69b9efb0fe9b340"
 }

@@ -1,22 +1,69 @@
 {
   "erlassKey": "KVG",
   "sr": "832.10",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2032-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/212",
+      "dateDocument": "2022-12-16",
+      "roFundstelle": "AS 2024 212",
+      "titelDe": "Bundesgesetz vom 16. Dezember 2022 über die Förderung der Ausbildung im Bereich der Pflege",
+      "titelFr": "Loi fédérale du 16 décembre 2022 relative à l’encouragement de la formation dans le domaine des soins infirmiers",
+      "titelIt": "Legge federale del 16 dicembre 2022 sulla promozione della formazione in cure infermieristiche",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "e4ecc8123fca4b34fd223dfee4a27db1d7ee1ca92c0ac0c8d6b42bf0e90b3252"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-07-01",
+        "2032-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/212/de",
+      "sha": "f8b30cc8598cdbd06e7527bf41886ed3d981db6f5cf97972856ca3590311e43d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2032-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/107",
+      "dateDocument": "2023-12-22",
+      "roFundstelle": "AS 2025 107",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Einheitliche Finanzierung der Leistungen)",
+      "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Financement uniforme des prestations)",
+      "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Finanziamento uniforme delle prestazioni)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "818fa366bec589b533c521b1c6dd10637ba95ea7693dfdcf614db2c575ab8c20"
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2028-01-01",
+        "2032-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/107/de",
+      "sha": "e9e022fe068e43f1cdd8f81667e2f65b8b1d3493cb5e216d36e57193106aacb5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2028-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/134",
+      "dateDocument": "2023-03-17",
+      "roFundstelle": "AS 2023 134",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Ausnahmen von der Pflicht einer dreijährigen Tätigkeit)",
+      "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Exceptions à l’obligation d’avoir exercé pendant trois ans)",
+      "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Eccezioni all’obbligo di esercitare l’attività per tre anni)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-03-18",
+        "2028-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/134/de",
+      "sha": "671ed237fb7af2099a95a5dfdc775dd00bdb255031796abef5e3cfa290f1e14c"
     },
     {
       "art": "aenderung",
@@ -28,8 +75,16 @@
       "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Financement uniforme des prestations)",
       "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Finanziamento uniforme delle prestazioni)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2028-01-01",
+        "2032-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/107/de",
-      "sha": "b6e5fc91490cfaf97346b4a7cfccef114f8f92f87abf8dc319dd2b73a9250c21"
+      "sha": "0de5e5a24a792bc9d082a32e8c9568af9bdbbaca3c18b597259234721e63f7c5"
     },
     {
       "art": "aenderung",
@@ -41,8 +96,11 @@
       "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Mesures visant à freiner la hausse des coûts, 2e volet)",
       "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Misure di contenimento dei costi – Pacchetto 2)",
       "botschaftKey": "BOTSCHAFT-2022-2427",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/294/de",
-      "sha": "cba7eeba67f4882180b7bd1bc7f662bf370aa8cd68ab4234f403bcf9b797b345"
+      "sha": "19ba01690811cc8eabd8ff9e1f43c18eb926fc65b52c39a0517e57d3b748cdf9"
     },
     {
       "art": "aenderung",
@@ -54,8 +112,11 @@
       "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Réduction des primes)",
       "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Riduzione dei premi)",
       "botschaftKey": "BOTSCHAFT-2021-2383",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/568/de",
-      "sha": "b53b30840dddd4e6a3d8ee164d55291d8dc3ac8341a090daf120620e44d1708c"
+      "sha": "57d6818c82311a05cfb01001ab156ddb75bca68333cc97e06ce007bce32efcb1"
     },
     {
       "art": "aenderung",
@@ -67,32 +128,86 @@
       "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Mesures visant à freiner la hausse des coûts – objectifs en matière de coûts)",
       "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Misure di contenimento dei costi – Definizione di obiettivi di costo)",
       "botschaftKey": "BOTSCHAFT-2021-2819",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/769/de",
-      "sha": "5bcc511fd254c6b8244bf36b9c6713c38fa7f176b30a3607e137225281fdb588"
+      "sha": "432c0b0e64cc03a0ce6be9736c6df8621e5d3360b36112a3437d0b031db93af4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "a57f418caa71cfa1b0fc84a252e14f3fb496705d34c393ec9af369291695d811"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/678",
+      "dateDocument": "2021-03-18",
+      "roFundstelle": "AS 2023 678",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Vollstreckung der Prämienzahlungspflicht)",
+      "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Exécution de l’obligation de payer les primes)",
+      "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Esecuzione dell’obbligo di pagare i premi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2025-01-01",
+        "2025-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/678/de",
+      "sha": "1d7a294365383a38dfba357e702a281dcc9bd6724ffb43593482f61ab951eda1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "5ca39d969beabae6973f8e19224622028b5acfc35153d28cf15dc469855d72b3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/678",
+      "dateDocument": "2021-03-18",
+      "roFundstelle": "AS 2023 678",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Vollstreckung der Prämienzahlungspflicht)",
+      "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Exécution de l’obligation de payer les primes)",
+      "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Esecuzione dell’obbligo di pagare i premi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2025-01-01",
+        "2025-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/678/de",
+      "sha": "4dbf2f2b3a96a9c4bc042a0a651b3de14220ebc8b7f6f3517f9922f515035d9f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "6f9599fa039474869cbda8f87f03cbfcc7167e42b52ff64c44d03a06b0ba68ab"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/458",
+      "dateDocument": "2024-03-15",
+      "roFundstelle": "AS 2024 458",
+      "titelDe": "Bundesgesetz über das elektronische Patientendossier (EPDG) (Übergangsfinanzierung, Einwilligung und Zugriff auf Abfragedienste)",
+      "titelFr": "Loi fédérale sur le dossier électronique du patient (LDEP) (Financement transitoire, consentement et accès aux services de recherche de données)",
+      "titelIt": "Legge federale sulla cartella informatizzata del paziente (LCIP) (Finanziamento transitorio, consenso e accesso ai servizi di ricerca di dati)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/458/de",
+      "sha": "f7c28f88eb2d8f1990b893f7af5afbc0a47ce9cbc85fd80e6869542eed572402"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "0a5c2e1dde0290176d945306e81191e37755796d26736bc691f275be1b780c19"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/212",
+      "dateDocument": "2022-12-16",
+      "roFundstelle": "AS 2024 212",
+      "titelDe": "Bundesgesetz vom 16. Dezember 2022 über die Förderung der Ausbildung im Bereich der Pflege",
+      "titelFr": "Loi fédérale du 16 décembre 2022 relative à l’encouragement de la formation dans le domaine des soins infirmiers",
+      "titelIt": "Legge federale del 16 dicembre 2022 sulla promozione della formazione in cure infermieristiche",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-07-01",
+        "2032-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/212/de",
+      "sha": "5f960272aa6aef32951d714ac089b161bd017cb09a67cff5ece4d99c65fecd4c"
     },
     {
       "art": "aenderung",
@@ -104,8 +219,11 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en œuvre de la convention sur la coordination de la sécurité sociale entre la Suisse et le Royaume-Uni",
       "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione sul coordinamento della sicurezza sociale tra la Svizzera e il Regno Unito",
       "botschaftKey": "BOTSCHAFT-2022-1180",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/74/de",
-      "sha": "27c8470d869a1ccf9e8d3af902ac40c87c5fdbdfb36df4e23ea8c6d0738bf5e0"
+      "sha": "5c715145a071218c3ff17bc48c48d6ffd0e3c3116c8112fb2ebdac9d22625f7e"
     },
     {
       "art": "aenderung",
@@ -117,8 +235,11 @@
       "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Mesures visant à freiner la hausse des coûts, volet 1b)",
       "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Misure di contenimento dei costi – Pacchetto 1b)",
       "botschaftKey": "BOTSCHAFT-2019-2216",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/630/de",
-      "sha": "2b42637a7ed5132f2e1bd178e5d8d95459a0ecec06f5fd16955a60517094962f"
+      "sha": "ca3058631b5e8247630cceaf37f6a218ed59767a81927ec8a54cfa471cc263a6"
     },
     {
       "art": "aenderung",
@@ -129,14 +250,32 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Vollstreckung der Prämienzahlungspflicht)",
       "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Exécution de l’obligation de payer les primes)",
       "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Esecuzione dell’obbligo di pagare i premi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2025-01-01",
+        "2025-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/678/de",
-      "sha": "8b6492da3953d7bec91e5db0d1bd6cabff7bc91d2fb4343257694044f6eebc5a"
+      "sha": "f9dc20b35ba25ce66f7c3a7f4b725ad0e9cd07ede0000d18483364e86bba091b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "a4f4bf9f63d7920926a127b772bbc7f5d532d9524f934b72dabb6f29739be8a5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
       "art": "aenderung",
@@ -147,8 +286,35 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Ausnahmen von der Pflicht einer dreijährigen Tätigkeit)",
       "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Exceptions à l’obligation d’avoir exercé pendant trois ans)",
       "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Eccezioni all’obbligo di esercitare l’attività per tre anni)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-03-18",
+        "2028-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/134/de",
-      "sha": "46ccdb77070ab12c0a5554a40339b89d4166fd20c56c5f84e6203aa3cf8bc7d3"
+      "sha": "58865f617ff9cb4d477d37a6625f151b48e7e4abcea1927751ddc4dae33db3ba"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/837",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 837",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Massnahmen zur Kostendämpfung – Paket 1a)",
+      "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Mesures visant à freiner la hausse des coûts, volet 1a)",
+      "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Misure di contenimento dei costi – Pacchetto 1a)",
+      "botschaftKey": "BOTSCHAFT-2019-2216",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2023-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/837/de",
+      "sha": "19e567abc245d6200068f72452a7b32621161c31b1e1ecfc5d424be65cecb665"
     },
     {
       "art": "aenderung",
@@ -159,8 +325,11 @@
       "titelDe": "Bundesgesetz über die Datenweitergabe der Versicherer in der obligatorischen Krankenpflegeversicherung",
       "titelFr": "Loi fédérale sur la transmission de données des assureurs dans l’assurance obligatoire des soins",
       "titelIt": "Legge federale sulla trasmissione di dati degli assicuratori nell’assicurazione obbligatoria delle cure medico-sanitarie",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/731/de",
-      "sha": "9ccf7c08653b8a36c408cbc3b5175b495eea3750f9d8743a4385ea8276d3320f"
+      "sha": "10d552b63dc14d961330b566b506e04a4c30818755d77ceff7ce410284dd54de"
     },
     {
       "art": "aenderung",
@@ -171,8 +340,63 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 18. Juni 2021 des Bundesgesetzes über die Krankenversicherung",
       "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 18 juin 2021 de la loi fédérale sur l’assurance-maladie",
       "titelIt": "Ordinanza concernente l’entrata in vigore integrale della modifica del 18 giugno 2021 della legge federale sull’assicurazione malattie",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/808/de",
-      "sha": "022df130a800c3a99e02ea4f058a5fbd33ba435577180d4feeb70ae4c1ac248b"
+      "sha": "66b13f4e20020f4c96986ae8f9be70c9427f30499900ae67feed766caf62bca9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/413",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2021 413",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Zulassung von Leistungserbringern)",
+      "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Admission des fournisseurs de prestations)",
+      "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Autorizzazione dei fornitori di prestazioni)",
+      "botschaftKey": "BOTSCHAFT-2018-1205",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-07-01",
+        "2022-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/413/de",
+      "sha": "0e47c2e0a8834c707a63f1d7f7150a29c00775d2d190eec7a7292642ac82ba22"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/705",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2021 705",
+      "titelDe": "Bundesgesetz über die Invalidenversicherung (IVG) (Weiterentwicklung der IV)",
+      "titelFr": "Loi fédérale sur l’assurance-invalidité (LAI) (Développement continu de l’AI)",
+      "titelIt": "Legge federale su l’assicurazione per l’invalidità (LAI) (Ulteriore sviluppo dell’AI)",
+      "botschaftKey": "BOTSCHAFT-2017-544",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/705/de",
+      "sha": "2f6f56193c31d9d9bf2c16450e3eddd8e69c98fa43bdfe6c9444e15154a7338b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 758",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)",
+      "botschaftKey": "BOTSCHAFT-2019-2681",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "sha": "d143bea67843dc3613920d57cf6420b9b1a8a774515b3b3b47dcf6e8767e65f3"
     },
     {
       "art": "aenderung",
@@ -184,8 +408,15 @@
       "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Mesures visant à freiner la hausse des coûts, volet 1a)",
       "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Misure di contenimento dei costi – Pacchetto 1a)",
       "botschaftKey": "BOTSCHAFT-2019-2216",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-01-01",
+        "2023-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/837/de",
-      "sha": "6d079b0d03bd4f1a6453faad8b75ceb54b49765864a392051ae33cb60d2a0d59"
+      "sha": "d5b60277401e01e476fcc9055a1c30752ff17b6e8dccc3ac5427009e56efb290"
     },
     {
       "art": "aenderung",
@@ -197,8 +428,30 @@
       "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Rémunération du matériel de soins)",
       "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Rimunerazione del materiale sanitario)",
       "botschaftKey": "BOTSCHAFT-2020-1157",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/345/de",
-      "sha": "1e22ce3c4647eb5def681d585bb933e76523abf82c440bffee33113906d66450"
+      "sha": "d7c73e518b9f9e6a821888582fac4ea8eb882f80236d780a01580d3cc4d239d3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/226",
+      "dateDocument": "2018-12-14",
+      "roFundstelle": "AS 2019 1211",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Befristete Verlängerung der Zulassungsbeschränkung nach Artikel 55a KVG)",
+      "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Prolongation pour une durée déterminée de la limitation de l'admission à pratiquer définie à l'art. 55a LAMal)",
+      "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Proroga a tempo determinato della limitazione dell'autorizzazione a esercitare di cui all'articolo 55a LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-07-01",
+        "2021-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/226/de",
+      "sha": "a7bf30ff6635780f901911dbb85ba1757f047675bdb7e2fca3230ed5dbedfd92"
     },
     {
       "art": "aenderung",
@@ -210,8 +463,15 @@
       "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Admission des fournisseurs de prestations)",
       "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Autorizzazione dei fornitori di prestazioni)",
       "botschaftKey": "BOTSCHAFT-2018-1205",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-07-01",
+        "2022-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/413/de",
-      "sha": "a036021aaca039ca896a962b206a5b1147c6d4a2fe46cc55cea18c0b416f57be"
+      "sha": "71e1b57e3d6e9c87c475a7aaac7026d2dc96c0da8d31c685d2f78a46afad84c4"
     },
     {
       "art": "aenderung",
@@ -223,20 +483,61 @@
       "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Renforcement de la qualité et de l’économicité)",
       "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Rafforzamento della qualità e dell’economicità)",
       "botschaftKey": "BOTSCHAFT-2016-65",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/151/de",
-      "sha": "d922f6455f727cbb4a3af2bdd58da1a47fbd721dca13519e8a105201e202bf3c"
+      "sha": "615775efab42e16d24ff377207370ed188038b022b8608c21fb0c741868d5dc7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "9f2e860747da3bcd738b408d355e43125a49c7f435fa75e575874adb0c9c9e03"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/892",
+      "dateDocument": "2019-06-21",
+      "roFundstelle": "AS 2020 5137",
+      "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+      "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
+      "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)",
+      "botschaftKey": "BOTSCHAFT-2018-671",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/892/de",
+      "sha": "38cbac33c69962fff073dc6eec2959b44b5f08600c33cc650d52c19bbe769505"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "c4ef7ba3b2baca87dd725a448d42d2ce28bffdc7d58ae583d77d3fbdec3c2bca"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/272",
+      "dateDocument": "2019-04-10",
+      "roFundstelle": "AS 2019 1393",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 18. März 2016 des Heilmittelgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur les produits thérapeutiques",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 18 marzo 2016 della legge sugli agenti terapeutici",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/272/de",
+      "sha": "5c89aa18018b47e2b1ae6903d2476ea645d1cf270f7191c54dd8b804869224dc"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/361",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2016 2265",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
+      "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
+      "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-07-01",
+        "2019-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/361/de",
+      "sha": "4e3e1e1edc19f1d173f14da923ee752c55f64ddddcc35a70d5806461b4745b52"
     },
     {
       "art": "aenderung",
@@ -247,8 +548,35 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Befristete Verlängerung der Zulassungsbeschränkung nach Artikel 55a KVG)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Prolongation pour une durée déterminée de la limitation de l'admission à pratiquer définie à l'art. 55a LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Proroga a tempo determinato della limitazione dell'autorizzazione a esercitare di cui all'articolo 55a LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-07-01",
+        "2021-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/226/de",
-      "sha": "e42ee3f8bb9d37053aa26e31b11e5a7bb86088929f62fa4aef85feb1cbf10a7e"
+      "sha": "55fac199b5f2bb739c1a86f4b718dad2cbf82d0c6e5e7d34930a91e906f59888"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/748",
+      "dateDocument": "2016-09-30",
+      "roFundstelle": "AS 2017 6717",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Anpassung von Bestimmungen mit internationalem Bezug)",
+      "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Adaptation de dispositions à caractère international)",
+      "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Adeguamento delle disposizioni con pertinenza internazionale)",
+      "botschaftKey": "BOTSCHAFT-2016-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2019-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/748/de",
+      "sha": "16bf0251ce8d8296aa125d2270a44c0e6a20dd8373c1d0d5b1689bc1f132ab73"
     },
     {
       "art": "aenderung",
@@ -259,8 +587,12 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/276/de",
-      "sha": "887454cba2129a14b41c08732829d78dd262e0c863ab111b6a8d12f1cd11a9e5"
+      "sha": "df70cee96c2f86586e4fd3027de7bca85084ee075c5298802a768e0533296b89"
     },
     {
       "art": "aenderung",
@@ -271,8 +603,47 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/457/de",
-      "sha": "10851a26d3ce5a065cfdc47cd75a8c9fe2a9ff09260c1985061f6c8be84d1549"
+      "sha": "2e268770124c9271d2e2b91c0a2e9385e2e1a31a2e5923fd6c6805ea7ffca019"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/431",
+      "dateDocument": "2014-03-21",
+      "roFundstelle": "AS 2014 2463",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Prämienkorrektur)",
+      "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Correction des primes)",
+      "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Correzione dei premi)",
+      "botschaftKey": "BOTSCHAFT-2012-350",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2018-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/431/de",
+      "sha": "a3b5d17e4b3c77fea2aac8ca9aa20fc09c1baf7b2dacc3b7184300697d38d305"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/280",
+      "dateDocument": "2016-03-18",
+      "roFundstelle": "AS 2017 2745",
+      "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
+      "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
+      "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "botschaftKey": "BOTSCHAFT-2013-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/280/de",
+      "sha": "ea4787803f69be76c30c1a2a24d5407559e593f3b171f21b66df76a71faa9623"
     },
     {
       "art": "aenderung",
@@ -284,26 +655,60 @@
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Adaptation de dispositions à caractère international)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Adeguamento delle disposizioni con pertinenza internazionale)",
       "botschaftKey": "BOTSCHAFT-2016-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2019-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/748/de",
-      "sha": "de18f0140f57d15cc7250b9503e8619b71780f095109cf7b60196a3a319d28fe"
+      "sha": "1f30e73f3d4b2c09b467e94d1e40bfc599ebba43b6cb42c298b420d5f8aac752"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-11-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "f3b49d39620a8c0887b041ead6a3d10a83a81ada665b6c9278407e58f69b2b99"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/607",
+      "dateDocument": "2017-10-18",
+      "roFundstelle": "AS 2017 5629",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 19. Juni 2015 des Transplantationsgesetzes",
+      "titelFr": "Ordonnance sur l'entrée en vigueur définitive de la modification du 19 juin 2015 de la loi sur la transplantation",
+      "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 19 giugno 2015 della legge sui trapianti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/607/de",
+      "sha": "4064e7874124990d9d889b2875c974d6ae778de405303350fd8d59e4d9fa4bc7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "26b600e6d65ab59e3e3165f8c65bebd97a3ff788cf546db924b1cfe9aaa56932"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2017 4095",
+      "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG)",
+      "titelFr": "Loi fédérale sur le renseignement (LRens)",
+      "titelIt": "Legge federale sulle attività informative (LAIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/494/de",
+      "sha": "203aa9b6f92a450dd04dddb9144f4d3490ab38dfa1ab0e6274c5bd1d0cc77027"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-04-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "0c925f389fd95e00be4f907d3db75a3df784e71f36cf106cb094ea9a6d925866"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/203",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2017 2201",
+      "titelDe": "Bundesgesetz über das elektronische Patientendossier (EPDG)",
+      "titelFr": "Loi fédérale sur le dossier électronique du patient (LDEP)",
+      "titelIt": "Legge federale sulla cartella informatizzata del paziente (LCIP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/203/de",
+      "sha": "34744f97d401f6ed6087f127efc340f49a68d655fb1067c9ba507002a9f7cf13"
     },
     {
       "art": "aenderung",
@@ -314,8 +719,48 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/580/de",
-      "sha": "aad804fe876f441c4db930338683b24d8d8cefab33567db5c8abf3e51053f0e4"
+      "sha": "ec4e74d958cece2a94a1d22edae5a100cd67c63fad6afce347eebff861cc1f6e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/828",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2016 5233",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Protokolls zum Freizügigkeitsabkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits betreffend die Ausdehnung auf die Republik Kroatien",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'accord sur la libre circulation des personnes entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, concernant l'extension à la République de Croatie",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Croazia dell'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-2016-467",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/828/de",
+      "sha": "bb90556bcbac556ce4680f1e92fa83291e88f8600accc1894dc289b9650c8aa5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/428",
+      "dateDocument": "2013-06-21",
+      "roFundstelle": "AS 2013 2065",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Vorübergehende Wiedereinführung der bedarfsabhängigen Zulassung)",
+      "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Réintroduction temporaire de l'admission selon le besoin)",
+      "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Reintroduzione temporanea dell'autorizzazione secondo il bisogno)",
+      "botschaftKey": "BOTSCHAFT-2012-1750",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-07-01",
+        "2016-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/428/de",
+      "sha": "fa3facc78eebf833602b58588f131cf30394fccda3e4467f1ddba527d2b05b75"
     },
     {
       "art": "aenderung",
@@ -326,14 +771,64 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-07-01",
+        "2019-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/361/de",
-      "sha": "6b909673f5ec2c57361fbefbac07ae99c35a4b997eda59abdca68d5bde1c9de9"
+      "sha": "20b6a539eb02760a934e9ebef44b6cbf78b47f0db0d5e8b777922282fc059bc4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2016-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/217",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2016 1163",
+      "titelDe": "Bundesgesetz über die Transplantation von Organen, Geweben und Zellen (Transplantationsgesetz)",
+      "titelFr": "Loi fédérale sur la transplantation d'organes, de tissus et de cellules (Loi sur la transplantation)",
+      "titelIt": "Legge federale sul trapianto di organi, tessuti e cellule (Legge sui trapianti)",
+      "botschaftKey": "BOTSCHAFT-2013-414",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/217/de",
+      "sha": "35f1cf1f6e27bf28501419679e1fc5ad92bfe36080c036c25aa939cde130fd4d"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "f4fc3fba64ee635d5f598fa7124b9782d1abf422d469eea615fe24e6f4d79cd4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/297",
+      "dateDocument": "2012-09-28",
+      "roFundstelle": "AS 2015 1435",
+      "titelDe": "Bundesgesetz über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemiengesetz, EpG)",
+      "titelFr": "Loi fédérale sur la lutte contre les maladies transmissibles de l'homme (Loi sur les épidémies, LEp)",
+      "titelIt": "Legge federale sulla lotta contro le malattie trasmissibili dell'essere umano (Legge sulle epidemie, LEp)",
+      "botschaftKey": "BOTSCHAFT-2011-43",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/297/de",
+      "sha": "e5fe9930cd442f137b7ad485259fbe406b3517c842dc7db5fa749e9028e726e9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/839",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 5137",
+      "titelDe": "Bundesgesetz betreffend die Aufsicht über die soziale Krankenversicherung (Krankenversicherungsaufsichtsgesetz, KVAG)",
+      "titelFr": "Loi fédérale sur la surveillance de l'assurance-maladie sociale (Loi sur la surveillance de l'assurance-maladie, LSAMal)",
+      "titelIt": "Legge federale concernente la vigilanza sull'assicurazione sociale contro le malattie (Legge sulla vigilanza sull'assicurazione malattie, LVAMal)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/839/de",
+      "sha": "f70f796046296f75e1a4868e368279d07f724315a3a5cce29fc77e1efc5cfd5f"
     },
     {
       "art": "aenderung",
@@ -345,8 +840,15 @@
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Correction des primes)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Correzione dei premi)",
       "botschaftKey": "BOTSCHAFT-2012-350",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-01-01",
+        "2018-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/431/de",
-      "sha": "810ab83c82d55d3f76c5732297b698a937efeb5115b5d69e93353f96a3885ac3"
+      "sha": "1285c6d6b5deb710101723eac5b555ab104a39f04dd872315c6d35c80dff6f8c"
     },
     {
       "art": "aenderung",
@@ -357,8 +859,11 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/56/de",
-      "sha": "f97f6d4530fce1663f9c6d6eb50d7092391b50c6bf3dbf2c11f9ae9234dcab34"
+      "sha": "81260cf315815b47be95f70a868e89241eea3780ce6bef2b40a5b4b011506744"
     },
     {
       "art": "aenderung",
@@ -370,8 +875,31 @@
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Réintroduction temporaire de l'admission selon le besoin)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Reintroduzione temporanea dell'autorizzazione secondo il bisogno)",
       "botschaftKey": "BOTSCHAFT-2012-1750",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-07-01",
+        "2016-07-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/428/de",
-      "sha": "aea10f5b0e769844310d821effb3e5a77b8d96f2b2522b70d1751ce39047a58b"
+      "sha": "bc6f7ca6de8e9a49e65de949218d5eafba624169fb4e89fe582884c985ef374e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
       "art": "aenderung",
@@ -382,8 +910,11 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/472/de",
-      "sha": "9c01e14ef15938ec11967927597eb4315c5500f16ea9b6664170f3aa0aaf95c5"
+      "sha": "bcb3d984305b165c7a02a20e5cb8bfaf777a93cc6aac5da9e0a6c0a4df12b0ce"
     },
     {
       "art": "aenderung",
@@ -394,14 +925,46 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/473/de",
-      "sha": "1b9d76ffd5645a744eb43eb7b48aeedef570e9ec2e02a6e7db34bd2bcc1a1b87"
+      "sha": "940d1b7e09faba92660d1758c3309595270dc08760a9021d881f4c38585d1bd2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-07-16",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "16c479a597cb5bcc4d3362c283bda693dad0812544e323f90627776f864722e4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/428",
+      "dateDocument": "2011-12-23",
+      "roFundstelle": "AS 2012 3745",
+      "titelDe": "Bundesgesetz über Massnahmen zur Wahrung der inneren Sicherheit (BWIS)",
+      "titelFr": "Loi fédérale instituant des mesures visant au maintien de la sûreté intérieure (LMSI)",
+      "titelIt": "Legge federale sulle misure per la salvaguardia della sicurezza interna (LMSI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/428/de",
+      "sha": "2ce11e260eb2d12b647a45959b5c3265d6ca04a31ee39e6e12a6bb5601a6d2e3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/559",
+      "dateDocument": "2007-12-21",
+      "roFundstelle": "AS 2009 4755",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Risikoausgleich)",
+      "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Compensation des risques)",
+      "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Compensazione dei rischi)",
+      "botschaftKey": "BOTSCHAFT-2004-1024",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-01-01",
+        "2012-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/559/de",
+      "sha": "80e53faad2777c76a8e635c91e61935e057d9e01cfd4f205a9960d3263d3dd4b"
     },
     {
       "art": "aenderung",
@@ -412,8 +975,32 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/476/de",
-      "sha": "60f33038127818aa98b5aad3f85182b9e467f09dba5d4a50edf2145183ef104b"
+      "sha": "d39c9b5edd5224b45dbb708d545cea98e7b43419bc24ddceefa148ad28c651c6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/432",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2009 3517",
+      "titelDe": "Bundesgesetz über die Neuordnung der Pflegefinanzierung",
+      "titelFr": "Loi fédérale sur le nouveau régime de financement des soins",
+      "titelIt": "Legge federale concernente il nuovo ordinamento del finanziamento delle cure",
+      "botschaftKey": "BOTSCHAFT-2005-237",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2010-07-01",
+        "2011-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/432/de",
+      "sha": "8b367310ca4468bc42920a3b310204db032e50fdd2099658f4d4864f163ac19e"
     },
     {
       "art": "aenderung",
@@ -425,14 +1012,55 @@
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Compensation des risques)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Compensazione dei rischi)",
       "botschaftKey": "BOTSCHAFT-2004-1024",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2011-01-01",
+        "2012-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/559/de",
-      "sha": "ff9bd18e9a5237d6533c3b0c03689d5b188e3b4af7691b9a613f264b83410449"
+      "sha": "5e6e00fa1af2b6702edddb0e500dd5d1e20a0c46d1beffb35df3bcf554e0c279"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/836",
+      "dateDocument": "2009-12-04",
+      "roFundstelle": "AS 2009 6847",
+      "titelDe": "Verordnung über die Änderung des Zeitpunkts des Inkrafttretens der Neuordnung der Pflegefinanzierung",
+      "titelFr": "Ordonnance sur la modification de la date d'entrée en vigueur du nouveau régime de financement des soins",
+      "titelIt": "Ordinanza sulla modifica della data dell'entrata in vigore del nuovo ordinamento del finanziamento delle cure",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2010-01-01",
+        "2011-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/836/de",
+      "sha": "9ec0b3e507a2e79825c0e3642476132c4950b46050514796dc16c95788c6f3a2"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2010-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "b47834a26fcf14b2697f10cc2a58c870fa5b88e46577efcfcbda4ef8633383e2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/432",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2009 3517",
+      "titelDe": "Bundesgesetz über die Neuordnung der Pflegefinanzierung",
+      "titelFr": "Loi fédérale sur le nouveau régime de financement des soins",
+      "titelIt": "Legge federale concernente il nuovo ordinamento del finanziamento delle cure",
+      "botschaftKey": "BOTSCHAFT-2005-237",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2010-07-01",
+        "2011-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/432/de",
+      "sha": "6d219608fa5f1f472ad85045de31f816048547154dd5984e338c58797b69a430"
     },
     {
       "art": "aenderung",
@@ -443,14 +1071,46 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/618/de",
-      "sha": "cb7c61d9b1ae5a54376aaa08868de1bcaa624bb8d379bc6e388db106dcad243b"
+      "sha": "89cf54455f593304dbbd18b8f7d76ad9f2ad2e637de15765bea51d93e5516e0a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2010-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/836",
+      "dateDocument": "2009-12-04",
+      "roFundstelle": "AS 2009 6847",
+      "titelDe": "Verordnung über die Änderung des Zeitpunkts des Inkrafttretens der Neuordnung der Pflegefinanzierung",
+      "titelFr": "Ordonnance sur la modification de la date d'entrée en vigueur du nouveau régime de financement des soins",
+      "titelIt": "Ordinanza sulla modifica della data dell'entrata in vigore del nuovo ordinamento del finanziamento delle cure",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "etappen": [
+        "2010-01-01",
+        "2011-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/836/de",
+      "sha": "ef21526e34a283c9ee1561a4d23488ef6e03a2f47993bd26a8218984dde943eb"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2009-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "d00d07d48f4d45bad793fb0ba281c7a694c153e6117c2243a6d75afb308f82b1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/296",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2009 2411",
+      "titelDe": "Bundesbeschluss über die Genehmigung der Weiterführung des Freizügigkeitsabkommens zwischen der Schweiz und der Europäischen Gemeinschaft und ihren Mitgliedstaaten sowie über die Genehmigung und die Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf Bulgarien und Rumänien",
+      "titelFr": "Arrêté fédéral portant approbation de la reconduction de l'accord entre la Suisse et la Communauté européenne et ses Etats membres sur la libre circulation des personnes, ainsi qu'approbation et mise en uvre du protocole visant à étendre l'accord sur la libre circulation à la Bulgarie et à la Roumanie",
+      "titelIt": "Decreto federale che approva il rinnovo dell'Accordo tra la Svizzera e la Comunità europea ed i suoi Stati membri sulla libera circolazione delle persone e approva e traspone nel diritto svizzero il Protocollo relativo all'estensione alla Bulgaria e alla Romania dell'Accordo sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-2008-472",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/296/de",
+      "sha": "e07086feffd5384b9382e60148cdf60e8e4f923f8b7078dfc66273593ff33371"
     },
     {
       "art": "aenderung",
@@ -462,14 +1122,43 @@
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Financement hospitalier)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Finanziamento ospedaliero)",
       "botschaftKey": "BOTSCHAFT-2004-1024",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/291/de",
-      "sha": "0dab545f0b0c9c388a47be5f31758be41657aceb3c8177dfdb28e75b377992de"
+      "sha": "f87d14bd6d62db87e4c3f54f4cfe1954639064db8ac527eaef61b59b5e5940ab"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2009-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2008 5207",
+      "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+      "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+      "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)",
+      "botschaftKey": "BOTSCHAFT-2006-303",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/736/de",
+      "sha": "a49275dd1e695a08626c44f542a93882136ca75eb114782b1d3d566c8e97872c"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "d383c008cbdca76cd65ddcffb391f235f806064fd934617639f8aa5ece52c5d7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "39818a52f3d1b0d46ce5d43f4f769f3161e686721e6147b36164552748bcf45d"
     },
     {
       "art": "aenderung",
@@ -481,20 +1170,90 @@
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Admission selon le besoin)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Autorizzazione a seconda del bisogno)",
       "botschaftKey": "BOTSCHAFT-2004-709",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/401/de",
-      "sha": "f8e1680ec5252849f5d61017e06f8de8452e088fc34c999dcb0276f8e4d00920"
+      "sha": "34eebe4ef2657c882ab8e7cdaab46dbdfefbb64ddd460959865352951bdd116c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "fcca2308e70f59c7e328a97bcffddf6931e0a94a2945b94698fb5e916a97c47a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5779",
+      "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+      "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)",
+      "botschaftKey": "BOTSCHAFT-2005-976",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/860",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2007 6637",
+      "titelDe": "Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatgesetz, GSG)",
+      "titelFr": "Loi fédérale sur les privilèges, les immunités et les facilités, ainsi que sur les aides financières accordés par la Suisse en tant qu'Etat hôte (Loi sur l'Etat hôte, LEH)",
+      "titelIt": "Legge federale sui privilegi, le immunità e le facilitazioni, nonché sugli aiuti finanziari accordati dalla Svizzera quale Stato ospite (Legge sullo Stato ospite, LSO)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/860/de",
+      "sha": "3d8170b90bb2b7b021cfd0503b559e780d73e04e78d0d454b491c30f9a6e1b74"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "cc7cd46da8b6b834e53b9f9bcb69cf16e55859217d35eb78f8bd3fd578e2f0c2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/747",
+      "dateDocument": "2006-06-23",
+      "roFundstelle": "AS 2007 5259",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Neue AHV-Versichertennummer)",
+      "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Nouveau numéro d'assuré AVS)",
+      "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Nuovo numero d'assicurato dell'AVS)",
+      "botschaftKey": "BOTSCHAFT-2006-52",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/747/de",
+      "sha": "c598ef37bb15cbed37724779fb3cdf4f7ee5459d0057f7498ef7d645fa90749b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
     },
     {
       "art": "aenderung",
@@ -506,8 +1265,11 @@
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
       "botschaftKey": "BOTSCHAFT-2002-1106",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/743/de",
-      "sha": "d210b5f61da7a6f17e4248c841a9234d5ab05df73a4d49d0cf9f8ef8ca1f1263"
+      "sha": "1ee88bcc16da96d3bb25d119edbccd1f11d38c3860e524286f965bb57bff0f0b"
     },
     {
       "art": "aenderung",
@@ -518,8 +1280,12 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Pflegetarife)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Tarif des soins)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Tariffe delle cure)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/855/de",
-      "sha": "299bf9814577b72dd81951958b7aa2fe4baf08f9876efc13c5c5d44d536b97ef"
+      "sha": "d5a88031bfe394eda8f6684f08d32e7b35af223c48bbf70cadd498a980852c69"
     },
     {
       "art": "aenderung",
@@ -530,14 +1296,27 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Pflegetarife) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Tarif des soins) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Tariffe delle cure)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/74/de",
-      "sha": "10522be03ae164c4fdc572109e75c566cbae6da50a167d5c0ce2800fa060122d"
+      "sha": "810997a045a6adbf513930da8423bec6dc0f3e1dd1c501a25d779d52bb5bf88a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "7d1d1f81da99836b7ae40ac853c8d352f93f6ff32161da30506ee17c226ffb0e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/178",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2006 979",
+      "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf die neuen EG-Mitgliedstaaten zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits sowie über die Genehmigung der Revision der flankierenden Massnahmen zur Personenfreizügigkeit",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'extension de l'accord entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, sur la libre circulation des personnes aux nouveaux Etats membres de la Communauté européenne et portant approbation de la révision des mesures d'accompagnement concernant la libre circulation des personnes",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero, mediante revisione delle misure collaterali, il Protocollo concluso con la Comunità europea e i suoi Stati membri relativo all'estensione dell'Accordo sulla libera circolazione delle persone ai nuovi Stati membri della Comunità europea",
+      "botschaftKey": "BOTSCHAFT-2004-1081",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/178/de",
+      "sha": "fb28e531ac518999edb18c74ef49b103f3639306177d1a467c84970b57cf997b"
     },
     {
       "art": "aenderung",
@@ -549,8 +1328,27 @@
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Réduction des primes)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Riduzione dei premi)",
       "botschaftKey": "BOTSCHAFT-2004-711",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/523/de",
-      "sha": "510da971f0fb0259ad5d925a5946d32193d0aa7b2428595f9cef388345e59a3f"
+      "sha": "c92f01b3d43255475b34c70312d9e06629a1e3572688f22ff6bf34f9c381c22e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2006-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/734",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2005 5269",
+      "titelDe": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
+      "titelFr": "Loi fédérale sur la surveillance des entreprises d'assurance (Loi sur la surveillance des assurances, LSA)",
+      "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)",
+      "botschaftKey": "BOTSCHAFT-2003-577",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/734/de",
+      "sha": "3bb19d6ce8ceccf5043121c9546b3c070bf0df00a9b1dd4126c8f2425ec230d9"
     },
     {
       "art": "aenderung",
@@ -562,8 +1360,11 @@
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Tarifs des soins)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Tariffe delle cure)",
       "botschaftKey": "BOTSCHAFT-2004-706",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/666/de",
-      "sha": "a0c18b67e9123cc173bc6e2e0dfe6f1819eb326092a9f30f994e7232df035d7b"
+      "sha": "6ec47bcf481a6fb5c261d48893b7877c5ff05c5941cb29a502c7ec642735a60b"
     },
     {
       "art": "aenderung",
@@ -575,26 +1376,119 @@
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Stratégie globale, compensation des risques)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Strategia globale e compensazione dei rischi)",
       "botschaftKey": "BOTSCHAFT-2004-706",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/139/de",
-      "sha": "7083eb06dfba2821890d3c1b37a028531112061cf7b3af382bfd087b8f299367"
+      "sha": "94e4e6d27c234c25cdadbb62a3f8d84ceb710de7f0138f453983e674111f00a7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "d9abf17d118a74752323c875c965aceeb47fe281b07efa3a15c6f3e9615b30c7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/24",
+      "dateDocument": "2002-03-22",
+      "roFundstelle": "AS 2003 187",
+      "titelDe": "Bundesgesetz über die Anpassung von Organisationsbestimmungen des Bundesrechts",
+      "titelFr": "Loi fédérale sur l'adaptation de dispositions du droit fédéral en matière d'organisation",
+      "titelIt": "Ordinanza dell'Assemblea federale concernente l'adeguamento di disposizioni organizzative del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/24/de",
+      "sha": "cce88c1e667304ffd2ff634af7123bca8dfa070328746c180fb5e8f2fe13d450"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "75c70cb4042d372febd0ec7eb3ea5c093032a075422abf1aee99883a09914e27"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/510",
+      "dateDocument": "2000-10-06",
+      "roFundstelle": "AS 2002 3371",
+      "titelDe": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+      "titelFr": "Loi fédérale sur la partie générale du droit des assurances sociales (LPGA)",
+      "titelIt": "Legge federale sulla parte generale del diritto delle assicurazioni sociali (LPGA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/510/de",
+      "sha": "bf26edbafbe17107be2301a0822653d828883055d9c9db2a3bd39ba4f9d103c8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2003-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/511",
+      "dateDocument": "2002-06-21",
+      "roFundstelle": "AS 2002 3453",
+      "titelDe": "Verordnung der Bundesversammlung betreffend die Änderung des Anhangs zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (Revision 1 des Anhangs zum ATSG)",
+      "titelFr": "Ordonnance de l'Assemblée fédérale concernant la modification de l'annexe de la loi fédérale sur la partie générale du droit des assurances sociales (Révision 1 de l'annexe de la LPGA)",
+      "titelIt": "Ordinanza dell'Assemblea federale concernente la modifica dell'allegato alla legge federale sulla parte generale del diritto delle assicurazioni sociali (Revisione 1 dell'allegato alla LPGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/511/de",
+      "sha": "c0927a5c37ab1e526bc7d37dde229bc79bf766dd34c04e78b02cbacd841f73a7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2003-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/512",
+      "dateDocument": "2002-06-21",
+      "roFundstelle": "AS 2002 3472",
+      "titelDe": "Verordnung der Bundesversammlung betreffend die Änderung des Anhangs zum Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts im Zusammenhang mit der Inkraftsetzung des Bundesgesetzes zum Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits über die Freizügigkeit (Revision 2 des Anhangs zum ATSG)",
+      "titelFr": "Ordonnance de l'Assemblée fédérale concernant la modification de l'annexe de la loi fédérale sur la partie générale du droit des assurances sociales en relation avec l'entrée en vigueur de la loi fédérale sur l'Accord entre, d'une part, la Confédération suisse et, d'autre part, la Communauté européenne et ses Etats membres sur la libre circulation des personnes (Révision 2 de l'annexe de la LPGA)",
+      "titelIt": "Ordinanza dell'Assemblea federale concernente la modifica dell'allegato alla legge sulla parte generale del diritto delle assicurazioni sociali in relazione all'entrata in vigore della legge federale concernente l'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone (Revisione 2 dell'allegato alla LPGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/512/de",
+      "sha": "5a34c657a7a1dbb999da5df4c778c59447e24481dea985fb89ad847e13fc7a68"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2002-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "22f489795c21388c1a321f1fe817c05cf19c9200fb429044bdc8529c08cdf2c1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/429",
+      "dateDocument": "2001-03-23",
+      "roFundstelle": "AS 2002 2989",
+      "titelDe": "Schweizerisches Strafgesetzbuch (Schwangerschaftsabbruch)",
+      "titelFr": "Code pénal suisse (Interruption de grossesse)",
+      "titelIt": "Codice penale svizzero (Interruzione della gravidanza)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/429/de",
+      "sha": "71d9175b1312e9fc68549e524ccd9f57028cf4f02a968ba7152806dac873a1f4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/139",
+      "dateDocument": "2001-12-14",
+      "roFundstelle": "AS 2002 685",
+      "titelDe": "Bundesgesetz betreffend die Bestimmungen über die Personenfreizügigkeit im Abkommen vom 21. Juni 2001 zur Änderung des Übereinkommens vom 4. Januar 1960 zur Errichtung der Europäischen Freihandelsassoziation (EFTA)",
+      "titelFr": "Loi fédérale relative aux dispositions concernant la libre circulation des personnes de l'Accord du 21 juin 2001 amendant la Convention du 4 janvier 1960 instituant l'Association européenne de libre-échange (AELE)",
+      "titelIt": "Legge federale relativa alle disposizioni concernenti la libera circolazione delle persone dell'Accordo del 21 giugno 2001 di emendamento della Convenzione del 4 gennaio 1960 istitutiva dell'Associazione europea di libero scambio (AELS)",
+      "botschaftKey": "BOTSCHAFT-2001-845",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/139/de",
+      "sha": "9b1cb134a5494190b5b8d52140c0397ba4e22e4afb1b4de50ad6f6bd826dc012"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/140",
+      "dateDocument": "1999-10-08",
+      "roFundstelle": "AS 2002 701",
+      "titelDe": "Bundesgesetz zum Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits über die Freizügigkeit",
+      "titelFr": "Loi fédérale sur l'Accord entre, d'une part, la Confédération suisse et, d'autre part, la Communauté Européenne et ses Etats membres sur la libre circulation des personnes",
+      "titelIt": "Legge federale concernente l'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-1999-1_6128_5440_5092",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/140/de",
+      "sha": "e4ce2f0929fb8e04d07c4a4b0eb1633812a9b364fdeba53e410b4c9c86c8fc40"
     },
     {
       "art": "aenderung",
@@ -606,14 +1500,26 @@
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
       "botschaftKey": "BOTSCHAFT-2000-875",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/151/de",
-      "sha": "7c1565890f3b676d0cafaadf05ff3a2cddc6c2272dc5eb38c53868328937f966"
+      "sha": "4d0474e165c9b6561f6ff98d8f172b25bec30c6052a82c34839a03ba3d64bf31"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/832.10",
-      "sha": "130ccebdd5282a0f3213c8078eff6c64ef28cfff602f7922c1dd85ef867fc112"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/422",
+      "dateDocument": "2000-12-15",
+      "roFundstelle": "AS 2001 2790",
+      "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
+      "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
+      "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/422/de",
+      "sha": "7b9bfc47320bec2e031a569a48d5a9122962f6f67c362fe56c0810a675363c6d"
     },
     {
       "art": "aenderung",
@@ -625,8 +1531,11 @@
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
       "botschaftKey": "BOTSCHAFT-2000-99",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/463/de",
-      "sha": "1054830d08dea18d95cdddb2a590b728da619d53a5170d11f458f248a1efedd7"
+      "sha": "bc8a2e2b9ea3dc0189175020b14f77022fcc006fbd5326830c93d946dc8a6d48"
     },
     {
       "art": "aenderung",
@@ -637,8 +1546,11 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/365/de",
-      "sha": "3cf377792faedbc972b82ca5920383548318d7cf17e4d614277b9c85a45c9095"
+      "sha": "fd71405828981381f9080ff4f6cc7e88af9bfa5b4f5f9e6657af617653177558"
     },
     {
       "art": "aenderung",
@@ -649,8 +1561,11 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
       "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/319/de",
-      "sha": "f513bc1e45d04194175d25449b35c11c6d0f3017637ccfc95d24c04e332ac364"
+      "sha": "16bf8e4e6c1427fd9ada44632a1e2284fe3b499a33bd95229d5aa8545bd8e5c9"
     },
     {
       "art": "aenderung",
@@ -661,33 +1576,28 @@
       "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
       "titelFr": "Loi fédérale sur l'assurance maladie (LAMal)",
       "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/320/de",
-      "sha": "bc8fb5b9689541c3f01c46fc69a9268deebc74d182ccc1bb07d195238990b452"
+      "sha": "41d58996c170283e37c3fa308fe16488a3efef8a686bffa9b42ffecc95cddab6"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1996-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1328_1328_1328",
-      "dateDocument": "1994-03-18",
-      "roFundstelle": "AS 1995 1328",
-      "titelDe": "Bundesgesetz vom 18. März 1994 über die Krankenversicherung (KVG)",
-      "titelFr": "Loi fédérale du 18 mars 1994 sur l'assurance-maladie (LAMal)",
-      "titelIt": "Legge federale del 18 marzo 1994 sull'assicurazione malattie (LAMal)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1328_1328_1328/de",
-      "sha": "26c5ad4be3890a103e95a3b7dcdc1c47c21b3474ca4dc76e1dbbd4286db383da"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1911-06-13",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/28/353_351_341",
-      "dateDocument": "1911-06-13",
-      "roFundstelle": "AS 28 353",
-      "titelDe": "Bundesgesetz über die Kranken- und Unfallversicherung",
-      "titelFr": "Loi fédérale sur l'assurance en cas de maladie et d'accidents",
-      "titelIt": "LF sull'assicurazione contro le malattie e gli infortuni",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/28/353_351_341/de",
-      "sha": "5c69b42e37182cd4b3da4d0b29858dc36664f111128564fcfe4cf219328341a8"
+      "dateEntryInForce": "1995-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1367_1367_1367",
+      "dateDocument": "1995-04-12",
+      "roFundstelle": "AS 1995 1367",
+      "titelDe": "Verordnung vom 12. April 1995 über die Inkraftsetzung und Einführung des Bundesgesetzes vom 18. März 1994 über die Krankenversicherung",
+      "titelFr": "Ordonnance du 12 avril 1995 concernant l'entrée en vigueur et l'introduction de la loi fédérale du 18 mars 1994 sur l'assurance-maladie",
+      "titelIt": "Ordinanza del 12 aprile 1995 concernente l'entrata in vigore e l'introduzione della legge federale del 18 marzo 1994 sull'assicurazione malattie",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1367_1367_1367/de",
+      "sha": "df70d9d8840c0807dfa2856232d22ef90ba468f08aea3d53ab216478fa9b64e8"
     }
   ],
-  "sha": "b765b23d9a4cb163ffc9bfcb595420f1e8574a12e6a538e6a908dcee10e8b67e"
+  "sha": "9e88eba577d68d65a14412342b80416ef53c87d247c0d5c81cb7a67bd590e59e"
 }

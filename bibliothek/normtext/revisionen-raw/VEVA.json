@@ -767,5 +767,104 @@
     "2025-08-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2005/551",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2005/551",
+    "inkrafttreten": "2006-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/551",
+        "typ": 5,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/569",
+        "typ": 6,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/764",
+        "typ": 1,
+        "datum": "2010-01-01",
+        "fassung": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/28",
+        "typ": 1,
+        "datum": "2014-05-01",
+        "fassung": "2014-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/891",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/207",
+        "typ": 1,
+        "datum": "2016-07-01",
+        "fassung": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/207",
+        "typ": 1,
+        "datum": "2017-07-01",
+        "fassung": "2017-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/207",
+        "typ": 2,
+        "datum": "2016-07-01",
+        "fassung": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/653",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/93",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/454",
+        "typ": 1,
+        "datum": "2025-08-01",
+        "fassung": "2025-08-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2015/891": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-12-04",
+        "roId": "RO 2015 5699",
+        "titelDe": "Verordnung über die Vermeidung und die Entsorgung von Abfällen (Abfallverordnung, VVEA)",
+        "titelFr": "Ordonnance sur la limitation et l'élimination des déchets (Ordonnance sur les déchets, OLED)",
+        "titelIt": "Ordinanza sulla prevenzione e lo smaltimento dei rifiuti (Ordinanza sui rifiuti, OPSR)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/653": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-10-25",
+        "roId": "RO 2017 5963",
+        "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+        "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+        "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/93": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-01-16",
+        "roId": "RO 2019 529",
+        "titelDe": "Ordnungsbussenverordnung (OBV)",
+        "titelFr": "Ordonnance sur les amendes d'ordre (OAO)",
+        "titelIt": "Ordinanza concernente le multe disciplinari (OMD)"
+      }
+    }
+  }
 }

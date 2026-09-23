@@ -326,5 +326,56 @@
     "2024-12-20"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2018/168",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2018/168",
+    "inkrafttreten": "2018-04-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/167",
+        "typ": 3,
+        "fassung": "2019-06-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/168",
+        "typ": 5,
+        "datum": "2018-04-01",
+        "fassung": "2018-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/343",
+        "typ": 1,
+        "datum": "2019-06-06",
+        "fassung": "2019-06-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/343",
+        "typ": 9,
+        "datum": "2019-06-06",
+        "fassung": "2019-06-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/639",
+        "typ": 9,
+        "datum": "2022-10-28",
+        "fassung": "2022-10-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/799",
+        "typ": 9,
+        "datum": "2024-12-20",
+        "fassung": "2024-12-20"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2018/167": {
+        "dateDoc": "2017-06-16",
+        "roId": "RO 2018 1117",
+        "titelDe": "Bundesbeschluss über die Genehmigung des Übereinkommens des Europarats zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt",
+        "titelFr": "Arrêté fédéral portant approbation de la Convention du Conseil de l'Europe sur la prévention et la lutte contre la violence à l'égard des femmes et la violence domestique",
+        "titelIt": "Decreto federale che approva la Convenzione del Consiglio d'Europa sulla prevenzione e la lotta contro la violenza nei confronti delle donne e la violenza domestica"
+      }
+    }
+  }
 }

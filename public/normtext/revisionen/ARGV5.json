@@ -1,8 +1,8 @@
 {
   "erlassKey": "ARGV5",
   "sr": "822.115",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,12 @@
       "titelDe": "Verordnung 5 zum Arbeitsgesetz (Jugendarbeitsschutzverordnung, ArGV 5)",
       "titelFr": "Ordonnance 5 relative à la loi sur le travail (Ordonnance sur la protection des jeunes travailleurs, OLT 5)",
       "titelIt": "Ordinanza 5 concernente la legge sul lavoro (Ordinanza sulla protezione dei giovani lavoratori, OLL 5)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/93/de",
-      "sha": "dca93a4c658df08be7910f5a34c9a400ec496415f19fecca6d64147658b71323"
+      "sha": "af5237638ec2b44bda81a39d282d65c353bf5fef677b7b3c0d5c488908a0533e"
     },
     {
       "art": "aenderung",
@@ -25,8 +29,11 @@
       "titelDe": "Verordnung 5 zum Arbeitsgesetz (Jugendarbeitsschutzverordnung, ArGV 5)",
       "titelFr": "Ordonnance 5 relative à la loi sur le travail (Ordonnance sur la protection des jeunes travailleurs, OLT 5)",
       "titelIt": "Ordinanza 5 concernente la legge sul lavoro (Ordinanza sulla protezione dei giovani lavoratori, OLL 5)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/275/de",
-      "sha": "69d35c8c4e3af64c129010e5b9f06375b4612dac1bfb1d28ae17590dfdf3a454"
+      "sha": "420377a7121949b45cfdbfb0cd3a3132cef7d6f69afb02887b06cd7fdc40f556"
     },
     {
       "art": "aenderung",
@@ -37,27 +44,27 @@
       "titelDe": "Verordnung 5 zum Arbeitsgesetz (Jugendarbeitsschutzverordnung, ArGV 5)",
       "titelFr": "Ordonnance 5 relative à la loi sur le travail (Ordonnance sur la protection des jeunes travailleurs, OLT 5)",
       "titelIt": "Ordinanza 5 concernente la legge sul lavoro (Ordinanza sulla protezione dei giovani lavoratori, OLL 5)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/375/de",
-      "sha": "216dadb8fb90fcf71960fd3d3af682a1bf5c03b5602d290be796c7576e5cca95"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.115",
-      "sha": "34419d14a4afa097bd6e5dc29fc40e4798b85fa4c6700a06228f306b208e95ac"
+      "sha": "c6f056a5580ecfbdb7613c99e0bab1b0343f19085a8fae0b2541a6c991fa3175"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2008-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/692",
-      "dateDocument": "2007-09-28",
-      "roFundstelle": "AS 2007 4959",
-      "titelDe": "Verordnung 5 zum Arbeitsgesetz (Jugendarbeitsschutzverordnung, ArGV 5)",
-      "titelFr": "Ordonnance 5 relative à la loi sur le travail (Ordonnance sur la protection des jeunes travailleurs, OLT 5)",
-      "titelIt": "Ordinanza 5 concernente la legge sul lavoro (Ordinanza sulla protezione dei giovani lavoratori, OLL 5)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/692/de",
-      "sha": "b0cee6d47f582ac474ea3b137d8e2326e7843be8a39e75dd6a741b48865d8fdc"
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 3631",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/418/de",
+      "sha": "cc366b052f45678f6292fa3ed75ee05d752a3862952f1b32edfc0aaf66630b2f"
     }
   ],
-  "sha": "e3c3193a611d7f7cb87cc51a8191b38849365a629291896acb77062b596f1f0d"
+  "sha": "54e60d754ce594ccdb1fa3c8b1199ca2acf80876b85a96bfa962cda0c8705451"
 }

@@ -1,8 +1,8 @@
 {
   "erlassKey": "MVV",
   "sr": "833.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l’assurance militaire (OAM)",
       "titelIt": "Ordinanza sull’assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/763/de",
-      "sha": "51390f8f3edf4647b9be25fa56e7662600b06916e2d329e200f4ae97fd53ea59"
+      "sha": "a2d3f6202e489e5eab7431efd1798730bf5f619fb1cba3624a988acaf6be741c"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l’assurance militaire (OAM)",
       "titelIt": "Ordinanza sull’assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/273/de",
-      "sha": "2d1d0b1b1aef1beaccd0b6cea73d896309e59e43a4f3ed6b1012800f25583df6"
+      "sha": "397d9bc1af4e8166090baa2304f0c65a00e429ff891fd19370e75c07be637c98"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,41 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l’assurance militaire (OAM)",
       "titelIt": "Ordinanza sull’assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/660/de",
-      "sha": "0a4e55b90694be4a5afd9f886c2c08a16bc2a43bad785d6e31479bb0f6f0279d"
+      "sha": "80307cfa248e6e2c7abe5c064192790837db6a40dd930f3b5498a2b20a0fcb06"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/698",
+      "dateDocument": "2024-11-20",
+      "roFundstelle": "AS 2024 698",
+      "titelDe": "Verordnung vom 20. November 2024 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance du 20 novembre 2024 sur l’adaptation des prestations de l’assurance militaire à l’évolution des salaires et des prix (Ordonnance AM sur l’adaptation)",
+      "titelIt": "Ordinanza del 20 novembre 2024 concernente l’adeguamento delle prestazioni dell’assicurazione militare all’evoluzione dei prezzi e dei salari (Ordinanza AM concernente l’adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/698/de",
+      "sha": "018c704e3915b0a41ef9393f26a410404ee8ea821a4e7b47b519394c2c17d961"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/506",
+      "dateDocument": "2023-08-30",
+      "roFundstelle": "AS 2023 506",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/506/de",
+      "sha": "5c7dddebd3667bd2e5e37e0414d505dec30f1f7afa17760d0578b07c3cc6f54c"
     },
     {
       "art": "aenderung",
@@ -49,8 +88,11 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l’assurance militaire (OAM)",
       "titelIt": "Ordinanza sull’assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/679/de",
-      "sha": "66ba735a549b6db08a5c82a044bf03c12cb66885055201f1f3a16f64db121103"
+      "sha": "d4d758f67e273ebea7833bc1f6672e8237b40ecbc498296cb6302089b57b9bf6"
     },
     {
       "art": "aenderung",
@@ -61,8 +103,41 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l’assurance militaire (OAM)",
       "titelIt": "Ordinanza sull’assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/633/de",
-      "sha": "5991d87fc18af9d4ddcbe9601c529c6024990aa24295d0b96bb8162a78170a96"
+      "sha": "55175b12a040fd19dfb4d0bfb1086edcec769913c933d870a3c762e07fa3c3e8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/705",
+      "dateDocument": "2022-11-16",
+      "roFundstelle": "AS 2022 705",
+      "titelDe": "Verordnung vom 16. November 2022 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance du 16 novembre 2022 sur l’adaptation des prestations de l’assurance militaire à l’évolution des salaires et des prix (Ordonnance AM sur l’adaptation)",
+      "titelIt": "Ordinanza del 16 novembre 2022 concernente l’adeguamento delle prestazioni dell’assicurazione militare all’evoluzione dei prezzi e dei salari (Ordinanza AM concernente l’adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/705/de",
+      "sha": "ccc90e3de4eaec4f15068aac292437bded5c13aa78a736bdb1b7ad6a1e8c224d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/814",
+      "dateDocument": "2022-11-23",
+      "roFundstelle": "AS 2022 814",
+      "titelDe": "Verordnung über die Krankenversicherung (KVV)",
+      "titelFr": "Ordonnance sur l’assurance-maladie (OAMal)",
+      "titelIt": "Ordinanza sull’assicurazione malattie (OAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/814/de",
+      "sha": "17af8fdfe06ba3a1c41272c93d73c318fc3093bd7b3ea08b642fafae3a3d901e"
     },
     {
       "art": "aenderung",
@@ -73,8 +148,26 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l’assurance militaire (OAM)",
       "titelIt": "Ordinanza sull’assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/655/de",
-      "sha": "dde20c936c3150f4be0185722bf4a9705b9b30f9701c34b0505b13313a8f4c07"
+      "sha": "0c101dc217799a366db48b944a188bc379ee50ed07e44e77fb04e9c41766f91e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/888",
+      "dateDocument": "2020-11-11",
+      "roFundstelle": "AS 2020 5031",
+      "titelDe": "Verordnung über den Zivilschutz (Zivilschutzverordnung, ZSV)",
+      "titelFr": "Ordonnance sur la protection civile (OPCi)",
+      "titelIt": "Ordinanza sulla protezione civile (OPCi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/888/de",
+      "sha": "ed1bd99a1e13acac2c3f9bcbb0a09dcd4641be2a47f18da84605bf127ed598cf"
     },
     {
       "art": "aenderung",
@@ -85,8 +178,26 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/918/de",
-      "sha": "cd8f2da689b14f6c47a2e116ddcd3fabf6adc38e1155605248ba6668c91d7e4b"
+      "sha": "9c1eba735d53c3dd1f0badfe7d050870441b1a0768515b2130220f32801f6190"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/949",
+      "dateDocument": "2020-11-25",
+      "roFundstelle": "AS 2020 5443",
+      "titelDe": "Verordnung über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/949/de",
+      "sha": "1bb6f0df20683113d36ad8b24a3ebfe26dcc48564257a7afcc3daab96fa8bb45"
     },
     {
       "art": "aenderung",
@@ -97,8 +208,11 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/619/de",
-      "sha": "a5fc97f76e99f738f267039b76bab3613cc9db70e7540aa6252a6b26eb4607d3"
+      "sha": "e8b21d256eba8e0f4a25aa7b45ec0cb37283d116652dd9e543402d2628864896"
     },
     {
       "art": "aenderung",
@@ -109,8 +223,26 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/669/de",
-      "sha": "654908c3f0db41107cd686cab718efca3063bedf0755ecf8f6774ffab2a97643"
+      "sha": "feca4903f211608eff37957ee452b20a848072ee16cdf6a9ec2a918bc17993fd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/670",
+      "dateDocument": "2018-10-31",
+      "roFundstelle": "AS 2018 4147",
+      "titelDe": "Verordnung über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/670/de",
+      "sha": "1041b74a50eb47a1552cb008cf4c7297ba2cee283f0aa2236badd7c703048c1d"
     },
     {
       "art": "aenderung",
@@ -121,26 +253,87 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/705/de",
-      "sha": "126302f6b8d066a67c5998aafaca8a4bcf38c88dc6f6a838ffb9d12c489780fc"
+      "sha": "d58f03106aae7869a8c8847f8913d64061286ff5181f3353175dd35a28af56bb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/810",
+      "dateDocument": "2017-11-22",
+      "roFundstelle": "AS 2017 7405",
+      "titelDe": "Verordnung über die Militärdienstpflicht (VMDP)",
+      "titelFr": "Ordonnance sur les obligations militaires (OMi)",
+      "titelIt": "Ordinanza concernente l'obbligo di prestare servizio militare (OOPSM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/810/de",
+      "sha": "c955b16994dd8d28a1a22afd83abe587d45e3e9a1bf76ed6a624d691e48077e2"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/833.11",
-      "sha": "077d52a8bf9269b26adda00cec7a213c69179a6bd39604422bb90bcfd673412c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/724",
+      "dateDocument": "2016-11-09",
+      "roFundstelle": "AS 2016 4393",
+      "titelDe": "Verordnung über die Unfallversicherung (UVV)",
+      "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
+      "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/724/de",
+      "sha": "28ffab58f2c09849765890afa4a3ff7d852d47a29dadfe285da96e52261e47bc"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/725",
+      "dateDocument": "2016-11-09",
+      "roFundstelle": "AS 2016 4417",
+      "titelDe": "Verordnung 17 über die Anpassung der Leistungen der Militärversicherung an die Lohn-und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance 17 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza 17 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/725/de",
+      "sha": "ad6714926f211392bb1d229a632e713a93351db332de522fae3a70b713094e26"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2015-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/833.11",
-      "sha": "1b656731869a38f8c09d23172236a1b47d08fb7d81e15e8154d1714314fb4744"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/25",
+      "dateDocument": "2014-12-17",
+      "roFundstelle": "AS 2015 195",
+      "titelDe": "Verordnung über den Zivilschutz (Zivilschutzverordnung, ZSV)",
+      "titelFr": "Ordonnance sur la protection civile (OPCi)",
+      "titelIt": "Ordinanza sulla protezione civile (OPCi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/25/de",
+      "sha": "7edef57dd70c4b1819cc4da5e3bd6e417eb66f7bf5f02f983dacfddfd440cac3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/833.11",
-      "sha": "882ea5f7b90dc02262459eb60b6d264786015b98d5f301c00b12d97b3a1753a0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/665",
+      "dateDocument": "2014-11-05",
+      "roFundstelle": "AS 2014 3893",
+      "titelDe": "Verordnung 15 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance 15 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza 15 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/665/de",
+      "sha": "8a5ee66d53d3937885867990beb1cbbbf697fd20c2e88110b1a616674f4b7b1e"
     },
     {
       "art": "aenderung",
@@ -151,20 +344,41 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/709/de",
-      "sha": "c59e54792ddeb9c90f155ab1c8d0886dfc2c7f5080306a59dd1e316807bbda77"
+      "sha": "9e9da9bc05ed829dc3ad0ff20252e56624fe1f730642de9e81ae174672f2ea45"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/833.11",
-      "sha": "e03befa67fac0c5bfedf1fcdf160baaa830c0ec225dba193342bc1ad11283337"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/869",
+      "dateDocument": "2012-11-30",
+      "roFundstelle": "AS 2012 7167",
+      "titelDe": "Verordnung 13 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance 13 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza 13 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/869/de",
+      "sha": "46577b7aa3390ee915d053b1e505dccd747b257263063bd3e3623eb124e7dc46"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/833.11",
-      "sha": "e572b539b13182cb9cc62ce6a24381c9ad190e749cc3f27d2c867a66baa0f87f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/790",
+      "dateDocument": "2010-11-17",
+      "roFundstelle": "AS 2010 5527",
+      "titelDe": "Verordnung 11 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance 11 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza 11 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/790/de",
+      "sha": "feca07c8de069b879c5db6f199e42e0836535d51766d50a0ee952852a0750732"
     },
     {
       "art": "aenderung",
@@ -175,14 +389,42 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/610/de",
-      "sha": "c0138be110e28722feb2af91907b49405017ffab061f396a305b9ef3bb126483"
+      "sha": "64e1654523a4cc6773feae44deb98246d3b05781e8a0ab35b767903b5641ea40"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/833.11",
-      "sha": "59aa941797b0c721ab9ee315382f0b71c8721cc9b7683eb7a80ea9bf58873212"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/730",
+      "dateDocument": "2008-10-29",
+      "roFundstelle": "AS 2008 5193",
+      "titelDe": "Verordnung 09 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance 09 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza 09 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/730/de",
+      "sha": "47d9b560a88043c47075fefd9d74131942390e80e3ea9410519b0187bcd704c1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 4477",
+      "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/633/de",
+      "sha": "64c6acd167ad7484a000c025b7e66d9748f2f20a3fc50a0fc926f9a5682903ba"
     },
     {
       "art": "aenderung",
@@ -193,14 +435,41 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/931/de",
-      "sha": "b6c9e2b44240dd96a090c4933c3d63fc2c1fb6e2e9bd58134d91cc447535eafc"
+      "sha": "9444f0125906ace3dc7656df8f866f9389917d526a9e4fed0d77fdaf4fe577a4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/833.11",
-      "sha": "28602016912e32fb41ae15a1236ab359fbfa3876d3483b695a3b496f11926baf"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/698",
+      "dateDocument": "2006-11-01",
+      "roFundstelle": "AS 2006 4555",
+      "titelDe": "Verordnung 07 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance 07 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza 07 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei prezzi e dei salari (Ordinanza AM concernente l'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/698/de",
+      "sha": "378ebd19fa502d0ced92fb899b71134ee6d530a1211a009eae4806acb897b3ab"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4705",
+      "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "sha": "509e7b22613546560d1e36883c9ec32fce8a8368a2969478863a0cb4a567bbfd"
     },
     {
       "art": "aenderung",
@@ -211,8 +480,11 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/773/de",
-      "sha": "22e170472d11ae7315bbd5858b70985ea365d7a599ed64fde2af9a5171d85f8c"
+      "sha": "5a2ae2f2388465ef60f720ca81a4235ef6ed7fb7ccaf7c66f8a8a26c88b8d1aa"
     },
     {
       "art": "aenderung",
@@ -223,8 +495,27 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/473/de",
-      "sha": "86498a7d22a8ed12def5a10efea85bd75a947c7518cc32df0c377f979cbd5b60"
+      "sha": "65e08ae545f2ed86fbf0381e2451385bceceaf3c596d1d782c4addf67775432f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/689",
+      "dateDocument": "2004-10-27",
+      "roFundstelle": "AS 2004 4545",
+      "titelDe": "Verordnung 05 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance 05 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza 05 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei salari e dei premi (Ordinanza AM concernente l'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/689/de",
+      "sha": "191286a03461fba31364e3af2976c6995f7b26a22fa8030e10e7e90979818495"
     },
     {
       "art": "aenderung",
@@ -235,8 +526,11 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/786/de",
-      "sha": "0a7f42b1e4025c09574b5073f723b513414072e657267dff1074ac33589e180c"
+      "sha": "64d7e4e9b1c1611c7eac34ed144b101f9c58b4ca91015c69207e8e665091461f"
     },
     {
       "art": "aenderung",
@@ -247,8 +541,41 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/564/de",
-      "sha": "2d48e8f1b23a5ec92e7efec43bbdafe6e20e10578db2991702b93823febf2472"
+      "sha": "fecdb547280cb03430584f7b370c357504ab10af17f6881694e80812c3e1dd7c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2004-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/678",
+      "dateDocument": "2003-11-26",
+      "roFundstelle": "AS 2003 4599",
+      "titelDe": "Verordnung über die vordienstliche Ausbildung (VAusb)",
+      "titelFr": "Ordonnance concernant l'instruction prémilitaire (OInstr prém)",
+      "titelIt": "Ordinanza concernente l'istruzione premilitare (OISP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/678/de",
+      "sha": "15aa87424b47e64b417b3a37fc787f5c977f156ae569178d1fbfd1f24fec1d29"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2004-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/754",
+      "dateDocument": "2003-12-05",
+      "roFundstelle": "AS 2003 5119",
+      "titelDe": "Verordnung über das Schiesswesen ausser Dienst (Schiessverordnung)",
+      "titelFr": "Ordonnance sur le tir hors du service (Ordonnance sur le tir)",
+      "titelIt": "Ordinanza sul tiro fuori del servizio (Ordinanza sul tiro)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/754/de",
+      "sha": "7961628f527d683ceca93563b4691e98c437d33f1f9a2c93586f980fa6403fb3"
     },
     {
       "art": "aenderung",
@@ -259,8 +586,26 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/300/de",
-      "sha": "0fde79f62619919109f7d22d63a7eab0c21088445bf5619acc220786faf43b20"
+      "sha": "548b9a52e9c67c2830fd96167740b2ae7fcea979324f59c68eb00a6d59b84f80"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2003-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/517",
+      "dateDocument": "2002-10-23",
+      "roFundstelle": "AS 2002 3483",
+      "titelDe": "Verordnung 03 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance 03 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza 03 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei salari e dei prezzi (Ordinanza AM concernente l'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/517/de",
+      "sha": "0a3657ef28db69b3165581a2c415953339c6c3e08e2c58fd70117d7809c87f9a"
     },
     {
       "art": "aenderung",
@@ -271,14 +616,27 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/617/de",
-      "sha": "33941968ec1df352a3951a6a70392375aed1754c40b83641375a68db74f75ed3"
+      "sha": "7ba1dafdd676ad00d7b9246c40780e711cb6a819f8087efb1c51d0304dbebc43"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/833.11",
-      "sha": "a590402548238834aa807f9ee501d6b5614edaa2f23fbdbf43d6bbe6ffb4dae6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/141",
+      "dateDocument": "2002-04-10",
+      "roFundstelle": "AS 2002 723",
+      "titelDe": "Verordnung über die Rekrutierung (VREK)",
+      "titelFr": "Ordonnance sur le recrutement (OREC)",
+      "titelIt": "Ordinanza sul reclutamento (OREC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/141/de",
+      "sha": "9f2bae019912ae10d0a224d43d882c1860f8e8e397cba0eff91c126c531d8cf7"
     },
     {
       "art": "aenderung",
@@ -289,8 +647,26 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/427/de",
-      "sha": "61202302496dc236f3efc48c12c7c303d47f0b85f3329b8ed3c9756ff1a42f5c"
+      "sha": "e5b8454b949731f7d01b4f5a0a1c8fcf366e5760f478334929270f0a6c77a969"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/445",
+      "dateDocument": "2000-11-08",
+      "roFundstelle": "AS 2000 2696",
+      "titelDe": "Verordnung 01 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance 01 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza 01 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei salari e dei prezzi (Ordinanza AM concernente l'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/445/de",
+      "sha": "911b1eacbf595f6859549578f91666f9a98f106d5103914ec3073079c4978ee3"
     },
     {
       "art": "aenderung",
@@ -301,8 +677,12 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/514/de",
-      "sha": "61d50677cbe6d7d60fbf5adb4c6f684da4ca4d24ea3685fd5afd5474221d621c"
+      "sha": "58d99faa9c15606d4e49f4272a408c432eaf561804ff65edae0cfa50f9b96ef2"
     },
     {
       "art": "aenderung",
@@ -313,8 +693,11 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/561/de",
-      "sha": "c4b3694bf5e5cd287de21c02e00e70c2a845d26d2fe62d25fc03cb8341bb5447"
+      "sha": "741c4ba37d02df22a8bb7404837ff040a320019867e26aac4f789577559f76fc"
     },
     {
       "art": "aenderung",
@@ -325,33 +708,133 @@
       "titelDe": "Verordnung über die Militärversicherung (MVV)",
       "titelFr": "Ordonnance sur l'assurance militaire (OAM)",
       "titelIt": "Ordinanza sull'assicurazione militare (OAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/342/de",
-      "sha": "ae0df0bdb5a4b24f3a5b8adcd9b4d690cc91ba61238b8075722998c254d2b3ec"
+      "sha": "9b33e879c5ebf73b33de9a82c7c17dcb2920bdbb0f796be3293fd218c2dbba06"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/2680_2680_2680",
+      "dateDocument": "1998-11-11",
+      "roFundstelle": "AS 1998 2680",
+      "titelDe": "Verordnung 99 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance 99 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza 99 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei salari e dei prezzi (Ordinanza AM concernente l'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2680_2680_2680/de",
+      "sha": "e752cbf0af6c372da91bb901f0f92331da2f64953fe68e0a826ea2e573404980"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2751_2751_2751",
+      "dateDocument": "1997-11-19",
+      "roFundstelle": "AS 1997 2751",
+      "titelDe": "Verordnung über die Militärversicherung (MVV), Änderung",
+      "titelFr": "Ordonnance sur l'assurance militaire (OAM), Modification",
+      "titelIt": "Ordinanza sull'assicurazione militare (OAM), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2751_2751_2751/de",
+      "sha": "a06e0b35e83b8db52345e63f94ff93c75658d2a667f4c678dbecc0765acd2fbe"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/2955_2955_2955",
+      "dateDocument": "1996-10-30",
+      "roFundstelle": "AS 1996 2955",
+      "titelDe": "Verordnung 97 vom 30. Oktober 1996 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance 97 du 30 octobre 1996 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza 97 del 30 ottobre 1996 sull'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei salari e dei prezzi (Ordinanza AM sull'adeguamento)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/2955_2955_2955/de",
+      "sha": "a84c57cf51a9fa32becfb444ce3af56b8c71328a8611904d673d5dc849c32dd8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/2685_2685_2685",
+      "dateDocument": "1996-09-11",
+      "roFundstelle": "AS 1996 2685",
+      "titelDe": "Verordnung vom 11. September 1996 über den zivilen Ersatzdienst (Zivildienstverordnung, ZDV)",
+      "titelFr": "Ordonnance du 11 septembre 1996 sur le service civil (OSCi)",
+      "titelIt": "Ordinanza dell'11 settembre 1996 sul servizio civile (OSCi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/2685_2685_2685/de",
+      "sha": "52bb68399447bf19a4943c7d566fd9ed52604f2b320116f99e1a723d4071f4b3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/3867_3867_3867",
+      "dateDocument": "1995-06-27",
+      "roFundstelle": "AS 1995 3867",
+      "titelDe": "Verordnung vom 27. Juni 1995 über die Krankenversicherung (KVV)",
+      "titelFr": "Ordonnance du 27 juin 1995 sur l'assurance-maladie (OAMal)",
+      "titelIt": "Ordinanza del 27 giugno 1995 sull'assicurazione malattie (OAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/3867_3867_3867/de",
+      "sha": "a96c8838a1d96379523fa5eda6b7874e3722161da0413c98a4f5f6e0d9b35f97"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2485_2485_2485",
+      "dateDocument": "1994-11-02",
+      "roFundstelle": "AS 1994 2485",
+      "titelDe": "Verordnung 95 vom 2. November 1994 über die Anpassung der Leistungen der Militärversicherung an die Lohn- und Preisentwicklung (MV-Anpassungsverordnung)",
+      "titelFr": "Ordonnance 95 du 2 novembre 1994 sur l'adaptation des prestations de l'assurance militaire à l'évolution des salaires et des prix (Ordonnance AM sur l'adaptation)",
+      "titelIt": "Ordinanza 95 del 2 novembre 1994 concernente l'adeguamento delle prestazioni dell'assicurazione militare all'evoluzione dei salari e dei prezzi (Ordinanza sull'adeguamento AM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2485_2485_2485/de",
+      "sha": "b85c424fdbbb56ab3cc02b5b1f48b5d5a9545ce68cf8b3f68de358e8fbe24656"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1400_1400_1400",
+      "dateDocument": "1994-06-06",
+      "roFundstelle": "AS 1994 1400",
+      "titelDe": "Verordnung über die Militärversicherung, Änderung",
+      "titelFr": "Ordonnance sur l'assurance militaire, Modification",
+      "titelIt": "Ordinanza sull'assicurazione militare, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1400_1400_1400/de",
+      "sha": "04cff53c453933476c021e66ecc30ead5e6dbff52ed259c68aa82df62408d9af"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1994-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/3080_3080_3080",
-      "dateDocument": "1993-11-10",
-      "roFundstelle": "AS 1993 3080",
-      "titelDe": "Verordnung vom 10. November 1993 über die Militärversicherung (MVV)",
-      "titelFr": "Ordonnance du 10 novembre 1993 sur l'assurance militaire (OAM)",
-      "titelIt": "Ordinanza del 10 novembre 1993 sull'assicurazione militare (OAM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/3080_3080_3080/de",
-      "sha": "23f56b144091c80c9f72b94040743dc4c12469474ed1918770da2a8234b169f4"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1964-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1964/265_258_257",
-      "dateDocument": "1964-03-20",
-      "roFundstelle": "AS 1964 265",
-      "titelDe": "Verordnung vom 20. März 1964 über die Militärversicherung (MVV)",
-      "titelFr": "Ordonnance du 20 mars 1964 sur l'assurance militaire (OAM)",
-      "titelIt": "Ordinanza del 20 marzo 1964 sull'assicurazione militare (OAM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1964/265_258_257/de",
-      "sha": "1daea168685add39ab480b469a2487303ae48c86588219530cb6ecd94803349c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1826_1826_1826",
+      "dateDocument": "1994-08-30",
+      "roFundstelle": "AS 1994 1826",
+      "titelDe": "Verordnung über die Militärversicherung, Berichtigung (nur ital.)",
+      "titelFr": "Ordonnance sur l'assurance militaire, Errata (seulement en italien)",
+      "titelIt": "Ordinanza sull'assicurazione militare, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1826_1826_1826/de",
+      "sha": "4e60da1d902e15fc5ac9126039a5d487572c4e274f756f7957a4fc321175c6f3"
     }
   ],
-  "sha": "cf172e346850dfc80f67ff88607c32c74fabd40ca4058fdf4815839e92cf5ab6"
+  "sha": "a2822cd83f556e53b53c53f342052f175adaf1187c25abd25645c253392cf81e"
 }

@@ -1,8 +1,8 @@
 {
   "erlassKey": "BOEB",
   "sr": "172.056.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,20 +13,71 @@
       "titelDe": "Verordnung über die Anpassung der Schwellenwerte für Beschaffungen im Staatsvertragsbereich für die Jahre 2026 und 2027",
       "titelFr": "Ordonnance sur l’adaptation des valeurs seuils applicables aux marchés publics soumis aux accords internationaux pour les années 2026 et 2027",
       "titelIt": "Ordinanza per l’adeguamento dei valori soglia per gli appalti pubblici che rientrano nell’ambito di applicazione dei trattati internazionali per gli anni 2026 e 2027",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/672/de",
-      "sha": "5e5eaa21e892b1484ff221d632281de78ba541541274b4866f2e3d423c8dd7cb"
+      "sha": "69bd4fb918619b3ade077f1e19bb523e521c8cd33b58eb2b9e15195b3e6e3287"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.056.1",
-      "sha": "07f0546eb613ced776125c1700d44359c6bd4ccf6d17a59f40ea3692e60ab32a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/257",
+      "dateDocument": "2023-09-29",
+      "roFundstelle": "AS 2024 257",
+      "titelDe": "Bundesgesetz über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG) (Einführung einer Meldepflicht für Cyberangriffe auf kritische Infrastrukturen)",
+      "titelFr": "Loi fédérale sur la sécurité de l’information au sein de la Confédération (Loi sur la sécurité de l’information, LSI) (Mise en place d’une obligation de signaler les cyberattaques contre les infrastructures critiques)",
+      "titelIt": "Legge federale sulla sicurezza delle informazioni in seno alla Confederazione (Legge sulla sicurezza delle informazioni, LSIn) (Introduzione dell’obbligo di segnalare ciberattacchi a infrastrutture critiche)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/257/de",
+      "sha": "a1c3a7efca393b197712bebbc3dfa61e9fbdd32fe1506fe658a6eabd08a4ba2e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2025-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/168",
+      "dateDocument": "2025-03-07",
+      "roFundstelle": "AS 2025 168",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung des Nationalen Zentrums für Cybersicherheit (NCSC) in Bundesamt für Cybersicherheit (BACS)",
+      "titelFr": "Ordonnance concernant l’adaptation de dispositions légales à la suite du changement de nom du Centre national pour la cybersécurité (NCSC) en Office fédéral de la cybersécurité (OFCS)",
+      "titelIt": "Ordinanza sull’adeguamento di leggi in seguito al cambiamento della designazione del Centro nazionale per la cibersicurezza (NCSC) in Ufficio federale della cibersicurezza (UFCS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/168/de",
+      "sha": "1839ff020ed14c4caaa05b3856969fde5f0b0cd80736b1a62326edc7298de4eb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/173",
+      "dateDocument": "2025-03-18",
+      "roFundstelle": "AS 2025 173",
+      "titelDe": "Mitteilung über die Inkraftsetzung der Änderung vom 29. September 2023 des Informationssicherheitsgesetzes",
+      "titelFr": "Communication concernant la mise en vigueur de la modification du 29 septembre 2023 de la loi sur la sécurité de l’information",
+      "titelIt": "Comunicazione sull’entrata in vigore della modifica del 29 settembre 2023 della legge sulla sicurezza delle informazioni",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/173/de",
+      "sha": "dc0a36d3bf337ebf063dc476b03450f4f2b090a8e2aa8f6dde25673d2314012b"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.056.1",
-      "sha": "922d5dc0798d206a6a36b7290fe57b6ebd22ad1bc14f81c84c21f24966a3dbff"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/648",
+      "dateDocument": "2024-03-15",
+      "roFundstelle": "AS 2024 648",
+      "titelDe": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
+      "titelFr": "Loi fédérale sur la protection de l’environnement (Loi sur la protection de l’environnement, LPE)",
+      "titelIt": "Legge federale sulla protezione dell’ambiente (Legge sulla protezione dell’ambiente, LPAmb)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/648/de",
+      "sha": "02406e4541fcf7c37a4b82a19c24bd60201c2e36c52a56e4cf3891ca96a40304"
     },
     {
       "art": "aenderung",
@@ -37,8 +88,11 @@
       "titelDe": "Verordnung über die Anpassung der Schwellenwerte für Beschaffungen im Staatsvertragsbereich für die Jahre 2024 und 2025",
       "titelFr": "Ordonnance sur l’adaptation des valeurs seuils applicables aux marchés publics soumis aux accords internationaux pour les années 2024 et 2025",
       "titelIt": "Ordinanza per l’adeguamento dei valori soglia per gli appalti pubblici che rientrano nell’ambito di applicazione dei trattati internazionali per gli anni 2024 e 2025",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/786/de",
-      "sha": "81d42f6a36a52359d5199bd5d37e8e48d0c13873bd01993bcef4f5df9af61391"
+      "sha": "3c1a07dc65e6c773cb3c8cf87ad621de560eac35643eaaf04865dbea931a9e28"
     },
     {
       "art": "aenderung",
@@ -49,58 +103,12 @@
       "titelDe": "Verordnung vom 17. Dezember 2021 über die Anpassung der Schwellenwerte für Beschaffungen im Staatsvertragsbereich für die Jahre 2022 und 2023",
       "titelFr": "Ordonnance du 17 décembre 2021 sur l’adaptation des valeurs seuils applicables aux marchés publics soumis aux accords internationaux pour les années 2022 et 2023",
       "titelIt": "Ordinanza del 17 dicembre 2021 per l’adeguamento dei valori soglia per gli appalti pubblici che rientrano nell’ambito di applicazione dei trattati internazionali per gli anni 2022 e 2023",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/899/de",
-      "sha": "938c6795e75928a69983b3441d1064800f2930e2ecbb4400f1afe506c28c7ffa"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2021-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/126",
-      "dateDocument": "2019-06-21",
-      "roFundstelle": "AS 2020 641",
-      "titelDe": "Bundesgesetz über das öffentliche Beschaffungswesen (BöB)",
-      "titelFr": "Loi fédérale sur les marchés publics (LMP)",
-      "titelIt": "Legge federale sugli appalti pubblici (LAPub)",
-      "botschaftKey": "BOTSCHAFT-2017-417",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/126/de",
-      "sha": "26072da5604fb84d38e48fbaf52e6b3e973d17ab9e7f67730f8581ab462c46dc"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/140",
-      "dateDocument": "2014-09-26",
-      "roFundstelle": "AS 2015 773",
-      "titelDe": "Bundesgesetz über das öffentliche Beschaffungswesen (BöB)",
-      "titelFr": "Loi fédérale sur les marchés publics (LMP)",
-      "titelIt": "Legge federale sugli acquisti pubblici (LAPub)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/140/de",
-      "sha": "11b1fce536549c666c8ce6269681583cc720eb1adcaca68b08c6faad604a2d6d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2012-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/784",
-      "dateDocument": "2011-11-23",
-      "roFundstelle": "AS 2011 5581",
-      "titelDe": "Verordnung des EVD über die Anpassung der Schwellenwerte im öffentlichen Beschaffungswesen für die Jahre 2012 und 2013",
-      "titelFr": "Ordonnance du DFE sur l'adaptation des valeurs seuils des marchés publics pour les années 2012 et 2013",
-      "titelIt": "Ordinanza del DFE sull'adeguamento dei valori soglia degli acquisti pubblici per gli anni 2012 e 2013",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/784/de",
-      "sha": "91ec578fad946606d505aa0527c4f25a9ae0af6983cc793ccf72bfa85c732d35"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1996-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/508_508_508",
-      "dateDocument": "1994-12-16",
-      "roFundstelle": "AS 1996 508",
-      "titelDe": "Bundesgesetz vom 16. Dezember 1994 über das öffentliche Beschaffungswesen (BöB)",
-      "titelFr": "Loi fédérale du 16 décembre 1994 sur les marchés publics (LMP)",
-      "titelIt": "Legge federale del 16 dicembre 1994 sugli acquisti pubblici (LAPub)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/508_508_508/de",
-      "sha": "fe3cc793b1fd2ace1452ebed0047fec1c2a57fcd572006c038e9f73e63069546"
+      "sha": "5d222437e69b98bc277e99319587c3170bfd7e93cdc059caff81e20e884369a7"
     }
   ],
-  "sha": "f4a028e9fa8bc2295eba4569770522a0b8808f46517645b4fd6cdd04063eeab4"
+  "sha": "441ab7a18deac1fc9baba4d90d04aa8d16e1b994dc54e6c7de63950889b306ed"
 }

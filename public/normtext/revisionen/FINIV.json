@@ -1,26 +1,53 @@
 {
   "erlassKey": "FINIV",
   "sr": "954.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/954.11",
-      "sha": "d3819c963e92668e75889ccc241645c0aac30c16a1c6f17871809439c688c4c6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/13",
+      "dateDocument": "2023-11-29",
+      "roFundstelle": "AS 2024 13",
+      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV)",
+      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
+      "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/13/de",
+      "sha": "8b74daf799c33acaf9b0a9d951d5ae29a8956f3752822a3b16940cc3b4421880"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/954.11",
-      "sha": "fa69d9d21c378d0756cf5de26d06cb8166ec9f552d76f923acea8998a868efa3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/73",
+      "dateDocument": "2024-01-31",
+      "roFundstelle": "AS 2024 73",
+      "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+      "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+      "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/73/de",
+      "sha": "35de68fc5b4d08d65bee8ad1e2323255996dd65893a7b39f9cad25ab7b258877"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/954.11",
-      "sha": "73d034adee823defe341f9bfeb511d74a5f86aa6f9500c831b10a68d90acccdf"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+      "dateDocument": "2022-10-19",
+      "roFundstelle": "AS 2022 698",
+      "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+      "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+      "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/698/de",
+      "sha": "2478029947e15351be1465545817e1af2f94c81ff2ca66a39af9bbb085525412"
     },
     {
       "art": "aenderung",
@@ -31,87 +58,27 @@
       "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur les établissements financiers (OEFin). Erratum.",
       "titelIt": "Ordinanza sugli istituti finanziari (OIsFi). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/470/de",
-      "sha": "a1494775f25d907e9307e14a6ddb34fb397b23b56f6b76f5e8a00dda41691ccc"
+      "sha": "7c59d5a318bed3beb7ea7ebf0b80311791c694f384a582241bd94f884eb46625"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/954.11",
-      "sha": "469cde7fd59170db81fb2ff020eeadf3a1aafbfaa6d6637d3d26f897ec2c170d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2020-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/763",
-      "dateDocument": "2019-11-06",
-      "roFundstelle": "AS 2019 4633",
-      "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
-      "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
-      "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/763/de",
-      "sha": "ab9715bf1ea8e60bad9d619ef04653d743a1d9e5655442ff35d5c57794ad0749"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2013-05-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/251",
-      "dateDocument": "2013-04-10",
-      "roFundstelle": "AS 2013 1111",
-      "titelDe": "Verordnung über die Börsen und den Effektenhandel (Börsenverordnung, BEHV)",
-      "titelFr": "Ordonnance sur les bourses et le commerce des valeurs mobilières (Ordonnance sur les bourses, OBVM)",
-      "titelIt": "Ordinanza sulle borse e il commercio di valori mobiliari (Ordinanza sulle borse, OBVM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/251/de",
-      "sha": "c576690f7e95a4e7dbf97fbb92c6268c88a8ab06d1e76d6344284b9543c37aa3"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2011-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/467",
-      "dateDocument": "2011-06-29",
-      "roFundstelle": "AS 2011 3461",
-      "titelDe": "Verordnung über die Börsen und den Effektenhandel (Börsenverordnung, BEHV)",
-      "titelFr": "Ordonnance sur les bourses et le commerce des valeurs mobilières (Ordonnance sur les bourses, OBVM)",
-      "titelIt": "Ordinanza sulle borse e il commercio di valori mobiliari (Ordinanza sulle borse, OBVM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/467/de",
-      "sha": "57144126c9c28c32b1cb5fcbd0120f737a714d761ef12eb8557e621820c0fda7"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2004-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/343",
-      "dateDocument": "2004-03-31",
-      "roFundstelle": "AS 2004 2781",
-      "titelDe": "Verordnung über die Börsen und den Effektenhandel (Börsenverordnung, BEHV)",
-      "titelFr": "Ordonnance sur les bourses et le commerce des valeurs mobilières (Ordonnance sur les bourses, OBVM)",
-      "titelIt": "Ordinanza sulle borse e il commercio di valori mobiliari (Ordinanza sulle borse, OBVM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/343/de",
-      "sha": "119b837af39274c8853f9320014e46372e275577abce645e8591da49cbe7335f"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1999-12-31",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/533",
-      "dateDocument": "1999-10-27",
-      "roFundstelle": "AS 1999 3670",
-      "titelDe": "Verordnung über die Börsen und den Effektenhandel (Börsenverordnung, BEHV)",
-      "titelFr": "Ordonnance sur les bourses et le commerce des valeurs mobilières (Ordonnance sur les bourses, OBVM)",
-      "titelIt": "Ordinanza sulle borse e il commercio di valori mobiliari (Ordinanza sulle borse, OBVM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/533/de",
-      "sha": "e053e615b323a386a512153a02e8715e723806ddc2908de9e6294f869d2a763d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1997-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/85_85_85",
-      "dateDocument": "1996-12-02",
-      "roFundstelle": "AS 1997 85",
-      "titelDe": "Verordnung vom 2. Dezember 1996 über die Börsen und den Effektenhandel (Börsenverordnung, BEHV)",
-      "titelFr": "Ordonnance du 2 décembre 1996 sur les bourses et le commerce des valeurs mobilières (Ordonnance sur les bourses, OBVM)",
-      "titelIt": "Ordinanza del 2 dicembre 1996 sulle borse e il commercio di valori mobiliari (Ordinanza sulle borse, OBVM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/85_85_85/de",
-      "sha": "709fe058838d351585ac9c86da0adf01f5c775b4d89f54010dfd572c3724d4b9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/400",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 400",
+      "titelDe": "Verordnung vom 18. Juni 2021 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Ordonnance du 18 juin 2021 sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Ordinanza del 18 giugno 2021 sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/400/de",
+      "sha": "cbaa09b474cb03fa4335cbbe4d0eb3cd22f479df7c6b4dafb89f95ae9cca1d03"
     }
   ],
-  "sha": "c1e2e5f75b4aaed6ccff61425062ed493126a881a37ba4d461f9567a2331af7f"
+  "sha": "d20d688d7d786c8cc1c6018f0b9d8e012038c80e0b720c8539f4a3532c1bf168"
 }

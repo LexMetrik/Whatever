@@ -1,8 +1,8 @@
 {
   "erlassKey": "HBEWUE",
   "sr": "0.274.132",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 18 mars 1970 sur l’obtention des preuves à l’étranger en matière civile ou commerciale",
       "titelIt": "Convenzione del 18 marzo 1970 sull’assunzione all’estero delle prove in materia civile o commerciale",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/90/de",
-      "sha": "2d26775ca7fed9491c3becf366ad64f14e4c7cd6c83d94db28fa1d3e3d86fc7e"
+      "sha": "8d33e956444daf6b54e24c82b31121269a7170d11907fdd596c53edb93a3252a"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 18 mars 1970 sur l’obtention des preuves à l’étranger en matière civile ou commerciale",
       "titelIt": "Convenzione del 18 marzo 1970 sull’assunzione all’estero delle prove in materia civile o commerciale",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/766/de",
-      "sha": "c543d28ff5857fcb881f9ab6b9779b7571568d62bdb33cf484eb3b227376d276"
+      "sha": "054569844913e4de4d306c2333f36dab0f7623249a592f5b0a7832f24a952526"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,11 @@
       "titelDe": "Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 18 mars 1970 sur l’obtention des preuves à l’étranger en matière civile ou commerciale",
       "titelIt": "Convenzione del 18 marzo 1970 sull’assunzione all’estero delle prove in materia civile o commerciale",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/288/de",
-      "sha": "6f8e5bf9c2527429d3f60d49a63841b70ce392cd21f3ddcb57c67db31ccfa3f7"
+      "sha": "7a2185f230eb149e35253d35ae167cab6ffa26ea6507d62063e88592a4ab2781"
     },
     {
       "art": "aenderung",
@@ -49,8 +58,11 @@
       "titelDe": "Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 18 mars 1970 sur l’obtention des preuves à l’étranger en matière civile ou commerciale",
       "titelIt": "Convenzione del 18 marzo 1970 sull’assunzione all’estero delle prove in materia civile o commerciale",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/103/de",
-      "sha": "cbcaf71868dcf0224e7acb467d29e86a1783b52e9f7078130aec49acda344e5c"
+      "sha": "f38f4f147ddec327a7c111b19890a8da1dc621ffd94bb10531138a42af8ac031"
     },
     {
       "art": "aenderung",
@@ -61,8 +73,12 @@
       "titelDe": "Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 18 mars 1970 sur l'obtention des preuves à l'étranger en matière civile ou commerciale",
       "titelIt": "Convenzione del 18 marzo 1970 sull'assunzione all'estero delle prove in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/378/de",
-      "sha": "89382ae31606cf77c930a69bbf8bb853977aedf29a22a5dc4e2dad7f284b9aa6"
+      "sha": "b63bc5e040f0b59cdf0d9b3be28aec0677eaa3e2afc01090ef1f711212bdd39f"
     },
     {
       "art": "aenderung",
@@ -73,8 +89,12 @@
       "titelDe": "Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 18 mars 1970 sur l'obtention des preuves à l'étranger en matière civile ou commerciale",
       "titelIt": "Convenzione del 18 marzo 1970 sull'assunzione all'estero delle prove in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/212/de",
-      "sha": "6437c3d5a5d361388b52f7d0af83ef1407527dd63f1a0bbcbccc37b5ff5eae99"
+      "sha": "ccd820cb5ea27c0056e207eca4e97e22c54e8857e9312ea154df73fba0adb24e"
     },
     {
       "art": "aenderung",
@@ -85,8 +105,12 @@
       "titelDe": "Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 18 mars 1970 sur l'obtention des preuves à l'étranger en matière civile ou commerciale",
       "titelIt": "Convenzione del 18 marzo 1970 sull'assunzione all'estero delle prove in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/124/de",
-      "sha": "046d6f8a7e2dd8b5b582f92a5814f69263d96cb3568e7cb8abfc15a778ab2ea6"
+      "sha": "268d97a986cd430b99754c20bde0a6f91e1a58da39c9f45334612393cbdd6056"
     },
     {
       "art": "aenderung",
@@ -97,8 +121,12 @@
       "titelDe": "Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 18 mars 1970 sur l'obtention des preuves à l'étranger en matière civile ou commerciale",
       "titelIt": "Convenzione del 18 marzo 1970 sull'assunzione all'estero delle prove in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/11/de",
-      "sha": "2ac2a2bdd32cb3a02ab87c2f0f4288523b5bdba13edb440c1fc90ef7fb8974cd"
+      "sha": "8fe3a575688664c8ce793234a5f9e6c043d0aaedbd8f136f6fc33a2c1b3016ec"
     },
     {
       "art": "aenderung",
@@ -109,8 +137,12 @@
       "titelDe": "Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 18 mars 1970 sur l'obtention des preuves à l'étranger en matière civile ou commerciale",
       "titelIt": "Convenzione del 18 marzo 1970 sull'assunzione all'estero delle prove in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/680/de",
-      "sha": "8c7077c40681c10911ff21e8d56d1f7d6f42c15f0d630031f49e6cf1e2658676"
+      "sha": "f25b9e7faa76b9f7a81544f8b8eaa6955f24243e083c12095e0f0508103fdbb8"
     },
     {
       "art": "aenderung",
@@ -121,8 +153,12 @@
       "titelDe": "Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 18 mars 1970 sur l'obtention des preuves à l'étranger en matière civile ou commerciale",
       "titelIt": "Convenzione del 18 marzo 1970 sull'assunzione all'estero delle prove in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/150/de",
-      "sha": "89708c667de55d1d2926f089d42e43840982d4cb81b83d2f83118bced40e6b74"
+      "sha": "03f1a280f367fb9f99393b2bb536634bdf873ce9b106c2edcf263270f87598b1"
     },
     {
       "art": "aenderung",
@@ -133,21 +169,27 @@
       "titelDe": "Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 18 mars 1970 sur l'obtention des preuves à l'étranger en matière civile ou commerciale",
       "titelIt": "Convenzione del 18 marzo 1970 sull'assunzione all'estero delle prove in materia civile o commerciale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/296/de",
-      "sha": "091dc4339abd2cea80bd98e7d3d6c438210dd1c9da97c22f38602ad7b1ae5b91"
+      "sha": "55618c4188088abf7a10d3bc67bd648aaab91339d06468bc65a5b72a700fcd0c"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1995-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2824_2824_2824",
-      "dateDocument": "1970-03-18",
-      "roFundstelle": "AS 1994 2824",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1085_1085_1085",
+      "dateDocument": "1995-01-01",
+      "roFundstelle": "AS 1995 1085",
       "titelDe": "Übereinkommen vom 18. März 1970 über die Beweisaufnahme im Ausland in Zivil- oder Handelssachen",
       "titelFr": "Convention du 18 mars 1970 sur l'obtention des preuves à l'étranger en matière civile ou commerciale",
       "titelIt": "Convenzione del 18 marzo 1970 sull'assunzione all'estero delle prove in materia civile o commerciale",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2824_2824_2824/de",
-      "sha": "3922e98150db7329e6bc65b30dc25e378cb94f5d317947ad2687a0f69be72551"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1085_1085_1085/de",
+      "sha": "32fe7e81c73dcc59727a896ab7a5c86bf7f6191f35fcabb8ec58a0d618589d5d"
     }
   ],
-  "sha": "6f0ac7ec22403e52d060a967b32a201971d000e4ef360bbff88cb52fd9f1c73b"
+  "sha": "8f4f313d40f7a55825b958a2ee7c942897700af4006468e32119bfd0fcf17f69"
 }

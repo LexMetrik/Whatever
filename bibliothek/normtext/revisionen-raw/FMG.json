@@ -778,5 +778,320 @@
     "2026-06-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1997/2187_2187_2187",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1997/2187_2187_2187",
+    "inkrafttreten": "1997-10-20",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2187_2187_2187",
+        "typ": 5,
+        "datum": "1997-10-20",
+        "fassung": "1997-10-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2187_2187_2187",
+        "typ": 30,
+        "datum": "1998-01-01",
+        "fassung": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/467",
+        "typ": 1,
+        "datum": "2002-01-01",
+        "fassung": "2002-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/667",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/667",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 2,
+        "datum": "2021-07-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/150",
+        "typ": 1,
+        "datum": "2007-04-01",
+        "fassung": "2007-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/150",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2007-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/165",
+        "typ": 1,
+        "datum": "2007-04-01",
+        "fassung": "2007-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/165",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2007-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/165",
+        "typ": 2,
+        "datum": "2021-07-01",
+        "fassung": "2007-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 1,
+        "datum": "2008-08-01",
+        "fassung": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 2,
+        "datum": "2021-07-01",
+        "fassung": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/349",
+        "typ": 1,
+        "datum": "2010-07-01",
+        "fassung": "2010-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/349",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2010-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/345",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+        "typ": 1,
+        "datum": "2017-09-01",
+        "fassung": "2017-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2017-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/605",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/605",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/605",
+        "typ": 2,
+        "datum": "2021-07-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/648",
+        "typ": 1,
+        "datum": "2017-12-01",
+        "fassung": "2017-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/648",
+        "typ": 5,
+        "datum": "2021-07-01",
+        "fassung": "2017-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/31",
+        "typ": 1,
+        "datum": "2018-03-01",
+        "fassung": "2018-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/31",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2018-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1019",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1019",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2021-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/1019",
+        "typ": 2,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/164",
+        "typ": 1,
+        "datum": "2026-06-01",
+        "fassung": "2026-06-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2001/467": {
+        "dateForce": "2002-01-01",
+        "dateDoc": "2000-10-06",
+        "roId": "RO 2001 3096",
+        "titelDe": "Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF)",
+        "titelFr": "Loi fédérale sur la surveillance de la correspondance par poste et télécommunication (LSCPT)",
+        "titelIt": "Legge federale sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (LSCPT)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/667": {
+        "dateForce": "2004-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2003 4487",
+        "titelDe": "Bundesgesetz über die Beseitigung von Benachteiligungen von Menschen mit Behinderungen (Behindertengleichstellungsgesetz, BehiG)",
+        "titelFr": "Loi fédérale sur l'élimination des inégalités frappant les personnes handicapées (Loi sur l'égalité pour les handicapés, LHand)",
+        "titelIt": "Legge federale sull'eliminazione di svantaggi nei confronti dei disabili (Legge sui disabili, LDis)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/549": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2006 3459",
+        "titelDe": "Schweizerisches Strafgesetzbuch",
+        "titelFr": "Code pénal suisse",
+        "titelIt": "Codice penale svizzero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/150": {
+        "dateForce": "2007-04-01",
+        "dateDoc": "2006-03-24",
+        "roId": "RO 2007 737",
+        "titelDe": "Bundesgesetz über Radio und Fernsehen (RTVG)",
+        "titelFr": "Loi fédérale sur la radio et la télévision (LRTV)",
+        "titelIt": "Legge federale sulla radiotelevisione (LRTV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/447": {
+        "dateForce": "2008-08-01",
+        "dateDoc": "2008-03-20",
+        "roId": "RO 2008 3437",
+        "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/349": {
+        "dateForce": "2010-07-01",
+        "dateDoc": "2009-06-12",
+        "roId": "RO 2010 2617",
+        "titelDe": "Bundesgesetz über die technischen Handelshemmnisse (THG)",
+        "titelFr": "Loi fédérale sur les entraves techniques au commerce (LETC)",
+        "titelIt": "Legge federale sugli ostacoli tecnici al commercio (LOTC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/345": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2014-09-26",
+        "roId": "RO 2016 2131",
+        "titelDe": "Bundesgesetz über Radio und Fernsehen (RTVG)",
+        "titelFr": "Loi fédérale sur la radio et la télévision (LRTV)",
+        "titelIt": "Legge federale sulla radiotelevisione (LRTV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/494": {
+        "dateForce": "2017-09-01",
+        "dateDoc": "2015-09-25",
+        "roId": "RO 2017 4095",
+        "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG) ",
+        "titelFr": "Loi fédérale sur le renseignement (LRens)",
+        "titelIt": "Legge federale sulle attività informative (LAIn)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/605": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-06-16",
+        "roId": "RO 2017 5607",
+        "titelDe": "Bundesgesetz über die Luftfahrt (Luftfahrtgesetz, LFG)",
+        "titelFr": "Loi fédérale sur l'aviation (LA)",
+        "titelIt": "Legge federale sulla navigazione aerea (LNA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/31": {
+        "dateForce": "2018-03-01",
+        "dateDoc": "2016-03-18",
+        "roId": "RO 2018 117",
+        "titelDe": "Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF)",
+        "titelFr": "Loi fédérale sur la surveillance de la correspondance par poste et télécommunication (LSCPT)",
+        "titelIt": "Legge federale sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (LSCPT)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/164": {
+        "dateForce": "2026-06-01",
+        "dateDoc": "2025-12-19",
+        "titelDe": "Bundesgesetz über die Armee und Militärverwaltung (Militärgesetz, MG)",
+        "titelFr": "Loi fédérale sur l’armée et l’administration militaire (Loi sur l’armée, LAAM)",
+        "titelIt": "Legge federale sull’esercito e sull’amministrazione militare (Legge militare, LM)"
+      }
+    }
+  }
 }

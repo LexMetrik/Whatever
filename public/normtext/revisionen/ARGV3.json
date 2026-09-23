@@ -1,14 +1,23 @@
 {
   "erlassKey": "ARGV3",
   "sr": "822.113",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.113",
-      "sha": "b1bfcb14c750afd244db086c1a24114ef85a18c00865f43413cc15018a0483c3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/316",
+      "dateDocument": "2024-06-19",
+      "roFundstelle": "AS 2024 316",
+      "titelDe": "Verordnung 1 zum Arbeitsgesetz (ArGV 1)",
+      "titelFr": "Ordonnance 1 relative à la loi sur le travail (OLT 1)",
+      "titelIt": "Ordinanza 1 concernente la legge sul lavoro (OLL 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/316/de",
+      "sha": "b7afd58be9d5e02e87cad0efa89d02643559ccf162dfc3dc6ddb0bc01423765c"
     },
     {
       "art": "aenderung",
@@ -19,45 +28,74 @@
       "titelDe": "Verordnung 3 zum Arbeitsgesetz (Gesundheitsvorsorge, ArGV 3)",
       "titelFr": "Ordonnance 3 relative à la loi sur le travail (Hygiène, OLT 3)",
       "titelIt": "Ordinanza 3 concernente la legge sul lavoro (Igiene, OLL 3)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/214/de",
-      "sha": "ecbe8ae8169ee37845c8fabbf3a4332bd4144cbbc4dbf2890b084df732dc6aa8"
+      "sha": "50feeee44510b26ec7fdb54831ef38d08dffd4888bbdaee15c2a67a2bf2d58a9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.113",
-      "sha": "0f4da5971c6b9d25407f70f3b651ce4bfd6409efc85e41aed94dc1347ad09e36"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/767",
+      "dateDocument": "2009-10-28",
+      "roFundstelle": "AS 2009 6289",
+      "titelDe": "Verordnung zum Schutz vor Passivrauchen (Passivrauchschutzverordnung, PaRV)",
+      "titelFr": "Ordonnance sur la protection contre le tabagisme passif (Ordonnance concernant le tabagisme passif, OPTP)",
+      "titelIt": "Ordinanza concernente la protezione contro il fumo passivo (Ordinanza concernente il fumo passivo, OPFP)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/767/de",
+      "sha": "a67c35e3f29bcc8ef666548d1e6b79971a656926434047ac9936a3e482b88577"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.113",
-      "sha": "c530b94764830d411d22ec0bc692034faa3bfa1f2b7a3a5ebb9b5060cea15acb"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 4477",
+      "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/633/de",
+      "sha": "64c6acd167ad7484a000c025b7e66d9748f2f20a3fc50a0fc926f9a5682903ba"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1993-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/2553_2553_2553",
-      "dateDocument": "1993-08-18",
-      "roFundstelle": "AS 1993 2553",
-      "titelDe": "Verordnung 3 vom 18. August 1993 zum Arbeitsgesetz (ArGV 3) (Gesundheitsschutz)",
-      "titelFr": "Ordonnance 3 du 18 août 1993 relative à la loi sur le travail (OLT 3) (Protection de la santé)",
-      "titelIt": "Ordinanza 3 del 18 agosto 1993 concernente la legge sul lavoro (OLL 3) (Tutela della salute)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/2553_2553_2553/de",
-      "sha": "dcdb9fc9812bfee211fd091c5d386d618ec74e22473be3bad523138f348eb12e"
+      "dateEntryInForce": "1999-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/34",
+      "dateDocument": "1999-11-17",
+      "roFundstelle": "AS 2000 187",
+      "titelDe": "Verordnung über die Anpassung von Erlassen im Zusammenhang mit der Bildung des neuen Bundesamtes «Staatssekretariat für Wirtschaft»",
+      "titelFr": "Ordonnance sur l'adaptation des actes législatifs en rapport avec la création du nouvel office fédéral du «Secrétariat d'Etat à l'économie»",
+      "titelIt": "Ordinanza sull'adattamento di atti normativi in seguito all'istituzione dell'Ufficio federale «Segretariato di Stato dell'economia»",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/34/de",
+      "sha": "e6acc34193bb4bee07ea794009d2498f6e17971d8d8245651291c75bd15ea05f"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1969-09-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1969/561_569_567",
-      "dateDocument": "1969-03-26",
-      "roFundstelle": "AS 1969 561",
-      "titelDe": "Verordnung III vom 26. März 1969 zum Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz) (Gesundheitsvorsorge und Unfallverhütung in industriellen Betrieben)",
-      "titelFr": "Ordonnance III du 26 mars 1969 concernant l'exécution de la loi fédérale sur le travail dans l'industrie, l'artisanat et le commerce (Loi sur le travail) (Hygiène et prévention des accidents dans les entreprises industrielles)",
-      "titelIt": "Ordinanza III del 26 marzo 1969 per l'esecuzione della legge federale sul lavoro nell'industria, nell'artigianato e nel commercio (Legge sul lavoro) (Igiene e prevenzione degli infortuni nelle aziene industriali)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1969/561_569_567/de",
-      "sha": "8d34ee22028eac75dcb7f4009fa9e24e6a47a4b420724215b8a149d96e704246"
+      "dateEntryInForce": "1998-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822",
+      "dateDocument": "1998-06-22",
+      "roFundstelle": "AS 1998 1822",
+      "titelDe": "Verordnung vom 22 Juni 1998 über die Änderung von Erlassen im Zusammenhang mit der Reorganisation des Eidgenössischen Volkswirtschaftsdepartementes",
+      "titelFr": "Ordonnance du 22 juin 1998 concernant les modifications d'actes législatifs en rapport avec la réorganisation du Département fédéral de l'économie",
+      "titelIt": "Ordinanza del 22 giugno 1998 concernente le modifiche di atti normativi in rapporto alla riorganizzazione del Dipartimento federale dell'economia",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1822_1822_1822/de",
+      "sha": "4baedead3f5cb917b4b2e6639d0bcdefab4cd5d37379c5604b9231d24788dcd1"
     }
   ],
-  "sha": "5bf728e3854e9c569e92fa83b7b9b56f6c8bc2b669dc35b035a42ebbbfcb0896"
+  "sha": "afcaf7221d535e878bc01b730e3b3cf4f107a1e4d4a364305ced7fa9e3078212"
 }

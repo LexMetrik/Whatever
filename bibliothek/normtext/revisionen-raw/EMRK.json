@@ -754,5 +754,618 @@
     "2022-09-16"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1974/2151_2151_2151",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1974/2151_2151_2151",
+    "inkrafttreten": "1974-11-28",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1974/2148_2148_2148",
+        "typ": 3,
+        "fassung": "2012-02-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1974/2151_2151_2151",
+        "typ": 5,
+        "datum": "1974-11-28",
+        "fassung": "1974-11-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/614_614_614",
+        "typ": 6,
+        "datum": "1974-11-28",
+        "fassung": "1974-11-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/614_614_614",
+        "typ": 6,
+        "fassung": "2012-02-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1976/2866_2866_2866",
+        "typ": 6,
+        "datum": "1974-11-28",
+        "fassung": "1974-11-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1977/1464_1464_1464",
+        "typ": 1,
+        "datum": "1977-07-01",
+        "fassung": "1977-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1977/1464_1464_1464",
+        "typ": 9,
+        "datum": "1977-07-01",
+        "fassung": "1977-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1977/147_147_147",
+        "typ": 1,
+        "datum": "1976-12-01",
+        "fassung": "1976-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1977/147_147_147",
+        "typ": 9,
+        "datum": "1976-12-01",
+        "fassung": "1976-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/64_64_64",
+        "typ": 1,
+        "datum": "1978-01-15",
+        "fassung": "1978-01-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/64_64_64",
+        "typ": 9,
+        "datum": "1978-01-15",
+        "fassung": "1978-01-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/2065_2065_2065",
+        "typ": 1,
+        "datum": "1982-12-01",
+        "fassung": "1982-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/2065_2065_2065",
+        "typ": 9,
+        "datum": "1982-12-01",
+        "fassung": "1982-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/285_285_285",
+        "typ": 1,
+        "datum": "1982-02-15",
+        "fassung": "1982-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/285_285_285",
+        "typ": 9,
+        "datum": "1982-02-15",
+        "fassung": "1982-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/928_928_928",
+        "typ": 1,
+        "datum": "1981-01-01",
+        "fassung": "1981-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/928_928_928",
+        "typ": 9,
+        "datum": "1981-01-01",
+        "fassung": "1981-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/1592_1592_1592",
+        "typ": 1,
+        "datum": "1983-12-01",
+        "fassung": "1983-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/1592_1592_1592",
+        "typ": 9,
+        "datum": "1983-12-01",
+        "fassung": "1983-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/1491_1491_1491",
+        "typ": 1,
+        "datum": "1984-12-01",
+        "fassung": "1984-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/1491_1491_1491",
+        "typ": 9,
+        "datum": "1984-12-01",
+        "fassung": "1984-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/973_973_973",
+        "typ": 1,
+        "datum": "1984-09-01",
+        "fassung": "1984-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/973_973_973",
+        "typ": 9,
+        "datum": "1984-09-01",
+        "fassung": "1984-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/360_360_360",
+        "typ": 1,
+        "datum": "1985-04-01",
+        "fassung": "1985-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/360_360_360",
+        "typ": 9,
+        "datum": "1985-04-01",
+        "fassung": "1985-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/169_169_169",
+        "typ": 1,
+        "datum": "1986-01-01",
+        "fassung": "1986-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/169_169_169",
+        "typ": 9,
+        "datum": "1986-01-01",
+        "fassung": "1986-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/1346_1346_1346",
+        "typ": 1,
+        "datum": "1987-10-01",
+        "fassung": "1987-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/1346_1346_1346",
+        "typ": 9,
+        "datum": "1987-10-01",
+        "fassung": "1987-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/314_314_314",
+        "typ": 1,
+        "datum": "1987-01-01",
+        "fassung": "1987-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/314_314_314",
+        "typ": 9,
+        "datum": "1987-01-01",
+        "fassung": "1987-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/1264_1264_1264",
+        "typ": 1,
+        "datum": "1988-07-15",
+        "fassung": "1988-07-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/1264_1264_1264",
+        "typ": 9,
+        "datum": "1988-07-15",
+        "fassung": "1988-07-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/2371_2371_2371",
+        "typ": 1,
+        "datum": "1990-01-01",
+        "fassung": "1990-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/276_276_276",
+        "typ": 1,
+        "datum": "1988-04-29",
+        "fassung": "1988-04-29"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/276_276_276",
+        "typ": 9,
+        "datum": "1988-04-29",
+        "fassung": "1988-04-29"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/55_55_55",
+        "typ": 1,
+        "datum": "1989-12-01",
+        "fassung": "1989-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/55_55_55",
+        "typ": 9,
+        "datum": "1989-12-01",
+        "fassung": "1989-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/789_789_789",
+        "typ": 1,
+        "datum": "1991-03-01",
+        "fassung": "1991-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/789_789_789",
+        "typ": 9,
+        "datum": "1991-03-01",
+        "fassung": "1991-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/2219_2219_2219",
+        "typ": 1,
+        "datum": "1992-11-01",
+        "fassung": "1992-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/2219_2219_2219",
+        "typ": 9,
+        "datum": "1992-11-01",
+        "fassung": "1992-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/657_657_657",
+        "typ": 9,
+        "fassung": "2012-02-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/3097_3097_3097",
+        "typ": 1,
+        "datum": "1993-10-15",
+        "fassung": "1993-10-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/3097_3097_3097",
+        "typ": 9,
+        "datum": "1993-10-15",
+        "fassung": "1993-10-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/2993_2993_2993",
+        "typ": 1,
+        "datum": "1998-11-01",
+        "fassung": "1998-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/139",
+        "typ": 1,
+        "datum": "1999-10-01",
+        "fassung": "1999-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/139",
+        "typ": 9,
+        "datum": "1999-10-01",
+        "fassung": "1999-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/187",
+        "typ": 9,
+        "datum": "2000-03-08",
+        "fassung": "2012-02-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/188",
+        "typ": 1,
+        "datum": "1999-04-01",
+        "fassung": "1999-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/188",
+        "typ": 9,
+        "datum": "1999-04-01",
+        "fassung": "1999-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/306",
+        "typ": 1,
+        "datum": "2005-03-23",
+        "fassung": "2005-03-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/306",
+        "typ": 9,
+        "datum": "2005-03-23",
+        "fassung": "2005-03-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/514",
+        "typ": 1,
+        "datum": "2006-06-14",
+        "fassung": "2006-06-14"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/514",
+        "typ": 9,
+        "datum": "2006-06-14",
+        "fassung": "2006-06-14"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/377",
+        "typ": 1,
+        "datum": "2009-06-01",
+        "fassung": "2009-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/173",
+        "typ": 1,
+        "datum": "2010-06-01",
+        "fassung": "2010-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/173",
+        "typ": 5,
+        "datum": "2010-06-01",
+        "fassung": "2010-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/166",
+        "typ": 1,
+        "datum": "2012-02-23",
+        "fassung": "2012-02-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/166",
+        "typ": 9,
+        "datum": "2012-02-23",
+        "fassung": "2012-02-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/461",
+        "typ": 1,
+        "datum": "2021-08-01",
+        "fassung": "2021-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/461",
+        "typ": 1,
+        "datum": "2022-02-01",
+        "fassung": "2022-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/248",
+        "typ": 9,
+        "datum": "2022-09-16",
+        "fassung": "2022-09-16"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1974/2148_2148_2148": {
+        "dateDoc": "1974-10-03",
+        "roId": "RO 1974 2148",
+        "titelDe": "Bundesbeschluss vom 3. Oktober 1974 über die Genehmigung der Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten",
+        "titelFr": "Arrêté fédéral du 3 octobre 1974 approuvant la Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+        "titelIt": "Decreto federale del 3 ottobre 1974 che approva la Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1975/614_614_614": {
+        "dateForce": "1975-03-01",
+        "dateDoc": "1975-04-14",
+        "roId": "RO 1975 614",
+        "titelDe": "Reglement über Kurse und Prüfungen zum Erwerb eines Giftbuches für den Bezug von Giften der Klasse 2 für die pflanzenbauliche Produktion, Berichtigung (nur ital.)",
+        "titelFr": "Règlement concernant les cours et les examens dont dépend la délivrance d'un livret de toxiques pour l'acquisition de toxiques de la classe 2 pour la production végétale, Errata (seulement en italien)",
+        "titelIt": "Regolamento concernente i corsi e gli esami per l'ottenimento di un libro dei veleni per l'acquisto di veleni della classe 2 per la produzione vegetale, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1976/2866_2866_2866": {
+        "dateForce": "1974-11-28",
+        "dateDoc": "1976-12-15",
+        "roId": "RO 1976 2866",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten, Berichtigung (nur ital.)",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, Errata (seulement en italien)",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1977/1464_1464_1464": {
+        "dateForce": "1977-07-01",
+        "dateDoc": "1977-07-01",
+        "roId": "RO 1977 1464",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1977/147_147_147": {
+        "dateForce": "1976-12-01",
+        "dateDoc": "1976-12-01",
+        "roId": "RO 1977 147",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950, geändert durch das Protokoll Nr. 3 vom 6. Mai 1963 und das Protokoll Nr. 5 vom 20. Januar 1966",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950, amendée par le Protocole n<sup>o</sup> 3 du 6 mai 1963 et le Protocole n>sup>o</sup> 5 du 20 janvier 1966",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950, emendata dal Protocollo n. 3 del 6 maggio 1963 e dal Protocollo n. 5 del 20 gennaio 1966"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1978/64_64_64": {
+        "dateForce": "1978-01-15",
+        "dateDoc": "1978-01-15",
+        "roId": "RO 1978 64",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/2065_2065_2065": {
+        "dateForce": "1982-12-01",
+        "dateDoc": "1982-12-01",
+        "roId": "RO 1982 2065",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/285_285_285": {
+        "dateForce": "1982-02-15",
+        "dateDoc": "1982-02-15",
+        "roId": "RO 1982 285",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/928_928_928": {
+        "dateForce": "1981-01-01",
+        "dateDoc": "1978-06-13",
+        "roId": "RO 1982 928",
+        "titelDe": "Bundesbeschluss vom 13. Juni 1978 über den Vorbehalt zu Artikel 5 der Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten",
+        "titelFr": "Arrêté fédéral du 13 juin 1978 concernant la réserve apportée à l'article 5 de la Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+        "titelIt": "Decreto federale del 13 giugno 1978 concernente la riserva all'articolo 5 della Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1983/1592_1592_1592": {
+        "dateForce": "1983-12-01",
+        "dateDoc": "1983-12-01",
+        "roId": "RO 1983 1592",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1984/1491_1491_1491": {
+        "dateForce": "1984-12-01",
+        "dateDoc": "1984-12-01",
+        "roId": "RO 1984 1491",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1984/973_973_973": {
+        "dateForce": "1984-09-01",
+        "dateDoc": "1984-09-01",
+        "roId": "RO 1984 973",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1985/360_360_360": {
+        "dateForce": "1985-04-01",
+        "dateDoc": "1985-04-01",
+        "roId": "RO 1985 360",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+        "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1986/169_169_169": {
+        "dateForce": "1986-01-01",
+        "dateDoc": "1986-01-01",
+        "roId": "RO 1986 169",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/1346_1346_1346": {
+        "dateForce": "1987-10-01",
+        "dateDoc": "1987-10-01",
+        "roId": "RO 1987 1346",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/314_314_314": {
+        "dateForce": "1987-01-01",
+        "dateDoc": "1987-01-01",
+        "roId": "RO 1987 314",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1988/1264_1264_1264": {
+        "dateForce": "1988-07-15",
+        "dateDoc": "1988-07-15",
+        "roId": "RO 1988 1264",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/2371_2371_2371": {
+        "dateForce": "1990-01-01",
+        "dateDoc": "1985-03-19",
+        "roId": "RO 1989 2371",
+        "titelDe": "Protokoll Nr. 8 vom 19. März 1985 zur Konvention zum Schutze der Menschenrechte und Grundfreiheiten",
+        "titelFr": "Protocole n<sup>o</sup> 8 du 19 mars 1985 à la Convention de sauvegarde des droits de l'homme et des libertés fondamentales",
+        "titelIt": "Protocollo n. 8 del 19 marzo 1985 alla Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/276_276_276": {
+        "dateForce": "1988-04-29",
+        "dateDoc": "1988-04-29",
+        "roId": "RO 1989 276",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+        "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1990/55_55_55": {
+        "dateForce": "1989-12-01",
+        "dateDoc": "1989-12-01",
+        "roId": "RO 1990 55",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+        "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/789_789_789": {
+        "dateForce": "1991-03-01",
+        "dateDoc": "1991-03-01",
+        "roId": "RO 1991 789",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/2219_2219_2219": {
+        "dateForce": "1992-11-01",
+        "dateDoc": "1992-11-01",
+        "roId": "RO 1992 2219",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/657_657_657": {
+        "dateForce": "1992-03-15",
+        "dateDoc": "1992-03-31",
+        "roId": "RO 1992 657",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+        "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, del 4 novembre 1950"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/3097_3097_3097": {
+        "dateForce": "1993-10-15",
+        "dateDoc": "1993-10-15",
+        "roId": "RO 1993 3097",
+        "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+        "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+        "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/2993_2993_2993": {
+        "dateForce": "1998-11-01",
+        "dateDoc": "1994-05-11",
+        "roId": "RO 1998 2993",
+        "titelDe": "Protokoll Nr. 11 zur Konvention zum Schutze der Menschenrechte und Grundfreiheiten über die Umgestaltung des durch die Konvention eingeführten Kontrollmechanismus",
+        "titelFr": "Protocole N<sup>o</sup> 11 à la convention de sauvegarde des Droits de l'Homme et des Libertés fondamentales portant restructuration du mécanisme de contrôle établie par la Convention",
+        "titelIt": "Protocollo n. 11 alla Convenzione europea per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, che ristruttura il meccanismo di controllo istituito dalla Convenzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/187": {
+        "dateDoc": "2000-03-08",
+        "roId": "RO 2002 1142",
+        "titelDe": "Bundesbeschluss über den Rückzug der Vorbehalte und Auslegenden Erklärungen der Schweiz zu Artikel 6 der Europäischen Menschenrechtskonvention",
+        "titelFr": "Arrêté fédéral relatif au retrait des réserves et déclarations interprétatives à l'art. 6 de la Convention européenne des droits de l'homme",
+        "titelIt": "Decreto federale sul ritiro delle riserve e dichiarazioni interpretative della Svizzera all'articolo 6 della Convenzione europea dei diritti dell'uomo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/377": {
+        "dateForce": "2009-06-01",
+        "dateDoc": "2004-05-13",
+        "roId": "RO 2009 3067",
+        "titelDe": "Protokoll Nr. 14 zur Konvention zum Schutz der Menschenrechte und Grundfreiheiten über die Änderung des Kontrollsystems der Konvention",
+        "titelFr": "Protocole n<sup>o</sup> 14 à la Convention de sauvegarde des droits de l'homme et des libertés fondamentales, amendant le système de contrôle de la Convention",
+        "titelIt": "Protocollo n. 14 alla Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, il quale emenda il sistema di controllo della Convenzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/173": {
+        "dateForce": "2010-06-01",
+        "dateDoc": "2010-06-01",
+        "roId": "RO 2010 1241",
+        "titelDe": "Protokoll Nr. 14 vom 13. Mai 2004 zur Konvention zum Schutz der Menschenrechte und Grundfreiheiten über die Änderung des Kontrollsystems der Konvention",
+        "titelFr": "Protocole n<sup>o</sup> 14 du 13 mai 2004 à la Convention de sauvegarde des droits de l'homme et des libertés fondamentales, amendant le système de contrôle de la Convention",
+        "titelIt": "Protocollo n. 14 del 13 maggio 2004 alla Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, il quale emenda il sistema di controllo della Convenzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/461": {
+        "dateForce": "2021-08-01",
+        "dateDoc": "2013-06-24",
+        "titelDe": "Protokoll Nr. 15 vom 24. Juni 2013 über die Änderung der Konvention zum Schutze der Menschenrechte und Grundfreiheiten",
+        "titelFr": "Protocole n° 15 du 24 juin 2013 portant amendement à la Convention de sauvegarde des droits de l’homme et des libertés fondamentales",
+        "titelIt": "Protocollo n. 15 del 24 giugno 2013 recante emendamento alla Convenzione per la salvaguardia dei diritti dell’uomo e delle libertà fondamentali"
+      }
+    }
+  }
 }

@@ -1,129 +1,39 @@
 {
   "erlassKey": "VOEB",
   "sr": "172.056.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.056.11",
-      "sha": "ca0e9efe56bcfa562645cc065f2333c6dfd95b9b93487a897c2e14520b482b69"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.056.11",
-      "sha": "d2c836672a144181a3f1871041983aa66841257d1a16e0d3c27de59f6f68d11e"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2021-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/127",
-      "dateDocument": "2020-02-12",
-      "roFundstelle": "AS 2020 691",
-      "titelDe": "Verordnung über das öffentliche Beschaffungswesen (VöB)",
-      "titelFr": "Ordonnance sur les marchés publics (OMP)",
-      "titelIt": "Ordinanza sugli appalti pubblici (OAPub)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/127/de",
-      "sha": "35e79bbb99b404a78c4619acc6e8c788a5e01a07695782a3d12bb74753cffce5"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/141",
-      "dateDocument": "2015-02-25",
-      "roFundstelle": "AS 2015 775",
-      "titelDe": "Verordnung über das öffentliche Beschaffungswesen (VöB)",
-      "titelFr": "Ordonnance sur les marchés publics (OMP)",
-      "titelIt": "Ordinanza sugli acquisti pubblici (OAPub)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/141/de",
-      "sha": "4481e1f22ede7b996c1580709a9700c0abde5b384c0bc607b67b8180a5238398"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2010-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/752",
-      "dateDocument": "2009-11-18",
-      "roFundstelle": "AS 2009 6149",
-      "titelDe": "Verordnung über das öffentliche Beschaffungswesen (VoeB)",
-      "titelFr": "Ordonnance sur les marchés publics (OMP)",
-      "titelIt": "Ordinanza sugli acquisti pubblici (OAPub)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/752/de",
-      "sha": "a72ae0fb5f21e5ec9f018c8f92fe63854a47e206d9d50d9f57650599920b6173"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2010-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/222",
-      "dateDocument": "2010-04-20",
-      "roFundstelle": "AS 2010 1565",
-      "titelDe": "Verordnung über das öffentliche Beschaffungswesen (VöB) (Betrifft nur den französischen Text)",
-      "titelFr": "Ordonnance sur les marchés publics (OMP)",
-      "titelIt": "Ordinanza sugli acquisti pubblici (OAPub) (Concerne solo il testo francese)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/222/de",
-      "sha": "98679c7c8bc9ed617c3c1745dad464253dd1b4036fc339c64bfa3eef4382d13b"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-05-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/259",
-      "dateDocument": "2006-04-26",
-      "roFundstelle": "AS 2006 1667",
-      "titelDe": "Verordnung über das öffentliche Beschaffungswesen (VoeB)",
-      "titelFr": "Ordonnance sur les marchés publics (OMP)",
-      "titelIt": "Ordinanza sugli acquisti pubblici (OAPub)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/259/de",
-      "sha": "0ae0f3c6a9e46f53cd44a442567b8e38628e146beb0f09346478b558dcd8f344"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2002-06-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/157",
-      "dateDocument": "2001-11-30",
-      "roFundstelle": "AS 2002 886",
-      "titelDe": "Verordnung über das öffentliche Beschaffungswesen (VoeB)",
-      "titelFr": "Ordonnance sur les marchés publics (OMP)",
-      "titelIt": "Ordinanza sugli acquisti pubblici (OAPub)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/157/de",
-      "sha": "5c1913e1ad08e49fb4c4b465834050f1cbd1c86543c1be340df209147328f924"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2002-06-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/264",
-      "dateDocument": "2002-05-15",
-      "roFundstelle": "AS 2002 1759",
-      "titelDe": "Verordnung über das öffentliche Beschaffungswesen (VoeB)",
-      "titelFr": "Ordonnance sur les marchés publics (OMP)",
-      "titelIt": "Ordinanza sugli acquisti pubblici (OAPub)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/264/de",
-      "sha": "9535abf86e163c676286d2f592d83b46e8b6f5447dc8085b80120071ce95497e"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1996-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/518_518_518",
-      "dateDocument": "1995-12-11",
-      "roFundstelle": "AS 1996 518",
-      "titelDe": "Verordnung vom 11. Dezember 1995 über das öffentliche Beschaffungswesen (VöB)",
-      "titelFr": "Ordonnance du 11 décembre 1995 sur les marchés publics (OMP)",
-      "titelIt": "Ordinanza dell'11 dicembre 1995 sugli acquisti pubblici (OAPub)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/518_518_518/de",
-      "sha": "8d9a19c7e3ead3b23f9f968dfa88d48c688bd228ecb570d5f8dc8da5cbd576a6"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1953-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1953/57_56_57",
-      "dateDocument": "1952-12-08",
-      "roFundstelle": "AS 1953 57",
-      "titelDe": "Verordnung vom 8. Dezember 1952 über das Inventar der Immobilien und Mobilien in der Bundesverwaltung",
-      "titelFr": "Ordonnance du 8 décembre 1952 concernant l'inventaire des biens meubles et immeubles de l'administration fédérale",
-      "titelIt": "Ordinanza dell'8 dicembre 1952 concernente l'inventario dei beni mobili e immobili dell'Amministrazione federale",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1953/57_56_57/de",
-      "sha": "20cdee262457b547111c6af6ffe4388236bac7c71a440cc39cfe70ea09456295"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+      "dateDocument": "2022-10-19",
+      "roFundstelle": "AS 2022 698",
+      "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+      "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+      "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/698/de",
+      "sha": "2478029947e15351be1465545817e1af2f94c81ff2ca66a39af9bbb085525412"
     }
   ],
-  "sha": "879905487615d74b89a2e782b1cf3fddfbd6eda7e6a610e4f871e35b5275e5d7"
+  "sha": "235bd966a7fd3b4f80d100b2a09631094acee95e23c132aab80c1c748f32ad2e"
 }

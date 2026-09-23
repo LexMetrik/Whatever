@@ -1,15 +1,24 @@
 {
   "erlassKey": "VEV",
   "sr": "142.204",
-  "abgerufen": "2026-09-18",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/474",
+      "dateDocument": "2026-08-26",
+      "roFundstelle": "AS 2026 474",
+      "titelDe": "Verordnung vom 26. August 2026 über das europäische und das nationale Reiseinformations- und -genehmigungssystem (ETIASV)",
+      "titelFr": "Ordonnance du 26 août 2026 sur les systèmes européen et national d’information et d’autorisation concernant les voyages (OETIAS)",
+      "titelIt": "Ordinanza del 26 agosto 2026 sui sistemi europeo e nazionale di informazione e autorizzazione ai viaggi (OETIAS)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.204",
-      "sha": "97716a28cca80d89e5ffdc10cb435c6696cf78b82e28f562c5b3eb60915ec02b"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/474/de",
+      "sha": "b6d6f7358c82c8d8809d1ae15ad45d53213fafa3652187e20a05b4a8d211bb31"
     },
     {
       "art": "aenderung",
@@ -20,8 +29,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/240/de",
-      "sha": "fce3fb80dc864286d6bc5bc833914e575ef1a137756745015b3cd0a6a2299734"
+      "sha": "03cbf0be4d93fdf9355c9e8d41c184c42a94a7231a18c0be7bbad7f5b46d03b1"
     },
     {
       "art": "aenderung",
@@ -32,8 +44,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/261/de",
-      "sha": "9b1a6b45b87e234d591f971f0fb8cddf7fd59bdbe7d3a3a2e90bbbb50fb08b53"
+      "sha": "c0ea621903d4fe4db6c8a698e1b2de4b029283fbb55164050905573073063e8c"
     },
     {
       "art": "aenderung",
@@ -44,8 +59,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/136/de",
-      "sha": "c61235858d9dce613c5198f69fe1b85d043517a031dfe9dda2934c4a2b28be95"
+      "sha": "e5bf8acff7fbe1bb75c8945e84dce0aebac01824292278c57c5c45d7f907cc8b"
     },
     {
       "art": "aenderung",
@@ -56,8 +74,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/860/de",
-      "sha": "f5d5cbb180c81ddc6a6f1cd973e9a545945363aa214f95b44c944b4dd276c4de"
+      "sha": "ead21990f82271eaa446835e19d30100698bf40014a11efcc6754bfe51f10e03"
     },
     {
       "art": "aenderung",
@@ -68,8 +89,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/804/de",
-      "sha": "2407b1ae51734ee35c157babe4c249c0d6c954eb58575f9716d3b9f083996642"
+      "sha": "a0e87c70e06097f6c484cf15cd39f993a668da4b0e62ebd661020ff9d807da2c"
     },
     {
       "art": "aenderung",
@@ -80,8 +104,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/431/de",
-      "sha": "ba6df0d2f6c8b5f1d4037408c0b39cb6905fc98578b632220247ebe39c420849"
+      "sha": "abef72ec245f14d6a9717f1045c0ded67472c591d546148f725dd648f0110a3c"
     },
     {
       "art": "aenderung",
@@ -92,8 +119,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/163/de",
-      "sha": "18a9f21b39fe9a67580299c1f5729a5dac1822850592b8f0e21118f027ee25f7"
+      "sha": "f2cb1b9820bfdf9eeb823fd05348cc4e7ec586e894c86599a0fc3bd36067504c"
     },
     {
       "art": "aenderung",
@@ -104,8 +134,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/45/de",
-      "sha": "e467d79e18ab35c562432fdc795aad9c586c03137664e52da74e1eff865c7b83"
+      "sha": "fd4170c4486216d50bc671b2cff84d31b223476da1088cb613d9ee39f2452b26"
     },
     {
       "art": "aenderung",
@@ -116,8 +149,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/555/de",
-      "sha": "d217eb783b543d986f537b349662012c9b35cf64cb46c49636c70fdbbe2a3f1a"
+      "sha": "feb0a55011a8a84aa6f16216162345526eb00cd3aaef1d3702f4e94d68ceb737"
     },
     {
       "art": "aenderung",
@@ -128,8 +164,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/434/de",
-      "sha": "5cb62a4ae0a3029fb225cfb94aef666ff74dfee29b88fbbfe86951d38c5cd00a"
+      "sha": "2cd7fb46adf6fc38bf18a63b14b1be9361fa3726acdbf032f4050ca2dd500214"
     },
     {
       "art": "aenderung",
@@ -140,14 +179,26 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/345/de",
-      "sha": "31d2aa14e3e0889bcfe58310c3f2097fc09421df0ad0c06d16c7a296279fb22a"
+      "sha": "340b0c4375f68344e53ed493b275e4e08796c0ef25b2e209a7e2723f438043c0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-06-11",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.204",
-      "sha": "d7aed1c816a07c4da18981106821b040acd6fffc7b958981106165b6f4dda922"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/258",
+      "dateDocument": "2024-06-07",
+      "roFundstelle": "AS 2024 258",
+      "titelDe": "Verordnung über die Gebühren zum Ausländer- und Integrationsgesetz (Gebührenverordnung AIG, GebV-AIG)",
+      "titelFr": "Ordonnance sur les émoluments perçus en application de la loi sur les étrangers et l’intégration (Tarif des émoluments LEI, Oem-LEI)",
+      "titelIt": "Ordinanza sugli emolumenti della legge federale sugli stranieri e la loro integrazione (Ordinanza sugli emolumenti LStrI, OEmol-LStrI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/258/de",
+      "sha": "28492a17d9d546cc2bb764ec940e164629c4d1f40d1a51d69f04d212980599be"
     },
     {
       "art": "aenderung",
@@ -158,8 +209,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/168/de",
-      "sha": "0eab2ce67664f8f434f1e68f47f2af3736e54636e07b80a31074496d1ec3b12f"
+      "sha": "e910cfee0a0cefcb3a831afcf1afd0472615312e0e296ca6dcb84568d411c739"
     },
     {
       "art": "aenderung",
@@ -170,8 +224,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/75/de",
-      "sha": "d3056ccaaafe5cec27af9b5f6572c6e9af806f36741263733c4da513b11750dd"
+      "sha": "d8a4aaa6560fbaeee78f62f2e543fae246db1cbfab7b66bac07662002038eaea"
     },
     {
       "art": "aenderung",
@@ -182,8 +239,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/808/de",
-      "sha": "3afcad320b40e8f804f1df36ea62903856dc59a18fe0d47315e55d83012fc5f7"
+      "sha": "70e7a240bdfeee0a8c43493f42ef19b3268ceb56156693520d40fc6ca4e600e8"
     },
     {
       "art": "aenderung",
@@ -194,8 +254,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/262/de",
-      "sha": "89dee72538d7ed682990ce0fe0b2fb541f9c76648a09cb04c5077defe4452122"
+      "sha": "9226a9e3e7a0cbb3d469ee8eccfc4f281c137940836c453efed4801cf7cc0afc"
     },
     {
       "art": "aenderung",
@@ -206,8 +269,12 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/549/de",
-      "sha": "2b650c0adaae768cb1132566131ec42ffe6e1205aaf113590b16fceb5f471b9e"
+      "sha": "a0329892a7e4deff0518893bdf3911c4fd017746db2ecec912fbb6f6393b510b"
     },
     {
       "art": "aenderung",
@@ -218,8 +285,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/44/de",
-      "sha": "fdb486459e05d35aa2e2a8f77909d50e6e273acac55f81639a10f441edb70d9b"
+      "sha": "f782d1bf1b10345a13538979441aadec353dce644d201868d8a7a27ebe210fbe"
     },
     {
       "art": "aenderung",
@@ -230,8 +300,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/368/de",
-      "sha": "fe4df352f086773cf6b2ad0c361168c9dce144c7c93b2bfb979f66becacacac0"
+      "sha": "3704a8a782f00c7302c235af6eed79300a89a5f7f990e7fd8c2ee7dcf1745d17"
     },
     {
       "art": "aenderung",
@@ -242,8 +315,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/344/de",
-      "sha": "6e71259681a2beea97cfc3bd5964cbf779862209420b73b0194aec5902eb9047"
+      "sha": "a4a69b3d8b25e62adecb5f606194b2b6e6e3ba2775764d2ac8ad0bbc01482c63"
     },
     {
       "art": "aenderung",
@@ -254,8 +330,12 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/733/de",
-      "sha": "9e96544485f5408020b5a376ec2c04cce3c5eccb8d1847321230fd29f71c0902"
+      "sha": "de6f05875c34cf6c0e91976cb19cfcb5aa22938c827eb58bee8a1d756ebd54b9"
     },
     {
       "art": "aenderung",
@@ -266,8 +346,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/913/de",
-      "sha": "5e16b515b078a6bf22dd663bbd7435d3531115efd27aac89f5bfc4ad78a5b159"
+      "sha": "bfbbcf0fdc8d77c8236bb4a2ebfcdc93ffc820dacb52b9b8123f0815f80ae9bc"
     },
     {
       "art": "aenderung",
@@ -278,8 +361,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/602/de",
-      "sha": "351386471e02ab5e552bfa8f420adb7f42f4dc6e5b01f613c79805ae4c939b6a"
+      "sha": "56c20fefd6a1a19b9a69677a52bea563b27fdfae1ddbf976fd0a3b00b701c732"
     },
     {
       "art": "aenderung",
@@ -290,8 +376,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l’entrée et l’octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l’entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/503/de",
-      "sha": "3df4e19e37ee1ce1f83eb4c719a16ce58c22639f6b1ac2249b956a75e091c7c6"
+      "sha": "302b715734752583db3e5f19624a3bbcec3a1c38248f8b738bb59ac0b6274125"
     },
     {
       "art": "aenderung",
@@ -302,8 +391,26 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/1052/de",
-      "sha": "e7af36ade20761fa31ca63f862d5eacbafaec376322a0c2ab80cb4adce4531f2"
+      "sha": "9af3296b6e8a76ffb23f15fe669af4d4b3fa64766086d417352cfd0338ef468d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/988",
+      "dateDocument": "2020-11-25",
+      "roFundstelle": "AS 2020 5871",
+      "titelDe": "Verordnung über die Koordination der digitalen Transformation und die IKT-Lenkung in der Bundesverwaltung (Verordnung über die digitale Transformation und die Informatik, VDTI)",
+      "titelFr": "Ordonnance sur la coordination de la transformation numérique et la gouvernance de l'informatique dans l'administration fédérale (Ordonnance sur la transformation numérique et l'informatique, OTNI)",
+      "titelIt": "Ordinanza sul coordinamento della trasformazione digitale e la governance delle TIC in seno all'Amministrazione federale (Ordinanza sulla trasformazione digitale e l'informatica, OTDI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/988/de",
+      "sha": "3bdf66fcf0f8111c3f6780e4ed025208b889e0478c3ad541259d5bd9dba07a76"
     },
     {
       "art": "aenderung",
@@ -314,8 +421,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/372/de",
-      "sha": "3c19a7c982bdb51562576b67577188a7b7e4c01213405574b58e013348dac9ad"
+      "sha": "ce1f0d2286b887e7099d9ba3b35adb941746ad3de762e4a50cec0d778efb3c8f"
     },
     {
       "art": "aenderung",
@@ -326,8 +436,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/491/de",
-      "sha": "2d0292ba576ea223f8256c2ce2d24d47a07ab5fd11c6dd1637d7a318da7ef57a"
+      "sha": "bad446cb35f45f24216a1ebb0316ccd561b0d72a5244228f36e325b88e9562cc"
     },
     {
       "art": "aenderung",
@@ -338,8 +451,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/280/de",
-      "sha": "c3c59c61acd6465fab27311ed76067585926ce5ef439bc4820657d1599628d5a"
+      "sha": "32b382ced78dfe011111899a8afe3bc89b6ccaa0f4c7e0f9780bf763dc9e8531"
     },
     {
       "art": "aenderung",
@@ -350,8 +466,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/161/de",
-      "sha": "c641eeb543d8642df4ec6ddbaddcf523c5f6ff3688ef282f3bdf033c7c27ecb5"
+      "sha": "217e8c425ba91fbefe1f4da35dbfaae8fd7498db9b28dc5d06632b654d6da5af"
     },
     {
       "art": "aenderung",
@@ -362,8 +481,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/75/de",
-      "sha": "55774a4ee9db3bf6dad596561740858e95ea44d24dc5f350eba4fe4fd1505f9f"
+      "sha": "ac0b99e1aefc705d1667243830612849740d9f90b6db0e9dcb85f0302fa33009"
     },
     {
       "art": "aenderung",
@@ -374,8 +496,11 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/22/de",
-      "sha": "d3515b2c2f0d966ef291a72e8b555e4fa9f105e549cd474ef4ac978de6feddea"
+      "sha": "d5073ad524a67a839a76c0c4dcb36cc73e9cb5749f3a50bc2443adbb5942461f"
     },
     {
       "art": "aenderung",
@@ -386,381 +511,12 @@
       "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
       "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
       "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/711/de",
-      "sha": "e86639e99d6a6a2ff276ff7e6ea86f4f8de4e7544fa8e6ebdfea09704e010445"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2018-09-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/493",
-      "dateDocument": "2018-08-15",
-      "roFundstelle": "AS 2018 3087",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/493/de",
-      "sha": "682784929e71bee45fd04b69bdc743227c5204232e7780531872d7adcd58cace"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2017-06-11",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/339",
-      "dateDocument": "2017-06-02",
-      "roFundstelle": "AS 2017 3273",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/339/de",
-      "sha": "ede0c5b3323977b9ccb31f0b220971725478e757f12e89b88884b23f27344ab6"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2017-05-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/239",
-      "dateDocument": "2017-04-05",
-      "roFundstelle": "AS 2017 2549",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/239/de",
-      "sha": "c914a6ec4056a43210ce3dfbe18d87fd49747501735583f63b94b2fdbf8c442b"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2017-03-28",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/177",
-      "dateDocument": "2017-03-22",
-      "roFundstelle": "AS 2017 1683",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/177/de",
-      "sha": "a24fa727950f46c4eb9027060c4dc072c2ea6135f3cdb21c8182ba95742a10e8"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2016-11-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/627",
-      "dateDocument": "2016-10-21",
-      "roFundstelle": "AS 2016 3721",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/627/de",
-      "sha": "4412d81a1573ffeca6defd2cff33c04465a377fee23d6938ff4b71475395ef68"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2016-11-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/595",
-      "dateDocument": "2016-10-11",
-      "roFundstelle": "AS 2016 3539",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/595/de",
-      "sha": "dfda3b55c8ba8c3babc122ad49e9eae92ca661fddac7aece4d2cce808e58338c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2016-08-02",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/419",
-      "dateDocument": "2016-07-06",
-      "roFundstelle": "AS 2016 2635",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/419/de",
-      "sha": "4607a7d5518b489f9eb1da0f8fdbab9ce3379c3c9ad15a4d16ff8752ddcbec6a"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2016-05-16",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/256",
-      "dateDocument": "2016-05-04",
-      "roFundstelle": "AS 2016 1283",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/256/de",
-      "sha": "4914367a89d15ce4fe2673168341426b68a64aa6cfc9154512d47db5292b1b6d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2016-03-29",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/160",
-      "dateDocument": "2016-03-04",
-      "roFundstelle": "AS 2016 923",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/160/de",
-      "sha": "90e89b45bfc22aaf8bf98cf3b684947496cd2cccf065ca0be53cb5a6f6ef79aa"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-12-28",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/858",
-      "dateDocument": "2015-12-11",
-      "roFundstelle": "AS 2015 5559",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/858/de",
-      "sha": "726ad618d3f13ed097ed921760fd375ddcfaadffe8494ee878f0432fce745262"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-12-14",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/795",
-      "dateDocument": "2015-11-24",
-      "roFundstelle": "AS 2015 4871",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/795/de",
-      "sha": "7b06168a607443ea95661761652e219c509233918ab3dd5e4b71e421fe4b5820"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-12-07",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/776",
-      "dateDocument": "2015-11-20",
-      "roFundstelle": "AS 2015 4741",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/776/de",
-      "sha": "9880e30c63d6205b2d8a58dd572af9e67374dd517e8e9dd039748bce732aee3b"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-10-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/624",
-      "dateDocument": "2015-09-18",
-      "roFundstelle": "AS 2015 3723",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/624/de",
-      "sha": "a0e68fc3cf35f88a58b0edaa883c44340ba7c2b972b9bf7ee76e0b759f5c7c81"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/571",
-      "dateDocument": "2015-09-02",
-      "roFundstelle": "AS 2015 3035",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/571/de",
-      "sha": "79d64a17941e918d4fe67b3c8e0789fe0a13b3caf67e314c7f49c54e03dfeaa0"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/359",
-      "dateDocument": "2015-06-12",
-      "roFundstelle": "AS 2015 1867",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/359/de",
-      "sha": "d62f520f649b07502fde8dca62e7e7d59613b3d6db89265dc3b28876ae19f89d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2015-03-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/78",
-      "dateDocument": "2015-02-11",
-      "roFundstelle": "AS 2015 541",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi des visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/78/de",
-      "sha": "314674575811d56ef60a37f423128a7786547acfafec31ab30daf749c9d5d73e"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2014-06-09",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/296",
-      "dateDocument": "2014-06-06",
-      "roFundstelle": "AS 2014 1393",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/296/de",
-      "sha": "90d271a5793d8782fb14543f649d9a29d8e1a72b042bde6bfc1325135ad0f0ac"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2014-04-28",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/210",
-      "dateDocument": "2014-04-16",
-      "roFundstelle": "AS 2014 953",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/210/de",
-      "sha": "16130fddef0fe06452f7ac6d7c9b7a23c5063a82519bfcbb60166981c86c3f0e"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2014-03-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/92",
-      "dateDocument": "2014-02-19",
-      "roFundstelle": "AS 2014 491",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/92/de",
-      "sha": "b7d8d1fa6f8589a223bd85bac40bb314e368fa8ee155c3520a83eb86fbbdd747"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2013-10-18",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/565",
-      "dateDocument": "2013-08-14",
-      "roFundstelle": "AS 2013 2733",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/565/de",
-      "sha": "307e9408f1f226f617a04485db917516016d8c8819b2a925ee03f6a09be76fe8"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2012-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/582",
-      "dateDocument": "2012-09-14",
-      "roFundstelle": "AS 2012 4891",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/582/de",
-      "sha": "ffed16ccbcb52ae7a6b6dc6d78e4dfd2daf52733ecce0e972c2315fc950d40d9"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2012-07-23",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/444",
-      "dateDocument": "2012-07-04",
-      "roFundstelle": "AS 2012 3817",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/444/de",
-      "sha": "328fdcbcb720c87e8e3329439b4b3bc70ff00a4e62201e1d360245f62a9e7d21"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2011-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/446",
-      "dateDocument": "2011-07-06",
-      "roFundstelle": "AS 2011 3317",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/446/de",
-      "sha": "d247884751dba6c8663dc50b395e0c51fed7515295f049c3457e662d2aecf989"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2011-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/815",
-      "dateDocument": "2010-11-24",
-      "roFundstelle": "AS 2010 5763",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/815/de",
-      "sha": "9e48196df4a3b9fad3a989b287369edfabd71ecff81281ed117b3a980626c6a1"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2011-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/816",
-      "dateDocument": "2010-11-24",
-      "roFundstelle": "AS 2010 5767",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/816/de",
-      "sha": "1f95c9f5a4dad6147c62bb6c750257545b6ac6310ddb8f1fe2ad7df60d95f970"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2010-04-05",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/168",
-      "dateDocument": "2010-03-12",
-      "roFundstelle": "AS 2010 1205",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/168/de",
-      "sha": "04935302a15706b5131b6f336184dda7c7b5e4197e255ab19809c7e3a003ea15"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2010-04-05",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/194",
-      "dateDocument": "2010-03-31",
-      "roFundstelle": "AS 2010 1449",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/194/de",
-      "sha": "f305f9d3c46e351b7b09477a9d970290bb305836c9ac8af293cfea62f313f71b"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2010-02-18",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/95",
-      "dateDocument": "2010-02-17",
-      "roFundstelle": "AS 2010 605",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/95/de",
-      "sha": "f7dcdc09bc1e8eaff79a90c0ad82395c7c42226805599561d170520999e305c9"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2009-12-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/594",
-      "dateDocument": "2009-09-30",
-      "roFundstelle": "AS 2009 5097",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/594/de",
-      "sha": "d93f1e3a0e46d175c379bbe0547678b955d6989367fa120de9c6b817d2679da7"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-12-12",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/758",
-      "dateDocument": "2008-10-22",
-      "roFundstelle": "AS 2008 5441",
-      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
-      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
-      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/758/de",
-      "sha": "65a434339173532a86c89f170b62964cb38e1d2d00a1f1ef8cdbecad728738ab"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/761",
-      "dateDocument": "2007-10-24",
-      "roFundstelle": "AS 2007 5537",
-      "titelDe": "Verordnung über das Einreise- und Visumverfahren (VEV)",
-      "titelFr": "Ordonnance sur la procédure d'entrée et de visas (OPEV)",
-      "titelIt": "Ordinanza concernente la procedura d'entrata e di rilascio del visto (OPEV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/761/de",
-      "sha": "26764cb5d9c994129380ac69e938b57a7be2d22fe3ac5b4e854bc795843adfce"
+      "sha": "80112956b53388b341206ee5f2ea4eca47708267a3cee6dda51335210716c224"
     }
   ],
-  "sha": "13f2eda3e1bb86c74c5d3f450af95b7da1d2987947eaec1347ffffed1832868a"
+  "sha": "79ad4463ccd8e0556ce2cf3ab49578995254ab4782e0ee318af9778ab6da6d2c"
 }

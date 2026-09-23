@@ -1583,5 +1583,598 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2007/723",
       "zielFundstelle": "AS 2007 5155"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1971/37_37_37",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1971/37_37_37",
+    "inkrafttreten": "1971-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1971/37_37_37",
+        "typ": 5,
+        "datum": "1971-01-01",
+        "fassung": "1971-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1972/2507_2560_2338",
+        "typ": 1,
+        "datum": "1973-01-01",
+        "fassung": "1973-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1973/1611_1611_1611",
+        "typ": 1,
+        "datum": "1973-10-31",
+        "fassung": "1973-10-31"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1974/146_146_146",
+        "typ": 1,
+        "datum": "1974-01-01",
+        "fassung": "1974-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1974/1594_1594_1594",
+        "typ": 1,
+        "datum": "1975-01-01",
+        "fassung": "1975-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/__900",
+        "typ": 6,
+        "datum": "1975-01-01",
+        "fassung": "1975-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420",
+        "typ": 1,
+        "datum": "1979-01-01",
+        "fassung": "1979-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1981/1696_1696_1696",
+        "typ": 1,
+        "datum": "1982-01-01",
+        "fassung": "1982-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/2085_2085_2085",
+        "typ": 1,
+        "datum": "1983-01-01",
+        "fassung": "1983-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1983/917_917_917",
+        "typ": 1,
+        "datum": "1984-01-01",
+        "fassung": "1984-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/40_40_40",
+        "typ": 1,
+        "datum": "1984-01-01",
+        "fassung": "1984-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/2019_2019_2019",
+        "typ": 1,
+        "datum": "1986-01-01",
+        "fassung": "1986-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/1204_1204_1204",
+        "typ": 1,
+        "datum": "1987-01-01",
+        "fassung": "1987-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/1797_1797_1797",
+        "typ": 1,
+        "datum": "1988-01-01",
+        "fassung": "1988-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/1238_1238_1238",
+        "typ": 1,
+        "datum": "1990-01-01",
+        "fassung": "1990-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/2119_2119_2119",
+        "typ": 1,
+        "datum": "1992-01-01",
+        "fassung": "1992-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/370_370_370",
+        "typ": 1,
+        "datum": "1991-02-01",
+        "fassung": "1991-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/2928_2928_2928",
+        "typ": 1,
+        "datum": "1994-01-01",
+        "fassung": "1994-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/2174_2174_2174",
+        "typ": 1,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/3867_3867_3867",
+        "typ": 1,
+        "datum": "1996-01-01",
+        "fassung": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/4385_4385_4385",
+        "typ": 1,
+        "datum": "1996-01-01",
+        "fassung": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/4385_4385_4385",
+        "typ": 2,
+        "datum": "1996-01-01",
+        "fassung": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/695_695_695",
+        "typ": 1,
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/695_695_695",
+        "typ": 2,
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2961_2961_2961",
+        "typ": 1,
+        "datum": "1998-01-01",
+        "fassung": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/2582_2582_2582",
+        "typ": 1,
+        "datum": "1999-01-01",
+        "fassung": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/508",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/577",
+        "typ": 1,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/577",
+        "typ": 2,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/562",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/663",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/663",
+        "typ": 2,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/712",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/770",
+        "typ": 1,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/723",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+        "typ": 2,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/800",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/477",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/800",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/750",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/739",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/112",
+        "typ": 1,
+        "datum": "2020-07-01",
+        "fassung": "2020-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/112",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/801",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/822",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/376",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2021-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/607",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/506",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/130",
+        "typ": 6,
+        "datum": "2024-04-03",
+        "fassung": "2024-04-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/467",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/466",
+        "typ": 1,
+        "datum": "2028-01-01",
+        "fassung": "2028-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1972/2507_2560_2338": {
+        "dateForce": "1973-01-01",
+        "dateDoc": "1972-10-11",
+        "roId": "RO 1972 2560",
+        "titelDe": "Verordnung vom 11. Oktober 1972 über die Änderung von Vollzugserlassen zur Alters-, Hinterlassenen- und Invalidenversicherung",
+        "titelFr": "Ordonnance du 11 octobre 1972 modifiant des dispositions d'éxécution sur l'assurance vieillesse, survivants et invalidité",
+        "titelIt": "Ordinanza dell'11 ottobre 1972 sulla modificazione di disposizioni esecutive dell'Assicurazione per la vecchiaia, i superstiti e l'invalitità"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1973/1611_1611_1611": {
+        "dateForce": "1973-10-31",
+        "dateDoc": "1973-10-31",
+        "roId": "RO 1973 1611",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+        "titelIt": "Ordinanza concernente le prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1974/146_146_146": {
+        "dateForce": "1974-01-01",
+        "dateDoc": "1973-12-21",
+        "roId": "RO 1974 146",
+        "titelDe": "Verordnung vom 21. Dezember 1973 über die Abstufung der Bundesbeiträge nach der Finanzkraft der Kantone",
+        "titelFr": "Ordonnance du 21 décembre 1973 réglant l'échelonnement des subventions fédérales d'après la capacité financière des cantons",
+        "titelIt": "Ordinanza del 21 dicembre 1973 che disciplina la graduazione dei contributi federali secondo la capacità finanziaria dei Cantoni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1974/1594_1594_1594": {
+        "dateForce": "1974-09-01",
+        "dateDoc": "1974-10-18",
+        "roId": "RO 1974 1594",
+        "titelDe": "Verordnung vom 18. Oktober 1974 über die Änderung von Vollzugerlassen zur Alters-, Hinterlassenen- und Invalidenversicherung",
+        "titelFr": "Règlement du 18 octobre 1974 modifiant les dispositions d'exécution sur l'assurance vieillesse, survivants et invalidité",
+        "titelIt": "Ordinanza del 18 ottobre 1974 sulla modifica di disposizioni esecutive dell'assicurazione per la vecchiaia, i superstiti e l'invalidità"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1975/__900": {
+        "dateForce": "1975-01-01",
+        "dateDoc": "1975-05-20",
+        "roId": "RO 1975 ---",
+        "titelIt": "LF sull'assicurazione per la vecchiaia e per i superstiti, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420": {
+        "dateForce": "1979-01-01",
+        "dateDoc": "1978-04-05",
+        "roId": "RO 1978 420",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV), Änderung",
+        "titelFr": "Règlement sur l'assurance vieillesse et survivants (RAVS), Modification",
+        "titelIt": "Ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1981/1696_1696_1696": {
+        "dateForce": "1982-01-01",
+        "dateDoc": "1981-10-21",
+        "roId": "RO 1981 1696",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all' assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/2085_2085_2085": {
+        "dateForce": "1983-01-01",
+        "dateDoc": "1982-12-24",
+        "roId": "RO 1982 2085",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur  Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1983/917_917_917": {
+        "dateForce": "1984-01-01",
+        "dateDoc": "1983-06-29",
+        "roId": "RO 1983 917",
+        "titelDe": "Verordnung 84 vom 29. Juni 1983 über Anpassungen über den Ergänzungsleistungen zur  AHV/IV",
+        "titelFr": "Ordonnance 84 du 29 juin 1983 concernant les adaptations dans le régime des prestations complémentaires à  l'AVS/AI",
+        "titelIt": "Ordinanza 84 del 29 giugno 1983 sull'adeguamento delle prestazioni complementari all'AVS/AI"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1984/40_40_40": {
+        "dateForce": "1984-01-01",
+        "dateDoc": "1983-11-28",
+        "roId": "RO 1984 40",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1985/2019_2019_2019": {
+        "dateForce": "1986-01-01",
+        "dateDoc": "1985-12-02",
+        "roId": "RO 1985 2019",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur  Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité  (OPC-AVS/AI), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1986/1204_1204_1204": {
+        "dateForce": "1987-01-01",
+        "dateDoc": "1986-06-16",
+        "roId": "RO 1986 1204",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur  Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à  l'assurance-vieillesse, survivants et invalidité  (OPC), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l 'invalidità (OPC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/1797_1797_1797": {
+        "dateForce": "1988-01-01",
+        "dateDoc": "1987-12-07",
+        "roId": "RO 1987 1797",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur  Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à  l'assurance-vieillesse, survivants et invalidité  (OPC), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/1238_1238_1238": {
+        "dateForce": "1990-01-01",
+        "dateDoc": "1989-06-12",
+        "roId": "RO 1989 1238",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur  Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à  l'assurance-vieillesse, survivants et invalidité  (OPC), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/2119_2119_2119": {
+        "dateForce": "1992-01-01",
+        "dateDoc": "1991-08-21",
+        "roId": "RO 1991 2119",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur  Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/370_370_370": {
+        "dateForce": "1991-02-01",
+        "dateDoc": "1991-01-30",
+        "roId": "RO 1991 370",
+        "titelDe": "Verordnung vom 30. Januar 1991 über die Genehmigung kantonaler Erlasse durch den Bund",
+        "titelFr": "Ordonnance du 30 janvier 1991 relative à l'approbation d'actes législatifs des cantons par la Confédération",
+        "titelIt": "Ordinanza del 30 gennaio 1991 sull'approvazione di atti legislativi dei Cantoni da parte della Confederazione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/2928_2928_2928": {
+        "dateForce": "1994-01-01",
+        "dateDoc": "1993-09-27",
+        "roId": "RO 1993 2928",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur  Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPCI), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/2174_2174_2174": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1994-09-26",
+        "roId": "RO 1994 2174",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur  Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité  (OPC), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/3867_3867_3867": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1995-06-27",
+        "roId": "RO 1995 3867",
+        "titelDe": "Verordnung vom 27. Juni 1995 über die Krankenversicherung (KVV)",
+        "titelFr": "Ordonnance du 27 juin 1995 sur l'assurance-maladie (OAMal)",
+        "titelIt": "Ordinanza del 27 giugno 1995 sull'assicurazione malattie (OAMal)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/4385_4385_4385": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1995-09-13",
+        "roId": "RO 1995 4385",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/695_695_695": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1995-11-29",
+        "roId": "RO 1996 695",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2961_2961_2961": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-11-26",
+        "roId": "RO 1997 2961",
+        "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+        "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI), Modification",
+        "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/712": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2004-10-27",
+        "roId": "RO 2004 4643",
+        "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+        "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/725": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-11-08",
+        "roId": "RO 2006 4705",
+        "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+        "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/633": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-08-22",
+        "roId": "RO 2007 4477",
+        "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/723": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-09-28",
+        "roId": "RO 2007 5155",
+        "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+        "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+        "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/789": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-11-07",
+        "roId": "RO 2007 5823",
+        "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
+        "titelFr": "Ordonnance sur les adaptations des ordonnances touchées par la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons",
+        "titelIt": "Ordinanza che adegua il diritto regolamentare alla Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/800": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-11-14",
+        "roId": "RO 2007 6037",
+        "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+        "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+        "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/477": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-06-22",
+        "roId": "RO 2011 3527",
+        "titelDe": "Verordnung über die Krankenversicherung (KVV)",
+        "titelFr": "Ordonnance sur l'assurance-maladie (OAMal)",
+        "titelIt": "Ordinanza sull'assicurazione malattie (OAMal)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/800": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-11-16",
+        "roId": "RO 2011 5679",
+        "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+        "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+        "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/801": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-10-07",
+        "roId": "RO 2020 4545",
+        "titelDe": "Verordnung über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung ",
+        "titelFr": "Ordonnance sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches ",
+        "titelIt": "Ordinanza concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/376": {
+        "dateForce": "2021-07-01",
+        "dateDoc": "2021-06-11",
+        "titelDe": "Verordnung vom 11. Juni 2021 über Überbrückungsleistungen für ältere Arbeitslose (ÜLV)",
+        "titelFr": "Ordonnance du 11 juin 2021 sur les prestations transitoires pour les chômeurs âgés (OPtra)",
+        "titelIt": "Ordinanza dell'11 giugno 2021 sulle prestazioni transitorie per i disoccupati anziani (OPTD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/506": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-08-30",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      }
+    }
   }
 }

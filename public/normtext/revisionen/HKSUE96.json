@@ -1,8 +1,8 @@
 {
   "erlassKey": "HKSUE96",
   "sr": "0.211.231.011",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen vom 19. Oktober 1996 über die Zuständigkeit, das anzuwendende Recht, die Anerkennung, Vollstreckung und Zusammenarbeit auf dem Gebiet der elterlichen Verantwortung und der Massnahmen zum Schutz von Kindern (Haager Kindesschutzübereinkommen, HKsÜ)",
       "titelFr": "Convention du 19 octobre 1996 concernant la compétence, la loi applicable, la reconnaissance, l’exécution et la coopération en matière de responsabilité parentale et de mesures de protection des enfants (Convention HCCH Protection des enfants de 1996, CLaH 96)",
       "titelIt": "Convenzione del 19 ottobre 1996 concernente la competenza, la legge applicabile, il riconoscimento, l’esecuzione e la cooperazione in materia di responsabilità genitoriale e di misure di protezione dei minori (Convenzione dell’Aia sulla protezione dei minori)",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/35/de",
-      "sha": "53fc165b65bb7070d120334c1c1c826ca63471242b71a90e94e7f0bac934850d"
+      "sha": "49807eac0b16d1d7c4d9aada64b5b8379df3c6f720981e00b43d6ffd90b6dba0"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Übereinkommen vom 19. Oktober 1996 über die Zuständigkeit, das anzuwendende Recht, die Anerkennung, Vollstreckung und Zusammenarbeit auf dem Gebiet der elterlichen Verantwortung und der Massnahmen zum Schutz von Kindern (Haager Kindesschutzübereinkommen, HKsÜ)",
       "titelFr": "Convention du 19 octobre 1996 concernant la compétence, la loi applicable, la reconnaissance, l’exécution et la coopération en matière de responsabilité parentale et de mesures de protection des enfants (Convention HCCH Protection des enfants de 1996, CLaH 96)",
       "titelIt": "Convenzione del 19 ottobre 1996 concernente la competenza, la legge applicabile, il riconoscimento, l’esecuzione e la cooperazione in materia di responsabilità genitoriale e di misure di protezione dei minori (Convenzione dell’Aia sulla protezione dei minori)",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/265/de",
-      "sha": "7292209d0daaf747e34587e80a0323c20fa14f739ae94619e66e371738acf22f"
+      "sha": "63ed16cb51b3f4569b60caf26f647ef36914003cfdb8174a0a5b62f8c612525c"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,12 @@
       "titelDe": "Übereinkommen vom 19. Oktober 1996 über die Zuständigkeit, das anzuwendende Recht, die Anerkennung, Vollstreckung und Zusammenarbeit auf dem Gebiet der elterlichen Verantwortung und der Massnahmen zum Schutz von Kindern (Haager Kindesschutzübereinkommen, HKsÜ)",
       "titelFr": "Convention du 19 octobre 1996 concernant la compétence, la loi applicable, la reconnaissance, l'exécution et la coopération en matière de responsabilité parentale et de mesures de protection des enfants (CLaH 96)",
       "titelIt": "Convenzione del 19 ottobre 1996 concernente la competenza, la legge applicabile, il riconoscimento, l'esecuzione e la cooperazione in materia di responsabilità genitoriale e di misure di protezione dei minori (Convenzione dell'Aia sulla protezione dei minori)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/686/de",
-      "sha": "96a12e785ee2b3b96589302d6e20e63ea0e79fb49fd59021d0f3299215639a55"
+      "sha": "cbabcfb52ea1e30e3d9974d916903ecfb889dee97beec05fe47520ed4a8dd4c6"
     },
     {
       "art": "aenderung",
@@ -49,8 +59,12 @@
       "titelDe": "Übereinkommen vom 19. Oktober 1996 über die Zuständigkeit, das anzuwendende Recht, die Anerkennung, Vollstreckung und Zusammenarbeit auf dem Gebiet der elterlichen Verantwortung und der Massnahmen zum Schutz von Kindern (Haager Kindesschutzübereinkommen, HKsÜ)",
       "titelFr": "Convention du 19 octobre 1996 concernant la compétence, la loi applicable, la reconnaissance, l'exécution et la coopération en matière de responsabilité parentale et de mesures de protection des enfants (CLaH 96)",
       "titelIt": "Convenzione del 19 ottobre 1996 concernente la competenza, la legge applicabile, il riconoscimento, l'esecuzione e la cooperazione in materia di responsabilità genitoriale e di misure di protezione dei minori (Convenzione dell'Aia sulla protezione dei minori)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/578/de",
-      "sha": "7c80f0f83e70e899a173701e21d07650017c389c9cb0b7a7245a77f5c35a9d81"
+      "sha": "c311687b19deb13548a2ce8b9ec8b13b95a20caef4f691eaa3f8d79557f09191"
     },
     {
       "art": "aenderung",
@@ -61,8 +75,12 @@
       "titelDe": "Übereinkommen vom 19. Oktober 1996 über die Zuständigkeit, das anzuwendende Recht, die Anerkennung, Vollstreckung und Zusammenarbeit auf dem Gebiet der elterlichen Verantwortung und der Massnahmen zum Schutz von Kindern (Haager Kindesschutzübereinkommen, HKsÜ)",
       "titelFr": "Convention du 19 octobre 1996 concernant la compétence, la loi applicable, la reconnaissance, l'exécution et la coopération en matière de responsabilité parentale et de mesures de protection des enfants (CLaH 96)",
       "titelIt": "Convenzione del 19 ottobre 1996 concernente la competenza, la legge applicabile, il riconoscimento, l'esecuzione e la cooperazione in materia di responsabilità genitoriale e di misure di protezione dei minori (Convenzione dell'Aia sulla protezione dei minori)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/722/de",
-      "sha": "4caed5677d3eba1a0bcaf5ece398251cd1118156fb26b421760b97ca158a1c04"
+      "sha": "327cdfd25e2c96013078ace08bbdf17e1f2574e499b7ec90986cacbbdc0fb88d"
     },
     {
       "art": "aenderung",
@@ -73,8 +91,12 @@
       "titelDe": "Übereinkommen vom 19. Oktober 1996 über die Zuständigkeit, das anzuwendende Recht, die Anerkennung, Vollstreckung und Zusammenarbeit auf dem Gebiet der elterlichen Verantwortung und der Massnahmen zum Schutz von Kindern (Haager Kindesschutzübereinkommen, HKsÜ)",
       "titelFr": "Convention du 19 octobre 1996 concernant la compétence, la loi applicable, la reconnaissance, l'exécution et la coopération en matière de responsabilité parentale et de mesures de protection des enfants (CLaH 96)",
       "titelIt": "Convenzione del 19 ottobre 1996 concernente la competenza, la legge applicabile, il riconoscimento, l'esecuzione e la cooperazione in materia di responsabilità genitoriale e di misure di protezione dei minori (Convenzione dell'Aia sulla protezione dei minori)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/108/de",
-      "sha": "ffcb676e551cf1d4435388bd7b0a6171cdc688c0ca05749eb73508e5e23b87d4"
+      "sha": "88b4cfc05e1c6d4f305b32c3b1222e692cfd7400c4163a56e59218434c8bb2d7"
     },
     {
       "art": "aenderung",
@@ -85,22 +107,28 @@
       "titelDe": "Übereinkommen vom 19. Oktober 1996 über die Zuständigkeit, das anzuwendende Recht, die Anerkennung, Vollstreckung und Zusammenarbeit auf dem Gebiet der elterlichen Verantwortung und der Massnahmen zum Schutz von Kindern (Haager Kindesschutzübereinkommen, HKsÜ)",
       "titelFr": "Convention du 19 octobre 1996 concernant la compétence, la loi applicable, la reconnaissance, l'exécution et la coopération en matière de responsabilité parentale et de mesures de protection des enfants (CLaH 96)",
       "titelIt": "Convenzione del 19 ottobre 1996 concernente la competenza, la legge applicabile, il riconoscimento, l'esecuzione e la cooperazione in materia di responsabilità genitoriale e di misure di protezione dei minori (Convenzione dell'Aia sulla protezione dei minori)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/384/de",
-      "sha": "38215963760cbab5ecbda978798bda097ca481290a6becc5430ea2473bc68046"
+      "sha": "9a3390e2ee74447865137c02a140ea2cc76c149c3163dfcd381497767e28fd85"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "2009-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/380",
-      "dateDocument": "1996-10-19",
-      "roFundstelle": "AS 2009 3085",
-      "titelDe": "Übereinkommen über die Zuständigkeit, das anzuwendende Recht, die Anerkennung, Vollstreckung und Zusammenarbeit auf dem Gebiet der elterlichen Verantwortung und der Massnahmen zum Schutz von Kindern (Haager Kindesschutzübereinkommen, HKsÜ)",
-      "titelFr": "Convention concernant la compétence, la loi applicable, la reconnaissance, l'exécution et la coopération en matière de responsabilité parentale et de mesures de protection des enfants (CLaH 96)",
-      "titelIt": "Convenzione concernente la competenza, la legge applicabile, il riconoscimento, l'esecuzione e la cooperazione in materia di responsabilità genitoriale e di misure di protezione dei minori (Convenzione dell'Aia sulla protezione dei minori)",
-      "botschaftKey": "BOTSCHAFT-2007-421",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/380/de",
-      "sha": "d667fd6db4d7dd1823e7dc19797ec9a3a51def7245f313b88afe286ec227592f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/379",
+      "dateDocument": "2007-12-21",
+      "roFundstelle": "AS 2009 3077",
+      "titelDe": "Bundesbeschluss über die Umsetzung der Übereinkommen über internationale Kindesentführung sowie die Genehmigung und Umsetzung der Haager Übereinkommen über den Schutz von Kindern und Erwachsenen",
+      "titelFr": "Arrêté fédéral portant mise en uvre des conventions sur l'enlèvement international d'enfants et portant approbation et mise en uvre des Conventions de La Haye sur la protection des enfants et des adultes",
+      "titelIt": "Decreto federale che attua le convenzioni sul rapimento internazionale dei minori e che approva e attua le Convenzioni dell'Aia sulla protezione dei minori e degli adulti",
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/379/de",
+      "sha": "a5df24ca5150e4e716be87b20bc6508a69768ed756c4cc45f3842b425fba40da"
     }
   ],
-  "sha": "722da2b27747cfc4ccef32fac8487ab3285f5d5e714a1df79deeac8d36d67b2a"
+  "sha": "8a3443b3f196a53c42a01b8e0e4f1019d5063c3e84edffb4d0473e80ffece21c"
 }

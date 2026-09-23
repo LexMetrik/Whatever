@@ -872,5 +872,130 @@
     "2024-06-06"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1993/2659_2659_2659",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1993/2659_2659_2659",
+    "inkrafttreten": "1993-09-25",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/2634_2634_2634",
+        "typ": 3,
+        "fassung": "2019-06-27"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/2659_2659_2659",
+        "typ": 5,
+        "datum": "1993-09-25",
+        "fassung": "1993-09-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1394_1394_1394",
+        "typ": 1,
+        "datum": "1995-03-31",
+        "fassung": "1995-03-31"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/152",
+        "typ": 1,
+        "datum": "2004-01-05",
+        "fassung": "2004-01-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/152",
+        "typ": 9,
+        "datum": "2004-01-05",
+        "fassung": "2004-01-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/106",
+        "typ": 1,
+        "datum": "2005-11-01",
+        "fassung": "2005-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/106",
+        "typ": 9,
+        "datum": "2005-11-01",
+        "fassung": "2005-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/310",
+        "typ": 1,
+        "datum": "2009-04-01",
+        "fassung": "2009-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/310",
+        "typ": 9,
+        "datum": "2009-04-01",
+        "fassung": "2009-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/88",
+        "typ": 1,
+        "datum": "2014-02-07",
+        "fassung": "2014-02-07"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/88",
+        "typ": 9,
+        "datum": "2014-02-07",
+        "fassung": "2014-02-07"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/573",
+        "typ": 1,
+        "datum": "2016-09-26",
+        "fassung": "2016-09-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/573",
+        "typ": 9,
+        "datum": "2016-09-26",
+        "fassung": "2016-09-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/402",
+        "typ": 1,
+        "datum": "2019-06-27",
+        "fassung": "2019-06-27"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/402",
+        "typ": 9,
+        "datum": "2019-06-27",
+        "fassung": "2019-06-27"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/601",
+        "typ": 9,
+        "datum": "2021-09-24",
+        "fassung": "2021-09-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/272",
+        "typ": 9,
+        "datum": "2024-06-06",
+        "fassung": "2024-06-06"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1993/2634_2634_2634": {
+        "dateDoc": "1992-06-04",
+        "roId": "RO 1993 2634",
+        "titelDe": "Bundesbeschluss vom 4. Juni 1992 über verschiedene völkerrechtliche Verträge auf dem Gebiete des Urheberrechts und der verwandten Schutzrechte",
+        "titelFr": "Arrêté fédéral du 4 juin 1992 concernant diverses conventions internationales dans le domaine du droit d'auteur et des droits visions",
+        "titelIt": "Decreto federale del 4 giugno 1992 concernente diverse convenzioni internazionali in materia di diritto d'autore e di diritti affini"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/1394_1394_1394": {
+        "dateForce": "1995-03-31",
+        "dateDoc": "1995-03-31",
+        "roId": "RO 1995 1394",
+        "titelDe": "Berner Übereinkunft zum Schutze von Werken der Literatur und Kunst revidiert in Paris am 24. Juli 1971, Änderung",
+        "titelFr": "Convention de Berne pour la protection des œuvres littéraires et  artistiques, révisée à Paris le 24 juillet 1971, Modification",
+        "titelIt": "Convenzione di Berna per la protezione delle opere letterarie e artistiche riveduta a Parigi il 24 luglio  1971, Modifica"
+      }
+    }
+  }
 }

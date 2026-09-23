@@ -1,8 +1,8 @@
 {
   "erlassKey": "HUVUE",
   "sr": "0.211.213.02",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,12 @@
       "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
       "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
       "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/549/de",
-      "sha": "811448da96fc25a79e9889b691b7e30310579d6822318b5151716676f971da47"
+      "sha": "47812cdfdd42cfc2b38f4e82b45e5bbfd90fdcfbc8758f1f5407f080ec0b9917"
     },
     {
       "art": "aenderung",
@@ -25,8 +29,12 @@
       "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
       "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
       "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/74/de",
-      "sha": "3c8956222496df21b2e97af1cbddecbfbaa784466afa0f3c7956480594033df2"
+      "sha": "95d43e75fd88b8329bd1745521cef86b2e99b5481db648af1f56ef629ecd3950"
     },
     {
       "art": "aenderung",
@@ -37,8 +45,12 @@
       "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
       "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
       "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/500/de",
-      "sha": "d506238a47a758f3195d7a590264bbc02e4a9cb0ab27fc21f4d5092960063284"
+      "sha": "bb9d04fd1d854a05ae4d7bf1e9cdb98cedcd54f53349a351e955d7433fddb1ba"
     },
     {
       "art": "aenderung",
@@ -49,21 +61,220 @@
       "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
       "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
       "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/116/de",
-      "sha": "94518e42ee4c79de0a29ca5be99949ef9532d9a3fe72e0b4066dec9631807ada"
+      "sha": "1949fddc2a0925f9c530b8f40291c07e6ebc01be9f03eebbc3b9c4875e6656e3"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1976-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/1559_1559_1559",
-      "dateDocument": "1973-10-02",
-      "roFundstelle": "AS 1976 1559",
+      "dateEntryInForce": "1994-04-20",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1160_1160_1160",
+      "dateDocument": "1993-04-20",
+      "roFundstelle": "AS 1994 1160",
       "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
       "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
       "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/1559_1559_1559/de",
-      "sha": "ef0d26d6ce541f2e7f2f5db34e51099bb50c76f1b91c348a2a84a01368313d00"
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1160_1160_1160/de",
+      "sha": "d70a5327252666105058ac6c7cb15ab096264e1acdbf0eae6c9fbae2f1b75d1e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/2437_2437_2437",
+      "dateDocument": "1993-06-01",
+      "roFundstelle": "AS 1993 2437",
+      "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
+      "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
+      "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/2437_2437_2437/de",
+      "sha": "1f4dd0cf0a29e404430257b268a21a9275b23305e70ca3859879d7c39fefec61"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-12-17",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/2434_2434_2434",
+      "dateDocument": "1992-12-17",
+      "roFundstelle": "AS 1993 2434",
+      "titelDe": "Bundesbeschluss vom 17. Dezember 1992 betreffend Rückzug von vier Vorbehalten in vier multilateralen Staatsverträgen",
+      "titelFr": "Arrêté fédéral du 17 décembre 1992 relatif au retrait de quatre réserve faites à des conventions internationales multilatérales",
+      "titelIt": "Decreto federale del 17 dicembre 1992 concernente il ritiro di quattro riserve a quattro convenzioni multilaterali",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/2434_2434_2434/de",
+      "sha": "8f04fac7fdee711706434b4b69f6753075ca0f42a68847d9e1443d2c3e9f7857"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/2018_2018_2018",
+      "dateDocument": "1988-12-01",
+      "roFundstelle": "AS 1988 2018",
+      "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
+      "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
+      "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/2018_2018_2018/de",
+      "sha": "ec3f75cf96917762bd07762e3ab497600f706ef7e4b910cb9a3a5ab575d29c72"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/837_837_837",
+      "dateDocument": "1987-07-01",
+      "roFundstelle": "AS 1987 837",
+      "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
+      "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
+      "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/837_837_837/de",
+      "sha": "107783e3646d197961a5f02ff7d478c75baf3e94368ac6f44b02589cdc3c70e4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/488_488_488",
+      "dateDocument": "1985-04-30",
+      "roFundstelle": "AS 1985 488",
+      "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
+      "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
+      "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/488_488_488/de",
+      "sha": "61f123760d3de41a3e4e4476a603bda429c4be13703dfe424e3fc1fbaf5468f5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1436_1436_1436",
+      "dateDocument": "1983-11-01",
+      "roFundstelle": "AS 1983 1436",
+      "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
+      "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
+      "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1436_1436_1436/de",
+      "sha": "a7bff549eeff086984bc440cb228708a8ca09878b91c36217581035dd3f04146"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-03-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/668_668_668",
+      "dateDocument": "1982-03-15",
+      "roFundstelle": "AS 1982 668",
+      "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
+      "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
+      "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/668_668_668/de",
+      "sha": "e14e637f2935deadd404a15d8db6fa0a9958b1723f1c5caab7af13eee1b91577"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1981/510_510_510",
+      "dateDocument": "1981-06-01",
+      "roFundstelle": "AS 1981 510",
+      "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
+      "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
+      "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1981/510_510_510/de",
+      "sha": "4c8ecb61ef04108c53eee62842fae352dda415071468081fba895010f6dc01c2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1980-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/639_639_639",
+      "dateDocument": "1980-05-01",
+      "roFundstelle": "AS 1980 639",
+      "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
+      "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
+      "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/639_639_639/de",
+      "sha": "fa49a395edcf1248ddb47532dd11f3b4695d2781759cd38734548d359b7f7966"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1979-10-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1979/1561_1561_1561",
+      "dateDocument": "1979-10-15",
+      "roFundstelle": "AS 1979 1561",
+      "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
+      "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
+      "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/1561_1561_1561/de",
+      "sha": "61027ce22c361f55b91c448a3ceadc23545563390e50b715e7875d273c2aded2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/1656_1656_1656",
+      "dateDocument": "1977-09-01",
+      "roFundstelle": "AS 1977 1656",
+      "titelDe": "Übereinkommen vom 2. Oktober 1973 über die Anerkennung und Vollstreckung von Unterhaltsentscheidungen",
+      "titelFr": "Convention du 2 octobre 1973 concernant la reconnaissance et l'exécution de décisions relatives aux obligations alimentaires",
+      "titelIt": "Convenzione del 2 ottobre 1973 concernente il riconoscimento e l'esecuzione delle decisioni in materia di obbligazioni alimentari",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/1656_1656_1656/de",
+      "sha": "8b9968d493ecbb8153366be3c1eeaee575aa7e8826f631cf99ae1a5b1afac797"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-03-04",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/1557_1557_1557",
+      "dateDocument": "1976-03-04",
+      "roFundstelle": "AS 1976 1557",
+      "titelDe": "Bundesbeschluss vom 4. März 1976 betreffend das internationale Haager Übereinkommen über die Unterhaltspflichten",
+      "titelFr": "Arrêté fédéral du 4 mars 1976 approuvant les conventions internationales de La Haye relatives aux obligations alimentaires",
+      "titelIt": "Decreto federale del 4 marzo 1976 che approva le convenzioni internazionali dell'Aia relative agli obblighi alimentari",
+      "wirkungen": [
+        "genehmigung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/1557_1557_1557/de",
+      "sha": "69572a3a5e4ca53e34f2b628b1554d3211479a1cfd43c887d5d471e2d879a3f7"
     }
   ],
-  "sha": "7099fd30ff8f81999051a4cc38df1312c36b42865a5108fd825b7de0a9901363"
+  "sha": "cac66283c97c31dcb3d95374b22a93ef4b8fac174b3166a1cf33b9cee0271c4e"
 }

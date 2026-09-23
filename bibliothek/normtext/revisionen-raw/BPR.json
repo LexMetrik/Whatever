@@ -992,5 +992,371 @@
     "2022-10-23"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1978/688_688_688",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1978/688_688_688",
+    "inkrafttreten": "1978-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/1400_1400_1400",
+        "typ": 6,
+        "datum": "1978-07-01",
+        "fassung": "1978-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/1552_1552_1552",
+        "typ": 6,
+        "datum": "1978-07-01",
+        "fassung": "1978-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/1694_1694_1694",
+        "typ": 1,
+        "datum": "1979-01-01",
+        "fassung": "1979-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/688_688_688",
+        "typ": 5,
+        "datum": "1978-07-01",
+        "fassung": "1978-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/__1384",
+        "typ": 6,
+        "datum": "1978-07-01",
+        "fassung": "1978-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1978/__1384",
+        "typ": 6,
+        "fassung": "2015-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1979/__1146",
+        "typ": 6,
+        "datum": "1978-07-01",
+        "fassung": "1978-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1979/__1146",
+        "typ": 6,
+        "fassung": "2015-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/600_600_600",
+        "typ": 1,
+        "datum": "1987-05-15",
+        "fassung": "1987-05-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/260_260_260",
+        "typ": 1,
+        "datum": "1989-01-01",
+        "fassung": "1989-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/2388_2388_2388",
+        "typ": 1,
+        "datum": "1992-07-01",
+        "fassung": "1992-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/2414_2414_2414",
+        "typ": 1,
+        "datum": "1994-11-15",
+        "fassung": "1994-11-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/2414_2414_2414",
+        "typ": 2,
+        "datum": "1994-11-15",
+        "fassung": "1994-11-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753",
+        "typ": 1,
+        "datum": "1997-04-01",
+        "fassung": "1997-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753",
+        "typ": 2,
+        "datum": "1997-04-01",
+        "fassung": "1997-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/760_760_760",
+        "typ": 1,
+        "datum": "1997-04-01",
+        "fassung": "1997-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/90",
+        "typ": 1,
+        "datum": "2000-01-01",
+        "fassung": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/478",
+        "typ": 1,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/478",
+        "typ": 1,
+        "datum": "2003-01-01",
+        "fassung": "2015-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/478",
+        "typ": 2,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/510",
+        "typ": 1,
+        "datum": "2003-12-01",
+        "fassung": "2003-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/510",
+        "typ": 1,
+        "datum": "2007-12-01",
+        "fassung": "2007-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/510",
+        "typ": 2,
+        "datum": "2003-12-01",
+        "fassung": "2003-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/745",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/218",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/218",
+        "typ": 2,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/331",
+        "typ": 6,
+        "datum": "1994-11-15",
+        "fassung": "1994-11-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/649",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/869",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 1,
+        "datum": "2008-08-01",
+        "fassung": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 2,
+        "datum": "2008-08-01",
+        "fassung": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/1",
+        "typ": 1,
+        "datum": "2009-01-15",
+        "fassung": "2009-01-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/35",
+        "typ": 1,
+        "datum": "2010-02-01",
+        "fassung": "2010-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/35",
+        "typ": 2,
+        "datum": "2010-02-01",
+        "fassung": "2010-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/79",
+        "typ": 1,
+        "datum": "2015-03-01",
+        "fassung": "2015-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/79",
+        "typ": 1,
+        "datum": "2015-11-01",
+        "fassung": "2015-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/466",
+        "typ": 1,
+        "datum": "2022-10-23",
+        "fassung": "2022-10-23"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1978/1400_1400_1400": {
+        "dateForce": "1978-07-01",
+        "dateDoc": "1978-09-12",
+        "roId": "RO 1978 1400",
+        "titelDe": "Bundesgesetz über die politischen Rechte, Berichtigung (nur ital.)",
+        "titelFr": "Loi fédérale sur les droits politiques, Errata (seulement en italien)",
+        "titelIt": "Legge federale sui diritti politici, Correzioni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1978/1552_1552_1552": {
+        "dateForce": "1978-07-01",
+        "dateDoc": "1978-10-17",
+        "roId": "RO 1978 1552",
+        "titelDe": "Bundesgesetz über die politischen Rechte, Berichtigung (nur ital.)",
+        "titelFr": "Loi fédérale sur les droits politiques, Errata (seulement en italien)",
+        "titelIt": "Legge federale sui diritti politici, Correzioni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1978/1694_1694_1694": {
+        "dateForce": "1979-01-01",
+        "dateDoc": "1978-03-09",
+        "roId": "RO 1978 1694",
+        "titelDe": "Bundesgesetz vom 9. März 1978 über die Änderung von Bundesgesetzen im Anschluss an die Gründung des Kantons Jura",
+        "titelFr": "Loi fédérale du 9 mars 1978 concernant la revision des lois fédérales à la suite de la création du canton du Jura",
+        "titelIt": "Legge federale del 9 marzo 1978 concernente la revisione di leggi federali in seguito alla creazione del Cantone Giura"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1978/__1384": {
+        "dateForce": "1978-07-01",
+        "dateDoc": "1978-09-05",
+        "roId": "RO 1978 ---",
+        "titelIt": "Correzioni: Legge federale sui diritti politici; Ordinanza sull'assicurazione per la vecchiaia e per i superstiti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1979/__1146": {
+        "dateForce": "1978-07-01",
+        "dateDoc": "1979-08-21",
+        "titelIt": "Correzione: Legge federale sui diritti politici"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/600_600_600": {
+        "dateForce": "1987-05-15",
+        "dateDoc": "1986-03-21",
+        "roId": "RO 1987 600",
+        "titelDe": "Bundesgesetz vom 21. März 1986 über die Gesetzessammlungen und das Bundesblatt  (Publikationsgesetz)",
+        "titelFr": "Loi fédérale du 21 mars 1986 sur les recueils de lois et la Feuille fédérale (Loi sur les publications officielles)",
+        "titelIt": "Legge federale del 21 marzo 1986 sulle raccolte delle leggi e sul Foglio federale (Legge sulle pubblicazioni ufficiali)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/260_260_260": {
+        "dateForce": "1989-01-01",
+        "dateDoc": "1988-10-07",
+        "roId": "RO 1989 260",
+        "titelDe": "Geschäftsverkehrsgesetz, Änderung",
+        "titelFr": "Loi sur les rapports entre les conseils, Modification",
+        "titelIt": "Legge sui rapporti fra i Consigli, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/2388_2388_2388": {
+        "dateForce": "1992-07-01",
+        "dateDoc": "1991-03-22",
+        "roId": "RO 1991 2388",
+        "titelDe": "Bundesgesetz über die politischen Rechte der Auslandschweizer, Änderung",
+        "titelFr": "Loi fédérale sur les droits politiques des Suisses de l'étranger, Modification",
+        "titelIt": "Legge federale sui diritti politici degli Svizeri all'estero, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/2414_2414_2414": {
+        "dateForce": "1994-11-15",
+        "dateDoc": "1994-03-18",
+        "roId": "RO 1994 2414",
+        "titelDe": "Bundesgesetz über die politischen Rechte (Nationalratswahlverfahren), Änderung",
+        "titelFr": "Loi fédérale sur les droits politiques (Procédure pour l'élection au Conseil national), Modification",
+        "titelIt": "Legge federale sui diritti politici (Procedura d'elezione del Consiglio nazionale), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/753_753_753": {
+        "dateForce": "1997-04-01",
+        "dateDoc": "1996-06-21",
+        "roId": "RO 1997 753",
+        "titelDe": "Bundesgesetz über die politischen Rechte, Änderung",
+        "titelFr": "Loi fédérale sur les droits politiques, Modification",
+        "titelIt": "Legge federale sui diritti politici, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/760_760_760": {
+        "dateForce": "1997-04-01",
+        "dateDoc": "1997-02-26",
+        "roId": "RO 1997 760",
+        "titelDe": "Verordnung vom 26. Februar 1997 über die Inkraftsetzung der Änderung des Bundesgesetzes über die politischen Rechte",
+        "titelFr": "Ordonnance du 26 février 1997 sur l'entrée en vigueur de la modification de la loi fédérale sur les droits politiques",
+        "titelIt": "Ordinanza del 26 febbraio 1997 concernente l'entrata in vigore della modifica della legge federale sui diritti politici"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/510": {
+        "dateForce": "2003-12-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2003 3543",
+        "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
+        "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl)",
+        "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/745": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2004-06-18",
+        "roId": "RO 2004 4929",
+        "titelDe": "Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
+        "titelFr": "Loi fédérale sur les recueils du droit fédéral et la Feuille fédérale (Loi sur les publications officielles, LPubl)",
+        "titelIt": "Legge federale sulle raccolte del diritto federale e sul Foglio federale (Legge sulle pubblicazioni ufficiali, LPubb)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/218": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 1205",
+        "titelDe": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+        "titelFr": "Loi sur le Tribunal fédéral (LTF)",
+        "titelIt": "Legge sul Tribunale federale (LTF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/869": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2007 6743",
+        "titelDe": "Bundesgesetz über die eidgenössische Volkszählung (Volkszählungsgesetz)",
+        "titelFr": "Loi sur le recensement fédéral de la population (Loi sur le recensement)",
+        "titelIt": "Legge sul censimento federale della popolazione (Legge sul censimento)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/447": {
+        "dateForce": "2008-08-01",
+        "dateDoc": "2008-03-20",
+        "roId": "RO 2008 3437",
+        "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/114": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2011 725",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+        "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+        "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)"
+      }
+    }
+  }
 }

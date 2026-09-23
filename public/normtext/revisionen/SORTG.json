@@ -1,14 +1,25 @@
 {
   "erlassKey": "SORTG",
   "sr": "232.16",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.16",
-      "sha": "21141b26272dd1131e739a3830c3bae0cf59f9e1b6bcfe80a9d0d6af0a02bd26"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "4680b94aca04870448f933a54c75b33319b3d325b89428dcf20b5c0518e9c6aa"
     },
     {
       "art": "aenderung",
@@ -20,39 +31,121 @@
       "titelFr": "Arrêté fédéral relatif à l'approbation de la Convention internationale révisée pour la protection des obtentions végétales et à la modification de la loi sur la protection des variétés et de la loi sur les brevets d'invention",
       "titelIt": "Decreto federale che approva la Convenzione internazionale riveduta per la protezione delle novità vegetali e modifica la legge federale sulla protezione delle novità vegetali e la legge sui brevetti d'invenzione",
       "botschaftKey": "BOTSCHAFT-2004-683",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/526/de",
-      "sha": "183b821b2208e95606293c513458954e164a31afde1d249a9727c7f4985849e3"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.16",
-      "sha": "6b1c6274e778fb3de495dcb65237092b593cddbfaa62d4a2f588fd0568083a70"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.16",
-      "sha": "2841d449341a031e0afbf94c41bb923b01d01f8f59f287c08d0376483a62b4f2"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.16",
-      "sha": "5e8fa69c5ba00e71d65f4fb0ba4a39835ed040bce6c2f7cb11a71c8ec0618377"
+      "sha": "62a769fdeba10fd721a2ec384a8ca1d12432d23aa6d2872c46781e6767eea504"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1977-06-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/862_862_862",
-      "dateDocument": "1975-03-20",
-      "roFundstelle": "AS 1977 862",
-      "titelDe": "Bundesgesetz vom 20. März 1975 über den Schutz von Pflanzenzüchtungen (Sortenschutzgesetz)",
-      "titelFr": "Loi fédérale du 20 mars 1975 sur la protection des obtentions végétales",
-      "titelIt": "Legge federale del 20 marzo 1975 sulla protezione delle novità vegetali",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/862_862_862/de",
-      "sha": "eef7df40a4e801ce654ef1c85d515abf8530349e3f3bb01dab87647bb6b21618"
+      "dateEntryInForce": "2008-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "8e8a9e4d751b5f59a4b39cebfa70ebaffee0c426ae09a654846b55c7a3446687"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "0315f070905114e706498f35ffee0312d3de77a82d0be616c329cf3cff07dee4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288",
+      "dateDocument": "1991-10-04",
+      "roFundstelle": "AS 1992 288",
+      "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege, Änderung",
+      "titelFr": "Loi fédérale d'organisation judiciaire, Modification",
+      "titelIt": "Legge federale sull'organizzazione giudiziari, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/288_288_288/de",
+      "sha": "0c5574a100dad5b72cbeba99589bf267f0999e850fb4637d013b4edba523c554"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/1776_1776_1776",
+      "dateDocument": "1987-12-18",
+      "roFundstelle": "AS 1988 1776",
+      "titelDe": "Bundesgesetz vom 18. Dezember 1987 über das Internationale Privatrecht (IPRG)",
+      "titelFr": "Loi fédérale du 18 décembre 1987 sur le droit international privé (LDIP)",
+      "titelIt": "Legge federale del 18 dicembre 1987 sul diritto internazionale privato (LDIP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/1776_1776_1776/de",
+      "sha": "333ce8d5c0c425111b46dbb06816e994aae4553a44c201c676bfa42212defbe1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-04-05",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/269_269_269",
+      "dateDocument": "1980-10-10",
+      "roFundstelle": "AS 1983 269",
+      "titelDe": "Sortenschutzgesetz, Änderung",
+      "titelFr": "Loi fédérale sur la protection des obtentions végétales, Modification",
+      "titelIt": "Legge federale sulla protezione delle nuove piante, modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/269_269_269/de",
+      "sha": "d706170ce282b3d98691b6cd84bd88df7db4d321ef3221fdb24ce776487cf411"
     }
   ],
-  "sha": "71ae850ad5b8dd50e057649e19600fd97e21aa137f4080556c4615f770f185b6"
+  "sha": "188014e4003d5bba10b98eb94cf2a4398784712ab72f981d3cd6acfb5558ac9f"
 }

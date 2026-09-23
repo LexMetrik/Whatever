@@ -1,8 +1,8 @@
 {
   "erlassKey": "DBG",
   "sr": "642.11",
-  "abgerufen": "2026-09-21",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,8 +14,11 @@
       "titelFr": "Loi fédérale relative au changement de système d’imposition de la propriété du logement",
       "titelIt": "Legge federale concernente il passaggio a un nuovo sistema di imposizione della proprietà abitativa",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/213/de",
-      "sha": "7aa8bcc3dbad8a178f8edc5751881aab9943b130de0863fa5bcda3f66e31ec43"
+      "sha": "c3684396a94b68ca985c0c3256acc1490c5451cc0fc017d0e0224aa5f8a5cb78"
     },
     {
       "art": "aenderung",
@@ -27,15 +30,43 @@
       "titelFr": "Loi fédérale sur la prolongation du délai de compensation des pertes",
       "titelIt": "Legge federale concernente l’estensione della compensazione delle perdite",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/482/de",
-      "sha": "4468f02934ebb68ea736be5c57462443e3c441a4f9bdda76f9c8e27bdf92696f"
+      "sha": "4244c97e973a93973bb0f58557843daf5c43da277102b308177bda6a616a2e9d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/425",
+      "dateDocument": "2025-12-19",
+      "roFundstelle": "AS 2026 425",
+      "titelDe": "Bundesgesetz vom 19. Dezember 2025 über den internationalen automatischen Informationsaustausch betreffend Lohndaten (AIALG)",
+      "titelFr": "Loi fédérale du 19 décembre 2025 sur l’échange international automatique de renseignements concernant les données salariales (LEADS)",
+      "titelIt": "Legge federale del 19 dicembre 2025 sullo scambio automatico internazionale di informazioni relative ai dati salariali (LSADS)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "570162bf6b0e21b2c68f562ae4eba4c5ea3480b9c894d9d21b6360db39964646"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/425/de",
+      "sha": "b22777c64080e7ea8a196d524213b1f54cc8ced2ce5b6e320e615e244428945a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/486",
+      "dateDocument": "2026-09-11",
+      "roFundstelle": "AS 2026 486",
+      "titelDe": "Verordnung des EFD vom 11. September 2026 über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP)",
+      "titelFr": "Ordonnance du DFF du 11 septembre 2026 sur la compensation des effets de la progression à froid pour les personnes physiques en matière d’impôt fédéral direct (Ordonnance sur la progression à froid, OPFr)",
+      "titelIt": "Ordinanza del DFF dell'11 settembre 2026 sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr)",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/486/de",
+      "sha": "c7855f2b2277159dc58d4593ce7f6bab8cda8098936288970ba399008f033a02"
     },
     {
       "art": "aenderung",
@@ -48,14 +79,41 @@
       "titelIt": "Legge federale sul servizio civile sostitutivo (Legge sul servizio civile, LSC). Correzione",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 1996 1445, das unter SR 824.0 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/448/de",
-      "sha": "d0c1630a5074ddbf64ff1031a3e540de2283e4cbd16e146f08f6bee40ba04444"
+      "sha": "586d338ab14cbd106cb282807352c34d0409a8e8b8d324dff8926301f88519e4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "8eb21f1feb5ae0dad083970cdb3e0c346768dd78981e3f4bd3e4f15aa7fa704a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/579",
+      "dateDocument": "2025-09-10",
+      "roFundstelle": "AS 2025 579",
+      "titelDe": "Verordnung des EFD vom 10. September 2025 über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP)",
+      "titelFr": "Ordonnance du DFF du 10 septembre 2025 sur la compensation des effets de la progression à froid pour les personnes physiques en matière d’impôt fédéral direct (Ordonnance sur la progression à froid, OPFr)",
+      "titelIt": "Ordinanza del DFF del 10 settembre 2025 sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/579/de",
+      "sha": "1861d2380c2b5be5e300d5f00dd348ece8727ae515e0ad7bb58b6e6d96f2b4c0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/621",
+      "dateDocument": "2025-10-17",
+      "roFundstelle": "AS 2025 621",
+      "titelDe": "Verordnung des EFD vom 10. September 2025 über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP). Berichtigung",
+      "titelFr": "Ordonnance du DFF du 10 septembre 2025 sur la compensation des effets de la progression à froid pour les personnes physiques en matière d’impôt fédéral direct (Ordonnance sur la progression à froid, OPFr). Erratum",
+      "titelIt": "Ordinanza del DFF del 10 settembre 2025 sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/621/de",
+      "sha": "678c548378cbcf1657b51f806e5caed93189a82612949b89c575f6254f56c4e6"
     },
     {
       "art": "aenderung",
@@ -67,8 +125,42 @@
       "titelFr": "Loi fédérale sur l’imposition des rentes viagères et des formes de prévoyance similaires",
       "titelIt": "Legge federale sull’imposizione delle rendite vitalizie e delle forme di previdenza simili",
       "botschaftKey": "BOTSCHAFT-2021-3028",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/38/de",
-      "sha": "274e39aac3e980c132b829c4266d6b686baf509c0e7ffa36a4ee53b3cdf5699b"
+      "sha": "d74f317d442f262c129a4ce9b59027cfe745c90cac1109c6d5a3f05ef5136a07"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/628",
+      "dateDocument": "2022-03-18",
+      "roFundstelle": "AS 2023 628",
+      "titelDe": "Bundesgesetz über die Bekämpfung des missbräuchlichen Konkurses (Änderung des Obligationenrechts, des Bundesgesetzes über Schuldbetreibung und Konkurs, des Strafgesetzbuches, des Militärstrafgesetzes, des Strafregistergesetzes und des Bundesgesetzes über die direkte Bundessteuer)",
+      "titelFr": "Loi fédérale sur la lutte contre l’usage abusif de la faillite (Modification du code des obligations, de la loi fédérale sur la poursuite pour dettes et la faillite, du code pénal, du code pénal militaire, de la loi sur le casier judiciaire et de la loi fédérale sur l’impôt fédéral direct)",
+      "titelIt": "Legge federale sulla lotta contro l’abuso del fallimento (Modifica del Codice delle obbligazioni, della legge federale sulla esecuzione e sul fallimento, del Codice penale, del Codice penale militare, della legge sul casellario giudiziale e della legge federale sull’imposta federale diretta)",
+      "botschaftKey": "BOTSCHAFT-2019-1847",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/628/de",
+      "sha": "e8199dc9309029d9ac64576ff4fbb45514fe6584be8b77e1e8bd662822b7742c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/479",
+      "dateDocument": "2024-08-22",
+      "roFundstelle": "AS 2024 479",
+      "titelDe": "Verordnung des EFD vom 22. August 2024 über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP)",
+      "titelFr": "Ordonnance du DFF du 22 août 2024 sur la compensation des effets de la progression à froid pour les personnes physiques en matière d’impôt fédéral direct (Ordonnance sur la progression à froid, OPFr)",
+      "titelIt": "Ordinanza del DFF del 22 agosto 2024 sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/479/de",
+      "sha": "de639b94601326723fee1ef26bc0c000187c1b3b6a507e866ecc20be718c4c4a"
     },
     {
       "art": "aenderung",
@@ -80,8 +172,11 @@
       "titelFr": "Loi fédérale du 14 juin 2024 sur l’imposition du télétravail dans le contexte international",
       "titelIt": "Legge federale del 14 giugno 2024 sull’imposizione del telelavoro in ambito internazionale",
       "botschaftKey": "BOTSCHAFT-2024-650",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/573/de",
-      "sha": "86f9d89472f72ae70bc16c6732ded33722eab97fbdaa34dbf478c25f33a4afe2"
+      "sha": "78e725beef09932e35e6b57ca275aeaf0137349007b87e53949a519b6983a776"
     },
     {
       "art": "aenderung",
@@ -94,20 +189,89 @@
       "titelIt": "Legge federale sui giochi in denaro (LGD). Correzione (Concerne soltanto il testo francese)",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 2018 5103, das unter SR 935.51 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/215/de",
-      "sha": "14d5ce32f58c20dd5e59b4499e7cd615b588b84e7f08069ddab997857c836c2d"
+      "sha": "ab46b0359ed16b419eb1ec32f7f22c66f73d97265704a7285640f558b4ed14a2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "8e15c9541e0b0322f43d0663156ee6fad4315cfac3bbb707d19032df3c0a5fd0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/53",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2024 53",
+      "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+      "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+      "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
+      "botschaftKey": "BOTSCHAFT-2020-1852",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/53/de",
+      "sha": "2db0e6aeb1ce8c2a1ecd7eba393e53c410763dc1f166a3ee59dd19f8b2792718"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "4a7ac3d0fa70f92d619c5c5834f904703320ef6741be0068227beae263fb22a5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/673",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 673",
+      "titelDe": "Bundesgesetz vom 18. Juni 2021 über elektronische Verfahren im Steuerbereich",
+      "titelFr": "Loi fédérale du 18 juin 2021 sur les procédures électroniques en matière d’impôts",
+      "titelIt": "Legge federale del 18 giugno 2021 sulle procedure elettroniche in ambito fiscale",
+      "botschaftKey": "BOTSCHAFT-2020-1111",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/673/de",
+      "sha": "74bd9aafacf022d418b5b52e995830473b949141ea5ac694290a4a5e15fdb66f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/493",
+      "dateDocument": "2023-09-01",
+      "roFundstelle": "AS 2023 493",
+      "titelDe": "Verordnung des EFD vom 1. September 2023 über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP)",
+      "titelFr": "Ordonnance du DFF du 1er septembre 2023 sur la compensation des effets de la progression à froid pour les personnes physiques en matière d’impôt fédéral direct (Ordonnance sur la progression à froid, OPFr)",
+      "titelIt": "Ordinanza del DFF del 1° settembre 2023 sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/493/de",
+      "sha": "b42b3b7c83b74f3af3dd52ebafae0aa5d8c8ab24830560317a2e7645d8e96760"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/746",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4005",
+      "titelDe": "Obligationenrecht (Aktienrecht)",
+      "titelFr": "Code des obligations (Droit de la société anonyme)",
+      "titelIt": "Codice delle obbligazioni (Diritto della società anonima)",
+      "botschaftKey": "BOTSCHAFT-2017-112",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/746/de",
+      "sha": "6e2a231ee542118a1a8c2fb144cd7daccaff4c42b823a6cde0b78dd20ec3c94d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/109",
+      "dateDocument": "2022-02-02",
+      "roFundstelle": "AS 2022 109",
+      "titelDe": "Verordnung vom 2. Februar 2022 über die abschliessende Inkraftsetzung der Änderung vom 19. Juni 2020 des Obligationenrechts (Aktienrecht)",
+      "titelFr": "Ordonnance du 2 février 2022 portant dernière mise en vigueur partielle de la modification du 19 juin 2020 du code des obligations (Droit de la société anonyme)",
+      "titelIt": "Ordinanza del 2 febbraio 2022 sull’entrata in vigore integrale della modifica del 19 giugno 2020 del Codice delle obbligazioni (Diritto della società anonima)",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/109/de",
+      "sha": "13fdf620366c4fecc055ce85a455020b4ee2fe53b0794a23840ade356bb5d1f8"
     },
     {
       "art": "aenderung",
@@ -120,8 +284,11 @@
       "titelIt": "Codice delle obbligazioni (Diritto della società anonima). Correzione",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 2020 4005, das unter SR 220 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/112/de",
-      "sha": "61c879b9865573783cb98cd7651d3d06c8681b664bb3ce13244a0ef94771c816"
+      "sha": "e8a18fd67ea75ec43fdb22d30813d7651280eae9c9e88d733286a87692139dd2"
     },
     {
       "art": "aenderung",
@@ -132,8 +299,42 @@
       "titelDe": "Bundesgesetz über die direkte Bundessteuer (DBG) (Steuerliche Berücksichtigung der Kinderdrittbetreuungskosten)",
       "titelFr": "Loi fédérale sur l’impôt fédéral direct (LIFD) (Déduction fiscale des frais de garde des enfants par des tiers)",
       "titelIt": "Legge federale sull’imposta federale diretta (LIFD) (Trattamento fiscale delle spese per la cura dei figli da parte di terzi)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/120/de",
-      "sha": "e5e92e3e8d52a4460cc74256fc5475616c5b82bd3460892d2ea18b69a4bf19ff"
+      "sha": "f4c13483566b612fe5f03a116ff3366b12319533094a17c168ed76880ad022f4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/575",
+      "dateDocument": "2022-09-16",
+      "roFundstelle": "AS 2022 575",
+      "titelDe": "Verordnung des EFD vom 16. September 2022 über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP)",
+      "titelFr": "Ordonnance du DFF du 16 septembre 2022 sur la compensation des effets de la progression à froid pour les personnes physiques en matière d’impôt fédéral direct (Ordonnance sur la progression à froid, OPFr)",
+      "titelIt": "Ordinanza del DFF del 16 settembre 2022 sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/575/de",
+      "sha": "c765916b07e52264578b9bc17354a0c4ea14e537e1fe183b51d4519e729c718a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/732",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2022 732",
+      "titelDe": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Insolvenz und Einlagensicherung)",
+      "titelFr": "Loi fédérale sur les banques et les caisses d’épargne (Loi sur les banques, LB) (Insolvabilité et garantie des dépôts)",
+      "titelIt": "Legge federale sulle banche e le casse di risparmio (Legge sulle banche, LBCR) (Insolvenza e garanzia dei depositi)",
+      "botschaftKey": "BOTSCHAFT-2020-1555",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/732/de",
+      "sha": "b68746dc8126c761b2658e081bb018e172fa7ec61877a1377cf4c77dda65aa74"
     },
     {
       "art": "aenderung",
@@ -145,14 +346,42 @@
       "titelFr": "Loi fédérale sur le traitement fiscal des sanctions financières",
       "titelIt": "Legge federale sul trattamento fiscale delle sanzioni pecuniarie",
       "botschaftKey": "BOTSCHAFT-2016-2055",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/890/de",
-      "sha": "a69e168aa80651a7231a8d606f49163859b7aee6d33d90d65deec9fe2dde1d06"
+      "sha": "24e810891f35c2653ce6e0e11c896651b731cd3876652b534fff73c0a7081282"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 758",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+      "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)",
+      "botschaftKey": "BOTSCHAFT-2019-2681",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "sha": "d143bea67843dc3613920d57cf6420b9b1a8a774515b3b3b47dcf6e8767e65f3"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "77ee7e3de78090526d9e35ecdfdadc6cb70af6dc06b7941804371131a19e966c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/373",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2021 373",
+      "titelDe": "Bundesgesetz vom 19. Juni 2020 über Überbrückungsleistungen für ältere Arbeitslose (ÜLG)",
+      "titelFr": "Loi fédérale du 19 juin 2020 sur les prestations transitoires pour les chômeurs âgés (LPtra)",
+      "titelIt": "Legge federale del 19 giugno 2020 sulle prestazioni transitorie per i disoccupati anziani (LPTD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/373/de",
+      "sha": "2f36cfb2512e96fcdbfc4fd7c9f956e7ad32cab20d1456c60b626bda039ed08b"
     },
     {
       "art": "aenderung",
@@ -164,8 +393,12 @@
       "titelFr": "Loi fédérale sur la révision de l'imposition à la source du revenu de l'activité lucrative",
       "titelIt": "Legge federale sulla revisione dell'imposizione alla fonte del reddito da attività lucrativa",
       "botschaftKey": "BOTSCHAFT-2015-56",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/272/de",
-      "sha": "87223423d89277b4e078e0ecb00b9cc47229417a5b73acd37883f848be900b5d"
+      "sha": "06595828da1d27c9c6bc270a11f75a8b18bcce5ff53a83d6581e6d25cb37a6bc"
     },
     {
       "art": "aenderung",
@@ -176,14 +409,78 @@
       "titelDe": "Bundesgesetz über die direkte Bundessteuer (DBG) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur l'impôt fédéral direct (LIFD) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sull'imposta federale diretta (LIFD)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/660/de",
-      "sha": "bc267906fab3e525d1f1d01ce81893db5aff71d07e6b5eeda80e52aabc6be6a2"
+      "sha": "fec83a87fd272835df44ad858e9d272cc29c3dd366f84e15028c8fd5fd1f72b4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "b00c94e384342f7cf25a2b39fdc9e2630ad760ecd3783d5e6e79b2a86e47d8da"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/762",
+      "dateDocument": "2016-09-30",
+      "roFundstelle": "AS 2017 6839",
+      "titelDe": "Energiegesetz (EnG)",
+      "titelFr": "Loi sur l'énergie (LEne)",
+      "titelIt": "Legge federale sull'energia (LEne)",
+      "botschaftKey": "BOTSCHAFT-2013-1476",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2020-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/762/de",
+      "sha": "e34c68affa592edbcf162a622b2ddf5c0cdc4aaf068735ac2a1c9685faeefba9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/448",
+      "dateDocument": "2019-06-14",
+      "roFundstelle": "AS 2019 2413",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Bundesgesetzes vom 28. September 2018 über die Steuerreform und die AHV-Finanzierung",
+      "titelFr": "Ordonnance portant dernière mise en œuvre partielle de la loi fédérale du 28 septembre 2018 relative à la réforme fiscale et au financement de l'AVS",
+      "titelIt": "Ordinanza sull'entrata in vigore integrale della legge federale del 28 settembre 2018 concernente la riforma fiscale e il finanziamento dell'AVS",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/448/de",
+      "sha": "69c1a02022a01475558c891ed4b82162169690c366cb2f2915bf3890f6025810"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-07-09",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/447",
+      "dateDocument": "2018-09-28",
+      "roFundstelle": "AS 2019 2395",
+      "titelDe": "Bundesgesetz über die Steuerreform und die AHV-Finanzierung (STAF)",
+      "titelFr": "Loi fédérale relative à la réforme fiscale et au financement de l'AVS (RFFA)",
+      "titelIt": "Legge federale concernente la riforma fiscale e il finanziamento dell'AVS (RFFA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/447/de",
+      "sha": "c140ac382def9c9ccd575fd0e905abc959a16271ab3eb6ccea74ddf86eb78571"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/795",
+      "dateDocument": "2017-09-29",
+      "roFundstelle": "AS 2018 5103",
+      "titelDe": "Bundesgesetz über Geldspiele (Geldspielgesetz, BGS)",
+      "titelFr": "Loi fédérale sur les jeux d'argent (LJAr)",
+      "titelIt": "Legge federale sui giochi in denaro (LGD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/795/de",
+      "sha": "508048285df7f97b6a068782b1ed3561ffd7275852054dd1c899dc5ef239d4db"
     },
     {
       "art": "aenderung",
@@ -195,8 +492,11 @@
       "titelFr": "Loi fédérale sur le calcul de la réduction pour participation pour les banques d'importance systémique",
       "titelIt": "Legge federale sul calcolo della deduzione per partecipazioni in caso di banche di rilevanza sistemica",
       "botschaftKey": "BOTSCHAFT-2018-511",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/225/de",
-      "sha": "2b4b49fef307fef5df62538e1ed956ac33a1e5e180fbabe208ef0ab49031145e"
+      "sha": "4d6a6213df8889f8bef03fb7f785cd098f2d20fe69d6a11e6ee3e0ece1fca08e"
     },
     {
       "art": "aenderung",
@@ -207,20 +507,64 @@
       "titelDe": "Mitteilung über die Änderung der Teilinkraftsetzung des Energiegesetzes",
       "titelFr": "Communication concernant la modification de la mise en vigueur partielle de la loi sur l'énergie",
       "titelIt": "Comunicazione sulla modifica dell'entrata in vigore parziale della legge federale sull'energia",
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/271/de",
-      "sha": "e10bb39dbcc7618b7179eeae71df806d79f97319f62020ce5a2651a751b66fc0"
+      "sha": "b0602e3c708f315f0082cd427b886543318ce943691c60d84e63cf103f823da5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "003156e8716231ee64f70f36a82c27b7422a8d4042985b847dc06114b0065b4f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/557",
+      "dateDocument": "2015-03-20",
+      "roFundstelle": "AS 2015 2947",
+      "titelDe": "Bundesgesetz über die Gewinnbesteuerung von juristischen Personen mit ideellen Zwecken",
+      "titelFr": "Loi fédérale sur l'exonération des personnes morales poursuivant des buts idéaux",
+      "titelIt": "Legge federale sull'imposizione degli utili delle persone giuridiche con scopi ideali",
+      "botschaftKey": "BOTSCHAFT-2014-1136",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2018-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/557/de",
+      "sha": "bb6a3763a5a5625aedfabf5da612070e295601b143372170f48c1061e3469f30"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/762",
+      "dateDocument": "2016-09-30",
+      "roFundstelle": "AS 2017 6839",
+      "titelDe": "Energiegesetz (EnG)",
+      "titelFr": "Loi sur l'énergie (LEne)",
+      "titelIt": "Legge federale sull'energia (LEne)",
+      "botschaftKey": "BOTSCHAFT-2013-1476",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2020-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/762/de",
+      "sha": "c52fe0fb73c61a30454c86e6fda80f47d307d2243cfa2baa17d4e83aacef718e"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2017-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "74e4bcebe6b18c2659355b76f538bc7779c7de239b468fdc4c5ff29be481cb6a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/308",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2017 3097",
+      "titelDe": "Bundesgesetz über die wirtschaftliche Landesversorgung (Landesversorgungsgesetz, LVG)",
+      "titelFr": "Loi fédérale sur l'approvisionnement économique du pays (Loi sur l'approvisionnement du pays, LAP)",
+      "titelIt": "Legge federale sull'approvvigionamento economico del Paese (Legge sull'approvvigionamento del Paese, LAP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/308/de",
+      "sha": "66be2a0ffcd4e4caa2e59a1cdb9681889f132f5eaddc4a79aa23eb597f375f39"
     },
     {
       "art": "aenderung",
@@ -232,8 +576,47 @@
       "titelFr": "Loi fédérale sur l'adaptation de la LIFD et de la LHID aux dispositions générales du code pénal",
       "titelIt": "Legge federale su un adeguamento della LIFD e della LAID alle disposizioni generali del CP",
       "botschaftKey": "BOTSCHAFT-2012-403",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/143/de",
-      "sha": "584886128c71762aabd9e8a5e3229882e6e8232dee595935d8d8d53775843080"
+      "sha": "a6c49bbad0de14cb957da0902469c1ec0f1ebf5755b6524b5cd238bd650a9026"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/155",
+      "dateDocument": "2012-09-28",
+      "roFundstelle": "AS 2013 779",
+      "titelDe": "Bundesgesetz über die Besteuerung nach dem Aufwand",
+      "titelFr": "Loi fédérale sur l'imposition d'après la dépense",
+      "titelIt": "Legge federale sull'imposizione secondo il dispendio",
+      "botschaftKey": "BOTSCHAFT-2011-885",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2016-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/155/de",
+      "sha": "a975bca603375fbff3ee5cac08f3690d3e45b12f38e10763f45cbda79d6e9aed"
     },
     {
       "art": "aenderung",
@@ -245,8 +628,11 @@
       "titelFr": "Loi fédérale sur l'imposition des frais de formation et de perfectionnement à des fins professionnelles",
       "titelIt": "Legge federale sul trattamento fiscale delle spese di formazione e perfezionamento professionali",
       "botschaftKey": "BOTSCHAFT-2011-381",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/240/de",
-      "sha": "c712a5a8846ef052b7cf15f89b61047762faf9e07a23ac0e4b4313b77b5173a8"
+      "sha": "7055f21f4d31d9bd2012fcc2124e31bbc7f86775fee3ae76c6d198645801c3d2"
     },
     {
       "art": "aenderung",
@@ -258,8 +644,27 @@
       "titelFr": "Loi fédérale sur le financement et l'aménagement de l'infrastructure ferroviaire",
       "titelIt": "Legge federale concernente il finanziamento e l'ampliamento dell'infrastruttura ferroviaria",
       "botschaftKey": "BOTSCHAFT-2012-305",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/106/de",
-      "sha": "fa9e46e58f40a0f9a2dfff076f8842a5fd78dfa32413186e56b000b7fa164bc2"
+      "sha": "5da543a632811f75b37caf084c3ee4853f3f225be33231e990a36f7262df5f24"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/3",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2015 9",
+      "titelDe": "Bundesgesetz über eine Neuregelung des Steuererlasses (Steuererlassgesetz)",
+      "titelFr": "Loi fédérale relative à la nouvelle réglementation concernant la remise de l'impôt (Loi sur la remise de l'impôt)",
+      "titelIt": "Legge federale concernente la nuova disciplina del condono dell'imposta (Legge sul condono dell'imposta)",
+      "botschaftKey": "BOTSCHAFT-2013-1658",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/3/de",
+      "sha": "381bbe599c143332b21912181c8f0d87004dcc5e9bc9196b3f060b445e7c55c7"
     },
     {
       "art": "aenderung",
@@ -271,8 +676,34 @@
       "titelFr": "Loi fédérale sur l'exonération des personnes morales poursuivant des buts idéaux",
       "titelIt": "Legge federale sull'imposizione degli utili delle persone giuridiche con scopi ideali",
       "botschaftKey": "BOTSCHAFT-2014-1136",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-01-01",
+        "2018-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/557/de",
-      "sha": "e273b4f970e77dac1ffaba44488dfe7c6197a9a14f046f42df5d165bbb1669b0"
+      "sha": "fbc62d941630a0043fa0ca81eb974030e08fe446560fddc6e004ccb4d043990e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2014-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/700",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2012 5977",
+      "titelDe": "Bundesgesetz über Vereinfachungen bei der Besteuerung von Lotteriegewinnen",
+      "titelFr": "Loi fédérale sur les simplifications de l'imposition des gains faits dans les loteries",
+      "titelIt": "Legge federale concernente le semplificazioni nell'imposizione delle vincite alle lotterie",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2014-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/700/de",
+      "sha": "e0785e085d4e9aefe6bf49a7773485ef447a822a677efe766681bf82c137bcf0"
     },
     {
       "art": "aenderung",
@@ -284,8 +715,15 @@
       "titelFr": "Loi fédérale sur l'imposition d'après la dépense",
       "titelIt": "Legge federale sull'imposizione secondo il dispendio",
       "botschaftKey": "BOTSCHAFT-2011-885",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2016-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/155/de",
-      "sha": "dd0e34aed400cc23e78d45c06596b21c840dea8daa6faa97ec9d30138416fc7a"
+      "sha": "d0d752de048fd1d600611778f98145c273c6994a6289a564672b8612d266e140"
     },
     {
       "art": "aenderung",
@@ -297,8 +735,11 @@
       "titelFr": "Loi fédérale sur l'impôt fédéral direct (LIFD)",
       "titelIt": "Legge federale sull'imposta federale diretta (LIFD)",
       "botschaftKey": "BOTSCHAFT-2012-672",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/315/de",
-      "sha": "da6fb5a3dba4d834ef80340fca08ded1437b7061701c2d2fd094439c67292bb9"
+      "sha": "654668705262ae0d1d4b6cca69c8d5ac2becb69f6050c438679da5fe5a5d06f9"
     },
     {
       "art": "aenderung",
@@ -310,8 +751,43 @@
       "titelFr": "Loi fédérale sur la mise à jour formelle du calcul dans le temps de l'impôt direct dû par les personnes physiques",
       "titelIt": "Legge federale sull'adeguamento formale delle basi temporali per l'imposizione diretta delle persone fisiche",
       "botschaftKey": "BOTSCHAFT-2011-525",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/504/de",
-      "sha": "1f7d93da0f006c402d075acf0e078962754649f4324535d091d33e3307769a45"
+      "sha": "f213e5e7fbb03a162e0a4663ce9db6bc5fa4121f9a022cc8126ab12b0a9c8148"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2014-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/589",
+      "dateDocument": "2013-09-02",
+      "roFundstelle": "AS 2013 3027",
+      "titelDe": "Verordnung des EFD über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer (Verordnung über die kalte Progression, VKP)",
+      "titelFr": "Ordonnance du DFF sur la compensation des effets de la progression à froid pour les personnes physiques en matière d'impôt fédéral direct (Ordonnance sur la progression à froid, OPFr)",
+      "titelIt": "Ordinanza del DFF sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta (Ordinanza sulla progressione a freddo, OPFr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/589/de",
+      "sha": "d715b7af0d8c71eb195dfcc936479215036cb03454909b9b23f6c94bd6f6c656"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
       "art": "aenderung",
@@ -323,8 +799,11 @@
       "titelFr": "Loi fédérale sur l'imposition des participations de collaborateur",
       "titelIt": "Legge federale sull'imposizione delle partecipazioni di collaboratore",
       "botschaftKey": "BOTSCHAFT-2005-88",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/427/de",
-      "sha": "a146d5fa2513db216196f1177a289d178e45e5df4a76fc8fc6037b564ae74276"
+      "sha": "d4653a28f118000ad4a7cedc922ed072754e6804b2b475533eeade795f753206"
     },
     {
       "art": "aenderung",
@@ -335,8 +814,15 @@
       "titelDe": "Bundesgesetz über Vereinfachungen bei der Besteuerung von Lotteriegewinnen",
       "titelFr": "Loi fédérale sur les simplifications de l'imposition des gains faits dans les loteries",
       "titelIt": "Legge federale concernente le semplificazioni nell'imposizione delle vincite alle lotterie",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-01-01",
+        "2014-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/700/de",
-      "sha": "17f384f1b24868bc7b666e49867afb73e08410056165db67dbef1cd12d727639"
+      "sha": "1ff88070bf2e8b32b3b63342c4ddcc6fc273600c5c6e2186e07b15969160ec38"
     },
     {
       "art": "aenderung",
@@ -348,14 +834,78 @@
       "titelFr": "Loi fédérale sur l'exonération de la solde allouée pour le service du feu",
       "titelIt": "Legge federale sull'esenzione fiscale del soldo dei pompieri",
       "botschaftKey": "BOTSCHAFT-2010-508",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/71/de",
-      "sha": "df14f0094e1a4904a30c07ae50c1923fdb31eecc0f78f472242dcff80ce578bf"
+      "sha": "7289c0fcf3feb4574f5040c3f0fe8a5c1e7ee8f3662d435501863c49237b4db0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/810",
+      "dateDocument": "2011-12-23",
+      "roFundstelle": "AS 2012 6679",
+      "titelDe": "Obligationenrecht (Rechnungslegungsrecht)",
+      "titelFr": "Code des obligations (Droit comptable)",
+      "titelIt": "Codice delle obbligazioni (Diritto contabile)",
+      "botschaftKey": "BOTSCHAFT-2008-416",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/810/de",
+      "sha": "d9f500388cacbd9d10f048b0664f4acb2e657db132d4941c05c562df7a07a318"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "6d9d70658e16501ce012d15e6f2e6b67b884be77adaaa56eab6924314901ecfd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/626",
+      "dateDocument": "2011-09-22",
+      "roFundstelle": "AS 2011 4503",
+      "titelDe": "Verordnung des EFD über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer für das Steuerjahr 2012 (Verordnung über die kalte Progression, VKP)",
+      "titelFr": "Ordonnance du DFF sur la compensation des effets de la progression à froid pour les personnes physiques en matière d'impôt fédéral direct pour l'année fiscale 2012 (Ordonnance sur la progression à froid, OPFr)",
+      "titelIt": "Ordinanza del DFF sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta per l'anno fiscale 2012 (Ordinanza sulla progressione a freddo, OPFr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/626/de",
+      "sha": "b474375213594b444e752141abbee0948af835efd21c79f7149b76ca9c742fd9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/397",
+      "dateDocument": "2007-03-23",
+      "roFundstelle": "AS 2008 2893",
+      "titelDe": "Bundesgesetz über die Verbesserung der steuerlichen Rahmenbedingungen für unternehmerische Tätigkeiten und Investitionen (Unternehmenssteuerreformgesetz II)",
+      "titelFr": "Loi fédérale sur l'amélioration des conditions fiscales applicables aux activités entrepreneuriales et aux investissements (Loi sur la réforme de l'imposition des entreprises II)",
+      "titelIt": "Legge federale sul miglioramento delle condizioni quadro fiscali per le attività e gli investimenti imprenditoriali (Legge sulla riforma II dell'imposizione delle imprese)",
+      "botschaftKey": "BOTSCHAFT-2005-737",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2009-01-01",
+        "2011-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/397/de",
+      "sha": "246f8c4fe45c74882aa3833f9f9f6b5b0591b5fc63ad1ca8200011e0aa5193f0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2010 1881",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2006-124",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "sha": "f58abceb941cc313b81bd4ceaf09349034ef2aa8c587d97b8a4f8b48412650e1"
     },
     {
       "art": "aenderung",
@@ -366,8 +916,11 @@
       "titelDe": "Bundesgesetz über die steuerliche Abzugsfähigkeit von Zuwendungen an politische Parteien",
       "titelFr": "Loi fédérale sur la déductibilité des versements en faveur de partis politiques",
       "titelIt": "Legge federale sulla deducibilità fiscale dei versamenti ai partiti",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/58/de",
-      "sha": "5e830ccccfadd9b6fcd26ad09b4e2db48a73f96efe6259aa77291009252b6d31"
+      "sha": "201cfa714666ff1617d96f61769f09022853f14905c2d7c34ece2c292ddb59ad"
     },
     {
       "art": "aenderung",
@@ -379,8 +932,11 @@
       "titelFr": "Loi fédérale sur l'impôt fédéral direct (LIFD)",
       "titelIt": "Legge federale sull'imposta federale diretta (LIFD)",
       "botschaftKey": "BOTSCHAFT-2009-362",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/59/de",
-      "sha": "fa73e4216b4c954b5cf2a21bb302a591cf47f6538de99dcc54c22ae21ca0bd6e"
+      "sha": "69e572e2c5c96f747bb9f000a83069579823c54128a0b009c20407ac20d0160b"
     },
     {
       "art": "aenderung",
@@ -392,8 +948,26 @@
       "titelFr": "Loi fédérale sur les allégements fiscaux en faveur des familles avec enfants",
       "titelIt": "Legge federale sullo sgravio fiscale delle famiglie con figli",
       "botschaftKey": "BOTSCHAFT-2009-815",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/60/de",
-      "sha": "e4f919d6de555bb8ba4abf29c4ffc9c40c088d185a4bd5cde1dcfd94669ed330"
+      "sha": "31b9d2b3e1c13a6433c0dfe2fe4e62857dd5dd1397fb669dd742220e983aa728"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/634",
+      "dateDocument": "2010-09-28",
+      "roFundstelle": "AS 2010 4483",
+      "titelDe": "Verordnung des EFD über den Ausgleich der Folgen der kalten Progression für die natürlichen Personen bei der direkten Bundessteuer für das Steuerjahr 2011 (Verordnung über die kalte Progression, VKP)",
+      "titelFr": "Ordonnance du DFF sur la compensation des effets de la progression à froid pour les personnes physiques en matière d'impôt fédéral direct pour l'année fiscale 2011 (Ordonnance sur la progression à froid, OPFr)",
+      "titelIt": "Ordinanza del DFF sulla compensazione degli effetti della progressione a freddo per le persone fisiche in materia di imposta federale diretta per l'anno fiscale 2011 (Ordinanza sulla progressione a freddo, OPFr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/634/de",
+      "sha": "5f238726694b447557e44dbd7f4fd99ab79fb14bdf72d9585c82766c5ac0d785"
     },
     {
       "art": "aenderung",
@@ -405,8 +979,11 @@
       "titelFr": "Loi fédérale sur la simplification du rappel d'impôt en cas de succession et sur l'introduction de la dénonciation spontanée non punissable",
       "titelIt": "Legge federale relativa alla semplificazione del ricupero d'imposta in caso di successione e all'introduzione dell'autodenuncia esente da pena",
       "botschaftKey": "BOTSCHAFT-2006-1131",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/618/de",
-      "sha": "49aff1dc658030421dd6caf4e8c3e991fdcc4ff2e4758c63f5630782b073586b"
+      "sha": "332e3eece19a9b2cc7c4a853ce74358b563341204ac84b46863788402f6af48f"
     },
     {
       "art": "aenderung",
@@ -417,20 +994,62 @@
       "titelDe": "Bundesgesetz über die steuerliche Behandlung von Instandstellungskosten bei Liegenschaften",
       "titelFr": "Loi fédérale sur le traitement fiscal des frais de remise en état des immeubles",
       "titelIt": "Legge federale sul trattamento fiscale delle spese di riattazione degli immobili",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/218/de",
-      "sha": "d8d48c0830752b81c60b8ffe9db71d302d6e5d61ee02274fba1b8dc5bc3e6205"
+      "sha": "295444ea78e262651980591c2f57e2615d9ca597f49eaf6ea5332566b3470d7a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2010-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/679",
+      "dateDocument": "2009-03-20",
+      "roFundstelle": "AS 2009 5597",
+      "titelDe": "Bundesgesetz über die Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
+      "titelFr": "Loi sur la réforme des chemins de fer 2 (Révision des actes normatifs relatifs aux transports publics)",
+      "titelIt": "Legge federale sulla Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)",
+      "botschaftKey": "BOTSCHAFT-2007-425",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/679/de",
+      "sha": "c22c07799150a0df60e5545f52d4cfc630ae521ba82ca58b5270b77e3a5ae969"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "a98c2d4c871b261efe2e4228ba94f90953ab86bc0a546bf0720b12e33da5b7c3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/397",
+      "dateDocument": "2007-03-23",
+      "roFundstelle": "AS 2008 2893",
+      "titelDe": "Bundesgesetz über die Verbesserung der steuerlichen Rahmenbedingungen für unternehmerische Tätigkeiten und Investitionen (Unternehmenssteuerreformgesetz II)",
+      "titelFr": "Loi fédérale sur l'amélioration des conditions fiscales applicables aux activités entrepreneuriales et aux investissements (Loi sur la réforme de l'imposition des entreprises II)",
+      "titelIt": "Legge federale sul miglioramento delle condizioni quadro fiscali per le attività e gli investimenti imprenditoriali (Legge sulla riforma II dell'imposizione delle imprese)",
+      "botschaftKey": "BOTSCHAFT-2005-737",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2009-01-01",
+        "2011-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/397/de",
+      "sha": "c45b72f028f1b30e0f17c22d1ffbe597a19ba29f526dd63965b99549e6969852"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "b58df98c07689bda5983b5492f96e2d4f1842e98d3cd9080c533417383f45a6d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/112",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2008 447",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/112/de",
+      "sha": "966b35e82ec9d16d66bc6d05593528e9a3df53470382f0fe5e42cc4ee5b82963"
     },
     {
       "art": "aenderung",
@@ -442,8 +1061,11 @@
       "titelFr": "Loi fédérale sur l'impôt fédéral direct (Mesures immédiates concernant l'imposition des couples mariés)",
       "titelIt": "Legge federale sull'imposta federale diretta (Misure immediate nell'ambito dell'imposizione dei coniugi)",
       "botschaftKey": "BOTSCHAFT-2006-548",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/128/de",
-      "sha": "317db9b381a0db5be8730353e32d032b5d8a20ee926300dc24859a9fd7bb7907"
+      "sha": "2c898b987b6c4e77829655c6e2c85d53dfc0714b396f9cad6071bf1ca512d64a"
     },
     {
       "art": "aenderung",
@@ -454,14 +1076,137 @@
       "titelDe": "Bundesgesetz über Änderungen des Nachsteuerverfahrens und des Strafverfahrens wegen Steuerhinterziehung auf dem Gebiet der direkten Steuern",
       "titelFr": "Loi fédérale portant modification de la procédure de rappel d'impôt et de la procédure pénale pour soustraction d'impôt en matière d'imposition directe",
       "titelIt": "Legge federale sulla modifica della procedura di ricupero d'imposta e del procedimento penale per sottrazione d'imposta in materia di imposizione diretta",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/400/de",
-      "sha": "30b29a3fdee720c2cc282659631ffd1cf8eeaf54a2595488a3a3cace3e92c0db"
+      "sha": "07dde9deea0f9296bad39a722552936b01a4e200e0566fde5190372ebd630792"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/685",
+      "dateDocument": "2005-12-16",
+      "roFundstelle": "AS 2007 4791",
+      "titelDe": "Obligationenrecht (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht) (OR)",
+      "titelFr": "Code des obligations (Droit de la société à responsabilité limitée; adaptation des droits de la société anonyme, de la société coopérative, du registre du commerce et des raisons de commerce) (CO)",
+      "titelIt": "Codice delle obbligazioni (Diritto della società a garanzia limitata; adeguamento del diritto della società anonima, della società cooperativa, del registro di commercio e delle ditte commerciali) (CO)",
+      "botschaftKey": "BOTSCHAFT-2002-443",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/685/de",
+      "sha": "de3c6a1ea7514fef33cc892f7a018611c900f2aa8de2190235371b9e9d01ae00"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/71",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2007 359",
+      "titelDe": "Bundesgesetz über Massnahmen zur Bekämpfung der Schwarzarbeit (Bundesgesetz gegen die Schwarzarbeit, BGSA)",
+      "titelFr": "Loi fédérale concernant des mesures en matière de lutte contre le travail au noir (Loi sur le travail au noir, LTN)",
+      "titelIt": "Legge federale concernente i provvedimenti in materia di lotta contro il lavoro nero (Legge contro il lavoro nero, LLN)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/71/de",
+      "sha": "8c49b0cae192ecc05c30b72d4984d0a2891f2f707dabe9e4d1ab8ea72e302cf7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5779",
+      "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+      "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)",
+      "botschaftKey": "BOTSCHAFT-2005-976",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/860",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2007 6637",
+      "titelDe": "Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatgesetz, GSG)",
+      "titelFr": "Loi fédérale sur les privilèges, les immunités et les facilités, ainsi que sur les aides financières accordés par la Suisse en tant qu'Etat hôte (Loi sur l'Etat hôte, LEH)",
+      "titelIt": "Legge federale sui privilegi, le immunità e le facilitazioni, nonché sugli aiuti finanziari accordati dalla Svizzera quale Stato ospite (Legge sullo Stato ospite, LSO)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/860/de",
+      "sha": "3d8170b90bb2b7b021cfd0503b559e780d73e04e78d0d454b491c30f9a6e1b74"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "2305d0d4fd509fb414adc7cc9592453f706416bb90eee43145bf71ddd9293042"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/747",
+      "dateDocument": "2006-06-23",
+      "roFundstelle": "AS 2007 5259",
+      "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Neue AHV-Versichertennummer)",
+      "titelFr": "Loi fédérale sur l'assurance-vieillesse et survivants (LAVS) (Nouveau numéro d'assuré AVS)",
+      "titelIt": "Legge federale sull'assicurazione per la vecchiaia e per i superstiti (LAVS) (Nuovo numero d'assicurato dell'AVS)",
+      "botschaftKey": "BOTSCHAFT-2006-52",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/747/de",
+      "sha": "c598ef37bb15cbed37724779fb3cdf4f7ee5459d0057f7498ef7d645fa90749b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/218",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 1205",
+      "titelDe": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+      "titelFr": "Loi sur le Tribunal fédéral (LTF)",
+      "titelIt": "Legge sul Tribunale federale (LTF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/218/de",
+      "sha": "ae2b54b73191bd93986b3de4eb3e461a6561d9ab0201419344b139dd12e72de6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     },
     {
       "art": "aenderung",
@@ -473,14 +1218,42 @@
       "titelFr": "Loi fédérale sur des modifications urgentes de l'imposition des entreprises",
       "titelIt": "Legge federale che introduce alcuni adeguamenti urgenti nell'imposizione delle imprese",
       "botschaftKey": "BOTSCHAFT-2005-737",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/760/de",
-      "sha": "829fe8da841ac7e53b12814d82ddd70517174874c2f34c7d56ef75c9060568ed"
+      "sha": "ae7c8758e5aa975e748d08409bf4cec51027a5c4a126df0eb568764d967f4fea"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/822",
+      "dateDocument": "2006-06-23",
+      "roFundstelle": "AS 2006 5379",
+      "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+      "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+      "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
+      "botschaftKey": "BOTSCHAFT-2005-1000",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/822/de",
+      "sha": "ebed309a18575e8239fc8aac6a01ca32172658536b1111686d5badd894f16588"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2006-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "5adc121f1adac155f0af567f919f84042cbfc15d710222ff816649e17d33fc90"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/591",
+      "dateDocument": "2004-10-08",
+      "roFundstelle": "AS 2005 4545",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Stiftungsrecht)",
+      "titelFr": "Code civil suisse (Droit des fondations)",
+      "titelIt": "Codice civile svizzero (Diritto delle fondazioni)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/591/de",
+      "sha": "76277efb8035a26597be34a327199764cf851e8c25a1c786bffbf9c54b213ae0"
     },
     {
       "art": "aenderung",
@@ -491,26 +1264,118 @@
       "titelDe": "Bundesgesetz über die Aufhebung der Haftung der Erben für Steuerbussen",
       "titelFr": "Loi fédérale sur la suppression de la responsabilité des héritiers pour les amendes fiscales",
       "titelIt": "Legge federale sulla soppressione della responsabilità degli eredi per le multe fiscali",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/133/de",
-      "sha": "56e25b4ac640e803c90c6bf843bb5e1a04c79b6707e9744ed6b8e03c725a8adc"
+      "sha": "2d6c5ec4e3e3045c2abcc767181a825345fa31ab3e80bac8fb03a4cab025e4be"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "de81253badad10dfd1ba91eeedd0775a370f907b8555ce8a640068a46c605d43"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/667",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2003 4487",
+      "titelDe": "Bundesgesetz über die Beseitigung von Benachteiligungen von Menschen mit Behinderungen (Behindertengleichstellungsgesetz, BehiG)",
+      "titelFr": "Loi fédérale sur l'élimination des inégalités frappant les personnes handicapées (Loi sur l'égalité pour les handicapés, LHand)",
+      "titelIt": "Legge federale sull'eliminazione di svantaggi nei confronti dei disabili (Legge sui disabili, LDis)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-01-01",
+        "2005-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/667/de",
+      "sha": "ac7ca67ddcab58866445d8195572e19199b9bf84318042a795df8dfbbcaf4bd0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/711",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2004 4635",
+      "titelDe": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
+      "titelFr": "Loi fédérale sur la prévoyance professionnelle vieillesse, survivants et invalidité (LPP)",
+      "titelIt": "Legge federale sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (LPP)",
+      "botschaftKey": "BOTSCHAFT-2003-1054",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/711/de",
+      "sha": "a2fd0bffa87b3ce2a0266996df7b706a360df0eb6525b0162e4ef45719725db2"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2004-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "90428f0a17f01d554e1406e1b97e6a28b4ce2acd0dac12f7cf461137ea2bd687"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/320",
+      "dateDocument": "2003-10-03",
+      "roFundstelle": "AS 2004 2617",
+      "titelDe": "Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung (Fusionsgesetz, FusG)",
+      "titelFr": "Loi fédérale sur la fusion, la scission, la transformation et le transfert de patrimoine (Loi sur la fusion, LFus)",
+      "titelIt": "Legge federale sulla fusione, la scissione, la trasformazione e il trasferimento di patrimonio (Legge sulla fusione, LFus)",
+      "botschaftKey": "BOTSCHAFT-2000-921",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/320/de",
+      "sha": "a311043931adce9bc99decf57454d37cae3b7f03a1214dd52cb62594d11df64a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2004-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/667",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2003 4487",
+      "titelDe": "Bundesgesetz über die Beseitigung von Benachteiligungen von Menschen mit Behinderungen (Behindertengleichstellungsgesetz, BehiG)",
+      "titelFr": "Loi fédérale sur l'élimination des inégalités frappant les personnes handicapées (Loi sur l'égalité pour les handicapés, LHand)",
+      "titelIt": "Legge federale sull'eliminazione di svantaggi nei confronti dei disabili (Legge sui disabili, LDis)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-01-01",
+        "2005-01-01"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/667/de",
+      "sha": "91f597f6e428f7c2cd2e222ca07bfd9b09befb43e6fb58af191b0f4c8689f0fe"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2002-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "082ba29cad11ea5d8847c28c403bf93700ec8a01939504fe4101178abfb8033a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/170",
+      "dateDocument": "1999-12-22",
+      "roFundstelle": "AS 2002 949",
+      "titelDe": "Obligationenrecht (Die kaufmännische Buchführung)",
+      "titelFr": "Code des obligations (De la comptabilité commerciale)",
+      "titelIt": "Codice delle obbligazioni (Della contabilità commerciale)",
+      "botschaftKey": "BOTSCHAFT-1999-1_5149_4753_4457",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/170/de",
+      "sha": "81c07149114e324e9c15ccc641e585d7483bb0a0f1c129a3260ddbcf1bb37399"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/363",
+      "dateDocument": "1999-03-19",
+      "roFundstelle": "AS 1999 2374",
+      "titelDe": "Bundesgesetz über das Stabilisierungsprogramm 1998",
+      "titelFr": "Loi fédérale sur le programme de stabilisation 1998",
+      "titelIt": "Legge federale sul programma di stabilizzazione 1998",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1999-01-01",
+        "2001-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/363/de",
+      "sha": "3790c505af3a7fe768cd8ce80ba2ceaf1e03717c651efafe6db3572debc1cb1a"
     },
     {
       "art": "aenderung",
@@ -521,8 +1386,11 @@
       "titelDe": "Bundesgesetz über die Unzulässigkeit steuerlicher Abzüge von Bestechungsgeldern",
       "titelFr": "Loi fédérale sur l'interdiction de déduire fiscalement les commissions occultes",
       "titelIt": "Legge federale sulla deducibilità fiscale delle retribuzioni corruttive",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/330/de",
-      "sha": "164eea1c1d015ffaa856e1200653c02338e8ed6fe8c0fcff6f4c301fd62a2c8f"
+      "sha": "791d1d36a02fb9e3f52157ebdcd00d4877493dd2634e5220c6d52bab6c77f209"
     },
     {
       "art": "aenderung",
@@ -534,20 +1402,42 @@
       "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de taxation des impôts directs dans les rapports intercantonaux",
       "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure di imposizione delle imposte dirette nei rapporti intercantonali",
       "botschaftKey": "BOTSCHAFT-2000-823",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/155/de",
-      "sha": "5e72762b2ef0b39fe2c268c1de432b52803cc83ab36af4f478280ddf03b9eaf8"
+      "sha": "981c45a30732e49755852f8913813865587d881265d349bf86c3c8e585781717"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "64bdd4bfe12640eba300e0e8bb67f73cf63d87447445538792f3a55dacb85c42"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/293",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 1891",
+      "titelDe": "Bundesgesetz über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+      "titelFr": "Loi fédérale sur la création et l'adaptation de bases légales concernant le traitement de données personnelles",
+      "titelIt": "Legge federale concernente l'istituzione e l'adeguamento di basi legali per il trattamento di dati personali",
+      "botschaftKey": "BOTSCHAFT-1999-1_9005_8381_7979",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/293/de",
+      "sha": "ae30ef945d2254069bf01059d72440b99fb1ff98b57b429a9c56f864a83dc501"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.11",
-      "sha": "43e11a07233f35c7faa5ca927eaa994bc2ffe6d94b34a54a6b3209bf2ea21760"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/118",
+      "dateDocument": "1998-12-18",
+      "roFundstelle": "AS 2000 677",
+      "titelDe": "Bundesgesetz über Glücksspiele und Spielbanken (Spielbankengesetz, SBG)",
+      "titelFr": "Loi fédérale sur les jeux de hasard et les maisons de jeu (Loi sur les maisons de jeu, LMJ)",
+      "titelIt": "Legge federale sul gioco d'azzardo e sulle case da gioco (Legge sulle case da gioco, LCG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/118/de",
+      "sha": "365c3a6b2e75f5bd5a7fdb9d03e90d66fc28854ab4987e0275970037bacf19df"
     },
     {
       "art": "aenderung",
@@ -559,8 +1449,11 @@
       "titelFr": "Loi fédérale sur l'impôt fédéral direct (LIFD)",
       "titelIt": "Legge federale sull'imposta federale diretta (LIFD)",
       "botschaftKey": "BOTSCHAFT-1999-1_5966_5286_4949",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/63/de",
-      "sha": "55b0a86c9a8dd078ca8e472b2b1d2adaccaaefb4d95de21fe4980d896532e7ee"
+      "sha": "9b31f379f9468f926796bea1d8422374e60774b839e4816770cab3d9ad096bfe"
     },
     {
       "art": "aenderung",
@@ -571,33 +1464,150 @@
       "titelDe": "Bundesgesetz über die direkte Bundessteuer (DBG)",
       "titelFr": "Loi fédérale sur l'impôt fédéral direct (LIFD)",
       "titelIt": "Legge federale sull'imposta federale diretta (LIFD)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/177/de",
-      "sha": "06ff01fcb7e17bc6421a82549b86afcc3eabdd98c58368f3065ab49608dffa6a"
+      "sha": "1ba051bfe94a98d4547edc25ac11876e94d5af63191c631008a094e5bdba5ac4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/363",
+      "dateDocument": "1999-03-19",
+      "roFundstelle": "AS 1999 2374",
+      "titelDe": "Bundesgesetz über das Stabilisierungsprogramm 1998",
+      "titelFr": "Loi fédérale sur le programme de stabilisation 1998",
+      "titelIt": "Legge federale sul programma di stabilizzazione 1998",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1999-01-01",
+        "2001-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/363/de",
+      "sha": "5c79bb83dc2d3c7e92ac1a3e79e2c804293103e48eeb563177cad89d522f4df6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2465_2465_2465",
+      "dateDocument": "1997-04-30",
+      "roFundstelle": "AS 1997 2465",
+      "titelDe": "Bundesgesetz vom 30. April 1997 über die Organisation der Postunternehmung des Bundes (Postorganisationsgesetz, POG)",
+      "titelFr": "Loi fédérale du 30 avril 1997 sur l'organisation de l'entreprise fédérale de la poste (Loi sur l'organisation de la Poste, LOP)",
+      "titelIt": "Legge federale del 30 aprile 1997 sull'organizzazione dell'azienda delle poste della Confederazione (Legge sull'organizzazione delle poste, LOP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2465_2465_2465/de",
+      "sha": "1c531c943780a259f85322fd1b6d710c0de36b4b65ceb60d2d1cbcc39ff37272"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/669_669_669",
+      "dateDocument": "1997-10-10",
+      "roFundstelle": "AS 1998 669",
+      "titelDe": "Bundesgesetz vom 10. Oktober 1997 über die Reform der Unternehmensbesteuerung 1997",
+      "titelFr": "Loi fédérale du 10 octobre 1997 sur la réforme 1997 de l'imposition des sociétés",
+      "titelIt": "Legge federale del 10 ottobre 1997 sulla riforma 1997 dell'imposizione delle imprese",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/669_669_669/de",
+      "sha": "83027f307a5bbb572329df3e404d46b575b33396408b4c214945c9d41efa110e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227",
+      "dateDocument": "1994-12-16",
+      "roFundstelle": "AS 1995 1227",
+      "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs, Änderung",
+      "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite, Modification",
+      "titelIt": "Legge federale sulla esecuzione e sul fallimento, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1227_1227_1227/de",
+      "sha": "99e4d93f4bdf2021e12b8dc9c272ee41e3aeb4b1a8d60efe7ed30c1578478804"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1445_1445_1445",
+      "dateDocument": "1995-10-06",
+      "roFundstelle": "AS 1996 1445",
+      "titelDe": "Bundesgesetz vom 6. Oktober 1995 über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+      "titelFr": "Loi fédérale du 6 octobre 1995 sur le service civil (LSC)",
+      "titelIt": "Legge federale del 6 ottobre 1995 sul servizio civile sostitutivo (Legge sul servizio civile, LSC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1445_1445_1445/de",
+      "sha": "9366c55e276536bca375f6011fd10e590471fc41d55a4ec6c3114b50c9e6b9f4"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1995-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/1184_1184_1184",
-      "dateDocument": "1990-12-14",
-      "roFundstelle": "AS 1991 1184",
-      "titelDe": "Bundesgesetz vom 14. Dezember 1990 über die direkte Bundessteuer (DBG)",
-      "titelFr": "Loi fédérale du 14 décembre 1990 sur l'impôt fédéral direct (LIFD)",
-      "titelIt": "Legge federale del 14 dicembre 1990 sull'imposta federale diretta (LIFD)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/1184_1184_1184/de",
-      "sha": "7b223c52411c1732d5784f7205db9a0d11f0a017a4400c7c5af85c4732aaad6c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/__2106",
+      "dateDocument": "1991-10-01",
+      "titelIt": "Correzione: Legge federale sull'imposta federale diretta",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/__2106/de",
+      "sha": "71fef791985529a0cc22703510493bcefe23d100cf1a2c3024fec161404e840e"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1941-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/56/1947_2021_2107",
-      "dateDocument": "1940-12-09",
-      "roFundstelle": "AS 56 1947",
-      "titelDe": "Bundesratsbeschluss über die Erhebung einer direkten Bundessteuer (BdBSt)",
-      "titelFr": "Arrêté du Conseil fédéral concernant la perception d'un impôt fédéral direct (AIFD)",
-      "titelIt": "Decreto del Consiglio federale concernente la riscossione d'una imposta federale diretta (DIFD)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/56/1947_2021_2107/de",
-      "sha": "74a5495e38eb632fb30ba6da63289274d420124c5da6b68290cb16603989a9db"
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1818_1818_1818",
+      "dateDocument": "1992-10-13",
+      "roFundstelle": "AS 1992 1818",
+      "titelDe": "Bundesgesetz über die Harmonisierung der direkten Steuern der Kantone und Gemeinden, Berichtigung (nur ital.)",
+      "titelFr": "Loi fédérale sur l'harmonisation des impôts directs des cantons et des communes, Errata (seulement en italien)",
+      "titelIt": "Legge federale sull'armonizzazione delle imposte dirette dei Cantoni e dei Comuni, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1818_1818_1818/de",
+      "sha": "c5431b70dd11f14d8311d5922d7f23e7079ec96c18c02f8db461c5b56dc9896c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1445_1445_1445",
+      "dateDocument": "1994-10-07",
+      "roFundstelle": "AS 1995 1445",
+      "titelDe": "Bundesgesetz über die direkte Bundessteuer (DBG) (Art. 20 Abs. 1 Bst. a und Art. 205a), Änderung",
+      "titelFr": "Loi fédérale sur l'impôt fédéral direct (LIFD) (Art. 20. 1er al., let. a et 205a), Modification",
+      "titelIt": "Legge federale sull'imposta federale diretta (LIFD) (art. 20 cpv.1 lett. a e art. 205a), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1445_1445_1445/de",
+      "sha": "c2da9f4a4c6f06ff5885a7a34b446f5f618feef91ded017f0e991820454b4599"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1449_1449_1449",
+      "dateDocument": "1994-10-07",
+      "roFundstelle": "AS 1995 1449",
+      "titelDe": "Bundesgesetz über die direkte Bundessteuer (DBG) (Art. 75) und Bundesgesetz über die Harmonisierung der direkten Steuern der Kantone und Gemeinden (StHG) (Art. 29 und 29a), Änderung",
+      "titelFr": "Loi fédérale sur l'impôt fédéral direct (LIFD) (Art. 75). Loi fédérale sur l'harmonisation des impôts directs des cantons et des communes (LHID) (Art. 29 et 29a), Modification",
+      "titelIt": "Legge federale sull'imposta federale diretta (LIFD) (art. 75) e Legge federale sull'armonizzazione delle imposte dirette dei Cantoni e dei Comuni (LAID) (art. 29 e 29a), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1449_1449_1449/de",
+      "sha": "6a87d733a81169b8e0a4343aa41f76c4f26217b5819cca3959e68f4698cbe636"
     }
   ],
-  "sha": "fa85fed8d188156b54ddfdf600144b3262a8aa617409156e428d205282478fbe"
+  "sha": "4cc698e2a0afef6d0dde45218e91fe923f06b9f4e0db5321aabdc472ee223d2f"
 }

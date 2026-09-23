@@ -853,5 +853,655 @@
     "2026-04-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2006/218",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2006/218",
+    "inkrafttreten": "2007-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/188",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/188",
+        "typ": 5,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/218",
+        "typ": 5,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/310",
+        "typ": 1,
+        "datum": "2005-12-16",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/310",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/634",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/826",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/150",
+        "typ": 1,
+        "datum": "2007-04-01",
+        "fassung": "2007-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 1,
+        "datum": "2008-08-01",
+        "fassung": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/444",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/72",
+        "typ": 1,
+        "datum": "2009-03-20",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/137",
+        "typ": 1,
+        "datum": "2011-04-01",
+        "fassung": "2011-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/306",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/306",
+        "typ": 5,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+        "typ": 1,
+        "datum": "2011-12-05",
+        "fassung": "2011-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+        "typ": 2,
+        "datum": "2011-12-05",
+        "fassung": "2011-12-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/159",
+        "typ": 1,
+        "datum": "2012-04-01",
+        "fassung": "2012-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/585",
+        "typ": 1,
+        "datum": "2012-10-01",
+        "fassung": "2012-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/656",
+        "typ": 1,
+        "datum": "2012-03-16",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/31",
+        "typ": 1,
+        "datum": "2013-02-01",
+        "fassung": "2013-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/352",
+        "typ": 1,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/375",
+        "typ": 1,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/375",
+        "typ": 5,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/646",
+        "typ": 1,
+        "datum": "2013-03-22",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/710",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/710",
+        "typ": 5,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/390",
+        "typ": 1,
+        "datum": "2014-08-01",
+        "fassung": "2014-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/53",
+        "typ": 1,
+        "datum": "2014-07-01",
+        "fassung": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/3",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/598",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/79",
+        "typ": 1,
+        "datum": "2015-11-01",
+        "fassung": "2015-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/752",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/145",
+        "typ": 1,
+        "datum": "2017-04-01",
+        "fassung": "2017-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/308",
+        "typ": 1,
+        "datum": "2017-06-01",
+        "fassung": "2017-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/624",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/762",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/126",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/767",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/703",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/289",
+        "typ": 1,
+        "datum": "2022-07-01",
+        "fassung": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/43",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/491",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/804",
+        "typ": 1,
+        "datum": "2024-02-01",
+        "fassung": "2024-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/27",
+        "typ": 1,
+        "datum": "2024-07-01",
+        "fassung": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/99",
+        "typ": 1,
+        "datum": "2026-04-01",
+        "fassung": "2026-04-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2006/188": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-03-01",
+        "roId": "RO 2006 1069",
+        "titelDe": "Verordnung über die Inkraftsetzung des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes sowie über die vollständige Inkraftsetzung des Bundesgesetzes über den Sitz des Bundesstrafgerichts und des Bundesverwaltungsgerichts",
+        "titelFr": "Ordonnance sur l'entrée en vigueur de la loi sur le Tribunal fédéral et de la loi sur le Tribunal administratif fédéral et sur l'entrée en vigueur intégrale de la loi fédérale sur le siège du Tribunal pénal fédéral et celui du Tribunal administratif fédéral",
+        "titelIt": "Ordinanza sull'entrata in vigore della legge sul Tribunale federale e della legge sul Tribunale amministrativo federale nonché sull'entrata in vigore integrale della legge federale sulle sedi del Tribunale penale federale e del Tribunale amministrativo federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/310": {
+        "dateForce": "2006-07-01",
+        "dateDoc": "2005-12-16",
+        "roId": "RO 2006 2003",
+        "titelDe": "Bundesgesetz über die Invalidenversicherung (IVG)",
+        "titelFr": "Loi fédérale sur l'assurance-invalidité (LAI)",
+        "titelIt": "Legge federale sull'assicurazione per l'invalidità (LAI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/826": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-12-20",
+        "roId": "RO 2006 5599",
+        "titelDe": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
+        "titelFr": "Ordonnance de l'Assemblée fédérale concernant l'adaptation d'actes législatifs aux dispositions de la loi sur le Tribunal fédéral et de la loi sur le Tribunal administratif fédéral",
+        "titelIt": "Ordinanza dell'Assemblea federale che adegua taluni atti normativi alle disposizioni della legge sul Tribunale federale e della legge sul Tribunale amministrativo federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/150": {
+        "dateForce": "2007-04-01",
+        "dateDoc": "2006-03-24",
+        "roId": "RO 2007 737",
+        "titelDe": "Bundesgesetz über Radio und Fernsehen (RTVG)",
+        "titelFr": "Loi fédérale sur la radio et la télévision (LRTV)",
+        "titelIt": "Legge federale sulla radiotelevisione (LRTV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/447": {
+        "dateForce": "2008-08-01",
+        "dateDoc": "2008-03-20",
+        "roId": "RO 2008 3437",
+        "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/736": {
+        "dateForce": "2009-01-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2008 5207",
+        "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+        "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+        "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/262": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2010 1739",
+        "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+        "titelFr": "Code de procédure civile (CPC)",
+        "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/267": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2007-10-05",
+        "roId": "RO 2010 1881",
+        "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+        "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+        "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/444": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-03-19",
+        "roId": "RO 2010 3267",
+        "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+        "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP)",
+        "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/72": {
+        "dateForce": "2010-03-01",
+        "dateDoc": "2009-03-20",
+        "roId": "RO 2010 513",
+        "titelDe": "Bundesgesetz über das Bundespatentgericht (Patentgerichtsgesetz, PatGG)",
+        "titelFr": "Loi sur le Tribunal fédéral des brevets (LTFB)",
+        "titelIt": "Legge sul Tribunale federale dei brevetti (LTFB)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/114": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2011 725",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+        "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+        "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/137": {
+        "dateForce": "2011-04-01",
+        "dateDoc": "2010-10-01",
+        "roId": "RO 2011 925",
+        "titelDe": "Bundesgesetz über die Koordination des Asyl- und des Auslieferungsverfahrens",
+        "titelFr": "Loi fédérale sur la coordination entre la procédure d'asile et la procédure d'extradition",
+        "titelIt": "Legge federale sul coordinamento tra la procedura d'asilo e la procedura d'estradizione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/306": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-05-11",
+        "roId": "RO 2011 2241",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Patentgerichtsgesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi sur le Tribunal fédéral des brevets",
+        "titelIt": "Ordinanza sull'entrata in vigore integrale della legge sul Tribunale federale dei brevetti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/663": {
+        "dateForce": "2011-12-05",
+        "dateDoc": "2011-06-17",
+        "roId": "RO 2011 4627",
+        "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Gesuche um Aufhebung der Immunität)",
+        "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Examen des requêtes visant à lever l'immunité)",
+        "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Richieste di soppressione dell'immunità)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/159": {
+        "dateForce": "2012-04-01",
+        "dateDoc": "2010-10-01",
+        "roId": "RO 2012 941",
+        "titelDe": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG) (Datenschutz bei der Benutzung der elektronischen Infrastruktur)",
+        "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA) (Protection des données lors de l'utilisation de l'infrastructure électronique)",
+        "titelIt": "Legge sull'organizzazione del Governo e dell'Amministrazione (LOGA) (Protezione dei dati derivanti dall'utilizzazione dell'infrastruttura elettronica)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/585": {
+        "dateForce": "2012-10-01",
+        "dateDoc": "2010-12-17",
+        "roId": "RO 2012 4993",
+        "titelDe": "Postgesetz (PG)",
+        "titelFr": "Loi sur la poste (LPO)",
+        "titelIt": "Legge sulle poste (LPO)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/656": {
+        "dateForce": "2012-12-01",
+        "dateDoc": "2012-03-16",
+        "roId": "RO 2012 5619",
+        "titelDe": "Bundesgesetz über den zweiten Schritt der Bahnreform 2",
+        "titelFr": "Loi fédérale sur la deuxième partie de la réforme des chemins de fer 2",
+        "titelIt": "Legge federale sulla seconda fase della Riforma delle ferrovie 2"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/31": {
+        "dateForce": "2013-02-01",
+        "dateDoc": "2012-09-28",
+        "roId": "RO 2013 231",
+        "titelDe": "Bundesgesetz über die internationale Amtshilfe in Steuersachen (Steueramtshilfegesetz, StAhiG)",
+        "titelFr": "Loi fédérale sur l'assistance administrative internationale en matière fiscale (Loi sur l'assistance administrative fiscale, LAAF)",
+        "titelIt": "Legge federale sull'assistenza amministrativa internazionale in materia fiscale (Legge sull'assistenza amministrativa fiscale, LAAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/352": {
+        "dateForce": "2013-07-01",
+        "dateDoc": "2012-12-14",
+        "roId": "RO 2013 1493",
+        "titelDe": "Bundespersonalgesetz (BPG)",
+        "titelFr": "Loi sur le personnel de la Confédération (LPers)",
+        "titelIt": "Legge sul personale federale (LPers)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/375": {
+        "dateForce": "2013-07-01",
+        "dateDoc": "2013-05-29",
+        "roId": "RO 2013 1603",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Bundesgesetzes vom 16. März 2012 über den zweiten Schritt der Bahnreform 2",
+        "titelFr": "Ordonnance concernant l'entrée en vigueur définitive de la loi fédérale du 16 mars 2012 sur la deuxième partie de la réforme des chemins de fer 2",
+        "titelIt": "Ordinanza sull'entrata in vigore integrale della legge federale del 16 marzo 2012 sulla seconda fase della Riforma delle ferrovie 2"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/646": {
+        "dateForce": "2013-11-01",
+        "dateDoc": "2013-03-22",
+        "roId": "RO 2013 3463",
+        "titelDe": "Bundesgesetz über die Landwirtschaft (Landwirtschaftsgesetz, LwG)",
+        "titelFr": "Loi fédérale sur l'agriculture (Loi sur l'agriculture, LAgr)",
+        "titelIt": "Legge federale sull'agricoltura (Legge sull'agricoltura, LAgr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/710": {
+        "dateForce": "2014-01-01",
+        "dateDoc": "2013-11-06",
+        "roId": "RO 2013 3863",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 22. März 2013 des Landwirtschaftsgesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 22 mars 2013 de la loi sur l'agriculture",
+        "titelIt": "Ordinanza concernente l'entrata in vigore integrale della la modifica del 22 marzo 2013 della legge sull'agricoltura"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/390": {
+        "dateForce": "2014-08-01",
+        "dateDoc": "2014-03-21",
+        "roId": "RO 2014 2309",
+        "titelDe": "Bundesgesetz über die internationale Amtshilfe in Steuersachen (Steueramtshilfegesetz, StAhiG)",
+        "titelFr": "Loi fédérale sur l'assistance administrative internationale en matière fiscale (Loi sur l'assistance administrative fiscale, LAAF)",
+        "titelIt": "Legge federale sull'assistenza amministrativa internazionale in materia fiscale (Legge sull'assistenza amministrativa fiscale, LAAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/53": {
+        "dateForce": "2014-07-01",
+        "dateDoc": "2013-06-21",
+        "roId": "RO 2014 357",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Elterliche Sorge)",
+        "titelFr": "Code civil suisse (Autorité parentale)",
+        "titelIt": "Codice civile svizzero (Autorità parentale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/598": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2014-09-26",
+        "roId": "RO 2015 3205",
+        "titelDe": "Bundesgesetz über die Personenbeförderung (Personenbeförderungsgesetz, PBG)",
+        "titelFr": "Loi sur le transport de voyageurs (LTV)",
+        "titelIt": "Legge federale sul trasporto di viaggiatori (Legge sul trasporto di viaggiatori, LTV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/79": {
+        "dateForce": "2015-03-01",
+        "dateDoc": "2014-09-26",
+        "roId": "RO 2015 543",
+        "titelDe": "Bundesgesetz über die politischen Rechte (Nationalratswahlen)",
+        "titelFr": "Loi fédérale sur les droits politiques (Election du Conseil national)",
+        "titelIt": "Legge federale sui diritti politici (Elezione del Consiglio nazionale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/853": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-06-19",
+        "roId": "RO 2015 5339",
+        "titelDe": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+        "titelFr": "Loi fédérale sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Loi sur l'infrastructure des marchés financiers, LIMF)",
+        "titelIt": "Legge federale sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Legge sull'infrastruttura finanziaria, LInFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/132": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2016 689",
+        "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+        "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+        "titelIt": "Legge federale sulla formazione continua (LFCo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/752": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-03-18",
+        "roId": "RO 2016 4651",
+        "titelDe": "Bundesgesetz über Zertifizierungsdienste im Bereich der elektronischen Signatur und anderer Anwendungen digitaler Zertifikate (Bundesgesetz über die elektronische Signatur)",
+        "titelFr": "Loi fédérale sur les services de certification dans le domaine de la signature électronique et des autres applications des certificats numériques (Loi sur la signature électronique)",
+        "titelIt": "Legge federale sui servizi di certificazione nel campo della firma elettronica e di altre applicazioni di certificati digitali (Legge sulla firma elettronica)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/145": {
+        "dateForce": "2017-04-01",
+        "dateDoc": "2016-09-30",
+        "roId": "RO 2017 753",
+        "titelDe": "Bundesgesetz über die Aufarbeitung der fürsorgerischen Zwangsmassnahmen und Fremdplatzierungen vor 1981 (AFZFG)",
+        "titelFr": "Loi fédérale sur les mesures de coercition à des fins d'assistance et les placements extrafamiliaux antérieurs à 1981 (LMCFA)",
+        "titelIt": "Legge federale sulle misure coercitive a scopo assistenziale e i collocamenti extrafamiliari prima del 1981 (LMCCE)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/308": {
+        "dateForce": "2017-06-01",
+        "dateDoc": "2016-06-17",
+        "roId": "RO 2017 3097",
+        "titelDe": "Bundesgesetz über die wirtschaftliche Landesversorgung (Landesversorgungsgesetz, LVG)",
+        "titelFr": "Loi fédérale sur l'approvisionnement économique du pays (Loi sur l'approvisionnement du pays, LAP)",
+        "titelIt": "Legge federale sull'approvvigionamento economico del Paese (Legge sull'approvvigionamento del Paese, LAP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/624": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2017-03-17",
+        "roId": "RO 2017 5769",
+        "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG) (Schaffung einer Berufungskammer am Bundesstrafgericht)",
+        "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP) (Création d'une cour d'appel au Tribunal pénal fédéral)",
+        "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP) (Istituzione di una corte d'appello in seno al Tribunale penale federale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/762": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2016-09-30",
+        "roId": "RO 2017 6839",
+        "titelDe": "Energiegesetz (EnG)",
+        "titelFr": "Loi sur l'énergie (LEne)",
+        "titelIt": "Legge federale sull'energia (LEne)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/126": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2019-06-21",
+        "roId": "RO 2020 641",
+        "titelDe": "Bundesgesetz über das öffentliche Beschaffungswesen (BöB)",
+        "titelFr": "Loi fédérale sur les marchés publics (LMP)",
+        "titelIt": "Legge federale sugli appalti pubblici (LAPub)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/767": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-06-19",
+        "roId": "RO 2020 4179",
+        "titelDe": "Bundesgesetz über das Internationale Privatrecht (IPRG)",
+        "titelFr": "Loi fédérale sur le droit international privé (LDIP)",
+        "titelIt": "Legge federale sul diritto internazionale privato (LDIP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/703": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-06-18",
+        "titelDe": "Bundesgesetz vom 18. Juni 2021 über die Durchführung von internationalen Abkommen im Steuerbereich (StADG)",
+        "titelFr": "Loi fédérale du 18 juin 2021 relative à l’exécution des conventions internationales dans le domaine fiscal (LECF)",
+        "titelIt": "Legge federale del 18 giugno 2021 concernente l’esecuzione delle convenzioni internazionali in ambito fiscale (LECF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/43": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2008-06-13",
+        "titelDe": "Kernenergiehaftpflichtgesetz vom 13. Juni 2008 (KHG)",
+        "titelFr": "Loi fédérale du 13 juin 2008 sur la responsabilité civile en matière nucléaire (LRCN)",
+        "titelIt": "Legge federale del 13 giugno 2008 sulla responsabilità civile in materia nucleare (LRCN)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/468": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2022-06-17",
+        "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+        "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+        "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/491": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2023-03-17",
+        "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO) (Verbesserung der Praxistauglichkeit und der Rechtsdurchsetzung)",
+        "titelFr": "Code de procédure civile (CPC) (Amélioration de la praticabilité et de l’application du droit)",
+        "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC) (Migliorare la praticabilità e l’applicazione del diritto)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/804": {
+        "dateForce": "2024-02-01",
+        "dateDoc": "2023-06-16",
+        "titelDe": "Bundesgesetz über die Beschleunigung der Bewilligungsverfahren für Windenergieanlagen (Änderung des Energiegesetzes und des Bundesgerichtsgesetzes)",
+        "titelFr": "Loi fédérale sur l’accélération des procédures d’autorisation pour les installations éoliennes (Modification de la loi sur l’énergie et de la loi sur le Tribunal fédéral)",
+        "titelIt": "Legge federale concernente l’accelerazione della procedura di autorizzazione degli impianti eolici (Modifica della legge federale sull’energia e della legge sul Tribunale federale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/27": {
+        "dateForce": "2024-07-01",
+        "dateDoc": "2023-06-16",
+        "titelDe": "Bundesgesetz über eine Revision des Sexualstrafrechts",
+        "titelFr": "Loi fédérale portant révision du droit pénal en matière sexuelle",
+        "titelIt": "Legge federale sulla revisione del diritto penale in materia sessuale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/99": {
+        "dateForce": "2026-04-01",
+        "dateDoc": "2025-09-26",
+        "titelDe": "Energiegesetz (EnG)",
+        "titelFr": "Loi sur l’énergie (LEne)",
+        "titelIt": "Legge federale sull’energia (LEne)"
+      }
+    }
+  }
 }

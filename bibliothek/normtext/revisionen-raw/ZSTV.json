@@ -2217,5 +2217,388 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2021/666",
       "zielFundstelle": "AS 2021 666"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2004/362",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2004/362",
+    "inkrafttreten": "2004-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/362",
+        "typ": 5,
+        "datum": "2004-07-01",
+        "fassung": "2004-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/362",
+        "typ": 30,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/300",
+        "typ": 1,
+        "datum": "2005-07-01",
+        "fassung": "2005-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/300",
+        "typ": 5,
+        "datum": "2005-07-01",
+        "fassung": "2005-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/761",
+        "typ": 6,
+        "datum": "2004-07-01",
+        "fassung": "2004-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/781",
+        "typ": 1,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/446",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/637",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/637",
+        "typ": 2,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/748",
+        "typ": 1,
+        "datum": "2008-07-01",
+        "fassung": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/772",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/868",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/410",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/412",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/412",
+        "typ": 2,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/772",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/772",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/229",
+        "typ": 1,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/229",
+        "typ": 2,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/587",
+        "typ": 6,
+        "datum": "2013-09-10",
+        "fassung": "2013-09-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/282",
+        "typ": 1,
+        "datum": "2014-07-01",
+        "fassung": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/282",
+        "typ": 1,
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/353",
+        "typ": 6,
+        "datum": "2014-07-01",
+        "fassung": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/405",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/664",
+        "typ": 1,
+        "datum": "2017-07-01",
+        "fassung": "2017-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/664",
+        "typ": 2,
+        "datum": "2017-07-01",
+        "fassung": "2017-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/811",
+        "typ": 6,
+        "datum": "2017-07-01",
+        "fassung": "2017-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/29",
+        "typ": 1,
+        "datum": "2018-02-01",
+        "fassung": "2018-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/439",
+        "typ": 1,
+        "datum": "2019-03-01",
+        "fassung": "2019-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/693",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/823",
+        "typ": 6,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/696",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/132",
+        "typ": 1,
+        "datum": "2021-04-01",
+        "fassung": "2021-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/666",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/666",
+        "typ": 2,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/800",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/243",
+        "typ": 1,
+        "datum": "2022-07-01",
+        "fassung": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/243",
+        "typ": 2,
+        "datum": "2022-07-01",
+        "fassung": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/746",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/335",
+        "typ": 1,
+        "datum": "2024-11-11",
+        "fassung": "2024-11-11"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/335",
+        "typ": 2,
+        "datum": "2024-11-11",
+        "fassung": "2024-11-11"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/651",
+        "typ": 6,
+        "datum": "2024-11-18",
+        "fassung": "2024-11-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/719",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/318",
+        "typ": 1,
+        "datum": "2025-06-01",
+        "fassung": "2025-06-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2006/725": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-11-08",
+        "roId": "RO 2006 4705",
+        "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+        "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/748": {
+        "dateForce": "2007-12-01",
+        "dateDoc": "2007-11-07",
+        "roId": "RO 2007 5271",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l'assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/868": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-11-21",
+        "roId": "RO 2007 6719",
+        "titelDe": "Registerharmonisierungsverordnung (RHV)",
+        "titelFr": "Ordonnance sur l'harmonisation de registres (OHR)",
+        "titelIt": "Ordinanza sull'armonizzazione dei registri (OArRa)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/410": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-06-18",
+        "roId": "RO 2010 3053",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen an die Schweizerische Zivilprozessordnung",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances au code de procédure civile",
+        "titelIt": "Ordinanza che adegua ordinanze al Codice di procedura civile"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/405": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2016-06-17",
+        "roId": "RO 2016 2577",
+        "titelDe": "Verordnung über das Schweizer Bürgerrecht (Bürgerrechtsverordnung, BüV)",
+        "titelFr": "Ordonnance sur la nationalité suisse (Ordonnance sur la nationalité, OLN)",
+        "titelIt": "Ordinanza sulla cittadinanza svizzera (Ordinanza sulla cittadinanza, OCit)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/29": {
+        "dateForce": "2018-02-01",
+        "dateDoc": "2017-12-08",
+        "roId": "RO 2018 89",
+        "titelDe": "Verordnung über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen (EÖBV)",
+        "titelFr": "Ordonnance sur l'établissement d'actes authentiques électroniques et la légalisation électronique (OAAE)",
+        "titelIt": "Ordinanza sulla realizzazione di atti pubblici e autenticazioni in forma elettronica (OAPuE)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/439": {
+        "dateForce": "2019-03-01",
+        "dateDoc": "2018-06-08",
+        "roId": "RO 2018 2857",
+        "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
+        "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
+        "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/132": {
+        "dateForce": "2021-04-01",
+        "dateDoc": "2021-02-24",
+        "titelDe": "Verordnung über den Schutz vor Cyberrisiken in der Bundesverwaltung (Cyberrisikenverordnung, CyRV)",
+        "titelFr": "Ordonnance sur la protection contre les cyberrisques dans l’administration fédérale (Ordonnance sur les cyberrisques, OPCy)",
+        "titelIt": "Ordinanza sulla protezione contro i ciber-rischi nell’Amministrazione federale (Ordinanza sui ciber-rischi, OCiber)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/800": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-11-17",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/568": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2022-08-31",
+        "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+        "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+        "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/746": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-11-22",
+        "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+        "titelFr": "Ordonnance sur l’organisation du Département fédéral de la défense, de la protection de la population et des sports (Org-DDPS)",
+        "titelIt": "Ordinanza sull’organizzazione del Dipartimento federale della difesa, della protezione della popolazione e dello sport (OOrg-DDPS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/719": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-11-20",
+        "titelDe": "Erwerbsersatzverordnung (EOV) (Digitalisierung in der Erwerbsersatzordnung: Einführungsphase des Informationssystems)",
+        "titelFr": "Ordonnance sur les allocations pour perte de gain (OAPG) (Numérisation dans le régime des APG: phase d’introduction du système d’information)",
+        "titelIt": "Ordinanza sulle indennità di perdita di guadagno (OIPG) (Digitalizzazione nell’ordinamento delle indennità di perdita di guadagno: fase d’introduzione del sistema d’informazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/318": {
+        "dateForce": "2025-06-01",
+        "dateDoc": "2025-04-30",
+        "titelDe": "Verordnung vom 30. April 2025 über die Bundesstatistik (Bundesstatistikverordnung, BStatV)",
+        "titelFr": "Ordonnance du 30 avril 2025 sur la statistique fédérale (OStatF)",
+        "titelIt": "Ordinanza del 30 aprile 2025 sulla statistica federale (OStatF)"
+      }
+    }
   }
 }

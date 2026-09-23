@@ -986,5 +986,53 @@
     "2024-10-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2017/62",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2017/62",
+    "inkrafttreten": "2017-05-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/62",
+        "typ": 5,
+        "datum": "2017-05-01",
+        "fassung": "2017-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/240",
+        "typ": 1,
+        "datum": "2021-05-01",
+        "fassung": "2021-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/457",
+        "typ": 1,
+        "datum": "2024-10-01",
+        "fassung": "2024-10-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2020/498": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2020-06-12",
+        "roId": "RO 2020 2743",
+        "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Ordonnance sur l'adaptation de lois à la suite de la modification de la désignation de l'Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Ordinanza sull'adeguamento di leggi in seguito al cambiamento della designazione dell'Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/457": {
+        "dateForce": "2024-10-01",
+        "dateDoc": "2021-10-01",
+        "titelDe": "Bundesgesetz vom 1. Oktober 2021 über Tabakprodukte und elektronische Zigaretten (Tabakproduktegesetz, TabPG)",
+        "titelFr": "Loi fédérale du 1er octobre 2021 sur les produits du tabac et les cigarettes électroniques (Loi sur les produits du tabac, LPTab)",
+        "titelIt": "Legge federale del 1° ottobre 2021 sui prodotti del tabacco e sulle sigarette elettroniche (Legge sui prodotti del tabacco, LPTab)"
+      }
+    }
+  }
 }

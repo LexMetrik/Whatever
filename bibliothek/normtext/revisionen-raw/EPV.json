@@ -782,5 +782,312 @@
     "2025-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2015/298",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2015/298",
+    "inkrafttreten": "2016-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/298",
+        "typ": 5,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/439",
+        "typ": 1,
+        "datum": "2019-03-01",
+        "fassung": "2019-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/439",
+        "typ": 1,
+        "datum": "2022-07-01",
+        "fassung": "2019-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/852",
+        "typ": 1,
+        "datum": "2020-11-19",
+        "fassung": "2020-11-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/852",
+        "typ": 1,
+        "datum": "2022-07-01",
+        "fassung": "2020-11-19"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/852",
+        "typ": 1,
+        "datum": "2022-07-01",
+        "fassung": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/156",
+        "typ": 1,
+        "datum": "2021-03-01",
+        "fassung": "2021-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/377",
+        "typ": 1,
+        "datum": "2021-06-01",
+        "fassung": "2021-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/377",
+        "typ": 1,
+        "datum": "2021-09-01",
+        "fassung": "2021-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/506",
+        "typ": 1,
+        "datum": "2021-09-01",
+        "fassung": "2021-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/506",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/53",
+        "typ": 1,
+        "datum": "2021-02-01",
+        "fassung": "2021-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/53",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/563",
+        "typ": 1,
+        "datum": "2021-09-01",
+        "fassung": "2021-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/563",
+        "typ": 1,
+        "datum": "2021-09-20",
+        "fassung": "2021-09-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/563",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/648",
+        "typ": 1,
+        "datum": "2021-11-04",
+        "fassung": "2021-11-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/648",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/66",
+        "typ": 1,
+        "datum": "2021-01-04",
+        "fassung": "2021-01-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/66",
+        "typ": 1,
+        "datum": "2021-02-04",
+        "fassung": "2021-02-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/66",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/825",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/825",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/207",
+        "typ": 1,
+        "datum": "2022-04-01",
+        "fassung": "2022-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/345",
+        "typ": 1,
+        "datum": "2022-05-20",
+        "fassung": "2022-05-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/345",
+        "typ": 1,
+        "datum": "2022-06-11",
+        "fassung": "2022-06-11"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/345",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/467",
+        "typ": 1,
+        "datum": "2022-09-01",
+        "fassung": "2022-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/467",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/570",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/835",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/835",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/95",
+        "typ": 1,
+        "datum": "2022-02-17",
+        "fassung": "2022-02-17"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/133",
+        "typ": 1,
+        "datum": "2023-04-01",
+        "fassung": "2023-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/790",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/791",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/791",
+        "typ": 1,
+        "datum": "2024-07-01",
+        "fassung": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/669",
+        "typ": 2,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2018/439": {
+        "dateForce": "2019-03-01",
+        "dateDoc": "2018-06-08",
+        "roId": "RO 2018 2857",
+        "titelDe": "Asylverordnung 1 über Verfahrensfragen (Asylverordnung 1, AsylV 1)",
+        "titelFr": "Ordonnance 1 sur l'asile relative à la procédure (Ordonnance 1 sur l'asile, OA 1)",
+        "titelIt": "Ordinanza 1 sull'asilo relativa a questioni procedurali (Ordinanza 1 sull'asilo, OAsi 1)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/852": {
+        "dateForce": "2020-11-19",
+        "dateDoc": "2020-11-18",
+        "roId": "RO 2020 4733",
+        "titelDe": "Verordnung über das Proximity-Tracing-System für das Coronavirus Sars-CoV-2 (VPTS)",
+        "titelFr": "Ordonnance sur le système de traçage de proximité pour le coronavirus Sars-CoV-2 (OSTP)",
+        "titelIt": "Ordinanza sul sistema di tracciamento della prossimità per il coronavirus SARS-CoV-2 (OSTP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/563": {
+        "dateForce": "2021-09-20",
+        "dateDoc": "2021-09-17",
+        "titelDe": "Verordnung über Massnahmen zur Bekämpfung des Coronavirus (Covid-19) im Bereich des internationalen Personenverkehrs (Covid-19-Verordnung Massnahmen im Bereich des internationalen Personenverkehrs)",
+        "titelFr": "Ordonnance sur les mesures destinées à lutter contre le coronavirus (COVID-19) dans le domaine du transport international de voyageurs (Ordonnance COVID-19 mesures dans le domaine du transport international de voyageurs)",
+        "titelIt": "Ordinanza sui provvedimenti per combattere il coronavirus (COVID-19) nel settore del traffico internazionale viaggiatori (Ordinanza COVID-19 provvedimenti nel settore del traffico internazionale viaggiatori)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/589": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-10-01",
+        "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/207": {
+        "dateForce": "2022-04-01",
+        "dateDoc": "2022-03-30",
+        "titelDe": "Verordnung vom 30. März 2022 über die Einstellung des Proximity-Tracing-Systems für das Coronavirus Sars-CoV-2 und des Systems zur Benachrichtigung über eine mögliche Ansteckung mit dem Coronavirus Sars-CoV-2 an Veranstaltungen",
+        "titelFr": "Ordonnance du 30 mars 2022 sur l’arrêt du système de traçage de proximité pour le coronavirus SARS-CoV-2 et du système visant à informer d’une infection possible au coronavirus SARS-CoV-2 lors de manifestations",
+        "titelIt": "Ordinanza del 30 marzo 2022 sulla sospensione del sistema di tracciamento della prossimità per il coronavirus SARS-CoV-2 e del sistema di segnalazione di un possibile contagio da coronavirus SARS CoV-2 durante una manifestazione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/568": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2022-08-31",
+        "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+        "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+        "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/570": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-09-23",
+        "titelDe": "Verordnung über den Koordinierten Sanitätsdienst (VKSD)",
+        "titelFr": "Ordonnance sur le Service sanitaire coordonné (OSSC)",
+        "titelIt": "Ordinanza sul servizio sanitario coordinato (OSSC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/133": {
+        "dateForce": "2023-04-01",
+        "dateDoc": "2023-03-03",
+        "titelDe": "Verordnung über die militärischen Informationssysteme (MIV)",
+        "titelFr": "Ordonnance sur les systèmes d’information de l’armée (OSIAr)",
+        "titelIt": "Ordinanza sui sistemi d’informazione militari (OSIM)"
+      }
+    }
+  }
 }

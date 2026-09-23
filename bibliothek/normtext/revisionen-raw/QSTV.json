@@ -1445,6 +1445,38 @@
         "type": "uri",
         "value": "https://fedlex.data.admin.ch/eli/oc/2024/586"
       }
+    },
+    {
+      "sr": {
+        "type": "literal",
+        "value": "642.118.2"
+      },
+      "oc": {
+        "type": "uri",
+        "value": "https://fedlex.data.admin.ch/eli/oc/2026/485"
+      },
+      "dateForce": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2027-01-01"
+      },
+      "dateDoc": {
+        "type": "literal",
+        "datatype": "http://www.w3.org/2001/XMLSchema#date",
+        "value": "2026-09-11"
+      },
+      "titleDe": {
+        "type": "literal",
+        "value": "Verordnung des EFD über die Quellensteuer bei der direkten Bundessteuer (Quellensteuerverordnung, QStV)"
+      },
+      "titleFr": {
+        "type": "literal",
+        "value": "Ordonnance du DFF sur l’imposition à la source dans le cadre de l’impôt fédéral direct (Ordonnance sur l’imposition à la source, OIS)"
+      },
+      "titleIt": {
+        "type": "literal",
+        "value": "Ordinanza del DFF sull’imposta alla fonte nel quadro dell’imposta federale diretta (Ordinanza sull’imposta alla fonte, OIFo)"
+      }
     }
   ],
   "aStaende": [
@@ -1452,7 +1484,8 @@
     "2023-01-01",
     "2024-01-01",
     "2025-01-01",
-    "2025-01-10"
+    "2025-01-10",
+    "2027-01-01"
   ],
   "belegteOcs": [],
   "rectifiesInfoProOc": {
@@ -1461,5 +1494,61 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2024/586",
       "zielFundstelle": "AS 2024 586"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2018/274",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2018/274",
+    "inkrafttreten": "2021-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/274",
+        "typ": 5,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/574",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/398",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/492",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/478",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/586",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/8",
+        "typ": 6,
+        "datum": "2025-01-10",
+        "fassung": "2025-01-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/485",
+        "typ": 1,
+        "datum": "2027-01-01",
+        "fassung": "2027-01-01"
+      }
+    ],
+    "ocStamm": {}
   }
 }

@@ -1459,5 +1459,176 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2026/214",
       "zielFundstelle": "AS 2026 214"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1998/2055_2055_2055",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1998/2055_2055_2055",
+    "inkrafttreten": "1997-03-26",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/2053_2053_2053",
+        "typ": 3,
+        "fassung": "2016-10-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/2055_2055_2055",
+        "typ": 5,
+        "datum": "1997-03-26",
+        "fassung": "1997-03-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/22",
+        "typ": 1,
+        "datum": "2003-09-04",
+        "fassung": "2003-09-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/22",
+        "typ": 9,
+        "datum": "2003-09-04",
+        "fassung": "2003-09-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/537",
+        "typ": 1,
+        "datum": "2004-04-08",
+        "fassung": "2004-04-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/537",
+        "typ": 9,
+        "datum": "2004-04-08",
+        "fassung": "2004-04-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/90",
+        "typ": 6,
+        "datum": "2004-01-12",
+        "fassung": "2004-01-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/497",
+        "typ": 1,
+        "datum": "2007-05-01",
+        "fassung": "2007-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/497",
+        "typ": 9,
+        "datum": "2007-05-01",
+        "fassung": "2007-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/544",
+        "typ": 1,
+        "datum": "2002-11-18",
+        "fassung": "2002-11-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/544",
+        "typ": 9,
+        "datum": "2002-11-18",
+        "fassung": "2002-11-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/83",
+        "typ": 1,
+        "datum": "2007-01-24",
+        "fassung": "2007-01-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/83",
+        "typ": 9,
+        "datum": "2007-01-24",
+        "fassung": "2007-01-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/233",
+        "typ": 1,
+        "datum": "2010-04-08",
+        "fassung": "2010-04-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/233",
+        "typ": 9,
+        "datum": "2010-04-08",
+        "fassung": "2010-04-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/275",
+        "typ": 1,
+        "datum": "2014-05-21",
+        "fassung": "2014-05-21"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/275",
+        "typ": 9,
+        "datum": "2014-05-21",
+        "fassung": "2014-05-21"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/302",
+        "typ": 1,
+        "datum": "2014-06-04",
+        "fassung": "2014-06-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/302",
+        "typ": 9,
+        "datum": "2014-06-04",
+        "fassung": "2014-06-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/222",
+        "typ": 1,
+        "datum": "2016-03-30",
+        "fassung": "2016-03-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/222",
+        "typ": 9,
+        "datum": "2016-03-30",
+        "fassung": "2016-03-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/635",
+        "typ": 1,
+        "datum": "2016-10-25",
+        "fassung": "2016-10-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/635",
+        "typ": 9,
+        "datum": "2016-10-25",
+        "fassung": "2016-10-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/102",
+        "typ": 9,
+        "datum": "2023-02-27",
+        "fassung": "2023-02-27"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/214",
+        "typ": 9,
+        "datum": "2026-05-07",
+        "fassung": "2026-05-07"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/314",
+        "typ": 6,
+        "datum": "2026-06-12",
+        "fassung": "2026-06-12"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1998/2053_2053_2053": {
+        "dateDoc": "1996-12-13",
+        "roId": "RO 1998 2053",
+        "titelDe": "Bundesbeschluss betreffend das Übereinkommen über die Rechte des Kindes",
+        "titelFr": "Arrêté fédéral portant sur la Convention relative aux droits de l'enfant",
+        "titelIt": "Decreto federale concernente la Convenzione sui diritti del fanciullo"
+      }
+    }
   }
 }

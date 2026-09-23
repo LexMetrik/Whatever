@@ -1,8 +1,8 @@
 {
   "erlassKey": "BUEV",
   "sr": "141.01",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Verordnung über das Schweizer Bürgerrecht (Bürgerrechtsverordnung, BüV)",
       "titelFr": "Ordonnance sur la nationalité suisse (Ordonnance sur la nationalité, OLN)",
       "titelIt": "Ordinanza sulla cittadinanza svizzera (Ordinanza sulla cittadinanza, OCit)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/344/de",
-      "sha": "f9fdd194bd733aded45b7fe36c9678acc010de11874e302aff661ae0da7eac3e"
+      "sha": "310050e3bd23e8f57effac4a88b204e9cd463f01f05db169b81ddc7184010e6e"
     },
     {
       "art": "aenderung",
@@ -25,14 +28,26 @@
       "titelDe": "Verordnung über das Schweizer Bürgerrecht (Bürgerrechtsverordnung, BüV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur la nationalité suisse (Ordonnance sur la nationalité, OLN)",
       "titelIt": "Ordinanza sulla cittadinanza svizzera (Ordinanza sulla cittadinanza, OCit) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/388/de",
-      "sha": "bd89e41a2ca49813846a3719cdd7c0be61b6cb55242453852c28af0056bcfbc9"
+      "sha": "35632bf8691da0747e3bd1234728e0823073f82bbe8c13fbdd0744bd7fe4a68c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/141.01",
-      "sha": "428e7dce517efcffac5b2f3a689a58f058ed72d703fa63dfc4984724c6427437"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/510",
+      "dateDocument": "2018-08-15",
+      "roFundstelle": "AS 2018 3173",
+      "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
+      "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
+      "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/510/de",
+      "sha": "f1329420b91dfbb5a421108fbd43ee71ff37c30867a839b4ece6b9d74c1f58aa"
     },
     {
       "art": "aenderung",
@@ -43,21 +58,12 @@
       "titelDe": "Verordnung über das Schweizer Bürgerrecht (Bürgerrechtsverordnung, BüV)",
       "titelFr": "Ordonnance sur la nationalité suisse (Ordonnance sur la nationalité, OLN)",
       "titelIt": "Ordinanza sulla cittadinanza svizzera (Ordinanza sulla cittadinanza, OCit)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/62/de",
-      "sha": "72192a3019e713565150372500d30f62ff03df3431f1869aa93864d3c0738e53"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2018-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/405",
-      "dateDocument": "2016-06-17",
-      "roFundstelle": "AS 2016 2577",
-      "titelDe": "Verordnung über das Schweizer Bürgerrecht (Bürgerrechtsverordnung, BüV)",
-      "titelFr": "Ordonnance sur la nationalité suisse (Ordonnance sur la nationalité, OLN)",
-      "titelIt": "Ordinanza sulla cittadinanza svizzera (Ordinanza sulla cittadinanza, OCit)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/405/de",
-      "sha": "3c314c3630bdbbc24767ac63de6e48143b15b5cacd56fe65d0b858ce5794bbb6"
+      "sha": "0ea317f650bd2a9f5c665148bfe478eda68f86c945894b70c9da49f8795fdef0"
     }
   ],
-  "sha": "751dd341e874e0d77b2051f76b1b7c60b98ebc640b6ac9892cb337f07d128ff4"
+  "sha": "aeff7d894b678f387a17971687a9c564571fe3fb25861a4682bedfe40ce4d248"
 }

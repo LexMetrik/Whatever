@@ -631,5 +631,303 @@
     "2027-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2003/674",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2003/674",
+    "inkrafttreten": "2004-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/674",
+        "typ": 5,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/745",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/607",
+        "typ": 1,
+        "datum": "2005-10-05",
+        "fassung": "2005-10-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/708",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/752",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/419",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/460",
+        "typ": 1,
+        "datum": "2012-10-01",
+        "fassung": "2012-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/691",
+        "typ": 1,
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/669",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/564",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/718",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/509",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/509",
+        "typ": 5,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/414",
+        "typ": 1,
+        "datum": "2021-08-01",
+        "fassung": "2021-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/414",
+        "typ": 2,
+        "datum": "2021-08-01",
+        "fassung": "2021-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/758",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/164",
+        "typ": 1,
+        "datum": "2022-04-01",
+        "fassung": "2022-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/212",
+        "typ": 1,
+        "datum": "2024-07-01",
+        "fassung": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/75",
+        "typ": 1,
+        "datum": "2025-03-01",
+        "fassung": "2025-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/75",
+        "typ": 2,
+        "datum": "2025-03-01",
+        "fassung": "2025-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/342",
+        "typ": 1,
+        "datum": "2026-10-01",
+        "fassung": "2026-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/393",
+        "typ": 1,
+        "datum": "2027-01-01",
+        "fassung": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2004/745": {
+        "dateForce": "2005-01-01",
+        "dateDoc": "2004-06-18",
+        "roId": "RO 2004 4929",
+        "titelDe": "Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
+        "titelFr": "Loi fédérale sur les recueils du droit fédéral et la Feuille fédérale (Loi sur les publications officielles, LPubl)",
+        "titelIt": "Legge federale sulle raccolte del diritto federale e sul Foglio federale (Legge sulle pubblicazioni ufficiali, LPubb)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/607": {
+        "dateForce": "2005-10-05",
+        "dateDoc": "2004-12-17",
+        "roId": "RO 2005 4635",
+        "titelDe": "Bundesgesetz über die Fachhochschulen (Fachhochschulgesetz, FHSG)",
+        "titelFr": "Loi fédérale sur les hautes écoles spécialisées (LHES)",
+        "titelIt": "Legge federale sulle scuole universitarie professionali (LSUP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/787": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2006-10-06",
+        "roId": "RO 2007 5779",
+        "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+        "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+        "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/708": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-06-18",
+        "roId": "RO 2010 5003",
+        "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG)",
+        "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC)",
+        "titelIt": "Legge federale sulle finanze della Confederazione (LFC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/752": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-11-09",
+        "roId": "RO 2011 5227",
+        "titelDe": "Verordnung über die Anpassung rechtlicher Bestimmungen infolge der Überprüfung der ausserparlamentarischen Kommissionen",
+        "titelFr": "Ordonnance sur l'adaptation de dispositions juridiques à la suite du réexamen des commissions extraparlementaires",
+        "titelIt": "Ordinanza che adegua le disposizioni legali in seguito alla verifica delle commissioni extraparlamentari"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/419": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 3655",
+        "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+        "titelFr": "Ordonnance portant adaptation de lois par suite de la réorganisation des départements",
+        "titelIt": "Ordinanza sull'adeguamento di disposizioni di legge a seguito della riorganizzazione dei dipartimenti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/460": {
+        "dateForce": "2012-10-01",
+        "dateDoc": "2011-06-17",
+        "roId": "RO 2012 3953",
+        "titelDe": "Bundesgesetz über die Förderung von Sport und Bewegung (Sportförderungsgesetz, SpoFöG)",
+        "titelFr": "Loi fédérale sur l'encouragement du sport et de l'activité physique (Loi sur l'encouragement du sport, LESp)",
+        "titelIt": "Legge federale sulla promozione dello sport e dell'attività fisica (Legge sulla promozione dello sport, LPSpo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/691": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2011-09-30",
+        "roId": "RO 2014 4103",
+        "titelDe": "Bundesgesetz über die Förderung der Hochschulen und die Koordination im schweizerischen Hochschulbereich (Hochschulförderungs- und -koordinationsgesetz, HFKG)",
+        "titelFr": "Loi fédérale sur l'encouragement des hautes écoles et la coordination dans le domaine suisse des hautes écoles (Loi sur l'encouragement et la coordination des hautes écoles, LEHE)",
+        "titelIt": "Legge federale sulla promozione e sul coordinamento del settore universitario svizzero (LPSU)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/669": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2014-09-26",
+        "roId": "RO 2015 3977",
+        "titelDe": "Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
+        "titelFr": "Loi fédérale sur les recueils du droit fédéral et la Feuille fédérale (Loi sur les publications officielles, LPubl)",
+        "titelIt": "Legge federale sulle raccolte del diritto federale e sul Foglio federale (Legge sulle pubblicazioni ufficiali, LPubl)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/132": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2016 689",
+        "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+        "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+        "titelIt": "Legge federale sulla formazione continua (LFCo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/718": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2016-12-16",
+        "roId": "RO 2017 6521",
+        "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer (Ausländergesetz, AuG) (Integration)",
+        "titelFr": "Loi fédérale sur les étrangers (LEtr) (Intégration)",
+        "titelIt": "Legge federale sugli stranieri (LStr) (Integrazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/509": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-08-15",
+        "roId": "RO 2018 3171",
+        "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 16. Dezember 2016 des Ausländergesetzes",
+        "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 16 décembre 2016 de la loi fédérale sur les étrangers",
+        "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 16 dicembre 2016 della legge federale sugli stranieri"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/414": {
+        "dateForce": "2021-08-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über die Eidgenössische Hochschule für Berufsbildung (EHB-Gesetz)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la Haute école fédérale en formation professionnelle (Loi sur la HEFP)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla Scuola universitaria federale per la formazione professionale (Legge sulla SUFFP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/758": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2020-12-18",
+        "titelDe": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+        "titelFr": "Loi fédérale sur l’assurance-vieillesse et survivants (LAVS) (Utilisation systématique du numéro AVS par les autorités)",
+        "titelIt": "Legge federale sull’assicurazione per la vecchiaia e per i superstiti (LAVS) (Utilizzazione sistematica del numero AVS da parte delle autorità)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/164": {
+        "dateForce": "2022-04-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über die internationale Zusammenarbeit und Mobilität in der Bildung (BIZMB)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la coopération et la mobilité internationales en matière de formation (LCMIF)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla cooperazione e la mobilità internazionali in materia di formazione (LCMIF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/212": {
+        "dateForce": "2024-07-01",
+        "dateDoc": "2022-12-16",
+        "titelDe": "Bundesgesetz vom 16. Dezember 2022 über die Förderung der Ausbildung im Bereich der Pflege",
+        "titelFr": "Loi fédérale du 16 décembre 2022 relative à l’encouragement de la formation dans le domaine des soins infirmiers",
+        "titelIt": "Legge federale del 16 dicembre 2022 sulla promozione della formazione in cure infermieristiche"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/393": {
+        "dateForce": "2027-01-01",
+        "dateDoc": "2026-03-20",
+        "titelDe": "Bundesgesetz über das Entlastungspaket 2027 für den Bundeshaushalt",
+        "titelFr": "Loi fédérale sur le programme d’allégement budgétaire 2027",
+        "titelIt": "Legge federale sul programma di sgravio 2027 delle finanze federali"
+      }
+    }
+  }
 }

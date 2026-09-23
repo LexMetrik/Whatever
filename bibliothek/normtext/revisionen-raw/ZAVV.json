@@ -154,5 +154,61 @@
     "2023-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2008/760",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2008/760",
+    "inkrafttreten": "2009-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/760",
+        "typ": 5,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/435",
+        "typ": 1,
+        "datum": "2015-09-01",
+        "fassung": "2015-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/100",
+        "typ": 1,
+        "datum": "2017-03-01",
+        "fassung": "2017-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/791",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2015/435": {
+        "dateForce": "2015-09-01",
+        "dateDoc": "2015-06-24",
+        "roId": "RO 2015 2333",
+        "titelDe": "Verordnung über den Einsatz von privaten Sicherheitsunternehmen für Schutzaufgaben durch Bundesbehörden (Verordnung über den Einsatz von Sicherheitsunternehmen, VES)",
+        "titelFr": "Ordonnance sur l'engagement d'entreprises de sécurité privées par des autorités fédérales pour l'exécution de tâches en matière de protection (Ordonnance sur l'engagement d'entreprises de sécurité, OESS)",
+        "titelIt": "Ordinanza sull'impiego da parte di autorità federali di imprese di sicurezza private per l'esecuzione di compiti di protezione (Ordinanza sull'impiego di imprese di sicurezza, OIIS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/100": {
+        "dateForce": "2017-03-01",
+        "dateDoc": "2017-02-01",
+        "roId": "RO 2017 563",
+        "titelDe": "Verordnung über die Einführung der Landesverweisung",
+        "titelFr": "Ordonnance sur la mise en uvre de l'expulsion pénale",
+        "titelIt": "Ordinanza sull'attuazione dell'espulsione giudiziaria"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/791": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-11-23",
+        "titelDe": "Verordnung über die Polizeibefugnisse der Armee (VPA)",
+        "titelFr": "Ordonnance concernant les pouvoirs de police de l’armée (OPoA)",
+        "titelIt": "Ordinanza concernente i poteri di polizia dell’esercito (OPPE)"
+      }
+    }
+  }
 }

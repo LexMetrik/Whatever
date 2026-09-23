@@ -1,26 +1,55 @@
 {
   "erlassKey": "IRSG",
   "sr": "351.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "4f082045e6d0f498f3d5e5fea7be42c29288106ec0e23775005aaab6ffa6a7d9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 468",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2019-2368",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/468/de",
+      "sha": "4b9e33a8ad3ab55a2c54e2ab4657c445a2f90d1980ef0b657c5fd644f1b0b630"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "1b9e453788c76958bb4f7852d1ca15bfacbe53214a34bee6cb7dfff206ee6357"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "31bad2ad46fabdaf61a929201e70c3ff82efff985230b04965a19309d3bb1353"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/360",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 360",
+      "titelDe": "Bundesbeschluss vom 25. September 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität",
+      "titelFr": "Arrêté fédéral du 25 septembre 2020 portant approbation et mise en œuvre de la Convention du Conseil de l’Europe pour la prévention du terrorisme et de son Protocole additionnel et concernant le renforcement des normes pénales contre le terrorisme et le crime organisé",
+      "titelIt": "Decreto federale del 25 settembre 2020 che approva e traspone nel diritto svizzero la Convenzione del Consiglio d’Europa per la prevenzione del terrorismo e il relativo Protocollo addizionale e potenzia il dispositivo penale contro il terrorismo e la criminalità organizzata",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/360/de",
+      "sha": "67927ec59fb049dacbaaea808f349483ee6418c81ecba6a07b881dc3511bba29"
     },
     {
       "art": "aenderung",
@@ -32,62 +61,185 @@
       "titelFr": "Loi fédérale sur l’entraide internationale en matière pénale (Loi sur l’entraide pénale internationale, EIMP)",
       "titelIt": "Legge federale sull’assistenza internazionale in materia penale (Assistenza in materia penale, AIMP)",
       "botschaftKey": "BOTSCHAFT-2019-2683",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/233/de",
-      "sha": "9bc2a0923c7a548209a64e7515e15fc425f4cfa1454b41dcb571ac754cfb4475"
+      "sha": "087ff8c32d0da94ce0e611a1e87ea7eb97bcdd6113903fc4c47503f11bfb3d5d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "96c444d35e80da6edecd81a15307887f67a62026a7dcb30940a0974567921d82"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/111",
+      "dateDocument": "2018-09-28",
+      "roFundstelle": "AS 2019 625",
+      "titelDe": "Bundesgesetz über die Umsetzung der Richtlinie (EU) 2016/680 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten zum Zwecke der Verhütung, Ermittlung, Aufdeckung oder Verfolgung von Straftaten oder der Strafvollstreckung (Weiterentwicklung des Schengen-Besitzstands)",
+      "titelFr": "Loi fédérale mettant en uvre la directive (UE) 2016/680 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel à des fins de prévention et de détection des infractions pénales, d'enquêtes et de poursuites en la matière ou d'exécution de sanctions pénales (Développement de l'acquis de Schengen)",
+      "titelIt": "Legge federale che attua la direttiva (UE) 2016/680 relativa alla protezione delle persone fisiche con riguardo al trattamento dei dati personali a fini di prevenzione, indagine, accertamento e perseguimento di reati o esecuzione di sanzioni penali (Sviluppo dell'acquis di Schengen)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/111/de",
+      "sha": "a486c8035fbda1f7b7c7796346b633fbf1e9316bd27b745266a2a3ccf1f78540"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "15cee4b51ad606b282e06105caf8c6e859ed8a8f6aac737035d6b44f7789fbc3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "61b87752df266393876cefb48b7453aad95c598297864a2fd2909dfcda201e80"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/887",
+      "dateDocument": "2011-03-18",
+      "roFundstelle": "AS 2011 6293",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens des Europarates über die Cyberkriminalität",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention du Conseil de l'Europe sur la cybercriminalité",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione del Consiglio d'Europa sulla cibercriminalità",
+      "botschaftKey": "BOTSCHAFT-2010-813",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/887/de",
+      "sha": "4cb16cecd9744e1d78bd7dfa50c9d22f037003358c4e97b5f4a417fb80a3bbd5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "104e7a19c96977a681584390cae25f296b41f9230775e57f272348ed9e0befbe"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/137",
+      "dateDocument": "2010-10-01",
+      "roFundstelle": "AS 2011 925",
+      "titelDe": "Bundesgesetz über die Koordination des Asyl- und des Auslieferungsverfahrens",
+      "titelFr": "Loi fédérale sur la coordination entre la procédure d'asile et la procédure d'extradition",
+      "titelIt": "Legge federale sul coordinamento tra la procedura d'asilo e la procedura d'estradizione",
+      "botschaftKey": "BOTSCHAFT-2010-264",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/137/de",
+      "sha": "81eb8ba83ae618d5189c558232c774c97f48c6b4762a5923477f8e2968591a7d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "01dbf46ab692669f9a38a2e7a2fe830b9930346e3bd38abea4f240c6703e0106"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2010 1881",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2006-124",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "sha": "f58abceb941cc313b81bd4ceaf09349034ef2aa8c587d97b8a4f8b48412650e1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/704",
+      "dateDocument": "2010-06-18",
+      "roFundstelle": "AS 2010 4963",
+      "titelDe": "Bundesgesetz über die Änderung von Bundesgesetzen zur Umsetzung des Römer Statuts des Internationalen Strafgerichtshofs",
+      "titelFr": "Loi fédérale portant modification de lois fédérales en vue de la mise en uvre du Statut de Rome de la Cour pénale internationale",
+      "titelIt": "Legge federale sulla modifica di leggi federali per l'attuazione dello Statuto di Roma della Corte penale internazionale",
+      "botschaftKey": "BOTSCHAFT-2008-807",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/704/de",
+      "sha": "7f7a8911448122255b329096c4e3893e7049874e0aa235617e84183603fd33dd"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2010-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "3882572c5d2afdbc2efbd54a98d9abaee20ac5c56a21b5025209a1407dc9b45f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/846",
+      "dateDocument": "2009-12-04",
+      "roFundstelle": "AS 2009 6921",
+      "titelDe": "Verordnung über die Anpassung gesetzlicher Bestimmungen infolge der Schaffung des Nachrichtendienstes des Bundes",
+      "titelFr": "Ordonnance concernant l'adaptation de dispositions légales à la suite de la création du Service de renseignement de la Confédération",
+      "titelIt": "Ordinanza sull'adeguamento di disposizioni legali in seguito all'istituzione del Servizio delle attività informative della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/846/de",
+      "sha": "3dfbdeff6bc7388dfd4875009a5e47b60cd39cde19da399aad5f29efcb0e4374"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "f2da8f673e06fc591d55f6249ea00fc011741ea37bf54d8f6dde9e110a60a02a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/64",
+      "dateDocument": "2008-10-03",
+      "roFundstelle": "AS 2009 361",
+      "titelDe": "Bundesgesetz zur Umsetzung der revidierten Empfehlungen der Groupe d'action financière",
+      "titelFr": "Loi fédérale sur la mise en uvre des recommandations révisées du Groupe d'action financière",
+      "titelIt": "Legge federale concernente l'attuazione delle Raccomandazioni rivedute del Gruppo d'azione finanziaria",
+      "botschaftKey": "BOTSCHAFT-2007-938",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/64/de",
+      "sha": "c55b155b193babb685fcc3b1d6d94f2544800dfa652e270fea359115b15e2a05"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-12-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "986542cbb7bc48c1dcfd9d46fc543dfb8a03b4208e521b23bb4a4287ed30a62e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/698",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2008 4989",
+      "titelDe": "Bundesgesetz über die polizeilichen Informationssysteme des Bundes (BPI)",
+      "titelFr": "Loi fédérale sur les systèmes d'information de police de la Confédération (LSIP)",
+      "titelIt": "Legge federale sui sistemi d'informazione di polizia della Confederazione (LSIP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/698/de",
+      "sha": "25747b6228748480a29360b70a6528dbad5be970741c85fe061b14ca68ea10c1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "2a75565a9e984b9339920b7542e5707d2eafafe6bb486d3e679a9a9b651dd5d2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
     },
     {
       "art": "aenderung",
@@ -99,20 +251,42 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre du Protocole additionnel à la Convention du Conseil de l'Europe sur le transfèrement des personnes condamnées",
       "titelIt": "Decreto federale che approva e traspone nel diritto svizzero il Protocollo addizionale alla Convenzione del Consiglio d'Europa sul trasferimento dei condannati",
       "botschaftKey": "BOTSCHAFT-2002-672",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/621/de",
-      "sha": "d6a09f3c3d09787a4b690e56cf7675150d0f1a122128fdbbd41e372fd23de6cc"
+      "sha": "5787b203e0346cf07c7a28d2c3373d7e2662a8c163f9e84a615b78f35dd82b7f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "c5d8576f7fc5aa887fc31e5f67eb9bc8f754a2f30e336db28729319e2578cd9c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/468",
+      "dateDocument": "2004-03-19",
+      "roFundstelle": "AS 2004 3503",
+      "titelDe": "Bundesgesetz über die Teilung eingezogener Vermögenswerte (TEVG)",
+      "titelFr": "Loi fédérale sur le partage des valeurs patrimoniales confisquées (LVPC)",
+      "titelIt": "Legge federale sulla ripartizione dei valori patrimoniali confiscati (LRVC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/468/de",
+      "sha": "234c661b2a93cf88a4f3ed009ef89882c8915ec8a4bd05335a67cfdf06a7af19"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "99cb82d01ddf434c985a9536c64443b9685c393577d1d2a985f274a8ef9729c3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/314",
+      "dateDocument": "2002-10-04",
+      "roFundstelle": "AS 2003 2133",
+      "titelDe": "Bundesgesetz über das Bundesstrafgericht (Strafgerichtsgesetz, SGG)",
+      "titelFr": "Loi fédérale sur le Tribunal pénal fédéral (LTPF)",
+      "titelIt": "Legge sul Tribunale penale federale (LTPF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/314/de",
+      "sha": "bae027aa611e18766b3ac9b53cbf968927b831870a9c246e79b58903dd7c569b"
     },
     {
       "art": "aenderung",
@@ -124,33 +298,58 @@
       "titelFr": "Loi fédérale sur l'entraide internationale en matière pénale (Loi sur l'entraide pénale internationale, EIMP)",
       "titelIt": "Legge federale sull'assistenza internazionale in materia penale (Assistenza in materia penale, AIMP)",
       "botschaftKey": "BOTSCHAFT-2002-672",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/498/de",
-      "sha": "803846a0a92e96d2e8165029d3664b9a85ad1347c9ac960b56f71f479cd12fed"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2002-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "45125e21e70d266cb4a5d4ee206810c14d7ed1f4269651e696eba236b024c600"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2002-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/351.1",
-      "sha": "7ee8e08cfe0712214c3eea780d23dadc634c6af637895c3d8fdd6ef23ff39def"
+      "sha": "7880625a00ba18380624bef389b543c3454254abf182e9e6260afefb81b978e8"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1983-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/846_846_846",
-      "dateDocument": "1981-03-20",
-      "roFundstelle": "AS 1982 846",
-      "titelDe": "Bundesgesetz vom 20. März 1981 über internationale Rechtshilfe in Strafsachen (Rechtshilfegesetz, IRSG)",
-      "titelFr": "Loi fédérale du 20 mars 1981 sur l'entraide internationale en matière pénale (Loi sur l'entraide pénale internationale, EIMP)",
-      "titelIt": "Legge federale del 20 marzo 1981 sull'assistenza internazionale in materia penale (Assistenza in materia penale, AIMP)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/846_846_846/de",
-      "sha": "56dbdb648b6badfd095247feab55a4b88090e5de7b59fbd14bdda60b83df5d91"
+      "dateEntryInForce": "2002-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/237",
+      "dateDocument": "2001-06-22",
+      "roFundstelle": "AS 2002 1493",
+      "titelDe": "Bundesgesetz über die Zusammenarbeit mit dem Internationalen Strafgerichtshof (ZISG)",
+      "titelFr": "Loi fédérale sur la coopération avec la Cour pénale internationale (LCPI)",
+      "titelIt": "Legge federale sulla cooperazione con la Corte penale internazionale (LCPI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/237/de",
+      "sha": "431fbcc01bfcb103ff2daec326fdbce189d1707863b0c87ab451893785bbd829"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/467",
+      "dateDocument": "2000-10-06",
+      "roFundstelle": "AS 2001 3096",
+      "titelDe": "Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF)",
+      "titelFr": "Loi fédérale sur la surveillance de la correspondance par poste et télécommunication (LSCPT)",
+      "titelIt": "Legge federale sulla sorveglianza della corrispondenza postale e del traffico delle telecomunicazioni (LSCPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/467/de",
+      "sha": "e6c3c55f2805b306c9e6fad9f680a33952edcf39f041b804dff3297209689c54"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/114_114_114",
+      "dateDocument": "1996-10-04",
+      "roFundstelle": "AS 1997 114",
+      "titelDe": "Bundesgesetz über internationale Rechtshilfe in Strafsachen (Rechtshilfegesetz, IRSG), Änderung",
+      "titelFr": "Loi fédérale sur l'entraide internationale en matière pénale (Loi sur l'entraide pénale internationale, EIMP), Modification",
+      "titelIt": "Legge federale sull'assistenza internazionale in materia penale (Assistenza in materia penale, AIMP), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/114_114_114/de",
+      "sha": "c69dc16e498050df64fc4bec3a7cce6d9f55b4d4bed2d322e123774dcdff7119"
     }
   ],
-  "sha": "930040bbf9e09e7c0f2983540f1cc4f4e99671399f88cb5f70cef03e5eeec1aa"
+  "sha": "4188f2006fc59e49fb2a8174f733f2539c737a689f24387c7dcc24c3c659502c"
 }

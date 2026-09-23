@@ -1785,5 +1785,346 @@
     "2027-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2001/422",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2001/422",
+    "inkrafttreten": "2002-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/422",
+        "typ": 5,
+        "datum": "2002-01-01",
+        "fassung": "2002-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/422",
+        "typ": 30,
+        "datum": "2001-10-01",
+        "fassung": "2001-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/13",
+        "typ": 1,
+        "datum": "2004-02-01",
+        "fassung": "2004-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 2,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/826",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/249",
+        "typ": 1,
+        "datum": "2007-05-01",
+        "fassung": "2007-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/682",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/349",
+        "typ": 1,
+        "datum": "2009-07-01",
+        "fassung": "2009-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/582",
+        "typ": 1,
+        "datum": "2010-10-01",
+        "fassung": "2010-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/582",
+        "typ": 5,
+        "datum": "2010-10-01",
+        "fassung": "2010-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/427",
+        "typ": 6,
+        "datum": "2012-07-03",
+        "fassung": "2012-07-03"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/352",
+        "typ": 1,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/617",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/617",
+        "typ": 2,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/761",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/280",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/280",
+        "typ": 2,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/586",
+        "typ": 5,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/587",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/587",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/587",
+        "typ": 5,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/765",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/824",
+        "typ": 6,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/824",
+        "typ": 6,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/272",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/272",
+        "typ": 5,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/550",
+        "typ": 1,
+        "datum": "2020-08-01",
+        "fassung": "2020-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/550",
+        "typ": 1,
+        "datum": "2021-05-26",
+        "fassung": "2021-05-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+        "typ": 1,
+        "datum": "2023-07-01",
+        "fassung": "2023-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/630",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/534",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/96",
+        "typ": 1,
+        "datum": "2027-01-01",
+        "fassung": "2027-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2004/13": {
+        "dateForce": "2004-02-01",
+        "dateDoc": "2003-06-20",
+        "roId": "RO 2004 297",
+        "titelDe": "Bundesgesetz über die Entlöhnung und weitere Vertragsbedingungen des obersten Kaders und der Mitglieder leitender Organe von Unternehmen und Anstalten des Bundes",
+        "titelFr": "Loi fédérale sur la rémunération et sur d'autres conditions contractuelles convenues avec les cadres du plus haut niveau hiérarchique et les membres des organes dirigeants des entreprises et établissements de la Confédération",
+        "titelIt": "Legge federale sulla rimunerazione e su altre condizioni contrattuali convenute con i quadri di grado più elevato e i membri degli organi dirigenti di aziende e di stabilimenti della Confederazione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/826": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-12-20",
+        "roId": "RO 2006 5599",
+        "titelDe": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
+        "titelFr": "Ordonnance de l'Assemblée fédérale concernant l'adaptation d'actes législatifs aux dispositions de la loi sur le Tribunal fédéral et de la loi sur le Tribunal administratif fédéral",
+        "titelIt": "Ordinanza dell'Assemblea federale che adegua taluni atti normativi alle disposizioni della legge sul Tribunale federale e della legge sul Tribunale amministrativo federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/249": {
+        "dateForce": "2007-05-01",
+        "dateDoc": "2005-03-18",
+        "roId": "RO 2007 1411",
+        "titelDe": "Zollgesetz (ZG)",
+        "titelFr": "Loi sur les douanes (LD)",
+        "titelIt": "Legge sulle dogane (LD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/349": {
+        "dateForce": "2009-07-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2009 2615",
+        "titelDe": "Bundesgesetz über die Erfindungspatente (Patentgesetz, PatG)",
+        "titelFr": "Loi fédérale sur les brevets d'invention (Loi sur les brevets, LBI)",
+        "titelIt": "Legge federale sui brevetti d'invenzione (Legge sui brevetti, LBI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/114": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2011 725",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+        "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+        "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/352": {
+        "dateForce": "2013-07-01",
+        "dateDoc": "2012-12-14",
+        "roId": "RO 2013 1493",
+        "titelDe": "Bundespersonalgesetz (BPG)",
+        "titelFr": "Loi sur le personnel de la Confédération (LPers)",
+        "titelIt": "Legge sul personale federale (LPers)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/617": {
+        "dateForce": "2014-01-01",
+        "dateDoc": "2011-09-30",
+        "roId": "RO 2013 3215",
+        "titelDe": "Bundesgesetz über die Forschung am Menschen (Humanforschungsgesetz, HFG)",
+        "titelFr": "Loi fédérale relative à la recherche sur l'être humain (Loi relative à la recherche sur l'être humain, LRH)",
+        "titelIt": "Legge federale concernente la ricerca sull'essere umano (Legge sulla ricerca umana, LRUm)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/586": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-09-18",
+        "roId": "RO 2018 3573",
+        "titelDe": "Verordnung des EDI über das Förderungskonzept für die Unterstützung von Museen, Sammlungen und Netzwerken Dritter zur Bewahrung des kulturellen Erbes",
+        "titelFr": "Ordonnance du DFI instituant un régime d'encouragement des musées, des collections et des réseaux de tiers en vue de la sauvegarde du patrimoine culturel",
+        "titelIt": "Ordinanza del DFI concernente il regime di promozione in favore dei musei, delle collezioni e delle reti di terzi ai fini della salvaguardia del patrimonio culturale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/765": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2017-09-29",
+        "roId": "RO 2018 4771",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens des Europarats über die Fälschung von Arzneimitteln und Medizinprodukten und über ähnliche die öffentliche Gesundheit gefährdende Straftaten (Medicrime-Konvention)",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la convention du Conseil de l'Europe sur la contrefaçon des produits médicaux et les infractions similaires menaçant la santé publique (Convention Médicrime)",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione del Consiglio d'Europa sulla contraffazione di agenti terapeutici e reati simili che comportano una minaccia per la salute pubblica (Convenzione Medicrime)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/498": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2020-06-12",
+        "roId": "RO 2020 2743",
+        "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+        "titelFr": "Ordonnance sur l'adaptation de lois à la suite de la modification de la désignation de l'Administration fédérale des douanes dans le cadre du développement de cette dernière",
+        "titelIt": "Ordinanza sull'adeguamento di leggi in seguito al cambiamento della designazione dell'Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/259": {
+        "dateForce": "2023-07-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+        "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
+        "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/630": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2022-09-30",
+        "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Massnahmen zur Kostendämpfung – Paket 1b)",
+        "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Mesures visant à freiner la hausse des coûts, volet 1b)",
+        "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Misure di contenimento dei costi – Pacchetto 1b)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/96": {
+        "dateForce": "2027-01-01",
+        "dateDoc": "2025-06-20",
+        "titelDe": "Bundespersonalgesetz (BPG)",
+        "titelFr": "Loi sur le personnel de la Confédération (LPers)",
+        "titelIt": "Legge sul personale federale (LPers)"
+      }
+    }
+  }
 }

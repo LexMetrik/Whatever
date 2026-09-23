@@ -1,20 +1,38 @@
 {
   "erlassKey": "LMG",
   "sr": "817.0",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/817.0",
-      "sha": "88bb3c8417671ca492b3c9350b403a0ce321e5ed5b329311d8818228d5280dea"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/457",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2024 457",
+      "titelDe": "Bundesgesetz vom 1. Oktober 2021 über Tabakprodukte und elektronische Zigaretten (Tabakproduktegesetz, TabPG)",
+      "titelFr": "Loi fédérale du 1er octobre 2021 sur les produits du tabac et les cigarettes électroniques (Loi sur les produits du tabac, LPTab)",
+      "titelIt": "Legge federale del 1° ottobre 2021 sui prodotti del tabacco e sulle sigarette elettroniche (Legge sui prodotti del tabacco, LPTab)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/457/de",
+      "sha": "d3e081d310d9d4906ab0c1c38ab8fa71d50910d8a6949b4a0175343eccea2868"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/817.0",
-      "sha": "8022d5c0004042f3701cf4c4176482363ef0ead552826f367b7b31223dec405d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+      "dateDocument": "2020-06-12",
+      "roFundstelle": "AS 2020 2743",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Ordonnance sur l'adaptation de lois à la suite de la modification de la désignation de l'Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Ordinanza sull'adeguamento di leggi in seguito al cambiamento della designazione dell'Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/498/de",
+      "sha": "624c9747c49a2b2de0386a2d0d50f3939887b89f337dadf4828f42762c9888d5"
     },
     {
       "art": "aenderung",
@@ -25,96 +43,12 @@
       "titelDe": "Bundesgesetz über Lebensmittel und Gebrauchsgegenstände (Lebensmittelgesetz, LMG) (Verlängerung der Übergangsregelung für Tabakprodukte)",
       "titelFr": "Loi fédérale sur les denrées alimentaires et les objets usuels (Loi sur les denrées alimentaires, LDAl) (Prolongation de la réglementation provisoire sur les produits du tabac)",
       "titelIt": "Legge federale sulle derrate alimentari e gli oggetti d’uso (Legge sulle derrate alimentari, LDerr) (Proroga della disposizione transitoria sui prodotti del tabacco)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/240/de",
-      "sha": "d2a5fea540307990779bf90171ebcdd8a20c2a6618a5fe0666ccac68f4974a4d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2017-05-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/62",
-      "dateDocument": "2014-06-20",
-      "roFundstelle": "AS 2017 249",
-      "titelDe": "Bundesgesetz über Lebensmittel und Gebrauchsgegenstände (Lebensmittelgesetz, LMG)",
-      "titelFr": "Loi fédérale sur les denrées alimentaires et les objets usuels (Loi sur les denrées alimentaires, LDAl)",
-      "titelIt": "Legge federale sulle derrate alimentari e gli oggetti d'uso (Legge sulle derrate alimentari, LDerr)",
-      "botschaftKey": "BOTSCHAFT-2011-853",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/62/de",
-      "sha": "8cf010594e9dd974cd1a93b173e9b2c83f121939750ef3b1c5661b788560bc26"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/194",
-      "dateDocument": "2007-10-05",
-      "roFundstelle": "AS 2008 785",
-      "titelDe": "Bundesgesetz über Lebensmittel und Gebrauchsgegenstände (Lebensmittelgesetz, LMG)",
-      "titelFr": "Loi fédérale sur les denrées alimentaires et les objets usuels (Loi sur les denrées alimentaires, LDAl)",
-      "titelIt": "Legge federale sulle derrate alimentari e gli oggetti d'uso (Legge sulle derrate alimentari, LDerr)",
-      "botschaftKey": "BOTSCHAFT-2006-775",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/194/de",
-      "sha": "fdb96c1f0c6149f7ad027af012d8588ea534349f1dc7b29e912e419b37407bd2"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/745",
-      "dateDocument": "2005-11-23",
-      "roFundstelle": "AS 2005 5449",
-      "titelDe": "Verordnung über die vollständige Inkraftsetzung der Änderung vom 8. Oktober 1999 des Lebensmittelgesetzes",
-      "titelFr": "Ordonnance concernant la mise en vigueur intégrale de la modification du 8 octobre 1999 de la loi sur les denrées alimentaires",
-      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica dell'8 ottobre 1999 della legge sulle derrate alimentari",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/745/de",
-      "sha": "c1cfeda4f77aeb1efba68fe51ac6abb16a441e3c0cf959bad83c5da9c6eea0b1"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2005-03-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/106",
-      "dateDocument": "2004-06-18",
-      "roFundstelle": "AS 2005 971",
-      "titelDe": "Bundesgesetz über Lebensmittel und Gebrauchsgegenstände (Lebensmittelgesetz, LMG)",
-      "titelFr": "Loi fédérale sur les denrées alimentaires et les objets usuels (Loi sur les denrées alimentaires, LDAI)",
-      "titelIt": "Legge federale sulle derrate alimentari e gli oggetti d'uso (Legge sulle derrate alimentari, LDerr)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/106/de",
-      "sha": "0ac55ea7eb57573336f768c8f6c175cb06ae3bc5695c9c21cfd4fcfd468a5b59"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2002-06-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/143",
-      "dateDocument": "1999-10-08",
-      "roFundstelle": "AS 2002 775",
-      "titelDe": "Bundesgesetz über Lebensmittel und Gebrauchsgegenstände (Lebensmittelgesetz, LMG)",
-      "titelFr": "Loi fédérale sur les denrées alimentaires et les objets usuels (Loi sur les denrées alimentaires, LDAl)",
-      "titelIt": "Legge federale sulle derrate alimentari e gli oggetti d'uso (Legge sulle derrate alimentari, LDerr)",
-      "botschaftKey": "BOTSCHAFT-1999-1_6128_5440_5092",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/143/de",
-      "sha": "c30b2755711b92026b7d0da94c5716f8426cf5df63fea5d85f736396a291aedc"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1995-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1469_1469_1469",
-      "dateDocument": "1992-10-09",
-      "roFundstelle": "AS 1995 1469",
-      "titelDe": "Bundesgesetz vom 9. Oktober 1992 über Lebensmittel und Gebrauchsgegenstände (Lebensmittelgesetz, LMG)",
-      "titelFr": "Loi fédérale du 9 octobre 1992 sur les denrées alimentaires et les objets usuels (Loi sur les denrées alimentaires, LDAI)",
-      "titelIt": "Legge federale del 9 ottobre 1992 sulle derrate alimentari e gli oggetti d'uso (Legge sulle derrate alimentari, LDerr)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1469_1469_1469/de",
-      "sha": "73165e783128fb2fc0f24b8635904b27378c89c428b32715e1bc90df140d2cc9"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1909-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/22/337_301_369",
-      "dateDocument": "1905-12-08",
-      "roFundstelle": "AS 22 337",
-      "titelDe": "Bundesgesetz betreffend den Verkehr mit Lebensmitteln und Gebrauchsgegenständen",
-      "titelFr": "Loi fédérale sur le commerce des denrées alimentaires et de divers objets usuels",
-      "titelIt": "Legge federale sul commercio delle derrate alimentari e degli oggetti d'uso e consumo",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/22/337_301_369/de",
-      "sha": "8b6e519f4aa9b529663d6ae402a794e0ddf29543f62a6e48f76dc84ec2ac87eb"
+      "sha": "7675468b5d8f371c9a401ad08c40bff97d3ac83e14fefa9dcd0f6f0811a08a20"
     }
   ],
-  "sha": "70e0dcff208ec490b6d8e898a4546504fab0505d14b7696429471e1a03f6558b"
+  "sha": "f9d99ec4abae3f2d078fc51cb621f73852e5aff65f18045b4c1c47dffe139ebd"
 }

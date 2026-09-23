@@ -1,15 +1,28 @@
 {
   "erlassKey": "ERV",
   "sr": "952.03",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2029-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/207",
+      "dateDocument": "2026-04-22",
+      "roFundstelle": "AS 2026 207",
+      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV)",
+      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
+      "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.03",
-      "sha": "5188596ebffb2d77923928566f2094c49bee6d1c89fa2a3c6ef62bb379e0582e"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2027-01-01",
+        "2029-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/207/de",
+      "sha": "bd50972a24e0f17ded59f3c87d66cd2356f8da70e7bac2511c32cf2974637496"
     },
     {
       "art": "aenderung",
@@ -21,8 +34,15 @@
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2027-01-01",
+        "2029-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/207/de",
-      "sha": "808a683ad2bbf631eefc6691f80171f4283da3e9eb5ffe40dc704bf00630f89e"
+      "sha": "fc3004d867a34e5955114bb3d414f7b7bc70157e2ea3eddeffc0d50c1867b2a6"
     },
     {
       "art": "aenderung",
@@ -33,8 +53,11 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR). Erratum",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP). Correzione (Concerne soltanto il testo in francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/61/de",
-      "sha": "c21af63afad205527e423e980cdea715b48dda976bbff77ed632b87747056d58"
+      "sha": "a11d2ecac285849eb8a506be6dfaf5654eda39feadeb137f2f05090ae634eb2b"
     },
     {
       "art": "aenderung",
@@ -45,8 +68,12 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/13/de",
-      "sha": "f252f6f3ecba82dc06a5a844a25ce9a0a184ad0bbdf18ed4996d5c408111f5c4"
+      "sha": "3d3ba138c37b825462b528d21caed7e6cdcdd3ad50b1a124a6f36b4a183e1195"
     },
     {
       "art": "aenderung",
@@ -57,8 +84,11 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR). Erratum",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/81/de",
-      "sha": "974a575088039c44569d5a11efc60c85613b1bb2b64ad09c414724e81337ba73"
+      "sha": "e30c8ee49cfca6c1dfcc3bd053d5d356161118d6ff23a91426c5301cc55a8c34"
     },
     {
       "art": "aenderung",
@@ -69,14 +99,26 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/725/de",
-      "sha": "fa0ac4c5d1c702f143f74b19c5700957cc68eda09914bc006565958c656d1dc4"
+      "sha": "d6dbc6e46d8b071b06615f880423b815345499b90ff22726b43c3234abf3c227"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.03",
-      "sha": "a5b33a67a6536ed36691df2e112383a62fbc4ebe409f3e6e7727bf042f148192"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/804",
+      "dateDocument": "2022-11-23",
+      "roFundstelle": "AS 2022 804",
+      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+      "titelFr": "Ordonnance sur les banques et les caisses d’épargne (Ordonnance sur les banques, OB)",
+      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/804/de",
+      "sha": "61a9a59e3eb86d6fe0cd1784ca9fef3ee95cb598c5f14ba23cddb4572d1c6599"
     },
     {
       "art": "aenderung",
@@ -87,14 +129,26 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/53/de",
-      "sha": "b8ec10974b6c53c04d3e93f169a1d33bbf606a269cfafed87de02d0850bf62ba"
+      "sha": "0ae06f1ea8939120439a4af0e3cf97881d3c01c4c317b079dd2783a04f8c8a81"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.03",
-      "sha": "09a911a6c3b87519f36ddc596cb01604fd8a8eb2ec31ea210684f1634b082987"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/400",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 400",
+      "titelDe": "Verordnung vom 18. Juni 2021 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Ordonnance du 18 juin 2021 sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Ordinanza del 18 giugno 2021 sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/400/de",
+      "sha": "cbaa09b474cb03fa4335cbbe4d0eb3cd22f479df7c6b4dafb89f95ae9cca1d03"
     },
     {
       "art": "aenderung",
@@ -105,8 +159,12 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/197/de",
-      "sha": "e274f3286ff133f8b052f3851cc5202a5034372be15e1fbba8a3203c9805f8d7"
+      "sha": "fb1895f532a7fd1f919cfa2762402d8098ff26f2540a04d2b2dc4144bac82246"
     },
     {
       "art": "aenderung",
@@ -117,8 +175,26 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/761/de",
-      "sha": "214bf2f42fa52f71e121b6757916226c52e5ebfc861ba2c92aef51c321f6af0c"
+      "sha": "d2b36bc555c50394be467d082a95dc7a2dbd71f5f49d6f178033987bd06f5848"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4633",
+      "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+      "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+      "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/763/de",
+      "sha": "c51fd587d9ec14868e8f4aeab014c00a2b53aa599ae0c4aaa8d690d968c4c771"
     },
     {
       "art": "aenderung",
@@ -129,8 +205,30 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/223/de",
-      "sha": "6d634e1d5bc53034facdea4d05f5d654417d1a907f4a9c3a0aab31c02748f631"
+      "sha": "296343cea9852d8ac8bf9b031663a81754c9f92bebd0a9d8d74fa848ae869b9b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/827",
+      "dateDocument": "2017-11-22",
+      "roFundstelle": "AS 2017 7625",
+      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
+      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
+      "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2019-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/827/de",
+      "sha": "9f9e8966cab0f19e02ee37e37901646b3c2b003c2576aa7e4b5a4b1c2da0de20"
     },
     {
       "art": "aenderung",
@@ -141,14 +239,18 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/800/de",
-      "sha": "89b40e46e1dc22171c8612b9c3ee69f21ecfe1b1c658df4967d19f8e538fdc35"
+      "sha": "ada76dcc6797cb9fec496fa7db74c5ff41950fbd68333b00cc991487d9d3deec"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2018-11-21",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.03",
-      "sha": "55415fa4d70fb2db7c56bd895f0169b12845dab4251e4411838f4a604255f6af"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2012/629/20181121/de",
+      "sha": "c7dd49f6c6315deb432e7f881cc7fc424e97498dc577665578312416db2d4975"
     },
     {
       "art": "aenderung",
@@ -159,8 +261,16 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2019-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/827/de",
-      "sha": "3de14fd291d7c7e15b0f9c8ce281cc0ab03de2e45e3a2c6e539ff6a064cc5429"
+      "sha": "2b76d54db65f4228499624decaaee3675d130f16efa988bee41a4e3c70cfdf42"
     },
     {
       "art": "aenderung",
@@ -171,8 +281,12 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/755/de",
-      "sha": "a9cad20689243925d58a2f637d7620e8e5afd5ce905be271307490f6cc41e2c6"
+      "sha": "432bb98c2b34effb6c6cb77cfe16728eefc90f2e11948ba3b5e909567a476412"
     },
     {
       "art": "aenderung",
@@ -183,8 +297,12 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/312/de",
-      "sha": "ba572447ea6f0a24e46a837dbe5fe405a6a6c2542b3746f22581cb097f3d2c3f"
+      "sha": "c6ae67ba3d0e835eab754c63beb603c9ac120fbf5dbf809ff12c227047cf5149"
     },
     {
       "art": "aenderung",
@@ -195,26 +313,47 @@
       "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
       "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/267/de",
-      "sha": "2b748993c82bfece4000773b7e4cdb16653b175608dbe1a22acfd1e729237126"
+      "sha": "7ad3e09de0c4343efc4d3965df7fe2e5ebec8e3b6dd3b6e7eb5de5db85ac0a7d"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.03",
-      "sha": "3adc8f345bc4acf06817c4d798a83c0a5a50fec47dff619405f61872269dc5f6"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2012/629/20160101/de",
+      "sha": "c7056baf23ae5540c27509afe7572bc81f9ddca9a1a66b61c57632ef75937c84"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-11-10",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.03",
-      "sha": "63b373e4f1f447018b0a0126d7bd40fd87db5ca4083513ce2bbee117944ea727"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/727",
+      "dateDocument": "2015-11-10",
+      "roFundstelle": "AS 2015 4297",
+      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV) (Betrifft nur den französischen Text)",
+      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
+      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/727/de",
+      "sha": "dc5ec0712310dbbdabde23b290bc72f2984eb18d22e7acd67001b0fce61cad43"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/952.03",
-      "sha": "447178646b0e75c3e9f951cbbe805a4119949788fd4dd7160ec0858e758b72a8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/273",
+      "dateDocument": "2014-04-30",
+      "roFundstelle": "AS 2014 1269",
+      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
+      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/273/de",
+      "sha": "0d97d7497dfc9ee5e730be94f14db8020e01450df774e7a7438ba3db1d689376"
     },
     {
       "art": "aenderung",
@@ -225,8 +364,11 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/72/de",
-      "sha": "5cdc807423dc37d1352c64a9c878c921d784122fa26a23f4e378e58949d51c26"
+      "sha": "2baac15666c175b7ff1c1a2c683b09a7fd4a495b350187cd2b1c6a471824858c"
     },
     {
       "art": "aenderung",
@@ -237,94 +379,12 @@
       "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
       "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
       "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/129/de",
-      "sha": "f8e05222b1c829641e8f90581291fdeab3e32518b134ac64dad206f7764290ba"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2013-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/629",
-      "dateDocument": "2012-06-01",
-      "roFundstelle": "AS 2012 5441",
-      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
-      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
-      "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
-      "botschaftKey": "BOTSCHAFT-2012-993",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/629/de",
-      "sha": "168a66e38e030b7f351316e02143cf4001ada442480dfaa4ceee5c8cc54153da"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2012-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/395",
-      "dateDocument": "2012-06-01",
-      "roFundstelle": "AS 2012 3539",
-      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
-      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
-      "titelIt": "Ordinanza sui fondi propri e la ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/395/de",
-      "sha": "dbcd6a6ace33661b60bb4586fa74db3df1329edb093f93bf59d2d83d0b5ccb26"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2011-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/770",
-      "dateDocument": "2010-11-10",
-      "roFundstelle": "AS 2010 5429",
-      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
-      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
-      "titelIt": "Ordinanza sui fondi propri e la ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/770/de",
-      "sha": "e7b286c7ac0028403d875c5979001fe21ad2a7701188acda63a508dcfbc4ba0a"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2010-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/747",
-      "dateDocument": "2009-11-11",
-      "roFundstelle": "AS 2009 6101",
-      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
-      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
-      "titelIt": "Ordinanza sui fondi propri e la ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/747/de",
-      "sha": "276eb8df1180ef26db79b8168bf5be24c47e2f5acfae800d6f6d369cdf42a31c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2007-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/662",
-      "dateDocument": "2006-09-29",
-      "roFundstelle": "AS 2006 4307",
-      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
-      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
-      "titelIt": "Ordinanza sui fondi propri e la ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/662/de",
-      "sha": "3024ef9fbc99d01a953ae45297fcecdc19434ea5db2f4c8dab5fee5afdd3d42c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2007-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/183",
-      "dateDocument": "2007-03-27",
-      "roFundstelle": "AS 2007 1073",
-      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV) (Betrifft nur den italienischen Text)",
-      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR) (Ne concerne que le texte italien)",
-      "titelIt": "Ordinanza sui fondi propri e la ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFP)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/183/de",
-      "sha": "aaa06e92b5c2ab7901b7929f20973527f316343ef8dd4fc045679ea57cf6079b"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1969-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1969/442_450_448",
-      "dateDocument": "1969-03-21",
-      "roFundstelle": "AS 1969 442",
-      "titelDe": "Bundesbeschluss vom 21 März 1969 über die Bewilligungspflicht für aus ländisch beherrschte Banken",
-      "titelFr": "Arrêté fédéral du 21 mars 1969 instituant le régime du permis pour les banques en mains étrangères",
-      "titelIt": "Decreto federale del 21 marzo 1969 che istituisce l'obbligo dell'autorizzazione per le banche in mano straniera",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1969/442_450_448/de",
-      "sha": "8adc2f84943a741c9b4b543e058005298650e42a513e15911ac3dba37c30f26c"
+      "sha": "7020f8ec1845debb3caa0cc0c8186bd9d027eb238230c8376c126662e235dd0e"
     }
   ],
-  "sha": "475b4c92a2e4a48d57e4514a87d26d48376a7c9bf07bfefe4cfa1a5d9bc94f28"
+  "sha": "7417424a4db1546f5a23a3843a4ee8f6bcd6eb1fd4057148c5c0e31de676057c"
 }

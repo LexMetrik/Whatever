@@ -1,87 +1,281 @@
 {
   "erlassKey": "VGG",
   "sr": "173.32",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/232",
+      "dateDocument": "2024-03-15",
+      "roFundstelle": "AS 2026 232",
+      "titelDe": "Bundesgesetz über die Erfindungspatente (Patentgesetz, PatG)",
+      "titelFr": "Loi fédérale sur les brevets d’invention (Loi sur les brevets, LBI)",
+      "titelIt": "Legge federale sui brevetti d’invenzione (Legge sui brevetti, LBI)",
+      "botschaftKey": "BOTSCHAFT-2023-7",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "068def65af5aca93c846d30ea370f4f087c0e1df405803d90359cee0f1b99c87"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/232/de",
+      "sha": "d4e608397400c3c30774bb178914cd87ab8bed2f2ee6b5a66cf3c69962fb4c90"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-06-12",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "6c1f4ed58f9b4792dc1bf7cb9a0c78809b6f09921fd669c360b5ce0a745b6ee3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/229",
+      "dateDocument": "2025-09-26",
+      "roFundstelle": "AS 2026 229",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) 2024/1351 über das Asyl- und Migrationsmanagement und der Verordnung (EU) 2024/1359 über die Bewältigung von Krisensituationen und Situationen höherer Gewalt im Bereich Migration und Asyl (Weiterentwicklungen des Dublin/Eurodac-Besitzstands)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en œuvre des échanges de notes entre la Suisse et l’UE concernant la reprise du règlement (UE) 2024/1351 relatif à la gestion de l’asile et de la migration et du règlement (UE) 2024/1359 visant à faire face aux situations de crise et aux cas de force majeure dans le domaine de la migration et de l’asile (Développements de l’acquis de Dublin/Eurodac)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli scambi di note tra la Svizzera e l’UE concernenti il recepimento del regolamento (UE) 2024/1351 sulla gestione dell’asilo e della migrazione e del regolamento (UE) 2024/1359 concernente le situazioni di crisi e di forza maggiore nel settore della migrazione e dell’asilo (Sviluppi dell’acquis di Dublino/Eurodac)",
+      "botschaftKey": "BOTSCHAFT-2025-1478",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/229/de",
+      "sha": "5edf9c82c2267e2bdb8e1fd4a7a1a444efa6777d3226ce2ac1788dd2a31b2f0d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-06-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "550d912931f1aadd1305911f2b654a1fb1020f986a757a6d925390516f832915"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/349",
+      "dateDocument": "2022-12-16",
+      "roFundstelle": "AS 2025 349",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnungen (EU) 2021/1150 und 2021/1152 zur Festlegung der Bedingungen für den Zugang zu anderen EU Informationssystemen für die Zwecke des Europäischen Reiseinformations- und ‑genehmigungssystems (ETIAS) (Weiterentwicklungen des Schengen-Besitzstands)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en œuvre des échanges de notes entre la Suisse et l’UE concernant la reprise des règlements (UE) 2021/1150 et (UE) 2021/1152 en ce qui concerne l’établissement des conditions d’accès aux autres systèmes d’information de l’UE aux fins du système européen d’information et d’autorisation concernant les voyages (ETIAS) (Développements de l’acquis de Schengen)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli scambi di note tra la Svizzera e l’UE concernenti il recepimento dei regolamenti (UE) 2021/1150 e (UE) 2021/1152 che definiscono le condizioni di accesso agli altri sistemi di informazione UE ai fini del sistema europeo di informazione e autorizzazione ai viaggi (ETIAS) (Sviluppi dell’acquis di Schengen)",
+      "botschaftKey": "BOTSCHAFT-2022-1449",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/349/de",
+      "sha": "4214635ceb4ba0cd6d30ee5450979b8e5e66df788bbf25eedcad024f85adf4ef"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-05-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "611d608637631b12429795c953c58017c48ae62d525fc2b3c434aea5ff3cb63a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/269",
+      "dateDocument": "2024-12-20",
+      "roFundstelle": "AS 2025 269",
+      "titelDe": "Bundesgesetz vom 20. Dezember 2024 über das Verbot der Hamas sowie verwandter Organisationen",
+      "titelFr": "Loi fédérale du 20 décembre 2024 interdisant le Hamas et les organisations apparentées",
+      "titelIt": "Legge federale del 20 dicembre 2024 che vieta Hamas e le organizzazioni associate",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/269/de",
+      "sha": "8c9b05639653eeba277c48f28bd060a46b84117dc0886b8956827c5c2d707186"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "683550cc40e96502efecc33e3042bd1c63cee6791464ab2cffe5e73f9dc08c06"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "8e797429a3b801ba06a70e16dffd9c65b8bce9f8cff5d5be0dd42d05a974131e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/68",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 68",
+      "titelDe": "Bundesgesetz über die Förderung der Hochschulen und die Koordination im schweizerischen Hochschulbereich (Hochschulförderungs- und -koordinationsgesetz, HFKG)",
+      "titelFr": "Loi fédérale sur l’encouragement des hautes écoles et la coordination dans le domaine suisse des hautes écoles (Loi sur l’encouragement et la coordination des hautes écoles, LEHE)",
+      "titelIt": "Legge federale sulla promozione e sul coordinamento del settore universitario svizzero (LPSU)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/68/de",
+      "sha": "8acd9eaa92ce71f33ef06122bad9239ec91a0bef57399082183a43116b2a5ebd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "ba40a1e0f84104fdee03594c02e2e6a3c9c8ac482a94c424e99b23aa07342b8b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4085",
+      "titelDe": "Bundesgesetz über die Enteignung (EntG)",
+      "titelFr": "Loi fédérale sur l'expropriation (LEx)",
+      "titelIt": "Legge federale sull'espropriazione (LEspr)",
+      "botschaftKey": "BOTSCHAFT-2018-1660",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
+      "sha": "755d7ab8f701a74d9c35734df95434bb6a7726c3a351394536cd36bbc06c639a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "5629b39fe4f53f2945ec23736269b7cbb8200d9a6cf6da0ebf5e3528b8272c0e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/393",
+      "dateDocument": "2018-09-28",
+      "roFundstelle": "AS 2020 1889",
+      "titelDe": "Bundesgesetz über die Organisation der Bahninfrastruktur",
+      "titelFr": "Loi fédérale sur l'organisation de l'infrastructure ferroviaire",
+      "titelIt": "Legge federale sull'organizzazione dell'infrastruttura ferroviaria",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/393/de",
+      "sha": "26c07190fe2487bb4763cb6ef52bee9625998ace052832390192add8d7ecc702"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "4191ed50cca5a10f06e27490341731b3428f8cf2c650a9aef6f6ff50159bd9c4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/586",
+      "dateDocument": "2018-09-28",
+      "roFundstelle": "AS 2019 3199",
+      "titelDe": "Bundesgesetz über das Schweizerische Institut für Rechtsvergleichung (SIRG)",
+      "titelFr": "Loi fédérale sur l'Institut suisse de droit comparé (LISDC)",
+      "titelIt": "Legge federale sull'Istituto svizzero di diritto comparato (LISDC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/586/de",
+      "sha": "43353cca60bc1cc15f59531655066cc8998ee08128196040af57b87d3d6ccd9d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "54cd94a7690c93675af886d3321b565fac66c69122fe8b0dcaed8130a6cdf72b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/820",
+      "dateDocument": "2017-06-16",
+      "roFundstelle": "AS 2017 7563",
+      "titelDe": "Bundesgesetz über die Anstalt zur Verwaltung der Ausgleichsfonds von AHV, IV und EO (Ausgleichsfondsgesetz)",
+      "titelFr": "Loi fédérale sur l'établissement chargé de l'administration des fonds de compensation de l'AVS, de l'AI et du régime des APG (Loi sur les fonds de compensation)",
+      "titelIt": "Legge federale sull'istituto amministratore dei fondi di compensazione AVS, AI e IPG (Legge sui fondi di compensazione)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2019-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/820/de",
+      "sha": "ec7f7770ab90eada61540d36fd0063f13a9918c0ecc3e13de9186fd2cf21748c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/587",
+      "dateDocument": "2018-09-21",
+      "roFundstelle": "AS 2018 3575",
+      "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 18. März 2016 des Heilmittelgesetzes",
+      "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur les produits thérapeutiques",
+      "titelIt": "Ordinanza concernente l'entrata in vigore parziale della modifica del 18 marzo 2016 della legge sugli agenti terapeutici",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/587/de",
+      "sha": "f48b5647f979691041faf0709b088a730a8a84a0c404b7cb1e1ce8de09ee9b31"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/280",
+      "dateDocument": "2016-03-18",
+      "roFundstelle": "AS 2017 2745",
+      "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
+      "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
+      "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "botschaftKey": "BOTSCHAFT-2013-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/280/de",
+      "sha": "4aacedf68e18d9bccddc61c026aac66ad9069c471d5d065196c0055643d526bd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/820",
+      "dateDocument": "2017-06-16",
+      "roFundstelle": "AS 2017 7563",
+      "titelDe": "Bundesgesetz über die Anstalt zur Verwaltung der Ausgleichsfonds von AHV, IV und EO (Ausgleichsfondsgesetz)",
+      "titelFr": "Loi fédérale sur l'établissement chargé de l'administration des fonds de compensation de l'AVS, de l'AI et du régime des APG (Loi sur les fonds de compensation)",
+      "titelIt": "Legge federale sull'istituto amministratore dei fondi di compensazione AVS, AI e IPG (Legge sui fondi di compensazione)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2019-01-01"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/820/de",
+      "sha": "31b03310de76e6f6718be59e5ef3cf670f88be2a83b4e9436affeda9ff84d770"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2017-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "1b717148e4e8fe805f9b1ffc62996cf5db7b4feb200fe389f1fa0c9c4cbdedd1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/494",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2017 4095",
+      "titelDe": "Bundesgesetz über den Nachrichtendienst (Nachrichtendienstgesetz, NDG)",
+      "titelFr": "Loi fédérale sur le renseignement (LRens)",
+      "titelIt": "Legge federale sulle attività informative (LAIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/494/de",
+      "sha": "203aa9b6f92a450dd04dddb9144f4d3490ab38dfa1ab0e6274c5bd1d0cc77027"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "21d8046201fcdaf55488ef27eb2548b4756b17ec475e784a6b4c5876cc3effe2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "b983166e796d77718fdd217cc21e6a8205032ef38d14e92c058e7a250bae0b2a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/322",
+      "dateDocument": "2015-12-18",
+      "roFundstelle": "AS 2016 1803",
+      "titelDe": "Bundesgesetz über die Sperrung und die Rückerstattung unrechtmässig erworbener Vermögenswerte ausländischer politisch exponierter Personen (SRVG)",
+      "titelFr": "Loi fédérale sur le blocage et la restitution des valeurs patrimoniales d'origine illicite de personnes politiquement exposées à l'étranger (Loi sur les valeurs patrimoniales d'origine illicite, LVP)",
+      "titelIt": "Legge federale concernente il blocco e la restituzione dei valori patrimoniali di provenienza illecita di persone politicamente esposte all'estero (Legge sui valori patrimoniali di provenienza illecita, LVP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/322/de",
+      "sha": "3bb59d8a549f0befcb660826c3bc5462c27ed08f0fb25e21cb334166821252ab"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/345",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2016 2131",
+      "titelDe": "Bundesgesetz über Radio und Fernsehen (RTVG)",
+      "titelFr": "Loi fédérale sur la radio et la télévision (LRTV)",
+      "titelIt": "Legge federale sulla radiotelevisione (LRTV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/345/de",
+      "sha": "560bd39d7f4078774254afa119b4934b7b64bb724e03094965968fab85a46502"
     },
     {
       "art": "aenderung",
@@ -92,26 +286,91 @@
       "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
       "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
       "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/651/de",
-      "sha": "efe036bfa33220cb7901d02835ab7da8e3fe6410dad41f670229f93b9f687de7"
+      "sha": "f1e2cadea57dac82c921fd09ac41d56606b4868773b421ff98bb69ad6d75604f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "273df84d82439da7dc10c8ed9f0218b2f6aaf25d8e171d606f157343890a3ce6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/685",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2014 4073",
+      "titelDe": "Bundesgesetz über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsgesetz) (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften)",
+      "titelFr": "Loi fédérale sur l'agrément et la surveillance des réviseurs (Loi sur la surveillance de la révision) (Concentration de la surveillance des entreprises de révision et des sociétés d'audit)",
+      "titelIt": "Legge federale sull'abilitazione e la sorveglianza dei revisori (Legge sui revisori) (Concentrazione della sorveglianza sulle imprese di revisione e sulle società di audit)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/685/de",
+      "sha": "136c9ec29e28e9d72b7f65d7b4a34f911d06989f9d3e935ac25118932e94dc7b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2015-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/691",
+      "dateDocument": "2011-09-30",
+      "roFundstelle": "AS 2014 4103",
+      "titelDe": "Bundesgesetz über die Förderung der Hochschulen und die Koordination im schweizerischen Hochschulbereich (Hochschulförderungs- und -koordinationsgesetz, HFKG)",
+      "titelFr": "Loi fédérale sur l'encouragement des hautes écoles et la coordination dans le domaine suisse des hautes écoles (Loi sur l'encouragement et la coordination des hautes écoles, LEHE)",
+      "titelIt": "Legge federale sulla promozione e sul coordinamento del settore universitario svizzero (LPSU)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/691/de",
+      "sha": "c753fdd808a88ae3ec6d3fe42a14bfe855751f659b8104c0092254da5a7b6c83"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2013-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "f2f2bd8ea7a21a3d06394313ee9fcbf5d18b69412c8e1d20ba77f8639716241d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/375",
+      "dateDocument": "2013-05-29",
+      "roFundstelle": "AS 2013 1603",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Bundesgesetzes vom 16. März 2012 über den zweiten Schritt der Bahnreform 2",
+      "titelFr": "Ordonnance concernant l'entrée en vigueur définitive de la loi fédérale du 16 mars 2012 sur la deuxième partie de la réforme des chemins de fer 2",
+      "titelIt": "Ordinanza sull'entrata in vigore integrale della legge federale del 16 marzo 2012 sulla seconda fase della Riforma delle ferrovie 2",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/375/de",
+      "sha": "9088f56a6bfc58061050379ca051c6d7935009faa0022a560633f412753fccb5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "12957a57788dc1d6d9cc7c6c27b431a0cc90b5f427d32a186674fe264f8ec7ab"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/902",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2011 6515",
+      "titelDe": "Bundesgesetz über das Eidgenössische Institut für Metrologie (EIMG)",
+      "titelFr": "Loi sur l'Institut fédéral de métrologie (LIFM)",
+      "titelIt": "Legge federale sull'Istituto federale di metrologia (LIFM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2013-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/902/de",
+      "sha": "2d6bd85146d38a34da60976efe12ec6af1232a6351a452a92f4a86bbe111cabd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2012-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/656",
+      "dateDocument": "2012-03-16",
+      "roFundstelle": "AS 2012 5619",
+      "titelDe": "Bundesgesetz über den zweiten Schritt der Bahnreform 2",
+      "titelFr": "Loi fédérale sur la deuxième partie de la réforme des chemins de fer 2",
+      "titelIt": "Legge federale sulla seconda fase della Riforma delle ferrovie 2",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/656/de",
+      "sha": "1d068f31f9b0841584703aecf1d3a615acd344f17e6111ae980fdbd0f37cd6b7"
     },
     {
       "art": "aenderung",
@@ -122,75 +381,219 @@
       "titelDe": "Bundesgesetz über die Änderung des Höchstalters für Richter und Richterinnen des Bundesstrafgerichts, des Bundesverwaltungsgerichts und des Bundespatentgerichts",
       "titelFr": "Loi fédérale sur l'augmentation de l'âge maximal des juges du Tribunal pénal fédéral, du Tribunal administratif fédéral et du Tribunal fédéral des brevets",
       "titelIt": "Legge federale sull'innalzamento dell'età massima dei giudici del Tribunale penale federale, del Tribunale amministrativo federale e del Tribunale federale dei brevetti",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/657/de",
-      "sha": "b027a2a1a5e980004e3d4293b1d04e6295715c18807923bc37448701f6fe52eb"
+      "sha": "7b4ac857815b1f73efad0ab0153e7062d6e4dfca9276b9a6d956531958d6ad51"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-07-16",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "f998d3ac0b467fbd8d572f6af778805c4250a242d4cfdaca52fbf42c8901ddf3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/428",
+      "dateDocument": "2011-12-23",
+      "roFundstelle": "AS 2012 3745",
+      "titelDe": "Bundesgesetz über Massnahmen zur Wahrung der inneren Sicherheit (BWIS)",
+      "titelFr": "Loi fédérale instituant des mesures visant au maintien de la sûreté intérieure (LMSI)",
+      "titelIt": "Legge federale sulle misure per la salvaguardia della sicurezza interna (LMSI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/428/de",
+      "sha": "2ce11e260eb2d12b647a45959b5c3265d6ca04a31ee39e6e12a6bb5601a6d2e3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "313075599d0153d9716b85e22323c96ffd8a52ab5bd0506fc8ab5c496c4c0a60"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/159",
+      "dateDocument": "2010-10-01",
+      "roFundstelle": "AS 2012 941",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG) (Datenschutz bei der Benutzung der elektronischen Infrastruktur)",
+      "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA) (Protection des données lors de l'utilisation de l'infrastructure électronique)",
+      "titelIt": "Legge sull'organizzazione del Governo e dell'Amministrazione (LOGA) (Protezione dei dati derivanti dall'utilizzazione dell'infrastruttura elettronica)",
+      "botschaftKey": "BOTSCHAFT-2009-1469",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/159/de",
+      "sha": "371d70c1a1f408bc29bc2ea6c6aa638beb52700e295ce60e42a57224504082ac"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "a18561dcf54cbd473f82db4d2849a4afad491180257e6eefba6c58369a64847e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/306",
+      "dateDocument": "2011-05-11",
+      "roFundstelle": "AS 2011 2241",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Patentgerichtsgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi sur le Tribunal fédéral des brevets",
+      "titelIt": "Ordinanza sull'entrata in vigore integrale della legge sul Tribunale federale dei brevetti",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/306/de",
+      "sha": "9d0bca996dbfa499b0885488de4ce23cd5c34cafc9ed15f28e002faff3201aa8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/902",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2011 6515",
+      "titelDe": "Bundesgesetz über das Eidgenössische Institut für Metrologie (EIMG)",
+      "titelFr": "Loi sur l'Institut fédéral de métrologie (LIFM)",
+      "titelIt": "Legge federale sull'Istituto federale di metrologia (LIFM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-01-01",
+        "2013-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/902/de",
+      "sha": "4a7cf9e0c85dadb5e83936ab19d81f7dd038a6bc6b4b1a77df9e549cd2455cd9"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2011-12-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "1502b1500609ae77d970a2de886e24faee466a74bc537be026d7b92b152afe37"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2011 4627",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Gesuche um Aufhebung der Immunität)",
+      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Examen des requêtes visant à lever l'immunité)",
+      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Richieste di soppressione dell'immunità)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/663/de",
+      "sha": "b26cdc6f0848bcc22ec99424d2396696f82a0c68e79c2fe8d5c2ccb6d5acb653"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "31c243e1194cf36b289d0a015fb50a212acca1864eb82114e82c6eeb48545957"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/38",
+      "dateDocument": "2010-10-01",
+      "roFundstelle": "AS 2011 275",
+      "titelDe": "Bundesgesetz über die Rückerstattung unrechtmässig erworbener Vermögenswerte politisch exponierter Personen (RuVG)",
+      "titelFr": "Loi fédérale sur la restitution des valeurs patrimoniales d'origine illicite de personnes politiquement exposées (Loi sur la restitution des avoirs illicites, LRAI)",
+      "titelIt": "Legge federale sulla restituzione dei valori patrimoniali di provenienza illecita di persone politicamente esposte (Legge sulla restituzione degli averi di provenienza illecita, LRAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/38/de",
+      "sha": "71914cc3659775e1da9775c0b8b0021b9abf82f953a1ea3eeece730328bec80d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "4ff2b73cebb551f59fcebba6ded47dd8095852b82680b29ae0927665600b213b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/444",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2010 3267",
+      "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP)",
+      "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)",
+      "botschaftKey": "BOTSCHAFT-2008-1395",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/444/de",
+      "sha": "1d4a18440318e3101df97f15e78fe5f08fdb1d73657f6e95e38df0390ca31b3a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "1a4ba7354b5d51270f9b198ff44d62510482194a8b087ebcdeefb3191fecaeda"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/72",
+      "dateDocument": "2009-03-20",
+      "roFundstelle": "AS 2010 513",
+      "titelDe": "Bundesgesetz über das Bundespatentgericht (Patentgerichtsgesetz, PatGG)",
+      "titelFr": "Loi sur le Tribunal fédéral des brevets (LTFB)",
+      "titelIt": "Legge sul Tribunale federale dei brevetti (LTFB)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/72/de",
+      "sha": "a9a653118a54e1b32ef48ae060e91523f055cebfd46609c64519b936e778b803"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "0e40cded7fbf23025cf9fba0e9d76dec3ad8c4fcd3086aca5fbc67db128e5b22"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/291",
+      "dateDocument": "2007-12-21",
+      "roFundstelle": "AS 2008 2049",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Spitalfinanzierung)",
+      "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal) (Financement hospitalier)",
+      "titelIt": "Legge federale sull'assicurazione malattie (LAMal) (Finanziamento ospedaliero)",
+      "botschaftKey": "BOTSCHAFT-2004-1024",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/291/de",
+      "sha": "4c13c60f22281aa75bf8c893fbb6029b066ad2b54381652e36491d8cecb53381"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2009-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2008 5207",
+      "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+      "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+      "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)",
+      "botschaftKey": "BOTSCHAFT-2006-303",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/736/de",
+      "sha": "a49275dd1e695a08626c44f542a93882136ca75eb114782b1d3d566c8e97872c"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2008-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.32",
-      "sha": "56c079c52ed35da0d644c354fc6e95d691d69cebcf00dfdc77ea877030daa126"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/68",
+      "dateDocument": "2008-01-16",
+      "roFundstelle": "AS 2008 269",
+      "titelDe": "Verordnung über die vorzeitige Inkraftsetzung von organisatorischen Bestimmungen des Finanzmarktaufsichtsgesetzes vom 22. Juni 2007",
+      "titelFr": "Ordonnance sur la mise en vigueur anticipée de dispositions organisationnelles de la loi du 22 juin 2007 sur la surveillance des marchés financiers",
+      "titelIt": "Ordinanza concernente l'entrata in vigore anticipata di disposizioni organizzative della legge del 22 giugno 2007 sulla vigilanza dei mercati finanziari",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/68/de",
+      "sha": "c85611f503c5eb3baec7d8013871962bc325665be02d3617e4220005f33e3bcc"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
-      "dateDocument": "2005-06-17",
-      "roFundstelle": "AS 2006 2197",
-      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
-      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
-      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
-      "botschaftKey": "BOTSCHAFT-2001-731",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
-      "sha": "252b917a31ab7c0754b711a73f4e87a04fffab52538f7bf00e87cf0c267ad036"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/188",
+      "dateDocument": "2006-03-01",
+      "roFundstelle": "AS 2006 1069",
+      "titelDe": "Verordnung über die Inkraftsetzung des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes sowie über die vollständige Inkraftsetzung des Bundesgesetzes über den Sitz des Bundesstrafgerichts und des Bundesverwaltungsgerichts",
+      "titelFr": "Ordonnance sur l'entrée en vigueur de la loi sur le Tribunal fédéral et de la loi sur le Tribunal administratif fédéral et sur l'entrée en vigueur intégrale de la loi fédérale sur le siège du Tribunal pénal fédéral et celui du Tribunal administratif fédéral",
+      "titelIt": "Ordinanza sull'entrata in vigore della legge sul Tribunale federale e della legge sul Tribunale amministrativo federale nonché sull'entrata in vigore integrale della legge federale sulle sedi del Tribunale penale federale e del Tribunale amministrativo federale",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/188/de",
+      "sha": "9beb200662144d9275dead58ad8d44ea66e9d86459f0ea103b87df73aa64b5b7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/634",
+      "dateDocument": "2006-06-23",
+      "roFundstelle": "AS 2006 4213",
+      "titelDe": "Bundesgesetz über die Bereinigung und Aktualisierung der Totalrevision der Bundesrechtspflege",
+      "titelFr": "Loi fédérale concernant la mise à jour de la révision totale de l'organisation judiciaire fédérale",
+      "titelIt": "Legge federale che integra e attualizza la revisione totale dell'organizzazione giudiziaria federale",
+      "botschaftKey": "BOTSCHAFT-2006-334",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/634/de",
+      "sha": "555be47c44061890676f1b35442c062f075d53755ad292ffd47954b62276face"
     },
     {
       "art": "aenderung",
@@ -201,9 +604,12 @@
       "titelDe": "Verwaltungsgerichtsgesetz (VGG)",
       "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
       "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/794/de",
-      "sha": "7ef6fd25d50c374fbd0a3da91a5bc804b0e50c227eb88335a9ea879a6be42b09"
+      "sha": "c569381200c94591e5ced1c2170764e28612789d2e6212edaf89b04273e99413"
     }
   ],
-  "sha": "23c52212379d4e4c6c3c0cf091039dac0579714505388c79bac910a9a16170db"
+  "sha": "8bd21526bfa80724234a0eeaaa2be5d9395cb3f100b4d3b44e9156eeac829636"
 }

@@ -2244,5 +2244,434 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2018/252",
       "zielFundstelle": "AS 2018 1687"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1986/208_208_208",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1986/208_208_208",
+    "inkrafttreten": "1986-03-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/208_208_208",
+        "typ": 5,
+        "datum": "1986-03-01",
+        "fassung": "1986-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/835_835_835",
+        "typ": 6,
+        "datum": "1986-03-01",
+        "fassung": "1986-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/835_835_835",
+        "typ": 6,
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/1420_1420_1420",
+        "typ": 6,
+        "datum": "1986-03-01",
+        "fassung": "1986-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/1404_1404_1404",
+        "typ": 6,
+        "datum": "1998-03-01",
+        "fassung": "1998-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/1404_1404_1404",
+        "typ": 6,
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/124_124_124",
+        "typ": 1,
+        "datum": "1992-02-01",
+        "fassung": "1992-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/223_223_223",
+        "typ": 1,
+        "datum": "1998-03-01",
+        "fassung": "1998-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/321",
+        "typ": 1,
+        "datum": "1999-08-01",
+        "fassung": "1999-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/386",
+        "typ": 1,
+        "datum": "2000-01-01",
+        "fassung": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/121",
+        "typ": 1,
+        "datum": "2000-03-01",
+        "fassung": "2000-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/230",
+        "typ": 1,
+        "datum": "2003-07-01",
+        "fassung": "2003-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/484",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/464",
+        "typ": 1,
+        "datum": "2005-08-01",
+        "fassung": "2005-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/551",
+        "typ": 1,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/508",
+        "typ": 1,
+        "datum": "2007-09-01",
+        "fassung": "2007-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/508",
+        "typ": 2,
+        "datum": "2007-09-01",
+        "fassung": "2007-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 2,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/389",
+        "typ": 1,
+        "datum": "2008-07-01",
+        "fassung": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/648",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/721",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/395",
+        "typ": 1,
+        "datum": "2010-07-15",
+        "fassung": "2010-07-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/64",
+        "typ": 6,
+        "datum": "2014-02-04",
+        "fassung": "2014-02-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/699",
+        "typ": 1,
+        "datum": "2015-11-16",
+        "fassung": "2015-11-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/891",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/395",
+        "typ": 1,
+        "datum": "2016-08-01",
+        "fassung": "2016-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/136",
+        "typ": 1,
+        "datum": "2017-04-01",
+        "fassung": "2017-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/765",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/242",
+        "typ": 6,
+        "datum": "2018-04-24",
+        "fassung": "2018-04-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/252",
+        "typ": 1,
+        "datum": "2018-06-01",
+        "fassung": "2018-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/252",
+        "typ": 2,
+        "datum": "2018-06-01",
+        "fassung": "2018-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/748",
+        "typ": 6,
+        "datum": "2018-12-11",
+        "fassung": "2018-12-11"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/232",
+        "typ": 6,
+        "datum": "2019-04-16",
+        "fassung": "2019-04-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/146",
+        "typ": 1,
+        "datum": "2020-04-01",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/146",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/632",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/632",
+        "typ": 2,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/682",
+        "typ": 5,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/682",
+        "typ": 5,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/789",
+        "typ": 6,
+        "datum": "2021-11-30",
+        "fassung": "2021-11-30"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/515",
+        "typ": 1,
+        "datum": "2022-10-01",
+        "fassung": "2022-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/777",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/832",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/448",
+        "typ": 6,
+        "datum": "2025-07-09",
+        "fassung": "2025-07-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/537",
+        "typ": 6,
+        "datum": "2025-09-01",
+        "fassung": "2025-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/744",
+        "typ": 1,
+        "datum": "2026-01-01",
+        "fassung": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/357",
+        "typ": 1,
+        "datum": "2026-08-01",
+        "fassung": "2026-08-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1986/835_835_835": {
+        "dateForce": "1986-03-01",
+        "dateDoc": "1986-05-20",
+        "roId": "RO 1986 835",
+        "titelDe": "Luftreinhalte-Verordnung, Berichtigung (nur ital.)",
+        "titelFr": "Ordonnance sur la protection de l'air, Errata (seulement en italien)",
+        "titelIt": "Ordinanza contro l'inquinamento atmosferico, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1987/1420_1420_1420": {
+        "dateForce": "1988-01-01",
+        "dateDoc": "1987-11-05",
+        "roId": "RO 1987 1420",
+        "titelDe": "Verordnung über die zulassungspflichtigen elektrischen Niederspannungserzeugnisse, Berichtigung (nur ital.)",
+        "titelFr": "Ordonnance sur les matériels électriques à basse tension soumis au régime de l'approbation, Errata (seulement en italien)",
+        "titelIt": "Ordinanza sui prodotti elettrici a bassa tensione soggetti ad ammissione, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1988/1404_1404_1404": {
+        "dateForce": "1986-03-01",
+        "dateDoc": "1988-08-30",
+        "roId": "RO 1988 1404",
+        "titelDe": "Luftreinhalte-Verordnung, Berichtigung (nur ital.)",
+        "titelFr": "Ordonnance sur la protection de l'air, Errata (seulement en italien)",
+        "titelIt": "Ordinanza contro l'inquinamento atmosferico, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/124_124_124": {
+        "dateForce": "1992-02-01",
+        "dateDoc": "1991-11-20",
+        "roId": "RO 1992 124",
+        "titelDe": "Luftreinhalte-Verordnung, Änderung",
+        "titelFr": "Ordonnance sur la protection de l'air (OPair), Modification",
+        "titelIt": "Ordinanza contro l'inquinamento atmosferico (OIAt), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/223_223_223": {
+        "dateForce": "1998-03-01",
+        "dateDoc": "1997-12-15",
+        "roId": "RO 1998 223",
+        "titelDe": "Luftreinhalte-Verordnung (LRV), Änderung",
+        "titelFr": "Ordonnance sur la protection de l'air (OPair), Modification",
+        "titelIt": "Ordinanza contro l'inquinamento atmosferico (OIAt), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1999/321": {
+        "dateForce": "1999-08-01",
+        "dateDoc": "1999-06-23",
+        "roId": "RO 1999 2045",
+        "titelDe": "Verordnung über die Zulassung von Pflanzenschutzmitteln (Pflanzenschutzmittel-Verordnung)",
+        "titelFr": "Ordonnance sur l'homologation de produits phytosanitaires (Ordonnance sur les produits phytosanitaires)",
+        "titelIt": "Ordinanza concernente l'omologazione dei prodotti fitosanitari (Ordinanza sui prodotti fitosanitari)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/121": {
+        "dateForce": "2000-03-01",
+        "dateDoc": "2000-02-02",
+        "roId": "RO 2000 703",
+        "titelDe": "Verordnung zum Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+        "titelFr": "Ordonnance relative à la loi fédérale sur la coordination et la simplification des procédures de décision",
+        "titelIt": "Ordinanza relativa alla legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/230": {
+        "dateForce": "2003-07-01",
+        "dateDoc": "2003-04-30",
+        "roId": "RO 2003 1345",
+        "titelDe": "Verordnung über umweltgefährdende Stoffe (Stoffverordnung, StoV)",
+        "titelFr": "Ordonnance sur les substances dangereuses pour l'environnement (Ordonnance sur les substances, Osubst)",
+        "titelIt": "Ordinanza sulle sostanze pericolose per l'ambiente (Ordinanza sulle sostanze, Osost)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/464": {
+        "dateForce": "2005-08-01",
+        "dateDoc": "2005-05-18",
+        "roId": "RO 2005 2695",
+        "titelDe": "Verordnung über die Aufhebung und Änderung von Verordnungen im Zusammenhang mit dem Inkrafttreten des Chemikaliengesetzes",
+        "titelFr": "Ordonnance sur l'abrogation et la modification du droit en vigueur du fait de la loi sur les produits chimiques",
+        "titelIt": "Ordinanza sull'abrogazione e la modifica di ordinanze in relazione con l'entrata in vigore della legge sui prodotti chimici"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/551": {
+        "dateForce": "2006-01-01",
+        "dateDoc": "2005-06-22",
+        "roId": "RO 2005 4199",
+        "titelDe": "Verordnung über den Verkehr mit Abfällen (VeVA)",
+        "titelFr": "Ordonnance sur les mouvements de déchets (OMoD)",
+        "titelIt": "Ordinanza sul traffico di rifiuti (OTRif)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/633": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-08-22",
+        "roId": "RO 2007 4477",
+        "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/389": {
+        "dateForce": "2008-07-01",
+        "dateDoc": "2008-05-21",
+        "roId": "RO 2008 2809",
+        "titelDe": "Verordnung über Geoinformation (Geoinformationsverordnung, GeoIV)",
+        "titelFr": "Ordonnance sur la géoinformation (OGéo)",
+        "titelIt": "Ordinanza sulla geoinformazione (OGI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/891": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-12-04",
+        "roId": "RO 2015 5699",
+        "titelDe": "Verordnung über die Vermeidung und die Entsorgung von Abfällen (Abfallverordnung, VVEA)",
+        "titelFr": "Ordonnance sur la limitation et l'élimination des déchets (Ordonnance sur les déchets, OLED)",
+        "titelIt": "Ordinanza sulla prevenzione e lo smaltimento dei rifiuti (Ordinanza sui rifiuti, OPSR)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/395": {
+        "dateForce": "2016-08-01",
+        "dateDoc": "2016-06-22",
+        "roId": "RO 2016 2479",
+        "titelDe": "Energieverordnung (EnV)",
+        "titelFr": "Ordonnance sur l'énergie (OEne)",
+        "titelIt": "Ordinanza sull'energia (OEn)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/765": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-11-01",
+        "roId": "RO 2017 6951",
+        "titelDe": "Verordnung über die Anforderungen an die Energieeffizienz serienmässig hergestellter Anlagen, Fahrzeuge und Geräte (Energieeffizienzverordnung, EnEV)",
+        "titelFr": "Ordonnance sur les exigences relatives à l'efficacité énergétique d'installations, de véhicules et d'appareils fabriqués en série (Ordonnance sur les exigences relatives à l'efficacité énergétique, OEEE)",
+        "titelIt": "Ordinanza concernente le esigenze per l'efficienza energetica di impianti, veicoli e apparecchi prodotti in serie (Ordinanza sull'efficienza energetica, OEEne)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/682": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-11-03",
+        "titelDe": "Verordnung über die Direktzahlungen an die Landwirtschaft (Direktzahlungsverordnung, DZV)",
+        "titelFr": "Ordonnance sur les paiements directs versés dans l’agriculture (Ordonnance sur les paiements directs, OPD)",
+        "titelIt": "Ordinanza concernente i pagamenti diretti all’agricoltura (Ordinanza sui pagamenti diretti, OPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/357": {
+        "dateForce": "2026-08-01",
+        "dateDoc": "2026-06-24",
+        "titelDe": "Verordnung über die Vermeidung und die Entsorgung von Abfällen (Abfallverordnung, VVEA)",
+        "titelFr": "Ordonnance sur la limitation et l’élimination des déchets (Ordonnance sur les déchets, OLED)",
+        "titelIt": "Ordinanza sulla prevenzione e lo smaltimento dei rifiuti (Ordinanza sui rifiuti, OPSR)"
+      }
+    }
   }
 }

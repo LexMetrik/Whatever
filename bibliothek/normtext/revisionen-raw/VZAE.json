@@ -4917,5 +4917,539 @@
       "fremdeSr": "142.201",
       "zielOc": "https://fedlex.data.admin.ch/eli/cc/2007/759"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2007/759",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2007/759",
+    "inkrafttreten": "2008-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/759",
+        "typ": 5,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/381",
+        "typ": 1,
+        "datum": "2008-07-01",
+        "fassung": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/757",
+        "typ": 1,
+        "datum": "2008-12-12",
+        "fassung": "2008-12-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/856",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/60",
+        "typ": 6,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/784",
+        "typ": 1,
+        "datum": "2010-01-01",
+        "fassung": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/784",
+        "typ": 2,
+        "datum": "2010-01-01",
+        "fassung": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/311",
+        "typ": 1,
+        "datum": "2010-07-01",
+        "fassung": "2010-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/855",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/855",
+        "typ": 2,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/18",
+        "typ": 1,
+        "datum": "2011-01-24",
+        "fassung": "2011-01-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/806",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/713",
+        "typ": 1,
+        "datum": "2012-12-01",
+        "fassung": "2012-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/815",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/839",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/886",
+        "typ": 1,
+        "datum": "2013-02-01",
+        "fassung": "2013-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/227",
+        "typ": 1,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/688",
+        "typ": 1,
+        "datum": "2013-12-01",
+        "fassung": "2013-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/777",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/226",
+        "typ": 1,
+        "datum": "2014-07-01",
+        "fassung": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/23",
+        "typ": 1,
+        "datum": "2014-09-01",
+        "fassung": "2014-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/536",
+        "typ": 1,
+        "datum": "2014-11-01",
+        "fassung": "2014-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/613",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/613",
+        "typ": 2,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/738",
+        "typ": 1,
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/358",
+        "typ": 1,
+        "datum": "2015-07-01",
+        "fassung": "2015-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/358",
+        "typ": 1,
+        "datum": "2015-07-20",
+        "fassung": "2015-07-20"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/517",
+        "typ": 1,
+        "datum": "2015-09-01",
+        "fassung": "2015-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/623",
+        "typ": 1,
+        "datum": "2015-10-15",
+        "fassung": "2015-10-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/775",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/77",
+        "typ": 1,
+        "datum": "2015-03-01",
+        "fassung": "2015-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/256",
+        "typ": 1,
+        "datum": "2016-05-16",
+        "fassung": "2016-05-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/405",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/420",
+        "typ": 1,
+        "datum": "2016-08-01",
+        "fassung": "2016-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/731",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/812",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/812",
+        "typ": 2,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/100",
+        "typ": 1,
+        "datum": "2017-03-01",
+        "fassung": "2017-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/239",
+        "typ": 1,
+        "datum": "2017-05-01",
+        "fassung": "2017-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/719",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/492",
+        "typ": 1,
+        "datum": "2018-09-15",
+        "fassung": "2018-09-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/510",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/510",
+        "typ": 2,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/543",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/94",
+        "typ": 1,
+        "datum": "2018-07-01",
+        "fassung": "2018-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/279",
+        "typ": 1,
+        "datum": "2019-06-01",
+        "fassung": "2019-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/555",
+        "typ": 1,
+        "datum": "2019-11-01",
+        "fassung": "2019-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/741",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/171",
+        "typ": 1,
+        "datum": "2020-04-01",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/984",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/985",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/986",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/841",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/167",
+        "typ": 1,
+        "datum": "2022-03-12",
+        "fassung": "2022-03-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/645",
+        "typ": 1,
+        "datum": "2022-11-22",
+        "fassung": "2022-11-22"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/660",
+        "typ": 1,
+        "datum": "2023-02-01",
+        "fassung": "2023-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+        "typ": 1,
+        "datum": "2023-01-23",
+        "fassung": "2023-01-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/721",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/793",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/190",
+        "typ": 1,
+        "datum": "2024-06-01",
+        "fassung": "2024-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/206",
+        "typ": 1,
+        "datum": "2024-06-01",
+        "fassung": "2024-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/714",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/747",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/669",
+        "typ": 1,
+        "datum": "2025-12-01",
+        "fassung": "2025-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/780",
+        "typ": 1,
+        "datum": "2026-01-01",
+        "fassung": "2026-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/170",
+        "typ": 6,
+        "datum": "2026-04-22",
+        "fassung": "2026-04-22"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/220",
+        "typ": 1,
+        "datum": "2026-06-12",
+        "fassung": "2026-06-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/239",
+        "typ": 1,
+        "datum": "2026-06-12",
+        "fassung": "2026-06-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/260",
+        "typ": 1,
+        "datum": "2026-06-12",
+        "fassung": "2026-06-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/260",
+        "typ": 2,
+        "datum": "2026-06-12",
+        "fassung": "2026-06-12"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/474",
+        "typ": 1,
+        "datum": "2026-10-01",
+        "fassung": "2026-10-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2012/713": {
+        "dateForce": "2012-12-01",
+        "dateDoc": "2012-11-14",
+        "roId": "RO 2012 6049",
+        "titelDe": "Verordnung über die Ausstellung von Reisedokumenten für ausländische Personen (RDV)",
+        "titelFr": "Ordonnance sur l'établissement de documents de voyage pour étrangers (ODV)",
+        "titelIt": "Ordinanza concernente il rilascio di documenti di viaggio per stranieri (ODV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/815": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-11-07",
+        "roId": "RO 2012 6731",
+        "titelDe": "Verordnung über den ausserprozessualen Zeugenschutz (ZeugSV)",
+        "titelFr": "Ordonnance sur la protection extraprocédurale des témoins (OTém)",
+        "titelIt": "Ordinanza sulla protezione extraprocessuale dei testimoni (OPTes)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/23": {
+        "dateForce": "2014-09-01",
+        "dateDoc": "2013-12-06",
+        "roId": "RO 2014 163",
+        "titelDe": "Verordnung über die Bearbeitung biometrischer erkennungsdienstlicher Daten",
+        "titelFr": "Ordonnance sur le traitement des données signalétiques biométriques",
+        "titelIt": "Ordinanza sul trattamento dei dati segnaletici di natura biometrica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/536": {
+        "dateForce": "2014-11-01",
+        "dateDoc": "2014-09-19",
+        "roId": "RO 2014 3175",
+        "titelDe": "Verordnung über die in die Schweiz entsandten Arbeitnehmerinnen und Arbeitnehmer (EntsV)",
+        "titelFr": "Ordonnance sur les travailleurs détachés en Suisse (Odét)",
+        "titelIt": "Ordinanza sui lavoratori distaccati in Svizzera (ODist)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/256": {
+        "dateForce": "2016-05-16",
+        "dateDoc": "2016-05-04",
+        "roId": "RO 2016 1283",
+        "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
+        "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
+        "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/405": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2016-06-17",
+        "roId": "RO 2016 2577",
+        "titelDe": "Verordnung über das Schweizer Bürgerrecht (Bürgerrechtsverordnung, BüV)",
+        "titelFr": "Ordonnance sur la nationalité suisse (Ordonnance sur la nationalité, OLN)",
+        "titelIt": "Ordinanza sulla cittadinanza svizzera (Ordinanza sulla cittadinanza, OCit)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/420": {
+        "dateForce": "2016-08-01",
+        "dateDoc": "2016-07-07",
+        "roId": "RO 2016 2637",
+        "titelDe": "Verordnung über die Ausstellung von Reisedokumenten für ausländische Personen (RDV)",
+        "titelFr": "Ordonnance sur l'établissement des documents de voyage pour étrangers (ODV)",
+        "titelIt": "Ordinanza concernente il rilascio di documenti di viaggio per stranieri (ODV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/812": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-12-21",
+        "roId": "RO 2016 5113",
+        "titelDe": "Verordnung über die schrittweise Einführung des freien Personenverkehrs zwischen der Schweizerischen Eidgenossenschaft und der Europäischen Union und deren Mitgliedstaaten sowie unter den Mitgliedstaaten der Europäischen Freihandelsassoziation",
+        "titelFr": "Ordonnance sur l'introduction progressive de la libre circulation des personnes entre, d'une part, la Confédération suisse et, d'autre part, l'Union européenne et ses Etats membres, ainsi qu'entre les Etats membres de l'Association européenne de libre-échange",
+        "titelIt": "Ordinanza concernente l'introduzione graduale della libera circolazione delle persone tra la Confederazione Svizzera e l'Unione europea e i suoi Stati membri nonché gli Stati membri dell'Associazione europea di libero scambio"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/239": {
+        "dateForce": "2017-05-01",
+        "dateDoc": "2017-04-05",
+        "roId": "RO 2017 2549",
+        "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
+        "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
+        "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/568": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2022-08-31",
+        "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+        "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+        "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/698": {
+        "dateForce": "2023-01-23",
+        "dateDoc": "2022-10-19",
+        "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+        "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+        "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/474": {
+        "dateForce": "2026-10-01",
+        "dateDoc": "2026-08-26",
+        "titelDe": "Verordnung vom 26. August 2026 über das europäische und das nationale Reiseinformations- und -genehmigungssystem (ETIASV)",
+        "titelFr": "Ordonnance du 26 août 2026 sur les systèmes européen et national d’information et d’autorisation concernant les voyages (OETIAS)",
+        "titelIt": "Ordinanza del 26 agosto 2026 sui sistemi europeo e nazionale di informazione e autorizzazione ai viaggi (OETIAS)"
+      }
+    }
   }
 }

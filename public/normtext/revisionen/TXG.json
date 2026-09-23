@@ -1,8 +1,8 @@
 {
   "erlassKey": "TXG",
   "sr": "810.21",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,8 +14,9 @@
       "titelFr": "Loi fédérale sur la transplantation d’organes, de tissus et de cellules (Loi sur la transplantation)",
       "titelIt": "Legge federale sul trapianto di organi, tessuti e cellule (Legge sui trapianti)",
       "nichtKonsolidiert": true,
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/421/de",
-      "sha": "9f8ac435d12572c6f50538660317662a4bac441056b4fe85b71bde5224e2deda"
+      "sha": "f780b83630fbf5c3eee3600bca941fe9f430f51368624eb08e2978a61cbf4f4d"
     },
     {
       "art": "aenderung",
@@ -27,20 +28,59 @@
       "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention du Conseil de l'Europe contre le trafic d'organes humains (modification de la loi sur la transplantation et de la loi relative à la recherche sur l'être humain)",
       "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione del Consiglio d'Europa contro il traffico di organi umani (Modifica della legge sui trapianti e della legge sulla ricerca umana)",
       "botschaftKey": "BOTSCHAFT-2019-2178",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/1066/de",
-      "sha": "23aca1614e48790134df7728cdb92cc3a12f42589aae7347c15b3a318c668c93"
+      "sha": "6e76f908ed7422cbc4479b248293cc464f5a9bafe0d66542af53a6ae1bccb56e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/810.21",
-      "sha": "b0e07bbf38d54ccf40d6fe611a76841c1150c803a6e2aab2a5fbdbf77e255812"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/272",
+      "dateDocument": "2019-04-10",
+      "roFundstelle": "AS 2019 1393",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 18. März 2016 des Heilmittelgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur les produits thérapeutiques",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 18 marzo 2016 della legge sugli agenti terapeutici",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/272/de",
+      "sha": "5c89aa18018b47e2b1ae6903d2476ea645d1cf270f7191c54dd8b804869224dc"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/810.21",
-      "sha": "2c6c08e4d78dee3780cfbcb044eef2d8f4b599fc8aadb097e4fd23a9a2a3c1ff"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/587",
+      "dateDocument": "2018-09-21",
+      "roFundstelle": "AS 2018 3575",
+      "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 18. März 2016 des Heilmittelgesetzes",
+      "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur les produits thérapeutiques",
+      "titelIt": "Ordinanza concernente l'entrata in vigore parziale della modifica del 18 marzo 2016 della legge sugli agenti terapeutici",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/587/de",
+      "sha": "f48b5647f979691041faf0709b088a730a8a84a0c404b7cb1e1ce8de09ee9b31"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/280",
+      "dateDocument": "2016-03-18",
+      "roFundstelle": "AS 2017 2745",
+      "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
+      "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
+      "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "botschaftKey": "BOTSCHAFT-2013-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/280/de",
+      "sha": "4aacedf68e18d9bccddc61c026aac66ad9069c471d5d065196c0055643d526bd"
     },
     {
       "art": "aenderung",
@@ -51,14 +91,27 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 19. Juni 2015 des Transplantationsgesetzes",
       "titelFr": "Ordonnance sur l'entrée en vigueur définitive de la modification du 19 juin 2015 de la loi sur la transplantation",
       "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 19 giugno 2015 della legge sui trapianti",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/607/de",
-      "sha": "f638669adaafb0e6bfa4bbed55cee6f667e68e0192cb9714b28ae7934e5694bb"
+      "sha": "ad52a15114425dc171bacdbf06ab1b512bce8d9c9a46f9c7e6d1bc8c5a850eb3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/810.21",
-      "sha": "dbe9ea35173b046ffa8509c7cbaf6e6ff0c71c1370a11ddbb58f05979d889cc5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
       "art": "aenderung",
@@ -70,40 +123,65 @@
       "titelFr": "Loi fédérale sur la transplantation d'organes, de tissus et de cellules (Loi sur la transplantation)",
       "titelIt": "Legge federale sul trapianto di organi, tessuti e cellule (Legge sui trapianti)",
       "botschaftKey": "BOTSCHAFT-2013-414",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/217/de",
-      "sha": "9933b4ba429f4c606b065b810d9da92b855de7b2d570e6fb7e0e21d527d72397"
+      "sha": "97efe6087c2b8e53042a544f86fca686249a079dae7b8bd40bf677a7b1a36dfb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/810.21",
-      "sha": "e2a86f5e97f5500524ad9356b45b4827ead153d445b89f66fc0ff56b1672302d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/617",
+      "dateDocument": "2011-09-30",
+      "roFundstelle": "AS 2013 3215",
+      "titelDe": "Bundesgesetz über die Forschung am Menschen (Humanforschungsgesetz, HFG)",
+      "titelFr": "Loi fédérale relative à la recherche sur l'être humain (Loi relative à la recherche sur l'être humain, LRH)",
+      "titelIt": "Legge federale concernente la ricerca sull'essere umano (Legge sulla ricerca umana, LRUm)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/617/de",
+      "sha": "f7b417b2c6bbc766402be86e350f13f0cdfc4e82dba41456c698c5b9e84518f7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/810.21",
-      "sha": "4ad05ef4a257aeb2fc92a1c12999797d1a404e82fc4eea1df0e5705736813318"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
       "art": "sammelerlass-marker",
       "dateEntryInForce": "2011-09-30",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/810.21",
-      "sha": "2a68579367a33e314a417358992be48ba62839151a1291de68a7792a257a61f3"
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/2007/279/20110930/de",
+      "sha": "050e613bb5d74913d1485184aea98da8cf97fcfd65063e58a58d214e79d54d47"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2007-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/279",
-      "dateDocument": "2004-10-08",
-      "roFundstelle": "AS 2007 1935",
-      "titelDe": "Bundesgesetz über die Transplantation von Organen, Geweben und Zellen (Transplantationsgesetz)",
-      "titelFr": "Loi fédérale sur la transplantation d'organes, de tissus et de cellules (Loi sur la transplantation)",
-      "titelIt": "Legge federale sul trapianto di organi, tessuti e cellule (Legge sui trapianti)",
-      "botschaftKey": "BOTSCHAFT-2002-13",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/279/de",
-      "sha": "ff3729d1250888b2d510e9ebbd8a9165992690fb7232b133eaf3977d854bbba2"
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/826",
+      "dateDocument": "2006-12-20",
+      "roFundstelle": "AS 2006 5599",
+      "titelDe": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
+      "titelFr": "Ordonnance de l'Assemblée fédérale concernant l'adaptation d'actes législatifs aux dispositions de la loi sur le Tribunal fédéral et de la loi sur le Tribunal administratif fédéral",
+      "titelIt": "Ordinanza dell'Assemblea federale che adegua taluni atti normativi alle disposizioni della legge sul Tribunale federale e della legge sul Tribunale amministrativo federale",
+      "botschaftKey": "BOTSCHAFT-2006-974",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/826/de",
+      "sha": "450c89b58e25b153fef21bbfa6cf58a9b6d2d6b97ee639ee311773152c7fc266"
     }
   ],
-  "sha": "cbe4df7f1bde838e5c193abd093251497cb7fdc1d81a276967cff104b98d9ecb"
+  "sha": "24d8dfe839dee42a0a0e1ef8fe55661ddf0bbd69dd7b6a77fac0b9dee1fb8042"
 }

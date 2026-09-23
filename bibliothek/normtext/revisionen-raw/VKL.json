@@ -263,5 +263,63 @@
     "2032-07-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2002/418",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2002/418",
+    "inkrafttreten": "2003-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/418",
+        "typ": 5,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/709",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/709",
+        "typ": 2,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/219",
+        "typ": 1,
+        "datum": "2024-07-01",
+        "fassung": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/219",
+        "typ": 1,
+        "datum": "2032-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/318",
+        "typ": 1,
+        "datum": "2025-06-01",
+        "fassung": "2025-06-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2024/219": {
+        "dateForce": "2024-07-01",
+        "dateDoc": "2024-05-08",
+        "titelDe": "Verordnung vom 8. Mai 2024 über die Förderung der Ausbildung im Bereich der Pflege (Ausbildungsförderverordnung Pflege)",
+        "titelFr": "Ordonnance du 8 mai 2024 relative à l’encouragement de la formation dans le domaine des soins infirmiers",
+        "titelIt": "Ordinanza dell’8 maggio 2024 sulla promozione della formazione in cure infermieristiche"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/318": {
+        "dateForce": "2025-06-01",
+        "dateDoc": "2025-04-30",
+        "titelDe": "Verordnung vom 30. April 2025 über die Bundesstatistik (Bundesstatistikverordnung, BStatV)",
+        "titelFr": "Ordonnance du 30 avril 2025 sur la statistique fédérale (OStatF)",
+        "titelIt": "Ordinanza del 30 aprile 2025 sulla statistica federale (OStatF)"
+      }
+    }
+  }
 }

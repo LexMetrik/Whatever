@@ -1,21 +1,131 @@
 {
   "erlassKey": "ASYLG",
   "sr": "142.31",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/348",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2025 348",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Abkommens zwischen der Schweiz und der EU zur Vertiefung der grenzüberschreitenden Zusammenarbeit (Prümer Zusammenarbeit) und des Eurodac-Protokolls zwischen der Schweiz, der EU und dem Fürstentum Liechtenstein betreffend den Zugang zu Eurodac für Gefahrenabwehr- und Strafverfolgungszwecke",
+      "titelFr": "Arrêté fédéral portant approbation et mise en œuvre de l’accord entre la Suisse et l’UE concernant l’approfondissement de la coopération transfrontalière (coopération Prüm) et du Protocole Eurodac entre la Suisse, l’UE et la Principauté de Liechtenstein concernant l’accès à Eurodac à des fins répressives",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero l’Accordo tra la Svizzera e l’UE sul potenziamento della cooperazione transfrontaliera (cooperazione Prüm) e il Protocollo tra la Svizzera, l’UE e il Principato del Liechtenstein riguardante l’accesso a Eurodac a fini di contrasto",
+      "botschaftKey": "BOTSCHAFT-2021-738",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "54ce080e0b425171c2a37959f5a5a31255f594b9e22236c76ebd4c2b2fa075c9"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/348/de",
+      "sha": "2a51a509553371d00ba682349885a9a523ecac2f44a641c660b8436732ae710a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/401",
+      "dateDocument": "2025-06-16",
+      "roFundstelle": "AS 2025 401",
+      "titelDe": "Mitteilung über die Inkraftsetzung von Gesetzesänderungen zur Umsetzung der Prümer Zusammenarbeit und des Eurodac-Protokolls",
+      "titelFr": "Communication relative à l’entrée en vigueur des modifications législatives visant à mettre en œuvre la coopération de Prüm et le Protocole Eurodac",
+      "titelIt": "Comunicazione relativa all’entrata in vigore delle modifiche legislative per l’attuazione della cooperazione di Prüm e del protocollo Eurodac",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/401/de",
+      "sha": "befb3a7ff558ee42285538e51bdb83b3f8e0310acbaff6ba7feb9345cdd1d809"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/231",
+      "dateDocument": "2025-09-26",
+      "roFundstelle": "AS 2026 231",
+      "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Notenaustauschs zwischen de Schweiz und der EU betreffend die Übernahme der Verordnung (EU) 2024/1358 über die Einrichtung von Eurodac für den Abgleich biometrischer Daten (Weiterentwicklung des Dublin/Eurodac-Besitzstands)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en œuvre de l’échange de notes entre la Suisse et l’UE concernant la reprise du règlement (UE) 2024/1358 relatif à la création d’Eurodac pour la comparaison des données biométriques (Développement de l’acquis de Dublin/Eurodac)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero lo scambio di note tra la Svizzera e l’UE concernente il recepimento del regolamento (UE) 2024/1358 che istituisce l’«Eurodac» per il confronto dei dati biometrici (Sviluppo dell’acquis di Dublino/Eurodac)",
+      "botschaftKey": "BOTSCHAFT-2025-1478",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-06-12",
+        "2027-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/231/de",
+      "sha": "9e40bceb398e560da906341f9ecd085577d78ebf742aa85d298af85bb705e372"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/393",
+      "dateDocument": "2026-03-20",
+      "roFundstelle": "AS 2026 393",
+      "titelDe": "Bundesgesetz über das Entlastungspaket 2027 für den Bundeshaushalt",
+      "titelFr": "Loi fédérale sur le programme d’allégement budgétaire 2027",
+      "titelIt": "Legge federale sul programma di sgravio 2027 delle finanze federali",
+      "botschaftKey": "BOTSCHAFT-2025-3067",
+      "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/393/de",
+      "sha": "580296923072e950580671257683fa5db3fedbc7765d70afb43b4e68e49a6694"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2026-06-12",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "10313f7e706fd5c86685d26782747c7d0073e55e90d113e27822158f6e776720"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/229",
+      "dateDocument": "2025-09-26",
+      "roFundstelle": "AS 2026 229",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) 2024/1351 über das Asyl- und Migrationsmanagement und der Verordnung (EU) 2024/1359 über die Bewältigung von Krisensituationen und Situationen höherer Gewalt im Bereich Migration und Asyl (Weiterentwicklungen des Dublin/Eurodac-Besitzstands)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en œuvre des échanges de notes entre la Suisse et l’UE concernant la reprise du règlement (UE) 2024/1351 relatif à la gestion de l’asile et de la migration et du règlement (UE) 2024/1359 visant à faire face aux situations de crise et aux cas de force majeure dans le domaine de la migration et de l’asile (Développements de l’acquis de Dublin/Eurodac)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli scambi di note tra la Svizzera e l’UE concernenti il recepimento del regolamento (UE) 2024/1351 sulla gestione dell’asilo e della migrazione e del regolamento (UE) 2024/1359 concernente le situazioni di crisi e di forza maggiore nel settore della migrazione e dell’asilo (Sviluppi dell’acquis di Dublino/Eurodac)",
+      "botschaftKey": "BOTSCHAFT-2025-1478",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/229/de",
+      "sha": "5edf9c82c2267e2bdb8e1fd4a7a1a444efa6777d3226ce2ac1788dd2a31b2f0d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-06-12",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/230",
+      "dateDocument": "2025-09-26",
+      "roFundstelle": "AS 2026 230",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) 2024/1356 zur Einführung der Überprüfung von Drittstaatsangehörigen an den Aussengrenzen und zur Änderung der Verordnungen (EG) Nr. 767/2008, (EU) 2017/2226, (EU) 2018/1240 und (EU) 2019/817 (Weiterentwicklung des Schengen-Besitzstands)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en œuvre de l’échange de notes entre la Suisse et l’UE concernant la reprise du règlement (UE) 2024/1356 établissant le filtrage des ressortissants de pays tiers aux frontières extérieures et modifiant les règlements (CE) n° 767/2008, (UE) 2017/2226, (UE) 2018/1240 et (UE) 2019/817 (Développement de l’acquis de Schengen)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero lo scambio di note tra la Svizzera e l’UE concernente il recepimento del regolamento (UE) 2024/1356 che introduce accertamenti nei confronti dei cittadini di paesi terzi alle frontiere esterne e modifica i regolamenti (CE) n. 767/2008, (UE) 2017/2226, (UE) 2018/1240 e (UE) 2019/817 (Sviluppo dell’acquis di Schengen)",
+      "botschaftKey": "BOTSCHAFT-2025-1478",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/230/de",
+      "sha": "15a1999e831aacee4b90a3132606514ac5c9128951d4fcd8960de40f11745f7e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-06-12",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/231",
+      "dateDocument": "2025-09-26",
+      "roFundstelle": "AS 2026 231",
+      "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Notenaustauschs zwischen de Schweiz und der EU betreffend die Übernahme der Verordnung (EU) 2024/1358 über die Einrichtung von Eurodac für den Abgleich biometrischer Daten (Weiterentwicklung des Dublin/Eurodac-Besitzstands)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en œuvre de l’échange de notes entre la Suisse et l’UE concernant la reprise du règlement (UE) 2024/1358 relatif à la création d’Eurodac pour la comparaison des données biométriques (Développement de l’acquis de Dublin/Eurodac)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero lo scambio di note tra la Svizzera e l’UE concernente il recepimento del regolamento (UE) 2024/1358 che istituisce l’«Eurodac» per il confronto dei dati biometrici (Sviluppo dell’acquis di Dublino/Eurodac)",
+      "botschaftKey": "BOTSCHAFT-2025-1478",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2026-06-12",
+        "2027-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/231/de",
+      "sha": "966262909297136592b4f0844dbfed2cecca9d00fab17f1142201261a09dbad7"
     },
     {
       "art": "aenderung",
@@ -27,8 +137,12 @@
       "titelFr": "Loi sur l’asile (LAsi) (Sécurité et fonctionnement des centres de la Confédération)",
       "titelIt": "Legge sull’asilo (LAsi) (Sicurezza ed esercizio dei centri della Confederazione)",
       "botschaftKey": "BOTSCHAFT-2024-1107",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/192/de",
-      "sha": "0313ad40edbb961101cd215dfd836d7b59b7d3ef315e76fa625ea0198b3508f4"
+      "sha": "4493d1194fb92e2c9227dd7a86fedee94c8b433466474389a422fc231fd4922d"
     },
     {
       "art": "aenderung",
@@ -39,32 +153,105 @@
       "titelDe": "Asylgesetz (AsylG)",
       "titelFr": "Loi sur l’asile (LAsi)",
       "titelIt": "Legge sull’asilo (LAsi)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/189/de",
-      "sha": "07110bcc46cdd0c151bca9e4f1b5f3f3dff18eb1e3fdbc2d00d21b39ca3e442e"
+      "sha": "f0b9c09d65b19ccb534f5af4e7eb4d5995a455211b16bd009548e88f8fc5406d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "cc7fb9bf3322fba08f6d845594db58ea16ca3b682ef07f3b9992178bdca78b36"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/590",
+      "dateDocument": "2024-06-14",
+      "roFundstelle": "AS 2024 590",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Massnahmen gegen Minderjährigenheiraten)",
+      "titelFr": "Code civil suisse (Mesures de lutte contre les mariages avec un mineur)",
+      "titelIt": "Codice civile svizzero (Misure contro i matrimoni con minorenni)",
+      "botschaftKey": "BOTSCHAFT-2023-2127",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/590/de",
+      "sha": "70f7c2cd259d525f73a86f0ed5be0d27439dd9ce3f8634f95c8124e962748f5d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "4f23100f9480b1a73efe5cc3a2c96a3c0da57b6b571e14f9426671cc7989ee00"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/188",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2024 188",
+      "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG) (Einschränkungen für Reisen ins Ausland und Anpassungen des Status der vorläufigen Aufnahme)",
+      "titelFr": "Loi fédérale sur les étrangers et l’intégration (LEI) (Restriction des voyages à l’étranger et modification du statut de l’admission à titre provisoire)",
+      "titelIt": "Legge federale sugli stranieri e la loro integrazione (LStrI) (Limitazioni per i viaggi all’estero e adeguamenti dello statuto dell’ammissione provvisoria)",
+      "botschaftKey": "BOTSCHAFT-2020-1945",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/188/de",
+      "sha": "35a4cddac6b820fe231461aed3fd7554ae2b1211894058556e1ae512db3d842e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "fe24404f0f68850344ff440453cd820ec33cf4942b104b2a486b09415879f11f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/232",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2022 232",
+      "titelDe": "Bundesgesetz vom 18. Dezember 2020 über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG)",
+      "titelFr": "Loi fédérale du 18 décembre 2020 sur la sécurité de l’information au sein de la Confédération (Loi sur la sécurité de l’information, LSI)",
+      "titelIt": "Legge federale del 18 dicembre 2020 sulla sicurezza delle informazioni in seno alla Confederazione (Legge sulla sicurezza delle informazioni, LSIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/232/de",
+      "sha": "f3151f761dceccabc1776ca0903424da4f73bc2464eaaf81738636b73d87984a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/650",
+      "dateDocument": "2023-11-08",
+      "roFundstelle": "AS 2023 650",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Informationssicherheitsgesetzes vom 18. Dezember 2020",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi du 18 décembre 2020 sur la sécurité de l’information",
+      "titelIt": "Ordinanza concernente l’entrata in vigore parziale della legge sulla sicurezza delle informazioni",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/650/de",
+      "sha": "7759f570a6cb64b16ed6b4fff6dde0e8a0be5f9e27ed3e357421ac51b06db230"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "bd79f2076ad9ce4106d928bb252d589127a106f83ce3dcff5d584ac0aae1f560"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-11-22",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/365",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2021 365",
+      "titelDe": "Bundesbeschluss vom 18. Dezember 2020 über die Genehmigung und die Umsetzung der Notenaustausche zwischen der Schweiz und der EU betreffend die Übernahme der Rechtsgrundlagen über die Einrichtung, den Betrieb und die Nutzung des Schengener Informationssystems (SIS) (Weiterentwicklungen des Schengen-Besitzstands)",
+      "titelFr": "Arrêté fédéral du 18 décembre 2020 portant approbation et mise en œuvre des échanges de notes entre la Suisse et l’UE concernant la reprise des bases légales concernant l’établissement, le fonctionnement et l’utilisation du système d’information Schengen (SIS) (Développements de l’acquis de Schengen)",
+      "titelIt": "Decreto federale del 18 dicembre 2020 che approva e traspone nel diritto svizzero gli scambi di note tra la Svizzera e l’UE concernenti il recepimento delle basi legali dell’istituzione, dell’esercizio e dell’uso del sistema d’informazione Schengen (SIS) (Sviluppi dell’acquis di Schengen)",
+      "botschaftKey": "BOTSCHAFT-2020-794",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/365/de",
+      "sha": "4edc12758b05e17b7d508e1f0926b8c9dc75878b979ce126acd2e526ab691bfd"
     },
     {
       "art": "aenderung",
@@ -75,8 +262,11 @@
       "titelDe": "Mitteilung über die Inkraftsetzung der Änderung des Asylgesetzes und des Bundesgesetzes über das Informationssystem für den Ausländer- und den Asylbereich",
       "titelFr": "Communication concernant la mise en vigueur de la modification de la loi sur l’asile et de la loi fédérale sur le système d’information commun aux domaines des étrangers et de l’asile",
       "titelIt": "Comunicazione sull’entrata in vigore della modifica della legge sull’asilo e della legge federale sul sistema d’informazione per il settore degli stranieri e dell’asilo",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/16/de",
-      "sha": "8ca6d61ca66473166ff008c03ea83ca43766211e5e4e4ee4745a457104defc8c"
+      "sha": "6193d397816b8c6085c54bde1c33f422902f95c3358b4c48d25b07109b3e170b"
     },
     {
       "art": "aenderung",
@@ -88,20 +278,58 @@
       "titelFr": "Loi sur l’asile (LAsi)",
       "titelIt": "Legge sull’asilo (LAsi)",
       "botschaftKey": "BOTSCHAFT-2020-1902",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/459/de",
-      "sha": "dd39e83fd7fe151282aeb57557e93aaf1a78921c1a136fdb983a677f45d8b421"
+      "sha": "c83be3f8371ab0c6b02af6096bf915ea9e268e1f6024290992f3680b3e3b76a7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "39c8ee1b395b747dcb0b21517fa4e73fa102a552b2ebdbe43f58f4dca5760a66"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/565",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 565",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über polizeiliche Massnahmen zur Bekämpfung von Terrorismus (PMT)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur les mesures policières de lutte contre le terrorisme (MPT)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulle misure di polizia per la lotta al terrorismo (MPT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/565/de",
+      "sha": "5c54f3ddbd016deefad852a3a51052db273ddfbb0e4158ff164ab68ced3e88ed"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2022-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/300",
+      "dateDocument": "2022-05-04",
+      "roFundstelle": "AS 2022 300",
+      "titelDe": "Verordnung vom 4. Mai 2022 über die abschliessende Inkraftsetzung des Bundesgesetzes über polizeiliche Massnahmen zur Bekämpfung von Terrorismus",
+      "titelFr": "Ordonnance du 4 mai 2022 portant dernière mise en vigueur partielle de la loi fédérale sur les mesures policières de lutte contre le terrorisme",
+      "titelIt": "Ordinanza del 4 maggio 2022 concernente l’entrata in vigore integrale della legge federale sulle misure di polizia per la lotta al terrorismo",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/300/de",
+      "sha": "4b0a2884396402318f7327890ec0efc2234e91f8fe63f5a8bce09050d5033be3"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "518db0e32d1a64fef9ad4d8201be9f1826024911cf9067fe3853b74a93b22f1d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4085",
+      "titelDe": "Bundesgesetz über die Enteignung (EntG)",
+      "titelFr": "Loi fédérale sur l'expropriation (LEx)",
+      "titelIt": "Legge federale sull'espropriazione (LEspr)",
+      "botschaftKey": "BOTSCHAFT-2018-1660",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
+      "sha": "5d2fe40ec35fb6880b8e7211ecb9cf76c90b7e2beb54ef058df0ac62aba90834"
     },
     {
       "art": "aenderung",
@@ -113,26 +341,59 @@
       "titelFr": "Loi sur l'asile (LAsi)",
       "titelIt": "Legge sull'asilo (LAsi)",
       "botschaftKey": "BOTSCHAFT-2018-2305",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/742/de",
-      "sha": "27006a8d8c2d9f4cd1d697d5b158b290dfe039e35aa42b7c716a7576d7075c74"
+      "sha": "e82051c9ae8d0aea59f1e41af8dedb2af9845d2887e4354bbac8d28026402d0c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "c09b9488bf5814e09a8857392d1eae53c0d6456fdeed40535b067d3820e167cf"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/170",
+      "dateDocument": "2020-02-19",
+      "roFundstelle": "AS 2020 881",
+      "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 14. Dezember 2018 des Ausländer- und Integrationsgesetz",
+      "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 14 décembre 2018 de la loi sur les étrangers et l'intégration",
+      "titelIt": "Ordinanza concernente l'entrata in vigore parziale della modifica del 14 dicembre 2018 della legge federale sugli stranieri e la loro integrazione",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/170/de",
+      "sha": "ef17a15cda28a9fb4c8c1612abc081a96bcf1afeeb93e21a2dc75e5978cbc971"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "e5dbbb9df73a56f7f15a2e2e078df146a6c1bce200067aeafcc4c103a87a76ec"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5343",
+      "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+      "titelFr": "Code des obligations (Révision du droit de la prescription)",
+      "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)",
+      "botschaftKey": "BOTSCHAFT-2014-65",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/807/de",
+      "sha": "8bb33e0c1d48975d7ada40ab2036925b1263bee7d12a3ab485ddb99cae3c4fca"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "bfa571bfff7b21d738094c5a0218093a18edcb0fe64e68d67f1757ffdb19fcf4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/278",
+      "dateDocument": "2018-12-14",
+      "roFundstelle": "AS 2019 1413",
+      "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG) (Verfahrensregelungen und Informationssysteme)",
+      "titelFr": "Loi fédérale sur les étrangers et l'intégration (LEI) (Normes procédurales et systèmes d'information)",
+      "titelIt": "Legge federale sugli stranieri e la loro integrazione (LStrI) (Norme procedurali e sistemi d'informazione)",
+      "botschaftKey": "BOTSCHAFT-2018-673",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/278/de",
+      "sha": "64166ba4848a323eddd5b614d347c11bc608257c8360d3314ef2a0c88ee6c197"
     },
     {
       "art": "aenderung",
@@ -143,14 +404,48 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 25. September 2015 des Asylgesetzes",
       "titelFr": "Ordonnance portant dernière mise en vigueur de la modification du 25 septembre 2015 de la loi sur l'asile",
       "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 25 settembre 2015 della legge sull'asilo",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/438/de",
-      "sha": "21537f35d4c5b8d734f70449367c6f2cda7c41d557c7062b544e0d56ecb8d018"
+      "sha": "82bc0a3a6d49226aada00f5d6f089e7ce9ce89e0f400c15d2c1a7950b4c497d2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "e8a895600077dfd68be37e30acb36fe703b80de06dda071df854199a7d87ee90"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/509",
+      "dateDocument": "2018-08-15",
+      "roFundstelle": "AS 2018 3171",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 16. Dezember 2016 des Ausländergesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 16 décembre 2016 de la loi fédérale sur les étrangers",
+      "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 16 dicembre 2016 della legge federale sugli stranieri",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/509/de",
+      "sha": "53bd8e69c538a2e12dd8565a88674d953e019dd70616f9ae589f61b084997791"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/249",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2016 1249",
+      "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Änderungen des Sanktionenrechts)",
+      "titelFr": "Code pénal suisse et code pénal militaire (Réforme du droit des sanctions)",
+      "titelIt": "Codice penale svizzero e Codice penale militare (Modifica della disciplina delle sanzioni)",
+      "botschaftKey": "BOTSCHAFT-2012-670",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-07-01",
+        "2018-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/249/de",
+      "sha": "a5433df95058874e97fdc2011015a2c75140bf5be4fbfe38b17bff53889bbed5"
     },
     {
       "art": "aenderung",
@@ -161,8 +456,45 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 25. September 2015 des Asylgesetzes",
       "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 25 septembre 2015 de la loi sur l'asile",
       "titelIt": "Ordinanza concernente l'entrata in vigore parziale della modifica del 25 settembre 2015 della legge sull'asilo",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/685/de",
-      "sha": "bcdb3e7cfbcb90db8a356892b33bec08ffcdcd5ff55db8c87a2a478986b5f21c"
+      "sha": "fed37763152bdea46118fbaf11fea35613c9180e645e02913a2e7981796f55a6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/718",
+      "dateDocument": "2016-12-16",
+      "roFundstelle": "AS 2017 6521",
+      "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer (Ausländergesetz, AuG) (Integration)",
+      "titelFr": "Loi fédérale sur les étrangers (LEtr) (Intégration)",
+      "titelIt": "Legge federale sugli stranieri (LStr) (Integrazione)",
+      "botschaftKey": "BOTSCHAFT-2013-416",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/718/de",
+      "sha": "0bd3e22a89ec5c1d4b6712f67fb55349a1cc7e92cc42393bd4966ec078b04ce0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/380",
+      "dateDocument": "2015-03-20",
+      "roFundstelle": "AS 2016 2329",
+      "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+      "titelFr": "Code pénal et code pénal militaire (Mise en uvre de l'art. 121, al. 3 à 6, Cst. relatif au renvoi des étrangers criminels)",
+      "titelIt": "Codice penale svizzero e Codice penale militare (Attuazione dell'art. 121 cpv. 36 Cost. sull'espulsione di stranieri che commettono reati)",
+      "botschaftKey": "BOTSCHAFT-2013-1078",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/380/de",
+      "sha": "3617509c09b6bb33185ac6d9c4b6ea1e4ba544b1416e950dc141629aa6880802"
     },
     {
       "art": "aenderung",
@@ -174,20 +506,89 @@
       "titelFr": "Loi sur l'asile (LAsi)",
       "titelIt": "Legge sull'asilo (LAsi)",
       "botschaftKey": "BOTSCHAFT-2014-1715",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/521/de",
-      "sha": "5bf5996956a05cf7c4c4cd0e2bf23d1eb9bcc58f3d13eb2907df906a3416dbbc"
+      "sha": "f34dc18e9538518f0ff48741ac09c3ec8f3edd44cf7ec09a7ab779785fe5b520"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-09-29",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "c3c007d9c5a4a9c1b4f9f6b9b5a2e67b402c8c191e1897feca4831d251d46a22"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/379",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 2047",
+      "titelDe": "Asylgesetz (AsylG) (Verlängerung der dringlichen Änderungen des Asylgesetzes)",
+      "titelFr": "Loi sur l'asile (LAsi) (Prorogation des modifications urgentes de la loi sur l'asile)",
+      "titelIt": "Legge sull'asilo (LAsi) (Proroga delle modifiche urgenti della legge sull'asilo)",
+      "botschaftKey": "BOTSCHAFT-2014-405",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-09-29",
+        "2016-09-29"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/379/de",
+      "sha": "2c5f5e9e425faa3fd63cd802291acbb01879bcafa912ad474a3bd6d1dd860838"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2016-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/249",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2016 1249",
+      "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Änderungen des Sanktionenrechts)",
+      "titelFr": "Code pénal suisse et code pénal militaire (Réforme du droit des sanctions)",
+      "titelIt": "Codice penale svizzero e Codice penale militare (Modifica della disciplina delle sanzioni)",
+      "botschaftKey": "BOTSCHAFT-2012-670",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-07-01",
+        "2018-01-01"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/249/de",
+      "sha": "9d342ffc93c50c8e588bc4f075a73509305b208c6c2c826e634d9aba2417ac0b"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2015-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "0d281b58d4895ddc3c5eae526ed5d9d91b43dd9ef142fd97e3f6a782ac9dccd6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/570",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2015 3023",
+      "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer (Ausländergesetz, AuG) (Sorgfalts- und Meldepflichtverletzungen durch Luftverkehrsunternehmen, Informationssysteme)",
+      "titelFr": "Loi fédérale sur les étrangers (LEtr) (Violation du devoir de diligence et de l'obligation de communiquer par les entreprises de transport aérien; systèmes d'information)",
+      "titelIt": "Legge federale sugli stranieri (LStr) (Violazioni dell'obbligo di diligenza e di comunicazione delle imprese di trasporto aereo; sistemi d'informazione)",
+      "botschaftKey": "BOTSCHAFT-2013-451",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/570/de",
+      "sha": "1a46365b0bd90c9ef03571bce6aaaf24da90b44e34e37e578267111bee4477f6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-09-29",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/612",
+      "dateDocument": "2012-09-28",
+      "roFundstelle": "AS 2012 5359",
+      "titelDe": "Asylgesetz (AsylG)",
+      "titelFr": "Loi sur l'asile (LAsi)",
+      "titelIt": "Legge sull'asilo (LAsi)",
+      "botschaftKey": "BOTSCHAFT-2010-794",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-09-29",
+        "2015-09-29"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/612/de",
+      "sha": "fa7b9f5ba29936cfd33301eb7088def1ffae6580f56ad714110286144f2d3012"
     },
     {
       "art": "aenderung",
@@ -199,14 +600,48 @@
       "titelFr": "Loi sur l'asile (LAsi) (Prorogation des modifications urgentes de la loi sur l'asile)",
       "titelIt": "Legge sull'asilo (LAsi) (Proroga delle modifiche urgenti della legge sull'asilo)",
       "botschaftKey": "BOTSCHAFT-2014-405",
+      "wirkungen": [
+        "aenderung",
+        "verlaengerung"
+      ],
+      "etappen": [
+        "2015-09-29",
+        "2016-09-29"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/379/de",
-      "sha": "dbd12ee6d6583804366aef43141ae0fd8f605b7b58a3778a626d4237c743d0cc"
+      "sha": "38f1fbb14676ab344f63a08743f3c42b753268cedb2097d524283f354e7dc988"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-07-20",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "3616e04f82d4d31f85ec591c6bdd58c77ef096325acd6b7c470844f8179ab4b3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/432",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 2323",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustausches zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) Nr. 603/2013 über die Errichtung von Eurodac sowie zur Änderung der Verordnung (EU) Nr. 1077/2011 zur Errichtung der IT-Agentur (Weiterentwicklung des Dublin/Eurodac-Besitzstands)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre de l'échange de notes entre la Suisse et l'UE concernant la reprise du règlement (UE) no 603/2013 relatif à la création d'Eurodac et modifiant le règlement (UE) no 1077/2011 portant création de l'Agence IT (Développement de l'acquis de Dublin/Eurodac)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero lo scambio di note tra la Svizzera e l'UE concernente il recepimento del regolamento (UE) n. 603/2013 che istituisce l'«Eurodac» e che modifica il regolamento (UE) n. 1077/2011 che istituisce l'agenzia IT (Sviluppo dell'acquis di Dublino/Eurodac)",
+      "botschaftKey": "BOTSCHAFT-2014-489",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/432/de",
+      "sha": "abbd08c2285ffb48095c9357653fdff0b67372504de2ef7915340900137c145a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/357",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 1841",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustausches zwischen der Schweiz und der EU betreffend die Übernahme der Verordnung (EU) Nr. 604/2013 zur Festlegung der Kriterien und Verfahren zur Bestimmung des Mitgliedstaats, der für die Prüfung eines Antrags auf internationalen Schutz zuständig ist (Weiterentwicklung des Dublin/Eurodac-Besitzstands)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre de l'échange de notes entre la Suisse et l'UE concernant la reprise du règlement (UE) no 604/2013 établissant les critères et mécanismes de détermination de l'Etat membre responsable de l'examen d'une demande de protection internationale (Développement de l'acquis de Dublin/Eurodac)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero lo scambio di note tra la Svizzera e l'UE concernente il recepimento del regolamento (UE) n. 604/2013 che stabilisce i criteri e i meccanismi di determinazione dello Stato membro competente per l'esame di una domanda di protezione internazionale (Sviluppo dell'acquis di Dublino/Eurodac)",
+      "botschaftKey": "BOTSCHAFT-2014-489",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/357/de",
+      "sha": "b2951c94ee090fbc24098fc420b81d19416473ffa66c39244dc63081acecaacf"
     },
     {
       "art": "aenderung",
@@ -218,14 +653,50 @@
       "titelFr": "Loi sur l'asile (LAsi)",
       "titelIt": "Legge sull'asilo (LAsi)",
       "botschaftKey": "BOTSCHAFT-2014-708",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/360/de",
-      "sha": "ce90f007a8d6be11e56c03bac35622739cc5fd7ba3ca787061cc317cbfce1aca"
+      "sha": "f24079a9cda146976a79f44c4e688f5bb51e74cdb5f398c2b69a788ad30b6087"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "a764ac660f51c360d708a51a0f4203714e26b0898a9070bfdde9d27031ae7f5e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/778",
+      "dateDocument": "2012-12-14",
+      "roFundstelle": "AS 2013 4375",
+      "titelDe": "Asylgesetz (AsylG)",
+      "titelFr": "Loi sur l'asile (LAsi)",
+      "titelIt": "Legge sull'asilo (LAsi)",
+      "botschaftKey": "BOTSCHAFT-2011-1209",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2014-02-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/778/de",
+      "sha": "f4d5db4a49a81cc3cff55265ce8b99ea1cd6f589f09302725c0052e780c73804"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2014-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/855",
+      "dateDocument": "2013-12-13",
+      "roFundstelle": "AS 2013 5357",
+      "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 14. Dezember 2012 des Asylgesetzes",
+      "titelFr": "Ordonnance sur la mise en vigueur partielle de la modification du 14 décembre 2012 de la loi sur l'asile",
+      "titelIt": "Ordinanza concernente un'entrata in vigore parziale della modifica del 14 dicembre 2012 della legge sull'asilo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2014-02-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/855/de",
+      "sha": "23a5f634866945aee8e27002773d30620895de43d62535e5d64479c4ab1274f5"
     },
     {
       "art": "aenderung",
@@ -237,8 +708,16 @@
       "titelFr": "Loi sur l'asile (LAsi)",
       "titelIt": "Legge sull'asilo (LAsi)",
       "botschaftKey": "BOTSCHAFT-2011-1209",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2014-02-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/778/de",
-      "sha": "aef30358aea66703cf4f98c28b20957489ad2d8b1b3926ec2812c43dc5150ed3"
+      "sha": "20fade74c2ab5c3695612f8f8b2f7e71072b64647ec294ee05099fa247c4f76f"
     },
     {
       "art": "aenderung",
@@ -249,14 +728,32 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 14. Dezember 2012 des Asylgesetzes",
       "titelFr": "Ordonnance sur la mise en vigueur partielle de la modification du 14 décembre 2012 de la loi sur l'asile",
       "titelIt": "Ordinanza concernente un'entrata in vigore parziale della modifica del 14 dicembre 2012 della legge sull'asilo",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "etappen": [
+        "2014-01-01",
+        "2014-02-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/855/de",
-      "sha": "82b0bf4e4a18bd077da93a6943b51af0ccd91843a2277f704306b6ec37ebe6d6"
+      "sha": "3a2cfa4d516ebf865e65e64ff7731f4448f04caf198334f49a9e0dbdd63e1459"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "f17fcfce9e94e684392ba42dd39febc78ab6552e915e21e473a9cf7395be2c06"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/226",
+      "dateDocument": "2012-06-15",
+      "roFundstelle": "AS 2013 1035",
+      "titelDe": "Bundesgesetz über Massnahmen gegen Zwangsheiraten",
+      "titelFr": "Loi fédérale concernant les mesures de lutte contre les mariages forcés",
+      "titelIt": "Legge federale sulle misure contro i matrimoni forzati",
+      "botschaftKey": "BOTSCHAFT-2011-292",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/226/de",
+      "sha": "00a2aa22d687f23430ffec4deb4e8b1b771aca8d6e5248876375d098ca779415"
     },
     {
       "art": "aenderung",
@@ -267,8 +764,11 @@
       "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
       "titelFr": "Ordonnance portant adaptation de lois par suite de la réorganisation des départements",
       "titelIt": "Ordinanza sull'adeguamento di disposizioni di legge a seguito della riorganizzazione dei dipartimenti",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/419/de",
-      "sha": "0022807af25ae204c7a9b472258ef7112960e567990fc7bf31443487d96ab61c"
+      "sha": "98d16fb59413c6c4baa7392dc8196897ed57422734e9dc5d05c78fdcf450a38c"
     },
     {
       "art": "aenderung",
@@ -280,8 +780,15 @@
       "titelFr": "Loi sur l'asile (LAsi)",
       "titelIt": "Legge sull'asilo (LAsi)",
       "botschaftKey": "BOTSCHAFT-2010-794",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-09-29",
+        "2015-09-29"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/612/de",
-      "sha": "7fbfba75ec1db1aa3609a1db70ff2b1870c3072187bcc2c898b6bf89da88e6fb"
+      "sha": "5e490084d69723b76a8c823ba66196dc79ed5ccd191a4a0ad19b600edf6425b5"
     },
     {
       "art": "aenderung",
@@ -293,26 +800,162 @@
       "titelFr": "Loi fédérale sur la coordination entre la procédure d'asile et la procédure d'extradition",
       "titelIt": "Legge federale sul coordinamento tra la procedura d'asilo e la procedura d'estradizione",
       "botschaftKey": "BOTSCHAFT-2010-264",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/137/de",
-      "sha": "389c0ef971393333ba39b9239942992e5abc498f5184e8df35e0c228478b72b1"
+      "sha": "81eb8ba83ae618d5189c558232c774c97f48c6b4762a5923477f8e2968591a7d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "f0c7821164d995821a53714e3ec688ab028e820da7afd6e58f937094908a8da2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/813",
+      "dateDocument": "2010-06-18",
+      "roFundstelle": "AS 2010 5755",
+      "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer (AuG) (Automatisierte Grenzkontrolle, Dokumentenberaterinnen und Dokumentenberater, Informationssystem MIDES)",
+      "titelFr": "Loi fédérale sur les étrangers (LEtr) (Contrôle automatisé aux frontières, conseillers en matière de documents, système d'information MIDES)",
+      "titelIt": "Legge federale sugli stranieri (LStr) (Controllo di confine automatizzato, consulenti in materia di documenti, sistema d'informazione MIDES)",
+      "botschaftKey": "BOTSCHAFT-2009-1528",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/813/de",
+      "sha": "22b27f8f1ac572c0d2f5f1139f36cf24287098ce3d14dcdb9eed65cc61693476"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/848",
+      "dateDocument": "2010-06-18",
+      "roFundstelle": "AS 2010 5925",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der EG betreffend die Übernahme der EG-Rückführungsrichtlinie (Richtlinie 2008/115/EG) (Weiterentwicklung des Schengen-Besitzstands)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre de l'échange de notes entre la Suisse et la CE concernant la reprise de la directive CE sur le retour (directive 2008/115/CE) (Développement de l'acquis de Schengen)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero lo scambio di note tra la Svizzera e la CE concernente il recepimento della direttiva CE sul rimpatrio (direttiva 2008/115/CE) (Sviluppo dell'acquis di Schengen)",
+      "botschaftKey": "BOTSCHAFT-2009-1528",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/848/de",
+      "sha": "6669bb73c28ef5a5bf2d47fe5168e0d03ad697a116bcca115f1fdb0f6bf11140"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2010-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "053fd9abd2c3c1e8d4f4e434f3770f6f2154b6b52bbe79652a73a35fa7025218"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/464",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2010 3387",
+      "titelDe": "Bundesgesetz über die Umsetzung des Rahmenbeschlusses 2008/977/JI über den Schutz von Personendaten im Rahmen der polizeilichen und justiziellen Zusammenarbeit in Strafsachen",
+      "titelFr": "Loi fédérale portant mise en uvre de la décision-cadre 2008/977/JAI relative à la protection des données à caractère personnel traitées dans le cadre de la coopération policière et judiciaire en matière pénale",
+      "titelIt": "Legge federale che traspone nel diritto svizzero la decisione quadro 2008/977/GAI sulla protezione dei dati personali trattati nell'ambito della cooperazione giudiziaria e di polizia in materia penale",
+      "botschaftKey": "BOTSCHAFT-2009-1207",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/464/de",
+      "sha": "f0eaa58b3877c5257574527ca1ad5d30fc46f6f71e8c23858a1ed795a45436ec"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-12-12",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "ae589e001c319d31a701c14f50a471fafc902acfdf2c27ae2d1b6cdf2f922892"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/112",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2008 447",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2008-03-01",
+        "2008-12-12"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/112/de",
+      "sha": "12878a857233b54f8f22f27f0ecfcccae92ee7a1431f31159984bc4ca62d890e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-12-12",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/755",
+      "dateDocument": "2008-11-26",
+      "roFundstelle": "AS 2008 5405",
+      "titelDe": "Verordnung über die vollständige Inkraftsetzung des Bundesbeschlusses über die Genehmigung und die Umsetzung der bilateralen Abkommen über die Assoziierung an Schengen und an Dublin sowie die Inkraftsetzung weiterer in Umsetzung von Schengen/Dublin erlassener Bundesgesetze",
+      "titelFr": "Ordonnance sur l'entrée en vigueur totale de l'arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin et sur l'entrée en vigueur d'autres lois fédérales mettant en uvre Schengen et Dublin",
+      "titelIt": "Ordinanza sull'entrata in vigore completa del decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino nonché sull'entrata in vigore di altre leggi federali adottate in attuazione di Schengen/Dublino",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/755/de",
+      "sha": "2792a2bb539ea90596ab899dda5d3d36383a010aa0d6792d43b2fc13a1cf0391"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-12-12",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/756",
+      "dateDocument": "2008-06-13",
+      "roFundstelle": "AS 2008 5407",
+      "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer (AuG) (Ergänzungen im Rahmen der Umsetzung der Schengen- und Dublin-Assoziierungsabkommen)",
+      "titelFr": "Loi fédérale sur les étrangers (LEtr) (Compléments apportés dans le cadre de la mise en uvre des accords d'association à Schengen et à Dublin)",
+      "titelIt": "Legge federale sugli stranieri (LStr) (Complementi nel quadro della trasposizione degli accordi d'associazione alla normativa di Schengen e Dublino)",
+      "botschaftKey": "BOTSCHAFT-2007-1287",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/756/de",
+      "sha": "04e1d8450ee79e8492bec143ddfa9146acb10b06097b13250ddcb1ef8e79a5bf"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/112",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2008 447",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre des accords bilatéraux d'association à l'Espace Schengen et à l'Espace Dublin",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero gli accordi bilaterali con l'UE per l'associazione della Svizzera alla normativa di Schengen e Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2008-03-01",
+        "2008-12-12"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/112/de",
+      "sha": "847ec228ee177bba279a2b74b54e5e8400baf384f0898e1f1cb4b30b76994eec"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/71",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2007 359",
+      "titelDe": "Bundesgesetz über Massnahmen zur Bekämpfung der Schwarzarbeit (Bundesgesetz gegen die Schwarzarbeit, BGSA)",
+      "titelFr": "Loi fédérale concernant des mesures en matière de lutte contre le travail au noir (Loi sur le travail au noir, LTN)",
+      "titelIt": "Legge federale concernente i provvedimenti in materia di lotta contro il lavoro nero (Legge contro il lavoro nero, LLN)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/71/de",
+      "sha": "8c49b0cae192ecc05c30b72d4984d0a2891f2f707dabe9e4d1ab8ea72e302cf7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/758",
+      "dateDocument": "2005-12-16",
+      "roFundstelle": "AS 2007 5437",
+      "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG)",
+      "titelFr": "Loi fédérale sur les étrangers et l'intégration (LEI)",
+      "titelIt": "Legge federale sugli stranieri e la loro integrazione (LStrI)",
+      "botschaftKey": "BOTSCHAFT-2002-541",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/758/de",
+      "sha": "ecf671b8870bafb50a69129fea89ddcaf571ae9d168a8b5d9a103686195cc76c"
     },
     {
       "art": "aenderung",
@@ -323,8 +966,12 @@
       "titelDe": "Verordnung über die vollständige Inkraftsetzung der Änderung vom 16. Dezember 2005 des Asylgesetzes",
       "titelFr": "Ordonnance concernant la mise en vigueur totale de la modification du 16 décembre 2005 de la loi sur l'asile",
       "titelIt": "Ordinanza sull'entrata in vigore completa della modifica del 16 dicembre 2005 della legge sull'asilo",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/765/de",
-      "sha": "875b4525f26a64ae58861e84ec9c2ce3ff5f830fa00bcd84d3ba4ae4133e1f9d"
+      "sha": "7b8226b7ca9fdd4698bdbb3df87e9b11a79c95734331b5b38828e39dbd41a5ff"
     },
     {
       "art": "aenderung",
@@ -335,8 +982,60 @@
       "titelDe": "Verordnung über die vollständige Inkraftsetzung der Änderung des Bundesgesetzes vom 16. Dezember 2005 über die Krankenversicherung",
       "titelFr": "Ordonnance concernant la mise en vigueur totale de la modification du 16 décembre 2005 de la loi fédérale sur l'assurance-maladie (LAMal)",
       "titelIt": "Ordinanza sull'entrata in vigore completa della modifica del 16 dicembre 2005 della legge federale sull'assicurazione malattie",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/766/de",
-      "sha": "910ff331dc73fd2f46868fb2c050487ece31fe6805a262de999b1e3963f40bc7"
+      "sha": "f6e347a6bde30f1b841bd0cfe8b3792fd07e336539ec7a0cb858c5b52967a8e7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
     },
     {
       "art": "aenderung",
@@ -348,51 +1047,115 @@
       "titelFr": "Loi sur l'asile (LAsi)",
       "titelIt": "Legge sull'asilo (LAsi)",
       "botschaftKey": "BOTSCHAFT-2002-1106",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/727/de",
-      "sha": "7bb924e77d2cedc9817d5474e6cfeee273ba8de28ccd4a0affe3963a31de0e57"
+      "sha": "cfec0fa466ef74ee0527a58a2bd53eef8958fcfc461972dfebf01ee845417e86"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/743",
+      "dateDocument": "2005-12-16",
+      "roFundstelle": "AS 2006 4823",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG)",
+      "titelFr": "Loi fédérale sur l'assurance-maladie (LAMal)",
+      "titelIt": "Legge federale sull'assicurazione malattie (LAMal)",
+      "botschaftKey": "BOTSCHAFT-2002-1106",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/743/de",
+      "sha": "1ee88bcc16da96d3bb25d119edbccd1f11d38c3860e524286f965bb57bff0f0b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/826",
+      "dateDocument": "2006-12-20",
+      "roFundstelle": "AS 2006 5599",
+      "titelDe": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
+      "titelFr": "Ordonnance de l'Assemblée fédérale concernant l'adaptation d'actes législatifs aux dispositions de la loi sur le Tribunal fédéral et de la loi sur le Tribunal administratif fédéral",
+      "titelIt": "Ordinanza dell'Assemblea federale che adegua taluni atti normativi alle disposizioni della legge sul Tribunale federale e della legge sul Tribunale amministrativo federale",
+      "botschaftKey": "BOTSCHAFT-2006-974",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/826/de",
+      "sha": "450c89b58e25b153fef21bbfa6cf58a9b6d2d6b97ee639ee311773152c7fc266"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2006-05-29",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "0a7d5abf57fe9b7be7287028be49b3a5e7bea93ebea0ae0289c1cfc2fb7dd9db"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/301",
+      "dateDocument": "2003-06-20",
+      "roFundstelle": "AS 2006 1931",
+      "titelDe": "Bundesgesetz über das Informationssystem für den Ausländer- und den Asylbereich (BGIAA)",
+      "titelFr": "Loi fédérale sur le système d'information commun aux domaines des étrangers et de l'asile (LDEA)",
+      "titelIt": "Legge federale sul sistema d'informazione per il settore degli stranieri e dell'asilo (LSISA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/301/de",
+      "sha": "6baa25272ed30da8ddba0c80726f7d4df79dd16690375062d45ad96b42a80224"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "f107855df5d063db496f0fe888f3cbc829e878ab38daf12532a821167ad243e7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/200",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2004 1633",
+      "titelDe": "Bundesgesetz über das Entlastungsprogramm 2003",
+      "titelFr": "Loi fédérale sur le programme d'allégement budgétaire 2003",
+      "titelIt": "Legge federale sul programma di sgravio 2003",
+      "botschaftKey": "BOTSCHAFT-2003-887",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-04-01",
+        "2005-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/200/de",
+      "sha": "3280ebba7da2181e3e0a6d205810ddcbe925365255792b932a71d189f2f332f1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/715",
+      "dateDocument": "2004-11-03",
+      "roFundstelle": "AS 2004 4655",
+      "titelDe": "Verordnung über die Anpassung gesetzlicher Bestimmungen infolge der Zusammenlegung der Bundesämter IMES und BFF",
+      "titelFr": "Ordonnance relative à l'adaptation de dispositions légales à la suite de la réunion des offices fédéraux IMES et ODR",
+      "titelIt": "Ordinanza concernente l'adeguamento delle disposizioni legali in seguito alla fusione degli uffici federali IMES e UFR",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/715/de",
+      "sha": "671daa1c91f6135f400c8a06edae708ef1cf6d45755056dd40590a659df5ca0d"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2004-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.31",
-      "sha": "50d856fed86a06e1af4f55fcad5639514dd53bc1bdaa032047d81809f5c3a637"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1999-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/358",
-      "dateDocument": "1998-06-26",
-      "roFundstelle": "AS 1999 2262",
-      "titelDe": "Asylgesetz (AsylG)",
-      "titelFr": "Loi sur l'asile (LAsi)",
-      "titelIt": "Legge sull'asilo (LAsi)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/358/de",
-      "sha": "5fa273ce0c758a01855b091371c473318a4ceb73b3c426396af04cb6aa85627a"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1981-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/1718_1718_1718",
-      "dateDocument": "1979-10-05",
-      "roFundstelle": "AS 1980 1718",
-      "titelDe": "Asylgesetz vom 5. Oktober 1979",
-      "titelFr": "Loi du 5 octobre 1979 sur l'asile",
-      "titelIt": "Legge del 5 ottobre 1979 sull'asilo",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/1718_1718_1718/de",
-      "sha": "055fb7408f04ea0ffb3a219e96a8cb11c56a0f4567c9779c39999f9a50076cc3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/200",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2004 1633",
+      "titelDe": "Bundesgesetz über das Entlastungsprogramm 2003",
+      "titelFr": "Loi fédérale sur le programme d'allégement budgétaire 2003",
+      "titelIt": "Legge federale sul programma di sgravio 2003",
+      "botschaftKey": "BOTSCHAFT-2003-887",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2004-04-01",
+        "2005-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/200/de",
+      "sha": "e6bd881de7472fc53e79a5f00b5297ce4afd3915f5dbaff8485b4ad2ef18e4d6"
     }
   ],
-  "sha": "b6d78962eaa78a20b16c43291e9697e796d9c03e9aef4ed9ad41b2313d1dcc8b"
+  "sha": "9e01e21d551dc887b9325a37041b7d54ecf55fcdf664823630ec80e04e4bcef8"
 }

@@ -1,15 +1,25 @@
 {
   "erlassKey": "HMG",
   "sr": "812.21",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/96",
+      "dateDocument": "2025-06-20",
+      "roFundstelle": "AS 2026 96",
+      "titelDe": "Bundespersonalgesetz (BPG)",
+      "titelFr": "Loi sur le personnel de la Confédération (LPers)",
+      "titelIt": "Legge sul personale federale (LPers)",
+      "botschaftKey": "BOTSCHAFT-2024-2316",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "30912d080540449acaff8d10c08f3a2fe88061dd6240f25ef367c401ec974612"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/96/de",
+      "sha": "48ffc9b0568182834050d0486b0e995db770e8d2b569344174d11f70d4111720"
     },
     {
       "art": "aenderung",
@@ -20,38 +30,94 @@
       "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG) (Anpassungen der Bestimmungen zur Blutspende)",
       "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh) (Adaptations des dispositions relatives au don de sang)",
       "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer) (Adeguamento delle disposizioni sulla donazione di sangue)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/534/de",
-      "sha": "660050df59cbbafc4b2470650bb04b698e854888c0cc9cc1abea77ce8131ccb1"
+      "sha": "7f5cd79594c1013a8cf88629de61111b6ae3b3eda4c3c14981a960accc091c60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "73aac89b3cbc327ad7b5f6c90082c988ac8de5361fe13c892f425910aed75255"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/630",
+      "dateDocument": "2022-09-30",
+      "roFundstelle": "AS 2023 630",
+      "titelDe": "Bundesgesetz über die Krankenversicherung (KVG) (Massnahmen zur Kostendämpfung – Paket 1b)",
+      "titelFr": "Loi fédérale sur l’assurance-maladie (LAMal) (Mesures visant à freiner la hausse des coûts, volet 1b)",
+      "titelIt": "Legge federale sull’assicurazione malattie (LAMal) (Misure di contenimento dei costi – Pacchetto 1b)",
+      "botschaftKey": "BOTSCHAFT-2019-2216",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/630/de",
+      "sha": "ca3058631b5e8247630cceaf37f6a218ed59767a81927ec8a54cfa471cc263a6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "db9cd80319ec6c9265d9c7c06bc329f22ba104fe0ea5cbd666a6270156aab605"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "778dd95965e1b9b6e544a4e4155b3f8a56c990f8ff79764881d2c6fff079c546"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 259",
+      "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+      "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
+      "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene",
+      "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
+      "sha": "64e1e609ccf5d5a5532e3f42aec1fd1e1c0d6c9345913a92606b4f68339c0b0d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "20b8ac10e20e3a37475a6ddb84895f265f1a90c939a3e7f0a273272b2f50f392"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+      "dateDocument": "2020-06-12",
+      "roFundstelle": "AS 2020 2743",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Ordonnance sur l'adaptation de lois à la suite de la modification de la désignation de l'Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Ordinanza sull'adeguamento di leggi in seguito al cambiamento della designazione dell'Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/498/de",
+      "sha": "624c9747c49a2b2de0386a2d0d50f3939887b89f337dadf4828f42762c9888d5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-05-26",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "55a630d41c1574285abe2ed0bca3d86cc74b269b42d5b2d45e994ad718bea33e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/550",
+      "dateDocument": "2019-03-22",
+      "roFundstelle": "AS 2020 2961",
+      "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
+      "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
+      "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "botschaftKey": "BOTSCHAFT-2019-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-08-01",
+        "2021-05-26"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/550/de",
+      "sha": "d1b6460ff9d8148be64e46f7f65e608431923376038efded0b0c854d2236be77"
     },
     {
       "art": "aenderung",
@@ -63,8 +129,53 @@
       "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
       "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
       "botschaftKey": "BOTSCHAFT-2019-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-08-01",
+        "2021-05-26"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/550/de",
-      "sha": "bbb5b14d4a1404e1b1a91d32b7f289b9fc304bf9110ca1b1902f4dc84ed266af"
+      "sha": "94a70b4f4676f3f5ea389cc1cc3954506b7123fc87cba29d409fb520d0aeeb4e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/587",
+      "dateDocument": "2018-09-21",
+      "roFundstelle": "AS 2018 3575",
+      "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 18. März 2016 des Heilmittelgesetzes",
+      "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur les produits thérapeutiques",
+      "titelIt": "Ordinanza concernente l'entrata in vigore parziale della modifica del 18 marzo 2016 della legge sugli agenti terapeutici",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2020-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/587/de",
+      "sha": "7de2a86a25516b2d667569a516c75064fca00c5494d1b60eba38d036c31d5be7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/824",
+      "dateDocument": "2018-12-13",
+      "roFundstelle": "AS 2018 5449",
+      "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
+      "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
+      "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2020-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/824/de",
+      "sha": "8ffce63f5e646fa0be2dcd1bcf52aee512286b640b9598e193e26956698d7909"
     },
     {
       "art": "aenderung",
@@ -75,8 +186,27 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 18. März 2016 des Heilmittelgesetzes",
       "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur les produits thérapeutiques",
       "titelIt": "Ordinanza concernente l'entrata in vigore integrale della modifica del 18 marzo 2016 della legge sugli agenti terapeutici",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/272/de",
-      "sha": "2d8929a8233e44e050262525ef941154a496ed0a6628af6c107310f7d6124811"
+      "sha": "8125d9bb796a921723c63c2eb814ea83dc968342b155e2691ba1c3422fc733c9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/586",
+      "dateDocument": "2018-09-18",
+      "roFundstelle": "AS 2018 3573",
+      "titelDe": "Verordnung des EDI über das Förderungskonzept für die Unterstützung von Museen, Sammlungen und Netzwerken Dritter zur Bewahrung des kulturellen Erbes",
+      "titelFr": "Ordonnance du DFI instituant un régime d'encouragement des musées, des collections et des réseaux de tiers en vue de la sauvegarde du patrimoine culturel",
+      "titelIt": "Ordinanza del DFI concernente il regime di promozione in favore dei musei, delle collezioni e delle reti di terzi ai fini della salvaguardia del patrimonio culturale",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/586/de",
+      "sha": "260a34a6463df099e9713694936ee968ba56d8a42fc5722bd0571bcb99eb2c8f"
     },
     {
       "art": "aenderung",
@@ -87,8 +217,32 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 18. März 2016 des Heilmittelgesetzes",
       "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 18 mars 2016 de la loi sur les produits thérapeutiques",
       "titelIt": "Ordinanza concernente l'entrata in vigore parziale della modifica del 18 marzo 2016 della legge sugli agenti terapeutici",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2020-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/587/de",
-      "sha": "ffbceb14bfc204d4840d6bb9fb0e510813e63559e009fd003037778b61c6f638"
+      "sha": "d9495b33a4a438c0e4f764847024f87437b6e192d6d34a1f69fed8bb526b11c7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/765",
+      "dateDocument": "2017-09-29",
+      "roFundstelle": "AS 2018 4771",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens des Europarats über die Fälschung von Arzneimitteln und Medizinprodukten und über ähnliche die öffentliche Gesundheit gefährdende Straftaten (Medicrime-Konvention)",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la convention du Conseil de l'Europe sur la contrefaçon des produits médicaux et les infractions similaires menaçant la santé publique (Convention Médicrime)",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione del Consiglio d'Europa sulla contraffazione di agenti terapeutici e reati simili che comportano una minaccia per la salute pubblica (Convenzione Medicrime)",
+      "botschaftKey": "BOTSCHAFT-2017-649",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/765/de",
+      "sha": "7673079ee8e0b7d44b99c6bff1c1907a211c721fe1c64a3ad120eccc92691737"
     },
     {
       "art": "aenderung",
@@ -99,8 +253,15 @@
       "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
       "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
       "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2020-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/824/de",
-      "sha": "edbf1f80bacd2e46e861c74fa470a64ed781f420cc08c4bb2ecf3dba4832d3af"
+      "sha": "2c026d63a522cff1718655e44e2667df0eed08f13f3fc299eb39f946fc0b8f48"
     },
     {
       "art": "aenderung",
@@ -112,8 +273,28 @@
       "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
       "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
       "botschaftKey": "BOTSCHAFT-2013-1",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/280/de",
-      "sha": "e35e4ab82b3de2b6a8b51617d0bbb6fc6d6e6fdfbb3bed2499662b63e31d8b5c"
+      "sha": "1d0bfaa31fcd467077ebb6df2d9c29c4f01d82a81fe0f137b9d27f1b51112238"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2014-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/617",
+      "dateDocument": "2011-09-30",
+      "roFundstelle": "AS 2013 3215",
+      "titelDe": "Bundesgesetz über die Forschung am Menschen (Humanforschungsgesetz, HFG)",
+      "titelFr": "Loi fédérale relative à la recherche sur l'être humain (Loi relative à la recherche sur l'être humain, LRH)",
+      "titelIt": "Legge federale concernente la ricerca sull'essere umano (Legge sulla ricerca umana, LRUm)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/617/de",
+      "sha": "d32cccb7243d74779dcf058b3527d038c32393f43349d3646496f0a7de9d88ca"
     },
     {
       "art": "aenderung",
@@ -124,20 +305,43 @@
       "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
       "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
       "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/761/de",
-      "sha": "d30632d735bcbc8a8a0199ad82ca5e6d89ee6f71e1e246017d9990312f30f1c1"
+      "sha": "c76858447ec3d42b2446485b9b67a24b86ec2173a1ba10538b8003ef7692958b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "59285c74e44287ecb2b2c14114dded8bcb5adbad034a64da157f0192b1f953d5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/352",
+      "dateDocument": "2012-12-14",
+      "roFundstelle": "AS 2013 1493",
+      "titelDe": "Bundespersonalgesetz (BPG)",
+      "titelFr": "Loi sur le personnel de la Confédération (LPers)",
+      "titelIt": "Legge sul personale federale (LPers)",
+      "botschaftKey": "BOTSCHAFT-2011-1076",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/352/de",
+      "sha": "fc63566c192ca5e85f2b5d353474da486cf6859c36456c9907a5b222c17d34a4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "8394edec669cfae5136c59944d94f5090a354450619e5f819fbea7c5e2405412"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
       "art": "aenderung",
@@ -148,8 +352,11 @@
       "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/427/de",
-      "sha": "de96326ee67363076b7ae4ae996f81444c37e2d119a103206be72a5ad2d48d14"
+      "sha": "5f97890db7dd28511a510b7c52bf1461b256fcae084202cd3d2c53d52d04a20c"
     },
     {
       "art": "aenderung",
@@ -160,14 +367,28 @@
       "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 13. Juni 2008 des Heilmittelgesetzes",
       "titelFr": "Ordonnance sur l'entrée en vigueur complète de la modification du 13 juin 2008 de la loi sur les produits thérapeutiques",
       "titelIt": "Ordinanza sull'entrata in vigore integrale della modifica del 13 giugno 2008 della legge sugli agenti terapeutici",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/582/de",
-      "sha": "7a4dcc7b8623a942e5c1df786354dcf4ef158252f0cbe8842d259a829ee48696"
+      "sha": "3a83acb3daf891e3f377e20a72f0c71e4e80da9c4ca996abf7decafd5f9abbf2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "7ba19fc1ff721f6e5c811b6502faf728188cf3f475c34782243ca2048eabca64"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/349",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2009 2615",
+      "titelDe": "Bundesgesetz über die Erfindungspatente (Patentgesetz, PatG)",
+      "titelFr": "Loi fédérale sur les brevets d'invention (Loi sur les brevets, LBI)",
+      "titelIt": "Legge federale sui brevetti d'invenzione (Legge sui brevetti, LBI)",
+      "botschaftKey": "BOTSCHAFT-2008-109",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/349/de",
+      "sha": "7020b81440d7200609339f6a2a1a36e0c0c6fc953c29a60e11e3319ddb8f3b96"
     },
     {
       "art": "aenderung",
@@ -179,93 +400,75 @@
       "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
       "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
       "botschaftKey": "BOTSCHAFT-2007-384",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/682/de",
-      "sha": "a9e4bc7afdb2ddb91ddc1de8f15511c3a2a3283a58dbed5dd3267c1587ac0111"
+      "sha": "8edd27b71b878d7cf32d3870e83ab172abdc01ffef63dbf2aec38c6045b925fd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "5b1e1c26a930f45cbf7eb6e419b06aca3ca40b59ebd75bfc068d465da8ccf6ee"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/249",
+      "dateDocument": "2005-03-18",
+      "roFundstelle": "AS 2007 1411",
+      "titelDe": "Zollgesetz (ZG)",
+      "titelFr": "Loi sur les douanes (LD)",
+      "titelIt": "Legge sulle dogane (LD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/249/de",
+      "sha": "fb5f4289cf5ed36ff858bd8d2b43c519ebb3ca440b0262ef02fa8829058a0658"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "0d9b338c3707f1547fbf9e08c2d0c485bc44538ef44bbe3535fe78fad830e203"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/826",
+      "dateDocument": "2006-12-20",
+      "roFundstelle": "AS 2006 5599",
+      "titelDe": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
+      "titelFr": "Ordonnance de l'Assemblée fédérale concernant l'adaptation d'actes législatifs aux dispositions de la loi sur le Tribunal fédéral et de la loi sur le Tribunal administratif fédéral",
+      "titelIt": "Ordinanza dell'Assemblea federale che adegua taluni atti normativi alle disposizioni della legge sul Tribunale federale e della legge sul Tribunale amministrativo federale",
+      "botschaftKey": "BOTSCHAFT-2006-974",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/826/de",
+      "sha": "450c89b58e25b153fef21bbfa6cf58a9b6d2d6b97ee639ee311773152c7fc266"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2004-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "6703c98a67cf8349e8be99f03ed6e61700cef4e22007024fb3c395a7c917f741"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2002-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/422",
-      "dateDocument": "2000-12-15",
-      "roFundstelle": "AS 2001 2790",
-      "titelDe": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
-      "titelFr": "Loi fédérale sur les médicaments et les dispositifs médicaux (Loi sur les produits thérapeutiques, LPTh)",
-      "titelIt": "Legge federale sui medicamenti e i dispositivi medici (Legge sugli agenti terapeutici, LATer)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/422/de",
-      "sha": "338ce083a7f666b7f6211a0c0f6c0a163f9e447f3a38e727874b5d1ce2c0e187"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2001-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/812.21",
-      "sha": "455ab2b05f9ac24a586e58d177a9c2e6ad2778a5f0d2428d4afb9ab1dddf87af"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1990-05-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/570_570_570",
-      "dateDocument": "1989-10-06",
-      "roFundstelle": "AS 1990 570",
-      "titelDe": "Bundesgesetz vom 6. Oktober 1989 über die Pharmakopöe (Pharmakopöegesetz, PhaG)",
-      "titelFr": "Loi fédérale du 6 octobre 1989 sur la pharmacopée (Loi sur la pharmacopée, LPha)",
-      "titelIt": "Legge federale del 6 ottobre 1989 sulla farmacopea (Legge sulla farmacopea, LFarm)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/570_570_570/de",
-      "sha": "34940cb7650a4b53732d0e859b6fe6ec73d7a47df0d895b6a98e388369443454"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1987-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/794_794_794",
-      "dateDocument": "1987-05-20",
-      "roFundstelle": "AS 1987 794",
-      "titelDe": "Verordnung vom 20. Mai 1987 über die Schweizerische Pharmakopöe",
-      "titelFr": "Ordonnance du 20 mai 1987 concernant la Pharmacopée suisse",
-      "titelIt": "Ordinanza del 20 maggio 1987 sulla Farmacopea svizzera",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/794_794_794/de",
-      "sha": "d3ab30be09747a67eb4ea9a7be572ffa12069177e3cea0315f9e6bdac23eea2a"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1985-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/1514_1514_1514",
-      "dateDocument": "1984-12-17",
-      "roFundstelle": "AS 1984 1514",
-      "titelDe": "Verordnung vom 17. Dezember 1984 über die Schweizerische Pharmakopöe",
-      "titelFr": "Ordonnance du 17 décembre 1984 concernant la Pharmacopée suisse",
-      "titelIt": "Ordinanza del 17 dicembre 1984 sulla Farmacopea svizzera",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/1514_1514_1514/de",
-      "sha": "22183c53d6a41ea0ba67a3ae09f39293bb748db784275f7b1639c8ed324f98db"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1972-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/1181_1182_1182",
-      "dateDocument": "1971-08-25",
-      "roFundstelle": "AS 1971 1181",
-      "titelDe": "Bundesratsbeschluss vom 25. August 1971 über die Schweizerische Pharmakopöe",
-      "titelFr": "Arrêté du Conseil fédéral du 25 août 1971 concernant la Pharmacopée suisse",
-      "titelIt": "Decreto del Consiglio federale del 25 agosto 1971 concernente la farmacopea svizzera",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/1181_1182_1182/de",
-      "sha": "262beeac8e8725bc781d9795dc9eea8c52c0d48bdff9c05d4aa9bdfad695ada7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/13",
+      "dateDocument": "2003-06-20",
+      "roFundstelle": "AS 2004 297",
+      "titelDe": "Bundesgesetz über die Entlöhnung und weitere Vertragsbedingungen des obersten Kaders und der Mitglieder leitender Organe von Unternehmen und Anstalten des Bundes",
+      "titelFr": "Loi fédérale sur la rémunération et sur d'autres conditions contractuelles convenues avec les cadres du plus haut niveau hiérarchique et les membres des organes dirigeants des entreprises et établissements de la Confédération",
+      "titelIt": "Legge federale sulla rimunerazione e su altre condizioni contrattuali convenute con i quadri di grado più elevato e i membri degli organi dirigenti di aziende e di stabilimenti della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/13/de",
+      "sha": "401698c8b628c3623d3b7777804327d8d90513a50352aad03b6f106dc9afdc23"
     }
   ],
-  "sha": "bc1b8929bac9db6aff52371f8a6eaa2541084fc665dafb619a7cd8c7821f4aed"
+  "sha": "e303ddf3e779404f3ad599e65b5946b970cf6f2a5848f5c3a21d837c6eef314b"
 }

@@ -1640,5 +1640,314 @@
     "2026-05-28"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1987/1307_1307_1307",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1987/1307_1307_1307",
+    "inkrafttreten": "1987-06-26",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/1306_1306_1306",
+        "typ": 3,
+        "fassung": "2020-03-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1987/1307_1307_1307",
+        "typ": 5,
+        "datum": "1987-06-26",
+        "fassung": "1987-06-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/567_567_567",
+        "typ": 1,
+        "datum": "1988-02-01",
+        "fassung": "1988-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/567_567_567",
+        "typ": 9,
+        "datum": "1988-02-01",
+        "fassung": "1988-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/2286_2286_2286",
+        "typ": 1,
+        "datum": "1989-10-15",
+        "fassung": "1989-10-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/2286_2286_2286",
+        "typ": 9,
+        "datum": "1989-10-15",
+        "fassung": "1989-10-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/280_280_280",
+        "typ": 1,
+        "datum": "1989-03-01",
+        "fassung": "1989-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/280_280_280",
+        "typ": 9,
+        "datum": "1989-03-01",
+        "fassung": "1989-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/789_789_789",
+        "typ": 1,
+        "datum": "1990-06-01",
+        "fassung": "1990-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/789_789_789",
+        "typ": 9,
+        "datum": "1990-06-01",
+        "fassung": "1990-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/660_660_660",
+        "typ": 1,
+        "datum": "1992-03-15",
+        "fassung": "1992-03-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/660_660_660",
+        "typ": 9,
+        "datum": "1992-03-15",
+        "fassung": "1992-03-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/1901_1901_1901",
+        "typ": 1,
+        "datum": "1993-06-01",
+        "fassung": "1993-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/1901_1901_1901",
+        "typ": 9,
+        "datum": "1993-06-01",
+        "fassung": "1993-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/329",
+        "typ": 1,
+        "datum": "2004-01-08",
+        "fassung": "2004-01-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/329",
+        "typ": 9,
+        "datum": "2004-01-08",
+        "fassung": "2004-01-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/323",
+        "typ": 1,
+        "datum": "2005-04-13",
+        "fassung": "2005-04-13"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/323",
+        "typ": 9,
+        "datum": "2005-04-13",
+        "fassung": "2005-04-13"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/453",
+        "typ": 1,
+        "datum": "2006-07-07",
+        "fassung": "2006-07-07"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/453",
+        "typ": 9,
+        "datum": "2006-07-07",
+        "fassung": "2006-07-07"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/154",
+        "typ": 1,
+        "datum": "2008-01-25",
+        "fassung": "2008-01-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/154",
+        "typ": 9,
+        "datum": "2008-01-25",
+        "fassung": "2008-01-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/73",
+        "typ": 1,
+        "datum": "2011-01-14",
+        "fassung": "2011-01-14"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/73",
+        "typ": 9,
+        "datum": "2011-01-14",
+        "fassung": "2011-01-14"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/905",
+        "typ": 1,
+        "datum": "2011-10-26",
+        "fassung": "2011-10-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/905",
+        "typ": 9,
+        "datum": "2011-10-26",
+        "fassung": "2011-10-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/630",
+        "typ": 1,
+        "datum": "2012-09-28",
+        "fassung": "2012-09-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/630",
+        "typ": 9,
+        "datum": "2012-09-28",
+        "fassung": "2012-09-28"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/693",
+        "typ": 6,
+        "datum": "2012-11-06",
+        "fassung": "2012-11-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/90",
+        "typ": 1,
+        "datum": "2015-02-05",
+        "fassung": "2015-02-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/90",
+        "typ": 9,
+        "datum": "2015-02-05",
+        "fassung": "2015-02-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/634",
+        "typ": 1,
+        "datum": "2016-10-21",
+        "fassung": "2016-10-21"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/634",
+        "typ": 9,
+        "datum": "2016-10-21",
+        "fassung": "2016-10-21"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/441",
+        "typ": 1,
+        "datum": "2017-07-10",
+        "fassung": "2017-07-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/441",
+        "typ": 9,
+        "datum": "2017-07-10",
+        "fassung": "2017-07-10"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/341",
+        "typ": 1,
+        "datum": "2019-06-06",
+        "fassung": "2019-06-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/341",
+        "typ": 9,
+        "datum": "2019-06-06",
+        "fassung": "2019-06-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/217",
+        "typ": 1,
+        "datum": "2020-03-25",
+        "fassung": "2020-03-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/217",
+        "typ": 9,
+        "datum": "2020-03-25",
+        "fassung": "2020-03-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/105",
+        "typ": 9,
+        "datum": "2022-02-15",
+        "fassung": "2022-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/270",
+        "typ": 9,
+        "datum": "2026-05-28",
+        "fassung": "2026-05-28"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1987/1306_1306_1306": {
+        "dateDoc": "1986-10-06",
+        "roId": "RO 1987 1306",
+        "titelDe": "Bundesbescluss vom 6. Oktober 1986 über die Gutheissung des Übereinkommens gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
+        "titelFr": "Arrêté fédéral du 6 octobre 1986 relatif à l'aprobation de la Convention contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
+        "titelIt": "Decreto federale del 6 ottobre 1986 relativo all'approvazione della Convenzione contro la tortura e altre pene o trattamenti crudeli, inumani o degradanti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1988/567_567_567": {
+        "dateForce": "1988-02-01",
+        "dateDoc": "1988-02-01",
+        "roId": "RO 1988 567",
+        "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
+        "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
+        "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/2286_2286_2286": {
+        "dateForce": "1989-10-15",
+        "dateDoc": "1989-10-15",
+        "roId": "RO 1989 2286",
+        "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
+        "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
+        "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/280_280_280": {
+        "dateForce": "1989-03-01",
+        "dateDoc": "1989-03-01",
+        "roId": "RO 1989 280",
+        "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
+        "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
+        "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1990/789_789_789": {
+        "dateForce": "1990-06-01",
+        "dateDoc": "1990-06-01",
+        "roId": "RO 1990 789",
+        "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
+        "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
+        "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/660_660_660": {
+        "dateForce": "1992-03-15",
+        "dateDoc": "1992-03-15",
+        "roId": "RO 1992 660",
+        "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
+        "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
+        "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/1901_1901_1901": {
+        "dateForce": "1993-06-01",
+        "dateDoc": "1993-06-01",
+        "roId": "RO 1993 1901",
+        "titelDe": "Übereinkommen vom 10. Dezember 1984 gegen Folter und andere grausame, unmenschliche oder erniedrigende Behandlung oder Strafe",
+        "titelFr": "Convention du 10 décembre 1984 contre la torture et autres peines ou traitements cruels, inhumains ou dégradants",
+        "titelIt": "Convenzione del 10 dicembre 1984 contro la tortura ed altre pene o trattamenti crudeli, inumani o degradanti"
+      }
+    }
+  }
 }

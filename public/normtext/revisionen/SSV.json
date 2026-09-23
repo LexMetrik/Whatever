@@ -1,8 +1,8 @@
 {
   "erlassKey": "SSV",
   "sr": "741.21",
-  "abgerufen": "2026-09-12",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,8 +14,11 @@
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/438/de",
-      "sha": "50cff585a139e6040e2fabc8a337184521b177e18e70780c4641a1c2c8ea8f5d"
+      "sha": "23afff5828c8aeda5230a2ac60c27f4568077a22fde4fc747c2d62dad4692661"
     },
     {
       "art": "aenderung",
@@ -27,8 +30,11 @@
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/453/de",
-      "sha": "971613f26b5c5871f4d184337efcfb762422087775b5011a848e951ebd0b2eb7"
+      "sha": "d2db2d412894584b7e2f771ee166a1393bc1cdc51445f12288e472c5fb21cb28"
     },
     {
       "art": "aenderung",
@@ -40,8 +46,11 @@
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/458/de",
-      "sha": "045164d1ea1809046945f73e71d1f113bc5fd85ffe36dfa8d987d34a00e8f096"
+      "sha": "93ee303d307811f0645e7e08a730583f034c4214b40eddc871a8f33e4d32d2cc"
     },
     {
       "art": "aenderung",
@@ -52,8 +61,12 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/24/de",
-      "sha": "c3a1854810994d2bcb801a8359de41b355288840fe5fd0476e27278d4ae22199"
+      "sha": "887a65524a758aa10dbd09c5f3c64cd66617bb5374935a483c4065038785ebaf"
     },
     {
       "art": "aenderung",
@@ -64,8 +77,11 @@
       "titelDe": "Signalisationsverordnung (SSV). Berichtigung",
       "titelFr": "Ordonnance sur la signalisation routière (OSR). Erratum",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/343/de",
-      "sha": "d045e5a6d6b477c6b22564b07ac8042f70d9e70af9bf84d46b3332397f19d89f"
+      "sha": "8a8fd5f7f40cb052d7e9e9705d82380cb56cbcd4d68bc8ad26e90f3d7526ac8b"
     },
     {
       "art": "aenderung",
@@ -76,14 +92,26 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/27/de",
-      "sha": "6086c64163c760c0e9b8b918c8e4907a6053931edf865425612f63f422ab1158"
+      "sha": "a1ad3db58f113081c3d5f2e4f02a27ca7a9e435c9aa61f43ff0e2f356bee96ef"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.21",
-      "sha": "7fed02bec08bf5739905bfd649b55163855f4cfb60f017bcf1d651bb372e9561"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/50",
+      "dateDocument": "2024-12-13",
+      "roFundstelle": "AS 2025 50",
+      "titelDe": "Verordnung vom 13. Dezember 2024 über das automatisierte Fahren (VAF)",
+      "titelFr": "Ordonnance du 13 décembre 2024 sur la conduite automatisée (OCA)",
+      "titelIt": "Ordinanza del 13 dicembre 2024 sulla guida automatizzata (OGA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/50/de",
+      "sha": "ab2ba9a2ab9f2e9f58187dc078cc51777d9c9c1f613c3eaa88a2ead9bd3bb58b"
     },
     {
       "art": "aenderung",
@@ -94,8 +122,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/481/de",
-      "sha": "3d159aaf1e511f1fcb692a672e52a986ee65af800ba64ba40fc1c350c2b8f9ec"
+      "sha": "7225b533f0922a86ed9f2276141f1e9688cd8efbdea77859272bcb515c254367"
     },
     {
       "art": "aenderung",
@@ -108,8 +139,11 @@
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr). Correzione",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 2007 5957, das unter SR 725.111 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/144/de",
-      "sha": "693a6f963e37211dfb918da07c43f09a643da26a43c972523a8b6637bc344aeb"
+      "sha": "4b1cc6c85b66e384d5b42415059e665a25c6a6f339ecc302f3152da4a548d07a"
     },
     {
       "art": "aenderung",
@@ -120,8 +154,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/498/de",
-      "sha": "25329cf9b0be0f120e23ce7ad19c3ad05ec7baf0a0ddd63d3cd31d287c614f2a"
+      "sha": "ff722acc97d6868733200b4cb0a69af2e37941f908ab445e950e35e1a0791990"
     },
     {
       "art": "aenderung",
@@ -132,8 +169,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/424/de",
-      "sha": "51fb3df2d1e6a229d0891ae6759521c0e905b17537902a0e12f8a4eb0d2b88ca"
+      "sha": "4b21cb62f5921ae14b8863080013f6f4b82f2b49fd48e00bff66162745d6ae78"
     },
     {
       "art": "aenderung",
@@ -144,8 +184,11 @@
       "titelDe": "Signalisationsverordnung (SSV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/412/de",
-      "sha": "fd6295f09b71e8dcda5207336525c970f00ea4dbe6456430f3243101f232c115"
+      "sha": "df12bab35227d3fb5f1a2c2fb383841d5396855ca7fc64e4c44c3607b3e0835d"
     },
     {
       "art": "aenderung",
@@ -156,8 +199,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/818/de",
-      "sha": "d4905dda81a756833b8626febfcb5752e4d3d08cc59446c1dd436ec55c708b18"
+      "sha": "fecf2e0643018add79835c44b217134aa92ff8ff51063baedd93a6b76428cd1a"
     },
     {
       "art": "aenderung",
@@ -168,8 +214,12 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/461/de",
-      "sha": "e7d1c34ff688f6edc38b3e2447a65f04937fc202b27c2788a50ae33eebc0ed7e"
+      "sha": "2a24af8e3ced5300f56a1931f055858dfb108786ef0c8c46740041bb86db60b6"
     },
     {
       "art": "aenderung",
@@ -180,8 +230,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/275/de",
-      "sha": "d68a20cbfba2640248a7d0f3778c03e5fc85b30f683f81968cb212cae43e604d"
+      "sha": "08c9c1d4a6f8bf767a4f78fc9dc820aa517772865c38b56c132ade3398e0aa4a"
     },
     {
       "art": "aenderung",
@@ -192,8 +245,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/775/de",
-      "sha": "ccb9ea90ebb8fd72af55adb26ed47acaca5d5f253db9de3b396cdedfd3ed3213"
+      "sha": "c73b130498dc186e2f2836fbbb1a0021e50451152af40704110377b7fa29053c"
     },
     {
       "art": "aenderung",
@@ -204,14 +260,26 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/260/de",
-      "sha": "192a0b0cdb9fb517533708a05cf0183efce1362de59c1e8b35b5ad317f1a6b0b"
+      "sha": "423e2a8dc4edc37d9d1fc1462b365042500ac925d67f937914e024fd3f773d89"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.21",
-      "sha": "16731caaa9d209f91cf9586daf65a15b4862b36cef2e4b9b6a87d02b8aab6650"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/578",
+      "dateDocument": "2011-08-24",
+      "roFundstelle": "AS 2011 4111",
+      "titelDe": "Verordnung über die Abgabe für die Benützung von Nationalstrassen (Nationalstrassenabgabeverordnung, NSAV)",
+      "titelFr": "Ordonnance concernant la redevance pour l'utilisation des routes nationales (Ordonnance sur la vignette autoroutière, OVA)",
+      "titelIt": "Ordinanza concernente la tassa per l'utilizzazione delle strade nazionali (Ordinanza sul contrassegno stradale, OUSN)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/578/de",
+      "sha": "064a5ad1605817cde25cb52a610e785ddd6f06f208c8b7faf30f2e1be7a6d903"
     },
     {
       "art": "aenderung",
@@ -222,8 +290,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/730/de",
-      "sha": "fbd4020543cb24dd7d2bceb68bddc1aa16db3d65c15793c7489e42a65ae9b697"
+      "sha": "6f210095d84b560cf7c280ea8f65f89b3b61d650ec9c4e61d5a4fe5d1e6850da"
     },
     {
       "art": "aenderung",
@@ -234,14 +305,26 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/518/de",
-      "sha": "90245a73c73aae7b47a7f50d1206b5956e9ce53a75c7800dae9824a0b1c876ee"
+      "sha": "4c38039c51ed87db821f6f79318f3033f6fd8ab20ed0f03bc19102261c852d2d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.21",
-      "sha": "c86fcfc7c67940ea4ac37a85d7eb748f6b21eeb43a41cde6e790bb946faa8cda"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/796",
+      "dateDocument": "2007-11-07",
+      "roFundstelle": "AS 2007 5957",
+      "titelDe": "Nationalstrassenverordnung (NSV)",
+      "titelFr": "Ordonnance sur les routes nationales (ORN)",
+      "titelIt": "Ordinanza sulle strade nazionali (OSN)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/796/de",
+      "sha": "189727207d61239a4fc6aee74162c01fad554cb6b24cf4ca09c10f4b495e0540"
     },
     {
       "art": "aenderung",
@@ -252,14 +335,26 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSSTr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/298/de",
-      "sha": "6757825f485c878e56ff27a1d96128bacd565de2f49778644073aedc7028a60d"
+      "sha": "11c3ec7c321bd554e213b60e6f3b3bbbb82f5b07d32d8e06cbb968290e036532"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.21",
-      "sha": "44913a86789f67d448457a2e13ef74d35e8c7eac414d7a1c863c952bf57df367"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4705",
+      "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "sha": "509e7b22613546560d1e36883c9ec32fce8a8368a2969478863a0cb4a567bbfd"
     },
     {
       "art": "aenderung",
@@ -270,20 +365,41 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/582/de",
-      "sha": "a7beccd4e65de70d69d9703866b56f4b8e246ad7109a137afa82be1fa9f4ca58"
+      "sha": "830deb2b3373e89aefc4d06380222415cf3bba1cb8d0e6b2765f495b7d6b493c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.21",
-      "sha": "a9f46d32dca07cf6ed02b58f82b5d0ee77dc702132633793b71273381a791b6f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/108",
+      "dateDocument": "2004-02-11",
+      "roFundstelle": "AS 2004 945",
+      "titelDe": "Verordnung über den militärischen Strassenverkehr (VMSV)",
+      "titelFr": "Ordonnance sur la circulation militaire (OCM)",
+      "titelIt": "Ordinanza sulla circolazione stradale militare (OCSM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/108/de",
+      "sha": "9526ee0c9e782c862322a1e7b51eddbb18e591c6d3a5114ef65832bc5bc5768a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-12-14",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.21",
-      "sha": "7904bbde2a054fdcdcbb7f17994e0d767fb8e58f7a54fc925843f297b18bcdb8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/637",
+      "dateDocument": "2003-11-12",
+      "roFundstelle": "AS 2003 4289",
+      "titelDe": "Verordnung über Bau und Betrieb der Eisenbahnen (Eisenbahnverordnung, EBV)",
+      "titelFr": "Ordonnance sur la construction et l'exploitation des chemins de fer (Ordonnance sur les chemins de fer, OCF)",
+      "titelIt": "Ordinanza sulla costruzione e l'esercizio delle ferrovie (O sulle ferrovie, Oferr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/637/de",
+      "sha": "5724b19ad435223e8ad03ab57f3f146c8637734708c14c92855d95f8cf624ab4"
     },
     {
       "art": "aenderung",
@@ -294,8 +410,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/482/de",
-      "sha": "26a0737e74ec21f2bc937f9728f8e5ae1766e394d1b783b9fa57b340a646f5d6"
+      "sha": "8cbe81e9de43b970acb67d8a12df9a215cbc761649ea719ec65739a10ff77202"
     },
     {
       "art": "aenderung",
@@ -306,8 +425,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/470/de",
-      "sha": "fa8df7f8714aca1c439bf67b1f431c10d477e95e25abbadb740f741c73807743"
+      "sha": "a8657ff8038e7e4896d339c21235f46765f9484c0929c6b7b7b4f29d1bd9badc"
     },
     {
       "art": "aenderung",
@@ -318,8 +440,11 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/289/de",
-      "sha": "e92b94749061487c52c72465738e10f38cc8205bba1bb20e46eb55a26c9983c1"
+      "sha": "73dc42e5aad27b5c1eda97097ff3092e407f2338e24aa1ef3376b56d0c79e4f2"
     },
     {
       "art": "aenderung",
@@ -330,39 +455,375 @@
       "titelDe": "Signalisationsverordnung (SSV)",
       "titelFr": "Ordonnance sur la signalisation routière (OSR)",
       "titelIt": "Ordinanza sulla segnaletica stradale (OSStr)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/406/de",
-      "sha": "b559318c7754d785d8bcfe2a01d91afb2b1e0c13c4a3928b359d45506bcbfbde"
+      "sha": "58de9264d5c271ccddb514964cb6ae708ed4ddb7195ec1f256a07dc401dd6156"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.21",
-      "sha": "10e4e871bb2cc4b1e1bc80b9c4865be663d38227070c4744556f22018f607d55"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/44",
+      "dateDocument": "1999-12-06",
+      "roFundstelle": "AS 2000 243",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Umwelt, Verkehr, Energie und Kommunikation (OV-UVEK)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'environnement, des transports, de l'énergie et de la communication (Org DETEC)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'ambiente, dei trasporti, dell'energia e delle comunicazioni (Org-DATEC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/44/de",
+      "sha": "c917027a41f7a85d74dec8a0678223b0752e09ba0152402a5ba9d04e70bf54f2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/104",
+      "dateDocument": "1998-11-25",
+      "roFundstelle": "AS 1999 704",
+      "titelDe": "Verordnung über die Aufhebung und die Änderung von Verordnungen aufgrund der Bahnreform",
+      "titelFr": "Ordonnance abrogeant et modifiant les ordonnances sur la base de la réforme des chemins de fer",
+      "titelIt": "Ordinanza concernente l'abrogazione e la modifica di ordinanze in seguito alla riforma delle ferrovie",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/104/de",
+      "sha": "add1d06e0ac10e8961429d896713082c635743561766de90275563b23d3a2622"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1440_1440_1440",
+      "dateDocument": "1998-04-01",
+      "roFundstelle": "AS 1998 1440",
+      "titelDe": "Signalisationsverordnung (SSV), Änderung",
+      "titelFr": "Ordonnance sur la signalisation routière (OSR), Modification",
+      "titelIt": "Ordinanza sulla segnaletica stradale (OSStr), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1440_1440_1440/de",
+      "sha": "49e28f3d9cacb6911fb67a087a427a88ec74dbcc743e0c07c1abde7d8cf95190"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779",
+      "dateDocument": "1997-12-01",
+      "roFundstelle": "AS 1997 2779",
+      "titelDe": "Verordnung vom 1. Dezember 1997 über die Aufhebung und die Änderung von Verordnungen aufgrund der PTT-Reform",
+      "titelFr": "Ordonnance du 1er décembre 1997 concernant l'abrogation et la modification d'ordonnances découlant de la réforme des PTT",
+      "titelIt": "Ordinanza del 1° dicembre 1997 sull'abrogazione e la modifica di ordinanze in base alla riforma delle PTT",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2779_2779_2779/de",
+      "sha": "8c82ad789eb881f2709a96996131caef459a4be76042349064b95578ba64faa9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/4425_4425_4425",
+      "dateDocument": "1995-06-19",
+      "roFundstelle": "AS 1995 4425",
+      "titelDe": "Verordnung vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance du 19 juin 1995 concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza del 19 giugno 1995 concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/4425_4425_4425/de",
+      "sha": "ae1ac59c320f119a06c15476fc461760d2213a9cd4ea0de1ab7315b2022425f4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1103_1103_1103",
+      "dateDocument": "1994-03-07",
+      "roFundstelle": "AS 1994 1103",
+      "titelDe": "Signalisationsverordnung, Änderung",
+      "titelFr": "Ordonnance sur la signalisation routière, Modification",
+      "titelIt": "Ordinanza sulla segnaletica stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1103_1103_1103/de",
+      "sha": "9eca32e816028587cfaebc27b176afa29610ed1367a630f8c9e779a7a0fb7fcb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/816_816_816",
+      "dateDocument": "1994-03-07",
+      "roFundstelle": "AS 1994 816",
+      "titelDe": "Verkehrsregelnverordnung (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/816_816_816/de",
+      "sha": "6c344130f2213a0d742e8f0da437f5e66eeb617658ad59337cebd778ddcb899e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/820_820_820",
+      "dateDocument": "1993-01-13",
+      "roFundstelle": "AS 1993 820",
+      "titelDe": "Verordnung vom 13. Januar 1993 über den Bereich der Eidgenössischen Technischen Hochschulen (Verordnung ETH-Bereich)",
+      "titelFr": "Ordonnance du 13 janvier 1993 sur le domaine des écoles polytechniques fédérales (Ordonnance sur le domaine des EPF)",
+      "titelIt": "Ordinanza del 13 gennaio 1993 sul settore dei Politecnici federali (Ordinanza sul settore dei PF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/820_820_820/de",
+      "sha": "af8df30ffc6df52ba79531c01dd202968b211ebb50645cd5a242d3d3e5524ddd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-03-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/514_514_514",
+      "dateDocument": "1992-02-12",
+      "roFundstelle": "AS 1992 514",
+      "titelDe": "Verordnung über die Strassensignalisation (Signalisationsverordnung [SSV]), Änderung",
+      "titelFr": "Ordonnance sur la signalisation routière (OSR), Modification",
+      "titelIt": "Ordinanza sulla segnaletica stradale (OSStr), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/514_514_514/de",
+      "sha": "8ed390987f205047b28c1fd95761a69f755d078486281b6a648d69d540025a62"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/78_78_78",
+      "dateDocument": "1990-12-03",
+      "roFundstelle": "AS 1991 78",
+      "titelDe": "Verordnung vom 3. Dezember 1990 über die Änderung und Aufhebung von Erlassen des Strassenverkehrs infolge der Revision vom 6. Oktober 1989 des Bundesgesetzes über die Strassenverkehr",
+      "titelFr": "Ordonnance du 3 décembre 1990 concernant la modification et l'abrogation d'actes législatifs portant sur la circulation routière, suite à la révision du 6 octobre 1989 de la loi fédérale sur la circulation routière",
+      "titelIt": "Ordinanza del 3 dicembre 1990 concernente la modifica e l'abrogazione di atti normativi della circolazione stradale, in seguito alla revisione dell 6 ottobre 1989 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/78_78_78/de",
+      "sha": "9c9834d89f20962d5c3a69fac682a8992cc39efb8bce10f7bb71fd33a991d538"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/66_66_66",
+      "dateDocument": "1989-12-20",
+      "roFundstelle": "AS 1990 66",
+      "titelDe": "Verordnung vom 20. Dezember 1989 über die Änderung von Erlassen des Strassenverkehrs (Tempo 120/80)",
+      "titelFr": "Ordonnance du 20 décembre 1989 concernant la modification de testes légaux relatifs à la circulation routière (Limitation 120/80)",
+      "titelIt": "Ordinanza del 20 dicembre 1989 riguardante la modifica di testi giuridici sulla circolazione stradale (Velocità 120/80)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/66_66_66/de",
+      "sha": "3cc21c68cbb5deb6dccb36a94f585619230fadb685edb1b6b495693ccd5dbd21"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/438_438_438",
+      "dateDocument": "1989-01-25",
+      "roFundstelle": "AS 1989 438",
+      "titelDe": "Signalisationsverordnung (SSV), Änderung",
+      "titelFr": "Ordonnance sur la signalisation routière (OSR), Modification",
+      "titelIt": "Ordinanza sulla segnaletica stradale (OSStr), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/438_438_438/de",
+      "sha": "c76b57d3dffd0e55153d0745921b4114f7369cd7852c0d01ec515548dd83eb22"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/1392_1392_1392",
+      "dateDocument": "1987-10-21",
+      "roFundstelle": "AS 1987 1392",
+      "titelDe": "Verordnung über die Änderung von Erlassen des Strassenverkehrs (Tempo 80/120), Änderung",
+      "titelFr": "Ordonnance concernant la modification de textes légaux relatifs à la circulation routière (Limitation 80/120), Modification",
+      "titelIt": "Ordinanza riguardante la modifica di testi giuridici sulla circolazione stradale (Tempo 80/120), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/1392_1392_1392/de",
+      "sha": "5c5db211d2ed5547fe137ba0f03d2c4e26c57c9d1f22f40fff72b0ea73aa7379"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/1119_1119_1119",
+      "dateDocument": "1984-10-01",
+      "roFundstelle": "AS 1984 1119",
+      "titelDe": "Verordnung vom 1. Oktober 1984 über die Änderung von Erlassen des Strassenverkehrs (Beschränkung 80/120)",
+      "titelFr": "Ordonnance du 1er octobre 1984 concernant la modification de textes légaux relatifs à la circulation routière (Limitation 80/120)",
+      "titelIt": "Ordinanza del 1o ottobre 1984 riguardante la modifica di testi giuridici sulla circolazione stradale (Tempo 80/120)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/1119_1119_1119/de",
+      "sha": "d2302896e8d683176a79390874d067bbfb988471fa881ae99beaaf73ff3eaa5c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/1338_1338_1338",
+      "dateDocument": "1984-11-07",
+      "roFundstelle": "AS 1984 1338",
+      "titelDe": "Verordnung über Bau und Ausrüstung der Strassenfahrzeuge (BAV), Änderung",
+      "titelFr": "Ordonnance sur la construction et l'équipement des véhicules routiers (OCE), Modification",
+      "titelIt": "Ordinanza concernente la costruzione e l'equipaggiamento dei veicoli stradali (OCE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/1338_1338_1338/de",
+      "sha": "fd57e122bba24dc5cf34706648a686bbf6ed1e42dba9234484489df991008ddb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/176_176_176",
+      "dateDocument": "1985-01-25",
+      "roFundstelle": "AS 1985 176",
+      "titelDe": "Verordnung betreffend die Änderung der gesetzlichenTexte des Strassenverkehrs (Beschränkung 80/120), Berichtigung (nur franz und ital.)",
+      "titelFr": "Ordonnance concernant la modification de textes légaux relatifs à la circulation routière (Limitation 80/120), Errata",
+      "titelIt": "Ordinanza riguardante la modifica di testi giuridici sulla circolazione stradale (Tempo 80/120), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/176_176_176/de",
+      "sha": "9bfc5ddfb9625ad803d206460bbd4bb57fcdf5e99ed7141a71b07135e8dbd031"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1055_1055_1055",
+      "dateDocument": "1983-02-16",
+      "roFundstelle": "AS 1983 1055",
+      "titelDe": "Verordnung vom 16. Februar 1983 über Änderungen von Erlassen im Zusammenhang mit der Neugliederung der Bundesverwaltung",
+      "titelFr": "Ordonnance du 16 février 1983 concernant les modifications d'actes législatifs en rapport avec la réorganisation de l'administration fédérale",
+      "titelIt": "Ordinanza del 16 febbraio 1983 concernente la modifica di normative connesse con la riorganizzazione dell'amministrazione federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1055_1055_1055/de",
+      "sha": "f42bd7b8757a9649db1d9ffd6829bf8c472a16c73c42132c9ffb95e59fe90238"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1651_1651_1651",
+      "dateDocument": "1983-10-19",
+      "roFundstelle": "AS 1983 1651",
+      "titelDe": "Verordnung vom 19. Oktober 1983 über die Änderung von Erlassen des Strassenverkehrs (Tempo 50 innerorts)",
+      "titelFr": "Ordonnance concernant la modification de textes légaux relatifs à la circulation routière (50 à l'heure dans les localités)",
+      "titelIt": "Ordinanza concernente la modifica di norme della circolazione stradale (50 all'ora nelle località)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1651_1651_1651/de",
+      "sha": "2614aea5ea6b59ebc90b8919c0b1fddd380dde86b7f53d091e047e9650b445ca"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/531_531_531",
+      "dateDocument": "1982-04-07",
+      "roFundstelle": "AS 1982 531",
+      "titelDe": "Verordnung vom 7. April 1982 über die Änderung von Erlassen des Strassenverkehrs",
+      "titelFr": "Ordonnance du 7 avril 1982 concernant la modification de plusieurs dispositions sur la circulation routière",
+      "titelIt": "Ordinanza del 7 aprile 1982 concernente la modifica di diverse disposizioni sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/531_531_531/de",
+      "sha": "63b40f7be63c2922f139f08191160493728cf705ad00d86f5ea7820ff2a7e57d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1981/1862_1862_1862",
+      "dateDocument": "1981-11-30",
+      "roFundstelle": "AS 1981 1862",
+      "titelDe": "Signalisationsverordnung (SSV), Änderung",
+      "titelFr": "Ordonnance sur la signalisation routière (OSR), Modification",
+      "titelIt": "Ordinanza sulla segnaletica stradale (OSStr), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1981/1862_1862_1862/de",
+      "sha": "8cd7cc5e24ae8cfc6e8655229efcfceaa7ba87bb5272e18dec596ed5788eaed6"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1980-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1979/1961_1961_1961",
-      "dateDocument": "1979-09-05",
-      "roFundstelle": "AS 1979 1961",
-      "titelDe": "Signalisationsverordnung vom 5. September 1979 (SSV)",
-      "titelFr": "Ordonnance du 5 septembre 1979 sur la signalisation routière (OSR)",
-      "titelIt": "Ordinanza del 5 settembre 1979 sulla segnaletica stradale (OSStr)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/1961_1961_1961/de",
-      "sha": "c1a607be6cb62126f4a1c45694dba8c24c9c3cb8110127a46f364e835187d879"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/248_248_248",
+      "dateDocument": "1980-03-11",
+      "roFundstelle": "AS 1980 248",
+      "titelDe": "Signalisationsverordnung (SSV), Berichtigung (nur ital.)",
+      "titelFr": "Ordonnance sur la signalisation routière (OSR), Errata (seulemente en italien)",
+      "titelIt": "Ordinanza sulla segnaletica stradale (OSStr), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/248_248_248/de",
+      "sha": "2521f1f4bb8e51e78a04a8258e354683e670afd0145cf5fef6a201b573b5ad20"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1963-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1963/541_537_553",
-      "dateDocument": "1963-05-31",
-      "roFundstelle": "AS 1963 541",
-      "titelDe": "Verordnung vom 31. Mai 1963 über die Strassensignalisation",
-      "titelFr": "Ordonnance du 31 mai 1963 sur la signalisation routière",
-      "titelIt": "Ordinanza del 31 maggio 1963 sulla segnaletica stradale",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1963/541_537_553/de",
-      "sha": "66a0e32b92bb25bf085f8e97a6e7fb772a50ee6be74399a8f3590045ecd5d31f"
+      "dateEntryInForce": "1980-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/316_316_316",
+      "dateDocument": "1980-03-31",
+      "roFundstelle": "AS 1980 316",
+      "titelDe": "Signalisationsverordnung (SSV), Berichtigung (nur franz.)",
+      "titelFr": "Ordonnance sur la signalisation routière (OSR), Errata",
+      "titelIt": "Ordinanza sulla segnaletica stradale (OSStr), Correzione (solamente in francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/316_316_316/de",
+      "sha": "e2e143d65ca76f3edfc4494038bb2091f4b8ea0c6d464143e29c7fec6530a399"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1980-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/449_449_447",
+      "dateDocument": "1980-04-24",
+      "roFundstelle": "AS 1980 449",
+      "titelDe": "Verordnung über die Stassensignalisation (SSV), Berichtigung",
+      "titelFr": "Ordonnance sur la signalisation routière (OSR), Errata",
+      "titelIt": "Ordinanza sulla segnaletica stradale, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/449_449_447/de",
+      "sha": "6ea5a1bbe97430b139e67ce455af1f3fc5acc2c7d3678dfcaacab531f340a78b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1980-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1981/232_232_232",
+      "dateDocument": "1981-03-18",
+      "roFundstelle": "AS 1981 232",
+      "titelDe": "Verordnung über das Dienstverhältnis der persönlichen Mitarbeiter der Departementsvorsteher, Berichtigung",
+      "titelFr": "Ordonnance sur le statut des collaborateurs personnels des chefs de département, Errata (seulement en allemand)",
+      "titelIt": "Ordinanza sui rapporti d'impiego dei collaboratori personali dei capi di dipartimento, Correzione (solamente in tedesco)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1981/232_232_232/de",
+      "sha": "24e9b82b2df984176466e780b6579d9d681776fe895c6b58dd884b6a538d52f1"
     }
   ],
-  "sha": "076056e210fdc7e6b2c4dba01e7be5b0b466b17b86637d7e7a44fe073ebc07b6"
+  "sha": "f72b8d4d8c7826594a2ba5ccbdca7ec8d203277cd5815aab1417047b173a5ea8"
 }

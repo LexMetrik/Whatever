@@ -1,14 +1,24 @@
 {
   "erlassKey": "BEWG",
   "sr": "211.412.41",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.41",
-      "sha": "0727cfe539fcf089206d000c86bcfb34e36ef6f0bbf91affd7cb1f218de83bf5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/254",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 254",
+      "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
+      "titelFr": "Loi fédérale du 17 décembre 2021 sur l’adaptation du droit pénal accessoire au droit des sanctions modifié",
+      "titelIt": "Legge federale del 17 dicembre 2021 che adegua il diritto penale accessorio alla nuova disciplina delle sanzioni",
+      "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/254/de",
+      "sha": "13932c199fa8eae4cb6c6fc6ca937831cf4e92b80a43430ce5738ac0582d8419"
     },
     {
       "art": "aenderung",
@@ -20,32 +30,105 @@
       "titelFr": "Arrêté fédéral du 25 septembre 2020 portant approbation et mise en œuvre de l’Accord entre la Suisse et le Royaume-Uni relatif aux droits des citoyens à la suite du retrait du Royaume-Uni de l’Union européenne et de la fin de l’applicabilité de l’accord sur la libre circulation des personnes",
       "titelIt": "Decreto federale del 25 settembre 2020 che approva e traspone nel diritto svizzero l’Accordo tra la Svizzera e il Regno Unito sui diritti dei cittadini in seguito al recesso del Regno Unito dall’Unione europea e dall’Accordo sulla libera circolazione delle persone",
       "botschaftKey": "BOTSCHAFT-2020-226",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/85/de",
-      "sha": "7340c66ce1c93ab7fe2edc6442a01bb4229036e18b268422aa6a569c93226ab9"
+      "sha": "e3e33bc604a2074cbcf608966c0ca992017ae551520ec631525a271e4e638b5d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.41",
-      "sha": "de0473a0bbb2a076a7dc9c652a9d5e145449c697fc9920e5e2d200fbd076a075"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/116",
+      "dateDocument": "2012-09-28",
+      "roFundstelle": "AS 2013 585",
+      "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+      "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+      "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
+      "botschaftKey": "BOTSCHAFT-2012-495",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/116/de",
+      "sha": "c56e27844694dd77a190bae1867b84042f6a46bfcc47e0790bb1a570e0442263"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.41",
-      "sha": "34f6dd22cc152197fe87bbd9ca112e7ecdb7a699a84bacdb2bd7dd34038b2b9d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2010 1881",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2006-124",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "sha": "f58abceb941cc313b81bd4ceaf09349034ef2aa8c587d97b8a4f8b48412650e1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.41",
-      "sha": "98cf8805384cb9087ece38e00ffc3ce7a833d03712769124ea8eb54f330452a2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/860",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2007 6637",
+      "titelDe": "Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatgesetz, GSG)",
+      "titelFr": "Loi fédérale sur les privilèges, les immunités et les facilités, ainsi que sur les aides financières accordés par la Suisse en tant qu'Etat hôte (Loi sur l'Etat hôte, LEH)",
+      "titelIt": "Legge federale sui privilegi, le immunità e le facilitazioni, nonché sugli aiuti finanziari accordati dalla Svizzera quale Stato ospite (Legge sullo Stato ospite, LSO)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/860/de",
+      "sha": "3d8170b90bb2b7b021cfd0503b559e780d73e04e78d0d454b491c30f9a6e1b74"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.41",
-      "sha": "1fd7d2e6b933438a3e092bdc137239aaa0182d72641f4dbf9e07de8a1e718b5f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
     },
     {
       "art": "aenderung",
@@ -57,8 +140,11 @@
       "titelFr": "Loi fédérale sur l'acquisition d'immeubles par des personnes à l'étranger (LFAIE)",
       "titelIt": "Legge federale sull'acquisto di fondi da parte di persone all'estero (LAFE)",
       "botschaftKey": "BOTSCHAFT-2003-674",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/204/de",
-      "sha": "73fc6cfbc5cd4b1cfde7b23ca5b7edac2b1ee180a8d3c613781ab64e0a519db5"
+      "sha": "6d805a9e9800a3836f4b32f8b4f9b9296f916b8091241ebfe1006c9cf3e1c705"
     },
     {
       "art": "aenderung",
@@ -69,45 +155,74 @@
       "titelDe": "Bundesgesetz über den Erwerb von Grundstücken durch Personen im Ausland (BewG)",
       "titelFr": "Loi fédérale sur l'acquisition d'immeubles par des personnes à l'étranger (LFAIE)",
       "titelIt": "Legge federale sull'acquisto di fondi da parte di persone all'estero (LAFE)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/325/de",
-      "sha": "004402fa97777ef8e9af116792bb2de2b263e9ded213fe3903ad517e43ff933a"
+      "sha": "88b3ed258efcc3543289bfd7d63fba0596c6bb9db4a2e155ac0414689d26648b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.41",
-      "sha": "88470e2d94e3e652441486edc0670fa8fa3d43f4289aff5105383c6e657a7d37"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/139",
+      "dateDocument": "2001-12-14",
+      "roFundstelle": "AS 2002 685",
+      "titelDe": "Bundesgesetz betreffend die Bestimmungen über die Personenfreizügigkeit im Abkommen vom 21. Juni 2001 zur Änderung des Übereinkommens vom 4. Januar 1960 zur Errichtung der Europäischen Freihandelsassoziation (EFTA)",
+      "titelFr": "Loi fédérale relative aux dispositions concernant la libre circulation des personnes de l'Accord du 21 juin 2001 amendant la Convention du 4 janvier 1960 instituant l'Association européenne de libre-échange (AELE)",
+      "titelIt": "Legge federale relativa alle disposizioni concernenti la libera circolazione delle persone dell'Accordo del 21 giugno 2001 di emendamento della Convenzione del 4 gennaio 1960 istitutiva dell'Associazione europea di libero scambio (AELS)",
+      "botschaftKey": "BOTSCHAFT-2001-845",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/139/de",
+      "sha": "9b1cb134a5494190b5b8d52140c0397ba4e22e4afb1b4de50ad6f6bd826dc012"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2002-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/140",
+      "dateDocument": "1999-10-08",
+      "roFundstelle": "AS 2002 701",
+      "titelDe": "Bundesgesetz zum Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits über die Freizügigkeit",
+      "titelFr": "Loi fédérale sur l'Accord entre, d'une part, la Confédération suisse et, d'autre part, la Communauté Européenne et ses Etats membres sur la libre circulation des personnes",
+      "titelIt": "Legge federale concernente l'Accordo tra la Confederazione Svizzera, da una parte, e la Comunità europea ed i suoi Stati membri, dall'altra, sulla libera circolazione delle persone",
+      "botschaftKey": "BOTSCHAFT-1999-1_6128_5440_5092",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/140/de",
+      "sha": "e4ce2f0929fb8e04d07c4a4b0eb1633812a9b364fdeba53e410b4c9c86c8fc40"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/211.412.41",
-      "sha": "0fee5c982a82eea3610d742d06cbcd59f7b9e287d066191a95bca8cb5a9fae0b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "a54e2068e85f8bc380fa08b9533774adfb99d960f1582f3a97562fc6d4b43f2b"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1985-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/1148_1148_1148",
-      "dateDocument": "1983-12-16",
-      "roFundstelle": "AS 1984 1148",
-      "titelDe": "Bundesgesetz vom 16. Dezember 1983 über den Erwerb von Grundstücken durch Personen im Ausland (BewG)",
-      "titelFr": "Loi fédérale du 16 décembre 1983 sur l'acquisition d'immeubles par des personnes à l'étranger (LFAIE)",
-      "titelIt": "Legge federale del 16 dicembre 1983 sull'acquisto di fondi da parte di persone all'estero (LAFE)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/1148_1148_1148/de",
-      "sha": "5c2e87de2026f7f73cc6d9fed0099471a2a1ed3234ad66268bbe83f71cb7ad37"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1961-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1961/203_209_213",
-      "dateDocument": "1961-03-23",
-      "roFundstelle": "AS 1961 203",
-      "titelDe": "Bundesbeschluss vom 23. März 1961 über die Bewilligungspflicht für den Erwerb von Grundstücken durch Personen im Ausland",
-      "titelFr": "Arrêté fédéral du 23 mars 1961 instituant le régime de l'autorisation pour l'acquisition d'immeubles par des personnes domicilées à l'étranger",
-      "titelIt": "Decreto federale 23 marzo 1961 concernente l'autorizzazione per l'acquisto di fondi da parte di persone all'estero",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1961/203_209_213/de",
-      "sha": "81e89b3e13044ad2f1ccc5ca7601a5b39193e35f85218f3d7ae574c43dabd1e4"
+      "dateEntryInForce": "1997-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2086_2086_2086",
+      "dateDocument": "1997-04-30",
+      "roFundstelle": "AS 1997 2086",
+      "titelDe": "Bundesgesetz über den Erwerb von Grundstücken durch Personen im Ausland (BewG), Änderung",
+      "titelFr": "Loi fédérale sur l'acquisition d'immeubles par des personnes à l'étranger (LFAIE), Modification",
+      "titelIt": "Legge federale sull'acquisto di fondi da parte di persone all'estero (LAFE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2086_2086_2086/de",
+      "sha": "2a57017db94800ceb19ed1c6282eb4dba3d94fc1978dd50b624a422ea28e06b0"
     }
   ],
-  "sha": "fd638503f64e3ea335fd705296f6d43689bfa9fc2b2856beb3dbd1c11b5b926f"
+  "sha": "36a220ba932d1bbc7e929bed8e7784f0eceee11d97f8dbeafe1f84537bbec2c4"
 }

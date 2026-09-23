@@ -3131,5 +3131,346 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2018/102",
       "zielFundstelle": "AS 2018 801"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/2015/366",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2015/366",
+    "inkrafttreten": "2015-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/366",
+        "typ": 5,
+        "datum": "2015-07-01",
+        "fassung": "2015-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/568",
+        "typ": 6,
+        "datum": "2015-09-08",
+        "fassung": "2015-09-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/736",
+        "typ": 1,
+        "datum": "2015-12-01",
+        "fassung": "2015-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/891",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/891",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/39",
+        "typ": 1,
+        "datum": "2016-02-01",
+        "fassung": "2016-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/39",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2016-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/670",
+        "typ": 1,
+        "datum": "2016-12-01",
+        "fassung": "2016-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/247",
+        "typ": 1,
+        "datum": "2017-05-01",
+        "fassung": "2017-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/247",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2017-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/247",
+        "typ": 2,
+        "datum": "2022-01-01",
+        "fassung": "2017-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/102",
+        "typ": 1,
+        "datum": "2018-03-01",
+        "fassung": "2018-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/102",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2018-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/102",
+        "typ": 2,
+        "datum": "2022-01-01",
+        "fassung": "2018-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/657",
+        "typ": 1,
+        "datum": "2018-12-01",
+        "fassung": "2018-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/657",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2018-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/85",
+        "typ": 1,
+        "datum": "2018-03-01",
+        "fassung": "2018-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/85",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2018-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/289",
+        "typ": 1,
+        "datum": "2019-06-01",
+        "fassung": "2019-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/318",
+        "typ": 6,
+        "datum": "2019-06-04",
+        "fassung": "2019-06-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/318",
+        "typ": 6,
+        "datum": "2022-01-01",
+        "fassung": "2019-06-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/353",
+        "typ": 1,
+        "datum": "2019-07-01",
+        "fassung": "2019-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/134",
+        "typ": 1,
+        "datum": "2020-04-01",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/134",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/891",
+        "typ": 1,
+        "datum": "2020-12-15",
+        "fassung": "2020-12-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/891",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/915",
+        "typ": 1,
+        "datum": "2020-12-15",
+        "fassung": "2020-12-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/915",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2020-12-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/487",
+        "typ": 1,
+        "datum": "2021-09-01",
+        "fassung": "2021-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/927",
+        "typ": 1,
+        "datum": "2022-02-01",
+        "fassung": "2022-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/220",
+        "typ": 1,
+        "datum": "2022-05-01",
+        "fassung": "2022-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/220",
+        "typ": 2,
+        "datum": "2022-05-01",
+        "fassung": "2022-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/273",
+        "typ": 6,
+        "datum": "2022-05-05",
+        "fassung": "2022-05-05"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/444",
+        "typ": 1,
+        "datum": "2022-09-01",
+        "fassung": "2022-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/193",
+        "typ": 6,
+        "datum": "2023-04-24",
+        "fassung": "2023-04-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/517",
+        "typ": 1,
+        "datum": "2023-10-01",
+        "fassung": "2023-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/709",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/711",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/404",
+        "typ": 1,
+        "datum": "2024-09-01",
+        "fassung": "2024-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/491",
+        "typ": 1,
+        "datum": "2024-10-01",
+        "fassung": "2024-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/536",
+        "typ": 6,
+        "datum": "2024-10-04",
+        "fassung": "2024-10-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/506",
+        "typ": 1,
+        "datum": "2025-09-01",
+        "fassung": "2025-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/565",
+        "typ": 1,
+        "datum": "2025-12-01",
+        "fassung": "2025-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/176",
+        "typ": 6,
+        "datum": "2026-04-24",
+        "fassung": "2026-04-24"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2015/891": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-12-04",
+        "roId": "RO 2015 5699",
+        "titelDe": "Verordnung über die Vermeidung und die Entsorgung von Abfällen (Abfallverordnung, VVEA)",
+        "titelFr": "Ordonnance sur la limitation et l'élimination des déchets (Ordonnance sur les déchets, OLED)",
+        "titelIt": "Ordinanza sulla prevenzione e lo smaltimento dei rifiuti (Ordinanza sui rifiuti, OPSR)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/39": {
+        "dateForce": "2016-02-01",
+        "dateDoc": "2015-12-11",
+        "roId": "RO 2016 277",
+        "titelDe": "Verordnung vom 11. Dezember 2015 über den Zugang zu genetischen Ressourcen und die ausgewogene und gerechte Aufteilung der sich aus ihrer Nutzung ergebenden Vorteile (Nagoya-Verordnung, NagV)",
+        "titelFr": "Ordonnance du 11 décembre 2015 sur l'accès aux ressources génétiques et le partage juste et équitable des avantages découlant de leur utilisation (Ordonnance de Nagoya, ONag)",
+        "titelIt": "Ordinanza del 15 dicembre 2015 sull'accesso alle risorse genetiche e la giusta ed equa condivisione dei benefici derivanti dalla loro utilizzazione (Ordinanza di Nagoya, ONag)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/247": {
+        "dateForce": "2017-05-01",
+        "dateDoc": "2017-03-22",
+        "roId": "RO 2017 2593",
+        "titelDe": "Verordnung zum Rotterdamer Übereinkommen über das Verfahren der vorherigen Zustimmung nach Inkenntnissetzung für bestimmte Chemikalien im internationalen Handel (PIC-Verordnung, ChemPICV)",
+        "titelFr": "Ordonnance relative à la Convention de Rotterdam sur la procédure de consentement préalable en connaissance de cause applicable à certains produits chimiques qui font l'objet d'un commerce international (Ordonnance PIC, OPICChim)",
+        "titelIt": "Ordinanza relativa alla Convenzione di Rotterdam sulla procedura di assenso preliminare in conoscenza di causa per taluni prodotti chimici nel commercio internazionale (Ordinanza PIC, OPICChim)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/289": {
+        "dateForce": "2019-06-01",
+        "dateDoc": "2019-04-17",
+        "roId": "RO 2019 1495",
+        "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+        "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+        "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/891": {
+        "dateForce": "2020-12-15",
+        "dateDoc": "2020-11-18",
+        "roId": "RO 2020 5125",
+        "titelDe": "Verordnung über das Inverkehrbringen von und den Umgang mit Biozidprodukten (Biozidprodukteverordnung, VBP)",
+        "titelFr": "Ordonnance concernant la mise sur le marché et l'utilisation des produits biocides (Ordonnance sur les produits biocides, OPBio)",
+        "titelIt": "Ordinanza concernente l'immissione sul mercato e l'utilizzazione di biocidi (Ordinanza sui biocidi, OBioc)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/709": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-11-15",
+        "titelDe": "Verordnung über das Inverkehrbringen von und den Umgang mit Biozidprodukten (Biozidprodukteverordnung, VBP)",
+        "titelFr": "Ordonnance concernant la mise sur le marché et l’utilisation des produits biocides (Ordonnance sur les produits biocides, OPBio)",
+        "titelIt": "Ordinanza concernente l’immissione sul mercato e l’utilizzazione di biocidi (Ordinanza sui biocidi, OBioc)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/711": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-11-01",
+        "titelDe": "Verordnung vom 1. November 2023 über das Inverkehrbringen von Düngern (Düngerverordnung, DüV)",
+        "titelFr": "Ordonnance du 1er novembre 2023 sur la mise en circulation des engrais (Ordonnance sur les engrais, OEng)",
+        "titelIt": "Ordinanza del 1° novembre 2023 sulla messa in commercio di concimi (Ordinanza sui concimi, OCon)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/491": {
+        "dateForce": "2024-10-01",
+        "dateDoc": "2024-08-28",
+        "titelDe": "Verordnung vom 28. August 2024 über Tabakprodukte und elektronische Zigaretten (Tabakprodukteverordnung, TabPV)",
+        "titelFr": "Ordonnance du 28 août 2024 sur les produits du tabac et les cigarettes électroniques (Ordonnance sur les produits du tabac, OPTab)",
+        "titelIt": "Ordinanza del 28 agosto 2024 sui prodotti del tabacco e sulle sigarette elettroniche (Ordinanza sui prodotti del tabacco, OPTab)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/565": {
+        "dateForce": "2025-12-01",
+        "dateDoc": "2025-08-20",
+        "titelDe": "Pflanzenschutzmittelverordnung vom 20. August 2025 (PSMV)",
+        "titelFr": "Ordonnance du 20 août 2025 sur les produits phytosanitaires (OPPh)",
+        "titelIt": "Ordinanza del 20 agosto 2025 sui prodotti fitosanitari (OPF)"
+      }
+    }
   }
 }

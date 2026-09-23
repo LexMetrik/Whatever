@@ -371,5 +371,84 @@
     "2023-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2007/101",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2007/101",
+    "inkrafttreten": "2007-03-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/101",
+        "typ": 5,
+        "datum": "2007-03-01",
+        "fassung": "2007-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/101",
+        "typ": 30,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/181",
+        "typ": 6,
+        "datum": "2007-03-01",
+        "fassung": "2007-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/748",
+        "typ": 1,
+        "datum": "2007-12-01",
+        "fassung": "2007-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/844",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/844",
+        "typ": 2,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/800",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/658",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2007/748": {
+        "dateForce": "2007-12-01",
+        "dateDoc": "2007-11-07",
+        "roId": "RO 2007 5271",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l'assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/800": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-11-17",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/658": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-10-26",
+        "titelDe": "Verordnung vom 26. Oktober 2022 über die Änderung von Verordnungen im Bereich der Krankenversicherung zur Umsetzung des Abkommens zur Koordinierung der sozialen Sicherheit zwischen der Schweizerischen Eidgenossenschaft und dem Vereinigten Königreich von Grossbritannien und Nordirland",
+        "titelFr": "Ordonnance du 26 octobre 2022 sur les modifications d’ordonnances en matière d’assurance-maladie concernant la mise en œuvre de la Convention sur la coordination de la sécurité sociale entre la Confédération suisse et le Royaume-Uni de Grande-Bretagne et d’Irlande du Nord",
+        "titelIt": "Ordinanza del 26 ottobre 2022 sulla modifica di ordinanze in materia di assicurazione malattie in attuazione della Convenzione sul coordinamento della sicurezza sociale tra il Regno Unito di Gran Bretagna e Irlanda del Nord e la Confederazione Svizzera"
+      }
+    }
+  }
 }

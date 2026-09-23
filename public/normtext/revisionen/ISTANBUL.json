@@ -1,8 +1,8 @@
 {
   "erlassKey": "ISTANBUL",
   "sr": "0.311.35",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen des Europarats vom 11. Mai 2011 zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt (Istanbul-Konvention)",
       "titelFr": "Convention du Conseil de l’Europe du 11 mai 2011 sur la prévention et la lutte contre la violence à l’égard des femmes et la violence domestique (Convention d’Istanbul)",
       "titelIt": "Convenzione del Consiglio d’Europa dell’11 maggio 2011 sulla prevenzione e la lotta contro la violenza nei confronti delle donne e la violenza domestica (Convenzione di Istanbul)",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/799/de",
-      "sha": "963a8ff1a59a027025b0fa9204e51e19253250e9e6249eab4c08ee3239e877f4"
+      "sha": "81ec81638aa108b7765cb28c731c120781f9e97c7fba5ea05c088e75de2d0dae"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Übereinkommen des Europarats vom 11. Mai 2011 zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt (Istanbul-Konvention)",
       "titelFr": "Convention du Conseil de l’Europe du 11 mai 2011 sur la prévention et la lutte contre la violence à l’égard des femmes et la violence domestique (Convention d’Istanbul)",
       "titelIt": "Convenzione del Consiglio d’Europa dell’11 maggio 2011 sulla prevenzione e la lotta contro la violenza nei confronti delle donne e la violenza domestica (Convenzione di Istanbul)",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/639/de",
-      "sha": "9514f3bfc43459a645cad4f6d96910dc4f3856f302070e2fbc5e0607dc760cb9"
+      "sha": "131189d5854da9cbd2255bd6751e440064d1b0b2e1eef40f5becd4899569fa3f"
     },
     {
       "art": "aenderung",
@@ -37,22 +43,13 @@
       "titelDe": "Übereinkommen des Europarats vom 11. Mai 2011 zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt (Istanbul-Konvention)",
       "titelFr": "Convention du Conseil de l'Europe du 11 mai 2011 sur la prévention et la lutte contre la violence à l'égard des femmes et la violence domestique (Convention d'Istanbul)",
       "titelIt": "Convenzione del Consiglio d'Europa dell'11 maggio 2011 sulla prevenzione e la lotta contro la violenza nei confronti delle donne e la violenza domestica (Convenzione di Istanbul)",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/343/de",
-      "sha": "c3897a75cc1bc4700dd961073ae925268b7066ccc05bb04e26bf86582320cc2b"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2018-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/168",
-      "dateDocument": "2011-05-11",
-      "roFundstelle": "AS 2018 1119",
-      "titelDe": "Übereinkommen des Europarats zur Verhütung und Bekämpfung von Gewalt gegen Frauen und häuslicher Gewalt (Istanbul-Konvention) (mit Anhang)",
-      "titelFr": "Convention du Conseil de l'Europe sur la prévention et la lutte contre la violence à l'égard des femmes et la violence domestique (Convention d'Istanbul) (avec annexe)",
-      "titelIt": "Convenzione del Consiglio d'Europa sulla prevenzione e la lotta contro la violenza nei confronti delle donne e la violenza domestica (Convenzione di Istanbul) (con allegato)",
-      "botschaftKey": "BOTSCHAFT-2017-76",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/168/de",
-      "sha": "192420e9a9ab3dd78d0e1ea46ef670571ad07d5b8dec311244a0abc3b5b0a98f"
+      "sha": "e1bffdad209e06dda1536d8d4098b8b24fd7996e29eb731feef8426ea9751e5f"
     }
   ],
-  "sha": "a19c9211ebfef72b3e4900fa09e1a778b7890f9fd63d039cc2e4d7ddad98adf0"
+  "sha": "a956c043135ebb945975fe65ecd7aa2121586e6b8b53e7d03c771d749d7821f3"
 }

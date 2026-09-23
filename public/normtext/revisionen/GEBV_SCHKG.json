@@ -1,8 +1,8 @@
 {
   "erlassKey": "GEBV_SCHKG",
   "sr": "281.35",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Gebührenverordnung zum Bundesgesetz über Schuldbetreibung und Konkurs (GebV SchKG)",
       "titelFr": "Ordonnance sur les émoluments perçus en application de la loi fédérale sur la poursuite pour dettes et la faillite (OELP)",
       "titelIt": "Ordinanza sulle tasse riscosse in applicazione della legge federale sulla esecuzione e sul fallimento (OTLEF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/630/de",
-      "sha": "df4f66d0bf064785271774a506c1186fdf2098ca5c9252706e878bcf03e5039e"
+      "sha": "437ccf6206959a6031a84845e29418ef13935140fa41beefdbdec37a366bd2a3"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Gebührenverordnung zum Bundesgesetz über Schuldbetreibung und Konkurs (GebV SchKG)",
       "titelFr": "Ordonnance sur les émoluments perçus en application de la loi fédérale sur la poursuite pour dettes et faillite (OELP)",
       "titelIt": "Ordinanza sulle tasse riscosse in applicazione della legge federale sulla esecuzione e sul fallimento (OTLEF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/259/de",
-      "sha": "9370192c5962578a7691bc1856ed3e8576ecbdfc9fe4bc81b0b4e9569a63491f"
+      "sha": "0f4d5c82bd9e2251020530e504cf22740ec998e94446c95b46a7eca1309cb1b1"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,11 @@
       "titelDe": "Gebührenverordnung zum Bundesgesetz über Schuldbetreibung und Konkurs (GebV SchKG)",
       "titelFr": "Ordonnance sur les émoluments perçus en application de la loi fédérale sur la poursuite pour dettes et faillite (OELP)",
       "titelIt": "Ordinanza sulle tasse riscosse in applicazione della legge federale sulla esecuzione e sul fallimento (OTLEF)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/722/de",
-      "sha": "52b6d976be40b92cd430c15a4b8e4342f58a329a2d177820c865613b75bf4a15"
+      "sha": "4733e36aebc330e5721d823c1517b08a2814088d2571e41a58b82342e2131b24"
     },
     {
       "art": "aenderung",
@@ -49,57 +58,58 @@
       "titelDe": "Gebührenverordnung zum Bundesgesetz über Schuldbetreibung und Konkurs",
       "titelFr": "Ordonnance sur les émoluments perçus en application de la loi fédérale sur la poursuite pour dettes et la faillite (OELP)",
       "titelIt": "Ordinanza sulle tasse riscosse in applicazione della legge federale sulla esecuzione e sul fallimento",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/38/de",
-      "sha": "99a99e10ca693e098dc6942fa98e0904ce5f3b963e8b7ff0a8cc639b233b5fa6"
+      "sha": "819df4e581509725f5c375415dd37b7cc18195360954f47d315f8afafee29604"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.35",
-      "sha": "7ba5a5edc90ba5b8ec6c4c85c0901d3a5dc5d9dabb2c30a132c07820f673dc0e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+      "dateDocument": "2015-11-25",
+      "roFundstelle": "AS 2015 5413",
+      "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+      "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
+      "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/854/de",
+      "sha": "1dafdd859641fa404d58133e5b4a5fbffc90cf3b941d5b67377c0ecbd1b63527"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.35",
-      "sha": "bf5c1974069b1466ddb85c7bacbe46f903dfd660ef35cb85825e33390505c118"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/410",
+      "dateDocument": "2010-06-18",
+      "roFundstelle": "AS 2010 3053",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen an die Schweizerische Zivilprozessordnung",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances au code de procédure civile",
+      "titelIt": "Ordinanza che adegua ordinanze al Codice di procedura civile",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/410/de",
+      "sha": "dd5ceea670410cd30604ba2d4dc1515b3930e13f3f20a86e40f9798407474bf5"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1997-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/2937_2937_2937",
-      "dateDocument": "1996-09-23",
-      "roFundstelle": "AS 1996 2937",
-      "titelDe": "Gebührenverordnung vom 23. September 1996 zum Bundesgesetz über Schuldbetreibung und Konkurs (GebV SchKG)",
-      "titelFr": "Ordonnance du 23 septembre 1996 sur les émoluments perçus en application de la loi fédérale sur la poursuite pour dettes et la faillite (OELP)",
-      "titelIt": "Ordinanza del 23 settembre 1996 sulle tasse riscosse in applicazione della legge federale sulla esecuzione e sul fallimento (OTLEF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/2937_2937_2937/de",
-      "sha": "0f8128748fa54a3c42dc6a63af68ab4fcf1957f906acb3081feaa6a73503b369"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1971-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/1080_1080_1081",
-      "dateDocument": "1971-07-07",
-      "roFundstelle": "AS 1971 1080",
-      "titelDe": "Gebührenordnung vom 7. Juli 1971 zum Bundesgesetz über Schuldbetreibung und Konkurs (GebV SchKG)",
-      "titelFr": "Ordonnance du 7 juillet 1971 sur les frais exigibles en vertu de la loi fédérale sur la poursuite pour dettes et la faillite (OFLP)",
-      "titelIt": "Ordinanza del 7 luglio 1971 sulle tasse previste dalla legge federale sulla esecuzione e sul fallimento (OTLEF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/1080_1080_1081/de",
-      "sha": "e2ac9bb864374050ed6b0475df25126dc361fdc2f4a0885b3cea7fd8f50f1e1e"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1958-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1957/663_669_689",
-      "dateDocument": "1957-09-06",
-      "roFundstelle": "AS 1957 663",
-      "titelDe": "Gebührentarif vom 6. September 1957 zum Bundesgesetz über Schuldbetreibung und Konkurs",
-      "titelFr": "Tarif des frais du 6 septembre 1957 applicable à la loi fédéral sur la poursuite pour dettes et la faillite",
-      "titelIt": "Tariffa del 6 settembre 1957 applicabile alla legge federale sulla esecuzione e sul fallimento",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1957/663_669_689/de",
-      "sha": "3543cdebfb7af4efdffe858ce6910a4553268a18aaa70617b1230c1542564e28"
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779",
+      "dateDocument": "1997-12-01",
+      "roFundstelle": "AS 1997 2779",
+      "titelDe": "Verordnung vom 1. Dezember 1997 über die Aufhebung und die Änderung von Verordnungen aufgrund der PTT-Reform",
+      "titelFr": "Ordonnance du 1er décembre 1997 concernant l'abrogation et la modification d'ordonnances découlant de la réforme des PTT",
+      "titelIt": "Ordinanza del 1° dicembre 1997 sull'abrogazione e la modifica di ordinanze in base alla riforma delle PTT",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2779_2779_2779/de",
+      "sha": "8c82ad789eb881f2709a96996131caef459a4be76042349064b95578ba64faa9"
     }
   ],
-  "sha": "42d54fc69efbb10815b4392358c38c754b0af9b265ba01056206d6f9068a7651"
+  "sha": "ea4474ee4a9801c1a78bc0b9e60aec5d3f1c895dfc01eb0e2a9a7b67be214fcf"
 }

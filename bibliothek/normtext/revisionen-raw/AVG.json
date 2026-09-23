@@ -533,5 +533,335 @@
     "2026-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1991/392_392_392",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1991/392_392_392",
+    "inkrafttreten": "1991-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/392_392_392",
+        "typ": 5,
+        "datum": "1991-07-01",
+        "fassung": "1991-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/2080_2080_2080",
+        "typ": 1,
+        "datum": "1993-08-01",
+        "fassung": "1993-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822",
+        "typ": 1,
+        "datum": "1998-08-01",
+        "fassung": "1998-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/859_859_859",
+        "typ": 1,
+        "datum": "1998-03-22",
+        "fassung": "1998-03-22"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/34",
+        "typ": 1,
+        "datum": "1999-07-01",
+        "fassung": "1999-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/460",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/560",
+        "typ": 1,
+        "datum": "2002-12-01",
+        "fassung": "2002-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/260",
+        "typ": 1,
+        "datum": "2003-07-01",
+        "fassung": "2003-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/178",
+        "typ": 1,
+        "datum": "2006-04-01",
+        "fassung": "2006-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/758",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 1,
+        "datum": "2008-08-01",
+        "fassung": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+        "typ": 2,
+        "datum": "2008-08-01",
+        "fassung": "2008-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 2,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/171",
+        "typ": 1,
+        "datum": "2011-04-01",
+        "fassung": "2011-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/653",
+        "typ": 1,
+        "datum": "2015-11-01",
+        "fassung": "2015-11-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/223",
+        "typ": 6,
+        "datum": "2018-04-17",
+        "fassung": "2018-04-17"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/149",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/149",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/338",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2021-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/764",
+        "typ": 1,
+        "datum": "2026-01-01",
+        "fassung": "2026-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1993/2080_2080_2080": {
+        "dateForce": "1993-08-01",
+        "dateDoc": "1992-10-09",
+        "roId": "RO 1993 2080",
+        "titelDe": "Bundesstatistikgesetz vom 9. Oktober 1992 (BStatG)",
+        "titelFr": "Loi du 9 octobre 1992 sur la statistique fédérale (LSF)",
+        "titelIt": "Legge del 9 ottobre 1992 sulla statistica federale (LStat)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822": {
+        "dateForce": "1998-08-01",
+        "dateDoc": "1998-06-22",
+        "roId": "RO 1998 1822",
+        "titelDe": "Verordnung vom 22 Juni 1998 über die Änderung von Erlassen im Zusammenhang mit der Reorganisation des Eidgenössischen Volkswirtschaftsdepartementes",
+        "titelFr": "Ordonnance du 22 juin 1998 concernant les modifications d'actes législatifs en rapport avec la réorganisation du Département fédéral de l'économie",
+        "titelIt": "Ordinanza del 22 giugno 1998 concernente le modifiche di atti normativi in rapporto alla riorganizzazione del Dipartimento federale dell'economia"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/859_859_859": {
+        "dateForce": "1998-03-22",
+        "dateDoc": "1998-02-25",
+        "roId": "RO 1998 859",
+        "titelDe": "Verordnung vom 25. Februar 1998 über die Anpassung von Zuständigkeitsbestimmungen im Arbeitsvermittlungsgesetz",
+        "titelFr": "Ordonnance du 25 février 1998 concernant l'adaptation des dispositions réglementant les compétences dans la loi sur le service de l'emploi et la location de services",
+        "titelIt": "Ordinanza del 25 febbraio 1998 concernente l'adeguamento delle disposizioni attributive di competenza nella legge sul collocamento"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/34": {
+        "dateForce": "1999-07-01",
+        "dateDoc": "1999-11-17",
+        "roId": "RO 2000 187",
+        "titelDe": "Verordnung über die Anpassung von Erlassen im Zusammenhang mit der Bildung des neuen Bundesamtes «Staatssekretariat für Wirtschaft»",
+        "titelFr": "Ordonnance sur l'adaptation des actes législatifs en rapport avec la création du nouvel office fédéral du «Secrétariat d'Etat à l'économie»",
+        "titelIt": "Ordinanza sull'adattamento di atti normativi in seguito all'istituzione dell'Ufficio federale «Segretariato di Stato dell'economia»"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/374": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 2355",
+        "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+        "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+        "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/260": {
+        "dateForce": "2003-07-01",
+        "dateDoc": "2002-03-22",
+        "roId": "RO 2003 1728",
+        "titelDe": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+        "titelFr": "Loi fédérale sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Loi sur l'assurance-chômage, LACI)",
+        "titelIt": "Legge federale sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Legge sull'assicurazione contro la disoccupazione, LADI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/178": {
+        "dateForce": "2006-04-01",
+        "dateDoc": "2004-12-17",
+        "roId": "RO 2006 979",
+        "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf die neuen EG-Mitgliedstaaten zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits sowie über die Genehmigung der Revision der flankierenden Massnahmen zur Personenfreizügigkeit",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'extension de l'accord entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, sur la libre circulation des personnes aux nouveaux Etats membres de la Communauté européenne et portant approbation de la révision des mesures d'accompagnement concernant la libre circulation des personnes",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero, mediante revisione delle misure collaterali, il Protocollo concluso con la Comunità europea e i suoi Stati membri relativo all'estensione dell'Accordo sulla libera circolazione delle persone ai nuovi Stati membri della Comunità europea"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/549": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2006 3459",
+        "titelDe": "Schweizerisches Strafgesetzbuch",
+        "titelFr": "Code pénal suisse",
+        "titelIt": "Codice penale svizzero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/758": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2005-12-16",
+        "roId": "RO 2007 5437",
+        "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG)",
+        "titelFr": "Loi fédérale sur les étrangers et l'intégration (LEI)",
+        "titelIt": "Legge federale sugli stranieri e la loro integrazione (LStrI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/447": {
+        "dateForce": "2008-08-01",
+        "dateDoc": "2008-03-20",
+        "roId": "RO 2008 3437",
+        "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/262": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2010 1739",
+        "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+        "titelFr": "Code de procédure civile (CPC)",
+        "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/114": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2011 725",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+        "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+        "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/171": {
+        "dateForce": "2011-04-01",
+        "dateDoc": "2010-03-19",
+        "roId": "RO 2011 1167",
+        "titelDe": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+        "titelFr": "Loi fédérale sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Loi sur l'assurance-chômage, LACI)",
+        "titelIt": "Legge federale sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Legge sull'assicurazione contro la disoccupazione, LADI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/653": {
+        "dateForce": "2015-11-01",
+        "dateDoc": "2014-09-26",
+        "roId": "RO 2015 3857",
+        "titelDe": "Bundesgesetz über Schweizer Personen und Institutionen im Ausland (Auslandschweizergesetz, ASG)",
+        "titelFr": "Loi fédérale sur les personnes et les institutions suisses à l'étranger (Loi sur les Suisses de l'étranger, LSEtr)",
+        "titelIt": "Legge federale concernente persone e istituzioni svizzere all'estero (Legge sugli Svizzeri all'estero, LSEst)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/132": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2014-06-20",
+        "roId": "RO 2016 689",
+        "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+        "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+        "titelIt": "Legge federale sulla formazione continua (LFCo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/223": {
+        "dateForce": "2018-07-01",
+        "dateDoc": "2018-04-17",
+        "roId": "RO 2018 1387",
+        "titelDe": "Verordnung über die Arbeitsvermittlung und den Personalverleih (Arbeitsvermittlungsverordnung, AVV) (Betrifft nur den französischen Text)",
+        "titelFr": "Ordonnance sur le service de l'emploi et la location de services (Ordonnance sur le service de l'emploi, OSE)",
+        "titelIt": "Ordinanza sul collocamento e il personale a prestito (Ordinanza sul collocamento, OC) (Concerne soltanto il testo francese)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/149": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-09-27",
+        "roId": "RO 2020 811",
+        "titelDe": "Bundesgesetz über die Beiträge an die Kosten der Kantone für die Kontrolle der Einhaltung der Stellenmeldepflicht (BKSG)",
+        "titelFr": "Loi fédérale sur la participation aux frais des cantons pour les contrôles relatifs à l'obligation d'annoncer les postes vacants (LPCA)",
+        "titelIt": "Legge federale sulla partecipazione ai costi dei Cantoni per i controlli concernenti l'obbligo di annunciare i posti vacanti (LPCA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/338": {
+        "dateForce": "2021-07-01",
+        "dateDoc": "2020-06-19",
+        "titelDe": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+        "titelFr": "Loi fédérale sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Loi sur l’assurance-chômage, LACI)",
+        "titelIt": "Legge federale sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Legge sull’assicurazione contro la disoccupazione, LADI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/764": {
+        "dateForce": "2026-01-01",
+        "dateDoc": "2024-06-14",
+        "titelDe": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG) (Entschädigungssystem der Arbeitslosenkassen)",
+        "titelFr": "Loi fédérale sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Loi sur l’assurance-chômage, LACI) (Système d’indemnisation des caisses de chômage)",
+        "titelIt": "Legge federale sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Legge sull’assicurazione contro la disoccupazione, LADI) (Sistema di rimborso delle casse di disoccupazione)"
+      }
+    }
+  }
 }

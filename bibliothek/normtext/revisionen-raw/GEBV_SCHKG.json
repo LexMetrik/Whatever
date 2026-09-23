@@ -790,5 +790,92 @@
     "2026-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1996/2937_2937_2937",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1996/2937_2937_2937",
+    "inkrafttreten": "1997-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2937_2937_2937",
+        "typ": 5,
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779",
+        "typ": 1,
+        "datum": "1998-01-01",
+        "fassung": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/410",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/410",
+        "typ": 2,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/38",
+        "typ": 1,
+        "datum": "2016-02-01",
+        "fassung": "2016-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/722",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/259",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/630",
+        "typ": 1,
+        "datum": "2026-01-01",
+        "fassung": "2026-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-12-01",
+        "roId": "RO 1997 2779",
+        "titelDe": "Verordnung vom 1. Dezember 1997 über die Aufhebung und die Änderung von Verordnungen aufgrund der PTT-Reform",
+        "titelFr": "Ordonnance du 1<sup>er</sup> décembre 1997 concernant l'abrogation et la modification d'ordonnances découlant de la réforme des PTT",
+        "titelIt": "Ordinanza del 1° dicembre 1997 sull'abrogazione e la modifica di ordinanze in base alla riforma delle PTT"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/410": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-06-18",
+        "roId": "RO 2010 3053",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen an die Schweizerische Zivilprozessordnung",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances au code de procédure civile",
+        "titelIt": "Ordinanza che adegua ordinanze al Codice di procedura civile"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/854": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2015-11-25",
+        "roId": "RO 2015 5413",
+        "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+        "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
+        "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)"
+      }
+    }
+  }
 }

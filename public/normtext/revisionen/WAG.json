@@ -1,8 +1,8 @@
 {
   "erlassKey": "WAG",
   "sr": "921.0",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,20 +13,103 @@
       "titelDe": "Bundesgesetz über den Wald (Waldgesetz, WaG)",
       "titelFr": "Loi fédérale sur les forêts (Loi sur les forêts, LFo)",
       "titelIt": "Legge federale sulle foreste (Legge forestale, LFo)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/403/de",
-      "sha": "02834e7629e814cadd9dae6405e324985cd45d2d219670a2cb942a4b8e844f13"
+      "sha": "bfb009fc9625bda2971acb4c3667ce64379a60dee050c58f03916524c69e0e0a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2025-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/430",
+      "dateDocument": "2024-03-15",
+      "roFundstelle": "AS 2025 430",
+      "titelDe": "Bundesgesetz über den Wasserbau",
+      "titelFr": "Loi fédérale sur l’aménagement des cours d’eau",
+      "titelIt": "Legge federale sulla sistemazione dei corsi d’acqua",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/430/de",
+      "sha": "d091179b84cfa1b38952ff1e584917b6470645872ad8d9b1eb5b3e9de75696bc"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/921.0",
-      "sha": "94b507b9016ecc0e6fd1670f27b433306893bde315640339cfc89c5fc9aca642"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/623",
+      "dateDocument": "2023-06-16",
+      "roFundstelle": "AS 2024 623",
+      "titelDe": "Bundesgesetz über die Landwirtschaft (Landwirtschaftsgesetz, LwG)",
+      "titelFr": "Loi fédérale sur l’agriculture (Loi sur l’agriculture, LAgr)",
+      "titelIt": "Legge federale sull’agricoltura (Legge sull’agricoltura, LAgr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/623/de",
+      "sha": "d7db461757a4b70eebe36f4a4e674e6a08829f37e0b95262d6e14f49cab04a72"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/679",
+      "dateDocument": "2023-09-29",
+      "roFundstelle": "AS 2024 679",
+      "titelDe": "Bundesgesetz über eine sichere Stromversorgung mit erneuerbaren Energien (Änderung des Energiegesetzes und des Stromversorgungsgesetzes)",
+      "titelFr": "Loi fédérale relative à un approvisionnement en électricité sûr reposant sur des énergies renouvelables (Modification de la loi sur l’énergie et de la loi sur l’approvisionnement en électricité)",
+      "titelIt": "Legge federale su un approvvigionamento elettrico sicuro con le energie rinnovabili (Modifica della legge federale sull’energia e della legge sull’approvvigionamento elettrico)",
+      "botschaftKey": "BOTSCHAFT-2021-1666",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/679/de",
+      "sha": "62966121ac0edbc1b7116a5ee14af391e0462263c0610ea0e02029c7cc7ad34d"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/921.0",
-      "sha": "e371f20516c8037b8c335f8abf0ae8540bceeb36dd4a39374c186afd39bb1076"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/662",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2021 662",
+      "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG)",
+      "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC)",
+      "titelIt": "Legge federale sulle finanze della Confederazione (LFC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/662/de",
+      "sha": "7160dec4d79768b2f37296cac23ffe991093e795e97707cf9d9ab43380c69631"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/609",
+      "dateDocument": "2013-06-21",
+      "roFundstelle": "AS 2015 3631",
+      "titelDe": "Bundesgesetz über den Schutz von Marken und Herkunftsangaben (Markenschutzgesetz, MSchG)",
+      "titelFr": "Loi fédérale sur la protection des marques et des indications de provenance (Loi sur la protection des marques, LPM)",
+      "titelIt": "Legge federale sulla protezione dei marchi e delle indicazioni di provenienza (Legge sulla protezione dei marchi, LPM)",
+      "botschaftKey": "BOTSCHAFT-2009-1471",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/609/de",
+      "sha": "4095a23ecdaaf9a7458cbe6d2daf8446d79574097932213e2f37d53d409d3b48"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
       "art": "aenderung",
@@ -38,8 +121,11 @@
       "titelFr": "Loi fédérale sur les forêts (Loi sur les forêts, LFo)",
       "titelIt": "Legge federale sulle foreste (Legge forestale, LFo)",
       "botschaftKey": "BOTSCHAFT-2014-1078",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/538/de",
-      "sha": "afba9d03145a1a6dc137ceb7f953a41b64623cf5baf042bbf3fc3acc592d2c75"
+      "sha": "e68615a3b883ec8eaf86fa5d7aea1e3612b46a9133118f501d76ce6094b5fd53"
     },
     {
       "art": "aenderung",
@@ -50,63 +136,137 @@
       "titelDe": "Bundesgesetz über den Wald (Waldgesetz, WaG)",
       "titelFr": "Loi fédérale sur les forêts (Loi sur les forêts, LFo)",
       "titelIt": "Legge federale sulle foreste (Legge forestale, LFo)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/418/de",
-      "sha": "328561f0a445bd49e897af997a742c5958eb5e3d234e969c5c2f8332817cbd0f"
+      "sha": "80d2f509105303b7115831933e69d3a91ab53c8d7fd72ba813d9fc9d696db5f4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/921.0",
-      "sha": "01d3c93ba7871d520efd03b1c04a282b85565a2067f2c4b4292fba6943ac5a38"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5779",
+      "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+      "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)",
+      "botschaftKey": "BOTSCHAFT-2005-976",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/921.0",
-      "sha": "9c8a6f580ffec4f72e457eb905eef4e44fc58e3697887a4d52ccc2801d407ee7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/921.0",
-      "sha": "ec12f352e4d9136f6e560a59668540ec3db2a2873d07dcff418efdcf51a3bef9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/200",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2004 1633",
+      "titelDe": "Bundesgesetz über das Entlastungsprogramm 2003",
+      "titelFr": "Loi fédérale sur le programme d'allégement budgétaire 2003",
+      "titelIt": "Legge federale sul programma di sgravio 2003",
+      "botschaftKey": "BOTSCHAFT-2003-887",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/200/de",
+      "sha": "15626724d1c5c67b2ebd7840b853b7472dae4cd91e652f4b223aba221dc9703c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2004-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/921.0",
-      "sha": "1a58b842277b9817350f847ef251df71c3d6d2890da7015e7208805aaf9243a9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/674",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2003 4557",
+      "titelDe": "Bundesgesetz über die Berufsbildung (Berufsbildungsgesetz, BBG)",
+      "titelFr": "Loi fédérale sur la formation professionnelle (LFPr)",
+      "titelIt": "Legge federale sulla formazione professionale (Legge sulla formazione professionale, LFPr)",
+      "botschaftKey": "BOTSCHAFT-2000-1232",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/674/de",
+      "sha": "dbb8203872c383906f8211f317db51b91589837e100eb2f94587d91aec098d7e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2004-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/705",
+      "dateDocument": "2003-03-21",
+      "roFundstelle": "AS 2003 4803",
+      "titelDe": "Bundesgesetz über die Gentechnik im Ausserhumanbereich (Gentechnikgesetz, GTG)",
+      "titelFr": "Loi fédérale sur l'application du génie génétique au domaine non humain (Loi sur le génie génétique, LGG)",
+      "titelIt": "Legge federale sull'ingegneria genetica nel settore non umano (Legge sull'ingegneria genetica, LIG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/705/de",
+      "sha": "ce7d34c3a0df76c4571ca13f3fa046795e3e6eebd517c544fde526b363059797"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/921.0",
-      "sha": "81b3829ed37a1047810aead4cb6dbed57ee242a0eccf1d7869292862e677392b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+      "dateDocument": "1999-06-18",
+      "roFundstelle": "AS 1999 3071",
+      "titelDe": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de décision",
+      "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/472/de",
+      "sha": "a761a13e4eb553ad8499c948314b636504a456552288bf53322b10820bcae446"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1993-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/2521_2521_2521",
-      "dateDocument": "1991-10-04",
-      "roFundstelle": "AS 1992 2521",
-      "titelDe": "Bundesgesetz vom 4. Oktober 1991 über den Wald (Waldgesetz, WaG)",
-      "titelFr": "Loi fédérale du 4 octobre 1991 sur les forêts (Loi sur les forêts, LFo)",
-      "titelIt": "Legge federale del 4 ottobre 1991 sulle foreste (Legge forestale, LFo)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/2521_2521_2521/de",
-      "sha": "d7f7f9a586e574ba616d90cd102ab525f3b7e8195d89b0f55fb886eab20dfce1"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1903-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/19/492_456_469",
-      "dateDocument": "1902-10-11",
-      "roFundstelle": "AS 19 492",
-      "titelDe": "Bundesgesetz betreffend die eidgenössische Oberaufsicht über die Forstpolizei",
-      "titelFr": "Loi fédérale concernant la haute surveillance de la Confédération sur la police des forêts",
-      "titelIt": "LF concernente l'alta vigilanza della Confederazione sulla polizia delle foreste",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/19/492_456_469/de",
-      "sha": "5629e8aad2b8e159b4fa6cfbf82a85541703514fe4c607b5db63024c2a99f884"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/325_325_325",
+      "dateDocument": "1992-10-09",
+      "roFundstelle": "AS 1993 325",
+      "titelDe": "Bundesgesetz vom 9. Oktober 1992 über den Abbau von Finanzhilfen und Abgeltungen",
+      "titelFr": "Loi fédérale du 9 octobre 1992 sur la réduction d'aides financières et d'indemnités",
+      "titelIt": "Legge federale del 9 ottobre 1992 concernente la riduzione di aiuti finanziari e di indennità",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/325_325_325/de",
+      "sha": "23d692fe5b384c73712069d62418bc221669aac65456dca0e5c9a4dd38ee56bb"
     }
   ],
-  "sha": "880ef55a34e451cd389259d257153ba1cec15e70db2153cbfd8734dc674448cd"
+  "sha": "5070a250d20ca5d78474ac81087214f323161f3c2738974a92c5c4053b136156"
 }

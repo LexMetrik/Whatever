@@ -1,8 +1,8 @@
 {
   "erlassKey": "UNO_BRK",
   "sr": "0.109",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Übereinkommen vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
       "titelIt": "Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/190/de",
-      "sha": "c786e75ebce53d057d67771a58359d126b080b609598cdbe62f80b2defb1a1c5"
+      "sha": "9f3661280cba49a0c1cd5836cea8954d203442330fa40cca7d3685b95b20b760"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Übereinkommen vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
       "titelIt": "Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/208/de",
-      "sha": "1df9715b2f2f4d08ede5b9d060fc6435bc01fd3096445e62c6a95dfe824d4422"
+      "sha": "231021e77fd07936cfc874d840598657f31f4148dafa22a67d4cbef6cac4c909"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,11 @@
       "titelDe": "Übereinkommen vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
       "titelIt": "Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/89/de",
-      "sha": "9b7f0925307a25e8463fdb6191d86b4fabcc9f95020be67331debedbba5b0f79"
+      "sha": "a29d79034f2c86a2ebb24ab992612494b087fdcaff436462124611d8787b778d"
     },
     {
       "art": "aenderung",
@@ -49,8 +58,11 @@
       "titelDe": "Übereinkommen vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
       "titelIt": "Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/566/de",
-      "sha": "70ae24c3666ea59e7472be8cf713e11f71bb89a0b27e39f3c4c84610720eff06"
+      "sha": "e6d51491f1a83a15cf0121afd12784bd60c73a60c03d89d0e78d24d2c8e6db26"
     },
     {
       "art": "aenderung",
@@ -61,8 +73,12 @@
       "titelDe": "Übereinkommen vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
       "titelIt": "Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/655/de",
-      "sha": "b9df0caa3fa3e82f8df907e0689c651282c6bd8fe35ed8b6ffa463c7fbd73494"
+      "sha": "7ed00a6affe29e8e5f7948af0c86065eb4757abb79a0233a2300b36846cd3223"
     },
     {
       "art": "aenderung",
@@ -73,8 +89,12 @@
       "titelDe": "Übereinkommen vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
       "titelIt": "Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/329/de",
-      "sha": "3049e589c8d10e17de6f68007e4837ed30ae442da290b6a7f7ff3dffed9c7761"
+      "sha": "e72c4e436197d7b43ae5fe71ec3ccc8eab6b102db9709314578029c9cb745bcf"
     },
     {
       "art": "aenderung",
@@ -85,8 +105,12 @@
       "titelDe": "Übereinkommen vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
       "titelIt": "Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/383/de",
-      "sha": "8ab2a77989730d17436ab44b128d479db5e09dad979043864f4af81de29f0a60"
+      "sha": "c1f562dd3f5b764b5e9202d72d60c8ffc7d6c95deb33c2cbb5dcdbb3c3b2df40"
     },
     {
       "art": "aenderung",
@@ -97,8 +121,12 @@
       "titelDe": "Übereinkommen vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
       "titelIt": "Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/11/de",
-      "sha": "336d2114766ade69d94c9bd947db7f7af15553d199329e7c633d3cb7df307816"
+      "sha": "61a34144a93ff823e7549adaf3f51b6a3829cb77f52f9f57c6e4f69d750523ef"
     },
     {
       "art": "aenderung",
@@ -109,8 +137,12 @@
       "titelDe": "Übereinkommen vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
       "titelIt": "Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/572/de",
-      "sha": "dc5e93271cbc8a8627e3935f1adc790efb9f428a747fa7dc4742982d90499132"
+      "sha": "489b2bd1ac1e77efa3b7887a41708f0717db31817d95c5d8510f9da02dfff9d8"
     },
     {
       "art": "aenderung",
@@ -121,8 +153,12 @@
       "titelDe": "Übereinkommen vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
       "titelIt": "Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/211/de",
-      "sha": "fe1b5a3b3eb8153234c1b1aed2fa5f2fd5c473e55232e6bddd0ff1e38aa7631c"
+      "sha": "6b7518b22fee2deefc059bbae5b06bef666d16a47d3efd925fef3f6d59af0dd9"
     },
     {
       "art": "aenderung",
@@ -133,8 +169,12 @@
       "titelDe": "Übereinkommen vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
       "titelIt": "Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/632/de",
-      "sha": "d84f17959d05933b68d8de6203336fd1ddee49e08c42af88f52ae795a4131e00"
+      "sha": "97910e430b59374da8e2addcc92d2461d22db785e6647bcb6d4f7e100962ab6d"
     },
     {
       "art": "aenderung",
@@ -145,22 +185,13 @@
       "titelDe": "Übereinkommen vom 13. Dezember 2006 über die Rechte von Menschen mit Behinderungen",
       "titelFr": "Convention du 13 décembre 2006 relative aux droits des personnes handicapées",
       "titelIt": "Convenzione del 13 dicembre 2006 sui diritti delle persone con disabilità",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/562/de",
-      "sha": "2c5167496e4df0f378946450985f447fe99362ab20e2431790bacb24b1b7f2f4"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2014-05-15",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/245",
-      "dateDocument": "2006-12-13",
-      "roFundstelle": "AS 2014 1119",
-      "titelDe": "Übereinkommen über die Rechte von Menschen mit Behinderungen",
-      "titelFr": "Convention relative aux droits des personnes handicapées",
-      "titelIt": "Convenzione sui diritti delle persone con disabilità",
-      "botschaftKey": "BOTSCHAFT-2013-126",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/245/de",
-      "sha": "6b1e4229cb34c691289324f005244ff6b724e9cb05f6ffbe2efeb89e0a0b53f6"
+      "sha": "9401dba14bb0f2e8b3c2eb6395714c0210e56f22303a84a4c896d54b8d2c698a"
     }
   ],
-  "sha": "0b80e23f2401cc5d34d45f2f4da313ef8a05749d4194d94714792a0e852cc8be"
+  "sha": "34be7b2e7bb17da5b03edee728c76ec3d59e4dbe6f9ccc3212a47aa5240baad7"
 }

@@ -1,14 +1,23 @@
 {
   "erlassKey": "VAG",
   "sr": "961.01",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.01",
-      "sha": "78ea3f032297ec9132d94996fc41f836a3b6cd704db638c872b0ff2e6f8c081f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/424",
+      "dateDocument": "2022-12-16",
+      "roFundstelle": "AS 2024 424",
+      "titelDe": "Bundesgesetz über die Regulierung der Versicherungsvermittlertätigkeit",
+      "titelFr": "Loi fédérale sur la réglementation de l’activité des intermédiaires d’assurance",
+      "titelIt": "Legge federale che disciplina l’attività degli intermediari assicurativi",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/424/de",
+      "sha": "5011960883e37a99cde2eb4679228e6255af10f1be553015bcfb100d24a07c32"
     },
     {
       "art": "aenderung",
@@ -20,20 +29,77 @@
       "titelFr": "Loi fédérale sur la surveillance des entreprises d’assurance (Loi sur la surveillance des assurances, LSA)",
       "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)",
       "botschaftKey": "BOTSCHAFT-2020-2421",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/355/de",
-      "sha": "4fc4658b1cbad31f3b39773e14ed1ae3068587c490c15d4530f0e84326a600d1"
+      "sha": "3bf06ead1ca5603412bfc7433ca16a3594cf05f5e9f188a395ed2076cf96c774"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.01",
-      "sha": "69bffef4e781cb6bb0eb427670d7020b1a88d48d84b75a10275cdc2636bc2923"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/746",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4005",
+      "titelDe": "Obligationenrecht (Aktienrecht)",
+      "titelFr": "Code des obligations (Droit de la société anonyme)",
+      "titelIt": "Codice delle obbligazioni (Diritto della società anonima)",
+      "botschaftKey": "BOTSCHAFT-2017-112",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/746/de",
+      "sha": "6e2a231ee542118a1a8c2fb144cd7daccaff4c42b823a6cde0b78dd20ec3c94d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/109",
+      "dateDocument": "2022-02-02",
+      "roFundstelle": "AS 2022 109",
+      "titelDe": "Verordnung vom 2. Februar 2022 über die abschliessende Inkraftsetzung der Änderung vom 19. Juni 2020 des Obligationenrechts (Aktienrecht)",
+      "titelFr": "Ordonnance du 2 février 2022 portant dernière mise en vigueur partielle de la modification du 19 juin 2020 du code des obligations (Droit de la société anonyme)",
+      "titelIt": "Ordinanza del 2 febbraio 2022 sull’entrata in vigore integrale della modifica del 19 giugno 2020 del Codice delle obbligazioni (Diritto della società anonima)",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/109/de",
+      "sha": "13fdf620366c4fecc055ce85a455020b4ee2fe53b0794a23840ade356bb5d1f8"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.01",
-      "sha": "d1d5418fd2d952909107435734280379c62a826aa46992a4e009ae0ae1fec1de"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4631",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi fédérale sur les établissements financiers",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge sugli istituti finanziari",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/762/de",
+      "sha": "f5b929fddfb67e28bdb23ec97a2a84df7d4320d67c499a432b94fd25cc350b46"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5247",
+      "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+      "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+      "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)",
+      "botschaftKey": "BOTSCHAFT-2015-2141",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
+      "sha": "0b0591679ba6922abfddf11f586192ed7bbc2941ae8c07727d314ebd00d3c2be"
     },
     {
       "art": "aenderung",
@@ -44,14 +110,42 @@
       "titelDe": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
       "titelFr": "Loi fédérale sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Loi sur l'infrastructure des marchés financiers, LIMF)",
       "titelIt": "Legge federale sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Legge sull'infrastruttura finanziaria, LInFi)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/159/de",
-      "sha": "8c00a20c294698872512ae5cbbb511290331791d2d915a7be4328b274c8896c4"
+      "sha": "2c6b800aa0b0099aa31fe03fa8d5b54c2eebfa59ef212a7235fb9f46bea25a7a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.01",
-      "sha": "856d35d88478d26b79a0d8267a67e196cf3e39ade42ac259e16fb0259de4fb7a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/839",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 5137",
+      "titelDe": "Bundesgesetz betreffend die Aufsicht über die soziale Krankenversicherung (Krankenversicherungsaufsichtsgesetz, KVAG)",
+      "titelFr": "Loi fédérale sur la surveillance de l'assurance-maladie sociale (Loi sur la surveillance de l'assurance-maladie, LSAMal)",
+      "titelIt": "Legge federale concernente la vigilanza sull'assicurazione sociale contro le malattie (Legge sulla vigilanza sull'assicurazione malattie, LVAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/839/de",
+      "sha": "3dac970b8094cc734537c1cedf6a6b035df2afff36b22e39491f8224bf785de5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2015 5339",
+      "titelDe": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+      "titelFr": "Loi fédérale sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Loi sur l'infrastructure des marchés financiers, LIMF)",
+      "titelIt": "Legge federale sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Legge sull'infrastruttura finanziaria, LInFi)",
+      "botschaftKey": "BOTSCHAFT-2014-1633",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/853/de",
+      "sha": "801014a32710a891a31735ec84bdf8229f798d6f7bd305395c42b8849d95c02e"
     },
     {
       "art": "aenderung",
@@ -62,95 +156,109 @@
       "titelDe": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
       "titelFr": "Loi fédérale sur la surveillance des entreprises d'assurance (Loi sur la surveillance des assurances, LSA)",
       "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/305/de",
-      "sha": "70497cbee46921822706fb66114530d92e0ce7c346c3b6a309e62f984621b8bb"
+      "sha": "c56064bb9bf7a03e6c3c8f57795de994572a2575e8c2e97928080e62addb0ca8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.01",
-      "sha": "458cb5e79211f0a22b1a3ce436e5a9ee28a9ce4c2e51dbcf22a3a0d8e5994590"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/685",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2014 4073",
+      "titelDe": "Bundesgesetz über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsgesetz) (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften)",
+      "titelFr": "Loi fédérale sur l'agrément et la surveillance des réviseurs (Loi sur la surveillance de la révision) (Concentration de la surveillance des entreprises de révision et des sociétés d'audit)",
+      "titelIt": "Legge federale sull'abilitazione e la sorveglianza dei revisori (Legge sui revisori) (Concentrazione della sorveglianza sulle imprese di revisione e sulle società di audit)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/685/de",
+      "sha": "08673c2035efa577a201eb1a0bf43cb3111faaefbb16a0d0743e42dfe737ce02"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.01",
-      "sha": "318cf4d9004600241a43da0ceaa047cc58c7687edcb056d05ac66969909397cd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/810",
+      "dateDocument": "2011-12-23",
+      "roFundstelle": "AS 2012 6679",
+      "titelDe": "Obligationenrecht (Rechnungslegungsrecht)",
+      "titelFr": "Code des obligations (Droit comptable)",
+      "titelIt": "Codice delle obbligazioni (Diritto contabile)",
+      "botschaftKey": "BOTSCHAFT-2008-416",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/810/de",
+      "sha": "d9f500388cacbd9d10f048b0664f4acb2e657db132d4941c05c562df7a07a318"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.01",
-      "sha": "de9866405169e929f5df3c582ef04a7fed98474418220301e129c9799b07d3bc"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/559",
+      "dateDocument": "2011-03-18",
+      "roFundstelle": "AS 2011 3919",
+      "titelDe": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Sicherung der Einlagen)",
+      "titelFr": "Loi fédérale sur les banques et les caisses d'épargne (Loi sur les banques, LB) (Garantie des dépôts)",
+      "titelIt": "Legge federale sulle banche e le casse di risparmio (Legge sulle banche, LBCR) (Garanzia dei depositi)",
+      "botschaftKey": "BOTSCHAFT-2010-655",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/559/de",
+      "sha": "b8cfa6af171cedc4c73b85886ec2bc9387e2f96bb6d5c48310ff98b623057d8e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.01",
-      "sha": "b17606a789dc2a94ea4a9b21c3095c46d6959490549b16ce89d463d90d25b64c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "4e049f3ec1d7b48f85303a681b41203371425d289e3653e8f2647c00a4aff76d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.01",
-      "sha": "d0f253b1ffcdf5392cb8d6c5cd95efa0fe0ca763236e86c537d62eead9313749"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2008 5207",
+      "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+      "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+      "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)",
+      "botschaftKey": "BOTSCHAFT-2006-303",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/736/de",
+      "sha": "162aa309a29a721038ccb235a56a5a5f6f50cf5b5128d73fac8220d74bf8310d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/961.01",
-      "sha": "2e8720fd3776eae9246407a05899c2acc98cd4988a2212637609b63c9ab9600f"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2006-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/734",
-      "dateDocument": "2004-12-17",
-      "roFundstelle": "AS 2005 5269",
-      "titelDe": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
-      "titelFr": "Loi fédérale sur la surveillance des entreprises d'assurance (Loi sur la surveillance des assurances, LSA)",
-      "titelIt": "Legge federale sulla sorveglianza delle imprese di assicurazione (Legge sulla sorveglianza degli assicuratori, LSA)",
-      "botschaftKey": "BOTSCHAFT-2003-577",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/734/de",
-      "sha": "a12290ddd56050ca6907f2edb83c176c7d169b6222c3c27e99ae97a67e2d4567"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2003-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/32",
-      "dateDocument": "2002-10-04",
-      "roFundstelle": "AS 2003 232",
-      "titelDe": "Bundesgesetz betreffend die Aufsicht über die privaten Versicherungseinrichtungen (Versicherungsaufsichtsgesetz, VAG)",
-      "titelFr": "Loi fédérale sur la surveillance des institutions d'assurance privées (Loi sur la surveillance des assurances, LSA)",
-      "titelIt": "Legge federale sulla sorveglianza degli istituti di assicurazione privati (Legge sulla sorveglianza degli assicuratori, LSA)",
-      "botschaftKey": "BOTSCHAFT-2002-692",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/32/de",
-      "sha": "4cbc50a8cc4548408d049b172c4f25a194c903f38319ddcac46542af5aaaf089"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1979-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/1836_1836_1836",
-      "dateDocument": "1978-06-23",
-      "roFundstelle": "AS 1978 1836",
-      "titelDe": "Bundesgesetz vom 23. Juni 1978 betreffend die Aufsicht über die privaten Versicherungseinrichtungen (Versicherungsaufsichtsgesetz, VAG)",
-      "titelFr": "Loi fédérale du 23 juin 1978 sur la surveillance des institutions d'assurance privées (Loi sur la surveillance des assurances, LSA)",
-      "titelIt": "Legge federale del 23 giugno 1978 sulla sorveglianza degli istituti d'assicurazione privati (Legge sulla sorveglianza degli assicuratori, LSA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/1836_1836_1836/de",
-      "sha": "2c88aac36a2ddcd96eff7e3b9656a54dc693a4c7e5b121cce16984e456b94a0d"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1885-11-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/8/171_167_171",
-      "dateDocument": "1885-06-25",
-      "roFundstelle": "AS 8 171",
-      "titelDe": "Bundesgesetz betreffend Beaufsichtigung von Privatunternehmungen im Gebiete des Versicherungswesens",
-      "titelFr": "Loi fédérale concernant la surveillance des entreprises privées en matière d'assurance",
-      "titelIt": "LF su la sorveglianza delle imprese private in materia di assicurazione",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/8/171_167_171/de",
-      "sha": "4eda46b3ff75de39b879f2e5eb367ddfe109066359496c98c93f06df16db2cc9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     }
   ],
-  "sha": "d4018c85461581ea53b14da39cb7b73a156817dddb5839d6bba1f63c90ef2777"
+  "sha": "284a9dac69d0425c4d0de23adf1e597f282c0af77ee642f178d0a3b1d3fceb97"
 }

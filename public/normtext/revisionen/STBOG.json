@@ -1,14 +1,24 @@
 {
   "erlassKey": "STBOG",
   "sr": "173.71",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.71",
-      "sha": "a93d6bf8c3bf03267e3ef31e2afce0db03e494351df9d8c03b26a56e3fb351de"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 468",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2019-2368",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/468/de",
+      "sha": "4b9e33a8ad3ab55a2c54e2ab4657c445a2f90d1980ef0b657c5fd644f1b0b630"
     },
     {
       "art": "aenderung",
@@ -20,14 +30,27 @@
       "titelFr": "Loi fédérale du 17 décembre 2021 sur l’adaptation du droit pénal accessoire au droit des sanctions modifié",
       "titelIt": "Legge federale del 17 dicembre 2021 che adegua il diritto penale accessorio alla nuova disciplina delle sanzioni",
       "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/254/de",
-      "sha": "642929c9ec38d62b40a5242486c7a7a5c6d4dda50bbfb93383cae055d3655c8e"
+      "sha": "13932c199fa8eae4cb6c6fc6ca937831cf4e92b80a43430ce5738ac0582d8419"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.71",
-      "sha": "53343da4fce3508afadb8b48b81226ae807a30af797a06ef3bf17f027b0044be"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4085",
+      "titelDe": "Bundesgesetz über die Enteignung (EntG)",
+      "titelFr": "Loi fédérale sur l'expropriation (LEx)",
+      "titelIt": "Legge federale sull'espropriazione (LEspr)",
+      "botschaftKey": "BOTSCHAFT-2018-1660",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
+      "sha": "755d7ab8f701a74d9c35734df95434bb6a7726c3a351394536cd36bbc06c639a"
     },
     {
       "art": "aenderung",
@@ -39,38 +62,104 @@
       "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP) (Création d'une cour d'appel au Tribunal pénal fédéral)",
       "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP) (Istituzione di una corte d'appello in seno al Tribunale penale federale)",
       "botschaftKey": "BOTSCHAFT-2016-1190",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/624/de",
-      "sha": "ae39e7023e2d034a030db3b172b49c96d0611717bbf1e419de97e5c87e524d2c"
+      "sha": "9bda9b8922414c93cd3d60762a2a956c6b60b6490b7d3cb9a599994d14bbc8ad"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/795",
+      "dateDocument": "2017-09-29",
+      "roFundstelle": "AS 2018 5103",
+      "titelDe": "Bundesgesetz über Geldspiele (Geldspielgesetz, BGS)",
+      "titelFr": "Loi fédérale sur les jeux d'argent (LJAr)",
+      "titelIt": "Legge federale sui giochi in denaro (LGD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/795/de",
+      "sha": "508048285df7f97b6a068782b1ed3561ffd7275852054dd1c899dc5ef239d4db"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.71",
-      "sha": "7a869bc20936e737baeb5df14648b65995f51960ee59227e09a005ad6128ad45"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.71",
-      "sha": "0434f4695efac529b975a6aaa89453098b47abbbec508b675ddf1db90576ce0e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/380",
+      "dateDocument": "2015-03-20",
+      "roFundstelle": "AS 2016 2329",
+      "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+      "titelFr": "Code pénal et code pénal militaire (Mise en uvre de l'art. 121, al. 3 à 6, Cst. relatif au renvoi des étrangers criminels)",
+      "titelIt": "Codice penale svizzero e Codice penale militare (Attuazione dell'art. 121 cpv. 36 Cost. sull'espulsione di stranieri che commettono reati)",
+      "botschaftKey": "BOTSCHAFT-2013-1078",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/380/de",
+      "sha": "3617509c09b6bb33185ac6d9c4b6ea1e4ba544b1416e950dc141629aa6880802"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.71",
-      "sha": "da4c66bfdae5413237573c9e107ce32988b8bb382599412a62c78a996620d282"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/657",
+      "dateDocument": "2012-03-16",
+      "roFundstelle": "AS 2012 5647",
+      "titelDe": "Bundesgesetz über die Änderung des Höchstalters für Richter und Richterinnen des Bundesstrafgerichts, des Bundesverwaltungsgerichts und des Bundespatentgerichts",
+      "titelFr": "Loi fédérale sur l'augmentation de l'âge maximal des juges du Tribunal pénal fédéral, du Tribunal administratif fédéral et du Tribunal fédéral des brevets",
+      "titelIt": "Legge federale sull'innalzamento dell'età massima dei giudici del Tribunale penale federale, del Tribunale amministrativo federale e del Tribunale federale dei brevetti",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/657/de",
+      "sha": "7b4ac857815b1f73efad0ab0153e7062d6e4dfca9276b9a6d956531958d6ad51"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.71",
-      "sha": "27eba2a1adb5aad1aa394d6e64a3b059f625b1f529360ad6759b8e987f2f4075"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/159",
+      "dateDocument": "2010-10-01",
+      "roFundstelle": "AS 2012 941",
+      "titelDe": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG) (Datenschutz bei der Benutzung der elektronischen Infrastruktur)",
+      "titelFr": "Loi sur l'organisation du gouvernement et de l'administration (LOGA) (Protection des données lors de l'utilisation de l'infrastructure électronique)",
+      "titelIt": "Legge sull'organizzazione del Governo e dell'Amministrazione (LOGA) (Protezione dei dati derivanti dall'utilizzazione dell'infrastruttura elettronica)",
+      "botschaftKey": "BOTSCHAFT-2009-1469",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/159/de",
+      "sha": "371d70c1a1f408bc29bc2ea6c6aa638beb52700e295ce60e42a57224504082ac"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-12-05",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/173.71",
-      "sha": "8d37ce53ca9d69f82a9c2a94dcc4eb82e9e3292dc42b0d13cb0ca6f37b4b0ba5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/663",
+      "dateDocument": "2011-06-17",
+      "roFundstelle": "AS 2011 4627",
+      "titelDe": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Gesuche um Aufhebung der Immunität)",
+      "titelFr": "Loi sur l'Assemblée fédérale (Loi sur le Parlement, LParl) (Examen des requêtes visant à lever l'immunité)",
+      "titelIt": "Legge federale sull'Assemblea federale (Legge sul Parlamento, LParl) (Richieste di soppressione dell'immunità)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/663/de",
+      "sha": "b26cdc6f0848bcc22ec99424d2396696f82a0c68e79c2fe8d5c2ccb6d5acb653"
     },
     {
       "art": "aenderung",
@@ -81,47 +170,12 @@
       "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
       "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP)",
       "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/57/de",
-      "sha": "fc6a52c65ea16483a721ca62c4f32b248c9afe1e3318f9df93d0ebffe10fd0ab"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2011-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/444",
-      "dateDocument": "2010-03-19",
-      "roFundstelle": "AS 2010 3267",
-      "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
-      "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP)",
-      "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)",
-      "botschaftKey": "BOTSCHAFT-2008-1395",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/444/de",
-      "sha": "40211d2b401ff620eca8ce32017bcaa6aa97fea9cd2c68fa4467e9e333c81d92"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2003-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/313",
-      "dateDocument": "2003-06-25",
-      "roFundstelle": "AS 2003 2131",
-      "titelDe": "Verordnung über die Inkraftsetzung des Strafgerichtsgesetzes und die teilweise Inkraftsetzung des Bundesgesetzes über den Sitz des Bundesstrafgerichts und des Bundesverwaltungsgerichts",
-      "titelFr": "Ordonnance sur la mise en vigueur de la loi sur le Tribunal pénal fédéral et la mise en vigueur partielle de la loi sur le siège du Tribunal pénal fédéral et celui du Tribunal administratif fédéral",
-      "titelIt": "Ordinanza concernente la messa in vigore della legge sul Tribunale penale federale e la messa in vigore parziale della legge federale sulle sedi del Tribunale penale federale e del Tribunale amministrativo federale",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/313/de",
-      "sha": "00c2bbb5efdc6b0e062d129015c5d11a9b16fb8936c7b5b7b26977d4f3438b55"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2003-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/314",
-      "dateDocument": "2002-10-04",
-      "roFundstelle": "AS 2003 2133",
-      "titelDe": "Bundesgesetz über das Bundesstrafgericht (Strafgerichtsgesetz, SGG)",
-      "titelFr": "Loi fédérale sur le Tribunal pénal fédéral (LTPF)",
-      "titelIt": "Legge sul Tribunale penale federale (LTPF)",
-      "botschaftKey": "BOTSCHAFT-2001-731",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/314/de",
-      "sha": "67306522c3a773572cd8ca4ea01b89fd7e6e425073eb55abffd7655c2de35513"
+      "sha": "a80ffd46c15c34b57a50c6140a5d5451df14d8e0f689ae127f876c6caa89026f"
     }
   ],
-  "sha": "5e6e6780724acb8789ac67c650fe24ec834b652e985917c05db76b87bd5d54dc"
+  "sha": "5ae73e279ad24278aafd94569f729b4894d54c877d79f2d27dc3c27a00067f52"
 }

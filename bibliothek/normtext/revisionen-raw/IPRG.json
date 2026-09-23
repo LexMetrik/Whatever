@@ -1065,5 +1065,489 @@
     "2026-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1988/1776_1776_1776",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1988/1776_1776_1776",
+    "inkrafttreten": "1989-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/1776_1776_1776",
+        "typ": 5,
+        "datum": "1989-01-01",
+        "fassung": "1989-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/1945_1945_1945",
+        "typ": 1,
+        "datum": "1993-07-01",
+        "fassung": "1993-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1126_1126_1126",
+        "typ": 1,
+        "datum": "1996-01-01",
+        "fassung": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227",
+        "typ": 1,
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/149",
+        "typ": 1,
+        "datum": "2000-01-01",
+        "fassung": "2000-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/231",
+        "typ": 1,
+        "datum": "1999-10-08",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/231",
+        "typ": 1,
+        "datum": "2004-06-01",
+        "fassung": "2004-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/320",
+        "typ": 1,
+        "datum": "2004-07-01",
+        "fassung": "2004-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/317",
+        "typ": 1,
+        "datum": "2005-06-01",
+        "fassung": "2005-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/422",
+        "typ": 6,
+        "datum": "2004-07-01",
+        "fassung": "2004-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/218",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/374",
+        "typ": 1,
+        "datum": "2007-07-01",
+        "fassung": "2007-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/685",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/75",
+        "typ": 1,
+        "datum": "2007-03-01",
+        "fassung": "2007-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/366",
+        "typ": 1,
+        "datum": "2008-07-01",
+        "fassung": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/379",
+        "typ": 1,
+        "datum": "2009-07-01",
+        "fassung": "2009-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/814",
+        "typ": 1,
+        "datum": "2010-01-01",
+        "fassung": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 2,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/800",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/272",
+        "typ": 1,
+        "datum": "2010-01-01",
+        "fassung": "2010-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/226",
+        "typ": 1,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/250",
+        "typ": 1,
+        "datum": "2013-05-01",
+        "fassung": "2013-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/53",
+        "typ": 1,
+        "datum": "2014-07-01",
+        "fassung": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/379",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/179",
+        "typ": 1,
+        "datum": "2017-04-01",
+        "fassung": "2017-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/179",
+        "typ": 6,
+        "datum": "2017-04-01",
+        "fassung": "2017-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/527",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/181",
+        "typ": 1,
+        "datum": "2020-04-01",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/767",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/33",
+        "typ": 1,
+        "datum": "2021-02-01",
+        "fassung": "2021-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/668",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/747",
+        "typ": 1,
+        "datum": "2022-07-01",
+        "fassung": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/747",
+        "typ": 2,
+        "datum": "2022-07-01",
+        "fassung": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/43",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/491",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/330",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/561",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/590",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/684",
+        "typ": 1,
+        "datum": "2026-01-01",
+        "fassung": "2026-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1993/1945_1945_1945": {
+        "dateForce": "1993-07-01",
+        "dateDoc": "1992-06-19",
+        "roId": "RO 1993 1945",
+        "titelDe": "Bundesgesetz vom 19. Juni 1992 über den Datenschutz (DSG)",
+        "titelFr": "Loi fédérale du 19 juin 1992 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 19 giugno 1992 sulla protezione dei dati (LPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/1126_1126_1126": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1994-10-07",
+        "roId": "RO 1995 1126",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Herabsetzung des zivilrechtlichen Mündigkeits- und Ehefähigkeitsalters, Unterhaltspflicht der Eltern), Änderung",
+        "titelFr": "Code civil suisse (Abaissement de l'âge de la majorité civile et matrimoniale, obligation d'entretien des père et mère), Modification",
+        "titelIt": "Codice civile svizzero (Abbassamento della maggiore età civile e matrimomiale, obbligo di mantenimento da perte dei genitori) Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/1227_1227_1227": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1994-12-16",
+        "roId": "RO 1995 1227",
+        "titelDe": "Bundesgesetz über Schuldbetreibung und Konkurs, Änderung",
+        "titelFr": "Loi fédérale sur la poursuite pour dettes et la faillite, Modification",
+        "titelIt": "Legge federale sulla esecuzione e sul fallimento, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1999/149": {
+        "dateForce": "2000-01-01",
+        "dateDoc": "1998-06-26",
+        "roId": "RO 1999 1118",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Personenstand, Eheschliessung, Scheidung, Kindsrecht, Verwandtenunterstützungspflicht, Heimstätten, Vormundschaft, Ehevermittlung)",
+        "titelFr": "Code civil suisse (état civil, conclusion du mariage et divorce, filiation, dette alimentaire, asiles de famille, tutelle et courtage matrimonial)",
+        "titelIt": "Codice civile svizzero (stato civile, matrimonio, divorzio, diritto di filiazione, obbligo di assistenza fra parenti, asili di famiglia, tutela, mediazione matrimonile)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/231": {
+        "dateForce": "2003-06-01",
+        "dateDoc": "1999-10-08",
+        "roId": "RO 2003 1370",
+        "titelDe": "Bundesgesetz über die flankierenden Massnahmen bei entsandten Arbeitnehmerinnen und Arbeitnehmern und über die Kontrolle der in Normalarbeitsverträgen vorgesehenen Mindestlöhne (Entsendegesetz, EntsG)",
+        "titelFr": "Loi fédérale sur les mesures d'accompagnement applicables aux travailleurs détachés et aux contrôles des salaires minimaux prévus par les contrats-types de travail (Loi sur les travailleurs détachés, LDét)",
+        "titelIt": "Legge federale concernente le misure collaterali per i lavoratori distaccati e il controllo dei salari minimi previsti nei contratti normali di lavoro (Legge sui lavoratori distaccati, LDist)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/320": {
+        "dateForce": "2004-07-01",
+        "dateDoc": "2003-10-03",
+        "roId": "RO 2004 2617",
+        "titelDe": "Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung (Fusionsgesetz, FusG)",
+        "titelFr": "Loi fédérale sur la fusion, la scission, la transformation et le transfert de patrimoine (Loi sur la fusion, LFus)",
+        "titelIt": "Legge federale sulla fusione, la scissione, la trasformazione e il trasferimento di patrimonio (Legge sulla fusione, LFus)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/317": {
+        "dateForce": "2005-06-01",
+        "dateDoc": "2003-06-20",
+        "roId": "RO 2005 1869",
+        "titelDe": "Bundesgesetz über den internationalen Kulturgütertransfer (Kulturgütertransfergesetz, KGTG)",
+        "titelFr": "Loi fédérale sur le transfert international des biens culturels (Loi sur le transfert des biens culturels, LTBC)",
+        "titelIt": "Legge federale sul trasferimento internazionale dei beni culturali (Legge sul trasferimento dei beni culturali, LTBC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/782": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2004-06-18",
+        "roId": "RO 2005 5685",
+        "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+        "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+        "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/218": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 1205",
+        "titelDe": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+        "titelFr": "Loi sur le Tribunal fédéral (LTF)",
+        "titelIt": "Legge sul Tribunale federale (LTF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/374": {
+        "dateForce": "2007-07-01",
+        "dateDoc": "2006-12-20",
+        "roId": "RO 2007 2849",
+        "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Haager Übereinkommens über das auf Trusts anzuwendende Recht und über ihre Anerkennung",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention de La Haye relative à la loi applicable au trust et à sa reconnaissance",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione dell'Aia relativa alla legge applicabile ai trust ed al loro riconoscimento"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/685": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2005-12-16",
+        "roId": "RO 2007 4791",
+        "titelDe": "Obligationenrecht (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht) (OR)",
+        "titelFr": "Code des obligations (Droit de la société à responsabilité limitée; adaptation des droits de la société anonyme, de la société coopérative, du registre du commerce et des raisons de commerce) (CO)",
+        "titelIt": "Codice delle obbligazioni (Diritto della società a garanzia limitata; adeguamento del diritto della società anonima, della società cooperativa, del registro di commercio e delle ditte commerciali) (CO)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/366": {
+        "dateForce": "2008-07-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2008 2551",
+        "titelDe": "Bundesgesetz über die Erfindungspatente (Patentgesetz, PatG)",
+        "titelFr": "Loi fédérale sur les brevets d'invention (Loi sur les brevets, LBI)",
+        "titelIt": "Legge federale sui brevetti d'invenzione (Legge sui brevetti, LBI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2009/379": {
+        "dateForce": "2009-07-01",
+        "dateDoc": "2007-12-21",
+        "roId": "RO 2009 3077",
+        "titelDe": "Bundesbeschluss über die Umsetzung der Übereinkommen über internationale Kindesentführung sowie die Genehmigung und Umsetzung der Haager Übereinkommen über den Schutz von Kindern und Erwachsenen",
+        "titelFr": "Arrêté fédéral portant mise en uvre des conventions sur l'enlèvement international d'enfants et portant approbation et mise en uvre des Conventions de La Haye sur la protection des enfants et des adultes",
+        "titelIt": "Decreto federale che attua le convenzioni sul rapimento internazionale dei minori e che approva e attua le Convenzioni dell'Aia sulla protezione dei minori e degli adulti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/262": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2010 1739",
+        "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+        "titelFr": "Code de procédure civile (CPC)",
+        "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/800": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2009-12-11",
+        "roId": "RO 2010 5601",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen)",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention concernant la compétence judiciaire, la reconnaissance et l'exécution des décisions en matière civile et commerciale (Convention de Lugano)",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione concernente la competenza giurisdizionale, il riconoscimento e l'esecuzione delle decisioni in materia civile e commerciale (Convenzione di Lugano)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/114": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2011 725",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+        "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+        "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/226": {
+        "dateForce": "2013-07-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2013 1035",
+        "titelDe": "Bundesgesetz über Massnahmen gegen Zwangsheiraten",
+        "titelFr": "Loi fédérale concernant les mesures de lutte contre les mariages forcés",
+        "titelIt": "Legge federale sulle misure contro i matrimoni forzati"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/250": {
+        "dateForce": "2013-05-01",
+        "dateDoc": "2012-09-28",
+        "roId": "RO 2013 1103",
+        "titelDe": "Bundesgesetz über die Börsen und den Effektenhandel (Börsengesetz, BEHG)",
+        "titelFr": "Loi fédérale sur les bourses et le commerce des valeurs mobilières (Loi sur les bourses, LBVM)",
+        "titelIt": "Legge federale sulle borse e il commercio di valori mobiliari (Legge sulle borse, LBVM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/53": {
+        "dateForce": "2014-07-01",
+        "dateDoc": "2013-06-21",
+        "roId": "RO 2014 357",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Elterliche Sorge)",
+        "titelFr": "Code civil suisse (Autorité parentale)",
+        "titelIt": "Codice civile svizzero (Autorità parentale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/379": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2015-06-19",
+        "roId": "RO 2016 2313",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Vorsorgeausgleich bei Scheidung)",
+        "titelFr": "Code civil suisse (Partage de la prévoyance professionnelle en cas de divorce)",
+        "titelIt": "Codice civile svizzero (Conguaglio della previdenza professionale in caso di divorzio)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/181": {
+        "dateForce": "2020-04-01",
+        "dateDoc": "2019-09-27",
+        "roId": "RO 2020 1003",
+        "titelDe": "Bundesgesetz über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsgesetz, URG)",
+        "titelFr": "Loi fédérale sur le droit d'auteur et les droits voisins (Loi sur le droit d'auteur, LDA)",
+        "titelIt": "Legge federale sul diritto d'autore e sui diritti di protezione affini (Legge sul diritto d'autore, LDA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/33": {
+        "dateForce": "2021-02-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+        "titelFr": "Loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+        "titelIt": "Legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/668": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2020-12-18",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Änderung des Geschlechts im Personenstandsregister)",
+        "titelFr": "Code civil suisse (Changement de sexe à l’état civil)",
+        "titelIt": "Codice civile svizzero (Cambiamento del sesso nel registro dello stato civile)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/747": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2020-12-18",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Ehe für alle)",
+        "titelFr": "Code civil suisse (Mariage pour tous)",
+        "titelIt": "Codice civile svizzero (Matrimonio per tutti)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/43": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2008-06-13",
+        "titelDe": "Kernenergiehaftpflichtgesetz vom 13. Juni 2008 (KHG)",
+        "titelFr": "Loi fédérale du 13 juin 2008 sur la responsabilité civile en matière nucléaire (LRCN)",
+        "titelIt": "Legge federale del 13 giugno 2008 sulla responsabilità civile in materia nucleare (LRCN)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/491": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+        "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+        "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/491": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2023-03-17",
+        "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO) (Verbesserung der Praxistauglichkeit und der Rechtsdurchsetzung)",
+        "titelFr": "Code de procédure civile (CPC) (Amélioration de la praticabilité et de l’application du droit)",
+        "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC) (Migliorare la praticabilità e l’applicazione del diritto)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/590": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-06-14",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Massnahmen gegen Minderjährigenheiraten)",
+        "titelFr": "Code civil suisse (Mesures de lutte contre les mariages avec un mineur)",
+        "titelIt": "Codice civile svizzero (Misure contro i matrimoni con minorenni)"
+      }
+    }
+  }
 }

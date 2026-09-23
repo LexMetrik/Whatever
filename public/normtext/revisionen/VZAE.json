@@ -1,15 +1,24 @@
 {
   "erlassKey": "VZAE",
   "sr": "142.201",
-  "abgerufen": "2026-09-18",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/474",
+      "dateDocument": "2026-08-26",
+      "roFundstelle": "AS 2026 474",
+      "titelDe": "Verordnung vom 26. August 2026 über das europäische und das nationale Reiseinformations- und -genehmigungssystem (ETIASV)",
+      "titelFr": "Ordonnance du 26 août 2026 sur les systèmes européen et national d’information et d’autorisation concernant les voyages (OETIAS)",
+      "titelIt": "Ordinanza del 26 agosto 2026 sui sistemi europeo e nazionale di informazione e autorizzazione ai viaggi (OETIAS)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.201",
-      "sha": "b6475f7fbd987fcd9822e231c6198a0794c4f7f18c06018255c7e18fb69ec40f"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/474/de",
+      "sha": "b6d6f7358c82c8d8809d1ae15ad45d53213fafa3652187e20a05b4a8d211bb31"
     },
     {
       "art": "aenderung",
@@ -20,8 +29,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/220/de",
-      "sha": "0a8b46aa399dc81babf940ffddf95e7a16ebf564946ef151e1bd09cc27a11233"
+      "sha": "193b87deb1292499b9ded783401d00e43a37e4272b0b261f5aa2f643200db875"
     },
     {
       "art": "aenderung",
@@ -32,8 +44,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/239/de",
-      "sha": "97eb5353997c4fe693d68c21ef0e84546cdcc04fbe4870731cdf3bbcbd63e0e7"
+      "sha": "b708a3f5e7132251c404008fb452478af7dbd782ef0f8ad22c00ade3471f3c9a"
     },
     {
       "art": "aenderung",
@@ -44,8 +59,12 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/260/de",
-      "sha": "e888100cc253e84ea441a0228cde9cfdb814954ab6ebe9e9736be629f7aaea92"
+      "sha": "ad775e6074788918c533cc35012937d29d79f2ddfa0bce65224de4e88929191e"
     },
     {
       "art": "aenderung",
@@ -56,8 +75,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/170/de",
-      "sha": "7f419f001aadf0bfc8e7a6ad5e17e5948951affb7c0c69e5e9174abf671bb8b3"
+      "sha": "112d34ec4f931e61ee87901ae7d50c38d51fb745afd2e539fa167cf2ed195fdf"
     },
     {
       "art": "aenderung",
@@ -68,8 +90,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/780/de",
-      "sha": "e4d47c8658f31820cc706e997f6e484179c86906a5cdc7e17f429fb713fa23b6"
+      "sha": "e0c9368c4196da666943e0202d5cdd49768deec846bc5901c05449cde5b607d8"
     },
     {
       "art": "aenderung",
@@ -80,8 +105,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/669/de",
-      "sha": "0ed824f75b5bb7229f97dbcf3dc5307468c1bc1d6349be951d7e674717453fa2"
+      "sha": "48c8feb0232d76c6073510ec939f8f619bfa2a78bc31e3e4d420459c8a982ce3"
     },
     {
       "art": "aenderung",
@@ -92,8 +120,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/714/de",
-      "sha": "71d47ab65d512e1d16c0f9f11130ae4545b597078ec9fe5d26a08cb2e9b77257"
+      "sha": "9eec5905b58822cd6f053a8e63cddc62cb35b4ef86b60ce2a9fc928a88b5e817"
     },
     {
       "art": "aenderung",
@@ -104,8 +135,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/747/de",
-      "sha": "5ce3f5d5339758fd246e2b45e53e97baadfecbd17835a64ace909e8ded37949a"
+      "sha": "347f89c778719f0e1e19cb9ecf7257d153bb2db79d0be7b5407cb6ab83b75a41"
     },
     {
       "art": "aenderung",
@@ -116,8 +150,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/190/de",
-      "sha": "7c4b85a33f23fd255257cecd7c14bc27b83e2df83e9e0707682cbcaa2de6376a"
+      "sha": "1552831e416c6adef3b0fc149224ce3937b47da92e51b15d4577731cd82e26dc"
     },
     {
       "art": "aenderung",
@@ -128,8 +165,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/206/de",
-      "sha": "85f290f05ebcf7b36cfed556b0d5649d4113ddb756286c77ffba256a18ff2b01"
+      "sha": "27724c01c06fa2a03bb336fdab980ef0ed6ffd9deba6c7430125acc8976cd93d"
     },
     {
       "art": "aenderung",
@@ -140,14 +180,26 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/793/de",
-      "sha": "f17bdf9834442cb877cd6d00ba21215b101b19c56b7826f73afdf99f55708335"
+      "sha": "c082275e10d232c47f84032c0990ca388a403204484ef2a7d751b06ee42f2d57"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.201",
-      "sha": "df7f961300c1dca5fa0638375773aa376ef764940e2770602e4a7d7d71da132b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+      "dateDocument": "2022-08-31",
+      "roFundstelle": "AS 2022 568",
+      "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+      "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "sha": "47bc693150b96a5f50a87aa91b20f134707a03c375478eb561a52a316e1052c5"
     },
     {
       "art": "aenderung",
@@ -158,14 +210,26 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/660/de",
-      "sha": "deeac8b6c5b497e645ab9aa2d54a7313bd7b9f99a141a34622d5cc85a63c300a"
+      "sha": "d6f2d7dad565663d6b47b2070235855abb34bd71298ed04e9ffbae9707c8bce4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.201",
-      "sha": "f124ea41dade07ebb8e652e517f2d5184a8cf4e7a3e62a1c1ceed18f377e67be"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+      "dateDocument": "2022-10-19",
+      "roFundstelle": "AS 2022 698",
+      "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+      "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+      "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/698/de",
+      "sha": "2478029947e15351be1465545817e1af2f94c81ff2ca66a39af9bbb085525412"
     },
     {
       "art": "aenderung",
@@ -176,8 +240,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/721/de",
-      "sha": "d8758d45a4832bfce7836dc65bd1ef6e67a5ab4896dd7fbf3cd6c074630ba37e"
+      "sha": "0335c87332e47bde3c3733d107e5f64a6fc3f24502b08fd09881af9e5e7e8087"
     },
     {
       "art": "aenderung",
@@ -188,8 +255,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/645/de",
-      "sha": "e1103b9ce3c28849b00dc6900c085943174f662f02f7fd15b95723fc53798e4f"
+      "sha": "84e42d8b4d2fa1831ca2edc8792f71ef282412d872c8dcf5c5555fa7c32ca828"
     },
     {
       "art": "aenderung",
@@ -200,8 +270,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/167/de",
-      "sha": "cf127f743ee7ebb7cf8d8e92ae728c9852c3a2062fefdd7ad086b7198c91fefe"
+      "sha": "44cfdc8017530b2afd9076187497f48abd55a959944cec17394b66c9d5688d11"
     },
     {
       "art": "aenderung",
@@ -212,8 +285,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l’admission, au séjour et à l’exercice d’une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull’ammissione, il soggiorno e l’attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/841/de",
-      "sha": "104f4b918888ea70ca85760483561e3c62ccb9f55a96693297068753370cd9c9"
+      "sha": "74302e5a35beedc71fd9fad2ba04b02e355c7dadcaa6bf1c08bb7a7e7b9af047"
     },
     {
       "art": "aenderung",
@@ -224,8 +300,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/984/de",
-      "sha": "89048bce447272f74e2dca1e5003698aa2dd8ffef376717d5401cc64a64dbbc1"
+      "sha": "f1ecbb513fd82f9fdf356f27ba1aa2789f1fcdf4eb91ca8a8cf40e78a6f82c2b"
     },
     {
       "art": "aenderung",
@@ -236,8 +315,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE) (Höchstzahlen für Staatsangehörige des Vereinigten Königreichs)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA) (Nombres maximums pour les ressortissants du Royaume-Uni)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA) (Contingenti per cittadini del Regno Unito)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/985/de",
-      "sha": "e19831b1c654c070293e837d61eff91ee5ee1da1156131dd64f455c7e32ee4ed"
+      "sha": "a683cacd9d3a91f33d4ec76e050b587ace1d4100e9de2fe5b2d2305e84e776ed"
     },
     {
       "art": "aenderung",
@@ -248,8 +330,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/986/de",
-      "sha": "5c47c226ed5b8f42b4359848c5a47852266ca643e92834b5b643b5152247359b"
+      "sha": "3307ec7df2fac9ddbbfd8c34de4bac91e89d4062d01d5c6ecd4b5464ffc7baad"
     },
     {
       "art": "aenderung",
@@ -260,8 +345,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/171/de",
-      "sha": "641f81f884a5d7bdc794374411c3955962cc1c37bcca3841fea81f77c8e866fd"
+      "sha": "4f257818cb8aca149ef21955fa85b4060556281315199c3c1e311fabf50eaf17"
     },
     {
       "art": "aenderung",
@@ -272,8 +360,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/741/de",
-      "sha": "a7a5633d345a1ac97ce75e65f9193bfd3ba048c5c46429ea632150c553706c9e"
+      "sha": "5a1300f4347b1e51b4be5b0bef35f587697adb6970d0e70014fe8d848d50ab63"
     },
     {
       "art": "aenderung",
@@ -284,8 +375,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/555/de",
-      "sha": "27bf6e0761f239346108e63d18d3f50d14c4f33b206ee9f40c117a43680f59db"
+      "sha": "447c8451c70c066b4e7e5e238383288ed8e866689e77c342e293e08e2ab1a251"
     },
     {
       "art": "aenderung",
@@ -296,8 +390,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/279/de",
-      "sha": "2be754936990249b725e3858dbb9c89a91fa2a898dd406837c58e4e561e0fd47"
+      "sha": "86a3a987a652857c4134d9c3c09a455823340769ca87a4b122e1e9b9ccc23876"
     },
     {
       "art": "aenderung",
@@ -308,8 +405,12 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/510/de",
-      "sha": "9f410c6b59a1a509773929e6bbaf1b7201850b980ae2a8444106b80e124b26fe"
+      "sha": "5756264e03a73f1432a39693edc557fac9f2bca404cc139282c47ae8f0a7acb1"
     },
     {
       "art": "aenderung",
@@ -320,8 +421,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/543/de",
-      "sha": "c11a1d5722b471b68ba66296a52930060cb15c12ee734e51a409fa31bfff77cd"
+      "sha": "b8e0fd00b919a34d6bc3e6a5a5d18f3613b872c505123149e13aef9cb6d0d06b"
     },
     {
       "art": "aenderung",
@@ -332,8 +436,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/492/de",
-      "sha": "76f736f84bba557cda7dbaed653ab4e393ca168a70c0d3a2f02a8503e5d081a4"
+      "sha": "6dc01e5fe2585e85db524b712ac86b07127eec960bee3c3274dc0a16579acd9a"
     },
     {
       "art": "aenderung",
@@ -344,8 +451,26 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/94/de",
-      "sha": "41d97c88a1afc688d1f3dd33e70d0bb69f88f497da4a82aaa902193548f05617"
+      "sha": "f7bebc8066a8b82ad89a678714a0c6ca096faa9096388b41ca1f814850cfaad6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/405",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2016 2577",
+      "titelDe": "Verordnung über das Schweizer Bürgerrecht (Bürgerrechtsverordnung, BüV)",
+      "titelFr": "Ordonnance sur la nationalité suisse (Ordonnance sur la nationalité, OLN)",
+      "titelIt": "Ordinanza sulla cittadinanza svizzera (Ordinanza sulla cittadinanza, OCit)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/405/de",
+      "sha": "09625365c93a3ffe09e522ef871c20b99e9071becff93ce9b9ee505ed80307b4"
     },
     {
       "art": "aenderung",
@@ -356,14 +481,26 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/719/de",
-      "sha": "4f186da9b5ac31acaabf1a5a3834ffab21d45a73ce7e5790cdca817a7c129b01"
+      "sha": "126f4bb4d637bd508666ee523f9dfe5743f05458d032e48b3bc13637ab6d1362"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.201",
-      "sha": "267ec8950199764b25301b4c7be45d2c8b8a281cc7208f145d2abc02b3d55f12"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/239",
+      "dateDocument": "2017-04-05",
+      "roFundstelle": "AS 2017 2549",
+      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
+      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
+      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/239/de",
+      "sha": "352dd8b2ef98a8bf26a1e83abc943dc665eb1029f09c95a87774366f2a6626b3"
     },
     {
       "art": "aenderung",
@@ -374,8 +511,11 @@
       "titelDe": "Verordnung über die Einführung der Landesverweisung",
       "titelFr": "Ordonnance sur la mise en uvre de l'expulsion pénale",
       "titelIt": "Ordinanza sull'attuazione dell'espulsione giudiziaria",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/100/de",
-      "sha": "8544b7c0f052880bc406c8b142d0ddf207808ea390d1b64fb855ab65f424530d"
+      "sha": "68dd55e3fda62ea868c6b04baf72396da3d4a4921a5254958cecc37fb8368661"
     },
     {
       "art": "aenderung",
@@ -386,20 +526,57 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/731/de",
-      "sha": "a6ccb90907e642e9a3621fca2cb4051f3785e4de0ef536c5b39e72b308f36eec"
+      "sha": "04cf5ae3f85a18a4e77da4a7c51542a6956b87b83527e9376cf4a1f6307f4dcb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/812",
+      "dateDocument": "2016-12-21",
+      "roFundstelle": "AS 2016 5113",
+      "titelDe": "Verordnung über die schrittweise Einführung des freien Personenverkehrs zwischen der Schweizerischen Eidgenossenschaft und der Europäischen Union und deren Mitgliedstaaten sowie unter den Mitgliedstaaten der Europäischen Freihandelsassoziation",
+      "titelFr": "Ordonnance sur l'introduction progressive de la libre circulation des personnes entre, d'une part, la Confédération suisse et, d'autre part, l'Union européenne et ses Etats membres, ainsi qu'entre les Etats membres de l'Association européenne de libre-échange",
+      "titelIt": "Ordinanza concernente l'introduzione graduale della libera circolazione delle persone tra la Confederazione Svizzera e l'Unione europea e i suoi Stati membri nonché gli Stati membri dell'Associazione europea di libero scambio",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/812/de",
+      "sha": "2edf8d2a42c754f445d5d902bf00aac073589413b752670168911a93816509d7"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2016-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.201",
-      "sha": "a01adbab36312961731a568b0e694ca13ee2e87e0ff162e1d7092ae01d1975e7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/420",
+      "dateDocument": "2016-07-07",
+      "roFundstelle": "AS 2016 2637",
+      "titelDe": "Verordnung über die Ausstellung von Reisedokumenten für ausländische Personen (RDV)",
+      "titelFr": "Ordonnance sur l'établissement des documents de voyage pour étrangers (ODV)",
+      "titelIt": "Ordinanza concernente il rilascio di documenti di viaggio per stranieri (ODV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/420/de",
+      "sha": "c3c7632bbd1b30734c4b130dcb0b57869cfa59eaa2cc2921e92bd887a68ba353"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-05-16",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.201",
-      "sha": "6f31f43ed9addccc6fba4f1ba9666559fe4c21b1091a5895aeb4c797a21d9f30"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/256",
+      "dateDocument": "2016-05-04",
+      "roFundstelle": "AS 2016 1283",
+      "titelDe": "Verordnung über die Einreise und die Visumerteilung (VEV)",
+      "titelFr": "Ordonnance sur l'entrée et l'octroi de visas (OEV)",
+      "titelIt": "Ordinanza concernente l'entrata e il rilascio del visto (OEV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/256/de",
+      "sha": "3038ce678ffe2c58d99aafa63f4cd16ddd247f833f88bf66ad1d80a945cfab50"
     },
     {
       "art": "aenderung",
@@ -410,8 +587,12 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/613/de",
-      "sha": "e78d42b5f320bb9f8a7104930880eb29032ee7cd610510b1a7b5f34cb927afb1"
+      "sha": "08ee187d151b4902a184125b0e638cfef9e471f6c5aa436eb62389916534d033"
     },
     {
       "art": "aenderung",
@@ -422,8 +603,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/775/de",
-      "sha": "b165388d5e3da0df0500765be955ac21a1226f9566c4c59869b2e5f647099f19"
+      "sha": "2af5b35defd1fb35442827a13b4185b8e0b4fdfe42411d62ed6b085b8ee625b0"
     },
     {
       "art": "aenderung",
@@ -434,8 +618,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/623/de",
-      "sha": "f4451b774c6b868b2810a8ec1ab57d217304379cbc03758c188a93b48d02e6a3"
+      "sha": "ad515f667e36733fe9b1f4da1408f3b00229489f67ab2d334c8d5672d5a043ba"
     },
     {
       "art": "aenderung",
@@ -446,14 +633,30 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/517/de",
-      "sha": "fa59d0b4147b762a3f92691bd6d5ef0856750aeac650abcc9831624d0394ed77"
+      "sha": "f5cabb991c603d5e1fde7f41daae448fa7e3928ad3b94d090c8aeae763e78a2d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-07-20",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.201",
-      "sha": "f533365e07beb2d254a5f8685fd387affa3ea060b550552f7363bba207d4c28d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/358",
+      "dateDocument": "2015-06-12",
+      "roFundstelle": "AS 2015 1849",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen aufgrund von Neuerungen bezüglich des Dublin/Eurodac-Besitzstands",
+      "titelFr": "Ordonnance portant adaptation d'actes en raison de nouveautés en lien avec l'acquis de Dublin/Eurodac",
+      "titelIt": "Ordinanza sull'adeguamento di ordinanze in seguito a innovazioni concernenti l'acquis di Dublino/Eurodac",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-07-01",
+        "2015-07-20"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/358/de",
+      "sha": "bbcf08ee1f1328a249f2cdf0addbee83253e8df8c0e1f71edd1ba696cb09325a"
     },
     {
       "art": "aenderung",
@@ -464,8 +667,15 @@
       "titelDe": "Verordnung über die Anpassung von Verordnungen aufgrund von Neuerungen bezüglich des Dublin/Eurodac-Besitzstands",
       "titelFr": "Ordonnance portant adaptation d'actes en raison de nouveautés en lien avec l'acquis de Dublin/Eurodac",
       "titelIt": "Ordinanza sull'adeguamento di ordinanze in seguito a innovazioni concernenti l'acquis di Dublino/Eurodac",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-07-01",
+        "2015-07-20"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/358/de",
-      "sha": "7909ef203d483eb46c544d4d31ec06ac784fae41ed45ce208541bd3a83b80120"
+      "sha": "c3f37dfea48a0892e3ccf3623908370a1e8060df437290e58453ddac36e5f0e1"
     },
     {
       "art": "aenderung",
@@ -476,8 +686,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/77/de",
-      "sha": "6156ca310d0f667b243263d42fbdfd5552ff819810c0740da13f44ea44397773"
+      "sha": "610788a2ae97324bad3569c5cc3c96db0962704effcf8c2da68c929f171fe0e4"
     },
     {
       "art": "aenderung",
@@ -488,20 +701,41 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/738/de",
-      "sha": "5e8a31bfc40a46941d5c163e0d37f419764e4bc4ca731d425b4945db41d32d23"
+      "sha": "52b1b950842f1771bbfd8b5998360e61e62ecf2668b9e6020386e37230d4ffe7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-11-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.201",
-      "sha": "8b796e59c6e8dc6cb89d74d54967784c1cf1042c5f14ac27d9e10e7f80384399"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/536",
+      "dateDocument": "2014-09-19",
+      "roFundstelle": "AS 2014 3175",
+      "titelDe": "Verordnung über die in die Schweiz entsandten Arbeitnehmerinnen und Arbeitnehmer (EntsV)",
+      "titelFr": "Ordonnance sur les travailleurs détachés en Suisse (Odét)",
+      "titelIt": "Ordinanza sui lavoratori distaccati in Svizzera (ODist)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/536/de",
+      "sha": "73b187ae18a5e41de6a8711d40226e5cb1c52fa7679b29384ac24a78b7423783"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.201",
-      "sha": "0cee5ba7fbe7059852d25b9dddddfde3197c887d55c13adad21224605dd1b52e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/23",
+      "dateDocument": "2013-12-06",
+      "roFundstelle": "AS 2014 163",
+      "titelDe": "Verordnung über die Bearbeitung biometrischer erkennungsdienstlicher Daten",
+      "titelFr": "Ordonnance sur le traitement des données signalétiques biométriques",
+      "titelIt": "Ordinanza sul trattamento dei dati segnaletici di natura biometrica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/23/de",
+      "sha": "59d8e968d40a77194eec276c9deb4062d355ea7608ce49b7dcaf6dc51c727f73"
     },
     {
       "art": "aenderung",
@@ -512,8 +746,11 @@
       "titelDe": "Mitteilung über die abschliessende Inkraftsetzung der Änderung einer Verordnung",
       "titelFr": "Communication concernant la dernière mise en vigueur partielle de la modification d'une ordonnance",
       "titelIt": "Comunicazione sull'entrata in vigore integrale della modifica di un'ordinanza",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/226/de",
-      "sha": "3de1225402551191366d8f3814068414cffc767684a8fa8c5c475bcbbf16ead1"
+      "sha": "eb886f1b90fcda1ca8ae5e7d9c799617627e50ad2592811b794abc8a12236e3f"
     },
     {
       "art": "aenderung",
@@ -524,8 +761,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/777/de",
-      "sha": "86547697afb249f6f1c3ede3b95d3790eadf1be4ec395d313a0a98a76cf6f86b"
+      "sha": "8b267654fa64cfeb71a702163f9808e35e06cf6633af0708aedd0a58d87c9866"
     },
     {
       "art": "aenderung",
@@ -536,8 +776,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/688/de",
-      "sha": "2a2362ba4a7bb4c951fb641efcbe5a30c63cc510b4e9f1ae1c4910a89f2e7fba"
+      "sha": "a077e7ec1347ec8ab8c348e2edf1e2987b1342f4c6157119b57203b9d2ed4bcb"
     },
     {
       "art": "aenderung",
@@ -548,8 +791,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/227/de",
-      "sha": "e577c33929110b8b58ab47e42bada3fa4d850bec8f9ddb2f974a7ee2bc6bcb6f"
+      "sha": "3f4841d051aea8215c41059ff3c2b25cec03a2bbccd720c90dd91e2bbadcfc34"
     },
     {
       "art": "aenderung",
@@ -560,8 +806,26 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/886/de",
-      "sha": "b2a7fde341c8fcdc874e5e6df2dfd82788b20ba4848e68d25e749245b3415c81"
+      "sha": "6614553f5681b69754a216fa9b2a8639ff576470024757755d3f11df1a3a756f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2013-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/815",
+      "dateDocument": "2012-11-07",
+      "roFundstelle": "AS 2012 6731",
+      "titelDe": "Verordnung über den ausserprozessualen Zeugenschutz (ZeugSV)",
+      "titelFr": "Ordonnance sur la protection extraprocédurale des témoins (OTém)",
+      "titelIt": "Ordinanza sulla protezione extraprocessuale dei testimoni (OPTes)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/815/de",
+      "sha": "15c792efffddb37d82a83644760d619456b5ba0279bbc72984f830244c0d529f"
     },
     {
       "art": "aenderung",
@@ -572,14 +836,26 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/839/de",
-      "sha": "60e6e9cfca868ad0326a5d9e0db8cc0396913f996a467700728e259b56318828"
+      "sha": "508d70b99e5420ae2180ab8e788d16ae483c758224c93d99b46027d755e5b7db"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/142.201",
-      "sha": "9eeaa1ea3ef10c96d454e45d33bbc287a91155c48c4057136830e8ac1acb6ed2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/713",
+      "dateDocument": "2012-11-14",
+      "roFundstelle": "AS 2012 6049",
+      "titelDe": "Verordnung über die Ausstellung von Reisedokumenten für ausländische Personen (RDV)",
+      "titelFr": "Ordonnance sur l'établissement de documents de voyage pour étrangers (ODV)",
+      "titelIt": "Ordinanza concernente il rilascio di documenti di viaggio per stranieri (ODV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/713/de",
+      "sha": "dc3abad2b7c79b0bc1c5543c9b4c07899467346559e4aea646a10aa7a4c73eef"
     },
     {
       "art": "aenderung",
@@ -590,8 +866,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/806/de",
-      "sha": "98bf1cdf0aef79711893760ea43be1de1a6fb0afcc49d3801a590e88a7765d07"
+      "sha": "def293e0c59b130d75a382c916e6e1879fea40faa72e68e010f6b218cb293e70"
     },
     {
       "art": "aenderung",
@@ -602,8 +881,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/18/de",
-      "sha": "a3afaedfe548885fcd3d9bdb4309b0a670075f3b8498dc39043547544d11aeb0"
+      "sha": "7153641d8567530d2603cebfea47d766768aca47e1676997c1e4f308aa0ec012"
     },
     {
       "art": "aenderung",
@@ -614,8 +896,12 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/855/de",
-      "sha": "a048a2ec1432d3f45e91355d9e9ddc7b54ead6c9abeae4783c4b3933af46d679"
+      "sha": "0220708a84722f7049915cea82421151d0810af3dbcf136253cdc14309ad4d10"
     },
     {
       "art": "aenderung",
@@ -626,8 +912,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/311/de",
-      "sha": "ded6865a747cdd37dce2e0b552e6d1f6b5af180eb0bec51914668c3426829508"
+      "sha": "157efabb531a2b061b1ea1aee98791abc840f82c6317b927a5828b94f5be5748"
     },
     {
       "art": "aenderung",
@@ -638,8 +927,12 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/784/de",
-      "sha": "caba0b4a57ea9d3ac22e7ffa9cc179d5587b49f5d59db5168ef2fe3642b16c00"
+      "sha": "fef263c778c24ac418372f17384e4ad299e8735c22e86fafddbbf4abb69196ea"
     },
     {
       "art": "aenderung",
@@ -650,8 +943,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/856/de",
-      "sha": "120a6ec3e2960d08bd3bcf8211962e55d9ba5a713a846a8bdcab0c9d3b5b2d6c"
+      "sha": "84089bd32c60558bffaf37e4e250a48224706340bb04fffad0172bb737b50184"
     },
     {
       "art": "aenderung",
@@ -662,8 +958,11 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/60/de",
-      "sha": "9f0ff039888e882c86f6f38b0e180250fce825b06410e709069d1dab79cab71d"
+      "sha": "13777fce739a3f0cea272a9401ff800b58e6d0a938d2c344a183d79c74694cc9"
     },
     {
       "art": "aenderung",
@@ -674,8 +973,11 @@
       "titelDe": "Verordnung über die Anpassung von Verordnungen im Ausländer- und Asylbereich zur Inkraftsetzung der Schengen- und Dublin-Assoziierungsabkommen",
       "titelFr": "Ordonnance portant adaptation d'ordonnances du domaine des étrangers et de l'asile en raison de la mise en vigueur des accords d'association à Schengen et à Dublin",
       "titelIt": "Ordinanza che adegua ordinanze del settore degli stranieri e dell'asilo a seguito della messa in vigore degli Accordi di associazione alla normativa di Schengen e di Dublino",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/757/de",
-      "sha": "899677691bf327cbc7892d1dbfec083c1bc75a21b381eb60c8d91f978844daa8"
+      "sha": "2d2b86ae67f1840763e2bd3221d03f7b4067b6282978528d7f7feb08c6f00f83"
     },
     {
       "art": "aenderung",
@@ -686,33 +988,12 @@
       "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
       "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
       "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/381/de",
-      "sha": "a1bf5a08a891a0ac98edd964622ece608e6004edd5382ba990ed069a50dd04ce"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2008-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/759",
-      "dateDocument": "2007-10-24",
-      "roFundstelle": "AS 2007 5497",
-      "titelDe": "Verordnung über Zulassung, Aufenthalt und Erwerbstätigkeit (VZAE)",
-      "titelFr": "Ordonnance relative à l'admission, au séjour et à l'exercice d'une activité lucrative (OASA)",
-      "titelIt": "Ordinanza sull'ammissione, il soggiorno e l'attività lucrativa (OASA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/759/de",
-      "sha": "5aadfb457bb397076765f53dc451226d388a9442a193c8ba692b2da549f3d6ba"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1949-03-21",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1949/228_232_233",
-      "dateDocument": "1949-03-01",
-      "roFundstelle": "AS 1949 228",
-      "titelDe": "Vollziehungsverordnung vom 1. März 1949 zum Bundesgesetz über Aufenthalt und Niederlassung der Ausländer (ANAV)",
-      "titelFr": "Règlement d'exécution du 1er mars 1949 de la loi fédérale sur le séjour et l'établissement des étrangers (RSEE)",
-      "titelIt": "Ordinanza d'esecuzione del 1° marzo 1949 della legge federale concernente la dimora e il domicilio degli stranieri (ODDS)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1949/228_232_233/de",
-      "sha": "5faa8bc9b6199bcff0fe843775e5afcd649b0fbd09b098a11d3cf478972faa83"
+      "sha": "f934161cb134a26fe2b9c6dd3ac9a3333a73c664741e7f230a804fb0be1d6a03"
     }
   ],
-  "sha": "3d8bb4f85c3ebb32a0a652d1d395776a7062ed2772ff1f2940c20794b8961cd6"
+  "sha": "46442ea8661959e02ea5fa3311a19e43c7f132d1b3423dd0bea8c37ab0776fb0"
 }

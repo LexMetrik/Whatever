@@ -1,27 +1,142 @@
 {
   "erlassKey": "VZG",
   "sr": "281.42",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/281.42",
-      "sha": "737dd435b36817d02d4636e2cf667d39fe546bf3c054bd5acd93c361f3177e28"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/667",
+      "dateDocument": "2011-09-23",
+      "roFundstelle": "AS 2011 4659",
+      "titelDe": "Grundbuchverordnung (GBV)",
+      "titelFr": "Ordonnance sur le registre foncier (ORF)",
+      "titelIt": "Ordinanza sul registro fondiario (ORF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/667/de",
+      "sha": "1e64ee85f76b157821b8229a9cbe4d598a28160f70eaba6909430960157b002f"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1921-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/36/425_433_469",
-      "dateDocument": "1920-04-23",
-      "roFundstelle": "AS 36 425",
-      "titelDe": "Verordnung des Bundesgerichts vom 23. April 1920 über die Zwangsverwertung von Grundstücken (VZG)",
-      "titelFr": "Ordonnance du Tribunal fédéral du 23 avril 1920 sur la réalisation forcée des immeubles (ORFI)",
-      "titelIt": "Regolamento del Tribunale federale del 23 aprile 1920 concernente la realizzazione forzata dei fondi (RFF)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/36/425_433_469/de",
-      "sha": "5c0e34e6dd164e585f366853fe7b276e3a4cc6e881f7462e8c764135abcab5fc"
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/2900_2900_2900",
+      "dateDocument": "1996-06-05",
+      "roFundstelle": "AS 1996 2900",
+      "titelDe": "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken, Änderung",
+      "titelFr": "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles, Modification",
+      "titelIt": "Regolamento del Tribunale federale concernente la realizzazione forzata dei fondi, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/2900_2900_2900/de",
+      "sha": "706f0b22079fd23396d2f57add746c92dacac6ae0e333c443bbdf18d4c5c51d5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3493_3493_3493",
+      "dateDocument": "1996-12-24",
+      "roFundstelle": "AS 1996 3493",
+      "titelDe": "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken, Berichtigung (nur ital.)",
+      "titelFr": "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles, Errata (seulement en italien)",
+      "titelIt": "Regolamento del Tribunale federale concernente la realizzazione forzata dei fondi, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3493_3493_3493/de",
+      "sha": "f5bc32139ee1e57ebf947a63b6314a27c29fe6b2d75ad8c3d48c9eb60e7166e7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/3183_3183_3183",
+      "dateDocument": "1993-09-07",
+      "roFundstelle": "AS 1993 3183",
+      "titelDe": "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken, Änderung",
+      "titelFr": "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles, Modification",
+      "titelIt": "Regolamento del Tribunale federale concernente la realizzazione forzata dei fondi, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/3183_3183_3183/de",
+      "sha": "9c5b37fc575c7a55e466063a34a426ebb00fc810584a850ee72fdc98b0391568"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/164_164_164",
+      "dateDocument": "1975-12-04",
+      "roFundstelle": "AS 1976 164",
+      "titelDe": "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken, Änderung",
+      "titelFr": "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles, Modification",
+      "titelIt": "Regolamento del Tribunale federale concernente la realizzazione forzata di fondi, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/164_164_164/de",
+      "sha": "c4d5fe8105cf489fc7bd060d4e4a2946cafda3c6d1f33c8f8bb171d012b0b11a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/2420_2420_",
+      "dateDocument": "1976-11-15",
+      "roFundstelle": "AS 1976 2420",
+      "titelDe": "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken, Berichtigung",
+      "titelFr": "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles, Erratum",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/2420_2420_/de",
+      "sha": "229410e547ccc8509142993867e3378e1f72a384bddc03b4710463d849c9b7f5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/606_606_606",
+      "dateDocument": "1976-02-27",
+      "roFundstelle": "AS 1976 606",
+      "titelDe": "Verordnung des Bundesgerichts über die Zwangsverwertung von Grundstücken, Berichtigung",
+      "titelFr": "Ordonnance du Tribunal fédéral sur la réalisation forcée des immeubles, Errata (seulement en allemand)",
+      "titelIt": "Regolamento del Tribunale federale concernente la realizzazione forzata dei fondi, Correzione (solamente in tedesco)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/606_606_606/de",
+      "sha": "da84afc0c489cdce6ae89e6f25dcd5c4156fced883dec501a064339d54eb4bf4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/__884",
+      "dateDocument": "1976-04-21",
+      "titelIt": "Correzioni: Regolamento del Tribunale federale concernente la realizzazione forzata di fondi, Decreto del Consiglio federale sull'acquisto di fondi in luoghi turistici da parte di persone all'estero e Ordinanza sull'acquisto di fondi da parte di persone all'estero",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/__884/de",
+      "sha": "37066a205bac4e126d18b804d469ca74e406484258b71bf89d39a4f35894b49a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1923-12-19",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/40/25_25_27",
+      "dateDocument": "1923-12-19",
+      "roFundstelle": "AS 40 25",
+      "titelDe": "Verordnung des Bundesgerichts betreffend die Ergänzung der Art. 92 und 93 der Verordnung über die Zwangsverwertung von Grundstücken vom 23. April 1920, Änderung",
+      "titelFr": "Ordonnance du TF sur la réalisation forcée des immeubles (ORFI), Modification",
+      "titelIt": "Regolamento del TF concernente la realizzazione forzata dei fondi (RFF), Modifiche",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/40/25_25_27/de",
+      "sha": "e83368b6c52eb8da9a148973cebe8bd13a23c77a73b32f4c9621a79ca86fdf12"
     }
   ],
-  "sha": "9fa6c9f0bd10b5ec094d0c334e8e0a92c96d24901c657daaa5989e6c2cb1e5b6"
+  "sha": "a73005089ad20b882844cb9ad3aea5ca2cbda0339a9ac22d40feccfbb67791c3"
 }

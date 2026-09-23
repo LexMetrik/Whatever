@@ -1,15 +1,28 @@
 {
   "erlassKey": "VRV",
   "sr": "741.11",
-  "abgerufen": "2026-09-14",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2031-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/13",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2022 13",
+      "titelDe": "Verkehrsregelnverordnung (VRV)",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.11",
-      "sha": "a3d631890ee43b27a05a0e677634c97bba7e7516567699e86b9f30d6b4f480a9"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-04-01",
+        "2031-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/13/de",
+      "sha": "b47740b22f3992c79bf871a12fbf46709c19cc7a77013d7d73cf937ad6d110ff"
     },
     {
       "art": "aenderung",
@@ -21,8 +34,11 @@
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/452/de",
-      "sha": "f05c5f936c7a912c801deec6b333706fa23a5d7490f011a732fb32883fa3c2be"
+      "sha": "e8fcd625d3aaeb0180298defba1f111d01f5d03d36cab302b075e776c13341fd"
     },
     {
       "art": "aenderung",
@@ -33,8 +49,12 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/226/de",
-      "sha": "ff553ff94e6d933146a06177ae703935775e87a3ef10170b86bb85d7f1c192aa"
+      "sha": "58a757ebb27735ea2a34b0332b74d158ca9fe2f2387a2d0e9ac165c1580228cd"
     },
     {
       "art": "aenderung",
@@ -45,14 +65,30 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/23/de",
-      "sha": "729d8a930d95f41fba09489e5cae797c4a9b38e574d889d09cbc711ea38addc5"
+      "sha": "7611765845d587a5eba0a409d7c4249b4f4b3eda622768e404eec0b618945b21"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.11",
-      "sha": "f9dda2b1259188a941bd550b25e20bfeaffa6a83a02df32e26486ed2768c8c88"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/423",
+      "dateDocument": "2020-05-20",
+      "roFundstelle": "AS 2020 2139",
+      "titelDe": "Verkehrsregelnverordnung (VRV)",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2026-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/423/de",
+      "sha": "1c5dd7dded9cf5d73964cb6fe1db3c24e42ca9a68831298d0374502fcaa3f846"
     },
     {
       "art": "aenderung",
@@ -63,8 +99,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/26/de",
-      "sha": "8d2d059e4d5dec52abb4afee76cf8a4204a94a7ea7aa4c2335ecd30c88257139"
+      "sha": "5ba840a7d54c38513963c99932323a496f7197837719e698c014558fa8232b5f"
     },
     {
       "art": "aenderung",
@@ -75,8 +114,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/607/de",
-      "sha": "4e168032a993a6079eaa05e2d34062e8641ada5041894388e1541cd7139ebc4f"
+      "sha": "7d600b2d27d8c987933f73ce0792309dbc05538b59d5953ec021b857fda7fa21"
     },
     {
       "art": "aenderung",
@@ -87,14 +129,41 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/28/de",
-      "sha": "bfde5556bd79daeaa7dbe264f267f7d9d8c2515742660ebdca536bc8450d03f4"
+      "sha": "e2385a6a6ef273b0b1041bed1fe9dc6734de449ce8df78ff99ceba5f161611d6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-07-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.11",
-      "sha": "7360fa6bdccfe931a001997babb2aee54a7735d1e09289d735422730ce2b0d38"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/255",
+      "dateDocument": "2023-05-10",
+      "roFundstelle": "AS 2023 255",
+      "titelDe": "Verordnung über die Zulassung von Personen und Fahrzeugen zum Strassenverkehr (Verkehrszulassungsverordnung, VZV)",
+      "titelFr": "Ordonnance réglant l’admission des personnes et des véhicules à la circulation routière (Ordonnance réglant l’admission à la circulation routière, OAC)",
+      "titelIt": "Ordinanza sull’ammissione alla circolazione di persone e veicoli (Ordinanza sull’ammissione alla circolazione, OAC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/255/de",
+      "sha": "54618d225862130ee64910e5c59171f2eec357530db71800ac36ae6db1dac926"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2023-07-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/327",
+      "dateDocument": "2023-06-09",
+      "roFundstelle": "AS 2023 327",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/327/de",
+      "sha": "3571eb3f946186a76c49a166c3a03963889a9119a2116d98f4f144fd6db878bd"
     },
     {
       "art": "aenderung",
@@ -105,8 +174,15 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-04-01",
+        "2031-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/13/de",
-      "sha": "f5d1550fba848ae06269fcc668c34769a8013a10db9a41c7ab50203cf7f76df5"
+      "sha": "86800cc703d6d76224af2a12156cbcda6979669ec09f6736258357c76e23d80b"
     },
     {
       "art": "aenderung",
@@ -117,8 +193,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/284/de",
-      "sha": "f333769227cf9dc52f4c57bb99fc82edd12cfab36c85589045617f2c0eb66440"
+      "sha": "43751806b01bfa9110b0119137a184ad68970e1dd275dc7086eacfd0e8c1e74f"
     },
     {
       "art": "aenderung",
@@ -129,8 +208,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR). Erratum",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/76/de",
-      "sha": "b9017a98bd7d6140184b79e8613b4c5fbc0ee7cac0ffdc16205b715f8382ffca"
+      "sha": "ec3c0b1f3c0f3fc420886a50273ae1261a3ee246d7f9f322c87563ccf585ad19"
     },
     {
       "art": "aenderung",
@@ -141,8 +223,16 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "etappen": [
+        "2021-01-01",
+        "2026-04-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/423/de",
-      "sha": "98fc0ad99f8198cb62ea5a570ef606696500118fd67985aa6df3eb4ded72828d"
+      "sha": "c60edbc80fa8feac64d1d27535988201bc950cea3e3a333ee75a76dba1e4355c"
     },
     {
       "art": "aenderung",
@@ -153,8 +243,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/42/de",
-      "sha": "8e00f94e793a6e5fe7b6a2aefaf912d56d6ec052fef3c6b4f42bf911af333be6"
+      "sha": "24ed1fbd3c3c41deb1fb9b47fb3e9d9201a8b23290dae28fbbe9fa78b0e99b43"
     },
     {
       "art": "aenderung",
@@ -165,8 +258,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/262/de",
-      "sha": "df9604fd8f9ef02c181d4b7ad903d488cb334d3939f23d9d4ebfc4862c7b8fba"
+      "sha": "aa5824107e19b7f4ce6bc47fcbb9f49ae588388e9eae1af7cad5762bc98b08f7"
     },
     {
       "art": "aenderung",
@@ -177,8 +273,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/817/de",
-      "sha": "145550063533d055831dba6d0ee6dc1a58569c186b70bb9f97a7a4e2cb501906"
+      "sha": "9a35a550fb920eee953b66f5e4bd31e6f8aedd59e9756e800e537e6bda2ba6f6"
     },
     {
       "art": "aenderung",
@@ -189,8 +288,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/642/de",
-      "sha": "cb7142cf0e3fa47772d4be152163a8161974fa8fb4ff1bc7d36709d691d3047c"
+      "sha": "da133fef9c526001e5d7014f08c1fcd8da41a79714bbd1a64583a9be10ecdd50"
     },
     {
       "art": "aenderung",
@@ -201,8 +303,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/492/de",
-      "sha": "d626f33e679d2d786ff7d26d56971e07068c3f62f8e91f81115692bcda5e47c2"
+      "sha": "2cab6088022b84d5927d26d15ceff071a33433d7986938f96c913125018726fc"
     },
     {
       "art": "aenderung",
@@ -213,8 +318,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/61/de",
-      "sha": "a395d1bcdcabe440e53c53db3534d31db3b0b926c4df7b8551f8e81e91185d0f"
+      "sha": "30a17c8e589daf4b15bd700ee169c6092e45731f29a52e0d45e0c33a116c7255"
     },
     {
       "art": "aenderung",
@@ -225,8 +333,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/460/de",
-      "sha": "48b2d7faf66cb4dce94e26710eba0d50ab2285758a67a7785b7cdc8ed2a3353d"
+      "sha": "73c8b8c9af867b6d3c40f3cdf40f2ee7596ee13e1e7055d506c90a9005b8ca73"
     },
     {
       "art": "aenderung",
@@ -237,8 +348,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/586/de",
-      "sha": "92e211e00b0905a93b5c853ddb11d35d1cc8ef526d4c11e3d8fee1e0ff1b4655"
+      "sha": "05c198020f74709707469dd9bbddd2f6af722e3344a2b8f8380757a8fabf7870"
     },
     {
       "art": "aenderung",
@@ -249,8 +363,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/274/de",
-      "sha": "447c464324e83528689fec95131f0be3657c3f3d3fc862300deb0be712808b89"
+      "sha": "a4294d23b9a5fc80bc8cbf5340bcff0f6bbdcd0bc18028ccc550b0060e864964"
     },
     {
       "art": "aenderung",
@@ -261,8 +378,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/825/de",
-      "sha": "468524365749bafbc626471b8e5299b09f7cf0427d6f228a870b87274493d3e6"
+      "sha": "eb44861256b77cd4c64db4848e0d527144848170e1cbc7f1cb737977d072253e"
     },
     {
       "art": "aenderung",
@@ -273,14 +393,26 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/859/de",
-      "sha": "9c8824a34933d5935c9e398c54fd28f6753d6dc9a3e941c6404a39f76cac05a0"
+      "sha": "580ca74fa328c033c0ae827412d00817ad4acf29b578affe52fd016e22e5c30a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.11",
-      "sha": "044f73b189d720fbcade44ac3fddc8a7f07500ca0954aa26293e4b577eec0831"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/586",
+      "dateDocument": "2012-08-29",
+      "roFundstelle": "AS 2012 5009",
+      "titelDe": "Postverordnung (VPG)",
+      "titelFr": "Ordonnance sur la poste (OPO)",
+      "titelIt": "Ordinanza sulle poste (OPO)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/586/de",
+      "sha": "5a9cc636cc6ec66ac9a35e74ce92b6bbd07cae5814e6c8e1f47ff981492f94f8"
     },
     {
       "art": "aenderung",
@@ -291,8 +423,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/259/de",
-      "sha": "c4b70fa03722fe194dd9f3d729e1438b89de318d7bbbb3af9509686c27c7fcca"
+      "sha": "25703eb1c01b436b182af904c7a306d6f9a48d39118a5e1e93f39c2aa8ddb31a"
     },
     {
       "art": "aenderung",
@@ -303,8 +438,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/654/de",
-      "sha": "35ed14624c2eb5018494ecdbf120c6e57c64c75c8681f9d8cca28e7c02726a1d"
+      "sha": "8d7c26da5a2acbf69cff6b448b8fe676eda26481485b930d224f37941b99995b"
     },
     {
       "art": "aenderung",
@@ -315,20 +453,60 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/695/de",
-      "sha": "a921a9cd46f071b3cc09aa73987c8afcefbd1d51ffc143b080fc1f3c3b4c92fb"
+      "sha": "fb2d33a7f2f26e015d63adad3f12e2843e272a75f5e1b42090650f73c3594059"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.11",
-      "sha": "e63fb58e3fcb160f7a7b9ed66d22d637bfa970a80bfb18dfb8934d41642b65c6"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/729",
+      "dateDocument": "2009-11-04",
+      "roFundstelle": "AS 2009 5959",
+      "titelDe": "Verordnung zur Anpassung von Verordnungen im Rahmen der ersten Phase der Bahnreform 2",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances dans le cadre de la première phase de la réforme des chemins de fer 2",
+      "titelIt": "Ordinanza che adegua ordinanze nell'ambito della prima fase della Riforma delle ferrovia 2",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/729/de",
+      "sha": "b1fa2434cbe039b40b14793bd5aa57b1cbc066931afa2d06cbcdd58d99395f3e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.11",
-      "sha": "986efbe138f127ccc947c114d8f7b5af150ce941f512f1be7631a0afcbc572ca"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/581",
+      "dateDocument": "2005-08-17",
+      "roFundstelle": "AS 2005 4487",
+      "titelDe": "Verkehrsregelnverordnung (VRV)",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2006-03-01",
+        "2008-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/581/de",
+      "sha": "88c538bec9fb3e93548955e5788a86e847a0c70b4a91686b37d46335fd09c314"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/796",
+      "dateDocument": "2007-11-07",
+      "roFundstelle": "AS 2007 5957",
+      "titelDe": "Nationalstrassenverordnung (NSV)",
+      "titelFr": "Ordonnance sur les routes nationales (ORN)",
+      "titelIt": "Ordinanza sulle strade nazionali (OSN)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/796/de",
+      "sha": "189727207d61239a4fc6aee74162c01fad554cb6b24cf4ca09c10f4b495e0540"
     },
     {
       "art": "aenderung",
@@ -339,20 +517,41 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/297/de",
-      "sha": "625b409586db1913702d608d9d2ab5972475e16d9ae25789b0575439dfe1243e"
+      "sha": "2e58d8d69e540a7feda3dd63aba81f3080754b3dbf443e227fe7bf8a9b29d8b7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.11",
-      "sha": "df5b3f0f2fa34f62f0a432448af5356a78031390bf21da36f7b0894b2b3143a2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/250",
+      "dateDocument": "2006-11-01",
+      "roFundstelle": "AS 2007 1469",
+      "titelDe": "Zollverordnung (ZV)",
+      "titelFr": "Ordonnance sur les douanes (OD)",
+      "titelIt": "Ordinanza sulle dogane (OD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/250/de",
+      "sha": "d2113a1186c90ab946018f502f4631d6cd830fbc87fa71a4ab6896829104ecfa"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.11",
-      "sha": "83f572755f0673c57e4238635d9baad5da1615437e1da62933a1e5aef2ea6b75"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4705",
+      "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "sha": "509e7b22613546560d1e36883c9ec32fce8a8368a2969478863a0cb4a567bbfd"
     },
     {
       "art": "aenderung",
@@ -363,8 +562,15 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2006-03-01",
+        "2008-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/581/de",
-      "sha": "a8738e098dfe1bdda8ac3f450e0fe7f25561dfdd93d57ae610308ca90c1e5d43"
+      "sha": "4014f435e96a12db69e6f6f1c6abdb558d21598205c6f62d52dfef7e698ffc4a"
     },
     {
       "art": "aenderung",
@@ -375,8 +581,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/544/de",
-      "sha": "218930566562ddfe7d1f865898707ab5827741ab1a674d064202fefec672abdd"
+      "sha": "8dd0c71e19d4e7bb87e3140aa9f3b4dc02b16e6d2b92e0ef07bcf107aa1142d7"
     },
     {
       "art": "aenderung",
@@ -387,8 +596,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/779/de",
-      "sha": "9bbd20dff8720c6362cb958ae961d8dec64bd34f9e39efea88734869aea5e55c"
+      "sha": "2948c8b59018cfcb44558a630153e711607ed3f26d67c1409aa618eb5ae5e90b"
     },
     {
       "art": "aenderung",
@@ -399,8 +611,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/351/de",
-      "sha": "5e246e438016ec34c52167dc04e93f97ca557ce68467ed5b2f8769571264a327"
+      "sha": "6a322da82822944da4852f37621490d4a4e31feba3eb5b859421c75edac33d2c"
     },
     {
       "art": "aenderung",
@@ -411,14 +626,26 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/471/de",
-      "sha": "64847f4e15cb0e1fc7de14914284ff8350ccbbd68a4ecb7ac55662018d8352eb"
+      "sha": "5e9f6bead7cd00f2f6c95fc5ccde70cac764fe8d25304853939e41aa45111729"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-12-14",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.11",
-      "sha": "a83d6f35caa769ee510d7f42a152cc9caec1cf7566287f20385c2a59a1d50dac"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/637",
+      "dateDocument": "2003-11-12",
+      "roFundstelle": "AS 2003 4289",
+      "titelDe": "Verordnung über Bau und Betrieb der Eisenbahnen (Eisenbahnverordnung, EBV)",
+      "titelFr": "Ordonnance sur la construction et l'exploitation des chemins de fer (Ordonnance sur les chemins de fer, OCF)",
+      "titelIt": "Ordinanza sulla costruzione e l'esercizio delle ferrovie (O sulle ferrovie, Oferr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/637/de",
+      "sha": "5724b19ad435223e8ad03ab57f3f146c8637734708c14c92855d95f8cf624ab4"
     },
     {
       "art": "aenderung",
@@ -429,8 +656,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/481/de",
-      "sha": "65e826c7a736d5a7e61a1dd7cf937f8140969b65bf0d4ba386041df79da3641b"
+      "sha": "7e739e1a09b66978d6772fd9cd08b12a064ec47df8dfa76c8d8406e25ed95723"
     },
     {
       "art": "aenderung",
@@ -441,8 +671,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/534/de",
-      "sha": "72dec8d8eada5da76a8509dcafe57cd2daf206f455c977acf3a50464cf868b25"
+      "sha": "26813225ecc783050a17ff3f215fef7c6b193dedfc8be5415c863cc6082272a6"
     },
     {
       "art": "aenderung",
@@ -453,8 +686,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/288/de",
-      "sha": "28130878d255cd41df9e3babd8423537a0169768fd3b6ab63bda8384d7f2d251"
+      "sha": "287fa1f98d8ff4746f56949d8d667d46a4e15175e05e6943ff31c08d708dee68"
     },
     {
       "art": "aenderung",
@@ -465,8 +701,30 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/194/de",
-      "sha": "2b085982a520256406fb2c10e61da421a637cec2ffad1a548ac5303fd5519649"
+      "sha": "a2f80ef937b6c8ea90f7bc9768ec2d7e9e35ff09d72ac87f873eb7b2874dc06f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/500",
+      "dateDocument": "2000-11-15",
+      "roFundstelle": "AS 2000 2883",
+      "titelDe": "Verkehrsregelnverordnung (VRV)",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2001-01-01",
+        "2002-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/500/de",
+      "sha": "8d7686a1dd9df09c8675afda03654035435efec21df9a67872f19e910f2f3581"
     },
     {
       "art": "aenderung",
@@ -477,8 +735,26 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/405/de",
-      "sha": "ce5ca5d0d47c2053bf1349f98f585e5ad7a59e24985f7c3128680cf165e428f9"
+      "sha": "1ef6f3dc6a8a328cd709707f4d7ce3c7d5b280f6eec9b2bce58afa859371d0d1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/192",
+      "dateDocument": "2000-03-06",
+      "roFundstelle": "AS 2000 1170",
+      "titelDe": "Verordnung über eine leistungsabhängige Schwerverkehrsabgabe (Schwerverkehrsabgabeverordnung, SVAV)",
+      "titelFr": "Ordonnance concernant une redevance sur le trafic des poids lourds liée aux prestations (Ordonnance relative à une redevance sur le trafic des poids lourds, ORPL)",
+      "titelIt": "Ordinanza concernente una tassa sul traffico pesante commisurata alle prestazioni (Ordinanza sul traffico pesante, OTTP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/192/de",
+      "sha": "f25f0226ae1318c1202a57a5df7a5c317a6485cb70ec924cc1f44733d6f9aad5"
     },
     {
       "art": "aenderung",
@@ -489,8 +765,11 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/499/de",
-      "sha": "c011da517b79f20ed221707569dae54f7df47a70ff6d5d21a9bad13b8f8fb509"
+      "sha": "bee4b79d3ebeffc24965a34cc6878935236737a2d9dd6c4253b72720cb5b7832"
     },
     {
       "art": "aenderung",
@@ -501,27 +780,637 @@
       "titelDe": "Verkehrsregelnverordnung (VRV)",
       "titelFr": "Ordonnance sur les règles de la circulation routière (OCR)",
       "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2001-01-01",
+        "2002-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/500/de",
-      "sha": "2a1418791f171245726f3c5ff3b5d3ce8f710fac259592d3179ab9776992a077"
+      "sha": "893dbec0663ba03e69aea6673b681b19289ae378a7f580d1168e7bd3dc5eb9e8"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2000-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/741.11",
-      "sha": "2dec8c9eb39adcad4700e9ed39b22baae6708c6f91f62d154669d1a6a19e4353"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/44",
+      "dateDocument": "1999-12-06",
+      "roFundstelle": "AS 2000 243",
+      "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Umwelt, Verkehr, Energie und Kommunikation (OV-UVEK)",
+      "titelFr": "Ordonnance sur l'organisation du Département fédéral de l'environnement, des transports, de l'énergie et de la communication (Org DETEC)",
+      "titelIt": "Ordinanza sull'organizzazione del Dipartimento federale dell'ambiente, dei trasporti, dell'energia e delle comunicazioni (Org-DATEC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/44/de",
+      "sha": "c917027a41f7a85d74dec8a0678223b0752e09ba0152402a5ba9d04e70bf54f2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/2352_2352_2352",
+      "dateDocument": "1998-09-02",
+      "roFundstelle": "AS 1998 2352",
+      "titelDe": "Verordnung über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2352_2352_2352/de",
+      "sha": "9b3b870aaa325ba5e81672128f3a226e6e3fafdada029bc673093d10f89b5d15"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-05-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1465_1465_1465",
+      "dateDocument": "1998-05-06",
+      "roFundstelle": "AS 1998 1465",
+      "titelDe": "Verkehrsregelnverordnung (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1465_1465_1465/de",
+      "sha": "c1d23dda6e5c3057881039f0ff42e01ffb7780c22f46a811fdb221800a73bcce"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1188_1188_1188",
+      "dateDocument": "1998-03-25",
+      "roFundstelle": "AS 1998 1188",
+      "titelDe": "Verordnung über die Arbeits- und Ruhezeit der Führer von leichten Motorwagen zum gewerbsmässigen Personentransport (ARV 2), Änderung",
+      "titelFr": "Ordonnance sur la durée du travail et du repos des conducteurs de voitures automobiles légères affectées au transport professionnel de personnes (OTR 2), Modification",
+      "titelIt": "Ordinanza sulla durata del lavoro e di riposo dei conducenti di veicoli leggeri per il trasporto professionale di persone (OLR2), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1188_1188_1188/de",
+      "sha": "13f77a89140bbb72ad49b2c9341f836abf0d816e9838c07dc1c7f50e2a89dd0e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779",
+      "dateDocument": "1997-12-01",
+      "roFundstelle": "AS 1997 2779",
+      "titelDe": "Verordnung vom 1. Dezember 1997 über die Aufhebung und die Änderung von Verordnungen aufgrund der PTT-Reform",
+      "titelFr": "Ordonnance du 1er décembre 1997 concernant l'abrogation et la modification d'ordonnances découlant de la réforme des PTT",
+      "titelIt": "Ordinanza del 1° dicembre 1997 sull'abrogazione e la modifica di ordinanze in base alla riforma delle PTT",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2779_2779_2779/de",
+      "sha": "8c82ad789eb881f2709a96996131caef459a4be76042349064b95578ba64faa9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1796_1796_1796",
+      "dateDocument": "1998-06-22",
+      "roFundstelle": "AS 1998 1796",
+      "titelDe": "Verordnung vom 22. Juni 1998 über die Anpassung von Zuständigkeitsbestimmungen in Verordnungen und Bundesratsbeschlüssen im Bereich des Strassenverkehrs, Änderung",
+      "titelFr": "Ordonnance du 22 juin 1998 concernant l'adaptation des règles de compétence dans les ordonnances et les arrêtés du Conseil fédéral relatifs à la circulation routière, Modification",
+      "titelIt": "Ordinanza del 22 giugno 1998 concernente l'adeguamento delle disposizioni attributive di competenza nelle ordinanze e nei decreti del Consiglio federale in materia di circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1796_1796_1796/de",
+      "sha": "34dafd443ac5ceffed37758c88ed29d610b20de87d517fa6e5e34bbdf7f3bbc7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2404_2404_2404",
+      "dateDocument": "1997-10-22",
+      "roFundstelle": "AS 1997 2404",
+      "titelDe": "Verkehrsregelnverordnung (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2404_2404_2404/de",
+      "sha": "7b8439d769439e9d15f073d299f26d1f06690de6e3ec317fd9872533f927da0f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/__268",
+      "dateDocument": "1998-02-03",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/__268/de",
+      "sha": "1f6f859d1eef63b289c71843e1df4c0f409777137d3213e649a5bcb39ae56d84"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/1609_1609_1609",
+      "dateDocument": "1997-06-25",
+      "roFundstelle": "AS 1997 1609",
+      "titelDe": "Verkehrsregelnverordnung (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/1609_1609_1609/de",
+      "sha": "0c076cb6b0aec4bee4c063b8084e949233149f1a0a28eafe46f0edb5a7b951bc"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/4425_4425_4425",
+      "dateDocument": "1995-06-19",
+      "roFundstelle": "AS 1995 4425",
+      "titelDe": "Verordnung vom 19. Juni 1995 über die technischen Anforderungen an Strassenfahrzeuge (VTS)",
+      "titelFr": "Ordonnance du 19 juin 1995 concernant les exigences techniques requises pour les véhicules routiers (OETV)",
+      "titelIt": "Ordinanza del 19 giugno 1995 concernente le esigenze tecniche per i veicoli stradali (OETV)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/4425_4425_4425/de",
+      "sha": "ae1ac59c320f119a06c15476fc461760d2213a9cd4ea0de1ab7315b2022425f4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1340_1340_1340",
+      "dateDocument": "1994-05-30",
+      "roFundstelle": "AS 1994 1340",
+      "titelDe": "Verordnung vom 30. Mai 1994 über den Bundesfeiertag",
+      "titelFr": "Ordonnance du 30 mai 1994 sur la fête nationale",
+      "titelIt": "Ordinanza del 30 maggio 1994 sulla festa nazionale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1340_1340_1340/de",
+      "sha": "18f42b29f2e4061900b86ae4d0316c2d546af008c4e08bea3bb47a4a40cecb05"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/167_167_167",
+      "dateDocument": "1993-12-22",
+      "roFundstelle": "AS 1994 167",
+      "titelDe": "Verordnung vom 22. Dezember 1993 über die Änderung von Erlassen des Strassenverkehrs (Wartung und Nachkontrolle von Motorwagen betreffend Abgas- und Rauchemissionen",
+      "titelFr": "Ordonnance du 22 décembre 1993 concernant la modification de textes légaux relatifs à la circulation routière (Entretien et contrôle subséquent des voitures automobiles quant aux émissions de gaz d'échapement et de fumées)",
+      "titelIt": "Ordinanza del 22 dicembre 1993 concernente la modifica di testi normativi in materia di circolazione stadale (Manutenzione e contollo successivo di autoveicoli per quanto concerne le emissioni di gas di scarico e di fumo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1994-02-01",
+        "1994-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/167_167_167/de",
+      "sha": "7a844d9d8ce9f0e49a035acc561f0920b2b38e2c8dfafad1fd6ca7e050cf817e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/1103_1103_1103",
+      "dateDocument": "1994-03-07",
+      "roFundstelle": "AS 1994 1103",
+      "titelDe": "Signalisationsverordnung, Änderung",
+      "titelFr": "Ordonnance sur la signalisation routière, Modification",
+      "titelIt": "Ordinanza sulla segnaletica stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/1103_1103_1103/de",
+      "sha": "9eca32e816028587cfaebc27b176afa29610ed1367a630f8c9e779a7a0fb7fcb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/816_816_816",
+      "dateDocument": "1994-03-07",
+      "roFundstelle": "AS 1994 816",
+      "titelDe": "Verkehrsregelnverordnung (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/816_816_816/de",
+      "sha": "6c344130f2213a0d742e8f0da437f5e66eeb617658ad59337cebd778ddcb899e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/__1338",
+      "dateDocument": "1994-05-24",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/__1338/de",
+      "sha": "a21984e2110e54e0774219b61244c7a48f74b84b051b704357e278fb4f8d5eec"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/167_167_167",
+      "dateDocument": "1993-12-22",
+      "roFundstelle": "AS 1994 167",
+      "titelDe": "Verordnung vom 22. Dezember 1993 über die Änderung von Erlassen des Strassenverkehrs (Wartung und Nachkontrolle von Motorwagen betreffend Abgas- und Rauchemissionen",
+      "titelFr": "Ordonnance du 22 décembre 1993 concernant la modification de textes légaux relatifs à la circulation routière (Entretien et contrôle subséquent des voitures automobiles quant aux émissions de gaz d'échapement et de fumées)",
+      "titelIt": "Ordinanza del 22 dicembre 1993 concernente la modifica di testi normativi in materia di circolazione stadale (Manutenzione e contollo successivo di autoveicoli per quanto concerne le emissioni di gas di scarico e di fumo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1994-02-01",
+        "1994-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/167_167_167/de",
+      "sha": "e1c1aa79cd2207ef13956d3c87be443193ace81a570490dc2aa40ff64aff78d4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/214_214_214",
+      "dateDocument": "1993-12-22",
+      "roFundstelle": "AS 1994 214",
+      "titelDe": "Verordnung über Bau und Ausrüstung der Strassenfahrzeuge (BAV), Änderung",
+      "titelFr": "Ordonnance sur la construction et l'équipement des véhicules routiers (OCE), Modification",
+      "titelIt": "Ordinanza concernente la costruzione e l'equipaggiamento dei veicoli stradali (OCE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/214_214_214/de",
+      "sha": "da0be56959ebe1c06b96babfb502877c4050f84ac646e640d449b92a9713a5e5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/536_536_536",
+      "dateDocument": "1992-02-19",
+      "roFundstelle": "AS 1992 536",
+      "titelDe": "Verordnung über Bau und Ausrüstung der Strassenfahrzeuge (BAV), Änderung",
+      "titelFr": "Ordonnance sur la construction et l'équipement des véhicules routiers (OCE), Modification",
+      "titelIt": "Ordinanza concernente la costruzione e l'equipaggiamento dei veicoli stradali (OCE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1992-04-01",
+        "1993-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/536_536_536/de",
+      "sha": "21dc8ca03f87f3b5b25e3f990f4296e000b0e2a2f379713358cf7f6a5772c268"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1142_1142_1142",
+      "dateDocument": "1992-07-01",
+      "roFundstelle": "AS 1993 1142",
+      "titelDe": "Verkehrsregelnverordnung (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1142_1142_1142/de",
+      "sha": "22c342235c01874a060a770069688b02e79c39ef6c834306ea62e74d617f39c1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/536_536_536",
+      "dateDocument": "1992-02-19",
+      "roFundstelle": "AS 1992 536",
+      "titelDe": "Verordnung über Bau und Ausrüstung der Strassenfahrzeuge (BAV), Änderung",
+      "titelFr": "Ordonnance sur la construction et l'équipement des véhicules routiers (OCE), Modification",
+      "titelIt": "Ordinanza concernente la costruzione e l'equipaggiamento dei veicoli stradali (OCE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1992-04-01",
+        "1993-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/536_536_536/de",
+      "sha": "f60f769ef94a871433bb956372ba451b0422e03281bf0b7f8cc20ec2c9b281d6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/78_78_78",
+      "dateDocument": "1990-12-03",
+      "roFundstelle": "AS 1991 78",
+      "titelDe": "Verordnung vom 3. Dezember 1990 über die Änderung und Aufhebung von Erlassen des Strassenverkehrs infolge der Revision vom 6. Oktober 1989 des Bundesgesetzes über die Strassenverkehr",
+      "titelFr": "Ordonnance du 3 décembre 1990 concernant la modification et l'abrogation d'actes législatifs portant sur la circulation routière, suite à la révision du 6 octobre 1989 de la loi fédérale sur la circulation routière",
+      "titelIt": "Ordinanza del 3 dicembre 1990 concernente la modifica e l'abrogazione di atti normativi della circolazione stradale, in seguito alla revisione dell 6 ottobre 1989 della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/78_78_78/de",
+      "sha": "9c9834d89f20962d5c3a69fac682a8992cc39efb8bce10f7bb71fd33a991d538"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/66_66_66",
+      "dateDocument": "1989-12-20",
+      "roFundstelle": "AS 1990 66",
+      "titelDe": "Verordnung vom 20. Dezember 1989 über die Änderung von Erlassen des Strassenverkehrs (Tempo 120/80)",
+      "titelFr": "Ordonnance du 20 décembre 1989 concernant la modification de testes légaux relatifs à la circulation routière (Limitation 120/80)",
+      "titelIt": "Ordinanza del 20 dicembre 1989 riguardante la modifica di testi giuridici sulla circolazione stradale (Velocità 120/80)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/66_66_66/de",
+      "sha": "3cc21c68cbb5deb6dccb36a94f585619230fadb685edb1b6b495693ccd5dbd21"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/410_410_410",
+      "dateDocument": "1989-01-25",
+      "roFundstelle": "AS 1989 410",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/410_410_410/de",
+      "sha": "65a50ebce3e5ed8126ec9bd7c956e458aded86272fc71f4fa72886f3cf6ba8b5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/1841_1841_1841",
+      "dateDocument": "1985-11-13",
+      "roFundstelle": "AS 1985 1841",
+      "titelDe": "Verordnung über die Änderungen von Erlassen des Strassenverkehrs (Wartung und Nachkontrolle leichter Motorwagen betreffend Abgasemissionen), Änderung",
+      "titelFr": "Ordonnance concernant la modification de textes légaux relatifs à la circualtation routière (Entretien et contrôle périodique des voitures automobiles légères en ce qui concerne les émissions de gaz d'échappement), Modification",
+      "titelIt": "Ordinanza concernente la modifica di testi legali relativi alla circolazione stradale (Manutenzione e controllo periodico degli autoveicoli leggeri per quanto concerne le emissioni di gas di scarico), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/1841_1841_1841/de",
+      "sha": "e1401925dc390ff3473e798c1b05d85064c0b0c8bf5272cb2f54e6dd5c0678b0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/1119_1119_1119",
+      "dateDocument": "1984-10-01",
+      "roFundstelle": "AS 1984 1119",
+      "titelDe": "Verordnung vom 1. Oktober 1984 über die Änderung von Erlassen des Strassenverkehrs (Beschränkung 80/120)",
+      "titelFr": "Ordonnance du 1er octobre 1984 concernant la modification de textes légaux relatifs à la circulation routière (Limitation 80/120)",
+      "titelIt": "Ordinanza del 1o ottobre 1984 riguardante la modifica di testi giuridici sulla circolazione stradale (Tempo 80/120)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/1119_1119_1119/de",
+      "sha": "d2302896e8d683176a79390874d067bbfb988471fa881ae99beaaf73ff3eaa5c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/1338_1338_1338",
+      "dateDocument": "1984-11-07",
+      "roFundstelle": "AS 1984 1338",
+      "titelDe": "Verordnung über Bau und Ausrüstung der Strassenfahrzeuge (BAV), Änderung",
+      "titelFr": "Ordonnance sur la construction et l'équipement des véhicules routiers (OCE), Modification",
+      "titelIt": "Ordinanza concernente la costruzione e l'equipaggiamento dei veicoli stradali (OCE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/1338_1338_1338/de",
+      "sha": "fd57e122bba24dc5cf34706648a686bbf6ed1e42dba9234484489df991008ddb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1651_1651_1651",
+      "dateDocument": "1983-10-19",
+      "roFundstelle": "AS 1983 1651",
+      "titelDe": "Verordnung vom 19. Oktober 1983 über die Änderung von Erlassen des Strassenverkehrs (Tempo 50 innerorts)",
+      "titelFr": "Ordonnance concernant la modification de textes légaux relatifs à la circulation routière (50 à l'heure dans les localités)",
+      "titelIt": "Ordinanza concernente la modifica di norme della circolazione stradale (50 all'ora nelle località)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1651_1651_1651/de",
+      "sha": "2614aea5ea6b59ebc90b8919c0b1fddd380dde86b7f53d091e047e9650b445ca"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/495_495_495",
+      "dateDocument": "1982-03-01",
+      "roFundstelle": "AS 1982 495",
+      "titelDe": "Verordnung über Bau und Ausrüstung der Strassenfahrzeuge (BAV), Änderung",
+      "titelFr": "Ordonnance sur la construction et l'équipement des véhicules routiers (OCE), Modification",
+      "titelIt": "Ordinanza concernente la costruzione e l'equipaggiamento dei veicoli stradali (OCE), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/495_495_495/de",
+      "sha": "38e216456ea8b507332e155843f902712e1aec52e3245dbaf831e359f1db01a1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/531_531_531",
+      "dateDocument": "1982-04-07",
+      "roFundstelle": "AS 1982 531",
+      "titelDe": "Verordnung vom 7. April 1982 über die Änderung von Erlassen des Strassenverkehrs",
+      "titelFr": "Ordonnance du 7 avril 1982 concernant la modification de plusieurs dispositions sur la circulation routière",
+      "titelIt": "Ordinanza del 7 aprile 1982 concernente la modifica di diverse disposizioni sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/531_531_531/de",
+      "sha": "63b40f7be63c2922f139f08191160493728cf705ad00d86f5ea7820ff2a7e57d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-09-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1981/1362_1362_1362",
+      "dateDocument": "1981-08-12",
+      "roFundstelle": "AS 1981 1362",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1981/1362_1362_1362/de",
+      "sha": "92874795f5a25db600e709f885c02e18609772bfe3498a73c4eee941590a1ab8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1981/507_507_507",
+      "dateDocument": "1981-05-20",
+      "roFundstelle": "AS 1981 507",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln, Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière, Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1981/507_507_507/de",
+      "sha": "0d392dd1c33bdb06d1b8904a950da796e96be78603da85d5dcb630a96d408ff3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1981/572_572_572",
+      "dateDocument": "1981-05-27",
+      "roFundstelle": "AS 1981 572",
+      "titelDe": "Tierschutzverordnung vom 27. Mai 1981 (TSchV)",
+      "titelFr": "Ordonnance du 27 mai 1981 sur la protection des animaux (OPAn)",
+      "titelIt": "Ordinanza del 27 maggio 1981 sulla protezione degli animali (OPAn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1981/572_572_572/de",
+      "sha": "db95fa939c97539481ebfeb5057905575be26bfce9e6f53ff8d3f70ce210ddc9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1980-09-05",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1980/1130_1130_1130",
+      "dateDocument": "1980-09-03",
+      "roFundstelle": "AS 1980 1130",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1980/1130_1130_1130/de",
+      "sha": "856ea4dfd0db4edd1cd964237fe19e7bfa1e50fb574497fad27e65203af26b66"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1980-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1979/1583_1583_1583",
+      "dateDocument": "1979-11-14",
+      "roFundstelle": "AS 1979 1583",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/1583_1583_1583/de",
+      "sha": "544bf846e84c034c7160af07288e275ac2316128f441c4f590a2ae7df9b914cc"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/2810_2810_2810",
+      "dateDocument": "1976-12-22",
+      "roFundstelle": "AS 1976 2810",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière (OCR), Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale (ONC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/2810_2810_2810/de",
+      "sha": "8f254fc0c2a86ac2fe8433ca2a9703c5b9406fc502a8621635b32fb74d75018a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/541_541_541",
+      "dateDocument": "1975-03-10",
+      "roFundstelle": "AS 1975 541",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln, Änderung",
+      "titelFr": "Ordonnance sur les règles de la cirulation routière, Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/541_541_541/de",
+      "sha": "d13ce47890a02eb9a5dfdd11ddfba4392a3b14a038d5e87652adaa851bbd58e1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1974-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/2155_2155_2155",
+      "dateDocument": "1973-12-10",
+      "roFundstelle": "AS 1973 2155",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln, Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière, Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/2155_2155_2155/de",
+      "sha": "fef95c4963d60729684a7eedac31c4638810eaf4f215c7f2577c5932fca415a2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/1573_1605_1777",
+      "dateDocument": "1972-07-10",
+      "roFundstelle": "AS 1972 1573",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln (VRV), Änderung",
+      "titelFr": "Ordonnance sur les règles de la circulation routière, Modification",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/1573_1605_1777/de",
+      "sha": "9af4b0390475ac11da294e6718d14876951b3b44a9b72991507a99390d2fe060"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/1747__1951",
+      "dateDocument": "1972-08-21",
+      "roFundstelle": "AS 1972 1747",
+      "titelDe": "Verordnung über die Strassenverkehrsregeln (VRV), Berichtigung",
+      "titelIt": "Ordinanza sulle norme della circolazione stradale, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/1747__1951/de",
+      "sha": "e202bbf350fa9cd33da6ba7a597d1b0fce6edb3812622bd9efb7f27c792b1b80"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1969-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1969/793_813_811",
+      "dateDocument": "1969-08-27",
+      "roFundstelle": "AS 1969 793",
+      "titelDe": "Bundesratsbeschluss vom 27. August 1969 über administrative Ausführungsbestimmungen zum Strassenverkehrsgesetz",
+      "titelFr": "Arrêté du Conseil fédéral du 27 août 1969 groupant les dispositions administratives prises en application de la loi sur la circulation routière",
+      "titelIt": "Decreto del Consiglio federale del 27 agosto 1969 concernente le disposizioni amministrative per l'esecuzione della legge federale sulla circolazione stradale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1969/793_813_811/de",
+      "sha": "ff2aa44ca70ca259309fd4ad8dc65572363fae827a626355738defea8ef362cb"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1963-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1962/1364_1409_1420",
-      "dateDocument": "1962-11-13",
-      "roFundstelle": "AS 1962 1364",
-      "titelDe": "Verkehrsregelnverordnung vom 13. November 1962 (VRV)",
-      "titelFr": "Ordonnance du 13 novembre 1962 sur les règles de la circulation routière (OCR)",
-      "titelIt": "Ordinanza del 13 novembre 1962 sulle norme della circolazione stradale (ONC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1962/1364_1409_1420/de",
-      "sha": "690535022420f04ff65640d4e65b94b86fce14998941f49a43be44e8f7fda6be"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/_1001_",
+      "dateDocument": "1973-06-05",
+      "titelFr": "Ordonnance sur les règles de la circulation routière, Errata",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/_1001_/de",
+      "sha": "09f085b37d50e07b60cc655dc4fd4014e43ef83949222adc387befeb40c7433a"
     }
   ],
-  "sha": "8b743a22a236607c8ea8dabe2e0106e45047544e60692d6a2d3001b00ab52f41"
+  "sha": "62f65fb6820c328abc69df2c990d010fa71ab9692d0bd573ad08752e426f66e4"
 }

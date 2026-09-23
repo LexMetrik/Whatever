@@ -1,8 +1,8 @@
 {
   "erlassKey": "ELV",
   "sr": "831.301",
-  "abgerufen": "2026-09-18",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,8 +14,11 @@
       "titelFr": "Ordonnance sur les prestations complémentaires à l’assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (OPC-AVS/AI)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/466/de",
-      "sha": "723aab5c26fc03d27bf6de3047bbef72a6889bfb18e78938ef13625c4aa30b63"
+      "sha": "3f93e2ca23d45666fba64b4fe613310fdc95a7bf1ca117a9cb75eb6de231ef81"
     },
     {
       "art": "aenderung",
@@ -26,8 +29,11 @@
       "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
       "titelFr": "Ordonnance sur les prestations complémentaires à l’assurance vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/467/de",
-      "sha": "1deb82d38432091336dec6059b8a8b81e4bb4b88e1dcf4c775f7cfbe6838cdf5"
+      "sha": "688e612aa93be4bcabb3a234cb4452ed9347619630d7503805929e57ce8e9503"
     },
     {
       "art": "aenderung",
@@ -40,14 +46,26 @@
       "titelIt": "Ordinanza sull’assicurazione per l’invalidità (OAI). Correzione",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 2007 5155, das unter SR 831.201 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/130/de",
-      "sha": "86e0ed83cb5b458c96d91555400f5877bfb1617027142fa2ce3e6f87bc13e7b8"
+      "sha": "98c8300b093652849e54d5c2c2991f3afd5da1f45665bf242c732d9a5d48ebc9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.301",
-      "sha": "c1b007bf67269ac02dc2ef37cc8583450ac1d3483b3fcdbcad884c78d8553f89"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/506",
+      "dateDocument": "2023-08-30",
+      "roFundstelle": "AS 2023 506",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/506/de",
+      "sha": "5c7dddebd3667bd2e5e37e0414d505dec30f1f7afa17760d0578b07c3cc6f54c"
     },
     {
       "art": "aenderung",
@@ -58,14 +76,60 @@
       "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
       "titelFr": "Ordonnance sur les prestations complémentaires à l’assurance vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all’assicurazione per la vecchiaia, i superstiti e l’invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/607/de",
-      "sha": "ab76cd0494c9f74f149af00920a822f187721bac3ce3d08a095cc30f18ec1d2b"
+      "sha": "7cb8e2e90eb6f3d40d70a4378b3f0b07116ec6a93f07407e9865b5eba34a0433"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.301",
-      "sha": "db10d1e2563a3ee134cd951151dca80f4172f4473ea24f7fdf818cae802babc5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/376",
+      "dateDocument": "2021-06-11",
+      "roFundstelle": "AS 2021 376",
+      "titelDe": "Verordnung vom 11. Juni 2021 über Überbrückungsleistungen für ältere Arbeitslose (ÜLV)",
+      "titelFr": "Ordonnance du 11 juin 2021 sur les prestations transitoires pour les chômeurs âgés (OPtra)",
+      "titelIt": "Ordinanza dell'11 giugno 2021 sulle prestazioni transitorie per i disoccupati anziani (OPTD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/376/de",
+      "sha": "25dae4394fc2ffd192ec593f4890bf433d9eec6ec07722b64feced250a93ab30"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/112",
+      "dateDocument": "2020-01-29",
+      "roFundstelle": "AS 2020 599",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/112/de",
+      "sha": "3db619793d5511ee3dbee8e10033c238b4c7e57fbd184aad1a14e6f7d5a7c16d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/801",
+      "dateDocument": "2020-10-07",
+      "roFundstelle": "AS 2020 4545",
+      "titelDe": "Verordnung über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung",
+      "titelFr": "Ordonnance sur l'amélioration de la conciliation entre activité professionnelle et prise en charge de proches",
+      "titelIt": "Ordinanza concernente il miglioramento della conciliabilità tra attività lucrativa e assistenza ai familiari",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/801/de",
+      "sha": "3aa39b2f5fe459ab697ba465cec3316d098cb37b9b981ab7f890e5178c2be15b"
     },
     {
       "art": "aenderung",
@@ -76,8 +140,11 @@
       "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
       "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/822/de",
-      "sha": "444d14d6ed58474b09f3439a101ac06d81f00b2d0eff603be48c4ad378775db2"
+      "sha": "ae0e14f852c9655ff5ea3984c2e2eb183dd2d3440163253ce45ca5a2ce8a1ee7"
     },
     {
       "art": "aenderung",
@@ -88,8 +155,15 @@
       "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
       "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2021-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/112/de",
-      "sha": "1693b2556282aed3e5ef95c830ba0c5b096666c7b369f1246879bd70449b5512"
+      "sha": "580ea3b6cec0caa361a7cbcb17c9fba6eb1b0031c795fd6915f5686d6c1ebcfb"
     },
     {
       "art": "aenderung",
@@ -100,8 +174,11 @@
       "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
       "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/739/de",
-      "sha": "1594683b23de5ee331350bd0823732683849b400cf4b989cb86ef12086a7ee29"
+      "sha": "6a016df67eb79db9bd1fca9634cccf0eb08422002dc5a430bdb269793ebce213"
     },
     {
       "art": "aenderung",
@@ -112,26 +189,117 @@
       "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
       "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/750/de",
-      "sha": "1f4a83c6d9e04ccbafced0eeaf4a4d00c184a1d8d170ae05f35964c1b99f5ecc"
+      "sha": "822d17dfc045a9291faf12c8b642702d8a7972c3134df599937fd69badac1ef9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.301",
-      "sha": "608ad17d2a5adfb8b9fba184622c6c95b1eaa8f17f726b75ad6e3197084dd052"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/477",
+      "dateDocument": "2011-06-22",
+      "roFundstelle": "AS 2011 3527",
+      "titelDe": "Verordnung über die Krankenversicherung (KVV)",
+      "titelFr": "Ordonnance sur l'assurance-maladie (OAMal)",
+      "titelIt": "Ordinanza sull'assicurazione malattie (OAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/477/de",
+      "sha": "b16ad8d47979aee16afe2571677bf782e7b8a0d31180bdbe98dd9f0dbcd58efd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2012-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/800",
+      "dateDocument": "2011-11-16",
+      "roFundstelle": "AS 2011 5679",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/800/de",
+      "sha": "7a0f1c42e267b94f85796687a1d7b9ac46c4298af049b6d18252720c1c15c3d1"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.301",
-      "sha": "b57eb964888267d4e1f9d1a439df1840581dea35d4f70ae5d30b39fb01a63570"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 4477",
+      "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/633/de",
+      "sha": "2c5ac94c95d54792d20aa35f2fad47c31052ee4233948fb1b05d9876531d69d9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/723",
+      "dateDocument": "2007-09-28",
+      "roFundstelle": "AS 2007 5155",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/723/de",
+      "sha": "30014f45785d2cf1a0ebb0d6b64e229766e8537374945e23eebf614e9c2bb19e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+      "dateDocument": "2007-11-07",
+      "roFundstelle": "AS 2007 5823",
+      "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
+      "titelFr": "Ordonnance sur les adaptations des ordonnances touchées par la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons",
+      "titelIt": "Ordinanza che adegua il diritto regolamentare alla Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/789/de",
+      "sha": "301a1df7beaaadef2a1ce8b016873f62092e2642d9dd3c553226cf63ccc2680a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/800",
+      "dateDocument": "2007-11-14",
+      "roFundstelle": "AS 2007 6037",
+      "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+      "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+      "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/800/de",
+      "sha": "641c47ccc4e8ddd04ea729c70bd9687f6fe90f72daee3e32ef3c952b0a076854"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.301",
-      "sha": "28d576aeb6d32cd5414453c5f4c4a8347dfd03722a15c64d9c99caaa56e61ae9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4705",
+      "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "sha": "509e7b22613546560d1e36883c9ec32fce8a8368a2969478863a0cb4a567bbfd"
     },
     {
       "art": "aenderung",
@@ -142,8 +310,11 @@
       "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
       "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/770/de",
-      "sha": "5b5a7a8f79cca6b9eb825a5eea4b0fb839a3fc119f0c2c4bf5f53d96bff538ad"
+      "sha": "9dd226a5b1d02e7be1d699b209f9b380d1a9e83e668697ecee9299f760009f39"
     },
     {
       "art": "aenderung",
@@ -154,8 +325,27 @@
       "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
       "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/663/de",
-      "sha": "10e426dab83f8678dc4c135c8c1f8acca55f7a0039f74e4344c833c40899abd3"
+      "sha": "24bbb09fcddca66ed00ed9427c4e7861f6e389b189338b33bf73e67421a151ce"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/712",
+      "dateDocument": "2004-10-27",
+      "roFundstelle": "AS 2004 4643",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/712/de",
+      "sha": "9d52997751b6c22224ee5a3317080da6f722770272bb77e4f89626e330ba1053"
     },
     {
       "art": "aenderung",
@@ -166,8 +356,11 @@
       "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
       "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/562/de",
-      "sha": "92817d8283a0ecd73c05e6695224056640b75d08fd307c2b64b8c3e118c45552"
+      "sha": "c8adf6d0b1cdc203cd6a88671a7d49c30a4850896fac770aeea547384b6d5d80"
     },
     {
       "art": "aenderung",
@@ -178,8 +371,12 @@
       "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
       "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/577/de",
-      "sha": "3d6e09f34c1c93c5fd990bc7800a79cbe05b497da63e3c50bca1b7803f20d1dd"
+      "sha": "5e9284dff405f5ad2c940b54853c58f776fced30dc597ab9a26fb95f4838dd6c"
     },
     {
       "art": "aenderung",
@@ -190,8 +387,11 @@
       "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
       "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/508/de",
-      "sha": "0bb9db687be523d1537604fb54f1ad51f5c65ccf8710cb011fce939659ade0d9"
+      "sha": "54f1c72ee17f92e178e3de7df99e13baa2c6e9369fd8ca8d2f6a04b805140a3d"
     },
     {
       "art": "aenderung",
@@ -202,33 +402,341 @@
       "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
       "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
       "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2582_2582_2582/de",
-      "sha": "a0373372bf652453e2eebcef64180d3a31eb6ef4f63b0dc13ee424e54ceb74b7"
+      "sha": "488d6768859f64c969cdf8f32f103cf0527e8d723b30eaade4c5bbbcc94978f7"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1971-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/37_37_37",
-      "dateDocument": "1971-01-15",
-      "roFundstelle": "AS 1971 37",
-      "titelDe": "Verordnung vom 15. Januar 1971 über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV)",
-      "titelFr": "Ordonnance du 15 janvier 1971 sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI)",
-      "titelIt": "Ordinanza del 15 gennaio 1971 sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/37_37_37/de",
-      "sha": "5e6040591ad7942671ff05ddcd8275376ff05a58bcb307b645f6a3e4115a1a9c"
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2961_2961_2961",
+      "dateDocument": "1997-11-26",
+      "roFundstelle": "AS 1997 2961",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC-AVS/AI), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2961_2961_2961/de",
+      "sha": "76557e47103614ba69dc31be2d63fe949dc83e65e33ed5b7008095b37a5ff5be"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1966-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1965/1045_1057_1041",
-      "dateDocument": "1965-12-06",
-      "roFundstelle": "AS 1965 1045",
-      "titelDe": "Verordnung vom 6. Dezember 1965 zum Bundesgesetz über Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung",
-      "titelFr": "Ordonnance du 6 décembre 1965 relative à la loi fédérale sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité",
-      "titelIt": "Ordinanza del 6 dicembre 1965 concernente la legge federale sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1965/1045_1057_1041/de",
-      "sha": "6a716d1738317f93f515385a72862748f6e274ef452f67356c1406ee5f916cd2"
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/695_695_695",
+      "dateDocument": "1995-11-29",
+      "roFundstelle": "AS 1996 695",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/695_695_695/de",
+      "sha": "bf143018fd5ec0683d82a0b09af7b34ead8fe4d421aa7d4e968137b93c06cdc0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/3867_3867_3867",
+      "dateDocument": "1995-06-27",
+      "roFundstelle": "AS 1995 3867",
+      "titelDe": "Verordnung vom 27. Juni 1995 über die Krankenversicherung (KVV)",
+      "titelFr": "Ordonnance du 27 juin 1995 sur l'assurance-maladie (OAMal)",
+      "titelIt": "Ordinanza del 27 giugno 1995 sull'assicurazione malattie (OAMal)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/3867_3867_3867/de",
+      "sha": "a96c8838a1d96379523fa5eda6b7874e3722161da0413c98a4f5f6e0d9b35f97"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/4385_4385_4385",
+      "dateDocument": "1995-09-13",
+      "roFundstelle": "AS 1995 4385",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/4385_4385_4385/de",
+      "sha": "15919abac0a3e8c6916874e5a4accfc63806c461ebc28e5a688b419dbd6c2382"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2174_2174_2174",
+      "dateDocument": "1994-09-26",
+      "roFundstelle": "AS 1994 2174",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2174_2174_2174/de",
+      "sha": "3c6d903069a0acb276771ba4cb9de17d2765d3a3e3425df1821168724933c6f9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/2928_2928_2928",
+      "dateDocument": "1993-09-27",
+      "roFundstelle": "AS 1993 2928",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPCI), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/2928_2928_2928/de",
+      "sha": "6f072369dd5c3190c7a186e17818953346a641ef7063f57444718d97863d7f21"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/2119_2119_2119",
+      "dateDocument": "1991-08-21",
+      "roFundstelle": "AS 1991 2119",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/2119_2119_2119/de",
+      "sha": "b5bb4693fa42946428aa6ca5a8b25b6f290eca7aafcfa03b9a67e57f0aa9e2bf"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/370_370_370",
+      "dateDocument": "1991-01-30",
+      "roFundstelle": "AS 1991 370",
+      "titelDe": "Verordnung vom 30. Januar 1991 über die Genehmigung kantonaler Erlasse durch den Bund",
+      "titelFr": "Ordonnance du 30 janvier 1991 relative à l'approbation d'actes législatifs des cantons par la Confédération",
+      "titelIt": "Ordinanza del 30 gennaio 1991 sull'approvazione di atti legislativi dei Cantoni da parte della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/370_370_370/de",
+      "sha": "ef328d3088e3145621882611fffdd38630ec69a33d96b051d7ce9e0b7efe7b16"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/1238_1238_1238",
+      "dateDocument": "1989-06-12",
+      "roFundstelle": "AS 1989 1238",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/1238_1238_1238/de",
+      "sha": "46aafcadc01c6b23504b9ab9cdc21f5bbddf40ba602fa600a4aa484911639bf3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/1797_1797_1797",
+      "dateDocument": "1987-12-07",
+      "roFundstelle": "AS 1987 1797",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/1797_1797_1797/de",
+      "sha": "fb11fda7de31fb2f3a684a074503def12e8a4bfe1c30b6da46280c063eb6c557"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/1204_1204_1204",
+      "dateDocument": "1986-06-16",
+      "roFundstelle": "AS 1986 1204",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l 'invalidità (OPC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/1204_1204_1204/de",
+      "sha": "59297de0a6dade811152fc3eb6be4e0bbd4d5e85b7f986f82fb1d0bfe5d381eb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/2019_2019_2019",
+      "dateDocument": "1985-12-02",
+      "roFundstelle": "AS 1985 2019",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC-AVS/AI), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/2019_2019_2019/de",
+      "sha": "9c5dc1ce5bd9c8626ffcae0320abb3264df3ebe4658ef5986d28acb48492776f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/917_917_917",
+      "dateDocument": "1983-06-29",
+      "roFundstelle": "AS 1983 917",
+      "titelDe": "Verordnung 84 vom 29. Juni 1983 über Anpassungen über den Ergänzungsleistungen zur AHV/IV",
+      "titelFr": "Ordonnance 84 du 29 juin 1983 concernant les adaptations dans le régime des prestations complémentaires à l'AVS/AI",
+      "titelIt": "Ordinanza 84 del 29 giugno 1983 sull'adeguamento delle prestazioni complementari all'AVS/AI",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/917_917_917/de",
+      "sha": "b1d7e6da3a53c328bc735fd53262dfe8b809f5b04df7dc0c18a52fdc2508f56c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/40_40_40",
+      "dateDocument": "1983-11-28",
+      "roFundstelle": "AS 1984 40",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/40_40_40/de",
+      "sha": "bbb6445b2dba6d271cc5493a767230ebd752a5bb556250693cfd2dd43efea514"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/2085_2085_2085",
+      "dateDocument": "1982-12-24",
+      "roFundstelle": "AS 1982 2085",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/2085_2085_2085/de",
+      "sha": "b426d2bc2100b4f2fddf47f57b367a252efeba6f91da0e2dd3394e1659817e2d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1981/1696_1696_1696",
+      "dateDocument": "1981-10-21",
+      "roFundstelle": "AS 1981 1696",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+      "titelIt": "Ordinanza sulle prestazioni complementari all' assicurazione per la vecchiaia, i superstiti e l'invalidità (OPC), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1981/1696_1696_1696/de",
+      "sha": "f27df945d87b7bd66b044b1639ff669403d6ef2a9af4c42a83b4cca5a1889734"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1979-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/420_420_420",
+      "dateDocument": "1978-04-05",
+      "roFundstelle": "AS 1978 420",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV), Änderung",
+      "titelFr": "Règlement sur l'assurance vieillesse et survivants (RAVS), Modification",
+      "titelIt": "Ordinanza sull'assicurazione per la vecchiaia e per i superstiti (OAVS), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/420_420_420/de",
+      "sha": "dd4aea2976582a082f99f07e803c0a49abc5fdbfda7dff8f3e5becda728f6b47"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1975-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1974/1594_1594_1594",
+      "dateDocument": "1974-10-18",
+      "roFundstelle": "AS 1974 1594",
+      "titelDe": "Verordnung vom 18. Oktober 1974 über die Änderung von Vollzugerlassen zur Alters-, Hinterlassenen- und Invalidenversicherung",
+      "titelFr": "Règlement du 18 octobre 1974 modifiant les dispositions d'exécution sur l'assurance vieillesse, survivants et invalidité",
+      "titelIt": "Ordinanza del 18 ottobre 1974 sulla modifica di disposizioni esecutive dell'assicurazione per la vecchiaia, i superstiti e l'invalidità",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1974/1594_1594_1594/de",
+      "sha": "187d2fbd1fee5125c6f0ef21feaf695602e3a4504e71eb972f588c72da2106b0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1975-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/__900",
+      "dateDocument": "1975-05-20",
+      "titelIt": "LF sull'assicurazione per la vecchiaia e per i superstiti, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/__900/de",
+      "sha": "e4d36904270c54b728c4dda0c48560f98ed7479ab8746a6ab2a79f38b76cffe1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1974-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1974/146_146_146",
+      "dateDocument": "1973-12-21",
+      "roFundstelle": "AS 1974 146",
+      "titelDe": "Verordnung vom 21. Dezember 1973 über die Abstufung der Bundesbeiträge nach der Finanzkraft der Kantone",
+      "titelFr": "Ordonnance du 21 décembre 1973 réglant l'échelonnement des subventions fédérales d'après la capacité financière des cantons",
+      "titelIt": "Ordinanza del 21 dicembre 1973 che disciplina la graduazione dei contributi federali secondo la capacità finanziaria dei Cantoni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1974/146_146_146/de",
+      "sha": "85654b7a6e2e2450f6e8c6e254fccebff5ed7570608cd449793e642706cb55d5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-10-31",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/1611_1611_1611",
+      "dateDocument": "1973-10-31",
+      "roFundstelle": "AS 1973 1611",
+      "titelDe": "Verordnung über die Ergänzungsleistungen zur Alters-, Hinterlassenen- und Invalidenversicherung (ELV), Änderung",
+      "titelFr": "Ordonnance sur les prestations complémentaires à l'assurance-vieillesse, survivants et invalidité (OPC), Modification",
+      "titelIt": "Ordinanza concernente le prestazioni complementari all'assicurazione per la vecchiaia, i superstiti e l'invalidità, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/1611_1611_1611/de",
+      "sha": "4fa208a35558c3f1b721342e3a02605d857f6ed2f1e8fd531f5b85b3d30de91f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/2507_2560_2338",
+      "dateDocument": "1972-10-11",
+      "roFundstelle": "AS 1972 2507",
+      "titelDe": "Verordnung vom 11. Oktober 1972 über die Änderung von Vollzugserlassen zur Alters-, Hinterlassenen- und Invalidenversicherung",
+      "titelFr": "Ordonnance du 11 octobre 1972 modifiant des dispositions d'éxécution sur l'assurance vieillesse, survivants et invalidité",
+      "titelIt": "Ordinanza dell'11 ottobre 1972 sulla modificazione di disposizioni esecutive dell'Assicurazione per la vecchiaia, i superstiti e l'invalitità",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/2507_2560_2338/de",
+      "sha": "79ebd222bc5d5cf4a826ba193413acc284885ebda3fbe6b9fcc87a9c1519fd2b"
     }
   ],
-  "sha": "9b57d659abb542710eaaf01e192428b5fce9e26ee3a1dd1fb477241ab4579bd1"
+  "sha": "48794ae352a7d2a636b292dbb6db3480ca481e9a88a115cb8d6c567c1e88208c"
 }

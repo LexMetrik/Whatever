@@ -1,8 +1,8 @@
 {
   "erlassKey": "BPG",
   "sr": "172.220.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -15,50 +15,151 @@
       "titelIt": "Legge sul personale federale (LPers)",
       "botschaftKey": "BOTSCHAFT-2024-2316",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/96/de",
-      "sha": "5de2cb66481ade2032ee117c8a0f22b5d095e32a35cd8f217ef298d5bc10e52b"
+      "sha": "48ffc9b0568182834050d0486b0e995db770e8d2b569344174d11f70d4111720"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "b133d6343536a89f089806646d9299937297a96700ce5f90aa9d282323ef39ed"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/232",
+      "dateDocument": "2020-12-18",
+      "roFundstelle": "AS 2022 232",
+      "titelDe": "Bundesgesetz vom 18. Dezember 2020 über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG)",
+      "titelFr": "Loi fédérale du 18 décembre 2020 sur la sécurité de l’information au sein de la Confédération (Loi sur la sécurité de l’information, LSI)",
+      "titelIt": "Legge federale del 18 dicembre 2020 sulla sicurezza delle informazioni in seno alla Confederazione (Legge sulla sicurezza delle informazioni, LSIn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/232/de",
+      "sha": "f3151f761dceccabc1776ca0903424da4f73bc2464eaaf81738636b73d87984a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/650",
+      "dateDocument": "2023-11-08",
+      "roFundstelle": "AS 2023 650",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Informationssicherheitsgesetzes vom 18. Dezember 2020",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi du 18 décembre 2020 sur la sécurité de l’information",
+      "titelIt": "Ordinanza concernente l’entrata in vigore parziale della legge sulla sicurezza delle informazioni",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/650/de",
+      "sha": "7759f570a6cb64b16ed6b4fff6dde0e8a0be5f9e27ed3e357421ac51b06db230"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "212405626e3215a4273a9cd57e4a3734386065299a19665fd0fa474284559081"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-23",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "8a8b111c5129e5a67d81f15f7a8682f8b32f6b9b7df1732fb98fd2cd52264333"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/600",
+      "dateDocument": "2016-06-17",
+      "roFundstelle": "AS 2022 600",
+      "titelDe": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+      "titelFr": "Loi fédérale du 17 juin 2016 sur le casier judiciaire informatique VOSTRA (Loi sur le casier judiciaire, LCJ)",
+      "titelIt": "Legge federale del 17 giugno 2016 sul casellario giudiziale informatizzato VOSTRA (Legge sul casellario giudiziale, LCaGi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/600/de",
+      "sha": "cd12ddde437ec2a9b67ddf99aadb862609576fec0fa815a643700a241b6e81d1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "eb614b4fbf2c71b233ad9539470b301da39039b5931ab462db96a325d11e6f62"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4085",
+      "titelDe": "Bundesgesetz über die Enteignung (EntG)",
+      "titelFr": "Loi fédérale sur l'expropriation (LEx)",
+      "titelIt": "Legge federale sull'espropriazione (LEspr)",
+      "botschaftKey": "BOTSCHAFT-2018-1660",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
+      "sha": "755d7ab8f701a74d9c35734df95434bb6a7726c3a351394536cd36bbc06c639a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "19efeb82f982a79e0b909295f34c49a27dbf6ad1d260dd24d5421a255eaa6514"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/573",
+      "dateDocument": "2017-03-17",
+      "roFundstelle": "AS 2017 5205",
+      "titelDe": "Bundesgesetz über das Stabilisierungsprogramm 20172019",
+      "titelFr": "Loi fédérale sur le programme de stabilisation 20172019",
+      "titelIt": "Legge federale sul programma di stabilizzazione 20172019",
+      "botschaftKey": "BOTSCHAFT-2016-1047",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/573/de",
+      "sha": "ffd8c0fcb5002f60a673f4449bdf2ca42b05a3df6ae3b479e26da773793c5b33"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/820",
+      "dateDocument": "2017-06-16",
+      "roFundstelle": "AS 2017 7563",
+      "titelDe": "Bundesgesetz über die Anstalt zur Verwaltung der Ausgleichsfonds von AHV, IV und EO (Ausgleichsfondsgesetz)",
+      "titelFr": "Loi fédérale sur l'établissement chargé de l'administration des fonds de compensation de l'AVS, de l'AI et du régime des APG (Loi sur les fonds de compensation)",
+      "titelIt": "Legge federale sull'istituto amministratore dei fondi di compensazione AVS, AI e IPG (Legge sui fondi di compensazione)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/820/de",
+      "sha": "daab644105177a713c7c2c583bf4a43614ff560bcd2537ceb6a8defbd2bb4494"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "69f21712da03bedf167d216dede8f76d3212f42854689c2c19de3563d84ec68b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "7ea0560b019a30a1e95150f5652a7cdba6dba76551e41790a94d1ae7d753717c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/672",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2015 4009",
+      "titelDe": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG) (Optimierung Neues Rechnungsmodell)",
+      "titelFr": "Loi sur les finances de la Confédération (Loi sur les finances, LFC) (Optimisation du nouveau modèle comptable de la Confédération)",
+      "titelIt": "Legge federale sulle finanze della Confederazione (LFC) (Ottimizzazione del Nuovo modello contabile)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/672/de",
+      "sha": "1a5f8e4f320ed647654758a7a152879f2d4179d28705f95cce6cb2c7e3bc4d5c"
     },
     {
       "art": "aenderung",
@@ -69,8 +170,11 @@
       "titelDe": "Bundespersonalgesetz (BPG) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi sur le personnel de la Confédération (LPers) (Ne concerne que le texte italien)",
       "titelIt": "Legge sul personale federale (LPers)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/197/de",
-      "sha": "356ed47f4b0b652c374a3ecb5b05eb17eb003e542fedacc0d56e3841efe17e65"
+      "sha": "4a10c7b3452ebcce567aea77ef6c2ffc619632a1be8b311574c54c459e300c58"
     },
     {
       "art": "aenderung",
@@ -82,14 +186,27 @@
       "titelFr": "Loi sur le personnel de la Confédération (LPers)",
       "titelIt": "Legge sul personale federale (LPers)",
       "botschaftKey": "BOTSCHAFT-2011-1076",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/352/de",
-      "sha": "9fd24ac482977d63221b634edc988a3ef0bef5d2cb8c8beaa1e1b4a989784f24"
+      "sha": "5c9791398208112f7e77ad72587c27f25ba0124847aee032c100a0886b3c156a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "58e73f88519c1dab5a08da1de56cca1592da0f35275df801998d2632f3ff7d48"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/587",
+      "dateDocument": "2010-12-17",
+      "roFundstelle": "AS 2012 5043",
+      "titelDe": "Bundesgesetz über die Organisation der Schweizerischen Post (Postorganisationsgesetz, POG)",
+      "titelFr": "Loi fédérale sur l'organisation de La Poste Suisse (Loi sur l'organisation de la Poste, LOP)",
+      "titelIt": "Legge federale sull'organizzazione della Posta Svizzera (Legge sull'organizzazione della Posta, LOP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/587/de",
+      "sha": "5f438b3e3f3ed5542e5ae86dbf02a063ce6877b3654a01cbbbe41364e071d578"
     },
     {
       "art": "aenderung",
@@ -101,75 +218,215 @@
       "titelFr": "Loi fédérale sur l'optimisation de la gestion des données du personnel de la Confédération et des placements de PUBLICA",
       "titelIt": "Legge federale concernente ottimizzazioni nella gestione dei dati del personale e negli investimenti di PUBLICA",
       "botschaftKey": "BOTSCHAFT-2010-1290",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/785/de",
-      "sha": "8e3a62950c7b780caeb3179d1c4cd029e2ebd1d5bf64e68bbd1c700ae12446c5"
+      "sha": "f9224e40175873035c7df1d36a13d3050e8a8c8c5d52dc1dd1667c95ff5201d4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "cf0302c0cfbd55c0174cddc3f82f0d937841261bca0053ffd34ada7b720e20d2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/444",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2010 3267",
+      "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP)",
+      "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)",
+      "botschaftKey": "BOTSCHAFT-2008-1395",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/444/de",
+      "sha": "1d4a18440318e3101df97f15e78fe5f08fdb1d73657f6e95e38df0390ca31b3a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "801c7cfea787d9d90ca45ff412bd24e4fd1d2d4cc2ef7b578eea9b9170a052de"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/72",
+      "dateDocument": "2009-03-20",
+      "roFundstelle": "AS 2010 513",
+      "titelDe": "Bundesgesetz über das Bundespatentgericht (Patentgerichtsgesetz, PatGG)",
+      "titelFr": "Loi sur le Tribunal fédéral des brevets (LTFB)",
+      "titelIt": "Legge sul Tribunale federale dei brevetti (LTFB)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/72/de",
+      "sha": "a9a653118a54e1b32ef48ae060e91523f055cebfd46609c64519b936e778b803"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "17ed2d1af0f484b8da29516c01abbeadc4fe3ec6f711bfaa0d5c8f979a676794"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/51",
+      "dateDocument": "2006-03-24",
+      "roFundstelle": "AS 2008 131",
+      "titelDe": "Bundesgesetz über die Familienzulagen und Finanzhilfen an Familienorganisationen (Familienzulagengesetz, FamZG)",
+      "titelFr": "Loi fédérale sur les allocations familiales et les aides financières aux organisations familiales (Loi sur les allocations familiales, LAFam)",
+      "titelIt": "Legge federale sugli assegni familiari e sugli aiuti finanziari a organizzazioni familiari (Legge sugli assegni familiari, LAFam)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/51/de",
+      "sha": "393fd7047d35a27d8cf19f0a466f21b1e173e40393be5e6e0ae17e75853ecefd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "4f43b1f0246301e975914aa9ab9bd74afdc84a1d5263f83f3cf3cdbf00080ae3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/131",
+      "dateDocument": "2007-12-07",
+      "roFundstelle": "AS 2008 577",
+      "titelDe": "Verordnung über die vollständige Inkraftsetzung des PUBLICA-Gesetzes",
+      "titelFr": "Ordonnance sur la mise en vigueur intégrale de la loi relative à PUBLICA",
+      "titelIt": "Ordinanza sull'entrata in vigore integrale della legge su PUBLICA",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/131/de",
+      "sha": "bf12efcc61828c706f7dffc4005041d83b7f28da7b0616c5a1e5cfd22853203c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "35acdcf7d800e03d84c438ebf7c33514992aa2657a5757b3e7e1e594f85cf755"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/313",
+      "dateDocument": "2006-12-20",
+      "roFundstelle": "AS 2007 2239",
+      "titelDe": "Bundesgesetz über die Pensionskasse des Bundes (PUBLICA-Gesetz)",
+      "titelFr": "Loi fédérale régissant la Caisse fédérale de pensions (Loi relative à PUBLICA, LPUBLICA)",
+      "titelIt": "Legge federale sulla Cassa pensioni della Confederazione (Legge su PUBLICA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/313/de",
+      "sha": "b44521796d6b97b0e0fb16afb5a34238baf2159c5b526dca0462d5695cbed173"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "262694f1cbbbd4f4388dd5e8fe9918adbed4b2a92d62947784aa58fa5438ad56"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+      "dateDocument": "2004-06-18",
+      "roFundstelle": "AS 2005 5685",
+      "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+      "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)",
+      "botschaftKey": "BOTSCHAFT-2003-194",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "sha": "fedcfa6256e09641f69ec5b5c6a21fb5b39ee24f9212bb622c941d11d8a70fef"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/401",
+      "dateDocument": "2005-10-07",
+      "roFundstelle": "AS 2006 2629",
+      "titelDe": "Obligationenrecht (OR) (Transparenz betreffend Vergütungen an Mitglieder der Verwaltungsrates und der Geschäftsleitung)",
+      "titelFr": "Code des obligations (CO) (Transparence des indemnités versées aux membres du conseil d'administration et de la direction)",
+      "titelIt": "Codice delle obbligazioni (CO) (Trasparenza delle retribuzioni corrisposte ai membri del consiglio d'amministrazione e della direzione)",
+      "botschaftKey": "BOTSCHAFT-2004-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/401/de",
+      "sha": "be1c0da0a16913ad1977d815dcdb1bdcd026e31266e9a485030e734e8f35ab52"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2004-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "a68a4b5ff1108787d162eb4b6689571706a06385cfc11819e88387e1819eaf4d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/13",
+      "dateDocument": "2003-06-20",
+      "roFundstelle": "AS 2004 297",
+      "titelDe": "Bundesgesetz über die Entlöhnung und weitere Vertragsbedingungen des obersten Kaders und der Mitglieder leitender Organe von Unternehmen und Anstalten des Bundes",
+      "titelFr": "Loi fédérale sur la rémunération et sur d'autres conditions contractuelles convenues avec les cadres du plus haut niveau hiérarchique et les membres des organes dirigeants des entreprises et établissements de la Confédération",
+      "titelIt": "Legge federale sulla rimunerazione e su altre condizioni contrattuali convenute con i quadri di grado più elevato e i membri degli organi dirigenti di aziende e di stabilimenti della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/13/de",
+      "sha": "401698c8b628c3623d3b7777804327d8d90513a50352aad03b6f106dc9afdc23"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "488b7b094fee9b9d947583dfa7246e016d143965792fa76cdc35562538859d11"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/314",
+      "dateDocument": "2002-10-04",
+      "roFundstelle": "AS 2003 2133",
+      "titelDe": "Bundesgesetz über das Bundesstrafgericht (Strafgerichtsgesetz, SGG)",
+      "titelFr": "Loi fédérale sur le Tribunal pénal fédéral (LTPF)",
+      "titelIt": "Legge sul Tribunale penale federale (LTPF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/314/de",
+      "sha": "c357f1d64c71322dc752ae35011b08e755673f591753f2ce86a6278de5394793"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/172.220.1",
-      "sha": "9c8009f960287cb85ed5bc6cdf6c73ba6a3f08958baf7a6e43f0af2223ab8e96"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/318",
+      "dateDocument": "2001-07-03",
+      "roFundstelle": "AS 2001 2197",
+      "titelDe": "Verordnung über die Inkraftsetzung des Bundespersonalgesetzes für die Bundesverwaltung, das Bundesgericht und die Parlamentsdienste sowie über die Weitergeltung und Aufhebung von Bundesrecht (Inkraftsetzungsverordnung BPG für die Bundesverwaltung)",
+      "titelFr": "Ordonnance concernant l'entrée en vigueur de la loi sur le personnel de la Confédération pour l'administration fédérale, le Tribunal fédéral et les Services du Parlement ainsi que le maintien en vigueur et l'abrogation d'actes législatifs (Ordonnance de mise en vigueur de la LPers pour l'administration fédérale)",
+      "titelIt": "Ordinanza concernente l'entrata in vigore della legge sul personale federale per l'Amministrazione federale, il Tribunale federale e i Servizi del Parlamento nonché il mantenimento in vigore e l'abrogazione di taluni atti legislativi (Ordinanza concernente l'entrata in vigore della LPers per 'Amministrazione federale)",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/318/de",
+      "sha": "60e7e3950181cd619cf7639332e44a6e06bad3be088469ea6a9103deea47fdd0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2002-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/489",
+      "dateDocument": "2001-11-21",
+      "roFundstelle": "AS 2001 3292",
+      "titelDe": "Verordnung über die Inkraftsetzung des Bundespersonalgesetzes für die Post und über die Weitergeltung von Bundesrecht (Inkraftsetzungsverordnung BPG für die Post)",
+      "titelFr": "Ordonnance concernant l'entrée en vigueur de la loi sur le personnel de la Confédération pour la Poste et le maintien en vigueur de certains actes législatifs (Ordonnance sur la mise en vigueur de la LPers pour la Poste)",
+      "titelIt": "Ordinanza concernente l'entrata in vigore della legge sul personale federale per la Posta e il mantenimento in vigore di taluni atti legislativi (Ordinanza sull'entrata in vigore della LPers per la Posta)",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/489/de",
+      "sha": "4de89d509c4ad0f60720929ea0ddd19b265888e07a79c21e1258b74906bf049b"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "2001-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/123",
-      "dateDocument": "2000-03-24",
-      "roFundstelle": "AS 2001 894",
-      "titelDe": "Bundespersonalgesetz (BPG)",
-      "titelFr": "Loi sur le personnel de la Confédération (LPers)",
-      "titelIt": "Legge sul personale federale (LPers)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/123/de",
-      "sha": "031b518547f510b7d1746dd4915623c6e962788908d693b9b897b688f2d15204"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2001/125",
+      "dateDocument": "2000-12-20",
+      "roFundstelle": "AS 2001 917",
+      "titelDe": "Verordnung über die Inkraftsetzung des Bundespersonalgesetzes für die SBB und über die Weitergeltung von Bundesrecht (Inkraftsetzungsverordnung BPG für die SBB)",
+      "titelFr": "Ordonnance concernant l'entrée en vigueur de la loi sur le personnel de la Confédération pour les CFF et le maintien en vigueur de certains actes législatifs (Ordonnance concernant la mise en vigueur de la LPers pour les CFF)",
+      "titelIt": "Ordinanza concernente l'entrata in vigore della legge sul personale federale per le FFS e il mantenimento in vigore di taluni atti legislativi (Ordinanza concernente l'entrata in vigore della LPers per le FFS)",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/125/de",
+      "sha": "e1f14e5b1981da67e896d3ce3d5c855901b0b12c589f0cb7bf0f74d031e268b4"
     }
   ],
-  "sha": "c0916f3c6c59b8f4528e5bec29c3098f1b6e4f0eaf36001fde396ae9e2dca296"
+  "sha": "74d36da6c285324fd24f1db5926308a3fb7c5e3f2241c7a092fe69992e614eac"
 }

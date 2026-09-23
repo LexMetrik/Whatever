@@ -1,8 +1,8 @@
 {
   "erlassKey": "BGOE",
   "sr": "152.3",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,14 +13,27 @@
       "titelDe": "Bundesgesetz über das Öffentlichkeitsprinzip der Verwaltung (Öffentlichkeitsgesetz, BGÖ) (Kostenloser Zugang zu amtlichen Dokumenten)",
       "titelFr": "Loi fédérale sur le principe de la transparence dans l’administration (Loi sur la transparence, LTrans) (Gratuité de l’accès aux documents officiels)",
       "titelIt": "Legge federale sul principio di trasparenza dell’amministrazione (Legge sulla trasparenza, LTras) (Gratuità dell’accesso a documenti ufficiali)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/584/de",
-      "sha": "0513975c37f9ca2b1291a7a6e7eebe3757452f2da1013b56ac4c66ca3aaabe53"
+      "sha": "8d3217d3d93327cb92b654227e80c2c4660cccb4846b7052766e08a1b2954d1c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/152.3",
-      "sha": "b9a5708ba9084c04fb09bcb13eb097b8ff01ec29467f74df50e3c02620aa1d13"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
       "art": "aenderung",
@@ -31,34 +44,44 @@
       "titelDe": "Bundesgesetz über das Öffentlichkeitsprinzip der Verwaltung (Öffentlichkeitsgesetz, BGÖ) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur le principe de la transparence dans l'administration (Loi sur la transparence, LTrans) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sul principio di trasparenza dell'amministrazione (Legge sulla trasparenza, LTras)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/453/de",
-      "sha": "9e2487ccd74eeb411e6225738ef32eb3eaf0b7c85419422331aaba6dbd338e0a"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/152.3",
-      "sha": "6a323d49d1c44f33e2b8c000bd500442b4869c2e12fa3ed3cd303a8dfd10915a"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/152.3",
-      "sha": "5be097ba88b8933647349d1f35700fb85e59209add25b33d6d5ea73f4276e087"
+      "sha": "780de20ee2ccb850e5751a25aa894d259ea4a7568efb831d0bbeb9514cb1f115"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2006-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/355",
-      "dateDocument": "2004-12-17",
-      "roFundstelle": "AS 2006 2319",
-      "titelDe": "Bundesgesetz über das Öffentlichkeitsprinzip der Verwaltung (Öffentlichkeitsgesetz, BGÖ)",
-      "titelFr": "Loi fédérale sur le principe de la transparence dans l'administration (Loi sur la transparence, LTrans)",
-      "titelIt": "Legge federale sul principio di trasparenza dell'amministrazione (Legge sulla trasparenza, LTras)",
-      "botschaftKey": "BOTSCHAFT-2003-246",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/355/de",
-      "sha": "bc9df2aa6e5040a92230642ef907c430a2109f2a4a9773869fe083c5c522dd74"
+      "dateEntryInForce": "2009-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2008 5207",
+      "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+      "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+      "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)",
+      "botschaftKey": "BOTSCHAFT-2006-303",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/736/de",
+      "sha": "a49275dd1e695a08626c44f542a93882136ca75eb114782b1d3d566c8e97872c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     }
   ],
-  "sha": "385db8204d1d1c7b1538c422c48d3f125b66cc6d2ebcb9d8dc2fa04e2fb88626"
+  "sha": "e7951543805aecc4fdd7a6260fc50f1f9f2e7ea51863ee1252d4847f9b948c19"
 }

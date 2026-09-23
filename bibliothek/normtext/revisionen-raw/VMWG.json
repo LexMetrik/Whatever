@@ -769,5 +769,135 @@
     "2025-10-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1990/835_835_835",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1990/835_835_835",
+    "inkrafttreten": "1990-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/835_835_835",
+        "typ": 5,
+        "datum": "1990-07-01",
+        "fassung": "1990-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/__2623",
+        "typ": 6,
+        "datum": "1990-07-01",
+        "fassung": "1990-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/__2623",
+        "typ": 6,
+        "fassung": "2020-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2120_2120_2120",
+        "typ": 1,
+        "datum": "1996-08-01",
+        "fassung": "1996-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/909",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/410",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/702",
+        "typ": 1,
+        "datum": "2011-12-01",
+        "fassung": "2011-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/418",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/68",
+        "typ": 1,
+        "datum": "2014-07-01",
+        "fassung": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/763",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/302",
+        "typ": 1,
+        "datum": "2020-06-01",
+        "fassung": "2020-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/702",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/191",
+        "typ": 1,
+        "datum": "2025-10-01",
+        "fassung": "2025-10-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1994/__2623": {
+        "dateForce": "1990-07-01",
+        "dateDoc": "1994-12-06",
+        "titelIt": "Correzione: Ordinanza concernente la locazione l'affitto di locali d'abitazione commerciali (OLAL)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/2120_2120_2120": {
+        "dateForce": "1996-08-01",
+        "dateDoc": "1996-06-26",
+        "roId": "RO 1996 2120",
+        "titelDe": "Verordnung über die Miete und Pacht von Wohn- und Geschäftsräumen (VMWG), Änderung",
+        "titelFr": "Ordonnance sur le bail à loyer et le bail à ferme d'habitations et de locaux commerciaux (OBLF), Modification",
+        "titelIt": "Ordinanza concernente la locazione e l'affitto di locali d'abitazione o commerciali (OLAL), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/410": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-06-18",
+        "roId": "RO 2010 3053",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen an die Schweizerische Zivilprozessordnung",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances au code de procédure civile",
+        "titelIt": "Ordinanza che adegua ordinanze al Codice di procedura civile"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/418": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 3631",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Neugliederung der Departemente",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances par suite de la réorganisation des départements",
+        "titelIt": "Ordinanza sull'adeguamento di ordinanze a seguito della riorganizzazione dei dipartimenti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/763": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2017-11-01",
+        "roId": "RO 2017 6889",
+        "titelDe": "Energieverordnung (EnV)",
+        "titelFr": "Ordonnance sur l'énergie (OEne)",
+        "titelIt": "Ordinanza sull'energia (OEn)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/702": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-11-20",
+        "titelDe": "Energieverordnung (EnV)",
+        "titelFr": "Ordonnance sur l’énergie (OEne)",
+        "titelIt": "Ordinanza sull’energia (OEn)"
+      }
+    }
+  }
 }

@@ -1,15 +1,25 @@
 {
   "erlassKey": "KAG",
   "sr": "951.31",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/323",
+      "dateDocument": "2025-09-26",
+      "roFundstelle": "AS 2026 323",
+      "titelDe": "Bundesgesetz vom 26. September 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPG)",
+      "titelFr": "Loi fédérale du 26 septembre 2025 sur la transparence des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales, LTPM)",
+      "titelIt": "Legge federale del 26 settembre 2025 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Legge sulla trasparenza delle persone giuridiche, LTPG)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.31",
-      "sha": "1bb6c63517a5e15b183550eb486090ccc24ae49eb294bc1e6b95ff1dd4dfad66"
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/323/de",
+      "sha": "59ab5e90ee0d0050561e97e116315a6781a58938cda0cf7322c948ff8bf4540b"
     },
     {
       "art": "aenderung",
@@ -21,32 +31,158 @@
       "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
       "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
       "botschaftKey": "BOTSCHAFT-2020-1852",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/53/de",
-      "sha": "940d0e916b3faa971ed024ec5b67ad338e1bef344f9f2a969edcb9d0683a68d7"
+      "sha": "2db0e6aeb1ce8c2a1ecd7eba393e53c410763dc1f166a3ee59dd19f8b2792718"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.31",
-      "sha": "40d859d92eb6bff32d023b415dbae243b0a77b7f466fb11450236ee181e779da"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/746",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4005",
+      "titelDe": "Obligationenrecht (Aktienrecht)",
+      "titelFr": "Code des obligations (Droit de la société anonyme)",
+      "titelIt": "Codice delle obbligazioni (Diritto della società anonima)",
+      "botschaftKey": "BOTSCHAFT-2017-112",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/746/de",
+      "sha": "6e2a231ee542118a1a8c2fb144cd7daccaff4c42b823a6cde0b78dd20ec3c94d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/109",
+      "dateDocument": "2022-02-02",
+      "roFundstelle": "AS 2022 109",
+      "titelDe": "Verordnung vom 2. Februar 2022 über die abschliessende Inkraftsetzung der Änderung vom 19. Juni 2020 des Obligationenrechts (Aktienrecht)",
+      "titelFr": "Ordonnance du 2 février 2022 portant dernière mise en vigueur partielle de la modification du 19 juin 2020 du code des obligations (Droit de la société anonyme)",
+      "titelIt": "Ordinanza del 2 febbraio 2022 sull’entrata in vigore integrale della modifica del 19 giugno 2020 del Codice delle obbligazioni (Diritto della società anonima)",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/109/de",
+      "sha": "13fdf620366c4fecc055ce85a455020b4ee2fe53b0794a23840ade356bb5d1f8"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.31",
-      "sha": "87bc50f412e28e4162f960675b5fc7cc81a1c4fb15ffa066f2f14e5c923ba7bd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5343",
+      "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+      "titelFr": "Code des obligations (Révision du droit de la prescription)",
+      "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)",
+      "botschaftKey": "BOTSCHAFT-2014-65",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/807/de",
+      "sha": "8bb33e0c1d48975d7ada40ab2036925b1263bee7d12a3ab485ddb99cae3c4fca"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/758",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2019 4417",
+      "titelDe": "Bundesgesetz über die Finanzdienstleistungen (Finanzdienstleistungsgesetz, FIDLEG)",
+      "titelFr": "Loi fédérale sur les services financiers (LSFin)",
+      "titelIt": "Legge federale sui servizi finanziari (Legge sui servizi finanziari, LSerFi)",
+      "botschaftKey": "BOTSCHAFT-2015-2141",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/758/de",
+      "sha": "2f8f07f899dee22a1933375b6d0a6cb9b4cb3f2561c8d8608ec43b0025e81d73"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4631",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi fédérale sur les établissements financiers",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge sugli istituti finanziari",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/762/de",
+      "sha": "f5b929fddfb67e28bdb23ec97a2a84df7d4320d67c499a432b94fd25cc350b46"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5247",
+      "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+      "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+      "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)",
+      "botschaftKey": "BOTSCHAFT-2015-2141",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
+      "sha": "0b0591679ba6922abfddf11f586192ed7bbc2941ae8c07727d314ebd00d3c2be"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2016-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.31",
-      "sha": "3c9d585195a1b45bb3335c9d2d17dcc5e5ca7fbe31c73ed62255ad8286b25a10"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/289",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2016 1507",
+      "titelDe": "Obligationenrecht (Firmenrecht)",
+      "titelFr": "Code des obligations (Droit des raisons de commerce)",
+      "titelIt": "Codice delle obbligazioni (Diritto delle ditte commerciali)",
+      "botschaftKey": "BOTSCHAFT-2014-2039",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/289/de",
+      "sha": "735be24c0361a27ac3d8bff626b8d427536683fbc9737082b09c06243c5170f4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.31",
-      "sha": "f347a3e8c4d235b3e9bada4738637b5bf4b06695cc67721322ef14945392966d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2015 5339",
+      "titelDe": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+      "titelFr": "Loi fédérale sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Loi sur l'infrastructure des marchés financiers, LIMF)",
+      "titelIt": "Legge federale sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Legge sull'infrastruttura finanziaria, LInFi)",
+      "botschaftKey": "BOTSCHAFT-2014-1633",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/853/de",
+      "sha": "e3f82216af977e8f96af1c85457bc0bbfa25cb5b2bf8da51d73bd9ce544c34e7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/289",
+      "dateDocument": "2014-12-12",
+      "roFundstelle": "AS 2015 1389",
+      "titelDe": "Bundesgesetz zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière",
+      "titelFr": "Loi fédérale sur la mise en uvre des recommandations du Groupe d'action financière, révisées en 2012",
+      "titelIt": "Legge federale concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria rivedute nel 2012",
+      "botschaftKey": "BOTSCHAFT-2014-100",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/289/de",
+      "sha": "8958d944e0febc909bf3cedb6fca405b476f35f9cc820f070786f41b04222e26"
     },
     {
       "art": "aenderung",
@@ -57,26 +193,69 @@
       "titelDe": "Bundesgesetz über die Ausweitung der Strafbarkeit der Verletzung des Berufsgeheimnisses (Änderung des Kollektivanlagen-, des Banken- und des Börsengesetzes)",
       "titelFr": "Loi fédérale sur l'extension de la punissabilité en matière de violation du secret professionnel (Modification de la loi sur les placements collectifs, de la loi sur les banques et de la loi sur les bourses)",
       "titelIt": "Legge federale sull'estensione della punibilità della violazione del segreto professionale (Modifica della legge sugli investimenti collettivi, della legge sulle banche e della legge sulle borse)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/304/de",
-      "sha": "aaee8e0d5510b2246e85812895e8d9bd79f92903363674b7a88317db189bd692"
+      "sha": "dc808222adc1df8366bfccd71dc4b91621d8d9aefa734c630bab7834cf585c9d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.31",
-      "sha": "74421745af93a6b863e3122f3a56fa16693fcb3a3d5eb0a1e85e2c6af8f808ac"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/685",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2014 4073",
+      "titelDe": "Bundesgesetz über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsgesetz) (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften)",
+      "titelFr": "Loi fédérale sur l'agrément et la surveillance des réviseurs (Loi sur la surveillance de la révision) (Concentration de la surveillance des entreprises de révision et des sociétés d'audit)",
+      "titelIt": "Legge federale sull'abilitazione e la sorveglianza dei revisori (Legge sui revisori) (Concentrazione della sorveglianza sulle imprese di revisione e sulle società di audit)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/685/de",
+      "sha": "08673c2035efa577a201eb1a0bf43cb3111faaefbb16a0d0743e42dfe737ce02"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.31",
-      "sha": "8b58cde297ba00294c6a0c37db24264277d7670259dbe2528eb5601e0780e414"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/116",
+      "dateDocument": "2012-09-28",
+      "roFundstelle": "AS 2013 585",
+      "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+      "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+      "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
+      "botschaftKey": "BOTSCHAFT-2012-495",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-03-01",
+        "2013-06-01",
+        "2014-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/116/de",
+      "sha": "5a44bd548f82b146fbdefcbc51aa483e4b4550dbe36eacd553e549753e560855"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.31",
-      "sha": "d023c29e68d2ba4ab3beb3a6786a8be43149fccbd03c5f931bc920e1010a1af0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/116",
+      "dateDocument": "2012-09-28",
+      "roFundstelle": "AS 2013 585",
+      "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+      "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
+      "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
+      "botschaftKey": "BOTSCHAFT-2012-495",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-03-01",
+        "2013-06-01",
+        "2014-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/116/de",
+      "sha": "b909bef9b7d2edd16d6379fbbccfd4c8de1783936fc791a187580e9894845496"
     },
     {
       "art": "aenderung",
@@ -88,33 +267,49 @@
       "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
       "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
       "botschaftKey": "BOTSCHAFT-2012-495",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2013-03-01",
+        "2013-06-01",
+        "2014-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/116/de",
-      "sha": "0184656e7281b5a4ce8cfa39edc4e318cf54e468d727f13ec345aaef59e3a482"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2011-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.31",
-      "sha": "e1a96a3fe55b46e635e953ccbd96235775f29b4e211a0d06126c3fe2a9ce7f8f"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/951.31",
-      "sha": "3d026123c24d096a8112f00d4f1602e15c1ea417b579709f99ad3fb065e66be2"
+      "sha": "2fc8d43593136ed7b2302dc95f68b3d5cf6de5d28215030c7fdb1726b1784553"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2007-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/822",
-      "dateDocument": "2006-06-23",
-      "roFundstelle": "AS 2006 5379",
-      "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
-      "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC)",
-      "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
-      "botschaftKey": "BOTSCHAFT-2005-1000",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/822/de",
-      "sha": "360f2bb8368044527b515f758ac8b01435ee1863ddff9ef7209a6c7f6edc7d06"
+      "dateEntryInForce": "2011-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/559",
+      "dateDocument": "2011-03-18",
+      "roFundstelle": "AS 2011 3919",
+      "titelDe": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Sicherung der Einlagen)",
+      "titelFr": "Loi fédérale sur les banques et les caisses d'épargne (Loi sur les banques, LB) (Garantie des dépôts)",
+      "titelIt": "Legge federale sulle banche e le casse di risparmio (Legge sulle banche, LBCR) (Garanzia dei depositi)",
+      "botschaftKey": "BOTSCHAFT-2010-655",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/559/de",
+      "sha": "b8cfa6af171cedc4c73b85886ec2bc9387e2f96bb6d5c48310ff98b623057d8e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2009-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/736",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2008 5207",
+      "titelDe": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+      "titelFr": "Loi sur l'Autorité fédérale de surveillance des marchés financiers (Loi sur la surveillance des marchés financiers, LFINMA)",
+      "titelIt": "Legge federale concernente l'Autorità federale di vigilanza sui mercati finanziari (Legge sulla vigilanza dei mercati finanziari, LFINMA)",
+      "botschaftKey": "BOTSCHAFT-2006-303",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/736/de",
+      "sha": "162aa309a29a721038ccb235a56a5a5f6f50cf5b5128d73fac8220d74bf8310d"
     },
     {
       "art": "aenderung",
@@ -125,33 +320,12 @@
       "titelDe": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur les placements collectifs de capitaux (Loi sur les placements collectifs, LPCC) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale sugli investimenti collettivi di capitale (Legge sugli investimenti collettivi, LICol)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/407/de",
-      "sha": "45a90514b4535ad7b2dd92b38facbb87e95bc99c10ed5ae04fffb2d4b476b0d5"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1995-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2523_2523_2523",
-      "dateDocument": "1994-03-18",
-      "roFundstelle": "AS 1994 2523",
-      "titelDe": "Bundesgesetz vom 18. März 1994 über die Anlagefonds (Anlagefondsgesetz, AFG)",
-      "titelFr": "Loi fédérale du 18 mars 1994 sur les fonds de placement (LFP)",
-      "titelIt": "Legge federale del 18 marzo 1994 sui fondi d'investimento (LFI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2523_2523_2523/de",
-      "sha": "d81ce7aec9a44f984c393074fb13b0f99487c0313bdd15ba0fa403bb7a45331a"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1967-02-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1967/115_125_117",
-      "dateDocument": "1966-07-01",
-      "roFundstelle": "AS 1967 115",
-      "titelDe": "Bundesgesetz vom 1. Juli 1966 über die Anlagefonds",
-      "titelFr": "Loi fédérale du 1er juillet 1966 sur les fonds de placement",
-      "titelIt": "Legge federale del 1o luglio 1966 sui fondi d'investimento",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1967/115_125_117/de",
-      "sha": "fb2f2688dcfff6065a1275f15f1af6a652a640293dbf17131187ecc8035c0d1e"
+      "sha": "712bc3e5f76030e96e46c4fffc1a4d75a8bbd64d634a996cf3a10d4e3ada2bcf"
     }
   ],
-  "sha": "be663031a77526802f798033577e12ba4ac36d6ac3d9bd2c494c16ff25ace76c"
+  "sha": "29968d0cd90c0c0fe25de85d01fbca41a66df14b3b2df70f2c2febce71b3c3ce"
 }

@@ -485,5 +485,152 @@
     "2024-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2002/569",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2002/569",
+    "inkrafttreten": "2003-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/569",
+        "typ": 5,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/609",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/184",
+        "typ": 1,
+        "datum": "2007-05-01",
+        "fassung": "2007-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/723",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/723",
+        "typ": 2,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/537",
+        "typ": 1,
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/520",
+        "typ": 1,
+        "datum": "2019-10-01",
+        "fassung": "2019-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/893",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/706",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/698",
+        "typ": 1,
+        "datum": "2023-01-23",
+        "fassung": "2023-01-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/750",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2007/184": {
+        "dateForce": "2007-05-01",
+        "dateDoc": "2007-02-21",
+        "roId": "RO 2007 1075",
+        "titelDe": "Verordnung über Kosten und Entschädigungen im Verwaltungsverfahren",
+        "titelFr": "Ordonnance sur les frais et indemnités en procédure administrative",
+        "titelIt": "Ordinanza sulle tasse e spese nella procedura amministrativa"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/723": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-09-28",
+        "roId": "RO 2007 5155",
+        "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+        "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+        "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/789": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-11-07",
+        "roId": "RO 2007 5823",
+        "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
+        "titelFr": "Ordonnance sur les adaptations des ordonnances touchées par la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons",
+        "titelIt": "Ordinanza che adegua il diritto regolamentare alla Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/537": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2014-09-19",
+        "roId": "RO 2014 3177",
+        "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+        "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+        "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/706": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-11-03",
+        "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+        "titelFr": "Règlement sur l’assurance-invalidité (RAI)",
+        "titelIt": "Ordinanza sull’assicurazione per l’invalidità (OAI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/568": {
+        "dateForce": "2023-09-01",
+        "dateDoc": "2022-08-31",
+        "titelDe": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+        "titelFr": "Ordonnance du 31 août 2022 sur la protection des données (OPDo)",
+        "titelIt": "Ordinanza del 31 agosto 2022 sulla protezione dei dati (OPDa)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/698": {
+        "dateForce": "2023-01-23",
+        "dateDoc": "2022-10-19",
+        "titelDe": "Verordnung vom 19. Oktober 2022 über das Strafregister-Informationssystem VOSTRA (Strafregisterverordnung, StReV)",
+        "titelFr": "Ordonnance du 19 octobre 2022 sur le casier judiciaire informatique VOSTRA (Ordonnance sur le casier judiciaire, OCJ)",
+        "titelIt": "Ordinanza del 19 ottobre 2022 sul casellario giudiziale informatizzato VOSTRA (Ordinanza sul casellario giudiziale, OCaGi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/750": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-11-22",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      }
+    }
+  }
 }

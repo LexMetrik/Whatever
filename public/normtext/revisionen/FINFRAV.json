@@ -1,14 +1,23 @@
 {
   "erlassKey": "FINFRAV",
   "sr": "958.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/958.11",
-      "sha": "404d13b0a9d5342ba3494f5a625dbc8626645fba48659a821c913084d0e1e621"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/13",
+      "dateDocument": "2023-11-29",
+      "roFundstelle": "AS 2024 13",
+      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV)",
+      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
+      "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/13/de",
+      "sha": "8b74daf799c33acaf9b0a9d951d5ae29a8956f3752822a3b16940cc3b4421880"
     },
     {
       "art": "aenderung",
@@ -19,8 +28,11 @@
       "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
       "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l’infrastructure des marchés financiers, OIMF)",
       "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull’infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/576/de",
-      "sha": "ad2158c70325cb72c92a8077a90556421c41c1f60ccb216ec8d69606f314afa8"
+      "sha": "2d93b377f5f80ae0f890b30f5a8b2fffac947bc5ac0a18c4f88de022edaf9f33"
     },
     {
       "art": "aenderung",
@@ -31,8 +43,11 @@
       "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
       "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l’infrastructure des marchés financiers, OIMF)",
       "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull’infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/489/de",
-      "sha": "0d180ea58f225b5023f6b3b8e4d98c0aadd423ef49529145fb377360b40bda7b"
+      "sha": "4ab07cd7eef1ac7746394d84687cc60bf18123927ad0b8411e2e17dd0dd657bf"
     },
     {
       "art": "aenderung",
@@ -43,14 +58,42 @@
       "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
       "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l’infrastructure des marchés financiers, OIMF)",
       "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull’infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/539/de",
-      "sha": "3a33c2fce8204287618afda6c20808e3fb3b077d1228bd830f951359bf3808e4"
+      "sha": "3daa6b8a3f1b74cc38eaea9dc659b7735706a69c91249bea04b59614f42b4618"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/958.11",
-      "sha": "813b09afbf79bd3e5d9775232a937556d364e7dced05898b46cab7041ed925e4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/400",
+      "dateDocument": "2021-06-18",
+      "roFundstelle": "AS 2021 400",
+      "titelDe": "Verordnung vom 18. Juni 2021 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Ordonnance du 18 juin 2021 sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Ordinanza del 18 giugno 2021 sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/400/de",
+      "sha": "cbaa09b474cb03fa4335cbbe4d0eb3cd22f479df7c6b4dafb89f95ae9cca1d03"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/922",
+      "dateDocument": "2020-11-04",
+      "roFundstelle": "AS 2020 5327",
+      "titelDe": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Finanzinstitute (Finanzinstitutsverordnung-FINMA, FINIV-FINMA)",
+      "titelFr": "Ordonnance de l'Autorité fédérale de surveillance des marchés financiers sur les établissements financiers (Ordonnance de la FINMA sur les établissements financiers, OEFin-FINMA)",
+      "titelIt": "Ordinanza dell'Autorità federale di vigilanza sui mercati finanziari sugli istituti finanziari (Ordinanza FINMA sugli istituti finanziari, OIsFi-FINMA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/922/de",
+      "sha": "fb7be4b5bcc251d814fb1076a30cd2318a6e39b3338a593cbdb3f4d03b8eb4ab"
     },
     {
       "art": "aenderung",
@@ -61,14 +104,26 @@
       "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
       "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
       "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/697/de",
-      "sha": "c6c8851063c67ea362d04eff998074c57cddf83f160bccc9e11a91ca7095e205"
+      "sha": "6355bc5de2955076c06b1bb0282208e2c3416acd922c9e82b54bb9ea09409af6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/958.11",
-      "sha": "3daa8eaef7f3bb6726a639183b1a86573c0e06bda95016bcfc32cf28cc264a93"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4633",
+      "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+      "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+      "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/763/de",
+      "sha": "c51fd587d9ec14868e8f4aeab014c00a2b53aa599ae0c4aaa8d690d968c4c771"
     },
     {
       "art": "aenderung",
@@ -79,8 +134,11 @@
       "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
       "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
       "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/478/de",
-      "sha": "72eee76fb087489d1da7f58556fa39e1c26e7724010001ee21a0957cdf77de08"
+      "sha": "4abeae19f2c88947bf308f07e7b84442768c32faa068a16f1e6ecb0bf0978a36"
     },
     {
       "art": "aenderung",
@@ -91,8 +149,11 @@
       "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
       "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
       "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/548/de",
-      "sha": "54c002522e2144e8309193757b77c5bcc000a3c7d19d897330212d6c46a140b5"
+      "sha": "ab1c1b33c8dea75aa683a2302ec09e66165d7f0cd525cbc4723fdb5c5c48b0ae"
     },
     {
       "art": "aenderung",
@@ -103,8 +164,11 @@
       "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
       "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
       "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/459/de",
-      "sha": "28bb270dff59611436c14fc8d22294ff63b15b67639c14456d116bfdbd887a7a"
+      "sha": "6b2f065ae2d963c0edce161fc614d479214a5f909af86fc88481f09b62ec1633"
     },
     {
       "art": "aenderung",
@@ -115,8 +179,11 @@
       "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
       "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
       "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/429/de",
-      "sha": "16def6689d2cf749b47875de9284886f01b7dd46e35e131287c71a4be25afe7b"
+      "sha": "7863c47457cae914efac9965ecd64fe1e42469ab26b2045ab03e164eb9b7e0a8"
     },
     {
       "art": "aenderung",
@@ -127,27 +194,27 @@
       "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
       "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
       "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/434/de",
-      "sha": "4354602a9b208fcf9b7803d2974f4012a162b09959ae8f4d5e0588cc23b2a1b2"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2016-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/958.11",
-      "sha": "34a79279d11e23a7cc65cf3d815c233e40e019a1620c79c4882dc7e738b01af1"
+      "sha": "2db909293beb6f370e46766d9e951d2d2f94d4dc7fefadcb6ada90f85754fb2a"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2016-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/854",
-      "dateDocument": "2015-11-25",
-      "roFundstelle": "AS 2015 5413",
-      "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
-      "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
-      "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/854/de",
-      "sha": "d5907c03d7e34b191ad32e31bee017d655d7a74b048ee382678e55a6ac399267"
+      "dateEntryInForce": "2016-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/312",
+      "dateDocument": "2016-05-11",
+      "roFundstelle": "AS 2016 1725",
+      "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
+      "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
+      "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/312/de",
+      "sha": "330658d750d3524e7f5f2d787e00136c152b9e29f13b3f7116e017d569685f06"
     }
   ],
-  "sha": "679397ff857c32e71ab2add27f0c0f6ba53cb2aa93c0cdd2e190af624d67e11c"
+  "sha": "6aae8fc8cbdd4c3efd683c3987d1bf6f539edcdaa5e20475157630b0ccb2806f"
 }

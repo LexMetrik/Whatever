@@ -4988,5 +4988,712 @@
     "2030-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1984/543_543_543",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1984/543_543_543",
+    "inkrafttreten": "1985-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/543_543_543",
+        "typ": 5,
+        "datum": "1985-01-01",
+        "fassung": "1985-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/1345_1345_1345",
+        "typ": 1,
+        "datum": "1986-01-01",
+        "fassung": "1986-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/710_710_710",
+        "typ": 1,
+        "datum": "1985-06-15",
+        "fassung": "1985-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/1901_1901_1901",
+        "typ": 1,
+        "datum": "1990-01-01",
+        "fassung": "1990-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/__1894",
+        "typ": 6,
+        "datum": "1985-06-15",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/2382_2382_2382",
+        "typ": 1,
+        "datum": "1992-01-01",
+        "fassung": "1992-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/2045_2045_2045",
+        "typ": 1,
+        "datum": "1993-01-01",
+        "fassung": "1993-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/2234_2234_2234",
+        "typ": 1,
+        "datum": "1993-01-01",
+        "fassung": "1993-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/1881_1881_1881",
+        "typ": 1,
+        "datum": "1993-07-01",
+        "fassung": "1993-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/2399_2399_2399",
+        "typ": 1,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/3095_3095_3095",
+        "typ": 1,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/906_906_906",
+        "typ": 1,
+        "datum": "1994-01-01",
+        "fassung": "1994-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/_872_",
+        "typ": 6,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1494_1494_1494",
+        "typ": 1,
+        "datum": "1996-07-01",
+        "fassung": "1996-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/3037_3037_3037",
+        "typ": 1,
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/3452_3452_3452",
+        "typ": 1,
+        "datum": "1997-01-01",
+        "fassung": "1997-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/3026_3026_3026",
+        "typ": 1,
+        "datum": "1999-01-01",
+        "fassung": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/204",
+        "typ": 1,
+        "datum": "2000-04-01",
+        "fassung": "2000-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/480",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/509",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/559",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/478",
+        "typ": 1,
+        "datum": "2002-01-01",
+        "fassung": "2002-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/579",
+        "typ": 1,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/603",
+        "typ": 1,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/604",
+        "typ": 1,
+        "datum": "2003-01-01",
+        "fassung": "2003-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/259",
+        "typ": 1,
+        "datum": "2003-07-01",
+        "fassung": "2003-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/501",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/208",
+        "typ": 1,
+        "datum": "2004-04-01",
+        "fassung": "2004-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/633",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/644",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/644",
+        "typ": 2,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/712",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/714",
+        "typ": 6,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/559",
+        "typ": 1,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/729",
+        "typ": 1,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/615",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/616",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/534",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/617",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+        "typ": 2,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/723",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/457",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/650",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/663",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/728",
+        "typ": 1,
+        "datum": "2009-01-01",
+        "fassung": "2009-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/245",
+        "typ": 1,
+        "datum": "2009-06-01",
+        "fassung": "2009-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/245",
+        "typ": 2,
+        "datum": "2009-06-01",
+        "fassung": "2009-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/660",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/461",
+        "typ": 1,
+        "datum": "2011-08-01",
+        "fassung": "2011-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/461",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/461",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/461",
+        "typ": 2,
+        "datum": "2011-08-01",
+        "fassung": "2011-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/737",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/800",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/209",
+        "typ": 6,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/753",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/317",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/763",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/764",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/316",
+        "typ": 1,
+        "datum": "2014-07-01",
+        "fassung": "2014-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/579",
+        "typ": 1,
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/737",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/171",
+        "typ": 1,
+        "datum": "2016-04-01",
+        "fassung": "2016-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/381",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/698",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/724",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/543",
+        "typ": 1,
+        "datum": "2017-10-01",
+        "fassung": "2017-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/578",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/681",
+        "typ": 1,
+        "datum": "2020-10-01",
+        "fassung": "2020-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/824",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/893",
+        "typ": 1,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/706",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/794",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/609",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/506",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/652",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/750",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/469",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/325",
+        "typ": 1,
+        "datum": "2026-08-01",
+        "fassung": "2026-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/325",
+        "typ": 1,
+        "datum": "2030-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1985/1345_1345_1345": {
+        "dateForce": "1986-01-01",
+        "dateDoc": "1985-09-11",
+        "roId": "RO 1985 1345",
+        "titelDe": "Verordnung 86 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge, Änderung",
+        "titelFr": "Ordonnance 86 sur l'adaptation des montants-limites de la prévoyance professionnelle, Modification",
+        "titelIt": "Ordinanza 86 concernente gli importi limite della previdenza professionale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1985/710_710_710": {
+        "dateForce": "1985-06-15",
+        "dateDoc": "1985-05-29",
+        "roId": "RO 1985 710",
+        "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen-  und Invalidenvorsorge (BVV 2), Änderung",
+        "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2), Modification",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/1901_1901_1901": {
+        "dateForce": "1990-01-01",
+        "dateDoc": "1989-09-25",
+        "roId": "RO 1989 1901",
+        "titelDe": "Verordnung 90 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge, Änderung",
+        "titelFr": "Ordonnance 90 sur l'adaptation des montants-limites de la prévoyance professionnelle, Modification",
+        "titelIt": "Ordinanza 90 sull'adattamento degli importi limite della previdenza professionale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/__1894": {
+        "dateForce": "1989-09-19",
+        "dateDoc": "1989-09-19",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l’invalidità (OPP 2)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/2382_2382_2382": {
+        "dateForce": "1992-01-01",
+        "dateDoc": "1991-10-23",
+        "roId": "RO 1991 2382",
+        "titelDe": "Verordnung 92 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge, Änderung",
+        "titelFr": "Ordonnance 92 sur l'adaptation des montants-limites de la prévoyance professionnelle, Modification",
+        "titelIt": "Ordinanza 92 sull'adattamento degli importi limite della previdenza professionale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/2045_2045_2045": {
+        "dateForce": "1993-01-01",
+        "dateDoc": "1992-10-05",
+        "roId": "RO 1992 2045",
+        "titelDe": "Verordnung 93 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge, Änderung",
+        "titelFr": "Ordonnance 93 sur l'adaptation des montants-limites de la prévoyance professionnelle, Modification",
+        "titelIt": "Ordinanza 93 sull'adattamento degli importi limiti della previdenza professionale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/2234_2234_2234": {
+        "dateForce": "1993-01-01",
+        "dateDoc": "1992-10-28",
+        "roId": "RO 1992 2234",
+        "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2), Änderung",
+        "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2), Modification",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/1881_1881_1881": {
+        "dateForce": "1993-07-01",
+        "dateDoc": "1993-06-01",
+        "roId": "RO 1993 1881",
+        "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2), Änderung",
+        "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2), Modification",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/2399_2399_2399": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1994-10-03",
+        "roId": "RO 1994 2399",
+        "titelDe": "Verordnung vom 3. Oktober 1994 über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsverordnung, FZV)",
+        "titelFr": "Ordonnance du 3 octobre 1994 sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Ordonnance sur le libre passage, OLP)",
+        "titelIt": "Ordinanza del 3 ottobre 1994 sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Ordinanza sul libero passaggio, OLP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/3095_3095_3095": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1994-11-23",
+        "roId": "RO 1994 3095",
+        "titelDe": "Verordnung 95 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge, Änderung",
+        "titelFr": "Ordonnance 95 sur l'adaption des montants-limites de la prévoyance professionnelle, Modification",
+        "titelIt": "Ordinanza 95 sull'adattamento degli importi limite della previdenza professionale, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/906_906_906": {
+        "dateForce": "1994-01-01",
+        "dateDoc": "1994-01-26",
+        "roId": "RO 1994 906",
+        "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2), Änderung",
+        "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2), Modification",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i supersiti e l'invalidità (OPP 2), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/_872_": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1995-01-16",
+        "titelFr": "Erratum: Ordonnance 95 sur l'adaptation des montants-limites de la prévoyance professionnelle"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/1494_1494_1494": {
+        "dateForce": "1996-07-01",
+        "dateDoc": "1996-04-24",
+        "roId": "RO 1996 1494",
+        "titelDe": "Verordnung über die berufliche  Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2), Änderung",
+        "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP), Modification",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP2), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/3037_3037_3037": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-11-13",
+        "roId": "RO 1996 3037",
+        "titelDe": "Verordnung 97 über die Anpassung der Grenzbeträge bei der beruflichen Vorsorge, Änderung",
+        "titelFr": "Ordonnance 97 sur l'adaptation des montants-limites de la prévoyance professionnelle, Modification",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP2), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/3452_3452_3452": {
+        "dateForce": "1997-01-01",
+        "dateDoc": "1996-12-09",
+        "roId": "RO 1996 3452",
+        "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2), Änderung",
+        "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2), Modification",
+        "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP2), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/615": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-09-29",
+        "roId": "RO 2006 4155",
+        "titelDe": "Verordnung über die Umsetzung des Partnerschaftsgesetzes vom 18. Juni 2004 in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge",
+        "titelFr": "Ordonnance sur la mise en uvre de la loi du 18 juin 2004 sur le partenariat dans la prévoyance professionnelle vieillesse, survivants et invalidité",
+        "titelIt": "Ordinanza concernente l'attuazione della legge del 18 giugno 2004 sull'unione domestica registrata nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/534": {
+        "dateForce": "2007-09-01",
+        "dateDoc": "2007-08-22",
+        "roId": "RO 2007 3989",
+        "titelDe": "Verordnung über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsverordnung, RAV)",
+        "titelFr": "Ordonnance sur l'agrément et la surveillance des réviseurs (Ordonnance sur la surveillance de la révision, OSRev)",
+        "titelIt": "Ordinanza sull'abilitazione e la sorveglianza dei revisori (Ordinanza sui revisori, OSRev)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/633": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-08-22",
+        "roId": "RO 2007 4477",
+        "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+        "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+        "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/723": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-09-28",
+        "roId": "RO 2007 5155",
+        "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+        "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+        "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/800": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-11-16",
+        "roId": "RO 2011 5679",
+        "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+        "titelFr": "Règlement sur l'assurance-invalidité (RAI)",
+        "titelIt": "Ordinanza sull'assicurazione per l'invalidità (OAI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/724": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2016-11-09",
+        "roId": "RO 2016 4393",
+        "titelDe": "Verordnung über die Unfallversicherung (UVV)",
+        "titelFr": "Ordonnance sur l'assurance-accidents (OLAA)",
+        "titelIt": "Ordinanza sull'assicurazione contro gli infortuni (OAINF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/763": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-06",
+        "roId": "RO 2019 4633",
+        "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+        "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+        "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/681": {
+        "dateForce": "2020-10-01",
+        "dateDoc": "2020-08-26",
+        "roId": "RO 2020 3755",
+        "titelDe": "Verordnung über Änderungen in der beruflichen Vorsorge ",
+        "titelFr": "Ordonnance portant modification de dispositions dans la prévoyance professionnelle",
+        "titelIt": "Ordinanza concernente modifiche nell'ambito della previdenza professionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/893": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-11-18",
+        "roId": "RO 2020 5149",
+        "titelDe": "Verordnung über den Allgemeinen Teil des Sozialversicherungsrechts",
+        "titelFr": "Ordonnance sur la partie générale du droit des assurances sociales",
+        "titelIt": "Ordinanza sulla parte generale del diritto delle assicurazioni sociali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/706": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2021-11-03",
+        "titelDe": "Verordnung über die Invalidenversicherung (IVV)",
+        "titelFr": "Règlement sur l’assurance-invalidité (RAI)",
+        "titelIt": "Ordinanza sull’assicurazione per l’invalidità (OAI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/506": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-08-30",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/750": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-11-22",
+        "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+        "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+        "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)"
+      }
+    }
+  }
 }

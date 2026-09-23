@@ -1,38 +1,107 @@
 {
   "erlassKey": "UVPV",
   "sr": "814.011",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "0c0de42544d43d420c8317a8face8deb929449fd9548b68288e17d6e2096afdf"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/702",
+      "dateDocument": "2024-11-20",
+      "roFundstelle": "AS 2024 702",
+      "titelDe": "Energieverordnung (EnV)",
+      "titelFr": "Ordonnance sur l’énergie (OEne)",
+      "titelIt": "Ordinanza sull’energia (OEn)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/702/de",
+      "sha": "d5118f1a51c05d627392ff30afd481c1ad21f2dfb147ad1b4f8de2a55cf01bb2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "5484cb31c7c71efa4dbb902a190077addb2c0d7c96e213270f23ab70b6344e1c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/395",
+      "dateDocument": "2022-06-22",
+      "roFundstelle": "AS 2022 395",
+      "titelDe": "Verordnung über Geoinformation (Geoinformationsverordnung, GeoIV)",
+      "titelFr": "Ordonnance sur la géoinformation (OGéo)",
+      "titelIt": "Ordinanza sulla geoinformazione (OGI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/395/de",
+      "sha": "ae37013740df254e54740841789f40fe0246842ddd342a6f5871ed9eba2614ba"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2017-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/539",
+      "dateDocument": "2016-08-17",
+      "roFundstelle": "AS 2016 3215",
+      "titelDe": "Verordnung über den Wald (Waldverordnung, WaV)",
+      "titelFr": "Ordonnance sur les forêts (OFo)",
+      "titelIt": "Ordinanza sulle foreste (OFo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-10-01",
+        "2017-01-01"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/539/de",
+      "sha": "2e5c6d231d9543df892fd095ead0b75448aab774d23cc4ee36b350339edca69f"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2016-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "23ce9b3bf5e7f89611c4474d58145e58bda7ea52fdce1aa6672a71779e4505c2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/539",
+      "dateDocument": "2016-08-17",
+      "roFundstelle": "AS 2016 3215",
+      "titelDe": "Verordnung über den Wald (Waldverordnung, WaV)",
+      "titelFr": "Ordonnance sur les forêts (OFo)",
+      "titelIt": "Ordinanza sulle foreste (OFo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-10-01",
+        "2017-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/539/de",
+      "sha": "372bd61c86af754c15139ee1ecb27af03a43366dc14bee3d2ca3b706e5457870"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-06-13",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "832dcac557aac8d1b096a679ca2589ac6a1f7b38a8668320922488e574479e66"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/24",
+      "dateDocument": "2015-11-25",
+      "roFundstelle": "AS 2016 179",
+      "titelDe": "Verordnung über Fernmeldeanlagen (FAV)",
+      "titelFr": "Ordonnance sur les installations de télécommunication (OIT)",
+      "titelIt": "Ordinanza sugli impianti di telecomunicazione (OIT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/24/de",
+      "sha": "18d2713a3e427dac3abad65b60d0fd1f80716c828ea69e8c9bcb730fad9d0f0a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "ee35e4b512cd20eae2996e54a72623d9050e90682cc4f5fab3d08da5ea412471"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/891",
+      "dateDocument": "2015-12-04",
+      "roFundstelle": "AS 2015 5699",
+      "titelDe": "Verordnung über die Vermeidung und die Entsorgung von Abfällen (Abfallverordnung, VVEA)",
+      "titelFr": "Ordonnance sur la limitation et l'élimination des déchets (Ordonnance sur les déchets, OLED)",
+      "titelIt": "Ordinanza sulla prevenzione e lo smaltimento dei rifiuti (Ordinanza sui rifiuti, OPSR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/891/de",
+      "sha": "a3eb5cb57a2400e8c6b3eaaae28dcfeda24c1967897c7d90a12ff01e3e78b022"
     },
     {
       "art": "aenderung",
@@ -43,32 +112,71 @@
       "titelDe": "Verordnung über die Umweltverträglichkeitsprüfung (UVPV)",
       "titelFr": "Ordonnance relative à l'étude de l'impact sur l'environnement (OEIE)",
       "titelIt": "Ordinanza concernente l'esame dell'impatto sull'ambiente (OEIA)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/545/de",
-      "sha": "01ef0484d85138959f3ee1b240710116d837579f9a1eeb98e145724809260da6"
+      "sha": "0f375a388e2d8905550e5d6546daf5333e3ff69e9214c77aa815e9ad9bfc9143"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "31bdda7e1557ae58562e7689ca61b7c8b0f716f2eb2a6bac05bd2ce7bfb2cad4"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/280",
+      "dateDocument": "2015-04-29",
+      "roFundstelle": "AS 2015 1337",
+      "titelDe": "Verordnung über den Schutz vor Störfällen (Störfallverordnung, StFV)",
+      "titelFr": "Ordonnance sur la protection contre les accidents majeurs (Ordonnance sur les accidents majeurs, OPAM)",
+      "titelIt": "Ordinanza sulla protezione contro gli incidenti rilevanti (OPIR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/280/de",
+      "sha": "7376fa626261c8455352ce362672642ecec95b218cf33f895d3908dad088f542"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "778c5070f43faa2b70c258c4f87b3e1517e6241bc067b9ace15350ae76e2cade"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/653",
+      "dateDocument": "2013-10-09",
+      "roFundstelle": "AS 2013 3509",
+      "titelDe": "Verordnung über das Plangenehmigungsverfahren für elektrische Anlagen",
+      "titelFr": "Ordonnance sur la procédure d'approbation des plans des installations électriques",
+      "titelIt": "Ordinanza sulla procedura d'approvazione dei piani di impianti elettrici",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/653/de",
+      "sha": "6265b63f0a05bcb922fd9ef65c1a13371974548b0621afe14d31e9a06b7c184a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "337593e0ba0b78b33f99f064242a38e641f17f3b93869022eae089a682057592"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/329",
+      "dateDocument": "2012-05-09",
+      "roFundstelle": "AS 2012 2777",
+      "titelDe": "Verordnung über den Umgang mit Organismen in geschlossenen Systemen (Einschliessungsverordnung, ESV)",
+      "titelFr": "Ordonnance sur l'utilisation des organismes en milieu confiné (Ordonnance sur l'utilisation confinée, OUC)",
+      "titelIt": "Ordinanza sull'utilizzazione di organismi in sistemi chiusi (Ordinanza sull'impiego confinato, OIConf)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/329/de",
+      "sha": "cef2bbacbdff643c6fabc37783fb296c2dd878893d496ac5cd4878051d87fcb6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "d50c2ed85af1bd66a08de67ae2af06683ea38a3325ffbe00778fbd850bbab87e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/319",
+      "dateDocument": "2009-05-13",
+      "roFundstelle": "AS 2009 2525",
+      "titelDe": "Verordnung über die Wasser- und Zugvogelreservate von internationaler und nationaler Bedeutung (WZVV)",
+      "titelFr": "Ordonnance sur les réserves d'oiseaux d'eau et de migrateurs d'importance internationale et nationale (OROEM)",
+      "titelIt": "Ordinanza sulle riserve d'importanza internazionale e nazionale d'uccelli acquatici e migratori (ORUAM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/319/de",
+      "sha": "637262209271b2685916c8dfe93dd20b50f9638a38295841ab61ab8f3075ec37"
     },
     {
       "art": "aenderung",
@@ -79,45 +187,223 @@
       "titelDe": "Verordnung über die Umweltverträglichkeitsprüfung (UVPV)",
       "titelFr": "Ordonnance relative à l'étude de l'impact sur l'environnement (OEIE)",
       "titelIt": "Ordinanza concernente l'esame dell'impatto sull'ambiente (OEIA)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/646/de",
-      "sha": "c1dbb65d1426c0547456f0d5331f26d28db270ec451711486b1954cea03bf8b8"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "f3058d8a1c66a24d81a708444e1bc1d11f4a4b48413858a898d49d2b9cdf33ff"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "14164bb101884c7407b4d15ae512323a0e307ec3a6316504b7780bc67e5b180e"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2005-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "de5b1d4f3c01bae5fae02eb6f83322dc5b0f1205b459ea4712428ddb83fcc78a"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2000-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.011",
-      "sha": "04852d007fa5d0e2c27b963b52b9dbfc9282efa584c5c131f5aad8bab3dae728"
+      "sha": "8800236545f332e8299f02748be26f211754cfc8c4cb88322d12cbee81266bd3"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1989-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/1931_1931_1931",
-      "dateDocument": "1988-10-19",
-      "roFundstelle": "AS 1988 1931",
-      "titelDe": "Verordnung vom 19. Oktober 1988 über die Umweltverträglichkeitsprüfung (UVPV)",
-      "titelFr": "Ordonnance du 19 octobre 1988 relative à l'étude de l'impact sur l'environnement (OEIE)",
-      "titelIt": "Ordinanza del 19 ottobre 1988 concernente l'esame dell'impatto sull'ambiente (OEIA)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/1931_1931_1931/de",
-      "sha": "aa7068b697a881ce124e51da46c7e28c0743cb935ffea3bd6e23bf519165d919"
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/633",
+      "dateDocument": "2007-08-22",
+      "roFundstelle": "AS 2007 4477",
+      "titelDe": "Verordnung zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Ordonnance relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Ordinanza concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/633/de",
+      "sha": "2c5ac94c95d54792d20aa35f2fad47c31052ee4233948fb1b05d9876531d69d9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2008-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+      "dateDocument": "2007-11-07",
+      "roFundstelle": "AS 2007 5823",
+      "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
+      "titelFr": "Ordonnance sur les adaptations des ordonnances touchées par la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons",
+      "titelIt": "Ordinanza che adegua il diritto regolamentare alla Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/789/de",
+      "sha": "9cd737a7642fa729a8d54b717b8c49459a3002a64f32d5088a08e6713cae5308"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/14",
+      "dateDocument": "2006-12-21",
+      "roFundstelle": "AS 2007 39",
+      "titelDe": "Verordnung über Seilbahnen zur Personenbeförderung (Seilbahnverordnung, SebV)",
+      "titelFr": "Ordonnance sur les installations à câbles transportant des personnes (Ordonnance sur les installations à câbles, OICa)",
+      "titelIt": "Ordinanza sugli impianti a fune adibiti al trasporto di persone (Ordinanza sugli impianti a fune; OIFT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/14/de",
+      "sha": "58659fb3691e82435f89565a324e5a356997e728ef9d5c44ad42a8b91b84d4dc"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/68",
+      "dateDocument": "2004-12-10",
+      "roFundstelle": "AS 2005 601",
+      "titelDe": "Kernenergieverordnung (KEV)",
+      "titelFr": "Ordonnance sur l'énergie nucléaire (OENu)",
+      "titelIt": "Ordinanza sull'energia nucleare (OENu)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/68/de",
+      "sha": "a345172de8fcb92d1556ba540559a8551b4d4269abdf94761a49104e1ec4ebb7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/121",
+      "dateDocument": "2000-02-02",
+      "roFundstelle": "AS 2000 703",
+      "titelDe": "Verordnung zum Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "titelFr": "Ordonnance relative à la loi fédérale sur la coordination et la simplification des procédures de décision",
+      "titelIt": "Ordinanza relativa alla legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/121/de",
+      "sha": "0d6e05e1d781b007b6d107972500e52bb445f632a3259654e73aee5aed0538f9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/443",
+      "dateDocument": "1999-08-25",
+      "roFundstelle": "AS 1999 2783",
+      "titelDe": "Verordnung über den Umgang mit Organismen in geschlossenen Systemen (Einschliessungsverordnung, ESV)",
+      "titelFr": "Ordonnance sur l'utilisation des organismes en milieu confiné (Ordonnance sur l'utilisation confinée, OUC)",
+      "titelIt": "Ordinanza sull'utilizzazione di organismi in sistemi chiusi (Ordinanza sull'impiego confinato, OIConf)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/443/de",
+      "sha": "c52a6b80cf635361bc0c6fb4dfd8b53a27ef471a9f18987bbccd72ffe06a6377"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/104",
+      "dateDocument": "1998-11-25",
+      "roFundstelle": "AS 1999 704",
+      "titelDe": "Verordnung über die Aufhebung und die Änderung von Verordnungen aufgrund der Bahnreform",
+      "titelFr": "Ordonnance abrogeant et modifiant les ordonnances sur la base de la réforme des chemins de fer",
+      "titelIt": "Ordinanza concernente l'abrogazione e la modifica di ordinanze in seguito alla riforma delle ferrovie",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/104/de",
+      "sha": "add1d06e0ac10e8961429d896713082c635743561766de90275563b23d3a2622"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/4784_4784_4784",
+      "dateDocument": "1995-09-25",
+      "roFundstelle": "AS 1995 4784",
+      "titelDe": "Verordnung vom 25. September 1995 über das Bewilligungsverfahren für militärische Bauten und Anlagen (Militärische Baubewilligungsverordnung, MBV)",
+      "titelFr": "Ordonnance du 25 septembre 1995 concernant la procédure d'octroi des permis de construire militaires (Ordonnance concernant les permis de construire militaires, OPCM)",
+      "titelIt": "Ordinanza del 25 settembre 1995 concernente la procedura d'autorizzazione per costruzioni e impianti militari (Ordinanza concernente le autorizzazioni militari di costruzione, OAMC)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/4784_4784_4784/de",
+      "sha": "ecfa24280ad4b443547f823d1560a6a5b8df992aa199c329161e521a517b7010"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/4261_4261_4261",
+      "dateDocument": "1995-09-05",
+      "roFundstelle": "AS 1995 4261",
+      "titelDe": "Verordnung über die Umweltverträglichkeitsprüfung (UVPV), Änderung",
+      "titelFr": "Ordonnance relative à l'étude de l'impact sur l'environnement (OEIE), Modification",
+      "titelIt": "Ordinanza concernente l'esame dell'impatto sull'ambiente (OEIA), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/4261_4261_4261/de",
+      "sha": "7f4af67bbea16c7362c202b269c2e9903ca7f2526b4114a3db4c45c7c3e87098"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/3050_3050_3050",
+      "dateDocument": "1994-11-23",
+      "roFundstelle": "AS 1994 3050",
+      "titelDe": "Verordnung vom 23. November 1994 über die Infrastruktur der Luftfahrt (VIL)",
+      "titelFr": "Ordonnance du 23 novembre 1994 sur l'infrastructure aéronautique (OSIA)",
+      "titelIt": "Ordinanza del 23 novembre 1994 sull'infrastruttura aeronautica (OSIA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/3050_3050_3050/de",
+      "sha": "f635a1c79e8fb896de8b35b103337e7e407122d013708d6a8d6450fecb2ab2a6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/3022_3022_3022",
+      "dateDocument": "1993-10-27",
+      "roFundstelle": "AS 1993 3022",
+      "titelDe": "Allgemeine Gewässerschutzverordnung, Änderung",
+      "titelFr": "Ordonnance générale sur la protectiondes des eaux, Modification",
+      "titelIt": "Ordinanza generale sulla protezione delle acque, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/3022_3022_3022/de",
+      "sha": "fb5791a8c5b7b9e7fa95afc52412e4013797052905f03617d1671cf9beea8f32"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/2538_2538_2538",
+      "dateDocument": "1992-11-30",
+      "roFundstelle": "AS 1992 2538",
+      "titelDe": "Verordnung vom 30. November 1992 über den Wald (Waldverordnung, WaV)",
+      "titelFr": "Ordonnance du 30 novembre 1992 sur les forêts (OFo)",
+      "titelIt": "Ordinanza del 30 novembre 1992 sulle foreste (Ofo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/2538_2538_2538/de",
+      "sha": "1c8c911e0fae9465060c7c6fb30cf9bdf3ff1f399dc60ec812bdaf5691f87c51"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-03-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/573_573_573",
+      "dateDocument": "1992-02-26",
+      "roFundstelle": "AS 1992 573",
+      "titelDe": "Verordnung vom 26. Februar 1992 über die Anschlussgleise (AnGV)",
+      "titelFr": "Ordonnance du 26 février 1992 sur les voies de raccordement (OVR)",
+      "titelIt": "Ordinanza del 26 febbraio 1992 sui binari di raccordo (OBR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/573_573_573/de",
+      "sha": "1fa074c70fc10fdd95d4e26f7b2d76c93eaeb34a223f54318e832f1994ee6e01"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/169_169_169",
+      "dateDocument": "1990-12-10",
+      "roFundstelle": "AS 1991 169",
+      "titelDe": "Technische Verordnung vom 10. Dezember 1990 über Abfälle (TVA)",
+      "titelFr": "Ordonnance du 10 décembre 1990 sur le traitement des déchets (OTD)",
+      "titelIt": "Ordinanza tecnica del 10 dicembre 1990 sui rifiuti (OTR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/169_169_169/de",
+      "sha": "d762fb4a872c03efef6411a7b9bf0b5e435276f59c7ae7b74b3ec01312f8bbdc"
     }
   ],
-  "sha": "940398eb0b3c42498f625515debcc1c0695a10d4c9b6f74d4a7ee90d394771f4"
+  "sha": "086ae4885e1be4f569018fd091c1be9243815acc2750509a02324065fcb5000e"
 }

@@ -268,5 +268,175 @@
     "2025-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2005/782",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+    "inkrafttreten": "2007-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+        "typ": 5,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+        "typ": 30,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/6",
+        "typ": 6,
+        "datum": "2006-01-01",
+        "fassung": "2006-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/758",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 2,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/411",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/309",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/226",
+        "typ": 1,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/425",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/312",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/747",
+        "typ": 1,
+        "datum": "2022-07-01",
+        "fassung": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/747",
+        "typ": 2,
+        "datum": "2022-07-01",
+        "fassung": "2022-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/590",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2007/758": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2005-12-16",
+        "roId": "RO 2007 5437",
+        "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG)",
+        "titelFr": "Loi fédérale sur les étrangers et l'intégration (LEI)",
+        "titelIt": "Legge federale sugli stranieri e la loro integrazione (LStrI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/262": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2010 1739",
+        "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+        "titelFr": "Code de procédure civile (CPC)",
+        "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/411": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2009-06-12",
+        "roId": "RO 2010 3057",
+        "titelDe": "Zivilgesetzbuch (ZGB) (Unterbindung von Ehen bei rechtswidrigem Aufenthalt)",
+        "titelFr": "Code civil (CC) (Empêcher les mariages en cas de séjour irrégulier)",
+        "titelIt": "Codice civile (CC) (Impedire la conclusione di matrimoni in caso di soggiorno irregolare)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/114": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2011 725",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+        "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+        "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/309": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2011-09-30",
+        "roId": "RO 2012 2569",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Name und Bürgerrecht)",
+        "titelFr": "Code civil suisse (Nom et droit de cité)",
+        "titelIt": "Codice civile svizzero (Cognome e cittadinanza)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/226": {
+        "dateForce": "2013-07-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2013 1035",
+        "titelDe": "Bundesgesetz über Massnahmen gegen Zwangsheiraten",
+        "titelFr": "Loi fédérale concernant les mesures de lutte contre les mariages forcés",
+        "titelIt": "Legge federale sulle misure contro i matrimoni forzati"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2017/425": {
+        "dateForce": "2018-01-01",
+        "dateDoc": "2016-06-17",
+        "roId": "RO 2017 3699",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Adoption)",
+        "titelFr": "Code civil suisse (Droit de l'adoption)",
+        "titelIt": "Codice civile svizzero (Adozione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/312": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2020-12-18",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Erbrecht)",
+        "titelFr": "Code civil suisse (Droit des successions)",
+        "titelIt": "Codice civile svizzero (Diritto successorio)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/747": {
+        "dateForce": "2022-01-01",
+        "dateDoc": "2020-12-18",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Ehe für alle)",
+        "titelFr": "Code civil suisse (Mariage pour tous)",
+        "titelIt": "Codice civile svizzero (Matrimonio per tutti)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/590": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-06-14",
+        "titelDe": "Schweizerisches Zivilgesetzbuch (Massnahmen gegen Minderjährigenheiraten)",
+        "titelFr": "Code civil suisse (Mesures de lutte contre les mariages avec un mineur)",
+        "titelIt": "Codice civile svizzero (Misure contro i matrimoni con minorenni)"
+      }
+    }
+  }
 }

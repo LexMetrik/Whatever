@@ -1,8 +1,8 @@
 {
   "erlassKey": "VKKG",
   "sr": "221.214.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,32 +13,94 @@
       "titelDe": "Verordnung zum Konsumkreditgesetz (VKKG)",
       "titelFr": "Ordonnance relative à la loi fédérale sur le crédit à la consommation (OLCC)",
       "titelIt": "Ordinanza concernente la legge sul credito al consumo (OLCC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/319/de",
-      "sha": "44969b78ad865b9b710f1c4dd20a41e627fa7e4994d9ae05393c0af395a6c77b"
+      "sha": "58c5ea35ab4129779e85d7cc3a03038814386b5362dec9c57dca7823308a7761"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.214.11",
-      "sha": "0050c625c12449938ed898479e95943c75c0319dd26a75760b542aaf75d3c172"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/799",
+      "dateDocument": "2018-11-30",
+      "roFundstelle": "AS 2018 5229",
+      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
+      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2019-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/799/de",
+      "sha": "43113149e5cea471ee0024b7e49f33f496dc0596966ce33672467bca4a56af58"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.214.11",
-      "sha": "99658d03b4f318c55d0f9bd234f018cb930d90856f23e46f79d1f31194667ccd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/720",
+      "dateDocument": "2018-11-07",
+      "roFundstelle": "AS 2018 4581",
+      "titelDe": "Verordnung des EJPD über den Höchstzinssatz für Konsumkredite",
+      "titelFr": "Ordonnance du DFJP sur le taux d'intérêt maximal pour les crédits à la consommation",
+      "titelIt": "Ordinanza del DFGP sul tasso d'interesse massimo per i crediti al consumo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/720/de",
+      "sha": "b02a0701395ce71b98ba22ab93751ff2e371228225946f3ced818e36b53cc6bc"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/799",
+      "dateDocument": "2018-11-30",
+      "roFundstelle": "AS 2018 5229",
+      "titelDe": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+      "titelFr": "Ordonnance sur les banques et les caisses d'épargne (Ordonnance sur les banques, OB)",
+      "titelIt": "Ordinanza sulle banche e le casse di risparmio (Ordinanza sulle banche, OBCR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-01-01",
+        "2019-04-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/799/de",
+      "sha": "e7fc9c31eb3218e55cc45e0520d488c6f7afffcd2cc32b83ac44ba7f1fb57c34"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.214.11",
-      "sha": "215757ea015f8551870b02f3bcfe9630db48871765963052095abd8f6344333b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/796",
+      "dateDocument": "2017-11-29",
+      "roFundstelle": "AS 2017 7317",
+      "titelDe": "Verordnung des EJPD über den Höchstzinssatz für Konsumkredite",
+      "titelFr": "Ordonnance du DFJP sur le taux d'intérêt maximal pour les crédits à la consommation",
+      "titelIt": "Ordinanza del DFGP sul tasso d'interesse massimo per i crediti al consumo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/796/de",
+      "sha": "60762e62f04696614a6f27ab686088faa780df82329c952a59e19dfbfbf83bcb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/221.214.11",
-      "sha": "c49bdda0a52e581bbde7116d294ef32d7d2f48ab98d65675a53b64cdad2cbd96"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/79",
+      "dateDocument": "2016-12-22",
+      "roFundstelle": "AS 2017 477",
+      "titelDe": "Verordnung des EJPD über den Höchstzinssatz für Konsumkredite",
+      "titelFr": "Ordonnance du DFJP sur le taux d'intérêt maximal pour les crédits à la consommation",
+      "titelIt": "Ordinanza del DFGP sul tasso d'interesse massimo per i crediti al consumo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/79/de",
+      "sha": "79d313e0ce6a8a6bac30828ec8f94163f7f274e362336d2115ab39204c813b35"
     },
     {
       "art": "aenderung",
@@ -49,8 +111,11 @@
       "titelDe": "Verordnung zum Konsumkreditgesetz (VKKG)",
       "titelFr": "Ordonnance relative à la loi fédérale sur le crédit à la consommation (OLCC)",
       "titelIt": "Ordinanza concernente la legge sul credito al consumo (OLCC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/37/de",
-      "sha": "b0f626b534dd4f6d224c948a766ca903222d45dbd18fc94d6b1ebfe975c405d7"
+      "sha": "b801fe96831d08b868308b97b5a4b5fd114ad445e459307cd2b160c379fbf705"
     },
     {
       "art": "aenderung",
@@ -61,21 +126,12 @@
       "titelDe": "Verordnung zum Konsumkreditgesetz (VKKG)",
       "titelFr": "Ordonnance relative à la loi fédérale sur le crédit à la consommation (OLCC)",
       "titelIt": "Ordinanza concernente la legge sul credito al consumo (OLCC)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/26/de",
-      "sha": "28523d312ca706ea64e10807e4869caec12d8998c7e86d4ce70663bad86bb2de"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2003-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/594",
-      "dateDocument": "2002-11-06",
-      "roFundstelle": "AS 2002 3864",
-      "titelDe": "Verordnung zum Konsumkreditgesetz (VKKG)",
-      "titelFr": "Ordonnance relative à la loi fédérale sur le crédit à la consommation (OLCC)",
-      "titelIt": "Ordinanza concernente la legge sul credito al consumo (OLCC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/594/de",
-      "sha": "ce4e2931be6b0b7932fc414b815225b5a2aa85f50b175055af136e77dae9b312"
+      "sha": "70b8d92d69c8382464766256fdd0b6236330fdc0416fa07ddeeec2b165b6576a"
     }
   ],
-  "sha": "c233760007c80facacf6102f4f69a5de45d8c0e97234513a64140001fd08115d"
+  "sha": "75b7d1dd467afa471f65ef8c1994cf9474944eb50e3e2e4c37a1a2dbc4605928"
 }

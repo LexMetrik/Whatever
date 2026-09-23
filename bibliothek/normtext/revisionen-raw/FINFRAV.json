@@ -1004,5 +1004,147 @@
     "2025-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2015/854",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+    "inkrafttreten": "2016-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+        "typ": 5,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/312",
+        "typ": 1,
+        "datum": "2016-07-01",
+        "fassung": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/434",
+        "typ": 1,
+        "datum": "2016-08-01",
+        "fassung": "2016-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/429",
+        "typ": 1,
+        "datum": "2017-08-01",
+        "fassung": "2017-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/459",
+        "typ": 1,
+        "datum": "2018-08-16",
+        "fassung": "2018-08-16"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/548",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/478",
+        "typ": 1,
+        "datum": "2019-08-31",
+        "fassung": "2019-08-31"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/697",
+        "typ": 1,
+        "datum": "2020-10-01",
+        "fassung": "2020-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/922",
+        "typ": 1,
+        "datum": "2020-11-04",
+        "fassung": "2020-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/922",
+        "typ": 1,
+        "fassung": "2020-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/400",
+        "typ": 1,
+        "datum": "2021-08-01",
+        "fassung": "2021-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/539",
+        "typ": 1,
+        "datum": "2021-10-01",
+        "fassung": "2021-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/489",
+        "typ": 1,
+        "datum": "2022-10-01",
+        "fassung": "2022-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/576",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/13",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2016/312": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2016-05-11",
+        "roId": "RO 2016 1725",
+        "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung für Banken und Effektenhändler (Eigenmittelverordnung, ERV)",
+        "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des négociants en valeurs mobilières (Ordonnance sur les fonds propres, OFR)",
+        "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e dei commercianti di valori mobiliari (Ordinanza sui fondi propri, OFoP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/763": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-11-06",
+        "roId": "RO 2019 4633",
+        "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+        "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+        "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/922": {
+        "dateForce": "2021-01-01",
+        "dateDoc": "2020-11-04",
+        "roId": "RO 2020 5327",
+        "titelDe": "Verordnung der Eidgenössischen Finanzmarktaufsicht über die Finanzinstitute (Finanzinstitutsverordnung-FINMA, FINIV-FINMA)",
+        "titelFr": "Ordonnance de l'Autorité fédérale de surveillance des marchés financiers sur les établissements financiers (Ordonnance de la FINMA sur les établissements financiers, OEFin-FINMA)",
+        "titelIt": "Ordinanza dell'Autorità federale di vigilanza sui mercati finanziari sugli istituti finanziari (Ordinanza FINMA sugli istituti finanziari, OIsFi-FINMA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/400": {
+        "dateForce": "2021-08-01",
+        "dateDoc": "2021-06-18",
+        "titelDe": "Verordnung vom 18. Juni 2021 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+        "titelFr": "Ordonnance du 18 juin 2021 sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+        "titelIt": "Ordinanza del 18 giugno 2021 sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/13": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2023-11-29",
+        "titelDe": "Verordnung über die Eigenmittel und Risikoverteilung der Banken und Wertpapierhäuser (Eigenmittelverordnung, ERV)",
+        "titelFr": "Ordonnance sur les fonds propres et la répartition des risques des banques et des maisons de titres (Ordonnance sur les fonds propres, OFR)",
+        "titelIt": "Ordinanza sui fondi propri e sulla ripartizione dei rischi delle banche e delle società di intermediazione mobiliare (Ordinanza sui fondi propri, OFoP)"
+      }
+    }
+  }
 }

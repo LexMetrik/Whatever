@@ -1,38 +1,61 @@
 {
   "erlassKey": "EMRK",
   "sr": "0.101",
-  "abgerufen": "2026-09-14",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2022-09-16",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/0.101",
-      "sha": "ae6e2bedd307a5f8cef60584760553e2b1746958d96378d059def951821b0682"
-    },
-    {
       "art": "aenderung",
-      "dateEntryInForce": "2022-03-16",
+      "dateEntryInForce": "2022-09-16",
       "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/248",
       "dateDocument": "2022-04-22",
       "roFundstelle": "AS 2022 248",
       "titelDe": "Mitteilung betreffend die im Rahmen des Europarates abgeschlossenen Übereinkommen und Protokolle, denen die Schweiz als Vertragspartei angehört. Beendigung des Vertragsparteistatus der Russischen Föderation",
       "titelFr": "Communication concernant des Conventions et Protocoles conclus dans le cadre du Conseil de l’Europe, auxquels la Suisse fait. Partie Cessation de la Fédération de Russie d’être Partie contractante",
       "titelIt": "Comunicazione concernente Convenzioni e Protocolli conclusi nel quadro del Consiglio d’Europa, di cui la Svizzera è parte contraente. Cessazione della Federazione russa di essere Parte contraente",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/248/de",
-      "sha": "f8ba6ae5b0846460c350ad3f31c59c63a6ba2a0db2819f3f977d379f099e2936"
+      "sha": "09a84131c95d77a8857e813eb1b04864c0a03d144e974e2ca447cbfe82fbfe04"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/0.101",
-      "sha": "3a0e27415837eb92907f9b3425702ac856acb5e077cae35c175eab2590453325"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/461",
+      "dateDocument": "2013-06-24",
+      "roFundstelle": "AS 2021 461",
+      "titelDe": "Protokoll Nr. 15 vom 24. Juni 2013 über die Änderung der Konvention zum Schutze der Menschenrechte und Grundfreiheiten",
+      "titelFr": "Protocole n° 15 du 24 juin 2013 portant amendement à la Convention de sauvegarde des droits de l’homme et des libertés fondamentales",
+      "titelIt": "Protocollo n. 15 del 24 giugno 2013 recante emendamento alla Convenzione per la salvaguardia dei diritti dell’uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-08-01",
+        "2022-02-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/461/de",
+      "sha": "524719b29658f7f9dd2c3703621294d3fb2d9f910a04e57f321df30ab96190cb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/0.101",
-      "sha": "5bb992a40c5df4887a13af024276b3a0657979f1a40939259e3886c5aa0d93c0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/461",
+      "dateDocument": "2013-06-24",
+      "roFundstelle": "AS 2021 461",
+      "titelDe": "Protokoll Nr. 15 vom 24. Juni 2013 über die Änderung der Konvention zum Schutze der Menschenrechte und Grundfreiheiten",
+      "titelFr": "Protocole n° 15 du 24 juin 2013 portant amendement à la Convention de sauvegarde des droits de l’homme et des libertés fondamentales",
+      "titelIt": "Protocollo n. 15 del 24 giugno 2013 recante emendamento alla Convenzione per la salvaguardia dei diritti dell’uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2021-08-01",
+        "2022-02-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/461/de",
+      "sha": "66d28b4232e1cc411d2a0faf7ef1811c010d73ac46aaadb0425ca325f39eee8f"
     },
     {
       "art": "aenderung",
@@ -43,20 +66,43 @@
       "titelDe": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten",
       "titelFr": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales",
       "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/166/de",
-      "sha": "23f590533c3867fcdf056892dc1c9d893710f7966ce90d165e6482411faa3512"
+      "sha": "b33ce8978c1ab9834ce92f7aa31ce42d65b0aef360a6587ebc479f4f170e73c7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/0.101",
-      "sha": "1c0af29a7afeb369ea0157ebaf2b0d90d706b2b7d4a1b36946edbd87a3109df5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/173",
+      "dateDocument": "2010-06-01",
+      "roFundstelle": "AS 2010 1241",
+      "titelDe": "Protokoll Nr. 14 vom 13. Mai 2004 zur Konvention zum Schutz der Menschenrechte und Grundfreiheiten über die Änderung des Kontrollsystems der Konvention",
+      "titelFr": "Protocole no 14 du 13 mai 2004 à la Convention de sauvegarde des droits de l'homme et des libertés fondamentales, amendant le système de contrôle de la Convention",
+      "titelIt": "Protocollo n. 14 del 13 maggio 2004 alla Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, il quale emenda il sistema di controllo della Convenzione",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/173/de",
+      "sha": "5684f19d95a94f580cf81e0064f25c23823b3906f451046d44f5bbbdc6b71af2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/0.101",
-      "sha": "4a8920a9fb1253ca388ee44a0b34f267d22e07c44b0fa101aac2c5c2de5ec406"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/377",
+      "dateDocument": "2004-05-13",
+      "roFundstelle": "AS 2009 3067",
+      "titelDe": "Protokoll Nr. 14 zur Konvention zum Schutz der Menschenrechte und Grundfreiheiten über die Änderung des Kontrollsystems der Konvention",
+      "titelFr": "Protocole no 14 à la Convention de sauvegarde des droits de l'homme et des libertés fondamentales, amendant le système de contrôle de la Convention",
+      "titelIt": "Protocollo n. 14 alla Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, il quale emenda il sistema di controllo della Convenzione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/377/de",
+      "sha": "78f9cca27ceb64cdae89d4a6f34e9fd8143067749beb53e2467579fbd1c069f8"
     },
     {
       "art": "aenderung",
@@ -67,8 +113,12 @@
       "titelDe": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten",
       "titelFr": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales",
       "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/514/de",
-      "sha": "e1c526b7d82bf90cf6052741ca000df7b51d68d3a8675aeeb3e4ffd47a6a080f"
+      "sha": "6af8fef9688d10cd75044fea34deb6876fbc47c275d60fd24048f47958c02f60"
     },
     {
       "art": "aenderung",
@@ -79,8 +129,27 @@
       "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
       "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
       "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/306/de",
-      "sha": "48f1267645eb23ad72a85dbc03df87346e6e718ef437dbcef5e7e0d3be699793"
+      "sha": "e2bf6e97669509f0ff2deb47f0f42f5f208667b49291dd2232f515649c650974"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-03-08",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/187",
+      "dateDocument": "2000-03-08",
+      "roFundstelle": "AS 2002 1142",
+      "titelDe": "Bundesbeschluss über den Rückzug der Vorbehalte und Auslegenden Erklärungen der Schweiz zu Artikel 6 der Europäischen Menschenrechtskonvention",
+      "titelFr": "Arrêté fédéral relatif au retrait des réserves et déclarations interprétatives à l'art. 6 de la Convention européenne des droits de l'homme",
+      "titelIt": "Decreto federale sul ritiro delle riserve e dichiarazioni interpretative della Svizzera all'articolo 6 della Convenzione europea dei diritti dell'uomo",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/187/de",
+      "sha": "d076a159319a0d241fd7a2cef507d05b064d8aaba152af36ce7a1d36970504eb"
     },
     {
       "art": "aenderung",
@@ -91,8 +160,12 @@
       "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
       "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
       "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/139/de",
-      "sha": "d3ea1d3f54263493b1f9b4d2b2f9f750f6e4cb8ca88c236b44f64995e6110caf"
+      "sha": "0d96f9ca97175cf514eb452494b46c44489290eeeef1d036d12bc9141b22c5dd"
     },
     {
       "art": "aenderung",
@@ -103,21 +176,393 @@
       "titelDe": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten",
       "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
       "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/188/de",
-      "sha": "5d458f25661a613fe9b8162fb194f910568a70634b7f661c01345b66594a6fcd"
+      "sha": "cf9359c424b0f5f983cba192b91175667e49a80a4f9ba926de0ba651dcfa73c6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/2993_2993_2993",
+      "dateDocument": "1994-05-11",
+      "roFundstelle": "AS 1998 2993",
+      "titelDe": "Protokoll Nr. 11 zur Konvention zum Schutze der Menschenrechte und Grundfreiheiten über die Umgestaltung des durch die Konvention eingeführten Kontrollmechanismus",
+      "titelFr": "Protocole No 11 à la convention de sauvegarde des Droits de l'Homme et des Libertés fondamentales portant restructuration du mécanisme de contrôle établie par la Convention",
+      "titelIt": "Protocollo n. 11 alla Convenzione europea per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, che ristruttura il meccanismo di controllo istituito dalla Convenzione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2993_2993_2993/de",
+      "sha": "a1e3278a6486522d60bc6c211670e24b8b9f552f599b81829bed3f23b192e4b3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-10-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/3097_3097_3097",
+      "dateDocument": "1993-10-15",
+      "roFundstelle": "AS 1993 3097",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+      "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/3097_3097_3097/de",
+      "sha": "8e746441ab3971561443c3f69844b75dd79929a2ac5163f4a6998340e8493e17"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/2219_2219_2219",
+      "dateDocument": "1992-11-01",
+      "roFundstelle": "AS 1992 2219",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/2219_2219_2219/de",
+      "sha": "74508c4856a398977b06fd560f0f96038072d8cc25db028e12ef70255daccfba"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-03-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/657_657_657",
+      "dateDocument": "1992-03-31",
+      "roFundstelle": "AS 1992 657",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, del 4 novembre 1950",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/657_657_657/de",
+      "sha": "85db73e2b73bc9efdf85ccebaaf2f95941603a7ea8d42dd91a2af72fa1f65d9f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/789_789_789",
+      "dateDocument": "1991-03-01",
+      "roFundstelle": "AS 1991 789",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/789_789_789/de",
+      "sha": "685e18ab4422b8e3eacc23168d33ab8180477f23b28e95e73f9e26d30aa5eed2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/2371_2371_2371",
+      "dateDocument": "1985-03-19",
+      "roFundstelle": "AS 1989 2371",
+      "titelDe": "Protokoll Nr. 8 vom 19. März 1985 zur Konvention zum Schutze der Menschenrechte und Grundfreiheiten",
+      "titelFr": "Protocole no 8 du 19 mars 1985 à la Convention de sauvegarde des droits de l'homme et des libertés fondamentales",
+      "titelIt": "Protocollo n. 8 del 19 marzo 1985 alla Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/2371_2371_2371/de",
+      "sha": "9e08e35bfbb2860a813245ef884510c3f619401c678a6197e3ae7043555fdee6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1990/55_55_55",
+      "dateDocument": "1989-12-01",
+      "roFundstelle": "AS 1990 55",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+      "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1990/55_55_55/de",
+      "sha": "7f553d36156ab3e3b619ed95fa3a31f0f9e2d14636529c886649da1fae2153ef"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-07-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/1264_1264_1264",
+      "dateDocument": "1988-07-15",
+      "roFundstelle": "AS 1988 1264",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/1264_1264_1264/de",
+      "sha": "79a2db0fff4e2d63dfc2e42f735ba54cec922b27e530b24d1393cfd5cfdea16d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1988-04-29",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/276_276_276",
+      "dateDocument": "1988-04-29",
+      "roFundstelle": "AS 1989 276",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+      "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/276_276_276/de",
+      "sha": "aba66d6aff246cfb88cc6f385678928e1687e0156594e5da0052a2bd3ed900a3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/1346_1346_1346",
+      "dateDocument": "1987-10-01",
+      "roFundstelle": "AS 1987 1346",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/1346_1346_1346/de",
+      "sha": "f4583741e1aa30b7f6926a689fe7e8e5b03710b67d33bed0f38913d4632aa40e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/314_314_314",
+      "dateDocument": "1987-01-01",
+      "roFundstelle": "AS 1987 314",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/314_314_314/de",
+      "sha": "71445e223d89d84f7095b0c595e2294cfa3bf3ff5dcca494193cfc9afc39674e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/169_169_169",
+      "dateDocument": "1986-01-01",
+      "roFundstelle": "AS 1986 169",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/169_169_169/de",
+      "sha": "33bac76b7cb1f1ecf88887bf55775d052e1e0168decd71d00742a11636d8817f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/360_360_360",
+      "dateDocument": "1985-04-01",
+      "roFundstelle": "AS 1985 360",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+      "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/360_360_360/de",
+      "sha": "6388351beffb4a278860b26db16983d25cbe183bf1731da1d1b61ddbc92d63e0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/1491_1491_1491",
+      "dateDocument": "1984-12-01",
+      "roFundstelle": "AS 1984 1491",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/1491_1491_1491/de",
+      "sha": "cb002973c814a70d78323ea923bf4d16716d38957423f7edf4c38021357c6d36"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/973_973_973",
+      "dateDocument": "1984-09-01",
+      "roFundstelle": "AS 1984 973",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/973_973_973/de",
+      "sha": "f6a37516cd4e3478e6395f1f0e9f25f3ad183bb01523c444687a7d9ef9e5e86f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1983-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1592_1592_1592",
+      "dateDocument": "1983-12-01",
+      "roFundstelle": "AS 1983 1592",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1592_1592_1592/de",
+      "sha": "adc01e19a418817ea9e5f4b4563d1fe48815a75a6ac9b6c1f5a75cc9ef2c65ff"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/2065_2065_2065",
+      "dateDocument": "1982-12-01",
+      "roFundstelle": "AS 1982 2065",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/2065_2065_2065/de",
+      "sha": "abcf363ab9acd81b9c550bdc8374dcaad3a496977bb2471c110fbc3dfbaf6a75"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/285_285_285",
+      "dateDocument": "1982-02-15",
+      "roFundstelle": "AS 1982 285",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/285_285_285/de",
+      "sha": "e9c0c592725bad4d7e4d64ce3c56e0e616aaa65451787e33657ab05b62900198"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1981-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/928_928_928",
+      "dateDocument": "1978-06-13",
+      "roFundstelle": "AS 1982 928",
+      "titelDe": "Bundesbeschluss vom 13. Juni 1978 über den Vorbehalt zu Artikel 5 der Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten",
+      "titelFr": "Arrêté fédéral du 13 juin 1978 concernant la réserve apportée à l'article 5 de la Convention de sauvegarde des droits de l'homme et des libertés fondamentales, du 4 novembre 1950",
+      "titelIt": "Decreto federale del 13 giugno 1978 concernente la riserva all'articolo 5 della Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/928_928_928/de",
+      "sha": "88dd4aa73331a501b4c5cc1bd39e67d2b27d5a7a981a51e0133205d87c0a78f6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-01-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/64_64_64",
+      "dateDocument": "1978-01-15",
+      "roFundstelle": "AS 1978 64",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/64_64_64/de",
+      "sha": "f65d60fa2e4875d53b5c12c43dda92a438dc4a14e7445529ce2701e76f5a56c2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/1464_1464_1464",
+      "dateDocument": "1977-07-01",
+      "roFundstelle": "AS 1977 1464",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/1464_1464_1464/de",
+      "sha": "eb72ba172332e13fcdc25cac63551804b7746b2c559414772f2d0c668d8b1236"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/147_147_147",
+      "dateDocument": "1976-12-01",
+      "roFundstelle": "AS 1977 147",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten vom 4. November 1950, geändert durch das Protokoll Nr. 3 vom 6. Mai 1963 und das Protokoll Nr. 5 vom 20. Januar 1966",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales du 4 novembre 1950, amendée par le Protocole no 3 du 6 mai 1963 et le Protocole n>sup>o 5 du 20 janvier 1966",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali del 4 novembre 1950, emendata dal Protocollo n. 3 del 6 maggio 1963 e dal Protocollo n. 5 del 20 gennaio 1966",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/147_147_147/de",
+      "sha": "66e6423b14dc00d3bf1e52eb263e828600e91901c0cf760c714f030bea303bbe"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1974-11-28",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1974/2151_2151_2151",
-      "dateDocument": "1950-11-04",
-      "roFundstelle": "AS 1974 2151",
-      "titelDe": "Konvention vom 4. November 1950 zum Schutze der Menschenrechte und Grundfreiheiten (EMRK)",
-      "titelFr": "Convention du 4 novembre 1950 de sauvegarde des droits de l'homme et des libertés fondamentales (CEDH)",
-      "titelIt": "Convenzione del 4 novembre 1950 per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali (CEDU)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1974/2151_2151_2151/de",
-      "sha": "7bf12f156197a3ade7802ef0310c703f3790f2ae455ed52c64558fcf47ffca8c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/614_614_614",
+      "dateDocument": "1975-04-14",
+      "roFundstelle": "AS 1975 614",
+      "titelDe": "Reglement über Kurse und Prüfungen zum Erwerb eines Giftbuches für den Bezug von Giften der Klasse 2 für die pflanzenbauliche Produktion, Berichtigung (nur ital.)",
+      "titelFr": "Règlement concernant les cours et les examens dont dépend la délivrance d'un livret de toxiques pour l'acquisition de toxiques de la classe 2 pour la production végétale, Errata (seulement en italien)",
+      "titelIt": "Regolamento concernente i corsi e gli esami per l'ottenimento di un libro dei veleni per l'acquisto di veleni della classe 2 per la produzione vegetale, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/614_614_614/de",
+      "sha": "7c7bd4888872faf773e201ecf4c5e0b4cca4cec6c9143e1a1d5c843045ea1c0c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1974-11-28",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/2866_2866_2866",
+      "dateDocument": "1976-12-15",
+      "roFundstelle": "AS 1976 2866",
+      "titelDe": "Konvention zum Schutze der Menschenrechte und Grundfreiheiten, Berichtigung (nur ital.)",
+      "titelFr": "Convention de sauvegarde des droits de l'homme et des libertés fondamentales, Errata (seulement en italien)",
+      "titelIt": "Convenzione per la salvaguardia dei diritti dell'uomo e delle libertà fondamentali, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/2866_2866_2866/de",
+      "sha": "947e54019b4318b3f30253d9e1bb75481d6b1ff488da56deca1dbfe25642c4ad"
     }
   ],
-  "sha": "f370a04ec0b6b58cb9d0380a39fd18d3fdff438856a66469b82fe908bd4e0d15"
+  "sha": "2a2fe9dc26cbdff5e29885fe75d7c1d3797a73d407007c380aa7e34454d0abd5"
 }

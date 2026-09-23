@@ -1,8 +1,8 @@
 {
   "erlassKey": "OHG",
   "sr": "312.5",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,39 +13,92 @@
       "titelDe": "Verordnung über die Anpassung der Entschädigungs- und Genugtuungsbeträge des Opferhilfegesetzes an die Teuerung",
       "titelFr": "Ordonnance concernant l’adaptation au renchérissement des montants d’indemnisation et de réparation morale de la loi sur l’aide aux victimes",
       "titelIt": "Ordinanza sull’adeguamento al rincaro degli importi di indennizzo e di riparazione morale della legge federale concernente l’aiuto alle vittime di reati",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/163/de",
-      "sha": "a87278ee41c1221f739dec41c24d14a3aba8a499db960ae4d648baa744296e98"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/312.5",
-      "sha": "03bfb1b1dd539166539718a5cf12f9efd3127d088b5343076514ff15dcf353cb"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/312.5",
-      "sha": "e3bbaaf57218e59f7ed04058a4ecb69e93230029e6fc2223ac16e4ec44e32791"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/312.5",
-      "sha": "39fb04a895e3193fa66d315b9a8a3536f92509f7cc895c8e331f9249c3d40b7d"
+      "sha": "f2f62f2faeabfc50a602df31bd7bd84ee856c5893e2789ce6e08821f7d8e9179"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2009-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/232",
-      "dateDocument": "2007-03-23",
-      "roFundstelle": "AS 2008 1607",
-      "titelDe": "Bundesgesetz über die Hilfe an Opfer von Straftaten (Opferhilfegesetz, OHG)",
-      "titelFr": "Loi fédérale sur l'aide aux victimes d'infractions (Loi sur l'aide aux victimes, LAVI)",
-      "titelIt": "Legge federale concernente l'aiuto alle vittime di reati (LAV)",
-      "botschaftKey": "BOTSCHAFT-2005-1167",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/232/de",
-      "sha": "f53c696683c6ee9bb4629bdaade27149f16669f640cd816972f03896a54dee16"
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 468",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2019-2368",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/468/de",
+      "sha": "4b9e33a8ad3ab55a2c54e2ab4657c445a2f90d1980ef0b657c5fd644f1b0b630"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4633",
+      "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+      "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+      "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/763/de",
+      "sha": "4d35a59da029c3424afde10db590c805270c1e84bb0e3182d686b5821a298a23"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/450",
+      "dateDocument": "2017-12-15",
+      "roFundstelle": "AS 2018 2947",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Kindesschutz)",
+      "titelFr": "Code civil suisse (Protection de l'enfant)",
+      "titelIt": "Codice civile svizzero (Protezione dei minorenni)",
+      "botschaftKey": "BOTSCHAFT-2015-838",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/450/de",
+      "sha": "865d3a6262510d3b7d68ca1e41513a4bac6d1e0ae321af7c542172320904ee76"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2010 1881",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2006-124",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "sha": "898f9b54b3bc3f119a50ed83bc703373181617fdbcfab60c7c7a0310f042cb5b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/444",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2010 3267",
+      "titelDe": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "titelFr": "Loi fédérale sur l'organisation des autorités pénales de la Confédération (Loi sur l'organisation des autorités pénales, LOAP)",
+      "titelIt": "Legge federale sull'organizzazione delle autorità penali della Confederazione (Legge sull'organizzazione delle autorità penali, LOAP)",
+      "botschaftKey": "BOTSCHAFT-2008-1395",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/444/de",
+      "sha": "1d4a18440318e3101df97f15e78fe5f08fdb1d73657f6e95e38df0390ca31b3a"
     },
     {
       "art": "aenderung",
@@ -56,33 +109,12 @@
       "titelDe": "Bundesgesetz über die Hilfe an Opfer von Straftaten (Opferhilfegesetz, OHG) (Betrifft nur den italienischen Text)",
       "titelFr": "Loi fédérale sur l'aide aux victimes d'infractions (Loi sur l'aide aux victimes, LAVI) (Ne concerne que le texte italien)",
       "titelIt": "Legge federale concernente l'aiuto alle vittime di reati (LAV)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/197/de",
-      "sha": "63d0951200573ed4e7fcc1c088a8d6529dcf462639e81c5fbc1be0aaf09c371c"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "2002-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/431",
-      "dateDocument": "2001-03-23",
-      "roFundstelle": "AS 2002 2997",
-      "titelDe": "Bundesgesetz über die Hilfe an Opfer von Straftaten (Opferhilfegesetz) (Verbesserung des Schutzes von Kindern als Opfer)",
-      "titelFr": "Loi fédérale sur l'aide aux victimes d'infractions (Loi sur l'aide aux victimes) (Amélioration de la protection des enfants victimes)",
-      "titelIt": "Legge federale concernente l'aiuto alle vittime di reati (Miglioramento della protezione delle vittime minori di 18 anni)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/431/de",
-      "sha": "1f6b2603c6456ccb51682e948052d502bef8e84546f4429baafd31b93d8a82bc"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1993-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/2465_2465_2465",
-      "dateDocument": "1991-10-04",
-      "roFundstelle": "AS 1992 2465",
-      "titelDe": "Bundesgesetz vom 4. Oktober 1991 über die Hilfe an Opfer von Straftaten (Opferhilfegesetz, OHG)",
-      "titelFr": "Loi fédérale du 4 octobre 1991 sur l'aide aux victimes d'infractions (LAVI)",
-      "titelIt": "Legge federale del 4 ottobre 1991 concernente l'aiuto alle vittime di reati (LAV)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/2465_2465_2465/de",
-      "sha": "0ec5d9dd5a028b6208d3f5f7d7fba3616e4ba4882197f51c0a7c85b36cfeb1b7"
+      "sha": "8f1b81fea42212c0c819323da84cedf0217dff0520d12d8b4c85559597f18555"
     }
   ],
-  "sha": "dc074c3ae52db8d602cc990b4843d0e497b3b5924212e5b9d2eba06a76f40e8c"
+  "sha": "2a1a861a456a94b2f1553a79c222ec0771b45c4602364eb065dcb7116a22af1b"
 }

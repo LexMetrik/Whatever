@@ -1,71 +1,253 @@
 {
   "erlassKey": "CHEMRRV",
   "sr": "814.81",
-  "abgerufen": "2026-09-12",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2035-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/747",
+      "dateDocument": "2025-10-29",
+      "roFundstelle": "AS 2025 747",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "81b993858841a5eed9b89ba116fb0fe30c5dda71c89b1d4f6514364160bfff9a"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-12-01",
+        "2026-01-01",
+        "2026-12-01",
+        "2027-01-01",
+        "2028-01-01",
+        "2028-08-01",
+        "2031-10-17",
+        "2032-01-01",
+        "2033-01-01",
+        "2035-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/747/de",
+      "sha": "780f8c8b1d061f29019562dc6c3865a0466202a01067098e884184fc66af8327"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2033-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/747",
+      "dateDocument": "2025-10-29",
+      "roFundstelle": "AS 2025 747",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "408f133d9ddac7cdf8a2cb302ea5350aa8c111d1b9d690567c863c84a1e3cdb0"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-12-01",
+        "2026-01-01",
+        "2026-12-01",
+        "2027-01-01",
+        "2028-01-01",
+        "2028-08-01",
+        "2031-10-17",
+        "2032-01-01",
+        "2033-01-01",
+        "2035-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/747/de",
+      "sha": "275dd39764f916b73294b06d0b966ac329c80b20d2ac5d1378784db36acea948"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2032-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/747",
+      "dateDocument": "2025-10-29",
+      "roFundstelle": "AS 2025 747",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "64bf625bbdebf30bbd4b7772f8d8b26306a2e49331a7f29f7a693588fb21043f"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-12-01",
+        "2026-01-01",
+        "2026-12-01",
+        "2027-01-01",
+        "2028-01-01",
+        "2028-08-01",
+        "2031-10-17",
+        "2032-01-01",
+        "2033-01-01",
+        "2035-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/747/de",
+      "sha": "c2c242b2dc6a1345c21e47bb26acfefd0b33a989955e07568a40cd91169fbf44"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2031-10-17",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/747",
+      "dateDocument": "2025-10-29",
+      "roFundstelle": "AS 2025 747",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "09194f9215ef861b89b9a0dac00dffbff6607a3f0718170c7583281c52ee684d"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-12-01",
+        "2026-01-01",
+        "2026-12-01",
+        "2027-01-01",
+        "2028-01-01",
+        "2028-08-01",
+        "2031-10-17",
+        "2032-01-01",
+        "2033-01-01",
+        "2035-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/747/de",
+      "sha": "aecd11c957f51f4d4df36b0fcd4f1e7f4763740c51b15ca6ecbe45778e44dd3f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2030-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/891",
+      "dateDocument": "2020-11-18",
+      "roFundstelle": "AS 2020 5125",
+      "titelDe": "Verordnung über das Inverkehrbringen von und den Umgang mit Biozidprodukten (Biozidprodukteverordnung, VBP)",
+      "titelFr": "Ordonnance concernant la mise sur le marché et l'utilisation des produits biocides (Ordonnance sur les produits biocides, OPBio)",
+      "titelIt": "Ordinanza concernente l'immissione sul mercato e l'utilizzazione di biocidi (Ordinanza sui biocidi, OBioc)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "238d9d20462c87b10a41c36f9abf6a2f765c2e545bf75de9533c34706edd409e"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-12-15",
+        "2025-06-02",
+        "2030-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/891/de",
+      "sha": "478cb845a5a10c11abbe0bedc3f1d81b0e89648f28d4ee960adb73777b471079"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2028-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/747",
+      "dateDocument": "2025-10-29",
+      "roFundstelle": "AS 2025 747",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "5bd9fc56d4c2aadf89f71a21e6ef85a0dd20a6c5ac723a92741e6e2eebd5678d"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-12-01",
+        "2026-01-01",
+        "2026-12-01",
+        "2027-01-01",
+        "2028-01-01",
+        "2028-08-01",
+        "2031-10-17",
+        "2032-01-01",
+        "2033-01-01",
+        "2035-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/747/de",
+      "sha": "7327e9fcb694f795d1c2313f7499be2466aab44dff6e1826c6c20006ea998f0c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2028-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/747",
+      "dateDocument": "2025-10-29",
+      "roFundstelle": "AS 2025 747",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "c5088b0a4dfbe2abe83a8a200b0e717c32b1d04aacf523e11a78df9ecd8e32bf"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-12-01",
+        "2026-01-01",
+        "2026-12-01",
+        "2027-01-01",
+        "2028-01-01",
+        "2028-08-01",
+        "2031-10-17",
+        "2032-01-01",
+        "2033-01-01",
+        "2035-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/747/de",
+      "sha": "4665b0ecfefa904cdfb4aaa35635fa877b7d140acf24feb6bdf82bb842e54cbe"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/747",
+      "dateDocument": "2025-10-29",
+      "roFundstelle": "AS 2025 747",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "293d547a5a247682a2ebeb8eedfadedf6b949affabde0d6afc976f27b5887335"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-12-01",
+        "2026-01-01",
+        "2026-12-01",
+        "2027-01-01",
+        "2028-01-01",
+        "2028-08-01",
+        "2031-10-17",
+        "2032-01-01",
+        "2033-01-01",
+        "2035-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/747/de",
+      "sha": "f5ae25735b87e087f453220f9f39f82be9dc5fe00257fe3d88801ee0b77ad91d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/747",
+      "dateDocument": "2025-10-29",
+      "roFundstelle": "AS 2025 747",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "0d1adc4eba6a31f9dd00aeda24e7f139a45b1358a899eced4e4795e42f7b60fa"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-12-01",
+        "2026-01-01",
+        "2026-12-01",
+        "2027-01-01",
+        "2028-01-01",
+        "2028-08-01",
+        "2031-10-17",
+        "2032-01-01",
+        "2033-01-01",
+        "2035-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/747/de",
+      "sha": "a2688bae8c41812f5754236565b4105611ac610df4b1ba874599f91ced8ffeb1"
     },
     {
       "art": "aenderung",
@@ -76,8 +258,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV). Berichtigung",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim). Erratum",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/394/de",
-      "sha": "dd4309a2b444e7737283351d0c19e157503ce9ccbde318763b2448a16c53099e"
+      "sha": "f7ddb7f92391dc55af361deb2d1e8f7d11748c41b61624f96bc6056ae2cf0760"
     },
     {
       "art": "aenderung",
@@ -88,8 +273,38 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinante sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/788/de",
-      "sha": "adfe2cca009e7938c69147991ac33f562e5cfc13bfb722b0af47ca3d213b93ed"
+      "sha": "bbdc332e2f4179a3b7f872d3cd818721fce6a3004626c1a52525665a9fb35fab"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2026-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/747",
+      "dateDocument": "2025-10-29",
+      "roFundstelle": "AS 2025 747",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-12-01",
+        "2026-01-01",
+        "2026-12-01",
+        "2027-01-01",
+        "2028-01-01",
+        "2028-08-01",
+        "2031-10-17",
+        "2032-01-01",
+        "2033-01-01",
+        "2035-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/747/de",
+      "sha": "ab1b1d38a7941310e168a28ad27e2f5816cdb0ef533fe14c9caa231723665c56"
     },
     {
       "art": "aenderung",
@@ -102,8 +317,26 @@
       "titelIt": "Ordinanza sui prodotti fitosanitari (OPF). Correzione",
       "plausibilitaet": "berichtigung-fremdes-as-dokument",
       "plausibilitaetsGrund": "Fedlex verknüpft diese Berichtigung (jolux:rectifies) mit dem AS-Dokument AS 2025 565, das unter SR 916.161 klassiert ist — häufig, weil die berichtigte Bestimmung im Anhang eines anderen Erlasses geändert wurde; massgeblich ist die amtliche Sammlung (§7/§8).",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/864/de",
-      "sha": "37b164b6db2df55265e5d31e498a4435ffdfeaa2af7d6e919832e80c494d5bcc"
+      "sha": "b106be95699b9f5c075ff33561b695f8f51fbc2c14d1e246b47985259472b883"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/565",
+      "dateDocument": "2025-08-20",
+      "roFundstelle": "AS 2025 565",
+      "titelDe": "Pflanzenschutzmittelverordnung vom 20. August 2025 (PSMV)",
+      "titelFr": "Ordonnance du 20 août 2025 sur les produits phytosanitaires (OPPh)",
+      "titelIt": "Ordinanza del 20 agosto 2025 sui prodotti fitosanitari (OPF)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/565/de",
+      "sha": "b81539a4500681fe57830455c65e64492c5350947878ab6b1bbcb7514eb54069"
     },
     {
       "art": "aenderung",
@@ -114,8 +347,23 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2025-12-01",
+        "2026-01-01",
+        "2026-12-01",
+        "2027-01-01",
+        "2028-01-01",
+        "2028-08-01",
+        "2031-10-17",
+        "2032-01-01",
+        "2033-01-01",
+        "2035-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/747/de",
-      "sha": "056dfec2147eb34f21b972c3df35bb0c47bcf82212d625d726e7092039bb5cf7"
+      "sha": "3b8a0fd70e2195158c41cdc1e6fd3a18faca31149fa5780a914c92f6ece1c661"
     },
     {
       "art": "aenderung",
@@ -126,8 +374,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/544/de",
-      "sha": "e1c2ad8b04ec9d99f4b26bee9b04f5e182e7ee68ef48d22c5879f00d6d424b3a"
+      "sha": "fc6539b7230c2da381eb13e79208f35b18f8ea4385e6a24caf831b2f01227d4a"
     },
     {
       "art": "aenderung",
@@ -138,14 +389,50 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/508/de",
-      "sha": "fedf56b4a8be93b10b41642e7de1742cb58bdd4c9ed9b833af0ad09ec0b3a3d3"
+      "sha": "a667068c81dab2aa369b8caa2e9de65ab1ff2d3a6f23444eb4930ce84f2ffaf7"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-06-02",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "a43d692786ea0ca69760ed56d801dbf98417f05279f8ce766d4f812880c0b5c3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/891",
+      "dateDocument": "2020-11-18",
+      "roFundstelle": "AS 2020 5125",
+      "titelDe": "Verordnung über das Inverkehrbringen von und den Umgang mit Biozidprodukten (Biozidprodukteverordnung, VBP)",
+      "titelFr": "Ordonnance concernant la mise sur le marché et l'utilisation des produits biocides (Ordonnance sur les produits biocides, OPBio)",
+      "titelIt": "Ordinanza concernente l'immissione sul mercato e l'utilizzazione di biocidi (Ordinanza sui biocidi, OBioc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-12-15",
+        "2025-06-02",
+        "2030-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/891/de",
+      "sha": "08ee57dd84965f87376acdaab34b459a6ef2a0d15d60ec9cda9d53f05fa7fb3d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2025-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/254",
+      "dateDocument": "2024-05-31",
+      "roFundstelle": "AS 2024 254",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-07-01",
+        "2025-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/254/de",
+      "sha": "9fb14abae5285a1a45dae17849622e23dc0646b499ce2186a6010fb6715562fb"
     },
     {
       "art": "aenderung",
@@ -156,8 +443,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/745/de",
-      "sha": "6053d030b7c4f4552f4f34b10a13554a8dd0e78ef803e61771b15a6e9b10d9eb"
+      "sha": "f8ecd2c77e987da173285addff9c2117b0b4643b7660f3ff109bb0ff93a1bc85"
     },
     {
       "art": "aenderung",
@@ -168,8 +458,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV). Berichtigung (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim). Erratum (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim). Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/557/de",
-      "sha": "630e17688c61a973e0b3e9826b4486cc338e9dc6d6b05db72c7183283861b55f"
+      "sha": "ffc2883efd42ae5cbf3c2dfc923dc0e1f1587bdfa8ef379a8793afe73fd673bd"
     },
     {
       "art": "aenderung",
@@ -180,14 +473,54 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-07-01",
+        "2025-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/254/de",
-      "sha": "f8d5fe4bb5d297123ab8dc5decdd24f1f6bd7fe37f64ce75ce030a7094eb4109"
+      "sha": "c9291ca43c92737ba42b815061307c31f7d4d5f50953658c3ffa6a2cf3367d72"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "5552278a967b0a7066fb5207f707b2b0ceeb275e7bdaff111f809ff913deda85"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/289",
+      "dateDocument": "2019-04-17",
+      "roFundstelle": "AS 2019 1495",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-06-01",
+        "2019-12-01",
+        "2020-01-01",
+        "2020-06-01",
+        "2020-12-01",
+        "2021-06-01",
+        "2024-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/289/de",
+      "sha": "471b230468aaf3242de651d396658c0a90394faf472f597d9a6cfeee18c8491e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/711",
+      "dateDocument": "2023-11-01",
+      "roFundstelle": "AS 2023 711",
+      "titelDe": "Verordnung vom 1. November 2023 über das Inverkehrbringen von Düngern (Düngerverordnung, DüV)",
+      "titelFr": "Ordonnance du 1er novembre 2023 sur la mise en circulation des engrais (Ordonnance sur les engrais, OEng)",
+      "titelIt": "Ordinanza del 1° novembre 2023 sulla messa in commercio di concimi (Ordinanza sui concimi, OCon)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/711/de",
+      "sha": "fc8b7061e15e6ab3ab155610508f30c9374cfa14887bc7a0fd6bed572786e51f"
     },
     {
       "art": "aenderung",
@@ -198,8 +531,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/749/de",
-      "sha": "7bba365a8c37d6d6d42c61cfc8093ae0079bdc9a944d672cc06a240cef319136"
+      "sha": "96a2312287b039f9e97753dc053cac9c9cd9d870b0cd75fce22f0a769e498404"
     },
     {
       "art": "aenderung",
@@ -210,8 +546,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/520/de",
-      "sha": "23175d0a14fbe04d5626825375be865b07b8e9e8457d1f9146a8c37b2631490f"
+      "sha": "0ebbae6da34172ac744793b7b8b7aaa0d4c31dde854285b316e7042a53ce07cf"
     },
     {
       "art": "aenderung",
@@ -222,8 +561,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/191/de",
-      "sha": "ead305797786cad85ce60ac32ace02d8a8d6fe9c9495069b737f05c5e8e2a856"
+      "sha": "139852c7e6960d119f960147804710bc45ac4009b189b91c0a6d57415aaee8d8"
     },
     {
       "art": "aenderung",
@@ -234,8 +576,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/632/de",
-      "sha": "4c2bad7506e42671b21158ed270b6d5ad1c2db0ce0328279756e6fd0a4b31b09"
+      "sha": "3ed0cab29777265b9a77b9f88b249bf05d600066d9c174290e3a99a9852b2a0f"
     },
     {
       "art": "aenderung",
@@ -246,20 +591,45 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV). Berichtigung (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim). Erratum",
       "titelIt": "Ordinanza del 18 maggio 2005 concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim). Correzione (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/560/de",
-      "sha": "e80f258d453afb54cd8b9706294454e4a8ddf0df142c3b4c997b7f83a7639e0b"
+      "sha": "df6b5d0fd99ac00a74e508e7a99bedadb64125f09f744fb11d9dfbf3d4b68fc9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "803f0cee3447b790f6d2df7c71e2cc5337fb8304c44eaeb949fc0e9b0e850556"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/162",
+      "dateDocument": "2022-02-23",
+      "roFundstelle": "AS 2022 162",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinante sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-04-01",
+        "2022-10-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/162/de",
+      "sha": "d4065e5709947fff55b004e13a5b5ca79b400b5b5631bdf5cca36b4316de300a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "d88d77c386308955dbe9d35d39036c04e2b822639c08be5178b8be8e491e6ca5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/220",
+      "dateDocument": "2022-03-11",
+      "roFundstelle": "AS 2022 220",
+      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
+      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
+      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/220/de",
+      "sha": "e3862ef34d35fab604d93e8d6cfdb4c5b0df16b6bc90f750f7804d37255e0661"
     },
     {
       "art": "aenderung",
@@ -270,8 +640,15 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinante sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2022-04-01",
+        "2022-10-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/162/de",
-      "sha": "32e0a679916ecbee6b07be70a00fc76c9f7835e6b434fa45948bde2fe8b96f02"
+      "sha": "8d34087a1a3821d1cc91fdc7a139c7376ce4ee7caf8945eca65dddb7f2ce2da0"
     },
     {
       "art": "aenderung",
@@ -282,14 +659,56 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/1/de",
-      "sha": "e0adac50f3410a61573a7cc270211faf503673380ea7dad5d2b588db070ef34b"
+      "sha": "29ce9cce300c053ad61bf3b8daae89569a00d768b1bec1715a677dd7f31f2b54"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "07be2ef59e341341335e3a82dd022bfb24339a7a7039106c9e3c3d9b2e217d55"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/633",
+      "dateDocument": "2021-10-20",
+      "roFundstelle": "AS 2021 633",
+      "titelDe": "Verordnung vom 20. Oktober 2021 über die Rückgabe, die Rücknahme und die Entsorgung elektrischer und elektronischer Geräte (VREG)",
+      "titelFr": "Ordonnance du 20 octobre 2021 sur la restitution, la reprise et l’élimination des appareils électriques et électroniques (OREA)",
+      "titelIt": "Ordinanza del 20 ottobre 2021 concernente la restituzione, la ripresa e lo smaltimento degli apparecchi elettrici ed elettronici (ORSAE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/633/de",
+      "sha": "8bdd22b39d1cdf95fb5e6e03c2ff569330d35c1b50c13f92fc63c57e30701bff"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/859",
+      "dateDocument": "2021-11-24",
+      "roFundstelle": "AS 2021 859",
+      "titelDe": "Verordnung über die Reduktion der CO2-Emissionen (CO2-Verordnung)",
+      "titelFr": "Ordonnance sur la réduction des émissions de CO2 (Ordonnance sur le CO2)",
+      "titelIt": "Ordinanza sulla riduzione delle emissioni di CO2 (Ordinanza sul CO2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/859/de",
+      "sha": "6b572fd58936a4dbd8116f180ec54b4be8090b5484f3ddbd4a32893bc83f489c"
     },
     {
       "art": "aenderung",
@@ -300,14 +719,35 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/550/de",
-      "sha": "f7756d9065a21f260dd33627136a04a9d938a2b5f807b5d41e954f2bc256a5ea"
+      "sha": "b37008153457e3bc45c28db4a99de6104c0650cf07ce31fbe9a2838da13cde4d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "2177779e5f7881e6340884740988d95dc625885d4af77987cf9533e7afbb3092"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/289",
+      "dateDocument": "2019-04-17",
+      "roFundstelle": "AS 2019 1495",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-06-01",
+        "2019-12-01",
+        "2020-01-01",
+        "2020-06-01",
+        "2020-12-01",
+        "2021-06-01",
+        "2024-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/289/de",
+      "sha": "fb08ee6a0fb990816766376dba1d8aa202592ebe515a8dcf5fdbd71326038a06"
     },
     {
       "art": "aenderung",
@@ -318,8 +758,31 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l’utilisation de substances, de préparations et d’objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell’utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/70/de",
-      "sha": "5286b1e6af781512707b2618c35f3c7ca4722559204f42ec4303f6109e6413e1"
+      "sha": "da5531f7a7cb3bbecf174296de1e2a0752cdd3553a0ad2e77e90636d54b9c49d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/653",
+      "dateDocument": "2017-10-25",
+      "roFundstelle": "AS 2017 5963",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2018-07-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/653/de",
+      "sha": "5e46a479e1c8169158f07ed0a5983b53ce64e70c2020978e1c37d0f3c2bd05bd"
     },
     {
       "art": "aenderung",
@@ -330,20 +793,55 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/841/de",
-      "sha": "f98593fcc89d0492463ba026515369ce9323194d940e41d148a90cf74f35b976"
+      "sha": "fe6166a8c6a8a3fcfd73d8bd2cb15032f90d12f9f23190d8ad1132a4dcfee02d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-12-15",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "f8410b019c6c77ec14f0ce0134de448b36706ce5aee839143c542bb2c56dc407"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/891",
+      "dateDocument": "2020-11-18",
+      "roFundstelle": "AS 2020 5125",
+      "titelDe": "Verordnung über das Inverkehrbringen von und den Umgang mit Biozidprodukten (Biozidprodukteverordnung, VBP)",
+      "titelFr": "Ordonnance concernant la mise sur le marché et l'utilisation des produits biocides (Ordonnance sur les produits biocides, OPBio)",
+      "titelIt": "Ordinanza concernente l'immissione sul mercato e l'utilizzazione di biocidi (Ordinanza sui biocidi, OBioc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-12-15",
+        "2025-06-02",
+        "2030-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/891/de",
+      "sha": "14f1cc4f6c4d1779e7a629eee88174787162a15041a86637df7f093c0e8be31a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "739583d5d5387d808bc5629250ff2ed8f8620870b790c7f4389ac78875e20d9f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/289",
+      "dateDocument": "2019-04-17",
+      "roFundstelle": "AS 2019 1495",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-06-01",
+        "2019-12-01",
+        "2020-01-01",
+        "2020-06-01",
+        "2020-12-01",
+        "2021-06-01",
+        "2024-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/289/de",
+      "sha": "b9fefe8b296abe65641d48fa8eb019637614617bda3e2af0689b162166bdf782"
     },
     {
       "art": "aenderung",
@@ -354,8 +852,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/770/de",
-      "sha": "f5d6238e12e1dab29e5a7e7c126d7628a5b562f9b7c32fc5ef42e7269870efe0"
+      "sha": "48a925da4aa734f7be6a7c03c41af8f21d1b4ddf1fff55e25d3bced5bfb192cc"
     },
     {
       "art": "aenderung",
@@ -366,14 +867,35 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/466/de",
-      "sha": "56bd1a699d871242c9db725ac2bd7ca90733f18eac4f0e3489a27da80ae25433"
+      "sha": "1d20f5c27be5d782039b205fa890ea1cde8ffa048fa92c1c01b4325ea0353d96"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "973c9479f25c158707abd8d9f9ccf38faa335d4e69affca9d34b633c90624f46"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/289",
+      "dateDocument": "2019-04-17",
+      "roFundstelle": "AS 2019 1495",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-06-01",
+        "2019-12-01",
+        "2020-01-01",
+        "2020-06-01",
+        "2020-12-01",
+        "2021-06-01",
+        "2024-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/289/de",
+      "sha": "85121468622ae13d192a8ff1f6ec496a4f2585b7abb8d24cfec3b2331004657c"
     },
     {
       "art": "aenderung",
@@ -384,8 +906,35 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/103/de",
-      "sha": "aeb8413cba5cb635bea91bb309c96e51d99743a2a622b9f60f806c76037e6c78"
+      "sha": "5b0f9005b7c9297a332af28a8936eba029f2603189ac326143e1c548f4c41698"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/289",
+      "dateDocument": "2019-04-17",
+      "roFundstelle": "AS 2019 1495",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-06-01",
+        "2019-12-01",
+        "2020-01-01",
+        "2020-06-01",
+        "2020-12-01",
+        "2021-06-01",
+        "2024-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/289/de",
+      "sha": "4efa9a2fba2801566e50dea5340b31705dcd42e1ae33e42151b9f67a51928a49"
     },
     {
       "art": "aenderung",
@@ -396,14 +945,35 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazionedi determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/712/de",
-      "sha": "9f7c072e06a88998b020f6e9d1447d731be7aa58f471b160c6a793dcc355e4d2"
+      "sha": "733558b975ca7c01d062aa74528f38ce4f22abae72c82f500bc727bded925a3c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "029f9e3bd461c10293a0b06158348a37654d53c849d802db49ef9bdf183f9351"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/289",
+      "dateDocument": "2019-04-17",
+      "roFundstelle": "AS 2019 1495",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-06-01",
+        "2019-12-01",
+        "2020-01-01",
+        "2020-06-01",
+        "2020-12-01",
+        "2021-06-01",
+        "2024-06-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/289/de",
+      "sha": "cb38ce92d7b70189c67ce3580c0d7e153daabfb280511336693b6ad77bfd8090"
     },
     {
       "art": "aenderung",
@@ -414,8 +984,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/392/de",
-      "sha": "b978c49a43b420341a1a3df593b05e2e606407c9d31ec1a98ff6267f3271ca05"
+      "sha": "356269e7328166bf3f82e5825d180a3f100388a6a66527d33506e9ca547a2be9"
     },
     {
       "art": "aenderung",
@@ -426,8 +999,20 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2019-06-01",
+        "2019-12-01",
+        "2020-01-01",
+        "2020-06-01",
+        "2020-12-01",
+        "2021-06-01",
+        "2024-06-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/289/de",
-      "sha": "198d8acfdff98ee99abd75c2e56a390ceb2fb32973e77d7957953d19bc65a736"
+      "sha": "86ca6aa173cfc3ba67f4328cbe998c2f9998aef78dfcc5e4eb25de9e0e238dad"
     },
     {
       "art": "aenderung",
@@ -438,8 +1023,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV) (Betrifft nur den französischen Text)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/260/de",
-      "sha": "87d03a2e5c245c47c4f3d95321a1722bbe6251eb8bc03cbafbb01ae706716340"
+      "sha": "a0c2fccd0553056d9c0a6a63c219dcdd302c9e4e7f7029f8f7b8780dbdb5b7fb"
     },
     {
       "art": "aenderung",
@@ -450,14 +1038,26 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/133/de",
-      "sha": "f619b5fde5b29dec268f5a7d459553b0eae3b4b64812bf0ab2e7092ac53f272f"
+      "sha": "8fbc80c1d604538de5ca328aa4cea6ff20eb4eeb35f4d0380660106a61b00d22"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "e66b2b3f6c0cf5383af2e9673227c6c9e0cbf6e105770dd083af7feab678ae08"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/681",
+      "dateDocument": "2018-10-31",
+      "roFundstelle": "AS 2018 4205",
+      "titelDe": "Verordnung über das Inverkehrbringen von Düngern (Dünger-Verordnung, DüV)",
+      "titelFr": "Ordonnance sur la mise en circulation des engrais (Ordonnance sur les engrais, OEng)",
+      "titelIt": "Ordinanza sulla messa in commercio di concimi (Ordinanza sui concimi, OCon)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/681/de",
+      "sha": "aad96e061c262753a44fc4aa8a1eb40185f06ce07199653983abf27a0fb363ca"
     },
     {
       "art": "aenderung",
@@ -468,8 +1068,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/659/de",
-      "sha": "7f554f4ff72356402c8d7589222b572bdbf47e4a42b8bc90fe6da666d81f2c0d"
+      "sha": "c8b7cbb75d42afe94778752a0509608989c63f231808c85b01a776e310288bc2"
     },
     {
       "art": "aenderung",
@@ -480,8 +1083,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV) (Betrifft nur den französischen und den italienischen Text)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/665/de",
-      "sha": "6e605a10c95bc9f809a1059f546c4d7ad8d83e51fdff5de51293bd1fd85c9cf4"
+      "sha": "7e658aef9b9f78fae310786a9e80506b7c2e17b4bbf93a67a9861807bd017485"
     },
     {
       "art": "aenderung",
@@ -492,8 +1098,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/572/de",
-      "sha": "fff844489ba2d4991031d8b799db178e226bd1b4e715ffaff48d5c24f4068050"
+      "sha": "182eb194b9502803847940c716324ecd9b6eb8634089684d6209d4cfd60ef134"
     },
     {
       "art": "aenderung",
@@ -504,14 +1113,31 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/516/de",
-      "sha": "1b34965025084b27c74d41aaf71ec46d848497bc1c75c77858473b80ae28c3f6"
+      "sha": "7e56f48a759955920e944dfdc3e8d39aa1a54c14e7efdf0e1f855eb6b39fe69f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "b14e2ce6ee30d9c05db20318f8f272aa5a5abb432b4ff0c4ae8ae0fd27055cb2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/653",
+      "dateDocument": "2017-10-25",
+      "roFundstelle": "AS 2017 5963",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2018-07-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/653/de",
+      "sha": "9ecafde3580ab314fa261e73efd516a65954748f513b6680a3cd190273e6faaa"
     },
     {
       "art": "aenderung",
@@ -522,8 +1148,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/87/de",
-      "sha": "aa893ff78d6eb854015c62d3018eb30a3971557e2f770c72f50d5744f6c53b6b"
+      "sha": "77ea3b1de466d122db585d0293706bdc362dc35f1ba78e15e12c885d728eb84e"
     },
     {
       "art": "aenderung",
@@ -534,8 +1163,11 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV) (Betrifft nur den italienischen Text)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim) (Ne concerne que le texte italien)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/128/de",
-      "sha": "52f5cb823db593374a949626558b629de8a333906055b4fb34f0b545602d84c7"
+      "sha": "d513856a3ff7fb2b054853b9ce494a54ed18d5c9aaba7cbca100f0eeb266a9ba"
     },
     {
       "art": "aenderung",
@@ -546,14 +1178,36 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2018-01-01",
+        "2018-07-01",
+        "2021-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/653/de",
-      "sha": "a3eee94e0efdfa91c64aec036be8c0a7559db3e7c82c86ebae28a31ba977596b"
+      "sha": "b5d416739b48e9694a820d97f6cd72c0e4ef36806a3565901c6e9a791e807895"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-12-31",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "045a3f63df6e6f1907fd4c8f1168c219b548476dc309c11e385230cd2630381c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/447",
+      "dateDocument": "2015-07-01",
+      "roFundstelle": "AS 2015 2367",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-09-01",
+        "2016-09-01",
+        "2017-12-31"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/447/de",
+      "sha": "4a41bfc8e37213f0a74fb1fea8843bb8664732556e9a7ad3ab3d97ebfa3473ff"
     },
     {
       "art": "aenderung",
@@ -564,14 +1218,26 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV) (Betrifft nur den französischen und italienischen Text)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/391/de",
-      "sha": "ae0271315211e0bfda196d36880dc899cebb6f44d8650b54bb91048902276ccb"
+      "sha": "87b96c70ed08bd5c3c66a99c57c203653e1ac0adb0f5af0a9e93b616a9d9694f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "4db4be85a1571259b7a923fa80bc2caee5d74451966a4927cc9a08a2f0468399"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/63",
+      "dateDocument": "2016-12-16",
+      "roFundstelle": "AS 2017 283",
+      "titelDe": "Lebensmittel- und Gebrauchsgegenständeverordnung (LGV)",
+      "titelFr": "Ordonnance sur les denrées alimentaires et les objets usuels (ODAlOUs)",
+      "titelIt": "Ordinanza sulle derrate alimentari e gli oggetti d'uso",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/63/de",
+      "sha": "1be61aff1b0a10f4200c04cfe6478e8622596133e16c664d6b7dbb38a6e7ceba"
     },
     {
       "art": "aenderung",
@@ -582,14 +1248,35 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/48/de",
-      "sha": "5f126a872607e4dd8a3522c3b234cbd5274ef6d38cde5a22951039e43c962f87"
+      "sha": "b99cc8920954f24f3684fbd6d40ba20b5dd2050a41c652a1f708d17d59d15ce3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "86ba050e003206a3a58e23bb410b1604eddec7511cb8f976047b0d5c65f44fed"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/728",
+      "dateDocument": "2012-11-07",
+      "roFundstelle": "AS 2012 6161",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-12-01",
+        "2013-01-03",
+        "2013-06-01",
+        "2013-09-01",
+        "2013-12-01",
+        "2014-12-01",
+        "2017-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/728/de",
+      "sha": "9f90f0b16d4ac893d37c4054745b09474669c0998e8ea27e65ad3fffc11aa14b"
     },
     {
       "art": "aenderung",
@@ -600,20 +1287,61 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/672/de",
-      "sha": "603c571a63e481bf8949d6fd44b105f235ed237d3d2a60c10a0b7fbe231c98bf"
+      "sha": "803ec6fdc45c39e896a93b0d8f3d12c7e5bbb5d2e99218b2e871b5a7eb6c4b00"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "9a40305494d17aa8497507893b9e252a2e32c6c6dfe098b08d7aa8472db8cda0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/447",
+      "dateDocument": "2015-07-01",
+      "roFundstelle": "AS 2015 2367",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-09-01",
+        "2016-09-01",
+        "2017-12-31"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/447/de",
+      "sha": "bddd1250941e350661ec3f021a8101fca28694f363f914d28f4ab305c30314d2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "ad2083d7f0250470dd9e288596f90e8a540821944ea01908e72758ece2c0bd41"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/786",
+      "dateDocument": "2015-11-04",
+      "roFundstelle": "AS 2015 4791",
+      "titelDe": "Gewässerschutzverordnung (GSchV)",
+      "titelFr": "Ordonnance sur la protection des eaux (OEaux)",
+      "titelIt": "Ordinanza sulla protezione delle acque (OPAc)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/786/de",
+      "sha": "74b3c1e5cf5221ab980a9aa367d7ad2531dd42f989b7e6ed5f1111cd461aa760"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/891",
+      "dateDocument": "2015-12-04",
+      "roFundstelle": "AS 2015 5699",
+      "titelDe": "Verordnung über die Vermeidung und die Entsorgung von Abfällen (Abfallverordnung, VVEA)",
+      "titelFr": "Ordonnance sur la limitation et l'élimination des déchets (Ordonnance sur les déchets, OLED)",
+      "titelIt": "Ordinanza sulla prevenzione e lo smaltimento dei rifiuti (Ordinanza sui rifiuti, OPSR)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/891/de",
+      "sha": "a3eb5cb57a2400e8c6b3eaaae28dcfeda24c1967897c7d90a12ff01e3e78b022"
     },
     {
       "art": "aenderung",
@@ -624,8 +1352,40 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2015-09-01",
+        "2016-09-01",
+        "2017-12-31"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/447/de",
-      "sha": "a60f34623f924d608a31dad79b382a92305c37cedeac1eea9dcf52cf0e04265e"
+      "sha": "4283f85c1d18e7986a1ab9d4c18181404769c209380d93c16fe19ca0ab6a19f9"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2014-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/728",
+      "dateDocument": "2012-11-07",
+      "roFundstelle": "AS 2012 6161",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-12-01",
+        "2013-01-03",
+        "2013-06-01",
+        "2013-09-01",
+        "2013-12-01",
+        "2014-12-01",
+        "2017-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/728/de",
+      "sha": "53811b580d6c71948840250f95ed8765e528be7d73176572d54d5eb50d5048c6"
     },
     {
       "art": "aenderung",
@@ -636,38 +1396,157 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/664/de",
-      "sha": "6231ac327ed0e7a1784468fad35b3e43932850fb282ebba5feb5626d1046804a"
+      "sha": "b34e36a714bdd4156167db0f860041ead5369315452a40222841c1d4d5097925"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "e692a92ca9c72234a057c829b6ce0060495f63207677c0ad8806d2baf879e33c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/594",
+      "dateDocument": "2013-09-04",
+      "roFundstelle": "AS 2013 3041",
+      "titelDe": "Verordnung über die Anpassung von Verordnungen infolge der Reorganisation im Bereich Lebensmittelsicherheit und Veterinärwesen",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances suite à la réorganisation de la sécurité alimentaire et des affaires vétérinaires",
+      "titelIt": "Ordinanza che adegua ordinanze in seguito alla riorganizzazione del settore della sicurezza alimentare e della veterinaria",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/594/de",
+      "sha": "b6e9c00ed321aaf813a68b0b120230e9bb77e86a8026cfa6cbc6ef1e2b99d308"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2014-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/765",
+      "dateDocument": "2013-10-23",
+      "roFundstelle": "AS 2013 4145",
+      "titelDe": "Verordnung über die Direktzahlungen an die Landwirtschaft (Direktzahlungsverordnung, DZV)",
+      "titelFr": "Ordonnance sur les paiements directs versés dans l'agriculture (Ordonnance sur les paiements directs, OPD)",
+      "titelIt": "Ordinanza concernente i pagamenti diretti all'agricolt ura (Ordinanza sui pagamenti diretti, OPD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/765/de",
+      "sha": "43c9e803093fbed2769f48d498b09b87bcd8d43c3756eb83ea9886574e3e538c"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2013-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "b7298c2db0e0964c2a80ca86b28298c88ba643f95adff9bde0f3ea4efda11f43"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/728",
+      "dateDocument": "2012-11-07",
+      "roFundstelle": "AS 2012 6161",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-12-01",
+        "2013-01-03",
+        "2013-06-01",
+        "2013-09-01",
+        "2013-12-01",
+        "2014-12-01",
+        "2017-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/728/de",
+      "sha": "6ccbaa278455fb70afd2a218484a6e2482ca8ffaff12a2da17bb041f8cc4eb31"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "b51d6bc9e72bbdc36ef04219e4e9d45432236fc616ad22bd57ab39718e76b70f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/728",
+      "dateDocument": "2012-11-07",
+      "roFundstelle": "AS 2012 6161",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-12-01",
+        "2013-01-03",
+        "2013-06-01",
+        "2013-09-01",
+        "2013-12-01",
+        "2014-12-01",
+        "2017-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/728/de",
+      "sha": "fea70af767637dde59aa62c3ee27164a0e78d49e1dcf19aea58fa355614e7f85"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "49721adf5b0a8266a436ad943fbbcf55ac93354143ca508cb82287c35d4a53cd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/728",
+      "dateDocument": "2012-11-07",
+      "roFundstelle": "AS 2012 6161",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-12-01",
+        "2013-01-03",
+        "2013-06-01",
+        "2013-09-01",
+        "2013-12-01",
+        "2014-12-01",
+        "2017-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/728/de",
+      "sha": "da7e0afd8fc0edeb43fdf31f2e2e54b010cf41953a517e16e63032e0ac2c3fd2"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-03",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "ddd578f89024383631235a5ccdae595efec64c1c52cfe4ed934731a28aeb2b11"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/728",
+      "dateDocument": "2012-11-07",
+      "roFundstelle": "AS 2012 6161",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-12-01",
+        "2013-01-03",
+        "2013-06-01",
+        "2013-09-01",
+        "2013-12-01",
+        "2014-12-01",
+        "2017-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/728/de",
+      "sha": "f04df6ab96cd90c7b7e8914cc84e1a2f990dcb99c719437ccdaed6a20b31ba92"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2012-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/20",
+      "dateDocument": "2010-12-10",
+      "roFundstelle": "AS 2011 113",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPchim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-02-01",
+        "2011-08-01",
+        "2012-12-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/20/de",
+      "sha": "22efdffa99b2a9e77ad8c5e4200d0fd4978ea372d7ce8326947e0a31e7149349"
     },
     {
       "art": "aenderung",
@@ -678,14 +1557,55 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2012-12-01",
+        "2013-01-03",
+        "2013-06-01",
+        "2013-09-01",
+        "2013-12-01",
+        "2014-12-01",
+        "2017-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/728/de",
-      "sha": "d5df57b6394f5c4df5fa66592192f1a45b97909ac82bd53970a6044c92489f53"
+      "sha": "75388fabf9499f4a474803992987262a3aae56497665cbc6f9b86a4d28983015"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "4852b5560c176a965ff10a62e88d588fcba2db92ecbdb9cd8811c88764119a5b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/20",
+      "dateDocument": "2010-12-10",
+      "roFundstelle": "AS 2011 113",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPchim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-02-01",
+        "2011-08-01",
+        "2012-12-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/20/de",
+      "sha": "6a882e7b59032d4b4f22ddd271ca00eab20f5b000b7bc520170b06bf23897373"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2011-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/454",
+      "dateDocument": "2011-06-29",
+      "roFundstelle": "AS 2011 3379",
+      "titelDe": "Verordnung über Anpassungen von Verordnungen im Umweltbereich",
+      "titelFr": "Ordonnance sur des adaptations d'ordonnances dans le domaine de l'environnement",
+      "titelIt": "Ordinanza concernente adeguamenti di ordinanze nel settore ambientale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/454/de",
+      "sha": "f38cc105b6175a2fccc584579c8f298230cc59eaf5949f6b1978005056d72a41"
     },
     {
       "art": "aenderung",
@@ -696,14 +1616,31 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPchim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2011-02-01",
+        "2011-08-01",
+        "2012-12-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/20/de",
-      "sha": "7b1fdc0081ca8b83faf1980b4554fe8a7a4fc5cb2db3704bfb9a353d524ceb60"
+      "sha": "11b0ea13d3e614c7723d807610d168f3070f52af4bd69473818b0d2342344054"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "29eaa9a2a66642068bd4f59777be64e45ac9cf5a6b7392ddb3e95f2018fbbcfc"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/750",
+      "dateDocument": "2010-11-10",
+      "roFundstelle": "AS 2010 5223",
+      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
+      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
+      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/750/de",
+      "sha": "04bb016194a467bd9c9853bffc094e8e3751e3fe03d6e5c8ed2d56faf2b22a6f"
     },
     {
       "art": "aenderung",
@@ -714,20 +1651,45 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/656/de",
-      "sha": "27a9f71f7da547aa9ddabef806cb78b58dbec4e93146a6368d52211c77941a85"
+      "sha": "503c9e0361e460c4e819fd60ea4e9ae014eb236c36972e136d177a7c11ef1f39"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "a9c73852eb96103f042178fc867241adb520034efa92ecb4c95eba3c0062cc3f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/73",
+      "dateDocument": "2009-01-14",
+      "roFundstelle": "AS 2009 401",
+      "titelDe": "Verordnung über den Schutz vor gefährlichen Stoffen und Zubereitungen (Chemikalienverordnung, ChemV)",
+      "titelFr": "Ordonnance sur la protection contre les substances et les préparations dangereuses (Ordonnance sur les produits chimiques, OChim)",
+      "titelIt": "Ordinanza sulla protezione contro le sostanze e i preparati pericolosi (Ordinanza sui prodotti chimici, OPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/73/de",
+      "sha": "a773d27688910e43af5eddad9dfff54cb7739c26f4672a3173734b688e256d76"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "ca80444cfe830a6dbe5d1b1e2ee7c051accc2b507bb0d7a3a1b59bd03696944e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/28",
+      "dateDocument": "2006-12-15",
+      "roFundstelle": "AS 2007 111",
+      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
+      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
+      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2007-03-01",
+        "2008-09-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/28/de",
+      "sha": "9add016469025df68d76bb3d8da1cdcdd23a45e4755fcf7778e008a7469bbcb7"
     },
     {
       "art": "aenderung",
@@ -738,20 +1700,41 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/124/de",
-      "sha": "51c45913c59d19c77270b057c3d91a0375348970e0936a8ccd1091d55c3b1918"
+      "sha": "45f65a68adcd29f511a97ca190a4196b09231e4b1d0e2a111384bc5f15cf279c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "24bb83ffa94a7932f3b882b599472d094f62e33538203490217910b543df9568"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/835",
+      "dateDocument": "2007-11-14",
+      "roFundstelle": "AS 2007 6295",
+      "titelDe": "Verordnung über das Inverkehrbringen von Düngern (Dünger-Verordnung, DüV)",
+      "titelFr": "Ordonnance sur la mise en circulation des engrais (Ordonnance sur les engrais, OEng)",
+      "titelIt": "Ordinanza sulla messa in commercio di concimi (Ordinanza sui concimi, OCon)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/835/de",
+      "sha": "c81eb03a2c9d119729f80b04c4e1fcad0fd2318263dc435a26339d9f1b390976"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "62ffffe928375d2cb16e092a8adffeef62343ed95c94be66633b13ab4fc392b3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/250",
+      "dateDocument": "2006-11-01",
+      "roFundstelle": "AS 2007 1469",
+      "titelDe": "Zollverordnung (ZV)",
+      "titelFr": "Ordonnance sur les douanes (OD)",
+      "titelIt": "Ordinanza sulle dogane (OD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/250/de",
+      "sha": "d2113a1186c90ab946018f502f4631d6cd830fbc87fa71a4ab6896829104ecfa"
     },
     {
       "art": "aenderung",
@@ -762,27 +1745,46 @@
       "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
       "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
       "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2007-03-01",
+        "2008-09-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/28/de",
-      "sha": "32342e121162357b411a3072c5fa7a7d5cee3427444924679f1bd72851d59dd5"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2006-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/814.81",
-      "sha": "f37c928da67e582c93a5ac3e5ffb7547a91e11cb6b0ca6a08f6b4fc149f264b1"
+      "sha": "5949d1f4c5a4660503b13b33fc4f31757bb11378b9f730278965e5e63a812d71"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2005-08-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/478",
-      "dateDocument": "2005-05-18",
-      "roFundstelle": "AS 2005 2917",
-      "titelDe": "Verordnung zur Reduktion von Risiken beim Umgang mit bestimmten besonders gefährlichen Stoffen, Zubereitungen und Gegenständen (Chemikalien-Risikoreduktions-Verordnung, ChemRRV)",
-      "titelFr": "Ordonnance sur la réduction des risques liés à l'utilisation de substances, de préparations et d'objets particulièrement dangereux (Ordonnance sur la réduction des risques liés aux produits chimiques, ORRChim)",
-      "titelIt": "Ordinanza concernente la riduzione dei rischi nell'utilizzazione di determinate sostanze, preparati e oggetti particolarmente pericolosi (Ordinanza sulla riduzione dei rischi inerenti ai prodotti chimici, ORRPChim)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/478/de",
-      "sha": "a993ac534035835c97b63b3a35ac82d725066f2f88295f4547cfbe3c39e997d5"
+      "dateEntryInForce": "2006-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/551",
+      "dateDocument": "2005-06-22",
+      "roFundstelle": "AS 2005 4199",
+      "titelDe": "Verordnung über den Verkehr mit Abfällen (VeVA)",
+      "titelFr": "Ordonnance sur les mouvements de déchets (OMoD)",
+      "titelIt": "Ordinanza sul traffico di rifiuti (OTRif)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/551/de",
+      "sha": "a1738d6fe5f03060bcac347daf370f32196914e3bca63f5b236472500f94e16c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2006-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/746",
+      "dateDocument": "2005-11-23",
+      "roFundstelle": "AS 2005 5451",
+      "titelDe": "Lebensmittel- und Gebrauchsgegenständeverordnung (LGV)",
+      "titelFr": "Ordonnance sur les denrées alimentaires et les objets usuels (ODAlOUs)",
+      "titelIt": "Ordinanza sulle derrate alimentari e gli oggetti d'uso (ODerr)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/746/de",
+      "sha": "db610c84b99bf6aa287438b3f5ce3864e9bd67e2f8ec1f8e4d2d31929e68814b"
     }
   ],
-  "sha": "f98d17cde7e3b9dde973a6ea4d956881f9d970d74f01c69c3d786ec2448fe2bc"
+  "sha": "ccab7d2d6f942dbe206fb8f5fd78ea97741199f1cbf19d9f67218cacd04fb594"
 }

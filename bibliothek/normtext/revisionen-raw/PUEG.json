@@ -621,5 +621,102 @@
     "2026-05-08"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1986/895_895_895",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1986/895_895_895",
+    "inkrafttreten": "1986-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/895_895_895",
+        "typ": 5,
+        "datum": "1986-07-01",
+        "fassung": "1986-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/2092_2092_2092",
+        "typ": 1,
+        "datum": "1991-10-01",
+        "fassung": "1991-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288",
+        "typ": 1,
+        "datum": "1992-02-15",
+        "fassung": "1992-02-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/546_546_546",
+        "typ": 1,
+        "datum": "1996-02-01",
+        "fassung": "1996-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 2,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/419",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/206",
+        "typ": 6,
+        "datum": "2026-05-08",
+        "fassung": "2026-05-08"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1991/2092_2092_2092": {
+        "dateForce": "1991-10-01",
+        "dateDoc": "1991-03-22",
+        "roId": "RO 1991 2092",
+        "titelDe": "Preisüberwachungsgesetz (PüG), Änderung",
+        "titelFr": "Loi fédérale concernant la surveillance des prix (LSPr), Modifcation",
+        "titelIt": "Legge federale sulla sorveglianza dei prezzi (LSPr), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/288_288_288": {
+        "dateForce": "1992-02-15",
+        "dateDoc": "1991-10-04",
+        "roId": "RO 1992 288",
+        "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege, Änderung",
+        "titelFr": "Loi fédérale d'organisation judiciaire, Modification",
+        "titelIt": "Legge federale sull'organizzazione giudiziari, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/546_546_546": {
+        "dateForce": "1996-02-01",
+        "dateDoc": "1995-10-06",
+        "roId": "RO 1996 546",
+        "titelDe": "Bundesgesetz vom 6. Oktober 1995 über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
+        "titelFr": "Loi fédérale du 6 octobre 1995 sur les cartels et autres restrictions à la concurrence (Loi sur les cartels, LCart)",
+        "titelIt": "Legge federale del 6 ottobre 1995 sui cartelli e altre limitazioni della concorrenza (Legge sui cartelli, LCart)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/419": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 3655",
+        "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+        "titelFr": "Ordonnance portant adaptation de lois par suite de la réorganisation des départements",
+        "titelIt": "Ordinanza sull'adeguamento di disposizioni di legge a seguito della riorganizzazione dei dipartimenti"
+      }
+    }
+  }
 }

@@ -1,39 +1,80 @@
 {
   "erlassKey": "JSTPO",
   "sr": "312.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/312.1",
-      "sha": "0cb91fbe1744267d7769591f699a26ae94f38cf65cb22a8a2cc75411bec0fdcc"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/312.1",
-      "sha": "9db16f7670f9068c34d693c6943053682d3b8b00e1d104caebc8e8807df9819e"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2015-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/312.1",
-      "sha": "34c24f5b2816f68a4620fa8c3ce930022f2c37448fad49452482615f6a1f37e1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 468",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2019-2368",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2025-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/468/de",
+      "sha": "6f29ffddb0cbb8d623679e2ddb3c5ec1bc7c95fccf088208a6ad3a129aa7c91b"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2011-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/226",
-      "dateDocument": "2009-03-20",
-      "roFundstelle": "AS 2010 1573",
-      "titelDe": "Schweizerische Jugendstrafprozessordnung (Jugendstrafprozessordnung, JStPO)",
-      "titelFr": "Loi fédérale sur la procédure pénale applicable aux mineurs (Procédure pénale applicable aux mineurs, PPMin)",
-      "titelIt": "Legge federale di diritto processuale penale minorile (Procedura penale minorile, PPMin)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/226/de",
-      "sha": "303142e7de397f1d5dd7bc830c27e7bc7fd464c9e182e0e833dac53b23bd5604"
+      "dateEntryInForce": "2025-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/490",
+      "dateDocument": "2024-09-04",
+      "roFundstelle": "AS 2024 490",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung der Änderung vom 17. Juni 2022 der Strafprozessordnung",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la modification du 17 juin 2022 du code de procédure pénale",
+      "titelIt": "Ordinanza sull’entrata in vigore integrale della modifica del 17 giugno 2022 del Codice di procedura penale",
+      "wirkungen": [
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/490/de",
+      "sha": "93925fe50caec166851f1138f8fa1761ca6607a06c8cd510cc891a7f39d6e518"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2024-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/468",
+      "dateDocument": "2022-06-17",
+      "roFundstelle": "AS 2023 468",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2019-2368",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2024-01-01",
+        "2025-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/468/de",
+      "sha": "e2feb44044915bad432a884f36634bd7f5c15db69fe8c1b812dc3fc6aa9de86c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/355",
+      "dateDocument": "2013-12-13",
+      "roFundstelle": "AS 2014 2055",
+      "titelDe": "Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+      "titelFr": "Loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs)",
+      "titelIt": "Legge federale sull&#700;interdizione di esercitare un&#700;attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile)",
+      "botschaftKey": "BOTSCHAFT-2012-1575",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/355/de",
+      "sha": "5582fbd33f88730ebe435d724b7ae4d7044302e779c322f18912b1c0f6228c90"
     }
   ],
-  "sha": "8518a2da2c5a46ff094a65a28daab75cf374866d18c98e121262fd8533c53508"
+  "sha": "36394fda5b76223d59e15fe58769572b1287dc46d446ed24f6ecd4d55fc92cb6"
 }

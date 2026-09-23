@@ -1,15 +1,24 @@
 {
   "erlassKey": "BVV3",
   "sr": "831.461.3",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-06-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/325",
+      "dateDocument": "2026-06-12",
+      "roFundstelle": "AS 2026 325",
+      "titelDe": "Verordnung über die Änderung verschiedener Verordnungen im Bereich der beruflichen Vorsorge 2026",
+      "titelFr": "Ordonnance portant modification de diverses ordonnances dans la prévoyance professionnelle 2026",
+      "titelIt": "Ordinanza concernente la modifica di ordinanze nell’ambito della previdenza professionale nel 2026",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.461.3",
-      "sha": "d8562fb1e2bb1264f2733ef3a4d1fc4e8cfcd8446c88a0e32bbba2e204ed5ae5"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/325/de",
+      "sha": "f91cbad83a949fa5fa1bb149c78d6c4970c3e530f3cb12dcf57a56a0df716940"
     },
     {
       "art": "aenderung",
@@ -20,38 +29,95 @@
       "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3)",
       "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3)",
       "titelIt": "Ordinanza sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/622/de",
-      "sha": "e4b859ba5c13822c30eddde28a45891d27e34dc57b0f8b0feecf03d80ceabbfb"
+      "sha": "169279dc0ee9789f9298c52ae2e28e8b41ae1c4bee1127f288289f00d9675dbb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.461.3",
-      "sha": "4803982a1ac1395bc5fb2ac9377754a8aa226209ff8242c7a9eff2b1f35181f8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/73",
+      "dateDocument": "2024-01-31",
+      "roFundstelle": "AS 2024 73",
+      "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+      "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+      "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/73/de",
+      "sha": "35de68fc5b4d08d65bee8ad1e2323255996dd65893a7b39f9cad25ab7b258877"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.461.3",
-      "sha": "5589259b73364b6b88dd69e8e8dbb525857980bf9ce135d76a9ec928afa09f84"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/506",
+      "dateDocument": "2023-08-30",
+      "roFundstelle": "AS 2023 506",
+      "titelDe": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "titelFr": "Règlement sur l’assurance-vieillesse et survivants (RAVS)",
+      "titelIt": "Ordinanza sull’assicurazione per la vecchiaia e per i superstiti (OAVS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/506/de",
+      "sha": "5c7dddebd3667bd2e5e37e0414d505dec30f1f7afa17760d0578b07c3cc6f54c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.461.3",
-      "sha": "3cc8a83822551976ed76399a4c8580919fb70080442fcc030578b69c8bb33ac2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/681",
+      "dateDocument": "2020-08-26",
+      "roFundstelle": "AS 2020 3755",
+      "titelDe": "Verordnung über Änderungen in der beruflichen Vorsorge",
+      "titelFr": "Ordonnance portant modification de dispositions dans la prévoyance professionnelle",
+      "titelIt": "Ordinanza concernente modifiche nell'ambito della previdenza professionale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-10-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/681/de",
+      "sha": "d58dde58f7e16d5d2aba7e9d4ecaf48ead451ba28e4e4821dd88577575d46b6f"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.461.3",
-      "sha": "6376e163659c85cc6de28f2f05d86bdfef563d138c0b093eecf491ae7db83e25"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/681",
+      "dateDocument": "2020-08-26",
+      "roFundstelle": "AS 2020 3755",
+      "titelDe": "Verordnung über Änderungen in der beruflichen Vorsorge",
+      "titelFr": "Ordonnance portant modification de dispositions dans la prévoyance professionnelle",
+      "titelIt": "Ordinanza concernente modifiche nell'ambito della previdenza professionale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-10-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/681/de",
+      "sha": "96425f7f248e3800a9bf5ca3c09a22958422f82b4bb188cdf8bca80298e8734d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.461.3",
-      "sha": "4827035b9934ef8b62040d8c15e34d7d2ea2e97f0e65281808bde86d98d2ab9d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/650",
+      "dateDocument": "2008-09-19",
+      "roFundstelle": "AS 2008 4651",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/650/de",
+      "sha": "89b1d9522abf6019291980420a59aa178e333a21af585b1f609e9ed05655c5cf"
     },
     {
       "art": "aenderung",
@@ -62,26 +128,86 @@
       "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3)",
       "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3)",
       "titelIt": "Ordinanza sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/725/de",
-      "sha": "0935d3b6843fcab8bea671c87e447abed051f655cce738ff8d21176a668ff27b"
+      "sha": "e12846a3f709e6ed8694badcd0dd881d5bacb93548e3e7a34ddfb07a19289a4a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.461.3",
-      "sha": "5c7af51c8e3340fd10d8443eca994f30ab2e41af78bcfd75638092a4e45c112e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/615",
+      "dateDocument": "2006-09-29",
+      "roFundstelle": "AS 2006 4155",
+      "titelDe": "Verordnung über die Umsetzung des Partnerschaftsgesetzes vom 18. Juni 2004 in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge",
+      "titelFr": "Ordonnance sur la mise en uvre de la loi du 18 juin 2004 sur le partenariat dans la prévoyance professionnelle vieillesse, survivants et invalidité",
+      "titelIt": "Ordinanza concernente l'attuazione della legge del 18 giugno 2004 sull'unione domestica registrata nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/615/de",
+      "sha": "4b68c2cc0b8aa146ffb84c9e623a6c76e464ff26e95cb85dd1b3fceb98cf9bbb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2006-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.461.3",
-      "sha": "f118f0718b40e033cf5a792795ebf3d0ff5775fb712985c38fa6171df21e0d2b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2005/559",
+      "dateDocument": "2005-06-10",
+      "roFundstelle": "AS 2005 4279",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/559/de",
+      "sha": "55283b7df8c122c54c2a72bacf27cb827c8f7330b339679aca43cb28f231448b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/831.461.3",
-      "sha": "2704fa5ee1efabf494030dc7ed88904d3ecd626f822a2f35597636045c0f6bd3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/644",
+      "dateDocument": "2004-08-18",
+      "roFundstelle": "AS 2004 4279",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/644/de",
+      "sha": "2b7650b979dc6a13f965d4c171035ac7fa63f81268e233d56567697a8cad9cc3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/712",
+      "dateDocument": "2004-10-27",
+      "roFundstelle": "AS 2004 4643",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/712/de",
+      "sha": "9d52997751b6c22224ee5a3317080da6f722770272bb77e4f89626e330ba1053"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2005-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/714",
+      "dateDocument": "2004-11-23",
+      "roFundstelle": "AS 2004 4653",
+      "titelDe": "Verordnung über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVV 2)",
+      "titelFr": "Ordonnance sur la prévoyance professionnelle vieillesse, survivants et invalidité (OPP 2)",
+      "titelIt": "Ordinanza sulla previdenza professionale per la vecchiaia, i superstiti e l'invalidità (OPP 2)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/714/de",
+      "sha": "18aceb7144d16147d4047202c4ddcd088daeda2747a8e8cb012d31545b542d48"
     },
     {
       "art": "aenderung",
@@ -92,21 +218,117 @@
       "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3)",
       "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3)",
       "titelIt": "Ordinanza sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2001/162/de",
-      "sha": "b9f37b13609c2fc1ffa874f7f11b61b68b53279433f6896e5aca9d1fbc98effd"
+      "sha": "986d13dfd78a960d767f5d089564320b6020b09bf54d5109c3965bb235569d7e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3454_3454_3454",
+      "dateDocument": "1996-12-09",
+      "roFundstelle": "AS 1996 3454",
+      "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3), Änderung",
+      "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3), Modification",
+      "titelIt": "Ordinanza sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3454_3454_3454/de",
+      "sha": "bc6b503ffa9c89d22884abdcdabf3cdd6dd0b125f1e6dfe6118d01f1b4799f2f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/3455_3455_3455",
+      "dateDocument": "1996-12-09",
+      "roFundstelle": "AS 1996 3455",
+      "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3), Änderung",
+      "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3), Modification",
+      "titelIt": "Ordinanza sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/3455_3455_3455/de",
+      "sha": "5778f0b0c055179add2401782a487fb3f010a7442bbaa999dc5607acf5d47960"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/857_857_857",
+      "dateDocument": "1997-03-25",
+      "roFundstelle": "AS 1997 857",
+      "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3), Berichtigung (nur ital.)",
+      "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3), Errata (seulement en italien)",
+      "titelIt": "Ordinanza sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/857_857_857/de",
+      "sha": "ad8afb7505352badd202c5c179d3fc49159580d6d76ecb6316cd02e08b630e39"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2379_2379_2379",
+      "dateDocument": "1994-10-03",
+      "roFundstelle": "AS 1994 2379",
+      "titelDe": "Verordnung vom 3. Oktober 1994 über die Wohneigentumsförderung mit Mitteln der beruflichen Vorsorge (WEFV)",
+      "titelFr": "Ordonnance du 3 octobre 1994 sur l'encouragement à la propriété du logement au moyen de la prévoyance professionnelle (OEPL)",
+      "titelIt": "Ordinanza del 3 ottobre 1994 sulla promozione della proprietà d'abitazioni mediante i fondi della previdenza professionale (OPPA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2379_2379_2379/de",
+      "sha": "91ce6ef91471fb0d3d1aab970de4e0b3484b5e0e06b01d75f0cd72edc9f7ddc1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1994/2399_2399_2399",
+      "dateDocument": "1994-10-03",
+      "roFundstelle": "AS 1994 2399",
+      "titelDe": "Verordnung vom 3. Oktober 1994 über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsverordnung, FZV)",
+      "titelFr": "Ordonnance du 3 octobre 1994 sur le libre passage dans la prévoyance professionnelle vieillesse, survivants et invalidité (Ordonnance sur le libre passage, OLP)",
+      "titelIt": "Ordinanza del 3 ottobre 1994 sul libero passaggio nella previdenza professionale per la vecchiaia, i superstiti e l'invalidità (Ordinanza sul libero passaggio, OLP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1994/2399_2399_2399/de",
+      "sha": "330fa73a7409c60a0dba2f11244f3b283d7df376c18ab69633d5a82f9c40108c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/1903_1903_1903",
+      "dateDocument": "1989-09-18",
+      "roFundstelle": "AS 1989 1903",
+      "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3), Änderung",
+      "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3), Modification",
+      "titelIt": "Ordinanza sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/1903_1903_1903/de",
+      "sha": "bd14978aa88a2f8678062202911606f3055909ef145840b73402db68fa7650d2"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1987-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/1778_1778_1778",
-      "dateDocument": "1985-11-13",
-      "roFundstelle": "AS 1985 1778",
-      "titelDe": "Verordnung vom 13. November 1985 über die steuerliche Abzugsberechtigung für Beiträge an anerkannte Vorsorgeformen (BVV 3)",
-      "titelFr": "Ordonnance du 13 novembre 1985 sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3)",
-      "titelIt": "Ordinanza del 13 novembre 1985 sulla legittimazione alle deduzioni fiscali per i contributi a forme di previdenza riconosciute (OPP 3)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/1778_1778_1778/de",
-      "sha": "e47cbd68d736727840cba004ab26b54ad82981b4860431308e0210f5c1cc72e0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/326_326_326",
+      "dateDocument": "1986-02-03",
+      "roFundstelle": "AS 1986 326",
+      "titelDe": "Verordnung über die steuerliche Abzugsberechtigung für Beiträge anerkannte Vorsorgeformen (BVV 3), Berichtigung",
+      "titelFr": "Ordonnance sur les déductions admises fiscalement pour les cotisations versées à des formes reconnues de prévoyance (OPP 3), Errata",
+      "titelIt": "Ordinanza sulla legittimazione alle dedu zioni fiscali per i contributi a forme di previdenza ri conosciute (OPP 3), Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/326_326_326/de",
+      "sha": "635796adfb71136db9a500eaf007b9cdfcf80aea3ea4994f513d440409717a45"
     }
   ],
-  "sha": "b6d239928833d5090f8161695eff5516cae6c1ea19757f1e71ac83dde8992d6a"
+  "sha": "ccb24c769f09deb794061bd4f5e815f7fffa74c3ba24eb22764c97908b77b95b"
 }

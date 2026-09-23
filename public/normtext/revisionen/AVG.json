@@ -1,104 +1,282 @@
 {
   "erlassKey": "AVG",
   "sr": "823.11",
-  "abgerufen": "2026-09-14",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "705c39802185dfe45a3c58efa46d7412f6c9e09f16d0245cec438fe89ba2a2d3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/764",
+      "dateDocument": "2024-06-14",
+      "roFundstelle": "AS 2025 764",
+      "titelDe": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG) (Entschädigungssystem der Arbeitslosenkassen)",
+      "titelFr": "Loi fédérale sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Loi sur l’assurance-chômage, LACI) (Système d’indemnisation des caisses de chômage)",
+      "titelIt": "Legge federale sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Legge sull’assicurazione contro la disoccupazione, LADI) (Sistema di rimborso delle casse di disoccupazione)",
+      "botschaftKey": "BOTSCHAFT-2023-2862",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/764/de",
+      "sha": "7a205874982fa1d2309ea5da923d3cfdc9cb0c3aa2dc21b0e84663aba9f8a409"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2024-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "f5c0835f1b3b63e4d7a5134c04cc2e51c5cd4ecfe0602fc6b88a096e56379f50"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/149",
+      "dateDocument": "2019-09-27",
+      "roFundstelle": "AS 2020 811",
+      "titelDe": "Bundesgesetz über die Beiträge an die Kosten der Kantone für die Kontrolle der Einhaltung der Stellenmeldepflicht (BKSG)",
+      "titelFr": "Loi fédérale sur la participation aux frais des cantons pour les contrôles relatifs à l'obligation d'annoncer les postes vacants (LPCA)",
+      "titelIt": "Legge federale sulla partecipazione ai costi dei Cantoni per i controlli concernenti l'obbligo di annunciare i posti vacanti (LPCA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-01-01",
+        "2024-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/149/de",
+      "sha": "5d5a6646bd14b081dda5c973dfb1af414e54b489b84f3c3f7380e26545c5f9fc"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "de862eeaadb39e289b6ce64331dd51353839065bf527bae43b4b874a59851b90"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "f37eaebacc5302db6ea37e42c5a7bdd6fb6db9d788d81eeafa1fa6e8a6e6b7d5"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/338",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2021 338",
+      "titelDe": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+      "titelFr": "Loi fédérale sur l’assurance-chômage obligatoire et l’indemnité en cas d’insolvabilité (Loi sur l’assurance-chômage, LACI)",
+      "titelIt": "Legge federale sull’assicurazione obbligatoria contro la disoccupazione e l’indennità per insolvenza (Legge sull’assicurazione contro la disoccupazione, LADI)",
+      "botschaftKey": "BOTSCHAFT-2019-1581",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/338/de",
+      "sha": "53a34657a352c648f7af9b5bb80accb5a06d07a608b314cd2c0481ca008bbb6d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "1b85282518d3642af77f1119f6becdd979357c34b52170823447044a7c2b9df7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/149",
+      "dateDocument": "2019-09-27",
+      "roFundstelle": "AS 2020 811",
+      "titelDe": "Bundesgesetz über die Beiträge an die Kosten der Kantone für die Kontrolle der Einhaltung der Stellenmeldepflicht (BKSG)",
+      "titelFr": "Loi fédérale sur la participation aux frais des cantons pour les contrôles relatifs à l'obligation d'annoncer les postes vacants (LPCA)",
+      "titelIt": "Legge federale sulla partecipazione ai costi dei Cantoni per i controlli concernenti l'obbligo di annunciare i posti vacanti (LPCA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-01-01",
+        "2024-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/149/de",
+      "sha": "d76ce7af8a2d1949ce6ee90f6c4753a54dde0e45c205cb76df0603060ec4be9e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-04-17",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "f552f6183771d5eca5bc409f8b4ddb17ac5f58945b6b6494c09f79518033ea19"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/223",
+      "dateDocument": "2018-04-17",
+      "roFundstelle": "AS 2018 1387",
+      "titelDe": "Verordnung über die Arbeitsvermittlung und den Personalverleih (Arbeitsvermittlungsverordnung, AVV) (Betrifft nur den französischen Text)",
+      "titelFr": "Ordonnance sur le service de l'emploi et la location de services (Ordonnance sur le service de l'emploi, OSE)",
+      "titelIt": "Ordinanza sul collocamento e il personale a prestito (Ordinanza sul collocamento, OC) (Concerne soltanto il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/223/de",
+      "sha": "66844fcbe9b5c66353df67c972ce2fa09c30702368faf9813351befed806a745"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "e48cb68132cb56f333c0b0309f1e834ec6b740b40e246049cd038cab0157c407"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/132",
+      "dateDocument": "2014-06-20",
+      "roFundstelle": "AS 2016 689",
+      "titelDe": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "titelFr": "Loi fédérale sur la formation continue (LFCo)",
+      "titelIt": "Legge federale sulla formazione continua (LFCo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "sha": "fdd1b2f8994d662f930e324d2e5e3eb5a021ba2ff227fe2efb81138eb2084a85"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2015-11-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "b21c799edf9814727bfc76d70416bc8489b95ccdd97e1d69de58ea3495214c1d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/653",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 3857",
+      "titelDe": "Bundesgesetz über Schweizer Personen und Institutionen im Ausland (Auslandschweizergesetz, ASG)",
+      "titelFr": "Loi fédérale sur les personnes et les institutions suisses à l'étranger (Loi sur les Suisses de l'étranger, LSEtr)",
+      "titelIt": "Legge federale concernente persone e istituzioni svizzere all'estero (Legge sugli Svizzeri all'estero, LSEst)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/653/de",
+      "sha": "322a701493e1d26b188cf0e7887c149831ccff568c5a9c7bc44fb0091e808527"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "5893fd06c1058e555a6bdbbb41d30bcfa9652909d0fea62c0ac552a0b6e90b38"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/114",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2011 725",
+      "titelDe": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "titelFr": "Code civil suisse (Protection de l'adulte, droit des personnes et droit de la filiation)",
+      "titelIt": "Codice civile svizzero (Protezione degli adulti, diritto delle persone e diritto della filiazione)",
+      "botschaftKey": "BOTSCHAFT-2006-899",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "sha": "fbaf830b81b125db91490205aabc0faa6840d5b7b8f2606714dcb6d2326e4e86"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "787cb756469f3b795636e9c9dd28dfd56e86f1a2143dcf0439da83497134d8db"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/171",
+      "dateDocument": "2010-03-19",
+      "roFundstelle": "AS 2011 1167",
+      "titelDe": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+      "titelFr": "Loi fédérale sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Loi sur l'assurance-chômage, LACI)",
+      "titelIt": "Legge federale sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Legge sull'assicurazione contro la disoccupazione, LADI)",
+      "botschaftKey": "BOTSCHAFT-2008-1319",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/171/de",
+      "sha": "ad0bf8f8b9a3ee3838914f6ac14fec85e4f89fafaa873ddf20fb50340d61d394"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "7c8bf31c19b328419ae4bcfde15abd228b4bb7a9485a761d16a8059341c11865"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "a2f3404021afc248e0ad4014cc8fb9ed953c1501058b179835de293c00dad3ad"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "b8b0d67ef1633d33b43ad2fbb501a7599c43741083897ec77b0d7c31d67d894c"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "39818a52f3d1b0d46ce5d43f4f769f3161e686721e6147b36164552748bcf45d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "e45d8acd2eea0d3f33fe7079fafd8ed5a61b880ed69530fcb76552f3937b0529"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/758",
+      "dateDocument": "2005-12-16",
+      "roFundstelle": "AS 2007 5437",
+      "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG)",
+      "titelFr": "Loi fédérale sur les étrangers et l'intégration (LEI)",
+      "titelIt": "Legge federale sugli stranieri e la loro integrazione (LStrI)",
+      "botschaftKey": "BOTSCHAFT-2002-541",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/758/de",
+      "sha": "ecf671b8870bafb50a69129fea89ddcaf571ae9d168a8b5d9a103686195cc76c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "be938c1208ecd28c593cc9713bb1ccbf2488762eef4196d422b29b86267978e7"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2006-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "331cf8c12086e8290fe25f9125e16c3a37e249dd05d0735c4948476b7eb5739d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/178",
+      "dateDocument": "2004-12-17",
+      "roFundstelle": "AS 2006 979",
+      "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf die neuen EG-Mitgliedstaaten zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits sowie über die Genehmigung der Revision der flankierenden Massnahmen zur Personenfreizügigkeit",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'extension de l'accord entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, sur la libre circulation des personnes aux nouveaux Etats membres de la Communauté européenne et portant approbation de la révision des mesures d'accompagnement concernant la libre circulation des personnes",
+      "titelIt": "Decreto federale che approva e traspone nel diritto svizzero, mediante revisione delle misure collaterali, il Protocollo concluso con la Comunità europea e i suoi Stati membri relativo all'estensione dell'Accordo sulla libera circolazione delle persone ai nuovi Stati membri della Comunità europea",
+      "botschaftKey": "BOTSCHAFT-2004-1081",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/178/de",
+      "sha": "fb28e531ac518999edb18c74ef49b103f3639306177d1a467c84970b57cf997b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/823.11",
-      "sha": "7680d67bc8934a3467637e2735d0f578391fe28e08764860849569eaf8746613"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/260",
+      "dateDocument": "2002-03-22",
+      "roFundstelle": "AS 2003 1728",
+      "titelDe": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+      "titelFr": "Loi fédérale sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Loi sur l'assurance-chômage, LACI)",
+      "titelIt": "Legge federale sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Legge sull'assicurazione contro la disoccupazione, LADI)",
+      "botschaftKey": "BOTSCHAFT-2001-493",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/260/de",
+      "sha": "c6d76341a7d4099a660d0434be41e6c558b6f35028be10916b0d1243fc16e760"
     },
     {
       "art": "aenderung",
@@ -110,8 +288,26 @@
       "titelFr": "Loi fédérale sur le service de l'emploi et la location de services (LSE)",
       "titelIt": "Legge federale sul collocamento e il personale a prestito (Legge sul collocamento, LC)",
       "botschaftKey": "BOTSCHAFT-2002-172",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/560/de",
-      "sha": "c3d940213cb908bf96aefc6ffd354ad71fa35a45a33d17938fcde78269174b68"
+      "sha": "2566a4dfbe97cf8c7a4b5e3a915d9363e0a4e032bff0423cc759edde69cae9e5"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "a54e2068e85f8bc380fa08b9533774adfb99d960f1582f3a97562fc6d4b43f2b"
     },
     {
       "art": "aenderung",
@@ -123,33 +319,72 @@
       "titelFr": "Loi fédérale sur le service de l'emploi et la location de services (LSE)",
       "titelIt": "Legge federale sul collocamento e il personale a prestito (Legge sul collocamento, LC)",
       "botschaftKey": "BOTSCHAFT-2000-99",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/460/de",
-      "sha": "ea639752ef2c9d30cf07d2cd9d2b9e68365fd2e9942758faf942dd89ebc0776d"
+      "sha": "b8a7a8fcf3eecddc65ff089b7eb4b49105bb98d926e4b364277306d7627bbce9"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1991-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/392_392_392",
-      "dateDocument": "1989-10-06",
-      "roFundstelle": "AS 1991 392",
-      "titelDe": "Bundesgesetz vom 6. Oktober 1989 über die Arbeitsvermittlung und den Personalverleih (Arbeitsvermittlungsgesetz, AVG)",
-      "titelFr": "Loi fédérale du 6 octobre 1989 sur le service de l'emploi et la location de services (LSE)",
-      "titelIt": "Legge federale del 6 ottobre 1989 sul collocamento e il personale a prestito (Legge sul collocamento, LC)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/392_392_392/de",
-      "sha": "980d6e6ef2a75af6211c0734dc19c3b095db046bb561fe02d4cfb4d96b741299"
+      "dateEntryInForce": "1999-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/34",
+      "dateDocument": "1999-11-17",
+      "roFundstelle": "AS 2000 187",
+      "titelDe": "Verordnung über die Anpassung von Erlassen im Zusammenhang mit der Bildung des neuen Bundesamtes «Staatssekretariat für Wirtschaft»",
+      "titelFr": "Ordonnance sur l'adaptation des actes législatifs en rapport avec la création du nouvel office fédéral du «Secrétariat d'Etat à l'économie»",
+      "titelIt": "Ordinanza sull'adattamento di atti normativi in seguito all'istituzione dell'Ufficio federale «Segretariato di Stato dell'economia»",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/34/de",
+      "sha": "e6acc34193bb4bee07ea794009d2498f6e17971d8d8245651291c75bd15ea05f"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1952-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1951/1211_1217_1249",
-      "dateDocument": "1951-06-22",
-      "roFundstelle": "AS 1951 1211",
-      "titelDe": "Bundesgesetz vom 22. Juni 1951 über die Arbeitsvermittlung",
-      "titelFr": "Loi fédérale du 22 juin 1951 sur le service de l'emploi",
-      "titelIt": "Legge federale del 22 giugno 1951 concernente il servizio di collocamento",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1951/1211_1217_1249/de",
-      "sha": "36bd0edc73a604988a896b792d7b1602cc6526a35d186222e5ef89fbfb12c39c"
+      "dateEntryInForce": "1998-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822",
+      "dateDocument": "1998-06-22",
+      "roFundstelle": "AS 1998 1822",
+      "titelDe": "Verordnung vom 22 Juni 1998 über die Änderung von Erlassen im Zusammenhang mit der Reorganisation des Eidgenössischen Volkswirtschaftsdepartementes",
+      "titelFr": "Ordonnance du 22 juin 1998 concernant les modifications d'actes législatifs en rapport avec la réorganisation du Département fédéral de l'économie",
+      "titelIt": "Ordinanza del 22 giugno 1998 concernente le modifiche di atti normativi in rapporto alla riorganizzazione del Dipartimento federale dell'economia",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1822_1822_1822/de",
+      "sha": "4baedead3f5cb917b4b2e6639d0bcdefab4cd5d37379c5604b9231d24788dcd1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-03-22",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/859_859_859",
+      "dateDocument": "1998-02-25",
+      "roFundstelle": "AS 1998 859",
+      "titelDe": "Verordnung vom 25. Februar 1998 über die Anpassung von Zuständigkeitsbestimmungen im Arbeitsvermittlungsgesetz",
+      "titelFr": "Ordonnance du 25 février 1998 concernant l'adaptation des dispositions réglementant les compétences dans la loi sur le service de l'emploi et la location de services",
+      "titelIt": "Ordinanza del 25 febbraio 1998 concernente l'adeguamento delle disposizioni attributive di competenza nella legge sul collocamento",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/859_859_859/de",
+      "sha": "0af45ae5373b2789f045f418787b0568ad3e0f38d277fa150d530ae0e0b5b984"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/2080_2080_2080",
+      "dateDocument": "1992-10-09",
+      "roFundstelle": "AS 1993 2080",
+      "titelDe": "Bundesstatistikgesetz vom 9. Oktober 1992 (BStatG)",
+      "titelFr": "Loi du 9 octobre 1992 sur la statistique fédérale (LSF)",
+      "titelIt": "Legge del 9 ottobre 1992 sulla statistica federale (LStat)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/2080_2080_2080/de",
+      "sha": "3aed283cc1f20faf5506d719eb7cf9673baef2a193bd8b00522e27b8facc03dc"
     }
   ],
-  "sha": "ebeb8be2a0d1493c4a59e928ce92c48d0115e48c306752ec774fba611de779d0"
+  "sha": "c43f658203a129a063511ef07967116bdd510a0b49085ab3f393e571e707cb4f"
 }

@@ -1,71 +1,154 @@
 {
   "erlassKey": "BEG",
   "sr": "957.1",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/323",
+      "dateDocument": "2025-09-26",
+      "roFundstelle": "AS 2026 323",
+      "titelDe": "Bundesgesetz vom 26. September 2025 über die Transparenz juristischer Personen und die Identifikation der wirtschaftlich berechtigten Personen (TJPG)",
+      "titelFr": "Loi fédérale du 26 septembre 2025 sur la transparence des personnes morales et l’identification des ayants droit économiques (Loi sur la transparence des personnes morales, LTPM)",
+      "titelIt": "Legge federale del 26 settembre 2025 sulla trasparenza delle persone giuridiche e sull’identificazione degli aventi economicamente diritto (Legge sulla trasparenza delle persone giuridiche, LTPG)",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/957.1",
-      "sha": "0d0175017a3b1cca3073141fcc6e460ca82ce30a2038d92f84f475f1af64651e"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/957.1",
-      "sha": "d065d5e334e23bae445e509870cc839e73b911621d9f6716547e5d95637707f5"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2021-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/957.1",
-      "sha": "0081fff226f18697310c996080cef579263edf15fb0d72daf129fb187e56d4b5"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/957.1",
-      "sha": "c673c97ba272650f958191f3ad03283cf9917026c405987ce043601b861b2acc"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2019-11-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/957.1",
-      "sha": "9f7e1439ad204d3070c2ad112b98e180277b8bcc9704976173a0cb095245ff7d"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/957.1",
-      "sha": "d4e511785f8ec5de59690c631f7459c3f99bf7884158cea5bba036331d78d1be"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2015-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/957.1",
-      "sha": "75dac1954411502b77b272294e754cb77ebc9027f58af95b51634e2a2cdaa7da"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2010-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/957.1",
-      "sha": "e30fd78a609411bf82b9c60f55c50d3a1c40bf256e338c3068489b3e2187a731"
+      "wirkungen": [
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/323/de",
+      "sha": "fa18a49a7c3cd9bbf6a56d3209932b1da70b9cb7dbbcc892f3916561d7778c33"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2009-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2009/450",
-      "dateDocument": "2008-10-03",
-      "roFundstelle": "AS 2009 3577",
-      "titelDe": "Bundesgesetz über Bucheffekten (Bucheffektengesetz, BEG)",
-      "titelFr": "Loi fédérale sur les titres intermédiés (LTI)",
-      "titelIt": "Legge federale sui titoli contabili (Legge sui titoli contabili, LTCo)",
-      "botschaftKey": "BOTSCHAFT-2006-1228",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/450/de",
-      "sha": "73cad4c9d0da7ede79f08656ef4acf29466bb9e53f5a0fcca765d1af0ea2754b"
+      "dateEntryInForce": "2023-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/732",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2022 732",
+      "titelDe": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Insolvenz und Einlagensicherung)",
+      "titelFr": "Loi fédérale sur les banques et les caisses d’épargne (Loi sur les banques, LB) (Insolvabilité et garantie des dépôts)",
+      "titelIt": "Legge federale sulle banche e le casse di risparmio (Legge sulle banche, LBCR) (Insolvenza e garanzia dei depositi)",
+      "botschaftKey": "BOTSCHAFT-2020-1555",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/732/de",
+      "sha": "b68746dc8126c761b2658e081bb018e172fa7ec61877a1377cf4c77dda65aa74"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/33",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2021 33",
+      "titelDe": "Bundesgesetz zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "titelFr": "Loi fédérale sur l’adaptation du droit fédéral aux développements de la technologie des registres électroniques distribués",
+      "titelIt": "Legge federale sull’adeguamento del diritto federale agli sviluppi della tecnologia di registro distribuito",
+      "botschaftKey": "BOTSCHAFT-2020-16",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/33/de",
+      "sha": "0da42e9901bd2324e2b72ce4632099cd72a5f7fbcba2a7f9109c08c389b959f0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/807",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5343",
+      "titelDe": "Obligationenrecht (Revision des Verjährungsrechts)",
+      "titelFr": "Code des obligations (Révision du droit de la prescription)",
+      "titelIt": "Codice delle obbligazioni (Revisione della disciplina della prescrizione)",
+      "botschaftKey": "BOTSCHAFT-2014-65",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/807/de",
+      "sha": "8bb33e0c1d48975d7ada40ab2036925b1263bee7d12a3ab485ddb99cae3c4fca"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2020-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/762",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4631",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Finanzinstitutsgesetzes",
+      "titelFr": "Ordonnance portant dernière mise en vigueur partielle de la loi fédérale sur les établissements financiers",
+      "titelIt": "Ordinanza concernente l'entrata in vigore integrale della legge sugli istituti finanziari",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/762/de",
+      "sha": "f5b929fddfb67e28bdb23ec97a2a84df7d4320d67c499a432b94fd25cc350b46"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/583",
+      "dateDocument": "2019-06-21",
+      "roFundstelle": "AS 2019 3161",
+      "titelDe": "Bundesgesetz zur Umsetzung von Empfehlungen des Globalen Forums über Transparenz und Informationsaustausch für Steuerzwecke",
+      "titelFr": "Loi fédérale sur la mise en uvre des recommandations du Forum mondial sur la transparence et l'échange de renseignements à des fins fiscales",
+      "titelIt": "Legge federale che attua le raccomandazioni del Forum globale sulla trasparenza e sullo scambio di informazioni a fini fiscali",
+      "botschaftKey": "BOTSCHAFT-2019-18",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/583/de",
+      "sha": "3f5496cccf8d5bedeb682ef7e6d874c25d42fbcebe6af98a4729088a7c56cb82"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2019-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/801",
+      "dateDocument": "2018-06-15",
+      "roFundstelle": "AS 2018 5247",
+      "titelDe": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+      "titelFr": "Loi fédérale sur les établissements financiers (LEFin)",
+      "titelIt": "Legge federale sugli istituti finanziari (Legge sugli istituti finanziari, LIsFi)",
+      "botschaftKey": "BOTSCHAFT-2015-2141",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
+      "sha": "ab6ba0ee85a0b52f9b10e1d10e1c10e63c1d04ded353f90cd19850601403a87c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/853",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2015 5339",
+      "titelDe": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+      "titelFr": "Loi fédérale sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Loi sur l'infrastructure des marchés financiers, LIMF)",
+      "titelIt": "Legge federale sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Legge sull'infrastruttura finanziaria, LInFi)",
+      "botschaftKey": "BOTSCHAFT-2014-1633",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/853/de",
+      "sha": "801014a32710a891a31735ec84bdf8229f798d6f7bd305395c42b8849d95c02e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/289",
+      "dateDocument": "2014-12-12",
+      "roFundstelle": "AS 2015 1389",
+      "titelDe": "Bundesgesetz zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière",
+      "titelFr": "Loi fédérale sur la mise en uvre des recommandations du Groupe d'action financière, révisées en 2012",
+      "titelIt": "Legge federale concernente l'attuazione delle Raccomandazioni del Gruppo d'azione finanziaria rivedute nel 2012",
+      "botschaftKey": "BOTSCHAFT-2014-100",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/289/de",
+      "sha": "8958d944e0febc909bf3cedb6fca405b476f35f9cc820f070786f41b04222e26"
     }
   ],
-  "sha": "fa3fa685f1158aec77cbd921591626348a0cad9a285cb10e892604aff0697236"
+  "sha": "868245e2aef0ca3f0da36f697d56215f8dcf883abcbcb99226248190b50b5231"
 }

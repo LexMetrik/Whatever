@@ -1,21 +1,40 @@
 {
   "erlassKey": "EBG",
   "sr": "742.101",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2027-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2026/96",
+      "dateDocument": "2025-06-20",
+      "roFundstelle": "AS 2026 96",
+      "titelDe": "Bundespersonalgesetz (BPG)",
+      "titelFr": "Loi sur le personnel de la Confédération (LPers)",
+      "titelIt": "Legge sul personale federale (LPers)",
+      "botschaftKey": "BOTSCHAFT-2024-2316",
       "nichtKonsolidiert": true,
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "2a5670ffd854be7d0f94ffbfe199ad40e6df273330988e93b844302f9e6cc12a"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/96/de",
+      "sha": "48ffc9b0568182834050d0486b0e995db770e8d2b569344174d11f70d4111720"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2026-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "b690106b44a458a5d6895a4c283a527ba59e9eda20bf0778360626ac77eaab9d"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/749",
+      "dateDocument": "2025-03-21",
+      "roFundstelle": "AS 2025 749",
+      "titelDe": "Bundesgesetz vom 21. März 2025 über den Transport von Gütern auf der Schiene, auf dem Wasser und mit Seilbahnen (Gütertransportgesetz, GüTG)",
+      "titelFr": "Loi fédérale du 21 mars 2025 sur le transport de marchandises par rail, par voie navigable ou par installation à câbles (Loi sur le transport de marchandises, LTM)",
+      "titelIt": "Legge federale del 21 marzo 2025 sul trasporto di merci per ferrovia, per idrovia e con impianti a fune (Legge sul trasporto di merci, LTM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/749/de",
+      "sha": "401ebda3b68f3f46ec2b28711891ad0ab90d250e9df5553343cd573f0c09a07b"
     },
     {
       "art": "aenderung",
@@ -27,56 +46,247 @@
       "titelFr": "Loi fédérale sur les chemins de fer (LCdF) (Mise en œuvre du volet technique du 4e paquet ferroviaire de l’UE)",
       "titelIt": "Legge federale sulle ferrovie (Lferr) (Attuazione del pilastro tecnico del 4° pacchetto ferroviario dell’UE)",
       "botschaftKey": "BOTSCHAFT-2023-703",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/152/de",
-      "sha": "cdf6b90d13859be470749fc024b72f53a168cd0961545c7c0f7ef14a1d3a48fe"
+      "sha": "c906bf5f73ae8f1a25e0111e28406225347cc751b2a3cc4c7354e279415a339e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "50c95931bcf6969af3957026a1868537c2976705e9534d3643552621192bc516"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/491",
+      "dateDocument": "2020-09-25",
+      "roFundstelle": "AS 2022 491",
+      "titelDe": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "titelFr": "Loi fédérale du 25 septembre 2020 sur la protection des données (LPD)",
+      "titelIt": "Legge federale del 25 settembre 2020 sulla protezione dei dati (LPD)",
+      "botschaftKey": "BOTSCHAFT-2017-2057",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "sha": "62f78f35eb4d6176eba88ca7503d1e38d7c4fde8984c1e1cc0879d0ae3216b60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "a0fb9f01f5b652fd74a5ceed0c5b1d865b382ebf0a0c327ffef3bb360feeafc3"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+      "dateDocument": "2020-06-12",
+      "roFundstelle": "AS 2020 2743",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Ordonnance sur l'adaptation de lois à la suite de la modification de la désignation de l'Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Ordinanza sull'adeguamento di leggi in seguito al cambiamento della designazione dell'Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/498/de",
+      "sha": "624c9747c49a2b2de0386a2d0d50f3939887b89f337dadf4828f42762c9888d5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2022-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/654",
+      "dateDocument": "2021-03-19",
+      "roFundstelle": "AS 2021 654",
+      "titelDe": "Bundesgesetz vom 19. März 2021 über administrative Erleichterungen und eine Entlastung des Bundeshaushalts",
+      "titelFr": "Loi fédérale du 19 mars 2021 sur des allégements administratifs et des mesures destinées à soulager les finances fédérales",
+      "titelIt": "Legge federale del 19 marzo 2021 concernente agevolazioni amministrative e misure di sgravio del bilancio della Confederazione",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/654/de",
+      "sha": "2c1c9f2cb1c60df0ce183d895b6a562531db7330161b9fae4660889c77a991d4"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "8dea61bf2037e42b289f7beb045137ed81073161dccd1f10056ca8582ed136ab"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/126",
+      "dateDocument": "2019-06-21",
+      "roFundstelle": "AS 2020 641",
+      "titelDe": "Bundesgesetz über das öffentliche Beschaffungswesen (BöB)",
+      "titelFr": "Loi fédérale sur les marchés publics (LMP)",
+      "titelIt": "Legge federale sugli appalti pubblici (LAPub)",
+      "botschaftKey": "BOTSCHAFT-2017-417",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/126/de",
+      "sha": "b15cee4769088129e107fb7b56f68478ed29ff951120153418df172c792b6a07"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/393",
+      "dateDocument": "2018-09-28",
+      "roFundstelle": "AS 2020 1889",
+      "titelDe": "Bundesgesetz über die Organisation der Bahninfrastruktur",
+      "titelFr": "Loi fédérale sur l'organisation de l'infrastructure ferroviaire",
+      "titelIt": "Legge federale sull'organizzazione dell'infrastruttura ferroviaria",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/393/de",
+      "sha": "f8bb376f5d48177eaf09c0894bb04f8ba6025ed6ca9d905a1808c9550f1834c1"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2021-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/748",
+      "dateDocument": "2020-06-19",
+      "roFundstelle": "AS 2020 4085",
+      "titelDe": "Bundesgesetz über die Enteignung (EntG)",
+      "titelFr": "Loi fédérale sur l'expropriation (LEx)",
+      "titelIt": "Legge federale sull'espropriazione (LEspr)",
+      "botschaftKey": "BOTSCHAFT-2018-1660",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
+      "sha": "5d2fe40ec35fb6880b8e7211ecb9cf76c90b7e2beb54ef058df0ac62aba90834"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2020-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "d4b97e2a5e4587f54233228efa4f072a4c7de2fd7c85632cf2f085fd11838cca"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/393",
+      "dateDocument": "2018-09-28",
+      "roFundstelle": "AS 2020 1889",
+      "titelDe": "Bundesgesetz über die Organisation der Bahninfrastruktur",
+      "titelFr": "Loi fédérale sur l'organisation de l'infrastructure ferroviaire",
+      "titelIt": "Legge federale sull'organizzazione dell'infrastruttura ferroviaria",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2020-07-01",
+        "2021-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/393/de",
+      "sha": "fcb948ecb04ebbeebeeecf1e8fd48fa2d9df45c4cec89325b0f4971cc64f408c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2018-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "251b5fdb26840e72bb138f90d3ec9d10ec1903a9630a5a36ce9a6aa6198506bd"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/573",
+      "dateDocument": "2017-03-17",
+      "roFundstelle": "AS 2017 5205",
+      "titelDe": "Bundesgesetz über das Stabilisierungsprogramm 20172019",
+      "titelFr": "Loi fédérale sur le programme de stabilisation 20172019",
+      "titelIt": "Legge federale sul programma di stabilizzazione 20172019",
+      "botschaftKey": "BOTSCHAFT-2016-1047",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/573/de",
+      "sha": "ffd8c0fcb5002f60a673f4449bdf2ca42b05a3df6ae3b479e26da773793c5b33"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2018-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/605",
+      "dateDocument": "2017-06-16",
+      "roFundstelle": "AS 2017 5607",
+      "titelDe": "Bundesgesetz über die Luftfahrt (Luftfahrtgesetz, LFG)",
+      "titelFr": "Loi fédérale sur l'aviation (LA)",
+      "titelIt": "Legge federale sulla navigazione aerea (LNA)",
+      "botschaftKey": "BOTSCHAFT-2016-1536",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/605/de",
+      "sha": "1f431518585e2e1110887a45f4a836983cf6c51b7813079089f163d91a93cd8b"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2017-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "fdcac589706b61ef3e684a2ab3731ada75e9f0a5777ffbc05f71881d4a1184a2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/328",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2016 1845",
+      "titelDe": "Bundesgesetz über den Gütertransport durch Bahn- und Schifffahrtsunternehmen (Gütertransportgesetz, GüTG)",
+      "titelFr": "Loi fédérale sur le transport de marchandises par des entreprises de chemin de fer ou de navigation (Loi sur le transport de marchandises, LTM)",
+      "titelIt": "Legge federale sul trasporto di merci da parte di imprese ferroviarie e di navigazione (Legge sul trasporto di merci, LTM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-07-01",
+        "2017-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/328/de",
+      "sha": "8630952f8478a1ef8a0d08c42d957ddcb12ad64e2843fcb5b9bec11fcdb232cb"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "671ae6edec157a06b0e714f530335712392fd88f674ba87671d78e57e6c47051"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2016/328",
+      "dateDocument": "2015-09-25",
+      "roFundstelle": "AS 2016 1845",
+      "titelDe": "Bundesgesetz über den Gütertransport durch Bahn- und Schifffahrtsunternehmen (Gütertransportgesetz, GüTG)",
+      "titelFr": "Loi fédérale sur le transport de marchandises par des entreprises de chemin de fer ou de navigation (Loi sur le transport de marchandises, LTM)",
+      "titelIt": "Legge federale sul trasporto di merci da parte di imprese ferroviarie e di navigazione (Legge sul trasporto di merci, LTM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2016-07-01",
+        "2017-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/328/de",
+      "sha": "cf85b8a612120df630fa73641d8e07d88343df24fe0fe01f1370f3dd534086f4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "07784e8754b60c06d29a0ae45009da3cab5ac457ac522ec50db7d8ba7ae76f41"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/106",
+      "dateDocument": "2013-06-21",
+      "roFundstelle": "AS 2015 651",
+      "titelDe": "Bundesgesetz über die Finanzierung und den Ausbau der Eisenbahninfrastruktur",
+      "titelFr": "Loi fédérale sur le financement et l'aménagement de l'infrastructure ferroviaire",
+      "titelIt": "Legge federale concernente il finanziamento e l'ampliamento dell'infrastruttura ferroviaria",
+      "botschaftKey": "BOTSCHAFT-2012-305",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/106/de",
+      "sha": "ec733652626ba9427ef84869b61649a55429088fba01890d1001095b5390750a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/598",
+      "dateDocument": "2014-09-26",
+      "roFundstelle": "AS 2015 3205",
+      "titelDe": "Bundesgesetz über die Personenbeförderung (Personenbeförderungsgesetz, PBG)",
+      "titelFr": "Loi sur le transport de voyageurs (LTV)",
+      "titelIt": "Legge federale sul trasporto di viaggiatori (Legge sul trasporto di viaggiatori, LTV)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/598/de",
+      "sha": "49bc289691f8ba33c381fc38e5f9e64f8d7c658a7800d487627bbe646a117a24"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2016-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/779",
+      "dateDocument": "2015-06-19",
+      "roFundstelle": "AS 2015 4747",
+      "titelDe": "Bundesgesetz über das Konsolidierungs- und Aufgabenüberprüfungspaket 2014 (KAPG 2014)",
+      "titelFr": "Loi fédérale sur le programme de consolidation et de réexamen des tâches 2014 (LCRT 2014)",
+      "titelIt": "Legge federale sul pacchetto di consolidamento e di verifica dei compiti 2014 (LPCon 2014)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/779/de",
+      "sha": "d896788ce376dd06c4b2cbeb1a39e9e8415be19fc2fdbfa3a7bd5694ef54eb12"
     },
     {
       "art": "aenderung",
@@ -87,20 +297,43 @@
       "titelDe": "Bundesgesetz über den zweiten Schritt der Bahnreform 2 (Betrifft nur den französischen Text)",
       "titelFr": "Loi fédérale sur la deuxième partie de la réforme des chemins de fer 2",
       "titelIt": "Legge federale sulla seconda fase della Riforma delle ferrovie 2 (Concerne solo il testo francese)",
+      "wirkungen": [
+        "berichtigung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/20/de",
-      "sha": "02996a39c2d0ac3fc9c2099ee75781bb3417a2e16b03780d89cba085ccb8ce38"
+      "sha": "f0255b674bf9dfcc98ff81c4e6128a1fc754e3092b7758d6763ceb5f4133f055"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "c0ceedf7fb6c2479c390c4751f57685829be80c1d5150dd3ac9ef7dff3806407"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/375",
+      "dateDocument": "2013-05-29",
+      "roFundstelle": "AS 2013 1603",
+      "titelDe": "Verordnung über die abschliessende Inkraftsetzung des Bundesgesetzes vom 16. März 2012 über den zweiten Schritt der Bahnreform 2",
+      "titelFr": "Ordonnance concernant l'entrée en vigueur définitive de la loi fédérale du 16 mars 2012 sur la deuxième partie de la réforme des chemins de fer 2",
+      "titelIt": "Ordinanza sull'entrata in vigore integrale della legge federale del 16 marzo 2012 sulla seconda fase della Riforma delle ferrovie 2",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/375/de",
+      "sha": "9088f56a6bfc58061050379ca051c6d7935009faa0022a560633f412753fccb5"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-12-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "3c96a2f15958ba969e235ea3cd15feddbef5d37d82a8d32861d87210a599248b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/656",
+      "dateDocument": "2012-03-16",
+      "roFundstelle": "AS 2012 5619",
+      "titelDe": "Bundesgesetz über den zweiten Schritt der Bahnreform 2",
+      "titelFr": "Loi fédérale sur la deuxième partie de la réforme des chemins de fer 2",
+      "titelIt": "Legge federale sulla seconda fase della Riforma delle ferrovie 2",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/656/de",
+      "sha": "5ed381f6ddd84315fd46be95eee528c1f6f372c7601946b7c77d635cbf2395d4"
     },
     {
       "art": "aenderung",
@@ -111,20 +344,44 @@
       "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 1. Oktober 2010 des Luftfahrtgesetzes und über die Inkraftsetzung von Verordnungen im Bereich der Unfalluntersuchung",
       "titelFr": "Ordonnance portant première mise en vigueur partielle de la modification du 1er octobre 2010 de la loi fédérale sur l'aviation et mise en vigueur d'autres ordonnances relatives aux enquêtes sur les accidents",
       "titelIt": "Ordinanza concernente la messa in vigore parziale della modifica del 1o ottobre 2010 della legge federale sulla navigazione aerea e la messa in vigore di altre ordinanze relative alle inchieste sugli infortuni",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/648/de",
-      "sha": "0feca3f67cbb3a559426ed5f891cb910ffba409fb3f23d5b6530485b294b3f1d"
+      "sha": "dfd26f3d5bda430467d118dbfcd2aee2f63c3b33a6b8fc6954d6ff89bf51912c"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "996b3092ead2b27f9b11152a8789d76cbb8f8ea6ca88e2f145b79645ab0f2a60"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/165",
+      "dateDocument": "2010-10-01",
+      "roFundstelle": "AS 2011 1119",
+      "titelDe": "Bundesgesetz über die Luftfahrt (Luftfahrtgesetz, LFG)",
+      "titelFr": "Loi fédérale sur l'aviation (Loi sur l'aviation, LA)",
+      "titelIt": "Legge federale sulla navigazione aerea (LNA)",
+      "botschaftKey": "BOTSCHAFT-2009-850",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/165/de",
+      "sha": "afa90a8abff2f7ddf5a3f4898cbf6bb319d1eafd2a8848c72b50e1ae00a45f60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "a8fb19507cbce7a8edc95fabbfcd09129862a2d3222de3c9eefcb5ab84c375bc"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/267",
+      "dateDocument": "2007-10-05",
+      "roFundstelle": "AS 2010 1881",
+      "titelDe": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "titelFr": "Code de procédure pénale suisse (Code de procédure pénale, CPP)",
+      "titelIt": "Codice di diritto processuale penale svizzero (Codice di procedura penale, CPP)",
+      "botschaftKey": "BOTSCHAFT-2006-124",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "sha": "f58abceb941cc313b81bd4ceaf09349034ef2aa8c587d97b8a4f8b48412650e1"
     },
     {
       "art": "aenderung",
@@ -136,8 +393,12 @@
       "titelFr": "Loi sur la réforme des chemins de fer 2 (Révision des actes normatifs relatifs aux transports publics)",
       "titelIt": "Legge federale sulla Riforma delle ferrovie 2 (Revisione della disciplina sui trasporti pubblici)",
       "botschaftKey": "BOTSCHAFT-2007-425",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/679/de",
-      "sha": "c41b056f6fc63bf4a839437877991c39c4717f10be40fa5473f0947725bbfdd4"
+      "sha": "d69619fa9973c1db0ce310bbfcd8bf6bd04769667c2b42e06de62daf77ccd947"
     },
     {
       "art": "aenderung",
@@ -149,26 +410,91 @@
       "titelFr": "Loi fédérale sur les modifications du droit des transports",
       "titelIt": "Legge federale concernente modifiche del diritto dei trasporti",
       "botschaftKey": "BOTSCHAFT-2007-648",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/731/de",
-      "sha": "62373954beffbb675f4b6ef5c5a41eb8ece4428e16881b181be28263627a7ca6"
+      "sha": "cd10b4a82d8cf9960eaf61a60add1c80f722441a81e89d56bb6a8815f6c911a0"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "572e49bb24066d877662fb5539bafbc222466efb825fd0fa089df8090894c575"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/787",
+      "dateDocument": "2006-10-06",
+      "roFundstelle": "AS 2007 5779",
+      "titelDe": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "titelFr": "Loi fédérale concernant l'adoption et la modification d'actes dans le cadre de la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons (RPT)",
+      "titelIt": "Legge federale che emana e modifica atti legislativi per la nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni (NPC)",
+      "botschaftKey": "BOTSCHAFT-2005-976",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "sha": "42f2d77c7d85dae26bde243071e31af731b80a210a15b497fc72a3a49ddd78d3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "7f02ae46e2f93e353b4d0b42ae4249dec072be5567cc419043f0ed1fadcfec57"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/249",
+      "dateDocument": "2005-03-18",
+      "roFundstelle": "AS 2007 1411",
+      "titelDe": "Zollgesetz (ZG)",
+      "titelFr": "Loi sur les douanes (LD)",
+      "titelIt": "Legge sulle dogane (LD)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/249/de",
+      "sha": "bef0e170d9d898562e89c9a81cb1de360f032f2b65ee933a275224b894e620cd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "452070eacddeb691418111b15e4ac0a2c3b857e8be301cd23e7afb1ab2b3578a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/826",
+      "dateDocument": "2006-12-20",
+      "roFundstelle": "AS 2006 5599",
+      "titelDe": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
+      "titelFr": "Ordonnance de l'Assemblée fédérale concernant l'adaptation d'actes législatifs aux dispositions de la loi sur le Tribunal fédéral et de la loi sur le Tribunal administratif fédéral",
+      "titelIt": "Ordinanza dell'Assemblea federale che adegua taluni atti normativi alle disposizioni della legge sul Tribunale federale e della legge sul Tribunale amministrativo federale",
+      "botschaftKey": "BOTSCHAFT-2006-974",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/826/de",
+      "sha": "450c89b58e25b153fef21bbfa6cf58a9b6d2d6b97ee639ee311773152c7fc266"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/853",
+      "dateDocument": "2006-06-23",
+      "roFundstelle": "AS 2006 5753",
+      "titelDe": "Bundesgesetz über Seilbahnen zur Personenbeförderung (Seilbahngesetz, SebG)",
+      "titelFr": "Loi fédérale sur les installations à câbles transportant des personnes (Loi sur les installations à câbles, LICa)",
+      "titelIt": "Legge federale sugli impianti a fune adibiti al trasporto di persone (Legge sugli impianti a fune, LIFT)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/853/de",
+      "sha": "402fc5b1cea371be5f602176bb0ef91380eb040b52c98a2e1392cd3b30eeb03f"
     },
     {
       "art": "aenderung",
@@ -180,26 +506,88 @@
       "titelFr": "Loi fédérale sur les chemins de fer (LCdF)",
       "titelIt": "Legge federale sulle ferrovie (Lferr)",
       "botschaftKey": "BOTSCHAFT-2004-959",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2005/636/de",
-      "sha": "0acdbf8aab5390cd15801be3b80984f2ec17c99b0e26130f5e071f9b12c483ac"
+      "sha": "f282216be1499ca7d3ade8dbdb91ebce7152a34878c664b86275a97f04f5303a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2003-02-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "3981f09d953a0c2a8698d9fc4dbc2b761d0c426c3b183afcec3a4ad3dcd4ed75"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/24",
+      "dateDocument": "2002-03-22",
+      "roFundstelle": "AS 2003 187",
+      "titelDe": "Bundesgesetz über die Anpassung von Organisationsbestimmungen des Bundesrechts",
+      "titelFr": "Loi fédérale sur l'adaptation de dispositions du droit fédéral en matière d'organisation",
+      "titelIt": "Ordinanza dell'Assemblea federale concernente l'adeguamento di disposizioni organizzative del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/24/de",
+      "sha": "cce88c1e667304ffd2ff634af7123bca8dfa070328746c180fb5e8f2fe13d450"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "d427088d5a054e9c3922fa50bbba130136e8d8bd647a210ab13771ab876cd7db"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "0315f070905114e706498f35ffee0312d3de77a82d0be616c329cf3cff07dee4"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
+      "dateEntryInForce": "2001-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/453",
+      "dateDocument": "2000-06-23",
+      "roFundstelle": "AS 2000 2719",
+      "titelDe": "Bundesgesetz über die Organisation der Bundesrechtspflege (Bundesrechtspflegegesetz, OG)",
+      "titelFr": "Loi fédérale d'organisation judiciaire (Organisation judiciaire, OJ)",
+      "titelIt": "Legge federale sull'organizzazione giudiziaria (Organizzazione giudiziaria, OG)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/453/de",
+      "sha": "15dc5b9f841724b21340f7b13a6f78d5e86a379f6cd0ff1a6141ca48e151017c"
+    },
+    {
+      "art": "aenderung",
       "dateEntryInForce": "2000-10-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/742.101",
-      "sha": "2613b0ce53d9b03731237fe22ccab76b2e6f71b5443651b1b0f53abccd6d8764"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/320",
+      "dateDocument": "2000-06-28",
+      "roFundstelle": "AS 2000 2103",
+      "titelDe": "Verordnung über die Meldung und die Untersuchung von Unfällen und schweren Vorfällen beim Betrieb öffentlicher Verkehrsmittel (Unfalluntersuchungsverordnung, VUU)",
+      "titelFr": "Ordonnance sur les déclarations et les enquêtes en cas d'accident ou d'incident grave survenant lors de l'exploitation des transports publics (Ordonnance sur les enquêtes en cas d'accident des transports publics, OEATP)",
+      "titelIt": "Ordinanza sulla notifica e l'inchiesta relative a infortuni e incidenti gravi nell'esercizio dei mezzi pubblici di trasporto (Ordinanza concernente le inchieste sugli infortuni, OII)",
+      "wirkungen": [
+        "aenderung",
+        "inkrafttreten"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/320/de",
+      "sha": "c99ba96aab884c015e9a6aa6d1157dc50ceef5f53825f108c870dc303fc08df3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2000-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/472",
+      "dateDocument": "1999-06-18",
+      "roFundstelle": "AS 1999 3071",
+      "titelDe": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "titelFr": "Loi fédérale sur la coordination et la simplification des procédures de décision",
+      "titelIt": "Legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/472/de",
+      "sha": "a761a13e4eb553ad8499c948314b636504a456552288bf53322b10820bcae446"
     },
     {
       "art": "aenderung",
@@ -210,8 +598,11 @@
       "titelDe": "Verordnung über die Änderung des Bundesratsbeschlusses betreffend die Inkraftsetzung der Änderung vom 20. März 1998 des Eisenbahngesetzes",
       "titelFr": "Ordonnance sur la modification de l'arrêté du Conseil fédéral concernant l'entrée en vigueur de la modification du 20 mars 1998 de la loi sur les chemins de fer",
       "titelIt": "Ordinanza che modifica la decisione del Consiglio federale concernente l'entrata in vigore della modifica del 20 marzo 1998 della legge sulle ferrovie",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/25/de",
-      "sha": "d0d7bd83fb4341e01fdc30db589c8a0423e0ef0d0473b3b1bfcb11ff0dcfef2d"
+      "sha": "d21b74330db775213bcffed72f63cf3fcc6ab4cc0cc2c305428b5f2aceb1a046"
     },
     {
       "art": "aenderung",
@@ -222,21 +613,390 @@
       "titelDe": "Eisenbahngesetz",
       "titelFr": "Loi fédérale sur les chemins de fer",
       "titelIt": "Legge federale sulle ferrovie",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/2835_2835_2835/de",
-      "sha": "d25a732113d4b1580ec1d811111e6aad56f38402d5cbf03bfb0a9ea837729451"
+      "sha": "0dfd0281f7b13e3eb2ac92e01d60b0b9e77037b3d2d059f12064126323b96dbd"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1958-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1958/335_341_347",
-      "dateDocument": "1957-12-20",
-      "roFundstelle": "AS 1958 335",
-      "titelDe": "Eisenbahngesetz vom 20. Dezember 1957 (EBG)",
-      "titelFr": "Loi fédérale du 20 décembre 1957 sur les chemins de fer (LCdF)",
-      "titelIt": "Legge federale del 20 dicembre 1957 sulle ferrovie (Lferr)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1958/335_341_347/de",
-      "sha": "d59e2efbed935fdf05b984cc00d33b7e0900b7f06f9f80ffb82e85b21c2fbf2d"
+      "dateEntryInForce": "1999-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/363",
+      "dateDocument": "1999-03-19",
+      "roFundstelle": "AS 1999 2374",
+      "titelDe": "Bundesgesetz über das Stabilisierungsprogramm 1998",
+      "titelFr": "Loi fédérale sur le programme de stabilisation 1998",
+      "titelIt": "Legge federale sul programma di stabilizzazione 1998",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/363/de",
+      "sha": "45f158da5ced293db15519aaec654b9bbf78cc2a70fed5e3690ddd444f14ec1d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2452_2452_2452",
+      "dateDocument": "1997-04-30",
+      "roFundstelle": "AS 1997 2452",
+      "titelDe": "Postgesetz vom 30. April 1997 (PG)",
+      "titelFr": "Loi fédérale du 30 avril 1997 sur la poste (LPO)",
+      "titelIt": "Legge del 30 aprile 1997 sulle poste (LPO)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2452_2452_2452/de",
+      "sha": "1adbcb3f7edc7a2ad2e4acc227fc75862c3dcc597cb1d979ce0ed69936ec1dbd"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2465_2465_2465",
+      "dateDocument": "1997-04-30",
+      "roFundstelle": "AS 1997 2465",
+      "titelDe": "Bundesgesetz vom 30. April 1997 über die Organisation der Postunternehmung des Bundes (Postorganisationsgesetz, POG)",
+      "titelFr": "Loi fédérale du 30 avril 1997 sur l'organisation de l'entreprise fédérale de la poste (Loi sur l'organisation de la Poste, LOP)",
+      "titelIt": "Legge federale del 30 aprile 1997 sull'organizzazione dell'azienda delle poste della Confederazione (Legge sull'organizzazione delle poste, LOP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2465_2465_2465/de",
+      "sha": "1c531c943780a259f85322fd1b6d710c0de36b4b65ceb60d2d1cbcc39ff37272"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/3517_3517_3517",
+      "dateDocument": "1995-03-24",
+      "roFundstelle": "AS 1995 3517",
+      "titelDe": "Bundesgesetz vom 24. März 1995 über die Sanierungsmassnahmen 1994",
+      "titelFr": "Loi fédérale du 24 mars 1995 sur les mesures d'assainissement 1994",
+      "titelIt": "Legge federale del 24 marzo 1995 concernente le misure di risanamento 1994",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/3517_3517_3517/de",
+      "sha": "9657adfb9a0e616f5acb0151038d2e30240f93203051290ebba251d8f4d4ae13"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/3680_3680_3680",
+      "dateDocument": "1995-03-24",
+      "roFundstelle": "AS 1995 3680",
+      "titelDe": "Eisenbahngesetz, Änderung",
+      "titelFr": "Loi sur les chemins de fer, Modification",
+      "titelIt": "Legge federale sulle ferrovie, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/3680_3680_3680/de",
+      "sha": "65ecdf93aa51d5a70649dbe8566f1afd3e2d186a8abc4ab7cd2ee6e98fd8cd72"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/3199_3199_3199",
+      "dateDocument": "1993-06-18",
+      "roFundstelle": "AS 1993 3199",
+      "titelDe": "Eisenbahngesetz (EBG), Änderung",
+      "titelFr": "Loi fédérale sur les chemins de fer, Modification",
+      "titelIt": "Legge federale sulle ferrovie, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/3199_3199_3199/de",
+      "sha": "7fca3b506def723f33edd698adff7ca55d4987e79c61cc990b9134c1f0912503"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1994-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/901_901_901",
+      "dateDocument": "1993-02-03",
+      "roFundstelle": "AS 1993 901",
+      "titelDe": "Verordnung vom 3. Februar 1993 über Vorinstanzen des Bundesgerichts und des Eidgenössischen Versicherungsgerichts",
+      "titelFr": "Ordonnance du 3 février 1993 sur les autorités dont les décisions peuvent être déférées au Tribunal fédéral ou au Tribunal fédéral des assurances",
+      "titelIt": "Ordinanza del 3 febbraio 1993 sulle autorità le cui decisioni possono essere deferite al Tribunale federale e al Tribunale federale delle assicurazioni",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/901_901_901/de",
+      "sha": "93b2653dfea3f2d603c15bb916f14705277a42b022bd87710a0875188b52cb38"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/2521_2521_2521",
+      "dateDocument": "1991-10-04",
+      "roFundstelle": "AS 1992 2521",
+      "titelDe": "Bundesgesetz vom 4. Oktober 1991 über den Wald (Waldgesetz, WaG)",
+      "titelFr": "Loi fédérale du 4 octobre 1991 sur les forêts (Loi sur les forêts, LFo)",
+      "titelIt": "Legge federale del 4 ottobre 1991 sulle foreste (Legge forestale, LFo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/2521_2521_2521/de",
+      "sha": "335089261d796f7d1271943b842d4c01915090691d2508e2e2911ee3f343a173"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/325_325_325",
+      "dateDocument": "1992-10-09",
+      "roFundstelle": "AS 1993 325",
+      "titelDe": "Bundesgesetz vom 9. Oktober 1992 über den Abbau von Finanzhilfen und Abgeltungen",
+      "titelFr": "Loi fédérale du 9 octobre 1992 sur la réduction d'aides financières et d'indemnités",
+      "titelIt": "Legge federale del 9 ottobre 1992 concernente la riduzione di aiuti finanziari e di indennità",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/325_325_325/de",
+      "sha": "23d692fe5b384c73712069d62418bc221669aac65456dca0e5c9a4dd38ee56bb"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1991-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/857_857_857",
+      "dateDocument": "1990-10-05",
+      "roFundstelle": "AS 1991 857",
+      "titelDe": "Bundesgesetz vom 5. Oktober 1990 über Finanzhilfen und Abgeltungen (Subventionsgesetz, SuG)",
+      "titelFr": "Loi fédérale du 5 octobre 1990 sur les aides financières et les indemnités (Loi sur les subventions, LSu)",
+      "titelIt": "Legge federale del 5 ottobre 1990 sugli aiuti finanziari e le indennità (Legge sui sussidi, LSu)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/857_857_857/de",
+      "sha": "a22514f69bf61125bc291c91569f6fd4a0215ca3a135ab2823eebd1dad2e48d3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/1974_1974_1974",
+      "dateDocument": "1985-10-04",
+      "roFundstelle": "AS 1986 1974",
+      "titelDe": "Bundesgesetz vom 4. Oktober 1985 über den Transport im öffentlichen Verkehr (Transportgesetz, TG)",
+      "titelFr": "Loi fédérale du 4 octobre 1985 sur les transports publics (LTP)",
+      "titelIt": "Legge federale del 4 ottobre 1985 sul trasporto pubblico (LTP)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/1974_1974_1974/de",
+      "sha": "83df82fbad8aebef7a7a885ba93ff664921f356043ef2dd277848d0f208f8777"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/263_263_263",
+      "dateDocument": "1986-10-09",
+      "roFundstelle": "AS 1987 263",
+      "titelDe": "Bundesgesetz über die Schweizerischen Bundesbahnen, Änderung",
+      "titelFr": "Loi fédérale sur les Chemins de fer fédéraux, Modification",
+      "titelIt": "Legge sulle Ferrovie federali svizzere, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/263_263_263/de",
+      "sha": "f1f7bc097eb489dcc76e541743f025b532ea067f6ee7152c2d9edaf00700d01f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/660_660_660",
+      "dateDocument": "1984-12-14",
+      "roFundstelle": "AS 1985 660",
+      "titelDe": "Bundesgesetz vom 14. Dezember 1984 über die Sparmassnahmen 1984 (Anschlussprogramm)",
+      "titelFr": "Loi fédérale du 14 décembre 1984 relative aux mesures d'économie 1984 (Programme complémentaire)",
+      "titelIt": "Legge federale del 14 dicembre 1984 sui provvedimenti di risparmio 1984 (Programma complementare)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/660_660_660/de",
+      "sha": "edfd183218e4cc77b84c7f484ea4c3f53124797b62ab0f2379c4385ea2434ae4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/1429_1429_1429",
+      "dateDocument": "1982-10-08",
+      "roFundstelle": "AS 1984 1429",
+      "titelDe": "Eisenbahngesetz, Änderung",
+      "titelFr": "Loi fédérale sur les chemins de fer, Modification",
+      "titelIt": "Legge federale sulle ferrovie, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/1429_1429_1429/de",
+      "sha": "9f6a2ba801a559c6bc1e72e871045703f4d50dd53fa2aaf2c1481f66378339a3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-06-28",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/1034_1034_1034",
+      "dateDocument": "1978-06-28",
+      "roFundstelle": "AS 1978 1034",
+      "titelDe": "Bundesratsbeschluss vom 28. Juni 1978 über die Inkraftsetzung der Änderungen des Eisenbahngesetzes, des Transportgesetzes und des Bundesgesetzes über die Schweizerischen Bundesbahnen",
+      "titelFr": "Arrêté du Conseil fédéral du 28 juin 1978 concernant la mise en vigueur des modifications de la loi sur les chemins de fer, de la loi sur les transports par chemins de fer et par bateaux et de la loi sur les chemins de fer fédéraux",
+      "titelIt": "Decreto del Consiglio federale del 28 giugno 1978 sulla messa in vigore della legge sulle ferrovie, della legge sui trasporti e della legge federale sulle Ferrovie federali svizzere",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/1034_1034_1034/de",
+      "sha": "3e00bfd46999d6dab673c1b93765db7490bdd923c674c59d12c0db3569e817dc"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1978-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/2249_2249_2249",
+      "dateDocument": "1977-05-05",
+      "roFundstelle": "AS 1977 2249",
+      "titelDe": "Bundesgesetz vom 5. Mai 1977 über Massnahmen zum Ausgleich des Bundeshaushaltes",
+      "titelFr": "Loi fédérale du 5 mars 1977 instituant des mesures propres à équilibrer les finances fédérales",
+      "titelIt": "Legge federale del 5 marzo 1977 su provvedimenti per equilibrare le finanze federali",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/2249_2249_2249/de",
+      "sha": "95a818d7d9ec5db2b4c4f6ea2b35f1488fe4d4c2c1d6e8bb4522ff6847ac1b24"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/315_315_315",
+      "dateDocument": "1977-02-09",
+      "roFundstelle": "AS 1977 315",
+      "titelDe": "Verordnung vom 9. Februar 1977 über den Abbau von Bundesbeiträgen im Jahre 1977",
+      "titelFr": "Ordonnance du 9 février 1977 sur la réduction des subventions en 1977",
+      "titelIt": "Ordinanza del 9 febbraio 1977 per la riduzione dei sussidi nel 1977",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/315_315_315/de",
+      "sha": "39165a54d884d7aa4a997af9039fb79c054337510db369da9c223dcea8349497"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/665_665_665",
+      "dateDocument": "1976-03-08",
+      "roFundstelle": "AS 1976 665",
+      "titelDe": "Bundesratsbeschluss vom 8. März 1976 über den Abbau von Bundesbeiträgen im Jahr 1976",
+      "titelFr": "Arrêté du Conseil fédéral du 8 mars 1976 sur la réduction des subventions fédérales en 1976",
+      "titelIt": "Decreto del Consiglio federale dell'8 marzo 1976 sulla riduzione dei sussidi federali nel 1976",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/665_665_665/de",
+      "sha": "8b79e4d86eb5162b73b2c9c0424f609285e1c3288bdb3f895655d7f80cea2e57"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1975-12-19",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/2512_2512_2512",
+      "dateDocument": "1975-12-19",
+      "roFundstelle": "AS 1975 2512",
+      "titelDe": "Bundesbeschluss vom 19. Dezember 1975 über den Abbau von Bundesbeiträgen im Jahr 1976",
+      "titelFr": "Arrêté fédéral du 19 décembre 1975 sur la réduction des subventions fédérales en 1976",
+      "titelIt": "Decreto federale del 19 dicembre 1975 per la riduzione dei sussidi federali nel 1976",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/2512_2512_2512/de",
+      "sha": "1f4b6d294ef90035a6587f5c295c83b432837f234d864752148789f9a7ec5996"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1975-04-30",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1975/917_917_917",
+      "dateDocument": "1975-04-30",
+      "roFundstelle": "AS 1975 917",
+      "titelDe": "Bundesratsbeschluss vom 30. April 1975 über den Abbau von Bundesbeiträgen nach Eisenbahngesetz",
+      "titelFr": "Arrêté du Conseil fédéral du 30 avril 1975 réduisant les contributions accordées par la Confédération en vertu de la loi sur les chemins de fer",
+      "titelIt": "Decreto del Consiglio federale del 30 aprile 1975 che riduce i contributi federali giusta la legge sulle ferrovie",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1975/917_917_917/de",
+      "sha": "2d2ee8fe9540acf25a5c972ddf27db6c9f1e368b282b8814a08c3bc9fe9c3033"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1975-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1974/1857_1857_1857",
+      "dateDocument": "1974-03-22",
+      "roFundstelle": "AS 1974 1857",
+      "titelDe": "Bundesgesetz vom 22. März 1974 über das Verwaltungsstrafrecht (VStrR)",
+      "titelFr": "Loi fédérale du 22 mars 1974 sur le droit pénal administratif (DPA)",
+      "titelIt": "Legge federale del 22 marzo 1974 sul diritto penale amministrativo (DPA)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1974/1857_1857_1857/de",
+      "sha": "6d633e34e43c36185903e24bc22bb7d4545ea823a51c889c26d56c972332a13d"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1972/519_526_450",
+      "dateDocument": "1971-03-11",
+      "roFundstelle": "AS 1972 519",
+      "titelDe": "Bundesgesetz über die Änderung des Eisenbahngesetzes",
+      "titelFr": "Loi fédérale modifiant la loi sur les chemins de fer",
+      "titelIt": "Legge federale che modifica quella sulle ferrovie",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1972/519_526_450/de",
+      "sha": "56c3dfc2d19a3b2f66468156b2b1fd81945e8345cca1f32a35058a254d5060e0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1972-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/952_952_953",
+      "dateDocument": "1972-12-20",
+      "roFundstelle": "AS 1973 952",
+      "titelDe": "Eisenbahngesetz, Änderung",
+      "titelFr": "Loi fédérale sur les chemins de fer, Modification",
+      "titelIt": "Legge federaöe sulle ferrovie, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/952_952_953/de",
+      "sha": "6621665e61a8e65357b114533f4009b2e66a7dc076fb542881cb981cec50b945"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1968-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1968/97_96_100",
+      "dateDocument": "1967-10-05",
+      "roFundstelle": "AS 1968 97",
+      "titelDe": "Bundesgesetz über die Änderung des Eisenbahngesetzes",
+      "titelFr": "Loi modifiant la loi sur les chemins de fer",
+      "titelIt": "Legge federale che modifica quella sulle ferrovie",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1968/97_96_100/de",
+      "sha": "4c9719bccd71349577526a3c06b02f369f91cf18a05b0e7d3206bc27b6a6e033"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1959-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1959/801_830_816",
+      "dateDocument": "1959-06-05",
+      "roFundstelle": "AS 1959 801",
+      "titelDe": "Bundesbeschluss vom 5. Juni 1959 über die Annäherung von Tarifen konzessionierter Bahnunternehmungen an jene der Schweizerischen Bundesbahnen (Tarifannäherungsbeschluss)",
+      "titelFr": "Arrêté fédéral du 5 juin 1959 concernant le rapprochement des tarifs d'entreprises de chemins de fer concessionnaires de ceux de chemins de fer fédéraux (Arrêté sur le rapprochement tarifaire)",
+      "titelIt": "Decreto federale del 5 giugno 1959 concernente l'adattamento delle tariffe di imprese ferroviarie concessionarie a quelle delle Ferrovie federali svizzere (Decreto sull'adattamento tariffale)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1959/801_830_816/de",
+      "sha": "459fba3b4453aa46452f70d27232a60253a5229867e30bf700371b0741f8cb9c"
     }
   ],
-  "sha": "fc4bf759ee2e578c52f20201a78650d4783a55b1bf13b9a5ee98d1d9946c607c"
+  "sha": "c6a1d789316a517f19219cba793dcd9a102053253c22f66e70bb1bce6a43e18f"
 }

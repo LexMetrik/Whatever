@@ -1,8 +1,8 @@
 {
   "erlassKey": "ARGV4",
   "sr": "822.114",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Verordnung 4 zum Arbeitsgesetz (ArGV 4) (Industrielle Betriebe, Plangenehmigung und Betriebsbewilligung)",
       "titelFr": "Ordonnance 4 relative à la loi sur le travail (OLT 4) (Entreprises industrielles, approbation des plans et autorisation d'exploiter)",
       "titelIt": "Ordinanza 4 concernente la legge sul lavoro (OLL 4) (Aziende industriali, approvazione dei piani e permesso d'esercizio)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/215/de",
-      "sha": "940a944d5a8983dd4cceaa19f3b0ecd86a51b16d17552f6039f91f1a2e2ab138"
+      "sha": "ddaf623172c12649e3b69d9bea4d1feee1444408a192ef69dc998f760cd06fd5"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Verordnung 4 zum Arbeitsgesetz (ArGV 4) (Industrielle Betriebe, Plangenehmigung und Betriebsbewilligung)",
       "titelFr": "Ordonnance 4 relative à la loi sur le travail (OLT 4) (Entreprises industrielles, approbation des plans et autorisation d'exploiter)",
       "titelIt": "Ordinanza 4 concernente la legge sul lavoro (OLL 4) (Aziende industriali, approvazione dei piani e permesso d'esercizio)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/293/de",
-      "sha": "a905bd8b9962f9b7b50bbc05356118ab3bc90162ab78ec927d4f31e1cc11be15"
+      "sha": "e72dc681ce1e436fa5bf6cc5a87efecd5c0b05960b1407d2c94eaa066cbd15d6"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,11 @@
       "titelDe": "Verordnung 4 zum Arbeitsgesetz (ArGV 4) (Industrielle Betriebe, Plangenehmigung und Betriebsbewilligung)",
       "titelFr": "Ordonnance 4 relative à la loi sur le travail (OLT 4) (Entreprises industrielles, approbation des plans et autorisation d'exploiter)",
       "titelIt": "Ordinanza 4 concernente la legge sul lavoro (OLL 4) (Aziende industriali, approvazione dei piani e permesso d'esercizio)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/726/de",
-      "sha": "c81f8e2451ab76f475bb865238b689aef10361572a0f8012c5059cb41b11d80f"
+      "sha": "cb4fff890725111ae00660ac6ac4cf4e3bf389046d1438a7e09f9f3e41d6b0d1"
     },
     {
       "art": "aenderung",
@@ -49,14 +58,26 @@
       "titelDe": "Verordnung 4 zum Arbeitsgesetz (ArGV 4) (Industrielle Betriebe, Plangenehmigung und Betriebsbewilligung)",
       "titelFr": "Ordonnance 4 relative à la loi sur le travail (OLT 4) (Entreprises industrielles, approbation des plans et autorisation d'exploiter)",
       "titelIt": "Ordinanza 4 concernente la legge sul lavoro (OLL 4) (Aziende industriali, approvazione dei piani e permesso d'esercizio)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/622/de",
-      "sha": "25244368f9bb25da1820b46be00973fd3e9d5a5334019207ecdbe35c08412644"
+      "sha": "2e756ae7815df596afbb3838dbc258b8fa7659b4b7ffd194536cdee38da50317"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-06-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/822.114",
-      "sha": "eba9d078b021283a5b6b9074c64a121a08afc755c8d515e8f0861594ed9603aa"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/200",
+      "dateDocument": "2002-04-24",
+      "roFundstelle": "AS 2002 1347",
+      "titelDe": "Verordnung 1 zum Arbeitsgesetz (ArGV 1)",
+      "titelFr": "Ordonnance 1 relative à la loi sur le travail (OLT 1)",
+      "titelIt": "Ordinanza 1 concernente la legge sul lavoro (OLL 1)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/200/de",
+      "sha": "f9ae8b101f48960a3989553ec35a370dfbf9992d58d3f1c0202c53d1990c08b6"
     },
     {
       "art": "aenderung",
@@ -67,21 +88,58 @@
       "titelDe": "Verordnung 4 zum Arbeitsgesetz (Bau und Einrichtung von Betrieben mit Plangenehmigungspflicht, ArGV 4)",
       "titelFr": "Ordonnance 4 relative à la loi sur le travail (Construction et aménagement des entreprises soumises à la procédure d'approbation des plans, OLT 4)",
       "titelIt": "Ordinanza 4 concernente la legge sul lavoro (Costruzione e trasformazione di aziende assoggettate all'approvazione dei piani, OLL4)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/245/de",
-      "sha": "fa75447f970a049cc37ab6d52b2492b6988379442fd1a3710af4c2bd8771cb0c"
+      "sha": "259025c47e856d7a1a1ebf0cd78b959ade028242a987fb64d9a2c0ee8e62f6c3"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1993-10-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/2564_2564_2564",
-      "dateDocument": "1993-08-18",
-      "roFundstelle": "AS 1993 2564",
-      "titelDe": "Verordnung 4 vom 18. August 1993 zum Arbeitsgesetz (ArGV 4) (Industrielle Betriebe, Plangenehmigung und Betriebsbewilligung)",
-      "titelFr": "Ordonnance 4 du 18 août 1993 relative à la loi sur le travail (OLT 4) (Entreprises industrielles, approbation des plans et autorisation d'exploiter)",
-      "titelIt": "Ordinanza 4 del 18 agosto 1993 concernente la legge sul lavoro (OLL 4) (Aziende industriali, approvazione dei piani e permesso d'esercizio)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/2564_2564_2564/de",
-      "sha": "635b278f13e702212c4358abfb9a043e5f683a285223df6f18544648878327b0"
+      "dateEntryInForce": "1999-11-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1999/445",
+      "dateDocument": "1999-08-25",
+      "roFundstelle": "AS 1999 2826",
+      "titelDe": "Verordnung über den Schutz der Arbeitnehmerinnen und Arbeitnehmer vor Gefährdung durch Mikroorganismen (SAMV)",
+      "titelFr": "Ordonnance sur la protection des travailleurs contre les risques liés aux microorganismes (OPTM)",
+      "titelIt": "Ordinanza sulla protezione dei lavoratori dal pericolo derivante da microrganismi (OPLM)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/445/de",
+      "sha": "cb88b1e0dd130e042b34d3e5d8894a1709d7fd7255bc77baaa2d0a92b8ff4e70"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1999-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/34",
+      "dateDocument": "1999-11-17",
+      "roFundstelle": "AS 2000 187",
+      "titelDe": "Verordnung über die Anpassung von Erlassen im Zusammenhang mit der Bildung des neuen Bundesamtes «Staatssekretariat für Wirtschaft»",
+      "titelFr": "Ordonnance sur l'adaptation des actes législatifs en rapport avec la création du nouvel office fédéral du «Secrétariat d'Etat à l'économie»",
+      "titelIt": "Ordinanza sull'adattamento di atti normativi in seguito all'istituzione dell'Ufficio federale «Segretariato di Stato dell'economia»",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/34/de",
+      "sha": "e6acc34193bb4bee07ea794009d2498f6e17971d8d8245651291c75bd15ea05f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-08-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822",
+      "dateDocument": "1998-06-22",
+      "roFundstelle": "AS 1998 1822",
+      "titelDe": "Verordnung vom 22 Juni 1998 über die Änderung von Erlassen im Zusammenhang mit der Reorganisation des Eidgenössischen Volkswirtschaftsdepartementes",
+      "titelFr": "Ordonnance du 22 juin 1998 concernant les modifications d'actes législatifs en rapport avec la réorganisation du Département fédéral de l'économie",
+      "titelIt": "Ordinanza del 22 giugno 1998 concernente le modifiche di atti normativi in rapporto alla riorganizzazione del Dipartimento federale dell'economia",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1998/1822_1822_1822/de",
+      "sha": "4baedead3f5cb917b4b2e6639d0bcdefab4cd5d37379c5604b9231d24788dcd1"
     }
   ],
-  "sha": "7bf04d80c82f6cff9b470bc9efcbb48c4cf274f331b29c981d6c213ea223e487"
+  "sha": "df4dd17e7e3e68b511222c4f04b82893af7437b59543bfe6e3389f5a1a145e41"
 }

@@ -1,8 +1,8 @@
 {
   "erlassKey": "PVUE",
   "sr": "0.232.04",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,8 +13,11 @@
       "titelDe": "Pariser Übereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
       "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
       "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/14/de",
-      "sha": "6bcd1ae3bd83ea8814557db483a63276ca190f3f124bfb1b38b65521eaa67129"
+      "sha": "6e05dcf327e41de6a782f34d116d0417ed1d46467e25adda0465d98f575a96b3"
     },
     {
       "art": "aenderung",
@@ -25,8 +28,11 @@
       "titelDe": "Pariser Übereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
       "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
       "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/608/de",
-      "sha": "022197383fd4d1970793edc14546625af3aeae8695c06c29d87115b9c0511a3c"
+      "sha": "61736542b99e58a2fac7899d6d1ee49da75944ea5da4afab15ed23d28e52d462"
     },
     {
       "art": "aenderung",
@@ -37,8 +43,12 @@
       "titelDe": "Pariser Übereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
       "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
       "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/432/de",
-      "sha": "6ecdf6d20bd58d074d94fe0a83edcd33b9de26f17749dba5a3da9367460cd7de"
+      "sha": "49a0b1085dff3bfedbfb3314ac3b6806799cfb42db35fce3d47f7f18b7eb7476"
     },
     {
       "art": "aenderung",
@@ -49,8 +59,12 @@
       "titelDe": "Pariser Übereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
       "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
       "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/191/de",
-      "sha": "e2f0e6a7ba78309401cdf6610d74c01825fd6ab01f29a526ef45f9989d8d5cb4"
+      "sha": "8c829977b36e458a4ad535c603f5cf058a568e42819f3c51a2565479c33824fb"
     },
     {
       "art": "aenderung",
@@ -61,8 +75,12 @@
       "titelDe": "Pariser Übereinkunft zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
       "titelFr": "Convention de Paris pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
       "titelIt": "Convenzione di Parigi per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/321/de",
-      "sha": "ee20f7647ba5cdb608c23e0b7f07dfcd69b04601c442f979621717be40ca9fe7"
+      "sha": "19a827261fc9579b9294f941715d490ededb5dbbcda50c69d8c620009c4b1692"
     },
     {
       "art": "aenderung",
@@ -73,8 +91,12 @@
       "titelDe": "Pariser Verbandsübereinkunft zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
       "titelFr": "Convention d'Union de Paris pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
       "titelIt": "Convenzione d'Unione di Parigi per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/107/de",
-      "sha": "1041997b37f2c1a770443a68879b1209389835f86f2df76d6255602771e40c45"
+      "sha": "6a9d8c000db2ab95d03aa06ad4aa976115bee7983a235d4b3e8233b2af4c0ee0"
     },
     {
       "art": "aenderung",
@@ -85,21 +107,208 @@
       "titelDe": "Pariser Verbandsübereinkunft zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
       "titelFr": "Convention d'Union de Paris pour la protection de la propriété industrielle, réviséeà Stockholm le 14 juillet 1967",
       "titelIt": "Convenzione d'Unione di Parigi per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung",
+        "geltungsbereich"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/349/de",
-      "sha": "a30d21ca17055afd7b5b0b38e9b8bc7bf707869b1084d20d0bb2c3a4d60294c6"
+      "sha": "f00e5d387f4c23be9817cf88762fd0b8f4a1640b4eb456c121bf5074918522c4"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1970-04-26",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1970/620_620_620",
-      "dateDocument": "1967-07-14",
-      "roFundstelle": "AS 1970 620",
-      "titelDe": "Pariser Übereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+      "dateEntryInForce": "1991-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/965_965_965",
+      "dateDocument": "1991-04-01",
+      "roFundstelle": "AS 1991 965",
+      "titelDe": "Pariser Verbandsübereinkunft zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+      "titelFr": "Convention de Paris pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+      "titelIt": "Convenzione di Parigi per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/965_965_965/de",
+      "sha": "4f5869ed3b0d8211f65138bb65cb1471ff818005b7f6074094e17c53ae044b72"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1989-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1988/2069_2069_2069",
+      "dateDocument": "1989-01-01",
+      "roFundstelle": "AS 1988 2069",
+      "titelDe": "Pariser Verbandsübereinkunft zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+      "titelFr": "Convention de Paris pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+      "titelIt": "Convenzione di Parigi per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1988/2069_2069_2069/de",
+      "sha": "d95eaba93438091d0fec0eccfcc96822ed375ffcbc936b6806abda32a096f991"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1987/646_646_646",
+      "dateDocument": "1987-05-01",
+      "roFundstelle": "AS 1987 646",
+      "titelDe": "Pariser Verbandsübereinkunft vom 20 März 183 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
       "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
       "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1970/620_620_620/de",
-      "sha": "c755b59e1b42f7a8bc0160f80221ad447ae813ebf96dbbb7c440a9a2e81c8d5f"
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1987/646_646_646/de",
+      "sha": "28b0abf1650fddada3ec12fa501d88d0733dae0dcf3c555b82d5a550e8f045a7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1986-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/280_280_280",
+      "dateDocument": "1986-02-01",
+      "roFundstelle": "AS 1986 280",
+      "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+      "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+      "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/280_280_280/de",
+      "sha": "5078888bc9388a9def978def7685efddc484c56610bc35014bdf1da021a2a4f2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1985-03-20",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1985/284_284_284",
+      "dateDocument": "1985-03-20",
+      "roFundstelle": "AS 1985 284",
+      "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+      "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+      "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1985/284_284_284/de",
+      "sha": "4a97adaaafbb16115178a78973111a0e1d04be1ee1787bc995cec1da6ff7a869"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-06-03",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/824_824_824",
+      "dateDocument": "1984-07-31",
+      "roFundstelle": "AS 1984 824",
+      "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967, Änderung",
+      "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, revisée à Stockholm le 14 juillet 1967, Modification",
+      "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/824_824_824/de",
+      "sha": "82ead022aa427c7bf1c6bcba5b8bcb5b8427d1e6fafcc7727495a883d5f8e26c"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-04-16",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1984/392_392_392",
+      "dateDocument": "1984-04-16",
+      "roFundstelle": "AS 1984 392",
+      "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+      "titelFr": "Convention de Paris du 20 mars 1883 pour la protection industrielle, révisée à Stockholm le 14 juillet 1967",
+      "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1984/392_392_392/de",
+      "sha": "9eafa7ebac98de4a508015a97adf5c5253fbdd9d907eb97ac22fee0f4ba152e7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1982-02-15",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1982/256_256_256",
+      "dateDocument": "1982-02-15",
+      "roFundstelle": "AS 1982 256",
+      "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+      "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+      "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1982/256_256_256/de",
+      "sha": "2e74e49f770018c83b24139571a0ff66324c9fb1eb68d6390f63648fcefaabc8"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1979-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1979/292_292_292",
+      "dateDocument": "1979-03-01",
+      "roFundstelle": "AS 1979 292",
+      "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+      "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+      "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1979/292_292_292/de",
+      "sha": "771a373908d2755437e9e3ca8845c7dfdcde9d40762f8c01e2d10d295ca0c798"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1977-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/222_222_222",
+      "dateDocument": "1977-02-01",
+      "roFundstelle": "AS 1977 222",
+      "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+      "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+      "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/222_222_222/de",
+      "sha": "facfe7fbe065dab88440b2b2cc517766ac56482fb19bbea0c454f8ef57d59479"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1976-04-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1976/921_921_921",
+      "dateDocument": "1976-04-01",
+      "roFundstelle": "AS 1976 921",
+      "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+      "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+      "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1976/921_921_921/de",
+      "sha": "ffc92a0a57eb2e18b648447b19a5ad7cc29ff7dfe55e3badbe0746f895966d3e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1973-10-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1973/1711_1711_1711",
+      "dateDocument": "1973-10-01",
+      "roFundstelle": "AS 1973 1711",
+      "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+      "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+      "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1973/1711_1711_1711/de",
+      "sha": "cbd8e8dca8722a58bbd61a8936d9a5cc8fdcd5d8ab75e32f2089131f4ef69d0f"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1971-12-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1971/1952_1959_1958",
+      "dateDocument": "1971-12-01",
+      "roFundstelle": "AS 1971 1952",
+      "titelDe": "Pariser Verbandsübereinkunft vom 20. März 1883 zum Schutz des gewerblichen Eigentums, revidiert in Stockholm am 14. Juli 1967",
+      "titelFr": "Convention de Paris du 20 mars 1883 pour la protection de la propriété industrielle, révisée à Stockholm le 14 juillet 1967",
+      "titelIt": "Convenzione di Parigi del 20 marzo 1883 per la protezione della proprietà industriale, riveduta a Stoccolma il 14 luglio 1967",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1971/1952_1959_1958/de",
+      "sha": "119653e9902698fc5199b8d8d1c69d146a2c3ea051c24a66121cd5fde78130d8"
     }
   ],
-  "sha": "20cfdfd994d0c023e71582455f6c7e349a3ff73d7fc7299877f8531ec3d0d543"
+  "sha": "d6a7a759b2e1d13166a92e910d764e9a6f71e10b73ec8c13afa2f42be88d5621"
 }

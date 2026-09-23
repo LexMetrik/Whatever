@@ -1,8 +1,8 @@
 {
   "erlassKey": "PATV",
   "sr": "232.141",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -14,8 +14,11 @@
       "titelFr": "Ordonnance du 20 mai 2026 sur les brevets et les certificats complémentaires de protection (Ordonnance sur les brevets, OBI)",
       "titelIt": "Ordinanza del 20 maggio 2026 relativa ai brevetti e ai certificati protettivi complementari (Ordinanza sui brevetti, OBI)",
       "nichtKonsolidiert": true,
+      "wirkungen": [
+        "vollstaendige-aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/291/de",
-      "sha": "cb9b27fe86009a3ec9a6a12ba62c2658871267c6b5d9e92ca5ac05ea0651ca2d"
+      "sha": "c77ddbf0b81a958e80ba79d5c8fb9a1531cf7f42131294d1934d9d14b6b7a60d"
     },
     {
       "art": "aenderung",
@@ -27,20 +30,39 @@
       "titelFr": "Ordonnance sur les brevets et les certificats complémentaires de protection (Ordonnance sur les brevets, OBI). Erratum",
       "titelIt": "Ordinanza relativa ai brevetti e ai certificati protettivi complementari (Ordinanza sui brevetti, OBI). Correzione (Concerne soltanto il testo francese)",
       "nichtKonsolidiert": true,
+      "datumAusErlass": true,
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2026/338/de",
-      "sha": "0b94326fa9837e637a2ec3c443ed6f53828edb9cfce6db64637e93ea29a36e5a"
+      "sha": "823804643ce8ce00855fcd498a6b65ed4f4a6849498e9e3a6ba5a5394468990e"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.141",
-      "sha": "b50f7fe2a66e452c73d8a88e57f65d65a419f2e27fb23b48195ea2b9a755199a"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/376",
+      "dateDocument": "2025-05-14",
+      "roFundstelle": "AS 2025 376",
+      "titelDe": "Verordnung über die Einführung eines vereinfachten Verfahrens zur Vernichtung von Kleinsendungen im Immaterialgüterrecht",
+      "titelFr": "Ordonnance sur l’introduction d’une procédure simplifiée de destruction de petits envois dans le droit de la propriété intellectuelle",
+      "titelIt": "Ordinanza che introduce una procedura semplificata per la distruzione di piccoli invii nel diritto della proprietà intellettuale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/376/de",
+      "sha": "40938d7a69a55fd9a966a19136a24796386cfa453d6b48669a657f49cc8b15a3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.141",
-      "sha": "47098cf1606512a0a497a92be6176c395909224fbf24fa1faf9f31c9b787a5bf"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
     },
     {
       "art": "aenderung",
@@ -51,8 +73,11 @@
       "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV)",
       "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
       "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/584/de",
-      "sha": "943ad970ffc34e1b05648e6de8429948dfd349fb79660e8d73abd47e5af3448c"
+      "sha": "d9d07b3806a39f8022529d86b8053d94f17838cb8bd4f8ca05973324b195c053"
     },
     {
       "art": "aenderung",
@@ -63,14 +88,27 @@
       "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV)",
       "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
       "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2016/776/de",
-      "sha": "5b560862d65e6ab69b74bf33ae1fb69e2afdbf7b0fc081e04c36e94c4729e166"
+      "sha": "dacf3ab9d265a3d3488661aa066c1b2e95f8fd568248d64b41243bf864aff5c6"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.141",
-      "sha": "503383edf9545b95a984dc6cfa6eb6de2284e67fad7742657978fd0d978d0911"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2014/354",
+      "dateDocument": "2014-06-06",
+      "roFundstelle": "AS 2014 2051",
+      "titelDe": "Verordnung über die Ordnungsfristen im Zuständigkeitsbereich der Eidgenössischen Zollverwaltung",
+      "titelFr": "Ordonnance sur la fixation de délais d'ordre dans le domaine de l'Administration fédérale des douanes",
+      "titelIt": "Ordinanza sui termini ordinatori nell'ambito di competenza dell'Amministrazione federale delle dogane",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/354/de",
+      "sha": "cbd32507798afbb27a74977e46641b7452c2c3551ecdf44a229bf17c071d3fb0"
     },
     {
       "art": "aenderung",
@@ -81,14 +119,26 @@
       "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV)",
       "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
       "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/298/de",
-      "sha": "2f278df4624e06ec09123d14d6baac0b8460f7fc24c9899ba7b583218b2e6c32"
+      "sha": "cdf793bea12c6705f570f2047f7016218999f4f460f695018e6daa5f3decdbd9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2013-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.141",
-      "sha": "488e2d8c23b9d2f264a6bc15cac47d6474ffb969e63e767d342afd88803ca2ac"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/875",
+      "dateDocument": "2012-12-07",
+      "roFundstelle": "AS 2012 7193",
+      "titelDe": "Einheiten-Verordnung",
+      "titelFr": "Ordonnance sur les unités",
+      "titelIt": "Ordinanza sulle unità",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/875/de",
+      "sha": "813c0f62373bc3e6f529a9fa998eea69f9068c447672a6299caacea1a3004d33"
     },
     {
       "art": "aenderung",
@@ -99,14 +149,27 @@
       "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV)",
       "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
       "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/309/de",
-      "sha": "2889a2f5afb34964d1516fa9d6096208ec6fbc75a0618e1efa18df3e23d48ac5"
+      "sha": "acdbf40e01e0e0f5178f63ed204fe98720210c2335c2d1874c6d24c5f36629ae"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.141",
-      "sha": "3edb93f1e20178d9aa2b11ff25d7c868b27861d5275b729e804ff42ebbd37a4e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/466",
+      "dateDocument": "2008-06-25",
+      "roFundstelle": "AS 2008 3595",
+      "titelDe": "Verordnung über den Schutz von Pflanzenzüchtungen (Sortenschutzverordnung)",
+      "titelFr": "Ordonnance sur la protection des obtentions végétales (Ordonnance sur la protection des variétés)",
+      "titelIt": "Ordinanza sulla protezione delle novità vegetali (Ordinanza sulla protezione delle varietà)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/466/de",
+      "sha": "58d709ae5f903eef0c30c28119df760576bebc499d3dbdb12b906dfdee6e0e6f"
     },
     {
       "art": "aenderung",
@@ -117,8 +180,12 @@
       "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV)",
       "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
       "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/367/de",
-      "sha": "c711fa3e6b5a24b9a84ca7bc083449abc013acbd28aa3087aac539b25fddd845"
+      "sha": "09ee9d14476c29ce18ddcfdc155613dab451ca40159610b4e8d310528236ee12"
     },
     {
       "art": "aenderung",
@@ -129,8 +196,12 @@
       "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV)",
       "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
       "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/243/de",
-      "sha": "1e7fde769b2e385f98ccfd4ac8cff2817e6a7d33170db8330155bb76e94e126a"
+      "sha": "1ed628839f522d38fa6f5840bd1f674a97db4fe5fb9e2bec8f2e7472d6a5c344"
     },
     {
       "art": "aenderung",
@@ -141,8 +212,11 @@
       "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV)",
       "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
       "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/810/de",
-      "sha": "aada09733d90ba4b2af5a0bd7d78815660b34f1b5fa537096f14dd0e8e20a07c"
+      "sha": "df19440e08bb850c12fa0459cc04e4c028a3fdf811fe300b940616bc96f82364"
     },
     {
       "art": "aenderung",
@@ -153,8 +227,11 @@
       "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV)",
       "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
       "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/691/de",
-      "sha": "b0372c0874ef18e8aeee28cf2077ccb61970f014b7fa64dc08e89f22533a58bc"
+      "sha": "5d8f02f989356404f1ea9768267524c367b15f6816c844388e9f88b681003280"
     },
     {
       "art": "aenderung",
@@ -165,14 +242,27 @@
       "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV)",
       "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
       "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/770/de",
-      "sha": "dc83e82107711f314177f2eb0f9c6c70fb9f22581df890b8cb861ce376587c8d"
+      "sha": "d724e709cd8c68dc3714932f1f9c14b7d39a79d98f3913922ba716645faf00a9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.141",
-      "sha": "76331a4f0eb007483ccbe2b0aab049db76c2f4cbf56197f2526fe2815c1d68c2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/183",
+      "dateDocument": "2002-03-08",
+      "roFundstelle": "AS 2002 1122",
+      "titelDe": "Verordnung über den Schutz von Design (Designverordnung, DesV)",
+      "titelFr": "Ordonnance sur la protection des designs (Ordonnance sur les designs, ODes)",
+      "titelIt": "Ordinanza sulla protezione del design (Ordinanza sul design, ODes)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/183/de",
+      "sha": "d3951ffcb1c09dd036792bfef51ed1900a068245e807fda2e3f6e6f088c92cef"
     },
     {
       "art": "aenderung",
@@ -183,8 +273,12 @@
       "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV)",
       "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
       "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/413/de",
-      "sha": "49968d132d4cb07d7d5f30d32ec7a71056ccfacee259a49bcbdf0e07f015675d"
+      "sha": "1de5dcead27b4c4ea8db2c7f29ec11284fec30c473630d736c0e6a44e79ef123"
     },
     {
       "art": "aenderung",
@@ -195,33 +289,221 @@
       "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV)",
       "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
       "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1999/216/de",
-      "sha": "a78c1f8c27cea1b86b0b0cd808d08f112f607d3942ec17812323856e8f352e97"
+      "sha": "dd05fa2ccf1a944e86bdf8fdf10984afee8fe67739bf14688b59190f7a35c137"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1998-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/2171_2171_2171",
+      "dateDocument": "1997-09-17",
+      "roFundstelle": "AS 1997 2171",
+      "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung, PatV), Änderung",
+      "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets, OBI), Modification",
+      "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/2171_2171_2171/de",
+      "sha": "807967d4d3cc71a28985e95d7584357e0b02f421e990c0270f2336a08ab20544"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1997-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1532_1532_1532",
+      "dateDocument": "1996-06-11",
+      "roFundstelle": "AS 1996 1532",
+      "titelDe": "Verordnung über die Rückvergütung der von Ausländern an die Alters- und Hinterlassenenversicherung bezahlten Beiträge, Berichtigung (nur ital.)",
+      "titelFr": "Ordonnance sur le remboursement aux étrangers des cotisations versées à l'assurance-vieillesse et survivants, Errata (seulement en italien)",
+      "titelIt": "Ordinanza sul rimborso dei contributi pagati da stranieri all'assicurazione per la vecchiaia e i superstiti, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "datumAusErlass": true,
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1532_1532_1532/de",
+      "sha": "0688687a4c0f8ca0dc252668f40cf29faf01cb47917fb11190c3b4bad06efd9a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/5164_5164_5164",
+      "dateDocument": "1995-10-25",
+      "roFundstelle": "AS 1995 5164",
+      "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung), Änderung",
+      "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets), Modification",
+      "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/5164_5164_5164/de",
+      "sha": "81f7b7cc40ad7139c34053e30e8c4a681365965bb4a3d44cae78de1e7476b7ed"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/__1532",
+      "dateDocument": "1996-06-11",
+      "titelIt": "Ordinanza sui brevetti, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/__1532/de",
+      "sha": "391ea7db840393b6ab4c4800e90ae4620f7519da6157f3c8e9380461489db56a"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/3660_3660_3660",
+      "dateDocument": "1995-05-17",
+      "roFundstelle": "AS 1995 3660",
+      "titelDe": "Verordnung über die Erfindungspatente (Patentverordnung), Änderung",
+      "titelFr": "Ordonnance relative aux brevets d'invention (Ordonnance sur les brevets), Modification",
+      "titelIt": "Ordinanza relativa ai brevetti d'invenzione (Ordinanza sui brevetti), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/3660_3660_3660/de",
+      "sha": "ebb9186d0da306da6c718aa8dddc619660c24d8ac19819c0eb4f1591832599aa"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1993-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/879_879_879",
+      "dateDocument": "1993-02-03",
+      "roFundstelle": "AS 1993 879",
+      "titelDe": "Verordnung vom 3. Februar 1993 über Organisation und Verfahren eidgenössischer Rekurs- und Schiedskommissionen",
+      "titelFr": "Ordonnance du 3 février 1993 concernant l'organisation et la procédure des commissions fédérales de recours et d'arbitrage",
+      "titelIt": "Ordinanza del 3 febbraio 1993 concernente l'organizzazione e la procedura delle commissioni federali di ricorso e di arbitrato",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/879_879_879/de",
+      "sha": "eeb2edaf5b59d7597d4dc7fece357503928244745845e337709f59a66830c539"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/2565_2565_2565",
+      "dateDocument": "1991-12-02",
+      "roFundstelle": "AS 1991 2565",
+      "titelDe": "Patentverordnung, Änderung",
+      "titelFr": "Ordonnance sur les brevets, Modification",
+      "titelIt": "Ordinanza relativa ai brevetti d'invenzione, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1992-01-01",
+        "1992-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/2565_2565_2565/de",
+      "sha": "e2eb30cd318dd84546da6d17ae00bf165d16ce698b5e12ea7ab2db91f5e7d57e"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1991/2565_2565_2565",
+      "dateDocument": "1991-12-02",
+      "roFundstelle": "AS 1991 2565",
+      "titelDe": "Patentverordnung, Änderung",
+      "titelFr": "Ordonnance sur les brevets, Modification",
+      "titelIt": "Ordinanza relativa ai brevetti d'invenzione, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "1992-01-01",
+        "1992-07-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1991/2565_2565_2565/de",
+      "sha": "7609c8619ed53766aa9858623fe177b734af9ea309ff0eacccc8a51e3df084a7"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/1448_1448_1448",
+      "dateDocument": "1986-08-12",
+      "roFundstelle": "AS 1986 1448",
+      "titelDe": "Patentverordnung, Änderung",
+      "titelFr": "Ordonnance sur les brevets, Modification",
+      "titelIt": "Ordinanza sui brevetti, Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/1448_1448_1448/de",
+      "sha": "eb9ea41e4a9af6681605027ca72b060a049178a7862729838dcc04411f7c9ff3"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1987-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1986/__2535",
+      "dateDocument": "1986-12-23",
+      "titelIt": "Ordinanza sui brevetti, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1986/__2535/de",
+      "sha": "d4fc9a15872bfb70e88960076b03b45d7d6e135b99710f2bfb2f550f18ad65a6"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/1478_1478_1478",
+      "dateDocument": "1983-09-14",
+      "roFundstelle": "AS 1983 1478",
+      "titelDe": "Verordnung über Gebühren des Eidgenössischen Amtes für geisitges Eigentum (Gebührenordnung), Änderung",
+      "titelFr": "Ordonnance sur les taxes du Bureau fédéral de la propriété intellectuelle (Ordonnance sur les taxes), Modification",
+      "titelIt": "Ordinanza sulle tasse dell'Ufficio federale della proprietà intellettuale (Ordinanza sulle tasse), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/1478_1478_1478/de",
+      "sha": "393d20285d8595c2d224737182b82ccf333b57babfd928b890cf69d4cf6dade4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1984-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1983/899_899_899",
+      "dateDocument": "1983-04-27",
+      "roFundstelle": "AS 1983 899",
+      "titelDe": "Verordnung über die Erfindungspatente, Änderung",
+      "titelFr": "Ordonnance relative aux brevets d'invention, Modification",
+      "titelIt": "Ordinanza relativa ai brevetti d'invenzione, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1983/899_899_899/de",
+      "sha": "02d73b5a0b570e34d09aa518a9d0c45df1d5f0a3d17bd9213045ce8b4ee5f489"
     },
     {
       "art": "aenderung",
       "dateEntryInForce": "1978-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1977/2027_2027_2027",
-      "dateDocument": "1977-10-19",
-      "roFundstelle": "AS 1977 2027",
-      "titelDe": "Verordnung vom 19. Oktober 1977 über die Erfindungspatente (Patentverordnung, PatV)",
-      "titelFr": "Ordonnance du 19 octobre 1977 relative aux brevets d'invention (Ordonnance sur les brevets, OBI)",
-      "titelIt": "Ordinanza del 19 ottobre 1977 relativa ai brevetti d'invenzione (Ordinanza sui brevetti, OBI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1977/2027_2027_2027/de",
-      "sha": "4572c47440ca5a0028da1978836ccc29ce0fc32045ad47e475efdb868f890141"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/__208",
+      "dateDocument": "1978-02-21",
+      "titelIt": "Ordinanza relativa ai brevetti d'invenzione, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/__208/de",
+      "sha": "8dd498d11c4e042def84a5469bce616470c9dd6347825700b6ea84effe66b1dc"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1960-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1959/1979_2041_2065",
-      "dateDocument": "1959-12-14",
-      "roFundstelle": "AS 1959 1979",
-      "titelDe": "Verordnung (1) zum Bundesgesetz vom 14. Dezember 1959 über die Erfindungspatente Titel I und II (PatV 1)",
-      "titelFr": "Ordonnance (1) du 14 décembre 1959 relative à la loi fédéral sur les brevets d'invention, titres premier et deuxième (OBI 1)",
-      "titelIt": "Ordinanza (1) del 14 dicembre 1959 per la legge federale sui brevetti d'invenzione, titolo primo e secondo (OBI 1)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1959/1979_2041_2065/de",
-      "sha": "cf21faa3e3f5b3017315476b7aabef4ba864b2ab6946a022823553024806e2f7"
+      "dateEntryInForce": "1978-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1978/__74",
+      "dateDocument": "1978-01-31",
+      "titelIt": "Ordinanza relativa ai brevetti d'invenzione, Correzione",
+      "wirkungen": [
+        "berichtigung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1978/__74/de",
+      "sha": "3393446023344d94892bc842853341e4d6f420ddabeddf610c6b3ddba7011c25"
     }
   ],
-  "sha": "baf7345eeccc4d4be73f9cec6c53c981ce3f7ca034471d615c5aa0fc4cdc4750"
+  "sha": "7abf734612b7047cf22ba3de39ae6286b854e7a1f2be795b0dcd5b316b2e112b"
 }

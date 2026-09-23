@@ -915,5 +915,152 @@
     "2020-05-08"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1990/1112_1112_1112",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1990/1112_1112_1112",
+    "inkrafttreten": "1990-06-06",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/1111_1111_1111",
+        "typ": 3,
+        "datum": "1990-06-06",
+        "fassung": "1990-06-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/1112_1112_1112",
+        "typ": 5,
+        "datum": "1990-06-06",
+        "fassung": "1990-06-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/815_815_815",
+        "typ": 1,
+        "datum": "1991-04-01",
+        "fassung": "1991-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/815_815_815",
+        "typ": 9,
+        "datum": "1991-04-01",
+        "fassung": "1991-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/1902_1902_1902",
+        "typ": 1,
+        "datum": "1993-06-01",
+        "fassung": "1993-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/1902_1902_1902",
+        "typ": 9,
+        "datum": "1993-06-01",
+        "fassung": "1993-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/605",
+        "typ": 1,
+        "datum": "2003-09-18",
+        "fassung": "2003-09-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/605",
+        "typ": 9,
+        "datum": "2003-09-18",
+        "fassung": "2003-09-18"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/204",
+        "typ": 1,
+        "datum": "2006-01-26",
+        "fassung": "2006-01-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/204",
+        "typ": 9,
+        "datum": "2006-01-26",
+        "fassung": "2006-01-26"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/208",
+        "typ": 1,
+        "datum": "2009-03-04",
+        "fassung": "2009-03-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/208",
+        "typ": 9,
+        "datum": "2009-03-04",
+        "fassung": "2009-03-04"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/533",
+        "typ": 6,
+        "datum": "1990-06-06",
+        "fassung": "1990-06-06"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/408",
+        "typ": 1,
+        "datum": "2012-06-15",
+        "fassung": "2012-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/408",
+        "typ": 9,
+        "datum": "2012-06-15",
+        "fassung": "2012-06-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/127",
+        "typ": 1,
+        "datum": "2015-02-24",
+        "fassung": "2015-02-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/127",
+        "typ": 9,
+        "datum": "2015-02-24",
+        "fassung": "2015-02-24"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/355",
+        "typ": 1,
+        "datum": "2020-05-08",
+        "fassung": "2020-05-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/355",
+        "typ": 9,
+        "datum": "2020-05-08",
+        "fassung": "2020-05-08"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1990/1111_1111_1111": {
+        "dateForce": "1990-06-06",
+        "dateDoc": "1989-12-15",
+        "roId": "RO 1990 1111",
+        "titelDe": "Bundesbeschluss vom 15. Dezember 1989 betreffend die Wiener Konvention über das Recht der Verträge",
+        "titelFr": "Arrêté fédéral du 15 décembre 1989 relatif à l'approbation de la Convention de Vienne sur le droit des traités",
+        "titelIt": "Decreto federale del 15 dicembre 1989 che approva la Convenzione di Vienna sul diritto dei trattati"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/815_815_815": {
+        "dateForce": "1991-04-01",
+        "dateDoc": "1991-04-01",
+        "roId": "RO 1991 815",
+        "titelDe": "Wiener Übereinkommen vom 23. Mai 1969 über das Recht der Verträge",
+        "titelFr": "Convention de Vienne du 23 mai 1969 sur le droit des traités",
+        "titelIt": "Convenzione di Vienna del 23 maggio 1969 sul diritto dei trattati"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/1902_1902_1902": {
+        "dateForce": "1993-06-01",
+        "dateDoc": "1993-06-01",
+        "roId": "RO 1993 1902",
+        "titelDe": "Wiener Übereinkommen vom 23. Mai 1969 über das Recht der Verträge, Änderung",
+        "titelFr": "Convention de Vienne du 23 mai 1969 sur le droit des traités, Modification",
+        "titelIt": "Convenzione di Vienna del 23 maggio 1969 sul diritto dei trattati, Modifica"
+      }
+    }
+  }
 }

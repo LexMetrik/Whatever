@@ -1,26 +1,70 @@
 {
   "erlassKey": "BGBM",
   "sr": "943.02",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/943.02",
-      "sha": "fc0d22368e085d0dd87ac71098837f47daa8398e764f46c132e9d994f04be842"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2024/376",
+      "dateDocument": "2024-03-15",
+      "roFundstelle": "AS 2024 376",
+      "titelDe": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
+      "titelFr": "Loi fédérale sur la réduction des émissions de CO2 (Loi sur le CO2)",
+      "titelIt": "Legge federale sulla riduzione delle emissioni di CO2 (Legge sul CO2)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/376/de",
+      "sha": "f4471d737e662604575d347aee9039fca75f788855fa60d472fa23f2f2a43df1"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2021-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/943.02",
-      "sha": "c4cc6597efff7114e9fb3f08e09a7a8901d6fd4de41319d1faf6b860e5d7566b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/126",
+      "dateDocument": "2019-06-21",
+      "roFundstelle": "AS 2020 641",
+      "titelDe": "Bundesgesetz über das öffentliche Beschaffungswesen (BöB)",
+      "titelFr": "Loi fédérale sur les marchés publics (LMP)",
+      "titelIt": "Legge federale sugli appalti pubblici (LAPub)",
+      "botschaftKey": "BOTSCHAFT-2017-417",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/126/de",
+      "sha": "b15cee4769088129e107fb7b56f68478ed29ff951120153418df172c792b6a07"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/943.02",
-      "sha": "7f884b27ea34bc4d9d2fda3c003a691d8baef44acaa9909978810634ec32ed20"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "d6cd03b7c2831958ce441a487bc6fac4accac9a8daebbcf35f036ce42952aeb4"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2007-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+      "dateDocument": "2002-12-13",
+      "roFundstelle": "AS 2006 3459",
+      "titelDe": "Schweizerisches Strafgesetzbuch",
+      "titelFr": "Code pénal suisse",
+      "titelIt": "Codice penale svizzero",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "sha": "f3d40216a76417678765fb364155fadd0e47b2331ac3fc00afd66f3da9d412db"
     },
     {
       "art": "aenderung",
@@ -32,21 +76,13 @@
       "titelFr": "Loi fédérale sur le marché intérieur (LMI)",
       "titelIt": "Legge federale sul mercato interno (LMI)",
       "botschaftKey": "BOTSCHAFT-2005-54",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/364/de",
-      "sha": "c3a6643ed43354e217c6973994cf0134fd2eb460634f94c7dd47ab6fe136f88b"
-    },
-    {
-      "art": "aenderung",
-      "dateEntryInForce": "1996-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/1738_1738_1738",
-      "dateDocument": "1995-10-06",
-      "roFundstelle": "AS 1996 1738",
-      "titelDe": "Bundesgesetz vom 6. Oktober 1995 über den Binnenmarkt (Binnenmarktgesetz, BGBM)",
-      "titelFr": "Loi fédérale du 6 octobre 1995 sur le marché intérieur (LMI)",
-      "titelIt": "Legge federale del 6 ottobre 1995 sul mercato interno (LMI)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/1738_1738_1738/de",
-      "sha": "d9f2eeec455f32a3cc47524f6a3ffbd847ae06a4b7a948c550c12536f9a63975"
+      "sha": "63c013abd5a96c32f1470acfa3907608a34546131a7230b38e9589b4e5f0e877"
     }
   ],
-  "sha": "2f539b653c812bfe10f5af31f69eb433a3da1df4fc744d6c9ec50963228c66e5"
+  "sha": "e27f70bf54e807896768c92b96d32985db3616ec8f3ecd1efe49bc8a0c01ba2c"
 }

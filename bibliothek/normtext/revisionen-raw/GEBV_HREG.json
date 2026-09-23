@@ -403,5 +403,19 @@
     "2021-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2020/180",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2020/180",
+    "inkrafttreten": "2021-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/180",
+        "typ": 5,
+        "datum": "2021-01-01",
+        "fassung": "2021-01-01"
+      }
+    ],
+    "ocStamm": {}
+  }
 }

@@ -818,5 +818,398 @@
     "2025-08-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1992/2538_2538_2538",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1992/2538_2538_2538",
+    "inkrafttreten": "1993-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/2538_2538_2538",
+        "typ": 5,
+        "datum": "1993-01-01",
+        "fassung": "1993-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/706_706_706",
+        "typ": 6,
+        "datum": "1993-01-01",
+        "fassung": "1993-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/292_292_292",
+        "typ": 6,
+        "datum": "1993-01-01",
+        "fassung": "1993-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2243_2243_2243",
+        "typ": 1,
+        "datum": "1996-08-01",
+        "fassung": "1996-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779",
+        "typ": 1,
+        "datum": "1998-01-01",
+        "fassung": "1998-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822",
+        "typ": 1,
+        "datum": "1998-08-01",
+        "fassung": "1998-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1999/321",
+        "typ": 1,
+        "datum": "1999-08-01",
+        "fassung": "1999-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/121",
+        "typ": 1,
+        "datum": "2000-03-01",
+        "fassung": "2000-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/105",
+        "typ": 1,
+        "datum": "2001-03-01",
+        "fassung": "2001-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/174",
+        "typ": 1,
+        "datum": "2001-07-01",
+        "fassung": "2001-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2001/275",
+        "typ": 1,
+        "datum": "2001-10-01",
+        "fassung": "2001-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/748",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2004-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/748",
+        "typ": 1,
+        "datum": "2004-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/458",
+        "typ": 1,
+        "datum": "2005-01-01",
+        "fassung": "2005-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/464",
+        "typ": 1,
+        "datum": "2005-08-01",
+        "fassung": "2005-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/464",
+        "typ": 2,
+        "datum": "2005-08-01",
+        "fassung": "2005-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/578",
+        "typ": 1,
+        "datum": "2006-10-01",
+        "fassung": "2006-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/789",
+        "typ": 2,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/389",
+        "typ": 1,
+        "datum": "2008-07-01",
+        "fassung": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/614",
+        "typ": 1,
+        "datum": "2008-10-01",
+        "fassung": "2008-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/103",
+        "typ": 1,
+        "datum": "2011-03-01",
+        "fassung": "2011-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/752",
+        "typ": 1,
+        "datum": "2012-01-01",
+        "fassung": "2012-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/419",
+        "typ": 1,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/419",
+        "typ": 2,
+        "datum": "2013-07-01",
+        "fassung": "2013-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/63",
+        "typ": 1,
+        "datum": "2015-03-01",
+        "fassung": "2015-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/63",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/539",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/539",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/539",
+        "typ": 2,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/682",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/286",
+        "typ": 1,
+        "datum": "2020-01-01",
+        "fassung": "2020-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/294",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2021-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/252",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/450",
+        "typ": 1,
+        "datum": "2025-08-01",
+        "fassung": "2025-08-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1993/706_706_706": {
+        "dateForce": "1993-01-01",
+        "dateDoc": "1993-02-09",
+        "roId": "RO 1993 706",
+        "titelDe": "Verordnung über den forstlichen Pflanzenschutz im Zusammenhang mit dem grenzüberschreitenden Warenverkehr (Forstliche Pflanzenschutzverordnung), Berichtigung (nur ital.)",
+        "titelFr": "Ordonnance sur la protection des végétaux forestiers dans le cadre du trafic transfrontière de marchandises (Ordonnance sur la protections des végétaux forestiers), Errata (seulement en italien)",
+        "titelIt": "Ordinanza concernente la protezione delle essenze forestali nell'ambito della circolazione transfrontaliera delle merci (Ordonnance sulla protezione delle essenze forestali), Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/292_292_292": {
+        "dateForce": "1993-01-01",
+        "dateDoc": "1994-01-28",
+        "roId": "RO 1994 292",
+        "titelDe": "Verordnung über den Wald (Waldverordnung, WaV), Berichtigung",
+        "titelFr": "Ordonnance sur les forêts (OFo), Errata",
+        "titelIt": "Ordinanza sulle foreste (OFo), Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/2243_2243_2243": {
+        "dateForce": "1996-08-01",
+        "dateDoc": "1996-06-26",
+        "roId": "RO 1996 2243",
+        "titelDe": "Verordnung vom 26. Juni 1996 über die Neuzuordnung von Entscheidungsbefugnissen in der Bundesverwaltung",
+        "titelFr": "Ordonnance du 26 juin 1996 sur l'attribution de nouvelles compétences de décision dans l'administration fédérale",
+        "titelIt": "Ordinanza del 26 giugno 1996 sulla nuova attribuzione delle competenze decisionali nell'Amministrazione federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2779_2779_2779": {
+        "dateForce": "1998-01-01",
+        "dateDoc": "1997-12-01",
+        "roId": "RO 1997 2779",
+        "titelDe": "Verordnung vom 1. Dezember 1997 über die Aufhebung und die Änderung von Verordnungen aufgrund der PTT-Reform",
+        "titelFr": "Ordonnance du 1<sup>er</sup> décembre 1997 concernant l'abrogation et la modification d'ordonnances découlant de la réforme des PTT",
+        "titelIt": "Ordinanza del 1° dicembre 1997 sull'abrogazione e la modifica di ordinanze in base alla riforma delle PTT"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/1822_1822_1822": {
+        "dateForce": "1998-08-01",
+        "dateDoc": "1998-06-22",
+        "roId": "RO 1998 1822",
+        "titelDe": "Verordnung vom 22 Juni 1998 über die Änderung von Erlassen im Zusammenhang mit der Reorganisation des Eidgenössischen Volkswirtschaftsdepartementes",
+        "titelFr": "Ordonnance du 22 juin 1998 concernant les modifications d'actes législatifs en rapport avec la réorganisation du Département fédéral de l'économie",
+        "titelIt": "Ordinanza del 22 giugno 1998 concernente le modifiche di atti normativi in rapporto alla riorganizzazione del Dipartimento federale dell'economia"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1999/321": {
+        "dateForce": "1999-08-01",
+        "dateDoc": "1999-06-23",
+        "roId": "RO 1999 2045",
+        "titelDe": "Verordnung über die Zulassung von Pflanzenschutzmitteln (Pflanzenschutzmittel-Verordnung)",
+        "titelFr": "Ordonnance sur l'homologation de produits phytosanitaires (Ordonnance sur les produits phytosanitaires)",
+        "titelIt": "Ordinanza concernente l'omologazione dei prodotti fitosanitari (Ordinanza sui prodotti fitosanitari)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/121": {
+        "dateForce": "2000-03-01",
+        "dateDoc": "2000-02-02",
+        "roId": "RO 2000 703",
+        "titelDe": "Verordnung zum Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+        "titelFr": "Ordonnance relative à la loi fédérale sur la coordination et la simplification des procédures de décision",
+        "titelIt": "Ordinanza relativa alla legge federale sul coordinamento e la semplificazione delle procedure d'approvazione dei piani"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2001/105": {
+        "dateForce": "2001-03-01",
+        "dateDoc": "2001-01-10",
+        "roId": "RO 2001 522",
+        "titelDe": "Verordnung über das Inverkehrbringen von Düngern (Dünger-Verordnung, DüV)",
+        "titelFr": "Ordonnance sur la mise en circulation des engrais (Ordonnance sur les engrais, OEng)",
+        "titelIt": "Ordinanza sulla messa in commercio di concimi (Ordinanza sui concimi, OCon)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2001/174": {
+        "dateForce": "2001-07-01",
+        "dateDoc": "2001-02-28",
+        "roId": "RO 2001 1191",
+        "titelDe": "Verordnung über Pflanzenschutz (Pflanzenschutzverordnung, PSV)",
+        "titelFr": "Ordonnance sur la protection des végétaux (OPV)",
+        "titelIt": "Ordinanza sulla protezione dei vegetali (OPV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2001/275": {
+        "dateForce": "2001-10-01",
+        "dateDoc": "2001-06-15",
+        "roId": "RO 2001 1758",
+        "titelDe": "Verordnung über umweltgefährdende Stoffe (Stoffverordnung, StoV)",
+        "titelFr": "Ordonnance sur les substances dangereuses pour l'environnement (Ordonnance sur les substances, Osubst)",
+        "titelIt": "Ordinanza sulle sostanze pericolose per l'ambiente (Ordinanza sulle sostanze, Osost)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/748": {
+        "dateForce": "2004-01-01",
+        "dateDoc": "2003-11-19",
+        "roId": "RO 2003 5047",
+        "titelDe": "Verordnung über die Berufsbildung (Berufsbildungsverordnung, BBV)",
+        "titelFr": "Ordonnance sur la formation professionnelle (OFPr)",
+        "titelIt": "Ordinanza sulla formazione professionale (OFPr)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/464": {
+        "dateForce": "2005-08-01",
+        "dateDoc": "2005-05-18",
+        "roId": "RO 2005 2695",
+        "titelDe": "Verordnung über die Aufhebung und Änderung von Verordnungen im Zusammenhang mit dem Inkrafttreten des Chemikaliengesetzes",
+        "titelFr": "Ordonnance sur l'abrogation et la modification du droit en vigueur du fait de la loi sur les produits chimiques",
+        "titelIt": "Ordinanza sull'abrogazione e la modifica di ordinanze in relazione con l'entrata in vigore della legge sui prodotti chimici"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/789": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-11-07",
+        "roId": "RO 2007 5823",
+        "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
+        "titelFr": "Ordonnance sur les adaptations des ordonnances touchées par la réforme de la péréquation financière et de la répartition des tâches entre la Confédération et les cantons",
+        "titelIt": "Ordinanza che adegua il diritto regolamentare alla Nuova impostazione della perequazione finanziaria e della ripartizione dei compiti tra Confederazione e Cantoni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/389": {
+        "dateForce": "2008-07-01",
+        "dateDoc": "2008-05-21",
+        "roId": "RO 2008 2809",
+        "titelDe": "Verordnung über Geoinformation (Geoinformationsverordnung, GeoIV)",
+        "titelFr": "Ordonnance sur la géoinformation (OGéo)",
+        "titelIt": "Ordinanza sulla geoinformazione (OGI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/614": {
+        "dateForce": "2008-10-01",
+        "dateDoc": "2008-09-10",
+        "roId": "RO 2008 4377",
+        "titelDe": "Verordnung über den Umgang mit Organismen in der Umwelt (Freisetzungsverordnung, FrSV)",
+        "titelFr": "Ordonnance sur l'utilisation d'organismes dans l'environnement (Ordonnance sur la dissémination dans l'environnement, ODE)",
+        "titelIt": "Ordinanza sull'utilizzazione di organismi nell'ambiente (Ordinanza sull'emissione deliberata nell'ambiente, OEDA)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/103": {
+        "dateForce": "2011-03-01",
+        "dateDoc": "2011-02-02",
+        "roId": "RO 2011 649",
+        "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Weiterentwicklung der Programmvereinbarungen im Umweltbereich",
+        "titelFr": "Ordonnance concernant l'adaptation des ordonnances d'exécution au développement des conventions-programmes dans le domaine de l'environnement",
+        "titelIt": "Ordinanza che adegua ordinanze allo sviluppo degli accordi programmatici nel settore ambientale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/752": {
+        "dateForce": "2012-01-01",
+        "dateDoc": "2011-11-09",
+        "roId": "RO 2011 5227",
+        "titelDe": "Verordnung über die Anpassung rechtlicher Bestimmungen infolge der Überprüfung der ausserparlamentarischen Kommissionen",
+        "titelFr": "Ordonnance sur l'adaptation de dispositions juridiques à la suite du réexamen des commissions extraparlementaires",
+        "titelIt": "Ordinanza che adegua le disposizioni legali in seguito alla verifica delle commissioni extraparlamentari"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/63": {
+        "dateForce": "2015-03-01",
+        "dateDoc": "2015-01-28",
+        "roId": "RO 2015 427",
+        "titelDe": "Verordnung über Anpassungen des Verordnungsrechts im Umweltbereich, insbesondere hinsichtlich der Programmvereinbarungen für die Programmperiode 20162019",
+        "titelFr": "Ordonnance sur les adaptations d'ordonnances dans le domaine de l'environnement, liées en particulier aux conventions-programmes à conclure pour la période allant de 2016 à 2019",
+        "titelIt": "Ordinanza che adegua ordinanze nel settore ambientale, legate in particolare agli accordi programmatici per il periodo 20162019"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/682": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2018-10-31",
+        "roId": "RO 2018 4209",
+        "titelDe": "Verordnung über den Schutz von Pflanzen vor besonders gefährlichen Schadorganismen (Pflanzengesundheitsverordnung, PGesV)",
+        "titelFr": "Ordonnance sur la protection des végétaux contre les organismes nuisibles particulièrement dangereux (Ordonnance sur la santé des végétaux, OSaVé)",
+        "titelIt": "Ordinanza sulla protezione dei vegetali da organismi nocivi particolarmente pericolosi (Ordinanza sulla salute dei vegetali, OSalV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/286": {
+        "dateForce": "2020-01-01",
+        "dateDoc": "2019-04-17",
+        "roId": "RO 2019 1487",
+        "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Weiterentwicklung der Programmvereinbarungen im Umweltbereich für die Programmperiode 20202024",
+        "titelFr": "Ordonnance sur les adaptations d'ordonnances au développement des conventions-programmes dans le domaine de l'environnement pour la période 20202024",
+        "titelIt": "Ordinanza che adegua ordinanze in materia ambientale all'ulteriore sviluppo degli accordi programmatici del periodo programmatico 20202024"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/252": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2024-05-31",
+        "titelDe": "Verordnung über Anpassungen des Verordnungsrechts an die Weiterentwicklung der Programmvereinbarungen im Umweltbereich für die Programmperiode 2025–2028",
+        "titelFr": "Ordonnance concernant l’adaptation d’ordonnances au développement des conventions-programmes dans le domaine de l’environnement pour la période 2025-2028",
+        "titelIt": "Ordinanza che adegua ordinanze in materia ambientale all’ulteriore sviluppo degli accordi programmatici del periodo programmatico 2025–2028"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/450": {
+        "dateForce": "2025-08-01",
+        "dateDoc": "2025-06-25",
+        "titelDe": "Verordnung vom 25. Juni 2025 über den Wasserbau (Wasserbauverordnung, WBV)",
+        "titelFr": "Ordonnance du 25 juin 2025 sur l’aménagement des cours d’eau (OACE)",
+        "titelIt": "Ordinanza del 25 giugno 2025 sulla sistemazione dei corsi d’acqua (OSCA)"
+      }
+    }
+  }
 }

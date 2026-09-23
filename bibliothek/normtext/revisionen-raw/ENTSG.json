@@ -441,5 +441,174 @@
     "2024-01-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2003/231",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2003/231",
+    "inkrafttreten": "2003-06-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/231",
+        "typ": 5,
+        "datum": "2003-06-01",
+        "fassung": "2003-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/231",
+        "typ": 30,
+        "datum": "2004-06-01",
+        "fassung": "2004-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/178",
+        "typ": 1,
+        "datum": "2006-04-01",
+        "fassung": "2006-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 2,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/549",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/171",
+        "typ": 1,
+        "datum": "2011-04-01",
+        "fassung": "2011-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/419",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/811",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/811",
+        "typ": 1,
+        "datum": "2013-05-01",
+        "fassung": "2013-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/450",
+        "typ": 1,
+        "datum": "2013-07-15",
+        "fassung": "2013-07-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2017/184",
+        "typ": 1,
+        "datum": "2017-04-01",
+        "fassung": "2017-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/278",
+        "typ": 1,
+        "datum": "2018-12-14",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/170",
+        "typ": 1,
+        "datum": "2020-04-01",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/170",
+        "typ": 5,
+        "datum": "2020-04-01",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/641",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2006/178": {
+        "dateForce": "2006-04-01",
+        "dateDoc": "2004-12-17",
+        "roId": "RO 2006 979",
+        "titelDe": "Bundesbeschluss über die Genehmigung und Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf die neuen EG-Mitgliedstaaten zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits sowie über die Genehmigung der Revision der flankierenden Massnahmen zur Personenfreizügigkeit",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre du protocole relatif à l'extension de l'accord entre la Confédération suisse, d'une part, et la Communauté européenne et ses Etats membres, d'autre part, sur la libre circulation des personnes aux nouveaux Etats membres de la Communauté européenne et portant approbation de la révision des mesures d'accompagnement concernant la libre circulation des personnes",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero, mediante revisione delle misure collaterali, il Protocollo concluso con la Comunità europea e i suoi Stati membri relativo all'estensione dell'Accordo sulla libera circolazione delle persone ai nuovi Stati membri della Comunità europea"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/549": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2002-12-13",
+        "roId": "RO 2006 3459",
+        "titelDe": "Schweizerisches Strafgesetzbuch",
+        "titelFr": "Code pénal suisse",
+        "titelIt": "Codice penale svizzero"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2011/171": {
+        "dateForce": "2011-04-01",
+        "dateDoc": "2010-03-19",
+        "roId": "RO 2011 1167",
+        "titelDe": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+        "titelFr": "Loi fédérale sur l'assurance-chômage obligatoire et l'indemnité en cas d'insolvabilité (Loi sur l'assurance-chômage, LACI)",
+        "titelIt": "Legge federale sull'assicurazione obbligatoria contro la disoccupazione e l'indennità per insolvenza (Legge sull'assicurazione contro la disoccupazione, LADI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/419": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 3655",
+        "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+        "titelFr": "Ordonnance portant adaptation de lois par suite de la réorganisation des départements",
+        "titelIt": "Ordinanza sull'adeguamento di disposizioni di legge a seguito della riorganizzazione dei dipartimenti"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/811": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 6703",
+        "titelDe": "Bundesgesetz über die Anpassung der flankierenden Massnahmen zur Personenfreizügigkeit",
+        "titelFr": "Loi fédérale portant modification des mesures d'accompagnement à la libre circulation des personnes",
+        "titelIt": "Legge federale sull'adeguamento delle misure collaterali alla libera circolazione delle persone"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/278": {
+        "dateForce": "2019-06-01",
+        "dateDoc": "2018-12-14",
+        "roId": "RO 2019 1413",
+        "titelDe": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG) (Verfahrensregelungen und Informationssysteme)",
+        "titelFr": "Loi fédérale sur les étrangers et l'intégration (LEI) (Normes procédurales et systèmes d'information)",
+        "titelIt": "Legge federale sugli stranieri e la loro integrazione (LStrI) (Norme procedurali e sistemi d'informazione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/170": {
+        "dateForce": "2020-04-01",
+        "dateDoc": "2020-02-19",
+        "roId": "RO 2020 881",
+        "titelDe": "Verordnung über eine Teilinkraftsetzung der Änderung vom 14. Dezember 2018 des Ausländer- und Integrationsgesetz",
+        "titelFr": "Ordonnance portant mise en vigueur partielle de la modification du 14 décembre 2018 de la loi sur les étrangers et l'intégration",
+        "titelIt": "Ordinanza concernente l'entrata in vigore parziale della modifica del 14 dicembre 2018 della legge federale sugli stranieri e la loro integrazione"
+      }
+    }
+  }
 }

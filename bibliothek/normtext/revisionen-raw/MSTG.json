@@ -825,5 +825,1037 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2026/164",
       "zielFundstelle": "AS 2026 164"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/43/359_375_369",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/43/359_375_369",
+    "inkrafttreten": "1928-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1951/437_439_435",
+        "typ": 1,
+        "datum": "1951-07-01",
+        "fassung": "1951-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1968/212_228_228",
+        "typ": 1,
+        "datum": "1968-03-01",
+        "fassung": "1968-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1968/444_468_468",
+        "typ": 1,
+        "datum": "1968-03-01",
+        "fassung": "1968-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1968/444_468_468",
+        "typ": 6,
+        "datum": "1968-03-01",
+        "fassung": "1968-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/55_55_55",
+        "typ": 1,
+        "datum": "1975-02-01",
+        "fassung": "1975-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1975/600_600_600",
+        "typ": 6,
+        "datum": "1975-02-01",
+        "fassung": "1975-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1979/1037_1037_1037",
+        "typ": 1,
+        "datum": "1980-01-01",
+        "fassung": "1980-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1979/1037_1037_1037",
+        "typ": 2,
+        "datum": "1980-01-01",
+        "fassung": "1980-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/1535_1535_1535",
+        "typ": 1,
+        "datum": "1982-10-01",
+        "fassung": "1982-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/1535_1535_1535",
+        "typ": 2,
+        "datum": "1982-10-01",
+        "fassung": "1982-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/2232_2232_2232",
+        "typ": 6,
+        "datum": "1982-10-01",
+        "fassung": "1982-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1982/846_846_846",
+        "typ": 1,
+        "datum": "1983-01-01",
+        "fassung": "1983-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/2449_2449_2449",
+        "typ": 1,
+        "datum": "1990-01-01",
+        "fassung": "1990-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1989/2449_2449_2449",
+        "typ": 2,
+        "datum": "1990-01-01",
+        "fassung": "1990-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/1882_1882_1882",
+        "typ": 1,
+        "datum": "1991-01-01",
+        "fassung": "1991-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/1352_1352_1352",
+        "typ": 1,
+        "datum": "1991-07-15",
+        "fassung": "1991-07-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1991/2512_2512_2512",
+        "typ": 1,
+        "datum": "1992-01-01",
+        "fassung": "1992-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670",
+        "typ": 1,
+        "datum": "1992-10-01",
+        "fassung": "1992-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670",
+        "typ": 2,
+        "datum": "1992-10-01",
+        "fassung": "1992-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/1679_1679_1679",
+        "typ": 1,
+        "datum": "1992-09-01",
+        "fassung": "1992-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1992/2465_2465_2465",
+        "typ": 1,
+        "datum": "1993-01-01",
+        "fassung": "1993-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/1614_1614_1614",
+        "typ": 1,
+        "datum": "1994-08-01",
+        "fassung": "1994-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/1614_1614_1614",
+        "typ": 2,
+        "datum": "1994-08-01",
+        "fassung": "1994-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290",
+        "typ": 1,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290",
+        "typ": 2,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1994/2887_2887_2887",
+        "typ": 1,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/4093_4093_4093",
+        "typ": 1,
+        "datum": "1996-01-01",
+        "fassung": "1996-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1445_1445_1445",
+        "typ": 1,
+        "datum": "1996-10-01",
+        "fassung": "1996-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/1445_1445_1445",
+        "typ": 2,
+        "datum": "1996-10-01",
+        "fassung": "1996-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/1626_1626_1626",
+        "typ": 1,
+        "datum": "1997-09-01",
+        "fassung": "1997-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/852_852_852",
+        "typ": 1,
+        "datum": "1998-04-01",
+        "fassung": "1998-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/180",
+        "typ": 1,
+        "datum": "2000-05-01",
+        "fassung": "2000-05-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/454",
+        "typ": 1,
+        "datum": "2000-03-24",
+        "fassung": "2020-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/95",
+        "typ": 1,
+        "datum": "2000-03-01",
+        "fassung": "2000-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/236",
+        "typ": 1,
+        "datum": "2001-06-22",
+        "fassung": "2020-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/236",
+        "typ": 1,
+        "datum": "2002-07-01",
+        "fassung": "2002-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/428",
+        "typ": 1,
+        "datum": "2002-10-01",
+        "fassung": "2002-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/430",
+        "typ": 1,
+        "datum": "2002-10-01",
+        "fassung": "2002-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/465",
+        "typ": 6,
+        "datum": "2002-10-01",
+        "fassung": "2002-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/314",
+        "typ": 1,
+        "datum": "2002-10-04",
+        "fassung": "2020-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/314",
+        "typ": 1,
+        "datum": "2004-04-01",
+        "fassung": "2004-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/107",
+        "typ": 1,
+        "datum": "2004-03-01",
+        "fassung": "2004-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/176",
+        "typ": 1,
+        "datum": "2004-04-01",
+        "fassung": "2004-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/176",
+        "typ": 2,
+        "datum": "2004-04-01",
+        "fassung": "2004-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/322",
+        "typ": 1,
+        "datum": "2004-06-01",
+        "fassung": "2004-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/162",
+        "typ": 6,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/782",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/538",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/538",
+        "typ": 2,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/550",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/551",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/37",
+        "typ": 1,
+        "datum": "2007-02-01",
+        "fassung": "2007-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/449",
+        "typ": 6,
+        "datum": "2004-03-01",
+        "fassung": "2004-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2009/117",
+        "typ": 1,
+        "datum": "2009-03-01",
+        "fassung": "2009-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/704",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/704",
+        "typ": 2,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/869",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2011/836",
+        "typ": 6,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2012/696",
+        "typ": 1,
+        "datum": "2013-01-01",
+        "fassung": "2013-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2013/783",
+        "typ": 1,
+        "datum": "2014-01-01",
+        "fassung": "2014-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2014/355",
+        "typ": 1,
+        "datum": "2015-01-01",
+        "fassung": "2015-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/297",
+        "typ": 1,
+        "datum": "2016-01-01",
+        "fassung": "2016-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/249",
+        "typ": 1,
+        "datum": "2016-07-01",
+        "fassung": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/249",
+        "typ": 1,
+        "datum": "2018-01-01",
+        "fassung": "2018-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/249",
+        "typ": 2,
+        "datum": "2016-07-01",
+        "fassung": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/257",
+        "typ": 1,
+        "datum": "2016-07-01",
+        "fassung": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/330",
+        "typ": 1,
+        "datum": "2016-07-01",
+        "fassung": "2016-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/380",
+        "typ": 1,
+        "datum": "2016-10-01",
+        "fassung": "2016-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2016/756",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2018/603",
+        "typ": 1,
+        "datum": "2019-01-01",
+        "fassung": "2019-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/336",
+        "typ": 1,
+        "datum": "2019-07-01",
+        "fassung": "2019-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2019/432",
+        "typ": 1,
+        "datum": "2020-07-01",
+        "fassung": "2020-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/329",
+        "typ": 1,
+        "datum": "2020-07-01",
+        "fassung": "2020-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/360",
+        "typ": 1,
+        "datum": "2021-07-01",
+        "fassung": "2021-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/232",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/600",
+        "typ": 1,
+        "datum": "2023-01-23",
+        "fassung": "2023-01-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/600",
+        "typ": 2,
+        "datum": "2023-01-23",
+        "fassung": "2023-01-23"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/725",
+        "typ": 1,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/750",
+        "typ": 5,
+        "datum": "2023-01-01",
+        "fassung": "2023-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+        "typ": 1,
+        "datum": "2023-07-01",
+        "fassung": "2023-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+        "typ": 2,
+        "datum": "2023-07-01",
+        "fassung": "2023-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/538",
+        "typ": 6,
+        "datum": "2023-09-25",
+        "fassung": "2023-09-25"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/628",
+        "typ": 1,
+        "datum": "2025-01-01",
+        "fassung": "2025-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/27",
+        "typ": 1,
+        "datum": "2024-07-01",
+        "fassung": "2024-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/164",
+        "typ": 1,
+        "datum": "2026-06-01",
+        "fassung": "2026-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2026/284",
+        "typ": 6,
+        "datum": "2026-06-08",
+        "fassung": "2026-06-08"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/43/359_375_369",
+        "typ": 5,
+        "datum": "1928-01-01",
+        "fassung": "1928-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/57/1269_1301_1337",
+        "typ": 1,
+        "datum": "1942-01-01",
+        "fassung": "1942-01-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1951/437_439_435": {
+        "dateForce": "1951-07-01",
+        "dateDoc": "1950-12-21",
+        "roId": "RO 1951 439",
+        "titelDe": "Bundesgesetz vom 21. Dezember 1950 betreffend Abänderung des Militärstrafgesetzes und der Militärstrafgerichtsordnung",
+        "titelFr": "Loi fédérale du 21 décembre 1950 modifiant le code pénal militaire et la loi sur l'organisation judiciaire et la procédure pénale militaire pour l'armée fédérale",
+        "titelIt": "Legge federale del 21 dicembre 1950 che modifica il Codice penale militare e la legge sull'organizzazione giudiziaria e procedura penale per l'armata federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1968/212_228_228": {
+        "dateForce": "1968-03-01",
+        "dateDoc": "1967-10-05",
+        "roId": "RO 1968 228",
+        "titelDe": "Bundesgesetz betreffend die Änderung des Militärstrafgesetzes",
+        "titelFr": "Loi fédérale modifiant le code pénal militaire",
+        "titelIt": "Legge federale che modifica il Codice penale militare"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1968/444_468_468": {
+        "dateForce": "1968-03-01",
+        "dateDoc": "1968-03-15",
+        "roId": "RO 1968 468",
+        "titelDe": "Bundesgesetz betreffend die Änderung des Militärstrafgesetzes, Berichtigung",
+        "titelFr": "Loi fédérale modifiant le code pénal militaire, Errata",
+        "titelIt": "Legge federale che modifica il Codice penale militare, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1975/55_55_55": {
+        "dateForce": "1975-02-01",
+        "dateDoc": "1974-10-04",
+        "roId": "RO 1975 55",
+        "titelDe": "Militärstrafgesetz, Änderung",
+        "titelFr": "Code pénal militaire, Modification",
+        "titelIt": "Codice penale militare, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1975/600_600_600": {
+        "dateForce": "1975-02-01",
+        "dateDoc": "1975-04-07",
+        "roId": "RO 1975 600",
+        "titelDe": "Militärstrafgesetz, Berichtigung (nur ital.)",
+        "titelFr": "Code pénal militaire, Errata (seulement en italien)",
+        "titelIt": "Codice penale militare, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1979/1037_1037_1037": {
+        "dateForce": "1980-01-01",
+        "dateDoc": "1979-03-23",
+        "roId": "RO 1979 1037",
+        "titelDe": "Militärstrafgesetz (MStG), Änderung",
+        "titelFr": "Code pénal militiare (CPM), Modification",
+        "titelIt": "Codice penale militare (CPM), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/1535_1535_1535": {
+        "dateForce": "1982-10-01",
+        "dateDoc": "1981-10-09",
+        "roId": "RO 1982 1535",
+        "titelDe": "Militärstrafgesetz, Änderung",
+        "titelFr": "Code pénal militaire, Modification",
+        "titelIt": "Codice penale militare, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/2232_2232_2232": {
+        "dateForce": "1982-10-01",
+        "dateDoc": "1982-12-14",
+        "roId": "RO 1982 2232",
+        "titelDe": "Militärstrafgesetz, Berichtigung (nur ital.)",
+        "titelFr": "Code pénal militaire, Errata (seulement en italien)",
+        "titelIt": "Codice penale militare, Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1982/846_846_846": {
+        "dateForce": "1983-01-01",
+        "dateDoc": "1981-03-20",
+        "roId": "RO 1982 846",
+        "titelDe": "Bundesgesetz vom 20. März 1981 über internationale Rechtshilfe in Strafsachen (Rechtshilfegesetz, IRSG)",
+        "titelFr": "Loi fédérale du 20 mars 1981 sur l'entraide internationale en matière pénale (Loi sur l'entraide pénale internationale, EIMP)",
+        "titelIt": "Legge federale del 20 marzo 1981 sull'assistenza internazionale in materia penale (Assistenza in materia penale, AIMP)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1989/2449_2449_2449": {
+        "dateForce": "1990-01-01",
+        "dateDoc": "1989-06-23",
+        "roId": "RO 1989 2449",
+        "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Strafbare Handlungen gegen Leib und Leben und gegen die Familie), Änderung",
+        "titelFr": "Code pénal suisse. Code pénal militaire (Infractions contre la vie et l'intégrité corporelle et contre la famille), Modification",
+        "titelIt": "Codice penale svizzero. Codice penale militare (Reati contro la vita e l'integrità della persona e contro la famiglia), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1990/1882_1882_1882": {
+        "dateForce": "1991-01-01",
+        "dateDoc": "1990-06-22",
+        "roId": "RO 1990 1882",
+        "titelDe": "Bundesgesetz über die Militärorganisation (Militärorganisation, MO), Änderung",
+        "titelFr": "Loi fédérale sur l'organisation militaire (Organisation militaire, OM), Modification",
+        "titelIt": "Legge federale sull'organizzazione militare (Organizzaione militare, OM), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/1352_1352_1352": {
+        "dateForce": "1991-07-15",
+        "dateDoc": "1990-10-05",
+        "roId": "RO 1991 1352",
+        "titelDe": "Militärstrafgesetz (MStG), Änderung",
+        "titelFr": "Code pénal militaire (CPM), Modification",
+        "titelIt": "Codice penale militare (CPM), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1991/2512_2512_2512": {
+        "dateForce": "1992-01-01",
+        "dateDoc": "1991-06-21",
+        "roId": "RO 1991 2512",
+        "titelDe": "Schweizerisches Strafgesetzbuch (Behandlung von Rauschgiftsüchtigen). Militärstrafgesetz (Disziplinarische Ahndung des Konsums geringer Mengen von Betäubungsmitteln), Änderung",
+        "titelFr": "Code pénal suisse (Traitement des toxicomanes). Code pénal militaire (Répression disciplinaire de la petite consommation de stupéfiants), Modification",
+        "titelIt": "Codice pneale svizzero (Trattamento dei tossicomani). Codice penale militare (Repressione in via disciplinare del consumo di esigue quantità di stupefacenti), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/1670_1670_1670": {
+        "dateForce": "1992-10-01",
+        "dateDoc": "1991-06-21",
+        "roId": "RO 1992 1670",
+        "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Strafbare Handlungen gegen die sexuelle Integrität), Änderung",
+        "titelFr": "Code pénal suisse. Code pénal militaire (Infraction contre l'intégrité sexuelle), Modification",
+        "titelIt": "Codice penale svizzero. Codice penale militare (Reati contro l'integrità sessuale), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/1679_1679_1679": {
+        "dateForce": "1992-09-01",
+        "dateDoc": "1992-03-20",
+        "roId": "RO 1992 1679",
+        "titelDe": "Militärstrafgesetz (MStG), Änderung",
+        "titelFr": "Code pénal militaire (CPM), Modification",
+        "titelIt": "Codice penale militare (CPM), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1992/2465_2465_2465": {
+        "dateForce": "1993-01-01",
+        "dateDoc": "1991-10-04",
+        "roId": "RO 1992 2465",
+        "titelDe": "Bundesgesetz vom 4. Oktober 1991 über die Hilfe an Opfer von Straftaten (Opferhilfegesetz, OHG)",
+        "titelFr": "Loi fédérale du 4 octobre 1991 sur l'aide aux victimes d'infractions (LAVI)",
+        "titelIt": "Legge federale del 4 ottobre 1991 concernente l'aiuto alle vittime di reati (LAV)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/1614_1614_1614": {
+        "dateForce": "1994-08-01",
+        "dateDoc": "1994-03-18",
+        "roId": "RO 1994 1614",
+        "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Revision des Einziehungsrechts, Strafbarkeit der kriminellen Organisation, Melderecht des Financiers), Änderung",
+        "titelFr": "Code pénal suisse. Code pénal militaire (Révision du droit de la confiscation, punissabilité de l'organisation criminelle, droit de communication du financier), Modification",
+        "titelIt": "Codice penale svizzero. Codice penale militare (Revisione delle norme sulla confisca, punibilità dell'organizzazione criminale, diritto di comunicazione del finanziere), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/2290_2290_2290": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1994-06-17",
+        "roId": "RO 1994 2290",
+        "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Strafbare Handlungen gegen das Vermögen und Urkundenfälschung), Änderung",
+        "titelFr": "Code pénal. Code. Pénal militaire (Infractions contre le patrimoine et faux dans les titres), Modification",
+        "titelIt": "Codice penale svizzero. Codice penale militare (Reati contro il patrimonio e falsità in atti), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1994/2887_2887_2887": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1993-06-18",
+        "roId": "RO 1994 2887",
+        "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz, Änderung",
+        "titelFr": "Code pénal suisse. Code pénal militaire, Modification",
+        "titelIt": "Codice penale svizzero. Codice penale militare, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/4093_4093_4093": {
+        "dateForce": "1996-01-01",
+        "dateDoc": "1995-02-03",
+        "roId": "RO 1995 4093",
+        "titelDe": "Bundesgesetz vom 3. Februar 1995 über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+        "titelFr": "Loi fédérale du 3 février 1995 sur l'armée et l'administration militaire (Loi sur l'armée, LAAM)",
+        "titelIt": "Legge federale del 3 febbraio 1995 sull'esercito e sull'amministrazione militare (Legge militare, LM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/1445_1445_1445": {
+        "dateForce": "1996-10-01",
+        "dateDoc": "1995-10-06",
+        "roId": "RO 1996 1445",
+        "titelDe": "Bundesgesetz vom 6. Oktober 1995 über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+        "titelFr": "Loi fédérale du 6 octobre 1995 sur le service civil (LSC)",
+        "titelIt": "Legge federale del 6 ottobre 1995 sul servizio civile sostitutivo (Legge sul servizio civile, LSC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/1626_1626_1626": {
+        "dateForce": "1997-09-01",
+        "dateDoc": "1997-03-21",
+        "roId": "RO 1997 1626",
+        "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz, Änderung",
+        "titelFr": "Code pénal suisse. Code pénal militiare, Modification",
+        "titelIt": "Codice penale svizzero. Codice penale militare, Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1998/852_852_852": {
+        "dateForce": "1998-04-01",
+        "dateDoc": "1997-10-10",
+        "roId": "RO 1998 852",
+        "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Medienstraf- und Verfahrensrecht), Änderung",
+        "titelFr": "Code pénal suisse et code pénal militaire (Droit pénal et procédure pénale des médias), Modification",
+        "titelIt": "Codice penale svizzero. Codice penale militare (Diritto penale e procedura penale dei mass media), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/180": {
+        "dateForce": "2000-05-01",
+        "dateDoc": "1999-12-22",
+        "roId": "RO 2000 1121",
+        "titelDe": "Revision des Korruptionsstrafrechts (Änderung des Strafgesetzbuches und des Militärstrafgesetzes)",
+        "titelFr": "Révision du droit pénal de la corruption (Modification du code pénal et du code pénale militaire)",
+        "titelIt": "Revisione delle disposizioni penali in materia di corruzione (Modifica del Codice penale e del Codice penale militare)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/454": {
+        "dateForce": "2000-12-15",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 2725",
+        "titelDe": "Bundesgesetz über die Änderung des Strafgesetzbuches, des Militärstrafgesetzes und der Bundesstrafrechtspflege",
+        "titelFr": "Loi fédérale concernant la modification du code pénal, du code pénal militaire et de la procédure pénale fédérale",
+        "titelIt": "Legge federale concernente la modifica del Codice penale, del Codice penale militare e della procedura penale federale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/95": {
+        "dateForce": "2000-03-01",
+        "dateDoc": "1999-10-08",
+        "roId": "RO 2000 505",
+        "titelDe": "Bundesgesetz über die Abschaffung der Bundesassisen",
+        "titelFr": "Loi fédérale sur l'abolition des Assises fédérales",
+        "titelIt": "Legge federale concernente la sopressione delle Assise federali"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/236": {
+        "dateForce": "2002-07-01",
+        "dateDoc": "2001-06-22",
+        "roId": "RO 2002 1491",
+        "titelDe": "Bundesgesetz über die Änderung des Strafgesetzbuchs und des Militärstrafgesetzes (Rechtspflegedelikte vor internationalen Gerichten)",
+        "titelFr": "Loi fédérale portant modification du code pénal et du code pénal militaire (Infractions aux dispositions sur l'administration de la justice devant les tribunaux internationaux)",
+        "titelIt": "Legge federale concernente la modifica del Codice penale e del Codice penale militare (Reati contro l'amministrazione della giustizia commessi davanti a tribunali internazionali)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/428": {
+        "dateForce": "2002-10-01",
+        "dateDoc": "2002-03-22",
+        "roId": "RO 2002 2986",
+        "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz. (Verjährung der Strafverfolgung)",
+        "titelFr": "Code pénal suisse. Code pénal militaire. (Prescription de l'action pénale)",
+        "titelIt": "Codice penale svizzero. Codice penale militare. (Prescrizione dell'azione penale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/430": {
+        "dateForce": "2002-10-01",
+        "dateDoc": "2001-10-05",
+        "roId": "RO 2002 2993",
+        "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz. (Verjährung der Strafverfolgung im allgemeinen und bei Sexualdelikten an Kindern)",
+        "titelFr": "Code pénal suisse. Code pénal militaire. (Prescription de l'action pénale en général et en cas d'infractions contre l'intégrité sexuelle des enfants)",
+        "titelIt": "Codice penale svizzero. Codice penale militare. (Prescrizione dell'azione penale in generale e in caso di reati sessuali commessi su fanciulli)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/465": {
+        "dateForce": "2002-10-01",
+        "dateDoc": "2002-10-08",
+        "roId": "RO 2002 3146",
+        "titelDe": "Schweizerisches Strafgesetzbuch. Militärgesetz",
+        "titelFr": "Code pénal suisse (Ne concerne que le texte allemand)",
+        "titelIt": "Codice penale svizzero (Concerne solo il testo tedesco)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2003/314": {
+        "dateForce": "2003-08-01",
+        "dateDoc": "2002-10-04",
+        "roId": "RO 2003 2133",
+        "titelDe": "Bundesgesetz über das Bundesstrafgericht (Strafgerichtsgesetz, SGG)",
+        "titelFr": "Loi fédérale sur le Tribunal pénal fédéral (LTPF)",
+        "titelIt": "Legge sul Tribunale penale federale (LTPF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/176": {
+        "dateForce": "2004-04-01",
+        "dateDoc": "2003-10-03",
+        "roId": "RO 2004 1403",
+        "titelDe": "Schweizerisches Strafgesetzbuch (Strafverfolgung in der Ehe und in der Partnerschaft)",
+        "titelFr": "Code pénal suisse (Poursuite des infractions entre conjoints ou partenaires)",
+        "titelIt": "Codice penale svizzero (Perseguimento dei reati commessi tra coniugi o tra partner)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/322": {
+        "dateForce": "2004-06-01",
+        "dateDoc": "2003-12-19",
+        "roId": "RO 2004 2691",
+        "titelDe": "Militärstrafprozess (MStP)",
+        "titelFr": "Procédure pénale militaire (PPM)",
+        "titelIt": "Procedura penale militare (PPM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/162": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "2005-03-01",
+        "roId": "RO 2005 1165",
+        "titelDe": "Schweizerisches Strafgesetzbuch, Militärstrafgesetz (Betrifft nur den italienischen Text)",
+        "titelFr": "Code pénal suisse, Code pénal militaire  (Ne concerne que le texte italien)",
+        "titelIt": "Codice penale svizzero (CP), Codice penale militare (CPM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2005/782": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2004-06-18",
+        "roId": "RO 2005 5685",
+        "titelDe": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+        "titelFr": "Loi fédérale sur le partenariat enregistré entre personnes du même sexe (Loi sur le partenariat, LPart)",
+        "titelIt": "Legge federale sull'unione domestica registrata di coppie omosessuali (Legge sull'unione domestica registrata, LUD)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/550": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-03-24",
+        "roId": "RO 2006 3539",
+        "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Korrekturen am Sanktions- und Strafregisterrecht)",
+        "titelFr": "Code pénal suisse et code pénal militaire (Correctifs en matière de sanctions et casier judiciaire)",
+        "titelIt": "Codice penale svizzero e Codice penale militare (Correttivi in materia di sanzioni e di casellario giudiziale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/551": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2003-06-20",
+        "roId": "RO 2006 3545",
+        "titelDe": "Bundesgesetz über das Jugendstrafrecht (Jugendstrafgesetz, JStG)",
+        "titelFr": "Loi fédérale régissant la condition pénale des mineurs (Droit pénal des mineurs, DPMin)",
+        "titelIt": "Legge federale sul diritto penale minorile (Diritto penale minorile, DPMin)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/37": {
+        "dateForce": "2007-02-01",
+        "dateDoc": "2006-03-24",
+        "roId": "RO 2007 185",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Dritten Zusatzprotokolls vom 8. Dezember 2005 zu den Genfer Abkommen von 1949 über die Annahme eines zusätzlichen Schutzzeichens",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre du troisième Protocole additionnel du 8 décembre 2005 aux Conventions de Genève de 1949, relatif à l'adoption d'un signe distinctif additionnel",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero il terzo Protocollo aggiuntivo dell'8 dicembre 2005 alle Convenzioni di Ginevra del 1949 relativo all'adozione di un segno distintivo addizionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/704": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-06-18",
+        "roId": "RO 2010 4963",
+        "titelDe": "Bundesgesetz über die Änderung von Bundesgesetzen zur Umsetzung des Römer Statuts des Internationalen Strafgerichtshofs",
+        "titelFr": "Loi fédérale portant modification de lois fédérales en vue de la mise en uvre du Statut de Rome de la Cour pénale internationale",
+        "titelIt": "Legge federale sulla modifica di leggi federali per l'attuazione dello Statuto di Roma della Corte penale internazionale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/869": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2010-03-19",
+        "roId": "RO 2010 6015",
+        "titelDe": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+        "titelFr": "Loi fédérale sur l'armée et l'administration militaire (LAAM)",
+        "titelIt": "Legge federale sull'esercito e sull'amministrazione militare (Legge militare, LM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2012/696": {
+        "dateForce": "2013-01-01",
+        "dateDoc": "2012-06-15",
+        "roId": "RO 2012 5951",
+        "titelDe": "Bundesgesetz zur Umsetzung von Artikel 123<i>b</i> der Bundesverfassung über die Unverjährbarkeit sexueller und pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+        "titelFr": "Loi fédérale portant mise en uvre de l'art. 123<i>b</i> de la Constitution concernant l'imprescriptibilité des actes d'ordre sexuel ou pornographique commis sur des enfants impubères (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs)",
+        "titelIt": "Legge federale che attua l'articolo 123<i>b</i> della Costituzione federale sull'imprescrittibilità dei reati sessuali o di pornografia commessi su fanciulli impuberi (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2013/783": {
+        "dateForce": "2014-01-01",
+        "dateDoc": "2013-06-21",
+        "roId": "RO 2013 4417",
+        "titelDe": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Verlängerung der Verfolgungsverjährung)",
+        "titelFr": "Code pénal. Code pénal militaire (Prorogation des délais de prescription)",
+        "titelIt": "Codice penale svizzero. Codice penale militare (Prolungamento dei termini di prescrizione dell'azione penale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2014/355": {
+        "dateForce": "2015-01-01",
+        "dateDoc": "2013-12-13",
+        "roId": "RO 2014 2055",
+        "titelDe": "Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+        "titelFr": "Loi fédérale sur l'interdiction d'exercer une activité, l'interdiction de contact et l'interdiction géographique (Modification du code pénal, du code pénal militaire et du droit pénal des mineurs)",
+        "titelIt": "Legge federale sull&#700;interdizione di esercitare un&#700;attività e sul divieto di avere contatti e di accedere ad aree determinate (Modifica del Codice penale, del Codice penale militare e del diritto penale minorile)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/297": {
+        "dateForce": "2016-01-01",
+        "dateDoc": "2012-09-28",
+        "roId": "RO 2015 1435",
+        "titelDe": "Bundesgesetz über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemiengesetz, EpG)",
+        "titelFr": "Loi fédérale sur la lutte contre les maladies transmissibles de l'homme (Loi sur les épidémies, LEp)",
+        "titelIt": "Legge federale sulla lotta contro le malattie trasmissibili dell'essere umano (Legge sulle epidemie, LEp)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/249": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2015-06-19",
+        "roId": "RO 2016 1249",
+        "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Änderungen des Sanktionenrechts)",
+        "titelFr": "Code pénal suisse et code pénal militaire (Réforme du droit des sanctions)",
+        "titelIt": "Codice penale svizzero e Codice penale militare (Modifica della disciplina delle sanzioni)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/257": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2015-09-25",
+        "roId": "RO 2016 1287",
+        "titelDe": "Schweizerisches Strafgesetzbuch (Korruptionsstrafrecht)",
+        "titelFr": "Code pénal suisse (Dispositions pénales incriminant la corruption)",
+        "titelIt": "Codice penale svizzero (Disposizioni penali sulla corruzione)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/330": {
+        "dateForce": "2016-07-01",
+        "dateDoc": "2015-09-25",
+        "roId": "RO 2016 1883",
+        "titelDe": "Bundesgesetz über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+        "titelFr": "Loi fédérale sur le service civil (LSC)",
+        "titelIt": "Legge federale sul servizio civile sostitutivo (Legge sul servizio civile, LSC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/380": {
+        "dateForce": "2016-10-01",
+        "dateDoc": "2015-03-20",
+        "roId": "RO 2016 2329",
+        "titelDe": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+        "titelFr": "Code pénal et code pénal militaire (Mise en uvre de l'art. 121, al. 3 à 6, Cst. relatif au renvoi des étrangers criminels)",
+        "titelIt": "Codice penale svizzero e Codice penale militare (Attuazione dell'art. 121 cpv. 36 Cost. sull'espulsione di stranieri che commettono reati)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2016/756": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2015-12-18",
+        "roId": "RO 2016 4687",
+        "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Internationalen Übereinkommens zum Schutz aller Personen vor dem Verschwindenlassen",
+        "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la Convention internationale pour la protection de toutes les personnes contre les disparitions forcées",
+        "titelIt": "Decreto federale che approva e traspone nel diritto svizzero la Convenzione internazionale per la protezione di tutte le persone dalla sparizione forzata"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2018/603": {
+        "dateForce": "2019-01-01",
+        "dateDoc": "2018-03-16",
+        "roId": "RO 2018 3803",
+        "titelDe": "Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 123c BV)",
+        "titelFr": "Code pénal et code pénal militaire (Mise en uvre de l'art. 123c Cst.)",
+        "titelIt": "Codice penale e Codice penale militare (Attuazione dell'art. 123c Cost.)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/336": {
+        "dateForce": "2019-07-01",
+        "dateDoc": "2018-12-14",
+        "roId": "RO 2019 1809",
+        "titelDe": "Bundesgesetz über die Änderung der Wiedergutmachungsregelung (Änderung des Strafgesetzbuchs, des Jugendstrafgesetzes und des Militärstrafgesetzes)",
+        "titelFr": "Loi fédérale modifiant la disposition sur la réparation (Modification du code pénal, du droit pénal des mineurs et du code pénal militaire)",
+        "titelIt": "Legge federale che modifica la disciplina della riparazione (Modifica del Codice penale, del diritto penale minorile e del Codice penale militare)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2019/432": {
+        "dateForce": "2020-07-01",
+        "dateDoc": "2018-12-14",
+        "roId": "RO 2019 2273",
+        "titelDe": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen",
+        "titelFr": "Loi fédérale sur l'amélioration de la protection des victimes de violence",
+        "titelIt": "Legge federale intesa a migliorare la protezione delle vittime di violenza"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2020/329": {
+        "dateForce": "2020-07-01",
+        "dateDoc": "2018-12-14",
+        "roId": "RO 2020 1609",
+        "titelDe": "Strafgesetzbuch und Militärstrafgesetz (Diskriminierung und Aufruf zu Hass aufgrund der sexuellen Orientierung)",
+        "titelFr": "Code pénal et code pénal militaire (Discrimination et incitation à la haine en raison de l'orientation sexuelle)",
+        "titelIt": "Codice penale e Codice penale militare (Discriminazione e incitamento all'odio basati sull'orientamento sessuale)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2021/360": {
+        "dateForce": "2021-07-01",
+        "dateDoc": "2020-09-25",
+        "titelDe": "Bundesbeschluss vom 25. September 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität",
+        "titelFr": "Arrêté fédéral du 25 septembre 2020 portant approbation et mise en œuvre de la Convention du Conseil de l’Europe pour la prévention du terrorisme et de son Protocole additionnel et concernant le renforcement des normes pénales contre le terrorisme et le crime organisé",
+        "titelIt": "Decreto federale del 25 settembre 2020 che approva e traspone nel diritto svizzero la Convenzione del Consiglio d’Europa per la prevenzione del terrorismo e il relativo Protocollo addizionale e potenzia il dispositivo penale contro il terrorismo e la criminalità organizzata"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/232": {
+        "dateForce": "2022-05-01",
+        "dateDoc": "2020-12-18",
+        "titelDe": "Bundesgesetz vom 18. Dezember 2020 über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG)",
+        "titelFr": "Loi fédérale du 18 décembre 2020 sur la sécurité de l’information au sein de la Confédération (Loi sur la sécurité de l’information, LSI)",
+        "titelIt": "Legge federale del 18 dicembre 2020 sulla sicurezza delle informazioni in seno alla Confederazione (Legge sulla sicurezza delle informazioni, LSIn)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/600": {
+        "dateForce": "2023-01-23",
+        "dateDoc": "2016-06-17",
+        "titelDe": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+        "titelFr": "Loi fédérale du 17 juin 2016 sur le casier judiciaire informatique VOSTRA (Loi sur le casier judiciaire, LCJ)",
+        "titelIt": "Legge federale del 17 giugno 2016 sul casellario giudiziale informatizzato VOSTRA (Legge sul casellario giudiziale, LCaGi)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/725": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-03-18",
+        "titelDe": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+        "titelFr": "Loi fédérale sur l’armée et l’administration militaire (Loi sur l’armée, LAAM)",
+        "titelIt": "Legge federale sull’esercito e sull’amministrazione militare (Legge militare, LM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2022/750": {
+        "dateForce": "2023-01-01",
+        "dateDoc": "2022-11-23",
+        "titelDe": "Verordnung über eine Teilinkraftsetzung des Informationssicherheitsgesetzes",
+        "titelFr": "Ordonnance portant mise en vigueur partielle de la loi sur la sécurité de l’information",
+        "titelIt": "Ordinanza concernente un’entrata in vigore parziale della legge sulla sicurezza delle informazioni"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/259": {
+        "dateForce": "2023-07-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+        "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
+        "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/628": {
+        "dateForce": "2025-01-01",
+        "dateDoc": "2022-03-18",
+        "titelDe": "Bundesgesetz über die Bekämpfung des missbräuchlichen Konkurses (Änderung des Obligationenrechts, des Bundesgesetzes über Schuldbetreibung und Konkurs, des Strafgesetzbuches, des Militärstrafgesetzes, des Strafregistergesetzes und des Bundesgesetzes über die direkte Bundessteuer)",
+        "titelFr": "Loi fédérale sur la lutte contre l’usage abusif de la faillite (Modification du code des obligations, de la loi fédérale sur la poursuite pour dettes et la faillite, du code pénal, du code pénal militaire, de la loi sur le casier judiciaire et de la loi fédérale sur l’impôt fédéral direct)",
+        "titelIt": "Legge federale sulla lotta contro l’abuso del fallimento (Modifica del Codice delle obbligazioni, della legge federale sulla esecuzione e sul fallimento, del Codice penale, del Codice penale militare, della legge sul casellario giudiziale e della legge federale sull’imposta federale diretta)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/27": {
+        "dateForce": "2024-07-01",
+        "dateDoc": "2023-06-16",
+        "titelDe": "Bundesgesetz über eine Revision des Sexualstrafrechts",
+        "titelFr": "Loi fédérale portant révision du droit pénal en matière sexuelle",
+        "titelIt": "Legge federale sulla revisione del diritto penale in materia sessuale"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2026/164": {
+        "dateForce": "2026-06-01",
+        "dateDoc": "2025-12-19",
+        "titelDe": "Bundesgesetz über die Armee und Militärverwaltung (Militärgesetz, MG)",
+        "titelFr": "Loi fédérale sur l’armée et l’administration militaire (Loi sur l’armée, LAAM)",
+        "titelIt": "Legge federale sull’esercito e sull’amministrazione militare (Legge militare, LM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/57/1269_1301_1337": {
+        "dateForce": "1942-01-01",
+        "dateDoc": "1941-06-13",
+        "roId": "RO 57 1301",
+        "titelDe": "Bundesgesetz betreffend Anpassung des Militärstrafgesetzes und der Militärstrafgerichtsordnung an das schweizerische Strafgesetzbuch",
+        "titelFr": "Loi fédérale adaptant au code pénal suisse le code pénal militaire et la loi sur l'organisation judiciaire et la procédure pénale pour L'armée fédérale",
+        "titelIt": "Legge federale che adatta al Codice penale svizzero il Codice penale militare e la legge sull'organizzazione giudiziaria e procedura penale per l'armata federale"
+      }
+    }
   }
 }

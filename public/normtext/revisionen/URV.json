@@ -1,8 +1,8 @@
 {
   "erlassKey": "URV",
   "sr": "231.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
       "art": "aenderung",
@@ -13,14 +13,26 @@
       "titelDe": "Verordnung über die Einführung eines vereinfachten Verfahrens zur Vernichtung von Kleinsendungen im Immaterialgüterrecht",
       "titelFr": "Ordonnance sur l’introduction d’une procédure simplifiée de destruction de petits envois dans le droit de la propriété intellectuelle",
       "titelIt": "Ordinanza che introduce una procedura semplificata per la distruzione di piccoli invii nel diritto della proprietà intellettuale",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/376/de",
-      "sha": "0747e1593878d9ee802c68629080e80587e03aaac0d8dc5b6d79a8f3cb256f17"
+      "sha": "40938d7a69a55fd9a966a19136a24796386cfa453d6b48669a657f49cc8b15a3"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/231.11",
-      "sha": "92bed059689096745aa0450fceb43e81d3341e14278256ade93f5e48206d69fc"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2021/589",
+      "dateDocument": "2021-10-01",
+      "roFundstelle": "AS 2021 589",
+      "titelDe": "Mitteilung über die Anpassung von Erlassen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Communication concernant l’adaptation d’actes législatifs à la suite de la modification de la désignation de l’Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Comunicazione sull’adeguamento di atti normativi in seguito al cambiamento della designazione dell’Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/589/de",
+      "sha": "fc76fd9f39ee6616fc18f109bc550ee0b25aef621a700a470ae935b444bc88f3"
     },
     {
       "art": "aenderung",
@@ -31,8 +43,11 @@
       "titelDe": "Verordnung über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsverordnung, URV)",
       "titelFr": "Ordonnance sur le droit d'auteur et les droits voisins (Ordonnance sur le droit d'auteur, ODau)",
       "titelIt": "Ordinanza sul diritto d'autore e sui diritti di protezione affini (Ordinanza sul diritto d'autore, ODAu)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/690/de",
-      "sha": "cb48addd096756406603c496285238b13cc712ab0bb6a0c2f3cb5269e52bca76"
+      "sha": "5e3b0469043b4e68ef44cdf52dd1975404ebaf60ef2cfb58ab276512df331723"
     },
     {
       "art": "aenderung",
@@ -43,8 +58,11 @@
       "titelDe": "Verordnung über die Ordnungsfristen im Zuständigkeitsbereich der Eidgenössischen Zollverwaltung",
       "titelFr": "Ordonnance sur la fixation de délais d'ordre dans le domaine de l'Administration fédérale des douanes",
       "titelIt": "Ordinanza sui termini ordinatori nell'ambito di competenza dell'Amministrazione federale delle dogane",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2014/354/de",
-      "sha": "cdecbd0034643850ffbdc38aa0e70885e198e831cdada162d64e3f144293aad0"
+      "sha": "cbd32507798afbb27a74977e46641b7452c2c3551ecdf44a229bf17c071d3fb0"
     },
     {
       "art": "aenderung",
@@ -55,8 +73,12 @@
       "titelDe": "Verordnung über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsverordnung, URV)",
       "titelFr": "Ordonnance sur le droit d'auteur et les droits voisins (Ordonnance sur le droit d'auteur, ODAu)",
       "titelIt": "Ordinanza sul diritto d'autore e sui diritti di protezione affini (Ordinanza sul diritto d'autore, ODAu)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/348/de",
-      "sha": "05895689d7bcd914ab1f4f88ef36eb5e4e2512636a015a81a1c247d04d3fb0b3"
+      "sha": "bb7e1da1c0bcacfa7f504f691cf1f936f8d12bf64e307d0b4b32b1e508a18e64"
     },
     {
       "art": "aenderung",
@@ -67,33 +89,88 @@
       "titelDe": "Verordnung über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsverordnung, URV)",
       "titelFr": "Ordonnance sur le droit d'auteur et les droits voisins (Ordonnance sur le droit d'auteur, ODau)",
       "titelIt": "Ordinanza sul diritto d'autore e sui diritti di protezione affini (Ordinanza sul diritto d'autore, ODAu)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/362/de",
-      "sha": "40163ef2968bb4c022e922882ff86fcf028bedabd158c8c51d02d719545dfc88"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2007-05-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/231.11",
-      "sha": "7a055187b42429ea3618f04dfb622cee5f63d0dc008a64391ee9c372aa15e9e5"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2004-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/231.11",
-      "sha": "f7a1c70297f2b94e7a1b161e427d04574ad325a6ee0814981fce4cf854814039"
+      "sha": "5ffeca09eb6298eb062c5823fcc297bbe1f624b349ddcc2c8068afd15fb1f0e9"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1993-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/1821_1821_1821",
-      "dateDocument": "1993-04-26",
-      "roFundstelle": "AS 1993 1821",
-      "titelDe": "Verordnung vom 26. April 1993 über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsverordnung, URV)",
-      "titelFr": "Ordonnance du 26 avril 1993 sur le droit d'auteur et les droits voisins (Ordonnance sur le droit d'auteur, ODAu)",
-      "titelIt": "Ordinanza del 26 aprile 1993 sul diritto d'autore e sui diritti di protezione affini (Ordinanza sul diritto d'autore, ODAu)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/1821_1821_1821/de",
-      "sha": "bdb6d6594e96a209b3070341d4bc66fe9b60b03616b1fcaaf912f9bd90767afe"
+      "dateEntryInForce": "2007-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2007/250",
+      "dateDocument": "2006-11-01",
+      "roFundstelle": "AS 2007 1469",
+      "titelDe": "Zollverordnung (ZV)",
+      "titelFr": "Ordonnance sur les douanes (OD)",
+      "titelIt": "Ordinanza sulle dogane (OD)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2007/250/de",
+      "sha": "d2113a1186c90ab946018f502f4631d6cd830fbc87fa71a4ab6896829104ecfa"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2004-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2003/668",
+      "dateDocument": "2003-11-19",
+      "roFundstelle": "AS 2003 4501",
+      "titelDe": "Verordnung über die Beseitigung von Benachteiligungen von Menschen mit Behinderungen (Behindertengleichstellungsverordnung, BehiV)",
+      "titelFr": "Ordonnance sur l'élimination des inégalités frappant les personnes handicapées (Ordonnance sur l'égalité pour les handicapés, OHand)",
+      "titelIt": "Ordinanza sull'eliminazione di svantaggi nei confronti dei disabili (Ordinanza sui disabili, ODis)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2003/668/de",
+      "sha": "fe6ffa18acdb0bfc0f9feaec0af0e15cdba93fd2ebbc37d8ab6f84d0d6272b3b"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-02-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1996/208_208_208",
+      "dateDocument": "1996-01-10",
+      "roFundstelle": "AS 1996 208",
+      "titelDe": "Verordnung vom 10. Januar 1996 die Bereinigung der Abkürzungen von Erlasstiteln",
+      "titelFr": "Ordonnance du 10 janvier 1996 modifiant les abréviations des titres de divers actes législatifs",
+      "titelIt": "Ordinanza del 10 gennaio 1996 che rettifica alcune abbreviazioni di titoli di atti normativi",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1996/208_208_208/de",
+      "sha": "216def33f6ed3c1dd80d33baba746c372d724e2e8b7749bf6560ed82adc56a49"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/5152_5152_5152",
+      "dateDocument": "1995-10-25",
+      "roFundstelle": "AS 1995 5152",
+      "titelDe": "Verordnung über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsverordnung, URV), Änderung",
+      "titelFr": "Ordonnance sur le droit d'auteur et les droits voisins (Ordonnance sur le droit d'auteur, ODAu), Modification",
+      "titelIt": "Ordinanza sul diritto d'autore e sui diritti di protezione affini (Ordinanza sul diritto d'autore, ODA), Modifica",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/5152_5152_5152/de",
+      "sha": "8ce855c24ed7311e5186ff6ddd65448979752a43761064c77bac9a66efd8de26"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1778_1778_1778",
+      "dateDocument": "1995-05-17",
+      "roFundstelle": "AS 1995 1778",
+      "titelDe": "Verordnung über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsverordnung, URV), Änderung",
+      "titelFr": "Ordonnance sur le droit d'auteur et les droits voisins (Ordonnance sur le droit d'auteur, ODAu), Modification",
+      "titelIt": "Ordinanza sul diritto d'autore e sui diritti di protezione affini (Ordinanza sul diritto d'autore, ODA), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1778_1778_1778/de",
+      "sha": "7f31337011fa6d672b4df239fe0fad2140fac219ca91ec5aaeef19a37e498fb1"
     }
   ],
-  "sha": "738b1ebe7746df048b146e0dea501ec0d666e58d7636c65c918a15afd3146db9"
+  "sha": "4261ec487537df078da59e7d5ebd7bf7124c2f971d4f0c602bf60ad7ed379b37"
 }

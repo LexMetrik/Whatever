@@ -1,26 +1,54 @@
 {
   "erlassKey": "MSCHG",
   "sr": "232.11",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.11",
-      "sha": "544ff6a81f71f60baf4ce8f12b817a86cd1bd79271e4114e72e32291fd7614c1"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2025/313",
+      "dateDocument": "2023-12-22",
+      "roFundstelle": "AS 2025 313",
+      "titelDe": "Bundesgesetz über die Einführung eines vereinfachten Verfahrens zur Vernichtung von Kleinsendungen im Immaterialgüterrecht",
+      "titelFr": "Loi fédérale sur l’introduction d’une procédure simplifiée de destruction de petits envois dans le droit de la propriété intellectuelle",
+      "titelIt": "Legge federale che introduce una procedura semplificata per la distruzione di piccoli invii nel diritto della proprietà intellettuale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2025/313/de",
+      "sha": "d3fa89b27f0a57089f573fa4d2cedc2280da2aa664db6f7caac1b9a3dc42ae60"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.11",
-      "sha": "c5bd7056d55c8eee334dddde6ac1aa1792d4622ecdbeead4cebd13994e252f48"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+      "dateDocument": "2021-12-17",
+      "roFundstelle": "AS 2023 259",
+      "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+      "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
+      "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene",
+      "botschaftKey": "BOTSCHAFT-2018-1154",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
+      "sha": "64e1e609ccf5d5a5532e3f42aec1fd1e1c0d6c9345913a92606b4f68339c0b0d"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2022-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.11",
-      "sha": "a3dfc0efe4f184e04df8271f404c757a4857bbff4ae9a8d205a44e2ad10196bb"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+      "dateDocument": "2020-06-12",
+      "roFundstelle": "AS 2020 2743",
+      "titelDe": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "titelFr": "Ordonnance sur l'adaptation de lois à la suite de la modification de la désignation de l'Administration fédérale des douanes dans le cadre du développement de cette dernière",
+      "titelIt": "Ordinanza sull'adeguamento di leggi in seguito al cambiamento della designazione dell'Amministrazione federale delle dogane nel quadro del suo ulteriore sviluppo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2020/498/de",
+      "sha": "624c9747c49a2b2de0386a2d0d50f3939887b89f337dadf4828f42762c9888d5"
     },
     {
       "art": "aenderung",
@@ -32,14 +60,28 @@
       "titelFr": "Arrêté fédéral du 19 mars 2021 portant approbation et mise en œuvre (modification de la loi sur la protection des marques) de l’Acte de Genève de l’Arrangement de Lisbonne sur les appellations d’origine et les indications géographiques",
       "titelIt": "Decreto federale del 19 marzo 2021 che approva l’Atto di Ginevra dell’Accordo di Lisbona sulle denominazioni d’origine e le indicazioni geografiche e lo traspone nel diritto svizzero (modifica della legge sulla protezione dei marchi)",
       "botschaftKey": "BOTSCHAFT-2020-1366",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/742/de",
-      "sha": "37c038e819d30c7e08354b2a2b29c41ed855939e48e9446641d32cdd942a448b"
+      "sha": "e23f9d234c3825c477a7feb48c99234df27ac6cb6c437fdc9eb35bec91cd3110"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-04-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.11",
-      "sha": "b94229b1c9b9ea9fc8f9a09bb408dc9a6024bd6f9788a9ab83e76b9026faa3a9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/177",
+      "dateDocument": "2018-09-28",
+      "roFundstelle": "AS 2019 975",
+      "titelDe": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens Nr. 94 des Europarates über die Zustellung von Schriftstücken in Verwaltungssachen im Ausland",
+      "titelFr": "Arrêté fédéral portant approbation et mise en uvre de la convention no 94 du Conseil de l'Europe sur la notification à l'étranger des documents en matière administrative",
+      "titelIt": "Decreto federale concernente l'approvazione e l'attuazione della Convenzione n. 94 del Consiglio d'Europa sulla notificazione all'estero dei documenti in materia amministrativa",
+      "botschaftKey": "BOTSCHAFT-2017-1678",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/177/de",
+      "sha": "020f4cce2eb3d9d9d4adb9cc2bf20440226f9e703472ca148bf34921abbd3b46"
     },
     {
       "art": "aenderung",
@@ -51,81 +93,183 @@
       "titelFr": "Loi fédérale sur la protection des marques et des indications de provenance (Loi sur la protection des marques, LPM)",
       "titelIt": "Legge federale sulla protezione dei marchi e delle indicazioni di provenienza (Legge sulla protezione dei marchi, LPM)",
       "botschaftKey": "BOTSCHAFT-2009-1471",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/609/de",
-      "sha": "19c1733cb8bdb0e26775a0ff799bad508bb3353411019964f8d8dff18615557e"
+      "sha": "4095a23ecdaaf9a7458cbe6d2daf8446d79574097932213e2f37d53d409d3b48"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.11",
-      "sha": "d1f531833201299d139eef997b77e3d9405693ea26f9a7fc6a27f2a639cce32f"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2011/312",
+      "dateDocument": "2009-03-20",
+      "roFundstelle": "AS 2011 2259",
+      "titelDe": "Bundesgesetz über die Patentanwältinnen und Patentanwälte (Patentanwaltsgesetz, PAG)",
+      "titelFr": "Loi sur les conseils en brevets (LCBr)",
+      "titelIt": "Legge federale sui consulenti in brevetti (Legge sui consulenti in brevetti, LCB)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2011/312/de",
+      "sha": "0675b537169d6cbd998288f4b7791d2551b964cb2d024a468c25439ba4d03195"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2011-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.11",
-      "sha": "e45424e4c1d5a910eee93b455dcd58ea629cdbd5a5178642b14b7add06841585"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+      "dateDocument": "2008-12-19",
+      "roFundstelle": "AS 2010 1739",
+      "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "titelFr": "Code de procédure civile (CPC)",
+      "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)",
+      "botschaftKey": "BOTSCHAFT-2006-914",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "sha": "4680b94aca04870448f933a54c75b33319b3d325b89428dcf20b5c0518e9c6aa"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.11",
-      "sha": "650fce7afed9f4981bd5b4a476dc78e231958d3252785f704a8dcd6ffacdaf12"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/447",
+      "dateDocument": "2008-03-20",
+      "roFundstelle": "AS 2008 3437",
+      "titelDe": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "titelFr": "Loi fédérale relative à la mise à jour formelle du droit fédéral",
+      "titelIt": "Legge federale concernente l'aggiornamento formale del diritto federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "sha": "8e8a9e4d751b5f59a4b39cebfa70ebaffee0c426ae09a654846b55c7a3446687"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2008-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.11",
-      "sha": "3b6d65beadfceb7b84a231318e5f43f1fcb95edb29887d1379440283bd7d0ce0"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/366",
+      "dateDocument": "2007-06-22",
+      "roFundstelle": "AS 2008 2551",
+      "titelDe": "Bundesgesetz über die Erfindungspatente (Patentgesetz, PatG)",
+      "titelFr": "Loi fédérale sur les brevets d'invention (Loi sur les brevets, LBI)",
+      "titelIt": "Legge federale sui brevetti d'invenzione (Legge sui brevetti, LBI)",
+      "botschaftKey": "BOTSCHAFT-2006-1",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/366/de",
+      "sha": "abbcc319138e396a66468d0798510c8bfc881cf7a7588eb9ec58eef224627d7a"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.11",
-      "sha": "d75b6bd63c3a77f92fe2791347741f62af320f72a08136bfcb8f0a03a43c7713"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+      "dateDocument": "2005-06-17",
+      "roFundstelle": "AS 2006 2197",
+      "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+      "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)",
+      "botschaftKey": "BOTSCHAFT-2001-731",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "sha": "726dc6664a39e6fe7af33e3c9a57a421c91e985871732071c6431deab0e2a817"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2005-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.11",
-      "sha": "8b031f6855231c732649a36e219e21cc13eb572cbee0490613760bfd578b52ec"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2004/788",
+      "dateDocument": "2003-12-19",
+      "roFundstelle": "AS 2004 5085",
+      "titelDe": "Bundesgesetz über Zertifizierungsdienste im Bereich der elektronischen Signatur (Bundesgesetz über die elektronische Signatur, ZertES)",
+      "titelFr": "Loi fédérale sur les services de certification dans le domaine de la signature électronique (Loi sur la signature électronique, SCSE)",
+      "titelIt": "Legge federale sui servizi di certificazione nel campo della firma elettronica (Legge sulla firma elettronica, FiEle)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2004/788/de",
+      "sha": "ba58ee962299de0991747ac1bcf7a01551abd5abf26fff1b95755235eabd4f82"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2002-07-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.11",
-      "sha": "cd9100bd4e354ecc0c3a389ae08f6ee1fac3171ad81f141facefc20e9edd0134"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2002/226",
+      "dateDocument": "2001-10-05",
+      "roFundstelle": "AS 2002 1456",
+      "titelDe": "Bundesgesetz über den Schutz von Design (Designgesetz, DesG)",
+      "titelFr": "Loi fédérale sur la protection des designs (Loi sur les designs, LDes)",
+      "titelIt": "Legge federale sulla protezione del design (Legge sul design, LDes)",
+      "botschaftKey": "BOTSCHAFT-2000-557",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2002/226/de",
+      "sha": "92eacf7e2f97432e7babe97899c08c1746bb1f725ae0d4cfb183a60018fd53de"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2001-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/232.11",
-      "sha": "74a3f8ce2cf0611295afa3342c3835ddb62c99a29b460d8eaf9df3e13804e3e8"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+      "dateDocument": "2000-03-24",
+      "roFundstelle": "AS 2000 2355",
+      "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+      "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "sha": "a54e2068e85f8bc380fa08b9533774adfb99d960f1582f3a97562fc6d4b43f2b"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1993-04-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/274_274_274",
-      "dateDocument": "1992-08-28",
-      "roFundstelle": "AS 1993 274",
-      "titelDe": "Bundesgesetz vom 28. August 1992 über den Schutz von Marken und Herkunftsangaben (Markenschutzgesetz, MSchG)",
-      "titelFr": "Loi fédérale du 28 août 1992 sur la protection des marques et des indications de provenance (Loi sur la protection des marques, LPM)",
-      "titelIt": "Legge federale del 28 agosto 1992 sulla protezione dei marchi e delle indicazioni di provenienza (Legge sulla protezione dei marchi, LPM)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/274_274_274/de",
-      "sha": "52ee158e9065cd2bc0d6f0c6de27c51cc91e97e47d8fb81d7e6000f5674b30fc"
+      "dateEntryInForce": "1997-05-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1997/1028_1028_1028",
+      "dateDocument": "1996-10-04",
+      "roFundstelle": "AS 1997 1028",
+      "titelDe": "Bundesgesetz über den Schutz von Marken und Herkunftsangaben (Markenschutzgesetz, MSchG), Änderung",
+      "titelFr": "Loi fédérale sur la protection des marques et des indications de provenance (Loi sur la protection des marques, LPM), Modification",
+      "titelIt": "Legge federale sulla protezione dei marchi e delle indicazioni di provenienza (Legge sulla protezione dei marchi, LPM), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1997/1028_1028_1028/de",
+      "sha": "32a96cec278cb93cdf7d084418bcb5774af256579cea6bdaf76ae336ec947391"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1891-07-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/12/1_1_1",
-      "dateDocument": "1890-09-26",
-      "roFundstelle": "AS 12 1",
-      "titelDe": "Bundesgesetz vom 26. September 1890 betreffend den Schutz der Fabrik- und Handelsmarken, der Herkunftsbezeichnungen von Waren und der gewerblichen Auszeichnungen",
-      "titelFr": "Loi fédérale du 26 séptembre 1890 concernant la protection des marques de fabrique et de commerce, des indications de provenance et des mentions de récompenses industrielles",
-      "titelIt": "Legge federale del 26 settembre 1890 sulla protezione delle marche di fabbrica e di commercio, delle indicazioni di provenienza di merci e delle distinzioni industriali",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/12/1_1_1/de",
-      "sha": "03390d90f55e8a5bded38d8655cce925abbaaafdc1c01fea8e3c6546ee13a596"
+      "dateEntryInForce": "1996-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/5050_5050_5050",
+      "dateDocument": "1995-03-24",
+      "roFundstelle": "AS 1995 5050",
+      "titelDe": "Bundesgesetz vom 24. März 1995 über Statut und Aufgaben des Eidgenössischen Instituts für Geistiges Eigentum (IGEG)",
+      "titelFr": "Loi fédérale du 24 mars 1995 sur le statut et les tâches de l'Institut Fédéral de la Propriété Intellectuelle (LIPI)",
+      "titelIt": "Legge federale del 24 marzo 1995 sullo statuto e sui compiti dell'Istituto federale della proprietà intellettuale (LIPI)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/5050_5050_5050/de",
+      "sha": "95142e4240fcba73161f62fcf50dce0dfa284b72de6f594203b3ef760b654bd0"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1995-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1995/1781_1781_1781",
+      "dateDocument": "1994-12-16",
+      "roFundstelle": "AS 1995 1781",
+      "titelDe": "Bundesgesetz über den Schutz von Marken und Herkunftsangaben (Markenschutzgesetz, MSchG), Änderung",
+      "titelFr": "Loi fédérale sur la protection des marques et des indications de provenance (Loi sur la protection des marques, LPM), Modification",
+      "titelIt": "Legge federale sulla protezione dei marchi e delle indicazioni di provenienza (Legge sulla protezione dei marchi, LPM), Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1995/1781_1781_1781/de",
+      "sha": "223609d6ce61feabb33f44039e09752487053292a6a18f5270e76392ceaace5b"
     }
   ],
-  "sha": "125c50ceacc31f68b676e50d4c2ffca38c42118e93940b755036ba2e202b3703"
+  "sha": "651a34c3a1061edec6716de97f626cc892b32cac665ed5c636ab16c7b803558b"
 }

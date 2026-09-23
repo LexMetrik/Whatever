@@ -1,39 +1,54 @@
 {
   "erlassKey": "ZAVV",
   "sr": "364.3",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2023-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/364.3",
-      "sha": "d64e38ebbb6b84077ddb0948e032775d693fb499e988ead9a69587f85cb0cec2"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2017-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/364.3",
-      "sha": "411c1a482f69a6faa65b5cf9dcb32e588a59ad722bbf3f2cbbc37c21cecac8b4"
-    },
-    {
-      "art": "sammelerlass-marker",
-      "dateEntryInForce": "2015-09-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/364.3",
-      "sha": "9e0dbfe2ec9d01f5423e12097b73aa5a79dac853252cf00e57346b6e023ffc36"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2022/791",
+      "dateDocument": "2022-11-23",
+      "roFundstelle": "AS 2022 791",
+      "titelDe": "Verordnung über die Polizeibefugnisse der Armee (VPA)",
+      "titelFr": "Ordonnance concernant les pouvoirs de police de l’armée (OPoA)",
+      "titelIt": "Ordinanza concernente i poteri di polizia dell’esercito (OPPE)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/791/de",
+      "sha": "164a60d909cc1bdca5109506b841a52b9ff626bfb9e03912df69e357bfa2b45f"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "2009-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/760",
-      "dateDocument": "2008-11-12",
-      "roFundstelle": "AS 2008 5475",
-      "titelDe": "Verordnung über die Anwendung polizeilichen Zwangs und polizeilicher Massnahmen im Zuständigkeitsbereich des Bundes (Zwangsanwendungsverordnung, ZAV)",
-      "titelFr": "Ordonnance relative à l'usage de la contrainte et de mesures policières dans les domaines relevant de la compétence de la Confédération (Ordonnance sur l'usage de la contrainte, OLUsC)",
-      "titelIt": "Ordinanza sulla coercizione di polizia e le misure di polizia negli ambiti di competenza della Confederazione (Ordinanza sulla coercizione, OCoe)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/760/de",
-      "sha": "6ee7e1ba8cc4c47f1abc773d3b9cc28006e7b55812add71eb275a68ca605aa1c"
+      "dateEntryInForce": "2017-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2017/100",
+      "dateDocument": "2017-02-01",
+      "roFundstelle": "AS 2017 563",
+      "titelDe": "Verordnung über die Einführung der Landesverweisung",
+      "titelFr": "Ordonnance sur la mise en uvre de l'expulsion pénale",
+      "titelIt": "Ordinanza sull'attuazione dell'espulsione giudiziaria",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/100/de",
+      "sha": "68dd55e3fda62ea868c6b04baf72396da3d4a4921a5254958cecc37fb8368661"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "2015-09-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/435",
+      "dateDocument": "2015-06-24",
+      "roFundstelle": "AS 2015 2333",
+      "titelDe": "Verordnung über den Einsatz von privaten Sicherheitsunternehmen für Schutzaufgaben durch Bundesbehörden (Verordnung über den Einsatz von Sicherheitsunternehmen, VES)",
+      "titelFr": "Ordonnance sur l'engagement d'entreprises de sécurité privées par des autorités fédérales pour l'exécution de tâches en matière de protection (Ordonnance sur l'engagement d'entreprises de sécurité, OESS)",
+      "titelIt": "Ordinanza sull'impiego da parte di autorità federali di imprese di sicurezza private per l'esecuzione di compiti di protezione (Ordinanza sull'impiego di imprese di sicurezza, OIIS)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/435/de",
+      "sha": "eeb784ae9c821ef978683e60131df57686fb5157969ae2659bc562d6bb684ac7"
     }
   ],
-  "sha": "3530b3b813218e072f209698d9d3ac041df3900b14cfdc3927ce44c29d60aca4"
+  "sha": "a6dd9af0ef999b6e373370a96c0057104da17f583b9363451c36b938dc6b0ae9"
 }

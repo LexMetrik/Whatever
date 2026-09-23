@@ -747,5 +747,71 @@
     "2025-12-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/2022/568",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+    "inkrafttreten": "2023-09-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/568",
+        "typ": 5,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/585",
+        "typ": 1,
+        "datum": "2023-09-01",
+        "fassung": "2023-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/746",
+        "typ": 1,
+        "datum": "2024-01-01",
+        "fassung": "2024-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/435",
+        "typ": 1,
+        "datum": "2024-09-15",
+        "fassung": "2024-09-15"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/169",
+        "typ": 1,
+        "datum": "2025-04-01",
+        "fassung": "2025-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/694",
+        "typ": 1,
+        "datum": "2025-12-01",
+        "fassung": "2025-12-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/2022/585": {
+        "dateForce": "2022-12-01",
+        "dateDoc": "2022-09-23",
+        "titelDe": "Verordnung vom 23. September 2022 über genetische Untersuchungen beim Menschen (GUMV)",
+        "titelFr": "Ordonnance du 23 septembre 2022 sur l’analyse génétique humaine (OAGH)",
+        "titelIt": "Ordinanza del 23 settembre 2022 concernente gli esami genetici sull’essere umano (OEGU)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/746": {
+        "dateForce": "2024-01-01",
+        "dateDoc": "2023-11-22",
+        "titelDe": "Organisationsverordnung für das Eidgenössische Departement für Verteidigung, Bevölkerungsschutz und Sport (OV-VBS)",
+        "titelFr": "Ordonnance sur l’organisation du Département fédéral de la défense, de la protection de la population et des sports (Org-DDPS)",
+        "titelIt": "Ordinanza sull’organizzazione del Dipartimento federale della difesa, della protezione della popolazione e dello sport (OOrg-DDPS)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/169": {
+        "dateForce": "2025-04-01",
+        "dateDoc": "2025-03-07",
+        "titelDe": "Verordnung vom 7. März 2025 über die Cybersicherheit (Cybersicherheitsverordnung, CSV)",
+        "titelFr": "Ordonnance du 7 mars 2025 sur la cybersécurité (OCyS)",
+        "titelIt": "Ordinanza del 7 marzo 2025 sulla cibersicurezza (OCS)"
+      }
+    }
+  }
 }

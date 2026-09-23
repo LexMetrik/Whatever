@@ -1430,5 +1430,267 @@
       "zielOc": "https://fedlex.data.admin.ch/eli/oc/2021/87",
       "zielFundstelle": "AS 2021 87"
     }
+  },
+  "kontext": {
+    "abstractEli": "cc/1984/1164_1164_1164",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1984/1164_1164_1164",
+    "inkrafttreten": "1985-01-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1984/1164_1164_1164",
+        "typ": 5,
+        "datum": "1985-01-01",
+        "fassung": "1985-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1985/28_28_28",
+        "typ": 6,
+        "datum": "1985-01-01",
+        "fassung": "1985-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1986/1566_1566_1566",
+        "typ": 1,
+        "datum": "1987-01-01",
+        "fassung": "1987-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1988/1998_1998_1998",
+        "typ": 1,
+        "datum": "1989-01-01",
+        "fassung": "1989-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1990/1880_1880_1880",
+        "typ": 1,
+        "datum": "1991-01-01",
+        "fassung": "1991-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/5_5_5",
+        "typ": 1,
+        "datum": "1993-01-01",
+        "fassung": "1993-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/90_90_90",
+        "typ": 1,
+        "datum": "1995-01-01",
+        "fassung": "1995-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1996/2117_2117_2117",
+        "typ": 1,
+        "datum": "1996-08-01",
+        "fassung": "1996-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2122_2122_2122",
+        "typ": 1,
+        "datum": "1997-10-01",
+        "fassung": "1997-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1997/2122_2122_2122",
+        "typ": 2,
+        "datum": "1997-10-01",
+        "fassung": "1997-10-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1998/2616_2616_2616",
+        "typ": 1,
+        "datum": "1999-01-01",
+        "fassung": "1999-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/488",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/181",
+        "typ": 1,
+        "datum": "2002-06-01",
+        "fassung": "2002-06-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/326",
+        "typ": 1,
+        "datum": "2002-09-01",
+        "fassung": "2002-09-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2003/255",
+        "typ": 1,
+        "datum": "2003-07-01",
+        "fassung": "2003-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/321",
+        "typ": 1,
+        "datum": "2004-07-01",
+        "fassung": "2004-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2005/205",
+        "typ": 1,
+        "datum": "2005-04-01",
+        "fassung": "2005-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/25",
+        "typ": 1,
+        "datum": "2006-02-01",
+        "fassung": "2006-02-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/446",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/741",
+        "typ": 1,
+        "datum": "2007-12-01",
+        "fassung": "2007-12-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/773",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2007/861",
+        "typ": 1,
+        "datum": "2008-01-01",
+        "fassung": "2008-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2021/87",
+        "typ": 1,
+        "datum": "2021-03-01",
+        "fassung": "2021-03-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2022/656",
+        "typ": 6,
+        "datum": "2022-11-09",
+        "fassung": "2022-11-09"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2024/73",
+        "typ": 1,
+        "datum": "2024-03-01",
+        "fassung": "2024-03-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1985/28_28_28": {
+        "dateForce": "1985-01-01",
+        "dateDoc": "1985-01-22",
+        "roId": "RO 1985 28",
+        "titelDe": "Verordnung vom über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Berichtigung (nur ital.)",
+        "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Errata (seulement en italien)",
+        "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Correzione"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1986/1566_1566_1566": {
+        "dateForce": "1987-01-01",
+        "dateDoc": "1986-09-17",
+        "roId": "RO 1986 1566",
+        "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+        "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+        "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAEF), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1988/1998_1998_1998": {
+        "dateForce": "1989-01-01",
+        "dateDoc": "1988-11-23",
+        "roId": "RO 1988 1998",
+        "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+        "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+        "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1990/1880_1880_1880": {
+        "dateForce": "1991-01-01",
+        "dateDoc": "1990-11-21",
+        "roId": "RO 1990 1880",
+        "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+        "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+        "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1993/5_5_5": {
+        "dateForce": "1993-01-01",
+        "dateDoc": "1992-12-23",
+        "roId": "RO 1993 5",
+        "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+        "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+        "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1995/90_90_90": {
+        "dateForce": "1995-01-01",
+        "dateDoc": "1994-12-21",
+        "roId": "RO 1995 90",
+        "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+        "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+        "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1996/2117_2117_2117": {
+        "dateForce": "1996-08-01",
+        "dateDoc": "1996-06-10",
+        "roId": "RO 1996 2117",
+        "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+        "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+        "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/1997/2122_2122_2122": {
+        "dateForce": "1997-10-01",
+        "dateDoc": "1997-09-10",
+        "roId": "RO 1997 2122",
+        "titelDe": "Verordnung über den Erwerb von Grundstücken durch Personen im Ausland (BewV), Änderung",
+        "titelFr": "Ordonnance sur l'acquisition d'immeubles par des personnes à l'étranger (OAIE), Modification",
+        "titelIt": "Ordinanza sull'acquisto di fondi da parte di persone all'estero (OAFE), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/321": {
+        "dateForce": "2004-07-01",
+        "dateDoc": "2004-04-21",
+        "roId": "RO 2004 2669",
+        "titelDe": "Handelsregisterverordnung (HRegV)",
+        "titelFr": "Ordonnance sur le registre du commerce (ORC)",
+        "titelIt": "Ordinanza sul registro di commercio (ORC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/446": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2006-06-28",
+        "roId": "RO 2006 2923",
+        "titelDe": "Zivilstandsverordnung (ZStV)",
+        "titelFr": "Ordonnance sur l'état civil (OEC)",
+        "titelIt": "Ordinanza sullo stato civile (OSC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/773": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-10-24",
+        "roId": "RO 2007 5627",
+        "titelDe": "Verordnung über die Anpassung von Verordnungen an das Bundesgesetz vom 16. Dezember 2005 über die Ausländerinnen und Ausländer",
+        "titelFr": "Ordonnance portant adaptation d'ordonnances à la loi fédérale du 16 décembre 2005 sur les étrangers",
+        "titelIt": "Ordinanza concernente l'adeguamento di ordinanze alla legge federale del 16 dicembre 2005 sugli stranieri"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2007/861": {
+        "dateForce": "2008-01-01",
+        "dateDoc": "2007-12-07",
+        "roId": "RO 2007 6657",
+        "titelDe": "Verordnung zum Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatverordnung, V-GSG)",
+        "titelFr": "Ordonnance relative à la loi fédérale sur les privilèges, les immunités et les facilités, ainsi que sur les aides financières accordés par la Suisse en tant qu'Etat hôte (Ordonnance sur l'Etat hôte, OLEH)",
+        "titelIt": "Ordinanza relativa alla legge federale sui privilegi, le immunità e le facilitazioni, nonché sugli aiuti finanziari accordati dalla Svizzera quale Stato ospite (Ordinanza sullo Stato ospite, OSOsp)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2024/73": {
+        "dateForce": "2024-03-01",
+        "dateDoc": "2024-01-31",
+        "titelDe": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+        "titelFr": "Ordonnance sur les placements collectifs de capitaux (Ordonnance sur les placements collectifs, OPCC)",
+        "titelIt": "Ordinanza sugli investimenti collettivi di capitale (Ordinanza sugli investimenti collettivi, OICol)"
+      }
+    }
   }
 }

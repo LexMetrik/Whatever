@@ -847,5 +847,200 @@
     "2025-07-01"
   ],
   "belegteOcs": [],
-  "rectifiesInfoProOc": {}
+  "rectifiesInfoProOc": {},
+  "kontext": {
+    "abstractEli": "cc/1993/1798_1798_1798",
+    "basicAct": "https://fedlex.data.admin.ch/eli/oc/1993/1798_1798_1798",
+    "inkrafttreten": "1993-07-01",
+    "auswirkungen": [
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1993/1798_1798_1798",
+        "typ": 5,
+        "datum": "1993-07-01",
+        "fassung": "1993-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/1995/1776_1776_1776",
+        "typ": 1,
+        "datum": "1995-07-01",
+        "fassung": "1995-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2000/374",
+        "typ": 1,
+        "datum": "2001-01-01",
+        "fassung": "2001-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2002/283",
+        "typ": 1,
+        "datum": "2002-08-01",
+        "fassung": "2002-08-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2004/172",
+        "typ": 1,
+        "datum": "2004-04-01",
+        "fassung": "2004-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2006/352",
+        "typ": 1,
+        "datum": "2007-01-01",
+        "fassung": "2007-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/347",
+        "typ": 1,
+        "datum": "2008-07-01",
+        "fassung": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/357",
+        "typ": 1,
+        "datum": "2008-07-01",
+        "fassung": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2008/366",
+        "typ": 1,
+        "datum": "2008-07-01",
+        "fassung": "2008-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 1,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2010/262",
+        "typ": 2,
+        "datum": "2011-01-01",
+        "fassung": "2011-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2015/609",
+        "typ": 1,
+        "datum": "2017-01-01",
+        "fassung": "2017-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/181",
+        "typ": 1,
+        "datum": "2020-04-01",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/182",
+        "typ": 1,
+        "datum": "2020-04-01",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/182",
+        "typ": 2,
+        "datum": "2020-04-01",
+        "fassung": "2020-04-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2020/498",
+        "typ": 1,
+        "datum": "2022-01-01",
+        "fassung": "2022-01-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2023/259",
+        "typ": 1,
+        "datum": "2023-07-01",
+        "fassung": "2023-07-01"
+      },
+      {
+        "oc": "https://fedlex.data.admin.ch/eli/oc/2025/313",
+        "typ": 1,
+        "datum": "2025-07-01",
+        "fassung": "2025-07-01"
+      }
+    ],
+    "ocStamm": {
+      "https://fedlex.data.admin.ch/eli/oc/1995/1776_1776_1776": {
+        "dateForce": "1995-07-01",
+        "dateDoc": "1994-12-16",
+        "roId": "RO 1995 1776",
+        "titelDe": "Bundesgesetz über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsgesetz, URG), Änderung",
+        "titelFr": "Loi fédérale sur le droit d'auteur et les droits voisins (Loi sur le droit d'auteur, LDA), Modification",
+        "titelIt": "Legge federale sul diritto d'autore e sui diritti di protezione affini (Legge sul diritto d'autore, LDA), Modifica"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2000/374": {
+        "dateForce": "2001-01-01",
+        "dateDoc": "2000-03-24",
+        "roId": "RO 2000 2355",
+        "titelDe": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+        "titelFr": "Loi fédérale sur les fors en matière civile (Loi sur les fors, LFors)",
+        "titelIt": "Legge federale sul foro in materia civile (Legge sul foro, LForo)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2002/283": {
+        "dateForce": "2002-08-01",
+        "dateDoc": "2001-12-14",
+        "roId": "RO 2002 1904",
+        "titelDe": "Bundesgesetz über Filmproduktion und Filmkultur (Filmgesetz, FiG)",
+        "titelFr": "Loi fédérale sur la culture et la production cinématographiques (Loi sur le cinéma, LCin)",
+        "titelIt": "Legge federale sulla produzione e la cultura cinematografiche (Legge sul cinema, LCin)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2004/172": {
+        "dateForce": "2004-04-01",
+        "dateDoc": "2003-06-20",
+        "roId": "RO 2004 1385",
+        "titelDe": "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
+        "titelFr": "Loi fédérale sur les cartels et autres restrictions à la concurrence (Loi sur les cartels, LCart)",
+        "titelIt": "Legge federale sui cartelli e altre limitazioni della concorrenza (Legge sui cartelli, LCart)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2006/352": {
+        "dateForce": "2007-01-01",
+        "dateDoc": "2005-06-17",
+        "roId": "RO 2006 2197",
+        "titelDe": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+        "titelFr": "Loi sur le Tribunal administratif fédéral (LTAF)",
+        "titelIt": "Legge sul Tribunale amministrativo federale (LTAF)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2008/366": {
+        "dateForce": "2008-07-01",
+        "dateDoc": "2007-06-22",
+        "roId": "RO 2008 2551",
+        "titelDe": "Bundesgesetz über die Erfindungspatente (Patentgesetz, PatG)",
+        "titelFr": "Loi fédérale sur les brevets d'invention (Loi sur les brevets, LBI)",
+        "titelIt": "Legge federale sui brevetti d'invenzione (Legge sui brevetti, LBI)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2010/262": {
+        "dateForce": "2011-01-01",
+        "dateDoc": "2008-12-19",
+        "roId": "RO 2010 1739",
+        "titelDe": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+        "titelFr": "Code de procédure civile (CPC)",
+        "titelIt": "Codice di diritto processuale civile svizzero (Codice di procedura civile, CPC)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2015/609": {
+        "dateForce": "2017-01-01",
+        "dateDoc": "2013-06-21",
+        "roId": "RO 2015 3631",
+        "titelDe": "Bundesgesetz über den Schutz von Marken und Herkunftsangaben (Markenschutzgesetz, MSchG)",
+        "titelFr": "Loi fédérale sur la protection des marques et des indications de provenance (Loi sur la protection des marques, LPM)",
+        "titelIt": "Legge federale sulla protezione dei marchi e delle indicazioni di provenienza (Legge sulla protezione dei marchi, LPM)"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2023/259": {
+        "dateForce": "2023-07-01",
+        "dateDoc": "2021-12-17",
+        "titelDe": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+        "titelFr": "Loi fédérale du 17 décembre 2021 sur l’harmonisation des peines",
+        "titelIt": "Legge federale del 17 dicembre 2021 sull’armonizzazione delle pene"
+      },
+      "https://fedlex.data.admin.ch/eli/oc/2025/313": {
+        "dateForce": "2025-07-01",
+        "dateDoc": "2023-12-22",
+        "titelDe": "Bundesgesetz über die Einführung eines vereinfachten Verfahrens zur Vernichtung von Kleinsendungen im Immaterialgüterrecht",
+        "titelFr": "Loi fédérale sur l’introduction d’une procédure simplifiée de destruction de petits envois dans le droit de la propriété intellectuelle",
+        "titelIt": "Legge federale che introduce una procedura semplificata per la distruzione di piccoli invii nel diritto della proprietà intellettuale"
+      }
+    }
+  }
 }

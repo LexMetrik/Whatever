@@ -1,14 +1,27 @@
 {
   "erlassKey": "VSTV",
   "sr": "642.211",
-  "abgerufen": "2026-09-05",
-  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen (SR-Taxonomie) zusammengestellt; massgeblich bleibt die amtliche Sammlung (AS/RO). Verlässlich ab ~2000; Änderungen über Sammelerlasse anderer SR sind als Marker gekennzeichnet.",
+  "abgerufen": "2026-09-23",
+  "reichweite": "Maschinell aus dem amtlichen Fedlex-Graphen zusammengestellt: die Erlasse, die Fedlex diesem Erlass als Änderung zuordnet (auch Sammel- und Mantelerlasse), ergänzt um weitere Erlasse derselben SR-Nummer seit dem Inkrafttreten. Wer gestaffelt in Kraft trat, steht je Inkrafttretensdatum. Fassungen ohne zugeordneten Änderungserlass sind als Marker gekennzeichnet. Massgeblich bleibt die amtliche Sammlung (AS/RO).",
   "revisionen": [
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2025-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.211",
-      "sha": "bc81bf73c1cc1233787bfb230ec689f8a86f68961cb6dbf48a96b00a40cd047b"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2023/305",
+      "dateDocument": "2023-06-09",
+      "roFundstelle": "AS 2023 305",
+      "titelDe": "Verordnung über die Verrechnungssteuer (Verrechnungssteuerverordnung, VStV)",
+      "titelFr": "Ordonnance sur l’impôt anticipé (OIA)",
+      "titelIt": "Ordinanza sull’imposta preventiva (OIPrev)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-09-01",
+        "2025-01-01"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/305/de",
+      "sha": "0c777f3ee27b44daca9daee53bca455cb87a3afed3c34a72730bb7fa21fb6eab"
     },
     {
       "art": "aenderung",
@@ -19,8 +32,11 @@
       "titelDe": "Verordnung über die Verrechnungssteuer (Verrechnungssteuerverordnung, VStV)",
       "titelFr": "Ordonnance sur l’impôt anticipé (OIA)",
       "titelIt": "Ordinanza sull’imposta preventiva (OIPrev)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2024/161/de",
-      "sha": "8ed0c89e690861e1aace4ef228b1eadd6a7849faa35f3aeaa49c75e146f6ce08"
+      "sha": "2215ab3bef4f9c2b497cc4b48b9e6748e0ab2ce593f9071676a4d878a4b465f0"
     },
     {
       "art": "aenderung",
@@ -31,8 +47,15 @@
       "titelDe": "Verordnung über die Verrechnungssteuer (Verrechnungssteuerverordnung, VStV)",
       "titelFr": "Ordonnance sur l’impôt anticipé (OIA)",
       "titelIt": "Ordinanza sull’imposta preventiva (OIPrev)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "etappen": [
+        "2023-09-01",
+        "2025-01-01"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2023/305/de",
-      "sha": "82b20871ee80c7bd431ed9cf67c8f07e9de9ba1095a872400e1881f7a2c32cfb"
+      "sha": "c273c9045f39b61282354f4da344079753a36ae7fb8021047818201987719a07"
     },
     {
       "art": "aenderung",
@@ -43,8 +66,11 @@
       "titelDe": "Verordnung vom 4. Mai 2022 über das Meldeverfahren im Konzern bei der Verrechnungssteuer",
       "titelFr": "Ordonnance du 4 mai 2022 sur la procédure de déclaration au sein du groupe en matière d'impôt anticipé",
       "titelIt": "Ordinanza del 4 maggio 2022 sulla procedura di notifica all’interno di un gruppo ai fini dell’imposta preventiva",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2022/307/de",
-      "sha": "5dfb6f977a3441eed7a5cf06940b6762b4df494e1b94b6fbb4d75cb98e08653f"
+      "sha": "e26dd977ddacc561428ec8a9773d28ad253a17f3df7a0f0cc5b7b65b9af91997"
     },
     {
       "art": "aenderung",
@@ -55,20 +81,42 @@
       "titelDe": "Verordnung über die Verrechnungssteuer (Verrechnungssteuerverordnung, VStV)",
       "titelFr": "Ordonnance sur l’impôt anticipé (OIA)",
       "titelIt": "Ordinanza sull’imposta preventiva (OIPrev)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2021/77/de",
-      "sha": "810c7d6c2e462e5b3f153cc2b092020e7d1fb7dd431ff8d885cff7c72fbfa535"
+      "sha": "72461e9081f3c7b77f05070bf52c169c3af3894ea5562b5a4063aecc87298c7b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2020-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.211",
-      "sha": "296bf930983c757fd3777ebb8763a0921c859fcbcf50298637881673144076d9"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2019/763",
+      "dateDocument": "2019-11-06",
+      "roFundstelle": "AS 2019 4633",
+      "titelDe": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+      "titelFr": "Ordonnance sur les établissements financiers (OEFin)",
+      "titelIt": "Ordinanza sugli istituti finanziari (OIsFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2019/763/de",
+      "sha": "c51fd587d9ec14868e8f4aeab014c00a2b53aa599ae0c4aaa8d690d968c4c771"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2019-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.211",
-      "sha": "46da4e661089101c7207f257e4eed4b1c4e9888edc19c6f105ca7612dcf5044e"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2018/796",
+      "dateDocument": "2018-11-07",
+      "roFundstelle": "AS 2018 5155",
+      "titelDe": "Verordnung über Geldspiele (Geldspielverordnung, VGS)",
+      "titelFr": "Ordonnance sur les jeux d'argent (OJAr)",
+      "titelIt": "Ordinanza sui giochi in denaro (OGD)",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2018/796/de",
+      "sha": "062c637e890476169f90c00c645b5a2aa6d6751380e4ee04390a8a022fa5715c"
     },
     {
       "art": "aenderung",
@@ -79,20 +127,42 @@
       "titelDe": "Verordnung über die Verrechnungssteuer (Verrechnungssteuerverordnung, VStV)",
       "titelFr": "Ordonnance sur l'impôt anticipé (Ordonnance sur l'impôt anticipé, OIA)",
       "titelIt": "Ordinanza sull'imposta preventiva (OIPrev)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2017/148/de",
-      "sha": "f049367484960d07ff1272232557f2b5d069c92bcd2888ba38f27d773aa19bb5"
+      "sha": "874f05bb7ee712aa53b78989bd53c0f6e1f7a698cf37e7318635e795146954d9"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2016-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.211",
-      "sha": "ad0ae98abe13569a409c9af370e5bee074b5fc5c5322e9b237d80c3ac7534eee"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2015/854",
+      "dateDocument": "2015-11-25",
+      "roFundstelle": "AS 2015 5413",
+      "titelDe": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+      "titelFr": "Ordonnance sur les infrastructures des marchés financiers et le comportement sur le marché en matière de négociation de valeurs mobilières et de dérivés (Ordonnance sur l'infrastructure des marchés financiers, OIMF)",
+      "titelIt": "Ordinanza sulle infrastrutture del mercato finanziario e il comportamento sul mercato nel commercio di valori mobiliari e derivati (Ordinanza sull'infrastruttura finanziaria, OInFi)",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2015/854/de",
+      "sha": "1dafdd859641fa404d58133e5b4a5fbffc90cf3b941d5b67377c0ecbd1b63527"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2014-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.211",
-      "sha": "dcfc080455a834e6893728f67f2d0f012083ace1453756caee64675cb6bbf385"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2013/569",
+      "dateDocument": "2013-08-14",
+      "roFundstelle": "AS 2013 2773",
+      "titelDe": "Verordnung über die zeitliche Bemessung der direkten Bundessteuer",
+      "titelFr": "Ordonnance sur le calcul dans le temps de l'impôt fédéral direct",
+      "titelIt": "Ordinanza sulle basi temporali dell'imposta federale diretta",
+      "wirkungen": [
+        "aenderung",
+        "aufhebung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2013/569/de",
+      "sha": "e27b3e11249063df073e1423ffe82ab5f6475cd3b9c04489d78d022f9df95565"
     },
     {
       "art": "aenderung",
@@ -103,20 +173,41 @@
       "titelDe": "Verordnung über die Verrechnungssteuer (Verrechnungssteuerverordnung, VStV)",
       "titelFr": "Ordonnance sur l'impôt anticipé (OIA)",
       "titelIt": "Ordinanza sull'imposta preventiva (OIPrev)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/720/de",
-      "sha": "60b8611508df72c891a4774e3627782584d20f4c226b39a664331ec0ca97abe6"
+      "sha": "5f101089025ab4354fd93ee00fffecee3126df58ac08ebaf79e2e4ccbe9cf96b"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2012-03-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.211",
-      "sha": "936faa244a9c549d1c91c6b6cfa474adb4e7a9fd4de8b71f4ad9374939668078"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2012/119",
+      "dateDocument": "2012-02-15",
+      "roFundstelle": "AS 2012 791",
+      "titelDe": "Verordnung über die Stempelabgaben",
+      "titelFr": "Ordonnance sur les droits de timbre",
+      "titelIt": "Ordinanza concernente le tasse di bollo",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2012/119/de",
+      "sha": "228f6a17442e602710fa7ff6649c7a9770a0dde67421e449566a18db705e2d96"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2010-08-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.211",
-      "sha": "5a2800bdc9e5261bb24a4aa4b2db7118e5c76e37f070e8d6b0e0c8e77c17b4dc"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2010/394",
+      "dateDocument": "2010-06-18",
+      "roFundstelle": "AS 2010 2963",
+      "titelDe": "Verordnung über Änderungen im Bereich der Stempelabgaben und der Verrechnungssteuer",
+      "titelFr": "Ordonnance relative à des modifications concernant les droits de timbre et l'impôt anticipé",
+      "titelIt": "Ordinanza che modifica atti normativi in materia di tasse di bollo e di imposta preventiva",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2010/394/de",
+      "sha": "be656327b4a826016229827df2ee832c2bbe4021ce6b77fccf21f94e2e311f61"
     },
     {
       "art": "aenderung",
@@ -127,20 +218,41 @@
       "titelDe": "Vollziehungsverordnung zum Bundesgesetz über die Verrechnungssteuer (Verrechnungssteuerverordnung, VStV)",
       "titelFr": "Ordonnance d'exécution de la loi fédérale sur l'impôt anticipé (Ordonnance sur l'impôt anticipé, OIA)",
       "titelIt": "Ordinanza d'esecuzione della legge federale sull'imposta preventiva (Ordinanza sull'imposta preventiva, OIPrev)",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2009/427/de",
-      "sha": "d64b29470c5c100bc7dc87dbb588b02e71dbb1653cc7a21e033b0793f72a8e2f"
+      "sha": "c940dc30a082c37b8964e16d50a7245029d97a8ed4280a5ba5aaee4edf2276bd"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2009-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.211",
-      "sha": "de3e23e62b024fc85d6a90572613cb949f6d633374891a72f3fce8e0e39416b2"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2008/703",
+      "dateDocument": "2008-10-15",
+      "roFundstelle": "AS 2008 5073",
+      "titelDe": "Verordnung über die Änderungen im Bereich der Stempelabgaben, der Verrechnungsteuer und der pauschalen Steueranrechnung",
+      "titelFr": "Ordonnance concernant les modifications dans le domaine des droits de timbre, de l'impôt anticipé et de l'imputation forfaitaire d'impôt",
+      "titelIt": "Ordinanza concernente le modifiche nel settore delle tasse di bollo, dell'imposta preventiva e del computo globale d'imposta",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2008/703/de",
+      "sha": "cede85babb6acab1eef8af9ee83a85fe466d6027cb11b2cb1d6da2e671371851"
     },
     {
-      "art": "sammelerlass-marker",
+      "art": "aenderung",
       "dateEntryInForce": "2007-01-01",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/cc/642.211",
-      "sha": "90f79c413dc682fc8697a9ef880ddb064229a73b91a8db0cc787b93fff3951aa"
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/2006/725",
+      "dateDocument": "2006-11-08",
+      "roFundstelle": "AS 2006 4705",
+      "titelDe": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "titelFr": "Ordonnance portant adaptation d'ordonnances du Conseil fédéral à la révision totale de la procédure fédérale",
+      "titelIt": "Ordinanza concernente l'adeguamento di ordinanze del Consiglio federale alla revisione totale dell'organizzazione giudiziaria federale",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "sha": "509e7b22613546560d1e36883c9ec32fce8a8368a2969478863a0cb4a567bbfd"
     },
     {
       "art": "aenderung",
@@ -151,21 +263,57 @@
       "titelDe": "Vollziehungsverordnung zum Bundesgesetz über die Verrechnungssteuer",
       "titelFr": "Ordonnance d'exécution sur l'impôt anticipé",
       "titelIt": "Ordinanza d'esecuzione della legge federale sull'imposta preventiva",
+      "wirkungen": [
+        "aenderung"
+      ],
       "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/2000/542/de",
-      "sha": "464fb576261d3a85a6f97e579ce655477d84043894430c7c8d6a7d5fa40e8157"
+      "sha": "c51c2c36762fc3688ea127c4cc6569b36044e8b56e6bf5ae02e157169f26c844"
     },
     {
       "art": "aenderung",
-      "dateEntryInForce": "1967-01-01",
-      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1966/1585_1641_1624",
-      "dateDocument": "1966-12-19",
-      "roFundstelle": "AS 1966 1585",
-      "titelDe": "Verordnung vom 19. Dezember 1966 über die Verrechnungssteuer (Verrechnungssteuerverordnung, VStV)",
-      "titelFr": "Ordonnance du 19 décembre 1966 sur l'impôt anticipé (OIA)",
-      "titelIt": "Ordinanza del 19 dicembre 1966 sull'imposta preventiva (OIPrev)",
-      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1966/1585_1641_1624/de",
-      "sha": "62ce372647fba80a65f5e46f791113eb95ef9d35e653768f8e941d24b07c587c"
+      "dateEntryInForce": "1993-03-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1993/879_879_879",
+      "dateDocument": "1993-02-03",
+      "roFundstelle": "AS 1993 879",
+      "titelDe": "Verordnung vom 3. Februar 1993 über Organisation und Verfahren eidgenössischer Rekurs- und Schiedskommissionen",
+      "titelFr": "Ordonnance du 3 février 1993 concernant l'organisation et la procédure des commissions fédérales de recours et d'arbitrage",
+      "titelIt": "Ordinanza del 3 febbraio 1993 concernente l'organizzazione e la procedura delle commissioni federali di ricorso e di arbitrato",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1993/879_879_879/de",
+      "sha": "eeb2edaf5b59d7597d4dc7fece357503928244745845e337709f59a66830c539"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1992-07-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1992/1200_1200_1200",
+      "dateDocument": "1992-05-20",
+      "roFundstelle": "AS 1992 1200",
+      "titelDe": "Vollziehungsverordnung zum Bundesgesetz über die Verrechnungssteuer (VStV), Änderung",
+      "titelFr": "Ordonnance d'exécution de la loi fédérale sur l'impôt anticipé (OLA), Modification",
+      "titelIt": "Ordinanza d'esecuzione della legge federale sull'imposta preventiva, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1992/1200_1200_1200/de",
+      "sha": "635f39c7e1e9282899ee705601315898925d75f6f9929ff66b2bf31d93431aa2"
+    },
+    {
+      "art": "aenderung",
+      "dateEntryInForce": "1990-01-01",
+      "ocUri": "https://fedlex.data.admin.ch/eli/oc/1989/1772_1772_1772",
+      "dateDocument": "1989-08-23",
+      "roFundstelle": "AS 1989 1772",
+      "titelDe": "Verordnung zum Bundesgesetz über die Banken und Sparkassen, Änderung",
+      "titelFr": "Ordonnance d'exécution de la loi sur les banques et les caisses d'épargne, Modification",
+      "titelIt": "Regolamento di esecuzione della legge federale su le banche e le casse di risparmio, Modifica",
+      "wirkungen": [
+        "aenderung"
+      ],
+      "quelleUrl": "https://www.fedlex.admin.ch/eli/oc/1989/1772_1772_1772/de",
+      "sha": "87fb07727ba9fd0adf2be150174357abf86d61970174faaba8921d0a1992f0c4"
     }
   ],
-  "sha": "2c18ac77fa5016549c115e5c3f9e8d6f53d7281dd4c261511a4d7e98885f5007"
+  "sha": "1920f4654338dc49e4c7699ef3386294595906bf9fa5ba95f2d45720c81ffd67"
 }
