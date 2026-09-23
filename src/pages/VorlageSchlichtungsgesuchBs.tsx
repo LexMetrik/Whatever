@@ -1,9 +1,8 @@
-import { useMemo } from 'react';
 import { NormText } from '../components/NormText';
 import {
   SG_DEFAULTS, SG_PERSON_NATUERLICH, SG_SCHWELLEN, SG_OFFENE_VERIFIKATIONEN, SG_KANTONALE_ERLASSE,
   sgZusammenstellen, sgMaengel, sgHinweise, sgRouting, sgStreitwert, sgPrefillLesen, sgPrefillOrt, fmtCHF,
-  sgEingabeArt, type SgAnswers, type SgPartei, type SgTyp,
+  sgEingabeArt, type SgAnswers, type SgMangel, type SgPartei, type SgRouting, type SgTyp,
 } from '../lib/vorlagen/schlichtungsgesuchBs';
 import type { PdfBanner } from '../lib/vorlagen/banner';
 import { BetragsFeld } from '../components/BetragsFeld';
@@ -13,11 +12,9 @@ import { DatumsFeld } from '../components/DatumsFeld';
 import { Checkbox, Field, GruppenTitel, ListenEditor, NICHT_GESPEICHERT_HINWEIS, NormLink, inputCls } from '../components/vorlagen/ui';
 import { SelectionGrid } from '../components/ui/SelectionGrid';
 import { SgAdressatKachel, SgBehoerdenWahl } from '../components/vorlagen/SgBehoerdenWahl';
-import { useWizardState } from '../components/vorlagen/useWizardState';
-import { VorlagenWizardRahmen, VorschauPanel, ExportLeiste } from '../components/vorlagen/wizard';
+import { VorlagenSeite, type SeiteCtx, type VorlagenSeitenConfig } from '../components/vorlagen/VorlagenSeite';
 import { ZefixSuche } from '../components/vorlagen/ZefixSuche';
 import { uidGueltig, uidNormalisieren } from '../lib/uid';
-import { karte } from '../lib/startseiteConfig';
 import { GerichtsGrundlageZeile } from '../components/vorlagen/GerichtsWahlBlock';
 
 // ─── Vorlagen-Wizard: Schlichtungsgesuch (Art. 202 ZPO) · Basel-Stadt ───────
@@ -26,6 +23,9 @@ import { GerichtsGrundlageZeile } from '../components/vorlagen/GerichtsWahlBlock
 // (direkt ans Gericht). Mängelliste mit Sprung zum
 // Schritt, Form-Gate (Papierform, Exemplare, Erscheinen, Kosten, Fristen).
 // Gemäss Anweisung: KEINE Browser-Storage-APIs – State nur im Speicher.
+// W2·29-WERKBANK-VORLAGEN V2e: Orchestrierung (Zustand, Prüfen-Schritt,
+// Export, Vorschau) über den geteilten Rahmen `VorlagenSeite` — verhaltens-
+// neutral; Eingabe-JSX, Stopp-Fall und Form-Gate unverändert aus dieser Datei.
 
 const SCHRITTE = [
   { id: 'vorpruefung', label: 'Streitgegenstand & Vorprüfung' },
@@ -50,32 +50,46 @@ const BANNER_SG: PdfBanner = {
   text: 'Einreichung in Papierform mit Unterschrift (Art. 130 ZPO); elektronisch nur mit anerkannter qualifizierter Signatur. Je ein Exemplar für die Behörde und jede Gegenpartei (Art. 131 ZPO).',
 };
 
-export function VorlageSchlichtungsgesuchBs() {
-  // KEIN speicherKey: Anweisung «keine Browser-Storage-APIs» – Zustand nur im
-  // Speicher; zuruecksetzen leert entsprechend nur den Speicher-Zustand.
-  // Prefill (Phase 4 Zuständigkeitsengine): Query-Vorbelegung beim ersten
-  // Render, voll editierbar; SSR-sicher via try/catch (kein window im Smoke).
-  const prefill = (() => {
-    try { return sgPrefillLesen(window.location.search); } catch { return null; }
-  })();
+/** Rechenwerte der Seite — EIN Engine-Lauf je Antwortstand (useMemo im Rahmen). */
+type SgZ = {
+  ergebnis: ReturnType<typeof sgZusammenstellen>;
+  routing: SgRouting | null;
+  maengel: SgMangel[];
+  hinweise: string[];
+  sw: number | null;
+};
+type Ctx = SeiteCtx<SgAnswers, SgZ>;
+
+const stoppVon = (routing: SgRouting | null) => routing !== null && !routing.dokument;
+
+// ── Stopp-Karte (hilfreich statt sackgassig) ──
+const stoppKarte = (routing: SgRouting | null) => {
+  if (!routing || routing.dokument) return null;
+  if (routing.stopp === 'art198') return (
+    <div className="lc-notice-warn p-5 space-y-2">
+      <p className="lc-overline text-warn-700">Kein Schlichtungsverfahren</p>
+      <p className="text-body-s text-ink-700">
+        In diesem Fall findet kein Schlichtungsverfahren statt; die Klage ist direkt beim
+        zuständigen Gericht einzureichen (Art. 198 ZPO).
+      </p>
+      <p><NormLink artikel="Art. 198 ZPO" /></p>
+    </div>
+  );
+  return null;
+};
+
+// Eingabe-Schritte als Komponente (Muster Klagen): `prefillOrt` wird wie
+// bisher je Render aus der Adresse gelesen.
+function EingabeSchritt({ ctx, schritt }: { ctx: Ctx; schritt: number }) {
+  const { a, set } = ctx;
+  const { routing, sw } = ctx.z;
   // S-4: Orts-Vorgabe aus dem Zuständigkeitsrechner → die Behörden-Wahl
   // löst daraus die konkrete Stelle samt Adresse auf (voll editierbar).
   const prefillOrt = (() => {
     try { return sgPrefillOrt(window.location.search); } catch { return { plz: '', gemeinde: '' }; }
   })();
-  const { a, set, schritt, setSchritt, kopiert, kopieren, zuruecksetzen } =
-    useWizardState<SgAnswers>({ defaults: prefill ? { ...SG_DEFAULTS, ...prefill } : SG_DEFAULTS });
-
-  const routing = useMemo(() => sgRouting(a), [a]);
-  const ergebnis = useMemo(() => sgZusammenstellen(a), [a]);
-  const maengel = useMemo(() => sgMaengel(a), [a]);
-  const hinweise = useMemo(() => sgHinweise(a), [a]);
-  const sw = sgStreitwert(a);
   const verm = a.streitgegenstandTyp === 'geldforderung' || a.streitgegenstandTyp === 'arbeitsrecht';
-  const stopp = routing !== null && !routing.dokument;
-
-  const card = karte('schlichtungsgesuch');
-  const dateiBasis = `Schlichtungsgesuch_${(ergebnis.dokument ? a.klaeger[0] : null)?.typ === 'juristisch' ? (a.klaeger[0] as { firma: string }).firma : `${(a.klaeger[0] as { name?: string })?.name ?? 'Partei'}`}_${a.datum || 'Entwurf'}`.replace(/[^\w.-]+/g, '_');
+  const stopp = stoppVon(routing);
 
   // ── Partei-Editor (klagend/beklagt identisch) ──
   const parteiEditor = (liste: SgPartei[], setListe: (p: SgPartei[]) => void, rolle: string) => (
@@ -150,22 +164,6 @@ export function VorlageSchlichtungsgesuchBs() {
       )}
     />
   );
-
-  // ── Stopp-Karte (hilfreich statt sackgassig) ──
-  const stoppKarte = () => {
-    if (!routing || routing.dokument) return null;
-    if (routing.stopp === 'art198') return (
-      <div className="lc-notice-warn p-5 space-y-2">
-        <p className="lc-overline text-warn-700">Kein Schlichtungsverfahren</p>
-        <p className="text-body-s text-ink-700">
-          In diesem Fall findet kein Schlichtungsverfahren statt; die Klage ist direkt beim
-          zuständigen Gericht einzureichen (Art. 198 ZPO).
-        </p>
-        <p><NormLink artikel="Art. 198 ZPO" /></p>
-      </div>
-    );
-    return null;
-  };
 
   const inhalt = () => {
     switch (SCHRITTE[schritt].id) {
@@ -260,7 +258,7 @@ export function VorlageSchlichtungsgesuchBs() {
               onSelect={(code) => set('streitgegenstandTyp', code)}
             />
           </div>
-          {stopp ? stoppKarte() : (
+          {stopp ? stoppKarte(routing) : (
             <>
               <Checkbox
                 checked={a.ausnahmeArt198}
@@ -505,96 +503,131 @@ export function VorlageSchlichtungsgesuchBs() {
         </div>
       );
 
-      case 'pruefen': return (
-        <div className="space-y-5">
-          {stopp && stoppKarte()}
-
-          {/* D5 (W2·24, §17-Gegengewicht): Hier stand eine eigene «Mängelliste»
-              — role=alert, Aufzählung, «zum Schritt →» je Zeile. Genau das
-              leistet seit D5 der geteilte `PruefBefund` im Wizard-Rahmen, aus
-              derselben Quelle (`sgMaengel` über `fehlerJeSchritt`). Der
-              Zweitbau ist darum gestrichen, nicht bewacht (§5/§10): die Liste
-              erscheint unverändert, jetzt gruppiert nach Schritt und mit dem
-              Fokus-Sprung des Rahmens. Der Stopp-Fall (Art. 198 ZPO) rendert
-              gar keinen Wizard-Inhalt und bleibt unberührt. */}
-          {!stopp && hinweise.map((h, i) => (
-            <div key={i} className="lc-notice text-body-s">{h}</div>
-          ))}
-
-          {/* Form-Gate (Art. 130/131/204/206/209 ZPO; Kosten GGR BS) */}
-          {!stopp && (
-            <section className="lc-highlight space-y-3">
-              <p className="lc-overline text-brass-700">Form-Gate – Einreichung & Verfahren</p>
-              <ul className="lc-list space-y-2 text-body-s text-ink-700">
-                <li><strong>Form:</strong><NormText text={` schriftlich in Papierform, eigenhändig unterzeichnet (Art. 130 ZPO) – von der klagenden Partei, der Vertretung bzw. der zeichnungsberechtigten Person. Elektronisch nur mit anerkannter qualifizierter Signatur; gewöhnliche E-Mail genügt nicht.`} /></li>
-                <li><strong>Exemplare:</strong><NormText text={` Gesuch, Beilagenverzeichnis und Beilagen in je einem Exemplar für die Behörde und jede Gegenpartei (Art. 131 ZPO) – hier: `} /><span className="num font-semibold">{ergebnis.exemplare}</span> Exemplare.</li>
-                {a.vertretung?.bezeichnung && <li><strong>Vollmacht</strong> beilegen.</li>}
-                <li><strong>Persönliches Erscheinen</strong> an der Verhandlung (Art. 204 ZPO); Dispens u. a. bei ausserkantonalem/ausländischem Wohnsitz oder Streitwert bis CHF {fmtCHF(String(SG_SCHWELLEN.ARBEITSRECHT_KOSTENLOS))} (Abs. 3). Säumnis der klagenden Partei: Gesuch gilt als zurückgezogen; Ordnungsbusse bis CHF {fmtCHF(String(SG_SCHWELLEN.ORDNUNGSBUSSE_MAX))} möglich (Art. 206 Abs. 4 ZPO).</li>
-                <li><strong>Klagebewilligung:</strong> bei Nichteinigung {routing?.dokument && routing.behoerdeTyp === 'paritaetisch_miete'
-                  ? <>nur {SG_SCHWELLEN.KLAGEBEWILLIGUNG_MIETE_TAGE} Tage gültig (Art. 209 Abs. 4 ZPO)</>
-                  : <>{SG_SCHWELLEN.KLAGEBEWILLIGUNG_MONATE} Monate gültig (Art. 209 Abs. 3 ZPO)</>}.</li>
-                {routing?.dokument && routing.behoerdeTyp !== 'ordentlich' ? (
-                  <li><strong>Kosten:</strong> Das Schlichtungsverfahren ist hier gerichtskostenfrei ({routing.behoerdeTyp === 'paritaetisch_glg' ? 'Art. 113 Abs. 2 lit. a ZPO' : 'Art. 113 Abs. 2 lit. c ZPO'}); grundsätzlich keine Parteientschädigung (Art. 113 Abs. 1 ZPO).</li>
-                ) : (
-                  <li><strong>Kosten:</strong> Gebühr ab CHF 100 bis max. 30 % der Gerichtsgebühr (GGR BS, SG 154.810 – §-Nummer zu verifizieren); grundsätzlich keine Parteientschädigung.{a.streitgegenstandTyp === 'arbeitsrecht' && sw !== null && sw <= SG_SCHWELLEN.ARBEITSRECHT_KOSTENLOS && <> <strong>Hier: kostenlos</strong> (arbeitsrechtlich bis CHF {fmtCHF(String(SG_SCHWELLEN.ARBEITSRECHT_KOSTENLOS))}, Art. 113 f. ZPO).</>}</li>
-                )}
-                <li><strong>Fristen:</strong><NormText text={` Im Schlichtungsverfahren gelten keine Gerichtsferien (Art. 145 Abs. 2 lit. a ZPO); die anschliessende Klagefrist gehört zum Entscheidverfahren – dort gelten sie (BGE 138 III 615 – zu verifizieren).`} /></li>
-              </ul>
-            </section>
-          )}
-
-          {!stopp && (
-            <ExportLeiste ergebnis={ergebnis} deaktiviert={maengel.length > 0}
-              kopiert={kopiert} onKopieren={kopieren}
-              pdf={{ label: 'Gesuch als PDF', banner: BANNER_SG, dateiName: `${dateiBasis}.pdf` }}
-              docx={card?.modus === 'vorlage' && card.output?.includes('docx')
-                ? { label: 'Gesuch als Word (DOCX)', banner: BANNER_SG, dateiName: `${dateiBasis}.docx` }
-                : undefined} />
-          )}
-
-          {/* Offene Verifikationen (transparent, dezent) */}
-          <details className="lc-card p-4">
-            <summary className="cursor-pointer text-body-s font-medium text-ink-700">Offene Verifikationen ({SG_OFFENE_VERIFIKATIONEN.length})</summary>
-            <ul className="mt-2 space-y-1.5">
-              {SG_OFFENE_VERIFIKATIONEN.map((v, i) => <li key={i} className="text-xs text-ink-600">– {v}</li>)}
-            </ul>
-            <p className="text-xs text-ink-500 mt-2">
-              Kantonale Erlasse (nur Erlass-Seiten, keine §-Anker):{' '}
-              {SG_KANTONALE_ERLASSE.map((e, i) => (
-                <span key={e.label}>{i > 0 && ' · '}<a className="text-brass-700 hover:underline" href={e.url} target="_blank" rel="noopener noreferrer">{e.label}</a></span>
-              ))}
-            </p>
-          </details>
-        </div>
-      );
+      // «pruefen» rendert der Rahmen (pruefenZusatz/pruefenFuss unten).
+      case 'pruefen': return null;
     }
   };
+  return inhalt();
+}
 
-  return (
-    <VorlagenWizardRahmen
-      zurueckHref="/vorlagen"
-      overline={`${card?.rechtsgebiet ?? 'Zivilprozess (ZPO)'} · Vorlage · Basel-Stadt`}
-      titel="Schlichtungsgesuch (Basel-Stadt)"
-      intro="Stellt ein Schlichtungsgesuch nach Art. 202 ZPO für die Basler Schlichtungsbehörde zusammen – Parteien, Rechtsbegehren, Streitgegenstand, Anträge und Beilagen, aus festen Bausteinen ohne Sprachmodell."
-      norms={card?.norms ?? []}
-      badge="Papierform · eigenhändig unterzeichnen"
-      fussnote={NICHT_GESPEICHERT_HINWEIS}
-      zuruecksetzen={zuruecksetzen}
-      schritte={SCHRITTE} schritt={schritt} setSchritt={setSchritt}
-      // Bewusst OHNE `fehler`: `weiterDeaktiviert={stopp}` ist die
-      // Navigations-Regel dieser Fläche (Art. 198 ZPO), und sie bleibt.
-      // `fehlerJeSchritt` ändert die Navigation nicht — es sagt nur, was im
-      // Prüfen-Schritt offen ist. Im Stopp-Fall entsteht kein Dokument, dann
-      // ist auch der Befund gegenstandslos.
-      fehlerJeSchritt={stopp ? undefined : (i) => maengel.filter((m) => m.schritt === i).map((m) => m.text)}
-      weiterDeaktiviert={stopp}
-      inhalt={inhalt()}
-      vorschau={stopp
-        ? <div className="lc-card p-5 text-body-s text-ink-600"><NormText text={`Kein Dokument – siehe Stopp-Hinweis: In diesem Fall findet kein Schlichtungsverfahren statt — die Klage geht direkt ans Gericht (Art. 198 ZPO).`} /></div>
-        : <VorschauPanel ergebnis={ergebnis} kompakt nichtAufgenommen={ergebnis.nichtAufgenommen} direktExport={{
-          pdf: { label: 'PDF', banner: BANNER_SG, dateiName: `${dateiBasis}.pdf` },
-          docx: card?.modus === 'vorlage' && card.output?.includes('docx') ? { label: 'DOCX', banner: BANNER_SG, dateiName: `${dateiBasis}.docx` } : undefined,
-        }} />}
-    />
-  );
+const CONFIG: VorlagenSeitenConfig<SgAnswers, SgZ> = {
+  cardId: 'schlichtungsgesuch',
+  defaults: SG_DEFAULTS,
+  // KEIN speicherKey: Anweisung «keine Browser-Storage-APIs» – Zustand nur im
+  // Speicher; zuruecksetzen leert entsprechend nur den Speicher-Zustand.
+  // Darum auch kein Profil-Prefill (läse den Browser-Speicher).
+  profilPrefill: false,
+  // Prefill (Phase 4 Zuständigkeitsengine): Query-Vorbelegung beim ersten
+  // Render, voll editierbar; SSR-sicher via try/catch (kein window im Smoke).
+  defaultsZusatz: () => { try { return sgPrefillLesen(window.location.search) ?? {}; } catch { return {}; } },
+  zusammenstellen: (a) => ({
+    ergebnis: sgZusammenstellen(a),
+    routing: sgRouting(a),
+    maengel: sgMaengel(a),
+    hinweise: sgHinweise(a),
+    sw: sgStreitwert(a),
+  }),
+  // Mängel sperren den Export (Leiste); der Direkt-Export der Vorschau war nie
+  // gesperrt (direktExportBlocker: false).
+  pruefeGates: (_a, z) => ({ blocker: z.maengel.map((m) => m.text), warnungen: [], hinweise: [] }),
+  schritte: SCHRITTE,
+  overlineFallback: 'Zivilprozess (ZPO)',
+  overlineZusatz: () => 'Basel-Stadt',
+  titel: 'Schlichtungsgesuch (Basel-Stadt)',
+  intro: 'Stellt ein Schlichtungsgesuch nach Art. 202 ZPO für die Basler Schlichtungsbehörde zusammen – Parteien, Rechtsbegehren, Streitgegenstand, Anträge und Beilagen, aus festen Bausteinen ohne Sprachmodell.',
+  badge: 'Papierform · eigenhändig unterzeichnen',
+  fussnote: NICHT_GESPEICHERT_HINWEIS,
+  eingabeInhalt: (ctx, schritt) => <EingabeSchritt ctx={ctx} schritt={schritt} />,
+  fehlerEingabe: (a, i) => sgMaengel(a).filter((m) => m.schritt === i).map((m) => m.text),
+  fehlerEingabeImLetztenSchritt: true,
+  // Bewusst OHNE `fehler`: `weiterDeaktiviert` (Stopp) ist die
+  // Navigations-Regel dieser Fläche (Art. 198 ZPO), und sie bleibt.
+  // `fehlerJeSchritt` ändert die Navigation nicht — es sagt nur, was im
+  // Prüfen-Schritt offen ist. Im Stopp-Fall entsteht kein Dokument, dann
+  // ist auch der Befund gegenstandslos.
+  fehlerBox: false,
+  pruefBefund: ({ z }) => !stoppVon(z.routing),
+  weiterDeaktiviert: ({ z }) => stoppVon(z.routing),
+  pruefenZusatz: ({ a, z }) => {
+    const { routing, ergebnis, hinweise, sw } = z;
+    const stopp = stoppVon(routing);
+    return (
+      <>
+        {stopp && stoppKarte(routing)}
+
+        {/* D5 (W2·24, §17-Gegengewicht): Hier stand eine eigene «Mängelliste»
+            — role=alert, Aufzählung, «zum Schritt →» je Zeile. Genau das
+            leistet seit D5 der geteilte `PruefBefund` im Wizard-Rahmen, aus
+            derselben Quelle (`sgMaengel` über `fehlerJeSchritt`). Der
+            Zweitbau ist darum gestrichen, nicht bewacht (§5/§10): die Liste
+            erscheint unverändert, jetzt gruppiert nach Schritt und mit dem
+            Fokus-Sprung des Rahmens. Der Stopp-Fall (Art. 198 ZPO) rendert
+            gar keinen Wizard-Inhalt und bleibt unberührt. */}
+        {!stopp && hinweise.map((h, i) => (
+          <div key={i} className="lc-notice text-body-s">{h}</div>
+        ))}
+
+        {/* Form-Gate (Art. 130/131/204/206/209 ZPO; Kosten GGR BS) */}
+        {!stopp && (
+          <section className="lc-highlight space-y-3">
+            <p className="lc-overline text-brass-700">Form-Gate – Einreichung & Verfahren</p>
+            <ul className="lc-list space-y-2 text-body-s text-ink-700">
+              <li><strong>Form:</strong><NormText text={` schriftlich in Papierform, eigenhändig unterzeichnet (Art. 130 ZPO) – von der klagenden Partei, der Vertretung bzw. der zeichnungsberechtigten Person. Elektronisch nur mit anerkannter qualifizierter Signatur; gewöhnliche E-Mail genügt nicht.`} /></li>
+              <li><strong>Exemplare:</strong><NormText text={` Gesuch, Beilagenverzeichnis und Beilagen in je einem Exemplar für die Behörde und jede Gegenpartei (Art. 131 ZPO) – hier: `} /><span className="num font-semibold">{ergebnis.exemplare}</span> Exemplare.</li>
+              {a.vertretung?.bezeichnung && <li><strong>Vollmacht</strong> beilegen.</li>}
+              <li><strong>Persönliches Erscheinen</strong> an der Verhandlung (Art. 204 ZPO); Dispens u. a. bei ausserkantonalem/ausländischem Wohnsitz oder Streitwert bis CHF {fmtCHF(String(SG_SCHWELLEN.ARBEITSRECHT_KOSTENLOS))} (Abs. 3). Säumnis der klagenden Partei: Gesuch gilt als zurückgezogen; Ordnungsbusse bis CHF {fmtCHF(String(SG_SCHWELLEN.ORDNUNGSBUSSE_MAX))} möglich (Art. 206 Abs. 4 ZPO).</li>
+              <li><strong>Klagebewilligung:</strong> bei Nichteinigung {routing?.dokument && routing.behoerdeTyp === 'paritaetisch_miete'
+                ? <>nur {SG_SCHWELLEN.KLAGEBEWILLIGUNG_MIETE_TAGE} Tage gültig (Art. 209 Abs. 4 ZPO)</>
+                : <>{SG_SCHWELLEN.KLAGEBEWILLIGUNG_MONATE} Monate gültig (Art. 209 Abs. 3 ZPO)</>}.</li>
+              {routing?.dokument && routing.behoerdeTyp !== 'ordentlich' ? (
+                <li><strong>Kosten:</strong> Das Schlichtungsverfahren ist hier gerichtskostenfrei ({routing.behoerdeTyp === 'paritaetisch_glg' ? 'Art. 113 Abs. 2 lit. a ZPO' : 'Art. 113 Abs. 2 lit. c ZPO'}); grundsätzlich keine Parteientschädigung (Art. 113 Abs. 1 ZPO).</li>
+              ) : (
+                <li><strong>Kosten:</strong> Gebühr ab CHF 100 bis max. 30 % der Gerichtsgebühr (GGR BS, SG 154.810 – §-Nummer zu verifizieren); grundsätzlich keine Parteientschädigung.{a.streitgegenstandTyp === 'arbeitsrecht' && sw !== null && sw <= SG_SCHWELLEN.ARBEITSRECHT_KOSTENLOS && <> <strong>Hier: kostenlos</strong> (arbeitsrechtlich bis CHF {fmtCHF(String(SG_SCHWELLEN.ARBEITSRECHT_KOSTENLOS))}, Art. 113 f. ZPO).</>}</li>
+              )}
+              <li><strong>Fristen:</strong><NormText text={` Im Schlichtungsverfahren gelten keine Gerichtsferien (Art. 145 Abs. 2 lit. a ZPO); die anschliessende Klagefrist gehört zum Entscheidverfahren – dort gelten sie (BGE 138 III 615 – zu verifizieren).`} /></li>
+            </ul>
+          </section>
+        )}
+      </>
+    );
+  },
+  ortDatumImPruefen: false,
+  // Keine Bestätigungs-Checkbox auf dieser Fläche: der Export sperrt allein an
+  // den Mängeln; im Stopp-Fall gibt es keine Export-Leiste.
+  ohneBestaetigung: true,
+  bestaetigung: null,
+  bestaetigungLabel: null,
+  exportLeiste: ({ z }) => !stoppVon(z.routing),
+  // Offene Verifikationen (transparent, dezent)
+  pruefenFuss: (
+    <details className="lc-card p-4">
+      <summary className="cursor-pointer text-body-s font-medium text-ink-700">Offene Verifikationen ({SG_OFFENE_VERIFIKATIONEN.length})</summary>
+      <ul className="mt-2 space-y-1.5">
+        {SG_OFFENE_VERIFIKATIONEN.map((v, i) => <li key={i} className="text-xs text-ink-600">– {v}</li>)}
+      </ul>
+      <p className="text-xs text-ink-500 mt-2">
+        Kantonale Erlasse (nur Erlass-Seiten, keine §-Anker):{' '}
+        {SG_KANTONALE_ERLASSE.map((e, i) => (
+          <span key={e.label}>{i > 0 && ' · '}<a className="text-brass-700 hover:underline" href={e.url} target="_blank" rel="noopener noreferrer">{e.label}</a></span>
+        ))}
+      </p>
+    </details>
+  ),
+  vorschauKompakt: true,
+  vorschauErsatz: ({ z }) => (stoppVon(z.routing)
+    ? <div className="lc-card p-5 text-body-s text-ink-600"><NormText text={`Kein Dokument – siehe Stopp-Hinweis: In diesem Fall findet kein Schlichtungsverfahren statt — die Klage geht direkt ans Gericht (Art. 198 ZPO).`} /></div>
+    : undefined),
+  vorschauNichtAufgenommen: ({ z }) => z.ergebnis.nichtAufgenommen,
+  direktExportBlocker: false,
+  banner: BANNER_SG,
+  // `ergebnis.dokument` ist nach AssembleErgebnis stets gesetzt — die frühere
+  // Weiche `(ergebnis.dokument ? a.klaeger[0] : null)` wählte immer die erste
+  // klagende Partei; der Name bleibt damit byte-gleich.
+  dateiBasis: (a) => `Schlichtungsgesuch_${a.klaeger[0]?.typ === 'juristisch' ? (a.klaeger[0] as { firma: string }).firma : `${(a.klaeger[0] as { name?: string })?.name ?? 'Partei'}`}_${a.datum || 'Entwurf'}`.replace(/[^\w.-]+/g, '_'),
+  pdfLabel: 'Gesuch als PDF',
+  docxLabel: 'Gesuch als Word (DOCX)',
+};
+
+export function VorlageSchlichtungsgesuchBs() {
+  return <VorlagenSeite config={CONFIG} />;
 }

@@ -372,7 +372,7 @@ const stoppVon = (a: KvAnswers): boolean => {
 // (vorschauErsatz), Vollständigkeits-Mängel sperren den Blanko-Export der
 // Vorschau nicht (direktExportBlocker: false). Mängel-Kästen und Hinweise im
 // Ist-Format (pruefenZusatz); Ort/Datum erfasst der Schritt «Beilagen»
-// (ortDatumFeld: false); Kanton in der Overline; kompakte Vorschau.
+// (ortDatumImPruefen: false); Kanton in der Overline; kompakte Vorschau.
 const CONFIG: VorlagenSeitenConfig<KvAnswers> = {
   cardId: 'klage-vereinfacht',
   defaults: KV_DEFAULTS,
@@ -402,9 +402,7 @@ const CONFIG: VorlagenSeitenConfig<KvAnswers> = {
       {kvHinweise(a).map((h, i) => <div key={i} className="lc-notice text-body-s">{h}</div>)}
     </>
   ),
-  ortDatumFeld: false,
-  ortDatumLabel: '',
-  ortPlaceholder: '',
+  ortDatumImPruefen: false,
   bestaetigung: (
     <>
       <p className="lc-overline text-brass-700">Form & Einreichung</p>

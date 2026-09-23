@@ -1,4 +1,4 @@
-import { useMemo, useState, type ReactNode } from 'react';
+import { useMemo, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
 import { DatumsFeld } from '../DatumsFeld';
 import { Checkbox, Field, inputCls } from './ui';
 import { NormText } from '../NormText';
@@ -52,9 +52,22 @@ import { getProfil, getVorlagenDetailgrad } from '../../lib/einstellungen';
 // V2b (Familie/Klagen) — Slots für die Mängel-gesteuerten Eingaben ohne
 // Speicher: speicherKey/datumFehler optional, defaultsZusatz (Adress-Prefill,
 // je Render gelesen wie zuvor inline), fehlerEingabeImLetztenSchritt,
-// ortDatumFeld, overlineZusatz, weiterDeaktiviert, vorschauKompakt,
-// vorschauErsatz, direktExportBlocker, pruefenFuss als Funktion. Wieder je
-// per Default deckungsgleich mit dem bisherigen Verhalten der übrigen Nutzer.
+// overlineZusatz, weiterDeaktiviert, vorschauKompakt, vorschauErsatz,
+// direktExportBlocker, pruefenFuss als Funktion.
+// V2d (Vorsorge/Vollmacht/Testament) — optionale Slots blockerEinzeln,
+// docxSperre, vorschauExtra; banner/dateiBasis/pdfLabel/docxLabel/
+// bestaetigungLabel dürfen Funktionen der Antworten sein; ctx trägt setA.
+// Die Typschranke `T` verlangt ort/datum nicht mehr (Testament führt
+// ortErrichtung/datumErrichtung) — gelesen werden sie nur, solange
+// ortDatumImPruefen nicht false ist.
+// V2b+V2d zusammengeführt (23.9.2026): EIN Slot `ortDatumImPruefen` (V2b hiess
+// er `ortDatumFeld`) blendet Raster UND Ort-/Datums-Fehler aus; `datumFehler`
+// fehlt = Datum keine Pflicht (wie `ortFehler`). Alle Slots per Default
+// deckungsgleich mit dem bisherigen Verhalten der übrigen Nutzer.
+// V2e (Schlichtungsgesuch BS) — fünf optionale Slots für eine Seite ohne
+// Bestätigung, ohne Schritt-Fehlerbox und mit Stopp-Fall (Art. 198 ZPO):
+// fehlerBox, pruefBefund, ohneBestaetigung, exportLeiste,
+// vorschauNichtAufgenommen — je per Default deckungsgleich, reine Darstellung.
 
 /** Einheitliche Gate-Form aller Vorlagen-Engines. */
 type VorlagenGates = { blocker: string[]; warnungen: string[]; hinweise: string[] };
@@ -64,17 +77,27 @@ type VorlagenGates = { blocker: string[]; warnungen: string[]; hinweise: string[
  *  Rahmen reicht sie unverändert an Gates und Eingabe-Schritte durch. */
 type Zusammenstellung = { ergebnis: AssembleErgebnis };
 
+/** Ort/Datum-Felder des Prüfen-Schritts (Default-Fall `ortDatumImPruefen`). */
+type OrtDatum = { ort: string; datum: string };
+
+/** Wert oder Funktion der Antworten (Form-Weiche: Banner/Dateiname je Variante). */
+type JeAntwort<T, W> = W | ((a: T) => W);
+const aufloesen = <T, W>(w: JeAntwort<T, W>, a: T): W =>
+  typeof w === 'function' ? (w as (a: T) => W)(a) : w;
+
 /** Kontext für die Eingabe-Schritt-Renderer der Seite. `z` ist das ungekürzte
  *  Ergebnis von `zusammenstellen` — damit ein Schritt einen Engine-Rechenwert
  *  anzeigen kann, OHNE die Engine ein zweites Mal zu fahren (§2/§15). */
 export interface SeiteCtx<T, Z = Zusammenstellung> {
   a: T;
   set: <K extends keyof T>(k: K, v: T[K]) => void;
+  /** Funktionales Update mehrerer Felder in einem Zug (useWizardState.setA). */
+  setA: Dispatch<SetStateAction<T>>;
   z: Z;
 }
 
 export interface VorlagenSeitenConfig<
-  T extends { ort: string; datum: string },
+  T extends object,
   Z extends Zusammenstellung = Zusammenstellung,
 > {
   /** Katalog-Id (startseiteConfig) — liefert rechtsgebiet, norms, modus/output. */
@@ -124,12 +147,22 @@ export interface VorlagenSeitenConfig<
    *  (Mängel-Listen mit Schritt-Index); die Ort/Datum/Blocker-Regel entfällt
    *  (Default false). */
   fehlerEingabeImLetztenSchritt?: boolean;
+  /** Fehlerbox am Schritt (Rahmen-Prop `fehler`, Default true). false = der
+   *  Rahmen erhält keine Schritt-Fehler: keine FehlerBox, die Weiter-Sperre
+   *  kommt dann allein aus `weiterDeaktiviert`. Der Prüf-Befund bleibt. */
+  fehlerBox?: boolean;
+  /** Prüf-Befund im letzten Schritt (Rahmen-Prop `fehlerJeSchritt`, Default
+   *  immer). false = kein Befund (z. B. Stopp-Fall ohne Dokument). */
+  pruefBefund?: (ctx: SeiteCtx<T, Z>) => boolean;
   /** Weiter-Sperre des Rahmens übersteuern (Default: Fehler des Schritts). */
   weiterDeaktiviert?: (ctx: SeiteCtx<T, Z>, schritt: number) => boolean;
   // «pruefen»-Schritt
   /** «Export gesperrt»-Box (role=alert) mit den gates.blocker oben im
    *  Prüfen-Schritt (Default false). Ein String ersetzt die Überschrift. */
   blockerKasten?: boolean | string;
+  /** Jeder Blocker als eigene role=alert-Box (Default aus). Ein String ist die
+   *  Überschrift jeder Box. */
+  blockerEinzeln?: boolean | string;
   /** Seiten-Block zwischen den Hinweisen und Ort/Datum (z. B. Endtermin-
    *  Kachel aus `ctx.z`). */
   pruefenZusatz?: (ctx: SeiteCtx<T, Z>) => ReactNode;
@@ -137,11 +170,14 @@ export interface VorlagenSeitenConfig<
    *  false z. B. bei Mahnung, deren Navigations-Fehler nur Ort/Datum prüft
    *  (Blocker sperren dort nur den Export, nicht die Fehlerbox). */
   blockerImLetztenSchritt?: boolean;
-  /** Ort/Datum-Raster im Prüfen-Schritt zeigen (Default true). false, wenn
-   *  die Seite Ort/Datum in einem Eingabe-Schritt erfasst. */
-  ortDatumFeld?: boolean;
-  ortDatumLabel: string;
-  ortPlaceholder: string;
+  /** Ort/Datum-Raster im Prüfen-Schritt samt Ort-/Datums-Fehler im letzten
+   *  Schritt (Default true). false = die Seite erfasst Ort/Datum in einem
+   *  Eingabe-Schritt (Klagen) oder führt sie nicht (Testament); dann werden
+   *  ort/datum nicht gelesen und ortDatumLabel/ortPlaceholder/ortFehler/
+   *  datumFehler entfallen. */
+  ortDatumImPruefen?: boolean;
+  ortDatumLabel?: string;
+  ortPlaceholder?: string;
   /** Fehlertext bei leerem Ort. Fehlt er, ist der Ort keine Pflichtangabe
    *  (kein Eintrag in Fehlerbox/Sammel-Befund, kein aria-invalid). */
   ortFehler?: string;
@@ -151,7 +187,11 @@ export interface VorlagenSeitenConfig<
   /** Inhalt der lc-highlight-Sektion ÜBER der Bestätigungs-Checkbox. Als
    *  Funktion, wenn ein Bullet von den Antworten abhängt. */
   bestaetigung: ReactNode | ((ctx: SeiteCtx<T, Z>) => ReactNode);
-  bestaetigungLabel: ReactNode;
+  bestaetigungLabel: ReactNode | ((ctx: SeiteCtx<T, Z>) => ReactNode);
+  /** true = keine Bestätigungs-Sektion; der Export sperrt dann allein an
+   *  gates.blocker (Default false). `bestaetigung`/`bestaetigungLabel` werden
+   *  nicht gelesen (null übergeben). */
+  ohneBestaetigung?: boolean;
   /** Klassen der Bestätigungs-Zeile. Default ist die Form der fünf Pilot-Seiten
    *  (`gap-2`, kein Padding). Die handgeschriebenen Seiten tragen historisch
    *  `gap-2.5 py-1.5` — die grössere Trefferfläche (DESIGN-REGLEMENT F9). Beim
@@ -159,6 +199,9 @@ export interface VorlagenSeitenConfig<
    *  zu verkleinern (§6). Die Vereinheitlichung ist eine SICHTBARE Änderung und
    *  gehört in einen eigenen, deklarierten Schritt (W2·17-UI-BEFUNDE-B10). */
   bestaetigungLabelCls?: string;
+  /** Export-Leiste im Prüfen-Schritt zeigen (Default immer). false z. B. im
+   *  Stopp-Fall ohne Dokument. */
+  exportLeiste?: (ctx: SeiteCtx<T, Z>) => boolean;
   /** Block UNTER der Export-Leiste (z. B. «Offene Verifikationen»). Als
    *  Funktion, wenn er von den Antworten abhängt. */
   pruefenFuss?: ReactNode | ((ctx: SeiteCtx<T, Z>) => ReactNode);
@@ -172,15 +215,23 @@ export interface VorlagenSeitenConfig<
   vorschauErsatz?: (ctx: SeiteCtx<T, Z>) => ReactNode;
   /** Direkt-Export der Vorschau an gates.blocker binden (Default true). */
   direktExportBlocker?: boolean;
-  // Export
-  banner: PdfBanner;
-  dateiBasis: string;             // z. B. 'Abtretungserklaerung' → .pdf/.docx
-  pdfLabel: string;
-  docxLabel: string;
+  /** Zusatz-Block im Vorschau-Panel (VorschauPanel `extra`). */
+  vorschauExtra?: (ctx: SeiteCtx<T, Z>) => ReactNode;
+  /** «nicht aufgenommen»-Liste des Bausteinprotokolls (VorschauPanel
+   *  `nichtAufgenommen`, Default keine). */
+  vorschauNichtAufgenommen?: (ctx: SeiteCtx<T, Z>) => { label: string; grund: string }[] | undefined;
+  // Export — je als Wert oder als Funktion der Antworten (Form-Weiche)
+  banner: JeAntwort<T, PdfBanner>;
+  dateiBasis: JeAntwort<T, string>; // z. B. 'Abtretungserklaerung' → .pdf/.docx
+  pdfLabel: JeAntwort<T, string>;
+  docxLabel: JeAntwort<T, string>;
+  /** Formvorschrift der SEITE sperrt DOCX zusätzlich zum Katalog-Gate
+   *  docxAktiv (§8; z. B. eigenhändige Form). Default: keine Sperre. */
+  docxSperre?: (a: T) => boolean;
 }
 
 export function VorlagenSeite<
-  T extends { ort: string; datum: string },
+  T extends object,
   Z extends Zusammenstellung = Zusammenstellung,
 >(
   { config }: { config: VorlagenSeitenConfig<T, Z> },
@@ -202,7 +253,7 @@ export function VorlagenSeite<
   const defaults = config.detailgradAusEinstellungen !== false && 'detailgrad' in basis
     ? { ...basis, detailgrad: getVorlagenDetailgrad() }
     : basis;
-  const { a, set, schritt, setSchritt, bestaetigt, setBestaetigt, kopiert, kopieren, zuruecksetzen } =
+  const { a, setA, set, schritt, setSchritt, bestaetigt, setBestaetigt, kopiert, kopieren, zuruecksetzen } =
     useWizardState<T>({ defaults, speicherKey: config.speicherKey, normalisieren: config.normalisieren, prefill });
 
   // Vorauswahl aus der Adresse — «adjusting state» während des Renderns.
@@ -216,25 +267,30 @@ export function VorlagenSeite<
   const z = useMemo(() => config.zusammenstellen(a), [a, config]);
   const { ergebnis } = z;
   const gates = useMemo(() => config.pruefeGates(a, z), [a, z, config]);
-  const ctx: SeiteCtx<T, Z> = { a, set, z };
+  const ctx: SeiteCtx<T, Z> = { a, set, setA, z };
+  const od = a as unknown as OrtDatum;
+  const setOd = (k: keyof OrtDatum, v: string) => set(k as keyof T, v as T[keyof T]);
+  const ortDatum = config.ortDatumImPruefen !== false;
+  const banner = aufloesen(config.banner, a);
+  const dateiBasis = aufloesen(config.dateiBasis, a);
 
   const letzter = config.schritte.length - 1;
 
   const fehlerImSchritt = (i: number): string[] => {
     if (i !== letzter || config.fehlerEingabeImLetztenSchritt) return config.fehlerEingabe(a, i, gates);
     const f: string[] = [];
-    if (config.ortFehler && !a.ort.trim()) f.push(config.ortFehler);
-    if (config.datumFehler && !istIsoDatum(a.datum)) f.push(config.datumFehler);
+    if (ortDatum && config.ortFehler && !od.ort.trim()) f.push(config.ortFehler);
+    if (ortDatum && config.datumFehler && !istIsoDatum(od.datum)) f.push(config.datumFehler);
     if (config.blockerImLetztenSchritt !== false) f.push(...gates.blocker);
     return f;
   };
   const fehler = fehlerImSchritt(schritt);
 
   const docxZiel = (label: string) =>
-    docxAktiv(card) ? { label, banner: config.banner, dateiName: `${config.dateiBasis}.docx` } : undefined;
+    docxAktiv(card) && !config.docxSperre?.(a) ? { label, banner, dateiName: `${dateiBasis}.docx` } : undefined;
 
-  const ortFehlt = !config.ortFehler || a.ort.trim() ? '' : config.ortFehler;
-  const datumFehlt = !config.datumFehler || istIsoDatum(a.datum) ? '' : config.datumFehler;
+  const ortFehlt = !ortDatum || !config.ortFehler || od.ort.trim() ? '' : config.ortFehler;
+  const datumFehlt = !ortDatum || !config.datumFehler || istIsoDatum(od.datum) ? '' : config.datumFehler;
 
   const pruefenInhalt = (
     <div className="space-y-5">
@@ -244,6 +300,12 @@ export function VorlagenSeite<
           {gates.blocker.map((b, i) => <p key={i} className="text-body-s text-danger-700">• <NormText text={b} /></p>)}
         </div>
       )}
+      {config.blockerEinzeln && gates.blocker.map((b, i) => (
+        <div role="alert" key={`b${i}`} className="lc-notice-danger">
+          {typeof config.blockerEinzeln === 'string' && <p className="lc-overline text-danger-700 mb-1">{config.blockerEinzeln}</p>}
+          <p className="text-body-s text-danger-700"><NormText text={b} /></p>
+        </div>
+      ))}
       {/* §8 (QS-UI 8b Teil 2): Bis hierher hing das Rendern der Engine-Warnungen an
           einem Opt-in-Flag `zeigeWarnungen`. Drei der fünf Seiten auf diesem Rahmen
           (Forderungsabtretung · Verjährungsverzicht · Rubrum) setzten es NICHT — heute
@@ -268,28 +330,34 @@ export function VorlagenSeite<
           DatumsFeld trägt die Fehlerzeile, siehe Field-Kommentar). Alles
           Übrige liegt in früheren Schritten und wird oben im Sammel-Befund
           samt Sprung angezeigt. */}
-      {config.ortDatumFeld !== false && <Field label={config.ortDatumLabel} fehlt={ortFehlt || datumFehlt ? [ortFehlt, datumFehlt].filter(Boolean).join(' · ') : undefined}>
-        <div className="grid grid-cols-[1fr_11rem] gap-3">
-          <input className={inputCls} aria-invalid={ortFehlt ? true : undefined}
-            value={a.ort} onChange={(e) => set('ort', e.target.value as T['ort'])} placeholder={config.ortPlaceholder} />
-          <DatumsFeld value={a.datum} onChange={(v) => set('datum', v as T['datum'])} className={inputCls} />
-        </div>
-      </Field>}
+      {ortDatum && (
+        <Field label={config.ortDatumLabel ?? ''} fehlt={ortFehlt || datumFehlt ? [ortFehlt, datumFehlt].filter(Boolean).join(' · ') : undefined}>
+          <div className="grid grid-cols-[1fr_11rem] gap-3">
+            <input className={inputCls} aria-invalid={ortFehlt ? true : undefined}
+              value={od.ort} onChange={(e) => setOd('ort', e.target.value)} placeholder={config.ortPlaceholder} />
+            <DatumsFeld value={od.datum} onChange={(v) => setOd('datum', v)} className={inputCls} />
+          </div>
+        </Field>
+      )}
 
-      <section className="lc-highlight space-y-3">
-        {typeof config.bestaetigung === 'function' ? config.bestaetigung(ctx) : config.bestaetigung}
-        <Checkbox
-          checked={bestaetigt}
-          onChange={setBestaetigt}
-          label={config.bestaetigungLabel}
-          className={config.bestaetigungLabelCls ?? 'text-ink-900 font-medium pt-1'}
-        />
-      </section>
+      {!config.ohneBestaetigung && (
+        <section className="lc-highlight space-y-3">
+          {typeof config.bestaetigung === 'function' ? config.bestaetigung(ctx) : config.bestaetigung}
+          <Checkbox
+            checked={bestaetigt}
+            onChange={setBestaetigt}
+            label={typeof config.bestaetigungLabel === 'function' ? config.bestaetigungLabel(ctx) : config.bestaetigungLabel}
+            className={config.bestaetigungLabelCls ?? 'text-ink-900 font-medium pt-1'}
+          />
+        </section>
+      )}
 
-      <ExportLeiste ergebnis={ergebnis} deaktiviert={!bestaetigt || gates.blocker.length > 0}
-        kopiert={kopiert} onKopieren={kopieren}
-        pdf={{ label: config.pdfLabel, banner: config.banner, dateiName: `${config.dateiBasis}.pdf` }}
-        docx={docxZiel(config.docxLabel)} />
+      {config.exportLeiste?.(ctx) !== false && (
+        <ExportLeiste ergebnis={ergebnis} deaktiviert={(!config.ohneBestaetigung && !bestaetigt) || gates.blocker.length > 0}
+          kopiert={kopiert} onKopieren={kopieren}
+          pdf={{ label: aufloesen(config.pdfLabel, a), banner, dateiName: `${dateiBasis}.pdf` }}
+          docx={docxZiel(aufloesen(config.docxLabel, a))} />
+      )}
       {typeof config.pruefenFuss === 'function' ? config.pruefenFuss(ctx) : config.pruefenFuss}
     </div>
   );
@@ -305,14 +373,14 @@ export function VorlagenSeite<
       badge={config.badge}
       zuruecksetzen={zuruecksetzen}
       schritte={config.schritte} schritt={schritt} setSchritt={setSchritt}
-      fehler={fehler}
-      fehlerJeSchritt={fehlerImSchritt}
+      fehler={config.fehlerBox === false ? undefined : fehler}
+      fehlerJeSchritt={config.pruefBefund?.(ctx) === false ? undefined : fehlerImSchritt}
       weiterDeaktiviert={config.weiterDeaktiviert?.(ctx, schritt)}
       kopfSchalter={config.kopfSchalter?.(ctx)}
       inhalt={inhalt}
       fussnote={config.fussnote}
-      vorschau={config.vorschauErsatz?.(ctx) ?? <VorschauPanel ergebnis={ergebnis} kompakt={config.vorschauKompakt} direktExport={{
-        pdf: { label: 'PDF', banner: config.banner, dateiName: `${config.dateiBasis}.pdf` },
+      vorschau={config.vorschauErsatz?.(ctx) ?? <VorschauPanel ergebnis={ergebnis} kompakt={config.vorschauKompakt} extra={config.vorschauExtra?.(ctx)} nichtAufgenommen={config.vorschauNichtAufgenommen?.(ctx)} direktExport={{
+        pdf: { label: 'PDF', banner, dateiName: `${dateiBasis}.pdf` },
         docx: docxZiel('DOCX'),
         blocker: config.direktExportBlocker === false ? undefined : gates.blocker,
       }} />}
