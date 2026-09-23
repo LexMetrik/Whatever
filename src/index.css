@@ -2113,13 +2113,6 @@
     border-radius:2px;
     background:linear-gradient(90deg, var(--brass-500), var(--brass-300) 65%, transparent);
   }
-  /* Kleine Variante (z. B. aktiver Nav-Punkt): kurzer Messing-Balken */
-  .scale-rule-sm { height:2px; }
-  .scale-rule-sm::before { display:none; }
-  .scale-rule-sm::after {
-    left:0; right:0; width:auto; height:2px; bottom:0; border-radius:1px;
-    background:linear-gradient(90deg, var(--brass-500), var(--brass-300));
-  }
 
   /* ── U2 (Prüfbefund W2·24-R5, 6.9.2026) · LINIEN STATT FLÄCHEN ────────────
      GEMESSEN auf 9 von 14 Übersichts-Routen (hell+dunkel @1440): `.lc-card`
@@ -2155,11 +2148,11 @@
      Getragen wird die Regel vom ELEMENT, nicht von einer Zusatzklasse: nur
      eine Karte, die selbst Link/Knopf ist, reagiert. Karten, die bloss Links
      ENTHALTEN (Themen-Panels, Systematik-Kategorien), bleiben still.
-     `[data-aktiv]` ist die eine erklärte Ausnahme für die Stretched-Link-Karte
-     (`EntscheidKarte`: klickbare Fläche, aber ein <div>, weil die Norm-Chips
-     als Geschwister über dem Link liegen müssen). */
-  :is(a, button, [role='button'], [data-aktiv]).lc-card { @apply transition-colors; }
-  :is(a, button, [role='button'], [data-aktiv]).lc-card:hover { border-color: var(--brass-400); }
+     Bis K3 (W2·29-WERKBANK-KATALOGE, 23.9.2026) stand hier `[data-aktiv]` als
+     Ausnahme für die Stretched-Link-`EntscheidKarte`; die trägt seither den
+     Werkbank-Hover (`lc-hover-flaeche` + Unterstrich), die Ausnahme ist weg. */
+  :is(a, button, [role='button']).lc-card { @apply transition-colors; }
+  :is(a, button, [role='button']).lc-card:hover { border-color: var(--brass-400); }
   /* U2: die Hover-Grammatik bleibt Wort für Wort — sie färbt jetzt die beiden
      Haarlinien statt vier Rahmenseiten. Der Zustand ist damit dezenter, aber
      nach derselben Regel (§G-j «eine Flexoki-Stufe tiefer»). */

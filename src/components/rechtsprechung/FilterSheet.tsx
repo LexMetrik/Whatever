@@ -83,7 +83,7 @@ export function FilterSheet({ anzahl, children }: {
       <div className="flex items-center gap-2">
         <button type="button" onClick={() => setOffen(true)}
           aria-expanded={offen} aria-haspopup="dialog"
-          className="lc-chip inline-flex h-11 items-center gap-2 hover:border-brass-400 hover:text-brass-700">
+          className="lc-chip inline-flex h-11 items-center gap-2 border-l-reg-r hover:text-ink-900">
           {/* Trichter — reine Dekoration, die Beschriftung trägt die Bedeutung. */}
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
             <path d="M3 5h18l-7 8v6l-4 2v-8L3 5z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
@@ -124,7 +124,7 @@ export function FilterSheet({ anzahl, children }: {
             daten="data-filter-sheet"
             sockel={(
               <button type="button" onClick={() => setOffen(false)}
-                className="lc-chip h-11 w-full justify-center font-medium text-brass-700 hover:border-brass-400">
+                className="lc-chip h-11 w-full justify-center border-l-reg-r font-medium text-ink-900 hover:bg-well">
                 Treffer anzeigen
               </button>
             )}>

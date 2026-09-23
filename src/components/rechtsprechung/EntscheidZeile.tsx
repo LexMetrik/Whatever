@@ -15,6 +15,9 @@ import { StatusBadge } from '../verzahnung/StatusBadge';
 // Zeile ab (Navigation), Inhalt liegt als Geschwister darunter; die klickbaren
 // Norm-Chips (NormChip = span role=button) stehen mit relative/z über dem Overlay
 // — so ist KEIN fokussierbares Element ein Nachkomme des <a> (valides Markup).
+// Werkbank K3 (23.9.2026): Zeile trägt ihre Haarlinie selbst (die Liste ist
+// kein `lc-panel` mehr), Identität und Sachgebiet im Registerton «r», Hover
+// = Fläche `--well` + unterstrichene Bezeichnung statt Messing.
 export function EntscheidZeile({ e, onNorm }: {
   e: BrowseEntscheid;
   onNorm: (k: string) => void;
@@ -26,7 +29,7 @@ export function EntscheidZeile({ e, onNorm }: {
     : `/rechtsprechung/${encodeURIComponent(e.key)}`;
   const bezeichnung = verweis ? `Vollständiges Urteil zu BGE ${verweis.bgeReferenz}` : themaText(e);
   return (
-    <div className="group relative flex items-stretch gap-3 px-4 py-3 lc-hover-flaeche">
+    <div className="group relative flex items-stretch gap-3 border-b border-rule-soft px-2 py-2.5 lc-hover-flaeche">
       {/* Overlay-Link über der ganzen Zeile (Navigation); Name = Bezeichnung.
           `data-quarantaene` sitzt HIER (nicht nur am Chip weiter unten) — dieser
           Link ist LEER (Stretched-Link-Muster), der Chip ist ein GESCHWISTER,
@@ -51,7 +54,7 @@ export function EntscheidZeile({ e, onNorm }: {
               Muster steht eine Zeile darüber am `datumUnbekannt`-Titel; hier
               fehlte es. Reine Ergänzung, kein Layout-Eingriff. */}
           <span title={bezeichnung}
-            className={`min-w-0 flex-1 truncate text-body-s ${synth ? 'text-ink-700' : 'font-medium text-ink-900'} group-hover:text-brass-700`}>
+            className={`min-w-0 flex-1 truncate text-body-s ${synth ? 'text-ink-700' : 'font-medium text-ink-900'} underline-offset-2 group-hover:underline`}>
             {bezeichnung}
           </span>
           {/* R8 (7.9.2026) · EINE IDENTITAET, DIE NICHT MEHR IN DIE ZEILE PASST.
@@ -67,7 +70,7 @@ export function EntscheidZeile({ e, onNorm }: {
               Hover und im A11y-Baum her. Ein Anteil statt einer Pixelzahl,
               damit die Regel ueber alle Viewports gilt. */}
           <span title={hauptIdentitaet(e)}
-            className={`num shrink-0 max-w-[60%] truncate text-xs ${istBge(e) ? 'font-medium text-brass-700' : 'text-ink-500'}`}>
+            className={`num shrink-0 max-w-[60%] truncate text-xs ${istBge(e) ? 'font-medium text-reg-r' : 'text-ink-500'}`}>
             {hauptIdentitaet(e)}
           </span>
         </div>
@@ -75,7 +78,7 @@ export function EntscheidZeile({ e, onNorm }: {
         {/* Metazeile — Rechtsgebiet, Status, angewandte Normen (klickbar). Chips
             mit relative/z über dem Overlay-Link, damit sie klickbar bleiben. */}
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-500">
-          <span className="text-brass-700" title={e.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}>{GEBIET_LABEL[e.sachgebiet]}</span>
+          <span className="text-reg-r" title={e.kuratierung === 'maschinell' ? 'Sachgebiet maschinell zugeordnet' : undefined}>{GEBIET_LABEL[e.sachgebiet]}</span>
           {/* D3 (Gegenprüfungs-Auflage 12.9.2026, PR #816): siehe EntscheidKarte.tsx. */}
           {e.quarantaene && (
             <span className="text-micro italic text-ink-500" data-quarantaene={e.quarantaene}

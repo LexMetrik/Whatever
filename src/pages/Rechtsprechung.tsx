@@ -58,6 +58,10 @@ const LISTE_DECKEL = 100;
 // Grössenordnung, in der axe und die Scroll-Restauration gemessen wurden.
 const FENSTER_MAX = LISTE_DECKEL * 20;
 
+// Werkbank K3 (23.9.2026, Board «Unter-Rechtsprechung-Register»): «Weitere/
+// Frühere anzeigen» als Haarlinien-Knopf ohne Messing, Hover `--well`.
+const MEHR_KNOPF = 'mx-auto flex w-fit px-3 text-xs text-ink-600 hover:border-line-strong hover:bg-well hover:text-ink-900';
+
 // Eine Treffer-Liste je Dichte rendern (geteilte Datenquelle, nur Darstellung).
 //
 // `speicherKey` identifiziert DIESE Liste innerhalb der Seite (jede Sektion hat
@@ -132,14 +136,15 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
   const sprungleiste = leisteZeigen && (
     // Juristen denken in Bänden: die Leiste führt direkt auf den Jahrgang, statt
     // ihn über wiederholtes «Weitere anzeigen» zu erscrollen (J1).
+    // K3: Text-Schalter statt Kästen (D22), Zahl in Tinte.
     <nav aria-label="Nach Jahrgang springen"
-      className="lc-chip-zeile mb-3 flex flex-wrap items-center gap-x-2 gap-y-1.5">
+      className="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
       <span aria-hidden className="lc-overline shrink-0">Jahrgang</span>
       {gruppen.map((g) => (
         <button key={g.jahr} type="button" onClick={() => springe(g)}
           aria-label={`Zu Jahrgang ${g.label} springen (${g.count})`}
-          className="lc-chip hover:border-brass-400 hover:text-brass-700">
-          {g.label}{' '}<span className="num ml-1.5 text-ink-600">{g.count}</span>
+          className="ub-schalter">
+          {g.label}{' '}<span className="num ml-1 text-ink-900">{g.count}</span>
         </button>
       ))}
     </nav>
@@ -152,7 +157,7 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
   const frueherKnopf = frueher > 0 && (
     <button type="button"
       onClick={() => behalteFenster({ von: Math.max(0, von - LISTE_DECKEL), bis })}
-      className="lc-chip mx-auto mb-3 block hover:border-brass-400 hover:text-brass-700">
+      className={`lc-btn-mini ${MEHR_KNOPF} mb-3`}>
       Frühere anzeigen (<span className="num">{frueher}</span> darüber)
     </button>
   );
@@ -166,7 +171,7 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
         const neuVon = Math.max(von, neuBis - FENSTER_MAX);
         behalteFenster({ von: neuVon, bis: neuBis });
       }}
-      className="lc-chip mx-auto mt-3 block hover:border-brass-400 hover:text-brass-700">
+      className={`lc-btn-mini ${MEHR_KNOPF} mt-3`}>
       Weitere anzeigen (<span className="num">{mehr}</span> weitere)
     </button>
   );
@@ -197,7 +202,8 @@ function Liste({ liste, dichte, onNorm, speicherKey, mitSprungleiste }: {
     <div>
       {sprungleiste}
       {frueherKnopf}
-      <div ref={behaelterRef} className="lc-panel divide-y divide-line overflow-hidden">
+      {/* K3: Kopflinie 2 px Tinte, jede Zeile trägt ihre Haarlinie selbst. */}
+      <div ref={behaelterRef} className="border-t-2 border-ink-900">
         {sichtbar.map((e) => <EntscheidZeile key={e.key} e={e} onNorm={onNorm} />)}
       </div>
       {mehrKnopf}
@@ -430,7 +436,7 @@ export function Rechtsprechung() {
                   {' '}— <span className="num">{gefiltert.length}</span> {gefiltert.length === 1 ? 'Entscheid' : 'Entscheide'}
                 </span>
                 <button type="button" onClick={() => setzeUrl('norm', null)}
-                  className="shrink-0 text-xs font-medium text-brass-700 hover:text-brass-600">
+                  className="shrink-0 text-xs font-medium text-ink-700 underline underline-offset-2 hover:text-ink-900">
                   aufheben
                 </button>
               </div>
@@ -446,7 +452,7 @@ export function Rechtsprechung() {
                 (§15.2), und «0 Leitentscheide in dieser Auswahl» blieb als
                 Auskunft ungesagt (§8). Zahlen tausendergruppiert (LM-108). */}
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-ink-500">
-              <span><span className="num text-ink-700">{zahlGruppiert(echtAnzahl)}</span> {echtAnzahl === 1 ? 'Entscheid' : 'Entscheide'}</span>
+              <span><span className="num text-ink-900">{zahlGruppiert(echtAnzahl)}</span> {echtAnzahl === 1 ? 'Entscheid' : 'Entscheide'}</span>
               <span>· <span className="num">{zahlGruppiert(leitAnzahl)}</span> Leitentscheide</span>
               <span>· <span className="num">{zahlGruppiert(volltextAnzahl)}</span> Volltext-Verweise</span>
             </div>
@@ -493,7 +499,7 @@ export function Rechtsprechung() {
                 Ehrlichkeits-Zeile soll gelesen werden. Trennlinie und Text laufen
                 BEIDE in der Lesespalte (border-t sitzt am selben <p> — Bug-Check
                 #441 B1: der frühere Kommentar behauptete «volle Spalte»). */}
-            <p className="border-t border-line/60 pt-3 text-micro text-ink-500 max-w-reading">
+            <p className="border-t border-rule-soft pt-3 text-micro text-ink-500 max-w-reading">
               Keine Rechtsberatung. «ungeprüft» = maschinell erfasst, fachlich noch nicht abgenommen; massgeblich ist stets die amtliche Fassung (Link je Entscheid).
             </p>
           </div>

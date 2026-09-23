@@ -78,9 +78,9 @@ export function LiveSuche({ initialQ = '' }: { initialQ?: string }) {
 
   if (!offen) {
     return (
-      <div className="border-t border-line/60 pt-4">
+      <div className="border-t border-rule-soft pt-4">
         <button type="button" onClick={() => { setOffen(true); setQ((cur) => cur || initialQ); }}
-          className="text-body-s text-brass-700 hover:text-brass-600">
+          className="text-body-s text-ink-700 underline underline-offset-4 hover:text-ink-900">
           Nicht dabei? Im gesamten Schweizer Korpus suchen (entscheidsuche.ch) →
         </button>
       </div>
@@ -88,9 +88,9 @@ export function LiveSuche({ initialQ = '' }: { initialQ?: string }) {
   }
 
   return (
-    <section aria-label="Live-Suche entscheidsuche.ch" className="border-t border-line/60 pt-4 space-y-3">
+    <section aria-label="Live-Suche entscheidsuche.ch" className="border-t border-rule-soft pt-4 space-y-3">
       <div className="flex items-baseline justify-between gap-3">
-        <h2 className="lc-overline text-brass-700">Live-Suche · gesamter CH-Korpus</h2>
+        <h2 className="lc-overline text-reg-r">Live-Suche · gesamter CH-Korpus</h2>
         <button type="button" onClick={() => setOffen(false)} className="text-xs text-ink-500 hover:text-ink-700">einklappen</button>
       </div>
 
@@ -104,18 +104,19 @@ export function LiveSuche({ initialQ = '' }: { initialQ?: string }) {
         <input
           type="search" value={q} onChange={(e) => setQ(e.target.value)}
           placeholder="Begriff, Norm oder Aktenzeichen …" aria-label="Live-Suchbegriff"
-          className="min-w-0 flex-1 rounded border border-line bg-paper px-3 py-1.5 text-body-s text-ink-900 placeholder:text-[var(--placeholder)] focus:border-brass-600 focus:outline-none focus:shadow-[var(--ring)]"
+          className="lc-input lc-input-sm w-auto min-w-0 flex-1"
         />
-        <div className="inline-flex items-stretch overflow-hidden rounded border border-line" role="group" aria-label="Sortierung">
+        {/* K3: Text-Schalter (`.ub-schalter`, D22) statt Kasten-Segment. */}
+        <div className="flex items-baseline gap-x-4" role="group" aria-label="Sortierung">
           {(['relevanz', 'datum'] as const).map((s) => (
             <button key={s} type="button" onClick={() => setzeSort(s)} aria-pressed={sortNach === s}
-              className={`px-2.5 py-1.5 text-xs ${sortNach === s ? 'bg-well text-brass-700' : 'text-ink-600 lc-hover-flaeche'} ${s === 'datum' ? 'border-l border-line' : ''}`}>
+              className="ub-schalter">
               {s === 'relevanz' ? 'Relevanz' : 'Neueste'}
             </button>
           ))}
         </div>
         <button type="submit" disabled={!q.trim() || laden}
-          className="lc-chip hover:text-brass-700 hover:border-brass-400 disabled:opacity-40">
+          className="lc-btn-mini px-3 text-xs font-medium text-ink-700 hover:border-line-strong hover:bg-well hover:text-ink-900 disabled:opacity-40">
           {laden ? 'sucht …' : 'Suchen'}
         </button>
       </form>
@@ -135,7 +136,7 @@ export function LiveSuche({ initialQ = '' }: { initialQ?: string }) {
               <span className="num text-ink-700">{erg.totalIstMindestens ? `${erg.total}+` : erg.total}</span> Treffer bei {LIVE_QUELLE}
               {' '}· angezeigt {erg.treffer.length}
             </p>
-            <div className="lc-panel divide-y divide-line overflow-hidden">
+            <div className="divide-y divide-rule-soft border-y border-rule-soft">
               {erg.treffer.map((t) => <LiveTrefferZeile key={t.id} t={t} />)}
             </div>
           </div>

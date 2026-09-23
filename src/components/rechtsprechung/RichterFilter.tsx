@@ -164,7 +164,7 @@ export function RichterFilter({ aktiv, aktivName, registerGeladen, optionen, onW
                       // sonst schliessen, bevor der Klick ankommt.
                       onMouseDown={(e) => { e.preventDefault(); waehle(o.slug); }}
                       className={`flex cursor-pointer items-baseline justify-between gap-3 px-3 py-1.5 text-body-s ${
-                        o.slug === aktivKey ? 'bg-brass-100 text-brass-800' : 'text-ink-700'}`}
+                        o.slug === aktivKey ? 'bg-reg-r-flaeche text-ink-900' : 'text-ink-700'}`}
                     >
                       <span className="truncate">{o.name}</span>
                       <span className="num shrink-0 text-xs text-ink-600">{o.count}</span>
@@ -188,7 +188,7 @@ export function RichterFilter({ aktiv, aktivName, registerGeladen, optionen, onW
           <button
             type="button"
             onClick={() => { onWaehle(null); feld.current?.focus(); }}
-            className="lc-chip inline-flex items-center gap-1 border-brass-400 text-brass-700"
+            className="lc-chip inline-flex items-center gap-1 border-l-reg-r text-ink-900"
             // §8: solange das Register lädt, steht der Slug da — nie ein geratener Name.
             aria-label={`Richter-Filter «${aktivName ?? aktiv}» entfernen`}
             title="Filter entfernen"

@@ -117,7 +117,7 @@ describe('C-3 · Karten-Hover läuft über die Farbstufe, zentral', () => {
   it('index.css trägt die Regel genau einmal, elementgebunden', () => {
     const css = lies('index.css');
     expect(css).toContain(
-      ":is(a, button, [role='button'], [data-aktiv]).lc-card:hover { border-color: var(--brass-400); }",
+      ":is(a, button, [role='button']).lc-card:hover { border-color: var(--brass-400); }",
     );
   });
 

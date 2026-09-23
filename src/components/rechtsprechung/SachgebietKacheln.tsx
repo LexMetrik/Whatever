@@ -7,6 +7,9 @@ import { zahlGruppiert } from '../typografie';
 // Primär-Einstieg (Mehrwert ggü. einer flachen Trefferliste). Desktop: vertikale,
 // klebende Liste; Mobil/Tablet: horizontales Chip-Band. Reine Darstellung (§3);
 // Zähler kommen aus zaehleSachgebiete().
+// Werkbank K3 (23.9.2026): der aktive Eintrag trägt das Register «r» —
+// Registerstrich links + helle `reg-r-flaeche` mit Tinte (F0.2), Zahl im
+// Registerton — statt der Messing-Fläche; kein Radius (Linien, F0.6).
 
 export function SachgebietKacheln({ zaehler, gesamt, aktiv, onWaehle }: {
   zaehler: SachgebietZaehler[];
@@ -47,10 +50,10 @@ export function SachgebietKacheln({ zaehler, gesamt, aktiv, onWaehle }: {
                 type="button"
                 onClick={() => onWaehle(e.id)}
                 aria-current={an ? 'true' : undefined}
-                className={`flex w-full items-center justify-between gap-2 whitespace-nowrap lg:whitespace-normal rounded-md border-l-2 px-3 py-2 text-left text-body-s transition-colors ${
+                className={`flex w-full items-center justify-between gap-2 whitespace-nowrap lg:whitespace-normal border-l-2 px-3 py-2 text-left text-body-s transition-colors ${
                   an
-                    ? 'border-brass-500 bg-brass-100 font-medium text-brass-800'
-                    : 'border-transparent text-ink-700 lc-hover-flaeche'
+                    ? 'border-reg-r bg-reg-r-flaeche font-semibold text-ink-900'
+                    : 'border-transparent text-ink-600 lc-hover-flaeche hover:text-ink-900'
                 }`}
               >
                 {/* lg (vertikale Leiste): Label voll umbrechen statt abschneiden
@@ -58,7 +61,7 @@ export function SachgebietKacheln({ zaehler, gesamt, aktiv, onWaehle }: {
                     versicherung & Abgaben»). Mobil (horizontale Scroll-Reihe)
                     bleibt es einzeilig. */}
                 <span className="truncate lg:overflow-visible lg:whitespace-normal lg:leading-snug">{e.label}</span>
-                <span className={`num text-xs ${an ? 'text-brass-700' : 'text-ink-500'}`}>{zahlGruppiert(e.count)}</span>
+                <span className={`num text-xs ${an ? 'text-reg-r' : 'text-ink-500'}`}>{zahlGruppiert(e.count)}</span>
               </button>
             </li>
           );
