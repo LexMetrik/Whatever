@@ -63,6 +63,21 @@ test.describe('Startseite · Blatt der Gesetze-Kachel', () => {
     await expect(kachel).toBeFocused()
   })
 
+  // Gegenprüfung S1 (23.9.2026, blockierend): der Pfad-Klick auf einen Vorfahren
+  // pushte einen NEUEN Eintrag — Browser-Zurück führte danach wieder in die Tiefe.
+  test('Pfad-Klick geht über den Verlauf hinauf; Browser-Zurück danach schliesst', async ({ page }) => {
+    await page.goto('/')
+    await gesetzeKachel(page).click()
+    await blatt(page).getByRole('button', { name: /Bund/ }).click()
+    await blatt(page).getByRole('button', { name: /Privatrecht/ }).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze\/bund\/02$/)
+    await blatt(page).getByRole('navigation', { name: 'Pfad im Blatt' }).getByRole('button', { name: 'Gesetze' }).click()
+    await expect(page).toHaveURL(/\?blatt=gesetze$/)
+    await page.goBack()
+    await expect(page).toHaveURL(/\/$/)
+    await expect(blatt(page)).toHaveCount(0)
+  })
+
   test('Kantone: Landeskarte und Liste der 26, dann Erlassliste', async ({ page }) => {
     await page.goto('/?blatt=gesetze/kantone')
     await expect(blatt(page).locator('svg').first()).toBeVisible()
@@ -95,5 +110,12 @@ test.describe('Startseite · Blatt der Gesetze-Kachel', () => {
     // Das Blatt liegt oben: der Mittelpunkt trifft das Blatt, nicht die Seite dahinter.
     const oben = await page.evaluate(() => document.elementFromPoint(195, 600)?.closest('#lm-start-blatt') !== null)
     expect(oben).toBe(true)
+    // Die App dahinter ist `inert` (Gegenprüfung S1); nach Escape ist sie es nicht
+    // mehr, und der Fokus steht wieder auf der Kachel.
+    await expect(page.locator('#root')).toHaveAttribute('inert', '')
+    await page.keyboard.press('Escape')
+    await expect(blatt(page)).toHaveCount(0)
+    await expect(page.locator('#root')).not.toHaveAttribute('inert')
+    await expect(gesetzeKachel(page)).toBeFocused()
   })
 })

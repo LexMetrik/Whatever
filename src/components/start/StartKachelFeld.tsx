@@ -79,7 +79,7 @@ function naechstesBild(f: () => void): () => void {
 }
 
 export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) {
-  const { ort, hydriert, gehe, zurueck, schliessen } = useBlattOrt();
+  const { ort, hydriert, gehe, hoch, zurueck, schliessen } = useBlattOrt();
   const feldRef = useRef<HTMLDivElement>(null);
   const zellen = useRef(new Map<BlattRubrik, HTMLDivElement>());
   const blattRef = useRef<HTMLElement>(null);
@@ -91,6 +91,15 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
   const [schmal, setSchmal] = useState(false);
   const vorher = useRef<BlattOrt | null>(null);
   const erster = useRef(true);
+  // Der laufende Übergang (Öffnen-Bild oder Schliessen-Zeitgeber). NICHT als
+  // Effekt-Aufräumen: jeder Stufenwechsel liesse React das Aufräumen der
+  // vorigen Runde fahren und bräche das Öffnen ab — die Phase bliebe auf
+  // 'start' stehen (Gegenprüfung S1 23.9.2026). Abgebrochen wird nur, wenn
+  // ein NEUER Übergang beginnt, und beim Abbau.
+  const uebergang = useRef<(() => void) | null>(null);
+  const fokusZurueck = useRef<BlattRubrik | null>(null);
+  const beginne = (abbruch: (() => void) | null) => { uebergang.current?.(); uebergang.current = abbruch; };
+  useEffect(() => () => uebergang.current?.(), []);
 
   useEffect(() => {
     const mq = window.matchMedia?.(SCHMAL);
@@ -125,28 +134,51 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
     if (ort && !alt) {
       setSicht(ort);
       setRichtung('vor');
-      if (tiefLink || ruhig) { setKontur(null); setPhase('offen'); return; }
+      if (tiefLink || ruhig) { beginne(null); setKontur(null); setPhase('offen'); return; }
       setKontur(medien(SCHMAL) ? null : miss(ort.rubrik));
       setPhase('start');
-      return naechstesBild(() => setPhase('offen'));
+      beginne(naechstesBild(() => setPhase('offen')));
+      return;
     }
     if (!ort && alt) {
       const r = alt.rubrik;
       const fertig = () => {
+        fokusZurueck.current = r;
         setPhase('zu'); setSicht(null); setKontur(null);
-        zellen.current.get(r)?.querySelector<HTMLElement>('button, a')?.focus({ preventScroll: true });
       };
-      if (ruhig) { fertig(); return; }
+      if (ruhig) { beginne(null); fertig(); return; }
       setKontur(medien(SCHMAL) ? null : miss(r));
       setPhase('schliesst');
       const t = window.setTimeout(fertig, DAUER_ZU + 30);
-      return () => window.clearTimeout(t);
+      beginne(() => window.clearTimeout(t));
+      return;
     }
     if (ort && alt) {
       setRichtung(ort.rubrik === alt.rubrik && ort.pfad.length < alt.pfad.length ? 'zurueck' : 'vor');
       setSicht(ort);
     }
   }, [ort, hydriert]);
+
+  // Telefon: das Vollbild-Blatt hängt am `body` (Portal) und verdeckt die App.
+  // Solange es steht, ist die App dahinter `inert` — Tab und Screenreader
+  // bleiben im Blatt (Gegenprüfung S1 23.9.2026), die Seite scrollt nicht mit.
+  const vollbild = schmal && phase !== 'zu';
+  useEffect(() => {
+    if (!vollbild) return;
+    const app = document.getElementById('root');
+    const vorherUeberlauf = document.body.style.overflow;
+    app?.setAttribute('inert', '');
+    document.body.style.overflow = 'hidden';
+    return () => { app?.removeAttribute('inert'); document.body.style.overflow = vorherUeberlauf; };
+  }, [vollbild]);
+
+  // Fokus zurück auf die Kachel — NACH dem Schliessen, wenn das `inert` der App
+  // (Telefon) schon aufgehoben ist; vorher liefe `focus()` ins Leere.
+  useEffect(() => {
+    if (phase !== 'zu' || !fokusZurueck.current) return;
+    zellen.current.get(fokusZurueck.current)?.querySelector<HTMLElement>('button, a')?.focus({ preventScroll: true });
+    fokusZurueck.current = null;
+  }, [phase]);
 
   // Fokus ins Blatt, sobald es offen steht, und bei jeder Stufe neu (§8).
   useEffect(() => {
@@ -186,7 +218,7 @@ export function StartKachelFeld({ kacheln }: { kacheln: readonly KachelDef[] }) 
           className="lc-start-blatt" data-phase={phase} data-schmal={schmal ? '' : undefined}
           style={schmal ? undefined : { clipPath: clip, WebkitClipPath: clip }}
           onKeyDown={(e) => { if (e.key === 'Escape') { e.stopPropagation(); schliessen(); } }}>
-          <BlattKopf reg={kachel.reg} titel={kachel.titel} ort={sicht} gehe={gehe}
+          <BlattKopf reg={kachel.reg} titel={kachel.titel} ort={sicht} hoch={hoch}
             zurueck={zurueck} schliessen={schliessen} />
           <div className="lc-start-blatt-inhalt" data-sichtbar={phase === 'offen' ? '' : undefined}>
             <div key={[sicht.rubrik, ...sicht.pfad].join('/')} className="lc-start-stufe" data-richtung={richtung}>
@@ -220,9 +252,9 @@ function inEbene(schmal: boolean, knoten: ReactElement) {
 }
 
 /** Band oben im Blatt: Registerfläche + Strich, Pfad, «← Zurück», ✕. */
-function BlattKopf({ reg, titel, ort, gehe, zurueck, schliessen }: {
+function BlattKopf({ reg, titel, ort, hoch, zurueck, schliessen }: {
   reg: Register; titel: string; ort: BlattOrt;
-  gehe: (o: BlattOrt) => void; zurueck: () => void; schliessen: () => void;
+  hoch: (o: BlattOrt) => void; zurueck: () => void; schliessen: () => void;
 }) {
   const krumen: { label: string; ort: BlattOrt }[] = [
     { label: titel, ort: { rubrik: ort.rubrik, pfad: [] } },
@@ -240,7 +272,7 @@ function BlattKopf({ reg, titel, ort, gehe, zurueck, schliessen }: {
                 {i > 0 && <span aria-hidden className="text-ink-500">›</span>}
                 {letzte
                   ? <span aria-current="location" className="font-semibold text-ink-900">{k.label}</span>
-                  : <button type="button" onClick={() => gehe(k.ort)} className="lc-btn-ghost lc-btn-sm h-auto px-1 font-normal underline underline-offset-4">{k.label}</button>}
+                  : <button type="button" onClick={() => hoch(k.ort)} className="lc-btn-ghost lc-btn-sm h-auto px-1 font-normal underline underline-offset-4">{k.label}</button>}
               </li>
             );
           })}

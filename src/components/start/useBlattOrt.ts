@@ -55,13 +55,25 @@ export function useBlattOrt() {
     nav(ziel(o), { state: { blattTiefe: tiefe + 1, blattVonZu: ort ? vonZu : true } satisfies BlattState });
   };
 
-  /** «← Zurück»: eine Stufe höher — über den Verlauf, wo es einen gibt. */
-  const zurueck = () => {
+  /** Hinauf zu einem VORFAHREN (`null` = die Rubrik zu): über den Verlauf, so
+   *  viele Einträge, wie Stufen dazwischen liegen — jeder `gehe`-Eintrag ist
+   *  genau eine Stufe tiefer. Wo der eigene Verlauf nicht so weit reicht
+   *  (Deep-Link), wird der Eintrag ersetzt. Gegenprüfung S1 23.9.2026: der
+   *  Pfad-Klick «Gesetze» aus `bund/02` pushte zuvor einen NEUEN Eintrag, und
+   *  Browser-Zurück führte danach wieder in die Tiefe. */
+  const hoch = (vorfahr: BlattOrt | null) => {
     if (!ort) return;
-    if (tiefe > 0) { nav(-1); return; }
-    const eltern = elternOrt(ort);
-    nav(ziel(eltern), { replace: true, state: { blattTiefe: 0, blattVonZu: false } satisfies BlattState });
+    const stufen = ort.pfad.length - (vorfahr ? vorfahr.pfad.length : -1);
+    // Einträge dieser Kette oberhalb des Einstiegs: bei «von zu» ist der erste
+    // Eintrag die Rubrik selbst (Tiefe 1), beim Deep-Link der Einstieg (Tiefe 0).
+    const reicht = tiefe - (vonZu ? 1 : 0);
+    if (stufen > 0 && stufen <= reicht) { nav(-stufen); return; }
+    if (!vorfahr && vonZu && tiefe > 0) { nav(-tiefe); return; }
+    nav(ziel(vorfahr), { replace: true, state: { blattTiefe: 0, blattVonZu: false } satisfies BlattState });
   };
+
+  /** «← Zurück»: eine Stufe höher. */
+  const zurueck = () => { if (ort) hoch(elternOrt(ort)); };
 
   /** ✕ / Escape: ganz zu. */
   const schliessen = () => {
@@ -70,5 +82,5 @@ export function useBlattOrt() {
     nav(ziel(null), { replace: true });
   };
 
-  return { ort, hydriert, gehe, zurueck, schliessen };
+  return { ort, hydriert, gehe, hoch, zurueck, schliessen };
 }
