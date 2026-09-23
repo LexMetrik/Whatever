@@ -375,8 +375,28 @@ test.describe('S6-W1a · Hülle des Erlass-Blatts', () => {
 
   // Rot zu bekommen: in `LeserPanelZone` die `{...wisch}`-Handler von der Griffleiste nehmen.
   test('D-7 @390: Wischen nach unten an der Griffleiste schliesst', async ({ page }) => {
-    await orBereit(page, 390, 844)
+    // FLACKER-WURZEL (23.9.2026, CI=1, 1 Worker, je 30 Läufe): 13/30 rot,
+    // unter 4× CPU-Drossel 30/30 — das Blatt blieb offen. Die Geste ist nicht
+    // schuld, der Test drückte daneben: das Blatt ist per `maxHeight` gedeckelt,
+    // nicht fest hoch (Ä55: «wächst nach oben, nur so weit es darf»). Es öffnet
+    // mit «Entscheide werden geladen …» (258 px @OR) und wächst mit der Liste
+    // auf 464 px; die Griffleiste oben wandert dabei y 587 → 381. Die alte
+    // Fassung mass den Griff gleich nach dem Öffnen und drückte auf die alte
+    // Stelle — `pointerdown` traf die Liste (SECTION), keine Geste begann
+    // (Sonde 9/20). Darum zwei Dinge:
+    //  1. Erst messen, wenn das Blatt seine Höhe HAT — Signal ist die geladene
+    //     Liste (wie beim 44-px-Fall unten), nicht eine Wartezeit.
+    //  2. Auf BGBM statt OR: die Geste ist erlass-neutral (sie hängt am Blatt,
+    //     nicht am Gesetzestext), und der OR hält unter 4×-Drossel den
+    //     Hauptfaden so lange besetzt, dass der Entscheid-Shard erst 9–10 s nach
+    //     dem Öffnen angefragt wird (Liste 12–15 s, gemessen 10×) — dieselbe
+    //     Wurzel und derselbe Erlasswechsel wie im Dateikopf (W2·24-R6c).
+    //     BGBM unter 4×-Drossel: Liste ~120 ms nach dem Öffnen (6×).
+    await page.setViewportSize({ width: 390, height: 844 })
+    await leserBereit(page)
     await blattAuf(page)
+    await expect(page.locator('[data-v3-panel] [role="tabpanel"] a[href]').first()).toBeVisible({ timeout: 20_000 })
+    await expect(page.locator('[data-v3-panel] [data-v3-panel-lage="laedt"]')).toHaveCount(0)
     const griff = await page.locator('[data-v3-panel-griff]').boundingBox()
     expect(griff, 'Griffleiste fehlt').not.toBeNull()
     const x = griff!.x + griff!.width / 2
