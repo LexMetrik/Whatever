@@ -138,7 +138,7 @@ export function SuchZone({
   return (
     // D28 «Druck ohne Feld»: `print:hidden` an der ZONE, nicht am Feld — auch
     // Zähler-Zeile und Griffe fallen aus der Kanzlei-Akte (W2·29 S4: vorher die
-    // CSS-Regel `.lr8-erlasssuche` in index.css, jetzt am Markup).
+    // eine Druck-Regel in index.css, jetzt am Markup).
     <div data-v3-such-zone className="flex flex-col justify-start gap-1 pb-2 print:hidden"
       style={{ height: 'var(--leser-v3-such-h)' }}>
       {/* ── D28 · DAS FELD IST EIN FELD, KEINE WAND ──────────────────────────
