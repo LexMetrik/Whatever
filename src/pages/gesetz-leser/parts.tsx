@@ -5,7 +5,6 @@
 // unverändert, §6 Ziff. 3). Das Tor `check:linien-kanon` liest die Marker jetzt
 // aus den Geschwister-Dateien (READER-Liste dort nachgezogen).
 export { ArtikelLeser } from './parts/ArtikelLeser';
-export { ErlassKopfBlock } from './parts/ErlassKopfBlock';
 export { ErlassLeserKopf } from './parts/ErlassLeserKopf';
 export { SektionKopf } from './parts/SektionKopf';
 export { SektionBaumTOC } from './parts/SektionBaumTOC';
