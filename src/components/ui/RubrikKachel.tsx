@@ -1,99 +1,70 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import type { Register } from '../layout/bereiche';
 
-// ─── RubrikKachel: EIN Einstiegs-Kachel-Muster (C-5, 31.8.2026) ──────────────
+// ─── RubrikKachel: DIE eine Einstiegs-Kachel (C-5 31.8.2026 · W2·29 K1) ──────
 //
-// W2·19-DESIGN-KONSISTENZ · Runde 2, Paket C. Befund C-5: derselbe Inhalt —
-// «Einstieg in eine Rubrik, mit Umfangszahl und Nutzensatz» — trug zwei
-// Bauformen:
-//   · `components/start/RubrikKacheln.tsx` (Startseite, Landkarte der Sammlung):
-//     `lc-tile` + Icon + Titel + Nutzensatz + Zähler als 11-px-Fusszeile,
-//   · `pages/Gesetze.tsx::Einstieg` (Bund/Kantone/International):
-//     `lc-card` + grosse Zahl + Einheit-Overline + Titel + Untertitel + «Öffnen →».
-// Beide sind auf DIESEN Baustein gezogen; die Kopien sind gelöscht, nicht
-// angeglichen (§5/§10).
+// Einstieg in eine Rubrik mit Umfangszahl und Unterzeile. C-5 (W2·19, Runde 2)
+// hat zwei Bauformen hierher gezogen (Startseiten-Landkarte und /gesetze-
+// Einstieg; Herleitung und aufgelöste Divergenzen: Git-Historie dieser Datei);
+// G8 (6.9.2026) hat die «Öffnen →»-Zeile gestrichen — der ganze Baustein ist
+// Link bzw. Knopf, eine Zier-Zeile sagte nichts dazu.
 //
-// KANON ist die /gesetze-Anatomie (`lc-card` · Zahl+Einheit · Titel ·
-// Nutzensatz · «Öffnen →»): sie sagt den Umfang in der Form, die das Haus für
-// Zähler gewählt hat (nackte Zahl, C-7), und benennt die Aktion. Die
-// Startseiten-Fusszeile («1'458 Entscheide im Volltext») sagte dasselbe, nur
-// leiser und in einer eigenen Form. Der WORTLAUT der Zähler ist unverändert
-// übernommen — «erfasst» bleibt «erfasst», «im Volltext» bleibt «im Volltext»
-// (§8, E6a·M5): er wandert nur von der Fusszeile in die Einheit neben der Zahl.
+// W2·29-WERKBANK-KATALOGE K1 (23.9.2026, Board «Main», vier Kacheln): die
+// Kachel trägt ihr Register als FLÄCHE (`--reg-*-flaeche`, F0.2 i. d. F.
+// 22.9.2026) mit 2-px-Registerstrich oben — dieselbe Anatomie wie das
+// Titelblatt-Band (`SeitenKopf`, Leser-S2). Auf der Fläche steht nur Tinte,
+// nie die Registerfarbe als Text (F0.2: `reg-m` 4.10 / `reg-w` 4.30:1 auf der
+// eigenen Fläche). Messing-Akzente (Icon-Slot, `text-brass-*`, die
+// Zähler-Marke in Routenfarbe) sind entfallen.
 //
-// Aufgelöste Divergenzen:
-//   Fläche      `lc-tile` vs. `lc-card` → **lc-card**; damit erbt die Kachel die
-//               EINE zentrale Hover-Regel (C-3, `index.css`) und braucht kein
-//               eigenes `hover:border-brass-400` mehr.
-//   Titel-Hover `brass-800` vs. `brass-700` → **brass-700** (Form der
-//               Karten-Titel im Haus, u. a. `FristenHauptKarte`).
-//   Nutzensatz  `ink-700` vs. `ink-500` → **ink-700**. Der Satz ist die
-//               Erklärung der Kachel, nicht ihre Fussnote; die Wahl hebt den
-//               Kontrast auf /gesetze und senkt ihn nirgends (F2/§8).
-//   Stimme      `font-display` vs. `font-sans` → **font-sans**: wertidentisch
-//               (`--font-display` == `--font-sans`, `index.css`), aber die
-//               Zwei-Stimmen-Regel wird am Klassennamen auditiert (§G-e), und
-//               eine Kachel ist Interaktion.
-//
-// Das Icon bleibt ein optionaler, rein dekorativer Slot (die Startseite führt
-// ihre Landkarten-Icons weiter, /gesetze hat keine). Reine Darstellung (§3).
+// Die Kachel kennt keine Zahl (§5): Zahl, Einheit und Unterzeile kommen als
+// Props vom Aufrufer (aus `STARTSEITE_ZAEHLER`). Das Register ist Pflicht —
+// eine Kachel trägt nie eine geratene Farbe (§8). Reine Darstellung (§3).
 
-const KLASSE = 'lc-card group flex flex-col gap-1.5 p-5 text-left no-underline';
+/** Fläche + Strich je Register — volle Klassennamen, damit Tailwind sie findet. */
+const REGISTER_KLASSE: Record<Register, string> = {
+  g: 'bg-reg-g-flaeche border-reg-g',
+  r: 'bg-reg-r-flaeche border-reg-r',
+  m: 'bg-reg-m-flaeche border-reg-m',
+  w: 'bg-reg-w-flaeche border-reg-w',
+};
 
-export function RubrikKachel({ ziel, onWahl, icon, zahl, einheit, titel, nutzen, extra }: {
+export function RubrikKachel({ reg, ziel, onWahl, zahl, einheit, titel, nutzen, extra }: {
+  /** Register der Rubrik: Fläche und Strich (`g` Gesetze · `r` Rechtsprechung
+   *  · `m` Materialien · `w` Werkzeuge). */
+  reg: Register;
   /** Link-Ziel (`<Link>`). Genau eines von `ziel`/`onWahl`. */
   ziel?: string;
   /** Auswahl ohne Ortswechsel (`<button>`), z. B. die Ebenen-Wahl auf /gesetze. */
   onWahl?: () => void;
-  /** Dekoratives Rubrik-Icon (aria-hidden gesetzt der Baustein). */
-  icon?: ReactNode;
   /** Umfangszahl — nackte Zahl (C-7), bereits landesüblich formatiert. */
   zahl?: ReactNode;
-  /** Was gezählt wird, im Wortlaut der Fläche («Erlasse im Volltext», …). */
+  /** Was gezählt wird, im Wortlaut der Fläche («Erlasse», «Kantone», …). */
   einheit?: string;
   titel: ReactNode;
-  /** EIN konkreter Nutzensatz (§8: kein «geprüft», keine Floskel). */
-  nutzen: ReactNode;
-  /** Zusatz unter dem Nutzensatz (z. B. Erfassungsgrad-Legende). */
+  /** Unterzeile: EIN konkreter Satz (§8: kein «geprüft», keine Floskel). */
+  nutzen?: ReactNode;
+  /** Zusatz unter der Unterzeile (z. B. Erfassungsgrad-Legende). */
   extra?: ReactNode;
 }) {
+  const klasse = `group flex flex-col gap-1.5 border-t-2 p-5 text-left no-underline ${REGISTER_KLASSE[reg]}`;
   const inhalt = (
     <>
-      {icon && <span aria-hidden className="shrink-0 text-brass-600">{icon}</span>}
       {zahl !== undefined && (
-        // `flex-wrap`: lange Einheiten («amtliche Materialien erfasst») rutschen
-        // unter die Zahl, statt die Kachel zu sprengen — kurze bleiben daneben.
+        // `flex-wrap`: lange Einheiten rutschen unter die Zahl, statt die
+        // Kachel zu sprengen — kurze bleiben daneben.
         <span className="flex flex-wrap items-baseline gap-2">
-          {/* GB-1 (W2·24, Befund G1, 7.9.2026): die ZAEHLER-MARKE traegt die
-              Registerfarbe der Route. Messing sagte auf allen vier Registern
-              dasselbe — also nichts; die Zahl ist auf den Uebersichten das
-              groesste Element im ersten Bild und damit der Ort, an dem die
-              Marke der Domaene sichtbar wird (FAHRPLAN §5). `text-brass-700`
-              bleibt als Grundton stehen: ausserhalb einer Route mit Register
-              (Meta-Seiten) faerbt nichts, und die Kachel darf nie eine
-              geratene Farbe tragen (§8). Regel: index.css §GB-1b. */}
-          <span className="lc-zaehler-marke num font-display text-h1 leading-none text-brass-700">{zahl}</span>
-          {einheit && <span className="lc-overline">{einheit}</span>}
+          <span className="num font-serif text-h1 leading-none text-ink-900">{zahl}</span>
+          {einheit && <span className="text-body-s text-ink-700">{einheit}</span>}
         </span>
       )}
-      <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight transition-colors group-hover:text-brass-700">{titel}</span>
-      <span className="text-body-s leading-snug text-ink-700">{nutzen}</span>
+      <span className="font-sans font-semibold text-ink-900 text-h3 tracking-tight underline-offset-4 group-hover:underline">{titel}</span>
+      {nutzen && <span className="text-body-s leading-snug text-ink-700">{nutzen}</span>}
       {extra}
-      {/* ── G8 (Gesamtprüfung 6.9.2026) · KEINE «Öffnen →»-ZEILE MEHR ────────
-          Das Muster «Icon-Kachel mit Zahl + ‹Öffnen →›» steht namentlich auf
-          der Negativliste des Prüfer-Auftrags (`abnahme/design-identitaet/
-          uebergabe/PRUEFER-AUFTRAG.md`), gemessen dreimal auf `/gesetze`
-          (Screen `gesamt-a-03`). Sie sagte nichts, was die Kachel nicht schon
-          ist: der GANZE Baustein ist ein `<Link>`/`<button>`, der Titel trägt
-          den Hover, und `aria-hidden` machte die Zeile für Screenreader
-          ohnehin unsichtbar — sie war reine Zier, kein Bedienelement (F0.6).
-          Mit ihr fällt die `mt-auto`-Fluchtung von LM-027/LM-038; deren
-          Substanz («Kacheln einer Reihe gleich hoch») liegt an der Kachelhöhe
-          und bleibt unberührt. */
-      }
     </>
   );
   return ziel !== undefined
-    ? <Link to={ziel} className={KLASSE}>{inhalt}</Link>
-    : <button type="button" onClick={onWahl} className={KLASSE}>{inhalt}</button>;
+    ? <Link to={ziel} className={klasse}>{inhalt}</Link>
+    : <button type="button" onClick={onWahl} className={klasse}>{inhalt}</button>;
 }

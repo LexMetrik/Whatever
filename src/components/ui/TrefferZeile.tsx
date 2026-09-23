@@ -12,23 +12,15 @@ import type { ReactNode } from 'react';
 // `<Link>`/`<li>`/`<div>`) — er trägt nur die gemeinsame Flex-Geometrie
 // `TREFFER_ZEILE_RAHMEN`, damit der Gruppen-Hover an EINEM Namen hängt.
 //
-// Aufgelöste Divergenzen (Kanon-Wahl je Fall, FAHRPLAN §1: Reglement, sonst die
-// verbreitetere Form):
-//   Untertitel  `text-xs` (Katalog) vs. `text-body-s` (Suche) → **body-s**. Die
-//               zweite Zeile trägt an beiden Orten Lesbares (Fristen-WARUM-Satz,
-//               Such-Snippet); 12 px ist die Etiketten-, nicht die Satzgrösse
-//               (Typo-Skala, `tailwind.config.js`).
-//   Kappung     `truncate` (Katalog-Sub) vs. `line-clamp-2` (Suche) →
-//               **line-clamp-2**: ein abgeschnittenes Sub-Label verliert
-//               Information, zwei Zeilen nicht (§8). Der Katalog-Schalter
-//               `subWrap` ist damit ersatzlos entfallen (Rückbau).
-//   Pfeil       statisch `text-brass-700` (Katalog, auch FristenHauptKarte und
-//               die «Öffnen →»-Zeilen) vs. `ink-300 → brass-500` mit
-//               `translate-x-0.5` (Suche) → **brass-700 statisch**. Dieselbe
-//               Entscheidung wie C-3 an der Karte: der Hover läuft über die
-//               Fläche/Farbstufe, nicht über eine zweite Motion-Grammatik (F8).
-//   Titel-Hover nur Suche hatte einen → **behalten** und auf beide gezogen
-//               (`group-hover/treffer:text-brass-800`).
+// Aufgelöste Divergenzen (C-4): Untertitel `body-s` (12 px ist Etiketten-,
+// nicht Satzgrösse), Kappung `line-clamp-2` (ein abgeschnittenes Sub-Label
+// verliert Information, §8; der Schalter `subWrap` entfiel), EIN statischer
+// Pfeil ohne Motion (F8), Titel-Hover an beiden Flächen.
+//
+// W2·29-WERKBANK-KATALOGE K1 (23.9.2026): Token-Tausch auf die Werkbank,
+// Messing raus. Titel-Hover als Unterstrich (vorher `brass-800`, von `ink-900`
+// kaum zu unterscheiden: #1D1B17 gegen #25231F), Untertitel `ink-600` (Board),
+// Pfeil ruhig in `ink-500`. Verhalten, Slots und Kappung unverändert.
 //
 // Bewusst NICHT vereinheitlicht (declared, mit Grund): die Titel-Kappung. Im
 // Such-Panel ist die Zeile ein STREIFEN fester Höhe — die Kappung ab `sm` hält
@@ -77,17 +69,17 @@ export function TrefferZeile({ titel, untertitel, meta, marke, pfeil = '→', st
     <>
       <span className="min-w-0 flex-1">
         <span className={`block lc-wortumbruch text-body-s font-medium leading-snug text-ink-900${
-          klickbar ? ' transition-colors group-hover/treffer:text-brass-800' : ''}${
+          klickbar ? ' underline-offset-2 group-hover/treffer:underline' : ''}${
           streifen ? ' max-sm:line-clamp-2 sm:truncate' : ''}`}>{titel}</span>
         {untertitel !== undefined && untertitel !== null && untertitel !== '' && (
-          <span className="block lc-wortumbruch line-clamp-2 text-body-s leading-snug text-ink-500">{untertitel}</span>
+          <span className="block lc-wortumbruch line-clamp-2 text-body-s leading-snug text-ink-600">{untertitel}</span>
         )}
         {meta && (
           <span className="mt-1 flex flex-wrap items-center gap-x-2 text-micro text-ink-500">{meta}</span>
         )}
       </span>
       {marke && <span className="flex items-center gap-2 shrink-0">{marke}</span>}
-      {pfeil && <span aria-hidden className="shrink-0 leading-none text-brass-700">{pfeil}</span>}
+      {pfeil && <span aria-hidden className="shrink-0 leading-none text-ink-500">{pfeil}</span>}
     </>
   );
 }

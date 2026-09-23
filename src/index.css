@@ -4177,19 +4177,43 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
    Additiv am Dateiende, weil an `index.css` in dieser Runde mehrere Agenten
    bauen (dieselbe Begründung wie beim `.lr6-`-Block darüber). */
 
-/* Ausgabe-Zeile unter der H1: Archivo 13 px, ink-500 (Zähler aus dem
-   Register — die Zahlen tragen `.num` am Konsumenten). */
+/* ── W2·29-WERKBANK-KATALOGE K1 (23.9.2026) · TITELBLATT-BAND ──────────────
+   `layout/SeitenKopf`: Overline · H1 (Serif) · Ausgabe-Zeile auf der
+   Registerfläche der Route (Boards «Unter-*»; F0.2 i. d. F. 22.9.2026) mit
+   2-px-Registerstrich oben — die Anatomie des Leser-Titelblatts (S2,
+   `.lc-titelblatt-band`). Das Board führt den vollen Registerton mit weisser
+   Schrift; das Haus erlaubt als Fläche nur `--reg-*-flaeche` mit Tinte darauf
+   (Tokens-Entscheid 22.9.2026), daher Fläche + Strich. Ohne Register
+   (Meta-Seiten, Fehlseiten) neutral: `--well` mit Tintenstrich. Auf der
+   Fläche nur Tinte ≥ ink-600 (ink-500 4.22:1 auf `reg-g-flaeche`, S2 ③b). */
+.lc-route[data-reg="g"] { --reg-marke-flaeche: var(--reg-g-flaeche); }
+.lc-route[data-reg="r"] { --reg-marke-flaeche: var(--reg-r-flaeche); }
+.lc-route[data-reg="m"] { --reg-marke-flaeche: var(--reg-m-flaeche); }
+.lc-route[data-reg="w"] { --reg-marke-flaeche: var(--reg-w-flaeche); }
+.ub-kopf {
+  background: var(--reg-marke-flaeche, var(--well));
+  border-top: 2px solid var(--reg-marke, var(--rule));
+  padding: 0.875rem 1rem 1rem;
+}
+.ub-kopf h1 { font-weight: 400; }
+.lc-route .ub-kopf .lc-overline, .ub-kopf .lc-overline { color: var(--ink-600); }
+/* Der Band-Strich IST die Registermarke dieser Route — die 3.5-rem-Marke am
+   Routenkopf (GB-1, unten) stünde sonst als zweite Linie darüber. */
+.lc-route[data-reg]:has(.ub-kopf)::before { content: none; }
+
+/* Ausgabe-Zeile unter der H1: Archivo 13 px, Tinte auf der Fläche. */
 .ub-ausgabe {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: var(--ink-500);
+  color: var(--ink-700);
   margin: 0;
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
 /* Filterzeile: Label über Feld, volle Inhaltsbreite. Das Feld selbst bleibt
    `.lc-input` (Unterstrich-Anatomie, R3-F3) — hier steht nur die Hülle. */
-.ub-filter { display: grid; gap: 0.25rem; width: 100%; }
+.ub-filter { display: grid; gap: 0.375rem; width: 100%; }
 .ub-filter-fuss {
   display: flex; flex-wrap: wrap; align-items: baseline;
   gap: 0.25rem 1rem;
@@ -4199,35 +4223,36 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
 }
 
 /* Facetten als TEXT-Schalter (D22: «keine Kästen»). Der aktive Zustand trägt
-   den 2-px-Registerstrich der Domäne, der ruhende einen unsichtbaren Platz-
-   halter derselben Stärke — die Zeile springt beim Umschalten nicht. */
+   den 2-px-Strich im Register der Route (K1: vorher fest `--reg-g`, auch auf
+   /rechtsprechung), der ruhende einen unsichtbaren Platzhalter derselben
+   Stärke — die Zeile springt beim Umschalten nicht (darum auch kein
+   Gewichtswechsel, anders als das Board). */
 .ub-schalter {
   appearance: none; background: none; border: 0; border-radius: 0;
   padding: 0.25rem 0; cursor: pointer;
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 0.8125rem; line-height: 1.5; font-weight: 500;
-  color: var(--ink-500);
+  color: var(--ink-600);
   border-bottom: 2px solid transparent;
   transition: color .15s, border-color .15s;
 }
 .ub-schalter:hover { color: var(--ink-900); }
 .ub-schalter[aria-selected="true"], .ub-schalter[aria-pressed="true"] {
-  color: var(--ink-900); border-bottom-color: var(--reg-g);
+  color: var(--ink-900); border-bottom-color: var(--reg-marke, var(--rule));
 }
 .ub-schalter:focus-visible { outline: none; color: var(--ink-900); border-bottom-color: var(--focus); }
 
-/* Kernerlasse: eine Zeile Links, keine Kacheln. Der Bereich trägt den
-   Registerstrich «Gesetze» als linke Kante — dieselbe Marke, die die
-   Seitenleiste führt. */
+/* Kernerlasse: eine Zeile Links, keine Kacheln. K1 (Board): Registerton als
+   Linkfarbe auf dem Papier (reg-g 7.85:1 hell, GB-1-Messung), Unterstrich in
+   derselben Farbe — der Unterstrich trägt die Affordanz, nicht die Farbe. */
 .ub-kern { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; align-items: baseline; margin: 0; padding: 0; list-style: none; }
 .ub-kern a {
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 0.875rem; font-weight: 500; line-height: 1.5;
-  color: var(--ink-900);
-  /* Unterstrichen wie jeder Link (§5/R3-F1) — nur die Linie ist ruhig. */
-  text-decoration: underline; text-decoration-color: var(--rule-soft); text-underline-offset: 3px;
+  font-size: 0.875rem; font-weight: 600; line-height: 1.5;
+  color: var(--reg-marke, var(--ink-900));
+  text-decoration: underline; text-decoration-color: currentColor; text-underline-offset: 3px;
 }
-.ub-kern a:hover { text-decoration-color: var(--reg-g); }
+.ub-kern a:hover { text-decoration-thickness: 2px; }
 
 /* ═══ W2·24-R12B · LISTEN-TABELLE (Präfix `.tb-`, additiv am Dateiende) ═══════
    D24 (David 6.9.2026, Bild Kantons-Erlassliste BS «Relevanz»): «das hier soll
@@ -4485,14 +4510,6 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
   pointer-events: none;
 }
 
-/* Zähler-Marke der Ausgabe-Zeile (`SeitenKopf`-Slot `ausgabe`, `.ub-ausgabe`):
-   die ZAHL trägt die Registerfarbe, das Wort daneben bleibt ink-500 — die Farbe
-   sagt nichts allein, sie hebt nur den Bestand hervor (§8/WCAG 1.4.1).
-   Kontrast gemessen (7.9.2026, sRGB-Formel, gegen --paper hell #FAF7F2 /
-   dunkel #1B1917): g 7.85/8.58 · r 9.55/7.88 · m 4.94/10.14 · w 5.21/9.56 —
-   AA in beiden Modi, auf --well (4.65 … 10.83) ebenso. */
-.lc-route[data-reg] .ub-ausgabe .num { color: var(--reg-marke); }
-
 /* ─── GB-2 · RANDTITEL SIND EINE KURSIVE LITERATA-ZEILE ─────────────────────
    BEFUND G2 (gemessen): `Literata italic` kam im ersten Bild auf 8 von 9 Routen
    GAR NICHT vor (nur «/» trug 2, die Begrüssung) — der Akzent, den David am
@@ -4677,9 +4694,6 @@ a.lr7-einzel-pfad-glied:hover { color: var(--brass-700); }
 /* ③b Im Titelblatt-Band ink-600 statt ink-500 (5.38/5.25:1); ungeschichtet,
    damit es die Utility schlägt — kein Umdefinieren des Tokens (tokens-drift). */
 .lc-titelblatt-band .text-ink-500 { color: var(--ink-600); }
-
-/* ④ Die Zähler-Marke der Rubrik-Kacheln (`ui/RubrikKachel`, Herleitung dort). */
-.lc-route[data-reg] .lc-zaehler-marke { color: var(--reg-marke); }
 
 /* ─── GB-20 · DIE WAHL-ZEILE (Ferien/Stillstand des Fristenrechners) ────────
    Rezept zum Befund G20 (Herleitung am Aufrufer `forms/EinfacheFristForm`):
