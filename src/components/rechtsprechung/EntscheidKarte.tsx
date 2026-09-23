@@ -49,8 +49,10 @@ export function EntscheidKarte({ e, onNorm }: {
           die ganze Fläche bleibt aber klickbar. */}
       <div className="relative flex flex-1 flex-col">
       <Link to={ziel} className="block no-underline after:absolute after:inset-0 after:content-['']" data-quarantaene={e.quarantaene}>
-        {/* Statuszeile: Gebiet + Leit-Marker links, Status rechts. */}
-        <div className="flex items-center justify-between gap-2 text-micro">
+        {/* Statuszeile: Gebiet + Leit-Marker links, Status rechts. K3: bricht
+            um — @390 lief «Volltext nicht verfügbar» + «maschinell» über den
+            Kartenrand (auf main gesehen 23.9.2026, «maschinell» abgeschnitten). */}
+        <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-micro">
           <span className="flex items-center gap-2">
             {verweis
               ? <span className="lc-badge lc-badge-soft">Vollständiges Urteil</span>
