@@ -3752,6 +3752,12 @@
   .lc-tab:focus-visible { outline: none; color: var(--ink-900); border-bottom-color: var(--focus); }
   .lc-tab[aria-selected="true"],
   .lc-tab[aria-pressed="true"] { color: var(--ink-900); font-weight: 500; border-bottom-color: var(--ink-900); }
+  /* W2·29-WERKBANK-VORLAGEN V3 · die Prop ist da (`data-reg`, bisher nur die
+     Dokument-Reiter der Mappen): die Kante des aktiven Reiters im Register,
+     wie die Reiterzeile des Wizards. `:where()` hält die Spezifität bei der
+     Regel darüber, die Quellreihenfolge entscheidet. Kontrast (V3, culori):
+     reg-w auf reg-w-flaeche 4.30:1 hell · 7.52:1 dunkel (≥ 3:1, SC 1.4.11). */
+  .lc-tab:where([data-reg="w"])[aria-selected="true"] { border-bottom-color: var(--reg-w); }
 
   /* Referenzwerk-Liste: Messing-Gedankenstrich als Marker (FAHRPLAN-DESIGN
      5.5) — für Hinweis-Listen der Vorlagen (Preflight nimmt Browser-Bullets
