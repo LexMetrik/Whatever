@@ -120,6 +120,14 @@ Minimum Ziff. 2 — der frühere Verweis «Regeln 2+5» lief ins Leere, es gibt 
 vier eiserne Regeln; korrigiert 15.8.2026).
 Ein übergebener Pin ist ein Start-Artefakt, kein Verdikt.
 
+**Geprüfter Stand = benannter SHA (Beleg 23.9.2026, V2d-Gegenprüfung):** Der
+Auftrag nennt den Ziel-SHA; der Prüfer bestätigt ihn zuerst mit
+`git fetch && git rev-parse HEAD` (sonst `git checkout --detach <ref>`) und
+nennt den geprüften SHA im Verdikt. Ohne diesen Schritt prüfte ein Durchgang
+teils einen anderen Baum (meldete migrierte Seiten als «nicht migriert»,
+Testzahl eines älteren Stands) — ein Verdikt ohne SHA gilt als nicht erfolgt
+(§14.7).
+
 ## Modus wählen
 
 Sieh dir die geänderten Risiko-Dateien an (die rote Tor-Meldung listet sie):
