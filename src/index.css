@@ -1777,6 +1777,20 @@
     max-width: min(var(--leser-lesemass-max, 45rem), var(--leser-zeilenmass, 45rem));
   }
 
+  /* ── W2·29-WERKBANK-LESER S1 (23.9.2026) · DIE ROUTE-HÜLLE BLEIBT STEHEN ──
+     §16-Posten «CLS-Flake leser-funktionszeile-zaehler:80» (0.04387 nur unter
+     Parallel-Last). WURZEL, gemessen (rAF- und layout-shift-Sonde, dist/,
+     1440×900, OR#art-336_c, 8 Worker auf 10 Kernen): der negative Rand, mit
+     dem der Kopf die Wrapper-Polsterung verschluckt (`LeserKopf.tsx`,
+     `--leser-v3-kopf-luecke` + `--leser-v3-app-band` = 84 px), KOLLABIERTE
+     durch `.lc-leser` bis in `.lc-route` und zog die Route-Hülle von y 213
+     (Lade-Anzeige) auf y 129. Wird die Lade-Anzeige unter Last einmal gemalt,
+     ist das eine Verschiebung der ganzen Hülle — 0.0434 der 0.04387.
+     `flow-root` fängt den Rand am Leser ab: der Kopf steht pixelgleich
+     (Vergleich 1440/390, OR/BV/BS-154.100, Differenz leer), die Hülle bewegt
+     sich nicht mehr. Rot→grün: 12–16/16 → 0/16 rot bei gleicher Last. */
+  .lc-leser[data-leser-v3="rahmen"] { display: flow-root; }
+
   /* ═══ P3 · TEXTLINKS IM LESER TRAGEN EINEN UNTERSTRICH ═══════════════════
      Prüfer-Befund R6 (6.9.2026): von 6'291 Links im Gesetzesleser trugen 3'673
      keinen Unterstrich — darunter «Amtliche Fassung ↗», «⬇ Amtliches PDF» und
