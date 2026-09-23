@@ -217,6 +217,12 @@ export interface ParseErgebnis {
   instanz: string;
   court: string;
   datum: string | null;          // ISO
+  /**
+   * Entscheiddatum aus dem Deckblatt («URTEIL» / «vom 15. September 2025»), ISO —
+   * nur Lückenfüller für ein fehlendes Metadaten-Datum (`kopfDatum`, B-1).
+   * Optional, damit handgebaute Test-Ergebnisse ohne das Feld gültig bleiben.
+   */
+  datumKopf?: string | null;
   erstpublikation: string | null;
   aktualisiert: string | null;
   titel: string;
@@ -250,6 +256,71 @@ const dIso = (s: string | null): string | null => {
   const m = /(\d{2})\.(\d{2})\.(\d{4})/.exec(s ?? '');
   return m ? `${m[3]}-${m[2]}-${m[1]}` : null;
 };
+
+// ─── Kopf-Datum: das Entscheiddatum aus dem Deckblatt (W2·29-WERKBANK-LESER D2/B-1) ──
+//
+// BEFUND (Prüfrunde 1, reproduziert 23.9.2026): 42 der 3'765 BS-Dokumente haben im
+// Metadaten-Kopf des Portals KEIN «Entscheiddatum» (Inventar `datum: null`). Der
+// Import führte sie darum als `datumUnbekannt` mit dem Platzhalter <GN-Jahr>-01-01
+// — und dieser Platzhalter wanderte ohne das Flag in die Bezugs-Shards, wo er als
+// echtes Datum «01.01.2024» erschien und das «revidiert»-Warnzeichen auslöste.
+// Das Datum steht aber im amtlichen Dokument selbst: das Deckblatt trägt unter der
+// Titelzeile «ENTSCHEID»/«URTEIL»/«Urteil der Präsidentin» einen eigenen Absatz
+// «vom 15. September 2025» (BES.2024.88, nF30_KEY 78827).
+//
+// DIE REGEL ist strukturell, kein Fliesstext-Raten (§1/§2): ein Absatz, der
+// VOLLSTÄNDIG aus «vom <T>. <Monat> <JJJJ>» besteht UND unmittelbar auf einen
+// Absatz folgt, der VOLLSTÄNDIG eine Entscheid-Titelzeile ist, innerhalb der
+// ersten KOPF_FENSTER Einheiten (Briefkopf-Tabelle, GN, Titel, Datum stehen real
+// an Position 3–6). Ein «vom …» im Sachverhalt ist nie ein ganzer Absatz direkt
+// nach «URTEIL» und trifft darum nicht.
+//
+// GEMESSEN 23.9.2026 (Rohdokumente frisch vom Portal): 42/42 datumlose Dokumente
+// tragen genau einen solchen Kopf; Gegenprobe an 42 Dokumenten MIT Metadaten-
+// Datum (jedes 90. des Inventars): Kopf-Datum == Metadaten-Datum in allen Fällen,
+// in denen die Regel greift (Zahl im PR-Bericht). Das Metadaten-Datum bleibt die
+// erste Quelle; das Kopf-Datum füllt nur die Lücke (`baueSnapshot`).
+const KOPF_FENSTER = 12;
+const MONATE: Record<string, string> = {
+  Januar: '01', Februar: '02', März: '03', April: '04', Mai: '05', Juni: '06',
+  Juli: '07', August: '08', September: '09', Oktober: '10', November: '11', Dezember: '12',
+};
+const KOPF_TITEL_RE = /^(?:ENTSCHEID|URTEIL|BESCHLUSS|VERFÜGUNG|(?:Entscheid|Urteil|Beschluss|Verfügung) de[rs] [A-ZÄÖÜ][a-zäöüß]+)$/;
+const KOPF_DATUM_RE = new RegExp(`^vom (\\d{1,2})\\. (${Object.keys(MONATE).join('|')}) (\\d{4})$`);
+
+/** Ganzabsatz-Text für den Kopf-Vergleich: NBSP/U+202F → Leerzeichen, kollabiert. */
+const kopfText = (s: string): string => s.replace(/[  ]/g, ' ').replace(/\s+/g, ' ').trim();
+
+/**
+ * Entscheiddatum aus dem Deckblatt (ISO) oder null. Rein (§2). Exportiert für den
+ * Regressionstest; die Anwendung (nur als Lückenfüller) steht in `baueSnapshot`.
+ */
+export function kopfDatum(einheiten: ReadonlyArray<{ text: string }>): string | null {
+  const n = Math.min(einheiten.length, KOPF_FENSTER);
+  for (let i = 1; i < n; i++) {
+    const m = KOPF_DATUM_RE.exec(kopfText(einheiten[i].text));
+    if (!m || !KOPF_TITEL_RE.test(kopfText(einheiten[i - 1].text))) continue;
+    const tag = m[1].padStart(2, '0');
+    const iso = `${m[3]}-${MONATE[m[2]]}-${tag}`;
+    // Kalender-Gegenprobe: «vom 31. April» ist kein Datum (nie raten, §1).
+    const d = new Date(`${iso}T00:00:00Z`);
+    if (Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== iso) return null;
+    return iso;
+  }
+  return null;
+}
+
+/**
+ * Plausibilitäts-Riegel für das Kopf-Datum: nicht vor dem Jahr der Geschäftsnummer
+ * (Eingang), nicht nach der Erstpublikation. Scheitert er, bleibt das Datum
+ * ehrlich unbekannt (Platzhalter + `datumUnbekannt`) statt geraten.
+ */
+export function plausiblesKopfDatum(kopf: string | null | undefined, gnJahrZahl: number | null, erstpublikation: string | null): string | null {
+  if (!kopf) return null;
+  if (gnJahrZahl !== null && Number(kopf.slice(0, 4)) < gnJahrZahl) return null;
+  if (erstpublikation && kopf > erstpublikation) return null;
+  return kopf;
+}
 
 /** Ein rohes BS-Dokument (windows-1252-Bytes) strukturell parsen. */
 export function parseBsDokument(bytes: Buffer): ParseErgebnis {
@@ -419,6 +490,7 @@ export function parseBsDokument(bytes: Buffer): ParseErgebnis {
   return {
     gn, gnSekundaer: sekM ? sekM[1] : null, instanz, court: courtEintrag[1],
     datum: dIso(metaWert(document, 'Entscheiddatum')),
+    datumKopf: kopfDatum(einheiten),
     erstpublikation: dIso(metaWert(document, 'Erstpublikationsdatum')),
     aktualisiert: dIso(metaWert(document, 'Aktualisierungsdatum')),
     titel, abschnitte, dispositivOrders, strukturQuelle,
@@ -456,10 +528,13 @@ export function docketSafeVergabe(gruppe: Array<{ p: ParseErgebnis; z: InventarZ
 
 export function baueSnapshot(p: ParseErgebnis, z: InventarZeile, docketSafe: string, abgerufen: string): EntscheidSnapshot {
   const gerichtName = gerichtAnzeigename(p.court, 'BS');
-  const datumlos = !p.datum;
   const jahr = gnJahr(p.gn);
+  // Metadaten-Datum zuerst; fehlt es, das Deckblatt-Datum (B-1), sofern plausibel.
+  // Erst wenn beide fehlen, bleibt das Datum ehrlich unbekannt (Platzhalter + Flag).
+  const kopf = p.datum ? null : plausiblesKopfDatum(p.datumKopf, jahr, p.erstpublikation);
+  const datumlos = !p.datum && !kopf;
   if (datumlos && !jahr) throw new Error(`${p.gn}: weder Entscheiddatum noch GN-Jahr`);
-  const datum = p.datum ?? `${jahr}-01-01`;
+  const datum = p.datum ?? kopf ?? `${jahr}-01-01`;
   const sachgebiet: Rechtsgebiet = kantonalSachgebiet(p.gn) ?? 'oeffentlich';
   const snap: EntscheidSnapshot = {
     id: `kanton/BS/${p.court}/${docketSafe}`,
@@ -570,4 +645,53 @@ export async function parseUndSchreibe(inventar: Inventar, datum: string, limit 
   const res = schreibeKorpus([...bestand, ...snaps], datum);
   const proGericht = snaps.reduce((m, s) => ((m[s.gericht] = (m[s.gericht] ?? 0) + 1), m), {} as Record<string, number>);
   console.log(`[bs-parse] geschrieben: ${res.anzahl} Manifest-Einträge (Bestand ${bestand.length} + BS ${snaps.length}: ${Object.entries(proGericht).map(([k, v]) => `${k}:${v}`).join(' ')})`);
+}
+
+// ─── Nachtrag Kopf-Datum (B-1): nur die datumlosen Dokumente, gezielt ────────
+//
+// WARUM EIN EIGENER LAUF und kein Vollimport: `daten/bs-fiw/raw/` ist nicht
+// eingecheckt; ein Voll-Reparse hinge am Abruf aller 3'765 Rohdokumente. Der
+// Nachtrag braucht nur die Rohdateien der Inventar-Einträge OHNE Metadaten-Datum
+// (bs-import holt genau diese vorher, `--kopfdatum-nachtrag`).
+//
+// WAS ER ÄNDERT — und was er beweist, bevor er es tut (§6/§7): je Dokument wird
+// der Snapshot mit derselben Regel wie im Vollimport neu gebaut (`baueSnapshot`,
+// gleicher docketSafe wie im Bestand). Übernommen werden AUSSCHLIESSLICH `datum`,
+// `zitierung`, `datumUnbekannt` und `abgerufen`. Harte Vorbedingung: identische
+// id und identischer Text-`sha` — ist das Portal-Dokument inzwischen ein anderes,
+// bricht der Lauf ab, statt ein neues Datum auf einen alten Text zu setzen.
+// Alle übrigen Felder (normKeys, Besetzung, …) bleiben byte-treu.
+export function nachtragKopfdatum(inventar: Inventar, datum: string): { datiert: string[]; weiterUnbekannt: string[] } {
+  const bestand = ladeBestandSnapshots();
+  const proKey = new Map<number, number>();
+  bestand.forEach((s, i) => {
+    if (s.quelle !== 'gerichte-bs') return;
+    const m = /nF30_KEY=(\d+)/.exec(s.quelleUrl);
+    if (m) proKey.set(Number(m[1]), i);
+  });
+  const datiert: string[] = [];
+  const weiterUnbekannt: string[] = [];
+  for (const z of inventar.eintraege) {
+    if (z.datum) continue;
+    const pfad = rawPfad(z.key);
+    if (!existsSync(pfad)) throw new Error(`[kopfdatum] Rohdatei fehlt: ${z.gn} (key ${z.key}) — zuerst holen.`);
+    const p = parseBsDokument(readFileSync(pfad));
+    if (p.gn !== z.gn) throw new Error(`[kopfdatum] GN-Drift: Kopf «${p.gn}» ≠ Inventar «${z.gn}»`);
+    if (p.datum !== z.datum) throw new Error(`[kopfdatum] ${z.gn}: Portal trägt jetzt ein Metadaten-Datum (${p.datum}) — Vollimport statt Nachtrag.`);
+    const i = proKey.get(z.key);
+    if (i === undefined) throw new Error(`[kopfdatum] ${z.gn} (key ${z.key}) nicht im Bestand.`);
+    const alt = bestand[i];
+    const neu = baueSnapshot(p, z, alt.id.slice(alt.id.lastIndexOf('/') + 1), datum);
+    if (neu.id !== alt.id) throw new Error(`[kopfdatum] ${z.gn}: id-Drift ${alt.id} → ${neu.id}`);
+    if (neu.sha !== alt.sha) throw new Error(`[kopfdatum] ${z.gn}: Text-sha weicht vom Bestand ab — Dokument geändert, Vollimport statt Nachtrag.`);
+    if (neu.datumUnbekannt) { weiterUnbekannt.push(alt.id); continue; }
+    const patch: EntscheidSnapshot = { ...alt, zitierung: neu.zitierung, datum: neu.datum, abgerufen: neu.abgerufen };
+    delete patch.datumUnbekannt;
+    bestand[i] = patch;
+    datiert.push(`${alt.id} ${neu.datum}`);
+  }
+  if (datiert.length) schreibeKorpus(bestand, datum);
+  console.log(`[kopfdatum] ${datiert.length} datiert, ${weiterUnbekannt.length} weiterhin ohne Datum (ehrlich datumUnbekannt).`);
+  for (const d of datiert) console.log(`[kopfdatum]   ${d}`);
+  return { datiert, weiterUnbekannt };
 }
