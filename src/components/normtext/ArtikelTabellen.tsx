@@ -28,7 +28,7 @@ export function StaffelTabelle({ zeilen }: { zeilen: string[] }) {
   // ganze Deklaration und nimmt die Versalziffern weg). Die Rolle heisst jetzt
   // `.lc-ziffern` und ist app-weit dieselbe (§5).
   return (
-    <span className="mt-1.5 block rounded-md border border-line overflow-hidden [text-indent:0] lc-ziffern">
+    <span className="mt-1.5 block border border-line overflow-hidden [text-indent:0] lc-ziffern">
       {zeilen.map((z, j) => (
         <span key={j}
           className={`block px-3 py-1.5 leading-snug ${
@@ -90,7 +90,7 @@ function KanonischeTabelle({ spalten, zeilen }: { spalten: TabSpalte[]; zeilen: 
       kopfZeile || rechts(typ) ? ' font-medium text-ink-800' : ' text-ink-700'
     }`;
   return (
-    <span data-mehrspaltig="" tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0]">
+    <span data-mehrspaltig="" tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto border border-line [text-indent:0]">
       {/* ARIA-Tabellen-Semantik auf den display:table-Spans; je Datenzeile genau
           N cell zu N columnheader (folgt aus T-B2). Echtes <table> ist im
           Phrasing-/<p>-Kontext nicht möglich. */}
@@ -138,7 +138,7 @@ function LegacyMehrspaltigeTabelle({ kopf, zeilen }: { kopf?: string[]; zeilen: 
       kopfZeile ? ' font-medium text-ink-800' : spalteNumerisch[ci] ? ' font-medium text-ink-800' : ' text-ink-700'
     }`;
   return (
-    <span data-mehrspaltig="" tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto rounded-md border border-line [text-indent:0] lc-ziffern">
+    <span data-mehrspaltig="" tabIndex={0} role="group" aria-label="Tabelle, seitlich scrollbar" className="lc-scroll-x lc-scrollrand-x mt-1.5 block overflow-x-auto border border-line [text-indent:0] lc-ziffern">
       <span role="table" aria-label="Tarif-Tabelle" className="table min-w-full w-max">
         {kopf && kopf.length > 0 && (
           <span role="row" className="table-row bg-paper-sunken/40">
@@ -169,7 +169,7 @@ function LegacyMehrspaltigeTabelle({ kopf, zeilen }: { kopf?: string[]; zeilen: 
 // Reine Darstellung (§3); Wortlaut je Zelle unverändert.
 export function TarifTabelle({ zeilen }: { zeilen: Array<{ beschreibung: string; betrag: string }> }) {
   return (
-    <span role="table" aria-label="Tarif-Tabelle" className="mt-1.5 block rounded-md border border-line overflow-hidden [text-indent:0] lc-ziffern">
+    <span role="table" aria-label="Tarif-Tabelle" className="mt-1.5 block border border-line overflow-hidden [text-indent:0] lc-ziffern">
       {zeilen.map((z, j) => (
         <span key={j} role="row" className={`flex items-baseline justify-between gap-4 px-3 py-1.5 leading-snug ${j > 0 ? 'border-t border-rule-artikel' : ''}`}>
           <span role="cell" className="text-ink-700">{z.beschreibung}</span>

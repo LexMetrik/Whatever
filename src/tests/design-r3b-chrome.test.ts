@@ -560,9 +560,13 @@ describe('A3-2 · schwebende Flächen teilen EINE Anatomie', () => {
   // trägt jetzt Papier + 1 px `--rule`, kantig und schattenlos (Herleitung an
   // der Klasse in `index.css`). Die Liste zieht darum mit, der Fall selbst
   // nicht: er zählt weiterhin die Glieder der EINEN Kette ab.
+  // ── W2·29-WERKBANK-GRUNDTON (David 23.9.2026) · DEKLARIERTE TEST-ÄNDERUNG (§6.3)
+  // «ingesamt dürfen wieder mehr rudungen eingeführt werden … als grundregel für
+  // den gesamten umbau»: das Radius-Glied ist jetzt die Karten-Stufe
+  // `var(--radius-lg)` (10 px) statt 0. Der Wächter bleibt: EINE Kette, EINE Klasse.
   it('die Klasse führt alle vier Glieder der gemessenen Kette', () => {
     const block = /\.lc-schwebeflaeche \{([\s\S]*?)\}/.exec(CSS)?.[1] ?? '';
-    for (const glied of ['var(--paper)', '1px solid var(--rule)', 'border-radius: 0', 'box-shadow: none']) {
+    for (const glied of ['var(--paper)', '1px solid var(--rule)', 'border-radius: var(--radius-lg)', 'box-shadow: none']) {
       expect(block, `.lc-schwebeflaeche führt ${glied}`).toContain(glied);
     }
     // Und die drei gefallenen Glieder stehen nicht mehr da (Rot-Probe gegen ein

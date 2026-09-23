@@ -89,8 +89,11 @@
        C2-Gegenstück (5.9.2026): --ink-fixed-light für Text auf einer Fläche,
        die STETS mittel-dunkel bleibt (--ok-solid/--sage-500 flippt bewusst
        NICHT, s. Zeile ~1042-Kommentar) — Wert = helles --paper, hier nicht
-       überschrieben. Speist --auf-sage (unten). */
-    --ink-fixed-light: #FAF7F2;
+       überschrieben. Speist --auf-sage (unten).
+
+       W2·29-WERKBANK-GRUNDTON (23.9.2026): zieht mit dem hellen `paper` auf #FDFCFA mit («Wert =
+       helles --paper»); heller auf mittel-dunkler Fläche = Kontrast steigt. */
+    --ink-fixed-light: #FDFCFA;
     /* Fliesstext-Tinte und Grundfarbe des Körpertexts. Liest auf `paper`, `surface`, `paper-raised`
        und `well`. Trägt zugleich den 2-px-Trenner `rule` und die Marken im Menü. Die Rampe ink-900
        bis ink-300 ist chromafrei (C = 0, reines Neutralgrau).
@@ -184,8 +187,16 @@
        well < paper < surface < paper-raised bleibt (check:farbwelt FAIL-Regel),
        nur eben chromafrei und mit fast unsichtbaren Stufen: das neue Bild trennt
        über LINIEN, nicht über Flächen-Tönung. paper-raised ist das Reinweiss der
-       schwebenden Ebene (Menü/Dialog), das Blatt selbst liegt eine Spur darunter. */
-    --paper: #FAF7F2;
+       schwebenden Ebene (Menü/Dialog), das Blatt selbst liegt eine Spur darunter.
+
+       W2·29-WERKBANK-GRUNDTON (David 23.9.2026, Chat: «ingesamt soll die webseite gleiche
+       hintergrundfarbe haben wie werkbank … also das als grundregel für den gesamten umbau»): das
+       Blatt hell #FAF7F2 → #FDFCFA, der Grundton des Boards «Main» (Werkbank). Dunkel #1B1917 war
+       schon gleich. Gemessen (culori OKLCH): L 0.9913 · C 0.0029 · h 84.6° — dieselbe Papier-Achse,
+       nur heller und chromaärmer; jeder Dunkeltext-Kontrast steigt (sichere Richtung). Die Leiter
+       well < paper < surface < paper-raised zieht mit: surface #FCFAF6 → #FEFDFB, paper-sunken
+       #F3F0EA → #F6F4F0 (Board-Reiterleiste). Fixpunkt in `check:farbwelt` deklariert nachgezogen. */
+    --paper: #FDFCFA;
     /* Die schwebende Ebene: Menü, Dialog, Popover. Der einzige Ort, an dem Reinweiss im Haus
        vorkommt; als Lesegrund ist Reinweiss sonst ausgeschlossen. Oberste Sprosse der
        Flächen-Leiter.
@@ -194,11 +205,23 @@
        verwendet, war aber nie generiert (stiller No-op — die Kreise/Flächen blieben transparent). */
     --paper-raised: #FFFFFF;
     /* Die versenkte Fläche: Mulde unter Eingabefeldern; speist `well` und `karte-leer` (Kantone
-       ohne erfasste Erlasse). Unterste Sprosse der Flächen-Leiter. */
-    --paper-sunken: #F3F0EA;
+       ohne erfasste Erlasse). Unterste Sprosse der Flächen-Leiter.
+
+       W2·29-WERKBANK-GRUNDTON (David 23.9.2026, Chat: «ingesamt soll die webseite gleiche
+       hintergrundfarbe haben wie werkbank … also das als grundregel für den gesamten umbau»): hell
+       #F3F0EA → #F6F4F0, der Ton der Reiterleiste im Board «Main» (L 0.9558 → 0.9676). Ohne den
+       Nachzug wäre die Mulde gegen das hellere Blatt tiefer geworden als je entschieden; heller
+       Grund hebt jeden Dunkeltext-Kontrast auf `well`. */
+    --paper-sunken: #F6F4F0;
     /* Karten, Kacheln und Panels (`.lc-card`, `.lc-tile`, `.lc-panel`). Dritte Sprosse der
-       Flächen-Leiter; trägt dieselbe Tinte wie `paper`. */
-    --surface: #FCFAF6;
+       Flächen-Leiter; trägt dieselbe Tinte wie `paper`.
+
+       W2·29-WERKBANK-GRUNDTON (David 23.9.2026, Chat: «ingesamt soll die webseite gleiche
+       hintergrundfarbe haben wie werkbank … also das als grundregel für den gesamten umbau»): hell
+       #FCFAF6 → #FEFDFB, weil das neue Blatt #FDFCFA (L 0.9913) sonst ÜBER der Karte läge (#FCFAF6,
+       L 0.9855) und die Flächen-Leiter im Farb-Tor bräche. #FEFDFB: L 0.9943, gleiche Achse h
+       84.6°, unter paper-raised #FFFFFF. */
+    --surface: #FEFDFB;
     /* Karten-Namensraum für die schwebende Ebene: wertgleicher Alias auf `paper-raised`. Eine
        Tönung, zwei semantische Namensräume - so bleibt im Markup lesbar, ob eine Karte oder eine
        Seitenfläche gemeint ist. */
@@ -324,8 +347,13 @@
        Registerfarbe
        selbst >= 3:1 auf ihrer Fläche (Nicht-Text/Marke, SC 1.4.11). Alle acht Paare sind seit
        22.9.2026 harte Pflichtpaare in `check:farbwelt` — eine spätere Verschiebung von `paper`,
-       `reg-g` oder der Tinten-Rampe wird dort rot, nicht still. */
-    --reg-g-flaeche: #D9DEE4;
+       `reg-g` oder der Tinten-Rampe wird dort rot, nicht still.
+
+       W2·29-WERKBANK-GRUNDTON (23.9.2026): nach dem Rezept oben NEU GERECHNET auf das neue `paper`
+       #FDFCFA (Rezept reproduziert den Altwert #D9DEE4 aus #FAF7F2 exakt, danach #D9DEE4 →
+       #DCE3EB); dunkel unverändert. Gemessen hell: ink-900 12.12 · reg-g 6.48 (Messreihe und
+       Pflichtpaare: `check:farbwelt`). */
+    --reg-g-flaeche: #DCE3EB;
     /* Getönte Fläche des Registers «Rechtsprechung» — der Entscheid «Farbe als Fläche» (David
        22.9.2026,
        FAHRPLAN-WERKBANK-UMBAU §4 Ziff. 3; Reglement F0.2 «nie als Fläche» ist damit abgelöst).
@@ -344,8 +372,13 @@
        Registerfarbe
        selbst >= 3:1 auf ihrer Fläche (Nicht-Text/Marke, SC 1.4.11). Alle acht Paare sind seit
        22.9.2026 harte Pflichtpaare in `check:farbwelt` — eine spätere Verschiebung von `paper`,
-       `reg-r` oder der Tinten-Rampe wird dort rot, nicht still. */
-    --reg-r-flaeche: #EAD8D3;
+       `reg-r` oder der Tinten-Rampe wird dort rot, nicht still.
+
+       W2·29-WERKBANK-GRUNDTON (23.9.2026): nach dem Rezept oben NEU GERECHNET auf das neue `paper`
+       #FDFCFA (Rezept reproduziert den Altwert #EAD8D3 aus #FAF7F2 exakt, danach #EAD8D3 →
+       #EDDCDA); dunkel unverändert. Gemessen hell: ink-900 11.84 · reg-r 7.70 (Messreihe und
+       Pflichtpaare: `check:farbwelt`). */
+    --reg-r-flaeche: #EDDCDA;
     /* Getönte Fläche des Registers «Materialien» — der Entscheid «Farbe als Fläche» (David
        22.9.2026,
        FAHRPLAN-WERKBANK-UMBAU §4 Ziff. 3; Reglement F0.2 «nie als Fläche» ist damit abgelöst).
@@ -364,8 +397,13 @@
        Registerfarbe
        selbst >= 3:1 auf ihrer Fläche (Nicht-Text/Marke, SC 1.4.11). Alle acht Paare sind seit
        22.9.2026 harte Pflichtpaare in `check:farbwelt` — eine spätere Verschiebung von `paper`,
-       `reg-m` oder der Tinten-Rampe wird dort rot, nicht still. */
-    --reg-m-flaeche: #DEE5D7;
+       `reg-m` oder der Tinten-Rampe wird dort rot, nicht still.
+
+       W2·29-WERKBANK-GRUNDTON (23.9.2026): nach dem Rezept oben NEU GERECHNET auf das neue `paper`
+       #FDFCFA (Rezept reproduziert den Altwert #DEE5D7 aus #FAF7F2 exakt, danach #DEE5D7 →
+       #E0E9DE); dunkel unverändert. Gemessen hell: ink-900 12.61 · reg-m 4.25 (Messreihe und
+       Pflichtpaare: `check:farbwelt`). */
+    --reg-m-flaeche: #E0E9DE;
     /* Getönte Fläche des Registers «Werkzeuge» — der Entscheid «Farbe als Fläche» (David 22.9.2026,
        FAHRPLAN-WERKBANK-UMBAU §4 Ziff. 3; Reglement F0.2 «nie als Fläche» ist damit abgelöst).
 
@@ -383,8 +421,13 @@
        Registerfarbe
        selbst >= 3:1 auf ihrer Fläche (Nicht-Text/Marke, SC 1.4.11). Alle acht Paare sind seit
        22.9.2026 harte Pflichtpaare in `check:farbwelt` — eine spätere Verschiebung von `paper`,
-       `reg-w` oder der Tinten-Rampe wird dort rot, nicht still. */
-    --reg-w-flaeche: #EBE1D3;
+       `reg-w` oder der Tinten-Rampe wird dort rot, nicht still.
+
+       W2·29-WERKBANK-GRUNDTON (23.9.2026): nach dem Rezept oben NEU GERECHNET auf das neue `paper`
+       #FDFCFA (Rezept reproduziert den Altwert #EBE1D3 aus #FAF7F2 exakt, danach #EBE1D3 →
+       #EEE5DA); dunkel unverändert. Gemessen hell: ink-900 12.59 · reg-w 4.46 (Messreihe und
+       Pflichtpaare: `check:farbwelt`). */
+    --reg-w-flaeche: #EEE5DA;
     /* Tinte für Text auf einer stets hellen Fläche (`brass-300` und verwandte
        Gold-/Messing-Füllungen). Kippt bewusst nicht mit dem Thema, sonst würde die Beschriftung im
        Dunkel-Thema hell auf hell stehen (gemessen rund 1.3:1). Liest auf `brass-300`.
@@ -838,25 +881,39 @@
        kleinsten wird. `min-width`, nie `width`: die Stelle darf nicht
        verstümmeln (§8). */
     --app-reiter-stelle-b: 3.75rem;
-    /* Kanten statt Kissen: alle fünf Radius-Stufen stehen auf 0. Die Skala bleibt als EIN Ort
-       bestehen, damit die Konsumenten ohne Edit umfärben. Diese Stufe trägt zugleich die nackte
-       Klasse rounded.
+    /* Radien — W2·29-WERKBANK-GRUNDTON (David 23.9.2026, Chat: «ingesamt dürfen wieder mehr
+       rudungen eingeführt werden sodass es mordern wirkt aber nicht trashy» — «also das als
+       grundregel für den gesamten umbau»; dazu am Prototyp: «und sie sollen rechteckig sein. mit
+       rundungen an der kante», «runde Ecken nur für Kacheln/Flächen, Linien und Listen eckig»).
+       LÖST «Kanten statt Kissen» (W2·24-R1, alle Stufen 0) ab. Skala nach Prototyp: 14 Flächen · 10
+       Karten/Felder · 8 Knöpfe/Zeilen · Pille (`rounded-full`) für Chips ohne Registerstrich; dazu
+       eine 4-px-Kleinststufe. GERADE bleiben: Linien, Registerstriche (`.lc-chip`-Tick,
+       `border-l-*`-Marken), Tabellen, Listentext, Normtext-Körper. «Nicht trashy»: keine Verläufe,
+       keine weichen Schatten-Kissen, kein Glanz — die Schatten-Regel unten bleibt unverändert.
 
-       Radien – W2·24-R1: KANTEN STATT KISSEN. Alle fünf Stufen sind 0; die
-       Skala bleibt als EIN Ort bestehen (tailwind borderRadius mappt sm…2xl
-       darauf, 89 Dateien färben ohne Edit um). AUSGENOMMEN ist `rounded-full`
-       (Tailwind-Default 9999px, 46 Fundstellen) — runde Marken, Punkte und
-       Avatare bleiben rund; ihr Aufräumen ist R5. */
-    --radius-sm: 0px;
-    /* Kanten statt Kissen - 0. Zweite Stufe der Skala. */
-    --radius-md: 0px;
-    /* Kanten statt Kissen - 0. Dritte Stufe der Skala. */
-    --radius-lg: 0px;
-    /* Kanten statt Kissen - 0. Vierte Stufe der Skala. */
-    --radius-xl: 0px;
-    /* Kanten statt Kissen - 0. Fünfte Stufe der Skala. Ausgenommen von der Regel sind nur echte
-       Punkte, Marken und Avatare bis 12 px, die als Vollkreis stehen bleiben. */
-    --radius-2xl: 0px;
+       Kleinst-Stufe: Marken, Legenden-Felder und Inline-Hover in Textzeilen (auch die nackte Klasse
+       `rounded`).
+
+       Historie: bis 23.9.2026 0 px («Kanten statt Kissen», W2·24-R1). */
+    --radius-sm: 4px;
+    /* Knöpfe (`.lc-btn`, `.lc-btn-mini`) und Listen-/Menüzeilen mit Hover-Grund (`.lc-menu-zeile`).
+
+       Historie: bis 23.9.2026 0 px («Kanten statt Kissen», W2·24-R1). */
+    --radius-md: 8px;
+    /* Karten, Eingabe-Behälter und schwebende Ebenen (`.lc-schwebeflaeche`, `.lc-popover`,
+       Suchpanel-Unterkante, Wahl-Kachel).
+
+       Historie: bis 23.9.2026 0 px («Kanten statt Kissen», W2·24-R1). */
+    --radius-lg: 10px;
+    /* Flächen, Kacheln und Blätter (Startseiten-Kacheln, Blatt, Sheet-Oberkante `rounded-t-xl`).
+
+       Historie: bis 23.9.2026 0 px («Kanten statt Kissen», W2·24-R1). */
+    --radius-xl: 14px;
+    /* Wertgleich mit `radius-xl`: die Skala kennt drei Formstufen plus Pille, nicht fünf; die Stufe
+       bleibt, damit Bestandsklassen nicht ins Leere greifen.
+
+       Historie: bis 23.9.2026 0 px («Kanten statt Kissen», W2·24-R1). */
+    --radius-2xl: 14px;
     /* Bewusst leer. Karten und Kacheln tragen keinen Schatten mehr; die Utility bleibt als
        Nichttuer stehen, damit die Fundstellen ohne Edit verstummen.
 
@@ -1262,7 +1319,7 @@
      hell, 3.71:1 — Auftrag David 25.6.2026 Lesbarkeit). Im Dunkelmodus ist
      brass-800 der hellste Messing-Textton → Hover wird dort heller = stärker. */
   a:hover { color: var(--brass-800); }
-  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--radius-sm); }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; } /* GRUNDTON 23.9.2026: kein eigener Radius mehr — der Ring folgt dem Radius des Elements (vorher erzwang `--radius-sm` = 0 auf jedem fokussierten Element eckige Ecken) */
   /* Kein UA-Artefakt («blauer Kreis», Auftrag David) beim Antippen/Maus-Fokus
      der Ziffer-/Litera-Marken: Tap-Highlight transparent + UA-Ring nur bei
      Maus-/Programm-Fokus unterdrücken. Tastatur-Fokus (:focus-visible, brass)
@@ -2512,7 +2569,7 @@
        Argument, mit dem U2 die `.lc-notice`-Fuellung gestrichen hat). Die
        Haarlinie bleibt: SIE ist die Anatomie. Der HOVER behaelt seine Flaeche —
        dort ist sie Zustandsauskunft, nicht Dauer-Form (§G-j). */
-    @apply inline-flex shrink-0 items-center justify-center rounded border bg-transparent no-underline transition-colors;
+    @apply inline-flex shrink-0 items-center justify-center rounded-md border bg-transparent no-underline transition-colors; /* GRUNDTON 23.9.2026: Knopf-Stufe 8 px */
     border-color: var(--line);
     min-height: var(--tap-ziel); padding: 0 6px;
   }
@@ -2526,7 +2583,7 @@
      GEFUELLT BLEIBEN die ZUSTAENDE `-selected`/`-aktuell` (brass-100): dort ist
      die Flaeche eine Auskunft ueber den Zustand, keine Dauer-Anatomie. */
   .lc-chip {
-    @apply inline-flex items-center rounded-sm text-ink-700; /* Tinte: 10.93:1 auf Papier; Akzent traegt der Tick */
+    @apply inline-flex items-center rounded-none text-ink-700; /* GRUNDTON 23.9.2026: Registerstrich bleibt gerade. Tinte: 10.93:1 auf Papier; Akzent traegt der Tick */
     background: transparent;
     border-left: 2px solid var(--brass-500); /* Tick (R1-7: Registerfarbe folgt in R3/R5) */
     font-family: var(--font-sans), system-ui, sans-serif; font-variant-numeric: tabular-nums; /* R1-2: kein Mono */
@@ -3321,7 +3378,7 @@
      5.21:1 hell / 9.56:1 dunkel, auf --surface 5.34/9.07, auf --well
      4.89/9.62 — als Nicht-Text-Strich (≥3:1) und als Haekchen-Text (≥4.5:1)
      in beiden Modi und auf allen drei Flaechen erfuellt. */
-  .lc-wahl-kachel { position: relative; border-radius: 0; }
+  .lc-wahl-kachel { position: relative; border-radius: var(--radius-lg); } /* GRUNDTON 23.9.2026: löst «kantig» oben ab */
   .lc-wahl-kachel[aria-pressed="true"] { box-shadow: inset 3px 0 0 var(--reg-w); }
   .lc-wahl-kachel[aria-pressed="true"]::after {
     content: '\2713';
@@ -3466,7 +3523,7 @@
   .lc-schwebeflaeche {
     background: var(--paper);
     border: 1px solid var(--rule);
-    border-radius: 0;
+    border-radius: var(--radius-lg); /* GRUNDTON 23.9.2026: 10 px Karten-Stufe */
     box-shadow: none;
   }
 
@@ -3511,7 +3568,7 @@
   .lc-popover {
     background: var(--paper-raised);
     border: 1px solid var(--rule);
-    border-radius: 0;
+    border-radius: var(--radius-lg); /* GRUNDTON 23.9.2026 */
     box-shadow: none;
     position: relative;
     z-index: var(--z-dropdown);
@@ -3555,7 +3612,7 @@
     background: var(--paper);
     border: 1px solid var(--rule);
     border-top: 0;
-    border-radius: 0;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg); /* GRUNDTON 23.9.2026: oben hängt die Hülle am Feld (gerade), unten die Karten-Stufe */
     box-shadow: none;
   }
 
@@ -3624,7 +3681,7 @@
   .lc-menu-zeile {
     @apply flex w-full items-center gap-2.5 px-3 py-2 text-left text-body-s text-ink-700 transition-colors;
     min-height: var(--menu-zeile-h);
-    border-radius: 0;
+    border-radius: var(--radius-md); /* GRUNDTON 23.9.2026: Zeile mit Hover-Grund = 8 px (löst «Kein Radius» oben ab) */
     /* «keine Umbrüche in Menüzeilen»: die Beschriftung bleibt einzeilig und
        wird notfalls mit Auslassung gekappt — die volle Aussage steht im
        `title`, wie an jeder anderen gekappten Stelle der App (LM-067). */

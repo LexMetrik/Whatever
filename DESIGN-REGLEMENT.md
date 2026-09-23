@@ -263,14 +263,24 @@ zur Laufzeit); metrik-angepasste Fallbacks (`Archivo Fallback`/`Literata Fallbac
 Zeilenkasten CLS-frei, solange der Webfont lädt. **Keine dritte Schrift** (§15).
 Leser-Fliesstext 18 px / 1.62 (§N-4b).
 
-**F0.5 — Form: Kanten statt Kissen.** Alle fünf Radius-Token stehen auf `0px`
-(`--radius-sm…2xl`); die Skala bleibt als EIN Ort bestehen, damit die Konsumenten
-ohne Edit umfärben. **Ausnahme:** echte Punkte, Marken und Avatare ≤ 12 px bleiben
-rund (`rounded-full`). **Schatten:** `--shadow-sm`/`--shadow-md` sind `none`; es
-gibt genau einen Schatten, `--shadow-lg`, und er gehört ausschliesslich der
-**schwebenden Ebene** — Menü, Dialog, Popover, getragen von `.lc-schwebeflaeche`.
-Was an einem Feld hängt, schwebt nicht und trägt weder Schatten noch Radius
-(`.lc-suchpanel-huelle`, D23). Kein `lc-glass`.
+**F0.5 — Form: Rundung mit Mass (Fassung 23.9.2026, W2·29-WERKBANK-GRUNDTON).**
+David, Chat 23.9.2026: «ingesamt dürfen wieder mehr rudungen eingeführt werden sodass
+es mordern wirkt aber nicht trashy» — «also das als grundregel für den gesamten umbau»;
+am Prototyp: «runde Ecken nur für Kacheln/Flächen, Linien und Listen eckig». Die
+Radius-Skala (`--radius-sm…2xl`, EIN Ort in `design/tokens.json`) steht auf
+**4 · 8 · 10 · 14 · 14 px**: **14** Flächen, Kacheln, Blätter (`rounded-xl`) · **10**
+Karten, Eingabe-Behälter, schwebende Ebenen (`rounded-lg`, `.lc-schwebeflaeche`,
+`.lc-popover`) · **8** Knöpfe und Zeilen mit Hover-Grund (`rounded-md`, `.lc-btn`,
+`.lc-menu-zeile`) · **4** Kleinst-Stufe für Marken und Inline-Hover (`rounded`) ·
+**Pille** (`rounded-full`) für Chips ohne Registerstrich. **Gerade bleiben:** Linien,
+Registerstriche (`.lc-chip`-Tick, `border-l-*`-Marken), Tabellen, Listentext und der
+Normtext-Körper (Tabellen, Bilder, Hinweiskästen im Artikel). «Nicht trashy» heisst:
+keine Verläufe, keine weichen Schatten-Kissen, kein Glanz. **Schatten** unverändert:
+`--shadow-sm`/`--shadow-md` sind `none`; es gibt genau einen Schatten, `--shadow-lg`,
+und er gehört ausschliesslich der **schwebenden Ebene**. Kein `lc-glass`.
+*Abgelöst:* «Kanten statt Kissen» (W2·24-R1, 6.9.2026 — alle fünf Radius-Stufen 0 px,
+Ausnahme nur `rounded-full` für Punkte/Marken ≤ 12 px); Wortlaut im Archiv
+`archiv/DESIGN-REGLEMENT-BELEGE-2026.md`.
 
 **F0.6 — Linien statt Flächen.** Zwei solide Trenner-Töne: 1 px `--rule-soft`
 zwischen Zeilen im Satzspiegel, 2 px `--rule` unter Kopfzeilen. Sie sind das
@@ -533,7 +543,7 @@ allein.**
 «`--paper-raised` ist nahezu weiss, aber nicht `#FFFFFF`»):* Reinweiss gibt es
 seither **genau einmal im ganzen System** — als `--paper-raised`, die schwebende
 Ebene (Menü/Dialog/Popover). Das Blatt selbst liegt eine Stufe darunter
-(`--paper` `#FAF7F2`). Die Regel ist damit nicht gelockert, sondern verschärft:
+(`--paper` `#FDFCFA`, Grundton der Werkbank seit W2·29-WERKBANK-GRUNDTON 23.9.2026; vorher `#FAF7F2`). Die Regel ist damit nicht gelockert, sondern verschärft:
 weiss ist eine Ebenen-Aussage, kein Grundton. **Maschinell erzwungen** in `check:design-tokens`
 (bg-white/text-white/…-white + `#fff`/`#ffffff` im Inline-Style, negativ-
 kontrolliert). Dokumentierte Ausnahmen: `@media print` (`body #fff`) und
@@ -1138,14 +1148,15 @@ Messung abweicht — sie ist also gegatet, nicht Prosa):
 
 | | Rolle | Tick/Glyphe auf `--well` | hell | dunkel |
 |---|---|---|---:|---:|
-| **C-1** | Rechtsprechungs-Tick `lc-chip-entscheid` | slate-500 | **4.86** | **3.38** |
-| **C-2** | Currency-Chip «nächste Fassung ab …» | warn-700 | **5.30** | **9.20** |
-| **C-3** | Akzent-Tick (**= Tinte**, früher Messing-★) | brass-700 | **13.79** | **14.19** |
+| **C-1** | Rechtsprechungs-Tick `lc-chip-entscheid` | slate-500 | **5.04** | **3.38** |
+| **C-2** | Currency-Chip «nächste Fassung ab …» | warn-700 | **5.49** | **9.20** |
+| **C-3** | Akzent-Tick (**= Tinte**, früher Messing-★) | brass-700 | **14.28** | **14.19** |
 
 Herkunft der Zahlen (Belege altern nicht, sie werden ergänzt): C-1 D-5 5.03/3.47 →
 R1 4.86/3.47 → D12 4.86/3.38 · C-2 D-5 5.48/9.43 → R1 5.29/9.49 → D12 5.30/9.20 ·
 C-3 D-5 5.13/10.48 (damals Messing auf hellerem Well) → R1 16.02/16.49 → D12
-13.79/14.19. Der Sprung bei C-3 ist **kein Messfehler und keine Drift**, sondern
+13.79/14.19 · GRUNDTON 23.9.2026 hell 5.04 · 5.49 · 14.28 (dunkel unverändert), weil
+`--well` mit dem Werkbank-Grundton heller wurde (#F3F0EA → #F6F4F0). Der Sprung bei C-3 ist **kein Messfehler und keine Drift**, sondern
 der Rollenwechsel: `--brass-700` zeigt seit R1 per `var()` auf die Tinte
 `--ink-fixed-dark`.
 *(D-5/A38, 16.7.: die HELL-Werte stiegen damals [4.81→5.03 · 5.24→5.48 ·
