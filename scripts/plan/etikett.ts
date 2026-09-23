@@ -21,9 +21,12 @@ export const STATUS_WERTE: readonly Status[] = ['ready', 'wip', 'blocked', 'done
  * - `design`         — `src/index.css`, `tailwind.config.js`, `DESIGN-REGLEMENT.md`, `src/components` app-weit
  * - `werkzeuge`      — Rechen-Engines, `src/lib/vorlagen`, Rechner-Seiten
  * - `betrieb`        — `.github/workflows`, `scripts/plan`, `scripts/check-*`, `.claude`, Tore/CI/Prozess
+ * - `rechtslogik`    — Prüfung Rechtslogik 23.9.2026 (UMSETZUNGSPLAN, RL-01…RL-58): Rechen-Engines
+ *   und Vorlagen-Inhalte der Befund-Wellen — eigenes Feld statt `werkzeuge`, weil diese
+ *   Bau-Einheiten seriell und mit eigener Gegenprüfungs-Kadenz laufen (Go David 23.9.2026)
  */
-export type Feld = 'leser' | 'korpus' | 'rechtsprechung' | 'suche' | 'design' | 'werkzeuge' | 'betrieb';
-export const FELD_WERTE: readonly Feld[] = ['leser', 'korpus', 'rechtsprechung', 'suche', 'design', 'werkzeuge', 'betrieb'];
+export type Feld = 'leser' | 'korpus' | 'rechtsprechung' | 'suche' | 'design' | 'werkzeuge' | 'betrieb' | 'rechtslogik';
+export const FELD_WERTE: readonly Feld[] = ['leser', 'korpus', 'rechtsprechung', 'suche', 'design', 'werkzeuge', 'betrieb', 'rechtslogik'];
 export function istFeld(v: string | null): v is Feld {
   return v !== null && (FELD_WERTE as readonly string[]).includes(v);
 }
