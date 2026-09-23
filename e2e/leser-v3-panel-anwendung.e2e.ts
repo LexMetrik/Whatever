@@ -17,6 +17,9 @@
 //   ARG — Kanten-Shard JA, artikelscharfe Gruppen 0, grobe Zuordnung 1
 //         («Lohnfortzahlung (kantonale Skala)»). Der Vollfall aus
 //         Behörden-Praxis + grober Werkzeug-Liste.
+//         [Ergänzt 23.9.2026, D6/AN-6: die ArG-Zuordnung zur Lohnfortzahlung
+//         war fachlich falsch und ist entfernt; seither ARG grob 0 verfügbare
+//         Werkzeuge — die grobe Liste prüft (a3) an der VMWG.]
 //   DBG — Kanten-Shard JA, Werkzeuge 0 (die Karten dazu sind geplant, also nach
 //         §8 ausgeblendet). Der Fall, in dem der Werkzeug-Abschnitt ehrlich
 //         entfällt statt eine leere Überschrift zu setzen.
@@ -72,12 +75,32 @@ test.describe('W2·7-VZUI — Reiter «Anwendung» im Gesetz-Leser-Panel', () =>
     // §8: der Rang wird genannt, nicht vorausgesetzt.
     await expect(behoerden).toContainText('kein Gesetzesrang')
 
-    // Werkzeuge: hier die grobe Erlass-Zuordnung — und sie SAGT, dass sie grob
-    // ist, statt eine Artikel-Genauigkeit zu suggerieren, die es nicht gibt (§8).
+    // Werkzeuge: seit D6 (23.9.2026, Befund AN-6, deklarierte fachliche
+    // Test-Änderung §6.3) trägt das ArG KEINEN verfügbaren Rechner mehr — die
+    // frühere grobe Zuordnung «Lohnfortzahlung (kantonale Skala)» war falsch
+    // (die Regel steht in Art. 324a/324b OR, nicht im ArG; Fedlex AKN SR 822.11,
+    // Fassung 1.9.2023). Dem ArG bleibt nur der geplante Überzeit-Zuschlag
+    // (Art. 12/13 ArG), nach §8 ausgeblendet. Der Werkzeug-Abschnitt entfällt
+    // also ehrlich wie am DBG (a2); die grobe Liste prüft jetzt (a3) am VMWG.
+    await expect(page.locator('[data-v3-anwendung="werkzeuge-grob"]')).toHaveCount(0)
+    await expect(page.locator('[data-v3-anwendung="werkzeuge"]')).toHaveCount(0)
+  })
+
+  test('(a3) VMWG: grobe Werkzeug-Zuordnung sagt, dass sie grob ist', async ({ page }) => {
+    // Ersatz-Fixture für den Grob-Pfad aus (a), D6 23.9.2026: die VMWG
+    // (SR 221.213.11) hat keine artikelscharfe Kante, aber auf Erlass-Ebene den
+    // verfügbaren Miet-Kündigungsrechner (Art. 9 VMWG «Kündigungen»). Keine
+    // Behörden-Praxis (kein Kanten-Shard) — (a) deckt diesen Abschnitt am ArG ab.
+    await panelOeffnen(page, '/gesetze/bund/VMWG')
+    await page.locator('[data-v3-panel-reiter="anwendung"]').click()
+    await expect(page.locator('[data-v3-panel-reiter-inhalt="anwendung"]')).toBeVisible({ timeout: 20_000 })
+    // Die grobe Erlass-Zuordnung SAGT, dass sie grob ist, statt eine
+    // Artikel-Genauigkeit zu suggerieren, die es nicht gibt (§8).
     const grob = page.locator('[data-v3-anwendung="werkzeuge-grob"]')
-    await expect(grob, 'Werkzeug-Abschnitt fehlt am ARG').toBeVisible()
+    await expect(grob, 'Werkzeug-Abschnitt fehlt an der VMWG').toBeVisible()
     await expect(grob).toContainText('nicht einzelnen Artikeln')
     expect(await grob.locator('[data-v3-anwendung-werkzeug]').count()).toBeGreaterThan(0)
+    await expect(page.locator('[data-v3-anwendung="werkzeuge"]')).toHaveCount(0)
   })
 
   test('(a2) DBG: Behörden-Praxis ohne Werkzeuge — keine leere Überschrift', async ({ page }) => {
