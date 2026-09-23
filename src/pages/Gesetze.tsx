@@ -160,12 +160,10 @@ function Einstieg({ bund, bundArtikel, kantone, kantonErlasse, international, on
           Weg trägt: `e2e/norm-sprung.e2e.ts` («OR 257d» → Art. 257d OR ab
           /gesetze, ohne den Kasten). */}
       <div className={pk('grid grid-cols-1 sm:grid-cols-3 gap-3', 'grid grid-cols-1 @2xl/pane:grid-cols-3 gap-3')}>
-        {/* C-5 (31.8.2026): diese Kachel-Anatomie IST der Kanon — sie liegt seit
-            Runde 2 in `ui/RubrikKachel` und trägt dort auch die Startseiten-
-            Landkarte. Das eigene `hover:border-brass-400` ist entfallen: die
-            zentrale `.lc-card`-Regel (C-3) deckt es bereits. */}
+        {/* C-5 (31.8.2026): die Kachel-Anatomie liegt in `ui/RubrikKachel`;
+            seit W2·29 K1 trägt sie das Register als Fläche (`reg`). */}
         {kacheln.map((k) => (
-          <RubrikKachel key={k.id} onWahl={() => onWahl(k.id)}
+          <RubrikKachel key={k.id} reg="g" onWahl={() => onWahl(k.id)}
             zahl={k.zahl} einheit={k.einheit} titel={k.titel} nutzen={k.sub}
             /* IA-2 (§11.1): Erfassungsgrad-Kurzlegende auf der Kantone-Kachel. */
             extra={k.legende ? <ErfassungsgradLegende className="mt-0.5" /> : undefined} />

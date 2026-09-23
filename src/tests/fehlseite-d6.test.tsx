@@ -61,7 +61,12 @@ describe('D-6 — der Baustein rendert den Kanon', () => {
   it('(1) Kopf der SeitenKopf-Familie: Overline, Ablesekante, EINE h1', () => {
     expect(basis).toContain('lc-overline');
     expect(basis).toContain('Rechtsprechung');
-    expect(basis).toContain('scale-rule');
+    // DEKLARIERTE ANPASSUNG (W2·29-WERKBANK-KATALOGE K1, 23.9.2026, §6.3):
+    // die Ablesekante ist seit K1 der 2-px-Strich des Titelblatt-Bands
+    // (`.ub-kopf` in `layout/SeitenKopf`); die `scale-rule` darunter entfiel.
+    // Geprüft wird dieselbe Aussage — der Kopf kommt aus der Familie — am
+    // neuen Träger.
+    expect(basis).toContain('ub-kopf');
     expect(basis.match(/<h1\b/g) ?? [], 'genau eine H1').toHaveLength(1);
     // Der Titel wird aus dem Objekt gebaut — derselbe Satzbau auf allen Flächen.
     expect(basis).toContain('Entscheid nicht gefunden');
