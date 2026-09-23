@@ -11,6 +11,7 @@ import {
   findeVerstoesse,
   istRefactorCommit,
   squashVerstoss,
+  squashMeldung,
   istTestDatei,
 } from '../../scripts/testtreue-kern';
 import {
@@ -579,5 +580,12 @@ describe('check:testtreue — Squash-Commit der Merge-Queue (PR-Titel)', () => {
   });
   it('refactor-Titel ohne Test-Dateien ⇒ kein Verstoss', () => {
     expect(squashVerstoss('refactor: x', [c('refactor: y', ['src/lib/a.ts'])])).toBeNull();
+  });
+  it('Ereignis: nur im pull_request-Lauf, sonst stumm', () => {
+    const lies = () => JSON.stringify({ pull_request: { title: 'refactor: x' } });
+    const cs = [c('test: y', ['src/tests/a.test.ts'])];
+    expect(squashMeldung({ GITHUB_EVENT_NAME: 'pull_request', GITHUB_EVENT_PATH: 'e' }, lies, cs)).toMatch(/Squash/);
+    expect(squashMeldung({ GITHUB_EVENT_NAME: 'merge_group', GITHUB_EVENT_PATH: 'e' }, lies, cs)).toBeNull();
+    expect(squashMeldung({}, lies, cs)).toBeNull();
   });
 });

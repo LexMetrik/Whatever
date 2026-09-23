@@ -65,3 +65,32 @@ export function squashVerstoss(prTitel: string, commits: CommitInfo[]): Verstoss
   const [v] = findeVerstoesse([{ sha: 'PR-Titel', betreff: prTitel, dateien }]);
   return v ?? null;
 }
+
+/** PR-Titel aus dem `pull_request`-Ereignis; lokal und im `merge_group`-Lauf
+ *  (dort IST HEAD der Squash-Commit) undefined. */
+export function prTitelAusEreignis(
+  env: Record<string, string | undefined>, lies: (pfad: string) => string,
+): string | undefined {
+  if (!env.GITHUB_EVENT_PATH || env.GITHUB_EVENT_NAME !== 'pull_request') return undefined;
+  try {
+    return (JSON.parse(lies(env.GITHUB_EVENT_PATH)) as { pull_request?: { title?: string } }).pull_request?.title;
+  } catch {
+    return undefined;
+  }
+}
+
+/** Rot-Meldung für den künftigen Squash-Commit, sonst null. */
+export function squashMeldung(
+  env: Record<string, string | undefined>, lies: (pfad: string) => string, commits: CommitInfo[],
+): string | null {
+  const titel = prTitelAusEreignis(env, lies);
+  const v = titel ? squashVerstoss(titel, commits) : null;
+  if (!v || !titel) return null;
+  return `check:testtreue ROT — §6.3 (Squash): der PR-Titel «${titel.slice(0, 70)}» ist als 'refactor'\n` +
+    `  deklariert, der PR ändert aber Test-Dateien:\n` +
+    v.testDateien.slice(0, 6).map((t) => `      ${t}`).join('\n') + '\n\n' +
+    `  Die Merge-Queue landet SQUASH mit dem PR-Titel als Betreff — der Commit auf main\n` +
+    `  wäre ein 'refactor', der Tests ändert, und fiele im merge_group-Lauf durch.\n` +
+    `  PR-Titel-Typ ändern (feat/fix/test), dann den PR-Lauf neu starten (Titel-Änderung\n` +
+    `  allein startet ihn nicht). Beleg: Queue-Rauswurf #1023, 23.9.2026.`;
+}
