@@ -1,14 +1,114 @@
 {
   "erlass": "AVG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-14",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/1993/2080_2080_2080": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1993/2080_2080_2080/de",
+      "titel": "Bundesstatistikgesetz vom 9. Oktober 1992 (BStatG)",
+      "as": "AS 1993 2080",
+      "inkraft": "1993-08-01"
+    },
     "oc/2000/460": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2000/460/de",
       "titel": "Bundesgesetz über die Arbeitsvermittlung und den Personalverleih (Arbeitsvermittlungsgesetz, AVG)",
       "as": "AS 2000 2744",
       "inkraft": "2001-01-01",
       "botschaft": "BOTSCHAFT-2000-99"
+    },
+    "oc/2003/260": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2003/260/de",
+      "titel": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+      "as": "AS 2003 1728",
+      "inkraft": "2003-07-01",
+      "botschaft": "BOTSCHAFT-2001-493"
+    },
+    "oc/2006/178": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/178/de",
+      "titel": "Bundesbeschluss über die Genehmigung und Umsetzung des Protokolls über die Ausdehnung des Freizügigkeitsabkommens auf die neuen EG-Mitgliedstaaten zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft und ihren Mitgliedstaaten andererseits sowie über die Genehmigung der Revision der flankierenden Massnahmen zur Personenfreizügigkeit",
+      "as": "AS 2006 979",
+      "inkraft": "2006-04-01",
+      "botschaft": "BOTSCHAFT-2004-1081"
+    },
+    "oc/2006/352": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "titel": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "as": "AS 2006 2197",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2001-731"
+    },
+    "oc/2006/549": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "titel": "Schweizerisches Strafgesetzbuch",
+      "as": "AS 2006 3459",
+      "inkraft": "2007-01-01"
+    },
+    "oc/2007/758": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/758/de",
+      "titel": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG)",
+      "as": "AS 2007 5437",
+      "inkraft": "2008-01-01",
+      "botschaft": "BOTSCHAFT-2002-541"
+    },
+    "oc/2008/447": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "titel": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "as": "AS 2008 3437",
+      "inkraft": "2008-08-01"
+    },
+    "oc/2010/262": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "titel": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "as": "AS 2010 1739",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2006-914"
+    },
+    "oc/2011/114": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "as": "AS 2011 725",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2006-899"
+    },
+    "oc/2011/171": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/171/de",
+      "titel": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+      "as": "AS 2011 1167",
+      "inkraft": "2011-04-01",
+      "botschaft": "BOTSCHAFT-2008-1319"
+    },
+    "oc/2015/653": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/653/de",
+      "titel": "Bundesgesetz über Schweizer Personen und Institutionen im Ausland (Auslandschweizergesetz, ASG)",
+      "as": "AS 2015 3857",
+      "inkraft": "2015-11-01"
+    },
+    "oc/2016/132": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "titel": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "as": "AS 2016 689",
+      "inkraft": "2017-01-01"
+    },
+    "oc/2021/338": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/338/de",
+      "titel": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG)",
+      "as": "AS 2021 338",
+      "inkraft": "2021-07-01",
+      "botschaft": "BOTSCHAFT-2019-1581"
+    },
+    "oc/2022/491": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "titel": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "as": "AS 2022 491",
+      "inkraft": "2023-09-01",
+      "botschaft": "BOTSCHAFT-2017-2057"
+    },
+    "oc/2025/764": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2025/764/de",
+      "titel": "Bundesgesetz über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsgesetz, AVIG) (Entschädigungssystem der Arbeitslosenkassen)",
+      "as": "AS 2025 764",
+      "inkraft": "2026-01-01",
+      "botschaft": "BOTSCHAFT-2023-2862"
     }
   },
   "botschaften": {
@@ -81,6 +181,341 @@
         {
           "code": 400,
           "datum": "2000-10-12"
+        }
+      ]
+    },
+    "BOTSCHAFT-2001-493": {
+      "titel": "Botschaft zu einem revidierten Arbeitslosenversicherungsgesetz (AVIG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2001/493/de",
+      "stand": "2001-02-28",
+      "nummer": "01.019",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2001-02-28",
+          "res": "fga/2001/493"
+        },
+        {
+          "code": 300,
+          "datum": "2002-03-22",
+          "res": "fga/2002/375"
+        },
+        {
+          "code": 400,
+          "datum": "2002-07-18"
+        },
+        {
+          "code": 480,
+          "datum": "2002-08-14",
+          "res": "fga/2002/897"
+        },
+        {
+          "code": 630,
+          "datum": "2002-08-22",
+          "res": "fga/2002/959"
+        },
+        {
+          "code": 650,
+          "datum": "2002-11-24",
+          "res": "fga/2003/121"
+        }
+      ]
+    },
+    "BOTSCHAFT-2001-731": {
+      "titel": "Botschaft zur Totalrevision der Bundesrechtspflege",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2001/731/de",
+      "stand": "2001-02-28",
+      "nummer": "01.023",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2001-02-28",
+          "res": "fga/2001/731"
+        },
+        {
+          "code": 300,
+          "datum": "2002-10-04",
+          "res": "fga/2002/1023"
+        },
+        {
+          "code": 400,
+          "datum": "2003-01-23"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/594"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/595"
+        },
+        {
+          "code": 400,
+          "datum": "2005-10-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2002-541": {
+      "titel": "* Botschaft zum Bundesgesetz über die Ausländerinnen und Ausländer",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2002/541/de",
+      "stand": "2002-03-08",
+      "nummer": "02.024",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2002-03-08",
+          "res": "fga/2002/541"
+        },
+        {
+          "code": 300,
+          "datum": "2005-12-16",
+          "res": "fga/2005/1178"
+        },
+        {
+          "code": 400,
+          "datum": "2006-04-06"
+        },
+        {
+          "code": 480,
+          "datum": "2006-04-27",
+          "res": "fga/2006/489"
+        },
+        {
+          "code": 630,
+          "datum": "2006-05-12",
+          "res": "fga/2006/554"
+        },
+        {
+          "code": 650,
+          "datum": "2006-09-24",
+          "res": "fga/2006/1232"
+        }
+      ]
+    },
+    "BOTSCHAFT-2004-1081": {
+      "titel": "Botschaft zur Genehmigung des Protokolls zum Freizügigkeitsabkommen zwischen der Schweiz und der EG",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2004/1081/de",
+      "stand": "2004-10-01",
+      "nummer": "04.066",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2004-10-01",
+          "res": "fga/2004/1081"
+        },
+        {
+          "code": 300,
+          "datum": "2004-12-17",
+          "res": "fga/2004/1241"
+        },
+        {
+          "code": 400,
+          "datum": "2005-03-31"
+        },
+        {
+          "code": 480,
+          "datum": "2005-04-20",
+          "res": "fga/2005/436"
+        },
+        {
+          "code": 630,
+          "datum": "2005-06-27",
+          "res": "fga/2005/643"
+        },
+        {
+          "code": 650,
+          "datum": "2005-09-25",
+          "res": "fga/2005/1077"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-899": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Erwachsenenschutz, Personen- und Kindesrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/899/de",
+      "stand": "2006-06-28",
+      "nummer": "06.063",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/899"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/7"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-914": {
+      "titel": "Botschaft zur Schweizerischen Zivilprozessordnung (ZPO)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/914/de",
+      "stand": "2006-06-28",
+      "nummer": "06.062",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/914"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/6"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2008-1319": {
+      "titel": "Botschaft zur Änderung des Arbeitslosenversicherungsgesetzes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2008/1319/de",
+      "stand": "2008-09-03",
+      "nummer": "08.062",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2008-09-03",
+          "res": "fga/2008/1319"
+        },
+        {
+          "code": 300,
+          "datum": "2010-03-19",
+          "res": "fga/2010/350"
+        },
+        {
+          "code": 400,
+          "datum": "2010-07-08"
+        },
+        {
+          "code": 480,
+          "datum": "2010-07-12",
+          "res": "fga/2010/860"
+        },
+        {
+          "code": 630,
+          "datum": "2010-07-21",
+          "res": "fga/2010/878"
+        },
+        {
+          "code": 650,
+          "datum": "2010-09-26",
+          "res": "fga/2008/1319"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-2057": {
+      "titel": "Botschaft zum Bundesgesetz über die Totalrevision des Bundesgesetzes über den Datenschutz und die Änderung weiterer Erlasse zum Datenschutz",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/2057/de",
+      "stand": "2017-09-15",
+      "nummer": "17.059",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2016-12-28",
+          "res": "fga/2016/2181"
+        },
+        {
+          "code": 200,
+          "datum": "2017-09-15",
+          "res": "fga/2017/2057"
+        },
+        {
+          "code": 300,
+          "datum": "2018-09-28",
+          "res": "fga/2018/2139"
+        },
+        {
+          "code": 400,
+          "datum": "2019-01-17"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/1998"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6016/61/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2019-1581": {
+      "titel": "Botschaft zur Änderung des Arbeitslosenversicherungsgesetzes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2019/1581/de",
+      "stand": "2019-05-29",
+      "nummer": "19.035",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2018-11-06",
+          "res": "fga/2018/2381"
+        },
+        {
+          "code": 200,
+          "datum": "2019-05-29",
+          "res": "fga/2019/1581"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2020/1307"
+        },
+        {
+          "code": 400,
+          "datum": "2020-10-08"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6018/73/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2023-2862": {
+      "titel": "Botschaft zur Änderung des Arbeitslosenversicherungsgesetzes (Entschädigungssystem der Arbeitslosenkassen)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2023/2862/de",
+      "stand": "2023-11-29",
+      "nummer": "23.084",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2022-12-16",
+          "res": "fga/2022/3095"
+        },
+        {
+          "code": 2,
+          "datum": "2023-11-29",
+          "res": "fga/2023/2863"
+        },
+        {
+          "code": 200,
+          "datum": "2023-11-29",
+          "res": "fga/2023/2862"
+        },
+        {
+          "code": 300,
+          "datum": "2024-06-14",
+          "res": "fga/2024/1457"
+        },
+        {
+          "code": 400,
+          "datum": "2024-10-03"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/2022/66/cons_1"
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
   "erlass": "BPV",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
     "oc/2003/745": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2003/745/de",
@@ -9,17 +9,59 @@
       "as": "AS 2003 5011",
       "inkraft": "2004-01-01"
     },
+    "oc/2004/805": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/805/de",
+      "titel": "Regierungs- und Verwaltungsorganisationsverordnung (RVOV)",
+      "as": "AS 2004 5251",
+      "inkraft": "2005-01-01"
+    },
     "oc/2005/2": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2005/2/de",
       "titel": "Bundespersonalverordnung (BPV)",
       "as": "AS 2005 3",
       "inkraft": "2005-01-01"
     },
+    "oc/2005/423": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/423/de",
+      "titel": "Verordnung über die Einführung der Mutterschaftsentschädigung im Bundespersonalrecht (Änderung der Rahmenverordnung zum Bundespersonalgesetz und der Bundespersonalverordnung)",
+      "as": "AS 2005 2479",
+      "inkraft": "2005-07-01"
+    },
+    "oc/2005/598": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/598/de",
+      "titel": "Verordnung über die Arbeitsverhältnisse des Personals des Bundesstrafgerichts (PVSG)",
+      "as": "AS 2005 4595",
+      "inkraft": "2007-01-01"
+    },
+    "oc/2005/764": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/764/de",
+      "titel": "Verordnung über das Personal für die Friedensförderung, die Stärkung der Menschenrechte und die humanitäre Hilfe (PVFMH)",
+      "as": "AS 2005 5607",
+      "inkraft": "2006-01-01"
+    },
     "oc/2007/379": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2007/379/de",
       "titel": "Bundespersonalverordnung (BPV)",
       "as": "AS 2007 2871",
       "inkraft": "2007-07-01"
+    },
+    "oc/2007/861": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/861/de",
+      "titel": "Verordnung zum Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatverordnung, V-GSG)",
+      "as": "AS 2007 6657",
+      "inkraft": "2008-01-01"
+    },
+    "oc/2008/319": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/319/de",
+      "titel": "Verordnung über Änderungen des Bundesrechts infolge des Primatwechsels bei PUBLICA",
+      "as": "AS 2008 2181",
+      "inkraft": "2008-06-01"
+    },
+    "oc/2008/52": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/52/de",
+      "titel": "Verordnung über die Familienzulagen (Familienzulagenverordnung; FamZV)",
+      "as": "AS 2008 145",
+      "inkraft": "2009-01-01"
     },
     "oc/2008/785": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2008/785/de",
@@ -57,6 +99,12 @@
       "as": "AS 2012 4483",
       "inkraft": "2012-09-15"
     },
+    "oc/2013/154": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/154/de",
+      "titel": "Verordnung über die Pensionierung von Angehörigen der besonderen Personalkategorien (VPABP)",
+      "as": "AS 2013 771",
+      "inkraft": "2013-07-01"
+    },
     "oc/2013/354": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2013/354/de",
       "titel": "Bundespersonalverordnung (BPV)",
@@ -80,6 +128,12 @@
       "titel": "Bundespersonalverordnung (BPV)",
       "as": "AS 2014 2171",
       "inkraft": "2014-08-01"
+    },
+    "oc/2014/504": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2014/504/de",
+      "titel": "Verordnung über die Landessprachen und die Verständigung zwischen den Sprachgemeinschaften (Sprachenverordnung, SpV)",
+      "as": "AS 2014 2987",
+      "inkraft": "2014-10-01"
     },
     "oc/2014/592": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2014/592/de",
@@ -110,6 +164,18 @@
       "titel": "Bundespersonalverordnung (BPV)",
       "as": "AS 2015 3155",
       "inkraft": "2015-10-01"
+    },
+    "oc/2015/823": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/823/de",
+      "titel": "Verordnung über eine Karenzfrist für Leitungsfunktionen der Bundesverwaltung, für Mitglieder von Leitungsorganen von Anstalten des Bundes sowie für Mitglieder usserparlamentarischer Kommissionen (Karenzfristverordnung)",
+      "as": "AS 2015 5019",
+      "inkraft": "2016-01-01"
+    },
+    "oc/2015/854": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/854/de",
+      "titel": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+      "as": "AS 2015 5413",
+      "inkraft": "2016-01-01"
     },
     "oc/2016/611": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2016/611/de",
@@ -159,6 +225,12 @@
       "as": "AS 2020 5395",
       "inkraft": "2021-01-01"
     },
+    "oc/2020/989": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/989/de",
+      "titel": "Organisationsverordnung für die Bundeskanzlei (OV-BK)",
+      "as": "AS 2020 5893",
+      "inkraft": "2021-01-01"
+    },
     "oc/2021/285": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2021/285/de",
       "titel": "Bundespersonalverordnung (BPV)",
@@ -183,11 +255,35 @@
       "as": "AS 2022 616",
       "inkraft": "2023-01-01"
     },
+    "oc/2023/506": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/506/de",
+      "titel": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "as": "AS 2023 506",
+      "inkraft": "2024-01-01"
+    },
+    "oc/2023/736": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/736/de",
+      "titel": "Verordnung vom 8. November 2023 über die Personensicherheitsprüfungen (VPSP)",
+      "as": "AS 2023 736",
+      "inkraft": "2024-01-01"
+    },
+    "oc/2023/756": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/756/de",
+      "titel": "Erwerbsersatzverordnung (EOV) (Taggelder für den hinterlassenen Elternteil)",
+      "as": "AS 2023 756",
+      "inkraft": "2024-01-01"
+    },
     "oc/2025/569": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2025/569/de",
       "titel": "Bundespersonalverordnung (BPV)",
       "as": "AS 2025 569",
       "inkraft": "2026-01-01"
+    },
+    "oc/2025/6": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2025/6/de",
+      "titel": "Verordnung vom 20. Dezember 2024 über die Krisenorganisation der Bundesverwaltung (KOBV)",
+      "as": "AS 2025 6",
+      "inkraft": "2025-02-01"
     },
     "oc/2026/309": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2026/309/de",

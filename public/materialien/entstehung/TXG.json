@@ -1,14 +1,47 @@
 {
   "erlass": "TXG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2006/826": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/826/de",
+      "titel": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
+      "as": "AS 2006 5599",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2006-974"
+    },
+    "oc/2011/114": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "as": "AS 2011 725",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2006-899"
+    },
+    "oc/2013/617": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/617/de",
+      "titel": "Bundesgesetz über die Forschung am Menschen (Humanforschungsgesetz, HFG)",
+      "as": "AS 2013 3215",
+      "inkraft": "2014-01-01"
+    },
+    "oc/2016/132": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "titel": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "as": "AS 2016 689",
+      "inkraft": "2017-01-01"
+    },
     "oc/2016/217": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2016/217/de",
       "titel": "Bundesgesetz über die Transplantation von Organen, Geweben und Zellen (Transplantationsgesetz)",
       "as": "AS 2016 1163",
       "inkraft": "2016-05-01",
       "botschaft": "BOTSCHAFT-2013-414"
+    },
+    "oc/2017/280": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/280/de",
+      "titel": "Bundesgesetz über Arzneimittel und Medizinprodukte (Heilmittelgesetz, HMG)",
+      "as": "AS 2017 2745",
+      "inkraft": "2018-01-01",
+      "botschaft": "BOTSCHAFT-2013-1"
     },
     "oc/2020/1066": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2020/1066/de",
@@ -19,6 +52,63 @@
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2006-899": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Erwachsenenschutz, Personen- und Kindesrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/899/de",
+      "stand": "2006-06-28",
+      "nummer": "06.063",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/899"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/7"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-974": {
+      "titel": "Botschaft zu einer Verordnung der Bundesversammlung betreffend die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und Verwaltungsgerichtsgesetzes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/974/de",
+      "stand": "2006-09-06",
+      "nummer": "06.068",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-09-06",
+          "res": "fga/2006/974"
+        }
+      ]
+    },
+    "BOTSCHAFT-2013-1": {
+      "titel": "Botschaft zur Änderung des Heilmittelgesetzes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2013/1/de",
+      "stand": "2012-11-07",
+      "nummer": "12.080",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2012-11-07",
+          "res": "fga/2013/1"
+        },
+        {
+          "code": 300,
+          "datum": "2016-03-18",
+          "res": "fga/2016/426"
+        },
+        {
+          "code": 400,
+          "datum": "2016-07-07"
+        }
+      ]
+    },
     "BOTSCHAFT-2013-414": {
       "titel": "Botschaft zur Änderung des Transplantationsgesetzes",
       "url": "https://www.fedlex.admin.ch/eli/fga/2013/414/de",

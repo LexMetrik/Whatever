@@ -1,13 +1,44 @@
 {
   "erlass": "MWSTG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2010/705": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/705/de",
+      "titel": "Bundesgesetz über die Unternehmens-Identifikationsnummer (UIDG)",
+      "as": "AS 2010 4989",
+      "inkraft": "2011-01-01"
+    },
+    "oc/2011/263": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/263/de",
+      "titel": "Bundesgesetz über den Einkauf von Waren in Zollfreiläden auf Flughäfen",
+      "as": "AS 2011 1743",
+      "inkraft": "2011-06-01"
+    },
+    "oc/2012/810": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/810/de",
+      "titel": "Obligationenrecht (Rechnungslegungsrecht)",
+      "as": "AS 2012 6679",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2008-416"
+    },
+    "oc/2013/31": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/31/de",
+      "titel": "Bundesgesetz über die internationale Amtshilfe in Steuersachen (Steueramtshilfegesetz, StAhiG)",
+      "as": "AS 2013 231",
+      "inkraft": "2013-02-01"
+    },
     "oc/2016/266": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2016/266/de",
       "titel": "Bundesgesetz über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG) (Betrifft nur den französischen Text)",
       "as": "AS 2016 1357",
       "inkraft": "2016-05-10"
+    },
+    "oc/2016/345": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/345/de",
+      "titel": "Bundesgesetz über Radio und Fernsehen (RTVG)",
+      "as": "AS 2016 2131",
+      "inkraft": "2016-07-01"
     },
     "oc/2017/396": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2017/396/de",
@@ -22,11 +53,58 @@
       "as": "AS 2017 4857",
       "inkraft": "2018-01-01"
     },
+    "oc/2017/62": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/62/de",
+      "titel": "Bundesgesetz über Lebensmittel und Gebrauchsgegenstände (Lebensmittelgesetz, LMG)",
+      "as": "AS 2017 249",
+      "inkraft": "2017-05-01",
+      "botschaft": "BOTSCHAFT-2011-853"
+    },
     "oc/2017/838": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2017/838/de",
       "titel": "Bundesgesetz über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG)",
       "as": "AS 2017 7667",
       "inkraft": "2018-01-01"
+    },
+    "oc/2018/795": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/795/de",
+      "titel": "Bundesgesetz über Geldspiele (Geldspielgesetz, BGS)",
+      "as": "AS 2018 5103",
+      "inkraft": "2019-01-01"
+    },
+    "oc/2018/801": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
+      "titel": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+      "as": "AS 2018 5247",
+      "inkraft": "2019-01-01",
+      "botschaft": "BOTSCHAFT-2015-2141"
+    },
+    "oc/2020/498": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/498/de",
+      "titel": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
+      "as": "AS 2020 2743",
+      "inkraft": "2022-01-01"
+    },
+    "oc/2021/673": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/673/de",
+      "titel": "Bundesgesetz vom 18. Juni 2021 über elektronische Verfahren im Steuerbereich",
+      "as": "AS 2021 673",
+      "inkraft": "2022-01-01",
+      "botschaft": "BOTSCHAFT-2020-1111"
+    },
+    "oc/2021/758": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "titel": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "as": "AS 2021 758",
+      "inkraft": "2022-01-01",
+      "botschaft": "BOTSCHAFT-2019-2681"
+    },
+    "oc/2022/491": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "titel": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "as": "AS 2022 491",
+      "inkraft": "2023-09-01",
+      "botschaft": "BOTSCHAFT-2017-2057"
     },
     "oc/2022/863": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2022/863/de",
@@ -60,6 +138,86 @@
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2008-416": {
+      "titel": "Botschaft zur Änderung des Obligationenrechts. (Aktienrecht und Rechnungslegungsrecht sowie Anpassungen im Recht der Kollektiv- und der Kommanditgesellschaft, im GmbH-Recht, Genossenschafts-, Handelsregister- sowie Firmenrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2008/416/de",
+      "stand": "2007-12-21",
+      "nummer": "08.011",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2007-12-21",
+          "res": "fga/2008/416"
+        },
+        {
+          "code": 300,
+          "datum": "2011-06-17",
+          "res": "fga/2011/772"
+        },
+        {
+          "code": 400,
+          "datum": "2011-10-06"
+        },
+        {
+          "code": 300,
+          "datum": "2011-12-23",
+          "res": "fga/2012/10"
+        },
+        {
+          "code": 400,
+          "datum": "2012-04-13"
+        }
+      ]
+    },
+    "BOTSCHAFT-2011-853": {
+      "titel": "Botschaft zum Bundesgesetz über Lebensmittel und Gebrauchsgegenstände",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/853/de",
+      "stand": "2011-05-25",
+      "nummer": "11.034",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2011-05-25",
+          "res": "fga/2011/853"
+        },
+        {
+          "code": 300,
+          "datum": "2014-06-20",
+          "res": "fga/2014/1085"
+        },
+        {
+          "code": 400,
+          "datum": "2014-10-09"
+        }
+      ]
+    },
+    "BOTSCHAFT-2015-2141": {
+      "titel": "Botschaft zum Finanzdienstleistungsgesetz (FIDLEG) und zum Finanzinstitutsgesetz (FINIG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2015/2141/de",
+      "stand": "2015-11-04",
+      "nummer": "15.073",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2015-11-04",
+          "res": "fga/2015/2141"
+        },
+        {
+          "code": 300,
+          "datum": "2018-06-15",
+          "res": "fga/2018/1354"
+        },
+        {
+          "code": 300,
+          "datum": "2018-06-15",
+          "res": "fga/2018/1355"
+        },
+        {
+          "code": 400,
+          "datum": "2018-10-04"
+        }
+      ]
+    },
     "BOTSCHAFT-2015-540": {
       "titel": "Botschaft zur Teilrevision des Mehrwertsteuergesetzes",
       "url": "https://www.fedlex.admin.ch/eli/fga/2015/540/de",
@@ -79,6 +237,108 @@
         {
           "code": 400,
           "datum": "2017-01-19"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-2057": {
+      "titel": "Botschaft zum Bundesgesetz über die Totalrevision des Bundesgesetzes über den Datenschutz und die Änderung weiterer Erlasse zum Datenschutz",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/2057/de",
+      "stand": "2017-09-15",
+      "nummer": "17.059",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2016-12-28",
+          "res": "fga/2016/2181"
+        },
+        {
+          "code": 200,
+          "datum": "2017-09-15",
+          "res": "fga/2017/2057"
+        },
+        {
+          "code": 300,
+          "datum": "2018-09-28",
+          "res": "fga/2018/2139"
+        },
+        {
+          "code": 400,
+          "datum": "2019-01-17"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/1998"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6016/61/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2019-2681": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2019/2681/de",
+      "stand": "2019-10-30",
+      "nummer": "19.057",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2018-11-20",
+          "res": "fga/2018/2485"
+        },
+        {
+          "code": 200,
+          "datum": "2019-10-30",
+          "res": "fga/2019/2681"
+        },
+        {
+          "code": 300,
+          "datum": "2020-12-18",
+          "res": "fga/2020/2693"
+        },
+        {
+          "code": 400,
+          "datum": "2021-04-10"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6018/78/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2020-1111": {
+      "titel": "Botschaft zum Bundesgesetz über elektronische Verfahren im Steuerbereich",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2020/1111/de",
+      "stand": "2020-05-20",
+      "nummer": "20.051",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2019-07-02",
+          "res": "fga/2019/1607"
+        },
+        {
+          "code": 200,
+          "datum": "2020-05-20",
+          "res": "fga/2020/1111"
+        },
+        {
+          "code": 300,
+          "datum": "2021-06-18",
+          "res": "fga/2021/1499"
+        },
+        {
+          "code": 400,
+          "datum": "2021-10-07"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6019/49/cons_1"
         }
       ]
     }

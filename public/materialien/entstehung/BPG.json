@@ -1,14 +1,79 @@
 {
   "erlass": "BPG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2003/314": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2003/314/de",
+      "titel": "Bundesgesetz über das Bundesstrafgericht (Strafgerichtsgesetz, SGG)",
+      "as": "AS 2003 2133",
+      "inkraft": "2003-08-01",
+      "botschaft": "BOTSCHAFT-2001-731"
+    },
+    "oc/2004/13": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/13/de",
+      "titel": "Bundesgesetz über die Entlöhnung und weitere Vertragsbedingungen des obersten Kaders und der Mitglieder leitender Organe von Unternehmen und Anstalten des Bundes",
+      "as": "AS 2004 297",
+      "inkraft": "2004-02-01"
+    },
+    "oc/2005/782": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "titel": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "as": "AS 2005 5685",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2003-194"
+    },
+    "oc/2006/352": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "titel": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "as": "AS 2006 2197",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2001-731"
+    },
+    "oc/2006/401": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/401/de",
+      "titel": "Obligationenrecht (OR) (Transparenz betreffend Vergütungen an Mitglieder der Verwaltungsrates und der Geschäftsleitung)",
+      "as": "AS 2006 2629",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2004-731"
+    },
+    "oc/2007/313": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/313/de",
+      "titel": "Bundesgesetz über die Pensionskasse des Bundes (PUBLICA-Gesetz)",
+      "as": "AS 2007 2239",
+      "inkraft": "2007-05-01"
+    },
+    "oc/2008/51": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/51/de",
+      "titel": "Bundesgesetz über die Familienzulagen und Finanzhilfen an Familienorganisationen (Familienzulagengesetz, FamZG)",
+      "as": "AS 2008 131",
+      "inkraft": "2009-01-01"
+    },
+    "oc/2010/444": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/444/de",
+      "titel": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "as": "AS 2010 3267",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2008-1395"
+    },
+    "oc/2010/72": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/72/de",
+      "titel": "Bundesgesetz über das Bundespatentgericht (Patentgerichtsgesetz, PatGG)",
+      "as": "AS 2010 513",
+      "inkraft": "2010-03-01"
+    },
     "oc/2011/785": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2011/785/de",
       "titel": "Bundesgesetz über Optimierungen bei der Verwaltung von Personaldaten und bei den Anlagen von PUBLICA",
       "as": "AS 2011 5583",
       "inkraft": "2012-01-01",
       "botschaft": "BOTSCHAFT-2010-1290"
+    },
+    "oc/2012/587": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/587/de",
+      "titel": "Bundesgesetz über die Organisation der Schweizerischen Post (Postorganisationsgesetz, POG)",
+      "as": "AS 2012 5043",
+      "inkraft": "2012-10-01"
     },
     "oc/2013/352": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2013/352/de",
@@ -22,9 +87,177 @@
       "titel": "Bundespersonalgesetz (BPG) (Betrifft nur den italienischen Text)",
       "as": "AS 2015 1021",
       "inkraft": "2015-04-09"
+    },
+    "oc/2015/672": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/672/de",
+      "titel": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG) (Optimierung Neues Rechnungsmodell)",
+      "as": "AS 2015 4009",
+      "inkraft": "2016-01-01"
+    },
+    "oc/2016/132": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "titel": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "as": "AS 2016 689",
+      "inkraft": "2017-01-01"
+    },
+    "oc/2017/573": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/573/de",
+      "titel": "Bundesgesetz über das Stabilisierungsprogramm 20172019",
+      "as": "AS 2017 5205",
+      "inkraft": "2018-01-01",
+      "botschaft": "BOTSCHAFT-2016-1047"
+    },
+    "oc/2017/820": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/820/de",
+      "titel": "Bundesgesetz über die Anstalt zur Verwaltung der Ausgleichsfonds von AHV, IV und EO (Ausgleichsfondsgesetz)",
+      "as": "AS 2017 7563",
+      "inkraft": "2018-01-01"
+    },
+    "oc/2020/748": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
+      "titel": "Bundesgesetz über die Enteignung (EntG)",
+      "as": "AS 2020 4085",
+      "inkraft": "2021-01-01",
+      "botschaft": "BOTSCHAFT-2018-1660"
+    },
+    "oc/2022/232": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/232/de",
+      "titel": "Bundesgesetz vom 18. Dezember 2020 über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG)",
+      "as": "AS 2022 232",
+      "inkraft": "2024-01-01"
+    },
+    "oc/2022/491": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "titel": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "as": "AS 2022 491",
+      "inkraft": "2023-09-01",
+      "botschaft": "BOTSCHAFT-2017-2057"
+    },
+    "oc/2022/600": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/600/de",
+      "titel": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+      "as": "AS 2022 600",
+      "inkraft": "2023-01-23"
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2001-731": {
+      "titel": "Botschaft zur Totalrevision der Bundesrechtspflege",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2001/731/de",
+      "stand": "2001-02-28",
+      "nummer": "01.023",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2001-02-28",
+          "res": "fga/2001/731"
+        },
+        {
+          "code": 300,
+          "datum": "2002-10-04",
+          "res": "fga/2002/1023"
+        },
+        {
+          "code": 400,
+          "datum": "2003-01-23"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/594"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/595"
+        },
+        {
+          "code": 400,
+          "datum": "2005-10-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2003-194": {
+      "titel": "Botschaft zum Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/194/de",
+      "stand": "2002-11-29",
+      "nummer": "02.090",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2002-11-29",
+          "res": "fga/2003/194"
+        },
+        {
+          "code": 300,
+          "datum": "2004-06-18",
+          "res": "fga/2004/596"
+        },
+        {
+          "code": 400,
+          "datum": "2004-10-07"
+        },
+        {
+          "code": 480,
+          "datum": "2004-10-20",
+          "res": "fga/2004/1065"
+        },
+        {
+          "code": 630,
+          "datum": "2005-04-11",
+          "res": "fga/2005/401"
+        },
+        {
+          "code": 650,
+          "datum": "2005-06-05",
+          "res": "fga/2005/782"
+        }
+      ]
+    },
+    "BOTSCHAFT-2004-731": {
+      "titel": "Botschaft zur Änderung des Obligationenrechts (Transparenz betreffend Vergütungen an Mitglieder des Verwaltungsrates und der Geschäftsleitung)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2004/731/de",
+      "stand": "2004-06-23",
+      "nummer": "04.044",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2004-06-23",
+          "res": "fga/2004/731"
+        },
+        {
+          "code": 300,
+          "datum": "2005-10-07",
+          "res": "fga/2005/958"
+        },
+        {
+          "code": 400,
+          "datum": "2006-01-26"
+        }
+      ]
+    },
+    "BOTSCHAFT-2008-1395": {
+      "titel": "Botschaft zum Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2008/1395/de",
+      "stand": "2008-09-10",
+      "nummer": "08.066",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2008-09-10",
+          "res": "fga/2008/1395"
+        },
+        {
+          "code": 300,
+          "datum": "2010-03-19",
+          "res": "fga/2010/347"
+        },
+        {
+          "code": 400,
+          "datum": "2010-07-08"
+        }
+      ]
+    },
     "BOTSCHAFT-2010-1290": {
       "titel": "Botschaft zum Bundesgesetz über das Konsolidierungsprogramm 20122013 (KOPG 12/13) sowie zum Bundesgesetz über Optimierungen bei der Verwaltung von Personaldaten und bei den Anlagen von PUBLICA",
       "url": "https://www.fedlex.admin.ch/eli/fga/2010/1290/de",
@@ -66,6 +299,90 @@
         {
           "code": 400,
           "datum": "2013-04-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2016-1047": {
+      "titel": "Botschaft zum Bundesgesetz über das Stabilisierungsprogramm 20172019 sowie zum Bundesgesetz über Aufgaben, Organisation und Finanzierung der Eidgenössischen Stiftungsaufsicht",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2016/1047/de",
+      "stand": "2016-05-25",
+      "nummer": "16.045",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2016-05-25",
+          "res": "fga/2016/1047"
+        },
+        {
+          "code": 300,
+          "datum": "2017-03-17",
+          "res": "fga/2017/472"
+        },
+        {
+          "code": 400,
+          "datum": "2017-07-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-2057": {
+      "titel": "Botschaft zum Bundesgesetz über die Totalrevision des Bundesgesetzes über den Datenschutz und die Änderung weiterer Erlasse zum Datenschutz",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/2057/de",
+      "stand": "2017-09-15",
+      "nummer": "17.059",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2016-12-28",
+          "res": "fga/2016/2181"
+        },
+        {
+          "code": 200,
+          "datum": "2017-09-15",
+          "res": "fga/2017/2057"
+        },
+        {
+          "code": 300,
+          "datum": "2018-09-28",
+          "res": "fga/2018/2139"
+        },
+        {
+          "code": 400,
+          "datum": "2019-01-17"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/1998"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6016/61/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-1660": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die Enteignung",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/1660/de",
+      "stand": "2018-06-01",
+      "nummer": "18.057",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2018-06-01",
+          "res": "fga/2018/1660"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2020/1309"
+        },
+        {
+          "code": 400,
+          "datum": "2020-10-08"
         }
       ]
     }

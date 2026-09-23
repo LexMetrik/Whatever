@@ -1,7 +1,7 @@
 {
   "erlass": "MEPV",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
     "oc/2021/281": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2021/281/de",
@@ -9,11 +9,29 @@
       "as": "AS 2021 281",
       "inkraft": "2021-05-26"
     },
+    "oc/2022/291": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/291/de",
+      "titel": "Verordnung vom 4. Mai 2022 über In-vitro-Diagnostika (IvDV)",
+      "as": "AS 2022 291",
+      "inkraft": "2022-05-26"
+    },
+    "oc/2022/568": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "titel": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "as": "AS 2022 568",
+      "inkraft": "2023-09-01"
+    },
     "oc/2023/576": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2023/576/de",
       "titel": "Medizinprodukteverordnung (MepV)",
       "as": "AS 2023 576",
       "inkraft": "2023-11-01"
+    },
+    "oc/2024/742": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/742/de",
+      "titel": "Verordnung über In-vitro-Diagnostika (IvDV) (Produkteregistrierungspflicht)",
+      "as": "AS 2024 742",
+      "inkraft": "2026-07-01"
     }
   },
   "botschaften": {}

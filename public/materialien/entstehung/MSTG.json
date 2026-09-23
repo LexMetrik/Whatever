@@ -1,8 +1,94 @@
 {
   "erlass": "MSTG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-12",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/1951/437_439_435": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1951/437_439_435/de",
+      "titel": "Bundesgesetz vom 21. Dezember 1950 betreffend Abänderung des Militärstrafgesetzes und der Militärstrafgerichtsordnung",
+      "as": "AS 1951 437",
+      "inkraft": "1951-07-01"
+    },
+    "oc/1968/212_228_228": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1968/212_228_228/de",
+      "titel": "Bundesgesetz betreffend die Änderung des Militärstrafgesetzes",
+      "as": "AS 1968 212",
+      "inkraft": "1968-03-01"
+    },
+    "oc/1979/1037_1037_1037": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1979/1037_1037_1037/de",
+      "titel": "Militärstrafgesetz (MStG), Änderung",
+      "as": "AS 1979 1037",
+      "inkraft": "1980-01-01"
+    },
+    "oc/1982/1535_1535_1535": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1982/1535_1535_1535/de",
+      "titel": "Militärstrafgesetz, Änderung",
+      "as": "AS 1982 1535",
+      "inkraft": "1982-10-01"
+    },
+    "oc/1989/2449_2449_2449": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1989/2449_2449_2449/de",
+      "titel": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Strafbare Handlungen gegen Leib und Leben und gegen die Familie), Änderung",
+      "as": "AS 1989 2449",
+      "inkraft": "1990-01-01"
+    },
+    "oc/1991/2512_2512_2512": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1991/2512_2512_2512/de",
+      "titel": "Schweizerisches Strafgesetzbuch (Behandlung von Rauschgiftsüchtigen). Militärstrafgesetz (Disziplinarische Ahndung des Konsums geringer Mengen von Betäubungsmitteln), Änderung",
+      "as": "AS 1991 2512",
+      "inkraft": "1992-01-01"
+    },
+    "oc/1992/1679_1679_1679": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1992/1679_1679_1679/de",
+      "titel": "Militärstrafgesetz (MStG), Änderung",
+      "as": "AS 1992 1679",
+      "inkraft": "1992-09-01"
+    },
+    "oc/1994/2290_2290_2290": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1994/2290_2290_2290/de",
+      "titel": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Strafbare Handlungen gegen das Vermögen und Urkundenfälschung), Änderung",
+      "as": "AS 1994 2290",
+      "inkraft": "1995-01-01"
+    },
+    "oc/1994/2887_2887_2887": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1994/2887_2887_2887/de",
+      "titel": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz, Änderung",
+      "as": "AS 1994 2887",
+      "inkraft": "1995-01-01"
+    },
+    "oc/1996/1445_1445_1445": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1996/1445_1445_1445/de",
+      "titel": "Bundesgesetz vom 6. Oktober 1995 über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+      "as": "AS 1996 1445",
+      "inkraft": "1996-10-01"
+    },
+    "oc/1997/1626_1626_1626": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1997/1626_1626_1626/de",
+      "titel": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz, Änderung",
+      "as": "AS 1997 1626",
+      "inkraft": "1997-09-01"
+    },
+    "oc/2000/180": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2000/180/de",
+      "titel": "Revision des Korruptionsstrafrechts (Änderung des Strafgesetzbuches und des Militärstrafgesetzes)",
+      "as": "AS 2000 1121",
+      "inkraft": "2000-05-01",
+      "botschaft": "BOTSCHAFT-1999-1_5497_5045_4721"
+    },
+    "oc/2002/428": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2002/428/de",
+      "titel": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz. (Verjährung der Strafverfolgung)",
+      "as": "AS 2002 2986",
+      "inkraft": "2002-10-01"
+    },
+    "oc/2002/430": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2002/430/de",
+      "titel": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz. (Verjährung der Strafverfolgung im allgemeinen und bei Sexualdelikten an Kindern)",
+      "as": "AS 2002 2993",
+      "inkraft": "2002-10-01",
+      "botschaft": "BOTSCHAFT-2000-612"
+    },
     "oc/2004/107": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2004/107/de",
       "titel": "Militärstrafgesetz (Revision der Disziplinarstrafordnung)",
@@ -10,10 +96,36 @@
       "inkraft": "2004-03-01",
       "botschaft": "BOTSCHAFT-2002-1270"
     },
+    "oc/2004/176": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/176/de",
+      "titel": "Schweizerisches Strafgesetzbuch (Strafverfolgung in der Ehe und in der Partnerschaft)",
+      "as": "AS 2004 1403",
+      "inkraft": "2004-04-01"
+    },
+    "oc/2004/322": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/322/de",
+      "titel": "Militärstrafprozess (MStP)",
+      "as": "AS 2004 2691",
+      "inkraft": "2004-06-01",
+      "botschaft": "BOTSCHAFT-2003-143"
+    },
+    "oc/2005/782": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "titel": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "as": "AS 2005 5685",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2003-194"
+    },
     "oc/2006/538": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2006/538/de",
       "titel": "Militärstrafgesetz (MStG)",
       "as": "AS 2006 3389",
+      "inkraft": "2007-01-01"
+    },
+    "oc/2006/551": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/551/de",
+      "titel": "Bundesgesetz über das Jugendstrafrecht (Jugendstrafgesetz, JStG)",
+      "as": "AS 2006 3545",
       "inkraft": "2007-01-01"
     },
     "oc/2009/117": {
@@ -23,11 +135,166 @@
       "inkraft": "2009-03-01",
       "botschaft": "BOTSCHAFT-2007-1322"
     },
+    "oc/2010/704": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/704/de",
+      "titel": "Bundesgesetz über die Änderung von Bundesgesetzen zur Umsetzung des Römer Statuts des Internationalen Strafgerichtshofs",
+      "as": "AS 2010 4963",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2008-807"
+    },
+    "oc/2010/869": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/869/de",
+      "titel": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+      "as": "AS 2010 6015",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2009-1057"
+    },
+    "oc/2012/696": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/696/de",
+      "titel": "Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+      "as": "AS 2012 5951",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2011-883"
+    },
+    "oc/2013/783": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/783/de",
+      "titel": "Schweizerisches Strafgesetzbuch. Militärstrafgesetz (Verlängerung der Verfolgungsverjährung)",
+      "as": "AS 2013 4417",
+      "inkraft": "2014-01-01",
+      "botschaft": "BOTSCHAFT-2012-1719"
+    },
+    "oc/2014/355": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2014/355/de",
+      "titel": "Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+      "as": "AS 2014 2055",
+      "inkraft": "2015-01-01",
+      "botschaft": "BOTSCHAFT-2012-1575"
+    },
+    "oc/2015/297": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/297/de",
+      "titel": "Bundesgesetz über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemiengesetz, EpG)",
+      "as": "AS 2015 1435",
+      "inkraft": "2016-01-01",
+      "botschaft": "BOTSCHAFT-2011-43"
+    },
+    "oc/2016/249": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/249/de",
+      "titel": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Änderungen des Sanktionenrechts)",
+      "as": "AS 2016 1249",
+      "inkraft": "2016-07-01",
+      "botschaft": "BOTSCHAFT-2012-670"
+    },
+    "oc/2016/257": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/257/de",
+      "titel": "Schweizerisches Strafgesetzbuch (Korruptionsstrafrecht)",
+      "as": "AS 2016 1287",
+      "inkraft": "2016-07-01",
+      "botschaft": "BOTSCHAFT-2014-787"
+    },
+    "oc/2016/330": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/330/de",
+      "titel": "Bundesgesetz über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+      "as": "AS 2016 1883",
+      "inkraft": "2016-07-01"
+    },
+    "oc/2016/380": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/380/de",
+      "titel": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+      "as": "AS 2016 2329",
+      "inkraft": "2016-10-01",
+      "botschaft": "BOTSCHAFT-2013-1078"
+    },
+    "oc/2016/756": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/756/de",
+      "titel": "Bundesbeschluss über die Genehmigung und die Umsetzung des Internationalen Übereinkommens zum Schutz aller Personen vor dem Verschwindenlassen",
+      "as": "AS 2016 4687",
+      "inkraft": "2017-01-01",
+      "botschaft": "BOTSCHAFT-2014-95"
+    },
+    "oc/2018/603": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/603/de",
+      "titel": "Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 123c BV)",
+      "as": "AS 2018 3803",
+      "inkraft": "2019-01-01",
+      "botschaft": "BOTSCHAFT-2016-1188"
+    },
+    "oc/2019/336": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2019/336/de",
+      "titel": "Bundesgesetz über die Änderung der Wiedergutmachungsregelung (Änderung des Strafgesetzbuchs, des Jugendstrafgesetzes und des Militärstrafgesetzes)",
+      "as": "AS 2019 1809",
+      "inkraft": "2019-07-01"
+    },
+    "oc/2019/432": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2019/432/de",
+      "titel": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen",
+      "as": "AS 2019 2273",
+      "inkraft": "2020-07-01",
+      "botschaft": "BOTSCHAFT-2017-2095"
+    },
+    "oc/2020/329": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/329/de",
+      "titel": "Strafgesetzbuch und Militärstrafgesetz (Diskriminierung und Aufruf zu Hass aufgrund der sexuellen Orientierung)",
+      "as": "AS 2020 1609",
+      "inkraft": "2020-07-01"
+    },
+    "oc/2021/360": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/360/de",
+      "titel": "Bundesbeschluss vom 25. September 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität",
+      "as": "AS 2021 360",
+      "inkraft": "2021-07-01"
+    },
+    "oc/2022/232": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/232/de",
+      "titel": "Bundesgesetz vom 18. Dezember 2020 über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG)",
+      "as": "AS 2022 232",
+      "inkraft": "2023-01-01"
+    },
+    "oc/2022/600": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/600/de",
+      "titel": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+      "as": "AS 2022 600",
+      "inkraft": "2023-01-23"
+    },
+    "oc/2022/725": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/725/de",
+      "titel": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+      "as": "AS 2022 725",
+      "inkraft": "2023-01-01",
+      "botschaft": "BOTSCHAFT-2021-2198"
+    },
+    "oc/2023/259": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
+      "titel": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+      "as": "AS 2023 259",
+      "inkraft": "2023-07-01",
+      "botschaft": "BOTSCHAFT-2018-1154"
+    },
     "oc/2023/538": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2023/538/de",
       "titel": "Bundesgesetz über die Harmonisierung der Strafrahmen. Berichtigung (Betrifft nur den italienischen Text)",
       "as": "AS 2023 538",
       "inkraft": "2023-09-25"
+    },
+    "oc/2023/628": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/628/de",
+      "titel": "Bundesgesetz über die Bekämpfung des missbräuchlichen Konkurses (Änderung des Obligationenrechts, des Bundesgesetzes über Schuldbetreibung und Konkurs, des Strafgesetzbuches, des Militärstrafgesetzes, des Strafregistergesetzes und des Bundesgesetzes über die direkte Bundessteuer)",
+      "as": "AS 2023 628",
+      "inkraft": "2025-01-01",
+      "botschaft": "BOTSCHAFT-2019-1847"
+    },
+    "oc/2024/27": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/27/de",
+      "titel": "Bundesgesetz über eine Revision des Sexualstrafrechts",
+      "as": "AS 2024 27",
+      "inkraft": "2024-07-01",
+      "botschaft": "BOTSCHAFT-2018-1154"
+    },
+    "oc/2026/164": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2026/164/de",
+      "titel": "Bundesgesetz über die Armee und Militärverwaltung (Militärgesetz, MG)",
+      "as": "AS 2026 164",
+      "inkraft": "2026-06-01",
+      "botschaft": "BOTSCHAFT-2025-960"
     },
     "oc/2026/284": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2026/284/de",
@@ -37,6 +304,55 @@
     }
   },
   "botschaften": {
+    "BOTSCHAFT-1999-1_5497_5045_4721": {
+      "titel": "Botschaft über die Änderung des Schweizerischen Strafgesetzbuches und des Militärstrafgesetzes (Revision des Korruptionsstrafrechts) sowie über den Beitritt der Schweiz zum Übereinkommen über die Bekämpfung der Bestechung ausländischer Amtsträger im internationalen Geschäftsverkehr",
+      "url": "https://www.fedlex.admin.ch/eli/fga/1999/1_5497_5045_4721/de",
+      "stand": "1999-04-19",
+      "nummer": "1999.026",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "1999-04-19",
+          "res": "fga/1999/1_5497_5045_4721"
+        },
+        {
+          "code": 300,
+          "datum": "1999-12-22",
+          "res": "fga/2000/7"
+        },
+        {
+          "code": 400,
+          "datum": "2000-04-20"
+        }
+      ]
+    },
+    "BOTSCHAFT-2000-612": {
+      "titel": "Botschaft über die Aenderung des Schweizerischen Strafgesetzbuches und des Militärgesetzes (Strafbare Handlungen gegen die sexuelle Integrität/Verjährung bei Sexualdelikten an Kindern und Verbot des Besitzes harter Pornografie)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2000/612/de",
+      "stand": "2000-05-10",
+      "nummer": "2000.041",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2000-05-10",
+          "res": "fga/2000/612"
+        },
+        {
+          "code": 300,
+          "datum": "2001-10-05",
+          "res": "fga/2001/894"
+        },
+        {
+          "code": 300,
+          "datum": "2001-10-05",
+          "res": "fga/2001/895"
+        },
+        {
+          "code": 400,
+          "datum": "2002-01-24"
+        }
+      ]
+    },
     "BOTSCHAFT-2002-1270": {
       "titel": "Botschaft zur Revision des Militärstrafgesetzes (Disziplinarstrafordnung)",
       "url": "https://www.fedlex.admin.ch/eli/fga/2002/1270/de",
@@ -59,6 +375,65 @@
         }
       ]
     },
+    "BOTSCHAFT-2003-143": {
+      "titel": "Botschaft zur Änderung des Militärstrafprozesses (Zeugenschutz)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/143/de",
+      "stand": "2003-01-22",
+      "nummer": "03.008",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2003-01-22",
+          "res": "fga/2003/143"
+        },
+        {
+          "code": 300,
+          "datum": "2003-12-19",
+          "res": "fga/2003/1412"
+        },
+        {
+          "code": 400,
+          "datum": "2004-04-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2003-194": {
+      "titel": "Botschaft zum Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/194/de",
+      "stand": "2002-11-29",
+      "nummer": "02.090",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2002-11-29",
+          "res": "fga/2003/194"
+        },
+        {
+          "code": 300,
+          "datum": "2004-06-18",
+          "res": "fga/2004/596"
+        },
+        {
+          "code": 400,
+          "datum": "2004-10-07"
+        },
+        {
+          "code": 480,
+          "datum": "2004-10-20",
+          "res": "fga/2004/1065"
+        },
+        {
+          "code": 630,
+          "datum": "2005-04-11",
+          "res": "fga/2005/401"
+        },
+        {
+          "code": 650,
+          "datum": "2005-06-05",
+          "res": "fga/2005/782"
+        }
+      ]
+    },
     "BOTSCHAFT-2007-1322": {
       "titel": "Botschaft zur Änderung des Militärstrafgesetzes und des Militärstrafprozesses (Korrekturen infolge der Revision AT MStG und weitere Anpassungen)",
       "url": "https://www.fedlex.admin.ch/eli/fga/2007/1322/de",
@@ -78,6 +453,478 @@
         {
           "code": 400,
           "datum": "2009-01-22"
+        }
+      ]
+    },
+    "BOTSCHAFT-2008-807": {
+      "titel": "Botschaft über die Änderung von Bundesgesetzen zur Umsetzung des Römer Statuts des Internationalen Strafgerichtshofs",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2008/807/de",
+      "stand": "2008-04-23",
+      "nummer": "08.034",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2008-04-23",
+          "res": "fga/2008/807"
+        },
+        {
+          "code": 300,
+          "datum": "2010-06-18",
+          "res": "fga/2010/727"
+        },
+        {
+          "code": 400,
+          "datum": "2010-10-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2009-1057": {
+      "titel": "Botschaft zur Änderung des Militärgesetzes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2009/1057/de",
+      "stand": "2009-08-19",
+      "nummer": "09.063",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2009-08-19",
+          "res": "fga/2009/1057"
+        },
+        {
+          "code": 300,
+          "datum": "2010-03-19",
+          "res": "fga/2010/348"
+        },
+        {
+          "code": 400,
+          "datum": "2010-07-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2011-43": {
+      "titel": "Botschaft zur Revision des Bundesgesetzes über die Bekämpfung übertragbarer Krankheiten des Menschen (Epidemiengesetz, EpG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/43/de",
+      "stand": "2010-12-03",
+      "nummer": "10.107",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2010-12-03",
+          "res": "fga/2011/43"
+        },
+        {
+          "code": 300,
+          "datum": "2012-09-28",
+          "res": "fga/2012/1385"
+        },
+        {
+          "code": 400,
+          "datum": "2013-01-17"
+        },
+        {
+          "code": 480,
+          "datum": "2013-02-19",
+          "res": "fga/2013/274"
+        },
+        {
+          "code": 630,
+          "datum": "2013-06-20",
+          "res": "fga/2013/919"
+        },
+        {
+          "code": 650,
+          "datum": "2013-09-22",
+          "res": "fga/2013/1719"
+        }
+      ]
+    },
+    "BOTSCHAFT-2011-883": {
+      "titel": "Botschaft zum Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/883/de",
+      "stand": "2011-06-22",
+      "nummer": "11.039",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2011-06-22",
+          "res": "fga/2011/883"
+        },
+        {
+          "code": 300,
+          "datum": "2012-06-15",
+          "res": "fga/2012/933"
+        },
+        {
+          "code": 400,
+          "datum": "2012-10-04"
+        },
+        {
+          "code": 400
+        }
+      ]
+    },
+    "BOTSCHAFT-2012-1575": {
+      "titel": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2012/1575/de",
+      "stand": "2012-10-10",
+      "nummer": "12.076",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2012-10-10",
+          "res": "fga/2012/1575"
+        },
+        {
+          "code": 300,
+          "datum": "2013-12-13",
+          "res": "fga/2013/1897"
+        },
+        {
+          "code": 400,
+          "datum": "2014-04-06"
+        },
+        {
+          "code": 650,
+          "datum": "2014-05-18",
+          "res": "fga/2014/1415"
+        }
+      ]
+    },
+    "BOTSCHAFT-2012-1719": {
+      "titel": "Botschaft zur Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Verlängerung der Verfolgungsverjährung)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2012/1719/de",
+      "stand": "2012-11-07",
+      "nummer": "12.082",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2012-11-07",
+          "res": "fga/2012/1719"
+        },
+        {
+          "code": 300,
+          "datum": "2013-06-21",
+          "res": "fga/2013/904"
+        },
+        {
+          "code": 400,
+          "datum": "2013-10-10"
+        }
+      ]
+    },
+    "BOTSCHAFT-2012-670": {
+      "titel": "Botschaft zur Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Änderungen des Sanktionenrechts)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2012/670/de",
+      "stand": "2012-04-04",
+      "nummer": "12.046",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2012-04-04",
+          "res": "fga/2012/670"
+        },
+        {
+          "code": 300,
+          "datum": "2015-06-19",
+          "res": "fga/2015/1177"
+        },
+        {
+          "code": 400,
+          "datum": "2015-10-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2013-1078": {
+      "titel": "Botschaft zur Änderung des Strafgesetzbuchs und des Militärstrafgesetzes (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2013/1078/de",
+      "stand": "2013-06-26",
+      "nummer": "13.056",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-06-26",
+          "res": "fga/2013/1078"
+        },
+        {
+          "code": 300,
+          "datum": "2015-03-20",
+          "res": "fga/2015/546"
+        },
+        {
+          "code": 400,
+          "datum": "2015-07-09"
+        },
+        {
+          "code": 400
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-787": {
+      "titel": "Botschaft über die Änderung des Strafgesetzbuchs (Korruptionsstrafrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/787/de",
+      "stand": "2014-04-30",
+      "nummer": "14.035",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2014-04-30",
+          "res": "fga/2014/787"
+        },
+        {
+          "code": 300,
+          "datum": "2015-09-25",
+          "res": "fga/2015/1702"
+        },
+        {
+          "code": 400,
+          "datum": "2016-01-14"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-95": {
+      "titel": "Botschaft zur Genehmigung und zur Umsetzung des Internationalen Übereinkommens zum Schutz aller Personen vor dem Verschwindenlassen",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/95/de",
+      "stand": "2013-11-29",
+      "nummer": "13.105",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-11-29",
+          "res": "fga/2014/95"
+        },
+        {
+          "code": 300,
+          "datum": "2015-12-18",
+          "res": "fga/2015/2203"
+        },
+        {
+          "code": 400,
+          "datum": "2016-04-09"
+        }
+      ]
+    },
+    "BOTSCHAFT-2016-1188": {
+      "titel": "Botschaft zur Änderung des Strafgesetzbuchs und des Militärstrafgesetzes (Umsetzung von Art. 123c BV)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2016/1188/de",
+      "stand": "2016-06-03",
+      "nummer": "16.048",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2016-06-03",
+          "res": "fga/2016/1188"
+        },
+        {
+          "code": 300,
+          "datum": "2018-03-16",
+          "res": "fga/2018/592"
+        },
+        {
+          "code": 400,
+          "datum": "2018-07-05"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-2095": {
+      "titel": "Botschaft zum Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/2095/de",
+      "stand": "2017-10-11",
+      "nummer": "17.062",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2017-10-11",
+          "res": "fga/2017/2095"
+        },
+        {
+          "code": 300,
+          "datum": "2018-12-14",
+          "res": "fga/2018/2813"
+        },
+        {
+          "code": 400,
+          "datum": "2019-04-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-1154": {
+      "titel": "Botschaft zur Harmonisierung der Strafrahmen und zur Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/1154/de",
+      "stand": "2018-04-25",
+      "nummer": "18.043",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2010-09-21",
+          "res": "fga/2010/1034"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1155"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1156"
+        },
+        {
+          "code": 200,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1154"
+        },
+        {
+          "code": 4,
+          "datum": "2021-02-05",
+          "res": "fga/2021/157"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2996"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2997"
+        },
+        {
+          "code": 2,
+          "datum": "2022-02-17",
+          "res": "fga/2022/688"
+        },
+        {
+          "code": 301,
+          "datum": "2022-02-17",
+          "res": "fga/2022/687"
+        },
+        {
+          "code": 400,
+          "datum": "2022-04-07"
+        },
+        {
+          "code": 201,
+          "datum": "2022-04-13",
+          "res": "fga/2022/1011"
+        },
+        {
+          "code": 300,
+          "datum": "2023-06-16",
+          "res": "fga/2023/1521"
+        },
+        {
+          "code": 400,
+          "datum": "2023-10-05"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6010/51/cons_1"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6021/4/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2019-1847": {
+      "titel": "Botschaft zum Bundesgesetz über die Bekämpfung des missbräuchlichen Konkurses (Änderung, des Bundesgesetzes über Schuldbetreibung und Konkurs, des Obligationenrechts, des Strafgesetzbuches, des Militärstrafgesetzes und des Strafregistergesetzes)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2019/1847/de",
+      "stand": "2019-06-26",
+      "nummer": "19.043",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2015-05-05",
+          "res": "fga/2015/793"
+        },
+        {
+          "code": 2,
+          "datum": "2019-06-26",
+          "res": "fga/2019/1848"
+        },
+        {
+          "code": 200,
+          "datum": "2019-06-26",
+          "res": "fga/2019/1847"
+        },
+        {
+          "code": 300,
+          "datum": "2022-03-18",
+          "res": "fga/2022/702"
+        },
+        {
+          "code": 400,
+          "datum": "2022-07-07"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6014/130/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2021-2198": {
+      "titel": "Botschaft zur Änderung des Militärgesetzes und der Armeeorganisation",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2021/2198/de",
+      "stand": "2021-09-01",
+      "nummer": "21.061",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2020-10-13",
+          "res": "fga/2020/2071"
+        },
+        {
+          "code": 200,
+          "datum": "2021-09-01",
+          "res": "fga/2021/2198"
+        },
+        {
+          "code": 300,
+          "datum": "2022-03-18",
+          "res": "fga/2022/703"
+        },
+        {
+          "code": 400,
+          "datum": "2022-07-07"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6020/55/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2025-960": {
+      "titel": "Botschaft zur Änderung des Militärgesetzes, der Verordnung der Bundesversammlung über die Verwaltung der Armee und der Armeeorganisation",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2025/960/de",
+      "stand": "2025-03-07",
+      "nummer": "25.036",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2023-11-28",
+          "res": "fga/2023/2675"
+        },
+        {
+          "code": 2,
+          "datum": "2025-03-07",
+          "res": "fga/2025/961"
+        },
+        {
+          "code": 200,
+          "datum": "2025-03-07",
+          "res": "fga/2025/960"
+        },
+        {
+          "code": 300,
+          "datum": "2025-12-19",
+          "res": "fga/2026/21"
+        },
+        {
+          "code": 400,
+          "datum": "2026-04-17"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/2023/26/cons_1"
         }
       ]
     }

@@ -1,8 +1,38 @@
 {
   "erlass": "BPR",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/1978/1694_1694_1694": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1978/1694_1694_1694/de",
+      "titel": "Bundesgesetz vom 9. März 1978 über die Änderung von Bundesgesetzen im Anschluss an die Gründung des Kantons Jura",
+      "as": "AS 1978 1694",
+      "inkraft": "1979-01-01"
+    },
+    "oc/1987/600_600_600": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1987/600_600_600/de",
+      "titel": "Bundesgesetz vom 21. März 1986 über die Gesetzessammlungen und das Bundesblatt (Publikationsgesetz)",
+      "as": "AS 1987 600",
+      "inkraft": "1987-05-15"
+    },
+    "oc/1991/2388_2388_2388": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1991/2388_2388_2388/de",
+      "titel": "Bundesgesetz über die politischen Rechte der Auslandschweizer, Änderung",
+      "as": "AS 1991 2388",
+      "inkraft": "1992-07-01"
+    },
+    "oc/1994/2414_2414_2414": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1994/2414_2414_2414/de",
+      "titel": "Bundesgesetz über die politischen Rechte (Nationalratswahlverfahren), Änderung",
+      "as": "AS 1994 2414",
+      "inkraft": "1994-11-15"
+    },
+    "oc/1997/753_753_753": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1997/753_753_753/de",
+      "titel": "Bundesgesetz über die politischen Rechte, Änderung",
+      "as": "AS 1997 753",
+      "inkraft": "1997-04-01"
+    },
     "oc/2000/90": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2000/90/de",
       "titel": "Bundesgesetz über die politischen Rechte (BPR)",
@@ -17,12 +47,37 @@
       "inkraft": "2003-01-01",
       "botschaft": "BOTSCHAFT-2001-1111"
     },
+    "oc/2003/510": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2003/510/de",
+      "titel": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG)",
+      "as": "AS 2003 3543",
+      "inkraft": "2003-12-01"
+    },
+    "oc/2004/745": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/745/de",
+      "titel": "Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
+      "as": "AS 2004 4929",
+      "inkraft": "2005-01-01",
+      "botschaft": "BOTSCHAFT-2003-1274"
+    },
     "oc/2007/649": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2007/649/de",
       "titel": "Bundesgesetz betreffend die Änderung der Bundesgesetzgebung über die politischen Rechte",
       "as": "AS 2007 4635",
       "inkraft": "2008-01-01",
       "botschaft": "BOTSCHAFT-2006-639"
+    },
+    "oc/2007/869": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/869/de",
+      "titel": "Bundesgesetz über die eidgenössische Volkszählung (Volkszählungsgesetz)",
+      "as": "AS 2007 6743",
+      "inkraft": "2008-01-01"
+    },
+    "oc/2008/447": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "titel": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "as": "AS 2008 3437",
+      "inkraft": "2008-08-01"
     },
     "oc/2009/1": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2009/1/de",
@@ -35,6 +90,13 @@
       "titel": "Bundesgesetz über die politischen Rechte (Bedingter Rückzug einer Volksinitiative)",
       "as": "AS 2010 271",
       "inkraft": "2010-02-01"
+    },
+    "oc/2011/114": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "as": "AS 2011 725",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2006-899"
     },
     "oc/2015/79": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2015/79/de",
@@ -129,6 +191,28 @@
         }
       ]
     },
+    "BOTSCHAFT-2003-1274": {
+      "titel": "Botschaft zum Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/1274/de",
+      "stand": "2003-10-22",
+      "nummer": "03.072",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2003-10-22",
+          "res": "fga/2003/1274"
+        },
+        {
+          "code": 300,
+          "datum": "2004-06-18",
+          "res": "fga/2004/593"
+        },
+        {
+          "code": 400,
+          "datum": "2004-10-07"
+        }
+      ]
+    },
     "BOTSCHAFT-2006-639": {
       "titel": "Botschaft über die Einführung der allgemeinen Volksinitiative und über weitere Änderungen der Bundesgesetzgebung über die politischen Rechte",
       "url": "https://www.fedlex.admin.ch/eli/fga/2006/639/de",
@@ -148,6 +232,28 @@
         {
           "code": 400,
           "datum": "2007-07-12"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-899": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Erwachsenenschutz, Personen- und Kindesrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/899/de",
+      "stand": "2006-06-28",
+      "nummer": "06.063",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/899"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/7"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
         }
       ]
     },

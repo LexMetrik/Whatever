@@ -1,14 +1,103 @@
 {
   "erlass": "BBG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2004/745": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/745/de",
+      "titel": "Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
+      "as": "AS 2004 4929",
+      "inkraft": "2005-01-01",
+      "botschaft": "BOTSCHAFT-2003-1274"
+    },
+    "oc/2005/607": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/607/de",
+      "titel": "Bundesgesetz über die Fachhochschulen (Fachhochschulgesetz, FHSG)",
+      "as": "AS 2005 4635",
+      "inkraft": "2005-10-05"
+    },
+    "oc/2007/787": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "titel": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "as": "AS 2007 5779",
+      "inkraft": "2008-01-01",
+      "botschaft": "BOTSCHAFT-2005-976"
+    },
+    "oc/2010/708": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/708/de",
+      "titel": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG)",
+      "as": "AS 2010 5003",
+      "inkraft": "2011-01-01"
+    },
+    "oc/2012/419": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/419/de",
+      "titel": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+      "as": "AS 2012 3655",
+      "inkraft": "2013-01-01"
+    },
+    "oc/2012/460": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/460/de",
+      "titel": "Bundesgesetz über die Förderung von Sport und Bewegung (Sportförderungsgesetz, SpoFöG)",
+      "as": "AS 2012 3953",
+      "inkraft": "2012-10-01"
+    },
+    "oc/2014/691": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2014/691/de",
+      "titel": "Bundesgesetz über die Förderung der Hochschulen und die Koordination im schweizerischen Hochschulbereich (Hochschulförderungs- und -koordinationsgesetz, HFKG)",
+      "as": "AS 2014 4103",
+      "inkraft": "2015-01-01"
+    },
+    "oc/2015/669": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/669/de",
+      "titel": "Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
+      "as": "AS 2015 3977",
+      "inkraft": "2016-01-01",
+      "botschaft": "BOTSCHAFT-2013-1331"
+    },
+    "oc/2016/132": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "titel": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "as": "AS 2016 689",
+      "inkraft": "2017-01-01"
+    },
     "oc/2017/564": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2017/564/de",
       "titel": "Bundesgesetz über die Berufsbildung (Berufsbildungsgesetz, BBG)",
       "as": "AS 2017 5143",
       "inkraft": "2018-01-01",
       "botschaft": "BOTSCHAFT-2016-576"
+    },
+    "oc/2017/718": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/718/de",
+      "titel": "Bundesgesetz über die Ausländerinnen und Ausländer (Ausländergesetz, AuG) (Integration)",
+      "as": "AS 2017 6521",
+      "inkraft": "2018-01-01",
+      "botschaft": "BOTSCHAFT-2013-416"
+    },
+    "oc/2021/414": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/414/de",
+      "titel": "Bundesgesetz vom 25. September 2020 über die Eidgenössische Hochschule für Berufsbildung (EHB-Gesetz)",
+      "as": "AS 2021 414",
+      "inkraft": "2021-08-01"
+    },
+    "oc/2021/758": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "titel": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "as": "AS 2021 758",
+      "inkraft": "2022-01-01",
+      "botschaft": "BOTSCHAFT-2019-2681"
+    },
+    "oc/2022/164": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/164/de",
+      "titel": "Bundesgesetz vom 25. September 2020 über die internationale Zusammenarbeit und Mobilität in der Bildung (BIZMB)",
+      "as": "AS 2022 164",
+      "inkraft": "2022-04-01"
+    },
+    "oc/2024/212": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/212/de",
+      "titel": "Bundesgesetz vom 16. Dezember 2022 über die Förderung der Ausbildung im Bereich der Pflege",
+      "as": "AS 2024 212",
+      "inkraft": "2024-07-01"
     },
     "oc/2025/75": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2025/75/de",
@@ -19,6 +108,99 @@
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2003-1274": {
+      "titel": "Botschaft zum Bundesgesetz über die Sammlungen des Bundesrechts und das Bundesblatt (Publikationsgesetz, PublG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/1274/de",
+      "stand": "2003-10-22",
+      "nummer": "03.072",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2003-10-22",
+          "res": "fga/2003/1274"
+        },
+        {
+          "code": 300,
+          "datum": "2004-06-18",
+          "res": "fga/2004/593"
+        },
+        {
+          "code": 400,
+          "datum": "2004-10-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2005-976": {
+      "titel": "Botschaft zur Ausführungsgesetzgebung zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2005/976/de",
+      "stand": "2005-09-07",
+      "nummer": "05.070",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2005-09-07",
+          "res": "fga/2005/976"
+        },
+        {
+          "code": 300,
+          "datum": "2006-10-06",
+          "res": "fga/2006/1050"
+        },
+        {
+          "code": 300,
+          "datum": "2006-10-06",
+          "res": "fga/2006/1053"
+        },
+        {
+          "code": 400,
+          "datum": "2007-01-25"
+        }
+      ]
+    },
+    "BOTSCHAFT-2013-1331": {
+      "titel": "Botschaft zur Änderung des Publikationsgesetzes (Primatwechsel von der gedruckten zur elektronischen Version der amtlichen Veröffentlichungen)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2013/1331/de",
+      "stand": "2013-08-28",
+      "nummer": "13.069",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-08-28",
+          "res": "fga/2013/1331"
+        },
+        {
+          "code": 300,
+          "datum": "2014-09-26",
+          "res": "fga/2014/1582"
+        },
+        {
+          "code": 400,
+          "datum": "2015-01-15"
+        }
+      ]
+    },
+    "BOTSCHAFT-2013-416": {
+      "titel": "Botschaft zur Änderung des Ausländergesetzes (Integration)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2013/416/de",
+      "stand": "2013-03-08",
+      "nummer": "13.030",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-03-08",
+          "res": "fga/2013/416"
+        },
+        {
+          "code": 300,
+          "datum": "2016-12-16",
+          "res": "fga/2016/2166"
+        },
+        {
+          "code": 400,
+          "datum": "2017-04-07"
+        }
+      ]
+    },
     "BOTSCHAFT-2016-576": {
       "titel": "Botschaft zur Förderung von Bildung, Forschung und Innovation in den Jahren 20172020",
       "url": "https://www.fedlex.admin.ch/eli/fga/2016/576/de",
@@ -38,6 +220,37 @@
         {
           "code": 400,
           "datum": "2017-04-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2019-2681": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2019/2681/de",
+      "stand": "2019-10-30",
+      "nummer": "19.057",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2018-11-20",
+          "res": "fga/2018/2485"
+        },
+        {
+          "code": 200,
+          "datum": "2019-10-30",
+          "res": "fga/2019/2681"
+        },
+        {
+          "code": 300,
+          "datum": "2020-12-18",
+          "res": "fga/2020/2693"
+        },
+        {
+          "code": 400,
+          "datum": "2021-04-10"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6018/78/cons_1"
         }
       ]
     },

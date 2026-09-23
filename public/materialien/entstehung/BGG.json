@@ -1,14 +1,139 @@
 {
   "erlass": "BGG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2006/310": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/310/de",
+      "titel": "Bundesgesetz über die Invalidenversicherung (IVG)",
+      "as": "AS 2006 2003",
+      "inkraft": "2006-07-01",
+      "botschaft": "BOTSCHAFT-2005-490"
+    },
     "oc/2006/634": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2006/634/de",
       "titel": "Bundesgesetz über die Bereinigung und Aktualisierung der Totalrevision der Bundesrechtspflege",
       "as": "AS 2006 4213",
       "inkraft": "2007-01-01",
       "botschaft": "BOTSCHAFT-2006-334"
+    },
+    "oc/2006/826": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/826/de",
+      "titel": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
+      "as": "AS 2006 5599",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2006-974"
+    },
+    "oc/2007/150": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/150/de",
+      "titel": "Bundesgesetz über Radio und Fernsehen (RTVG)",
+      "as": "AS 2007 737",
+      "inkraft": "2007-04-01"
+    },
+    "oc/2008/447": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "titel": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "as": "AS 2008 3437",
+      "inkraft": "2008-08-01"
+    },
+    "oc/2008/736": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/736/de",
+      "titel": "Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz, FINMAG)",
+      "as": "AS 2008 5207",
+      "inkraft": "2009-01-01",
+      "botschaft": "BOTSCHAFT-2006-303"
+    },
+    "oc/2010/262": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "titel": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "as": "AS 2010 1739",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2006-914"
+    },
+    "oc/2010/267": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "titel": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "as": "AS 2010 1881",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2006-124"
+    },
+    "oc/2010/444": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/444/de",
+      "titel": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "as": "AS 2010 3267",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2008-1395"
+    },
+    "oc/2010/72": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/72/de",
+      "titel": "Bundesgesetz über das Bundespatentgericht (Patentgerichtsgesetz, PatGG)",
+      "as": "AS 2010 513",
+      "inkraft": "2010-03-01"
+    },
+    "oc/2011/114": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "as": "AS 2011 725",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2006-899"
+    },
+    "oc/2011/137": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/137/de",
+      "titel": "Bundesgesetz über die Koordination des Asyl- und des Auslieferungsverfahrens",
+      "as": "AS 2011 925",
+      "inkraft": "2011-04-01",
+      "botschaft": "BOTSCHAFT-2010-264"
+    },
+    "oc/2011/663": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/663/de",
+      "titel": "Bundesgesetz über die Bundesversammlung (Parlamentsgesetz, ParlG) (Gesuche um Aufhebung der Immunität)",
+      "as": "AS 2011 4627",
+      "inkraft": "2011-12-05"
+    },
+    "oc/2012/159": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/159/de",
+      "titel": "Regierungs- und Verwaltungsorganisationsgesetz (RVOG) (Datenschutz bei der Benutzung der elektronischen Infrastruktur)",
+      "as": "AS 2012 941",
+      "inkraft": "2012-04-01",
+      "botschaft": "BOTSCHAFT-2009-1469"
+    },
+    "oc/2012/585": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/585/de",
+      "titel": "Postgesetz (PG)",
+      "as": "AS 2012 4993",
+      "inkraft": "2012-10-01"
+    },
+    "oc/2012/656": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/656/de",
+      "titel": "Bundesgesetz über den zweiten Schritt der Bahnreform 2",
+      "as": "AS 2012 5619",
+      "inkraft": "2012-12-01"
+    },
+    "oc/2013/31": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/31/de",
+      "titel": "Bundesgesetz über die internationale Amtshilfe in Steuersachen (Steueramtshilfegesetz, StAhiG)",
+      "as": "AS 2013 231",
+      "inkraft": "2013-02-01"
+    },
+    "oc/2013/352": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/352/de",
+      "titel": "Bundespersonalgesetz (BPG)",
+      "as": "AS 2013 1493",
+      "inkraft": "2013-07-01",
+      "botschaft": "BOTSCHAFT-2011-1076"
+    },
+    "oc/2014/390": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2014/390/de",
+      "titel": "Bundesgesetz über die internationale Amtshilfe in Steuersachen (Steueramtshilfegesetz, StAhiG)",
+      "as": "AS 2014 2309",
+      "inkraft": "2014-08-01"
+    },
+    "oc/2014/53": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2014/53/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Elterliche Sorge)",
+      "as": "AS 2014 357",
+      "inkraft": "2014-07-01",
+      "botschaft": "BOTSCHAFT-2011-1580"
     },
     "oc/2015/3": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2015/3/de",
@@ -17,14 +142,196 @@
       "inkraft": "2016-01-01",
       "botschaft": "BOTSCHAFT-2013-1658"
     },
+    "oc/2015/598": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/598/de",
+      "titel": "Bundesgesetz über die Personenbeförderung (Personenbeförderungsgesetz, PBG)",
+      "as": "AS 2015 3205",
+      "inkraft": "2016-01-01"
+    },
+    "oc/2015/853": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/853/de",
+      "titel": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+      "as": "AS 2015 5339",
+      "inkraft": "2016-01-01",
+      "botschaft": "BOTSCHAFT-2014-1633"
+    },
+    "oc/2016/132": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "titel": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "as": "AS 2016 689",
+      "inkraft": "2017-01-01"
+    },
+    "oc/2016/752": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/752/de",
+      "titel": "Bundesgesetz über Zertifizierungsdienste im Bereich der elektronischen Signatur und anderer Anwendungen digitaler Zertifikate (Bundesgesetz über die elektronische Signatur)",
+      "as": "AS 2016 4651",
+      "inkraft": "2017-01-01"
+    },
+    "oc/2017/145": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/145/de",
+      "titel": "Bundesgesetz über die Aufarbeitung der fürsorgerischen Zwangsmassnahmen und Fremdplatzierungen vor 1981 (AFZFG)",
+      "as": "AS 2017 753",
+      "inkraft": "2017-04-01"
+    },
+    "oc/2017/308": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/308/de",
+      "titel": "Bundesgesetz über die wirtschaftliche Landesversorgung (Landesversorgungsgesetz, LVG)",
+      "as": "AS 2017 3097",
+      "inkraft": "2017-06-01"
+    },
+    "oc/2017/624": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/624/de",
+      "titel": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG) (Schaffung einer Berufungskammer am Bundesstrafgericht)",
+      "as": "AS 2017 5769",
+      "inkraft": "2019-01-01",
+      "botschaft": "BOTSCHAFT-2016-1190"
+    },
+    "oc/2017/762": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/762/de",
+      "titel": "Energiegesetz (EnG)",
+      "as": "AS 2017 6839",
+      "inkraft": "2018-01-01",
+      "botschaft": "BOTSCHAFT-2013-1476"
+    },
+    "oc/2020/126": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/126/de",
+      "titel": "Bundesgesetz über das öffentliche Beschaffungswesen (BöB)",
+      "as": "AS 2020 641",
+      "inkraft": "2021-01-01",
+      "botschaft": "BOTSCHAFT-2017-417"
+    },
+    "oc/2020/767": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/767/de",
+      "titel": "Bundesgesetz über das Internationale Privatrecht (IPRG)",
+      "as": "AS 2020 4179",
+      "inkraft": "2021-01-01",
+      "botschaft": "BOTSCHAFT-2018-2548"
+    },
+    "oc/2021/703": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/703/de",
+      "titel": "Bundesgesetz vom 18. Juni 2021 über die Durchführung von internationalen Abkommen im Steuerbereich (StADG)",
+      "as": "AS 2021 703",
+      "inkraft": "2022-01-01"
+    },
     "oc/2022/289": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2022/289/de",
       "titel": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
       "as": "AS 2022 289",
       "inkraft": "2022-07-01"
+    },
+    "oc/2022/43": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/43/de",
+      "titel": "Kernenergiehaftpflichtgesetz vom 13. Juni 2008 (KHG)",
+      "as": "AS 2022 43",
+      "inkraft": "2022-01-01"
+    },
+    "oc/2023/468": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/468/de",
+      "titel": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "as": "AS 2023 468",
+      "inkraft": "2024-01-01",
+      "botschaft": "BOTSCHAFT-2019-2368"
+    },
+    "oc/2023/491": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/491/de",
+      "titel": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO) (Verbesserung der Praxistauglichkeit und der Rechtsdurchsetzung)",
+      "as": "AS 2023 491",
+      "inkraft": "2025-01-01",
+      "botschaft": "BOTSCHAFT-2020-653"
+    },
+    "oc/2023/804": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/804/de",
+      "titel": "Bundesgesetz über die Beschleunigung der Bewilligungsverfahren für Windenergieanlagen (Änderung des Energiegesetzes und des Bundesgerichtsgesetzes)",
+      "as": "AS 2023 804",
+      "inkraft": "2024-02-01"
+    },
+    "oc/2024/27": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/27/de",
+      "titel": "Bundesgesetz über eine Revision des Sexualstrafrechts",
+      "as": "AS 2024 27",
+      "inkraft": "2024-07-01",
+      "botschaft": "BOTSCHAFT-2018-1154"
+    },
+    "oc/2026/99": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2026/99/de",
+      "titel": "Energiegesetz (EnG)",
+      "as": "AS 2026 99",
+      "inkraft": "2026-04-01",
+      "botschaft": "BOTSCHAFT-2023-1602"
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2005-490": {
+      "titel": "Botschaft betreffend die Änderung des Bundesgesetzes über die Invalidenversicherung (IVG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2005/490/de",
+      "stand": "2005-05-04",
+      "nummer": "05.034",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2005-05-04",
+          "res": "fga/2005/490"
+        },
+        {
+          "code": 300,
+          "datum": "2005-12-16",
+          "res": "fga/2005/1175"
+        },
+        {
+          "code": 400,
+          "datum": "2006-04-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-124": {
+      "titel": "Botschaft zur Vereinheitlichung des Strafprozessrechts",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/124/de",
+      "stand": "2005-12-21",
+      "nummer": "05.092",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2005-12-21",
+          "res": "fga/2006/124"
+        },
+        {
+          "code": 300,
+          "datum": "2007-10-05",
+          "res": "fga/2007/1074"
+        },
+        {
+          "code": 400,
+          "datum": "2008-01-24"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-303": {
+      "titel": "Botschaft zum Bundesgesetz über die Eidgenössische Finanzmarktaufsicht (Finanzmarktaufsichtsgesetz; FINMAG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/303/de",
+      "stand": "2006-02-01",
+      "nummer": "06.017",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-02-01",
+          "res": "fga/2006/303"
+        },
+        {
+          "code": 300,
+          "datum": "2007-06-22",
+          "res": "fga/2007/653"
+        },
+        {
+          "code": 300,
+          "datum": "2007-06-22",
+          "res": "fga/2007/660"
+        },
+        {
+          "code": 400,
+          "datum": "2007-10-11"
+        }
+      ]
+    },
     "BOTSCHAFT-2006-334": {
       "titel": "Botschaft zum Bundesgesetz über die Bereinigung und Aktualisierung der Totalrevision der Bundesrechtspflege",
       "url": "https://www.fedlex.admin.ch/eli/fga/2006/334/de",
@@ -47,6 +354,210 @@
         }
       ]
     },
+    "BOTSCHAFT-2006-899": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Erwachsenenschutz, Personen- und Kindesrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/899/de",
+      "stand": "2006-06-28",
+      "nummer": "06.063",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/899"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/7"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-914": {
+      "titel": "Botschaft zur Schweizerischen Zivilprozessordnung (ZPO)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/914/de",
+      "stand": "2006-06-28",
+      "nummer": "06.062",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/914"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/6"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-974": {
+      "titel": "Botschaft zu einer Verordnung der Bundesversammlung betreffend die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und Verwaltungsgerichtsgesetzes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/974/de",
+      "stand": "2006-09-06",
+      "nummer": "06.068",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-09-06",
+          "res": "fga/2006/974"
+        }
+      ]
+    },
+    "BOTSCHAFT-2008-1395": {
+      "titel": "Botschaft zum Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2008/1395/de",
+      "stand": "2008-09-10",
+      "nummer": "08.066",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2008-09-10",
+          "res": "fga/2008/1395"
+        },
+        {
+          "code": 300,
+          "datum": "2010-03-19",
+          "res": "fga/2010/347"
+        },
+        {
+          "code": 400,
+          "datum": "2010-07-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2009-1469": {
+      "titel": "Botschaft zur Änderung des Regierungs- und Verwaltungsorganisationsgesetzes (Datenschutz bei der Nutzung der elektronischen Infrastruktur)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2009/1469/de",
+      "stand": "2009-11-27",
+      "nummer": "09.089",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2009-11-27",
+          "res": "fga/2009/1469"
+        },
+        {
+          "code": 300,
+          "datum": "2010-10-01",
+          "res": "fga/2010/1156"
+        },
+        {
+          "code": 400,
+          "datum": "2011-01-20"
+        }
+      ]
+    },
+    "BOTSCHAFT-2010-264": {
+      "titel": "Botschaft zum Bundesgesetz über die Koordination des Asyl- und des Auslieferungsverfahrens",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2010/264/de",
+      "stand": "2010-02-24",
+      "nummer": "10.031",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2010-02-24",
+          "res": "fga/2010/264"
+        },
+        {
+          "code": 300,
+          "datum": "2010-10-01",
+          "res": "fga/2010/1155"
+        },
+        {
+          "code": 400,
+          "datum": "2011-01-20"
+        }
+      ]
+    },
+    "BOTSCHAFT-2011-1076": {
+      "titel": "Botschaft zu einer Änderung des Bundespersonalgesetzes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/1076/de",
+      "stand": "2011-08-31",
+      "nummer": "11.049",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2011-08-31",
+          "res": "fga/2011/1076"
+        },
+        {
+          "code": 300,
+          "datum": "2012-12-14",
+          "res": "fga/2012/1794"
+        },
+        {
+          "code": 400,
+          "datum": "2013-04-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2011-1580": {
+      "titel": "Botschaft zu einer Änderung des Schweizerischen Zivilgesetzbuches (Elterliche Sorge)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/1580/de",
+      "stand": "2011-11-16",
+      "nummer": "11.070",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2011-11-16",
+          "res": "fga/2011/1580"
+        },
+        {
+          "code": 300,
+          "datum": "2013-06-21",
+          "res": "fga/2013/906"
+        },
+        {
+          "code": 400,
+          "datum": "2013-10-10"
+        }
+      ]
+    },
+    "BOTSCHAFT-2013-1476": {
+      "titel": "Botschaft zum ersten Massnahmenpaket der Energiestrategie 2050 (Revision des Energierechts) und zur Volksinitiative «Für den geordneten Ausstieg aus der Atomenergie (Atomausstiegsinitiative)»",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2013/1476/de",
+      "stand": "2013-09-04",
+      "nummer": "13.074",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-09-04",
+          "res": "fga/2013/1476"
+        },
+        {
+          "code": 300,
+          "datum": "2016-09-30",
+          "res": "fga/2016/1642"
+        },
+        {
+          "code": 400,
+          "datum": "2017-01-19"
+        },
+        {
+          "code": 480,
+          "datum": "2017-01-31",
+          "res": "fga/2017/132"
+        },
+        {
+          "code": 630,
+          "datum": "2017-02-21",
+          "res": "fga/2017/284"
+        },
+        {
+          "code": 650,
+          "datum": "2017-05-21",
+          "res": "fga/2017/1232"
+        }
+      ]
+    },
     "BOTSCHAFT-2013-1658": {
       "titel": "Botschaft zum Steuererlassgesetz",
       "url": "https://www.fedlex.admin.ch/eli/fga/2013/1658/de",
@@ -66,6 +577,295 @@
         {
           "code": 400,
           "datum": "2014-10-09"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-1633": {
+      "titel": "Botschaft zum Finanzmarktinfrastrukturgesetz (FinfraG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/1633/de",
+      "stand": "2014-09-03",
+      "nummer": "14.061",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2014-09-03",
+          "res": "fga/2014/1633"
+        },
+        {
+          "code": 300,
+          "datum": "2015-06-19",
+          "res": "fga/2015/1179"
+        },
+        {
+          "code": 400,
+          "datum": "2015-10-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2016-1190": {
+      "titel": "Zusatzbotschaft zur Änderung des Bundesgesetzes über das Bundesgericht (Schaffung einer Berufungskammer am Bundesstrafgericht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2016/1190/de",
+      "stand": "2016-06-17",
+      "nummer": "zu 13.075",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2016-06-17",
+          "res": "fga/2016/1190"
+        },
+        {
+          "code": 300,
+          "datum": "2017-03-17",
+          "res": "fga/2017/470"
+        },
+        {
+          "code": 400,
+          "datum": "2017-07-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-417": {
+      "titel": "Botschaft zur Totalrevision des Bundesgesetzes über das öffentliche Beschaffungswesen",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/417/de",
+      "stand": "2017-02-15",
+      "nummer": "17.019",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2017-02-15",
+          "res": "fga/2017/417"
+        },
+        {
+          "code": 300,
+          "datum": "2019-06-21",
+          "res": "fga/2019/1590"
+        },
+        {
+          "code": 400,
+          "datum": "2019-10-10"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-1154": {
+      "titel": "Botschaft zur Harmonisierung der Strafrahmen und zur Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/1154/de",
+      "stand": "2018-04-25",
+      "nummer": "18.043",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2010-09-21",
+          "res": "fga/2010/1034"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1155"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1156"
+        },
+        {
+          "code": 200,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1154"
+        },
+        {
+          "code": 4,
+          "datum": "2021-02-05",
+          "res": "fga/2021/157"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2996"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2997"
+        },
+        {
+          "code": 2,
+          "datum": "2022-02-17",
+          "res": "fga/2022/688"
+        },
+        {
+          "code": 301,
+          "datum": "2022-02-17",
+          "res": "fga/2022/687"
+        },
+        {
+          "code": 400,
+          "datum": "2022-04-07"
+        },
+        {
+          "code": 201,
+          "datum": "2022-04-13",
+          "res": "fga/2022/1011"
+        },
+        {
+          "code": 300,
+          "datum": "2023-06-16",
+          "res": "fga/2023/1521"
+        },
+        {
+          "code": 400,
+          "datum": "2023-10-05"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6010/51/cons_1"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6021/4/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-2548": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über das Internationale Privatrecht (12. Kapitel: Internationale Schiedsgerichtsbarkeit)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/2548/de",
+      "stand": "2018-10-24",
+      "nummer": "18.076",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2018-10-24",
+          "res": "fga/2018/2548"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2020/1303"
+        },
+        {
+          "code": 400,
+          "datum": "2020-10-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2019-2368": {
+      "titel": "Botschaft zur Änderung der Strafprozessordnung (Umsetzung der Motion 14.3383, Kommission für Rechtsfragen des Ständerats, Anpassung der Strafprozessordnung)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2019/2368/de",
+      "stand": "2019-08-28",
+      "nummer": "19.048",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2017-12-12",
+          "res": "fga/2017/2281"
+        },
+        {
+          "code": 8,
+          "datum": "2017-12-12",
+          "res": "fga/2017/2281"
+        },
+        {
+          "code": 2,
+          "datum": "2019-08-28",
+          "res": "fga/2019/2369"
+        },
+        {
+          "code": 200,
+          "datum": "2019-08-28",
+          "res": "fga/2019/2368"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/2015"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 300,
+          "datum": "2022-06-17",
+          "res": "fga/2022/1560"
+        },
+        {
+          "code": 400,
+          "datum": "2022-10-06"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6017/87/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2020-653": {
+      "titel": "Botschaft zur Änderung der Schweizerischen Zivilprozessordnung (Verbesserung der Praxistauglichkeit und der Rechtsdurchsetzung)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2020/653/de",
+      "stand": "2020-02-26",
+      "nummer": "20.026",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2018-03-13",
+          "res": "fga/2018/471"
+        },
+        {
+          "code": 2,
+          "datum": "2020-02-26",
+          "res": "fga/2020/654"
+        },
+        {
+          "code": 200,
+          "datum": "2020-02-26",
+          "res": "fga/2020/653"
+        },
+        {
+          "code": 300,
+          "datum": "2023-03-17",
+          "res": "fga/2023/786"
+        },
+        {
+          "code": 400,
+          "datum": "2023-07-06"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6018/18/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2023-1602": {
+      "titel": "Botschaft zur Änderung des Energiegesetzes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2023/1602/de",
+      "stand": "2023-06-21",
+      "nummer": "23.051",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2022-02-10",
+          "res": "fga/2022/295"
+        },
+        {
+          "code": 2,
+          "datum": "2023-06-21",
+          "res": "fga/2023/1603"
+        },
+        {
+          "code": 200,
+          "datum": "2023-06-21",
+          "res": "fga/2023/1602"
+        },
+        {
+          "code": 300,
+          "datum": "2025-03-21",
+          "res": "fga/2025/1101"
+        },
+        {
+          "code": 400,
+          "datum": "2025-07-10"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/2022/4/cons_1"
         }
       ]
     }

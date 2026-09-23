@@ -1,13 +1,55 @@
 {
   "erlass": "GSCHV",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2000/121": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2000/121/de",
+      "titel": "Verordnung zum Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "as": "AS 2000 703",
+      "inkraft": "2000-03-01"
+    },
+    "oc/2003/171": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2003/171/de",
+      "titel": "Verordnung über umweltgefährdende Stoffe (Stoffverordnung, StoV)",
+      "as": "AS 2003 940",
+      "inkraft": "2003-05-01"
+    },
+    "oc/2005/464": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/464/de",
+      "titel": "Verordnung über die Aufhebung und Änderung von Verordnungen im Zusammenhang mit dem Inkrafttreten des Chemikaliengesetzes",
+      "as": "AS 2005 2695",
+      "inkraft": "2005-08-01"
+    },
+    "oc/2005/551": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/551/de",
+      "titel": "Verordnung über den Verkehr mit Abfällen (VeVA)",
+      "as": "AS 2005 4199",
+      "inkraft": "2006-01-01"
+    },
     "oc/2006/657": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2006/657/de",
       "titel": "Gewässerschutzverordnung (GSchV)",
       "as": "AS 2006 4291",
       "inkraft": "2007-01-01"
+    },
+    "oc/2007/789": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/789/de",
+      "titel": "Verordnung über Anpassungen des Verordnungsrechts an die Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen",
+      "as": "AS 2007 5823",
+      "inkraft": "2008-01-01"
+    },
+    "oc/2008/389": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/389/de",
+      "titel": "Verordnung über Geoinformation (Geoinformationsverordnung, GeoIV)",
+      "as": "AS 2008 2809",
+      "inkraft": "2008-07-01"
+    },
+    "oc/2010/841": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/841/de",
+      "titel": "Verordnung über Höchstbestände in der Fleisch- und Eierproduktion (Höchstbestandesverordnung, HBV)",
+      "as": "AS 2010 5881",
+      "inkraft": "2011-01-01"
     },
     "oc/2011/290": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2011/290/de",
@@ -15,11 +57,35 @@
       "as": "AS 2011 1955",
       "inkraft": "2011-06-01"
     },
+    "oc/2011/350": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/350/de",
+      "titel": "Verordnung über Höchstbestände in der Fleisch- und Eierproduktion (Höchstbestandesverordnung, HBV)",
+      "as": "AS 2011 2407",
+      "inkraft": "2011-07-01"
+    },
     "oc/2011/454": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2011/454/de",
       "titel": "Verordnung über Anpassungen von Verordnungen im Umweltbereich",
       "as": "AS 2011 3379",
       "inkraft": "2011-08-01"
+    },
+    "oc/2013/765": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/765/de",
+      "titel": "Verordnung über die Direktzahlungen an die Landwirtschaft (Direktzahlungsverordnung, DZV)",
+      "as": "AS 2013 4145",
+      "inkraft": "2014-01-01"
+    },
+    "oc/2015/545": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/545/de",
+      "titel": "Verordnung über die Umweltverträglichkeitsprüfung (UVPV)",
+      "as": "AS 2015 2903",
+      "inkraft": "2015-10-01"
+    },
+    "oc/2015/63": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/63/de",
+      "titel": "Verordnung über Anpassungen des Verordnungsrechts im Umweltbereich, insbesondere hinsichtlich der Programmvereinbarungen für die Programmperiode 20162019",
+      "as": "AS 2015 427",
+      "inkraft": "2015-03-01"
     },
     "oc/2015/786": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2015/786/de",
@@ -33,11 +99,35 @@
       "as": "AS 2017 2585",
       "inkraft": "2017-05-01"
     },
+    "oc/2017/763": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/763/de",
+      "titel": "Energieverordnung (EnV)",
+      "as": "AS 2017 6889",
+      "inkraft": "2018-01-01"
+    },
+    "oc/2022/737": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/737/de",
+      "titel": "Verordnung über die Direktzahlungen an die Landwirtschaft (Direktzahlungsverordnung, DZV)",
+      "as": "AS 2022 737",
+      "inkraft": "2023-01-01"
+    },
     "oc/2023/3": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2023/3/de",
       "titel": "Gewässerschutzverordnung (GSchV)",
       "as": "AS 2023 3",
       "inkraft": "2023-02-01"
+    },
+    "oc/2025/450": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2025/450/de",
+      "titel": "Verordnung vom 25. Juni 2025 über den Wasserbau (Wasserbauverordnung, WBV)",
+      "as": "AS 2025 450",
+      "inkraft": "2025-08-01"
+    },
+    "oc/2025/745": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2025/745/de",
+      "titel": "Verordnung über die Vermeidung und Entsorgung von Abfällen (Abfallverordnung, VVEA)",
+      "as": "AS 2025 745",
+      "inkraft": "2025-12-01"
     }
   },
   "botschaften": {}

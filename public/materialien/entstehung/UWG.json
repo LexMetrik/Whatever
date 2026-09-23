@@ -1,14 +1,65 @@
 {
   "erlass": "UWG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/1992/1514_1514_1514": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1992/1514_1514_1514/de",
+      "titel": "Bundesgesetz gegen den unlauteren Wettbewerb, Änderung",
+      "as": "AS 1992 1514",
+      "inkraft": "1992-08-01"
+    },
+    "oc/1994/375_375_375": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1994/375_375_375/de",
+      "titel": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG), Änderung",
+      "as": "AS 1994 375",
+      "inkraft": "1994-04-01"
+    },
+    "oc/1995/4086_4086_4086": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1995/4086_4086_4086/de",
+      "titel": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG), Änderung",
+      "as": "AS 1995 4086",
+      "inkraft": "1995-11-01"
+    },
+    "oc/2002/593": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2002/593/de",
+      "titel": "Bundesgesetz über den Konsumkredit (KKG)",
+      "as": "AS 2002 3846",
+      "inkraft": "2003-01-01"
+    },
     "oc/2006/366": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2006/366/de",
       "titel": "Bundesbeschluss über die Genehmigung und die Umsetzung des Strafrechtsübereinkommens und des Zusatzprotokolls des Europarates über Korruption",
       "as": "AS 2006 2371",
       "inkraft": "2006-07-01",
       "botschaft": "BOTSCHAFT-2004-1217"
+    },
+    "oc/2006/549": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "titel": "Schweizerisches Strafgesetzbuch",
+      "as": "AS 2006 3459",
+      "inkraft": "2007-01-01"
+    },
+    "oc/2007/165": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/165/de",
+      "titel": "Fernmeldegesetz (FMG)",
+      "as": "AS 2007 921",
+      "inkraft": "2007-04-01",
+      "botschaft": "BOTSCHAFT-2003-1351"
+    },
+    "oc/2010/262": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "titel": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "as": "AS 2010 1739",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2006-914"
+    },
+    "oc/2010/267": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "titel": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "as": "AS 2010 1881",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2006-124"
     },
     "oc/2011/703": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2011/703/de",
@@ -17,20 +68,94 @@
       "inkraft": "2012-04-01",
       "botschaft": "BOTSCHAFT-2009-1106"
     },
+    "oc/2012/419": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/419/de",
+      "titel": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+      "as": "AS 2012 3655",
+      "inkraft": "2013-01-01"
+    },
+    "oc/2012/734": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/734/de",
+      "titel": "Bundesgesetz über das Messwesen (Messgesetz, MessG)",
+      "as": "AS 2012 6235",
+      "inkraft": "2013-01-01"
+    },
+    "oc/2014/184": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2014/184/de",
+      "titel": "Obligationenrecht (Aufhebung der Bestimmungen zum Vorauszahlungsvertrag)",
+      "as": "AS 2014 869",
+      "inkraft": "2014-07-01"
+    },
     "oc/2015/933": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2015/933/de",
       "titel": "Bundesbeschluss über die Genehmigung und die Umsetzung des Strafrechtsübereinkommens und des Zusatzprotokolls des Europarates über Korruption (Betrifft nur den italienischen Text)",
       "as": "AS 2015 5999",
       "inkraft": "2015-12-31"
     },
+    "oc/2016/257": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/257/de",
+      "titel": "Schweizerisches Strafgesetzbuch (Korruptionsstrafrecht)",
+      "as": "AS 2016 1287",
+      "inkraft": "2016-07-01",
+      "botschaft": "BOTSCHAFT-2014-787"
+    },
+    "oc/2020/1019": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/1019/de",
+      "titel": "Fernmeldegesetz (FMG)",
+      "as": "AS 2020 6159",
+      "inkraft": "2021-01-01",
+      "botschaft": "BOTSCHAFT-2017-1933"
+    },
+    "oc/2021/576": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/576/de",
+      "titel": "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
+      "as": "AS 2021 576",
+      "inkraft": "2022-01-01",
+      "botschaft": "BOTSCHAFT-2019-1720"
+    },
+    "oc/2022/491": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "titel": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "as": "AS 2022 491",
+      "inkraft": "2023-09-01",
+      "botschaft": "BOTSCHAFT-2017-2057"
+    },
     "oc/2022/690": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2022/690/de",
       "titel": "Bundesgesetz gegen den unlauteren Wettbewerb (UWG)",
       "as": "AS 2022 690",
       "inkraft": "2022-12-01"
+    },
+    "oc/2024/376": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/376/de",
+      "titel": "Bundesgesetz über die Reduktion der CO2-Emissionen (CO2-Gesetz)",
+      "as": "AS 2024 376",
+      "inkraft": "2025-01-01"
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2003-1351": {
+      "titel": "Botschaft zur Änderung des Fernmeldegesetzes (FMG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/1351/de",
+      "stand": "2003-11-12",
+      "nummer": "03.073",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2003-11-12",
+          "res": "fga/2003/1351"
+        },
+        {
+          "code": 300,
+          "datum": "2006-03-24",
+          "res": "fga/2006/376"
+        },
+        {
+          "code": 400,
+          "datum": "2006-07-13"
+        }
+      ]
+    },
     "BOTSCHAFT-2004-1217": {
       "titel": "Botschaft über die Genehmigung und die Umsetzung des Strafrechts-Übereinkommens und des Zusatzprotokoll des Europarates über Korruption (Änderung des Strafgesetzbuches und des Bundesgesetzes gegen den unlauteren Wettbewerb)",
       "url": "https://www.fedlex.admin.ch/eli/fga/2004/1217/de",
@@ -53,6 +178,50 @@
         }
       ]
     },
+    "BOTSCHAFT-2006-124": {
+      "titel": "Botschaft zur Vereinheitlichung des Strafprozessrechts",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/124/de",
+      "stand": "2005-12-21",
+      "nummer": "05.092",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2005-12-21",
+          "res": "fga/2006/124"
+        },
+        {
+          "code": 300,
+          "datum": "2007-10-05",
+          "res": "fga/2007/1074"
+        },
+        {
+          "code": 400,
+          "datum": "2008-01-24"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-914": {
+      "titel": "Botschaft zur Schweizerischen Zivilprozessordnung (ZPO)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/914/de",
+      "stand": "2006-06-28",
+      "nummer": "06.062",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/914"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/6"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
+        }
+      ]
+    },
     "BOTSCHAFT-2009-1106": {
       "titel": "Botschaft zur Änderung des Bundesgesetzes gegen den unlauteren Wettbewerb (UWG)",
       "url": "https://www.fedlex.admin.ch/eli/fga/2009/1106/de",
@@ -72,6 +241,121 @@
         {
           "code": 400,
           "datum": "2011-10-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-787": {
+      "titel": "Botschaft über die Änderung des Strafgesetzbuchs (Korruptionsstrafrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/787/de",
+      "stand": "2014-04-30",
+      "nummer": "14.035",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2014-04-30",
+          "res": "fga/2014/787"
+        },
+        {
+          "code": 300,
+          "datum": "2015-09-25",
+          "res": "fga/2015/1702"
+        },
+        {
+          "code": 400,
+          "datum": "2016-01-14"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-1933": {
+      "titel": "Botschaft zur Revision des Fernmeldegesetzes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/1933/de",
+      "stand": "2017-09-06",
+      "nummer": "17.058",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2017-09-06",
+          "res": "fga/2017/1933"
+        },
+        {
+          "code": 300,
+          "datum": "2019-03-22",
+          "res": "fga/2019/731"
+        },
+        {
+          "code": 400,
+          "datum": "2019-07-11"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-2057": {
+      "titel": "Botschaft zum Bundesgesetz über die Totalrevision des Bundesgesetzes über den Datenschutz und die Änderung weiterer Erlasse zum Datenschutz",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/2057/de",
+      "stand": "2017-09-15",
+      "nummer": "17.059",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2016-12-28",
+          "res": "fga/2016/2181"
+        },
+        {
+          "code": 200,
+          "datum": "2017-09-15",
+          "res": "fga/2017/2057"
+        },
+        {
+          "code": 300,
+          "datum": "2018-09-28",
+          "res": "fga/2018/2139"
+        },
+        {
+          "code": 400,
+          "datum": "2019-01-17"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/1998"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6016/61/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2019-1720": {
+      "titel": "Botschaft zur Volksinitiative «Stop der Hochpreisinsel  für faire Preise (Fair-Preis-Initiative)» und zum indirekten Gegenvorschlag (Änderung des Kartellgesetzes)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2019/1720/de",
+      "stand": "2019-05-29",
+      "nummer": "19.037",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2018-08-28",
+          "res": "fga/2018/1804"
+        },
+        {
+          "code": 200,
+          "datum": "2019-05-29",
+          "res": "fga/2019/1720"
+        },
+        {
+          "code": 300,
+          "datum": "2021-03-19",
+          "res": "fga/2021/757"
+        },
+        {
+          "code": 400,
+          "datum": "2021-07-19"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6018/58/cons_1"
         }
       ]
     }

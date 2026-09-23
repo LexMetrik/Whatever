@@ -1,13 +1,60 @@
 {
   "erlass": "VAG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2010/262": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "titel": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "as": "AS 2010 1739",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2006-914"
+    },
+    "oc/2011/559": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/559/de",
+      "titel": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Sicherung der Einlagen)",
+      "as": "AS 2011 3919",
+      "inkraft": "2011-09-01",
+      "botschaft": "BOTSCHAFT-2010-655"
+    },
+    "oc/2012/810": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/810/de",
+      "titel": "Obligationenrecht (Rechnungslegungsrecht)",
+      "as": "AS 2012 6679",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2008-416"
+    },
+    "oc/2014/685": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2014/685/de",
+      "titel": "Bundesgesetz über die Zulassung und Beaufsichtigung der Revisorinnen und Revisoren (Revisionsaufsichtsgesetz) (Bündelung der Aufsicht über Revisionsunternehmen und Prüfgesellschaften)",
+      "as": "AS 2014 4073",
+      "inkraft": "2015-01-01"
+    },
     "oc/2015/305": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2015/305/de",
       "titel": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
       "as": "AS 2015 1539",
       "inkraft": "2015-07-01"
+    },
+    "oc/2015/839": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/839/de",
+      "titel": "Bundesgesetz betreffend die Aufsicht über die soziale Krankenversicherung (Krankenversicherungsaufsichtsgesetz, KVAG)",
+      "as": "AS 2015 5137",
+      "inkraft": "2016-01-01"
+    },
+    "oc/2015/853": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/853/de",
+      "titel": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+      "as": "AS 2015 5339",
+      "inkraft": "2016-01-01",
+      "botschaft": "BOTSCHAFT-2014-1633"
+    },
+    "oc/2018/801": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
+      "titel": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+      "as": "AS 2018 5247",
+      "inkraft": "2019-01-01",
+      "botschaft": "BOTSCHAFT-2015-2141"
     },
     "oc/2023/355": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2023/355/de",
@@ -15,9 +62,139 @@
       "as": "AS 2023 355",
       "inkraft": "2024-01-01",
       "botschaft": "BOTSCHAFT-2020-2421"
+    },
+    "oc/2024/424": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/424/de",
+      "titel": "Bundesgesetz über die Regulierung der Versicherungsvermittlertätigkeit",
+      "as": "AS 2024 424",
+      "inkraft": "2024-09-01"
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2006-914": {
+      "titel": "Botschaft zur Schweizerischen Zivilprozessordnung (ZPO)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/914/de",
+      "stand": "2006-06-28",
+      "nummer": "06.062",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/914"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/6"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2008-416": {
+      "titel": "Botschaft zur Änderung des Obligationenrechts. (Aktienrecht und Rechnungslegungsrecht sowie Anpassungen im Recht der Kollektiv- und der Kommanditgesellschaft, im GmbH-Recht, Genossenschafts-, Handelsregister- sowie Firmenrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2008/416/de",
+      "stand": "2007-12-21",
+      "nummer": "08.011",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2007-12-21",
+          "res": "fga/2008/416"
+        },
+        {
+          "code": 300,
+          "datum": "2011-06-17",
+          "res": "fga/2011/772"
+        },
+        {
+          "code": 400,
+          "datum": "2011-10-06"
+        },
+        {
+          "code": 300,
+          "datum": "2011-12-23",
+          "res": "fga/2012/10"
+        },
+        {
+          "code": 400,
+          "datum": "2012-04-13"
+        }
+      ]
+    },
+    "BOTSCHAFT-2010-655": {
+      "titel": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2010/655/de",
+      "stand": "2010-05-12",
+      "nummer": "10.049",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2010-05-12",
+          "res": "fga/2010/655"
+        },
+        {
+          "code": 300,
+          "datum": "2011-03-18",
+          "res": "fga/2011/389"
+        },
+        {
+          "code": 400,
+          "datum": "2011-07-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-1633": {
+      "titel": "Botschaft zum Finanzmarktinfrastrukturgesetz (FinfraG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/1633/de",
+      "stand": "2014-09-03",
+      "nummer": "14.061",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2014-09-03",
+          "res": "fga/2014/1633"
+        },
+        {
+          "code": 300,
+          "datum": "2015-06-19",
+          "res": "fga/2015/1179"
+        },
+        {
+          "code": 400,
+          "datum": "2015-10-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2015-2141": {
+      "titel": "Botschaft zum Finanzdienstleistungsgesetz (FIDLEG) und zum Finanzinstitutsgesetz (FINIG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2015/2141/de",
+      "stand": "2015-11-04",
+      "nummer": "15.073",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2015-11-04",
+          "res": "fga/2015/2141"
+        },
+        {
+          "code": 300,
+          "datum": "2018-06-15",
+          "res": "fga/2018/1354"
+        },
+        {
+          "code": 300,
+          "datum": "2018-06-15",
+          "res": "fga/2018/1355"
+        },
+        {
+          "code": 400,
+          "datum": "2018-10-04"
+        }
+      ]
+    },
     "BOTSCHAFT-2020-2421": {
       "titel": "Botschaft zur Änderung des Versicherungsaufsichtsgesetzes (VAG)",
       "url": "https://www.fedlex.admin.ch/eli/fga/2020/2421/de",

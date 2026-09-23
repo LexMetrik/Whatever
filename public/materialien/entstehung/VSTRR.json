@@ -1,7 +1,7 @@
 {
   "erlass": "VSTRR",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
     "oc/2000/326": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2000/326/de",
@@ -9,12 +9,374 @@
       "as": "AS 2000 2141",
       "inkraft": "2000-10-01"
     },
+    "oc/2005/782": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "titel": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "as": "AS 2005 5685",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2003-194"
+    },
+    "oc/2006/551": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/551/de",
+      "titel": "Bundesgesetz über das Jugendstrafrecht (Jugendstrafgesetz, JStG)",
+      "as": "AS 2006 3545",
+      "inkraft": "2007-01-01"
+    },
+    "oc/2007/249": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/249/de",
+      "titel": "Zollgesetz (ZG)",
+      "as": "AS 2007 1411",
+      "inkraft": "2007-05-01"
+    },
+    "oc/2010/226": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/226/de",
+      "titel": "Schweizerische Jugendstrafprozessordnung (Jugendstrafprozessordnung, JStPO)",
+      "as": "AS 2010 1573",
+      "inkraft": "2011-01-01"
+    },
+    "oc/2010/267": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/267/de",
+      "titel": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "as": "AS 2010 1881",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2006-124"
+    },
+    "oc/2010/444": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/444/de",
+      "titel": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "as": "AS 2010 3267",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2008-1395"
+    },
+    "oc/2011/114": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "as": "AS 2011 725",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2006-899"
+    },
+    "oc/2013/177": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/177/de",
+      "titel": "Bundesgesetz über die Anpassung von verfahrensrechtlichen Bestimmungen zum anwaltlichen Berufsgeheimnis",
+      "as": "AS 2013 847",
+      "inkraft": "2013-05-01"
+    },
+    "oc/2016/380": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/380/de",
+      "titel": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+      "as": "AS 2016 2329",
+      "inkraft": "2016-10-01",
+      "botschaft": "BOTSCHAFT-2013-1078"
+    },
     "oc/2018/723": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2018/723/de",
       "titel": "Verordnung über die Änderung des Bundesgesetzes über das Verwaltungsstrafrecht",
       "as": "AS 2018 4587",
       "inkraft": "2019-01-01"
+    },
+    "oc/2018/801": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
+      "titel": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+      "as": "AS 2018 5247",
+      "inkraft": "2019-01-01",
+      "botschaft": "BOTSCHAFT-2015-2141"
+    },
+    "oc/2019/758": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2019/758/de",
+      "titel": "Bundesgesetz über die Finanzdienstleistungen (Finanzdienstleistungsgesetz, FIDLEG)",
+      "as": "AS 2019 4417",
+      "inkraft": "2020-01-01",
+      "botschaft": "BOTSCHAFT-2015-2141"
+    },
+    "oc/2022/491": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "titel": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "as": "AS 2022 491",
+      "inkraft": "2023-09-01",
+      "botschaft": "BOTSCHAFT-2017-2057"
+    },
+    "oc/2023/259": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
+      "titel": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+      "as": "AS 2023 259",
+      "inkraft": "2023-07-01",
+      "botschaft": "BOTSCHAFT-2018-1154"
     }
   },
-  "botschaften": {}
+  "botschaften": {
+    "BOTSCHAFT-2003-194": {
+      "titel": "Botschaft zum Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/194/de",
+      "stand": "2002-11-29",
+      "nummer": "02.090",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2002-11-29",
+          "res": "fga/2003/194"
+        },
+        {
+          "code": 300,
+          "datum": "2004-06-18",
+          "res": "fga/2004/596"
+        },
+        {
+          "code": 400,
+          "datum": "2004-10-07"
+        },
+        {
+          "code": 480,
+          "datum": "2004-10-20",
+          "res": "fga/2004/1065"
+        },
+        {
+          "code": 630,
+          "datum": "2005-04-11",
+          "res": "fga/2005/401"
+        },
+        {
+          "code": 650,
+          "datum": "2005-06-05",
+          "res": "fga/2005/782"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-124": {
+      "titel": "Botschaft zur Vereinheitlichung des Strafprozessrechts",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/124/de",
+      "stand": "2005-12-21",
+      "nummer": "05.092",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2005-12-21",
+          "res": "fga/2006/124"
+        },
+        {
+          "code": 300,
+          "datum": "2007-10-05",
+          "res": "fga/2007/1074"
+        },
+        {
+          "code": 400,
+          "datum": "2008-01-24"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-899": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Erwachsenenschutz, Personen- und Kindesrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/899/de",
+      "stand": "2006-06-28",
+      "nummer": "06.063",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/899"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/7"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2008-1395": {
+      "titel": "Botschaft zum Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2008/1395/de",
+      "stand": "2008-09-10",
+      "nummer": "08.066",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2008-09-10",
+          "res": "fga/2008/1395"
+        },
+        {
+          "code": 300,
+          "datum": "2010-03-19",
+          "res": "fga/2010/347"
+        },
+        {
+          "code": 400,
+          "datum": "2010-07-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2013-1078": {
+      "titel": "Botschaft zur Änderung des Strafgesetzbuchs und des Militärstrafgesetzes (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2013/1078/de",
+      "stand": "2013-06-26",
+      "nummer": "13.056",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-06-26",
+          "res": "fga/2013/1078"
+        },
+        {
+          "code": 300,
+          "datum": "2015-03-20",
+          "res": "fga/2015/546"
+        },
+        {
+          "code": 400,
+          "datum": "2015-07-09"
+        },
+        {
+          "code": 400
+        }
+      ]
+    },
+    "BOTSCHAFT-2015-2141": {
+      "titel": "Botschaft zum Finanzdienstleistungsgesetz (FIDLEG) und zum Finanzinstitutsgesetz (FINIG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2015/2141/de",
+      "stand": "2015-11-04",
+      "nummer": "15.073",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2015-11-04",
+          "res": "fga/2015/2141"
+        },
+        {
+          "code": 300,
+          "datum": "2018-06-15",
+          "res": "fga/2018/1354"
+        },
+        {
+          "code": 300,
+          "datum": "2018-06-15",
+          "res": "fga/2018/1355"
+        },
+        {
+          "code": 400,
+          "datum": "2018-10-04"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-2057": {
+      "titel": "Botschaft zum Bundesgesetz über die Totalrevision des Bundesgesetzes über den Datenschutz und die Änderung weiterer Erlasse zum Datenschutz",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/2057/de",
+      "stand": "2017-09-15",
+      "nummer": "17.059",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2016-12-28",
+          "res": "fga/2016/2181"
+        },
+        {
+          "code": 200,
+          "datum": "2017-09-15",
+          "res": "fga/2017/2057"
+        },
+        {
+          "code": 300,
+          "datum": "2018-09-28",
+          "res": "fga/2018/2139"
+        },
+        {
+          "code": 400,
+          "datum": "2019-01-17"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/1998"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6016/61/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-1154": {
+      "titel": "Botschaft zur Harmonisierung der Strafrahmen und zur Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/1154/de",
+      "stand": "2018-04-25",
+      "nummer": "18.043",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2010-09-21",
+          "res": "fga/2010/1034"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1155"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1156"
+        },
+        {
+          "code": 200,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1154"
+        },
+        {
+          "code": 4,
+          "datum": "2021-02-05",
+          "res": "fga/2021/157"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2996"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2997"
+        },
+        {
+          "code": 2,
+          "datum": "2022-02-17",
+          "res": "fga/2022/688"
+        },
+        {
+          "code": 301,
+          "datum": "2022-02-17",
+          "res": "fga/2022/687"
+        },
+        {
+          "code": 400,
+          "datum": "2022-04-07"
+        },
+        {
+          "code": 201,
+          "datum": "2022-04-13",
+          "res": "fga/2022/1011"
+        },
+        {
+          "code": 300,
+          "datum": "2023-06-16",
+          "res": "fga/2023/1521"
+        },
+        {
+          "code": 400,
+          "datum": "2023-10-05"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6010/51/cons_1"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6021/4/cons_1"
+        }
+      ]
+    }
+  }
 }

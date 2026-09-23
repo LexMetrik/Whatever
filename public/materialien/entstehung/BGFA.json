@@ -1,7 +1,7 @@
 {
   "erlass": "BGFA",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
     "oc/2002/318": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2002/318/de",
@@ -16,6 +16,31 @@
       "as": "AS 2006 4399",
       "inkraft": "2007-01-01",
       "botschaft": "BOTSCHAFT-2005-1029"
+    },
+    "oc/2010/705": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/705/de",
+      "titel": "Bundesgesetz über die Unternehmens-Identifikationsnummer (UIDG)",
+      "as": "AS 2010 4989",
+      "inkraft": "2011-01-01"
+    },
+    "oc/2021/85": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/85/de",
+      "titel": "Bundesbeschluss vom 25. September 2020 über die Genehmigung und die Umsetzung des Abkommens zwischen der Schweiz und dem Vereinigten Königreich über die Rechte der Bürgerinnen und Bürger infolge des Austritts des Vereinigten Königreichs aus der Europäischen Union und des Wegfalls des Freizügigkeitsabkommens",
+      "as": "AS 2021 85",
+      "inkraft": "2021-03-01",
+      "botschaft": "BOTSCHAFT-2020-226"
+    },
+    "oc/2022/600": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/600/de",
+      "titel": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+      "as": "AS 2022 600",
+      "inkraft": "2023-01-23"
+    },
+    "oc/2025/477": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2025/477/de",
+      "titel": "Bundesgesetz vom 27. September 2024 über den Abschluss internationaler Verträge über die Anerkennung von Berufsqualifikationen",
+      "as": "AS 2025 477",
+      "inkraft": "2025-07-01"
     },
     "oc/2025/478": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2025/478/de",
@@ -67,6 +92,37 @@
         {
           "code": 400,
           "datum": "2006-10-12"
+        }
+      ]
+    },
+    "BOTSCHAFT-2020-226": {
+      "titel": "Botschaft zur Genehmigung und Umsetzung des Abkommens zwischen der Schweizerischen Eidgenossenschaft und dem Vereinigten Königreich von Grossbritannien und Nordirland über die Rechte der Bürgerinnen und Bürger infolge des Austritts des Vereinigten Königreichs aus der Europäischen Union und des Wegfalls des Freizügigkeitsabkommens",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2020/226/de",
+      "stand": "2019-12-06",
+      "nummer": "19.069",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2019-04-02",
+          "res": "fga/2019/739"
+        },
+        {
+          "code": 200,
+          "datum": "2019-12-06",
+          "res": "fga/2020/226"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/2017"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6019/16/cons_1"
         }
       ]
     },

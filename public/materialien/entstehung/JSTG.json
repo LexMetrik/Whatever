@@ -1,8 +1,67 @@
 {
   "erlass": "JSTG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2010/226": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/226/de",
+      "titel": "Schweizerische Jugendstrafprozessordnung (Jugendstrafprozessordnung, JStPO)",
+      "as": "AS 2010 1573",
+      "inkraft": "2011-01-01"
+    },
+    "oc/2012/696": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/696/de",
+      "titel": "Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+      "as": "AS 2012 5951",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2011-883"
+    },
+    "oc/2014/355": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2014/355/de",
+      "titel": "Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+      "as": "AS 2014 2055",
+      "inkraft": "2015-01-01",
+      "botschaft": "BOTSCHAFT-2012-1575"
+    },
+    "oc/2015/321": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/321/de",
+      "titel": "Bundesgesetz über das Informationsrecht des Opfers (Änderung des Strafgesetzbuchs, des Jugendstrafgesetzes, der Strafprozessordnung und des Militärstrafprozesses)",
+      "as": "AS 2015 1623",
+      "inkraft": "2016-01-01"
+    },
+    "oc/2016/249": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/249/de",
+      "titel": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Änderungen des Sanktionenrechts)",
+      "as": "AS 2016 1249",
+      "inkraft": "2016-07-01",
+      "botschaft": "BOTSCHAFT-2012-670"
+    },
+    "oc/2019/336": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2019/336/de",
+      "titel": "Bundesgesetz über die Änderung der Wiedergutmachungsregelung (Änderung des Strafgesetzbuchs, des Jugendstrafgesetzes und des Militärstrafgesetzes)",
+      "as": "AS 2019 1809",
+      "inkraft": "2019-07-01"
+    },
+    "oc/2022/600": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/600/de",
+      "titel": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+      "as": "AS 2022 600",
+      "inkraft": "2023-01-23"
+    },
+    "oc/2023/468": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/468/de",
+      "titel": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
+      "as": "AS 2023 468",
+      "inkraft": "2024-01-01",
+      "botschaft": "BOTSCHAFT-2019-2368"
+    },
+    "oc/2024/27": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/27/de",
+      "titel": "Bundesgesetz über eine Revision des Sexualstrafrechts",
+      "as": "AS 2024 27",
+      "inkraft": "2024-07-01",
+      "botschaft": "BOTSCHAFT-2018-1154"
+    },
     "oc/2025/224": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2025/224/de",
       "titel": "Bundesgesetz über das Jugendstrafrecht (Jugendstrafgesetz, JStG) (Massnahmenpaket Sanktionenvollzug)",
@@ -12,6 +71,209 @@
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2011-883": {
+      "titel": "Botschaft zum Bundesgesetz zur Umsetzung von Artikel 123b der Bundesverfassung über die Unverjährbarkeit sexueller und pornografischer Straftaten an Kindern vor der Pubertät (Änderung des Strafgesetzbuches, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/883/de",
+      "stand": "2011-06-22",
+      "nummer": "11.039",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2011-06-22",
+          "res": "fga/2011/883"
+        },
+        {
+          "code": 300,
+          "datum": "2012-06-15",
+          "res": "fga/2012/933"
+        },
+        {
+          "code": 400,
+          "datum": "2012-10-04"
+        },
+        {
+          "code": 400
+        }
+      ]
+    },
+    "BOTSCHAFT-2012-1575": {
+      "titel": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2012/1575/de",
+      "stand": "2012-10-10",
+      "nummer": "12.076",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2012-10-10",
+          "res": "fga/2012/1575"
+        },
+        {
+          "code": 300,
+          "datum": "2013-12-13",
+          "res": "fga/2013/1897"
+        },
+        {
+          "code": 400,
+          "datum": "2014-04-06"
+        },
+        {
+          "code": 650,
+          "datum": "2014-05-18",
+          "res": "fga/2014/1415"
+        }
+      ]
+    },
+    "BOTSCHAFT-2012-670": {
+      "titel": "Botschaft zur Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Änderungen des Sanktionenrechts)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2012/670/de",
+      "stand": "2012-04-04",
+      "nummer": "12.046",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2012-04-04",
+          "res": "fga/2012/670"
+        },
+        {
+          "code": 300,
+          "datum": "2015-06-19",
+          "res": "fga/2015/1177"
+        },
+        {
+          "code": 400,
+          "datum": "2015-10-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-1154": {
+      "titel": "Botschaft zur Harmonisierung der Strafrahmen und zur Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/1154/de",
+      "stand": "2018-04-25",
+      "nummer": "18.043",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2010-09-21",
+          "res": "fga/2010/1034"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1155"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1156"
+        },
+        {
+          "code": 200,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1154"
+        },
+        {
+          "code": 4,
+          "datum": "2021-02-05",
+          "res": "fga/2021/157"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2996"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2997"
+        },
+        {
+          "code": 2,
+          "datum": "2022-02-17",
+          "res": "fga/2022/688"
+        },
+        {
+          "code": 301,
+          "datum": "2022-02-17",
+          "res": "fga/2022/687"
+        },
+        {
+          "code": 400,
+          "datum": "2022-04-07"
+        },
+        {
+          "code": 201,
+          "datum": "2022-04-13",
+          "res": "fga/2022/1011"
+        },
+        {
+          "code": 300,
+          "datum": "2023-06-16",
+          "res": "fga/2023/1521"
+        },
+        {
+          "code": 400,
+          "datum": "2023-10-05"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6010/51/cons_1"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6021/4/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2019-2368": {
+      "titel": "Botschaft zur Änderung der Strafprozessordnung (Umsetzung der Motion 14.3383, Kommission für Rechtsfragen des Ständerats, Anpassung der Strafprozessordnung)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2019/2368/de",
+      "stand": "2019-08-28",
+      "nummer": "19.048",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2017-12-12",
+          "res": "fga/2017/2281"
+        },
+        {
+          "code": 8,
+          "datum": "2017-12-12",
+          "res": "fga/2017/2281"
+        },
+        {
+          "code": 2,
+          "datum": "2019-08-28",
+          "res": "fga/2019/2369"
+        },
+        {
+          "code": 200,
+          "datum": "2019-08-28",
+          "res": "fga/2019/2368"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/2015"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 300,
+          "datum": "2022-06-17",
+          "res": "fga/2022/1560"
+        },
+        {
+          "code": 400,
+          "datum": "2022-10-06"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6017/87/cons_1"
+        }
+      ]
+    },
     "BOTSCHAFT-2022-2991": {
       "titel": "Botschaft zur Änderung des Strafgesetzbuches und des Jugendstrafgesetzes (Massnahmenpaket Sanktionenvollzug)",
       "url": "https://www.fedlex.admin.ch/eli/fga/2022/2991/de",

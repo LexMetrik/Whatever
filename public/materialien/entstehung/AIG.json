@@ -1,14 +1,33 @@
 {
   "erlass": "AIG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-12",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2006/727": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/727/de",
+      "titel": "Asylgesetz (AsylG)",
+      "as": "AS 2006 4745",
+      "inkraft": "2006-12-16",
+      "botschaft": "BOTSCHAFT-2002-1106"
+    },
     "oc/2006/826": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2006/826/de",
       "titel": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
       "as": "AS 2006 5599",
       "inkraft": "2007-01-01",
       "botschaft": "BOTSCHAFT-2006-974"
+    },
+    "oc/2007/860": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/860/de",
+      "titel": "Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatgesetz, GSG)",
+      "as": "AS 2007 6637",
+      "inkraft": "2008-01-01"
+    },
+    "oc/2008/755": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/755/de",
+      "titel": "Verordnung über die vollständige Inkraftsetzung des Bundesbeschlusses über die Genehmigung und die Umsetzung der bilateralen Abkommen über die Assoziierung an Schengen und an Dublin sowie die Inkraftsetzung weiterer in Umsetzung von Schengen/Dublin erlassener Bundesgesetze",
+      "as": "AS 2008 5405",
+      "inkraft": "2008-12-12"
     },
     "oc/2008/756": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2008/756/de",
@@ -17,12 +36,24 @@
       "inkraft": "2008-12-12",
       "botschaft": "BOTSCHAFT-2007-1287"
     },
+    "oc/2008/759": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/759/de",
+      "titel": "Bundesgesetz über die Anwendung polizeilichen Zwangs und polizeilicher Massnahmen im Zuständigkeitsbereich des Bundes (Zwangsanwendungsgesetz, ZAG)",
+      "as": "AS 2008 5463",
+      "inkraft": "2009-01-01"
+    },
     "oc/2008/779": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2008/779/de",
       "titel": "Bundesbeschluss über die Genehmigung und die Umsetzung des Notenaustauschs zwischen der Schweiz und der Europäischen Gemeinschaft betreffend die Übernahme des Schengener Grenzkodex (Weiterentwicklung des Schengen-Besitzstands)",
       "as": "AS 2008 5629",
       "inkraft": "2008-12-12",
       "botschaft": "BOTSCHAFT-2007-1287"
+    },
+    "oc/2008/853": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/853/de",
+      "titel": "Verordnung über die Anpassung gesetzlicher Bestimmungen infolge Überführung der nachrichtendienstlichen Teile des Dienstes für Analyse und Prävention zum VBS",
+      "as": "AS 2008 6261",
+      "inkraft": "2009-01-01"
     },
     "oc/2010/272": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2010/272/de",
@@ -58,12 +89,25 @@
       "inkraft": "2011-01-24",
       "botschaft": "BOTSCHAFT-2010-6"
     },
+    "oc/2012/814": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/814/de",
+      "titel": "Bundesgesetz über den ausserprozessualen Zeugenschutz (ZeugSG)",
+      "as": "AS 2012 6715",
+      "inkraft": "2013-01-01"
+    },
     "oc/2013/226": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2013/226/de",
       "titel": "Bundesgesetz über Massnahmen gegen Zwangsheiraten",
       "as": "AS 2013 1035",
       "inkraft": "2013-07-01",
       "botschaft": "BOTSCHAFT-2011-292"
+    },
+    "oc/2013/778": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/778/de",
+      "titel": "Asylgesetz (AsylG)",
+      "as": "AS 2013 4375",
+      "inkraft": "2014-01-01",
+      "botschaft": "BOTSCHAFT-2011-1209"
     },
     "oc/2015/357": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2015/357/de",
@@ -92,6 +136,40 @@
       "as": "AS 2015 533",
       "inkraft": "2015-03-01",
       "botschaft": "BOTSCHAFT-2014-708"
+    },
+    "oc/2016/132": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "titel": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "as": "AS 2016 689",
+      "inkraft": "2017-01-01"
+    },
+    "oc/2016/249": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/249/de",
+      "titel": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Änderungen des Sanktionenrechts)",
+      "as": "AS 2016 1249",
+      "inkraft": "2016-07-01",
+      "botschaft": "BOTSCHAFT-2012-670"
+    },
+    "oc/2016/380": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/380/de",
+      "titel": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+      "as": "AS 2016 2329",
+      "inkraft": "2016-10-01",
+      "botschaft": "BOTSCHAFT-2013-1078"
+    },
+    "oc/2016/404": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/404/de",
+      "titel": "Bundesgesetz über das Schweizer Bürgerrecht (Bürgerrechtsgesetz, BüG)",
+      "as": "AS 2016 2561",
+      "inkraft": "2018-01-01",
+      "botschaft": "BOTSCHAFT-2011-422"
+    },
+    "oc/2016/521": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/521/de",
+      "titel": "Asylgesetz (AsylG)",
+      "as": "AS 2016 3101",
+      "inkraft": "2016-10-01",
+      "botschaft": "BOTSCHAFT-2014-1715"
     },
     "oc/2017/718": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2017/718/de",
@@ -141,6 +219,12 @@
       "inkraft": "2021-07-01",
       "botschaft": "BOTSCHAFT-2020-794"
     },
+    "oc/2021/565": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/565/de",
+      "titel": "Bundesgesetz vom 25. September 2020 über polizeiliche Massnahmen zur Bekämpfung von Terrorismus (PMT)",
+      "as": "AS 2021 565",
+      "inkraft": "2022-06-01"
+    },
     "oc/2021/587": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2021/587/de",
       "titel": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG) (Covid-19-Test bei der Ausschaffung)",
@@ -162,6 +246,13 @@
       "inkraft": "2022-09-01",
       "botschaft": "BOTSCHAFT-2020-1902"
     },
+    "oc/2022/491": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "titel": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "as": "AS 2022 491",
+      "inkraft": "2023-09-01",
+      "botschaft": "BOTSCHAFT-2017-2057"
+    },
     "oc/2022/818": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2022/818/de",
       "titel": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG) (Covid-19-Test bei der Ausschaffung)",
@@ -176,6 +267,13 @@
       "inkraft": "2023-04-01",
       "botschaft": "BOTSCHAFT-2020-686"
     },
+    "oc/2023/259": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
+      "titel": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+      "as": "AS 2023 259",
+      "inkraft": "2023-07-01",
+      "botschaft": "BOTSCHAFT-2018-1154"
+    },
     "oc/2024/186": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2024/186/de",
       "titel": "Bundesgesetz über die Ausländerinnen und Ausländer und über die Integration (Ausländer- und Integrationsgesetz, AIG) (Finanzielle Unterstützung von Kantonen mit Ausreisezentren an der Grenze)",
@@ -189,6 +287,19 @@
       "as": "AS 2024 188",
       "inkraft": "2024-06-01",
       "botschaft": "BOTSCHAFT-2020-1945"
+    },
+    "oc/2024/189": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/189/de",
+      "titel": "Asylgesetz (AsylG)",
+      "as": "AS 2024 189",
+      "inkraft": "2025-04-01"
+    },
+    "oc/2024/590": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/590/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Massnahmen gegen Minderjährigenheiraten)",
+      "as": "AS 2024 590",
+      "inkraft": "2025-01-01",
+      "botschaft": "BOTSCHAFT-2023-2127"
     },
     "oc/2024/713": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2024/713/de",
@@ -227,7 +338,7 @@
       "url": "https://www.fedlex.admin.ch/eli/oc/2025/348/de",
       "titel": "Bundesbeschluss über die Genehmigung und die Umsetzung des Abkommens zwischen der Schweiz und der EU zur Vertiefung der grenzüberschreitenden Zusammenarbeit (Prümer Zusammenarbeit) und des Eurodac-Protokolls zwischen der Schweiz, der EU und dem Fürstentum Liechtenstein betreffend den Zugang zu Eurodac für Gefahrenabwehr- und Strafverfolgungszwecke",
       "as": "AS 2025 348",
-      "inkraft": "2025-06-15",
+      "inkraft": "2025-08-01",
       "botschaft": "BOTSCHAFT-2021-738"
     },
     "oc/2025/349": {
@@ -293,6 +404,53 @@
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2002-1106": {
+      "titel": "Botschaft zur Änderung des Asylgesetzes zur Änderung des Bundesgesetzes über die Krankenversicherung sowie zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2002/1106/de",
+      "stand": "2002-09-04",
+      "nummer": "02.060",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2002-09-04",
+          "res": "fga/2002/1106"
+        },
+        {
+          "code": 300,
+          "datum": "2005-12-16",
+          "res": "fga/2005/1179"
+        },
+        {
+          "code": 300,
+          "datum": "2005-12-16",
+          "res": "fga/2005/1180"
+        },
+        {
+          "code": 300,
+          "datum": "2005-12-16",
+          "res": "fga/2005/1181"
+        },
+        {
+          "code": 400,
+          "datum": "2006-04-06"
+        },
+        {
+          "code": 480,
+          "datum": "2006-04-27",
+          "res": "fga/2006/490"
+        },
+        {
+          "code": 630,
+          "datum": "2006-05-12",
+          "res": "fga/2006/554"
+        },
+        {
+          "code": 650,
+          "datum": "2006-09-24",
+          "res": "fga/2006/1232"
+        }
+      ]
+    },
     "BOTSCHAFT-2006-974": {
       "titel": "Botschaft zu einer Verordnung der Bundesversammlung betreffend die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und Verwaltungsgerichtsgesetzes",
       "url": "https://www.fedlex.admin.ch/eli/fga/2006/974/de",
@@ -409,6 +567,28 @@
         }
       ]
     },
+    "BOTSCHAFT-2011-1209": {
+      "titel": "Zusatzbotschaft zur Änderung des Asylgesetzes (Kurzfristige Massnahmen)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/1209/de",
+      "stand": "2011-09-23",
+      "nummer": "10.052",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2011-09-23",
+          "res": "fga/2011/1209"
+        },
+        {
+          "code": 300,
+          "datum": "2012-12-14",
+          "res": "fga/2012/1793"
+        },
+        {
+          "code": 400,
+          "datum": "2013-04-07"
+        }
+      ]
+    },
     "BOTSCHAFT-2011-292": {
       "titel": "Botschaft zum Bundesgesetz über Massnahmen gegen Zwangsheiraten",
       "url": "https://www.fedlex.admin.ch/eli/fga/2011/292/de",
@@ -428,6 +608,75 @@
         {
           "code": 400,
           "datum": "2012-10-04"
+        },
+        {
+          "code": 400
+        }
+      ]
+    },
+    "BOTSCHAFT-2011-422": {
+      "titel": "Botschaft zur Totalrevision des Bundesgesetzes über das Schweizer Bürgerrecht (Bürgerrechtsgesetz, BüG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/422/de",
+      "stand": "2011-03-04",
+      "nummer": "11.022",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2011-03-04",
+          "res": "fga/2011/422"
+        },
+        {
+          "code": 300,
+          "datum": "2014-06-20",
+          "res": "fga/2014/1087"
+        },
+        {
+          "code": 400,
+          "datum": "2014-10-09"
+        }
+      ]
+    },
+    "BOTSCHAFT-2012-670": {
+      "titel": "Botschaft zur Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Änderungen des Sanktionenrechts)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2012/670/de",
+      "stand": "2012-04-04",
+      "nummer": "12.046",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2012-04-04",
+          "res": "fga/2012/670"
+        },
+        {
+          "code": 300,
+          "datum": "2015-06-19",
+          "res": "fga/2015/1177"
+        },
+        {
+          "code": 400,
+          "datum": "2015-10-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2013-1078": {
+      "titel": "Botschaft zur Änderung des Strafgesetzbuchs und des Militärstrafgesetzes (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2013/1078/de",
+      "stand": "2013-06-26",
+      "nummer": "13.056",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-06-26",
+          "res": "fga/2013/1078"
+        },
+        {
+          "code": 300,
+          "datum": "2015-03-20",
+          "res": "fga/2015/546"
+        },
+        {
+          "code": 400,
+          "datum": "2015-07-09"
         },
         {
           "code": 400
@@ -475,6 +724,43 @@
         {
           "code": 400,
           "datum": "2014-10-09"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-1715": {
+      "titel": "Botschaft zur Änderung des Asylgesetzes (Neustrukturierung des Asylbereichs)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/1715/de",
+      "stand": "2014-09-03",
+      "nummer": "14.063",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2014-09-03",
+          "res": "fga/2014/1715"
+        },
+        {
+          "code": 300,
+          "datum": "2015-09-25",
+          "res": "fga/2015/1704"
+        },
+        {
+          "code": 400,
+          "datum": "2016-01-14"
+        },
+        {
+          "code": 480,
+          "datum": "2016-01-25",
+          "res": "fga/2016/113"
+        },
+        {
+          "code": 630,
+          "datum": "2016-03-01",
+          "res": "fga/2016/337"
+        },
+        {
+          "code": 650,
+          "datum": "2016-08-15",
+          "res": "fga/2016/1355"
         }
       ]
     },
@@ -578,6 +864,125 @@
         {
           "code": 400,
           "datum": "2018-04-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-2057": {
+      "titel": "Botschaft zum Bundesgesetz über die Totalrevision des Bundesgesetzes über den Datenschutz und die Änderung weiterer Erlasse zum Datenschutz",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/2057/de",
+      "stand": "2017-09-15",
+      "nummer": "17.059",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2016-12-28",
+          "res": "fga/2016/2181"
+        },
+        {
+          "code": 200,
+          "datum": "2017-09-15",
+          "res": "fga/2017/2057"
+        },
+        {
+          "code": 300,
+          "datum": "2018-09-28",
+          "res": "fga/2018/2139"
+        },
+        {
+          "code": 400,
+          "datum": "2019-01-17"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/1998"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6016/61/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-1154": {
+      "titel": "Botschaft zur Harmonisierung der Strafrahmen und zur Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/1154/de",
+      "stand": "2018-04-25",
+      "nummer": "18.043",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2010-09-21",
+          "res": "fga/2010/1034"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1155"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1156"
+        },
+        {
+          "code": 200,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1154"
+        },
+        {
+          "code": 4,
+          "datum": "2021-02-05",
+          "res": "fga/2021/157"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2996"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2997"
+        },
+        {
+          "code": 2,
+          "datum": "2022-02-17",
+          "res": "fga/2022/688"
+        },
+        {
+          "code": 301,
+          "datum": "2022-02-17",
+          "res": "fga/2022/687"
+        },
+        {
+          "code": 400,
+          "datum": "2022-04-07"
+        },
+        {
+          "code": 201,
+          "datum": "2022-04-13",
+          "res": "fga/2022/1011"
+        },
+        {
+          "code": 300,
+          "datum": "2023-06-16",
+          "res": "fga/2023/1521"
+        },
+        {
+          "code": 400,
+          "datum": "2023-10-05"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6010/51/cons_1"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6021/4/cons_1"
         }
       ]
     },
@@ -1033,6 +1438,42 @@
         {
           "code": 1,
           "res": "dl/proj/2021/84/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2023-2127": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuchs (Massnahmen gegen Minderjährigenheiraten)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2023/2127/de",
+      "stand": "2023-08-23",
+      "nummer": "23.057",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2021-07-07",
+          "res": "fga/2021/1556"
+        },
+        {
+          "code": 2,
+          "datum": "2023-08-23",
+          "res": "fga/2023/2128"
+        },
+        {
+          "code": 200,
+          "datum": "2023-08-23",
+          "res": "fga/2023/2127"
+        },
+        {
+          "code": 300,
+          "datum": "2024-06-14",
+          "res": "fga/2024/1451"
+        },
+        {
+          "code": 400,
+          "datum": "2024-10-03"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/2021/31/cons_1"
         }
       ]
     },

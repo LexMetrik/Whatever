@@ -1,19 +1,156 @@
 {
   "erlass": "STPO",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2008/698": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/698/de",
+      "titel": "Bundesgesetz über die polizeilichen Informationssysteme des Bundes (BPI)",
+      "as": "AS 2008 4989",
+      "inkraft": "2008-12-05"
+    },
+    "oc/2010/444": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/444/de",
+      "titel": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "as": "AS 2010 3267",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2008-1395"
+    },
+    "oc/2010/704": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/704/de",
+      "titel": "Bundesgesetz über die Änderung von Bundesgesetzen zur Umsetzung des Römer Statuts des Internationalen Strafgerichtshofs",
+      "as": "AS 2010 4963",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2008-807"
+    },
+    "oc/2012/310": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/310/de",
+      "titel": "Schweizerisches Strafgesetzbuch",
+      "as": "AS 2012 2575",
+      "inkraft": "2012-07-01"
+    },
+    "oc/2012/460": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/460/de",
+      "titel": "Bundesgesetz über die Förderung von Sport und Bewegung (Sportförderungsgesetz, SpoFöG)",
+      "as": "AS 2012 3953",
+      "inkraft": "2012-10-01"
+    },
+    "oc/2013/177": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/177/de",
+      "titel": "Bundesgesetz über die Anpassung von verfahrensrechtlichen Bestimmungen zum anwaltlichen Berufsgeheimnis",
+      "as": "AS 2013 847",
+      "inkraft": "2013-05-01"
+    },
+    "oc/2013/178": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/178/de",
+      "titel": "Schweizerische Zivilprozessordnung und Schweizerische Strafprozessordnung (Protokollierungsvorschriften)",
+      "as": "AS 2013 851",
+      "inkraft": "2013-05-01"
+    },
     "oc/2013/230": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2013/230/de",
       "titel": "Bundesgesetz über die verdeckte Ermittlung und Fahndung (Änderung der Strafprozessordnung und des Militärstrafprozesses)",
       "as": "AS 2013 1051",
       "inkraft": "2013-05-01"
     },
+    "oc/2013/250": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/250/de",
+      "titel": "Bundesgesetz über die Börsen und den Effektenhandel (Börsengesetz, BEHG)",
+      "as": "AS 2013 1103",
+      "inkraft": "2013-05-01",
+      "botschaft": "BOTSCHAFT-2011-1111"
+    },
+    "oc/2013/48": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/48/de",
+      "titel": "Bundesgesetz über das Kriegsmaterial (Kriegsmaterialgesetz, KMG)",
+      "as": "AS 2013 295",
+      "inkraft": "2013-02-01"
+    },
+    "oc/2014/355": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2014/355/de",
+      "titel": "Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes)",
+      "as": "AS 2014 2055",
+      "inkraft": "2015-01-01",
+      "botschaft": "BOTSCHAFT-2012-1575"
+    },
     "oc/2014/684": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2014/684/de",
       "titel": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO) (Betrifft nur den französischen Text)",
       "as": "AS 2014 4071",
       "inkraft": "2014-11-25"
+    },
+    "oc/2015/321": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/321/de",
+      "titel": "Bundesgesetz über das Informationsrecht des Opfers (Änderung des Strafgesetzbuchs, des Jugendstrafgesetzes, der Strafprozessordnung und des Militärstrafprozesses)",
+      "as": "AS 2015 1623",
+      "inkraft": "2016-01-01"
+    },
+    "oc/2015/853": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/853/de",
+      "titel": "Bundesgesetz über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturgesetz, FinfraG)",
+      "as": "AS 2015 5339",
+      "inkraft": "2016-01-01",
+      "botschaft": "BOTSCHAFT-2014-1633"
+    },
+    "oc/2016/249": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/249/de",
+      "titel": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Änderungen des Sanktionenrechts)",
+      "as": "AS 2016 1249",
+      "inkraft": "2016-07-01",
+      "botschaft": "BOTSCHAFT-2012-670"
+    },
+    "oc/2016/326": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/326/de",
+      "titel": "Bundesgesetz über Verbesserungen beim Informationsaustausch zwischen Behörden im Umgang mit Waffen",
+      "as": "AS 2016 1831",
+      "inkraft": "2016-07-01",
+      "botschaft": "BOTSCHAFT-2014-67"
+    },
+    "oc/2016/380": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/380/de",
+      "titel": "Schweizerisches Strafgesetzbuch und Militärstrafgesetz (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+      "as": "AS 2016 2329",
+      "inkraft": "2016-10-01",
+      "botschaft": "BOTSCHAFT-2013-1078"
+    },
+    "oc/2016/714": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/714/de",
+      "titel": "Bundesgesetz über die Armee und die Militärverwaltung (Militärgesetz, MG)",
+      "as": "AS 2016 4277",
+      "inkraft": "2017-01-01",
+      "botschaft": "BOTSCHAFT-2014-1566"
+    },
+    "oc/2016/752": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/752/de",
+      "titel": "Bundesgesetz über Zertifizierungsdienste im Bereich der elektronischen Signatur und anderer Anwendungen digitaler Zertifikate (Bundesgesetz über die elektronische Signatur)",
+      "as": "AS 2016 4651",
+      "inkraft": "2017-01-01"
+    },
+    "oc/2017/624": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/624/de",
+      "titel": "Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG) (Schaffung einer Berufungskammer am Bundesstrafgericht)",
+      "as": "AS 2017 5769",
+      "inkraft": "2019-01-01",
+      "botschaft": "BOTSCHAFT-2016-1190"
+    },
+    "oc/2017/725": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/725/de",
+      "titel": "Ordnungsbussengesetz (OBG)",
+      "as": "AS 2017 6559",
+      "inkraft": "2018-01-01"
+    },
+    "oc/2018/31": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/31/de",
+      "titel": "Bundesgesetz betreffend die Überwachung des Post- und Fernmeldeverkehrs (BÜPF)",
+      "as": "AS 2018 117",
+      "inkraft": "2018-03-01"
+    },
+    "oc/2018/450": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/450/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Kindesschutz)",
+      "as": "AS 2018 2947",
+      "inkraft": "2019-01-01",
+      "botschaft": "BOTSCHAFT-2015-838"
     },
     "oc/2018/765": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2018/765/de",
@@ -22,6 +159,31 @@
       "inkraft": "2019-01-01",
       "botschaft": "BOTSCHAFT-2017-649"
     },
+    "oc/2018/795": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/795/de",
+      "titel": "Bundesgesetz über Geldspiele (Geldspielgesetz, BGS)",
+      "as": "AS 2018 5103",
+      "inkraft": "2019-01-01"
+    },
+    "oc/2019/111": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2019/111/de",
+      "titel": "Bundesgesetz über die Umsetzung der Richtlinie (EU) 2016/680 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten zum Zwecke der Verhütung, Ermittlung, Aufdeckung oder Verfolgung von Straftaten oder der Strafvollstreckung (Weiterentwicklung des Schengen-Besitzstands)",
+      "as": "AS 2019 625",
+      "inkraft": "2019-03-01",
+      "botschaft": "BOTSCHAFT-2017-2057"
+    },
+    "oc/2020/16": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/16/de",
+      "titel": "Bundesgesetz über die Gesundheitsberufe (Gesundheitsberufegesetz, GesBG)",
+      "as": "AS 2020 57",
+      "inkraft": "2020-02-01"
+    },
+    "oc/2021/360": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/360/de",
+      "titel": "Bundesbeschluss vom 25. September 2020 über die Genehmigung und die Umsetzung des Übereinkommens des Europarats zur Verhütung des Terrorismus mit dem dazugehörigen Zusatzprotokoll sowie über die Verstärkung des strafrechtlichen Instrumentariums gegen Terrorismus und organisierte Kriminalität",
+      "as": "AS 2021 360",
+      "inkraft": "2021-07-01"
+    },
     "oc/2021/75": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2021/75/de",
       "titel": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO) (Sicherheitshaft im selbstständigen nachträglichen Verfahren)",
@@ -29,15 +191,356 @@
       "inkraft": "2021-03-01",
       "botschaft": "BOTSCHAFT-2019-2368"
     },
+    "oc/2022/232": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/232/de",
+      "titel": "Bundesgesetz vom 18. Dezember 2020 über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG)",
+      "as": "AS 2022 232",
+      "inkraft": "2023-01-01"
+    },
+    "oc/2022/289": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/289/de",
+      "titel": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+      "as": "AS 2022 289",
+      "inkraft": "2022-07-01"
+    },
+    "oc/2022/600": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/600/de",
+      "titel": "Bundesgesetz vom 17. Juni 2016 über das Strafregister-Informationssystem VOSTRA (Strafregistergesetz, StReG)",
+      "as": "AS 2022 600",
+      "inkraft": "2023-01-23"
+    },
+    "oc/2023/259": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
+      "titel": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+      "as": "AS 2023 259",
+      "inkraft": "2023-07-01",
+      "botschaft": "BOTSCHAFT-2018-1154"
+    },
+    "oc/2023/309": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/309/de",
+      "titel": "Bundesgesetz über die Verwendung von DNA-Profilen im Strafverfahren und zur Identifizierung von unbekannten oder vermissten Personen (DNA-Profil-Gesetz)",
+      "as": "AS 2023 309",
+      "inkraft": "2023-08-01"
+    },
     "oc/2023/468": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2023/468/de",
       "titel": "Schweizerische Strafprozessordnung (Strafprozessordnung, StPO)",
       "as": "AS 2023 468",
       "inkraft": "2024-01-01",
       "botschaft": "BOTSCHAFT-2019-2368"
+    },
+    "oc/2024/212": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/212/de",
+      "titel": "Bundesgesetz vom 16. Dezember 2022 über die Förderung der Ausbildung im Bereich der Pflege",
+      "as": "AS 2024 212",
+      "inkraft": "2024-07-01"
+    },
+    "oc/2024/27": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/27/de",
+      "titel": "Bundesgesetz über eine Revision des Sexualstrafrechts",
+      "as": "AS 2024 27",
+      "inkraft": "2024-07-01",
+      "botschaft": "BOTSCHAFT-2018-1154"
+    },
+    "oc/2025/178": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2025/178/de",
+      "titel": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
+      "as": "AS 2025 178",
+      "inkraft": "2025-04-01",
+      "botschaft": "BOTSCHAFT-2023-239"
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2008-1395": {
+      "titel": "Botschaft zum Bundesgesetz über die Organisation der Strafbehörden des Bundes (Strafbehördenorganisationsgesetz, StBOG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2008/1395/de",
+      "stand": "2008-09-10",
+      "nummer": "08.066",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2008-09-10",
+          "res": "fga/2008/1395"
+        },
+        {
+          "code": 300,
+          "datum": "2010-03-19",
+          "res": "fga/2010/347"
+        },
+        {
+          "code": 400,
+          "datum": "2010-07-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2008-807": {
+      "titel": "Botschaft über die Änderung von Bundesgesetzen zur Umsetzung des Römer Statuts des Internationalen Strafgerichtshofs",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2008/807/de",
+      "stand": "2008-04-23",
+      "nummer": "08.034",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2008-04-23",
+          "res": "fga/2008/807"
+        },
+        {
+          "code": 300,
+          "datum": "2010-06-18",
+          "res": "fga/2010/727"
+        },
+        {
+          "code": 400,
+          "datum": "2010-10-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2011-1111": {
+      "titel": "Botschaft zur Änderung des Börsengesetzes (Börsendelikte und Marktmissbrauch)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/1111/de",
+      "stand": "2011-08-31",
+      "nummer": "11.050",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2011-08-31",
+          "res": "fga/2011/1111"
+        },
+        {
+          "code": 300,
+          "datum": "2012-09-28",
+          "res": "fga/2012/1393"
+        },
+        {
+          "code": 400,
+          "datum": "2013-01-17"
+        }
+      ]
+    },
+    "BOTSCHAFT-2012-1575": {
+      "titel": "Botschaft zur Volksinitiative «Pädophile sollen nicht mehr mit Kindern arbeiten dürfen» sowie zum Bundesgesetz über das Tätigkeitsverbot und das Kontakt- und Rayonverbot (Änderung des Strafgesetzbuchs, des Militärstrafgesetzes und des Jugendstrafgesetzes) als indirektem Gegenvorschlag",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2012/1575/de",
+      "stand": "2012-10-10",
+      "nummer": "12.076",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2012-10-10",
+          "res": "fga/2012/1575"
+        },
+        {
+          "code": 300,
+          "datum": "2013-12-13",
+          "res": "fga/2013/1897"
+        },
+        {
+          "code": 400,
+          "datum": "2014-04-06"
+        },
+        {
+          "code": 650,
+          "datum": "2014-05-18",
+          "res": "fga/2014/1415"
+        }
+      ]
+    },
+    "BOTSCHAFT-2012-670": {
+      "titel": "Botschaft zur Änderung des Strafgesetzbuches und des Militärstrafgesetzes (Änderungen des Sanktionenrechts)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2012/670/de",
+      "stand": "2012-04-04",
+      "nummer": "12.046",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2012-04-04",
+          "res": "fga/2012/670"
+        },
+        {
+          "code": 300,
+          "datum": "2015-06-19",
+          "res": "fga/2015/1177"
+        },
+        {
+          "code": 400,
+          "datum": "2015-10-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2013-1078": {
+      "titel": "Botschaft zur Änderung des Strafgesetzbuchs und des Militärstrafgesetzes (Umsetzung von Art. 121 Abs. 36 BV über die Ausschaffung krimineller Ausländerinnen und Ausländer)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2013/1078/de",
+      "stand": "2013-06-26",
+      "nummer": "13.056",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-06-26",
+          "res": "fga/2013/1078"
+        },
+        {
+          "code": 300,
+          "datum": "2015-03-20",
+          "res": "fga/2015/546"
+        },
+        {
+          "code": 400,
+          "datum": "2015-07-09"
+        },
+        {
+          "code": 400
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-1566": {
+      "titel": "Botschaft zur Änderung der Rechtsgrundlagen für die Weiterentwicklung der Armee",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/1566/de",
+      "stand": "2014-09-03",
+      "nummer": "14.069",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2014-09-03",
+          "res": "fga/2014/1566"
+        },
+        {
+          "code": 300,
+          "datum": "2016-03-18",
+          "res": "fga/2016/430"
+        },
+        {
+          "code": 400,
+          "datum": "2016-07-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-1633": {
+      "titel": "Botschaft zum Finanzmarktinfrastrukturgesetz (FinfraG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/1633/de",
+      "stand": "2014-09-03",
+      "nummer": "14.061",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2014-09-03",
+          "res": "fga/2014/1633"
+        },
+        {
+          "code": 300,
+          "datum": "2015-06-19",
+          "res": "fga/2015/1179"
+        },
+        {
+          "code": 400,
+          "datum": "2015-10-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-67": {
+      "titel": "Botschaft zum Bundesgesetz über Verbesserungen beim Informationsaustausch zwischen Behörden im Umgang mit Waffen",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/67/de",
+      "stand": "2013-12-13",
+      "nummer": "13.109",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-12-13",
+          "res": "fga/2014/67"
+        },
+        {
+          "code": 300,
+          "datum": "2015-09-25",
+          "res": "fga/2015/1703"
+        },
+        {
+          "code": 400,
+          "datum": "2016-01-14"
+        }
+      ]
+    },
+    "BOTSCHAFT-2015-838": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Kindesschutz)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2015/838/de",
+      "stand": "2015-04-15",
+      "nummer": "15.033",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2015-04-15",
+          "res": "fga/2015/838"
+        },
+        {
+          "code": 300,
+          "datum": "2017-12-15",
+          "res": "fga/2017/2366"
+        },
+        {
+          "code": 400,
+          "datum": "2018-04-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2016-1190": {
+      "titel": "Zusatzbotschaft zur Änderung des Bundesgesetzes über das Bundesgericht (Schaffung einer Berufungskammer am Bundesstrafgericht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2016/1190/de",
+      "stand": "2016-06-17",
+      "nummer": "zu 13.075",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2016-06-17",
+          "res": "fga/2016/1190"
+        },
+        {
+          "code": 300,
+          "datum": "2017-03-17",
+          "res": "fga/2017/470"
+        },
+        {
+          "code": 400,
+          "datum": "2017-07-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-2057": {
+      "titel": "Botschaft zum Bundesgesetz über die Totalrevision des Bundesgesetzes über den Datenschutz und die Änderung weiterer Erlasse zum Datenschutz",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/2057/de",
+      "stand": "2017-09-15",
+      "nummer": "17.059",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2016-12-28",
+          "res": "fga/2016/2181"
+        },
+        {
+          "code": 200,
+          "datum": "2017-09-15",
+          "res": "fga/2017/2057"
+        },
+        {
+          "code": 300,
+          "datum": "2018-09-28",
+          "res": "fga/2018/2139"
+        },
+        {
+          "code": 400,
+          "datum": "2019-01-17"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/1998"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6016/61/cons_1"
+        }
+      ]
+    },
     "BOTSCHAFT-2017-649": {
       "titel": "Botschaft über die Genehmigung und die Umsetzung des Übereinkommens des Europarats über die Fälschung von Arzneimitteln und Medizinprodukten und über ähnliche die öffentliche Gesundheit gefährdende Straftaten (Medicrime Konvention)",
       "url": "https://www.fedlex.admin.ch/eli/fga/2017/649/de",
@@ -57,6 +560,85 @@
         {
           "code": 400,
           "datum": "2018-01-18"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-1154": {
+      "titel": "Botschaft zur Harmonisierung der Strafrahmen und zur Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/1154/de",
+      "stand": "2018-04-25",
+      "nummer": "18.043",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2010-09-21",
+          "res": "fga/2010/1034"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1155"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1156"
+        },
+        {
+          "code": 200,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1154"
+        },
+        {
+          "code": 4,
+          "datum": "2021-02-05",
+          "res": "fga/2021/157"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2996"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2997"
+        },
+        {
+          "code": 2,
+          "datum": "2022-02-17",
+          "res": "fga/2022/688"
+        },
+        {
+          "code": 301,
+          "datum": "2022-02-17",
+          "res": "fga/2022/687"
+        },
+        {
+          "code": 400,
+          "datum": "2022-04-07"
+        },
+        {
+          "code": 201,
+          "datum": "2022-04-13",
+          "res": "fga/2022/1011"
+        },
+        {
+          "code": 300,
+          "datum": "2023-06-16",
+          "res": "fga/2023/1521"
+        },
+        {
+          "code": 400,
+          "datum": "2023-10-05"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6010/51/cons_1"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6021/4/cons_1"
         }
       ]
     },
@@ -107,6 +689,42 @@
         {
           "code": 1,
           "res": "dl/proj/6017/87/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2023-239": {
+      "titel": "Botschaft zur Änderung des Umweltschutzgesetzes (Lärm, Altlasten, Lenkungsabgaben, Finanzierung von Aus- und Weiterbildungskursen, Informations- und Dokumentationssysteme, Strafrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2023/239/de",
+      "stand": "2022-12-16",
+      "nummer": "22.085",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2021-09-16",
+          "res": "fga/2021/2107"
+        },
+        {
+          "code": 2,
+          "datum": "2022-12-16",
+          "res": "fga/2023/240"
+        },
+        {
+          "code": 200,
+          "datum": "2022-12-16",
+          "res": "fga/2023/239"
+        },
+        {
+          "code": 300,
+          "datum": "2024-09-27",
+          "res": "fga/2024/2502"
+        },
+        {
+          "code": 400,
+          "datum": "2025-01-16"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/2021/93/cons_1"
         }
       ]
     }

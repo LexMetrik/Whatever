@@ -1,8 +1,44 @@
 {
   "erlass": "KLV",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/1996/1232_1232_1232": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1996/1232_1232_1232/de",
+      "titel": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+      "as": "AS 1996 1232",
+      "inkraft": "1996-06-01"
+    },
+    "oc/1996/909_909_909": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1996/909_909_909/de",
+      "titel": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+      "as": "AS 1996 909",
+      "inkraft": "1996-05-01"
+    },
+    "oc/1997/2039_2039_2039": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1997/2039_2039_2039/de",
+      "titel": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+      "as": "AS 1997 2039",
+      "inkraft": "1998-01-01"
+    },
+    "oc/1997/2436_2436_2436": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1997/2436_2436_2436/de",
+      "titel": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+      "as": "AS 1997 2436",
+      "inkraft": "1998-01-01"
+    },
+    "oc/1997/2697_2697_2697": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1997/2697_2697_2697/de",
+      "titel": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+      "as": "AS 1997 2697",
+      "inkraft": "1997-01-01"
+    },
+    "oc/1997/564_564_564": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1997/564_564_564/de",
+      "titel": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV), Änderung",
+      "as": "AS 1997 564",
+      "inkraft": "1997-01-01"
+    },
     "oc/1998/2923_2923_2923": {
       "url": "https://www.fedlex.admin.ch/eli/oc/1998/2923_2923_2923/de",
       "titel": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV)",
@@ -37,6 +73,12 @@
       "url": "https://www.fedlex.admin.ch/eli/oc/2001/315/de",
       "titel": "Verordnung über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV)",
       "as": "AS 2001 2150",
+      "inkraft": "2001-01-01"
+    },
+    "oc/2001/514": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2001/514/de",
+      "titel": "Verordnung des EDI über die Aufhebung und Änderung von Erlassen im Zusammenhang mit dem Inkrafttreten des Heilmittelgesetzes",
+      "as": "AS 2001 3397",
       "inkraft": "2002-01-01"
     },
     "oc/2002/436": {
@@ -241,12 +283,18 @@
       "url": "https://www.fedlex.admin.ch/eli/oc/2018/339/de",
       "titel": "Verordnung des EDI über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV)",
       "as": "AS 2018 2361",
-      "inkraft": "2018-07-01"
+      "inkraft": "2018-01-01"
     },
     "oc/2018/432": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2018/432/de",
       "titel": "Verordnung des EDI über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV) (Betrifft nur den französischen Text)",
       "as": "AS 2018 2837",
+      "inkraft": "2018-07-31"
+    },
+    "oc/2018/588": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/588/de",
+      "titel": "Verordnung über die Arzneimittel (Arzneimittelverordnung, VAM)",
+      "as": "AS 2018 3577",
       "inkraft": "2019-01-01"
     },
     "oc/2019/355": {
@@ -409,7 +457,7 @@
       "url": "https://www.fedlex.admin.ch/eli/oc/2026/348/de",
       "titel": "Verordnung des EDI über Leistungen in der obligatorischen Krankenpflegeversicherung (Krankenpflege-Leistungsverordnung, KLV)",
       "as": "AS 2026 348",
-      "inkraft": "2027-01-01"
+      "inkraft": "2026-08-01"
     }
   },
   "botschaften": {}

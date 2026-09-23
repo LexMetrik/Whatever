@@ -1,8 +1,22 @@
 {
   "erlass": "ENG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2020/748": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
+      "titel": "Bundesgesetz über die Enteignung (EntG)",
+      "as": "AS 2020 4085",
+      "inkraft": "2021-01-01",
+      "botschaft": "BOTSCHAFT-2018-1660"
+    },
+    "oc/2022/491": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "titel": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "as": "AS 2022 491",
+      "inkraft": "2023-09-01",
+      "botschaft": "BOTSCHAFT-2017-2057"
+    },
     "oc/2022/543": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2022/543/de",
       "titel": "Energiegesetz (EnG) (Dringliche Massnahmen zur kurzfristigen Bereitstellung einer sicheren Stromversorgung im Winter)",
@@ -15,11 +29,23 @@
       "as": "AS 2022 729",
       "inkraft": "2023-01-01"
     },
+    "oc/2023/655": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/655/de",
+      "titel": "Bundesgesetz vom 30. September 2022 über die Ziele im Klimaschutz, die Innovation und die Stärkung der Energiesicherheit (KlG)",
+      "as": "AS 2023 655",
+      "inkraft": "2024-01-01"
+    },
     "oc/2023/804": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2023/804/de",
       "titel": "Bundesgesetz über die Beschleunigung der Bewilligungsverfahren für Windenergieanlagen (Änderung des Energiegesetzes und des Bundesgerichtsgesetzes)",
       "as": "AS 2023 804",
       "inkraft": "2024-02-01"
+    },
+    "oc/2024/648": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/648/de",
+      "titel": "Bundesgesetz über den Umweltschutz (Umweltschutzgesetz, USG)",
+      "as": "AS 2024 648",
+      "inkraft": "2025-01-01"
     },
     "oc/2024/679": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2024/679/de",
@@ -50,6 +76,68 @@
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2017-2057": {
+      "titel": "Botschaft zum Bundesgesetz über die Totalrevision des Bundesgesetzes über den Datenschutz und die Änderung weiterer Erlasse zum Datenschutz",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/2057/de",
+      "stand": "2017-09-15",
+      "nummer": "17.059",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2016-12-28",
+          "res": "fga/2016/2181"
+        },
+        {
+          "code": 200,
+          "datum": "2017-09-15",
+          "res": "fga/2017/2057"
+        },
+        {
+          "code": 300,
+          "datum": "2018-09-28",
+          "res": "fga/2018/2139"
+        },
+        {
+          "code": 400,
+          "datum": "2019-01-17"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/1998"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6016/61/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-1660": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die Enteignung",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/1660/de",
+      "stand": "2018-06-01",
+      "nummer": "18.057",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2018-06-01",
+          "res": "fga/2018/1660"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2020/1309"
+        },
+        {
+          "code": 400,
+          "datum": "2020-10-08"
+        }
+      ]
+    },
     "BOTSCHAFT-2021-1666": {
       "titel": "Botschaft zum Bundesgesetz über eine sichere Stromversorgung mit erneuerbaren Energien",
       "url": "https://www.fedlex.admin.ch/eli/fga/2021/1666/de",

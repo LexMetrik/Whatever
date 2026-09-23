@@ -1,17 +1,73 @@
 {
   "erlass": "SORTG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2000/374": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2000/374/de",
+      "titel": "Bundesgesetz über den Gerichtsstand in Zivilsachen (Gerichtsstandsgesetz, GestG)",
+      "as": "AS 2000 2355",
+      "inkraft": "2001-01-01"
+    },
+    "oc/2006/352": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "titel": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "as": "AS 2006 2197",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2001-731"
+    },
     "oc/2008/526": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2008/526/de",
       "titel": "Bundesbeschluss über die Genehmigung des revidierten internationalen Übereinkommens zum Schutz von Pflanzenzüchtungen und die Änderung des Sortenschutzgesetzes und des Patentgesetzes",
       "as": "AS 2008 3897",
       "inkraft": "2008-09-01",
       "botschaft": "BOTSCHAFT-2004-683"
+    },
+    "oc/2010/262": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "titel": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "as": "AS 2010 1739",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2006-914"
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2001-731": {
+      "titel": "Botschaft zur Totalrevision der Bundesrechtspflege",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2001/731/de",
+      "stand": "2001-02-28",
+      "nummer": "01.023",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2001-02-28",
+          "res": "fga/2001/731"
+        },
+        {
+          "code": 300,
+          "datum": "2002-10-04",
+          "res": "fga/2002/1023"
+        },
+        {
+          "code": 400,
+          "datum": "2003-01-23"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/594"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/595"
+        },
+        {
+          "code": 400,
+          "datum": "2005-10-06"
+        }
+      ]
+    },
     "BOTSCHAFT-2004-683": {
       "titel": "Botschaft über die Genehmigung des revidierten internationalen Übereinkommens zum Schutz von Pflanzenzüchtungen und die Änderung des Sortenschutzgesetzes",
       "url": "https://www.fedlex.admin.ch/eli/fga/2004/683/de",
@@ -31,6 +87,28 @@
         {
           "code": 400,
           "datum": "2008-01-24"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-914": {
+      "titel": "Botschaft zur Schweizerischen Zivilprozessordnung (ZPO)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/914/de",
+      "stand": "2006-06-28",
+      "nummer": "06.062",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/914"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/6"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
         }
       ]
     }

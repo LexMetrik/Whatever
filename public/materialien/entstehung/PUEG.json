@@ -1,8 +1,33 @@
 {
   "erlass": "PUEG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/1991/2092_2092_2092": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1991/2092_2092_2092/de",
+      "titel": "Preisüberwachungsgesetz (PüG), Änderung",
+      "as": "AS 1991 2092",
+      "inkraft": "1991-10-01"
+    },
+    "oc/1996/546_546_546": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1996/546_546_546/de",
+      "titel": "Bundesgesetz vom 6. Oktober 1995 über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
+      "as": "AS 1996 546",
+      "inkraft": "1996-02-01"
+    },
+    "oc/2006/352": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "titel": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "as": "AS 2006 2197",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2001-731"
+    },
+    "oc/2012/419": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/419/de",
+      "titel": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+      "as": "AS 2012 3655",
+      "inkraft": "2013-01-01"
+    },
     "oc/2026/206": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2026/206/de",
       "titel": "Preisüberwachungsgesetz. Berichtigung (Betrifft nur den italienischen Text)",
@@ -10,5 +35,42 @@
       "inkraft": "2026-05-08"
     }
   },
-  "botschaften": {}
+  "botschaften": {
+    "BOTSCHAFT-2001-731": {
+      "titel": "Botschaft zur Totalrevision der Bundesrechtspflege",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2001/731/de",
+      "stand": "2001-02-28",
+      "nummer": "01.023",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2001-02-28",
+          "res": "fga/2001/731"
+        },
+        {
+          "code": 300,
+          "datum": "2002-10-04",
+          "res": "fga/2002/1023"
+        },
+        {
+          "code": 400,
+          "datum": "2003-01-23"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/594"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/595"
+        },
+        {
+          "code": 400,
+          "datum": "2005-10-06"
+        }
+      ]
+    }
+  }
 }

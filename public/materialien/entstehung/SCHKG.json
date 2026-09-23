@@ -1,13 +1,49 @@
 {
   "erlass": "SCHKG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/1977/862_862_862": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1977/862_862_862/de",
+      "titel": "Bundesgesetz vom 20. März 1975 über den Schutz von Pflanzenzüchtungen (Sortenschutzgesetz)",
+      "as": "AS 1977 862",
+      "inkraft": "1977-06-01"
+    },
+    "oc/1986/122_122_122": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1986/122_122_122/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Wirkungen der Ehe im allgemeinen, Ehegüterrecht und Erbrecht), Änderung",
+      "as": "AS 1986 122",
+      "inkraft": "1988-01-01"
+    },
+    "oc/1990/802_802_802": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1990/802_802_802/de",
+      "titel": "Obligationenrecht (Miete und Pacht), Änderung",
+      "as": "AS 1990 802",
+      "inkraft": "1990-07-01"
+    },
+    "oc/1995/1227_1227_1227": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1995/1227_1227_1227/de",
+      "titel": "Bundesgesetz über Schuldbetreibung und Konkurs, Änderung",
+      "as": "AS 1995 1227",
+      "inkraft": "1997-01-01"
+    },
+    "oc/1996/1445_1445_1445": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1996/1445_1445_1445/de",
+      "titel": "Bundesgesetz vom 6. Oktober 1995 über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+      "as": "AS 1996 1445",
+      "inkraft": "1996-10-01"
+    },
     "oc/2000/401": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2000/401/de",
       "titel": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG)",
       "as": "AS 2000 2531",
       "inkraft": "2001-01-01"
+    },
+    "oc/2003/100": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2003/100/de",
+      "titel": "Zivilgesetzbuch, Obligationenrecht, Strafgesetzbuch, Bundesgesetz über Schuldbetreibung und Konkurs (Grundsatzartikel Tiere)",
+      "as": "AS 2003 463",
+      "inkraft": "2003-04-01"
     },
     "oc/2004/336": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2004/336/de",
@@ -15,11 +51,46 @@
       "as": "AS 2004 2757",
       "inkraft": "2004-07-01"
     },
+    "oc/2004/340": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/340/de",
+      "titel": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG)",
+      "as": "AS 2004 2767",
+      "inkraft": "2004-07-01",
+      "botschaft": "BOTSCHAFT-2002-1290"
+    },
     "oc/2004/589": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2004/589/de",
       "titel": "Bundesgesetz über Schuldbetreibung und Konkurs (Anmerkung des Konkurses im Grundbuch)",
       "as": "AS 2004 4033",
       "inkraft": "2005-01-01"
+    },
+    "oc/2005/782": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "titel": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "as": "AS 2005 5685",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2003-194"
+    },
+    "oc/2006/218": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/218/de",
+      "titel": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+      "as": "AS 2006 1205",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2001-731"
+    },
+    "oc/2006/822": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/822/de",
+      "titel": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+      "as": "AS 2006 5379",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2005-1000"
+    },
+    "oc/2006/826": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/826/de",
+      "titel": "Verordnung der Bundesversammlung über die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und des Verwaltungsgerichtsgesetzes",
+      "as": "AS 2006 5599",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2006-974"
     },
     "oc/2007/374": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2007/374/de",
@@ -28,11 +99,73 @@
       "inkraft": "2007-07-01",
       "botschaft": "BOTSCHAFT-2006-54"
     },
+    "oc/2007/685": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/685/de",
+      "titel": "Obligationenrecht (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht) (OR)",
+      "as": "AS 2007 4791",
+      "inkraft": "2008-01-01",
+      "botschaft": "BOTSCHAFT-2002-443"
+    },
+    "oc/2007/71": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/71/de",
+      "titel": "Bundesgesetz über Massnahmen zur Bekämpfung der Schwarzarbeit (Bundesgesetz gegen die Schwarzarbeit, BGSA)",
+      "as": "AS 2007 359",
+      "inkraft": "2008-01-01"
+    },
+    "oc/2009/450": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2009/450/de",
+      "titel": "Bundesgesetz über Bucheffekten (Bucheffektengesetz, BEG)",
+      "as": "AS 2009 3577",
+      "inkraft": "2009-10-01",
+      "botschaft": "BOTSCHAFT-2006-1228"
+    },
+    "oc/2009/615": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2009/615/de",
+      "titel": "Bundesgesetz über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG)",
+      "as": "AS 2009 5203",
+      "inkraft": "2010-01-01",
+      "botschaft": "BOTSCHAFT-2008-1202"
+    },
+    "oc/2010/262": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "titel": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "as": "AS 2010 1739",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2006-914"
+    },
     "oc/2010/688": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2010/688/de",
       "titel": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG)",
       "as": "AS 2010 4921",
       "inkraft": "2010-12-01"
+    },
+    "oc/2010/800": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/800/de",
+      "titel": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen)",
+      "as": "AS 2010 5601",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2009-402"
+    },
+    "oc/2011/114": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "as": "AS 2011 725",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2006-899"
+    },
+    "oc/2011/559": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/559/de",
+      "titel": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Sicherung der Einlagen)",
+      "as": "AS 2011 3919",
+      "inkraft": "2011-09-01",
+      "botschaft": "BOTSCHAFT-2010-655"
+    },
+    "oc/2011/666": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/666/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Register-Schuldbrief und weitere Änderungen im Sachenrecht)",
+      "as": "AS 2011 4637",
+      "inkraft": "2012-01-01",
+      "botschaft": "BOTSCHAFT-2007-756"
     },
     "oc/2013/757": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2013/757/de",
@@ -41,6 +174,19 @@
       "inkraft": "2014-01-01",
       "botschaft": "BOTSCHAFT-2010-1144"
     },
+    "oc/2015/289": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/289/de",
+      "titel": "Bundesgesetz zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière",
+      "as": "AS 2015 1389",
+      "inkraft": "2015-07-01",
+      "botschaft": "BOTSCHAFT-2014-100"
+    },
+    "oc/2016/322": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/322/de",
+      "titel": "Bundesgesetz über die Sperrung und die Rückerstattung unrechtmässig erworbener Vermögenswerte ausländischer politisch exponierter Personen (SRVG)",
+      "as": "AS 2016 1803",
+      "inkraft": "2016-07-01"
+    },
     "oc/2016/612": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2016/612/de",
       "titel": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG) (Gewerbsmässige Vertretung im Zwangsvollstreckungsverfahren)",
@@ -48,17 +194,85 @@
       "inkraft": "2018-01-01",
       "botschaft": "BOTSCHAFT-2014-1878"
     },
+    "oc/2016/752": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/752/de",
+      "titel": "Bundesgesetz über Zertifizierungsdienste im Bereich der elektronischen Signatur und anderer Anwendungen digitaler Zertifikate (Bundesgesetz über die elektronische Signatur)",
+      "as": "AS 2016 4651",
+      "inkraft": "2017-01-01"
+    },
     "oc/2017/196": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2017/196/de",
       "titel": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG) (Betrifft nur den italienischen Text)",
       "as": "AS 2017 2165",
       "inkraft": "2017-03-28"
     },
+    "oc/2017/396": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/396/de",
+      "titel": "Bundesgesetzes über die Mehrwertsteuer (Mehrwertsteuergesetz, MWSTG)",
+      "as": "AS 2017 3575",
+      "inkraft": "2018-01-01",
+      "botschaft": "BOTSCHAFT-2015-540"
+    },
     "oc/2018/721": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2018/721/de",
       "titel": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG)",
       "as": "AS 2018 4583",
       "inkraft": "2019-01-01"
+    },
+    "oc/2018/801": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
+      "titel": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+      "as": "AS 2018 5247",
+      "inkraft": "2019-01-01",
+      "botschaft": "BOTSCHAFT-2015-2141"
+    },
+    "oc/2018/807": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/807/de",
+      "titel": "Obligationenrecht (Revision des Verjährungsrechts)",
+      "as": "AS 2018 5343",
+      "inkraft": "2020-01-01",
+      "botschaft": "BOTSCHAFT-2014-65"
+    },
+    "oc/2020/746": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/746/de",
+      "titel": "Obligationenrecht (Aktienrecht)",
+      "as": "AS 2020 4005",
+      "inkraft": "2020-10-20",
+      "botschaft": "BOTSCHAFT-2017-112"
+    },
+    "oc/2021/33": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/33/de",
+      "titel": "Bundesgesetz zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "as": "AS 2021 33",
+      "inkraft": "2021-08-01",
+      "botschaft": "BOTSCHAFT-2020-16"
+    },
+    "oc/2022/732": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/732/de",
+      "titel": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Insolvenz und Einlagensicherung)",
+      "as": "AS 2022 732",
+      "inkraft": "2023-01-01",
+      "botschaft": "BOTSCHAFT-2020-1555"
+    },
+    "oc/2023/491": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/491/de",
+      "titel": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO) (Verbesserung der Praxistauglichkeit und der Rechtsdurchsetzung)",
+      "as": "AS 2023 491",
+      "inkraft": "2025-01-01",
+      "botschaft": "BOTSCHAFT-2020-653"
+    },
+    "oc/2023/628": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/628/de",
+      "titel": "Bundesgesetz über die Bekämpfung des missbräuchlichen Konkurses (Änderung des Obligationenrechts, des Bundesgesetzes über Schuldbetreibung und Konkurs, des Strafgesetzbuches, des Militärstrafgesetzes, des Strafregistergesetzes und des Bundesgesetzes über die direkte Bundessteuer)",
+      "as": "AS 2023 628",
+      "inkraft": "2025-01-01",
+      "botschaft": "BOTSCHAFT-2019-1847"
+    },
+    "oc/2023/678": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/678/de",
+      "titel": "Bundesgesetz über die Krankenversicherung (KVG) (Vollstreckung der Prämienzahlungspflicht)",
+      "as": "AS 2023 678",
+      "inkraft": "2024-07-01"
     },
     "oc/2025/522": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2025/522/de",
@@ -68,6 +282,172 @@
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2001-731": {
+      "titel": "Botschaft zur Totalrevision der Bundesrechtspflege",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2001/731/de",
+      "stand": "2001-02-28",
+      "nummer": "01.023",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2001-02-28",
+          "res": "fga/2001/731"
+        },
+        {
+          "code": 300,
+          "datum": "2002-10-04",
+          "res": "fga/2002/1023"
+        },
+        {
+          "code": 400,
+          "datum": "2003-01-23"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/594"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/595"
+        },
+        {
+          "code": 400,
+          "datum": "2005-10-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2002-1290": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die Banken und Sparkassen",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2002/1290/de",
+      "stand": "2002-11-20",
+      "nummer": "02.084",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2002-11-20",
+          "res": "fga/2002/1290"
+        },
+        {
+          "code": 300,
+          "datum": "2003-10-03",
+          "res": "fga/2003/1106"
+        },
+        {
+          "code": 400,
+          "datum": "2004-01-22"
+        }
+      ]
+    },
+    "BOTSCHAFT-2002-443": {
+      "titel": "Botschaft zur Revision des Obligationenrechts (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2002/443/de",
+      "stand": "2001-12-19",
+      "nummer": "01.082",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2001-12-19",
+          "res": "fga/2002/443"
+        },
+        {
+          "code": 300,
+          "datum": "2005-12-16",
+          "res": "fga/2005/1176"
+        },
+        {
+          "code": 400,
+          "datum": "2006-04-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2003-194": {
+      "titel": "Botschaft zum Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/194/de",
+      "stand": "2002-11-29",
+      "nummer": "02.090",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2002-11-29",
+          "res": "fga/2003/194"
+        },
+        {
+          "code": 300,
+          "datum": "2004-06-18",
+          "res": "fga/2004/596"
+        },
+        {
+          "code": 400,
+          "datum": "2004-10-07"
+        },
+        {
+          "code": 480,
+          "datum": "2004-10-20",
+          "res": "fga/2004/1065"
+        },
+        {
+          "code": 630,
+          "datum": "2005-04-11",
+          "res": "fga/2005/401"
+        },
+        {
+          "code": 650,
+          "datum": "2005-06-05",
+          "res": "fga/2005/782"
+        }
+      ]
+    },
+    "BOTSCHAFT-2005-1000": {
+      "titel": "Botschaft zum Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2005/1000/de",
+      "stand": "2005-09-23",
+      "nummer": "05.072",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2005-09-23",
+          "res": "fga/2005/1000"
+        },
+        {
+          "code": 300,
+          "datum": "2006-06-23",
+          "res": "fga/2006/680"
+        },
+        {
+          "code": 400,
+          "datum": "2006-10-12"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-1228": {
+      "titel": "Botschaft zum Bucheffektengesetz sowie zum Haager Wertpapierübereinkommen",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/1228/de",
+      "stand": "2006-11-15",
+      "nummer": "06.089",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-11-15",
+          "res": "fga/2006/1228"
+        },
+        {
+          "code": 300,
+          "datum": "2008-10-03",
+          "res": "fga/2008/1411"
+        },
+        {
+          "code": 300,
+          "datum": "2008-10-03",
+          "res": "fga/2008/1416"
+        },
+        {
+          "code": 400,
+          "datum": "2009-01-22"
+        }
+      ]
+    },
     "BOTSCHAFT-2006-54": {
       "titel": "Botschaft zur Genehmigung und Umsetzung des Haager Übereinkommens über das auf Trusts anzuwendende Recht und über ihre Anerkennung",
       "url": "https://www.fedlex.admin.ch/eli/fga/2006/54/de",
@@ -87,6 +467,129 @@
         {
           "code": 400,
           "datum": "2007-04-13"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-899": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Erwachsenenschutz, Personen- und Kindesrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/899/de",
+      "stand": "2006-06-28",
+      "nummer": "06.063",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/899"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/7"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-914": {
+      "titel": "Botschaft zur Schweizerischen Zivilprozessordnung (ZPO)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/914/de",
+      "stand": "2006-06-28",
+      "nummer": "06.062",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/914"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/6"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-974": {
+      "titel": "Botschaft zu einer Verordnung der Bundesversammlung betreffend die Anpassung von Erlassen an die Bestimmungen des Bundesgerichtsgesetzes und Verwaltungsgerichtsgesetzes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/974/de",
+      "stand": "2006-09-06",
+      "nummer": "06.068",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-09-06",
+          "res": "fga/2006/974"
+        }
+      ]
+    },
+    "BOTSCHAFT-2007-756": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Register-Schuldbrief und weitere Änderungen im Sachenrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2007/756/de",
+      "stand": "2007-06-27",
+      "nummer": "07.061",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2007-06-27",
+          "res": "fga/2007/756"
+        },
+        {
+          "code": 300,
+          "datum": "2009-12-11",
+          "res": "fga/2009/1494"
+        },
+        {
+          "code": 400,
+          "datum": "2010-04-01"
+        }
+      ]
+    },
+    "BOTSCHAFT-2008-1202": {
+      "titel": "Botschaft zur Vereinfachung der Mehrwertsteuer",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2008/1202/de",
+      "stand": "2008-06-25",
+      "nummer": "08.053",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2008-06-25",
+          "res": "fga/2008/1202"
+        },
+        {
+          "code": 300,
+          "datum": "2009-06-12",
+          "res": "fga/2009/784"
+        },
+        {
+          "code": 400,
+          "datum": "2009-10-01"
+        }
+      ]
+    },
+    "BOTSCHAFT-2009-402": {
+      "titel": "Botschaft zum Bundesbeschluss über die Genehmigung und die Umsetzung des revidierten Übereinkommens von Lugano über die gerichtliche Zuständigkeit, die Anerkennung und die Vollstreckung gerichtlicher Entscheidungen in Zivil- und Handelssachen",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2009/402/de",
+      "stand": "2009-02-18",
+      "nummer": "09.021",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2009-02-18",
+          "res": "fga/2009/402"
+        },
+        {
+          "code": 300,
+          "datum": "2009-12-11",
+          "res": "fga/2009/1497"
+        },
+        {
+          "code": 400,
+          "datum": "2010-04-01"
         }
       ]
     },
@@ -112,6 +615,50 @@
         }
       ]
     },
+    "BOTSCHAFT-2010-655": {
+      "titel": "Botschaft zur Änderung des Bankengesetzes (Sicherung der Einlagen)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2010/655/de",
+      "stand": "2010-05-12",
+      "nummer": "10.049",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2010-05-12",
+          "res": "fga/2010/655"
+        },
+        {
+          "code": 300,
+          "datum": "2011-03-18",
+          "res": "fga/2011/389"
+        },
+        {
+          "code": 400,
+          "datum": "2011-07-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-100": {
+      "titel": "Botschaft zur Umsetzung der 2012 revidierten Empfehlungen der Groupe d'action financière (GAFI)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/100/de",
+      "stand": "2013-12-13",
+      "nummer": "13.106",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-12-13",
+          "res": "fga/2014/100"
+        },
+        {
+          "code": 300,
+          "datum": "2014-12-12",
+          "res": "fga/2014/2104"
+        },
+        {
+          "code": 400,
+          "datum": "2015-04-02"
+        }
+      ]
+    },
     "BOTSCHAFT-2014-1878": {
       "titel": "Botschaft zur Änderung des Bundesgesetzes über Schuldbetreibung und Konkurs (Gewerbsmässige Vertretung im Zwangsvollstreckungsverfahren)",
       "url": "https://www.fedlex.admin.ch/eli/fga/2014/1878/de",
@@ -131,6 +678,251 @@
         {
           "code": 400,
           "datum": "2016-01-14"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-65": {
+      "titel": "Botschaft zur Änderung des Obligationenrechts (Verjährungsrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/65/de",
+      "stand": "2013-11-29",
+      "nummer": "13.100",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-11-29",
+          "res": "fga/2014/65"
+        },
+        {
+          "code": 300,
+          "datum": "2018-06-15",
+          "res": "fga/2018/1352"
+        },
+        {
+          "code": 400,
+          "datum": "2018-10-04"
+        }
+      ]
+    },
+    "BOTSCHAFT-2015-2141": {
+      "titel": "Botschaft zum Finanzdienstleistungsgesetz (FIDLEG) und zum Finanzinstitutsgesetz (FINIG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2015/2141/de",
+      "stand": "2015-11-04",
+      "nummer": "15.073",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2015-11-04",
+          "res": "fga/2015/2141"
+        },
+        {
+          "code": 300,
+          "datum": "2018-06-15",
+          "res": "fga/2018/1354"
+        },
+        {
+          "code": 300,
+          "datum": "2018-06-15",
+          "res": "fga/2018/1355"
+        },
+        {
+          "code": 400,
+          "datum": "2018-10-04"
+        }
+      ]
+    },
+    "BOTSCHAFT-2015-540": {
+      "titel": "Botschaft zur Teilrevision des Mehrwertsteuergesetzes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2015/540/de",
+      "stand": "2015-02-25",
+      "nummer": "15.025",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2015-02-25",
+          "res": "fga/2015/540"
+        },
+        {
+          "code": 300,
+          "datum": "2016-09-30",
+          "res": "fga/2016/1634"
+        },
+        {
+          "code": 400,
+          "datum": "2017-01-19"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-112": {
+      "titel": "Botschaft zur Änderung des Obligationenrechts (Aktienrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/112/de",
+      "stand": "2016-11-23",
+      "nummer": "16.077",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2014-12-09",
+          "res": "fga/2014/1998"
+        },
+        {
+          "code": 200,
+          "datum": "2016-11-23",
+          "res": "fga/2017/112"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2020/1302"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2021/890"
+        },
+        {
+          "code": 400,
+          "datum": "2020-10-08"
+        },
+        {
+          "code": 400,
+          "datum": "2021-08-05"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6014/32/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2019-1847": {
+      "titel": "Botschaft zum Bundesgesetz über die Bekämpfung des missbräuchlichen Konkurses (Änderung, des Bundesgesetzes über Schuldbetreibung und Konkurs, des Obligationenrechts, des Strafgesetzbuches, des Militärstrafgesetzes und des Strafregistergesetzes)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2019/1847/de",
+      "stand": "2019-06-26",
+      "nummer": "19.043",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2015-05-05",
+          "res": "fga/2015/793"
+        },
+        {
+          "code": 2,
+          "datum": "2019-06-26",
+          "res": "fga/2019/1848"
+        },
+        {
+          "code": 200,
+          "datum": "2019-06-26",
+          "res": "fga/2019/1847"
+        },
+        {
+          "code": 300,
+          "datum": "2022-03-18",
+          "res": "fga/2022/702"
+        },
+        {
+          "code": 400,
+          "datum": "2022-07-07"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6014/130/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2020-1555": {
+      "titel": "Botschaft zur Änderung des Bankengesetzes (BankG) (Insolvenz, Einlagensicherung, Segregierung)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2020/1555/de",
+      "stand": "2020-06-19",
+      "nummer": "20.059",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2019-03-19",
+          "res": "fga/2019/630"
+        },
+        {
+          "code": 200,
+          "datum": "2020-06-19",
+          "res": "fga/2020/1555"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/3001"
+        },
+        {
+          "code": 400,
+          "datum": "2022-04-07"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6019/11/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2020-16": {
+      "titel": "Botschaft zum Bundesgesetz zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2020/16/de",
+      "stand": "2019-11-27",
+      "nummer": "19.074",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2019-04-02",
+          "res": "fga/2019/740"
+        },
+        {
+          "code": 200,
+          "datum": "2019-11-27",
+          "res": "fga/2020/16"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/2007"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6019/15/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2020-653": {
+      "titel": "Botschaft zur Änderung der Schweizerischen Zivilprozessordnung (Verbesserung der Praxistauglichkeit und der Rechtsdurchsetzung)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2020/653/de",
+      "stand": "2020-02-26",
+      "nummer": "20.026",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2018-03-13",
+          "res": "fga/2018/471"
+        },
+        {
+          "code": 2,
+          "datum": "2020-02-26",
+          "res": "fga/2020/654"
+        },
+        {
+          "code": 200,
+          "datum": "2020-02-26",
+          "res": "fga/2020/653"
+        },
+        {
+          "code": 300,
+          "datum": "2023-03-17",
+          "res": "fga/2023/786"
+        },
+        {
+          "code": 400,
+          "datum": "2023-07-06"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6018/18/cons_1"
         }
       ]
     }

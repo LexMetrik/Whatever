@@ -1,8 +1,50 @@
 {
   "erlass": "AVIV",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/1985/648_648_648": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1985/648_648_648/de",
+      "titel": "Arbeitslosenversicherungsverordnung (AVIV), Änderung",
+      "as": "AS 1985 648",
+      "inkraft": "1985-07-01"
+    },
+    "oc/1991/2132_2132_2132": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1991/2132_2132_2132/de",
+      "titel": "Arbeitslosenversicherungsverordnung (AVIV), Änderung",
+      "as": "AS 1991 2132",
+      "inkraft": "1992-01-01"
+    },
+    "oc/1992/2409_2409_2409": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1992/2409_2409_2409/de",
+      "titel": "Arbeitslosenversicherungsverordnung (AVIV), Änderung",
+      "as": "AS 1992 2409",
+      "inkraft": "1993-01-01"
+    },
+    "oc/1996/295_295_295": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1996/295_295_295/de",
+      "titel": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV), Änderung",
+      "as": "AS 1996 295",
+      "inkraft": "1996-01-01"
+    },
+    "oc/1996/3071_3071_3071": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1996/3071_3071_3071/de",
+      "titel": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV), Änderung",
+      "as": "AS 1996 3071",
+      "inkraft": "1997-01-01"
+    },
+    "oc/1997/2446_2446_2446": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1997/2446_2446_2446/de",
+      "titel": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV), Änderung",
+      "as": "AS 1997 2446",
+      "inkraft": "1997-12-01"
+    },
+    "oc/1999/364": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1999/364/de",
+      "titel": "Verordnung über das Stabilisierungsprogramm 1998",
+      "as": "AS 1999 2387",
+      "inkraft": "1999-01-01"
+    },
     "oc/2000/28": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2000/28/de",
       "titel": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
@@ -51,6 +93,12 @@
       "as": "AS 2003 4861",
       "inkraft": "2004-01-01"
     },
+    "oc/2003/715": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2003/715/de",
+      "titel": "Verordnung über die Finanzierung der Arbeitslosenversicherung (AVFV)",
+      "as": "AS 2003 4863",
+      "inkraft": "2003-07-01"
+    },
     "oc/2004/210": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2004/210/de",
       "titel": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
@@ -62,6 +110,12 @@
       "titel": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "as": "AS 2005 3591",
       "inkraft": "2006-01-01"
+    },
+    "oc/2006/725": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/725/de",
+      "titel": "Verordnung über die Anpassung von Bundesratsverordnungen an die Totalrevision der Bundesrechtspflege",
+      "as": "AS 2006 4705",
+      "inkraft": "2007-01-01"
     },
     "oc/2009/158": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2009/158/de",
@@ -93,6 +147,12 @@
       "as": "AS 2016 351",
       "inkraft": "2016-02-01"
     },
+    "oc/2016/724": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/724/de",
+      "titel": "Verordnung über die Unfallversicherung (UVV)",
+      "as": "AS 2016 4393",
+      "inkraft": "2017-01-01"
+    },
     "oc/2018/108": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2018/108/de",
       "titel": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
@@ -103,13 +163,43 @@
       "url": "https://www.fedlex.admin.ch/eli/oc/2020/524/de",
       "titel": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "as": "AS 2020 2875",
-      "inkraft": "2020-09-01"
+      "inkraft": "2020-07-01"
     },
     "oc/2021/339": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2021/339/de",
       "titel": "Verordnung über die obligatorische Arbeitslosenversicherung und die Insolvenzentschädigung (Arbeitslosenversicherungsverordnung, AVIV)",
       "as": "AS 2021 339",
       "inkraft": "2021-07-01"
+    },
+    "oc/2021/706": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/706/de",
+      "titel": "Verordnung über die Invalidenversicherung (IVV)",
+      "as": "AS 2021 706",
+      "inkraft": "2022-01-01"
+    },
+    "oc/2021/800": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/800/de",
+      "titel": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "as": "AS 2021 800",
+      "inkraft": "2022-01-01"
+    },
+    "oc/2022/568": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/568/de",
+      "titel": "Verordnung vom 31. August 2022 über den Datenschutz (Datenschutzverordnung, DSV)",
+      "as": "AS 2022 568",
+      "inkraft": "2023-09-01"
+    },
+    "oc/2023/506": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/506/de",
+      "titel": "Verordnung über die Alters- und Hinterlassenenversicherung (AHVV)",
+      "as": "AS 2023 506",
+      "inkraft": "2024-01-01"
+    },
+    "oc/2023/53": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/53/de",
+      "titel": "Verordnung über die Invalidenversicherung (IVV). Berichtigung",
+      "as": "AS 2023 53",
+      "inkraft": "2023-02-07"
     },
     "oc/2024/62": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2024/62/de",

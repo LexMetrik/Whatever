@@ -1,8 +1,28 @@
 {
   "erlass": "URG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2002/283": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2002/283/de",
+      "titel": "Bundesgesetz über Filmproduktion und Filmkultur (Filmgesetz, FiG)",
+      "as": "AS 2002 1904",
+      "inkraft": "2002-08-01"
+    },
+    "oc/2004/172": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/172/de",
+      "titel": "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG)",
+      "as": "AS 2004 1385",
+      "inkraft": "2004-04-01",
+      "botschaft": "BOTSCHAFT-2002-265"
+    },
+    "oc/2006/352": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "titel": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "as": "AS 2006 2197",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2001-731"
+    },
     "oc/2008/347": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2008/347/de",
       "titel": "Bundesgesetz über das Urheberrecht und verwandte Schutzrechte (Urheberrechtsgesetz, URG)",
@@ -16,6 +36,27 @@
       "as": "AS 2008 2497",
       "inkraft": "2008-07-01",
       "botschaft": "BOTSCHAFT-2006-359"
+    },
+    "oc/2008/366": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/366/de",
+      "titel": "Bundesgesetz über die Erfindungspatente (Patentgesetz, PatG)",
+      "as": "AS 2008 2551",
+      "inkraft": "2008-07-01",
+      "botschaft": "BOTSCHAFT-2006-1"
+    },
+    "oc/2010/262": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
+      "titel": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
+      "as": "AS 2010 1739",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2006-914"
+    },
+    "oc/2015/609": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/609/de",
+      "titel": "Bundesgesetz über den Schutz von Marken und Herkunftsangaben (Markenschutzgesetz, MSchG)",
+      "as": "AS 2015 3631",
+      "inkraft": "2017-01-01",
+      "botschaft": "BOTSCHAFT-2009-1471"
     },
     "oc/2020/181": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2020/181/de",
@@ -36,9 +77,127 @@
       "titel": "Verordnung über die Anpassung von Gesetzen infolge der Änderung der Bezeichnung der Eidgenössischen Zollverwaltung im Rahmen von deren Weiterentwicklung",
       "as": "AS 2020 2743",
       "inkraft": "2022-01-01"
+    },
+    "oc/2023/259": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/259/de",
+      "titel": "Bundesgesetz vom 17. Dezember 2021 über die Harmonisierung der Strafrahmen",
+      "as": "AS 2023 259",
+      "inkraft": "2023-07-01",
+      "botschaft": "BOTSCHAFT-2018-1154"
+    },
+    "oc/2025/313": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2025/313/de",
+      "titel": "Bundesgesetz über die Einführung eines vereinfachten Verfahrens zur Vernichtung von Kleinsendungen im Immaterialgüterrecht",
+      "as": "AS 2025 313",
+      "inkraft": "2025-07-01"
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2001-731": {
+      "titel": "Botschaft zur Totalrevision der Bundesrechtspflege",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2001/731/de",
+      "stand": "2001-02-28",
+      "nummer": "01.023",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2001-02-28",
+          "res": "fga/2001/731"
+        },
+        {
+          "code": 300,
+          "datum": "2002-10-04",
+          "res": "fga/2002/1023"
+        },
+        {
+          "code": 400,
+          "datum": "2003-01-23"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/594"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/595"
+        },
+        {
+          "code": 400,
+          "datum": "2005-10-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2002-265": {
+      "titel": "Botschaft über die Änderung des Kartellgesetzes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2002/265/de",
+      "stand": "2001-11-07",
+      "nummer": "01.071",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2001-11-07",
+          "res": "fga/2002/265"
+        },
+        {
+          "code": 300,
+          "datum": "2003-06-20",
+          "res": "fga/2003/686"
+        },
+        {
+          "code": 400,
+          "datum": "2003-10-09"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-1": {
+      "titel": "Botschaft zur Änderung des Patentgesetzes und zum Bundesbeschluss über die Genehmigung des Patentrechtsvertrags und der Ausführungsordnung",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/1/de",
+      "stand": "2005-11-23",
+      "nummer": "04.054",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2004-08-18",
+          "res": "fga/2004/882"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/591"
+        },
+        {
+          "code": 630,
+          "datum": "2005-09-21",
+          "res": "fga/2005/924"
+        },
+        {
+          "code": 200,
+          "datum": "2005-11-23",
+          "res": "fga/2006/1"
+        },
+        {
+          "code": 650,
+          "datum": "2005-11-27",
+          "res": "fga/2006/1"
+        },
+        {
+          "code": 300,
+          "datum": "2007-06-22",
+          "res": "fga/2007/659"
+        },
+        {
+          "code": 300,
+          "datum": "2007-06-22",
+          "res": "fga/2007/665"
+        },
+        {
+          "code": 400,
+          "datum": "2007-10-11"
+        }
+      ]
+    },
     "BOTSCHAFT-2006-359": {
       "titel": "Botschaft zum Bundesbeschluss über die Genehmigung von zwei Abkommen der Weltorganisation für geistiges Eigentum und zur Änderung des Urheberrechtsgesetzes",
       "url": "https://www.fedlex.admin.ch/eli/fga/2006/359/de",
@@ -63,6 +222,129 @@
         {
           "code": 400,
           "datum": "2008-01-24"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-914": {
+      "titel": "Botschaft zur Schweizerischen Zivilprozessordnung (ZPO)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/914/de",
+      "stand": "2006-06-28",
+      "nummer": "06.062",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/914"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/6"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2009-1471": {
+      "titel": "Botschaft zur Änderung des Markenschutzgesetzes und zu einem Bundesgesetz über den Schutz des Schweizerwappens und anderer öffentlicher Zeichen («Swissness»-Vorlage)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2009/1471/de",
+      "stand": "2009-11-18",
+      "nummer": "09.086",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2009-11-18",
+          "res": "fga/2009/1471"
+        },
+        {
+          "code": 300,
+          "datum": "2013-06-21",
+          "res": "fga/2013/909"
+        },
+        {
+          "code": 400,
+          "datum": "2013-10-10"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-1154": {
+      "titel": "Botschaft zur Harmonisierung der Strafrahmen und zur Anpassung des Nebenstrafrechts an das geänderte Sanktionenrecht",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/1154/de",
+      "stand": "2018-04-25",
+      "nummer": "18.043",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2010-09-21",
+          "res": "fga/2010/1034"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1155"
+        },
+        {
+          "code": 2,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1156"
+        },
+        {
+          "code": 200,
+          "datum": "2018-04-25",
+          "res": "fga/2018/1154"
+        },
+        {
+          "code": 4,
+          "datum": "2021-02-05",
+          "res": "fga/2021/157"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2996"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2997"
+        },
+        {
+          "code": 2,
+          "datum": "2022-02-17",
+          "res": "fga/2022/688"
+        },
+        {
+          "code": 301,
+          "datum": "2022-02-17",
+          "res": "fga/2022/687"
+        },
+        {
+          "code": 400,
+          "datum": "2022-04-07"
+        },
+        {
+          "code": 201,
+          "datum": "2022-04-13",
+          "res": "fga/2022/1011"
+        },
+        {
+          "code": 300,
+          "datum": "2023-06-16",
+          "res": "fga/2023/1521"
+        },
+        {
+          "code": 400,
+          "datum": "2023-10-05"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6010/51/cons_1"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6021/4/cons_1"
         }
       ]
     },

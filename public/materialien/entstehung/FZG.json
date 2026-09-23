@@ -1,13 +1,25 @@
 {
   "erlass": "FZG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/1999/149": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1999/149/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Personenstand, Eheschliessung, Scheidung, Kindsrecht, Verwandtenunterstützungspflicht, Heimstätten, Vormundschaft, Ehevermittlung)",
+      "as": "AS 1999 1118",
+      "inkraft": "2000-01-01"
+    },
     "oc/1999/199": {
       "url": "https://www.fedlex.admin.ch/eli/oc/1999/199/de",
       "titel": "Bundesgesetz über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsgesetz, FZG)",
       "as": "AS 1999 1384",
       "inkraft": "1999-05-01"
+    },
+    "oc/1999/363": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1999/363/de",
+      "titel": "Bundesgesetz über das Stabilisierungsprogramm 1998",
+      "as": "AS 1999 2374",
+      "inkraft": "1999-03-19"
     },
     "oc/2000/443": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2000/443/de",
@@ -16,11 +28,101 @@
       "inkraft": "2001-01-01",
       "botschaft": "BOTSCHAFT-2000-99"
     },
+    "oc/2002/140": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2002/140/de",
+      "titel": "Bundesgesetz zum Abkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits über die Freizügigkeit",
+      "as": "AS 2002 701",
+      "inkraft": "2002-06-01",
+      "botschaft": "BOTSCHAFT-1999-1_6128_5440_5092"
+    },
+    "oc/2004/207": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/207/de",
+      "titel": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (1. BVG-Revision)",
+      "as": "AS 2004 1677",
+      "inkraft": "2005-01-01",
+      "botschaft": "BOTSCHAFT-2000-555"
+    },
+    "oc/2004/711": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/711/de",
+      "titel": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
+      "as": "AS 2004 4635",
+      "inkraft": "2005-01-01",
+      "botschaft": "BOTSCHAFT-2003-1054"
+    },
+    "oc/2005/782": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "titel": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "as": "AS 2005 5685",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2003-194"
+    },
+    "oc/2007/747": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/747/de",
+      "titel": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Neue AHV-Versichertennummer)",
+      "as": "AS 2007 5259",
+      "inkraft": "2007-12-01",
+      "botschaft": "BOTSCHAFT-2006-52"
+    },
+    "oc/2008/447": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "titel": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "as": "AS 2008 3437",
+      "inkraft": "2008-08-01"
+    },
     "oc/2009/609": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2009/609/de",
       "titel": "Bundesgesetz über die Freizügigkeit in der beruflichen Alters-, Hinterlassenen- und Invalidenvorsorge (Freizügigkeitsgesetz, FZG)",
       "as": "AS 2009 5187",
       "inkraft": "2010-01-01"
+    },
+    "oc/2010/622": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/622/de",
+      "titel": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Massnahmen zur Erleichterung der Arbeitsmarktbeteiligung älterer Arbeitnehmender)",
+      "as": "AS 2010 4427",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2007-788"
+    },
+    "oc/2011/457": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/457/de",
+      "titel": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften)",
+      "as": "AS 2011 3385",
+      "inkraft": "2012-01-01",
+      "botschaft": "BOTSCHAFT-2008-1439"
+    },
+    "oc/2011/458": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/458/de",
+      "titel": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (Strukturreform)",
+      "as": "AS 2011 3393",
+      "inkraft": "2011-08-01",
+      "botschaft": "BOTSCHAFT-2007-788"
+    },
+    "oc/2011/799": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/799/de",
+      "titel": "Bundesgesetz über die Invalidenversicherung (IVG) (6. IV-Revision, erstes Massnahmenpaket)",
+      "as": "AS 2011 5659",
+      "inkraft": "2012-01-01",
+      "botschaft": "BOTSCHAFT-2010-340"
+    },
+    "oc/2015/728": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/728/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Kindesunterhalt)",
+      "as": "AS 2015 4299",
+      "inkraft": "2017-01-01",
+      "botschaft": "BOTSCHAFT-2014-98"
+    },
+    "oc/2016/379": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/379/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Vorsorgeausgleich bei Scheidung)",
+      "as": "AS 2016 2313",
+      "inkraft": "2017-01-01",
+      "botschaft": "BOTSCHAFT-2013-942"
+    },
+    "oc/2016/828": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/828/de",
+      "titel": "Bundesbeschluss über die Genehmigung und die Umsetzung des Protokolls zum Freizügigkeitsabkommen zwischen der Schweizerischen Eidgenossenschaft einerseits und der Europäischen Gemeinschaft sowie ihren Mitgliedstaaten andererseits betreffend die Ausdehnung auf die Republik Kroatien",
+      "as": "AS 2016 5233",
+      "inkraft": "2017-01-01",
+      "botschaft": "BOTSCHAFT-2016-467"
     },
     "oc/2017/542": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2017/542/de",
@@ -28,9 +130,101 @@
       "as": "AS 2017 5019",
       "inkraft": "2017-10-01",
       "botschaft": "BOTSCHAFT-2015-311"
+    },
+    "oc/2020/892": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/892/de",
+      "titel": "Bundesgesetz über den Allgemeinen Teil des Sozialversicherungsrechts (ATSG)",
+      "as": "AS 2020 5137",
+      "inkraft": "2021-01-01",
+      "botschaft": "BOTSCHAFT-2018-671"
+    },
+    "oc/2021/758": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "titel": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "as": "AS 2021 758",
+      "inkraft": "2022-01-01",
+      "botschaft": "BOTSCHAFT-2019-2681"
+    },
+    "oc/2023/355": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/355/de",
+      "titel": "Bundesgesetz betreffend die Aufsicht über Versicherungsunternehmen (Versicherungsaufsichtsgesetz, VAG)",
+      "as": "AS 2023 355",
+      "inkraft": "2024-01-01",
+      "botschaft": "BOTSCHAFT-2020-2421"
+    },
+    "oc/2023/92": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/92/de",
+      "titel": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (AHV 21)",
+      "as": "AS 2023 92",
+      "inkraft": "2024-01-01",
+      "botschaft": "BOTSCHAFT-2019-2267"
     }
   },
   "botschaften": {
+    "BOTSCHAFT-1999-1_6128_5440_5092": {
+      "titel": "Botschaft zur Genehmigung der sektoriellen Abkommen zwischen der Schweiz und der EG",
+      "url": "https://www.fedlex.admin.ch/eli/fga/1999/1_6128_5440_5092/de",
+      "stand": "1999-06-23",
+      "nummer": "1999.028",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "1999-06-23",
+          "res": "fga/1999/1_6128_5440_5092"
+        },
+        {
+          "code": 300,
+          "datum": "1999-10-08",
+          "res": "fga/1999/1_8643_7841_7464"
+        },
+        {
+          "code": 300,
+          "datum": "1999-10-08",
+          "res": "fga/1999/1_8733_7931_7553"
+        },
+        {
+          "code": 300,
+          "datum": "1999-10-08",
+          "res": "fga/1999/1_8739_7937_7559"
+        },
+        {
+          "code": 300,
+          "datum": "1999-10-08",
+          "res": "fga/1999/1_8744_7942_7564"
+        },
+        {
+          "code": 400,
+          "datum": "2000-02-03"
+        },
+        {
+          "code": 490,
+          "datum": "2000-02-15",
+          "res": "fga/2000/208"
+        }
+      ]
+    },
+    "BOTSCHAFT-2000-555": {
+      "titel": "Botschaft zur Revision des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG) (1. BVG-Revision)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2000/555/de",
+      "stand": "2000-03-01",
+      "nummer": "2000.027",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2000-03-01",
+          "res": "fga/2000/555"
+        },
+        {
+          "code": 300,
+          "datum": "2003-10-03",
+          "res": "fga/2003/1098"
+        },
+        {
+          "code": 400,
+          "datum": "2004-01-22"
+        }
+      ]
+    },
     "BOTSCHAFT-2000-99": {
       "titel": "Botschaft über die Anpassung und Harmonisierung der gesetzlichen Grundlagen für die Bearbeitung von Personendaten in den Sozialversicherungen",
       "url": "https://www.fedlex.admin.ch/eli/fga/2000/99/de",
@@ -103,6 +297,209 @@
         }
       ]
     },
+    "BOTSCHAFT-2003-1054": {
+      "titel": "Botschaft über Massnahmen zur Behebung von Unterdeckungen in der beruflichen Vorsorge",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/1054/de",
+      "stand": "2003-09-19",
+      "nummer": "03.060",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2003-09-19",
+          "res": "fga/2003/1054"
+        },
+        {
+          "code": 300,
+          "datum": "2004-06-18",
+          "res": "fga/2004/595"
+        },
+        {
+          "code": 400,
+          "datum": "2004-10-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2003-194": {
+      "titel": "Botschaft zum Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/194/de",
+      "stand": "2002-11-29",
+      "nummer": "02.090",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2002-11-29",
+          "res": "fga/2003/194"
+        },
+        {
+          "code": 300,
+          "datum": "2004-06-18",
+          "res": "fga/2004/596"
+        },
+        {
+          "code": 400,
+          "datum": "2004-10-07"
+        },
+        {
+          "code": 480,
+          "datum": "2004-10-20",
+          "res": "fga/2004/1065"
+        },
+        {
+          "code": 630,
+          "datum": "2005-04-11",
+          "res": "fga/2005/401"
+        },
+        {
+          "code": 650,
+          "datum": "2005-06-05",
+          "res": "fga/2005/782"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-52": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (Neue AHV-Versichertennummer)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/52/de",
+      "stand": "2005-11-23",
+      "nummer": "05.079",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2005-11-23",
+          "res": "fga/2006/52"
+        },
+        {
+          "code": 300,
+          "datum": "2006-06-23",
+          "res": "fga/2006/676"
+        },
+        {
+          "code": 400,
+          "datum": "2006-10-12"
+        }
+      ]
+    },
+    "BOTSCHAFT-2007-788": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (Strukturreform)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2007/788/de",
+      "stand": "2007-06-15",
+      "nummer": "07.055",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2007-06-15",
+          "res": "fga/2007/788"
+        },
+        {
+          "code": 300,
+          "datum": "2009-12-11",
+          "res": "fga/2009/1493"
+        },
+        {
+          "code": 300,
+          "datum": "2010-03-19",
+          "res": "fga/2010/346"
+        },
+        {
+          "code": 400,
+          "datum": "2010-04-01"
+        },
+        {
+          "code": 400,
+          "datum": "2010-07-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2008-1439": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (Finanzierung von Vorsorgeeinrichtungen öffentlich-rechtlicher Körperschaften)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2008/1439/de",
+      "stand": "2008-09-19",
+      "nummer": "08.069",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2008-09-19",
+          "res": "fga/2008/1439"
+        },
+        {
+          "code": 300,
+          "datum": "2010-12-17",
+          "res": "fga/2010/1676"
+        },
+        {
+          "code": 400,
+          "datum": "2011-04-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2010-340": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die Invalidenversicherung (6. IV-Revision, erstes Massnahmenpaket)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2010/340/de",
+      "stand": "2010-02-24",
+      "nummer": "10.032",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2010-02-24",
+          "res": "fga/2010/340"
+        },
+        {
+          "code": 300,
+          "datum": "2011-03-18",
+          "res": "fga/2011/387"
+        },
+        {
+          "code": 400,
+          "datum": "2011-07-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2013-942": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Vorsorgeausgleich bei Scheidung)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2013/942/de",
+      "stand": "2013-05-29",
+      "nummer": "13.049",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-05-29",
+          "res": "fga/2013/942"
+        },
+        {
+          "code": 300,
+          "datum": "2015-06-19",
+          "res": "fga/2015/1176"
+        },
+        {
+          "code": 400,
+          "datum": "2015-10-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-98": {
+      "titel": "Botschaft zu einer Änderung des Schweizerischen Zivilgesetzbuches (Kindesunterhalt)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/98/de",
+      "stand": "2013-11-29",
+      "nummer": "13.101",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-11-29",
+          "res": "fga/2014/98"
+        },
+        {
+          "code": 300,
+          "datum": "2015-03-20",
+          "res": "fga/2015/545"
+        },
+        {
+          "code": 400,
+          "datum": "2015-07-09"
+        },
+        {
+          "code": 400
+        }
+      ]
+    },
     "BOTSCHAFT-2015-311": {
       "titel": "Botschaft zu einer Änderung des Freizügigkeitsgesetzes (Ansprüche bei Wahl der Anlagestrategie durch die versicherte Person)",
       "url": "https://www.fedlex.admin.ch/eli/fga/2015/311/de",
@@ -122,6 +519,168 @@
         {
           "code": 400,
           "datum": "2016-04-09"
+        }
+      ]
+    },
+    "BOTSCHAFT-2016-467": {
+      "titel": "Botschaft zur Ausdehnung des Freizügigkeitsabkommens auf Kroatien",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2016/467/de",
+      "stand": "2016-03-04",
+      "nummer": "16.028",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2016-03-04",
+          "res": "fga/2016/467"
+        },
+        {
+          "code": 300,
+          "datum": "2016-06-17",
+          "res": "fga/2016/1060"
+        },
+        {
+          "code": 400,
+          "datum": "2016-10-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-671": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über den Allgemeinen Teil des Sozialversicherungsrechts",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/671/de",
+      "stand": "2018-03-02",
+      "nummer": "18.029",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2018-03-02",
+          "res": "fga/2018/671"
+        },
+        {
+          "code": 300,
+          "datum": "2019-06-21",
+          "res": "fga/2019/1585"
+        },
+        {
+          "code": 400,
+          "datum": "2019-10-10"
+        }
+      ]
+    },
+    "BOTSCHAFT-2019-2267": {
+      "titel": "Botschaft zur Stabilisierung der AHV (AHV 21)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2019/2267/de",
+      "stand": "2019-08-28",
+      "nummer": "19.050",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2018-07-10",
+          "res": "fga/2018/1457"
+        },
+        {
+          "code": 200,
+          "datum": "2019-08-28",
+          "res": "fga/2019/2267"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2991"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/2995"
+        },
+        {
+          "code": 400,
+          "datum": "2022-04-07"
+        },
+        {
+          "code": 480,
+          "datum": "2022-04-27",
+          "res": "fga/2022/1059"
+        },
+        {
+          "code": 630,
+          "datum": "2022-06-23",
+          "res": "fga/2022/1598"
+        },
+        {
+          "code": 9,
+          "datum": "2022-09-25",
+          "res": "fga/2023/486"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6018/48/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2019-2681": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2019/2681/de",
+      "stand": "2019-10-30",
+      "nummer": "19.057",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2018-11-20",
+          "res": "fga/2018/2485"
+        },
+        {
+          "code": 200,
+          "datum": "2019-10-30",
+          "res": "fga/2019/2681"
+        },
+        {
+          "code": 300,
+          "datum": "2020-12-18",
+          "res": "fga/2020/2693"
+        },
+        {
+          "code": 400,
+          "datum": "2021-04-10"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6018/78/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2020-2421": {
+      "titel": "Botschaft zur Änderung des Versicherungsaufsichtsgesetzes (VAG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2020/2421/de",
+      "stand": "2020-10-21",
+      "nummer": "20.078",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2018-11-27",
+          "res": "fga/2018/2560"
+        },
+        {
+          "code": 2,
+          "datum": "2020-10-21",
+          "res": "fga/2020/2422"
+        },
+        {
+          "code": 200,
+          "datum": "2020-10-21",
+          "res": "fga/2020/2421"
+        },
+        {
+          "code": 300,
+          "datum": "2022-03-18",
+          "res": "fga/2022/704"
+        },
+        {
+          "code": 400,
+          "datum": "2022-07-07"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6018/80/cons_1"
         }
       ]
     }

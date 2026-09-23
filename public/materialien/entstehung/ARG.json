@@ -1,13 +1,49 @@
 {
   "erlass": "ARG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
-    "oc/1966/57_57_57": {
-      "url": "https://www.fedlex.admin.ch/eli/oc/1966/57_57_57/de",
-      "titel": "Bundesgesetz vom 13. März 1964 über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz, ArG)",
-      "as": "AS 1966 57",
-      "inkraft": "1966-02-01"
+    "oc/1971/1465_1461_1461": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1971/1465_1461_1461/de",
+      "titel": "Bundesgesetz vom 25. Juni 1971 über die Revision des Zehnten Titels und des Zehnten Titelsbis des Obligationenrechts (Der Arbeitsvertrag)",
+      "as": "AS 1971 1465",
+      "inkraft": "1972-01-01"
+    },
+    "oc/1972/604_612_536": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1972/604_612_536/de",
+      "titel": "Bundesgesetz vom 8. Oktober 1971 über die Arbeit in Unternehmen des öffentlichen Verkehrs (Arbeitszeitgesetz, AZG)",
+      "as": "AS 1972 604",
+      "inkraft": "1972-05-28"
+    },
+    "oc/1983/108_108_108": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1983/108_108_108/de",
+      "titel": "Bundesgesetz vom 20. März 1981 über die Heimarbeit (Heimarbeitsgesetz, HArG)",
+      "as": "AS 1983 108",
+      "inkraft": "1983-04-01"
+    },
+    "oc/1991/362_362_362": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1991/362_362_362/de",
+      "titel": "Bundesgesetz vom 15. Dezember 1989 über die Genehmigung kantonaler Erlasse durch den Bund",
+      "as": "AS 1991 362",
+      "inkraft": "1991-02-01"
+    },
+    "oc/1994/1035_1035_1035": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1994/1035_1035_1035/de",
+      "titel": "Arbeitsgesetz, Änderung",
+      "as": "AS 1994 1035",
+      "inkraft": "1994-05-01"
+    },
+    "oc/1994/3010_3010_3010": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1994/3010_3010_3010/de",
+      "titel": "Luftfahrtgesetz (LFG), Änderung",
+      "as": "AS 1994 3010",
+      "inkraft": "1995-01-01"
+    },
+    "oc/1999/472": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1999/472/de",
+      "titel": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "as": "AS 1999 3071",
+      "inkraft": "2000-01-01"
     },
     "oc/2000/241": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2000/241/de",
@@ -21,17 +57,37 @@
       "as": "AS 2000 1569",
       "inkraft": "2000-08-01"
     },
+    "oc/2000/293": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2000/293/de",
+      "titel": "Bundesgesetz über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+      "as": "AS 2000 1891",
+      "inkraft": "2000-09-01",
+      "botschaft": "BOTSCHAFT-1999-1_9005_8381_7979"
+    },
     "oc/2002/346": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2002/346/de",
       "titel": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)",
       "as": "AS 2002 2547",
       "inkraft": "2005-01-01"
     },
+    "oc/2005/782": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "titel": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "as": "AS 2005 5685",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2003-194"
+    },
     "oc/2006/173": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2006/173/de",
       "titel": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)",
       "as": "AS 2006 961",
       "inkraft": "2006-04-01"
+    },
+    "oc/2006/549": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/549/de",
+      "titel": "Schweizerisches Strafgesetzbuch",
+      "as": "AS 2006 3459",
+      "inkraft": "2007-01-01"
     },
     "oc/2007/691": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2007/691/de",
@@ -40,20 +96,124 @@
       "inkraft": "2008-01-01",
       "botschaft": "BOTSCHAFT-2004-1177"
     },
+    "oc/2008/327": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/327/de",
+      "titel": "Bundesgesetz über die Aufhebung und die Vereinfachung von Bewilligungsverfahren",
+      "as": "AS 2008 2265",
+      "inkraft": "2008-06-01"
+    },
     "oc/2008/398": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2008/398/de",
       "titel": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)",
       "as": "AS 2008 2903",
       "inkraft": "2008-07-01"
     },
+    "oc/2008/447": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "titel": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "as": "AS 2008 3437",
+      "inkraft": "2008-08-01"
+    },
+    "oc/2011/114": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "as": "AS 2011 725",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2006-899"
+    },
+    "oc/2012/419": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/419/de",
+      "titel": "Verordnung über die Anpassung von Gesetzen infolge der Neugliederung der Departemente",
+      "as": "AS 2012 3655",
+      "inkraft": "2013-01-01"
+    },
     "oc/2013/746": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2013/746/de",
       "titel": "Bundesgesetz über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz, ArG)",
       "as": "AS 2013 4081",
       "inkraft": "2013-12-01"
+    },
+    "oc/2017/397": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/397/de",
+      "titel": "Bundesgesetz über die Arbeit in Unternehmen des öffentlichen Verkehrs (Arbeitszeitgesetz, AZG)",
+      "as": "AS 2017 3595",
+      "inkraft": "2018-01-01"
+    },
+    "oc/2020/799": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/799/de",
+      "titel": "Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung",
+      "as": "AS 2020 4525",
+      "inkraft": "2021-01-01",
+      "botschaft": "BOTSCHAFT-2019-1504"
+    },
+    "oc/2022/491": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "titel": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "as": "AS 2022 491",
+      "inkraft": "2023-09-01",
+      "botschaft": "BOTSCHAFT-2017-2057"
     }
   },
   "botschaften": {
+    "BOTSCHAFT-1999-1_9005_8381_7979": {
+      "titel": "Botschaft über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+      "url": "https://www.fedlex.admin.ch/eli/fga/1999/1_9005_8381_7979/de",
+      "stand": "1999-08-25",
+      "nummer": "99.067",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "1999-08-25",
+          "res": "fga/1999/1_9005_8381_7979"
+        },
+        {
+          "code": 300,
+          "datum": "2000-03-24",
+          "res": "fga/2000/431"
+        },
+        {
+          "code": 400,
+          "datum": "2000-07-20"
+        }
+      ]
+    },
+    "BOTSCHAFT-2003-194": {
+      "titel": "Botschaft zum Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/194/de",
+      "stand": "2002-11-29",
+      "nummer": "02.090",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2002-11-29",
+          "res": "fga/2003/194"
+        },
+        {
+          "code": 300,
+          "datum": "2004-06-18",
+          "res": "fga/2004/596"
+        },
+        {
+          "code": 400,
+          "datum": "2004-10-07"
+        },
+        {
+          "code": 480,
+          "datum": "2004-10-20",
+          "res": "fga/2004/1065"
+        },
+        {
+          "code": 630,
+          "datum": "2005-04-11",
+          "res": "fga/2005/401"
+        },
+        {
+          "code": 650,
+          "datum": "2005-06-05",
+          "res": "fga/2005/782"
+        }
+      ]
+    },
     "BOTSCHAFT-2004-1177": {
       "titel": "Botschaft zur Änderung des Bundesgesetzes über die Arbeit in Industrie, Gewerbe und Handel (Arbeitsgesetz)",
       "url": "https://www.fedlex.admin.ch/eli/fga/2004/1177/de",
@@ -73,6 +233,90 @@
         {
           "code": 400,
           "datum": "2006-10-12"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-899": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Erwachsenenschutz, Personen- und Kindesrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/899/de",
+      "stand": "2006-06-28",
+      "nummer": "06.063",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-06-28",
+          "res": "fga/2006/899"
+        },
+        {
+          "code": 300,
+          "datum": "2008-12-19",
+          "res": "fga/2009/7"
+        },
+        {
+          "code": 400,
+          "datum": "2009-04-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-2057": {
+      "titel": "Botschaft zum Bundesgesetz über die Totalrevision des Bundesgesetzes über den Datenschutz und die Änderung weiterer Erlasse zum Datenschutz",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/2057/de",
+      "stand": "2017-09-15",
+      "nummer": "17.059",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2016-12-28",
+          "res": "fga/2016/2181"
+        },
+        {
+          "code": 200,
+          "datum": "2017-09-15",
+          "res": "fga/2017/2057"
+        },
+        {
+          "code": 300,
+          "datum": "2018-09-28",
+          "res": "fga/2018/2139"
+        },
+        {
+          "code": 400,
+          "datum": "2019-01-17"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/1998"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6016/61/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2019-1504": {
+      "titel": "Botschaft zum Bundesgesetz über die Verbesserung der Vereinbarkeit von Erwerbstätigkeit und Angehörigenbetreuung",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2019/1504/de",
+      "stand": "2019-05-22",
+      "nummer": "19.027",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2019-05-22",
+          "res": "fga/2019/1504"
+        },
+        {
+          "code": 300,
+          "datum": "2019-12-20",
+          "res": "fga/2019/2991"
+        },
+        {
+          "code": 400,
+          "datum": "2020-04-09"
         }
       ]
     }

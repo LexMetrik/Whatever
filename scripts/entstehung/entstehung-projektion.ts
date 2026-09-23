@@ -29,6 +29,8 @@ export interface RevisionsQuelle {
     titelDe?: string;
     roFundstelle?: string;
     dateEntryInForce?: string;
+    /** Alle Etappen eines gestaffelt in Kraft gesetzten Erlasses (S6-D1, aufsteigend). */
+    etappen?: string[];
     botschaftKey?: string;
     quelleUrl?: string;
   }>;
@@ -105,7 +107,9 @@ export function baueProjektion(
     };
     if (r.titelDe) a.titel = r.titelDe;
     if (r.roFundstelle) a.as = r.roFundstelle;
-    if (r.dateEntryInForce) a.inkraft = r.dateEntryInForce;
+    // S6-D1 (23.9.2026): ein gestaffelter Erlass steht je Etappe im Sidecar, absteigend —
+    // die erste Nennung ist die SPÄTESTE Etappe. «inkraft» bleibt das erste Inkrafttreten.
+    if (r.dateEntryInForce) a.inkraft = r.etappen?.[0] ?? r.dateEntryInForce;
     if (r.botschaftKey && botschaften.has(r.botschaftKey)) {
       a.botschaft = r.botschaftKey;
       gebrauchteBotschaften.add(r.botschaftKey);

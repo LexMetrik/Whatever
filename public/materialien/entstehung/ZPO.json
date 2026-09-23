@@ -1,15 +1,8 @@
 {
   "erlass": "ZPO",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-12",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
-    "oc/2010/262": {
-      "url": "https://www.fedlex.admin.ch/eli/oc/2010/262/de",
-      "titel": "Schweizerische Zivilprozessordnung (Zivilprozessordnung, ZPO)",
-      "as": "AS 2010 1739",
-      "inkraft": "2011-01-01",
-      "botschaft": "BOTSCHAFT-2006-914"
-    },
     "oc/2010/800": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2010/800/de",
       "titel": "Bundesbeschluss über die Genehmigung und die Umsetzung des Übereinkommens über die gerichtliche Zuständigkeit und die Anerkennung und Vollstreckung von Entscheidungen in Zivil- und Handelssachen (Lugano-Übereinkommen)",
@@ -17,11 +10,132 @@
       "inkraft": "2011-01-01",
       "botschaft": "BOTSCHAFT-2009-402"
     },
+    "oc/2011/114": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/114/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Erwachsenenschutz, Personenrecht und Kindesrecht)",
+      "as": "AS 2011 725",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2006-899"
+    },
+    "oc/2011/666": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/666/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Register-Schuldbrief und weitere Änderungen im Sachenrecht)",
+      "as": "AS 2011 4637",
+      "inkraft": "2012-01-01",
+      "botschaft": "BOTSCHAFT-2007-756"
+    },
+    "oc/2013/177": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/177/de",
+      "titel": "Bundesgesetz über die Anpassung von verfahrensrechtlichen Bestimmungen zum anwaltlichen Berufsgeheimnis",
+      "as": "AS 2013 847",
+      "inkraft": "2013-05-01"
+    },
     "oc/2013/178": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2013/178/de",
       "titel": "Schweizerische Zivilprozessordnung und Schweizerische Strafprozessordnung (Protokollierungsvorschriften)",
       "as": "AS 2013 851",
       "inkraft": "2013-05-01"
+    },
+    "oc/2013/250": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/250/de",
+      "titel": "Bundesgesetz über die Börsen und den Effektenhandel (Börsengesetz, BEHG)",
+      "as": "AS 2013 1103",
+      "inkraft": "2013-05-01",
+      "botschaft": "BOTSCHAFT-2011-1111"
+    },
+    "oc/2015/613": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/613/de",
+      "titel": "Bundesgesetz über den Schutz des Schweizerwappens und anderer öffentlicher Zeichen (Wappenschutzgesetz, WSchG)",
+      "as": "AS 2015 3679",
+      "inkraft": "2017-01-01"
+    },
+    "oc/2015/728": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/728/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Kindesunterhalt)",
+      "as": "AS 2015 4299",
+      "inkraft": "2017-01-01",
+      "botschaft": "BOTSCHAFT-2014-98"
+    },
+    "oc/2016/379": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/379/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Vorsorgeausgleich bei Scheidung)",
+      "as": "AS 2016 2313",
+      "inkraft": "2017-01-01",
+      "botschaft": "BOTSCHAFT-2013-942"
+    },
+    "oc/2016/612": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/612/de",
+      "titel": "Bundesgesetz über Schuldbetreibung und Konkurs (SchKG) (Gewerbsmässige Vertretung im Zwangsvollstreckungsverfahren)",
+      "as": "AS 2016 3643",
+      "inkraft": "2018-01-01",
+      "botschaft": "BOTSCHAFT-2014-1878"
+    },
+    "oc/2016/752": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/752/de",
+      "titel": "Bundesgesetz über Zertifizierungsdienste im Bereich der elektronischen Signatur und anderer Anwendungen digitaler Zertifikate (Bundesgesetz über die elektronische Signatur)",
+      "as": "AS 2016 4651",
+      "inkraft": "2017-01-01"
+    },
+    "oc/2017/425": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/425/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Adoption)",
+      "as": "AS 2017 3699",
+      "inkraft": "2018-01-01",
+      "botschaft": "BOTSCHAFT-2015-94"
+    },
+    "oc/2018/801": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/801/de",
+      "titel": "Bundesgesetz über die Finanzinstitute (Finanzinstitutsgesetz, FINIG)",
+      "as": "AS 2018 5247",
+      "inkraft": "2019-01-01",
+      "botschaft": "BOTSCHAFT-2015-2141"
+    },
+    "oc/2019/432": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2019/432/de",
+      "titel": "Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen",
+      "as": "AS 2019 2273",
+      "inkraft": "2020-07-01",
+      "botschaft": "BOTSCHAFT-2017-2095"
+    },
+    "oc/2020/178": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/178/de",
+      "titel": "Obligationenrecht (Handelsregisterrecht)",
+      "as": "AS 2020 957",
+      "inkraft": "2020-04-01",
+      "botschaft": "BOTSCHAFT-2015-956"
+    },
+    "oc/2020/746": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/746/de",
+      "titel": "Obligationenrecht (Aktienrecht)",
+      "as": "AS 2020 4005",
+      "inkraft": "2023-01-01",
+      "botschaft": "BOTSCHAFT-2017-112"
+    },
+    "oc/2020/767": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/767/de",
+      "titel": "Bundesgesetz über das Internationale Privatrecht (IPRG)",
+      "as": "AS 2020 4179",
+      "inkraft": "2021-01-01",
+      "botschaft": "BOTSCHAFT-2018-2548"
+    },
+    "oc/2022/232": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/232/de",
+      "titel": "Bundesgesetz vom 18. Dezember 2020 über die Informationssicherheit beim Bund (Informationssicherheitsgesetz, ISG)",
+      "as": "AS 2022 232",
+      "inkraft": "2023-01-01"
+    },
+    "oc/2022/289": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/289/de",
+      "titel": "Bundesgesetz über das Bundesgericht (Bundesgerichtsgesetz, BGG)",
+      "as": "AS 2022 289",
+      "inkraft": "2022-07-01"
+    },
+    "oc/2022/491": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/491/de",
+      "titel": "Bundesgesetz vom 25. September 2020 über den Datenschutz (Datenschutzgesetz, DSG)",
+      "as": "AS 2022 491",
+      "inkraft": "2023-09-01",
+      "botschaft": "BOTSCHAFT-2017-2057"
     },
     "oc/2023/491": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2023/491/de",
@@ -29,28 +143,57 @@
       "as": "AS 2023 491",
       "inkraft": "2025-01-01",
       "botschaft": "BOTSCHAFT-2020-653"
+    },
+    "oc/2026/16": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2026/16/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Besitzesschutz bei verbotener Eigenmacht an Grundstücken)",
+      "as": "AS 2026 16",
+      "inkraft": "2026-07-01",
+      "botschaft": "BOTSCHAFT-2024-116"
     }
   },
   "botschaften": {
-    "BOTSCHAFT-2006-914": {
-      "titel": "Botschaft zur Schweizerischen Zivilprozessordnung (ZPO)",
-      "url": "https://www.fedlex.admin.ch/eli/fga/2006/914/de",
+    "BOTSCHAFT-2006-899": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Erwachsenenschutz, Personen- und Kindesrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/899/de",
       "stand": "2006-06-28",
-      "nummer": "06.062",
+      "nummer": "06.063",
       "ereignisse": [
         {
           "code": 200,
           "datum": "2006-06-28",
-          "res": "fga/2006/914"
+          "res": "fga/2006/899"
         },
         {
           "code": 300,
           "datum": "2008-12-19",
-          "res": "fga/2009/6"
+          "res": "fga/2009/7"
         },
         {
           "code": 400,
           "datum": "2009-04-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2007-756": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Register-Schuldbrief und weitere Änderungen im Sachenrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2007/756/de",
+      "stand": "2007-06-27",
+      "nummer": "07.061",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2007-06-27",
+          "res": "fga/2007/756"
+        },
+        {
+          "code": 300,
+          "datum": "2009-12-11",
+          "res": "fga/2009/1494"
+        },
+        {
+          "code": 400,
+          "datum": "2010-04-01"
         }
       ]
     },
@@ -73,6 +216,292 @@
         {
           "code": 400,
           "datum": "2010-04-01"
+        }
+      ]
+    },
+    "BOTSCHAFT-2011-1111": {
+      "titel": "Botschaft zur Änderung des Börsengesetzes (Börsendelikte und Marktmissbrauch)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/1111/de",
+      "stand": "2011-08-31",
+      "nummer": "11.050",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2011-08-31",
+          "res": "fga/2011/1111"
+        },
+        {
+          "code": 300,
+          "datum": "2012-09-28",
+          "res": "fga/2012/1393"
+        },
+        {
+          "code": 400,
+          "datum": "2013-01-17"
+        }
+      ]
+    },
+    "BOTSCHAFT-2013-942": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Vorsorgeausgleich bei Scheidung)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2013/942/de",
+      "stand": "2013-05-29",
+      "nummer": "13.049",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-05-29",
+          "res": "fga/2013/942"
+        },
+        {
+          "code": 300,
+          "datum": "2015-06-19",
+          "res": "fga/2015/1176"
+        },
+        {
+          "code": 400,
+          "datum": "2015-10-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-1878": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über Schuldbetreibung und Konkurs (Gewerbsmässige Vertretung im Zwangsvollstreckungsverfahren)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/1878/de",
+      "stand": "2014-10-29",
+      "nummer": "14.073",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2014-10-29",
+          "res": "fga/2014/1878"
+        },
+        {
+          "code": 300,
+          "datum": "2015-09-25",
+          "res": "fga/2015/1701"
+        },
+        {
+          "code": 400,
+          "datum": "2016-01-14"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-98": {
+      "titel": "Botschaft zu einer Änderung des Schweizerischen Zivilgesetzbuches (Kindesunterhalt)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/98/de",
+      "stand": "2013-11-29",
+      "nummer": "13.101",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-11-29",
+          "res": "fga/2014/98"
+        },
+        {
+          "code": 300,
+          "datum": "2015-03-20",
+          "res": "fga/2015/545"
+        },
+        {
+          "code": 400,
+          "datum": "2015-07-09"
+        },
+        {
+          "code": 400
+        }
+      ]
+    },
+    "BOTSCHAFT-2015-2141": {
+      "titel": "Botschaft zum Finanzdienstleistungsgesetz (FIDLEG) und zum Finanzinstitutsgesetz (FINIG)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2015/2141/de",
+      "stand": "2015-11-04",
+      "nummer": "15.073",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2015-11-04",
+          "res": "fga/2015/2141"
+        },
+        {
+          "code": 300,
+          "datum": "2018-06-15",
+          "res": "fga/2018/1354"
+        },
+        {
+          "code": 300,
+          "datum": "2018-06-15",
+          "res": "fga/2018/1355"
+        },
+        {
+          "code": 400,
+          "datum": "2018-10-04"
+        }
+      ]
+    },
+    "BOTSCHAFT-2015-94": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Adoption)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2015/94/de",
+      "stand": "2014-11-28",
+      "nummer": "14.094",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2014-11-28",
+          "res": "fga/2015/94"
+        },
+        {
+          "code": 300,
+          "datum": "2016-06-17",
+          "res": "fga/2016/1053"
+        },
+        {
+          "code": 400,
+          "datum": "2016-10-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2015-956": {
+      "titel": "Botschaft zur Änderung des Obligationenrechts (Handelsregisterrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2015/956/de",
+      "stand": "2015-04-15",
+      "nummer": "15.034",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2015-04-15",
+          "res": "fga/2015/956"
+        },
+        {
+          "code": 300,
+          "datum": "2017-03-17",
+          "res": "fga/2017/471"
+        },
+        {
+          "code": 400,
+          "datum": "2017-07-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-112": {
+      "titel": "Botschaft zur Änderung des Obligationenrechts (Aktienrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/112/de",
+      "stand": "2016-11-23",
+      "nummer": "16.077",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2014-12-09",
+          "res": "fga/2014/1998"
+        },
+        {
+          "code": 200,
+          "datum": "2016-11-23",
+          "res": "fga/2017/112"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2020/1302"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2021/890"
+        },
+        {
+          "code": 400,
+          "datum": "2020-10-08"
+        },
+        {
+          "code": 400,
+          "datum": "2021-08-05"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6014/32/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-2057": {
+      "titel": "Botschaft zum Bundesgesetz über die Totalrevision des Bundesgesetzes über den Datenschutz und die Änderung weiterer Erlasse zum Datenschutz",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/2057/de",
+      "stand": "2017-09-15",
+      "nummer": "17.059",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2016-12-28",
+          "res": "fga/2016/2181"
+        },
+        {
+          "code": 200,
+          "datum": "2017-09-15",
+          "res": "fga/2017/2057"
+        },
+        {
+          "code": 300,
+          "datum": "2018-09-28",
+          "res": "fga/2018/2139"
+        },
+        {
+          "code": 400,
+          "datum": "2019-01-17"
+        },
+        {
+          "code": 300,
+          "datum": "2020-09-25",
+          "res": "fga/2020/1998"
+        },
+        {
+          "code": 400,
+          "datum": "2021-01-14"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6016/61/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-2095": {
+      "titel": "Botschaft zum Bundesgesetz über die Verbesserung des Schutzes gewaltbetroffener Personen",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/2095/de",
+      "stand": "2017-10-11",
+      "nummer": "17.062",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2017-10-11",
+          "res": "fga/2017/2095"
+        },
+        {
+          "code": 300,
+          "datum": "2018-12-14",
+          "res": "fga/2018/2813"
+        },
+        {
+          "code": 400,
+          "datum": "2019-04-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-2548": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über das Internationale Privatrecht (12. Kapitel: Internationale Schiedsgerichtsbarkeit)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/2548/de",
+      "stand": "2018-10-24",
+      "nummer": "18.076",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2018-10-24",
+          "res": "fga/2018/2548"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2020/1303"
+        },
+        {
+          "code": 400,
+          "datum": "2020-10-08"
         }
       ]
     },
@@ -109,6 +538,42 @@
         {
           "code": 1,
           "res": "dl/proj/6018/18/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2024-116": {
+      "titel": "Botschaft zur Änderung des Schweizerischen Zivilgesetzbuches (Besitzesschutz bei verbotener Eigenmacht an Grundstücken)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2024/116/de",
+      "stand": "2023-12-15",
+      "nummer": "23.085",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2020-09-15",
+          "res": "fga/2020/1860"
+        },
+        {
+          "code": 2,
+          "datum": "2023-12-15",
+          "res": "fga/2024/117"
+        },
+        {
+          "code": 200,
+          "datum": "2023-12-15",
+          "res": "fga/2024/116"
+        },
+        {
+          "code": 300,
+          "datum": "2025-06-20",
+          "res": "fga/2025/2029"
+        },
+        {
+          "code": 400,
+          "datum": "2025-10-09"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6020/48/cons_1"
         }
       ]
     }

@@ -1,13 +1,275 @@
 {
   "erlass": "STHG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-21",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/1995/1449_1449_1449": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1995/1449_1449_1449/de",
+      "titel": "Bundesgesetz über die direkte Bundessteuer (DBG) (Art. 75) und Bundesgesetz über die Harmonisierung der direkten Steuern der Kantone und Gemeinden (StHG) (Art. 29 und 29a), Änderung",
+      "as": "AS 1995 1449",
+      "inkraft": "1995-01-01"
+    },
+    "oc/1996/1445_1445_1445": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1996/1445_1445_1445/de",
+      "titel": "Bundesgesetz vom 6. Oktober 1995 über den zivilen Ersatzdienst (Zivildienstgesetz, ZDG)",
+      "as": "AS 1996 1445",
+      "inkraft": "1996-10-01"
+    },
+    "oc/1998/669_669_669": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1998/669_669_669/de",
+      "titel": "Bundesgesetz vom 10. Oktober 1997 über die Reform der Unternehmensbesteuerung 1997",
+      "as": "AS 1998 669",
+      "inkraft": "1998-01-01"
+    },
+    "oc/1999/149": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1999/149/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Personenstand, Eheschliessung, Scheidung, Kindsrecht, Verwandtenunterstützungspflicht, Heimstätten, Vormundschaft, Ehevermittlung)",
+      "as": "AS 1999 1118",
+      "inkraft": "2000-01-01"
+    },
+    "oc/1999/363": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1999/363/de",
+      "titel": "Bundesgesetz über das Stabilisierungsprogramm 1998",
+      "as": "AS 1999 2374",
+      "inkraft": "1999-01-01"
+    },
+    "oc/2000/118": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2000/118/de",
+      "titel": "Bundesgesetz über Glücksspiele und Spielbanken (Spielbankengesetz, SBG)",
+      "as": "AS 2000 677",
+      "inkraft": "2000-04-01"
+    },
+    "oc/2000/293": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2000/293/de",
+      "titel": "Bundesgesetz über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+      "as": "AS 2000 1891",
+      "inkraft": "2000-09-01",
+      "botschaft": "BOTSCHAFT-1999-1_9005_8381_7979"
+    },
+    "oc/2000/330": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2000/330/de",
+      "titel": "Bundesgesetz über die Unzulässigkeit steuerlicher Abzüge von Bestechungsgeldern",
+      "as": "AS 2000 2147",
+      "inkraft": "2001-01-01"
+    },
+    "oc/2001/155": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2001/155/de",
+      "titel": "Bundesgesetz zur Koordination und Vereinfachung der Veranlagungsverfahren für die direkten Steuern im interkantonalen Verhältnis",
+      "as": "AS 2001 1050",
+      "inkraft": "2001-01-01",
+      "botschaft": "BOTSCHAFT-2000-823"
+    },
+    "oc/2003/667": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2003/667/de",
+      "titel": "Bundesgesetz über die Beseitigung von Benachteiligungen von Menschen mit Behinderungen (Behindertengleichstellungsgesetz, BehiG)",
+      "as": "AS 2003 4487",
+      "inkraft": "2004-01-01"
+    },
+    "oc/2004/320": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/320/de",
+      "titel": "Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung (Fusionsgesetz, FusG)",
+      "as": "AS 2004 2617",
+      "inkraft": "2004-07-01",
+      "botschaft": "BOTSCHAFT-2000-921"
+    },
+    "oc/2004/711": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/711/de",
+      "titel": "Bundesgesetz über die berufliche Alters-, Hinterlassenen- und Invalidenvorsorge (BVG)",
+      "as": "AS 2004 4635",
+      "inkraft": "2005-01-01",
+      "botschaft": "BOTSCHAFT-2003-1054"
+    },
+    "oc/2005/133": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/133/de",
+      "titel": "Bundesgesetz über die Aufhebung der Haftung der Erben für Steuerbussen",
+      "as": "AS 2005 1051",
+      "inkraft": "2005-03-01"
+    },
+    "oc/2005/591": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/591/de",
+      "titel": "Schweizerisches Zivilgesetzbuch (Stiftungsrecht)",
+      "as": "AS 2005 4545",
+      "inkraft": "2006-01-01"
+    },
+    "oc/2005/782": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/782/de",
+      "titel": "Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare (Partnerschaftsgesetz, PartG)",
+      "as": "AS 2005 5685",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2003-194"
+    },
+    "oc/2006/760": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/760/de",
+      "titel": "Bundesgesetz über dringende Anpassungen bei der Unternehmensbesteuerung",
+      "as": "AS 2006 4883",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2005-737"
+    },
+    "oc/2006/822": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/822/de",
+      "titel": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+      "as": "AS 2006 5379",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2005-1000"
+    },
+    "oc/2007/400": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/400/de",
+      "titel": "Bundesgesetz über Änderungen des Nachsteuerverfahrens und des Strafverfahrens wegen Steuerhinterziehung auf dem Gebiet der direkten Steuern",
+      "as": "AS 2007 2973",
+      "inkraft": "2008-01-01"
+    },
+    "oc/2007/685": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/685/de",
+      "titel": "Obligationenrecht (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht) (OR)",
+      "as": "AS 2007 4791",
+      "inkraft": "2008-01-01",
+      "botschaft": "BOTSCHAFT-2002-443"
+    },
+    "oc/2007/71": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/71/de",
+      "titel": "Bundesgesetz über Massnahmen zur Bekämpfung der Schwarzarbeit (Bundesgesetz gegen die Schwarzarbeit, BGSA)",
+      "as": "AS 2007 359",
+      "inkraft": "2008-01-01"
+    },
+    "oc/2007/747": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/747/de",
+      "titel": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Neue AHV-Versichertennummer)",
+      "as": "AS 2007 5259",
+      "inkraft": "2007-12-01",
+      "botschaft": "BOTSCHAFT-2006-52"
+    },
+    "oc/2007/860": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/860/de",
+      "titel": "Bundesgesetz über die von der Schweiz als Gaststaat gewährten Vorrechte, Immunitäten und Erleichterungen sowie finanziellen Beiträge (Gaststaatgesetz, GSG)",
+      "as": "AS 2007 6637",
+      "inkraft": "2008-01-01"
+    },
+    "oc/2008/112": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/112/de",
+      "titel": "Bundesbeschluss über die Genehmigung und die Umsetzung der bilateralen Abkommen zwischen der Schweiz und der EU über die Assoziierung an Schengen und an Dublin",
+      "as": "AS 2008 447",
+      "inkraft": "2008-03-01"
+    },
+    "oc/2008/397": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/397/de",
+      "titel": "Bundesgesetz über die Verbesserung der steuerlichen Rahmenbedingungen für unternehmerische Tätigkeiten und Investitionen (Unternehmenssteuerreformgesetz II)",
+      "as": "AS 2008 2893",
+      "inkraft": "2009-01-01",
+      "botschaft": "BOTSCHAFT-2005-737"
+    },
+    "oc/2008/618": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/618/de",
+      "titel": "Bundesgesetz über die Vereinfachung der Nachbesteuerung in Erbfällen und die Einführung der straflosen Selbstanzeige",
+      "as": "AS 2008 4453",
+      "inkraft": "2010-01-01",
+      "botschaft": "BOTSCHAFT-2006-1131"
+    },
+    "oc/2009/218": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2009/218/de",
+      "titel": "Bundesgesetz über die steuerliche Behandlung von Instandstellungskosten bei Liegenschaften",
+      "as": "AS 2009 1515",
+      "inkraft": "2010-01-01"
+    },
+    "oc/2009/679": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2009/679/de",
+      "titel": "Bundesgesetz über die Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
+      "as": "AS 2009 5597",
+      "inkraft": "2010-01-01",
+      "botschaft": "BOTSCHAFT-2007-425"
+    },
+    "oc/2010/58": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/58/de",
+      "titel": "Bundesgesetz über die steuerliche Abzugsfähigkeit von Zuwendungen an politische Parteien",
+      "as": "AS 2010 449",
+      "inkraft": "2011-01-01"
+    },
+    "oc/2010/60": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/60/de",
+      "titel": "Bundesgesetz über die steuerliche Entlastung von Familien mit Kindern",
+      "as": "AS 2010 455",
+      "inkraft": "2011-01-01",
+      "botschaft": "BOTSCHAFT-2009-815"
+    },
+    "oc/2011/427": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2011/427/de",
+      "titel": "Bundesgesetz über die Besteuerung von Mitarbeiterbeteiligungen",
+      "as": "AS 2011 3259",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2005-88"
+    },
+    "oc/2012/700": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/700/de",
+      "titel": "Bundesgesetz über Vereinfachungen bei der Besteuerung von Lotteriegewinnen",
+      "as": "AS 2012 5977",
+      "inkraft": "2013-01-01"
+    },
+    "oc/2012/71": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/71/de",
+      "titel": "Bundesgesetz über die Steuerbefreiung des Feuerwehrsoldes",
+      "as": "AS 2012 489",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2010-508"
+    },
+    "oc/2012/810": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2012/810/de",
+      "titel": "Obligationenrecht (Rechnungslegungsrecht)",
+      "as": "AS 2012 6679",
+      "inkraft": "2013-01-01",
+      "botschaft": "BOTSCHAFT-2008-416"
+    },
+    "oc/2013/155": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/155/de",
+      "titel": "Bundesgesetz über die Besteuerung nach dem Aufwand",
+      "as": "AS 2013 779",
+      "inkraft": "2014-01-01",
+      "botschaft": "BOTSCHAFT-2011-885"
+    },
+    "oc/2013/504": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2013/504/de",
+      "titel": "Bundesgesetz über die formelle Bereinigung der zeitlichen Bemessung der direkten Steuern bei den natürlichen Personen",
+      "as": "AS 2013 2397",
+      "inkraft": "2014-01-01",
+      "botschaft": "BOTSCHAFT-2011-525"
+    },
+    "oc/2014/240": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2014/240/de",
+      "titel": "Bundesgesetz über die steuerliche Behandlung der berufsorientierten Aus- und Weiterbildungskosten",
+      "as": "AS 2014 1105",
+      "inkraft": "2016-01-01",
+      "botschaft": "BOTSCHAFT-2011-381"
+    },
+    "oc/2015/143": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/143/de",
+      "titel": "Bundesgesetz über eine Anpassung des DBG und des StHG an die Allgemeinen Bestimmungen des StGB",
+      "as": "AS 2015 779",
+      "inkraft": "2017-01-01",
+      "botschaft": "BOTSCHAFT-2012-403"
+    },
     "oc/2015/186": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2015/186/de",
       "titel": "Bundesgesetz über die steuerliche Behandlung der berufsorientierten Aus- und Weiterbildungskosten",
       "as": "AS 2015 993",
       "inkraft": "2016-01-01"
+    },
+    "oc/2015/3": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/3/de",
+      "titel": "Bundesgesetz über eine Neuregelung des Steuererlasses (Steuererlassgesetz)",
+      "as": "AS 2015 9",
+      "inkraft": "2016-01-01",
+      "botschaft": "BOTSCHAFT-2013-1658"
+    },
+    "oc/2015/557": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/557/de",
+      "titel": "Bundesgesetz über die Gewinnbesteuerung von juristischen Personen mit ideellen Zwecken",
+      "as": "AS 2015 2947",
+      "inkraft": "2016-01-01",
+      "botschaft": "BOTSCHAFT-2014-1136"
+    },
+    "oc/2016/132": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "titel": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "as": "AS 2016 689",
+      "inkraft": "2017-01-01"
     },
     "oc/2017/547": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2017/547/de",
@@ -15,9 +277,680 @@
       "as": "AS 2017 5039",
       "inkraft": "2019-01-01",
       "botschaft": "BOTSCHAFT-2016-1165"
+    },
+    "oc/2017/762": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2017/762/de",
+      "titel": "Energiegesetz (EnG)",
+      "as": "AS 2017 6839",
+      "inkraft": "2018-01-01",
+      "botschaft": "BOTSCHAFT-2013-1476"
+    },
+    "oc/2018/272": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/272/de",
+      "titel": "Bundesgesetz über die Revision der Quellenbesteuerung des Erwerbseinkommens",
+      "as": "AS 2018 1813",
+      "inkraft": "2021-01-01",
+      "botschaft": "BOTSCHAFT-2015-56"
+    },
+    "oc/2018/795": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/795/de",
+      "titel": "Bundesgesetz über Geldspiele (Geldspielgesetz, BGS)",
+      "as": "AS 2018 5103",
+      "inkraft": "2019-01-01"
+    },
+    "oc/2019/225": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2019/225/de",
+      "titel": "Bundesgesetz über die Berechnung des Beteiligungsabzugs bei systemrelevanten Banken",
+      "as": "AS 2019 1207",
+      "inkraft": "2019-01-01",
+      "botschaft": "BOTSCHAFT-2018-511"
+    },
+    "oc/2019/447": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2019/447/de",
+      "titel": "Bundesgesetz über die Steuerreform und die AHV-Finanzierung (STAF)",
+      "as": "AS 2019 2395",
+      "inkraft": "2019-07-09"
+    },
+    "oc/2020/746": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/746/de",
+      "titel": "Obligationenrecht (Aktienrecht)",
+      "as": "AS 2020 4005",
+      "inkraft": "2023-01-01",
+      "botschaft": "BOTSCHAFT-2017-112"
+    },
+    "oc/2020/890": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/890/de",
+      "titel": "Bundesgesetz über die steuerliche Behandlung finanzieller Sanktionen",
+      "as": "AS 2020 5121",
+      "inkraft": "2022-01-01",
+      "botschaft": "BOTSCHAFT-2016-2055"
+    },
+    "oc/2021/373": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/373/de",
+      "titel": "Bundesgesetz vom 19. Juni 2020 über Überbrückungsleistungen für ältere Arbeitslose (ÜLG)",
+      "as": "AS 2021 373",
+      "inkraft": "2021-07-01"
+    },
+    "oc/2021/673": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/673/de",
+      "titel": "Bundesgesetz vom 18. Juni 2021 über elektronische Verfahren im Steuerbereich",
+      "as": "AS 2021 673",
+      "inkraft": "2022-01-01",
+      "botschaft": "BOTSCHAFT-2020-1111"
+    },
+    "oc/2021/758": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/758/de",
+      "titel": "Bundesgesetz über die Alters- und Hinterlassenenversicherung (AHVG) (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "as": "AS 2021 758",
+      "inkraft": "2022-01-01",
+      "botschaft": "BOTSCHAFT-2019-2681"
+    },
+    "oc/2022/732": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/732/de",
+      "titel": "Bundesgesetz über die Banken und Sparkassen (Bankengesetz, BankG) (Insolvenz und Einlagensicherung)",
+      "as": "AS 2022 732",
+      "inkraft": "2023-01-01",
+      "botschaft": "BOTSCHAFT-2020-1555"
+    },
+    "oc/2023/38": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/38/de",
+      "titel": "Bundesgesetz über die Besteuerung von Leibrenten und ähnlichen Vorsorgeformen",
+      "as": "AS 2023 38",
+      "inkraft": "2025-01-01",
+      "botschaft": "BOTSCHAFT-2021-3028"
+    },
+    "oc/2024/53": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/53/de",
+      "titel": "Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz, KAG)",
+      "as": "AS 2024 53",
+      "inkraft": "2024-03-01",
+      "botschaft": "BOTSCHAFT-2020-1852"
+    },
+    "oc/2024/573": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/573/de",
+      "titel": "Bundesgesetz vom 14. Juni 2024 über die Besteuerung der Telearbeit im internationalen Verhältnis",
+      "as": "AS 2024 573",
+      "inkraft": "2025-01-01",
+      "botschaft": "BOTSCHAFT-2024-650"
     }
   },
   "botschaften": {
+    "BOTSCHAFT-1999-1_9005_8381_7979": {
+      "titel": "Botschaft über die Schaffung und die Anpassung gesetzlicher Grundlagen für die Bearbeitung von Personendaten",
+      "url": "https://www.fedlex.admin.ch/eli/fga/1999/1_9005_8381_7979/de",
+      "stand": "1999-08-25",
+      "nummer": "99.067",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "1999-08-25",
+          "res": "fga/1999/1_9005_8381_7979"
+        },
+        {
+          "code": 300,
+          "datum": "2000-03-24",
+          "res": "fga/2000/431"
+        },
+        {
+          "code": 400,
+          "datum": "2000-07-20"
+        }
+      ]
+    },
+    "BOTSCHAFT-2000-823": {
+      "titel": "Botschaft zur Koordination und Vereinfachung der Veranlagungsverfahren für die direkten Steuern im interkantonalen Verhältnis",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2000/823/de",
+      "stand": "2000-05-24",
+      "nummer": "2000.045",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2000-05-24",
+          "res": "fga/2000/823"
+        },
+        {
+          "code": 300,
+          "datum": "2000-12-15",
+          "res": "fga/2000/1331"
+        },
+        {
+          "code": 400,
+          "datum": "2001-04-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2000-921": {
+      "titel": "Botschaft zum Bundesgesetz über Fusion, Spaltung, Umwandlung und Vermögensübertragung",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2000/921/de",
+      "stand": "2000-06-13",
+      "nummer": "00.052",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2000-06-13",
+          "res": "fga/2000/921"
+        },
+        {
+          "code": 300,
+          "datum": "2003-10-03",
+          "res": "fga/2003/1102"
+        },
+        {
+          "code": 400,
+          "datum": "2004-01-22"
+        }
+      ]
+    },
+    "BOTSCHAFT-2002-443": {
+      "titel": "Botschaft zur Revision des Obligationenrechts (GmbH-Recht sowie Anpassungen im Aktien-, Genossenschafts-, Handelsregister- und Firmenrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2002/443/de",
+      "stand": "2001-12-19",
+      "nummer": "01.082",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2001-12-19",
+          "res": "fga/2002/443"
+        },
+        {
+          "code": 300,
+          "datum": "2005-12-16",
+          "res": "fga/2005/1176"
+        },
+        {
+          "code": 400,
+          "datum": "2006-04-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2003-1054": {
+      "titel": "Botschaft über Massnahmen zur Behebung von Unterdeckungen in der beruflichen Vorsorge",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/1054/de",
+      "stand": "2003-09-19",
+      "nummer": "03.060",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2003-09-19",
+          "res": "fga/2003/1054"
+        },
+        {
+          "code": 300,
+          "datum": "2004-06-18",
+          "res": "fga/2004/595"
+        },
+        {
+          "code": 400,
+          "datum": "2004-10-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2003-194": {
+      "titel": "Botschaft zum Bundesgesetz über die eingetragene Partnerschaft gleichgeschlechtlicher Paare",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/194/de",
+      "stand": "2002-11-29",
+      "nummer": "02.090",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2002-11-29",
+          "res": "fga/2003/194"
+        },
+        {
+          "code": 300,
+          "datum": "2004-06-18",
+          "res": "fga/2004/596"
+        },
+        {
+          "code": 400,
+          "datum": "2004-10-07"
+        },
+        {
+          "code": 480,
+          "datum": "2004-10-20",
+          "res": "fga/2004/1065"
+        },
+        {
+          "code": 630,
+          "datum": "2005-04-11",
+          "res": "fga/2005/401"
+        },
+        {
+          "code": 650,
+          "datum": "2005-06-05",
+          "res": "fga/2005/782"
+        }
+      ]
+    },
+    "BOTSCHAFT-2005-1000": {
+      "titel": "Botschaft zum Bundesgesetz über die kollektiven Kapitalanlagen (Kollektivanlagengesetz)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2005/1000/de",
+      "stand": "2005-09-23",
+      "nummer": "05.072",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2005-09-23",
+          "res": "fga/2005/1000"
+        },
+        {
+          "code": 300,
+          "datum": "2006-06-23",
+          "res": "fga/2006/680"
+        },
+        {
+          "code": 400,
+          "datum": "2006-10-12"
+        }
+      ]
+    },
+    "BOTSCHAFT-2005-737": {
+      "titel": "Botschaft zum Bundesgesetz über die Verbesserung der steuerlichen Rahmenbedingungen für unternehmerische Tätigkeiten und Investitionen (Unternehmenssteuerreformgesetz II)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2005/737/de",
+      "stand": "2005-06-22",
+      "nummer": "05.058",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2005-06-22",
+          "res": "fga/2005/737"
+        },
+        {
+          "code": 300,
+          "datum": "2006-06-23"
+        },
+        {
+          "code": 300,
+          "datum": "2006-06-23",
+          "res": "fga/2006/674"
+        },
+        {
+          "code": 400,
+          "datum": "2006-10-12"
+        },
+        {
+          "code": 300,
+          "datum": "2007-03-23",
+          "res": "fga/2007/361"
+        },
+        {
+          "code": 400,
+          "datum": "2007-07-12"
+        },
+        {
+          "code": 480,
+          "datum": "2007-08-03",
+          "res": "fga/2007/855"
+        },
+        {
+          "code": 630,
+          "datum": "2007-10-16",
+          "res": "fga/2007/1162"
+        },
+        {
+          "code": 650,
+          "datum": "2008-02-24",
+          "res": "fga/2008/613"
+        }
+      ]
+    },
+    "BOTSCHAFT-2005-88": {
+      "titel": "Botschaft zum Bundesgesetz über die Besteuerung von Mitarbeiterbeteiligung",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2005/88/de",
+      "stand": "2004-11-17",
+      "nummer": "04.074",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2004-11-17",
+          "res": "fga/2005/88"
+        },
+        {
+          "code": 300,
+          "datum": "2010-12-17",
+          "res": "fga/2010/1677"
+        },
+        {
+          "code": 400,
+          "datum": "2011-04-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-1131": {
+      "titel": "Botschaft zum Bundesgesetz über die Vereinfachung der Nachbesteuerung in Erbfällen und die Einführung der straflosen Selbstanzeige",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/1131/de",
+      "stand": "2006-10-18",
+      "nummer": "06.085",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2006-10-18",
+          "res": "fga/2006/1131"
+        },
+        {
+          "code": 300,
+          "datum": "2008-03-20",
+          "res": "fga/2008/487"
+        },
+        {
+          "code": 400,
+          "datum": "2008-07-10"
+        }
+      ]
+    },
+    "BOTSCHAFT-2006-52": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (Neue AHV-Versichertennummer)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2006/52/de",
+      "stand": "2005-11-23",
+      "nummer": "05.079",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2005-11-23",
+          "res": "fga/2006/52"
+        },
+        {
+          "code": 300,
+          "datum": "2006-06-23",
+          "res": "fga/2006/676"
+        },
+        {
+          "code": 400,
+          "datum": "2006-10-12"
+        }
+      ]
+    },
+    "BOTSCHAFT-2007-425": {
+      "titel": "Zusatzbotschaft zur Bahnreform 2 (Revision der Erlasse über den öffentlichen Verkehr)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2007/425/de",
+      "stand": "2007-03-09",
+      "nummer": "05.028",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2007-03-09",
+          "res": "fga/2007/425"
+        },
+        {
+          "code": 300,
+          "datum": "2009-03-20",
+          "res": "fga/2009/417"
+        },
+        {
+          "code": 400,
+          "datum": "2009-07-09"
+        }
+      ]
+    },
+    "BOTSCHAFT-2008-416": {
+      "titel": "Botschaft zur Änderung des Obligationenrechts. (Aktienrecht und Rechnungslegungsrecht sowie Anpassungen im Recht der Kollektiv- und der Kommanditgesellschaft, im GmbH-Recht, Genossenschafts-, Handelsregister- sowie Firmenrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2008/416/de",
+      "stand": "2007-12-21",
+      "nummer": "08.011",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2007-12-21",
+          "res": "fga/2008/416"
+        },
+        {
+          "code": 300,
+          "datum": "2011-06-17",
+          "res": "fga/2011/772"
+        },
+        {
+          "code": 400,
+          "datum": "2011-10-06"
+        },
+        {
+          "code": 300,
+          "datum": "2011-12-23",
+          "res": "fga/2012/10"
+        },
+        {
+          "code": 400,
+          "datum": "2012-04-13"
+        }
+      ]
+    },
+    "BOTSCHAFT-2009-815": {
+      "titel": "Botschaft zum Bundesgesetz über die steuerliche Entlastung von Familien mit Kindern",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2009/815/de",
+      "stand": "2009-05-20",
+      "nummer": "09.045",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2009-05-20",
+          "res": "fga/2009/815"
+        },
+        {
+          "code": 300,
+          "datum": "2009-09-25",
+          "res": "fga/2009/1179"
+        },
+        {
+          "code": 400,
+          "datum": "2010-01-14"
+        }
+      ]
+    },
+    "BOTSCHAFT-2010-508": {
+      "titel": "Botschaft zum Bundesgesetz über die Steuerbefreiung des Feuerwehrsoldes",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2010/508/de",
+      "stand": "2010-04-21",
+      "nummer": "10.040",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2010-04-21",
+          "res": "fga/2010/508"
+        },
+        {
+          "code": 300,
+          "datum": "2011-06-17",
+          "res": "fga/2011/784"
+        },
+        {
+          "code": 400,
+          "datum": "2011-10-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2011-381": {
+      "titel": "Botschaft zum Bundesgesetz über die steuerliche Behandlung der berufsorientierten Aus- und Weiterbildungskosten",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/381/de",
+      "stand": "2011-03-04",
+      "nummer": "11.023",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2011-03-04",
+          "res": "fga/2011/381"
+        },
+        {
+          "code": 300,
+          "datum": "2013-09-27",
+          "res": "fga/2013/1419"
+        },
+        {
+          "code": 400,
+          "datum": "2014-01-16"
+        }
+      ]
+    },
+    "BOTSCHAFT-2011-525": {
+      "titel": "Botschaft zum Bundesgesetz über die formelle Bereinigung der zeitlichen Bemessung der direkten Steuern bei den natürlichen Personen",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/525/de",
+      "stand": "2011-04-06",
+      "nummer": "11.026",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2011-04-06",
+          "res": "fga/2011/525"
+        },
+        {
+          "code": 300,
+          "datum": "2013-03-22",
+          "res": "fga/2013/429"
+        },
+        {
+          "code": 400,
+          "datum": "2013-07-13"
+        }
+      ]
+    },
+    "BOTSCHAFT-2011-885": {
+      "titel": "Botschaft zum Bundesgesetz über die Besteuerung nach dem Aufwand",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2011/885/de",
+      "stand": "2011-06-29",
+      "nummer": "11.043",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2011-06-29",
+          "res": "fga/2011/885"
+        },
+        {
+          "code": 300,
+          "datum": "2012-09-28",
+          "res": "fga/2012/1396"
+        },
+        {
+          "code": 400,
+          "datum": "2013-01-17"
+        }
+      ]
+    },
+    "BOTSCHAFT-2012-403": {
+      "titel": "Botschaft zum Bundesgesetz über eine Anpassung des DBG und des StHG an die Allgemeinen Bestimmungen des StGB",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2012/403/de",
+      "stand": "2012-03-02",
+      "nummer": "12.036",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2012-03-02",
+          "res": "fga/2012/403"
+        },
+        {
+          "code": 300,
+          "datum": "2014-09-26",
+          "res": "fga/2014/1591"
+        },
+        {
+          "code": 400,
+          "datum": "2015-01-15"
+        }
+      ]
+    },
+    "BOTSCHAFT-2013-1476": {
+      "titel": "Botschaft zum ersten Massnahmenpaket der Energiestrategie 2050 (Revision des Energierechts) und zur Volksinitiative «Für den geordneten Ausstieg aus der Atomenergie (Atomausstiegsinitiative)»",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2013/1476/de",
+      "stand": "2013-09-04",
+      "nummer": "13.074",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-09-04",
+          "res": "fga/2013/1476"
+        },
+        {
+          "code": 300,
+          "datum": "2016-09-30",
+          "res": "fga/2016/1642"
+        },
+        {
+          "code": 400,
+          "datum": "2017-01-19"
+        },
+        {
+          "code": 480,
+          "datum": "2017-01-31",
+          "res": "fga/2017/132"
+        },
+        {
+          "code": 630,
+          "datum": "2017-02-21",
+          "res": "fga/2017/284"
+        },
+        {
+          "code": 650,
+          "datum": "2017-05-21",
+          "res": "fga/2017/1232"
+        }
+      ]
+    },
+    "BOTSCHAFT-2013-1658": {
+      "titel": "Botschaft zum Steuererlassgesetz",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2013/1658/de",
+      "stand": "2013-10-23",
+      "nummer": "13.087",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-10-23",
+          "res": "fga/2013/1658"
+        },
+        {
+          "code": 300,
+          "datum": "2014-06-20",
+          "res": "fga/2014/1090"
+        },
+        {
+          "code": 400,
+          "datum": "2014-10-09"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-1136": {
+      "titel": "Botschaft zum Bundesgesetz über die Gewinnbesteuerung von juristischen Personen mit ideellen Zwecken",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/1136/de",
+      "stand": "2014-06-06",
+      "nummer": "14.051",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2014-06-06",
+          "res": "fga/2014/1136"
+        },
+        {
+          "code": 300,
+          "datum": "2015-03-20",
+          "res": "fga/2015/547"
+        },
+        {
+          "code": 400,
+          "datum": "2015-07-09"
+        },
+        {
+          "code": 400
+        }
+      ]
+    },
+    "BOTSCHAFT-2015-56": {
+      "titel": "Botschaft zum Bundesgesetz über die Revision der Quellenbesteuerung des Erwerbseinkommens",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2015/56/de",
+      "stand": "2014-11-28",
+      "nummer": "14.093",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2014-11-28",
+          "res": "fga/2015/56"
+        },
+        {
+          "code": 300,
+          "datum": "2016-12-16",
+          "res": "fga/2016/2168"
+        },
+        {
+          "code": 400,
+          "datum": "2017-04-07"
+        }
+      ]
+    },
     "BOTSCHAFT-2016-1165": {
       "titel": "Botschaft zur zur Änderung des Bundesgesetzes über die Harmonisierung der direkten Steuern der Kantone und Gemeinden",
       "url": "https://www.fedlex.admin.ch/eli/fga/2016/1165/de",
@@ -37,6 +970,287 @@
         {
           "code": 400,
           "datum": "2017-07-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2016-2055": {
+      "titel": "Botschaft zum Bundesgesetz über die steuerliche Behandlung finanzieller Sanktionen",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2016/2055/de",
+      "stand": "2016-11-16",
+      "nummer": "16.076",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2016-11-16",
+          "res": "fga/2016/2055"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2020/1306"
+        },
+        {
+          "code": 400,
+          "datum": "2020-10-08"
+        }
+      ]
+    },
+    "BOTSCHAFT-2017-112": {
+      "titel": "Botschaft zur Änderung des Obligationenrechts (Aktienrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2017/112/de",
+      "stand": "2016-11-23",
+      "nummer": "16.077",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2014-12-09",
+          "res": "fga/2014/1998"
+        },
+        {
+          "code": 200,
+          "datum": "2016-11-23",
+          "res": "fga/2017/112"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2020/1302"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2021/890"
+        },
+        {
+          "code": 400,
+          "datum": "2020-10-08"
+        },
+        {
+          "code": 400,
+          "datum": "2021-08-05"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6014/32/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-511": {
+      "titel": "Botschaft zum Bundesgesetzes über die Berechnung des Beteiligungsabzugs bei Too-big-to-fail-Instrumenten",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/511/de",
+      "stand": "2018-02-14",
+      "nummer": "18.020",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2018-02-14",
+          "res": "fga/2018/511"
+        },
+        {
+          "code": 300,
+          "datum": "2018-12-14",
+          "res": "fga/2018/2816"
+        },
+        {
+          "code": 400,
+          "datum": "2019-04-07"
+        }
+      ]
+    },
+    "BOTSCHAFT-2019-2681": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die Alters- und Hinterlassenenversicherung (Systematische Verwendung der AHV-Nummer durch Behörden)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2019/2681/de",
+      "stand": "2019-10-30",
+      "nummer": "19.057",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2018-11-20",
+          "res": "fga/2018/2485"
+        },
+        {
+          "code": 200,
+          "datum": "2019-10-30",
+          "res": "fga/2019/2681"
+        },
+        {
+          "code": 300,
+          "datum": "2020-12-18",
+          "res": "fga/2020/2693"
+        },
+        {
+          "code": 400,
+          "datum": "2021-04-10"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6018/78/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2020-1111": {
+      "titel": "Botschaft zum Bundesgesetz über elektronische Verfahren im Steuerbereich",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2020/1111/de",
+      "stand": "2020-05-20",
+      "nummer": "20.051",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2019-07-02",
+          "res": "fga/2019/1607"
+        },
+        {
+          "code": 200,
+          "datum": "2020-05-20",
+          "res": "fga/2020/1111"
+        },
+        {
+          "code": 300,
+          "datum": "2021-06-18",
+          "res": "fga/2021/1499"
+        },
+        {
+          "code": 400,
+          "datum": "2021-10-07"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6019/49/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2020-1555": {
+      "titel": "Botschaft zur Änderung des Bankengesetzes (BankG) (Insolvenz, Einlagensicherung, Segregierung)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2020/1555/de",
+      "stand": "2020-06-19",
+      "nummer": "20.059",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2019-03-19",
+          "res": "fga/2019/630"
+        },
+        {
+          "code": 200,
+          "datum": "2020-06-19",
+          "res": "fga/2020/1555"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/3001"
+        },
+        {
+          "code": 400,
+          "datum": "2022-04-07"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6019/11/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2020-1852": {
+      "titel": "Botschaft zur Änderung des Kollektivanlagengesetzes (Limited Qualified Investor Fund; L-QIF)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2020/1852/de",
+      "stand": "2020-08-19",
+      "nummer": "20.062",
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2019-07-02",
+          "res": "fga/2019/1608"
+        },
+        {
+          "code": 2,
+          "datum": "2020-08-19",
+          "res": "fga/2020/1853"
+        },
+        {
+          "code": 200,
+          "datum": "2020-08-19",
+          "res": "fga/2020/1852"
+        },
+        {
+          "code": 300,
+          "datum": "2021-12-17",
+          "res": "fga/2021/3000"
+        },
+        {
+          "code": 400,
+          "datum": "2022-04-07"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6019/50/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2021-3028": {
+      "titel": "Botschaft zum Bundesgesetz über die Besteuerung von Leibrenten und ähnlichen Vorsorgeformen",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2021/3028/de",
+      "stand": "2021-11-24",
+      "nummer": "21.077",
+      "ereignisse": [
+        {
+          "code": 8,
+          "datum": "2020-04-15",
+          "res": "fga/2020/702"
+        },
+        {
+          "code": 200,
+          "datum": "2021-11-24",
+          "res": "fga/2021/3028"
+        },
+        {
+          "code": 300,
+          "datum": "2022-06-17",
+          "res": "fga/2022/1566"
+        },
+        {
+          "code": 400,
+          "datum": "2022-10-06"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/6020/16/cons_1"
+        }
+      ]
+    },
+    "BOTSCHAFT-2024-650": {
+      "titel": "Botschaft zum Bundesgesetz über die Besteuerung der Telearbeit im internationalen Verhältnis",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2024/650/de",
+      "stand": "2024-03-01",
+      "nummer": "24.024",
+      "anker": true,
+      "ereignisse": [
+        {
+          "code": 4,
+          "datum": "2023-06-16",
+          "res": "fga/2023/1468"
+        },
+        {
+          "code": 2,
+          "datum": "2024-03-01",
+          "res": "fga/2024/651"
+        },
+        {
+          "code": 200,
+          "datum": "2024-03-01",
+          "res": "fga/2024/650"
+        },
+        {
+          "code": 300,
+          "datum": "2024-06-14",
+          "res": "fga/2024/1453"
+        },
+        {
+          "code": 400,
+          "datum": "2024-10-03"
+        },
+        {
+          "code": 1,
+          "res": "dl/proj/2023/14/cons_1"
         }
       ]
     }

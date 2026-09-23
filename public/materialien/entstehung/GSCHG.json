@@ -1,8 +1,58 @@
 {
   "erlass": "GSCHG",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/1997/1155_1155_1155": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1997/1155_1155_1155/de",
+      "titel": "Umweltschutzgesetz, Änderung",
+      "as": "AS 1997 1155",
+      "inkraft": "1997-07-01"
+    },
+    "oc/1997/2243_2243_2243": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1997/2243_2243_2243/de",
+      "titel": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG), Änderung",
+      "as": "AS 1997 2243",
+      "inkraft": "1997-11-01"
+    },
+    "oc/1998/3033_3033_3033": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1998/3033_3033_3033/de",
+      "titel": "Bundesgesetz über die Landwirtschaft (Landwirtschaftsgesetz, LwG)",
+      "as": "AS 1998 3033",
+      "inkraft": "1999-01-01"
+    },
+    "oc/1999/472": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/1999/472/de",
+      "titel": "Bundesgesetz über die Koordination und Vereinfachung von Entscheidverfahren",
+      "as": "AS 1999 3071",
+      "inkraft": "2000-01-01"
+    },
+    "oc/2003/705": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2003/705/de",
+      "titel": "Bundesgesetz über die Gentechnik im Ausserhumanbereich (Gentechnikgesetz, GTG)",
+      "as": "AS 2003 4803",
+      "inkraft": "2004-01-01"
+    },
+    "oc/2004/200": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2004/200/de",
+      "titel": "Bundesgesetz über das Entlastungsprogramm 2003",
+      "as": "AS 2004 1633",
+      "inkraft": "2005-01-01",
+      "botschaft": "BOTSCHAFT-2003-887"
+    },
+    "oc/2005/542": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2005/542/de",
+      "titel": "Bundesgesetz über das Vernehmlassungsverfahren (Vernehmlassungsgesetz, VlG)",
+      "as": "AS 2005 4099",
+      "inkraft": "2005-09-01"
+    },
+    "oc/2006/352": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2006/352/de",
+      "titel": "Bundesgesetz über das Bundesverwaltungsgericht (Verwaltungsgerichtsgesetz, VGG)",
+      "as": "AS 2006 2197",
+      "inkraft": "2007-01-01",
+      "botschaft": "BOTSCHAFT-2001-731"
+    },
     "oc/2006/575": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2006/575/de",
       "titel": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG)",
@@ -16,11 +66,43 @@
       "inkraft": "2007-01-01",
       "botschaft": "BOTSCHAFT-2005-114"
     },
+    "oc/2007/787": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2007/787/de",
+      "titel": "Bundesgesetz über die Schaffung und die Änderung von Erlassen zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "as": "AS 2007 5779",
+      "inkraft": "2008-01-01",
+      "botschaft": "BOTSCHAFT-2005-976"
+    },
+    "oc/2008/327": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/327/de",
+      "titel": "Bundesgesetz über die Aufhebung und die Vereinfachung von Bewilligungsverfahren",
+      "as": "AS 2008 2265",
+      "inkraft": "2008-06-01"
+    },
+    "oc/2008/447": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2008/447/de",
+      "titel": "Bundesgesetz zur formellen Bereinigung des Bundesrechts",
+      "as": "AS 2008 3437",
+      "inkraft": "2008-08-01"
+    },
+    "oc/2010/434": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2010/434/de",
+      "titel": "Bundesgesetz über die Gentechnik im Ausserhumanbereich (Gentechnikgesetz, GTG)",
+      "as": "AS 2010 3233",
+      "inkraft": "2010-08-01"
+    },
     "oc/2010/620": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2010/620/de",
       "titel": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG) (Renaturierung)",
       "as": "AS 2010 4285",
       "inkraft": "2011-01-01"
+    },
+    "oc/2014/234": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2014/234/de",
+      "titel": "Bundesbeschluss über die Genehmigung und die Umsetzung der Aarhus-Konvention und von deren Änderung",
+      "as": "AS 2014 1021",
+      "inkraft": "2014-06-01",
+      "botschaft": "BOTSCHAFT-2012-596"
     },
     "oc/2014/574": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2014/574/de",
@@ -34,9 +116,108 @@
       "titel": "Bundesgesetz über den Schutz der Gewässer (Gewässerschutzgesetz, GSchG) (Betrifft nur den französischen Text)",
       "as": "AS 2015 3021",
       "inkraft": "2015-09-08"
+    },
+    "oc/2016/132": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/132/de",
+      "titel": "Bundesgesetz über die Weiterbildung (WeBiG)",
+      "as": "AS 2016 689",
+      "inkraft": "2017-01-01"
+    },
+    "oc/2018/807": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/807/de",
+      "titel": "Obligationenrecht (Revision des Verjährungsrechts)",
+      "as": "AS 2018 5343",
+      "inkraft": "2020-01-01",
+      "botschaft": "BOTSCHAFT-2014-65"
+    },
+    "oc/2020/748": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2020/748/de",
+      "titel": "Bundesgesetz über die Enteignung (EntG)",
+      "as": "AS 2020 4085",
+      "inkraft": "2021-01-01",
+      "botschaft": "BOTSCHAFT-2018-1660"
+    },
+    "oc/2021/662": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/662/de",
+      "titel": "Bundesgesetz über den eidgenössischen Finanzhaushalt (Finanzhaushaltgesetz, FHG)",
+      "as": "AS 2021 662",
+      "inkraft": "2022-01-01"
+    },
+    "oc/2022/263": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/263/de",
+      "titel": "Bundesgesetz vom 19. März 2021 über die Verminderung der Risiken durch den Einsatz von Pestiziden (Änderung des Chemikaliengesetzes, des Gewässerschutzgesetzes und des Landwirtschaftsgesetzes)",
+      "as": "AS 2022 263",
+      "inkraft": "2023-02-01"
+    },
+    "oc/2025/430": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2025/430/de",
+      "titel": "Bundesgesetz über den Wasserbau",
+      "as": "AS 2025 430",
+      "inkraft": "2025-08-01"
     }
   },
   "botschaften": {
+    "BOTSCHAFT-2001-731": {
+      "titel": "Botschaft zur Totalrevision der Bundesrechtspflege",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2001/731/de",
+      "stand": "2001-02-28",
+      "nummer": "01.023",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2001-02-28",
+          "res": "fga/2001/731"
+        },
+        {
+          "code": 300,
+          "datum": "2002-10-04",
+          "res": "fga/2002/1023"
+        },
+        {
+          "code": 400,
+          "datum": "2003-01-23"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/594"
+        },
+        {
+          "code": 300,
+          "datum": "2005-06-17",
+          "res": "fga/2005/595"
+        },
+        {
+          "code": 400,
+          "datum": "2005-10-06"
+        }
+      ]
+    },
+    "BOTSCHAFT-2003-887": {
+      "titel": "Botschaft zum Entlastungsprogramm 2003 für den Bundeshaushalt (EP 03)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2003/887/de",
+      "stand": "2003-07-02",
+      "nummer": "03.047",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2003-07-02",
+          "res": "fga/2003/887"
+        },
+        {
+          "code": 300,
+          "datum": "2003-12-19",
+          "res": "fga/2003/1382"
+        },
+        {
+          "code": 400,
+          "datum": "2004-03-31"
+        },
+        {
+          "code": 400
+        }
+      ]
+    },
     "BOTSCHAFT-2005-114": {
       "titel": "Botschaft über die Änderung des Gewässerschutzgesetzes",
       "url": "https://www.fedlex.admin.ch/eli/fga/2005/114/de",
@@ -59,6 +240,55 @@
         }
       ]
     },
+    "BOTSCHAFT-2005-976": {
+      "titel": "Botschaft zur Ausführungsgesetzgebung zur Neugestaltung des Finanzausgleichs und der Aufgabenteilung zwischen Bund und Kantonen (NFA)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2005/976/de",
+      "stand": "2005-09-07",
+      "nummer": "05.070",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2005-09-07",
+          "res": "fga/2005/976"
+        },
+        {
+          "code": 300,
+          "datum": "2006-10-06",
+          "res": "fga/2006/1050"
+        },
+        {
+          "code": 300,
+          "datum": "2006-10-06",
+          "res": "fga/2006/1053"
+        },
+        {
+          "code": 400,
+          "datum": "2007-01-25"
+        }
+      ]
+    },
+    "BOTSCHAFT-2012-596": {
+      "titel": "Botschaft zur Genehmigung und Umsetzung der Aarhus-Konvention und von deren Änderung",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2012/596/de",
+      "stand": "2012-03-28",
+      "nummer": "12.044",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2012-03-28",
+          "res": "fga/2012/596"
+        },
+        {
+          "code": 300,
+          "datum": "2013-09-27",
+          "res": "fga/2013/1424"
+        },
+        {
+          "code": 400,
+          "datum": "2014-01-16"
+        }
+      ]
+    },
     "BOTSCHAFT-2013-1031": {
       "titel": "Botschaft zur Änderung des Gewässerschutzgesetzes (Verursachergerechte Finanzierung der Elimination von Spurenstoffen im Abwasser)",
       "url": "https://www.fedlex.admin.ch/eli/fga/2013/1031/de",
@@ -78,6 +308,50 @@
         {
           "code": 400,
           "datum": "2014-07-10"
+        }
+      ]
+    },
+    "BOTSCHAFT-2014-65": {
+      "titel": "Botschaft zur Änderung des Obligationenrechts (Verjährungsrecht)",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2014/65/de",
+      "stand": "2013-11-29",
+      "nummer": "13.100",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2013-11-29",
+          "res": "fga/2014/65"
+        },
+        {
+          "code": 300,
+          "datum": "2018-06-15",
+          "res": "fga/2018/1352"
+        },
+        {
+          "code": 400,
+          "datum": "2018-10-04"
+        }
+      ]
+    },
+    "BOTSCHAFT-2018-1660": {
+      "titel": "Botschaft zur Änderung des Bundesgesetzes über die Enteignung",
+      "url": "https://www.fedlex.admin.ch/eli/fga/2018/1660/de",
+      "stand": "2018-06-01",
+      "nummer": "18.057",
+      "ereignisse": [
+        {
+          "code": 200,
+          "datum": "2018-06-01",
+          "res": "fga/2018/1660"
+        },
+        {
+          "code": 300,
+          "datum": "2020-06-19",
+          "res": "fga/2020/1309"
+        },
+        {
+          "code": 400,
+          "datum": "2020-10-08"
         }
       ]
     }

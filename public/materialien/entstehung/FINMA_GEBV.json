@@ -1,7 +1,7 @@
 {
   "erlass": "FINMA_GEBV",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
     "oc/2009/224": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2009/224/de",
@@ -20,6 +20,54 @@
       "titel": "Verordnung über die Erhebung von Gebühren und Abgaben durch die Eidgenössische Finanzmarktaufsicht (FINMA-Gebühren- und Abgabenverordnung, FINMA-GebV)",
       "as": "AS 2012 6915",
       "inkraft": "2013-01-01"
+    },
+    "oc/2014/708": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2014/708/de",
+      "titel": "Finanzmarktprüfverordnung (FINMA-PV)",
+      "as": "AS 2014 4295",
+      "inkraft": "2015-01-01"
+    },
+    "oc/2015/854": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2015/854/de",
+      "titel": "Verordnung über die Finanzmarktinfrastrukturen und das Marktverhalten im Effekten- und Derivatehandel (Finanzmarktinfrastrukturverordnung, FinfraV)",
+      "as": "AS 2015 5413",
+      "inkraft": "2016-01-01"
+    },
+    "oc/2018/799": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/799/de",
+      "titel": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+      "as": "AS 2018 5229",
+      "inkraft": "2019-01-01"
+    },
+    "oc/2019/763": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2019/763/de",
+      "titel": "Verordnung über die Finanzinstitute (Finanzinstitutsverordnung, FINIV)",
+      "as": "AS 2019 4633",
+      "inkraft": "2020-01-01"
+    },
+    "oc/2021/400": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2021/400/de",
+      "titel": "Verordnung vom 18. Juni 2021 zur Anpassung des Bundesrechts an Entwicklungen der Technik verteilter elektronischer Register",
+      "as": "AS 2021 400",
+      "inkraft": "2021-08-01"
+    },
+    "oc/2022/804": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2022/804/de",
+      "titel": "Verordnung über die Banken und Sparkassen (Bankenverordnung, BankV)",
+      "as": "AS 2022 804",
+      "inkraft": "2023-01-01"
+    },
+    "oc/2023/356": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/356/de",
+      "titel": "Verordnung über die Beaufsichtigung von privaten Versicherungsunternehmen (Aufsichtsverordnung, AVO)",
+      "as": "AS 2023 356",
+      "inkraft": "2024-01-01"
+    },
+    "oc/2024/73": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2024/73/de",
+      "titel": "Verordnung über die kollektiven Kapitalanlagen (Kollektivanlagenverordnung, KKV)",
+      "as": "AS 2024 73",
+      "inkraft": "2024-03-01"
     }
   },
   "botschaften": {}

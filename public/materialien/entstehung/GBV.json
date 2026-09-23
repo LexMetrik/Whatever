@@ -1,8 +1,20 @@
 {
   "erlass": "GBV",
   "profil": "entstehung-leser/1",
-  "abgerufen": "2026-09-05",
+  "abgerufen": "2026-09-23",
   "aenderungen": {
+    "oc/2016/753": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2016/753/de",
+      "titel": "Verordnung über Zertifizierungsdienste im Bereich der elektronischen Signatur und anderer Anwendungen digitaler Zertifikate (Verordnung über die elektronische Signatur, VZertES)",
+      "as": "AS 2016 4667",
+      "inkraft": "2017-01-01"
+    },
+    "oc/2018/29": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2018/29/de",
+      "titel": "Verordnung über die Erstellung elektronischer öffentlicher Urkunden und elektronischer Beglaubigungen (EÖBV)",
+      "as": "AS 2018 89",
+      "inkraft": "2018-02-01"
+    },
     "oc/2019/556": {
       "url": "https://www.fedlex.admin.ch/eli/oc/2019/556/de",
       "titel": "Grundbuchverordnung (GBV)",
@@ -14,6 +26,12 @@
       "titel": "Grundbuchverordnung (GBV)",
       "as": "AS 2021 918",
       "inkraft": "2023-01-01"
+    },
+    "oc/2023/529": {
+      "url": "https://www.fedlex.admin.ch/eli/oc/2023/529/de",
+      "titel": "Verordnung über die amtliche Vermessung (VAV)",
+      "as": "AS 2023 529",
+      "inkraft": "2024-01-01"
     }
   },
   "botschaften": {}
