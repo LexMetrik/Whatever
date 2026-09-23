@@ -64,6 +64,10 @@ import { getProfil, getVorlagenDetailgrad } from '../../lib/einstellungen';
 // er `ortDatumFeld`) blendet Raster UND Ort-/Datums-Fehler aus; `datumFehler`
 // fehlt = Datum keine Pflicht (wie `ortFehler`). Alle Slots per Default
 // deckungsgleich mit dem bisherigen Verhalten der übrigen Nutzer.
+// V2e (Schlichtungsgesuch BS) — fünf optionale Slots für eine Seite ohne
+// Bestätigung, ohne Schritt-Fehlerbox und mit Stopp-Fall (Art. 198 ZPO):
+// fehlerBox, pruefBefund, ohneBestaetigung, exportLeiste,
+// vorschauNichtAufgenommen — je per Default deckungsgleich, reine Darstellung.
 
 /** Einheitliche Gate-Form aller Vorlagen-Engines. */
 type VorlagenGates = { blocker: string[]; warnungen: string[]; hinweise: string[] };
@@ -143,6 +147,13 @@ export interface VorlagenSeitenConfig<
    *  (Mängel-Listen mit Schritt-Index); die Ort/Datum/Blocker-Regel entfällt
    *  (Default false). */
   fehlerEingabeImLetztenSchritt?: boolean;
+  /** Fehlerbox am Schritt (Rahmen-Prop `fehler`, Default true). false = der
+   *  Rahmen erhält keine Schritt-Fehler: keine FehlerBox, die Weiter-Sperre
+   *  kommt dann allein aus `weiterDeaktiviert`. Der Prüf-Befund bleibt. */
+  fehlerBox?: boolean;
+  /** Prüf-Befund im letzten Schritt (Rahmen-Prop `fehlerJeSchritt`, Default
+   *  immer). false = kein Befund (z. B. Stopp-Fall ohne Dokument). */
+  pruefBefund?: (ctx: SeiteCtx<T, Z>) => boolean;
   /** Weiter-Sperre des Rahmens übersteuern (Default: Fehler des Schritts). */
   weiterDeaktiviert?: (ctx: SeiteCtx<T, Z>, schritt: number) => boolean;
   // «pruefen»-Schritt
@@ -177,6 +188,10 @@ export interface VorlagenSeitenConfig<
    *  Funktion, wenn ein Bullet von den Antworten abhängt. */
   bestaetigung: ReactNode | ((ctx: SeiteCtx<T, Z>) => ReactNode);
   bestaetigungLabel: ReactNode | ((ctx: SeiteCtx<T, Z>) => ReactNode);
+  /** true = keine Bestätigungs-Sektion; der Export sperrt dann allein an
+   *  gates.blocker (Default false). `bestaetigung`/`bestaetigungLabel` werden
+   *  nicht gelesen (null übergeben). */
+  ohneBestaetigung?: boolean;
   /** Klassen der Bestätigungs-Zeile. Default ist die Form der fünf Pilot-Seiten
    *  (`gap-2`, kein Padding). Die handgeschriebenen Seiten tragen historisch
    *  `gap-2.5 py-1.5` — die grössere Trefferfläche (DESIGN-REGLEMENT F9). Beim
@@ -184,6 +199,9 @@ export interface VorlagenSeitenConfig<
    *  zu verkleinern (§6). Die Vereinheitlichung ist eine SICHTBARE Änderung und
    *  gehört in einen eigenen, deklarierten Schritt (W2·17-UI-BEFUNDE-B10). */
   bestaetigungLabelCls?: string;
+  /** Export-Leiste im Prüfen-Schritt zeigen (Default immer). false z. B. im
+   *  Stopp-Fall ohne Dokument. */
+  exportLeiste?: (ctx: SeiteCtx<T, Z>) => boolean;
   /** Block UNTER der Export-Leiste (z. B. «Offene Verifikationen»). Als
    *  Funktion, wenn er von den Antworten abhängt. */
   pruefenFuss?: ReactNode | ((ctx: SeiteCtx<T, Z>) => ReactNode);
@@ -199,6 +217,9 @@ export interface VorlagenSeitenConfig<
   direktExportBlocker?: boolean;
   /** Zusatz-Block im Vorschau-Panel (VorschauPanel `extra`). */
   vorschauExtra?: (ctx: SeiteCtx<T, Z>) => ReactNode;
+  /** «nicht aufgenommen»-Liste des Bausteinprotokolls (VorschauPanel
+   *  `nichtAufgenommen`, Default keine). */
+  vorschauNichtAufgenommen?: (ctx: SeiteCtx<T, Z>) => { label: string; grund: string }[] | undefined;
   // Export — je als Wert oder als Funktion der Antworten (Form-Weiche)
   banner: JeAntwort<T, PdfBanner>;
   dateiBasis: JeAntwort<T, string>; // z. B. 'Abtretungserklaerung' → .pdf/.docx
@@ -319,20 +340,24 @@ export function VorlagenSeite<
         </Field>
       )}
 
-      <section className="lc-highlight space-y-3">
-        {typeof config.bestaetigung === 'function' ? config.bestaetigung(ctx) : config.bestaetigung}
-        <Checkbox
-          checked={bestaetigt}
-          onChange={setBestaetigt}
-          label={typeof config.bestaetigungLabel === 'function' ? config.bestaetigungLabel(ctx) : config.bestaetigungLabel}
-          className={config.bestaetigungLabelCls ?? 'text-ink-900 font-medium pt-1'}
-        />
-      </section>
+      {!config.ohneBestaetigung && (
+        <section className="lc-highlight space-y-3">
+          {typeof config.bestaetigung === 'function' ? config.bestaetigung(ctx) : config.bestaetigung}
+          <Checkbox
+            checked={bestaetigt}
+            onChange={setBestaetigt}
+            label={typeof config.bestaetigungLabel === 'function' ? config.bestaetigungLabel(ctx) : config.bestaetigungLabel}
+            className={config.bestaetigungLabelCls ?? 'text-ink-900 font-medium pt-1'}
+          />
+        </section>
+      )}
 
-      <ExportLeiste ergebnis={ergebnis} deaktiviert={!bestaetigt || gates.blocker.length > 0}
-        kopiert={kopiert} onKopieren={kopieren}
-        pdf={{ label: aufloesen(config.pdfLabel, a), banner, dateiName: `${dateiBasis}.pdf` }}
-        docx={docxZiel(aufloesen(config.docxLabel, a))} />
+      {config.exportLeiste?.(ctx) !== false && (
+        <ExportLeiste ergebnis={ergebnis} deaktiviert={(!config.ohneBestaetigung && !bestaetigt) || gates.blocker.length > 0}
+          kopiert={kopiert} onKopieren={kopieren}
+          pdf={{ label: aufloesen(config.pdfLabel, a), banner, dateiName: `${dateiBasis}.pdf` }}
+          docx={docxZiel(aufloesen(config.docxLabel, a))} />
+      )}
       {typeof config.pruefenFuss === 'function' ? config.pruefenFuss(ctx) : config.pruefenFuss}
     </div>
   );
@@ -348,13 +373,13 @@ export function VorlagenSeite<
       badge={config.badge}
       zuruecksetzen={zuruecksetzen}
       schritte={config.schritte} schritt={schritt} setSchritt={setSchritt}
-      fehler={fehler}
-      fehlerJeSchritt={fehlerImSchritt}
+      fehler={config.fehlerBox === false ? undefined : fehler}
+      fehlerJeSchritt={config.pruefBefund?.(ctx) === false ? undefined : fehlerImSchritt}
       weiterDeaktiviert={config.weiterDeaktiviert?.(ctx, schritt)}
       kopfSchalter={config.kopfSchalter?.(ctx)}
       inhalt={inhalt}
       fussnote={config.fussnote}
-      vorschau={config.vorschauErsatz?.(ctx) ?? <VorschauPanel ergebnis={ergebnis} kompakt={config.vorschauKompakt} extra={config.vorschauExtra?.(ctx)} direktExport={{
+      vorschau={config.vorschauErsatz?.(ctx) ?? <VorschauPanel ergebnis={ergebnis} kompakt={config.vorschauKompakt} extra={config.vorschauExtra?.(ctx)} nichtAufgenommen={config.vorschauNichtAufgenommen?.(ctx)} direktExport={{
         pdf: { label: 'PDF', banner, dateiName: `${dateiBasis}.pdf` },
         docx: docxZiel('DOCX'),
         blocker: config.direktExportBlocker === false ? undefined : gates.blocker,
