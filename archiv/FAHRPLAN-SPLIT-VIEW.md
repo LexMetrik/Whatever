@@ -1,6 +1,11 @@
 # FAHRPLAN — Multi-Pane / Split-View (+ Breiten-Umschalter)
 <!-- @lagebild name: Split-View · zweck: Gesetz, Rechner und Entscheid nebeneinander wie Browser-Fenster. -->
 
+> **ARCHIVIERT 23.9.2026 (W2·29-WERKBANK-LESER S5, FAHRPLAN-WERKBANK-UMBAU §7).** Ohne lebenden
+> Schritt; der offene Rest (B3 Scroll-Positions-Wiederherstellung, Tastatur-Pane-Wechsel, Bündel S,
+> a11y-Restpunkte) lebt als Posten `plan/posten/2026-06-29-multi-pane-split-view.md` unter
+> `W3-AUSBAU` weiter und zeigt hierher. Stand bei Archivierung, nicht nachgeführt (§2b).
+
 **Heimat: ROADMAP-Schritt `W3-AUSBAU`, Zeile «Multi-Pane / Split-View».** *Nachtrag 14.8.2026
 (QS-PLAN-EINFACH): die früheren Teil-Etiketten `W3·14-B3`/`-S`/`-a11y` sind Checklisten-Zeilen
 des Dachs. Nachzug 15.8.2026 (Etiketten-Konsolidierung BAUPLAN-UMBAU): auch das Dach `W3·14`

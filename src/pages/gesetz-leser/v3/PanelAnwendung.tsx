@@ -73,7 +73,7 @@ import type { Geladen } from './panelKontextLaden';
 function WerkzeugChip({ w }: { w: Werkzeug }) {
   return (
     <Link to={w.href} data-v3-anwendung-werkzeug={w.id}
-      className="lc-chip no-underline hover:border-brass-400 hover:text-brass-700">
+      className="lc-chip no-underline hover:border-ink-900 hover:text-ink-900">
       <span className="mr-1 text-ink-500" aria-hidden>{w.modus === 'rechner' ? '⊞' : '▤'}</span>{w.titel}
     </Link>
   );
@@ -108,21 +108,21 @@ export function PanelAnwendung({ softLaw, erlassKey, ebene }: {
   const hatWerkzeuge = gruppen.length > 0 || grob.length > 0;
 
   if (!softLaw.fertig && !hatWerkzeuge) {
-    return <p data-v3-panel-reiter-inhalt="anwendung" className="px-2.5 py-3 text-body-s text-ink-500">Behörden-Ressourcen werden geladen …</p>;
+    return <p data-v3-panel-reiter-inhalt="anwendung" className="px-3 py-3 text-body-s text-ink-600">Behörden-Ressourcen werden geladen …</p>;
   }
   if (softLaw.fertig && ressourcen.length === 0 && !hatWerkzeuge) {
     return (
-      <p data-v3-panel-reiter-inhalt="anwendung" className="px-2.5 py-3 text-body-s text-ink-500">
+      <p data-v3-panel-reiter-inhalt="anwendung" className="px-3 py-3 text-body-s text-ink-600">
         Zu diesem Erlass sind weder Behörden-Ressourcen noch Werkzeuge erfasst.
         {ebene === 'kanton' && (
-          <span data-v3-panel-abdeckung="kanton" className="block text-ink-400">{KANTON_ABDECKUNG}</span>
+          <span data-v3-panel-abdeckung="kanton" className="block text-ink-600">{KANTON_ABDECKUNG}</span>
         )}
       </p>
     );
   }
 
   return (
-    <div data-v3-panel-reiter-inhalt="anwendung" className="px-2.5 py-1">
+    <div data-v3-panel-reiter-inhalt="anwendung" className="px-3 py-1">
       {ressourcen.length > 0 && (
         <section data-v3-anwendung="behoerden" className="pt-1">
           {/* B3-1 (R3-β): dichte Gestalt des EINEN Gruppenkopfs (`ui/GruppenKopf`). */}
@@ -137,8 +137,8 @@ export function PanelAnwendung({ softLaw, erlassKey, ebene }: {
           </p>
           <ul className="mt-0.5">
             {ressourcen.map((m) => (
-              <li key={m.key} className="border-t border-line/60 py-1.5 first:border-t-0">
-                <Link to={m.pfad} className="no-underline hover:text-brass-700">
+              <li key={m.key} className="border-l-2 border-t border-line border-l-reg-w py-2 pl-2.5">
+                <Link to={m.pfad} className="no-underline hover:text-ink-900">
                   <span className="flex items-baseline gap-2">
                     <span className="shrink-0 text-body-s font-medium text-ink-800">
                       {m.behoerdeKuerzel} · {m.doktypLabel}{m.nummer ? ` ${m.nummer}` : ''}
@@ -164,7 +164,7 @@ export function PanelAnwendung({ softLaw, erlassKey, ebene }: {
           <GruppenKopf als="p" dicht titel="Werkzeuge" zahl={gruppen.length} />
           <ul className="mt-0.5">
             {gruppen.map((g) => (
-              <li key={`${g.von}-${g.bis}`} className="flex flex-wrap items-baseline gap-x-2 gap-y-1.5 border-t border-line/60 py-1.5 first:border-t-0">
+              <li key={`${g.von}-${g.bis}`} className="flex flex-wrap items-baseline gap-x-2 gap-y-1.5 border-t border-line py-2">
                 {/* Der fachliche Beleg der Kante steht im `title` — dieselbe
                     Stelle wie im `KontextPanel`, damit die Zuordnung nachprüfbar
                     bleibt, ohne die Zeile zu verlängern (§7). */}

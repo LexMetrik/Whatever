@@ -66,13 +66,11 @@ function Klappe({ id, name, stand, offen, setOffen, kinder }: {
         aria-expanded={offen} aria-controls={offen ? `${id}-inhalt` : undefined}
         onClick={() => setOffen(!offen)}
         title={`${name} wählen — aktuell: ${stand}`}
-        className={`inline-flex min-h-6 items-center gap-1 rounded-md border px-1.5 py-0.5 text-micro transition-colors ${
-          offen
-            ? 'border-brass-300 bg-paper-sunken/60 text-ink-900'
-            : 'border-line text-ink-600 hover:border-brass-300 hover:text-brass-700'
+        className={`inline-flex min-h-7 items-center gap-1.5 border px-2 py-0.5 text-micro text-ink-900 transition-colors ${
+          offen ? 'border-ink-900 bg-well' : 'border-line-strong bg-paper lc-hover-flaeche'
         }`}>
         <span>{name}</span>
-        <span className="num text-ink-500">{stand}</span>
+        <span className="num text-ink-600">{stand}</span>
         <span aria-hidden className={`transition-transform ${offen ? 'rotate-180' : ''}`}>▾</span>
       </button>
       {offen && <div id={`${id}-inhalt`} data-v3-panel-klappe-inhalt={id} className="w-full">{kinder}</div>}
@@ -98,7 +96,7 @@ export function PanelFilterZeile({
   const [auf, setAuf] = useState<'instanzen' | 'zeit' | null>(null);
 
   return (
-    <div data-v3-panel-filter className="flex flex-wrap items-center gap-1 border-b border-line px-2.5 py-1.5">
+    <div data-v3-panel-filter className="flex flex-wrap items-center gap-1.5 border-b border-line px-3 py-2">
       <Klappe id={`${basis}-instanzen`} name="Instanzen" stand={instanzStand(klassen)}
         offen={auf === 'instanzen'} setOffen={(o) => setAuf(o ? 'instanzen' : null)}
         kinder={(

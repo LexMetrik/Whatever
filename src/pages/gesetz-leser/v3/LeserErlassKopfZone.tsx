@@ -3,6 +3,7 @@ import { KopfOverline } from '../../../components/layout/LeserKopfGeruest';
 import { MASSGEBLICH_HALBSATZ } from '../../../lib/benennung';
 import type { ErlassKopf } from '../../../lib/normtext/browse';
 import { ErlassLeserKopf } from '../parts';
+import { teilerfassung } from '../erlassUebersichtDaten';
 import { AmtlichesPdf } from '../parts/AmtlichesPdf';
 import { ReiterAktion } from './ReiterAktion';
 import { overlineGebiet, titelKennung, type BestimmungsWort } from './erlassAnsicht';
@@ -35,6 +36,7 @@ export function LeserErlassKopfZone({ m, erlass, artikelAnzahl, bestimmungsWort,
       currency={m.currency?.[erlass.key]} nichtKonsolidiert={m.nichtKonsolidiert}
       zukunft={zukunft}
       luecken={m.kantonLuecken[erlass.key]}
+      teilerfassung={teilerfassung(erlass.key)?.befund}
       kennzahlen={m.gliederung.kennzahlen} nichtKonsolidiertSeit={m.nichtKonsolidiertSeit}
       kennung={titelKennung(erlass)}
       ingress={ingress} intern={m.internRefs}

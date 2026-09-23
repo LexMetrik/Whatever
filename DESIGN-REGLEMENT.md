@@ -929,7 +929,7 @@ Formen, gerechnet in `pages/gesetz-leser/v3/satzspiegel.ts` und am DOM als
 
 **Funktionszeile am Artikelende** (D34/D40, seit W2·26 in Überarbeitung — Zielbild
 `FAHRPLAN-DESIGN-IDENTITAET.md` §9): EINE aufklappbare Zeile mit Registerfarben-Marken
-(`.lr7-bez`, `parts/BezuegeKopf.tsx`, künftig `Funktionszeile.tsx`) je Artikel, unabhängig
+(`.lr7-bez`, `parts/Funktionszeile.tsx`) je Artikel, unabhängig
 von `zeile`/`breit` — beide Satzspiegel-Formen tragen dieselbe Zeile am Artikelfuss statt im
 Kopf. Zustand lokal per `useState` (kein `<details>`, kein `localStorage`-Merker — jeder
 Artikel startet beim Laden zu, D35). Die Rubriken (Fassung · Entscheide · Materialien ·

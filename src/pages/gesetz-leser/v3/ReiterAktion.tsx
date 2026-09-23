@@ -70,7 +70,7 @@ export function ReiterAktion({ kuerzel, onGeoeffnet }: {
   return (
     <button type="button"
       onClick={() => { oeffneDaneben(naechsteInstanz(pathname + search + hash)); onGeoeffnet(); }}
-      className="lc-chip hover:text-brass-700"
+      className="lc-chip hover:border-ink-900 hover:text-ink-900"
       aria-label={`«${kuerzel}» daneben öffnen`}
       title="Diesen Erlass zusätzlich im zweiten Fenster daneben öffnen">⧉ Daneben öffnen</button>
   );

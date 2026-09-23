@@ -32,7 +32,7 @@
 import { describe, it, expect } from 'vitest';
 import { join } from 'node:path';
 import { readdirSync } from 'node:fs';
-import { APP_WURZEL, alleQuellen, alleTsx, rel, ohneKommentare, liesRoh, pruefeAusnahmen } from './appDateien';
+import { APP_WURZEL, alleQuellen, alleTsx, appDateien, rel, ohneKommentare, liesRoh, pruefeAusnahmen } from './appDateien';
 
 const CSS = liesRoh(join(APP_WURZEL, 'index.css'));
 const TEST_ORDNER = join(APP_WURZEL, 'tests');
@@ -301,5 +301,33 @@ describe('R5-E · der Reiter trägt den Unterstrich, nicht den Kasten', () => {
     // Negativ-Kontrolle: die migrierte Form fällt nicht auf.
     expect('className={`lc-tab shrink-0 whitespace-nowrap ${KNOPF[groesse]}`}'.match(KASTEN_UTILITY))
       .toBeNull();
+  });
+});
+
+// ─── R5-F · Breiten-Varianten in der Einheit der Breakpoints ────────────────
+// Tailwind liest JEDE Datei des `content`-Globs (`./src/**/*.{ts,tsx}`, also
+// auch Tests und Kommentare) als Rohtext. Steht dort irgendwo eine
+// `min`-/`max`-Breitenvariante in rem/em neben einer in px, meldet es «mixed
+// units» und verwirft ALLE `min-[…]:`-Varianten — ohne Build-Fehler. Beleg
+// W2·29 S5 (23.9.2026): eine rem-Variante in `LeserEinzelAnsicht` nahm der
+// Nachbarn-Vorschau die zwei Spalten UND der Kopf-Suche `min-[481px]:min-w`
+// (Topbar). Der Wächter liest darum ROH (ohne Kommentar-Abzug) und schliesst
+// die Tests ein; seine Rot-Beweise setzen die Klasse aus Teilen zusammen,
+// damit er den Build nicht selbst vergiftet.
+const REM_BREITE = /\b(?:min|max)-\[[\d.]+(?:rem|em)\]:/;
+const REM_KLASSE = ['min-', '[30rem]:grid-cols-2'].join('');
+
+describe('R5-F · Breiten-Varianten stehen in px', () => {
+  it('keine Datei im Tailwind-Content schreibt eine rem/em-Breitenvariante', () => {
+    const funde = [...alleQuellen(), ...appDateien(['.ts', '.tsx'], TEST_ORDNER)]
+      .filter((p) => REM_BREITE.test(liesRoh(p)))
+      .map(rel);
+    expect(funde, 'Tailwind verwirft bei gemischten Einheiten alle min-[…]-Varianten — px schreiben').toEqual([]);
+  });
+
+  it('ROT-BEWEIS: der Ausdruck erkennt die Form aus S5-A, nicht die px-Form', () => {
+    expect(REM_BREITE.test(`className="grid gap-3 ${REM_KLASSE}"`)).toBe(true);
+    expect(REM_BREITE.test('className="grid gap-3 min-[480px]:grid-cols-2"')).toBe(false);
+    expect(REM_BREITE.test('className="min-h-[var(--tap)] min-w-[9rem]"')).toBe(false);
   });
 });

@@ -1081,6 +1081,38 @@ Spalte. Die Artikelform bleibt in der schmalen Variante `zeile` (Randtitel als Z
 über der Artikelnummer). Mobil-Boden des Zeilenmasses: mindestens 31 Zeichen bei
 390 px.
 
+#### 2.3.15 Erlass-Blatt und Einzel-Artikel
+
+**Erlass-Blatt** («Rechtsprechung & Kontext», Öffner im Kopf, Taste `r`): ab dem
+grossen Breakpoint ein rechtes Blatt von 380 px über der Lesespalte (nicht modal,
+der Lesetext bleibt bedienbar), auf dem Handy und in jedem Fenster der geteilten
+Ansicht ein Bottom-Sheet. Kopf nennt beim Reiter «Entscheide» den Artikel, sonst das
+Erlass-Kürzel, und trägt den Schliessen-Knopf (`Esc`). Darunter die optionale
+Steckbrief-Zeile, dann vier Reiter als Registerfläche — **Entscheide** (Register r),
+**Änderungen** (g), **Materialien** (m), **Anwendung** (w); der aktive steht auf
+der getönten Registerfläche mit Registerkante, alle vier passen in eine Zeile
+(Umbruch nur bei grosser Schriftstufe, nie abgeschnitten). Pfeiltasten wechseln
+den Reiter; nur die aktive Tafel wird geladen. Inhalte, Filterzeile und Zähler der
+Tafeln wie 2.3.6–2.3.8 und 2.4.
+
+**Einzel-Artikel** (`?ansicht=artikel`; «Ganzer Erlass» ist Vorgabe und steht nie
+in der Adresse): genau eine Bestimmung. Darüber der Gliederungspfad — jede Stufe
+mit eigenem Artikel führt zurück in den ganzen Erlass, sonst bleibt sie Text.
+Darunter das Pfeilpaar «davor / danach» in voller Tap-Höhe, die Zeile
+«← → blättert vor und zurück» (auf Geräten ohne Tastatur ausgeblendet), die
+Nachbarn-Vorschau mit Nummer und Randtitel (am ersten/letzten Artikel entfällt
+die leere Seite) und das Dossier: dieselben Rubriken wie die Funktionszeile
+(2.3.9), gestapelt und einzeln aufklappbar. Die Funktionszeile am Artikel bleibt
+auch im Einzelmodus.
+
+**Teilerfassung ohne Klick** (§8): ein belegter Fehl- oder Teilerfassungs-Befund
+(z. B. SG-3849) steht als Hinweis direkt im Titelblatt, nicht nur in der
+zugeklappten Übersicht.
+
+**Quelle:** `src/pages/gesetz-leser/v3/{LeserPanel,LeserPanelZone,Panel*,panelModell}.tsx`,
+`v3/{LeserEinzelAnsicht,einzelModus,leserModus}.ts(x)`,
+`parts/{ArtikelNachbarn,ArtikelDossier,ErlassLeserKopf}.tsx`.
+
 ### 2.4 Verknüpfungen vom Artikel in andere Bereiche
 
 | Ziel | Mechanik | Quelle |

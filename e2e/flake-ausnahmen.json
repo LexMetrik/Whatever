@@ -12,25 +12,13 @@
     "ablauf": "2026-10-20"
   },
   {
-    "spec": "leser-v3-blatt.e2e.ts",
-    "seit": "2026-09-20",
-    "grund": "Familie ⌘K-Vorlauf im Split — Fehlerbuch FAHRPLAN-OFFENE-BEFUNDE §4 (CI #711/#844). Flackert in 7/20 eigens gemessenen Code-Läufen mit ausgeführten Playwright-Shards (Stichprobe 18.–20.9.2026) bzw. 6/7 in der Vormessung 20.9.2026. Wurzel ungemessen. Entscheid David 20.9.2026.",
-    "ablauf": "2026-10-20"
-  },
-  {
     "spec": "verweis-u.e2e.ts",
     "seit": "2026-09-20",
-    "grund": "Vereinzelt flackernd (1/20 in der eigenen Stichprobe 18.–20.9.2026, 1–5 Läufe in der Vormessung 20.9.2026). Wurzel ungemessen. Entscheid David 20.9.2026.",
+    "grund": "Vereinzelt flackernd (1/20 in der eigenen Stichprobe 18.–20.9.2026, 1–5 Läufe in der Vormessung 20.9.2026). Wurzel ungemessen. Entscheid David 20.9.2026. ERGÄNZUNG 23.9.2026 (W2·29 S5): CI-Sichtungen 19.–23.9. (200 Läufe) alle derselbe Fall — FN-3 «OR-Ingress: Marker 1», Z. 121: nach dem Klick kein [role=note] binnen 5 s; der gescheiterte Versuch erreichte den Klick nach 3,7 s, der grüne Retry nach 8,8 s (Lauf 35809542501). Lokal 0 rot in ~150 Läufen bei CPU-Drossel 1–20×; gemessen: Marker bewegt sich ab Einfügen nicht, kein Ingress-Remount, Klick→Popover < 80 ms. Wurzel weiter ungemessen.",
     "ablauf": "2026-10-20"
   },
   {
     "spec": "w224-plus-reiter.e2e.ts",
-    "seit": "2026-09-20",
-    "grund": "Vereinzelt flackernd (1/20 in der eigenen Stichprobe 18.–20.9.2026, 1–5 Läufe in der Vormessung 20.9.2026). Wurzel ungemessen. Entscheid David 20.9.2026.",
-    "ablauf": "2026-10-20"
-  },
-  {
-    "spec": "leser-ruecksprung-r5-r7.e2e.ts",
     "seit": "2026-09-20",
     "grund": "Vereinzelt flackernd (1/20 in der eigenen Stichprobe 18.–20.9.2026, 1–5 Läufe in der Vormessung 20.9.2026). Wurzel ungemessen. Entscheid David 20.9.2026.",
     "ablauf": "2026-10-20"

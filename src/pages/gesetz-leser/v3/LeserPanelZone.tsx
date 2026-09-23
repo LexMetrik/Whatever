@@ -23,7 +23,7 @@ import { usePopoverAutoZu } from './usePopoverAutoZu';
 // Geblieben sind ZWEI Gestalten — und `'rechts'` trägt seither jede
 // Desktop-Breite, nicht nur die engen:
 //
-//   'rechts'  D, Einzelansicht — 22 rem am rechten Rand, NICHT
+//   'rechts'  D, Einzelansicht — 22 rem (seit W2·29 S5: 380 px) am rechten Rand, NICHT
 //             modal. Der Lesetext links bleibt sichtbar UND bedienbar; das
 //             Panel ist Beiwerk und verhält sich auch so (Ä52, s. u.).
 //   'unten'   H und jedes Pane — Bottom-Sheet. Es reicht von der Unterkante nach
@@ -307,7 +307,9 @@ export function LeserPanelZone({
     // `./LeserLeseZeile` aus dem Fluss bleibt: kein Platz, kein CLS, Δ = 0.
     ? {
       huelle: 'pointer-events-none sticky z-modal h-0 overflow-visible',
-      klassen: 'pointer-events-auto absolute right-0 top-0 w-[22rem] max-w-[calc(100vw-2rem)] p-2',
+      // W2·29 S5 (Board «Erlass-Blatt»): 380 px, bündig an der Zellenkante,
+      // ohne Polster (bis dahin 22 rem mit `p-2` — Gestalt nach D33 unverändert).
+      klassen: 'pointer-events-auto absolute right-0 top-0 w-[23.75rem] max-w-[calc(100vw-2rem)]',
       stil: { maxHeight: 'calc(100vh - var(--nt-stick) - 1.5rem)' } as CSSProperties,
     }
     : imPaneBlatt
@@ -337,11 +339,9 @@ export function LeserPanelZone({
       // (H2-Befund), und die CSS-Variable unten erbt an die Kinder.
       // D33: seit die eigene Spur weg ist, gilt `contents` in JEDER Lage — es
       // gibt keine Gestalt mehr, die eine Box im Grid braucht.
-      className="contents"
-      // Ä5: der BEHÄLTER nennt seine Fläche (dieselbe Zusage wie beim
-      // Gliederungs-Blatt) — sonst malte ein klebender Sockel darin `paper` auf
-      // ein `paper-raised`-Blatt.
-      style={{ '--leser-leiste-flaeche': 'var(--paper-raised)' } as CSSProperties}>
+      // Ä5 (Fläche des Behälters für klebende Sockel) entfällt seit W2·29 S5:
+      // das Blatt ist `paper` wie der Sockel-Vorgabewert.
+      className="contents">
       {offen && (
         <>
           {/* Der Scrim gehört zum MODALEN Blatt. Auf D gibt es keinen — dort ist
@@ -392,7 +392,7 @@ export function LeserPanelZone({
               // Gliederungs-Blatt, §5). Am rechten Rand wäre sie ein Versprechen
               // ohne Geste (§8).
               kopfExtra={form === 'unten'
-                ? <div aria-hidden className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-line" />
+                ? <div aria-hidden className="mx-auto mt-2 h-1 w-10 shrink-0 bg-line-strong" />
                 : undefined}
               // Ä89: die Steckbrief-Zeile gehört dem Panel, nicht seinen Tafeln.
               steckbrief={steckbrief} />

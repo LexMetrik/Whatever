@@ -332,7 +332,7 @@ export function ArtikelBezuegeFuss({
             Einzelmodus DAUERHAFT, nicht erst bei Hover — der Artikel ist hier
             der Gegenstand der Seite, nicht einer von 1686 (Z6 gilt für die
             Zeile, wo 1686 × 3 Knöpfe im DOM stünden; hier sind es drei). */}
-        <div className="lr7-einzel-fuss">{aktionen}</div>
+        <div className="mt-3 flex flex-wrap justify-end gap-3">{aktionen}</div>
         <ArtikelDossier marken={bezugsMarken} zitat={zitat}
           onOeffnen={onOeffnen} laedt={laedt} />
       </div>

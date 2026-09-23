@@ -73,8 +73,9 @@ export function SuchBereichWahl({
     // vier Wörter kalibriert sind. Gefüllt wird der Stummel stattdessen von
     // «↑ Anfang» (62 px), das über dieser Zeile allein in einer eigenen
     // 34-px-Leiste stand: 288 + 8 Fuge + 62 = 358, exakt der Kasten. Ein Befund
-    // hat den anderen aufgelöst — Herleitung in `./anfangSlot` (seit D38
-    // unbesetzt; der Knopf-Empfang hier ist mit W2·29 S4 zurückgebaut).
+    // hat den anderen aufgelöst — Herleitung stand in `v3/anfangSlot.ts` (seit
+    // D38 unbesetzt; Knopf-Empfang hier mit W2·29 S4 zurückgebaut, die Datei
+    // mit S3 gelöscht, Wortlaut in der Versionsgeschichte).
     <div data-v3-suchbereich role="radiogroup" aria-label="Suchbereich"
       className="flex w-[min(100%,18rem)] flex-wrap items-center gap-0.5 border border-line bg-well p-0.5">
       {REIHE.map((b) => {

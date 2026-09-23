@@ -90,7 +90,7 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
   const rueckweg = (t: string) => einzelAdresse(basisPfad, search, t, 'erlass');
 
   return (
-    <div className="lr7-einzel" data-einzel-artikel={token}>
+    <div className="grid gap-5" data-einzel-artikel={token}>
       {/* ── GLIEDERUNGSPFAD (Kap. 15.3) · zugleich der Rückweg (B4) ────────
           Im Einzelmodus ist er TRIVIAL WAHR: genau eine Bestimmung ist
           sichtbar, es gibt keine Scroll-Stellung, die von ihm abweichen könnte
@@ -98,16 +98,16 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
           Eine Stufe ohne eigenen Artikel bleibt Text statt Griff (§8). */}
       {pfad.length > 0 && (
         <nav aria-label="Gliederungspfad" data-einzel-pfad
-          className="lr7-einzel-pfad text-micro leading-normal text-ink-500">
+          className="flex flex-wrap items-baseline gap-x-1.5 text-micro leading-normal text-ink-600">
           {pfad.map((stufe, i) => (
             <span key={stufe.id}>
-              {i > 0 && <span aria-hidden className="lr7-einzel-pfad-trenner">›</span>}
+              {i > 0 && <span aria-hidden className="mr-1.5 text-ink-500">›</span>}
               {stufe.ersterArtikel
                 ? (
-                  <Link to={rueckweg(stufe.ersterArtikel)} className="lr7-einzel-pfad-glied"
+                  <Link to={rueckweg(stufe.ersterArtikel)} className="text-inherit no-underline hover:text-ink-900"
                     title={`«${stufe.label}» im ganzen Erlass lesen`}>{stufe.label}</Link>
                 )
-                : <span className="lr7-einzel-pfad-glied">{stufe.label}</span>}
+                : <span>{stufe.label}</span>}
             </span>
           ))}
         </nav>
@@ -115,7 +115,7 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
 
       {/* Die Karte. `article` bringt `parts/ArtikelLeser` selbst mit — hier
           steht nur die Fläche, die ihn vom Beiwerk trennt. */}
-      <div className="lr7-einzel-karte">{karte}</div>
+      <div className="border-t-2 border-ink-900 pt-4">{karte}</div>
 
       {/* ── B1/B9 · DAS FUSS-PFEILPAAR UND DER TASTATUR-HINWEIS ───────────
           B2: der Hinweis steht GENAU EINMAL im Dokument und nicht je Block —
@@ -123,7 +123,7 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
           die im Einzelmodus frei sind (das Panel ist nicht gemountet, D-E4);
           `j`/`k` bleiben unverändert belegt und brauchen keinen zweiten
           Hinweis (Kap. 15.6). */}
-      <div className="lr7-einzel-blaettern">
+      <div className="grid gap-2 border-t border-line pt-3.5 [&_[data-nachbar]]:min-h-[var(--tap-ziel-komfort)] [&_[data-nachbar]]:items-center">
         {nachbarn && (
           <ArtikelNachbarn nachbarn={nachbarn} adresse={adresse}
             klassen="inline-flex w-full items-baseline justify-between gap-4" />
@@ -133,7 +133,7 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
             am OR. Wo die Bestimmungsart wirklich nötig ist (der Name der
             Vorschau-Navigation unten), kommt sie als Wert aus der EINEN
             Ableitung `./erlassAnsicht.bestimmungsWort` herein. */}
-        <p className="lr7-einzel-tastatur text-micro text-ink-500" data-einzel-tastaturhinweis>
+        <p className="text-center text-micro text-ink-600 [@media(hover:none)]:hidden [&_kbd]:border [&_kbd]:border-line-strong [&_kbd]:px-1 [&_kbd]:[font-family:inherit]" data-einzel-tastaturhinweis>
           <kbd>←</kbd> <kbd>→</kbd> blättert vor und zurück
         </p>
       </div>
@@ -146,7 +146,7 @@ export function LeserEinzelAnsicht({ m, karte, search, token, label, nachbarn, b
           Vorschau-Kasten ohne Ziel wäre eine Einladung ins Leere. */}
       {(vorschau.vor?.marginalie || vorschau.nach?.marginalie) && (
         <nav aria-label={`Benachbarte ${bestimmungsWort}`} data-einzel-vorschau
-          className="lr7-einzel-vorschau">
+          className="grid gap-3 border-t border-line pt-3.5 min-[480px]:grid-cols-2">
           <VorschauKarte ziel={vorschau.vor} richtung="vor" adresse={adresse} eigen={label} />
           <VorschauKarte ziel={vorschau.nach} richtung="nach" adresse={adresse} eigen={label} />
         </nav>
@@ -177,9 +177,9 @@ function VorschauKarte({ ziel, richtung, adresse, eigen }: {
   const zustandsWort = leerstellenWort(ziel.zustand);
   return (
     <Link to={adresse(ziel.token)} data-vorschau={richtung}
-      className="lr7-einzel-vorschau-karte"
+      className={`group grid min-h-[var(--tap-ziel-komfort)] content-center gap-0.5 no-underline ${richtung === 'nach' ? 'min-[480px]:text-right' : ''}`}
       aria-label={`${richtung === 'vor' ? 'Davor' : 'Danach'} — ${eigen} zu ${ziel.label}${ziel.marginalie ? `: ${ziel.marginalie}` : ''}${zustandsWort ? ` (${zustandsWort})` : ''}`}>
-      <span className="lr7-einzel-vorschau-num num text-body-s">
+      <span className="num text-body-s text-ink-800 group-hover:text-ink-900">
         {richtung === 'vor' && <span aria-hidden>‹ </span>}
         {ziel.label}
         {richtung === 'nach' && <span aria-hidden> ›</span>}
@@ -187,8 +187,8 @@ function VorschauKarte({ ziel, richtung, adresse, eigen }: {
       {/* Der Randtitel ist die eigentliche Auskunft der Vorschau: er sagt,
           WOVON die nächste Bestimmung handelt. Fehlt er, steht nichts da —
           kein Platzhalter, keine erfundene Kurzfassung des Wortlauts (§8). */}
-      {ziel.marginalie && <span className="lr7-einzel-vorschau-marg text-micro leading-snug">{ziel.marginalie}</span>}
-      {zustandsWort && <span className="lr7-einzel-vorschau-marg text-micro leading-snug">{zustandsWort}</span>}
+      {ziel.marginalie && <span className="text-micro leading-snug text-ink-600">{ziel.marginalie}</span>}
+      {zustandsWort && <span className="text-micro leading-snug text-ink-600">{zustandsWort}</span>}
     </Link>
   );
 }

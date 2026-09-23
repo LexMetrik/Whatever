@@ -88,6 +88,12 @@ const BLOCK_ORDNUNG: ReadonlyArray<BezugsMarke['reg']> = ['f', 'g', 'r', 'm', 'w
  */
 const RECHTSPRECHUNG_BLOCK_FREI = false;
 
+/** Registerkante des Rubrik-Griffs — dieselbe Farbe wie die Marke in der Zeile
+ *  (Fassungen tragen das Gesetzes-Register). Volle Literale für Tailwind. */
+const GRIFF_REGISTER: Readonly<Record<BezugsMarke['reg'], string>> = {
+  f: 'border-l-reg-g', g: 'border-l-reg-g', r: 'border-l-reg-r', m: 'border-l-reg-m', w: 'border-l-reg-w',
+};
+
 /** Was ein Block im Titel trägt: «3 Fassungen», «6 Verweise», «1 Rechner». */
 function blockTitel(m: BezugsMarke): string {
   const name = m.anzahl === 1 ? m.wort[0] : m.wort[1];
@@ -150,23 +156,23 @@ export function ArtikelDossier({ marken, zitat, onOeffnen, laedt = false }: {
   return (
     // `print:hidden`: auf dem Papier trägt der Artikel seinen Wortlaut, das
     // Dossier ist Bedienung — dieselbe Regel wie an der Funktionszeile.
-    <section className="lr7-dossier print:hidden" data-artikel-dossier
+    <section className="grid gap-1 border-t border-line pt-3.5 print:hidden" data-artikel-dossier
       aria-label={`Kontext zu ${zitat}`}>
       {bloecke.map((m) => {
         const auf = offen === m.reg;
         return (
-          <div key={m.reg} className="lr7-dossier-block" data-dossier-reg={m.reg}>
+          <div key={m.reg} data-dossier-reg={m.reg}>
             {/* Eine Überschrift, kein blosser Knopf: das Dossier ist eine
                 gegliederte Fläche, und ein Screenreader soll sie überspringen
                 und anspringen können. `h3`, weil der Artikel-Titel darüber die
                 zweite Stufe ist. */}
-            <h3 className="lr7-dossier-titel">
+            <h3 className="[font-size:inherit] [font-weight:inherit]">
               {/* B-K1/§5/§10 · DERSELBE KNOPF-BAUSTEIN wie die Rubrik-Griffe
                   der Funktionszeile (`lc-btn-mini`): es ist dieselbe Rolle —
                   ein Griff, der eine Rubrik dieses Artikels aufklappt. Nur die
-                  Anordnung ist eine andere (volle Breite statt Chip), und die
-                  steht in `.lr7-dossier-griff` (src/index.css). */}
-              <button type="button" className="lc-btn-mini lr7-dossier-griff text-body-s" data-reg={m.reg}
+                  Anordnung ist eine andere (volle Breite statt Chip, Komfort-
+                  Tap-Höhe, Registerkante links — seit W2·29 S5 als Utilities). */}
+              <button type="button" className={`lc-btn-mini min-h-[var(--tap-ziel-komfort)] w-full justify-start border-l-[3px] px-2 text-left text-body-s ${GRIFF_REGISTER[m.reg]} ${auf ? 'text-ink-900' : 'text-ink-700'} hover:text-ink-900`} data-reg={m.reg}
                 aria-expanded={auf} aria-controls={auf ? `${blockId}-${m.reg}` : undefined}
                 /* WCAG 4.1.2 · der Name nennt Rubrik UND Bestimmung — «3
                    Fassungen» allein ist in der Knopfliste nicht auffindbar.
@@ -175,16 +181,16 @@ export function ArtikelDossier({ marken, zitat, onOeffnen, laedt = false }: {
                 aria-label={`${blockTitel(m)} zu ${zitat}`}
                 title={m.titel}
                 onClick={() => schalte(m)}>
-                <span aria-hidden className="lr7-dossier-pfeil">{auf ? '▾' : '▸'}</span>
+                <span aria-hidden className="inline-flex w-3 justify-center text-ink-600">{auf ? '▾' : '▸'}</span>
                 <span>{blockTitel(m)}</span>
                 {/* Der Stand der Fassung als ruhiger Beisatz — dieselbe
                     Zeichenkette wie an der Marke der Zeile (`../fassungsEtikett`,
                     §5), nicht eine zweite Formulierung desselben Datums. */}
-                {m.etikett && <span className="lr7-dossier-beisatz text-micro">{m.etikett}</span>}
+                {m.etikett && <span className="text-micro text-ink-600">{m.etikett}</span>}
               </button>
             </h3>
             {auf && (
-              <div id={`${blockId}-${m.reg}`} className="lr7-bez-block" data-reg={m.reg}>
+              <div id={`${blockId}-${m.reg}`} className="lr7-bez-block mb-2 ml-3" data-reg={m.reg}>
                 {m.anzahl === 0 && m.leer
                   ? <p className="text-body-s text-ink-600">{m.leer}</p>
                   : (m.brauchtDaten && laedt && !m.inhalt

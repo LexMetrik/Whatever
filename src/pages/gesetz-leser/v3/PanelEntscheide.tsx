@@ -114,7 +114,7 @@ function Fundstelle({ b, normZitat, statusLabel, revidiert }: {
   b: Bezug; normZitat: string; statusLabel: string; revidiert: ArtikelRevision | null;
 }) {
   return (
-    <li data-v3-panel-entscheid={b.key} className="border-t border-line/60 py-1.5 first:border-t-0">
+    <li data-v3-panel-entscheid={b.key} className="border-l-2 border-t border-line border-l-reg-r py-2 pl-2.5">
       <KanteMitVorschau
         ziel={`/rechtsprechung/${encodeURIComponent(b.key)}?norm=${encodeURIComponent(normZitat)}`}
         zitierung={b.zitierung}
@@ -214,25 +214,25 @@ export function PanelEntscheide({
           Bestands-Zustand vermischt: der Nutzer läse eine Aussage über den
           Korpus, wo eine über seinen eigenen Schalter stünde. */}
       {klassen.length === 0 ? (
-        <p data-v3-panel-lage="bedienung" className="px-2.5 py-3 text-body-s text-ink-500">
+        <p data-v3-panel-lage="bedienung" className="px-3 py-3 text-body-s text-ink-600">
           Keine Instanz eingeschaltet — oben zuschalten, dann erscheinen die Entscheide
           zu {bestimmungDativ(bestimmungsWort)}.
         </p>
       ) : !geladen ? (
-        <p data-v3-panel-lage="laedt" className="px-2.5 py-3 text-body-s text-ink-500">Entscheide werden geladen …</p>
+        <p data-v3-panel-lage="laedt" className="px-3 py-3 text-body-s text-ink-600">Entscheide werden geladen …</p>
       ) : gruppen.length === 0 ? (
-        <p data-v3-panel-lage="bestand" className="px-2.5 py-3 text-body-s text-ink-500">
+        <p data-v3-panel-lage="bestand" className="px-3 py-3 text-body-s text-ink-600">
           {artikelLabel
             ? `Zu ${artikelLabel} ist kein Entscheid der eingeschalteten Instanzen erfasst.`
             : 'Zu diesem Erlass ist kein Entscheid der eingeschalteten Instanzen erfasst.'}
           {/* K-2b: der Zusatz TRITT HINZU, er ersetzt die Bestandsaussage
               nicht — beide sind wahr, und die zweite erklärt die erste. */}
           {ebene === 'kanton' && (
-            <span data-v3-panel-abdeckung="kanton" className="block text-ink-400">{KANTON_ABDECKUNG}</span>
+            <span data-v3-panel-abdeckung="kanton" className="block text-ink-600">{KANTON_ABDECKUNG}</span>
           )}
         </p>
       ) : (
-        <div className="px-2.5 py-1">
+        <div className="px-3 py-1">
           {gruppen.map(([status, liste]) => (
             <section key={status} data-v3-panel-gruppe={status} className="pt-2 first:pt-1">
               {/* B3-1 (R3-β): dichte Gestalt des EINEN Gruppenkopfs

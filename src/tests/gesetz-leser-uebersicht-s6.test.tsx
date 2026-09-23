@@ -26,6 +26,8 @@ import {
   nurErlassdatum, erlassOrgan, istDatumsToken, teilerfassung, TEILERFASSUNG_BELEGE,
 } from '../pages/gesetz-leser/erlassUebersichtDaten';
 import { UebersichtBox } from '../pages/gesetz-leser/v3/UebersichtBox';
+import { ErlassLeserKopf } from '../pages/gesetz-leser/parts/ErlassLeserKopf';
+import { readFileSync } from 'node:fs';
 import { uebersichtsAngaben } from '../pages/gesetz-leser/v3/uebersichtAngaben';
 import { ladeNormFixture } from './fixtures/normtext-fixture';
 import type { ErlassKopf } from '../lib/normtext/browse';
@@ -188,6 +190,23 @@ describe('S6 — §8-Teilerfassungs-Beleg (Entscheid David 8.8.2026, Bau-Spec §
 
   it('Kein anderer Erlass trägt (noch) einen Beleg — die Liste bleibt bewusst kurz', () => {
     expect(Object.keys(TEILERFASSUNG_BELEGE)).toEqual(['SG-3849']);
+  });
+
+  it('Der Hinweis steht im Volltext-Leser OHNE Klick im Titelblatt (W2·29 S5)', () => {
+    // Bis W2·29 S5 stand er im Volltext-Leser nur in der ZUGEKLAPPTEN
+    // Übersichtsbox — sichtbar erst nach Aufklappen, gegen den Entscheid vom
+    // 8.8.2026. ROT: in `v3/LeserErlassKopfZone.tsx` die Prop `teilerfassung`
+    // weglassen bzw. in `parts/ErlassLeserKopf.tsx` den Notiz-Block entfernen.
+    const zone = readFileSync('src/pages/gesetz-leser/v3/LeserErlassKopfZone.tsx', 'utf8');
+    expect(zone).toContain('teilerfassung={teilerfassung(erlass.key)?.befund}');
+    const html = renderToString(
+      <MemoryRouter>
+        <ErlassLeserKopf erlass={{ ...erlass, key: 'SG-3849', ebene: 'kanton', kanton: 'SG' }}
+          overline="SG" artikelAnzahl={3} hinweis="H" teilerfassung={teilerfassung('SG-3849')?.befund} />
+      </MemoryRouter>,
+    );
+    expect(html).not.toContain('<details');
+    expect(html).toMatch(/role="note" data-v3-teilerfassung[^>]*>Fehlerhaft erfasst/);
   });
 
   it('Der Hinweis steht OHNE Klick da (offene Box der Früh-Ansichten)', () => {

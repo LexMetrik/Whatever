@@ -253,7 +253,7 @@ an einen neuen Ist-Stand nachgeführt, nur ergänzt (§0 Ziff. 2b).
   Vorzeichen wechselnd). Das ist die Wurzel des Shard-7-Rots auf `e2e/leser-ohne-
   gliederungslinie.e2e.ts:71` und `e2e/leser-r1-r2.e2e.ts:544` (20-s-Budget) und
   schliesst zugleich Punkt (b) von `QS-E2E-STABIL`. Messreihe und Nullproben:
-  [FAHRPLAN-LESER-V3.md](fahrplaene/FAHRPLAN-LESER-V3.md) «Nebenfunde aus H2», `Ä24`.
+  [FAHRPLAN-LESER-V3.md](archiv/FAHRPLAN-LESER-V3.md) «Nebenfunde aus H2», `Ä24`.
   **Nullprobe 17.8.2026 (S1-Nachzug), lokal warm:** `e2e/leser-ohne-gliederungslinie.e2e.ts
   --project=leser-v3 --repeat-each=3` fällt auf **unverändertem `main` (19a989f93)
   6 von 6** (beide Tests, alle Wiederholungen, «Test timeout of 30000ms exceeded»
