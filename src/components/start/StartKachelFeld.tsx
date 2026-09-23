@@ -3,9 +3,9 @@ import { createPortal } from 'react-dom';
 import type { Register } from '../layout/bereiche';
 import { RubrikKachel } from '../ui/RubrikKachel';
 import { SchliessKnopf } from '../ui/SchliessKnopf';
-import { AUFKLAPPBAR, gleicherOrt, type BlattOrt, type BlattRubrik } from '../../lib/startBlatt';
+import { AUFKLAPPBAR, blattKrumen, gleicherOrt, type BlattOrt, type BlattRubrik } from '../../lib/startBlatt';
 import { useBlattOrt } from './useBlattOrt';
-import { GesetzeBlatt, gesetzeKrumen } from './GesetzeBlatt';
+import { GesetzeBlatt } from './GesetzeBlatt';
 
 // ─── Startseite · das 2×2-Kachelfeld, das vor Ort aufklappt (W2·29-WERKBANK-START S1)
 //
@@ -226,7 +226,7 @@ function BlattKopf({ reg, titel, ort, gehe, zurueck, schliessen }: {
 }) {
   const krumen: { label: string; ort: BlattOrt }[] = [
     { label: titel, ort: { rubrik: ort.rubrik, pfad: [] } },
-    ...(ort.rubrik === 'gesetze' ? gesetzeKrumen(ort.pfad) : []),
+    ...blattKrumen(ort),
   ];
   return (
     <div className={`lc-start-band ${FLAECHE[reg]}`}>

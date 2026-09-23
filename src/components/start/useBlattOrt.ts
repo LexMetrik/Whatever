@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useSyncExternalStore } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { BLATT_PARAM, elternOrt, leseBlatt, schreibeBlatt, type BlattOrt } from '../../lib/startBlatt';
 
@@ -19,16 +19,18 @@ import { BLATT_PARAM, elternOrt, leseBlatt, schreibeBlatt, type BlattOrt } from 
 //
 // HYDRATION: der Prerender kennt keine Query und liefert «/» zugeklappt. Liest
 // der erste Client-Render den Parameter, weicht sein Baum vom Server-HTML ab,
-// und React 19 verwirft die Hydration. Darum ist der Ort bis nach dem ersten
-// Effekt `null`; ein Deep-Link öffnet danach — ohne Animation (s. Kachelfeld).
+// und React 19 verwirft die Hydration. Darum ist der Ort im Hydrations-Render
+// `null` (`useSyncExternalStore`, Server-Schnappschuss `false`); ein Deep-Link öffnet danach — ohne Animation (s. Kachelfeld).
 
 interface BlattState { blattTiefe?: number; blattVonZu?: boolean }
+const ohneAbo = () => () => {};
 
 export function useBlattOrt() {
   const loc = useLocation();
   const nav = useNavigate();
-  const [hydriert, setHydriert] = useState(false);
-  useEffect(() => setHydriert(true), []);
+  // Server- und Hydrations-Render sehen `false`, danach rendert React mit `true`
+  // nach — ohne Effekt-setState (Muster wie `pages/Startseite` bis R10).
+  const hydriert = useSyncExternalStore(ohneAbo, () => true, () => false);
 
   // Über den ROHWERT memoisiert: ein neues Objekt je Render liesse die Phasen-
   // Logik im Kachelfeld (Effekt auf `ort`) endlos nachlaufen.

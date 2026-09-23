@@ -11,6 +11,7 @@
 // leeres Blatt und nie eine erfundene (§8).
 import { SYSTEMATIK } from './normtext/systematik';
 import { KANTONE } from './kantone';
+import { KANTON_NAMEN } from '../data/tarif/typen';
 
 /** Die vier Kacheln der Startseite, als Adress-Wort. */
 export type BlattRubrik = 'gesetze' | 'rechtsprechung' | 'materialien' | 'werkzeuge';
@@ -29,7 +30,7 @@ export const BLATT_PARAM = 'blatt';
 
 /** Die drei Wahlen der Gesetze-Kachel (David 23.9.2026: «Dritte Wahl» für das
  *  internationale Recht). */
-export type GesetzeEbene = 'bund' | 'kantone' | 'international';
+type GesetzeEbene = 'bund' | 'kantone' | 'international';
 const GESETZE_EBENEN: ReadonlySet<string> = new Set<GesetzeEbene>(['bund', 'kantone', 'international']);
 const GEBIET_NR: ReadonlySet<string> = new Set(SYSTEMATIK.map((k) => k.nr));
 const KANTON: ReadonlySet<string> = new Set(KANTONE);
@@ -66,4 +67,18 @@ export function elternOrt(ort: BlattOrt): BlattOrt | null {
 export function gleicherOrt(a: BlattOrt | null, b: BlattOrt | null): boolean {
   if (!a || !b) return a === b;
   return schreibeBlatt(a) === schreibeBlatt(b);
+}
+
+/** Pfad-Leiste des Blatts unterhalb der Rubrik (Band oben im Blatt). */
+export function blattKrumen(ort: BlattOrt): { label: string; ort: BlattOrt }[] {
+  if (ort.rubrik !== 'gesetze') return [];
+  const [ebene, zweite] = ort.pfad;
+  if (!ebene) return [];
+  const label = ebene === 'bund' ? 'Bund' : ebene === 'kantone' ? 'Kantone' : 'International';
+  const erste = { label, ort: { rubrik: ort.rubrik, pfad: [ebene] } };
+  if (!zweite) return [erste];
+  const titel = ebene === 'bund'
+    ? SYSTEMATIK.find((k) => k.nr === zweite)?.titel ?? zweite
+    : KANTON_NAMEN[zweite as keyof typeof KANTON_NAMEN] ?? zweite;
+  return [erste, { label: titel, ort: { rubrik: ort.rubrik, pfad: [ebene, zweite] } }];
 }

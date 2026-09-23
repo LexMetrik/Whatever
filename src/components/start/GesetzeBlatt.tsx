@@ -32,17 +32,6 @@ const nf = (n: number) => n.toLocaleString('de-CH');
 const kantonName = (k: string) => KANTON_NAMEN[k as keyof typeof KANTON_NAMEN] ?? k;
 const gebiet = (nr: string) => SYSTEMATIK.find((k) => k.nr === nr);
 
-/** Pfad-Leiste unter «Gesetze» (Kachelfeld, Band oben im Blatt). */
-export function gesetzeKrumen(pfad: readonly string[]): { label: string; ort: BlattOrt }[] {
-  const [ebene, zweite] = pfad;
-  if (!ebene) return [];
-  const label = ebene === 'bund' ? 'Bund' : ebene === 'kantone' ? 'Kantone' : 'International';
-  const erste = { label, ort: { rubrik: 'gesetze' as const, pfad: [ebene] } };
-  if (!zweite) return [erste];
-  const titel = ebene === 'bund' ? gebiet(zweite)?.titel ?? zweite : kantonName(zweite);
-  return [erste, { label: titel, ort: { rubrik: 'gesetze', pfad: [ebene, zweite] } }];
-}
-
 export function GesetzeBlatt({ ort, gehe }: { ort: BlattOrt; gehe: (o: BlattOrt) => void }) {
   const [ebene, zweite] = ort.pfad;
   const zu = (...pfad: string[]) => () => gehe({ rubrik: 'gesetze', pfad });
