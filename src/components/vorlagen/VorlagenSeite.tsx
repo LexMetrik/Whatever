@@ -38,9 +38,22 @@ import { getProfil, getVorlagenDetailgrad } from '../../lib/einstellungen';
 //   • `fussnote` — durchgereicht an VorlagenWizardRahmen (Themen-Brücke).
 //   • `bestaetigungLabelCls` — hält die vorgefundene Trefferfläche der
 //     Bestätigungs-Zeile byte-gleich (siehe Feld-Kommentar).
-// NICHT hierher gehören Seiten, deren Eingabe-Schritt einen React-Hook braucht
-// (z. B. usePaneKlasse): `eingabeInhalt` läuft nur auf den Eingabe-Schritten,
-// ein Hook darin wechselte die Hook-Reihenfolge je Schritt.
+// Ein Hook (z. B. usePaneKlasse) gehört NICHT direkt in `eingabeInhalt` — es
+// läuft nur auf den Eingabe-Schritten, der Hook wechselte die Hook-Reihenfolge
+// je Schritt. Braucht ein Schritt einen Hook, rendert `eingabeInhalt` eine
+// Komponente der Seite (`<EingabeSchritt ctx schritt />`), die ihn aufruft.
+//
+// W2·29-WERKBANK-VORLAGEN V2a — fünf optionale Slots für die handgeschriebenen
+// Seiten (Kündigungen); alle per Default deckungsgleich mit dem bisherigen
+// Verhalten, die elf Bestands-Seiten ändern sich um null Zeichen. Die Slots
+// tragen Darstellung bzw. Zustands-Hygiene, NIE Fachlogik:
+//   • `normalisieren` — Hydration-Absicherung, durchgereicht an useWizardState,
+//   • `profilPrefill` — false, wo die Seite die Absender-Felder vor dem Umzug
+//     nicht aus dem Profil vorbelegte (Arbeitgeber-Kündigung: Absender ist die
+//     Firma, nicht die nutzende Person),
+//   • `blockerKasten` — die «Export gesperrt»-Box über den Warnungen,
+//   • `pruefenZusatz` — Block zwischen Hinweisen und Ort/Datum (Endtermin-Kachel),
+//   • `bestaetigung` auch als Funktion (Bullets, die von Antworten abhängen).
 
 /** Einheitliche Gate-Form aller Vorlagen-Engines. */
 type VorlagenGates = { blocker: string[]; warnungen: string[]; hinweise: string[] };
@@ -70,6 +83,11 @@ export interface VorlagenSeitenConfig<
   /** Reine Engine-Referenzen (src/lib) — keine Logik in dieser Schicht. */
   zusammenstellen: (a: T) => Z;
   pruefeGates: (a: T, z: Z) => VorlagenGates;
+  /** Hydration absichern (Array-Felder aus älteren/fremdeditierten
+   *  Speicherständen) — unverändert an useWizardState durchgereicht. */
+  normalisieren?: (geladen: T) => T;
+  /** Profil-Prefill der Absender-Felder (Default true). */
+  profilPrefill?: boolean;
   schritte: readonly { id: string; label: string }[];
   // Rahmen-Kopf
   overlineFallback: string;       // Rechtsgebiet-Fallback, falls Karte fehlt
@@ -88,6 +106,12 @@ export interface VorlagenSeitenConfig<
    *  Blocker spiegeln (z. B. Nichtbekanntgabe: Rechtsvorschlag-Voraussetzung). */
   fehlerEingabe: (a: T, schritt: number, gates: VorlagenGates) => string[];
   // «pruefen»-Schritt
+  /** «Export gesperrt»-Box (role=alert) mit den gates.blocker oben im
+   *  Prüfen-Schritt (Default false). */
+  blockerKasten?: boolean;
+  /** Seiten-Block zwischen den Hinweisen und Ort/Datum (z. B. Endtermin-
+   *  Kachel aus `ctx.z`). */
+  pruefenZusatz?: (ctx: SeiteCtx<T, Z>) => ReactNode;
   /** Ob der letzte-Schritt-Fehler die gates.blocker enthält (Default true).
    *  false z. B. bei Mahnung, deren Navigations-Fehler nur Ort/Datum prüft
    *  (Blocker sperren dort nur den Export, nicht die Fehlerbox). */
@@ -96,8 +120,9 @@ export interface VorlagenSeitenConfig<
   ortPlaceholder: string;
   ortFehler: string;
   datumFehler: string;
-  /** Inhalt der lc-highlight-Sektion ÜBER der Bestätigungs-Checkbox. */
-  bestaetigung: ReactNode;
+  /** Inhalt der lc-highlight-Sektion ÜBER der Bestätigungs-Checkbox. Als
+   *  Funktion, wenn ein Bullet von den Antworten abhängt. */
+  bestaetigung: ReactNode | ((ctx: SeiteCtx<T, Z>) => ReactNode);
   bestaetigungLabel: ReactNode;
   /** Klassen der Bestätigungs-Zeile. Default ist die Form der fünf Pilot-Seiten
    *  (`gap-2`, kein Padding). Die handgeschriebenen Seiten tragen historisch
@@ -123,7 +148,7 @@ export function VorlagenSeite<
   // Profil-Prefill (Auftrag David): nur die SELBST-evidenten Absender-/Verfasser-
   // Felder vorbelegen (= die nutzende Person), und nur wenn das Schema sie führt.
   // Reiner Komfort (§3); leere Felder, gespeicherte Werte gewinnen (useWizardState).
-  const prefill = ((): Partial<T> => {
+  const prefill = config.profilPrefill === false ? undefined : ((): Partial<T> => {
     const profil = getProfil();
     const p: Record<string, unknown> = {};
     if (profil.name && 'absenderName' in config.defaults) p.absenderName = profil.name;
@@ -136,7 +161,7 @@ export function VorlagenSeite<
     ? { ...config.defaults, detailgrad: getVorlagenDetailgrad() }
     : config.defaults;
   const { a, set, schritt, setSchritt, bestaetigt, setBestaetigt, kopiert, kopieren, zuruecksetzen } =
-    useWizardState<T>({ defaults, speicherKey: config.speicherKey, prefill });
+    useWizardState<T>({ defaults, speicherKey: config.speicherKey, normalisieren: config.normalisieren, prefill });
 
   const z = useMemo(() => config.zusammenstellen(a), [a, config]);
   const { ergebnis } = z;
@@ -163,6 +188,12 @@ export function VorlagenSeite<
 
   const pruefenInhalt = (
     <div className="space-y-5">
+      {config.blockerKasten && gates.blocker.length > 0 && (
+        <div role="alert" className="lc-notice-danger space-y-1">
+          <p className="lc-overline text-danger-700 mb-1">Export gesperrt</p>
+          {gates.blocker.map((b, i) => <p key={i} className="text-body-s text-danger-700">• <NormText text={b} /></p>)}
+        </div>
+      )}
       {/* §8 (QS-UI 8b Teil 2): Bis hierher hing das Rendern der Engine-Warnungen an
           einem Opt-in-Flag `zeigeWarnungen`. Drei der fünf Seiten auf diesem Rahmen
           (Forderungsabtretung · Verjährungsverzicht · Rubrum) setzten es NICHT — heute
@@ -179,6 +210,7 @@ export function VorlagenSeite<
       {gates.hinweise.map((h, i) => (
         <div key={i} className="lc-notice text-body-s"><NormText text={h} /></div>
       ))}
+      {config.pruefenZusatz?.(ctx)}
 
       {/* D5 (W2·24): Ort und Datum sind die einzigen Pflichtangaben, die IN
           diesem Schritt stehen — sie bekommen die Rückmeldung am Feld selbst
@@ -195,7 +227,7 @@ export function VorlagenSeite<
       </Field>
 
       <section className="lc-highlight space-y-3">
-        {config.bestaetigung}
+        {typeof config.bestaetigung === 'function' ? config.bestaetigung(ctx) : config.bestaetigung}
         <Checkbox
           checked={bestaetigt}
           onChange={setBestaetigt}
